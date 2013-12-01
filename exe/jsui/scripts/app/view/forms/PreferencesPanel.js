@@ -67,22 +67,25 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                                 ["disable_autotop", _("Disable Auto-Top Internal Linking")],
                                 ["disable_all", _("Disable All Internal Linking")]
                            ]
+						   
 		                },{
 						
                         xtype: 'container',
                         layout: 'hbox',
-                        margin: 10,
-
+						//layout:'column',
+						border:1,
+						width: '100%',
                         items: [{
                                 xtype: 'combobox',
                                 inputId: 'browser',
                                 id: 'browsersel',
                                 dirtyCls: 'property-form-dirty',
+								labelWidth: 200,
                                 fieldLabel: lngsel,
                                 queryModel: 'local',
                                 displayField: 'text',
                                 valueField: 'browser',
-                                width: 370,
+								width:'94%',
                                 store: {
                                     fields: ['browser', 'text'],
                                     proxy: {
@@ -93,18 +96,11 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                                             root: 'browsers'
                                         }
                                     },
-                                    listeners: {
-                                        load: function (ds, records, o) {
-                                            var objbrw = Ext.getCmp('browsersel');
-                                            objbrw.select(records[0].data.browser);
-                                            objbrw.onTriggerClick();
-                                        }
-
-                                    },
                                     autoLoad: true
                                 }
 
-                            }, {
+                            },{ xtype: 'tbfill' },
+							{
                                 xtype: 'button',
                                 text: '...',
 								tooltip: lngsel,
@@ -127,7 +123,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                                                     success: function () {
                                                         var datnew = {
                                                             browser: fp.file.path,
-                                                            text: '* ' + fp.file.path
+                                                            text: fp.file.path
                                                         };
                                                         var objbrw = Ext.getCmp('browsersel');
                                                         var numdat = objbrw.store.getCount();
