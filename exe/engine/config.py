@@ -350,11 +350,19 @@ class Config:
                 actstyle=self.webDir/'style'
                 if actstyle.exists():
                     shutil.copytree(actstyle, self.stylesDir)
+            if not Path(self.stylesDir/self.defaultStyle).exists():
+                actstyle=self.webDir/'style'/self.defaultStyle
+                shutil.copytree(actstyle, self.stylesDir/self.defaultStyle)
         else:
-            self.stylesDir     = Path(self.webDir/'style').abspath()
+            if G.application.portable:
+                if os.name == 'posix': 
+                    self.stylesDir      = Path(self.webDir/'..'/'..'/'..'/'style')
+                else: 
+                    self.stylesDir      = Path(self.webDir/'..'/'style')
+            else:
+                self.stylesDir     = Path(self.webDir/'style').abspath()
             
-            #copiar style
-                
+               
         # Get the list of recently opened projects
         self.recentProjects = []
         if self.configParser.has_section('recent_projects'):
