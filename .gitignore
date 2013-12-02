@@ -19,4 +19,5 @@ exe/webui/docs/manual
 .pydevproject
 .settings/
 exe/config
+exe/run-exe.py
 dist/
