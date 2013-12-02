@@ -72,7 +72,7 @@ class FileAttachBlockInc(Block):
         for fileElement in self.fileAttachmentElements:
             fileElement.process(request)
             if field_engine_is_delete(fileElement, request, self.idevice.fileAttachmentFields):
-                fileElement.field.deleteFile()
+                #fileElement.field.deleteFile()
                 field_engine_check_delete(fileElement, request, self.idevice.fileAttachmentFields)
             
         if "addFileAttachment" + unicode(self.id) in request.args:

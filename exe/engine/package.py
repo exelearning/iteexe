@@ -283,7 +283,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 10
+    persistenceVersion = 12
     nonpersistant      = ['resourceDir', 'filename', 'previewDir']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
@@ -1530,7 +1530,8 @@ class Package(Persistable):
         if hasattr(self, 'scowsource'):
             del self.scowsource
         try:
-            self.newlicense = self.oldLicenseMap[self.license]
+            if not self.license in self.oldLicenseMap.values():
+                self.newlicense = self.oldLicenseMap[self.license]
         except:
             self.license = u''
         if not hasattr(self, 'mxmlprofilelist'):
@@ -1543,6 +1544,16 @@ class Package(Persistable):
             self.mxmlwidth = ""
         if not hasattr(self, 'compatibleWithVersion9'):
             self.compatibleWithVersion9 = False
+
+    def upgradeToVersion11(self):
+        pass
+    
+    def upgradeToVersion12(self):
+        
+        #because actually version 11 was exe-next-gen
+        self.upgradeToVersion9()
+        self.upgradeToVersion10()
+
 
     def downgradeToVersion9(self):
         for attr in ['lomEs', 'lom', 'scowsinglepage', 'scowwebsite',
