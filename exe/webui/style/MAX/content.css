@@ -4,6 +4,7 @@ a{color:#CE2239}
 #header h1{margin:0;font-size:1em}
 #nodeTitle,.nodeTitle{font-size:1.5em;margin:0;text-align:left;font-weight:bold;color:#222;padding:.1em 0 .6em 0;border-bottom:5px solid #B50536} /* .nodeTitle when single page */
 #main .nodeTitle{margin-top:.6em;color:#222}
+#main #nodeDecoration{padding:10px 0 5px 0;margin-bottom:15px;border:0;background:url(_max_titulo_nodo.jpg) no-repeat right 0;text-align:left}
 #main h2{font-size:1.4em;color:#9A042F}
 #main h2.iDeviceTitle{display:inline;font-size:1.2em}
 #main h3{font-size:1.3em;color:#1E80B8}
@@ -31,14 +32,13 @@ a{color:#CE2239}
 
 .iDevice_content{overflow:auto}
 .iDevice_inner{padding: 10px 20px;border:1px solid #f0f0f0;background:#f9f9f9;color:#444;border-radius:5px}
-#siteFooter{color:#666666;font-size:.95em}
+#siteFooter{color:#666666;font-size:.95em;border-top:5px solid #B50536;padding:15px 0}
 #siteFooter a{color:#000}
 input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 #lbOverlay{background-color:#f3f3f3}
 #lbOuterContainer{border-color:#ddd}
 .ExternalUrlIdevice iframe{border:none}
 /* base.css */
-div#nodeDecoration{padding:0;border:none;text-align:left}
 .block,.feedback{padding:0}
 .feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 li{list-style-position:outside}

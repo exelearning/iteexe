@@ -6,6 +6,7 @@ body{padding:0;text-align:center;background:#fff url(_max_fondo_pagina.gif)}
 .no-nav #main-wrapper{padding-left:20px}
 #main{width:100%}
 #header,#emptyHeader{border-top:none}
+#main #nodeDecoration{padding:0;background:none}
 /* Navigation */
 #skipNav{width:50%;padding:10px}
 #skipNav a{background:#9A042F}
@@ -22,7 +23,7 @@ body{padding:0;text-align:center;background:#fff url(_max_fondo_pagina.gif)}
 #siteNav .active{color:#1E80B8;font-weight:bold}
 #siteNav .other-section{display:none}
 #siteNav ul ul ul a{padding-left:50px}
-#siteFooter{padding:10px 0 0 250px}
+#siteFooter{padding:10px 0 0 250px;border:none}
 .no-nav #siteFooter{padding-left:20px}
 /* Pagination */
 .pagination{border-top:5px solid #B50536;padding-top:20px;text-align:right;color:#fff}
