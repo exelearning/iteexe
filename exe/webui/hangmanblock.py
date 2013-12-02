@@ -277,6 +277,7 @@ class HangmanBlockInc(Block):
         html += "</div>"
 
         messageTopMargin = (imgMaxHeight - 30) / 2
+        gameWidth = max(600, imgMaxWidth)
         gameAreaHTML = """
 <div id="%(gameId)s_gamearea" style='width: %(width)dpx;' class='exehangman_gamearea'>
         <div class='exehangman_alertarea' id="%(gameId)s_alertarea" style='position: absolute; z-index: 10; text-align: center; border: 1px; background-color: white; width: %(width)dpx; margin-top: %(messagetopmargin)dpx; visibility: hidden'>
@@ -292,7 +293,7 @@ class HangmanBlockInc(Block):
         <input class='exehangman_resetbutton' type='button' value='%(resetText)s' style='%(resetStyle)s' onclick='restartLevel("%(gameId)s")'/>
 </div>
 
-        """ % { "gameId" : hangmanGameId, "width" : imgMaxWidth, "height": imgMaxHeight, \
+        """ % { "gameId" : hangmanGameId, "width" : gameWidth, "height": imgMaxHeight, \
                 "messagetopmargin" : messageTopMargin, 'hintStyle' : self.hintFieldStyleElement.renderView(), \
                 'wordStyle' : self.wordAreaStyleElement.renderView(), 'resetText' : self.resetButtonTextElement.renderView(), \
                 'resetStyle' : self.resetButtonStyleElement.renderView() }
