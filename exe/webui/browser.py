@@ -28,7 +28,6 @@ Browser module
 import logging
 from urllib import quote
 import mywebbrowser
-import webbrowser
 import os.path
 
 log = logging.getLogger(__name__)
@@ -40,7 +39,7 @@ def launchBrowser(config, packageName):
     """
     url = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
     log.info(u"url " + url)
-    dfbrw=webbrowser.get()
+    dfbrw=mywebbrowser.get()
     withdefaultbrowser=True
     if config.browser!=None:
         try:
@@ -51,8 +50,8 @@ def launchBrowser(config, packageName):
             if os.path.exists(config.browser):
                 absopath=config.browser
                 log.info(u"path browser " + absopath)
-                webbrowser.register('exebrowser' , None, webbrowser.BackgroundBrowser(absopath), -1)
-                config.browser = webbrowser.get('exebrowser')        
+                mywebbrowser.register('exebrowser' , None, mywebbrowser.BackgroundBrowser(absopath), -1)
+                config.browser = mywebbrowser.get('exebrowser')        
                 if config.browser.open(url)== False:
                     log.info(u"error " + absopath)
                     withdefaultbrowser=True

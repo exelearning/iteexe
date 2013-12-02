@@ -29,7 +29,6 @@ import json
 from twisted.web.resource      import Resource
 from exe.webui.renderable      import RenderableResource
 import mywebbrowser
-import os
 
 log = logging.getLogger(__name__)
 
@@ -38,14 +37,13 @@ langNames = {
     'hr': 'Croatian',
     'ig': "Nunivak Cup'ig",
     'lo': 'Lao; Laotian',
-    'pt_BR': 'Brazillian Portuguese',
+    'pt_br': 'Brazillian Portuguese',
     'ru': 'Russian',
     'tg': 'Tajik',
     'yo': 'Yoruba',
     'el': '\xce\x95\xce\xbb\xce\xbb\xce\xb7\xce\xbd\xce\xb9\xce\xba\xce\xac',
     'en': 'English',
     'zh': '\xe7\xae\x80\xe4\xbd\x93\xe4\xb8\xad\xe6\x96\x87',
-    'zh_CN': '\xe7\xae\x80\xe4\xbd\x93\xe4\xb8\xad\xe6\x96\x87',
     'ee': 'Ewe',
     'vi': 'Vietnamese',
     'is': '\xc3\x8dslenska',
@@ -65,11 +63,11 @@ langNames = {
     'tl': 'Tagalog',
     'th': '\xe0\xb8\xa0\xe0\xb8\xb2\xe0\xb8\xa9\xe0\xb8\xb2\xe0\xb9\x84\xe0\xb8\x97\xe0\xb8\xa2',
     'ca': 'Catal\xc3\xa0',
-    'ca_ES@valencia': 'Valenci\xc3\xa0',
+    'ca_VALENCIA': 'Valenci\xc3\xa0',
     'pl': 'J\xc4\x99zyk Polski, polszczyzna',
     'fr': 'Fran\xc3\xa7ais',
     'bg': 'Bulgarian',
-    'zh_TW': '\xe6\xad\xa3\xe9\xab\x94\xe4\xb8\xad\xe6\x96\x87',
+    'zh_tw': '\xe7\xae\x80\xe4\xbd\x93\xe4\xb8\xad\xe6\x96\x87',
     'da': 'Dansk',
     'br': 'Breton',
     'hu': 'Magyar',
@@ -81,9 +79,7 @@ langNames = {
     'sk': 'Sloven\xc4\x8dina, Slovensk\xc3\xbd Jazyk',
     'de': 'Deutsch',
     'uk': 'Ukrainian',
-    'sl': 'Sloven\xc5\xa1\xc4\x8dina',
-    'ar': 'Arabic',
-    'ast': 'Asturian'
+    'sl': 'Sloven\xc5\xa1\xc4\x8dina'
 }
 
 browsersHidden = ('xdg-open', 'gvfs-open', 'x-www-browser', 'gnome-open', 'kfmclient', 'www-browser', 'links', 
@@ -132,7 +128,7 @@ class PreferencesPage(RenderableResource):
         RenderableResource.__init__(self, parent)
         self.localeNames = []
         self.browsers = []
-        lngdefbrowser=_(u"Default browser in your system")
+
         for locale in self.config.locales.keys():
             localeName = locale + ": "
             langName = langNames.get(locale)
@@ -140,19 +136,13 @@ class PreferencesPage(RenderableResource):
             self.localeNames.append({'locale': locale, 'text': localeName})
         self.localeNames.sort()
         for browser in mywebbrowser._tryorder:
-            if (browser not in browsersHidden) and (browser in browserNames):
+            if (browser not in browsersHidden):
                 self.browsersAvalaibles.append((browserNames[browser], browser))
         self.browsersAvalaibles.sort()
-        if self.config.browser!=None:
-            if os.path.exists(self.config.browser):
-                nmbrw=os.path.splitext(os.path.basename(self.config.browser))[0]    
-                self.browsers.append({'browser': self.config.browser, 'text': '* '+nmbrw})
-            self.browsersAvalaibles.append((lngdefbrowser, "None"))
-        else:
-            self.browsers.append({'browser': "None", 'text':lngdefbrowser})
-        
+        self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
         for browser in self.browsersAvalaibles:
             self.browsers.append({'browser': browser[1], 'text': browser[0]})
+            
 
     def getChild(self, name, request):
         """
@@ -170,10 +160,12 @@ class PreferencesPage(RenderableResource):
         try:
             data['locale'] = self.config.locale
             data['internalAnchors'] = self.config.internalAnchors
+            browserSelected = "None"
             if (self.config.browser.basename in browserNames):
                 browserSelected = self.config.browser.basename
             else:
-                browserSelected = "None"
+                if (self.config.browser.name!=''):
+                    browserSelected = self.config.browser.name
             data['browser'] = browserSelected
             data['showPreferencesOnStart'] = self.config.showPreferencesOnStart
         except Exception as e:
@@ -196,10 +188,7 @@ class PreferencesPage(RenderableResource):
             self.config.internalAnchors = internalAnchors
             self.config.configParser.set('user', 'internalAnchors', internalAnchors)
             browser = request.args['browser'][0]
-            try:
-                self.config.browser = mywebbrowser.get(browser)
-            except:
-                self.config.browser = mywebbrowser.get(None)
+            self.config.browser.name=browser
             self.config.configParser.set('system', 'browser', browser)
             showPreferencesOnStart = request.args['showPreferencesOnStart'][0]
             self.config.showPreferencesOnStart = showPreferencesOnStart
