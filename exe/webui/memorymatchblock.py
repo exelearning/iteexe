@@ -134,6 +134,16 @@ class MemoryMatchBlockInc(Block):
         html += common.ideviceHeader(self, style, viewModeName)
         
         mainDict = self.idevice.mainFieldSet.getRenderDictionary(self.mainElements, "", previewMode)
+        if int(mainDict["coverImg_imgwidth"]) > 0:
+            mainDict['cellwidth'] = mainDict["coverImg_imgwidth"]
+        else:
+            mainDict['cellwidth'] = "100"
+             
+        if int(mainDict["coverImg_imgheight"]) > 0:
+            mainDict['cellheight'] = mainDict['coverImg_imgheight']
+        else:
+            mainDict['cellheight'] = "100"    
+         
         firstFrag = self.idevice.mainFieldSet.applyFileTemplateToDict(mainDict, \
             "memmatch_template_head.html", previewMode)
         html += firstFrag

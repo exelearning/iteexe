@@ -38,7 +38,7 @@ class MemoryMatchIdeviceInc(Idevice):
     the system idevices.
     """
     
-    persistenceVersion = 3
+    persistenceVersion = 4
     
     def __init__(self, content=""):
         Idevice.__init__(self, x_(u"Memory Match Game"), 
@@ -46,7 +46,7 @@ class MemoryMatchIdeviceInc(Idevice):
                          x_(u"""Memory Match Game Maker."""), "", "")
         self.message = ""
         
-        mainFieldOrder = ['title', 'instructions', 'rows', 'cols', 'splitPairs', 'feedbackpositive', 'feedbacknegative', 'feedbackstyle', 'cellwidth', 'cellheight', \
+        mainFieldOrder = ['title', 'instructions', 'rows', 'cols', 'splitPairs', 'feedbackpositive', 'feedbacknegative', 'feedbackstyle',  \
                             'hidetime', 'coverImg', 'cellbackImg', 'revealedBackground', 'positivefeedbackeffect', \
                             'negativefeedbackeffect', 'useTimer', 'timertext', 'timerstyle', 'hideAfterMatch', 'hideAfterMatchEffect', 'cellpadding',\
                             'cellspacing', 'cellstyle']
@@ -98,7 +98,7 @@ class MemoryMatchIdeviceInc(Idevice):
     def uploadNeededScripts(self):
         from exe import globals
         import os,sys
-        scriptFileNames = ['jquery-ui-1.10.3.custom.min.js', 'memmatch-0.1.js']
+        scriptFileNames = ['jquery-ui-1.10.3.custom.min.js', 'memmatch-0.2.js']
         for scriptName in scriptFileNames:
             from exe import globals 
             scriptSrcFilename = globals.application.config.webDir/"templates"/scriptName
@@ -116,6 +116,13 @@ class MemoryMatchIdeviceInc(Idevice):
     def upgradeToVersion3(self):
         self.mainFieldSet.fieldInfoDict['coverImg'][3] = {'defaultval' : 'memmatch_covercelldefault.png'}
         self.mainFieldSet.fieldInfoDict['cellbackImg'][3] = {'defaultval' : 'memmatch_showcelldefaultbg.png'}
+    
+    """
+    Changed javascript
+    """
+    def upgradeToVersion4(self):
+        self.uploadNeededScripts()
+    
     
     def setNumMatchingPairs(self):
         numRows = int(self.mainFieldSet.fields['rows'].content)
