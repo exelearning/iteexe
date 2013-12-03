@@ -11,15 +11,15 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 23:31+0100\n"
-"PO-Revision-Date: 2013-12-02 10:17+0200\n"
-"Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
+"PO-Revision-Date: 2013-12-03 12:50+0100\n"
+"Last-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\n"
 "Language-Team: LliureX\n"
 "Language: ca_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Virtaal 0.7.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
 "Generated-By: Babel 1.3\n"
 
 #: exe/application.py:204
@@ -186,7 +186,6 @@ msgid "Attachment"
 msgstr "Fitxer adjunt"
 
 #: exe/engine/attachmentidevice.py:46
-#, fuzzy
 msgid ""
 "The attachment iDevice is used to attach existing files to your .elp "
 "content. For example, you might have a PDF file or a PPT or .ODP "
@@ -224,7 +223,6 @@ msgstr ""
 "voleu adjuntar i seleccioneu-lo."
 
 #: exe/engine/attachmentidevice.py:72
-#, fuzzy
 msgid ""
 "<p>Assign a label for the attachment. It is useful to include the type of "
 "file. Eg. pdf, ppt, .odp, etc.</p><p>Including the size is also recommended "
@@ -233,7 +231,7 @@ msgid ""
 "<code>Sales Forecast.doc (500kb)</code></p>"
 msgstr ""
 "<p>Assigneu una etiqueta a cada fitxer adjunt. És útil incloure el tipus de "
-"fitxer. Ex.: pdf, doc (odt), ppt (odp), etc.</p> <p> També és molt "
+"fitxer; per exemple, pdf, doc (odt), ppt (odp), etc.</p> <p> També és molt "
 "recomanable incloure'n la mida per tal que quan s'exporte el fitxer a un "
 "lloc web, es tinga una idea del temps que tardarà en baixar el fitxer adjunt."
 "</p> <p> Per exemple: <code>Vendes.odt (500 kb)</code> </p>"
@@ -1138,7 +1136,7 @@ msgstr "Suprimix el fitxer"
 
 #: exe/engine/extendedfieldengine.py:300
 msgid "No File Uploaded Currently"
-msgstr ""
+msgstr "Actualment no s'ha pujat cap fitxer"
 
 #: exe/engine/extendedfieldengine.py:332 exe/webui/editorelement.py:225
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
@@ -2970,7 +2968,7 @@ msgstr ""
 
 #: exe/engine/scormclozeidevice.py:46
 msgid "SCORM Test Cloze"
-msgstr ""
+msgstr "Test de compleció en SCORM"
 
 #: exe/engine/scormclozeidevice.py:124
 msgid ""
@@ -2985,20 +2983,33 @@ msgid ""
 "               sort them alphabetically and write them at the beginning or "
 "the end of the cloze excercise.</p>"
 msgstr ""
+"<p>Introduïu el text per a l'exercici de compleció en la finestra de "
+"l'editor.\n"
+"             Si copieu el text des d'una altra font utilitzeu el botó 'Apega "
+"com a text net'\n"
+"             per a apegar-lo en la finestra de l'editor. Per a seleccionar "
+"les paraules que s'han d'ocultar, \n"
+"             marqueu-les i feu clic al botó \"Mostra/Amaga\" que hi ha a "
+"continuació.\n"
+"             Pista: Les respostes poden contindre espais. Si voleu "
+"proporcionar opcions de resposta a l'alumnat, \n"
+"             ordeneu-les alfabèticament i escriviu-les al principi o al "
+"final de l'exercici.</p>"
 
 #: exe/engine/scormdropdownidevice.py:46
-#, fuzzy
 msgid "SCORM Test Dropdown"
-msgstr "Opcions d'exportació en SCORM"
+msgstr "Test de desplegable en SCORM"
 
 #: exe/engine/scormdropdownidevice.py:119
 msgid ""
 "Provide instruction how to complete the exercise or take the default text."
 msgstr ""
+"Proporciona instruccions sobre com completar l'exercici o agafa el text per "
+"defecte."
 
 #: exe/engine/scormdropdownidevice.py:121
 msgid "Choose the correct answers in the paragraph below."
-msgstr ""
+msgstr "Trieu la resposta correcta en el paràgraf a continuació"
 
 #: exe/engine/scormdropdownidevice.py:124
 msgid ""
@@ -3010,11 +3021,17 @@ msgid ""
 "button below.\n"
 "                Hint: answers may contain spaces.</p>"
 msgstr ""
+"<p>Per a crear un buit amb diverses opcions de resposta, escriviu la "
+"resposta correcta i separeu-la amb \n"
+"                '|' de les respostes incorrectes:\n"
+"                correcta|incorrecta|incorrecta|incorrecta...\n"
+"                Marqueu totes les opcions de resposta i feu clic al botó "
+"'Mostra/Amaga la paraula'.\n"
+"                Pista: Les respostes poden contindre espais.</p>"
 
 #: exe/engine/scormmulticlozeidevice.py:46
-#, fuzzy
 msgid "SCORM Test Cloze (multiple options)"
-msgstr "Opcions d'exportació en SCORM"
+msgstr "Test de compleció (diverses opcions) en SCORM"
 
 #: exe/engine/scormmulticlozeidevice.py:126
 msgid ""
@@ -3033,10 +3050,26 @@ msgid ""
 "               sort them alphabetically and write them at the beginning or "
 "the end of the cloze exercise.</p>"
 msgstr ""
+"<p>Introduïu el text per a l'exercici de compleció en la finestra de "
+"l'editor.\n"
+"             Si copieu el text des d'una altra font utilitzeu el botó 'Apega "
+"com a text net'\n"
+"             per a apegar-lo en la finestra de l'editor. Per a seleccionar "
+"les paraules que s'han d'ocultar, \n"
+"             marqueu-les i feu clic al botó \"Mostra/Amaga\" que hi ha a "
+"continuació.\n"
+"             Per a crear un buit amb diverses opcions de resposta, escriviu "
+"la resposta correcta i separeu-la amb '|'.\n"
+"             Marqueu totes les opcions de resposta i feu clic al botó "
+"'Mostra/Amaga la paraula'.\n"
+"             Pista: Les respostes poden contindre espais. Si voleu "
+"proporcionar opcions de resposta a l'alumnat, \n"
+"             ordeneu-les alfabèticament i escriviu-les al principi o al "
+"final de l'exercici.</p>"
 
 #: exe/engine/scormmultiselectidevice.py:41
 msgid "SCORM Test Multiple Choice"
-msgstr ""
+msgstr "Test d'elecció múltiple en SCORM"
 
 #: exe/engine/seleccionmultiplefpdidevice.py:44
 msgid "FPD - Multi Select Activity"
@@ -3531,7 +3564,6 @@ msgid "Licensed under the"
 msgstr "Sota la llicència de"
 
 #: exe/export/pages.py:78
-#, fuzzy
 msgid "Local Version"
 msgstr "Versió"
 
@@ -7583,15 +7615,16 @@ msgid "Add another option"
 msgstr "Afig una altra opció."
 
 #: exe/webui/element.py:2931 exe/webui/element.py:3751
-#, fuzzy
 msgid ""
 "<p>If this option is set, all gaps will have the length of the longest "
 "answer option</p>"
-msgstr "<p>Si es marca esta opció, es mostrarà la puntuació</p>"
+msgstr ""
+"<p>Si es marca esta opció, tots el buits tindran l'amplària de la resposta "
+"més llarga</p>"
 
 #: exe/webui/element.py:2961 exe/webui/element.py:3783
 msgid "Use fixed length?"
-msgstr ""
+msgstr "Voleu utilitzar una amplària fixa?"
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
@@ -7642,7 +7675,7 @@ msgstr "Afig un altre fitxer adjunt"
 
 #: exe/webui/fileattachblock.py:143
 msgid "File List (this list shows only in preview mode):"
-msgstr ""
+msgstr "Llista de fitxers (es mostra només en mode de previsualització):"
 
 #: exe/webui/galleryblock.py:216 exe/webui/galleryblock.py:300
 #: exe/webui/galleryblock.py:301
@@ -10860,37 +10893,6 @@ msgstr ""
 "creat amb una versió més nova de l'eXe. Actualitzeu l'eXe i torneu-ho a "
 "provar."
 
-msgid ""
-"Provide instruction how to complete the excercise or take the default text."
-msgstr ""
-
-msgid ""
-"<p>To create a gap with answer options, write the correct answer and then "
-"separated by\n"
-"                '|' the wrong answers:\n"
-"                true|false|false|false ...\n"
-"                Mark all answer options and click on the Hide/Show Word "
-"button below.\n"
-"                Hint: answers may contain spaces.</p>"
-msgstr ""
-
-msgid ""
-"<p>Enter the text for the cloze excercise in the editor window.\n"
-"               If you copy text from another source, you should use the "
-"button 'Paste as plain text'\n"
-"               to paste it into the editor window. To select words to hide, "
-"mark them and click on the \n"
-"               Hide/Show Word button below.\n"
-"               To create a gap with multiple answer options, write the "
-"answers separated by '|'.\n"
-"               Mark all answer options and click on the Hide/Show Word "
-"button below.\n"
-"               Hint: The answers may contain spaces. If you want to provide "
-"the answer options to the learners,\n"
-"               sort them alphabetically and write them at the beginning or "
-"the end of the cloze excercise.</p>"
-msgstr ""
-
 #~ msgid "Browsers installed in your system"
 #~ msgstr "Navegadors instal·lats al sistema"
 
@@ -10937,6 +10939,63 @@ msgstr ""
 
 #~ msgid "by"
 #~ msgstr "per"
+
+#~ msgid ""
+#~ "Provide instruction how to complete the excercise or take the default "
+#~ "text."
+#~ msgstr ""
+#~ "Proporciona instruccions sobre com completar l'exercici o agafa el text "
+#~ "per defecte."
+
+#~ msgid ""
+#~ "<p>To create a gap with answer options, write the correct answer and then "
+#~ "separated by\n"
+#~ "                '|' the wrong answers:\n"
+#~ "                true|false|false|false ...\n"
+#~ "                Mark all answer options and click on the Hide/Show Word "
+#~ "button below.\n"
+#~ "                Hint: answers may contain spaces.</p>"
+#~ msgstr ""
+#~ "<p>Per a crear un buit amb diverses opcions de resposta, escriviu la "
+#~ "resposta correcta i separeu-la amb \n"
+#~ "                '|' de les respostes incorrectes:\n"
+#~ "                correcta|incorrecta|incorrecta|incorrecta...\n"
+#~ "                Marqueu totes les opcions de resposta i feu clic al botó "
+#~ "'Mostra/Amaga la paraula'.\n"
+#~ "                Pista: Les respostes poden contindre espais.</p>"
+
+#~ msgid ""
+#~ "<p>Enter the text for the cloze excercise in the editor window.\n"
+#~ "               If you copy text from another source, you should use the "
+#~ "button 'Paste as plain text'\n"
+#~ "               to paste it into the editor window. To select words to "
+#~ "hide, mark them and click on the \n"
+#~ "               Hide/Show Word button below.\n"
+#~ "               To create a gap with multiple answer options, write the "
+#~ "answers separated by '|'.\n"
+#~ "               Mark all answer options and click on the Hide/Show Word "
+#~ "button below.\n"
+#~ "               Hint: The answers may contain spaces. If you want to "
+#~ "provide the answer options to the learners,\n"
+#~ "               sort them alphabetically and write them at the beginning "
+#~ "or the end of the cloze excercise.</p>"
+#~ msgstr ""
+#~ "<p>Introduïu el text per a l'exercici de compleció en la finestra de "
+#~ "l'editor.\n"
+#~ "             Si copieu el text des d'una altra font utilitzeu el botó "
+#~ "'Apega com a text net'\n"
+#~ "             per a apegar-lo en la finestra de l'editor. Per a "
+#~ "seleccionar les paraules que s'han d'ocultar, \n"
+#~ "             marqueu-les i feu clic al botó \"Mostra/Amaga\" que hi ha a "
+#~ "continuació.\n"
+#~ "             Per a crear un buit amb diverses opcions de resposta, "
+#~ "escriviu la resposta correcta i separeu-la amb '|'.\n"
+#~ "             Marqueu totes les opcions de resposta i feu clic al botó "
+#~ "'Mostra/Amaga la paraula'.\n"
+#~ "             Pista: Les respostes poden contindre espais. Si voleu "
+#~ "proporcionar opcions de resposta a l'alumnat, \n"
+#~ "             ordeneu-les alfabèticament i escriviu-les al principi o al "
+#~ "final de l'exercici.</p>"
 
 #, fuzzy
 #~ msgid "Answsers"
