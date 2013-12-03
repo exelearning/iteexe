@@ -327,7 +327,8 @@ class Package(Persistable):
         self.dublinCore    = DublinCore()
         self.lomEs         = lomsubs.lomSub.factory()
         entry = str(uuid.uuid4())
-        self.lomEs.addChilds(self.lomDefaults(entry, 'LOM-ESv1.0'))
+        self._lang = G.application.config.locale.split('_')[0]
+        self.lomEs.addChilds(self.lomDefaults(entry, 'LOM-ESv1.0', True))
         self.lom           = lomsubs.lomSub.factory()
         self.lom.addChilds(self.lomDefaults(entry, 'LOMv1.0'))
         self.scolinks      = False
@@ -337,7 +338,6 @@ class Package(Persistable):
         self.exportMetadataType = "LOMES"
         self.license       = u''
         self.footer        = ""
-        self._lang = G.application.config.locale.split('_')[0]
         self._objectives = u''
         self._preknowledge = u''
         self._learningResourceType = u''
@@ -457,7 +457,7 @@ class Package(Persistable):
             dateTime.set_valueOf_(datetime.datetime.now().strftime('%Y-%m-%d'))
             dateTime.set_uniqueElementName('dateTime')
             lang_str = self.lang.encode('utf-8')
-            value_meta_str = u'Metadata creation'.encode('utf-8')
+            value_meta_str = _(u'Metadata creation date').encode('utf-8')
             dateDescription = lomsubs.LanguageStringSub([lomsubs.LangStringSub(lang_str, value_meta_str)])
             date = lomsubs.dateSub(dateTime, dateDescription)
 
@@ -1475,12 +1475,16 @@ class Package(Persistable):
             self.resources = {}
         G.application.afterUpgradeHandlers.append(self.cleanUpResources)
 
-    def lomDefaults(self, entry, schema):
-        return {'general': {'identifier': [{'catalog': _('My Catalog'), 'entry': entry}],
+    def lomDefaults(self, entry, schema, rights=False):
+        defaults = {'general': {'identifier': [{'catalog': _('My Catalog'), 'entry': entry}],
                               'aggregationLevel': {'source': schema, 'value': '3'}
                              },
                   'metaMetadata': {'metadataSchema': [schema]},
                  }
+        if rights:
+            defaults['rights'] = {'access': {'accessType': {'source': schema, 'value': 'universal'},
+                                             'description': {'string': [{'valueOf_': _('Default'), 'language': str(self.lang)}]}}}
+        return defaults
 
     oldLicenseMap = {"None": "None",
                   "GNU Free Documentation License": u"license GFDL",
@@ -1503,10 +1507,12 @@ class Package(Persistable):
         """
         For version >= 2.0
         """
+        if not hasattr(self, 'lang'):
+            self._lang = G.application.config.locale.split('_')[0]
         entry = str(uuid.uuid4())
         if not hasattr(self, 'lomEs') or not isinstance(self.lomEs, lomsubs.lomSub):
             self.lomEs = lomsubs.lomSub.factory()
-            self.lomEs.addChilds(self.lomDefaults(entry, 'LOM-ESv1.0'))
+            self.lomEs.addChilds(self.lomDefaults(entry, 'LOM-ESv1.0'), True)
         if not hasattr(self, 'lom') or not isinstance(self.lom, lomsubs.lomSub):
             self.lom = lomsubs.lomSub.factory()
             self.lom.addChilds(self.lomDefaults(entry, 'LOMv1.0'))
@@ -1518,8 +1524,6 @@ class Package(Persistable):
             self.exportSource = True
         if not hasattr(self, 'exportMetadataType'):
             self.exportMetadataType = "LOMES"
-        if not hasattr(self, 'lang'):
-            self._lang = G.application.config.locale.split('_')[0]
         if not hasattr(self, 'objectives'):
             self._objectives = u''
         if not hasattr(self, 'preknowledge'):
