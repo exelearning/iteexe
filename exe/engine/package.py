@@ -35,11 +35,13 @@ from xml.dom                   import minidom
 from exe.engine.path           import Path, TempDirPath, toUnicode
 from exe.engine.node           import Node
 from exe.engine.genericidevice import GenericIdevice
-from exe.engine.persist        import Persistable, encodeObject, \
-                                      decodeObject, decodeObjectRaw
+from exe.engine.multichoiceidevice import MultichoiceIdevice
+from exe.engine.quiztestidevice import QuizTestIdevice
+from exe.engine.truefalseidevice import TrueFalseIdevice
+from exe.engine.persist        import Persistable, encodeObject, decodeObjectRaw
 from exe                       import globals as G
 from exe.engine.resource       import Resource
-from twisted.persisted.styles  import Versioned, doUpgrade
+from twisted.persisted.styles  import doUpgrade
 from twisted.spread.jelly      import Jellyable, Unjellyable
 from exe.engine.beautifulsoup  import BeautifulSoup
 from exe.engine.field          import Field
@@ -1042,7 +1044,11 @@ class Package(Persistable):
             zippedFile.close()
         if self.compatibleWithVersion9:
             self.upgradeToVersion10()
-            Package.persistenceVersion = 10
+            Package.persistenceVersion = 12
+            MultichoiceIdevice.persistenceVersion = 8
+            GenericIdevice.persistenceVersion = 10
+            QuizTestIdevice.persistenceVersion = 9
+            TrueFalseIdevice.persistenceVersion = 10
 
     def extractNode(self):
         """
@@ -1579,6 +1585,10 @@ class Package(Persistable):
             if hasattr(self, attr):
                 delattr(self, attr)
         self.license = u''
+        MultichoiceIdevice.persistenceVersion = 7
+        GenericIdevice.persistenceVersion = 9
+        QuizTestIdevice.persistenceVersion = 8
+        TrueFalseIdevice.persistenceVersion = 9
         Package.persistenceVersion = 9
 
     def delNotes(self, node):
