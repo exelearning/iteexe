@@ -1512,7 +1512,7 @@ class Package(Persistable):
         entry = str(uuid.uuid4())
         if not hasattr(self, 'lomEs') or not isinstance(self.lomEs, lomsubs.lomSub):
             self.lomEs = lomsubs.lomSub.factory()
-            self.lomEs.addChilds(self.lomDefaults(entry, 'LOM-ESv1.0'), True)
+            self.lomEs.addChilds(self.lomDefaults(entry, 'LOM-ESv1.0', True))
         if not hasattr(self, 'lom') or not isinstance(self.lom, lomsubs.lomSub):
             self.lom = lomsubs.lomSub.factory()
             self.lom.addChilds(self.lomDefaults(entry, 'LOMv1.0'))
