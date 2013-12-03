@@ -457,8 +457,8 @@ class Package(Persistable):
             dateTime.set_valueOf_(datetime.datetime.now().strftime('%Y-%m-%d'))
             dateTime.set_uniqueElementName('dateTime')
             lang_str = self.lang.encode('utf-8')
-            value_str = u'Metadata creation'.encode('utf-8')
-            dateDescription = lomsubs.LanguageStringSub([lomsubs.LangStringSub(lang_str, value_str)])
+            value_meta_str = u'Metadata creation'.encode('utf-8')
+            dateDescription = lomsubs.LanguageStringSub([lomsubs.LangStringSub(lang_str, value_meta_str)])
             date = lomsubs.dateSub(dateTime, dateDescription)
 
             lifeCycle = metadata.get_lifeCycle()
@@ -1119,6 +1119,15 @@ class Package(Persistable):
             if not validxml:
                 toDecode   = zippedFile.read(u"content.data")
                 newPackage = decodeObjectRaw(toDecode)
+            try:
+                lomdata = zippedFile.read(u'imslrm.xml')
+                if 'LOM-ES' in lomdata:
+                    importType = 'lomEs'
+                else:
+                    importType = 'lom'
+                setattr(newPackage, importType, lomsubs.parseString(lomdata))
+            except:
+                pass
             G.application.afterUpgradeHandlers = []
             newPackage.resourceDir = resourceDir
             G.application.afterUpgradeZombies2Delete = []
