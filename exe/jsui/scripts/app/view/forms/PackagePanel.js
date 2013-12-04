@@ -17,9 +17,120 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
+
 Ext.define('eXe.view.forms.PackagePanel', {
     extend: 'Ext.form.Panel',
     alias: 'widget.package',
+    statics: { eXeLicenses: [
+                         [
+                             "propietary license", 
+                             _("propietary license")
+                         ], 
+                         [
+                             "free software license EUPL", 
+                             _("free software license EUPL")
+                         ], 
+                         [
+                             "free software license GPL", 
+                             _("free software license GPL")
+                         ], 
+                         [
+                             "dual free content license GPL and EUPL", 
+                             _("dual free content license GPL and EUPL")
+                         ], 
+                         [
+                             "other free software licenses", 
+                             _("other free software licenses")
+                         ], 
+                         [
+                             "public domain", 
+                             _("public domain")
+                         ], 
+                         [
+                             "not appropriate", 
+                             _("not appropriate")
+                         ], 
+                         [
+                             "intellectual property license", 
+                             _("intellectual property license")
+                         ], 
+                         [
+                             "creative commons: attribution 4.0", 
+                             _("creative commons: attribution 4.0")
+                         ], 
+                         [
+                             "creative commons: attribution - non derived work 4.0", 
+                             _("creative commons: attribution - non derived work 4.0")
+                         ], 
+                         [
+                             "creative commons: attribution - non derived work - non commercial 4.0", 
+                             _("creative commons: attribution - non derived work - non commercial 4.0")
+                         ], 
+                         [
+                             "creative commons: attribution - non commercial 4.0", 
+                             _("creative commons: attribution - non commercial 4.0")
+                         ], 
+                         [
+                             "creative commons: attribution - non commercial - share alike 4.0", 
+                             _("creative commons: attribution - non commercial - share alike 4.0")
+                         ], 
+                         [
+                             "creative commons: attribution - share alike 4.0", 
+                             _("creative commons: attribution - share alike 4.0")
+                         ],
+                         [
+                             "creative commons: attribution 3.0", 
+                             _("creative commons: attribution 3.0")
+                         ], 
+                         [
+                             "creative commons: attribution - non derived work 3.0", 
+                             _("creative commons: attribution - non derived work 3.0")
+                         ], 
+                         [
+                             "creative commons: attribution - non derived work - non commercial 3.0", 
+                             _("creative commons: attribution - non derived work - non commercial 3.0")
+                         ], 
+                         [
+                             "creative commons: attribution - non commercial 3.0", 
+                             _("creative commons: attribution - non commercial 3.0")
+                         ], 
+                         [
+                             "creative commons: attribution - non commercial - share alike 3.0", 
+                             _("creative commons: attribution - non commercial - share alike 3.0")
+                         ], 
+                         [
+                             "creative commons: attribution - share alike 3.0", 
+                             _("creative commons: attribution - share alike 3.0")
+                         ],
+                         [
+                             "creative commons: attribution 2.5", 
+                             _("creative commons: attribution 2.5")
+                         ], 
+                         [
+                             "creative commons: attribution - non derived work 2.5", 
+                             _("creative commons: attribution - non derived work 2.5")
+                         ], 
+                         [
+                             "creative commons: attribution - non derived work - non commercial 2.5", 
+                             _("creative commons: attribution - non derived work - non commercial 2.5")
+                         ], 
+                         [
+                             "creative commons: attribution - non commercial 2.5", 
+                             _("creative commons: attribution - non commercial 2.5")
+                         ], 
+                         [
+                             "creative commons: attribution - non commercial - share alike 2.5", 
+                             _("creative commons: attribution - non commercial - share alike 2.5")
+                         ], 
+                         [
+                             "creative commons: attribution - share alike 2.5", 
+                             _("creative commons: attribution - share alike 2.5")
+                         ],
+                         [
+                             "license GFDL", 
+                             _("license GFDL")
+                         ]
+                     ]},
 
     initComponent: function() {
         var me = this;
@@ -132,7 +243,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                 inputId: 'pp_newlicense',
                                 dirtyCls: 'property-form-dirty',
                                 fieldLabel: _('License'),
-                                store: lomesVocab.copyrightAndOtherRestrictionsValues,
+                                store: eXe.view.forms.PackagePanel.eXeLicenses,
                                 tooltip: _('Select a license.'),
                                 anchor: '100%'
                             },

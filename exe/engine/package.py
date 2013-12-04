@@ -672,7 +672,7 @@ class Package(Persistable):
                 return 'yes'
 
     def set_license(self, value):
-        value_str = value.encode('utf-8')
+        value_str = value.rstrip(' 0123456789.').encode('utf-8')
         if self.dublinCore.rights == self.license:
             self.dublinCore.rights = value
         for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
@@ -1494,18 +1494,18 @@ class Package(Persistable):
 
     oldLicenseMap = {"None": "None",
                   "GNU Free Documentation License": u"license GFDL",
-                  "Creative Commons Attribution 3.0 License": u"creative commons: attribution",
-                  "Creative Commons Attribution Share Alike 3.0 License": u"creative commons: attribution - share alike",
-                  "Creative Commons Attribution No Derivatives 3.0 License": u"creative commons: attribution - non derived work",
-                  "Creative Commons Attribution Non-commercial 3.0 License": u"creative commons: attribution - non commercial",
-                  "Creative Commons Attribution Non-commercial Share Alike 3.0 License": u"creative commons: attribution - non commercial - share alike",
-                  "Creative Commons Attribution Non-commercial No Derivatives 3.0 License": u"creative commons: attribution - non derived work - non commercial",
-                  "Creative Commons Attribution 2.5 License": u"creative commons: attribution",
-                  "Creative Commons Attribution-ShareAlike 2.5 License": u"creative commons: attribution - share alike",
-                  "Creative Commons Attribution-NoDerivs 2.5 License": u"creative commons: attribution - non derived work",
-                  "Creative Commons Attribution-NonCommercial 2.5 License": u"creative commons: attribution - non commercial",
-                  "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License": u"creative commons: attribution - non commercial - share alike",
-                  "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License": u"creative commons: attribution - non derived work - non commercial",
+                  "Creative Commons Attribution 3.0 License": u"creative commons: attribution 3.0",
+                  "Creative Commons Attribution Share Alike 3.0 License": u"creative commons: attribution - share alike 3.0",
+                  "Creative Commons Attribution No Derivatives 3.0 License": u"creative commons: attribution - non derived work 3.0",
+                  "Creative Commons Attribution Non-commercial 3.0 License": u"creative commons: attribution - non commercial 3.0",
+                  "Creative Commons Attribution Non-commercial Share Alike 3.0 License": u"creative commons: attribution - non commercial - share alike 3.0",
+                  "Creative Commons Attribution Non-commercial No Derivatives 3.0 License": u"creative commons: attribution - non derived work - non commercial 3.0",
+                  "Creative Commons Attribution 2.5 License": u"creative commons: attribution 2.5",
+                  "Creative Commons Attribution-ShareAlike 2.5 License": u"creative commons: attribution - share alike 2.5",
+                  "Creative Commons Attribution-NoDerivs 2.5 License": u"creative commons: attribution - non derived work 2.5",
+                  "Creative Commons Attribution-NonCommercial 2.5 License": u"creative commons: attribution - non commercial 2.5",
+                  "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License": u"creative commons: attribution - non commercial - share alike 2.5",
+                  "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License": u"creative commons: attribution - non derived work - non commercial 2.5",
                   "Developing Nations 2.0": u""
                  }
 
