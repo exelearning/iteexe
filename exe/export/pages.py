@@ -87,7 +87,7 @@ class Page(object):
                           "creative commons: attribution - non commercial 4.0": _("Creative Commons Attribution Non-commercial License 4.0"),
                           "creative commons: attribution - non commercial - share alike 4.0": _("Creative Commons Attribution Non-commercial Share Alike License 4.0"),
                           "creative commons: attribution - non derived work - non commercial 4.0": _("Creative Commons Attribution Non-commercial No Derivatives License 4.0"),
-                          "free software license GPL": "GNU General Public License"
+                          "free software license GPL": _("GNU General Public License")
                          }
 
         html = ""
