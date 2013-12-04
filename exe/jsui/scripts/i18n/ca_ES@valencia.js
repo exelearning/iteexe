@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-05 23:31+0100\nPO-Revision-Date: 2013-12-03 12:50+0100\nLast-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\nLanguage-Team: LliureX\nLanguage: ca_ES\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-12-04 14:33+0100\nPO-Revision-Date: 2013-12-03 12:50+0100\nLast-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\nLanguage-Team: LliureX\nLanguage: ca_ES\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Activitat de men\u00fa desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Crea la hist\u00f2ria del cas. Un bon cas \u00e9s aquell \nque descriu una controv\u00e8rsia o mostra una escena descrivint els car\u00e0cters \ninvolucrats en la situaci\u00f3. Tamb\u00e9 ha de permetre les accions \nencaminades a resoldre el conflicte de la situaci\u00f3.", 
  "Xhosa ": "Xosa ", 
@@ -252,7 +252,6 @@ translations = {
  "Inserting %s": "S'est\u00e0 inserint %s", 
  "Scratch": "Scratch", 
  "Float": "Flotant", 
- "Autoevaluacion": "Autoavaluaci\u00f3", 
  "No Shadow": "Sense ombra", 
  "This is the main image where the user will drag \/ drop items to": "Esta es la imatge principal on l'usuari ha d'arrossegar i soltar elements.", 
  "license GFDL": "llic\u00e8ncia GFDL", 

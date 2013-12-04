@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-13 19:28+0100\n"
+"POT-Creation-Date: 2013-12-04 14:33+0100\n"
 "PO-Revision-Date: 2013-11-01 18:57+0100\n"
 "Last-Translator: Karel Werschkull <k.werschkull@summacollege.nl>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
@@ -418,7 +418,7 @@ msgstr "Klik in de volgorde n.a.v. de aanwijzing op de kaart."
 #: exe/engine/sortidevice.py:52 exe/engine/sortidevice.py:134
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
 #: exe/jsui/scripts/app/view/forms/LomSections.js:48
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:46
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:157
 #: exe/webui/galleryblock.py:209
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -728,7 +728,7 @@ msgstr ""
 #: exe/engine/scormmulticlozeidevice.py:116 exe/engine/sortidevice.py:53
 #: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:469
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:471
 msgid "Instructions"
 msgstr "Aanwijzingen"
 
@@ -779,7 +779,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:173
 #: exe/webui/clozefpdblock.py:174 exe/webui/clozefpdblock.py:192
 #: exe/webui/clozelangfpdblock.py:175 exe/webui/clozelangfpdblock.py:193
-#: exe/webui/common.py:386 exe/webui/editorelement.py:148
+#: exe/webui/common.py:388 exe/webui/editorelement.py:148
 #: exe/webui/editorpane.py:255 exe/webui/element.py:2395
 #: exe/webui/element.py:2509 exe/webui/listablock.py:452
 #: exe/webui/questionelement.py:104 exe/webui/reflectionfpdblock.py:142
@@ -851,14 +851,14 @@ msgstr "Niet-interactieve activiteiten"
 #: exe/engine/config.py:64 exe/engine/config.py:69 exe/engine/config.py:91
 #: exe/engine/config.py:92 exe/engine/config.py:93 exe/engine/config.py:95
 #: exe/engine/config.py:99 exe/engine/config.py:100 exe/engine/config.py:101
-#: exe/engine/config.py:102 exe/engine/config.py:105 exe/engine/config.py:106
-#: exe/engine/config.py:107 exe/engine/config.py:108
+#: exe/engine/config.py:102 exe/engine/config.py:104 exe/engine/config.py:105
+#: exe/engine/config.py:106 exe/engine/config.py:107 exe/engine/config.py:108
 msgid "Interactive Activities"
 msgstr "Interactieve activiteiten"
 
 #: exe/engine/config.py:65 exe/engine/config.py:66 exe/engine/config.py:87
 #: exe/engine/config.py:88 exe/engine/config.py:96 exe/engine/config.py:97
-#: exe/engine/config.py:103 exe/engine/config.py:104
+#: exe/engine/config.py:103
 msgid "Non-Textual Information"
 msgstr "Niet-textuele informatie"
 
@@ -1121,7 +1121,7 @@ msgstr "Schaal"
 msgid "Transfer"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:45 exe/webui/hangmanblock.py:328
+#: exe/engine/extendedfieldengine.py:45 exe/webui/hangmanblock.py:329
 msgid "Show Advanced Options"
 msgstr ""
 
@@ -1461,7 +1461,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomSections.js:215
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:292
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:337
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:68
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:179
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Description"
@@ -1848,7 +1848,7 @@ msgstr ""
 
 #: exe/engine/idevicestore.py:596 exe/engine/idevicestore.py:605
 #: exe/engine/idevicestore.py:703 exe/engine/idevicestore.py:712
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:202
 msgid "Objectives"
 msgstr "Doelstellingen"
 
@@ -1869,7 +1869,7 @@ msgstr "Geef de leerdoelstellingen voor deze bron."
 
 #: exe/engine/idevicestore.py:609 exe/engine/idevicestore.py:619
 #: exe/engine/idevicestore.py:716 exe/engine/idevicestore.py:726
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:216
 msgid "Preknowledge"
 msgstr "Voorkennis"
 
@@ -2488,26 +2488,26 @@ msgstr ""
 msgid "Timer CSS"
 msgstr ""
 
-#: exe/engine/memorymatchidevice.py:145
+#: exe/engine/memorymatchidevice.py:152
 msgid "Memory Match Pair Field"
 msgstr ""
 
-#: exe/engine/memorymatchidevice.py:150
+#: exe/engine/memorymatchidevice.py:157
 #, fuzzy
 msgid "Match Tile 1"
 msgstr "Identieke hoofdletters/kleine letters"
 
-#: exe/engine/memorymatchidevice.py:150
+#: exe/engine/memorymatchidevice.py:157
 #, fuzzy
 msgid "Match Tile1"
 msgstr "Identieke hoofdletters/kleine letters"
 
-#: exe/engine/memorymatchidevice.py:151
+#: exe/engine/memorymatchidevice.py:158
 #, fuzzy
 msgid "Match Tile 2"
 msgstr "Identieke hoofdletters/kleine letters"
 
-#: exe/engine/memorymatchidevice.py:151
+#: exe/engine/memorymatchidevice.py:158
 #, fuzzy
 msgid "Match Tile2"
 msgstr "Identieke hoofdletters/kleine letters"
@@ -2617,27 +2617,31 @@ msgstr "Begeleding leraar - tekst"
 msgid "Guidelines Teacher Text:"
 msgstr "Begeleiding leraar - tekst:"
 
-#: exe/engine/package.py:298
+#: exe/engine/package.py:300
 msgid "Topic"
 msgstr "Onderwerp"
 
-#: exe/engine/package.py:298
+#: exe/engine/package.py:300
 msgid "Section"
 msgstr "Element"
 
-#: exe/engine/package.py:298
+#: exe/engine/package.py:300
 msgid "Unit"
 msgstr "Eenheid"
 
-#: exe/engine/package.py:319
+#: exe/engine/package.py:321
 msgid "Home"
 msgstr "Start"
 
-#: exe/engine/package.py:947
+#: exe/engine/package.py:462
+msgid "Metadata creation date"
+msgstr ""
+
+#: exe/engine/package.py:949
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:985 exe/engine/package.py:992
+#: exe/engine/package.py:987 exe/engine/package.py:994
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2646,14 +2650,20 @@ msgstr ""
 "OPSLAAN MISLUKT!\n"
 "Laatst succesvol opgeslagen is %s."
 
-#: exe/engine/package.py:1349 exe/jsui/scripts/app/controller/Toolbar.js:372
+#: exe/engine/package.py:1364 exe/jsui/scripts/app/controller/Toolbar.js:372
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
 msgid "iDevice Editor"
 msgstr "iDevice-editor"
 
-#: exe/engine/package.py:1470
+#: exe/engine/package.py:1485
 msgid "My Catalog"
 msgstr "Mijn catalogus"
+
+#: exe/engine/package.py:1492
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Default"
+msgstr "Standaard"
 
 #: exe/engine/parasabermasfpdidevice.py:30
 msgid "FPD - A Step Ahead"
@@ -3545,9 +3555,9 @@ msgstr ""
 "exe_do: fout: Kan  '%s' niet importeren.\n"
 "De fout was:"
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:287
-#: exe/jsui/mainpage.py:931 exe/jsui/mainpage.py:1095 exe/jsui/mainpage.py:1136
-#: exe/jsui/mainpage.py:1171 exe/jsui/mainpage.py:1192
+#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:288
+#: exe/jsui/mainpage.py:932 exe/jsui/mainpage.py:1096 exe/jsui/mainpage.py:1137
+#: exe/jsui/mainpage.py:1172 exe/jsui/mainpage.py:1193
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3560,8 +3570,8 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "Export bestandsindeling niet geïmplementeerd\t"
 
-#: exe/export/epub3export.py:575 exe/export/imsexport.py:514
-#: exe/export/scormexport.py:834 exe/export/websiteexport.py:94
+#: exe/export/epub3export.py:569 exe/export/imsexport.py:514
+#: exe/export/scormexport.py:849 exe/export/websiteexport.py:94
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3570,28 +3580,108 @@ msgstr ""
 "UITVOER MISLUKT!\n"
 "Laatst geslaagde uitvoer is %s."
 
-#: exe/export/pages.py:75 exe/export/textexport.py:54
+#: exe/export/pages.py:71
+msgid "GNU Free Documentation License"
+msgstr ""
+
+#: exe/export/pages.py:72
+msgid "Creative Commons Attribution License 2.5"
+msgstr ""
+
+#: exe/export/pages.py:73
+msgid "Creative Commons Attribution Share Alike License 2.5"
+msgstr ""
+
+#: exe/export/pages.py:74
+msgid "Creative Commons Attribution No Derivatives License 2.5"
+msgstr ""
+
+#: exe/export/pages.py:75
+msgid "Creative Commons Attribution Non-commercial License 2.5"
+msgstr ""
+
+#: exe/export/pages.py:76
+msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
+msgstr ""
+
+#: exe/export/pages.py:77
+msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
+msgstr ""
+
+#: exe/export/pages.py:78
+msgid "Creative Commons Attribution License 3.0"
+msgstr ""
+
+#: exe/export/pages.py:79
+msgid "Creative Commons Attribution Share Alike License 3.0"
+msgstr ""
+
+#: exe/export/pages.py:80
+msgid "Creative Commons Attribution No Derivatives License 3.0"
+msgstr ""
+
+#: exe/export/pages.py:81
+msgid "Creative Commons Attribution Non-commercial License 3.0"
+msgstr ""
+
+#: exe/export/pages.py:82
+msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
+msgstr ""
+
+#: exe/export/pages.py:83
+msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
+msgstr ""
+
+#: exe/export/pages.py:84
+msgid "Creative Commons Attribution License 4.0"
+msgstr ""
+
+#: exe/export/pages.py:85
+msgid "Creative Commons Attribution Share Alike License 4.0"
+msgstr ""
+
+#: exe/export/pages.py:86
+msgid "Creative Commons Attribution No Derivatives License 4.0"
+msgstr ""
+
+#: exe/export/pages.py:87
+msgid "Creative Commons Attribution Non-commercial License 4.0"
+msgstr ""
+
+#: exe/export/pages.py:88
+msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
+msgstr ""
+
+#: exe/export/pages.py:89
+msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
+msgstr ""
+
+#: exe/export/pages.py:90
+msgid "GNU General Public License"
+msgstr ""
+
+#: exe/export/pages.py:99 exe/export/textexport.py:54
 msgid "Licensed under the"
 msgstr "Dit artikel valt onder de licensiebepalingen van"
 
-#: exe/export/pages.py:78
+#: exe/export/pages.py:102
 #, fuzzy
 msgid "Local Version"
 msgstr "Versie"
 
-#: exe/export/scormexport.py:547 exe/export/websitepage.py:316
+#: exe/export/scormexport.py:562 exe/export/websitepage.py:323
 msgid "Previous"
 msgstr "Vorige"
 
-#: exe/export/scormexport.py:548 exe/export/websitepage.py:322
+#: exe/export/scormexport.py:563 exe/export/websitepage.py:329
 msgid "Next"
 msgstr "Volgende"
 
-#: exe/export/singlepage.py:195
+#: exe/export/singlepage.py:194
 msgid "You can close this window"
 msgstr "U kunt dit venster sluiten"
 
-#: exe/export/websitepage.py:136
+#: exe/export/websitepage.py:135
 msgid "Skip navigation"
 msgstr "Stop navigatie"
 
@@ -3657,19 +3747,19 @@ msgstr "%s invoegen"
 msgid "My iDevices"
 msgstr "Mijn iDevices"
 
-#: exe/jsui/mainpage.py:305 exe/jsui/mainpage.py:770 exe/jsui/mainpage.py:923
+#: exe/jsui/mainpage.py:306 exe/jsui/mainpage.py:771 exe/jsui/mainpage.py:924
 msgid "Cannot access directory named "
 msgstr "Geen toegang tot de map"
 
-#: exe/jsui/mainpage.py:305 exe/jsui/mainpage.py:772 exe/jsui/mainpage.py:923
+#: exe/jsui/mainpage.py:306 exe/jsui/mainpage.py:773 exe/jsui/mainpage.py:924
 msgid ". Please use ASCII names."
 msgstr ". Gebruik alleen ASCII-tekens."
 
-#: exe/jsui/mainpage.py:314
+#: exe/jsui/mainpage.py:315
 msgid "SAVE FAILED!"
 msgstr "OPSLAAN MISLUKT!"
 
-#: exe/jsui/mainpage.py:318 exe/jsui/mainpage.py:626 exe/jsui/mainpage.py:1019
+#: exe/jsui/mainpage.py:319 exe/jsui/mainpage.py:627 exe/jsui/mainpage.py:1020
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3678,22 +3768,22 @@ msgstr ""
 "OPSLAAN MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:322 exe/jsui/mainpage.py:327 exe/jsui/mainpage.py:330
+#: exe/jsui/mainpage.py:323 exe/jsui/mainpage.py:328 exe/jsui/mainpage.py:331
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Bestand opgeslagen naar: %s"
 
-#: exe/jsui/mainpage.py:548 exe/jsui/mainpage.py:654
+#: exe/jsui/mainpage.py:549 exe/jsui/mainpage.py:655
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Bestand directory %s bestaat al, kan niet vervangen"
 
-#: exe/jsui/mainpage.py:568
+#: exe/jsui/mainpage.py:569
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Bestandsnaam %s niet gevonden, kan niet voorvertonen"
 
-#: exe/jsui/mainpage.py:696
+#: exe/jsui/mainpage.py:697
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -3702,11 +3792,11 @@ msgstr ""
 "Compileren MimeTeX mislukt!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:735
+#: exe/jsui/mainpage.py:736
 msgid "Importing HTML..."
 msgstr "HTML-import is bezig"
 
-#: exe/jsui/mainpage.py:741
+#: exe/jsui/mainpage.py:742
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3715,26 +3805,26 @@ msgstr ""
 "De import van LOM Metadata is MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:744
+#: exe/jsui/mainpage.py:745
 msgid "Error importing HTML:\n"
 msgstr "HTLM-imort mislukt:\n"
 
-#: exe/jsui/mainpage.py:793 exe/jsui/mainpage.py:798 exe/jsui/mainpage.py:801
-#: exe/jsui/mainpage.py:804 exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:810
-#: exe/jsui/mainpage.py:815 exe/jsui/mainpage.py:1079 exe/jsui/mainpage.py:1152
+#: exe/jsui/mainpage.py:794 exe/jsui/mainpage.py:799 exe/jsui/mainpage.py:802
+#: exe/jsui/mainpage.py:805 exe/jsui/mainpage.py:808 exe/jsui/mainpage.py:811
+#: exe/jsui/mainpage.py:816 exe/jsui/mainpage.py:1080 exe/jsui/mainpage.py:1153
 msgid "EXPORT FAILED!"
 msgstr "UITVOER MISLUKT!"
 
-#: exe/jsui/mainpage.py:886
+#: exe/jsui/mainpage.py:887
 msgid "Correct XLIFF import"
 msgstr "Juiste XLIFF import"
 
-#: exe/jsui/mainpage.py:889
+#: exe/jsui/mainpage.py:890
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Fout bij import XLIFF: %s"
 
-#: exe/jsui/mainpage.py:932 exe/jsui/mainpage.py:949
+#: exe/jsui/mainpage.py:933 exe/jsui/mainpage.py:950
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -3743,21 +3833,21 @@ msgstr ""
 "UITPAKKEN MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:951
+#: exe/jsui/mainpage.py:952
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Besatand uitgepakt naar: %s"
 
-#: exe/jsui/mainpage.py:963
+#: exe/jsui/mainpage.py:964
 msgid "Directory exists"
 msgstr "Mapnaam bestaat al"
 
-#: exe/jsui/mainpage.py:977 exe/jsui/mainpage.py:1067 exe/jsui/mainpage.py:1083
-#: exe/jsui/mainpage.py:1096 exe/jsui/mainpage.py:1102
-#: exe/jsui/mainpage.py:1120 exe/jsui/mainpage.py:1137
-#: exe/jsui/mainpage.py:1143 exe/jsui/mainpage.py:1157
-#: exe/jsui/mainpage.py:1172 exe/jsui/mainpage.py:1178
-#: exe/jsui/mainpage.py:1193 exe/jsui/mainpage.py:1199
+#: exe/jsui/mainpage.py:978 exe/jsui/mainpage.py:1068 exe/jsui/mainpage.py:1084
+#: exe/jsui/mainpage.py:1097 exe/jsui/mainpage.py:1103
+#: exe/jsui/mainpage.py:1121 exe/jsui/mainpage.py:1138
+#: exe/jsui/mainpage.py:1144 exe/jsui/mainpage.py:1158
+#: exe/jsui/mainpage.py:1173 exe/jsui/mainpage.py:1179
+#: exe/jsui/mainpage.py:1194 exe/jsui/mainpage.py:1200
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3766,12 +3856,12 @@ msgstr ""
 "UITVOER MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1005 exe/jsui/mainpage.py:1052
+#: exe/jsui/mainpage.py:1006 exe/jsui/mainpage.py:1053
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Bestandsnaam %s bestaat al, kan niet vervangen"
 
-#: exe/jsui/mainpage.py:1011 exe/jsui/mainpage.py:1059
+#: exe/jsui/mainpage.py:1012 exe/jsui/mainpage.py:1060
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -3780,25 +3870,25 @@ msgstr ""
 "De map %s bestaat al. Kies een andere naam of verwijder de bestaande map "
 "en probeer opnieuw."
 
-#: exe/jsui/mainpage.py:1025 exe/jsui/mainpage.py:1070
-#: exe/jsui/mainpage.py:1085 exe/jsui/mainpage.py:1104
-#: exe/jsui/mainpage.py:1122 exe/jsui/mainpage.py:1145
-#: exe/jsui/mainpage.py:1159 exe/jsui/mainpage.py:1180
-#: exe/jsui/mainpage.py:1201
+#: exe/jsui/mainpage.py:1026 exe/jsui/mainpage.py:1071
+#: exe/jsui/mainpage.py:1086 exe/jsui/mainpage.py:1105
+#: exe/jsui/mainpage.py:1123 exe/jsui/mainpage.py:1146
+#: exe/jsui/mainpage.py:1160 exe/jsui/mainpage.py:1181
+#: exe/jsui/mainpage.py:1202
 #, python-format
 msgid "Exported to %s"
 msgstr "Geëxporteerd naar %s"
 
-#: exe/jsui/mainpage.py:1234 exe/webui/stylemanagerpage.py:128
+#: exe/jsui/mainpage.py:1235 exe/webui/stylemanagerpage.py:128
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Bestand %s bestaat niet of is niet leesbaar."
 
-#: exe/jsui/mainpage.py:1238
+#: exe/jsui/mainpage.py:1239
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Kan het bestand niet laden, email bestand naar bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1241
+#: exe/jsui/mainpage.py:1242
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3807,7 +3897,7 @@ msgstr ""
 "Sorry, fout bestandsformaat:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1243
+#: exe/jsui/mainpage.py:1244
 msgid "Sorry, wrong file format"
 msgstr "Sorry, fout bestandsformaat"
 
@@ -3821,7 +3911,7 @@ msgstr "Opslaan instellingen niet gelukt"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:159
 #: exe/jsui/scripts/app/controller/MainTab.js:216
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:371
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:482
 msgid "Show Image"
 msgstr "Toon afbeelding"
 
@@ -3853,7 +3943,7 @@ msgstr "Afbeeldingsbestanden"
 #: exe/jsui/scripts/app/controller/Toolbar.js:728
 #: exe/jsui/scripts/app/controller/Toolbar.js:864
 #: exe/jsui/scripts/app/controller/Toolbar.js:943
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:143
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:141
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:44
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:226
 msgid "All Files"
@@ -3866,8 +3956,8 @@ msgstr "Instellingen opgeslagen"
 #: exe/jsui/scripts/app/controller/MainTab.js:240
 #: exe/jsui/scripts/app/controller/MainTab.js:245
 #: exe/jsui/scripts/app/controller/MainTab.js:277
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:137
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:173
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:135
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:171
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:37
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:83
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:115
@@ -4180,8 +4270,8 @@ msgstr "Open"
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:121
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:197
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:227
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:469
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:163
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:580
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:161
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:258
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Save"
@@ -4209,8 +4299,8 @@ msgid "Dublin Core Metadata"
 msgstr "Dublin Core Metadata"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:45
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:47
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:50
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:158
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:161
 msgid "The name given to the resource."
 msgstr "Geef de leerdoelstellingen voor deze bron."
 
@@ -4244,8 +4334,8 @@ msgstr ""
 "classificatieschema."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:71
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:78
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:82
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:189
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:193
 msgid "An account of the content of the resource."
 msgstr "Een account van de broninhoud."
 
@@ -4349,15 +4439,15 @@ msgstr "Een referentie naar de bron waaruit dit werk is afgeleid."
 #: exe/jsui/scripts/app/view/forms/LomSections.js:81
 #: exe/jsui/scripts/app/view/forms/LomSections.js:123
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:477
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:59
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:170
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "Taal"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:61
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:64
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:172
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:175
 msgid "Select a language."
 msgstr "Kies de taal"
 
@@ -4517,7 +4607,7 @@ msgstr "Taxon"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:186
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:216
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:77
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:188
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:66
@@ -4676,9 +4766,9 @@ msgid "Interactivity Type"
 msgstr "soort interactiviteit"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:114
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:148
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:150
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:153
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:259
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:261
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:264
 msgid "Learning Resource Type"
 msgstr "soort lesmateriaal"
 
@@ -4695,9 +4785,9 @@ msgid "Intended End User Role"
 msgstr "Bedoelde rol van de eindgebruiker"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:118
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:257
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:258
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:280
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:368
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:369
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:391
 msgid "Context"
 msgstr "context"
 
@@ -4827,191 +4917,267 @@ msgstr "Let op!"
 msgid "Should be at least one section of this type"
 msgstr "Moet minstens een gedeele van dit type zijn"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:33
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:59
+msgid "creative commons: attribution 4.0"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:63
+msgid "creative commons: attribution - non derived work 4.0"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:67
+msgid "creative commons: attribution - non derived work - non commercial 4.0"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:71
+msgid "creative commons: attribution - non commercial 4.0"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:75
+msgid "creative commons: attribution - non commercial - share alike 4.0"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:79
+msgid "creative commons: attribution - share alike 4.0"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:83
+msgid "creative commons: attribution 3.0"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:87
+msgid "creative commons: attribution - non derived work 3.0"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
+msgid "creative commons: attribution - non derived work - non commercial 3.0"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:95
+msgid "creative commons: attribution - non commercial 3.0"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:99
+msgid "creative commons: attribution - non commercial - share alike 3.0"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:103
+msgid "creative commons: attribution - share alike 3.0"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:107
+msgid "creative commons: attribution 2.5"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
+msgid "creative commons: attribution - non derived work 2.5"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
+msgid "creative commons: attribution - non derived work - non commercial 2.5"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
+msgid "creative commons: attribution - non commercial 2.5"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
+msgid "creative commons: attribution - non commercial - share alike 2.5"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
+msgid "creative commons: attribution - share alike 2.5"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:144
 msgid "Cataloguing"
 msgstr "catalogiseren"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:92
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:96
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:207
 msgid "Objectives."
 msgstr "Doelstellingen"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:106
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:110
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:217
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:221
 msgid "Preknowledge."
 msgstr "Voorkennis"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:232
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Author"
 msgstr "Auteur"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:233
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:236
 msgid "Primary author of the resource."
 msgstr "Hoofdauteur van het bronmateriaal"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:134
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:245
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:10
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:19
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "License"
 msgstr "Licentie"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:136
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:139
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:247
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:250
 msgid "Select a license."
 msgstr "Kies een licentie"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:157
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:268
 msgid "Usage"
 msgstr "Gebruik"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:197
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:278
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:279
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:308
 msgid "Intended End User"
 msgstr "Bedoelde eindgebruiker"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:173
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:284
 msgid "Ordinary Learner"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:181
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:292
 #, fuzzy
 msgid "Special Needs Learner"
 msgstr "zwakke leerling"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:188
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:299
 #, fuzzy
 msgid "Gifted Learner"
 msgstr "begaafde leerling"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:204
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:205
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:222
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:315
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:316
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:333
 msgid "For Group Work"
 msgstr "Voor groepswerk"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:229
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:247
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:340
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:341
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:358
 msgid "For Individual Tuition"
 msgstr "Voor zelfstudie"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:263
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:374
 #, fuzzy
 msgid "Classroom"
 msgstr "klaslokaal"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:271
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:382
 #, fuzzy
 msgid "Real Environment"
 msgstr "echte omgeving"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:290
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:291
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:320
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:401
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:402
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:431
 msgid "Modality"
 msgstr "Modaliteit"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:296
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:407
 #, fuzzy
 msgid "Face to Face"
 msgstr "onder vier ogen"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:304
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:415
 #, fuzzy
 msgid "Blended"
 msgstr "blended"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:311
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:422
 #, fuzzy
 msgid "Distance"
 msgstr "afstandelijkheid"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:328
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:439
 msgid "Project Properties"
 msgstr "Project kenmerken"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:342
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:453
 msgid "Header Background"
 msgstr "Achtergrond van de koptekst"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:346
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:457
 msgid "Background image for a header (an image 100px high is recommended)."
 msgstr ""
 "Achtergrondafbeelding voor een koptekst (een afbeelding met een hoogte "
 "van van 100px  wordt aaangeraden)."
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:364
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:475
 msgid "Load Image"
 msgstr "Laad afbeelding"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:377
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:488
 msgid "Clear Image"
 msgstr "Wis afbeeldinf"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:384
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:495
 msgid "Tile background image?"
 msgstr "Titel van de achtergrond afbeelding?"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:398
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:509
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Footer"
 msgstr "Voettekst"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:399
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:510
 msgid "Web pages footer."
 msgstr "Voettekst van de webpagina's"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:407
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:518
 msgid "Taxonomy"
 msgstr "Taxonomie"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:416
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:527
 msgid "Level 1"
 msgstr "Niveau 1"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:417
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:528
 msgid "Default name for level 1 nodes"
 msgstr "Standaard naam voor nodes op niveau 1"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:423
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:534
 msgid "Level 2"
 msgstr "Niveau 2"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:424
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:535
 msgid "Default name for level 2 nodes"
 msgstr "Standaard naam voor nodes op niveau 2"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:430
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:541
 msgid "Level 3"
 msgstr "Niveau 3"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:431
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:542
 msgid "Default name for level 3 nodes"
 msgstr "Standaard naam voor nodes op niveau 3"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:436
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:547
 msgid "Update Tree"
 msgstr "Actualiseer boomstructuur"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:443
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:554
 msgid "Advanced Options"
 msgstr "Geavanceerde opties"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:456
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:567
 msgid "Create package compatible with old eXe versions?"
 msgstr "Pakket aanmaken dat compatibel is met oudere eXe versies?"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:460
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:463
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:571
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:574
 msgid "Checking this option, the saved package may be opened with eXe >= 0.20.4"
 msgstr ""
 "Als u deze optie aanvinkt kan het opgeslagen pakket geopend worden met "
 "eXeLearning vanaf versie 0.20.4"
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:26
+msgid "Select Browser"
+msgstr "Kies een browser"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:44
 msgid "Select Language"
@@ -5033,11 +5199,7 @@ msgstr "Interne Auto-Top Linking uitschakelen"
 msgid "Disable All Internal Linking"
 msgstr "Interne hyperlinks volledig uitschakelen"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:80
-msgid "Select Browser"
-msgstr "Kies een browser"
-
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:191
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:189
 msgid "Show this window on eXe start"
 msgstr "Toon dit venster als eXe opstart"
 
@@ -5112,10 +5274,6 @@ msgstr "Schema"
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:125
 msgid "Ungroup iDevices"
 msgstr "Hef groepering van iDevices op"
-
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:90
-msgid "Group iDevices"
-msgstr "Groepeer iDevices"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:100
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:105
@@ -5372,6 +5530,10 @@ msgid ""
 msgstr ""
 "Als U deze pagina sluit, blijft eXe toch actief. Gebruik a.u.b. het menu "
 "Bestand->Afsluiten als U het programma echt wilt afsluiten. "
+
+#: exe/jsui/scripts/exe.js:193 exe/jsui/scripts/app/view/ui/LeftPanel.js:90
+msgid "Group iDevices"
+msgstr "Groepeer iDevices"
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
@@ -6870,34 +7032,42 @@ msgid "distance"
 msgstr "afstandelijkheid"
 
 #: exe/jsui/scripts/lomvocab.js:1268
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:27
 msgid "propietary license"
 msgstr "eigendomslicentie"
 
 #: exe/jsui/scripts/lomvocab.js:1272
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:31
 msgid "free software license EUPL"
 msgstr "gratis software licentie EUPL"
 
 #: exe/jsui/scripts/lomvocab.js:1276
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:35
 msgid "free software license GPL"
 msgstr "gratis softwarelicentie GPL"
 
 #: exe/jsui/scripts/lomvocab.js:1280
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
 msgid "dual free content license GPL and EUPL"
 msgstr "tweeledige gratis content licentie GPL en EUPL"
 
 #: exe/jsui/scripts/lomvocab.js:1284
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:43
 msgid "other free software licenses"
 msgstr "andere gratis software licenties"
 
 #: exe/jsui/scripts/lomvocab.js:1288
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:47
 msgid "public domain"
 msgstr "public domain"
 
 #: exe/jsui/scripts/lomvocab.js:1292
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:51
 msgid "not appropriate"
 msgstr "niet gepast"
 
 #: exe/jsui/scripts/lomvocab.js:1296
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:55
 msgid "intellectual property license"
 msgstr "Licentie voor intellectueel eigendom"
 
@@ -6926,6 +7096,7 @@ msgid "creative commons: attribution - share alike"
 msgstr "crative commons: attribuut - Gelijk delen"
 
 #: exe/jsui/scripts/lomvocab.js:1324
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:131
 msgid "license GFDL"
 msgstr "licentie GFDL"
 
@@ -7103,8 +7274,8 @@ msgstr "Pedagogische hulp"
 msgid "Information"
 msgstr "Aanwijzingen"
 
-#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:484
-#: exe/webui/common.py:485 exe/webui/editorpane.py:364
+#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:486
+#: exe/webui/common.py:487 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386 exe/webui/element.py:2807
 #: exe/webui/element.py:2808 exe/webui/truefalseelement.py:152
@@ -7190,26 +7361,26 @@ msgstr "Oplossing"
 msgid "Now It's Your Turn"
 msgstr "Nu ben jij aan de beurt"
 
-#: exe/webui/common.py:181
+#: exe/webui/common.py:183
 msgid "Show"
 msgstr "Tonen"
 
-#: exe/webui/common.py:182 exe/webui/reflectionblock.py:120
+#: exe/webui/common.py:184 exe/webui/reflectionblock.py:120
 #: exe/webui/reflectionfpdblock.py:128
 msgid "Hide"
 msgstr "Verbergen"
 
-#: exe/webui/common.py:183
+#: exe/webui/common.py:185
 msgid "Menu"
 msgstr "Menu"
 
-#: exe/webui/common.py:204 exe/webui/editorpage.py:233
+#: exe/webui/common.py:206 exe/webui/editorpage.py:233
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : elearning XHTML-editor"
 
-#: exe/webui/common.py:475 exe/webui/common.py:479
+#: exe/webui/common.py:477 exe/webui/common.py:481
 msgid "Click for completion instructions"
 msgstr "Klik voor aanwijzingen"
 
@@ -7718,23 +7889,23 @@ msgid ""
 " or words - you can delete unused ones."
 msgstr ""
 
-#: exe/webui/hangmanblock.py:349
+#: exe/webui/hangmanblock.py:350
 msgid "Remove This Life"
 msgstr "Verwijder dit leven"
 
-#: exe/webui/hangmanblock.py:351
+#: exe/webui/hangmanblock.py:352
 msgid "Add Chance"
 msgstr "Voeg een kans toe"
 
-#: exe/webui/hangmanblock.py:356
+#: exe/webui/hangmanblock.py:357
 msgid "<h2>Words to Guess</h2>"
 msgstr ""
 
-#: exe/webui/hangmanblock.py:365
+#: exe/webui/hangmanblock.py:366
 msgid "Remove This Word"
 msgstr "Verwijder dit woord"
 
-#: exe/webui/hangmanblock.py:367
+#: exe/webui/hangmanblock.py:368
 msgid "Add Word"
 msgstr "Voeg een woord toe"
 
@@ -7796,14 +7967,14 @@ msgid ""
 "button at the bottom and enter in the matching pairs for the game"
 msgstr ""
 
-#: exe/webui/memorymatchblock.py:177
+#: exe/webui/memorymatchblock.py:187
 msgid ""
 "<p>Click the button below to create the matching pairs or \n"
 "                trim in case you reduced the number of rows / columns</p>"
 "\n"
 msgstr ""
 
-#: exe/webui/memorymatchblock.py:179
+#: exe/webui/memorymatchblock.py:189
 msgid "Create / Trim Pairs"
 msgstr ""
 
@@ -7853,15 +8024,15 @@ msgstr ""
 msgid "Add Placable Object"
 msgstr ""
 
-#: exe/webui/preferencespage.py:151
+#: exe/webui/preferencespage.py:142
 msgid "Default browser in your system"
 msgstr "Standaard browser op uw computer"
 
-#: exe/webui/preferencespage.py:180
+#: exe/webui/preferencespage.py:173
 msgid "Failed to get preferences"
 msgstr "Ophalen voorkeuren niet gelukt"
 
-#: exe/webui/preferencespage.py:208
+#: exe/webui/preferencespage.py:198
 msgid "Failed to save preferences"
 msgstr "Opslaan voorkeuren niet gelukt"
 
@@ -8523,11 +8694,6 @@ msgstr "Cellen samenvoegen"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Insert/Edit Table"
 msgstr "Tabel invoegen/bewerken"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-msgid "Default"
-msgstr "Standaard"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1

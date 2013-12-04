@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2013-11-13 19:28+0100\nPO-Revision-Date: 2013-12-02 16:48+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage: pt\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2013-12-04 14:33+0100\nPO-Revision-Date: 2013-12-02 16:48+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage: pt\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Atividade drop-down", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Criar a hist\u00f3ria do caso. Um bom caso \u00e9 aquele \nque descreve uma controv\u00e9rsia ou apresenta uma cena descrevendo as personagens \nenvolvidas e a situa\u00e7\u00e3o. Deve permitir decidir a\u00e7\u00f5es \nque levem \u00e0 resolu\u00e7\u00e3o da situa\u00e7\u00e3o.  ", 
  "Xhosa ": "Xhosa ", 
@@ -1526,7 +1526,6 @@ translations = {
  "Base URL": "URL Base", 
  "free software license GPL": "licen\u00e7a de software livre GPL", 
  "isversionof": "\u00e9 uma vers\u00e3o de", 
- "by": "por", 
  "Loop": "Repeti\u00e7\u00e3o autom\u00e1tica", 
  "Width of Cells (in pixels)": "Largura das c\u00e9lulas (em p\u00edxeis)", 
  "Comment": "Coment\u00e1rio", 
