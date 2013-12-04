@@ -1,6 +1,6 @@
 # eXeLearning Spanish PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2001-2013 EXELearning.net
+# Copyright (C) 2011-2013 EXELearning.net
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
 # Asociacion Cultural Reggae <acreggae@acreggae.com>\n", 2009.
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-12-04 14:33+0100\n"
-"PO-Revision-Date: 2013-11-29 20:49+0100\n"
+"PO-Revision-Date: 2013-12-04 16:18+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -2652,7 +2652,7 @@ msgstr "Inicio"
 
 #: exe/engine/package.py:462
 msgid "Metadata creation date"
-msgstr ""
+msgstr "Fecha de creación de los metadatos"
 
 #: exe/engine/package.py:949
 msgid "?????"
@@ -3646,87 +3646,87 @@ msgstr ""
 
 #: exe/export/pages.py:71
 msgid "GNU Free Documentation License"
-msgstr ""
+msgstr "Licencia de Documentación Libre de GNU (GNU Free Documentation License)"
 
 #: exe/export/pages.py:72
 msgid "Creative Commons Attribution License 2.5"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento 2.5"
 
 #: exe/export/pages.py:73
 msgid "Creative Commons Attribution Share Alike License 2.5"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento Compartir igual 2.5"
 
 #: exe/export/pages.py:74
 msgid "Creative Commons Attribution No Derivatives License 2.5"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento Sin obra derivada 2.5"
 
 #: exe/export/pages.py:75
 msgid "Creative Commons Attribution Non-commercial License 2.5"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento No comercial 2.5"
 
 #: exe/export/pages.py:76
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento No comercial Compartir igual 2.5"
 
 #: exe/export/pages.py:77
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento No comercial Sin obra derivada 2.5"
 
 #: exe/export/pages.py:78
 msgid "Creative Commons Attribution License 3.0"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento 3.0"
 
 #: exe/export/pages.py:79
 msgid "Creative Commons Attribution Share Alike License 3.0"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento Compartir igual 3.0"
 
 #: exe/export/pages.py:80
 msgid "Creative Commons Attribution No Derivatives License 3.0"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento Sin obra derivada 3.0"
 
 #: exe/export/pages.py:81
 msgid "Creative Commons Attribution Non-commercial License 3.0"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento No comercial 3.0"
 
 #: exe/export/pages.py:82
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento No comercial Compartir igual 3.0"
 
 #: exe/export/pages.py:83
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento No comercial Sin obra derivada 3.0"
 
 #: exe/export/pages.py:84
 msgid "Creative Commons Attribution License 4.0"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento 4.0"
 
 #: exe/export/pages.py:85
 msgid "Creative Commons Attribution Share Alike License 4.0"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento Compartir igual 4.0"
 
 #: exe/export/pages.py:86
 msgid "Creative Commons Attribution No Derivatives License 4.0"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento Sin obra derivada 4.0"
 
 #: exe/export/pages.py:87
 msgid "Creative Commons Attribution Non-commercial License 4.0"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento No comercial 4.0"
 
 #: exe/export/pages.py:88
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0"
 
 #: exe/export/pages.py:89
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento No comercial Sin obra derivada 4.0"
 
 #: exe/export/pages.py:90
 msgid "GNU General Public License"
-msgstr ""
+msgstr "Licencia Pública General GNU (GNU General Public License, GPL) "
 
 #: exe/export/pages.py:99 exe/export/textexport.py:54
 msgid "Licensed under the"
-msgstr "Obra colocada bajo licencia"
+msgstr "Obra publicada con"
 
 #: exe/export/pages.py:102
 msgid "Local Version"
@@ -4988,75 +4988,75 @@ msgstr "Debe haber al menos una sección de este tipo"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:59
 msgid "creative commons: attribution 4.0"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:63
 msgid "creative commons: attribution - non derived work 4.0"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - sin obra derivada 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:67
 msgid "creative commons: attribution - non derived work - non commercial 4.0"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - sin obra derivada - no comercial 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:71
 msgid "creative commons: attribution - non commercial 4.0"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - no comercial 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:75
 msgid "creative commons: attribution - non commercial - share alike 4.0"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - no comercial - compartir igual 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:79
 msgid "creative commons: attribution - share alike 4.0"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - compartir igual 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:83
 msgid "creative commons: attribution 3.0"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:87
 msgid "creative commons: attribution - non derived work 3.0"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - sin obra derivada 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
 msgid "creative commons: attribution - non derived work - non commercial 3.0"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - sin obra derivada - no comercial 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:95
 msgid "creative commons: attribution - non commercial 3.0"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - no comercial 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:99
 msgid "creative commons: attribution - non commercial - share alike 3.0"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - no comercial - compartir igual 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:103
 msgid "creative commons: attribution - share alike 3.0"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - compartir igual 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:107
 msgid "creative commons: attribution 2.5"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
 msgid "creative commons: attribution - non derived work 2.5"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - obra no derivada 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
 msgid "creative commons: attribution - non derived work - non commercial 2.5"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - sin obra derivada - no comercial 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
 msgid "creative commons: attribution - non commercial 2.5"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - no comercial 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
 msgid "creative commons: attribution - non commercial - share alike 2.5"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - no comercial - compartir igual 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
 msgid "creative commons: attribution - share alike 2.5"
-msgstr ""
+msgstr "Creative Commons: Reconocimiento - compartir igual 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:144
 msgid "Cataloguing"
@@ -11168,4 +11168,3 @@ msgstr ""
 
 #~ msgid "by"
 #~ msgstr "por"
-
