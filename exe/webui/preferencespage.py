@@ -29,6 +29,7 @@ import json
 from twisted.web.resource      import Resource
 from exe.webui.renderable      import RenderableResource
 import mywebbrowser
+import os.path
 
 log = logging.getLogger(__name__)
 
@@ -164,7 +165,7 @@ class PreferencesPage(RenderableResource):
             if (self.config.browser.basename in browserNames):
                 browserSelected = self.config.browser.basename
             else:
-                if (self.config.browser.name!=''):
+                if (os.path.exists(self.config.browser.name)):
                     browserSelected = self.config.browser.name
             data['browser'] = browserSelected
             data['showPreferencesOnStart'] = self.config.showPreferencesOnStart
@@ -189,6 +190,7 @@ class PreferencesPage(RenderableResource):
             self.config.configParser.set('user', 'internalAnchors', internalAnchors)
             browser = request.args['browser'][0]
             self.config.browser.name=browser
+            self.config.browser.basename=browser
             self.config.configParser.set('system', 'browser', browser)
             showPreferencesOnStart = request.args['showPreferencesOnStart'][0]
             self.config.showPreferencesOnStart = showPreferencesOnStart
