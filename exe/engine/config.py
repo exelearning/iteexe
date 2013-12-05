@@ -196,6 +196,7 @@ class Config:
         self.loadStyles()
 
 
+
     def _overrideDefaultVals(self):
         """
         Override this to override the
@@ -343,22 +344,19 @@ class Config:
         # new installation) create it
         if not self.configDir.exists():
             self.configDir.mkdir()
-		#FM: Copy styles
-        if not G.application.standalone:
-            if not self.stylesDir.exists():
-                #self.stylesDir.mkdir()
-                actstyle=self.webDir/'style'
-                if actstyle.exists():
-                    shutil.copytree(actstyle, self.stylesDir)
-            if not Path(self.stylesDir/self.defaultStyle).exists():
-                actstyle=self.webDir/'style'/self.defaultStyle
-                shutil.copytree(actstyle, self.stylesDir/self.defaultStyle)
+		
+        if not G.application.standalone: 
+             #FM: Copy styles         
+            if not os.path.exists(self.stylesDir) or not os.listdir(self.stylesDir):
+                self.copyStyles()                       
         else:
             if G.application.portable:
                 if os.name == 'posix': 
                     self.stylesDir      = Path(self.webDir/'..'/'..'/'..'/'style')
                 else: 
                     self.stylesDir      = Path(self.webDir/'..'/'style')
+                if not os.path.exists(self.stylesDir) or not os.listdir(self.stylesDir): 
+                    self.copyStyles()
             else:
                 self.stylesDir     = Path(self.webDir/'style').abspath()
             
@@ -476,7 +474,15 @@ class Config:
         for style in listStyles:
             self.styles.append(style)
             #print style
-
+            
+    def copyStyles(self):
+        bkstyle=self.webDir/'style'
+        dststyle=self.stylesDir
+        if os.path.exists(bkstyle):            
+            if os.path.exists(dststyle) and not os.listdir(self.stylesDir): shutil.rmtree(dststyle)                 
+            shutil.copytree(bkstyle,dststyle )
+                    
+                    
 
     def loadLocales(self):
         """
