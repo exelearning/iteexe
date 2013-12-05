@@ -2776,7 +2776,7 @@ msgstr "Cubre el área principal cuando el jugador se equivoca en su intento"
 
 #: exe/engine/placetheobjectsidevice.py:79
 msgid "Number of Columns in part bin"
-msgstr "Nḿero de columnas en la caja de piezas"
+msgstr "Número de columnas en la caja de piezas"
 
 #: exe/engine/placetheobjectsidevice.py:79
 msgid "Columns part bin"

@@ -1051,7 +1051,7 @@ translations = {
  "not appropriate": "no corresponde", 
  "Taxon Path": "Ruta taxon\u00f3mica", 
  "Templates": "Plantillas", 
- "Number of Columns in part bin": "N\u1e3fero de columnas en la caja de piezas", 
+ "Number of Columns in part bin": "N\u00famero de columnas en la caja de piezas", 
  "Yoruba ": "Yoruba ", 
  "Delete option": "Eliminar opci\u00f3n", 
  "Enter the flash display \ndimensions (in pixels) and determine the alignment of the image on screen. \nThe width and height dimensions will alter proportionally.": "Introduzca las dimensiones del archivo flash  \n (en p\u00edxeles) y determine su alineaci\u00f3n en la pantalla. \nEl largo y ancho se alterar\u00e1n proporcionalmente.", 
