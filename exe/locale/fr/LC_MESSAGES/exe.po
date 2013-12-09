@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-04 14:33+0100\n"
-"PO-Revision-Date: 2013-12-05 20:21+0100\n"
+"PO-Revision-Date: 2013-12-06 13:09+0100\n"
 "Last-Translator: Jesús Miguel Domínguez <miguelcaliban@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "Language: fr\n"
@@ -2558,9 +2558,8 @@ msgid "Home"
 msgstr "Titre de séquence"
 
 #: exe/engine/package.py:462
-#, fuzzy
 msgid "Metadata creation date"
-msgstr "Schéma de métadonnées"
+msgstr "Date de crétaion des métadonnées"
 
 #: exe/engine/package.py:949
 msgid "?????"
@@ -3525,102 +3524,95 @@ msgstr ""
 
 #: exe/export/pages.py:71
 msgid "GNU Free Documentation License"
-msgstr ""
+msgstr "Licence de documentation libre GNU"
 
 #: exe/export/pages.py:72
-#, fuzzy
 msgid "Creative Commons Attribution License 2.5"
-msgstr "creative commons: attribution"
+msgstr "Creative Commons: Licence d'attribution 2.5"
 
 #: exe/export/pages.py:73
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike License 2.5"
-msgstr "creative commons: attribution - partage identique"
+msgstr "Creative Commons: Licence d'attribution en partage identique 2.5"
 
 #: exe/export/pages.py:74
-#, fuzzy
 msgid "Creative Commons Attribution No Derivatives License 2.5"
-msgstr "creative commons: attribution - travail non modifié"
+msgstr "Creative Commons: Licence d'attribution en travail non modifié 2.5"
 
 #: exe/export/pages.py:75
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial License 2.5"
-msgstr "creative commons: attribution - non commercial"
+msgstr "Creative Commons: Licence d'attribution non commercial 2.5"
 
 #: exe/export/pages.py:76
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
-msgstr "creative commons: attribution - non commercial - partage identique"
+msgstr ""
+"Creative Commons: Licence d'attribution en partage identique non commercial "
+"2.5"
 
 #: exe/export/pages.py:77
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
-msgstr "creative commons: attribution - non commercial - partage identique"
+msgstr ""
+"Creative Commons: Licence d'attribution en travail non commercial et non "
+"modifié 2.5"
 
 #: exe/export/pages.py:78
-#, fuzzy
 msgid "Creative Commons Attribution License 3.0"
-msgstr "creative commons: attribution"
+msgstr "Creative Commons: Licence d'attribution 3.0"
 
 #: exe/export/pages.py:79
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike License 3.0"
-msgstr "creative commons: attribution - partage identique"
+msgstr "Creative Commons: Licence d'attribution en partage identique 3.0"
 
 #: exe/export/pages.py:80
-#, fuzzy
 msgid "Creative Commons Attribution No Derivatives License 3.0"
-msgstr "creative commons: attribution - travail non modifié"
+msgstr "Creative Commons: Licence d'attribution en travail non modifié 3.0"
 
 #: exe/export/pages.py:81
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial License 3.0"
-msgstr "creative commons: attribution - non commercial"
+msgstr "Creative Commons: Licence d'attribution non commercial 3.0"
 
 #: exe/export/pages.py:82
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
-msgstr "creative commons: attribution - non commercial - partage identique"
+msgstr ""
+"Creative Commons: Licence d'attribution en partage identique non commercial "
+"3.0"
 
 #: exe/export/pages.py:83
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
-msgstr "creative commons: attribution - non commercial - partage identique"
+msgstr ""
+"Creative Commons: Licence d'attribution en travail non commercial et non "
+"modifié 3.0"
 
 #: exe/export/pages.py:84
-#, fuzzy
 msgid "Creative Commons Attribution License 4.0"
-msgstr "creative commons: attribution"
+msgstr "Creative Commons: Licence d'attribution 4.0"
 
 #: exe/export/pages.py:85
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike License 4.0"
-msgstr "creative commons: attribution - partage identique"
+msgstr "Creative Commons: Licence d'attribution en partage identique 4.0"
 
 #: exe/export/pages.py:86
-#, fuzzy
 msgid "Creative Commons Attribution No Derivatives License 4.0"
-msgstr "creative commons: attribution - travail non modifié"
+msgstr "Creative Commons: Licence d'attribution en travail non modifié 4.0"
 
 #: exe/export/pages.py:87
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial License 4.0"
-msgstr "creative commons: attribution - non commercial"
+msgstr "Creative Commons: Licence d'attribution non commercial 4.0"
 
 #: exe/export/pages.py:88
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
-msgstr "creative commons: attribution - non commercial - partage identique"
+msgstr ""
+"Creative Commons: Licence d'attribution en partage identique et non "
+"commercial 4.0"
 
 #: exe/export/pages.py:89
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
-msgstr "creative commons: attribution - non commercial - partage identique"
+msgstr ""
+"Creative Commons: Licence d'attribution en travail non commercial et non "
+"modifié 4.0"
 
 #: exe/export/pages.py:90
-#, fuzzy
 msgid "GNU General Public License"
-msgstr "public en général"
+msgstr "Licence publique générale GNU"
 
 #: exe/export/pages.py:99 exe/export/textexport.py:54
 msgid "Licensed under the"
@@ -4889,94 +4881,79 @@ msgid "Should be at least one section of this type"
 msgstr "Au moins une section de ce type est necessaire"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:59
-#, fuzzy
 msgid "creative commons: attribution 4.0"
-msgstr "creative commons: attribution"
+msgstr "Creative Commons: Attribution 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:63
-#, fuzzy
 msgid "creative commons: attribution - non derived work 4.0"
-msgstr "creative commons: attribution - travail non modifié"
+msgstr "Creative Commons: Attribution - travail non dérivé 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:67
-#, fuzzy
 msgid "creative commons: attribution - non derived work - non commercial 4.0"
-msgstr "creative commons: attribution - travail non modifié - non commercial"
+msgstr ""
+"Creative Commons: attribution - travail non modifié - non commercial 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:71
-#, fuzzy
 msgid "creative commons: attribution - non commercial 4.0"
-msgstr "creative commons: attribution - non commercial"
+msgstr "Creative Commons: attribution - non commercial 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:75
-#, fuzzy
 msgid "creative commons: attribution - non commercial - share alike 4.0"
-msgstr "creative commons: attribution - non commercial - partage identique"
+msgstr "Creative Commons: attribution - non commercial - partage identique 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:79
-#, fuzzy
 msgid "creative commons: attribution - share alike 4.0"
-msgstr "creative commons: attribution - partage identique"
+msgstr "Creative Commons: attribution - partage identique 4-0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:83
-#, fuzzy
 msgid "creative commons: attribution 3.0"
-msgstr "creative commons: attribution"
+msgstr "Creative Commons: attribution 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:87
-#, fuzzy
 msgid "creative commons: attribution - non derived work 3.0"
-msgstr "creative commons: attribution - travail non modifié"
+msgstr "Creative Commons: attribution - travail non modifié 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
-#, fuzzy
 msgid "creative commons: attribution - non derived work - non commercial 3.0"
-msgstr "creative commons: attribution - travail non modifié - non commercial"
+msgstr ""
+"Creative Commons: attribution - travail non modifié - non commercial 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:95
-#, fuzzy
 msgid "creative commons: attribution - non commercial 3.0"
-msgstr "creative commons: attribution - non commercial"
+msgstr "Creative Commons: attribution - non commercial 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:99
-#, fuzzy
 msgid "creative commons: attribution - non commercial - share alike 3.0"
-msgstr "creative commons: attribution - non commercial - partage identique"
+msgstr "Creative Commons: attribution - non commercial - partage identique 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:103
-#, fuzzy
 msgid "creative commons: attribution - share alike 3.0"
-msgstr "creative commons: attribution - partage identique"
+msgstr "Creative Commons: attribution - partage identique 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:107
-#, fuzzy
 msgid "creative commons: attribution 2.5"
-msgstr "creative commons: attribution"
+msgstr "Creative Commons: attribution 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
-#, fuzzy
 msgid "creative commons: attribution - non derived work 2.5"
-msgstr "creative commons: attribution - travail non modifié"
+msgstr "Creative Commons: attribution - travail non modifié 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
-#, fuzzy
 msgid "creative commons: attribution - non derived work - non commercial 2.5"
-msgstr "creative commons: attribution - travail non modifié - non commercial"
+msgstr ""
+"Creative Commons: attribution - travail non modifié - non commercial 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
-#, fuzzy
 msgid "creative commons: attribution - non commercial 2.5"
-msgstr "creative commons: attribution - non commercial"
+msgstr "Creative Commons: attribution - non commercial 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
-#, fuzzy
 msgid "creative commons: attribution - non commercial - share alike 2.5"
-msgstr "creative commons: attribution - non commercial - partage identique"
+msgstr "Creative Commons: attribution - non commercial - partage identique 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
-#, fuzzy
 msgid "creative commons: attribution - share alike 2.5"
-msgstr "creative commons: attribution - partage identique"
+msgstr "Creative Commons: attribution - partage identique 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:144
 msgid "Cataloguing"
