@@ -40,7 +40,7 @@ class ClozeIdevice(Idevice):
     Holds a paragraph with words missing that the student must fill in
     """
     
-    persistenceVersion = 4
+    persistenceVersion = 5
 
     def __init__(self, parentNode=None):
         """
@@ -303,4 +303,13 @@ click on the Hide/Show Word button below.</p>"""))
         Upgrades to v0.20.3
         """
         self.isCloze = True
+    
+    def upgradeToVersion5(self):
+        """
+        Bumped only to give us compatibility with exe next gen numbers
+        No action to take
+        """
+        pass
+        
+    
 # ===========================================================================
