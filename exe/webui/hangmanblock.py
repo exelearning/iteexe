@@ -268,7 +268,7 @@ class HangmanBlockInc(Block):
             if imgElement.field.imageResource and imgElement.field.imageResource is not None:
                 html += "<div id='hangman" + self.id + "img" + imgElement.id + "' style='display: none'>"
             
-                if mode == "normal":
+                if mode == "view":
                     html += imgElement.renderView()
                 else:       
                     html += imgElement.renderPreview()
