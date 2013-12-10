@@ -300,6 +300,10 @@ class _Resource(Persistable):
         import unicodedata
         import string
         validFilenameChars = "-_. %s%s" % (string.ascii_letters, string.digits)
+        if type(nameBase) == str:
+            nameBase = unicode(nameBase)
+        if type(ext) == str:
+            ext = unicode(ext)
         cleanedBasename = unicodedata.normalize('NFKD', nameBase).encode('ASCII', 'ignore')
         nameBase = ''.join(c for c in cleanedBasename if c in validFilenameChars).replace(' ','_')
         cleanedExt = unicodedata.normalize('NFKD', ext).encode('ASCII', 'ignore')
