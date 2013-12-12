@@ -38,6 +38,7 @@ from exe.engine.genericidevice import GenericIdevice
 from exe.engine.multichoiceidevice import MultichoiceIdevice
 from exe.engine.quiztestidevice import QuizTestIdevice
 from exe.engine.truefalseidevice import TrueFalseIdevice
+from exe.engine.wikipediaidevice import WikipediaIdevice
 from exe.engine.persist        import Persistable, encodeObject, decodeObjectRaw
 from exe                       import globals as G
 from exe.engine.resource       import Resource
@@ -1049,6 +1050,7 @@ class Package(Persistable):
             GenericIdevice.persistenceVersion = 10
             QuizTestIdevice.persistenceVersion = 9
             TrueFalseIdevice.persistenceVersion = 10
+            WikipediaIdevice.persistenceVersion = 9
 
     def extractNode(self):
         """
@@ -1589,6 +1591,7 @@ class Package(Persistable):
         GenericIdevice.persistenceVersion = 9
         QuizTestIdevice.persistenceVersion = 8
         TrueFalseIdevice.persistenceVersion = 9
+        WikipediaIdevice.persistenceVersion = 8
         Package.persistenceVersion = 9
 
     def delNotes(self, node):

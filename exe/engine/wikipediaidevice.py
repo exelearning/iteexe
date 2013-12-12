@@ -47,7 +47,7 @@ class WikipediaIdevice(Idevice):
     """
     A Wikipedia Idevice is one built from a Wikipedia article.
     """
-    persistenceVersion = 8
+    persistenceVersion = 9
 
     def __init__(self, defaultSite):
         Idevice.__init__(self, x_(u"Wiki Article"), 
@@ -67,7 +67,6 @@ is covered by the GNU free documentation license.</p>"""),
         self.images           = {}
         self.site             = defaultSite
         self.icon             = u"inter"
-        # self.systemResources += []
         self._langInstruc      = x_(u"""Select the appropriate language version 
 of Wikipedia to search and enter search term.""")
         self._searchInstruc    = x_("""Enter a phrase or term you wish to search 
@@ -347,8 +346,8 @@ within Wikipedia.""")
         """
         Upgrades to v0.12
         """
-        #self._upgradeIdeviceToVersion2()
-        #self.systemResources += ["fdl.html"]
+        self._upgradeIdeviceToVersion2()
+        self.systemResources += ["fdl.html"]
         if self.images and self.parentNode:
             for image in self.images:
                 imageResource = Resource(self, Path(image))
@@ -367,4 +366,10 @@ within Wikipedia.""")
         Upgrades to v0.19
         """
         self.ownUrl = ""
+        
+    def upgradeToVersion9(self):
+        if 'fdl.html' in self.systemResources:
+            self.systemResources.remove('fdl.html')
+        if 'exe_wikipedia.css' not in self.systemResources:
+            self.systemResources.append('exe_wikipedia.css')
 # ===========================================================================
