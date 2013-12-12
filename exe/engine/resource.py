@@ -305,9 +305,9 @@ class _Resource(Persistable):
         if type(ext) == str:
             ext = unicode(ext)
         cleanedBasename = unicodedata.normalize('NFKD', nameBase).encode('ASCII', 'ignore')
-        nameBase = ''.join(c for c in cleanedBasename if c in validFilenameChars).replace(' ','_')
+        nameBase = ''.join(c for c in cleanedBasename if c in validFilenameChars)
         cleanedExt = unicodedata.normalize('NFKD', ext).encode('ASCII', 'ignore')
-        ext = ''.join(c for c in cleanedExt if c in validFilenameChars).replace(' ','_')
+        ext = ''.join(c for c in cleanedExt if c in validFilenameChars)
         if nameBase == "":
             nameBase = cleanedBasename.encode('utf-8').encode('hex')
         if ext == "":
