@@ -1701,10 +1701,8 @@ class FieldWithResources(Field):
                    # to build the webUrl to the resource:
                    resource_url = new_GalleryImage.resourcesUrl+resource_path
                    # and finally, go ahead and replace the filename:
-                   new_src_string = "href=\""+resource_url
-
-                   new_content = new_content.replace(file_url_str, 
-                                                     new_src_string)
+                   new_content = new_content.replace(file_url_str[6:], 
+                                                     resource_url)
                    log.debug("ProcessPreviewedLinkResources: built resource: "\
                            + resource_url)
 
