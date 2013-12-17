@@ -299,7 +299,7 @@ class _Resource(Persistable):
         #JR: Convertimos el nombre del fichero a algunos caracteres ascii validos
         import unicodedata
         import string
-        validFilenameChars = "-_. %s%s" % (string.ascii_letters, string.digits)
+        validFilenameChars = "~,()[]-_. %s%s" % (string.ascii_letters, string.digits)
         if type(nameBase) == str:
             nameBase = unicode(nameBase)
         if type(ext) == str:
