@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-04 14:33+0100\n"
-"PO-Revision-Date: 2013-12-19 16:52+0100\n"
+"PO-Revision-Date: 2013-12-29 13:35+0100\n"
 "Last-Translator: Heike Koch <info@hei-ke-koch.de>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft; Uwe Kohnle, "
 "lernmodule.net gGmbH <rh@dialoge.net>\n"
@@ -20,8 +20,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 1.3\n"
+"X-Generator: Poedit 1.6.3\n"
 
 #: exe/application.py:204
 #, python-format
@@ -516,11 +517,13 @@ msgstr ""
 msgid "Shuffle"
 msgstr ""
 
-#: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:104
+#: exe/engine/clickinorderidevice.py:103
+#: exe/engine/clickinorderidevice.py:104
 msgid "No Timer"
 msgstr ""
 
-#: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:105
+#: exe/engine/clickinorderidevice.py:103
+#: exe/engine/clickinorderidevice.py:105
 msgid "Stopwatch Mode"
 msgstr ""
 
@@ -673,7 +676,8 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
 #: exe/engine/hangmanidevice.py:60 exe/engine/listaidevice.py:129
-#: exe/engine/memorymatchidevice.py:55 exe/engine/placetheobjectsidevice.py:52
+#: exe/engine/memorymatchidevice.py:55
+#: exe/engine/placetheobjectsidevice.py:52
 #: exe/engine/scormclozeidevice.py:116 exe/engine/scormdropdownidevice.py:116
 #: exe/engine/scormmulticlozeidevice.py:116 exe/engine/sortidevice.py:53
 #: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:391
@@ -717,12 +721,13 @@ msgstr ""
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
-#: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
-#: exe/engine/field.py:3611 exe/engine/field.py:3659
-#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:589
-#: exe/engine/idevicestore.py:698 exe/engine/listaidevice.py:140
-#: exe/engine/listaidevice.py:295 exe/engine/scormclozeidevice.py:131
-#: exe/engine/scormclozeidevice.py:281 exe/engine/scormdropdownidevice.py:142
+#: exe/engine/clozelangfpdidevice.py:132
+#: exe/engine/clozelangfpdidevice.py:287 exe/engine/field.py:3611
+#: exe/engine/field.py:3659 exe/engine/genericidevice.py:294
+#: exe/engine/idevicestore.py:589 exe/engine/idevicestore.py:698
+#: exe/engine/listaidevice.py:140 exe/engine/listaidevice.py:295
+#: exe/engine/scormclozeidevice.py:131 exe/engine/scormclozeidevice.py:281
+#: exe/engine/scormdropdownidevice.py:142
 #: exe/engine/scormdropdownidevice.py:292
 #: exe/engine/scormmulticlozeidevice.py:135
 #: exe/engine/scormmulticlozeidevice.py:285 exe/engine/truefalseidevice.py:50
@@ -783,7 +788,8 @@ msgid "Cloze Activity"
 msgstr "Lücken-Aktivität"
 
 #: exe/engine/clozeidevice.py:123 exe/engine/scormclozeidevice.py:120
-#: exe/engine/scormmulticlozeidevice.py:122 exe/engine/truefalseidevice.py:394
+#: exe/engine/scormmulticlozeidevice.py:122
+#: exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
 msgstr ""
@@ -1020,69 +1026,72 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
-msgstr ""
+msgstr "Ausblenden"
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Bounce"
-msgstr ""
+msgstr "Springen"
 
+# Translation refers to the effect for feedback in a memory game. Do you use the label elsewhere?
 #: exe/engine/extendedfieldengine.py:37
 #, fuzzy
 msgid "Drop"
-msgstr "Dropdown"
+msgstr "Fallen"
 
 #: exe/engine/extendedfieldengine.py:37
 msgid "Explode"
-msgstr ""
+msgstr "Explodieren"
 
+# Translation refers to the effect for feedback in a memory game. Do you use the label elsewhere?
 #: exe/engine/extendedfieldengine.py:37
 #, fuzzy
 msgid "Fold"
-msgstr "Verzeichnis"
+msgstr "Falten"
 
+# Translation refers to the effect for feedback in a memory game. Do you use the label elsewhere?
 #: exe/engine/extendedfieldengine.py:37
-#, fuzzy
 msgid "Highlight"
-msgstr "Höhe"
+msgstr "Hervorheben"
 
 #: exe/engine/extendedfieldengine.py:37
 msgid "Puff"
-msgstr ""
+msgstr "Auszoomen"
 
 #: exe/engine/extendedfieldengine.py:38
 msgid "Pulsate"
-msgstr ""
+msgstr "Pulsieren"
 
 #: exe/engine/extendedfieldengine.py:38
 msgid "Shake"
-msgstr ""
+msgstr "Schütteln"
 
+# Translation refers to the effect for feedback in a memory game. Do you use the label elsewhere?
 #: exe/engine/extendedfieldengine.py:38
-#, fuzzy
 msgid "Slide"
-msgstr "Folie"
+msgstr "Gleiten"
 
+# Translation refers to the effect for feedback in a memory game. Do you use the label elsewhere?
 #: exe/engine/extendedfieldengine.py:38
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:72
 #: exe/jsui/scripts/app/view/forms/LomSections.js:96
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Size"
-msgstr "Größe"
+msgstr "Einzoomen"
 
+# Die Übersetzung passt nicht wirklich, aber wie sollen wir den Effekt beschreiben (die Schrift schiebt sich m.E. in das Feld rein)...?
 #: exe/engine/extendedfieldengine.py:38
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Scale"
-msgstr ""
+msgstr "Schieben"
 
 #: exe/engine/extendedfieldengine.py:39
 msgid "Transfer"
 msgstr ""
 
 #: exe/engine/extendedfieldengine.py:45 exe/webui/hangmanblock.py:329
-#, fuzzy
 msgid "Show Advanced Options"
-msgstr "Eine weitere Antwort hinzufügen"
+msgstr "Erweiterte Optionen einblenden"
 
 #: exe/engine/extendedfieldengine.py:278
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -1279,8 +1288,8 @@ msgstr "Antwort"
 msgid "Hint"
 msgstr "Hinweis"
 
-#: exe/engine/field.py:3773 exe/engine/field.py:3810 exe/webui/element.py:2301
-#: exe/webui/testquestionelement.py:110
+#: exe/engine/field.py:3773 exe/engine/field.py:3810
+#: exe/webui/element.py:2301 exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "Antworten"
@@ -1358,13 +1367,12 @@ msgstr "Datei-Anhänge"
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#, fuzzy
 msgid "No"
-msgstr "Notiz"
+msgstr "Nein"
 
 #: exe/engine/fileattachidevice.py:46 exe/engine/fileattachidevice.py:67
 msgid "Show description and link"
@@ -1434,7 +1442,8 @@ msgstr ""
 "Beschriftung des Flash-Films,\n"
 "den Sie eingefügt haben."
 
-#: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
+#: exe/engine/flashwithtextidevice.py:43
+#: exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
 msgstr "Flash mit Text"
 
@@ -1572,6 +1581,8 @@ msgstr "Lesetext 0.11"
 msgid "Reading Activity"
 msgstr "Lesetext"
 
+# In eXe, the iDevice is called "Galgenmännchen". I'm not too happy with this translation, as it sounds quite cruel in German, and is also not too common. Very often, the English term "Hangman" is used.
+# Another alternative might be "Buchstabenspiel", however that requires that there are no further "word games" in eXe to avoid confusion.
 #: exe/engine/hangmanidevice.py:51
 msgid "Hangman Game"
 msgstr "Galgenmännchen"
@@ -1582,7 +1593,7 @@ msgstr ""
 
 #: exe/engine/hangmanidevice.py:53
 msgid "Hangman style word game with customizable images."
-msgstr ""
+msgstr "Buchstabenspiel \"Hangman\" mit anpassbarem Bild."
 
 #: exe/engine/hangmanidevice.py:61
 msgid "Instructions for Game."
@@ -1590,55 +1601,59 @@ msgstr "Spielanweisungen"
 
 #: exe/engine/hangmanidevice.py:76
 msgid "Alphabet to Select From"
-msgstr ""
+msgstr "Alphabet aus dem Buchstaben gewählt werden können"
 
 #: exe/engine/hangmanidevice.py:76
 msgid "Alphabet to show players"
-msgstr ""
+msgstr "Alphabet, das dem Spieler / der Spielerin angezeigt wird"
 
 #: exe/engine/hangmanidevice.py:77
 msgid "abcdefghijklmnopqrstuvwxyz"
-msgstr ""
+msgstr "abcdefghijklmnopqrstuvwxyzäöüß"
 
 #: exe/engine/hangmanidevice.py:83
 msgid "Letter Button Style"
-msgstr ""
+msgstr "Stil der Buchstaben-Buttons (CSS)"
 
 #: exe/engine/hangmanidevice.py:84
 msgid "Style of button to start with"
-msgstr ""
+msgstr "Stil des Start-Buttons (CSS)"
 
 #: exe/engine/hangmanidevice.py:87
 msgid "Letter Button Style Wrong Guess"
-msgstr ""
+msgstr "Stil der Buchstaben-Buttons wenn falsch geraten (CSS)"
 
+# Is that the same as "Letter Button Style Wrong Guess"? (I could not find it in the Hangman iDevice)
 #: exe/engine/hangmanidevice.py:88
 msgid "Style of letter button after wrong guess"
-msgstr ""
+msgstr "Stil der Buchstaben-Buttons wenn falsch geraten (CSS)"
 
 #: exe/engine/hangmanidevice.py:91
 msgid "Letter Button Style Right Guess"
-msgstr ""
+msgstr "Stil der Buchstaben-Buttons wenn richtig geraten (CSS)"
 
+# Is that the same as "Letter Button Style Right Guess"? (Couldn't find it in eXe)
 #: exe/engine/hangmanidevice.py:92
 msgid "Style of letter button after correct guess"
-msgstr ""
+msgstr "Stil der Buchstaben-Buttons wenn richtig geraten (CSS)"
 
 #: exe/engine/hangmanidevice.py:95
 msgid "Style of Hint Text Field"
-msgstr ""
+msgstr "Stil des Tipp-Felds (CSS)"
 
+# Is that the same as "Style of Hint Text Field"? (Couldn't find it in eXe)
 #: exe/engine/hangmanidevice.py:95
 msgid "Hint Text Field CSS"
-msgstr ""
+msgstr "Stil des Tipp-Felds (CSS)"
 
 #: exe/engine/hangmanidevice.py:98
 msgid "Style of Word Display Field"
-msgstr ""
+msgstr "Stil des gesuchten Wortes (CSS)"
 
+# Is that the same as "Style of Word Display Field"? (Couldn't find it in eXe)
 #: exe/engine/hangmanidevice.py:98
 msgid "Word Display CSS"
-msgstr ""
+msgstr "Stil des gesuchten Wortes (CSS)"
 
 #: exe/engine/hangmanidevice.py:101
 msgid "Restart Level Button Text"
@@ -1655,43 +1670,45 @@ msgstr "Neustart"
 
 #: exe/engine/hangmanidevice.py:104
 msgid "Restart Level Button Style (CSS)"
-msgstr ""
+msgstr "Stil des Buttons \"Level neu starten\" (CSS)"
 
 #: exe/engine/hangmanidevice.py:104
 msgid "Style of Reset Button"
-msgstr ""
+msgstr "Stil des Reset-Buttons (CSS)"
 
 #: exe/engine/hangmanidevice.py:108 exe/engine/hangmanidevice.py:170
 msgid "Wrong Guess Message"
-msgstr ""
+msgstr "Meldung wenn falsch geraten wurde"
 
 #: exe/engine/hangmanidevice.py:109 exe/engine/hangmanidevice.py:171
 msgid "Player will see this message when they guess a letter wrong"
 msgstr ""
+"Diese Meldung wird angezeigt, wenn ein Buchstabe ausgewählt wurde, der nicht "
+"im Wort vorkommt."
 
 #: exe/engine/hangmanidevice.py:111 exe/engine/hangmanidevice.py:158
 msgid "Lost Level Message"
-msgstr ""
+msgstr "Meldung bei nicht bestandenem Level"
 
 #: exe/engine/hangmanidevice.py:112 exe/engine/hangmanidevice.py:159
 msgid "Player will see this message when they loose the level"
-msgstr ""
+msgstr "Diese Meldung wird angezeigt, wenn das Level nicht bestanden wurde."
 
 #: exe/engine/hangmanidevice.py:114 exe/engine/hangmanidevice.py:162
 msgid "Level Passed Message"
-msgstr ""
+msgstr "Meldung bei bestandenem Level"
 
 #: exe/engine/hangmanidevice.py:115 exe/engine/hangmanidevice.py:163
 msgid "Player will see this message when they guess the word correctly"
-msgstr ""
+msgstr "Diese Meldung wird angezeigt, wenn das Wort richtig geraten wurde."
 
 #: exe/engine/hangmanidevice.py:117 exe/engine/hangmanidevice.py:166
 msgid "Game Won Message"
-msgstr ""
+msgstr "Meldung bei gewonnenem Spiel"
 
 #: exe/engine/hangmanidevice.py:118 exe/engine/hangmanidevice.py:167
 msgid "Player will see this message when they guess all words correctly"
-msgstr ""
+msgstr "Diese Meldung wird angezeigt, wenn alle Wörter richtig geraten wurden."
 
 #: exe/engine/hangmanidevice.py:142
 #, fuzzy
@@ -1700,19 +1717,19 @@ msgstr "Abbrechen"
 
 #: exe/engine/hangmanidevice.py:148
 msgid "Word to Guess"
-msgstr ""
+msgstr "Zu erratendes Wort"
 
 #: exe/engine/hangmanidevice.py:148
 msgid "Word To Guess"
-msgstr ""
+msgstr "Zu erratendes Wort"
 
 #: exe/engine/hangmanidevice.py:150
 msgid "Hint to Show User"
-msgstr ""
+msgstr "Tipp für den Spieler /die Spielerin"
 
 #: exe/engine/hangmanidevice.py:150
 msgid "Hint for Word"
-msgstr ""
+msgstr "Tipp für das Wort"
 
 #: exe/engine/idevicestore.py:541
 msgid ""
@@ -2206,43 +2223,49 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:55
 msgid "Instructions to show"
-msgstr ""
+msgstr "Angezeigte Spielanleitung"
 
 #: exe/engine/memorymatchidevice.py:56
 msgid "Number of Rows"
-msgstr ""
+msgstr "Zeilenanzahl"
 
 #: exe/engine/memorymatchidevice.py:57
 msgid "Number of Columns"
-msgstr ""
+msgstr "Spaltenanzahl"
 
 #: exe/engine/memorymatchidevice.py:58
 msgid "Split Question/Answer Pairs"
-msgstr ""
+msgstr "Frage/Antwort-Paare teilen"
 
 #: exe/engine/memorymatchidevice.py:60
 msgid "Feedback to show on correct match"
-msgstr ""
+msgstr "Positives Feedback bei Übereinstimmung"
 
+# Translation refers only to memory game. Will it be used at another position, too?
 #: exe/engine/memorymatchidevice.py:60
 msgid "Positive Feedback"
-msgstr ""
+msgstr "Dieses Feedback wird angezeigt, wenn ein Pärchen aufgedeckt wurde."
 
 #: exe/engine/memorymatchidevice.py:61
 msgid "Feedback to show on incorrect pair"
-msgstr ""
+msgstr "Negatives Feedback bei Nicht-Übereinstimmung"
 
+# Translation refers only to memory game. Will it be used at another position, too?
 #: exe/engine/memorymatchidevice.py:61
 msgid "Negative Feedback"
 msgstr ""
+"Dieses Feedback wird angezeigt, wenn zwei Karten aufgedeckt wurden, die "
+"nicht zusammenpassen."
 
 #: exe/engine/memorymatchidevice.py:62
 msgid "Style of Feedback Area (CSS)"
-msgstr ""
+msgstr "Stil des Feedbacks (CSS)"
 
 #: exe/engine/memorymatchidevice.py:62
 msgid "CSS style for feedback area"
 msgstr ""
+"Stil in dem das Feedback angezeigt wird (Hintergrundfarbe, Schriftfarbe "
+"etc.). Definieren Sie den Stil über CSS-Befehle."
 
 #: exe/engine/memorymatchidevice.py:63
 msgid "Width of Cells (in pixels)"
@@ -2263,6 +2286,8 @@ msgstr ""
 #: exe/engine/memorymatchidevice.py:65
 msgid "Time after which to re-hide incorrect match (ms)"
 msgstr ""
+"Zeit, nachdem ein Kärtchen automatisch wieder umgedreht wird (in "
+"Millisekunden)"
 
 #: exe/engine/memorymatchidevice.py:65
 msgid "Time to hide"
@@ -2270,31 +2295,36 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:66
 msgid "Cover Image for cells (shown before selected)"
-msgstr ""
+msgstr "Rückseite"
 
 #: exe/engine/memorymatchidevice.py:66
 msgid "Cover Img"
-msgstr ""
+msgstr "Rückseite der Kärtchen (wird angezeigt, wenn Kärtchen verdeckt sind)"
 
 #: exe/engine/memorymatchidevice.py:67
 msgid "Background Image for cells (shown after selected)"
-msgstr ""
+msgstr "Vorderseite"
 
 #: exe/engine/memorymatchidevice.py:67
 msgid "Back Img"
 msgstr ""
+"Vorderseite der Kärtchen (wird angezeigt, wenn Kärtchen umgedreht werden)"
 
 #: exe/engine/memorymatchidevice.py:68
 msgid "Background image behind cells shown as cells are hidden"
-msgstr ""
+msgstr "Platzhalter"
 
+# Was genau ist das für ein Bild???
 #: exe/engine/memorymatchidevice.py:68
 msgid "Bg Img"
 msgstr ""
+"Platzhalter für entfernte Kärtchen. Wenn ein Pärchen aufgedeckt wird, können "
+"die Karten aus dem Spiel entfernt werden (s.u.). Dieses Bild wird dann an "
+"dessen Stelle angezeigt."
 
 #: exe/engine/memorymatchidevice.py:69
 msgid "Effect for showing positive feedback"
-msgstr ""
+msgstr "Effekt für postives Feedback"
 
 #: exe/engine/memorymatchidevice.py:69
 msgid "Positive Feedback Effect"
@@ -2302,7 +2332,7 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:71
 msgid "Effect for showing negative feedback"
-msgstr ""
+msgstr "Effekt für negatives Feedback"
 
 #: exe/engine/memorymatchidevice.py:71
 msgid "Negative Feedback Effect"
@@ -2310,11 +2340,11 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:73
 msgid "Show / Use a timer?"
-msgstr ""
+msgstr "Stoppuhr anzeigen?"
 
 #: exe/engine/memorymatchidevice.py:74
 msgid "Hide Cells after match made?"
-msgstr ""
+msgstr "Karten nach Pärchenfindung verbergen?"
 
 #: exe/engine/memorymatchidevice.py:74
 msgid "Hide after match"
@@ -2322,7 +2352,7 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:76
 msgid "Effect when hiding cells after match"
-msgstr ""
+msgstr "Effekt beim Verbergen nach Pärchenfindung"
 
 #: exe/engine/memorymatchidevice.py:76
 msgid "Hide after match effect"
@@ -2331,6 +2361,8 @@ msgstr ""
 #: exe/engine/memorymatchidevice.py:78
 msgid "Cell Padding in table"
 msgstr ""
+"Zellauffüllung (Abstand zwischen dem Rand einer Tabellenzelle und deren "
+"Inhalt)"
 
 #: exe/engine/memorymatchidevice.py:78
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -2339,7 +2371,7 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:79
 msgid "Cell Spacing of table"
-msgstr ""
+msgstr "Zellabstand (Abstand zwischen den einzelnen Tabellenzellen)"
 
 #: exe/engine/memorymatchidevice.py:79
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -2348,7 +2380,7 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:80
 msgid "Cell Default Style (CSS)"
-msgstr ""
+msgstr "Stil der Zellen (CSS)"
 
 #: exe/engine/memorymatchidevice.py:80
 msgid "Cell Style CSS"
@@ -2356,7 +2388,7 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:81
 msgid "Text of Timer Label"
-msgstr ""
+msgstr "Text der Stoppuhr"
 
 #: exe/engine/memorymatchidevice.py:81
 msgid "Timer Text"
@@ -2364,7 +2396,7 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:82
 msgid "CSS of Timer Field"
-msgstr ""
+msgstr "Stil der Stoppuhr (CSS)"
 
 #: exe/engine/memorymatchidevice.py:82
 msgid "Timer CSS"
@@ -2377,19 +2409,19 @@ msgstr "Memory Spiel"
 
 #: exe/engine/memorymatchidevice.py:157
 msgid "Match Tile 1"
-msgstr ""
+msgstr "1. Karte"
 
 #: exe/engine/memorymatchidevice.py:157
 msgid "Match Tile1"
-msgstr ""
+msgstr "1. Karte des Pärchens"
 
 #: exe/engine/memorymatchidevice.py:158
 msgid "Match Tile 2"
-msgstr ""
+msgstr "2. Karte"
 
 #: exe/engine/memorymatchidevice.py:158
 msgid "Match Tile2"
-msgstr ""
+msgstr "2. Karte des Pärchens"
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
@@ -3582,7 +3614,8 @@ msgstr ". Verwenden Sie bitte ASCII-Zeichen."
 msgid "SAVE FAILED!"
 msgstr "Speichern gescheitert"
 
-#: exe/jsui/mainpage.py:319 exe/jsui/mainpage.py:627 exe/jsui/mainpage.py:1020
+#: exe/jsui/mainpage.py:319 exe/jsui/mainpage.py:627
+#: exe/jsui/mainpage.py:1020
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -6353,12 +6386,12 @@ msgstr ""
 #: exe/jsui/scripts/lomvocab.js:375 exe/jsui/scripts/lomvocab.js:413
 #: exe/jsui/scripts/lomvocab.js:1190
 msgid "yes"
-msgstr ""
+msgstr "Ja"
 
 #: exe/jsui/scripts/lomvocab.js:379 exe/jsui/scripts/lomvocab.js:417
 #: exe/jsui/scripts/lomvocab.js:1194
 msgid "no"
-msgstr ""
+msgstr "Nein"
 
 #: exe/jsui/scripts/lomvocab.js:385
 msgid "school"
@@ -7112,10 +7145,16 @@ msgstr ""
 "\n"
 "        <h2>Spiel: In Reihenfolge anklicken</h2>\\n\n"
 "        <p>\n"
-"                Hiermit erstellen Sie ein javascript-basiertes Spiel, in dem die Spieler/-innen entsprechend der Anleitung auf eine bestimmte Stelle (Hotspot) in einem vorgegebenen Bereich klicken müssen.  \n"
-"                Wenn sie die richtige Stelle erwischen, erhalten sie ein positives Feedback und kommen sie im Spiel weiter. \n"
-"               Wenn sie auf eine falsche Stelle klicken, erscheint ein negatives Feedback.\n"
-"               Wenn die richtige Stelle angeklickt wird, kann dort ein Item aufgedeckt werden. Für dieses Item kann eine Zeit definiert werden, nach der das Item wieder verschwindet, sofern gewünscht.\n"
+"                Hiermit erstellen Sie ein javascript-basiertes Spiel, in dem "
+"die Spieler/-innen entsprechend der Anleitung auf eine bestimmte Stelle "
+"(Hotspot) in einem vorgegebenen Bereich klicken müssen.  \n"
+"                Wenn sie die richtige Stelle erwischen, erhalten sie ein "
+"positives Feedback und kommen sie im Spiel weiter. \n"
+"               Wenn sie auf eine falsche Stelle klicken, erscheint ein "
+"negatives Feedback.\n"
+"               Wenn die richtige Stelle angeklickt wird, kann dort ein Item "
+"aufgedeckt werden. Für dieses Item kann eine Zeit definiert werden, nach der "
+"das Item wieder verschwindet, sofern gewünscht.\n"
 "         </p>\n"
 "\n"
 "         "
@@ -7408,8 +7447,9 @@ msgstr "Übersetzung"
 msgid "Please select a correct answer for each question."
 msgstr "Wählen Sie bitte zu jeder Frage die richtige Antwort aus."
 
-#: exe/webui/eleccionmultiplefpdblock.py:120 exe/webui/multichoiceblock.py:113
-#: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:118
+#: exe/webui/eleccionmultiplefpdblock.py:120
+#: exe/webui/multichoiceblock.py:113 exe/webui/truefalseblock.py:109
+#: exe/webui/verdaderofalsofpdblock.py:118
 msgid "Add another question"
 msgstr "Eine weitere Frage hinzufügen"
 
@@ -7753,16 +7793,23 @@ msgid ""
 "After you set the number of rows/cols please click Create/Trim pairs button "
 "at the bottom and enter in the matching pairs for the game"
 msgstr ""
+"Wenn Sie die Reihen- und Spaltenanzahl festgelegt haben, klicken Sie bitte "
+"auf die Schaltfläche \"Paare erstellen/anordnen\" am Ende der Eingabemaske, "
+"und geben Sie die passenden Paare ein."
 
 #: exe/webui/memorymatchblock.py:187
 msgid ""
 "<p>Click the button below to create the matching pairs or \n"
 "                trim in case you reduced the number of rows / columns</p>\n"
 msgstr ""
+"<p>Klicken Sie auf die untenstehende Schaltfläche um Pärchen zu erstellen "
+"oder \n"
+"                neu anzuordnen, wenn sie die Zeilen- oder Spaltenanzahl "
+"verringert haben. </p>\n"
 
 #: exe/webui/memorymatchblock.py:189
 msgid "Create / Trim Pairs"
-msgstr ""
+msgstr "Paare erstellen / anordnen"
 
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:99
