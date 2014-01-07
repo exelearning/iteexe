@@ -156,9 +156,10 @@
             if (file_extension!='') {
                 if (t=='video' || t=='audio') {
                     var msg = tinyMCEPopup.getLang("media_dlg.html5_warning")+".\n\n"+tinyMCEPopup.getLang("media_dlg.selected_file")+": "+file_extension;
-                    if (file_extension=="mp3" || file_extension=="flv") msg +="\n\n"+tinyMCEPopup.getLang("media_dlg.recommended_type")+": "+tinyMCEPopup.getLang("media_dlg.flash");
+                    if (file_extension=="flv")
+                    	msg +="\n\n"+tinyMCEPopup.getLang("media_dlg.recommended_type")+": "+tinyMCEPopup.getLang("media_dlg.flash");
                     msg += "\n\n"+tinyMCEPopup.getLang("media_dlg.confirm_question");
-                    if (!confirm(msg)) {
+                    if (!file_extension=="flv" && !confirm(msg)) {
                         return false;
                     } else {
                         var mediaelement = '';
@@ -781,12 +782,8 @@
                 }
                 if (get('media_type').value == 'video' || get('media_type').value == 'audio') {
                     get('use_mediaelement').style.display = 'table-row';
-                    get('use_autoplayelement').style.display = 'table-row';
-                    get('use_controlselement').style.display = 'table-row';
                 }else {
                     get('use_mediaelement').style.display = 'none';
-                    get('use_autoplayelement').style.display = 'none';
-                    get('use_controlselement').style.display = 'none';
                 }
                     
             }

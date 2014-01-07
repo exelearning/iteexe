@@ -368,7 +368,7 @@ function parse_media_html_attributes(c) {
 
 				if (!data) {
 					data = {
-						type : 'flash',
+						type : 'video',
 						video: {sources:[]},
 						params: {}
 					};
