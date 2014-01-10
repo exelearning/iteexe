@@ -1,18 +1,18 @@
 # eXe eLearning German PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2013 EXELearning.net
+# Copyright (C) 2011-2014 EXELearning.net
 # This file is distributed under the same license as the eXe package.
 # shannon <christoph@mussenbrock.de>, 2009.
 # Ralf Hilgenstock <rh@eledia.de>, 2013.
 # Uwe Kohnle <info@lernmodule.net>, 2013.
-# Heike Koch <info@hei-ke-koch.de>, 2013.
+# Heike Koch <info@hei-ke-koch.de>, 2013-2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-04 14:33+0100\n"
-"PO-Revision-Date: 2013-12-29 13:35+0100\n"
+"PO-Revision-Date: 2014-01-10 12:11+0100\n"
 "Last-Translator: Heike Koch <info@hei-ke-koch.de>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft; Uwe Kohnle, "
 "lernmodule.net gGmbH <rh@dialoge.net>\n"
@@ -411,66 +411,67 @@ msgstr "Spielanweisungen"
 #: exe/engine/clickinorderidevice.py:61
 msgid "Instructions to show in leading paragraph"
 msgstr ""
+"Spielanleitung, die im Textabschnitt oberhalb des Spiels angezeigt wird"
 
 #: exe/engine/clickinorderidevice.py:62
 msgid "Game Won Feedback Overlay"
-msgstr ""
+msgstr "Einblendung bei gewonnenem Spiel"
 
 #: exe/engine/clickinorderidevice.py:62
 msgid "Shown over when the game is won"
-msgstr ""
+msgstr "Wird eingeblendet, wenn das Spiel gewonnen ist."
 
 #: exe/engine/clickinorderidevice.py:63
 msgid "Correct Answer Feedback Overlay"
-msgstr ""
+msgstr "Einblendung bei richtiger Antwort"
 
 #: exe/engine/clickinorderidevice.py:63
 msgid "Shown over game when correct answer given"
-msgstr ""
+msgstr "Wird eingeblendet, wenn die richtige Stelle gefunden wurde."
 
 #: exe/engine/clickinorderidevice.py:64
 msgid "Wrong Answer Feedback Overlay"
-msgstr ""
+msgstr "Einblendung bei falscher Anwort"
 
 #: exe/engine/clickinorderidevice.py:64
 msgid "Shown over game when wrong answer is given"
-msgstr ""
+msgstr "Wird eingeblendet, wenn eine falsche Stelle angeklickt wurde."
 
 #: exe/engine/clickinorderidevice.py:65
 msgid "Main Area To Show"
-msgstr ""
+msgstr "Bereich in dem das Spiel stattfindet"
 
 #: exe/engine/clickinorderidevice.py:65
 msgid "The Main Game Area on which to locate items"
-msgstr ""
+msgstr "Der Bereich, in dem die zu findenden Items platziert werden."
 
 #: exe/engine/clickinorderidevice.py:66
 msgid "Area shown before the game starts"
-msgstr ""
+msgstr "Bereich der oberhalb des Spiels angezeigt wird"
 
 #: exe/engine/clickinorderidevice.py:66
 msgid "User will click on this to start the game"
-msgstr ""
+msgstr "Hier wird das Spiel per Klick gestartet."
 
 #: exe/engine/clickinorderidevice.py:78
 msgid "Game Width"
-msgstr ""
+msgstr "Breite des Spielfelds"
 
 #: exe/engine/clickinorderidevice.py:78
 msgid "Width of game area (in pixels)"
-msgstr ""
+msgstr "Breite des Spielfelds (in Pixeln)"
 
 #: exe/engine/clickinorderidevice.py:79
 msgid "Game Height"
-msgstr ""
+msgstr "Höhe des Spielfelds"
 
 #: exe/engine/clickinorderidevice.py:79
 msgid "Height of game area (in pixels)"
-msgstr ""
+msgstr "Höhe des Spielfelds (in Pixeln)"
 
 #: exe/engine/clickinorderidevice.py:80
 msgid "Style of Element Counter"
-msgstr ""
+msgstr "Stil des Hotspot-Zählers (CSS)"
 
 #: exe/engine/clickinorderidevice.py:80
 msgid "Use CSS to style element that counts number items found"
@@ -478,7 +479,7 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:81
 msgid "Hint Width"
-msgstr ""
+msgstr "Hinweis Breite"
 
 #: exe/engine/clickinorderidevice.py:81
 msgid "Width (px) of hint area"
@@ -486,7 +487,7 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:82
 msgid "Hint Height"
-msgstr ""
+msgstr "Hinweis Höhe"
 
 #: exe/engine/clickinorderidevice.py:82
 msgid "Height (px) of hint area"
@@ -494,7 +495,7 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:83
 msgid "Hint Area Style"
-msgstr ""
+msgstr "Stil des Hinweis-Bereichs"
 
 #: exe/engine/clickinorderidevice.py:83
 msgid "Style of Hint Area"
@@ -502,7 +503,7 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:84
 msgid "Style of timer Element"
-msgstr ""
+msgstr "Stil der Stoppuhr (CSS)"
 
 #: exe/engine/clickinorderidevice.py:84
 msgid "Style of timer (CSS)"
@@ -510,26 +511,24 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:98 exe/engine/clickinorderidevice.py:100
 msgid "Dont Shuffle"
-msgstr ""
+msgstr "Nicht mischen"
 
 #: exe/engine/clickinorderidevice.py:98 exe/engine/clickinorderidevice.py:101
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Shuffle"
-msgstr ""
+msgstr "Mischen"
 
-#: exe/engine/clickinorderidevice.py:103
-#: exe/engine/clickinorderidevice.py:104
+#: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:104
 msgid "No Timer"
-msgstr ""
+msgstr "Keine Stoppuhr"
 
-#: exe/engine/clickinorderidevice.py:103
-#: exe/engine/clickinorderidevice.py:105
+#: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:105
 msgid "Stopwatch Mode"
-msgstr ""
+msgstr "Stoppuhr verwenden"
 
 #: exe/engine/clickinorderidevice.py:107
 msgid "Shuffle Questions"
-msgstr ""
+msgstr "Fragen in Zufallsreihenfolge"
 
 #: exe/engine/clickinorderidevice.py:107
 msgid "Randomize question order or not"
@@ -541,7 +540,7 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:108 exe/engine/memorymatchidevice.py:73
 msgid "Use Timer?"
-msgstr ""
+msgstr "Stoppuhr verwenden?"
 
 #: exe/engine/clickinorderidevice.py:115
 msgid "Clickable Area"
@@ -549,7 +548,7 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:152
 msgid "Top (Y) Coord"
-msgstr ""
+msgstr "Y-Koordinate (Höhe)"
 
 #: exe/engine/clickinorderidevice.py:152
 msgid "Top CSS top property"
@@ -557,7 +556,7 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:153
 msgid "Left (X) Coord"
-msgstr ""
+msgstr "X-Koordinate (Breite nach links)"
 
 #: exe/engine/clickinorderidevice.py:153
 msgid "Left CSS left property"
@@ -565,7 +564,7 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:154
 msgid "Width (px)"
-msgstr ""
+msgstr "Breite (in Pixeln)"
 
 #: exe/engine/clickinorderidevice.py:154
 msgid "Width of clickable area"
@@ -573,7 +572,7 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:155
 msgid "Height (px)"
-msgstr ""
+msgstr "Höhe (in Pixeln)"
 
 #: exe/engine/clickinorderidevice.py:155
 msgid "Height of clickable area"
@@ -581,7 +580,7 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:156
 msgid "Delay (ms) to hide revealed contents"
-msgstr ""
+msgstr "Zeit, nach der das aufgedeckte Element verschwindet (in Millisekunden)"
 
 #: exe/engine/clickinorderidevice.py:156
 msgid "After delay ms hide the content prev revealed"
@@ -589,19 +588,23 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:166
 msgid "Hint to Show for this item"
-msgstr ""
+msgstr "Hinweis zu diesem Item"
 
 #: exe/engine/clickinorderidevice.py:166
 msgid "The hint that will appear under the map for this item"
 msgstr ""
+"Hinweis, der sich auf dieses Item bezieht. Wird unterhalb des Spielfeldes "
+"angezeigt."
 
 #: exe/engine/clickinorderidevice.py:167
 msgid "Item Revealed"
-msgstr ""
+msgstr "Aufgedecktes Item"
 
 #: exe/engine/clickinorderidevice.py:167
 msgid "The Item that will be revealed in place"
 msgstr ""
+"Das Item, das aufgedeckt wird, wenn die richtige Stelle auf dem Spielfeld "
+"angeklickt wurde."
 
 #: exe/engine/clozefpdidevice.py:50
 msgid "FPD - Cloze Activity"
@@ -676,8 +679,7 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
 #: exe/engine/hangmanidevice.py:60 exe/engine/listaidevice.py:129
-#: exe/engine/memorymatchidevice.py:55
-#: exe/engine/placetheobjectsidevice.py:52
+#: exe/engine/memorymatchidevice.py:55 exe/engine/placetheobjectsidevice.py:52
 #: exe/engine/scormclozeidevice.py:116 exe/engine/scormdropdownidevice.py:116
 #: exe/engine/scormmulticlozeidevice.py:116 exe/engine/sortidevice.py:53
 #: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:391
@@ -721,13 +723,12 @@ msgstr ""
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
-#: exe/engine/clozelangfpdidevice.py:132
-#: exe/engine/clozelangfpdidevice.py:287 exe/engine/field.py:3611
-#: exe/engine/field.py:3659 exe/engine/genericidevice.py:294
-#: exe/engine/idevicestore.py:589 exe/engine/idevicestore.py:698
-#: exe/engine/listaidevice.py:140 exe/engine/listaidevice.py:295
-#: exe/engine/scormclozeidevice.py:131 exe/engine/scormclozeidevice.py:281
-#: exe/engine/scormdropdownidevice.py:142
+#: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
+#: exe/engine/field.py:3611 exe/engine/field.py:3659
+#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:589
+#: exe/engine/idevicestore.py:698 exe/engine/listaidevice.py:140
+#: exe/engine/listaidevice.py:295 exe/engine/scormclozeidevice.py:131
+#: exe/engine/scormclozeidevice.py:281 exe/engine/scormdropdownidevice.py:142
 #: exe/engine/scormdropdownidevice.py:292
 #: exe/engine/scormmulticlozeidevice.py:135
 #: exe/engine/scormmulticlozeidevice.py:285 exe/engine/truefalseidevice.py:50
@@ -788,8 +789,7 @@ msgid "Cloze Activity"
 msgstr "Lücken-Aktivität"
 
 #: exe/engine/clozeidevice.py:123 exe/engine/scormclozeidevice.py:120
-#: exe/engine/scormmulticlozeidevice.py:122
-#: exe/engine/truefalseidevice.py:394
+#: exe/engine/scormmulticlozeidevice.py:122 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
 msgstr ""
@@ -1288,8 +1288,8 @@ msgstr "Antwort"
 msgid "Hint"
 msgstr "Hinweis"
 
-#: exe/engine/field.py:3773 exe/engine/field.py:3810
-#: exe/webui/element.py:2301 exe/webui/testquestionelement.py:110
+#: exe/engine/field.py:3773 exe/engine/field.py:3810 exe/webui/element.py:2301
+#: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "Antworten"
@@ -1442,8 +1442,7 @@ msgstr ""
 "Beschriftung des Flash-Films,\n"
 "den Sie eingefügt haben."
 
-#: exe/engine/flashwithtextidevice.py:43
-#: exe/engine/flashwithtextidevice.py:50
+#: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
 msgstr "Flash mit Text"
 
@@ -2118,6 +2117,13 @@ msgid ""
 "comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word "
 "formation and/or grammatical competence. </li></ol>"
 msgstr ""
+"<p>DropDown Aktivitäten sind Texte oder Sätze, die die Lernenden ergänzen, "
+"indem sie die richtigen Wörter auswählen. Diese Aktivitäten werden häufig "
+"für folgende Zwecke eingesetzt:</p><ol><li>Um das Wissen bezüglich der "
+"Kernaussagen des Kurses zu überprüfen (z.B. im Rahmen eines Pre-Tests, zur "
+"Erhebung während des Kursverlaufs oder als Abschlusstest)</li><li>Um das "
+"Leseverständnis zu überprüfen.</li><li>Um Vokalen abzufragen</li><li>Um "
+"Wortbildungs- oder Grammatikkenntnisse zu testen.</li></ol>"
 
 #: exe/engine/listaidevice.py:80
 msgid ""
@@ -2141,7 +2147,7 @@ msgstr ""
 
 #: exe/engine/listaidevice.py:130
 msgid "Provide instruction on how the dropdown activity should be completed."
-msgstr ""
+msgstr "Geben Sie hier die Spielanleitung ein."
 
 #: exe/engine/listaidevice.py:131
 msgid "Read and complete"
@@ -2160,6 +2166,13 @@ msgid ""
 "it and \n"
 "click on the 'Hide/Show' button below.</p>"
 msgstr ""
+"<p>Gegen Sie hier den Text für das Dropdown-Feld der DropDown Aktivität ein\n"
+"entweder indem Sie den Text aus einer anderen Quelle kopieren, oder indem "
+"Sie ihn direkt in das Feld hineinschreiben. \n"
+"f</p><p>Um die Wörter zu definieren, die der Spieler/die Spielerin erraten "
+"soll, doppelklicken Sie auf das Wort und  \n"
+"klicken Sie auf die Schaltfläche 'Wort verbergen/anzeigen' unterhalb des "
+"Eingabefelds.</p>"
 
 #: exe/engine/listaidevice.py:292
 msgid "Read the paragraph below and choose the correct words"
@@ -2170,6 +2183,9 @@ msgid ""
 "<p>Optional: Write other words to complete the dropdown activity.</br>Use | "
 "(vertical bar ) to separate words.</br>This field can be left blank. </p>"
 msgstr ""
+"<p>Optional: Geben Sie weitere mögliche Lösungswörter ein.</br>Verwenden Sie "
+"einen vertikalen Strich (|), um die Worte zu trennen.</br>Dieses Feld ist "
+"optional, d.h. Sie müssen hier nichts angeben. </p>"
 
 #: exe/engine/locationbuttons.py:29 exe/engine/locationbuttons.py:33
 #: exe/engine/locationbuttons.py:37
@@ -3614,8 +3630,7 @@ msgstr ". Verwenden Sie bitte ASCII-Zeichen."
 msgid "SAVE FAILED!"
 msgstr "Speichern gescheitert"
 
-#: exe/jsui/mainpage.py:319 exe/jsui/mainpage.py:627
-#: exe/jsui/mainpage.py:1020
+#: exe/jsui/mainpage.py:319 exe/jsui/mainpage.py:627 exe/jsui/mainpage.py:1020
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -4055,7 +4070,7 @@ msgstr "Paket wird gespeichert"
 #: exe/jsui/scripts/app/controller/filepicker/Directory.js:75
 #: exe/jsui/scripts/app/controller/filepicker/File.js:168
 msgid "You do not have the permissions to open folder"
-msgstr "Sie haben nicht die Berechtigung das Verzeichis zu öffnen."
+msgstr "Sie haben nicht die Berechtigung das Verzeichnis zu öffnen."
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:160
 msgid "You do not have the permissions to write into folder"
@@ -5816,7 +5831,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:460
 msgid "Portuguese "
-msgstr "Portugisisch"
+msgstr "Portugiesisch"
 
 #: exe/jsui/scripts/langs.js:464
 msgid "Quechua "
@@ -7165,7 +7180,7 @@ msgstr "Weitere Einstellungsoptionen anzeigen"
 
 #: exe/webui/clickinorderblock.py:334
 msgid "<h2>Clickable Areas</h2>"
-msgstr ""
+msgstr "<h2>Hotspots</h2>"
 
 #: exe/webui/clickinorderblock.py:339
 msgid "Add Clickable Area"
@@ -7447,9 +7462,8 @@ msgstr "Übersetzung"
 msgid "Please select a correct answer for each question."
 msgstr "Wählen Sie bitte zu jeder Frage die richtige Antwort aus."
 
-#: exe/webui/eleccionmultiplefpdblock.py:120
-#: exe/webui/multichoiceblock.py:113 exe/webui/truefalseblock.py:109
-#: exe/webui/verdaderofalsofpdblock.py:118
+#: exe/webui/eleccionmultiplefpdblock.py:120 exe/webui/multichoiceblock.py:113
+#: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:118
 msgid "Add another question"
 msgstr "Eine weitere Frage hinzufügen"
 
@@ -7725,32 +7739,34 @@ msgstr ""
 
 #: exe/webui/hangmanblock.py:357
 msgid "<h2>Words to Guess</h2>"
-msgstr ""
+msgstr "<h2>Zu erratende Wörter</h2>"
 
 #: exe/webui/hangmanblock.py:366
 msgid "Remove This Word"
-msgstr ""
+msgstr "Dieses Wort entfernen"
 
 #: exe/webui/hangmanblock.py:368
 msgid "Add Word"
-msgstr ""
+msgstr "Wort hinzufügen"
 
 #: exe/webui/iecmwarning.py:42
 msgid "eXe problem"
-msgstr ""
+msgstr "eXe Problem"
 
 #: exe/webui/iecmwarning.py:46
 msgid ""
 "The Compatibility View of your browser (Internet Explorer) is turned on."
-msgstr ""
+msgstr "Die Kompatibiltätsansicht Ihres Browser ist eingeschaltet."
 
 #: exe/webui/iecmwarning.py:50
 msgid "Please click on the Compatibility View button to turn it off:"
 msgstr ""
+"Bitte klicken Sie auf den Kompatibilitätsansichtsbutton, um sie "
+"auszuschalten:"
 
 #: exe/webui/iecmwarning.py:54
 msgid "Then restart eXe.."
-msgstr ""
+msgstr "Dann starten Sie eXe neu.."
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
@@ -7786,7 +7802,7 @@ msgstr "Andere Wörter"
 
 #: exe/webui/memorymatchblock.py:83
 msgid "Number of rows x Number of cols must be an even number<br/>"
-msgstr ""
+msgstr "Anzahl der Reihen x Anzahl der Spalten muss eine gerade Zahl sein<br/>"
 
 #: exe/webui/memorymatchblock.py:88
 msgid ""
@@ -7827,7 +7843,7 @@ msgstr "Datei löschen"
 
 #: exe/webui/notablock.py:123
 msgid "Would you delete all notes?"
-msgstr ""
+msgstr "Möchten Sie alle Notizen löschen?"
 
 #: exe/webui/orientacionesalumnadofpdblock.py:64
 msgid "Guidelines for Students"
@@ -7865,11 +7881,11 @@ msgstr "Standard-Browser in Ihrem System"
 
 #: exe/webui/preferencespage.py:173
 msgid "Failed to get preferences"
-msgstr ""
+msgstr "Einstellungen konnten nicht ermittelt werden"
 
 #: exe/webui/preferencespage.py:198
 msgid "Failed to save preferences"
-msgstr ""
+msgstr "Einstellungen konnten nicht gespeichert werden"
 
 #: exe/webui/questionelement.py:135
 msgid "Hide Feedback"
@@ -7917,7 +7933,7 @@ msgstr "Laden"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Error: Invalid values entered, these are marked in red."
-msgstr ""
+msgstr "Fehler: ungültige Werte wurden eingegeben, sie sind rot markiert."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid ""
@@ -7925,168 +7941,179 @@ msgid ""
 "that provides application functionality. You will need to disable popup "
 "blocking on this site in order to fully utilize this tool."
 msgstr ""
+"Sorry, aber wir haben bemerkt, dass Ihr Popup-Blocker ein Fenster, das "
+"Anwendungsfunktionalität bietet, deaktiviert hat. Sie müssen den Popup-"
+"Blocker auf dieser Seite deaktivieren, um dieses Tool im vollen Umfang zu "
+"nutzen."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid ""
 "Currently not supported by your browser, use keyboard shortcuts instead."
 msgstr ""
+"Zur Zeit nicht von Ihrem Browser unterstützt, verwenden Sie stattdessen "
+"Tastenkombinationen."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "-- Not Set --"
-msgstr ""
+msgstr "-- Nicht festgelegt --"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Update"
-msgstr ""
+msgstr "Aktualisieren"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert"
-msgstr ""
+msgstr "Einfügen"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Do you want to use the WYSIWYG mode for this textarea?"
-msgstr ""
+msgstr "Möchten Sie den WYSIWYG Modus für dieses Textfeld benutzen?"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "{#field} must be a number"
-msgstr ""
+msgstr "{#field} muss eine Zahl sein"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "{#field} must be a number greater than {#min}"
-msgstr ""
+msgstr "{#field} muss eine größere Zahl sein als {#min}"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "{#field} must be a number or percentage"
-msgstr ""
+msgstr "{#field} muss eine Zahl oder einen Prozensatzt sein"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "(value)"
-msgstr ""
+msgstr "(Wert)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Full"
-msgstr ""
+msgstr "Vollständig"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Time"
-msgstr ""
+msgstr "Zeit einfügen"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Date"
-msgstr ""
+msgstr "Datum einfügen"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "%H:%M:%S"
-msgstr ""
+msgstr "%S:%M:%S"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #, python-format
 msgid "%Y-%m-%d"
-msgstr ""
+msgstr "%J-%M-%T"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Direction Right to Left"
-msgstr ""
+msgstr "Richtung von rechts nach links"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Direction Left to Right"
-msgstr ""
+msgstr "Richtung von links nach rechts"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "New layer..."
-msgstr ""
+msgstr "Neue Ebene ..."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Toggle Absolute Positioning"
-msgstr ""
+msgstr "Toggle absolute Positionierung"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Move Backward"
-msgstr ""
+msgstr "Zurück"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Move Forward"
-msgstr ""
+msgstr "Weiter"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert New Layer"
-msgstr ""
+msgstr "Neue Ebene einfügen"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Cancel All Changes"
-msgstr ""
+msgstr "Alle Änderungen abbrechen"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Non-Breaking Space Character"
-msgstr ""
+msgstr "Geschütztes Leerzeichen einfügen"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "ieSpell not detected. Do you want to install it now?"
-msgstr ""
+msgstr "ieSpell wurde nicht gefunden. Möchten Sie es jetzt installieren?"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Check Spelling"
-msgstr ""
+msgstr "Rechtschreibprüfung"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insertion"
-msgstr ""
+msgstr "Einfügen"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Deletion"
-msgstr ""
+msgstr "Löschen"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Acronym"
-msgstr ""
+msgstr "Akronym"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Abbreviation"
-msgstr ""
+msgstr "Abkürzung"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Citation"
-msgstr ""
+msgstr "Zitat"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid ""
 "Paste is now in plain text mode. Click again to toggle back to regular paste "
 "mode."
 msgstr ""
+"Einfügen ist jetzt im Klartext-Modus. Klicken Sie erneut, um zum normalen "
+"Modus zurückzuschalten."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid ""
 "Paste is now in plain text mode. Click again to toggle back to regular paste "
 "mode. After you paste something you will be returned to regular paste mode."
 msgstr ""
+"Einfügen ist jetzt im Klartext-Modus. Klicken Sie erneut, um zum normalen "
+"Modus zurückzuschalten. Nachdem Sie etwas eingefügt haben, werden Sie zum "
+"normalen Modus zurückgehen."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Select All"
-msgstr ""
+msgstr "Alle auswählen"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Paste from Word"
-msgstr ""
+msgstr "Einfügen aus Word"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Paste as Plain Text"
-msgstr ""
+msgstr "Einfügen als Klartext"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Cell"
-msgstr ""
+msgstr "Zelle"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Column"
-msgstr ""
+msgstr "Spalte"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Row"
-msgstr ""
+msgstr "Reihe"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Delete Table"
-msgstr ""
+msgstr "Tabelle löschen"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Copy Table Row"
@@ -10717,7 +10744,7 @@ msgstr "Wikipedia Artikel (Polnisch)"
 
 #: exe/webui/wikipediablock.py:127
 msgid "Portugese Wikipedia Article"
-msgstr "Wikipedia Artikel (Portugisisch)"
+msgstr "Wikipedia Artikel (Portugiesisch)"
 
 #: exe/webui/wikipediablock.py:128
 msgid "Slovenian Wikipedia Article"
