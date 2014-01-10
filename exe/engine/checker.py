@@ -114,9 +114,22 @@ class Checker:
         log.info('Computing content resource references')
         for node in self.nodes:
             for idevice in node.idevices:
+                if not idevice.parentNode:
+                    log.error('No parent node for idevice %s in node %s! Fixing...' % (idevice.klass, node.title))
+                    idevice.parentNode = node
+                if idevice.parentNode != node:
+                    log.error('Parent node of idevice %s in node %s not match! Fixing...' % (idevice.klass, node.title))
+                    idevice.parentNode = node
                 fields = idevice.getRichTextFields()
                 if fields and idevice.klass != 'ImageMagnifierIdevice':
                     for field in fields:
+                        if hasattr(field, 'parentNode'):
+                            if not field.parentNode:
+                                log.error('No parent node for field in idevice %s in node %s! Fixing...' % (idevice.klass, node.title))
+                                field.parentNode = node
+                            if field.parentNode != node:
+                                log.error('Parent node of field in idevice %s in node %s not match! Fixing...' % (idevice.klass, node.title))
+                                field.parentNode = node 
                         for resource in field.ListActiveResources(field.content_w_resourcePaths):
                             path = self.package.resourceDir / resource
                             if not path.exists():
