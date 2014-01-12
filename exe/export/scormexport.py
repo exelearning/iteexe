@@ -228,10 +228,10 @@ class Manifest(object):
             depth = 0
             depthold = 0
             for page in self.pages:        
-                if self.scormType == "agrega" or self.scormType == "scorm1.2":
-                    while depth > page.depth:
-                        self.itemStr += "    </item>\n"
-                        depth -= 1                             
+                while depth > page.depth:
+                    self.itemStr += "    </item>\n"
+                    depth -= 1                 
+                if self.scormType == "agrega" or self.scormType == "scorm1.2":                           
                     self.genItemResStr(page)
                 else:      
                     # we will compare depth with the actual page.depth...
@@ -242,8 +242,7 @@ class Manifest(object):
                         if page.node.children:
                             self.itemStr += u"    <imsss:sequencing>\n"
                             self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
-                            self.itemStr += u"    </imsss:sequencing>\n"    
-                            self.itemStr += "   </item>\n"                                  
+                            self.itemStr += u"    </imsss:sequencing>\n"                                     
                     # go on with the items:
                     self.genItemResStr(page)
                     # do not forget update depth before going on with the list:                                 
