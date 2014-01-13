@@ -167,10 +167,11 @@ class PreferencesPage(RenderableResource):
             data['internalAnchors'] = self.config.internalAnchors
             browserSelected = "None"
             for bname, item in mywebbrowser._browsers.items():
-                klass, instance = item
-                if instance == self.config.browser:
-                    browserSelected = bname
-                    break
+                if bname not in browsersHidden:
+                    klass, instance = item
+                    if instance == self.config.browser:
+                        browserSelected = bname
+                        break
             if browserSelected == "custom-browser":
                 if os.path.exists(self.config.browser.name):
                     browserSelected = self.config.browser.name
