@@ -20,7 +20,7 @@ _tryorder = []          # Preference order of available browsers
 
 def register(name, klass, instance=None, update_tryorder=1):
     """Register a browser connector and, optionally, connection."""
-    _browsers[name.lower()] = [klass, instance]
+    _browsers[name.lower().replace(' ', '-')] = [klass, instance]
     if update_tryorder > 0:
         _tryorder.append(name)
     elif update_tryorder < 0:
@@ -444,13 +444,6 @@ class Grail(BaseBrowser):
             ok = self._remote("LOAD " + url)
         return ok
 
-def get_iexplorer():
-    if sys.platform[:3] == "win":
-        iexplore = os.path.join(os.environ.get("PROGRAMFILES", "C:\\Program Files"),
-                            "Internet Explorer\\IEXPLORE.EXE")
-    else:
-        iexplore = ""
-    return iexplore
 #
 # Platform support for Unix
 #
@@ -561,15 +554,26 @@ if sys.platform[:3] == "win":
     # First try to use the default Windows browser
     register("windows-default", WindowsDefault)
 
-    # Detect some common Windows browsers, fallback to IE
-    iexplore = os.path.join(os.environ.get("PROGRAMFILES", "C:\\Program Files"),
-                            "Internet Explorer\\IEXPLORE.EXE")
-    # JR: Anado algunas comprobaciones mas
-    for browser in ("firefox", "firebird", "seamonkey", "mozilla", "safari", 
-                    "google-chrome", "chrome", "chromium", "chromium-browser", "netscape", "opera", iexplore):
-        if _iscommand(browser):
-            register(browser, None, BackgroundBrowser(browser))
-
+    # Detect some common Windows browsers
+    from _winreg import OpenKey, QueryValue, EnumKey, HKEY_LOCAL_MACHINE
+    key = None
+    try:
+        key = OpenKey(HKEY_LOCAL_MACHINE, r'SOFTWARE\Clients\StartMenuInternet')
+        i = 0
+        while True:
+            try:
+                bkey_name = EnumKey(key, i)
+            except:
+                break
+            bkey = OpenKey(key, bkey_name)
+            bpath = QueryValue(bkey, r'shell\open\command')
+            bname = QueryValue(bkey, '')
+            register(bname, None, BackgroundBrowser(bpath.strip('"')))
+            bkey.Close()
+            i = i + 1
+    finally:
+        if key:
+            key.Close()
 #
 # Platform support for MacOS
 #

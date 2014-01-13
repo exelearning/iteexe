@@ -29,6 +29,7 @@ import json
 from twisted.web.resource      import Resource
 from exe.webui.renderable      import RenderableResource
 import mywebbrowser
+from exe.engine.path import Path
 import os.path
 
 log = logging.getLogger(__name__)
@@ -86,9 +87,10 @@ langNames = {
 browsersHidden = ('xdg-open', 'gvfs-open', 'x-www-browser', 'gnome-open', 'kfmclient', 'www-browser', 'links', 
                      'elinks', 'lynx', 'w3m', 'windows-default', 'macosx', 'konqueror', 'MacOSX')
 browserNames = {
-                mywebbrowser.get_iexplorer(): "Internet Explorer",
+                "internet-explorer": "Internet Explorer",
                 "safari": "Safari",
                 "opera": "Opera",
+                "opera-stable": "Opera Stable",
                 "chrome": "Google Chrome",
                 "google-chrome": "Google Chrome",
                 "chromium": "Chromium",
@@ -109,6 +111,7 @@ browserNames = {
                 "seamonkey": "Seamonkey",
                 "mozilla": "Mozilla",
                 "netscape": "Netscape",
+                "midori": "Midori",
                 "None": "default"
         }
 
@@ -136,9 +139,10 @@ class PreferencesPage(RenderableResource):
             localeName += langName
             self.localeNames.append({'locale': locale, 'text': localeName})
         self.localeNames.sort()
-        for browser in mywebbrowser._tryorder:
+        for browser in mywebbrowser._browsers:
             if (browser not in browsersHidden):
-                self.browsersAvalaibles.append((browserNames[browser], browser))
+                if browser in browserNames:
+                    self.browsersAvalaibles.append((browserNames[browser], browser))
         self.browsersAvalaibles.sort()
         self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
         for browser in self.browsersAvalaibles:
@@ -162,10 +166,13 @@ class PreferencesPage(RenderableResource):
             data['locale'] = self.config.locale
             data['internalAnchors'] = self.config.internalAnchors
             browserSelected = "None"
-            if (self.config.browser.basename in browserNames):
-                browserSelected = self.config.browser.basename
-            else:
-                if (os.path.exists(self.config.browser.name)):
+            for bname, item in mywebbrowser._browsers.items():
+                klass, instance = item
+                if instance == self.config.browser:
+                    browserSelected = bname
+                    break
+            if browserSelected == "custom-browser":
+                if os.path.exists(self.config.browser.name):
                     browserSelected = self.config.browser.name
             data['browser'] = browserSelected
             data['showPreferencesOnStart'] = self.config.showPreferencesOnStart
@@ -189,8 +196,17 @@ class PreferencesPage(RenderableResource):
             self.config.internalAnchors = internalAnchors
             self.config.configParser.set('user', 'internalAnchors', internalAnchors)
             browser = request.args['browser'][0]
-            self.config.browser.name=browser
-            self.config.browser.basename=browser
+            if browser == "None":
+                browser = None
+            try:
+                self.config.browser = mywebbrowser.get(browser)
+            except Exception as e:
+                browser_path = Path(browser)
+                if browser_path.exists():
+                    mywebbrowser.register('custom-browser' , None, mywebbrowser.BackgroundBrowser(browser_path.abspath()), -1)
+                    self.config.browser = mywebbrowser.get('custom-browser')
+                else:
+                    raise e
             self.config.configParser.set('system', 'browser', browser)
             showPreferencesOnStart = request.args['showPreferencesOnStart'][0]
             self.config.showPreferencesOnStart = showPreferencesOnStart

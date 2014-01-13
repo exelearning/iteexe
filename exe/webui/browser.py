@@ -28,7 +28,7 @@ Browser module
 import logging
 from urllib import quote
 import mywebbrowser
-import os.path
+from exe.engine.path import Path
 
 log = logging.getLogger(__name__)
 
@@ -44,24 +44,27 @@ def launchBrowser(config, packageName):
     if config.browser!=None:
         try:
             config.browser = mywebbrowser.get(config.browser)
-            config.browser.open(url)
-            withdefaultbrowser=False
+            if not config.browser.open(url):
+                log.error("Unable to open defined browser: " + config.browser.name)
+                withdefaultbrowser = True
+            else:
+                withdefaultbrowser = False
         except:
-            if os.path.exists(config.browser):
-                absopath=config.browser
-                log.info(u"path browser " + absopath)
-                mywebbrowser.register('exebrowser' , None, mywebbrowser.BackgroundBrowser(absopath), -1)
-                config.browser = mywebbrowser.get('exebrowser')        
-                if config.browser.open(url)== False:
-                    log.info(u"error " + absopath)
+            browser_path = Path(config.browser)
+            if browser_path.exists():
+                log.info(u"path browser " + browser_path.abspath())
+                mywebbrowser.register("custom-browser" , None, mywebbrowser.BackgroundBrowser(browser_path.abspath()), -1)
+                config.browser = mywebbrowser.get("custom-browser")
+                if not config.browser.open(url):
+                    log.error("Unable to open custom defined browser: " + browser_path.abspath())
                     withdefaultbrowser=True
                 else:
                     withdefaultbrowser=False   
     if withdefaultbrowser:
         config.browser = dfbrw
         config.browser.open(url, new=0, autoraise=True)
-    if hasattr(config.browser, "basename"):
-        log.info(u"Defined Browser: " + config.browser.basename)
+    if hasattr(config.browser, "name"):
+        log.info(u"Defined Browser: " + config.browser.name)
     
 
 
