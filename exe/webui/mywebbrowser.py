@@ -571,6 +571,8 @@ if sys.platform[:3] == "win":
             register(bname, None, BackgroundBrowser(bpath.strip('"')))
             bkey.Close()
             i = i + 1
+    except:
+        pass
     finally:
         if key:
             key.Close()
