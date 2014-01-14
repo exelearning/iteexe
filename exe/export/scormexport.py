@@ -229,10 +229,11 @@ class Manifest(object):
             depthold = 0
             for page in self.pages:        
                 while depth > page.depth:
-                    self.itemStr += u"    <imsss:sequencing>\n"
-                    self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
-                    self.itemStr += u"    </imsss:sequencing>\n"
-		    self.itemStr += "    </item>\n"
+                    if self.scormType == "scorm2004":
+                        self.itemStr += u"    <imsss:sequencing>\n"
+                        self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
+                        self.itemStr += u"    </imsss:sequencing>\n"
+                    self.itemStr += "    </item>\n"
                     depth -= 1	                     
                 if self.scormType == "agrega" or self.scormType == "scorm1.2":                           
                     self.genItemResStr(page)
