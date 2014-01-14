@@ -1215,6 +1215,11 @@ class Package(Persistable):
             # or saved to
             newPackage.filename = Path(filename)
 
+        checker = Checker(newPackage)
+        inconsistencies = checker.check()
+        for inconsistency in inconsistencies:
+            inconsistency.fix()
+
         # Let idevices and nodes handle any resource upgrading they may need to
         # Note: Package afterUpgradeHandlers *must* be done after Resources'
         # and the package should be updated before everything else,
@@ -1285,12 +1290,6 @@ class Package(Persistable):
         nstyle=Path(G.application.config.stylesDir/newPackage.style)
         if not nstyle.isdir():
             newPackage.style=G.application.config.defaultStyle       
-
-        checker = Checker(newPackage)
-        inconsistencies = checker.check()
-        for inconsistency in inconsistencies:
-            inconsistency.fix()
-        newPackage.cleanUpResources()
         return newPackage
 
     def getUserResourcesFiles(self, node):
