@@ -227,7 +227,7 @@ Ext.define('eXe.controller.filepicker.File', {
                 	record = store.findRecord("name", ".", 0, false, true, true);
                 	if (this.validatePerms(fp.type, record)) {
 						fp.status = eXe.view.filepicker.FilePicker.returnOk;
-					    fp.file = { 'path': this.currentDir + '/' + place.rawValue };
+					    fp.file = { 'path': this.currentDir + eXe.app.config.pathSep + place.rawValue };
 					    fp.destroy();
 					}
                 }
@@ -303,7 +303,7 @@ Ext.define('eXe.controller.filepicker.File', {
             record,
 			onReplaceOk = function(status) {
 				fp.status = status;
-				fp.file = { 'path': this.currentDir + '/' + place.rawValue };
+				fp.file = { 'path': this.currentDir + eXe.app.config.pathSep + place.rawValue };
 				fp.destroy();
 			};
 		if (place.rawValue) {

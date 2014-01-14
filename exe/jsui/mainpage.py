@@ -225,7 +225,8 @@ class MainPage(RenderableLivePage):
                   'lang': G.application.config.locale.split('_')[0],
                   'showPreferences': G.application.config.showPreferencesOnStart == '1' and not G.application.preferencesShowed,
                   'showIdevicesGrouped': G.application.config.showIdevicesGrouped == '1',
-                  'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (self.package.name, IClientHandle(ctx).handleId)
+                  'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (self.package.name, IClientHandle(ctx).handleId),
+                  'pathSep': os.path.sep
                  }
         G.application.preferencesShowed = True
         return tags.script(type="text/javascript")["var config = %s" % json.dumps(config)]
