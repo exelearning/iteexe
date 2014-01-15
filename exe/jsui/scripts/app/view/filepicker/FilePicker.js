@@ -120,7 +120,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
                     typeAheadDelay: 100,
                     minChars: 1,
                     queryMode: 'remote',
-                    queryDelay: 100,
+                    queryDelay: 200,
 	                fieldLabel: fieldlabel,
                     labelAlign: 'right',
 	                dock: 'bottom',
