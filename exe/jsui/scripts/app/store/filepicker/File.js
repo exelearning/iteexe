@@ -73,6 +73,9 @@ Ext.define('eXe.store.filepicker.File', {
     listeners: {
         load: {
             fn: function(store, records, successful) {
+            	var combo = eXe.app.getController('filepicker.File').getPlaceField();
+            	if (combo)
+            		delete combo.prevqe;
 		        if (successful) {
                     var combo = eXe.app.getController('filepicker.File').getFiletypeCombo();
 					store.filterBy( function(record, id) {

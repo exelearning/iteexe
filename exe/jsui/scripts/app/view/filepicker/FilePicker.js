@@ -118,7 +118,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
                     valueField: "realname",
                     typeAhead: true,
                     typeAheadDelay: 100,
-                    minChars: 1,
+                    minChars: 2,
                     queryMode: 'remote',
                     queryDelay: 200,
 	                fieldLabel: fieldlabel,
@@ -126,7 +126,19 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 	                dock: 'bottom',
                     ui: 'footer',
 	        		itemId: 'file_place_field',
-                    padding: '5px 0px 5px 0px'
+                    padding: '5px 0px 5px 0px',
+                    listeners: {
+                    	beforequery: function(qe) {
+                    		if (qe.query.length < qe.combo.minChars) {
+                    			delete qe.combo.prevqe;
+                    			return false;
+                    		}
+                    		if (qe.combo.prevqe) {
+                    			qe.cancel = true;
+                    		}
+                    		qe.combo.prevqe = qe;
+                    	}
+                    }
                 }
 			],
             fbar: [
