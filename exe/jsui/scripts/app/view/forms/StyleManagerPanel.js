@@ -1,9 +1,65 @@
 // ===========================================================================
 // eXe
 // JR: Panel del gestor de estilos
+// FM: Export with new config.xml
 //===========================================================================
+function prexml(title,value,mode){
+    var datt=''
+	if (title!=''){
+    if ((value!='undefined')&&(value!='')){
+	value=subcom(value);
+	if (mode){
+	datt='<'+ title + '><![CDATA[' + value + ']]></' + title + '>\n'
+	}else{
+	datt='<'+ title + '>' + value + '</' + title + '>\n' 	
+	}
+	}
+	}
+    return datt
+}
+function htmlxml(text) {
+    return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function subcom(text) {
+    return text
+    .replace(/'/g, '"');
+}
+function parseXML(val) {
+                if (document.implementation && document.implementation.createDocument) {
+                    xmlDoc = new DOMParser().parseFromString(val, 'text/xml');
+                }
+                else if (window.ActiveXObject) {
+                    xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+                    xmlDoc.loadXML(val);
+                }
+                else
+                {
+                    return null;
+                }
+                return xmlDoc;
+            }
 
-function createButtonExport(name, style) {
+function xmlcreate(items,types)
+{
+var l=items.length;
+var valxml='<?xml version="1.0"?>\n';
+valxml+='<theme>\n\r';
+for (var a=0;a<l;a++){
+if (types[a]==1){
+valxml+=prexml(items[a],document.getElementsByName(items[a])[0].value,true);
+}else{
+valxml+=prexml(items[a],htmlxml(document.getElementsByName(items[a])[0].value),false);
+}
+}
+valxml+='</theme>';
+
+return valxml;
+}
+function createButtonPreExport(name, style) {
 	var buttonExport = 
 	{
     	xtype: 'button',
@@ -14,13 +70,48 @@ function createButtonExport(name, style) {
 		style:"margin-right:4px;",
         value: style,
         handler: function(button) {
+			
+        var formpanel = button.up('form'),
+            form = formpanel.getForm();
+            var action = form.findField('action');
+            action.setValue('doPreExport')
+            var style = form.findField('style');
+            style.setValue(button.value);
+			form.submit({
+                success: function() {
+                    //formpanel.reload();
+                },
+                failure: function(form, action) {
+                    Ext.Msg.alert(_('Error'), action.result.errorMessage);
+                }
+            });
+			
+		}
+	}
+	return buttonExport;
+}
+function createButtonExport(name, stylen,xmlitems,lngitems) {
+	var buttonExport = 
+	{
+    	xtype: 'button',
+    	tooltip: _('Export'),
+    	icon: '/images/stock-export.png',
+        itemId: 'export_style',
+        name: 'export_style',
+		style:"margin-left:54px;",
+		text: _('Export'),
+        value: stylen,
+        handler: function(button) {
 			var formpanel = button.up('form'),
             form = formpanel.getForm();
             var action = form.findField('action');
             action.setValue('doExport')
             var filename = form.findField('filename');
-            var style = form.findField('style');
-            style.setValue(button.value);
+			var style = form.findField('style');
+            style.setValue(stylen);
+            var xdata = form.findField('xdata');
+            xdata.setValue(xmlcreate(xmlitems,lngitems));
+			
             var fp = Ext.create("eXe.view.filepicker.FilePicker", {
         		type: eXe.view.filepicker.FilePicker.modeSave,
         		title: _("Export to ZIP Style as"),
@@ -44,12 +135,12 @@ function createButtonExport(name, style) {
         	    { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
         	]);
         	fp.show();
-            
+           
+           
 		}
 	}
 	return buttonExport;
 }
-
 function createButtonDelete(name, style) {
 	var buttonDelete =
 	{
@@ -135,7 +226,7 @@ function createPanelStyles(styles) {
         	text: styles[i].name
 		};
 		if (styles[i].exportButton) {
-			style.push(createButtonExport(styles[i].name, styles[i].style));
+			style.push(createButtonPreExport(styles[i].name, styles[i].style));
 		}
 		if (styles[i].deleteButton) {
 			style.push(createButtonDelete(styles[i].name, styles[i].style));
@@ -238,22 +329,35 @@ function createPanelStyles(styles) {
 	return panel
 }
 
-function createPanelProperties(properties, style) {
+function createPanelProperties(properties, stylen,mode) {
 	var itemsShow = [];
+	var xmlitems=[];
+	var lngitems=[];
+	var txcss='';
+	var ptitle=_("Properties of style: ");
+	if (mode) {
+	ptitle=ptitle+stylen;
+	txcss="border:solid 1px #C0C0C0;box-shadow:none;background-image:none;background-color:#CCFFFF;";
+	}else{
+	ptitle=ptitle+'('+properties[0].value+')';
+	}
 	for (i = 0; i < properties.length; i++) {
 		var valueProperty = {}
-		//if (properties[i].value.length > 50 || properties[i].value.indexOf('\n') != -1) {
-		if (properties[i].value.length > 50) {		
+		xmlitems.push(properties[i].nxml);
+		lngitems.push(properties[i].format);
+if (properties[i].format==1){		
 			valueProperty = {
 		        xtype: 'textarea',
 		        fieldLabel: properties[i].name,
-		        name: properties[i].value,
+		        name: properties[i].nxml,
 		        value: properties[i].value,
 		        grow : true,
 		        growMax: 200,
 		        growMin: 10,
-		        width: 430,
-		        readOnly: true,
+		        width: 420,
+				maxHeight:80,
+		        readOnly: mode,
+				fieldStyle:txcss,
 		        anchor: "100%"
 		    }
 		}
@@ -261,10 +365,12 @@ function createPanelProperties(properties, style) {
 			valueProperty = {
  		        xtype: 'textfield',
  		        fieldLabel: properties[i].name,
- 		        name: properties[i].value,
+ 		        name: properties[i].nxml,
  		        value: properties[i].value,
  		        grow : true,
- 		        readOnly: true,
+				width: 420,
+ 		        readOnly: mode,
+				fieldStyle:txcss,
  		        anchor: "100%"
  		    }
 		}
@@ -282,13 +388,38 @@ function createPanelProperties(properties, style) {
 	       	xtype: 'field',
 	        hidden: true,
 	        itemId: 'action',
-	        name: 'action'
+	        name: 'action',
+			value:'',
 	    }
 		itemsShow.push(action);
+		var xdata =
+		{ 
+	       	xtype: 'field',
+	        hidden: true,
+	        itemId: 'xdata',
+	        name: 'xdata'
+	    }
+		itemsShow.push(xdata);
+		var filename =
+	{ 
+       	xtype: 'field',
+        hidden: true,
+        itemId: 'filename',
+        name: 'filename'
+	}
+	itemsShow.push(filename);
+	var style =
+	{ 
+       	xtype: 'field',
+        hidden: true,
+        itemId: 'style',
+        name: 'style'
+	}
+	itemsShow.push(style);
 	}
 	panel = [{
  		xtype: 'fieldset',
- 		title: _("Properties of style: ")+style,
+ 		title: ptitle,
  		margin: 10,
  		items: itemsShow
 	} ,	{
@@ -316,6 +447,10 @@ function createPanelProperties(properties, style) {
             });
 		}
     }]
+	if (!mode){
+	panel.push(createButtonExport(name, stylen,xmlitems,lngitems));
+	}
+
  	return panel
 }
 
@@ -330,8 +465,15 @@ function createPanel() {
 			if (json.action == 'List') {
 				panel = createPanelStyles(json.styles);
 			}
+			if (json.action == 'Init') {
+				panel = createPanelStyles(json.styles);
+			}
 			if (json.action == 'Properties') {
-				panel = createPanelProperties(json.properties, json.style)
+				panel = createPanelProperties(json.properties, json.style,true);
+
+			}
+			if (json.action == 'PreExport') {
+				panel = createPanelProperties(json.properties, json.style,false)
 			}
 		}
 	});			
@@ -343,8 +485,8 @@ Ext.define('eXe.view.forms.StyleManagerPanel', {
     extend: 'Ext.form.Panel',
     alias: 'widget.stylemanager',
 
-    initComponent: function() {		
-        var me = this,
+    initComponent: function() {	
+        var me = this;
         	panel = createPanel();
         Ext.applyIf(me, {
             autoScroll: true,
@@ -359,9 +501,9 @@ Ext.define('eXe.view.forms.StyleManagerPanel', {
 	reload: function() {
     	var me = Ext.getCmp("stylemanagerwin").down("form");
     	var stylemanager = Ext.getCmp("stylemanagerwin");
-    	formpanel = stylemanager.down('form');
+    	var formpanel = stylemanager.down('form');
 	    formpanel.removeAll();
-	    panel = createPanel();
+	    var panel = createPanel();
 	    formpanel.add(panel);
 	    me.doLayout();
     }

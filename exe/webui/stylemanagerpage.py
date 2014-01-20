@@ -7,7 +7,7 @@ import logging
 import os
 import sys
 import shutil
-import zipfile
+from zipfile                       import ZipFile, ZIP_DEFLATED
 import json
 from twisted.web.resource import Resource
 from exe.webui.livepage import allSessionClients
@@ -15,6 +15,7 @@ from exe.webui.renderable      import RenderableResource
 from exe.engine.path           import toUnicode
 from exe.engine.style          import Style
 import locale
+import base64
 
 
 log = logging.getLogger(__name__)
@@ -52,21 +53,28 @@ class StyleManagerPage(RenderableResource):
  
         if (self.action == 'Properties'):
             return json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'Properties'})
+        elif  (self.action == 'PreExport'):
+            return json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'PreExport'})
         else:
             return json.dumps({'success': True, 'styles': self.renderListStyles(), 'action': 'List'})
+        
+
+            
     
     def render_POST(self, request):
 
         self.reloadPanel()
         
         if (request.args['action'][0] == 'doExport'):
-            self.doExportStyle(request.args['style'][0], request.args['filename'][0])
+            self.doExportStyle(request.args['style'][0], request.args['filename'][0],request.args['xdata'][0])
         elif (request.args['action'][0] == 'doDelete'):
             self.doDeleteStyle(request.args['style'][0])
         elif (request.args['action'][0] == 'doImport'):
             self.doImportStyle(request.args['filename'][0])
         elif (request.args['action'][0] == 'doProperties'):
             self.doPropertiesStyle(request.args['style'][0])
+        elif (request.args['action'][0] == 'doPreExport'):
+            self.doPreExportStyle(request.args['style'][0])
         elif (request.args['action'][0] == 'doList'):
             self.doList()
     
@@ -111,22 +119,15 @@ class StyleManagerPage(RenderableResource):
         """
         styleDir    = self.config.stylesDir
         log.debug("Import style from %s" % filename)
-        encoding = sys.getfilesystemencoding()
-        if encoding is None:
-            encoding = 'utf-8'
-        filename = toUnicode(filename, encoding)
+        filename=filename.decode('utf-8')       
         BaseFile=os.path.basename(filename)
         targetDir=BaseFile[0:-4:]
-        absoluteTargetDir=styleDir/targetDir             
+        absoluteTargetDir=styleDir/targetDir 
         try:
-            sourceZip = zipfile.ZipFile( filename ,  'r')
+            sourceZip = ZipFile( filename ,  'r')
         except IOError:
-            filename = toUnicode(filename, 'utf-8')
-            try:                    
-                sourceZip = zipfile.ZipFile( filename ,  'r')                 
-            except IOError:
-                self.alert(_(u'Error'), _(u'File %s does not exist or is not readable.') % filename)
-                return None
+            self.alert(_(u'Error'), _(u'File %s does not exist or is not readable.') % filename)
+            return None
         if os.path.isdir(absoluteTargetDir):
             self.alert(_(u'Error'), _(u'Style directory already exists: %s') % targetDir)
         else:
@@ -140,38 +141,44 @@ class StyleManagerPage(RenderableResource):
                     absoluteTargetDir.rmtree()
                     self.alert(_(u'Error'), _(u'The style name already exists: %s') % style.get_name())
                 else:         
-                    self.alert(_(u'Success'), _(u'Successfully imported style: %s') % targetDir)  
+                    self.alert(_(u'Success'), _(u'Successfully imported style: %s') % style.get_name())  
             else:
                 absoluteTargetDir.rmtree()
                 self.alert(_(u'Error'), _(u'Incorrect style format (does not include content.css)'))
         self.action = ""
 
-    def doExportStyle(self, stylename, filename):
+    def doExportStyle(self, stylename, filename,cfgxml):
+
         if filename != '':
             styleDir    = self.config.stylesDir
             style = Style(styleDir/stylename)
-            self.__exportStyle(style.get_style_dir(), filename)
+            log.debug("dir %s" % style.get_style_dir())
+            self.__exportStyle(style.get_style_dir(), unicode(filename),cfgxml)
+            
+
+    
         
-    def __exportStyle(self, dirstylename, filename):
+    def __exportStyle(self, dirstylename, filename,cfgxml):
         """
         Exporta un estilo a un archivo ZIP
         """
         if not filename.lower().endswith('.zip'):
-            filename += '.zip'
+            filename += '.zip' 
         sfile=os.path.basename(filename)
         log.debug("Export style %s" % dirstylename)
         try:
-            zippedFile = zipfile.ZipFile(filename, "w", zipfile.ZIP_DEFLATED)
+            zippedFile = ZipFile(filename, "w")
             try:
                 for contFile in dirstylename.files():
-                    zippedFile.write(unicode(contFile.normpath()),
-                    contFile.name.encode('utf8'), zipfile.ZIP_DEFLATED)
+                    if contFile.basename()!= 'config.xml':
+                        zippedFile.write(unicode(contFile.normpath()), contFile.basename(), ZIP_DEFLATED)
             finally:
+                zippedFile.writestr('config.xml', cfgxml)
                 zippedFile.close()
-                self.alert(_(u'Correct'), _(u'Style exported correctly: %s') % sfile.encode('utf8'))
+                self.alert(_(u'Correct'), _(u'Style exported correctly: %s') % sfile)
 
         except IOError:
-            self.alert(_(u'Error'), _(u'Could not export style : %s') % filename)
+            self.alert(_(u'Error'), _(u'Could not export style : %s') % filename.basename())
         self.action = ""
             
     def doDeleteStyle(self, style):
@@ -198,6 +205,12 @@ class StyleManagerPage(RenderableResource):
         self.properties = styleProperties.renderPropertiesJSON()
         self.action     = 'Properties'
         self.style      = styleProperties.get_name()
+    def doPreExportStyle(self, style):
+        styleDir        = self.config.stylesDir
+        styleProperties = Style(styleDir/style)
+        self.properties = styleProperties.renderPropertiesJSON()
+        self.action     = 'PreExport'
+        self.style      = style
         
     def doList(self):
         self.action     = 'List'

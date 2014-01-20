@@ -6,6 +6,7 @@ JR: Representacion de un estilo
 import logging
 from exe.engine.persist   import Persistable
 from xml.dom              import minidom
+import collections
 
 log = logging.getLogger(__name__)
 
@@ -16,21 +17,25 @@ class Style(Persistable):
     """
 
     # Atributos
-    _attributes = {
-                   'name': 'Name',
-                   'version': 'Version', 
-                   'compatibility': 'Compatibility', 
-                   'author': 'Author', 
-                   'author-url': 'Author URL', 
-                   'license': 'License', 
-                   'license-url': 'License URL', 
-                   'description': 'Description',
-                   'extra-head': 'Extra head',
-                   'jquery': 'Path to jQuery (if different)',
-                   'extra-body': 'Extra body'
+    # xml node : [ label , 0=textfield 1=textarea , order into form]
+    _attributespre ={
+
+                   'version': ['Version',0,3], 
+                   'compatibility': ['Compatibility',0,2], 
+                   'author': ['Author',1,4], 
+                   'author-url': ['Author URL',0,5], 
+                   'license': ['License',1,6], 
+                   'license-url': ['License URL',0,7], 
+                   'description': ['Description',1,1],
+                   'extra-head': ['Extra head',1,8],
+                   'jquery': ['Path to jQuery (if different)',0,10],
+                   'extra-body': ['Extra body',1,9],
+                   'name': ['Name',0,0]
                    }
     
     _attributesCode = ['extra-head', 'extra-body']
+    _attributes= collections.OrderedDict(sorted(_attributespre.items(), key=lambda t: t[1][2]))
+    
 
     def __init__(self, styleDir):
         """Initialize a new Style"""
@@ -54,22 +59,28 @@ class Style(Persistable):
         self._loadStyle()
 
     def _loadStyle(self):
-        if self._valid:
-            configStyle = self._styleDir/'config.xml'
-            if configStyle.exists():
-                xmldoc = minidom.parse( configStyle )
-        
-                theme = xmldoc.getElementsByTagName('theme')
-                if (len(theme) > 0):
-                    for attribute in self._attributes.keys():
-                        attr = theme[0].getElementsByTagName(attribute)
-                        if (len(attr) > 0):
-                            attrName = attr[0].nodeName
-                            if (len(attr[0].childNodes) > 0):
-                                attrValue = attr[0].firstChild.nodeValue
-                                if hasattr(self, '_'+attribute.replace('-', '_')):
-                                    setattr(self, '_'+attribute.replace('-', '_'), attrValue)
-                self._validConfig = True
+        try:
+            if self._valid:
+                configStyle = self._styleDir/'config.xml'
+                if configStyle.exists():
+                    xmldoc = minidom.parse( configStyle )
+            
+                    theme = xmldoc.getElementsByTagName('theme')
+                    
+                    if (len(theme) > 0):
+                        for attribute in self._attributes.keys():
+                            rpattribute='_'+attribute.replace('-', '_')
+                            attr = theme[0].getElementsByTagName(attribute)
+                            if (len(attr) > 0):
+                                attrName = attr[0].nodeName
+                                if (len(attr[0].childNodes) > 0):
+                                    attrValue = attr[0].firstChild.nodeValue
+                                    if hasattr(self, rpattribute):
+                                        setattr(self, rpattribute, attrValue)
+                    
+                    self._validConfig = True
+        except:
+            self._valid=False
     
     def _checkValid(self):
         content = self._styleDir/'content.css'
@@ -146,17 +157,15 @@ class Style(Persistable):
                 else:
                     html += getattr(self, '_'+attribute.replace('-', '_')).replace('\n','<br/>') + '</p>'
         return html
-    
     def renderPropertiesJSON(self):
-        properties = []
+        properties = []     
         for attribute in self._attributes.keys():
-            if hasattr(self, '_'+attribute.replace('-', '_')) and getattr(self, '_'+attribute.replace('-', '_')) != '':
                 if attribute in self._attributesCode:
                     value = getattr(self, '_'+attribute.replace('-', '_')).replace('"',"'")
                 else:
                     value = getattr(self, '_'+attribute.replace('-', '_'))
-                properties.append({'name': _(self._attributes[attribute]), 'value': value})
-        return properties  
+                properties.append({'name': _(self._attributes[attribute][0]), 'value': value,'format':self._attributes[attribute][1],'nxml':attribute})
+        return properties   
     
     def __str__(self):
         string = ''
