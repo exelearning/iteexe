@@ -1,5 +1,10 @@
 _ = parent._;
 /*******************************************/	
+/********** Available languages **********/
+/***************************************/
+var tinyMCE_languages=["ca","es","eu","fr","gl","it","nl","pt","ru"];
+var tinyMCE_language = getTinyMCELang(document.getElementsByTagName("HTML")[0].lang);
+/*******************************************/	
 /*****************************************/
 /****************************************/
 tinyMCE.init({
@@ -26,7 +31,7 @@ tinyMCE.init({
 	theme_advanced_statusbar_location : "bottom",
 	theme_advanced_resizing : true,	
 	
-    template_external_list_url : "/scripts/tinymce_templates/lang/en.js",
+    template_external_list_url : "/scripts/tinymce_templates/lang/"+tinyMCE_language+".js",
     // Spell check
     init_instance_callback : function() {
         if (tinyMCE.activeEditor.execCommands.mceSpellCheck) tinymce.execCommand('mceSpellCheck', true);
