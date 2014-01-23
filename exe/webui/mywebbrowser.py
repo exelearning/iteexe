@@ -9,6 +9,7 @@ import sys
 import stat
 import subprocess
 import time
+import __builtin__
 
 __all__ = ["Error", "open", "open_new", "open_new_tab", "get", "register"]
 
@@ -645,11 +646,19 @@ if sys.platform == 'darwin':
             rc = osapipe.close()
             return not rc
 
+    def _isinstalled(browser):
+        script = '''
+               exists application "%s"
+               ''' % browser
+        f = __builtin__.open(os.devnull, 'w')
+        rc = subprocess.call("osascript -e '%s'" % script, shell=True, stdout=f, stderr=f)
+        return not rc
 
     # Don't clear _tryorder or _browsers since OS X can use above Unix support
     # (but we prefer using the OS X specific stuff)
-    register("safari", None, MacOSXOSAScript('safari'), -1)
-    register("firefox", None, MacOSXOSAScript('firefox'), -1)
+    for browser in ['Google Chrome', 'Firefox', 'Safari', 'Opera']:
+        if _isinstalled(browser):
+            register(browser, None, MacOSXOSAScript(browser))
     register("MacOSX", None, MacOSXOSAScript('default'), -1)
 
 
