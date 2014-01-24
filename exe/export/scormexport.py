@@ -295,7 +295,14 @@ class Manifest(object):
         # now the javascript files:
         xmlStr += """    <file href="SCORM_API_wrapper.js"/>\n"""
         xmlStr += """    <file href="SCOFunctions.js"/>\n"""
-            
+        resources = page.node.getResources()
+        my_style = G.application.config.styleStore.getStyle(page.node.package.style)
+        if my_style.hasValidConfig:
+            if my_style.get_jquery() == True:
+                xmlStr += """    <file href="exe_jquery.js"/>\n"""
+        else:
+            xmlStr += """    <file href="exe_jquery.js"/>\n"""
+    
         xmlStr += "  </resource>\n"
        
         # no more resources:
@@ -408,12 +415,6 @@ class Manifest(object):
             self.resStr += '    <file href="exe_lightbox_loading.gif"/>\n'
             self.resStr += '    <file href="exe_lightbox_next.png"/>\n'
             self.resStr += '    <file href="exe_lightbox_prev.png"/>\n'
-
-        if my_style.hasValidConfig:
-            if my_style.get_jquery() == True:
-                self.resStr += '    <file href="exe_jquery.js"/>\n'
-        else:
-            self.resStr += '    <file href="exe_jquery.js"/>\n'
 
         for resource in resources:            
             fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
