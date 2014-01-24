@@ -243,12 +243,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                                     },
                                                     {
                                                         xtype: 'accesskey_menuitem',
-                                                        text: _('Agrega SCORM2004'),
-                                                        accesskey: 'g',
-                                                        itemId: 'file_export_agrega'
-                                                    },
-                                                    {
-                                                        xtype: 'accesskey_menuitem',
                                                         text: _('IMS Content Package'),
                                                         accesskey: 'i',
                                                         itemId: 'file_export_ims'
