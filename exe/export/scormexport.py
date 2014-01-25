@@ -281,9 +281,9 @@ class Manifest(object):
 
         # finally, special resource with all the common files, as binded with de active style ones:    
         if self.scormType == "scorm1.2":
-            xmlStr += """  <resource identifier="COMMON_FILES" adlcp:scormtype="asset">\n"""
+            xmlStr += """  <resource identifier="COMMON_FILES" type="webcontent" adlcp:scormtype="asset">\n"""
         else:
-            xmlStr += """  <resource identifier="COMMON_FILES" adlcp:scormType="asset">\n"""
+            xmlStr += """  <resource identifier="COMMON_FILES" type="webcontent" adlcp:scormType="asset">\n"""
         directory = Path(self.config.webDir).joinpath('style', self.package.style.encode('utf-8'))
         liststylesfiles = os.listdir(directory)
         for x in liststylesfiles:
