@@ -324,20 +324,22 @@ class QuizTestBlock(Block):
            scorm.SetScoreMax("100");
           
            var mode = scorm.GetMode();
-    
+
                if ( mode != "review"  &&  mode != "browse" ){
                  if ( actualScore < %s )
                  {
+                   scorm.SetCompletionStatus("incomplete");
                    scorm.SetSuccessStatus("failed");
                  }
                  else
                  {
+                   scorm.SetCompletionStatus("completed");
                    scorm.SetSuccessStatus("passed");
                  }
-              
+
                  scorm.SetExit("");
                  }
-    
+
          exitPageStatus = true;
     
     
