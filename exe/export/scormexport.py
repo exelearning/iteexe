@@ -390,6 +390,7 @@ class Manifest(object):
             if self.scormType == "scorm2004" or self.scormType == "agrega":
                 self.resStr += "adlcp:scormType=\"sco\" "
                 self.resStr += "href=\""+filename+"\"> \n"
+                self.resStr += "    <file href=\""+filename+"\"/> \n"
                 fileStr = ""
             if self.scormType == "scorm1.2":
                 self.resStr += "adlcp:scormtype=\"sco\" "    
@@ -670,27 +671,12 @@ class ScormExport(object):
             manifest.save("discussionforum.xml")
         
         # Copy the style sheet files to the output dir
-        # But not nav.css
         styleFiles  = [self.styleDir/'..'/'base.css']
         styleFiles += [self.styleDir/'..'/'popup_bg.gif']
-        styleFiles += [f for f in self.styleDir.files("*.css")
-                if f.basename() <> "nav.css"] 
-        styleFiles += self.styleDir.files("*.jpg")
-        styleFiles += self.styleDir.files("*.gif")
-        styleFiles += self.styleDir.files("*.png")
-        styleFiles += self.styleDir.files("*.js")
-        styleFiles += self.styleDir.files("*.html")
-        styleFiles += self.styleDir.files("*.ttf")
-        styleFiles += self.styleDir.files("*.eot")
-        styleFiles += self.styleDir.files("*.otf")
-        styleFiles += self.styleDir.files("*.woff")
-        # FIXME for now, only copy files referenced in Common Cartridge
-        # this really should apply to all exports, but without a manifest
-        # of the files needed by an included stylesheet it is too restrictive
-        if self.scormType == "commoncartridge":
-            for sf in styleFiles[:]:
-                if sf.basename() not in manifest.dependencies:
-                    styleFiles.remove(sf)
+        styleFiles += self.styleDir.files("*.*")
+        for sf in styleFiles[:]:
+            if sf.basename() not in manifest.dependencies:
+                styleFiles.remove(sf)
         self.styleDir.copylist(styleFiles, outputDir)
 
         # Copy the scripts
