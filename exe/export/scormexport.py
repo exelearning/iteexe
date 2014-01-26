@@ -674,9 +674,10 @@ class ScormExport(object):
         styleFiles  = [self.styleDir/'..'/'base.css']
         styleFiles += [self.styleDir/'..'/'popup_bg.gif']
         styleFiles += self.styleDir.files("*.*")
-        for sf in styleFiles[:]:
-            if sf.basename() not in manifest.dependencies:
-                styleFiles.remove(sf)
+        if self.scormType =="commoncartridge":
+            for sf in styleFiles[:]:
+                if sf.basename() not in manifest.dependencies:
+                    styleFiles.remove(sf)
         self.styleDir.copylist(styleFiles, outputDir)
 
         # Copy the scripts
