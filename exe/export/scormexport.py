@@ -243,10 +243,10 @@ class Manifest(object):
                     if self.scormType == "scorm2004" and depthold - 1 == page.depth:                                     
                         if not page.node.children:
 			    self.itemStr += "    </item>\n"                                             
-                        if page.node.children:
-                            self.itemStr += u"    <imsss:sequencing>\n"
-                            self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
-                            self.itemStr += u"    </imsss:sequencing>\n"                                     
+                        # if page.node.children:
+                        #    self.itemStr += u"    <imsss:sequencing>\n"
+                        #    self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
+                        #    self.itemStr += u"    </imsss:sequencing>\n"                                     
                     # go on with the items:
                     self.genItemResStr(page)
                     # do not forget update depth before going on with the list:                                 
