@@ -144,5 +144,8 @@ class NotaIdevice(Idevice):
         self.commentTextArea = TextAreaField(x_(u'Feedback:'), 
                                   self._commentInstruc, self.answer)
         self.commentTextArea.idevice = self
+        
+    def upgradeToVersion8(self):
+        self.icon=""
 
 # ===========================================================================
