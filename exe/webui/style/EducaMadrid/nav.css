@@ -83,7 +83,8 @@ html[xmlns] #content{display:block}
     #nodeTitle{margin-top:.5em}
 	#siteFooter,.no-nav #siteFooter{padding:15px 10px 0 10px}
     #content .exe-col{float:none;width:100%;padding:0}
-    iframe{max-width:100%}
+    iframe,object,embed{max-width:100%}
+    img,video{max-width:100%;height:auto}
     .pagination{text-align:center;height:35px;position:relative}
 	.pagination a{padding:3px 6px}
     .pagination .prev{position:absolute;left:0;margin:0}

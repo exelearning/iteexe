@@ -1422,7 +1422,18 @@ var $exe = {
     },
     loadMediaPlayer : {
         getPlayer : function(){
-        	$('.mediaelement').hide();
+        	$('.mediaelement').each(function(){
+				if (typeof(this.localName)!="undefined" && this.localName=="video") {
+					var w = this.width;
+					var wW = $(window).width();
+					if (w>wW) {
+						var nW = (wW-20);
+						var h = parseInt((this.height*nW)/w);
+						this.width = nW;
+						this.height=h;
+					}
+				}
+			}).hide();
         	var file = 'exe_media.js';
         	if (typeof eXe != 'undefined') {
         		file = '../scripts/mediaelement/' + file;

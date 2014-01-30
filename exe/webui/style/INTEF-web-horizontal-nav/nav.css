@@ -122,7 +122,8 @@ html[xmlns] #content{display:block}
     #bottomPagination{padding:0 10px}
     #siteFooter{padding-left:10px}
     #content .exe-col{float:none;width:100%;padding:0}
-    iframe{max-width:100%}
+    iframe,object,embed{max-width:100%}
+    img,video{max-width:100%;height:auto}
     .pagination{text-align:center;height:35px;position:relative}
     .pagination .prev{position:absolute;left:0}
     .pagination .next{position:absolute;right:0}
