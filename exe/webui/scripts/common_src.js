@@ -1452,8 +1452,7 @@ var $exe = {
         		mejs.MediaElementDefaults.flashName = '../scripts/mediaelement/' + mejs.MediaElementDefaults.flashName;
         		mejs.MediaElementDefaults.silverlightName = '../scripts/mediaelement/' + mejs.MediaElementDefaults.silverlightName;
         	}
-            $('.mediaelement').mediaelementplayer();
-            $('.mediaelement').show();
+            $('.mediaelement').mediaelementplayer().show();
         }
     },
     loadScript : function(url, callback){
