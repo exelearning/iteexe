@@ -233,7 +233,6 @@ class Manifest(object):
                         self.itemStr += u"    <imsss:sequencing>\n"
                         self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
                         self.itemStr += u"    </imsss:sequencing>\n"
-                    self.itemStr += "    </item>\n"
                     depth -= 1	                     
                 if self.scormType == "agrega" or self.scormType == "scorm1.2":                           
                     self.genItemResStr(page)
@@ -242,11 +241,7 @@ class Manifest(object):
                     # we look for decreasing depths -it means we are ending a branch: 
                     if self.scormType == "scorm2004" and depthold - 1 == page.depth:                                     
                         if not page.node.children:
-			    self.itemStr += "    </item>\n"                                             
-                        # if page.node.children:
-                        #    self.itemStr += u"    <imsss:sequencing>\n"
-                        #    self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
-                        #    self.itemStr += u"    </imsss:sequencing>\n"                                     
+			    self.itemStr += "    </item>\n"                                    
                     # go on with the items:
                     self.genItemResStr(page)
                     # do not forget update depth before going on with the list:                                 
