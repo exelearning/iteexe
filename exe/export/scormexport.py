@@ -74,37 +74,38 @@ class Manifest(object):
         if they did not supply a package title, use the package name
         if they did not supply a date, use today
         """
-        xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
-        namespace = 'xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM lomCustom.xsd"'
+        # xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+        # namespace = 'xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM lomCustom.xsd"'          
+
         # depending on (user desired) the metadata type:
-        if self.metadataType == 'LOMES':
-            output = StringIO.StringIO()
-            self.package.lomEs.export(output, 0, namespacedef_=namespace, pretty_print=False)
-            xml += output.getvalue()
-        if self.metadataType == 'LOM':
-            output = StringIO.StringIO()
-            self.package.lom.export(output, 0, namespacedef_=namespace, pretty_print=False)
-            xml += output.getvalue()
-        if self.metadataType == 'DC':
-            lrm = self.package.dublinCore.__dict__.copy()
-            # use package values in absentia:
-            if lrm.get('title', '') == '':
-                lrm['title'] = self.package.title
-            if lrm['title'] == '':
-                lrm['title'] = self.package.name
-            if lrm.get('description', '') == '':
-                lrm['description'] = self.package.description
-            if lrm['description'] == '':
-                lrm['description'] = self.package.name
-            if lrm.get('creator', '') == '':
-                lrm['creator'] = self.package.author
-            if lrm['date'] == '':
-                lrm['date'] = time.strftime('%Y-%m-%d')
-            # if they don't look like VCARD entries, coerce to fn:
-            for f in ('creator', 'publisher', 'contributors'):
-                if re.match('.*[:;]', lrm[f]) == None:
-                    lrm[f] = u'FN:' + lrm[f]
-            xml = template % lrm
+        # if self.metadataType == 'LOMES':
+        #    output = StringIO.StringIO()
+        #    self.package.lomEs.export(output, 0, namespacedef_=namespace, pretty_print=False)
+        #    xml += output.getvalue()
+        #if self.metadataType == 'LOM':
+        #    output = StringIO.StringIO()
+        #    self.package.lom.export(output, 0, namespacedef_=namespace, pretty_print=False)
+        #    xml += output.getvalue()
+       
+        lrm = self.package.dublinCore.__dict__.copy()
+        # use package values in absentia:
+        if lrm.get('title', '') == '':
+            lrm['title'] = self.package.title
+        if lrm['title'] == '':
+            lrm['title'] = self.package.name
+        if lrm.get('description', '') == '':
+            lrm['description'] = self.package.description
+        if lrm['description'] == '':
+            lrm['description'] = self.package.name
+        if lrm.get('creator', '') == '':
+            lrm['creator'] = self.package.author
+        if lrm['date'] == '':
+            lrm['date'] = time.strftime('%Y-%m-%d')
+        # if they don't look like VCARD entries, coerce to fn:
+        for f in ('creator', 'publisher', 'contributors'):
+            if re.match('.*[:;]', lrm[f]) == None:
+                lrm[f] = u'FN:' + lrm[f]
+        xml = template % lrm
         return xml
 
     def save(self, filename):
@@ -117,18 +118,12 @@ class Manifest(object):
             out.write(self.createXML().encode('utf8'))
         out.close()
         # now depending on metadataType, <metadata> content is diferent:
+        
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004" or self.scormType == "agrega":
-            if self.metadataType == 'DC':
-                # if old template is desired, select imslrm.xml file:
-                # anything else, yoy should select:
-                templateFilename = self.config.webDir/'templates'/'imslrm.xml'
-                template = open(templateFilename, 'rb').read()
-            elif self.metadataType == 'LOMES':
-                template = None
-            elif self.metadataType == 'LOM':
-                template = None
+            templateFilename = self.config.webDir/'templates'/'imslrm.xml'
+            template = open(templateFilename, 'rb').read()            
             # Now the file with metadatas. 
-            # Notice that its name is independent of metadataType:   
+            # Notice that its name is independent of metadataType:  
             xml = self.createMetaData(template)
             out = open(self.outputDir/'imslrm.xml', 'wb')
             out.write(xml.encode('utf8'))
@@ -191,16 +186,16 @@ class Manifest(object):
             xmlStr += u"</adlcp:location> \n"
             xmlStr += u"</metadata> \n"
         elif self.scormType == "commoncartridge":
-            xmlStr  = u'<?xml version="1.0" encoding="UTF-8"?>\n'
-            xmlStr += u'<!-- Generated by eXe - http://exelearning.net -->\n'
-            xmlStr += u'<manifest identifier="'+manifestId+'" \n'
-            xmlStr += u'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" \n'
-            xmlStr += u'xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" \n'
-            xmlStr += u'xsi:schemaLocation=\"http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd " \n'
+            xmlStr = u'''<?xml version="1.0" encoding="UTF-8"?>
+<!-- generated by eXe - http://exelearning.org -->
+<manifest identifier="%s"
+xmlns="http://www.imsglobal.org/xsd/imscc/imscp_v1p1"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.imsglobal.org/profile/cc/ccv1p0/derived_schema/imscp_v1p2_localised.xsd http://ltsc.ieee.org/xsd/imscc/LOM http://www.imsglobal.org/profile/cc/ccv1p0/derived_schema/domainProfile_1/lomLoose_localised.xsd">\n''' % manifestId
             templateFilename = self.config.webDir/'templates'/'cc.xml'
             template = open(templateFilename, 'rb').read()
             xmlStr += self.createMetaData(template)
-
+        
         # ORGANIZATION
 
         if self.scormType == "commoncartridge":
@@ -233,22 +228,25 @@ class Manifest(object):
                         self.itemStr += u"    <imsss:sequencing>\n"
                         self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
                         self.itemStr += u"    </imsss:sequencing>\n"
-                    depth -= 1	                     
+                    # self.itemStr += "    </item>\n"
+                    depth -= 1                         
                 if self.scormType == "agrega" or self.scormType == "scorm1.2":                           
                     self.genItemResStr(page)
+                    if page.node.children:
+                        self.itemStr += "    </item>\n"
                 else:      
                     # we will compare depth with the actual page.depth...
                     # we look for decreasing depths -it means we are ending a branch: 
                     if self.scormType == "scorm2004" and depthold - 1 == page.depth:                                     
                         if not page.node.children:
-			    self.itemStr += "    </item>\n"                                    
+                            self.itemStr += "    </item>\n"                                                                                 
                     # go on with the items:
                     self.genItemResStr(page)
                     # do not forget update depth before going on with the list:                                 
                 depthold = page.depth
                 depth = page.depth    
             
-            if self.scormType != "scorm2004":
+            if self.scormType != "scorm2004" and self.scormType != "scorm1.2":
                 while depth > 1:               
                     self.itemStr += "        </item>\n"                                 
                     depth -= 1   
@@ -274,31 +272,33 @@ class Manifest(object):
         xmlStr += "<resources>\n"
         xmlStr += self.resStr
 
-        # finally, special resource with all the common files, as binded with de active style ones:    
-        if self.scormType == "scorm1.2":
-            xmlStr += """  <resource identifier="COMMON_FILES" type="webcontent" adlcp:scormtype="asset">\n"""
-        else:
-            xmlStr += """  <resource identifier="COMMON_FILES" type="webcontent" adlcp:scormType="asset">\n"""
-        directory = Path(self.config.webDir).joinpath('style', self.package.style.encode('utf-8'))
-        liststylesfiles = os.listdir(directory)
-        for x in liststylesfiles:
-            if os.path.isfile(directory + '/' + x):
-                xmlStr += """    <file href="%s"/>\n""" % x 
-        # we do want base.css and (for short time), popup_bg.gif, also:    
-        xmlStr += """    <file href="base.css"/>\n"""
-        xmlStr += """    <file href="popup_bg.gif"/>\n"""
-        # now the javascript files:
-        xmlStr += """    <file href="SCORM_API_wrapper.js"/>\n"""
-        xmlStr += """    <file href="SCOFunctions.js"/>\n"""
-        resources = page.node.getResources()
-        my_style = G.application.config.styleStore.getStyle(page.node.package.style)
-        if my_style.hasValidConfig:
-            if my_style.get_jquery() == True:
+        
+        # If NOT commoncartridge, finally, special resource with
+        # all the common files, as binded with de active style ones:    
+        if self.scormType != "commoncartridge":
+            if self.scormType == "scorm1.2":
+                xmlStr += """  <resource identifier="COMMON_FILES" type="webcontent" adlcp:scormtype="asset">\n"""
+            else:
+                xmlStr += """  <resource identifier="COMMON_FILES" type="webcontent" adlcp:scormType="asset">\n"""
+            directory = Path(self.config.webDir).joinpath('style', self.package.style.encode('utf-8'))
+            liststylesfiles = os.listdir(directory)
+            for x in liststylesfiles:
+                if os.path.isfile(directory + '/' + x):
+                    xmlStr += """    <file href="%s"/>\n""" % x 
+            # we do want base.css and (for short time), popup_bg.gif, also:    
+            xmlStr += """    <file href="base.css"/>\n"""
+            xmlStr += """    <file href="popup_bg.gif"/>\n"""
+            # now the javascript files:
+            xmlStr += """    <file href="SCORM_API_wrapper.js"/>\n"""
+            xmlStr += """    <file href="SCOFunctions.js"/>\n"""
+            resources = page.node.getResources()
+            my_style = G.application.config.styleStore.getStyle(page.node.package.style)
+            if my_style.hasValidConfig:
+                if my_style.get_jquery() == True:
+                    xmlStr += """    <file href="exe_jquery.js"/>\n"""
+            else:
                 xmlStr += """    <file href="exe_jquery.js"/>\n"""
-        else:
-            xmlStr += """    <file href="exe_jquery.js"/>\n"""
-    
-        xmlStr += "  </resource>\n"
+            xmlStr += "  </resource>\n"
        
         # no more resources:
         xmlStr += "</resources>\n"
@@ -319,9 +319,16 @@ class Manifest(object):
         ## ITEMS INSIDE ORGANIZATIONS
         
         self.itemStr += '        <item identifier="'+itemId+'" '
+        # CC do not requires if each section is visible or not:
         if self.scormType != "commoncartridge":
             self.itemStr += 'isvisible="true" '
-
+        # and CC needs:
+        else:
+            self.itemStr += 'identifierref="'+resId+'">\n'
+            self.itemStr += " <title>"
+            self.itemStr += escape(page.node.titleShort)
+            self.itemStr += "</title>\n"
+       
         # If self.scormType == "scorm2004" the identifierref shall not 
         # be used on <item> elements that contain other <item> elements, 
         # so:
@@ -341,14 +348,14 @@ class Manifest(object):
                 
                 # create a leaf item with this resource one level beyond,
                 if control == itemId:
-                   itemIdleaf   = "ITEM-"+unicode(self.idGenerator.generate())
-                   self.itemStr += '        <item identifier="'+itemIdleaf+'" '
-                   self.itemStr += 'identifierref="'+resId+'">\n'
-                   self.itemStr += "            <title>"
-                   self.itemStr += escape(page.node.titleShort)
-                   self.itemStr += "</title>\n"
-                   self.itemStr += "        </item>\n" 
-                   control = 0                  
+                    itemIdleaf   = "ITEM-"+unicode(self.idGenerator.generate())
+                    self.itemStr += '        <item identifier="'+itemIdleaf+'" '
+                    self.itemStr += 'identifierref="'+resId+'">\n'
+                    self.itemStr += "            <title>"
+                    self.itemStr += escape(page.node.titleShort)
+                    self.itemStr += "</title>\n"
+                    self.itemStr += "        </item>\n" 
+                    control = 0                  
         
         # if user selects Agrega export, ALL the items at organizations 
         # must include identifierref attribute (like SCORM1.2):
@@ -419,7 +426,9 @@ class Manifest(object):
         self.resStr += fileStr
 
         # adding the dependency with the common files collected:
-        self.resStr += """    <dependency identifierref="COMMON_FILES"/>"""
+        if self.scormType != "commoncartridge":
+            self.resStr += """    <dependency identifierref="COMMON_FILES"/>"""
+            
         # and no more:
 
         self.resStr += "  </resource>\n"
@@ -669,12 +678,12 @@ class ScormExport(object):
         styleFiles  = [self.styleDir/'..'/'base.css']
         styleFiles += [self.styleDir/'..'/'popup_bg.gif']
         styleFiles += self.styleDir.files("*.*")
-        if self.scormType =="commoncartridge":
+        if self.scormType == "commoncartridge":
             for sf in styleFiles[:]:
                 if sf.basename() not in manifest.dependencies:
                     styleFiles.remove(sf)
         self.styleDir.copylist(styleFiles, outputDir)
-
+        
         # Copy the scripts
         dT = common.getExportDocType()
         if dT == "HTML5":
