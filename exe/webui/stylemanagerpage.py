@@ -50,20 +50,22 @@ class StyleManagerPage(RenderableResource):
         
     def render_GET(self, request):
         """Called for all requests to this object"""
- 
+
         if (self.action == 'Properties'):
+            self.action     = 'List'
             return json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'Properties'})
+            
         elif  (self.action == 'PreExport'):
+            self.action     = 'List'
             return json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'PreExport'})
         else:
             return json.dumps({'success': True, 'styles': self.renderListStyles(), 'action': 'List'})
         
 
-            
     
     def render_POST(self, request):
 
-        self.reloadPanel()
+        self.reloadPanel(request.args['action'][0])
         
         if (request.args['action'][0] == 'doExport'):
             self.doExportStyle(request.args['style'][0], request.args['filename'][0],request.args['xdata'][0])
@@ -77,11 +79,10 @@ class StyleManagerPage(RenderableResource):
             self.doPreExportStyle(request.args['style'][0])
         elif (request.args['action'][0] == 'doList'):
             self.doList()
+        #return self.render_GET(None)
     
-        return self.render_GET(None)
-    
-    def reloadPanel(self):
-        self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").reload()', filter_func=allSessionClients)
+    def reloadPanel(self,action):
+        self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").reload("'+action+'")', filter_func=allSessionClients)
         
     def alert(self, title, mesg):
         self.client.sendScript("Ext.Msg.alert('%s','%s')" % (title, mesg), filter_func=allSessionClients)
@@ -169,11 +170,16 @@ class StyleManagerPage(RenderableResource):
         try:
             zippedFile = ZipFile(filename, "w")
             try:
-                for contFile in dirstylename.files():
-                    if contFile.basename()!= 'config.xml':
-                        zippedFile.write(unicode(contFile.normpath()), contFile.basename(), ZIP_DEFLATED)
+                if cfgxml!='':
+                    for contFile in dirstylename.files():
+                        if contFile.basename()!= 'config.xml':
+                            zippedFile.write(unicode(contFile.normpath()), contFile.basename(), ZIP_DEFLATED)
+                else:
+                    for contFile in dirstylename.files():
+                            zippedFile.write(unicode(contFile.normpath()), contFile.basename(), ZIP_DEFLATED)
             finally:
-                zippedFile.writestr('config.xml', cfgxml)
+                if cfgxml!='':
+                    zippedFile.writestr('config.xml', cfgxml)
                 zippedFile.close()
                 self.alert(_(u'Correct'), _(u'Style exported correctly: %s') % sfile)
 

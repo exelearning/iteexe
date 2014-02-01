@@ -109,14 +109,18 @@ function createButtonExport(name, stylen,xmlitems,lngitems) {
             var filename = form.findField('filename');
 			var style = form.findField('style');
             style.setValue(stylen);
+			/* for export with new xonfig.xml
             var xdata = form.findField('xdata');
             xdata.setValue(xmlcreate(xmlitems,lngitems));
-			
+			*/
+			var namefilexport=stylen;
+			if (namefilexport!='') namefilexport+='.zip';			
             var fp = Ext.create("eXe.view.filepicker.FilePicker", {
         		type: eXe.view.filepicker.FilePicker.modeSave,
         		title: _("Export to ZIP Style as"),
         		modal: true,
         		scope: this,
+				prefilename:namefilexport,
         		callback: function(fp) {
         		    if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
         		    	filename.setValue(fp.file.path);
@@ -329,7 +333,7 @@ function createPanelStyles(styles) {
 	return panel
 }
 
-function createPanelProperties(properties, stylen,mode) {
+function createPanelProperties(properties, stylen,mode,withbutton) {
 	var itemsShow = [];
 	var xmlitems=[];
 	var lngitems=[];
@@ -345,7 +349,8 @@ function createPanelProperties(properties, stylen,mode) {
 		var valueProperty = {}
 		xmlitems.push(properties[i].nxml);
 		lngitems.push(properties[i].format);
-if (properties[i].format==1){		
+		if (properties[i].value!=''){
+		if (properties[i].format==1){		
 			valueProperty = {
 		        xtype: 'textarea',
 		        fieldLabel: properties[i].name,
@@ -374,6 +379,7 @@ if (properties[i].format==1){
  		        anchor: "100%"
  		    }
 		}
+		
 		var row =
 		{ 
            	xtype: 'container',
@@ -383,6 +389,7 @@ if (properties[i].format==1){
             items: valueProperty         
         }
 		itemsShow.push(row);
+		}
 		var action =
 		{ 
 	       	xtype: 'field',
@@ -397,7 +404,8 @@ if (properties[i].format==1){
 	       	xtype: 'field',
 	        hidden: true,
 	        itemId: 'xdata',
-	        name: 'xdata'
+	        name: 'xdata',
+			value:'',
 	    }
 		itemsShow.push(xdata);
 		var filename =
@@ -447,7 +455,7 @@ if (properties[i].format==1){
             });
 		}
     }]
-	if (!mode){
+	if (withbutton){
 	panel.push(createButtonExport(name, stylen,xmlitems,lngitems));
 	}
 
@@ -464,16 +472,19 @@ function createPanel() {
 			var json = Ext.JSON.decode(response.responseText);
 			if (json.action == 'List') {
 				panel = createPanelStyles(json.styles);
-			}
+			}else
 			if (json.action == 'Init') {
 				panel = createPanelStyles(json.styles);
-			}
+			}else
 			if (json.action == 'Properties') {
-				panel = createPanelProperties(json.properties, json.style,true);
+			//createPanelProperties(json.properties, json.style,read only,with button export)
+				panel = createPanelProperties(json.properties, json.style,true,false);
 
-			}
-			if (json.action == 'PreExport') {
-				panel = createPanelProperties(json.properties, json.style,false)
+			}else if (json.action == 'PreExport') {
+			//createPanelProperties(json.properties, json.style,read only,with button export)
+				panel = createPanelProperties(json.properties, json.style,true,true)
+			}else{
+			panel = createPanelStyles(json.styles);
 			}
 		}
 	});			
@@ -484,27 +495,29 @@ function createPanel() {
 Ext.define('eXe.view.forms.StyleManagerPanel', {
     extend: 'Ext.form.Panel',
     alias: 'widget.stylemanager',
-
     initComponent: function() {	
         var me = this;
-        	panel = createPanel();
+		var panel=createPanel();
         Ext.applyIf(me, {
             autoScroll: true,
             trackResetOnLoad: true,
             url: 'stylemanager',
-            items: panel
+            items: panel		
         });
         me.callParent(arguments);
-        me.doLayout();
+        me.doLayout();		
     },
     
-	reload: function() {
+	reload: function(n) {
+		var panel={};
     	var me = Ext.getCmp("stylemanagerwin").down("form");
     	var stylemanager = Ext.getCmp("stylemanagerwin");
-    	var formpanel = stylemanager.down('form');
-	    formpanel.removeAll();
-	    var panel = createPanel();
+    	var formpanel = stylemanager.down('form'); 
+		formpanel.removeAll(false);
+		panel =  createPanel();	    
 	    formpanel.add(panel);
 	    me.doLayout();
+
+
     }
 });
