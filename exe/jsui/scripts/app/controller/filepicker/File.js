@@ -371,7 +371,11 @@ Ext.define('eXe.controller.filepicker.File', {
             place = this.getPlaceField();
 
         fp.status = eXe.view.filepicker.FilePicker.returnCancel;
-        place.setValue("");
+		var prevalue=fp.prefilename;
+		if (prevalue==undefined){
+		prevalue="";
+		}
+        place.setValue(prevalue);
         place.focus();
         if (combo)
 		  combo.setValue(fp.filetypes.getAt(0).get('regex'));
