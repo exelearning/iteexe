@@ -21,7 +21,7 @@ tinyMCE.init({
     //paste_text_sticky : true,    
     //paste_text_sticky_default : true,
 	extended_valid_elements : "img[*],iframe[*]", //The exemath plugin uses this attribute: exe_math_latex, and the iframes might have "allowfullscreen".
-	entity_encoding : "raw",
+	//entity_encoding : "raw",
 
 	// Theme options
 	theme_advanced_buttons1 : "newdocument,spellchecker,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,bullist,numlist,|,outdent,indent,blockquote,|,formatselect,fontsizeselect,fontselect,|,forecolor,backcolor,|,sub,sup,|,fullscreen",
