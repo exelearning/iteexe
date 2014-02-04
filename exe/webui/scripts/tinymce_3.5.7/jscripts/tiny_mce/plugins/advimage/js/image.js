@@ -269,7 +269,7 @@ var ImageDialog = {
 				}
 				
 				var cssClass = "exe-figure exe-image";
-                if (groupPosition!="left") cssClass += " position-"+groupPosition;
+                cssClass += " position-"+groupPosition;
                 if (groupFloat!="none") cssClass += " float-"+groupFloat;
                 if (captionLicense!="") cssClass += " license-"+captionLicense;
                 cssClass +=" text-"+textAlign;
