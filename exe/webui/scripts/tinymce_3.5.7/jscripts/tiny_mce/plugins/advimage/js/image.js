@@ -278,7 +278,7 @@ var ImageDialog = {
                 if (groupPosition=="left") {
                     if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px 0;";
                     //if (textAlign=='right' || textAlign=='center') extraStyle+="width:"+nl.width.value+"px;text-align:"+textAlign+";";
-                    if (textAlign=='right' || textAlign=='center') extraStyle+="width:"+nl.width.value+"px;";
+                    extraStyle+="width:"+nl.width.value+"px;";
                 } else if (groupPosition=="center") {
                     if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px auto;";
                     //else extraStyle+="margin:0 auto;";
