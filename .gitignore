@@ -21,3 +21,8 @@ exe/webui/docs/manual
 exe/config
 exe/run-exe.py
 dist/
+exe.conf
+exe.log*
+package1.elp
+testing.elp
+

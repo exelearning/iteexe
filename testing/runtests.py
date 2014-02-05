@@ -27,7 +27,7 @@ from testconfig        import TestConfig
 #from testnode          import TestNode
 #from testuniqueid      import TestUniqueId
 ##from testxmlhttp       import TestOutline
-#from testpackage       import TestPackage
+from testpackage       import TestPackage
 #from testblock         import TestBlock
 from testidevice       import TestIdevice
 #from testidevicestore  import TestIdeviceStore
@@ -51,7 +51,7 @@ if __name__ == "__main__":
 #    suite.addTest(unittest.makeSuite(TestNode))
 #    suite.addTest(unittest.makeSuite(TestUniqueId))
 ##    suite.addTest(unittest.makeSuite(TestOutline))
-#    suite.addTest(unittest.makeSuite(TestPackage))
+    suite.addTest(unittest.makeSuite(TestPackage))
 #    suite.addTest(unittest.makeSuite(TestBlock))
     suite.addTest(TestBlockFactory())
     

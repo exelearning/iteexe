@@ -32,13 +32,13 @@ from exe.engine.path           import Path
 class TestPackage(SuperTestCase):
 
 
-    def _testCreatePackage(self):
+    def testCreatePackage(self):
         package      = self.package
         self.assert_(package)
         self.assert_(package.name)
         
 
-    def _testSaveAndLoad(self):
+    def testSaveAndLoad(self):
         packageStore = PackageStore()
         package = packageStore.createPackage()
         # Check that it has been given a default name
@@ -59,13 +59,13 @@ class TestPackage(SuperTestCase):
         self.assertEquals(package1.name, "package1")
         
 
-    def _testfindNode(self):
+    def testfindNode(self):
         package = self.package
         node1 = package.root.createChild()
         self.assertEquals(package.findNode(node1.id), node1)
         
 
-    def _testLevelName(self):
+    def testLevelName(self):
         package = self.package
         package._levelNames = ["Month", "Week", "Day"]
         self.assertEquals(package.levelName(0), "Month")
@@ -122,11 +122,11 @@ class TestPackage(SuperTestCase):
                     assert val == val2, '%s.%s: %s/%s' % (inst1.__class__.__name__, key, val2, val)
         checkInst(package, package2)
 
-    def _testExtract(self):    
+    def testExtract(self):    
         """
         Extracts a node of a package
         """
-        package = self.package.load('extractionTestPackage.elp')
+        package = self.package.load('testing/extractionTestPackage.elp')
         if package is None:
             self.fail('extractionTestPackage.elp doesn\'t exist')
         # Select the first child of the first node
