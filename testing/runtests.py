@@ -22,13 +22,14 @@ import sys
 sys.path.insert(0, '..')
 import unittest
 from testconfig        import TestConfig
+#from testchecker import TestChecker
 #from testconfigparser  import TestConfigParser, TestSections
 #from testnode          import TestNode
 #from testuniqueid      import TestUniqueId
 ##from testxmlhttp       import TestOutline
 #from testpackage       import TestPackage
 #from testblock         import TestBlock
-#from testidevice       import TestIdevice
+from testidevice       import TestIdevice
 #from testidevicestore  import TestIdeviceStore
 #from testpersist       import TestPersist
 from testexport        import TestWebsiteExport 
@@ -44,6 +45,7 @@ from testblockfactory import TestBlockFactory
 if __name__ == "__main__":
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(TestConfig))
+    #suite.addTest(unittest.makeSuite(TestChecker))
 #    suite.addTest(unittest.makeSuite(TestConfigParser))
 #    suite.addTest(unittest.makeSuite(TestSections))
 #    suite.addTest(unittest.makeSuite(TestNode))
@@ -53,7 +55,7 @@ if __name__ == "__main__":
 #    suite.addTest(unittest.makeSuite(TestBlock))
     suite.addTest(TestBlockFactory())
     
-#    suite.addTest(unittest.makeSuite(TestIdevice))
+    suite.addTest(unittest.makeSuite(TestIdevice))
 #    suite.addTest(unittest.makeSuite(TestIdeviceStore))
 #    suite.addTest(unittest.makeSuite(TestPersist))
     suite.addTest(unittest.makeSuite(TestWebsiteExport))

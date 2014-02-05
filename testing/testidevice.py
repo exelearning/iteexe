@@ -21,10 +21,17 @@ import unittest
 from exe.engine.node    import Node
 from exe.engine.idevice import Idevice
 from exe.engine.packagestore import PackageStore
-
+from exe                      import globals as G
+import shutil
+from exe.application import Application
 
 class TestIdevice(unittest.TestCase):
     def setUp(self):
+        G.application = Application()
+        
+        G.application.loadConfiguration()
+        G.application.preLaunch()
+        
         self.packageStore = PackageStore()
         self.package      = self.packageStore.createPackage()
 
@@ -90,6 +97,11 @@ class TestIdevice(unittest.TestCase):
         idevice2.movePrev()
         self.assertEquals(parentNode.idevices[1], idevice2)
         self.assertEquals(parentNode.idevices[2], idevice0)
+        
+    def tearDown(self):
+        from exe import globals
+        globals.application = None
+        shutil.rmtree('tmp')
         
 if __name__ == "__main__":
     unittest.main()
