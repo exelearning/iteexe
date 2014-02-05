@@ -23,7 +23,7 @@ sys.path.insert(0, '..')
 import unittest
 from testconfig        import TestConfig
 #from testchecker import TestChecker
-#from testconfigparser  import TestConfigParser, TestSections
+from testconfigparser  import TestConfigParser, TestSections
 #from testnode          import TestNode
 #from testuniqueid      import TestUniqueId
 ##from testxmlhttp       import TestOutline
@@ -46,8 +46,8 @@ if __name__ == "__main__":
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(TestConfig))
     #suite.addTest(unittest.makeSuite(TestChecker))
-#    suite.addTest(unittest.makeSuite(TestConfigParser))
-#    suite.addTest(unittest.makeSuite(TestSections))
+    suite.addTest(unittest.makeSuite(TestConfigParser))
+    suite.addTest(unittest.makeSuite(TestSections))
 #    suite.addTest(unittest.makeSuite(TestNode))
 #    suite.addTest(unittest.makeSuite(TestUniqueId))
 ##    suite.addTest(unittest.makeSuite(TestOutline))
