@@ -325,30 +325,38 @@
                 }
                 
                 var cssClass = "exe-figure exe-media";
-                if (groupPosition!="left") cssClass += " position-"+groupPosition;
+                cssClass += " position-"+groupPosition;
                 if (groupFloat!="none") cssClass += " float-"+groupFloat;
                 if (captionLicense!="") cssClass += " license-"+captionLicense;
                 cssClass +=" text-"+textAlign;
                 var extraStyle = "";
+				
+                var _w = getVal("width");
+				if (_w=="") {
+					var mW = 320;
+					var t = get("media_type").value;
+					if (t=='audio') mW = 300;				
+					_w = mW;
+				}
                 
                 if (groupPosition=="left") {
                     if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px 0;";
-                    if (textAlign=='right' || textAlign=='center') extraStyle+="width:"+getVal("width")+"px;";
+                    extraStyle+="width:"+_w+"px;";
                 } else if (groupPosition=="center") {
                     if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px auto;";
-                    extraStyle+="width:"+getVal("width")+"px;";
+                    extraStyle+="width:"+_w+"px;";
                 } else {
                     if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px 0 "+groupMargin+"px auto;";
-                    extraStyle+="width:"+getVal("width")+"px;";
+                    extraStyle+="width:"+_w+"px;";
                 }
 
                 if (groupFloat=="left") {
                     if (groupMargin=="") groupMargin=15;
-                    extraStyle = "width:"+getVal("width")+"px;";
+                    extraStyle = "width:"+_w+"px;";
                     extraStyle+="margin:0 "+groupMargin+"px "+groupMargin+"px 0;";
                 } else if (groupFloat=="right") {
                     if (groupMargin=="") groupMargin=15;
-                    extraStyle = "width:"+getVal("width")+"px;";
+                    extraStyle = "width:"+_w+"px;";
                     extraStyle+="margin:0 0 "+groupMargin+"px "+groupMargin+"px;";
                 }
                 
