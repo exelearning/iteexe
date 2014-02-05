@@ -1,13 +1,22 @@
 =========================================
     eXe: The eLearning XHML editor
 =========================================
-$Revision$
-$Date$
+
+eXe is a free/libre tool for the educational community to create
+ and publish open educational resources.
 
 ===========================================================================
-Copyright 2004-2005, University of Auckland
-Copyright 2004-2008 eXe Project, http://exelearning.org/
-All rights reserved, see COPYING for details.
+
+Current Version:
+Copyright 2008-2014 eXeLearning.net project contributors.  For details see
+information contained within source files.
+
+Previous Version:
+Copyright 2004-2011 eXe Project 
+ Copyright 2004-2005, University of Auckland
+ Copyright 2004-2008 eXe Project, http://exelearning.org/
+
+All rights reserved and license, see COPYING for details.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -27,13 +36,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 SUPPORT
 =======
 If you have any problems or have any feedback please report them at
-https://eduforge.org/forum/forum.php?forum_id=298 or email
-exe@exelearning.org
+www.exelearning.net
 
 
 KNOWN BUGS
 ==========
-See http://exelearning.org/projects/exe1 for the eXe issue list.
+See https://forja.cenatic.es/tracker/?atid=883&group_id=197&func=browse 
+for the eXe issue list.
 
 
 WINDOWS
@@ -57,27 +66,20 @@ To close eXe you must use the File... Quit menu item.  Do not simply try
 to close the eXe display window with the window close button.  Remember to
 save your content before exiting.
 
-The first time you run you may get asked if you want to allow eXe
-to access the Internet.  eXe does NOT require access to the Internet.
-With the XP firewall you can just select the option to block its access.
-With the McAfee firewall you will need to allow access.
-
 
 MAC OSX
 =======
 
-To install eXe, simply drag the app to your Applications folder.
+To install eXe, simply open the .dmg and drag the app to your 
+Applications folder.
 
 
 FEDORA LINUX 
 =============
 
-The eXe Fedora Linux install consists of a single RPM.  There are separate
-RPMs for Fedora Core 6 (Python 2.4) and Fedora 7 and 8 (Python 2.5).  Each of
-these RPMs requires python-zope-interface (version 3.0.1 or newer) and
-python imaging (version 1.1.5 or newer).
+The eXe Fedora Linux install consists of a single RPM. 
 
-There are HowTos on http://eXeLearning.org/ explaining how you can use
+There are HowTos on http://exelearning.net/ explaining how you can use
 these RPMs on some other RPM-based Linux distributions.
 
 From the command line type exe to start.  If you are using a standard
@@ -87,17 +89,24 @@ window manager, you should find an eXe entry in your Accessories menu.
 UBUNTU LINUX 
 ============
 
-There are separate DPKGs for Dapper/Edgy (6.06 and 6.10 using Python 2.4)
-and Feisty/Gutsy/Hardy (7.04, 7.10, and 8.04 using Python 2.5).
+Install the .deb the file and you will find exe in your program list in 
+Unity.  From the command line type exe to start.
 
-From the command line type exe to start.
+An Ubuntu PPA is available at:
+https://launchpad.net/~exelearning/+archive/exelearning
 
 
 BUILDING FROM SOURCE
 ====================
 
-Please see http://eXeLearning.org/BuildingFromSource for information
-on obtaining and building eXe and its dependencies.
+Please see the wiki page for building from source for any given os:
+ 
+https://forja.cenatic.es/plugins/mediawiki/wiki/iteexe/index.php/
+
+  
+Each operating system supported by exe has a folder in the installs 
+directory that generates an os specific installer.
+
 
 
 CREDITS
