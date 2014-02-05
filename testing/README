@@ -1,5 +1,7 @@
-To run these tests you will need to set your PYTHONPATH variable to the the base of the eXe source
+To run theses tests run them from the base directory (e.g. iteexe)
+when checked out from git do the following:
+
+export PYTHONPATH=$(pwd)
+python testing/runtests.py
 
 
-e.g.
-export PYTHONPATH=/home/djm/work/exe

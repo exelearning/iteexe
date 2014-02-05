@@ -26,7 +26,9 @@ from exe.engine.node        import Node
 from exe.engine.path        import Path, TempDirPath
 from exe.export.scormexport import ScormExport
 from utils                  import SuperTestCase, HTMLChecker
-from nevow.context          import RequestContext
+from nevow.context          import RequestContext, WovenContext
+from nevow.livepage import IClientHandle
+from nevow.stan import Tag
 
 # ===========================================================================
 class TestBlock(SuperTestCase):
@@ -46,8 +48,13 @@ class TestBlock(SuperTestCase):
         """
         # Add some idevices to the main page
         def addIdevice(id_):
-            request = self._request(action='AddIdevice', object=str(id_))
+            request = self._request(action='AddIdevice', object=str(id_), currentNode = str(id_))
             ctx = RequestContext(request)
+            
+            #at start mainpage.authoringPage is None - test will 
+            #currently fail - Mike Dawson 5/Feb/2014
+            from exe.webui.authoringpage     import AuthoringPage
+            self.mainpage.authoringPage = AuthoringPage(self.mainpage)
             return self.mainpage.authoringPage.render(request)
         ideviceCount = len(self.app.ideviceStore.getIdevices())
         for i in range(ideviceCount):

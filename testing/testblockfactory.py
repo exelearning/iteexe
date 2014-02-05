@@ -43,6 +43,8 @@ class TestBlockFactory(unittest.TestCase):
         myblock   = g_blockFactory.createBlock(None, myidevice)
         self.assertEquals(type(myblock), DummyBlock)
         
+    def runTest(self):
+        self.testBlockFactory()
 
 if __name__ == "__main__":
     unittest.main()

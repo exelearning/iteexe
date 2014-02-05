@@ -32,6 +32,8 @@ from exe.engine.config       import Config
 from exe.engine.configparser import ConfigParser
 from exe.engine.package      import Package
 from exe.engine.path         import Path
+from exe                import globals as G
+
 
 # Choose which ConfigParser we'll use
 if sys.platform[:3] == "win":
@@ -82,7 +84,16 @@ class FakeRequest(object):
             self.args[key] = [value]
         self.method = method
         self.path = path
-
+        self._remembrances = None
+        self.locateHook = None
+        self.parent = None
+        self.isAttrib = None
+        self.inURL = None 
+        self.precompile = None
+    
+    #fake setHeader - its really fake
+    def setHeader(self, header_name, header_val):
+        pass
 
 class SuperTestCase(unittest.TestCase):
     """
@@ -105,7 +116,11 @@ class SuperTestCase(unittest.TestCase):
         self._setupConfigFile(confParser)
         confParser.write(logFileName)
         # Start up the app and friends
-        self.app = Application()
+        if G.application is None:
+            G.application = Application()
+            
+        self.app = G.application
+        G.application = self.app
         self.app.loadConfiguration()
         self.app.preLaunch()
         self.client = FakeClient()

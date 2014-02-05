@@ -27,16 +27,17 @@ from testconfig        import TestConfig
 #from testuniqueid      import TestUniqueId
 ##from testxmlhttp       import TestOutline
 #from testpackage       import TestPackage
-##from testblock         import TestBlock
+#from testblock         import TestBlock
 #from testidevice       import TestIdevice
 #from testidevicestore  import TestIdeviceStore
 #from testpersist       import TestPersist
-##from testexport        import TestWebsiteExport 
+from testexport        import TestWebsiteExport 
 ##from testexport        import TestScormMetaExport
 ##from testexport        import TestScormNoMetaExport
 #from testresource      import TestResource
 #from testforumscache   import TestForumsCache
 from testresources  import TestResources
+from testblockfactory import TestBlockFactory
 
 # ===========================================================================
 
@@ -49,11 +50,13 @@ if __name__ == "__main__":
 #    suite.addTest(unittest.makeSuite(TestUniqueId))
 ##    suite.addTest(unittest.makeSuite(TestOutline))
 #    suite.addTest(unittest.makeSuite(TestPackage))
-##    suite.addTest(unittest.makeSuite(TestBlock))
+#    suite.addTest(unittest.makeSuite(TestBlock))
+    suite.addTest(TestBlockFactory())
+    
 #    suite.addTest(unittest.makeSuite(TestIdevice))
 #    suite.addTest(unittest.makeSuite(TestIdeviceStore))
 #    suite.addTest(unittest.makeSuite(TestPersist))
-##    suite.addTest(unittest.makeSuite(TestWebsiteExport))
+    suite.addTest(unittest.makeSuite(TestWebsiteExport))
 ##    suite.addTest(unittest.makeSuite(TestScormMetaExport))
 ##    suite.addTest(unittest.makeSuite(TestScormNoMetaExport))
 #    suite.addTest(unittest.makeSuite(TestResource))

@@ -29,26 +29,36 @@ from exe.export.scormexport   import ScormExport
 from exe.export.imsexport     import IMSExport
 from zipfile                  import ZipFile
 from sets                     import Set
+from exe                import globals as G
+from exe.application import Application
+
 
 class TestWebsiteExport(unittest.TestCase):
 
     def testExport(self):
         # Delete the output dir
         outdir = TempDirPath()
+        
+        G.application = Application()
+        
+        G.application.loadConfiguration()
+        G.application.preLaunch()
+        
         # Load a package
-        package = Package.load('testPackage.elp')
+        package = Package.load('testing/testPackage2.elp')
         # Do the export
-        exporter = WebsiteExport('../exe/webui/style/default', 
-                                 outdir,
-                                 '../exe/webui/images', 
-                                 '../exe/webui/scripts',
-                                 '../exe/webui/templates')
+        style_dir = G.application.config.stylesDir / package.style
+        
+        exporter = WebsiteExport(G.application.config,
+                                 style_dir, 
+                                 outdir)
+        
         exporter.export(package)
         # Check that it all exists now
         assert outdir.isdir()
         assert (outdir / 'index.html').isfile()
         # Check that the style sheets have been copied
-        for filename in Path('../exe/webui/style/default').files():
+        for filename in style_dir.files():
             assert ((outdir / filename.basename()).exists(),
                     'Style file "%s" not copied' % (outdir / filename.basename()))
 
