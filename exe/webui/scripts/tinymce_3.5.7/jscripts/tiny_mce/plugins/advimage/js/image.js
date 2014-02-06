@@ -21,7 +21,6 @@ var ImageDialog = {
 		if (n.nodeName == 'IMG') {        
             // The New eXeLearning 
             document.getElementById("caption_panel-fieldset-1").style.display="none";
-            document.getElementById("caption_panel-fieldset-2").style.display="none";
             document.getElementById("caption_panel-explanation").innerHTML=tinyMCEPopup.getLang("advimage_dlg.caption_warning");
             document.getElementById("caption_panel").style.height="294px";
             // /The New eXeLearning
@@ -195,10 +194,6 @@ var ImageDialog = {
             var authorName = nl.authorname.value;
 			var authorNameLink = nl.authornamelink.value;
 			var captionLicense = nl.captionlicense.value;
-			var groupPosition = nl.groupposition.value;
-            var textAlign = nl.textalign.value;
-            var groupFloat = nl.groupfloat.value;
-            var groupMargin = nl.groupmargin.value;
 			
 			if (imageHeader!="" || imageTitle!="" || imageTitleLink!="" || authorName!="" || authorNameLink!="" || captionLicense!="") {
 				var hText = "";
@@ -268,40 +263,9 @@ var ImageDialog = {
 					}
 				}
 				
-				var cssClass = "exe-figure exe-image";
-                cssClass += " position-"+groupPosition;
-                if (groupFloat!="none") cssClass += " float-"+groupFloat;
+				var cssClass = "exe-figure exe-image position-center";
                 if (captionLicense!="") cssClass += " license-"+captionLicense;
-                cssClass +=" text-"+textAlign;
-                var extraStyle = "";
-                
-                if (groupPosition=="left") {
-                    if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px 0;";
-                    //if (textAlign=='right' || textAlign=='center') extraStyle+="width:"+nl.width.value+"px;text-align:"+textAlign+";";
-                    extraStyle+="width:"+nl.width.value+"px;";
-                } else if (groupPosition=="center") {
-                    if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px auto;";
-                    //else extraStyle+="margin:0 auto;";
-                    //extraStyle+="width:"+nl.width.value+"px;text-align:"+textAlign+";";
-                    extraStyle+="width:"+nl.width.value+"px;";
-                } else {
-                    if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px 0 "+groupMargin+"px auto;";
-                    //else extraStyle+="margin:0 0 0 auto;";
-                    //extraStyle+="width:"+nl.width.value+"px;text-align:"+textAlign+";";
-                    extraStyle+="width:"+nl.width.value+"px;";
-                }
-
-                if (groupFloat=="left") {
-                    if (groupMargin=="") groupMargin=15;
-                    //extraStyle = "float:left;width:"+nl.width.value+"px;text-align:"+textAlign+";";
-                    extraStyle = "width:"+nl.width.value+"px;";
-                    extraStyle+="margin:0 "+groupMargin+"px "+groupMargin+"px 0;";
-                } else if (groupFloat=="right") {
-                    if (groupMargin=="") groupMargin=15;
-                    //extraStyle = "float:right;width:"+nl.width.value+"px;text-align:"+textAlign+";";
-                    extraStyle = "width:"+nl.width.value+"px;";
-                    extraStyle+="margin:0 0 "+groupMargin+"px "+groupMargin+"px;";
-                }
+                extraStyle="width:"+nl.width.value+"px;";
                 
                 c = "<div class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+"<div class='figcaption'>"+cText+license+"</div></div>";
 			}

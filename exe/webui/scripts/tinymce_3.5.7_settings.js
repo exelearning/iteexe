@@ -17,7 +17,7 @@ tinyMCE.init({
 	content_css : "/css/extra.css," + exe_style,
     height : "250",
 	// The New eXeLearning
-	plugins : "autolink,lists,pagebreak,style,layer,table,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,exemath,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,visualblocks,pastecode,inlinepopups,spellchecker,template",
+	plugins : "advalign,autolink,lists,pagebreak,style,layer,table,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,exemath,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,visualblocks,pastecode,inlinepopups,spellchecker,template",
     //paste_text_sticky : true,    
     //paste_text_sticky_default : true,
 	extended_valid_elements : "img[*],iframe[*]", //The exemath plugin uses this attribute: exe_math_latex, and the iframes might have "allowfullscreen".

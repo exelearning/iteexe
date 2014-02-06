@@ -251,10 +251,6 @@
             var authorName = getVal("authorname");
             var authorNameLink = getVal("authornamelink");
             var captionLicense = getVal("captionlicense");
-            var groupPosition = getVal("groupposition");
-            var textAlign = getVal("textalign");
-            var groupFloat = getVal("groupfloat");
-            var groupMargin = getVal("groupmargin");
             
             if (imageHeader!="" || imageTitle!="" || imageTitleLink!="" || authorName!="" || authorNameLink!="" || captionLicense!="") {
                 var hText = "";
@@ -324,12 +320,9 @@
                     }
                 }
                 
-                var cssClass = "exe-figure exe-media";
-                cssClass += " position-"+groupPosition;
-                if (groupFloat!="none") cssClass += " float-"+groupFloat;
+                var cssClass = "exe-figure exe-media position-center";
+                
                 if (captionLicense!="") cssClass += " license-"+captionLicense;
-                cssClass +=" text-"+textAlign;
-                var extraStyle = "";
 				
                 var _w = getVal("width");
 				if (_w=="") {
@@ -339,27 +332,8 @@
 					_w = mW;
 				}
                 
-                if (groupPosition=="left") {
-                    if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px 0;";
-                    extraStyle+="width:"+_w+"px;";
-                } else if (groupPosition=="center") {
-                    if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px auto;";
-                    extraStyle+="width:"+_w+"px;";
-                } else {
-                    if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px 0 "+groupMargin+"px auto;";
-                    extraStyle+="width:"+_w+"px;";
-                }
+                var extraStyle="width:"+_w+"px;";
 
-                if (groupFloat=="left") {
-                    if (groupMargin=="") groupMargin=15;
-                    extraStyle = "width:"+_w+"px;";
-                    extraStyle+="margin:0 "+groupMargin+"px "+groupMargin+"px 0;";
-                } else if (groupFloat=="right") {
-                    if (groupMargin=="") groupMargin=15;
-                    extraStyle = "width:"+_w+"px;";
-                    extraStyle+="margin:0 0 "+groupMargin+"px "+groupMargin+"px;";
-                }
-                
                 c = "<div class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+"<div class='figcaption'>"+cText+license+"</div></div>";
             }
             
@@ -732,7 +706,6 @@
             // The New eXeLearning 
             if (tinyMCE.activeEditor.selection.getContent()!="") {
                 document.getElementById("caption_panel-fieldset-1").style.display="none";
-                document.getElementById("caption_panel-fieldset-2").style.display="none";
                 document.getElementById("caption_panel-explanation").innerHTML=tinyMCEPopup.getLang("media_dlg.caption_warning");
                 document.getElementById("caption_panel").style.height="420px";
             }
