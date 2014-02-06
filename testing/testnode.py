@@ -20,10 +20,20 @@
 import unittest
 from exe.engine.node import Node
 from exe.engine.packagestore import PackageStore
+from exe                import globals as G
+from exe.application import Application
+from exe.engine.path import Path
+import sys
+from exe.engine.config import Config
+from exe.engine.configparser import ConfigParser
+from utils import SuperTestCase
 
 # ===========================================================================
 class TestNode(unittest.TestCase):
     def setUp(self):
+        
+        SuperTestCase.check_application_for_test()
+        
         packageStore = PackageStore()
         package      = packageStore.createPackage()
         n0 = package.root       # 00

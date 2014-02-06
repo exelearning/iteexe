@@ -24,7 +24,7 @@ import unittest
 from testconfig        import TestConfig
 #from testchecker import TestChecker
 from testconfigparser  import TestConfigParser, TestSections
-#from testnode          import TestNode
+from testnode          import TestNode
 #from testuniqueid      import TestUniqueId
 ##from testxmlhttp       import TestOutline
 from testpackage       import TestPackage
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     #suite.addTest(unittest.makeSuite(TestChecker))
     suite.addTest(unittest.makeSuite(TestConfigParser))
     suite.addTest(unittest.makeSuite(TestSections))
-#    suite.addTest(unittest.makeSuite(TestNode))
+    suite.addTest(unittest.makeSuite(TestNode))
 #    suite.addTest(unittest.makeSuite(TestUniqueId))
 ##    suite.addTest(unittest.makeSuite(TestOutline))
     suite.addTest(unittest.makeSuite(TestPackage))
