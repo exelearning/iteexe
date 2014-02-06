@@ -65,6 +65,7 @@ var exe_advalign = {
 				}				
 
 				this.className = currK;
+				tinyMCE.activeEditor.dom.events.prevent();
 				return true;
 			}
 		});
