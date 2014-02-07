@@ -424,7 +424,7 @@ function clearHidden()
 
 // Sets the hidden action and object fields, then submits the 
 // contentForm to the server
-function submitLink(action, object, changed, currentNode) 
+function execute_submitLink(action, object, changed, currentNode) 
 {
     var theForm = getContentForm();
 
@@ -438,6 +438,23 @@ function submitLink(action, object, changed, currentNode)
 	    runFuncArray(beforeSubmitHandlers)
 	
 	    theForm.submit();
+    }
+}
+function submitLink(action, object, changed, currentNode) 
+{
+    // Close full screen
+    if(action=='changeNode') {
+        var ed = tinyMCE.activeEditor
+        if (ed && ed.id=="mce_fullscreen") {
+            ed.execCommand('mceFullScreen');
+            setTimeout(function(){
+                execute_submitLink(action, object, changed, currentNode) 
+            },500);
+        } else {
+            execute_submitLink(action, object, changed, currentNode) 
+        }
+    } else {    
+        execute_submitLink(action, object, changed, currentNode) 
     }
 }
 
