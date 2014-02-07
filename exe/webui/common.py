@@ -133,9 +133,13 @@ def ideviceHeader(e, style, mode):
                     h += ' style="background-image:url('+iconPath+')"'
         else:
             log.debug("Idevice %s at node %s has no icon" % (e.idevice._title, e.idevice.parentNode._title))
-        o += u"<"+titleTag+" class=\"iDeviceTitle\">"+e.idevice.title+"</"+titleTag+">"
+        t = e.idevice.title
+        fullT = u'<'+titleTag+' class="iDeviceTitle">'+t+'</'+titleTag+'>'
+        if (t == ""):
+            fullT = u'<span class="iDeviceTitle">&nbsp;</span>'
+        o += u"<"+titleTag+" class=\"iDeviceTitle\">"+t+"</"+titleTag+">"
         h += '>'
-        h += u'<'+titleTag+' class="iDeviceTitle">'+e.idevice.title+'</'+titleTag+'>'
+        h += fullT
         h += '</'+headerTag+'>'+lb
     
     if e.idevice.emphasis <= 0:
