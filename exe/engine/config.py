@@ -393,6 +393,8 @@ class Config:
 
         # Load the "user" section
         if self.configParser.has_section('user'):
+            if self.configParser.user.has_option('defaultstyle'):
+                self.defaultStyle= self.configParser.user.defaultstyle
             if self.configParser.user.has_option('internalAnchors'):
                 self.internalAnchors = self.configParser.user.internalAnchors
             if self.configParser.user.has_option('lastDir'):
