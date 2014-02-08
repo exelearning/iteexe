@@ -1420,9 +1420,20 @@ var $exe = {
             i.attr("class",c);
         }
     },
+	alignMediaElement : function(m){
+		var e = $(m);
+		var p = e.parents().eq(2);
+		var k = p.attr("class");
+		if (typeof(k)=='string' && k.indexOf("mejs-container")==0) {
+			var mL = m.style.marginLeft;
+			var mR = m.style.marginRight;
+			if ((mL == 'auto') && (mL == mR)) $(p).wrap('<div style="text-align:center"></div>')
+		}
+	},
     loadMediaPlayer : {
         getPlayer : function(){
-        	$('.mediaelement').each(function(){
+			$exe.mediaelements = $('.mediaelement');
+        	$exe.mediaelements.each(function(){
 				if (typeof(this.localName)!="undefined" && this.localName=="video") {
 					var w = this.width;
 					var wW = $(window).width();
@@ -1452,7 +1463,9 @@ var $exe = {
         		mejs.MediaElementDefaults.flashName = '../scripts/mediaelement/' + mejs.MediaElementDefaults.flashName;
         		mejs.MediaElementDefaults.silverlightName = '../scripts/mediaelement/' + mejs.MediaElementDefaults.silverlightName;
         	}
-            $('.mediaelement').mediaelementplayer().show();
+            $exe.mediaelements.mediaelementplayer().show().each(function(){
+				$exe.alignMediaElement(this);
+			});
         }
     },
     loadScript : function(url, callback){

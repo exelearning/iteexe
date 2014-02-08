@@ -117,6 +117,7 @@ h1#nodeTitle {
 
 /* iDevices */
 .iDeviceTitle{top:0}
+span.iDeviceTitle{height:48px;display:block}
 .iDevice_header{background-position:0 0}
 
 /* SCORM y otros comparten apariencia:esta es la apariencia por defecto */
