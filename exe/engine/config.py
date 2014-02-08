@@ -55,7 +55,7 @@ class Config:
                    'videoMediaConverter_avi', 'audioMediaConverter_ogg',
                    'audioMediaConverter_au', 'audioMediaConverter_mp3',
                    'audioMediaConverter_wav', 'ffmpegPath'),
-        'user': ('locale', 'lastDir', 'showPreferencesOnStart', 'showIdevicesGrouped'),
+        'user': ('locale', 'lastDir', 'showPreferencesOnStart','defaultStyle', 'showIdevicesGrouped'),
     }
 
     idevicesCategories = {
@@ -393,8 +393,8 @@ class Config:
 
         # Load the "user" section
         if self.configParser.has_section('user'):
-            if self.configParser.user.has_option('defaultstyle'):
-                self.defaultStyle= self.configParser.user.defaultstyle
+            if self.configParser.user.has_option('defaultStyle'):
+                self.defaultStyle= self.configParser.user.defaultStyle
             if self.configParser.user.has_option('internalAnchors'):
                 self.internalAnchors = self.configParser.user.internalAnchors
             if self.configParser.user.has_option('lastDir'):
