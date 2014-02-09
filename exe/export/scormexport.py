@@ -40,7 +40,7 @@ from exe.export.websiteexport      import WebsiteExport
 from exe.engine.persist            import encodeObject
 from exe.engine.persistxml         import encodeObjectToXML
 from exe                           import globals as G
-from exe.export.scormpage   import ScormPage
+from exe.export.scormpage          import ScormPage
 import imp
 
 log = logging.getLogger(__name__)
@@ -203,7 +203,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
         if self.scormType == "commoncartridge":
             xmlStr += u'''<organizations>
     <organization identifier="%s" structure="rooted-hierarchy">
-    <item identifier="eXeCC-%s">\n''' % (orgId,
+    <item identifier="eXeCC-%s" ''' % (orgId,
             unicode(self.idGenerator.generate()))
         else:
             xmlStr += u"<organizations default=\""+orgId+"\">  \n"
@@ -230,13 +230,16 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
                         self.itemStr += u"    <imsss:sequencing>\n"
                         self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
                         self.itemStr += u"    </imsss:sequencing>\n"
-                    # self.itemStr += "    </item>\n"
-                    depth -= 1                         
-                if self.scormType == "agrega" or self.scormType == "scorm1.2":                           
-                    self.genItemResStr(page)
-                    if page.node.children:
+                        if page.node.children:
+                            self.itemStr += "    </item>\n"
+                    if self.scormType == "scorm1.2" and page.node.children:
                         self.itemStr += "    </item>\n"
-                else:      
+                    depth -= 1                           
+                else:                 
+                    if self.scormType == "scorm1.2" and depthold - 1 == page.depth:                                     
+                        if not page.node.children:
+                            self.itemStr += "    </item>\n"
+                        
                     # we will compare depth with the actual page.depth...
                     # we look for decreasing depths -it means we are ending a branch: 
                     if self.scormType == "scorm2004" and depthold - 1 == page.depth:                                     
@@ -248,23 +251,28 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
                 depthold = page.depth
                 depth = page.depth    
             
-            if self.scormType != "scorm2004" and self.scormType != "scorm1.2":
+            if self.scormType != "scorm2004":    
                 while depth > 1:               
                     self.itemStr += "        </item>\n"                                 
                     depth -= 1   
-            
+                # the LAST </item> of navigation block must disappear:
+                if self.itemStr.endswith("   </item>\n"):
+                    self.itemStr = self.itemStr[:-12] 
+                
             # finally the last page (leaf) must also include sequencing:  
             if self.scormType == "scorm2004" and not page.node.children:
                 for x in range(1,page.depth):
                     self.itemStr += u"    <imsss:sequencing>\n"
                     self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
                     self.itemStr += u"    </imsss:sequencing>\n"    
-                    self.itemStr += "   </item>\n"    
+                    self.itemStr += "   </item>\n"
+                # the LAST </item> of navigation block must disappear:
+                if self.itemStr.endswith("   </item>\n"):
+                    self.itemStr = self.itemStr[:-12] 
+                    self.itemStr += "\n"
             # that's all for itemStr
                     
-        xmlStr += self.itemStr
-        if self.scormType == "commoncartridge":
-            xmlStr += "    </item>\n"      
+        xmlStr += self.itemStr   
         
         xmlStr += "  </organization>\n"
         xmlStr += "</organizations>\n"
@@ -320,12 +328,14 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
             
         ## ITEMS INSIDE ORGANIZATIONS
         
-        self.itemStr += '        <item identifier="'+itemId+'" '
+        if page.depth > 1:          
+            self.itemStr += '        <item identifier="'+itemId+'" '
         # CC do not requires if each section is visible or not:
-        if self.scormType != "commoncartridge":
+        # if self.scormType != "commoncartridge" and page.depth > 1:
+        if self.scormType != "commoncartridge" and page.depth > 1:
             self.itemStr += 'isvisible="true" '
         # and CC needs:
-        else:
+        if self.scormType == "commoncartridge":
             self.itemStr += 'identifierref="'+resId+'">\n'
             self.itemStr += " <title>"
             self.itemStr += escape(page.node.titleShort)
@@ -342,11 +352,12 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
                 self.itemStr += "</title>\n"
                 self.itemStr += "        </item>\n"
             else:
-                self.itemStr += ">\n"
-                self.itemStr += "            <title>"
-                # an innocent title by the moment:
-                self.itemStr += "->"
-                self.itemStr += "</title>\n"     
+                if page.depth > 1:
+                    self.itemStr += ">\n"
+                    self.itemStr += "            <title>"
+                    # an innocent title by the moment:
+                    self.itemStr += "->"
+                    self.itemStr += "</title>\n"     
                 
                 # create a leaf item with this resource one level beyond,
                 if control == itemId:
@@ -361,14 +372,17 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
         
         # if user selects Agrega export, ALL the items at organizations 
         # must include identifierref attribute (like SCORM1.2):
-        if self.scormType == "scorm1.2" or self.scormType == "agrega":
-            self.itemStr += 'identifierref="'+resId+'">\n'
-            self.itemStr += "            <title>"
-            self.itemStr += escape(page.node.titleShort)
-            self.itemStr += "</title>\n"    
-            if not page.node.children:
-                self.itemStr += "        </item>\n"            
+        if self.scormType == "scorm1.2" or self.scormType == "agrega":           
+            if page.depth > 1:       
+                self.itemStr += 'identifierref="'+resId+'">\n'
+                self.itemStr += "            <title>"
+                self.itemStr += escape(page.node.titleShort)
+                self.itemStr += "</title>\n"    
+                if not page.node.children:
+                    self.itemStr += "        </item>\n"            
                    
+
+
         ## RESOURCES
         
         self.resStr += "  <resource identifier=\""+resId+"\" "
@@ -383,7 +397,9 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
     <file href="%s"/>
     <file href="base.css"/>
     <file href="content.css"/>
-    <file href="popup_bg.gif"/>""" % (filename, filename)
+    <file href="popup_bg.gif"/>
+    <file href="exe_jquery.js"/>
+    <file href="common.js"/>""" % (filename, filename)
             if page.node.package.backgroundImg:
                 self.resStr += '\n    <file href="%s"/>' % \
                         page.node.package.backgroundImg.basename()
@@ -414,6 +430,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'mediaelement').files()]
         
         if common.hasGalleryIdevice(page.node):
+            self.resStr += '\n'
             self.resStr += '    <file href="exe_lightbox.js"/>\n'
             self.resStr += '    <file href="exe_lightbox.css"/>\n'
             self.resStr += '    <file href="exe_lightbox_close.png"/>\n'
@@ -432,7 +449,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
             self.resStr += """    <dependency identifierref="COMMON_FILES"/>"""
             
         # and no more:
-
+        self.resStr += '\n'
         self.resStr += "  </resource>\n"
 
 
@@ -514,21 +531,8 @@ class ScormExport(object):
         # Copy the style sheet files to the output dir
         styleFiles  = [self.styleDir/'..'/'base.css']
         styleFiles += [self.styleDir/'..'/'popup_bg.gif']
-		# ===============================================
-        styleFiles += self.styleDir.files("*.css")
-        styleFiles += self.styleDir.files("*.jpg")
-        styleFiles += self.styleDir.files("*.gif")
-        styleFiles += self.styleDir.files("*.png")
-        styleFiles += self.styleDir.files("*.js")
-        styleFiles += self.styleDir.files("*.html")
-        styleFiles += self.styleDir.files("*.ico")
-        styleFiles += self.styleDir.files("*.ttf")
-        styleFiles += self.styleDir.files("*.eot")
-        styleFiles += self.styleDir.files("*.otf")
-        styleFiles += self.styleDir.files("*.woff")
-		# ===============================================
-		# why al ?
-        #styleFiles += self.styleDir.files("*.*")
+		# And with all the files of the style we avoid problems:
+        styleFiles += self.styleDir.files("*.*")
         if self.scormType == "commoncartridge":
             for sf in styleFiles[:]:
                 if sf.basename() not in manifest.dependencies:
