@@ -5,6 +5,7 @@
 # eXe Project <exe@exelearning.org>
 # Asmoz fundazioa, 2009
 #
+#
 # http://www.asmoz.org/index.php?option=com_content&view=article&id=131&Itemid=101&lang=es
 # Malen <mjareno@asmoz.org>
 # ULHI, 2012-2013 Joxemi Andonegi <jmandonegi@ulhi.net>
@@ -13,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2013-12-04 14:33+0100\n"
+"POT-Creation-Date: 2014-02-10 22:54+0100\n"
 "PO-Revision-Date: 2013-11-29 16:03+0100\n"
 "Last-Translator: Andoni <andoni-t@aek.org>\n"
 "Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
@@ -719,7 +720,7 @@ msgstr ""
 #: exe/engine/scormmulticlozeidevice.py:116 exe/engine/sortidevice.py:53
 #: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:471
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:475
 msgid "Instructions"
 msgstr "Argibideak"
 
@@ -758,7 +759,7 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
 #: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
-#: exe/engine/field.py:3611 exe/engine/field.py:3659
+#: exe/engine/field.py:3620 exe/engine/field.py:3668
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:589
 #: exe/engine/idevicestore.py:698 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/scormclozeidevice.py:131
@@ -770,7 +771,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:173
 #: exe/webui/clozefpdblock.py:174 exe/webui/clozefpdblock.py:192
 #: exe/webui/clozelangfpdblock.py:175 exe/webui/clozelangfpdblock.py:193
-#: exe/webui/common.py:388 exe/webui/editorelement.py:148
+#: exe/webui/common.py:392 exe/webui/editorelement.py:148
 #: exe/webui/editorpane.py:255 exe/webui/element.py:2395
 #: exe/webui/element.py:2509 exe/webui/listablock.py:452
 #: exe/webui/questionelement.py:104 exe/webui/reflectionfpdblock.py:142
@@ -1037,8 +1038,8 @@ msgstr ""
 ",aukeratutakoa ondo badago, edo \"Erantzun okerra\" \n"
 ",beste erantzunetan."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3682
-#: exe/engine/field.py:3747 exe/engine/multichoiceidevice.py:131
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3691
+#: exe/engine/field.py:3756 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:80 exe/engine/scormmultiselectidevice.py:78
 #: exe/engine/seleccionmultiplefpdidevice.py:82
 msgid "Question"
@@ -1144,8 +1145,6 @@ msgstr "Oraingoz ez da fitxategirik igo"
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
 #: exe/webui/imagemagnifierblock.py:109 exe/webui/imagewithtextblock.py:83
 #: exe/webui/multimediablock.py:87
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:21
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:30
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
 msgstr "Bat ere ez"
@@ -1182,11 +1181,11 @@ msgstr ""
 "Adierazi erakutsi nahi duzun URLa\n"
 "eta aukeratu erakutsi beharreko eremuaren tamaina."
 
-#: exe/engine/field.py:2630
+#: exe/engine/field.py:2639
 msgid "Click Here"
 msgstr "Klikatu hemen"
 
-#: exe/engine/field.py:2825 exe/engine/field.py:2872
+#: exe/engine/field.py:2834 exe/engine/field.py:2881
 #: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
@@ -1195,7 +1194,7 @@ msgstr ""
 "Eman izen bat MP3 fitxategiari. \n"
 "Izen hori irakurgailuaren izenburuan ere agertuko da."
 
-#: exe/engine/field.py:3018 exe/engine/field.py:3252
+#: exe/engine/field.py:3027 exe/engine/field.py:3261
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1224,7 +1223,7 @@ msgstr ""
 "da. \"Zorroztasunez zuzendu\" soilik badago gaituta, \"elefantea\" ere "
 "onartuko da.</p>"
 
-#: exe/engine/field.py:3039 exe/engine/field.py:3273
+#: exe/engine/field.py:3048 exe/engine/field.py:3282
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
@@ -1232,7 +1231,7 @@ msgstr ""
 "<p>Aukera hau gaituta badago, maiuskulak eta minuskulak gaizki jarrita "
 "dituzten erantzunak okerrak izango dira.</p>"
 
-#: exe/engine/field.py:3044 exe/engine/field.py:3278
+#: exe/engine/field.py:3053 exe/engine/field.py:3287
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -1241,7 +1240,7 @@ msgstr ""
 "<p>Aukera hau gaituta badago, hitzak ikasleak idazten dituen bitartean\n"
 "markatuko dira, eta ez ariketaren amaieran.</p>"
 
-#: exe/engine/field.py:3082 exe/engine/field.py:3320
+#: exe/engine/field.py:3091 exe/engine/field.py:3329
 #: exe/engine/listaidevice.py:392
 msgid ""
 "Allow auto completion when \n"
@@ -1250,11 +1249,11 @@ msgstr ""
 "Erabiltzailea hutsuneak betetzen ari denean, \n"
 "automatikoki betetzeko baimena."
 
-#: exe/engine/field.py:3283
+#: exe/engine/field.py:3292
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr "<p>Aukera hau gaitzen baduzu, puntuazioa erakutsiko da.</p>"
 
-#: exe/engine/field.py:3362 exe/engine/field.py:3406
+#: exe/engine/field.py:3371 exe/engine/field.py:3415
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1262,7 +1261,7 @@ msgstr ""
 ".swf (Flash Objects) luzapena duten fitxategiak bakarrik aukeratu \n"
 "iDevice honetarako."
 
-#: exe/engine/field.py:3426 exe/engine/field.py:3490
+#: exe/engine/field.py:3435 exe/engine/field.py:3499
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1270,11 +1269,11 @@ msgstr ""
 ".flv (Flash Video Files) luzapena duten fitxategiak bakarrik aukeratu \n"
 "iDevice honetarako."
 
-#: exe/engine/field.py:3502
+#: exe/engine/field.py:3511
 msgid "Type a discussion topic here."
 msgstr "Idatzi hemen eztabaidarako gaia."
 
-#: exe/engine/field.py:3531
+#: exe/engine/field.py:3540
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
@@ -1284,7 +1283,7 @@ msgstr ""
 "editoretik edota sartu LATEXa eskuz. LATEXa nola agertuko den "
 "aurreikusteko, erabili beheko &lt;Aurrebista&gt; botoia.</p>"
 
-#: exe/engine/field.py:3539
+#: exe/engine/field.py:3548
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -1292,14 +1291,14 @@ msgstr ""
 "Kiklatu Aurrebista botoia \n"
 "                                  latex-a irudi bihurtzeko."
 
-#: exe/engine/field.py:3607 exe/engine/field.py:3656
+#: exe/engine/field.py:3616 exe/engine/field.py:3665
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/webui/element.py:2119 exe/webui/element.py:2473
 #: exe/webui/element.py:3350 exe/webui/testoptionelement.py:106
 msgid "Option"
 msgstr "Aukera"
 
-#: exe/engine/field.py:3685 exe/engine/field.py:3751
+#: exe/engine/field.py:3694 exe/engine/field.py:3760
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/element.py:2811
@@ -1307,13 +1306,13 @@ msgstr "Aukera"
 msgid "Hint"
 msgstr "Arrastoa"
 
-#: exe/engine/field.py:3773 exe/engine/field.py:3810 exe/webui/element.py:2301
+#: exe/engine/field.py:3782 exe/engine/field.py:3819 exe/webui/element.py:2301
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "Aukerak"
 
-#: exe/engine/field.py:3833
+#: exe/engine/field.py:3842
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -1325,7 +1324,7 @@ msgstr ""
 "negatiboak \n"
 "ikasleak nahasten baitituzte."
 
-#: exe/engine/field.py:3836 exe/engine/field.py:3917
+#: exe/engine/field.py:3845 exe/engine/field.py:3926
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
@@ -1334,7 +1333,7 @@ msgstr ""
 msgid "Question:"
 msgstr "Galdera:"
 
-#: exe/engine/field.py:3841
+#: exe/engine/field.py:3850
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -1346,7 +1345,7 @@ msgstr ""
 "Aukerak ezabatzeko, klikatu aukera bakoitzaren ondoan dagoen \"X\" botoi "
 "gorria."
 
-#: exe/engine/field.py:3845
+#: exe/engine/field.py:3854
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1354,7 +1353,7 @@ msgstr ""
 "Aukeratu behar beste erantzun zuzen, \n"
 "aukera bakoitzaren ondoko koadroa markatuta."
 
-#: exe/engine/field.py:3848
+#: exe/engine/field.py:3857
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -1362,7 +1361,7 @@ msgstr ""
 "Idatzi ikasleari eman nahi diozun \n"
 "feedbacka."
 
-#: exe/engine/field.py:3850 exe/engine/field.py:3920
+#: exe/engine/field.py:3859 exe/engine/field.py:3929
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:200
@@ -2551,31 +2550,31 @@ msgstr "Tutoretza-orientabideen testuak"
 msgid "Guidelines Teacher Text:"
 msgstr "Tutoretza-orientabideen testuak:"
 
-#: exe/engine/package.py:300
+#: exe/engine/package.py:301
 msgid "Topic"
 msgstr "Gaia"
 
-#: exe/engine/package.py:300
+#: exe/engine/package.py:301
 msgid "Section"
 msgstr "Atala"
 
-#: exe/engine/package.py:300
+#: exe/engine/package.py:301
 msgid "Unit"
 msgstr "Unitatea"
 
-#: exe/engine/package.py:321
+#: exe/engine/package.py:322
 msgid "Home"
 msgstr "Hasiera"
 
-#: exe/engine/package.py:462
+#: exe/engine/package.py:463
 msgid "Metadata creation date"
 msgstr ""
 
-#: exe/engine/package.py:949
+#: exe/engine/package.py:950
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:987 exe/engine/package.py:994
+#: exe/engine/package.py:988 exe/engine/package.py:995
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2584,16 +2583,16 @@ msgstr ""
 "EZ DA GORDE!\n"
 "%s da ondo gordetako azken elementua."
 
-#: exe/engine/package.py:1364 exe/jsui/scripts/app/controller/Toolbar.js:372
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
+#: exe/engine/package.py:1365 exe/jsui/scripts/app/controller/Toolbar.js:372
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "iDevice editorea"
 
-#: exe/engine/package.py:1485
+#: exe/engine/package.py:1486
 msgid "My Catalog"
 msgstr "Nire katalogoa"
 
-#: exe/engine/package.py:1492
+#: exe/engine/package.py:1493
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Default"
@@ -2884,7 +2883,7 @@ msgstr ""
 "ariketa egin duten modua. (Epigrafeak erabilgarriak dira \n"
 "hausnarketaren feedbacka emateko.)"
 
-#: exe/engine/resource.py:592
+#: exe/engine/resource.py:596
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
@@ -3286,7 +3285,7 @@ msgstr ""
 msgid "Article"
 msgstr "Artikulua"
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:360
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:359
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -3294,7 +3293,7 @@ msgstr ""
 "Aukeratu Wikipediako hizkuntza, \n"
 "eta sartu bilatu beharreko terminoa."
 
-#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:362
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:361
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -3302,7 +3301,7 @@ msgstr ""
 "Idatzi Wikipedian bilatu nahi duzun \n"
 "esaldia edo terminoa."
 
-#: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:137
 #, python-format
 msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
@@ -3311,7 +3310,7 @@ msgstr ""
 "Ezin izan da %s-etik deskargatu <br/>Mesedez, egiaztatu ortografia eta "
 "konexioa, eta berriz saiatu."
 
-#: exe/engine/wikipediaidevice.py:314
+#: exe/engine/wikipediaidevice.py:313
 msgid "http://en.wikipedia.org/"
 msgstr "http://eu.wikipedia.org/"
 
@@ -3501,9 +3500,9 @@ msgstr ""
 "exe_do: errorea: Ezin izan da inportatu '%s'.\n"
 "Errorea izan da:"
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:288
-#: exe/jsui/mainpage.py:932 exe/jsui/mainpage.py:1096 exe/jsui/mainpage.py:1137
-#: exe/jsui/mainpage.py:1172 exe/jsui/mainpage.py:1193
+#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:289
+#: exe/jsui/mainpage.py:933 exe/jsui/mainpage.py:1097 exe/jsui/mainpage.py:1138
+#: exe/jsui/mainpage.py:1173 exe/jsui/mainpage.py:1194
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3517,7 +3516,7 @@ msgid "Export format not implemented"
 msgstr "Esportazio formatua ez dago inplementatua"
 
 #: exe/export/epub3export.py:569 exe/export/imsexport.py:514
-#: exe/export/scormexport.py:849 exe/export/websiteexport.py:94
+#: exe/export/scormexport.py:699 exe/export/websiteexport.py:94
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3614,11 +3613,11 @@ msgstr "Ondoko lizentziak babestua:"
 msgid "Local Version"
 msgstr "Bertsio lokala"
 
-#: exe/export/scormexport.py:562 exe/export/websitepage.py:323
+#: exe/export/scormpage.py:153 exe/export/websitepage.py:323
 msgid "Previous"
 msgstr "Aurrekoa"
 
-#: exe/export/scormexport.py:563 exe/export/websitepage.py:329
+#: exe/export/scormpage.py:154 exe/export/websitepage.py:329
 msgid "Next"
 msgstr "Hurrengoa"
 
@@ -3692,19 +3691,19 @@ msgstr "%s sartzen"
 msgid "My iDevices"
 msgstr "Nire iDeviceak"
 
-#: exe/jsui/mainpage.py:306 exe/jsui/mainpage.py:771 exe/jsui/mainpage.py:924
+#: exe/jsui/mainpage.py:307 exe/jsui/mainpage.py:772 exe/jsui/mainpage.py:925
 msgid "Cannot access directory named "
 msgstr "Ezin da izendatutako direktoriora sartu"
 
-#: exe/jsui/mainpage.py:306 exe/jsui/mainpage.py:773 exe/jsui/mainpage.py:924
+#: exe/jsui/mainpage.py:307 exe/jsui/mainpage.py:774 exe/jsui/mainpage.py:925
 msgid ". Please use ASCII names."
 msgstr ". Mesedez, ASCII izenak erabili."
 
-#: exe/jsui/mainpage.py:315
+#: exe/jsui/mainpage.py:316
 msgid "SAVE FAILED!"
 msgstr "EZ DA GORDE!"
 
-#: exe/jsui/mainpage.py:319 exe/jsui/mainpage.py:627 exe/jsui/mainpage.py:1020
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:628 exe/jsui/mainpage.py:1021
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3713,22 +3712,22 @@ msgstr ""
 "EZ DA GORDE!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:323 exe/jsui/mainpage.py:328 exe/jsui/mainpage.py:331
+#: exe/jsui/mainpage.py:324 exe/jsui/mainpage.py:329 exe/jsui/mainpage.py:332
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Hurrengoan gordetako paketea: %s"
 
-#: exe/jsui/mainpage.py:549 exe/jsui/mainpage.py:655
+#: exe/jsui/mainpage.py:550 exe/jsui/mainpage.py:656
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "%s direktorioaren aurrebista fitxategi bat da, eta ezin da ordeztu"
 
-#: exe/jsui/mainpage.py:569
+#: exe/jsui/mainpage.py:570
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "%s fitxategi lokala ez da aurkitu eta ezin da aurreikusi"
 
-#: exe/jsui/mainpage.py:697
+#: exe/jsui/mainpage.py:698
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -3737,11 +3736,11 @@ msgstr ""
 "Ezin izan da MimeTeX bildu!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:736
+#: exe/jsui/mainpage.py:737
 msgid "Importing HTML..."
 msgstr "HTMLa inportatzen"
 
-#: exe/jsui/mainpage.py:742
+#: exe/jsui/mainpage.py:743
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3750,26 +3749,26 @@ msgstr ""
 "ERROREA LOM metadatuen inportazioa egiterakoan!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:745
+#: exe/jsui/mainpage.py:746
 msgid "Error importing HTML:\n"
 msgstr "Errorea HTMLa  inportatzen:\n"
 
-#: exe/jsui/mainpage.py:794 exe/jsui/mainpage.py:799 exe/jsui/mainpage.py:802
-#: exe/jsui/mainpage.py:805 exe/jsui/mainpage.py:808 exe/jsui/mainpage.py:811
-#: exe/jsui/mainpage.py:816 exe/jsui/mainpage.py:1080 exe/jsui/mainpage.py:1153
+#: exe/jsui/mainpage.py:795 exe/jsui/mainpage.py:800 exe/jsui/mainpage.py:803
+#: exe/jsui/mainpage.py:806 exe/jsui/mainpage.py:809 exe/jsui/mainpage.py:812
+#: exe/jsui/mainpage.py:817 exe/jsui/mainpage.py:1081 exe/jsui/mainpage.py:1154
 msgid "EXPORT FAILED!"
 msgstr "EZ DA ESPORTATU!"
 
-#: exe/jsui/mainpage.py:887
+#: exe/jsui/mainpage.py:888
 msgid "Correct XLIFF import"
 msgstr "XLIFF inportazio zuzena"
 
-#: exe/jsui/mainpage.py:890
+#: exe/jsui/mainpage.py:891
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Errorea XLIFF inportatzen: %s"
 
-#: exe/jsui/mainpage.py:933 exe/jsui/mainpage.py:950
+#: exe/jsui/mainpage.py:934 exe/jsui/mainpage.py:951
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -3778,21 +3777,21 @@ msgstr ""
 "EZ DA ATERA!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:952
+#: exe/jsui/mainpage.py:953
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Hurrengora ateratako paketea: %s"
 
-#: exe/jsui/mainpage.py:964
+#: exe/jsui/mainpage.py:965
 msgid "Directory exists"
 msgstr "Direktorioa jada existitzen da"
 
-#: exe/jsui/mainpage.py:978 exe/jsui/mainpage.py:1068 exe/jsui/mainpage.py:1084
-#: exe/jsui/mainpage.py:1097 exe/jsui/mainpage.py:1103
-#: exe/jsui/mainpage.py:1121 exe/jsui/mainpage.py:1138
-#: exe/jsui/mainpage.py:1144 exe/jsui/mainpage.py:1158
-#: exe/jsui/mainpage.py:1173 exe/jsui/mainpage.py:1179
-#: exe/jsui/mainpage.py:1194 exe/jsui/mainpage.py:1200
+#: exe/jsui/mainpage.py:979 exe/jsui/mainpage.py:1069 exe/jsui/mainpage.py:1085
+#: exe/jsui/mainpage.py:1098 exe/jsui/mainpage.py:1104
+#: exe/jsui/mainpage.py:1122 exe/jsui/mainpage.py:1139
+#: exe/jsui/mainpage.py:1145 exe/jsui/mainpage.py:1159
+#: exe/jsui/mainpage.py:1174 exe/jsui/mainpage.py:1180
+#: exe/jsui/mainpage.py:1195 exe/jsui/mainpage.py:1201
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3801,12 +3800,12 @@ msgstr ""
 "EZ DA ESPORTATU!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1006 exe/jsui/mainpage.py:1053
+#: exe/jsui/mainpage.py:1007 exe/jsui/mainpage.py:1054
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "%s izeneko beste fitxategi bat dago, eta ezin da ordeztu"
 
-#: exe/jsui/mainpage.py:1012 exe/jsui/mainpage.py:1060
+#: exe/jsui/mainpage.py:1013 exe/jsui/mainpage.py:1061
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -3815,27 +3814,27 @@ msgstr ""
 "Dagoeneko badago %s izeneko karpeta bat. Mesedez, beste izen bat aukeratu"
 " edo dagoena ezabatu, eta berriz saiatu."
 
-#: exe/jsui/mainpage.py:1026 exe/jsui/mainpage.py:1071
-#: exe/jsui/mainpage.py:1086 exe/jsui/mainpage.py:1105
-#: exe/jsui/mainpage.py:1123 exe/jsui/mainpage.py:1146
-#: exe/jsui/mainpage.py:1160 exe/jsui/mainpage.py:1181
-#: exe/jsui/mainpage.py:1202
+#: exe/jsui/mainpage.py:1027 exe/jsui/mainpage.py:1072
+#: exe/jsui/mainpage.py:1087 exe/jsui/mainpage.py:1106
+#: exe/jsui/mainpage.py:1124 exe/jsui/mainpage.py:1147
+#: exe/jsui/mainpage.py:1161 exe/jsui/mainpage.py:1182
+#: exe/jsui/mainpage.py:1203
 #, python-format
 msgid "Exported to %s"
 msgstr "%s-era esportatua"
 
-#: exe/jsui/mainpage.py:1235 exe/webui/stylemanagerpage.py:128
+#: exe/jsui/mainpage.py:1236 exe/webui/stylemanagerpage.py:130
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "%s fitxategia ez dago edo ezin da irakurri."
 
-#: exe/jsui/mainpage.py:1239
+#: exe/jsui/mainpage.py:1240
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Ezin da fitxategia kargatu. Mesedez, bidali fitxategia "
 "bugs@exelearning.org helbidera"
 
-#: exe/jsui/mainpage.py:1242
+#: exe/jsui/mainpage.py:1243
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3844,7 +3843,7 @@ msgstr ""
 "Fitxategiaren formatua okerra da:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1244
+#: exe/jsui/mainpage.py:1245
 msgid "Sorry, wrong file format"
 msgstr "Fitxategiaren formatua okerra da"
 
@@ -3891,8 +3890,8 @@ msgstr "Irudiak"
 #: exe/jsui/scripts/app/controller/Toolbar.js:864
 #: exe/jsui/scripts/app/controller/Toolbar.js:943
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:141
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:44
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:226
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:139
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:321
 msgid "All Files"
 msgstr "Fitxategi guztiak"
 
@@ -3905,14 +3904,15 @@ msgstr "Ezarpenak gordeta"
 #: exe/jsui/scripts/app/controller/MainTab.js:277
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:135
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:171
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:37
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:83
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:115
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:218
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:314
-#: exe/webui/stylemanagerpage.py:128 exe/webui/stylemanagerpage.py:131
-#: exe/webui/stylemanagerpage.py:141 exe/webui/stylemanagerpage.py:146
-#: exe/webui/stylemanagerpage.py:174 exe/webui/stylemanagerpage.py:192
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:85
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:132
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:178
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:210
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:313
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:453
+#: exe/webui/stylemanagerpage.py:130 exe/webui/stylemanagerpage.py:133
+#: exe/webui/stylemanagerpage.py:143 exe/webui/stylemanagerpage.py:148
+#: exe/webui/stylemanagerpage.py:187 exe/webui/stylemanagerpage.py:205
 msgid "Error"
 msgstr "Errorea"
 
@@ -3925,12 +3925,12 @@ msgid "LOM Metadata import success!"
 msgstr "LOM metadatuen inportazio zuzena!"
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:325
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:319
 msgid "Insert Package"
 msgstr "Sartu paketea"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:331
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:325
 msgid "Extract Package"
 msgstr "Atera paketea"
 
@@ -3957,7 +3957,7 @@ msgid "About"
 msgstr "Honi buruz"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:353
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
 msgid "Preferences"
 msgstr "Lehentasunak"
 
@@ -3970,7 +3970,7 @@ msgstr ""
 "atera nahi duzu?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:411
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
 msgid "Style Manager"
 msgstr "Estiloen kudeatzailea"
 
@@ -4059,7 +4059,7 @@ msgid "Export text package as"
 msgstr "Testu paketea honela esportatu"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:664
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:289
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:283
 msgid "Text File"
 msgstr "Testu fitxategia"
 
@@ -5143,63 +5143,70 @@ msgstr "Barne esteka guztiak ezgaitu"
 msgid "Show this window on eXe start"
 msgstr "Leiho hau erakutsi eXe hasterakoan"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:10
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:66
 msgid "Export style: "
 msgstr "Estiloa esportatu:"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:26
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:97
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:102
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
+msgid "Export"
+msgstr "Esportatu"
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:120
 msgid "Export to ZIP Style as"
 msgstr "Estiloa  honela esportatu ZIP batera"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:43
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:138
 msgid "ZipFile"
 msgstr "Zip fitxategia"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:57
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:152
 msgid "Delete style: "
 msgstr "Estiloa ezabatu:"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:71
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:166
 msgid "Delete style?"
 msgstr "Ezabatu estiloa?"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:72
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:167
 msgid "Do you want to delete this style?"
 msgstr "Estilo hau ezabatu nahi duzu?"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:98
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:193
 msgid "Show properties of style: "
 msgstr "Estiloaren ezaugarriak erakutsi:"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:192
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:287
 msgid "Import style to the system "
 msgstr "Estiloa sistemara inportatu"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:196
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:291
 msgid "Import style"
 msgstr "Estiloa inportatu"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:302
 msgid "Select ZIP Style file to import."
 msgstr "Inportatzeko ZIP estilo fitxategia aukeratu."
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:225
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:320
 msgid "ZIP Style"
 msgstr "ZIP estiloa"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:233
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:328
 msgid "List of styles in your system"
 msgstr "Zure sisteman dauden estiloen zerrenda"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:291
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:341
 msgid "Properties of style: "
 msgstr "Estiloaren ezaugarriak:"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:296
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:435
 msgid "Return to style manager"
 msgstr "Estiloen kudeatzailera itzuli"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:303
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:442
 msgid "Return"
 msgstr "Irten"
 
@@ -5263,11 +5270,6 @@ msgstr "LOM"
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:201
 msgid "LOM-ES"
 msgstr "LOM-ES"
-
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
-msgid "Export"
-msgstr "Esportatu"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
@@ -5357,58 +5359,54 @@ msgid "SCORM2004"
 msgstr "SCORM2004"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:246
-msgid "Agrega SCORM2004"
-msgstr "Agregarako SCORM2004"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:252
 msgid "IMS Content Package"
 msgstr "IMS eduki paketea"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:261
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:255
 msgid "Web Site"
 msgstr "Webgunea"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:262
 msgid "Self-contained Folder"
 msgstr "Auto-edukitako karpeta"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:274
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:268
 msgid "Zip File"
 msgstr "Fitxategi konprimitua"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:280
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:274
 msgid "Single Page"
 msgstr "Orri bakarra"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:289
 msgid "Ustad Mobile"
 msgstr "Ustad Mobile"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
 msgid "XLIFF"
 msgstr "XLIFF"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:307
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "EPUB3"
 msgstr "EPUB3"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:316
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:310
 msgid "Merging"
 msgstr "Konbinatu"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:344 exe/webui/editorpage.py:267
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:338 exe/webui/editorpage.py:267
 msgid "Quit"
 msgstr "Irten"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:351
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:345
 msgid "Tools"
 msgstr "Tresnak"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "Resources Report"
 msgstr "Baliabideen txostena"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:385 exe/webui/editorpane.py:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379 exe/webui/editorpane.py:268
 #: exe/webui/element.py:2028
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -5419,46 +5417,46 @@ msgstr "Baliabideen txostena"
 msgid "Preview"
 msgstr "Aurrebista"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:394
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:388
 msgid "Refresh Display"
 msgstr "Eguneratu bista"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:402
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:396
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Styles"
 msgstr "Estiloak"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:412
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:406
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Help"
 msgstr "Laguntza"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:422
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:416
 msgid "eXe Tutorial"
 msgstr "eXe-ren tutoriala"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:422
 msgid "eXe Manual"
 msgstr "eXe-ren eskuliburua"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:434
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Release Notes"
 msgstr "Bertsioaren oharrak"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:443
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:437
 msgid "eXe Web Site"
 msgstr "eXe-ren webgunea"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:449
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:443
 msgid "Report an Issue"
 msgstr "Argitaratu gaia"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:455
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:449
 msgid "eXe Forums"
 msgstr "eXe-ren foroak"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:464
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:458
 msgid "About eXe"
 msgstr "eXe-ri buruz"
 
@@ -7210,8 +7208,8 @@ msgstr "Laguntza pedagogikoa"
 msgid "Information"
 msgstr "Informazioa"
 
-#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:486
-#: exe/webui/common.py:487 exe/webui/editorpane.py:364
+#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:490
+#: exe/webui/common.py:491 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386 exe/webui/element.py:2807
 #: exe/webui/element.py:2808 exe/webui/truefalseelement.py:152
@@ -7309,26 +7307,26 @@ msgstr "Soluzioa"
 msgid "Now It's Your Turn"
 msgstr "Autoebaluazioa"
 
-#: exe/webui/common.py:183
+#: exe/webui/common.py:187
 msgid "Show"
 msgstr "Erakutsi"
 
-#: exe/webui/common.py:184 exe/webui/reflectionblock.py:120
+#: exe/webui/common.py:188 exe/webui/reflectionblock.py:120
 #: exe/webui/reflectionfpdblock.py:128
 msgid "Hide"
 msgstr "Ezkutatu"
 
-#: exe/webui/common.py:185
+#: exe/webui/common.py:189
 msgid "Menu"
 msgstr "Menua"
 
-#: exe/webui/common.py:206 exe/webui/editorpage.py:233
+#: exe/webui/common.py:210 exe/webui/editorpage.py:233
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: XHTML editorea urruneko hezkuntzarako"
 
-#: exe/webui/common.py:477 exe/webui/common.py:481
+#: exe/webui/common.py:481 exe/webui/common.py:485
 msgid "Click for completion instructions"
 msgstr "Klikatu argibideak osatzeko"
 
@@ -7353,12 +7351,8 @@ msgstr "Epigrafe botoia"
 #: exe/webui/imagewithtextblock.py:81 exe/webui/multimediablock.py:85
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:16
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:23
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:31
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:25
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:32
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -7370,12 +7364,8 @@ msgstr "Ezkerra"
 #: exe/webui/imagewithtextblock.py:82 exe/webui/multimediablock.py:86
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:18
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:24
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:30
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:27
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:33
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -7634,7 +7624,7 @@ msgstr "Oraintxe zuzendu nahi?"
 
 #: exe/webui/element.py:1387 exe/webui/element.py:1655
 #: exe/webui/listablock.py:288 exe/webui/quiztestblock.py:224
-#: exe/webui/quiztestblock.py:319 exe/webui/quiztestblock.py:367
+#: exe/webui/quiztestblock.py:319 exe/webui/quiztestblock.py:369
 msgid "Your score is "
 msgstr "Zure puntu kopurua hau da "
 
@@ -7696,7 +7686,7 @@ msgid "Delete option"
 msgstr "Ezabatu aukera"
 
 #: exe/webui/element.py:2188 exe/webui/element.py:2198
-#: exe/webui/stylemanagerpage.py:171 exe/webui/stylemanagerpage.py:189
+#: exe/webui/stylemanagerpage.py:184 exe/webui/stylemanagerpage.py:202
 msgid "Correct"
 msgstr "Aukera zuzena."
 
@@ -7983,15 +7973,15 @@ msgstr "Erakutsi kronometroa jokoan"
 msgid "Add Placable Object"
 msgstr "gehitu objektu kokagarria "
 
-#: exe/webui/preferencespage.py:142
+#: exe/webui/preferencespage.py:147
 msgid "Default browser in your system"
 msgstr "Zure sisteman lehenetsitako nabigatzailea"
 
-#: exe/webui/preferencespage.py:173
+#: exe/webui/preferencespage.py:182
 msgid "Failed to get preferences"
 msgstr "Ezin izan dira irakurri lehenespenak"
 
-#: exe/webui/preferencespage.py:198
+#: exe/webui/preferencespage.py:217
 msgid "Failed to save preferences"
 msgstr "Ezin izan dira gorde lehenespenak"
 
@@ -8019,7 +8009,7 @@ msgstr "Aukeratu gainditze-koefizientea: "
 msgid "SUBMIT ANSWERS"
 msgstr "BIDALI ERANTZUNAK"
 
-#: exe/webui/quiztestblock.py:364
+#: exe/webui/quiztestblock.py:366
 msgid "Submit Answer"
 msgstr "Bidali erantzuna"
 
@@ -8553,16 +8543,6 @@ msgid "Insert/Edit Image"
 msgstr "Irudia txertatu/editatu"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:17
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:20
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:26
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:29
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-msgid "Center"
-msgstr "Zentratuta"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -8596,6 +8576,12 @@ msgstr "Dokumentuaren ezaugarriak"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Insert/Edit Embedded Media"
 msgstr "Sartu / editatu ahokatutako euskarria"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Center"
+msgstr "Zentratuta"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
@@ -8706,6 +8692,16 @@ msgstr "Marra horizontala"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Rich Text Area"
 msgstr "Rich Text Area"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advalign/langs/en.js:3
+msgid ""
+"TinyMCE \"advalign\" plugin error: \"execcommand_callback\" is already "
+"defined"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advalign/langs/en.js:4
+msgid "\"advalign\" for TinyMCE requires jQuery"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 msgid "No Shadow"
@@ -8993,39 +8989,13 @@ msgstr "Eskubide guztiak erreserbatuta"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:14
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:23
-msgid "Presentation"
-msgstr "Aurkezpena"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:24
-msgid "Text Alignment"
-msgstr "Testuaren lerrokatzea"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:19
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:28
-msgid "Group Position"
-msgstr "Multzoaren posizioa"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:22
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:31
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-msgid "Float"
-msgstr "Portaera"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:25
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:34
-msgid "Group Margin"
-msgstr "Multzoaren marjina"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:26
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:35
 msgid "You will not be able to edit the header or the caption from this dialog."
 msgstr ""
 "Irudiaren goiburua eta oina ezingo dira editatu elkarrizketa-koadro "
 "honetatik."
 
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:27
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:36
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:24
 msgid ""
 "The header and the caption can't be edited from this dialog. You can "
 "change or remove them editing the text itself."
@@ -9205,6 +9175,10 @@ msgstr "Nodoa"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/autosave/langs/en.js:2
 msgid "Restore auto-saved content"
 msgstr "Automatikoki gordetako edukia berreskuratu"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/clearfloat/langs/en.js:3
+msgid "Clear (new line or block)"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
@@ -9910,12 +9884,12 @@ msgid "Embedded Audio Options"
 msgstr "Ahokatutako audioaren ezarpenak"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-msgid "HTML5 video (ogv/ogg, webm)"
-msgstr "HTML5 video (ogv/ogg, webm)"
+msgid "HTML5 video (ogv/ogg, webm, mp4)"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-msgid "HTML5 audio (ogg)"
-msgstr "HTML5 audio (ogg)"
+msgid "HTML5 audio (mp3, ogg, wav)"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Flash (swf, flv, mp3)"
@@ -9999,11 +9973,11 @@ msgstr "Usar reproductor JavaScript"
 msgid "Media Title"
 msgstr "Lanaren titulua"
 
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:37
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:25
 msgid "Use Autoplay"
 msgstr "Erabili auto play"
 
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:38
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:26
 msgid "Use Controls"
 msgstr "Erabili kontrolak"
 
@@ -10143,6 +10117,10 @@ msgstr "Padding"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Clear"
 msgstr "Garbitu"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Float"
+msgstr "Portaera"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Display"
@@ -10763,44 +10741,44 @@ msgstr "Kolore balio ez onargarria (balio/baliagarria....)"
 msgid "Add Another Item to be Sorted"
 msgstr "Ordenatu beharreko elementua gehitu"
 
-#: exe/webui/stylemanagerpage.py:131
+#: exe/webui/stylemanagerpage.py:133
 #, python-format
 msgid "Style directory already exists: %s"
 msgstr "Estiloaren karpeta existitzen da dagoeneko: %s"
 
-#: exe/webui/stylemanagerpage.py:141
+#: exe/webui/stylemanagerpage.py:143
 #, python-format
 msgid "The style name already exists: %s"
 msgstr "Estiloaren izena existitzen da dagoeneko: %s"
 
-#: exe/webui/stylemanagerpage.py:143
+#: exe/webui/stylemanagerpage.py:145
 msgid "Success"
 msgstr "Ondo joan da"
 
-#: exe/webui/stylemanagerpage.py:143
+#: exe/webui/stylemanagerpage.py:145
 #, python-format
 msgid "Successfully imported style: %s"
 msgstr "Estiloa ondo inportatu da: %s"
 
-#: exe/webui/stylemanagerpage.py:146
+#: exe/webui/stylemanagerpage.py:148
 msgid "Incorrect style format (does not include content.css)"
 msgstr "Estilo formatu okerra (ez dauka content.css fitxategia)"
 
-#: exe/webui/stylemanagerpage.py:171
+#: exe/webui/stylemanagerpage.py:184
 #, python-format
 msgid "Style exported correctly: %s"
 msgstr "Estiloa ondo esportatu da: %s"
 
-#: exe/webui/stylemanagerpage.py:174
+#: exe/webui/stylemanagerpage.py:187
 #, python-format
 msgid "Could not export style : %s"
 msgstr "Ezin izan da esportatu estiloa: %s"
 
-#: exe/webui/stylemanagerpage.py:189
+#: exe/webui/stylemanagerpage.py:202
 msgid "Style deleted correctly"
 msgstr "Estiloa ondo ezabatu da"
 
-#: exe/webui/stylemanagerpage.py:192
+#: exe/webui/stylemanagerpage.py:205
 msgid "An unexpected error has occurred"
 msgstr "Espero ez zen errorea gertatu da"
 
@@ -11040,4 +11018,25 @@ msgstr ""
 # ez dakit nola jarri hau, eta -k egina edo bidalia?
 #~ msgid "by"
 #~ msgstr "-k egina"
+
+#~ msgid "Agrega SCORM2004"
+#~ msgstr "Agregarako SCORM2004"
+
+#~ msgid "Presentation"
+#~ msgstr "Aurkezpena"
+
+#~ msgid "Text Alignment"
+#~ msgstr "Testuaren lerrokatzea"
+
+#~ msgid "Group Position"
+#~ msgstr "Multzoaren posizioa"
+
+#~ msgid "Group Margin"
+#~ msgstr "Multzoaren marjina"
+
+#~ msgid "HTML5 video (ogv/ogg, webm)"
+#~ msgstr "HTML5 video (ogv/ogg, webm)"
+
+#~ msgid "HTML5 audio (ogg)"
+#~ msgstr "HTML5 audio (ogg)"
 

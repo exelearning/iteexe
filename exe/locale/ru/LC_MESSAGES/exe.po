@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-04 14:33+0100\n"
+"POT-Creation-Date: 2014-02-10 22:54+0100\n"
 "PO-Revision-Date: 2013-10-25 00:35+0300\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.net>\n"
@@ -715,7 +715,7 @@ msgstr ""
 #: exe/engine/scormmulticlozeidevice.py:116 exe/engine/sortidevice.py:53
 #: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:471
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:475
 msgid "Instructions"
 msgstr "Инструкции"
 
@@ -758,7 +758,7 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
 #: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
-#: exe/engine/field.py:3611 exe/engine/field.py:3659
+#: exe/engine/field.py:3620 exe/engine/field.py:3668
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:589
 #: exe/engine/idevicestore.py:698 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/scormclozeidevice.py:131
@@ -770,7 +770,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:173
 #: exe/webui/clozefpdblock.py:174 exe/webui/clozefpdblock.py:192
 #: exe/webui/clozelangfpdblock.py:175 exe/webui/clozelangfpdblock.py:193
-#: exe/webui/common.py:388 exe/webui/editorelement.py:148
+#: exe/webui/common.py:392 exe/webui/editorelement.py:148
 #: exe/webui/editorpane.py:255 exe/webui/element.py:2395
 #: exe/webui/element.py:2509 exe/webui/listablock.py:452
 #: exe/webui/questionelement.py:104 exe/webui/reflectionfpdblock.py:142
@@ -1047,8 +1047,8 @@ msgstr ""
 "ответ\"\n"
 "для других вариантов."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3682
-#: exe/engine/field.py:3747 exe/engine/multichoiceidevice.py:131
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3691
+#: exe/engine/field.py:3756 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:80 exe/engine/scormmultiselectidevice.py:78
 #: exe/engine/seleccionmultiplefpdidevice.py:82
 msgid "Question"
@@ -1160,8 +1160,6 @@ msgstr ""
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
 #: exe/webui/imagemagnifierblock.py:109 exe/webui/imagewithtextblock.py:83
 #: exe/webui/multimediablock.py:87
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:21
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:30
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
 msgstr "Пусто"
@@ -1198,11 +1196,11 @@ msgstr ""
 "Введите URL \n"
 "и выберите размер области для его отображения."
 
-#: exe/engine/field.py:2630
+#: exe/engine/field.py:2639
 msgid "Click Here"
 msgstr "Щелкните здесь"
 
-#: exe/engine/field.py:2825 exe/engine/field.py:2872
+#: exe/engine/field.py:2834 exe/engine/field.py:2881
 #: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
@@ -1211,7 +1209,7 @@ msgstr ""
 "Укажите заголовок для \n"
 "MP3 файла. Оно также будет доступно в плеере в строке названия."
 
-#: exe/engine/field.py:3018 exe/engine/field.py:3252
+#: exe/engine/field.py:3027 exe/engine/field.py:3261
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1241,7 +1239,7 @@ msgstr ""
 "Маркировка\", то будет проверена, а \"Проверить Капитализацию\" нет, то  "
 "\"elephant\" также будут приняты.</p>"
 
-#: exe/engine/field.py:3039 exe/engine/field.py:3273
+#: exe/engine/field.py:3048 exe/engine/field.py:3282
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
@@ -1250,7 +1248,7 @@ msgstr ""
 "строчные буквы не совпадают с правильным ответом, считаются "
 "неправильными.</p>"
 
-#: exe/engine/field.py:3044 exe/engine/field.py:3278
+#: exe/engine/field.py:3053 exe/engine/field.py:3287
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -1260,7 +1258,7 @@ msgstr ""
 "его вводит учащийся, а не все слова будут отмечены в конце \n"
 "упражнения.<p>"
 
-#: exe/engine/field.py:3082 exe/engine/field.py:3320
+#: exe/engine/field.py:3091 exe/engine/field.py:3329
 #: exe/engine/listaidevice.py:392
 msgid ""
 "Allow auto completion when \n"
@@ -1270,11 +1268,11 @@ msgstr ""
 "                                        когда пользователь заполняет "
 "пробелы."
 
-#: exe/engine/field.py:3283
+#: exe/engine/field.py:3292
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr "<p>Если эта опция установлена​​, то счет будет показан.</p>"
 
-#: exe/engine/field.py:3362 exe/engine/field.py:3406
+#: exe/engine/field.py:3371 exe/engine/field.py:3415
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1282,7 +1280,7 @@ msgstr ""
 "Только выберите. SWF (Flash объекты) при \n"
 "этого iDevice."
 
-#: exe/engine/field.py:3426 exe/engine/field.py:3490
+#: exe/engine/field.py:3435 exe/engine/field.py:3499
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1290,11 +1288,11 @@ msgstr ""
 "Только выберите. flv (Flash видео файлов) для \n"
 "этого iDevice."
 
-#: exe/engine/field.py:3502
+#: exe/engine/field.py:3511
 msgid "Type a discussion topic here."
 msgstr "Введите тему для обсуждения здесь."
 
-#: exe/engine/field.py:3531
+#: exe/engine/field.py:3540
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
@@ -1305,7 +1303,7 @@ msgstr ""
 "математическом языке LATEX. Для предпросмотра можно воспользоваться "
 "кнопкой &lt;Предварительный вид&gt;, расположенной ниже."
 
-#: exe/engine/field.py:3539
+#: exe/engine/field.py:3548
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -1313,14 +1311,14 @@ msgstr ""
 "Нажмите \"Предпросмотр\" для конвертирования, \n"
 "                                        Latex в изображение."
 
-#: exe/engine/field.py:3607 exe/engine/field.py:3656
+#: exe/engine/field.py:3616 exe/engine/field.py:3665
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/webui/element.py:2119 exe/webui/element.py:2473
 #: exe/webui/element.py:3350 exe/webui/testoptionelement.py:106
 msgid "Option"
 msgstr "Опция"
 
-#: exe/engine/field.py:3685 exe/engine/field.py:3751
+#: exe/engine/field.py:3694 exe/engine/field.py:3760
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/element.py:2811
@@ -1328,13 +1326,13 @@ msgstr "Опция"
 msgid "Hint"
 msgstr "Хинт"
 
-#: exe/engine/field.py:3773 exe/engine/field.py:3810 exe/webui/element.py:2301
+#: exe/engine/field.py:3782 exe/engine/field.py:3819 exe/webui/element.py:2301
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "Опции"
 
-#: exe/engine/field.py:3833
+#: exe/engine/field.py:3842
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -1346,7 +1344,7 @@ msgstr ""
 "отрицательных, поскольку эти помещения \n"
 "может, как правило, путают учащихся."
 
-#: exe/engine/field.py:3836 exe/engine/field.py:3917
+#: exe/engine/field.py:3845 exe/engine/field.py:3926
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
@@ -1355,7 +1353,7 @@ msgstr ""
 msgid "Question:"
 msgstr "Вопросы:"
 
-#: exe/engine/field.py:3841
+#: exe/engine/field.py:3850
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -1367,7 +1365,7 @@ msgstr ""
 "кнопку. Удалить опции, \n"
 "нажав на красный крестик рядом с параметром."
 
-#: exe/engine/field.py:3845
+#: exe/engine/field.py:3854
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1376,7 +1374,7 @@ msgstr ""
 "из вариантов, в соответствии с требованиями, установив флажок рядом с "
 "соответствующей функцией."
 
-#: exe/engine/field.py:3848
+#: exe/engine/field.py:3857
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -1384,7 +1382,7 @@ msgstr ""
 "Тип обратной связи вы хотите \n"
 "предоставить обучаемому."
 
-#: exe/engine/field.py:3850 exe/engine/field.py:3920
+#: exe/engine/field.py:3859 exe/engine/field.py:3929
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:200
@@ -2623,31 +2621,31 @@ msgstr "Текст Руководства Учителя"
 msgid "Guidelines Teacher Text:"
 msgstr "Текст Руководства Учителя:"
 
-#: exe/engine/package.py:300
+#: exe/engine/package.py:301
 msgid "Topic"
 msgstr "Тема"
 
-#: exe/engine/package.py:300
+#: exe/engine/package.py:301
 msgid "Section"
 msgstr "Секция"
 
-#: exe/engine/package.py:300
+#: exe/engine/package.py:301
 msgid "Unit"
 msgstr "Модуль"
 
-#: exe/engine/package.py:321
+#: exe/engine/package.py:322
 msgid "Home"
 msgstr "Дом"
 
-#: exe/engine/package.py:462
+#: exe/engine/package.py:463
 msgid "Metadata creation date"
 msgstr ""
 
-#: exe/engine/package.py:949
+#: exe/engine/package.py:950
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:987 exe/engine/package.py:994
+#: exe/engine/package.py:988 exe/engine/package.py:995
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2656,16 +2654,16 @@ msgstr ""
 "ОШИБКА СОХРАНЕНИЯ!\n"
 "Последнее успешное сохранение %s."
 
-#: exe/engine/package.py:1364 exe/jsui/scripts/app/controller/Toolbar.js:372
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
+#: exe/engine/package.py:1365 exe/jsui/scripts/app/controller/Toolbar.js:372
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "Редактор iDevice"
 
-#: exe/engine/package.py:1485
+#: exe/engine/package.py:1486
 msgid "My Catalog"
 msgstr "Мой каталог"
 
-#: exe/engine/package.py:1492
+#: exe/engine/package.py:1493
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Default"
@@ -2965,7 +2963,7 @@ msgstr ""
 "они сделали упражнение (Рубрики полезных устройств для обеспечения \n"
 "отражающей обратной связи.)"
 
-#: exe/engine/resource.py:592
+#: exe/engine/resource.py:596
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
@@ -3353,7 +3351,7 @@ msgstr ""
 msgid "Article"
 msgstr "Статья"
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:360
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:359
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -3361,7 +3359,7 @@ msgstr ""
 "Выберите нужную языковую версию \n"
 "Википедии для поиска и введите поисковый запрос."
 
-#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:362
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:361
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -3369,7 +3367,7 @@ msgstr ""
 "Введите фразу, которую вы хотите найти \n"
 "в Википедии."
 
-#: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:137
 #, python-format
 msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
@@ -3378,7 +3376,7 @@ msgstr ""
 "Невозможно скачать с %s <br/>Пожалуйста, проверьте правописание и "
 "соединение и попробуйте еще раз."
 
-#: exe/engine/wikipediaidevice.py:314
+#: exe/engine/wikipediaidevice.py:313
 msgid "http://en.wikipedia.org/"
 msgstr "http://ru.wikipedia.org/"
 
@@ -3568,9 +3566,9 @@ msgstr ""
 "exe_do: error: Невозможно импортировать '%s'.\n"
 "Была ошибка:"
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:288
-#: exe/jsui/mainpage.py:932 exe/jsui/mainpage.py:1096 exe/jsui/mainpage.py:1137
-#: exe/jsui/mainpage.py:1172 exe/jsui/mainpage.py:1193
+#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:289
+#: exe/jsui/mainpage.py:933 exe/jsui/mainpage.py:1097 exe/jsui/mainpage.py:1138
+#: exe/jsui/mainpage.py:1173 exe/jsui/mainpage.py:1194
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3584,7 +3582,7 @@ msgid "Export format not implemented"
 msgstr "Формат экспорта не реализован"
 
 #: exe/export/epub3export.py:569 exe/export/imsexport.py:514
-#: exe/export/scormexport.py:849 exe/export/websiteexport.py:94
+#: exe/export/scormexport.py:699 exe/export/websiteexport.py:94
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3682,11 +3680,11 @@ msgstr "Под лицензией"
 msgid "Local Version"
 msgstr "Версия"
 
-#: exe/export/scormexport.py:562 exe/export/websitepage.py:323
+#: exe/export/scormpage.py:153 exe/export/websitepage.py:323
 msgid "Previous"
 msgstr "Предыдущий"
 
-#: exe/export/scormexport.py:563 exe/export/websitepage.py:329
+#: exe/export/scormpage.py:154 exe/export/websitepage.py:329
 msgid "Next"
 msgstr "Следующий"
 
@@ -3760,21 +3758,21 @@ msgstr "Вставка %s"
 msgid "My iDevices"
 msgstr "Мои iDevice'ы"
 
-#: exe/jsui/mainpage.py:306 exe/jsui/mainpage.py:771 exe/jsui/mainpage.py:924
+#: exe/jsui/mainpage.py:307 exe/jsui/mainpage.py:772 exe/jsui/mainpage.py:925
 msgid "Cannot access directory named "
 msgstr "Не возможно получить доступ к названному каталогу "
 
-#: exe/jsui/mainpage.py:306 exe/jsui/mainpage.py:773 exe/jsui/mainpage.py:924
+#: exe/jsui/mainpage.py:307 exe/jsui/mainpage.py:774 exe/jsui/mainpage.py:925
 msgid ". Please use ASCII names."
 msgstr ""
 ". Пожалуйста, используйте имена из символов ASCII (латинские буквы и "
 "цифры)."
 
-#: exe/jsui/mainpage.py:315
+#: exe/jsui/mainpage.py:316
 msgid "SAVE FAILED!"
 msgstr "ОШИБКА СОХРАНЕНИЯ!"
 
-#: exe/jsui/mainpage.py:319 exe/jsui/mainpage.py:627 exe/jsui/mainpage.py:1020
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:628 exe/jsui/mainpage.py:1021
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3783,22 +3781,22 @@ msgstr ""
 "ОШИБКА СОХРАНЕНИЯ!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:323 exe/jsui/mainpage.py:328 exe/jsui/mainpage.py:331
+#: exe/jsui/mainpage.py:324 exe/jsui/mainpage.py:329 exe/jsui/mainpage.py:332
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Пакет сохранен в: %s"
 
-#: exe/jsui/mainpage.py:549 exe/jsui/mainpage.py:655
+#: exe/jsui/mainpage.py:550 exe/jsui/mainpage.py:656
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Предпросмотр каталога  %s - это файл, невозможно заменить его"
 
-#: exe/jsui/mainpage.py:569
+#: exe/jsui/mainpage.py:570
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Локальный файл %s не найден, невозможен его предпросмотр"
 
-#: exe/jsui/mainpage.py:697
+#: exe/jsui/mainpage.py:698
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -3807,11 +3805,11 @@ msgstr ""
 "Ошибка компиляции MimeTeX!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:736
+#: exe/jsui/mainpage.py:737
 msgid "Importing HTML..."
 msgstr "Импортирование HTML..."
 
-#: exe/jsui/mainpage.py:742
+#: exe/jsui/mainpage.py:743
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3820,26 +3818,26 @@ msgstr ""
 "Неудача импорта метаданных LOM!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:745
+#: exe/jsui/mainpage.py:746
 msgid "Error importing HTML:\n"
 msgstr "Ошибка импорта HTML:\n"
 
-#: exe/jsui/mainpage.py:794 exe/jsui/mainpage.py:799 exe/jsui/mainpage.py:802
-#: exe/jsui/mainpage.py:805 exe/jsui/mainpage.py:808 exe/jsui/mainpage.py:811
-#: exe/jsui/mainpage.py:816 exe/jsui/mainpage.py:1080 exe/jsui/mainpage.py:1153
+#: exe/jsui/mainpage.py:795 exe/jsui/mainpage.py:800 exe/jsui/mainpage.py:803
+#: exe/jsui/mainpage.py:806 exe/jsui/mainpage.py:809 exe/jsui/mainpage.py:812
+#: exe/jsui/mainpage.py:817 exe/jsui/mainpage.py:1081 exe/jsui/mainpage.py:1154
 msgid "EXPORT FAILED!"
 msgstr "ОШИБКА ЭКСПОРТА!"
 
-#: exe/jsui/mainpage.py:887
+#: exe/jsui/mainpage.py:888
 msgid "Correct XLIFF import"
 msgstr "Откорректируйте импорт XLIFF"
 
-#: exe/jsui/mainpage.py:890
+#: exe/jsui/mainpage.py:891
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Ошибка импорта XLIFF: %s"
 
-#: exe/jsui/mainpage.py:933 exe/jsui/mainpage.py:950
+#: exe/jsui/mainpage.py:934 exe/jsui/mainpage.py:951
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -3848,21 +3846,21 @@ msgstr ""
 "ОШИБКА РАСПАКОВКИ!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:952
+#: exe/jsui/mainpage.py:953
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Пакет распакован в: %s"
 
-#: exe/jsui/mainpage.py:964
+#: exe/jsui/mainpage.py:965
 msgid "Directory exists"
 msgstr "Директория существует"
 
-#: exe/jsui/mainpage.py:978 exe/jsui/mainpage.py:1068 exe/jsui/mainpage.py:1084
-#: exe/jsui/mainpage.py:1097 exe/jsui/mainpage.py:1103
-#: exe/jsui/mainpage.py:1121 exe/jsui/mainpage.py:1138
-#: exe/jsui/mainpage.py:1144 exe/jsui/mainpage.py:1158
-#: exe/jsui/mainpage.py:1173 exe/jsui/mainpage.py:1179
-#: exe/jsui/mainpage.py:1194 exe/jsui/mainpage.py:1200
+#: exe/jsui/mainpage.py:979 exe/jsui/mainpage.py:1069 exe/jsui/mainpage.py:1085
+#: exe/jsui/mainpage.py:1098 exe/jsui/mainpage.py:1104
+#: exe/jsui/mainpage.py:1122 exe/jsui/mainpage.py:1139
+#: exe/jsui/mainpage.py:1145 exe/jsui/mainpage.py:1159
+#: exe/jsui/mainpage.py:1174 exe/jsui/mainpage.py:1180
+#: exe/jsui/mainpage.py:1195 exe/jsui/mainpage.py:1201
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3871,12 +3869,12 @@ msgstr ""
 "ОШИБКА ЭКСПОРТА!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1006 exe/jsui/mainpage.py:1053
+#: exe/jsui/mainpage.py:1007 exe/jsui/mainpage.py:1054
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Имя %s - это файл, невозможно заменить его"
 
-#: exe/jsui/mainpage.py:1012 exe/jsui/mainpage.py:1060
+#: exe/jsui/mainpage.py:1013 exe/jsui/mainpage.py:1061
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -3885,27 +3883,27 @@ msgstr ""
 "Папка с именем %s уже существует. Выберите другую или удалите "
 "существующую и попробуйте снова."
 
-#: exe/jsui/mainpage.py:1026 exe/jsui/mainpage.py:1071
-#: exe/jsui/mainpage.py:1086 exe/jsui/mainpage.py:1105
-#: exe/jsui/mainpage.py:1123 exe/jsui/mainpage.py:1146
-#: exe/jsui/mainpage.py:1160 exe/jsui/mainpage.py:1181
-#: exe/jsui/mainpage.py:1202
+#: exe/jsui/mainpage.py:1027 exe/jsui/mainpage.py:1072
+#: exe/jsui/mainpage.py:1087 exe/jsui/mainpage.py:1106
+#: exe/jsui/mainpage.py:1124 exe/jsui/mainpage.py:1147
+#: exe/jsui/mainpage.py:1161 exe/jsui/mainpage.py:1182
+#: exe/jsui/mainpage.py:1203
 #, python-format
 msgid "Exported to %s"
 msgstr "Экспорт в %s"
 
-#: exe/jsui/mainpage.py:1235 exe/webui/stylemanagerpage.py:128
+#: exe/jsui/mainpage.py:1236 exe/webui/stylemanagerpage.py:130
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Файл %s не существует или недоступен для чтения."
 
-#: exe/jsui/mainpage.py:1239
+#: exe/jsui/mainpage.py:1240
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Невозможно загрузить файл, пожалуйста сообщите об ошибке по электронный "
 "почте (bugs@exelearning.org)"
 
-#: exe/jsui/mainpage.py:1242
+#: exe/jsui/mainpage.py:1243
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3914,7 +3912,7 @@ msgstr ""
 "Извините, неправильный формат файла:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1244
+#: exe/jsui/mainpage.py:1245
 msgid "Sorry, wrong file format"
 msgstr "Извините, неправильный формат файла"
 
@@ -3961,8 +3959,8 @@ msgstr "Галерея изображений"
 #: exe/jsui/scripts/app/controller/Toolbar.js:864
 #: exe/jsui/scripts/app/controller/Toolbar.js:943
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:141
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:44
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:226
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:139
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:321
 msgid "All Files"
 msgstr "Все файлы"
 
@@ -3975,14 +3973,15 @@ msgstr "Настройки сохранены"
 #: exe/jsui/scripts/app/controller/MainTab.js:277
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:135
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:171
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:37
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:83
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:115
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:218
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:314
-#: exe/webui/stylemanagerpage.py:128 exe/webui/stylemanagerpage.py:131
-#: exe/webui/stylemanagerpage.py:141 exe/webui/stylemanagerpage.py:146
-#: exe/webui/stylemanagerpage.py:174 exe/webui/stylemanagerpage.py:192
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:85
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:132
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:178
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:210
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:313
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:453
+#: exe/webui/stylemanagerpage.py:130 exe/webui/stylemanagerpage.py:133
+#: exe/webui/stylemanagerpage.py:143 exe/webui/stylemanagerpage.py:148
+#: exe/webui/stylemanagerpage.py:187 exe/webui/stylemanagerpage.py:205
 msgid "Error"
 msgstr "Ошибка"
 
@@ -3995,12 +3994,12 @@ msgid "LOM Metadata import success!"
 msgstr "Успешный импорт метаданных LOM!"
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:325
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:319
 msgid "Insert Package"
 msgstr "Вставить пакет"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:331
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:325
 msgid "Extract Package"
 msgstr "Извлечь пакет (разархивировать)"
 
@@ -4027,7 +4026,7 @@ msgid "About"
 msgstr "О программе"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:353
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
 msgid "Preferences"
 msgstr "Настройки"
 
@@ -4040,7 +4039,7 @@ msgstr ""
 "действительно хотите выйти?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:411
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
 msgid "Style Manager"
 msgstr "Менеджер стилей"
 
@@ -4129,7 +4128,7 @@ msgid "Export text package as"
 msgstr "Экспортировать текстовый пакет как"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:664
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:289
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:283
 msgid "Text File"
 msgstr "Текстовый файл"
 
@@ -5215,64 +5214,71 @@ msgstr "Отключить внутреннее связывание"
 msgid "Show this window on eXe start"
 msgstr "Показывать это окно при старте eXe"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:10
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:66
 msgid "Export style: "
 msgstr "Экспортировать стиль: "
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:26
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:97
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:102
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
+msgid "Export"
+msgstr "Экспорт"
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:120
 msgid "Export to ZIP Style as"
 msgstr "Экспортировать в стиль ZIP как"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:43
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:138
 msgid "ZipFile"
 msgstr "ZIP файл"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:57
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:152
 msgid "Delete style: "
 msgstr "Удалить стиль: "
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:71
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:166
 msgid "Delete style?"
 msgstr "Удалить стиль?"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:72
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:167
 msgid "Do you want to delete this style?"
 msgstr "Вы хотите удалить этот стиль?"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:98
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:193
 msgid "Show properties of style: "
 msgstr "Показать свойства стиля: "
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:192
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:287
 msgid "Import style to the system "
 msgstr "Импортировать стиль в систему "
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:196
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:291
 #, fuzzy
 msgid "Import style"
 msgstr "Экспортировать стиль: "
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:302
 msgid "Select ZIP Style file to import."
 msgstr "Выбрать стиль ZIP файла для импорта."
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:225
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:320
 msgid "ZIP Style"
 msgstr "ZIP стиль"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:233
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:328
 msgid "List of styles in your system"
 msgstr "Список стилей в вашей системе"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:291
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:341
 msgid "Properties of style: "
 msgstr "Свойства стиля: "
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:296
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:435
 msgid "Return to style manager"
 msgstr "Возвратиться к менеджеру стилей"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:303
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:442
 msgid "Return"
 msgstr ""
 
@@ -5336,11 +5342,6 @@ msgstr "LOM"
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:201
 msgid "LOM-ES"
 msgstr "LOM-ES"
-
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
-msgid "Export"
-msgstr "Экспорт"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
@@ -5430,58 +5431,54 @@ msgid "SCORM2004"
 msgstr "SCORM2004"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:246
-msgid "Agrega SCORM2004"
-msgstr "Agrega SCORM2004"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:252
 msgid "IMS Content Package"
 msgstr "Содержимое IMS пакета"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:261
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:255
 msgid "Web Site"
 msgstr "Вебсайт"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:262
 msgid "Self-contained Folder"
 msgstr "Отдельная папка"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:274
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:268
 msgid "Zip File"
 msgstr "Zip файл"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:280
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:274
 msgid "Single Page"
 msgstr "Простая страница"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:289
 msgid "Ustad Mobile"
 msgstr "Мобильный Ustad"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
 msgid "XLIFF"
 msgstr "XLIFF"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:307
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "EPUB3"
 msgstr "EPUB3"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:316
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:310
 msgid "Merging"
 msgstr "Слияние"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:344 exe/webui/editorpage.py:267
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:338 exe/webui/editorpage.py:267
 msgid "Quit"
 msgstr "Выход"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:351
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:345
 msgid "Tools"
 msgstr "Утилиты"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "Resources Report"
 msgstr "Отчёт по ресурсам"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:385 exe/webui/editorpane.py:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379 exe/webui/editorpane.py:268
 #: exe/webui/element.py:2028
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -5492,46 +5489,46 @@ msgstr "Отчёт по ресурсам"
 msgid "Preview"
 msgstr "Предпросмотр"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:394
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:388
 msgid "Refresh Display"
 msgstr "Обновить дисплей"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:402
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:396
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Styles"
 msgstr "Стили"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:412
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:406
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Help"
 msgstr "Помощь"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:422
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:416
 msgid "eXe Tutorial"
 msgstr "Учебник eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:422
 msgid "eXe Manual"
 msgstr "Инструкция eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:434
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Release Notes"
 msgstr "Примечания к выпуску"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:443
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:437
 msgid "eXe Web Site"
 msgstr "Вебсайт eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:449
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:443
 msgid "Report an Issue"
 msgstr "Сообщить о проблеме"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:455
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:449
 msgid "eXe Forums"
 msgstr "eXe форумы"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:464
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:458
 msgid "About eXe"
 msgstr "О программе eXe"
 
@@ -7290,8 +7287,8 @@ msgstr "Педагогическая справка"
 msgid "Information"
 msgstr "Информация"
 
-#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:486
-#: exe/webui/common.py:487 exe/webui/editorpane.py:364
+#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:490
+#: exe/webui/common.py:491 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386 exe/webui/element.py:2807
 #: exe/webui/element.py:2808 exe/webui/truefalseelement.py:152
@@ -7391,26 +7388,26 @@ msgstr "Решение"
 msgid "Now It's Your Turn"
 msgstr "Теперь ваша очередь"
 
-#: exe/webui/common.py:183
+#: exe/webui/common.py:187
 msgid "Show"
 msgstr "Показать"
 
-#: exe/webui/common.py:184 exe/webui/reflectionblock.py:120
+#: exe/webui/common.py:188 exe/webui/reflectionblock.py:120
 #: exe/webui/reflectionfpdblock.py:128
 msgid "Hide"
 msgstr "Скрыть"
 
-#: exe/webui/common.py:185
+#: exe/webui/common.py:189
 msgid "Menu"
 msgstr "Меню"
 
-#: exe/webui/common.py:206 exe/webui/editorpage.py:233
+#: exe/webui/common.py:210 exe/webui/editorpage.py:233
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: редактор электронного обучения XHTML"
 
-#: exe/webui/common.py:477 exe/webui/common.py:481
+#: exe/webui/common.py:481 exe/webui/common.py:485
 msgid "Click for completion instructions"
 msgstr "Щелкните для завершения инструкций"
 
@@ -7435,12 +7432,8 @@ msgstr "Заголовок кнопки"
 #: exe/webui/imagewithtextblock.py:81 exe/webui/multimediablock.py:85
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:16
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:23
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:31
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:25
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:32
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -7452,12 +7445,8 @@ msgstr "Лево"
 #: exe/webui/imagewithtextblock.py:82 exe/webui/multimediablock.py:86
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:18
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:24
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:30
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:27
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:33
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -7717,7 +7706,7 @@ msgstr "Мгновенная маркировка?"
 
 #: exe/webui/element.py:1387 exe/webui/element.py:1655
 #: exe/webui/listablock.py:288 exe/webui/quiztestblock.py:224
-#: exe/webui/quiztestblock.py:319 exe/webui/quiztestblock.py:367
+#: exe/webui/quiztestblock.py:319 exe/webui/quiztestblock.py:369
 msgid "Your score is "
 msgstr "Ваш счёт "
 
@@ -7779,7 +7768,7 @@ msgid "Delete option"
 msgstr "Удалить опцию"
 
 #: exe/webui/element.py:2188 exe/webui/element.py:2198
-#: exe/webui/stylemanagerpage.py:171 exe/webui/stylemanagerpage.py:189
+#: exe/webui/stylemanagerpage.py:184 exe/webui/stylemanagerpage.py:202
 msgid "Correct"
 msgstr "Правильно"
 
@@ -8070,15 +8059,15 @@ msgstr ""
 msgid "Add Placable Object"
 msgstr "Благодушный объект"
 
-#: exe/webui/preferencespage.py:142
+#: exe/webui/preferencespage.py:147
 msgid "Default browser in your system"
 msgstr "Браузер по умолчанию в вашей системе"
 
-#: exe/webui/preferencespage.py:173
+#: exe/webui/preferencespage.py:182
 msgid "Failed to get preferences"
 msgstr "Не удалось получить свойства"
 
-#: exe/webui/preferencespage.py:198
+#: exe/webui/preferencespage.py:217
 msgid "Failed to save preferences"
 msgstr "Не удалось сохранить свойства"
 
@@ -8106,7 +8095,7 @@ msgstr "Выберите проходной балл: "
 msgid "SUBMIT ANSWERS"
 msgstr "ОТПРАВИТЬ ОТВЕТЫ"
 
-#: exe/webui/quiztestblock.py:364
+#: exe/webui/quiztestblock.py:366
 msgid "Submit Answer"
 msgstr "Отправить ответ"
 
@@ -8640,16 +8629,6 @@ msgid "Insert/Edit Image"
 msgstr "Добавить/Изменить изображение"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:17
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:20
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:26
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:29
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-msgid "Center"
-msgstr "По центру"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -8682,6 +8661,12 @@ msgstr "Свойства документа"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Insert/Edit Embedded Media"
 msgstr "Добавить/Изменить клип"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Center"
+msgstr "По центру"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
@@ -8792,6 +8777,16 @@ msgstr "Добавить разделитель"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Rich Text Area"
 msgstr "Визуальный редактор"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advalign/langs/en.js:3
+msgid ""
+"TinyMCE \"advalign\" plugin error: \"execcommand_callback\" is already "
+"defined"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advalign/langs/en.js:4
+msgid "\"advalign\" for TinyMCE requires jQuery"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 msgid "No Shadow"
@@ -9079,39 +9074,13 @@ msgstr "Все права защищены"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:14
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:23
-msgid "Presentation"
-msgstr "Презентация"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:24
-msgid "Text Alignment"
-msgstr "Выравнивание текста"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:19
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:28
-msgid "Group Position"
-msgstr "Положение группы"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:22
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:31
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-msgid "Float"
-msgstr "Плавает"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:25
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:34
-msgid "Group Margin"
-msgstr "Отступ группы"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:26
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:35
 msgid "You will not be able to edit the header or the caption from this dialog."
 msgstr ""
 "Вы не будете иметь возможность редактировать изображение заголовка или "
 "заголовка изображения из этого диалогового окна."
 
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:27
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:36
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:24
 msgid ""
 "The header and the caption can't be edited from this dialog. You can "
 "change or remove them editing the text itself."
@@ -9288,6 +9257,10 @@ msgstr "Узлы"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/autosave/langs/en.js:2
 msgid "Restore auto-saved content"
 msgstr "Восстановить автосохранённое содержимое"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/clearfloat/langs/en.js:3
+msgid "Clear (new line or block)"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
@@ -9994,12 +9967,12 @@ msgid "Embedded Audio Options"
 msgstr "Параметры внедрённого аудио"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-msgid "HTML5 video (ogv/ogg, webm)"
-msgstr "HTML5 видео (ogv/ogg, webm)"
+msgid "HTML5 video (ogv/ogg, webm, mp4)"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-msgid "HTML5 audio (ogg)"
-msgstr "HTML5 аудио (ogg)"
+msgid "HTML5 audio (mp3, ogg, wav)"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Flash (swf, flv, mp3)"
@@ -10083,12 +10056,12 @@ msgstr "Использовать плеер JavaScript"
 msgid "Media Title"
 msgstr "Заголовок мультимедиа"
 
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:37
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:25
 #, fuzzy
 msgid "Use Autoplay"
 msgstr "Автзапуск"
 
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:38
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:26
 #, fuzzy
 msgid "Use Controls"
 msgstr "Управление"
@@ -10229,6 +10202,10 @@ msgstr "Поля"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Clear"
 msgstr "Явный"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Float"
+msgstr "Плавает"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Display"
@@ -10848,44 +10825,44 @@ msgstr "Недействительное значние цвета"
 msgid "Add Another Item to be Sorted"
 msgstr "Добавить другой пункт, который будет отсортирован"
 
-#: exe/webui/stylemanagerpage.py:131
+#: exe/webui/stylemanagerpage.py:133
 #, python-format
 msgid "Style directory already exists: %s"
 msgstr "Директория стиля уже существует: %s"
 
-#: exe/webui/stylemanagerpage.py:141
+#: exe/webui/stylemanagerpage.py:143
 #, python-format
 msgid "The style name already exists: %s"
 msgstr "Имя стиля уже существует: %s"
 
-#: exe/webui/stylemanagerpage.py:143
+#: exe/webui/stylemanagerpage.py:145
 msgid "Success"
 msgstr "Успешно"
 
-#: exe/webui/stylemanagerpage.py:143
+#: exe/webui/stylemanagerpage.py:145
 #, python-format
 msgid "Successfully imported style: %s"
 msgstr "Успешно импортированный стиль: %s"
 
-#: exe/webui/stylemanagerpage.py:146
+#: exe/webui/stylemanagerpage.py:148
 msgid "Incorrect style format (does not include content.css)"
 msgstr "Неверный формат стиля (не включает content.css)"
 
-#: exe/webui/stylemanagerpage.py:171
+#: exe/webui/stylemanagerpage.py:184
 #, python-format
 msgid "Style exported correctly: %s"
 msgstr "Стиль экспортирован корректно: %s"
 
-#: exe/webui/stylemanagerpage.py:174
+#: exe/webui/stylemanagerpage.py:187
 #, python-format
 msgid "Could not export style : %s"
 msgstr "Не получилось экспортировать стиль : %s"
 
-#: exe/webui/stylemanagerpage.py:189
+#: exe/webui/stylemanagerpage.py:202
 msgid "Style deleted correctly"
 msgstr "Стиль удалён корректно"
 
-#: exe/webui/stylemanagerpage.py:192
+#: exe/webui/stylemanagerpage.py:205
 msgid "An unexpected error has occurred"
 msgstr "Произошла непредвиденная ошибка"
 
@@ -11123,4 +11100,25 @@ msgstr ""
 
 #~ msgid "by"
 #~ msgstr ""
+
+#~ msgid "Agrega SCORM2004"
+#~ msgstr "Agrega SCORM2004"
+
+#~ msgid "Presentation"
+#~ msgstr "Презентация"
+
+#~ msgid "Text Alignment"
+#~ msgstr "Выравнивание текста"
+
+#~ msgid "Group Position"
+#~ msgstr "Положение группы"
+
+#~ msgid "Group Margin"
+#~ msgstr "Отступ группы"
+
+#~ msgid "HTML5 video (ogv/ogg, webm)"
+#~ msgstr "HTML5 видео (ogv/ogg, webm)"
+
+#~ msgid "HTML5 audio (ogg)"
+#~ msgstr "HTML5 аудио (ogg)"
 

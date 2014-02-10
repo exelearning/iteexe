@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-04 14:33+0100\n"
+"POT-Creation-Date: 2014-02-10 22:54+0100\n"
 "PO-Revision-Date: 2013-12-03 12:50+0100\n"
 "Last-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\n"
 "Language-Team: LliureX\n"
@@ -714,7 +714,7 @@ msgstr ""
 #: exe/engine/scormmulticlozeidevice.py:116 exe/engine/sortidevice.py:53
 #: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:471
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:475
 msgid "Instructions"
 msgstr "Instruccions "
 
@@ -756,7 +756,7 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
 #: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
-#: exe/engine/field.py:3611 exe/engine/field.py:3659
+#: exe/engine/field.py:3620 exe/engine/field.py:3668
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:589
 #: exe/engine/idevicestore.py:698 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/scormclozeidevice.py:131
@@ -768,7 +768,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:173
 #: exe/webui/clozefpdblock.py:174 exe/webui/clozefpdblock.py:192
 #: exe/webui/clozelangfpdblock.py:175 exe/webui/clozelangfpdblock.py:193
-#: exe/webui/common.py:388 exe/webui/editorelement.py:148
+#: exe/webui/common.py:392 exe/webui/editorelement.py:148
 #: exe/webui/editorpane.py:255 exe/webui/element.py:2395
 #: exe/webui/element.py:2509 exe/webui/listablock.py:452
 #: exe/webui/questionelement.py:104 exe/webui/reflectionfpdblock.py:142
@@ -1041,8 +1041,8 @@ msgstr ""
 "«Resposta correcta» quan la resposta siga correcta o \n"
 "«Resposta incorrecta» quan siga incorrecta."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3682
-#: exe/engine/field.py:3747 exe/engine/multichoiceidevice.py:131
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3691
+#: exe/engine/field.py:3756 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:80 exe/engine/scormmultiselectidevice.py:78
 #: exe/engine/seleccionmultiplefpdidevice.py:82
 msgid "Question"
@@ -1150,8 +1150,6 @@ msgstr "Actualment no s'ha pujat cap fitxer"
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
 #: exe/webui/imagemagnifierblock.py:109 exe/webui/imagewithtextblock.py:83
 #: exe/webui/multimediablock.py:87
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:21
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:30
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
 msgstr "Cap"
@@ -1188,11 +1186,11 @@ msgstr ""
 "Introduïu l'URL que vulgueu mostrar\n"
 "i seleccioneu la mida de l'àrea en què es mostrarà."
 
-#: exe/engine/field.py:2630
+#: exe/engine/field.py:2639
 msgid "Click Here"
 msgstr "Premeu ací"
 
-#: exe/engine/field.py:2825 exe/engine/field.py:2872
+#: exe/engine/field.py:2834 exe/engine/field.py:2881
 #: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
@@ -1201,7 +1199,7 @@ msgstr ""
 "Inserix un títol per al fitxer MP3. \n"
 "També apareixerà en la barra del títol dels reproductors."
 
-#: exe/engine/field.py:3018 exe/engine/field.py:3252
+#: exe/engine/field.py:3027 exe/engine/field.py:3261
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1233,7 +1231,7 @@ msgstr ""
 "estricta\" i \"Correcció de majúscules\" no ho està, \"elefant\" també "
 "s'acceptarà.</p>"
 
-#: exe/engine/field.py:3039 exe/engine/field.py:3273
+#: exe/engine/field.py:3048 exe/engine/field.py:3282
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
@@ -1241,7 +1239,7 @@ msgstr ""
 "<p>Si marqueu esta opció, les respostes amb un ús diferent de les "
 "majúscules es consideraran incorrectes.</p>"
 
-#: exe/engine/field.py:3044 exe/engine/field.py:3278
+#: exe/engine/field.py:3053 exe/engine/field.py:3287
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -1252,7 +1250,7 @@ msgstr ""
 "al final \n"
 "de l'exercici.</p>"
 
-#: exe/engine/field.py:3082 exe/engine/field.py:3320
+#: exe/engine/field.py:3091 exe/engine/field.py:3329
 #: exe/engine/listaidevice.py:392
 msgid ""
 "Allow auto completion when \n"
@@ -1261,11 +1259,11 @@ msgstr ""
 "Permet la compleció automàtica quan \n"
 "                                  l'usuari ompli els buits."
 
-#: exe/engine/field.py:3283
+#: exe/engine/field.py:3292
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr "<p>Si es marca esta opció, es mostrarà la puntuació</p>"
 
-#: exe/engine/field.py:3362 exe/engine/field.py:3406
+#: exe/engine/field.py:3371 exe/engine/field.py:3415
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1273,7 +1271,7 @@ msgstr ""
 "Seleccioneu sols .swf (objectes en Flash) per a \n"
 "este iDevice."
 
-#: exe/engine/field.py:3426 exe/engine/field.py:3490
+#: exe/engine/field.py:3435 exe/engine/field.py:3499
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1281,11 +1279,11 @@ msgstr ""
 "Seleccioneu sols .flv (fitxers de vídeo en Flash) per a \n"
 " este iDevice."
 
-#: exe/engine/field.py:3502
+#: exe/engine/field.py:3511
 msgid "Type a discussion topic here."
 msgstr "Escriviu un tema de discussió ací"
 
-#: exe/engine/field.py:3531
+#: exe/engine/field.py:3540
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
@@ -1295,7 +1293,7 @@ msgstr ""
 "manualment per a crear la fórmula matemàtica. Per a previsualitzar com es"
 " mostra el LATEX empreu el botó &lt;Previsualització&gt; de davall.</p>"
 
-#: exe/engine/field.py:3539
+#: exe/engine/field.py:3548
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -1303,14 +1301,14 @@ msgstr ""
 "Premeu el botó de Previsualització per a convertir \n"
 "            el LaTeX en una imatge."
 
-#: exe/engine/field.py:3607 exe/engine/field.py:3656
+#: exe/engine/field.py:3616 exe/engine/field.py:3665
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/webui/element.py:2119 exe/webui/element.py:2473
 #: exe/webui/element.py:3350 exe/webui/testoptionelement.py:106
 msgid "Option"
 msgstr "Opció"
 
-#: exe/engine/field.py:3685 exe/engine/field.py:3751
+#: exe/engine/field.py:3694 exe/engine/field.py:3760
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/element.py:2811
@@ -1318,13 +1316,13 @@ msgstr "Opció"
 msgid "Hint"
 msgstr "Pista"
 
-#: exe/engine/field.py:3773 exe/engine/field.py:3810 exe/webui/element.py:2301
+#: exe/engine/field.py:3782 exe/engine/field.py:3819 exe/webui/element.py:2301
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "Opcions"
 
-#: exe/engine/field.py:3833
+#: exe/engine/field.py:3842
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -1335,7 +1333,7 @@ msgstr ""
 "La pregunta  ha de ser clara i inequívoca. Eviteu premisses negatives \n"
 "ja que tendixen a confondre l'alumnat."
 
-#: exe/engine/field.py:3836 exe/engine/field.py:3917
+#: exe/engine/field.py:3845 exe/engine/field.py:3926
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
@@ -1344,7 +1342,7 @@ msgstr ""
 msgid "Question:"
 msgstr "Qüestió:"
 
-#: exe/engine/field.py:3841
+#: exe/engine/field.py:3850
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -1356,7 +1354,7 @@ msgstr ""
 "esborrar opcions \n"
 "prement la «X» roja al costat de l'opció."
 
-#: exe/engine/field.py:3845
+#: exe/engine/field.py:3854
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1364,7 +1362,7 @@ msgstr ""
 "Seleccioneu tantes opcions correctes \n"
 "com calga fent clic en la casella de selecció al costat de l'opció."
 
-#: exe/engine/field.py:3848
+#: exe/engine/field.py:3857
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -1372,7 +1370,7 @@ msgstr ""
 "Escriviu la retroacció que voleu \n"
 "proporcionar a l'alumnat."
 
-#: exe/engine/field.py:3850 exe/engine/field.py:3920
+#: exe/engine/field.py:3859 exe/engine/field.py:3929
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:200
@@ -2602,31 +2600,31 @@ msgstr "Text Orientacions per a la tutoria"
 msgid "Guidelines Teacher Text:"
 msgstr "Text Orientacions per a la tutoria:"
 
-#: exe/engine/package.py:300
+#: exe/engine/package.py:301
 msgid "Topic"
 msgstr "Tema"
 
-#: exe/engine/package.py:300
+#: exe/engine/package.py:301
 msgid "Section"
 msgstr "Secció"
 
-#: exe/engine/package.py:300
+#: exe/engine/package.py:301
 msgid "Unit"
 msgstr "Apartat"
 
-#: exe/engine/package.py:321
+#: exe/engine/package.py:322
 msgid "Home"
 msgstr "Inici"
 
-#: exe/engine/package.py:462
+#: exe/engine/package.py:463
 msgid "Metadata creation date"
 msgstr ""
 
-#: exe/engine/package.py:949
+#: exe/engine/package.py:950
 msgid "?????"
 msgstr "?"
 
-#: exe/engine/package.py:987 exe/engine/package.py:994
+#: exe/engine/package.py:988 exe/engine/package.py:995
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2635,16 +2633,16 @@ msgstr ""
 "HA FALLAT L'ACCIÓ DE GUARDAR\n"
 "L'última vegada que s'ha guardat correctament és %s."
 
-#: exe/engine/package.py:1364 exe/jsui/scripts/app/controller/Toolbar.js:372
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
+#: exe/engine/package.py:1365 exe/jsui/scripts/app/controller/Toolbar.js:372
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "Editor d'iDevice"
 
-#: exe/engine/package.py:1485
+#: exe/engine/package.py:1486
 msgid "My Catalog"
 msgstr "El meu catàleg"
 
-#: exe/engine/package.py:1492
+#: exe/engine/package.py:1493
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Default"
@@ -2944,7 +2942,7 @@ msgstr ""
 "li ha anat l'exercici. (Els comentaris són útils per a proporcionar \n"
 "una retroacció i reflexionar.)"
 
-#: exe/engine/resource.py:592
+#: exe/engine/resource.py:596
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
@@ -3366,7 +3364,7 @@ msgstr ""
 msgid "Article"
 msgstr "Article"
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:360
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:359
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -3374,7 +3372,7 @@ msgstr ""
 "Seleccioneu l'idioma apropiat de la Viquipèdia \n"
 "per a buscar i introduïu un terme de busca."
 
-#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:362
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:361
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -3382,7 +3380,7 @@ msgstr ""
 "Escriviu la frase o paraula que voleu buscar \n"
 "en la Viquipèdia."
 
-#: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:137
 #, python-format
 msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
@@ -3391,7 +3389,7 @@ msgstr ""
 "No es pot baixar des de %s <br/>Reviseu l'ortografia i la connexió i "
 "torneu-ho a provar."
 
-#: exe/engine/wikipediaidevice.py:314
+#: exe/engine/wikipediaidevice.py:313
 msgid "http://en.wikipedia.org/"
 msgstr "http://ca.wikipedia.org/"
 
@@ -3582,9 +3580,9 @@ msgstr ""
 "exe_do: error: no s'ha pogut importar «%s».\n"
 "L'error ha estat:"
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:288
-#: exe/jsui/mainpage.py:932 exe/jsui/mainpage.py:1096 exe/jsui/mainpage.py:1137
-#: exe/jsui/mainpage.py:1172 exe/jsui/mainpage.py:1193
+#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:289
+#: exe/jsui/mainpage.py:933 exe/jsui/mainpage.py:1097 exe/jsui/mainpage.py:1138
+#: exe/jsui/mainpage.py:1173 exe/jsui/mainpage.py:1194
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3598,7 +3596,7 @@ msgid "Export format not implemented"
 msgstr "El format d'exportació no està implementat "
 
 #: exe/export/epub3export.py:569 exe/export/imsexport.py:514
-#: exe/export/scormexport.py:849 exe/export/websiteexport.py:94
+#: exe/export/scormexport.py:699 exe/export/websiteexport.py:94
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3695,11 +3693,11 @@ msgstr "Sota la llicència de"
 msgid "Local Version"
 msgstr "Versió"
 
-#: exe/export/scormexport.py:562 exe/export/websitepage.py:323
+#: exe/export/scormpage.py:153 exe/export/websitepage.py:323
 msgid "Previous"
 msgstr "Anterior"
 
-#: exe/export/scormexport.py:563 exe/export/websitepage.py:329
+#: exe/export/scormpage.py:154 exe/export/websitepage.py:329
 msgid "Next"
 msgstr "Següent"
 
@@ -3773,19 +3771,19 @@ msgstr "S'està inserint %s"
 msgid "My iDevices"
 msgstr "Els meus iDevices"
 
-#: exe/jsui/mainpage.py:306 exe/jsui/mainpage.py:771 exe/jsui/mainpage.py:924
+#: exe/jsui/mainpage.py:307 exe/jsui/mainpage.py:772 exe/jsui/mainpage.py:925
 msgid "Cannot access directory named "
 msgstr "No es pot accedir al directori anomenat"
 
-#: exe/jsui/mainpage.py:306 exe/jsui/mainpage.py:773 exe/jsui/mainpage.py:924
+#: exe/jsui/mainpage.py:307 exe/jsui/mainpage.py:774 exe/jsui/mainpage.py:925
 msgid ". Please use ASCII names."
 msgstr ". Utilitzeu noms en ASCII."
 
-#: exe/jsui/mainpage.py:315
+#: exe/jsui/mainpage.py:316
 msgid "SAVE FAILED!"
 msgstr "HA FALLAT L'ACCIÓ DE GUARDAR"
 
-#: exe/jsui/mainpage.py:319 exe/jsui/mainpage.py:627 exe/jsui/mainpage.py:1020
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:628 exe/jsui/mainpage.py:1021
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3794,24 +3792,24 @@ msgstr ""
 "HA FALLAT L'ACCIÓ DE GUARDAR\n"
 "%s"
 
-#: exe/jsui/mainpage.py:323 exe/jsui/mainpage.py:328 exe/jsui/mainpage.py:331
+#: exe/jsui/mainpage.py:324 exe/jsui/mainpage.py:329 exe/jsui/mainpage.py:332
 #, python-format
 msgid "Package saved to: %s"
 msgstr "El paquet s'ha guardat a: %s"
 
-#: exe/jsui/mainpage.py:549 exe/jsui/mainpage.py:655
+#: exe/jsui/mainpage.py:550 exe/jsui/mainpage.py:656
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "El directori de previsualitzacions %s és un fitxer, no es pot reemplaçar"
 
-#: exe/jsui/mainpage.py:569
+#: exe/jsui/mainpage.py:570
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr ""
 "El fitxer local %s no s'ha trobat, no se'n pot mostrar la "
 "previsualització "
 
-#: exe/jsui/mainpage.py:697
+#: exe/jsui/mainpage.py:698
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -3820,11 +3818,11 @@ msgstr ""
 "La compilació del MimeTex ha fallat.\n"
 "%s"
 
-#: exe/jsui/mainpage.py:736
+#: exe/jsui/mainpage.py:737
 msgid "Importing HTML..."
 msgstr "S'està important l'HTML"
 
-#: exe/jsui/mainpage.py:742
+#: exe/jsui/mainpage.py:743
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3833,26 +3831,26 @@ msgstr ""
 "Ha fallat la importació de metadades LOM.\n"
 "%s"
 
-#: exe/jsui/mainpage.py:745
+#: exe/jsui/mainpage.py:746
 msgid "Error importing HTML:\n"
 msgstr "S'ha produït un error en importar l'HTML:\n"
 
-#: exe/jsui/mainpage.py:794 exe/jsui/mainpage.py:799 exe/jsui/mainpage.py:802
-#: exe/jsui/mainpage.py:805 exe/jsui/mainpage.py:808 exe/jsui/mainpage.py:811
-#: exe/jsui/mainpage.py:816 exe/jsui/mainpage.py:1080 exe/jsui/mainpage.py:1153
+#: exe/jsui/mainpage.py:795 exe/jsui/mainpage.py:800 exe/jsui/mainpage.py:803
+#: exe/jsui/mainpage.py:806 exe/jsui/mainpage.py:809 exe/jsui/mainpage.py:812
+#: exe/jsui/mainpage.py:817 exe/jsui/mainpage.py:1081 exe/jsui/mainpage.py:1154
 msgid "EXPORT FAILED!"
 msgstr "Exportació errònia!"
 
-#: exe/jsui/mainpage.py:887
+#: exe/jsui/mainpage.py:888
 msgid "Correct XLIFF import"
 msgstr "La importació XLIFF és correcta"
 
-#: exe/jsui/mainpage.py:890
+#: exe/jsui/mainpage.py:891
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "S'ha produït un error en importar l'XLIFF: %s"
 
-#: exe/jsui/mainpage.py:933 exe/jsui/mainpage.py:950
+#: exe/jsui/mainpage.py:934 exe/jsui/mainpage.py:951
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -3861,21 +3859,21 @@ msgstr ""
 "Extracció errònia!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:952
+#: exe/jsui/mainpage.py:953
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Paquet extret a: %s"
 
-#: exe/jsui/mainpage.py:964
+#: exe/jsui/mainpage.py:965
 msgid "Directory exists"
 msgstr "El directori ja existix"
 
-#: exe/jsui/mainpage.py:978 exe/jsui/mainpage.py:1068 exe/jsui/mainpage.py:1084
-#: exe/jsui/mainpage.py:1097 exe/jsui/mainpage.py:1103
-#: exe/jsui/mainpage.py:1121 exe/jsui/mainpage.py:1138
-#: exe/jsui/mainpage.py:1144 exe/jsui/mainpage.py:1158
-#: exe/jsui/mainpage.py:1173 exe/jsui/mainpage.py:1179
-#: exe/jsui/mainpage.py:1194 exe/jsui/mainpage.py:1200
+#: exe/jsui/mainpage.py:979 exe/jsui/mainpage.py:1069 exe/jsui/mainpage.py:1085
+#: exe/jsui/mainpage.py:1098 exe/jsui/mainpage.py:1104
+#: exe/jsui/mainpage.py:1122 exe/jsui/mainpage.py:1139
+#: exe/jsui/mainpage.py:1145 exe/jsui/mainpage.py:1159
+#: exe/jsui/mainpage.py:1174 exe/jsui/mainpage.py:1180
+#: exe/jsui/mainpage.py:1195 exe/jsui/mainpage.py:1201
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3884,12 +3882,12 @@ msgstr ""
 "EXPORTACIÓ ERRÒNIA!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1006 exe/jsui/mainpage.py:1053
+#: exe/jsui/mainpage.py:1007 exe/jsui/mainpage.py:1054
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "El nom de fitxer %s és un fitxer, no es pot reemplaçar"
 
-#: exe/jsui/mainpage.py:1012 exe/jsui/mainpage.py:1060
+#: exe/jsui/mainpage.py:1013 exe/jsui/mainpage.py:1061
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -3898,25 +3896,25 @@ msgstr ""
 "El nom de carpeta %s ja existix. Escolliu-ne un altre o esborreu-lo i "
 "torneu-ho a provar."
 
-#: exe/jsui/mainpage.py:1026 exe/jsui/mainpage.py:1071
-#: exe/jsui/mainpage.py:1086 exe/jsui/mainpage.py:1105
-#: exe/jsui/mainpage.py:1123 exe/jsui/mainpage.py:1146
-#: exe/jsui/mainpage.py:1160 exe/jsui/mainpage.py:1181
-#: exe/jsui/mainpage.py:1202
+#: exe/jsui/mainpage.py:1027 exe/jsui/mainpage.py:1072
+#: exe/jsui/mainpage.py:1087 exe/jsui/mainpage.py:1106
+#: exe/jsui/mainpage.py:1124 exe/jsui/mainpage.py:1147
+#: exe/jsui/mainpage.py:1161 exe/jsui/mainpage.py:1182
+#: exe/jsui/mainpage.py:1203
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportat a %s"
 
-#: exe/jsui/mainpage.py:1235 exe/webui/stylemanagerpage.py:128
+#: exe/jsui/mainpage.py:1236 exe/webui/stylemanagerpage.py:130
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "El fitxer %s no existix o no és pot llegir."
 
-#: exe/jsui/mainpage.py:1239
+#: exe/jsui/mainpage.py:1240
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "No s'ha pogut carregar el fitxer, envieu un correu a bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1242
+#: exe/jsui/mainpage.py:1243
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3925,7 +3923,7 @@ msgstr ""
 "El format de fitxer és incorrecte: \n"
 "%s"
 
-#: exe/jsui/mainpage.py:1244
+#: exe/jsui/mainpage.py:1245
 msgid "Sorry, wrong file format"
 msgstr "El format de fitxer és incorrecte"
 
@@ -3972,8 +3970,8 @@ msgstr "Fitxers d'imatge"
 #: exe/jsui/scripts/app/controller/Toolbar.js:864
 #: exe/jsui/scripts/app/controller/Toolbar.js:943
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:141
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:44
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:226
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:139
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:321
 msgid "All Files"
 msgstr "Tots els fitxers"
 
@@ -3986,14 +3984,15 @@ msgstr "Paràmetres guardats"
 #: exe/jsui/scripts/app/controller/MainTab.js:277
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:135
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:171
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:37
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:83
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:115
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:218
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:314
-#: exe/webui/stylemanagerpage.py:128 exe/webui/stylemanagerpage.py:131
-#: exe/webui/stylemanagerpage.py:141 exe/webui/stylemanagerpage.py:146
-#: exe/webui/stylemanagerpage.py:174 exe/webui/stylemanagerpage.py:192
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:85
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:132
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:178
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:210
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:313
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:453
+#: exe/webui/stylemanagerpage.py:130 exe/webui/stylemanagerpage.py:133
+#: exe/webui/stylemanagerpage.py:143 exe/webui/stylemanagerpage.py:148
+#: exe/webui/stylemanagerpage.py:187 exe/webui/stylemanagerpage.py:205
 msgid "Error"
 msgstr "Error"
 
@@ -4006,12 +4005,12 @@ msgid "LOM Metadata import success!"
 msgstr "La importació de metadades LOM s'ha realitzat correctament."
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:325
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:319
 msgid "Insert Package"
 msgstr "Inserix un paquet"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:331
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:325
 msgid "Extract Package"
 msgstr "Extrau el paquet"
 
@@ -4038,7 +4037,7 @@ msgid "About"
 msgstr "Quant a"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:353
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
 msgid "Preferences"
 msgstr "Preferències"
 
@@ -4051,7 +4050,7 @@ msgstr ""
 " eixir?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:411
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
 msgid "Style Manager"
 msgstr "Gestor d'estils"
 
@@ -4140,7 +4139,7 @@ msgid "Export text package as"
 msgstr "Anomena i exporta el paquet de text"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:664
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:289
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:283
 msgid "Text File"
 msgstr "Fitxer de text"
 
@@ -5224,63 +5223,70 @@ msgstr "Desactiva tots els enllaços interns"
 msgid "Show this window on eXe start"
 msgstr "Mostra esta finestra en iniciar l'eXe"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:10
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:66
 msgid "Export style: "
 msgstr "Exporta l'estil:"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:26
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:97
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:102
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
+msgid "Export"
+msgstr "Exporta"
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:120
 msgid "Export to ZIP Style as"
 msgstr "Exporta a estil ZIP com a"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:43
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:138
 msgid "ZipFile"
 msgstr "Fitxer Zip"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:57
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:152
 msgid "Delete style: "
 msgstr "Suprimix l'estil:"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:71
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:166
 msgid "Delete style?"
 msgstr "Voleu suprimir l'estil?"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:72
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:167
 msgid "Do you want to delete this style?"
 msgstr "Voleu suprimir este estil?"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:98
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:193
 msgid "Show properties of style: "
 msgstr "Mostra les propietats de l'estil:"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:192
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:287
 msgid "Import style to the system "
 msgstr "Importa l'estil al sistema"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:196
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:291
 msgid "Import style"
 msgstr "Importa l'estil"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:302
 msgid "Select ZIP Style file to import."
 msgstr "Seleccioneu el fitxer d'estil ZIP que s'ha d'importar."
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:225
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:320
 msgid "ZIP Style"
 msgstr "Estil ZIP"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:233
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:328
 msgid "List of styles in your system"
 msgstr "Llista d'estils al vostre sistema"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:291
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:341
 msgid "Properties of style: "
 msgstr "Propietats de l'estil:"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:296
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:435
 msgid "Return to style manager"
 msgstr "Torna al gestor d'estils"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:303
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:442
 msgid "Return"
 msgstr "Retorn"
 
@@ -5344,11 +5350,6 @@ msgstr "LOM"
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:201
 msgid "LOM-ES"
 msgstr "LOM-ES"
-
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
-msgid "Export"
-msgstr "Exporta"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
@@ -5438,58 +5439,54 @@ msgid "SCORM2004"
 msgstr "SCORM2004"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:246
-msgid "Agrega SCORM2004"
-msgstr "SCORM2004 d'Agrega"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:252
 msgid "IMS Content Package"
 msgstr "Paquet de contingut IMS"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:261
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:255
 msgid "Web Site"
 msgstr "Lloc web"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:262
 msgid "Self-contained Folder"
 msgstr "Carpeta autodesplegable"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:274
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:268
 msgid "Zip File"
 msgstr "Fitxer Zip"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:280
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:274
 msgid "Single Page"
 msgstr "Una sola pàgina"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:289
 msgid "Ustad Mobile"
 msgstr "Ustad Mobile"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
 msgid "XLIFF"
 msgstr "XLIFF"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:307
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "EPUB3"
 msgstr "EPUB3"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:316
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:310
 msgid "Merging"
 msgstr "Combinació"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:344 exe/webui/editorpage.py:267
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:338 exe/webui/editorpage.py:267
 msgid "Quit"
 msgstr "Ix"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:351
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:345
 msgid "Tools"
 msgstr "Ferramentes"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "Resources Report"
 msgstr "Informe de recursos"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:385 exe/webui/editorpane.py:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379 exe/webui/editorpane.py:268
 #: exe/webui/element.py:2028
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -5500,46 +5497,46 @@ msgstr "Informe de recursos"
 msgid "Preview"
 msgstr "Previsualització"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:394
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:388
 msgid "Refresh Display"
 msgstr "Refresca la pantalla"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:402
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:396
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Styles"
 msgstr "Estils"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:412
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:406
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Help"
 msgstr "Ajuda"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:422
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:416
 msgid "eXe Tutorial"
 msgstr "Programa d'aprenentatge de l'eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:422
 msgid "eXe Manual"
 msgstr "Manual de l'eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:434
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Release Notes"
 msgstr "Notes de la versió"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:443
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:437
 msgid "eXe Web Site"
 msgstr "Lloc web de l'eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:449
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:443
 msgid "Report an Issue"
 msgstr "Informeu d'un problema"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:455
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:449
 msgid "eXe Forums"
 msgstr "Fòrums de l'eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:464
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:458
 msgid "About eXe"
 msgstr "Quant a l'eXe"
 
@@ -7297,8 +7294,8 @@ msgstr "Ajuda Pedagògica"
 msgid "Information"
 msgstr "Informació"
 
-#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:486
-#: exe/webui/common.py:487 exe/webui/editorpane.py:364
+#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:490
+#: exe/webui/common.py:491 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386 exe/webui/element.py:2807
 #: exe/webui/element.py:2808 exe/webui/truefalseelement.py:152
@@ -7396,26 +7393,26 @@ msgstr "Solució"
 msgid "Now It's Your Turn"
 msgstr "Autoavaluació"
 
-#: exe/webui/common.py:183
+#: exe/webui/common.py:187
 msgid "Show"
 msgstr "Mostra"
 
-#: exe/webui/common.py:184 exe/webui/reflectionblock.py:120
+#: exe/webui/common.py:188 exe/webui/reflectionblock.py:120
 #: exe/webui/reflectionfpdblock.py:128
 msgid "Hide"
 msgstr "Amaga"
 
-#: exe/webui/common.py:185
+#: exe/webui/common.py:189
 msgid "Menu"
 msgstr "Menú"
 
-#: exe/webui/common.py:206 exe/webui/editorpage.py:233
+#: exe/webui/common.py:210 exe/webui/editorpage.py:233
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: editor XHTML per a l'aprenentatge electrònic"
 
-#: exe/webui/common.py:477 exe/webui/common.py:481
+#: exe/webui/common.py:481 exe/webui/common.py:485
 msgid "Click for completion instructions"
 msgstr "Premeu per a mirar les instruccions de compleció"
 
@@ -7440,12 +7437,8 @@ msgstr "Títol del botó"
 #: exe/webui/imagewithtextblock.py:81 exe/webui/multimediablock.py:85
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:16
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:23
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:31
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:25
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:32
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -7457,12 +7450,8 @@ msgstr "Esquerre"
 #: exe/webui/imagewithtextblock.py:82 exe/webui/multimediablock.py:86
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:18
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:24
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:30
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:27
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:33
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -7728,7 +7717,7 @@ msgstr "Correcció immediata?"
 
 #: exe/webui/element.py:1387 exe/webui/element.py:1655
 #: exe/webui/listablock.py:288 exe/webui/quiztestblock.py:224
-#: exe/webui/quiztestblock.py:319 exe/webui/quiztestblock.py:367
+#: exe/webui/quiztestblock.py:319 exe/webui/quiztestblock.py:369
 msgid "Your score is "
 msgstr "La vostra puntuació és "
 
@@ -7790,7 +7779,7 @@ msgid "Delete option"
 msgstr "Suprimix l'opció"
 
 #: exe/webui/element.py:2188 exe/webui/element.py:2198
-#: exe/webui/stylemanagerpage.py:171 exe/webui/stylemanagerpage.py:189
+#: exe/webui/stylemanagerpage.py:184 exe/webui/stylemanagerpage.py:202
 msgid "Correct"
 msgstr "Correcte"
 
@@ -8074,15 +8063,15 @@ msgstr "Habilita que es mostre el temporitzador en el joc"
 msgid "Add Placable Object"
 msgstr "Afig un objecte que es puga col·locar"
 
-#: exe/webui/preferencespage.py:142
+#: exe/webui/preferencespage.py:147
 msgid "Default browser in your system"
 msgstr "Navegador per defecte del sistema"
 
-#: exe/webui/preferencespage.py:173
+#: exe/webui/preferencespage.py:182
 msgid "Failed to get preferences"
 msgstr "No s'han pogut obtindre les preferències"
 
-#: exe/webui/preferencespage.py:198
+#: exe/webui/preferencespage.py:217
 msgid "Failed to save preferences"
 msgstr "No s'han pogut guardar les preferències"
 
@@ -8110,7 +8099,7 @@ msgstr "Seleccioneu el percentatge per a aprovar:"
 msgid "SUBMIT ANSWERS"
 msgstr "ENVIA LES RESPOSTES"
 
-#: exe/webui/quiztestblock.py:364
+#: exe/webui/quiztestblock.py:366
 msgid "Submit Answer"
 msgstr "Envia la resposta"
 
@@ -8647,16 +8636,6 @@ msgid "Insert/Edit Image"
 msgstr "Inserix/edita la imatge"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:17
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:20
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:26
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:29
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-msgid "Center"
-msgstr "Centra"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -8690,6 +8669,12 @@ msgstr "Propietats del document"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Insert/Edit Embedded Media"
 msgstr "Inserix/edita el multimèdia incrustat"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Center"
+msgstr "Centra"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
@@ -8805,6 +8790,16 @@ msgstr "Inserix una línia horitzontal"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Rich Text Area"
 msgstr "Àrea de text enriquit"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advalign/langs/en.js:3
+msgid ""
+"TinyMCE \"advalign\" plugin error: \"execcommand_callback\" is already "
+"defined"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advalign/langs/en.js:4
+msgid "\"advalign\" for TinyMCE requires jQuery"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 msgid "No Shadow"
@@ -9093,37 +9088,11 @@ msgstr "Tots els drets reservats"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:14
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:23
-msgid "Presentation"
-msgstr "Presentació"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:24
-msgid "Text Alignment"
-msgstr "Alineació del text"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:19
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:28
-msgid "Group Position"
-msgstr "Posició del grup"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:22
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:31
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-msgid "Float"
-msgstr "Flotant"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:25
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:34
-msgid "Group Margin"
-msgstr "Marge del grup"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:26
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:35
 msgid "You will not be able to edit the header or the caption from this dialog."
 msgstr "No podreu editar la capçalera ni el títol des d'este diàleg."
 
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:27
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:36
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:24
 msgid ""
 "The header and the caption can't be edited from this dialog. You can "
 "change or remove them editing the text itself."
@@ -9303,6 +9272,10 @@ msgstr "Node"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/autosave/langs/en.js:2
 msgid "Restore auto-saved content"
 msgstr "Restaura el contingut guardat automàticament"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/clearfloat/langs/en.js:3
+msgid "Clear (new line or block)"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
@@ -10007,12 +9980,12 @@ msgid "Embedded Audio Options"
 msgstr "Opcions d'àudio incrustat"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-msgid "HTML5 video (ogv/ogg, webm)"
-msgstr "Vídeo HTML5 (ogv/ogg, webm)"
+msgid "HTML5 video (ogv/ogg, webm, mp4)"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-msgid "HTML5 audio (ogg)"
-msgstr "Àudio HTML5 (ogg)"
+msgid "HTML5 audio (mp3, ogg, wav)"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Flash (swf, flv, mp3)"
@@ -10096,11 +10069,11 @@ msgstr "Utilitza el reproductor del JavaScript"
 msgid "Media Title"
 msgstr "Títol del fitxer multimèdia"
 
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:37
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:25
 msgid "Use Autoplay"
 msgstr "Utilitza la reproducció automàtica"
 
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:38
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:26
 msgid "Use Controls"
 msgstr "Utilitza els controls"
 
@@ -10240,6 +10213,10 @@ msgstr "Farciment"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Clear"
 msgstr "Buida"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Float"
+msgstr "Flotant"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Display"
@@ -10863,44 +10840,44 @@ msgstr "El valor del color no és vàlid."
 msgid "Add Another Item to be Sorted"
 msgstr "Afig un altre element per ordenar"
 
-#: exe/webui/stylemanagerpage.py:131
+#: exe/webui/stylemanagerpage.py:133
 #, python-format
 msgid "Style directory already exists: %s"
 msgstr "El directori d'estil ja existix: %s."
 
-#: exe/webui/stylemanagerpage.py:141
+#: exe/webui/stylemanagerpage.py:143
 #, python-format
 msgid "The style name already exists: %s"
 msgstr "El nom de l'estil ja existix: %s."
 
-#: exe/webui/stylemanagerpage.py:143
+#: exe/webui/stylemanagerpage.py:145
 msgid "Success"
 msgstr "Correcte"
 
-#: exe/webui/stylemanagerpage.py:143
+#: exe/webui/stylemanagerpage.py:145
 #, python-format
 msgid "Successfully imported style: %s"
 msgstr "L'estil s'ha importat correctament: %s."
 
-#: exe/webui/stylemanagerpage.py:146
+#: exe/webui/stylemanagerpage.py:148
 msgid "Incorrect style format (does not include content.css)"
 msgstr "El format d'estil és incorrecte (no inclou content.css)"
 
-#: exe/webui/stylemanagerpage.py:171
+#: exe/webui/stylemanagerpage.py:184
 #, python-format
 msgid "Style exported correctly: %s"
 msgstr "L'estil s'ha exportat correctament: %s."
 
-#: exe/webui/stylemanagerpage.py:174
+#: exe/webui/stylemanagerpage.py:187
 #, python-format
 msgid "Could not export style : %s"
 msgstr "No s'ha pogut exportar l'estil: %s."
 
-#: exe/webui/stylemanagerpage.py:189
+#: exe/webui/stylemanagerpage.py:202
 msgid "Style deleted correctly"
 msgstr "S'ha suprimit l'estil correctament."
 
-#: exe/webui/stylemanagerpage.py:192
+#: exe/webui/stylemanagerpage.py:205
 msgid "An unexpected error has occurred"
 msgstr "S'ha produït un error inesperat."
 
@@ -11146,4 +11123,25 @@ msgstr ""
 
 #~ msgid "Autoevaluacion"
 #~ msgstr "Autoavaluació"
+
+#~ msgid "Agrega SCORM2004"
+#~ msgstr "SCORM2004 d'Agrega"
+
+#~ msgid "Presentation"
+#~ msgstr "Presentació"
+
+#~ msgid "Text Alignment"
+#~ msgstr "Alineació del text"
+
+#~ msgid "Group Position"
+#~ msgstr "Posició del grup"
+
+#~ msgid "Group Margin"
+#~ msgstr "Marge del grup"
+
+#~ msgid "HTML5 video (ogv/ogg, webm)"
+#~ msgstr "Vídeo HTML5 (ogv/ogg, webm)"
+
+#~ msgid "HTML5 audio (ogg)"
+#~ msgstr "Àudio HTML5 (ogg)"
 
