@@ -339,8 +339,10 @@
 				}
                 
                 var extraStyle="width:"+_w+"px;";
+                var fText = "";
+                if (cText!="" || license!="") fText = "<div class='figcaption'>"+cText+license+"</div>";
 
-                c = "<div class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+"<div class='figcaption'>"+cText+license+"</div></div>";
+                c = "<div class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+fText+"</div><p></p>";
             }
             
             tinyMCEPopup.editor.execCommand('mceInsertContent', false, c);

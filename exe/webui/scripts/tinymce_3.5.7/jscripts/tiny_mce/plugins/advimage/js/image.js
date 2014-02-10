@@ -270,7 +270,10 @@ var ImageDialog = {
                 if (captionLicense!="") cssClass += " license-"+captionLicense;
                 var extraStyle="width:"+nl.width.value+"px;";
                 
-                c = "<div class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+"<div class='figcaption'>"+cText+license+"</div></div>";
+                var fText = "";
+                if (cText!="" || license!="") fText = "<div class='figcaption'>"+cText+license+"</div>";
+                
+                c = "<div class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+fText+"</div><p></p>";
 			}
 			
 			ed.execCommand('mceInsertContent', false, c, {skip_undo : 1});
