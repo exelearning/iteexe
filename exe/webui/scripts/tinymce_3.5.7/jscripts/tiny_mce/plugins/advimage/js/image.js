@@ -194,6 +194,7 @@ var ImageDialog = {
             var authorName = nl.authorname.value;
 			var authorNameLink = nl.authornamelink.value;
 			var captionLicense = nl.captionlicense.value;
+            var imageAlignment = nl.align.value;
 			
 			if (imageHeader!="" || imageTitle!="" || imageTitleLink!="" || authorName!="" || authorNameLink!="" || captionLicense!="") {
 				var hText = "";
@@ -263,9 +264,11 @@ var ImageDialog = {
 					}
 				}
 				
-				var cssClass = "exe-figure exe-image position-center";
+				var defaultPos = "position-center";
+                if (imageAlignment=="left" || imageAlignment=="right") defaultPos = "float-"+imageAlignment;
+                var cssClass = "exe-figure exe-image "+defaultPos;
                 if (captionLicense!="") cssClass += " license-"+captionLicense;
-                extraStyle="width:"+nl.width.value+"px;";
+                var extraStyle="width:"+nl.width.value+"px;";
                 
                 c = "<div class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+"<div class='figcaption'>"+cText+license+"</div></div>";
 			}

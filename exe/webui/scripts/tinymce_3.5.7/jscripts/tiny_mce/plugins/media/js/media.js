@@ -251,6 +251,7 @@
             var authorName = getVal("authorname");
             var authorNameLink = getVal("authornamelink");
             var captionLicense = getVal("captionlicense");
+            var imageAlignment = getVal("align");
             
             if (imageHeader!="" || imageTitle!="" || imageTitleLink!="" || authorName!="" || authorNameLink!="" || captionLicense!="") {
                 var hText = "";
@@ -320,7 +321,12 @@
                     }
                 }
                 
-                var cssClass = "exe-figure exe-media position-center";
+                var defaultPos = "position-center";
+                if (imageAlignment=="left" || imageAlignment=="right") {
+                    defaultPos = "float-"+imageAlignment;
+                    c = c.replace(' align="'+imageAlignment+'"','');
+                }              
+                var cssClass = "exe-figure exe-media "+defaultPos;
                 
                 if (captionLicense!="") cssClass += " license-"+captionLicense;
 				
