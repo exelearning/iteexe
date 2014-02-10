@@ -1,16 +1,16 @@
 # eXeLearning Spanish PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2013 EXELearning.net
+# Copyright (C) 2011-2014 EXELearning.net
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
 # Asociacion Cultural Reggae <acreggae@acreggae.com>\n", 2009.
-# Juan Rafael Fernández <juanrafael.fernandez@hispalinux.es>, 2011-2013.
+# Juan Rafael Fernández <juanrafael.fernandez@hispalinux.es>, 2011-2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2014-02-10 22:54+0100\n"
-"PO-Revision-Date: 2013-12-04 16:18+0100\n"
+"PO-Revision-Date: 2014-02-10 23:07+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -8833,11 +8833,11 @@ msgstr "Área de Texto Enriquecido"
 msgid ""
 "TinyMCE \"advalign\" plugin error: \"execcommand_callback\" is already "
 "defined"
-msgstr ""
+msgstr "Error en el plugin de TinyMCE \"advalign\": ya se ha definido \"execcommand_callback\""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advalign/langs/en.js:4
 msgid "\"advalign\" for TinyMCE requires jQuery"
-msgstr ""
+msgstr "\"advalign\" para TinyMCE requiere jQuery"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 msgid "No Shadow"
@@ -9313,7 +9313,7 @@ msgstr "Recuperar el contenido guardado automáticamente"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/clearfloat/langs/en.js:3
 msgid "Clear (new line or block)"
-msgstr ""
+msgstr "Despejar (forzar salto de línea o nuevo bloque)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
@@ -9325,7 +9325,7 @@ msgstr "Todo bien"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Insert Emotion"
-msgstr "Insertar emoticon"
+msgstr "Insertar emoticón"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Yell"
@@ -10022,11 +10022,11 @@ msgstr "Opciones sobre Audio incrustado"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "HTML5 video (ogv/ogg, webm, mp4)"
-msgstr ""
+msgstr "Vídeo HTML5 (ogv/ogg, webm, mp4)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "HTML5 audio (mp3, ogg, wav)"
-msgstr ""
+msgstr "Audio HTML5 (mp3, ogg, wav)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Flash (swf, flv, mp3)"
