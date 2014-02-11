@@ -342,7 +342,7 @@
                 var fText = "";
                 if (cText!="" || license!="") fText = "<div class='figcaption'>"+cText+license+"</div>";
 
-                c = "<div class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+fText+"</div><p></p>";
+                c = "<div class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+fText+"</div><br />";
             }
             
             tinyMCEPopup.editor.execCommand('mceInsertContent', false, c);

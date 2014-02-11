@@ -273,7 +273,7 @@ var ImageDialog = {
                 var fText = "";
                 if (cText!="" || license!="") fText = "<div class='figcaption'>"+cText+license+"</div>";
                 
-                c = "<div class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+fText+"</div><p></p>";
+                c = "<div class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+fText+"</div><br />";
 			}
 			
 			ed.execCommand('mceInsertContent', false, c, {skip_undo : 1});
