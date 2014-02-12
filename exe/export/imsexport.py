@@ -281,7 +281,6 @@ class IMSPage(Page):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
-        html += u'<script type="text/javascript" src="lernmodule_net.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         # Some styles might have their own JavaScript files (see their config.xml file)
@@ -318,7 +317,6 @@ class IMSPage(Page):
         html += self.renderLicense()
         html += self.renderFooter()
         html += u"</"+sectionTag+">"+lb # /#outer
-        html += u"<div id=\"lmsubmit\"></div><script type=\"text/javascript\" language=\"javascript\">doStart();</script>"+lb
         if style.hasValidConfig:
             html += style.get_extra_body() 
         html += u'</body></html>'
@@ -424,8 +422,6 @@ class IMSExport(object):
         
         jsFile = (self.scriptsDir/'common.js')
         jsFile.copyfile(outputDir/'common.js')
-        jsFile = (self.scriptsDir/'lernmodule_net.js')
-        jsFile.copyfile(outputDir/'lernmodule_net.js')
         dT = common.getExportDocType()
         if dT == "HTML5":
             jsFile = (self.scriptsDir/'exe_html5.js')

@@ -322,11 +322,6 @@ class IdeviceStore:
         from exe.engine.orientacionestutoriafpdidevice import OrientacionestutoriafpdIdevice
         from exe.engine.freetextfpdidevice import FreeTextfpdIdevice
         
-        # eXelearningPlus
-        from exe.engine.scormclozeidevice import ScormClozeIdevice
-        from exe.engine.scormmultiselectidevice import ScormMultiSelectIdevice
-        from exe.engine.scormdropdownidevice import ScormDropDownIdevice
-        from exe.engine.scormmulticlozeidevice import ScormMultiClozeIdevice
         
         factoryExtendedIdevices = []
         
@@ -390,13 +385,7 @@ class IdeviceStore:
         factoryExtendedIdevices.append(OrientacionesalumnadofpdIdevice())
         factoryExtendedIdevices.append(OrientacionestutoriafpdIdevice())
         factoryExtendedIdevices.append(FreeTextfpdIdevice())
-
-        # eXelearningPlus
-        factoryExtendedIdevices.append(ScormClozeIdevice())
-        factoryExtendedIdevices.append(ScormMultiSelectIdevice())
-        factoryExtendedIdevices.append(ScormDropDownIdevice())
-        factoryExtendedIdevices.append(ScormMultiClozeIdevice())
-
+        
         return factoryExtendedIdevices
         
     def __loadExtended(self):

@@ -77,7 +77,6 @@ class SinglePage(Page):
         html += u"</"+sectionTag+">"
         html += self.renderLicense()
         html += self.renderFooter()
-        html += u"<"+sectionTag+" id=\"lmsubmit\"></"+sectionTag+"><script type=\"text/javascript\" language=\"javascript\">doStart();</script>"
         html += u"</"+sectionTag+">"
         # Some styles might have their own JavaScript files (see their config.xml file)
         style = G.application.config.styleStore.getStyle(self.node.package.style)
@@ -182,7 +181,6 @@ class SinglePage(Page):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
-        html += u'<script type="text/javascript" src="lernmodule_net.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         if for_print:

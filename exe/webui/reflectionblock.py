@@ -128,12 +128,6 @@ class ReflectionBlock(Block):
         else:
             html += self.answerElement.renderView()
 
-        #added lernmodule.net
-        htmplus = '<div class="Reflection" id="Reflection%s">' % (self.id)
-        htmplus += '<textarea id="ReflectionText%s" class="ReflectionText" name="ReflectionText%s"' % (self.id, self.id)
-        htmplus += ' rows=5 style="width:99%"></textarea></div><div id="view'
-        html = html.replace("<div id=\"view",htmplus,1)
-
         html += "</div>\n"
         return html
     

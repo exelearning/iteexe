@@ -101,11 +101,7 @@ class Config:
         'place the objects': [x_('Interactive Activities')],
         'memory match game': [x_('Interactive Activities')],
         'file attachments': [x_('Non-Textual Information')],
-        'sort items': [x_('Interactive Activities')],
-        'scorm test cloze': [x_('Interactive Activities')],
-        'scorm test cloze (multiple options)': [x_('Interactive Activities')],
-        'scorm test dropdown': [x_('Interactive Activities')],
-        'scorm test multiple choice': [x_('Interactive Activities')]
+        'sort items': [x_('Interactive Activities')]
     }
 
     def __init__(self):

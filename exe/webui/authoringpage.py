@@ -154,8 +154,6 @@ class AuthoringPage(RenderableResource):
 
         html += u'</div>'
         html += '<script type="text/javascript">$exeAuthoring.ready()</script>\n'
-        html += u'</form>\n'
-        html += u'<div id=\"lmsubmit\"></div><script type=\"text/javascript\" language=\"javascript\">doStart();</script>\n'
         html += common.footer()
 
         html = html.encode('utf8')
@@ -191,8 +189,6 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript" src="/scripts/exe_jquery.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/common.js"></script>\n'
-        html += u'<script type="text/javascript" src="/scripts/lernmodule_net.js">'
-        html += u'</script>\n'
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_settings_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
         html += u'<title>"+_("eXe : elearning XHTML editor")+"</title>\n'

@@ -123,7 +123,6 @@ class WebsitePage(Page):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
-        html += u'<script type="text/javascript" src="lernmodule_net.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         # Some styles might have their own JavaScript files (see their config.xml file)

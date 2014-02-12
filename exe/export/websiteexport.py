@@ -195,8 +195,6 @@ class WebsiteExport(object):
             
         jsFile = (self.scriptsDir/'common.js')
         jsFile.copyfile(outputDir/'common.js')
-        jsFile = (self.scriptsDir/'lernmodule_net.js')
-        jsFile.copyfile(outputDir/'lernmodule_net.js')
         dT = common.getExportDocType()
         if dT == "HTML5":
             jsFile = (self.scriptsDir/'exe_html5.js')

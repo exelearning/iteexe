@@ -120,8 +120,6 @@ class SinglePageExport(object):
             
         jsFile = (self.scriptsDir/'common.js')
         jsFile.copyfile(self.outputDir/'common.js')
-        jsFile = (self.scriptsDir/'lernmodule_net.js')
-        jsFile.copyfile(self.outputDir/'lernmodule_net.js')
         dT = common.getExportDocType()
         if dT == "HTML5":
             jsFile = (self.scriptsDir/'exe_html5.js')
