@@ -103,7 +103,6 @@ class ScormPage(Page):
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         if self.scormType == 'commoncartridge':
-            html += u'<script type="text/javascript" src="lernmodule_net.js"></script>'+lb
             if style.hasValidConfig:
                 html += style.get_extra_head()        
             html += u"</head>"+lb
@@ -111,7 +110,6 @@ class ScormPage(Page):
         else:
             html += u"<script type=\"text/javascript\" src=\"SCORM_API_wrapper.js\"></script>"+lb
             html += u"<script type=\"text/javascript\" src=\"SCOFunctions.js\"></script>"+lb
-            html += u'<script type="text/javascript" src="lernmodule_net.js"></script>'+lb
             if style.hasValidConfig:
                 html += style.get_extra_head()
             html += u"</head>"+lb            
@@ -159,7 +157,6 @@ class ScormPage(Page):
             html += self.renderFooter()
         else:
             html += style.get_extra_body()
-        html += u'<'+sectionTag+' id="lmsubmit"></'+sectionTag+'><script type="text/javascript" language="javascript">doStart();</script>'+lb
         html += u'</body></html>'
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
