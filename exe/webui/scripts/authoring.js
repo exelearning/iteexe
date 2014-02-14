@@ -444,8 +444,9 @@ function submitLink(action, object, changed, currentNode)
 {
     // Close full screen
     if(action=='changeNode') {
-        var ed = tinyMCE.activeEditor
-        if (ed && ed.id=="mce_fullscreen") {
+        var ed = "";
+        if (typeof(tinyMCE)!='undefined' && tinyMCE.activeEditor) ed = tinyMCE.activeEditor;
+        if (ed!="" && ed.id=="mce_fullscreen") {
             ed.execCommand('mceFullScreen');
             setTimeout(function(){
                 execute_submitLink(action, object, changed, currentNode) 
