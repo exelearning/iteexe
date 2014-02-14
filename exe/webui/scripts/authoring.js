@@ -719,8 +719,12 @@ var $exeAuthoring = {
             }
         }        
     },
+    disableSVGInMediaElement : function(){
+        $(document.body).addClass("no-svg");
+    },
     ready : function(){
         if (top.Ext) {
+            $exeAuthoring.disableSVGInMediaElement();
             if (top.Ext.isIE)
                 $exeAuthoring.changeFlowPlayerPathInIE();
         }
