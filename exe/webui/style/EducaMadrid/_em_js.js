@@ -2,11 +2,13 @@ var myTheme = {
     init : function(){
 		var ie_v = $exe.isIE();
 		if (ie_v && ie_v<8) return false;
-        $(window).resize(function() {
-            myTheme.reset();
-        });
+        setTimeout(function(){
+            $(window).resize(function() {
+                myTheme.reset();
+            });
+        },1000);
 		var tit = $exe_i18n.menu+" ("+$exe_i18n.hide.toLowerCase()+")";
-        var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu()" class="hide-nav" id="toggle-nav" title="'+tit+'"><span>'+$exe_i18n.menu+'</span></a></p>');
+        var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this)" class="hide-nav" id="toggle-nav" title="'+tit+'"><span>'+$exe_i18n.menu+'</span></a></p>');
         $("#siteNav").before(l);
         var url = window.location.href;
         url = url.split("?");
@@ -23,7 +25,8 @@ var myTheme = {
 		var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
         $("#toggle-nav").attr("class","show-nav").attr("title",tit);
     },
-    toggleMenu : function(){
+    toggleMenu : function(e){
+        if (e && navigator.userAgent.toLowerCase().indexOf('chrome')!=-1) e.blur();
         var l = $("#toggle-nav");
         if (l.attr("class")=='hide-nav') {  
 			var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
