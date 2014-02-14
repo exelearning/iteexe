@@ -76,38 +76,37 @@ class Manifest(object):
         if they did not supply a package title, use the package name
         if they did not supply a date, use today
         """
-        # xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
-        # namespace = 'xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM lomCustom.xsd"'          
-
+        xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+        namespace = 'xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM lomCustom.xsd"'          
         # depending on (user desired) the metadata type:
-        # if self.metadataType == 'LOMES':
-        #    output = StringIO.StringIO()
-        #    self.package.lomEs.export(output, 0, namespacedef_=namespace, pretty_print=False)
-        #    xml += output.getvalue()
-        #if self.metadataType == 'LOM':
-        #    output = StringIO.StringIO()
-        #    self.package.lom.export(output, 0, namespacedef_=namespace, pretty_print=False)
-        #    xml += output.getvalue()
-       
-        lrm = self.package.dublinCore.__dict__.copy()
-        # use package values in absentia:
-        if lrm.get('title', '') == '':
-            lrm['title'] = self.package.title
-        if lrm['title'] == '':
-            lrm['title'] = self.package.name
-        if lrm.get('description', '') == '':
-            lrm['description'] = self.package.description
-        if lrm['description'] == '':
-            lrm['description'] = self.package.name
-        if lrm.get('creator', '') == '':
-            lrm['creator'] = self.package.author
-        if lrm['date'] == '':
-            lrm['date'] = time.strftime('%Y-%m-%d')
-        # if they don't look like VCARD entries, coerce to fn:
-        for f in ('creator', 'publisher', 'contributors'):
-            if re.match('.*[:;]', lrm[f]) == None:
-                lrm[f] = u'FN:' + lrm[f]
-        xml = template % lrm
+        if self.metadataType == 'LOMES':
+            output = StringIO.StringIO()
+            self.package.lomEs.export(output, 0, namespacedef_=namespace, pretty_print=False)
+            xml += output.getvalue()
+        if self.metadataType == 'LOM':
+            output = StringIO.StringIO()
+            self.package.lom.export(output, 0, namespacedef_=namespace, pretty_print=False)
+            xml += output.getvalue()
+        if self.metadataType == 'DC':
+            lrm = self.package.dublinCore.__dict__.copy()
+            # use package values in absentia:
+            if lrm.get('title', '') == '':
+                lrm['title'] = self.package.title
+            if lrm['title'] == '':
+                lrm['title'] = self.package.name
+            if lrm.get('description', '') == '':
+                lrm['description'] = self.package.description
+            if lrm['description'] == '':
+                lrm['description'] = self.package.name
+            if lrm.get('creator', '') == '':
+                lrm['creator'] = self.package.author
+            if lrm['date'] == '':
+                lrm['date'] = time.strftime('%Y-%m-%d')
+            # if they don't look like VCARD entries, coerce to fn:
+            for f in ('creator', 'publisher', 'contributors'):
+                if re.match('.*[:;]', lrm[f]) == None:
+                    lrm[f] = u'FN:' + lrm[f]
+            xml = template % lrm
         return xml
 
     def save(self, filename):
@@ -119,11 +118,17 @@ class Manifest(object):
         if filename == "imsmanifest.xml":
             out.write(self.createXML().encode('utf8'))
         out.close()
-        # now depending on metadataType, <metadata> content is diferent:
-        
+        # now depending on metadataType, <metadata> content is diferent:     
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004" or self.scormType == "agrega":
-            templateFilename = self.config.webDir/'templates'/'imslrm.xml'
-            template = open(templateFilename, 'rb').read()            
+            if self.metadataType == 'DC':
+                # if old template is desired, select imslrm.xml file:\r
+                # anything else, yoy should select:    
+                templateFilename = self.config.webDir/'templates'/'imslrm.xml'
+                template = open(templateFilename, 'rb').read()            
+            elif self.metadataType == 'LOMES':
+                template = None
+            elif self.metadataType == 'LOM':
+                template = None
             # Now the file with metadatas. 
             # Notice that its name is independent of metadataType:  
             xml = self.createMetaData(template)
@@ -203,7 +208,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
         if self.scormType == "commoncartridge":
             xmlStr += u'''<organizations>
     <organization identifier="%s" structure="rooted-hierarchy">
-    <item identifier="eXeCC-%s" ''' % (orgId,
+    <item identifier="eXeCC-%s">\n''' % (orgId,
             unicode(self.idGenerator.generate()))
         else:
             xmlStr += u"<organizations default=\""+orgId+"\">  \n"
@@ -328,14 +333,16 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
             
         ## ITEMS INSIDE ORGANIZATIONS
         
-        if page.depth > 1:          
+        if self.scormType == "scorm2004" and page.depth > 1: 
             self.itemStr += '        <item identifier="'+itemId+'" '
         # CC do not requires if each section is visible or not:
-        # if self.scormType != "commoncartridge" and page.depth > 1:
-        if self.scormType != "commoncartridge" and page.depth > 1:
+            self.itemStr += 'isvisible="true" '    
+        if self.scormType == "scorm1.2":
+            self.itemStr += '        <item identifier="'+itemId+'" '
             self.itemStr += 'isvisible="true" '
         # and CC needs:
-        if self.scormType == "commoncartridge":
+        if self.scormType == "commoncartridge" and page.depth > 1:
+            self.itemStr += '        <item identifier="'+itemId+'" '
             self.itemStr += 'identifierref="'+resId+'">\n'
             self.itemStr += " <title>"
             self.itemStr += escape(page.node.titleShort)
@@ -372,14 +379,15 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
         
         # if user selects Agrega export, ALL the items at organizations 
         # must include identifierref attribute (like SCORM1.2):
-        if self.scormType == "scorm1.2" or self.scormType == "agrega":           
-            if page.depth > 1:       
-                self.itemStr += 'identifierref="'+resId+'">\n'
-                self.itemStr += "            <title>"
-                self.itemStr += escape(page.node.titleShort)
-                self.itemStr += "</title>\n"    
-                if not page.node.children:
-                    self.itemStr += "        </item>\n"            
+        if self.scormType == "scorm1.2" or self.scormType == "agrega":                 
+            self.itemStr += 'identifierref="'+resId+'">\n'
+            self.itemStr += "            <title>"
+            self.itemStr += escape(page.node.titleShort)
+            self.itemStr += "</title>\n"    
+            if not page.node.children:
+                self.itemStr += "        </item>\n" 
+            if page.depth == 1:
+                self.itemStr += "        </item>\n"          
                    
 
 
@@ -400,6 +408,11 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
     <file href="popup_bg.gif"/>
     <file href="exe_jquery.js"/>
     <file href="common.js"/>""" % (filename, filename)
+            # CC export require content.* any place inside the manifest:
+            if page.node.package.exportSource and page.depth == 1:
+                self.resStr += '    <file href="content.xsd"/>\n'
+                self.resStr += '    <file href="content.data"/>\n'
+                self.resStr += '    <file href="contentv3.xml"/>\n'       
             if page.node.package.backgroundImg:
                 self.resStr += '\n    <file href="%s"/>' % \
                         page.node.package.backgroundImg.basename()
@@ -417,7 +430,6 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
                 self.resStr += "href=\""+filename+"\"> \n"              
                 self.resStr += "    <file href=\""+filename+"\"/> \n"
                 fileStr = ""
-
 
         dT = common.getExportDocType()
         if dT == "HTML5" or common.nodeHasMediaelement(page.node):
@@ -558,6 +570,7 @@ class ScormExport(object):
         if self.scormType == "commoncartridge":
             jsFile = (self.scriptsDir/'common.js')
             jsFile.copyfile(outputDir/'common.js')
+
         if self.scormType == "scorm2004" or self.scormType == "agrega":
             self.scriptsDir.copylist(('AC_RunActiveContent.js',
                                       'SCORM_API_wrapper.js',
