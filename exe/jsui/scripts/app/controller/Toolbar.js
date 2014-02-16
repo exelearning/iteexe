@@ -783,7 +783,7 @@ Ext.define('eXe.controller.Toolbar', {
     		this.askDirty("eXe.app.getController('Toolbar').fileOpenRecent2('" + item.text[0] + "');")
     },
 	
-    stylesClick: function(item) {
+    executeStylesClick: function(item) {
 		for (var i = item.parentMenu.items.length-1; i >= 0; i--) {
 			if (item.parentMenu.items.getAt(i) != item)
 				item.parentMenu.items.getAt(i).setChecked(false);
@@ -797,6 +797,16 @@ Ext.define('eXe.controller.Toolbar', {
         var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
         if (authoring)
             authoring.submitLink("ChangeStyle", item.itemId, 1);
+    },
+    
+    stylesClick: function(item) {
+        var ed = this.getTinyMCEFullScreen();
+        if(ed!="") {
+            ed.execCommand('mceFullScreen');
+            setTimeout(function(){
+                eXe.controller.Toolbar.prototype.executeStylesClick(item);
+            },500);
+        } else this.executeStylesClick(item);
     },
     
 	fileOpenRecent2: function(number) {
