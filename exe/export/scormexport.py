@@ -198,7 +198,7 @@ class Manifest(object):
 <manifest identifier="%s"
 xmlns="http://www.imsglobal.org/xsd/imscc/imscp_v1p1"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.imsglobal.org/profile/cc/ccv1p0/derived_schema/imscp_v1p2_localised.xsd http://ltsc.ieee.org/xsd/imscc/LOM http://www.imsglobal.org/profile/cc/ccv1p0/derived_schema/domainProfile_1/lomLoose_localised.xsd">\n''' % manifestId
+xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd">\n''' % manifestId
             templateFilename = self.config.webDir/'templates'/'cc.xml'
             template = open(templateFilename, 'rb').read()
             xmlStr += self.createMetaData(template)
@@ -224,7 +224,8 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
             # FIXME flatten hierarchy
             for page in self.pages:
                 self.genItemResStr(page)    
-                self.itemStr += "   </item>\n"
+                self.itemStr += " </item>\n"
+            self.itemStr += "    </item>\n"
         else:
             # initial depth: 
             depth = 0
@@ -341,10 +342,11 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 http://www.ims
             self.itemStr += '        <item identifier="'+itemId+'" '
             self.itemStr += 'isvisible="true" '
         # and CC needs:
-        if self.scormType == "commoncartridge" and page.depth > 1:
-            self.itemStr += '        <item identifier="'+itemId+'" '
+        #if self.scormType == "commoncartridge" and page.depth > 1:
+        if self.scormType == "commoncartridge":
+            self.itemStr += '  <item identifier="'+itemId+'" '
             self.itemStr += 'identifierref="'+resId+'">\n'
-            self.itemStr += " <title>"
+            self.itemStr += "  <title>"
             self.itemStr += escape(page.node.titleShort)
             self.itemStr += "</title>\n"
        
