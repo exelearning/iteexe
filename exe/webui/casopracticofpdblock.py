@@ -1,11 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # ===========================================================================
 # Bloque para el iDevice Caso práctico creado para la FPD por 
 # José Ramón Jiménez Reyes
+# (A block for the iDevice Case Study created for the FPD project
+# by José Ramón Jiménez Reyes)
 # ===========================================================================
 """
 Caso Práctico mas bloque
+(Study Case Block for FPD project)
 """
 
 import logging
@@ -58,8 +61,9 @@ class CasopracticofpdBlock(Block):
         """
         html  = "<div class=\"iDevice\"><br/>\n"
 
-        # JR
+   # JRJ
 	# Quitamos el prefijo "FPD -"
+	# (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
 		self.idevice.title = x_(u"Situation")
 

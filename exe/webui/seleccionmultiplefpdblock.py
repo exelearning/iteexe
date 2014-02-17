@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
@@ -84,8 +84,9 @@ class SeleccionmultiplefpdBlock(Block):
         """
         html  = "<div class=\"iDevice\">\n"
 
-        # JR
+        # JRJ
         # Quitamos el prefijo "FPD -"
+        # (let's remove the "FPD -" prefix)
         if self.idevice.title.find("FPD - ") == 0:
             self.idevice.title = x_(u"Now it's your turn")
 

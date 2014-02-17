@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
@@ -18,6 +20,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
+FPD - Cloze
 Renders a paragraph where the content creator can choose which words the student
 must fill in.
 """
@@ -98,8 +101,9 @@ class ClozefpdBlock(Block):
 	html  = "<div class=\"iDevice\"><br/>\n"
 	html  = "<div class=\"block\">"
 	
-	# JR
+	# JRJ
 	# Quitamos el prefijo "FPD -"
+	# (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
 		self.idevice.title = x_(u"Now it's your turn")
 
@@ -160,7 +164,8 @@ class ClozefpdBlock(Block):
                 html += self.feedbackElement.renderView(False, class_="feedback")
         html += u'</div>\n'
 
-#JR: Anadimos la etiqueta noscript
+# JRJ: Anadimos la etiqueta noscript
+# (let's add the noscript tag)
 	if self.previewing:
 		cloze = self.clozeElement.field.content_w_resourcePaths
 		feedback = self.feedbackElement.field.content_w_resourcePaths

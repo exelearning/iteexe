@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
@@ -18,6 +20,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
+FPD - ClozeLang
 Renders a paragraph where the content creator can choose which words the student
 must fill in.
 """
@@ -99,8 +102,9 @@ class ClozelangfpdBlock(Block):
 	html  = "<div class=\"iDevice\"><br/>\n"
 	html  = "<div class=\"block\">"
 
-	# JR
+	# JRJ
 	# Quitamos el prefijo "FPD -"
+	# (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
 		self.idevice.title = x_(u"Now It's Your Turn")
         html += common.textInput("title"+self.id, self.idevice.title)

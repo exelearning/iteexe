@@ -1,8 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # ===========================================================================
-# Bloque para el iDevice Citas para pensar creado para la FPD por 
+# Bloque para el iDevice "Citas para pensar" creado para la FPD por 
 # José Ramón Jiménez Reyes
+# (Block for the iDevice Quotation created for the FPD project
+# by José Ramón Jiménez Reyes)
 # ===========================================================================
 """
 FPD - Quotation
@@ -58,8 +60,9 @@ class CitasparapensarfpdBlock(Block):
         """
         html  = "<div class=\"iDevice\"><br/>\n"
 	
-	# JR
-        # Quitamos el prefijo "FPD -"
+	# JRJ
+   # Quitamos el prefijo "FPD -"
+   # (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
 		self.idevice.title = x_(u"Quotation")
 
