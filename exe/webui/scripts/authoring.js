@@ -88,8 +88,10 @@ function askUserForImage(multiple, fn, filter) {
         }
     });
     fp.appendFilters([
-        filter? filter : { "typename": parent._("Image Files (.jpg, .jpeg, .png, .gif)"), "extension": "*.png", "regex": /.*\.(jpg|jpeg|png|gif)$/i },
-        { "typename": parent._("All Files"), "extension": "*.*", "regex": /.*$/ }
+        filter
+        ? filter
+        : { "typename": parent._("Image Files (.jpg, .jpeg, .png, .gif, .svg)"), "extension": "*.png", "regex": /.*\.(jpg|jpeg|png|gif|svg)$/i },
+          { "typename": parent._("All Files"), "extension": "*.*", "regex": /.*$/ }
     ]);
     parent.window.focus();
     fp.show();
