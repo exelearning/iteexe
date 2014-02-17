@@ -142,6 +142,9 @@ class Config:
         self.lastDir = None
         self.showPreferencesOnStart = "1"
         self.showIdevicesGrouped = "1"
+        # styleSecureMode : if this [user] key is = 0  , exelearning can run python files in styles
+        # as websitepage.py , ... ( deactivate secure mode )
+        self.styleSecureMode="1"
         # styles is the list of style names available for loading
         self.styles      = []
         # The documents that we've recently looked at
@@ -391,6 +394,8 @@ class Config:
         if self.configParser.has_section('user'):
             if self.configParser.user.has_option('defaultStyle'):
                 self.defaultStyle= self.configParser.user.defaultStyle
+            if self.configParser.user.has_option('styleSecureMode'):
+                self.styleSecureMode= self.configParser.user.styleSecureMode
             if self.configParser.user.has_option('internalAnchors'):
                 self.internalAnchors = self.configParser.user.internalAnchors
             if self.configParser.user.has_option('lastDir'):

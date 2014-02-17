@@ -478,17 +478,18 @@ class ScormExport(object):
         'styleDir' is the directory from which we will copy our style sheets
         (and some gifs)
         """
-        self.config       = config
-        self.imagesDir    = config.webDir/"images"
-        self.scriptsDir   = config.webDir/"scripts"
-        self.cssDir       = config.webDir/"css"
-        self.templatesDir = config.webDir/"templates"
-        self.schemasDir   = config.webDir/"schemas"
-        self.styleDir     = Path(styleDir)
-        self.filename     = Path(filename)
-        self.pages        = []
-        self.hasForum     = False
-        self.scormType    = scormType
+        self.config          = config
+        self.imagesDir       = config.webDir/"images"
+        self.scriptsDir      = config.webDir/"scripts"
+        self.cssDir          = config.webDir/"css"
+        self.templatesDir    = config.webDir/"templates"
+        self.schemasDir      = config.webDir/"schemas"
+        self.styleDir        = Path(styleDir)
+        self.filename        = Path(filename)
+        self.pages           = []
+        self.hasForum        = False
+        self.scormType       = scormType
+        self.styleSecureMode = config.styleSecureMode
 
 
     def export(self, package):
@@ -515,10 +516,13 @@ class ScormExport(object):
 #                resource.path.copy(outputDir)
 
         # Export the package content
-        if (self.styleDir/"scormpage.py").exists():
-            global ScormPage
-            module = imp.load_source("ScormPage",self.styleDir/"scormpage.py")
-            ScormPage = module.ScormPage
+        # Import the Scorm Page class , if the secure mode is off.  If the style has it's own page class
+        # use that, else use the default one.
+        if self.styleSecureMode=="0":
+            if (self.styleDir/"scormpage.py").exists():
+                global ScormPage
+                module = imp.load_source("ScormPage",self.styleDir/"scormpage.py")
+                ScormPage = module.ScormPage
 
 
         self.pages = [ ScormPage("index", 1, package.root,
