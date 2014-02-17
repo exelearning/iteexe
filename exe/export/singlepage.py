@@ -261,8 +261,10 @@ class SinglePage(Page):
 
     def processInternalLinks(self, html):
         """
-        take care of any internal links which are in the form of:
+        take care of any internal links which are in the form of::
+           
            href="exe-node:Home:Topic:etc#Anchor"
+
         For this SinglePage Export, go ahead and keep the #Anchor portion,
         but remove the 'exe-node:Home:Topic:etc', since it is all 
         exported into the same file.
