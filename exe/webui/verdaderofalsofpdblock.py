@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
@@ -103,8 +103,9 @@ class VerdaderofalsofpdBlock(Block):
         
         html  = u"<div class=\"iDevice\"><br/>\n"
 
-        # JR
+        # JRJ
         # Quitamos el prefijo "FPD -"
+        # (let's remove the "FPD -" prefix)
         if self.idevice.title.find("FPD - ") == 0:
             self.idevice.title = x_(u"Now it's your turn")
 
@@ -128,7 +129,8 @@ class VerdaderofalsofpdBlock(Block):
         Returns an XHTML string for previewing this block
         """
         html = common.ideviceHeader(self, style, "preview")
-# JR: Si hay instrucciones añadimos un &nbsp;
+# JRJ: Si hay instrucciones añadimos un &nbsp;
+# (in case there are instructions, let's add a &nbsp;)
         aux =self.instructionElement.renderPreview()
         if re.search(">[\n|\r|\t]*</div>", aux):
             html += aux
@@ -136,7 +138,8 @@ class VerdaderofalsofpdBlock(Block):
             html += aux + "&nbsp;"
 
 #       html += self.instructionElement.renderPreview()
-# JR: si es la última pregunta no añadimos br        
+# JRJ: si es la última pregunta no añadimos br
+# (if it's the last question, let's not add br)        
         for element in self.questionElements:
             html += "<div class=\"question\">\n"
             html += element.renderQuestion(True)
@@ -157,7 +160,8 @@ class VerdaderofalsofpdBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html = common.ideviceHeader(self, style, "view")
-# JR: Si hay instrucciones añadimos un &nbsp;
+# JRJ: Si hay instrucciones añadimos un &nbsp;
+# (if there are instructions let's add a &nbsp;)
         aux =self.instructionElement.renderView()
         
         if re.search(">[\n|\r|\t]*</div>", aux):
@@ -166,7 +170,8 @@ class VerdaderofalsofpdBlock(Block):
             html += aux + "&nbsp;"
 
 #       html += self.instructionElement.renderPreview()
-# JR: si es la última pregunta no añadimos br        
+# JRJ: si es la última pregunta no añadimos br
+# (if it's the last question we won't add br)        
         for element in self.questionElements:
             html += "<div class=\"question\">\n"
             html += element.renderQuestion(False)

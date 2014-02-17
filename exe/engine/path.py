@@ -1,5 +1,8 @@
-# -- coding: utf-8 --
-""" path.py - An object representing a path to a file or directory.
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+
+"""
+path.py - An object representing a path to a file or directory.
 
 Example:
 
@@ -366,7 +369,7 @@ class Path(unicode):
         whose names match the given pattern.  For example,
         d.files('*.pyc').
         """
-        
+
         return [pth for pth in self.listdir(pattern) if pth.isfile()]
 
     def walk(self, pattern=None):
@@ -643,7 +646,7 @@ class Path(unicode):
                     backupName.remove()
                 except Exception, e:
                     log.warn('Save completed but unable to delete backup "%s"' % backupName)
-            
+
     def unique(self):
         """
         Returns a unique file name in the current dir,
@@ -830,7 +833,7 @@ class Path(unicode):
 
     def chdir(self):
         """Change the current working directory
-	   to self"""
+        to self"""
         os.chdir(toUnicode(self))
 
     if hasattr(os, 'chown'):
@@ -941,6 +944,7 @@ class Path(unicode):
     def copytree(self, dst):
         """Wraps shutil.copytree"""
         return shutil.copytree(toUnicode(self), toUnicode(dst))
+
     def copytreeFilter(self, dst, symlinks=False, filterDir=None, filterFile=None):
         """Recursively copy a directory tree using copy2().
 
@@ -1043,7 +1047,7 @@ class Path(unicode):
 
     def setSalt(self, salt):
         self.salt = salt
-        
+
     def getMd5(self):
         """Returns an md5 hash for an object with read() method."""
         try:
@@ -1093,5 +1097,3 @@ def toUnicode(string, encoding='utf8'):
         return u''
     else:
         return unicode(str(string), encoding)
-
-

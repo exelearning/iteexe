@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
@@ -20,11 +22,11 @@
 
 """
 This unit provides a base class for something that is rendered, this can be
-a page, a pane, a block, even part of XUL like the outlinePane but not really
+a page, a pane, a block, even part of JSUI like the outlinePane but not really
 going down to the element level. We'll call them rendering components.
 
-It provides a way to get at your parent rendering component, the top bieng the
-mainpage, who has no parent. It also it provides you with a config instance and
+It provides a way to get at your parent rendering component, the top being the
+mainpage, who has no parent. It also provides you with a config instance and
 a package instance.  Finally it makes you a LivePage and a Resource descendant,
 but you don't have to use that functionality. It means you can use a rendering
 template to do your rendering, even if you're part of a bigger block.
@@ -163,7 +165,7 @@ class Renderable(object):
         child renderables
         """
         # Pass the request on to each rendering component
-        # child that is not a seperate page in itself
+        # child that is not a separate page in itself
         for rc in self.renderChildren.values():
             if not isinstance(rc, _RenderablePage):
                 # Only sub pages need to have process passed to them

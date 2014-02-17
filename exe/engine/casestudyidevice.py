@@ -116,7 +116,7 @@ class Question(Persistable):
     def embedImageInFeedback(self):
         """
         Actually do the Converting of each question's
-              CaseStudyIdevice's image -> embedded in its feedback field,
+        CaseStudyIdevice's image -> embedded in its feedback field,
         now that its TextField can hold embeddded images.
         """
 
@@ -431,7 +431,7 @@ situation.""")
     def embedImagesInFeedback(self):
         """
         Loop through each question, to call their conversion:
-              CaseStudyIdevice's image -> embedded in its feedback field,
+        CaseStudyIdevice's image -> embedded in its feedback field,
         now that its TextField can hold embeddded images.
         """
         for question in self.questions:
