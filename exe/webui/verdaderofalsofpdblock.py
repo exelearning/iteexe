@@ -20,7 +20,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-TrueFalseBlock can render and process TrueFalseIdevices as XHTML
+TrueFalsefpdBlock can render and process TrueFalseIdevices as XHTML
 """
 
 import logging
@@ -36,7 +36,7 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class VerdaderofalsofpdBlock(Block):
     """
-    TrueFalseBlock can render and process TrueFalseIdevices as XHTML
+    TrueFalsefpdBlock can render and process TrueFalseIdevices as XHTML
     """
     def __init__(self, parent, idevice):
         """

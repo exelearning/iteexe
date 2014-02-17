@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
@@ -17,7 +19,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-CasestudyBlock can render and process CasestudyIdevices as XHTML
+FPD - CasestudyBlock 
+can render and process CasestudyIdevices as XHTML
 """
 
 import logging
@@ -34,7 +37,7 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class EjercicioresueltofpdBlock(Block):
     """
-    CasestudyBlock can render and process CasestudyIdevices as XHTML
+    FPD - CasestudyBlock can render and process CasestudyIdevices as XHTML
     """
     def __init__(self, parent, idevice):
         """
@@ -104,8 +107,9 @@ class EjercicioresueltofpdBlock(Block):
 
         html  = u'<div class="iDevice"><br/>\n'
 
-        # JR
+   # JRJ
 	# Quitamos el prefijo "FPD -"
+	# (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
 		self.idevice.title = x_(u"Translation")
         html += common.textInput("title"+self.id, self.idevice.title)

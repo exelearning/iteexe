@@ -1,8 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # ===========================================================================
 # Bloque para el iDevice Destacado creado para la FPD por 
 # José Ramón Jiménez Reyes
+# (Block for the iDevice Highlighted, created by
+# José Ramón Jiménez Reyes for the FPD project)
 # ===========================================================================
 """
 FPD - Highlighted

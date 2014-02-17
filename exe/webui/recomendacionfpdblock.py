@@ -1,11 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # ===========================================================================
 # Bloque para el iDevice Recomendación creado para la FPD por 
 # José Ramón Jiménez Reyes
+# (Block for the iDevice "FPD - A Piece of Advice", created by
+# José Ramón Jiménez Reyes for the FPD project)
 # ===========================================================================
 """
 Recomendacion bloque
+(FPD - A Piece of Advice Block)
 """
 
 import logging
@@ -58,8 +61,9 @@ class RecomendacionfpdBlock(Block):
         """
         html  = "<div class=\"iDevice\"><br/>\n"
 
-        # JR
+   # JRJ
 	# Quitamos el prefijo "FPD -"
+	# (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
 		self.idevice.title = x_(u"A Piece of Advice")
 

@@ -1,11 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # ===========================================================================
-# Bloque para el iDevice Orientaciones Tutoria creado para la FPD por 
+# Bloque para el iDevice "Orientaciones Tutoría" creado para la FPD por 
 # José Ramón Jiménez Reyes
+# (Block for the iDevice "FPD - Guidelines Teacher", created by
+# José Ramón Jiménez Reyes for the FTP project)
 # ===========================================================================
 """
 Objetivos Tutoria bloque
+(FPD - Guidelines Teacher Block)
 """
 
 import logging
@@ -58,8 +61,9 @@ class OrientacionestutoriafpdBlock(Block):
         """
         html  = "<div class=\"iDevice\"><br/>\n"
 
-        # JR
+   # JR
 	# Quitamos el prefijo "FPD -"
+	# (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
 		self.idevice.title = x_(u"Guidelines for the Teacher")
 

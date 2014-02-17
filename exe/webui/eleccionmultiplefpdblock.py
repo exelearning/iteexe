@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
@@ -18,7 +20,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-MultichoiceBlock can render and process MultichoiceIdevices as XHTML
+FPD - MultichoiceBlock 
+can render and process MultichoiceIdevices as XHTML
 """
 
 import logging
@@ -104,8 +107,9 @@ class EleccionmultiplefpdBlock(Block):
         if self.idevice.message<>"":
             html += common.editModeHeading(self.idevice.message)
 
-        # JR
+        # JRJ
         # Quitamos el prefijo "FPD -"
+        # (let's remove the "FPD -" prefix)
         if self.idevice.title.find("FPD - ") == 0:
             self.idevice.title = x_(u"Now it's your turn")
 

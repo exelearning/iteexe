@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
@@ -17,7 +19,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-ReflectionBlock can render and process ReflectionIdevices as XHTML
+ReflectionfpdmodifBlock can render and process ReflectionIdevices as XHTML
 """
 
 import logging
@@ -31,7 +33,7 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class ReflectionfpdmodifBlock(Block):
     """
-    ReflectionBlock can render and process ReflectionIdevices as XHTML
+    ReflectionfpdmodifBlock can render and process ReflectionIdevices as XHTML
     """
     def __init__(self, parent, idevice):
         """
@@ -78,8 +80,9 @@ class ReflectionfpdmodifBlock(Block):
         """
         html  = "<div class=\"iDevice\"><br/>\n"
 
-        # JR
+   # JR
 	# Quitamos el prefijo "FPD -"
+	# (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
 		self.idevice.title = x_(u"Think About It")
 

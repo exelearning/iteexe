@@ -1,11 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # ===========================================================================
-# Bloque para el iDevice Para Saber más creado para la FPD por 
+# Bloque para el iDevice "Para Saber más" creado para la FPD por 
 # José Ramón Jiménez Reyes
+# (Block for the iDevice "FPD - A Step Ahead", created by
+# José Ramón Jiménez Reyes for the FPD project)
 # ===========================================================================
 """
 Para Saber mas bloque
+(FPD - A Step Ahead Block)
 """
 
 import logging
@@ -58,8 +61,9 @@ class ParasabermasfpdBlock(Block):
         """
         html  = "<div class=\"iDevice\"><br/>\n"
 
-        # JR
+   # JR
 	# Quitamos el prefijo "FPD -"
+	# (let's remove the "FPD -" prefix))
 	if self.idevice.title.find("FPD - ") == 0:
 		self.idevice.title = x_(u"A Step Ahead")
 

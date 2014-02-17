@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
@@ -17,7 +19,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-FreeTextBlock can render and process FreeTextIdevices as XHTML
+FPD - FreeTextBlock 
+can render and process FreeTextIdevices as XHTML
 """
 
 import logging
@@ -31,7 +34,7 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class FreeTextfpdBlock(Block):
     """
-    FreeTextBlock can render and process FreeTextIdevices as XHTML
+    FPD - FreeTextBlock can render and process FreeTextIdevices as XHTML
     GenericBlock will replace it..... one day
     """
     def __init__(self, parent, idevice):

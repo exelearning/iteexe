@@ -20,7 +20,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-MultiSelectBlock can render and process MultiSelectIdevices as XHTML
+MultiSelectfpdBlock can render and process MultiSelectIdevices as XHTML
 """
 
 import logging
@@ -34,7 +34,7 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class SeleccionmultiplefpdBlock(Block):
     """
-    MultiSelectBlock can render and process MultiSelectIdevices as XHTML
+    MultiSelectfpdBlock can render and process MultiSelectIdevices as XHTML
     """
     def __init__(self, parent, idevice):
         """

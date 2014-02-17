@@ -1,11 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # ===========================================================================
-# Bloque para el iDevice Debes conocer creado para la FPD por 
+# Bloque para el iDevice "Debes conocer" creado para la FPD por 
 # José Ramón Jiménez Reyes
+# (Block for the iDevice "FPD - You Must Know" created by
+# José Ramón Jiménez Reyes for the FPD project)
 # ===========================================================================
 """
 Para Saber mas bloque
+(FPD - You Must Know Block)
 """
 
 import logging
@@ -58,8 +61,9 @@ class DebesconocerfpdBlock(Block):
         """
         html  = "<div class=\"iDevice\"><br/>\n"
 
-        # JR
+   # JRJ
 	# Quitamos el prefijo "FPD -"
+	# (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
 		self.idevice.title = x_(u"You Should Know")
 

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
@@ -19,7 +19,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-ReflectionBlock can render and process ReflectionIdevices as XHTML
+FPD - ReflectionBlock 
+can render and process ReflectionIdevices as XHTML
 """
 
 import logging
@@ -33,7 +34,7 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class ReflectionfpdBlock(Block):
     """
-    ReflectionBlock can render and process ReflectionIdevices as XHTML
+    ReflectionfpdBlock can render and process ReflectionIdevices as XHTML
     """
     def __init__(self, parent, idevice):
         """
@@ -80,8 +81,9 @@ class ReflectionfpdBlock(Block):
         """
         html  = "<div class=\"iDevice\"><br/>\n"
 
-        # JR
+   # JRJ
 	# Quitamos el prefijo "FPD -"
+	# (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
 		self.idevice.title = x_(u"Think About It")
 
@@ -137,7 +139,8 @@ class ReflectionfpdBlock(Block):
             html += self.answerElement.renderView()
 
         html += "</div>\n"
-# JR: Generamos el contenido que ira dentro de la etiqueta noscript
+# JRJ: Generamos el contenido que irá dentro de la etiqueta noscript
+# (let's generate the content that will be present in the noscript tag)
 	html += '<noscript><br/><div class="feedback">\n'
 	html += "<p><strong>" + _("Feedback") + ": </strong></p>\n"
         if self.previewing: 
