@@ -507,8 +507,15 @@
             }
             if (data.type == 'video' || data.type == 'audio') {
                 get('use_mediaelement').style.display = 'table-row';
-            }else {
+            } else {
                 get('use_mediaelement').style.display = 'none';
+            }
+            if (data.type == 'iframe') {
+                get('filebrowser_link').style.display = 'none';
+                get('src').style.width = '250px';
+            } else {
+                get('filebrowser_link').style.display = '';
+                get('src').style.width = '230px';
             }
             // /The New eXeLearning         
 
