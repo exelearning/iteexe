@@ -720,14 +720,28 @@ var $exeAuthoring = {
             }
         }        
     },
+    setYoutubeWmode : function(){
+        var v = document.getElementsByTagName("IFRAME");
+        for (i=0;i<v.length;i++) {
+            var s = v[i].src;
+            if (s.indexOf("http://www.youtube.com")==0 && s.indexOf("wmode=")==-1) {
+                var c = "?";
+                if (s.indexOf("?")!=-1) c = "&";
+                s += c+"wmode=transparent";
+                v[i].src = s;
+            }
+        }
+    },
     disableSVGInMediaElement : function(){
         $(document.body).addClass("no-svg");
     },
     ready : function(){
         if (top.Ext) {
             $exeAuthoring.disableSVGInMediaElement();
-            if (top.Ext.isIE)
+            if (top.Ext.isIE) {
                 $exeAuthoring.changeFlowPlayerPathInIE();
+                $exeAuthoring.setYoutubeWmode();
+            }
         }
     }
 }
