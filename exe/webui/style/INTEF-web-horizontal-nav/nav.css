@@ -93,9 +93,12 @@ html[xmlns] #content{display:block}
 #nav-toggler a:hover,#nav-toggler a:focus{background-color:#cfd9ea;color:#263264;text-decoration:none}
 #skipNav{z-index:100px;padding-top:10px;text-align:center}
 
+@media all and (max-width: 985px) {
+    #content{width:100%;border:0;box-shadow:none}
+}
+
 @media all and (max-width: 700px) {
     #header{color:#666}
-    #content{width:100%;border:0;box-shadow:none}
     #userOptionsBar,#topPagination{display:none}
     #siteNav .other-section{display:none}
     #siteNav,#siteNav ul{float:none;width:100%;margin:0;line-height:1.5em}

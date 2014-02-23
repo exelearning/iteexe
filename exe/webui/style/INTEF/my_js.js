@@ -24,22 +24,34 @@ var myTheme = {
         $("#toggle-nav").attr("class","show-nav").attr("title",$exe_i18n.show);
     },
     toggleMenu : function(e){
-        if (e && navigator.userAgent.toLowerCase().indexOf('chrome')!=-1) e.blur();
+        if (typeof(myTheme.isToggling)=='undefined') myTheme.isToggling = false;
+        if (myTheme.isToggling) return false;
+        
         var l = $("#toggle-nav");
+        
+        if (!e && $(window).width()<900 && l.css("display")!='none') return false; // No reset in mobile view
+        if (!e) l.attr("class","show-nav").attr("title",$exe_i18n.show); // Reset
+        
+        myTheme.isToggling = true;
+        
         if (l.attr("class")=='hide-nav') {       
             l.attr("class","show-nav").attr("title",$exe_i18n.show);
 			$("#siteFooter").hide();
 			$("#siteNav").slideUp(400,function(){
                 $(document.body).addClass("no-nav");
                 $("#siteFooter").show();
+                myTheme.isToggling = false;
             }); 
             myTheme.params("add");
         } else {
             l.attr("class","hide-nav").attr("title",$exe_i18n.hide);
             $(document.body).removeClass("no-nav");
-			$("#siteNav").slideDown();
+			$("#siteNav").slideDown(400,function(){
+                myTheme.isToggling = false;
+            });
             myTheme.params("delete");            
         }
+        
     },
     param : function(e,act) {
         if (act=="add") {
@@ -64,7 +76,6 @@ var myTheme = {
         });
     },
     reset : function() {
-        $("#toggle-nav").attr("class","show-nav").attr("title",$exe_i18n.show);
         myTheme.toggleMenu();        
     }    
 }
