@@ -740,9 +740,9 @@ var $exeAuthoring = {
     ready : function(){
         if (top.Ext) {
             $exeAuthoring.disableSVGInMediaElement();
+            $exeAuthoring.setYoutubeWmode();
             if (top.Ext.isIE) {
                 $exeAuthoring.changeFlowPlayerPathInIE();
-                $exeAuthoring.setYoutubeWmode();
             }
         }
     }
