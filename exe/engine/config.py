@@ -364,7 +364,12 @@ class Config:
         self.recentProjects = []
         if self.configParser.has_section('recent_projects'):
             recentProjectsSection = self.configParser.recent_projects
-            for key, path in recentProjectsSection.items():
+            # recentProjectsSection.items() is in the wrong order, keys are alright.
+            # Sorting list by key before adding to self.recentProjects, to avoid wrong ordering
+            # in Recent Projects menu list
+            recentProjectsItems = recentProjectsSection.items();
+            recentProjectsItems.sort()
+            for key, path in recentProjectsItems:
                 self.recentProjects.append(path)
                 
         # Load the list of "hidden" iDevices
