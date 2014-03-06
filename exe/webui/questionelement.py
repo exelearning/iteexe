@@ -117,46 +117,17 @@ class QuestionElement(object):
         Returns an XHTML string for viewing and previewing this question element
         depending on the value of 'preview'.
         """
-        log.debug("renderView called")
-              
         if preview: 
             html  = self.question_question.renderPreview()
         else:
             html  = self.question_question.renderView()
 
-        if  self.question_feedback.field.content.strip() != "" :            
-            html += '<div id="view%s" style="display:block;">' % self.id
-            html += common.feedbackButton('btnshow' + self.id,
-                        _(u"Show Feedback"),
-                        onclick = "showAnswer('%s',1)" % self.id)
-            html += '</div>'
-            html += '<div id="hide%s" style="display:none;">' % self.id
-            html += common.feedbackButton('btnhide' + self.id,
-                        _(u"Hide Feedback"),
-                        onclick = "showAnswer('%s',0)" % self.id)
-            html += '<p>'
-
-            html += '</p>'
-            html += '</div>'
-            html += '<div id="s%s" class="feedback" style=" ' % self.id
-            html += 'display: none;">'
-
+        if  self.question_feedback.field.content.strip() != "" :
             if preview: 
-                html  += self.question_feedback.renderPreview() 
+                feedback = self.question_feedback.renderPreview() 
             else: 
-                html  += self.question_feedback.renderView()
-
-            html += "</div>\n"
-# JR: Generamos el contenido que ira dentro de la etiqueta noscript
-	    html += '<noscript><div class="feedback">\n'
-	    html += "<p><strong>" + _("Solution") + ": </strong></p>\n"
-            if preview: 
-            	html  += self.question_feedback.field.content_w_resourcePaths
-            else: 
-            	html  += self.question_feedback.field.content_wo_resourcePaths
-	    html += "</div></noscript>\n"
-        else:
-            html += "\n"
+                feedback = self.question_feedback.renderView()
+            html += common.feedbackBlock(self.id,feedback)
         
         return html
 
