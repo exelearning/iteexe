@@ -124,6 +124,13 @@ class SinglePageExport(object):
         if dT == "HTML5":
             jsFile = (self.scriptsDir/'exe_html5.js')
             jsFile.copyfile(self.outputDir/'exe_html5.js')
+            
+        # Incluide eXe's icon if the Style doesn't have one
+        themePath = Path(G.application.config.stylesDir/package.style)
+        themeFavicon = themePath.joinpath("favicon.ico")
+        if not themeFavicon.exists():
+            faviconFile = (self.imagesDir/'favicon.ico')
+            faviconFile.copyfile(self.outputDir/'favicon.ico')
 
         #JR Metemos los reproductores necesarios
         self.compruebaReproductores(self.page.node)

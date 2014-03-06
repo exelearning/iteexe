@@ -202,6 +202,13 @@ class WebsiteExport(object):
             jsFile = (self.scriptsDir/'exe_html5.js')
             jsFile.copyfile(outputDir/'exe_html5.js')
 
+        # Incluide eXe's icon if the Style doesn't have one
+        themePath = Path(G.application.config.stylesDir/package.style)
+        themeFavicon = themePath.joinpath("favicon.ico")
+        if not themeFavicon.exists():
+            faviconFile = (self.imagesDir/'favicon.ico')
+            faviconFile.copyfile(outputDir/'favicon.ico')
+        
         # copy players for media idevices.                
         hasFlowplayer     = False
         hasMagnifier      = False
