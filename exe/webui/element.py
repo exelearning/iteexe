@@ -522,16 +522,24 @@ class FeedbackElement(ElementWithResources):
             self.field.feedback = self.field.content_wo_resourcePaths
 
         html = ""
+        lb = "\n" #Line breaks
         if self.field.feedback != "": 
-            html += '<div class="block">\n '
+            html += '<form name="feedback-form-%s" action="#" onsubmit="return false" class="feedback-form">' % self.id
+            html += lb
+            html += '<div class="block display-feedback">'+lb
+            html += '<p class="feedback-button">'+lb
             html += common.feedbackButton('btn' + self.id,
                 self.field.buttonCaption,
                 onclick="toggleFeedback('%s')" % self.id)
-            html += '</div>\n '
-            html += '<div id="fb%s" class="feedback" style="display: none;"> '\
+            html += '</p>'+lb
+            html += '<p class="js-warning">'+_("Enable JavaScript")+'</p>'+lb
+            html += '</div>'+lb
+            html += '<div id="fb%s" class="feedback" style="display:none">'\
                     % self.id
+            html += lb
             html += self.field.feedback
-            html += "</div>\n"
+            html += "</div>"+lb
+            html += "</form>"+lb
         return html
 
 
