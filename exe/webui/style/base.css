@@ -57,6 +57,8 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .toggle-idevice{display:none}
 /* Autoclear */
 .exe-clear{overflow:auto}
+/* Hidden elements */
+.js .js-warning{display:none}
 /* To review */
 .question .answer p{margin:0 0 .7em 0}
 .hidden-idevice .image_text{display:none} /* iDevice Toggler : Required for Magnifier */

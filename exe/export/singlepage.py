@@ -57,6 +57,7 @@ class SinglePage(Page):
         Returns an XHTML string rendering this page.
         """
         dT = common.getExportDocType()
+        lb = "\n" #Line breaks
         sectionTag = "div"
         headerTag = "div"
         if dT == "HTML5":
@@ -73,16 +74,17 @@ class SinglePage(Page):
             html += u'<body class="exe-single-page" onload="print_page()">'
         else:
             html += u'<body class="exe-single-page">'
-        html += u"<"+sectionTag+" id=\"content\">"
+        html += u'<script type="text/javascript">document.body.className+=" js"</script>'+lb
+        html += u"<"+sectionTag+" id=\"content\">"+lb
         html += u"<"+headerTag+" id=\"header\">"
         html += "<h1>"+escape(package.title)+"</h1>"
-        html += u"</"+headerTag+">"
-        html += u"<"+sectionTag+" id=\"main\">"
+        html += u"</"+headerTag+">"+lb
+        html += u"<"+sectionTag+" id=\"main\">"+lb
         html += self.renderNode(package.root, 1)
-        html += u"</"+sectionTag+">"
-        html += self.renderLicense()
-        html += self.renderFooter()
-        html += u"</"+sectionTag+">"
+        html += u"</"+sectionTag+">"+lb
+        html += self.renderLicense()+lb
+        html += self.renderFooter()+lb
+        html += u"</"+sectionTag+">"+lb
         # Some styles might have their own JavaScript files (see their config.xml file)
         style = G.application.config.styleStore.getStyle(self.node.package.style)
         if style.hasValidConfig:

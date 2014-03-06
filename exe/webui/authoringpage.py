@@ -128,7 +128,7 @@ class AuthoringPage(RenderableResource):
         self.blocks = []
         self.__addBlocks(topNode)
         html  = self.__renderHeader()
-        html += u'<body onload="onLoadHandler();" class="exe-authoring-page">\n'
+        html += u'<body onload="onLoadHandler();" class="exe-authoring-page js">\n'
         html += u"<form method=\"post\" "
 
         if request is None:

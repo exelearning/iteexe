@@ -78,7 +78,7 @@ var myTheme = {
 }
 
 $(function(){
-    if (document.body.className=='exe-web-site') {
+    if (document.body.className=='exe-web-site js') {
         myTheme.init();
     }
 });

@@ -106,7 +106,7 @@ class ScormPage(Page):
             if style.hasValidConfig:
                 html += style.get_extra_head()        
             html += u"</head>"+lb
-            html += u"<body class=\"exe-scorm\">"+lb
+            html += u"<body class=\"exe-scorm\">"
         else:
             html += u"<script type=\"text/javascript\" src=\"SCORM_API_wrapper.js\"></script>"+lb
             html += u"<script type=\"text/javascript\" src=\"SCOFunctions.js\"></script>"+lb
@@ -114,7 +114,8 @@ class ScormPage(Page):
                 html += style.get_extra_head()
             html += u"</head>"+lb            
             html += u'<body class=\"exe-scorm\" onload="loadPage()" '
-            html += u'onunload="unloadPage()">'+lb
+            html += u'onunload="unloadPage()">'
+        html += u'<script type="text/javascript">document.body.className+=" js"</script>'+lb
         html += u"<"+sectionTag+" id=\"outer\">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
         html += u"<"+headerTag+" id=\"nodeDecoration\">"
