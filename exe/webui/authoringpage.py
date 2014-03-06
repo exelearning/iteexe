@@ -174,7 +174,15 @@ class AuthoringPage(RenderableResource):
         html += u'<html xmlns="http://www.w3.org/1999/xhtml" lang="'+myPreferencesPage.getSelectedLanguage()+'">\n'
         html += u'<head>\n'
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/exe.css\" />"
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/base.css\" />"
+        
+        # Use the Style's base.css file if it exists
+        themePath = Path(G.application.config.stylesDir/self.package.style)
+        themeBaseCSS = themePath.joinpath("base.css")
+        if themeBaseCSS.exists():
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/%s/base.css\" />" % self.package.style
+        else:
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/base.css\" />"
+            
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/exe_wikipedia.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/%s/content.css\" />" % self.package.style
         if G.application.config.assumeMediaPlugins: 
