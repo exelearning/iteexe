@@ -101,15 +101,11 @@ class NotaBlock(Block):
         """
         html = u'<div class="classnote">\n'
         if  self.commentElement.field.content:
-            html += '<div class="notetitleex" onclick="toggleFeedback(\'%s\')" title="%s">' % (self.id , _(u"Show/Hide"))
+            html += '<div class="notetitleex" onclick="jQuery(\'#fb%s\').toggle()" title="%s">' % (self.id , _(u"Show/Hide"))
         else:
             html += '<div class="notetitle">'
         html +='%s</div>' % self.idevice.title
         if  self.commentElement.field.content:
-            """
-            html += u'<input type="button" class="notebtn" onclick="toggleFeedback(\'%s\')"' % self.id
-            html += u'value="%s" />\n' % _(u"Show/Hide")
-            """
             html += '<div id="fb%s" class="notearea">' % self.id        
             
             if self.previewing: 

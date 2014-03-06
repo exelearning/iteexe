@@ -712,16 +712,6 @@ function showAnswer(id,isShow) {
     }
 }
 
-// show or hide the feedback for cloze idevice
-function toggleFeedback(id) {
-    var ele = document.getElementById('fb'+id);
-    if (ele.style.display == "block") {
-        ele.style.display = "none";
-    } else {
-        ele.style.display = "block";
-    }
-}
-
 // Call the function like this:
 //insertAtCursor(document.formName.fieldName, this value);
 function insertAtCursor(myField, myValue, num) {
@@ -1494,6 +1484,19 @@ var $exe = {
             };
         }
         document.getElementsByTagName("head")[0].appendChild(s);
+    },
+    toggleFeedback : function(e) {
+        var id = e.name.replace("toggle-","");
+        var f = document.getElementById(id);
+        if (f) {
+            if (f.style.display=="none") {
+                f.style.display = "block";
+                e.value = $exe_i18n.hideFeedback;
+            } else {
+                f.style.display = "none";
+                e.value = $exe_i18n.showFeedback;
+            }
+        }
     }
 }
 

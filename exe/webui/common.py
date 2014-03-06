@@ -186,6 +186,8 @@ def getJavaScriptStrings():
     s = '<script type="text/javascript">$exe_i18n={'
     s += 'show:"'+_("Show")+'",'
     s += 'hide:"'+_("Hide")+'",'
+    s += 'showFeedback:"'+_("Show Feedback")+'",'
+    s += 'hideFeedback:"'+_("Hide Feedback")+'",'
     s += 'menu:"'+_("Menu")+'"'
     s += '}</script>'
     
@@ -386,6 +388,24 @@ def button(name, value, enabled=True, **kwargs):
     html += u'/>\n'
     return html
 
+def feedbackBlock(id,feedback):
+    lb = "\n" #Line breaks
+    html = '<form name="feedback-form-'+id+'" action="#" onsubmit="return false" class="feedback-form">'
+    html += lb
+    html += '<div class="block display-feedback">'+lb
+    html += '<p class="feedback-button">'
+    html += '<input type="button" name="toggle-feedback-'+id+'" value="'+_('Show Feedback')+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this);return false" />'
+    html += '</p>'+lb
+    html += '<p class="js-warning">'+_("Enable JavaScript")+'</p>'+lb
+    html += '</div>'+lb
+    html += '<div id="feedback-'+id+'" class="feedback" style="display:none">'
+    html += lb
+    html += feedback
+    html += "</div>"+lb
+    html += "</form>"+lb
+    return html
+    
+    
 def feedbackButton(name, value=None, enabled=True, **kwparams):
     """Adds a feedback button"""
     if value is None:
