@@ -444,6 +444,10 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
         
         if common.nodeHasMediaelement(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'mediaelement').files()]
+            if dT != "HTML5":
+                self.scriptsDir = self.config.webDir/"scripts"
+                jsFile = (self.scriptsDir/'exe_html5.js')
+                jsFile.copyfile(self.outputDir/'exe_html5.js')
         
         if common.hasGalleryIdevice(page.node):
             self.resStr += '\n'
