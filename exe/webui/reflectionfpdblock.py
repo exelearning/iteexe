@@ -115,41 +115,16 @@ class ReflectionfpdBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html = u'<div class="iDevice_inner">\n'
-    
+        
         if self.previewing: 
-            html += self.activityElement.renderPreview()
+            html = self.activityElement.renderPreview()
+            feedback = self.answerElement.renderPreview()
         else:
-            html += self.activityElement.renderView()
+            html = self.activityElement.renderView()
+            feedback = self.answerElement.renderView()
+            
+        html += common.feedbackBlock(self.id,feedback)
 
-        html += '<div id="view%s" style="display:block;">' % self.id
-        html += common.feedbackButton("btnshow"+self.id, _(u"Click here"),
-                    onclick="showAnswer('%s',1)" % self.id)
-        html += '</div>\n' 
-        html += '<div id="hide%s" style="display:none;">' % self.id
-        html += common.feedbackButton("btnshow"+self.id, _(u"Hide"),
-                    onclick="showAnswer('%s',0)" % self.id)
-        html += '</div>\n'
-        html += '<div id="s%s" class="feedback" style=" ' % self.id
-        html += 'display: none;">'
-
-        if self.previewing: 
-            html += self.answerElement.renderPreview()
-        else:
-            html += self.answerElement.renderView()
-
-        html += "</div>\n"
-# JRJ: Generamos el contenido que irá dentro de la etiqueta noscript
-# (let's generate the content that will be present in the noscript tag)
-	html += '<noscript><br/><div class="feedback">\n'
-	html += "<p><strong>" + _("Feedback") + ": </strong></p>\n"
-        if self.previewing: 
-            	html  += self.answerElement.field.content_w_resourcePaths
-        else: 
-            	html  += self.answerElement.field.content_wo_resourcePaths
-	html += "</div></noscript>\n"
-
-        html += "</div>\n"
         return html
     
 

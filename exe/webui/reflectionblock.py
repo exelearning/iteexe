@@ -105,17 +105,13 @@ class ReflectionBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html = u''
-    
         if self.previewing: 
-            html += self.activityElement.renderPreview()
-        else:
-            html += self.activityElement.renderView()
-
-        if self.previewing: 
+            html = self.activityElement.renderPreview()
             feedback = self.answerElement.renderPreview()
         else:
+            html = self.activityElement.renderView()
             feedback = self.answerElement.renderView()
+
         html += common.feedbackBlock(self.id,feedback)
 
         return html

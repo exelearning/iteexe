@@ -697,21 +697,6 @@ function toggleElementVisible(ident) {
     }
 }
 
-// Reflection Idevice code ////////////////////////////////////////////////
-
-// Show or hide the feedback for reflection idevice
-function showAnswer(id,isShow) {
-    if (isShow==1) {
-        document.getElementById("s"+id).style.display = "block";
-        document.getElementById("hide"+id).style.display = "block";
-        document.getElementById("view"+id).style.display = "none";
-    } else {
-        document.getElementById("s"+id).style.display = "none";
-        document.getElementById("hide"+id).style.display = "none";
-        document.getElementById("view"+id).style.display = "block";
-    }
-}
-
 // Call the function like this:
 //insertAtCursor(document.formName.fieldName, this value);
 function insertAtCursor(myField, myValue, num) {
