@@ -1489,12 +1489,12 @@ var $exe = {
         var id = e.name.replace("toggle-","");
         var f = document.getElementById(id);
         if (f) {
-            if (f.style.display=="none") {
-                f.style.display = "block";
-                e.value = $exe_i18n.hideFeedback;
+            if (f.className == "feedback js-hidden") {
+                f.className = "feedback";
+                e.value = $exe_i18n.hideFeedback
             } else {
-                f.style.display = "none";
-                e.value = $exe_i18n.showFeedback;
+                f.className = "feedback js-hidden";
+                e.value = $exe_i18n.showFeedback
             }
         }
     }

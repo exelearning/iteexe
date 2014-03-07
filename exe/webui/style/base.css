@@ -14,6 +14,7 @@ li{list-style-position:inside}
 div#nodeDecoration{padding:0.1em;border-bottom:0em;text-align:right}
 .block,.feedback{display:block;padding-top:0.25em;padding-bottom:0.25em}
 .feedback{font-family:times,serif;font-size:120%}
+.feedback-button p{margin:0}
 /* iDevice */
 .emphasis0{padding-left:0;margin:0}
 .iDeviceTitle{font-weight:bold;position:relative;top:-18px;/* aligns title up with middle of icon */}
@@ -57,8 +58,10 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .toggle-idevice{display:none}
 /* Autoclear */
 .exe-clear{overflow:auto}
-/* Hidden elements */
-.js .js-warning{display:none}
+/* JavaScript on/offf */
+.js-required{display:none}
+.js .js-required{display:block}
+.js .js-hidden{display:none}
 /* To review */
 .question .answer p{margin:0 0 .7em 0}
 .hidden-idevice .image_text{display:none} /* iDevice Toggler : Required for Magnifier */

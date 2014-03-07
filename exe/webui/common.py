@@ -392,13 +392,13 @@ def feedbackBlock(id,feedback):
     lb = "\n" #Line breaks
     html = '<form name="feedback-form-'+id+'" action="#" onsubmit="return false" class="feedback-form">'
     html += lb
-    html += '<div class="block display-feedback">'+lb
-    html += '<p class="feedback-button">'
+    html += '<div class="block feedback-button js-required">'+lb
+    html += '<p>'
     html += '<input type="button" name="toggle-feedback-'+id+'" value="'+_('Show Feedback')+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this);return false" />'
     html += '</p>'+lb
-    html += '<p class="js-warning">'+_("Enable JavaScript")+'</p>'+lb
     html += '</div>'+lb
-    html += '<div id="feedback-'+id+'" class="feedback" style="display:none">'
+    html += '<h3 class="js-hidden">'+_('Feedback')+'</h3>'+lb
+    html += '<div id="feedback-'+id+'" class="feedback js-hidden">'
     html += lb
     html += feedback
     html += "</div>"+lb
