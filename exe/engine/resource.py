@@ -89,6 +89,14 @@ class _Resource(Persistable):
             # Don't need to save the original file name between sessions
             # It was just used for changing the package
             del self._originalFile
+    
+    # Implementing __eq__ and __ne__ so that the resource to be deleted
+    # can be recognized with 'self in self._idevice.userResources'
+    def __eq__(self, other):
+        return self.storageName == other.storageName and self.package == other.package
+            
+    def __ne__(self, other):
+        return self.storageName != other.storageName or self.package != other.package
 
     def _setPackage(self, package):
         """
@@ -170,8 +178,11 @@ class _Resource(Persistable):
         # If our Idevice has not already moved, cut ourselves off from it
         if self._idevice \
         and self._idevice.parentNode.package is not self._package:
-            self._idevice.userResources.remove(self)
-            self._idevice = None
+            # Delete resource form userResources list. This will delete the file from
+            # content always, even if some other iDevice is still using same file
+            if self in self._idevice.userResources:
+                self._idevice.userResources.remove(self)
+                self._idevice = None
 
     # Properties
     storageName = property(lambda self:self._storageName)
