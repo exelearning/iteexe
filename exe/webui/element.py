@@ -1135,18 +1135,9 @@ class MagnifierElement(Element):
         """
         field = self.field
         lb = "\n" #Line breaks
-        '''
-        html =u'<img id="magnifier%s" src="%s" data-magnifysrc="%s"' % ( self.id, imageFile,imageFile)
-        if field.width!="":
-            html +=u' width="'+field.width+'"'
-        if field.height!="":
-            html +=u' height="'+field.height+'"'            
-        html +=u' data-size="%s"  data-zoom="%s" />'% (field.glassSize, field.initialZSize)
-        '''        
         html = '<span class="image-thumbnail" id="image-thumbnail-'+self.id+'">'+lb
         html += '<a href="'+imageFile+'"><img src="'+imageFile+'" alt="" width="'+field.width+'" height="'+field.height+'" class="magnifier-size-'+field.glassSize+' magnifier-zoom-'+field.initialZSize+'" /></a>'
         html += '</span>'
-        html += '<br style="clear:both" />'
         return html;
         
 

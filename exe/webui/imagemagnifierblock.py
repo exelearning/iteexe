@@ -187,12 +187,8 @@ class ImageMagnifierBlock(Block):
             html += 'margin:0 0 20px 20px'
         html += '">'
         html += self.imageMagnifierElement.renderPreview()
-        if self.idevice.caption == '':
-            html = html.replace('<br style="clear:both" />', '', 1) # Not needed when there's no caption
-        else:
+        if self.idevice.caption != '':
             html = html.replace(' alt="" ',' alt="'+self.idevice.caption.replace('"','&quot;')+'" ', 1)
-            if self.idevice.float != 'none':
-                html = html.replace('<br style="clear:both" />', '', 1) # Not needed if the image is floated
             html += '<strong>'+self.idevice.caption+'</strong>'
         html += '</div>'+lb 
         text = self.textElement.renderPreview()
@@ -216,21 +212,17 @@ class ImageMagnifierBlock(Block):
         lb = "\n" #Line breaks
         html = common.ideviceHeader(self, style, "view")
         
-        html += '<div class="iDevice_content">'
+        html += '<div class="iDevice_content">'+lb
         html += '<div class="image_text" style="width:'+str(self.idevice.imageMagnifier.width)+'px;float:'+self.idevice.float+';'
         if self.idevice.float == 'left':
             html += 'margin:0 20px 20px 0'
         if self.idevice.float == 'right':
             html += 'margin:0 0 20px 20px'
-        html += '">'        
+        html += '">'  
         html += lb
         html += self.imageMagnifierElement.renderView()
-        if self.idevice.caption == '':
-            html = html.replace('<br style="clear:both" />', '', 1) # Not needed when there's no caption
-        else:
+        if self.idevice.caption != '':
             html = html.replace(' alt="" ',' alt="'+self.idevice.caption.replace('"','&quot;')+'" ', 1)
-            if self.idevice.float != 'none':
-                html = html.replace('<br style="clear:both" />', '', 1) # Not needed if the image is floated
             html += '<strong>'+self.idevice.caption+'</strong>'
         html += '</div>'+lb 
         text = self.textElement.renderView()

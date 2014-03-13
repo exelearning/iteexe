@@ -313,8 +313,10 @@ var MojoMagnify = (function () {
         for (var i = 0; i < valZoom.length; ++i) {
             modzoom[modzoom.length] = new Option(stZoom[i], valZoom[i]);
         }
-        modzoom[i] = new Option("x" + zoZoom, zoZoom);
-        modzoom[i].setAttribute("selected", "selected");
+        if (zoZoom!='undefined') {
+            modzoom[i] = new Option("x" + zoZoom, zoZoom);
+            modzoom[i].setAttribute("selected", "selected");
+        }
         var sizeGlass = document.createElement("select");
         sizeGlass.onclick = changeglass;
         if (withStyle('.selectsizeglass') == false) {
@@ -341,7 +343,9 @@ var MojoMagnify = (function () {
 
         dvselect.appendChild(sizeGlass);
         linkParent.appendChild(dvselect);
-        if (linkParent.offsetWidth < 190) {
+        if (linkParent.offsetWidth < 140) {
+            linkParent.style.marginBottom = "110px";
+        } else if (linkParent.offsetWidth < 190) {
             linkParent.style.marginBottom = "90px";
         } else {
             linkParent.style.marginBottom = "50px";
