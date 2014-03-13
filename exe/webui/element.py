@@ -1134,36 +1134,19 @@ class MagnifierElement(Element):
 
         """
         field = self.field
-        """
-        flashVars = {
-            'file': imageFile,
-            'width': field.width,
-            'height': field.height,
-            'borderWidth': '12',
-            'glassSize': field.glassSize,
-            'initialZoomSize': field.initialZSize,
-            'maxZoomSize': field.maxZSize,
-            'targetColor': '#FF0000'}
-        # Format the flash vars
-        flashVars = '&amp;'.join(
-            ['%s=%s' % (name, value) for
-             name, value in flashVars.items()])
-        return common.flash(magnifierFile, field.width, field.height,
-            id='magnifier%s' % self.id,
-            params = {
-                'movie': magnifierFile,
-                'quality': 'high',
-                'scale': 'noscale',
-                'salign': 'lt',
-                'bgcolor': '#888888',
-                'FlashVars': flashVars})
-        """
+        lb = "\n" #Line breaks
+        '''
         html =u'<img id="magnifier%s" src="%s" data-magnifysrc="%s"' % ( self.id, imageFile,imageFile)
         if field.width!="":
             html +=u' width="'+field.width+'"'
         if field.height!="":
             html +=u' height="'+field.height+'"'            
         html +=u' data-size="%s"  data-zoom="%s" />'% (field.glassSize, field.initialZSize)
+        '''        
+        html = '<span class="image-thumbnail" id="image-thumbnail-'+self.id+'">'+lb
+        html += '<a href="'+imageFile+'"><img src="'+imageFile+'" alt="" width="'+field.width+'" height="'+field.height+'" class="magnifier-size-'+field.glassSize+' magnifier-zoom-'+field.initialZSize+'" /></a>'
+        html += '</span>'
+        html += '<br style="clear:both" />'
         return html;
         
 

@@ -171,116 +171,76 @@ class ImageMagnifierBlock(Block):
         html += u"</div>\n"
         return html
 
-    '''
     def renderPreview(self, style):
         """
         Returns an XHTML string for previewing this block
         """
-        log.debug("renderPreview")
-        html  = u"\n<!-- image with text iDevice -->\n"
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u"  <div class=\"image_texto\" style=\""
-        html += u"width:" + str(self.idevice.imageMagnifier.width) + "px; "
-        html += u"float:%s;\">\n" % self.idevice.float
-        html += u"    <div class=\"image\">\n"
+
+        lb = "\n" #Line breaks
+        html = common.ideviceHeader(self, style, "preview")
+        
+        html += '<div class="iDevice_content">'
+        html += '<div class="image_text" style="width:'+str(self.idevice.imageMagnifier.width)+'px;float:'+self.idevice.float+';'
+        if self.idevice.float == 'left':
+            html += 'margin:0 20px 20px 0'
+        if self.idevice.float == 'right':
+            html += 'margin:0 0 20px 20px'
+        html += '">'
         html += self.imageMagnifierElement.renderPreview()
-        html += u"" + self.idevice.caption
-        html += u"    </div> <!-- class=\"image\" -->\n" 
-        html += u"  </div> <!-- class=\"image_text\" -->\n" 
+        if self.idevice.caption == '':
+            html = html.replace('<br style="clear:both" />', '', 1) # Not needed when there's no caption
+        else:
+            if self.idevice.float != 'none':
+                html = html.replace('<br style="clear:both" />', '', 1) # Not needed if the image is floated
+            html += '<strong>'+self.idevice.caption+'</strong>'
+        html += '</div>'+lb 
         text = self.textElement.renderPreview()
         if text:
-            html +='<div style="float: '+self.idevice.float +';padding:10px">'+text+'</div>'  
+            text = text.replace('"block iDevice_content"', '"iDevice_text"', 1)
+            html += text
         else:
             html += '&nbsp;'
-        html += u'\n<div style="clear: both;overflow:auto"></div>\n'
-        html += u'<p style="margin-top:40px;"></p>'
-        html += self.renderViewButtons()
-        html += u''
-        html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
+        html += '</div>'+lb # /.iDevice_content
+        
+        html += common.ideviceFooter(self, style, "preview")
+
         return html
     
 
     def renderView(self, style):
         """
         Returns an XHTML string for viewing this block
-        """        
-        log.debug("renderView")
-        html  = u"\n<!-- image with text iDevice -->\n"
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u"  <div class=\"image_text\" style=\""
-        html += u"width:" + str(self.idevice.imageMagnifier.width) + "px; "
-        html += u"float:%s;\">\n" % self.idevice.float
-        html += u"    <div class=\"image\">\n"
+        """     
+
+        lb = "\n" #Line breaks
+        html = common.ideviceHeader(self, style, "view")
+        
+        html += '<div class="iDevice_content">'
+        html += '<div class="image_text" style="width:'+str(self.idevice.imageMagnifier.width)+'px;float:'+self.idevice.float+';'
+        if self.idevice.float == 'left':
+            html += 'margin:0 20px 20px 0'
+        if self.idevice.float == 'right':
+            html += 'margin:0 0 20px 20px'
+        html += '">'        
+        html += lb
         html += self.imageMagnifierElement.renderView()
-        html += u"    <br/>" + self.idevice.caption
-        html += u"    </div> <!-- class=\"image\" -->\n" 
-        html += u"  </div> <!-- class=\"image_text\" -->\n" 
+        if self.idevice.caption == '':
+            html = html.replace('<br style="clear:both" />', '', 1) # Not needed when there's no caption
+        else:
+            if self.idevice.float != 'none':
+                html = html.replace('<br style="clear:both" />', '', 1) # Not needed if the image is floated
+            html += '<strong>'+self.idevice.caption+'</strong>'
+        html += '</div>'+lb 
         text = self.textElement.renderView()
         if text:
-            html +='<div style="float: left;margin-left:25px">'+text+'</div>'
-        else:
-            html += '&nbsp;'
-        html += u'\n<div style="clear: both;overflow:auto"></div>\n'
-        html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
-        return html
-
-    '''
-    def renderPreview(self, style):
-        """
-        Returns an XHTML string for previewing this block
-        """
-        log.debug("renderPreview")
-        html  = u"\n<!-- image with text iDevice -->\n"
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u"  <div class=\"image_text\" style=\""
-        html += u"width:" + str(self.idevice.imageMagnifier.width) + "px;padding:10px; "
-        html += u"float:%s;\">\n" % self.idevice.float
-        html += u"    <div class=\"image\" style=\"height:50px;\"></div>\n<!-- class=\"image\" -->\n"
-        html += self.imageMagnifierElement.renderPreview()
-        html += u"" + self.idevice.caption
-        html += u"  </div> <!-- class=\"image_text\" -->\n" 
-        html += u"<div style=\"display:inline-block;padding:5px;\">\n"
-        text = self.textElement.renderPreview()
-        if text:
+            text = text.replace('"block iDevice_content"', '"iDevice_text"', 1)
             html += text
         else:
             html += '&nbsp;'
-        html += u"</div>"
-        html += u'\n<div style="clear:both;height:1px;overflow:hidden;"></div>\n'
-        html += self.renderViewButtons()
-        html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
-        return html
-    
+        html += '</div>'+lb # /.iDevice_content
+        
+        html += common.ideviceFooter(self, style, "view")
 
-    def renderView(self, style):
-        """
-        Returns an XHTML string for viewing this block
-        """        
-        log.debug("renderView")
-        html  = u"\n<!-- image with text iDevice -->\n"
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" >\n"
-        html += u"  <div class=\"image_text\" style=\""
-        html += u"width:" + str(self.idevice.imageMagnifier.width) + "px;padding:10px; "
-        html += u"float:%s;\">\n" % self.idevice.float
-        html += u"    <div class=\"image\" style=\"height:50px;\"></div>\n<!-- class=\"image\" -->\n"
-        html += self.imageMagnifierElement.renderView()
-        html += u"" + self.idevice.caption
-        html += u"  </div> <!-- class=\"image_text\" -->\n" 
-        html += u"<div style=\"display:inline-block;padding:5px;\">\n"
-        text = self.textElement.renderView()
-        if text:
-            html += text
-        else:
-            html += '&nbsp;'
-        html += u"</div>"
-        html += u'\n<div style="clear: both;overflow:auto"></div>\n'
-        html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
         return html
 
 from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice

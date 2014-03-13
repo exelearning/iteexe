@@ -13,7 +13,7 @@
  <img id="..." src="..." data-magnifysrc="..."  width="n" height="n" data-size="n"  data-zoom="n" />
  */
 var MojoMagnify = (function () {
-    var dfstyle = ' background: #FFF0FF;width: 80px;padding: 3px;font-size: 16px;border: 1px solid #ccc;height: 28px;margin:5px;';
+    var dfstyle = 'background:#fff;width:80px;padding:3px;border:1px solid #ccc;height:28px;margin:5px';
     var zommstl = false;
 
     function withStyle(name) {
@@ -266,6 +266,8 @@ var MojoMagnify = (function () {
             zoomLink.style.left = "0px";
             zoomLink.style.top = "0px";
             zoomLink.appendChild(zoomImg);
+            zoomLink.style.cursor = 'none';
+            zoomLink.onclick = function() { return false; }
             zoom.appendChild(zoomLink);
         } else {
             zoom.appendChild(zoomImg);
@@ -297,7 +299,7 @@ var MojoMagnify = (function () {
         img.__mojoMagnifyBorder = zoomBorder;
         var isInImage = false;
         var dvselect = document.createElement("div");
-        dvselect.setAttribute('style', 'border:1px solid #cccccc;margin-top:5px;margin-left:4px;');
+        dvselect.setAttribute('style', 'border:1px solid #cccccc;margin:5px 0 15px 0');
         var modzoom = document.createElement("select");
         modzoom.onclick = changezoom;
         if (withStyle('.selectzoomglass') == false) {
@@ -469,4 +471,28 @@ var MojoMagnify = (function () {
         setCoords: setCoords
     };
 })();
-MojoMagnify.addEvent(window, "load", MojoMagnify.init);
+// MojoMagnify.addEvent(window, "load", MojoMagnify.init);
+// Get the required HTML before init:
+$(function(){
+    $(".ImageMagnifierIdevice .image-thumbnail").each(function(){
+        // From: <img src="" alt="" width="" height="" class="magnifier-size-x magnifier-zoom-y" />
+        // To: <img id="magnifier%s" src="" data-magnifysrc="x" width="" height="" data-size="x"  data-zoom="y" />
+        var img = this.getElementsByTagName("IMG");
+        if (img.length==1) {
+            img = img[0];
+            var id = this.id.replace("image-thumbnail-","magnifier");
+            var w = img.width;
+            var h = img.width;
+            var c = img.className.split(" ");
+            if (c.length==2) {
+                var size = c[0].replace("magnifier-size-","");
+                var zoom = c[1].replace("magnifier-zoom-","");
+            }
+            var html = '<img id="'+id+'" src="'+img.src+'" data-magnifysrc="'+img.src+'" width="'+w+'" height="'+h+'" data-size="'+size+'" data-zoom="'+zoom+'" />'
+            this.innerHTML = html;
+        }
+    });
+    setTimeout(function(){
+        MojoMagnify.init();
+    },500);
+});
