@@ -213,14 +213,12 @@ class AppletBlock(Block):
             # according to self.port (config.py)
             appletcode = appletcode.replace('filename" value="', 'filename" value="%s/' % resources)
 
-        html  = u"<!-- applet iDevice -->\n"
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += appletcode
-        html += u"<br/>\n"
-        html += self.renderViewButtons()
-        html += u"</div>\n"
+        lb = "\n" #Line breaks
+        html = common.ideviceHeader(self, style, "preview")
+        html += '<div class="iDevice_content">'+lb
+        html += appletcode+lb
+        html += '</div>'+lb
+        html += common.ideviceFooter(self, style, "preview")
 
         return html
     
@@ -237,12 +235,12 @@ class AppletBlock(Block):
         appletcode = appletcode.replace('&nbsp;', '')
         appletcode = appletcode.replace('\xC2\x82','&#130')
         
-        html  = u"<!-- applet iDevice -->\n"
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += appletcode
-        html += u"<br/>"
-        html += u"</div>\n"
+        lb = "\n" #Line breaks
+        html = common.ideviceHeader(self, style, "view")
+        html += '<div class="iDevice_content">'+lb
+        html += appletcode+lb
+        html += '</div>'+lb
+        html += common.ideviceFooter(self, style, "view")
 
         return html
     
