@@ -185,11 +185,11 @@ class ImageMagnifierBlock(Block):
             html += 'margin:0 20px 20px 0'
         if self.idevice.float == 'right':
             html += 'margin:0 0 20px 20px'
-        html += '">'
+        html += '">'+lb
         html += self.imageMagnifierElement.renderPreview()
         if self.idevice.caption != '':
             html = html.replace(' alt="" ',' alt="'+self.idevice.caption.replace('"','&quot;')+'" ', 1)
-            html += '<strong>'+self.idevice.caption+'</strong>'
+            html += '<strong>'+self.idevice.caption+'</strong>'+lb
         html += '</div>'+lb 
         text = self.textElement.renderPreview()
         if text:

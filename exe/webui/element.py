@@ -1136,8 +1136,8 @@ class MagnifierElement(Element):
         field = self.field
         lb = "\n" #Line breaks
         html = '<span class="image-thumbnail" id="image-thumbnail-'+self.id+'">'+lb
-        html += '<a href="'+imageFile+'"><img src="'+imageFile+'" alt="" width="'+field.width+'" height="'+field.height+'" class="magnifier-size-'+field.glassSize+' magnifier-zoom-'+field.initialZSize+'" /></a>'
-        html += '</span>'
+        html += '<a href="'+imageFile+'"><img src="'+imageFile+'" alt="" width="'+field.width+'" height="'+field.height+'" class="magnifier-size-'+field.glassSize+' magnifier-zoom-'+field.initialZSize+'" /></a>'+lb
+        html += '</span>'+lb
         return html;
         
 
