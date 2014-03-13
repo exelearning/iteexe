@@ -190,7 +190,6 @@ class ImageMagnifierBlock(Block):
         if self.idevice.caption == '':
             html = html.replace('<br style="clear:both" />', '', 1) # Not needed when there's no caption
         else:
-            html = html.replace(' alt="" ',' alt="'+self.idevice.caption.replace('"','&quot;')+'" ', 1)
             if self.idevice.float != 'none':
                 html = html.replace('<br style="clear:both" />', '', 1) # Not needed if the image is floated
             html += '<strong>'+self.idevice.caption+'</strong>'
@@ -228,7 +227,6 @@ class ImageMagnifierBlock(Block):
         if self.idevice.caption == '':
             html = html.replace('<br style="clear:both" />', '', 1) # Not needed when there's no caption
         else:
-            html = html.replace(' alt="" ',' alt="'+self.idevice.caption.replace('"','&quot;')+'" ', 1)
             if self.idevice.float != 'none':
                 html = html.replace('<br style="clear:both" />', '', 1) # Not needed if the image is floated
             html += '<strong>'+self.idevice.caption+'</strong>'
