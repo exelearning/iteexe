@@ -1353,22 +1353,23 @@ var $exe = {
         init : function(){
             if ($(".iDevice").length<2) return false;
             var em = $(".iDevice_header,.iDevice.emphasis0");
-                em.each(function(){
-                    var t = $exe_i18n.hide;
-                        e = $(this),
-                        c = e.hasClass('iDevice_header')? 'em1': 'em0',
-                        eP = e.parents('.iDevice_wrapper');
-                    if (eP.length) {
-                        
-                        var l = '<p class="toggle-idevice toggle-' + c + '"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\''+eP.attr('id')+'\',\'' + c + '\')" title="'+t+'"><span>'+t+'</span></a></p>';
-                        if (c == 'em1') {
-                            var h = e.html();
-                            e.html(h+l);
-                        }
-                        else
-                            e.before(l);
+            em.each(function(){
+                var t = $exe_i18n.hide;
+                    e = $(this),
+                    c = e.hasClass('iDevice_header')? 'em1': 'em0',
+                    eP = e.parents('.iDevice_wrapper');
+                if (eP.length) {
+                    
+                    var l = '<p class="toggle-idevice toggle-' + c + '"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\''+eP.attr('id')+'\',\'' + c + '\')" title="'+t+'"><span>'+t+'</span></a></p>';
+                    if (c == 'em1') {
+                        var h = e.html();
+                        e.html(h+l);
                     }
-                });
+                    else
+                        e.before(l);
+                }
+            });
+            $("INPUT.autocomplete-off").attr("autocomplete","off");
         },
         toggle : function(e,id,em) {
             var t = $exe_i18n.hide;

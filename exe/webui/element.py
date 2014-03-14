@@ -1348,7 +1348,9 @@ class ClozeElement(ElementWithResources):
             # to render, use the flattened content, withOUT resource paths: 
             self.field.encodedContent = self.field.content_wo_resourcePaths
 
-        html = ['<div id="cloze%s">' % self.id]
+        html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="clozeSubmit(\''+self.id+'\');return false" class="activity-form cloze-form">']
+        html += ['<div id="cloze%s">' % self.id]
+
         html.append('<script type="text/javascript">var YOUR_SCORE_IS = "%s";</script>' % _('Your score is '))
         # Store our args in some hidden fields
         def storeValue(name):
@@ -1382,65 +1384,47 @@ class ClozeElement(ElementWithResources):
             if missingWord:
                 words += "'" + missingWord + "',"
                 # The edit box for the user to type into
-                inputHtml = [
-                    ' <input type="text" value="" ',
-                    '        id="clozeBlank%s.%s"' % (self.id, i),
-#                    '    autocomplete="off"',
-                    '    style="width:%sem"/>\n' % len(missingWord)]
+                #'  autocomplete="off"',
+                inputHtml = ['<label for="clozeBlank%s.%s" class="accesibility-help">%s (%s):</label>' % (self.id, i, _("Cloze"), (i+1))]
                 if self.field.instantMarking:
-                    inputHtml.insert(2, '  onKeyUp="onClozeChange(this)"')
+                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" onkeyup="onClozeChange(this)" />' % (self.id, i, len(missingWord))]
+                else:
+                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" />' % (self.id, i, len(missingWord))]
                 html += inputHtml
                 # Hidden span with correct answer
-                html += [
-                    '<span style="display: none;" ',
-                    'id="clozeAnswer%s.%s">%s</span>' % (
-                        self.id, i, encrypt(missingWord))]
+                html += ['<span style="display:none" id="clozeAnswer%s.%s">%s</span>' % (self.id, i, encrypt(missingWord))]
 
         # Score string
-        html += ['<div class="block">\n']
+        html += ['<div class="block iDevice_buttons">']
+        html += ['<p>']
         if self.field.instantMarking:
-            html += ['<input type="button" ',
-                     'value="%s"' % _(u"Get score"),
-                     'id="getScore%s"' % self.id,
-                     'onclick="showClozeScore(\'%s\')"/>\n' % (self.id)]
+            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozeScore(\'%s\')" />' % (_(u"Get score"), self.id, self.id)]
 
             if feedbackId is not None:
-                html += [common.feedbackButton('feedback'+self.id, 
-                             _(u"Show/Hide Feedback"),
-                             style="margin: 0;",
-                             onclick="toggleClozeFeedback('%s')" % self.id)]
+                html += [common.feedbackButton('feedback'+self.id, _(u"Show/Hide Feedback"), onclick="toggleClozeFeedback('%s')" % self.id)]
             # Set the show/hide answers button attributes
-            style = 'display: inline;'
+            style = ''
             value = _(u"Show/Clear Answers")
             onclick = "toggleClozeAnswers('%s')" % self.id
         else:
-            html += [common.button('submit%s' % self.id,
-                        _(u"Submit"),
-                        id='submit%s' % self.id,
-                        onclick="clozeSubmit('%s')" % self.id),
-                     common.button(
-                        'restart%s' % self.id,
-                        _(u"Restart"),
-                        id='restart%s' % self.id,
-            style="display: none;",
-                        onclick="clozeRestart('%s')" % self.id),
-                     ]
+            if preview:
+                html += [common.button('submit%s' % self.id,_(u"Submit"),id='submit%s' % self.id,onclick="clozeSubmit('%s')" % self.id)]            
+            else:
+                html += [common.submitButton('submit%s' % self.id,_(u"Submit"),id='submit%s' % self.id)]
+            html += [common.button('restart%s' % self.id,_(u"Restart"),id='restart%s' % self.id,style="display:none",onclick="clozeRestart('%s')" % self.id)]
             # Set the show/hide answers button attributes
-            style = 'display: none;'
+            style = 'display:none'
             value = _(u"Show Answers")
             onclick = "fillClozeInputs('%s')" % self.id
         # Show/hide answers button
-        html += ['&nbsp;&nbsp;',
-                 common.button(
-                    '%sshowAnswersButton' % self.id,
-                    value,
-                    id='showAnswersButton%s' % self.id,
-                    style=style,
-                    onclick=onclick),
-        ]
+        html += [' ',common.button('%sshowAnswersButton' % self.id, value, id='showAnswersButton%s' % self.id, style=style, onclick=onclick)]
+        html += ['<span class="js-hidden js-warning"> '+_("Enable JavaScript")+'</span>']
+        html += ['</p>']
+        html += ['</div>']
         html += ['<div id="clozeScore%s"></div>' % self.id]
-        html += ['</div>\n']
-        return '\n'.join(html) + '</div>'
+        html += ['</div>']
+        html += ['</form>']
+        return '\n'.join(html)
     
     def renderText(self):
         """
@@ -1660,52 +1644,29 @@ class ClozelangElement(ElementWithResources):
                     inputHtml.insert(2, '  onKeyUp="onClozelangChange(this)"')
                 html += inputHtml
                 # Hidden span with correct answer
-                html += [
-                    '<span style="display: none;" ',
-                    'id="clozelangAnswer%s.%s">%s</span>' % (
-                        self.id, i, encrypt(missingWord))]
+                html += ['<span style="display:none" ', 'id="clozelangAnswer%s.%s">%s</span>' % (self.id, i, encrypt(missingWord))]
 
         # Score string
         html += ['<div class="block">\n']
         if self.field.instantMarking:
-            html += ['<input type="button" ',
-                     'value="%s"' % _(u"Get score"),
-                     'id="getScore%s"' % self.id,
-                     'onclick="showClozelangScore(\'%s\')"/>\n' % (self.id)]
+            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozelangScore(\'%s\')" />' % (_(u"Get score"), self.id, self.id)]
 
             if feedbackId is not None:
-                html += [common.feedbackButton('feedback'+self.id, 
-                             _(u"Show/Hide Feedback"),
-                             style="margin: 0;",
-                             onclick="toggleClozelangFeedback('%s')" % self.id)]
+                html += [common.feedbackButton('feedback'+self.id,  _(u"Show/Hide Feedback"), onclick="toggleClozelangFeedback('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display: inline;'
             value = _(u"Show/Clear Answers")
             onclick = "toggleClozelangAnswers('%s')" % self.id
         else:
-            html += [common.button('submit%s' % self.id,
-                        _(u"Submit"),
-                        id='submit%s' % self.id,
-                        onclick="clozelangSubmit('%s')" % self.id),
-                     common.button(
-                        'restart%s' % self.id,
-                        _(u"Restart"),
-                        id='restart%s' % self.id,
-            style="display: none;",
-                        onclick="clozelangRestart('%s')" % self.id),
-                     ]
+            html += [common.button('submit%s' % self.id, _(u"Submit"), id='submit%s' % self.id, onclick="clozelangSubmit('%s')" % self.id),
+                     common.button('restart%s' % self.id, _(u"Restart"), id='restart%s' % self.id, style="display:none", onclick="clozelangRestart('%s')" % self.id)]
             # Set the show/hide answers button attributes
-            style = 'display: none;'
+            style = 'display:none'
             value = _(u"Show Answers")
             onclick = "fillClozelangInputs('%s')" % self.id
         # Show/hide answers button
-        html += ['&nbsp;&nbsp;',
-                 common.button(
-                    '%sshowAnswersButton' % self.id,
-                    value,
-                    id='showAnswersButton%s' % self.id,
-                    style=style,
-                    onclick=onclick),
+        html += [' ',
+                 common.button('%sshowAnswersButton' % self.id, value, id='showAnswersButton%s' % self.id, style=style, onclick=onclick),
         ]
         html += ['<p id="clozelangScore%s"></p>' % self.id]
         html += ['</div>\n']
