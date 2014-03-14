@@ -1351,7 +1351,7 @@ class ClozeElement(ElementWithResources):
         html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="clozeSubmit(\''+self.id+'\');return false" class="activity-form cloze-form">']
         html += ['<div id="cloze%s">' % self.id]
 
-        html.append('<script type="text/javascript">var YOUR_SCORE_IS = "%s";</script>' % _('Your score is '))
+        html.append('<script type="text/javascript">var YOUR_SCORE_IS="%s"</script>' % _('Your score is '))
         # Store our args in some hidden fields
         def storeValue(name):
             value = str(bool(getattr(self.field, name))).lower()
@@ -1385,7 +1385,7 @@ class ClozeElement(ElementWithResources):
                 words += "'" + missingWord + "',"
                 # The edit box for the user to type into
                 #'  autocomplete="off"',
-                inputHtml = ['<label for="clozeBlank%s.%s" class="accesibility-help">%s (%s):</label>' % (self.id, i, _("Cloze"), (i+1))]
+                inputHtml = ['<label for="clozeBlank%s.%s" class="accessibility-help">%s (%s):</label>' % (self.id, i, _("Cloze"), (i+1))]
                 if self.field.instantMarking:
                     inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" onkeyup="onClozeChange(this)" />' % (self.id, i, len(missingWord))]
                 else:
@@ -1418,7 +1418,7 @@ class ClozeElement(ElementWithResources):
             onclick = "fillClozeInputs('%s')" % self.id
         # Show/hide answers button
         html += [' ',common.button('%sshowAnswersButton' % self.id, value, id='showAnswersButton%s' % self.id, style=style, onclick=onclick)]
-        html += ['<span class="js-hidden js-warning"> '+_("Enable JavaScript")+'</span>']
+        html += [common.javaScriptIsRequired()]
         html += ['</p>']
         html += ['</div>']
         html += ['<div id="clozeScore%s"></div>' % self.id]

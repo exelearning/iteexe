@@ -70,6 +70,9 @@ def themeHasConfigXML(style):
     if themeXMLFile.exists():
         themeHasXML = True
     return themeHasXML
+    
+def javaScriptIsRequired():
+    return '<span class="js-hidden js-warning">'+_("Enable JavaScript")+'</span>'
             
 def ideviceHeader(e, style, mode):
     dT = getExportDocType()
