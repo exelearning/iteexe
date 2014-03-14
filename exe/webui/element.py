@@ -2709,34 +2709,19 @@ class QuizQuestionElement(Element):
             html  = self.questionElement.renderPreview()
         else:
             html  = self.questionElement.renderView()
-# JR
-#        html += " &nbsp;&nbsp;\n"
 
         if self.hintElement.field.content.strip():
-            html += '<span '
-            html += ' style="background-image:url(\'%s\');">' % img1
-            html += '\n<a onmousedown="javascript:updateCoords(event);'
-            html += 'showMe(\'hint%s\', 350, 100);" ' % self.id
-            html += 'style="cursor:help;align:center;vertical-align:middle;" '
-            html += 'title="Hint" \n'
-            html += 'onmouseover="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a>'
-            html += '</span>'
-            html += '<div id="hint'+self.id+'" '
-            html += 'style="display:none; z-index:99;">'
-            html += '<div style="float:right;" >'
-            html += '<img alt="%s" ' % _('Close')
-            html += 'src="%s" title="%s"' % (img2, _('Close'))
-            html += " onmousedown=\"javascript:hideMe();\"/></div>"
-            html += '<div class="popupDivLabel">'
-            html += _("Hint")
-            html += '</div>\n'
-
+            lb = "\n" #Line breaks
+            html += '<script type="text/javascript">$exe.hint.imgs=["'+img1+'","'+img2+'"]</script>'+lb
+            html += '<div class="iDevice_hint">'+lb
+            html += '<h3 class="iDevice_hint_title">'+_("Hint")+'</h3>'+lb
+            html += '<div class="iDevice_hint_content js-hidden">'+lb
             if preview: 
                 html  += self.hintElement.renderPreview()
             else: 
                 html  += self.hintElement.renderView()
-
-            html += "</div>\n"
+            html += '</div>'+lb
+            html += '</div>'+lb
 # JR Maquetamos con div en vez de con tablas
 #        html += "<table>\n"
 #        html += "<tbody>\n"

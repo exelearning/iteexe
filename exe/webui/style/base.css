@@ -62,6 +62,10 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .js-required{display:none}
 .js .js-required{display:block}
 .js .js-hidden{display:none}
+/* Hints */
+.js #main .iDevice_hint_title{font-size:1em;margin-top:0;font-weight:normal}
+.iDevice_hint_title a{background-repeat:no-repeat;background-position:0 50%;padding-left:23px;text-decoration:none}
+.iDevice_hint_content{padding:0 23px 1em 23px}
 /* To review */
 .question .answer p{margin:0 0 .7em 0}
 .hidden-idevice .image_text{display:none} /* iDevice Toggler : Required for Magnifier */
