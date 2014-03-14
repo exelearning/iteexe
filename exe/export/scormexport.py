@@ -232,6 +232,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             # initial depth: 
             depth = 0
             depthold = 0
+            oldnodeleaf = 0
             for page in self.pages:        
                 while depth > page.depth:
                     if self.scormType == "scorm2004":
@@ -239,18 +240,25 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
                         self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
                         self.itemStr += u"    </imsss:sequencing>\n"
                         if page.node.children:
+                            self.itemStr += "    </item>\n"                      
+                        else:
+                            if oldnodeleaf and depthold - 1 > page.depth:
+                                self.itemStr += "    </item>\n"                    
+                    if self.scormType == "scorm1.2":
+                        if page.node.children:
                             self.itemStr += "    </item>\n"
-                    if self.scormType == "scorm1.2" and page.node.children:
-                        self.itemStr += "    </item>\n"
-                    depth -= 1                           
+                        else:
+                            if oldnodeleaf and depthold - 1 > page.depth:
+                                self.itemStr += "    </item>\n"    
+                    depth -= 1
+                    oldnodeleaf = not page.node.children                         
                 else:                 
-                    if self.scormType == "scorm1.2" and depthold - 1 == page.depth:                                     
+                    if self.scormType == "scorm1.2" and depthold - 1 >= page.depth:                                     
                         if not page.node.children:
-                            self.itemStr += "    </item>\n"
-                        
+                            self.itemStr += "    </item>\n"  
                     # we will compare depth with the actual page.depth...
                     # we look for decreasing depths -it means we are ending a branch: 
-                    if self.scormType == "scorm2004" and depthold - 1 == page.depth:                                     
+                    if self.scormType == "scorm2004" and depthold - 1 >= page.depth:                                     
                         if not page.node.children:
                             self.itemStr += "    </item>\n"                                                                                 
                     # go on with the items:
@@ -263,8 +271,8 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
                 while depth > 1:               
                     self.itemStr += "        </item>\n"                                 
                     depth -= 1   
-                # the LAST </item> of navigation block must disappear:
-                if self.itemStr.endswith("   </item>\n"):
+                # the LAST </item> of navigation block must disappear in CC exports:
+                if self.scormType == "commoncartridge" and self.itemStr.endswith("   </item>\n"):
                     self.itemStr = self.itemStr[:-12] 
                 
             # finally the last page (leaf) must also include sequencing:  
@@ -389,10 +397,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             self.itemStr += escape(page.node.titleShort)
             self.itemStr += "</title>\n"    
             if not page.node.children:
-                self.itemStr += "        </item>\n" 
-            if page.depth == 1:
-                self.itemStr += "        </item>\n"          
-                   
+                self.itemStr += "        </item>\n"        
 
 
         ## RESOURCES
