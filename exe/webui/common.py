@@ -70,6 +70,9 @@ def themeHasConfigXML(style):
     if themeXMLFile.exists():
         themeHasXML = True
     return themeHasXML
+    
+def javaScriptIsRequired():
+    return '<span class="js-hidden js-warning">'+_("Enable JavaScript")+'</span>'
             
 def ideviceHeader(e, style, mode):
     dT = getExportDocType()
@@ -367,32 +370,32 @@ def flashMovie(movie, width, height, resourcesDir='', autoplay='false'):
 
 def submitButton(name, value, enabled=True, **kwargs):
     """Adds a submit button to a form"""
-    html  = u'<input class="button" type="submit" name="%s" ' % name
-    html += u'value="%s" ' % value
+    html  = '<input class="button" type="submit" name="%s" ' % name
+    html += 'value="%s" ' % value
     if not enabled:
-        html += u' disabled'
+        html += ' disabled="disabled"'
     for key, val in kwargs.items():
-        html += u' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
-    html += u'/>\n'
+        html += ' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
+    html += '/>\n'
     return html
 
 
 def button(name, value, enabled=True, **kwargs):
     """Adds a NON-submit button to a form"""
-    html  = u'<input type="button" name="%s"' % name
-    html += u' value="%s"' % value
+    html  = '<input type="button" name="%s"' % name
+    html += ' value="%s"' % value
     if not enabled:
-        html += u' disabled'
+        html += ' disabled="disabled"'
     for key, val in kwargs.items():
         html += u' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
-    html += u'/>\n'
+    html += '/>\n'
     return html
 
 def feedbackBlock(id,feedback):
     lb = "\n" #Line breaks
     html = '<form name="feedback-form-'+id+'" action="#" onsubmit="return false" class="feedback-form">'
     html += lb
-    html += '<div class="block feedback-button js-required">'+lb
+    html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
     html += '<p>'
     html += '<input type="button" name="toggle-feedback-'+id+'" value="'+_('Show Feedback')+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this);return false" />'
     html += '</p>'+lb

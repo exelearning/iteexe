@@ -1344,31 +1344,63 @@ var $exe = {
         		$exe.loadMediaPlayer.getPlayer()
         	}         
         }
+        $exe.hint.init();
     },
     isIE :function() {
         var n = navigator.userAgent.toLowerCase();
         return (n.indexOf('msie') != -1) ? parseInt(n.split('msie')[1]) : false;
     },
+    hint : {
+        init : function(){
+            $(".iDevice_hint").each(function(i){
+                var x = (i+1);
+                var id = "hint-"+x;
+                var h = $(".iDevice_hint_content",this);
+                var t = $(".iDevice_hint_title",this);
+                if (h.length==1 && t.length==1) {
+                    h.eq(0).attr("id",id);
+                    var tit = t.eq(0);
+                    var o = tit.html();
+                    tit.html('<a href="#'+id+'" title="'+$exe_i18n.show+'" class="hint-toggler show-hint" id="toggle-'+id+'" onclick="$exe.hint.toggle(this);return false" style="background-image:url('+$exe.hint.imgs[0]+')">'+o+'</a>')
+                }
+            });
+        },
+        toggle : function(e) {
+            var id = e.id.replace("toggle-","");
+            if (e.title==$exe_i18n.show) {
+                $("#"+id).fadeIn("slow");
+                e.title = $exe_i18n.hide;
+                e.className = "hint-toggler hide-hint";
+                e.style.backgroundImage = "url("+$exe.hint.imgs[1]+")";
+            } else {
+                $("#"+id).fadeOut();
+                e.title = $exe_i18n.show;
+                e.className = "hint-toggler show-hint";
+                e.style.backgroundImage = "url("+$exe.hint.imgs[0]+")";
+            }
+        }
+    },   
     iDeviceToggler : {
         init : function(){
             if ($(".iDevice").length<2) return false;
             var em = $(".iDevice_header,.iDevice.emphasis0");
-                em.each(function(){
-                    var t = $exe_i18n.hide;
-                        e = $(this),
-                        c = e.hasClass('iDevice_header')? 'em1': 'em0',
-                        eP = e.parents('.iDevice_wrapper');
-                    if (eP.length) {
-                        
-                        var l = '<p class="toggle-idevice toggle-' + c + '"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\''+eP.attr('id')+'\',\'' + c + '\')" title="'+t+'"><span>'+t+'</span></a></p>';
-                        if (c == 'em1') {
-                            var h = e.html();
-                            e.html(h+l);
-                        }
-                        else
-                            e.before(l);
+            em.each(function(){
+                var t = $exe_i18n.hide;
+                    e = $(this),
+                    c = e.hasClass('iDevice_header')? 'em1': 'em0',
+                    eP = e.parents('.iDevice_wrapper');
+                if (eP.length) {
+                    
+                    var l = '<p class="toggle-idevice toggle-' + c + '"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\''+eP.attr('id')+'\',\'' + c + '\')" title="'+t+'"><span>'+t+'</span></a></p>';
+                    if (c == 'em1') {
+                        var h = e.html();
+                        e.html(h+l);
                     }
-                });
+                    else
+                        e.before(l);
+                }
+            });
+            $("INPUT.autocomplete-off").attr("autocomplete","off");
         },
         toggle : function(e,id,em) {
             var t = $exe_i18n.hide;

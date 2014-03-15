@@ -1134,36 +1134,10 @@ class MagnifierElement(Element):
 
         """
         field = self.field
-        """
-        flashVars = {
-            'file': imageFile,
-            'width': field.width,
-            'height': field.height,
-            'borderWidth': '12',
-            'glassSize': field.glassSize,
-            'initialZoomSize': field.initialZSize,
-            'maxZoomSize': field.maxZSize,
-            'targetColor': '#FF0000'}
-        # Format the flash vars
-        flashVars = '&amp;'.join(
-            ['%s=%s' % (name, value) for
-             name, value in flashVars.items()])
-        return common.flash(magnifierFile, field.width, field.height,
-            id='magnifier%s' % self.id,
-            params = {
-                'movie': magnifierFile,
-                'quality': 'high',
-                'scale': 'noscale',
-                'salign': 'lt',
-                'bgcolor': '#888888',
-                'FlashVars': flashVars})
-        """
-        html =u'<img id="magnifier%s" src="%s" data-magnifysrc="%s"' % ( self.id, imageFile,imageFile)
-        if field.width!="":
-            html +=u' width="'+field.width+'"'
-        if field.height!="":
-            html +=u' height="'+field.height+'"'            
-        html +=u' data-size="%s"  data-zoom="%s" />'% (field.glassSize, field.initialZSize)
+        lb = "\n" #Line breaks
+        html = '<span class="image-thumbnail" id="image-thumbnail-'+self.id+'">'+lb
+        html += '<a href="'+imageFile+'"><img src="'+imageFile+'" alt="" width="'+field.width+'" height="'+field.height+'" class="magnifier-size-'+field.glassSize+' magnifier-zoom-'+field.initialZSize+'" /></a>'+lb
+        html += '</span>'+lb
         return html;
         
 
@@ -1374,8 +1348,10 @@ class ClozeElement(ElementWithResources):
             # to render, use the flattened content, withOUT resource paths: 
             self.field.encodedContent = self.field.content_wo_resourcePaths
 
-        html = ['<div id="cloze%s">' % self.id]
-        html.append('<script type="text/javascript">var YOUR_SCORE_IS = "%s";</script>' % _('Your score is '))
+        html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="clozeSubmit(\''+self.id+'\');return false" class="activity-form cloze-form">']
+        html += ['<div id="cloze%s">' % self.id]
+
+        html.append('<script type="text/javascript">var YOUR_SCORE_IS="%s"</script>' % _('Your score is '))
         # Store our args in some hidden fields
         def storeValue(name):
             value = str(bool(getattr(self.field, name))).lower()
@@ -1408,65 +1384,47 @@ class ClozeElement(ElementWithResources):
             if missingWord:
                 words += "'" + missingWord + "',"
                 # The edit box for the user to type into
-                inputHtml = [
-                    ' <input type="text" value="" ',
-                    '        id="clozeBlank%s.%s"' % (self.id, i),
-#                    '    autocomplete="off"',
-                    '    style="width:%sem"/>\n' % len(missingWord)]
+                #'  autocomplete="off"',
+                inputHtml = ['<label for="clozeBlank%s.%s" class="accessibility-help">%s (%s):</label>' % (self.id, i, _("Cloze"), (i+1))]
                 if self.field.instantMarking:
-                    inputHtml.insert(2, '  onKeyUp="onClozeChange(this)"')
+                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" onkeyup="onClozeChange(this)" />' % (self.id, i, len(missingWord))]
+                else:
+                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" />' % (self.id, i, len(missingWord))]
                 html += inputHtml
                 # Hidden span with correct answer
-                html += [
-                    '<span style="display: none;" ',
-                    'id="clozeAnswer%s.%s">%s</span>' % (
-                        self.id, i, encrypt(missingWord))]
+                html += ['<span style="display:none" id="clozeAnswer%s.%s">%s</span>' % (self.id, i, encrypt(missingWord))]
 
         # Score string
-        html += ['<div class="block">\n']
+        html += ['<div class="block iDevice_buttons">']
+        html += ['<p>']
         if self.field.instantMarking:
-            html += ['<input type="button" ',
-                     'value="%s"' % _(u"Get score"),
-                     'id="getScore%s"' % self.id,
-                     'onclick="showClozeScore(\'%s\')"/>\n' % (self.id)]
+            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozeScore(\'%s\')" />' % (_(u"Get score"), self.id, self.id)]
 
             if feedbackId is not None:
-                html += [common.feedbackButton('feedback'+self.id, 
-                             _(u"Show/Hide Feedback"),
-                             style="margin: 0;",
-                             onclick="toggleClozeFeedback('%s')" % self.id)]
+                html += [common.feedbackButton('feedback'+self.id, _(u"Show/Hide Feedback"), onclick="toggleClozeFeedback('%s')" % self.id)]
             # Set the show/hide answers button attributes
-            style = 'display: inline;'
+            style = ''
             value = _(u"Show/Clear Answers")
             onclick = "toggleClozeAnswers('%s')" % self.id
         else:
-            html += [common.button('submit%s' % self.id,
-                        _(u"Submit"),
-                        id='submit%s' % self.id,
-                        onclick="clozeSubmit('%s')" % self.id),
-                     common.button(
-                        'restart%s' % self.id,
-                        _(u"Restart"),
-                        id='restart%s' % self.id,
-            style="display: none;",
-                        onclick="clozeRestart('%s')" % self.id),
-                     ]
+            if preview:
+                html += [common.button('submit%s' % self.id,_(u"Submit"),id='submit%s' % self.id,onclick="clozeSubmit('%s')" % self.id)]            
+            else:
+                html += [common.submitButton('submit%s' % self.id,_(u"Submit"),id='submit%s' % self.id)]
+            html += [common.button('restart%s' % self.id,_(u"Restart"),id='restart%s' % self.id,style="display:none",onclick="clozeRestart('%s')" % self.id)]
             # Set the show/hide answers button attributes
-            style = 'display: none;'
+            style = 'display:none'
             value = _(u"Show Answers")
             onclick = "fillClozeInputs('%s')" % self.id
         # Show/hide answers button
-        html += ['&nbsp;&nbsp;',
-                 common.button(
-                    '%sshowAnswersButton' % self.id,
-                    value,
-                    id='showAnswersButton%s' % self.id,
-                    style=style,
-                    onclick=onclick),
-        ]
+        html += [' ',common.button('%sshowAnswersButton' % self.id, value, id='showAnswersButton%s' % self.id, style=style, onclick=onclick)]
+        html += [common.javaScriptIsRequired()]
+        html += ['</p>']
+        html += ['</div>']
         html += ['<div id="clozeScore%s"></div>' % self.id]
-        html += ['</div>\n']
-        return '\n'.join(html) + '</div>'
+        html += ['</div>']
+        html += ['</form>']
+        return '\n'.join(html)
     
     def renderText(self):
         """
@@ -1686,52 +1644,29 @@ class ClozelangElement(ElementWithResources):
                     inputHtml.insert(2, '  onKeyUp="onClozelangChange(this)"')
                 html += inputHtml
                 # Hidden span with correct answer
-                html += [
-                    '<span style="display: none;" ',
-                    'id="clozelangAnswer%s.%s">%s</span>' % (
-                        self.id, i, encrypt(missingWord))]
+                html += ['<span style="display:none" ', 'id="clozelangAnswer%s.%s">%s</span>' % (self.id, i, encrypt(missingWord))]
 
         # Score string
         html += ['<div class="block">\n']
         if self.field.instantMarking:
-            html += ['<input type="button" ',
-                     'value="%s"' % _(u"Get score"),
-                     'id="getScore%s"' % self.id,
-                     'onclick="showClozelangScore(\'%s\')"/>\n' % (self.id)]
+            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozelangScore(\'%s\')" />' % (_(u"Get score"), self.id, self.id)]
 
             if feedbackId is not None:
-                html += [common.feedbackButton('feedback'+self.id, 
-                             _(u"Show/Hide Feedback"),
-                             style="margin: 0;",
-                             onclick="toggleClozelangFeedback('%s')" % self.id)]
+                html += [common.feedbackButton('feedback'+self.id,  _(u"Show/Hide Feedback"), onclick="toggleClozelangFeedback('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display: inline;'
             value = _(u"Show/Clear Answers")
             onclick = "toggleClozelangAnswers('%s')" % self.id
         else:
-            html += [common.button('submit%s' % self.id,
-                        _(u"Submit"),
-                        id='submit%s' % self.id,
-                        onclick="clozelangSubmit('%s')" % self.id),
-                     common.button(
-                        'restart%s' % self.id,
-                        _(u"Restart"),
-                        id='restart%s' % self.id,
-            style="display: none;",
-                        onclick="clozelangRestart('%s')" % self.id),
-                     ]
+            html += [common.button('submit%s' % self.id, _(u"Submit"), id='submit%s' % self.id, onclick="clozelangSubmit('%s')" % self.id),
+                     common.button('restart%s' % self.id, _(u"Restart"), id='restart%s' % self.id, style="display:none", onclick="clozelangRestart('%s')" % self.id)]
             # Set the show/hide answers button attributes
-            style = 'display: none;'
+            style = 'display:none'
             value = _(u"Show Answers")
             onclick = "fillClozelangInputs('%s')" % self.id
         # Show/hide answers button
-        html += ['&nbsp;&nbsp;',
-                 common.button(
-                    '%sshowAnswersButton' % self.id,
-                    value,
-                    id='showAnswersButton%s' % self.id,
-                    style=style,
-                    onclick=onclick),
+        html += [' ',
+                 common.button('%sshowAnswersButton' % self.id, value, id='showAnswersButton%s' % self.id, style=style, onclick=onclick),
         ]
         html += ['<p id="clozelangScore%s"></p>' % self.id]
         html += ['</div>\n']
@@ -2774,34 +2709,19 @@ class QuizQuestionElement(Element):
             html  = self.questionElement.renderPreview()
         else:
             html  = self.questionElement.renderView()
-# JR
-#        html += " &nbsp;&nbsp;\n"
 
         if self.hintElement.field.content.strip():
-            html += '<span '
-            html += ' style="background-image:url(\'%s\');">' % img1
-            html += '\n<a onmousedown="javascript:updateCoords(event);'
-            html += 'showMe(\'hint%s\', 350, 100);" ' % self.id
-            html += 'style="cursor:help;align:center;vertical-align:middle;" '
-            html += 'title="Hint" \n'
-            html += 'onmouseover="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a>'
-            html += '</span>'
-            html += '<div id="hint'+self.id+'" '
-            html += 'style="display:none; z-index:99;">'
-            html += '<div style="float:right;" >'
-            html += '<img alt="%s" ' % _('Close')
-            html += 'src="%s" title="%s"' % (img2, _('Close'))
-            html += " onmousedown=\"javascript:hideMe();\"/></div>"
-            html += '<div class="popupDivLabel">'
-            html += _("Hint")
-            html += '</div>\n'
-
+            lb = "\n" #Line breaks
+            html += '<script type="text/javascript">$exe.hint.imgs=["'+img1+'","'+img2+'"]</script>'+lb
+            html += '<div class="iDevice_hint">'+lb
+            html += '<h3 class="iDevice_hint_title">'+_("Hint")+'</h3>'+lb
+            html += '<div class="iDevice_hint_content js-hidden">'+lb
             if preview: 
                 html  += self.hintElement.renderPreview()
             else: 
                 html  += self.hintElement.renderView()
-
-            html += "</div>\n"
+            html += '</div>'+lb
+            html += '</div>'+lb
 # JR Maquetamos con div en vez de con tablas
 #        html += "<table>\n"
 #        html += "<tbody>\n"

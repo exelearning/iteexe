@@ -100,9 +100,11 @@ display them as links in your content. From here you can edit the bookmarks and 
             rssDic = feedparser.parse(url)
             length = len(rssDic['entries'])
             if length > 0 :
+                content += "<ul>"
                 for i in range(0, length):
-                    content += '<p><A href="%s">%s</A></P>' %(
-                        rssDic['entries'][i].link, rssDic['entries'][i].title)          
+                    content += '<li><a href="%s">%s</a></li>' %(
+                        rssDic['entries'][i].link, rssDic['entries'][i].title)  
+                content += "</ul>"
         except IOError, error:
             log.warning(unicode(error))
             content += _(u"Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url

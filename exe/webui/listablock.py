@@ -100,8 +100,8 @@ class ListaElement(ElementWithResources):
             output = ''
             for char in result:
                 output += '%%u%04x' % ord(char[0])
-            output=output.replace("\n", "")
             noutput=output.encode('base64')
+            noutput=noutput.replace("\n", "")
            
             return  noutput      
         
@@ -210,7 +210,9 @@ class ListaElement(ElementWithResources):
             # to render, use the flattened content, withOUT resource paths: 
             self.field.encodedContent = self.field.content_wo_resourcePaths
 
-        html = ['<div id="cloze%s">' % self.id]
+        html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="showClozeScore(\''+self.id+'\',1);return false" class="activity-form cloze-form">']
+        html += ['<div id="cloze%s">' % self.id]
+        html += ['<script type="text/javascript">var YOUR_SCORE_IS="%s"</script>' % _('Your score is ')]
         # Store our args in some hidden fields
         def storeValue(name):
             value = str(bool(getattr(self.field, name))).lower()
@@ -218,17 +220,15 @@ class ListaElement(ElementWithResources):
         #html.append(storeValue('showScore'))
       
         if feedbackId:
-            html.append(common.hiddenField('clozeVar%s.feedbackId' % self.id,
-                                           'ta'+feedbackId))
+            html.append(common.hiddenField('clozeVar%s.feedbackId' % self.id,'ta'+feedbackId))
         # Mix the parts together
         words = ""
-        wordslista='<option selected="selected" > </option>'
+        wordslista='<option selected="selected"> </option>'
         wordsarray=[]
         listaotras=[]
         listaotras2=[]
         wordsarraylimpo=[] 
         
-        # 
         for i, (text, missingWord) in enumerate(self.field.parts):
             if missingWord:
                 wordsarray.append([missingWord])
@@ -242,53 +242,42 @@ class ListaElement(ElementWithResources):
         for wdlista in wordsarraylimpo:
            wordslista +='<option value="%s">%s</option>' %(wdlista[0], wdlista[0])
           
-        #
         for i, (text, missingWord) in enumerate(self.field.parts):
             if text:
                 html.append(text)
             if missingWord:
                 words += "'" + missingWord + "',"
                 # The edit box for the user to type into
-                inputHtml = [
-                    '<select id="clozeBlank%s.%s">' % (self.id, i),                        
-                     wordslista,
-                    '</select>']
+                inputHtml = ['<label for="clozeBlank%s.%s" class="accessibility-help">%s (%s):</label>' % (self.id, i, _("Cloze"), (i+1))]
+                inputHtml += ['<select id="clozeBlank%s.%s">' % (self.id, i),wordslista,'</select>']
                 html += inputHtml
                             
                 # Hidden span with correct answer
-                html += [
-                    '<span style="display: none;" ',
-                    'id="clozeAnswer%s.%s">%s</span>' % (
-                    self.id, i, self.ecrypt(missingWord))]
+                html += ['<span style="display:none" id="clozeAnswer%s.%s">%s</span>' % (self.id, i, self.ecrypt(missingWord))]
 
         # Score string
-        html += ['<div class="block">\n']
+        html += ['<div class="block iDevice_buttons">']
+        html += ['<p>']
         
-        """
-        html += [common.button('submit%s' % self.id,
-                    _(u"Check"),
-                    id='submit%s' % self.id,
-                    onclick="clozeSubmit('%s')" % self.id)
-                ]
-        """
-        html += [common.button('getScore%s' % self.id,
-                    _(u"Check"),
-                    id='getScore%s' % self.id,
-                    onclick="showClozeScore('%s',1)" % self.id)]
+        if preview:
+            html += [common.button('getScore%s' % self.id, _(u"Check"), id='getScore%s' % self.id, onclick="showClozeScore('%s',1)" % self.id)]
+        else:
+            html += [common.submitButton('getScore%s' % self.id, _(u"Check"), id='getScore%s' % self.id)]
         if feedbackId:
-            html += [common.feedbackButton('feedback%s' % self.id,
-                        _(u"Show Feedback"),
-                        onclick = "toggleClozeFeedback('%s')" % self.id)]
+            html += [common.feedbackButton('feedback%s' % self.id, _(u"Show/Hide Feedback"), onclick = "toggleClozeFeedback('%s')" % self.id)]
          
         codotras=self.ecrypt(self.field.otras)
         html += [common.hiddenField('clozeOtras%s' % self.id,codotras)]   
-        html += ['<input type="hidden" name="clozeFlag%s.strictMarking" id="clozeFlag%s.strictMarking" value="false"/>' % (self.id,self.id)]
-        html += ['<input type="hidden" name="clozeFlag%s.checkCaps" id="clozeFlag%s.checkCaps" value="false"/>' % (self.id,self.id)]
-        html += ['<input type="hidden" name="clozeFlag%s.instantMarking" id="clozeFlag%s.instantMarking" value="false"/>' % (self.id,self.id)]
-        html += ['<script type="text/javascript">var YOUR_SCORE_IS = "%s";</script>' % _('Your score is ')]
-        html += ['<div class="score" id="clozeScore%s"></div>' % self.id]
-        html += ['</div>\n']
-        return '\n'.join(html) + '</div>'
+        html += ['<input type="hidden" name="clozeFlag%s.strictMarking" id="clozeFlag%s.strictMarking" value="false" />' % (self.id,self.id)]
+        html += ['<input type="hidden" name="clozeFlag%s.checkCaps" id="clozeFlag%s.checkCaps" value="false" />' % (self.id,self.id)]
+        html += ['<input type="hidden" name="clozeFlag%s.instantMarking" id="clozeFlag%s.instantMarking" value="false" />' % (self.id,self.id)]
+        html += [common.javaScriptIsRequired()]
+        html += ['</p>']
+        html += ['</div>']
+        html += ['<div class="score" id="clozeScore%s"></div>' % self.id]        
+        html += ['</div>']
+        html += ['</form>']
+        return '\n'.join(html)
     
     def renderText(self):
         #         Shows the text with gaps for text file export
