@@ -170,8 +170,10 @@ class _Resource(Persistable):
         # If our Idevice has not already moved, cut ourselves off from it
         if self._idevice \
         and self._idevice.parentNode.package is not self._package:
-            self._idevice.userResources.remove(self)
+            if self in self._idevice.userResources:            
+                self._idevice.userResources.remove(self)   
             self._idevice = None
+            
 
     # Properties
     storageName = property(lambda self:self._storageName)
