@@ -7041,7 +7041,7 @@ msgstr "independiente"
 
 #: exe/jsui/scripts/lomvocab.js:1240
 msgid "blended"
-msgstr "asistencia mixta"
+msgstr "semipresencial"
 
 #: exe/jsui/scripts/lomvocab.js:1244
 msgid "presencial"

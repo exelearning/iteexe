@@ -1647,7 +1647,7 @@ translations = {
  "Game Won Message": "Mensaje al ganar el juego", 
  "Portugese Wikipedia Article": "Art\u00edculo de la wikipedia en portugu\u00e9s", 
  "Enter the available choices here. \nYou can add options by clicking the \"Add another option\" button. Delete options by \nclicking the red X next to the option.": "Introduzca aqu\u00ed las opciones disponibles. \nPuede a\u00f1adir opciones pulsando en el bot\u00f3n \"Agregar otra opci\u00f3n\". \nElimine opciones haciendo clic en la X que se encuentra a la derecha de cada opci\u00f3n.", 
- "blended": "asistencia mixta", 
+ "blended": "semipresencial", 
  "Insert\/Remove Bulleted List": "Lista desordenada", 
  "The changes you made will be lost if you navigate away from this page.": "Los cambios realizados se perder\u00e1n si sale de esta p\u00e1gina.", 
  "Chuvash ": "Chuvasho ", 
