@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-02-10 22:54+0100\nPO-Revision-Date: 2013-12-03 20:31+0100\nLast-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\nLanguage-Team: TAGEN ATA <localizacion@tagenata.net>\nLanguage: gl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-03-17 16:37+0100\nPO-Revision-Date: 2013-12-03 20:31+0100\nLast-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\nLanguage-Team: TAGEN ATA <localizacion@tagenata.net>\nLanguage: gl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Actividade despregable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Crear o caso pr\u00e1ctico. Elabore o a historia do caso. Un bo caso \u00e9 aquel \nque describe unha controversia ou define a escena describindo os personaxes \nque fan parte da situaci\u00f3n. Debe permitir ademais iniciar algunha acci\u00f3n \nno sentido de obter a resoluci\u00f3n da situaci\u00f3n. Debe permitir ademais iniciar algunha acci\u00f3n \nno sentido de obter a resoluci\u00f3n da situaci\u00f3n.", 
  "Xhosa ": "Xhosa ", 
@@ -683,7 +683,6 @@ translations = {
  "Pashto,Pushto ": "Pashto, Pushto ", 
  "Paste from Word": "Pegar desde Word", 
  "Right": "Dereita", 
- "Click here": "Prema aqui", 
  "eXe LaTeX Math Image": "Imaxe LaTeX Math para eXe", 
  "Where this object belongs in the main area x coordinate": "Coordenada x na \u00e1rea principal que lle corresponde a este obxecto", 
  "Select as many correct answer \noptions as required by clicking the check box beside the option.": "Seleccione tantas respostas correctas \ncomo sexa necesario premendo nas caixas de verificaci\u00f3n ao lado da opci\u00f3n.", 
@@ -1091,7 +1090,6 @@ translations = {
  "Flash Options": "Opci\u00f3ns Flash", 
  "JClic": "JClic", 
  "Objectives describe the expected outcomes of the learning and should\ndefine what the learners will be able to do when they have completed the\nlearning tasks.": "Os obxectivos describen os resultados que se espera que o alumno alcance e deber\u00edan\ndefinir o que ser\u00e1n capaces de facer os alumnos cando terminen as tarefas\nde aprendizaxe.", 
- "SCORM Options (1.2, 2004 and Agrega)": "Opci\u00f3ns SCORM (1.2, 2004 and Agrega)", 
  "Background Image": "Imaxe de fondo", 
  "Exported to %s": "Exportado a %s", 
  "Target Character Encoding": "Codificaci\u00f3n de caracteres do obxetivo", 

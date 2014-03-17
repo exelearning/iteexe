@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-02-10 22:54+0100\nPO-Revision-Date: 2006-07-28 15:37+1200\nLast-Translator: Jenny <jennylin_nz@yahoo.com>\nLanguage-Team: Fredrik Paulsson <frepa@frepa.org>\nLanguage: sv\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-03-17 16:37+0100\nPO-Revision-Date: 2006-07-28 15:37+1200\nLast-Translator: Jenny <jennylin_nz@yahoo.com>\nLanguage-Team: Fredrik Paulsson <frepa@frepa.org>\nLanguage: sv\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Type in the feedback that you want the \nstudent to see when selecting the particular question. If you don't complete\nthis box, eXe will automatically provide default feedback as follows: \n\"Correct answer\" as indicated by the selection for the correct answer; or \n\"Wrong answer\" for the other alternatives.": "Fyll i den feedback du vill ge eleven n\u00e4r denne v\u00e4ljer en viss fr\u00e5ga. Om du inte fyller i\n detta f\u00e4lt kommer eXe automatiskt att fylla i: \n\"R\u00e4tt svar\" som indikation p\u00e5 val av r\u00e4tt svar, respektive \n\"Fel svar\" f\u00f6r alla andra alternativ.", 
  "Hide": "G\u00f6m", 
  "Some emphasis": "Delfokus", 
@@ -23,7 +23,6 @@ translations = {
  "Right": "H\u00f6ger", 
  "OK": "OK", 
  "Display as:": "Visa som:", 
- "Click here": "Klicka h\u00e4r", 
  "True": "Sant", 
  "Correct!": "R\u00e4tt!", 
  "Topic": "\u00c4mne", 

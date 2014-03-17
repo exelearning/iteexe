@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-10 22:54+0100\n"
+"POT-Creation-Date: 2014-03-17 16:37+0100\n"
 "PO-Revision-Date: 2013-12-06 13:09+0100\n"
 "Last-Translator: Jesús Miguel Domínguez <miguelcaliban@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -56,18 +56,15 @@ msgstr "Applet Java"
 #: exe/engine/eleccionmultiplefpdidevice.py:62
 #: exe/engine/externalurlidevice.py:39 exe/engine/flashmovieidevice.py:40
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/freetextfpdidevice.py:40
-#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:540
-#: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:626
-#: exe/engine/idevicestore.py:649 exe/engine/idevicestore.py:705
-#: exe/engine/idevicestore.py:733 exe/engine/imagemagnifieridevice.py:42
+#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:529
+#: exe/engine/idevicestore.py:587 exe/engine/idevicestore.py:615
+#: exe/engine/idevicestore.py:638 exe/engine/idevicestore.py:694
+#: exe/engine/idevicestore.py:722 exe/engine/imagemagnifieridevice.py:42
 #: exe/engine/imagewithtextidevice.py:44 exe/engine/mathidevice.py:42
 #: exe/engine/multichoiceidevice.py:61 exe/engine/multiselectidevice.py:44
 #: exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:48
 #: exe/engine/reflectionfpdmodifidevice.py:47
-#: exe/engine/reflectionidevice.py:47 exe/engine/scormclozeidevice.py:47
-#: exe/engine/scormdropdownidevice.py:47
-#: exe/engine/scormmulticlozeidevice.py:47
-#: exe/engine/scormmultiselectidevice.py:42
+#: exe/engine/reflectionidevice.py:47
 #: exe/engine/seleccionmultiplefpdidevice.py:45
 #: exe/engine/truefalseidevice.py:145
 #: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
@@ -638,9 +635,7 @@ msgid "FPD - Cloze Activity"
 msgstr "FPD - Remplir les blancs"
 
 #: exe/engine/clozefpdidevice.py:52 exe/engine/clozeidevice.py:51
-#: exe/engine/clozelangfpdidevice.py:52 exe/engine/scormclozeidevice.py:48
-#: exe/engine/scormdropdownidevice.py:48
-#: exe/engine/scormmulticlozeidevice.py:48
+#: exe/engine/clozelangfpdidevice.py:52
 msgid ""
 "<p>Cloze exercises are texts or sentences where students must fill in "
 "missing words. They are often used for the following "
@@ -660,9 +655,7 @@ msgstr ""
 "grammaticales ou syntaxiques.</li> <li>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
-#: exe/engine/clozelangfpdidevice.py:64 exe/engine/scormclozeidevice.py:60
-#: exe/engine/scormdropdownidevice.py:60
-#: exe/engine/scormmulticlozeidevice.py:60
+#: exe/engine/clozelangfpdidevice.py:64
 msgid ""
 "<dl>  <dt>If your goal is to test understanding of core concepts or "
 "reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept"
@@ -716,17 +709,15 @@ msgstr ""
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
 #: exe/engine/hangmanidevice.py:60 exe/engine/listaidevice.py:129
 #: exe/engine/memorymatchidevice.py:55 exe/engine/placetheobjectsidevice.py:52
-#: exe/engine/scormclozeidevice.py:116 exe/engine/scormdropdownidevice.py:116
-#: exe/engine/scormmulticlozeidevice.py:116 exe/engine/sortidevice.py:53
-#: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:391
+#: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
+#: exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:475
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:498
 msgid "Instructions"
 msgstr "Consignes"
 
 #: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
-#: exe/engine/clozelangfpdidevice.py:121 exe/engine/scormclozeidevice.py:117
-#: exe/engine/scormmulticlozeidevice.py:117
+#: exe/engine/clozelangfpdidevice.py:121
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this "
@@ -737,8 +728,7 @@ msgstr ""
 "champ.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
-#: exe/engine/scormclozeidevice.py:123 exe/engine/scormdropdownidevice.py:123
-#: exe/engine/scormmulticlozeidevice.py:125
+#: exe/webui/element.py:1388 exe/webui/listablock.py:251
 msgid "Cloze"
 msgstr "remplir les blancs"
 
@@ -762,29 +752,23 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
 #: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
-#: exe/engine/field.py:3620 exe/engine/field.py:3668
-#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:589
-#: exe/engine/idevicestore.py:698 exe/engine/listaidevice.py:140
-#: exe/engine/listaidevice.py:295 exe/engine/scormclozeidevice.py:131
-#: exe/engine/scormclozeidevice.py:281 exe/engine/scormdropdownidevice.py:142
-#: exe/engine/scormdropdownidevice.py:292
-#: exe/engine/scormmulticlozeidevice.py:135
-#: exe/engine/scormmulticlozeidevice.py:285 exe/engine/truefalseidevice.py:50
+#: exe/engine/field.py:3619 exe/engine/field.py:3667
+#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:578
+#: exe/engine/idevicestore.py:687 exe/engine/listaidevice.py:140
+#: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:173
-#: exe/webui/clozefpdblock.py:174 exe/webui/clozefpdblock.py:192
-#: exe/webui/clozelangfpdblock.py:175 exe/webui/clozelangfpdblock.py:193
-#: exe/webui/common.py:392 exe/webui/editorelement.py:148
-#: exe/webui/editorpane.py:255 exe/webui/element.py:2395
-#: exe/webui/element.py:2509 exe/webui/listablock.py:452
-#: exe/webui/questionelement.py:104 exe/webui/reflectionfpdblock.py:142
+#: exe/webui/clozefpdblock.py:179 exe/webui/clozefpdblock.py:197
+#: exe/webui/clozelangfpdblock.py:179 exe/webui/clozelangfpdblock.py:197
+#: exe/webui/common.py:403 exe/webui/common.py:415
+#: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
+#: exe/webui/element.py:2319 exe/webui/element.py:2433
+#: exe/webui/listablock.py:441 exe/webui/questionelement.py:104
 msgid "Feedback"
 msgstr "\"Echo en retour\""
 
 #: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
 #: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
-#: exe/engine/scormclozeidevice.py:132 exe/engine/scormdropdownidevice.py:143
-#: exe/engine/scormmulticlozeidevice.py:136
 msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
@@ -794,29 +778,21 @@ msgstr ""
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
-#: exe/engine/scormclozeidevice.py:276 exe/engine/scormdropdownidevice.py:287
-#: exe/engine/scormmulticlozeidevice.py:280
 msgid "Instructions For Learners"
 msgstr "Consignes pour les apprenants"
 
 #: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
 #: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
-#: exe/engine/scormclozeidevice.py:277 exe/engine/scormdropdownidevice.py:288
-#: exe/engine/scormmulticlozeidevice.py:281
 msgid "Put instructions for learners here"
 msgstr "Donnez ici les consignes aux apprenants"
 
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
-#: exe/engine/clozelangfpdidevice.py:284 exe/engine/scormclozeidevice.py:278
-#: exe/engine/scormdropdownidevice.py:289
-#: exe/engine/scormmulticlozeidevice.py:282
+#: exe/engine/clozelangfpdidevice.py:284
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Lisez le paragraphe ci-dessous et saisissez les mots manquants"
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
-#: exe/engine/clozelangfpdidevice.py:296 exe/engine/scormclozeidevice.py:290
-#: exe/engine/scormdropdownidevice.py:301
-#: exe/engine/scormmulticlozeidevice.py:294
+#: exe/engine/clozelangfpdidevice.py:296
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Permet l'auto-remplissage lorsque l'utilisateur remplit les blancs."
 
@@ -824,8 +800,7 @@ msgstr "Permet l'auto-remplissage lorsque l'utilisateur remplit les blancs."
 msgid "Cloze Activity"
 msgstr "Activité \"remplir les blancs\""
 
-#: exe/engine/clozeidevice.py:123 exe/engine/scormclozeidevice.py:120
-#: exe/engine/scormmulticlozeidevice.py:122 exe/engine/truefalseidevice.py:394
+#: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Lisez le paragraphe ci-dessous et saisissez les mots manquants"
@@ -846,8 +821,7 @@ msgstr "Activités non-interactives"
 #: exe/engine/config.py:64 exe/engine/config.py:69 exe/engine/config.py:91
 #: exe/engine/config.py:92 exe/engine/config.py:93 exe/engine/config.py:95
 #: exe/engine/config.py:99 exe/engine/config.py:100 exe/engine/config.py:101
-#: exe/engine/config.py:102 exe/engine/config.py:104 exe/engine/config.py:105
-#: exe/engine/config.py:106 exe/engine/config.py:107 exe/engine/config.py:108
+#: exe/engine/config.py:102 exe/engine/config.py:104
 msgid "Interactive Activities"
 msgstr "Activités interactives"
 
@@ -914,7 +888,6 @@ msgstr "FPD - Activité Choix Multiple"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:63
 #: exe/engine/multichoiceidevice.py:62 exe/engine/multiselectidevice.py:45
-#: exe/engine/scormmultiselectidevice.py:43
 #: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid ""
 "Although more often used in formal testing \n"
@@ -953,7 +926,6 @@ msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:76
 #: exe/engine/multichoiceidevice.py:75 exe/engine/multiselectidevice.py:58
-#: exe/engine/scormmultiselectidevice.py:56
 #: exe/engine/seleccionmultiplefpdidevice.py:59
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
@@ -1044,9 +1016,9 @@ msgstr ""
 "indiqué pour la sélection de la bonne réponse ou \"mauvaise réponse\" "
 "pour la sélection des autres options."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3691
-#: exe/engine/field.py:3756 exe/engine/multichoiceidevice.py:131
-#: exe/engine/multiselectidevice.py:80 exe/engine/scormmultiselectidevice.py:78
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3690
+#: exe/engine/field.py:3755 exe/engine/multichoiceidevice.py:131
+#: exe/engine/multiselectidevice.py:80
 #: exe/engine/seleccionmultiplefpdidevice.py:82
 msgid "Question"
 msgstr "Question"
@@ -1201,7 +1173,7 @@ msgstr ""
 "Donnez un titre-légende au fichier MP3. Il apparaîtra également dans la "
 "barre de titres du lecteur."
 
-#: exe/engine/field.py:3027 exe/engine/field.py:3261
+#: exe/engine/field.py:3026 exe/engine/field.py:3260
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1231,7 +1203,7 @@ msgstr ""
 " des Majuscules\" ne l'est pas: <code>elephant</code> sera également "
 "accepté."
 
-#: exe/engine/field.py:3048 exe/engine/field.py:3282
+#: exe/engine/field.py:3047 exe/engine/field.py:3281
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
@@ -1239,7 +1211,7 @@ msgstr ""
 "<p> Si cette case est cochée, les réponses soumises avec des différences "
 "de majuscules seront traitées comme incorrectes.</p>"
 
-#: exe/engine/field.py:3053 exe/engine/field.py:3287
+#: exe/engine/field.py:3052 exe/engine/field.py:3286
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -1248,18 +1220,18 @@ msgstr ""
 "<p> Si cette case est cochée, chaque mot tapé sera validé au fur et à "
 "mesure de l'avancement de l'exercice et non pas à la fin de celui-ci.</p>"
 
-#: exe/engine/field.py:3091 exe/engine/field.py:3329
+#: exe/engine/field.py:3090 exe/engine/field.py:3328
 #: exe/engine/listaidevice.py:392
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr "Permet l'auto-remplissage lorsque l'utilisateur remplit les trous."
 
-#: exe/engine/field.py:3292
+#: exe/engine/field.py:3291
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr "<p>Si cette option est activée, le résultat sera montré</p>"
 
-#: exe/engine/field.py:3371 exe/engine/field.py:3415
+#: exe/engine/field.py:3370 exe/engine/field.py:3414
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1267,7 +1239,7 @@ msgstr ""
 "Ne sélectionnez que les fichiers .swf (Flash Objects) pour cet outil "
 "pédagogique."
 
-#: exe/engine/field.py:3435 exe/engine/field.py:3499
+#: exe/engine/field.py:3434 exe/engine/field.py:3498
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1275,11 +1247,11 @@ msgstr ""
 "Ne sélectionnez que les fichiers .flv (Flash vidéo Files) pour cet outil "
 "pédagogique."
 
-#: exe/engine/field.py:3511
+#: exe/engine/field.py:3510
 msgid "Type a discussion topic here."
 msgstr "Rédigez ici un sujet de discussion."
 
-#: exe/engine/field.py:3540
+#: exe/engine/field.py:3539
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
@@ -1290,7 +1262,7 @@ msgstr ""
 " champ en langage mathématique LATEX, dont un aperçu peut être demandé "
 "par le bouton &lt;Aperçu&gt; situé en-dessous."
 
-#: exe/engine/field.py:3548
+#: exe/engine/field.py:3547
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -1298,28 +1270,28 @@ msgstr ""
 "Cliquez sur le bouton 'Aperçu' pour convertir les symboles Latex en "
 "images."
 
-#: exe/engine/field.py:3616 exe/engine/field.py:3665
+#: exe/engine/field.py:3615 exe/engine/field.py:3664
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/webui/element.py:2119 exe/webui/element.py:2473
-#: exe/webui/element.py:3350 exe/webui/testoptionelement.py:106
+#: exe/webui/element.py:2045 exe/webui/element.py:2397
+#: exe/webui/testoptionelement.py:106
 msgid "Option"
 msgstr "Option"
 
-#: exe/engine/field.py:3694 exe/engine/field.py:3760
+#: exe/engine/field.py:3693 exe/engine/field.py:3759
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
-#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/element.py:2811
+#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/element.py:2717
 #: exe/webui/truefalseelement.py:146 exe/webui/truefalseelement.py:156
 msgid "Hint"
 msgstr "Indice"
 
-#: exe/engine/field.py:3782 exe/engine/field.py:3819 exe/webui/element.py:2301
+#: exe/engine/field.py:3781 exe/engine/field.py:3818 exe/webui/element.py:2225
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "Options"
 
-#: exe/engine/field.py:3842
+#: exe/engine/field.py:3841
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -1330,16 +1302,15 @@ msgstr ""
 "ambiguité. Evitez les intitulés négatifs qui peuvent prêter à contre-"
 "sens."
 
-#: exe/engine/field.py:3845 exe/engine/field.py:3926
+#: exe/engine/field.py:3844 exe/engine/field.py:3925
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
-#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2278
-#: exe/webui/element.py:3476
+#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2202
 msgid "Question:"
 msgstr "Question :"
 
-#: exe/engine/field.py:3850
+#: exe/engine/field.py:3849
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -1351,7 +1322,7 @@ msgstr ""
 " une autre option\". Supprimez les options en cliquant sur l'icône \"X\" "
 "rouge qui se trouve sur le coté de l'option."
 
-#: exe/engine/field.py:3854
+#: exe/engine/field.py:3853
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1359,7 +1330,7 @@ msgstr ""
 "Sélectionnez autant d'options correctes que nécessaire en cliquant sur la"
 " case à cocher près de chaque option. "
 
-#: exe/engine/field.py:3857
+#: exe/engine/field.py:3856
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -1367,7 +1338,7 @@ msgstr ""
 "Rédigez ici \"l'écho en retour\" que vous souhaitez renvoyer à "
 "l'apprenant."
 
-#: exe/engine/field.py:3859 exe/engine/field.py:3929
+#: exe/engine/field.py:3858 exe/engine/field.py:3928
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:200
@@ -1596,12 +1567,12 @@ msgstr ""
 "pratique consiste à toujours indiquer la taille du fichier dans la "
 "légende."
 
-#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:647
+#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:636
 msgid "Reading Activity 0.11"
 msgstr "Activité \"Lecture\" 0.11"
 
-#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:497
-#: exe/engine/idevicestore.py:538
+#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:486
+#: exe/engine/idevicestore.py:527
 msgid "Reading Activity"
 msgstr "Activité \"Lecture\""
 
@@ -1683,8 +1654,8 @@ msgstr "Texte du bouton de réinitialisation du niveau"
 msgid "Text for reset button"
 msgstr "Texte pour le bouton de réinitialisation"
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1458
-#: exe/webui/element.py:1727
+#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1414
+#: exe/webui/element.py:1662
 msgid "Restart"
 msgstr "Recommencer"
 
@@ -1748,7 +1719,7 @@ msgstr "Aide à montrer à l'utilisateur"
 msgid "Hint for Word"
 msgstr "Piste sur le mot"
 
-#: exe/engine/idevicestore.py:541
+#: exe/engine/idevicestore.py:530
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be "
@@ -1765,7 +1736,7 @@ msgstr ""
 "posant des questions sur ce texte ou par toute autre tâche permettant de "
 "s'assurer de la compréhension du texte en question.</p>"
 
-#: exe/engine/idevicestore.py:546
+#: exe/engine/idevicestore.py:535
 msgid ""
 "<p>Teachers should keep the following in mind when using this iDevice: "
 "</p><ol><li>Think about the number of different types of activity planned"
@@ -1793,11 +1764,11 @@ msgstr ""
 "que peut en retirer l'apprenant prime sur le temps et l'effort qu'il "
 "mettra à les réaliser.</li> </ol>"
 
-#: exe/engine/idevicestore.py:581 exe/engine/idevicestore.py:690
+#: exe/engine/idevicestore.py:570 exe/engine/idevicestore.py:679
 msgid "What to read"
 msgstr "Que faut-il lire ?"
 
-#: exe/engine/idevicestore.py:582 exe/engine/idevicestore.py:691
+#: exe/engine/idevicestore.py:571 exe/engine/idevicestore.py:680
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -1807,14 +1778,14 @@ msgstr ""
 "\"référence\". Ceux-ci dépendent des exigences de votre faculté ou "
 "département d'études."
 
-#: exe/engine/idevicestore.py:585 exe/engine/idevicestore.py:624
-#: exe/engine/idevicestore.py:632 exe/engine/idevicestore.py:694
-#: exe/engine/idevicestore.py:731 exe/engine/idevicestore.py:739
+#: exe/engine/idevicestore.py:574 exe/engine/idevicestore.py:613
+#: exe/engine/idevicestore.py:621 exe/engine/idevicestore.py:683
+#: exe/engine/idevicestore.py:720 exe/engine/idevicestore.py:728
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "Activité"
 
-#: exe/engine/idevicestore.py:586 exe/engine/idevicestore.py:695
+#: exe/engine/idevicestore.py:575 exe/engine/idevicestore.py:684
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -1823,7 +1794,7 @@ msgstr ""
 "doit entreprendre.\n"
 " Ceci permet à l'apprenant d'agir avec pertinence."
 
-#: exe/engine/idevicestore.py:590 exe/engine/idevicestore.py:699
+#: exe/engine/idevicestore.py:579 exe/engine/idevicestore.py:688
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a "
@@ -1835,13 +1806,13 @@ msgstr ""
 " analyse plus poussée, ou encore pour introduire un débat à partir d'un "
 "énoncé thématique."
 
-#: exe/engine/idevicestore.py:596 exe/engine/idevicestore.py:605
-#: exe/engine/idevicestore.py:703 exe/engine/idevicestore.py:712
+#: exe/engine/idevicestore.py:585 exe/engine/idevicestore.py:594
+#: exe/engine/idevicestore.py:692 exe/engine/idevicestore.py:701
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:202
 msgid "Objectives"
 msgstr "Objectifs"
 
-#: exe/engine/idevicestore.py:599 exe/engine/idevicestore.py:706
+#: exe/engine/idevicestore.py:588 exe/engine/idevicestore.py:695
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1851,17 +1822,17 @@ msgstr ""
 "l'apprentissage et définissent ce que les apprenants sont capables de "
 "réaliser lorsqu'ils ont achevé le parcours proposé."
 
-#: exe/engine/idevicestore.py:606 exe/engine/idevicestore.py:713
+#: exe/engine/idevicestore.py:595 exe/engine/idevicestore.py:702
 msgid "Type the learning objectives for this resource."
 msgstr "Rédigez les objectifs pédagogiques pour cette ressource."
 
-#: exe/engine/idevicestore.py:609 exe/engine/idevicestore.py:619
-#: exe/engine/idevicestore.py:716 exe/engine/idevicestore.py:726
+#: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:608
+#: exe/engine/idevicestore.py:705 exe/engine/idevicestore.py:715
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:216
 msgid "Preknowledge"
 msgstr "Pré-requis"
 
-#: exe/engine/idevicestore.py:612 exe/engine/idevicestore.py:719
+#: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:708
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples "
@@ -1878,7 +1849,7 @@ msgstr ""
 "<li> Les apprenants doivent être capables d'assembler des éléments de "
 "base.</li></ul>\n"
 
-#: exe/engine/idevicestore.py:620 exe/engine/idevicestore.py:727
+#: exe/engine/idevicestore.py:609 exe/engine/idevicestore.py:716
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -1886,7 +1857,7 @@ msgstr ""
 "Décrivez les pré-requis dont doit disposer l'apprenant pour réaliser cet "
 "apprentissage."
 
-#: exe/engine/idevicestore.py:627 exe/engine/idevicestore.py:734
+#: exe/engine/idevicestore.py:616 exe/engine/idevicestore.py:723
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any "
@@ -1898,11 +1869,11 @@ msgstr ""
 "réaliser et prenez en compte tous les paramètres qui peuvent aider ou "
 "embarrasser l'apprenant dans la réalisation de cette tâche. "
 
-#: exe/engine/idevicestore.py:633 exe/engine/idevicestore.py:740
+#: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
 msgid "Describe the tasks the learners should complete."
 msgstr "Décrivez les tâches que l'apprenant doit réaliser."
 
-#: exe/engine/idevicestore.py:650
+#: exe/engine/idevicestore.py:639
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This "
@@ -1919,7 +1890,7 @@ msgstr ""
 "lorsqu'il est opportun peut fournir des repères à l'apprenant sur la "
 "façon de procéder.</p> "
 
-#: exe/engine/idevicestore.py:655
+#: exe/engine/idevicestore.py:644
 msgid ""
 "Teachers should keep the following in mind when using this iDevice: "
 "<ol><li>Think about the number of different types of activity planned for"
@@ -2642,7 +2613,7 @@ msgstr ""
 msgid "A Step Ahead Text"
 msgstr "Texte de Pour en savoir plus"
 
-#: exe/engine/path.py:639
+#: exe/engine/path.py:642
 #, python-format
 msgid ""
 "%s\n"
@@ -2907,7 +2878,7 @@ msgstr ""
 "Décrivez comment les apprenants peuvent évaluer leur réalisation de "
 "l'exercice."
 
-#: exe/engine/resource.py:596
+#: exe/engine/resource.py:598
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
@@ -2962,7 +2933,7 @@ msgstr ""
 "signets et ajouter des consignes ou des informations complémentaires "
 "d'apprentissage."
 
-#: exe/engine/rssidevice.py:108 exe/engine/rssidevice.py:111
+#: exe/engine/rssidevice.py:110 exe/engine/rssidevice.py:113
 #, python-format
 msgid ""
 "Unable to load RSS feed from %s <br/>Please check the spelling and "
@@ -2970,107 +2941,6 @@ msgid ""
 msgstr ""
 "Impossible de télécharger le flux RSS depuis %s <br/>Vérifiez l'adresse "
 "et la connection et réessayez."
-
-#: exe/engine/scormclozeidevice.py:46
-msgid "SCORM Test Cloze"
-msgstr "Examen SCORM Remplir les blancs"
-
-#: exe/engine/scormclozeidevice.py:124
-msgid ""
-"<p>Enter the text for the cloze excercise in the editor window.\n"
-"               If you copy text from another source, you should use the "
-"button 'Paste as plain text'\n"
-"               to paste it into the editor window. To select words to "
-"hide, mark them and click on the \n"
-"               Hide/Show Word button below.\n"
-"               Hint: The answers may contain spaces. If you want to "
-"provide the answer options to the learners,\n"
-"               sort them alphabetically and write them at the beginning "
-"or the end of the cloze excercise.</p>"
-msgstr ""
-"<p>Enter le texte de l'exercice de remplir les blancs dans la fenêtre de "
-"l'éditeur.\n"
-"                Si vous copiez un texte à partir d'une autre source, vous"
-" devez utiliser le bouton 'copier en texte plat'\n"
-"                Pour le coller dans la fenêtre de l'éditeur. Pour "
-"sélectionner les mots à cacher, marquez-les et cliquer sur \n"
-"                le bouton 'Cacher/Montrer' d'en bas.\n"
-"                Aide: Les réponses puevent contenir des espaces. Si vous "
-"désirez offrir les options de réponses aux étudiants,\n"
-"               classez-les par ordre alphabétique et écrivez-les au début"
-" ou à la fin de l'exercice de remplir les blancs.</p>"
-
-#: exe/engine/scormdropdownidevice.py:46
-msgid "SCORM Test Dropdown"
-msgstr "Examen SCORM de sélection par choix"
-
-#: exe/engine/scormdropdownidevice.py:119
-msgid "Provide instruction how to complete the exercise or take the default text."
-msgstr ""
-"Donnez des instructions pour compléter l'exercice ou acceptez le texte "
-"prédéterminé."
-
-#: exe/engine/scormdropdownidevice.py:121
-msgid "Choose the correct answers in the paragraph below."
-msgstr "Choisissez les réponses correctes dans le paragraphe ci-dessous."
-
-#: exe/engine/scormdropdownidevice.py:124
-msgid ""
-"<p>To create a gap with answer options, write the correct answer and then"
-" separated by\n"
-"                '|' the wrong answers:\n"
-"                true|false|false|false ...\n"
-"                Mark all answer options and click on the 'Hide/Show Word'"
-" button below.\n"
-"                Hint: answers may contain spaces.</p>"
-msgstr ""
-"<p>Pour introduire un blanc avec des options de réponse, écrivez la "
-"réponse correcte et ensuite, séparé par\n"
-"                 '|', les réponses erronées:\n"
-"                 vrai|fauxfaux|faux...\n"
-"                 Marquez toutes les options de réponse et cliquer sur le "
-"bouton 'Cacher/Montrer mot' ci-dessous.\n"
-"                 Conseil: les réponses peuvent contenir des blancs.</p>"
-
-#: exe/engine/scormmulticlozeidevice.py:46
-msgid "SCORM Test Cloze (multiple options)"
-msgstr "Examen SCORM Remplir les blancs (avec options multiples)"
-
-#: exe/engine/scormmulticlozeidevice.py:126
-msgid ""
-"<p>Enter the text for the cloze exercise in the editor window.\n"
-"               If you copy text from another source, you should use the "
-"button 'Paste as plain text'\n"
-"               to paste it into the editor window. To select words to "
-"hide, mark them and click on the \n"
-"               'Hide/Show Word' button below.\n"
-"               To create a gap with multiple answer options, write the "
-"answers separated by '|'.\n"
-"               Mark all answer options and click on the 'Hide/Show Word' "
-"button below.\n"
-"               Hint: The answers may contain spaces. If you want to "
-"provide the answer options to the learners,\n"
-"               sort them alphabetically and write them at the beginning "
-"or the end of the cloze exercise.</p>"
-msgstr ""
-"\"<p>Entrez le texte de l'exercice à trous dans la fenêtre d'édition.\n"
-"               Si vous copiez le texte à partir d'une autre source, vous "
-"devez utiliser le bouton 'Copier en texte plat'\n"
-"               pour le coller dans la fenêtre d'édition. Pour "
-"selectionner les mots à cacher, marquez-les et cliquez sur le\n"
-"               bouton 'Cacher/Montrer mot' du bas.\n"
-"               Pour créer un trou avec de multiples options de réponse, "
-"écrivez les réponses separées par '|'.\n"
-"               Marquez toutes les options de réponses et cliquer sur le "
-"bouton 'Cacher/Montrer mot' du bas.\n"
-"               Astuce: les réponses peuvent contenir des espaces. Si vous"
-" souhaitez offrir les options de réponse à vos apprenants\n"
-"               classez-les par ordre alphabétique et écrivez-les au début"
-" ou à la fin de l'exercice à trous.</p>"
-
-#: exe/engine/scormmultiselectidevice.py:41
-msgid "SCORM Test Multiple Choice"
-msgstr "Test SCORM à choix multiple"
 
 #: exe/engine/seleccionmultiplefpdidevice.py:44
 msgid "FPD - Multi Select Activity"
@@ -3132,7 +3002,8 @@ msgstr "Effet visuel pour montrer une réponse incorrecte"
 msgid "Text for Check Button"
 msgstr "Texte pour le bouton de vérification"
 
-#: exe/engine/sortidevice.py:61 exe/webui/listablock.py:275
+#: exe/engine/sortidevice.py:61 exe/webui/listablock.py:263
+#: exe/webui/listablock.py:265
 msgid "Check"
 msgstr "Vérifier"
 
@@ -3552,8 +3423,8 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "Format d'exportation non établi"
 
-#: exe/export/epub3export.py:569 exe/export/imsexport.py:514
-#: exe/export/scormexport.py:699 exe/export/websiteexport.py:94
+#: exe/export/epub3export.py:569 exe/export/imsexport.py:510
+#: exe/export/scormexport.py:727 exe/export/websiteexport.py:96
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3662,19 +3533,19 @@ msgstr "Régi par la licence"
 msgid "Local Version"
 msgstr "Version locale"
 
-#: exe/export/scormpage.py:153 exe/export/websitepage.py:323
+#: exe/export/scormpage.py:152 exe/export/websitepage.py:321
 msgid "Previous"
 msgstr "Précédent"
 
-#: exe/export/scormpage.py:154 exe/export/websitepage.py:329
+#: exe/export/scormpage.py:153 exe/export/websitepage.py:327
 msgid "Next"
 msgstr "Suivant"
 
-#: exe/export/singlepage.py:194
+#: exe/export/singlepage.py:199
 msgid "You can close this window"
 msgstr "VOus pouvez fermer cette fenêtre"
 
-#: exe/export/websitepage.py:135
+#: exe/export/websitepage.py:134
 msgid "Skip navigation"
 msgstr "Ignorer la navigation"
 
@@ -3910,8 +3781,8 @@ msgstr "Échec de la tentative de sauvegarde des propriétés"
 msgid "Show Image"
 msgstr "Montrer l'image"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:169 exe/webui/element.py:670
-#: exe/webui/element.py:1084
+#: exe/jsui/scripts/app/controller/MainTab.js:169 exe/webui/element.py:661
+#: exe/webui/element.py:1075
 msgid "Select an image"
 msgstr "Choisissez une image"
 
@@ -3936,8 +3807,8 @@ msgstr "Galerie d'images"
 #: exe/jsui/scripts/app/controller/Toolbar.js:682
 #: exe/jsui/scripts/app/controller/Toolbar.js:699
 #: exe/jsui/scripts/app/controller/Toolbar.js:728
-#: exe/jsui/scripts/app/controller/Toolbar.js:864
-#: exe/jsui/scripts/app/controller/Toolbar.js:943
+#: exe/jsui/scripts/app/controller/Toolbar.js:874
+#: exe/jsui/scripts/app/controller/Toolbar.js:976
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:141
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:139
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:321
@@ -4033,8 +3904,8 @@ msgstr "Insertion du dossier en cours: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:445
 #: exe/jsui/scripts/app/controller/Toolbar.js:466
-#: exe/jsui/scripts/app/controller/Toolbar.js:863
-#: exe/jsui/scripts/app/controller/Toolbar.js:942
+#: exe/jsui/scripts/app/controller/Toolbar.js:873
+#: exe/jsui/scripts/app/controller/Toolbar.js:975
 msgid "eXe Package Files"
 msgstr "Fichiers du paquet eXe"
 
@@ -4152,23 +4023,23 @@ msgstr "Valeur invalide passé vers paquet d'exportation"
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/ZipFile"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:835
+#: exe/jsui/scripts/app/controller/Toolbar.js:845
 msgid "Loading package..."
 msgstr "Chargement du paquet en cours..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:852
+#: exe/jsui/scripts/app/controller/Toolbar.js:862
 msgid "Open File"
 msgstr "Ouvrez le dossier"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:857
+#: exe/jsui/scripts/app/controller/Toolbar.js:867
 msgid "Loading package: {filename}"
 msgstr "Chargement en cours du paquet: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:876
+#: exe/jsui/scripts/app/controller/Toolbar.js:886
 msgid "Save Package first?"
 msgstr "Sauvegarder le paquet au préalable?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:877
+#: exe/jsui/scripts/app/controller/Toolbar.js:887
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
@@ -4176,15 +4047,15 @@ msgstr ""
 "Le paquet actuel a été modifié et n'a pas encore été enregistré. "
 "Souhaitez-vous le sauvegarder?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:903
+#: exe/jsui/scripts/app/controller/Toolbar.js:936
 msgid "Saving package to: {filename}"
 msgstr "Sauvegarde en cours du paquet sous: {filename} "
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:922
+#: exe/jsui/scripts/app/controller/Toolbar.js:955
 msgid "Save file"
 msgstr "Sauvegardez le fichier"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:928
+#: exe/jsui/scripts/app/controller/Toolbar.js:961
 msgid "Saving package..."
 msgstr "Sauvegarde du paquet en cours"
 
@@ -4269,7 +4140,7 @@ msgstr "Ouvrir"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:77
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:183
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:121
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:123
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:197
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:227
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:580
@@ -4531,15 +4402,15 @@ msgstr ""
 "Si cette option est activée, le composant exportant sera éditable avec "
 "eXeLearning."
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:74
-msgid "SCORM Options (1.2, 2004 and Agrega)"
-msgstr "Options SCORMS (1.2, 2004 et Agrega)"
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:76
+msgid "SCORM Options (1.2 and 2004)"
+msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:82
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:84
 msgid "Add Previous/Next links within SCOs?"
 msgstr "Ajouter lien Précédent/Suivant au sein de SCOs?"
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:86
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:88
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO. The LMS will also still add this kind "
@@ -4550,7 +4421,7 @@ msgstr ""
 "une extension non-standard à SCORM 1.2 et ne fonctionne qu'avec certaines"
 " versions de la plate-forme Moodle."
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:89
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:91
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO.  This requires a non-standard extension"
@@ -4561,12 +4432,12 @@ msgstr ""
 "une extension non-standard à SCORM 1.2 et ne fonctionne qu'avec certaines"
 " versions de la plate-forme Moodle."
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:95
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:97
 msgid "Include Single Page export file?"
 msgstr "Ajouter le dossier d'exportation en une seule page?"
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:99
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:102
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:101
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:104
 msgid ""
 "Checking this option the exported SCORM file will include a file named "
 "\"singlepage_index.html\" containing the result of exporting this eXe "
@@ -4576,12 +4447,12 @@ msgstr ""
 "appelé \"singlepage_index.html\" contenant le résultat de l'exportation "
 "du paquet eXe en une seule page."
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:108
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:110
 msgid "Include Web Site export files?"
 msgstr "Inclure les dossier d'exportation du site?"
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:112
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:115
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:114
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:117
 msgid ""
 "Checking this option the exported SCORM file will include the result of "
 "exporting this eXe package as Web Site. All the html files will have the "
@@ -5366,6 +5237,7 @@ msgid "New"
 msgstr "Nouveau"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:105
+#: exe/webui/fileattachblock.py:158
 msgid "New Window"
 msgstr "Nouvelle fenêtre"
 
@@ -5463,7 +5335,7 @@ msgid "Resources Report"
 msgstr "Rapport sur les ressources"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379 exe/webui/editorpane.py:268
-#: exe/webui/element.py:2028
+#: exe/webui/element.py:1954
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:11
@@ -7215,12 +7087,12 @@ msgstr "Accepter URL"
 msgid "Applet Code:"
 msgstr "Code de l'applet :"
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:959
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:950
 msgid "Filename:"
 msgstr "Nom de fichier :"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
-#: exe/webui/element.py:969
+#: exe/webui/element.py:960
 msgid "Select a file"
 msgstr "Sélectionnez un fichier"
 
@@ -7269,11 +7141,10 @@ msgstr "Aide pédagogique"
 msgid "Information"
 msgstr "Information"
 
-#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:490
-#: exe/webui/common.py:491 exe/webui/editorpane.py:364
+#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:513
+#: exe/webui/common.py:514 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
-#: exe/webui/editorpane.py:386 exe/webui/element.py:2807
-#: exe/webui/element.py:2808 exe/webui/truefalseelement.py:152
+#: exe/webui/editorpane.py:386 exe/webui/truefalseelement.py:152
 #: exe/webui/truefalseelement.py:153
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
@@ -7292,15 +7163,15 @@ msgstr "ERREUR: Block.renderViewContent appelé directement "
 msgid "Edit"
 msgstr "Editer"
 
-#: exe/webui/casestudyblock.py:113 exe/webui/ejercicioresueltofpdblock.py:118
+#: exe/webui/casestudyblock.py:113 exe/webui/ejercicioresueltofpdblock.py:122
 msgid "Add another activity"
 msgstr "Ajouter une autre activité"
 
-#: exe/webui/casopracticofpdblock.py:64
+#: exe/webui/casopracticofpdblock.py:68
 msgid "Situation"
 msgstr "Cas d'étude"
 
-#: exe/webui/citasparapensarfpdblock.py:64
+#: exe/webui/citasparapensarfpdblock.py:67
 msgid "Quotation"
 msgstr "Citation pour réfléchir"
 
@@ -7357,46 +7228,57 @@ msgstr "Ajouter une aire cliquable"
 msgid "Delete Clickable Area"
 msgstr "Effacer une aire où il est possible de cliquer"
 
-#: exe/webui/clozefpdblock.py:104 exe/webui/eleccionmultiplefpdblock.py:110
-#: exe/webui/seleccionmultiplefpdblock.py:90
-#: exe/webui/verdaderofalsofpdblock.py:109
+#: exe/webui/clozefpdblock.py:108 exe/webui/eleccionmultiplefpdblock.py:114
+#: exe/webui/seleccionmultiplefpdblock.py:91
+#: exe/webui/verdaderofalsofpdblock.py:110
 msgid "Now it's your turn"
 msgstr "À vous!"
 
-#: exe/webui/clozefpdblock.py:171 exe/webui/clozelangfpdblock.py:172
-#: exe/webui/element.py:2390 exe/webui/element.py:2837
-#: exe/webui/questionelement.py:152
+#: exe/webui/clozefpdblock.py:176 exe/webui/clozelangfpdblock.py:176
+#: exe/webui/element.py:2314 exe/webui/element.py:2742
 msgid "Solution"
 msgstr "Solution"
 
-#: exe/webui/clozelangfpdblock.py:105
+#: exe/webui/clozelangfpdblock.py:109
 msgid "Now It's Your Turn"
 msgstr "À vous!"
 
-#: exe/webui/common.py:187
+#: exe/webui/common.py:75
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Enable JavaScript"
+msgstr "Activer le JavaScript"
+
+#: exe/webui/common.py:190
 msgid "Show"
 msgstr "Montrer"
 
-#: exe/webui/common.py:188 exe/webui/reflectionblock.py:120
-#: exe/webui/reflectionfpdblock.py:128
+#: exe/webui/common.py:191
 msgid "Hide"
 msgstr "Cacher"
 
-#: exe/webui/common.py:189
+#: exe/webui/common.py:192 exe/webui/common.py:400 exe/webui/element.py:2290
+msgid "Show Feedback"
+msgstr "Montrer l'écho en retour"
+
+#: exe/webui/common.py:193
+msgid "Hide Feedback"
+msgstr "Cacher l'écho en retour"
+
+#: exe/webui/common.py:194
 msgid "Menu"
 msgstr "Menu"
 
-#: exe/webui/common.py:210 exe/webui/editorpage.py:233
+#: exe/webui/common.py:215 exe/webui/editorpage.py:233
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: éditeur XHTML pour l'e-apprentissage ou l'e-education"
 
-#: exe/webui/common.py:481 exe/webui/common.py:485
+#: exe/webui/common.py:504 exe/webui/common.py:508
 msgid "Click for completion instructions"
 msgstr "Cliquer pour obtenir les consignes de réalisation de la tâche"
 
-#: exe/webui/debesconocerfpdblock.py:64
+#: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
 msgstr "À savoir"
 
@@ -7444,7 +7326,7 @@ msgstr "à droite"
 msgid "Align:"
 msgstr "Mise en page :"
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1819
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1745
 msgid "Select Flash Object"
 msgstr "Sélectionnez un fichier Flash (.swf)"
 
@@ -7452,7 +7334,7 @@ msgstr "Sélectionnez un fichier Flash (.swf)"
 msgid "Select MP3 file"
 msgstr "Sélectionnez un fichier MP3"
 
-#: exe/webui/editorelement.py:311 exe/webui/element.py:763
+#: exe/webui/editorelement.py:311 exe/webui/element.py:754
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
@@ -7613,189 +7495,170 @@ msgstr "Icônes"
 msgid "Info"
 msgstr "Info"
 
-#: exe/webui/editorpane.py:430 exe/webui/element.py:1453
-#: exe/webui/element.py:1722
+#: exe/webui/editorpane.py:430 exe/webui/element.py:1411
+#: exe/webui/element.py:1413 exe/webui/element.py:1661
 msgid "Submit"
 msgstr "Valider "
 
-#: exe/webui/ejercicioresueltofpdblock.py:110
+#: exe/webui/ejercicioresueltofpdblock.py:114
 msgid "Translation"
 msgstr "Traduction"
 
-#: exe/webui/eleccionmultiplefpdblock.py:95 exe/webui/multichoiceblock.py:95
+#: exe/webui/eleccionmultiplefpdblock.py:98 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
 msgstr "SVP : sélectionnez une réponse correcte pour chaque question."
 
-#: exe/webui/eleccionmultiplefpdblock.py:120 exe/webui/multichoiceblock.py:113
-#: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:118
+#: exe/webui/eleccionmultiplefpdblock.py:124 exe/webui/multichoiceblock.py:113
+#: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:119
 msgid "Add another question"
 msgstr "Ajouter une autre question"
 
-#: exe/webui/element.py:71
+#: exe/webui/element.py:70
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
 msgstr "ERREUR Element.process appelé directement par la classe %s"
 
-#: exe/webui/element.py:80
+#: exe/webui/element.py:79
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "ERREUR Element.renderEdit appelé directement par la classe %s"
 
-#: exe/webui/element.py:97
+#: exe/webui/element.py:96
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "ERREUR Element.renderView appelé directement par la classe %s"
 
-#: exe/webui/element.py:647 exe/webui/element.py:1068
+#: exe/webui/element.py:638 exe/webui/element.py:1059
 msgid "Add Image"
 msgstr "Ajouter une image"
 
-#: exe/webui/element.py:673 exe/webui/element.py:1090 exe/webui/element.py:1823
+#: exe/webui/element.py:664 exe/webui/element.py:1081 exe/webui/element.py:1749
 msgid "Display as:"
 msgstr "Afficher comme :"
 
-#: exe/webui/element.py:687 exe/webui/element.py:1106
+#: exe/webui/element.py:671
+msgid "by"
+msgstr ""
+
+#: exe/webui/element.py:678 exe/webui/element.py:1097
 msgid "blank for original size"
 msgstr "Laissez vide pour affichage à la taille d'origine"
 
-#: exe/webui/element.py:757
+#: exe/webui/element.py:748
 msgid "Select an MP3"
 msgstr "Sélectionnez un fichier MP3"
 
-#: exe/webui/element.py:1262 exe/webui/element.py:1597
-#: exe/webui/element.py:2935 exe/webui/element.py:3176
-#: exe/webui/element.py:3755
+#: exe/webui/element.py:1227 exe/webui/element.py:1546
 msgid "Cloze Text"
 msgstr "Texte à blancs"
 
-#: exe/webui/element.py:1270 exe/webui/element.py:1605
-#: exe/webui/element.py:2943 exe/webui/element.py:3184
-#: exe/webui/element.py:3763 exe/webui/listablock.py:173
+#: exe/webui/element.py:1235 exe/webui/element.py:1554
+#: exe/webui/listablock.py:173
 msgid "Hide/Show Word"
 msgstr "Cacher/Montrer le mot"
 
-#: exe/webui/element.py:1275 exe/webui/element.py:1610
-#: exe/webui/element.py:2951
+#: exe/webui/element.py:1240 exe/webui/element.py:1559
 msgid "Strict Marking?"
 msgstr "Marquage strict ?"
 
-#: exe/webui/element.py:1280 exe/webui/element.py:1615
-#: exe/webui/element.py:2956 exe/webui/element.py:3778
+#: exe/webui/element.py:1245 exe/webui/element.py:1564
 msgid "Check Caps?"
 msgstr "Valider les Majuscules ?"
 
-#: exe/webui/element.py:1285 exe/webui/element.py:1620
+#: exe/webui/element.py:1250 exe/webui/element.py:1569
 msgid "Instant Marking?"
 msgstr "Ecriture instantanée ?"
 
-#: exe/webui/element.py:1387 exe/webui/element.py:1655
-#: exe/webui/listablock.py:288 exe/webui/quiztestblock.py:224
+#: exe/webui/element.py:1354 exe/webui/element.py:1604
+#: exe/webui/listablock.py:215 exe/webui/quiztestblock.py:224
 #: exe/webui/quiztestblock.py:319 exe/webui/quiztestblock.py:369
 msgid "Your score is "
 msgstr "Votre score est"
 
-#: exe/webui/element.py:1438 exe/webui/element.py:1707
+#: exe/webui/element.py:1401 exe/webui/element.py:1652
 msgid "Get score"
 msgstr "Obtenir le résultat"
 
-#: exe/webui/element.py:1444 exe/webui/element.py:1713
+#: exe/webui/element.py:1404 exe/webui/element.py:1655
+#: exe/webui/listablock.py:267
 msgid "Show/Hide Feedback"
 msgstr "Montrer/Cacher l'écho"
 
-#: exe/webui/element.py:1449 exe/webui/element.py:1718
+#: exe/webui/element.py:1407 exe/webui/element.py:1658
 msgid "Show/Clear Answers"
 msgstr "Montrer/Effacer les réponses"
 
-#: exe/webui/element.py:1465 exe/webui/element.py:1734
+#: exe/webui/element.py:1417 exe/webui/element.py:1665
 msgid "Show Answers"
 msgstr "Montrer les réponses"
 
-#: exe/webui/element.py:1500 exe/webui/element.py:1769
-#: exe/webui/element.py:3081 exe/webui/element.py:3290
-#: exe/webui/element.py:3914 exe/webui/listablock.py:312
+#: exe/webui/element.py:1449 exe/webui/element.py:1695
+#: exe/webui/listablock.py:301
 msgid "Answers"
 msgstr "Réponses"
 
-#: exe/webui/element.py:1625
+#: exe/webui/element.py:1574
 msgid "Show Score?"
 msgstr "Montrer le score?"
 
-#: exe/webui/element.py:1885
+#: exe/webui/element.py:1811
 msgid "Please select a .flv file."
 msgstr "SVP : sélectionnez un fichier.flv."
 
-#: exe/webui/element.py:1901
+#: exe/webui/element.py:1827
 msgid "Select a flash video"
 msgstr "Sélectionnez une vidéo Flash (.flv)"
 
-#: exe/webui/element.py:2010
+#: exe/webui/element.py:1936
 msgid "text"
 msgstr "texte"
 
-#: exe/webui/element.py:2011
+#: exe/webui/element.py:1937
 msgid "newline"
 msgstr "nouvelle ligne"
 
-#: exe/webui/element.py:2014
+#: exe/webui/element.py:1940
 msgid "Select a font size: "
 msgstr "Choisir une taille de police :"
 
-#: exe/webui/element.py:2124 exe/webui/element.py:2478
-#: exe/webui/element.py:2600 exe/webui/element.py:2627
+#: exe/webui/element.py:2050 exe/webui/element.py:2402
+#: exe/webui/element.py:2520 exe/webui/element.py:2547
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "Option correcte"
 
-#: exe/webui/element.py:2152 exe/webui/element.py:2506
-#: exe/webui/element.py:3362 exe/webui/testoptionelement.py:139
+#: exe/webui/element.py:2078 exe/webui/element.py:2430
+#: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "Supprimer l'option"
 
-#: exe/webui/element.py:2188 exe/webui/element.py:2198
+#: exe/webui/element.py:2112 exe/webui/element.py:2122
 #: exe/webui/stylemanagerpage.py:184 exe/webui/stylemanagerpage.py:202
 msgid "Correct"
 msgstr "Correct"
 
-#: exe/webui/element.py:2190 exe/webui/element.py:2200
+#: exe/webui/element.py:2114 exe/webui/element.py:2124
 msgid "Incorrect"
 msgstr "Incorrect"
 
-#: exe/webui/element.py:2283 exe/webui/element.py:2712
+#: exe/webui/element.py:2207 exe/webui/element.py:2632
 #: exe/webui/questionelement.py:111 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "Supprimer la question"
 
-#: exe/webui/element.py:2316 exe/webui/element.py:3508
-#: exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2240 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "Ajouter une autre option"
 
-#: exe/webui/element.py:2366 exe/webui/listablock.py:280
-#: exe/webui/questionelement.py:130
-msgid "Show Feedback"
-msgstr "Montrer l'écho en retour"
-
-#: exe/webui/element.py:2602 exe/webui/element.py:2629
+#: exe/webui/element.py:2522 exe/webui/element.py:2549
 msgid "Wrong"
 msgstr "Incorrect"
 
-#: exe/webui/element.py:2727
+#: exe/webui/element.py:2647
 msgid "Add another option"
 msgstr "Ajouter une autre option"
-
-#: exe/webui/element.py:2931 exe/webui/element.py:3751
-msgid ""
-"<p>If this option is set, all gaps will have the length of the longest "
-"answer option</p>"
-msgstr ""
-"<p>Si cette option est activée, tous les blancs auront la largeur de la "
-"réponse la plus longue</p>"
-
-#: exe/webui/element.py:2961 exe/webui/element.py:3783
-msgid "Use fixed length?"
-msgstr "Utiliser une largeur fixe?"
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
@@ -7999,7 +7862,7 @@ msgid "Create / Trim Pairs"
 msgstr "Crér / Éliminer paires"
 
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
-#: exe/webui/seleccionmultiplefpdblock.py:99
+#: exe/webui/seleccionmultiplefpdblock.py:100
 msgid "Add another Question"
 msgstr "Ajouter une autre question"
 
@@ -8007,23 +7870,23 @@ msgstr "Ajouter une autre question"
 msgid "Show/Hide"
 msgstr "Montrer/Cacher"
 
-#: exe/webui/notablock.py:123
+#: exe/webui/notablock.py:119
 msgid "Delete all notes"
 msgstr "Effacer toutes les notes"
 
-#: exe/webui/notablock.py:123
+#: exe/webui/notablock.py:119
 msgid "Would you delete all notes?"
 msgstr "Souhaitez-vous éliminez  toutes les notes?"
 
-#: exe/webui/orientacionesalumnadofpdblock.py:64
+#: exe/webui/orientacionesalumnadofpdblock.py:68
 msgid "Guidelines for Students"
 msgstr "Conseils pour les élèves"
 
-#: exe/webui/orientacionestutoriafpdblock.py:64
+#: exe/webui/orientacionestutoriafpdblock.py:68
 msgid "Guidelines for the Teacher"
 msgstr "Conseils pour les professeurs"
 
-#: exe/webui/parasabermasfpdblock.py:64
+#: exe/webui/parasabermasfpdblock.py:68
 msgid "A Step Ahead"
 msgstr "Pour en savoir plus"
 
@@ -8055,10 +7918,6 @@ msgstr "Échec de l'obtention de préférences"
 msgid "Failed to save preferences"
 msgstr "Échec de la sauvegarde de préférences"
 
-#: exe/webui/questionelement.py:135
-msgid "Hide Feedback"
-msgstr "Cacher l'écho en retour"
-
 #: exe/webui/quitpage.py:44
 msgid "eXe Closed"
 msgstr "eXe fermé"
@@ -8083,15 +7942,11 @@ msgstr "Valider les réponses"
 msgid "Submit Answer"
 msgstr "Valider la réponse"
 
-#: exe/webui/recomendacionfpdblock.py:64
+#: exe/webui/recomendacionfpdblock.py:68
 msgid "A Piece of Advice"
 msgstr "Conseil"
 
-#: exe/webui/reflectionblock.py:116 exe/webui/reflectionfpdblock.py:124
-msgid "Click here"
-msgstr "Cliquer ici"
-
-#: exe/webui/reflectionfpdblock.py:86 exe/webui/reflectionfpdmodifblock.py:84
+#: exe/webui/reflectionfpdblock.py:88 exe/webui/reflectionfpdmodifblock.py:87
 msgid "Think About It"
 msgstr "Réfléchissez-y"
 
@@ -9776,10 +9631,6 @@ msgid "Start Time"
 msgstr "Début"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-msgid "Enable JavaScript"
-msgstr "Activer le JavaScript"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "No Correction"
 msgstr "Pas de correction"
 
@@ -11126,4 +10977,156 @@ msgstr ""
 
 #~ msgid "HTML5 audio (ogg)"
 #~ msgstr "HTML5 audio (ogg)"
+
+#~ msgid "SCORM Test Cloze"
+#~ msgstr "Examen SCORM Remplir les blancs"
+
+#~ msgid ""
+#~ "<p>Enter the text for the cloze excercise in the editor window.\n"
+#~ "               If you copy text from "
+#~ "another source, you should use the "
+#~ "button 'Paste as plain text'\n"
+#~ "               to paste it into the "
+#~ "editor window. To select words to "
+#~ "hide, mark them and click on the"
+#~ " \n"
+#~ "               Hide/Show Word button below.\n"
+#~ "               Hint: The answers may "
+#~ "contain spaces. If you want to "
+#~ "provide the answer options to the "
+#~ "learners,\n"
+#~ "               sort them alphabetically and"
+#~ " write them at the beginning or "
+#~ "the end of the cloze excercise.</p>"
+#~ msgstr ""
+#~ "<p>Enter le texte de l'exercice de "
+#~ "remplir les blancs dans la fenêtre "
+#~ "de l'éditeur.\n"
+#~ "                Si vous copiez un texte"
+#~ " à partir d'une autre source, vous"
+#~ " devez utiliser le bouton 'copier en"
+#~ " texte plat'\n"
+#~ "                Pour le coller dans la"
+#~ " fenêtre de l'éditeur. Pour sélectionner"
+#~ " les mots à cacher, marquez-les "
+#~ "et cliquer sur \n"
+#~ "                le bouton 'Cacher/Montrer' d'en bas.\n"
+#~ "                Aide: Les réponses puevent "
+#~ "contenir des espaces. Si vous désirez"
+#~ " offrir les options de réponses aux"
+#~ " étudiants,\n"
+#~ "               classez-les par ordre "
+#~ "alphabétique et écrivez-les au début "
+#~ "ou à la fin de l'exercice de "
+#~ "remplir les blancs.</p>"
+
+#~ msgid "SCORM Test Dropdown"
+#~ msgstr "Examen SCORM de sélection par choix"
+
+#~ msgid ""
+#~ "Provide instruction how to complete the"
+#~ " exercise or take the default text."
+#~ msgstr ""
+#~ "Donnez des instructions pour compléter "
+#~ "l'exercice ou acceptez le texte "
+#~ "prédéterminé."
+
+#~ msgid "Choose the correct answers in the paragraph below."
+#~ msgstr "Choisissez les réponses correctes dans le paragraphe ci-dessous."
+
+#~ msgid ""
+#~ "<p>To create a gap with answer "
+#~ "options, write the correct answer and"
+#~ " then separated by\n"
+#~ "                '|' the wrong answers:\n"
+#~ "                true|false|false|false ...\n"
+#~ "                Mark all answer options "
+#~ "and click on the 'Hide/Show Word' "
+#~ "button below.\n"
+#~ "                Hint: answers may contain spaces.</p>"
+#~ msgstr ""
+#~ "<p>Pour introduire un blanc avec des "
+#~ "options de réponse, écrivez la réponse"
+#~ " correcte et ensuite, séparé par\n"
+#~ "                 '|', les réponses erronées:\n"
+#~ "                 vrai|fauxfaux|faux...\n"
+#~ "                 Marquez toutes les options"
+#~ " de réponse et cliquer sur le "
+#~ "bouton 'Cacher/Montrer mot' ci-dessous.\n"
+#~ ""
+#~ "                 Conseil: les réponses peuvent contenir des blancs.</p>"
+
+#~ msgid "SCORM Test Cloze (multiple options)"
+#~ msgstr "Examen SCORM Remplir les blancs (avec options multiples)"
+
+#~ msgid ""
+#~ "<p>Enter the text for the cloze exercise in the editor window.\n"
+#~ "               If you copy text from "
+#~ "another source, you should use the "
+#~ "button 'Paste as plain text'\n"
+#~ "               to paste it into the "
+#~ "editor window. To select words to "
+#~ "hide, mark them and click on the"
+#~ " \n"
+#~ "               'Hide/Show Word' button below.\n"
+#~ "               To create a gap with "
+#~ "multiple answer options, write the "
+#~ "answers separated by '|'.\n"
+#~ "               Mark all answer options "
+#~ "and click on the 'Hide/Show Word' "
+#~ "button below.\n"
+#~ "               Hint: The answers may "
+#~ "contain spaces. If you want to "
+#~ "provide the answer options to the "
+#~ "learners,\n"
+#~ "               sort them alphabetically and"
+#~ " write them at the beginning or "
+#~ "the end of the cloze exercise.</p>"
+#~ msgstr ""
+#~ "\"<p>Entrez le texte de l'exercice à trous dans la fenêtre d'édition.\n"
+#~ "               Si vous copiez le texte"
+#~ " à partir d'une autre source, vous"
+#~ " devez utiliser le bouton 'Copier en"
+#~ " texte plat'\n"
+#~ "               pour le coller dans la"
+#~ " fenêtre d'édition. Pour selectionner les"
+#~ " mots à cacher, marquez-les et "
+#~ "cliquez sur le\n"
+#~ "               bouton 'Cacher/Montrer mot' du bas.\n"
+#~ "               Pour créer un trou avec"
+#~ " de multiples options de réponse, "
+#~ "écrivez les réponses separées par '|'."
+#~ "\n"
+#~ "               Marquez toutes les options "
+#~ "de réponses et cliquer sur le "
+#~ "bouton 'Cacher/Montrer mot' du bas.\n"
+#~ "               Astuce: les réponses peuvent"
+#~ " contenir des espaces. Si vous "
+#~ "souhaitez offrir les options de réponse"
+#~ " à vos apprenants\n"
+#~ "               classez-les par ordre "
+#~ "alphabétique et écrivez-les au début "
+#~ "ou à la fin de l'exercice à "
+#~ "trous.</p>"
+
+#~ msgid "SCORM Test Multiple Choice"
+#~ msgstr "Test SCORM à choix multiple"
+
+#~ msgid "SCORM Options (1.2, 2004 and Agrega)"
+#~ msgstr "Options SCORMS (1.2, 2004 et Agrega)"
+
+#~ msgid ""
+#~ "<p>If this option is set, all gaps"
+#~ " will have the length of the "
+#~ "longest answer option</p>"
+#~ msgstr ""
+#~ "<p>Si cette option est activée, tous "
+#~ "les blancs auront la largeur de la"
+#~ " réponse la plus longue</p>"
+
+#~ msgid "Use fixed length?"
+#~ msgstr "Utiliser une largeur fixe?"
+
+#~ msgid "Click here"
+#~ msgstr "Cliquer ici"
 
