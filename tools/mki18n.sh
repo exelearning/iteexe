@@ -18,6 +18,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
+# Help
+#-----
+# Pybabel doc http://babel.pocoo.org/docs/cmdline/
+# Pybabel source https://github.com/mitsuhiko/babel
+#
 # Changes
 # -------
 # 2013-10:
@@ -38,7 +43,7 @@
 export PYTHONPATH=.
 project="eXeLearning"
 version="2.0"
-# 1.- Extraction of strings into new POT
+# 1.- Extraction of strings from *.py and *.js into new POT
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
 pybabel extract --keyword=x_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
 #tools/nevow-xmlgettext exe/jsui/templates/mainpage.html exe/webui/templates/about.html | msgcat exe/locale/messages.pot.tmp - -o exe/locale/messages.pot
