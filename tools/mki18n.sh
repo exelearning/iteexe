@@ -22,6 +22,8 @@
 #-----
 # Pybabel doc http://babel.pocoo.org/docs/cmdline/
 # Pybabel source https://github.com/mitsuhiko/babel
+# Transecma (py2json.py) https://github.com/nandoflorestan/bag/tree/master/bag/web
+#
 #
 # Changes
 # -------
