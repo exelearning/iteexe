@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-03-17 17:26+0100\n"
+"POT-Creation-Date: 2014-03-20 16:20+0100\n"
 "PO-Revision-Date: 2013-10-23 22:26+0800\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language-Team: Chinese Traditional <zh-l10n@linux.org.tw>\n"
@@ -2982,8 +2982,8 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "匯出格式未實作"
 
-#: exe/export/epub3export.py:569 exe/export/imsexport.py:510
-#: exe/export/scormexport.py:727 exe/export/websiteexport.py:96
+#: exe/export/epub3export.py:569 exe/export/imsexport.py:512
+#: exe/export/scormexport.py:726 exe/export/websiteexport.py:96
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
