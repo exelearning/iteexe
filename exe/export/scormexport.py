@@ -589,22 +589,20 @@ class ScormExport(object):
             jsFile = (self.scriptsDir/'common.js')
             jsFile.copyfile(outputDir/'common.js')
 
-        if self.scormType == "scorm2004":
+        if self.scormType == "scorm2004" or self.scormType == "scorm1.2":
             self.scriptsDir.copylist(('AC_RunActiveContent.js',
                                       'SCORM_API_wrapper.js',
                                       'SCOFunctions.js', 
                                       'common.js'), outputDir)     
-        if self.scormType != "commoncartridge" and self.scormType != "scorm2004":
-            self.scriptsDir.copylist(('AC_RunActiveContent.js',
-                                      'SCORM_API_wrapper.js', 
-                                      'SCOFunctions.js', 
-                                      'common.js'), outputDir)
+        # about SCHEMAS:
         schemasDir = ""
         if self.scormType == "scorm1.2":
             schemasDir = self.schemasDir/"scorm1.2"
             schemasDir.copylist(('imscp_rootv1p1p2.xsd',
                                 'imsmd_rootv1p2p1.xsd',
                                 'adlcp_rootv1p2.xsd',
+                                'lom.xsd',
+                                'lomCustom.xsd',
                                 'ims_xml.xsd'), outputDir)
         elif self.scormType == "scorm2004":
             schemasDir = self.schemasDir/"scorm2004"

@@ -429,6 +429,8 @@ class IMSExport(object):
         
         self.schemasDir.copylist(('imscp_v1p1.xsd',
                                   'imsmd_v1p2p2.xsd',
+                                  'lom.xsd',
+                                  'lomCustom.xsd',
                                   'ims_xml.xsd'), outputDir)
 
         # copy players for media idevices.                
