@@ -321,12 +321,20 @@ Ext.define('eXe.controller.Toolbar', {
         nevow_clientToServerEvent('loadTutorial', this, '');
     },
     
-    toolsRefresh: function() {
+    toolsRefresh: function(asked) {
+        if (asked!=true) {
+            this.askDirty("eXe.app.getController('Toolbar').toolsRefresh(true)");
+            return false;
+        }
         eXe.app.quitWarningEnabled = false;
         window.location = window.location;
     },
 
-    toolsPreferences: function() {
+    toolsPreferences: function(asked) {
+        if (asked!=true) {
+            this.askDirty("eXe.app.getController('Toolbar').toolsPreferences(true)");
+            return false;
+        }    
         var preferences = new Ext.Window ({
 	          height: 250, 
 	          width: 550, 
