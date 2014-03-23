@@ -49,6 +49,7 @@ from exe.engine.field          import Field
 from exe.engine.persistxml     import encodeObjectToXML, decodeObjectFromXML
 from exe.engine.lom import lomsubs
 from exe.engine.checker import Checker
+from exe.webui import common
 
 log = logging.getLogger(__name__)
 
@@ -365,8 +366,10 @@ class Package(Persistable):
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
         self.resources = {} # Checksum-[_Resource(),..]
-
+        self._docType    = G.application.config.docType
     # Property Handlers
+    def set_docType(self,value):
+        self._docType = toUnicode('XHTML')
 
     def set_name(self, value):
         self._name = toUnicode(value)
@@ -911,6 +914,7 @@ class Package(Persistable):
     author        = property(lambda self:self._author, set_author)
     description   = property(lambda self:self._description, set_description)
     newlicense    = property(lambda self:self.license, set_license)
+    docType       = property(lambda self:self._docType, set_docType)
 
     backgroundImg = property(get_backgroundImg, set_backgroundImg)
 
@@ -1020,6 +1024,7 @@ class Package(Persistable):
         """
         Actually performs the save to 'fileObj'.
         """
+        
         if self.compatibleWithVersion9:
             self.downgradeToVersion9()
         zippedFile = zipfile.ZipFile(fileObj, "w", zipfile.ZIP_DEFLATED)
@@ -1172,7 +1177,10 @@ class Package(Persistable):
                 # after doUpgrade, compare the largest found field ID:
                 if G.application.maxFieldId >= Field.nextId:
                     Field.nextId = G.application.maxFieldId + 1
-
+                if hasattr(newPackage,'_docType'):
+                    common.setExportDocType(newPackage.docType)
+                else:
+                    common.setExportDocType(G.application.config.docType)
             else: 
                 # and when merging, automatically set package references to
                 # the destinationPackage, into which this is being merged:
@@ -1514,6 +1522,7 @@ class Package(Persistable):
         """
         For version >= 2.0
         """
+
         if not hasattr(self, 'lang'):
             self._lang = G.application.config.locale.split('_')[0]
         entry = str(uuid.uuid4())
@@ -1574,7 +1583,10 @@ class Package(Persistable):
         self.upgradeToVersion9()
         self.upgradeToVersion10()
 
-
+    def upgradeToVersion13(self):
+        if not hasattr(self, '_docType'):
+            self._docType = G.application.config.docType
+            
     def downgradeToVersion9(self):
         for attr in ['lomEs', 'lom', 'scowsinglepage', 'scowwebsite',
                      'exportSource', 'exportMetadataType', '_lang',
@@ -1592,7 +1604,10 @@ class Package(Persistable):
         TrueFalseIdevice.persistenceVersion = 9
         WikipediaIdevice.persistenceVersion = 8
         Package.persistenceVersion = 9
-
+    
+    def getExportDocType(self):
+        return self._docType
+    
     def delNotes(self, node):
         """
         Delete all notes

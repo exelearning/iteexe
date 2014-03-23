@@ -28,7 +28,10 @@ from exe.webui.renderable import Renderable
 from twisted.web.resource import Resource
 from exe.engine.path import toUnicode, Path
 from exe.engine.lom import lomsubs
+from exe.webui import common
 import re
+
+
 log = logging.getLogger(__name__)
 
 
@@ -247,7 +250,7 @@ class PropertiesPage(Renderable, Resource):
     name = 'properties'
 
     booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile', 'pp_scowsinglepage', 'pp_scowwebsite', 'pp_exportSource',
-                         'pp_intendedEndUserRoleGroup', 'pp_intendedEndUserRoleTutor', 'pp_compatibleWithVersion9')
+                         'pp_intendedEndUserRoleGroup', 'pp_intendedEndUserRoleTutor', 'pp_compatibleWithVersion9','pp_docType')
 
     imgFieldNames = ('pp_backgroundImg')
 
@@ -315,6 +318,10 @@ class PropertiesPage(Renderable, Resource):
                                 data[key] = getattr(obj, name).basename()
                         else:
                             data[key] = getattr(obj, name)
+                            if name=='docType':
+                                a= getattr(obj,name)                   
+                                common.setExportDocType(getattr(obj,name))
+
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to get properties")})
@@ -338,6 +345,8 @@ class PropertiesPage(Renderable, Resource):
                     items.insert(0, item)
                 for key, value in items:
                     obj, name = self.fieldId2obj(key)
+                    if name=='docType':               
+                        common.setExportDocType(toUnicode(value[0]))
                     if key in self.booleanFieldNames:
                         setattr(obj, name, value[0] == 'true')
                     else:
@@ -352,6 +361,7 @@ class PropertiesPage(Renderable, Resource):
                                         setattr(obj, name, None)
                         else:
                             setattr(obj, name, toUnicode(value[0]))
+                            
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to save properties")})

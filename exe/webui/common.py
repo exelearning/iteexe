@@ -29,9 +29,10 @@ from exe                       import globals as G
 from exe.engine.path           import Path
 from exe.webui.blockfactory    import g_blockFactory
 from exe.engine.error          import Error
+
 import re
 
-
+htmlDocType=''
 lastId = 0
 
 def newId():
@@ -49,13 +50,16 @@ def copyFileIfNotInStyle(file, e, outputDir):
     f = (e.imagesDir/file)
     if not (outputDir/file).exists():
         f.copyfile(outputDir/file)
-        
+def setExportDocType(value):
+    global htmlDocType
+    htmlDocType=value
+    
 def getExportDocType():
     # If HTML5 webui/scripts/exe_html5.js has to be in the package resources list
-    return "XHTML"
+    return htmlDocType
 
 def docType():
-    dT = getExportDocType()
+    dT = htmlDocType #getExportDocType()
     lb = "\n" #Line breaks
     """Generates the documentation type string"""
     if dT == "HTML5":
