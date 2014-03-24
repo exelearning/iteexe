@@ -119,10 +119,9 @@ Ext.define('eXe.view.forms.ExportPanel', {
                     ]
                 },
 				
-                {
+                /*{
                     xtype: 'fieldset',
-		    // 
-		    title: _('HTML DocType'),
+		    title: _('Format'),
                     margin: 10,
                     items: [
                          {
@@ -131,20 +130,20 @@ Ext.define('eXe.view.forms.ExportPanel', {
 	                            xtype: 'combobox',
 	                            inputId: 'pp_docType',
 	                            labelWidth: 100,
-	                            fieldLabel: _('HTML DOCTYPE'),
+	                            fieldLabel: _('Doctype'),
 	                            store: [
 	                                  ["XHTML", "XHTML"],
 	                                  ["HTML5", "HTML5"]
 	                            ],
                                 dirtyCls: 'property-form-dirty',
-	                            tooltip: _('HTML DOCTYPE format'),
+	                            tooltip: _('Doctype'),
 	                            anchor: '100%'
                             },
                             flex: 0,
-                            help: _('HTML DOCTYPE format')
+                            help: _('Doctype')+" (DOCTYPE: XHTML/HTML5)"
                         }
 						]
-                },
+                },*/
              
                 {
                     xtype: 'button',
