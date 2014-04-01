@@ -119,7 +119,7 @@ Ext.define('eXe.view.forms.ExportPanel', {
                     ]
                 },
 				
-                /*{
+                {
                     xtype: 'fieldset',
 		    title: _('Format'),
                     margin: 10,
@@ -143,7 +143,7 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             help: _('Doctype')+" (DOCTYPE: XHTML/HTML5)"
                         }
 						]
-                },*/
+                },
              
                 {
                     xtype: 'button',
