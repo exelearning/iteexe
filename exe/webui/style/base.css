@@ -63,9 +63,16 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .js .js-required{display:block}
 .js .js-hidden{display:none}
 /* Hints */
-.js #main .iDevice_hint_title{font-size:1em;margin-top:0;font-weight:normal}
+.js #main .iDevice_hint_title{font-size:1em;margin-top:0;font-weight:normal;*margin-top:1em}/* IE6, IE7 */
+.iDevice_hint{margin-bottom:1.5em}
 .iDevice_hint_title a{background-repeat:no-repeat;background-position:0 50%;padding-left:23px;text-decoration:none}
-.iDevice_hint_content{padding:0 23px 1em 23px}
+.iDevice_hint_content{padding:0 23px}
+/* Questions/Answers */
+.iDevice_answers{margin-top:.5em}
+.iDevice_answer{overflow:hidden;*margin:1.5em 0}/* IE6, IE7 */
+.iDevice_answer p{margin-top:0}
+.iDevice_answer-field{width:2.5em;float:left}
+.js .iDevice_answer-content{padding-left:2.5em}
 /* To review */
 .question .answer p{margin:0 0 .7em 0}
 .hidden-idevice .image_text{display:none} /* iDevice Toggler : Required for Magnifier */

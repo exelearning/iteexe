@@ -2476,82 +2476,73 @@ class QuizOptionElement(Element):
         """
         Returns an XHTML string for viewing and previewing this option element
         """
-        log.debug("renderView called with preview = " + str(preview))
-  
+        lb = "\n" #Line breaks
+        
         length = len(self.field.question.options)
-# JR Maquetamos con div en vez de con una tabla
-#        html  = '<tr><td>'
-	html = '<div style="display: table-row; clear: both;" class="answer">\n'
-	html += '<div style="float: left; display: table-cell; margin-left: 0.2em;">\n'
-        html += '<input type="radio" name="option%s" ' \
-                            % self.field.question.id
+        html = '<div class="iDevice_answer">'+lb
+        
+        html += '<p class="iDevice_answer-field js-required">'+lb
+        html += '<label for="i'+self.id+'" class="accessibility-help"><a href="#answer-'+self.id+'">'+_("Option")+' '+self.id+'</a></label>'
+        html += '<input type="radio" name="option%s" ' % self.field.question.id
         html += 'id="i%s" ' % self.id
-        html += 'onclick="getFeedback(%d,%d,\'%s\',\'multi\')"/>' \
-                            % (self.index, length, self.field.question.id)
-#        html += '</td><td>\n'
-	html += '</div>\n'
-	html += '<div style="float: left; display: table-cell; margin-left: 0.5em; width: 93%;">\n'
+        html += 'onclick="getFeedback(%d,%d,\'%s\',\'multi\')"/>' % (self.index, length, self.field.question.id)
+        html += lb
+        html += '</p>'+lb
+        
+        html += '<div class="iDevice_answer-content" id="answer-'+self.id+'"><a name="answer-'+self.id+'"></a>'+lb
+
         if preview:
             html += self.answerElement.renderPreview()
         else:
             html += self.answerElement.renderView()
-#        html += "</td></tr>\n"
-	html += "</div>\n</div>"
-       
-        return html
-    
+        html += "</div>"+lb
+        
+        html += "</div>"+lb
+
+        return html    
 
     def renderFeedbackView(self, preview=False):
         """
         return xhtml string for display this option's feedback
         """
+        lb = "\n" #Line breaks
         feedbackStr = ""
-        if hasattr(self.feedbackElement.field, 'content')\
-        and self.feedbackElement.field.content.strip() != "": 
-# JR
+        if hasattr(self.feedbackElement.field, 'content') and self.feedbackElement.field.content.strip() != "": 
             if preview: 
                 feedbackStr = self.feedbackElement.renderPreview(True, "") 
             else: 
                 feedbackStr = self.feedbackElement.renderView(True, "")
-
         else:
             if self.field.isCorrect:
-# JR:                feedbackStr = _("Correct")
-                feedbackStr = _("Correct Option")
+                feedbackStr = "<p>"+_("Correct Option")+"</p>"+lb
             else:
-                feedbackStr = _("Wrong")
-#        html  = '<div id="sa%sb%s" style="color: rgb(0, 51, 204);' \
-	html  = '<div id="sa%sb%s" class="feedback" ' \
-                      % (str(self.index), self.field.question.id)
-        # try putting in the correct answer as an even number.
-        # start off with a sorta random looking number:
-        to_even = self.index+5
-        if to_even % 2:
-            to_even += 1
-        # now we have an even number here.
-        # if it is a false answer, then add another to make it odd:
-        if not self.field.isCorrect:
-            to_even += 1
-# JR
-#        html += 'display: none;" even_steven="%s">' % (str(to_even))
-	html += 'style="display: none;">'
+                feedbackStr = "<p>"+_("Wrong")+"</p>"+lb
 
-        html += feedbackStr 
-        html += '</div>\n'
+        html  = '<div id="sa%sb%s" class="feedback js-hidden">' % (str(self.index), self.field.question.id)
+        html  += '<a name="sa%sb%s"></a>' % (str(self.index), self.field.question.id)
+        html += lb
+        html += feedbackStr
+        html += '</div>'+lb
         
         return html
-
-# JR: Devuelve la cadena xhtml para la etiqueta noscrip
+        
+    # noscript
     def renderNoscript(self, preview):
-	if self.field.isCorrect == True:
-		html = '<li><strong>' + _("Correct Option") + "</strong> "
-	else:
-		html = '<li><strong>' + _("Wrong") + "</strong> "
-        if preview: 
-            html += self.feedbackElement.field.content_w_resourcePaths + "</li>"
+        lb = "\n" #Line breaks
+        html = '<li><a href="#answer-'+self.id+'">'
+        if self.field.isCorrect == True:
+            html += _("Correct Option")
         else:
-            html += self.feedbackElement.field.content_wo_resourcePaths + "</li>"
-	return html
+            html += _("Wrong")
+        html += '</a> (<a href="#sa'+str(self.index)+'b'+self.field.question.id+'">'+_("Feedback")+'</a>)</li>'
+        html += lb
+        '''
+        if preview: 
+            html += self.feedbackElement.field.content_w_resourcePaths
+        else:
+            html += self.feedbackElement.field.content_wo_resourcePaths
+        '''
+        return html     
 
 # ===========================================================================
 
@@ -2694,24 +2685,26 @@ class QuizQuestionElement(Element):
         """ 
         Returns an XHTML string for viewing this question element 
         """ 
-# JR
-#        html = '<div class=\"question\"  style="margin-bottom: 1em;">\n'
-	html = '<div class=\"question\">\n'
-        html += self.doRender(img1, img2, preview=True)
-        html += "</div>\n" 
-	return html
+        lb = "\n" #Line breaks
+        html = '<div class=\"iDevice_question\">'+lb
+        html = self.doRender(img1, img2, preview=True)
+        html += "</div>"+lb
+        return html
     
     def doRender(self, img1, img2, preview=False):
         """
         Returns an XHTML string for viewing this element
         """
+        lb = "\n" #Line breaks
         if preview: 
-            html  = self.questionElement.renderPreview()
+            html = '<div class="activity-form multi-choice-form">'+lb
+            html += self.questionElement.renderPreview()
         else:
-            html  = self.questionElement.renderView()
+            html = '<form name="multi-choice-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form multi-choice-form">'+lb        
+            html += self.questionElement.renderView()
 
+        # Hint
         if self.hintElement.field.content.strip():
-            lb = "\n" #Line breaks
             html += '<script type="text/javascript">$exe.hint.imgs=["'+img1+'","'+img2+'"]</script>'+lb
             html += '<div class="iDevice_hint">'+lb
             html += '<h3 class="iDevice_hint_title">'+_("Hint")+'</h3>'+lb
@@ -2722,28 +2715,33 @@ class QuizQuestionElement(Element):
                 html  += self.hintElement.renderView()
             html += '</div>'+lb
             html += '</div>'+lb
-# JR Maquetamos con div en vez de con tablas
-#        html += "<table>\n"
-#        html += "<tbody>\n"
-	html += '<div style="display: table; overflow: auto; width: 100%;">\n'
 
+        # Answers
+        html += '<div class="iDevice_answers">'+lb
+        html += '<h3 class="js-hidden">'+_("Answers")+'</h3>'+lb
         for element in self.options:
             html += element.renderAnswerView(preview)
-            
-#        html += "</tbody>\n"
-#        html += "</table>\n"
-	html += "</div>\n"
-            
+        html += "</div>"+lb
+                
+        # Feedbacks
+        html += '<div class="iDevice_feedbacks">'+lb
+        html += '<h3 class="js-hidden">'+_("Feedback")+'</h3>'+lb
         for element in self.options:
             html += element.renderFeedbackView(preview)
+        html += "</div>"+lb
 
-# JR: Generamos el contenido que ira dentro de la etiqueta noscript
-	html += '<noscript><br/><div class="feedback">\n'
-	html += "<p><strong>" + _("Solution") + ": </strong></p>\n"
-	html += "<ol>"
-	for element in self.options:
-		html += element.renderNoscript(preview)
-	html += "</ol>\n"
-	html += "</div></noscript>"
+        if preview:
+            html += '</div>'+lb
+        else:
+            html += '</form>'+lb
+        
+        # noscript
+        html += '<div class="iDevice_solution feedback js-hidden">'+lb
+        html += "<h3>"+_("Solution")+"</h3>"+lb
+        html += "<ol>"+lb
+        for element in self.options:
+            html += element.renderNoscript(preview)
+        html += "</ol>"+lb
+        html += "</div>"+lb
 
         return html
