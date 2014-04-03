@@ -744,31 +744,32 @@ function calcScore(num, ident){
 }
 
 // used to show question's feedback for multi-select idevice 
-function showFeedback(num, ident){
-    var i, chk;
+function showFeedback(e,num,ident){
+    var i, chk, t, k;
     for(i=0; i<num; i++){
-// JR añado 'op' a la hora de buscar por Id
-        var ele = document.getElementById("op"+ident+i.toString())
-        var ele0 = document.getElementById("op"+ident+i.toString()+"_0")
-        var ele1 = document.getElementById("op"+ident+i.toString()+"_1")
-        var ansele = document.getElementById("ans"+ident+i.toString())
-        chk = "False"
-        if (ele.checked==1)
-            chk = "True"   
-        if (chk == ele.value){
-            ele1.style.display = "block"
-            ele0.style.display = "none"
-//            ansele.style.color = "black"
-        }else{            
-            ele0.style.display = "block"
-            ele1.style.display = "none"
-//            ansele.style.color = "red"
+        var id = ident+i.toString();
+        var ele = document.getElementById("op"+id);
+        chk = "False";
+        t = $exe_i18n.incorrect;
+        k = "wrong";
+        if (ele.checked==1) chk = "True";
+        if (chk == ele.value) {
+            t = "<strong>"+$exe_i18n.correct+"</strong>";
+            k = "right";
         }
+        var c = '<p class="'+k+'-option">'+t+'</p>';
+        var f = $("#feedback-"+id);
+        if (e.value==$exe_i18n.showFeedback) f.html(c).show();
+        else f.hide();
     }
-    var fele = document.getElementById("f"+ident)
-    fele.style.display = "block"
+    if (e.value==$exe_i18n.showFeedback) {
+        $("#f"+ident).show();
+        e.value=$exe_i18n.hideFeedback;
+    } else {
+        $("#f"+ident).hide();
+        e.value=$exe_i18n.showFeedback;
+    }
 }
-
 
 ///////////////////////////////////////////////
 // Media plugin detection codes, modified from:

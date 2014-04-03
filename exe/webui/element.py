@@ -2087,44 +2087,57 @@ class SelectOptionElement(Element):
         """
         log.debug("renderView called with preview = " + str(preview))
         ident = self.field.question.id + str(self.index)
-# JR Maquetamos con div en vez de con tabla
-#        html  = '<tr><td>'  
-	html = '<div style="display: table-row; clear: both;" class="answer">\n'
-	html += '<div style="float: left; display: table-cell; margin-left: 0.2em;">\n'
-#JR Anado op al identificador para no empiece por un numero    
-        html += u'<input type="checkbox" id="op%s"' % ident
-        html += u' value="%s" />\n' %str(self.field.isCorrect)
-                
-        ansIdent = "ans" + self.field.question.id + str(self.index)
-#        html += '</td><td><div id="%s" style="color:black">\n' % ansIdent
-	html += '</div>\n'
-	html += '<div style="float: left; display: table-cell; margin-left: 0.5em; width: 93%;">\n'
-	html += '<div id="%s">\n' % ansIdent
+        
+        lb = "\n" #Line breaks
+        
+        html = '<div class="iDevice_answer">'+lb
+        # Checkbox
+        html += '<p class="iDevice_answer-field js-required">'+lb
+        html += '<label for="op'+ident+'" class="accessibility-help"><a href="#answer-'+self.id+'">'+_("Option")+' '+self.id+'</a></label>'
+        html += '<input type="checkbox" id="op%s"' % ident
+        html += ' value="%s" />' % str(self.field.isCorrect)
+        html += lb
+        html += '</p>'+lb
+        # Answer content
+        html += '<div class="iDevice_answer-content" id="answer-'+self.id+'"><a name="answer-'+self.id+'"></a>'+lb
         if preview: 
             html += self.answerElement.renderPreview()
         else:
             html += self.answerElement.renderView()
-#        html += "</div></td></tr><tr><td></td><td>\n"
-	html += "</div></div>\n</div>\n"
-	html += '<div style="display: table-row; clear: both;">'
-	html += '<div style="float: left; display: table-cell; margin-left: 2em;">\n'
-        html += '<div id ="op%s" style="display:none;">\n' %(ident + '_1')
-        html += "<strong>" + _("Correct") + "</strong></div>"
-        html += '<div id ="op%s" style="display:none;">\n' %(ident + '_0')
-        html +=  _("Incorrect") + "</div>"
-#        html += "</td></tr>"
-	html += "</div>\n</div>\n"
+        html += '</div>'+lb
+            
+        # Answer feedback
+        html += '<div class="iDevice_answer-feedback feedback js-required" id="feedback-'+ident+'"></div>'
+        '''
+        html += '<div class="iDevice_answer-feedback js-required">'
+        # Right message
+        html += '<p id ="op%s" style="display:none;">' %(ident + '_1')
+        html += "<strong>" + _("Correct") + "</strong>"
+        html += '</p>'
+        # Wrong message
+        html += '<p id ="op%s" style="display:none;">' %(ident + '_0')
+        html +=  _("Incorrect")
+        html += '</p>'+lb      
+        html += '</div>'+lb
+        '''
+        
+        html += '</div>'+lb
+        
         return html
 
-# JR: Devuelve la cadena xhtml para la etiqueta noscrip
     def renderNoscript(self, preview):
-	if self.field.isCorrect == True:
-		html = '<li><em>' + _("Correct") + "</em></li>"
-	else:
-		html = '<li><em>' + _("Incorrect") + "</em></li>"
-
-	return html
     
+        lb = "\n" #Line breaks
+        html = '<li><a href="#answer-'+self.id+'" class="'
+        if self.field.isCorrect == True:
+            html += 'right">'
+            html += _("Correct")
+        else:
+            html += 'wrong">'
+            html += _("Incorrect")
+        html += '</a></li>'+lb
+    
+        return html    
     
 # ===========================================================================
 class SelectquestionElement(Element):
@@ -2251,80 +2264,80 @@ class SelectquestionElement(Element):
         """ 
         Returns an XHTML string for viewing this question element 
         """ 
-#JR
-#        html = '<div class=\"question\"  style="margin-bottom: 1em;">\n'
-	html = '<div class=\"question\">\n' 
+        lb = "\n" #Line breaks
+        html = '<div class="question">'+lb
         html += self.doRender(img, preview=False)
-        html += "</div>\n" 
+        html += "</div>"+lb
         return html
 
     def renderPreview(self,img=None):
         """ 
         Returns an XHTML string for viewing this question element 
         """ 
-#JR
-#        html = '<div class=\"question\"  style="margin-bottom: 1em;">\n'
-	html = '<div class=\"question\">\n' 
+        lb = "\n" #Line breaks
+        html = '<div class="question">'+lb
         html += self.doRender(img, preview=True)
-	html += "</div>"
-	return html
-    
+        html += "</div>"+lb
+        return html    
 
     def doRender(self, img, preview=False):
         """
         Returns an XHTML string for viewing this element
         """
-
+        lb = "\n" #Line breaks
+        # Form
         if preview: 
-            html  = self.questionElement.renderPreview()
-        else: 
-            html  = self.questionElement.renderView()
-# JR Maquetamos con div en vez de con una tabla
-#        html += "<table>"
-	html += '<div style="display: table; overflow: auto; width:100%;">'
+            html = '<div class="activity-form multi-choice-form">'+lb
+            html += self.questionElement.renderPreview()
+        else:
+            html = '<form name="multi-choice-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form multi-choice-form">'+lb        
+            html += self.questionElement.renderView()        
+            
+        # Answers
+        html += '<div class="iDevice_answers">'+lb
+        html += '<h3 class="js-hidden">'+_("Answers")+'</h3>'+lb
         for element in self.options:
             html += element.renderView(preview)      
-#        html += "</table>"   
-	html += "</div>"
-        html += '<input type="button" name="submitSelect"' 
-        html += ' value="%s" ' % _("Show Feedback")
-        html += 'onclick="showFeedback(%d,\'%s\')"/> ' %(len(self.field.options),self.field.id) 
-        html += "<br/>\n"
-        html += '<div id="%s" style="display:none">' % ("f"+self.field.id)
-#JR
+        html += "</div>"+lb
+            
+        # Feedback button
+        html += '<div class="block iDevice_buttons js-required">'+lb
+        html += '<p>'+lb
+        html += '<input type="button" name="submitSelect" value="%s" onclick="showFeedback(this,%d,\'%s\')"/> ' %(_("Show Feedback"),len(self.field.options),self.field.id)   
+        html += lb
+        html += '</p>'+lb
+        html += '</div>'+lb
+        
+        # Feedback
+        html += '<h3 class="js-hidden">Feedback</h3>'+lb
+        html += '<div id="%s" class="js-hidden">' % ("f"+self.field.id)
+        html += lb
         if preview: 
             aux  = self.feedbackElement.renderPreview(True, class_="feedback")
         else: 
             aux  = self.feedbackElement.renderView(True, class_="feedback")
-	if self.feedbackElement.field.content.strip():
-		html += aux
-	else:
-		html += ""
-
-#        if preview: 
-#            html  += self.feedbackElement.renderPreview(True, "feedback")
-#        else: 
-#            html  += self.feedbackElement.renderView(True, "feedback")
-
-
+        if self.feedbackElement.field.content.strip():
+            html += aux
+        else:
+            html += ""
         html += '</div>'
+        
+        # /Form
+        if preview:
+            html += '</div>'+lb
+        else:
+            html += '</form>'+lb        
 
-# JR: Generamos el contenido que ira dentro de la etiqueta noscript
-	html += '<noscript><br/><div class="feedback">\n'
-	html += "<p><strong>" + _("Solution") + ": </strong></p><ol>\n"
-	for element in self.options:
-		html += element.renderNoscript(preview)
-	html += "</ol>"
-	if self.feedbackElement.field.content.strip():
-		html += "<p><strong>" + _("Feedback") + ": </strong></p>\n"
-        	if preview: 
-            		html  += self.feedbackElement.field.content_w_resourcePaths
-        	else: 
-            		html  += self.feedbackElement.field.content_wo_resourcePaths
-	html += "</div></noscript>"	
+        # noscript
+        html += '<div class="iDevice_solution feedback js-hidden">'+lb
+        html += "<h3>"+_("Solution")+"</h3>"+lb
+        html += "<ol>"+lb
+        for element in self.options:
+            html += element.renderNoscript(preview)
+        html += "</ol>"+lb
+        html += "</div>"+lb
 
-        return html
-
+        return html       
 
     
 # ===========================================================================

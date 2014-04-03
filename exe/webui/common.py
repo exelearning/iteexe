@@ -195,6 +195,8 @@ def getJavaScriptStrings():
     s += 'hide:"'+_("Hide")+'",'
     s += 'showFeedback:"'+_("Show Feedback")+'",'
     s += 'hideFeedback:"'+_("Hide Feedback")+'",'
+    s += 'correct:"'+_("Correct")+'",'
+    s += 'incorrect:"'+_("Incorrect")+'",'
     s += 'menu:"'+_("Menu")+'"'
     s += '}</script>'
     
