@@ -153,19 +153,30 @@ class TestoptionElement(object):
         Returns an XHTML string for viewing this option element
         """
         log.debug("renderView called")
-
-        html  = '<tr><td>'
-        html += common.option(self.keyId, 0, unicode(self.index))
-        html += '</td><td>\n'
         
+        lb = "\n" #Line breaks
+        
+        html = '<div class="iDevice_answer">'+lb
+        
+        # Checkbox
+        fieldId = self.keyId+unicode((self.index+1));
+        html += '<p class="iDevice_answer-field js-required">'+lb
+        html += '<label for="'+fieldId+'" class="accessibility-help"><a href="#answer-'+fieldId+'">'+_("Option")+' '+unicode((self.index+1))+'</a></label>'
+        html += '<input type="radio" name="'+self.keyId+'" id="'+fieldId+'" value="'+unicode(self.index)+'" />'
+        html += lb
+        html += '</p>'+lb       
+        
+        # Answer content
+        html += '<div class="iDevice_answer-content" id="answer-'+fieldId+'"><a name="answer-'+fieldId+'"></a>'+lb
         if preview: 
             html += self.answerElement.renderPreview()
-        else:            
+        else:
             html += self.answerElement.renderView()
-        html += "</td></tr>\n"
+        html += '</div>'+lb
+        
+        html += "</div>"+lb
        
-        return html
-    
+        return html    
    
     
 # ===========================================================================

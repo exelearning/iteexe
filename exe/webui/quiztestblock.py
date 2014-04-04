@@ -131,24 +131,23 @@ class QuizTestBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u'<form name="quizForm%s" id="quizForm%s" ' % (
-                self.idevice.id, self.idevice.id)
-        html += u'action="javascript:calcScore2();">\n'
-        html += common.ideviceHeader(self, style, "view")
-        html += u'<div class="passrate" value="%s"></div>\n' % self.idevice.passRate
+        lb = "\n" #Line breaks
+        html = common.ideviceHeader(self, style, "view")
+        html += '<form name="quizForm%s" id="quizForm%s" action="javascript:calcScore2();">' % (self.idevice.id, self.idevice.id)
+        html += lb
+        html += u'<input type="hidden" name="passrate" id="passrate-'+self.idevice.id+'" value="'+self.idevice.passRate+'" />'+lb
         for element in self.questionElements:
             if preview: 
-                html += element.renderPreview() + "<br/>"  
+                html += element.renderPreview()
             else:
-                html += element.renderView() + "<br/>"  
-        
-        html += '<input type="submit" name="submitB" '
-        html += 'value="%s"/>\n' % _(u"SUBMIT ANSWERS")
+                html += element.renderView()
+        html += '<div class="block iDevice_buttons">'+lb
+        html += '<p><input type="submit" name="submitB" value="'+_("SUBMIT ANSWERS")+'"/> '+common.javaScriptIsRequired()+'</p>'+lb
+        html += '</div>'+lb                
+        html += '</form>'+lb
         html += common.ideviceFooter(self, style, "view")
-        html += '</form>\n'
 
         return html
-    
 
     def renderJavascriptForWeb(self):
         """
@@ -357,21 +356,26 @@ class QuizTestBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
+        lb = "\n" #Line breaks
         html = common.ideviceHeader(self, style, "preview")
-
+        
+        html += u'<input type="hidden" name="passrate" id="passrate-'+self.idevice.id+'" value="'+self.idevice.passRate+'" />'
+        
         for element in self.questionElements:
-            html += element.renderPreview() + "<br/>"
-       
-        html += '<input type="submit" name="submitScore"'
-        html += ' value="%s"/> ' % _("Submit Answer")
+            html += element.renderPreview()
+        
+        html += '<div class="block iDevice_buttons">'+lb
+        html += '<p><input type="submit" name="submitScore" value="'+_("SUBMIT ANSWERS")+'"/></p>'
+        html += '</div>'+lb
         
         if not self.idevice.score == -1:
-            message = _("Your score is ") + unicode(self.idevice.score) + "%"
-            html += "<b>"+ message+ "</b><br/>"
+            message = "Your score is " + unicode(self.idevice.score) + "%"
+            html += '<script type="text/javascript">alert("'+ message+ '")</script>'
 
-        self.idevice.score = -1
+        self.idevice.score = -1   
         
         html += common.ideviceFooter(self, style, "preview")
+        
         return html
     
 

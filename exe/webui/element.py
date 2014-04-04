@@ -2108,18 +2108,6 @@ class SelectOptionElement(Element):
             
         # Answer feedback
         html += '<div class="iDevice_answer-feedback feedback js-required" id="feedback-'+ident+'"></div>'
-        '''
-        html += '<div class="iDevice_answer-feedback js-required">'
-        # Right message
-        html += '<p id ="op%s" style="display:none;">' %(ident + '_1')
-        html += "<strong>" + _("Correct") + "</strong>"
-        html += '</p>'
-        # Wrong message
-        html += '<p id ="op%s" style="display:none;">' %(ident + '_0')
-        html +=  _("Incorrect")
-        html += '</p>'+lb      
-        html += '</div>'+lb
-        '''
         
         html += '</div>'+lb
         
@@ -2657,11 +2645,10 @@ class QuizQuestionElement(Element):
         """ 
         Returns an XHTML string for viewing this question element 
         """ 
-# JR
-#        html = '<div class=\"question\"  style="margin-bottom: 1em;">\n'
-	html = '<div class=\"question\">\n'
+        lb = "\n" #Line breaks        
+        html = '<div class="question">'+lb
         html += self.doRender(img1, img2, preview=False)
-        html += "</div>\n" 
+        html += "</div>"+lb
         return html
 
 
