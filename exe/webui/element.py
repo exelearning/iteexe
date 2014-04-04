@@ -2706,10 +2706,9 @@ class QuizQuestionElement(Element):
         # Hint
         if self.hintElement.field.content.strip():
             if preview: 
-                content = self.hintElement.renderPreview()
+                html += common.ideviceHint(self.hintElement.renderPreview(),"preview")
             else: 
-                content = self.hintElement.renderView()
-            html += common.ideviceHint(img1,img2,content)
+                html += common.ideviceHint(self.hintElement.renderView(),"view")
 
         # Answers
         html += '<div class="iDevice_answers">'+lb

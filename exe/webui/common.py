@@ -178,8 +178,16 @@ def ideviceFooter(e, style, mode):
     h += "</"+articleTag+">"+lb # Close iDevice
     return h
     
-def ideviceHint(img1,img2,content):
+def ideviceHint(content, mode):
     lb = "\n" #Line breaks
+    
+    #  Image paths
+    p = ''
+    if mode=="preview":
+        p = '/images/'
+    img1 = p+"panel-amusements.png"
+    img2 = p+"stock-stop.png"
+    
     html = '<script type="text/javascript">$exe.hint.imgs=["'+img1+'","'+img2+'"]</script>'+lb
     html += '<div class="iDevice_hint">'+lb
     html += '<h3 class="iDevice_hint_title">'+_("Hint")+'</h3>'+lb
