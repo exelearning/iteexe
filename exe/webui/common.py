@@ -177,6 +177,17 @@ def ideviceFooter(e, style, mode):
             h += "</"+sectionTag+">"+lb # Close extra div (e.idevice.klass)
     h += "</"+articleTag+">"+lb # Close iDevice
     return h
+    
+def ideviceHint(img1,img2,content):
+    lb = "\n" #Line breaks
+    html = '<script type="text/javascript">$exe.hint.imgs=["'+img1+'","'+img2+'"]</script>'+lb
+    html += '<div class="iDevice_hint">'+lb
+    html += '<h3 class="iDevice_hint_title">'+_("Hint")+'</h3>'+lb
+    html += '<div class="iDevice_hint_content js-hidden">'+lb
+    html += content
+    html += '</div>'+lb
+    html += '</div>'+lb
+    return html
 
 def ideviceShowEditMessage(block):
     if block.idevice.message<>"":

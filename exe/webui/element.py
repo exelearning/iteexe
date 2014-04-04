@@ -2705,16 +2705,11 @@ class QuizQuestionElement(Element):
 
         # Hint
         if self.hintElement.field.content.strip():
-            html += '<script type="text/javascript">$exe.hint.imgs=["'+img1+'","'+img2+'"]</script>'+lb
-            html += '<div class="iDevice_hint">'+lb
-            html += '<h3 class="iDevice_hint_title">'+_("Hint")+'</h3>'+lb
-            html += '<div class="iDevice_hint_content js-hidden">'+lb
             if preview: 
-                html  += self.hintElement.renderPreview()
+                content = self.hintElement.renderPreview()
             else: 
-                html  += self.hintElement.renderView()
-            html += '</div>'+lb
-            html += '</div>'+lb
+                content = self.hintElement.renderView()
+            html += common.ideviceHint(img1,img2,content)
 
         # Answers
         html += '<div class="iDevice_answers">'+lb
