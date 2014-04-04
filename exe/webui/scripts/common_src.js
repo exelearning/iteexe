@@ -302,22 +302,25 @@ function updateCoords(e) {
 
 function getFeedback(optionId, optionsNum, ideviceId, mode) {
     var i, id;
-    for (i = 0; i< optionsNum; i++) { 
-        if (mode == "multi")
-            id = "sa" + i + "b" +ideviceId
-        else
-            id = "s" + i + "b" +ideviceId
-        if(i == optionId)
-            document.getElementById(id).style.display = "block";
-        else
-            document.getElementById(id).style.display = "None";
-    }
-    if (mode == 'truefalse') {
-        var sfbk = document.getElementById("sfbk" + ideviceId);
-        if (sfbk) sfbk.style.display = "block";
-    }
+    if (mode=="truefalse") {
+        var answer = 'right';
+        if (optionId==1) answer = 'wrong';
+        var r = document.getElementById("s"+ideviceId+"-result");
+        var f = document.getElementById("s"+ideviceId);
+        if (!r || !f) return false;
+        var msg = $exe_i18n.incorrect;
+        if (r.className==answer) msg = $exe_i18n.correct;
+        r.innerHTML = msg;
+        f.style.display='block';
+    } else {
+        // Multi choice iDevice (mode=='multi')
+        for (i = 0; i< optionsNum; i++) { 
+            id = "sa" + i + "b" +ideviceId;
+            if(i==optionId) document.getElementById(id).style.display = "block";
+            else document.getElementById(id).style.display = "none";
+        }
+    }    
 }
-
 
 // Cloze Field Stuff /////////////////////////////////////////////////
 
