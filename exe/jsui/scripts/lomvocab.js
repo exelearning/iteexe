@@ -1239,10 +1239,11 @@ lomesVocab = {
             "blended", 
             _("blended")
         ], 
-        [
-            "presencial", 
-            _("presencial")
-        ], 
+// 2014-04-07, JRF - I think this is a mistake
+//       [
+//            "presencial", 
+//            _("presencial")
+//        ], 
         [
             "face to face", 
             _("face to face")

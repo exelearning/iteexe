@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-03-20 16:20+0100\nPO-Revision-Date: 2008-01-28 00:15+1300\nLast-Translator: Pekka Henttonen <pekka.henttonen@uta.fi>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fi\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-04-07 23:44+0200\nPO-Revision-Date: 2008-01-28 00:15+1300\nLast-Translator: Pekka Henttonen <pekka.henttonen@uta.fi>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fi\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Click for completion instructions": "Klikkaa saadaksesi t\u00e4ydennysohjeita", 
  "Click \non the picture below or the \"Add Image\" button to select an image file to be \nmagnified.": "Klikkaa \nallaolevaa kuvaa tai \"Lis\u00e4\u00e4 kuva\" -painiketta valitaksesi \nsuurennettavan kuvan.", 
  "Emphasis": "Korostus", 
@@ -58,7 +58,6 @@ translations = {
  "Choose an Image": "Valitse kuva", 
  "Add a flash video to your iDevice.": "Lis\u00e4\u00e4 flash-video iDevice-komponenttiin", 
  "Delete question": "Poista kysymys", 
- "Correct!": "Oikein!", 
  "Enter a title for the gallery": "Kirjoita gallerian nimi", 
  "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Lis\u00e4\u00e4 aukkoteht\u00e4v\u00e4n teksti kentt\u00e4\u00e4n joko kopioimalla se siihen\n leikep\u00f6yd\u00e4n kautta tai kirjoittamalla se siihen k\u00e4sin <\/p><p> Valitse piilotettavat sanat kaksoisklikkaamalla sanaa ja painamalla painiketta alla.<\/p>", 
  "Done": "Valmista", 

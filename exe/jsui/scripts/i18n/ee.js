@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-03-20 16:20+0100\nPO-Revision-Date: 2006-08-13 00:29+1200\nLast-Translator: \nLanguage-Team: GOUNH KPODO <Dicta5@yahoo.com>\nLanguage: ee\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-04-07 23:44+0200\nPO-Revision-Date: 2006-08-13 00:29+1200\nLast-Translator: \nLanguage-Team: GOUNH KPODO <Dicta5@yahoo.com>\nLanguage: ee\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Frame Height:": "Ada\u014budede  \u0192e \u0256o\u0192e", 
  "Reflective question:": "\u014bugblede biabiawo ", 
  "Text Line": "Nu\u014b\u0254\u014bl\u0254m\u0254nu", 
@@ -46,7 +46,7 @@ translations = {
  "Options": "Tiatiawo", 
  "Delete": "\u00d0ee\u0256a", 
  "Objectives describe the expected outcomes of the learning and should\ndefine what the learners will be able to do when they have completed the\nlearning tasks.": "Elebe ta\u0256odzinua na\u0256\u0254 nus\u0254sr\u0254a metsonuwo eye woagbl\u0254 nu si wodi tso nusrolawo si ne wowu nus\u0254sr\u0254a nu", 
- "Incorrect!": "egble", 
+ "Cloze Activity": "Cloze \u0192e d\u0254w\u0254\u0256a\u014bu ", 
  "Reading Activity 0.11": "Nuxexle  \u0192e d\u0254wo", 
  "Home": "N\u0254\u0192e", 
  "No Images Loaded": "n\u0254n\u0254metata  mele edzi o ", 
@@ -88,7 +88,6 @@ translations = {
  "Instructions For Learners": "Af\u0254\u0256o\u0192e na nusr\u0254lawo", 
  "Other": "Bubu", 
  "Provide relevant feedback on the \nsituation.": "Na nuw\u0254na siawo\n metsonu nyuiwo.", 
- "Cloze Activity": "Cloze \u0192e d\u0254w\u0254\u0256a\u014bu ", 
  "Yoruba ": "yuroba", 
  "Move Down": "Va anyi me", 
  "Provide a caption for the flash movie \nyou have just inserted.": "Tia tanya na \n sini(flash movie )si nede eme fifia la.", 
@@ -105,7 +104,6 @@ translations = {
  "Activity": "Nuw\u0254w\u0254", 
  "Provide instruction on how the True\/False Question should be \ncompleted.": "Fia ale si woawu\n nyate\u0192ee\/a\u028batsoe biabia la nue.", 
  "Select an image": "Tia n\u0254n\u0254metata a\u0256e", 
- "Submit Answer": "\u0189o \u014bu\u0256o\u0256oa \u0256a", 
  "Case Study": "Numetotot\u0254x\u025b", 
  "Put instructions for learners here": "Af\u0254\u0256o\u0192e na nusr\u0254lawo nan\u0254 afi sia", 
  "French Wikipedia Article": "Franset\u0254wo \u0192e Wikipedia Nyadu"
