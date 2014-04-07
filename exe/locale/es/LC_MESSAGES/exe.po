@@ -6965,7 +6965,7 @@ msgstr "presencial"
 
 #: exe/jsui/scripts/lomvocab.js:1253
 msgid "distance"
-msgstr "distancia"
+msgstr "a distancia"
 
 #: exe/jsui/scripts/lomvocab.js:1269
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:27
@@ -6975,12 +6975,12 @@ msgstr "licencia propietaria"
 #: exe/jsui/scripts/lomvocab.js:1273
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:31
 msgid "free software license EUPL"
-msgstr "licencia libre EUPL"
+msgstr "licencia de software libre EUPL"
 
 #: exe/jsui/scripts/lomvocab.js:1277
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:35
 msgid "free software license GPL"
-msgstr "licencia libre GPL"
+msgstr "licencia de software libre GPL"
 
 #: exe/jsui/scripts/lomvocab.js:1281
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
@@ -6990,7 +6990,7 @@ msgstr "licencia libre dual GPL y EUPL"
 #: exe/jsui/scripts/lomvocab.js:1285
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:43
 msgid "other free software licenses"
-msgstr "otras licencias libres"
+msgstr "otras licencias de software libres"
 
 #: exe/jsui/scripts/lomvocab.js:1289
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:47
