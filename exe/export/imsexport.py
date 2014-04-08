@@ -1,7 +1,10 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
 # Copyright 2004-2008 eXe Project, http://eXeLearning.org/
+# Copyright 2008-2014 eXeLearning.net, http://exelearning.net/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -321,18 +324,20 @@ class IMSPage(Page):
             html += style.get_extra_body() 
         html += u'</body></html>'
         html = html.encode('utf8')
-        # JR: Eliminamos los atributos de las ecuaciones
+        # JRJ: Eliminamos los atributos de las ecuaciones
+        # Let's elliminate the attibutes of the equations
         aux = re.compile("exe_math_latex=\"[^\"]*\"")
-	html = aux.sub("", html)
-	aux = re.compile("exe_math_size=\"[^\"]*\"")
-	html = aux.sub("", html)
-	#JR: Cambio el & en los enlaces del glosario
-	html = html.replace("&concept", "&amp;concept")
-    # Remove "resources/" from data="resources/ and the url param
-	html = html.replace("video/quicktime\" data=\"resources/", "video/quicktime\" data=\"")
-	html = html.replace("application/x-mplayer2\" data=\"resources/", "application/x-mplayer2\" data=\"")
-	html = html.replace("audio/x-pn-realaudio-plugin\" data=\"resources/", "audio/x-pn-realaudio-plugin\" data=\"")
-	html = html.replace("<param name=\"url\" value=\"resources/", "<param name=\"url\" value=\"")
+        html = aux.sub("", html)
+        aux = re.compile("exe_math_size=\"[^\"]*\"")
+        html = aux.sub("", html)
+        #JRJ: Cambio el & en los enlaces del glosario
+        # Then let's change the & of the glossary links
+        html = html.replace("&concept", "&amp;concept")
+        # Remove "resources/" from data="resources/ and the url param
+        html = html.replace("video/quicktime\" data=\"resources/", "video/quicktime\" data=\"")
+        html = html.replace("application/x-mplayer2\" data=\"resources/", "application/x-mplayer2\" data=\"")
+        html = html.replace("audio/x-pn-realaudio-plugin\" data=\"resources/", "audio/x-pn-realaudio-plugin\" data=\"")
+        html = html.replace("<param name=\"url\" value=\"resources/", "<param name=\"url\" value=\"")
         return html
 
 
