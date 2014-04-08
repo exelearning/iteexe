@@ -1,9 +1,5 @@
-#!/usr/bin/env python
-#-*- coding: utf-8 -*-
-
 """
-JRJ: Representación de un estilo
-(Display of styles)
+JR: Representacion de un estilo
 """
 
 
@@ -11,6 +7,7 @@ import logging
 from exe.engine.persist   import Persistable
 from xml.dom              import minidom
 import collections
+import chardet
 
 log = logging.getLogger(__name__)
 
@@ -18,10 +15,9 @@ log = logging.getLogger(__name__)
 class Style(Persistable):
     """
     Clase base para todos los estilos
-    (Base class for all styles)
     """
 
-    # Atributos (attributes)
+    # Atributos
     # xml node : [ label , 0=textfield 1=textarea , order into form]
     _attributespre ={
 
@@ -56,7 +52,7 @@ class Style(Persistable):
         self._license_url   = ''
         self._description   = ''
         self._extra_head    = ''
-        self._jquery        = True
+        self._jquery    = True
         self._extra_body    = ''
         self._validConfig   = False
         self._valid         = False
@@ -68,10 +64,11 @@ class Style(Persistable):
             if self._valid:
                 configStyle = self._styleDir/'config.xml'
                 if configStyle.exists():
-                    xmldoc = minidom.parse( configStyle )
-            
-                    theme = xmldoc.getElementsByTagName('theme')
-                    
+                    configdata = open(configStyle).read()
+                    configcharset = chardet.detect(configdata)
+                    newconfigdata=configdata.decode(configcharset['encoding'], 'replace')
+                    xmldoc = minidom.parseString(newconfigdata)            
+                    theme = xmldoc.getElementsByTagName('theme')                    
                     if (len(theme) > 0):
                         for attribute in self._attributes.keys():
                             rpattribute='_'+attribute.replace('-', '_')
@@ -95,8 +92,7 @@ class Style(Persistable):
             self._valid = False
             
 
-    # Métodos publicos de acceso
-    # (Public access methods)
+    # Metodos publicos de acceso
     def isValid(self):
         return self._valid
     
@@ -163,7 +159,6 @@ class Style(Persistable):
                 else:
                     html += getattr(self, '_'+attribute.replace('-', '_')).replace('\n','<br/>') + '</p>'
         return html
-
     def renderPropertiesJSON(self):
         properties = []     
         for attribute in self._attributes.keys():
