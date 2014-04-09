@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-04-07 23:44+0200\n"
+"POT-Creation-Date: 2014-04-09 19:07+0200\n"
 "PO-Revision-Date: 2013-10-23 22:26+0800\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language-Team: Chinese Traditional <zh-l10n@linux.org.tw>\n"
@@ -2983,7 +2983,7 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "匯出格式未實作"
 
-#: exe/export/epub3export.py:569 exe/export/imsexport.py:512
+#: exe/export/epub3export.py:569 exe/export/imsexport.py:517
 #: exe/export/scormexport.py:726 exe/export/websiteexport.py:96
 #, python-format
 msgid ""
@@ -5584,7 +5584,6 @@ msgid "expositive"
 msgstr "評論"
 
 #: exe/jsui/scripts/lomvocab.js:13 exe/jsui/scripts/lomvocab.js:672
-#: exe/jsui/scripts/lomvocab.js:1216
 msgid "mixed"
 msgstr "混合"
 
@@ -5764,7 +5763,7 @@ msgid "instructional designer"
 msgstr "說明設計者"
 
 #: exe/jsui/scripts/lomvocab.js:203 exe/jsui/scripts/lomvocab.js:1018
-#: exe/jsui/scripts/lomvocab.js:1585
+#: exe/jsui/scripts/lomvocab.js:1594
 msgid "subject matter expert"
 msgstr "主題事件專家"
 
@@ -5954,102 +5953,102 @@ msgstr "訓練"
 msgid "other"
 msgstr "其他"
 
-#: exe/jsui/scripts/lomvocab.js:403 exe/jsui/scripts/lomvocab.js:1259
+#: exe/jsui/scripts/lomvocab.js:403 exe/jsui/scripts/lomvocab.js:1268
 msgid "operating system"
 msgstr "作業系統"
 
-#: exe/jsui/scripts/lomvocab.js:407 exe/jsui/scripts/lomvocab.js:1263
+#: exe/jsui/scripts/lomvocab.js:407 exe/jsui/scripts/lomvocab.js:1272
 msgid "browser"
 msgstr "瀏覽器"
 
-#: exe/jsui/scripts/lomvocab.js:423 exe/jsui/scripts/lomvocab.js:1331
+#: exe/jsui/scripts/lomvocab.js:423 exe/jsui/scripts/lomvocab.js:1340
 msgid "ispartof"
 msgstr "為誰的部件："
 
-#: exe/jsui/scripts/lomvocab.js:427 exe/jsui/scripts/lomvocab.js:1335
+#: exe/jsui/scripts/lomvocab.js:427 exe/jsui/scripts/lomvocab.js:1344
 msgid "haspart"
 msgstr "有部件："
 
-#: exe/jsui/scripts/lomvocab.js:431 exe/jsui/scripts/lomvocab.js:1339
+#: exe/jsui/scripts/lomvocab.js:431 exe/jsui/scripts/lomvocab.js:1348
 msgid "isversionof"
 msgstr "為版本"
 
-#: exe/jsui/scripts/lomvocab.js:435 exe/jsui/scripts/lomvocab.js:1343
+#: exe/jsui/scripts/lomvocab.js:435 exe/jsui/scripts/lomvocab.js:1352
 msgid "hasversion"
 msgstr "有版本"
 
-#: exe/jsui/scripts/lomvocab.js:439 exe/jsui/scripts/lomvocab.js:1347
+#: exe/jsui/scripts/lomvocab.js:439 exe/jsui/scripts/lomvocab.js:1356
 msgid "isformatof"
 msgstr "為誰的格式："
 
-#: exe/jsui/scripts/lomvocab.js:443 exe/jsui/scripts/lomvocab.js:1351
+#: exe/jsui/scripts/lomvocab.js:443 exe/jsui/scripts/lomvocab.js:1360
 msgid "hasformat"
 msgstr "有格式"
 
-#: exe/jsui/scripts/lomvocab.js:447 exe/jsui/scripts/lomvocab.js:1355
+#: exe/jsui/scripts/lomvocab.js:447 exe/jsui/scripts/lomvocab.js:1364
 msgid "references"
 msgstr "參考"
 
-#: exe/jsui/scripts/lomvocab.js:451 exe/jsui/scripts/lomvocab.js:1359
+#: exe/jsui/scripts/lomvocab.js:451 exe/jsui/scripts/lomvocab.js:1368
 msgid "isreferencedby"
 msgstr "被誰參考："
 
-#: exe/jsui/scripts/lomvocab.js:455 exe/jsui/scripts/lomvocab.js:1363
+#: exe/jsui/scripts/lomvocab.js:455 exe/jsui/scripts/lomvocab.js:1372
 msgid "isbasedon"
 msgstr "基於誰："
 
-#: exe/jsui/scripts/lomvocab.js:459 exe/jsui/scripts/lomvocab.js:1367
+#: exe/jsui/scripts/lomvocab.js:459 exe/jsui/scripts/lomvocab.js:1376
 msgid "isbasisfor"
 msgstr "是誰的基本："
 
-#: exe/jsui/scripts/lomvocab.js:463 exe/jsui/scripts/lomvocab.js:1371
+#: exe/jsui/scripts/lomvocab.js:463 exe/jsui/scripts/lomvocab.js:1380
 msgid "requires"
 msgstr "需要"
 
-#: exe/jsui/scripts/lomvocab.js:467 exe/jsui/scripts/lomvocab.js:1375
+#: exe/jsui/scripts/lomvocab.js:467 exe/jsui/scripts/lomvocab.js:1384
 msgid "isrequiredby"
 msgstr "被需要"
 
 #: exe/jsui/scripts/lomvocab.js:473 exe/jsui/scripts/lomvocab.js:541
-#: exe/jsui/scripts/lomvocab.js:1381 exe/jsui/scripts/lomvocab.js:1449
+#: exe/jsui/scripts/lomvocab.js:1390 exe/jsui/scripts/lomvocab.js:1458
 msgid "very low"
 msgstr "非常低"
 
 #: exe/jsui/scripts/lomvocab.js:477 exe/jsui/scripts/lomvocab.js:545
-#: exe/jsui/scripts/lomvocab.js:1385 exe/jsui/scripts/lomvocab.js:1453
+#: exe/jsui/scripts/lomvocab.js:1394 exe/jsui/scripts/lomvocab.js:1462
 msgid "low"
 msgstr "低"
 
 #: exe/jsui/scripts/lomvocab.js:481 exe/jsui/scripts/lomvocab.js:549
-#: exe/jsui/scripts/lomvocab.js:645 exe/jsui/scripts/lomvocab.js:1389
-#: exe/jsui/scripts/lomvocab.js:1457 exe/jsui/scripts/lomvocab.js:1609
+#: exe/jsui/scripts/lomvocab.js:645 exe/jsui/scripts/lomvocab.js:1398
+#: exe/jsui/scripts/lomvocab.js:1466 exe/jsui/scripts/lomvocab.js:1618
 #: exe/webui/externalurlblock.py:73
 msgid "medium"
 msgstr "中"
 
 #: exe/jsui/scripts/lomvocab.js:485 exe/jsui/scripts/lomvocab.js:553
-#: exe/jsui/scripts/lomvocab.js:1393 exe/jsui/scripts/lomvocab.js:1461
+#: exe/jsui/scripts/lomvocab.js:1402 exe/jsui/scripts/lomvocab.js:1470
 msgid "high"
 msgstr "高"
 
 #: exe/jsui/scripts/lomvocab.js:489 exe/jsui/scripts/lomvocab.js:557
-#: exe/jsui/scripts/lomvocab.js:1397 exe/jsui/scripts/lomvocab.js:1465
+#: exe/jsui/scripts/lomvocab.js:1406 exe/jsui/scripts/lomvocab.js:1474
 msgid "very high"
 msgstr "非常高"
 
-#: exe/jsui/scripts/lomvocab.js:495 exe/jsui/scripts/lomvocab.js:1403
+#: exe/jsui/scripts/lomvocab.js:495 exe/jsui/scripts/lomvocab.js:1412
 msgid "draft"
 msgstr "草稿"
 
-#: exe/jsui/scripts/lomvocab.js:499 exe/jsui/scripts/lomvocab.js:1407
+#: exe/jsui/scripts/lomvocab.js:499 exe/jsui/scripts/lomvocab.js:1416
 msgid "final"
 msgstr "完成"
 
-#: exe/jsui/scripts/lomvocab.js:503 exe/jsui/scripts/lomvocab.js:1411
+#: exe/jsui/scripts/lomvocab.js:503 exe/jsui/scripts/lomvocab.js:1420
 msgid "revised"
 msgstr "已修改"
 
-#: exe/jsui/scripts/lomvocab.js:507 exe/jsui/scripts/lomvocab.js:1415
+#: exe/jsui/scripts/lomvocab.js:507 exe/jsui/scripts/lomvocab.js:1424
 msgid "unavailable"
 msgstr "無法使用"
 
@@ -6057,105 +6056,105 @@ msgstr "無法使用"
 msgid "LOMv1.0"
 msgstr "LOMv1.0"
 
-#: exe/jsui/scripts/lomvocab.js:519 exe/jsui/scripts/lomvocab.js:1427
+#: exe/jsui/scripts/lomvocab.js:519 exe/jsui/scripts/lomvocab.js:1436
 msgid "atomic"
 msgstr "最小單位"
 
-#: exe/jsui/scripts/lomvocab.js:523 exe/jsui/scripts/lomvocab.js:1431
+#: exe/jsui/scripts/lomvocab.js:523 exe/jsui/scripts/lomvocab.js:1440
 msgid "collection"
 msgstr "收藏"
 
-#: exe/jsui/scripts/lomvocab.js:527 exe/jsui/scripts/lomvocab.js:1435
+#: exe/jsui/scripts/lomvocab.js:527 exe/jsui/scripts/lomvocab.js:1444
 msgid "networked"
 msgstr "網路式"
 
-#: exe/jsui/scripts/lomvocab.js:531 exe/jsui/scripts/lomvocab.js:1439
+#: exe/jsui/scripts/lomvocab.js:531 exe/jsui/scripts/lomvocab.js:1448
 msgid "hierarchical"
 msgstr "階層式"
 
-#: exe/jsui/scripts/lomvocab.js:535 exe/jsui/scripts/lomvocab.js:1443
+#: exe/jsui/scripts/lomvocab.js:535 exe/jsui/scripts/lomvocab.js:1452
 msgid "linear"
 msgstr "線性"
 
-#: exe/jsui/scripts/lomvocab.js:563 exe/jsui/scripts/lomvocab.js:1471
+#: exe/jsui/scripts/lomvocab.js:563 exe/jsui/scripts/lomvocab.js:1480
 msgid "pc-dos"
 msgstr "pc-dos"
 
-#: exe/jsui/scripts/lomvocab.js:567 exe/jsui/scripts/lomvocab.js:1475
+#: exe/jsui/scripts/lomvocab.js:567 exe/jsui/scripts/lomvocab.js:1484
 msgid "ms-windows"
 msgstr "ms-windows"
 
-#: exe/jsui/scripts/lomvocab.js:571 exe/jsui/scripts/lomvocab.js:1479
+#: exe/jsui/scripts/lomvocab.js:571 exe/jsui/scripts/lomvocab.js:1488
 msgid "macos"
 msgstr "macos"
 
-#: exe/jsui/scripts/lomvocab.js:575 exe/jsui/scripts/lomvocab.js:1487
+#: exe/jsui/scripts/lomvocab.js:575 exe/jsui/scripts/lomvocab.js:1496
 msgid "unix"
 msgstr "unix"
 
-#: exe/jsui/scripts/lomvocab.js:579 exe/jsui/scripts/lomvocab.js:1491
+#: exe/jsui/scripts/lomvocab.js:579 exe/jsui/scripts/lomvocab.js:1500
 msgid "multi-os"
 msgstr "多重作業系統"
 
-#: exe/jsui/scripts/lomvocab.js:583 exe/jsui/scripts/lomvocab.js:1495
+#: exe/jsui/scripts/lomvocab.js:583 exe/jsui/scripts/lomvocab.js:1504
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "none"
 msgstr "無"
 
-#: exe/jsui/scripts/lomvocab.js:587 exe/jsui/scripts/lomvocab.js:1499
+#: exe/jsui/scripts/lomvocab.js:587 exe/jsui/scripts/lomvocab.js:1508
 msgid "any"
 msgstr "任何"
 
-#: exe/jsui/scripts/lomvocab.js:591 exe/jsui/scripts/lomvocab.js:1507
+#: exe/jsui/scripts/lomvocab.js:591 exe/jsui/scripts/lomvocab.js:1516
 msgid "netscape communicator"
 msgstr "網景瀏覽器"
 
-#: exe/jsui/scripts/lomvocab.js:595 exe/jsui/scripts/lomvocab.js:1511
+#: exe/jsui/scripts/lomvocab.js:595 exe/jsui/scripts/lomvocab.js:1520
 msgid "ms-internet explorer"
 msgstr "微軟 ie"
 
-#: exe/jsui/scripts/lomvocab.js:599 exe/jsui/scripts/lomvocab.js:1515
+#: exe/jsui/scripts/lomvocab.js:599 exe/jsui/scripts/lomvocab.js:1524
 msgid "opera"
 msgstr "opera"
 
-#: exe/jsui/scripts/lomvocab.js:603 exe/jsui/scripts/lomvocab.js:1519
+#: exe/jsui/scripts/lomvocab.js:603 exe/jsui/scripts/lomvocab.js:1528
 msgid "amaya"
 msgstr "amaya"
 
-#: exe/jsui/scripts/lomvocab.js:609 exe/jsui/scripts/lomvocab.js:1220
-#: exe/jsui/scripts/lomvocab.js:1557
+#: exe/jsui/scripts/lomvocab.js:609 exe/jsui/scripts/lomvocab.js:1222
+#: exe/jsui/scripts/lomvocab.js:1566
 msgid "teacher"
 msgstr "老師"
 
-#: exe/jsui/scripts/lomvocab.js:617 exe/jsui/scripts/lomvocab.js:1525
+#: exe/jsui/scripts/lomvocab.js:617 exe/jsui/scripts/lomvocab.js:1534
 msgid "learner"
 msgstr "學生"
 
-#: exe/jsui/scripts/lomvocab.js:621 exe/jsui/scripts/lomvocab.js:1577
+#: exe/jsui/scripts/lomvocab.js:621 exe/jsui/scripts/lomvocab.js:1586
 msgid "manager"
 msgstr "管理者"
 
-#: exe/jsui/scripts/lomvocab.js:627 exe/jsui/scripts/lomvocab.js:1591
+#: exe/jsui/scripts/lomvocab.js:627 exe/jsui/scripts/lomvocab.js:1600
 msgid "universal"
 msgstr "通用"
 
-#: exe/jsui/scripts/lomvocab.js:631 exe/jsui/scripts/lomvocab.js:1595
+#: exe/jsui/scripts/lomvocab.js:631 exe/jsui/scripts/lomvocab.js:1604
 msgid "non-universal"
 msgstr "非通用"
 
-#: exe/jsui/scripts/lomvocab.js:637 exe/jsui/scripts/lomvocab.js:1601
+#: exe/jsui/scripts/lomvocab.js:637 exe/jsui/scripts/lomvocab.js:1610
 msgid "very easy"
 msgstr "非常簡單"
 
-#: exe/jsui/scripts/lomvocab.js:641 exe/jsui/scripts/lomvocab.js:1605
+#: exe/jsui/scripts/lomvocab.js:641 exe/jsui/scripts/lomvocab.js:1614
 msgid "easy"
 msgstr "簡單"
 
-#: exe/jsui/scripts/lomvocab.js:649 exe/jsui/scripts/lomvocab.js:1613
+#: exe/jsui/scripts/lomvocab.js:649 exe/jsui/scripts/lomvocab.js:1622
 msgid "difficult"
 msgstr "困難"
 
-#: exe/jsui/scripts/lomvocab.js:653 exe/jsui/scripts/lomvocab.js:1617
+#: exe/jsui/scripts/lomvocab.js:653 exe/jsui/scripts/lomvocab.js:1626
 msgid "very difficult"
 msgstr "非常困難"
 
@@ -6363,152 +6362,162 @@ msgstr "實際環境"
 msgid "home"
 msgstr "家"
 
-#: exe/jsui/scripts/lomvocab.js:1224 exe/jsui/scripts/lomvocab.js:1565
+#: exe/jsui/scripts/lomvocab.js:1218
+#, fuzzy
+msgid "mixed environment"
+msgstr "實際環境"
+
+#: exe/jsui/scripts/lomvocab.js:1226 exe/jsui/scripts/lomvocab.js:1574
 msgid "family"
 msgstr "家庭"
 
-#: exe/jsui/scripts/lomvocab.js:1228 exe/jsui/scripts/lomvocab.js:1561
+#: exe/jsui/scripts/lomvocab.js:1230 exe/jsui/scripts/lomvocab.js:1570
 msgid "tutor"
 msgstr "教學"
 
-#: exe/jsui/scripts/lomvocab.js:1232
+#: exe/jsui/scripts/lomvocab.js:1234
 msgid "schoolmate"
 msgstr "學伴"
 
-#: exe/jsui/scripts/lomvocab.js:1236
+#: exe/jsui/scripts/lomvocab.js:1238
 msgid "independent"
 msgstr "獨立"
 
-#: exe/jsui/scripts/lomvocab.js:1240
+#: exe/jsui/scripts/lomvocab.js:1245
+#, fuzzy
+msgid "mixed attendance"
+msgstr "實際環境"
+
+#: exe/jsui/scripts/lomvocab.js:1249
 msgid "blended"
 msgstr "混合式"
 
-#: exe/jsui/scripts/lomvocab.js:1249
+#: exe/jsui/scripts/lomvocab.js:1258
 msgid "face to face"
 msgstr "面對面"
 
-#: exe/jsui/scripts/lomvocab.js:1253
+#: exe/jsui/scripts/lomvocab.js:1262
 msgid "distance"
 msgstr "距離"
 
-#: exe/jsui/scripts/lomvocab.js:1269
+#: exe/jsui/scripts/lomvocab.js:1278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:27
 msgid "propietary license"
 msgstr "私有授權"
 
-#: exe/jsui/scripts/lomvocab.js:1273
+#: exe/jsui/scripts/lomvocab.js:1282
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:31
 msgid "free software license EUPL"
 msgstr "自由軟體授權 EUPL"
 
-#: exe/jsui/scripts/lomvocab.js:1277
+#: exe/jsui/scripts/lomvocab.js:1286
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:35
 msgid "free software license GPL"
 msgstr "自由軟體授權 GPL"
 
-#: exe/jsui/scripts/lomvocab.js:1281
+#: exe/jsui/scripts/lomvocab.js:1290
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
 msgid "dual free content license GPL and EUPL"
 msgstr "雙重自由內容授權 GPL 與 EUPL"
 
-#: exe/jsui/scripts/lomvocab.js:1285
+#: exe/jsui/scripts/lomvocab.js:1294
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:43
 msgid "other free software licenses"
 msgstr "其他自由軟體授權"
 
-#: exe/jsui/scripts/lomvocab.js:1289
+#: exe/jsui/scripts/lomvocab.js:1298
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:47
 msgid "public domain"
 msgstr "公共領域"
 
-#: exe/jsui/scripts/lomvocab.js:1293
+#: exe/jsui/scripts/lomvocab.js:1302
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:51
 msgid "not appropriate"
 msgstr "不合適"
 
-#: exe/jsui/scripts/lomvocab.js:1297
+#: exe/jsui/scripts/lomvocab.js:1306
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:55
 msgid "intellectual property license"
 msgstr "智慧財產權"
 
-#: exe/jsui/scripts/lomvocab.js:1301
+#: exe/jsui/scripts/lomvocab.js:1310
 msgid "creative commons: attribution"
 msgstr "創用 CC：Attribution"
 
-#: exe/jsui/scripts/lomvocab.js:1305
+#: exe/jsui/scripts/lomvocab.js:1314
 msgid "creative commons: attribution - non derived work"
 msgstr "創用 CC：Attribution  -  非衍生作品"
 
-#: exe/jsui/scripts/lomvocab.js:1309
+#: exe/jsui/scripts/lomvocab.js:1318
 msgid "creative commons: attribution - non derived work - non commercial"
 msgstr "創用 CC：Attribution  -  非衍生作品  -  非商業使用"
 
-#: exe/jsui/scripts/lomvocab.js:1313
+#: exe/jsui/scripts/lomvocab.js:1322
 msgid "creative commons: attribution - non commercial"
 msgstr "創用 CC：Attribution  -  非商業使用"
 
-#: exe/jsui/scripts/lomvocab.js:1317
+#: exe/jsui/scripts/lomvocab.js:1326
 msgid "creative commons: attribution - non commercial - share alike"
 msgstr "創用 CC：Attribution  -  非商業使用  -  相同方式分享 (share alike)"
 
-#: exe/jsui/scripts/lomvocab.js:1321
+#: exe/jsui/scripts/lomvocab.js:1330
 msgid "creative commons: attribution - share alike"
 msgstr "創用 CC：Attribution  -  相同方式分享 (share alike)"
 
-#: exe/jsui/scripts/lomvocab.js:1325
+#: exe/jsui/scripts/lomvocab.js:1334
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:131
 msgid "license GFDL"
 msgstr "授權 GFDL"
 
-#: exe/jsui/scripts/lomvocab.js:1421
+#: exe/jsui/scripts/lomvocab.js:1430
 msgid "LOM-ESv1.0"
 msgstr "LOM-ESv1.0"
 
-#: exe/jsui/scripts/lomvocab.js:1483
+#: exe/jsui/scripts/lomvocab.js:1492
 msgid "linux"
 msgstr "linux"
 
-#: exe/jsui/scripts/lomvocab.js:1503
+#: exe/jsui/scripts/lomvocab.js:1512
 msgid "mozilla firefox"
 msgstr "mozilla firefox"
 
-#: exe/jsui/scripts/lomvocab.js:1529
+#: exe/jsui/scripts/lomvocab.js:1538
 msgid "special needs learner"
 msgstr "特殊需求學生"
 
-#: exe/jsui/scripts/lomvocab.js:1533
+#: exe/jsui/scripts/lomvocab.js:1542
 msgid "gifted learner"
 msgstr "天才學生"
 
-#: exe/jsui/scripts/lomvocab.js:1537
+#: exe/jsui/scripts/lomvocab.js:1546
 msgid "learners late integration into the education system"
 msgstr "較慢進入教育系統的學生"
 
-#: exe/jsui/scripts/lomvocab.js:1541
+#: exe/jsui/scripts/lomvocab.js:1550
 msgid "learner with other specific educational support needs"
 msgstr "有其他特別教育支援需求的學生"
 
-#: exe/jsui/scripts/lomvocab.js:1545
+#: exe/jsui/scripts/lomvocab.js:1554
 msgid "general public"
 msgstr "通用公共"
 
-#: exe/jsui/scripts/lomvocab.js:1549
+#: exe/jsui/scripts/lomvocab.js:1558
 msgid "individual"
 msgstr "個別"
 
-#: exe/jsui/scripts/lomvocab.js:1553
+#: exe/jsui/scripts/lomvocab.js:1562
 msgid "group"
 msgstr "群組"
 
-#: exe/jsui/scripts/lomvocab.js:1569
+#: exe/jsui/scripts/lomvocab.js:1578
 msgid "information scientist"
 msgstr "資訊科學家"
 
-#: exe/jsui/scripts/lomvocab.js:1573
+#: exe/jsui/scripts/lomvocab.js:1582
 msgid "computer scientist"
 msgstr "電腦科學家"
 
-#: exe/jsui/scripts/lomvocab.js:1581
+#: exe/jsui/scripts/lomvocab.js:1590
 msgid "education expert"
 msgstr "教育專家"
 

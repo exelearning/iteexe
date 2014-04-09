@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-07 23:44+0200\n"
+"POT-Creation-Date: 2014-04-09 19:07+0200\n"
 "PO-Revision-Date: 2007-12-07 17:53+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -3323,7 +3323,7 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr ""
 
-#: exe/export/epub3export.py:569 exe/export/imsexport.py:512
+#: exe/export/epub3export.py:569 exe/export/imsexport.py:517
 #: exe/export/scormexport.py:726 exe/export/websiteexport.py:96
 #, python-format
 msgid ""
@@ -5934,7 +5934,6 @@ msgid "expositive"
 msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:13 exe/jsui/scripts/lomvocab.js:672
-#: exe/jsui/scripts/lomvocab.js:1216
 msgid "mixed"
 msgstr ""
 
@@ -6114,7 +6113,7 @@ msgid "instructional designer"
 msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:203 exe/jsui/scripts/lomvocab.js:1018
-#: exe/jsui/scripts/lomvocab.js:1585
+#: exe/jsui/scripts/lomvocab.js:1594
 msgid "subject matter expert"
 msgstr ""
 
@@ -6304,102 +6303,102 @@ msgstr ""
 msgid "other"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:403 exe/jsui/scripts/lomvocab.js:1259
+#: exe/jsui/scripts/lomvocab.js:403 exe/jsui/scripts/lomvocab.js:1268
 msgid "operating system"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:407 exe/jsui/scripts/lomvocab.js:1263
+#: exe/jsui/scripts/lomvocab.js:407 exe/jsui/scripts/lomvocab.js:1272
 msgid "browser"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:423 exe/jsui/scripts/lomvocab.js:1331
+#: exe/jsui/scripts/lomvocab.js:423 exe/jsui/scripts/lomvocab.js:1340
 msgid "ispartof"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:427 exe/jsui/scripts/lomvocab.js:1335
+#: exe/jsui/scripts/lomvocab.js:427 exe/jsui/scripts/lomvocab.js:1344
 msgid "haspart"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:431 exe/jsui/scripts/lomvocab.js:1339
+#: exe/jsui/scripts/lomvocab.js:431 exe/jsui/scripts/lomvocab.js:1348
 msgid "isversionof"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:435 exe/jsui/scripts/lomvocab.js:1343
+#: exe/jsui/scripts/lomvocab.js:435 exe/jsui/scripts/lomvocab.js:1352
 msgid "hasversion"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:439 exe/jsui/scripts/lomvocab.js:1347
+#: exe/jsui/scripts/lomvocab.js:439 exe/jsui/scripts/lomvocab.js:1356
 msgid "isformatof"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:443 exe/jsui/scripts/lomvocab.js:1351
+#: exe/jsui/scripts/lomvocab.js:443 exe/jsui/scripts/lomvocab.js:1360
 msgid "hasformat"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:447 exe/jsui/scripts/lomvocab.js:1355
+#: exe/jsui/scripts/lomvocab.js:447 exe/jsui/scripts/lomvocab.js:1364
 msgid "references"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:451 exe/jsui/scripts/lomvocab.js:1359
+#: exe/jsui/scripts/lomvocab.js:451 exe/jsui/scripts/lomvocab.js:1368
 msgid "isreferencedby"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:455 exe/jsui/scripts/lomvocab.js:1363
+#: exe/jsui/scripts/lomvocab.js:455 exe/jsui/scripts/lomvocab.js:1372
 msgid "isbasedon"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:459 exe/jsui/scripts/lomvocab.js:1367
+#: exe/jsui/scripts/lomvocab.js:459 exe/jsui/scripts/lomvocab.js:1376
 msgid "isbasisfor"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:463 exe/jsui/scripts/lomvocab.js:1371
+#: exe/jsui/scripts/lomvocab.js:463 exe/jsui/scripts/lomvocab.js:1380
 msgid "requires"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:467 exe/jsui/scripts/lomvocab.js:1375
+#: exe/jsui/scripts/lomvocab.js:467 exe/jsui/scripts/lomvocab.js:1384
 msgid "isrequiredby"
 msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:473 exe/jsui/scripts/lomvocab.js:541
-#: exe/jsui/scripts/lomvocab.js:1381 exe/jsui/scripts/lomvocab.js:1449
+#: exe/jsui/scripts/lomvocab.js:1390 exe/jsui/scripts/lomvocab.js:1458
 msgid "very low"
 msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:477 exe/jsui/scripts/lomvocab.js:545
-#: exe/jsui/scripts/lomvocab.js:1385 exe/jsui/scripts/lomvocab.js:1453
+#: exe/jsui/scripts/lomvocab.js:1394 exe/jsui/scripts/lomvocab.js:1462
 msgid "low"
 msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:481 exe/jsui/scripts/lomvocab.js:549
-#: exe/jsui/scripts/lomvocab.js:645 exe/jsui/scripts/lomvocab.js:1389
-#: exe/jsui/scripts/lomvocab.js:1457 exe/jsui/scripts/lomvocab.js:1609
+#: exe/jsui/scripts/lomvocab.js:645 exe/jsui/scripts/lomvocab.js:1398
+#: exe/jsui/scripts/lomvocab.js:1466 exe/jsui/scripts/lomvocab.js:1618
 #: exe/webui/externalurlblock.py:73
 msgid "medium"
 msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:485 exe/jsui/scripts/lomvocab.js:553
-#: exe/jsui/scripts/lomvocab.js:1393 exe/jsui/scripts/lomvocab.js:1461
+#: exe/jsui/scripts/lomvocab.js:1402 exe/jsui/scripts/lomvocab.js:1470
 msgid "high"
 msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:489 exe/jsui/scripts/lomvocab.js:557
-#: exe/jsui/scripts/lomvocab.js:1397 exe/jsui/scripts/lomvocab.js:1465
+#: exe/jsui/scripts/lomvocab.js:1406 exe/jsui/scripts/lomvocab.js:1474
 msgid "very high"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:495 exe/jsui/scripts/lomvocab.js:1403
+#: exe/jsui/scripts/lomvocab.js:495 exe/jsui/scripts/lomvocab.js:1412
 msgid "draft"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:499 exe/jsui/scripts/lomvocab.js:1407
+#: exe/jsui/scripts/lomvocab.js:499 exe/jsui/scripts/lomvocab.js:1416
 msgid "final"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:503 exe/jsui/scripts/lomvocab.js:1411
+#: exe/jsui/scripts/lomvocab.js:503 exe/jsui/scripts/lomvocab.js:1420
 msgid "revised"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:507 exe/jsui/scripts/lomvocab.js:1415
+#: exe/jsui/scripts/lomvocab.js:507 exe/jsui/scripts/lomvocab.js:1424
 msgid "unavailable"
 msgstr ""
 
@@ -6407,105 +6406,105 @@ msgstr ""
 msgid "LOMv1.0"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:519 exe/jsui/scripts/lomvocab.js:1427
+#: exe/jsui/scripts/lomvocab.js:519 exe/jsui/scripts/lomvocab.js:1436
 msgid "atomic"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:523 exe/jsui/scripts/lomvocab.js:1431
+#: exe/jsui/scripts/lomvocab.js:523 exe/jsui/scripts/lomvocab.js:1440
 msgid "collection"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:527 exe/jsui/scripts/lomvocab.js:1435
+#: exe/jsui/scripts/lomvocab.js:527 exe/jsui/scripts/lomvocab.js:1444
 msgid "networked"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:531 exe/jsui/scripts/lomvocab.js:1439
+#: exe/jsui/scripts/lomvocab.js:531 exe/jsui/scripts/lomvocab.js:1448
 msgid "hierarchical"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:535 exe/jsui/scripts/lomvocab.js:1443
+#: exe/jsui/scripts/lomvocab.js:535 exe/jsui/scripts/lomvocab.js:1452
 msgid "linear"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:563 exe/jsui/scripts/lomvocab.js:1471
+#: exe/jsui/scripts/lomvocab.js:563 exe/jsui/scripts/lomvocab.js:1480
 msgid "pc-dos"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:567 exe/jsui/scripts/lomvocab.js:1475
+#: exe/jsui/scripts/lomvocab.js:567 exe/jsui/scripts/lomvocab.js:1484
 msgid "ms-windows"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:571 exe/jsui/scripts/lomvocab.js:1479
+#: exe/jsui/scripts/lomvocab.js:571 exe/jsui/scripts/lomvocab.js:1488
 msgid "macos"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:575 exe/jsui/scripts/lomvocab.js:1487
+#: exe/jsui/scripts/lomvocab.js:575 exe/jsui/scripts/lomvocab.js:1496
 msgid "unix"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:579 exe/jsui/scripts/lomvocab.js:1491
+#: exe/jsui/scripts/lomvocab.js:579 exe/jsui/scripts/lomvocab.js:1500
 msgid "multi-os"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:583 exe/jsui/scripts/lomvocab.js:1495
+#: exe/jsui/scripts/lomvocab.js:583 exe/jsui/scripts/lomvocab.js:1504
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "none"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:587 exe/jsui/scripts/lomvocab.js:1499
+#: exe/jsui/scripts/lomvocab.js:587 exe/jsui/scripts/lomvocab.js:1508
 msgid "any"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:591 exe/jsui/scripts/lomvocab.js:1507
+#: exe/jsui/scripts/lomvocab.js:591 exe/jsui/scripts/lomvocab.js:1516
 msgid "netscape communicator"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:595 exe/jsui/scripts/lomvocab.js:1511
+#: exe/jsui/scripts/lomvocab.js:595 exe/jsui/scripts/lomvocab.js:1520
 msgid "ms-internet explorer"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:599 exe/jsui/scripts/lomvocab.js:1515
+#: exe/jsui/scripts/lomvocab.js:599 exe/jsui/scripts/lomvocab.js:1524
 msgid "opera"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:603 exe/jsui/scripts/lomvocab.js:1519
+#: exe/jsui/scripts/lomvocab.js:603 exe/jsui/scripts/lomvocab.js:1528
 msgid "amaya"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:609 exe/jsui/scripts/lomvocab.js:1220
-#: exe/jsui/scripts/lomvocab.js:1557
+#: exe/jsui/scripts/lomvocab.js:609 exe/jsui/scripts/lomvocab.js:1222
+#: exe/jsui/scripts/lomvocab.js:1566
 msgid "teacher"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:617 exe/jsui/scripts/lomvocab.js:1525
+#: exe/jsui/scripts/lomvocab.js:617 exe/jsui/scripts/lomvocab.js:1534
 msgid "learner"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:621 exe/jsui/scripts/lomvocab.js:1577
+#: exe/jsui/scripts/lomvocab.js:621 exe/jsui/scripts/lomvocab.js:1586
 msgid "manager"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:627 exe/jsui/scripts/lomvocab.js:1591
+#: exe/jsui/scripts/lomvocab.js:627 exe/jsui/scripts/lomvocab.js:1600
 msgid "universal"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:631 exe/jsui/scripts/lomvocab.js:1595
+#: exe/jsui/scripts/lomvocab.js:631 exe/jsui/scripts/lomvocab.js:1604
 msgid "non-universal"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:637 exe/jsui/scripts/lomvocab.js:1601
+#: exe/jsui/scripts/lomvocab.js:637 exe/jsui/scripts/lomvocab.js:1610
 msgid "very easy"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:641 exe/jsui/scripts/lomvocab.js:1605
+#: exe/jsui/scripts/lomvocab.js:641 exe/jsui/scripts/lomvocab.js:1614
 msgid "easy"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:649 exe/jsui/scripts/lomvocab.js:1613
+#: exe/jsui/scripts/lomvocab.js:649 exe/jsui/scripts/lomvocab.js:1622
 msgid "difficult"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:653 exe/jsui/scripts/lomvocab.js:1617
+#: exe/jsui/scripts/lomvocab.js:653 exe/jsui/scripts/lomvocab.js:1626
 msgid "very difficult"
 msgstr ""
 
@@ -6713,152 +6712,160 @@ msgstr ""
 msgid "home"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1224 exe/jsui/scripts/lomvocab.js:1565
+#: exe/jsui/scripts/lomvocab.js:1218
+msgid "mixed environment"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1226 exe/jsui/scripts/lomvocab.js:1574
 msgid "family"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1228 exe/jsui/scripts/lomvocab.js:1561
+#: exe/jsui/scripts/lomvocab.js:1230 exe/jsui/scripts/lomvocab.js:1570
 msgid "tutor"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1232
+#: exe/jsui/scripts/lomvocab.js:1234
 msgid "schoolmate"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1236
+#: exe/jsui/scripts/lomvocab.js:1238
 msgid "independent"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1240
-msgid "blended"
+#: exe/jsui/scripts/lomvocab.js:1245
+msgid "mixed attendance"
 msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:1249
+msgid "blended"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1258
 msgid "face to face"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1253
+#: exe/jsui/scripts/lomvocab.js:1262
 msgid "distance"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1269
+#: exe/jsui/scripts/lomvocab.js:1278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:27
 msgid "propietary license"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1273
+#: exe/jsui/scripts/lomvocab.js:1282
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:31
 msgid "free software license EUPL"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1277
+#: exe/jsui/scripts/lomvocab.js:1286
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:35
 msgid "free software license GPL"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1281
+#: exe/jsui/scripts/lomvocab.js:1290
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
 msgid "dual free content license GPL and EUPL"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1285
+#: exe/jsui/scripts/lomvocab.js:1294
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:43
 msgid "other free software licenses"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1289
+#: exe/jsui/scripts/lomvocab.js:1298
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:47
 msgid "public domain"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1293
+#: exe/jsui/scripts/lomvocab.js:1302
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:51
 msgid "not appropriate"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1297
+#: exe/jsui/scripts/lomvocab.js:1306
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:55
 msgid "intellectual property license"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1301
+#: exe/jsui/scripts/lomvocab.js:1310
 msgid "creative commons: attribution"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1305
+#: exe/jsui/scripts/lomvocab.js:1314
 msgid "creative commons: attribution - non derived work"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1309
+#: exe/jsui/scripts/lomvocab.js:1318
 msgid "creative commons: attribution - non derived work - non commercial"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1313
+#: exe/jsui/scripts/lomvocab.js:1322
 msgid "creative commons: attribution - non commercial"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1317
+#: exe/jsui/scripts/lomvocab.js:1326
 msgid "creative commons: attribution - non commercial - share alike"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1321
+#: exe/jsui/scripts/lomvocab.js:1330
 msgid "creative commons: attribution - share alike"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1325
+#: exe/jsui/scripts/lomvocab.js:1334
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:131
 msgid "license GFDL"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1421
+#: exe/jsui/scripts/lomvocab.js:1430
 msgid "LOM-ESv1.0"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1483
+#: exe/jsui/scripts/lomvocab.js:1492
 msgid "linux"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1503
+#: exe/jsui/scripts/lomvocab.js:1512
 msgid "mozilla firefox"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1529
+#: exe/jsui/scripts/lomvocab.js:1538
 msgid "special needs learner"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1533
+#: exe/jsui/scripts/lomvocab.js:1542
 msgid "gifted learner"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1537
+#: exe/jsui/scripts/lomvocab.js:1546
 msgid "learners late integration into the education system"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1541
+#: exe/jsui/scripts/lomvocab.js:1550
 msgid "learner with other specific educational support needs"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1545
+#: exe/jsui/scripts/lomvocab.js:1554
 msgid "general public"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1549
+#: exe/jsui/scripts/lomvocab.js:1558
 msgid "individual"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1553
+#: exe/jsui/scripts/lomvocab.js:1562
 msgid "group"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1569
+#: exe/jsui/scripts/lomvocab.js:1578
 msgid "information scientist"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1573
+#: exe/jsui/scripts/lomvocab.js:1582
 msgid "computer scientist"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1581
+#: exe/jsui/scripts/lomvocab.js:1590
 msgid "education expert"
 msgstr ""
 
