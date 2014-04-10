@@ -146,7 +146,8 @@ class Manifest(object):
         xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
         xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" 
         xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:lom="http://www.imsglobal.org/xsd/imsmd_v1p2"
         """ % manifestId 
         xmlStr += "\n "
         xmlStr += "xsi:schemaLocation=\"http://www.imsglobal.org/xsd/"
@@ -156,7 +157,7 @@ class Manifest(object):
         xmlStr += "<metadata> \n"
         xmlStr += " <schema>IMS Content</schema> \n"
         xmlStr += " <schemaversion>1.1.3</schemaversion> \n"
-        xmlStr += " <adlcp:location>dublincore.xml"
+        xmlStr += " <adlcp:location>imslrm.xml"
         xmlStr += "</adlcp:location> \n" 
         xmlStr += "</metadata> \n"
         xmlStr += "<organizations default=\""+orgId+"\">  \n"
