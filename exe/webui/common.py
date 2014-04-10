@@ -178,7 +178,7 @@ def ideviceFooter(e, style, mode):
     h += "</"+articleTag+">"+lb # Close iDevice
     return h
     
-def ideviceHint(content, mode):
+def ideviceHint(content, mode, level='h3'):
     if content!="":
         lb = "\n" #Line breaks
         #  Image paths
@@ -190,7 +190,7 @@ def ideviceHint(content, mode):
         # Hint content
         html = '<script type="text/javascript">$exe.hint.imgs=["'+img1+'","'+img2+'"]</script>'+lb
         html += '<div class="iDevice_hint">'+lb
-        html += '<h3 class="iDevice_hint_title">'+_("Hint")+'</h3>'+lb
+        html += '<'+level+' class="iDevice_hint_title">'+_("Hint")+'</'+level+'>'+lb
         html += '<div class="iDevice_hint_content js-hidden">'+lb
         html += content
         html += '</div>'+lb

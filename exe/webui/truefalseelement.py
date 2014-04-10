@@ -193,12 +193,14 @@ class TrueFalseElement(object):
         lb = "\n" #Line breaks
         
         if is_preview:
-            html = self.question_question.renderPreview()
-            html += common.ideviceHint(self.question_hint.field.content,"preview")
+            html = '<h3 class="js-sr-av">'+_("Question")+' '+str(self.index+1)+'</h3>'+lb
+            html += self.question_question.renderPreview()
+            html += common.ideviceHint(self.question_hint.field.content,"preview","h4")
         else: 
             html = '<form name="true-false-form-'+self.id+'" action="#" class="activity-form true-false-form">'+lb        
+            html = '<h3 class="js-sr-av">'+_("Question")+' '+str(self.index+1)+'</h3>'+lb
             html += self.question_question.renderView()
-            html += common.ideviceHint(self.question_hint.field.content,"view")
+            html += common.ideviceHint(self.question_hint.field.content,"view","h4")
 
         html += '<p class="iDevice_answer js-required">'+lb
         html += '<label for="true'+self.id+'">'
@@ -242,7 +244,7 @@ class TrueFalseElement(object):
         else:
             content = self.question_feedback.field.content_wo_resourcePaths        
         
-        html = '<h3 class="js-sr-av">Feedback</h3>'+lb
+        html = '<h4 class="js-sr-av">Feedback</h4>'+lb
         html += '<div id="s'+self.id+'" class="feedback js-hidden">'+lb
         if self.question.isCorrect:
             html += '<p><strong id="s'+self.id+'-result" class="right">'+_("True")+'</strong></p>'+lb
