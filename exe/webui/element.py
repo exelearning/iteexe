@@ -2293,7 +2293,7 @@ class SelectquestionElement(Element):
         # Feedback button
         html += '<div class="block iDevice_buttons js-required">'+lb
         html += '<p>'+lb
-        html += '<input type="button" name="submitSelect" value="%s" onclick="showFeedback(this,%d,\'%s\')"/> ' %(_("Show Feedback"),len(self.field.options),self.field.id)   
+        html += '<input type="button" name="submitSelect" class="feedbackbutton" value="%s" onclick="showFeedback(this,%d,\'%s\')"/> ' %(_("Show Feedback"),len(self.field.options),self.field.id)   
         html += lb
         html += '</p>'+lb
         html += '</div>'+lb
