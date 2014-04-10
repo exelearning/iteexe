@@ -673,31 +673,21 @@ function recurseFindClozeInputs(dad, ident, result) {
 // Pass the cloze element's id, and the visible property of the feedback element
 // associated with it will be toggled. If there is no feedback field, does
 // nothing
-function toggleClozeFeedback(ident) {
-    var feedbackIdEle = document.getElementById(
-        'clozeVar'+ident+'.feedbackId');
+function toggleClozeFeedback(ident,e) {
+    var feedbackIdEle = document.getElementById('clozeVar'+ident+'.feedbackId');
     if (feedbackIdEle) {
         var feedbackId = feedbackIdEle.value;
+        if (e) {
+            if (e.value == $exe_i18n.showFeedback) e.value = $exe_i18n.hideFeedback;
+            else e.value = $exe_i18n.showFeedback;
+        }
         toggleElementVisible(feedbackId);
     }
 }
 
 // Toggle the visiblity of an element from it's id
 function toggleElementVisible(ident) {
-    // Toggle the visibility of an element
-    var element = document.getElementById(ident);
-    if (element) {
-        var c = element.className;
-        if (c.indexOf("iDevice_hidden_content")!=-1) {
-            element.style.display = "none";
-            element.className = c.replace("iDevice_hidden_content","iDevice_content");
-        }
-        if (element.style.display != "none") {
-            element.style.display = "none";
-        } else {
-            element.style.display = "";
-        }
-    }
+    $("#"+ident).toggle();
 }
 
 // Call the function like this:

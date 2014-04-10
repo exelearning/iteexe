@@ -416,9 +416,9 @@ class TextAreaElement(ElementWithResources):
         """
         lb = "\n" #Line breaks
         if visible:
-            visible = 'iDevice_content'
+            visible = ''
         else:
-            visible = 'iDevice_hidden_content'
+            visible = ' style="display:none"'
         if content is None:
             if preview:
                 # render the resource content with resource paths: 
@@ -437,7 +437,7 @@ class TextAreaElement(ElementWithResources):
         sectionTag = "div"
         if dT == "HTML5":
             sectionTag = "section"         
-        return '<%s id="ta%s" class="%s %s">%s%s%s</%s>%s' % (
+        return '<%s id="ta%s" class="%s"%s>%s%s%s</%s>%s' % (
             sectionTag, self.id, class_, visible, lb, content, lb, sectionTag, lb)
    
 
@@ -1401,7 +1401,7 @@ class ClozeElement(ElementWithResources):
             html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozeScore(\'%s\')" />' % (_(u"Get score"), self.id, self.id)]
 
             if feedbackId is not None:
-                html += [common.feedbackButton('feedback'+self.id, _(u"Show/Hide Feedback"), onclick="toggleClozeFeedback('%s')" % self.id)]
+                html += [common.feedbackButton('feedback'+self.id, _(u"Show Feedback"), onclick="toggleClozeFeedback('%s',this)" % self.id)]
             # Set the show/hide answers button attributes
             style = ''
             value = _(u"Show/Clear Answers")

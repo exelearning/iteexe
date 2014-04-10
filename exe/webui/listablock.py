@@ -264,7 +264,7 @@ class ListaElement(ElementWithResources):
         else:
             html += [common.submitButton('getScore%s' % self.id, _(u"Check"), id='getScore%s' % self.id)]
         if feedbackId:
-            html += [common.feedbackButton('feedback%s' % self.id, _(u"Show/Hide Feedback"), onclick = "toggleClozeFeedback('%s')" % self.id)]
+            html += [common.feedbackButton('feedback%s' % self.id, _(u"Show Feedback"), onclick = "toggleClozeFeedback('%s',this)" % self.id)]
          
         codotras=self.ecrypt(self.field.otras)
         html += [common.hiddenField('clozeOtras%s' % self.id,codotras)]   
