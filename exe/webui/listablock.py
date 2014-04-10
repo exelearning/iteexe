@@ -248,7 +248,7 @@ class ListaElement(ElementWithResources):
             if missingWord:
                 words += "'" + missingWord + "',"
                 # The edit box for the user to type into
-                inputHtml = ['<label for="clozeBlank%s.%s" class="accessibility-help">%s (%s):</label>' % (self.id, i, _("Cloze"), (i+1))]
+                inputHtml = ['<label for="clozeBlank%s.%s" class="sr-av">%s (%s):</label>' % (self.id, i, _("Cloze"), (i+1))]
                 inputHtml += ['<select id="clozeBlank%s.%s">' % (self.id, i),wordslista,'</select>']
                 html += inputHtml
                             

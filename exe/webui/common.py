@@ -425,7 +425,7 @@ def feedbackBlock(id,feedback):
     html += '<input type="button" name="toggle-feedback-'+id+'" value="'+_('Show Feedback')+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this);return false" />'
     html += '</p>'+lb
     html += '</div>'+lb
-    html += '<h3 class="js-hidden">'+_('Feedback')+'</h3>'+lb
+    html += '<h3 class="js-sr-av">'+_('Feedback')+'</h3>'+lb
     html += '<div id="feedback-'+id+'" class="feedback js-hidden">'
     html += lb
     html += feedback

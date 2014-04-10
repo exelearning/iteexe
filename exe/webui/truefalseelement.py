@@ -242,7 +242,7 @@ class TrueFalseElement(object):
         else:
             content = self.question_feedback.field.content_wo_resourcePaths        
         
-        html = '<h3 class="js-hidden">Feedback</h3>'+lb
+        html = '<h3 class="js-sr-av">Feedback</h3>'+lb
         html += '<div id="s'+self.id+'" class="feedback js-hidden">'+lb
         if self.question.isCorrect:
             html += '<p><strong id="s'+self.id+'-result" class="right">'+_("True")+'</strong></p>'+lb

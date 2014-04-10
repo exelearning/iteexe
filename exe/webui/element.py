@@ -437,7 +437,7 @@ class TextAreaElement(ElementWithResources):
         sectionTag = "div"
         if dT == "HTML5":
             sectionTag = "section"         
-        return '<%s id="ta%s" class="%s"%s>%s%s%s</%s>%s' % (
+        return '<%s id="ta%s" class="%s iDevice_content"%s>%s%s%s</%s>%s' % (
             sectionTag, self.id, class_, visible, lb, content, lb, sectionTag, lb)
    
 
@@ -1385,7 +1385,7 @@ class ClozeElement(ElementWithResources):
                 words += "'" + missingWord + "',"
                 # The edit box for the user to type into
                 #'  autocomplete="off"',
-                inputHtml = ['<label for="clozeBlank%s.%s" class="accessibility-help">%s (%s):</label>' % (self.id, i, _("Cloze"), (i+1))]
+                inputHtml = ['<label for="clozeBlank%s.%s" class="sr-av">%s (%s):</label>' % (self.id, i, _("Cloze"), (i+1))]
                 if self.field.instantMarking:
                     inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" onkeyup="onClozeChange(this)" />' % (self.id, i, len(missingWord))]
                 else:
@@ -2093,7 +2093,7 @@ class SelectOptionElement(Element):
         html = '<div class="iDevice_answer">'+lb
         # Checkbox
         html += '<p class="iDevice_answer-field js-required">'+lb
-        html += '<label for="op'+ident+'" class="accessibility-help"><a href="#answer-'+self.id+'">'+_("Option")+' '+self.id+'</a></label>'
+        html += '<label for="op'+ident+'" class="sr-av"><a href="#answer-'+self.id+'">'+_("Option")+' '+str(self.index+1)+'</a></label>'
         html += '<input type="checkbox" id="op%s"' % ident
         html += ' value="%s" />' % str(self.field.isCorrect)
         html += lb
@@ -2276,14 +2276,16 @@ class SelectquestionElement(Element):
         # Form
         if preview: 
             html = '<div class="activity-form multi-choice-form">'+lb
+            html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb
             html += self.questionElement.renderPreview()
         else:
-            html = '<form name="multi-choice-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form multi-choice-form">'+lb        
+            html = '<form name="multi-choice-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form multi-choice-form">'+lb
+            html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb           
             html += self.questionElement.renderView()        
             
         # Answers
         html += '<div class="iDevice_answers">'+lb
-        html += '<h3 class="js-hidden">'+_("Answers")+'</h3>'+lb
+        html += '<h3 class="js-sr-av">'+_("Answers")+'</h3>'+lb
         for element in self.options:
             html += element.renderView(preview)      
         html += "</div>"+lb
@@ -2297,7 +2299,7 @@ class SelectquestionElement(Element):
         html += '</div>'+lb
         
         # Feedback
-        html += '<h3 class="js-hidden">Feedback</h3>'+lb
+        html += '<h3 class="js-sr-av">Feedback</h3>'+lb
         html += '<div id="%s" class="js-hidden">' % ("f"+self.field.id)
         html += lb
         if preview: 
@@ -2483,7 +2485,7 @@ class QuizOptionElement(Element):
         html = '<div class="iDevice_answer">'+lb
         
         html += '<p class="iDevice_answer-field js-required">'+lb
-        html += '<label for="i'+self.id+'" class="accessibility-help"><a href="#answer-'+self.id+'">'+_("Option")+' '+self.id+'</a></label>'
+        html += '<label for="i'+self.id+'" class="sr-av"><a href="#answer-'+self.id+'">'+_("Option")+' '+str(self.index+1)+'</a></label>'
         html += '<input type="radio" name="option%s" ' % self.field.question.id
         html += 'id="i%s" ' % self.id
         html += 'onclick="getFeedback(%d,%d,\'%s\',\'multi\')"/>' % (self.index, length, self.field.question.id)
@@ -2698,9 +2700,11 @@ class QuizQuestionElement(Element):
         lb = "\n" #Line breaks
         if preview: 
             html = '<div class="activity-form multi-choice-form">'+lb
+            html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb
             html += self.questionElement.renderPreview()
         else:
-            html = '<form name="multi-choice-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form multi-choice-form">'+lb        
+            html = '<form name="multi-choice-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form multi-choice-form">'+lb
+            html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb
             html += self.questionElement.renderView()
 
         # Hint
@@ -2712,14 +2716,14 @@ class QuizQuestionElement(Element):
 
         # Answers
         html += '<div class="iDevice_answers">'+lb
-        html += '<h3 class="js-hidden">'+_("Answers")+'</h3>'+lb
+        html += '<h3 class="js-sr-av">'+_("Answers")+'</h3>'+lb
         for element in self.options:
             html += element.renderAnswerView(preview)
         html += "</div>"+lb
                 
         # Feedbacks
         html += '<div class="iDevice_feedbacks">'+lb
-        html += '<h3 class="js-hidden">'+_("Feedback")+'</h3>'+lb
+        html += '<h3 class="js-sr-av">'+_("Feedback")+'</h3>'+lb
         for element in self.options:
             html += element.renderFeedbackView(preview)
         html += "</div>"+lb

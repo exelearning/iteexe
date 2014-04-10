@@ -161,7 +161,7 @@ class TestoptionElement(object):
         # Checkbox
         fieldId = self.keyId+unicode((self.index+1));
         html += '<p class="iDevice_answer-field js-required">'+lb
-        html += '<label for="'+fieldId+'" class="accessibility-help"><a href="#answer-'+fieldId+'">'+_("Option")+' '+unicode((self.index+1))+'</a></label>'
+        html += '<label for="'+fieldId+'" class="sr-av"><a href="#answer-'+fieldId+'">'+_("Option")+' '+unicode((self.index+1))+'</a></label>'
         html += '<input type="radio" name="'+self.keyId+'" id="'+fieldId+'" value="'+unicode(self.index)+'" />'
         html += lb
         html += '</p>'+lb       
