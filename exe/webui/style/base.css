@@ -73,8 +73,8 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .iDevice_answer-field{width:2.5em;float:left}
 .js .iDevice_answer-content,.js .iDevice_answer-feedback{padding-left:2.5em}
 /* To review */
-.question .answer p{margin:0 0 .7em 0}
 .hidden-idevice .image_text{display:none} /* iDevice Toggler : Required for Magnifier */
+/* Accessibility */
 #skipNav{margin:0;position:absolute;width:100%}
 .sr-av,.js .js-sr-av,#skipNav a{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0} /* sr-av: Avaible for Screen Readers */
 #skipNav a{background:#333;color:#fff;padding:.4em .85em} /* clip:rect(0 0 0 0) is for IE6 & 7 */
