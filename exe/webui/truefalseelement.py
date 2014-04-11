@@ -198,7 +198,7 @@ class TrueFalseElement(object):
             html += common.ideviceHint(self.question_hint.field.content,"preview","h4")
         else: 
             html = '<form name="true-false-form-'+self.id+'" action="#" class="activity-form true-false-form">'+lb        
-            html = '<h3 class="js-sr-av">'+_("Question")+' '+str(self.index+1)+'</h3>'+lb
+            html += '<h3 class="js-sr-av">'+_("Question")+' '+str(self.index+1)+'</h3>'+lb
             html += self.question_question.renderView()
             html += common.ideviceHint(self.question_hint.field.content,"view","h4")
 
