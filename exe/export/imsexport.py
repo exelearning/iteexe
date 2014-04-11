@@ -25,6 +25,8 @@ Exports an eXe package as an IMS Content Package
 """
 
 import logging
+import time
+import StringIO
 import re
 from cgi                           import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED
@@ -47,7 +49,7 @@ class Manifest(object):
     """
     Represents an imsmanifest xml file
     """
-    def __init__(self, config, outputDir, package, pages):
+    def __init__(self, config, outputDir, package, pages, metadataType):
         """
         Initialize
         'outputDir' is the directory that we read the html from and also output
@@ -58,39 +60,78 @@ class Manifest(object):
         self.package      = package
         self.idGenerator  = UniqueIdGenerator(package.name, config.exePath)
         self.pages        = pages
+        self.metadataType = metadataType
         self.itemStr      = ""
         self.resStr       = ""
 
 
-    def save(self):
+    def createMetaData(self, template):
         """
-        Save a imsmanifest file and metadata to self.outputDir
+        if user did not supply metadata title, description or creator
+        then use package title, description, or creator in imslrm
+        if they did not supply a package title, use the package name
+        if they did not supply a date, use today
         """
-        filename = "imsmanifest.xml"
-        out = open(self.outputDir/filename, "wb")
-        out.write(self.createXML().encode('utf8'))
+        xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+        namespace = 'xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM lomCustom.xsd"'          
+        # depending on (user desired) the metadata type:
+        if self.metadataType == 'LOMES':
+            output = StringIO.StringIO()
+            self.package.lomEs.export(output, 0, namespacedef_=namespace, pretty_print=False)
+            xml += output.getvalue()
+        if self.metadataType == 'LOM':
+            output = StringIO.StringIO()
+            self.package.lom.export(output, 0, namespacedef_=namespace, pretty_print=False)
+            xml += output.getvalue()
+        if self.metadataType == 'DC':
+            lrm = self.package.dublinCore.__dict__.copy()
+            # use package values in absentia:
+            if lrm.get('title', '') == '':
+                lrm['title'] = self.package.title
+            if lrm['title'] == '':
+                lrm['title'] = self.package.name
+            if lrm.get('description', '') == '':
+                lrm['description'] = self.package.description
+            if lrm['description'] == '':
+                lrm['description'] = self.package.name
+            if lrm.get('creator', '') == '':
+                lrm['creator'] = self.package.author
+            if lrm['date'] == '':
+                lrm['date'] = time.strftime('%Y-%m-%d')
+            # if they don't look like VCARD entries, coerce to fn:
+            for f in ('creator', 'publisher', 'contributors'):
+                if re.match('.*[:;]', lrm[f]) == None:
+                    lrm[f] = u'FN:' + lrm[f]
+            xml = template % lrm
+        return xml
+
+
+    def save(self, filename):
+        """
+        Save a imsmanifest file to self.outputDir
+        Two works: createXML and createMetaData
+        """
+        out = open(self.outputDir/filename, "w")
+        if filename == "imsmanifest.xml":
+            out.write(self.createXML().encode('utf8'))
         out.close()
-        # if user did not supply metadata title, description or creator
-        #  then use package title, description, or creator in imslrm
-        #  if they did not supply a package title, use the package name
-        lrm = self.package.dublinCore.__dict__.copy()
-        if lrm.get('title', '') == '':
-            lrm['title'] = self.package.title
-        if lrm['title'] == '':
-            lrm['title'] = self.package.name
-        if lrm.get('description', '') == '':
-            lrm['description'] = self.package.description
-        if lrm['description'] == '':
-            lrm['description'] = self.package.name
-        if lrm.get('creator', '') == '':
-            lrm['creator'] = self.package.author
-        # Metadata
-        templateFilename = self.config.webDir/'templates'/'dublincore.xml'
-        template = open(templateFilename, 'rb').read()
-        xml = template % lrm
-        out = open(self.outputDir/'dublincore.xml', 'wb')
+        # now depending on metadataType, <metadata> content is diferent:     
+        if self.metadataType == 'DC':
+            # if old template is desired, select imslrm.xml file:\r
+            # anything else, yoy should select:    
+            templateFilename = self.config.webDir/'templates'/'imslrm.xml'
+            template = open(templateFilename, 'rb').read()            
+        elif self.metadataType == 'LOMES':
+            template = None
+        elif self.metadataType == 'LOM':
+            template = None
+        # Now the file with metadatas. 
+        # Notice that its name is independent of metadataType:  
+        xml = self.createMetaData(template)
+        out = open(self.outputDir/'imslrm.xml', 'wb')
         out.write(xml.encode('utf8'))
         out.close()
+
 
     def createXML(self):
         """
@@ -105,9 +146,9 @@ class Manifest(object):
         xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
         xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" 
         xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:lom="http://www.imsglobal.org/xsd/imsmd_v1p2"
         """ % manifestId 
-
         xmlStr += "\n "
         xmlStr += "xsi:schemaLocation=\"http://www.imsglobal.org/xsd/"
         xmlStr += "imscp_v1p1 imscp_v1p1.xsd "        
@@ -116,7 +157,7 @@ class Manifest(object):
         xmlStr += "<metadata> \n"
         xmlStr += " <schema>IMS Content</schema> \n"
         xmlStr += " <schemaversion>1.1.3</schemaversion> \n"
-        xmlStr += " <adlcp:location>dublincore.xml"
+        xmlStr += " <adlcp:location>imslrm.xml"
         xmlStr += "</adlcp:location> \n" 
         xmlStr += "</metadata> \n"
         xmlStr += "<organizations default=\""+orgId+"\">  \n"
@@ -209,7 +250,12 @@ class Manifest(object):
 class IMSPage(Page):
     """
     This class transforms an eXe node into a SCO 
-    """
+    """  
+    def __init__(self, name, depth, node, metadataType):
+        self.metadataType = metadataType
+        super(IMSPage, self).__init__(name, depth, node)
+
+
     def save(self, outputDir):
         """
         This is the main function.  It will render the page and save it to a
@@ -379,6 +425,9 @@ class IMSExport(object):
         # First do the export to a temporary directory
         outputDir = TempDirPath()
 
+        self.metadataType = package.exportMetadataType
+
+
         # Copy the style sheet files to the output dir
         # But not nav.css
         styleFiles  = [self.styleDir/'..'/'base.css']
@@ -401,7 +450,8 @@ class IMSExport(object):
         package.resourceDir.copyfiles(outputDir)
             
         # Export the package content
-        self.pages = [ IMSPage("index", 1, package.root) ]
+        self.pages = [ IMSPage("index", 1, package.root,
+           metadataType=self.metadataType) ]
 
         self.generatePages(package.root, 2)
         uniquifyNames(self.pages)
@@ -410,8 +460,8 @@ class IMSExport(object):
             page.save(outputDir)
 
         # Create the manifest file
-        manifest = Manifest(self.config, outputDir, package, self.pages)
-        manifest.save()
+        manifest = Manifest(self.config, outputDir, package, self.pages, self.metadataType)
+        manifest.save("imsmanifest.xml")
         
         # Copy the scripts
         
@@ -540,7 +590,7 @@ class IMSExport(object):
             if not pageName:
                 pageName = "__"
 
-            page = IMSPage(pageName, depth, child)
+            page = IMSPage(pageName, depth, child, metadataType=self.metadataType)
 
             self.pages.append(page)
             self.generatePages(child, depth + 1)
