@@ -235,7 +235,7 @@ class SinglePage(Page):
         html = ""
         html += '<'+articleTag+' class="node">'+lb
         html += '<'+headerTag+' class=\"nodeDecoration\">'
-        html += '<h' + str(nivel) + ' class=\"nodeTitle\">'
+        html += u'<h' + str(nivel) + ' id=\"' + node.GetAnchorName() + '\" class=\"nodeTitle\">'
         html += escape(node.titleLong)
         html += '</h' + str(nivel) + '></'+headerTag+'>'+lb
         
@@ -253,7 +253,7 @@ class SinglePage(Page):
                     raise Error("Unable to render iDevice.")
                 if hasattr(idevice, "isQuiz"):
                     html += block.renderJavascriptForWeb()
-                html += self.processInternalLinks(block.renderView(style))
+                html += self.processInternalLinks(self.node.package,block.renderView(style))
                 html = html.replace('href="#auto_top"', 'href="#"')
                 html += u'</'+sectionTag+'>'+lb # iDevice div
 
@@ -266,7 +266,7 @@ class SinglePage(Page):
 
 
 
-    def processInternalLinks(self, html):
+    def processInternalLinks(self, package, html):
         """
         take care of any internal links which are in the form of::
            
@@ -276,7 +276,7 @@ class SinglePage(Page):
         but remove the 'exe-node:Home:Topic:etc', since it is all 
         exported into the same file.
         """
-        return common.removeInternalLinkNodes(html)
+        return common.renderInternalLinkNodeAnchor(package, html)
         
         
 

@@ -837,8 +837,63 @@ def renderInternalLinkNodeFilenames(package, html):
         html = removeInternalLinks(html)
             
     return html
-        
+    
+def renderInternalLinkNodeAnchor(package, html):
+    """
+    take care of any internal links which are in the form of:
+       href="exe-node:Home:Topic:etc#Anchor"
+    For Singlepage Export, go ahead and keep the 'exe-node:Home:Topic:etc' portion
+    preceeded by # symbol and remove #Anchor portion 
+    """
+    found_all_anchors = True
+    # use lower-case for the exe-node, for TinyMCE copy/paste compatibility
+    intlink_start = 'href="exe-node:'
+    intlink_pre   = 'href="'
+    next_link_pos = html.find(intlink_start)
+    while next_link_pos >= 0: 
+        link_name_start_pos = next_link_pos + len(intlink_pre)
+        link_name_end_pos = html.find('"', link_name_start_pos)
+        if link_name_end_pos >= 0: 
+            link_name = html[link_name_start_pos : link_name_end_pos] 
+            log.debug("Export rendering internal link: " + link_name)
+            # assuming that any '#'s in the node name have been escaped,
+            # the first '#' should be the actual anchor:
+            node_name_end_pos = link_name.find('#')
+            if node_name_end_pos < 0:
+                # no hash found, => use the whole thing as the node name:
+                node_name_end_pos = len(link_name) - 1
+                link_anchor_name = ""
+            else:
+                link_anchor_name = link_name[node_name_end_pos+1 : ]
+            link_node_name = link_name[0 : node_name_end_pos]
 
+            found_node = None
+            if link_node_name: 
+                # Okay, FOR singlepage EXPORT, check the existance of the actual node
+                # being referenced by this link, and if it does not exist, remove it:
+                found_node = findLinkedNode(package, link_node_name,
+                        link_anchor_name)
+                if found_node :
+                    # Finally, replace this particular node name 
+                    # with an anchor: 
+                    # old_node_name = intlink_pre + link_node_name 
+                    old_node_name = link_name
+                    new_node_name = "#" + found_node.GetAnchorName()
+                    html = html.replace(old_node_name, new_node_name, 1)
+
+            if found_node is None:
+                found_all_anchors = False
+                log.warn('Export unable to find corresponding node&anchor; '
+                        + 'unable to render link to: ' + link_name)
+
+        # else the href quote is unclosed.  ignore, eh? 
+        next_link_pos = html.find(intlink_start, next_link_pos+1)
+
+    if not found_all_anchors:
+        # then go ahead and clear out any remaining invalid links:
+        html = removeInternalLinks(html)
+            
+    return html
 
 def requestHasCancel(request):
     """
