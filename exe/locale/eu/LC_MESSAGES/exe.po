@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2014-04-09 19:07+0200\n"
-"PO-Revision-Date: 2014-04-10 21:06+0100\n"
-"Last-Translator: Joxemi Andonegi <jmandonegi@ulhi.net>\n"
+"PO-Revision-Date: 2014-04-11 10:33+0100\n"
+"Last-Translator: Andoni <andoni-t@aek.org>\n"
 "Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
@@ -2499,7 +2499,6 @@ msgid "Home"
 msgstr "Hasiera"
 
 #: exe/engine/package.py:466
-#, fuzzy
 msgid "Metadata creation date"
 msgstr "Metadatuen sorrera data"
 
@@ -3361,105 +3360,85 @@ msgstr ""
 "%s da ondo esportatutako azken elementua."
 
 #: exe/export/pages.py:71
-#, fuzzy
 msgid "GNU Free Documentation License"
 msgstr "GNU Dokumentazio Librearen Lizentzia"
 
 #: exe/export/pages.py:72
-#, fuzzy
 msgid "Creative Commons Attribution License 2.5"
-msgstr "Creative Commons Aitortu 2.5 Lizentzia"
+msgstr "Aitortu  Creative Commons 2.5 Lizentzia"
 
 #: exe/export/pages.py:73
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike License 2.5"
-msgstr "Creative Commons Aitortu-PartekatuBerdin 2.5 Lizentzia"
+msgstr "Creative Commons: aitortu-PartekatuBerdin 2.5 Lizentzia"
 
 #: exe/export/pages.py:74
-#, fuzzy
 msgid "Creative Commons Attribution No Derivatives License 2.5"
-msgstr "Creative Commons Aitortu-LanEratorririkGabe 2.5 Lizentzia"
+msgstr "Creative Commons: aitortu-LanEratorririkGabe 2.5 Lizentzia"
 
 #: exe/export/pages.py:75
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial License 2.5"
-msgstr "Creative Commons Aitortu-EzKomertziala 2.5 Lizentzia"
+msgstr "Creative Commons: aitortu-EzKomertziala 2.5 Lizentzia"
 
 #: exe/export/pages.py:76
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
-msgstr "Creative Commons Aitortu-EzKomertziala-PartekatuBerdin 2.5 Lizentzia"
+msgstr "Creative Commons: aitortu-EzKomertziala-PartekatuBerdin 2.5 Lizentzia"
 
 #: exe/export/pages.py:77
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
 msgstr ""
-"Creative Commons Aitortu-EzKomertziala-LanEratorririkGabe 2.5 Lizentzia"
+"Creative Commons: aitortu-EzKomertziala-LanEratorririkGabe 2.5 Lizentzia"
 
 #: exe/export/pages.py:78
-#, fuzzy
 msgid "Creative Commons Attribution License 3.0"
-msgstr "Creative Commons Aitortu 3.0 Lizentzia"
+msgstr "Creative Commons: aitortu 3.0 Lizentzia"
 
 #: exe/export/pages.py:79
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike License 3.0"
-msgstr "Creative Commons Aitortu-PartekatuBerdin 3.0 Lizentzia"
+msgstr "Creative Commons: aitortu-PartekatuBerdin 3.0 Lizentzia"
 
 #: exe/export/pages.py:80
-#, fuzzy
 msgid "Creative Commons Attribution No Derivatives License 3.0"
-msgstr "Creative Commons Aitortu-LanEratorririkGabe 3.0 Lizentzia"
+msgstr "Creative Commons: aitortu-LanEratorririkGabe 3.0 Lizentzia"
 
 #: exe/export/pages.py:81
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial License 3.0"
-msgstr "Creative Commons Aitortu-EzKomertziala 3.0 Lizentzia"
+msgstr "Creative Commons: aitortu-EzKomertziala 3.0 Lizentzia"
 
 #: exe/export/pages.py:82
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
-msgstr "Creative Commons Aitortu-EzKomertziala-PartekatuBerdin 3.0 Lizentzia"
+msgstr "Creative Commons: aitortu-EzKomertziala-PartekatuBerdin 3.0 Lizentzia"
 
 #: exe/export/pages.py:83
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
 msgstr ""
-"Creative Commons Aitortu-EzKomertziala-LanEratorririkGabe 3.0 Lizentzia"
+"Creative Commons: aitortu-EzKomertziala-LanEratorririkGabe 3.0 Lizentzia"
 
 #: exe/export/pages.py:84
-#, fuzzy
 msgid "Creative Commons Attribution License 4.0"
-msgstr "Creative Commons Aitortu 4.0 Lizentzia"
+msgstr "Creative Commons: aitortu 4.0 Lizentzia"
 
 #: exe/export/pages.py:85
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike License 4.0"
-msgstr "Creative Commons Aitortu-PartekatuBerdin 4.0 Lizentzia"
+msgstr "Creative Commons: aitortu-PartekatuBerdin 4.0 Lizentzia"
 
 #: exe/export/pages.py:86
-#, fuzzy
 msgid "Creative Commons Attribution No Derivatives License 4.0"
-msgstr "Creative Commons Aitortu-LanEratorririkGabe 4.0 Lizentzia"
+msgstr "Creative Commons: aitortu-LanEratorririkGabe 4.0 Lizentzia"
 
 #: exe/export/pages.py:87
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial License 4.0"
-msgstr "Creative Commons Aitortu-EzKomertziala 4.0 Lizentzia"
+msgstr "Creative Commons: aitortu-EzKomertziala 4.0 Lizentzia"
 
 #: exe/export/pages.py:88
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
-msgstr "Creative Commons Aitortu-EzKomertziala-PartekatuBerdin 4.0 Lizentzia"
+msgstr "Creative Commons: aitortu-EzKomertziala-PartekatuBerdin 4.0 Lizentzia"
 
 #: exe/export/pages.py:89
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
 msgstr ""
-"Creative Commons Aitortu-EzKomertziala-LanEratorririkGabe 4.0 Lizentzia"
+"Creative Commons: aitortu-EzKomertziala-LanEratorririkGabe 4.0 Lizentzia"
 
 #: exe/export/pages.py:90
-#, fuzzy
 msgid "GNU General Public License"
 msgstr "GNU Lizentzia Publiko Orokorra"
 
@@ -4337,9 +4316,8 @@ msgstr ""
 "ahal izango dira."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:76
-#, fuzzy
 msgid "SCORM Options (1.2 and 2004)"
-msgstr "SCORM ezarpenak (1.2 and 2004)"
+msgstr "SCORM ezarpenak (1.2 eta 2004)"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:84
 msgid "Add Previous/Next links within SCOs?"
@@ -4729,92 +4707,74 @@ msgid "Should be at least one section of this type"
 msgstr "Gutxienez mota honetako atal bat beharko litzateke"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:59
-#, fuzzy
 msgid "creative commons: attribution 4.0"
 msgstr "creative commons: aitortu 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:63
-#, fuzzy
 msgid "creative commons: attribution - non derived work 4.0"
 msgstr "creative commons: aitortu-lan eratorririk gabe 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:67
-#, fuzzy
 msgid "creative commons: attribution - non derived work - non commercial 4.0"
 msgstr "creative commons: aitortu-lan eratorririk gabe-ez komertziala 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:71
-#, fuzzy
 msgid "creative commons: attribution - non commercial 4.0"
 msgstr "creative commons: aitortu-ez komertziala 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:75
-#, fuzzy
 msgid "creative commons: attribution - non commercial - share alike 4.0"
 msgstr "creative commons: aitortu-ez komertziala-partekatu berdin 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:79
-#, fuzzy
 msgid "creative commons: attribution - share alike 4.0"
 msgstr "creative commons: aitortu-partekatu berdin 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:83
-#, fuzzy
 msgid "creative commons: attribution 3.0"
 msgstr "creative commons: aitortu 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:87
-#, fuzzy
 msgid "creative commons: attribution - non derived work 3.0"
 msgstr "creative commons: aitortu-lan eratorririk gabe 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
-#, fuzzy
 msgid "creative commons: attribution - non derived work - non commercial 3.0"
 msgstr "creative commons: aitortu-lan eratorririk gabe-ez komertziala 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:95
-#, fuzzy
 msgid "creative commons: attribution - non commercial 3.0"
 msgstr "creative commons: aitortu-ez komertziala 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:99
-#, fuzzy
 msgid "creative commons: attribution - non commercial - share alike 3.0"
 msgstr "creative commons: aitortu-ez komertziala-partekatu berdin 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:103
-#, fuzzy
 msgid "creative commons: attribution - share alike 3.0"
 msgstr "creative commons: aitortu-partekatu berdin 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:107
-#, fuzzy
 msgid "creative commons: attribution 2.5"
 msgstr "creative commons: aitortu 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
-#, fuzzy
 msgid "creative commons: attribution - non derived work 2.5"
 msgstr "creative commons: aitortu-lan eratorririk gabe 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
-#, fuzzy
 msgid "creative commons: attribution - non derived work - non commercial 2.5"
 msgstr "creative commons: aitortu-lan eratorririk gabe-ez komertziala 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
-#, fuzzy
 msgid "creative commons: attribution - non commercial 2.5"
 msgstr "creative commons: aitortu-ez komertziala 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
-#, fuzzy
 msgid "creative commons: attribution - non commercial - share alike 2.5"
 msgstr "creative commons: aitortu-ez komertziala-partekatu berdin 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
-#, fuzzy
 msgid "creative commons: attribution - share alike 2.5"
 msgstr "creative commons: aitortu-partekatu berdin 2.5"
 
@@ -8564,7 +8524,6 @@ msgid "Rich Text Area"
 msgstr "Rich Text Area"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advalign/langs/en.js:3
-#, fuzzy
 msgid ""
 "TinyMCE \"advalign\" plugin error: \"execcommand_callback\" is already "
 "defined"
@@ -8573,7 +8532,6 @@ msgstr ""
 "definitua dago"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advalign/langs/en.js:4
-#, fuzzy
 msgid "\"advalign\" for TinyMCE requires jQuery"
 msgstr "TinyMCE-rako \"advalign\"-ek jQuery behar du"
 
@@ -9050,7 +9008,6 @@ msgid "Restore auto-saved content"
 msgstr "Automatikoki gordetako edukia berreskuratu"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/clearfloat/langs/en.js:3
-#, fuzzy
 msgid "Clear (new line or block)"
 msgstr "Garbitu (lerro berria edo blokea)"
 
@@ -9750,12 +9707,10 @@ msgid "Embedded Audio Options"
 msgstr "Ahokatutako audioaren ezarpenak"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#, fuzzy
 msgid "HTML5 video (ogv/ogg, webm, mp4)"
 msgstr "HTML5 bideoa (ogv/ogg, webm, mp4)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#, fuzzy
 msgid "HTML5 audio (mp3, ogg, wav)"
 msgstr "HTML5 audioa (mp3, ogg, wav)"
 
