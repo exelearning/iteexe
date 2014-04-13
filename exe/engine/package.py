@@ -369,7 +369,8 @@ class Package(Persistable):
         self._docType    = G.application.config.docType
     # Property Handlers
     def set_docType(self,value):
-        self._docType = toUnicode('XHTML')
+        self._docType = toUnicode(value)
+        common.setExportDocType(value)
 
     def set_name(self, value):
         self._name = toUnicode(value)
@@ -1180,7 +1181,8 @@ class Package(Persistable):
                 if hasattr(newPackage,'_docType'):
                     common.setExportDocType(newPackage.docType)
                 else:
-                    common.setExportDocType(G.application.config.docType)
+                    newPackage.set_docType(toUnicode('XHTML'))
+
             else: 
                 # and when merging, automatically set package references to
                 # the destinationPackage, into which this is being merged:

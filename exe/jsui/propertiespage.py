@@ -250,7 +250,7 @@ class PropertiesPage(Renderable, Resource):
     name = 'properties'
 
     booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile', 'pp_scowsinglepage', 'pp_scowwebsite', 'pp_exportSource',
-                         'pp_intendedEndUserRoleGroup', 'pp_intendedEndUserRoleTutor', 'pp_compatibleWithVersion9','pp_docType')
+                         'pp_intendedEndUserRoleGroup', 'pp_intendedEndUserRoleTutor', 'pp_compatibleWithVersion9')
 
     imgFieldNames = ('pp_backgroundImg')
 
@@ -318,8 +318,7 @@ class PropertiesPage(Renderable, Resource):
                                 data[key] = getattr(obj, name).basename()
                         else:
                             data[key] = getattr(obj, name)
-                            if name=='docType':
-                                a= getattr(obj,name)                   
+                            if name=='docType':              
                                 common.setExportDocType(getattr(obj,name))
 
         except Exception as e:
@@ -345,8 +344,6 @@ class PropertiesPage(Renderable, Resource):
                     items.insert(0, item)
                 for key, value in items:
                     obj, name = self.fieldId2obj(key)
-                    if name=='docType':               
-                        common.setExportDocType(toUnicode(value[0]))
                     if key in self.booleanFieldNames:
                         setattr(obj, name, value[0] == 'true')
                     else:
@@ -360,6 +357,8 @@ class PropertiesPage(Renderable, Resource):
                                     if getattr(obj, name).basename() != path:
                                         setattr(obj, name, None)
                         else:
+                            #if name=='docType': common.setExportDocType(toUnicode(value[0]))              
+                                 
                             setattr(obj, name, toUnicode(value[0]))
                             
         except Exception as e:
