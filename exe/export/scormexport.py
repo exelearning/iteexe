@@ -590,8 +590,7 @@ class ScormExport(object):
             jsFile.copyfile(outputDir/'common.js')
 
         if self.scormType == "scorm2004" or self.scormType == "scorm1.2":
-            self.scriptsDir.copylist(('AC_RunActiveContent.js',
-                                      'SCORM_API_wrapper.js',
+            self.scriptsDir.copylist(('SCORM_API_wrapper.js',
                                       'SCOFunctions.js', 
                                       'common.js'), outputDir)     
         # about SCHEMAS:
