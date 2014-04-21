@@ -113,6 +113,13 @@ div#nodeDecoration{
 
 .iDeviceTitle{top:0}
 .iDevice_header{background-position:0 0}
+/* Añadir algún contenido después del contenido del iDevice, hace que el alto del iDevice
+   se adapte al elemento más alto del contenido. Así se evita que las imágenes muy alargadas
+   sobresalgan por debajo */
+.iDevice_content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
+.iDevice_content{display:inline-block}
+html[xmlns] .iDevice_content{display:block}
+* html .iDevice_content{height: 1%;overflow:visible}
 
 /* SCORM y otros comparten apariencia: esta es la apariencia por defecto */
 .emphasis1 .iDevice_header{
