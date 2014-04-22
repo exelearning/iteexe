@@ -41,6 +41,7 @@ from exe.jsui.recentmenu         import RecentMenu
 from exe.jsui.stylemenu          import StyleMenu
 from exe.jsui.propertiespage     import PropertiesPage
 from exe.webui.authoringpage     import AuthoringPage
+from exe.webui.stylemanagerpage  import StyleManagerPage
 from exe.webui.renderable        import File
 from exe.export.websiteexport    import WebsiteExport
 from exe.export.textexport       import TextExport
@@ -196,10 +197,8 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
         setUpHandler(self.handleReload,       'reload')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
+        setUpHandler(self.handleStyleDownload,   'styleDownload')
         
-        
-
-
         #For the new ExtJS 4.0 interface
         setUpHandler(self.outlinePane.handleAddChild, 'AddChild')
         setUpHandler(self.outlinePane.handleDelNode, 'DelNode')
@@ -372,6 +371,29 @@ class MainPage(RenderableLivePage):
             zipFile = zipfile.ZipFile(filename, "r")
             try:
                 zipFile.extractall(G.application.config.configDir)
+                client.sendScript('Ext.MessageBox.updateProgress(1, "100%", "Success!")')
+            finally:
+                Path(filename).remove()
+
+        d.addCallback(successDownload)
+
+    def handleStyleDownload(self, client, url):
+        """
+        Download style from url and import into styles directory
+        
+        TODO: This handler would make more sense in the StyleManagerPage class, move there
+        """
+        log.debug("Download style from %s" % url)
+        client.sendScript('Ext.MessageBox.progress("Style Download", "Connecting to style URL...")')
+        d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
+
+        def successDownload(result):
+            filename = result[0]
+            try:
+                log.debug(filename)
+                stylemanager = StyleManagerPage(self)
+                stylemanager.client = client
+                stylemanager.doImportStyle(filename)
                 client.sendScript('Ext.MessageBox.updateProgress(1, "100%", "Success!")')
             finally:
                 Path(filename).remove()

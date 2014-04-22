@@ -282,6 +282,22 @@ function createPanelStyles(styles) {
     };
     itemsShow.push(style);
     panel = [
+         { 
+             xtype: 'textfield',
+             itemId: 'style_download_url',
+             name: 'style_download_url',
+             fieldLabel: _('URL'),
+             tooltip: _('URL to download the style from.'),
+         },
+         {
+              xtype: 'button',
+              itemId: 'style_download',
+              text: _('Download Style'),
+              tooltip: _('Download style from URL and import into system.'),
+              icon: '/images/stock-import.png',
+              style:'float:left;',
+              margin: 10,
+        },
         {
             xtype: 'button',
             tooltip: _('Import style to the system '),
@@ -420,7 +436,7 @@ function createPanelProperties(properties, stylen,mode,withbutton) {
         itemsShow.push(filename);
         var style =
         { 
-               xtype: 'field',
+            xtype: 'field',
             hidden: true,
             itemId: 'style',
             name: 'style'

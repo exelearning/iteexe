@@ -7,13 +7,15 @@ import logging
 import os
 import sys
 import shutil
-from zipfile                       import ZipFile, ZIP_DEFLATED
+from zipfile                   import ZipFile, ZIP_DEFLATED
 import json
-from twisted.web.resource import Resource
-from exe.webui.livepage import allSessionClients
+from twisted.internet          import threads, reactor
+from twisted.web.resource      import Resource
+from exe.webui.livepage        import allSessionClients
 from exe.webui.renderable      import RenderableResource
-from exe.engine.path           import toUnicode
+from exe.engine.path           import Path, toUnicode, TempDirPath
 from exe.engine.style          import Style
+from urllib                    import unquote, urlretrieve
 import locale
 import base64
 
@@ -50,7 +52,7 @@ class StyleManagerPage(RenderableResource):
         
     def render_GET(self, request):
         """Called for all requests to this object"""
-
+        
         if (self.action == 'Properties'):
             self.action     = 'List'
             return json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'Properties'})
@@ -60,8 +62,6 @@ class StyleManagerPage(RenderableResource):
             return json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'PreExport'})
         else:
             return json.dumps({'success': True, 'styles': self.renderListStyles(), 'action': 'List'})
-        
-
     
     def render_POST(self, request):
 
@@ -113,38 +113,51 @@ class StyleManagerPage(RenderableResource):
     
     def doImportStyle(self, filename):
         """
+        Imports a style from a ZIP file
+        Checks its validity: contains a contents.css file,
+        target directory does not exist (avoid overwritting) and,
+        if the style has a config.xml file, that the name is not
+        already registered in eXe
+        ----
         Importa un estilo desde un fichero ZIP
         Comprueba si es un estilo valido (contiene content.css), 
             si el directorio no existe (para no machacar)
             y si tiene config.xml que el nombre no exista ya.
         """
-        styleDir    = self.config.stylesDir
+        stylesDir    = self.config.stylesDir
         log.debug("Import style from %s" % filename)
-        filename=filename.decode('utf-8')       
-        BaseFile=os.path.basename(filename)
-        targetDir=BaseFile[0:-4:]
-        absoluteTargetDir=styleDir/targetDir 
+        # filename does not necessarily match the style directory name, it can be
+        # a temporary filename (i.e. ZIP programmatically downloaded from URL to temp dir).
+        # To get the style directory name we must inspect the Zip file and
+        # check the name of the first element in the list of packaged files,
+        # which would be the directory that holds the other files
+        filename=filename.decode('utf-8')
         try:
-            sourceZip = ZipFile( filename ,  'r')
+            sourceZip = ZipFile(filename ,  'r')
         except IOError:
             self.alert(_(u'Error'), _(u'File %s does not exist or is not readable.') % filename)
             return None
-        if os.path.isdir(absoluteTargetDir):
-            self.alert(_(u'Error'), _(u'Style directory already exists: %s') % targetDir)
+        
+        styleBaseDir = sourceZip.filelist[0].filename
+        targetDir = stylesDir/styleBaseDir
+        if os.path.isdir(targetDir):
+            self.alert(_(u'Error'), _(u'Style target directory already exists: %s') % targetDir)
         else:
-            os.mkdir(absoluteTargetDir)
             for name in sourceZip.namelist():
-                sourceZip.extract(name, absoluteTargetDir )
+                # Extract the files right into the styles directory
+                # All the zipped files must be contained in a single directory, wich
+                # will be created now, on extracting the first element of the ZIP file
+                sourceZip.extract(name, stylesDir)
             sourceZip.close() 
-            style = Style(absoluteTargetDir)
+            style = Style(targetDir)
             if style.isValid(): 
                 if not self.config.styleStore.addStyle(style):
-                    absoluteTargetDir.rmtree()
+                    targetDir.rmtree()
                     self.alert(_(u'Error'), _(u'The style name already exists: %s') % style.get_name())
                 else:         
                     self.alert(_(u'Success'), _(u'Successfully imported style: %s') % style.get_name())  
             else:
-                absoluteTargetDir.rmtree()
+                targetDir.rmtree()
                 self.alert(_(u'Error'), _(u'Incorrect style format (does not include content.css)'))
         self.action = ""
 
