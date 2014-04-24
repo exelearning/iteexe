@@ -316,10 +316,10 @@ class WebsitePage(Page):
         """
         dT = common.getExportDocType()
         lb = "\n" #Line breaks
-        sectionTag = "div"
+        navTag = "div"
         if dT == "HTML5":
-            sectionTag = "section"
-        html = "<"+sectionTag+" class=\"pagination noprt\">"+lb
+            navTag = "nav"
+        html = "<"+navTag+" class=\"pagination noprt\">"+lb
 
         if prevPage:
             html += "<a href=\""+quote(prevPage.name)+".html\" class=\"prev\">"
@@ -331,7 +331,7 @@ class WebsitePage(Page):
             html += "<a href=\""+quote(nextPage.name)+".html\" class=\"next\">"
             html += " %s<span> &raquo;</span></a>" % _('Next')
             
-        html += lb+"</"+sectionTag+">"+lb
+        html += lb+"</"+navTag+">"+lb
         return html
 
 
