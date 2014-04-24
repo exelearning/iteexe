@@ -247,9 +247,11 @@ class Epub3Page(Page):
         dT = common.getExportDocType()
         lb = "\n"  # Line breaks
         sectionTag = "div"
+        articleTag = "div"
         headerTag = "div"
         if dT == "HTML5":
             sectionTag = "section"
+            articleTag = "article"
             headerTag = "header"
         html = common.docType()
         lenguaje = G.application.config.locale
@@ -308,7 +310,7 @@ class Epub3Page(Page):
             html += style.get_extra_head()
         html += u"</head>" + lb
         html += u'<body class="exe-epub3"><script type="text/javascript">document.body.className+=" js"</script>' + lb
-        html += u"<" + sectionTag + " id=\"outer\">" + lb
+        html += u"<div id=\"outer\">" + lb
         html += u"<" + sectionTag + " id=\"main\">" + lb
         html += u"<" + headerTag + " id=\"nodeDecoration\">"
         html += u'<h1 id=\"nodeTitle\">'
@@ -321,7 +323,7 @@ class Epub3Page(Page):
                 e = " em_iDevice"
                 if unicode(idevice.emphasis) == '0':
                     e = ""
-                html += u'<' + sectionTag + ' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, idevice.id, lb)
+                html += u'<' + articleTag + ' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, idevice.id, lb)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -331,12 +333,12 @@ class Epub3Page(Page):
                 if idevice.title != "Forum Discussion":
                     html += self.processInternalLinks(
                         block.renderView(self.node.package.style))
-            html += u'</' + sectionTag + '>' + lb  # iDevice div
+            html += u'</' + articleTag + '>' + lb  # iDevice div
 
         html += u"</" + sectionTag + ">" + lb  # /#main
         html += self.renderLicense()
         html += self.renderFooter()
-        html += u"</" + sectionTag + ">" + lb  # /#outer
+        html += u"</div>" + lb  # /#outer
         if style.hasValidConfig:
             html += style.get_extra_body()
         html += u'</body></html>'

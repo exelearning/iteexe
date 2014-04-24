@@ -64,12 +64,14 @@ class WebsitePage(Page):
         themeHasXML = common.themeHasConfigXML(self.node.package.style)
         lb = "\n" #Line breaks
         sectionTag = "div"
+        articleTag = "div"
         headerTag = "div"
         navTag = "div"
         if dT == "HTML5":
             html = '<!doctype html>'+lb
             html += '<html lang="'+lenguaje+'">'+lb
             sectionTag = "section"
+            articleTag = "article"
             headerTag = "header"
             navTag = "nav"
         else:
@@ -130,7 +132,7 @@ class WebsitePage(Page):
             html += style.get_extra_head()
         html += u"</head>"+lb
         html += u'<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>'+lb
-        html += u"<"+sectionTag+" id=\"content\">"+lb
+        html += u"<div id=\"content\">"+lb
         html += '<p id="skipNav"><a href="#main" class="sr-av">'+_('Skip navigation')+'</a></p>'+lb
 
         if self.node.package.backgroundImg or self.node.package.title:
@@ -157,11 +159,14 @@ class WebsitePage(Page):
         html += u"<"+navTag+" id=\"siteNav\">"+lb
         html += self.leftNavigationBar(pages)
         html += u"</"+navTag+">"+lb
-        html += "<"+sectionTag+" id='topPagination'>"+lb
+        html += "<div id='topPagination'>"+lb
         html += self.getNavigationLink(prevPage, nextPage)
-        html += "</"+sectionTag+">"+lb
-        html += u"<"+sectionTag+" id=\"main-wrapper\">"+lb
-        html += u"<"+sectionTag+" id=\"main\"><a name=\"main\"></a>"+lb
+        html += "</div>"+lb
+        html += u"<div id=\"main-wrapper\">"+lb
+        html += u"<"+sectionTag+" id=\"main\">"
+        if dT != "HTML5":
+            html += "<a name=\"main\"></a>"
+        html += lb
 
         html += '<'+headerTag+' id=\"nodeDecoration\">'
         html += '<h1 id=\"nodeTitle\">'
@@ -174,7 +179,7 @@ class WebsitePage(Page):
                 e=" em_iDevice"
                 if unicode(idevice.emphasis)=='0':
                     e=""
-                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">%s' %  (idevice.klass, e, idevice.id, lb)
+                html += u'<'+articleTag+' class="iDevice_wrapper %s%s" id="id%s">%s' %  (idevice.klass, e, idevice.id, lb)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -184,26 +189,26 @@ class WebsitePage(Page):
                 if idevice.title != "Forum Discussion":
                     html += self.processInternalLinks(self.node.package,
                         block.renderView(self.node.package.style))
-                html += u'</'+sectionTag+'>'+lb # iDevice div
+                html += u'</'+articleTag+'>'+lb # iDevice div
 
         if not themeHasXML:
-            html += "<"+sectionTag+" id='bottomPagination'>"+lb
+            html += "<div id='bottomPagination'>"+lb
             html += self.getNavigationLink(prevPage, nextPage)
-            html += "</"+sectionTag+">"+lb
+            html += "</div>"+lb
         # writes the footer for each page 
         html += self.renderLicense()
         if not themeHasXML:
         #if not style.hasValidConfig:
             html += self.renderFooter()
         html += u"</"+sectionTag+">"+lb # /main
-        html += u"</"+sectionTag+">"+lb # /main-wrapper
+        html += u"</div>"+lb # /main-wrapper
         if themeHasXML:
         #if style.hasValidConfig:
-            html += "<"+sectionTag+" id='bottomPagination'>"+lb
+            html += "<div id='bottomPagination'>"+lb
             html += self.getNavigationLink(prevPage, nextPage)
-            html += "</"+sectionTag+">"+lb        
+            html += "</div>"+lb        
             html += self.renderFooter()
-        html += u"</"+sectionTag+">"+lb # /content
+        html += u"</div>"+lb # /content
         if themeHasXML:
         #if style.hasValidConfig:
             html += style.get_extra_body()        

@@ -75,7 +75,7 @@ class SinglePage(Page):
         else:
             html += u'<body class="exe-single-page">'
         html += u'<script type="text/javascript">document.body.className+=" js"</script>'+lb
-        html += u"<"+sectionTag+" id=\"content\">"+lb
+        html += u"<div id=\"content\">"+lb
         html += u"<"+headerTag+" id=\"header\">"
         html += "<h1>"+escape(package.title)+"</h1>"
         html += u"</"+headerTag+">"+lb
@@ -84,7 +84,7 @@ class SinglePage(Page):
         html += u"</"+sectionTag+">"+lb
         html += self.renderLicense()+lb
         html += self.renderFooter()+lb
-        html += u"</"+sectionTag+">"+lb
+        html += u"</div>"+lb # Close content
         # Some styles might have their own JavaScript files (see their config.xml file)
         style = G.application.config.styleStore.getStyle(self.node.package.style)
         if style.hasValidConfig:
@@ -223,11 +223,9 @@ class SinglePage(Page):
         """
         dT = common.getExportDocType()
         lb = "\n" #Line breaks
-        sectionTag = "div"
         headerTag = "div"
         articleTag = "div"
         if dT == "HTML5":
-            sectionTag = "section"
             headerTag = "header"
             articleTag = "article"
             nivel = 1
@@ -246,7 +244,7 @@ class SinglePage(Page):
                 e=" em_iDevice"
                 if unicode(idevice.emphasis)=='0':
                     e=""            
-                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, (idevice.id+"-"+node.id), lb)
+                html += u'<'+articleTag+' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, (idevice.id+"-"+node.id), lb)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -255,7 +253,7 @@ class SinglePage(Page):
                     html += block.renderJavascriptForWeb()
                 html += self.processInternalLinks(self.node.package,block.renderView(style))
                 html = html.replace('href="#auto_top"', 'href="#"')
-                html += u'</'+sectionTag+'>'+lb # iDevice div
+                html += u'</'+articleTag+'>'+lb # iDevice div
 
         html += '</'+articleTag+'>'+lb # node div
 

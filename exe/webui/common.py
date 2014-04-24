@@ -82,12 +82,10 @@ def ideviceHeader(e, style, mode):
     dT = getExportDocType()
     lb = "\n" #Line breaks
     #Default HTML tags:
-    sectionTag = "div"
     articleTag = "div"
     headerTag = "div"
     titleTag = "h2"   
     if dT == "HTML5":
-        sectionTag = "section"
         articleTag = "article"
         headerTag = "header"
         titleTag = "h1"
@@ -102,14 +100,14 @@ def ideviceHeader(e, style, mode):
     w2 = ''
     eEm = ''
     if e.idevice.emphasis > 0:
-        w2 = '<'+sectionTag+' class="iDevice_inner">'+lb
-        w2 += '<'+sectionTag+' class="iDevice_content_wrapper">'+lb
+        w2 = '<div class="iDevice_inner">'+lb
+        w2 += '<div class="iDevice_content_wrapper">'+lb
         eEm = ' em_iDevice'
     
     if mode=="preview" and themeHasXML:
-        w += '<'+sectionTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'" id="id'+e.id+'">'+lb
+        w += '<'+articleTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'" id="id'+e.id+'">'+lb
     
-    w += u"<"+articleTag+" class=\"iDevice emphasis"+unicode(e.idevice.emphasis)+"\" "
+    w += u"<div class=\"iDevice emphasis"+unicode(e.idevice.emphasis)+"\" "
     if mode=="preview":
         w += u"ondblclick=\"submitLink('edit', "+e.id+", 0);\""
     w += ">"+lb
@@ -161,21 +159,19 @@ def ideviceFooter(e, style, mode):
     dT = getExportDocType()
     lb = "\n" #Line breaks
     #Default HTML tags:
-    sectionTag = "div"
     articleTag = "div"
     if dT == "HTML5":
-        sectionTag = "section"
         articleTag = "article"
     themeHasXML = themeHasConfigXML(style)
     h = ''
     if e.idevice.emphasis > 0:
-        h = "</"+sectionTag+">"+lb # Close iDevice_content_wrapper
-        h += "</"+sectionTag+">"+lb # Close iDevice_inner
+        h = "</div>"+lb # Close iDevice_content_wrapper
+        h += "</div>"+lb # Close iDevice_inner
     if mode=="preview":
         h += e.renderViewButtons()
-        if themeHasXML:
-            h += "</"+sectionTag+">"+lb # Close extra div (e.idevice.klass)
-    h += "</"+articleTag+">"+lb # Close iDevice
+    h += "</div>"+lb # Close iDevice
+    if mode=="preview" and themeHasXML:
+        h += "</"+articleTag+">"+lb # Close iDevice_wrapper
     return h
     
 def ideviceHint(content, mode, level='h3'):
