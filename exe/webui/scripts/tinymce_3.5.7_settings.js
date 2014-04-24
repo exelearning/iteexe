@@ -33,6 +33,15 @@ tinyMCE.init({
 	theme_advanced_resizing : true,	
 	
     template_external_list_url : "/scripts/tinymce_templates/lang/"+tinyMCE_language+".js",
+	// No new base64 images
+	setup : function(ed) {
+		ed.onInit.add(function(ed, e) {
+			$exeAuthoring.countBase64(ed);
+		});	
+		ed.onChange.add(function(ed, e) {
+			$exeAuthoring.compareBase64(ed);
+		});
+	},
     // Spell check
     init_instance_callback : function() {
         if (tinyMCE.activeEditor.execCommands.mceSpellCheck) tinymce.execCommand('mceSpellCheck', true);
