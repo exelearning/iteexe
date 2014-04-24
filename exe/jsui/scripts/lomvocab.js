@@ -1211,11 +1211,9 @@ lomesVocab = {
             "home", 
             _("home")
         ], 
-// 2014-04-09, JRF - trying to fix our problem with the 14 Context variables
-// Change mixed (which is ambiguous) -> mixed environment
         [
-            "mixed environment", 
-            _("mixed environment")
+            "mixed", 
+            _("mixed")
         ], 
         [
             "teacher", 
@@ -1237,22 +1235,14 @@ lomesVocab = {
             "independent", 
             _("independent")
         ], 
-// 2014-04-09. Old term 'mixed' moved here by JRF - it's a value of the variable Asistencia (Attendance).
-// Not to be mistaken with 'mixed environment' (variable Environment, Lugar) or
-// Blended (a Modality)
-	[
-            "mixed attendance",
-            _("mixed attendance")
-	],
         [
             "blended", 
             _("blended")
         ], 
-// 2014-04-07, JRF - I think this is obviously a mistake, and I comment it out
-//       [
-//            "presencial", 
-//            _("presencial")
-//        ], 
+        [
+            "presencial", 
+            _("presencial")
+        ], 
         [
             "face to face", 
             _("face to face")
