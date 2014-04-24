@@ -7,7 +7,7 @@ body{padding:0}
 #content{width:100%;position:relative;min-width:965px}
 #main{padding:20px 20px 0 20px;background:#fff;margin-left:230px;overflow:auto}
 #header,#emptyHeader{border-top:none;padding-left:15px}
-div#nodeDecoration{padding:0;margin:0;background:none;border:none}
+#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:0 0 .7em 0;border-bottom:4px solid #8B8B89}
 .iDevice,.readingIdevice .iDevice{margin:2em 0;padding:0}
 .emphasis0{padding:0}

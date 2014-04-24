@@ -10,11 +10,11 @@ a{color:#036}
 a:hover,a:focus{color:#3C5866}
 #header,#emptyHeader{background:#fafafa url(_standardwhite_title_bg.gif) repeat-x bottom;text-align:left;height:3em;padding-left:15px;font-size:1.5em;line-height:3em;border-bottom:1px solid #B3B3B3;border-top:1px solid #B3B3B3;text-shadow:1px 1px 1px #fff} /* Header is also in single page */
 #header h1{margin:0;font-size:1em}
-div#nodeDecoration{text-align:left;margin-bottom:1.5em;border-bottom:1px solid #B3B3B3;border-top:1px solid #B3B3B3}
+#nodeDecoration{text-align:left;margin-bottom:1.5em;border-bottom:1px solid #B3B3B3;border-top:1px solid #B3B3B3}
 #nodeTitle,.nodeTitle{background:#fafafa url(_standardwhite_title_bg.gif) repeat-x bottom;font-size:1.5em;margin:0;font-weight:bold;text-align:right;color:#4D4D4D;text-shadow:1px 1px 1px #fff;padding:.3em 15px} /* .nodeTitle when single page */
 .nodeTitle{padding:.1em 15px .6em 0;border-bottom:1px solid #B3B3B3;margin-top:1em;text-align:right}
 #main h2{font-size:1.4em}
-#main h2.iDeviceTitle{display:inline;font-weight:normal}
+#main .iDeviceTitle{display:inline;font-weight:normal;font-size:1.4em}
 h3{font-size:1.25em}
 #main h4{font-size:1.2em}
 #main h5{font-size:1.1em}

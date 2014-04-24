@@ -76,7 +76,7 @@ ol,ul {
 ul li {
 	list-style-image:url(bullet.gif);
 }
-div#nodeDecoration {
+#nodeDecoration {
 	text-align:left;
 }
 .nodeDecoration {
@@ -116,7 +116,7 @@ h1#nodeTitle {
 }
 
 /* iDevices */
-.iDeviceTitle{top:0}
+.iDeviceTitle{top:0;font-size:1.5em}
 span.iDeviceTitle{height:48px;display:block}
 .iDevice_header{background-position:0 0}
 

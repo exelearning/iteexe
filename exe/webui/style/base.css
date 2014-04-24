@@ -11,7 +11,7 @@ a{text-decoration:none}
 a:hover,a:focus{text-decoration:underline}
 img.submit,img.help,img.info,img.gallery{border:0}
 li{list-style-position:inside}
-div#nodeDecoration{padding:0.1em;border-bottom:0em;text-align:right}
+#nodeDecoration{padding:0.1em;border-bottom:0em;text-align:right}
 .block,.feedback{display:block;padding-top:0.25em;padding-bottom:0.25em}
 .feedback{font-family:times,serif;font-size:120%}
 .feedback-button p{margin:0}
@@ -32,7 +32,7 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 /* The New eXeLearning */
 /* Include these styles in the old themes */
 .pre-code{background:#112C4A;color:#E7ECF1;font-family:Monaco,Courier,monospace;border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
-.iDevice_content{position:relative}
+.iDevice_content{position:relative;max-width:100%}
 .iDevice_header{background-position:0 50%;background-repeat:no-repeat}
 /* TinyMCE: Images and media */
 .exe-figure{margin:1.5em 0;max-width:100%}

@@ -102,7 +102,7 @@ de la jerarquía de contenidos que crearemos con eXe */
 	padding-bottom:5px
 }
 
-div#nodeDecoration{
+#nodeDecoration{
     text-align:left;
 }
 
@@ -111,7 +111,7 @@ div#nodeDecoration{
 
 /* IDEVICES */
 
-.iDeviceTitle{top:0}
+.iDeviceTitle{top:0;font-size:1.5em}
 .iDevice_header{background-position:0 0}
 
 /* SCORM y otros comparten apariencia: esta es la apariencia por defecto */

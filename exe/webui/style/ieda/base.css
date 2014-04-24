@@ -48,7 +48,7 @@ li {
     display: inline;
 }
 
-div#nodeDecoration {
+#nodeDecoration {
     padding: 0.1em;
     border-bottom: 0em;
     text-align:right;
