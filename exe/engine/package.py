@@ -686,7 +686,7 @@ class Package(Persistable):
                 metadata.set_rights(lomsubs.rightsSub())
             copyrightAndOtherRestrictions = metadata.get_rights().get_copyrightAndOtherRestrictions()
             if copyrightAndOtherRestrictions:
-                if copyrightAndOtherRestrictions.get_value().get_valueOf_() == self.license_map(source, self.license.encode('utf-8')):
+                if copyrightAndOtherRestrictions.get_value().get_valueOf_() == self.license_map(source, self.license.encode('utf-8').rstrip(' 0123456789.')):
                     if value:
                         copyrightAndOtherRestrictions.get_value().set_valueOf_(self.license_map(source, value_str))
                     else:
