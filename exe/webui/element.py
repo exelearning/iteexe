@@ -1340,15 +1340,21 @@ class ClozeElement(ElementWithResources):
         """
         Shows the text with inputs for the missing parts
         """
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"        
 
+        html = ['<%s class="activity" id="activity-%s">' % (sectionTag,self.id)]
+        
         if preview: 
             # to render, use the content with the preview-able resource paths:
             self.field.encodedContent = self.field.content_w_resourcePaths
-            html = ['<div class="activity-form">']
+            html += ['<div class="activity-form">']
         else:
             # to render, use the flattened content, withOUT resource paths: 
             self.field.encodedContent = self.field.content_wo_resourcePaths
-            html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="clozeSubmit(\''+self.id+'\');return false" class="activity-form">']
+            html += ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="clozeSubmit(\''+self.id+'\');return false" class="activity-form">']
 
         html += ['<div id="cloze%s">' % self.id]
 
@@ -1428,6 +1434,7 @@ class ClozeElement(ElementWithResources):
             html += ['</div>']
         else:
             html += ['</form>']
+        html += ['</%s>' % sectionTag]
         return '\n'.join(html)
     
     def renderText(self):

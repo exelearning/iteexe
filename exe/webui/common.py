@@ -63,7 +63,7 @@ def docType():
     lb = "\n" #Line breaks
     """Generates the documentation type string"""
     if dT == "HTML5":
-        return '<!doctype html>'+lb
+        return '<!DOCTYPE html>'+lb
     else:
         return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
             
@@ -391,25 +391,27 @@ def flashMovie(movie, width, height, resourcesDir='', autoplay='false'):
 
 def submitButton(name, value, enabled=True, **kwargs):
     """Adds a submit button to a form"""
+    lb = "\n" #Line breaks
     html  = '<input class="button" type="submit" name="%s" ' % name
     html += 'value="%s" ' % value
     if not enabled:
         html += ' disabled="disabled"'
     for key, val in kwargs.items():
         html += ' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
-    html += '/>\n'
+    html += ' />'+lb
     return html
 
 
 def button(name, value, enabled=True, **kwargs):
     """Adds a NON-submit button to a form"""
+    lb = "\n" #Line breaks
     html  = '<input type="button" name="%s"' % name
     html += ' value="%s"' % value
     if not enabled:
         html += ' disabled="disabled"'
     for key, val in kwargs.items():
         html += u' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
-    html += '/>\n'
+    html += ' />'+lb
     return html
 
 def feedbackBlock(id,feedback):
