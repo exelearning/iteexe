@@ -1494,7 +1494,7 @@ class Package(Persistable):
 
     def lomDefaults(self, entry, schema, rights=False):
         defaults = {'general': {'identifier': [{'catalog': _('My Catalog'), 'entry': entry}],
-                              'aggregationLevel': {'source': schema, 'value': '3'}
+                              'aggregationLevel': {'source': schema, 'value': '2'}
                              },
                   'metaMetadata': {'metadataSchema': [schema]},
                  }
