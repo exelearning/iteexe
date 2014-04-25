@@ -2689,7 +2689,7 @@ class QuizQuestionElement(Element):
         """ 
         lb = "\n" #Line breaks
         html = '<div class=\"iDevice_question\">'+lb
-        html = self.doRender(img1, img2, preview=True)
+        html += self.doRender(img1, img2, preview=True)
         html += "</div>"+lb
         return html
     
