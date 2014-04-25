@@ -206,11 +206,12 @@ class ListaElement(ElementWithResources):
         if preview: 
             # to render, use the content with the preview-able resource paths:
             self.field.encodedContent = self.field.content_w_resourcePaths
+            html = ['<div class="activity-form">']
         else:
             # to render, use the flattened content, withOUT resource paths: 
             self.field.encodedContent = self.field.content_wo_resourcePaths
+            html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="showClozeScore(\''+self.id+'\',1);return false" class="activity-form">']
 
-        html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="showClozeScore(\''+self.id+'\',1);return false" class="activity-form">']
         html += ['<div id="cloze%s">' % self.id]
         html += ['<script type="text/javascript">var YOUR_SCORE_IS="%s"</script>' % _('Your score is ')]
         # Store our args in some hidden fields
@@ -276,7 +277,10 @@ class ListaElement(ElementWithResources):
         html += ['</div>']
         html += ['<div class="score" id="clozeScore%s"></div>' % self.id]        
         html += ['</div>']
-        html += ['</form>']
+        if preview: 
+            html += ['</div>']
+        else:
+            html += ['</form>']
         return '\n'.join(html)
     
     def renderText(self):
