@@ -1575,6 +1575,9 @@ class Package(Persistable):
             self.mxmlwidth = ""
         if not hasattr(self, 'compatibleWithVersion9'):
             self.compatibleWithVersion9 = False
+        self.set_title(self._title)
+        self.set_author(self._author)
+        self.set_description(self._description)
 
     def upgradeToVersion11(self):
         pass
