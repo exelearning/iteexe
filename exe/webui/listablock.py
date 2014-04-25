@@ -210,7 +210,7 @@ class ListaElement(ElementWithResources):
             # to render, use the flattened content, withOUT resource paths: 
             self.field.encodedContent = self.field.content_wo_resourcePaths
 
-        html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="showClozeScore(\''+self.id+'\',1);return false" class="activity-form cloze-form">']
+        html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="showClozeScore(\''+self.id+'\',1);return false" class="activity-form">']
         html += ['<div id="cloze%s">' % self.id]
         html += ['<script type="text/javascript">var YOUR_SCORE_IS="%s"</script>' % _('Your score is ')]
         # Store our args in some hidden fields

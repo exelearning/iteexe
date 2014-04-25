@@ -1344,11 +1344,11 @@ class ClozeElement(ElementWithResources):
         if preview: 
             # to render, use the content with the preview-able resource paths:
             self.field.encodedContent = self.field.content_w_resourcePaths
-            html = ['<div class="activity-form cloze-form">']
+            html = ['<div class="activity-form">']
         else:
             # to render, use the flattened content, withOUT resource paths: 
             self.field.encodedContent = self.field.content_wo_resourcePaths
-            html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="clozeSubmit(\''+self.id+'\');return false" class="activity-form cloze-form">']
+            html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="clozeSubmit(\''+self.id+'\');return false" class="activity-form">']
 
         html += ['<div id="cloze%s">' % self.id]
 
@@ -2279,11 +2279,11 @@ class SelectquestionElement(Element):
         lb = "\n" #Line breaks
         # Form
         if preview: 
-            html = '<div class="activity-form multi-select-form">'+lb
+            html = '<div class="activity-form">'+lb
             html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb
             html += self.questionElement.renderPreview()
         else:
-            html = '<form name="multi-select-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form multi-select-form">'+lb
+            html = '<form name="multi-select-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form">'+lb
             html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb           
             html += self.questionElement.renderView()        
             
@@ -2703,11 +2703,11 @@ class QuizQuestionElement(Element):
         """
         lb = "\n" #Line breaks
         if preview: 
-            html = '<div class="activity-form multi-choice-form">'+lb
+            html = '<div class="activity-form">'+lb
             html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb
             html += self.questionElement.renderPreview()
         else:
-            html = '<form name="multi-choice-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form multi-choice-form">'+lb
+            html = '<form name="multi-choice-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form">'+lb
             html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb
             html += self.questionElement.renderView()
 
