@@ -1344,11 +1344,12 @@ class ClozeElement(ElementWithResources):
         if preview: 
             # to render, use the content with the preview-able resource paths:
             self.field.encodedContent = self.field.content_w_resourcePaths
+            html = ['<div class="activity-form cloze-form">']
         else:
             # to render, use the flattened content, withOUT resource paths: 
             self.field.encodedContent = self.field.content_wo_resourcePaths
+            html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="clozeSubmit(\''+self.id+'\');return false" class="activity-form cloze-form">']
 
-        html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="clozeSubmit(\''+self.id+'\');return false" class="activity-form cloze-form">']
         html += ['<div id="cloze%s">' % self.id]
 
         html.append('<script type="text/javascript">var YOUR_SCORE_IS="%s"</script>' % _('Your score is '))
@@ -1423,7 +1424,10 @@ class ClozeElement(ElementWithResources):
         html += ['</div>']
         html += ['<div id="clozeScore%s"></div>' % self.id]
         html += ['</div>']
-        html += ['</form>']
+        if preview:
+            html += ['</div>']
+        else:
+            html += ['</form>']
         return '\n'.join(html)
     
     def renderText(self):
@@ -2275,11 +2279,11 @@ class SelectquestionElement(Element):
         lb = "\n" #Line breaks
         # Form
         if preview: 
-            html = '<div class="activity-form multi-choice-form">'+lb
+            html = '<div class="activity-form multi-select-form">'+lb
             html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb
             html += self.questionElement.renderPreview()
         else:
-            html = '<form name="multi-choice-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form multi-choice-form">'+lb
+            html = '<form name="multi-select-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form multi-select-form">'+lb
             html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb           
             html += self.questionElement.renderView()        
             
