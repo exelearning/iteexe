@@ -2298,25 +2298,27 @@ class SelectquestionElement(Element):
         lb = "\n" #Line breaks
         dT = common.getExportDocType()
         sectionTag = "div"
-        titleTag = "h3"
+        titleTag1 = "h3"
+        titleTag2 = "h4"
         if dT == "HTML5":
             sectionTag = "section"
-            titleTag = "h1"
+            titleTag1 = "h1"
+            titleTag2 = "h1"
         
         html = '<'+sectionTag+' id="actitity-'+self.id+'">'
         # Form
         if preview: 
             html += '<div class="activity-form">'+lb
-            html += '<'+titleTag+' class="js-sr-av">'+_("Question")+'</'+titleTag+'>'+lb
+            html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb
             html += self.questionElement.renderPreview()
         else:
             html += '<form name="multi-select-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form">'+lb
-            html += '<'+titleTag+' class="js-sr-av">'+_("Question")+'</'+titleTag+'>'+lb           
+            html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb           
             html += self.questionElement.renderView()        
             
         # Answers
         html += '<'+sectionTag+' class="iDevice_answers">'+lb
-        html += '<'+titleTag+' class="js-sr-av">'+_("Answers")+'</'+titleTag+'>'+lb
+        html += '<'+titleTag2+' class="js-sr-av">'+_("Answers")+'</'+titleTag2+'>'+lb
         for element in self.options:
             html += element.renderView(preview)      
         html += "</"+sectionTag+">"+lb
@@ -2331,7 +2333,7 @@ class SelectquestionElement(Element):
         
         # Feedback
         html += '<'+sectionTag+' id="%s" class="js-hidden">' % ("f"+self.field.id)
-        html += '<'+titleTag+' class="js-sr-av">'+_("Feedback")+'</'+titleTag+'>'+lb
+        html += '<'+titleTag2+' class="js-sr-av">'+_("Feedback")+'</'+titleTag2+'>'+lb
         html += lb
         if preview: 
             aux  = self.feedbackElement.renderPreview(True, class_="feedback")
@@ -2351,7 +2353,7 @@ class SelectquestionElement(Element):
 
         # noscript
         html += '<'+sectionTag+' class="iDevice_solution feedback js-hidden">'+lb
-        html += "<"+titleTag+">"+_("Solution")+"</"+titleTag+">"+lb
+        html += "<"+titleTag2+">"+_("Solution")+"</"+titleTag2+">"+lb
         html += "<ol>"+lb
         for element in self.options:
             html += element.renderNoscript(preview)
@@ -2756,36 +2758,38 @@ class QuizQuestionElement(Element):
         lb = "\n" #Line breaks
         dT = common.getExportDocType()
         sectionTag = "div"
-        titleTag = "h3"
+        titleTag1 = "h3"
+        titleTag2 = "h4"
         if dT == "HTML5":
             sectionTag = "section" 
-            titleTag = "h1"            
+            titleTag1 = "h1"
+            titleTag2 = "h1"          
         if preview: 
             html = '<div class="activity-form">'+lb
-            html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb
+            html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb
             html += self.questionElement.renderPreview()
         else:
             html = '<form name="multi-choice-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form">'+lb
-            html += '<'+titleTag+' class="js-sr-av">'+_("Question")+'</'+titleTag+'>'+lb
+            html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb
             html += self.questionElement.renderView()
 
         # Hint
         if self.hintElement.field.content.strip():
             if preview: 
-                html += common.ideviceHint(self.hintElement.renderPreview(),"preview")
+                html += common.ideviceHint(self.hintElement.renderPreview(),"preview","h4")
             else: 
-                html += common.ideviceHint(self.hintElement.renderView(),"view")
+                html += common.ideviceHint(self.hintElement.renderView(),"view","h4")
 
         # Answers
         html += '<'+sectionTag+' class="iDevice_answers">'+lb
-        html += '<'+titleTag+' class="js-sr-av">'+_("Answers")+'</'+titleTag+'>'+lb
+        html += '<'+titleTag2+' class="js-sr-av">'+_("Answers")+'</'+titleTag2+'>'+lb
         for element in self.options:
             html += element.renderAnswerView(preview)
         html += "</"+sectionTag+">"+lb
                 
         # Feedbacks
         html += '<'+sectionTag+' class="iDevice_feedbacks">'+lb
-        html += '<'+titleTag+' class="js-sr-av">'+_("Feedback")+'</'+titleTag+'>'+lb
+        html += '<'+titleTag2+' class="js-sr-av">'+_("Feedback")+'</'+titleTag2+'>'+lb
         for element in self.options:
             html += element.renderFeedbackView(preview)
         html += "</"+sectionTag+">"+lb
@@ -2797,7 +2801,7 @@ class QuizQuestionElement(Element):
         
         # noscript
         html += '<'+sectionTag+' class="iDevice_solution feedback js-hidden">'+lb
-        html += "<"+titleTag+">"+_("Solution")+"</"+titleTag+">"+lb
+        html += "<"+titleTag2+">"+_("Solution")+"</"+titleTag2+">"+lb
         html += "<ol>"+lb
         for element in self.options:
             html += element.renderNoscript(preview)
