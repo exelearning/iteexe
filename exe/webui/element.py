@@ -419,8 +419,6 @@ class TextAreaElement(ElementWithResources):
             htmlTag = self.field.htmlTag
         if hasattr(self.field, 'class_'):
             class_ = self.field.class_
-            if class_=="block question": # To review: Multi-choice requires this (see line 2623)
-                htmlTag = 'div'
         if visible:
             visible = ''
         else:
@@ -2166,6 +2164,7 @@ class SelectquestionElement(Element):
             field.feedbackTextArea.idevice = idevice
             
         field.questionTextArea.class_ = "block question"
+        field.questionTextArea.htmlTag = "div"
 
         self.questionElement = TextAreaElement(field.questionTextArea)
         self.questionId = "question"+self.id
@@ -2621,6 +2620,7 @@ class QuizQuestionElement(Element):
             field.hintTextArea.idevice = idevice
             
         field.questionTextArea.class_ = "block question"
+        field.questionTextArea.htmlTag = "div"
 
         self.questionElement = TextAreaElement(field.questionTextArea)
         self.questionId = "question"+self.id
