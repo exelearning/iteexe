@@ -434,11 +434,7 @@ class TextAreaElement(ElementWithResources):
                 self.field.content = self.field.content_wo_resourcePaths
             content = self.field.content
         dT = common.getExportDocType()
-        sectionTag = "div"
-        if dT == "HTML5":
-            sectionTag = "section"         
-        return '<%s id="ta%s" class="%s iDevice_content"%s>%s%s%s</%s>%s' % (
-            sectionTag, self.id, class_, visible, lb, content, lb, sectionTag, lb)
+        return '<div id="ta%s" class="%s iDevice_content"%s>%s%s%s</div>%s' % (self.id, class_, visible, lb, content, lb, lb)
    
 
 
@@ -2100,6 +2096,7 @@ class SelectOptionElement(Element):
         ident = self.field.question.id + str(self.index)
         
         lb = "\n" #Line breaks
+        dT = common.getExportDocType()
         
         html = '<div class="iDevice_answer">'+lb
         # Checkbox
@@ -2110,7 +2107,9 @@ class SelectOptionElement(Element):
         html += lb
         html += '</p>'+lb
         # Answer content
-        html += '<div class="iDevice_answer-content" id="answer-'+self.id+'"><a name="answer-'+self.id+'"></a>'+lb
+        html += '<div class="iDevice_answer-content" id="answer-'+self.id+'">'
+        if dT != "HTML5":
+            html += '<a name="answer-'+self.id+'"></a>'+lb
         if preview: 
             html += self.answerElement.renderPreview()
         else:
@@ -2264,9 +2263,13 @@ class SelectquestionElement(Element):
         Returns an XHTML string for viewing this question element 
         """ 
         lb = "\n" #Line breaks
-        html = '<div class="question">'+lb
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"        
+        html = '<'+sectionTag+' class="question">'+lb
         html += self.doRender(img, preview=False)
-        html += "</div>"+lb
+        html += "</"+sectionTag+">"+lb
         return html
 
     def renderPreview(self,img=None):
@@ -2274,9 +2277,13 @@ class SelectquestionElement(Element):
         Returns an XHTML string for viewing this question element 
         """ 
         lb = "\n" #Line breaks
-        html = '<div class="question">'+lb
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"        
+        html = '<'+sectionTag+' class="question">'+lb
         html += self.doRender(img, preview=True)
-        html += "</div>"+lb
+        html += "</"+sectionTag+">"+lb
         return html    
 
     def doRender(self, img, preview=False):
@@ -2284,22 +2291,30 @@ class SelectquestionElement(Element):
         Returns an XHTML string for viewing this element
         """
         lb = "\n" #Line breaks
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        titleTag = "h3"
+        if dT == "HTML5":
+            sectionTag = "section"
+            titleTag = "h1"
+        
+        html = '<'+sectionTag+' id="actitity-'+self.id+'">'
         # Form
         if preview: 
-            html = '<div class="activity-form">'+lb
-            html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb
+            html += '<div class="activity-form">'+lb
+            html += '<'+titleTag+' class="js-sr-av">'+_("Question")+'</'+titleTag+'>'+lb
             html += self.questionElement.renderPreview()
         else:
-            html = '<form name="multi-select-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form">'+lb
-            html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb           
+            html += '<form name="multi-select-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form">'+lb
+            html += '<'+titleTag+' class="js-sr-av">'+_("Question")+'</'+titleTag+'>'+lb           
             html += self.questionElement.renderView()        
             
         # Answers
-        html += '<div class="iDevice_answers">'+lb
-        html += '<h3 class="js-sr-av">'+_("Answers")+'</h3>'+lb
+        html += '<'+sectionTag+' class="iDevice_answers">'+lb
+        html += '<'+titleTag+' class="js-sr-av">'+_("Answers")+'</'+titleTag+'>'+lb
         for element in self.options:
             html += element.renderView(preview)      
-        html += "</div>"+lb
+        html += "</"+sectionTag+">"+lb
             
         # Feedback button
         html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
@@ -2310,8 +2325,8 @@ class SelectquestionElement(Element):
         html += '</div>'+lb
         
         # Feedback
-        html += '<h3 class="js-sr-av">Feedback</h3>'+lb
-        html += '<div id="%s" class="js-hidden">' % ("f"+self.field.id)
+        html += '<'+sectionTag+' id="%s" class="js-hidden">' % ("f"+self.field.id)
+        html += '<'+titleTag+' class="js-sr-av">'+_("Feedback")+'</'+titleTag+'>'+lb
         html += lb
         if preview: 
             aux  = self.feedbackElement.renderPreview(True, class_="feedback")
@@ -2321,7 +2336,7 @@ class SelectquestionElement(Element):
             html += aux
         else:
             html += ""
-        html += '</div>'
+        html += '</'+sectionTag+'>'
         
         # /Form
         if preview:
@@ -2330,13 +2345,15 @@ class SelectquestionElement(Element):
             html += '</form>'+lb        
 
         # noscript
-        html += '<div class="iDevice_solution feedback js-hidden">'+lb
-        html += "<h3>"+_("Solution")+"</h3>"+lb
+        html += '<'+sectionTag+' class="iDevice_solution feedback js-hidden">'+lb
+        html += "<"+titleTag+">"+_("Solution")+"</"+titleTag+">"+lb
         html += "<ol>"+lb
         for element in self.options:
             html += element.renderNoscript(preview)
         html += "</ol>"+lb
-        html += "</div>"+lb
+        html += "</"+sectionTag+">"+lb
+        
+        html += "</"+sectionTag+">"+lb
 
         return html       
 
@@ -2491,6 +2508,7 @@ class QuizOptionElement(Element):
         Returns an XHTML string for viewing and previewing this option element
         """
         lb = "\n" #Line breaks
+        dT = common.getExportDocType()
         
         length = len(self.field.question.options)
         html = '<div class="iDevice_answer">'+lb
@@ -2503,8 +2521,10 @@ class QuizOptionElement(Element):
         html += lb
         html += '</p>'+lb
         
-        html += '<div class="iDevice_answer-content" id="answer-'+self.id+'"><a name="answer-'+self.id+'"></a>'+lb
-
+        html += '<div class="iDevice_answer-content" id="answer-'+self.id+'">'
+        if dT != "HTML5":
+            html += '<a name="answer-'+self.id+'"></a>'+lb
+        
         if preview:
             html += self.answerElement.renderPreview()
         else:
@@ -2520,6 +2540,7 @@ class QuizOptionElement(Element):
         return xhtml string for display this option's feedback
         """
         lb = "\n" #Line breaks
+        dT = common.getExportDocType()
         feedbackStr = ""
         if hasattr(self.feedbackElement.field, 'content') and self.feedbackElement.field.content.strip() != "": 
             if preview: 
@@ -2533,7 +2554,8 @@ class QuizOptionElement(Element):
                 feedbackStr = "<p>"+_("Wrong")+"</p>"+lb
 
         html  = '<div id="sa%sb%s" class="feedback js-hidden">' % (str(self.index), self.field.question.id)
-        html  += '<a name="sa%sb%s"></a>' % (str(self.index), self.field.question.id)
+        if dT != "HTML5":
+            html  += '<a name="sa%sb%s"></a>' % (str(self.index), self.field.question.id)
         html += lb
         html += feedbackStr
         html += '</div>'+lb
@@ -2658,10 +2680,14 @@ class QuizQuestionElement(Element):
         """ 
         Returns an XHTML string for viewing this question element 
         """ 
-        lb = "\n" #Line breaks        
-        html = '<div class="question">'+lb
+        lb = "\n" #Line breaks 
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"        
+        html = '<'+sectionTag+' class="question">'+lb
         html += self.doRender(img1, img2, preview=False)
-        html += "</div>"+lb
+        html += "</"+sectionTag+">"+lb
         return html
 
 
@@ -2709,13 +2735,19 @@ class QuizQuestionElement(Element):
         Returns an XHTML string for viewing this element
         """
         lb = "\n" #Line breaks
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        titleTag = "h3"
+        if dT == "HTML5":
+            sectionTag = "section" 
+            titleTag = "h1"            
         if preview: 
             html = '<div class="activity-form">'+lb
             html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb
             html += self.questionElement.renderPreview()
         else:
             html = '<form name="multi-choice-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form">'+lb
-            html += '<h3 class="js-sr-av">'+_("Question")+'</h3>'+lb
+            html += '<'+titleTag+' class="js-sr-av">'+_("Question")+'</'+titleTag+'>'+lb
             html += self.questionElement.renderView()
 
         # Hint
@@ -2726,18 +2758,18 @@ class QuizQuestionElement(Element):
                 html += common.ideviceHint(self.hintElement.renderView(),"view")
 
         # Answers
-        html += '<div class="iDevice_answers">'+lb
-        html += '<h3 class="js-sr-av">'+_("Answers")+'</h3>'+lb
+        html += '<'+sectionTag+' class="iDevice_answers">'+lb
+        html += '<'+titleTag+' class="js-sr-av">'+_("Answers")+'</'+titleTag+'>'+lb
         for element in self.options:
             html += element.renderAnswerView(preview)
-        html += "</div>"+lb
+        html += "</"+sectionTag+">"+lb
                 
         # Feedbacks
-        html += '<div class="iDevice_feedbacks">'+lb
-        html += '<h3 class="js-sr-av">'+_("Feedback")+'</h3>'+lb
+        html += '<'+sectionTag+' class="iDevice_feedbacks">'+lb
+        html += '<'+titleTag+' class="js-sr-av">'+_("Feedback")+'</'+titleTag+'>'+lb
         for element in self.options:
             html += element.renderFeedbackView(preview)
-        html += "</div>"+lb
+        html += "</"+sectionTag+">"+lb
 
         if preview:
             html += '</div>'+lb
@@ -2745,12 +2777,12 @@ class QuizQuestionElement(Element):
             html += '</form>'+lb
         
         # noscript
-        html += '<div class="iDevice_solution feedback js-hidden">'+lb
-        html += "<h3>"+_("Solution")+"</h3>"+lb
+        html += '<'+sectionTag+' class="iDevice_solution feedback js-hidden">'+lb
+        html += "<"+titleTag+">"+_("Solution")+"</"+titleTag+">"+lb
         html += "<ol>"+lb
         for element in self.options:
             html += element.renderNoscript(preview)
         html += "</ol>"+lb
-        html += "</div>"+lb
+        html += "</"+sectionTag+">"+lb
 
         return html
