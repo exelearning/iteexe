@@ -2162,6 +2162,8 @@ class SelectquestionElement(Element):
             field.questionTextArea.idevice = idevice
         if field.feedbackTextArea.idevice is None: 
             field.feedbackTextArea.idevice = idevice
+            
+        field.questionTextArea.class_ = "block question"
 
         self.questionElement = TextAreaElement(field.questionTextArea)
         self.questionId = "question"+self.id
@@ -2305,7 +2307,7 @@ class SelectquestionElement(Element):
             titleTag1 = "h1"
             titleTag2 = "h1"
         
-        html = '<'+sectionTag+' id="actitity-'+self.id+'">'
+        html = '<div id="actitity-'+self.id+'">'+lb
         # Form
         if preview: 
             html += '<div class="activity-form">'+lb
@@ -2333,6 +2335,7 @@ class SelectquestionElement(Element):
         
         # Feedback
         html += '<'+sectionTag+' id="%s" class="js-hidden">' % ("f"+self.field.id)
+        html += lb
         html += '<'+titleTag2+' class="js-sr-av">'+_("Feedback")+'</'+titleTag2+'>'+lb
         html += lb
         if preview: 
@@ -2343,7 +2346,7 @@ class SelectquestionElement(Element):
             html += aux
         else:
             html += ""
-        html += '</'+sectionTag+'>'
+        html += '</'+sectionTag+'>'+lb
         
         # /Form
         if preview:
@@ -2360,7 +2363,7 @@ class SelectquestionElement(Element):
         html += "</ol>"+lb
         html += "</"+sectionTag+">"+lb
         
-        html += "</"+sectionTag+">"+lb
+        html += "</div>"+lb
 
         return html       
 
@@ -2615,12 +2618,6 @@ class QuizQuestionElement(Element):
         if field.hintTextArea.idevice is None: 
             field.hintTextArea.idevice = idevice
             
-        dT = common.getExportDocType()
-        sectionTag = "div"
-        if dT == "HTML5":
-            sectionTag = "section"
-
-        field.questionTextArea.htmlTag = sectionTag
         field.questionTextArea.class_ = "block question"
 
         self.questionElement = TextAreaElement(field.questionTextArea)
