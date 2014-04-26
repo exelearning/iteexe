@@ -409,12 +409,16 @@ class TextAreaElement(ElementWithResources):
         
         return xml
 
-    def renderView(self, visible=True, class_="block", content=None, 
-                    preview=False):
+    def renderView(self, visible=True, class_="block", content=None, preview=False):
         """
         Returns an XHTML string for viewing or previewing this element
         """
         lb = "\n" #Line breaks
+        htmlTag = 'div'
+        if hasattr(self.field, 'htmlTag'):
+            htmlTag = self.field.htmlTag
+        if hasattr(self.field, 'class_'):
+            class_ = self.field.class_
         if visible:
             visible = ''
         else:
@@ -433,9 +437,7 @@ class TextAreaElement(ElementWithResources):
                     self.field.content_wo_resourcePaths = self.field.content
                 self.field.content = self.field.content_wo_resourcePaths
             content = self.field.content
-        dT = common.getExportDocType()
-        return '<div id="ta%s" class="%s iDevice_content"%s>%s%s%s</div>%s' % (self.id, class_, visible, lb, content, lb, lb)
-   
+        return '<%s id="ta%s" class="%s iDevice_content"%s>%s%s%s</%s>%s' % (htmlTag, self.id, class_, visible, lb, content, lb, htmlTag, lb)
 
 
 # ===========================================================================
