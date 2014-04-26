@@ -2099,8 +2099,11 @@ class SelectOptionElement(Element):
         
         lb = "\n" #Line breaks
         dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"        
         
-        html = '<div class="iDevice_answer">'+lb
+        html = '<'+sectionTag+' class="iDevice_answer">'+lb
         # Checkbox
         html += '<p class="iDevice_answer-field js-required">'+lb
         html += '<label for="op'+ident+'" class="sr-av"><a href="#answer-'+self.id+'">'+_("Option")+' '+str(self.index+1)+'</a></label>'
@@ -2119,9 +2122,9 @@ class SelectOptionElement(Element):
         html += '</div>'+lb
             
         # Answer feedback
-        html += '<div class="iDevice_answer-feedback feedback js-required" id="feedback-'+ident+'"></div>'
+        html += '<'+sectionTag+' class="iDevice_answer-feedback feedback js-required" id="feedback-'+ident+'"></'+sectionTag+'>'+lb
         
-        html += '</div>'+lb
+        html += '</'+sectionTag+'>'+lb
         
         return html
 
@@ -2543,6 +2546,9 @@ class QuizOptionElement(Element):
         """
         lb = "\n" #Line breaks
         dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"        
         feedbackStr = ""
         if hasattr(self.feedbackElement.field, 'content') and self.feedbackElement.field.content.strip() != "": 
             if preview: 
@@ -2555,12 +2561,12 @@ class QuizOptionElement(Element):
             else:
                 feedbackStr = "<p>"+_("Wrong")+"</p>"+lb
 
-        html  = '<div id="sa%sb%s" class="feedback js-hidden">' % (str(self.index), self.field.question.id)
+        html  = '<'+sectionTag+' id="sa%sb%s" class="feedback js-hidden">' % (str(self.index), self.field.question.id)
         if dT != "HTML5":
             html  += '<a name="sa%sb%s"></a>' % (str(self.index), self.field.question.id)
         html += lb
         html += feedbackStr
-        html += '</div>'+lb
+        html += '</'+sectionTag+'>'+lb
         
         return html
         
@@ -2603,6 +2609,14 @@ class QuizQuestionElement(Element):
             field.questionTextArea.idevice = idevice
         if field.hintTextArea.idevice is None: 
             field.hintTextArea.idevice = idevice
+            
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"
+
+        field.questionTextArea.htmlTag = sectionTag
+        field.questionTextArea.class_ = "block question"
 
         self.questionElement = TextAreaElement(field.questionTextArea)
         self.questionId = "question"+self.id
