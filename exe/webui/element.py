@@ -419,6 +419,8 @@ class TextAreaElement(ElementWithResources):
             htmlTag = self.field.htmlTag
         if hasattr(self.field, 'class_'):
             class_ = self.field.class_
+            if class_=="block question": # To review: Multi-choice requires this (see line 2623)
+                htmlTag = 'div'
         if visible:
             visible = ''
         else:
