@@ -2514,9 +2514,12 @@ class QuizOptionElement(Element):
         """
         lb = "\n" #Line breaks
         dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"        
         
         length = len(self.field.question.options)
-        html = '<div class="iDevice_answer">'+lb
+        html = '<'+sectionTag+' class="iDevice_answer">'+lb
         
         html += '<p class="iDevice_answer-field js-required">'+lb
         html += '<label for="i'+self.id+'" class="sr-av"><a href="#answer-'+self.id+'">'+_("Option")+' '+str(self.index+1)+'</a></label>'
@@ -2536,7 +2539,7 @@ class QuizOptionElement(Element):
             html += self.answerElement.renderView()
         html += "</div>"+lb
         
-        html += "</div>"+lb
+        html += "</"+sectionTag+">"+lb
 
         return html    
 
