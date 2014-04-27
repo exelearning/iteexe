@@ -105,8 +105,7 @@ class MultiSelectBlock(Block):
         """
         html = common.ideviceHeader(self, style, "preview")
         for element in self.questionElements:
-            html += element.renderPreview() + "<br/>"
-        
+            html += element.renderPreview()        
         html += common.ideviceFooter(self, style, "preview")
         return html
     
@@ -117,12 +116,9 @@ class MultiSelectBlock(Block):
         """
         html = common.ideviceHeader(self, style, "view")
         for element in self.questionElements:
-            html += element.renderView() + "<br/>"  
-
+            html += element.renderView()
         html += common.ideviceFooter(self, style, "view")
-        return html
-    
-
+        return html    
 
 from exe.engine.multiselectidevice import MultiSelectIdevice
 from exe.webui.blockfactory        import g_blockFactory

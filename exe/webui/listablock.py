@@ -202,15 +202,22 @@ class ListaElement(ElementWithResources):
         
         # Shows the text with inputs for the missing parts
        
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"
 
+        html = ['<%s class="activity" id="activity-%s">' % (sectionTag,self.id)]
+        
         if preview: 
             # to render, use the content with the preview-able resource paths:
             self.field.encodedContent = self.field.content_w_resourcePaths
+            html += ['<div class="activity-form">']
         else:
             # to render, use the flattened content, withOUT resource paths: 
             self.field.encodedContent = self.field.content_wo_resourcePaths
+            html += ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="showClozeScore(\''+self.id+'\',1);return false" class="activity-form">']
 
-        html = ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="showClozeScore(\''+self.id+'\',1);return false" class="activity-form cloze-form">']
         html += ['<div id="cloze%s">' % self.id]
         html += ['<script type="text/javascript">var YOUR_SCORE_IS="%s"</script>' % _('Your score is ')]
         # Store our args in some hidden fields
@@ -248,7 +255,7 @@ class ListaElement(ElementWithResources):
             if missingWord:
                 words += "'" + missingWord + "',"
                 # The edit box for the user to type into
-                inputHtml = ['<label for="clozeBlank%s.%s" class="accessibility-help">%s (%s):</label>' % (self.id, i, _("Cloze"), (i+1))]
+                inputHtml = ['<label for="clozeBlank%s.%s" class="sr-av">%s (%s):</label>' % (self.id, i, _("Cloze"), (i+1))]
                 inputHtml += ['<select id="clozeBlank%s.%s">' % (self.id, i),wordslista,'</select>']
                 html += inputHtml
                             
@@ -264,7 +271,7 @@ class ListaElement(ElementWithResources):
         else:
             html += [common.submitButton('getScore%s' % self.id, _(u"Check"), id='getScore%s' % self.id)]
         if feedbackId:
-            html += [common.feedbackButton('feedback%s' % self.id, _(u"Show/Hide Feedback"), onclick = "toggleClozeFeedback('%s')" % self.id)]
+            html += [common.feedbackButton('feedback%s' % self.id, _(u"Show Feedback"), onclick = "toggleClozeFeedback('%s',this)" % self.id)]
          
         codotras=self.ecrypt(self.field.otras)
         html += [common.hiddenField('clozeOtras%s' % self.id,codotras)]   
@@ -276,7 +283,11 @@ class ListaElement(ElementWithResources):
         html += ['</div>']
         html += ['<div class="score" id="clozeScore%s"></div>' % self.id]        
         html += ['</div>']
-        html += ['</form>']
+        if preview: 
+            html += ['</div>']
+        else:
+            html += ['</form>']
+        html += ['</%s>' % sectionTag]
         return '\n'.join(html)
     
     def renderText(self):
@@ -332,6 +343,15 @@ class ListaBlock(Block):
             idevice.content.idevice = idevice
         if idevice.feedback.idevice is None: 
             idevice.feedback.idevice = idevice
+            
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"
+            
+        idevice.instructionsForLearners.htmlTag = sectionTag
+        idevice.instructionsForLearners.class_ = "block instructions"
+        idevice.feedback.htmlTag = sectionTag            
 
         self.instructionElement = TextAreaElement(idevice.instructionsForLearners)
         self.instructionElement.field.content_w_resourcePaths = _(self.instructionElement.field.content_w_resourcePaths)

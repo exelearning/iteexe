@@ -1,7 +1,10 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
 # Copyright 2004-2008 eXe Project, http://eXeLearning.org/
+# Copyright 2008-2014 eXeLearning.net, http://exelearning.net/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,6 +25,8 @@ Exports an eXe package as an IMS Content Package
 """
 
 import logging
+import time
+import StringIO
 import re
 from cgi                           import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED
@@ -44,7 +49,7 @@ class Manifest(object):
     """
     Represents an imsmanifest xml file
     """
-    def __init__(self, config, outputDir, package, pages):
+    def __init__(self, config, outputDir, package, pages, metadataType):
         """
         Initialize
         'outputDir' is the directory that we read the html from and also output
@@ -55,39 +60,66 @@ class Manifest(object):
         self.package      = package
         self.idGenerator  = UniqueIdGenerator(package.name, config.exePath)
         self.pages        = pages
+        self.metadataType = metadataType
         self.itemStr      = ""
         self.resStr       = ""
 
 
-    def save(self):
+    def createMetaData(self):
         """
-        Save a imsmanifest file and metadata to self.outputDir
+        if user did not supply metadata title, description or creator
+        then use package title, description, or creator in imslrm
+        if they did not supply a package title, use the package name
+        if they did not supply a date, use today
         """
-        filename = "imsmanifest.xml"
-        out = open(self.outputDir/filename, "wb")
-        out.write(self.createXML().encode('utf8'))
+        xml = ''
+        # depending on (user desired) the metadata type:
+        if self.metadataType == 'LOMES':
+            output = StringIO.StringIO()
+            self.package.lomEs.export(output, 0, namespace_='lom:', pretty_print=False)
+            xml = output.getvalue()
+        if self.metadataType == 'LOM':
+            output = StringIO.StringIO()
+            self.package.lom.export(output, 0, namespace_='lom:', pretty_print=False)
+            xml = output.getvalue()
+        if self.metadataType == 'DC':
+            lrm = self.package.dublinCore.__dict__.copy()
+            # use package values in absentia:
+            if lrm.get('title', '') == '':
+                lrm['title'] = self.package.title
+            if lrm['title'] == '':
+                lrm['title'] = self.package.name
+            if lrm.get('description', '') == '':
+                lrm['description'] = self.package.description
+            if lrm['description'] == '':
+                lrm['description'] = self.package.name
+            if lrm.get('creator', '') == '':
+                lrm['creator'] = self.package.author
+            if lrm['date'] == '':
+                lrm['date'] = time.strftime('%Y-%m-%d')
+            # if they don't look like VCARD entries, coerce to fn:
+            for f in ('creator', 'publisher', 'contributors'):
+                if re.match('.*[:;]', lrm[f]) == None:
+                    lrm[f] = u'FN:' + lrm[f]
+            templateFilename = self.config.webDir/'templates'/'imslrm.xml'
+            template = open(templateFilename, 'rb').read()
+            xml = template % lrm
+            out = open(self.outputDir/'imslrm.xml', 'wb')
+            out.write(xml.encode('utf8'))
+            out.close()
+            xml = '<adlcp:location>imslrm.xml</adlcp:location>'
+        return xml
+
+
+    def save(self, filename):
+        """
+        Save a imsmanifest file to self.outputDir
+        """
+        out = open(self.outputDir/filename, "w")
+        if filename == "imsmanifest.xml":
+            out.write(self.createXML().encode('utf8'))
         out.close()
-        # if user did not supply metadata title, description or creator
-        #  then use package title, description, or creator in imslrm
-        #  if they did not supply a package title, use the package name
-        lrm = self.package.dublinCore.__dict__.copy()
-        if lrm.get('title', '') == '':
-            lrm['title'] = self.package.title
-        if lrm['title'] == '':
-            lrm['title'] = self.package.name
-        if lrm.get('description', '') == '':
-            lrm['description'] = self.package.description
-        if lrm['description'] == '':
-            lrm['description'] = self.package.name
-        if lrm.get('creator', '') == '':
-            lrm['creator'] = self.package.author
-        # Metadata
-        templateFilename = self.config.webDir/'templates'/'dublincore.xml'
-        template = open(templateFilename, 'rb').read()
-        xml = template % lrm
-        out = open(self.outputDir/'dublincore.xml', 'wb')
-        out.write(xml.encode('utf8'))
-        out.close()
+
 
     def createXML(self):
         """
@@ -102,9 +134,9 @@ class Manifest(object):
         xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
         xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" 
         xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
         """ % manifestId 
-
         xmlStr += "\n "
         xmlStr += "xsi:schemaLocation=\"http://www.imsglobal.org/xsd/"
         xmlStr += "imscp_v1p1 imscp_v1p1.xsd "        
@@ -113,13 +145,13 @@ class Manifest(object):
         xmlStr += "<metadata> \n"
         xmlStr += " <schema>IMS Content</schema> \n"
         xmlStr += " <schemaversion>1.1.3</schemaversion> \n"
-        xmlStr += " <adlcp:location>dublincore.xml"
-        xmlStr += "</adlcp:location> \n" 
+        xmlStr += " %(metadata)s\n" 
         xmlStr += "</metadata> \n"
         xmlStr += "<organizations default=\""+orgId+"\">  \n"
         xmlStr += "<organization identifier=\""+orgId
         xmlStr += "\" structure=\"hierarchical\">  \n"
 
+        xmlStr = xmlStr % {'metadata': self.createMetaData()}
         if self.package.title != '':
             title = escape(self.package.title)
         else:
@@ -206,7 +238,12 @@ class Manifest(object):
 class IMSPage(Page):
     """
     This class transforms an eXe node into a SCO 
-    """
+    """  
+    def __init__(self, name, depth, node, metadataType):
+        self.metadataType = metadataType
+        super(IMSPage, self).__init__(name, depth, node)
+
+
     def save(self, outputDir):
         """
         This is the main function.  It will render the page and save it to a
@@ -227,9 +264,11 @@ class IMSPage(Page):
         dT = common.getExportDocType()
         lb = "\n" #Line breaks
         sectionTag = "div"
+        articleTag = "div"
         headerTag = "div"
         if dT == "HTML5":
-            sectionTag = "section"        
+            sectionTag = "section"  
+            articleTag = "article"
             headerTag = "header"
         html  = common.docType()
         lenguaje = G.application.config.locale
@@ -288,7 +327,7 @@ class IMSPage(Page):
             html += style.get_extra_head()
         html += u"</head>"+lb
         html += u'<body class="exe-ims"><script type="text/javascript">document.body.className+=" js"</script>'+lb
-        html += u"<"+sectionTag+" id=\"outer\">"+lb
+        html += u"<div id=\"outer\">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
         html += u"<"+headerTag+" id=\"nodeDecoration\">"
         html += u'<h1 id=\"nodeTitle\">'
@@ -301,7 +340,7 @@ class IMSPage(Page):
                 e=" em_iDevice"
                 if unicode(idevice.emphasis)=='0':
                     e=""
-                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, idevice.id, lb)
+                html += u'<'+articleTag+' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, idevice.id, lb)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -311,28 +350,30 @@ class IMSPage(Page):
                 if idevice.title != "Forum Discussion":
                     html += self.processInternalLinks(
                         block.renderView(self.node.package.style))
-            html += u'</'+sectionTag+'>'+lb # iDevice div
+            html += u'</'+articleTag+'>'+lb # iDevice div
 
         html += u"</"+sectionTag+">"+lb # /#main
         html += self.renderLicense()
         html += self.renderFooter()
-        html += u"</"+sectionTag+">"+lb # /#outer
+        html += u"</div>"+lb # /#outer
         if style.hasValidConfig:
             html += style.get_extra_body() 
         html += u'</body></html>'
         html = html.encode('utf8')
-        # JR: Eliminamos los atributos de las ecuaciones
+        # JRJ: Eliminamos los atributos de las ecuaciones
+        # Let's elliminate the attibutes of the equations
         aux = re.compile("exe_math_latex=\"[^\"]*\"")
-	html = aux.sub("", html)
-	aux = re.compile("exe_math_size=\"[^\"]*\"")
-	html = aux.sub("", html)
-	#JR: Cambio el & en los enlaces del glosario
-	html = html.replace("&concept", "&amp;concept")
-    # Remove "resources/" from data="resources/ and the url param
-	html = html.replace("video/quicktime\" data=\"resources/", "video/quicktime\" data=\"")
-	html = html.replace("application/x-mplayer2\" data=\"resources/", "application/x-mplayer2\" data=\"")
-	html = html.replace("audio/x-pn-realaudio-plugin\" data=\"resources/", "audio/x-pn-realaudio-plugin\" data=\"")
-	html = html.replace("<param name=\"url\" value=\"resources/", "<param name=\"url\" value=\"")
+        html = aux.sub("", html)
+        aux = re.compile("exe_math_size=\"[^\"]*\"")
+        html = aux.sub("", html)
+        #JRJ: Cambio el & en los enlaces del glosario
+        # Then let's change the & of the glossary links
+        html = html.replace("&concept", "&amp;concept")
+        # Remove "resources/" from data="resources/ and the url param
+        html = html.replace("video/quicktime\" data=\"resources/", "video/quicktime\" data=\"")
+        html = html.replace("application/x-mplayer2\" data=\"resources/", "application/x-mplayer2\" data=\"")
+        html = html.replace("audio/x-pn-realaudio-plugin\" data=\"resources/", "audio/x-pn-realaudio-plugin\" data=\"")
+        html = html.replace("<param name=\"url\" value=\"resources/", "<param name=\"url\" value=\"")
         return html
 
 
@@ -374,6 +415,9 @@ class IMSExport(object):
         # First do the export to a temporary directory
         outputDir = TempDirPath()
 
+        self.metadataType = package.exportMetadataType
+
+
         # Copy the style sheet files to the output dir
         # But not nav.css
         styleFiles  = [self.styleDir/'..'/'base.css']
@@ -396,7 +440,8 @@ class IMSExport(object):
         package.resourceDir.copyfiles(outputDir)
             
         # Export the package content
-        self.pages = [ IMSPage("index", 1, package.root) ]
+        self.pages = [ IMSPage("index", 1, package.root,
+           metadataType=self.metadataType) ]
 
         self.generatePages(package.root, 2)
         uniquifyNames(self.pages)
@@ -405,8 +450,8 @@ class IMSExport(object):
             page.save(outputDir)
 
         # Create the manifest file
-        manifest = Manifest(self.config, outputDir, package, self.pages)
-        manifest.save()
+        manifest = Manifest(self.config, outputDir, package, self.pages, self.metadataType)
+        manifest.save("imsmanifest.xml")
         
         # Copy the scripts
         
@@ -429,6 +474,8 @@ class IMSExport(object):
         
         self.schemasDir.copylist(('imscp_v1p1.xsd',
                                   'imsmd_v1p2p2.xsd',
+                                  'lom.xsd',
+                                  'lomCustom.xsd',
                                   'ims_xml.xsd'), outputDir)
 
         # copy players for media idevices.                
@@ -533,7 +580,7 @@ class IMSExport(object):
             if not pageName:
                 pageName = "__"
 
-            page = IMSPage(pageName, depth, child)
+            page = IMSPage(pageName, depth, child, metadataType=self.metadataType)
 
             self.pages.append(page)
             self.generatePages(child, depth + 1)

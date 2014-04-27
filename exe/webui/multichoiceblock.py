@@ -127,7 +127,6 @@ class MultichoiceBlock(Block):
         
         for element in self.questionElements:
             html += element.renderView("panel-amusements.png","stock-stop.png")  
-            html += "<br/>"
             
         html += common.ideviceFooter(self, style, "view")
 
@@ -154,9 +153,7 @@ class MultichoiceBlock(Block):
         html = common.ideviceHeader(self, style, "preview")
 
         for element in self.questionElements:
-            html += element.renderPreview("/images/panel-amusements.png", 
-                                          "/images/stock-stop.png") 
-            html += "<br />"
+            html += element.renderPreview("/images/panel-amusements.png","/images/stock-stop.png") 
             
         html += common.ideviceFooter(self, style, "preview")
 

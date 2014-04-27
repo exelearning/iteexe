@@ -9,7 +9,7 @@ Modified by eXeLearning.net
 #main{width:100%}
 #content{padding-bottom:21px}
 #header,#emptyHeader{border-top:none}
-div#nodeDecoration{padding:0;margin:0;background:none;border:none}
+#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.1em 0 .6em 0;border-bottom:2px solid #ACBF60}
 /* Navigation */
 #skipNav{text-align:center;padding-top:18px}

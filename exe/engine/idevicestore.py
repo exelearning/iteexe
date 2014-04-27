@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
@@ -47,7 +49,8 @@ class IdeviceStore:
         self.extended       = []
         self.generic        = []
         self.listeners      = []
-        #JR: Anado una lista que contendra todos los iDevices disponibles
+        # JRJ: Añado una lista que contendrá todos los iDevices disponibles
+        # (addition of a list that will contain all the idevices available)
         self.factoryiDevices = []
 
 
@@ -61,7 +64,8 @@ class IdeviceStore:
 
     def isGeneric(self, idevice):
         """
-        Devuelve true si el iDevice es de la clase GenericIdevie
+        Devuelve True si el iDevice es de la clase GenericIdevie
+        (Returns True if the iDEvice is of class GenericIdevie)
         """
         from exe.engine.genericidevice import GenericIdevice
         if isinstance(idevice, GenericIdevice):
@@ -80,7 +84,8 @@ class IdeviceStore:
     
     def getFactoryIdevices(self):
         """
-        JR: Devuelve todos los iDevices de fabrica
+        JRJ: Devuelve todos los iDevices de fabrica
+        (Returns all the factory iDevices)
         """
         return self.factoryiDevices
 
@@ -98,7 +103,8 @@ class IdeviceStore:
                 break
         if exist:
             self.generic.remove(idevice_remove)
-            #JR: Comunicamos a los listener que este iDevice ya no esta disponible
+            # JRJ: Comunicamos a los listeners que este iDevice ya no está disponible
+            # (we tell the listeners that this iDevice is no longer available)
             for listener in self.listeners:
                 listener.delIdevice(idevice_remove)
 
@@ -116,13 +122,15 @@ class IdeviceStore:
                 break
         if exist:
             self.extended.remove(idevice_remove)
-            #JR: Comunicamos a los listener que este iDevice ya no esta disponible
+            # JRJ: Comunicamos a los listeners que este iDevice ya no está disponible
+            # (we tell the listeners that this iDevice is no longer available)
             for listener in self.listeners:
                 listener.delIdevice(idevice_remove)
             
     def delIdevice(self, idevice):
         """
-        JR: Borra un idevice
+        JRJ: Borra un idevice
+        (Deletes an iDevice)
         """
         if not self.isGeneric(idevice):
             idevice_remove = None
@@ -158,7 +166,11 @@ class IdeviceStore:
         """
         Register another iDevice as available
         """
-        #JR: Comprobamos si el iDevice ya existe y en su caso igualamos el id, de lo contrario lo anadimos a los de fabrica
+        # JRJ: Comprobamos si el iDevice ya existe y en su caso 
+        # igualamos el id, de lo contrario lo añadimos a los de fábrica
+        # (we check whether the iDevice already exists, in which
+        # case we make the id's equal; otherwise we add it to the
+        # factory ones)
         exist = False
         for i in self.getFactoryIdevices():
             if (i.title == idevice.title):
@@ -213,14 +225,16 @@ class IdeviceStore:
                     idevice.id = factoryiDevice.id
                     break
 
-        #JR: comunicamos a los listener los iDevices extendidos
+        #JRJ: comunicamos a los listeners los iDevices extendidos
+        # (we inform the listeners of the extended iDevices)
         for listener in self.listeners:
             for idevice in self.getIdevices():
                 listener.addIdevice(idevice)
 
     def __getIdevicesFPD(self):
         """
-        JR: Esta funcion devuelve los iDevices de FPD
+        JRJ: Esta funcion devuelve los iDevices de FPD
+        (this function returns the FPD iDevices)
         """
         from exe.engine.reflectionfpdidevice import ReflectionfpdIdevice
         from exe.engine.reflectionfpdmodifidevice import ReflectionfpdmodifIdevice
@@ -266,7 +280,8 @@ class IdeviceStore:
 
     def __getFactoryExtendediDevices(self):
         """
-        JR: Carga los iDevices de fabrica
+        JRJ: Carga los iDevices de fábrica
+        (loads the factory iDevices)
         """
         from exe.engine.freetextidevice import FreeTextIdevice
         from exe.engine.multimediaidevice import MultimediaIdevice
@@ -301,8 +316,9 @@ class IdeviceStore:
         from exe.engine.placetheobjectsidevice import PlaceTheObjectsIdeviceInc
         from exe.engine.fileattachidevice import FileAttachIdeviceInc
 
-        # JR
+        # JRJ
         # Necesarios para la FPD
+        # (Necessary for FPD)
         from exe.engine.reflectionfpdidevice import ReflectionfpdIdevice
         from exe.engine.reflectionfpdmodifidevice import ReflectionfpdmodifIdevice
         from exe.engine.clozefpdidevice import ClozefpdIdevice
@@ -344,28 +360,33 @@ class IdeviceStore:
         defaultImage = unicode(self.config.webDir / "images" / "sunflowers.jpg")
         defaultSite = 'http://%s.wikipedia.org/' % self.config.locale
         factoryExtendedIdevices.append(WikipediaIdevice(defaultSite))
-        #JR: Eliminamos este iDevices de los extendidos
+        #JRJ: Eliminamos este iDevice de los extendidos
+        # (we eliminate this iDevice from the extended ones)
         #factoryExtendedIdevices.append(AttachmentIdevice())
         factoryExtendedIdevices.append(GalleryIdevice())
         factoryExtendedIdevices.append(ClozeIdevice())
         #factoryExtendedIdevices.append(ClozelangIdevice())
-        #JR: Eliminamos este iDevices de los extendidos
+        #JRJ: Eliminamos este iDevices de los extendidos
+        # (we eliminate this iDevice from the extended ones)
         #factoryExtendedIdevices.append(FlashWithTextIdevice())
         factoryExtendedIdevices.append(ExternalUrlIdevice()) 
         # converting Maths Idevice -> FreeTextIdevice:
         #factoryExtendedIdevices.append(MathIdevice())
-        #JR: Eliminamos este iDevices de los extendidos
+        #JRJ: Eliminamos este iDevices de los extendidos
+        # (we eliminate this iDevice from the extended ones)
         #factoryExtendedIdevices.append(MultimediaIdevice())
         factoryExtendedIdevices.append(RssIdevice())
         factoryExtendedIdevices.append(MultiSelectIdevice())
         factoryExtendedIdevices.append(AppletIdevice())
-        #JR: Eliminamos este iDevices de los extendidos
+        #JRJ: Eliminamos este iDevices de los extendidos
+        # (we eliminate this iDevice from the extended ones)
         #factoryExtendedIdevices.append(FlashMovieIdevice())
         factoryExtendedIdevices.append(QuizTestIdevice())
         factoryExtendedIdevices.append(ListaIdevice())
         factoryExtendedIdevices.append(NotaIdevice())
-        # JR
+        # JRJ
         # iDevices para la FPD
+        # (iDevices for FPD)
         factoryExtendedIdevices.append(ReflectionfpdIdevice())
         factoryExtendedIdevices.append(ReflectionfpdmodifIdevice())
         factoryExtendedIdevices.append(ClozefpdIdevice())
@@ -391,11 +412,13 @@ class IdeviceStore:
     def __loadExtended(self):
         """
         Load the Extended iDevices (iDevices coded in Python)
-        JR: Modifico esta funcion para que tambien cargue los idevices extendidos de fabrica
+        JRJ: Modifico esta función para que también cargue los idevices extendidos de fábrica
+        (Function modified so it also loads extended factory iDevices)
         """
         self.__loadUserExtended()
         
-        #JR: Si existe el archivo extended.data cargamos de ahi los iDevices extendidos
+        #JRJ: Si existe el archivo extended.data cargamos de ahi los iDevices extendidos
+        # (if the file extended.data exists, we load there the extended iDevices)
         extendedPath = self.config.configDir/'idevices'/'extended.data'
         log.debug("load extended iDevices from "+extendedPath)
         
@@ -454,7 +477,8 @@ class IdeviceStore:
         """
         Load the Generic iDevices from the appdata directory
         """
-        #JR: Modificamos la lectura para contemplar los genericos que se muestran y todos los genericos
+        #JRJ: Modificamos la lectura para contemplar los genéricos que se muestran y todos los genéricos
+        # (Modidy the reading to apply also to the generic shown and all the generic iDevices)
         showgenericPath = self.config.configDir/'idevices'/'showgeneric.data'
         log.debug("load generic iDevices from "+showgenericPath)
         if showgenericPath.exists():
@@ -516,8 +540,11 @@ class IdeviceStore:
         (not created using the iDevice editor, but could have been)
         Called when we can't find 'generic.data', generates an initial set of 
         free/builtin idevices and writes the new 'generic.data' file
-        JR: Modifico este metodo para que acepte otro parametro que sera la lista 
-        en la que anadimos los idevices gnericos
+        
+        JRJ: Modifico este método para que acepte otro parámetro que será la lista 
+        en la que añadimos los idevices genéricos
+        (Modify this method so it accepts a new parameter, the list
+        to which we add the generic iDevices)
         """
         
         idevices = []
@@ -739,7 +766,10 @@ _(u"""Describe the tasks the learners should complete.""")))
         idevicesDir = self.config.configDir/'idevices'
         if not idevicesDir.exists():
             idevicesDir.mkdir()
-        #JR: Buscamos los genericos dentro de los de fabrica, ya que generic solo contiene aquellos genericos que se muestran
+        #JRJ: Buscamos los génericos dentro de los de fábrica, 
+        # ya que generic solo contiene aquellos genéricos que se muestran
+        # (we search the generic inside the factory iDevices,
+        # since generic only contains the generic iDevices which are shown)
         allgeneric = []
         for idevice in self.getFactoryIdevices():
             if self.isGeneric(idevice):
@@ -748,7 +778,8 @@ _(u"""Describe the tasks the learners should complete.""")))
         fileOut.write(persist.encodeObject(allgeneric))
         fileOut = open(idevicesDir/'showgeneric.data', 'wb')
         fileOut.write(persist.encodeObject(self.generic))
-        #JR: Guardamos tambien los iDevices extendidos
+        #JRJ: Guardamos también los iDevices extendidos
+        # (we also save the extended iDevices)
         fileOut = open(idevicesDir/'extended.data', 'wb')
         fileOut.write(persist.encodeObject(self.extended))
 

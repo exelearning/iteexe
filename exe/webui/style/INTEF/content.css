@@ -56,7 +56,7 @@ body{font:.82em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;tex
 #main h5{font-size:1.1em}
 .iDevice{margin:10px 0 20px 0}
 .iDeviceTitle{font-size:1.2em;vertical-align:bottom;top:auto} 
-#main h2.iDeviceTitle{display:inline;font-size:1.2em}
+#main .iDeviceTitle{display:inline;font-size:1.2em}
 
 /* iDevice icons */
 .iDevice_icon{width:30px;height:auto;margin-right:5px} /* Legacy: old iDevices */
@@ -92,3 +92,7 @@ li{list-style-position:outside}
 .toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(my_hide_show.png) no-repeat 0 -16px}
 .toggle-idevice .show-idevice{background-position:0 0}
 .toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+
+/* To review */
+.TrueFalseIdevice .question{margin-bottom:25px}
+.TrueFalseIdevice .question:last-child{margin-bottom:0}

@@ -137,23 +137,19 @@ class TestquestionElement(object):
         """
         Returns an XHTML string for viewing this element
         """
-        html  = u""
-
-        html += "<div class=\"question\">\n"
+        lb = "\n" #Line breaks
+        html  = ''
+        html += '<div class="question">'+lb
         if preview: 
             html += self.questionElement.renderPreview()
         else:
             html += self.questionElement.renderView()
-        html += "<br/>\n"
-
-        html += "<table>"
         for element in self.options:
             if preview: 
                 html += element.renderPreview()      
             else:
                 html += element.renderView()      
-        html += "</table>"   
-        html += "</div>\n"
+        html += "</div>"+lb
         
         return html
     

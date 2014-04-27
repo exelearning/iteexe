@@ -1,5 +1,9 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+
 """
-JR: Almacen de los estilos disponibles
+JRJ: Almacén de los estilos disponibles
+(Store of available styles)
 """
 
 from exe.engine.style         import Style
@@ -10,7 +14,8 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class StyleStore:
     """
-    Almacen de los estilos disponibles
+    Almacén de los estilos disponibles
+    (store of available styles)
     """
     def __init__(self, config):
         self._config         = config
@@ -22,12 +27,14 @@ class StyleStore:
     def getStyles(self):
         """
         Devuelve la lista de estilos
+        (returns the list of styles)
         """
         return self._styles
     
     def getStyle(self, styleDirName):
         """
         Devuelve un estilo dado su dirname
+        (returns a style given its dirname)
         """
         for style in self._styles:
             if style._dirname == styleDirName:
@@ -38,6 +45,7 @@ class StyleStore:
     def delStyle(self, style):
         """
         Borra un estilo
+        (deletes a style)
         """
         if (style in self._styles):
             self._styles.remove(style)
@@ -47,7 +55,8 @@ class StyleStore:
     
     def addStyle(self, style):
         """
-        Anade un estilo
+        Añade un estilo
+        (adds a style)
         """
         if (style not in self._styles):
             self._styles.append(style)
@@ -61,6 +70,7 @@ class StyleStore:
     def register(self, listener):
         """
         Registra un escuchador interesado en ser informado de los cambios producidos en StyleStore
+        (registers a listener interested in being informed of the changes in StyleStore)
         """
         self._listeners.append(listener)
   
@@ -68,6 +78,7 @@ class StyleStore:
     def __load(self):
         """
         Carga los estilos desde el directorio de estilos definido en config
+        (loads the styles from the directory defined in config)
         """
         styleDir    = self._config.stylesDir
 

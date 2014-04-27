@@ -102,7 +102,7 @@ de la jerarquía de contenidos que crearemos con eXe */
 	padding-bottom:5px
 }
 
-div#nodeDecoration{
+#nodeDecoration{
     text-align:left;
 }
 
@@ -111,7 +111,7 @@ div#nodeDecoration{
 
 /* IDEVICES */
 
-.iDeviceTitle{top:0}
+.iDeviceTitle{top:0;font-size:1.5em}
 .iDevice_header{background-position:0 0}
 /* Añadir algún contenido después del contenido del iDevice, hace que el alto del iDevice
    se adapte al elemento más alto del contenido. Así se evita que las imágenes muy alargadas

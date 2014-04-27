@@ -11,7 +11,7 @@ a{text-decoration:none}
 a:hover,a:focus{text-decoration:underline}
 img.submit,img.help,img.info,img.gallery{border:0}
 li{list-style-position:inside}
-div#nodeDecoration{padding:0.1em;border-bottom:0em;text-align:right}
+#nodeDecoration{padding:0.1em;border-bottom:0em;text-align:right}
 .block,.feedback{display:block;padding-top:0.25em;padding-bottom:0.25em}
 .feedback{font-family:times,serif;font-size:120%}
 .feedback-button p{margin:0}
@@ -32,9 +32,8 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 /* The New eXeLearning */
 /* Include these styles in the old themes */
 .pre-code{background:#112C4A;color:#E7ECF1;font-family:Monaco,Courier,monospace;border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
-.iDevice_content{position:relative}
+.iDevice_content{position:relative;max-width:100%}
 .iDevice_header{background-position:0 50%;background-repeat:no-repeat}
-.iDevice_hidden_content{display:none}
 /* TinyMCE: Images and media */
 .exe-figure{margin:1.5em 0;max-width:100%}
 .position-center{margin:1.5em auto}
@@ -63,13 +62,20 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .js .js-required{display:block}
 .js .js-hidden{display:none}
 /* Hints */
-.js #main .iDevice_hint_title{font-size:1em;margin-top:0;font-weight:normal}
+.js #main .iDevice_hint_title{font-size:1em;margin-top:0;font-weight:normal;*margin-top:1em}/* IE6, IE7 */
+.iDevice_hint{margin-bottom:1.5em}
 .iDevice_hint_title a{background-repeat:no-repeat;background-position:0 50%;padding-left:23px;text-decoration:none}
-.iDevice_hint_content{padding:0 23px 1em 23px}
+.iDevice_hint_content{padding:0 23px}
+/* Questions/Answers */
+.iDevice_answers{margin-top:.5em}
+.iDevice_answer{overflow:hidden;*margin:1.5em 0}/* IE6, IE7 */
+.iDevice_answer p{margin-top:0}
+.iDevice_answer-field{width:2.5em;float:left}
+.js .iDevice_answer-content,.js .iDevice_answer-feedback{padding-left:2.5em}
 /* To review */
-.question .answer p{margin:0 0 .7em 0}
 .hidden-idevice .image_text{display:none} /* iDevice Toggler : Required for Magnifier */
+/* Accessibility */
 #skipNav{margin:0;position:absolute;width:100%}
-.accessibility-help,#skipNav a{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0}
+.sr-av,.js .js-sr-av,#skipNav a{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0} /* sr-av: Avaible for Screen Readers */
 #skipNav a{background:#333;color:#fff;padding:.4em .85em} /* clip:rect(0 0 0 0) is for IE6 & 7 */
 #skipNav a:active,#skipNav a:focus{position:static;overflow:visible;clip:auto;height:auto}

@@ -28,7 +28,10 @@ from exe.webui.renderable import Renderable
 from twisted.web.resource import Resource
 from exe.engine.path import toUnicode, Path
 from exe.engine.lom import lomsubs
+from exe.webui import common
 import re
+
+
 log = logging.getLogger(__name__)
 
 
@@ -315,6 +318,9 @@ class PropertiesPage(Renderable, Resource):
                                 data[key] = getattr(obj, name).basename()
                         else:
                             data[key] = getattr(obj, name)
+                            if name=='docType':              
+                                common.setExportDocType(getattr(obj,name))
+
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to get properties")})
@@ -351,7 +357,10 @@ class PropertiesPage(Renderable, Resource):
                                     if getattr(obj, name).basename() != path:
                                         setattr(obj, name, None)
                         else:
+                            #if name=='docType': common.setExportDocType(toUnicode(value[0]))              
+                                 
                             setattr(obj, name, toUnicode(value[0]))
+                            
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to save properties")})
