@@ -10,7 +10,7 @@ body{background:#DBDAD2}
 #main{width:100%}
 #content{padding-bottom:21px}
 #header,#emptyHeader{border-top:none;background:#D9D9CE}
-div#nodeDecoration{padding:0;margin:0;background:none;border:none}
+#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.1em 0 .6em 0;border-bottom:2px solid #E5E4E0}
 #siteFooter{padding-left:250px}
 /* Navigation */

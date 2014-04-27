@@ -46,9 +46,11 @@ class ScormPage(Page):
         dT = common.getExportDocType()
         lb = "\n" #Line breaks
         sectionTag = "div"
+        articleTag = "div"
         headerTag = "div"
         if dT == "HTML5":
             sectionTag = "section"
+            articleTag = "article"
             headerTag = "header"
         html  = common.docType()
         lenguaje = G.application.config.locale
@@ -116,7 +118,7 @@ class ScormPage(Page):
             html += u'<body class=\"exe-scorm\" onload="loadPage()" '
             html += u'onunload="unloadPage()">'
         html += u'<script type="text/javascript">document.body.className+=" js"</script>'+lb
-        html += u"<"+sectionTag+" id=\"outer\">"+lb
+        html += u"<div id=\"outer\">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
         html += u"<"+headerTag+" id=\"nodeDecoration\">"
         html += u"<h1 id=\"nodeTitle\">"
@@ -128,7 +130,7 @@ class ScormPage(Page):
                 e=" em_iDevice"
                 if unicode(idevice.emphasis)=='0':
                     e=""
-                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, idevice.id, lb)
+                html += u'<'+articleTag+' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, idevice.id, lb)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -137,7 +139,7 @@ class ScormPage(Page):
                     html += block.renderJavascriptForScorm()
                 html += self.processInternalLinks(
                     block.renderView(self.node.package.style))
-                html += u'</'+sectionTag+'>'+lb # iDevice div
+                html += u'</'+articleTag+'>'+lb # iDevice div
 
         html += u"</"+sectionTag+">"+lb # /#main
         themeHasXML = common.themeHasConfigXML(self.node.package.style)
@@ -145,7 +147,7 @@ class ScormPage(Page):
         #if style.hasValidConfig:
             html += self.renderLicense()
             html += self.renderFooter()
-        html += u"</"+sectionTag+">"+lb # /#outer
+        html += u"</div>"+lb # /#outer
         if self.node.package.scolinks:
             html += u'<'+sectionTag+' class="previousnext">'+lb
             html += u'<a class="previouslink" '

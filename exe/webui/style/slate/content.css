@@ -10,11 +10,11 @@ a{color:#004080}
 a:hover,a:focus{color:#036}
 #header,#emptyHeader{text-align:left;height:3em;padding-left:0;font-size:1.5em;line-height:3em;text-shadow:1px 1px 1px #444;border-bottom:4px solid #8A0A0A;color:#fff} /* Header is also in single page */
 #header h1{margin:0;font-size:1em}
-div#nodeDecoration{text-align:left;padding:.75em 0;margin-bottom:1.5em;text-shadow:1px 1px 1px #fff;border-bottom:4px solid #8A0A0A;color:#514E4C}
+#nodeDecoration{text-align:left;padding:.75em 0;margin-bottom:1.5em;text-shadow:1px 1px 1px #fff;border-bottom:4px solid #8A0A0A;color:#514E4C}
 #nodeTitle,.nodeTitle{font-size:1.5em;margin:0;font-weight:bold;text-align:right} /* .nodeTitle when single page */
 .nodeTitle{padding:.1em 0 .6em 0;border-bottom:4px solid #fff;margin-top:1em;text-align:right;color:#900;text-shadow:1px 1px 1px #fff}
 #main h2{font-size:1.4em}
-#main h2.iDeviceTitle{display:inline;font-weight:normal}
+#main .iDeviceTitle{display:inline;font-weight:normal;font-size:1.4em}
 h3{font-size:1.25em;color:#666}
 #main h4{font-size:1.2em}
 #main h5{font-size:1.1em}

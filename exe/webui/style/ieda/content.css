@@ -133,7 +133,7 @@ de la jerarquía de contenidos que crearemos con eXe */
 #main {
 	position: relative;
 }
-div#nodeDecoration
+#nodeDecoration
 {
 	text-align: left;
 }

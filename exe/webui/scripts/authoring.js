@@ -705,6 +705,37 @@ var exe_tinymce = {
 }
 
 var $exeAuthoring = {
+	countBase64 : function(ed){
+		var c = ed.getBody();
+		var n = 0;
+		var imgs = c.getElementsByTagName("IMG");
+		for (x=0;x<imgs.length;x++) {
+			if (imgs[x].src.indexOf("data:")==0) {
+				n += 1;
+			}
+		}
+		if (typeof(ed.base64originalImages)=='undefined') {
+			ed.base64originalImages = n;
+			ed.base64Warning = false; // To avoid too many alerts (no new alerts for 2 seconds)
+		}
+		return n;
+	},
+	compareBase64 : function(ed) {
+		setTimeout(function(){
+			var oN = ed.base64originalImages; // Original base64 images
+			var nN = $exeAuthoring.countBase64(ed);	
+			if (nN>oN) {
+				if (ed.base64Warning==false) {
+					ed.base64Warning = true;
+					setTimeout(function(){
+						ed.base64Warning = false;
+					},2000);
+					alert(_("Embed images shouldn't be pasted directly into the editor. Please use Insert/Edit Image.")+"\n\n"+_("This change will be undone."));
+				}
+				ed.undoManager.undo();
+			}
+		},500);
+	},
     changeFlowPlayerPathInIE : function(){
         var objs = document.getElementsByTagName("OBJECT");
         var i = objs.length;

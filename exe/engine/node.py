@@ -28,6 +28,7 @@ from exe                import globals as G
 from urllib             import quote
 from exe.webui                import common
 
+import re
 
 log = logging.getLogger(__name__)
 
@@ -794,6 +795,13 @@ class Node(Persistable):
             if self._title[0:len(zombie_preface)] != zombie_preface: 
                 self._title = zombie_preface + self._title + ")"
             G.application.afterUpgradeZombies2Delete.append(self)
+
+
+    def GetAnchorName(self):
+        anchor_name = self.getTitle()
+        anchor_name = re.sub(r"\W", "", anchor_name)
+        anchor_name = "exenode_" + self.getId() + "_" + anchor_name
+        return anchor_name
 
 
 # ===========================================================================

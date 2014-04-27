@@ -3,11 +3,11 @@ body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;tex
 a{color:#0063dc}
 #header,#emptyHeader{text-align:left;height:5em;padding-left:10px;font-size:1.2em;line-height:5em;color:#555;background:#f3f3f3 url(_em_logo.png) no-repeat 0 0;text-shadow:1px 1px 1px #fff;border-bottom:1px solid #e3e3e3;border-top:1px solid #e3e3e3} /* Header is also in single page */
 #header h1{margin:0;font-size:1em}
-div#nodeDecoration{text-align:left;padding:1em 20px;margin-bottom:2em;background:#f3f3f3 url(_em_logo.png) no-repeat 0 0;text-shadow:1px 1px 1px #fff;border-bottom:1px solid #e3e3e3;border-top:1px solid #e3e3e3}
+#nodeDecoration{text-align:left;padding:1em 20px;margin-bottom:2em;background:#f3f3f3 url(_em_logo.png) no-repeat 0 0;text-shadow:1px 1px 1px #fff;border-bottom:1px solid #e3e3e3;border-top:1px solid #e3e3e3}
 #nodeTitle,.nodeTitle{font-size:1.5em;margin:0;font-weight:bold;color:#222} /* .nodeTitle when single page */
 .nodeTitle{padding:.1em 0 .6em 0;border-bottom:1px solid #f3f3f3;margin-top:1em}
 #main h2{font-size:1.4em;color:#666}
-#main h2.iDeviceTitle{display:inline;font-size:1.2em}
+#main .iDeviceTitle{display:inline;font-size:1.2em}
 h3{font-size:1.25em;color:#777}
 #main h4{font-size:1.2em}
 #main h5{font-size:1.1em}

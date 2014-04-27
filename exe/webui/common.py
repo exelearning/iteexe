@@ -29,9 +29,10 @@ from exe                       import globals as G
 from exe.engine.path           import Path
 from exe.webui.blockfactory    import g_blockFactory
 from exe.engine.error          import Error
+
 import re
 
-
+htmlDocType=''
 lastId = 0
 
 def newId():
@@ -49,17 +50,20 @@ def copyFileIfNotInStyle(file, e, outputDir):
     f = (e.imagesDir/file)
     if not (outputDir/file).exists():
         f.copyfile(outputDir/file)
-        
+def setExportDocType(value):
+    global htmlDocType
+    htmlDocType=value
+    
 def getExportDocType():
     # If HTML5 webui/scripts/exe_html5.js has to be in the package resources list
-    return "XHTML"
+    return htmlDocType
 
 def docType():
-    dT = getExportDocType()
+    dT = htmlDocType #getExportDocType()
     lb = "\n" #Line breaks
     """Generates the documentation type string"""
     if dT == "HTML5":
-        return '<!doctype html>'+lb
+        return '<!DOCTYPE html>'+lb
     else:
         return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
             
@@ -78,12 +82,10 @@ def ideviceHeader(e, style, mode):
     dT = getExportDocType()
     lb = "\n" #Line breaks
     #Default HTML tags:
-    sectionTag = "div"
     articleTag = "div"
     headerTag = "div"
     titleTag = "h2"   
     if dT == "HTML5":
-        sectionTag = "section"
         articleTag = "article"
         headerTag = "header"
         titleTag = "h1"
@@ -98,14 +100,14 @@ def ideviceHeader(e, style, mode):
     w2 = ''
     eEm = ''
     if e.idevice.emphasis > 0:
-        w2 = '<'+sectionTag+' class="iDevice_inner">'+lb
-        w2 += '<'+sectionTag+' class="iDevice_content_wrapper">'+lb
+        w2 = '<div class="iDevice_inner">'+lb
+        w2 += '<div class="iDevice_content_wrapper">'+lb
         eEm = ' em_iDevice'
     
     if mode=="preview" and themeHasXML:
-        w += '<'+sectionTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'" id="id'+e.id+'">'+lb
+        w += '<'+articleTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'" id="id'+e.id+'">'+lb
     
-    w += u"<"+articleTag+" class=\"iDevice emphasis"+unicode(e.idevice.emphasis)+"\" "
+    w += u"<div class=\"iDevice emphasis"+unicode(e.idevice.emphasis)+"\" "
     if mode=="preview":
         w += u"ondblclick=\"submitLink('edit', "+e.id+", 0);\""
     w += ">"+lb
@@ -157,22 +159,44 @@ def ideviceFooter(e, style, mode):
     dT = getExportDocType()
     lb = "\n" #Line breaks
     #Default HTML tags:
-    sectionTag = "div"
     articleTag = "div"
     if dT == "HTML5":
-        sectionTag = "section"
         articleTag = "article"
     themeHasXML = themeHasConfigXML(style)
     h = ''
     if e.idevice.emphasis > 0:
-        h = "</"+sectionTag+">"+lb # Close iDevice_content_wrapper
-        h += "</"+sectionTag+">"+lb # Close iDevice_inner
+        h = "</div>"+lb # Close iDevice_content_wrapper
+        h += "</div>"+lb # Close iDevice_inner
     if mode=="preview":
         h += e.renderViewButtons()
-        if themeHasXML:
-            h += "</"+sectionTag+">"+lb # Close extra div (e.idevice.klass)
-    h += "</"+articleTag+">"+lb # Close iDevice
+    h += "</div>"+lb # Close iDevice
+    if mode=="preview" and themeHasXML:
+        h += "</"+articleTag+">"+lb # Close iDevice_wrapper
     return h
+    
+def ideviceHint(content, mode, level='h3'):
+    if content!="":
+        lb = "\n" #Line breaks
+        dT = getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"
+            level = "h1"
+        #  Image paths
+        p = ''
+        if mode=="preview":
+            p = '/images/'
+        img1 = p+"panel-amusements.png"
+        img2 = p+"stock-stop.png"
+        # Hint content
+        html = '<script type="text/javascript">$exe.hint.imgs=["'+img1+'","'+img2+'"]</script>'+lb
+        html += '<'+sectionTag+' class="iDevice_hint">'+lb
+        html += '<'+level+' class="iDevice_hint_title">'+_("Hint")+'</'+level+'>'+lb
+        html += '<div class="iDevice_hint_content js-hidden">'+lb
+        html += content
+        html += '</div>'+lb
+        html += '</'+sectionTag+'>'+lb
+        return html
 
 def ideviceShowEditMessage(block):
     if block.idevice.message<>"":
@@ -191,6 +215,8 @@ def getJavaScriptStrings():
     s += 'hide:"'+_("Hide")+'",'
     s += 'showFeedback:"'+_("Show Feedback")+'",'
     s += 'hideFeedback:"'+_("Hide Feedback")+'",'
+    s += 'correct:"'+_("Correct")+'",'
+    s += 'incorrect:"'+_("Incorrect")+'",'
     s += 'menu:"'+_("Menu")+'"'
     s += '}</script>'
     
@@ -370,25 +396,27 @@ def flashMovie(movie, width, height, resourcesDir='', autoplay='false'):
 
 def submitButton(name, value, enabled=True, **kwargs):
     """Adds a submit button to a form"""
+    lb = "\n" #Line breaks
     html  = '<input class="button" type="submit" name="%s" ' % name
     html += 'value="%s" ' % value
     if not enabled:
         html += ' disabled="disabled"'
     for key, val in kwargs.items():
         html += ' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
-    html += '/>\n'
+    html += ' />'+lb
     return html
 
 
 def button(name, value, enabled=True, **kwargs):
     """Adds a NON-submit button to a form"""
+    lb = "\n" #Line breaks
     html  = '<input type="button" name="%s"' % name
     html += ' value="%s"' % value
     if not enabled:
         html += ' disabled="disabled"'
     for key, val in kwargs.items():
         html += u' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
-    html += '/>\n'
+    html += ' />'+lb
     return html
 
 def feedbackBlock(id,feedback):
@@ -400,7 +428,7 @@ def feedbackBlock(id,feedback):
     html += '<input type="button" name="toggle-feedback-'+id+'" value="'+_('Show Feedback')+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this);return false" />'
     html += '</p>'+lb
     html += '</div>'+lb
-    html += '<h3 class="js-hidden">'+_('Feedback')+'</h3>'+lb
+    html += '<h3 class="js-sr-av">'+_('Feedback')+'</h3>'+lb
     html += '<div id="feedback-'+id+'" class="feedback js-hidden">'
     html += lb
     html += feedback
@@ -812,8 +840,63 @@ def renderInternalLinkNodeFilenames(package, html):
         html = removeInternalLinks(html)
             
     return html
-        
+    
+def renderInternalLinkNodeAnchor(package, html):
+    """
+    take care of any internal links which are in the form of:
+       href="exe-node:Home:Topic:etc#Anchor"
+    For Singlepage Export, go ahead and keep the 'exe-node:Home:Topic:etc' portion
+    preceeded by # symbol and remove #Anchor portion 
+    """
+    found_all_anchors = True
+    # use lower-case for the exe-node, for TinyMCE copy/paste compatibility
+    intlink_start = 'href="exe-node:'
+    intlink_pre   = 'href="'
+    next_link_pos = html.find(intlink_start)
+    while next_link_pos >= 0: 
+        link_name_start_pos = next_link_pos + len(intlink_pre)
+        link_name_end_pos = html.find('"', link_name_start_pos)
+        if link_name_end_pos >= 0: 
+            link_name = html[link_name_start_pos : link_name_end_pos] 
+            log.debug("Export rendering internal link: " + link_name)
+            # assuming that any '#'s in the node name have been escaped,
+            # the first '#' should be the actual anchor:
+            node_name_end_pos = link_name.find('#')
+            if node_name_end_pos < 0:
+                # no hash found, => use the whole thing as the node name:
+                node_name_end_pos = len(link_name) - 1
+                link_anchor_name = ""
+            else:
+                link_anchor_name = link_name[node_name_end_pos+1 : ]
+            link_node_name = link_name[0 : node_name_end_pos]
 
+            found_node = None
+            if link_node_name: 
+                # Okay, FOR singlepage EXPORT, check the existance of the actual node
+                # being referenced by this link, and if it does not exist, remove it:
+                found_node = findLinkedNode(package, link_node_name,
+                        link_anchor_name)
+                if found_node :
+                    # Finally, replace this particular node name 
+                    # with an anchor: 
+                    # old_node_name = intlink_pre + link_node_name 
+                    old_node_name = link_name
+                    new_node_name = "#" + found_node.GetAnchorName()
+                    html = html.replace(old_node_name, new_node_name, 1)
+
+            if found_node is None:
+                found_all_anchors = False
+                log.warn('Export unable to find corresponding node&anchor; '
+                        + 'unable to render link to: ' + link_name)
+
+        # else the href quote is unclosed.  ignore, eh? 
+        next_link_pos = html.find(intlink_start, next_link_pos+1)
+
+    if not found_all_anchors:
+        # then go ahead and clear out any remaining invalid links:
+        html = removeInternalLinks(html)
+            
+    return html
 
 def requestHasCancel(request):
     """

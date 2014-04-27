@@ -6,7 +6,7 @@ a{color:#CE2239}
 #main .nodeTitle{margin-top:.6em;color:#222}
 #main #nodeDecoration{padding:10px 0 5px 0;margin-bottom:15px;border:0;background:url(_max_titulo_nodo.jpg) no-repeat right 0;text-align:left}
 #main h2{font-size:1.4em;color:#9A042F}
-#main h2.iDeviceTitle{display:inline;font-size:1.2em}
+#main .iDeviceTitle{display:inline;font-size:1.2em;color:#9A042F}
 #main h3{font-size:1.3em;color:#1E80B8}
 #main h4{font-size:1.2em}
 #main h5{font-size:1.1em}

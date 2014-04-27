@@ -64,4 +64,9 @@ if __name__ == "__main__":
 #    suite.addTest(unittest.makeSuite(TestResource))
 #    #suite.addTest(unittest.makeSuite(TestForumsCache))
     suite.addTest(unittest.makeSuite(TestResources))
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    result = unittest.TextTestRunner(verbosity=2).run(suite)
+    if result.wasSuccessful():
+        sys.exit(0)
+    else:
+        sys.exit(1)
+
