@@ -78,19 +78,19 @@ lomVocab = {
     "aggregationLevelValues": [
         [
             "1", 
-            _("1")
+            "1"
         ], 
         [
             "2", 
-            _("2")
+            "2"
         ], 
         [
             "3", 
-            _("3")
+            "3"
         ], 
         [
             "4", 
-            _("4")
+            "4"
         ]
     ], 
     "purposeValues": [
@@ -897,19 +897,19 @@ lomesVocab = {
     "aggregationLevelValues": [
         [
             "1", 
-            _("1")
+            "1"
         ], 
         [
             "2", 
-            _("2")
+            "2"
         ], 
         [
             "3", 
-            _("3")
+            "3"
         ], 
         [
             "4", 
-            _("4")
+            "4"
         ]
     ], 
     "purposeValues": [

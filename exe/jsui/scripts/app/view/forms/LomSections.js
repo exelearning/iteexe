@@ -20,10 +20,10 @@
 lomVocab['languageValues'] = langsStore;
 
 lomVocab['aggregationLevelValues'] = [
-    ['1', _('smallest level of aggregation')],
-    ['2', _('collection of atoms, e.g. an HTML document with some embedded pictures or a lesson')],
-    ['3', _('collection of level 1 resources')],
-    ['4', _('largest level of granularity, e.g. a course')]
+    ['1', _('resources and integrated resources')],
+    ['2', _('learning objects')],
+    ['3', _('teaching sequences')],
+    ['4', _('training programmes, courses and plans')]
 ]
 
 Ext.require('eXe.view.forms.LomWidgets');
@@ -190,10 +190,10 @@ Ext.define('eXe.view.forms.LomSections', {
 lomesVocab['languageValues'] = langsStore;
 
 lomesVocab['aggregationLevelValues'] = [
-    ['1', _('smallest level of aggregation')],
-    ['2', _('collection of atoms, e.g. an HTML document with some embedded pictures or a lesson')],
-    ['3', _('collection of level 1 resources')],
-    ['4', _('largest level of granularity, e.g. a course')]
+    ['1', _('resources and integrated resources')],
+    ['2', _('learning objects')],
+    ['3', _('teaching sequences')],
+    ['4', _('training programmes, courses and plans')]
 ]
 
 Ext.define('eXe.view.forms.LomesSections', {
