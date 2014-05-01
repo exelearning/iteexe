@@ -84,7 +84,7 @@ class IdeviceStore:
     
     def getFactoryIdevices(self):
         """
-        JRJ: Devuelve todos los iDevices de fabrica
+        JRJ: Devuelve todos los iDevices de fábrica
         (Returns all the factory iDevices)
         """
         return self.factoryiDevices
@@ -233,7 +233,7 @@ class IdeviceStore:
 
     def __getIdevicesFPD(self):
         """
-        JRJ: Esta funcion devuelve los iDevices de FPD
+        JRJ: Esta función devuelve los iDevices de FPD
         (this function returns the FPD iDevices)
         """
         from exe.engine.reflectionfpdidevice import ReflectionfpdIdevice

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2014-04-09 19:07+0200\n"
+"POT-Creation-Date: 2014-05-01 12:49+0200\n"
 "PO-Revision-Date: 2013-12-02 16:48+0100\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
 "Language-Team: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
@@ -713,7 +713,7 @@ msgstr ""
 #: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
 #: exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:523
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:526
 msgid "Instructions"
 msgstr "Instruções"
 
@@ -729,7 +729,7 @@ msgstr ""
 "quaisquer alterações neste campo. \n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
-#: exe/webui/element.py:1388 exe/webui/listablock.py:251
+#: exe/webui/element.py:1393 exe/webui/listablock.py:258
 msgid "Cloze"
 msgstr "Preenchimento de espaços"
 
@@ -759,14 +759,14 @@ msgstr ""
 #: exe/engine/idevicestore.py:714 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
-#: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:173
+#: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:182
 #: exe/webui/clozefpdblock.py:179 exe/webui/clozefpdblock.py:197
 #: exe/webui/clozelangfpdblock.py:179 exe/webui/clozelangfpdblock.py:197
-#: exe/webui/common.py:428 exe/webui/common.py:440
+#: exe/webui/common.py:431 exe/webui/common.py:443
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
-#: exe/webui/element.py:2434 exe/webui/element.py:2538
-#: exe/webui/element.py:2722 exe/webui/listablock.py:441
-#: exe/webui/questionelement.py:104
+#: exe/webui/element.py:2340 exe/webui/element.py:2475
+#: exe/webui/element.py:2590 exe/webui/element.py:2791
+#: exe/webui/listablock.py:461 exe/webui/questionelement.py:104
 msgid "Feedback"
 msgstr "Feedback"
 
@@ -1030,7 +1030,10 @@ msgstr ""
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3690
 #: exe/engine/field.py:3755 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:80
-#: exe/engine/seleccionmultiplefpdidevice.py:82
+#: exe/engine/seleccionmultiplefpdidevice.py:82 exe/webui/element.py:2315
+#: exe/webui/element.py:2319 exe/webui/element.py:2768
+#: exe/webui/element.py:2772 exe/webui/truefalseelement.py:196
+#: exe/webui/truefalseelement.py:202
 msgid "Question"
 msgstr "Pergunta"
 
@@ -1290,8 +1293,8 @@ msgstr ""
 
 #: exe/engine/field.py:3615 exe/engine/field.py:3664
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/webui/element.py:2045 exe/webui/element.py:2096
-#: exe/webui/element.py:2398 exe/webui/element.py:2486
+#: exe/webui/element.py:2054 exe/webui/element.py:2109
+#: exe/webui/element.py:2439 exe/webui/element.py:2531
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:164
 msgid "Option"
 msgstr "Opção"
@@ -1299,11 +1302,11 @@ msgstr "Opção"
 #: exe/engine/field.py:3693 exe/engine/field.py:3759
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
-#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:193
+#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:194
 msgid "Hint"
 msgstr "Pista"
 
-#: exe/engine/field.py:3781 exe/engine/field.py:3818 exe/webui/element.py:2226
+#: exe/engine/field.py:3781 exe/engine/field.py:3818 exe/webui/element.py:2244
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
@@ -1325,7 +1328,7 @@ msgstr ""
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
-#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2203
+#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2221
 msgid "Question:"
 msgstr "Pergunta:"
 
@@ -1679,8 +1682,8 @@ msgstr "Texto para o botão de recomeçar o nível"
 msgid "Text for reset button"
 msgstr "Texto para o botão de reinício"
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1414
-#: exe/webui/element.py:1662
+#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1419
+#: exe/webui/element.py:1671
 msgid "Restart"
 msgstr "Reiniciar"
 
@@ -2610,15 +2613,15 @@ msgstr "Unidade"
 msgid "Home"
 msgstr "Início"
 
-#: exe/engine/package.py:466
+#: exe/engine/package.py:467
 msgid "Metadata creation date"
 msgstr ""
 
-#: exe/engine/package.py:954
+#: exe/engine/package.py:955
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:992 exe/engine/package.py:999
+#: exe/engine/package.py:993 exe/engine/package.py:1000
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2627,16 +2630,16 @@ msgstr ""
 "Guardar falhou!\n"
 "O último guardar válido foi a %s."
 
-#: exe/engine/package.py:1373 exe/jsui/scripts/app/controller/Toolbar.js:372
+#: exe/engine/package.py:1375 exe/jsui/scripts/app/controller/Toolbar.js:372
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "Editor de iDevices"
 
-#: exe/engine/package.py:1494
+#: exe/engine/package.py:1496
 msgid "My Catalog"
 msgstr "O meu catálogo"
 
-#: exe/engine/package.py:1501
+#: exe/engine/package.py:1503
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Default"
@@ -2939,7 +2942,7 @@ msgstr ""
 "são instrumentos úteis para fornecer retroalimentação que fomenta a "
 "reflexão)"
 
-#: exe/engine/resource.py:598
+#: exe/engine/resource.py:597
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
@@ -3062,8 +3065,8 @@ msgstr "Efeito para a imagem que indica resposta errada"
 msgid "Text for Check Button"
 msgstr "Texto do botão de verificação"
 
-#: exe/engine/sortidevice.py:61 exe/webui/listablock.py:263
-#: exe/webui/listablock.py:265
+#: exe/engine/sortidevice.py:61 exe/webui/listablock.py:270
+#: exe/webui/listablock.py:272
 msgid "Check"
 msgstr "Marcar"
 
@@ -3487,8 +3490,8 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "Formato de exportação não implementado"
 
-#: exe/export/epub3export.py:569 exe/export/imsexport.py:517
-#: exe/export/scormexport.py:726 exe/export/websiteexport.py:96
+#: exe/export/epub3export.py:571 exe/export/imsexport.py:557
+#: exe/export/scormexport.py:725 exe/export/websiteexport.py:96
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3583,11 +3586,11 @@ msgstr "Sob licença"
 msgid "Local Version"
 msgstr "Versão local"
 
-#: exe/export/scormpage.py:152 exe/export/websitepage.py:321
+#: exe/export/scormpage.py:154 exe/export/websitepage.py:326
 msgid "Previous"
 msgstr "Anterior"
 
-#: exe/export/scormpage.py:153 exe/export/websitepage.py:327
+#: exe/export/scormpage.py:155 exe/export/websitepage.py:332
 msgid "Next"
 msgstr "Seguinte"
 
@@ -3595,7 +3598,7 @@ msgstr "Seguinte"
 msgid "You can close this window"
 msgstr "Pode fechar esta janela"
 
-#: exe/export/websitepage.py:134
+#: exe/export/websitepage.py:136
 msgid "Skip navigation"
 msgstr "Saltar navegação"
 
@@ -3815,11 +3818,11 @@ msgstr ""
 msgid "Sorry, wrong file format"
 msgstr "Desculpe, formato de ficheiro incorreto"
 
-#: exe/jsui/propertiespage.py:327
+#: exe/jsui/propertiespage.py:326
 msgid "Failed to get properties"
 msgstr "Não foi possível obter as propriedades"
 
-#: exe/jsui/propertiespage.py:367
+#: exe/jsui/propertiespage.py:366
 msgid "Failed to save properties"
 msgstr "Não foi possível guardar as propriedades"
 
@@ -3829,8 +3832,8 @@ msgstr "Não foi possível guardar as propriedades"
 msgid "Show Image"
 msgstr "Mostrar imagem"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:169 exe/webui/element.py:661
-#: exe/webui/element.py:1075
+#: exe/jsui/scripts/app/controller/MainTab.js:169 exe/webui/element.py:659
+#: exe/webui/element.py:1073
 msgid "Select an image"
 msgstr "Selecionar uma imagem"
 
@@ -4573,27 +4576,25 @@ msgstr "Classificação"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:23
 #: exe/jsui/scripts/app/view/forms/LomSections.js:193
-msgid "smallest level of aggregation"
-msgstr "o menor nível de agregação"
+#, fuzzy
+msgid "resources and integrated resources"
+msgstr "A referência a um recurso relacionado."
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:24
 #: exe/jsui/scripts/app/view/forms/LomSections.js:194
-msgid ""
-"collection of atoms, e.g. an HTML document with some embedded pictures or"
-" a lesson"
-msgstr ""
-"coleção de átomos, i.e. um documento HTML com algumas imagens integradas "
-"ou uma lição"
+#, fuzzy
+msgid "learning objects"
+msgstr "exelearning.net"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:25
 #: exe/jsui/scripts/app/view/forms/LomSections.js:195
-msgid "collection of level 1 resources"
-msgstr "coleção de recursos de nível 1"
+msgid "teaching sequences"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:26
 #: exe/jsui/scripts/app/view/forms/LomSections.js:196
-msgid "largest level of granularity, e.g. a course"
-msgstr "o maior nível de granularidade, i.e. um curso"
+msgid "training programmes, courses and plans"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:44
 #: exe/jsui/scripts/app/view/forms/LomSections.js:76
@@ -5387,7 +5388,7 @@ msgid "Resources Report"
 msgstr "Relatório de recursos"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379 exe/webui/editorpane.py:268
-#: exe/webui/element.py:1954
+#: exe/webui/element.py:1963
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:11
@@ -6133,6 +6134,7 @@ msgid "expositive"
 msgstr "expositivo"
 
 #: exe/jsui/scripts/lomvocab.js:13 exe/jsui/scripts/lomvocab.js:672
+#: exe/jsui/scripts/lomvocab.js:1216
 msgid "mixed"
 msgstr "mixto"
 
@@ -6196,22 +6198,6 @@ msgstr "autoavaliação"
 #: exe/jsui/scripts/lomvocab.js:75
 msgid "lecture"
 msgstr "clase"
-
-#: exe/jsui/scripts/lomvocab.js:81 exe/jsui/scripts/lomvocab.js:900
-msgid "1"
-msgstr "1"
-
-#: exe/jsui/scripts/lomvocab.js:85 exe/jsui/scripts/lomvocab.js:904
-msgid "2"
-msgstr "2"
-
-#: exe/jsui/scripts/lomvocab.js:89 exe/jsui/scripts/lomvocab.js:908
-msgid "3"
-msgstr "3"
-
-#: exe/jsui/scripts/lomvocab.js:93 exe/jsui/scripts/lomvocab.js:912
-msgid "4"
-msgstr "4"
 
 #: exe/jsui/scripts/lomvocab.js:99 exe/jsui/scripts/lomvocab.js:918
 msgid "discipline"
@@ -6312,7 +6298,7 @@ msgid "instructional designer"
 msgstr "desenhador instrucional"
 
 #: exe/jsui/scripts/lomvocab.js:203 exe/jsui/scripts/lomvocab.js:1018
-#: exe/jsui/scripts/lomvocab.js:1594
+#: exe/jsui/scripts/lomvocab.js:1584
 msgid "subject matter expert"
 msgstr "perito na matéria"
 
@@ -6502,102 +6488,102 @@ msgstr "treino"
 msgid "other"
 msgstr "outro"
 
-#: exe/jsui/scripts/lomvocab.js:403 exe/jsui/scripts/lomvocab.js:1268
+#: exe/jsui/scripts/lomvocab.js:403 exe/jsui/scripts/lomvocab.js:1258
 msgid "operating system"
 msgstr "sistema operativo"
 
-#: exe/jsui/scripts/lomvocab.js:407 exe/jsui/scripts/lomvocab.js:1272
+#: exe/jsui/scripts/lomvocab.js:407 exe/jsui/scripts/lomvocab.js:1262
 msgid "browser"
 msgstr "navegador"
 
-#: exe/jsui/scripts/lomvocab.js:423 exe/jsui/scripts/lomvocab.js:1340
+#: exe/jsui/scripts/lomvocab.js:423 exe/jsui/scripts/lomvocab.js:1330
 msgid "ispartof"
 msgstr "é parte de"
 
-#: exe/jsui/scripts/lomvocab.js:427 exe/jsui/scripts/lomvocab.js:1344
+#: exe/jsui/scripts/lomvocab.js:427 exe/jsui/scripts/lomvocab.js:1334
 msgid "haspart"
 msgstr "inclui"
 
-#: exe/jsui/scripts/lomvocab.js:431 exe/jsui/scripts/lomvocab.js:1348
+#: exe/jsui/scripts/lomvocab.js:431 exe/jsui/scripts/lomvocab.js:1338
 msgid "isversionof"
 msgstr "é uma versão de"
 
-#: exe/jsui/scripts/lomvocab.js:435 exe/jsui/scripts/lomvocab.js:1352
+#: exe/jsui/scripts/lomvocab.js:435 exe/jsui/scripts/lomvocab.js:1342
 msgid "hasversion"
 msgstr "tem a versão"
 
-#: exe/jsui/scripts/lomvocab.js:439 exe/jsui/scripts/lomvocab.js:1356
+#: exe/jsui/scripts/lomvocab.js:439 exe/jsui/scripts/lomvocab.js:1346
 msgid "isformatof"
 msgstr "é o formato de"
 
-#: exe/jsui/scripts/lomvocab.js:443 exe/jsui/scripts/lomvocab.js:1360
+#: exe/jsui/scripts/lomvocab.js:443 exe/jsui/scripts/lomvocab.js:1350
 msgid "hasformat"
 msgstr "tem como formato"
 
-#: exe/jsui/scripts/lomvocab.js:447 exe/jsui/scripts/lomvocab.js:1364
+#: exe/jsui/scripts/lomvocab.js:447 exe/jsui/scripts/lomvocab.js:1354
 msgid "references"
 msgstr "referências"
 
-#: exe/jsui/scripts/lomvocab.js:451 exe/jsui/scripts/lomvocab.js:1368
+#: exe/jsui/scripts/lomvocab.js:451 exe/jsui/scripts/lomvocab.js:1358
 msgid "isreferencedby"
 msgstr "é referido por"
 
-#: exe/jsui/scripts/lomvocab.js:455 exe/jsui/scripts/lomvocab.js:1372
+#: exe/jsui/scripts/lomvocab.js:455 exe/jsui/scripts/lomvocab.js:1362
 msgid "isbasedon"
 msgstr "é baseado em"
 
-#: exe/jsui/scripts/lomvocab.js:459 exe/jsui/scripts/lomvocab.js:1376
+#: exe/jsui/scripts/lomvocab.js:459 exe/jsui/scripts/lomvocab.js:1366
 msgid "isbasisfor"
 msgstr "é a base para"
 
-#: exe/jsui/scripts/lomvocab.js:463 exe/jsui/scripts/lomvocab.js:1380
+#: exe/jsui/scripts/lomvocab.js:463 exe/jsui/scripts/lomvocab.js:1370
 msgid "requires"
 msgstr "requer"
 
-#: exe/jsui/scripts/lomvocab.js:467 exe/jsui/scripts/lomvocab.js:1384
+#: exe/jsui/scripts/lomvocab.js:467 exe/jsui/scripts/lomvocab.js:1374
 msgid "isrequiredby"
 msgstr "é requerido por"
 
 #: exe/jsui/scripts/lomvocab.js:473 exe/jsui/scripts/lomvocab.js:541
-#: exe/jsui/scripts/lomvocab.js:1390 exe/jsui/scripts/lomvocab.js:1458
+#: exe/jsui/scripts/lomvocab.js:1380 exe/jsui/scripts/lomvocab.js:1448
 msgid "very low"
 msgstr "muito baixo"
 
 #: exe/jsui/scripts/lomvocab.js:477 exe/jsui/scripts/lomvocab.js:545
-#: exe/jsui/scripts/lomvocab.js:1394 exe/jsui/scripts/lomvocab.js:1462
+#: exe/jsui/scripts/lomvocab.js:1384 exe/jsui/scripts/lomvocab.js:1452
 msgid "low"
 msgstr "baixo"
 
 #: exe/jsui/scripts/lomvocab.js:481 exe/jsui/scripts/lomvocab.js:549
-#: exe/jsui/scripts/lomvocab.js:645 exe/jsui/scripts/lomvocab.js:1398
-#: exe/jsui/scripts/lomvocab.js:1466 exe/jsui/scripts/lomvocab.js:1618
+#: exe/jsui/scripts/lomvocab.js:645 exe/jsui/scripts/lomvocab.js:1388
+#: exe/jsui/scripts/lomvocab.js:1456 exe/jsui/scripts/lomvocab.js:1608
 #: exe/webui/externalurlblock.py:73
 msgid "medium"
 msgstr "média"
 
 #: exe/jsui/scripts/lomvocab.js:485 exe/jsui/scripts/lomvocab.js:553
-#: exe/jsui/scripts/lomvocab.js:1402 exe/jsui/scripts/lomvocab.js:1470
+#: exe/jsui/scripts/lomvocab.js:1392 exe/jsui/scripts/lomvocab.js:1460
 msgid "high"
 msgstr "alto"
 
 #: exe/jsui/scripts/lomvocab.js:489 exe/jsui/scripts/lomvocab.js:557
-#: exe/jsui/scripts/lomvocab.js:1406 exe/jsui/scripts/lomvocab.js:1474
+#: exe/jsui/scripts/lomvocab.js:1396 exe/jsui/scripts/lomvocab.js:1464
 msgid "very high"
 msgstr "muito alto"
 
-#: exe/jsui/scripts/lomvocab.js:495 exe/jsui/scripts/lomvocab.js:1412
+#: exe/jsui/scripts/lomvocab.js:495 exe/jsui/scripts/lomvocab.js:1402
 msgid "draft"
 msgstr "rascunho"
 
-#: exe/jsui/scripts/lomvocab.js:499 exe/jsui/scripts/lomvocab.js:1416
+#: exe/jsui/scripts/lomvocab.js:499 exe/jsui/scripts/lomvocab.js:1406
 msgid "final"
 msgstr "final"
 
-#: exe/jsui/scripts/lomvocab.js:503 exe/jsui/scripts/lomvocab.js:1420
+#: exe/jsui/scripts/lomvocab.js:503 exe/jsui/scripts/lomvocab.js:1410
 msgid "revised"
 msgstr "revista"
 
-#: exe/jsui/scripts/lomvocab.js:507 exe/jsui/scripts/lomvocab.js:1424
+#: exe/jsui/scripts/lomvocab.js:507 exe/jsui/scripts/lomvocab.js:1414
 msgid "unavailable"
 msgstr "não disponível"
 
@@ -6605,105 +6591,105 @@ msgstr "não disponível"
 msgid "LOMv1.0"
 msgstr "LOMv1.0"
 
-#: exe/jsui/scripts/lomvocab.js:519 exe/jsui/scripts/lomvocab.js:1436
+#: exe/jsui/scripts/lomvocab.js:519 exe/jsui/scripts/lomvocab.js:1426
 msgid "atomic"
 msgstr "atómico"
 
-#: exe/jsui/scripts/lomvocab.js:523 exe/jsui/scripts/lomvocab.js:1440
+#: exe/jsui/scripts/lomvocab.js:523 exe/jsui/scripts/lomvocab.js:1430
 msgid "collection"
 msgstr "coleção"
 
-#: exe/jsui/scripts/lomvocab.js:527 exe/jsui/scripts/lomvocab.js:1444
+#: exe/jsui/scripts/lomvocab.js:527 exe/jsui/scripts/lomvocab.js:1434
 msgid "networked"
 msgstr "em rede"
 
-#: exe/jsui/scripts/lomvocab.js:531 exe/jsui/scripts/lomvocab.js:1448
+#: exe/jsui/scripts/lomvocab.js:531 exe/jsui/scripts/lomvocab.js:1438
 msgid "hierarchical"
 msgstr "hierárquico"
 
-#: exe/jsui/scripts/lomvocab.js:535 exe/jsui/scripts/lomvocab.js:1452
+#: exe/jsui/scripts/lomvocab.js:535 exe/jsui/scripts/lomvocab.js:1442
 msgid "linear"
 msgstr "linear"
 
-#: exe/jsui/scripts/lomvocab.js:563 exe/jsui/scripts/lomvocab.js:1480
+#: exe/jsui/scripts/lomvocab.js:563 exe/jsui/scripts/lomvocab.js:1470
 msgid "pc-dos"
 msgstr "pc-dos"
 
-#: exe/jsui/scripts/lomvocab.js:567 exe/jsui/scripts/lomvocab.js:1484
+#: exe/jsui/scripts/lomvocab.js:567 exe/jsui/scripts/lomvocab.js:1474
 msgid "ms-windows"
 msgstr "ms-windows"
 
-#: exe/jsui/scripts/lomvocab.js:571 exe/jsui/scripts/lomvocab.js:1488
+#: exe/jsui/scripts/lomvocab.js:571 exe/jsui/scripts/lomvocab.js:1478
 msgid "macos"
 msgstr "macos"
 
-#: exe/jsui/scripts/lomvocab.js:575 exe/jsui/scripts/lomvocab.js:1496
+#: exe/jsui/scripts/lomvocab.js:575 exe/jsui/scripts/lomvocab.js:1486
 msgid "unix"
 msgstr "unix"
 
-#: exe/jsui/scripts/lomvocab.js:579 exe/jsui/scripts/lomvocab.js:1500
+#: exe/jsui/scripts/lomvocab.js:579 exe/jsui/scripts/lomvocab.js:1490
 msgid "multi-os"
 msgstr "multissistema"
 
-#: exe/jsui/scripts/lomvocab.js:583 exe/jsui/scripts/lomvocab.js:1504
+#: exe/jsui/scripts/lomvocab.js:583 exe/jsui/scripts/lomvocab.js:1494
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "none"
 msgstr "nenhum"
 
-#: exe/jsui/scripts/lomvocab.js:587 exe/jsui/scripts/lomvocab.js:1508
+#: exe/jsui/scripts/lomvocab.js:587 exe/jsui/scripts/lomvocab.js:1498
 msgid "any"
 msgstr "todos"
 
-#: exe/jsui/scripts/lomvocab.js:591 exe/jsui/scripts/lomvocab.js:1516
+#: exe/jsui/scripts/lomvocab.js:591 exe/jsui/scripts/lomvocab.js:1506
 msgid "netscape communicator"
 msgstr "netscape communicator"
 
-#: exe/jsui/scripts/lomvocab.js:595 exe/jsui/scripts/lomvocab.js:1520
+#: exe/jsui/scripts/lomvocab.js:595 exe/jsui/scripts/lomvocab.js:1510
 msgid "ms-internet explorer"
 msgstr "ms-internet explorer"
 
-#: exe/jsui/scripts/lomvocab.js:599 exe/jsui/scripts/lomvocab.js:1524
+#: exe/jsui/scripts/lomvocab.js:599 exe/jsui/scripts/lomvocab.js:1514
 msgid "opera"
 msgstr "opera"
 
-#: exe/jsui/scripts/lomvocab.js:603 exe/jsui/scripts/lomvocab.js:1528
+#: exe/jsui/scripts/lomvocab.js:603 exe/jsui/scripts/lomvocab.js:1518
 msgid "amaya"
 msgstr "amaya"
 
-#: exe/jsui/scripts/lomvocab.js:609 exe/jsui/scripts/lomvocab.js:1222
-#: exe/jsui/scripts/lomvocab.js:1566
+#: exe/jsui/scripts/lomvocab.js:609 exe/jsui/scripts/lomvocab.js:1220
+#: exe/jsui/scripts/lomvocab.js:1556
 msgid "teacher"
 msgstr "professor"
 
-#: exe/jsui/scripts/lomvocab.js:617 exe/jsui/scripts/lomvocab.js:1534
+#: exe/jsui/scripts/lomvocab.js:617 exe/jsui/scripts/lomvocab.js:1524
 msgid "learner"
 msgstr "estudante"
 
-#: exe/jsui/scripts/lomvocab.js:621 exe/jsui/scripts/lomvocab.js:1586
+#: exe/jsui/scripts/lomvocab.js:621 exe/jsui/scripts/lomvocab.js:1576
 msgid "manager"
 msgstr "diretor"
 
-#: exe/jsui/scripts/lomvocab.js:627 exe/jsui/scripts/lomvocab.js:1600
+#: exe/jsui/scripts/lomvocab.js:627 exe/jsui/scripts/lomvocab.js:1590
 msgid "universal"
 msgstr "universal"
 
-#: exe/jsui/scripts/lomvocab.js:631 exe/jsui/scripts/lomvocab.js:1604
+#: exe/jsui/scripts/lomvocab.js:631 exe/jsui/scripts/lomvocab.js:1594
 msgid "non-universal"
 msgstr "não universal"
 
-#: exe/jsui/scripts/lomvocab.js:637 exe/jsui/scripts/lomvocab.js:1610
+#: exe/jsui/scripts/lomvocab.js:637 exe/jsui/scripts/lomvocab.js:1600
 msgid "very easy"
 msgstr "muito fácil"
 
-#: exe/jsui/scripts/lomvocab.js:641 exe/jsui/scripts/lomvocab.js:1614
+#: exe/jsui/scripts/lomvocab.js:641 exe/jsui/scripts/lomvocab.js:1604
 msgid "easy"
 msgstr "fácil"
 
-#: exe/jsui/scripts/lomvocab.js:649 exe/jsui/scripts/lomvocab.js:1622
+#: exe/jsui/scripts/lomvocab.js:649 exe/jsui/scripts/lomvocab.js:1612
 msgid "difficult"
 msgstr "difícil"
 
-#: exe/jsui/scripts/lomvocab.js:653 exe/jsui/scripts/lomvocab.js:1626
+#: exe/jsui/scripts/lomvocab.js:653 exe/jsui/scripts/lomvocab.js:1616
 msgid "very difficult"
 msgstr "muito difícil"
 
@@ -6915,162 +6901,157 @@ msgstr "ambiente real"
 msgid "home"
 msgstr "casa"
 
-#: exe/jsui/scripts/lomvocab.js:1218
-#, fuzzy
-msgid "mixed environment"
-msgstr "ambiente real"
-
-#: exe/jsui/scripts/lomvocab.js:1226 exe/jsui/scripts/lomvocab.js:1574
+#: exe/jsui/scripts/lomvocab.js:1224 exe/jsui/scripts/lomvocab.js:1564
 msgid "family"
 msgstr "família"
 
-#: exe/jsui/scripts/lomvocab.js:1230 exe/jsui/scripts/lomvocab.js:1570
+#: exe/jsui/scripts/lomvocab.js:1228 exe/jsui/scripts/lomvocab.js:1560
 msgid "tutor"
 msgstr "tutor"
 
-#: exe/jsui/scripts/lomvocab.js:1234
+#: exe/jsui/scripts/lomvocab.js:1232
 msgid "schoolmate"
 msgstr "colega de estudo"
 
-#: exe/jsui/scripts/lomvocab.js:1238
+#: exe/jsui/scripts/lomvocab.js:1236
 msgid "independent"
 msgstr "independente"
 
-#: exe/jsui/scripts/lomvocab.js:1245
-#, fuzzy
-msgid "mixed attendance"
-msgstr "ambiente real"
-
-#: exe/jsui/scripts/lomvocab.js:1249
+#: exe/jsui/scripts/lomvocab.js:1240
 msgid "blended"
 msgstr "semipresencial"
 
-#: exe/jsui/scripts/lomvocab.js:1258
+#: exe/jsui/scripts/lomvocab.js:1244
+#, fuzzy
+msgid "presencial"
+msgstr "represente"
+
+#: exe/jsui/scripts/lomvocab.js:1248
 msgid "face to face"
 msgstr "presencial"
 
-#: exe/jsui/scripts/lomvocab.js:1262
+#: exe/jsui/scripts/lomvocab.js:1252
 msgid "distance"
 msgstr "distância"
 
-#: exe/jsui/scripts/lomvocab.js:1278
+#: exe/jsui/scripts/lomvocab.js:1268
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:27
 msgid "propietary license"
 msgstr "licença proprietária"
 
-#: exe/jsui/scripts/lomvocab.js:1282
+#: exe/jsui/scripts/lomvocab.js:1272
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:31
 msgid "free software license EUPL"
 msgstr "licença de software livre EUPL"
 
-#: exe/jsui/scripts/lomvocab.js:1286
+#: exe/jsui/scripts/lomvocab.js:1276
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:35
 msgid "free software license GPL"
 msgstr "licença de software livre GPL"
 
-#: exe/jsui/scripts/lomvocab.js:1290
+#: exe/jsui/scripts/lomvocab.js:1280
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
 msgid "dual free content license GPL and EUPL"
 msgstr "dupla licença de conteúdo livre GPL e EUPL"
 
-#: exe/jsui/scripts/lomvocab.js:1294
+#: exe/jsui/scripts/lomvocab.js:1284
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:43
 msgid "other free software licenses"
 msgstr "outras licenças de software livre"
 
-#: exe/jsui/scripts/lomvocab.js:1298
+#: exe/jsui/scripts/lomvocab.js:1288
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:47
 msgid "public domain"
 msgstr "domínio público"
 
-#: exe/jsui/scripts/lomvocab.js:1302
+#: exe/jsui/scripts/lomvocab.js:1292
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:51
 msgid "not appropriate"
 msgstr "não apropriado"
 
-#: exe/jsui/scripts/lomvocab.js:1306
+#: exe/jsui/scripts/lomvocab.js:1296
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:55
 msgid "intellectual property license"
 msgstr "licença de propriedade intelectual"
 
-#: exe/jsui/scripts/lomvocab.js:1310
+#: exe/jsui/scripts/lomvocab.js:1300
 msgid "creative commons: attribution"
 msgstr "creative commons: atribuição"
 
-#: exe/jsui/scripts/lomvocab.js:1314
+#: exe/jsui/scripts/lomvocab.js:1304
 msgid "creative commons: attribution - non derived work"
 msgstr "creative commons: atribuição - sem derivados"
 
-#: exe/jsui/scripts/lomvocab.js:1318
+#: exe/jsui/scripts/lomvocab.js:1308
 msgid "creative commons: attribution - non derived work - non commercial"
 msgstr "creative commons: atribuição - sem derivados - não comercial"
 
-#: exe/jsui/scripts/lomvocab.js:1322
+#: exe/jsui/scripts/lomvocab.js:1312
 msgid "creative commons: attribution - non commercial"
 msgstr "creative commons: atribuição - não comercial"
 
-#: exe/jsui/scripts/lomvocab.js:1326
+#: exe/jsui/scripts/lomvocab.js:1316
 msgid "creative commons: attribution - non commercial - share alike"
 msgstr "creative commons: atribuição - não comercial - compartilha igual"
 
-#: exe/jsui/scripts/lomvocab.js:1330
+#: exe/jsui/scripts/lomvocab.js:1320
 msgid "creative commons: attribution - share alike"
 msgstr "creative commons: atribuição - compartilha igual"
 
-#: exe/jsui/scripts/lomvocab.js:1334
+#: exe/jsui/scripts/lomvocab.js:1324
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:131
 msgid "license GFDL"
 msgstr "licença GFDL"
 
-#: exe/jsui/scripts/lomvocab.js:1430
+#: exe/jsui/scripts/lomvocab.js:1420
 msgid "LOM-ESv1.0"
 msgstr "LOM-ESv1.0"
 
-#: exe/jsui/scripts/lomvocab.js:1492
+#: exe/jsui/scripts/lomvocab.js:1482
 msgid "linux"
 msgstr "linux"
 
-#: exe/jsui/scripts/lomvocab.js:1512
+#: exe/jsui/scripts/lomvocab.js:1502
 msgid "mozilla firefox"
 msgstr "mozilla firefox"
 
-#: exe/jsui/scripts/lomvocab.js:1538
+#: exe/jsui/scripts/lomvocab.js:1528
 msgid "special needs learner"
 msgstr "estudante com necessidades especiais"
 
-#: exe/jsui/scripts/lomvocab.js:1542
+#: exe/jsui/scripts/lomvocab.js:1532
 msgid "gifted learner"
 msgstr "estudante sobredotado"
 
-#: exe/jsui/scripts/lomvocab.js:1546
+#: exe/jsui/scripts/lomvocab.js:1536
 msgid "learners late integration into the education system"
 msgstr "estudante integrado tardiamente no sistema educativo"
 
-#: exe/jsui/scripts/lomvocab.js:1550
+#: exe/jsui/scripts/lomvocab.js:1540
 msgid "learner with other specific educational support needs"
 msgstr "estudante com outras necessidades específicas de apoio educativo"
 
-#: exe/jsui/scripts/lomvocab.js:1554
+#: exe/jsui/scripts/lomvocab.js:1544
 msgid "general public"
 msgstr "público em geral"
 
-#: exe/jsui/scripts/lomvocab.js:1558
+#: exe/jsui/scripts/lomvocab.js:1548
 msgid "individual"
 msgstr "individual"
 
-#: exe/jsui/scripts/lomvocab.js:1562
+#: exe/jsui/scripts/lomvocab.js:1552
 msgid "group"
 msgstr "grupo"
 
-#: exe/jsui/scripts/lomvocab.js:1578
+#: exe/jsui/scripts/lomvocab.js:1568
 msgid "information scientist"
 msgstr "cientista da informação"
 
-#: exe/jsui/scripts/lomvocab.js:1582
+#: exe/jsui/scripts/lomvocab.js:1572
 msgid "computer scientist"
 msgstr "cientista informático"
 
-#: exe/jsui/scripts/lomvocab.js:1590
+#: exe/jsui/scripts/lomvocab.js:1580
 msgid "education expert"
 msgstr "perito em educação"
 
@@ -7143,12 +7124,12 @@ msgstr "Aceitar URL"
 msgid "Applet Code:"
 msgstr "Código do applet:"
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:950
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:948
 msgid "Filename:"
 msgstr "Nome do ficheiro:"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
-#: exe/webui/element.py:960
+#: exe/webui/element.py:958
 msgid "Select a file"
 msgstr "Selecionar um ficheiro"
 
@@ -7199,8 +7180,8 @@ msgstr "Ajuda pedagógica"
 msgid "Information"
 msgstr "Informação"
 
-#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:538
-#: exe/webui/common.py:539 exe/webui/editorpane.py:364
+#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:541
+#: exe/webui/common.py:542 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -7289,7 +7270,7 @@ msgid "Now it's your turn"
 msgstr "Agora é a sua vez"
 
 #: exe/webui/clozefpdblock.py:176 exe/webui/clozelangfpdblock.py:176
-#: exe/webui/element.py:2321 exe/webui/element.py:2734
+#: exe/webui/element.py:2360 exe/webui/element.py:2803
 msgid "Solution"
 msgstr "Solução"
 
@@ -7302,42 +7283,43 @@ msgstr "Agora é a sua vez"
 msgid "Enable JavaScript"
 msgstr "Permitir JavaScript"
 
-#: exe/webui/common.py:213
+#: exe/webui/common.py:214
 msgid "Show"
 msgstr "Mostrar"
 
-#: exe/webui/common.py:214
+#: exe/webui/common.py:215
 msgid "Hide"
 msgstr "Esconder"
 
-#: exe/webui/common.py:215 exe/webui/common.py:425 exe/webui/element.py:2294
+#: exe/webui/common.py:216 exe/webui/common.py:428 exe/webui/element.py:1409
+#: exe/webui/element.py:2332 exe/webui/listablock.py:274
 msgid "Show Feedback"
 msgstr "Mostrar feedback"
 
-#: exe/webui/common.py:216
+#: exe/webui/common.py:217
 msgid "Hide Feedback"
 msgstr "Ocultar resposta"
 
-#: exe/webui/common.py:217 exe/webui/element.py:2122
+#: exe/webui/common.py:218 exe/webui/element.py:2137
 #: exe/webui/stylemanagerpage.py:184 exe/webui/stylemanagerpage.py:202
 msgid "Correct"
 msgstr "Correto"
 
-#: exe/webui/common.py:218 exe/webui/element.py:2125
+#: exe/webui/common.py:219 exe/webui/element.py:2140
 msgid "Incorrect"
 msgstr "Incorreto"
 
-#: exe/webui/common.py:219
+#: exe/webui/common.py:220
 msgid "Menu"
 msgstr "Menu"
 
-#: exe/webui/common.py:240 exe/webui/editorpage.py:233
+#: exe/webui/common.py:241 exe/webui/editorpage.py:233
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : editor XHTML para o e-learning"
 
-#: exe/webui/common.py:529 exe/webui/common.py:533
+#: exe/webui/common.py:532 exe/webui/common.py:536
 msgid "Click for completion instructions"
 msgstr "Clique para obter instruções de preenchimento"
 
@@ -7389,7 +7371,7 @@ msgstr "Direita"
 msgid "Align:"
 msgstr "Alinhar:"
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1745
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1754
 msgid "Select Flash Object"
 msgstr "Selecionar um objeto Flash"
 
@@ -7397,7 +7379,7 @@ msgstr "Selecionar um objeto Flash"
 msgid "Select MP3 file"
 msgstr "Escolher um ficheiro MP3"
 
-#: exe/webui/editorelement.py:311 exe/webui/element.py:754
+#: exe/webui/editorelement.py:311 exe/webui/element.py:752
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
@@ -7557,8 +7539,8 @@ msgstr "Ícones"
 msgid "Info"
 msgstr "Informação"
 
-#: exe/webui/editorpane.py:430 exe/webui/element.py:1411
-#: exe/webui/element.py:1413 exe/webui/element.py:1661
+#: exe/webui/editorpane.py:430 exe/webui/element.py:1416
+#: exe/webui/element.py:1418 exe/webui/element.py:1670
 msgid "Submit"
 msgstr "Submeter"
 
@@ -7591,126 +7573,125 @@ msgstr "ERRO Element.renderEdit chamado diretamente com a classe %s"
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "ERRO Element.renderView chamado diretamente com a classe %s"
 
-#: exe/webui/element.py:638 exe/webui/element.py:1059
+#: exe/webui/element.py:636 exe/webui/element.py:1057
 msgid "Add Image"
 msgstr "Adicionar imagem"
 
-#: exe/webui/element.py:664 exe/webui/element.py:1081 exe/webui/element.py:1749
+#: exe/webui/element.py:662 exe/webui/element.py:1079 exe/webui/element.py:1758
 msgid "Display as:"
 msgstr "Apresentar como:"
 
-#: exe/webui/element.py:671
+#: exe/webui/element.py:669
 msgid "by"
 msgstr ""
 
-#: exe/webui/element.py:678 exe/webui/element.py:1097
+#: exe/webui/element.py:676 exe/webui/element.py:1095
 msgid "blank for original size"
 msgstr "vazio para o tamanho inicial"
 
-#: exe/webui/element.py:748
+#: exe/webui/element.py:746
 msgid "Select an MP3"
 msgstr "Escolha um ficheiro MP3"
 
-#: exe/webui/element.py:1227 exe/webui/element.py:1546
+#: exe/webui/element.py:1225 exe/webui/element.py:1555
 msgid "Cloze Text"
 msgstr "Texto para preencher espaços"
 
-#: exe/webui/element.py:1235 exe/webui/element.py:1554
+#: exe/webui/element.py:1233 exe/webui/element.py:1563
 #: exe/webui/listablock.py:173
 msgid "Hide/Show Word"
 msgstr "Ocultar/Mostrar palavra"
 
-#: exe/webui/element.py:1240 exe/webui/element.py:1559
+#: exe/webui/element.py:1238 exe/webui/element.py:1568
 msgid "Strict Marking?"
 msgstr "Avaliação estrita?"
 
-#: exe/webui/element.py:1245 exe/webui/element.py:1564
+#: exe/webui/element.py:1243 exe/webui/element.py:1573
 msgid "Check Caps?"
 msgstr "Verificar maiúsculas?"
 
-#: exe/webui/element.py:1250 exe/webui/element.py:1569
+#: exe/webui/element.py:1248 exe/webui/element.py:1578
 msgid "Instant Marking?"
 msgstr "Avaliação instantânea?"
 
-#: exe/webui/element.py:1354 exe/webui/element.py:1604
-#: exe/webui/listablock.py:215 exe/webui/quiztestblock.py:223
+#: exe/webui/element.py:1359 exe/webui/element.py:1613
+#: exe/webui/listablock.py:222 exe/webui/quiztestblock.py:223
 #: exe/webui/quiztestblock.py:318
 msgid "Your score is "
 msgstr "A sua pontuação é"
 
-#: exe/webui/element.py:1401 exe/webui/element.py:1652
+#: exe/webui/element.py:1406 exe/webui/element.py:1661
 msgid "Get score"
 msgstr "Obter pontuação"
 
-#: exe/webui/element.py:1404 exe/webui/element.py:1655
-#: exe/webui/listablock.py:267
-msgid "Show/Hide Feedback"
-msgstr "Mostrar/Ocultar feedback"
-
-#: exe/webui/element.py:1407 exe/webui/element.py:1658
+#: exe/webui/element.py:1412 exe/webui/element.py:1667
 msgid "Show/Clear Answers"
 msgstr "Mostrar/Limpar Respostas"
 
-#: exe/webui/element.py:1417 exe/webui/element.py:1665
+#: exe/webui/element.py:1422 exe/webui/element.py:1674
 msgid "Show Answers"
 msgstr "Apresentar Respostas"
 
-#: exe/webui/element.py:1449 exe/webui/element.py:1695
-#: exe/webui/element.py:2286 exe/webui/element.py:2715
-#: exe/webui/listablock.py:301
+#: exe/webui/element.py:1458 exe/webui/element.py:1704
+#: exe/webui/element.py:2324 exe/webui/element.py:2784
+#: exe/webui/listablock.py:312
 msgid "Answers"
 msgstr "Respostas"
 
-#: exe/webui/element.py:1574
+#: exe/webui/element.py:1583
 msgid "Show Score?"
 msgstr "Mostrar pontuação?"
 
-#: exe/webui/element.py:1811
+#: exe/webui/element.py:1664
+msgid "Show/Hide Feedback"
+msgstr "Mostrar/Ocultar feedback"
+
+#: exe/webui/element.py:1820
 msgid "Please select a .flv file."
 msgstr "Por favor, escolha um ficheiro .flv"
 
-#: exe/webui/element.py:1827
+#: exe/webui/element.py:1836
 msgid "Select a flash video"
 msgstr "Selecionar um vídeo flash"
 
-#: exe/webui/element.py:1936
+#: exe/webui/element.py:1945
 msgid "text"
 msgstr "texto"
 
-#: exe/webui/element.py:1937
+#: exe/webui/element.py:1946
 msgid "newline"
 msgstr "fim de linha"
 
-#: exe/webui/element.py:1940
+#: exe/webui/element.py:1949
 msgid "Select a font size: "
 msgstr "Escolha o tamanho da fonte:"
 
-#: exe/webui/element.py:2050 exe/webui/element.py:2403
-#: exe/webui/element.py:2518 exe/webui/element.py:2535
+#: exe/webui/element.py:2059 exe/webui/element.py:2444
+#: exe/webui/element.py:2569 exe/webui/element.py:2587
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "Opção correta"
 
-#: exe/webui/element.py:2078 exe/webui/element.py:2431
+#: exe/webui/element.py:2087 exe/webui/element.py:2472
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "Eliminar opção"
 
-#: exe/webui/element.py:2208 exe/webui/element.py:2624
+#: exe/webui/element.py:2226 exe/webui/element.py:2679
 #: exe/webui/questionelement.py:111 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "Eliminar pergunta"
 
-#: exe/webui/element.py:2241 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2259 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "Adicionar outra opção"
 
-#: exe/webui/element.py:2520 exe/webui/element.py:2537
+#: exe/webui/element.py:2571 exe/webui/element.py:2589
 msgid "Wrong"
 msgstr "Errado"
 
-#: exe/webui/element.py:2639
+#: exe/webui/element.py:2694
 msgid "Add another option"
 msgstr "Adicionar outra opção"
 
@@ -10742,13 +10723,13 @@ msgstr "O estilo foi apagado corretamente"
 msgid "An unexpected error has occurred"
 msgstr "Aconteceu um erro inesperado"
 
-#: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:206
-#: exe/webui/truefalseelement.py:248
+#: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:210
+#: exe/webui/truefalseelement.py:252
 msgid "True"
 msgstr "Verdadeiro"
 
-#: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:210
-#: exe/webui/truefalseelement.py:250
+#: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:214
+#: exe/webui/truefalseelement.py:254
 msgid "False"
 msgstr "Falso"
 
