@@ -78,19 +78,19 @@ lomVocab = {
     "aggregationLevelValues": [
         [
             "1", 
-            _("1")
+            "1"
         ], 
         [
             "2", 
-            _("2")
+            "2"
         ], 
         [
             "3", 
-            _("3")
+            "3"
         ], 
         [
             "4", 
-            _("4")
+            "4"
         ]
     ], 
     "purposeValues": [
@@ -897,19 +897,19 @@ lomesVocab = {
     "aggregationLevelValues": [
         [
             "1", 
-            _("1")
+            "1"
         ], 
         [
             "2", 
-            _("2")
+            "2"
         ], 
         [
             "3", 
-            _("3")
+            "3"
         ], 
         [
             "4", 
-            _("4")
+            "4"
         ]
     ], 
     "purposeValues": [
@@ -1239,6 +1239,12 @@ lomesVocab = {
             "blended", 
             _("blended")
         ], 
+// 2014-04-07, JRF - this is obviously a mistake, that will have to be fixed eventually.
+// "presencial" is not an English word, but the translation of 'face to face'.
+// We don't fix it yet because it breaks compatibility with Agrega.
+// Now we have 'face to face' twice,  and we lack a value for the variable Asistencia (Attendance).
+// (not to be mistaken again with 'mixed environment' (variable Environment, Lugar) or
+// Blended (a Modality)
         [
             "presencial", 
             _("presencial")

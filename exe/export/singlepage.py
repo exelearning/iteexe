@@ -225,10 +225,10 @@ class SinglePage(Page):
         lb = "\n" #Line breaks
         headerTag = "div"
         articleTag = "div"
+        nivel = 1 #Always H1
         if dT == "HTML5":
             headerTag = "header"
             articleTag = "article"
-            nivel = 1
         
         html = ""
         html += '<'+articleTag+' class="node">'+lb
