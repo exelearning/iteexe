@@ -1,0 +1,25 @@
+@startuml
+'PlantUML Diagram. http://plantuml.sourceforge.net'
+
+actor User
+
+participant "eXe.view.forms.StyleManagerPanel" as V
+participant "eXe.controller.StyleManager" as C
+participant "StyleManagerPage" as M
+
+activate V
+V->User: Display output
+User -> V: input
+activate C
+V->C: event
+activate M
+C->M: HTTP Request (POST: action = 'doXXXXX')
+deactivate C
+note over M: Action performed in response to this request is implemented in render_POST.
+note over M: JSON message defined in render_GET.
+M->V: HTTP Response (JSON: action = 'YYYYY').
+deactivate M
+note over V: Output to be displayed defined in createPanel()
+V->User: Display 'YYYYY' panel
+deactivate V
+@enduml
