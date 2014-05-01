@@ -52,19 +52,31 @@ class StyleManagerPage(RenderableResource):
         
     def render_GET(self, request):
         """Called for all requests to this object"""
+        """ Every JSON response sent must have an 'action' field, which value will determine
+            the panel to be displayed in the WebUI """
         
         if (self.action == 'Properties'):
-            self.action     = 'List'
-            return json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'Properties'})
+            response = json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'Properties'})
             
         elif  (self.action == 'PreExport'):
-            self.action     = 'List'
-            return json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'PreExport'})
+            response = json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'PreExport'})
+            
+        elif  (self.action == 'StylesRepository'):
+            response = json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'StylesRepository'})
+        
         else:
-            return json.dumps({'success': True, 'styles': self.renderListStyles(), 'action': 'List'})
+            response = json.dumps({'success': True, 'styles': self.renderListStyles(), 'action': 'List'})
+            
+        # self.action must be reset to 'List'. If user exits the Style Manager window and
+        # opens it again, it must show the styles list panel, not the last panel opened
+        self.action = 'List'
+        return response
     
     def render_POST(self, request):
-
+        """ Called on client form submit """
+        """ Every form received must have an 'action' field, which value determines
+            the function to be executed in the server side.
+            The self.action attribute will be sent back to the client (see render_GET) """
         self.reloadPanel(request.args['action'][0])
         
         if (request.args['action'][0] == 'doExport'):
@@ -77,11 +89,15 @@ class StyleManagerPage(RenderableResource):
             self.doPropertiesStyle(request.args['style'][0])
         elif (request.args['action'][0] == 'doPreExport'):
             self.doPreExportStyle(request.args['style'][0])
+        elif (request.args['action'][0] == 'doStylesRepository'):
+            self.doStylesRepository()
+        elif (request.args['action'][0] == 'doStyleImportURL'):
+            self.doStyleImportURL(request.args['style_import_url'][0])
         elif (request.args['action'][0] == 'doList'):
             self.doList()
         #return self.render_GET(None)
     
-    def reloadPanel(self,action):
+    def reloadPanel(self, action):
         self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").reload("'+action+'")', filter_func=allSessionClients)
         
     def alert(self, title, mesg):
@@ -160,6 +176,30 @@ class StyleManagerPage(RenderableResource):
                 targetDir.rmtree()
                 self.alert(_(u'Error'), _(u'Incorrect style format (does not include content.css)'))
         self.action = ""
+        
+    def doStylesRepository(self):
+        self.action     = 'StylesRepository'
+        self.style      = ''
+        
+    def doStyleImportURL(self, url):
+        """
+        Download style from url and import into styles directory
+        """
+        def successDownload(result):
+            filename = result[0]
+            try:
+                log.debug(filename)
+                self.doImportStyle(filename)
+                self.client.sendScript('Ext.MessageBox.updateProgress(1, "100%", "Success!")')
+            finally:
+                Path(filename).remove()
+                
+        log.debug("Download style from %s" % url)
+        self.action = "StylesRepository"
+        self.client.sendScript('Ext.MessageBox.progress("Style Download", "Connecting to style URL...")')
+        
+        d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, self.client))
+        d.addCallback(successDownload)
 
     def doExportStyle(self, stylename, filename,cfgxml):
 
@@ -169,9 +209,6 @@ class StyleManagerPage(RenderableResource):
             log.debug("dir %s" % style.get_style_dir())
             self.__exportStyle(style.get_style_dir(), unicode(filename),cfgxml)
             
-
-    
-        
     def __exportStyle(self, dirstylename, filename,cfgxml):
         """
         Exporta un estilo a un archivo ZIP
@@ -224,6 +261,7 @@ class StyleManagerPage(RenderableResource):
         self.properties = styleProperties.renderPropertiesJSON()
         self.action     = 'Properties'
         self.style      = styleProperties.get_name()
+        
     def doPreExportStyle(self, style):
         styleDir        = self.config.stylesDir
         styleProperties = Style(styleDir/style)
@@ -234,5 +272,13 @@ class StyleManagerPage(RenderableResource):
     def doList(self):
         self.action     = 'List'
         self.style      = ''
+        
+    def progressDownload(self, numblocks, blocksize, filesize, client):
+        try:
+            percent = min((numblocks * blocksize * 100) / filesize, 100)
+        except:
+            percent = 100
+        client.sendScript('Ext.MessageBox.updateProgress(%f, "%d%%", "Downloading...")' % (float(percent) / 100, percent))
+        log.info('%3d' % (percent))
 
     

@@ -66,30 +66,14 @@ function createButtonPreExport(name, style) {
         tooltip: _('Export style: ')+name,
         icon: '/images/stock-export.png',
         itemId: 'export_style'+style,
+        button_class: 'pre_export_style',
         name: 'export_style'+style,
         style:"margin-right:4px;",
         value: style,
-        handler: function(button) {
-            var formpanel = button.up('form'),
-                form = formpanel.getForm();
-            var action = form.findField('action');
-                action.setValue('doPreExport');
-            var style = form.findField('style');
-                style.setValue(button.value);
-            form.submit({
-                success: function() {
-                    //formpanel.reload();
-                },
-                failure: function(form, action) {
-                    Ext.Msg.alert(_('Error'), action.result.errorMessage);
-                }
-            });
-            
-        }
     };
     return buttonExport;
 }
-function createButtonExport(name, stylen,xmlitems,lngitems) {
+function createButtonExport(name, stylen, xmlitems, lngitems) {
     var buttonExport = 
     {
         xtype: 'button',
@@ -97,50 +81,10 @@ function createButtonExport(name, stylen,xmlitems,lngitems) {
         icon: '/images/stock-export.png',
         itemId: 'export_style',
         name: 'export_style',
+        button_class: 'export_style',
         style:"margin-left:54px;",
         text: _('Export'),
         value: stylen,
-        handler: function(button) {
-            var formpanel = button.up('form'),
-            form = formpanel.getForm();
-            var action = form.findField('action');
-            action.setValue('doExport');
-            var filename = form.findField('filename');
-            var style = form.findField('style');
-            style.setValue(stylen);
-            /* for export with new xonfig.xml
-            var xdata = form.findField('xdata');
-            xdata.setValue(xmlcreate(xmlitems,lngitems));
-            */
-            var namefilexport=stylen;
-            if (namefilexport!='') namefilexport+='.zip';            
-            var fp = Ext.create("eXe.view.filepicker.FilePicker", {
-                type: eXe.view.filepicker.FilePicker.modeSave,
-                title: _("Export to ZIP Style as"),
-                modal: true,
-                scope: this,
-                prefilename:namefilexport,
-                callback: function(fp) {
-                    if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
-                        filename.setValue(fp.file.path);
-                        form.submit({
-                            success: function() {
-                                //formpanel.reload();
-                            },
-                            failure: function(form, action) {
-                                Ext.Msg.alert(_('Error'), action.result.errorMessage);
-                            }
-                        });
-                    }
-            });
-            fp.appendFilters([
-                { "typename": _("ZipFile"), "extension": "*.zip", "regex": /.*\.zip$/ },
-                { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
-            ]);
-            fp.show();
-           
-           
-        }
     };
     return buttonExport;
 }
@@ -152,35 +96,9 @@ function createButtonDelete(name, style) {
         icon: '/images/stock-delete.png',
         itemId: 'delete_style'+style,
         name: 'delete_style'+style,
+        button_class: 'delete_style',
         style:"margin-right:4px;",
         value: style,
-        handler: function(button) {
-            var formpanel = button.up('form'),
-            form = formpanel.getForm();
-            var action = form.findField('action');
-            action.setValue('doDelete');
-            var style = form.findField('style');
-            style.setValue(button.value);
-            Ext.Msg.show({
-                title: _("Delete style?"),
-                msg: _("Do you want to delete this style?"),
-                scope: this,
-                modal: true,
-                buttons: Ext.Msg.YESNOCANCEL,
-                fn: function(button, text, opt) {
-                    if (button == "yes") {
-                        form.submit({
-                            success: function() {
-                                //formpanel.reload();
-                            },
-                            failure: function(form, action) {
-                                Ext.Msg.alert(_('Error'), action.result.errorMessage);
-                            }
-                        });
-                    }
-                }
-            });
-        }
     };
     return buttonDelete;
 }
@@ -193,23 +111,8 @@ function createButtonProperties(name, style) {
         icon: '/images/info.png',
         itemId: 'properties_style'+style,
         name: 'properties_style'+style,
+        button_class: 'properties_style',
         value: style,
-        handler: function(button) {
-            var formpanel = button.up('form'),
-            form = formpanel.getForm();
-            var action = form.findField('action');
-            action.setValue('doProperties');
-            var style = form.findField('style');
-            style.setValue(button.value);
-            form.submit({
-                success: function() {
-                    //formpanel.reload();
-                },
-                failure: function(form, action) {
-                    Ext.Msg.alert(_('Error'), action.result.errorMessage);
-                }
-            });
-        }
     };
     return buttonProperties;
 }
@@ -246,7 +149,6 @@ function createPanelStyles(styles) {
             estilo = 'padding-top:5px; background-color: #FAFAFA; border-top-color: #B5B8C8; border-bottom-color: #B5B8C8; border-top-style:solid; border-bottom-style: solid; border-top-width:1px; border-bottom-width: 1px;';
         }
         
-        
         var item =
         { 
             xtype: 'container',
@@ -257,14 +159,6 @@ function createPanelStyles(styles) {
         };
         itemsShow[i] = item;
     }
-    var action =
-    { 
-        xtype: 'field',
-        hidden: true,
-        itemId: 'action',
-        name: 'action'
-    };
-    itemsShow.push(action);
     var filename =
     { 
         xtype: 'field',
@@ -282,22 +176,6 @@ function createPanelStyles(styles) {
     };
     itemsShow.push(style);
     panel = [
-         { 
-             xtype: 'textfield',
-             itemId: 'style_download_url',
-             name: 'style_download_url',
-             fieldLabel: _('URL'),
-             tooltip: _('URL to download the style from.'),
-         },
-         {
-              xtype: 'button',
-              itemId: 'style_download',
-              text: _('Download Style'),
-              tooltip: _('Download style from URL and import into system.'),
-              icon: '/images/stock-import.png',
-              style:'float:left;',
-              margin: 10,
-        },
         {
             xtype: 'button',
             tooltip: _('Import style to the system '),
@@ -307,37 +185,16 @@ function createPanelStyles(styles) {
             text: _('Import style'),
             style:'float:right;',
             margin: 10,
-            handler: function(button) {
-                var formpanel = button.up('form'),
-                form = formpanel.getForm();
-                var action = form.findField('action');
-                action.setValue('doImport');
-                var filename = form.findField('filename');
-                var fp = Ext.create("eXe.view.filepicker.FilePicker", {
-                    type: eXe.view.filepicker.FilePicker.modeOpen,
-                    title: _("Select ZIP Style file to import."),
-                    modal: true,
-                    scope: this,
-                    callback: function(fp) {
-                        if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
-                            filename.setValue(fp.file.path);
-                            form.submit({
-                                success: function() {
-                                    //formpanel.reload();
-                                },
-                                failure: function(form, action) {
-                                    Ext.Msg.alert(_('Error'), action.result.errorMessage);
-                                }
-                            });
-                        }
-                    }
-                });
-                fp.appendFilters([
-                   { "typename": _("ZIP Style"), "extension": "*.zip", "regex": /.*\.zip$/ },
-                   { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
-                ]);
-                fp.show();
-            }
+        },
+        {
+            xtype: 'button',
+            text: _('Styles repository'),
+            tooltip: _('Search and download new styles from the styles repository'),
+            icon: '/images/stock-import.png',
+            itemId: 'styles_repository',
+            name: 'styles_repository',
+            style:'float:right;',
+            margin: 10,
         },
         {
             xtype: 'fieldset',
@@ -408,15 +265,6 @@ function createPanelProperties(properties, stylen,mode,withbutton) {
             };
             itemsShow.push(row);
         }
-        var action =
-        { 
-            xtype: 'field',
-            hidden: true,
-            itemId: 'action',
-            name: 'action',
-            value:'',
-        };
-        itemsShow.push(action);
         var xdata =
         { 
             xtype: 'field',
@@ -483,13 +331,59 @@ function createPanelProperties(properties, stylen,mode,withbutton) {
     return panel;
 }
 
+function createPanelStylesRepository() {
+    var title=_("Download style from URL");
+    var itemsImportStyle = [
+        { 
+            xtype: 'textfield',
+            itemId: 'style_import_url',
+            name: 'style_import_url',
+            fieldLabel: _('URL'),
+            tooltip: _('URL to download the style from.'),
+        },
+        {
+            xtype: 'button',
+            text: _('Import Style from URL'),
+            tooltip: _('Download style from URL and import into system.'),
+            itemId: 'style_import_from_url',
+            name: 'style_import_from_url',
+            icon: '/images/stock-import.png',
+            style:'float:left;',
+            margin: 10,
+        },
+    ];
+    panel = [
+        {
+            xtype: 'fieldset',
+            title: title,
+            margin: 10,
+            items: itemsImportStyle,
+        },
+        {
+            xtype: 'button',
+            text: _('Return'),
+            tooltip: _('Return to style manager'),
+            icon: '/images/stock-go-back.png',
+            itemId: 'return_styles_list',
+            name: 'return_styles_list',
+            margin: 10,
+        }
+    ];
+    
+    return panel;
+}
+
 function createPanel() {
     var panel = {};
+    
+    // The JSON response to this request must have an 'action' field,
+    // that determines de panel to be displayed
     Ext.Ajax.request({
         url: 'stylemanager',
         scope: this,
         async: false,
         success: function(response) {
+            console.log(response);
             var json = Ext.JSON.decode(response.responseText);
             if (json.action == 'List') {
                 panel = createPanelStyles(json.styles);
@@ -498,19 +392,37 @@ function createPanel() {
                 panel = createPanelStyles(json.styles);
             }
             else if (json.action == 'Properties') {
-            //createPanelProperties(json.properties, json.style,read only,with button export)
+                //createPanelProperties(json.properties, json.style,read only,with button export)
                 panel = createPanelProperties(json.properties, json.style,true,false);
-
             }
             else if (json.action == 'PreExport') {
-            //createPanelProperties(json.properties, json.style,read only,with button export)
                 panel = createPanelProperties(json.properties, json.style,true,true);
+            }
+            else if (json.action == 'StylesRepository') {
+                panel = createPanelStylesRepository();
             }
             else {
                 panel = createPanelStyles(json.styles);
             }
         }
-    });            
+    });
+
+    // Every panel has an 'action' hidden field, wich value determines
+    // the action to be performed in server side on submitting the form.
+    // That value should be set by the handler function of the clicked button
+    // (see eXe.controller.StyleManager)
+    // This is NOT the value that would be returned in the JSON response
+    //    * 'action' hidden field in form:      client --> server
+    //    * 'action' field in JSON response:    server --> client
+    var action =
+    { 
+        xtype: 'field',
+        hidden: true,
+        itemId: 'action',
+        name: 'action',
+        value: '',
+    };
+    panel.push(action);
     return panel;
 };
 
@@ -531,16 +443,14 @@ Ext.define('eXe.view.forms.StyleManagerPanel', {
         me.doLayout();        
     },
     
-    reload: function(n) {
+    reload: function(action) {
         var panel={};
         var me = Ext.getCmp("stylemanagerwin").down("form");
         var stylemanager = Ext.getCmp("stylemanagerwin");
-        var formpanel = stylemanager.down('form'); 
+        var formpanel = stylemanager.down('form');
         formpanel.removeAll(false);
-        panel =  createPanel();        
+        panel =  createPanel();
         formpanel.add(panel);
         me.doLayout();
-
-
     }
 });
