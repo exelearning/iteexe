@@ -383,7 +383,6 @@ function createPanel() {
         scope: this,
         async: false,
         success: function(response) {
-            console.log(response);
             var json = Ext.JSON.decode(response.responseText);
             if (json.action == 'List') {
                 panel = createPanelStyles(json.styles);
