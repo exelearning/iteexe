@@ -1,6 +1,6 @@
 # eXeLearning Catalan (Valencia) PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2001-2013 eXeLearning.net
+# Copyright (C) 2001-2014 eXeLearning.net
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
 # Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012.
@@ -9,9 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2014-05-01 12:49+0200\n"
-"PO-Revision-Date: 2013-12-03 12:50+0100\n"
+"PO-Revision-Date: 2014-05-01 20:10+0200\n"
 "Last-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\n"
 "Language-Team: LliureX\n"
 "Language: ca_ES\n"
@@ -4558,25 +4558,23 @@ msgstr "Classificació"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:23
 #: exe/jsui/scripts/app/view/forms/LomSections.js:193
-#, fuzzy
 msgid "resources and integrated resources"
-msgstr "Una referència a un recurs relacionat."
+msgstr "mitjanes i mitjanes integrades"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:24
 #: exe/jsui/scripts/app/view/forms/LomSections.js:194
-#, fuzzy
 msgid "learning objects"
-msgstr "exelearning.net"
+msgstr "objectes d'aprenentatge"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:25
 #: exe/jsui/scripts/app/view/forms/LomSections.js:195
 msgid "teaching sequences"
-msgstr ""
+msgstr "seqüències didàctiques"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:26
 #: exe/jsui/scripts/app/view/forms/LomSections.js:196
 msgid "training programmes, courses and plans"
-msgstr ""
+msgstr "cursos, plans i programes de formació"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:44
 #: exe/jsui/scripts/app/view/forms/LomSections.js:76
@@ -6905,6 +6903,7 @@ msgid "presencial"
 msgstr "representa"
 
 #: exe/jsui/scripts/lomvocab.js:1248
+#, fuzzy
 msgid "face to face"
 msgstr "cara a cara"
 
@@ -10899,4 +10898,3 @@ msgstr ""
 "El fitxer d'iDevices/generic.data o el paquet que proveu de carregar s'ha"
 " creat amb una versió més nova de l'eXe. Actualitzeu l'eXe i torneu-ho a "
 "provar."
-

@@ -1,5 +1,6 @@
 # eXeLearning Catalan PO file
-# Copyright (C) 2004-2014 EXELearning.org
+# Copyright (C) 2004-2011 EXELearning.org
+# Copyright (C) 2011-2014 EXELearning.net
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
 #
@@ -7,9 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2014-05-01 12:49+0200\n"
-"PO-Revision-Date: 2014-01-16 11:58+0100\n"
+"PO-Revision-Date: 2014-05-01 20:16+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: Catalan <info@softcatala.org>\n"
 "Language: ca\n"
@@ -4539,25 +4540,23 @@ msgstr "Classificació "
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:23
 #: exe/jsui/scripts/app/view/forms/LomSections.js:193
-#, fuzzy
 msgid "resources and integrated resources"
-msgstr "Referència per al recurs esmentat"
+msgstr "mitjanes i mitjanes integrades"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:24
 #: exe/jsui/scripts/app/view/forms/LomSections.js:194
-#, fuzzy
 msgid "learning objects"
-msgstr "exelearning.net"
+msgstr "objectes d'aprenentatge"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:25
 #: exe/jsui/scripts/app/view/forms/LomSections.js:195
 msgid "teaching sequences"
-msgstr ""
+msgstr "seqüències didàctiques"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:26
 #: exe/jsui/scripts/app/view/forms/LomSections.js:196
 msgid "training programmes, courses and plans"
-msgstr ""
+msgstr "cursos, plans i programes de formació"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:44
 #: exe/jsui/scripts/app/view/forms/LomSections.js:76
@@ -6888,6 +6887,7 @@ msgid "presencial"
 msgstr "representa "
 
 #: exe/jsui/scripts/lomvocab.js:1248
+#, fuzzy
 msgid "face to face"
 msgstr "cara a cara"
 
@@ -10878,4 +10878,3 @@ msgstr ""
 "Els  idevices del vostre fitxer generic.data o paquet que esteu carregant"
 " han estat creats amb un versió més nova de eXe. Si-us-plau actualitzeu "
 "eXe i torneu-ho a provar."
-

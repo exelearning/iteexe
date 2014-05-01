@@ -1,16 +1,16 @@
 # EXELearning Galician PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2001-2013 EXELearning.net
+# Copyright (C) 2001-2014 EXELearning.net
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
-# Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>, 2012, 2013.
+# Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>, 2012-2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2014-05-01 12:49+0200\n"
-"PO-Revision-Date: 2013-12-03 20:31+0100\n"
+"PO-Revision-Date: 2014-05-01 20:25+0200\n"
 "Last-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\n"
 "Language-Team: TAGEN ATA <localizacion@tagenata.net>\n"
 "Language: gl\n"
@@ -4626,25 +4626,23 @@ msgstr "Clasificación"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:23
 #: exe/jsui/scripts/app/view/forms/LomSections.js:193
-#, fuzzy
 msgid "resources and integrated resources"
-msgstr "Unha referencia a un recurso relacionado."
+msgstr "medias e medias integradas"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:24
 #: exe/jsui/scripts/app/view/forms/LomSections.js:194
-#, fuzzy
 msgid "learning objects"
-msgstr "taexelearning.neto"
+msgstr "obxectos de aprendizaxe"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:25
 #: exe/jsui/scripts/app/view/forms/LomSections.js:195
 msgid "teaching sequences"
-msgstr ""
+msgstr "secuencias didácticas"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:26
 #: exe/jsui/scripts/app/view/forms/LomSections.js:196
 msgid "training programmes, courses and plans"
-msgstr ""
+msgstr "cursos, plans e programas de formación"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:44
 #: exe/jsui/scripts/app/view/forms/LomSections.js:76
@@ -6983,6 +6981,7 @@ msgid "presencial"
 msgstr "representar"
 
 #: exe/jsui/scripts/lomvocab.js:1248
+#, fuzzy
 msgid "face to face"
 msgstr "cara a cara"
 
@@ -10949,4 +10948,3 @@ msgstr ""
 "O seu ficheiro idevices/generic.data ou o paquete que está a cargar foi "
 "creado con unha versión máis recente de eXe. Actulice o eXe e ténteo de "
 "novo.  Porfavor actualice eXe e ténteo de novo."
-
