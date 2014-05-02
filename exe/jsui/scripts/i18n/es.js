@@ -640,7 +640,7 @@ translations = {
  "You do not have the permissions to open the file": "No tiene permisos para abrir el fichero", 
  "remember": "recordar", 
  "An entity responsible for making the resource available.": "Entidad responsable de hacer disponible el recurso.", 
- "Blended": "Semipresencial", 
+ "Blended": "Asistencia mixta", 
  "Provide a caption for the \nMP3 file. This will appear in the players title bar as well.": "Introduzca un t\u00edtulo para el archivo MP3. \nAparecer\u00e1 en la barra de t\u00edtulo del reproductor tambi\u00e9n.", 
  "Foot in Mouth": "Pie en la boca", 
  "ieSpell not detected. Do you want to install it now?": "No se detect\u00f3 'ieSpell'.  \u00bfDesea instalarlo ahora?", 

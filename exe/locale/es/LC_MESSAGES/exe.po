@@ -4989,7 +4989,7 @@ msgstr "Presencial"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:415
 msgid "Blended"
-msgstr "Semipresencial"
+msgstr "Asistencia mixta"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:422
 msgid "Distance"
