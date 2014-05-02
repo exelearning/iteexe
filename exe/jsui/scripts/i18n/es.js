@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2014-05-01 13:01+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage-Team: Spanish <jrfern@telefonica.net>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2014-05-02 14:00+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage-Team: Spanish <jrfern@telefonica.net>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Actividad desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cree el caso pr\u00e1ctico. Un buen caso es aquel \nque describe una controversia o propone una escena describiendo los personajes \ninvolucrados y la situaci\u00f3n. Tambi\u00e9n debe permitir que se realicen acciones \npara obtener la resoluci\u00f3n de la situaci\u00f3n.", 
  "Xhosa ": "Xhosa ", 
@@ -1632,7 +1632,7 @@ translations = {
  "Game Won Message": "Mensaje al ganar el juego", 
  "Portugese Wikipedia Article": "Art\u00edculo de la wikipedia en portugu\u00e9s", 
  "Enter the available choices here. \nYou can add options by clicking the \"Add another option\" button. Delete options by \nclicking the red X next to the option.": "Introduzca aqu\u00ed las opciones disponibles. \nPuede a\u00f1adir opciones pulsando en el bot\u00f3n \"Agregar otra opci\u00f3n\". \nElimine opciones haciendo clic en la X que se encuentra a la derecha de cada opci\u00f3n.", 
- "blended": "semipresencial", 
+ "blended": "asistencia mixta", 
  "Insert\/Remove Bulleted List": "Lista desordenada", 
  "The changes you made will be lost if you navigate away from this page.": "Los cambios realizados se perder\u00e1n si sale de esta p\u00e1gina.", 
  "Chuvash ": "Chuvasho ", 

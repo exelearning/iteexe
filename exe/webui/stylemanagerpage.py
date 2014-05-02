@@ -250,7 +250,7 @@ class StyleManagerPage(RenderableResource):
             self.config.styleStore.delStyle(style)
             log.debug("delete style: %s" % style.get_name())
             self.alert(_(u'Correct'), _(u'Style deleted correctly'))
-            self.reloadPanel()
+            self.reloadPanel('doList')
         except:
             self.alert(_(u'Error'), _(u'An unexpected error has occurred'))
         self.action = ""
