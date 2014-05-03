@@ -10,15 +10,16 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2014-05-01 12:49+0200\n"
-"PO-Revision-Date: 2014-05-01 20:16+0200\n"
+"PO-Revision-Date: 2014-05-04 00:33+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: Catalan <info@softcatala.org>\n"
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n!=1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
+"X-Generator: Lokalize 1.4\n"
 
 #: exe/application.py:204
 #, python-format
@@ -392,7 +393,8 @@ msgstr "FPD - Cita"
 msgid ""
 "Quotation is an iDevice that provides the students with quotations to "
 "reflect upon."
-msgstr "Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
+msgstr ""
+"Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
 
 #: exe/engine/citasparapensarfpdidevice.py:40
 #: exe/engine/citasparapensarfpdidevice.py:139
@@ -438,7 +440,7 @@ msgstr "Instruccions per mostrar al paràgraf principal"
 
 #: exe/engine/clickinorderidevice.py:62
 msgid "Game Won Feedback Overlay"
-msgstr "Retroalimentació superposada mostrant joc guanyat "
+msgstr "Realimentació mostrant joc guanyat "
 
 #: exe/engine/clickinorderidevice.py:62
 msgid "Shown over when the game is won"
@@ -446,7 +448,7 @@ msgstr "Mostra per damunt quan es guanyi el joc"
 
 #: exe/engine/clickinorderidevice.py:63
 msgid "Correct Answer Feedback Overlay"
-msgstr "Retroalimentació superposada mostrant resposta correcta "
+msgstr "Realimentació mostrant resposta correcta "
 
 #: exe/engine/clickinorderidevice.py:63
 msgid "Shown over game when correct answer given"
@@ -454,7 +456,7 @@ msgstr "Mostra per damunt del joc quan es contesti de forma correcta"
 
 #: exe/engine/clickinorderidevice.py:64
 msgid "Wrong Answer Feedback Overlay"
-msgstr "Retroalimentació superposada mostrant resposta no correcta"
+msgstr "Realimentació mostrant resposta incorrecta "
 
 #: exe/engine/clickinorderidevice.py:64
 msgid "Shown over game when wrong answer is given"
@@ -549,7 +551,7 @@ msgstr "Sense cronometre"
 
 #: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:105
 msgid "Stopwatch Mode"
-msgstr "Mode sense cronometre "
+msgstr "Mode cronometre "
 
 #: exe/engine/clickinorderidevice.py:107
 msgid "Shuffle Questions"
@@ -1588,7 +1590,8 @@ msgstr "Mike Dawson, Toughra Technologies FZ LLC"
 
 #: exe/engine/hangmanidevice.py:53
 msgid "Hangman style word game with customizable images."
-msgstr "Joc de paraules semblant al joc del penjat amb imatges personalitzables "
+msgstr ""
+"Joc de paraules semblant al joc del penjat amb imatges personalitzables "
 
 #: exe/engine/hangmanidevice.py:61
 msgid "Instructions for Game."
@@ -1689,7 +1692,8 @@ msgstr "Missatge de nivell superat"
 
 #: exe/engine/hangmanidevice.py:115 exe/engine/hangmanidevice.py:163
 msgid "Player will see this message when they guess the word correctly"
-msgstr "El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
+msgstr ""
+"El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
 
 #: exe/engine/hangmanidevice.py:117 exe/engine/hangmanidevice.py:166
 msgid "Game Won Message"
@@ -2698,7 +2702,7 @@ msgstr "Superposa a l'àrea principal quan el jugador no encerti"
 
 #: exe/engine/placetheobjectsidevice.py:79
 msgid "Number of Columns in part bin"
-msgstr "Nombre de columnes en «part bin»"
+msgstr "Nombre de columnes en la caixa de peces"
 
 #: exe/engine/placetheobjectsidevice.py:79
 msgid "Columns part bin"
@@ -3484,11 +3488,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 2.5"
 
 #: exe/export/pages.py:76
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
 
 #: exe/export/pages.py:77
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
 
 #: exe/export/pages.py:78
 msgid "Creative Commons Attribution License 3.0"
@@ -3508,11 +3514,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 3.0"
 
 #: exe/export/pages.py:82
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
 
 #: exe/export/pages.py:83
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
 
 #: exe/export/pages.py:84
 msgid "Creative Commons Attribution License 4.0"
@@ -3532,11 +3540,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 4.0"
 
 #: exe/export/pages.py:88
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
 
 #: exe/export/pages.py:89
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
 
 #: exe/export/pages.py:90
 msgid "GNU General Public License"
@@ -4416,7 +4426,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:76
 msgid "SCORM Options (1.2 and 2004)"
-msgstr ""
+msgstr "Opcions SCORM (1.2 i 2004)"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:84
 msgid "Add Previous/Next links within SCOs?"
@@ -4985,7 +4995,8 @@ msgstr "Fons de la capçalera"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:457
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr "Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
+msgstr ""
+"Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:475
 msgid "Load Image"
@@ -5052,8 +5063,10 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:571
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:574
-msgid "Checking this option, the saved package may be opened with eXe >= 0.20.4"
-msgstr "Si marqueu aquesta opció el paquet desat es podrà obrir amb eXe >= 0.20.4"
+msgid ""
+"Checking this option, the saved package may be opened with eXe >= 0.20.4"
+msgstr ""
+"Si marqueu aquesta opció el paquet desat es podrà obrir amb eXe >= 0.20.4"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:26
 msgid "Select Browser"
@@ -6796,7 +6809,8 @@ msgid "process/procedure supporting service"
 msgstr "servei d'ajuda al procediment / procés "
 
 #: exe/jsui/scripts/lomvocab.js:830
-msgid "individual/cooperative/collaborative learning/working management service"
+msgid ""
+"individual/cooperative/collaborative learning/working management service"
 msgstr ""
 "serveis de gestió del treball / individual / cooperatiu / aprenentatge "
 "col·laboratiu "
@@ -6882,12 +6896,10 @@ msgid "blended"
 msgstr "semipresencial"
 
 #: exe/jsui/scripts/lomvocab.js:1244
-#, fuzzy
 msgid "presencial"
-msgstr "representa "
+msgstr "presencial "
 
 #: exe/jsui/scripts/lomvocab.js:1248
-#, fuzzy
 msgid "face to face"
 msgstr "cara a cara"
 
@@ -7541,7 +7553,7 @@ msgstr "Mostra com:"
 
 #: exe/webui/element.py:669
 msgid "by"
-msgstr ""
+msgstr "per"
 
 #: exe/webui/element.py:676 exe/webui/element.py:1095
 msgid "blank for original size"
@@ -7762,7 +7774,7 @@ msgstr "Suprimeix aquesta vida"
 
 #: exe/webui/hangmanblock.py:352
 msgid "Add Chance"
-msgstr "Afegeix probabilitat"
+msgstr "Afegeix un altre intent"
 
 #: exe/webui/hangmanblock.py:357
 msgid "<h2>Words to Guess</h2>"
@@ -7781,7 +7793,8 @@ msgid "eXe problem"
 msgstr "problema d'eXe"
 
 #: exe/webui/iecmwarning.py:46
-msgid "The Compatibility View of your browser (Internet Explorer) is turned on."
+msgid ""
+"The Compatibility View of your browser (Internet Explorer) is turned on."
 msgstr ""
 "La visualització de compatibilitat del vostre navegador (Internet "
 "explorer) està habilitada."
@@ -7960,7 +7973,8 @@ msgstr ""
 " completa aquesta eina."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
-msgid "Currently not supported by your browser, use keyboard shortcuts instead."
+msgid ""
+"Currently not supported by your browser, use keyboard shortcuts instead."
 msgstr ""
 "El vostre navegador actualment no ho admet, utilitzeu les dreceres de "
 "teclat."
@@ -8574,7 +8588,9 @@ msgstr "gen.,febr.,març,abr.,maig,juny,jul.,ag.,set.,oct.,nov.,des."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
-msgid "January,February,March,April,May,June,July,August,September,October,November,December"
+msgid ""
+"January,February,March,April,May,June,July,August,September,October,November,D"
+"ecember"
 msgstr ""
 "gener, febrer, març, abril, maig, juny, juliol, agost, setembre, octubre,"
 " novembre, desembre"
@@ -8618,10 +8634,12 @@ msgid ""
 "TinyMCE \"advalign\" plugin error: \"execcommand_callback\" is already "
 "defined"
 msgstr ""
+"error del connector TinyMCE «advalign» :  «execcommand_callback»  ja és "
+"definida"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advalign/langs/en.js:4
 msgid "\"advalign\" for TinyMCE requires jQuery"
-msgstr ""
+msgstr "Cal JQuery per a \"advalign\" al TinyMCE"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 msgid "No Shadow"
@@ -8910,7 +8928,8 @@ msgstr "Tots els drets reservats"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:14
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:23
-msgid "You will not be able to edit the header or the caption from this dialog."
+msgid ""
+"You will not be able to edit the header or the caption from this dialog."
 msgstr "L'encapçalament i títol no seran editables des d'aquest diàleg."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
@@ -9097,7 +9116,7 @@ msgstr "Restaura el contingut auto-desat"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/clearfloat/langs/en.js:3
 msgid "Clear (new line or block)"
-msgstr ""
+msgstr "Suprimeix (línia nova o bloc)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
@@ -9796,11 +9815,11 @@ msgstr "Opcions d'àudio incrustat"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "HTML5 video (ogv/ogg, webm, mp4)"
-msgstr ""
+msgstr "vídeo HTML5 (ogv/ogg , webm , mp4)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "HTML5 audio (mp3, ogg, wav)"
-msgstr ""
+msgstr "audio HTML5 (mp3, ogg, wav)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Flash (swf, flv, mp3)"
