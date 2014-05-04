@@ -1,0 +1,28 @@
+@startuml
+'PlantUML Diagram. http://plantuml.sourceforge.net'
+
+actor User
+
+participant "eXe.view.forms.StyleManagerPanel" as V
+participant "eXe.controller.StyleManager" as C
+participant "StyleManagerPage" as M
+participant "Repository" as R
+
+activate V
+V->User: Display style list
+User -> V: click 'Styles repository' button
+activate C
+V->C: click event on '#styles_repository'
+activate M
+C->M: HTTP Request (POST: action = 'doStylesRepository')
+deactivate C
+activate R
+M->R: XML-RPC, method: listStyles
+R->M: styles : XML
+note over M: Translate XML data into JSON
+M->V: HTTP Response (JSON: action = 'StylesRepository', syltes = [{style1}, {style2}, ...])
+deactivate M
+note over V: createRepStylesListPanel(rep_styles)
+V->User: Display 'StylesRepository' panel
+deactivate V
+@enduml
