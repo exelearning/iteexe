@@ -349,7 +349,9 @@ class Config:
         if not G.application.standalone: 
              #FM: Copy styles         
             if not os.path.exists(self.stylesDir) or not os.listdir(self.stylesDir):
-                self.copyStyles()                       
+                self.copyStyles() 
+            else:
+                self.updateStyles()                      
         else:
             if G.application.portable:
                 if os.name == 'posix': 
@@ -493,7 +495,19 @@ class Config:
         if os.path.exists(bkstyle):            
             if os.path.exists(dststyle) and not os.listdir(self.stylesDir): shutil.rmtree(dststyle)                 
             shutil.copytree(bkstyle,dststyle )
-                    
+            
+    def updateStyles(self):
+        bkstyle=self.webDir/'style'
+        dststyle=self.stylesDir
+        if os.stat(bkstyle).st_mtime - os.stat(dststyle).st_mtime > 1:
+            for name in os.listdir(bkstyle):
+                bksdirstyle=os.path.join(bkstyle, name)
+                dstdirstyle=os.path.join(dststyle, name)
+                if os.path.isdir(bksdirstyle):
+                    if os.path.exists(dstdirstyle):shutil.rmtree(dstdirstyle)
+                    shutil.copytree(bksdirstyle, dstdirstyle)
+                else:
+                    shutil.copy(bksdirstyle, dstdirstyle)                    
                     
 
     def loadLocales(self):
