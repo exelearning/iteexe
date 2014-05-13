@@ -173,6 +173,14 @@ class Checker:
                             galleryimage._imageResource = resource
                         if isinstance(idevice, Idevice) and idevice.klass == 'ImageMagnifierIdevice':
                             idevice.imageMagnifier.imageResource = resource
+                        if isinstance(idevice, Idevice) and idevice.klass == 'GalleryIdevice':
+                            for image in idevice.images:
+                                if image._imageResource.storageName == resource.storageName:
+                                    image._imageResource = resource
+                                    break
+                                elif image._thumbnailResource.storageName == resource.storageName:
+                                    image._thumbnailResource = resource
+                                    break
                 elif self.package._backgroundImg and path == self.package._backgroundImg.path:
                     self.package._backgroundImg = Resource(self.package, path)
         for check in dir(self):
