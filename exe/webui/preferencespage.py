@@ -36,49 +36,49 @@ import os.path
 log = logging.getLogger(__name__)
 
 langNames = {
-   'ar': 'العربية',                    # Árabe
+   'ar': 'العربية',                    # Arabic
    'ast': 'asturianu',
    'bg': 'Български',                  # Bulgarian
    'br': 'Brezhoneg',                  # Breton
    'ca': 'Català',                     # Catal\xc3\xa0, Catalonian
    # 'ca_VALENCIA': 'Valencià',        # Valenci\xc3\xa0
    'ca_ES@valencia': 'Valencià',       # Valenci\xc3\xa0, Valencian Catalonian
-   'cs': 'Čeština',                    # \xc4\x8cesky
+   'cs': 'Čeština, český jazyk',       # \xc4\x8cesky, Czech
    'da': 'Dansk',
    'de': 'Deutsch',                    # German
    'ee': 'Eʋegbe',                     # Ewe
    'el': 'Ελληνικά',                   # \xce\x95\xce\xbb\xce\xbb\xce\xb7\xce\xbd\xce\xb9\xce\xba\xce\xac, Greek
    'en': 'English',
-   'es': 'Español',                    # Espa\xc3\xb1ol
-   'et': 'Eesti',                      # Estonio
+   'es': 'Español',                    # Espa\xc3\xb1ol, Spanish
+   'et': 'Eesti',                      # Estonian
    'eu': 'Euskara',                    # Basque
    'fa': 'فارسی',                      # Farsi, Persian
    'fi': 'Suomi',                      # Finnish
-   'fr': 'Français',                   # Fran\xc3\xa7ais
+   'fr': 'Français',                   # Fran\xc3\xa7ais, French
    'gl': 'Galego',                     # Galician
    'hr': 'Hrvatski',                   # Croatian
-   'hu': 'Magyar',
-   'id': 'Bahasa Indonesian',
-   'ig': "Nunivak Cup'ig",
-   'is': '\xc3\x8dslenska',
+   'hu': 'Magyar',                     # Hungarian
+   'id': 'Bahasa Indonesia',           # Indonesian
+   'ig': 'Asụsụ Igbo',                 # Nunivak Cup'ig, Igbo
+   'is': 'Íslenska',                   # \xc3\x8dslenska, Icelandic
    'it': 'Italiano',
    'ja': '日本語',                      # \xe6\x97\xa5\xe6\x9c\xac\xe8\xaa\x9e', Japanese
-   'km': 'ភាសាខ្មែរ',                        # Khmer, Camboyano
-   'lo': 'Lao; Laotian',
+   'km': 'ភាសាខ្មែរ',                        # Khmer, Cambodyan
+   'lo': 'ພາສາລາວ',                                         # Lao, Laotian
    'mi': 'Māori',                      # M\xc4\x81ori
-   'nb':  'Norsk bokmål',              # Bokm\xc3\xa5l
-   'nl': 'Nederlands',
-   'pl': 'J\xc4\x99zyk Polski, polszczyzna',
+   'nb':  'Norsk bokmål',              # Bokm\xc3\xa5l, Norwegian Bokmål
+   'nl': 'Nederlands',                 # Dutch
+   'pl': 'Język polski, polszczyzna',  # J\xc4\x99zyk Polski, polszczyzna
    'pt': 'Português',                  # Portugu\xc3\xaas
-   'pt_br': 'Brazillian Portuguese',
+   'pt_br': 'Português do Brazil',     # Brazillian Portuguese
    'ru': 'Русский',                    # Russian
-   'sk': 'Sloven\xc4\x8dina, Slovensk\xc3\xbd Jazyk',
-   'sl': 'Slovenščina',                # Sloven\xc5\xa1\xc4\x8dina, Slovenian
+   'sk': 'Slovenčina, slovenský jazyk', # Sloven\xc4\x8dina, Slovensk\xc3\xbd Jazyk - Slovak
+   'sl': 'Slovenščina',                # Sloven\xc5\xa1\xc4\x8dina - Slovene
    'sr': 'Српски / srpski',            # Srpski, serbio
-   'sv': 'Svenska',
-   'th':  'ไทย',                                                            #  \xe0\xb8\xa0\xe0\xb8\xb2\xe0\xb8\xa9\xe0\xb8\xb2\xe0\xb9\x84\xe0\xb8\x97\xe0\xb8\xa2, Thai
-   'tl': 'Tagalog',
-   'tg': 'Tajik',
+   'sv': 'Svenska',                    # Swedish
+   'th':  'ไทย',                                                            #  \xe0\xb8\xa0\xe0\xb8\xb2\xe0\xb8\xa9\xe0\xb8\xb2\xe0\xb9\x84\xe0\xb8\x97\xe0\xb8\xa2 - Thai
+   'tl': 'Wikang Tagalog, ᜏᜒᜃᜅ᜔ ᜆᜄᜎᜓᜄ᜔', # Tagalog
+   'tg': 'тоҷикӣ, toğikī, تاجیکی‎',    # Tajik
    'tr': 'Türkçe',                     # Turkish
    'tw': 'Twi',
    'uk': 'Українська',                 # Ukrainian
