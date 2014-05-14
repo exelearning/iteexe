@@ -322,8 +322,7 @@ Ext.define('eXe.controller.Toolbar', {
     },
     
     toolsRefresh: function() {
-        eXe.app.quitWarningEnabled = false;
-        window.location = window.location;
+        eXe.app.reload();
     },
 
     toolsPreferences: function() {

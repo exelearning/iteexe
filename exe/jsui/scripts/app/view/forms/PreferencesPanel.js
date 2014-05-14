@@ -165,7 +165,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
             	        		form = formpanel.getForm();
             	        		form.submit({
             	        			success: function() {
-            	        				nevow_clientToServerEvent('reload');
+            	        		        eXe.app.reload();
             	        			},
             	        			failure: function(form, action) {
             	        				Ext.Msg.alert(_('Error'), action.result.errorMessage);
