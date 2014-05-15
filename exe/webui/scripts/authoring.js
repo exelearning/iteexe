@@ -444,20 +444,15 @@ function execute_submitLink(action, object, changed, currentNode)
 }
 function submitLink(action, object, changed, currentNode) 
 {
-    // Close full screen
-    if(action=='changeNode') {
-        var ed = "";
-        if (typeof(tinyMCE)!='undefined' && tinyMCE.activeEditor) ed = tinyMCE.activeEditor;
-        if (ed!="" && ed.id=="mce_fullscreen") {
-            ed.execCommand('mceFullScreen');
-            setTimeout(function(){
-                execute_submitLink(action, object, changed, currentNode) 
-            },500);
-        } else {
-            execute_submitLink(action, object, changed, currentNode) 
-        }
-    } else {    
-        execute_submitLink(action, object, changed, currentNode) 
+    var ed = "";
+    if (typeof(tinyMCE)!='undefined' && tinyMCE.activeEditor) ed = tinyMCE.activeEditor;
+    if (ed!="" && ed.id=="mce_fullscreen") {
+        ed.execCommand('mceFullScreen');
+        setTimeout(function(){
+            execute_submitLink(action, object, changed, currentNode); 
+        },500);
+    } else {
+        execute_submitLink(action, object, changed, currentNode);
     }
 }
 
@@ -775,6 +770,7 @@ var $exeAuthoring = {
             if (top.Ext.isIE) {
                 $exeAuthoring.changeFlowPlayerPathInIE();
             }
+            eXe.app.fireEvent('authoringLoaded');
         }
     }
 }

@@ -614,14 +614,14 @@ class Package(Persistable):
 
     def set_objectives(self, value):
         lang_str = self.lang.encode('utf-8')
-        value_str = value.encode('utf-8')
+        value_str = _("Objectives").upper() + ": " + value.encode('utf-8')
         for metadata in [self.lom, self.lomEs]:
             description = metadata.get_general().get_description()
             if description:
                 description_found = False
                 for desc in description:
                     for string in desc.get_string():
-                        if string.get_valueOf_() == self._objectives.encode('utf-8'):
+                        if string.get_valueOf_() == _("Objectives").upper() + ": " + self._objectives.encode('utf-8'):
                             description_found = True
                             if value:
                                 string.set_language(lang_str)
@@ -641,14 +641,14 @@ class Package(Persistable):
 
     def set_preknowledge(self, value):
         lang_str = self.lang.encode('utf-8')
-        value_str = value.encode('utf-8')
+        value_str = _("Preknowledge").upper() + ": "  + value.encode('utf-8')
         for metadata in [self.lom, self.lomEs]:
             description = metadata.get_general().get_description()
             if description:
                 description_found = False
                 for desc in description:
                     for string in desc.get_string():
-                        if string.get_valueOf_() == self._preknowledge.encode('utf-8'):
+                        if string.get_valueOf_() == _("Preknowledge").upper() + ": "  + self._preknowledge.encode('utf-8'):
                             description_found = True
                             if value:
                                 string.set_language(lang_str)

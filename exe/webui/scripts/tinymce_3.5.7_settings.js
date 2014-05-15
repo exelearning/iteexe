@@ -37,6 +37,9 @@ tinyMCE.init({
 	setup : function(ed) {
 		ed.onInit.add(function(ed, e) {
 			$exeAuthoring.countBase64(ed);
+			$(ed.getDoc()).bind('drop', function(event){
+				return tinymce.dom.Event.cancel(event);
+			});		
 		});	
 		ed.onChange.add(function(ed, e) {
 			$exeAuthoring.compareBase64(ed);

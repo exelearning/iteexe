@@ -118,12 +118,20 @@ class TrueFalseBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
+        lb = "\n" #Line breaks
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"        
+        
         html = common.ideviceHeader(self, style, "preview")
         html += self.instructionElement.renderPreview()
         
         for element in self.questionElements:
+            html += "<"+sectionTag+" class=\"question\">"+lb
             html += element.renderQuestionPreview()
             html += element.renderFeedbackPreview()
+            html += "</"+sectionTag+">"+lb
             
         html += common.ideviceFooter(self, style, "preview")
 
@@ -144,14 +152,20 @@ class TrueFalseBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
+        lb = "\n" #Line breaks
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"
+            
         html = common.ideviceHeader(self, style, "view")
         html += self.instructionElement.renderView()
         
         for element in self.questionElements:
-            html += "<div class=\"question\">\n"
+            html += "<"+sectionTag+" class=\"question\">"+lb
             html += element.renderQuestionView()
             html += element.renderFeedbackView()
-            html += "</div>\n"
+            html += "</"+sectionTag+">"+lb
             
         html += common.ideviceFooter(self, style, "view")
 

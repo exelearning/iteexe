@@ -147,9 +147,6 @@
                     var uploaded_file_1_name_parts = uploaded_file_1_name.split("/");
                     if (uploaded_file_1_name_parts.length>1) uploaded_file_1_name = uploaded_file_1_name_parts[uploaded_file_1_name_parts.length-1];
                     link_text = uploaded_file_1_name;
-                    // Replace path by resources/file_name in audio, video, windowsmedia and realmedia
-                    uploaded_file_1_name = uploaded_file_1_name.replace( /\ /g, "_" );
-                    file_src = "resources/"+uploaded_file_1_name;           
                 }
             }   
 

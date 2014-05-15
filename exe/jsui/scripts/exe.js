@@ -117,6 +117,21 @@ Ext.application({
 
     quitWarningEnabled: true,
 
+    reload: function() {
+        var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
+        if (authoring && authoring.submitLink) {
+        	var outlineTreePanel = eXe.app.getController("Outline").getOutlineTreePanel(),
+            	selected = outlineTreePanel.getSelectionModel().getSelection();
+        	eXe.app.quitWarningEnabled = false;
+        	eXe.app.on({
+        		'authoringLoaded': function() {
+        			nevow_clientToServerEvent('reload');
+        		}
+        	});
+	        authoring.submitLink("changeNode", selected !== 0? selected[0].data.id : '0');
+        }
+    },
+
     gotoUrl: function(location) {
         eXe.app.quitWarningEnabled = false;
         if (location == undefined)

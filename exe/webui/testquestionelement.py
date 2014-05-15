@@ -138,18 +138,32 @@ class TestquestionElement(object):
         Returns an XHTML string for viewing this element
         """
         lb = "\n" #Line breaks
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        titleTag1 = "h3"
+        titleTag2 = "h4"
+        if dT == "HTML5":
+            sectionTag = "section"
+            titleTag1 = "h1"
+            titleTag2 = "h1"        
         html  = ''
-        html += '<div class="question">'+lb
+        html += '<'+sectionTag+' class="question">'+lb
+        html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb        
         if preview: 
             html += self.questionElement.renderPreview()
         else:
             html += self.questionElement.renderView()
+        # Answers
+        html += '<'+sectionTag+' class="iDevice_answers">'+lb
+        html += '<'+titleTag2+' class="js-sr-av">'+_("Answers")+'</'+titleTag2+'>'+lb        
         for element in self.options:
             if preview: 
                 html += element.renderPreview()      
             else:
                 html += element.renderView()      
-        html += "</div>"+lb
+        html += "</"+sectionTag+">"+lb
+        
+        html += "</"+sectionTag+">"+lb
         
         return html
     

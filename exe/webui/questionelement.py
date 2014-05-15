@@ -66,6 +66,9 @@ class QuestionElement(object):
 
         self.question_question = TextAreaElement(question.questionTextArea)
         self.question_question.id = self.quesId 
+        
+        question.feedbackTextArea.htmlTag = "div"
+        
         self.question_feedback = TextAreaElement(question.feedbackTextArea)
         self.question_feedback.id = self.feedbackId 
 
@@ -135,10 +138,9 @@ class QuestionElement(object):
         """
         Returns an XHTML string for viewing this question element
         """
-        html = "<div class=\"question\">\n"
-        html += self.doRender(preview=False)
-        html += "</div>\n"
-        return html
+        #html = "<div class=\"question\">\n"
+        return self.doRender(preview=False)
+        #html += "</div>\n"
     
     def renderPreview(self):
         """
