@@ -85,7 +85,9 @@ langNames = {
    'vi': 'Tiếng Việt',                 # Vietnamese
    'yo': 'Yorùbá',                     # Yoruba
    'zh': '\xe7\xae\x80\xe4\xbd\x93\xe4\xb8\xad\xe6\x96\x87',
-   'zh_tw': '\xe7\xae\x80\xe4\xbd\x93\xe4\xb8\xad\xe6\x96\x87',
+   # 'zh_tw': '\xe7\xae\x80\xe4\xbd\x93\xe4\xb8\xad\xe6\x96\x87',
+   'zh_CN': '简体中文',
+   'zh_TW': '正體中文（台灣)',
    'zu': 'isiZulu'
 }
 
