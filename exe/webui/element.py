@@ -256,6 +256,15 @@ class TextAreaElement(ElementWithResources):
         """
         # to render, choose the content with the preview-able resource paths:
         self.field.content = self.field.content_w_resourcePaths
+        
+        # DIV or SECTION
+        dT = common.getExportDocType()
+        self.field.htmlTag = "div"
+        if (hasattr(self.field.idevice, 'class_') and dT=='HTML5'):
+            if self.field.idevice.class_=='reading':
+                self.field.htmlTag = "section"
+            else:
+                self.field.htmlTag = "div"       
 
         if hasattr(self.field_idevice,'type') and self.field_idevice.type == 'frameset':
             content  ='<script language="JavaScript">\n' 

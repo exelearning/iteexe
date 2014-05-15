@@ -421,6 +421,12 @@ def button(name, value, enabled=True, **kwargs):
 
 def feedbackBlock(id,feedback):
     lb = "\n" #Line breaks
+    dT = getExportDocType()
+    sectionTag = "div"
+    titleTag = "h3"
+    if dT == "HTML5":
+        sectionTag = "section"
+        titleTag = "h1"
     html = '<form name="feedback-form-'+id+'" action="#" onsubmit="return false" class="feedback-form">'
     html += lb
     html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
@@ -428,11 +434,10 @@ def feedbackBlock(id,feedback):
     html += '<input type="button" name="toggle-feedback-'+id+'" value="'+_('Show Feedback')+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this);return false" />'
     html += '</p>'+lb
     html += '</div>'+lb
-    html += '<h3 class="js-sr-av">'+_('Feedback')+'</h3>'+lb
-    html += '<div id="feedback-'+id+'" class="feedback js-hidden">'
-    html += lb
+    html += '<'+sectionTag+' id="feedback-'+id+'" class="feedback js-hidden">'+lb
+    html += '<'+titleTag+' class="js-sr-av">'+_('Feedback')+'</'+titleTag+'>'+lb
     html += feedback
-    html += "</div>"+lb
+    html += "</"+sectionTag+">"+lb
     html += "</form>"+lb
     return html
     
