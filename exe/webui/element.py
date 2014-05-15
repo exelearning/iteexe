@@ -260,11 +260,11 @@ class TextAreaElement(ElementWithResources):
         # DIV or SECTION
         dT = common.getExportDocType()
         self.field.htmlTag = "div"
-        if (hasattr(self.field.idevice, 'class_') and dT=='HTML5'):
-            if self.field.idevice.class_=='reading':
+        if (hasattr(self.field.idevice, 'klass') and dT=='HTML5'):
+            if (self.field.idevice.klass=='readingIdevice' or self.field.idevice.klass=='CasestudyIdevice'):
                 self.field.htmlTag = "section"
             else:
-                self.field.htmlTag = "div"       
+                self.field.htmlTag = "div"
 
         if hasattr(self.field_idevice,'type') and self.field_idevice.type == 'frameset':
             content  ='<script language="JavaScript">\n' 
@@ -423,8 +423,10 @@ class TextAreaElement(ElementWithResources):
         Returns an XHTML string for viewing or previewing this element
         """
         lb = "\n" #Line breaks
+        dT = common.getExportDocType()
         htmlTag = 'div'
-        if hasattr(self.field, 'htmlTag'):
+        # DIV or SECTION
+        if (dT=='HTML5' and hasattr(self.field, 'htmlTag')):
             htmlTag = self.field.htmlTag
         if hasattr(self.field, 'class_'):
             class_ = self.field.class_
