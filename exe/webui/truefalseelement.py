@@ -191,15 +191,19 @@ class TrueFalseElement(object):
         log.debug("renderPreview called in the form of renderQuestion")
         
         lb = "\n" #Line breaks
+        dT = common.getExportDocType()
+        titleTag = "h3"
+        if dT == "HTML5":
+            titleTag = "h1"
         
         if is_preview:
-            html = '<h3 class="js-sr-av">'+_("Question")+' '+str(self.index+1)+'</h3>'+lb
+            html = '<'+titleTag+' class="js-sr-av">'+_("Question")+' '+str(self.index+1)+'</'+titleTag+'>'+lb
             html += self.question_question.renderPreview()
             if self.question_hint.field.content:
                 html += common.ideviceHint(self.question_hint.field.content,"preview","h4")
         else: 
             html = '<form name="true-false-form-'+self.id+'" action="#" class="activity-form">'+lb        
-            html += '<h3 class="js-sr-av">'+_("Question")+' '+str(self.index+1)+'</h3>'+lb
+            html += '<'+titleTag+' class="js-sr-av">'+_("Question")+' '+str(self.index+1)+'</'+titleTag+'>'+lb
             html += self.question_question.renderView()
             if self.question_hint.field.content:
                 html += common.ideviceHint(self.question_hint.field.content,"view","h4")
@@ -240,20 +244,26 @@ class TrueFalseElement(object):
         return xhtml string for display this option's feedback
         """
         lb = "\n" #Line breaks
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        titleTag = "h4"
+        if dT == "HTML5":
+            sectionTag = "section"
+            titleTag = "h1"     
         
         if is_preview:
             content = self.question_feedback.field.content_w_resourcePaths
         else:
             content = self.question_feedback.field.content_wo_resourcePaths        
         
-        html = '<h4 class="js-sr-av">Feedback</h4>'+lb
-        html += '<div id="s'+self.id+'" class="feedback js-hidden">'+lb
+        html = '<'+sectionTag+' id="s'+self.id+'" class="feedback js-hidden">'+lb
+        html += '<'+titleTag+' class="js-sr-av">Feedback</'+titleTag+'>'+lb
         if self.question.isCorrect:
             html += '<p><strong id="s'+self.id+'-result" class="right">'+_("True")+'</strong></p>'+lb
         else:
             html += '<p><strong id="s'+self.id+'-result" class="wrong">'+_("False")+'</strong></p>'+lb
         html += content+lb
-        html += '</div>'+lb   
+        html += '</'+sectionTag+'>'+lb   
         
         return html
 # ===========================================================================
