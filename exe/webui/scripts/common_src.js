@@ -1324,6 +1324,7 @@ var $exe = {
     init : function(){
         var d = document.body.className;
         d += ' js';
+        $exe.addRoles();
         //iDevice Toggler
         if (d!='exe-single-page js') {
             var ie_v = $exe.isIE();
@@ -1340,6 +1341,12 @@ var $exe = {
         }
         $exe.hint.init();
     },
+    addRoles : function(){
+        $('#header').attr('role','banner'); 
+        $('#siteNav').attr('role','navigation'); 
+        $('#main').attr('role','main'); 
+        $('#siteFooter').attr('role','contentinfo');
+    },   
     isIE :function() {
         var n = navigator.userAgent.toLowerCase();
         return (n.indexOf('msie') != -1) ? parseInt(n.split('msie')[1]) : false;
