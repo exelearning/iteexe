@@ -1346,6 +1346,7 @@ var $exe = {
         $('#siteNav').attr('role','navigation'); 
         $('#main').attr('role','main'); 
         $('#siteFooter').attr('role','contentinfo');
+        $('.js-feedback').attr('role','status');
     },   
     isIE :function() {
         var n = navigator.userAgent.toLowerCase();
@@ -1512,11 +1513,11 @@ var $exe = {
         var id = e.name.replace("toggle-","");
         var f = document.getElementById(id);
         if (f) {
-            if (f.className == "feedback js-hidden") {
-                f.className = "feedback";
+            if (f.className == "feedback js-feedback js-hidden") {
+                f.className = "feedback js-feedback";
                 e.value = $exe_i18n.hideFeedback
             } else {
-                f.className = "feedback js-hidden";
+                f.className = "feedback js-feedback js-hidden";
                 e.value = $exe_i18n.showFeedback
             }
         }
