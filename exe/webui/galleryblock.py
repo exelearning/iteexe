@@ -63,15 +63,21 @@ class GalleryBlock(Block):
         argument, which is an 'exe.engine.galleryIdevice.GalleryImage' instance
         and return a list of strings that will be later joined with '\n' chars.
         """
+        lb = "\n" #Line breaks
         width = self.idevice.images[0].thumbnailSize[0]
         html = [u'<ul class="exeImageGallery" id="exeImageGallery%s">' % self.idevice.id]
+        html += [lb]
         i = 0
         for image in self.idevice.images:
             i += 1
             html += ['<li>']
             html += perCell(image, i-1, self.idevice.id)
             html += ['</li>']
+            html += [lb]
         html += ['</ul>']
+        html += [lb]
+        html += ['<script type="text/javascript">$exe.imageGallery.init("exeImageGallery'+self.idevice.id+'");</script>']
+        html += [lb]
         return html
 
     # Public Methods
@@ -332,8 +338,7 @@ class GalleryBlock(Block):
                 width, height = image.size
                 title = image.caption
                 return ['<a title="%s"' % title,
-                        ' href="%s"' % urllib.quote(image.imageSrc),
-                        ' rel="lightbox[exeImageGallery%s]">' % id +
+                        ' href="%s">' % urllib.quote(image.imageSrc),
                         '<img alt="%s"' % title,
                         ' width="128"'
                         ' height="128"'

@@ -1344,6 +1344,11 @@ var $exe = {
         var n = navigator.userAgent.toLowerCase();
         return (n.indexOf('msie') != -1) ? parseInt(n.split('msie')[1]) : false;
     },
+    imageGallery : {
+        init : function(id) {
+            $("A","#"+id).attr("rel","lightbox["+id+"]");
+        }
+    },
     hint : {
         init : function(){
             $(".iDevice_hint").each(function(i){
