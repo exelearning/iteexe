@@ -91,12 +91,17 @@ class ExternalUrlBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html = '<div class="iDevice_content">\n'
-        if self.idevice.url:
-            html += u"<iframe src=\""+self.idevice.url+"\"\n"
-            html += u"width=\"100%\""
-            html += u" height=\""+self.idevice.height+"px\"></iframe>\n" 
-        html += '</div>\n'
+        lb = "\n" #Line breaks
+        dT = common.getExportDocType()   
+        if dT == "HTML5":
+            html = '<div class="iDevice_content" style="width:100%">'+lb
+            if self.idevice.url:
+                html += '<iframe src="'+self.idevice.url+'" width="600" height="'+self.idevice.height+'" style="width:100%"></iframe>'+lb
+        else:        
+            html = '<div class="iDevice_content">'+lb
+            if self.idevice.url:
+                html += '<iframe src="'+self.idevice.url+'" width="100%" height="'+self.idevice.height+'px"></iframe>'+lb
+        html += '</div>'+lb
         return html
 
 

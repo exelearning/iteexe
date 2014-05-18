@@ -434,6 +434,8 @@ class TextAreaElement(ElementWithResources):
             visible = ''
         else:
             visible = ' style="display:none"'
+            if (class_=="feedback"):
+                class_ += " js-feedback"
         if content is None:
             if preview:
                 # render the resource content with resource paths: 
@@ -2346,7 +2348,7 @@ class SelectquestionElement(Element):
         html += '</div>'+lb
         
         # Feedback
-        html += '<'+sectionTag+' id="%s" class="js-hidden">' % ("f"+self.field.id)
+        html += '<'+sectionTag+' id="%s" class="js-hidden js-feedback">' % ("f"+self.field.id)
         html += lb
         html += '<'+titleTag2+' class="js-sr-av">'+_("Feedback")+'</'+titleTag2+'>'+lb
         html += lb
@@ -2798,7 +2800,7 @@ class QuizQuestionElement(Element):
         html += "</"+sectionTag+">"+lb
                 
         # Feedbacks
-        html += '<'+sectionTag+' class="iDevice_feedbacks">'+lb
+        html += '<'+sectionTag+' class="iDevice_feedbacks js-feedback">'+lb
         html += '<'+titleTag2+' class="js-sr-av">'+_("Feedback")+'</'+titleTag2+'>'+lb
         for element in self.options:
             html += element.renderFeedbackView(preview)

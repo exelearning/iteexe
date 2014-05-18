@@ -177,10 +177,15 @@ class ImageMagnifierBlock(Block):
         """
 
         lb = "\n" #Line breaks
+        dT = common.getExportDocType()
+        figureTag = "div"
+        if dT == "HTML5":
+            figureTag = "figure"         
+        
         html = common.ideviceHeader(self, style, "preview")
         
-        html += '<div class="iDevice_content">'
-        html += '<div class="image_text" style="width:'+str(self.idevice.imageMagnifier.width)+'px;float:'+self.idevice.float+';'
+        html += '<div class="iDevice_content">'+lb
+        html += '<'+figureTag+' class="image_text" style="width:'+str(self.idevice.imageMagnifier.width)+'px;float:'+self.idevice.float+';'
         if self.idevice.float == 'left':
             html += 'margin:0 20px 20px 0'
         if self.idevice.float == 'right':
@@ -189,8 +194,11 @@ class ImageMagnifierBlock(Block):
         html += self.imageMagnifierElement.renderPreview()
         if self.idevice.caption != '':
             html = html.replace(' alt="" ',' alt="'+self.idevice.caption.replace('"','&quot;')+'" ', 1)
-            html += '<strong>'+self.idevice.caption+'</strong>'+lb
-        html += '</div>'+lb 
+            if dT == "HTML5":
+                html += '<figcaption style="font-weight:bold">'+self.idevice.caption+'</figcaption>'+lb
+            else:
+                html += '<strong>'+self.idevice.caption+'</strong>'+lb
+        html += '</'+figureTag+'>'+lb 
         text = self.textElement.renderPreview()
         if text:
             text = text.replace('"block iDevice_content"', '"iDevice_text"', 1)
@@ -210,10 +218,15 @@ class ImageMagnifierBlock(Block):
         """     
 
         lb = "\n" #Line breaks
+        dT = common.getExportDocType()
+        figureTag = "div"
+        if dT == "HTML5":
+            figureTag = "figure"        
+        
         html = common.ideviceHeader(self, style, "view")
         
         html += '<div class="iDevice_content">'+lb
-        html += '<div class="image_text" style="width:'+str(self.idevice.imageMagnifier.width)+'px;float:'+self.idevice.float+';'
+        html += '<'+figureTag+' class="image_text" style="width:'+str(self.idevice.imageMagnifier.width)+'px;float:'+self.idevice.float+';'
         if self.idevice.float == 'left':
             html += 'margin:0 20px 20px 0'
         if self.idevice.float == 'right':
@@ -223,8 +236,11 @@ class ImageMagnifierBlock(Block):
         html += self.imageMagnifierElement.renderView()
         if self.idevice.caption != '':
             html = html.replace(' alt="" ',' alt="'+self.idevice.caption.replace('"','&quot;')+'" ', 1)
-            html += '<strong>'+self.idevice.caption+'</strong>'
-        html += '</div>'+lb 
+            if dT == "HTML5":
+                html += '<figcaption style="font-weight:bold">'+self.idevice.caption+'</figcaption>'+lb
+            else:
+                html += '<strong>'+self.idevice.caption+'</strong>'+lb
+        html += '</'+figureTag+'>'+lb 
         text = self.textElement.renderView()
         if text:
             text = text.replace('"block iDevice_content"', '"iDevice_text"', 1)
