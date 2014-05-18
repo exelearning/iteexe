@@ -281,7 +281,7 @@ class ListaElement(ElementWithResources):
         html += [common.javaScriptIsRequired()]
         html += ['</p>']
         html += ['</div>']
-        html += ['<div class="score" id="clozeScore%s"></div>' % self.id]        
+        html += ['<div class="score js-feedback" id="clozeScore%s"></div>' % self.id]        
         html += ['</div>']
         if preview: 
             html += ['</div>']
