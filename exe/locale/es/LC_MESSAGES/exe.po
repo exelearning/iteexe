@@ -4983,17 +4983,19 @@ msgstr "Fuera del centro"
 msgid "Modality"
 msgstr "Modalidad de uso"
 
+# JRF: tras discusión (bug 2098) vuelvo a traducción correcta.
 # JRF: la traducción correcta es 'presencial', la compatibilidad con
 # LOM-ES  nos obliga a usar 'semipresencial' (sic)
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:407
 msgid "Face to Face"
-msgstr "Semipresencial"
+msgstr "Presencial"
 
+# JRF: después de discusión (bug 2098), vuelvo a aplicar traducción de 'semipresencial'
 # JRF: mi traducción era 'semipresencial', pongo 'asistencia mixta'
 # por compatibilidad con LOM-ES
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:415
 msgid "Blended"
-msgstr "Asistencia mixta"
+msgstr "Semipresencial"
 
 # JRF: me sugieren que por compatibilidad con LOM-ES use 'distancia',
 # creo que 'a distancia' es más claro.
