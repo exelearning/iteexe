@@ -404,17 +404,17 @@ Ext.define('eXe.view.forms.PackagePanel', {
 		                                        items: [
 		                                            {
 		                                                xtype: 'radio',
-		                                                boxLabel: _('Face to Face'),
+		                                                boxLabel: _('Presencial'),
 		                                                name: 'pp_contextMode',
-		                                                inputValue: 'face to face',
+		                                                inputValue: 'presencial',
                                                         dirtyCls: 'property-form-dirty',
 		                                                checked: true
 		                                            },
 		                                            {
 		                                                xtype: 'radio',
-		                                                boxLabel: _('Blended'),
+		                                                boxLabel: _('Face to Face'),
 		                                                name: 'pp_contextMode',
-		                                                inputValue: 'blended',
+		                                                inputValue: 'face to face',
                                                         dirtyCls: 'property-form-dirty'
 		                                            },
 		                                            {
