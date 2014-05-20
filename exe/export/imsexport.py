@@ -25,6 +25,7 @@ Exports an eXe package as an IMS Content Package
 """
 
 import logging
+import copy
 import time
 import StringIO
 import re
@@ -40,6 +41,7 @@ from exe.engine.uniqueidgenerator  import UniqueIdGenerator
 from exe                      	   import globals as G
 from exe.engine.persist import encodeObject
 from exe.engine.persistxml import encodeObjectToXML
+from exe.engine.lom import lomsubs
 
 log = logging.getLogger(__name__)
 
@@ -73,14 +75,25 @@ class Manifest(object):
         if they did not supply a date, use today
         """
         xml = ''
+        namespace = 'lom:'
         # depending on (user desired) the metadata type:
         if self.metadataType == 'LOMES':
             output = StringIO.StringIO()
-            self.package.lomEs.export(output, 0, namespace_='lom:', pretty_print=False)
+            metadata = copy.deepcopy(self.package.lomEs)
+            title = metadata.get_general().get_title()
+            if not title or not title.get_string():
+                title.add_string(lomsubs.LangStringSub(self.package.lang.encode('utf-8'), self.package.name))
+                metadata.get_general().set_title(title)
+            metadata.export(output, 0, namespace_=namespace, pretty_print=False)
             xml = output.getvalue()
         if self.metadataType == 'LOM':
             output = StringIO.StringIO()
-            self.package.lom.export(output, 0, namespace_='lom:', pretty_print=False)
+            metadata = copy.deepcopy(self.package.lom)
+            title = metadata.get_general().get_title()
+            if not title or not title.get_string():
+                title.add_string(lomsubs.LangStringSub(self.package.lang.encode('utf-8'), self.package.name))
+                metadata.get_general().set_title(title)
+            metadata.export(output, 0, namespace_=namespace, pretty_print=False)
             xml = output.getvalue()
         if self.metadataType == 'DC':
             lrm = self.package.dublinCore.__dict__.copy()
