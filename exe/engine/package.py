@@ -857,6 +857,7 @@ class Package(Persistable):
                 "face to face": "other",
                 "blended": "other",
                 "distance": "other",
+                "presencial": "other",
                 "": ""
             }
             return lomMap[value]
