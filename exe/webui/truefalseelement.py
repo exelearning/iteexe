@@ -197,13 +197,13 @@ class TrueFalseElement(object):
             titleTag = "h1"
         
         if is_preview:
-            html = '<'+titleTag+' class="js-sr-av">'+_("Question")+' '+str(self.index+1)+'</'+titleTag+'>'+lb
+            html = '<'+titleTag+' class="js-sr-av">' + c_("Question")+' '+str(self.index+1)+'</'+titleTag+'>'+lb
             html += self.question_question.renderPreview()
             if self.question_hint.field.content:
                 html += common.ideviceHint(self.question_hint.field.content,"preview","h4")
         else: 
             html = '<form name="true-false-form-'+self.id+'" action="#" class="activity-form">'+lb        
-            html += '<'+titleTag+' class="js-sr-av">'+_("Question")+' '+str(self.index+1)+'</'+titleTag+'>'+lb
+            html += '<'+titleTag+' class="js-sr-av">' + c_("Question")+' '+str(self.index+1)+'</'+titleTag+'>'+lb
             html += self.question_question.renderView()
             if self.question_hint.field.content:
                 html += common.ideviceHint(self.question_hint.field.content,"view","h4")

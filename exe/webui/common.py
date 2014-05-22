@@ -76,7 +76,7 @@ def themeHasConfigXML(style):
     return themeHasXML
     
 def javaScriptIsRequired():
-    return '<span class="js-hidden js-warning">'+_("Enable JavaScript")+'</span>'
+    return '<span class="js-hidden js-warning">' + c_("Enable JavaScript")+'</span>'
             
 def ideviceHeader(e, style, mode):
     dT = getExportDocType()
@@ -191,7 +191,7 @@ def ideviceHint(content, mode, level='h3'):
         # Hint content
         html = '<script type="text/javascript">$exe.hint.imgs=["'+img1+'","'+img2+'"]</script>'+lb
         html += '<'+sectionTag+' class="iDevice_hint">'+lb
-        html += '<'+level+' class="iDevice_hint_title">'+_("Hint")+'</'+level+'>'+lb
+        html += '<'+level+' class="iDevice_hint_title">' + c_("Hint")+'</'+level+'>'+lb
         html += '<div class="iDevice_hint_content js-hidden">'+lb
         html += content
         html += '</div>'+lb

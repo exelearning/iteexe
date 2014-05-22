@@ -148,14 +148,14 @@ class TestquestionElement(object):
             titleTag2 = "h1"        
         html  = ''
         html += '<'+sectionTag+' class="question">'+lb
-        html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb        
+        html += '<'+titleTag1+' class="js-sr-av">' + c_("Question")+'</'+titleTag1+'>'+lb        
         if preview: 
             html += self.questionElement.renderPreview()
         else:
             html += self.questionElement.renderView()
         # Answers
         html += '<'+sectionTag+' class="iDevice_answers">'+lb
-        html += '<'+titleTag2+' class="js-sr-av">'+_("Answers")+'</'+titleTag2+'>'+lb        
+        html += '<'+titleTag2+' class="js-sr-av">' + c_("Answers")+'</'+titleTag2+'>'+lb        
         for element in self.options:
             if preview: 
                 html += element.renderPreview()      

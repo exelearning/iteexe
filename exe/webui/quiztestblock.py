@@ -142,7 +142,7 @@ class QuizTestBlock(Block):
             else:
                 html += element.renderView()
         html += '<div class="block iDevice_buttons">'+lb
-        html += '<p><input type="submit" name="submitB" value="'+_("SUBMIT ANSWERS")+'" /> '+common.javaScriptIsRequired()+'</p>'+lb
+        html += '<p><input type="submit" name="submitB" value="' + c_("SUBMIT ANSWERS")+'" /> '+common.javaScriptIsRequired()+'</p>'+lb
         html += '</div>'+lb                
         html += '</form>'+lb
         html += common.ideviceFooter(self, style, "view")
@@ -365,7 +365,7 @@ class QuizTestBlock(Block):
             html += element.renderPreview()
         
         html += '<div class="block iDevice_buttons">'+lb
-        html += '<p><input type="submit" name="submitScore" value="'+_("SUBMIT ANSWERS")+'" /></p>'
+        html += '<p><input type="submit" name="submitScore" value="' + c_("SUBMIT ANSWERS")+'" /></p>'
         html += '</div>'+lb
         
         if not self.idevice.score == -1:

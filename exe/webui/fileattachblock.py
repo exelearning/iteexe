@@ -155,7 +155,7 @@ class FileAttachBlockInc(Block):
                 html += "<li><a href='%(prefix)s%(filename)s' target='_blank'>%(desc)s" % \
                     {"filename" : fileElement.getFileName(), "desc" : fileElement.getDescription(),\
                      "prefix" : prefix}
-                html += "<span> ("+_('New Window')+")</span></a></li>\n"
+                html += "<span> (" + c_('New Window')+")</span></a></li>\n"
                 
         if showDesc == True:
             html += "</ul>"

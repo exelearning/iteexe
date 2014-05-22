@@ -2119,7 +2119,7 @@ class SelectOptionElement(Element):
         html = '<'+sectionTag+' class="iDevice_answer">'+lb
         # Checkbox
         html += '<p class="iDevice_answer-field js-required">'+lb
-        html += '<label for="op'+ident+'" class="sr-av"><a href="#answer-'+self.id+'">'+_("Option")+' '+str(self.index+1)+'</a></label>'
+        html += '<label for="op'+ident+'" class="sr-av"><a href="#answer-'+self.id+'">' + c_("Option")+' '+str(self.index+1)+'</a></label>'
         html += '<input type="checkbox" id="op%s"' % ident
         html += ' value="%s" />' % str(self.field.isCorrect)
         html += lb
@@ -2325,16 +2325,16 @@ class SelectquestionElement(Element):
         # Form
         if preview: 
             html += '<div class="activity-form">'+lb
-            html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb
+            html += '<'+titleTag1+' class="js-sr-av">' + c_("Question")+'</'+titleTag1+'>'+lb
             html += self.questionElement.renderPreview()
         else:
             html += '<form name="multi-select-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form">'+lb
-            html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb           
+            html += '<'+titleTag1+' class="js-sr-av">' + c_("Question")+'</'+titleTag1+'>'+lb           
             html += self.questionElement.renderView()        
             
         # Answers
         html += '<'+sectionTag+' class="iDevice_answers">'+lb
-        html += '<'+titleTag2+' class="js-sr-av">'+_("Answers")+'</'+titleTag2+'>'+lb
+        html += '<'+titleTag2+' class="js-sr-av">' + c_("Answers")+'</'+titleTag2+'>'+lb
         for element in self.options:
             html += element.renderView(preview)      
         html += "</"+sectionTag+">"+lb
@@ -2350,7 +2350,7 @@ class SelectquestionElement(Element):
         # Feedback
         html += '<'+sectionTag+' id="%s" class="js-hidden js-feedback">' % ("f"+self.field.id)
         html += lb
-        html += '<'+titleTag2+' class="js-sr-av">'+_("Feedback")+'</'+titleTag2+'>'+lb
+        html += '<'+titleTag2+' class="js-sr-av">' + c_("Feedback")+'</'+titleTag2+'>'+lb
         html += lb
         if preview: 
             aux  = self.feedbackElement.renderPreview(True, class_="feedback")
@@ -2370,7 +2370,7 @@ class SelectquestionElement(Element):
 
         # noscript
         html += '<'+sectionTag+' class="iDevice_solution feedback js-hidden">'+lb
-        html += "<"+titleTag2+">"+_("Solution")+"</"+titleTag2+">"+lb
+        html += "<"+titleTag2+">" + c_("Solution")+"</"+titleTag2+">"+lb
         html += "<ol>"+lb
         for element in self.options:
             html += element.renderNoscript(preview)
@@ -2541,7 +2541,7 @@ class QuizOptionElement(Element):
         html = '<'+sectionTag+' class="iDevice_answer">'+lb
         
         html += '<p class="iDevice_answer-field js-required">'+lb
-        html += '<label for="i'+self.id+'" class="sr-av"><a href="#answer-'+self.id+'">'+_("Option")+' '+str(self.index+1)+'</a></label>'
+        html += '<label for="i'+self.id+'" class="sr-av"><a href="#answer-'+self.id+'">' + c_("Option")+' '+str(self.index+1)+'</a></label>'
         html += '<input type="radio" name="option%s" ' % self.field.question.id
         html += 'id="i%s" ' % self.id
         html += 'onclick="getFeedback(%d,%d,\'%s\',\'multi\')"/>' % (self.index, length, self.field.question.id)
@@ -2579,9 +2579,9 @@ class QuizOptionElement(Element):
                 feedbackStr = self.feedbackElement.renderView(True, "")
         else:
             if self.field.isCorrect:
-                feedbackStr = "<p>"+_("Correct Option")+"</p>"+lb
+                feedbackStr = "<p>" + c_("Correct Option")+"</p>"+lb
             else:
-                feedbackStr = "<p>"+_("Wrong")+"</p>"+lb
+                feedbackStr = "<p>" + c_("Wrong")+"</p>"+lb
 
         html  = '<'+sectionTag+' id="sa%sb%s" class="feedback js-hidden">' % (str(self.index), self.field.question.id)
         if dT != "HTML5":
@@ -2600,7 +2600,7 @@ class QuizOptionElement(Element):
             html += c_("Correct Option")
         else:
             html += c_("Wrong")
-        html += '</a> (<a href="#sa'+str(self.index)+'b'+self.field.question.id+'">'+_("Feedback")+'</a>)</li>'
+        html += '</a> (<a href="#sa'+str(self.index)+'b'+self.field.question.id+'">' + c_("Feedback")+'</a>)</li>'
         html += lb
         '''
         if preview: 
@@ -2778,11 +2778,11 @@ class QuizQuestionElement(Element):
             titleTag2 = "h1"          
         if preview: 
             html = '<div class="activity-form">'+lb
-            html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb
+            html += '<'+titleTag1+' class="js-sr-av">' + c_("Question")+'</'+titleTag1+'>'+lb
             html += self.questionElement.renderPreview()
         else:
             html = '<form name="multi-choice-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form">'+lb
-            html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb
+            html += '<'+titleTag1+' class="js-sr-av">' + c_("Question")+'</'+titleTag1+'>'+lb
             html += self.questionElement.renderView()
 
         # Hint
@@ -2794,14 +2794,14 @@ class QuizQuestionElement(Element):
 
         # Answers
         html += '<'+sectionTag+' class="iDevice_answers">'+lb
-        html += '<'+titleTag2+' class="js-sr-av">'+_("Answers")+'</'+titleTag2+'>'+lb
+        html += '<'+titleTag2+' class="js-sr-av">' + c_("Answers")+'</'+titleTag2+'>'+lb
         for element in self.options:
             html += element.renderAnswerView(preview)
         html += "</"+sectionTag+">"+lb
                 
         # Feedbacks
         html += '<'+sectionTag+' class="iDevice_feedbacks js-feedback">'+lb
-        html += '<'+titleTag2+' class="js-sr-av">'+_("Feedback")+'</'+titleTag2+'>'+lb
+        html += '<'+titleTag2+' class="js-sr-av">' + c_("Feedback")+'</'+titleTag2+'>'+lb
         for element in self.options:
             html += element.renderFeedbackView(preview)
         html += "</"+sectionTag+">"+lb
@@ -2813,7 +2813,7 @@ class QuizQuestionElement(Element):
         
         # noscript
         html += '<'+sectionTag+' class="iDevice_solution feedback js-hidden">'+lb
-        html += "<"+titleTag2+">"+_("Solution")+"</"+titleTag2+">"+lb
+        html += "<"+titleTag2+">" + c_("Solution")+"</"+titleTag2+">"+lb
         html += "<ol>"+lb
         for element in self.options:
             html += element.renderNoscript(preview)
