@@ -211,13 +211,13 @@ def fieldShowEditMessageEle(element):
     
 def getJavaScriptStrings():
     s = '<script type="text/javascript">$exe_i18n={'
-    s += 'show:"'+_("Show")+'",'
-    s += 'hide:"'+_("Hide")+'",'
-    s += 'showFeedback:"'+_("Show Feedback")+'",'
-    s += 'hideFeedback:"'+_("Hide Feedback")+'",'
-    s += 'correct:"'+_("Correct")+'",'
-    s += 'incorrect:"'+_("Incorrect")+'",'
-    s += 'menu:"'+_("Menu")+'"'
+    s += 'show:"'+c_("Show")+'",'
+    s += 'hide:"'+c_("Hide")+'",'
+    s += 'showFeedback:"'+c_("Show Feedback")+'",'
+    s += 'hideFeedback:"'+c_("Hide Feedback")+'",'
+    s += 'correct:"'+c_("Correct")+'",'
+    s += 'incorrect:"'+c_("Incorrect")+'",'
+    s += 'menu:"'+c_("Menu")+'"'
     s += '}</script>'
     
     return s
@@ -238,7 +238,7 @@ def header(style=u'default'):
             u'<meta http-equiv="content-type" '
             u' content="text/html; charset=UTF-8"></meta>\n'
             u'</head>\n'
-            % (style, _('eXe : elearning XHTML editor')))
+            % (style, c_('eXe : elearning XHTML editor')))
 
 
 def footer():
@@ -431,11 +431,11 @@ def feedbackBlock(id,feedback):
     html += lb
     html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
     html += '<p>'
-    html += '<input type="button" name="toggle-feedback-'+id+'" value="'+_('Show Feedback')+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this);return false" />'
+    html += '<input type="button" name="toggle-feedback-'+id+'" value="'+ c_('Show Feedback')+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this);return false" />'
     html += '</p>'+lb
     html += '</div>'+lb
     html += '<'+sectionTag+' id="feedback-'+id+'" class="feedback js-feedback js-hidden">'+lb
-    html += '<'+titleTag+' class="js-sr-av">'+_('Feedback')+'</'+titleTag+'>'+lb
+    html += '<'+titleTag+' class="js-sr-av">'+ c_('Feedback')+'</'+titleTag+'>'+lb
     html += feedback
     html += "</"+sectionTag+">"+lb
     html += "</form>"+lb
@@ -445,7 +445,7 @@ def feedbackBlock(id,feedback):
 def feedbackButton(name, value=None, enabled=True, **kwparams):
     """Adds a feedback button"""
     if value is None:
-        value = _(u'Feedback')
+        value = c_(u'Feedback')
     kwparams.setdefault('class', 'feedbackbutton')
     return button(name, value, enabled, **kwparams)
 

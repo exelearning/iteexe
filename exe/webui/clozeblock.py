@@ -179,7 +179,7 @@ class ClozeBlock(Block):
             html = '<p>' +  self.instructionElement.renderView() +'</p>'
         html += '<p>' + self.clozeElement.renderText() + '</p>'
         if self.feedbackElement.field.content:
-            html += '<p>%s:</P>' % _(u"Feedback") 
+            html += '<p>%s:</P>' % c_(u"Feedback") 
             if self.previewing: 
                 html += '<p>' +self.feedbackElement.renderPreview(False, 
                                                         class_="feedback") 

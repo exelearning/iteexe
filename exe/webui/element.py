@@ -1369,7 +1369,7 @@ class ClozeElement(ElementWithResources):
 
         html += ['<div id="cloze%s">' % self.id]
 
-        html.append('<script type="text/javascript">var YOUR_SCORE_IS="%s"</script>' % _('Your score is '))
+        html.append('<script type="text/javascript">var YOUR_SCORE_IS="%s"</script>' % c_('Your score is '))
         # Store our args in some hidden fields
         def storeValue(name):
             value = str(bool(getattr(self.field, name))).lower()
@@ -1403,7 +1403,7 @@ class ClozeElement(ElementWithResources):
                 words += "'" + missingWord + "',"
                 # The edit box for the user to type into
                 #'  autocomplete="off"',
-                inputHtml = ['<label for="clozeBlank%s.%s" class="sr-av">%s (%s):</label>' % (self.id, i, _("Cloze"), (i+1))]
+                inputHtml = ['<label for="clozeBlank%s.%s" class="sr-av">%s (%s):</label>' % (self.id, i, c_("Cloze"), (i+1))]
                 if self.field.instantMarking:
                     inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" onkeyup="onClozeChange(this)" />' % (self.id, i, len(missingWord))]
                 else:
@@ -1416,13 +1416,13 @@ class ClozeElement(ElementWithResources):
         html += ['<div class="block iDevice_buttons">']
         html += ['<p>']
         if self.field.instantMarking:
-            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozeScore(\'%s\')" />' % (_(u"Get score"), self.id, self.id)]
+            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozeScore(\'%s\')" />' % ( c_(u"Get score"), self.id, self.id)]
 
             if feedbackId is not None:
-                html += [common.feedbackButton('feedback'+self.id, _(u"Show Feedback"), onclick="toggleClozeFeedback('%s',this)" % self.id)]
+                html += [common.feedbackButton('feedback'+self.id, c_(u"Show Feedback"), onclick="toggleClozeFeedback('%s',this)" % self.id)]
             # Set the show/hide answers button attributes
             style = ''
-            value = _(u"Show/Clear Answers")
+            value = c_(u"Show/Clear Answers")
             onclick = "toggleClozeAnswers('%s')" % self.id
         else:
             if preview:
@@ -1432,7 +1432,7 @@ class ClozeElement(ElementWithResources):
             html += [common.button('restart%s' % self.id,_(u"Restart"),id='restart%s' % self.id,style="display:none",onclick="clozeRestart('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display:none'
-            value = _(u"Show Answers")
+            value = c_(u"Show Answers")
             onclick = "fillClozeInputs('%s')" % self.id
         # Show/hide answers button
         html += [' ',common.button('%sshowAnswersButton' % self.id, value, id='showAnswersButton%s' % self.id, style=style, onclick=onclick)]
@@ -1468,7 +1468,7 @@ class ClozeElement(ElementWithResources):
         """
         html = ""
 
-        html += "<p>%s: </p><p>"  % _(u"Answers")
+        html += "<p>%s: </p><p>"  % c_(u"Answers")
         answers = ""
         for i, (text, missingWord) in enumerate(self.field.parts):
             if missingWord:
@@ -1623,7 +1623,7 @@ class ClozelangElement(ElementWithResources):
             self.field.encodedContent = self.field.content_wo_resourcePaths
 
         html = ['<div id="clozelang%s">' % self.id]
-        html.append('<script type="text/javascript">var YOUR_SCORE_IS = "%s"</script>' % _('Your score is '))
+        html.append('<script type="text/javascript">var YOUR_SCORE_IS = "%s"</script>' % c_('Your score is '))
         # Store our args in some hidden fields
         def storeValue(name):
             value = str(bool(getattr(self.field, name))).lower()
@@ -1671,20 +1671,20 @@ class ClozelangElement(ElementWithResources):
         # Score string
         html += ['<div class="block">\n']
         if self.field.instantMarking:
-            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozelangScore(\'%s\')" />' % (_(u"Get score"), self.id, self.id)]
+            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozelangScore(\'%s\')" />' % ( c_(u"Get score"), self.id, self.id)]
 
             if feedbackId is not None:
-                html += [common.feedbackButton('feedback'+self.id,  _(u"Show/Hide Feedback"), onclick="toggleClozelangFeedback('%s')" % self.id)]
+                html += [common.feedbackButton('feedback'+self.id,  c_(u"Show/Hide Feedback"), onclick="toggleClozelangFeedback('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display: inline;'
-            value = _(u"Show/Clear Answers")
+            value = c_(u"Show/Clear Answers")
             onclick = "toggleClozelangAnswers('%s')" % self.id
         else:
-            html += [common.button('submit%s' % self.id, _(u"Submit"), id='submit%s' % self.id, onclick="clozelangSubmit('%s')" % self.id),
-                     common.button('restart%s' % self.id, _(u"Restart"), id='restart%s' % self.id, style="display:none", onclick="clozelangRestart('%s')" % self.id)]
+            html += [common.button('submit%s' % self.id, c_(u"Submit"), id='submit%s' % self.id, onclick="clozelangSubmit('%s')" % self.id),
+                     common.button('restart%s' % self.id, c_(u"Restart"), id='restart%s' % self.id, style="display:none", onclick="clozelangRestart('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display:none'
-            value = _(u"Show Answers")
+            value = c_(u"Show Answers")
             onclick = "fillClozelangInputs('%s')" % self.id
         # Show/hide answers button
         html += [' ',
@@ -1714,7 +1714,7 @@ class ClozelangElement(ElementWithResources):
         """
         html = ""
 
-        html += "<p>%s: </p><p>"  % _(u"Answers")
+        html += "<p>%s: </p><p>"  % c_(u"Answers")
         answers = ""
         for i, (text, missingWord) in enumerate(self.field.parts):
             if missingWord:
@@ -2147,10 +2147,10 @@ class SelectOptionElement(Element):
         html = '<li><a href="#answer-'+self.id+'" class="'
         if self.field.isCorrect == True:
             html += 'right">'
-            html += _("Correct")
+            html += c_("Correct")
         else:
             html += 'wrong">'
-            html += _("Incorrect")
+            html += c_("Incorrect")
         html += '</a></li>'+lb
     
         return html    
@@ -2342,7 +2342,7 @@ class SelectquestionElement(Element):
         # Feedback button
         html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
         html += '<p>'+lb
-        html += '<input type="button" name="submitSelect" class="feedbackbutton" value="%s" onclick="showFeedback(this,%d,\'%s\')"/> ' %(_("Show Feedback"),len(self.field.options),self.field.id)   
+        html += '<input type="button" name="submitSelect" class="feedbackbutton" value="%s" onclick="showFeedback(this,%d,\'%s\')"/> ' %( c_("Show Feedback"),len(self.field.options),self.field.id)   
         html += lb
         html += '</p>'+lb
         html += '</div>'+lb
@@ -2597,9 +2597,9 @@ class QuizOptionElement(Element):
         lb = "\n" #Line breaks
         html = '<li><a href="#answer-'+self.id+'">'
         if self.field.isCorrect == True:
-            html += _("Correct Option")
+            html += c_("Correct Option")
         else:
-            html += _("Wrong")
+            html += c_("Wrong")
         html += '</a> (<a href="#sa'+str(self.index)+'b'+self.field.question.id+'">'+_("Feedback")+'</a>)</li>'
         html += lb
         '''

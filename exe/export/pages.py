@@ -68,26 +68,26 @@ class Page(object):
                     "creative commons: attribution - non derived work - non commercial 4.0": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
                     "free software license GPL": "http://www.gnu.org/copyleft/gpl.html"
                    }
-        licenses_names = {"license GFDL": _("GNU Free Documentation License"),
-                          "creative commons: attribution 2.5": _("Creative Commons Attribution License 2.5"),
-                          "creative commons: attribution - share alike 2.5": _("Creative Commons Attribution Share Alike License 2.5"),
-                          "creative commons: attribution - non derived work 2.5": _("Creative Commons Attribution No Derivatives License 2.5"),
-                          "creative commons: attribution - non commercial 2.5": _("Creative Commons Attribution Non-commercial License 2.5"),
-                          "creative commons: attribution - non commercial - share alike 2.5": _("Creative Commons Attribution Non-commercial Share Alike License 2.5"),
-                          "creative commons: attribution - non derived work - non commercial 2.5": _("Creative Commons Attribution Non-commercial No Derivatives License 2.5"),
-                          "creative commons: attribution 3.0": _("Creative Commons Attribution License 3.0"),
-                          "creative commons: attribution - share alike 3.0": _("Creative Commons Attribution Share Alike License 3.0"),
-                          "creative commons: attribution - non derived work 3.0": _("Creative Commons Attribution No Derivatives License 3.0"),
-                          "creative commons: attribution - non commercial 3.0": _("Creative Commons Attribution Non-commercial License 3.0"),
-                          "creative commons: attribution - non commercial - share alike 3.0": _("Creative Commons Attribution Non-commercial Share Alike License 3.0"),
-                          "creative commons: attribution - non derived work - non commercial 3.0": _("Creative Commons Attribution Non-commercial No Derivatives License 3.0"),
-                          "creative commons: attribution 4.0": _("Creative Commons Attribution License 4.0"),
-                          "creative commons: attribution - share alike 4.0": _("Creative Commons Attribution Share Alike License 4.0"),
-                          "creative commons: attribution - non derived work 4.0": _("Creative Commons Attribution No Derivatives License 4.0"),
-                          "creative commons: attribution - non commercial 4.0": _("Creative Commons Attribution Non-commercial License 4.0"),
-                          "creative commons: attribution - non commercial - share alike 4.0": _("Creative Commons Attribution Non-commercial Share Alike License 4.0"),
-                          "creative commons: attribution - non derived work - non commercial 4.0": _("Creative Commons Attribution Non-commercial No Derivatives License 4.0"),
-                          "free software license GPL": _("GNU General Public License")
+        licenses_names = {"license GFDL": c_("GNU Free Documentation License"),
+                          "creative commons: attribution 2.5": c_("Creative Commons Attribution License 2.5"),
+                          "creative commons: attribution - share alike 2.5": c_("Creative Commons Attribution Share Alike License 2.5"),
+                          "creative commons: attribution - non derived work 2.5": c_("Creative Commons Attribution No Derivatives License 2.5"),
+                          "creative commons: attribution - non commercial 2.5": c_("Creative Commons Attribution Non-commercial License 2.5"),
+                          "creative commons: attribution - non commercial - share alike 2.5": c_("Creative Commons Attribution Non-commercial Share Alike License 2.5"),
+                          "creative commons: attribution - non derived work - non commercial 2.5": c_("Creative Commons Attribution Non-commercial No Derivatives License 2.5"),
+                          "creative commons: attribution 3.0": c_("Creative Commons Attribution License 3.0"),
+                          "creative commons: attribution - share alike 3.0": c_("Creative Commons Attribution Share Alike License 3.0"),
+                          "creative commons: attribution - non derived work 3.0": c_("Creative Commons Attribution No Derivatives License 3.0"),
+                          "creative commons: attribution - non commercial 3.0": c_("Creative Commons Attribution Non-commercial License 3.0"),
+                          "creative commons: attribution - non commercial - share alike 3.0": c_("Creative Commons Attribution Non-commercial Share Alike License 3.0"),
+                          "creative commons: attribution - non derived work - non commercial 3.0": c_("Creative Commons Attribution Non-commercial No Derivatives License 3.0"),
+                          "creative commons: attribution 4.0": c_("Creative Commons Attribution License 4.0"),
+                          "creative commons: attribution - share alike 4.0": c_("Creative Commons Attribution Share Alike License 4.0"),
+                          "creative commons: attribution - non derived work 4.0": c_("Creative Commons Attribution No Derivatives License 4.0"),
+                          "creative commons: attribution - non commercial 4.0": c_("Creative Commons Attribution Non-commercial License 4.0"),
+                          "creative commons: attribution - non commercial - share alike 4.0": c_("Creative Commons Attribution Non-commercial Share Alike License 4.0"),
+                          "creative commons: attribution - non derived work - non commercial 4.0": c_("Creative Commons Attribution Non-commercial No Derivatives License 4.0"),
+                          "free software license GPL": c_("GNU General Public License")
                          }
 
         html = ""
@@ -96,10 +96,10 @@ class Page(object):
 
         if plicense in licenses:
             html += '<p align="center">'
-            html += _("Licensed under the")
+            html += c_("Licensed under the")
             html += ' <a rel="license" href="%s">%s</a>' % (licenses[plicense], licenses_names[plicense])
             if plicense == 'license GFDL':
-                html += ' <a href="fdl.html">(%s)</a>' % _('Local Version')
+                html += ' <a href="fdl.html">(%s)</a>' % c_('Local Version')
             html += '</p>'
 
         return html
