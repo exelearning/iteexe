@@ -47,7 +47,7 @@ project="eXeLearning"
 version="2.0"
 # 1.- Extraction of strings from *.py and *.js into new POT
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
-pybabel extract --keyword=x_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
+pybabel extract --keyword=x_ --keyword=c_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
 #tools/nevow-xmlgettext exe/jsui/templates/mainpage.html exe/webui/templates/about.html | msgcat exe/locale/messages.pot.tmp - -o exe/locale/messages.pot
 #rm exe/locale/messages.pot.tmp
 # Removal of fuzzy comments from the POT file
