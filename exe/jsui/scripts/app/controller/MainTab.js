@@ -234,6 +234,14 @@ Ext.define('eXe.controller.MainTab', {
                             formpanel.clear()
                         };
                         Ext.iterate(formpanel.up().query('lomdata'), formclear);
+                        if (form.getFieldValues(true).pp_lang) {
+                            var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
+                            if (authoring && authoring.submitLink) {
+                            	var outlineTreePanel = eXe.app.getController("Outline").getOutlineTreePanel(),
+                                	selected = outlineTreePanel.getSelectionModel().getSelection();
+                    	        authoring.submitLink("changeNode", selected !== 0? selected[0].data.id : '0');
+                            }
+                        }
                     }
                 },
 	            failure: function(form, action) {
