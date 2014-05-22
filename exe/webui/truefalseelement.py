@@ -211,11 +211,11 @@ class TrueFalseElement(object):
         html += '<p class="iDevice_answer js-required">'+lb
         html += '<label for="true'+self.id+'">'
         html += self.__option(0, 2, "true")+' '
-        html += _("True")
+        html += c_("True")
         html += '</label> '+lb
         html += '<label for="false'+self.id+'">'
         html += self.__option(1, 2, "false")+' '
-        html += _("False")
+        html += c_("False")
         html += '</label>'+lb
         html += '</p>'+lb
         
@@ -259,9 +259,9 @@ class TrueFalseElement(object):
         html = '<'+sectionTag+' id="s'+self.id+'" class="feedback js-feedback js-hidden">'+lb
         html += '<'+titleTag+' class="js-sr-av">Feedback</'+titleTag+'>'+lb
         if self.question.isCorrect:
-            html += '<p><strong id="s'+self.id+'-result" class="right">'+_("True")+'</strong></p>'+lb
+            html += '<p><strong id="s'+self.id+'-result" class="right">'+c_("True")+'</strong></p>'+lb
         else:
-            html += '<p><strong id="s'+self.id+'-result" class="wrong">'+_("False")+'</strong></p>'+lb
+            html += '<p><strong id="s'+self.id+'-result" class="wrong">'+c_("False")+'</strong></p>'+lb
         html += content+lb
         html += '</'+sectionTag+'>'+lb   
         
