@@ -150,6 +150,18 @@ Ext.define('eXe.view.forms.ExportPanel', {
                     text: _('Save'),
                     margin: 10,
                     itemId: 'save_properties'
+                },
+                {
+                    xtype: 'button',
+                    text: _('Clear'),
+                    itemId: 'clear_properties',
+                    margin: 10
+                },
+                {
+                    xtype: 'button',
+                    text: _('Reset'),
+                    itemId: 'reset_properties',
+                    margin: 10
                 }
             ]
         });

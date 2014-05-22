@@ -580,6 +580,18 @@ Ext.define('eXe.view.forms.PackagePanel', {
                     text: _('Save'),
                     itemId: 'save_properties',
                     margin: 10
+                },
+                {
+                    xtype: 'button',
+                    text: _('Clear'),
+                    itemId: 'clear_properties',
+                    margin: 10
+                },
+                {
+                    xtype: 'button',
+                    text: _('Reset'),
+                    itemId: 'reset_properties',
+                    margin: 10
                 }
             ]
         });

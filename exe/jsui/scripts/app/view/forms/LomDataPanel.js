@@ -196,6 +196,16 @@ Ext.define('eXe.view.forms.LomDataPanel', {
                 xtype: 'button',
                 text: _('Save'),
                 itemId: 'save_properties'
+            },
+            {
+                xtype: 'button',
+                text: _('Clear'),
+                itemId: 'clear_properties'
+            },
+            {
+                xtype: 'button',
+                text: _('Reset'),
+                itemId: 'reset_properties'
             }
         ]);
         Ext.resumeLayouts(true);
@@ -226,6 +236,16 @@ Ext.define('eXe.view.forms.LomDataPanel', {
                     xtype: 'button',
                     text: _('Save'),
                     itemId: 'save_properties'
+                },
+                {
+                    xtype: 'button',
+                    text: _('Clear'),
+                    itemId: 'clear_properties'
+                },
+                {
+                    xtype: 'button',
+                    text: _('Reset'),
+                    itemId: 'reset_properties'
                 }
             ]
         });

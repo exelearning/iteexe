@@ -329,12 +329,9 @@ class Package(Persistable):
         self.previewDir    = None
         self.idevices      = []
         self.dublinCore    = DublinCore()
-        self.lomEs         = lomsubs.lomSub.factory()
-        entry = str(uuid.uuid4())
         self._lang = G.application.config.locale.split('_')[0]
-        self.lomEs.addChilds(self.lomDefaults(entry, 'LOM-ESv1.0', True))
-        self.lom           = lomsubs.lomSub.factory()
-        self.lom.addChilds(self.lomDefaults(entry, 'LOMv1.0'))
+        self.setLomDefaults()
+        self.setLomEsDefaults()
         self.scolinks      = False
         self.scowsinglepage= False
         self.scowwebsite   = False
@@ -367,6 +364,17 @@ class Package(Persistable):
         self.resourceDir = TempDirPath()
         self.resources = {} # Checksum-[_Resource(),..]
         self._docType    = G.application.config.docType
+        
+    def setLomDefaults(self):
+        entry = str(uuid.uuid4())
+        self.lom = lomsubs.lomSub.factory()
+        self.lom.addChilds(self.lomDefaults(entry, 'LOMv1.0'))
+
+    def setLomEsDefaults(self):
+        entry = str(uuid.uuid4())
+        self.lomEs = lomsubs.lomSub.factory()
+        self.lomEs.addChilds(self.lomDefaults(entry, 'LOM-ESv1.0', True))
+
     # Property Handlers
     def set_docType(self,value):
         self._docType = toUnicode(value)
