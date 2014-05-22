@@ -144,7 +144,7 @@ class VerdaderofalsofpdBlock(Block):
             html += "<div class=\"question\">\n"
             html += element.renderQuestion(True)
         html += element.renderFeedbackView(True)
-        html += element.renderNoscript(True)
+        # html += element.renderNoscript(True)
         if element == self.questionElements[len(self.questionElements) - 1]:
             html += "</div>\n"
         else:
@@ -176,7 +176,7 @@ class VerdaderofalsofpdBlock(Block):
             html += "<div class=\"question\">\n"
             html += element.renderQuestion(False)
         html += element.renderFeedbackView(False)
-        html += element.renderNoscript(False)
+        # html += element.renderNoscript(False)
         if element == self.questionElements[len(self.questionElements) - 1]:
             html += "</div>\n"
         else:
