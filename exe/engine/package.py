@@ -466,7 +466,7 @@ class Package(Persistable):
             dateTime.set_valueOf_(datetime.datetime.now().strftime('%Y-%m-%d'))
             dateTime.set_uniqueElementName('dateTime')
             lang_str = self.lang.encode('utf-8')
-            value_meta_str = _(u'Metadata creation date').encode('utf-8')
+            value_meta_str = c_(u'Metadata creation date').encode('utf-8')
             dateDescription = lomsubs.LanguageStringSub([lomsubs.LangStringSub(lang_str, value_meta_str)])
             date = lomsubs.dateSub(dateTime, dateDescription)
 
@@ -616,56 +616,62 @@ class Package(Persistable):
 
     def set_objectives(self, value):
         lang_str = self.lang.encode('utf-8')
-        value_str = _("Objectives").upper() + ": " + value.encode('utf-8')
+        value_str = c_("Objectives").upper() + ": " + value.encode('utf-8')
         for metadata in [self.lom, self.lomEs]:
-            description = metadata.get_general().get_description()
-            if description:
-                description_found = False
-                for desc in description:
-                    for string in desc.get_string():
-                        if string.get_valueOf_() == _("Objectives").upper() + ": " + self._objectives.encode('utf-8'):
-                            description_found = True
-                            if value:
-                                string.set_language(lang_str)
-                                string.set_valueOf_(value_str)
-                            else:
-                                desc.string.remove(string)
-                                description.remove(desc)
-                if not description_found:
-                    if value:
-                        description = lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])
-                        metadata.get_general().add_description(description)
+            educationals = metadata.get_educational()
+            description = lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])
+            if educationals:
+                for educational in educationals:
+                    descriptions = educational.get_description()
+                    found = False
+                    if descriptions:
+                        for desc in descriptions:
+                            for string in desc.get_string():
+                                if string.get_valueOf_() == c_("Objectives").upper() + ": " + self._objectives.encode('utf-8'):
+                                    found = True
+                                    if value:
+                                        string.set_language(lang_str)
+                                        string.set_valueOf_(value_str)
+                                    else:
+                                        desc.string.remove(string)
+                                        descriptions.remove(desc)
+                    if not found:
+                        if value:
+                            educational.add_description(description)
             else:
                 if value:
-                    description = [lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])]
-                    metadata.get_general().set_description(description)
+                    educational = [lomsubs.educationalSub(description=[description])]
+                    metadata.set_educational(educational)
         self._objectives = toUnicode(value)
 
     def set_preknowledge(self, value):
         lang_str = self.lang.encode('utf-8')
-        value_str = _("Preknowledge").upper() + ": "  + value.encode('utf-8')
+        value_str = c_("Preknowledge").upper() + ": "  + value.encode('utf-8')
         for metadata in [self.lom, self.lomEs]:
-            description = metadata.get_general().get_description()
-            if description:
-                description_found = False
-                for desc in description:
-                    for string in desc.get_string():
-                        if string.get_valueOf_() == _("Preknowledge").upper() + ": "  + self._preknowledge.encode('utf-8'):
-                            description_found = True
-                            if value:
-                                string.set_language(lang_str)
-                                string.set_valueOf_(value_str)
-                            else:
-                                desc.string.remove(string)
-                                description.remove(desc)
-                if not description_found:
-                    if value:
-                        description = lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])
-                        metadata.get_general().add_description(description)
+            educationals = metadata.get_educational()
+            description = lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])
+            if educationals:
+                for educational in educationals:
+                    descriptions = educational.get_description()
+                    found = False
+                    if descriptions:
+                        for desc in descriptions:
+                            for string in desc.get_string():
+                                if string.get_valueOf_() == c_("Preknowledge").upper() + ": " + self._preknowledge.encode('utf-8'):
+                                    found = True
+                                    if value:
+                                        string.set_language(lang_str)
+                                        string.set_valueOf_(value_str)
+                                    else:
+                                        desc.string.remove(string)
+                                        descriptions.remove(desc)
+                    if not found:
+                        if value:
+                            educational.add_description(description)
             else:
                 if value:
-                    description = [lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])]
-                    metadata.get_general().set_description(description)
+                    educational = [lomsubs.educationalSub(description=[description])]
+                    metadata.set_educational(educational)        
         self._preknowledge = toUnicode(value)
 
     def license_map(self, source, value):
@@ -1496,14 +1502,14 @@ class Package(Persistable):
         G.application.afterUpgradeHandlers.append(self.cleanUpResources)
 
     def lomDefaults(self, entry, schema, rights=False):
-        defaults = {'general': {'identifier': [{'catalog': _('My Catalog'), 'entry': entry}],
+        defaults = {'general': {'identifier': [{'catalog': c_('My Catalog'), 'entry': entry}],
                               'aggregationLevel': {'source': schema, 'value': '2'}
                              },
                   'metaMetadata': {'metadataSchema': [schema]},
                  }
         if rights:
             defaults['rights'] = {'access': {'accessType': {'source': schema, 'value': 'universal'},
-                                             'description': {'string': [{'valueOf_': _('Default'), 'language': str(self.lang)}]}}}
+                                             'description': {'string': [{'valueOf_': c_('Default'), 'language': str(self.lang)}]}}}
         return defaults
 
     oldLicenseMap = {"None": "None",
