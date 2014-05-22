@@ -1426,10 +1426,10 @@ class ClozeElement(ElementWithResources):
             onclick = "toggleClozeAnswers('%s')" % self.id
         else:
             if preview:
-                html += [common.button('submit%s' % self.id,_(u"Submit"),id='submit%s' % self.id,onclick="clozeSubmit('%s')" % self.id)]            
+                html += [common.button('submit%s' % self.id, c_(u"Submit"),id='submit%s' % self.id,onclick="clozeSubmit('%s')" % self.id)]            
             else:
-                html += [common.submitButton('submit%s' % self.id,_(u"Submit"),id='submit%s' % self.id)]
-            html += [common.button('restart%s' % self.id,_(u"Restart"),id='restart%s' % self.id,style="display:none",onclick="clozeRestart('%s')" % self.id)]
+                html += [common.submitButton('submit%s' % self.id, c_(u"Submit"),id='submit%s' % self.id)]
+            html += [common.button('restart%s' % self.id, c_(u"Restart"),id='restart%s' % self.id,style="display:none",onclick="clozeRestart('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display:none'
             value = c_(u"Show Answers")
