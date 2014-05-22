@@ -2135,7 +2135,7 @@ class SelectOptionElement(Element):
         html += '</div>'+lb
             
         # Answer feedback
-        html += '<'+sectionTag+' class="iDevice_answer-feedback feedback js-required" id="feedback-'+ident+'"></'+sectionTag+'>'+lb
+        html += '<'+sectionTag+' class="iDevice_answer-feedback feedback" id="feedback-'+ident+'" style="display:none"></'+sectionTag+'>'+lb
         
         html += '</'+sectionTag+'>'+lb
         
