@@ -80,8 +80,8 @@ class Manifest(object):
         if self.metadataType == 'LOMES':
             output = StringIO.StringIO()
             metadata = copy.deepcopy(self.package.lomEs)
-            title = metadata.get_general().get_title()
-            if not title or not title.get_string():
+            title = metadata.get_general().get_title() or lomsubs.titleSub([])
+            if not title.get_string():
                 title.add_string(lomsubs.LangStringSub(self.package.lang.encode('utf-8'), self.package.name))
                 metadata.get_general().set_title(title)
             metadata.export(output, 0, namespace_=namespace, pretty_print=False)
@@ -89,8 +89,8 @@ class Manifest(object):
         if self.metadataType == 'LOM':
             output = StringIO.StringIO()
             metadata = copy.deepcopy(self.package.lom)
-            title = metadata.get_general().get_title()
-            if not title or not title.get_string():
+            title = metadata.get_general().get_title() or lomsubs.titleSub([])
+            if not title.get_string():
                 title.add_string(lomsubs.LangStringSub(self.package.lang.encode('utf-8'), self.package.name))
                 metadata.get_general().set_title(title)
             metadata.export(output, 0, namespace_=namespace, pretty_print=False)
