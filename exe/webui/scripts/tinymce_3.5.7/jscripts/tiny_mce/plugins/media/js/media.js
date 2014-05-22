@@ -597,6 +597,11 @@
                 }
             } else {
                 src = getVal("src");
+				
+				// The New eXeLearning
+				var p = 'http';
+				if (src.indexOf("https")==0) p += 's';
+				// /The New eXeLearning				
 
                 // YouTube *NEW*
                 if (src.match(/youtu.be\/[a-z1-9.-_]+/)) {
@@ -604,7 +609,10 @@
                     data.height = 350;
                     data.params.frameborder = '0';
                     data.type = 'iframe';
-                    src = 'http://www.youtube.com/embed/' + src.match(/youtu.be\/([a-z1-9.-_]+)/)[1];
+                    //src = 'http://www.youtube.com/embed/' + src.match(/youtu.be\/([a-z1-9.-_]+)/)[1];
+                    // The New eXeLearning
+                    src = p+'://www.youtube.com/embed/' + src.match(/youtu.be\/([a-z1-9.-_]+)/)[1];
+                    // /The New eXeLearning					
                     setVal('src', src);
                     setVal('media_type', data.type);
                 }
@@ -615,7 +623,10 @@
                     data.height = 350;
                     data.params.frameborder = '0';
                     data.type = 'iframe';
-                    src = 'http://www.youtube.com/embed/' + src.match(/v=([^&]+)/)[1];
+                    //src = 'http://www.youtube.com/embed/' + src.match(/v=([^&]+)/)[1];
+                    // The New eXeLearning
+                    src = p+'://www.youtube.com/embed/' + src.match(/v=([^&]+)/)[1];
+                    // /The New eXeLearning					
                     setVal('src', src);
                     setVal('media_type', data.type);
                 }
@@ -625,7 +636,10 @@
                     data.width = 425;
                     data.height = 326;
                     data.type = 'flash';
-                    src = 'http://video.google.com/googleplayer.swf?docId=' + src.match(/docid=([^&]+)/)[1] + '&hl=en';
+                    //src = 'http://video.google.com/googleplayer.swf?docId=' + src.match(/docid=([^&]+)/)[1] + '&hl=en';
+                    // The New eXeLearning
+                    src = p+'://video.google.com/googleplayer.swf?docId=' + src.match(/docid=([^&]+)/)[1] + '&hl=en';
+                    // /The New eXeLearning					
                     setVal('src', src);
                     setVal('media_type', data.type);
                 }
@@ -636,7 +650,10 @@
                     data.height = 350;
                     data.params.frameborder = '0';
                     data.type = 'iframe';
-                    src = 'http://player.vimeo.com/video/' + src.match(/vimeo.com\/([0-9]+)/)[1];
+                    //src = 'http://player.vimeo.com/video/' + src.match(/vimeo.com\/([0-9]+)/)[1];
+                    // The New eXeLearning
+                    src = p+'://player.vimeo.com/video/' + src.match(/vimeo.com\/([0-9]+)/)[1];
+                    // /The New eXeLearning					
                     setVal('src', src);
                     setVal('media_type', data.type);
                 }
@@ -658,7 +675,10 @@
                     data.height = 350;
                     data.params.frameborder = '0';
                     data.type = 'iframe';
-                    src = 'http://maps.google.com/maps/ms?msid=' + src.match(/msid=(.+)/)[1] + "&output=embed";
+                    //src = 'http://maps.google.com/maps/ms?msid=' + src.match(/msid=(.+)/)[1] + "&output=embed";
+                    // The New eXeLearning
+                    src = p+'://maps.google.com/maps/ms?msid=' + src.match(/msid=(.+)/)[1] + "&output=embed";
+                    // /The New eXeLearning					
                     setVal('src', src);
                     setVal('media_type', data.type);
                 }
