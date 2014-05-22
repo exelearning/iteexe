@@ -639,7 +639,7 @@
                     //src = 'http://video.google.com/googleplayer.swf?docId=' + src.match(/docid=([^&]+)/)[1] + '&hl=en';
                     // The New eXeLearning
                     src = p+'://video.google.com/googleplayer.swf?docId=' + src.match(/docid=([^&]+)/)[1] + '&hl=en';
-                    // /The New eXeLearning					
+                    // /The New eXeLearning
                     setVal('src', src);
                     setVal('media_type', data.type);
                 }
@@ -653,7 +653,7 @@
                     //src = 'http://player.vimeo.com/video/' + src.match(/vimeo.com\/([0-9]+)/)[1];
                     // The New eXeLearning
                     src = p+'://player.vimeo.com/video/' + src.match(/vimeo.com\/([0-9]+)/)[1];
-                    // /The New eXeLearning					
+                    // /The New eXeLearning		
                     setVal('src', src);
                     setVal('media_type', data.type);
                 }
