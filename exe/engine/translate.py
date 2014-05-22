@@ -24,7 +24,7 @@ Functions that help with translation
 # importing
 __builtins__['x_'] = lambda x:x
 
-def lateTranslate(propName):
+def lateTranslate(propName, content=False):
     """
     Given a property name, returns a read/write property that is translated
     every time it is read
@@ -35,7 +35,8 @@ def lateTranslate(propName):
         Used to write the property
         """
         #return lambda self, value: setattr(self, propName, value)
-        if not hasattr(self, propName) or _(getattr(self, propName)) != value:
+        transFunc = c_ if content else _
+        if not hasattr(self, propName) or transFunc(getattr(self, propName)) != value:
             setattr(self, propName, value)
     def get_prop(self):
         """
@@ -44,7 +45,8 @@ def lateTranslate(propName):
         value = getattr(self, propName)
         # Don't try to translate empty strings
         if value:
-            return _(value)
+            transFunc = c_ if content else _
+            return transFunc(value)
         else:
             return value
     return property(get_prop, set_prop)

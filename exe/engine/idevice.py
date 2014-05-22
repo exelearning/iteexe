@@ -76,7 +76,7 @@ class Idevice(Persistable):
         if not hasattr(self, '_title'):
             self._title = 'NO TITLE'
         if self._title:
-            title = _(self._title)
+            title = c_(self._title)
             title = title.replace('&', '&amp;') 
             title = title.replace('"', '&quot;')
             return title
@@ -88,7 +88,7 @@ class Idevice(Persistable):
         """
         Sets self._title
         """
-        if _(self._title) != value:
+        if c_(self._title) != value:
             self._title = value
 
     title    = property(get_title, set_title)

@@ -442,6 +442,8 @@ class Package(Persistable):
                 educational = [lomsubs.educationalSub(language=[language])]
                 metadata.set_educational(educational)
         self._lang = toUnicode(value)
+        if value in G.application.config.locales:
+            __builtins__['c_'] = G.application.config.locales[value].ugettext
 
     def set_author(self, value):
         if self.dublinCore.creator == self._author:

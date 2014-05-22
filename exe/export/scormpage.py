@@ -151,8 +151,8 @@ class ScormPage(Page):
         if self.node.package.scolinks:
             html += u'<'+sectionTag+' class="previousnext">'+lb
             html += u'<a class="previouslink" '
-            html += u'href="javascript:goBack();">%s</a> | <a class="nextlink" ' % _('Previous')
-            html += u'href="javascript:goForward();">%s</a>' % _('Next')
+            html += u'href="javascript:goBack();">%s</a> | <a class="nextlink" ' % c_('Previous')
+            html += u'href="javascript:goForward();">%s</a>' % c_('Next')
             html += u'</'+sectionTag+'>'+lb
         if not themeHasXML:
         #if not style.hasValidConfig:

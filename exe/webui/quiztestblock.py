@@ -220,7 +220,7 @@ class QuizTestBlock(Block):
             document.getElementById("quizForm%s").submitB.disabled = true;
             """ % self.idevice.id
         scriptStr += 'alert("'
-        scriptStr += _("Your score is ")
+        scriptStr += c_("Your score is ")
         scriptStr += '" + actualScore + "%")'
         scriptStr += """
            
@@ -315,7 +315,7 @@ class QuizTestBlock(Block):
            actualScore = Math.round(rawScore / numQuestions * 100);
         """
         scriptStr += 'alert("'
-        scriptStr += _("Your score is ")
+        scriptStr += c_("Your score is ")
         scriptStr += '" + actualScore + "%")'
         scriptStr += """  
           
