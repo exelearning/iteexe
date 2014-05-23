@@ -1669,7 +1669,8 @@ class ClozelangElement(ElementWithResources):
                 html += ['<span style="display:none" ', 'id="clozelangAnswer%s.%s">%s</span>' % (self.id, i, encrypt(missingWord))]
 
         # Score string
-        html += ['<div class="block">\n']
+        html += ['<div class="block iDevice_buttons">']
+        html += ['<p>\n']
         if self.field.instantMarking:
             html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozelangScore(\'%s\')" />' % ( c_(u"Get score"), self.id, self.id)]
 
@@ -1690,8 +1691,10 @@ class ClozelangElement(ElementWithResources):
         html += [' ',
                  common.button('%sshowAnswersButton' % self.id, value, id='showAnswersButton%s' % self.id, style=style, onclick=onclick),
         ]
-        html += ['<p id="clozelangScore%s"></p>' % self.id]
+        html += [common.javaScriptIsRequired()]
+        html += ['</p>\n']
         html += ['</div>\n']
+        html += ['<div id="clozelangScore%s"></div>' % self.id]
         return '\n'.join(html) + '</div>'
     
     def renderText(self):

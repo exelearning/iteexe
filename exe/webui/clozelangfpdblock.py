@@ -53,6 +53,15 @@ class ClozelangfpdBlock(Block):
             idevice.content.idevice = idevice
         if idevice.feedback.idevice is None: 
             idevice.feedback.idevice = idevice
+			
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"        
+        
+        idevice.instructionsForLearners.htmlTag = sectionTag
+        idevice.instructionsForLearners.class_ = "block instructions"
+        idevice.feedback.htmlTag = sectionTag			
 
         self.instructionElement = \
             TextAreaElement(idevice.instructionsForLearners)
@@ -155,17 +164,31 @@ class ClozelangfpdBlock(Block):
             instruction_html = self.instructionElement.renderPreview()
         else:
             instruction_html = self.instructionElement.renderView()
-        html = u'<div class="iDevice_inner">\n'
-        html += instruction_html
+        # html = u'<div class="iDevice_inner">\n'
+        
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"        
+        
+        html = instruction_html
+        html += '<'+sectionTag+' class="activity" id="activity-'+self.id+'">\n'
+        if not self.previewing:
+            html += '<form name="cloze-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form">\n'
         html += clozeContent
+        if not self.previewing:
+            html += '</form>\n'
+        html += '</'+sectionTag+'>\n'
         if self.feedbackElement.field.content: 
             if self.previewing: 
                 html += self.feedbackElement.renderPreview(False, class_="feedback")
             else:
                 html += self.feedbackElement.renderView(False, class_="feedback")
-        html += u'</div>\n'
+        # html += u'</div>\n'
 
-#JR: Anadimos la etiqueta noscript
+	#JR: Anadimos la etiqueta noscript
+	# 2014 - JavaScript is required
+	'''
 	if self.previewing:
 		cloze = self.clozelangElement.field.content_w_resourcePaths
 		feedback = self.feedbackElement.field.content_w_resourcePaths
@@ -179,6 +202,7 @@ class ClozelangfpdBlock(Block):
 		html += u"<br/><br/><strong>" + c_("Feedback") + ": </strong><br/>\n"
 		html += feedback
 	html += u"</div></noscript>"
+	'''
 
 	return html
 
