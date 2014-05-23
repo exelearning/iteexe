@@ -136,19 +136,24 @@ class VerdaderofalsofpdBlock(Block):
             html += aux
         else:
             html += aux + "&nbsp;"
+            
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"
 
 #       html += self.instructionElement.renderPreview()
 # JRJ: si es la última pregunta no añadimos br
 # (if it's the last question, let's not add br)        
         for element in self.questionElements:
-            html += "<div class=\"question\">\n"
+            html += "<"+sectionTag+" class=\"question\">\n"
             html += element.renderQuestion(True)
         html += element.renderFeedbackView(True)
         # html += element.renderNoscript(True)
         if element == self.questionElements[len(self.questionElements) - 1]:
-            html += "</div>\n"
+            html += "</"+sectionTag+">\n"
         else:
-            html += "</div><div>&nbsp;</div>\n"
+            html += "</"+sectionTag+"><div>&nbsp;</div>\n"
             
         html += common.ideviceFooter(self, style, "preview")
 
@@ -159,6 +164,11 @@ class VerdaderofalsofpdBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"        
+        
         html = common.ideviceHeader(self, style, "view")
 # JRJ: Si hay instrucciones añadimos un &nbsp;
 # (if there are instructions let's add a &nbsp;)
@@ -173,14 +183,14 @@ class VerdaderofalsofpdBlock(Block):
 # JRJ: si es la última pregunta no añadimos br
 # (if it's the last question we won't add br)        
         for element in self.questionElements:
-            html += "<div class=\"question\">\n"
+            html += "<"+sectionTag+" class=\"question\">\n"
             html += element.renderQuestion(False)
         html += element.renderFeedbackView(False)
         # html += element.renderNoscript(False)
         if element == self.questionElements[len(self.questionElements) - 1]:
-            html += "</div>\n"
+            html += "</"+sectionTag+">\n"
         else:
-            html += "</div><div>&nbsp;</div>\n"
+            html += "</"+sectionTag+"><div>&nbsp;</div>\n"
             
         html += common.ideviceFooter(self, style, "view")
 
