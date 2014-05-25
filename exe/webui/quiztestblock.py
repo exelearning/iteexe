@@ -369,7 +369,7 @@ class QuizTestBlock(Block):
         html += '</div>'+lb
         
         if not self.idevice.score == -1:
-            message = "Your score is " + unicode(self.idevice.score) + "%"
+            message = c_("Your score is ") + unicode(self.idevice.score) + "%"
             html += '<script type="text/javascript">alert("'+ message+ '")</script>'
 
         self.idevice.score = -1   
