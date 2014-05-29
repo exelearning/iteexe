@@ -255,9 +255,18 @@
                 var cText = "";
                 var license = "";
                 
+                var figureTag = "div";
+                var headerFigcaptionTag = "div";
+                var footerFigcaptionTag = "div";
+                if (parent.exe_export_format=="html5") {
+                    figureTag = "figure";
+                    if (imageTitle=="" && imageTitleLink=="" && authorName=="" && authorNameLink=="" && captionLicense=="") headerFigcaptionTag = "figcaption";
+                    footerFigcaptionTag = "figcaption";
+                }                 
+                
                 //Header
                 if (imageHeader!="") {
-                    hText = "<div class='figcaption header'><strong>"+imageHeader+"</strong></div>";
+                    hText = "<"+headerFigcaptionTag+" class='figcaption header'><strong>"+imageHeader+"</strong></"+headerFigcaptionTag+">";
                 }
                 
                 //Author and link
@@ -337,9 +346,9 @@
                 
                 var extraStyle="width:"+_w+"px;";
                 var fText = "";
-                if (cText!="" || license!="") fText = "<div class='figcaption'>"+cText+license+"</div>";
+                if (cText!="" || license!="") fText = "<"+footerFigcaptionTag+" class='figcaption'>"+cText+license+"</"+footerFigcaptionTag+">";
 
-                c = "<div class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+fText+"</div><br />";
+                c = "<"+figureTag+" class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+fText+"</"+figureTag+"><br />";
             }
             
             tinyMCEPopup.editor.execCommand('mceInsertContent', false, c);

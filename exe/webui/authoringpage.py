@@ -142,7 +142,6 @@ class AuthoringPage(RenderableResource):
         html += common.hiddenField(u"isChanged", u"0")
         html += common.hiddenField(u"currentNode", unicode(topNode.id))
         html += common.hiddenField(u'clientHandleId', request.args['clientHandleId'][0])
-        html += '<script type="text/javascript">$exe.exportFormat="'+common.getExportDocType()+'";</script>'
         html += u'<!-- start authoring page -->\n'
         html += u'<div id="nodeDecoration">\n'
         html += u'<h1 id="nodeTitle">\n'
@@ -191,8 +190,11 @@ class AuthoringPage(RenderableResource):
         #JR: anado una variable con el estilo
         estilo = u'/style/%s/content.css' % self.package.style
         html += common.getJavaScriptStrings()
-        html += u"<script type=\"text/javascript\">var exe_style = '%s';</script>\n" % estilo
-        html += u"<script type=\"text/javascript\">var exe_package_name='"+self.package.name+"';</script>\n"			
+        html += u"<script type=\"text/javascript\">"
+        html += u"var exe_style = '%s';" % estilo
+        html += u"var exe_package_name='"+self.package.name+"';"
+        html += 'var exe_export_format="'+common.getExportDocType()+'".toLowerCase();'
+        html += '</script>\n'        
         html += u'<script type="text/javascript" src="../jsui/native.history.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/authoring.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_jquery.js"></script>\n'
