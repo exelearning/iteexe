@@ -160,9 +160,9 @@ class Application:
             configPath = configKlass.getConfigPath()
             backup = configPath + '.backup'
             configPath.move(backup)
+            self.config = configKlass()
             self.loadErrors.append(
                _(u'An error is occurred loading your config. A backup is saved at %s') % backup)
-            self.config = configKlass()
         log.debug("logging set up")
 
     def preLaunch(self):
