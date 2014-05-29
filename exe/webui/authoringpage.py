@@ -142,6 +142,7 @@ class AuthoringPage(RenderableResource):
         html += common.hiddenField(u"isChanged", u"0")
         html += common.hiddenField(u"currentNode", unicode(topNode.id))
         html += common.hiddenField(u'clientHandleId', request.args['clientHandleId'][0])
+        html += '<script type="text/javascript">$exe.exportFormat="'+common.getExportDocType()+'";</script>'
         html += u'<!-- start authoring page -->\n'
         html += u'<div id="nodeDecoration">\n'
         html += u'<h1 id="nodeTitle">\n'
