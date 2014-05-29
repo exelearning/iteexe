@@ -114,12 +114,10 @@ class ReflectionfpdmodifBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html = u'<div class="iDevice_inner">\n'
-    
         if self.previewing: 
-            html += self.activityElement.renderPreview()
+            html = self.activityElement.renderPreview()
         else:
-            html += self.activityElement.renderView()
+            html = self.activityElement.renderView()
 
 #        html += '<div id="view%s" style="display:block;">' % self.id
 #        html += common.feedbackButton("btnshow"+self.id, _(u"Click here"),
@@ -138,7 +136,6 @@ class ReflectionfpdmodifBlock(Block):
 #            html += self.answerElement.renderView()
 
 #        html += "</div>\n"
-        html += "</div>\n"
         return html
     
 

@@ -147,20 +147,18 @@ class EjercicioresueltofpdBlock(Block):
         """
         log.debug("renderViewContent called with previewing mode = " + str(self.previewing))
 
-        html  = u"<div class=\"iDevice_inner\">\n"
+        html  = u""
 
         if self.previewing:
             html += self.storyElement.renderPreview()
-            html + u"<br/>\n"
+            html + u"<br />\n"
             for element in self.questionElements:
                 html += element.renderPreview()
         else:
             html += self.storyElement.renderView()
-            html + u"<br/>\n"
+            html + u"<br />\n"
             for element in self.questionElements:
                 html += element.renderView()
-
-        html += u"</div>\n"
 
         return html
 
