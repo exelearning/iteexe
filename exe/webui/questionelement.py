@@ -63,6 +63,12 @@ class QuestionElement(object):
             question.questionTextArea.idevice = idevice 
         if question.feedbackTextArea.idevice is None: 
             question.feedbackTextArea.idevice = idevice
+            
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section" 
+        question.questionTextArea.htmlTag = sectionTag
 
         self.question_question = TextAreaElement(question.questionTextArea)
         self.question_question.id = self.quesId 

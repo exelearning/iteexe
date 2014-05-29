@@ -51,6 +51,14 @@ class EjercicioresueltofpdBlock(Block):
         # loaded from an elp, ensure that proper idevices are set:
         if idevice.storyTextArea.idevice is None: 
             idevice.storyTextArea.idevice = idevice
+            
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"
+            
+        idevice.storyTextArea.htmlTag = sectionTag
+        idevice.storyTextArea.class_ = "block story"
 
         self.storyElement      = TextAreaElement(idevice.storyTextArea)
 
