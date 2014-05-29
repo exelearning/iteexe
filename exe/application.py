@@ -162,7 +162,7 @@ class Application:
             configPath.move(backup)
             self.config = configKlass()
             self.loadErrors.append(
-               _(u'An error is occurred loading your config. A backup is saved at %s') % backup)
+               _(u'An error has occurred when loading your config. A backup is saved at %s') % backup)
         log.debug("logging set up")
 
     def preLaunch(self):
@@ -180,7 +180,7 @@ class Application:
                 backup.rmtree()
             (self.config.configDir / 'idevices').move(backup)
             self.loadErrors.append(
-               _(u'An error is occurred loading your Idevice Store. A backup is saved at %s') % backup)
+               _(u'An error has occurred when loading your Idevice Store. A backup is saved at %s') % backup)
             self.ideviceStore.load()
         # Make it so jelly can load objects from ~/.exe/idevices
         sys.path.append(self.config.configDir/'idevices')
