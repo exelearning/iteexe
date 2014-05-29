@@ -82,6 +82,7 @@ class Application:
         self.resourceDir=None
         self.afterUpgradeHandlers = []
         self.preferencesShowed = False
+        self.loadErrors = []
         assert globals.application is None, "You tried to instantiate two Application objects"
         globals.application = self
 
@@ -143,18 +144,26 @@ class Application:
         """
         if self.standalone:
             from exe.engine.standaloneconfig import StandaloneConfig
-            self.config = StandaloneConfig()
+            configKlass = StandaloneConfig
         elif sys.platform[:3] == "win":
             from exe.engine.winconfig import WinConfig
-            self.config = WinConfig()
+            configKlass = WinConfig
         elif sys.platform[:6] == "darwin":
             from exe.engine.macconfig import MacConfig
-            self.config = MacConfig()
+            configKlass = MacConfig
         else:
             from exe.engine.linuxconfig import LinuxConfig
-            self.config = LinuxConfig()
+            configKlass = LinuxConfig
+        try:
+            self.config = configKlass()
+        except:
+            configPath = configKlass.getConfigPath()
+            backup = configPath + '.backup'
+            configPath.move(backup)
+            self.loadErrors.append(
+               _(u'An error is occurred loading your config. A backup is saved at %s') % backup)
+            self.config = configKlass()
         log.debug("logging set up")
-
 
     def preLaunch(self):
         """
@@ -163,7 +172,16 @@ class Application:
         """
         log.debug("preLaunch")
         self.ideviceStore = IdeviceStore(self.config)
-        self.ideviceStore.load()
+        try:
+            self.ideviceStore.load()
+        except:
+            backup = self.config.configDir / 'idevices.backup'
+            if backup.exists():
+                backup.rmtree()
+            (self.config.configDir / 'idevices').move(backup)
+            self.loadErrors.append(
+               _(u'An error is occurred loading your Idevice Store. A backup is saved at %s') % backup)
+            self.ideviceStore.load()
         # Make it so jelly can load objects from ~/.exe/idevices
         sys.path.append(self.config.configDir/'idevices')
         self.webServer = WebServer(self, self.packagePath)

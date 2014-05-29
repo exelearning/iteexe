@@ -41,7 +41,7 @@ from exe.engine.stylestore  import StyleStore
 x_ = lambda s: s
 
 
-class Config:
+class Config(object):
     """
     The Config class contains the configuration information for eXe.
     """
@@ -103,6 +103,14 @@ class Config:
         'file attachments': [x_('Non-Textual Information')],
         'sort items': [x_('Interactive Activities')]
     }
+    
+    @classmethod
+    def getConfigPath(cls):
+        obj = cls.__new__(cls)
+        obj.configParser = ConfigParser()
+        obj._overrideDefaultVals()
+        obj.__setConfigPath()
+        return obj.configPath
 
     def __init__(self):
         """
