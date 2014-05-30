@@ -37,6 +37,7 @@ import twisted
 import shutil
 from exe                      import globals as G
 from exe.engine.stylestore  import StyleStore
+from exe.webui import common
 
 x_ = lambda s: s
 
@@ -411,6 +412,7 @@ class Config(object):
         if self.configParser.has_section('user'):
             if self.configParser.user.has_option('docType'):
                 self.docType = self.configParser.user.docType
+                common.setExportDocType(self.configParser.user.docType)
             if self.configParser.user.has_option('defaultStyle'):
                 self.defaultStyle= self.configParser.user.defaultStyle
             if self.configParser.user.has_option('styleSecureMode'):
