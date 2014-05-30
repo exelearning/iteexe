@@ -65,7 +65,7 @@ class Field(Persistable):
         self.idevice   = None
 
     # Properties
-    name    = lateTranslate('name', content=True)
+    name    = lateTranslate('name')
     instruc = lateTranslate('instruc')
 
     def getId(self):
