@@ -32,6 +32,7 @@ from exe.webui.renderable      import RenderableResource
 import mywebbrowser
 from exe.engine.path import Path
 import os.path
+from exe.webui import common
 
 log = logging.getLogger(__name__)
 
@@ -172,6 +173,7 @@ class PreferencesPage(RenderableResource):
         try:
             data['locale'] = self.config.locale
             data['internalAnchors'] = self.config.internalAnchors
+            data['docType'] = self.config.docType
             browserSelected = "None"
             for bname, item in mywebbrowser._browsers.items():
                 if bname not in browsersHidden:
@@ -203,6 +205,10 @@ class PreferencesPage(RenderableResource):
             internalAnchors = request.args['internalAnchors'][0]
             self.config.internalAnchors = internalAnchors
             self.config.configParser.set('user', 'internalAnchors', internalAnchors)
+            doctypesel = request.args['docType'][0]
+            self.config.docType = doctypesel
+            common.setExportDocType(doctypesel)
+            self.config.configParser.set('user', 'docType', doctypesel)
             browser = request.args['browser'][0]
             if browser == "None":
                 browser = None

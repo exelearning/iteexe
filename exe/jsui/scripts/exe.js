@@ -138,6 +138,14 @@ Ext.application({
         nevow_closeLive('window.top.location = "' + location + '";');
     },
     
+    showLoadError: function() {
+    	if (eXe.app.config.loadErrors.length > 0) {
+    		Ext.Msg.alert(_('Load Error'), eXe.app.config.loadErrors.pop(), eXe.app.showLoadError);
+    	}
+    	else
+    		eXe.app.afterShowLoadErrors();
+    },
+    
     launch: function() {
         Ext.QuickTips.init();
 
@@ -178,9 +186,6 @@ Ext.application({
 		    Ext.get('loading-mask').fadeOut();
 		  }, 250);
         
-        if (eXe.app.config.showPreferences)
-        	eXe.app.getController('Toolbar').toolsPreferences();
-        
         if (!eXe.app.config.showIdevicesGrouped) {
         	var panel = Ext.ComponentQuery.query('#idevice_panel')[0],
         		button = panel.down('button');
@@ -188,6 +193,13 @@ Ext.application({
         	panel.view.features[0].disable();
         	button.setText(_('Group iDevices'));
         }
+
+        eXe.app.afterShowLoadErrors = function() {
+        	if (eXe.app.config.showPreferences)
+        		eXe.app.getController('Toolbar').toolsPreferences();
+        };
+
+        eXe.app.showLoadError();
     },
 
     appFolder: "jsui/app"
