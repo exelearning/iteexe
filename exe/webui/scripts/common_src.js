@@ -462,14 +462,17 @@ function markClozeWord(ele, mark) {
         case 0:
             // Not attempted
             ele.style.backgroundColor = "";
+            ele.style.color = "";
             break;
         case 1:
             // Wrong
             ele.style.backgroundColor = "#FF9999";
+            ele.style.color = "#000000";
             break;
         case 2: 
             // Correct
             ele.style.backgroundColor = "#CCFF99";
+            ele.style.color = "#000000";
             break;
     }
     return mark
