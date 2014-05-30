@@ -239,7 +239,7 @@ Ext.define('eXe.controller.MainTab', {
                     Ext.MessageBox.alert("", _('Settings Saved'));
                     if (formpanel.itemId == 'package_properties') {
                         var formclear = function(formpanel) {
-                            formpanel.clear()
+                            formpanel.clear();
                         };
                         Ext.iterate(formpanel.up().query('lomdata'), formclear);
                         if (form.getFieldValues(true).pp_lang) {
@@ -285,8 +285,12 @@ Ext.define('eXe.controller.MainTab', {
 							clear: true
 						},
 						success: function() {
+							var formclear = function(formpanel) {
+								formpanel.clear();
+							};
 							this.loadForm(formpanel);
 							this.clearHeaderBackground();
+	                        Ext.iterate(formpanel.up().query('lomdata'), formclear);
 						},
 						failure: function(form, action) {
 			                Ext.Msg.alert(_('Error'), action.result.errorMessage);
