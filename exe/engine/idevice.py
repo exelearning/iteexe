@@ -215,7 +215,9 @@ class Idevice(Persistable):
         if self.parentNode:
             old_node = self.parentNode
             self.parentNode.idevices.remove(self)
+        old_id = self.id
         parentNode.addIdevice(self)
+        self.id = old_id
         # and update any internal anchors and their links:
         self.ChangedParentNode(old_node, parentNode)
 
