@@ -271,7 +271,7 @@ class DublinCore(Jellyable, Unjellyable):
         self.date = ''
         self.type = ''
         self.format = ''
-        self.identifier = ''
+        self.identifier = str(uuid.uuid4())
         self.source = ''
         self.language = ''
         self.relation = ''
@@ -366,14 +366,12 @@ class Package(Persistable):
         self._docType    = G.application.config.docType
         
     def setLomDefaults(self):
-        entry = str(uuid.uuid4())
         self.lom = lomsubs.lomSub.factory()
-        self.lom.addChilds(self.lomDefaults(entry, 'LOMv1.0'))
+        self.lom.addChilds(self.lomDefaults(self.dublinCore.identifier, 'LOMv1.0'))
 
     def setLomEsDefaults(self):
-        entry = str(uuid.uuid4())
         self.lomEs = lomsubs.lomSub.factory()
-        self.lomEs.addChilds(self.lomDefaults(entry, 'LOM-ESv1.0', True))
+        self.lomEs.addChilds(self.lomDefaults(self.dublinCore.identifier, 'LOM-ESv1.0', True))
 
     # Property Handlers
     def set_docType(self,value):
