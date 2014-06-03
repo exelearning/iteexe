@@ -56,7 +56,7 @@ class Config(object):
                    'videoMediaConverter_avi', 'audioMediaConverter_ogg',
                    'audioMediaConverter_au', 'audioMediaConverter_mp3',
                    'audioMediaConverter_wav', 'ffmpegPath'),
-        'user': ('locale', 'lastDir', 'showPreferencesOnStart','defaultStyle', 'showIdevicesGrouped','docType'),
+        'user': ('locale', 'lastDir', 'showPreferencesOnStart','defaultStyle', 'showIdevicesGrouped','docType','editorMode'),
     }
 
     idevicesCategories = {
@@ -153,6 +153,8 @@ class Config(object):
         self.lastDir = None
         self.showPreferencesOnStart = "1"
         self.showIdevicesGrouped = "1"
+        # tinymce option
+        self.editorMode = 'Free' 
         # styleSecureMode : if this [user] key is = 0  , exelearning can run python files in styles
         # as websitepage.py , ... ( deactivate secure mode )
         self.styleSecureMode="1"
@@ -410,6 +412,8 @@ class Config(object):
 
         # Load the "user" section
         if self.configParser.has_section('user'):
+            if self.configParser.user.has_option('editorMode'):
+                self.editorMode = self.configParser.user.editorMode
             if self.configParser.user.has_option('docType'):
                 self.docType = self.configParser.user.docType
                 common.setExportDocType(self.configParser.user.docType)
