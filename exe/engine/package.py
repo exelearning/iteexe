@@ -704,7 +704,7 @@ class Package(Persistable):
                     if value:
                         copyrightAndOtherRestrictions.get_value().set_valueOf_(self.license_map(source, value_str))
                     else:
-                        copyrightAndOtherRestrictions = None
+                        metadata.get_rights().set_copyrightAndOtherRestrictions(None)
             else:
                 if value:
                     src = lomsubs.sourceValueSub()
@@ -748,33 +748,35 @@ class Package(Persistable):
 
     def set_learningResourceType(self, value):
         value_str = value.encode('utf-8')
-        if value:
-            for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
-                educationals = metadata.get_educational()
-                src = lomsubs.sourceValueSub()
-                src.set_valueOf_(source)
-                src.set_uniqueElementName('source')
-                val = lomsubs.learningResourceTypeValueSub()
-                val.set_valueOf_(self.learningResourceType_map(source, value_str))
-                val.set_uniqueElementName('value')
-                learningResourceType = lomsubs.learningResourceTypeSub(self.learningResourceType_map(source, value_str))
-                learningResourceType.set_source(src)
-                learningResourceType.set_value(val)
-                if educationals:
-                    for educational in educationals:
-                        learningResourceTypes = educational.get_learningResourceType()
-                        found = False
-                        if learningResourceTypes:
-                            for i in learningResourceTypes:
-                                if i.get_value().get_valueOf_() == self.learningResourceType_map(source, self.learningResourceType.encode('utf-8')):
-                                    found = True
-                                    index = learningResourceTypes.index(i)
+        for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
+            educationals = metadata.get_educational()
+            src = lomsubs.sourceValueSub()
+            src.set_valueOf_(source)
+            src.set_uniqueElementName('source')
+            val = lomsubs.learningResourceTypeValueSub()
+            val.set_valueOf_(self.learningResourceType_map(source, value_str))
+            val.set_uniqueElementName('value')
+            learningResourceType = lomsubs.learningResourceTypeSub(self.learningResourceType_map(source, value_str))
+            learningResourceType.set_source(src)
+            learningResourceType.set_value(val)
+            if educationals:
+                for educational in educationals:
+                    learningResourceTypes = educational.get_learningResourceType()
+                    found = False
+                    if learningResourceTypes:
+                        for i in learningResourceTypes:
+                            if i.get_value().get_valueOf_() == self.learningResourceType_map(source, self.learningResourceType.encode('utf-8')):
+                                found = True
+                                index = learningResourceTypes.index(i)
+                                if value:
                                     educational.insert_learningResourceType(index, learningResourceType)
-                        if not found:
-                            educational.add_learningResourceType(learningResourceType)
-                else:
-                    educational = [lomsubs.educationalSub(learningResourceType=[learningResourceType])]
-                    metadata.set_educational(educational)
+                                else:
+                                    learningResourceTypes.pop(index)
+                    if not found:
+                        educational.add_learningResourceType(learningResourceType)
+            else:
+                educational = [lomsubs.educationalSub(learningResourceType=[learningResourceType])]
+                metadata.set_educational(educational)
         self._learningResourceType = toUnicode(value)
 
     def intendedEndUserRole_map(self, source, value):

@@ -159,8 +159,8 @@ Ext.define('eXe.controller.MainTab', {
         	field.setValue(null);
         	form.submit({
         		success: function(f, action) {
-        			var img = this.getHeaderBackgroundImg(), json,
-        			showbutton = this.getHeaderBackgroundShowButton();
+        			var img = this.getHeaderBackgroundImg(),
+        				showbutton = this.getHeaderBackgroundShowButton();
         			img.setSrc(null);
         			img.hide();
         			showbutton.setText(_('Show Image'));
@@ -271,14 +271,16 @@ Ext.define('eXe.controller.MainTab', {
 			fn: function(button) {
 				if (button == "yes") {
 					var formpanel = cbutton.up('form'),
-				    	form = formpanel.getForm(),
-			        	value = null,
-			        	data = {};
-	
-				    for (value in form.getValues())
-				    	data[value] = null;
-				    
-					form.setValues(data);
+				    	form = formpanel.getForm();
+					
+					form.getFields().each( function(field) {
+						if (field.xtype == 'radiogroup')
+							field.down('radio').setValue(true);
+						else if (field.inputId == 'pp_lang')
+							field.setValue(eXe.app.config.lang);
+						else
+							field.setValue('');
+					});
 					form.submit({
 						clientValidation: false,
 						params: {
@@ -289,7 +291,14 @@ Ext.define('eXe.controller.MainTab', {
 								formpanel.clear();
 							};
 							this.loadForm(formpanel);
-							this.clearHeaderBackground();
+							if (formpanel == this.getPackagePropertiesPanel()) {
+								var img = this.getHeaderBackgroundImg(),
+			        				showbutton = this.getHeaderBackgroundShowButton();
+			        			img.setSrc(null);
+			        			img.hide();
+			        			showbutton.setText(_('Show Image'));
+			        			showbutton.hide();
+							}
 	                        Ext.iterate(formpanel.up().query('lomdata'), formclear);
 						},
 						failure: function(form, action) {
