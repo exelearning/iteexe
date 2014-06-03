@@ -354,7 +354,7 @@ class ListaBlock(Block):
         idevice.feedback.htmlTag = sectionTag            
 
         self.instructionElement = TextAreaElement(idevice.instructionsForLearners)
-        self.instructionElement.field.content_w_resourcePaths = _(self.instructionElement.field.content_w_resourcePaths)
+        self.instructionElement.field.content_w_resourcePaths = c_(self.instructionElement.field.content_w_resourcePaths)
         self.listaElement = ListaElement(idevice.content)
         self.feedbackElement = \
             TextAreaElement(idevice.feedback)
