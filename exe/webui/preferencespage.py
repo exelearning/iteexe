@@ -31,6 +31,7 @@ from exe.webui.renderable      import RenderableResource
 import mywebbrowser
 from exe.engine.path import Path
 import os.path
+from exe.webui import common
 
 log = logging.getLogger(__name__)
 
@@ -153,7 +154,7 @@ class PreferencesPage(RenderableResource):
         self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
         for browser in self.browsersAvalaibles:
             self.browsers.append({'browser': browser[1], 'text': browser[0]})
-        self.doctypes=['XHTML','HTML5']
+
             
 
     def getChild(self, name, request):
@@ -210,6 +211,7 @@ class PreferencesPage(RenderableResource):
             self.config.configParser.set('user', 'editorMode', editormodesel)
             doctypesel = request.args['docType'][0]
             self.config.docType = doctypesel
+            common.setExportDocType(doctypesel)
             self.config.configParser.set('user', 'docType', doctypesel)
             browser = request.args['browser'][0]
             if browser == "None":

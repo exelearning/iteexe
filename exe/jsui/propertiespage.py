@@ -316,10 +316,11 @@ class PropertiesPage(Renderable, Resource):
                         if key in self.imgFieldNames:
                             if getattr(obj, name):
                                 data[key] = getattr(obj, name).basename()
-                        else:
-                            data[key] = getattr(obj, name)
+                        else:                            
                             if name=='docType':              
-                                common.setExportDocType(getattr(obj,name))
+                                data[key]=common.getExportDocType()
+                            else:
+                                data[key] = getattr(obj, name)
 
         except Exception as e:
             log.exception(e)
