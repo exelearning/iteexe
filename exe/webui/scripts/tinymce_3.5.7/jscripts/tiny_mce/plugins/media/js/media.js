@@ -556,7 +556,7 @@
                     if (src)
                         setVal('video_altsource2', src.src);
 
-                    if (data.video.attrs && data.video.attrs.class && data.video.attrs.class == 'mediaelement')
+                    if (!data.video.attrs || (data.video.attrs.class && data.video.attrs.class == 'mediaelement'))
                         setVal('mediaelement', true);
                     else
                         setVal('mediaelement', false);
@@ -567,7 +567,7 @@
                     else
                         setVal('autoplayelement', false);
                         
-                    if (data.video.attrs && data.video.attrs.controls && data.video.attrs.controls == 'controls')
+                    if (!data.video.attrs || (data.video.attrs.controls && data.video.attrs.controls == 'controls'))
                         setVal('controlselement', true);
                     else
                         setVal('controlselement', false);
@@ -584,7 +584,7 @@
                     if (src)
                         setVal('audio_altsource2', src.src);
 
-                    if (data.video.attrs && data.video.attrs.class && data.video.attrs.class == 'mediaelement')
+                    if (!data.video.attrs || (data.video.attrs.class && data.video.attrs.class == 'mediaelement'))
                         setVal('mediaelement', true);
                     else
                         setVal('mediaelement', false);
@@ -595,7 +595,7 @@
                     else
                         setVal('autoplayelement', false);
                         
-                    if (data.video.attrs && data.video.attrs.controls && data.video.attrs.controls == 'controls')
+                    if (!data.video.attrs || (data.video.attrs.controls && data.video.attrs.controls == 'controls'))
                         setVal('controlselement', true);
                     else
                         setVal('controlselement', false);
