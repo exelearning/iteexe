@@ -192,7 +192,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                             ]
                         },
                         flex: 0,
-                        help: _('"Permissive" will allow any markup. "Strict" will allow only valid markup: It will remove any invalid code, even HTML5 tags when using XHTML format.')
+                        help: _('"Permissive" will allow any markup. "Strict" will allow only valid markup: It will remove any invalid code, even HTML5 tags (except VIDEO and AUDIO) when using XHTML format.')
                     }]
                 }]
             }, {
