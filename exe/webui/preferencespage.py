@@ -239,3 +239,9 @@ class PreferencesPage(RenderableResource):
         It would be the TinyMCE lang
         """
         return self.config.locale
+        
+    def getEditorMode(self):
+        """
+        It would be the TinyMCE lang
+        """
+        return self.config.editorMode

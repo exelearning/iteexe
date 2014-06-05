@@ -180,17 +180,20 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                     title: _('Editor'),
                     bodyPadding: 10,
                     items: [{
-                        xtype: 'combobox',
-                                inputId: 'editorMode',
-                                dirtyCls: 'property-form-dirty',
-                                fieldLabel: _('Mode'),
-                                store: [
-                                    ["XHTML", ("XHTML")],
-                                    ["free", _("Free")]
-                                ]
-                            }
-
-                    ]
+                        xtype: 'helpcontainer',
+                        item: {
+                            xtype: 'combobox',
+                            inputId: 'editorMode',
+                            dirtyCls: 'property-form-dirty',
+                            fieldLabel: _('Mode'),
+                            store: [
+                                ["permissive", ("Permissive")],
+                                ["strict", _("Strict")]
+                            ]
+                        },
+                        flex: 0,
+                        help: _('"Permissive" will allow any markup. "Strict" will allow only valid markup: It will remove any invalid code, even HTML5 tags when using XHTML format.')
+                    }]
                 }]
             }, {
                 xtype: 'container',
