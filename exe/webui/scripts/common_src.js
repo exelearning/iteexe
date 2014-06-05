@@ -1343,6 +1343,7 @@ var $exe = {
         	}         
         }
         $exe.hint.init();
+        $exe.setIframesProtocol();
     },
     addRoles : function(){
         $('#header').attr('role','banner'); 
@@ -1484,6 +1485,17 @@ var $exe = {
 				$exe.alignMediaElement(this);
 			});
         }
+    },
+    setIframesProtocol : function(){
+        var p = window.location.protocol;
+        var l = false;
+        if (p!="http" && p!="https") l = true;
+        $("IFRAME").each(
+            function(){
+                var s = $(this).attr("src");
+                if (l && s.indexOf("//")==0) $(this).attr("src","http:"+s);
+            }
+        );
     },
     loadScript : function(url, callback){
         var s;
