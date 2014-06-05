@@ -154,7 +154,7 @@ class Config(object):
         self.showPreferencesOnStart = "1"
         self.showIdevicesGrouped = "1"
         # tinymce option
-        self.editorMode = 'Free' 
+        self.editorMode = 'permissive' 
         # styleSecureMode : if this [user] key is = 0  , exelearning can run python files in styles
         # as websitepage.py , ... ( deactivate secure mode )
         self.styleSecureMode="1"
