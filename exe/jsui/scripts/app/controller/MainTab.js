@@ -258,7 +258,7 @@ Ext.define('eXe.controller.MainTab', {
 	        });
 	    }
         else
-            Ext.Msg.alert(_('Error'), _('The form contains invalid fields. Please check back.'))
+            Ext.Msg.alert(_('Error'), _('The form contains invalid fields. Please check back.'));
     },
     
     onClickClear: function(cbutton) {
@@ -273,14 +273,17 @@ Ext.define('eXe.controller.MainTab', {
 					var formpanel = cbutton.up('form'),
 				    	form = formpanel.getForm();
 					
-					form.getFields().each( function(field) {
-						if (field.xtype == 'radiogroup')
-							field.down('radio').setValue(true);
-						else if (field.inputId == 'pp_lang')
-							field.setValue(eXe.app.config.lang);
-						else
-							field.setValue('');
-					});
+					if (formpanel.xtype != 'lomdata' &&
+						formpanel.xtype != 'lomesdata') {
+						form.getFields().each( function(field) {
+							if (field.xtype == 'radiogroup')
+								field.down('radio').setValue(true);
+							else if (field.inputId == 'pp_lang')
+								field.setValue(eXe.app.config.lang);
+							else
+								field.setValue('');
+						});
+					}
 					form.submit({
 						clientValidation: false,
 						params: {
@@ -290,7 +293,6 @@ Ext.define('eXe.controller.MainTab', {
 							var formclear = function(formpanel) {
 								formpanel.clear();
 							};
-							this.loadForm(formpanel);
 							if (formpanel == this.getPackagePropertiesPanel()) {
 								var img = this.getHeaderBackgroundImg(),
 			        				showbutton = this.getHeaderBackgroundShowButton();
@@ -300,6 +302,7 @@ Ext.define('eXe.controller.MainTab', {
 			        			showbutton.hide();
 							}
 	                        Ext.iterate(formpanel.up().query('lomdata'), formclear);
+	                        this.loadForm(formpanel);
 						},
 						failure: function(form, action) {
 			                Ext.Msg.alert(_('Error'), action.result.errorMessage);
@@ -388,17 +391,12 @@ Ext.define('eXe.controller.MainTab', {
     },
 
     onTabChange: function(tabPanel, newCard, oldCard, eOpts) {
-        var newformpanel, oldformpanel;
+        var newformpanel = null;
 
         while (newCard.getActiveTab)
             newCard = newCard.getActiveTab();
         if (newCard.getForm)
             newformpanel = newCard;
-
-        while (oldCard.getActiveTab)
-            oldCard = oldCard.getActiveTab();
-        if (oldCard.getForm)
-            oldformpanel = oldCard;
 
         if (newformpanel) {
             this.loadForm(newformpanel);
