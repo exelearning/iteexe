@@ -93,12 +93,14 @@ class PublicationEpub3(object):
                 continue
 
             ext = epubFile.ext
-            name = epubFile.basename().replace('.', '_')
+            name = epubFile.basename().translate({ord(u'.'): u'_', ord(u'('): u'', ord(u')'): u''})
 
             mimetype, _ = mimetypes.guess_type(epubFile.abspath())
             if not mimetype:
                 if ext and ext == 'webm':
                     mimetype = u'video/webm'
+                else:
+                    mimetype = u'application/octet-stream'
 
             properties = ''
 
