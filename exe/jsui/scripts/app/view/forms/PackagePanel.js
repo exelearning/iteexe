@@ -512,7 +512,44 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             anchor: '100%'
                         }
                     ]
-                },
+                },				
+                {
+                    xtype: 'fieldset',
+					title: _('Format'),
+                    margin: 10,
+                    items: [
+                         {
+                            xtype: 'helpcontainer',
+                            item: {
+	                            xtype: 'combobox',
+	                            inputId: 'pp_docType',
+	                            labelWidth: 100,
+	                            fieldLabel: _('Doctype'),
+	                            store: [
+	                                  ["XHTML", "XHTML"],
+	                                  ["HTML5", "HTML5"]
+	                            ],
+                                dirtyCls: 'property-form-dirty',
+	                            tooltip: _('Doctype'),
+	                            anchor: '100%',
+								listeners : {
+									select : function(){
+										var is= document.getElementsByTagName("IFRAME");
+										if(is.length==1) {
+											var i = is[0];
+											var ed = i.contentWindow.tinyMCE;
+											if(typeof(ed)!='undefined' && ed.activeEditor) {
+												Ext.Msg.alert(_('Warning'), _("Save the changes of your iDevice before changing the DOCTYPE"));
+											}
+										}										
+									}
+								}
+                            },
+                            flex: 0,
+                            help: _('This overrides for this Package the "Default format for the new documents" set in Tools - Preferences')
+                        }
+					]
+                },				
                 {
                     xtype: 'fieldset',
                     title: _('Taxonomy'),

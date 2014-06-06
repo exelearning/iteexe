@@ -33,176 +33,191 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                 height: 250,
                 activeTab: 0,
                 plain: true,
-                items: [{
-                    title: _('General Settings'),
-                    items: [{
-                        xtype: 'fieldset',
-                        defaults: {
-                            labelWidth: 200,
-                            anchor: '100%'
-                        },
-                        margin: 10,
-                        items: [{
-                            xtype: 'combobox',
-                            inputId: 'locale',
-                            dirtyCls: 'property-form-dirty',
-                            fieldLabel: _("Select Language"),
-                            queryModel: 'local',
-                            displayField: 'text',
-                            valueField: 'locale',
-                            store: {
-                                fields: ['locale', 'text'],
-                                proxy: {
-                                    type: 'ajax',
-                                    url: 'preferences',
-                                    reader: {
-                                        type: 'json',
-                                        root: 'locales'
-                                    }
-                                },
-                                autoLoad: true
-                            }
-                        }, {
-                            xtype: 'combobox',
-                            inputId: 'internalAnchors',
-                            dirtyCls: 'property-form-dirty',
-                            fieldLabel: _("Internal Linking (for Web Site Exports only)"),
-                            store: [
-                                ["enable_all", _("Enable All Internal Linking")],
-                                ["disable_autotop", _("Disable Auto-Top Internal Linking")],
-                                ["disable_all", _("Disable All Internal Linking")]
-                            ]
+                items: [
+					// Tab 0
+					{
+						title: _('General Settings'),
+						bodyPadding: 10,
+						items: [{
+							xtype: 'combobox',
+							inputId: 'locale',
+							dirtyCls: 'property-form-dirty',
+							fieldLabel: _("Select Language"),
+							labelWidth: 130,
+							margin: 10,
+							queryModel: 'local',
+							displayField: 'text',
+							valueField: 'locale',
+							store: {
+								fields: ['locale', 'text'],
+								proxy: {
+									type: 'ajax',
+									url: 'preferences',
+									reader: {
+										type: 'json',
+										root: 'locales'
+									}
+								},
+								autoLoad: true
+							}
+						}, {
 
-                        }, {
+							xtype: 'container',
+							layout: 'hbox',
+							//layout:'column',
+							border: 1,
+							margin: 10,
+							width: '94%',
+							items: [{
+									xtype: 'combobox',
+									inputId: 'browser',
+									id: 'browsersel',
+									dirtyCls: 'property-form-dirty',
+									labelWidth: 130,
+									fieldLabel: lngsel,
+									queryModel: 'local',
+									displayField: 'text',
+									valueField: 'browser',
+									width: '92%',
+									store: {
+										fields: ['browser', 'text'],
+										proxy: {
+											type: 'ajax',
+											url: 'preferences',
+											reader: {
+												type: 'json',
+												root: 'browsers'
+											}
+										},
+										autoLoad: true
+									}
 
-                            xtype: 'container',
-                            layout: 'hbox',
-                            //layout:'column',
-                            border: 1,
-                            width: '100%',
-                            items: [{
-                                    xtype: 'combobox',
-                                    inputId: 'browser',
-                                    id: 'browsersel',
-                                    dirtyCls: 'property-form-dirty',
-                                    labelWidth: 200,
-                                    fieldLabel: lngsel,
-                                    queryModel: 'local',
-                                    displayField: 'text',
-                                    valueField: 'browser',
-                                    width: '94%',
-                                    store: {
-                                        fields: ['browser', 'text'],
-                                        proxy: {
-                                            type: 'ajax',
-                                            url: 'preferences',
-                                            reader: {
-                                                type: 'json',
-                                                root: 'browsers'
-                                            }
-                                        },
-                                        autoLoad: true
-                                    }
+								}, {
+									xtype: 'tbfill'
+								}, {
+									xtype: 'button',
+									text: '...',
+									tooltip: lngsel,
+									margins: {
+										//left: 5,
+										right: 10
+									},
+									handler: function (button) {
+										var formpanel = button.up('form'),
+											form = formpanel.getForm();
+										var action = form.findField('action');
+										var filename = form.findField('filename');
+										var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+											type: eXe.view.filepicker.FilePicker.modeLoad,
+											title: lngsel,
+											modal: true,
+											scope: this,
+											callback: function (fp) {
+												if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+													form.submit({
+														success: function () {
+															var datnew = {
+																browser: fp.file.path,
+																text: fp.file.path
+															};
+															var objbrw = Ext.getCmp('browsersel');
+															var numdat = objbrw.store.getCount();
+															objbrw.store.insert(numdat, datnew);
+															objbrw.select(objbrw.store.getAt(numdat));
+															objbrw.doQuery();
+														},
+														failure: function (form, action) {
+															Ext.Msg.alert(_('Error'), action.result.errorMessage);
+														}
+													});
+											}
+										});
+										fp.appendFilters([{
+											"typename": _("All Files"),
+											"extension": "*.*",
+											"regex": /.*$/
+										}]);
+										fp.show();
+									},
+									itemId: 'openbrowser'
+								}
 
-                                }, {
-                                    xtype: 'tbfill'
-                                }, {
-                                    xtype: 'button',
-                                    text: '...',
-                                    tooltip: lngsel,
-                                    margins: {
-                                        left: 5
-                                    },
-                                    handler: function (button) {
-                                        var formpanel = button.up('form'),
-                                            form = formpanel.getForm();
-                                        var action = form.findField('action');
-                                        var filename = form.findField('filename');
-                                        var fp = Ext.create("eXe.view.filepicker.FilePicker", {
-                                            type: eXe.view.filepicker.FilePicker.modeLoad,
-                                            title: lngsel,
-                                            modal: true,
-                                            scope: this,
-                                            callback: function (fp) {
-                                                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
-                                                    form.submit({
-                                                        success: function () {
-                                                            var datnew = {
-                                                                browser: fp.file.path,
-                                                                text: fp.file.path
-                                                            };
-                                                            var objbrw = Ext.getCmp('browsersel');
-                                                            var numdat = objbrw.store.getCount();
-                                                            objbrw.store.insert(numdat, datnew);
-                                                            objbrw.select(objbrw.store.getAt(numdat));
-                                                            objbrw.doQuery();
-                                                        },
-                                                        failure: function (form, action) {
-                                                            Ext.Msg.alert(_('Error'), action.result.errorMessage);
-                                                        }
-                                                    });
-                                            }
-                                        });
-                                        fp.appendFilters([{
-                                            "typename": _("All Files"),
-                                            "extension": "*.*",
-                                            "regex": /.*$/
-                                        }]);
-                                        fp.show();
-                                    },
-                                    itemId: 'openbrowser'
-                                }
-
-                            ]
-                        }]
-                    }, {
-                        xtype: 'fieldset',
-                        title: _('Format'),
-                        margin: 10,
-                        items: [{
-                            xtype: 'helpcontainer',
-                            item: {
-                                xtype: 'combobox',
-                                inputId: 'docType',
-                                dirtyCls: 'property-form-dirty',
-                                fieldLabel: _('Doctype'),
-                                store: [
-                                    ["XHTML", ("XHTML")],
-                                    ["HTML5", ("HTML5")]
-                                ]
-                            },
-                            flex: 0,
-                            help: _('Doctype') + " (DOCTYPE: XHTML/HTML5)"
-                        }]
-
-                    }]
-                }, {
-                    title: _('Editor'),
-                    bodyPadding: 10,
-                    items: [{
-                        xtype: 'helpcontainer',
-                        item: {
-                            xtype: 'combobox',
-                            inputId: 'editorMode',
-                            dirtyCls: 'property-form-dirty',
-                            fieldLabel: _('Mode'),
-                            store: [
-                                ["permissive", ("Permissive")],
-                                ["strict", _("Strict")]
-                            ]
-                        },
-                        flex: 0,
-                        help: _('"Permissive" will allow any markup. "Strict" will allow only valid markup: It will remove any invalid code, even HTML5 tags (except VIDEO and AUDIO) when using XHTML format.')
-                    }]
-                }]
+							]
+						}]
+					}, 
+					// /Tab0
+					//Tab1
+					{
+						title: _('Advanced'),
+						bodyPadding: 10,
+						items: [
+							// Document Format
+							{
+								xtype: 'helpcontainer',
+								item: {
+									xtype: 'combobox',
+									inputId: 'docType',
+									dirtyCls: 'property-form-dirty',
+									labelWidth: 250,
+									fieldLabel: _('Default format for the new documents'),
+									store: [
+										["XHTML", ("XHTML")],
+										["HTML5", ("HTML5")]
+									],
+									style: {
+										//marginBottom: '10px'
+									}								
+								},
+								margin: 10,
+								help: _('The current document format can be modified in the Properties tab')
+							},
+							// TinyMCE mode
+							{
+								xtype: 'helpcontainer',
+								item: {
+									xtype: 'combobox',
+									inputId: 'editorMode',
+									dirtyCls: 'property-form-dirty',
+									labelWidth: 250,
+									fieldLabel: _('Editor mode'),
+									store: [
+										["permissive", ("Permissive")],
+										["strict", _("Strict")]
+									],
+									style: {
+										//marginBottom: '10px'
+									}
+								},
+								margin: 10,
+								help: _('"Permissive" will allow any markup. "Strict" will allow only valid markup: It will remove any invalid code, even HTML5 tags (except VIDEO and AUDIO) when using XHTML format.')
+							},
+							// Internal anchors
+							{
+								xtype: 'combobox',
+								inputId: 'internalAnchors',
+								dirtyCls: 'property-form-dirty',
+								fieldLabel: _("Internal Linking (for Web Site Exports only)"),
+								labelWidth: 250,
+								store: [
+									["enable_all", _("Enable All Internal Linking")],
+									["disable_autotop", _("Disable Auto-Top Internal Linking")],
+									["disable_all", _("Disable All Internal Linking")]
+								],
+								margin: 10
+							}
+						]
+					}
+					// /Tab1				
+				]
             }, {
                 xtype: 'container',
                 layout: 'hbox',
-                margin: 10,
+                style: {
+					marginTop: '10px'
+				},			
                 items: [{
                     xtype: 'button',
                     text: _('Save'),
-                    margin: 10,
                     handler: function (button) {
                         var formpanel = button.up('form'),
                             form = formpanel.getForm();
@@ -221,7 +236,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                     flex: 1
                 }, {
                     xtype: 'checkboxfield',
-                    margin: 10,
+                    //margin: 10,
                     inputId: 'showPreferencesOnStart',
                     inputValue: '1',
                     uncheckedValue: '0',

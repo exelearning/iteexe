@@ -118,32 +118,6 @@ Ext.define('eXe.view.forms.ExportPanel', {
                         }
                     ]
                 },
-				
-                {
-                    xtype: 'fieldset',
-		    title: _('Format'),
-                    margin: 10,
-                    items: [
-                         {
-                            xtype: 'helpcontainer',
-                            item: {
-	                            xtype: 'combobox',
-	                            inputId: 'pp_docType',
-	                            labelWidth: 100,
-	                            fieldLabel: _('Doctype'),
-	                            store: [
-	                                  ["XHTML", "XHTML"],
-	                                  ["HTML5", "HTML5"]
-	                            ],
-                                dirtyCls: 'property-form-dirty',
-	                            tooltip: _('Doctype'),
-	                            anchor: '100%'
-                            },
-                            flex: 0,
-                            help: _('Doctype')+" (DOCTYPE: XHTML/HTML5)"
-                        }
-						]
-                },
              
                 {
                     xtype: 'button',
