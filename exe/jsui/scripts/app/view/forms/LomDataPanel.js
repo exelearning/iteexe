@@ -72,11 +72,14 @@ Ext.define('eXe.view.forms.LomDataPanel', {
         };
         return false;
     },
-    expandParents: function(field){
+    expandParents: function(field, expand){
         var comp = field;
         while (comp.xtype !== 'lomdata'){
             if ((comp.xtype == 'insertdelfieldset' || comp.xtype == 'preservescrollfieldset') && comp.collapsed){
-                comp.addCls('collapsed-with-data');
+            	if (expand)
+            		comp.expand();
+            	else
+            		comp.addCls('collapsed-with-data');
             }
             comp = comp.up();
         }
