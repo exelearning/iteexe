@@ -17,6 +17,11 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
+Ext.define("Ext.locale.en.ux.picker.DateTimePicker", {
+	  override: "Ext.ux.DateTimePicker",
+	  todayText: _("Now"),
+	  timeLabel: _('Time')
+});
 
 Ext.define('eXe.view.forms.LomWidgets', {
     statics: {
@@ -301,9 +306,9 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	            {
 			        xtype: 'helpcontainer',
 			        item: {
-			            xtype: 'datefield',
+			            xtype: 'datetimefield',
 			            allowBlank: optional,
-			            format: 'Y-m-d',
+			            format: 'c',
                         fieldLabel: fieldLabel,
 			            validateOnBlur: false,
 			            validateOnChange: false,

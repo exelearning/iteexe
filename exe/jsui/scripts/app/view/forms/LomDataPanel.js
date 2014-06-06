@@ -26,7 +26,8 @@ Ext.define('eXe.view.forms.LomDataPanel', {
         'eXe.view.forms.InsertDeleteFieldSet',
         'eXe.view.forms.LangContainer',
         'eXe.view.forms.LomSections',
-        'eXe.view.forms.LomWidgets'
+        'eXe.view.forms.LomWidgets',
+        'Ext.ux.DateTimeField'
     ],
 
     getInsertDelField: function(key){
