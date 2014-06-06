@@ -257,8 +257,15 @@ Ext.define('eXe.controller.MainTab', {
 	            }
 	        });
 	    }
-        else
-            Ext.Msg.alert(_('Error'), _('The form contains invalid fields. Please check back.'));
+        else {
+        	Ext.Msg.alert(_('Error'), _('The form contains invalid fields. Please check back.'));
+        	if (formpanel.expandParents) {
+        		form.getFields().each(function(field){
+        			if (!field.validate())
+        				formpanel.expandParents(field, true);
+        		});
+        	}
+        }
     },
     
     onClickClear: function(cbutton) {
