@@ -263,17 +263,15 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		            validateOnBlur: false,
 		            validateOnChange: false
 		        },
-		        collapsible: mandatory,
-		        checkboxToggle: !mandatory,
-		        //checkboxName: 
+		        collapsible: true,
 		        collapsed: !mandatory,
 		        title: title
-		    }
+		    };
 		    if (appendable)
 		        field.item = item;
 		    else
 		        field.items = item;
-		    return field
+		    return field;
 		},
 		datefield: function(embedded, label, id, tooltip, help, optional, margin, helpmargin) {
 		    if (!tooltip)
@@ -618,10 +616,10 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	                validateOnBlur: false,
 	                validateOnChange: false
 	            },
-	            collapsible: mandatory,
-	            checkboxToggle: !mandatory,
+	            collapsible: true,
 	            collapsed: !mandatory,
 	            title: title,
+	            itemId: id,
 	            items: {
 	                xtype: 'container',
 	                layout: 'anchor'

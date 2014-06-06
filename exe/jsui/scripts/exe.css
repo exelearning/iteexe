@@ -32,4 +32,8 @@
   background-image: url('../jsui/extjs/resources/themes/images/default/grid/dirty.gif');
   background-position: 0 0;
   background-repeat: no-repeat;
-}​
+}
+
+fieldset.collapsed-with-data > legend > div, fieldset.collapsed-with-data > legend > div > bold > i {
+  font-weight: bold;
+}
