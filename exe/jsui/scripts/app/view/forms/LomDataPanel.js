@@ -75,7 +75,7 @@ Ext.define('eXe.view.forms.LomDataPanel', {
         var comp = field;
         while (comp.xtype !== 'lomdata'){
             if ((comp.xtype == 'insertdelfieldset' || comp.xtype == 'preservescrollfieldset') && comp.collapsed){
-                comp.expand();
+                comp.addCls('collapsed-with-data');
             }
             comp = comp.up();
         }
