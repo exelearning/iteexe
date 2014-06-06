@@ -10,7 +10,7 @@ var PasteCodeDialog = {
 		if (content!="") {
 			var c = "<pre><code>"+content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+"</code></pre>";
 			var wrapper = document.forms[0].wrapper.checked;
-			if (wrapper) c = "<div class='pre-code'><div>"+c+"</div></div>";
+			if (wrapper) c = "<div class='pre-code'><div>"+c+"</div></div><br />";
 			tinyMCEPopup.editor.execCommand('mceInsertContent', false, c);
 		}
 		tinyMCEPopup.close();
