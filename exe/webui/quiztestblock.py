@@ -142,7 +142,7 @@ class QuizTestBlock(Block):
             else:
                 html += element.renderView()
         html += '<div class="block iDevice_buttons">'+lb
-        html += '<p><input type="submit" name="submitB" value="'+_("SUBMIT ANSWERS")+'" /> '+common.javaScriptIsRequired()+'</p>'+lb
+        html += '<p><input type="submit" name="submitB" value="' + c_("SUBMIT ANSWERS")+'" /> '+common.javaScriptIsRequired()+'</p>'+lb
         html += '</div>'+lb                
         html += '</form>'+lb
         html += common.ideviceFooter(self, style, "view")
@@ -220,7 +220,7 @@ class QuizTestBlock(Block):
             document.getElementById("quizForm%s").submitB.disabled = true;
             """ % self.idevice.id
         scriptStr += 'alert("'
-        scriptStr += _("Your score is ")
+        scriptStr += c_("Your score is ")
         scriptStr += '" + actualScore + "%")'
         scriptStr += """
            
@@ -315,7 +315,7 @@ class QuizTestBlock(Block):
            actualScore = Math.round(rawScore / numQuestions * 100);
         """
         scriptStr += 'alert("'
-        scriptStr += _("Your score is ")
+        scriptStr += c_("Your score is ")
         scriptStr += '" + actualScore + "%")'
         scriptStr += """  
           
@@ -365,11 +365,11 @@ class QuizTestBlock(Block):
             html += element.renderPreview()
         
         html += '<div class="block iDevice_buttons">'+lb
-        html += '<p><input type="submit" name="submitScore" value="'+_("SUBMIT ANSWERS")+'" /></p>'
+        html += '<p><input type="submit" name="submitScore" value="' + c_("SUBMIT ANSWERS")+'" /></p>'
         html += '</div>'+lb
         
         if not self.idevice.score == -1:
-            message = "Your score is " + unicode(self.idevice.score) + "%"
+            message = c_("Your score is ") + unicode(self.idevice.score) + "%"
             html += '<script type="text/javascript">alert("'+ message+ '")</script>'
 
         self.idevice.score = -1   

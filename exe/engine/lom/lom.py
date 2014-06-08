@@ -5634,7 +5634,7 @@ class id(GeneratedsSuper):
     def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='id'):
         if self.uniqueElementName is not None and 'uniqueElementName' not in already_processed:
             already_processed.add('uniqueElementName')
-            outfile.write(' uniqueElementName=%s' % (self.gds_format_string(quote_attrib(self.uniqueElementName).encode(ExternalEncoding), input_name='uniqueElementName'), ))
+#             outfile.write(' uniqueElementName=%s' % (self.gds_format_string(quote_attrib(self.uniqueElementName).encode(ExternalEncoding), input_name='uniqueElementName'), ))
     def exportChildren(self, outfile, level, namespace_='', name_='id', fromsubclass_=False, pretty_print=True):
         pass
     def exportLiteral(self, outfile, level, name_='id'):
@@ -5711,7 +5711,7 @@ class entryTaxon(LanguageString):
         super(entryTaxon, self).exportAttributes(outfile, level, already_processed, namespace_, name_='entryTaxon')
         if self.uniqueElementName is not None and 'uniqueElementName' not in already_processed:
             already_processed.add('uniqueElementName')
-            outfile.write(' uniqueElementName=%s' % (self.gds_format_string(quote_attrib(self.uniqueElementName).encode(ExternalEncoding), input_name='uniqueElementName'), ))
+#             outfile.write(' uniqueElementName=%s' % (self.gds_format_string(quote_attrib(self.uniqueElementName).encode(ExternalEncoding), input_name='uniqueElementName'), ))
     def exportChildren(self, outfile, level, namespace_='', name_='entryTaxon', fromsubclass_=False, pretty_print=True):
         super(entryTaxon, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='entryTaxon'):

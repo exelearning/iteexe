@@ -133,7 +133,7 @@ class WebsitePage(Page):
         html += u"</head>"+lb
         html += u'<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>'+lb
         html += u"<div id=\"content\">"+lb
-        html += '<p id="skipNav"><a href="#main" class="sr-av">'+_('Skip navigation')+'</a></p>'+lb
+        html += '<p id="skipNav"><a href="#main" class="sr-av">' + c_('Skip navigation')+'</a></p>'+lb
 
         if self.node.package.backgroundImg or self.node.package.title:
             html += u"<"+headerTag+" id=\"header\" "
@@ -323,13 +323,13 @@ class WebsitePage(Page):
 
         if prevPage:
             html += "<a href=\""+quote(prevPage.name)+".html\" class=\"prev\">"
-            html += "<span>&laquo; </span>%s</a>" % _('Previous')
+            html += "<span>&laquo; </span>%s</a>" % c_('Previous')
 
         if nextPage:
             if prevPage:
                 html += " | "
             html += "<a href=\""+quote(nextPage.name)+".html\" class=\"next\">"
-            html += " %s<span> &raquo;</span></a>" % _('Next')
+            html += " %s<span> &raquo;</span></a>" % c_('Next')
             
         html += lb+"</"+navTag+">"+lb
         return html

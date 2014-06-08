@@ -22,6 +22,7 @@
 The WinConfig overrides the Config class with Windows specific
 configuration
 """
+import sys
 
 from exe.engine.config import Config
 from exe.engine.path   import Path
@@ -42,6 +43,7 @@ class WinConfig(Config):
     def _overrideDefaultVals(self):
         """Sets the default values
         for windows"""
+        self.exePath = Path(sys.argv[0]).abspath()
         if not self.exePath.exists():
             self.exePath = Path(self.exePath + ".exe")
         exeDir = self.exePath.dirname()

@@ -132,11 +132,11 @@ class IdevicePane(Renderable, Resource):
                     prototypesToRender.append((prototype, _('My iDevices'), visible))
 
         def sortfunc(t1, t2):
-            return locale.strcoll(t1[0].title, t2[0].title)
+            return locale.strcoll(t1[0].rawTitle, t2[0].rawTitle)
 
         def groupsortfunc(t1, t2):
             if t1[1] == t2[1]:
-                return locale.strcoll(t1[0].title, t2[0].title)
+                return locale.strcoll(t1[0].rawTitle, t2[0].rawTitle)
             return locale.strcoll(t1[1], t2[1])
 
         locale.setlocale(locale.LC_ALL, "")
@@ -179,7 +179,7 @@ class IdevicePane(Renderable, Resource):
         log.debug("of type "+repr(type(prototype.title)))
         log.debug(prototype._title.lower())
         xml  = u"  <idevice>\n"
-        xml += u"   <label>" + prototype.title + "</label>\n"
+        xml += u"   <label>" + prototype.rawTitle + "</label>\n"
         xml += u"   <id>" + prototype.id + "</id>\n"
         xml += u"   <category>" + _(category) + "</category>\n"
         xml += u"   <visible>" + str(visible).lower() + "</visible>\n"

@@ -197,13 +197,13 @@ class TrueFalseElement(object):
             titleTag = "h1"
         
         if is_preview:
-            html = '<'+titleTag+' class="js-sr-av">'+_("Question")+' '+str(self.index+1)+'</'+titleTag+'>'+lb
+            html = '<'+titleTag+' class="js-sr-av">' + c_("Question")+' '+str(self.index+1)+'</'+titleTag+'>'+lb
             html += self.question_question.renderPreview()
             if self.question_hint.field.content:
                 html += common.ideviceHint(self.question_hint.field.content,"preview","h4")
         else: 
             html = '<form name="true-false-form-'+self.id+'" action="#" class="activity-form">'+lb        
-            html += '<'+titleTag+' class="js-sr-av">'+_("Question")+' '+str(self.index+1)+'</'+titleTag+'>'+lb
+            html += '<'+titleTag+' class="js-sr-av">' + c_("Question")+' '+str(self.index+1)+'</'+titleTag+'>'+lb
             html += self.question_question.renderView()
             if self.question_hint.field.content:
                 html += common.ideviceHint(self.question_hint.field.content,"view","h4")
@@ -211,11 +211,11 @@ class TrueFalseElement(object):
         html += '<p class="iDevice_answer js-required">'+lb
         html += '<label for="true'+self.id+'">'
         html += self.__option(0, 2, "true")+' '
-        html += _("True")
+        html += c_("True")
         html += '</label> '+lb
         html += '<label for="false'+self.id+'">'
         html += self.__option(1, 2, "false")+' '
-        html += _("False")
+        html += c_("False")
         html += '</label>'+lb
         html += '</p>'+lb
         
@@ -259,9 +259,9 @@ class TrueFalseElement(object):
         html = '<'+sectionTag+' id="s'+self.id+'" class="feedback js-feedback js-hidden">'+lb
         html += '<'+titleTag+' class="js-sr-av">Feedback</'+titleTag+'>'+lb
         if self.question.isCorrect:
-            html += '<p><strong id="s'+self.id+'-result" class="right">'+_("True")+'</strong></p>'+lb
+            html += '<p><strong id="s'+self.id+'-result" class="right">'+c_("True")+'</strong></p>'+lb
         else:
-            html += '<p><strong id="s'+self.id+'-result" class="wrong">'+_("False")+'</strong></p>'+lb
+            html += '<p><strong id="s'+self.id+'-result" class="wrong">'+c_("False")+'</strong></p>'+lb
         html += content+lb
         html += '</'+sectionTag+'>'+lb   
         

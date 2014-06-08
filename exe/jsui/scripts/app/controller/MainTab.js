@@ -73,6 +73,12 @@ Ext.define('eXe.controller.MainTab', {
             '#save_properties': {
                 click: this.onClickSave
             },
+            '#clear_properties': {
+                click: this.onClickClear
+            },
+            '#reset_properties': {
+                click: this.onClickReset
+            },
             '#header_background_show': {
                 click: this.showHeaderBackground,
                 scope: this
@@ -149,18 +155,20 @@ Ext.define('eXe.controller.MainTab', {
             form, field;
         form = formpanel.getForm();
         field = form.findField('pp_backgroundImg');
-        field.setValue(null);
-        form.submit({
-            success: function(f, action) {
-                var img = this.getHeaderBackgroundImg(), json,
-                    showbutton = this.getHeaderBackgroundShowButton();
-                img.setSrc(null);
-                img.hide();
-                showbutton.setText(_('Show Image'));
-                showbutton.hide();
-            },
-            scope: this
-        });
+        if (field) {
+        	field.setValue(null);
+        	form.submit({
+        		success: function(f, action) {
+        			var img = this.getHeaderBackgroundImg(),
+        				showbutton = this.getHeaderBackgroundShowButton();
+        			img.setSrc(null);
+        			img.hide();
+        			showbutton.setText(_('Show Image'));
+        			showbutton.hide();
+        		},
+        		scope: this
+        	});
+        }
     },
     
     loadHeaderBackground: function() {
@@ -231,9 +239,17 @@ Ext.define('eXe.controller.MainTab', {
                     Ext.MessageBox.alert("", _('Settings Saved'));
                     if (formpanel.itemId == 'package_properties') {
                         var formclear = function(formpanel) {
-                            formpanel.clear()
+                            formpanel.clear();
                         };
                         Ext.iterate(formpanel.up().query('lomdata'), formclear);
+                        if (form.getFieldValues(true).pp_lang) {
+                            var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
+                            if (authoring && authoring.submitLink) {
+                            	var outlineTreePanel = eXe.app.getController("Outline").getOutlineTreePanel(),
+                                	selected = outlineTreePanel.getSelectionModel().getSelection();
+                    	        authoring.submitLink("changeNode", selected !== 0? selected[0].data.id : '0');
+                            }
+                        }
                     }
                 },
 	            failure: function(form, action) {
@@ -241,11 +257,87 @@ Ext.define('eXe.controller.MainTab', {
 	            }
 	        });
 	    }
-        else
-            Ext.Msg.alert(_('Error'), _('The form contains invalid fields. Please check back.'))
+        else {
+        	Ext.Msg.alert(_('Error'), _('The form contains invalid fields. Please check back.'));
+        	if (formpanel.expandParents) {
+        		form.getFields().each(function(field){
+        			if (!field.validate())
+        				formpanel.expandParents(field, true);
+        		});
+        	}
+        }
     },
     
-    
+    onClickClear: function(cbutton) {
+    	Ext.Msg.show( {
+			title: _('Confirm'),
+			msg: _('Are you sure you want clear all form fields?'),
+			scope: this,
+			modal: true,
+			buttons: Ext.Msg.YESNO,
+			fn: function(button) {
+				if (button == "yes") {
+					var formpanel = cbutton.up('form'),
+				    	form = formpanel.getForm();
+					
+					if (formpanel.xtype != 'lomdata' &&
+						formpanel.xtype != 'lomesdata') {
+						form.getFields().each( function(field) {
+							if (field.xtype == 'radiogroup')
+								field.down('radio').setValue(true);
+							else if (field.inputId == 'pp_lang')
+								field.setValue(eXe.app.config.lang);
+							else
+								field.setValue('');
+						});
+					}
+					form.submit({
+						clientValidation: false,
+						params: {
+							clear: true
+						},
+						success: function() {
+							var formclear = function(formpanel) {
+								formpanel.clear();
+							};
+							if (formpanel == this.getPackagePropertiesPanel()) {
+								var img = this.getHeaderBackgroundImg(),
+			        				showbutton = this.getHeaderBackgroundShowButton();
+			        			img.setSrc(null);
+			        			img.hide();
+			        			showbutton.setText(_('Show Image'));
+			        			showbutton.hide();
+							}
+	                        Ext.iterate(formpanel.up().query('lomdata'), formclear);
+	                        this.loadForm(formpanel);
+						},
+						failure: function(form, action) {
+			                Ext.Msg.alert(_('Error'), action.result.errorMessage);
+			            },
+						scope: this
+					});
+		    	}
+			}
+		});
+    },
+
+    onClickReset: function(cbutton) {
+    	Ext.Msg.show({
+			title: _('Confirm'),
+			msg: _('Are you sure you want reset all form fields?'),
+			scope: this,
+			modal: true,
+			buttons: Ext.Msg.YESNO,
+			fn: function(button) {
+				if (button == "yes") {	
+			    	var form = cbutton.up('form').getForm();
+			    	
+			    	form.reset();
+				}
+			}
+    	});
+    },
+
     loadForm: function(formpanel) {
 //      console.log('render ' + formpanel.itemId);
         formpanel.load({ 
@@ -306,17 +398,12 @@ Ext.define('eXe.controller.MainTab', {
     },
 
     onTabChange: function(tabPanel, newCard, oldCard, eOpts) {
-        var newformpanel, oldformpanel;
+        var newformpanel = null;
 
         while (newCard.getActiveTab)
             newCard = newCard.getActiveTab();
         if (newCard.getForm)
             newformpanel = newCard;
-
-        while (oldCard.getActiveTab)
-            oldCard = oldCard.getActiveTab();
-        if (oldCard.getForm)
-            oldformpanel = oldCard;
 
         if (newformpanel) {
             this.loadForm(newformpanel);

@@ -317,7 +317,7 @@ class PlaceTheObjectsBlockInc(Block):
         Returns an XHTML string for viewing this block
         """
         
-        html = self._renderForGame()
+        html = self._renderForGame(style, previewMode=False)
 
         return html
 

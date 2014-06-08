@@ -462,14 +462,17 @@ function markClozeWord(ele, mark) {
         case 0:
             // Not attempted
             ele.style.backgroundColor = "";
+            ele.style.color = "";
             break;
         case 1:
             // Wrong
             ele.style.backgroundColor = "#FF9999";
+            ele.style.color = "#000000";
             break;
         case 2: 
             // Correct
             ele.style.backgroundColor = "#CCFF99";
+            ele.style.color = "#000000";
             break;
     }
     return mark
@@ -1340,6 +1343,7 @@ var $exe = {
         	}         
         }
         $exe.hint.init();
+        $exe.setIframesProtocol();
     },
     addRoles : function(){
         $('#header').attr('role','banner'); 
@@ -1481,6 +1485,17 @@ var $exe = {
 				$exe.alignMediaElement(this);
 			});
         }
+    },
+    setIframesProtocol : function(){
+        var p = window.location.protocol;
+        var l = false;
+        if (p!="http" && p!="https") l = true;
+        $("IFRAME").each(
+            function(){
+                var s = $(this).attr("src");
+                if (l && s.indexOf("//")==0) $(this).attr("src","http:"+s);
+            }
+        );
     },
     loadScript : function(url, callback){
         var s;

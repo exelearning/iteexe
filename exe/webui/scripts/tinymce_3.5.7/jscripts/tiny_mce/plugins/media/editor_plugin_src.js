@@ -181,6 +181,25 @@ function parse_media_html_attributes(c) {
 	
 	*/
 	
+	// iframes: Replace all frameborder="0" with style="border:0" in HTML5
+	if (typeof(exe_export_format)!='undefined' && exe_export_format=="html5" && x.indexOf("<iframe ")!=-1) {
+		var c2 = '';
+		var c_parts = new_c.split("<iframe ");
+		for (i=0;i<c_parts.length;i++) {
+			var c_parts_2 = c_parts[i].split(">");
+			for (z=0;z<c_parts_2.length;z++) {				
+				var p = c_parts_2[z];
+				if ( p.indexOf(' style="')==-1 && p.indexOf('width="')==0 && (p.substr(p.length-15)=='frameborder="0"' || p.substr(p.length-34)=='frameborder="0" allowfullscreen=""') ) {
+					p = p.replace(' frameborder="0"',' style="border:0"');
+				}
+				c2 += p;
+				if (z<c_parts_2.length-1) c2+=">";
+			}
+			if (i<(c_parts.length-1)) c2+="<iframe ";
+		}
+		new_c = c2;
+	}
+	
 	return new_c;
 	
 }

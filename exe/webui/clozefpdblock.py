@@ -53,6 +53,15 @@ class ClozefpdBlock(Block):
             idevice.content.idevice = idevice
         if idevice.feedback.idevice is None: 
             idevice.feedback.idevice = idevice
+			
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"
+
+        idevice.instructionsForLearners.htmlTag = sectionTag
+        idevice.instructionsForLearners.class_ = "block instructions"
+        idevice.feedback.htmlTag = sectionTag			
 
         self.instructionElement = \
             TextAreaElement(idevice.instructionsForLearners)
@@ -154,18 +163,20 @@ class ClozefpdBlock(Block):
             instruction_html = self.instructionElement.renderPreview()
         else:
             instruction_html = self.instructionElement.renderView()
-        html = u'<div class="iDevice_inner">\n'
-        html += instruction_html
+        # html = u'<div class="iDevice_inner">\n'
+        html = instruction_html
         html += clozeContent
         if self.feedbackElement.field.content: 
             if self.previewing: 
                 html += self.feedbackElement.renderPreview(False, class_="feedback")
             else:
                 html += self.feedbackElement.renderView(False, class_="feedback")
-        html += u'</div>\n'
+        # html += u'</div>\n'
 
-# JRJ: Anadimos la etiqueta noscript
-# (let's add the noscript tag)
+	# JRJ: Anadimos la etiqueta noscript
+	# (let's add the noscript tag)
+	# 2014 - JavaScript is required
+	'''
 	if self.previewing:
 		cloze = self.clozeElement.field.content_w_resourcePaths
 		feedback = self.feedbackElement.field.content_w_resourcePaths
@@ -173,12 +184,13 @@ class ClozefpdBlock(Block):
 		cloze = self.clozeElement.field.content_wo_resourcePaths
 		feedback = self.feedbackElement.field.content_wo_resourcePaths
 	html += u'<noscript><div class="feedback">\n'
-	html += u"<strong>" + _("Solution") + u": </strong><br/>\n"
+	html += u"<strong>" + c_("Solution") + u": </strong><br/>\n"
 	html += cloze
 	if self.feedbackElement.field.content:
-		html += u"<br/><br/><strong>" + _("Feedback") + ": </strong><br/>\n"
+		html += u"<br/><br/><strong>" + c_("Feedback") + ": </strong><br/>\n"
 		html += feedback
 	html += u"</div></noscript>"
+	'''
 
 	return html
 
@@ -194,7 +206,7 @@ class ClozefpdBlock(Block):
             html = '<p>' +  self.instructionElement.renderView() +'</p>'
         html += '<p>' + self.clozeElement.renderText() + '</p>'
         if self.feedbackElement.field.content:
-            html += '<p>%s:</P>' % _(u"Feedback") 
+            html += '<p>%s:</P>' % c_(u"Feedback") 
             if self.previewing: 
                 html += '<p>' +self.feedbackElement.renderPreview(False, 
                                                         class_="feedback") 

@@ -62,7 +62,7 @@ class ClozeBlock(Block):
         
         self.instructionElement = \
             TextAreaElement(idevice.instructionsForLearners)
-        self.instructionElement.field.content_w_resourcePaths = _(self.instructionElement.field.content_w_resourcePaths)
+        self.instructionElement.field.content_w_resourcePaths = c_(self.instructionElement.field.content_w_resourcePaths)
         self.clozeElement = ClozeElement(idevice.content)
         self.feedbackElement = \
             TextAreaElement(idevice.feedback)
@@ -179,7 +179,7 @@ class ClozeBlock(Block):
             html = '<p>' +  self.instructionElement.renderView() +'</p>'
         html += '<p>' + self.clozeElement.renderText() + '</p>'
         if self.feedbackElement.field.content:
-            html += '<p>%s:</P>' % _(u"Feedback") 
+            html += '<p>%s:</P>' % c_(u"Feedback") 
             if self.previewing: 
                 html += '<p>' +self.feedbackElement.renderPreview(False, 
                                                         class_="feedback") 

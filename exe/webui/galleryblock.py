@@ -76,7 +76,8 @@ class GalleryBlock(Block):
             html += [lb]
         html += ['</ul>']
         html += [lb]
-        html += ['<script type="text/javascript">$exe.imageGallery.init("exeImageGallery'+self.idevice.id+'");</script>']
+        if self.mode != Block.Edit:
+            html += ['<script type="text/javascript">$exe.imageGallery.init("exeImageGallery'+self.idevice.id+'");</script>']
         html += [lb]
         return html
 

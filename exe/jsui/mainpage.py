@@ -223,11 +223,13 @@ class MainPage(RenderableLivePage):
                   'locationButtons': self.location_buttons.buttons,
                   'lang': G.application.config.locale.split('_')[0],
                   'showPreferences': G.application.config.showPreferencesOnStart == '1' and not G.application.preferencesShowed,
+                  'loadErrors': G.application.loadErrors,
                   'showIdevicesGrouped': G.application.config.showIdevicesGrouped == '1',
                   'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (self.package.name, IClientHandle(ctx).handleId),
                   'pathSep': os.path.sep
                  }
         G.application.preferencesShowed = True
+        G.application.loadErrors = []
         return tags.script(type="text/javascript")["var config = %s" % json.dumps(config)]
 
     def render_jsuilang(self, ctx, data):

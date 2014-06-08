@@ -37,11 +37,12 @@ import twisted
 import shutil
 from exe                      import globals as G
 from exe.engine.stylestore  import StyleStore
+from exe.webui import common
 
 x_ = lambda s: s
 
 
-class Config:
+class Config(object):
     """
     The Config class contains the configuration information for eXe.
     """
@@ -55,7 +56,7 @@ class Config:
                    'videoMediaConverter_avi', 'audioMediaConverter_ogg',
                    'audioMediaConverter_au', 'audioMediaConverter_mp3',
                    'audioMediaConverter_wav', 'ffmpegPath'),
-        'user': ('locale', 'lastDir', 'showPreferencesOnStart','defaultStyle', 'showIdevicesGrouped','docType'),
+        'user': ('locale', 'lastDir', 'showPreferencesOnStart','defaultStyle', 'showIdevicesGrouped','docType','editorMode'),
     }
 
     idevicesCategories = {
@@ -103,6 +104,14 @@ class Config:
         'file attachments': [x_('Non-Textual Information')],
         'sort items': [x_('Interactive Activities')]
     }
+    
+    @classmethod
+    def getConfigPath(cls):
+        obj = cls.__new__(cls)
+        obj.configParser = ConfigParser()
+        obj._overrideDefaultVals()
+        obj.__setConfigPath()
+        return obj.configPath
 
     def __init__(self):
         """
@@ -144,6 +153,8 @@ class Config:
         self.lastDir = None
         self.showPreferencesOnStart = "1"
         self.showIdevicesGrouped = "1"
+        # tinymce option
+        self.editorMode = 'permissive' 
         # styleSecureMode : if this [user] key is = 0  , exelearning can run python files in styles
         # as websitepage.py , ... ( deactivate secure mode )
         self.styleSecureMode="1"
@@ -401,8 +412,11 @@ class Config:
 
         # Load the "user" section
         if self.configParser.has_section('user'):
+            if self.configParser.user.has_option('editorMode'):
+                self.editorMode = self.configParser.user.editorMode
             if self.configParser.user.has_option('docType'):
                 self.docType = self.configParser.user.docType
+                common.setExportDocType(self.configParser.user.docType)
             if self.configParser.user.has_option('defaultStyle'):
                 self.defaultStyle= self.configParser.user.defaultStyle
             if self.configParser.user.has_option('styleSecureMode'):
@@ -528,6 +542,7 @@ class Config:
                     locale = subDir.basename()
                     log.debug(" loading locale %s" % locale)
                     self.locales[locale].install(unicode=True)
+                    __builtins__['c_'] = self.locales[locale].ugettext
 
 
 

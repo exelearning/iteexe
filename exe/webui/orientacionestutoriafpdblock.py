@@ -93,16 +93,12 @@ class OrientacionestutoriafpdBlock(Block):
         """
         Returns an XHTML string for this block
         """
-#        html  = u'<script type="text/javascript" src="common.js"></script>\n'
-#        html += u'<div class="iDevice_inner">\n'
-	html = u'<div class="iDevice_inner">\n'
     
         if self.previewing: 
-            html += self.activityElement.renderPreview()
+            html = self.activityElement.renderPreview()
         else:
-            html += self.activityElement.renderView()
+            html = self.activityElement.renderView()
 
-        html += "</div>\n"
         return html
 
 from exe.engine.orientacionestutoriafpdidevice  import OrientacionestutoriafpdIdevice

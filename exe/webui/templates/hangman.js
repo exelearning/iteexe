@@ -92,12 +92,10 @@ otherwise advance to the next word.
 function winLevel(gameId) {
         if(currentWord[gameId] < hangman_words[gameId].length -1) {
                 showAlert(gameId, playerMessages[gameId]['levelpassed'], 5000);
-                playPositiveFeedbackDefault();
                 var nextWordId = currentWord[gameId] + 1;
                 setTimeout("startGame('" + gameId + "',  " + nextWordId + ")", 5000);
         }else {
                 showAlert(gameId, playerMessages[gameId]['gamewon'], -1);
-                playLevelCompleteSound();
         }
 }
 
@@ -135,7 +133,6 @@ function wrongGuess(gameId) {
                 showAlert(playerMessages[gameId]['lostlevel'], 4000);
                 setTimeout("restartLevel('" + gameId + "')", 5000);
         }else {
-                playNegativeFeedbackDefault();
                 setChance(gameId, currentChance[gameId] + 1);
         }
 }

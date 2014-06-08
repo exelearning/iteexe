@@ -17,8 +17,12 @@ a {
     border: 0;
 }
 
-p {
-    margin: 0em 0em 1em 0em;
+p,.question .iDevice_content p:first-child {
+    margin: 1em 0;
+}
+
+.iDevice_content p:first-child,.iDevice_answer .iDevice_content p:first-child{
+    margin-top:0;
 }
 
 #header {
@@ -341,7 +345,7 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
     display: inline;
 } 
 
-.emphasis1, div.iDevice_wrapper[class*="fpd"] > div.iDevice[class*="fpd"] {
+.emphasis1, .iDevice_wrapper[class*="fpd"] > .iDevice[class*="fpd"] {
     border-radius: 1em;
     -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
@@ -357,38 +361,29 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
     margin: 1em;
 }
 
+.iDevice_hint{
+    margin-top:.5em
+}
+
+.EleccionmultiplefpdIdevice .iDevice_hint{
+    margin-top:1em;
+}
+
 .iDevice_inner
 {
 	margin: 1em;
 }
-.iDevice_inner > .iDevice_content_wrapper > .iDevice_inner
-{
-	margin: 0em;
+
+.iDevice_answer .feedback{
+    margin-bottom:1em;
 }
 .feedback p{
 	margin-bottom: 0em;
 }
 /*Evitamos que se monten los elementos flotantes en otro iDevice*/
-.iDevice{
-    clear: both;
-    overflow-x: auto;
-	overflow-y: hidden;
-}
-
-.iDevice_inner{
-    overflow-x: auto;
-	overflow-y: hidden;
-}
-.iDevice emphasis0{
-    clear: both;
-    overflow-x: auto;
-	overflow-y: hidden;
-}
-div.block{
-    clear: both;
-    overflow-x: auto;
-	overflow-y: hidden;
-}
+.iDevice_content:before,.iDevice_content:after{content:"";display:table}
+.iDevice_content:after{clear:both}
+.iDevice_content{*zoom:1}/* IE6/7: Trigger hasLayout and contain floats */
 .separador{clear:both;}
 
 /*Orientaciones*/

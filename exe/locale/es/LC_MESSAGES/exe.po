@@ -4983,14 +4983,22 @@ msgstr "Fuera del centro"
 msgid "Modality"
 msgstr "Modalidad de uso"
 
+# JRF: tras discusión (bug 2098) vuelvo a traducción correcta.
+# JRF: la traducción correcta es 'presencial', la compatibilidad con
+# LOM-ES  nos obliga a usar 'semipresencial' (sic)
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:407
 msgid "Face to Face"
 msgstr "Presencial"
 
+# JRF: después de discusión (bug 2098), vuelvo a aplicar traducción de 'semipresencial'
+# JRF: mi traducción era 'semipresencial', pongo 'asistencia mixta'
+# por compatibilidad con LOM-ES
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:415
 msgid "Blended"
 msgstr "Semipresencial"
 
+# JRF: me sugieren que por compatibilidad con LOM-ES use 'distancia',
+# creo que 'a distancia' es más claro.
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:422
 msgid "Distance"
 msgstr "A distancia"
@@ -6903,10 +6911,13 @@ msgstr "independiente"
 msgid "blended"
 msgstr "asistencia mixta"
 
+# JRF: 'presencial' is not an English term. We can't fix it - the standard
+# must be fixed first.
 #: exe/jsui/scripts/lomvocab.js:1244
 msgid "presencial"
 msgstr "presencial"
 
+# JRF: this translation is obviously wrong, but is necessary for compatibility with Agrega
 #: exe/jsui/scripts/lomvocab.js:1248
 msgid "face to face"
 msgstr "semipresencial"

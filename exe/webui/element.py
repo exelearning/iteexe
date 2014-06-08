@@ -1369,7 +1369,7 @@ class ClozeElement(ElementWithResources):
 
         html += ['<div id="cloze%s">' % self.id]
 
-        html.append('<script type="text/javascript">var YOUR_SCORE_IS="%s"</script>' % _('Your score is '))
+        html.append('<script type="text/javascript">var YOUR_SCORE_IS="%s"</script>' % c_('Your score is '))
         # Store our args in some hidden fields
         def storeValue(name):
             value = str(bool(getattr(self.field, name))).lower()
@@ -1403,7 +1403,7 @@ class ClozeElement(ElementWithResources):
                 words += "'" + missingWord + "',"
                 # The edit box for the user to type into
                 #'  autocomplete="off"',
-                inputHtml = ['<label for="clozeBlank%s.%s" class="sr-av">%s (%s):</label>' % (self.id, i, _("Cloze"), (i+1))]
+                inputHtml = ['<label for="clozeBlank%s.%s" class="sr-av">%s (%s):</label>' % (self.id, i, c_("Cloze"), (i+1))]
                 if self.field.instantMarking:
                     inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" onkeyup="onClozeChange(this)" />' % (self.id, i, len(missingWord))]
                 else:
@@ -1416,23 +1416,23 @@ class ClozeElement(ElementWithResources):
         html += ['<div class="block iDevice_buttons">']
         html += ['<p>']
         if self.field.instantMarking:
-            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozeScore(\'%s\')" />' % (_(u"Get score"), self.id, self.id)]
+            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozeScore(\'%s\')" />' % ( c_(u"Get score"), self.id, self.id)]
 
             if feedbackId is not None:
-                html += [common.feedbackButton('feedback'+self.id, _(u"Show Feedback"), onclick="toggleClozeFeedback('%s',this)" % self.id)]
+                html += [common.feedbackButton('feedback'+self.id, c_(u"Show Feedback"), onclick="toggleClozeFeedback('%s',this)" % self.id)]
             # Set the show/hide answers button attributes
             style = ''
-            value = _(u"Show/Clear Answers")
+            value = c_(u"Show/Clear Answers")
             onclick = "toggleClozeAnswers('%s')" % self.id
         else:
             if preview:
-                html += [common.button('submit%s' % self.id,_(u"Submit"),id='submit%s' % self.id,onclick="clozeSubmit('%s')" % self.id)]            
+                html += [common.button('submit%s' % self.id, c_(u"Submit"),id='submit%s' % self.id,onclick="clozeSubmit('%s')" % self.id)]            
             else:
-                html += [common.submitButton('submit%s' % self.id,_(u"Submit"),id='submit%s' % self.id)]
-            html += [common.button('restart%s' % self.id,_(u"Restart"),id='restart%s' % self.id,style="display:none",onclick="clozeRestart('%s')" % self.id)]
+                html += [common.submitButton('submit%s' % self.id, c_(u"Submit"),id='submit%s' % self.id)]
+            html += [common.button('restart%s' % self.id, c_(u"Restart"),id='restart%s' % self.id,style="display:none",onclick="clozeRestart('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display:none'
-            value = _(u"Show Answers")
+            value = c_(u"Show Answers")
             onclick = "fillClozeInputs('%s')" % self.id
         # Show/hide answers button
         html += [' ',common.button('%sshowAnswersButton' % self.id, value, id='showAnswersButton%s' % self.id, style=style, onclick=onclick)]
@@ -1468,7 +1468,7 @@ class ClozeElement(ElementWithResources):
         """
         html = ""
 
-        html += "<p>%s: </p><p>"  % _(u"Answers")
+        html += "<p>%s: </p><p>"  % c_(u"Answers")
         answers = ""
         for i, (text, missingWord) in enumerate(self.field.parts):
             if missingWord:
@@ -1623,7 +1623,7 @@ class ClozelangElement(ElementWithResources):
             self.field.encodedContent = self.field.content_wo_resourcePaths
 
         html = ['<div id="clozelang%s">' % self.id]
-        html.append('<script type="text/javascript">var YOUR_SCORE_IS = "%s"</script>' % _('Your score is '))
+        html.append('<script type="text/javascript">var YOUR_SCORE_IS = "%s"</script>' % c_('Your score is '))
         # Store our args in some hidden fields
         def storeValue(name):
             value = str(bool(getattr(self.field, name))).lower()
@@ -1669,29 +1669,32 @@ class ClozelangElement(ElementWithResources):
                 html += ['<span style="display:none" ', 'id="clozelangAnswer%s.%s">%s</span>' % (self.id, i, encrypt(missingWord))]
 
         # Score string
-        html += ['<div class="block">\n']
+        html += ['<div class="block iDevice_buttons">']
+        html += ['<p>\n']
         if self.field.instantMarking:
-            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozelangScore(\'%s\')" />' % (_(u"Get score"), self.id, self.id)]
+            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozelangScore(\'%s\')" />' % ( c_(u"Get score"), self.id, self.id)]
 
             if feedbackId is not None:
-                html += [common.feedbackButton('feedback'+self.id,  _(u"Show/Hide Feedback"), onclick="toggleClozelangFeedback('%s')" % self.id)]
+                html += [common.feedbackButton('feedback'+self.id,  c_(u"Show/Hide Feedback"), onclick="toggleClozelangFeedback('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display: inline;'
-            value = _(u"Show/Clear Answers")
+            value = c_(u"Show/Clear Answers")
             onclick = "toggleClozelangAnswers('%s')" % self.id
         else:
-            html += [common.button('submit%s' % self.id, _(u"Submit"), id='submit%s' % self.id, onclick="clozelangSubmit('%s')" % self.id),
-                     common.button('restart%s' % self.id, _(u"Restart"), id='restart%s' % self.id, style="display:none", onclick="clozelangRestart('%s')" % self.id)]
+            html += [common.button('submit%s' % self.id, c_(u"Submit"), id='submit%s' % self.id, onclick="clozelangSubmit('%s')" % self.id),
+                     common.button('restart%s' % self.id, c_(u"Restart"), id='restart%s' % self.id, style="display:none", onclick="clozelangRestart('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display:none'
-            value = _(u"Show Answers")
+            value = c_(u"Show Answers")
             onclick = "fillClozelangInputs('%s')" % self.id
         # Show/hide answers button
         html += [' ',
                  common.button('%sshowAnswersButton' % self.id, value, id='showAnswersButton%s' % self.id, style=style, onclick=onclick),
         ]
-        html += ['<p id="clozelangScore%s"></p>' % self.id]
+        html += [common.javaScriptIsRequired()]
+        html += ['</p>\n']
         html += ['</div>\n']
+        html += ['<div id="clozelangScore%s"></div>' % self.id]
         return '\n'.join(html) + '</div>'
     
     def renderText(self):
@@ -1714,7 +1717,7 @@ class ClozelangElement(ElementWithResources):
         """
         html = ""
 
-        html += "<p>%s: </p><p>"  % _(u"Answers")
+        html += "<p>%s: </p><p>"  % c_(u"Answers")
         answers = ""
         for i, (text, missingWord) in enumerate(self.field.parts):
             if missingWord:
@@ -2119,7 +2122,7 @@ class SelectOptionElement(Element):
         html = '<'+sectionTag+' class="iDevice_answer">'+lb
         # Checkbox
         html += '<p class="iDevice_answer-field js-required">'+lb
-        html += '<label for="op'+ident+'" class="sr-av"><a href="#answer-'+self.id+'">'+_("Option")+' '+str(self.index+1)+'</a></label>'
+        html += '<label for="op'+ident+'" class="sr-av"><a href="#answer-'+self.id+'">' + c_("Option")+' '+str(self.index+1)+'</a></label>'
         html += '<input type="checkbox" id="op%s"' % ident
         html += ' value="%s" />' % str(self.field.isCorrect)
         html += lb
@@ -2135,7 +2138,7 @@ class SelectOptionElement(Element):
         html += '</div>'+lb
             
         # Answer feedback
-        html += '<'+sectionTag+' class="iDevice_answer-feedback feedback js-required" id="feedback-'+ident+'"></'+sectionTag+'>'+lb
+        html += '<'+sectionTag+' class="iDevice_answer-feedback feedback" id="feedback-'+ident+'" style="display:none"></'+sectionTag+'>'+lb
         
         html += '</'+sectionTag+'>'+lb
         
@@ -2147,10 +2150,10 @@ class SelectOptionElement(Element):
         html = '<li><a href="#answer-'+self.id+'" class="'
         if self.field.isCorrect == True:
             html += 'right">'
-            html += _("Correct")
+            html += c_("Correct")
         else:
             html += 'wrong">'
-            html += _("Incorrect")
+            html += c_("Incorrect")
         html += '</a></li>'+lb
     
         return html    
@@ -2325,16 +2328,16 @@ class SelectquestionElement(Element):
         # Form
         if preview: 
             html += '<div class="activity-form">'+lb
-            html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb
+            html += '<'+titleTag1+' class="js-sr-av">' + c_("Question")+'</'+titleTag1+'>'+lb
             html += self.questionElement.renderPreview()
         else:
             html += '<form name="multi-select-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form">'+lb
-            html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb           
+            html += '<'+titleTag1+' class="js-sr-av">' + c_("Question")+'</'+titleTag1+'>'+lb           
             html += self.questionElement.renderView()        
             
         # Answers
         html += '<'+sectionTag+' class="iDevice_answers">'+lb
-        html += '<'+titleTag2+' class="js-sr-av">'+_("Answers")+'</'+titleTag2+'>'+lb
+        html += '<'+titleTag2+' class="js-sr-av">' + c_("Answers")+'</'+titleTag2+'>'+lb
         for element in self.options:
             html += element.renderView(preview)      
         html += "</"+sectionTag+">"+lb
@@ -2342,7 +2345,7 @@ class SelectquestionElement(Element):
         # Feedback button
         html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
         html += '<p>'+lb
-        html += '<input type="button" name="submitSelect" class="feedbackbutton" value="%s" onclick="showFeedback(this,%d,\'%s\')"/> ' %(_("Show Feedback"),len(self.field.options),self.field.id)   
+        html += '<input type="button" name="submitSelect" class="feedbackbutton" value="%s" onclick="showFeedback(this,%d,\'%s\')"/> ' %( c_("Show Feedback"),len(self.field.options),self.field.id)   
         html += lb
         html += '</p>'+lb
         html += '</div>'+lb
@@ -2350,7 +2353,7 @@ class SelectquestionElement(Element):
         # Feedback
         html += '<'+sectionTag+' id="%s" class="js-hidden js-feedback">' % ("f"+self.field.id)
         html += lb
-        html += '<'+titleTag2+' class="js-sr-av">'+_("Feedback")+'</'+titleTag2+'>'+lb
+        html += '<'+titleTag2+' class="js-sr-av">' + c_("Feedback")+'</'+titleTag2+'>'+lb
         html += lb
         if preview: 
             aux  = self.feedbackElement.renderPreview(True, class_="feedback")
@@ -2370,7 +2373,7 @@ class SelectquestionElement(Element):
 
         # noscript
         html += '<'+sectionTag+' class="iDevice_solution feedback js-hidden">'+lb
-        html += "<"+titleTag2+">"+_("Solution")+"</"+titleTag2+">"+lb
+        html += "<"+titleTag2+">" + c_("Solution")+"</"+titleTag2+">"+lb
         html += "<ol>"+lb
         for element in self.options:
             html += element.renderNoscript(preview)
@@ -2541,7 +2544,7 @@ class QuizOptionElement(Element):
         html = '<'+sectionTag+' class="iDevice_answer">'+lb
         
         html += '<p class="iDevice_answer-field js-required">'+lb
-        html += '<label for="i'+self.id+'" class="sr-av"><a href="#answer-'+self.id+'">'+_("Option")+' '+str(self.index+1)+'</a></label>'
+        html += '<label for="i'+self.id+'" class="sr-av"><a href="#answer-'+self.id+'">' + c_("Option")+' '+str(self.index+1)+'</a></label>'
         html += '<input type="radio" name="option%s" ' % self.field.question.id
         html += 'id="i%s" ' % self.id
         html += 'onclick="getFeedback(%d,%d,\'%s\',\'multi\')"/>' % (self.index, length, self.field.question.id)
@@ -2579,9 +2582,9 @@ class QuizOptionElement(Element):
                 feedbackStr = self.feedbackElement.renderView(True, "")
         else:
             if self.field.isCorrect:
-                feedbackStr = "<p>"+_("Correct Option")+"</p>"+lb
+                feedbackStr = "<p>" + c_("Correct Option")+"</p>"+lb
             else:
-                feedbackStr = "<p>"+_("Wrong")+"</p>"+lb
+                feedbackStr = "<p>" + c_("Wrong")+"</p>"+lb
 
         html  = '<'+sectionTag+' id="sa%sb%s" class="feedback js-hidden">' % (str(self.index), self.field.question.id)
         if dT != "HTML5":
@@ -2597,10 +2600,10 @@ class QuizOptionElement(Element):
         lb = "\n" #Line breaks
         html = '<li><a href="#answer-'+self.id+'">'
         if self.field.isCorrect == True:
-            html += _("Correct Option")
+            html += c_("Correct Option")
         else:
-            html += _("Wrong")
-        html += '</a> (<a href="#sa'+str(self.index)+'b'+self.field.question.id+'">'+_("Feedback")+'</a>)</li>'
+            html += c_("Wrong")
+        html += '</a> (<a href="#sa'+str(self.index)+'b'+self.field.question.id+'">' + c_("Feedback")+'</a>)</li>'
         html += lb
         '''
         if preview: 
@@ -2778,11 +2781,11 @@ class QuizQuestionElement(Element):
             titleTag2 = "h1"          
         if preview: 
             html = '<div class="activity-form">'+lb
-            html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb
+            html += '<'+titleTag1+' class="js-sr-av">' + c_("Question")+'</'+titleTag1+'>'+lb
             html += self.questionElement.renderPreview()
         else:
             html = '<form name="multi-choice-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form">'+lb
-            html += '<'+titleTag1+' class="js-sr-av">'+_("Question")+'</'+titleTag1+'>'+lb
+            html += '<'+titleTag1+' class="js-sr-av">' + c_("Question")+'</'+titleTag1+'>'+lb
             html += self.questionElement.renderView()
 
         # Hint
@@ -2794,14 +2797,14 @@ class QuizQuestionElement(Element):
 
         # Answers
         html += '<'+sectionTag+' class="iDevice_answers">'+lb
-        html += '<'+titleTag2+' class="js-sr-av">'+_("Answers")+'</'+titleTag2+'>'+lb
+        html += '<'+titleTag2+' class="js-sr-av">' + c_("Answers")+'</'+titleTag2+'>'+lb
         for element in self.options:
             html += element.renderAnswerView(preview)
         html += "</"+sectionTag+">"+lb
                 
         # Feedbacks
         html += '<'+sectionTag+' class="iDevice_feedbacks js-feedback">'+lb
-        html += '<'+titleTag2+' class="js-sr-av">'+_("Feedback")+'</'+titleTag2+'>'+lb
+        html += '<'+titleTag2+' class="js-sr-av">' + c_("Feedback")+'</'+titleTag2+'>'+lb
         for element in self.options:
             html += element.renderFeedbackView(preview)
         html += "</"+sectionTag+">"+lb
@@ -2813,7 +2816,7 @@ class QuizQuestionElement(Element):
         
         # noscript
         html += '<'+sectionTag+' class="iDevice_solution feedback js-hidden">'+lb
-        html += "<"+titleTag2+">"+_("Solution")+"</"+titleTag2+">"+lb
+        html += "<"+titleTag2+">" + c_("Solution")+"</"+titleTag2+">"+lb
         html += "<ol>"+lb
         for element in self.options:
             html += element.renderNoscript(preview)

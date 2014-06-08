@@ -316,10 +316,11 @@ class PropertiesPage(Renderable, Resource):
                         if key in self.imgFieldNames:
                             if getattr(obj, name):
                                 data[key] = getattr(obj, name).basename()
-                        else:
-                            data[key] = getattr(obj, name)
+                        else:                            
                             if name=='docType':              
-                                common.setExportDocType(getattr(obj,name))
+                                data[key]=common.getExportDocType()
+                            else:
+                                data[key] = getattr(obj, name)
 
         except Exception as e:
             log.exception(e)
@@ -331,10 +332,20 @@ class PropertiesPage(Renderable, Resource):
 
         data = {}
         try:
+            clear = False
+            if 'clear' in request.args:
+                clear = True
+                request.args.pop('clear')
             if 'lom_general_title_string1' in request.args:
-                self.setLom(request.args)
+                if clear:
+                    self.package.setLomDefaults()
+                else:
+                    self.setLom(request.args)
             elif 'lomes_general_title_string1' in request.args:
-                self.setLomes(request.args)
+                if clear:
+                    self.package.setLomEsDefaults()
+                else:
+                    self.setLomes(request.args)
             else:
                 items = request.args.items()
                 if 'pp_lang' in request.args:

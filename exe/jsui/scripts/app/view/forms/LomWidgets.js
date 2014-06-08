@@ -17,6 +17,11 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
+Ext.define("Ext.locale.en.ux.picker.DateTimePicker", {
+	  override: "Ext.ux.DateTimePicker",
+	  todayText: _("Now"),
+	  timeLabel: _('Time')
+});
 
 Ext.define('eXe.view.forms.LomWidgets', {
     statics: {
@@ -263,17 +268,15 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		            validateOnBlur: false,
 		            validateOnChange: false
 		        },
-		        collapsible: mandatory,
-		        checkboxToggle: !mandatory,
-		        //checkboxName: 
+		        collapsible: true,
 		        collapsed: !mandatory,
 		        title: title
-		    }
+		    };
 		    if (appendable)
 		        field.item = item;
 		    else
 		        field.items = item;
-		    return field
+		    return field;
 		},
 		datefield: function(embedded, label, id, tooltip, help, optional, margin, helpmargin) {
 		    if (!tooltip)
@@ -303,9 +306,9 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	            {
 			        xtype: 'helpcontainer',
 			        item: {
-			            xtype: 'datefield',
+			            xtype: 'datetimefield',
 			            allowBlank: optional,
-			            format: 'Y-m-d',
+			            format: 'c',
                         fieldLabel: fieldLabel,
 			            validateOnBlur: false,
 			            validateOnChange: false,
@@ -618,10 +621,10 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	                validateOnBlur: false,
 	                validateOnChange: false
 	            },
-	            collapsible: mandatory,
-	            checkboxToggle: !mandatory,
+	            collapsible: true,
 	            collapsed: !mandatory,
 	            title: title,
+	            itemId: id,
 	            items: {
 	                xtype: 'container',
 	                layout: 'anchor'

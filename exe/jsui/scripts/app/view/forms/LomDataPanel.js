@@ -26,7 +26,8 @@ Ext.define('eXe.view.forms.LomDataPanel', {
         'eXe.view.forms.InsertDeleteFieldSet',
         'eXe.view.forms.LangContainer',
         'eXe.view.forms.LomSections',
-        'eXe.view.forms.LomWidgets'
+        'eXe.view.forms.LomWidgets',
+        'Ext.ux.DateTimeField'
     ],
 
     getInsertDelField: function(key){
@@ -71,11 +72,14 @@ Ext.define('eXe.view.forms.LomDataPanel', {
         };
         return false;
     },
-    expandParents: function(field){
+    expandParents: function(field, expand){
         var comp = field;
         while (comp.xtype !== 'lomdata'){
             if ((comp.xtype == 'insertdelfieldset' || comp.xtype == 'preservescrollfieldset') && comp.collapsed){
-                comp.expand();
+            	if (expand)
+            		comp.expand();
+            	else
+            		comp.addCls('collapsed-with-data');
             }
             comp = comp.up();
         }
@@ -196,6 +200,16 @@ Ext.define('eXe.view.forms.LomDataPanel', {
                 xtype: 'button',
                 text: _('Save'),
                 itemId: 'save_properties'
+            },
+            {
+                xtype: 'button',
+                text: _('Clear'),
+                itemId: 'clear_properties'
+            },
+            {
+                xtype: 'button',
+                text: _('Reset'),
+                itemId: 'reset_properties'
             }
         ]);
         Ext.resumeLayouts(true);
@@ -226,6 +240,16 @@ Ext.define('eXe.view.forms.LomDataPanel', {
                     xtype: 'button',
                     text: _('Save'),
                     itemId: 'save_properties'
+                },
+                {
+                    xtype: 'button',
+                    text: _('Clear'),
+                    itemId: 'clear_properties'
+                },
+                {
+                    xtype: 'button',
+                    text: _('Reset'),
+                    itemId: 'reset_properties'
                 }
             ]
         });

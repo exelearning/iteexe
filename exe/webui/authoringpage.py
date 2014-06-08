@@ -190,8 +190,12 @@ class AuthoringPage(RenderableResource):
         #JR: anado una variable con el estilo
         estilo = u'/style/%s/content.css' % self.package.style
         html += common.getJavaScriptStrings()
-        html += u"<script type=\"text/javascript\">var exe_style = '%s';</script>\n" % estilo
-        html += u"<script type=\"text/javascript\">var exe_package_name='"+self.package.name+"';</script>\n"			
+        html += u"<script type=\"text/javascript\">"
+        html += u"var exe_style = '%s';" % estilo
+        html += u"var exe_package_name='"+self.package.name+"';"
+        html += 'var exe_export_format="'+common.getExportDocType()+'".toLowerCase();'
+        html += 'var exe_editor_mode="'+myPreferencesPage.getEditorMode()+'";'
+        html += '</script>\n'        
         html += u'<script type="text/javascript" src="../jsui/native.history.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/authoring.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_jquery.js"></script>\n'
