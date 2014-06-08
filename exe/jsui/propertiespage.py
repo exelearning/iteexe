@@ -318,7 +318,7 @@ class PropertiesPage(Renderable, Resource):
                                 data[key] = getattr(obj, name).basename()
                         else:                            
                             if name=='docType':              
-                                data[key]=common.getExportDocType()
+                                data[key]=self.package.getExportDocType()
                             else:
                                 data[key] = getattr(obj, name)
 

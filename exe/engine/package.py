@@ -364,7 +364,7 @@ class Package(Persistable):
         self.resourceDir = TempDirPath()
         self.resources = {} # Checksum-[_Resource(),..]
         self._docType    = G.application.config.docType
-        
+
     def setLomDefaults(self):
         self.lom = lomsubs.lomSub.factory()
         self.lom.addChilds(self.lomDefaults(self.dublinCore.identifier, 'LOMv1.0'))

@@ -211,7 +211,6 @@ class PreferencesPage(RenderableResource):
             self.config.configParser.set('user', 'editorMode', editormodesel)
             doctypesel = request.args['docType'][0]
             self.config.docType = doctypesel
-            common.setExportDocType(doctypesel)
             self.config.configParser.set('user', 'docType', doctypesel)
             browser = request.args['browser'][0]
             if browser == "None":

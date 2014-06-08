@@ -198,6 +198,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 								dirtyCls: 'property-form-dirty',
 								fieldLabel: _("Internal Linking (for Web Site Exports only)"),
 								labelWidth: 250,
+								width:465,
 								store: [
 									["enable_all", _("Enable All Internal Linking")],
 									["disable_autotop", _("Disable Auto-Top Internal Linking")],
