@@ -92,53 +92,80 @@ Ext.define('eXe.view.forms.LomDataPanel', {
         if (!this.needsExtend)
             return;
         Ext.suspendLayouts();
-        var field, fields = [], keys_not_found = [], v, key, but;
+        var field, fields = [], keys_not_found = [], v, key = 0, but = null;
         for (key in action.result.data){
-            fields.push(key);
+        	if (action.result.data[key] !== '')
+        		fields.push(key);
         }
 
-        fields.sort();
+        fields.sort(function(a, b) {
+        	var i = 0;
+        	a = a.split(/(\d+|_)/);
+        	b = b.split(/(\d+|_)/);
+        	for (i in a) {
+        		if (i < b.length) {
+        			var aint = parseInt(a[i]),
+        			    bint = parseInt(b[i]);
+        			if (isNaN(aint)) {
+        				if (isNaN(bint)) {
+        					if (a[i] != b[i])
+        						return a[i].localeCompare(b[i]);
+        				}
+        				else
+        					return 1;
+        			}
+        			else if (isNaN(bint)) {
+    					return -1;
+        			}
+        			else
+        				if (aint != bint)
+        					return aint - bint;
+        		}
+        	}
+        	return i - b.length;
+        });
 
         for (var i = 0, len = fields.length; i < len; i++){
             key = fields[i];
             field = form.findField(key);
 //            console.log(key + ': ' + v);
             if (!field){
-//                console.log('PROCESS: ' + key );
-                if (action.result.data[key] !== ''){//
-                    if (! this.existSection(form, key)){
-//                      console.log('ADD Section: ' + key);
-                        but = this.getAddSectionButton(key);
-                        but.fireEvent('click', but);
-                    }else{
-                        field = this.getInsertDelField(key);
-                        if (field){
-                        		if (/contribute$/.exec(field.getItemId())){
-                        			but = Ext.ComponentQuery.query('#' + field.getItemId() + ' #addbutton')[1];
-                        		}
-                        		else{
-                        			if (field.addButtonObj){
-                        				but = field.addButtonObj;
-                        			}else{
-                        				console.log('ERROR: Can not get the button: ' + key);
-                        			}
-                        		}
-                        		if (but){
-                    				Ext.bind(but.addFieldSetItems, field)();
-                        		}
-                        		else
-                        			console.log('ERROR: no button for key: ' + key);
-                        }
-                    }
-                }
+//              console.log('PROCESS: ' + key );
+            	if (action.result.data[key] !== '') {
+            		if (! this.existSection(form, key)){
+//                  console.log('ADD Section: ' + key);
+            			but = this.getAddSectionButton(key);
+            			but.fireEvent('click', but);
+            		}
+            		else {
+            			field = this.getInsertDelField(key);
+            			if (field){
+            				if (/contribute$/.exec(field.getItemId())){
+            					but = Ext.ComponentQuery.query('#' + field.getItemId() + ' #addbutton')[1];
+            				}
+            				else{
+            					if (field.addButtonObj){
+            						but = field.addButtonObj;
+            					}else{
+            						console.log('ERROR: Can not get the button: ' + key);
+            					}
+            				}
+            				if (but){
+            					Ext.bind(but.addFieldSetItems, field)();
+            				}
+            				else
+            					console.log('ERROR: no button for key: ' + key);
+            			}
+            		}
+            	}
             }
         }
         Ext.iterate(Ext.ComponentQuery.query('lomdata combobox[fieldLabel=' + _('Taxon') + ']'), function(taxon) {
           var scp, nextbutdel, el, nextTaxon = taxon.nextNode('combobox[fieldLabel=' + _('Taxon') + ']');
 
           nextbutdel = taxon.nextNode('image#delbutton');
-          scp= {'scope': eXe.view.forms.LomWidgets, 'combo': taxon},
-          el = nextbutdel.getEl()
+          scp= {'scope': eXe.view.forms.LomWidgets, 'combo': taxon};
+          el = nextbutdel.getEl();
           if (el) {
           	el.removeAllListeners();
           	el.addListener( 'click', eXe.view.forms.LomWidgets.addDelEvent, scp);
@@ -159,7 +186,7 @@ Ext.define('eXe.view.forms.LomDataPanel', {
             }
             else {
             	keys_not_found.push(key);
-            	console.log('ERROR: Field not found: ' + key);
+//            	console.log('ERROR: Field not found: ' + key);
             }
         }
         Ext.resumeLayouts(true);
@@ -182,7 +209,7 @@ Ext.define('eXe.view.forms.LomDataPanel', {
         if (this.needsExtend)
             return;
 
-        var widgets = eXe.view.forms.LomWidgets, removed;
+        var widgets = eXe.view.forms.LomWidgets;
 
         Ext.suspendLayouts();
         this.removeAll(true);
