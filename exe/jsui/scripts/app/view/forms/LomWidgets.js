@@ -308,7 +308,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 			        item: {
 			            xtype: 'datetimefield',
 			            allowBlank: optional,
-			            format: 'c',
+			            format: 'Y-m-d\\TH:i:s.00P',
                         fieldLabel: fieldLabel,
 			            validateOnBlur: false,
 			            validateOnChange: false,
