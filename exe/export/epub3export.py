@@ -140,7 +140,7 @@ class PublicationEpub3(object):
         Returning xml string for items and resources
         """
         xmlStr = u'<spine>\n'
-        xmlStr += u'<itemref idref="cover" linear="no"/>\n'
+        xmlStr += u'<itemref idref="cover"/>\n'
         for page in self.pages:
             if page.name == 'cover':
                 continue
