@@ -276,7 +276,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
                     # go on with the items:
                     self.genItemResStr(page)
                     # do not forget update depth before going on with the list:                                 
-                depthold = page.depth
+                depthold = depth
                 depth = page.depth    
             
             if self.scormType != "scorm2004":    
