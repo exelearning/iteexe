@@ -33,6 +33,7 @@ from exe.engine.path               import Path, TempDirPath
 from exe.engine.version            import release
 from exe.export.pages              import Page, uniquifyNames
 from exe                      	   import globals as G
+from exe.engine.beautifulsoup      import BeautifulSoup
 
 log = logging.getLogger(__name__)
 
@@ -94,6 +95,8 @@ class PublicationEpub3(object):
 
             ext = epubFile.ext
             name = epubFile.basename().translate({ord(u'.'): u'_', ord(u'('): u'', ord(u')'): u''})
+            if name[0] in [unicode(i) for i in range(0, 10)]:
+                name = u'_' + name
 
             mimetype, _ = mimetypes.guess_type(epubFile.abspath())
             if not mimetype:
@@ -337,15 +340,15 @@ class Epub3Page(Page):
                     log.critical("Unable to render iDevice.")
                     raise Error("Unable to render iDevice.")
                 if hasattr(idevice, "isQuiz"):
-                    html += block.renderJavascriptForWeb()
+                    html += unicode(BeautifulSoup(block.renderJavascriptForWeb(), convertEntities=BeautifulSoup.XHTML_ENTITIES))
                 if idevice.title != "Forum Discussion":
-                    html += self.processInternalLinks(
-                        block.renderView(self.node.package.style))
+                    html += unicode(BeautifulSoup(self.processInternalLinks(
+                        block.renderView(self.node.package.style)), convertEntities=BeautifulSoup.XHTML_ENTITIES))
             html += u'</' + articleTag + '>' + lb  # iDevice div
 
         html += u"</" + sectionTag + ">" + lb  # /#main
         html += self.renderLicense()
-        html += self.renderFooter()
+        html += unicode(BeautifulSoup(self.renderFooter(), convertEntities=BeautifulSoup.XHTML_ENTITIES))
         html += u"</div>" + lb  # /#outer
         if style.hasValidConfig:
             html += style.get_extra_body()
