@@ -130,7 +130,7 @@ class PublicationEpub3(object):
                 if not value:
                     self.package.dublinCore.identifier = value = str(uuid.uuid4())
             if value:
-                xml += u'<dc:%s%s>%s</dc:%s>\n' % (key, pub_id, value, key)
+                xml += u'<dc:%s%s>%s</dc:%s>\n' % (key, pub_id, escape(value), key)
         xml += u'<meta property="dcterms:modified">%s</meta>' % datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
         xml += u'</metadata>\n'
         return xml
@@ -215,7 +215,7 @@ class NavEpub3(object):
         """
 
         for page in self.pages[1:]:
-            xmlStr += u"<li><a href=\"%s\">%s</a></li>\n" % (page.name + ".xhtml", page.node.title)
+            xmlStr += u"<li><a href=\"%s\">%s</a></li>\n" % (page.name + ".xhtml", escape(page.node.title))
 
         xmlStr += u"""
                         </ol>
@@ -283,11 +283,11 @@ class Epub3Page(Page):
         if dT != "HTML5" and self.node.package.lang != "":
             html += '<meta http-equiv="content-language" content="' + lenguaje + '" />' + lb
         if self.node.package.author != "":
-            html += '<meta name="author" content="' + self.node.package.author + '" />' + lb
+            html += '<meta name="author" content="' + escape(self.node.package.author) + '" />' + lb
         html += '<meta name="generator" content="eXeLearning ' + release + ' - exelearning.net" />' + lb
         if self.node.id == '0':
             if self.node.package.description != "":
-                html += '<meta name="description" content="' + self.node.package.description + '" />' + lb
+                html += '<meta name="description" content="' + escape(self.node.package.description) + '" />' + lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />" + lb
         if common.hasWikipediaIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />" + lb
@@ -389,7 +389,7 @@ class Epub3Cover(Epub3Page):
       <img id="img-cover" src="%s" alt="%s" />
    </body>
 </html>'''
-        src = ''
+        src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D'
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(None, idevice)
             div = block.renderView(self.node.package.style)
@@ -398,7 +398,7 @@ class Epub3Cover(Epub3Page):
                 src = srcs[0]
                 self.cover = src
                 break
-        return html % (src, self.node.package.title)
+        return html % (src, escape(self.node.package.title))
 
 
 class Epub3Export(object):
@@ -616,6 +616,9 @@ class Epub3Export(object):
         pageName = re.sub(r"\W", "", pageName)
         if not pageName:
             pageName = u"__"
+            
+        if pageName[0] in [unicode(i) for i in range(0, 10)]:
+            pageName = u'_' + pageName
 
         page = Epub3Page(pageName, depth, node)
 
