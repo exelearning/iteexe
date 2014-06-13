@@ -1407,7 +1407,6 @@ class ClozeElement(ElementWithResources):
                 aceptedWords=[]
                 aceptedWords=missingWord.split('|')
                 lenWord=max(len(wrd) for wrd in aceptedWords)
-                #lenWord=len(missingWord)
                 words += "'" + missingWord + "',"
                 # The edit box for the user to type into
                 #'  autocomplete="off"',
@@ -1663,13 +1662,16 @@ class ClozelangElement(ElementWithResources):
             if text:
                 html.append(text)
             if missingWord:
+                aceptedWords=[]
+                aceptedWords=missingWord.split('|')
+                lenWord=max(len(wrd) for wrd in aceptedWords)
                 words += "'" + missingWord + "',"
                 # The edit box for the user to type into
                 inputHtml = [
                     ' <input type="text" value="" ',
                     '        id="clozelangBlank%s.%s"' % (self.id, i),
 #                    '    autocomplete="off"',
-                    '    style="width:%sem"/>\n' % len(missingWord)]
+                    '    style="width:%sem"/>\n' % lenWord]
                 if self.field.instantMarking:
                     inputHtml.insert(2, '  onKeyUp="onClozelangChange(this)"')
                 html += inputHtml
