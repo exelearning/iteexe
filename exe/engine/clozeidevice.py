@@ -40,7 +40,7 @@ class ClozeIdevice(Idevice):
     Holds a paragraph with words missing that the student must fill in
     """
     
-    persistenceVersion = 5
+    persistenceVersion = 6
 
     def __init__(self, parentNode=None):
         """
@@ -310,6 +310,12 @@ click on the Hide/Show Word button below.</p><p>Use pipe character | to define m
         No action to take
         """
         pass
-        
-    
+
+    def upgradeToVersion6(self):
+        self._content = ClozeField(x_(u'Cloze'), 
+            x_(u"""<p>Enter the text for the cloze activity in to the cloze field 
+by either pasting text from another source or by typing text directly into the 
+field.</p><p> To select words to hide, double click on the word to select it and 
+click on the Hide/Show Word button below.</p><p>Use pipe character | to define more than one correct answer. I.e.: dog|cat|bird</p>"""))
+        self._content.idevice = self
 # ===========================================================================
