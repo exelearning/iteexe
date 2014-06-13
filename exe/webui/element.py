@@ -1146,9 +1146,13 @@ class MagnifierElement(Element):
         """
         field = self.field
         lb = "\n" #Line breaks
-        html = '<span class="image-thumbnail" id="image-thumbnail-'+self.id+'">'+lb
-        html += '<a href="'+imageFile+'"><img src="'+imageFile+'" alt="" width="'+field.width+'" height="'+field.height+'" class="magnifier-size-'+field.glassSize+' magnifier-zoom-'+field.initialZSize+'" /></a>'+lb
-        html += '</span>'+lb
+        html =u'<img id="magnifier%s" src="%s" data-magnifysrc="%s"' % ( self.id, imageFile,imageFile)
+        if field.width!="":
+            html +=u' width="'+field.width+'"'
+        if field.height!="":
+            html +=u' height="'+field.height+'"'            
+        html +=u' data-size="%s"  data-zoom="%s" />'% (field.glassSize, field.initialZSize)
+        html +=lb
         return html;
         
 
@@ -1400,14 +1404,18 @@ class ClozeElement(ElementWithResources):
             if text:
                 html.append(text)
             if missingWord:
+                aceptedWords=[]
+                aceptedWords=missingWord.split('|')
+                lenWord=max(len(wrd) for wrd in aceptedWords)
+                #lenWord=len(missingWord)
                 words += "'" + missingWord + "',"
                 # The edit box for the user to type into
                 #'  autocomplete="off"',
                 inputHtml = ['<label for="clozeBlank%s.%s" class="sr-av">%s (%s):</label>' % (self.id, i, c_("Cloze"), (i+1))]
                 if self.field.instantMarking:
-                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" onkeyup="onClozeChange(this)" />' % (self.id, i, len(missingWord))]
+                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" onkeyup="onClozeChange(this)" />' % (self.id, i, lenWord)]
                 else:
-                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" />' % (self.id, i, len(missingWord))]
+                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" />' % (self.id, i, lenWord)]
                 html += inputHtml
                 # Hidden span with correct answer
                 html += ['<span style="display:none" id="clozeAnswer%s.%s">%s</span>' % (self.id, i, encrypt(missingWord))]
