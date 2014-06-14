@@ -89,7 +89,7 @@ Ext.define('Ext.ux.IFrame', {
             try {
                 doc = me.getDoc();
                 if (doc) {
-                    Ext.EventManager.removeAll(doc);
+                    me.removeAll(doc);
                     for (prop in doc) {
                         if (doc.hasOwnProperty && doc.hasOwnProperty(prop)) {
                             delete doc[prop];
@@ -102,6 +102,78 @@ Ext.define('Ext.ux.IFrame', {
         me.callParent();
     },
 
+    removeListener : function(element, eventName, fn, scope) {
+        
+        if (typeof eventName !== 'string') {
+            EventManager.prepareListenerConfig(element, eventName, true);
+            return;
+        }
+
+        var dom = Ext.getDom(element),
+            el = element.dom ? element : dom,
+            cache = EventManager.getEventListenerCache(el, eventName),
+            bindName = EventManager.normalizeEvent(eventName).eventName,
+            i = cache.length, j,
+            listener, wrap, tasks;
+
+
+        while (i--) {
+            listener = cache[i];
+
+            if (listener && (!fn || listener.fn == fn) && (!scope || listener.scope === scope)) {
+                wrap = listener.wrap;
+
+                
+                if (wrap.task) {
+                    clearTimeout(wrap.task);
+                    delete wrap.task;
+                }
+
+                
+                j = wrap.tasks && wrap.tasks.length;
+                if (j) {
+                    while (j--) {
+                        clearTimeout(wrap.tasks[j]);
+                    }
+                    delete wrap.tasks;
+                }
+
+                if (dom.detachEvent) {
+                    dom.detachEvent('on' + bindName, wrap);
+                } else {
+                    dom.removeEventListener(bindName, wrap, false);
+                }
+
+                if (wrap && dom == doc && eventName == 'mousedown') {
+                    EventManager.stoppedMouseDownEvent.removeListener(wrap);
+                }
+
+                
+                Ext.Array.erase(cache, i, 1);
+            }
+        }
+    },
+
+    //Replacement of Ext.EventManager.removeAll to fix memory leaks
+    removeAll : function(element) {
+        var el = element.dom ? element : Ext.getDom(element),
+            cache, events, eventName;
+
+        if (!el) {
+            return;
+        }
+        cache = (el.$cache || el.getCache());
+        events = cache.events;
+
+        for (eventName in events) {
+            if (events.hasOwnProperty(eventName)) {
+            	//Use our removeListener to avoid memory leaks
+                this.removeListener(el, eventName);
+            }
+        }
+        cache.events = {};
+    },
+    
     onLoad: function() {
         var me = this,
             doc = me.getDoc(),
@@ -109,7 +181,7 @@ Ext.define('Ext.ux.IFrame', {
 
         if (doc) {
             try {
-                Ext.EventManager.removeAll(doc);
+                me.removeAll(doc);
 
                 // These events need to be relayed from the inner document (where they stop
                 // bubbling) up to the outer document. This has to be done at the DOM level so
@@ -132,7 +204,7 @@ Ext.define('Ext.ux.IFrame', {
             }
 
             // We need to be sure we remove all our events from the iframe on unload or we're going to LEAK!
-            Ext.EventManager.on(window, 'unload', me.beforeDestroy, me);
+            Ext.EventManager.on(me.getWin(), 'unload', me.beforeDestroy, me);
 
             this.el.unmask();
             this.fireEvent('load', this);
@@ -153,8 +225,6 @@ Ext.define('Ext.ux.IFrame', {
             iframeXY = iframeEl.getXY(),
             eventXY = event.getXY();
 
-        if (event.type == "keypress")
-        	event.type = "keypress";
         // the event from the inner document has XY relative to that document's origin,
         // so adjust it to use the origin of the iframe in the outer document:
         event.xy = [iframeXY[0] + eventXY[0], iframeXY[1] + eventXY[1]];

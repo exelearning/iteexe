@@ -549,8 +549,34 @@ function checkClozeWord(ele) {
     // Extract the idevice id and the input number out of the element's id
     var original = getClozeAnswer(ele);
     var answer = original;
-    var guess = ele.value
-    var ident = getClozeIds(ele)[0]
+    answer = answer.trim();
+    var first = answer.indexOf("|");
+    var last = answer.lastIndexOf("|");
+    if(first==0 && last==answer.length-1)
+    {
+        var answers = answer.split("|"); 
+        var answer_i_ok;
+        for (var i in answers) {
+            if(answers[i]!="")
+            {
+                answer_i_ok = checkClozeWordAnswer(ele,answers[i]);
+                if (answer_i_ok != "")
+                    return answers[i];
+            }
+        }
+        return "";
+    }
+    else
+        return checkClozeWordAnswer(ele,answer);
+}
+
+// Returns the corrected word or an empty string agains one of the possible answers
+function checkClozeWordAnswer(ele,original_answer) {
+    var guess = ele.value;
+    // Extract the idevice id and the input number out of the element's id
+    //var original = getClozeAnswer(ele);
+    var answer = original_answer;
+    var ident = getClozeIds(ele)[0];
     // Read the flags for checking answers
     var strictMarking = eval(document.getElementById(
         'clozeFlag'+ident+'.strictMarking').value);
@@ -558,11 +584,11 @@ function checkClozeWord(ele) {
         'clozeFlag'+ident+'.checkCaps').value);
     if (!checkCaps) {
         guess = guess.toLowerCase();
-        answer = original.toLowerCase();
+        answer = answer.toLowerCase();
     }
     if (guess == answer)
         // You are right!
-        return original
+        return original_answer;
     else if (strictMarking || answer.length <= 4)
         // You are wrong!
         return "";
@@ -581,7 +607,7 @@ function checkClozeWord(ele) {
                 }
             }
             if (misses <= maxMisses) {
-                return answer;
+                return original_answer;
             } else {
                 return "";
             }
@@ -605,7 +631,7 @@ function checkClozeWord(ele) {
                 }
                 if (misses <= maxMisses)
                     // You are right
-                    return answer;
+                    return original_answer;
                 string1 = string1.substr(1);
             }
         }
