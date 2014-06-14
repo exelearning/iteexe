@@ -141,6 +141,9 @@ class Checker:
                                 else:
                                     self.idevices[path] = [field]
                 else:
+                    for resource in idevice.systemResources:
+                        if resource=='magnifier.swf':                       
+                            idevice.systemResources.remove(resource)
                     for resource in idevice.userResources:
                         path = self.package.resourceDir / resource.storageName
                         if not path.exists():
