@@ -549,14 +549,25 @@ function checkClozeWord(ele) {
     // Extract the idevice id and the input number out of the element's id
     var original = getClozeAnswer(ele);
     var answer = original;
-    var answers = answer.split("|"); 
-    var answer_i_ok;
-    for (var i in answers) {
-        answer_i_ok = checkClozeWordAnswer(ele,answers[i]);
-        if (answer_i_ok != "")
-            return answers[i];
+    answer = answer.trim();
+    var first = answer.indexOf("|");
+    var last = answer.lastIndexOf("|");
+    if(first==0 && last==answer.length-1)
+    {
+        var answers = answer.split("|"); 
+        var answer_i_ok;
+        for (var i in answers) {
+            if(answers[i]!="")
+            {
+                answer_i_ok = checkClozeWordAnswer(ele,answers[i]);
+                if (answer_i_ok != "")
+                    return answers[i];
+            }
+        }
+        return "";
     }
-    return "";
+    else
+        return checkClozeWordAnswer(ele,answer);
 }
 
 // Returns the corrected word or an empty string agains one of the possible answers
