@@ -1015,14 +1015,14 @@ class MagnifierElement(Element):
         Initialize
         """
         Element.__init__(self, field)
-        if not 'mojomagnify.js' in self.field.idevice.systemResources:
-            self.field.idevice.systemResources += ['mojomagnify.js']
+
 
     def process(self, request):
         """
         Process arguments from the web server.
         """
         is_cancel = common.requestHasCancel(request)
+
         self.field.message = ""
         if "path"+self.id in request.args:
             path = request.args["path"+self.id][0]
