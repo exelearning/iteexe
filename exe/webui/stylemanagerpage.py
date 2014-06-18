@@ -11,6 +11,7 @@ from zipfile                   import ZipFile, ZIP_DEFLATED
 import json
 from twisted.internet          import threads, reactor
 from twisted.web.resource      import Resource
+from twisted.web.xmlrpc        import Proxy
 from exe.webui.livepage        import allSessionClients
 from exe.webui.renderable      import RenderableResource
 from exe.engine.path           import Path, toUnicode, TempDirPath
@@ -40,6 +41,8 @@ class StyleManagerPage(RenderableResource):
         self.properties   = ""
         self.style        = ""
         self.client       = None
+        # Remote XML-RPC server
+        self.proxy = Proxy(self.config.stylesRepository)
 
     def getChild(self, name, request):
         """
@@ -62,7 +65,7 @@ class StyleManagerPage(RenderableResource):
             response = json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'PreExport'})
             
         elif  (self.action == 'StylesRepository'):
-            response = json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'StylesRepository'})
+            response = json.dumps({'success': True, 'rep_styles': self.rep_styles, 'action' : 'StylesRepository'})
         
         else:
             response = json.dumps({'success': True, 'styles': self.renderListStyles(), 'action': 'List'})
@@ -178,8 +181,24 @@ class StyleManagerPage(RenderableResource):
         self.action = ""
         
     def doStylesRepository(self):
-        self.action     = 'StylesRepository'
-        self.style      = ''
+        def getStylesList(styles_list) :
+            """
+            Update styles list with data got from repository and send to client order to refresh styles list in the UI
+            """
+            self.rep_styles = styles_list
+            self.client.sendScript('Ext.MessageBox.updateProgress(1, "100%", "Success!")')
+            self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ')')
+            
+        def errorStylesList(value):
+            self.rep_styles = []
+            self.alert(_(u'Error'), _(u'Error while getting styles list from the repository'))
+            self.alert(_(u'Error'), self.config.stylesRepository)
+        
+        self.client.sendScript('Ext.MessageBox.progress("Updating styles list", "Getting available styles from repository...")')
+        d = self.proxy.callRemote('exe_styles.listStyles')
+        d.addCallbacks(getStylesList, errorStylesList)
+        
+        self.action = 'StylesRepository'
         
     def doStyleImportURL(self, url):
         """

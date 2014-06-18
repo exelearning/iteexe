@@ -120,7 +120,7 @@ function createButtonProperties(name, style) {
 function createPanelStyles(styles) {
     var i;
     var itemsShow = [];
-    var panel = {};
+    var panel = [];
     for (i = styles.length-1; i >= 0; i--) {
         //item = Ext.create('Ext.menu.CheckItem', { text: styles[i].label, itemId: styles[i].style, checked: styles[i].selected });
         var style=[];
@@ -331,8 +331,16 @@ function createPanelProperties(properties, stylen,mode,withbutton) {
     return panel;
 }
 
-function createPanelStylesRepository() {
-    var title=_("Download style from URL");
+function createPanelStylesRepository(rep_styles) {
+    // rep_styles could be empty or not present
+    rep_styles = typeof rep_styles !== 'undefined' ? rep_styles : [];
+    
+    var i;
+    var itemsStyleList = [];
+
+    var titleImportStyle=_("Download style from URL");
+    var titleStyleList =_("Download style from URL");
+    
     var itemsImportStyle = [
         { 
             xtype: 'textfield',
@@ -352,12 +360,49 @@ function createPanelStylesRepository() {
             margin: 10,
         },
     ];
+    
+    for (i = rep_styles.length-1; i >= 0; i--) {
+        //item = Ext.create('Ext.menu.CheckItem', { text: styles[i].label, itemId: styles[i].style, checked: styles[i].selected });
+        var style=[];
+        style[0] = 
+        { 
+            xtype: 'label',
+            width: 320,
+            margin: '5 5 5 20',
+            style:"font-size:105%",
+            text: rep_styles[i].title['und']
+        };
+        var estilo = "";
+        if (i%2 == 0) {
+            estilo = 'padding-top:5px; background-color: #FFF;';
+        } 
+        else {
+            estilo = 'padding-top:5px; background-color: #FAFAFA; border-top-color: #B5B8C8; border-bottom-color: #B5B8C8; border-top-style:solid; border-bottom-style: solid; border-top-width:1px; border-bottom-width: 1px;';
+        }
+        
+        var item =
+        { 
+            xtype: 'container',
+            layout: 'hbox',
+            margin: '0 0 5 0',
+            style: estilo,
+            items: style
+        };
+        itemsStyleList[i] = item;
+    }
+    
     panel = [
         {
             xtype: 'fieldset',
-            title: title,
+            title: titleImportStyle,
             margin: 10,
             items: itemsImportStyle,
+        },
+        {
+            xtype: 'fieldset',
+            title: titleStyleList,
+            margin: 10,
+            items: itemsStyleList,
         },
         {
             xtype: 'button',
@@ -367,14 +412,14 @@ function createPanelStylesRepository() {
             itemId: 'return_styles_list',
             name: 'return_styles_list',
             margin: 10,
-        }
+        },
     ];
     
     return panel;
 }
 
 function createPanel() {
-    var panel = {};
+    var panel = [];
     
     // The JSON response to this request must have an 'action' field,
     // that determines de panel to be displayed
@@ -398,7 +443,7 @@ function createPanel() {
                 panel = createPanelProperties(json.properties, json.style,true,true);
             }
             else if (json.action == 'StylesRepository') {
-                panel = createPanelStylesRepository();
+                panel = createPanelStylesRepository(json.rep_styles);
             }
             else {
                 panel = createPanelStyles(json.styles);
@@ -451,5 +496,16 @@ Ext.define('eXe.view.forms.StyleManagerPanel', {
         panel =  createPanel();
         formpanel.add(panel);
         me.doLayout();
-    }
+    },
+    
+    refreshStylesList: function(rep_styles) {    
+        var me = Ext.getCmp("stylemanagerwin").down("form");
+        var stylemanager = Ext.getCmp("stylemanagerwin");
+        var formpanel = stylemanager.down('form');
+        var panel = createPanelStylesRepository(rep_styles);
+        
+        formpanel.removeAll(false);
+        formpanel.add(panel);
+        me.doLayout();        
+    },
 });
