@@ -38,7 +38,7 @@ class GenericIdevice(Idevice):
     can have a multitude of different forms all of which are just simple
     XHTML fields.
     """
-    persistenceVersion = 10
+    persistenceVersion = 11
     
     def __init__(self, title, class_, author, purpose, tip):
         """
@@ -348,4 +348,8 @@ class GenericIdevice(Idevice):
         if "libot_drag.js" in self.systemResources:
             self.systemResources.remove("libot_drag.js")
 
+    def upgradeToVersion11(self):
+        for resource in self.systemResources:
+            if resource.startswith('icon_'):
+                self.systemResources.remove(resource)
 # ===========================================================================

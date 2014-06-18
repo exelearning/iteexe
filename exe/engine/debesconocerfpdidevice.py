@@ -19,7 +19,7 @@ class DebesconocerfpdIdevice(Idevice):
     """
     El iDevice Debes conocer permite al alumnado ampliar conocimientos obligatorios para su aprendizaje
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -136,4 +136,8 @@ class DebesconocerfpdIdevice(Idevice):
         self.activityTextArea = TextAreaField(x_(u'You Should Know Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
+        
+    def upgradeToVersion8(self):
+        if 'icon_debesconocerfpd.gif' in self.systemResources:
+            self.systemResources.remove('icon_debesconocerfpd.gif')
 # ===========================================================================
