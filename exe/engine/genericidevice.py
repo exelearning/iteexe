@@ -349,7 +349,5 @@ class GenericIdevice(Idevice):
             self.systemResources.remove("libot_drag.js")
 
     def upgradeToVersion11(self):
-        for resource in self.systemResources:
-            if resource.startswith('icon_'):
-                self.systemResources.remove(resource)
+        self._upgradeIdeviceToVersion3()
 # ===========================================================================

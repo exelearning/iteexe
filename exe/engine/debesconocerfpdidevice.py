@@ -138,6 +138,5 @@ class DebesconocerfpdIdevice(Idevice):
         self.activityTextArea.idevice = self
         
     def upgradeToVersion8(self):
-        if 'icon_debesconocerfpd.gif' in self.systemResources:
-            self.systemResources.remove('icon_debesconocerfpd.gif')
+        self._upgradeIdeviceToVersion3()
 # ===========================================================================
