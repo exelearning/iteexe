@@ -19,7 +19,7 @@ class DestacadofpdIdevice(Idevice):
     """
     El iDevice Destacado permite resaltar texto para llamar la atención del alumnado
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -134,4 +134,10 @@ class DestacadofpdIdevice(Idevice):
         self.activityTextArea = TextAreaField(x_(u'Highlighted Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
+
+    def upgradeToVersion8(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
 # ===========================================================================

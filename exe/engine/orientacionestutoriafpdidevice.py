@@ -20,7 +20,7 @@ class OrientacionestutoriafpdIdevice(Idevice):
     """
     El iDevice Orientaciones tutoria permite al profesorado conocer los objetivos del aprendizje del alumnado
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -137,4 +137,10 @@ class OrientacionestutoriafpdIdevice(Idevice):
         self.activityTextArea = TextAreaField(x_(u'Guidelines Teacher Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
+
+    def upgradeToVersion8(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
 # ===========================================================================

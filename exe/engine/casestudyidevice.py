@@ -187,7 +187,7 @@ class CasestudyIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 8
+    persistenceVersion = 9
 
     def __init__(self, story="", defaultImage=None):
         """
@@ -427,6 +427,12 @@ situation.""")
         (as perhaps should have been done for the previous upgradeToVersion7)
         """
         G.application.afterUpgradeHandlers.append(self.embedImagesInFeedback)
+
+    def upgradeToVersion9(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
 
     def embedImagesInFeedback(self):
         """

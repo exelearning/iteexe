@@ -444,7 +444,7 @@ class GalleryIdevice(_ShowsResources, Idevice):
     """
 
     # Class attributes
-    persistenceVersion = 7
+    persistenceVersion = 8
     previewSize        = (320.0, 240.0)
     
     # Default attribute values
@@ -635,6 +635,11 @@ these in a gallery context rather then individually.</p>"""),
         """
         G.application.afterUpgradeHandlers.append(self.upgrade_recreateResources)
 
+    def upgradeToVersion8(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
 
     def upgrade_recreateResources(self):
         """

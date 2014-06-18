@@ -233,7 +233,7 @@ class QuizTestIdevice(Idevice):
     """
     A QuizTestIdevice Idevice is one built up from question and options
     """
-    persistenceVersion = 9
+    persistenceVersion = 10
 
 
     def __init__(self):
@@ -427,6 +427,11 @@ time to learn and practice using the information or skill.
         if "libot_drag.js" in self.systemResources:
             self.systemResources.remove("libot_drag.js")
 
+    def upgradeToVersion10(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
 ## ===========================================================================
 #def register(ideviceStore):
     #"""Register with the ideviceStore"""

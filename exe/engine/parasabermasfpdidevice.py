@@ -20,7 +20,7 @@ class ParasabermasfpdIdevice(Idevice):
     """
     El iDevice Para saber permite al alumnado ampliar conocimientos voluntarios para su aprendizaje
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -137,4 +137,10 @@ class ParasabermasfpdIdevice(Idevice):
         self.activityTextArea = TextAreaField(x_(u'A Step Ahead Text'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
+
+    def upgradeToVersion8(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
 # ===========================================================================

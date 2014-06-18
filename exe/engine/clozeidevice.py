@@ -320,5 +320,8 @@ click on the Hide/Show Word button below.</p><p>Use pipe character | to define m
         self._content.idevice = self
         
     def upgradeToVersion7(self):
+        """
+        Delete icon from system resources
+        """
         self._upgradeIdeviceToVersion3()
 # ===========================================================================

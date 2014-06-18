@@ -134,7 +134,7 @@ class TrueFalseIdevice(Idevice):
     """
     A TrueFalse Idevice is one built up from question and options
     """
-    persistenceVersion = 10
+    persistenceVersion = 11
 
     def __init__(self):
         """
@@ -409,4 +409,9 @@ completed."""),
         if "libot_drag.js" in self.systemResources:
             self.systemResources.remove("libot_drag.js")
 
+    def upgradeToVersion11(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
 # ===========================================================================

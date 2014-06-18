@@ -54,7 +54,7 @@ class ListaIdevice(Idevice):
     Actividad con lista desplegable
     """
     
-    persistenceVersion = 4
+    persistenceVersion = 5
     
 
     def __init__(self, parentNode=None):
@@ -318,6 +318,14 @@ click on the 'Hide/Show' button below.</p>"""))
         
         self.isCloze = True
 
+    def upgradeToVersion5(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
+        if "icon_question.gif" in self.systemResources:
+            self.systemResources.remove("icon_question.gif")
+
 #================================================================
 class ListaField(FieldWithResources):
     """
@@ -416,6 +424,7 @@ class ListaField(FieldWithResources):
         self.content_wo_resourcePaths = self.encodedContent
         # NOTE: we don't need to actually process any of those contents for 
         # image paths, either, since this is an upgrade from pre-images!
+
 
 class ListaHTMLParser(HTMLParser):
     """

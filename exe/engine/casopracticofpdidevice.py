@@ -20,7 +20,7 @@ class CasopracticofpdIdevice(Idevice):
     """
     El iDevice Caso practico permite al alumnado introducirse en una historia que le guiara a traves de su aprendizaje
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -136,4 +136,11 @@ class CasopracticofpdIdevice(Idevice):
         self.activityTextArea = TextAreaField(x_(u'Situation Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
+
+    def upgradeToVersion8(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
+
 # ===========================================================================

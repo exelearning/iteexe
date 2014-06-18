@@ -20,7 +20,7 @@ class OrientacionesalumnadofpdIdevice(Idevice):
     """
     El iDevice Objetivos alumando permite al alumnado conocer los objetivos de su aprendizaje
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -136,4 +136,10 @@ class OrientacionesalumnadofpdIdevice(Idevice):
         self.activityTextArea = TextAreaField(x_(u'Guidelines Students Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
+
+    def upgradeToVersion8(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
 # ===========================================================================
