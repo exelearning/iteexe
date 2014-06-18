@@ -61,10 +61,7 @@ class Idevice(Persistable):
         # userResources are copied into and stored in the package
         self.userResources = []
         # systemResources are resources from whatever style dir we are using at render time
-        if self.icon:
-            self.systemResources = ["icon_"+self.icon+".gif"]
-        else:
-            self.systemResources = []
+        self.systemResources = []
         self.originalicon= icon
 
     # Properties
@@ -319,4 +316,10 @@ class Idevice(Persistable):
         else:
             self.systemResources = []
 
+    def _upgradeIdeviceToVersion3(self):
+        if self.icon:
+            icon = "icon_" + self.icon + ".gif"
+            if icon in self.systemResources:
+                self.systemResources.remove(icon)
+            
 # ===========================================================================
