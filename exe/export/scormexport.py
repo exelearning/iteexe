@@ -250,10 +250,8 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
                 if page.node.children and self.scormType == "scorm2004":
                     # Add fake node with original title
                     itemId   = "ITEM-"+unicode(self.idGenerator.generate())
-                    resId    = "RES-"+unicode(self.idGenerator.generate())
                     self.itemStr += '<item identifier="'+itemId+'" '
-                    self.itemStr += 'isvisible="true" '
-                    self.itemStr += 'identifierref="'+resId+'">\n'
+                    self.itemStr += 'isvisible="true">\n'
                     self.itemStr += "    <title>"
                     self.itemStr += escape(page.node.titleShort)
                     self.itemStr += "</title>\n"
