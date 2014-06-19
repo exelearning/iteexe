@@ -117,7 +117,7 @@ var $exeTinyMCEToggler = {
 		//Get the help link (tables)
 		var previousTR = e.parent().parent().prev();
 		var firstLink = $("A",previousTR).eq(0);
-		if (firstLink.length==1 && firstLink.html().indexOf("Click for completion instructions")!=-1) {
+		if (firstLink.length==1 && firstLink.html().indexOf("/images/help.gif")!=-1) {
 			firstLink.css("margin-right","5px").after(l);
 		}
 		
@@ -136,7 +136,7 @@ var $exeTinyMCEToggler = {
 		//Get the help link (tables)
 		var previousTR = e.parent().parent().prev();
 		var firstLink = $("A",previousTR).eq(0);
-		if (firstLink.length==1 && firstLink.html().indexOf("Click for completion instructions")!=-1) {
+		if (firstLink.length==1 && firstLink.html().indexOf("/images/help.gif")!=-1) {
 			this.run(id,firstLink,l,hide);
 		}
 	},
