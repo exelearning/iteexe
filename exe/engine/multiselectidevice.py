@@ -35,6 +35,8 @@ class MultiSelectIdevice(Idevice):
     A MultiSelect Idevice is one built up from question and options
     """
 
+    persistenceVersion = 1
+
     def __init__(self):
         """
         Initialize 
@@ -192,5 +194,10 @@ distractors </li>
                 self.questions[question_num].feedbackTextArea.content_wo_resourcePaths \
                         = ""
 
+    def upgradeToVersion1(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
 
 # ===========================================================================

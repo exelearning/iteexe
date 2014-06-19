@@ -323,8 +323,6 @@ click on the 'Hide/Show' button below.</p>"""))
         Delete icon from system resources
         """
         self._upgradeIdeviceToVersion3()
-        if "icon_question.gif" in self.systemResources:
-            self.systemResources.remove("icon_question.gif")
 
 #================================================================
 class ListaField(FieldWithResources):
