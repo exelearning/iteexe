@@ -2492,7 +2492,7 @@ class QuizOptionElement(Element):
 
         html += common.richTextArea("ans"+self.id, 
                           self.answerElement.field.content_w_resourcePaths,
-                          package=this_package)
+                          package=this_package, type="simple")
         
         html += "</td><td align=\"center\">\n"
         html += common.option("c"+self.field.question.id, 
@@ -2519,7 +2519,7 @@ class QuizOptionElement(Element):
 
         html += common.richTextArea('f'+self.id, 
                          self.feedbackElement.field.content_w_resourcePaths,
-                         package=this_package)
+                         package=this_package, type="simple")
          
         html += "</td></tr>\n"
 
