@@ -286,11 +286,11 @@ class Epub3Page(Page):
         if dT != "HTML5" and self.node.package.lang != "":
             html += '<meta http-equiv="content-language" content="' + lenguaje + '" />' + lb
         if self.node.package.author != "":
-            html += '<meta name="author" content="' + escape(self.node.package.author) + '" />' + lb
+            html += '<meta name="author" content="' + escape(self.node.package.author, True) + '" />' + lb
         html += '<meta name="generator" content="eXeLearning ' + release + ' - exelearning.net" />' + lb
         if self.node.id == '0':
             if self.node.package.description != "":
-                html += '<meta name="description" content="' + escape(self.node.package.description) + '" />' + lb
+                html += '<meta name="description" content="' + escape(self.node.package.description, True) + '" />' + lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />" + lb
         if common.hasWikipediaIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />" + lb
@@ -401,7 +401,7 @@ class Epub3Cover(Epub3Page):
                 src = srcs[0]
                 self.cover = src
                 break
-        return html % (src, escape(self.node.package.title))
+        return html % (src, escape(self.node.package.title, True))
 
 
 class Epub3Export(object):
