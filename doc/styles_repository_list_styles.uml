@@ -11,23 +11,50 @@ participant "Repository" as R
 activate V
 V->User: Display style list
 User -> V: click 'Styles repository' button
+
 activate C
 V->C: click event on '#styles_repository'
+
 activate M
-C->M: HTTP Request (POST: {action = 'doStylesRepository'})
+C->M: HTTP Request
+note right of C
+POST: {action = 'doStylesRepository'}
+end note
 deactivate C
+
 activate R
 M->R: XML-RPC, method: listStyles
-note over M: XML-RPC call is deferred, callback function will be triggered on receiving response 
-M->V: HTTP Response (JSON: {action = 'StylesRepository', styles = [..]})
-note over M: Send order to build StylesRepository view, list of styles might be populated with data from previous calls
+note over M
+XML-RPC call is deferred, callback function
+will be triggered on receiving response
+end note
+
+M->V: HTTP Response
+note left of M
+JSON: {action = 'StylesRepository', styles = [..]}
+
+Send order to build StylesRepository view,
+list of styles might be populated with data
+from previous calls
+end note
+
 V->User: createRepStylesListPanel(rep_styles)
-note over V: Display 'StylesRepository' panel
+note left of V
+Display 'StylesRepository' panel
+end note
+
 R->M: styles : XML
 deactivate R
-M->V: client.sendScript('Ext.eXe.view.forms.StyleManagerPanel.refreshStylesRepository([{style1}, {style2}, ...])')
-V->User: refreshStylesRepository(rep_styles)
-note over V: Populates (refresh) list of styles in 'StylesRepository' panel
+
+M->V: client.sendScript(...)
+V->User: refreshStylesList(rep_styles)
+note left M
+Send to client script that populates (refresh)
+the styles list in 'StylesRepository' panel
+
+Ext.getCmp("stylemanagerwin").down("form").refreshStylesList([{style1}, {style2}, ...])
+end note
+
 deactivate M
 deactivate V
 @enduml
