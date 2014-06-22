@@ -50,7 +50,7 @@ class MultichoiceIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 8
+    persistenceVersion = 9
 
     def __init__(self, question=""):
         """
@@ -437,4 +437,9 @@ for the other options.""")
         if "libot_drag.js" in self.systemResources:
             self.systemResources.remove("libot_drag.js")
 
+    def upgradeToVersion9(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
 # ===========================================================================

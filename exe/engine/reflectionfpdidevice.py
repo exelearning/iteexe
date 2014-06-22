@@ -37,7 +37,7 @@ class ReflectionfpdIdevice(Idevice):
     A Reflection Idevice presents question/s for the student to think about
     before they look at the answer/s
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -204,4 +204,9 @@ reflective feedback.)""")
                                   self._answerInstruc, self.answer)
         self.answerTextArea.idevice = self
 
+    def upgradeToVersion8(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
 # ===========================================================================

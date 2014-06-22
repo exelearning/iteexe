@@ -34,7 +34,7 @@ class ImageMagnifierIdevice(Idevice):
     A ImageMagnifier Idevice is one built up from an image and free text.
     """
 
-    persistenceVersion = 3
+    persistenceVersion = 4
     
     def __init__(self, defaultImage = None):
         Idevice.__init__(self, 
@@ -159,4 +159,10 @@ of the magnifying glass""")
             self.systemResources.remove('magnifier.swf')
         if 'mojomagnify.js' not in self.systemResources:
             self.systemResources.append('mojomagnify.js')
+
+    def upgradeToVersion4(self):
+        """
+        Delete icon from system resources
+        """
+        self._upgradeIdeviceToVersion3()
 # ===========================================================================

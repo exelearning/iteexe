@@ -417,6 +417,7 @@ function fillClozeInputs(e, t) {
         var r = t[n];
         
         var a = getClozeAnswer(r); // Right Answer
+        a = a.trim();
         var isMultiple = false;
         
         // Check if it has more than one right answer: |dog|bird|cat|
@@ -615,6 +616,7 @@ function checkClozeWord(ele) {
 
 // Returns the corrected word or an empty string agains one of the possible answers
 function checkClozeWordAnswer(ele,original_answer) {
+    original_answer = original_answer.trim();
     var guess = ele.value;
     // Extract the idevice id and the input number out of the element's id
     //var original = getClozeAnswer(ele);

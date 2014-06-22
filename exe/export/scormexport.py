@@ -242,12 +242,32 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             for page in self.pages:
                 while depth >= page.depth:
                     self.itemStr += "</item>\n"
+                    if depth > page.depth and self.scormType == "scorm2004":
+                            self.itemStr += '''  <imsss:sequencing>
+    <imsss:controlMode flow="true"/>
+  </imsss:sequencing>'''
                     depth -= 1
+                if page.node.children and self.scormType == "scorm2004":
+                    # Add fake node with original title
+                    itemId   = "ITEM-"+unicode(self.idGenerator.generate())
+                    self.itemStr += '<item identifier="'+itemId+'" '
+                    self.itemStr += 'isvisible="true">\n'
+                    self.itemStr += "    <title>"
+                    self.itemStr += escape(page.node.titleShort)
+                    self.itemStr += "</title>\n"
+                    
+                    # Increase actual depth because fake node added. Next iteration closes the fake node
+                    depth = page.depth + 1
+                else:
+                    depth = page.depth
                 self.genItemResStr(page)
-                depth = page.depth
 
             while depth >= 1:
                 self.itemStr += "</item>\n"
+                if depth > 1 and self.scormType == "scorm2004":
+                    self.itemStr += '''  <imsss:sequencing>
+    <imsss:controlMode flow="true"/>
+  </imsss:sequencing>'''                
                 depth -= 1
 
         xmlStr += self.itemStr   
@@ -307,7 +327,10 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             self.itemStr += 'isvisible="true" '
         self.itemStr += 'identifierref="'+resId+'">\n'
         self.itemStr += "    <title>"
-        self.itemStr += escape(page.node.titleShort)
+        if self.scormType == "scorm2004" and page.node.children:
+            self.itemStr += escape('<-')
+        else:
+            self.itemStr += escape(page.node.titleShort)
         self.itemStr += "</title>\n"
         
         ## RESOURCES
