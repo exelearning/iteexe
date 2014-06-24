@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2013-12-04 18:18+0100\nLast-Translator: Karel Werschkull <k.werschkull@summacollege.nl>\nLanguage-Team: Dutch <exe@exelearning.org>\nLanguage: nl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-24 20:33+0200\nPO-Revision-Date: 2013-12-04 18:18+0100\nLast-Translator: Karel Werschkull <k.werschkull@summacollege.nl>\nLanguage-Team: Dutch <exe@exelearning.org>\nLanguage: nl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Selectielijst activiteit", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Omschrijf het geval. Een goede gevalstudie\nbevat een controverse of beschrijft de situatie en de personen die erbij\nbetrokken zijn. Er moet ook ruimte zijn voor beslissingen of acties die\nwaardoor iemand de situatie kan controleren.", 
  "Xhosa ": "Xhosa", 
@@ -1097,7 +1097,6 @@ translations = {
  "End Time": "Eindtijd", 
  "Sky blue": "Hemelsblauw", 
  "Superscript": "Superscript", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Typ of kopieer de tekst van de invuloefening in het tekstveld.\n Selecteer een woord om te verbergen door erop te dubbelklikken en de knop\n <i>Toon\/verberg woord<\/i> aan te klikken.<\/p>", 
  "Number of Columns": "Aantal kolommen", 
  "Top CSS top property": "Top CSS top kenmerk", 
  "Save package resources report as": "Sla het bronnenreport op als", 

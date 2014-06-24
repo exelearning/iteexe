@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2014-05-04 13:17+0100\nLast-Translator: Jos\u00e9 Miguel Andonegi Mart\u00ednez <jm.andonegi@gmail.com>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nLanguage: eu\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2014-06-24 20:33+0200\nPO-Revision-Date: 2014-05-04 13:17+0100\nLast-Translator: Jos\u00e9 Miguel Andonegi Mart\u00ednez <jm.andonegi@gmail.com>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nLanguage: eu\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Jarduera zabalgarria", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Sortu kasuaren istorioa. Kasuak, ona izateko, \ngatazka bat deskribatu beharko luke, edo pertsonaien bidez egoera azaldu. \nGainera, gatazka konpondu ahal izateko \nhainbat ekintza gauzatzeko aukera eman beharko luke.", 
  "Xhosa ": "Xhosera", 
@@ -1164,7 +1164,6 @@ translations = {
  "Height of Cells (in pixels)": "Gelaxken altuera (pixeletan)", 
  "Superscript": "Goi-indizea", 
  "Game Width": "Jokoaren zabalera", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Sartu eremuan hutsuneak betetzeko testua. Horretarako,\nkopiatu beste iturri batetik edo zuzenean bertan idatzi.<\/p><p>Ezkutatu \nbeharreko hitzak aukeratzeko, klikatu bi aldiz hitzaren gainean\neta klikatu beheko Ezkutatu\/Erakutsi hitza botoia.<\/p>", 
  "Number of Columns": "Zutabe kopurua", 
  "Time Limit (mm:ss)": "Denbora-muga (mm:ss), edo bestela epea", 
  "Top CSS top property": "Goiko CSS top ezaugarria", 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2014-05-01 20:25+0200\nLast-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\nLanguage-Team: TAGEN ATA <localizacion@tagenata.net>\nLanguage: gl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2014-06-24 20:33+0200\nPO-Revision-Date: 2014-05-01 20:25+0200\nLast-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\nLanguage-Team: TAGEN ATA <localizacion@tagenata.net>\nLanguage: gl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Actividade despregable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Crear o caso pr\u00e1ctico. Elabore o a historia do caso. Un bo caso \u00e9 aquel \nque describe unha controversia ou define a escena describindo os personaxes \nque fan parte da situaci\u00f3n. Debe permitir ademais iniciar algunha acci\u00f3n \nno sentido de obter a resoluci\u00f3n da situaci\u00f3n. Debe permitir ademais iniciar algunha acci\u00f3n \nno sentido de obter a resoluci\u00f3n da situaci\u00f3n.", 
  "Xhosa ": "Xhosa ", 
@@ -1139,7 +1139,6 @@ translations = {
  "Height of Cells (in pixels)": "Altura das celas (en p\u00edxeles)", 
  "Superscript": "Super\u00edndice", 
  "Game Width": "Ancho do xogo", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Escriba o texto no campo baleiro para a actividade de espazos baleiros \nben pegando o texto desde outra fonte ou escrib\u00edndoo directamente no \ncampo.<\/p><p> Para seleccionar as palavras que hai que ocultar, prema d\u00faas veces na palabra para seleccionala e \nprema o bot\u00f3n Ocultar\/Mostrar Palabra de abaixo.<\/p>", 
  "Number of Columns": "N\u00famero de columnas", 
  "Time Limit (mm:ss)": "Tempo l\u00edmite (mm:ss)", 
  "Top CSS top property": "CSS Arriba propiedade do punto m\u00e1is alto", 

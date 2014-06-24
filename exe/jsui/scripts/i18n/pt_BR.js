@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2007-12-07 18:03+1300\nLast-Translator: Jim Tittsler <jim@exelearning.org>\nLanguage-Team: eXe Team <exe@exelearning.org>\nLanguage: pt_BR\nPlural-Forms: nplurals=2; plural=(n > 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-24 20:33+0200\nPO-Revision-Date: 2007-12-07 18:03+1300\nLast-Translator: Jim Tittsler <jim@exelearning.org>\nLanguage-Team: eXe Team <exe@exelearning.org>\nLanguage: pt_BR\nPlural-Forms: nplurals=2; plural=(n > 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>Os professores devem lembrar-se do seguinte quando usam iDevice: <\/p><ol><li>Pensar acerca dos diferentes tipos de actividades planeadas para  o seu recurso que v\u00e3o ser visualizadas. Evitar um grande n\u00famero de diferentes actividades que deixem o aluno confundido. Normalmente tr\u00eas ou quatro tipos de actividades s\u00e3o mais do que adquadas para um recurso de ensino.<\/li><li> Do ponto de vista visual evitar ter dois iDevices seguidos um do outro sem ter texto entre eles. Para isto \u00e9 necess\u00e1rio unir duas quest\u00f5es ou eventos num iDevice. <\/li><li> Pense em actividades em que o benef\u00edcio de realizar a actividade vence o tempo e o esfor\u00e7o do aluno em realizar a actividade. <\/li><\/ol>", 
  "Title": "T\u00edtulo", 
  "Text Line": "Linha de texto", 
@@ -66,7 +66,7 @@ translations = {
  "Provide instruction on how the cloze activity should be \ncompleted. Default text will be entered if there are no changes to this field.\n": "Fornecer as instru\u00e7\u00f5es de como a actividade cloze deve ser \ncompletada. O texto por defeito entrar\u00e1 se n\u00e3o efectuar altera\u00e7\u00f5es neste campo. \n", 
  ". Please use ASCII names.": ". Por favor use nomes ASCII.", 
  "Please upload a .ggb file.": "Por favor upload o ficheiro .ggb", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Digitar o texto no campo para a actividade cloze, \ncolar o texto de outra fonte ou digitar directamente no \ncampo.<\/p><p> Para seleccionar as palavras para esconder fazer um duplo clique na palavra escolhida e \nclicar em Esconder\/Mostrar no bot\u00e3o por baixo.<\/p>", 
+ "Allow auto completion when user filling the gaps.": "Permitir o inser\u00e7\u00e3o autom\u00e1tica no prenchimento de espa\u00e7os ", 
  "Restart": "Reiniciar", 
  "Add Image": "Adicionar imagem", 
  "Reflection": "Reflex\u00e3o", 
@@ -438,7 +438,6 @@ translations = {
  "Left": "Esquerda", 
  "Load": "Carregar", 
  "Enter a title for the gallery": "Digitar um t\u00edtulo para a galeria", 
- "Allow auto completion when user filling the gaps.": "Permitir o inser\u00e7\u00e3o autom\u00e1tica no prenchimento de espa\u00e7os ", 
  "Image Gallery": "Galeria de Imagens", 
  "Close": "Fechar", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Introduzir um palpite aqui. Se n\u00e3o \nquer adicionar um palpite, deixe em branco.", 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: tr\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-24 20:33+0200\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: tr\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Title": "Ba\u015fl\u0131k", 
  "Text Line": "Yaz\u0131 Sat\u0131r\u0131", 
  "Quit": "\u00c7\u0131k", 
@@ -52,7 +52,6 @@ translations = {
  "Provide instruction on how the cloze activity should be \ncompleted. Default text will be entered if there are no changes to this field.\n": "Bu alanda Cloze al\u0131\u015ft\u0131rmas\u0131n\u0131n nas\u0131l tamamlanmas\u0131 gerekti\u011fi hakk\u0131nda \nbilgi verin. E\u011fer de\u011fi\u015fiklik yap\u0131lmazsa \u00f6ntan\u0131ml\u0131 yaz\u0131 sunulacakt\u0131r.\n", 
  ". Please use ASCII names.": "L\u00fctfen ASCII karakterleri kullan\u0131n\u0131z", 
  "Please upload a .ggb file.": "L\u00fctfen bir .ggb dosyas\u0131 y\u00fckleyin.", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Cloze al\u0131\u015ft\u0131rmas\u0131 i\u00e7in doldurulacak metni yaz\u0131n veya yap\u0131\u015ft\u0131r\u0131n. \n<\/p><p> Gizlenecek kelimeler i\u00e7in, kelimeyi \u00e7ift t\u0131klayarak se\u00e7in ve a\u015fa\u011f\u0131daki\nKelimeyi Gizle\/G\u00f6ster tu\u015funu t\u0131klay\u0131n.<\/p>", 
  "Restart": "Yeniden ba\u015flat", 
  "Add Image": "Resim Ekle", 
  "Reflection": "Yans\u0131ma", 
