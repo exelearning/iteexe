@@ -1,3 +1,10 @@
+python-intef-exe (2:2.0rc1) lucid; urgency=low
+
+  [Pedro Peña]
+  * Build rc1 release
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Tue, 24 Jun 2014 17:49:58 +0200
+
 python-intef-exe (2:2.0beta2) lucid; urgency=low
 
   [Pedro Peña]
