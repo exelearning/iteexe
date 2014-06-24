@@ -292,18 +292,15 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
                 xmlStr += """  <resource identifier="COMMON_FILES" type="webcontent" adlcp:scormtype="asset">\n"""
             else:
                 xmlStr += """  <resource identifier="COMMON_FILES" type="webcontent" adlcp:scormType="asset">\n"""
-            directory = Path(self.config.webDir).joinpath('style', self.package.style.encode('utf-8'))
-            liststylesfiles = os.listdir(directory)
-            for x in liststylesfiles:
-                if os.path.isfile(directory + '/' + x):
-                    xmlStr += """    <file href="%s"/>\n""" % x 
+            my_style = G.application.config.styleStore.getStyle(page.node.package.style)
+            for x in my_style.get_style_dir().files('*.*'):
+                xmlStr += """    <file href="%s"/>\n""" % x.basename()
             # we do want base.css and (for short time), popup_bg.gif, also:    
             xmlStr += """    <file href="base.css"/>\n"""
             xmlStr += """    <file href="popup_bg.gif"/>\n"""
             # now the javascript files:
             xmlStr += """    <file href="SCORM_API_wrapper.js"/>\n"""
             xmlStr += """    <file href="SCOFunctions.js"/>\n"""
-            my_style = G.application.config.styleStore.getStyle(page.node.package.style)
             if my_style.hasValidConfig:
                 if my_style.get_jquery() == True:
                     xmlStr += """    <file href="exe_jquery.js"/>\n"""
