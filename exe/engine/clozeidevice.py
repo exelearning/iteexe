@@ -312,12 +312,10 @@ click on the Hide/Show Word button below.</p><p>More than one possible answer ca
         pass
 
     def upgradeToVersion6(self):
-        self._content = ClozeField(x_(u'Cloze'), 
-            x_(u"""<p>Enter the text for the cloze activity in to the cloze field 
+        self._content._instruc = x_(u"""<p>Enter the text for the cloze activity in to the cloze field 
 by either pasting text from another source or by typing text directly into the 
 field.</p><p> To select words to hide, double click on the word to select it and 
-click on the Hide/Show Word button below.</p><p>More than one possible answer can be defined enclosing them with pipes (|). I.e.: |dog|cat|bird|</p>"""))
-        self._content.idevice = self
+click on the Hide/Show Word button below.</p><p>More than one possible answer can be defined enclosing them with pipes (|). I.e.: |dog|cat|bird|</p>""")
         
     def upgradeToVersion7(self):
         """
