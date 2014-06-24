@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-24 20:33+0200\n"
+"POT-Creation-Date: 2014-06-24 23:23+0200\n"
 "PO-Revision-Date: 2014-01-26 11:58+0100\n"
 "Last-Translator: Carlos Würschmidt <wuerschmidt4@yahoo.de>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft; Uwe "
@@ -5058,6 +5058,11 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:182
 msgid "Editor mode"
 msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:184
+#, fuzzy
+msgid "Permissive"
+msgstr "Voraussetzungen"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
 #, fuzzy

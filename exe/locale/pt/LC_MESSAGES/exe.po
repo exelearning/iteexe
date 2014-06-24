@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2014-06-24 20:33+0200\n"
+"POT-Creation-Date: 2014-06-24 23:23+0200\n"
 "PO-Revision-Date: 2013-12-02 16:48+0100\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
 "Language-Team: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
@@ -5203,6 +5203,11 @@ msgstr ""
 #, fuzzy
 msgid "Editor mode"
 msgstr "editor"
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:184
+#, fuzzy
+msgid "Permissive"
+msgstr "pré-requisito"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
 #, fuzzy

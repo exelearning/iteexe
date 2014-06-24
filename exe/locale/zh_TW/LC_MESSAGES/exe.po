@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2014-06-24 20:33+0200\n"
+"POT-Creation-Date: 2014-06-24 23:23+0200\n"
 "PO-Revision-Date: 2014-05-15 18:08+0200\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language-Team: Chinese Traditional <zh-l10n@linux.org.tw>\n"
@@ -4656,6 +4656,11 @@ msgstr ""
 #, fuzzy
 msgid "Editor mode"
 msgstr "編輯者"
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:184
+#, fuzzy
+msgid "Permissive"
+msgstr "先修"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
 #, fuzzy

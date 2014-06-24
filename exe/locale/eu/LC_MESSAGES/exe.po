@@ -5,6 +5,7 @@
 # eXe Project <exe@exelearning.org>
 # Asmoz fundazioa, 2009
 #
+#
 # http://www.asmoz.org/index.php?option=com_content&view=article&id=131&Itemid=101&lang=es
 # Malen <mjareno@asmoz.org>
 # ULHI, 2012-2014 Joxemi Andonegi <jmandonegi@ulhi.net>
@@ -13,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2014-06-24 20:33+0200\n"
+"POT-Creation-Date: 2014-06-24 23:23+0200\n"
 "PO-Revision-Date: 2014-05-04 13:17+0100\n"
 "Last-Translator: José Miguel Andonegi Martínez <jm.andonegi@gmail.com>\n"
 "Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
@@ -5108,6 +5109,11 @@ msgstr ""
 #, fuzzy
 msgid "Editor mode"
 msgstr "edukiaren editorea"
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:184
+#, fuzzy
+msgid "Permissive"
+msgstr "aurrebaldintza"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
 #, fuzzy
