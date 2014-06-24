@@ -244,7 +244,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
                     self.itemStr += "</item>\n"
                     if depth > page.depth and self.scormType == "scorm2004":
                             self.itemStr += '''  <imsss:sequencing>
-    <imsss:controlMode flow="true"/>
+    <imsss:controlMode choice="true" choiceExit="true" flow="true" forwardOnly="false"/>
   </imsss:sequencing>'''
                     depth -= 1
                 if page.node.children and self.scormType == "scorm2004":
@@ -266,12 +266,16 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
                 self.itemStr += "</item>\n"
                 if depth > 1 and self.scormType == "scorm2004":
                     self.itemStr += '''  <imsss:sequencing>
-    <imsss:controlMode flow="true"/>
-  </imsss:sequencing>'''                
+    <imsss:controlMode choice="true" choiceExit="true" flow="true" forwardOnly="false"/>
+  </imsss:sequencing>'''
                 depth -= 1
 
         xmlStr += self.itemStr   
         
+        if self.scormType == "scorm2004":
+            xmlStr += '''  <imsss:sequencing>
+    <imsss:controlMode choice="true" choiceExit="true" flow="true" forwardOnly="false"/>
+  </imsss:sequencing>'''
         xmlStr += "  </organization>\n"
         xmlStr += "</organizations>\n"
  
