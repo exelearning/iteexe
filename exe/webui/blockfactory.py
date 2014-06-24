@@ -52,7 +52,7 @@ class BlockFactory(object):
         """
         for blockType, ideviceType in self.blockTypes:
             if isinstance(idevice, ideviceType):
-                log.info(u"createBlock "+blockType.__name__+u" for "+
+                log.debug(u"createBlock "+blockType.__name__+u" for "+
                           idevice.__class__.__name__)
                 return blockType(parent, idevice)
         
