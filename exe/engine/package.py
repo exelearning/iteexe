@@ -1150,6 +1150,7 @@ class Package(Persistable):
             if not validxml:
                 toDecode   = zippedFile.read(u"content.data")
                 newPackage = decodeObjectRaw(toDecode)
+            newPackage.lang = newPackage._lang
             try:
                 lomdata = zippedFile.read(u'imslrm.xml')
                 if 'LOM-ES' in lomdata:
