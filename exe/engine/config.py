@@ -542,7 +542,7 @@ class Config(object):
                     locale = subDir.basename()
                     log.debug(" loading locale %s" % locale)
                     self.locales[locale].install(unicode=True)
-                    __builtins__['c_'] = self.locales[locale].ugettext
+                    __builtins__['c_'] = lambda s: self.locales[locale].ugettext(s) if s else s
 
 
 
