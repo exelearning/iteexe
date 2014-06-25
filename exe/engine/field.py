@@ -3022,7 +3022,7 @@ class ClozeField(FieldWithResources):
                 "<code>Elephant</code> then both <code>elephant</code> and "
                 "<code>Eliphant</code> will be judged "
                 "<em>\"close enough\"</em> by the algorithm as it only has "
-                "one letter wrong, even if \"Check Capitilization\" is on."
+                "one letter wrong, even if \"Check Capitalization\" is on."
                 "</p>"
                 "<p>If capitalization checking is off in the above example, "
                 "the lowercase <code>e</code> will not be considered a "
