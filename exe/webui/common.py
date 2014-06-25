@@ -282,7 +282,7 @@ def textArea(name, value="", disabled="", cols="80", rows="8"):
     return html
 
 
-def richTextArea(name, value="", width="100%", height=100, package=None, type="full"):
+def richTextArea(name, value="", width="100%", height=100, package=None):
     """Adds a editor to a form"""
     log.debug(u"richTextArea %s, height=%s" % (value, height))
     # to counter TinyMCE's ampersand-processing:
@@ -293,10 +293,7 @@ def richTextArea(name, value="", width="100%", height=100, package=None, type="f
     html  = u'<textarea name="%s" ' % name
     html_js  = '<script type="text/javascript">if (typeof(tinymce_anchors)=="undefined") var tinymce_anchors = [];'
     html += u'style=\"width:' + width + '; height:' + str(height) + 'px;" '
-    if type=="simple":
-        html += u'class="mceSimpleEditor" '
-    else:
-        html += u'class="mceEditor" '
+    html += u'class="mceEditor" '
     html += u'cols="52" rows="8">'
     ########
     # add exe_tmp_anchor tags 
