@@ -1150,7 +1150,6 @@ class Package(Persistable):
             if not validxml:
                 toDecode   = zippedFile.read(u"content.data")
                 newPackage = decodeObjectRaw(toDecode)
-            newPackage.lang = newPackage._lang
             try:
                 lomdata = zippedFile.read(u'imslrm.xml')
                 if 'LOM-ES' in lomdata:
@@ -1318,6 +1317,7 @@ class Package(Persistable):
         nstyle=Path(G.application.config.stylesDir/newPackage.style)
         if not nstyle.isdir():
             newPackage.style=G.application.config.defaultStyle       
+        newPackage.lang = newPackage._lang
         return newPackage
 
     def getUserResourcesFiles(self, node):
