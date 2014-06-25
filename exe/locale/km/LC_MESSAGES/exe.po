@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-24 23:23+0200\n"
+"POT-Creation-Date: 2014-06-25 20:38+0200\n"
 "PO-Revision-Date: 2008-12-23 13:59+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -687,7 +687,7 @@ msgstr ""
 #: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
 #: exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:534
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:531
 msgid "Instructions"
 msgstr "សេចក្ដី​ណែនាំ"
 
@@ -738,10 +738,10 @@ msgstr ""
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:182
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
-#: exe/webui/common.py:441 exe/webui/common.py:451
+#: exe/webui/common.py:438 exe/webui/common.py:448
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
-#: exe/webui/element.py:2371 exe/webui/element.py:2506
-#: exe/webui/element.py:2621 exe/webui/element.py:2822
+#: exe/webui/element.py:2373 exe/webui/element.py:2508
+#: exe/webui/element.py:2623 exe/webui/element.py:2824
 #: exe/webui/listablock.py:461 exe/webui/questionelement.py:113
 msgid "Feedback"
 msgstr "មតិ​អ្នកប្រើ"
@@ -1001,9 +1001,9 @@ msgstr ""
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3681
 #: exe/engine/field.py:3746 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:82
-#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2346
-#: exe/webui/element.py:2350 exe/webui/element.py:2799
-#: exe/webui/element.py:2803 exe/webui/testquestionelement.py:151
+#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2348
+#: exe/webui/element.py:2352 exe/webui/element.py:2801
+#: exe/webui/element.py:2805 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
 msgstr "សំណួរ"
@@ -1159,7 +1159,8 @@ msgstr ""
 "ផ្ដល់​ចំណងជើង​ឲ្យ​ឯកសារ \n"
 "MP3 ។ វា​នឹង​បង្ហាញ​នៅ​ក្នុង​របារ​ចំណងជើង​របស់​កម្មវិធី​ចាក់ ។"
 
-#: exe/engine/field.py:3017 exe/engine/field.py:3251
+#: exe/engine/field.py:3017
+#, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1167,7 +1168,7 @@ msgid ""
 "the correct answer is <code>Elephant</code> then both "
 "<code>elephant</code> and <code>Eliphant</code> will be judged "
 "<em>\"close enough\"</em> by the algorithm as it only has one letter "
-"wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization "
+"wrong, even if \"Check Capitalization\" is on.</p><p>If capitalization "
 "checking is off in the above example, the lowercase <code>e</code> will "
 "not be considered a mistake and <code>eliphant</code> will also be "
 "accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" "
@@ -1221,6 +1222,39 @@ msgstr ""
 "អនុញ្ញាត​ការ​បំពេញ​ស្វ័យប្រវត្តិ នៅពេល \n"
 "                                       អ្នកប្រើ​បំពេញ​ចន្លោះ ។"
 
+#: exe/engine/field.py:3251
+msgid ""
+"<p>If left unchecked a small number of spelling and capitalization errors"
+" will be accepted. If checked only an exact match in spelling and "
+"capitalization will be accepted.</p><p><strong>For example:</strong> If "
+"the correct answer is <code>Elephant</code> then both "
+"<code>elephant</code> and <code>Eliphant</code> will be judged "
+"<em>\"close enough\"</em> by the algorithm as it only has one letter "
+"wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization "
+"checking is off in the above example, the lowercase <code>e</code> will "
+"not be considered a mistake and <code>eliphant</code> will also be "
+"accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" "
+"are set, the only correct answer is \"Elephant\". If only \"Strict "
+"Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
+"will also be accepted.</p>"
+msgstr ""
+"<p>ប្រសិន​បើ​មិន​ធីក នោះ​កំហុស​អក្ខរាវិរុទ្ធ "
+"និង​ការ​សរសេរ​អក្សរ​ធំ​មួយ​ចំនួន​តូច គឺ​នឹង​ទទួល​យក ។ ប្រសិន​បើ​បាន​ធីក "
+"នោះ​គឺ​នឹង​ទទួល​យក​តែ​អក្ខរាវិរុទ្ធ "
+"និង​ការ​សរសេរ​អក្សរ​ធំ​ដែលត្រឹមត្រូវ​តែ​ប៉ុណ្ណោះ ។</p><p><strong>ឧទាហរណ៍ ៖</strong>"
+" ប្រសិន​បើ​ចម្លើយ​ដែលត្រឹមត្រូវ​គឺ <code>Elephant</code> នោះ​ពាក្យ "
+"<code>elephant</code> និង <code>Eliphant</code> "
+"នឹង​ត្រូវកំណត់ថា<em>\"ជិត​ត្រូវ\"</em> ដោយ​ក្បួនដោះស្រាយ "
+"ព្រោះ​វា​មាន​តួអក្សរ​ដែល​ខុស​តែមួយ​ គឺ​ប្រសិន​បើ​ធីក "
+"\"ពិនិត្យ​ការ​សរសេរ​អក្សរ​ធំ\" ។</p><p>ប្រសិន​បើ​បិទ​ការ​ពិនិត្យ​ការសរសេរ​អក្សរំ"
+" នោះ​ការ​សរសេរ​អក្សរតូច <code>e</code> គឺ​មិនគិត​ថាជា​កំហុស​ទេ ហើយ "
+"<code>eliphant</code> "
+"ក៏​នឹង​ត្រូវ​ទទួល​យកដែរ ។</p><p>ប្រសិន​បើបាន​កំណត់​ទាំង "
+"\"សម្គាល់​យ៉ាង​តឹងរឹង\" ទាំង \"ពិនិត្យ​ការ​សរសេរ​អក្សរ​ធំ\" "
+"នោះ​គឺ​ទទួល​យក​តែ​ចម្លើយ​ដែលត្រឹមត្រូវ​ទេ​គឺ \"Elephant\" ។ ប្រសិន​ធីកតែ "
+"\"សម្គាល់យ៉ាងតឹងរឹង\" ហើយ​មិនបាន​ធីក \"ពិនិត្យ​ការ​សរសេរ​អក្សរធំ\" នោះ "
+"\"elephant\" ក៏​នឹងត្រូវបាន​ទទួល​យកដែរ ។</p>"
+
 #: exe/engine/field.py:3282
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr ""
@@ -1267,7 +1301,7 @@ msgstr ""
 #: exe/engine/field.py:3606 exe/engine/field.py:3655
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/webui/element.py:2085 exe/webui/element.py:2140
-#: exe/webui/element.py:2470 exe/webui/element.py:2562
+#: exe/webui/element.py:2472 exe/webui/element.py:2564
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
 msgstr "ជម្រើស"
@@ -1279,7 +1313,7 @@ msgstr "ជម្រើស"
 msgid "Hint"
 msgstr "ព័ត៌មាន​ជំនួយ"
 
-#: exe/engine/field.py:3772 exe/engine/field.py:3809 exe/webui/element.py:2275
+#: exe/engine/field.py:3772 exe/engine/field.py:3809 exe/webui/element.py:2277
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
@@ -2552,16 +2586,16 @@ msgstr ""
 "ការ​រក្សាទុក​បាន​បរាជ័យ !\n"
 "ការ​រក្សាទុក​បាន​ជោគជ័យ​ចុងក្រោយ​គឺ %s ។"
 
-#: exe/engine/package.py:1392 exe/jsui/scripts/app/controller/Toolbar.js:371
+#: exe/engine/package.py:1393 exe/jsui/scripts/app/controller/Toolbar.js:371
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "កម្មវិធី​និពន្ធ iDevice"
 
-#: exe/engine/package.py:1513
+#: exe/engine/package.py:1514
 msgid "My Catalog"
 msgstr ""
 
-#: exe/engine/package.py:1520
+#: exe/engine/package.py:1521
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Default"
@@ -7097,8 +7131,8 @@ msgstr "ជំនួយ​ខាង​ផ្នែក​​គរុកោសល
 msgid "Information"
 msgstr "ព័ត៌មាន"
 
-#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:549
-#: exe/webui/common.py:550 exe/webui/editorpane.py:364
+#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:546
+#: exe/webui/common.py:547 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -7187,8 +7221,8 @@ msgstr ""
 msgid "Hide"
 msgstr "លាក់"
 
-#: exe/webui/common.py:216 exe/webui/common.py:437 exe/webui/element.py:1434
-#: exe/webui/element.py:2363 exe/webui/listablock.py:274
+#: exe/webui/common.py:216 exe/webui/common.py:434 exe/webui/element.py:1434
+#: exe/webui/element.py:2365 exe/webui/listablock.py:274
 msgid "Show Feedback"
 msgstr "បង្ហាញ​មតិអ្នកប្រើ"
 
@@ -7215,7 +7249,7 @@ msgstr ""
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe ៖ កម្មវិធី​និពន្ធ XHTML ការ​សិក្សា​អេឡិចត្រូនិក"
 
-#: exe/webui/common.py:540 exe/webui/common.py:544
+#: exe/webui/common.py:537 exe/webui/common.py:541
 msgid "Click for completion instructions"
 msgstr "ចុច ដើម្បី​មើល​សេចក្ដី​ណែនាំ​អំពី​ការ​បំពេញ"
 
@@ -7504,9 +7538,9 @@ msgstr "លាក់​/​បង្ហាញ​ពាក្យ"
 msgid "Strict Marking?"
 msgstr "សម្គាល់​យ៉ាង​តឹងរឹង​ឬ ?"
 
-#: exe/webui/element.py:1265 exe/webui/element.py:1598
-msgid "Check Caps?"
-msgstr "ពនិត្យ​ការ​សរសេរ​អក្សរធំ​ឬ ?"
+#: exe/webui/element.py:1265
+msgid "Check Capitalization?"
+msgstr ""
 
 #: exe/webui/element.py:1270 exe/webui/element.py:1603
 msgid "Instant Marking?"
@@ -7531,10 +7565,14 @@ msgid "Show Answers"
 msgstr "បង្ហាញ​ចម្លើយ"
 
 #: exe/webui/element.py:1483 exe/webui/element.py:1735
-#: exe/webui/element.py:2355 exe/webui/element.py:2815
+#: exe/webui/element.py:2357 exe/webui/element.py:2817
 #: exe/webui/listablock.py:312 exe/webui/testquestionelement.py:158
 msgid "Answers"
 msgstr ""
+
+#: exe/webui/element.py:1598
+msgid "Check Caps?"
+msgstr "ពនិត្យ​ការ​សរសេរ​អក្សរធំ​ឬ ?"
 
 #: exe/webui/element.py:1608
 msgid "Show Score?"
@@ -7564,36 +7602,36 @@ msgstr "បន្ទាត់​ថ្មី"
 msgid "Select a font size: "
 msgstr "ជ្រើស​ទំហំ​ពុម្ពអក្សរ ៖ "
 
-#: exe/webui/element.py:2090 exe/webui/element.py:2475
-#: exe/webui/element.py:2600 exe/webui/element.py:2618
+#: exe/webui/element.py:2090 exe/webui/element.py:2477
+#: exe/webui/element.py:2602 exe/webui/element.py:2620
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "ជម្រើស​ត្រឹមត្រូវ"
 
-#: exe/webui/element.py:2118 exe/webui/element.py:2503
+#: exe/webui/element.py:2118 exe/webui/element.py:2505
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "លុប​ជម្រើស"
 
-#: exe/webui/element.py:2257 exe/webui/element.py:2710
+#: exe/webui/element.py:2257 exe/webui/element.py:2712
 #: exe/webui/questionelement.py:120 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "លុប​សំណួរ"
 
-#: exe/webui/element.py:2290 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2292 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "បន្ថែម​ជម្រើស​ផ្សេងៗ"
 
-#: exe/webui/element.py:2391 exe/webui/element.py:2834
+#: exe/webui/element.py:2393 exe/webui/element.py:2836
 msgid "Solution"
 msgstr ""
 
-#: exe/webui/element.py:2602 exe/webui/element.py:2620
+#: exe/webui/element.py:2604 exe/webui/element.py:2622
 msgid "Wrong"
 msgstr "ខុស"
 
-#: exe/webui/element.py:2725
+#: exe/webui/element.py:2727
 msgid "Add another option"
 msgstr "បន្ថែម​ជម្រើស​ផ្សេងៗ"
 
