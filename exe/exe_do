@@ -22,6 +22,7 @@
 import os
 import sys
 import optparse
+import json
 
 # Make it so we can import our own nevow and twisted etc.
 if os.name == 'posix':
@@ -89,7 +90,7 @@ from <input_file> elp package").encode(sys.stdout.encoding))
 
     parser.add_option("-x", "--export",
                   action="store", dest="x", metavar="format",
-                  choices=['xml', 'scorm12', 'scorm2004', 'agrega',
+                  choices=['xml', 'scorm12', 'scorm2004',
                            'ims', 'website', 'webzip', 'singlepage',
                            'xliff', 'epub3'],
                   help=_(u"Export <input_file> elp package to optional \
@@ -198,6 +199,10 @@ exclusive.').encode(sys.stdout.encoding))
                 name, value = set_option.split('=')
                 names = name.split('.')
                 obj = pkg
+                try:
+                    value = json.loads(value)
+                except:
+                    pass
                 for name in names[:-1]:
                     obj = getattr(obj, name)
                 name = names[-1]
@@ -205,6 +210,7 @@ exclusive.').encode(sys.stdout.encoding))
             pkg.save()
             if options.set_options_write:
                 inputf.move(path)
+                inputf = path
         except:
             print _(u"exe_do: error: Unable to set values from '%s'.\nThe \
 error was:") % (path)
