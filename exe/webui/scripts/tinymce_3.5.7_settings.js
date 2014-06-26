@@ -143,7 +143,7 @@ var $exeTinyMCEToggler = {
 		var n = e.attr("name");
 		var c = e.val();
 		$exeTinyMCEToggler.createEditorLink(e,n);
-		var v = $('<div id="'+id+'-viewer" style="height:50px;padding:2px 15px;border:1px solid #ccc;overflow:auto" onclick="$exeTinyMCEToggler.removeViewer(\''+id+'\')">'+c+'</div>');
+		var v = $('<div id="'+id+'-viewer" style="height:96px;padding:2px 15px;border:1px solid #ccc;overflow:auto" onclick="$exeTinyMCEToggler.removeViewer(\''+id+'\')">'+c+'</div>');
 		e.hide().before(v);
 	},
 	
