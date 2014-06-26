@@ -145,9 +145,10 @@ class CasopracticofpdIdevice(Idevice):
 
     def upgradeToVersion9(self):
 
-
         if self._title == u"FPD - Caso Practico":
             self._title = u"FPD - Situation"
+        if self._title == u"Caso Practico":
+            self._title = u"Situation"
         if self._purpose == u"""Caso pr&aacute;ctico es un iDevice que permite al alumnado introducirse en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje.""":
             self._purpose = u"""Situation is an iDevice that provides the student with a story that will guide her along the learning process."""
         if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":

@@ -51,7 +51,7 @@ class EleccionmultiplefpdIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 9
+    persistenceVersion = 10
 
     def __init__(self, question=""):
         """
@@ -369,6 +369,10 @@ for the other options.""")
         Delete icon from system resources
         """
         self._upgradeIdeviceToVersion3()
+
+    def upgradeToVersion10(self):
+        if self._title == u"FPD - Actividad de Eleccion Multiple":
+            self._title = u"FPD - Multi Choice Activity"
 
     def upgradeTo8SafetyCheck(self):
         """

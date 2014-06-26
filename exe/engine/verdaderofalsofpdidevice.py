@@ -135,7 +135,7 @@ class VerdaderofalsofpdIdevice(Idevice):
     """
     A TrueFalse Idevice is one built up from question and options
     """
-    persistenceVersion = 11
+    persistenceVersion = 12
 
     def __init__(self):
         """
@@ -417,4 +417,8 @@ completed."""),
         Delete icon from system resources
         """
         self._upgradeIdeviceToVersion3()
+
+    def upgradeToVersion12(self):
+        if self._title == u"FPD - Actividad de Verdadero/Falso":
+            self._title = u"FPD - True/False Activity"
 # ===========================================================================

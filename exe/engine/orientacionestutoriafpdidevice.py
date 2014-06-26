@@ -20,7 +20,7 @@ class OrientacionestutoriafpdIdevice(Idevice):
     """
     El iDevice Orientaciones tutoria permite al profesorado conocer los objetivos del aprendizje del alumnado
     """
-    persistenceVersion = 8
+    persistenceVersion = 9
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -143,4 +143,16 @@ class OrientacionestutoriafpdIdevice(Idevice):
         Delete icon from system resources
         """
         self._upgradeIdeviceToVersion3()
+
+    def upgradeToVersion9(self):
+        if self._title == u"FPD - Orientaciones Tutoria":
+            self._title = u"FPD - Guidelines Teacher"
+        if self._purpose == u"""Orientaciones alumnado es un iDevice que permite al profesorado conocer los objetivos del aprendizje del alumnado.""":
+            self._purpose = u"""Guidelines Teacher is an iDevice that lets the teacher know the learning objectives of the students."""
+        if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._activityInstruc = u"""Enter the text that will appear on this iDevice"""
+        if self.activityTextArea._name == u'Texto Orientaciones tutor&iacute;a':
+            self.activityTextArea._name = u'Guidelines Teacher Text'
+        if self.activityTextArea._name == u'Texto Orientaciones tutor&iacute;a:':
+            self.activityTextArea._name = u'Guidelines Teacher Text:'
 # ===========================================================================

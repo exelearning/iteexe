@@ -36,7 +36,7 @@ class SeleccionmultiplefpdIdevice(Idevice):
     A MultiSelect Idevice is one built up from question and options
     """
     
-    persistenceVersion = 1
+    persistenceVersion = 2
 
     def __init__(self):
         """
@@ -202,4 +202,7 @@ distractors </li>
         """
         self._upgradeIdeviceToVersion3()
 
+    def upgradeToVersion2(self):
+        if self._title == u"FPD - Actividad de Seleccion Multiple":
+            self._title = u"FPD - Multi Select Activity"
 # ===========================================================================
