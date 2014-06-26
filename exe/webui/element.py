@@ -1262,7 +1262,7 @@ class ClozeElement(ElementWithResources):
             u'</td><td>',
             common.checkbox('checkCaps%s' % self.id,
                             self.field.checkCaps,
-                            title=_(u'Check Caps?'),
+                            title=_(u'Check Capitalization?'),
                             instruction=self.field.checkCapsInstruc),
             u'</td><td>',
             common.checkbox('instantMarking%s' % self.id,

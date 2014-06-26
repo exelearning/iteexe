@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-24 23:23+0200\n"
+"POT-Creation-Date: 2014-06-25 20:38+0200\n"
 "PO-Revision-Date: 2013-12-04 18:18+0100\n"
 "Last-Translator: Karel Werschkull <k.werschkull@summacollege.nl>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
@@ -735,7 +735,7 @@ msgstr ""
 #: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
 #: exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:534
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:531
 msgid "Instructions"
 msgstr "Aanwijzingen"
 
@@ -783,10 +783,10 @@ msgstr ""
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:182
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
-#: exe/webui/common.py:441 exe/webui/common.py:451
+#: exe/webui/common.py:438 exe/webui/common.py:448
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
-#: exe/webui/element.py:2371 exe/webui/element.py:2506
-#: exe/webui/element.py:2621 exe/webui/element.py:2822
+#: exe/webui/element.py:2373 exe/webui/element.py:2508
+#: exe/webui/element.py:2623 exe/webui/element.py:2824
 #: exe/webui/listablock.py:461 exe/webui/questionelement.py:113
 msgid "Feedback"
 msgstr "Feedback"
@@ -1044,9 +1044,9 @@ msgstr ""
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3681
 #: exe/engine/field.py:3746 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:82
-#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2346
-#: exe/webui/element.py:2350 exe/webui/element.py:2799
-#: exe/webui/element.py:2803 exe/webui/testquestionelement.py:151
+#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2348
+#: exe/webui/element.py:2352 exe/webui/element.py:2801
+#: exe/webui/element.py:2805 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
 msgstr "Vraag:"
@@ -1199,7 +1199,8 @@ msgstr ""
 "Geef een titel aan het\n"
 "MP3-bestand. Deze zal in de titelbalk van de speler verschijnen."
 
-#: exe/engine/field.py:3017 exe/engine/field.py:3251
+#: exe/engine/field.py:3017
+#, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1207,7 +1208,7 @@ msgid ""
 "the correct answer is <code>Elephant</code> then both "
 "<code>elephant</code> and <code>Eliphant</code> will be judged "
 "<em>\"close enough\"</em> by the algorithm as it only has one letter "
-"wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization "
+"wrong, even if \"Check Capitalization\" is on.</p><p>If capitalization "
 "checking is off in the above example, the lowercase <code>e</code> will "
 "not be considered a mistake and <code>eliphant</code> will also be "
 "accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" "
@@ -1257,6 +1258,36 @@ msgstr ""
 "Zet automatisch aanvullen aan \n"
 "bij invullen van de invulwoorden."
 
+#: exe/engine/field.py:3251
+msgid ""
+"<p>If left unchecked a small number of spelling and capitalization errors"
+" will be accepted. If checked only an exact match in spelling and "
+"capitalization will be accepted.</p><p><strong>For example:</strong> If "
+"the correct answer is <code>Elephant</code> then both "
+"<code>elephant</code> and <code>Eliphant</code> will be judged "
+"<em>\"close enough\"</em> by the algorithm as it only has one letter "
+"wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization "
+"checking is off in the above example, the lowercase <code>e</code> will "
+"not be considered a mistake and <code>eliphant</code> will also be "
+"accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" "
+"are set, the only correct answer is \"Elephant\". If only \"Strict "
+"Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
+"will also be accepted.</p>"
+msgstr ""
+"<p>Als deze optie uitstaat, zijn een klein aantal spelfouten toegestaan. "
+"Als ze aanstaat, moet het antwoord qua spelling en hoofdlettergebruik "
+"volledig correct zijn.</p><p><strong>Voorbeeld:</strong> Als het juiste "
+"antwoord <code>Olifant</code> is, worden zowel <code>olifant</code> als "
+"<code>Olipant</code> aanvaard als <em>\"voldoende juist\"</em> omdat er "
+"maar één letter fout is, zelfs als \"Hoofdlettergevoelig\" geactiveerd "
+"is.</p><p>Als \"Hoofdlettergevoelig\" uitstaat, wordt de kleine "
+"<code>e</code> natuurlijk ook genegeerd als fout. Bovendien wordt "
+"<code>Olipant</code> aanvaard, omdat het maar één spelfout "
+"bevat.</p><p>Maar met zowel \"Streng verbeteren\" en "
+"\"Hoofdlettergevoelig\" ingeschakeld, is het enige juiste antwoord "
+"\"Olifant\". Zet u nu \"Hoofdlettergevoelig\" uit, dan wordt ook "
+"\"olifant\" aanvaard.</p>"
+
 #: exe/engine/field.py:3282
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr "<p>Als deze optie is geselecteerd zal de score worden getoond.</p> "
@@ -1302,7 +1333,7 @@ msgstr ""
 #: exe/engine/field.py:3606 exe/engine/field.py:3655
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/webui/element.py:2085 exe/webui/element.py:2140
-#: exe/webui/element.py:2470 exe/webui/element.py:2562
+#: exe/webui/element.py:2472 exe/webui/element.py:2564
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
 msgstr "Alternatief"
@@ -1314,7 +1345,7 @@ msgstr "Alternatief"
 msgid "Hint"
 msgstr "Hint"
 
-#: exe/engine/field.py:3772 exe/engine/field.py:3809 exe/webui/element.py:2275
+#: exe/engine/field.py:3772 exe/engine/field.py:3809 exe/webui/element.py:2277
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
@@ -2646,16 +2677,16 @@ msgstr ""
 "OPSLAAN MISLUKT!\n"
 "Laatst succesvol opgeslagen is %s."
 
-#: exe/engine/package.py:1392 exe/jsui/scripts/app/controller/Toolbar.js:371
+#: exe/engine/package.py:1393 exe/jsui/scripts/app/controller/Toolbar.js:371
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "iDevice-editor"
 
-#: exe/engine/package.py:1513
+#: exe/engine/package.py:1514
 msgid "My Catalog"
 msgstr "Mijn catalogus"
 
-#: exe/engine/package.py:1520
+#: exe/engine/package.py:1521
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Default"
@@ -7336,8 +7367,8 @@ msgstr "Pedagogische hulp"
 msgid "Information"
 msgstr "Aanwijzingen"
 
-#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:549
-#: exe/webui/common.py:550 exe/webui/editorpane.py:364
+#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:546
+#: exe/webui/common.py:547 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -7446,8 +7477,8 @@ msgstr "Tonen"
 msgid "Hide"
 msgstr "Verbergen"
 
-#: exe/webui/common.py:216 exe/webui/common.py:437 exe/webui/element.py:1434
-#: exe/webui/element.py:2363 exe/webui/listablock.py:274
+#: exe/webui/common.py:216 exe/webui/common.py:434 exe/webui/element.py:1434
+#: exe/webui/element.py:2365 exe/webui/listablock.py:274
 msgid "Show Feedback"
 msgstr "Toon feedback"
 
@@ -7474,7 +7505,7 @@ msgstr "Menu"
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : elearning XHTML-editor"
 
-#: exe/webui/common.py:540 exe/webui/common.py:544
+#: exe/webui/common.py:537 exe/webui/common.py:541
 msgid "Click for completion instructions"
 msgstr "Klik voor aanwijzingen"
 
@@ -7760,9 +7791,9 @@ msgstr "Toon/verberg woord"
 msgid "Strict Marking?"
 msgstr "Streng verbeteren?"
 
-#: exe/webui/element.py:1265 exe/webui/element.py:1598
-msgid "Check Caps?"
-msgstr "Hoofdlettergevoelig?"
+#: exe/webui/element.py:1265
+msgid "Check Capitalization?"
+msgstr ""
 
 #: exe/webui/element.py:1270 exe/webui/element.py:1603
 msgid "Instant Marking?"
@@ -7787,10 +7818,14 @@ msgid "Show Answers"
 msgstr "Toon antwoorden"
 
 #: exe/webui/element.py:1483 exe/webui/element.py:1735
-#: exe/webui/element.py:2355 exe/webui/element.py:2815
+#: exe/webui/element.py:2357 exe/webui/element.py:2817
 #: exe/webui/listablock.py:312 exe/webui/testquestionelement.py:158
 msgid "Answers"
 msgstr "AAntwoorden"
+
+#: exe/webui/element.py:1598
+msgid "Check Caps?"
+msgstr "Hoofdlettergevoelig?"
 
 #: exe/webui/element.py:1608
 msgid "Show Score?"
@@ -7820,36 +7855,36 @@ msgstr "nieuwe regel"
 msgid "Select a font size: "
 msgstr "Kies lettergrootte:"
 
-#: exe/webui/element.py:2090 exe/webui/element.py:2475
-#: exe/webui/element.py:2600 exe/webui/element.py:2618
+#: exe/webui/element.py:2090 exe/webui/element.py:2477
+#: exe/webui/element.py:2602 exe/webui/element.py:2620
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "Juiste keuze"
 
-#: exe/webui/element.py:2118 exe/webui/element.py:2503
+#: exe/webui/element.py:2118 exe/webui/element.py:2505
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "Alternatief verwijderen"
 
-#: exe/webui/element.py:2257 exe/webui/element.py:2710
+#: exe/webui/element.py:2257 exe/webui/element.py:2712
 #: exe/webui/questionelement.py:120 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "Vraag verwijderen"
 
-#: exe/webui/element.py:2290 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2292 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "Nieuw alternatief toevoegen"
 
-#: exe/webui/element.py:2391 exe/webui/element.py:2834
+#: exe/webui/element.py:2393 exe/webui/element.py:2836
 msgid "Solution"
 msgstr "Oplossing"
 
-#: exe/webui/element.py:2602 exe/webui/element.py:2620
+#: exe/webui/element.py:2604 exe/webui/element.py:2622
 msgid "Wrong"
 msgstr "Fout"
 
-#: exe/webui/element.py:2725
+#: exe/webui/element.py:2727
 msgid "Add another option"
 msgstr "Nieuw alternatief toevoegen"
 

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2014-06-24 23:23+0200\n"
-"PO-Revision-Date: 2014-06-24 23:26+0200\n"
+"POT-Creation-Date: 2014-06-25 20:38+0200\n"
+"PO-Revision-Date: 2014-06-25 20:46+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -550,7 +550,7 @@ msgstr "Estilo del área de ayuda"
 
 #: exe/engine/clickinorderidevice.py:84
 msgid "Style of timer Element"
-msgstr "Estilo del elemento cronómetro"
+msgstr "Estilo del elemento Cronómetro"
 
 #: exe/engine/clickinorderidevice.py:84
 msgid "Style of timer (CSS)"
@@ -726,7 +726,7 @@ msgstr ""
 #: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
 #: exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:534
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:531
 msgid "Instructions"
 msgstr "Instrucciones"
 
@@ -765,7 +765,7 @@ msgstr ""
 "<p>Para seleccionar las palabras que desea ocultar, haga doble clic en la "
 "palabra para seleccionarla,\n"
 "y pulse en el botón Ocultar/Mostrar palabra de abajo.</p><p>Puede definir "
-"más de una respuesta posible si estánn rodeadas con el signo de la tubería "
+"más de una respuesta posible si están rodeadas con el signo de la tubería "
 "(|). P.ej.: |perro|gato|pájaro|</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
@@ -779,10 +779,10 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:182
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
-#: exe/webui/common.py:441 exe/webui/common.py:451
+#: exe/webui/common.py:438 exe/webui/common.py:448
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
-#: exe/webui/element.py:2371 exe/webui/element.py:2506
-#: exe/webui/element.py:2621 exe/webui/element.py:2822
+#: exe/webui/element.py:2373 exe/webui/element.py:2508
+#: exe/webui/element.py:2623 exe/webui/element.py:2824
 #: exe/webui/listablock.py:461 exe/webui/questionelement.py:113
 msgid "Feedback"
 msgstr "Retroalimentación"
@@ -1045,9 +1045,9 @@ msgstr ""
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3681
 #: exe/engine/field.py:3746 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:82
-#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2346
-#: exe/webui/element.py:2350 exe/webui/element.py:2799
-#: exe/webui/element.py:2803 exe/webui/testquestionelement.py:151
+#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2348
+#: exe/webui/element.py:2352 exe/webui/element.py:2801
+#: exe/webui/element.py:2805 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
 msgstr "Pregunta"
@@ -1203,42 +1203,29 @@ msgstr ""
 "Introduzca un título para el archivo MP3. \n"
 "Aparecerá en la barra de título del reproductor también."
 
-#: exe/engine/field.py:3017 exe/engine/field.py:3251
+#: exe/engine/field.py:3017
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors "
 "will be accepted. If checked only an exact match in spelling and "
 "capitalization will be accepted.</p><p><strong>For example:</strong> If the "
 "correct answer is <code>Elephant</code> then both <code>elephant</code> and "
 "<code>Eliphant</code> will be judged <em>\"close enough\"</em> by the "
-"algorithm as it only has one letter wrong, even if \"Check Capitilization\" "
+"algorithm as it only has one letter wrong, even if \"Check Capitalization\" "
 "is on.</p><p>If capitalization checking is off in the above example, the "
 "lowercase <code>e</code> will not be considered a mistake and "
 "<code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking"
 "\" and \"Check Capitalization\" are set, the only correct answer is "
 "\"Elephant\". If only \"Strict Marking\" is checked and \"Check "
 "Capitalization\" is not, \"elephant\" will also be accepted.</p>"
-msgstr ""
-"<p>Si no se selecciona, se aceptará un pequeño número de errores de deletreo "
-"y de capitalización. Si está marcado, no se aceptaría ningún error de "
-"deletreo o capitalización.</p><p><strong>Ejemplo:</strong>: Si la respuesta "
-"correcta es <code>Elefante</code> y pone <code>elefante</code> o "
-"<code>Elifante</code>, ambos serán considerados como <em>\"bastantes cercanos"
-"\"</em> por el algoritmo, pues existe solo un error de letra, incluso si "
-"\"Comprobar Capitalización\" está activado.</p><p>Si el chequeo de "
-"capitalización está desactivado en este ejemplo, la letra minúscula <code>e</"
-"code> no es considerada un error y <code>eliphant</code> también será "
-"aceptado.</p><p>Si \"Corrección Estricta\" y \"Comprobar Capitalización\" "
-"están activados, la única respuesta correcta es \"Elefante\". Si solamente "
-"\"Corrección Estricta\" está activado y \"Comprobar Capitalización\" no, "
-"\"elefante\" también será aceptado.</p>"
+msgstr "<p>Si no se selecciona, se aceptará un pequeño número de errores ortográficos y de uso de mayúsculas y minúsculas. Si está marcado, no se aceptaría ningún error ortográfico o de uso de mayúsculas o minúsculas.</p><p><strong>Ejemplo:</strong>: Si la respuesta correcta es <code>Elefante</code> y pone <code>elefante</code> o <code>Elifante</code>, ambos serán considerados como <em>\"bastantes cercanos\"</em> por el algoritmo, pues existe solo un error de letra, incluso si \"¿Comprobar mayúsculas/minúsculas?\" está activado.</p><p>Si el chequeo de mayúsculas y minúsculas está desactivado en este ejemplo, la letra minúscula <code>e</code> no es considerada un error y <code>eliphant</code> también será aceptado.</p><p>Si \"¿Corrección Estricta?\" y \"¿Comprobar mayúsculas/minúsculas?\" están activados, la única respuesta correcta es \"Elefante\". Si solamente \"¿Corrección Estricta?\" está activado y \"¿Comprobar mayúsculas/minúsculas?\" no, \"elefante\" también será aceptado.</p>"
 
 #: exe/engine/field.py:3038 exe/engine/field.py:3272
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
 msgstr ""
-"<p>Si está marcada esta opción, las respuestas enviadas con una diferente "
-"capitalización serán marcadas como incorrectas.</p>"
+"<p>Si está marcada esta opción, las respuestas enviadas con diferencias de "
+"uso de mayúsculas y minúsculas serán marcadas como incorrectas.</p>"
 
 #: exe/engine/field.py:3043 exe/engine/field.py:3277
 msgid ""
@@ -1260,6 +1247,36 @@ msgstr ""
 "Permitir auto-completar cuando \n"
 "                                       el usuario está rellenando los "
 "espacios en blanco."
+
+#: exe/engine/field.py:3251
+msgid ""
+"<p>If left unchecked a small number of spelling and capitalization errors "
+"will be accepted. If checked only an exact match in spelling and "
+"capitalization will be accepted.</p><p><strong>For example:</strong> If the "
+"correct answer is <code>Elephant</code> then both <code>elephant</code> and "
+"<code>Eliphant</code> will be judged <em>\"close enough\"</em> by the "
+"algorithm as it only has one letter wrong, even if \"Check Capitilization\" "
+"is on.</p><p>If capitalization checking is off in the above example, the "
+"lowercase <code>e</code> will not be considered a mistake and "
+"<code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking"
+"\" and \"Check Capitalization\" are set, the only correct answer is "
+"\"Elephant\". If only \"Strict Marking\" is checked and \"Check "
+"Capitalization\" is not, \"elephant\" will also be accepted.</p>"
+msgstr ""
+"<p>Si no se selecciona, se aceptará un pequeño número de errores "
+"ortográficos y de uso de mayúsculas y minúsculas. Si está marcado, no se "
+"aceptaría ningún error ortográfico o de uso de mayúsculas o minúsculas.</"
+"p><p><strong>Ejemplo:</strong>: Si la respuesta correcta es <code>Elefante</"
+"code> y pone <code>elefante</code> o <code>Elifante</code>, ambos serán "
+"considerados como <em>\"bastantes cercanos\"</em> por el algoritmo, pues "
+"existe solo un error de letra, incluso si \"¿Comprobar mayúsculas/"
+"minúsculas?\" está activado.</p><p>Si el chequeo de mayúsculas y minúsculas "
+"está desactivado en este ejemplo, la letra minúscula <code>e</code> no es "
+"considerada un error y <code>eliphant</code> también será aceptado.</p><p>Si "
+"\"¿Corrección Estricta?\" y \"¿Comprobar mayúsculas/minúsculas?\" están "
+"activados, la única respuesta correcta es \"Elefante\". Si solamente "
+"\"¿Corrección Estricta?\" está activado y \"¿Comprobar mayúsculas/minúsculas?"
+"\" no, \"elefante\" también será aceptado.</p>"
 
 #: exe/engine/field.py:3282
 msgid "<p>If this option is set, the score will be shown.</p>"
@@ -1308,7 +1325,7 @@ msgstr ""
 #: exe/engine/field.py:3606 exe/engine/field.py:3655
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/webui/element.py:2085 exe/webui/element.py:2140
-#: exe/webui/element.py:2470 exe/webui/element.py:2562
+#: exe/webui/element.py:2472 exe/webui/element.py:2564
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
 msgstr "Opción"
@@ -1320,7 +1337,7 @@ msgstr "Opción"
 msgid "Hint"
 msgstr "Sugerencia"
 
-#: exe/engine/field.py:3772 exe/engine/field.py:3809 exe/webui/element.py:2275
+#: exe/engine/field.py:3772 exe/engine/field.py:3809 exe/webui/element.py:2277
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
@@ -2620,16 +2637,16 @@ msgstr ""
 "ERROR AL GUARDAR\n"
 "La última salva correcta fue %s."
 
-#: exe/engine/package.py:1392 exe/jsui/scripts/app/controller/Toolbar.js:371
+#: exe/engine/package.py:1393 exe/jsui/scripts/app/controller/Toolbar.js:371
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "Editor de iDevices"
 
-#: exe/engine/package.py:1513
+#: exe/engine/package.py:1514
 msgid "My Catalog"
 msgstr "Mi catálogo"
 
-#: exe/engine/package.py:1520
+#: exe/engine/package.py:1521
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Default"
@@ -7284,8 +7301,8 @@ msgstr "Sugerencia pedagógica"
 msgid "Information"
 msgstr "Información"
 
-#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:549
-#: exe/webui/common.py:550 exe/webui/editorpane.py:364
+#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:546
+#: exe/webui/common.py:547 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -7387,8 +7404,8 @@ msgstr "Mostrar"
 msgid "Hide"
 msgstr "Ocultar"
 
-#: exe/webui/common.py:216 exe/webui/common.py:437 exe/webui/element.py:1434
-#: exe/webui/element.py:2363 exe/webui/listablock.py:274
+#: exe/webui/common.py:216 exe/webui/common.py:434 exe/webui/element.py:1434
+#: exe/webui/element.py:2365 exe/webui/listablock.py:274
 msgid "Show Feedback"
 msgstr "Mostrar retroalimentación"
 
@@ -7415,7 +7432,7 @@ msgstr "Menú"
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: editor XHTML para eLearning"
 
-#: exe/webui/common.py:540 exe/webui/common.py:544
+#: exe/webui/common.py:537 exe/webui/common.py:541
 msgid "Click for completion instructions"
 msgstr "Pulse para recibir instrucciones sobre cómo completar la actividad"
 
@@ -7703,9 +7720,9 @@ msgstr "Ocultar/Mostrar Palabra"
 msgid "Strict Marking?"
 msgstr "¿Calificación estricta?"
 
-#: exe/webui/element.py:1265 exe/webui/element.py:1598
-msgid "Check Caps?"
-msgstr "¿Las Mayúsculas están bloqueadas?"
+#: exe/webui/element.py:1265
+msgid "Check Capitalization?"
+msgstr "¿Comprobar mayúsculas/minúsculas?"
 
 #: exe/webui/element.py:1270 exe/webui/element.py:1603
 msgid "Instant Marking?"
@@ -7730,10 +7747,14 @@ msgid "Show Answers"
 msgstr "Mostrar las respuestas"
 
 #: exe/webui/element.py:1483 exe/webui/element.py:1735
-#: exe/webui/element.py:2355 exe/webui/element.py:2815
+#: exe/webui/element.py:2357 exe/webui/element.py:2817
 #: exe/webui/listablock.py:312 exe/webui/testquestionelement.py:158
 msgid "Answers"
 msgstr "Respuestas"
+
+#: exe/webui/element.py:1598
+msgid "Check Caps?"
+msgstr "¿Las Mayúsculas están bloqueadas?"
 
 #: exe/webui/element.py:1608
 msgid "Show Score?"
@@ -7763,36 +7784,36 @@ msgstr "Nueva línea"
 msgid "Select a font size: "
 msgstr "Seleccionar un tamaño de letra: "
 
-#: exe/webui/element.py:2090 exe/webui/element.py:2475
-#: exe/webui/element.py:2600 exe/webui/element.py:2618
+#: exe/webui/element.py:2090 exe/webui/element.py:2477
+#: exe/webui/element.py:2602 exe/webui/element.py:2620
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "Opción correcta"
 
-#: exe/webui/element.py:2118 exe/webui/element.py:2503
+#: exe/webui/element.py:2118 exe/webui/element.py:2505
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "Eliminar opción"
 
-#: exe/webui/element.py:2257 exe/webui/element.py:2710
+#: exe/webui/element.py:2257 exe/webui/element.py:2712
 #: exe/webui/questionelement.py:120 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "Eliminar pregunta"
 
-#: exe/webui/element.py:2290 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2292 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "Añadir otra opción"
 
-#: exe/webui/element.py:2391 exe/webui/element.py:2834
+#: exe/webui/element.py:2393 exe/webui/element.py:2836
 msgid "Solution"
 msgstr "Solución"
 
-#: exe/webui/element.py:2602 exe/webui/element.py:2620
+#: exe/webui/element.py:2604 exe/webui/element.py:2622
 msgid "Wrong"
 msgstr "Incorrecto"
 
-#: exe/webui/element.py:2725
+#: exe/webui/element.py:2727
 msgid "Add another option"
 msgstr "Añadir otra opción"
 
