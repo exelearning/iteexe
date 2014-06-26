@@ -109,13 +109,6 @@ with a different filename') % outputf
         pkg.scowwebsite = self.options['website']
         scormExport.export(pkg)
 
-    def export_agrega(self, pkg, outputf):
-        scormExport = ScormExport(self.config, self.styles_dir, outputf,
-'agrega')
-        pkg.scowsinglepage = self.options['single-page']
-        pkg.scowwebsite = self.options['website']
-        scormExport.export(pkg)
-
     def export_ims(self, pkg, outputf):
         imsExport = IMSExport(self.config, self.styles_dir, outputf)
         imsExport.export(pkg)
