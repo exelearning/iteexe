@@ -23,6 +23,7 @@ import os
 import sys
 import optparse
 import json
+import logging
 
 # Make it so we can import our own nevow and twisted etc.
 if os.name == 'posix':
@@ -88,6 +89,10 @@ help:\n%prog -h").encode(sys.stdout.encoding)
                       help=_(u"Generates resource info report to text <output_file> \
 from <input_file> elp package").encode(sys.stdout.encoding))
 
+    parser.add_option("-l", "--checker_logfile",
+                      dest='checker_logfile',
+                      metavar='LOGFILE')
+                      
     parser.add_option("-x", "--export",
                   action="store", dest="x", metavar="format",
                   choices=['xml', 'scorm12', 'scorm2004',
@@ -183,6 +188,13 @@ exclusive.').encode(sys.stdout.encoding))
 
     if len(args) > 2:
         parser.error(_(u'Bad number of arguments supplied').encode(sys.stdout.encoding))
+
+    if options.checker_logfile:
+        logfile = Path(options.checker_logfile)
+        if logfile.abspath().dirname().exists():
+            handler = logging.FileHandler(logfile.abspath(), 'a+')
+            handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s %(message)s'))
+            logging.getLogger('exe.engine.checker').addHandler(handler)
 
     tempdir = TempDirPath()
     if options.set_options:
