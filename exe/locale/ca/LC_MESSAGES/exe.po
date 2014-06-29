@@ -10,20 +10,23 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2014-06-25 20:38+0200\n"
-"PO-Revision-Date: 2014-05-04 00:33+0200\n"
+"PO-Revision-Date: 2014-06-29 14:15+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: Catalan <info@softcatala.org>\n"
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n!=1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: exe/application.py:165
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
 msgstr ""
+"Ha succeït un error mentre es carregava el fitxer config. S'ha desat un copia "
+"de seguretat en  %s"
 
 #: exe/application.py:183
 #, python-format
@@ -31,6 +34,9 @@ msgid ""
 "An error has occurred when loading your Idevice Store. A backup is saved "
 "at %s"
 msgstr ""
+"Ha succeït un error mentre es carregava el magatzem Idevice. S'ha desat un "
+"copia de "
+"seguretat en  %s"
 
 #: exe/application.py:222
 #, python-format
@@ -404,7 +410,8 @@ msgstr "FPD - Cita"
 msgid ""
 "Quotation is an iDevice that provides the students with quotations to "
 "reflect upon."
-msgstr "Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
+msgstr ""
+"Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
 
 #: exe/engine/citasparapensarfpdidevice.py:40
 #: exe/engine/citasparapensarfpdidevice.py:139
@@ -511,7 +518,7 @@ msgstr "Estil de l'element comptador "
 #: exe/engine/clickinorderidevice.py:80
 msgid "Use CSS to style element that counts number items found"
 msgstr ""
-"Usa CSS per definir l'estil del element que comptarà el nombre d'elements"
+"Usa CSS per definir l'estil de l'element que comptarà el nombre d'elements"
 " trobats"
 
 #: exe/engine/clickinorderidevice.py:81
@@ -739,7 +746,6 @@ msgstr "Buits"
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
-#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -753,9 +759,12 @@ msgstr ""
 "<p>Entreu el text per l'activitat de buits al camp de buits\n"
 " pegant el text des d'una altra font o teclejant el text directament al "
 "camp.\n"
-"</p><p> Per seleccionar paraules per amagar, feu doble clic sobre la "
+"</p> "
+"<p> Per seleccionar paraules per amagar, feu doble clic sobre la "
 "paraula \n"
-"per seleccionar-la i premeu al botó ocultar/mostrar paraules de sota.</p>"
+"per seleccionar-la i premeu al botó ocultar/mostrar paraules de sota.</p> "
+"<p> Es pot donar mes d'una resposta tancant-les amb el símbol (|). Ex:  "
+"|gos|gat|ocell|</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -1184,7 +1193,6 @@ msgstr ""
 "Aquest apareixerà també en la barra del títol dels usuaris."
 
 #: exe/engine/field.py:3017
-#, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1635,7 +1643,8 @@ msgstr "Mike Dawson, Toughra Technologies FZ LLC"
 
 #: exe/engine/hangmanidevice.py:53
 msgid "Hangman style word game with customizable images."
-msgstr "Joc de paraules semblant al joc del penjat amb imatges personalitzables "
+msgstr ""
+"Joc de paraules semblant al joc del penjat amb imatges personalitzables "
 
 #: exe/engine/hangmanidevice.py:61
 msgid "Instructions for Game."
@@ -1736,7 +1745,8 @@ msgstr "Missatge de nivell superat"
 
 #: exe/engine/hangmanidevice.py:115 exe/engine/hangmanidevice.py:163
 msgid "Player will see this message when they guess the word correctly"
-msgstr "El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
+msgstr ""
+"El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
 
 #: exe/engine/hangmanidevice.py:117 exe/engine/hangmanidevice.py:166
 msgid "Game Won Message"
@@ -3533,11 +3543,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 2.5"
 
 #: exe/export/pages.py:76
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
 
 #: exe/export/pages.py:77
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
 
 #: exe/export/pages.py:78
 msgid "Creative Commons Attribution License 3.0"
@@ -3557,11 +3569,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 3.0"
 
 #: exe/export/pages.py:82
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
 
 #: exe/export/pages.py:83
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
 
 #: exe/export/pages.py:84
 msgid "Creative Commons Attribution License 4.0"
@@ -3581,11 +3595,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 4.0"
 
 #: exe/export/pages.py:88
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
 
 #: exe/export/pages.py:89
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
 
 #: exe/export/pages.py:90
 msgid "GNU General Public License"
@@ -3916,14 +3932,12 @@ msgid "Confirm"
 msgstr "Confirma"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:274
-#, fuzzy
 msgid "Are you sure you want clear all form fields?"
-msgstr "Esteu segur que voleu suprimir tots els continguts?"
+msgstr "Esteu segur que voleu suprimir tots els camps?"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:327
-#, fuzzy
 msgid "Are you sure you want reset all form fields?"
-msgstr "Esteu segur que voleu suprimir tots els continguts?"
+msgstr "Esteu segur que voleu reiniciar tots els camps?"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:414
 msgid "LOM Metadata import success!"
@@ -4455,9 +4469,8 @@ msgstr "Buida"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:629
-#, fuzzy
 msgid "Reset"
-msgstr "representa "
+msgstr "Reinicia "
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
@@ -4808,14 +4821,12 @@ msgid "Access Type"
 msgstr "Tipus d'accés "
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:22
-#, fuzzy
 msgid "Now"
-msgstr "no"
+msgstr "Ara"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:23
-#, fuzzy
 msgid "Time"
-msgstr "Llima"
+msgstr "Hora"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:29
 msgid "Required"
@@ -5069,7 +5080,8 @@ msgstr "Fons de la capçalera"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:457
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr "Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
+msgstr ""
+"Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:475
 msgid "Load Image"
@@ -5099,19 +5111,20 @@ msgid "Doctype"
 msgstr "Tipus de document"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:542
-#, fuzzy
 msgid "Warning"
-msgstr "Advertiment!"
+msgstr "Avís!"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:542
 msgid "Save the changes of your iDevice before changing the DOCTYPE"
-msgstr ""
+msgstr "Deseu el canvis del vostre iDevice abans de canviar el DOCTYPE"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:549
 msgid ""
 "This overrides for this Package the \"Default format for the new "
 "documents\" set in Tools - Preferences"
 msgstr ""
+"Això sobreescriu el paràmetre «Format per defecte als documents nous »  en "
+"Eines - Preferències. "
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:555
 msgid "Taxonomy"
@@ -5157,8 +5170,10 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:608
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:611
-msgid "Checking this option, the saved package may be opened with eXe >= 0.20.4"
-msgstr "Si marqueu aquesta opció el paquet desat es podrà obrir amb eXe >= 0.20.4"
+msgid ""
+"Checking this option, the saved package may be opened with eXe >= 0.20.4"
+msgstr ""
+"Si marqueu aquesta opció el paquet desat es podrà obrir amb eXe >= 0.20.4"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:25
 msgid "Select Browser"
@@ -5185,26 +5200,24 @@ msgstr "Avançat"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:162
 msgid "Default format for the new documents"
-msgstr ""
+msgstr "Format per defecte als documents nous"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:172
 msgid "The current document format can be modified in the Properties tab"
 msgstr ""
+"El format actual del document es pot modificar a la pestanya «Propietats»"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:182
-#, fuzzy
 msgid "Editor mode"
-msgstr "editor"
+msgstr "Mode de l'editor"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:184
-#, fuzzy
 msgid "Permissive"
-msgstr "prerequisit "
+msgstr "Permissiu "
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
-#, fuzzy
 msgid "Strict"
-msgstr "Reinicia "
+msgstr "Estricte "
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:192
 msgid ""
@@ -5212,6 +5225,9 @@ msgid ""
 "markup: It will remove any invalid code, even HTML5 tags (except VIDEO "
 "and AUDIO) when using XHTML format."
 msgstr ""
+"«Permissiu» permetrà qualsevol etiquetatge. «Estricte» permetrà sols "
+"etiquetatge vàlid: traurà qualsevol codi no vàlid quan s'usi el format XHTML, "
+"encara que siguin etiquetes HTML5 (excepte VIDEO i AUDIO). "
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:199
 msgid "Internal Linking (for Web Site Exports only)"
@@ -5553,7 +5569,7 @@ msgstr "Quant a eXe"
 
 #: exe/jsui/scripts/exe.js:162
 msgid "Load Error"
-msgstr ""
+msgstr "Error de càrrega "
 
 #: exe/jsui/scripts/exe.js:187
 msgid ""
@@ -6950,7 +6966,8 @@ msgid "process/procedure supporting service"
 msgstr "servei d'ajuda al procediment / procés "
 
 #: exe/jsui/scripts/lomvocab.js:830
-msgid "individual/cooperative/collaborative learning/working management service"
+msgid ""
+"individual/cooperative/collaborative learning/working management service"
 msgstr ""
 "serveis de gestió del treball / individual / cooperatiu / aprenentatge "
 "col·laboratiu "
@@ -7713,7 +7730,7 @@ msgstr "Correcció estricta ?"
 
 #: exe/webui/element.py:1265
 msgid "Check Capitalization?"
-msgstr ""
+msgstr "Correcció de majúscules ?"
 
 #: exe/webui/element.py:1270 exe/webui/element.py:1603
 msgid "Instant Marking?"
@@ -7936,7 +7953,8 @@ msgid "eXe problem"
 msgstr "problema d'eXe"
 
 #: exe/webui/iecmwarning.py:46
-msgid "The Compatibility View of your browser (Internet Explorer) is turned on."
+msgid ""
+"The Compatibility View of your browser (Internet Explorer) is turned on."
 msgstr ""
 "La visualització de compatibilitat del vostre navegador (Internet "
 "explorer) està habilitada."
@@ -8115,7 +8133,8 @@ msgstr ""
 " completa aquesta eina."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
-msgid "Currently not supported by your browser, use keyboard shortcuts instead."
+msgid ""
+"Currently not supported by your browser, use keyboard shortcuts instead."
 msgstr ""
 "El vostre navegador actualment no ho admet, utilitzeu les dreceres de "
 "teclat."
@@ -8729,7 +8748,9 @@ msgstr "gen.,febr.,març,abr.,maig,juny,jul.,ag.,set.,oct.,nov.,des."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
-msgid "January,February,March,April,May,June,July,August,September,October,November,December"
+msgid ""
+"January,February,March,April,May,June,July,August,September,October,November,D"
+"ecember"
 msgstr ""
 "gener, febrer, març, abril, maig, juny, juliol, agost, setembre, octubre,"
 " novembre, desembre"
@@ -9058,7 +9079,8 @@ msgstr "Tots els drets reservats"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:14
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:23
-msgid "You will not be able to edit the header or the caption from this dialog."
+msgid ""
+"You will not be able to edit the header or the caption from this dialog."
 msgstr "L'encapçalament i títol no seran editables des d'aquest diàleg."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
@@ -11018,4 +11040,3 @@ msgstr ""
 "Els  idevices del vostre fitxer generic.data o paquet que esteu carregant"
 " han estat creats amb un versió més nova de eXe. Si-us-plau actualitzeu "
 "eXe i torneu-ho a provar."
-
