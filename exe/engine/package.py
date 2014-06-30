@@ -449,7 +449,7 @@ class Package(Persistable):
                 metadata.set_educational(educational)
         self._lang = toUnicode(value)
         if value in G.application.config.locales:
-            __builtins__['c_'] = G.application.config.locales[value].ugettext
+            __builtins__['c_'] = lambda s: G.application.config.locales[value].ugettext(s) if s else s
 
     def set_author(self, value):
         if self.dublinCore.creator == self._author:
@@ -1317,6 +1317,7 @@ class Package(Persistable):
         nstyle=Path(G.application.config.stylesDir/newPackage.style)
         if not nstyle.isdir():
             newPackage.style=G.application.config.defaultStyle       
+        newPackage.lang = newPackage._lang
         return newPackage
 
     def getUserResourcesFiles(self, node):

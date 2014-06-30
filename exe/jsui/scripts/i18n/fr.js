@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2013-12-06 13:09+0100\nLast-Translator: Jes\u00fas Miguel Dom\u00ednguez <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fr\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2013-12-06 13:09+0100\nLast-Translator: Jes\u00fas Miguel Dom\u00ednguez <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fr\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Activit\u00e9 Forum Question-R\u00e9ponse", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cr\u00e9ez le sc\u00e9nario du \"cas d'\u00e9tude. Un bon \"cas d'\u00e9tude\" pr\u00e9sente une controverse ou expose un probl\u00e8me en d\u00e9crivant les \u00e9l\u00e9ments d'une probl\u00e9matique. Il peut \u00e9galement proposer diff\u00e9rentes actions qui permettraient de r\u00e9soudre le probl\u00e8me.", 
  "Xhosa ": "Xhosa", 
@@ -1155,7 +1155,6 @@ translations = {
  "Height of Cells (in pixels)": "Hauteur de la cellule (en pixels)", 
  "Superscript": "Exposant", 
  "Game Width": "Largeur du jeu", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>R\u00e9digez le texte pour l'activit\u00e9 \"remplir les blancs\" dans le champ pr\u00e9vu\n soit en le \"copiant-collant\" \u00e0 partir d'une autre source, soit en l'\u00e9crivantt directement dans le champ.<\/p> <p> Pour cacher les mots \u00e0 trouver: cliquer deux fois sur le mot pour le s\u00e9lectionner et cliquer ensuite sur le bouton \"Cacher\/Montrer\" de la barre en-dessous.<\/p>", 
  "Number of Columns": "Nombre de colonnes", 
  "Time Limit (mm:ss)": "Limite de temps (mm:ss)", 
  "Top CSS top property": "CSS hauteur propri\u00e9t\u00e9 du point sup\u00e9rieur", 

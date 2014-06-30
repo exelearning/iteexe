@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2008-05-15 11:54+0100\nLast-Translator: Matej Urban\u010di\u010d <mateju@svn.gnome.org>\nLanguage-Team: Institut OKO, Iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\nLanguage: sl\nPlural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2008-05-15 11:54+0100\nLast-Translator: Matej Urban\u010di\u010d <mateju@svn.gnome.org>\nLanguage-Team: Institut OKO, Iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\nLanguage: sl\nPlural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>U\u010ditelji bi morali med uporabo pou\u010devalnih enot (PE) imeti v mislih naslednje:<ol><li>Razmisliti o \u0161tevilu razli\u010dnih vrst dejavnosti, na\u010drtovanih za va\u0161 vir, ki bodo vizualno ozna\u010dene v vsebini. Izogibajte se preveliki uporabi razli\u010dnih vrst ali razvr\u0161\u010danju dejavnosti, ker to u\u010dence zmede. Obi\u010dajno so tri do \u0161tiri razli\u010dne vrste ve\u010d kot dovolj za u\u010dne vire.<\/li><li>Iz oblikovnega stali\u0161\u010da, se izognite uporabi dveh pou\u010devalnih enot, ki si sledita takoj druga za drugo brez vmesnega besedila. V primeru, da je to namen,\nraje zdru\u017eite dve vpra\u0161anji ali dogodka v eno pou\u010devalno enoto.<\/li><li>Premislite o dejavnostih kjer zaznana korist opravljanja dejavnosti odtehta \u010das in napor, ki ju re\u0161evanje dejavnosti zahteva.<\/li><\/ol>", 
  "Title": "Naslov", 
  "Text Line": "Besedna vrstica", 
@@ -77,7 +77,7 @@ translations = {
  "Provide instruction on how the cloze activity should be \ncompleted. Default text will be entered if there are no changes to this field.\n": "Vnesite navodila za dopolnilne naloge.\nV primeru, da ni dolo\u010denega besedila, bo uporabljeno privzeto besedilo.\n", 
  ". Please use ASCII names.": ". Prosimo, uporabljajte ASCII imena.", 
  "Please upload a .ggb file.": "Prosim, nalo\u017eite .ggb datoteko.", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Vpi\u0161ite besedilo za vaje dopolnilnih nalog.\nBesedilo se lahko natipka ali prilepi. Za izbiro besed, ki jih\n\u017eelite skriti, dvakrat kliknite na besedo in kliknite na gumb\n<i>Skrij\/Prika\u017ei besedo.<\/p>", 
+ "Allow auto completion when user filling the gaps.": "Omogo\u010di samodejno zaklju\u010devanje kadar uporabnik izpolnjuje prazna mesta.", 
  "Restart": "Ponovno nalo\u017ei", 
  "Add Image": "Dodaj sliko", 
  "Reflection": "Refleksija", 
@@ -513,7 +513,6 @@ translations = {
  "Left": "Levo", 
  "Load": "Nalo\u017ei", 
  "Enter a title for the gallery": "Vpi\u0161ite naslov galerije", 
- "Allow auto completion when user filling the gaps.": "Omogo\u010di samodejno zaklju\u010devanje kadar uporabnik izpolnjuje prazna mesta.", 
  "Image Gallery": "Album slik", 
  "Close": "Zapri", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Tukaj vpi\u0161ite namig. \u010ce ne\nne \u017eelite ponuditi namiga, pustite polje prazno.", 

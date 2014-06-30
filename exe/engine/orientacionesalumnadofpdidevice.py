@@ -20,7 +20,7 @@ class OrientacionesalumnadofpdIdevice(Idevice):
     """
     El iDevice Objetivos alumando permite al alumnado conocer los objetivos de su aprendizaje
     """
-    persistenceVersion = 8
+    persistenceVersion = 9
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -142,4 +142,16 @@ class OrientacionesalumnadofpdIdevice(Idevice):
         Delete icon from system resources
         """
         self._upgradeIdeviceToVersion3()
+
+    def upgradeToVersion9(self):
+        if self._title == u"FPD - Orientaciones Alumnado":
+            self._title = u"FPD - Guidelines Students"
+        if self._purpose == u"""Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje.""":
+            self._purpose = u"""Guidelines Students is an iDevice that permits students know the objectives of their learning."""
+        if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._activityInstruc = u"""Enter the text that will appear on this iDevice"""
+        if self.activityTextArea._name == u'Texto Orientaciones alumnado':
+            self.activityTextArea._name = u'Guidelines Students Text'
+        if self.activityTextArea._name == u'Texto Orientaciones alumnado:':
+            self.activityTextArea._name = u'Guidelines Students Text:'
 # ===========================================================================

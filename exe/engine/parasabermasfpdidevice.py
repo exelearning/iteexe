@@ -20,7 +20,7 @@ class ParasabermasfpdIdevice(Idevice):
     """
     El iDevice Para saber permite al alumnado ampliar conocimientos voluntarios para su aprendizaje
     """
-    persistenceVersion = 8
+    persistenceVersion = 9
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -143,4 +143,14 @@ class ParasabermasfpdIdevice(Idevice):
         Delete icon from system resources
         """
         self._upgradeIdeviceToVersion3()
+
+    def upgradeToVersion9(self):
+        if self._title == u"FPD - Para Saber Mas":
+            self._title = u"FPD - A Step Ahead"
+        if self._purpose == u"""Para saber m&aacute;s es un iDevice que permite al alumnado ampliar conocimientos, siendo estos voluntarios para su aprendizaje.""":
+            self._purpose = u"""A Step Ahead is an iDevice that permits students widen their knowledge with further contents."""
+        if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._activityInstruc = u"""Enter the text that will appear on this iDevice"""
+        if self.activityTextArea._name == u'Texto Para saber m&aacute;s':
+            self.activityTextArea._name = u'A Step Ahead Text'
 # ===========================================================================

@@ -181,7 +181,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									labelWidth: 250,
 									fieldLabel: _('Editor mode'),
 									store: [
-										["permissive", ("Permissive")],
+										["permissive", _("Permissive")],
 										["strict", _("Strict")]
 									],
 									style: {

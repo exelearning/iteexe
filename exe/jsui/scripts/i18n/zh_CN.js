@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage-Team: eXe <info@exelearning.org>\nLanguage: zh_Hans_CN\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage-Team: eXe <info@exelearning.org>\nLanguage: zh_Hans_CN\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": " ", 
  "Title": "\u6807\u9898", 
  "Text Line": "\u5355\u884c\u6587\u5b57", 
@@ -75,7 +75,7 @@ translations = {
  "Provide instruction on how the cloze activity should be \ncompleted. Default text will be entered if there are no changes to this field.\n": "\u63d0\u4f9b\u600e\u6837\u5b8c\u6210\u586b\u7a7a\u9898\u7684\u8bf4\u660e.\n", 
  ". Please use ASCII names.": ". \u8bf7\u4f7f\u7528ASCII\u7801, \u5982\u82f1\u6587, \u62fc\u97f3\u7b49\u6765\u547d\u540d\u8def\u5f84, \u5305\u62ec\u5176\u4e2d\u6240\u6709\u7684\u6587\u4ef6\u593e.", 
  "Please upload a .ggb file.": "\u8bf7\u4e0a\u4f20\u4e00\u4e2a.ggb\u6587\u4ef6.", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "\u8f93\u5165\u586b\u7a7a\u7ec3\u4e60\u7684\u5185\u5bb9. \u53cc\u51fb\u6240\u8981\u9690\u85cf\u7684\u5b57, \u7136\u540e\u70b9\u51fb<i>\u9690\u85cf\/\u663e\u793a \u6587\u5b57<\/i> \u6309\u94ae\u4f7f\u4e4b\u53d8\u4e3a\u7a7a\u683c.", 
+ "Allow auto completion when user filling the gaps.": "\u5f53\u5b66\u751f\u586b\u7a7a\u65f6, \u5141\u8bb8\u81ea\u52a8\u5b8c\u6210.", 
  "Restart": "\u91cd\u65b0\u5f00\u59cb", 
  "Add Image": "\u6dfb\u52a0\u56fe\u7247", 
  "Reflection": "\u95ee\u9898\u4e0e\u56de\u7b54", 
@@ -489,7 +489,6 @@ translations = {
  "Left": "\u5de6", 
  "Load": "\u8f7d\u5165", 
  "Enter a title for the gallery": "\u8f93\u5165\u6807\u9898\u4e3a\u56fe\u8c61\u753b\u5eca.", 
- "Allow auto completion when user filling the gaps.": "\u5f53\u5b66\u751f\u586b\u7a7a\u65f6, \u5141\u8bb8\u81ea\u52a8\u5b8c\u6210.", 
  "Image Gallery": "\u56fe\u8c61\u753b\u5eca", 
  "Close": "\u5173\u95ed", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "\u5728\u6b64\u8f93\u5165\u63d0\u793a, \u5982\u679c\u60a8\u4e0d\u60f3\u63d0\u4f9b\u63d0\u793a, \u5c31\u8ba9\u6b64\u680f\u7a7a\u767d.", 

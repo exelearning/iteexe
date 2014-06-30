@@ -1262,7 +1262,7 @@ class ClozeElement(ElementWithResources):
             u'</td><td>',
             common.checkbox('checkCaps%s' % self.id,
                             self.field.checkCaps,
-                            title=_(u'Check Caps?'),
+                            title=_(u'Check Capitalization?'),
                             instruction=self.field.checkCapsInstruc),
             u'</td><td>',
             common.checkbox('instantMarking%s' % self.id,
@@ -2265,11 +2265,13 @@ class SelectquestionElement(Element):
         and self.questionElement.field_idevice.parentNode is not None:
             this_package = self.questionElement.field_idevice.parentNode.package
 
+        html += "<div>"
         html += common.richTextArea("question"+self.id, 
                        self.questionElement.field.content_w_resourcePaths,
                        package=this_package)
+        html += "</div>"
 
-        html += u"<table width =\"100%%\">"
+        html += u"<table width =\"100%\">"
         html += u"<thead>"
         html += u"<tr>"
         html += u"<th>%s " % _("Options")
@@ -2492,7 +2494,7 @@ class QuizOptionElement(Element):
 
         html += common.richTextArea("ans"+self.id, 
                           self.answerElement.field.content_w_resourcePaths,
-                          package=this_package, type="simple")
+                          package=this_package)
         
         html += "</td><td align=\"center\">\n"
         html += common.option("c"+self.field.question.id, 
@@ -2519,7 +2521,7 @@ class QuizOptionElement(Element):
 
         html += common.richTextArea('f'+self.id, 
                          self.feedbackElement.field.content_w_resourcePaths,
-                         package=this_package, type="simple")
+                         package=this_package)
          
         html += "</td></tr>\n"
 

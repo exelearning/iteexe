@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: translations@exelearning.net\nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2014-05-15 18:08+0200\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage-Team: Chinese Traditional <zh-l10n@linux.org.tw>\nLanguage: zh_Hant_TW\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: translations@exelearning.net\nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2014-05-15 18:08+0200\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage-Team: Chinese Traditional <zh-l10n@linux.org.tw>\nLanguage: zh_Hant_TW\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "\u5efa\u7acb\u6848\u4f8b\u6545\u4e8b\u3002\u4e00\u500b\u597d\u7684\u6848\u4f8b\u63cf\u8ff0\u4e00\u9805\u722d\u8b70\uff0c\u6216\u63cf\u8ff0\u5728\u67d0\u500b\u60c5\u5883\u4e0b\u7684\u67d0\u500b\u4eba\u7269\u3002\u5b83\u4e5f\u61c9\u8a72\u5141\u8a31\u5927\u5bb6\u63a1\u53d6\u67d0\u4e9b\u884c\u52d5\u4ee5\u4fbf\u89e3\u6c7a\u9019\u500b\u60c5\u5883\u3002", 
  "Xhosa ": "\u79d1\u85a9\u8a9e", 
  "Invoke URLs": "\u547c\u53eb\u7db2\u5740", 
@@ -1135,7 +1135,6 @@ translations = {
  "Height of Cells (in pixels)": "\u5132\u5b58\u683c\u9ad8\u5ea6\uff08\u50cf\u7d20\uff09", 
  "Superscript": "\u4e0a\u6a19", 
  "Game Width": "\u904a\u6232\u5340\u5bec\u5ea6", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>\u8f38\u5165\u514b\u6f0f\u5b57\u6e2c\u9a57\u7684\u6587\u5b57\u3002\u60a8\u53ef\u4ee5\u5f9e\u5225\u8655\u526a\u8cbc\u6587\u5b57\u904e\u4f86\uff0c\u6216\u662f\u76f4\u63a5\u5728\u6b64\u8f38\u5165\u3002<\/p><p>\u8981\u9078\u64c7\u6253\u7b97\u96b1\u85cf\u8d77\u4f86\u7684\u55ae\u5b57\uff0c\u5728\u8a72\u55ae\u5b57\u4e0a\u96d9\u64ca\u9078\u64c7\uff0c\u4e26\u6309\u4e0b\u5e95\u4e0b\u7684\u300c\u96b1\u85cf\/\u986f\u793a\u55ae\u5b57\u300d\u6309\u9375\u3002<\/p>", 
  "Number of Columns": "\u6b04\u6578", 
  "Time Limit (mm:ss)": "\u6642\u9593\u9650\u5236\uff08\u5206\uff1a\u79d2\uff09", 
  "Top CSS top property": "\u9802\u7aef CSS \u9802\u7aef\u5c6c\u6027", 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2006-12-06 20:36+1300\nLast-Translator: Roel Cantada <matangdilis@yahoo.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fil_PH\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2006-12-06 20:36+1300\nLast-Translator: Roel Cantada <matangdilis@yahoo.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fil_PH\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>Dapat isaisip ng mga guro ang sumusunod kapag gumagamit ng iDevice na ito: <\/p><ol><li>Pag-isipan ninyo ang dami ng magkakaibang uri ng aktibidad na binabalak para sa rekurso, na ihahandog ng biswal sa nilalaman.  Iwasan ang paggamit ng napakaraming magkakaibang uri o klasipikasyon ng aktibidad, baka malito ang mag-aaral.  Kadalasan ay sapat na ang tatlo o apat na magkakaibang uri para sa isang rekursong panturo.<\/li><li>Sa pananaw ng pagdidisenyong biswal, iwasan ang magkadikit na iDevice na walang teksto sa pagitan.  Kung kailangan ito, pag-isahin na lamang ang dalawang tanong o pangyayari sa isang iDevice. <\/li><li>Mag-isip kayo ng mga aktibidad na ang inaasahang benepisyo sa paggawa ng aktibidad ay higit sa hirap at oras na gugugulin sa pagtapos ng aktibidad.  <\/li><\/ol>", 
  "Title": "Pamagat", 
  "Text Line": "Linya ng Teksto", 
@@ -65,7 +65,7 @@ translations = {
  "Enter a phrase or term you wish to search \nwithin Wikipedia.": "Magpasok ng kataga o termino na nais mong\nhanapin sa Wikipedia.", 
  "Provide instruction on how the cloze activity should be \ncompleted. Default text will be entered if there are no changes to this field.\n": "Magbigay ng panuto kung paano dapat kumpletohin ang aktibidad na cloze. \nIpapasok ang umiiral na teksto kung walang pagbabagong gawin sa pitak na ito.\n", 
  ". Please use ASCII names.": ". Gumamit po ng mga pangalang ASCII.", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Ipasok ang teksto para sa aktibidad na cloze sa pitak na cloze\nsa pamamagitan ng pagdikit ng teksto mula sa ibang pinagmulan o\nsa pamamagitan ng pagteklado ng direkta sa pitak.<\/p><p> Para mapili ang mga salitang itatago, idoble klik ang salita at\niklik ang Itago\/Ilantad ang Salita na buton sa ibaba.<\/p>", 
+ "Allow auto completion when user filling the gaps.": "Pahintulutan ang kusang pagkumpleto kapag pinupuno ng tagagamit ang mga patlang.", 
  "Restart": "Patayin at patakbuhin muli", 
  "Add Image": "Idagdag ang Larawan", 
  "Reflection": "Pagninilay", 
@@ -427,7 +427,6 @@ translations = {
  "Left": "Kaliwa", 
  "Load": "Ikarga", 
  "Enter a title for the gallery": "Magpasok ng pamagat ng galeriya", 
- "Allow auto completion when user filling the gaps.": "Pahintulutan ang kusang pagkumpleto kapag pinupuno ng tagagamit ang mga patlang.", 
  "Image Gallery": "Galeriya ng Larawan", 
  "Close": "Isara", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Ipasok ang himaton dito. Kung ayaw\nmong magbigay ng himaton, iwang blangko ang pitak.", 

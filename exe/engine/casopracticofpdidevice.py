@@ -20,7 +20,7 @@ class CasopracticofpdIdevice(Idevice):
     """
     El iDevice Caso practico permite al alumnado introducirse en una historia que le guiara a traves de su aprendizaje
     """
-    persistenceVersion = 8
+    persistenceVersion = 9
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -142,5 +142,20 @@ class CasopracticofpdIdevice(Idevice):
         Delete icon from system resources
         """
         self._upgradeIdeviceToVersion3()
+
+    def upgradeToVersion9(self):
+
+        if self._title == u"FPD - Caso Practico":
+            self._title = u"FPD - Situation"
+        if self._title == u"Caso Practico":
+            self._title = u"Situation"
+        if self._purpose == u"""Caso pr&aacute;ctico es un iDevice que permite al alumnado introducirse en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje.""":
+            self._purpose = u"""Situation is an iDevice that provides the student with a story that will guide her along the learning process."""
+        if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._activityInstruc = u"""Enter the text that will appear on this iDevice"""
+        if self.activityTextArea._name == u'Texto Caso pr&aacute;ctico:':
+            self.activityTextArea._name = u'Situation Text:'
+
+
 
 # ===========================================================================

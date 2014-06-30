@@ -188,7 +188,7 @@ class EjercicioresueltofpdIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 9
+    persistenceVersion = 10
 
     def __init__(self, story="", defaultImage=None):
         """
@@ -436,6 +436,13 @@ situation.""")
         Delete icon from system resources
         """
         self._upgradeIdeviceToVersion3()
+
+    def upgradeToVersion10(self):
+
+        if self._title == u"FPD - Ejercicio Resuelto":
+            self._title = u"FPD - Translation"
+        if self._title == u"Ejercicio Resuelto":
+            self._title = u"Translation"
 
     def embedImagesInFeedback(self):
         """

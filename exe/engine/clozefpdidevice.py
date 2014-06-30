@@ -41,7 +41,7 @@ class ClozefpdIdevice(Idevice):
     Holds a paragraph with words missing that the student must fill in
     """
     
-    persistenceVersion = 6
+    persistenceVersion = 7
 
     def __init__(self, parentNode=None):
         """
@@ -315,4 +315,10 @@ click on the Hide/Show Word button below.</p><p>More than one possible answer ca
         Delete icon from system resources
         """
         self._upgradeIdeviceToVersion3()
+
+    def upgradeToVersion7(self):
+        if self._title == u"FPD - Actividad de Espacios en Blanco":
+            self._title = u"FPD - Cloze Activity"
+        if self._title == u"Actividad de Espacios en Blanco":
+            self._title = u"Cloze Activity"
 # ===========================================================================

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2007-08-31 07:28+1200\nLast-Translator: Lechoslaw Hojnacki <lhojnacki@gmail.com>\nLanguage-Team: SYSTEmEG <arek.felinczak@systemeg.pl>\nLanguage: pl\nPlural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2007-08-31 07:28+1200\nLast-Translator: Lechoslaw Hojnacki <lhojnacki@gmail.com>\nLanguage-Team: SYSTEmEG <arek.felinczak@systemeg.pl>\nLanguage: pl\nPlural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>Nauczyciele powinni u\u017cywaj\u0105c tego obiektu zwr\u00f3ci\u0107 uwag\u0119 na: <\/p><ol><li> Ilo\u015b\u0107 r\u00f3\u017cnych typ\u00f3w zada\u0144 planowanych w lekcji, kt\u00f3rych odpowiedzi zostan\u0105 uwidocznione. Unikaj u\u017cywania zbyt wielu r\u00f3\u017cnych typ\u00f3w zada\u0144 lub ich r\u00f3znego oceniania aby nie wprowadza\u0107 ucznia w b\u0142\u0105d. Zazwyczaj 3 lub 4 r\u00f3zne typy zada\u0144  s\u0105 wystarczaj\u0105ce do cel\u00f3w edukacyjnych.<\/li><li> Z perspektywy projektowania graficznego nale\u017cy unika\u0107 sytuacji kiedy dwa identyczne obiekty nast\u0119puj\u0105 po sobie bez rozdzielenia ich tekstem. Je\u015bli jest to niezb\u0119dne u\u017cy\u0107 do tego jednego obiektu.<\/li><li> U\u017cywaj takich zada\u0144, w kt\u00f3rych korzy\u015b\u0107 z rozwi\u0105zanaia  przewy\u017csza czas i wysi\u0142ek potrzebny do jego uko\u0144czenia.<\/li><\/ol>", 
  "Title": "Tytu\u0142", 
  "Text Line": "Linia tekstu", 
@@ -74,7 +74,7 @@ translations = {
  "Provide instruction on how the cloze activity should be \ncompleted. Default text will be entered if there are no changes to this field.\n": "Wprowad\u017a instrukcje jak  \u0107wiczenie uzupe\u0142niania tekstu powinno by\u0107 wykonane. \nDomy\u015blny tekst zostanie wyswietlony je\u015bli nie zostan\u0105 wprowadzone zmiany w tym polu.\n", 
  ". Please use ASCII names.": ". Prosz\u0119 u\u017cywa\u0107 nazw ASCII.", 
  "Please upload a .ggb file.": "Prosz\u0119 przes\u0142a\u0107 plik .GGB", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Wprowad\u017a tekst do \u0107wiczenia czytania wklejaj\u0105c lub wpisuj\u0105c tekst w pole.<\/p><p> Aby wybra\u0107 pola kt\u00f3re chcesz ukry\u0107, kliknij 2 razy na s\u0142owie i kliknij w przycisk Schowaj\/Poka\u017c S\u0142owo.<\/p>", 
+ "Allow auto completion when user filling the gaps.": "Pozw\u00f3l na automatyczne doka\u0144czanie podczas wype\u0142niania luk przez u\u017cytkownika.", 
  "Restart": "Restartuj", 
  "Add Image": "Dodaj obraz", 
  "Reflection": "Zastan\u00f3w si\u0119", 
@@ -475,7 +475,6 @@ translations = {
  "Left": "Lewa", 
  "Load": "Wczytaj", 
  "Enter a title for the gallery": "Wpisz tytu\u0142 dla galerii", 
- "Allow auto completion when user filling the gaps.": "Pozw\u00f3l na automatyczne doka\u0144czanie podczas wype\u0142niania luk przez u\u017cytkownika.", 
  "Image Gallery": "Galeria obraz\u00f3w", 
  "Close": "Zamknij", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Wpisz tutaj podpowied\u017a. Je\u015bli\nnie chcesz zapeni\u0107 podpowiedzi zostaw pole puste.", 

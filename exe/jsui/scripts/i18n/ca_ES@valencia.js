@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2014-05-01 20:10+0200\nLast-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\nLanguage-Team: LliureX\nLanguage: ca_ES\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2014-05-01 20:10+0200\nLast-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\nLanguage-Team: LliureX\nLanguage: ca_ES\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Activitat de men\u00fa desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Crea la hist\u00f2ria del cas. Un bon cas \u00e9s aquell \nque descriu una controv\u00e8rsia o mostra una escena descrivint els car\u00e0cters \ninvolucrats en la situaci\u00f3. Tamb\u00e9 ha de permetre les accions \nencaminades a resoldre el conflicte de la situaci\u00f3.", 
  "Xhosa ": "Xosa ", 
@@ -1133,7 +1133,6 @@ translations = {
  "Height of Cells (in pixels)": "Al\u00e7\u00e0ria de les cel\u00b7les (en p\u00edxels)", 
  "Superscript": "Super\u00edndex", 
  "Game Width": "Ampl\u00e0ria del joc", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Introdu\u00efu el text per a l'activitat de compleci\u00f3 al camp de buits \napegant el text des d'una altra font o teclejant el text directament al \ncamp.<\/p><p> Per a seleccionar paraules i amagar-les, feu doble clic en la paraula \nper a seleccionar-la i premeu \nel bot\u00f3 Oculta\/Mostra paraules.<\/p>", 
  "Number of Columns": "Nombre de columnes", 
  "Time Limit (mm:ss)": "Temps l\u00edmit (mm:ss)", 
  "Top CSS top property": "Propietat de la part superior del CSS superior", 

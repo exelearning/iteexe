@@ -22,7 +22,7 @@ class CitasparapensarfpdIdevice(Idevice):
     El iDevice Citas para pensar permite al alumnado reflexionar sobre algunas citas propuestas
     Quotations For Reflexion
     """
-    persistenceVersion = 8
+    persistenceVersion = 9
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -145,4 +145,19 @@ class CitasparapensarfpdIdevice(Idevice):
         Delete icon from system resources
         """
         self._upgradeIdeviceToVersion3()
+
+    def upgradeToVersion9(self):
+
+        if self._title == u"FPD - Citas Para Pensar":
+            self._title = u"FPD - Quotation"
+        if self._title == u"Citas Para Pensar":
+            self._title = u"Quotation"
+        if self._purpose == u"""Citas para pensar es un iDevice que permite al alumnado reflexionar sobre algunas citas propuestas.""":
+            self._purpose = u"""Quotation is an iDevice that provides the students with quotations to reflect upon."""
+        if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._activityInstruc = u"""Enter the text that will appear on this iDevice"""
+        if self.activityTextArea._name == u'Texto Citas para pensar:':
+            self.activityTextArea._name = u'Quotation Text:'
+        if self.activityTextArea._name == u'Texto para pensar:':
+            self.activityTextArea._name = u'Quotation Text:'
 # ===========================================================================

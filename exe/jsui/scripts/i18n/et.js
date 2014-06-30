@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2008-02-27 23:10+1300\nLast-Translator: Andres Mellik <andres@jukulab.ee>\nLanguage-Team: eXe <info@exelearning.org>\nLanguage: et\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2008-02-27 23:10+1300\nLast-Translator: Andres Mellik <andres@jukulab.ee>\nLanguage-Team: eXe <info@exelearning.org>\nLanguage: et\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>\u00d5petajad peaksid seda iDevice-i kasutades meeles pidama j\u00e4rgmist:<\/p><ol><li>P\u00f6\u00f6ra t\u00e4helepanu erinevatele \u00f5pperessursis sisalduvate tegevuste t\u00fc\u00fcpidele, mis on visuaalsed n\u00e4htavad. V\u00e4ltimaks \u00f5pilase segadusse viimist, \u00e4ra kasuta liiga palju erinevaid tegevuste t\u00fc\u00fcpe v\u00f5i klassifikatsioone. Tavaliselt piisab \u00fche \u00f5pperessursi jaoks 3-4 t\u00fc\u00fcbist t\u00e4ielikult.<\/li><li>Visuaalse disaini vaatenurgast v\u00e4ldi kahte j\u00e4rjestikust iDevice-i ilma mingi tekstita nende vahel. Kui see on siiski vajalik, siis pigem koonda kaks k\u00fcsimust v\u00f5i s\u00fcndmust samasse iDevice-i.<\/li><li>M\u00f5tle selliste tegevuste peale, kus tegevuse l\u00e4bimise tajutav kasu kaalub \u00fcles sellele kuluva aja ja pingutuse.<\/li><\/ol>", 
  "Title": "Pealkiri", 
  "Text Line": "Teksti joon", 
@@ -77,7 +77,7 @@ translations = {
  "Provide instruction on how the cloze activity should be \ncompleted. Default text will be entered if there are no changes to this field.\n": "Sisesta juhised l\u00fcnkade t\u00e4itmiseks. Kui seda v\u00e4lja ei muudeta, siis sisestatakse \nautomaatselt vaikimisi tekst. \n", 
  ". Please use ASCII names.": ". Palun kasuta ASCII nimesid.", 
  "Please upload a .ggb file.": "Palun lae \u00fcles .ggb fail.", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Sisesta \"T\u00e4ida l\u00fcngad\"-\u00fclesandele tekst, tr\u00fckkides selle l\u00fcnkade t\u00e4itmise\n v\u00e4ljadesse, kas kopeerides m\u00f5nest muust allikast v\u00f5i sisestades teksti otse sellesse v\u00e4lja.<\/p><p> Et valida peidetavad s\u00f5nad, tee antud s\u00f5nal topelt-klikk selle valimiseks ja kliki Peida\/N\u00e4ita S\u00f5na nupul.<\/p>", 
+ "Allow auto completion when user filling the gaps.": "Luba automaatne t\u00e4itmine kui kasutaja l\u00fcnkasid t\u00e4idab.", 
  "Restart": "Alusta uuesti", 
  "Add Image": "Lisa pilt", 
  "Reflection": "M\u00f5tisklus", 
@@ -508,7 +508,6 @@ translations = {
  "Left": "Vasak", 
  "Load": "Lae", 
  "Enter a title for the gallery": "Sisesta galerii jaoks pealkiri", 
- "Allow auto completion when user filling the gaps.": "Luba automaatne t\u00e4itmine kui kasutaja l\u00fcnkasid t\u00e4idab.", 
  "Image Gallery": "Pildigalerii", 
  "Close": "Sulge", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Sisesta siia vihje. Kui sa\nseda teha ei soovi, v\u00f5id selle v\u00e4lja t\u00fchjaks j\u00e4tta.", 

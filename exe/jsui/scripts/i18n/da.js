@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2008-09-15 16:08+0100\nLast-Translator: Dino Brun Pedersen <dbp@sensus.dk>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: da\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2008-09-15 16:08+0100\nLast-Translator: Dino Brun Pedersen <dbp@sensus.dk>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: da\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>Undervisere skal v\u00e6re opm\u00e6rksomme p\u00e5 f\u00f8lgende, n\u00e5r iDevice anvendes: <\/p><ol><li>T\u00e6nk over antallet af forskellige typer af aktiviteter planlagt som vil blive vist visuelt  i indholdet. Undg\u00e5 at bruge for mange forskellige typer eller klassifikationer af aktiviteter, ellers vil den studerende blive forvirret. S\u00e6dvanligvis er tre eller fire forskellige typer mere end tilstr\u00e6kkelig for en undervisningsresurse<\/li><li>Fra et visuelt design perspektiv, undg\u00e5 at have to iDevices umiddelbart efter hinanden uden nogen tekst imellem. Hvis det er n\u00f8dvendigt, sammenl\u00e6g to sp\u00f8rgsm\u00e5l eller begivenheder i en iDevice. <\/li><li>Overvej aktiviteter, hvor man opfatter fordelen ved at udf\u00f8re aktiviteten  opvejer tiden og indsatsen, som det tager at fuldf\u00f8re aktiviteten. <\/li><\/ol>", 
  "Title": "Titel", 
  "Text Line": "Tekstlinje", 
@@ -78,7 +78,7 @@ translations = {
  "Provide instruction on how the cloze activity should be \ncompleted. Default text will be entered if there are no changes to this field.\n": "Angiv instruktioner til, hvordan udfyldningsopgaven skal \ngennemf\u00f8res. Standardteksten vil blive indsat, hvis der ikke er \u00e6ndringer til dette felt.\n", 
  ". Please use ASCII names.": ". Venligst anvend ASCII navne.", 
  "Please upload a .ggb file.": "Overf\u00f8r en .ggb fil.", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Inds\u00e6t teksten for udfyldningsopgaven i udfyldningsfeltet \nved enten at inds\u00e6tte teksten fra en anden kilde eller ved at skrive teksten direkte ind i \nfeltet.<\/p><p> For at udv\u00e6lge ord, der skal skjules, dobbelklik p\u00e5 ordet for at v\u00e6lge det og \nklik p\u00e5 Skjul\/Vis ord knappen forneden.<\/p>", 
+ "Allow auto completion when user filling the gaps.": "Giver mulighed for automatisk udfyldning, n\u00e5r brugeren udfylder mellemrummene.", 
  "Restart": "Genstart", 
  "Add Image": "Tilf\u00f8j billede", 
  "Reflection": "Reflektion", 
@@ -518,7 +518,6 @@ translations = {
  "Left": "Venstre", 
  "Load": "Indl\u00e6s", 
  "Enter a title for the gallery": "Indtast en titel p\u00e5 galleriet", 
- "Allow auto completion when user filling the gaps.": "Giver mulighed for automatisk udfyldning, n\u00e5r brugeren udfylder mellemrummene.", 
  "Image Gallery": "Billedgalleri", 
  "Close": "Luk", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Indtast et hint her. Hvis du\nikke \u00f8nsker at give et hint, efterlad feltet blankt.", 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2013-12-02 16:48+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage: pt\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2013-12-02 16:48+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage: pt\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Atividade drop-down", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Criar a hist\u00f3ria do caso. Um bom caso \u00e9 aquele \nque descreve uma controv\u00e9rsia ou apresenta uma cena descrevendo as personagens \nenvolvidas e a situa\u00e7\u00e3o. Deve permitir decidir a\u00e7\u00f5es \nque levem \u00e0 resolu\u00e7\u00e3o da situa\u00e7\u00e3o.  ", 
  "Xhosa ": "Xhosa ", 
@@ -1130,7 +1130,6 @@ translations = {
  "Height of Cells (in pixels)": "Altura das c\u00e9lulas (em p\u00edxeis)", 
  "Superscript": "Superior \u00e0 linha", 
  "Game Width": "Largura do jogo", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Digite no campo o texto para a atividade de preenchimento de espa\u00e7os, \nquer colando o texto de outra fonte quer digitando o texto diretamente no \ncampo.<\/p><p> Para selecionar as palavras a ocultar, fa\u00e7a um duplo clique na palavra para a selecionar \ne clique em Ocultar\/Mostrar no bot\u00e3o por baixo.<\/p>", 
  "Number of Columns": "N\u00famero de colunas", 
  "Time Limit (mm:ss)": "Limite de tempo (mm:ss)", 
  "Top CSS top property": "Topo - Propriedades CSS do topo", 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2013-11-25 18:18+0100\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage-Team: Italian <primiani@dag.it>\nLanguage: it\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2013-11-25 18:18+0100\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage-Team: Italian <primiani@dag.it>\nLanguage: it\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Attivit\u00e0 Lista a discesa", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Crea uno studio di un caso. Un buon caso \u00e8 quello \nche descrive una controversia o un insieme di situazioni mediante la descrizione \ndelle caratteristiche implicate. Si dovrebbe anche permettere di intraprendere \nuna qualche azione per la risoluzione della situazione.", 
  "Xhosa ": "Xhosa ", 
@@ -1130,7 +1130,6 @@ translations = {
  "Height of Cells (in pixels)": "Altezza caselle (in px)", 
  "Superscript": "Apice", 
  "Game Width": "Larghezza gioco", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Inserisci il testo per una attivit\u00e0\u00a0cloze nel campo cloze\nmediante copia-incolla da un'altra sorgente, oppure inserendo il testo direttamente nel\ncampo. <\/p><p> Per selezionare le parole da nascondere, doppio clic sulla parola\nda selezionare e premi sul pulsante Nascondi\/mostra parola, in basso.<\/p>", 
  "Number of Columns": "Numero colonne", 
  "Time Limit (mm:ss)": "Limite di tempo (mm:ss)", 
  "Top CSS top property": "Propriet\u00e0 CSS <top>", 

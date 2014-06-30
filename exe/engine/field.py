@@ -2596,7 +2596,7 @@ class TextAreaField(FieldWithResources):
     Note that TextAreaFields can now hold any number of image resources,
     which will typically be inserted by way of tinyMCE.
     """
-    persistenceVersion = 1
+    persistenceVersion = 2
 
     # these will be recreated in FieldWithResources' TwistedRePersist:
     nonpersistant      = ['content', 'content_wo_resourcePaths']
@@ -2617,6 +2617,9 @@ class TextAreaField(FieldWithResources):
         self.content_wo_resourcePaths = self.content
         # NOTE: we don't need to actually process any of those contents for 
         # image paths, either, since this is an upgrade from pre-images!
+    def upgradeToVersion2(self):
+        if self._instruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._instruc = u"""Enter the text that will appear on this iDevice"""
 
 # ===========================================================================
 class FeedbackField(FieldWithResources):
@@ -3022,7 +3025,7 @@ class ClozeField(FieldWithResources):
                 "<code>Elephant</code> then both <code>elephant</code> and "
                 "<code>Eliphant</code> will be judged "
                 "<em>\"close enough\"</em> by the algorithm as it only has "
-                "one letter wrong, even if \"Check Capitilization\" is on."
+                "one letter wrong, even if \"Check Capitalization\" is on."
                 "</p>"
                 "<p>If capitalization checking is off in the above example, "
                 "the lowercase <code>e</code> will not be considered a "

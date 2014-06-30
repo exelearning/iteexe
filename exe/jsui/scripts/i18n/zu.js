@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-05-01 12:49+0200\nPO-Revision-Date: 2006-07-28 15:40+1200\nLast-Translator: Jenny <jennylin_nz@yahoo.com>\nLanguage-Team: Sipho <siphomsi@webmail.co.za>\nLanguage: zu\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2006-07-28 15:40+1200\nLast-Translator: Jenny <jennylin_nz@yahoo.com>\nLanguage-Team: Sipho <siphomsi@webmail.co.za>\nLanguage: zu\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "OThisha kumele bagcine lokhu okulandelayo emqondweni uma besebenzisa i-iDevice: &lt;ol&gt;&lt;li&gt;Cabanga ngezinhlobo ezahlukene zemisebenzi ehlelelwe isidingo sokusebenzisa okubonakalayo kokuqukethwe.Gwema ukusebenzisa izinhlobo ezahlukene noma ukwahlukanisa imisebenzi ngale kwalokho abafundi bangadideka.Ngokuvamile izinhlobo ezintathu noma ezine ezihlukene ziyizindingeko ezanele zokufundisa.&lt;\/li&gt;&lt;li&gt;Ngokuphathelene nomklamo wokubonakalayo, gwema ukuba nama iDevice amabili alandelana ngokushesha emva kwenye ngaphandle kokubhaliwe maphakathi nawo.Uma lokhu kudingeka, vele uhlakaze imibuzo emibili noma izehlakalo ukwenze kwi-iDevice eyodwa.&lt;\/li&gt;&lt;li&gtCabanga ngemisebenzi lapho inzuzo ebonakalayo yokwenza umsebenzi yedlula isikhathi nomzamo okuwuthathayo ukuwenza. &lt;\/li&gt;&lt;\/ol&gt;", 
  "Title": "Isihloko:", 
  "Text Line": "UMugqa wokuBhaliwe", 
@@ -60,7 +60,7 @@ translations = {
  "Enter a phrase or term you wish to search \nwithin Wikipedia.": "Faka iqoqo lamagama noma igama ofisa ukulibheka \nkwi-Wikipedia.", 
  "Provide instruction on how the cloze activity should be \ncompleted. Default text will be entered if there are no changes to this field.\n": "Nikeza iziyalezo zokuthi umsebenzi ovalekile wenziwe \nkanjani. Okubhaliwe okuhleliwe kuyofakwa uma kungekho shintsho kulesi sikhala.\n", 
  ". Please use ASCII names.": ". Ucelwa ukuba usebenzise amagama e-ASCII.", 
- "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "&lt;p&gt;Faka okubhaliwe komsebenzi ovalekile esikhaleni sokuvalekile \nngokunamathisela okubhaliwe kusuka komunye umthombo noma ngokuthayipha ngokuqondile \nesikhaleni.&lt;\/p&gt;&lt;p&gt;Ukukhetha amagama azofihlwa, cindezela kabili egameni ukulikhetha bese \nucindezela inkinobho Fihla\/Bonisa Igama ngezansi.&lt;\/p&gt;", 
+ "Allow auto completion when user filling the gaps.": "Vumela ukuqedela ngokuzenzakalelayo uma umsebenzisi egcwalisa izikhala.", 
  "Restart": "Phinduqale", 
  "Add Image": "Faka isithombe", 
  "Reflection": "Umboniso wobunjalo", 
@@ -397,7 +397,6 @@ translations = {
  "Mongolian ": "Mongolian. ", 
  "Left": "Kwesokunxele", 
  "Load": "Layisha", 
- "Allow auto completion when user filling the gaps.": "Vumela ukuqedela ngokuzenzakalelayo uma umsebenzisi egcwalisa izikhala.", 
  "Image Gallery": "Umtapo Wezithombe", 
  "Close": "Vala", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Faka icebiso lapha. Uma\nungathandi ukunikeza icebiso, shiya lesi sikhala singenalutho.", 

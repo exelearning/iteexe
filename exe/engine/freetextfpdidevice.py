@@ -33,7 +33,7 @@ class FreeTextfpdIdevice(Idevice):
     """
     FreeTextIdevice: just has a block of text
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
 
     def __init__(self, content=""):
         Idevice.__init__(self, x_(u"FPD - Free Text"), 
@@ -158,6 +158,11 @@ x_(u"This is a free text field general learning content can be entered."),
         """
         self.content.idevice = self
    
+    def upgradeToVersion8(self):
+        if self._title == u"FPD - Texto Libre":
+            self._title = u"FPD - Free Text"
+        if self._title == u"Texto Libre":
+            self._title = u"Free Text"
    
 # ===========================================================================
 
