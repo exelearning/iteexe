@@ -6881,7 +6881,7 @@ msgstr "entorn real"
 
 #: exe/jsui/scripts/lomvocab.js:1212
 msgid "home"
-msgstr "casa"
+msgstr "domicili"
 
 #: exe/jsui/scripts/lomvocab.js:1224 exe/jsui/scripts/lomvocab.js:1564
 msgid "family"
@@ -6901,17 +6901,15 @@ msgstr "independent"
 
 #: exe/jsui/scripts/lomvocab.js:1240
 msgid "blended"
-msgstr "semipresencial"
+msgstr "assistència mixta"
 
 #: exe/jsui/scripts/lomvocab.js:1244
-#, fuzzy
 msgid "presencial"
-msgstr "representa"
+msgstr "presencial"
 
 #: exe/jsui/scripts/lomvocab.js:1248
-#, fuzzy
 msgid "face to face"
-msgstr "cara a cara"
+msgstr "semipresencial"
 
 #: exe/jsui/scripts/lomvocab.js:1252
 msgid "distance"
