@@ -33,7 +33,6 @@ from exe.engine.path               import Path, TempDirPath
 from exe.engine.version            import release
 from exe.export.pages              import Page, uniquifyNames
 from exe                      	   import globals as G
-from exe.engine.beautifulsoup      import BeautifulSoup
 
 log = logging.getLogger(__name__)
 
@@ -340,15 +339,15 @@ class Epub3Page(Page):
                     log.critical("Unable to render iDevice.")
                     raise Error("Unable to render iDevice.")
                 if hasattr(idevice, "isQuiz"):
-                    html += unicode(BeautifulSoup(block.renderJavascriptForWeb(), convertEntities=BeautifulSoup.XHTML_ENTITIES))
+                    html += block.renderJavascriptForWeb()
                 if idevice.title != "Forum Discussion":
-                    html += unicode(BeautifulSoup(self.processInternalLinks(
-                        block.renderView(self.node.package.style)), convertEntities=BeautifulSoup.XHTML_ENTITIES))
+                    html += self.processInternalLinks(
+                        block.renderView(self.node.package.style))
             html += u'</' + articleTag + '>' + lb  # iDevice div
 
         html += u"</" + sectionTag + ">" + lb  # /#main
         html += self.renderLicense()
-        html += unicode(BeautifulSoup(self.renderFooter(), convertEntities=BeautifulSoup.XHTML_ENTITIES))
+        html += self.renderFooter()
         html += u"</div>" + lb  # /#outer
         if style.hasValidConfig:
             html += style.get_extra_body()
