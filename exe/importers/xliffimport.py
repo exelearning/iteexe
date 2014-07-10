@@ -36,7 +36,7 @@ class XliffImport(object):
 
         from exe.engine.beautifulsoup import BeautifulSoup
         fp = open(self.filename)
-        bs = BeautifulSoup(fp.read())
+        bs = BeautifulSoup(fp.read().replace(CDATA_BEGIN, "").replace(CDATA_END, ""))
         fp.close()
         
         for transunit in bs.findAll('trans-unit'):
@@ -65,11 +65,11 @@ class XliffImport(object):
                 log.debug('Title set for: %s' % item_id)
             else:
                 # It's a field
-                field.content_w_resourcePaths = u' '.join([unicode(u) for u in tar.contents])\
-.replace(CDATA_BEGIN, "").replace(CDATA_END, "")
+                field.content_w_resourcePaths = u' '.join([unicode(u) for u in tar.contents])
                 field.TwistedRePersist()
                 log.debug('Content set for: %s' % item_id)
 
+            self.package.isChanged = True
             ## Just in case we need XML parser...
             ##
             ## from lxml import etree

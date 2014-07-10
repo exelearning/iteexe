@@ -644,10 +644,22 @@ class ScormExport(object):
         if hasattr(package, 'scowsinglepage') and package.scowsinglepage:
             page = SinglePage("singlepage_index", 1, package.root)
             page.save(outputDir/"singlepage_index.html")
+            # Incluide eXe's icon if the Style doesn't have one
+            themePath = Path(G.application.config.stylesDir/package.style)
+            themeFavicon = themePath.joinpath("favicon.ico")
+            if not themeFavicon.exists():
+                faviconFile = (self.imagesDir/'favicon.ico')
+                faviconFile.copyfile(outputDir/'favicon.ico')
         if hasattr(package, 'scowwebsite') and package.scowwebsite:
             website = WebsiteExport(self.config, self.styleDir, outputDir, "website_")
             website.export(package)
             (self.styleDir/'nav.css').copyfile(outputDir/'nav.css')
+            # Incluide eXe's icon if the Style doesn't have one
+            themePath = Path(G.application.config.stylesDir/package.style)
+            themeFavicon = themePath.joinpath("favicon.ico")
+            if not themeFavicon.exists():
+                faviconFile = (self.imagesDir/'favicon.ico')
+                faviconFile.copyfile(outputDir/'favicon.ico')
         if hasattr(package, 'exportSource') and package.exportSource:
             (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
             (outputDir/'content.data').write_bytes(encodeObject(package))

@@ -34,9 +34,17 @@ from exe.engine.version            import release
 from exe.export.pages              import Page, uniquifyNames
 from exe                      	   import globals as G
 from exe.engine.beautifulsoup      import BeautifulSoup
+from htmlentitydefs                import name2codepoint
 
 log = logging.getLogger(__name__)
 
+name2codepoint.pop('amp')
+name2codepoint.pop('lt')
+name2codepoint.pop('gt')
+
+def htmlentitydecode(s):
+    return re.sub('&(%s);' % '|'.join(name2codepoint),
+            lambda m: unichr(name2codepoint[m.group(1)]), s)
 
 # ===========================================================================
 class PublicationEpub3(object):
@@ -340,10 +348,10 @@ class Epub3Page(Page):
                     log.critical("Unable to render iDevice.")
                     raise Error("Unable to render iDevice.")
                 if hasattr(idevice, "isQuiz"):
-                    html += unicode(BeautifulSoup(block.renderJavascriptForWeb(), convertEntities=BeautifulSoup.XHTML_ENTITIES))
+                    html += htmlentitydecode(block.renderJavascriptForWeb())
                 if idevice.title != "Forum Discussion":
-                    html += unicode(BeautifulSoup(self.processInternalLinks(
-                        block.renderView(self.node.package.style)), convertEntities=BeautifulSoup.XHTML_ENTITIES))
+                    html += htmlentitydecode(self.processInternalLinks(
+                        block.renderView(self.node.package.style)))
             html += u'</' + articleTag + '>' + lb  # iDevice div
 
         html += u"</" + sectionTag + ">" + lb  # /#main

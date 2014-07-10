@@ -104,6 +104,7 @@ def clear_fieldResourcesFromIdevice(idevice):
 
 class Checker:
     def __init__(self, package, clear=True):
+        log.info('****** Checking package at %s ******' % package.filename)
         self.package = package
         from exe.engine.package import Package
         self.tmppackage = Package('temp')
