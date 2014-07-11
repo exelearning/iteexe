@@ -34,6 +34,8 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .pre-code{background:#112C4A;color:#E7ECF1;font-family:Monaco,Courier,monospace;border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
 .iDevice_content{position:relative;max-width:100%}
 .iDevice_header{background-position:0 50%;background-repeat:no-repeat}
+.exe-dl dt{font-size:1.1em;font-weight:bold}
+.exe-dl dd{margin:1em 1.5em}
 /* TinyMCE: Images and media */
 .exe-figure{margin:1.5em 0;max-width:100%}
 .position-center{margin:1.5em auto}
@@ -79,3 +81,6 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .sr-av,.js .js-sr-av,#skipNav a{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0} /* sr-av: Avaible for Screen Readers */
 #skipNav a{background:#333;color:#fff;padding:.4em .85em} /* clip:rect(0 0 0 0) is for IE6 & 7 */
 #skipNav a:active,#skipNav a:focus{position:static;overflow:visible;clip:auto;height:auto}
+/* Tooltips */
+body .qtip {font-size:.85em;line-height:1.5em}
+.js .exe-tooltip-text{display:none}

@@ -219,12 +219,13 @@ class WebsiteExport(object):
         isBreak           = False
         hasInstructions   = False
         hasMediaelement   = False
+        hasTooltips       = False
         
         for page in self.pages:
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -246,6 +247,8 @@ class WebsiteExport(object):
                         hasInstructions = True
                 if not hasMediaelement:
                     hasMediaelement = common.ideviceHasMediaelement(idevice)
+                if not hasTooltips:
+                    hasTooltips = common.ideviceHasTooltips(idevice)
 
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -277,6 +280,9 @@ class WebsiteExport(object):
             if dT != "HTML5":
                 jsFile = (self.scriptsDir/'exe_html5.js')
                 jsFile.copyfile(outputDir/'exe_html5.js')
+        if hasTooltips:
+            exe_tooltips = (self.scriptsDir/'exe_tooltips')
+            exe_tooltips.copyfiles(outputDir)
 
         if hasattr(package, 'exportSource') and package.exportSource:
             (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')

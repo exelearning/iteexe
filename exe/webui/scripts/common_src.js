@@ -1415,7 +1415,11 @@ var $exe = {
         }
         $exe.hint.init();
         $exe.setIframesProtocol();
+		$exe.hasTooltips();
     },
+	hasTooltips : function(){
+		if ($("A.exe-tooltip").length>0) $exe.loadScript("exe_tooltips.js","$exe.tooltips.init()");
+	},
     addRoles : function(){
         $('#header').attr('role','banner'); 
         $('#siteNav').attr('role','navigation'); 

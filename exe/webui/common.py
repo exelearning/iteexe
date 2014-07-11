@@ -960,3 +960,20 @@ def nodeHasMediaelement(node):
         if ideviceHasMediaelement(idevice):
             return True
     return False
+    
+def ideviceHasTooltips(idevice):
+    block = g_blockFactory.createBlock(None, idevice)
+    if not block:
+        log.critical("Unable to render iDevice.")
+        raise Error("Unable to render iDevice.")
+    content = block.renderView('default')
+    if re.search('<a .*class=[\'"]exe-tooltip ', content):
+        return True
+    return False
+
+
+def nodeHasTooltips(node):
+    for idevice in node.idevices:
+        if ideviceHasTooltips(idevice):
+            return True
+    return False
