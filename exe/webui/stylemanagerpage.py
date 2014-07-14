@@ -17,6 +17,7 @@ from exe.webui.renderable      import RenderableResource
 from exe.engine.path           import Path, toUnicode, TempDirPath
 from exe.engine.style          import Style
 from urllib                    import unquote, urlretrieve
+from urlparse                  import urlparse, urlsplit
 import locale
 import base64
 
@@ -96,6 +97,8 @@ class StyleManagerPage(RenderableResource):
             self.doStylesRepository()
         elif (request.args['action'][0] == 'doStyleImportURL'):
             self.doStyleImportURL(request.args['style_import_url'][0])
+        elif (request.args['action'][0] == 'doStyleImportRepository'):
+            self.doStyleImportRepository(request.args['style_name'][0])
         elif (request.args['action'][0] == 'doList'):
             self.doList()
         #return self.render_GET(None)
@@ -132,51 +135,38 @@ class StyleManagerPage(RenderableResource):
     
     def doImportStyle(self, filename):
         """
-        Imports a style from a ZIP file
-        Checks its validity: contains a contents.css file,
-        target directory does not exist (avoid overwritting) and,
-        if the style has a config.xml file, that the name is not
-        already registered in eXe
-        ----
         Importa un estilo desde un fichero ZIP
         Comprueba si es un estilo valido (contiene content.css), 
             si el directorio no existe (para no machacar)
             y si tiene config.xml que el nombre no exista ya.
         """
-        stylesDir    = self.config.stylesDir
+        styleDir    = self.config.stylesDir
         log.debug("Import style from %s" % filename)
-        # filename does not necessarily match the style directory name, it can be
-        # a temporary filename (i.e. ZIP programmatically downloaded from URL to temp dir).
-        # To get the style directory name we must inspect the Zip file and
-        # check the name of the first element in the list of packaged files,
-        # which would be the directory that holds the other files
-        filename=filename.decode('utf-8')
+        filename=filename.decode('utf-8')       
+        BaseFile=os.path.basename(filename)
+        targetDir=BaseFile[0:-4:]
+        absoluteTargetDir=styleDir/targetDir 
         try:
-            sourceZip = ZipFile(filename ,  'r')
+            sourceZip = ZipFile( filename ,  'r')
         except IOError:
             self.alert(_(u'Error'), _(u'File %s does not exist or is not readable.') % filename)
             return None
-        
-        styleBaseDir = sourceZip.filelist[0].filename
-        targetDir = stylesDir/styleBaseDir
-        if os.path.isdir(targetDir):
-            self.alert(_(u'Error'), _(u'Style target directory already exists: %s') % targetDir)
+        if os.path.isdir(absoluteTargetDir):
+            self.alert(_(u'Error'), _(u'Style directory already exists: %s') % targetDir)
         else:
+            os.mkdir(absoluteTargetDir)
             for name in sourceZip.namelist():
-                # Extract the files right into the styles directory
-                # All the zipped files must be contained in a single directory, wich
-                # will be created now, on extracting the first element of the ZIP file
-                sourceZip.extract(name, stylesDir)
+                sourceZip.extract(name, absoluteTargetDir )
             sourceZip.close() 
-            style = Style(targetDir)
+            style = Style(absoluteTargetDir)
             if style.isValid(): 
                 if not self.config.styleStore.addStyle(style):
-                    targetDir.rmtree()
+                    absoluteTargetDir.rmtree()
                     self.alert(_(u'Error'), _(u'The style name already exists: %s') % style.get_name())
                 else:         
                     self.alert(_(u'Success'), _(u'Successfully imported style: %s') % style.get_name())  
             else:
-                targetDir.rmtree()
+                absoluteTargetDir.rmtree()
                 self.alert(_(u'Error'), _(u'Incorrect style format (does not include content.css)'))
         self.action = ""
         
@@ -208,16 +198,56 @@ class StyleManagerPage(RenderableResource):
             try:
                 log.debug(filename)
                 self.doImportStyle(filename)
+                self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ')')
                 self.client.sendScript('Ext.MessageBox.updateProgress(1, "100%", "Success!")')
             finally:
                 Path(filename).remove()
+            
+        def errorDownload(value):
+            log.debug("Error when downloading style from %s" % url)
+            self.rep_styles = []
+            self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ')')
+            self.alert(_(u'Error'), _(u'Error when downloading style from repository'))
                 
         log.debug("Download style from %s" % url)
-        self.action = "StylesRepository"
+        
+        # urlparse() returns a tuple, which elements are:
+        #  0: schema -> http
+        #  1: netloc -> exelearning.net
+        #  2: path   -> path/to/file.zip
+        url_parts = urlsplit(url)
+        if (not url_parts[0]) or (not url_parts[1]) or (not url_parts[2]):
+            self.alert(_(u'Error'), _(u'URL not valid. '))
+            
+        path_splited = url_parts[2].split('/')
+        filename = path_splited[-1]
+        filename_parts = filename.split('.')
+        if (filename_parts[-1].lower() != 'zip') :
+            self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ')')
+            self.alert(_(u'Error'), _(u'URL not valid. '))
+            self.action = 'StylesRepository'
+            return;
+        
         self.client.sendScript('Ext.MessageBox.progress("Style Download", "Connecting to style URL...")')
         
-        d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, self.client))
-        d.addCallback(successDownload)
+        # Downloaded ZIP file must have the same name than the remote file, 
+        # otherwise file would be saved to a random temporary name, that   
+        # 'doImportStyle' would use as style target directory
+        d = threads.deferToThread(urlretrieve, url, filename, lambda n, b, f: self.progressDownload(n, b, f, self.client))
+        d.addCallbacks(successDownload, errorDownload)
+        
+        self.action = 'StylesRepository'
+        
+    def doStyleImportRepository(self, style_name):
+        """
+        Download style from repository and import into styles directory
+        """     
+        url = ''
+        for style in self.rep_styles :
+            if style.get('name', 'not found') == style_name :
+                url = style.get('download_url', '')
+                self.doStyleImportURL(url)
+                break
 
     def doExportStyle(self, stylename, filename,cfgxml):
 

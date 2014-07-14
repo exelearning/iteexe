@@ -49,6 +49,12 @@ Ext.define('eXe.controller.StyleManager', {
                     this.triggerDeleteStyle(element);
                 }
             },
+            // There is an 'Import style' button for each style in the repository styles list
+            'button[button_class=repository_style_import]' : {
+                click: function(element, record, item, index, e, eOpts) {
+                    this.triggerImportRepositoryStyle(element);
+                }
+            },
         });
     },
     
@@ -220,6 +226,34 @@ Ext.define('eXe.controller.StyleManager', {
                         }
                     });
                 }
+            }
+        });
+    },
+
+    /**
+     * Set 'action' and 'style' fields values and submit form
+     * 
+     * @param button  Clicked button, its value is the name of the repository style to be imported
+     */
+    triggerImportRepositoryStyle: function(button) {
+        // Set 'action' field value to 'doStyleImportRepository',
+        // 'style_name' to the clicked style and submit form to server
+        var formpanel = button.up('form');
+        var form = formpanel.getForm();
+        console.log(form);
+        var action = form.findField('action');
+        console.log(action);
+        var style_name = form.findField('style_name');
+        console.log(style_name);
+        
+        action.setValue('doStyleImportRepository');
+        style_name.setValue(button.value);
+        form.submit({
+            success: function() {
+                //formpanel.reload();
+            },
+            failure: function(form, action) {
+                Ext.Msg.alert(_('Error'), action.result.errorMessage);
             }
         });
     },

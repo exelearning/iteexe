@@ -331,62 +331,164 @@ function createPanelProperties(properties, stylen,mode,withbutton) {
     return panel;
 }
 
-function createPanelStylesRepository(rep_styles) {
-    // rep_styles could be empty or not present
-    rep_styles = typeof rep_styles !== 'undefined' ? rep_styles : [];
+/**
+ * Create the panel that renders the info of a Style in the repository
+ * 
+ * @param style  Object with the style data as loaded from repository
+ * 
+ * @returns Object, valid to be used in the items list of the accordion container 
+ */
+function createPanelRepositoryStyle(style) {
+    var i; 
+    var tagsHtml, coloursHtml;
+    
+    var stylePanel = { 
+        itemId: style.name,
+        name: style.name,
+        id: style.name,
+        title: style.title['und'],
+        xtype: 'panel',
+        cls: 'repository-style',
+        layout: {
+            type: 'vbox',
+            align: 'stretch'
+        },
+        items: [
+            {html: style.description['und']}
+        ]
+    };
+    
+    if (style.author.trim() && style.author.length > 0) {
+        if (style.author_url.trim() && style.author_url.length > 0) {
+            authorLink = '<div class="repository-style-author">' + _('Author') + ': <a href="' + style.author_url + '" target="_blank">' + style.author + '</a></div>';
+            stylePanel.items.push({html: authorLink});
+        }
+        else {
+            author = '<div class="repository-style-author">' + _('Author') + ': ' + style.author + '</div>';
+            stylePanel.items.push({html: author});
+        }
+    }
+    
+    licenseLink = '<div class="repository-style-license">' + _('License') + ': <a href="' + style.license_url + '" target="_blank">' + style.license + '</a></div>';
+    stylePanel.items.push({html: licenseLink});
+    
+    if (style.tags.length >= 1) {
+        tagsHtml = '';
+        for (i = 0; i <= style.tags.length-1; i++) {
+            tagsHtml += '<li>' + style.tags[i].title['und'] + '</li>';
+        }
+        tagsHtml = '<ul>' + tagsHtml + '</ul>';
+        
+        stylePanel.items.push({html: tagsHtml});
+    }
+    
+    if (style.colours.length >= 1) {
+        coloursHtml = '';
+        for (i = 0; i <= style.colours.length-1; i++) {
+            coloursHtml += '<li>' + style.colours[i].title['und'] + '</li>';
+        }
+        coloursHtml = '<ul>' + coloursHtml + '</ul>';
+        
+        stylePanel.items.push({html: coloursHtml});
+    }
+
+    readMoreLink = '<div class="repository-style-read-more"><a href="' + style.link_url + '" target="_blank">' + _('Read more') + '</a></div>';
+    stylePanel.items.push({html: readMoreLink});
+    
+    importButton = {
+        xtype: 'button',
+        text: _('Import style'),
+        tooltip: _('Download style from repository and import into system.'),
+        itemId: 'repository_style_import_' + style.name,
+        name: 'repository_style_import_' + style.name,
+        button_class: 'repository_style_import',
+        value: style.name,
+        icon: '/images/stock-import.png',
+        style:'float:left',
+        margin: 3,
+    };
+    stylePanel.items.push(importButton);
+    
+    var style_name =
+    { 
+        xtype: 'field',
+        hidden: true,
+        itemId: 'style_name',
+        name: 'style_name'
+    };
+    stylePanel.items.push(style_name);
+    
+    return stylePanel;
+}
+
+
+/**
+ * Create the panel that renders the form to import style from URL
+ * 
+ * @returns Object, valid to be used in the items list of the accordion container 
+ */
+function createImportStyleUrlPanel() {
+    var panel = {
+        title: _("Import style from custom URL"),
+        itemId: 'style_import_url_container',
+        xtype: 'panel',
+        height: 60,
+        layout: {
+            type: 'hbox',
+            align: 'stretch'
+        },
+        cls: 'import-style-url',
+        items: [
+            { 
+                xtype: 'textfield',
+                itemId: 'style_import_url',
+                name: 'style_import_url',
+                fieldLabel: _('URL'),
+                tooltip: _('URL to download the style from.'),
+                margin: 3,
+            },
+            {
+                xtype: 'button',
+                text: _('Import Style from URL'),
+                tooltip: _('Download style from URL and import into system.'),
+                itemId: 'style_import_from_url',
+                name: 'style_import_from_url',
+                icon: '/images/stock-import.png',
+                style:'float:left;',
+                margin: 3,
+            }
+        ]
+    };
+        
+    return panel;
+}
+
+function createPanelRepositoryStyles(repositoryStyles) {
+    // repositoryStyles could be empty or not present
+    repositoryStyles = typeof repositoryStyles !== 'undefined' ? repositoryStyles : [];
     
     var i;
 
-    var titleStylesList =_("Download style from URL");
+    var titleStylesList =_("Check and install styles in the repository");
     var itemsStylesList = [];
-    for (i = rep_styles.length-1; i >= 0; i--) {
-        //item = Ext.create('Ext.menu.CheckItem', { text: styles[i].label, itemId: styles[i].style, checked: styles[i].selected });
-        itemsStylesList[i] = 
-        { 
-            itemId: rep_styles[i].name,
-            name: rep_styles[i].name,
-            id: rep_styles[i].name,
-            title: rep_styles[i].title['und'],
-            xtype: 'container',
-            layout: 'vbox',
-            html: rep_styles[i].description['und'],
-        };
+    
+    // Build the list of items in the accordion, one panel per style
+    for (i = repositoryStyles.length-1; i >= 0; i--) {
+        itemsStylesList[i] = createPanelRepositoryStyle(repositoryStyles[i]);
     }
     
-    var titleImportStyle=_("Download style from URL");
-    var itemsImportStyle = [
-        { 
-            xtype: 'textfield',
-            itemId: 'style_import_url',
-            name: 'style_import_url',
-            fieldLabel: _('URL'),
-            tooltip: _('URL to download the style from.'),
-        },
-        {
-            xtype: 'button',
-            text: _('Import Style from URL'),
-            tooltip: _('Download style from URL and import into system.'),
-            itemId: 'style_import_from_url',
-            name: 'style_import_from_url',
-            icon: '/images/stock-import.png',
-            style:'float:left;',
-            margin: 10,
-        },
-    ];
+    // Add fieldset to import from custom URL as the last panel in the accordion
+    var importStyle = createImportStyleUrlPanel();
+    itemsStylesList.push(importStyle);
 
     panel = [
         {
             xtype: 'container',
             layout: 'accordion',
             name: 'rep_styles_list',
+            cls: 'repository-styles-list',
             title: titleStylesList,
-            items: itemsStylesList,
-        },
-        {
-            xtype: 'fieldset',
-            title: titleImportStyle,
-            margin: 10,
-            items: itemsImportStyle,
+            items: itemsStylesList
         },
         {
             xtype: 'button',
@@ -395,8 +497,8 @@ function createPanelStylesRepository(rep_styles) {
             icon: '/images/stock-go-back.png',
             itemId: 'return_styles_list',
             name: 'return_styles_list',
-            margin: 10,
-        },
+            margin: 10
+        }
     ];
     
     return panel;
@@ -428,7 +530,7 @@ function createPanel() {
                 panel = createPanelProperties(json.properties, json.style,true,true);
             }
             else if (json.action == 'StylesRepository') {
-                panel = createPanelStylesRepository(json.rep_styles);
+                panel = createPanelRepositoryStyles(json.rep_styles);
             }
             else {
                 panel = createPanelStyles(json.styles);
@@ -487,10 +589,19 @@ Ext.define('eXe.view.forms.StyleManagerPanel', {
         var me = Ext.getCmp("stylemanagerwin").down("form");
         var stylemanager = Ext.getCmp("stylemanagerwin");
         var formpanel = stylemanager.down('form');
-        var panel = createPanelStylesRepository(rep_styles);
+        var panel = createPanelRepositoryStyles(rep_styles);
+        var action =
+        { 
+            xtype: 'field',
+            hidden: true,
+            itemId: 'action',
+            name: 'action',
+            value: '',
+        };
+        panel.push(action);
         
         formpanel.removeAll(false);
         formpanel.add(panel);
         me.doLayout(); 
-    },
+    }
 });
