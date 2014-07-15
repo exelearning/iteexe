@@ -334,13 +334,21 @@ function createPanelProperties(properties, stylen,mode,withbutton) {
 /**
  * Create the panel that renders the info of a Style in the repository
  * 
- * @param style  Object with the style data as loaded from repository
+ * @param style             Object with the style data as loaded from repository
+ * @param activeStyle       String, name of the expanded style
  * 
  * @returns Object, valid to be used in the items list of the accordion container 
  */
-function createPanelRepositoryStyle(style) {
+function createPanelRepositoryStyle(style, activeStyle) {
+    activeStyle = typeof activeStyle !== 'undefined' ? activeStyle : '';
+    
     var i; 
     var tagsHtml, coloursHtml;
+    var expandPanel = false;
+    
+    if (activeStyle != '' && activeStyle.toLowerCase() == style.name.toLowerCase()) {
+        expandPanel = true;
+    }
     
     var stylePanel = { 
         itemId: style.name,
@@ -349,6 +357,7 @@ function createPanelRepositoryStyle(style) {
         title: style.title['und'],
         xtype: 'panel',
         cls: 'repository-style',
+        collapsed: !expandPanel,
         layout: {
             type: 'vbox',
             align: 'stretch'
@@ -409,15 +418,6 @@ function createPanelRepositoryStyle(style) {
     };
     stylePanel.items.push(importButton);
     
-    var style_name =
-    { 
-        xtype: 'field',
-        hidden: true,
-        itemId: 'style_name',
-        name: 'style_name'
-    };
-    stylePanel.items.push(style_name);
-    
     return stylePanel;
 }
 
@@ -425,12 +425,23 @@ function createPanelRepositoryStyle(style) {
 /**
  * Create the panel that renders the form to import style from URL
  * 
+ * @param activeStyle       String, name of the expanded style
+ * 
  * @returns Object, valid to be used in the items list of the accordion container 
  */
-function createImportStyleUrlPanel() {
+function createImportStyleUrlPanel(activeStyle) {
+    activeStyle = typeof activeStyle !== 'undefined' ? activeStyle : '';
+    
+    // Expand last panel, unless some style has been selected as active
+    var expandPanel = true;
+    if (activeStyle != '') {
+        expandPanel = false;
+    }
+    
     var panel = {
         title: _("Import style from custom URL"),
         itemId: 'style_import_url_container',
+        collapsed: !expandPanel,
         xtype: 'panel',
         height: 60,
         layout: {
@@ -463,9 +474,18 @@ function createImportStyleUrlPanel() {
     return panel;
 }
 
-function createPanelRepositoryStyles(repositoryStyles) {
+/**
+ * Renders accordion panels that displays the styles repository list, one panel per style
+ *  
+ * @param repositoryStyles  Array, list of repository styles
+ * @param activeStyle       String, name of the expanded style
+ * 
+ * @returns  Array of objects with the structure of the accordion panels to display the styles repository list
+ */
+function createPanelRepositoryStyles(repositoryStyles, activeStyle) {
     // repositoryStyles could be empty or not present
     repositoryStyles = typeof repositoryStyles !== 'undefined' ? repositoryStyles : [];
+    activeStyle = typeof activeStyle !== 'undefined' ? activeStyle : '';
     
     var i;
 
@@ -474,7 +494,7 @@ function createPanelRepositoryStyles(repositoryStyles) {
     
     // Build the list of items in the accordion, one panel per style
     for (i = repositoryStyles.length-1; i >= 0; i--) {
-        itemsStylesList[i] = createPanelRepositoryStyle(repositoryStyles[i]);
+        itemsStylesList[i] = createPanelRepositoryStyle(repositoryStyles[i], activeStyle);
     }
     
     // Add fieldset to import from custom URL as the last panel in the accordion
@@ -500,6 +520,15 @@ function createPanelRepositoryStyles(repositoryStyles) {
             margin: 10
         }
     ];
+    
+    var styleName =
+    { 
+        xtype: 'field',
+        hidden: true,
+        itemId: 'style_name',
+        name: 'style_name'
+    };
+    panel.push(styleName);
     
     return panel;
 }
@@ -530,7 +559,7 @@ function createPanel() {
                 panel = createPanelProperties(json.properties, json.style,true,true);
             }
             else if (json.action == 'StylesRepository') {
-                panel = createPanelRepositoryStyles(json.rep_styles);
+                panel = createPanelRepositoryStyles(json.rep_styles, json.active_style);
             }
             else {
                 panel = createPanelStyles(json.styles);
@@ -571,7 +600,7 @@ Ext.define('eXe.view.forms.StyleManagerPanel', {
             items: panel        
         });
         me.callParent(arguments);
-        me.doLayout();        
+        me.doLayout();
     },
     
     reload: function(action) {
@@ -585,11 +614,11 @@ Ext.define('eXe.view.forms.StyleManagerPanel', {
         me.doLayout();
     },
     
-    refreshStylesList: function(rep_styles) {    
+    refreshStylesList: function(repStyles, activeStyle) {    
         var me = Ext.getCmp("stylemanagerwin").down("form");
         var stylemanager = Ext.getCmp("stylemanagerwin");
         var formpanel = stylemanager.down('form');
-        var panel = createPanelRepositoryStyles(rep_styles);
+        var panel = createPanelRepositoryStyles(repStyles, activeStyle);
         var action =
         { 
             xtype: 'field',

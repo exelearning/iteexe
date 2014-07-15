@@ -189,7 +189,7 @@ class StyleManagerPage(RenderableResource):
         
         self.action = 'StylesRepository'
         
-    def doStyleImportURL(self, url):
+    def doStyleImportURL(self, url, style_name = ''):
         """
         Download style from url and import into styles directory
         """
@@ -198,15 +198,15 @@ class StyleManagerPage(RenderableResource):
             try:
                 log.debug(filename)
                 self.doImportStyle(filename)
-                self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ')')
-                self.client.sendScript('Ext.MessageBox.updateProgress(1, "100%", "Success!")')
+                self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ', \'' + style_name + '\')')
+                self.alert(_(u'Success'), _(u'Style successfully downloaded and installed'))
             finally:
                 Path(filename).remove()
             
         def errorDownload(value):
             log.debug("Error when downloading style from %s" % url)
             self.rep_styles = []
-            self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ')')
+            self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ', \'' + style_name + '\')')
             self.alert(_(u'Error'), _(u'Error when downloading style from repository'))
                 
         log.debug("Download style from %s" % url)
@@ -223,7 +223,7 @@ class StyleManagerPage(RenderableResource):
         filename = path_splited[-1]
         filename_parts = filename.split('.')
         if (filename_parts[-1].lower() != 'zip') :
-            self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ')')
+            self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ', \'' + style_name + '\')')
             self.alert(_(u'Error'), _(u'URL not valid. '))
             self.action = 'StylesRepository'
             return;
@@ -246,7 +246,7 @@ class StyleManagerPage(RenderableResource):
         for style in self.rep_styles :
             if style.get('name', 'not found') == style_name :
                 url = style.get('download_url', '')
-                self.doStyleImportURL(url)
+                self.doStyleImportURL(url, style_name)
                 break
 
     def doExportStyle(self, stylename, filename,cfgxml):

@@ -240,11 +240,8 @@ Ext.define('eXe.controller.StyleManager', {
         // 'style_name' to the clicked style and submit form to server
         var formpanel = button.up('form');
         var form = formpanel.getForm();
-        console.log(form);
         var action = form.findField('action');
-        console.log(action);
         var style_name = form.findField('style_name');
-        console.log(style_name);
         
         action.setValue('doStyleImportRepository');
         style_name.setValue(button.value);
