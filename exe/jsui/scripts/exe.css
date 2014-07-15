@@ -44,6 +44,17 @@ fieldset.collapsed-with-data > legend > div, fieldset.collapsed-with-data > lege
 #stylemanagerwin .repository-style {
   text-align: center;
 }
+/* Expanded panels, header background matching content background (white) and bigger title */
+#stylemanagerwin :not(.x-panel-collapsed).import-style-url .x-panel-header,
+#stylemanagerwin :not(.x-panel-collapsed).repository-style .x-panel-header {
+  background-color: #ffffff !important;
+  border-bottom: none;
+  font-weight: bold;
+}
+#stylemanagerwin :not(.x-panel-collapsed).repository-style .x-accordion-hd.x-panel-header .x-panel-header-text {
+  font-weight: bold;
+  font-size: 1.2em;
+}
 #stylemanagerwin .repository-style .x-panel-body {
 	border: none;
 }
