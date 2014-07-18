@@ -67,9 +67,10 @@ class CmdlineExporter(object):
                     outputf = inputf + self.extensions[self.options["export"]]
             outputfp = Path(outputf)
             if outputfp.exists() and not self.options["overwrite"]:
-                error = _(u'"%s" already exists.\nPlease try again \
+                if self.options.x != 'report':
+                    error = _(u'"%s" already exists.\nPlease try again \
 with a different filename') % outputf
-                raise Exception(error.encode(sys.stdout.encoding))
+                    raise Exception(error.encode(sys.stdout.encoding))
             else:
                 if outputfp.exists() and self.options["overwrite"]:
                     if outputfp.isdir():
