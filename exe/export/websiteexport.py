@@ -107,7 +107,9 @@ class WebsiteExport(object):
         zipped.close()
 
     def appendPageReport(self, page):
+        if not page.node.idevices:self.report += u'"%s",%d,"%s",,,,,,\n' % (page.node.title, page.depth, page.name + '.html')
         for idevice in page.node.idevices:
+            if not idevice.userResources:self.report += u'"%s",%d,"%s","%s","%s",,,,\n' % (page.node.title, page.depth, page.name + '.html', idevice.klass, idevice.title)
             for resource in idevice.userResources:
                 if type(resource) == Resource:
                     self.report += u'"%s",%d,"%s","%s","%s","%s","%s","%s","%s"\n' % (page.node.title, page.depth, page.name + '.html', idevice.klass, idevice.title, resource.storageName, resource.userName, resource.path, resource.checksum)

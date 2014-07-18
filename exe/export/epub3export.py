@@ -41,6 +41,7 @@ log = logging.getLogger(__name__)
 name2codepoint.pop('amp')
 name2codepoint.pop('lt')
 name2codepoint.pop('gt')
+name2codepoint.pop('quot')
 
 def htmlentitydecode(s):
     return re.sub('&(%s);' % '|'.join(name2codepoint),
@@ -374,7 +375,7 @@ class Epub3Page(Page):
         html = html.replace("application/x-mplayer2\" data=\"resources/", "application/x-mplayer2\" data=\"")
         html = html.replace("audio/x-pn-realaudio-plugin\" data=\"resources/", "audio/x-pn-realaudio-plugin\" data=\"")
         html = html.replace("<param name=\"url\" value=\"resources/", "<param name=\"url\" value=\"")
-        
+
         common.setExportDocType(old_dT)
         return html
 
@@ -627,7 +628,7 @@ class Epub3Export(object):
         pageName = re.sub(r"\W", "", pageName)
         if not pageName:
             pageName = u"__"
-            
+
         if pageName[0] in [unicode(i) for i in range(0, 10)]:
             pageName = u'_' + pageName
 
