@@ -67,10 +67,9 @@ class CmdlineExporter(object):
                     outputf = inputf + self.extensions[self.options["export"]]
             outputfp = Path(outputf)
             if outputfp.exists() and not self.options["overwrite"]:
-                if self.options["export"] != 'report':
-                    error = _(u'"%s" already exists.\nPlease try again \
+                error = _(u'"%s" already exists.\nPlease try again \
 with a different filename') % outputf
-                    raise Exception(error.encode(sys.stdout.encoding))
+                raise Exception(error.encode(sys.stdout.encoding))
             else:
                 if outputfp.exists() and self.options["overwrite"]:
                     if outputfp.isdir():
@@ -92,6 +91,7 @@ with a different filename') % outputf
         else:
             raise Exception(_(u"Export format not implemented")\
 .encode(sys.stdout.encoding))
+
 
     def export_xml(self, pkg, outputf):
         open(outputf, "w").write(encodeObjectToXML(pkg))
