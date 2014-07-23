@@ -395,8 +395,12 @@ class MainPage(RenderableLivePage):
                 log.debug(filename)
                 stylemanager = StyleManagerPage(self)
                 stylemanager.client = client
-                stylemanager.doImportStyle(filename)
-                client.sendScript('Ext.MessageBox.updateProgress(1, "100%", "Success!")')
+                try :
+                    stylemanager.doImportStyle(filename)
+                    client.sendScript('Ext.MessageBox.updateProgress(1, "100%", "Success!")')
+                except Exception, e :
+                    self.alert(_(u'Error'), _(u'Error while installing style: %s') % str(e))
+                
             finally:
                 Path(filename).remove()
 

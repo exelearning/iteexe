@@ -24,6 +24,9 @@ import base64
 
 log = logging.getLogger(__name__)
 
+class ImportStyleError(Exception):
+    pass
+
 
 class StyleManagerPage(RenderableResource):
     """
@@ -88,7 +91,11 @@ class StyleManagerPage(RenderableResource):
         elif (request.args['action'][0] == 'doDelete'):
             self.doDeleteStyle(request.args['style'][0])
         elif (request.args['action'][0] == 'doImport'):
-            self.doImportStyle(request.args['filename'][0])
+            try :
+                self.doImportStyle(request.args['filename'][0])
+                self.alert(_(u'Success'), _(u'Successfully imported style'))
+            except Exception, e :
+                self.alert(_(u'Error'), _(u'Error while installing style: %s') % str(e))
         elif (request.args['action'][0] == 'doProperties'):
             self.doPropertiesStyle(request.args['style'][0])
         elif (request.args['action'][0] == 'doPreExport'):
@@ -149,10 +156,9 @@ class StyleManagerPage(RenderableResource):
         try:
             sourceZip = ZipFile( filename ,  'r')
         except IOError:
-            self.alert(_(u'Error'), _(u'File %s does not exist or is not readable.') % filename)
-            return None
+            raise Exception('Can not create dom object')
         if os.path.isdir(absoluteTargetDir):
-            self.alert(_(u'Error'), _(u'Style directory already exists: %s') % targetDir)
+            raise Exception(u'Style directory already exists')
         else:
             os.mkdir(absoluteTargetDir)
             for name in sourceZip.namelist():
@@ -162,12 +168,13 @@ class StyleManagerPage(RenderableResource):
             if style.isValid(): 
                 if not self.config.styleStore.addStyle(style):
                     absoluteTargetDir.rmtree()
-                    self.alert(_(u'Error'), _(u'The style name already exists: %s') % style.get_name())
-                else:         
-                    self.alert(_(u'Success'), _(u'Successfully imported style: %s') % style.get_name())  
+                    raise Exception(u'The style name already exists')
             else:
                 absoluteTargetDir.rmtree()
-                self.alert(_(u'Error'), _(u'Incorrect style format (does not include content.css)'))
+                raise Exception(u'Incorrect style format (does not include content.css')
+            
+        # If not error was thrown, style was successfully imported
+        # Let the calling function inform the user as appropriate
         self.action = ""
         
     def doStylesRepository(self):
@@ -197,9 +204,13 @@ class StyleManagerPage(RenderableResource):
             filename = result[0]
             try:
                 log.debug(filename)
-                self.doImportStyle(filename)
-                self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ', \'' + style_name + '\')')
-                self.alert(_(u'Success'), _(u'Style successfully downloaded and installed'))
+                try :
+                    self.doImportStyle(filename)
+                    self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ', \'' + style_name + '\')')
+                    self.alert(_(u'Success'), _(u'Style successfully downloaded and installed'))
+                except Exception, e :
+                    self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ', \'' + style_name + '\')')
+                    self.alert(_(u'Error'), _(u'Error while installing style: %s') % str(e))
             finally:
                 Path(filename).remove()
             
