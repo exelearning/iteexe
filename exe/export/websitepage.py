@@ -85,6 +85,8 @@ class WebsitePage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"nav.css\" />"+lb
+        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
+        html += u" charset=utf-8\" />"+lb        
         html += u"<title>"
         if self.node.id=='0':
             if self.node.package.title!='':
@@ -98,8 +100,6 @@ class WebsitePage(Page):
                 html += escape(self.node.titleLong)
         html += u" </title>"+lb
         html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"+lb
-        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += u" charset=utf-8\" />"+lb
         if dT != "HTML5" and self.node.package.dublinCore.language!="":
             html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'+lb
         if self.node.package.author!="":

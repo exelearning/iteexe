@@ -1397,7 +1397,6 @@ if(dO.ns4)setTimeout('history.go(0)',300);
 var $exe = {
     init : function(){
         var d = document.body.className;
-        d += ' js';
         $exe.addRoles();
         //iDevice Toggler
         if (d!='exe-single-page js') {
@@ -1407,7 +1406,7 @@ var $exe = {
             } else $exe.iDeviceToggler.init();
         }
         //Load exe_media.js
-        if (document.body.getAttribute('class') != "exe-epub3") {
+        if (d.indexOf("exe-epub3")!=0) {
         	var h=document.body.innerHTML;
         	if(h.indexOf(' class="mediaelement"')!=-1 || h.indexOf(" class='mediaelement")!=-1){
         		$exe.loadMediaPlayer.getPlayer()
