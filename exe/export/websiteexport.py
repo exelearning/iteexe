@@ -106,15 +106,15 @@ class WebsiteExport(object):
             zipped.write(scormFile, scormFile.basename().encode('utf8'), ZIP_DEFLATED)
         zipped.close()
 
-    def appendPageReport(self, page):
-        if not page.node.idevices:self.report += u'"%s",%d,"%s",,,,,,\n' % (page.node.title, page.depth, page.name + '.html')
+    def appendPageReport(self, page, package):
+        if not page.node.idevices:self.report += u'"%s","%s",%d,"%s",,,,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.html')
         for idevice in page.node.idevices:
-            if not idevice.userResources:self.report += u'"%s",%d,"%s","%s","%s",,,,\n' % (page.node.title, page.depth, page.name + '.html', idevice.klass, idevice.title)
+            if not idevice.userResources:self.report += u'"%s","%s",%d,"%s","%s","%s",,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.html', idevice.klass, idevice.title)
             for resource in idevice.userResources:
                 if type(resource) == Resource:
-                    self.report += u'"%s",%d,"%s","%s","%s","%s","%s","%s","%s"\n' % (page.node.title, page.depth, page.name + '.html', idevice.klass, idevice.title, resource.storageName, resource.userName, resource.path, resource.checksum)
+                    self.report += u'"%s","%s",%d,"%s","%s","%s","%s","%s","%s","%s"\n' % (package.filename,page.node.title, page.depth, page.name + '.html', idevice.klass, idevice.title, resource.storageName, resource.userName, resource.path, resource.checksum)
                 else:
-                    self.report += u'"%s",%d,"%s","%s","%s","%s",,,\n' % (page.node.title, page.depth, page.name + '.html', idevice.klass, idevice.title, resource)
+                    self.report += u'"%s",%d,"%s","%s","%s","%s",,,\n' % (package.filename,page.node.title, page.depth, page.name + '.html', idevice.klass, idevice.title, resource)
 
     def export(self, package):
         """ 
@@ -141,12 +141,12 @@ class WebsiteExport(object):
         prevPage = None
         thisPage = self.pages[0]
         if self.report:
-            self.report = u'"%s","%s","%s","%s","%s","%s","%s","%s","%s"\n' % ('Page Name', 'Level', 'Page File Name', 'Idevice Type', 'Idevice Title', 'Resource File Name', 'Resource User Name', 'Resource Path', 'Resource Checksum')
-            self.appendPageReport(thisPage)
+            self.report = u'"%s","%s","%s","%s","%s","%s","%s","%s","%s","%s"\n' % ('File','Page Name', 'Level', 'Page File Name', 'Idevice Type', 'Idevice Title', 'Resource File Name', 'Resource User Name', 'Resource Path', 'Resource Checksum')
+            self.appendPageReport(thisPage,package)
 
         for nextPage in self.pages[1:]:
             if self.report:
-                self.appendPageReport(nextPage)
+                self.appendPageReport(nextPage,package)
             else:
                 thisPage.save(outputDir, prevPage, nextPage, self.pages)
             prevPage = thisPage
