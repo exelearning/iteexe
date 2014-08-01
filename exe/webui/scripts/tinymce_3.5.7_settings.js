@@ -69,7 +69,7 @@ var $exeTinyMCE = {
 	
 	getSchema : function(){
 		var s = "html4";
-		if (exe_export_format=="html5" && exe_editor_mode=='strict') s = "html5";
+		if (exe_export_format=="html5") s = "html5";
 		return s;
 	},
 	
