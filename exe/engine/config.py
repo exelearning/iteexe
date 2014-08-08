@@ -142,7 +142,8 @@ class Config(object):
         #FM: Default Style name
         self.defaultStyle= u"INTEF"
         # Styles repository XML-RPC endpoint
-        self.stylesRepository = 'http://www.exelearning.net/xmlrpc.php'
+        # self.stylesRepository = 'http://www.exelearning.es/xmlrpc.php'
+        self.stylesRepository = 'http://www.exelearning.es/xmlrpc.php'
         # browser is the name of a predefined browser specified at http://docs.python.org/library/webbrowser.html.
         # None for system default
         self.browser = None
