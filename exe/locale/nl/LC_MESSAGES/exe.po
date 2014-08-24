@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-25 20:38+0200\n"
-"PO-Revision-Date: 2014-08-23 13:21+0100\n"
+"PO-Revision-Date: 2014-08-24 15:51+0100\n"
 "Last-Translator: k.werschkull <k.werschkull@hccnet.nl>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
 "Language: nl\n"
@@ -196,7 +196,6 @@ msgid "Attachment"
 msgstr "Bijlage"
 
 #: exe/engine/attachmentidevice.py:46
-#, fuzzy
 msgid ""
 "The attachment iDevice is used to attach existing files to your .elp "
 "content. For example, you might have a PDF file or a PPT or .ODP "
@@ -233,7 +232,6 @@ msgstr ""
 "te selecteren."
 
 #: exe/engine/attachmentidevice.py:72
-#, fuzzy
 msgid ""
 "<p>Assign a label for the attachment. It is useful to include the type of "
 "file. Eg. pdf, ppt, .odp, etc.</p><p>Including the size is also recommended "
@@ -437,9 +435,8 @@ msgid "Title"
 msgstr "Titel"
 
 #: exe/engine/clickinorderidevice.py:61
-#, fuzzy
 msgid "Game Instructions"
-msgstr "Aanwijzingen"
+msgstr "Spel aanwijzingen"
 
 #: exe/engine/clickinorderidevice.py:61
 msgid "Instructions to show in leading paragraph"
@@ -470,9 +467,8 @@ msgid "Shown over game when wrong answer is given"
 msgstr "Wordt getoond nadat een onjuist antwoord is gegeven"
 
 #: exe/engine/clickinorderidevice.py:65
-#, fuzzy
 msgid "Main Area To Show"
-msgstr "Centrale gebied"
+msgstr "Te tonen Centrale gebied"
 
 #: exe/engine/clickinorderidevice.py:65
 msgid "The Main Game Area on which to locate items"
@@ -487,29 +483,24 @@ msgid "User will click on this to start the game"
 msgstr "De gebruiker moet hierop klikken om het spel te beginnen"
 
 #: exe/engine/clickinorderidevice.py:78
-#, fuzzy
 msgid "Game Width"
-msgstr "Breedte"
+msgstr "Breedte van het speelveld"
 
 #: exe/engine/clickinorderidevice.py:78
-#, fuzzy
 msgid "Width of game area (in pixels)"
-msgstr "Breedte (pixels)"
+msgstr "Breedte van het speelveld (pixels)"
 
 #: exe/engine/clickinorderidevice.py:79
-#, fuzzy
 msgid "Game Height"
-msgstr "Framehoogte:"
+msgstr "Hoogte van het speelveld"
 
 #: exe/engine/clickinorderidevice.py:79
-#, fuzzy
 msgid "Height of game area (in pixels)"
-msgstr "Hoogte (Pixels)"
+msgstr "Hoogte van het speelveld (Pixels)"
 
 #: exe/engine/clickinorderidevice.py:80
-#, fuzzy
 msgid "Style of Element Counter"
-msgstr "Stijlelement"
+msgstr "Stijl van de onderdelen-teller"
 
 #: exe/engine/clickinorderidevice.py:80
 msgid "Use CSS to style element that counts number items found"
@@ -517,45 +508,40 @@ msgstr ""
 "Gebruik CSS om het element dat het aantal gevonden items telt vorm te geven"
 
 #: exe/engine/clickinorderidevice.py:81
-#, fuzzy
 msgid "Hint Width"
-msgstr "Breedte"
+msgstr "Hintbreedte"
 
 #: exe/engine/clickinorderidevice.py:81
 msgid "Width (px) of hint area"
 msgstr "Breedte (px) van het hint-gebied"
 
 #: exe/engine/clickinorderidevice.py:82
-#, fuzzy
 msgid "Hint Height"
-msgstr "Lijnhoogte"
+msgstr "Hinthoogte"
 
 #: exe/engine/clickinorderidevice.py:82
 msgid "Height (px) of hint area"
 msgstr "Hoogte (px) van het hint-veld"
 
 #: exe/engine/clickinorderidevice.py:83
-#, fuzzy
 msgid "Hint Area Style"
-msgstr "Schaal"
+msgstr "Hint-stijl"
 
 #: exe/engine/clickinorderidevice.py:83
 msgid "Style of Hint Area"
 msgstr "Stijl van het hint-veld"
 
 #: exe/engine/clickinorderidevice.py:84
-#, fuzzy
 msgid "Style of timer Element"
-msgstr "Stijlelement"
+msgstr "Klok-stijl"
 
 #: exe/engine/clickinorderidevice.py:84
 msgid "Style of timer (CSS)"
 msgstr "Stijl van de timer (CSS)"
 
 #: exe/engine/clickinorderidevice.py:98 exe/engine/clickinorderidevice.py:100
-#, fuzzy
 msgid "Dont Shuffle"
-msgstr "Willekeurige volgorde"
+msgstr "Geen willekeurige volgorde"
 
 #: exe/engine/clickinorderidevice.py:98 exe/engine/clickinorderidevice.py:101
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
@@ -563,37 +549,32 @@ msgid "Shuffle"
 msgstr "Willekeurige volgorde"
 
 #: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:104
-#, fuzzy
 msgid "No Timer"
-msgstr "Toon klok"
+msgstr "Verberg klok"
 
 #: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:105
 msgid "Stopwatch Mode"
 msgstr "Stopwatch modus"
 
 #: exe/engine/clickinorderidevice.py:107
-#, fuzzy
 msgid "Shuffle Questions"
-msgstr "Waar/Niet waar-vraag"
+msgstr "Zet vragen in willekeurige volgorde"
 
 #: exe/engine/clickinorderidevice.py:107
 msgid "Randomize question order or not"
 msgstr "Vragen al of niet in willekeurige volgorde"
 
 #: exe/engine/clickinorderidevice.py:108
-#, fuzzy
 msgid "Use a Timer"
-msgstr "Tijd invoegen"
+msgstr "Gebruik klok"
 
 #: exe/engine/clickinorderidevice.py:108 exe/engine/memorymatchidevice.py:73
-#, fuzzy
 msgid "Use Timer?"
-msgstr "Tijd invoegen"
+msgstr "Klok gebruiken?"
 
 #: exe/engine/clickinorderidevice.py:115
-#, fuzzy
 msgid "Clickable Area"
-msgstr "Verwijder \"Clickable\" gebieden "
+msgstr "\"Clickable\" gebied"
 
 #: exe/engine/clickinorderidevice.py:152
 msgid "Top (Y) Coord"
@@ -612,24 +593,20 @@ msgid "Left CSS left property"
 msgstr "Left CSS left kenmerk"
 
 #: exe/engine/clickinorderidevice.py:154
-#, fuzzy
 msgid "Width (px)"
 msgstr "Breedte (pixels)"
 
 #: exe/engine/clickinorderidevice.py:154
-#, fuzzy
 msgid "Width of clickable area"
-msgstr "Verwijder \"Clickable\" gebieden "
+msgstr "Breddte van het \"clickable\" gebied "
 
 #: exe/engine/clickinorderidevice.py:155
-#, fuzzy
 msgid "Height (px)"
 msgstr "Hoogte (Pixels)"
 
 #: exe/engine/clickinorderidevice.py:155
-#, fuzzy
 msgid "Height of clickable area"
-msgstr "Verwijder \"Clickable\" gebieden "
+msgstr "Hoogte van het \"clickable\" gebied"
 
 #: exe/engine/clickinorderidevice.py:156
 msgid "Delay (ms) to hide revealed contents"
@@ -644,9 +621,8 @@ msgid "Hint to Show for this item"
 msgstr "Hint die getoond moet worden voor dit item"
 
 #: exe/engine/clickinorderidevice.py:166
-#, fuzzy
 msgid "The hint that will appear under the map for this item"
-msgstr "Voer de tekst in die dit iDevice moet weergeven"
+msgstr "Voer de tekst in die moet verschijnen onder map voor dit onderdeel"
 
 #: exe/engine/clickinorderidevice.py:167
 msgid "Item Revealed"
@@ -750,7 +726,6 @@ msgstr "Invullen"
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
-#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly into "
@@ -761,7 +736,10 @@ msgid ""
 "answer can be defined enclosing them with pipes (|). I.e.: |dog|cat|bird|</p>"
 msgstr ""
 "<p>Typ of kopieer de tekst van de invuloefening in het tekstveld.\n"
-" Selecteer een woord om te verbergen door erop te dubbelklikken en de knop\n"
+"door naar keuze een tekst te plakken vanuit een andere bron, of door direct "
+"in het \n"
+"venster te typen.,/p><p> Selecteer een woord om te verbergen door erop te "
+"dubbelklikken en de knop\n"
 " <i>Toon/verberg woord</i> aan te klikken.</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
@@ -1189,7 +1167,6 @@ msgstr ""
 "MP3-bestand. Deze zal in de titelbalk van de speler verschijnen."
 
 #: exe/engine/field.py:3017
-#, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors "
 "will be accepted. If checked only an exact match in spelling and "
@@ -1630,9 +1607,8 @@ msgid "Hangman style word game with customizable images."
 msgstr "Galge-stijl woordspel met aanpasbare afbeeldingen."
 
 #: exe/engine/hangmanidevice.py:61
-#, fuzzy
 msgid "Instructions for Game."
-msgstr "Aanwijzingen voor studenten"
+msgstr "Spelaanwijzingen "
 
 #: exe/engine/hangmanidevice.py:76
 msgid "Alphabet to Select From"
@@ -1683,9 +1659,8 @@ msgid "Style of Word Display Field"
 msgstr "Stijl van het weergave veld voor het woord"
 
 #: exe/engine/hangmanidevice.py:98
-#, fuzzy
 msgid "Word Display CSS"
-msgstr "Weergave"
+msgstr "Woord weergave CSS"
 
 #: exe/engine/hangmanidevice.py:101
 msgid "Restart Level Button Text"
@@ -1757,9 +1732,8 @@ msgid "Hint to Show User"
 msgstr "Hint voor de gebruiker"
 
 #: exe/engine/hangmanidevice.py:150
-#, fuzzy
 msgid "Hint for Word"
-msgstr "Woord negeren"
+msgstr "Hint voor het woord"
 
 #: exe/engine/idevicestore.py:557
 msgid ""
@@ -2288,9 +2262,8 @@ msgid "Memory Match Game Maker."
 msgstr "Memory spel maker."
 
 #: exe/engine/memorymatchidevice.py:55
-#, fuzzy
 msgid "Instructions to show"
-msgstr "Aanwijzingen"
+msgstr "Aanwijzingen die getoond moeten worden"
 
 #: exe/engine/memorymatchidevice.py:56
 msgid "Number of Rows"
@@ -2309,18 +2282,16 @@ msgid "Feedback to show on correct match"
 msgstr "Feedback die bij juiste match getoond wordt"
 
 #: exe/engine/memorymatchidevice.py:60
-#, fuzzy
 msgid "Positive Feedback"
-msgstr "Verberg feedback"
+msgstr "Positieve feedback"
 
 #: exe/engine/memorymatchidevice.py:61
 msgid "Feedback to show on incorrect pair"
 msgstr "Feedback die getoond wordt bij onjuiste combinatie"
 
 #: exe/engine/memorymatchidevice.py:61
-#, fuzzy
 msgid "Negative Feedback"
-msgstr "Verberg feedback"
+msgstr "Negatieve feedback"
 
 #: exe/engine/memorymatchidevice.py:62
 msgid "Style of Feedback Area (CSS)"
@@ -2331,23 +2302,20 @@ msgid "CSS style for feedback area"
 msgstr "CSS stijl voor feedback-veld"
 
 #: exe/engine/memorymatchidevice.py:63
-#, fuzzy
 msgid "Width of Cells (in pixels)"
-msgstr "Breedte (pixels)"
+msgstr "Celbreedte (pixels)"
 
 #: exe/engine/memorymatchidevice.py:63
 msgid "Cell Width px"
 msgstr "Cel breedte (px)"
 
 #: exe/engine/memorymatchidevice.py:64
-#, fuzzy
 msgid "Height of Cells (in pixels)"
-msgstr "Hoogte (Pixels)"
+msgstr "Celhoogte (Pixels)"
 
 #: exe/engine/memorymatchidevice.py:64
-#, fuzzy
 msgid "Cell Height px"
-msgstr "Lijnhoogte"
+msgstr "Celhoogte px"
 
 #: exe/engine/memorymatchidevice.py:65
 msgid "Time after which to re-hide incorrect match (ms)"
@@ -2363,16 +2331,14 @@ msgstr ""
 "Bedekkende afbeeding voor cellen (wordt getoond voordat ze gekozen worden)"
 
 #: exe/engine/memorymatchidevice.py:66
-#, fuzzy
 msgid "Cover Img"
-msgstr "Beheersing"
+msgstr "Hoesafbeelding"
 
 #: exe/engine/memorymatchidevice.py:67
 msgid "Background Image for cells (shown after selected)"
 msgstr "Achtergrond afbeelding voor cellen (getoond na selectie)"
 
 #: exe/engine/memorymatchidevice.py:67
-#, fuzzy
 msgid "Back Img"
 msgstr "Achtergrondafbeelding"
 
@@ -2403,9 +2369,8 @@ msgid "Negative Feedback Effect"
 msgstr "Effect bij negatieve feedback"
 
 #: exe/engine/memorymatchidevice.py:73
-#, fuzzy
 msgid "Show / Use a timer?"
-msgstr "Toon klok"
+msgstr "Klok tonen / gebruiken?"
 
 #: exe/engine/memorymatchidevice.py:74
 msgid "Hide Cells after match made?"
@@ -2424,9 +2389,8 @@ msgid "Hide after match effect"
 msgstr "Verberg na \"juiste-combinatie\"-effect"
 
 #: exe/engine/memorymatchidevice.py:78
-#, fuzzy
 msgid "Cell Padding in table"
-msgstr "Ruimte in cel"
+msgstr "Cell Padding van tabel"
 
 #: exe/engine/memorymatchidevice.py:78
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -2434,9 +2398,8 @@ msgid "Cell Padding"
 msgstr "Ruimte in cel"
 
 #: exe/engine/memorymatchidevice.py:79
-#, fuzzy
 msgid "Cell Spacing of table"
-msgstr "Ruimte om cel"
+msgstr "Celruimte in tabel"
 
 #: exe/engine/memorymatchidevice.py:79
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -2448,18 +2411,16 @@ msgid "Cell Default Style (CSS)"
 msgstr "Standaard stijl voor een cel (CSS)"
 
 #: exe/engine/memorymatchidevice.py:80
-#, fuzzy
 msgid "Cell Style CSS"
-msgstr "Celtype"
+msgstr "Celopmaak CSS"
 
 #: exe/engine/memorymatchidevice.py:81
 msgid "Text of Timer Label"
 msgstr "Tekst van het timer label"
 
 #: exe/engine/memorymatchidevice.py:81
-#, fuzzy
 msgid "Timer Text"
-msgstr "Vrije tekst"
+msgstr "Tekst bij de klok"
 
 #: exe/engine/memorymatchidevice.py:82
 msgid "CSS of Timer Field"
@@ -2474,24 +2435,20 @@ msgid "Memory Match Pair Field"
 msgstr "Correct Memory-combinatie veld"
 
 #: exe/engine/memorymatchidevice.py:157
-#, fuzzy
 msgid "Match Tile 1"
-msgstr "Identieke hoofdletters/kleine letters"
+msgstr "Identieke tegel 1"
 
 #: exe/engine/memorymatchidevice.py:157
-#, fuzzy
 msgid "Match Tile1"
-msgstr "Identieke hoofdletters/kleine letters"
+msgstr "Identieke Tegel 1"
 
 #: exe/engine/memorymatchidevice.py:158
-#, fuzzy
 msgid "Match Tile 2"
-msgstr "Identieke hoofdletters/kleine letters"
+msgstr "Identieke Tegel 2"
 
 #: exe/engine/memorymatchidevice.py:158
-#, fuzzy
 msgid "Match Tile2"
-msgstr "Identieke hoofdletters/kleine letters"
+msgstr "Identieke tegel 2"
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
@@ -2615,9 +2572,8 @@ msgid "Home"
 msgstr "Start"
 
 #: exe/engine/package.py:475
-#, fuzzy
 msgid "Metadata creation date"
-msgstr "Metadata schema"
+msgstr "Aanmaakdatum metadata"
 
 #: exe/engine/package.py:972
 msgid "?????"
@@ -3014,7 +2970,6 @@ msgid "Title to show"
 msgstr "Te tonen titel"
 
 #: exe/engine/sortidevice.py:53
-#, fuzzy
 msgid "Instructions before sortable list"
 msgstr "Aanwijzingen voor studenten"
 
@@ -3051,9 +3006,8 @@ msgid "Effect for showing wrong overlay"
 msgstr "Effect voor het tonen van de verkeerde overlay"
 
 #: exe/engine/sortidevice.py:60
-#, fuzzy
 msgid "Text for Check Button"
-msgstr "Tekstrichting"
+msgstr "Tekst voor de knop \"controleren\""
 
 #: exe/engine/sortidevice.py:61 exe/webui/listablock.py:270
 #: exe/webui/listablock.py:272
@@ -3073,7 +3027,6 @@ msgid "Width of an item in the list (px)"
 msgstr "Breedte van een item in de lijst (px)"
 
 #: exe/engine/sortidevice.py:63
-#, fuzzy
 msgid "width"
 msgstr "Breedte"
 
@@ -3082,7 +3035,6 @@ msgid "Height of an item in the list (px)"
 msgstr "Hoogte van een item in de lijst (px)"
 
 #: exe/engine/sortidevice.py:64
-#, fuzzy
 msgid "height"
 msgstr "Hoogte"
 
@@ -3091,19 +3043,16 @@ msgid "Style (CSS) for sortable items"
 msgstr "Sijl (CSS) van de te sorteren items "
 
 #: exe/engine/sortidevice.py:65
-#, fuzzy
 msgid "Sortable Item CSS"
-msgstr "Groepeer de voorwe"
+msgstr "Sorteerbaar item CSS"
 
 #: exe/engine/sortidevice.py:66 exe/engine/sortidevice.py:117
-#, fuzzy
 msgid "Sort Direction"
-msgstr "Tekstrichting"
+msgstr "Sorteerrichting"
 
 #: exe/engine/sortidevice.py:76 exe/engine/sortidevice.py:118
-#, fuzzy
 msgid "Top To Bottom"
-msgstr "Onderkant tekst"
+msgstr "Van boven naar onder"
 
 #: exe/engine/sortidevice.py:77 exe/engine/sortidevice.py:118
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -3126,9 +3075,8 @@ msgid "Right to Left"
 msgstr "Van rechts naar links"
 
 #: exe/engine/sortidevice.py:92
-#, fuzzy
 msgid "Sortable Item"
-msgstr "Groepeer de voorwe"
+msgstr "Sorteerbaar item"
 
 #: exe/engine/sortidevice.py:92
 msgid "Text / Content of sortable item"
@@ -3494,108 +3442,97 @@ msgid "GNU Free Documentation License"
 msgstr "  GNU licentie voor vrije documentatie"
 
 #: exe/export/pages.py:72
-#, fuzzy
 msgid "Creative Commons Attribution License 2.5"
-msgstr "crative commons: attribuut"
+msgstr "Creative Commons Naamsvermelding Licentie 2.5"
 
 #: exe/export/pages.py:73
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike License 2.5"
-msgstr "crative commons: attribuut - Gelijk delen"
+msgstr "Creative Commons Naamsvermelding Gelijk delen Licentie 2.5"
 
 #: exe/export/pages.py:74
-#, fuzzy
 msgid "Creative Commons Attribution No Derivatives License 2.5"
-msgstr "crative commons: attribuut - geen afgeleide werken"
+msgstr "Creative Commons Naamsvermelding Geen Afgeleide Werken Licentie 2.5"
 
 #: exe/export/pages.py:75
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial License 2.5"
-msgstr "crative commons: attribuut - Niet commercieel"
+msgstr "Creative Commons Naamsvermelding Niet Commercieel Licentie 2.5"
 
 #: exe/export/pages.py:76
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
-msgstr "crative commons: attribuut - Niet commercieel - Gelijk delen"
+msgstr ""
+"Creative Commons Naamsvermelding Non-commercial Gelijk delen License 2.5"
 
 #: exe/export/pages.py:77
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
-msgstr "crative commons: attribuut - Niet commercieel - Gelijk delen"
+msgstr ""
+"Creative Commons Naamsvermelding Niet Commercieel Geen afgeleide werken "
+"Licentie 2.5"
 
 #: exe/export/pages.py:78
-#, fuzzy
 msgid "Creative Commons Attribution License 3.0"
-msgstr "crative commons: attribuut"
+msgstr "Creative Commons Naamsvermelding License 3.0"
 
 #: exe/export/pages.py:79
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike License 3.0"
-msgstr "crative commons: attribuut - Gelijk delen"
+msgstr "Creative Commons Naamsvermelding Gelijk delen Licentie 3.0"
 
 #: exe/export/pages.py:80
-#, fuzzy
 msgid "Creative Commons Attribution No Derivatives License 3.0"
-msgstr "crative commons: attribuut - geen afgeleide werken"
+msgstr "Creative Commons Naamsvermelding Geen Afgeleide Werken Licentie 3.0"
 
 #: exe/export/pages.py:81
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial License 3.0"
-msgstr "crative commons: attribuut - Niet commercieel"
+msgstr "Creative Commons Naamsvermelding Niet Commercieel Licentie 3.0"
 
 #: exe/export/pages.py:82
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
-msgstr "crative commons: attribuut - Niet commercieel - Gelijk delen"
+msgstr ""
+"Creative Commons Naamsvermelding Non-commercial Gelijk delen License 3.0"
 
 #: exe/export/pages.py:83
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
-msgstr "crative commons: attribuut - Niet commercieel - Gelijk delen"
+msgstr ""
+"Creative Commons Naamsvermelding Niet Commercieel Geen afgeleide werken "
+"Licentie 3.0"
 
 #: exe/export/pages.py:84
-#, fuzzy
 msgid "Creative Commons Attribution License 4.0"
-msgstr "crative commons: attribuut"
+msgstr "Creative Commons Naamsvermelding License 4.0"
 
 #: exe/export/pages.py:85
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike License 4.0"
-msgstr "crative commons: attribuut - Gelijk delen"
+msgstr "Creative Commons Naamsvermelding Gelijk delen Licentie 4.0"
 
 #: exe/export/pages.py:86
-#, fuzzy
 msgid "Creative Commons Attribution No Derivatives License 4.0"
-msgstr "crative commons: attribuut - geen afgeleide werken"
+msgstr "Creative Commons Naamsvermelding Geen Afgeleide Werken Licentie 4.0"
 
 #: exe/export/pages.py:87
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial License 4.0"
-msgstr "crative commons: attribuut - Niet commercieel"
+msgstr "Creative Commons Naamsvermelding Niet Commercieel Licentie 4.0"
 
 #: exe/export/pages.py:88
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
-msgstr "crative commons: attribuut - Niet commercieel - Gelijk delen"
+msgstr ""
+"Creative Commons Naamsvermelding Non-commercial Gelijk delen License 4.0"
 
 #: exe/export/pages.py:89
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
-msgstr "crative commons: attribuut - Niet commercieel - Gelijk delen"
+msgstr ""
+"Creative Commons Naamsvermelding Niet Commercieel Geen afgeleide werken "
+"Licentie 4.0"
 
 #: exe/export/pages.py:90
-#, fuzzy
 msgid "GNU General Public License"
-msgstr "grote publiek"
+msgstr "GNU General Public License"
 
 #: exe/export/pages.py:99 exe/export/textexport.py:54
 msgid "Licensed under the"
 msgstr "Dit artikel valt onder de licensiebepalingen van"
 
 #: exe/export/pages.py:102
-#, fuzzy
 msgid "Local Version"
-msgstr "Versie"
+msgstr "Locale versie"
 
 #: exe/export/scormpage.py:154 exe/export/websitepage.py:326
 msgid "Previous"
@@ -3914,14 +3851,13 @@ msgid "Confirm"
 msgstr "Stem in"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:274
-#, fuzzy
 msgid "Are you sure you want clear all form fields?"
-msgstr "Weet u zeker dat u alle inhoud wilt wissen?"
+msgstr "Weet u zeker dat u alle velden van het formulier wilt wissen?"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:327
-#, fuzzy
 msgid "Are you sure you want reset all form fields?"
-msgstr "Weet u zeker dat u alle inhoud wilt wissen?"
+msgstr ""
+"Weet u zeker dat u alle velden van het formulier opnieuw wilt instellen?"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:414
 msgid "LOM Metadata import success!"
@@ -4452,9 +4388,8 @@ msgstr "Vrijhouden"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:629
-#, fuzzy
 msgid "Reset"
-msgstr "vertegenwoordigen"
+msgstr "Opnieuw instellen"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
@@ -4612,15 +4547,13 @@ msgstr "Classificatie"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:23
 #: exe/jsui/scripts/app/view/forms/LomSections.js:193
-#, fuzzy
 msgid "resources and integrated resources"
-msgstr "Verwijzing naar een gelijkaardige bron."
+msgstr "bronnen en interne bronnen"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:24
 #: exe/jsui/scripts/app/view/forms/LomSections.js:194
-#, fuzzy
 msgid "learning objects"
-msgstr "exelearning.net"
+msgstr "leerobjecten"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:25
 #: exe/jsui/scripts/app/view/forms/LomSections.js:195
@@ -4808,14 +4741,12 @@ msgid "Access Type"
 msgstr "Soort toegang"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:22
-#, fuzzy
 msgid "Now"
-msgstr "nee"
+msgstr "Nu"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:23
-#, fuzzy
 msgid "Time"
-msgstr "Limoen"
+msgstr "Tijd"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:29
 msgid "Required"
@@ -4887,94 +4818,78 @@ msgid "Should be at least one section of this type"
 msgstr "Moet minstens een gedeele van dit type zijn"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:59
-#, fuzzy
 msgid "creative commons: attribution 4.0"
-msgstr "crative commons: attribuut"
+msgstr "creative commons: Naamsvermelding 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:63
-#, fuzzy
 msgid "creative commons: attribution - non derived work 4.0"
-msgstr "crative commons: attribuut - geen afgeleide werken"
+msgstr "Creative Commons Naamsvermelding - Geen afgeleide werken 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:67
-#, fuzzy
 msgid "creative commons: attribution - non derived work - non commercial 4.0"
-msgstr "crative commons: attribuut - geen afgeleide werken - Niet commercieel"
+msgstr ""
+"Creative Commons Naamsvermelding - Geen afgeleide werken - Niet commercieel "
+"4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:71
-#, fuzzy
 msgid "creative commons: attribution - non commercial 4.0"
-msgstr "crative commons: attribuut - Niet commercieel"
+msgstr "Creative Commons Naamsvermelding - Niet commercieel 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:75
-#, fuzzy
 msgid "creative commons: attribution - non commercial - share alike 4.0"
-msgstr "crative commons: attribuut - Niet commercieel - Gelijk delen"
+msgstr "Creative Commons Naamsvermelding - Niet commercieel - Gelijk delen 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:79
-#, fuzzy
 msgid "creative commons: attribution - share alike 4.0"
-msgstr "crative commons: attribuut - Gelijk delen"
+msgstr "Creative Commons Naamsvermelding  - Gelijk delen 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:83
-#, fuzzy
 msgid "creative commons: attribution 3.0"
-msgstr "crative commons: attribuut"
+msgstr "creative commons: Naamsvermelding 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:87
-#, fuzzy
 msgid "creative commons: attribution - non derived work 3.0"
-msgstr "crative commons: attribuut - geen afgeleide werken"
+msgstr "Creative Commons Naamsvermelding - Geen afgeleide werken 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
-#, fuzzy
 msgid "creative commons: attribution - non derived work - non commercial 3.0"
-msgstr "crative commons: attribuut - geen afgeleide werken - Niet commercieel"
+msgstr "creative commons: attribution - non derived work - non commercial 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:95
-#, fuzzy
 msgid "creative commons: attribution - non commercial 3.0"
-msgstr "crative commons: attribuut - Niet commercieel"
+msgstr "Creative Commons Naamsvermelding - Niet commercieel 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:99
-#, fuzzy
 msgid "creative commons: attribution - non commercial - share alike 3.0"
-msgstr "crative commons: attribuut - Niet commercieel - Gelijk delen"
+msgstr "Creative Commons Naamsvermelding - Niet commercieel - Gelijk delen 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:103
-#, fuzzy
 msgid "creative commons: attribution - share alike 3.0"
-msgstr "crative commons: attribuut - Gelijk delen"
+msgstr "Creative Commons Naamsvermelding  - Gelijk delen 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:107
-#, fuzzy
 msgid "creative commons: attribution 2.5"
-msgstr "crative commons: attribuut"
+msgstr "creative commons: Naamsvermelding 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
-#, fuzzy
 msgid "creative commons: attribution - non derived work 2.5"
-msgstr "crative commons: attribuut - geen afgeleide werken"
+msgstr "Creative Commons Naamsvermelding - Geen afgeleide werken 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
-#, fuzzy
 msgid "creative commons: attribution - non derived work - non commercial 2.5"
-msgstr "crative commons: attribuut - geen afgeleide werken - Niet commercieel"
+msgstr "creative commons: attribution - non derived work - non commercial 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
-#, fuzzy
 msgid "creative commons: attribution - non commercial 2.5"
-msgstr "crative commons: attribuut - Niet commercieel"
+msgstr "Creative Commons Naamsvermelding - Niet commercieel 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
-#, fuzzy
 msgid "creative commons: attribution - non commercial - share alike 2.5"
-msgstr "crative commons: attribuut - Niet commercieel - Gelijk delen"
+msgstr "Creative Commons Naamsvermelding - Niet commercieel - Gelijk delen 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
-#, fuzzy
 msgid "creative commons: attribution - share alike 2.5"
-msgstr "crative commons: attribuut - Gelijk delen"
+msgstr "Creative Commons Naamsvermelding  - Gelijk delen 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:144
 msgid "Cataloguing"
@@ -5028,12 +4943,10 @@ msgid "Ordinary Learner"
 msgstr "Gewone leerling"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:292
-#, fuzzy
 msgid "Special Needs Learner"
 msgstr "zwakke leerling"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:299
-#, fuzzy
 msgid "Gifted Learner"
 msgstr "begaafde leerling"
 
@@ -5050,14 +4963,12 @@ msgid "For Individual Tuition"
 msgstr "Voor zelfstudie"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:374
-#, fuzzy
 msgid "Classroom"
 msgstr "klaslokaal"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:382
-#, fuzzy
 msgid "Real Environment"
-msgstr "echte omgeving"
+msgstr "Live omgeving"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:401
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:402
@@ -5066,19 +4977,16 @@ msgid "Modality"
 msgstr "Modaliteit"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:407
-#, fuzzy
 msgid "Face to Face"
 msgstr "onder vier ogen"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:415
-#, fuzzy
 msgid "Blended"
-msgstr "blended"
+msgstr "Blended"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:422
-#, fuzzy
 msgid "Distance"
-msgstr "afstandelijkheid"
+msgstr "afstandelijk"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:439
 msgid "Project Properties"
@@ -5122,9 +5030,8 @@ msgid "Doctype"
 msgstr "Doctype"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:542
-#, fuzzy
 msgid "Warning"
-msgstr "Waarschuwing!"
+msgstr "Waarschuwing"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:542
 msgid "Save the changes of your iDevice before changing the DOCTYPE"
@@ -5218,19 +5125,16 @@ msgid "The current document format can be modified in the Properties tab"
 msgstr "De huidige documentopmaak kan worden aangepast in de Eigenschappen tab"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:182
-#, fuzzy
 msgid "Editor mode"
-msgstr "redacteur"
+msgstr "Opmaak modus"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:184
-#, fuzzy
 msgid "Permissive"
-msgstr "benodigdheden"
+msgstr "Soepel/toegeeflijk"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
-#, fuzzy
 msgid "Strict"
-msgstr "Herstarten"
+msgstr "Strikt"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:192
 msgid ""
@@ -5302,9 +5206,8 @@ msgid "Import style to the system "
 msgstr "Importeer stijl naar het programma"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:291
-#, fuzzy
 msgid "Import style"
-msgstr "Export stijl:"
+msgstr "Import stijl"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:302
 msgid "Select ZIP Style file to import."
@@ -5982,9 +5885,8 @@ msgid "Nauru "
 msgstr "Nauru"
 
 #: exe/jsui/scripts/langs.js:388
-#, fuzzy
 msgid "Norwegian Bokmål "
-msgstr "Noors Bokmĺl "
+msgstr "Noorse Bokmål "
 
 #: exe/jsui/scripts/langs.js:392
 msgid "Ndebele,North "
@@ -7068,9 +6970,8 @@ msgid "blended"
 msgstr "blended"
 
 #: exe/jsui/scripts/lomvocab.js:1250
-#, fuzzy
 msgid "presencial"
-msgstr "vertegenwoordigen"
+msgstr "onder toezicht"
 
 #: exe/jsui/scripts/lomvocab.js:1254
 msgid "face to face"
@@ -7395,14 +7296,12 @@ msgid "Show advanced options"
 msgstr "Toon geavanceerde opties"
 
 #: exe/webui/clickinorderblock.py:334
-#, fuzzy
 msgid "<h2>Clickable Areas</h2>"
-msgstr "Verwijder \"Clickable\" gebieden "
+msgstr "<h2>\"Clickable\" \"gebieden</h2>"
 
 #: exe/webui/clickinorderblock.py:339
-#, fuzzy
 msgid "Add Clickable Area"
-msgstr "Verwijder \"Clickable\" gebieden "
+msgstr "Voewg een \"Clickable\" gebied toe "
 
 #: exe/webui/clickinorderblock.py:410
 msgid "Delete Clickable Area"
@@ -7868,9 +7767,8 @@ msgid "<div>\n"
 msgstr "<div>\n"
 
 #: exe/webui/fileattachblock.py:93
-#, fuzzy
 msgid "<h2>File Attachment</h2>"
-msgstr "Bijlagen"
+msgstr "<h2>Bijlage</h2>"
 
 #: exe/webui/fileattachblock.py:94
 msgid ""
@@ -7889,9 +7787,8 @@ msgid "<strong>Title:</strong><br/>"
 msgstr "<strong>Titel:</strong><br/>"
 
 #: exe/webui/fileattachblock.py:109
-#, fuzzy
 msgid "Add Another File Attachment"
-msgstr "Bijlagen"
+msgstr "Voeg een bijlagen toe"
 
 #: exe/webui/fileattachblock.py:143
 msgid "File List (this list shows only in preview mode):"
@@ -8052,9 +7949,8 @@ msgid "Show/Hide"
 msgstr "Tonen/Verbergen"
 
 #: exe/webui/notablock.py:119
-#, fuzzy
 msgid "Delete all notes"
-msgstr "Tabel verwijderen"
+msgstr "Verwijder alle notities"
 
 #: exe/webui/notablock.py:119
 msgid "Would you delete all notes?"
@@ -10070,14 +9966,12 @@ msgid "Media Title"
 msgstr "Mediatitel"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:25
-#, fuzzy
 msgid "Use Autoplay"
 msgstr "Automatisch afspelen"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:26
-#, fuzzy
 msgid "Use Controls"
-msgstr "Bediening"
+msgstr "Gebruik bediening"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/pastecode/langs/en.js:4
 msgid "Insert HTML code as text"
