@@ -81,6 +81,7 @@ var $exeTinyMCE = {
 	
 	getValidChildren : function(){
 		var v = "+body[style]";
+		if (exe_export_format=="html5") v += ",+video[a],+audio[a]";
 		if (exe_editor_mode=="strict") {
 			v = "";
 			if (exe_export_format=="html5") v = "+video[a],+audio[a]";
