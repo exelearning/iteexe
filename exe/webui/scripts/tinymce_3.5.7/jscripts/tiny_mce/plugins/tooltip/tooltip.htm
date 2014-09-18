@@ -38,9 +38,15 @@
 				<label for="type3" style="margin-right:1em">{#tooltip.type3}</label>
 				<span id="type3-desc" style="display:none">{#tooltip.type3_desc}</span>
 				
-				<input type="radio" id="type4" name="type" value="type4"  />
-				<label for="type4">{#tooltip.type4}</label>
-				<span id="type4-desc" style="display:none">{#tooltip.type4_desc}</span>
+				<!-- 
+					This will be available when eXe has a Glossary iDevice
+					Right now, it just lets you choose the page where the glossary is, being the glossary a definition list created with the TinyMCE definitionlist plugin
+					You should set definitionlists_auto_ids : true in tinyMCE.init
+					
+					<input type="radio" id="type4" name="type" value="type4"  />
+					<label for="type4">{#tooltip.type4}</label>
+					<span id="type4-desc" style="display:none">{#tooltip.type4_desc}</span>
+				-->
 			</p>
 			<p id="type-desc"></p>
 			<fieldset id="common-options">

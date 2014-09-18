@@ -44,36 +44,41 @@
 			});
 			
 			// Add an ID to each DT to create links from other pages using JS
-			function getFriendlyURL(t) {
-				t = t.replace(/[^\w\s]/gi, '');
-				t = t.replace( /\ /g, "-" );
-				t = t.toLowerCase();
-				return t;
-			}
-			
-			ed.onSaveContent.add(function(ed, o) {
+			// Set definitionlists_auto_ids : true in the editor configuration if you want the plugin to generate an ID for each DT
+			var adIDs = ed.getParam("definitionlists_auto_ids");
+			if (adIDs && adIDs==true) {
 				
-				if ($("DT",o.content).length==0) return false;
+				function getFriendlyURL(t) {
+					t = t.replace(/[^\w\s]/gi, '');
+					t = t.replace( /\ /g, "-" );
+					t = t.toLowerCase();
+					return t;
+				}
 				
-				var c = o.content;
-				var w = $('<div id="definitionlist-parser" style="display:none"></div>');
-				$("BODY").append(w);
-				w.html(c);
-				
-				$("DT",w).each(function(){
-					var p = $(this).parent();
-					if (p.length==1 && p.attr("class")=="exe-dl") {
-						var t = $(this).text();
-						var id = getFriendlyURL(t);
-						if (id.length==0) $(this).removeAttr("id");
-						else $(this).attr("id",id);
-					}
+				ed.onSaveContent.add(function(ed, o) {
+					
+					if ($("DT",o.content).length==0) return false;
+					
+					var c = o.content;
+					var w = $('<div id="definitionlist-parser" style="display:none"></div>');
+					$("BODY").append(w);
+					w.html(c);
+					
+					$("DT",w).each(function(){
+						var p = $(this).parent();
+						if (p.length==1 && p.attr("class")=="exe-dl") {
+							var t = $(this).text();
+							var id = getFriendlyURL(t);
+							if (id.length==0) $(this).removeAttr("id");
+							else $(this).attr("id",id);
+						}
+					});
+					
+					o.content = w.html();
+					w.remove();	
+					
 				});
-				
-				o.content = w.html();
-				w.remove();	
-				
-			});
+			}
 			// /Add an ID...
 	
 			// Register plugin buttons
