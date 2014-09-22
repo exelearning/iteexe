@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 # -- coding: utf-8 --
 # ===========================================================================
 # eXe
@@ -92,14 +92,14 @@ from <input_file> elp package").encode(sys.stdout.encoding))
     parser.add_option("-l", "--checker_logfile",
                       dest='checker_logfile',
                       metavar='LOGFILE')
-                      
+
     parser.add_option("-x", "--export",
                   action="store", dest="x", metavar="format",
                   choices=['xml', 'scorm12', 'scorm2004',
                            'ims', 'website', 'webzip', 'singlepage',
                            'xliff', 'epub3'],
                   help=_(u"Export <input_file> elp package to optional \
-<output_file> on one of the given formats: xml, scorm12, scorm2004, agrega, ims, \
+<output_file> on one of the given formats: xml, scorm12, scorm2004, ims, \
 website, webzip, singlepage, xliff or epub3.").encode(sys.stdout.encoding))
     parser.add_option("-i", "--import",
                   action="store", dest="i", metavar="format",
