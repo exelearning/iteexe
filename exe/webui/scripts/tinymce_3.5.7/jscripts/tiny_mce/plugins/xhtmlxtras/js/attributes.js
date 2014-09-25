@@ -52,6 +52,66 @@ function setFormValue(name, value) {
 function insertAction() {
 	var inst = tinyMCEPopup.editor;
 	var elm = inst.selection.getNode();
+	
+	// The New eXeLearning
+	var c = inst.selection.getContent();
+	if (c!="" && elm.localName!="span") {
+		
+		var f = document.forms[0];
+		
+		var title = f.elements.title.value;
+		var id = f.elements.id.value;
+		var style = f.elements.style.value;
+		var klass = getSelectValue(f, 'classlist');
+		var dir = f.elements.dir.value;
+		var lang = f.elements.lang.value;
+		var tabindex = f.elements.tabindex.value;
+		var accesskey = f.elements.accesskey.value;
+		var onfocus = f.elements.onfocus.value;
+		var onblur = f.elements.onblur.value;
+		var onclick = f.elements.onclick.value;
+		var ondblclick = f.elements.ondblclick.value;
+		var onmousedown = f.elements.onmousedown.value;
+		var onmouseup = f.elements.onmouseup.value;
+		var onmouseover = f.elements.onmouseover.value;
+		var onmousemove = f.elements.onmousemove.value;
+		var onmouseout = f.elements.onmouseout.value;
+		var onkeypress = f.elements.onkeypress.value;
+		var onkeydown = f.elements.onkeydown.value;
+		var onkeyup = f.elements.onkeyup.value;
+		
+		var newElm = inst.dom.create('span', {
+			title : title,
+			id : id,
+			style : style,
+			class : klass,
+			dir : dir,
+			lang : lang,
+			tabindex : tabindex,
+			accesskey : accesskey,
+			onfocus : onfocus,
+			onblur : onblur,
+			onclick : onclick,
+			ondblclick : ondblclick,
+			onmousedown : onmousedown,
+			onmouseup : onmouseup,
+			onmouseover : onmouseover,
+			onmousemove : onmousemove,
+			onmouseout : onmouseout,
+			onkeypress : onkeypress,
+			onkeydown : onkeydown,
+			onkeyup : onkeyup
+		}, c);
+		
+		inst.selection.setNode(newElm);
+		inst.dom.select(inst.selection.getNode(newElm));
+		tinyMCEPopup.execCommand("mceEndUndoLevel");
+		tinyMCEPopup.close();
+		
+		return false;
+		
+	}
+	// The New eXeLearning
 
 	setAllAttribs(elm);
 	tinyMCEPopup.execCommand("mceEndUndoLevel");
