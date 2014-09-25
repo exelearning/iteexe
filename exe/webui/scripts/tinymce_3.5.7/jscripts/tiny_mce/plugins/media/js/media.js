@@ -187,7 +187,8 @@
                         // /The New eXeLearning
                         //tinyMCEPopup.editor.execCommand('mceInsertContent', false, html5MediaCode);
                         Media.executeInsert(html5MediaCode);
-                        tinyMCEPopup.close();                       
+                        tinyMCEPopup.close(); 
+                        return false; // To avoid the execution of the next Media.executeInsert(obj) in some browsers
                     }       
                 }
                 else if (t=='quicktime') {
@@ -199,7 +200,8 @@
                         QTCode += '</object>';
                     //tinyMCEPopup.editor.execCommand('mceInsertContent', false, QTCode);
                     Media.executeInsert(QTCode);
-                    tinyMCEPopup.close();           
+                    tinyMCEPopup.close();
+                    return false;					
                 }
                 else if (t=='windowsmedia') {
                     var WMCode = '';
@@ -210,7 +212,8 @@
                         WMCode += '</object>';
                     //tinyMCEPopup.editor.execCommand('mceInsertContent', false, WMCode);
                     Media.executeInsert(WMCode);
-                    tinyMCEPopup.close();               
+                    tinyMCEPopup.close();
+                    return false;					
                 }
                 else if (t=='realmedia') {
                     var RMCode = '';
@@ -221,6 +224,7 @@
                     //tinyMCEPopup.editor.execCommand('mceInsertContent', false, RMCode);
                     Media.executeInsert(RMCode);
                     tinyMCEPopup.close();
+                    return false;
                 }
             }
             // /The New eXeLearning

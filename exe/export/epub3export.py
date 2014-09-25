@@ -291,7 +291,7 @@ class Epub3Page(Page):
             else:
                 html += escape(self.node.titleLong)
         html += u" </title>" + lb
-#         html += u"<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />" + lb
+        html += u'<meta charset="utf-8" />' + lb
         if dT != "HTML5" and self.node.package.lang != "":
             html += '<meta http-equiv="content-language" content="' + lenguaje + '" />' + lb
         if self.node.package.author != "":
