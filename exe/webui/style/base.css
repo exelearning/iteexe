@@ -84,3 +84,8 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 /* Tooltips */
 body .qtip {font-size:.85em;line-height:1.5em}
 .js .exe-tooltip-text{display:none}
+/* Structured lists */
+ol.auto-numbered{counter-reset:item}
+.auto-numbered ol{counter-reset:item}
+.auto-numbered li{display:block}
+.auto-numbered li:before {content:counters(item,".") ".- ";counter-increment:item}

@@ -22,3 +22,9 @@ span[size='7']{font-size:xx-large}
 .exe-layout-3-cols .exe-col-1,.exe-layout-3-cols .exe-col-2{padding-right:2%}
 
 .exe-clear {overflow:auto}
+
+/* Structured lists */
+ol.auto-numbered{counter-reset:item}
+.auto-numbered ol{counter-reset:item}
+.auto-numbered li{display:block}
+.auto-numbered li:before {content:counters(item,".") ".- ";counter-increment:item}

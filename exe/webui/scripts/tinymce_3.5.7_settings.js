@@ -35,7 +35,18 @@ var $exeTinyMCE = {
 			theme_advanced_toolbar_location : "top",
 			theme_advanced_toolbar_align : "left",
 			theme_advanced_statusbar_location : "bottom",
-			theme_advanced_resizing : true,	
+			theme_advanced_resizing : true,
+
+			// Numbered lists
+			advlist_number_styles: [
+				{title : _("Default"), styles : { listStyleType : '' } },
+				{title : _("Lower Alpha"), styles : { listStyleType : 'lower-alpha' }, cssClass : '' },
+				{title : _("Lower Greek"), styles : { listStyleType : 'lower-greek' }, cssClass : '' },
+				{title : _("Lower Roman"), styles : { listStyleType : 'lower-roman' }, cssClass : '' },
+				{title : _("Upper Alpha"), styles : { listStyleType : 'upper-alpha' }, cssClass : '' },
+				{title : _("Upper Roman"), styles : { listStyleType : 'upper-roman' }, cssClass : '' },
+				{title : _("Automatic Numbering"), styles : { listStyleType : 'decimal' }, cssClass : 'auto-numbered' }
+			],
 
 			template_external_list_url : "/scripts/tinymce_templates/lang/"+tinyMCE_language+".js",
 			// No new base64 images
