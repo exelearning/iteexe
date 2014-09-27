@@ -3,7 +3,7 @@
 # setup.py
 from setuptools import setup
 import pkg_resources
-pkg_resources.require('gitpython>=0.3.1')
+# pkg_resources.require('gitpython>=0.3.1')
 from exe.engine import version
 from exe.engine.path import Path
 
