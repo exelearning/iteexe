@@ -1,6 +1,8 @@
-#! /usr/bin/python2.7
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+###! /usr/bin/python2.7
 """Interfaces for launching and remotely controlling Web browsers.
-JR: Fichero parcheado de webbrowser.py para que acepte chrome y chromium"""
+JRJ: Fichero parcheado de webbrowser.py para que acepte chrome y chromium"""
 # Maintained by Georg Brandl.
 
 import os
