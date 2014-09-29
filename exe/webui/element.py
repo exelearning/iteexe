@@ -2082,7 +2082,7 @@ class SelectOptionElement(Element):
         Returns an XHTML string for editing this option element
         code is pretty much straight from the Multi-Option aka QuizOption
         """
-        html  = u"<tr><td align=\"left\"><b>%s</b>" % _("Option")
+        html  = u"<tr><td align=\"left\"><b id='ans%s-editor-label'>%s</b>" % (self.id,_("Option"))
         html += common.elementInstruc(self.field.question.optionInstruc)
 
         header = ""
@@ -2249,7 +2249,7 @@ class SelectquestionElement(Element):
         Returns an XHTML string with the form element for editing this element
         """
         html  = u"<div class=\"iDevice\">\n"
-        html += u"<b>" + _("Question:") + " </b>" 
+        html += u"<b id='"+self.id+"-editor-label'>" + _("Question:") + " </b>" 
         html += common.elementInstruc(self.field.questionInstruc)
         html += u" " + common.submitImage("del" + self.id, 
                                    self.field.idevice.id, 

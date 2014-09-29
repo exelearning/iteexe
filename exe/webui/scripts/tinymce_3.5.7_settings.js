@@ -162,6 +162,10 @@ var $exeTinyMCEToggler = {
 	},
 	
 	getHelpLink : function(e) {
+    
+        // The textarea has a label with an ID: textareaID-editor-label
+        var w = $("#"+e.attr("id")+"-editor-label");
+        if (w.length>0) return w;
 
 		// Get the help link to insert the TinyMCE toggler after it
 		var r = "";
