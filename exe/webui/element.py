@@ -2249,7 +2249,7 @@ class SelectquestionElement(Element):
         Returns an XHTML string with the form element for editing this element
         """
         html  = u"<div class=\"iDevice\">\n"
-        html += u"<b id='"+self.id+"-editor-label'>" + _("Question:") + " </b>" 
+        html += u"<b id='question"+self.id+"-editor-label'>" + _("Question:") + " </b>" 
         html += common.elementInstruc(self.field.questionInstruc)
         html += u" " + common.submitImage("del" + self.id, 
                                    self.field.idevice.id, 
