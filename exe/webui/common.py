@@ -557,7 +557,10 @@ def formField(type_, package, caption, action, object_='', instruction='', \
     package is only needed for richTextArea, to present all available internal anchors.
     """
     html  = '<div class="block">'
-    html += '<strong>%s</strong>' % caption
+    html += '<strong'
+    if type_ == 'richTextArea':
+        html += ' id="'+action+object_+'-editor-label"' # ID to create the Show/Hide Editor Link
+    html += '>%s</strong>' % caption
     if instruction:
         html += elementInstruc(instruction)
     html += '</div>'

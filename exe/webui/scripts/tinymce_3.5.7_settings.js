@@ -81,6 +81,7 @@ var $exeTinyMCE = {
 	
 	getValidChildren : function(){
 		var v = "+body[style]";
+		if (exe_export_format=="html5") v += ",+video[a],+audio[a]";
 		if (exe_editor_mode=="strict") {
 			v = "";
 			if (exe_export_format=="html5") v = "+video[a],+audio[a]";
@@ -161,6 +162,10 @@ var $exeTinyMCEToggler = {
 	},
 	
 	getHelpLink : function(e) {
+    
+        // The textarea has a label with an ID: textareaID-editor-label
+        var w = $("#"+e.attr("id")+"-editor-label");
+        if (w.length>0) return w;
 
 		// Get the help link to insert the TinyMCE toggler after it
 		var r = "";
