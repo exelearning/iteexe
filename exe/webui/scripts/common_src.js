@@ -259,47 +259,6 @@ function convertToDropType() {
 
 var lastTouch;
 
-
-
-function showMe(ident, w, h)
-{
-    var elmDiv = document.getElementById('popupmessage');
-    hideMe();
-        
-    if (!elmDiv || 
-        elmDiv.innerHTML != document.getElementById(ident).innerHTML){
-
-        elmDiv = document.createElement('div');
-        elmDiv.id = 'popupmessage';
-        elmDiv.className="popupDiv";
-    var xloc = (xpos+w > 740) ? Math.max(0, xpos-w-15) : xpos;
-        elmDiv.style.cssText = 'position:absolute; left: ' + 
-                               (xloc) + 'px; top: '+(ypos - h/2) + 
-                               'px; width: ' + w + 'px;';
-        elmDiv.innerHTML = document.getElementById(ident).innerHTML;
-        document.body.appendChild(elmDiv);
-        new dragElement('popupmessage');
-    }
-}
-
-function hideMe() {
-    var elmDiv = document.getElementById('popupmessage');
-    if (elmDiv) {
-        // removes the div from the document
-        elmDiv.parentNode.removeChild(elmDiv);
-    }
-}
-
-function updateCoords(e) {
-    if (e.pageX == null && e.clientX != null ) { //IE<9
-        var b = document.body;
-        e.pageX = e.clientX + (e && e.scrollLeft || b.scrollLeft || 0);
-        e.pageY = e.clientY + (e && e.scrollTop || b.scrollTop || 0);
-    }
-    xpos = e.pageX;
-    ypos = e.pageY;      
-}
-
 function getFeedback(optionId, optionsNum, ideviceId, mode) {
     var i, id;
     if (mode=="truefalse") {
@@ -1314,44 +1273,6 @@ if (navigator.appName=="Microsoft Internet Explorer") {
         window.attachEvent('onload',ie_media_replace);
     }   
 }
-
-/* libot_drag.js (updated to remove the code for old browsers and selection problems in Webkit */
-var dO = new Object();
-dO.currID = null;
-dO.z = 0;
-dO.xo = 0;
-dO.yo = 0;
-
-function trckM(e) {
-    if (dO.currID != null && dO.currID.id=="popupmessage") {
-		var x = e.pageX;
-        var y = e.pageY;
-		dO.currID.style.top = y - dO.yo + 'px';
-		dO.currID.style.left = x - dO.xo + 'px';
-    }
-}
-
-function drgI(e) {
-    if (dO.currID == null) {
-        var tx = parseInt(this.style.left);
-        var ty = parseInt(this.style.top);
-        dO.currID = this;
-        this.style.zIndex = document.images.length + (dO.z++);
-        dO.xo = (e.pageX) - tx;
-        dO.yo = (e.pageY) - ty;
-        return false;
-    }
-}
-
-function dragElement(id) {
-    this.idRef = document.getElementById(id);
-    this.idRef.onmousedown = drgI;
-    this.idRef.onmouseup = function() {
-        dO.currID = null
-    }
-}
-
-document.onmousemove = trckM;
 
 var $exe = {
     init : function(){
