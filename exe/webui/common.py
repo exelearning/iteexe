@@ -337,7 +337,7 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
     return new_html
 
 
-def image(name, value, width="", height="", alt=None):
+def image(name, value, width="", height="", alt=None, cssClass=None):
     """Returns the XHTML for an image"""
     if alt is None:
         alt = name
@@ -348,6 +348,8 @@ def image(name, value, width="", height="", alt=None):
         html += u"width=\"%s\" " % width
     if height:
         html += u"height=\"%s\" " % height
+    if cssClass:
+        html += u"class=\"%s\" " % cssClass
     html += u"src=\"%s\" " % value
     html += u"/>\n"
     return html
