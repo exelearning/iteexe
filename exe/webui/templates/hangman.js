@@ -113,13 +113,13 @@ function updateWordArea(gameId) {
 This starts the game for a given word index
 */
 function startGame(gameId, wordIndex) {
+        lettersGuessed[gameId] = "";
         setChance(gameId, 0);
         for(var i = 0; i < hangman_letterCounts[gameId]; i++) {
             document.getElementById(gameId + "letter" + i).setAttribute("style", 
                 hangman_buttonStyles[gameId][HANGMAN_BEFORE_GUESS]);
         }
         currentWord[gameId] = wordIndex;
-        lettersGuessed[gameId] = "";
         updateWordArea(gameId);
         document.getElementById(gameId + "_hintarea").value 
                  = hangman_words[gameId][currentWord[gameId]][1];
