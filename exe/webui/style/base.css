@@ -91,3 +91,6 @@ ol.auto-numbered{counter-reset:item}
 .auto-numbered li:before {content:counters(item,".") ".- ";counter-increment:item}
 /* Blockquote + Cite */
 .exe-quote-cite cite{display:block;text-align:right;margin-top:-.5em}
+/* File information */
+.exe-link-data{font-size:.8em;margin:0 .2em}
+.exe-link-data abbr{cursor:help}

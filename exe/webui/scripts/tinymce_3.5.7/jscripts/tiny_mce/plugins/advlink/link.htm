@@ -31,7 +31,10 @@
 							<td class="nowrap"><label id="hreflabel" for="href">{#advlink_dlg.url}</label></td>
 								<td><table border="0" cellspacing="0" cellpadding="0">
 							<tr>
-								<td><input id="href" name="href" type="text" class="mceFocus" value="" onchange="selectByValue(this.form,'linklisthref',this.value);" aria-required="true" /></td>
+								<!-- The New Exelearning:
+								<td><input id="href" name="href" type="text" class="mceFocus" value="" onchange="selectByValue(this.form,'linklisthref',this.value);" aria-required="true" /></td>							
+								-->
+								<td><input id="href" name="href" type="text" class="mceFocus" value="" onchange="selectByValue(this.form,'linklisthref',this.value);filenameChanged(this.value);" aria-required="true" /></td>
 								<td id="hrefbrowsercontainer">&nbsp;</td>
 							</tr>
 							</table></td>
@@ -64,6 +67,35 @@
 						</tr>
 					</table>
 				</fieldset>
+				<!-- The New eXeLearning (JR) -->
+				&nbsp;
+				<fieldset>
+					<legend>{#advlink_dlg.download_information}</legend>
+					<input type="checkbox" id="isdownloadfile" name="isdownloadfile" class="radio" onclick="setDownloadFileControlsDisabled(!this.checked);" />
+					<label id="isdownloadfilelabel" for="isdownloadfile">{#advlink_dlg.include_file_information}</label>
+					<table border="0" cellpadding="4" cellspacing="0" role="presentation">
+						<tr>
+							<td class="nowrap"><label id="sizelinklabel" for="sizelink">{#advlink_dlg.file_size}</label></td>
+								<td><input type="number" step="any" id="sizelink" name="sizelink" style="width:100px;" class="mceFocus" onchange="updateSizeBytes();"/>
+								<input type="hidden" step="any" id="sizelinkbytes" name="sizelinkbytes"/></td>
+							<td class="nowrap""><label id="magnitudelabel" for="magnitude">{#advlink_dlg.unit}</label></td>
+							<td>
+								<select id="magnitudelist" name="magnitudelist" onchange="changeMagnitude()">
+									<option value="B" selected="selected">Bytes</option>
+									<option value="KB">KiloBytes</option>
+									<option value="MB">MegaBytes</option>
+									<option value="GB">GigaBytes</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="nowrap" c><label id="filetypelabel" for="filetype">{#advlink_dlg.file_type}</label></td>
+							<td><input id="filetype" name="filetype" type="text" style="width:100px; class="mceFocus"/></td>
+						</tr>
+					</table>
+					<label id="notedownload""><p style="margin-left:5px;">{#advlink_dlg.file_information_warning}</p></label>
+				</fieldset>
+				<!-- /JR -->
 			</div>
 
 			<div id="popup_panel" class="panel">

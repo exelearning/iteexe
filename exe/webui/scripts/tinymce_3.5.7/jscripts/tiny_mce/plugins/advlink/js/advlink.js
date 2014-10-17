@@ -27,6 +27,9 @@ function init() {
 	var elm = inst.selection.getNode();
 	var action = "insert";
 	var html;
+	// The New eXeLearning (JR)
+	var elmSize;
+	// /JR
 
 	document.getElementById('hrefbrowsercontainer').innerHTML = getBrowserHTML('hrefbrowser','href','file','advlink');
 	document.getElementById('popupurlbrowsercontainer').innerHTML = getBrowserHTML('popupurlbrowser','popupurl','file','advlink');
@@ -61,12 +64,19 @@ function init() {
 		}
 	}
 
-	if (elm != null && elm.nodeName == "A")
+	if (elm != null && elm.nodeName == "A") {
 		action = "update";
+		// The New eXeLearning (JR)
+		elmSize = elm.nextSibling;
+		// /JR
+	}
 
 	formObj.insert.value = tinyMCEPopup.getLang(action, 'Insert', true);
 
 	setPopupControlsDisabled(true);
+	// The New eXeLearning (JR)
+	setDownloadFileControlsDisabled(true);
+	// /JR
 
 	if (action == "update") {
 		var href = inst.dom.getAttrib(elm, 'href');
@@ -101,6 +111,41 @@ function init() {
 		setFormValue('onkeyup', inst.dom.getAttrib(elm, 'onkeyup'));
 		setFormValue('target', linkTarget);
 		setFormValue('classes', inst.dom.getAttrib(elm, 'class'));
+		// The New eXeLearning (JR)
+		if (elmSize != null && typeof(elmSize.innerHTML) != "undefined" && elmSize.innerHTML != "" && elmSize.nodeName == 'SPAN' && elmSize.className == 'exe-link-data file-size') {
+			
+			var title = inst.dom.getAttrib(elm, 'title');
+			
+			var t = title.replace(/\[.*\]/,"");
+			if (t[t.length-1] == " ") t = t.substring(0, t.length - 1);
+			setFormValue('title', t);			
+			
+			var size = elmSize.innerHTML.replace(/<abbr(.)*">/,"").replace("</abbr>","");
+			size = size.replace(" (","");
+			var parts = size.split(" - ");
+			if (parts.length==2) {
+				var type = parts[0];
+				var p2 = parts[1].split(" ");
+				if (p2.length==2) {
+					size = p2[0];
+					var unit = p2[1].replace(")","");
+					setFormValue('sizelink', size);
+					setFormValue('magnitudelist', unit);
+					// Get the size in KB
+					var bytes = "";
+					if (unit == "B") bytes = size;
+					else if (unit == "KB") bytes = (size * 1024);
+					else if (unit == "MB") bytes = (size * 1024 * 1024);
+					else bytes = (size * 1024 * 1024 * 1024);
+					setFormValue('sizelinkbytes', bytes);
+				}
+			}
+			
+			if (title.indexOf("[") != -1 && title.indexOf(" - ") != -1)	setFormValue('filetype', title.split("[")[1].split("-")[0].trim());
+			
+			setDownloadFileControlsDisabled(false,true);
+		}
+		// /JR
 
 		// Parse onclick data
 		if (onclick != null && onclick.indexOf('window.open') != -1)
@@ -424,7 +469,10 @@ function getAnchorListHTML(id, target) {
 
 function insertAction() {
 	var inst = tinyMCEPopup.editor;
-	var elm, elementArray, i;
+	var elm, elementArray, i, elmSize;
+	// The New eXeLearning (JR)
+	var form = document.forms[0];
+	// /JR
 
 	elm = inst.selection.getNode();
 	checkPrefix(document.forms[0].href);
@@ -440,6 +488,16 @@ function insertAction() {
 		tinyMCEPopup.close();
 		return;
 	}
+	// The New eXeLearning (JR)
+	if (form.sizelink.value == "" && form.isdownloadfile.checked) {
+		tinyMCEPopup.alert(tinyMCEPopup.getLang('advlink_dlg.missing_file_size'));
+		return;
+	} 
+	if (form.filetype.value == "" && form.isdownloadfile.checked) {
+		tinyMCEPopup.alert(tinyMCEPopup.getLang('advlink_dlg.missing_file_type'));
+		return;
+	} 
+	// /JR
 
 	// Create new anchor elements
 	if (elm == null) {
@@ -449,8 +507,46 @@ function insertAction() {
 		elementArray = tinymce.grep(inst.dom.select("a"), function(n) {return inst.dom.getAttrib(n, 'href') == '#mce_temp_url#';});
 		for (i=0; i<elementArray.length; i++)
 			setAllAttribs(elm = elementArray[i]);
-	} else
+		// The New eXeLearning (JR)
+		if (form.sizelink.value != "" && form.isdownloadfile.checked) {
+			elmSize = document.createElement('span');
+			elmSize.className = "exe-link-data file-size";
+			elmSize.innerHTML = getSizeHTML();
+			//elm.parentNode.appendChild(elmSize);
+			elm.parentNode.insertBefore(elmSize,elm);
+			elm = exchangeElements(elm, elmSize);
+			//elm.title = elm.title.replace(/\[.*\]/,"") + getSuffixTitle();
+			elm.title = getFullTitle(elm.title);
+		}
+		// /JR
+	} else {
 		setAllAttribs(elm);
+		// The New eXeLearning (JR)
+		if (form.sizelink.value != "" && form.isdownloadfile.checked) {
+			elmSize = elm.nextSibling;
+			if (elmSize == null || (elmSize.nodeName != 'SPAN' && elmSize.className != 'exe-link-data file-size')) {
+				elmSize = document.createElement('span');
+				elmSize.className = "exe-link-data file-size";
+				elmSize.innerHTML = getSizeHTML();
+				//elm.parentNode.appendChild(elmSize);
+				elm.parentNode.insertBefore(elmSize, elm);
+				elm = exchangeElements(elm, elmSize);
+				//elm.title = elm.title.replace(/\[.*\]/,"") + getSuffixTitle();
+				elm.title = getFullTitle(elm.title);
+			}
+			else {
+				elmSize.innerHTML = getSizeHTML();
+				//elm.title = elm.title.replace(/\[.*\]/,"") + getSuffixTitle();
+				elm.title = getFullTitle(elm.title);
+			}
+		}
+		else {
+			elmSize = elm.nextSibling;
+			if (elmSize != null)
+				elm.parentNode.removeChild(elmSize);
+		}
+		// /JR
+	}
 
 	// Don't move caret if selection was image
 	if (elm.childNodes.length != 1 || elm.firstChild.nodeName != 'IMG') {
@@ -463,6 +559,159 @@ function insertAction() {
 	tinyMCEPopup.execCommand("mceEndUndoLevel");
 	tinyMCEPopup.close();
 }
+
+// The New eXeLearning (JR)
+function findSize(file) {
+	if (file.indexOf("resources/")==0) {
+		file = top.window.location.href + "/" + file;
+	}
+	var xhr = new XMLHttpRequest();
+	xhr.open("head", file, true);
+	xhr.onreadystatechange = function() {
+		if (this.readyState == this.DONE) setSize(xhr.getResponseHeader("Content-Length"));
+		else setSize(null);
+	};
+	xhr.send();
+}
+
+function setSize(size) {
+	var form = document.forms[0];
+	if (size != null) {
+		form.sizelink.value = size;
+		form.magnitudelist.value = "B";
+		updateSizeBytes();
+	}
+	else {
+		form.sizelink.value = "";
+		form.magnitudelist.value = "B";
+		form.sizelinkbytes.value = 0;
+	}
+}
+
+function truncateDecimals (num, digits) {
+	var numS = num.toString();
+	var decPos = numS.indexOf('.');
+	if (decPos == -1) decPos = numS.indexOf(',');
+        var substrLength = decPos == -1 ? numS.length : 1 + decPos + digits;
+        var trimmedResult = numS.substr(0, substrLength);
+        var finalResult = isNaN(trimmedResult) ? 0 : trimmedResult;
+
+	return parseFloat(finalResult);
+}
+
+function updateSizeBytes() {
+	var form = document.forms[0];
+	var size = parseFloat(form.sizelink.value);
+	var magnitude = form.magnitudelist.value;
+	if (magnitude == "B") form.sizelinkbytes.value = size;
+	else if (magnitude == "KB") form.sizelinkbytes.value = size * 1024;
+	else if (magnitude == "MB") form.sizelinkbytes.value = size * 1024 * 1024;
+	else if (magnitude == "GB") form.sizelinkbytes.value = size * 1024 * 1024 * 1024;
+}
+
+function changeMagnitude() {
+	var form = document.forms[0];
+	var magnitude = form.magnitudelist.value;
+	var sizebytes = parseFloat(form.sizelinkbytes.value);
+	if (magnitude == "B") form.sizelink.value = sizebytes;
+	else if (magnitude == "KB") form.sizelink.value = truncateDecimals(sizebytes / 1024, 2);
+	else if (magnitude == "MB") form.sizelink.value = truncateDecimals(sizebytes / 1024 / 1024, 2);
+	else if (magnitude == "GB") form.sizelink.value = truncateDecimals(sizebytes / 1024 / 1024 / 1024, 2);
+}
+
+function filenameChanged(filename) {
+	if (filename != "") {
+		var ext = getFileExtension(filename).toLowerCase();
+		var form = document.forms[0];
+		if (form.isdownloadfile.checked) {
+			form.filetype.value = ext;
+			findSize(filename);
+		}
+	}
+}
+
+function getFileExtension(filename) {
+	var aux = filename.split(".");
+	if( aux.length === 1 || ( aux[0] === "" && aux.length === 2 ) ) {
+		return "";
+	}
+	aux = aux.pop();
+	aux = aux.split("/")[0];
+	aux = aux.split("?")[0];
+	return aux;
+}
+function setDownloadFileControlsDisabled(state,isInit) {
+	var formObj = document.forms[0];
+
+	formObj.sizelink.disabled = state;
+	formObj.magnitudelist.disabled = state;
+	formObj.filetype.disabled = state;
+	
+	formObj.isdownloadfile.checked = !state;
+	var note = document.getElementById("notedownload");
+	if (state) {
+		note.style.display = 'none';
+	} else {
+		note.style.display = 'block';
+		if (isInit!=true) filenameChanged(formObj.href.value);
+	}
+}
+
+function exchangeElements(element1, element2)
+{
+    var clonedElement1 = element1.cloneNode(true);
+    var clonedElement2 = element2.cloneNode(true);
+
+    element2.parentNode.replaceChild(clonedElement1, element2);
+    element1.parentNode.replaceChild(clonedElement2, element1);
+
+    return clonedElement1;
+}
+
+function getSizeHTML() {
+	var form = document.forms[0];
+	var magnitude = form.magnitudelist.value;
+	var type = form.filetype.value;
+	var magnAcron = "";
+	var sizeHTML = "";
+	if (form.sizelink.value != "") {
+		if (magnitude == "B")
+			magnAcron = '<abbr lang="en" title="Bytes">B</abbr>';
+		else if (magnitude == "KB")
+			magnAcron = '<abbr lang="en" title="KiloBytes">KB</abbr>';
+		else if (magnitude == "MB")
+			magnAcron = '<abbr lang="en" title="MegaBytes">MB</abbr>';
+		else if (magnitude == "GB")
+			magnAcron = '<abbr lang="en" title="GigaBytes">GB</abbr>';
+	}
+	if (form.sizelink.value != "") {
+		sizeHTML = " ("+ type + " - " + form.sizelink.value + " " + magnAcron + ")";
+	}
+	return sizeHTML;
+}
+
+function getFullTitle(t) {
+	var form = document.forms[0];
+	var size = form.sizelink.value;
+	var magnitude = form.magnitudelist.value;
+	var type = form.filetype.value;
+	var magnitude = form.magnitudelist.value;
+	var res = "";
+	if (size != "" && type != "") {
+		res = "[" + type + " - " + size + " " + magnitude + "]";
+		if (t!="") {
+			// Remove this characters from the title: [ ] ( )  - 
+			t = t.replace(/\[/g,'');
+			t = t.replace(/\]/g,'');
+			t = t.replace(/\(/g,'');
+			t = t.replace(/\)/g,'');
+			t = t.replace(/\ - /g,' ');
+			res = t + " " + res;
+		}
+	}
+	return res;
+}
+// /JR
 
 function setAllAttribs(elm) {
 	var formObj = document.forms[0];
