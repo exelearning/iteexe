@@ -39,13 +39,37 @@ from exe.engine.multichoiceidevice import MultichoiceIdevice
 from exe.engine.quiztestidevice import QuizTestIdevice
 from exe.engine.truefalseidevice import TrueFalseIdevice
 from exe.engine.wikipediaidevice import WikipediaIdevice
+from exe.engine.casestudyidevice import CasestudyIdevice
+from exe.engine.casopracticofpdidevice import CasopracticofpdIdevice
+from exe.engine.citasparapensarfpdidevice import CitasparapensarfpdIdevice
+from exe.engine.clozefpdidevice import ClozefpdIdevice
+from exe.engine.clozeidevice import ClozeIdevice
+from exe.engine.clozelangfpdidevice import ClozelangfpdIdevice
+from exe.engine.debesconocerfpdidevice import DebesconocerfpdIdevice
+from exe.engine.destacadofpdidevice import DestacadofpdIdevice
+from exe.engine.ejercicioresueltofpdidevice import EjercicioresueltofpdIdevice
+from exe.engine.eleccionmultiplefpdidevice import EleccionmultiplefpdIdevice
+from exe.engine.freetextfpdidevice import FreeTextfpdIdevice
+from exe.engine.galleryidevice import GalleryIdevice
+from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice
+from exe.engine.listaidevice import ListaIdevice
+from exe.engine.multiselectidevice import MultiSelectIdevice
+from exe.engine.orientacionesalumnadofpdidevice import OrientacionesalumnadofpdIdevice
+from exe.engine.orientacionestutoriafpdidevice import OrientacionestutoriafpdIdevice
+from exe.engine.parasabermasfpdidevice import ParasabermasfpdIdevice
+from exe.engine.recomendacionfpdidevice import RecomendacionfpdIdevice
+from exe.engine.reflectionfpdidevice import ReflectionfpdIdevice
+from exe.engine.reflectionfpdmodifidevice import ReflectionfpdmodifIdevice
+from exe.engine.reflectionidevice import ReflectionIdevice
+from exe.engine.seleccionmultiplefpdidevice import SeleccionmultiplefpdIdevice
+from exe.engine.verdaderofalsofpdidevice import VerdaderofalsofpdIdevice
 from exe.engine.persist        import Persistable, encodeObject, decodeObjectRaw
 from exe                       import globals as G
 from exe.engine.resource       import Resource
 from twisted.persisted.styles  import doUpgrade
 from twisted.spread.jelly      import Jellyable, Unjellyable
 from exe.engine.beautifulsoup  import BeautifulSoup
-from exe.engine.field          import Field
+from exe.engine.field          import Field, TextAreaField
 from exe.engine.persistxml     import encodeObjectToXML, decodeObjectFromXML
 from exe.engine.lom import lomsubs
 from exe.engine.checker import Checker
@@ -287,7 +311,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 12
+    persistenceVersion = 13
     nonpersistant      = ['resourceDir', 'filename', 'previewDir']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
@@ -1068,12 +1092,37 @@ class Package(Persistable):
             zippedFile.close()
         if self.compatibleWithVersion9:
             self.upgradeToVersion10()
-            Package.persistenceVersion = 12
-            MultichoiceIdevice.persistenceVersion = 8
-            GenericIdevice.persistenceVersion = 10
-            QuizTestIdevice.persistenceVersion = 9
-            TrueFalseIdevice.persistenceVersion = 10
+            CasestudyIdevice.persistenceVersion = 9
+            CasopracticofpdIdevice.persistenceVersion = 9
+            CitasparapensarfpdIdevice.persistenceVersion = 9
+            ClozefpdIdevice.persistenceVersion = 7
+            ClozeIdevice.persistenceVersion = 7
+            ClozelangfpdIdevice.persistenceVersion = 7
+            DebesconocerfpdIdevice.persistenceVersion = 9
+            DestacadofpdIdevice.persistenceVersion = 9
+            EjercicioresueltofpdIdevice.persistenceVersion = 10
+            EleccionmultiplefpdIdevice.persistenceVersion = 10
+            TextAreaField.persistenceVersion = 2
+            FreeTextfpdIdevice.persistenceVersion = 8
+            GalleryIdevice.persistenceVersion = 8
+            ImageMagnifierIdevice.persistenceVersion = 4
+            ListaIdevice.persistenceVersion = 5
+            MultichoiceIdevice.persistenceVersion = 9
+            GenericIdevice.persistenceVersion = 11
+            MultiSelectIdevice.persistenceVersion = 1
+            OrientacionesalumnadofpdIdevice.persistenceVersion = 9
+            OrientacionestutoriafpdIdevice.persistenceVersion = 9
+            ParasabermasfpdIdevice.persistenceVersion = 9
+            QuizTestIdevice.persistenceVersion = 10
+            RecomendacionfpdIdevice.persistenceVersion = 9
+            ReflectionfpdIdevice.persistenceVersion = 9
+            ReflectionfpdmodifIdevice.persistenceVersion = 9
+            ReflectionIdevice.persistenceVersion = 8
+            SeleccionmultiplefpdIdevice.persistenceVersion = 2
+            TrueFalseIdevice.persistenceVersion = 11
+            VerdaderofalsofpdIdevice.persistenceVersion = 12
             WikipediaIdevice.persistenceVersion = 9
+            Package.persistenceVersion = 13
 
     def extractNode(self):
         """
@@ -1621,10 +1670,35 @@ class Package(Persistable):
             if hasattr(self, attr):
                 delattr(self, attr)
         self.license = u''
+        CasestudyIdevice.persistenceVersion = 8
+        CasopracticofpdIdevice.persistenceVersion = 7
+        CitasparapensarfpdIdevice.persistenceVersion = 7
+        ClozefpdIdevice.persistenceVersion = 4
+        ClozeIdevice.persistenceVersion = 4
+        ClozelangfpdIdevice.persistenceVersion = 4
+        DebesconocerfpdIdevice.persistenceVersion = 7
+        DestacadofpdIdevice.persistenceVersion = 7
+        EjercicioresueltofpdIdevice.persistenceVersion = 8
+        EleccionmultiplefpdIdevice.persistenceVersion = 7
+        TextAreaField.persistenceVersion = 1
+        FreeTextfpdIdevice.persistenceVersion = 7
+        GalleryIdevice.persistenceVersion = 7
+        ImageMagnifierIdevice.persistenceVersion = 2
+        ListaIdevice.persistenceVersion = 4
         MultichoiceIdevice.persistenceVersion = 7
         GenericIdevice.persistenceVersion = 9
+        delattr(MultiSelectIdevice, "persistenceVersion")
+        OrientacionesalumnadofpdIdevice.persistenceVersion = 7
+        OrientacionestutoriafpdIdevice.persistenceVersion = 7
+        ParasabermasfpdIdevice.persistenceVersion = 7
         QuizTestIdevice.persistenceVersion = 8
+        RecomendacionfpdIdevice.persistenceVersion = 7
+        ReflectionfpdIdevice.persistenceVersion = 7
+        ReflectionfpdmodifIdevice.persistenceVersion = 7
+        ReflectionIdevice.persistenceVersion = 7
+        delattr(SeleccionmultiplefpdIdevice, "persistenceVersion")
         TrueFalseIdevice.persistenceVersion = 9
+        VerdaderofalsofpdIdevice.persistenceVersion = 9
         WikipediaIdevice.persistenceVersion = 8
         Package.persistenceVersion = 9
     
