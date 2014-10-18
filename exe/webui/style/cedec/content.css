@@ -14,7 +14,7 @@ body,html  {
     background-color:#fff;
     color:#646464;
     font-family:Verdana,Arial, Helvetica, sans-serif !important;
-    line-height:120%;
+    line-height: 120%;
 }
 
 body {
@@ -24,6 +24,7 @@ body {
 h1, h2, h3, h4, h5 {
 	margin:0;
 	padding:0;
+  line-height: 120%;
 }
 
 p {
