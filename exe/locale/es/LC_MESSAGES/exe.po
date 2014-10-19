@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2014-10-19 17:16+0200\n"
-"PO-Revision-Date: 2014-06-25 20:46+0200\n"
+"PO-Revision-Date: 2014-10-19 17:27+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -874,9 +874,8 @@ msgid "FPD"
 msgstr "FPD"
 
 #: exe/engine/config.py:100 exe/engine/config.py:101 exe/engine/config.py:103
-#, fuzzy
 msgid "Experimental"
-msgstr "experimento"
+msgstr "Experimental"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - You Should Know"
@@ -2697,7 +2696,7 @@ msgid ""
 "Last succesful save is %s."
 msgstr ""
 "ERROR AL GUARDAR\n"
-"La última salva correcta fue %s."
+"La última acción de guardado correcta fue %s."
 
 #: exe/engine/package.py:1442 exe/jsui/scripts/app/controller/Toolbar.js:371
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
@@ -3404,15 +3403,11 @@ msgstr ""
 "<fichero_de_salida> a partir del paquete ELP <fichero_de_entrada>"
 
 #: exe/exe_do:101
-#, fuzzy
 msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
 "given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage,"
 " xliff or epub3."
-msgstr ""
-"Exporta el paquete ELP <fichero_de_entrada> en el <fichero_de_salida> "
-"opcional en uno de los siguientes formatos: xml, scorm12, scorm2004, "
-"agrega, ims, website, webzip, singlepage, xliff o epub3."
+msgstr "Exportar el paquete ELP <fichero_de_entrada> al <fichero_de_salida> (opcional) en uno de los siguientes formatos: xml, scorm12, scorm2004, ims, website (sitio web), webzip (paquete autocontenido), singlepage (página única), xliff o epub3."
 
 #: exe/exe_do:107
 msgid ""
@@ -11087,4 +11082,3 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
-
