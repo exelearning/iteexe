@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2014-07-01 13:20+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage: pt\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2014-07-01 13:20+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage: pt\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Atividade drop-down", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Criar a hist\u00f3ria do caso. Um bom caso \u00e9 aquele \nque descreve uma controv\u00e9rsia ou apresenta uma cena descrevendo as personagens \nenvolvidas e a situa\u00e7\u00e3o. Deve permitir decidir a\u00e7\u00f5es \nque levem \u00e0 resolu\u00e7\u00e3o da situa\u00e7\u00e3o.  ", 
  "Telugu ": "Telugu ", 
@@ -453,7 +453,6 @@ translations = {
  "Bullet Image": "Imagem de lista", 
  "FPD - Think About It (with Feedback)": "FPD - Reflita (com retroalimenta\u00e7\u00e3o)", 
  "Icons": "\u00cdcones", 
- "Table Cell Properties": "Propriedades das c\u00e9lulas", 
  "LOM-ES": "LOM-ES", 
  "Web Site": "S\u00edtio Web", 
  "This is just a example title": "Este \u00e9 apenas um t\u00edtulo de exemplo", 
@@ -1524,7 +1523,7 @@ translations = {
  "Money Mouth": "Avarez", 
  "Font": "Fonte", 
  "Find": "Localizar", 
- "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, singlepage, xliff or epub3.": "Exportar o pacote elp <input_file> para um <output_file> opcional num dos seguintes formatos: xml, scorm12, scorm2004, agrega, ims, s\u00edtio web, ficheiro zip, p\u00e1gina \u00fanica, xliff ou epub3.", 
+ "Table Cell Properties": "Propriedades das c\u00e9lulas", 
  "Toggle Absolute Positioning": "Alternar o posicionamento absoluto", 
  "Select Flash Object": "Selecionar um objeto Flash", 
  "Enter the question stem. \nThe quest should be clear and unambiguous. Avoid negative premises \nas these can tend to be ambiguous.": "Digite o tronco da quest\u00e3o. \nA quest\u00e3o deve ser clara e sem duplos sentidos. Evite quest\u00f5es na negativa \npois t\u00eam tend\u00eancia para ser amb\u00edguas.", 

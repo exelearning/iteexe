@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2014-06-25 20:46+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage-Team: Spanish <jrfern@telefonica.net>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2014-06-25 20:46+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage-Team: Spanish <jrfern@telefonica.net>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Actividad desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cree el caso pr\u00e1ctico. Un buen caso es aquel \nque describe una controversia o propone una escena describiendo los personajes \ninvolucrados y la situaci\u00f3n. Tambi\u00e9n debe permitir que se realicen acciones \npara obtener la resoluci\u00f3n de la situaci\u00f3n.", 
  "Telugu ": "Telugu ", 
@@ -453,7 +453,6 @@ translations = {
  "Bullet Image": "Imagen de la vi\u00f1eta", 
  "FPD - Think About It (with Feedback)": "FPD - Reflexiona (con Retroalimentaci\u00f3n)", 
  "Icons": "Iconos", 
- "Table Cell Properties": "Propiedades de la celda", 
  "LOM-ES": "LOM-ES", 
  "Web Site": "Sitio web", 
  "This is just a example title": "Este es s\u00f3lo un t\u00edtulo de ejemplo", 
@@ -1524,7 +1523,7 @@ translations = {
  "Money Mouth": "Dinero boca", 
  "Font": "Fuente", 
  "Find": "Buscar", 
- "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, singlepage, xliff or epub3.": "Exporta el paquete ELP <fichero_de_entrada> en el <fichero_de_salida> opcional en uno de los siguientes formatos: xml, scorm12, scorm2004, agrega, ims, website, webzip, singlepage, xliff o epub3.", 
+ "Table Cell Properties": "Propiedades de la celda", 
  "Toggle Absolute Positioning": "Cambiar a posici\u00f3n absoluta", 
  "Select Flash Object": "Seleccione un objeto flash", 
  "Enter the question stem. \nThe quest should be clear and unambiguous. Avoid negative premises \nas these can tend to be ambiguous.": "Introduzca la pregunta. \nLa pregunta debe ser clara y no ambigua. Evite las premisas negativas \nya que estas tienden a ser ambiguas.", 

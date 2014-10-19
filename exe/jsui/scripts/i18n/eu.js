@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2014-07-02 00:16+0200\nLast-Translator: Joxemi Andonegi <jmandonegi@ulhi.net>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nLanguage: eu\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2014-07-02 00:16+0200\nLast-Translator: Joxemi Andonegi <jmandonegi@ulhi.net>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nLanguage: eu\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Jarduera zabalgarria", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Sortu kasuaren istorioa. Kasuak, ona izateko, \ngatazka bat deskribatu beharko luke, edo pertsonaien bidez egoera azaldu. \nGainera, gatazka konpondu ahal izateko \nhainbat ekintza gauzatzeko aukera eman beharko luke.", 
  "Telugu ": "Telugua", 
@@ -453,7 +453,6 @@ translations = {
  "Bullet Image": "Bulet-irudia", 
  "FPD - Think About It (with Feedback)": "FPD - Hausnartu (Feedback-arekin)", 
  "Icons": "Ikonoak", 
- "Table Cell Properties": "Gelaxka ezaugarriak", 
  "LOM-ES": "LOM-ES", 
  "Web Site": "Webgunea", 
  "This is just a example title": "Hau adibide moduko izenburu bat besterik ez da", 
@@ -1524,7 +1523,7 @@ translations = {
  "Money Mouth": "Ahoa diruz beteta", 
  "Font": "Letra-tipoa", 
  "Find": "Bilatu", 
- "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, singlepage, xliff or epub3.": "<input_file> elp paketea esportatu hautazko <output_file>-ra  formatu hauetako batean: xml, scorm12, scorm2004, agrega, ims, website, webzip, singlepage, xliff edo epub3", 
+ "Table Cell Properties": "Gelaxka ezaugarriak", 
  "Toggle Absolute Positioning": "Posizionatze-absolutua aktibatu\/desaktibatu", 
  "Select Flash Object": "Aukeratu flash objektua", 
  "Enter the question stem. \nThe quest should be clear and unambiguous. Avoid negative premises \nas these can tend to be ambiguous.": "Adierazi erro galdera. \nArgia eta zalantza gabekoa izan behar du. Saihestu premisa negatiboak \nanbiguoak izan ohi baitira.", 

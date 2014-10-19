@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2014-07-04 10:07+0100\nLast-Translator: Jes\u00fas Miguel Dom\u00ednguez <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fr\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2014-07-04 10:07+0100\nLast-Translator: Jes\u00fas Miguel Dom\u00ednguez <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fr\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Activit\u00e9 Forum Question-R\u00e9ponse", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cr\u00e9ez le sc\u00e9nario du \"cas d'\u00e9tude. Un bon \"cas d'\u00e9tude\" pr\u00e9sente une controverse ou expose un probl\u00e8me en d\u00e9crivant les \u00e9l\u00e9ments d'une probl\u00e9matique. Il peut \u00e9galement proposer diff\u00e9rentes actions qui permettraient de r\u00e9soudre le probl\u00e8me.", 
  "Telugu ": "Telugu", 
@@ -453,7 +453,6 @@ translations = {
  "Bullet Image": "Image de puce", 
  "FPD - Think About It (with Feedback)": "FPD - R\u00e9fl\u00e9chissez-y (avec commentaires)", 
  "Icons": "Ic\u00f4nes", 
- "Table Cell Properties": "Propri\u00e9t\u00e9s de la cellule", 
  "LOM-ES": "LOM-ES", 
  "Web Site": "Site Web", 
  "This is just a example title": "Titre exemple", 
@@ -1524,7 +1523,7 @@ translations = {
  "Money Mouth": "Avare", 
  "Font": "Police", 
  "Find": "Rechercher", 
- "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, singlepage, xliff or epub3.": "Exporte le paquet ELP <fichier_entr\u00e9e> sur le <fichier_sortie> optionnel dans l'un des formats suivants: xml, scorm12, scorm2004, agrega, ims, website, webzip, singlepage, xliff ou epub3.", 
+ "Table Cell Properties": "Propri\u00e9t\u00e9s de la cellule", 
  "Toggle Absolute Positioning": "Activer le positionnement absolu", 
  "Select Flash Object": "S\u00e9lectionnez un fichier Flash (.swf)", 
  "Enter the question stem. \nThe quest should be clear and unambiguous. Avoid negative premises \nas these can tend to be ambiguous.": "R\u00e9digez ici la question introductive. Celle-ci doit \u00eatre claire et sans ambiguit\u00e9. Evitez les intitul\u00e9s n\u00e9gatifs qui peuvent pr\u00eater \u00e0 contre-sens.", 
