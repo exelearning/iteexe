@@ -44,7 +44,7 @@
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.0"
+version="2.0.1"
 # 1.- Extraction of strings from *.py and *.js into new POT
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
 pybabel extract --keyword=x_ --keyword=c_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
