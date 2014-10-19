@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-25 20:38+0200\n"
+"POT-Creation-Date: 2014-10-19 17:16+0200\n"
 "PO-Revision-Date: 2007-04-18 12:29+1200\n"
 "Last-Translator: \n"
 "Language-Team: IP-Team <solomon@ip-team.org>\n"
@@ -15,19 +15,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 
-#: exe/application.py:165
+#: exe/application.py:166
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
 msgstr ""
 
-#: exe/application.py:183
+#: exe/application.py:184
 #, python-format
 msgid ""
 "An error has occurred when loading your Idevice Store. A backup is saved "
 "at %s"
 msgstr ""
 
-#: exe/application.py:222
+#: exe/application.py:223
 #, python-format
 msgid ""
 "Usage: %s [OPTION] [PACKAGE]\n"
@@ -657,7 +657,7 @@ msgstr ""
 #: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
 #: exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:531
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:533
 msgid "Instructions"
 msgstr "Інструкції"
 
@@ -701,18 +701,19 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
 #: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
-#: exe/engine/field.py:3610 exe/engine/field.py:3658
+#: exe/engine/field.py:3613 exe/engine/field.py:3661
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:605
 #: exe/engine/idevicestore.py:714 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:182
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
-#: exe/webui/common.py:438 exe/webui/common.py:448
+#: exe/webui/common.py:440 exe/webui/common.py:450
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
 #: exe/webui/element.py:2373 exe/webui/element.py:2508
 #: exe/webui/element.py:2623 exe/webui/element.py:2824
 #: exe/webui/listablock.py:461 exe/webui/questionelement.py:113
+#: exe/webui/truefalseelement.py:260
 msgid "Feedback"
 msgstr "Зворотний зв'язок"
 
@@ -770,8 +771,7 @@ msgstr ""
 
 #: exe/engine/config.py:65 exe/engine/config.py:70 exe/engine/config.py:92
 #: exe/engine/config.py:93 exe/engine/config.py:94 exe/engine/config.py:96
-#: exe/engine/config.py:100 exe/engine/config.py:101 exe/engine/config.py:102
-#: exe/engine/config.py:103 exe/engine/config.py:105
+#: exe/engine/config.py:102 exe/engine/config.py:105
 msgid "Interactive Activities"
 msgstr ""
 
@@ -793,6 +793,10 @@ msgstr ""
 #: exe/engine/config.py:83 exe/engine/config.py:84 exe/engine/config.py:85
 #: exe/engine/config.py:86 exe/engine/config.py:87
 msgid "FPD"
+msgstr ""
+
+#: exe/engine/config.py:100 exe/engine/config.py:101 exe/engine/config.py:103
+msgid "Experimental"
 msgstr ""
 
 #: exe/engine/debesconocerfpdidevice.py:29
@@ -960,8 +964,8 @@ msgstr ""
 "стандартну інформацію, виводячи повідомлення про \n"
 "правильну чи неправильну відповідь."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3681
-#: exe/engine/field.py:3746 exe/engine/multichoiceidevice.py:131
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3684
+#: exe/engine/field.py:3749 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:82
 #: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2348
 #: exe/webui/element.py:2352 exe/webui/element.py:2801
@@ -1107,11 +1111,11 @@ msgstr ""
 "Введіть адрес (url) веб ресурсу який ви хочете показати \n"
 "і виберіть розмір зони в якій цей ресурс буде показано."
 
-#: exe/engine/field.py:2639
+#: exe/engine/field.py:2642
 msgid "Click Here"
 msgstr "Клацніть Тут"
 
-#: exe/engine/field.py:2834 exe/engine/field.py:2881
+#: exe/engine/field.py:2837 exe/engine/field.py:2884
 #: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
@@ -1120,7 +1124,7 @@ msgstr ""
 "Введіть заголовок MP3 файлу. \n"
 "Цей заголовок появиться також в плеєрі."
 
-#: exe/engine/field.py:3017
+#: exe/engine/field.py:3020
 #, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
@@ -1152,7 +1156,7 @@ msgstr ""
 "Читабельність\" ввімкнено і \"Перевірити Регістр\" вимкнено, \"elephant\""
 " буде прийнято як правильну відповідь.</p>"
 
-#: exe/engine/field.py:3038 exe/engine/field.py:3272
+#: exe/engine/field.py:3041 exe/engine/field.py:3275
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
@@ -1160,7 +1164,7 @@ msgstr ""
 "<p>Якщо цю опцію відмічено, відповідь, в якій регістр букв буде "
 "неспівпадати з оригіналом, буде прийнято як неправильна.</p>"
 
-#: exe/engine/field.py:3043 exe/engine/field.py:3277
+#: exe/engine/field.py:3046 exe/engine/field.py:3280
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -1171,7 +1175,7 @@ msgstr ""
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 
-#: exe/engine/field.py:3081 exe/engine/field.py:3319
+#: exe/engine/field.py:3084 exe/engine/field.py:3322
 #: exe/engine/listaidevice.py:398
 msgid ""
 "Allow auto completion when \n"
@@ -1180,7 +1184,7 @@ msgstr ""
 "Дозволяє автозавершення коли \n"
 "користувач заповняє прогалини."
 
-#: exe/engine/field.py:3251
+#: exe/engine/field.py:3254
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1211,11 +1215,11 @@ msgstr ""
 "Читабельність\" ввімкнено і \"Перевірити Регістр\" вимкнено, \"elephant\""
 " буде прийнято як правильну відповідь.</p>"
 
-#: exe/engine/field.py:3282
+#: exe/engine/field.py:3285
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr ""
 
-#: exe/engine/field.py:3361 exe/engine/field.py:3405
+#: exe/engine/field.py:3364 exe/engine/field.py:3408
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1223,7 +1227,7 @@ msgstr ""
 "Можна долучати лише .swf (Flash Objects) для \n"
 "цього iDevice."
 
-#: exe/engine/field.py:3425 exe/engine/field.py:3489
+#: exe/engine/field.py:3428 exe/engine/field.py:3492
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1231,11 +1235,11 @@ msgstr ""
 "Можна долучати лише .flv (Flash Video Files) для \n"
 "цього iDevice."
 
-#: exe/engine/field.py:3501
+#: exe/engine/field.py:3504
 msgid "Type a discussion topic here."
 msgstr "Введіть тему обговорення тут."
 
-#: exe/engine/field.py:3530
+#: exe/engine/field.py:3533
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
@@ -1245,7 +1249,7 @@ msgstr ""
 " того щоб створити математичні формули. Для того щоб переглянути "
 "результат використовуйте кнопку <strong>Попередній перегляд</strong>.</p>"
 
-#: exe/engine/field.py:3538
+#: exe/engine/field.py:3541
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -1253,7 +1257,7 @@ msgstr ""
 "Клацніть на кнопці <strong>Попередній перегляд</strong> для того щоб "
 "подивитись як ваша формула буде виглядати в формі малюнка."
 
-#: exe/engine/field.py:3606 exe/engine/field.py:3655
+#: exe/engine/field.py:3609 exe/engine/field.py:3658
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/webui/element.py:2085 exe/webui/element.py:2140
 #: exe/webui/element.py:2472 exe/webui/element.py:2564
@@ -1261,20 +1265,20 @@ msgstr ""
 msgid "Option"
 msgstr "Опція"
 
-#: exe/engine/field.py:3684 exe/engine/field.py:3750
+#: exe/engine/field.py:3687 exe/engine/field.py:3753
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:194
 msgid "Hint"
 msgstr "Натяк"
 
-#: exe/engine/field.py:3772 exe/engine/field.py:3809 exe/webui/element.py:2277
+#: exe/engine/field.py:3775 exe/engine/field.py:3812 exe/webui/element.py:2277
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "Опції"
 
-#: exe/engine/field.py:3832
+#: exe/engine/field.py:3835
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -1285,7 +1289,7 @@ msgstr ""
 "Запитання має бути зрозумілим і однозначним. Уникайте \n"
 "негативних передумов, так як це може запутати студента."
 
-#: exe/engine/field.py:3835 exe/engine/field.py:3916
+#: exe/engine/field.py:3838 exe/engine/field.py:3919
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
@@ -1293,7 +1297,7 @@ msgstr ""
 msgid "Question:"
 msgstr "Запитання:"
 
-#: exe/engine/field.py:3840
+#: exe/engine/field.py:3843
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -1305,13 +1309,13 @@ msgstr ""
 " іншу опцію</strong> та видаляти зайві варіанти клацнувши на червоний "
 "\"Х\" праворуч ві відповідної опції."
 
-#: exe/engine/field.py:3844
+#: exe/engine/field.py:3847
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr "Відмітьте всі правильні відповіді, ставлячи відповідні відмітки."
 
-#: exe/engine/field.py:3847
+#: exe/engine/field.py:3850
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -1319,7 +1323,7 @@ msgstr ""
 "Введіть інформацію яку ви хочете \n"
 "повідомити студенту в зворотний зв'язок."
 
-#: exe/engine/field.py:3849 exe/engine/field.py:3919
+#: exe/engine/field.py:3852 exe/engine/field.py:3922
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:200
@@ -1771,7 +1775,7 @@ msgstr ""
 
 #: exe/engine/idevicestore.py:612 exe/engine/idevicestore.py:621
 #: exe/engine/idevicestore.py:719 exe/engine/idevicestore.py:728
-#: exe/engine/package.py:625 exe/engine/package.py:636
+#: exe/engine/package.py:649 exe/engine/package.py:660
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:202
 msgid "Objectives"
 msgstr "Завдання"
@@ -1791,7 +1795,7 @@ msgstr "Введіть повчальні завдання для цього р�
 
 #: exe/engine/idevicestore.py:625 exe/engine/idevicestore.py:635
 #: exe/engine/idevicestore.py:732 exe/engine/idevicestore.py:742
-#: exe/engine/package.py:655 exe/engine/package.py:666
+#: exe/engine/package.py:679 exe/engine/package.py:690
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:216
 msgid "Preknowledge"
 msgstr "Попередні знання"
@@ -2452,31 +2456,31 @@ msgstr ""
 msgid "Guidelines Teacher Text:"
 msgstr ""
 
-#: exe/engine/package.py:302
+#: exe/engine/package.py:326
 msgid "Topic"
 msgstr "Тема"
 
-#: exe/engine/package.py:302
+#: exe/engine/package.py:326
 msgid "Section"
 msgstr "Секція"
 
-#: exe/engine/package.py:302
+#: exe/engine/package.py:326
 msgid "Unit"
 msgstr "Одиниця"
 
-#: exe/engine/package.py:323
+#: exe/engine/package.py:347
 msgid "Home"
 msgstr "Домашня сторінка"
 
-#: exe/engine/package.py:475
+#: exe/engine/package.py:499
 msgid "Metadata creation date"
 msgstr ""
 
-#: exe/engine/package.py:972
+#: exe/engine/package.py:996
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:1010 exe/engine/package.py:1017
+#: exe/engine/package.py:1034 exe/engine/package.py:1041
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2485,16 +2489,16 @@ msgstr ""
 "Помилка при збереженні!\n"
 "Останнє вдале збереження %s."
 
-#: exe/engine/package.py:1393 exe/jsui/scripts/app/controller/Toolbar.js:371
+#: exe/engine/package.py:1442 exe/jsui/scripts/app/controller/Toolbar.js:371
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "iDevice Editor"
 
-#: exe/engine/package.py:1514
+#: exe/engine/package.py:1563
 msgid "My Catalog"
 msgstr ""
 
-#: exe/engine/package.py:1521
+#: exe/engine/package.py:1570
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Default"
@@ -3090,7 +3094,7 @@ msgstr ""
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
-#: exe/exe_do:66
+#: exe/exe_do:68
 msgid ""
 "Usage: %prog [options] input_file [output_file]\n"
 "\n"
@@ -3098,147 +3102,147 @@ msgid ""
 "%prog -h"
 msgstr ""
 
-#: exe/exe_do:72
+#: exe/exe_do:74
 msgid "Set ELP field values. Example: -s style=Default,root.title='Root Node'"
 msgstr ""
 
-#: exe/exe_do:75
+#: exe/exe_do:77
 msgid "Set ELP field values options"
 msgstr ""
 
-#: exe/exe_do:76
+#: exe/exe_do:78
 msgid ""
 "Once you have chosen Set ELP field values option using '-s <values>' or"
 "     '--set <values>', it's possible to configure the following options:"
 msgstr ""
 
-#: exe/exe_do:81
+#: exe/exe_do:83
 msgid "Write field values to ELP"
 msgstr ""
 
-#: exe/exe_do:87
+#: exe/exe_do:89
 msgid ""
 "Generates resource info report to text <output_file> from <input_file> "
 "elp package"
 msgstr ""
 
-#: exe/exe_do:95
+#: exe/exe_do:101
 msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
-"given formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, "
-"singlepage, xliff or epub3."
+"given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage,"
+" xliff or epub3."
 msgstr ""
 
-#: exe/exe_do:101
+#: exe/exe_do:107
 msgid ""
 "Import to <output_file> elp package, <input_file> in one of the given "
 "formats: xml or xliff."
 msgstr ""
 
-#: exe/exe_do:106
+#: exe/exe_do:112
 msgid "Force overwrite of <output_file>"
 msgstr ""
 
-#: exe/exe_do:110
+#: exe/exe_do:116
 msgid "Add the required files to generate a export editable by eXeLearning"
 msgstr ""
 
-#: exe/exe_do:115
+#: exe/exe_do:121
 msgid "XLIFF export options"
 msgstr ""
 
-#: exe/exe_do:116
+#: exe/exe_do:122
 msgid ""
 "Once you have chosen XLIFF export option using '-x xliff' or '--export "
 "xliff', it's possible to configure the following export options:"
 msgstr ""
 
-#: exe/exe_do:121
+#: exe/exe_do:127
 msgid "Don't copy source in target"
 msgstr ""
 
-#: exe/exe_do:126 exe/webui/xliffexportpreferencespage.py:123
+#: exe/exe_do:132 exe/webui/xliffexportpreferencespage.py:123
 msgid "Wrap fields in CDATA"
 msgstr ""
 
-#: exe/exe_do:131
+#: exe/exe_do:137
 msgid "XLIFF import options"
 msgstr ""
 
-#: exe/exe_do:132
+#: exe/exe_do:138
 msgid ""
 "Once you have chosen XLIFF import option using  '-i xliff' or '--import "
 "xliff', it's possible to configure the following import options:"
 msgstr ""
 
-#: exe/exe_do:137 exe/webui/xliffimportpreferencespage.py:79
+#: exe/exe_do:143 exe/webui/xliffimportpreferencespage.py:79
 msgid "Import from source language"
 msgstr ""
 
-#: exe/exe_do:142
+#: exe/exe_do:148
 msgid "SCORM export options"
 msgstr ""
 
-#: exe/exe_do:143
+#: exe/exe_do:149
 msgid ""
 "Once you have chosen one SCORM export option using '-x scorm12' or '-x "
 "scorm2004' or 'x agrega', it's possible to configure the following export"
 " options:"
 msgstr ""
 
-#: exe/exe_do:148
+#: exe/exe_do:154
 msgid "Include Single Page export file"
 msgstr ""
 
-#: exe/exe_do:153
+#: exe/exe_do:159
 msgid "Include Web Site export files"
 msgstr ""
 
-#: exe/exe_do:168
+#: exe/exe_do:174
 msgid "Options --export and --import are mutually exclusive."
 msgstr ""
 
-#: exe/exe_do:171
+#: exe/exe_do:177
 msgid "No --export, --import, --set or --report option supplied."
 msgstr ""
 
-#: exe/exe_do:175
+#: exe/exe_do:181
 msgid "No file input supplied."
 msgstr ""
 
-#: exe/exe_do:184
+#: exe/exe_do:190
 msgid "Bad number of arguments supplied"
 msgstr ""
 
-#: exe/exe_do:194 exe/export/cmdlineexporter.py:84
+#: exe/exe_do:207 exe/export/cmdlineexporter.py:84
 msgid "Invalid input package"
 msgstr ""
 
-#: exe/exe_do:209
+#: exe/exe_do:227
 #, python-format
 msgid ""
 "exe_do: error: Unable to set values from '%s'.\n"
 "The error was:"
 msgstr ""
 
-#: exe/exe_do:227
+#: exe/exe_do:245
 #, python-format
 msgid "Successfully exported '%s' from '%s'."
 msgstr ""
 
-#: exe/exe_do:230
+#: exe/exe_do:248
 #, python-format
 msgid ""
 "exe_do: error: Unable to export from '%s'.\n"
 "The error was:"
 msgstr ""
 
-#: exe/exe_do:238
+#: exe/exe_do:256
 #, python-format
 msgid "File '%s' successfully imported to '%s'."
 msgstr ""
 
-#: exe/exe_do:241
+#: exe/exe_do:259
 #, python-format
 msgid ""
 "exe_do: error: Unable to import '%s'.\n"
@@ -3260,8 +3264,8 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr ""
 
-#: exe/export/epub3export.py:584 exe/export/imsexport.py:569
-#: exe/export/scormexport.py:657 exe/export/websiteexport.py:96
+#: exe/export/epub3export.py:593 exe/export/imsexport.py:569
+#: exe/export/scormexport.py:669 exe/export/websiteexport.py:96
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3972,7 +3976,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:617
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:221
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:258
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:260
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Save"
 msgstr "Зберегти"
@@ -5086,7 +5090,7 @@ msgstr "Додати Сторінку"
 #: exe/webui/editorelement.py:115 exe/webui/editorelement.py:156
 #: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
 #: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
-#: exe/webui/editorpage.py:249 exe/webui/editorpage.py:252
+#: exe/webui/editorpage.py:251 exe/webui/editorpage.py:254
 #: exe/webui/galleryblock.py:303
 msgid "Delete"
 msgstr "Видалити"
@@ -5203,7 +5207,7 @@ msgstr ""
 msgid "Merging"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:338 exe/webui/editorpage.py:267
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:338 exe/webui/editorpage.py:269
 #, fuzzy
 msgid "Quit"
 msgstr "Підтвердити"
@@ -7003,8 +7007,8 @@ msgstr "Педагогічна Допомога"
 msgid "Information"
 msgstr "Інформація"
 
-#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:546
-#: exe/webui/common.py:547 exe/webui/editorpane.py:364
+#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:548
+#: exe/webui/common.py:549 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -7020,7 +7024,7 @@ msgstr "Порада:"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
-#: exe/webui/block.py:333 exe/webui/editorpage.py:284
+#: exe/webui/block.py:333 exe/webui/editorpage.py:286
 #: exe/webui/editorpane.py:270
 msgid "Edit"
 msgstr "Редагувати"
@@ -7094,7 +7098,7 @@ msgstr ""
 msgid "Hide"
 msgstr "Сховати"
 
-#: exe/webui/common.py:216 exe/webui/common.py:434 exe/webui/element.py:1434
+#: exe/webui/common.py:216 exe/webui/common.py:436 exe/webui/element.py:1434
 #: exe/webui/element.py:2365 exe/webui/listablock.py:274
 msgid "Show Feedback"
 msgstr "Показати Зворотний Зв'язок"
@@ -7117,13 +7121,13 @@ msgstr "Неправильно!"
 msgid "Menu"
 msgstr ""
 
-#: exe/webui/common.py:241 exe/webui/editorpage.py:233
+#: exe/webui/common.py:241 exe/webui/editorpage.py:235
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : elearning XHTML editor"
 
-#: exe/webui/common.py:537 exe/webui/common.py:541
+#: exe/webui/common.py:539 exe/webui/common.py:543
 msgid "Click for completion instructions"
 msgstr "Клацніть для інструкцій що до завершення"
 
@@ -7198,17 +7202,17 @@ msgstr "Будь ласка введіть назву для iDevice."
 msgid "Sorry, wrong file format."
 msgstr "Вибечта, невірний формат файлу"
 
-#: exe/webui/editorpage.py:260
+#: exe/webui/editorpage.py:262
 #, fuzzy
 msgid "Import iDevice"
 msgstr "Імпортувати iDevices"
 
-#: exe/webui/editorpage.py:263
+#: exe/webui/editorpage.py:265
 #, fuzzy
 msgid "Export iDevice"
 msgstr "Експортувати iDevice"
 
-#: exe/webui/editorpage.py:289
+#: exe/webui/editorpage.py:291
 msgid "New iDevice"
 msgstr "Новий iDevice"
 

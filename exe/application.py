@@ -117,6 +117,7 @@ class Application:
             self.usage()
             sys.exit(2)
 
+        log.debug('options: %s, packages: %s' % (options, packages))
         if len(packages) == 1:
             self.packagePath = packages[0]
 

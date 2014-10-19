@@ -142,6 +142,8 @@ color: #000000;
  
 /* adds tiny bit of padding to edit.png when in preview mode */
 img.submit {
+    width: 16px;
+    height: 16px;
     padding: 0 0 2px 2px;
 }
 

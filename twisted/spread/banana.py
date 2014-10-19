@@ -247,16 +247,16 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
                 item = listStack.pop()[1]
                 gotItem(item)
         self.buffer = ''
-        log.info('Banana Import Statistics')
-        log.info('cList: ' + `cList`)
-        log.info('cString: ' + `cString`)
-        log.info('cInt: ' + `cInt`)
-        log.info('cLongInt: ' + `cLongInt`)
-        log.info('cLongNeg: ' + `cLongNeg`)
-        log.info('cNeg: ' + `cNeg`)
-        log.info('cVocab: ' + `cVocab`)
-        log.info('cFloat: ' + `cFloat`)
-        log.info('cInvalid: ' + `cInvalid`)
+        log.debug('Banana Import Statistics')
+        log.debug('cList: ' + `cList`)
+        log.debug('cString: ' + `cString`)
+        log.debug('cInt: ' + `cInt`)
+        log.debug('cLongInt: ' + `cLongInt`)
+        log.debug('cLongNeg: ' + `cLongNeg`)
+        log.debug('cNeg: ' + `cNeg`)
+        log.debug('cVocab: ' + `cVocab`)
+        log.debug('cFloat: ' + `cFloat`)
+        log.debug('cInvalid: ' + `cInvalid`)
 
 
     def expressionReceived(self, lst):

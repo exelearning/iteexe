@@ -98,10 +98,10 @@ class Config(object):
         'rss': [x_('Non-Textual Information')],
         'external web site': [x_('Non-Textual Information')],
         'free text': [x_('Textual Information')],
-        'click in order game': [x_('Interactive Activities')],
-        'hangman game': [x_('Interactive Activities')],
+        'click in order game': [x_('Experimental')],
+        'hangman game': [x_('Experimental')],
         'place the objects': [x_('Interactive Activities')],
-        'memory match game': [x_('Interactive Activities')],
+        'memory match game': [x_('Experimental')],
         'file attachments': [x_('Non-Textual Information')],
         'sort items': [x_('Interactive Activities')]
     }

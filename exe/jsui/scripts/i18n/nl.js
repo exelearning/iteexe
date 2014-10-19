@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2014-08-24 15:51+0100\nLast-Translator: k.werschkull <k.werschkull@hccnet.nl>\nLanguage-Team: Dutch <exe@exelearning.org>\nLanguage: nl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2014-08-24 15:51+0100\nLast-Translator: k.werschkull <k.werschkull@hccnet.nl>\nLanguage-Team: Dutch <exe@exelearning.org>\nLanguage: nl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Selectielijst activiteit", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Omschrijf het geval. Een goede gevalstudie\nbevat een controverse of beschrijft de situatie en de personen die erbij\nbetrokken zijn. Er moet ook ruimte zijn voor beslissingen of acties die\nwaardoor iemand de situatie kan controleren.", 
  "Telugu ": "Telugu", 
@@ -453,7 +453,6 @@ translations = {
  "Bullet Image": "Opsommingsteken", 
  "FPD - Think About It (with Feedback)": "FPD - Denk na! (met feedback)", 
  "Icons": "Pictogrammen", 
- "Table Cell Properties": "Cel-eigenschappen", 
  "LOM-ES": "LOM-ES", 
  "Web Site": "Website", 
  "This is just a example title": "Dit is slechts een voorbeeld titel", 
@@ -1524,7 +1523,7 @@ translations = {
  "Money Mouth": "Hebberig", 
  "Font": "Lettertype", 
  "Find": "Zoeken", 
- "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, singlepage, xliff or epub3.": "Exporteer <input_file> elp pakket naar  optioneel <output_file> in een van de volgende formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, singlepage, xliff of epub3.", 
+ "Table Cell Properties": "Cel-eigenschappen", 
  "Toggle Absolute Positioning": "Absoluut positioneren inschakelen", 
  "Select Flash Object": "Kies een Flash-bestand", 
  "Enter the question stem. \nThe quest should be clear and unambiguous. Avoid negative premises \nas these can tend to be ambiguous.": "Geef de tekst van de vraag.\nDe vraag moet duidelijk en ondubbelzinnig zijn. Vermijd negatieve beweringen\nwant deze zijn vaak misleidend.", 
