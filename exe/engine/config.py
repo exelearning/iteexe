@@ -102,7 +102,7 @@ class Config(object):
         'place the objects': [x_('Interactive Activities')],
         'memory match game': [x_('Experimental')],
         'file attachments': [x_('Non-Textual Information')],
-        'sort items': [x_('Interactive Activities')]
+        'sort items': [x_('Experimental')]
     }
     
     @classmethod
