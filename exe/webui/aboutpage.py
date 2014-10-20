@@ -22,11 +22,12 @@
 The AboutPage is responsible for showing about information
 """
 
-import logging
 from twisted.web.resource import Resource
 from exe.webui.renderable import Renderable
-from nevow  import rend
+from nevow                import rend, tags
 from exe.engine           import version
+
+import logging
 
 log = logging.getLogger(__name__)
 
@@ -51,6 +52,8 @@ class AboutPage(Renderable, rend.Page):
         return ctx.tag()[version.release]
 
     def render_revision(self, ctx, data):
-        return ctx.tag()[version.revision]
+        return ctx.tag()[tags.a(href='%s;a=shortlog;h=%s' % (self.config.baseGitWebURL, version.revision),
+                                target='_blank')[version.revision]
+                        ]
 
 # ===========================================================================
