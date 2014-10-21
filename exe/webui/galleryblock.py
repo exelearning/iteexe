@@ -262,7 +262,7 @@ class GalleryBlock(Block):
                           # Edit button
                           changeGalleryImage,
                           u'          <img alt="%s"' % _(u'Change Image'),
-                          u'           class="submit"'
+                          u'           class="submit" width="16" height="16"'
                           u'           src="/images/stock-edit.png"/>'
                           u'        </a>']
                 # Move left button
@@ -271,13 +271,13 @@ class GalleryBlock(Block):
                           u'        <a title="%s"' % _(u'Move Image Left'),
                           u'           href="%s">' % submitLink('moveLeft'),
                           u'        <img alt="%s"' % _(u'Go Back'),
-                          u'         class="submit"'
+                          u'         class="submit" width="16" height="16"'
                           u'         src="/images/stock-go-back.png"/>'
                           u'        </a>',
                           ]
                 else:
                     result += [
-                          u'        <img class="submit"'
+                          u'        <img class="submit" width="16" height="16"'
                           u'         src="/images/stock-go-back-off.png"/>']
                 # Move right button
                 if image.index < len(image.parent.images)-1:
@@ -285,7 +285,7 @@ class GalleryBlock(Block):
                           u'        <a title="%s"' % _(u'Move Image Right'),
                           u'           href="%s">' % submitLink('moveRight'),
                           u'        <img alt="%s"' % _(u'Go Forward'),
-                          u'         class="submit"'
+                          u'         class="submit" width="16" height="16"'
                           u'         src="/images/stock-go-forward.png"/>',
                           u'        </a>',
                           ]
@@ -293,19 +293,19 @@ class GalleryBlock(Block):
                     result += [
                           u'        ' + 
                           u'<img alt="%s" ' % _(u'Go Forward (Not Available)'),
-                          u' class="submit"'
+                          u' class="submit" width="16" height="16"'
                           u' src="/images/stock-go-forward-off.png"/>']
                 result += [
                           # Delete button
                           u'        <a title="%s"' % _(u'Delete Image'),
                           u'           href="%s">' % (confirmThenSubmitLink(_('Delete this image?'), 'delete')),
-                          u'        <img class="submit" alt="%s" ' \
+                          u'        <img class="submit" width="16" height="16" alt="%s" ' \
                                                         % _(u'Delete'),
                           u'             src="/images/stock-delete.png"/>',
                           u'        </a>',
                           u'<a href="javascript:addGalleryImage(%s)"' % id,
                           u' title="%s"><img src="/images/stock-add.png"' % _(u"Add images"),
-                          u' class="submit" alt="%s" /></a>' % _(u"Add images"),
+                          u' class="submit" width="16" height="16" alt="%s" /></a>' % _(u"Add images"),
                           u'      </span>']
                 return result
             html += self._generateTable(genCell)
