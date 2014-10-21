@@ -466,7 +466,7 @@ def submitImage(action, object_, imageFile, title=u"", isChanged=1, relative=Fal
         relativeText = u'style="position:relative;z-index:100000"'
     html  = u'<a %s' % titleText
     html += u' href="#" onclick="%s" %s>' % (onclick, relativeText)
-    html += u'<img alt="%s" class="submit" src="%s"/>' % (title, imageFile)
+    html += u'<img alt="%s" class="submit" width="16" height="16" src="%s" />' % (title, imageFile)
     html += u'</a>\n' 
     return html
 
@@ -496,7 +496,7 @@ def confirmThenSubmitImage(message, action, object_, imageFile,
     html += " href=\"#\" "
     html += "onclick=\"confirmThenSubmitLink('"+re.escape(message)+"', '"+action+"', "
     html += "'"+object_+"', "+unicode(isChanged)+");\" >"
-    html += u'<img alt="%s" class="submit" src="%s"/>' % (title, imageFile)
+    html += u'<img alt="%s" class="submit" width="16" height="16" src="%s" />' % (title, imageFile)
     html += u'</a>\n' 
     return html
 
