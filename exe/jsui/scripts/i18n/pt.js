@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2014-07-01 13:20+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage: pt\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.1\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2014-10-22 23:33+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage: pt\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Atividade drop-down", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Criar a hist\u00f3ria do caso. Um bom caso \u00e9 aquele \nque descreve uma controv\u00e9rsia ou apresenta uma cena descrevendo as personagens \nenvolvidas e a situa\u00e7\u00e3o. Deve permitir decidir a\u00e7\u00f5es \nque levem \u00e0 resolu\u00e7\u00e3o da situa\u00e7\u00e3o.  ", 
  "Telugu ": "Telugu ", 
@@ -543,6 +543,7 @@ translations = {
  "Demote node down in hierarchy": "Mover a p\u00e1gina para um n\u00edvel abaixo na hierarquia", 
  "Dont Shuffle": "N\u00e3o aleat\u00f3rio", 
  "Once you have chosen one SCORM export option using '-x scorm12' or '-x scorm2004' or 'x agrega', it's possible to configure the following export options:": "Depois de ter escolhido uma op\u00e7\u00e3o de exporta\u00e7\u00e3o SCORM por meio de '-x scorm12' ou '-x scorm2004' ou '-x agrega', \u00e9 poss\u00edvel configurar as seguintes op\u00e7\u00f5es de exporta\u00e7\u00e3o:", 
+ "Experimental": "Experimental", 
  "Update All Rows in Table": "Atualizar todas as linhas", 
  "office tool": "ferramenta de escrit\u00f3rio", 
  "Can NOT Undo Edits": "N\u00c3O \u00e9 poss\u00edvel desfazer altera\u00e7\u00f5es", 
@@ -1133,6 +1134,7 @@ translations = {
  "Circle": "C\u00edrculo", 
  "Copy\/Cut\/Paste is not available in Mozilla and Firefox.\nDo you want more information about this issue?": "Copiar\/recortar\/colar n\u00e3o est\u00e1 dispon\u00edvel no Mozilla e Firefox. Deseja mais informa\u00e7\u00f5es sobre este problema?", 
  "%s\n%s unchanged": "%s\n%s n\u00e3o modificado", 
+ "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage, xliff or epub3.": "Exportar o pacote elp <input_file> para um <output_file> opcional num dos seguintes formatos: xml, scorm12, scorm2004, ims, s\u00edtio web, ficheiro zip, p\u00e1gina \u00fanica, xliff ou epub3.", 
  "Cognitive Process": "Processo cognitivo", 
  "If you restore the saved content, you will lose all the content that is currently in the editor.\n\nAre you sure you want to restore the saved content?": "Se restaurar o conte\u00fado, voc\u00ea ir\u00e1 perder tudo que est\u00e1 atualmente no editor.\n\nTem certeza que quer restaurar o conte\u00fado salvo?", 
  "discussion activity": "atividade de discuss\u00e3o", 
