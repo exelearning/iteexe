@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2014-05-01 20:10+0200\nLast-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\nLanguage-Team: LliureX\nLanguage: ca_ES\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.1\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2014-10-22 15:13+0200\nLast-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\nLanguage-Team: LliureX\nLanguage: ca_ES\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Activitat de men\u00fa desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Crea la hist\u00f2ria del cas. Un bon cas \u00e9s aquell \nque descriu una controv\u00e8rsia o mostra una escena descrivint els car\u00e0cters \ninvolucrats en la situaci\u00f3. Tamb\u00e9 ha de permetre les accions \nencaminades a resoldre el conflicte de la situaci\u00f3.", 
  "Xhosa ": "Xosa ", 
@@ -1096,6 +1096,7 @@ translations = {
  "Multi-select": "Selecci\u00f3 m\u00faltiple", 
  "Check Caps?": "Correcci\u00f3 de maj\u00fascules?", 
  "Classes": "Classes", 
+ "An error has occurred when loading your config. A backup is saved at %s": "S'ha produ\u00eft un error mentres es carregava la vostra configuraci\u00f3. S'ha guardat una c\u00f2pia de seguretat a %s", 
  "decide": "decidix", 
  "LaTeX to Math for eXe": "Del LaTeX al Math per a l'eXe", 
  "Failed to get properties": "No s'han pogut obtindre les propietats", 
@@ -1816,6 +1817,7 @@ translations = {
  "Navy Blue": "Blau mar\u00ed", 
  "Type the question stem. The question \nshould be clear and unambiguous. Avoid negative premises as these can tend to \nbe ambiguous.": "Escriviu la pregunta principal. Esta pregunta \n ha de ser clara i inequ\u00edvoca. Eviteu les premisses negatives ja que solen ser ambig\u00fces.", 
  "Sanskrit ": "S\u00e0nscrit ", 
+ "An error has occurred when loading your Idevice Store. A backup is saved at %s": "S'ha produ\u00eft un error mentres es carregava el magatzem d'Idevice. S'ha guardat una c\u00f2pia de seguretat a %s", 
  "Choose an MP3 file": "Escolliu un fitxer MP3", 
  "Quotation is an iDevice that provides the students with quotations to reflect upon.": "Citacions per a pensar \u00e9s un iDevice que permet a l'alumnat reflexionar sobre algunes citacions proposades.", 
  "<h2>Clickable Areas<\/h2>": "<h2>\u00c0rees sensibles<\/h2>", 
