@@ -8,10 +8,10 @@
 # Angel Berlanas Vicente <angel.berlanas@gmail.com>, 2013-2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.0\n"
+"Project-Id-Version: eXeLearning 2.0.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2014-10-19 17:16+0200\n"
-"PO-Revision-Date: 2014-05-01 20:10+0200\n"
+"PO-Revision-Date: 2014-10-22 15:13+0200\n"
 "Last-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\n"
 "Language-Team: LliureX\n"
 "Language: ca_ES\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: exe/application.py:166
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
-msgstr ""
+msgstr "S'ha produït un error mentres es carregava la vostra configuració. S'ha guardat una còpia de seguretat a %s"
 
 #: exe/application.py:184
 #, python-format
@@ -32,6 +32,8 @@ msgid ""
 "An error has occurred when loading your Idevice Store. A backup is saved "
 "at %s"
 msgstr ""
+"S'ha produït un error mentres es carregava el magatzem d'Idevice. S'ha guardat una còpia de seguretat "
+"a %s"
 
 #: exe/application.py:223
 #, python-format
@@ -11059,4 +11061,3 @@ msgstr ""
 "El fitxer d'iDevices/generic.data o el paquet que proveu de carregar s'ha"
 " creat amb una versió més nova de l'eXe. Actualitzeu l'eXe i torneu-ho a "
 "provar."
-

@@ -1,11 +1,11 @@
 /*  =================================================
 
      Fichero: content.css
-     Proyecto: carm- Nueva plantilla para exeLearning
+     Proyecto: CARM- Nueva plantilla para exeLearning
      Autores: Mercedes Cotelo Lois / Antonio Monje Fernández / Francisco Javier Pulido Cuadrado
      Fecha: Mayo 2011
      Descripcion: Hoja de estilos principal
-     Company:   carm - Centro Nacional de desarrollo Curricular en Sistemas No propietarios.
+     Company:   CARM - Centro Nacional de desarrollo Curricular en Sistemas No propietarios.
      Referencias: Obra derivada de (ver license.txt)
      
    ================================================== */
@@ -240,7 +240,7 @@ La capa interior, se utiliza para el efecto inferior izquierdo
 El icono se utiliza para el efecto superior izquierdo
 */
 .activityIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_activity.gif"] 
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_activity.gif"] 
 {
 	border: 0px;
 	position: relative;
@@ -253,7 +253,7 @@ El icono se utiliza para el efecto superior izquierdo
 El título se utiliza para el efecto superior derecho
 */
 .activityIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_activity.gif"] + .iDeviceTitle
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_activity.gif"] + .iDeviceTitle
 {
 	display: block;
 	background: #ffffff url('sup_der_activity.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
@@ -268,7 +268,7 @@ El título se utiliza para el efecto superior derecho
 
 
 .activityIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_activity.gif"] + .iDeviceTitle + .iDevice_inner
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_activity.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
 	margin: 0 auto;
@@ -305,7 +305,7 @@ La capa interior, se utiliza para el efecto inferior izquierdo
 El icono se utiliza para el efecto superior izquierdo
 */
 .ReflectionIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_reflection.gif"] 
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_reflection.gif"] 
 {
 	border: 0px;
 	position: relative;
@@ -318,7 +318,7 @@ El icono se utiliza para el efecto superior izquierdo
 El título se utiliza para el efecto superior derecho
 */
 .ReflectionIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_reflection.gif"] + .iDeviceTitle
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_reflection.gif"] + .iDeviceTitle
 {
 	display: block;
    background: #ffffff url('sup_der_reflection.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
@@ -332,7 +332,7 @@ El título se utiliza para el efecto superior derecho
 }
 
 .ReflectionIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_reflection.gif"] + .iDeviceTitle + .iDevice_inner
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_reflection.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
 	margin: 0 auto;
@@ -370,7 +370,7 @@ La capa interior, se utiliza para el efecto inferior izquierdo
 El icono se utiliza para el efecto superior izquierdo
 */
 .objectivesIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_objectives.gif"] 
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_objectives.gif"] 
 {
 	border: 0px;
 	position: relative;
@@ -383,7 +383,7 @@ El icono se utiliza para el efecto superior izquierdo
 El título se utiliza para el efecto superior derecho
 */
 .objectivesIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_objectives.gif"] + .iDeviceTitle
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_objectives.gif"] + .iDeviceTitle
 {
 	display: block;
 	background: #efebdc url('sup_der_objectives.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
@@ -398,7 +398,7 @@ El título se utiliza para el efecto superior derecho
 
 
 .objectivesIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_objectives.gif"] + .iDeviceTitle + .iDevice_inner
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_objectives.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
 	margin: 0 auto;
@@ -434,7 +434,7 @@ La capa interior, se utiliza para el efecto inferior izquierdo
 El icono se utiliza para el efecto superior izquierdo
 */
 .CasestudyIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_casestudy.gif"] 
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_casestudy.gif"] 
 {
 	border: 0px;
 	position: relative;
@@ -447,7 +447,7 @@ El icono se utiliza para el efecto superior izquierdo
 El título se utiliza para el efecto superior derecho
 */
 .CasestudyIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_casestudy.gif"] + .iDeviceTitle
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_casestudy.gif"] + .iDeviceTitle
 {
 	display: block;
    background: #e2dff0 url('sup_der_casestudy.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
@@ -462,7 +462,7 @@ El título se utiliza para el efecto superior derecho
 
 
 .CasestudyIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_casestudy.gif"] + .iDeviceTitle + .iDevice_inner
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_casestudy.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
 	margin: 0 auto;
@@ -500,7 +500,7 @@ La capa interior, se utiliza para el efecto inferior izquierdo
 El icono se utiliza para el efecto superior izquierdo
 */
 .readingIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_reading.gif"] 
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_reading.gif"] 
 {
 	border: 0px;
 	position: relative;
@@ -513,7 +513,7 @@ El icono se utiliza para el efecto superior izquierdo
 El título se utiliza para el efecto superior derecho
 */
 .readingIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_reading.gif"] + .iDeviceTitle
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_reading.gif"] + .iDeviceTitle
 {
 	display: block;
    background: #e7edce url('sup_der_reading.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
@@ -528,7 +528,7 @@ El título se utiliza para el efecto superior derecho
 
 
 .readingIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_reading.gif"] + .iDeviceTitle + .iDevice_inner
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_reading.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
 	margin: 0 auto;
@@ -567,7 +567,7 @@ La capa interior, se utiliza para el efecto inferior izquierdo
 El icono se utiliza para el efecto superior izquierdo
 */
 .preknowledgeIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_preknowledge.gif"] 
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_preknowledge.gif"] 
 {
 	border: 0px;
 	position: relative;
@@ -580,7 +580,7 @@ El icono se utiliza para el efecto superior izquierdo
 El título se utiliza para el efecto superior derecho
 */
 .preknowledgeIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_preknowledge.gif"] + .iDeviceTitle
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_preknowledge.gif"] + .iDeviceTitle
 {
 	display: block;
 	background: #ffe7f7 url('sup_der_preknowledge.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
@@ -595,7 +595,7 @@ El título se utiliza para el efecto superior derecho
 
 
 .preknowledgeIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_preknowledge.gif"] + .iDeviceTitle + .iDevice_inner
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_preknowledge.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
 	margin: 0 auto;
@@ -632,7 +632,7 @@ La capa interior, se utiliza para el efecto inferior izquierdo
 El icono se utiliza para el efecto superior izquierdo
 */
 .MultichoiceIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] 
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] 
 {
 	border: 0px;
 	position: relative;
@@ -645,7 +645,7 @@ El icono se utiliza para el efecto superior izquierdo
 El título se utiliza para el efecto superior derecho
 */
 .MultichoiceIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] + .iDeviceTitle
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] + .iDeviceTitle
 {
 	display: block;
    background: #ffffff url('sup_der_hojas.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
@@ -660,7 +660,7 @@ El título se utiliza para el efecto superior derecho
 
 
 .MultichoiceIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
 	margin: 0 auto;
@@ -697,7 +697,7 @@ La capa interior, se utiliza para el efecto inferior izquierdo
 El icono se utiliza para el efecto superior izquierdo
 */
 .ClozeIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] 
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] 
 {
 	border: 0px;
 	position: relative;
@@ -711,7 +711,7 @@ El icono se utiliza para el efecto superior izquierdo
 El título se utiliza para el efecto superior derecho
 */
 .ClozeIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] + .iDeviceTitle
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] + .iDeviceTitle
 {
 	display: block;
    background: #ffffff url('sup_der_hojas.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
@@ -726,7 +726,7 @@ El título se utiliza para el efecto superior derecho
 
 
 .ClozeIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
 	margin: 0 auto;
@@ -763,7 +763,7 @@ La capa interior, se utiliza para el efecto inferior izquierdo
 El icono se utiliza para el efecto superior izquierdo
 */
 .ListaIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] 
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] 
 {
 	border: 0px;
 	position: relative;
@@ -777,7 +777,7 @@ El icono se utiliza para el efecto superior izquierdo
 El título se utiliza para el efecto superior derecho
 */
 .ListaIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] + .iDeviceTitle
 {
 	display: block;
    background: #ffffff url('sup_der_hojas.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
@@ -792,7 +792,7 @@ El título se utiliza para el efecto superior derecho
 
 
 .ListaIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
 	margin: 0 auto;
@@ -829,7 +829,7 @@ La capa interior, se utiliza para el efecto inferior izquierdo
 El icono se utiliza para el efecto superior izquierdo
 */
 .TrueFalseIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] 
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] 
 {
 	border: 0px;
 	position: relative;
@@ -842,7 +842,7 @@ El icono se utiliza para el efecto superior izquierdo
 El título se utiliza para el efecto superior derecho
 */
 .TrueFalseIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] + .iDeviceTitle
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] + .iDeviceTitle
 {
 	display: block;
 	background: #ffffff url('sup_der_hojas.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
@@ -857,7 +857,7 @@ El título se utiliza para el efecto superior derecho
 
 
 .TrueFalseIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
 	margin: 0 auto;
@@ -895,7 +895,7 @@ La capa interior, se utiliza para el efecto inferior izquierdo
 El icono se utiliza para el efecto superior izquierdo
 */
 .MultiSelectIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] 
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] 
 {
 	border: 0px;
 	position: relative;
@@ -908,7 +908,7 @@ El icono se utiliza para el efecto superior izquierdo
 El título se utiliza para el efecto superior derecho
 */
 .MultiSelectIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] + .iDeviceTitle
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] + .iDeviceTitle
 {
 	display: block;
    background: #ffffff url('sup_der_hojas.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
@@ -923,7 +923,7 @@ El título se utiliza para el efecto superior derecho
 
 
 .MultiSelectIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
 	margin: 0 auto;
@@ -960,7 +960,7 @@ La capa interior, se utiliza para el efecto inferior izquierdo
 El icono se utiliza para el efecto superior izquierdo
 */
 .QuizTestIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] 
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] 
 {
 	border: 0px;
 	position: relative;
@@ -973,7 +973,7 @@ El icono se utiliza para el efecto superior izquierdo
 El título se utiliza para el efecto superior derecho
 */
 .QuizTestIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] + .iDeviceTitle
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] + .iDeviceTitle
 {
 	display: block;
    background: #ffffff url('sup_der_hojas.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
@@ -988,7 +988,7 @@ El título se utiliza para el efecto superior derecho
 
 
 .QuizTestIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
 	margin: 0 auto;
@@ -1084,7 +1084,7 @@ La capa interior, se utiliza para el efecto inferior izquierdo
 El icono se utiliza para el efecto superior izquierdo
 */
 .GalleryIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_gallery.gif"] 
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_gallery.gif"] 
 {
 	border: 0px;
 	position: relative;
@@ -1097,7 +1097,7 @@ El icono se utiliza para el efecto superior izquierdo
 El título se utiliza para el efecto superior derecho
 */
 .GalleryIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_gallery.gif"] + .iDeviceTitle
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_gallery.gif"] + .iDeviceTitle
 {
 	display: block;
    background: #ffffff url('sup_der_gallery.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
@@ -1112,7 +1112,7 @@ El título se utiliza para el efecto superior derecho
 
 
 .GalleryIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/carm/icon_gallery.gif"] + .iDeviceTitle + .iDevice_inner
+.emphasis1 img.iDevice_icon[src="/style/CARM/icon_gallery.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
 	margin: 0 auto;

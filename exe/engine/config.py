@@ -47,6 +47,9 @@ class Config(object):
     The Config class contains the configuration information for eXe.
     """
 
+    # To build link to git revision
+    baseGitWebURL = 'https://forja.cenatic.es/plugins/scmgit/cgi-bin/gitweb.cgi?p=iteexe/iteexe.git'
+
     # Class attributes
     optionNames = {
         'system': ('webDir', 'jsDir', 'port', 'dataDir',
@@ -103,7 +106,7 @@ class Config(object):
         'place the objects': [x_('Interactive Activities')],
         'memory match game': [x_('Experimental')],
         'file attachments': [x_('Non-Textual Information')],
-        'sort items': [x_('Interactive Activities')]
+        'sort items': [x_('Experimental')]
     }
     
     @classmethod
