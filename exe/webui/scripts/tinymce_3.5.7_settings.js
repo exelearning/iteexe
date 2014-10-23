@@ -99,9 +99,12 @@ var $exeTinyMCE = {
 	getExtendedValidElements : function(){
 		var e = "";
 		if (exe_editor_mode=="strict") {
+			// To review (this is not really Strict)
 			// Allow exe_math_latex for images and allowfullscreen for iframes
 			// We just allow any attributes and values for both tags
 			e = "img[*],iframe[*]";
+			// Allow lang for span in HTML5
+			if (exe_export_format=="html5") e += ",span[*]";
 		}
 		return e;
 	}
