@@ -23,6 +23,7 @@ import base64
 
 
 log = logging.getLogger(__name__)
+log.setLevel(logging.DEBUG)
 
 class ImportStyleError(Exception):
     pass
@@ -46,6 +47,7 @@ class StyleManagerPage(RenderableResource):
         self.style        = ""
         self.client       = None
         # Remote XML-RPC server
+        log.debug("Preparing remote XML-RPC server: %s" % self.config.stylesRepository.encode("ascii"))
         self.proxy = Proxy(self.config.stylesRepository.encode("ascii"))
 
     def getChild(self, name, request):
@@ -182,19 +184,29 @@ class StyleManagerPage(RenderableResource):
             """
             Update styles list with data got from repository and send to client order to refresh styles list in the UI
             """
+            log.debug("Styles list updated from repository. ")
             self.rep_styles = styles_list
-            self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ')')
+            self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(%s)' %json.dumps(self.rep_styles))
             self.client.sendScript("Ext.Msg.close();")
+            # On success, show the style list from repository
+            self.action = 'StylesRepository'
             
         def errorStylesList(value):
+            log.error("Error getting styles list from repository: %s " % str(value))
             self.rep_styles = []
-            self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ')')
+            self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(%s)' %json.dumps(self.rep_styles))
             self.alert(_(u'Error'), _(u'Error while getting styles list from the repository'))
+            # Getting styles list from repository failed, get back to installed styles list
+            self.action     = 'List'
+            self.style      = ''
         
-        self.client.sendScript("Ext.Msg.wait(_('Updating styles list from repository...'));")
-        self.proxy.callRemote('exe_styles.listStyles').addCallbacks(getStylesList, errorStylesList)
-        
-        self.action = 'StylesRepository'
+        try : 
+            self.client.sendScript("Ext.Msg.wait(_('Updating styles list from repository...'));")
+            log.debug("Calling remote method 'exe_styles.listStyles' from %s" % self.config.stylesRepository.encode('ascii'))
+            self.proxy.callRemote('exe_styles.listStyles').addCallbacks(getStylesList, errorStylesList)
+            
+        except Exception, e :
+            errorStylesList(str(e))
         
     def doStyleImportURL(self, url, style_name = ''):
         """
@@ -203,62 +215,84 @@ class StyleManagerPage(RenderableResource):
         def successDownload(result):
             filename = result[0]
             try:
-                log.debug(filename)
-                try :
-                    self.doImportStyle(filename)
-                    self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ', \'' + style_name + '\')')
-                    self.alert(_(u'Success'), _(u'Style successfully downloaded and installed'))
-                except Exception, e :
-                    self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ', \'' + style_name + '\')')
-                    self.alert(_(u'Error'), _(u'Error while installing style: %s') % str(e))
+                log.debug("Installing style %s from %s" %(style_name, filename))
+                self.doImportStyle(filename)
+                self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(%s, \'%s\')' %(json.dumps(self.rep_styles), style_name))
+                self.alert(_(u'Success'), _(u'Style successfully downloaded and installed'))
+            except Exception, e :
+                log.error("Error when installing style %s from %s: %s" %(style_name, filename, str(e)))
+                self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(%s, \'%s\')' %(json.dumps(self.rep_styles), style_name))
+                self.alert(_(u'Error'), _(u'Error while installing style'))
             finally:
                 Path(filename).remove()
             
         def errorDownload(value):
-            log.debug("Error when downloading style from %s" % url)
+            log.error("Error when downloading style from %s: %s" % (url, str(value)))
             self.rep_styles = []
             self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ', \'' + style_name + '\')')
             self.alert(_(u'Error'), _(u'Error when downloading style from repository'))
+        
+        try :
+            # urlparse() returns a tuple, which elements are:
+            #  0: schema -> http
+            #  1: netloc -> exelearning.net
+            #  2: path   -> path/to/file.zip
+            url_parts = urlsplit(url)
+            if (not url_parts[0]) or (not url_parts[1]) or (not url_parts[2]):
+                log.error("URL %s not valid. " % url)
+                self.alert(_(u'Error'), _(u'URL not valid. '))
+                self.action = 'StylesRepository'
+                return
                 
-        log.debug("Download style from %s" % url)
-        
-        # urlparse() returns a tuple, which elements are:
-        #  0: schema -> http
-        #  1: netloc -> exelearning.net
-        #  2: path   -> path/to/file.zip
-        url_parts = urlsplit(url)
-        if (not url_parts[0]) or (not url_parts[1]) or (not url_parts[2]):
-            self.alert(_(u'Error'), _(u'URL not valid. '))
+            path_splited = url_parts[2].split('/')
+            filename = path_splited[-1]
+            filename_parts = filename.split('.')
+            if (filename_parts[-1].lower() != 'zip') :
+                self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ', \'' + style_name + '\')')
+                log.error('URL %s not valid. ' % url)
+                self.alert(_(u'Error'), _(u'URL not valid. '))
+                self.action = 'StylesRepository'
+                return
             
-        path_splited = url_parts[2].split('/')
-        filename = path_splited[-1]
-        filename_parts = filename.split('.')
-        if (filename_parts[-1].lower() != 'zip') :
-            self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(' + json.dumps(self.rep_styles) + ', \'' + style_name + '\')')
-            self.alert(_(u'Error'), _(u'URL not valid. '))
+            self.client.sendScript('Ext.MessageBox.progress("Style Download", "Connecting to style URL...")')
+            
+            # Downloaded ZIP file must have the same name than the remote file, 
+            # otherwise file would be saved to a random temporary name, that   
+            # 'doImportStyle' would use as style target directory
+            log.debug("Downloading style %s from %s" %(style_name, url))
+            d = threads.deferToThread(urlretrieve, url, filename, lambda n, b, f: self.progressDownload(n, b, f, self.client))
+            d.addCallbacks(successDownload, errorDownload)
+            
+            # On success or on error, get back to repository styles list 
             self.action = 'StylesRepository'
-            return;
-        
-        self.client.sendScript('Ext.MessageBox.progress("Style Download", "Connecting to style URL...")')
-        
-        # Downloaded ZIP file must have the same name than the remote file, 
-        # otherwise file would be saved to a random temporary name, that   
-        # 'doImportStyle' would use as style target directory
-        d = threads.deferToThread(urlretrieve, url, filename, lambda n, b, f: self.progressDownload(n, b, f, self.client))
-        d.addCallbacks(successDownload, errorDownload)
-        
-        self.action = 'StylesRepository'
+            
+        except Exception, e :
+            errorDownload(str(e)) 
+            self.action = 'StylesRepository'
         
     def doStyleImportRepository(self, style_name):
         """
         Download style from repository and import into styles directory
         """     
-        url = ''
-        for style in self.rep_styles :
-            if style.get('name', 'not found') == style_name :
-                url = style.get('download_url', '')
-                self.doStyleImportURL(url, style_name)
-                break
+        try :
+            url = ''
+            log.debug("Import style %s from repository" % style_name)
+            for style in self.rep_styles :
+                if (style.get('name', 'not found') == style_name) :
+                    url = style.get('download_url', '')
+                    self.doStyleImportURL(url, style_name)
+                    break
+                
+            if (url == '') :
+                log.error('Style %s download URL not found' % style_name)
+                self.alert(_(u'Error'), _(u'Style download URL not found'))
+            
+            self.action = 'StylesRepository'
+                
+        except Exception, e :
+            log.error('Error when getting %s URL from repository styles list: %s' % (style_name, str(e)))
+            self.alert(_(u'Error'), _(u'Error when getting style URL from repository styles list: %s' % str(e)))
+            self.action = 'StylesRepository'
 
     def doExportStyle(self, stylename, filename,cfgxml):
 
