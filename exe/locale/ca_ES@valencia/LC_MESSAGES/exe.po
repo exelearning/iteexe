@@ -4,27 +4,30 @@
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
 # Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012.
-# Pilar Embid Giner <embid_mar@gva.es>, 2012, 2013.
+# Pilar Embid Giner <embid_mar@gva.es>, 2012, 2013, 2014.
 # Angel Berlanas Vicente <angel.berlanas@gmail.com>, 2013-2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2014-10-19 17:16+0200\n"
-"PO-Revision-Date: 2014-10-22 15:13+0200\n"
-"Last-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\n"
+"PO-Revision-Date: 2014-10-23 10:36+0200\n"
+"Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
 "Language-Team: LliureX\n"
-"Language: ca_ES\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "Generated-By: Babel 1.3\n"
 
 #: exe/application.py:166
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
-msgstr "S'ha produït un error mentres es carregava la vostra configuració. S'ha guardat una còpia de seguretat a %s"
+msgstr ""
+"S'ha produït un error mentres es carregava la vostra configuració. S'ha "
+"guardat una còpia de seguretat a %s"
 
 #: exe/application.py:184
 #, python-format
@@ -743,7 +746,6 @@ msgstr "Prova de compleció"
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
-#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -756,10 +758,11 @@ msgid ""
 msgstr ""
 "<p>Introduïu el text per a l'activitat de compleció al camp de buits \n"
 "apegant el text des d'una altra font o teclejant el text directament al \n"
-"camp.</p><p> Per a seleccionar paraules i amagar-les, feu doble clic en "
-"la paraula \n"
-"per a seleccionar-la i premeu \n"
-"el botó Oculta/Mostra paraules.</p>"
+"camp.</p><p> Per a seleccionar paraules i amagar-les, feu doble clic en la "
+"paraula \n"
+"per a seleccionar-la i premeu el botó Oculta/Mostra paraules.</p><p>Podeu "
+"proporcionar més d'una resposta possible escrivint-les entre barres (|). P. "
+"ex. |dog|cat|bird|</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -862,9 +865,8 @@ msgid "FPD"
 msgstr "FDP"
 
 #: exe/engine/config.py:100 exe/engine/config.py:101 exe/engine/config.py:103
-#, fuzzy
 msgid "Experimental"
-msgstr "experiment"
+msgstr "Experimental"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - You Should Know"
@@ -1198,7 +1200,6 @@ msgstr ""
 "També apareixerà en la barra del títol dels reproductors."
 
 #: exe/engine/field.py:3020
-#, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1215,19 +1216,18 @@ msgid ""
 "will also be accepted.</p>"
 msgstr ""
 "<p>Si no marqueu esta opció, s'acceptarà un nombre xicotet d'errors "
-"d'ortografia i d'ús de les majúscules. Si la marqueu només s'acceptarà "
-"una coincidència exacta en l'ortografia i en les "
-"majúscules.</p><p><strong>Per exemple,</strong> si la resposta correcta "
-"és <code>Elefant</code> llavors les dos <code>elefant</code> i "
-"<code>Elifant</code> seran considerades com a <em>«prou pròximes»</em> "
-"per l'algoritme, ja que sols tenen una lletra incorrecta, encara que "
-"\"Correcció de majúscules\" estiga seleccionada.</p><p>Si en l'exemple "
-"d'abans la casella \"Correcció de majúscules\" no està marcada, la lletra"
-" minúscula <code>e</code> no es considerarà un error i "
-"<code>elifant</code> també s'acceptarà.</p><p> Si seleccioneu \"Correcció"
-" estricta\" i \"Correcció de majúscules\" al mateix temps, l'única "
-"paraula correcta serà \"Elefant\". Si sols seleccioneu \"Correcció "
-"estricta\" i \"Correcció de majúscules\" no ho està, \"elefant\" també "
+"d'ortografia i d'ús de les majúscules. Si la marqueu només s'acceptarà una "
+"coincidència exacta en l'ortografia i en les majúscules.</p><p><strong>Per "
+"exemple,</strong> si la resposta correcta és <code>Elefant</code> llavors "
+"les dos <code>elefant</code> i <code>Elifant</code> es consideraran com a "
+"<em>«prou pròximes»</em> per l'algoritme, ja que sols tenen una lletra "
+"incorrecta, encara que \"Correcció de majúscules\" estiga "
+"seleccionada.</p><p>Si en l'exemple d'abans la casella \"Correcció de "
+"majúscules\" no està marcada, la lletra minúscula <code>e</code> no es "
+"considerarà un error i <code>elifant</code> també s'acceptarà.</p><p> Si "
+"seleccioneu \"Correcció estricta\" i \"Correcció de majúscules\" al mateix "
+"temps, l'única paraula correcta serà \"Elefant\". Si sols seleccioneu "
+"\"Correcció estricta\" i \"Correcció de majúscules\" no ho està, \"elefant\" també "
 "s'acceptarà.</p>"
 
 #: exe/engine/field.py:3041 exe/engine/field.py:3275
@@ -1235,8 +1235,8 @@ msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
 msgstr ""
-"<p>Si marqueu esta opció, les respostes amb un ús diferent de les "
-"majúscules es consideraran incorrectes.</p>"
+"<p>Si marqueu esta opció, les respostes amb un ús diferent de les majúscules "
+"es consideraran incorrectes.</p>"
 
 #: exe/engine/field.py:3046 exe/engine/field.py:3280
 msgid ""
@@ -3365,14 +3365,13 @@ msgstr ""
 "paquet elp <input_file>."
 
 #: exe/exe_do:101
-#, fuzzy
 msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
 "given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage,"
 " xliff or epub3."
 msgstr ""
-"Exporta <input_file> el paquet elp a <output_file> opcional en algun dels"
-" formats donats: xml, scorm12, scorm2004, agrega, ims, website, webzip, "
+"Exporta el paquet elp <input_file> a <output_file>, opcionalment, en algun "
+"dels formats donats: xml, scorm12, scorm2004, ims, website, webzip, "
 "singlepage, xliff o epub3."
 
 #: exe/exe_do:107
@@ -3380,7 +3379,7 @@ msgid ""
 "Import to <output_file> elp package, <input_file> in one of the given "
 "formats: xml or xliff."
 msgstr ""
-"Importa al  <output_file> paquet elp, <input_file> en algun dels formats "
+"Importa al  <output_file> el paquet elp, <input_file>, en algun dels formats "
 "donats: xml o xliff."
 
 #: exe/exe_do:112
@@ -3946,14 +3945,12 @@ msgid "Confirm"
 msgstr "Confirmeu"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:274
-#, fuzzy
 msgid "Are you sure you want clear all form fields?"
-msgstr "Esteu segur que voleu eliminar tots els continguts?"
+msgstr "Esteu segur que voleu eliminar tots els camps de formulari?"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:327
-#, fuzzy
 msgid "Are you sure you want reset all form fields?"
-msgstr "Esteu segur que voleu eliminar tots els continguts?"
+msgstr "Esteu segur que voleu restaurar tots els camps de formulari?"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:414
 msgid "LOM Metadata import success!"
@@ -4488,9 +4485,8 @@ msgstr "Buida"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:629
-#, fuzzy
 msgid "Reset"
-msgstr "representa"
+msgstr "Reinicialitza"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
@@ -4841,14 +4837,12 @@ msgid "Access Type"
 msgstr "Tipus d'accés"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:22
-#, fuzzy
 msgid "Now"
-msgstr "no"
+msgstr "Ara"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:23
-#, fuzzy
 msgid "Time"
-msgstr "Llima"
+msgstr "Hora"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:29
 msgid "Required"
@@ -5138,19 +5132,20 @@ msgid "Doctype"
 msgstr "Tipus de document"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:542
-#, fuzzy
 msgid "Warning"
-msgstr "Atenció!"
+msgstr "Avís"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:542
 msgid "Save the changes of your iDevice before changing the DOCTYPE"
-msgstr ""
+msgstr "Guarda els canvis del vostre iDevice abans de canviar el DOCTYPE"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:549
 msgid ""
 "This overrides for this Package the \"Default format for the new "
 "documents\" set in Tools - Preferences"
 msgstr ""
+"Açò substituïx per a este paquet el \"Format per defecte per als documents "
+"nous\" definit a Ferramentes - Preferències"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:555
 msgid "Taxonomy"
@@ -5224,26 +5219,23 @@ msgstr "Avançat"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:162
 msgid "Default format for the new documents"
-msgstr ""
+msgstr "Format per defecte per als documents nous"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:172
 msgid "The current document format can be modified in the Properties tab"
-msgstr ""
+msgstr "El format de document actual es pot modificar en la pestanya Propietats"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:182
-#, fuzzy
 msgid "Editor mode"
-msgstr "redactor/a"
+msgstr "Mode d'editor"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:184
-#, fuzzy
 msgid "Permissive"
-msgstr "prerequisit"
+msgstr "Permissiu"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
-#, fuzzy
 msgid "Strict"
-msgstr "Reinicia"
+msgstr "Estricte"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:192
 msgid ""
@@ -5251,6 +5243,9 @@ msgid ""
 "markup: It will remove any invalid code, even HTML5 tags (except VIDEO "
 "and AUDIO) when using XHTML format."
 msgstr ""
+"\"Permissiu\" permet qualsevol etiquetatge. \"Estricte\" permet només "
+"etiquetatge vàlid: suprimix qualsevol codi invàlid, fins i tot etiquetes "
+"HTML5 (excepte VÍDEO i ÀUDIO) quan s'utilitza el format XHTML."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:199
 msgid "Internal Linking (for Web Site Exports only)"
@@ -5592,7 +5587,7 @@ msgstr "Quant a l'eXe"
 
 #: exe/jsui/scripts/exe.js:162
 msgid "Load Error"
-msgstr ""
+msgstr "Error de càrrega"
 
 #: exe/jsui/scripts/exe.js:187
 msgid ""
@@ -7760,7 +7755,7 @@ msgstr "Correcció estricta?"
 
 #: exe/webui/element.py:1265
 msgid "Check Capitalization?"
-msgstr ""
+msgstr "Correcció de majúscules?"
 
 #: exe/webui/element.py:1270 exe/webui/element.py:1603
 msgid "Instant Marking?"

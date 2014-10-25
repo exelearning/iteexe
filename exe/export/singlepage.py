@@ -225,17 +225,16 @@ class SinglePage(Page):
         lb = "\n" #Line breaks
         headerTag = "div"
         articleTag = "div"
-        nivel = 1 #Always H1
         if dT == "HTML5":
             headerTag = "header"
             articleTag = "article"
         
         html = ""
-        html += '<'+articleTag+' class="node">'+lb
+        html += '<'+articleTag+' class="node level-'+str(nivel)+'-node">'+lb
         html += '<'+headerTag+' class=\"nodeDecoration\">'
-        html += u'<h' + str(nivel) + ' id=\"' + node.GetAnchorName() + '\" class=\"nodeTitle\">'
+        html += u'<h1 id=\"' + node.GetAnchorName() + '\" class=\"nodeTitle\">'
         html += escape(node.titleLong)
-        html += '</h' + str(nivel) + '></'+headerTag+'>'+lb
+        html += '</h1></'+headerTag+'>'+lb
         
         style = self.node.package.style
 
