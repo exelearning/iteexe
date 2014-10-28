@@ -44,7 +44,7 @@ body{padding:0;text-align:center}
 #content{width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0;box-shadow:0 0 10px 0 #999;border-bottom-right-radius:8px;border-bottom-left-radius:8px}
 #main-wrapper{width:735px;float:right}
 #main{padding:10px 20px 0 0}
-.no-nav #main-wrapper{width:100%;float:none}
+.no-nav #main-wrapper{width:100%}
 .no-nav #main{padding-left:20px}
 #content{padding-bottom:11px}
 #header,#emptyHeader{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px}
@@ -88,7 +88,7 @@ html[xmlns] #content{display:block}
     #content{border:none;width:100%;box-shadow:none}
     #header,#emptyHeader{background-image:url(my_header_fullscreen.jpg)}
     /* Horizontal navigation */
-    #main-wrapper{width:100%;float:none}
+    #main-wrapper{width:100%}
 	#main,.no-nav #main{padding:0 20px}
     #nodeTitle{left:20px}
     #header{text-align:right;padding-right:20px}
@@ -118,7 +118,7 @@ html[xmlns] #content{display:block}
     #userOptionsBar,#topPagination{display:none}
     #siteNav{float:none;width:100%;padding:0}
     #siteNav{line-height:1.5em}
-    #main-wrapper{width:100%;float:none}    
+    #main-wrapper{width:100%}    
     #main,.no-nav #main{padding:0 10px}	
     #header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px;font-size:1em}
     #nodeTitle{position:absolute;top:1px;left:10px;font-size:1.4em}
