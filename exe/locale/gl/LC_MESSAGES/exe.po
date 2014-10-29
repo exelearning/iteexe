@@ -7,10 +7,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.0\n"
+"Project-Id-Version: eXeLearning 2.0.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2014-10-19 17:16+0200\n"
-"PO-Revision-Date: 2014-06-26 13:52+0200\n"
+"PO-Revision-Date: 2014-10-27 20:03+0100\n"
 "Last-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\n"
 "Language-Team: TAGEN ATA <localizacion@tagenata.net>\n"
 "Language: gl\n"
@@ -864,9 +864,8 @@ msgid "FPD"
 msgstr "FPD"
 
 #: exe/engine/config.py:100 exe/engine/config.py:101 exe/engine/config.py:103
-#, fuzzy
 msgid "Experimental"
-msgstr "experimento"
+msgstr "Experimental"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - You Should Know"
@@ -3365,15 +3364,11 @@ msgstr ""
 "do paquete ELP <input_file>"
 
 #: exe/exe_do:101
-#, fuzzy
 msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
 "given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage,"
 " xliff or epub3."
-msgstr ""
-"Exporta o paquete ELP <input_file> no <output_file> opcional en un dos "
-"seguintes formatos: xml, scorm12, scorm2004, agrega, ims, website, "
-"webzip, singlepage, xliff ou epub3."
+msgstr "Exporta o paquete ELP <input_file> no <output_file> opcional en un dos seguintes formatos: xml, scorm12, scorm2004, ims, website, webzip, singlepage, xliff ou epub3."
 
 #: exe/exe_do:107
 msgid ""
@@ -11030,4 +11025,3 @@ msgstr ""
 "O seu ficheiro idevices/generic.data ou o paquete que está a cargar foi "
 "creado con unha versión máis recente de eXe. Actulice o eXe e ténteo de "
 "novo.  Porfavor actualice eXe e ténteo de novo."
-
