@@ -93,6 +93,9 @@ de la jerarquía de contenidos que crearemos con eXe */
 }
 
 #nodeTitle {
+	background-image: url(logo.png);
+	background-position: right center;
+	background-repeat: no-repeat;
 	color:#598AC3;
 	background-color:#fff;
 	font-weight:bold;

@@ -13,7 +13,7 @@ Centre for Flexible and Distance Learning
 }
 
 #nodeDecoration{
-	margin-bottom:30px;
+	margin-bottom:35px;
 }
 
 /* Pagination */
@@ -23,7 +23,7 @@ Centre for Flexible and Distance Learning
 #topPagination{
 	position:absolute;
 	right:20px;
-	top:40px;
+	top:50px;
 	z-index:99
 }
 #topPagination .pagination{border:none}

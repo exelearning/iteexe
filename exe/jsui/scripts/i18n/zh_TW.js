@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: translations@exelearning.net\nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2014-05-15 18:08+0200\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage-Team: Chinese Traditional <zh-l10n@linux.org.tw>\nLanguage: zh_Hant_TW\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: translations@exelearning.net\nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2014-05-15 18:08+0200\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage-Team: Chinese Traditional <zh-l10n@linux.org.tw>\nLanguage: zh_Hant_TW\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "\u5efa\u7acb\u6848\u4f8b\u6545\u4e8b\u3002\u4e00\u500b\u597d\u7684\u6848\u4f8b\u63cf\u8ff0\u4e00\u9805\u722d\u8b70\uff0c\u6216\u63cf\u8ff0\u5728\u67d0\u500b\u60c5\u5883\u4e0b\u7684\u67d0\u500b\u4eba\u7269\u3002\u5b83\u4e5f\u61c9\u8a72\u5141\u8a31\u5927\u5bb6\u63a1\u53d6\u67d0\u4e9b\u884c\u52d5\u4ee5\u4fbf\u89e3\u6c7a\u9019\u500b\u60c5\u5883\u3002", 
  "Xhosa ": "\u79d1\u85a9\u8a9e", 
  "Invoke URLs": "\u547c\u53eb\u7db2\u5740", 
@@ -437,7 +437,6 @@ translations = {
  "Bullet Image": "\u5713\u9215\u5f71\u50cf", 
  "FPD - Think About It (with Feedback)": "FPD - \u60f3\u4e00\u60f3\uff08\u6709\u56de\u994b\uff09", 
  "Icons": "\u5716\u793a", 
- "Table Cell Properties": "\u8868\u683c\u5132\u5b58\u683c\u5c6c\u6027", 
  "LOM-ES": "LOM-ES", 
  "Web Site": "\u7db2\u7ad9", 
  "This is just a example title": "\u9019\u53ea\u662f\u7bc4\u4f8b\u6a19\u984c", 
@@ -1470,7 +1469,7 @@ translations = {
  "Money Mouth": "\u91d1\u9322\u5634", 
  "Font": "\u5b57\u578b", 
  "Find": "\u5c0b\u627e", 
- "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, singlepage, xliff or epub3.": "\u5c07 <\u8f38\u5165\u6a94> elp \u5957\u4ef6\u5229\u7528\u4ee5\u4e0b\u683c\u5f0f\u4e4b\u4e00\u532f\u51fa\u5230 <\u8f38\u51fa\u6a94>\uff1axml, scorm12, scorm2004, agrega, ims, \u7db2\u7ad9, webzip, \u55ae\u4e00\u9801\u9762, xliff \u6216 epub3\u3002", 
+ "Table Cell Properties": "\u8868\u683c\u5132\u5b58\u683c\u5c6c\u6027", 
  "Toggle Absolute Positioning": "\u5207\u63db\u7d55\u5c0d\u4f4d\u7f6e", 
  "Select Flash Object": "\u9078\u64c7 Flash \u7269\u4ef6", 
  "Enter the question stem. \nThe quest should be clear and unambiguous. Avoid negative premises \nas these can tend to be ambiguous.": "\u8f38\u5165\u554f\u984c\u3002\u554f\u984c\u7684\u9673\u8ff0\u8981\u6e05\u6670\u800c\u4e0d\u542b\u7cca\u3002\u907f\u514d\u8ca0\u9762\u7684\u5047\u8a2d\uff0c\u56e0\u70ba\u53ef\u80fd\u6703\u9020\u6210\u6df7\u6dc6\u3002", 

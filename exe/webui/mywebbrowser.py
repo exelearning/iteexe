@@ -650,7 +650,7 @@ if sys.platform == 'darwin':
 
     def _isinstalled(browser):
         script = '''
-               exists application "%s"
+               get version of application "%s"
                ''' % browser
         f = __builtin__.open(os.devnull, 'w')
         rc = subprocess.call("osascript -e '%s'" % script, shell=True, stdout=f, stderr=f)

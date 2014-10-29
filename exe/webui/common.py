@@ -337,7 +337,7 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
     return new_html
 
 
-def image(name, value, width="", height="", alt=None):
+def image(name, value, width="", height="", alt=None, cssClass=None):
     """Returns the XHTML for an image"""
     if alt is None:
         alt = name
@@ -348,6 +348,8 @@ def image(name, value, width="", height="", alt=None):
         html += u"width=\"%s\" " % width
     if height:
         html += u"height=\"%s\" " % height
+    if cssClass:
+        html += u"class=\"%s\" " % cssClass
     html += u"src=\"%s\" " % value
     html += u"/>\n"
     return html
@@ -464,7 +466,7 @@ def submitImage(action, object_, imageFile, title=u"", isChanged=1, relative=Fal
         relativeText = u'style="position:relative;z-index:100000"'
     html  = u'<a %s' % titleText
     html += u' href="#" onclick="%s" %s>' % (onclick, relativeText)
-    html += u'<img alt="%s" class="submit" src="%s"/>' % (title, imageFile)
+    html += u'<img alt="%s" class="submit" width="16" height="16" src="%s" />' % (title, imageFile)
     html += u'</a>\n' 
     return html
 
@@ -494,7 +496,7 @@ def confirmThenSubmitImage(message, action, object_, imageFile,
     html += " href=\"#\" "
     html += "onclick=\"confirmThenSubmitLink('"+re.escape(message)+"', '"+action+"', "
     html += "'"+object_+"', "+unicode(isChanged)+");\" >"
-    html += u'<img alt="%s" class="submit" src="%s"/>' % (title, imageFile)
+    html += u'<img alt="%s" class="submit" width="16" height="16" src="%s" />' % (title, imageFile)
     html += u'</a>\n' 
     return html
 
