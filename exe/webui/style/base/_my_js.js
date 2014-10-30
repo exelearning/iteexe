@@ -18,7 +18,15 @@ var myTheme = {
             }
         }
 		this.addNavArrows();
+		this.addPaginationTitles();
     },
+	addPaginationTitles : function(){
+		$("A","#topPagination,#bottomPagination").each(
+			function(){
+				this.title = $(this).text();
+			}
+		);
+	},
 	addNavArrows : function(){
 		$("#siteNav ul ul .daddy").each(
 			function(){
@@ -51,19 +59,21 @@ var myTheme = {
 			var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
             l.attr("class","show-nav").attr("title",tit);
             $("#siteFooter").hide();
-			$("#siteNav").slideUp(400,function(){
+			$("#siteNav").hide(); // No effects
+			//$("#siteNav").slideUp(400,function(){
                 $(document.body).addClass("no-nav");
                 $("#siteFooter").show();
                 myTheme.isToggling = false;
-            }); 
+            //});
             myTheme.params("add");
         } else {
             var tit = $exe_i18n.menu+" ("+$exe_i18n.hide.toLowerCase()+")";
 			l.attr("class","hide-nav").attr("title",tit);
             $(document.body).removeClass("no-nav");
-			$("#siteNav").slideDown(400,function(){
+			$("#siteNav").show(); // No effects
+			//$("#siteNav").slideDown(400,function(){
                 myTheme.isToggling = false;
-            });
+            //});
             myTheme.params("delete");            
         }
         

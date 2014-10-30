@@ -41,7 +41,7 @@ html[xmlns] #content{display:block}
 #nav-toggler{margin:0;position:absolute;top:15px;left:20px;font-size:.95em}
 #nav-toggler a,#skipNav a{background:#A80003;color:#FFF;padding:5px 10px;border-radius:5px}
 #skipNav a{background:#555;color:#FFF}
-#nav-toggler a:hover,#nav-toggler a:focus{background-color:#555;text-decoration:none}
+#nav-toggler a:hover{background-color:#555;text-decoration:none}
 #skipNav{z-index:100px;padding-top:15px;text-align:center}
 
 /* Style Designer Options */
@@ -81,6 +81,23 @@ html[xmlns] #content{display:block}
 #toggle-nav{display:none}
 */
 
+/* Pagination with icons */
+.js .pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+.js .pagination a{display:block;float:left;width:32px;height:32px;padding:0;background:url(_my_icons.png) no-repeat 0 0}
+.js .pagination a:hover,.js .pagination a:focus{background:url(_my_icons.png) no-repeat 0 -50px}
+.js .pagination .next{background-position:-50px 0}
+.js .pagination .next:hover,.js .pagination .next:focus{background-position:-50px -50px}
+.js #bottomPagination{height:47px;position:relative}
+.js #bottomPagination a{position:absolute;top:15px;right:63px;margin:0}
+.js #bottomPagination .next{right:20px}
+#nav-toggler a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+#nav-toggler a{display:block;width:32px;height:32px;padding:0;background:url(_my_icons.png) no-repeat -100px 0}
+#nav-toggler a:hover{background:url(_my_icons.png) no-repeat -100px -50px}
+#nav-toggler .show-nav{background-position:-150px 0}
+#nav-toggler .show-nav:hover{background-position:-150px -50px}
+.js .pagination a,#nav-toggler a{filter:alpha(opacity=50);opacity:.5}
+.js .pagination a:hover,.js .pagination a:focus,#nav-toggler a:hover{filter:alpha(opacity=100);opacity:1}
+
 @media screen and (min-width: 701px) and (max-width: 1015px) {
     /* Fullsreen mode */
     #content{border:none;width:100%;box-shadow:none}
@@ -117,7 +134,7 @@ html[xmlns] #content{display:block}
     #main-wrapper{width:100%;float:none}    
     #main,.no-nav #main{padding:0 10px}	
     #siteFooter{padding-left:10px}
-    #bottomPagination{padding:0 10px}
+    #bottomPagination{padding:0 10px 15px 10px}
     #content .exe-col{float:none;width:100%;padding:0}
     iframe,object,embed{max-width:100%}
     img,video{max-width:100%;height:auto}
@@ -126,4 +143,12 @@ html[xmlns] #content{display:block}
     .pagination .next{position:absolute;right:0}
     #nav-toggler{position:relative;top:0;left:0;margin:10px 10px 5px 10px;text-align:center}
     #nav-toggler a{width:100%;display:block;padding:4px 0}
+}
+
+/* Pagination with icons */
+@media all and (max-width: 700px) {
+  #nav-toggler{height:32px;margin-bottom:10px;position:relative}
+  #nav-toggler a{padding:0;width:32px;position:absolute;left:50%;margin-left:-16px}
+  .js #siteNav{border-top:1px solid #ddd}
+  .js #bottomPagination .next{right:0}
 }
