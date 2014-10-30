@@ -1,0 +1,129 @@
+body{padding:0;text-align:center}
+#content{width:985px;margin:0 auto;padding-bottom:15px;text-align:left;position:relative;border:1px solid #ddd;border-top:0;border-bottom:0;box-shadow:0 0 10px 0 #999}
+#main-wrapper{width:735px;float:right}
+#main{padding:20px 20px 0 0}
+.no-nav #main-wrapper{width:100%;float:none}
+.no-nav #main{padding-left:20px}
+
+#header,#emptyHeader{border-width:0 0 1px 0}
+#nodeDecoration{background:none;padding:0;border:none;margin:0;height:auto;font-size:1.5em}
+
+/* Menú */
+#siteNav{width:230px;float:left;padding-right:20px}
+#siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
+#siteNav .other-section{display:none}
+#siteNav a{display:block;padding:4px 10px 4px 20px;border-width:0 0 1px 0;border-style:solid;color:#555;border-color:#ddd}
+#siteNav a:hover,#siteNav a:focus{color:#000;background:#f9f9f9}
+* html #siteNav a{display:inline-block;width:100%} /* IE6 */
+#siteNav .active{color:#A80003;font-weight:bold}
+#siteNav ul ul a{padding-left:35px;font-size:.95em}
+#siteNav ul ul ul a{padding-left:60px;color:#555}
+#siteNav .daddy span{display:none}
+
+#siteFooter{padding-left:20px}
+/* Pagination */
+.pagination{padding-top:15px;text-align:right;color:#fff;border-top:1px solid #ddd;font-size:.95em}
+.pagination .sep{display:none}
+.pagination .next{margin-left:11px}
+.pagination a{padding:5px 10px;border-radius:5px;background-color:#A80003;color:#FFF}
+.pagination a:hover,.pagination a:focus{text-decoration:none;background-color:#555}
+#topPagination{position:absolute;top:0;right:20px}
+#topPagination .pagination{border:none}
+#bottomPagination{padding:0 20px;clear:both}
+
+/* Autoclear */
+#content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
+#content{display:inline-block}
+html[xmlns] #content{display:block}
+* html #content{height: 1%;overflow:visible}
+
+/* Hide/Show/Skip navigation */
+#nav-toggler{margin:0;position:absolute;top:15px;left:20px;font-size:.95em}
+#nav-toggler a,#skipNav a{background:#A80003;color:#FFF;padding:5px 10px;border-radius:5px}
+#skipNav a{background:#555;color:#FFF}
+#nav-toggler a:hover,#nav-toggler a:focus{background-color:#555;text-decoration:none}
+#skipNav{z-index:100px;padding-top:15px;text-align:center}
+
+/* Style Designer Options */
+
+/* Fullscreen */
+/*
+#content{border:none;width:100%;box-shadow:none}
+#main-wrapper{float:none;width:100%}
+#main{padding-left:250px}
+*/
+
+/* Horizontal navigation */
+/* Fullsreen mode */
+/* Horizontal navigation */
+/*
+#main,.no-nav #main{padding:0 20px}
+#main-wrapper{float:none;width:100%}
+#siteFooter{padding-left:20px}
+#siteNav li:hover,#siteNav li.sfhover{background:#f9f9f9}
+#siteNav .other-section{display:block}
+#siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
+#siteNav,#siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;border-color:#ddd;margin:0;line-height:1.2em;background:#fff}
+#siteNav ul ul{line-height:1.1em}
+#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none}
+#siteNav a{display:block;text-decoration:none;padding:.4em 15px;border:none}
+#siteNav li{float:left}
+#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}
+* html #siteNav li ul{width:13em}
+#siteNav li li{padding-right:1em;width:12.9em}
+#siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px}
+#siteNav li ul ul{margin:-2.15em 0 0 14em}
+* html #siteNav li ul ul{margin-left:13em}
+#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
+#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
+#siteNav .daddy{position:relative}
+#siteNav .daddy span{display:inline;position:absolute;right:0;font-size:.8em}	
+#toggle-nav{display:none}
+*/
+
+@media screen and (min-width: 701px) and (max-width: 1015px) {
+    /* Fullsreen mode */
+    #content{border:none;width:100%;box-shadow:none}
+    /* Horizontal navigation */
+    #main-wrapper{width:100%;float:none}
+	#main,.no-nav #main{padding:0 20px}
+    #siteFooter{padding-left:20px}
+	#siteNav li:hover,#siteNav li.sfhover{background:#f9f9f9}
+    #siteNav .other-section{display:block}
+    #siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
+    #siteNav,#siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;border-color:#ddd;margin:0;line-height:1.2em;background:#fff}
+    #siteNav ul ul{line-height:1.1em}
+    #siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none}
+    #siteNav a{display:block;text-decoration:none;padding:.4em 15px;border:none}
+	#siteNav li{float:left}
+    #siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}
+    * html #siteNav li ul{width:13em}
+    #siteNav li li{padding-right:1em;width:12.9em}
+    #siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px}
+    #siteNav li ul ul{margin:-2.15em 0 0 14em}
+    * html #siteNav li ul ul{margin-left:13em}
+    #siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
+    #siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
+	#siteNav .daddy{position:relative}
+	#siteNav .daddy span{display:inline;position:absolute;right:0;font-size:.8em}	
+    #toggle-nav{display:none}
+}
+
+@media all and (max-width: 700px) {
+    #content{width:100%;border:0;box-shadow:none}
+    #userOptionsBar,#topPagination{display:none}
+    #siteNav{float:none;width:100%;padding:0}
+    #siteNav{line-height:1.5em;margin-bottom:15px}
+    #main-wrapper{width:100%;float:none}    
+    #main,.no-nav #main{padding:0 10px}	
+    #siteFooter{padding-left:10px}
+    #bottomPagination{padding:0 10px}
+    #content .exe-col{float:none;width:100%;padding:0}
+    iframe,object,embed{max-width:100%}
+    img,video{max-width:100%;height:auto}
+    .pagination{text-align:center;height:35px;position:relative}
+    .pagination .prev{position:absolute;left:0}
+    .pagination .next{position:absolute;right:0}
+    #nav-toggler{position:relative;top:0;left:0;margin:10px 10px 5px 10px;text-align:center}
+    #nav-toggler a{width:100%;display:block;padding:4px 0}
+}

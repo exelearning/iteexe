@@ -1,0 +1,84 @@
+body{font:.85em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#333;background:#fff}
+
+a{color:#2495FF}
+h2{font-size:1.3em}
+h3{font-size:1.2em}
+h4{font-size:1.1em}
+h5{font-size:1em}
+
+#header,#emptyHeader,#nodeDecoration{
+padding-left:20px;
+/*height:100px;*/
+padding-top:60px;
+height:40px;
+font-size:1.3em;
+background:#f9f9f9;
+border:1px solid #ddd;
+}
+#header h1,#nodeDecoration h1{margin:0;font-size:1em;text-align:left}
+#nodeDecoration{margin-bottom:15px} /* Single page */
+
+.nodeDecoration h1{font-size:1.5em}
+
+/* iDevices */
+.iDevice{margin:10px 0 20px 0}
+.iDevice_header{line-height:30px;padding-left:30px;background-image:url(icon_star.png)}
+.iDeviceTitle{font-size:1.2em;vertical-align:bottom;top:auto;display:inline}
+.iDevice_inner{
+padding:10px 20px;border:1px solid #ddd;background:#f9f9f9;
+border-radius:5px;
+}
+
+/* Icons */
+.activityIdevice .iDevice_header{background-image:url(icon_assignment.png)}
+.readingIdevice .iDevice_header{background-image:url(icon_unread.png)}
+.ListaIdevice .iDevice_header,
+.QuizTestIdevice .iDevice_header,
+.MultichoiceIdevice .iDevice_header,
+.TrueFalseIdevice .iDevice_header,
+.MultiSelectIdevice .iDevice_header,
+.ClozeIdevice .iDevice_header{background-image:url(icon_question.png)}
+.preknowledgeIdevice .iDevice_header{background-image:url(icon_renew.png)}
+.GalleryIdevice .iDevice_header{background-image:url(icon_media.png)}
+.objectivesIdevice .iDevice_header{background-image:url(icon_info.png)}
+.ReflectionIdevice .iDevice_header{background-image:url(icon_account.png)}
+
+/* Clearfix */
+.iDevice_content:before,.iDevice_content:after{content:"";display:table}
+.iDevice_content:after{clear:both}
+.iDevice_content{*zoom:1}/* IE6/7: Trigger hasLayout and contain floats */
+
+/* Hide/Show iDevice */
+.toggle-idevice{display:block;margin:0;text-align:right}
+.iDevice_header .toggle-idevice{float:right;padding-top:2px;margin:0}
+.toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(_my_hide_show.png) no-repeat 0 -16px;outline:none}
+.toggle-idevice .show-idevice{background-position:0 0}
+.toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+
+/* Reset base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+li{list-style-position:outside}
+
+/* Style Designer Options */
+
+/* iDevice header with background-color */
+.iDevice_header{
+	background-color:yellow;
+	background-position:10px 50%;
+	line-height:35px;
+	padding-left:45px;
+	border:1px solid #ddd;
+	border-bottom:0;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+}
+.hidden-idevice .iDevice_header{
+	border-radius:5px;
+	border:1px solid #ddd;
+}
+.iDevice_inner{
+	border-top-left-radius:0;
+	border-top-right-radius:0;
+}
+.emphasis1 .toggle-idevice{padding-right:10px}

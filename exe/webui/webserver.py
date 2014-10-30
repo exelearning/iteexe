@@ -155,6 +155,7 @@ class WebServer:
         self.root.putChild("previews",    
                               File(self.tempWebDir+"/previews"))
         self.root.putChild("templates",   File(webDir+"/templates"))
+        self.root.putChild("tools",   File(webDir+"/tools"))
 
         # new ExtJS 4.0 Interface
         jsDir = self.config.jsDir

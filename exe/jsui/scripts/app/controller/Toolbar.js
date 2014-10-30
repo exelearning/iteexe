@@ -135,6 +135,14 @@ Ext.define('eXe.controller.Toolbar', {
             '#tools_stylemanager': {
                 click: this.toolsStyleManager
             },
+            // Style designer
+            '#style_designer_new_style': {
+                click: this.styleDesigner.createStyle
+            },
+            '#style_designer_edit_style': {
+                click: this.styleDesigner.editStyle
+            },
+            // / Style designer
             '#tools_preferences': {
                 click: this.toolsPreferences
             },
@@ -393,6 +401,28 @@ Ext.define('eXe.controller.Toolbar', {
         });
         stylemanager.show();        
 	},
+	
+	// Style designer
+	styleDesigner : {
+		createStyle : function(){
+			window.open("/tools/style-designer/website/");
+		},
+		editStyle : function(){
+			alert("Check if it can be edited");
+			window.open("/tools/style-designer/website/?style="+this.styleDesigner.getCurrentStyleId());
+		},
+		getCurrentStyleId : function(){
+			var id = this.getCurrentStyleFilePath();
+			id = id.replace("/","");
+			id = id.split("/")[1];
+			return id;
+		},
+		getCurrentStyleFilePath : function(){ // It returns "/style/INTEF/content.css", being X your style
+			return document.getElementsByTagName("IFRAME")[0].contentWindow.exe_style;
+		}
+	},
+	// / Style designer
+	
     fileQuit: function() {
 	    this.saveWorkInProgress();
 	    this.askDirty("eXe.app.getController('Toolbar').doQuit()", "quit");
