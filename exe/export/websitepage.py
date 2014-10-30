@@ -322,14 +322,14 @@ class WebsitePage(Page):
         html = "<"+navTag+" class=\"pagination noprt\">"+lb
 
         if prevPage:
-            html += "<a href=\""+quote(prevPage.name)+".html\" class=\"prev\">"
-            html += "<span>&laquo; </span>%s</a>" % c_('Previous')
+            html += "<a href=\""+quote(prevPage.name)+".html\" class=\"prev\"><span>"
+            html += "<span>&laquo; </span>%s</span></a>" % c_('Previous')
 
         if nextPage:
             if prevPage:
                 html += ' <span class="sep">| </span>'
-            html += "<a href=\""+quote(nextPage.name)+".html\" class=\"next\">"
-            html += " %s<span> &raquo;</span></a>" % c_('Next')
+            html += "<a href=\""+quote(nextPage.name)+".html\" class=\"next\"><span>"
+            html += "%s<span> &raquo;</span></span></a>" % c_('Next')
             
         html += lb+"</"+navTag+">"+lb
         return html
