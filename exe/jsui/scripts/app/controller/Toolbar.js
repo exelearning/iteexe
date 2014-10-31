@@ -405,11 +405,11 @@ Ext.define('eXe.controller.Toolbar', {
 	// Style designer
 	styleDesigner : {
 		createStyle : function(){
-			window.open("/tools/style-designer/website/");
+			window.open("/tools/style-designer/previews/website/");
 		},
 		editStyle : function(){
 			alert("Check if it can be edited");
-			window.open("/tools/style-designer/website/?style="+this.styleDesigner.getCurrentStyleId());
+			window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId());
 		},
 		getCurrentStyleId : function(){
 			var id = this.getCurrentStyleFilePath();
