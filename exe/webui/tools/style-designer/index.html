@@ -1,1 +1,100 @@
-<script type="text/javascript">var sd_style = "base";var sd_href= window.location.href;var sd_href_parts = sd_href.split("?style=");if (sd_href_parts.length==2) sd_style = sd_href_parts[1];document.write(sd_style);</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/styles_ie_lt9.css" type="text/css" />
+	<![endif]-->    
+    <script type="text/javascript" src="/scripts/exe_jquery.js"></script>
+    <script src="js/jpicker-1.1.6.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="langs/en.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+    <title>%Style_Designer%</title>
+</head>
+<body>
+<div id="cssWizard">
+	<h1>%Style_Designer%</h1>
+    <form onsubmit="return false;" action="#" id="myForm"> 
+		<div class="tabs">
+			<ul id="tabs">
+				<li id="general-tab" class="current"><span><a href="#" onclick="$app.showTab('general');return false">%General%</a></span></li>
+                <li id="css-tab"><span><a href="#" onclick="$app.showTab('css');return false">%Advanced%</a></span></li>
+				<li id="help-tab"><span><a href="#" onclick="$app.showTab('help');return false">%Help%</a></span></li>
+			</ul>
+		</div>
+
+		<div class="panel_wrapper">
+
+			<div id="general" class="panel current">
+            	<h2 class="scr-av">General</h2>
+				<fieldset>
+					<legend>Aspecto general</legend>   
+                    <div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="pageWidth">Ancho p&aacute;gina: </label>
+								<input type="text" maxlength="4" size="6" id="pageWidth" /> 
+								<select id="pageWidthUnit">
+									<option value="%">Porcentaje (%)</option>
+									<option value="px">Ancho fijo (px)</option>
+								</select>
+							</div>
+							<div class="field">
+								<label for="pageAlign">Posici&oacute;n p&aacute;gina: </label>
+								<select id="pageAlign">
+									<option value="0 auto" selected="selected">Centrada</option>
+									<option value="0     ">Izquierda</option>                    
+								</select>
+							</div>
+                            <div class="field">
+								<label for="wrapperShadowColor">Color sombra: </label>
+								<input type="text" maxlength="6" size="6" id="wrapperShadowColor" class="color" />
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="fields">
+                            <div class="field">
+                                <label for="contentBorderWidth">Ancho borde: </label>                                    
+                                <input type="text" maxlength="3" size="6" id="contentBorderWidth" /> px
+                            </div>                        
+							<div class="field">
+								<label for="contentBorderColor">Color borde: </label>
+								<input type="text" maxlength="6" size="6" id="contentBorderColor" class="color" />
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+            
+            <div id="css" class="panel">
+            	<h2 class="scr-av">Avanzado</h2>
+				<fieldset>
+					<legend>Avanzado</legend>
+					<div class="fields">
+						<label for="other-css">Escriba aqu&iacute; su c&oacute;digo CSS adicional:</label>
+						<textarea name="other-css" id="other-css" cols="32" rows="6"></textarea>
+						<p class="info">Este c&oacute;digo se cargar&aacute; a continuaci&oacute;n del c&oacute;digo CSS definido en el resto de las pesta&ntilde;as.</p>
+					</div>
+				</fieldset>               
+			</div>
+			
+			<div id="help" class="panel">
+            	<h2 class="scr-av">Ayuda</h2>
+                <p>Rellena los campos y, una vez conseguida la apariencia deseada, pulsa "Finalizar".</p>
+			</div>
+            
+            <p id="css-warning">Las sombras y los bordes redondeados no se ver&aacute;n en IE6, IE7, IE8 y otros navegadores.</p>
+
+		</div>
+
+		<div class="mceActionPanel">
+        	<span style="float:left"><label for="activate-preview"><input type="checkbox" id="activate-preview" class="checkbox" /> Previsualizar</label></span>
+        	<input type="button" id="restore" name="restore" value="%Reset%" />
+			<input type="button" id="save" name="save" value="%Finish%" />
+		</div>
+    </form>        
+</div>
+</body>
+</html>
