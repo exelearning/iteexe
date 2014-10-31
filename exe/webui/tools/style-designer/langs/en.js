@@ -9,6 +9,7 @@ var $i18n = {
 	Help : _("Help"),
 	Reset : _("Reset"),
 	Finish : _("Finish"),
+	Browser_Incompatible : _("Your browser is not compatible with this tool."),
 	// Color Picker
 	Color_Picker : _("Color Picker"),
 	Color_Picker_Strings : {

@@ -1,3 +1,4 @@
+/* eXeLearning Style Designer Compatible Style */
 body{font:.85em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#333;background:#fff}
 
 a{color:#2495FF}
@@ -8,7 +9,6 @@ h5{font-size:1em}
 
 #header,#emptyHeader,#nodeDecoration{
 padding-left:20px;
-/*height:100px;*/
 padding-top:60px;
 height:40px;
 font-size:1.3em;
@@ -63,25 +63,8 @@ border-radius:5px;
 .feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 li{list-style-position:outside}
 
-/* Style Designer Options */
+/* eXeLearning Style Designer */
 
-/* iDevice header with background-color */
-.iDevice_header{
-	background-color:#f9f9f9;
-	background-position:10px 50%;
-	line-height:36px;
-	padding-left:45px;
-	border:1px solid #ddd;
-	border-bottom:0;
-	border-top-left-radius:5px;
-	border-top-right-radius:5px;
+body{
+/*contentBGColor*/background-color:#ff5656;
 }
-.hidden-idevice .iDevice_header{
-	border-radius:5px;
-	border:1px solid #ddd;
-}
-.iDevice_inner{
-	border-top-left-radius:0;
-	border-top-right-radius:0;
-}
-.emphasis1 .toggle-idevice{padding:10px 10px 0 0}

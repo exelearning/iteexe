@@ -1,5 +1,6 @@
+/* eXeLearning Style Designer Compatible Style */
 body{padding:0;text-align:center}
-#content{width:985px;margin:0 auto;padding-bottom:15px;text-align:left;position:relative;border:1px solid #ddd;border-top:0;border-bottom:0;box-shadow:0 0 10px 0 #999}
+#content{background:#fff;width:985px;margin:0 auto;padding-bottom:15px;text-align:left;position:relative;border:1px solid #ddd;border-top:0;border-bottom:0;box-shadow:0 0 10px 0 #999}
 #main-wrapper{width:735px;float:right}
 #main{padding:20px 20px 0 0}
 .no-nav #main-wrapper{width:100%;float:none}
@@ -14,11 +15,15 @@ body{padding:0;text-align:center}
 #siteNav .other-section{display:none}
 #siteNav a{display:block;padding:4px 10px 4px 20px;border-width:0 0 1px 0;border-style:solid;color:#555;border-color:#ddd}
 #siteNav a:hover,#siteNav a:focus{color:#000;background:#f9f9f9}
-* html #siteNav a{display:inline-block;width:100%} /* IE6 */
 #siteNav .active{color:#A80003;font-weight:bold}
 #siteNav ul ul a{padding-left:35px;font-size:.95em}
 #siteNav ul ul ul a{padding-left:60px;color:#555}
 #siteNav .daddy span{display:none}
+
+/* IE6 */
+* html #siteNav a{display:inline-block;width:200px}
+* html #siteNav ul ul a{width:185px}
+* html #siteNav ul ul ul a{width:160px}
 
 #siteFooter{padding-left:20px}
 /* Pagination */
@@ -151,4 +156,14 @@ html[xmlns] #content{display:block}
   #nav-toggler a{padding:0;width:32px;position:absolute;left:50%;margin-left:-16px}
   .js #siteNav{border-top:1px solid #ddd}
   .js #bottomPagination .next{right:0}
+}
+
+/* eXeLearning Style Designer */
+
+body{
+/*websiteBodyBGColor*/background-color:#ffff00;
+}
+
+#content{
+/*contentBGColor*/background-color:#ff5656;
 }

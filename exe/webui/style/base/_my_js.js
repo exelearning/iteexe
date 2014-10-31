@@ -1,7 +1,10 @@
 var myTheme = {
     init : function(){
 		var ie_v = $exe.isIE();
-		if (ie_v && ie_v<8) return false;
+		if (ie_v && ie_v<8) {
+			$("#topPagination").wrap("<div />");
+			return false;
+		}
         setTimeout(function(){
             $(window).resize(function() {
                 myTheme.reset();

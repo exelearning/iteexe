@@ -21,6 +21,8 @@
 				<li id="general-tab" class="current"><span><a href="#" onclick="$app.showTab('general');return false">%General%</a></span></li>
                 <li id="css-tab"><span><a href="#" onclick="$app.showTab('css');return false">%Advanced%</a></span></li>
 				<li id="help-tab"><span><a href="#" onclick="$app.showTab('help');return false">%Help%</a></span></li>
+				<li id="content-css-tab"><span><a href="#" onclick="$app.showTab('content-css');return false">content.css</a></span></li>
+				<li id="nav-css-tab"><span><a href="#" onclick="$app.showTab('nav-css');return false">nav.css</a></span></li>
 			</ul>
 		</div>
 
@@ -28,40 +30,21 @@
 
 			<div id="general" class="panel current">
             	<h2 class="scr-av">General</h2>
-				<fieldset>
-					<legend>Aspecto general</legend>   
-                    <div class="col">
+                <fieldset>
+					<legend>Fondo de página</legend>
+					<div class="col">
 						<div class="fields">
 							<div class="field">
-								<label for="pageWidth">Ancho p&aacute;gina: </label>
-								<input type="text" maxlength="4" size="6" id="pageWidth" /> 
-								<select id="pageWidthUnit">
-									<option value="%">Porcentaje (%)</option>
-									<option value="px">Ancho fijo (px)</option>
-								</select>
-							</div>
-							<div class="field">
-								<label for="pageAlign">Posici&oacute;n p&aacute;gina: </label>
-								<select id="pageAlign">
-									<option value="0 auto" selected="selected">Centrada</option>
-									<option value="0     ">Izquierda</option>                    
-								</select>
-							</div>
-                            <div class="field">
-								<label for="wrapperShadowColor">Color sombra: </label>
-								<input type="text" maxlength="6" size="6" id="wrapperShadowColor" class="color" />
+								<label for="websiteBodyBGColor">Fondo sitio web: </label>
+								<input type="text" maxlength="6" size="6" id="websiteBodyBGColor" class="color" />
 							</div>
 						</div>
 					</div>
 					<div class="col">
 						<div class="fields">
-                            <div class="field">
-                                <label for="contentBorderWidth">Ancho borde: </label>                                    
-                                <input type="text" maxlength="3" size="6" id="contentBorderWidth" /> px
-                            </div>                        
 							<div class="field">
-								<label for="contentBorderColor">Color borde: </label>
-								<input type="text" maxlength="6" size="6" id="contentBorderColor" class="color" />
+								<label for="contentBGColor">Fondo contenido: </label>
+								<input type="text" maxlength="6" size="6" id="contentBGColor" class="color" />
 							</div>
 						</div>
 					</div>
@@ -71,26 +54,55 @@
             <div id="css" class="panel">
             	<h2 class="scr-av">Avanzado</h2>
 				<fieldset>
-					<legend>Avanzado</legend>
+					<legend>content.css</legend>
 					<div class="fields">
-						<label for="other-css">Escriba aqu&iacute; su c&oacute;digo CSS adicional:</label>
-						<textarea name="other-css" id="other-css" cols="32" rows="6"></textarea>
-						<p class="info">Este c&oacute;digo se cargar&aacute; a continuaci&oacute;n del c&oacute;digo CSS definido en el resto de las pesta&ntilde;as.</p>
+						<label for="extra-content-css">Este código se incluirá al final de content.css:</label>
+						<textarea name="extra-content-css" id="extra-content-css" cols="32" rows="6"></textarea>
+						<p class="info">content.css se carga en todas las exportaciones, y siempre después de base.css</p>
 					</div>
-				</fieldset>               
+				</fieldset>
+				<fieldset>
+					<legend>nav.css</legend>
+					<div class="fields">
+						<label for="extra-nav-css">Este código se incluirá al final de nav.css:</label>
+						<textarea name="extra-nav-css" id="extra-nav-css" cols="32" rows="6"></textarea>
+						<p class="info">nav.css se incluye solo al exportar como sitio web, y siempre después de content.css</p>
+					</div>
+				</fieldset>				
 			</div>
 			
 			<div id="help" class="panel">
             	<h2 class="scr-av">Ayuda</h2>
                 <p>Rellena los campos y, una vez conseguida la apariencia deseada, pulsa "Finalizar".</p>
 			</div>
+			
+			<div id="content-css" class="panel">
+            	<h2 class="scr-av">content.css</h2>
+				<fieldset>
+					<legend>content.css</legend>
+					<div class="fields">
+						<label for="my-content-css">Contenido del archivo content.css:</label>
+						<textarea name="my-content-css" id="my-content-css" cols="32" rows="6"></textarea>
+					</div>
+				</fieldset> 
+			</div>
+			
+			<div id="nav-css" class="panel">
+            	<h2 class="scr-av">nav.css</h2>
+				<fieldset>
+					<legend>nav.css</legend>
+					<div class="fields">
+						<label for="my-nav-css">Contenido del archivo nav.css:</label>
+						<textarea name="my-nav-css" id="my-nav-css" cols="32" rows="6"></textarea>
+					</div>
+				</fieldset> 
+			</div>
             
-            <p id="css-warning">Las sombras y los bordes redondeados no se ver&aacute;n en IE6, IE7, IE8 y otros navegadores.</p>
+			<p id="css-warning">Las sombras y los bordes redondeados no se ver&aacute;n en IE6, IE7, IE8 y otros navegadores.</p>
 
 		</div>
 
 		<div class="mceActionPanel">
-        	<span style="float:left"><label for="activate-preview"><input type="checkbox" id="activate-preview" class="checkbox" /> Previsualizar</label></span>
         	<input type="button" id="restore" name="restore" value="%Reset%" />
 			<input type="button" id="save" name="save" value="%Finish%" />
 		</div>

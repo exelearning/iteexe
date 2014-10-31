@@ -407,9 +407,25 @@ Ext.define('eXe.controller.Toolbar', {
 		createStyle : function(){
 			window.open("/tools/style-designer/previews/website/");
 		},
+		notCompatitle : function(){
+			Ext.Msg.alert("", _("The current Style is not compatible with the Style Designer"));
+		},
 		editStyle : function(){
-			alert("Check if it can be edited");
-			window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId());
+			Ext.Ajax.request({
+				url: this.styleDesigner.getCurrentStyleFilePath(),
+				scope: this,
+				success: function(response) {
+					var res = response.responseText;
+					if (res.indexOf("/* eXeLearning Style Designer Compatible Style */")!=0) {
+						this.styleDesigner.notCompatitle();
+					} else {
+						window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId());		
+					}
+				},
+				error: function(){
+					this.styleDesigner.notCompatitle();
+				}
+			});
 		},
 		getCurrentStyleId : function(){
 			var id = this.getCurrentStyleFilePath();
