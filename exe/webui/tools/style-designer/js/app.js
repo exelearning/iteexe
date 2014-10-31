@@ -71,28 +71,29 @@ var $app = {
 		
 	},
 	getAllValues : function(type,content){
+		
+		var c = content.replace("\r\n\r\n","");
+		
+		if (type=="content") $("#my-content-css").val(c);
+		if (type=="nav") $("#my-nav-css").val(c);
+		
 		var val;
 		for (i=0;i<$appVars.length;i++) {
 			var currentValue = $appVars[i];
-			var index = content.indexOf("/*"+currentValue[0]+"*/");
+			var index = c.indexOf("/*"+currentValue[0]+"*/");
 			if(index!=-1){
 				if (typeof(currentValue[1])=='number') {
-					val = content.substr(index+(currentValue[0].length+4)+currentValue[2],currentValue[1]);
+					val = c.substr(index+(currentValue[0].length+4)+currentValue[2],currentValue[1]);
 					if (currentValue[3]=='number') val = parseFloat(val);
 					if (currentValue[1]!='checkbox') $("#"+currentValue[0]).val(val);
 				}
 			}
 		}
+		
 		// Enable the Color Pickers
-		this.enableColorPicker();
+		this.enableColorPickers();
+		
 	},
-	/*
-	getCurrentValues : function(cssFile,content){
-		if (cssFile=="content") {
-			$app.getAllValues($appVars,content);
-		}
-	},
-	*/
 	template : function(templateid,data){
 		return document.getElementById(templateid).innerHTML.replace(/%(\w*)%/g,
 		function(m,key){
@@ -167,7 +168,7 @@ var $app = {
 		
 		return css;
 	},
-	enableColorPicker : function(){
+	enableColorPickers : function(){
 		$.fn.jPicker.defaults.images.clientPath='images/jpicker/';	
 		$('.color').jPicker(
 			{
