@@ -13,15 +13,25 @@ var $appVars = [
 	['pageAlign',6,7],
 	['wrapperShadowColor',6,23],
 	['contentBorderWidth',3,13,'number'],
-	['contentBorderColor',6,1],
+	['contentBorderColor',6,1]
+	/*
 	// fieldset #1
 	['websiteBodyBGColor',6,18],			
 	['contentBGColor',6,18]
+	*/
 ];
 
 var $app = {
+	defaultValues : {
+		pageWidth : "985px",
+		pageAlign : "0 auto",
+		wrapperShadowColor : "0 0 10px 0 #999",
+		contentBorderWidth : 1,
+		contentBorderColor : "ddd"		
+	},
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
+	defaultMark : "/* eXeLearning Style Designer (default CSS) */",
 	init : function() {
 		
 		this.i18n();
@@ -109,7 +119,12 @@ var $app = {
 					if (currentValue[1]!='checkbox') $("#"+currentValue[0]).val(val);
 					// Set % or px
 					if (currentValue[0]=="pageWidth") {
-						if (val>100) document.getElementById("pageWidthUnit").value="px";
+						if (val>100) $("#pageWidthUnit").val("px");
+						else $("#pageWidthUnit").val("%");
+					}
+					// Center or left
+					if (currentValue[0]=="pageAlign") {
+						if (val.indexOf("0;")==0) $("#pageAlign").val("left");
 					}
 				}
 			}
@@ -197,36 +212,62 @@ var $app = {
 		var contentBorderWidth = $("#contentBorderWidth").val();
 		var contentBGColor = $("#contentBGColor").val();
 		
-		if (pageWidth>100) document.getElementById("pageWidthUnit").value="px";
+		// Default border width if not defined
+		if (contentBorderColor!="" && contentBorderWidth=="") contentBorderWidth = $app.defaultValues.contentBorderWidth;
+		// Default border color if not defined
+		if (contentBorderWidth!="" && contentBorderColor=="") contentBorderColor = $app.defaultValues.contentBorderColor;
+
+		//if (pageWidth>100) $("#pageWidthUnit").val("px");
+		//else $("#pageWidthUnit").val("%");
 		
-		if ((pageWidth!="") || (contentBorderColor!="" || pageAlign!="" || wrapperShadowColor!="" || contentBGColor!="")){
+		if (pageWidth!="" || contentBorderColor!="" || contentBorderWidth!="" || pageAlign=="left" || wrapperShadowColor!="" || contentBGColor!=""){
 			navCSS+="#content{";
-				if (contentBorderColor!="") {
-					while (contentBorderWidth.length<3) contentBorderWidth="0"+contentBorderWidth;
-					navCSS+="/*contentBorderWidth*/border-right:"+contentBorderWidth+"px solid /*contentBorderColor*/#"+contentBorderColor+";border-left:"+contentBorderWidth+"px solid #"+contentBorderColor+";";
+				if (contentBorderColor!="" || contentBorderWidth!="") {
+					//while (contentBorderWidth.length<3) contentBorderWidth="0"+contentBorderWidth;
+					navCSS+="/*contentBorderWidth*/border-right:"+contentBorderWidth+"px solid /*contentBorderColor*/#"+contentBorderColor+";";
+					navCSS+= "border-left:"+contentBorderWidth+"px solid #"+contentBorderColor+";";
 				}
 				if (pageWidth!="") navCSS+="/*pageWidth*/width:"+pageWidth+pageWidthUnit+";";
-				navCSS+="/*pageAlign*/margin:"+pageAlign+";";
-				if (contentBGColor!="") navCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
+				if (pageAlign=="left") navCSS+="/*pageAlign*/margin:0;";
+				//if (contentBGColor!="") navCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
 				if (wrapperShadowColor!="") navCSS+="/*wrapperShadowColor*/box-shadow:0 0 15px 0 #"+wrapperShadowColor+";";
 			navCSS+="}";
-		}	
+		}
 		
 		// BODY
 		// site
 		var websiteBodyBGColor = $("#websiteBodyBGColor").val();
-		if (websiteBodyBGColor!='' || pageAlign!='') {
+		if (websiteBodyBGColor!='' || pageAlign=='left') {
 			navCSS+="body{"
-				if (pageAlign!='0 auto') navCSS+="text-align:left;";
-				else navCSS+="text-align:center;";
-				if (websiteBodyBGColor!='') navCSS+="/*websiteBodyBGColor*/background-color:#"+websiteBodyBGColor+";";
+				navCSS+="text-align:left;";
+				//if (websiteBodyBGColor!='') navCSS+="/*websiteBodyBGColor*/background-color:#"+websiteBodyBGColor+";";
 			navCSS+="}"
 		}
 		// page or IMS
 		if (contentBGColor!='') {
-			contentCSS+="body{";
-				contentCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
-			contentCSS+="}";
+			//contentCSS+="body{";
+				//contentCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
+			//contentCSS+="}";
+		}
+		
+		// Default
+		if (pageWidth=="" || pageAlign=="center" || wrapperShadowColor=="" || contentBorderColor=="") {
+			navCSS+=$app.defaultMark;
+			navCSS+="#content{";
+				if (pageWidth=="") navCSS+="width:"+$app.defaultValues.pageWidth+";";
+				if (pageAlign=="center") navCSS+="margin:"+$app.defaultValues.pageAlign+";";
+				if (wrapperShadowColor=="") navCSS+="box-shadow:"+$app.defaultValues.wrapperShadowColor+";";
+				if (contentBorderColor=="") {
+					navCSS+="border-left:"+contentBorderWidth+"px solid #"+$app.defaultValues.contentBorderColor+";";
+					navCSS+="border-right:"+contentBorderWidth+"px solid #"+$app.defaultValues.contentBorderColor+";";
+				}
+			navCSS+="}";
+			navCSS+=$app.defaultMark;
+		}
+		if (pageAlign=='center') {
+			navCSS+="body{"
+				navCSS+="text-align:center;";
+			navCSS+="}"
 		}
 		
 		contentCSS = this.formatCSS(contentCSS);
@@ -236,7 +277,7 @@ var $app = {
 		var advContentCSS = $("#extra-content-css").val();
 		if (advContentCSS!="") contentCSS += "\n"+$app.advancedMark+"\n"+advContentCSS;	
 		var advNavCSS = $("#extra-nav-css").val();
-		if (navCSS!="") navCSS += "\n"+$app.advancedMark+"\n"+advNavCSS;
+		if (advNavCSS!="") navCSS += "\n"+$app.advancedMark+"\n"+advNavCSS;
 		
 		css.push(contentCSS);
 		css.push(navCSS);
@@ -272,6 +313,16 @@ var $app = {
 		if (this.isOldBrowser) tag.cssText = css;
 		else tag.innerHTML = css;
 	},
+	getFinalCSS : function(css){
+		// Remove all default values from the CSS to include in content.css and nav.css
+		if (css.indexOf($app.defaultMark)!=-1) {
+			var parts = css.split($app.defaultMark);
+			if (parts.length==3) {
+				return parts[0]+parts[2];
+			}
+		}
+		return css;
+	},
 	getPreview : function(){
 		
 		var w = window.opener;
@@ -285,8 +336,9 @@ var $app = {
 		this.setCSS(contentCSSTag,contentCSS);
 		
 		// content.css and nav.css TEXTAREAS
-		$("#my-content-css").val(css[0]);
-		$("#my-nav-css").val(css[1]);
+		$("#my-content-css").val(this.getFinalCSS(css[0]));
+		$("#my-nav-css").val(this.getFinalCSS(css[1]));
+		//((css[1].split($app.defaultMark)[0]);
 		
 		// nav.css
 		var navCSSTag = w.document.getElementById("my-nav-css");

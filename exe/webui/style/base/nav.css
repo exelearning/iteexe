@@ -162,18 +162,18 @@ html[xmlns] #content{display:block}
 /* eXeLearning Style Designer */
 
 #content{
-/*contentBorderWidth*/border-right:005px solid /*contentBorderColor*/#00bfbf;
-border-left:005px solid #00bfbf;
+/*contentBorderWidth*/border-right:5px solid /*contentBorderColor*/#ff7f00;
+border-left:5px solid #ff7f00;
 /*pageWidth*/width:80%;
-/*pageAlign*/margin:0     ;
-/*contentBGColor*/background-color:#ff5656;
-/*wrapperShadowColor*/box-shadow:0 0 15px 0 #7f003f;
+/*wrapperShadowColor*/box-shadow:0 0 15px 0 #ffffaa;
 }
 
 body{
-text-align:left;
-/*websiteBodyBGColor*/background-color:#ffff00;
+text-align:center;
 }
 
 /* eXeLearning Style Designer (custom CSS) */
-*{color:blue}
+
+*{
+color:blue;
+}
