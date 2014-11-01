@@ -30,6 +30,47 @@
 
 			<div id="general" class="panel current">
             	<h2 class="scr-av">General</h2>
+				
+				<fieldset>
+					<legend>Aspecto general</legend>   
+                    <div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="pageWidth">Ancho p&aacute;gina: </label>
+								<input type="text" maxlength="4" size="6" id="pageWidth" /> 
+								<select id="pageWidthUnit">
+									<option value="%">Porcentaje (%)</option>
+									<option value="px">Ancho fijo (px)</option>
+								</select>
+							</div>
+							<div class="field">
+								<label for="pageAlign">Posici&oacute;n p&aacute;gina: </label>
+								<select id="pageAlign">
+									<option value="0 auto" selected="selected">Centrada</option>
+									<option value="0     ">Izquierda</option>                    
+								</select>
+							</div>
+                            <div class="field">
+								<label for="wrapperShadowColor">Color sombra: </label>
+								<input type="text" maxlength="6" size="6" id="wrapperShadowColor" class="color" />
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="fields">
+                            <div class="field">
+                                <label for="contentBorderWidth">Ancho borde: </label>                                    
+                                <input type="text" maxlength="3" size="6" id="contentBorderWidth" /> px
+                            </div>                        
+							<div class="field">
+								<label for="contentBorderColor">Color borde: </label>
+								<input type="text" maxlength="6" size="6" id="contentBorderColor" class="color" />
+							</div>
+						</div>
+					</div>
+				</fieldset>			
+				
+				
                 <fieldset>
 					<legend>Fondo de página</legend>
 					<div class="col">

@@ -6,11 +6,22 @@
 
 var $appVars = [
 	//Field, value length or "", starting position (Ej: color:# => 7).
+	
+	// #general tab
+	// fieldset #1
+	['pageWidth',4,6,'number'],
+	['pageAlign',6,7],
+	['wrapperShadowColor',6,23],
+	['contentBorderWidth',3,13,'number'],
+	['contentBorderColor',6,1],
+	// fieldset #1
 	['websiteBodyBGColor',6,18],			
 	['contentBGColor',6,18]
 ];
 
 var $app = {
+	mark : "/* eXeLearning Style Designer */",
+	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
 	init : function() {
 		
 		this.i18n();
@@ -21,7 +32,7 @@ var $app = {
 		if (ie && ie<9) this.isOldBrowser = true;
 
 		$("#save").click(function(){
-			alert("Save");
+			alert("Save.\n\nElimina el margin:0 auto de #content en nav.css antes\n\nY el text-align:center;");
 			// var css = $app.composeCSS();
 		});
 		
@@ -38,7 +49,7 @@ var $app = {
 			type: "GET",
 			url: url,
 			success: function(res){
-				var contentCSS = res.split("/* eXeLearning Style Designer */");
+				var contentCSS = res.split($app.mark);
 				$app.baseContentCSS = contentCSS[0];
 				var myContentCSS = "";
 				if (contentCSS.length==2) {
@@ -50,32 +61,42 @@ var $app = {
 		});
 		
 		// nav.css
-		var navCSSFile = opener.document.getElementById("base-nav-css");
-		if (navCSSFile) {
-			url = navCSSFile.href;
-			$.ajax({
-				type: "GET",
-				url: url,
-				success: function(res){
-					var navCSS = res.split("/* eXeLearning Style Designer */");
-					$app.baseNavCSS = navCSS[0];
-					var myNavCSS = "";
-					if (navCSS.length==2) {
-						myNavCSS = navCSS[1];
-					}
-					$app.myNavCSS = myNavCSS;
-					$app.getAllValues("nav",$app.myNavCSS);
+		url = url.replace("content.css","nav.css")
+		$.ajax({
+			type: "GET",
+			url: url,
+			success: function(res){
+				var navCSS = res.split($app.mark);
+				$app.baseNavCSS = navCSS[0];
+				var myNavCSS = "";
+				if (navCSS.length==2) {
+					myNavCSS = navCSS[1];
 				}
-			});
-		}
+				$app.myNavCSS = myNavCSS;
+				$app.getAllValues("nav",$app.myNavCSS);
+			}
+		});
 		
 	},
 	getAllValues : function(type,content){
 		
 		var c = content.replace("\r\n\r\n","");
 		
-		if (type=="content") $("#my-content-css").val(c);
-		if (type=="nav") $("#my-nav-css").val(c);
+		// Advanced CSS
+		var adv = c.split($app.advancedMark);
+		if (adv.length==2 && adv[1]!="") {
+			adv = adv[1];
+			if (adv.indexOf("\r\n")==0) adv = adv.replace("\r\n","");
+			$("#extra-"+type+"-css").val(adv);
+		}
+		
+		if (type=="content") {
+			//$("#my-content-css").val($app.baseContentCSS+"\n"+$app.mark+"\n\n"+c);
+			$("#my-content-css").val(c);
+		} else {
+			//$("#my-nav-css").val($app.baseNavCSS+"\n"+$app.mark+"\n\n"+c);
+			$("#my-nav-css").val(c);
+		}
 		
 		var val;
 		for (i=0;i<$appVars.length;i++) {
@@ -86,12 +107,42 @@ var $app = {
 					val = c.substr(index+(currentValue[0].length+4)+currentValue[2],currentValue[1]);
 					if (currentValue[3]=='number') val = parseFloat(val);
 					if (currentValue[1]!='checkbox') $("#"+currentValue[0]).val(val);
+					// Set % or px
+					if (currentValue[0]=="pageWidth") {
+						if (val>100) document.getElementById("pageWidthUnit").value="px";
+					}
 				}
 			}
 		}
 		
 		// Enable the Color Pickers
 		this.enableColorPickers();
+		
+		// Enable real time preview
+		this.trackChanges();
+		
+	},
+	trackChanges : function(){
+		
+		var f = document.getElementById("myForm");
+		// INPUT fields
+		var f_inputs = f.getElementsByTagName("INPUT");
+		for (i=0;i<f_inputs.length;i++){
+			var t= f_inputs[i].type;
+			if (t=="checkbox") {
+				$app.getPreview();
+			} else {
+				f_inputs[i].onblur=function(){ $app.getPreview(); }
+			}
+		}
+		// SELECT
+		var f_selects = f.getElementsByTagName("SELECT");
+		for (z=0;z<f_selects.length;z++){
+			f_selects[z].onchange=function(){ $app.getPreview(); }	
+		}
+		// Advanced tab
+		document.getElementById("extra-content-css").onkeyup=function(){ $app.getPreview(); }
+		document.getElementById("extra-nav-css").onkeyup=function(){ $app.getPreview(); }
 		
 	},
 	template : function(templateid,data){
@@ -137,32 +188,56 @@ var $app = {
 		var contentCSS = "";
 		var navCSS = "";
 		
-		//body
-		var websiteBodyBGColor = $("#websiteBodyBGColor").val();
-		
-		if (websiteBodyBGColor!='') {
-			
-			navCSS+="body{"
-				navCSS+="/*websiteBodyBGColor*/background-color:#"+websiteBodyBGColor+";";
-			navCSS+="}"
-			
-		}
-		
+		// #content
+		var pageWidth = $("#pageWidth").val();
+		var pageWidthUnit = $("#pageWidthUnit").val();
+		var pageAlign = $("#pageAlign").val();
+		var wrapperShadowColor = $("#wrapperShadowColor").val();
+		var contentBorderColor = $("#contentBorderColor").val();
+		var contentBorderWidth = $("#contentBorderWidth").val();
 		var contentBGColor = $("#contentBGColor").val();
-		if (contentBGColor!='') {
-			
-			contentCSS+="body{"
-				contentCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
-			contentCSS+="}"
-			
-			navCSS+="#content{"
-				navCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
+		
+		if (pageWidth>100) document.getElementById("pageWidthUnit").value="px";
+		
+		if ((pageWidth!="") || (contentBorderColor!="" || pageAlign!="" || wrapperShadowColor!="" || contentBGColor!="")){
+			navCSS+="#content{";
+				if (contentBorderColor!="") {
+					while (contentBorderWidth.length<3) contentBorderWidth="0"+contentBorderWidth;
+					navCSS+="/*contentBorderWidth*/border-right:"+contentBorderWidth+"px solid /*contentBorderColor*/#"+contentBorderColor+";border-left:"+contentBorderWidth+"px solid #"+contentBorderColor+";";
+				}
+				if (pageWidth!="") navCSS+="/*pageWidth*/width:"+pageWidth+pageWidthUnit+";";
+				navCSS+="/*pageAlign*/margin:"+pageAlign+";";
+				if (contentBGColor!="") navCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
+				if (wrapperShadowColor!="") navCSS+="/*wrapperShadowColor*/box-shadow:0 0 15px 0 #"+wrapperShadowColor+";";
+			navCSS+="}";
+		}	
+		
+		// BODY
+		// site
+		var websiteBodyBGColor = $("#websiteBodyBGColor").val();
+		if (websiteBodyBGColor!='' || pageAlign!='') {
+			navCSS+="body{"
+				if (pageAlign!='0 auto') navCSS+="text-align:left;";
+				else navCSS+="text-align:center;";
+				if (websiteBodyBGColor!='') navCSS+="/*websiteBodyBGColor*/background-color:#"+websiteBodyBGColor+";";
 			navCSS+="}"
-			
+		}
+		// page or IMS
+		if (contentBGColor!='') {
+			contentCSS+="body{";
+				contentCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
+			contentCSS+="}";
 		}
 		
 		contentCSS = this.formatCSS(contentCSS);
 		navCSS = this.formatCSS(navCSS);
+
+		// Advanced tab
+		var advContentCSS = $("#extra-content-css").val();
+		if (advContentCSS!="") contentCSS += "\n"+$app.advancedMark+"\n"+advContentCSS;	
+		var advNavCSS = $("#extra-nav-css").val();
+		if (navCSS!="") navCSS += "\n"+$app.advancedMark+"\n"+advNavCSS;
+		
 		css.push(contentCSS);
 		css.push(navCSS);
 		

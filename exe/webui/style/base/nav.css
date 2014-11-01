@@ -1,8 +1,9 @@
 /* eXeLearning Style Designer Compatible Style */
 body{padding:0;text-align:center}
 #content{background:#fff;width:985px;margin:0 auto;padding-bottom:15px;text-align:left;position:relative;border:1px solid #ddd;border-top:0;border-bottom:0;box-shadow:0 0 10px 0 #999}
-#main-wrapper{width:735px;float:right}
-#main{padding:20px 20px 0 0}
+#main-wrapper{width:100%;*width:auto} /* *width for IE6 and IE7 */
+#main{padding:20px 20px 0 250px}
+
 .no-nav #main-wrapper{width:100%;float:none}
 .no-nav #main{padding-left:20px}
 
@@ -40,7 +41,7 @@ body{padding:0;text-align:center}
 #content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
 #content{display:inline-block}
 html[xmlns] #content{display:block}
-* html #content{height: 1%;overflow:visible}
+* html #content{height:1%;overflow:visible}
 
 /* Hide/Show/Skip navigation */
 #nav-toggler{margin:0;position:absolute;top:15px;left:20px;font-size:.95em}
@@ -105,7 +106,7 @@ html[xmlns] #content{display:block}
 
 @media screen and (min-width: 701px) and (max-width: 1015px) {
     /* Fullsreen mode */
-    #content{border:none;width:100%;box-shadow:none}
+    .exe-web-site #content{border:none;width:100%;box-shadow:none}
     /* Horizontal navigation */
     #main-wrapper{width:100%;float:none}
 	#main,.no-nav #main{padding:0 20px}
@@ -132,7 +133,7 @@ html[xmlns] #content{display:block}
 }
 
 @media all and (max-width: 700px) {
-    #content{width:100%;border:0;box-shadow:none}
+    .exe-web-site #content{width:100%;border:0;box-shadow:none}
     #userOptionsBar,#topPagination{display:none}
     #siteNav{float:none;width:100%;padding:0}
     #siteNav{line-height:1.5em;margin-bottom:15px}
@@ -160,10 +161,19 @@ html[xmlns] #content{display:block}
 
 /* eXeLearning Style Designer */
 
+#content{
+/*contentBorderWidth*/border-right:005px solid /*contentBorderColor*/#00bfbf;
+border-left:005px solid #00bfbf;
+/*pageWidth*/width:80%;
+/*pageAlign*/margin:0     ;
+/*contentBGColor*/background-color:#ff5656;
+/*wrapperShadowColor*/box-shadow:0 0 15px 0 #7f003f;
+}
+
 body{
+text-align:left;
 /*websiteBodyBGColor*/background-color:#ffff00;
 }
 
-#content{
-/*contentBGColor*/background-color:#ff5656;
-}
+/* eXeLearning Style Designer (custom CSS) */
+*{color:blue}

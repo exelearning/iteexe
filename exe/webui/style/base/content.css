@@ -68,3 +68,6 @@ li{list-style-position:outside}
 body{
 /*contentBGColor*/background-color:#ff5656;
 }
+
+/* eXeLearning Style Designer (custom CSS) */
+*{color:red}
