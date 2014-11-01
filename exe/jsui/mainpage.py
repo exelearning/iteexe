@@ -23,6 +23,7 @@ This is the main Javascript page.
 """
 
 import os
+import codecs
 import json
 import sys
 import logging
@@ -859,19 +860,24 @@ class MainPage(RenderableLivePage):
             release_notes = os.path.join(G.application.tempWebDir,
                     'Release_Notes.html')
             f = open(release_notes, 'wt')
-            f.write('''<html><head><title>eXe Release Notes</title></head>
+            f.write('''<html>
+                <head>
+                  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                  <title>eXe Release Notes</title>
+                </head>
                 <body><h1>News</h1><pre>\n''')
             try:
-                news = open(os.path.join(self.config.webDir, 'NEWS'),
-                        'rt').read()
-                readme = open(os.path.join(self.config.webDir, 'README'),
-                        'rt').read()
+                news = codecs.open(os.path.join(self.config.webDir, 'ChangeLog'),
+                        'rt', 'utf-8').read()
+                readme = codecs.open(os.path.join(self.config.webDir, 'README'),
+                        'rt', 'utf-8').read()
                 f.write(news)
                 f.write('</pre><hr><h1>Read Me</h1><pre>\n')
                 f.write(readme)
-            except IOError:
+            except Exception, e:
                 # fail silently if we can't read either of the files
-                pass
+                client.alert(_('READ FAILED!\n%s') % str(e))
+                log.error(_('READ FAILED!\n%s') % str(e))
             f.write('</pre></body></html>')
             f.close()
             url = url.replace('%t', release_notes)

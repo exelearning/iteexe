@@ -1,3 +1,9 @@
+python-intef-exe (3:2.0.1ppa02) precise; urgency=low
+
+  * Read release updates from ChangeLog instead of NEWS file
+
+ -- Mercedes Cotelo Lois <mclois@gmail.com>  Sat, 01 Nov 2014 18:17:55 +0100
+
 python-intef-exe (3:2.0.1ppa01) precise; urgency=low
 
   * Adapt version number to Ubuntu PPA guidelines

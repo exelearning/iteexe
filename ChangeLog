@@ -1,3 +1,15 @@
+python-intef-exe (3:2.0.1ppa02) precise; urgency=low
+
+  * Read release updates from ChangeLog instead of NEWS file
+
+ -- Mercedes Cotelo Lois <mclois@gmail.com>  Sat, 01 Nov 2014 18:17:55 +0100
+
+python-intef-exe (3:2.0.1ppa01) precise; urgency=low
+
+  * Adapt version number to Ubuntu PPA guidelines
+
+ -- Mercedes Cotelo Lois <mclois@gmail.com>  Wed, 29 Oct 2014 19:50:00 +0100
+
 python-intef-exe (3:2.0.1) lucid; urgency=low
 
   [Ignacio Gros]
@@ -29,6 +41,14 @@ python-intef-exe (3:2.0.1) lucid; urgency=low
     Portuguese and Gallician.
   
  -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 29 Oct 2014 13:38:26 +0100
+ 
+python-intef-exe (3:2.0.0ppa07) precise; urgency=low
+
+  * Adapt version number to Launchpad PPA guidelines, build target Ubuntu Precise
+  * On debian/control, move dependencies under Build-Depends-Indeps to Build-Depends
+  * Remove python-git build dependecies, that cannot be met on Ubuntu Precise
+
+ -- Mercedes Cotelo Lois <mclois@gmail.com>  Sat, 27 Sep 2014 21:51:31 +0200
 
 python-intef-exe (3:2.0) lucid; urgency=low
 
