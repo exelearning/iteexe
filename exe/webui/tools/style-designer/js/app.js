@@ -13,10 +13,11 @@ var $appVars = [
 	['pageAlign',6,7],
 	['wrapperShadowColor',6,23],
 	['contentBorderWidth',3,13,'number'],
-	['contentBorderColor',6,1]
+	['contentBorderColor',6,1],
+	// fieldset #2
+	['bodyBGColor',6,18]
 	/*
-	// fieldset #1
-	['websiteBodyBGColor',6,18],			
+	// fieldset #1	
 	['contentBGColor',6,18]
 	*/
 ];
@@ -27,7 +28,8 @@ var $app = {
 		pageAlign : "0 auto",
 		wrapperShadowColor : "0 0 10px 0 #999",
 		contentBorderWidth : 1,
-		contentBorderColor : "ddd"		
+		contentBorderColor : "ddd",
+		bodyBGColor : "fff" // website body background-color
 	},
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
@@ -49,6 +51,23 @@ var $app = {
 		this.getCurrentCSS();
 		// Enable the Color Pickers after loading the current values
 		
+	},
+	updateTextFieldFromFile : function(e){
+		//opener.parent.opener.document.getElementsByTagName("IFRAME")[0].contentWindow;
+		//opener.parent.opener.window.nevow_clientToServerEvent('quit', '', '');
+		var id = e.id.replace("File","");
+		$("#"+id).val($(e).val());
+	},
+	openBrowser : function(id){
+		/*
+		var elem = document.getElementById("theFile");
+		if(elem && document.createEvent) {
+			var evt = document.createEvent("MouseEvents");
+			evt.initEvent("click", true, false);
+			node.dispatchEvent(evt);
+		}
+		*/
+		$("#"+id+"File").click();
 	},
 	getCurrentCSS : function(){
 		
@@ -236,12 +255,12 @@ var $app = {
 		
 		// BODY
 		// site
-		var websiteBodyBGColor = $("#websiteBodyBGColor").val();
-		if (websiteBodyBGColor!='' || pageAlign=='left') {
+		var bodyBGColor = $("#bodyBGColor").val();
+		if (bodyBGColor!='' || pageAlign=='left') {
 			navCSS+="body{"
-				navCSS+="text-align:left;";
-				//if (websiteBodyBGColor!='') navCSS+="/*websiteBodyBGColor*/background-color:#"+websiteBodyBGColor+";";
-			navCSS+="}"
+				if (pageAlign=='left') navCSS+="text-align:left;";
+				if (bodyBGColor!='') navCSS+="/*bodyBGColor*/background-color:#"+bodyBGColor+";";
+			navCSS+="}";
 		}
 		// page or IMS
 		if (contentBGColor!='') {
@@ -264,9 +283,10 @@ var $app = {
 			navCSS+="}";
 			navCSS+=$app.defaultMark;
 		}
-		if (pageAlign=='center') {
+		if (pageAlign=='center' || bodyBGColor=='') {
 			navCSS+="body{"
-				navCSS+="text-align:center;";
+				if (pageAlign=='center') navCSS+="text-align:center;";
+				if (bodyBGColor=='') navCSS+="background-color:#"+$app.defaultValues.bodyBGColor+";";
 			navCSS+="}"
 		}
 		

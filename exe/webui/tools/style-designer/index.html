@@ -68,28 +68,53 @@
 							</div>
 						</div>
 					</div>
-				</fieldset>			
-				
+				</fieldset>
 				
                 <fieldset>
-					<legend>Fondo de página</legend>
+					<legend>Fondo de p&aacute;gina (solo sitio web)</legend>
 					<div class="col">
 						<div class="fields">
 							<div class="field">
-								<label for="websiteBodyBGColor">Fondo sitio web: </label>
-								<input type="text" maxlength="6" size="6" id="websiteBodyBGColor" class="color" />
+								<label for="bodyBGColor">Color de fondo: </label>
+								<input type="text" maxlength="6" size="6" id="bodyBGColor" class="color" />
 							</div>
 						</div>
 					</div>
 					<div class="col">
 						<div class="fields">
 							<div class="field">
-								<label for="contentBGColor">Fondo contenido: </label>
-								<input type="text" maxlength="6" size="6" id="contentBGColor" class="color" />
+								<label for="bodyBGURL">Imagen fondo: </label>
+								<input type="text" size="6" id="bodyBGURL" class="large" />
+								<input type="file" id="bodyBGURLFile" style="display:none" onchange="$app.updateTextFieldFromFile(this)" />								
+								<a href="#" onclick="$app.openBrowser('bodyBGURL');" title="Disco duro virtual"><img src="images/browse.gif" width="20" height="18" alt="Examinar" style="vertical-align:bottom" /></a> (http://...)
+							</div>
+							<div class="field">
+								<label for="bodyBGPosition">Posici&oacute;n: </label>
+								<select id="bodyBGPosition">
+									<option value="  left top   " selected="selected">Izquierda / Arriba</option>
+                                    <option value="  left center">Izquierda / Centro</option>
+                                    <option value="  left bottom">Izquierda / Abajo</option>
+									<option value="center center">Centro total</option>
+                                    <option value="   center top">Centro / Arriba</option>
+                                    <option value="center bottom">Centro / Abajo</option>
+									<option value=" right top   ">Derecha / Arriba</option>
+                                    <option value=" right center">Derecha / Centro</option>
+                                    <option value=" right bottom">Derecha / Abajo</option>
+								</select>            	
+							</div>
+							<div class="field">
+								<label for="bodyBGRepeat">Repetir: </label>
+								<select id="bodyBGRepeat">
+									<option value="   repeat" selected="selected">S&iacute;</option>
+                                    <option value="no-repeat">No</option>
+									<option value=" repeat-y">S&oacute;lo en vertical</option>
+									<option value=" repeat-x">S&oacute;lo en horizontal</option>
+								</select>            	
 							</div>
 						</div>
 					</div>
-				</fieldset>
+				</fieldset>				
+				
 			</div>
             
             <div id="css" class="panel">

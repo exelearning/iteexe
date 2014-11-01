@@ -1,6 +1,6 @@
 /* eXeLearning Style Designer Compatible Style */
 body{padding:0;text-align:center}
-#content{background:#fff;width:985px;margin:0 auto;padding-bottom:15px;text-align:left;position:relative;border:1px solid #ddd;border-top:0;border-bottom:0;box-shadow:0 0 10px 0 #999}
+#content{background-color:#fff;width:985px;margin:0 auto;padding-bottom:15px;text-align:left;position:relative;border:1px solid #ddd;border-top:0;border-bottom:0;box-shadow:0 0 10px 0 #999}
 #main-wrapper{width:100%;*width:auto} /* *width for IE6 and IE7 */
 #main{padding:20px 20px 0 250px}
 
@@ -171,6 +171,24 @@ border-left:5px solid #ff7f00;
 body{
 text-align:center;
 }
+
+/* eXeLearning Style Designer (custom CSS) */
+
+#content{
+/*contentBorderWidth*/border-right:5px solid /*contentBorderColor*/#ff7f00;
+border-left:5px solid #ff7f00;
+/*pageWidth*/width:80%;
+/*wrapperShadowColor*/box-shadow:0 0 15px 0 #ffffaa;
+}
+
+body{
+/*bodyBGColor*/background-color:#ffaaaa;
+}
+
+body{
+text-align:center;
+}
+
 
 /* eXeLearning Style Designer (custom CSS) */
 
