@@ -15,11 +15,10 @@ var $appVars = [
 	['contentBorderWidth',3,13,'number'],
 	['contentBorderColor',6,1],
 	// fieldset #2
-	['bodyBGColor',6,18]
-	/*
-	// fieldset #1	
-	['contentBGColor',6,18]
-	*/
+	['bodyBGColor',6,18],
+	['bodyBGURL',');',21],
+	['bodyBGPosition',13,20],
+	['bodyBGRepeat',9,18]
 ];
 
 var $app = {
@@ -48,6 +47,10 @@ var $app = {
 			// var css = $app.composeCSS();
 		});
 		
+		// this.styleId = opener.$designer.styleId;
+		// this.stylePath = "/style/"+this.styleId+"/";
+		this.stylePath = opener.document.getElementById("base-content-css").href.replace("content.css","");
+		
 		this.getCurrentCSS();
 		// Enable the Color Pickers after loading the current values
 		
@@ -57,6 +60,7 @@ var $app = {
 		//opener.parent.opener.window.nevow_clientToServerEvent('quit', '', '');
 		var id = e.id.replace("File","");
 		$("#"+id).val($(e).val());
+		$app.getPreview();
 	},
 	openBrowser : function(id){
 		/*
@@ -107,6 +111,16 @@ var $app = {
 		});
 		
 	},
+	addStylePath : function(c){
+		c = c.replace(/url\(http:/g,'url--http:');
+		c = c.replace(/url\(/g,'url('+$app.stylePath);
+		c = c.replace(/url--http:/g,'url(http:');
+		return c;
+	},
+	removeStylePath : function(c){
+		var reg = new RegExp($app.stylePath, "g");
+		return c.replace(reg, "");
+	},
 	getAllValues : function(type,content){
 		
 		var c = content.replace("\r\n\r\n","");
@@ -145,6 +159,12 @@ var $app = {
 					if (currentValue[0]=="pageAlign") {
 						if (val.indexOf("0;")==0) $("#pageAlign").val("left");
 					}
+				} else {
+					if (currentValue[0]=='bodyBGURL'){
+						var a = c.split('bodyBGURL*/background-image:url(')[1];
+						var val = a.split(");")[0];
+						$("#bodyBGURL").val(val);
+					}					
 				}
 			}
 		}
@@ -229,17 +249,13 @@ var $app = {
 		var wrapperShadowColor = $("#wrapperShadowColor").val();
 		var contentBorderColor = $("#contentBorderColor").val();
 		var contentBorderWidth = $("#contentBorderWidth").val();
-		var contentBGColor = $("#contentBGColor").val();
 		
 		// Default border width if not defined
-		if (contentBorderColor!="" && contentBorderWidth=="") contentBorderWidth = $app.defaultValues.contentBorderWidth;
+		if (contentBorderWidth=="") contentBorderWidth = $app.defaultValues.contentBorderWidth;
 		// Default border color if not defined
-		if (contentBorderWidth!="" && contentBorderColor=="") contentBorderColor = $app.defaultValues.contentBorderColor;
+		// if (contentBorderWidth!="" && contentBorderColor=="") contentBorderColor = $app.defaultValues.contentBorderColor;
 
-		//if (pageWidth>100) $("#pageWidthUnit").val("px");
-		//else $("#pageWidthUnit").val("%");
-		
-		if (pageWidth!="" || contentBorderColor!="" || contentBorderWidth!="" || pageAlign=="left" || wrapperShadowColor!="" || contentBGColor!=""){
+		if (pageWidth!="" || contentBorderColor!="" || contentBorderWidth!="" || pageAlign=="left" || wrapperShadowColor!=""){
 			navCSS+="#content{";
 				if (contentBorderColor!="" || contentBorderWidth!="") {
 					//while (contentBorderWidth.length<3) contentBorderWidth="0"+contentBorderWidth;
@@ -248,7 +264,6 @@ var $app = {
 				}
 				if (pageWidth!="") navCSS+="/*pageWidth*/width:"+pageWidth+pageWidthUnit+";";
 				if (pageAlign=="left") navCSS+="/*pageAlign*/margin:0;";
-				//if (contentBGColor!="") navCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
 				if (wrapperShadowColor!="") navCSS+="/*wrapperShadowColor*/box-shadow:0 0 15px 0 #"+wrapperShadowColor+";";
 			navCSS+="}";
 		}
@@ -256,20 +271,30 @@ var $app = {
 		// BODY
 		// site
 		var bodyBGColor = $("#bodyBGColor").val();
-		if (bodyBGColor!='' || pageAlign=='left') {
+		var bodyBGURL = $("#bodyBGURL").val();
+		var bodyBGPosition = $("#bodyBGPosition").val();
+		var bodyBGRepeat = $("#bodyBGRepeat").val();
+		if (bodyBGColor!='' || pageAlign=='left' || bodyBGURL!='') {
 			navCSS+="body{"
 				if (pageAlign=='left') navCSS+="text-align:left;";
 				if (bodyBGColor!='') navCSS+="/*bodyBGColor*/background-color:#"+bodyBGColor+";";
+				if (bodyBGURL!='') {
+					if (bodyBGURL.indexOf("http")!=0) bodyBGURL = $app.stylePath+bodyBGURL;
+					navCSS+="/*bodyBGURL*/background-image:url("+bodyBGURL+");";
+					navCSS+="/*bodyBGRepeat*/background-repeat:"+bodyBGRepeat+";";
+					navCSS+="/*bodyBGPosition*/background-position:"+bodyBGPosition+";";				
+				}
 			navCSS+="}";
 		}
 		// page or IMS
-		if (contentBGColor!='') {
+		// To do
+		// if (contentBGColor!='') {
 			//contentCSS+="body{";
 				//contentCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
 			//contentCSS+="}";
-		}
+		//}
 		
-		// Default
+		// Default values
 		if (pageWidth=="" || pageAlign=="center" || wrapperShadowColor=="" || contentBorderColor=="") {
 			navCSS+=$app.defaultMark;
 			navCSS+="#content{";
@@ -283,10 +308,11 @@ var $app = {
 			navCSS+="}";
 			navCSS+=$app.defaultMark;
 		}
-		if (pageAlign=='center' || bodyBGColor=='') {
+		if (pageAlign=='center' || bodyBGColor=='' || bodyBGURL=='') {
 			navCSS+="body{"
 				if (pageAlign=='center') navCSS+="text-align:center;";
 				if (bodyBGColor=='') navCSS+="background-color:#"+$app.defaultValues.bodyBGColor+";";
+				if (bodyBGURL=='') navCSS += "background-image:none;";
 			navCSS+="}"
 		}
 		
@@ -338,7 +364,7 @@ var $app = {
 		if (css.indexOf($app.defaultMark)!=-1) {
 			var parts = css.split($app.defaultMark);
 			if (parts.length==3) {
-				return parts[0]+parts[2];
+				return $app.removeStylePath(parts[0]+parts[2]);
 			}
 		}
 		return css;
