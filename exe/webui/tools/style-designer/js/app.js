@@ -7,7 +7,7 @@
 var $appVars = [
 	//Field, value length or "", starting position (Ej: color:# => 7).
 	
-	// #general tab
+	// General tab
 	// fieldset #1
 	['pageWidth',4,6,'number'],
 	['pageAlign',6,7],
@@ -15,6 +15,13 @@ var $appVars = [
 	['contentBorderWidth',3,13,'number'],
 	['contentBorderColor',6,1],
 	// fieldset #2
+	['fontFamily',''],
+	['bodyColor',6,7],
+	['aColor',6,7],
+	['aHoverColor',6,7],	
+	
+	// Backgrounds tab
+	// fieldset #1
 	['bodyBGColor',6,18],
 	['bodyBGURL',');',21],
 	['bodyBGPosition',13,20],
@@ -28,7 +35,11 @@ var $app = {
 		wrapperShadowColor : "0 0 10px 0 #999",
 		contentBorderWidth : 1,
 		contentBorderColor : "ddd",
-		bodyBGColor : "fff" // website body background-color
+		bodyBGColor : "fff", // website body background-color
+		fontFamily : "Arial, Verdana, Helvetica, sans-serif",
+		bodyColor : "333",
+		aColor : "2495FF",
+		aHoverColor : "2495FF"
 	},
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
@@ -129,16 +140,16 @@ var $app = {
 		var adv = c.split($app.advancedMark);
 		if (adv.length==2 && adv[1]!="") {
 			adv = adv[1];
-			if (adv.indexOf("\r\n")==0) adv = adv.replace("\r\n","");
 			$("#extra-"+type+"-css").val(adv);
 		}
 		
+		// Get CSS onload
 		if (type=="content") {
 			//$("#my-content-css").val($app.baseContentCSS+"\n"+$app.mark+"\n\n"+c);
-			$("#my-content-css").val(c);
+			$("#my-content-css").val(this.formatCSS(c));
 		} else {
 			//$("#my-nav-css").val($app.baseNavCSS+"\n"+$app.mark+"\n\n"+c);
-			$("#my-nav-css").val(c);
+			$("#my-nav-css").val(this.formatCSS(c));
 		}
 		
 		var val;
@@ -159,12 +170,24 @@ var $app = {
 					if (currentValue[0]=="pageAlign") {
 						if (val.indexOf("0;")==0) $("#pageAlign").val("left");
 					}
+					// We get anything before the next rule
+					if (currentValue[0]=="bodyBGPosition" || currentValue[0]=="bodyBGRepeat") {
+						val = val.split(";");
+						val = val[0];
+						$("#"+currentValue[0]).val(val);
+					}		
 				} else {
 					if (currentValue[0]=='bodyBGURL'){
 						var a = c.split('bodyBGURL*/background-image:url(')[1];
 						var val = a.split(");")[0];
-						$("#bodyBGURL").val(val);
-					}					
+						$("#"+currentValue[0]).val(val);
+					}
+					// Font family
+					else if (currentValue[0]=='fontFamily'){
+						var a = c.split('fontFamily*/font-family:')[1];
+						var val = a.split(";")[0];
+						$("#"+currentValue[0]).val(val);
+					}				
 				}
 			}
 		}
@@ -231,9 +254,12 @@ var $app = {
 		return "";
 	},
 	formatCSS : function(css) {
+		css = css.replace(/(\r\n|\n|\r)/gm,"");
 		css=css.replace(/{/g, "{\n");
 		css=css.replace(/}/g, "}\n\n");
 		css=css.replace(/;/g, ";\n");
+		css=css.replace(/\n$/, ""); // Remove the last \n
+		css=css.replace($app.advancedMark,$app.advancedMark+"\n")
 		return css;	
 	},
 	composeCSS : function(){
@@ -252,13 +278,10 @@ var $app = {
 		
 		// Default border width if not defined
 		if (contentBorderWidth=="") contentBorderWidth = $app.defaultValues.contentBorderWidth;
-		// Default border color if not defined
-		// if (contentBorderWidth!="" && contentBorderColor=="") contentBorderColor = $app.defaultValues.contentBorderColor;
 
-		if (pageWidth!="" || contentBorderColor!="" || contentBorderWidth!="" || pageAlign=="left" || wrapperShadowColor!=""){
+		if (pageWidth!="" || contentBorderColor!="" || contentBorderWidth!=$app.defaultValues.contentBorderWidth || pageAlign=="left" || wrapperShadowColor!=""){
 			navCSS+="#content{";
-				if (contentBorderColor!="" || contentBorderWidth!="") {
-					//while (contentBorderWidth.length<3) contentBorderWidth="0"+contentBorderWidth;
+				if (contentBorderColor!="" || contentBorderWidth!=$app.defaultValues.contentBorderWidth) {
 					navCSS+="/*contentBorderWidth*/border-right:"+contentBorderWidth+"px solid /*contentBorderColor*/#"+contentBorderColor+";";
 					navCSS+= "border-left:"+contentBorderWidth+"px solid #"+contentBorderColor+";";
 				}
@@ -267,6 +290,21 @@ var $app = {
 				if (wrapperShadowColor!="") navCSS+="/*wrapperShadowColor*/box-shadow:0 0 15px 0 #"+wrapperShadowColor+";";
 			navCSS+="}";
 		}
+		
+		//Font family, color and links:
+		var fontFamily = $("#fontFamily").val();
+		var bodyColor = $("#bodyColor").val();
+		var aColor = $("#aColor").val();
+		var aHoverColor = $("#aHoverColor").val();
+
+		if (fontFamily!='' || bodyColor!=''){
+			contentCSS+="body{";
+				if (fontFamily!="") contentCSS+="/*fontFamily*/font-family:"+fontFamily+";";
+				if (bodyColor!="") contentCSS+="/*bodyColor*/color:#"+bodyColor+";";
+			contentCSS+="}";
+		}
+		if (aColor!='') contentCSS+="a{/*aColor*/color:#"+aColor+";}";
+		if (aHoverColor!='') contentCSS+="a:hover,a:focus{/*aHoverColor*/color:#"+aHoverColor+";}";		
 		
 		// BODY
 		// site
@@ -295,26 +333,43 @@ var $app = {
 		//}
 		
 		// Default values
-		if (pageWidth=="" || pageAlign=="center" || wrapperShadowColor=="" || contentBorderColor=="") {
-			navCSS+=$app.defaultMark;
-			navCSS+="#content{";
-				if (pageWidth=="") navCSS+="width:"+$app.defaultValues.pageWidth+";";
-				if (pageAlign=="center") navCSS+="margin:"+$app.defaultValues.pageAlign+";";
-				if (wrapperShadowColor=="") navCSS+="box-shadow:"+$app.defaultValues.wrapperShadowColor+";";
+		var defaultContentCSS = "";
+		var defaultNavCSS = "";
+		
+		if (fontFamily=='' || bodyColor==''){
+			defaultContentCSS+="body{";
+				if (fontFamily=="") defaultContentCSS+="font-family:"+$app.defaultValues.fontFamily+";";
+				if (bodyColor=="") defaultContentCSS+="color:#"+$app.defaultValues.bodyColor+";";
+			defaultContentCSS+="}";
+		}
+		
+		if (aColor=='') defaultContentCSS+="a{color:#"+$app.defaultValues.aColor+";}";
+		if (aHoverColor=='') defaultContentCSS+="a:hover,a:focus{color:#"+$app.defaultValues.aHoverColor+";}";		
+		
+		if (pageWidth=="" || pageAlign=="center" || wrapperShadowColor=="" || contentBorderColor=="" && contentBorderWidth==$app.defaultValues.contentBorderWidth) {
+			defaultNavCSS+="#content{";
+				if (pageWidth=="") defaultNavCSS+="width:"+$app.defaultValues.pageWidth+";";
+				if (pageAlign=="center") defaultNavCSS+="margin:"+$app.defaultValues.pageAlign+";";
+				if (wrapperShadowColor=="") defaultNavCSS+="box-shadow:"+$app.defaultValues.wrapperShadowColor+";";
 				if (contentBorderColor=="") {
-					navCSS+="border-left:"+contentBorderWidth+"px solid #"+$app.defaultValues.contentBorderColor+";";
-					navCSS+="border-right:"+contentBorderWidth+"px solid #"+$app.defaultValues.contentBorderColor+";";
+					defaultNavCSS+="border-left:"+contentBorderWidth+"px solid #"+$app.defaultValues.contentBorderColor+";";
+					defaultNavCSS+="border-right:"+contentBorderWidth+"px solid #"+$app.defaultValues.contentBorderColor+";";
 				}
-			navCSS+="}";
-			navCSS+=$app.defaultMark;
+			defaultNavCSS+="}";
 		}
+		
 		if (pageAlign=='center' || bodyBGColor=='' || bodyBGURL=='') {
-			navCSS+="body{"
-				if (pageAlign=='center') navCSS+="text-align:center;";
-				if (bodyBGColor=='') navCSS+="background-color:#"+$app.defaultValues.bodyBGColor+";";
-				if (bodyBGURL=='') navCSS += "background-image:none;";
-			navCSS+="}"
+			defaultNavCSS+="body{"
+				if (pageAlign=='center') defaultNavCSS+="text-align:center;";
+				if (bodyBGColor=='') defaultNavCSS+="background-color:#"+$app.defaultValues.bodyBGColor+";";
+				if (bodyBGURL=='') defaultNavCSS += "background-image:none;";
+			defaultNavCSS+="}"
 		}
+		
+		if (defaultContentCSS!="") defaultContentCSS=$app.defaultMark+defaultContentCSS+$app.defaultMark;
+		if (defaultNavCSS!="") defaultNavCSS=$app.defaultMark+defaultNavCSS+$app.defaultMark;
+		contentCSS += defaultContentCSS;
+		navCSS += defaultNavCSS;
 		
 		contentCSS = this.formatCSS(contentCSS);
 		navCSS = this.formatCSS(navCSS);
@@ -364,10 +419,11 @@ var $app = {
 		if (css.indexOf($app.defaultMark)!=-1) {
 			var parts = css.split($app.defaultMark);
 			if (parts.length==3) {
-				return $app.removeStylePath(parts[0]+parts[2]);
+				//return $app.removeStylePath(parts[0]+parts[2]);
+				css = parts[0]+parts[2];
 			}
 		}
-		return css;
+		return this.removeStylePath(css); // css is already formatted with formatCSS
 	},
 	getPreview : function(){
 		

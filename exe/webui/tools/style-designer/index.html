@@ -19,6 +19,7 @@
 		<div class="tabs">
 			<ul id="tabs">
 				<li id="general-tab" class="current"><span><a href="#" onclick="$app.showTab('general');return false">%General%</a></span></li>
+				<li id="backgrounds-tab"><span><a href="#" onclick="$app.showTab('backgrounds');return false">%Backgrounds%</a></span></li>
                 <li id="css-tab"><span><a href="#" onclick="$app.showTab('css');return false">%Advanced%</a></span></li>
 				<li id="help-tab"><span><a href="#" onclick="$app.showTab('help');return false">%Help%</a></span></li>
 				<li id="content-css-tab"><span><a href="#" onclick="$app.showTab('content-css');return false">content.css</a></span></li>
@@ -69,8 +70,49 @@
 						</div>
 					</div>
 				</fieldset>
-				
+
                 <fieldset>
+					<legend>Texto y enlaces</legend>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="fontFamily">Fuente: </label>
+								<select id="fontFamily" class="font-family">
+									<option value=''>Predeterminada (Arial, Verdana, Helvetica, sans-serif)</option>
+									<option value='Verdana, Geneva, Arial, Helvetica, sans-serif'>Verdana, Geneva, Arial, Helvetica, sans-serif</option>
+									<option value='"Times New Roman", Times, serif'>Times New Roman, Times, serif</option>
+									<option value='"Courier New", Courier, monospace'>Courier New, Courier, monospace</option>
+									<option value='Georgia, "Times New Roman", Times, serif'>Georgia, Times New Roman, Times, serif</option>
+									<option value='Tahoma, Geneva, Arial, Helvetica, sans-serif'>Tahoma, Geneva, Arial, Helvetica, sans-serif</option>
+									<option value='"Trebuchet MS", Arial, Helvetica, sans-serif'>Trebuchet MS, Arial, Helvetica, sans-serif</option>
+								</select>
+							</div>
+							<div class="field">
+								<label for="bodyColor">Color texto: </label>
+								<input type="text" maxlength="6" size="6" id="bodyColor" class="color" />
+							</div>                               
+						</div>
+					</div>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="aColor">Color enlaces: </label>
+								<input type="text" maxlength="6" size="6" id="aColor" class="color" />
+							</div>
+							<div class="field">
+								<label for="aHoverColor">Enlaces sobre: </label>
+								<input type="text" maxlength="6" size="6" id="aHoverColor" class="color" />
+							</div>                               
+						</div>
+					</div>
+				</fieldset>				
+				
+			</div>
+			
+			<div id="backgrounds" class="panel">
+            	<h2 class="scr-av">Backgrounds</h2>
+				
+				<fieldset>
 					<legend>Fondo de p&aacute;gina (solo sitio web)</legend>
 					<div class="col">
 						<div class="fields">
@@ -91,30 +133,77 @@
 							<div class="field">
 								<label for="bodyBGPosition">Posici&oacute;n: </label>
 								<select id="bodyBGPosition">
-									<option value="  left top   " selected="selected">Izquierda / Arriba</option>
-                                    <option value="  left center">Izquierda / Centro</option>
-                                    <option value="  left bottom">Izquierda / Abajo</option>
-									<option value="center center">Centro total</option>
-                                    <option value="   center top">Centro / Arriba</option>
-                                    <option value="center bottom">Centro / Abajo</option>
-									<option value=" right top   ">Derecha / Arriba</option>
-                                    <option value=" right center">Derecha / Centro</option>
-                                    <option value=" right bottom">Derecha / Abajo</option>
+									<option value="0 0" selected="selected">Izquierda / Arriba</option>
+                                    <option value="0 50%">Izquierda / Centro</option>
+                                    <option value="0 bottom">Izquierda / Abajo</option>
+									<option value="50% 50%">Centro total</option>
+                                    <option value="50% 0">Centro / Arriba</option>
+                                    <option value="50% bottom">Centro / Abajo</option>
+									<option value="right 0">Derecha / Arriba</option>
+                                    <option value="right 50%">Derecha / Centro</option>
+                                    <option value="right bottom">Derecha / Abajo</option>
 								</select>            	
 							</div>
 							<div class="field">
 								<label for="bodyBGRepeat">Repetir: </label>
 								<select id="bodyBGRepeat">
-									<option value="   repeat" selected="selected">S&iacute;</option>
+									<option value="repeat" selected="selected">S&iacute;</option>
                                     <option value="no-repeat">No</option>
-									<option value=" repeat-y">S&oacute;lo en vertical</option>
-									<option value=" repeat-x">S&oacute;lo en horizontal</option>
+									<option value="repeat-y">S&oacute;lo en vertical</option>
+									<option value="repeat-x">S&oacute;lo en horizontal</option>
 								</select>            	
 							</div>
 						</div>
 					</div>
-				</fieldset>				
-				
+				</fieldset>
+				<!--
+				<fieldset>
+					<legend>Fondo de la zona de los contenidos</legend>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="contentBGColor">Color de fondo: </label>
+								<input type="text" maxlength="6" size="6" id="contentBGColor" class="color" />
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="contentBGURL">Imagen fondo: </label>
+								<input type="text" size="6" id="contentBGURL" class="large" />
+								<input type="file" id="contentBGURLFile" style="display:none" onchange="$app.updateTextFieldFromFile(this)" />								
+								<a href="#" onclick="$app.openBrowser('contentBGURL');" title="Disco duro virtual"><img src="images/browse.gif" width="20" height="18" alt="Examinar" style="vertical-align:bottom" /></a> (http://...)
+							</div>
+							<div class="field">
+								<label for="contentBGPosition">Posici&oacute;n: </label>
+								<select id="contentBGPosition">
+									<option value="0 0" selected="selected">Izquierda / Arriba</option>
+                                    <option value="0 50%">Izquierda / Centro</option>
+                                    <option value="0 bottom">Izquierda / Abajo</option>
+									<option value="50% 50%">Centro total</option>
+                                    <option value="50% 0">Centro / Arriba</option>
+                                    <option value="50% bottom">Centro / Abajo</option>
+									<option value="right 0">Derecha / Arriba</option>
+                                    <option value="right 50%">Derecha / Centro</option>
+                                    <option value="right bottom">Derecha / Abajo</option>
+								</select>            	
+							</div>
+							<div class="field">
+								<label for="contentBGRepeat">Repetir: </label>
+								<select id="contentBGRepeat">
+									<option value="repeat" selected="selected">S&iacute;</option>
+                                    <option value="no-repeat">No</option>
+									<option value="repeat-y">S&oacute;lo en vertical</option>
+									<option value="repeat-x">S&oacute;lo en horizontal</option>
+								</select>            	
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<p>El fondo de página solo afecta a la exportación como sitio web.</p>
+				<p>El apartado "Fondo de la zona de los contenidos" también afecta a la exportación como página sola, IMS, SCORM o ePub3.</p>
+				-->
 			</div>
             
             <div id="css" class="panel">

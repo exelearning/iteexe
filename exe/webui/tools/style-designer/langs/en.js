@@ -5,6 +5,7 @@ var $i18n = {
 	// Style Designer
 	Style_Designer : _("Style Designer"),
 	General : _("General"),
+	Backgrounds : _("Backgrounds"),
 	Advanced : _("Advanced"),
 	Help : _("Help"),
 	Reset : _("Reset"),
