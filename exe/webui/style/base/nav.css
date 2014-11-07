@@ -7,7 +7,7 @@ body{padding:0;text-align:center}
 .no-nav #main-wrapper{width:100%;float:none}
 .no-nav #main{padding-left:20px}
 
-#header,#emptyHeader{border-width:0 0 1px 0}
+#header,#emptyHeader{border-top-width:0;border-right-width:0;border-left-width:0}
 #nodeDecoration{background:none;padding:0;border:none;margin:0;height:auto;font-size:1.5em}
 
 /* Menú */
@@ -160,38 +160,3 @@ html[xmlns] #content{display:block}
 }
 
 /* eXeLearning Style Designer */
-
-#content{
-/*contentBorderWidth*/border-right:5px solid /*contentBorderColor*/#ff7f00;
-border-left:5px solid #ff7f00;
-/*pageWidth*/width:80%;
-/*wrapperShadowColor*/box-shadow:0 0 15px 0 #ffffaa;
-}
-
-body{
-text-align:center;
-}
-
-/* eXeLearning Style Designer (custom CSS) */
-
-#content{
-/*contentBorderWidth*/border-right:5px solid /*contentBorderColor*/#ff7f00;
-border-left:5px solid #ff7f00;
-/*pageWidth*/width:80%;
-/*wrapperShadowColor*/box-shadow:0 0 15px 0 #ffffaa;
-}
-
-body{
-/*bodyBGColor*/background-color:#ffaaaa;
-}
-
-body{
-text-align:center;
-}
-
-
-/* eXeLearning Style Designer (custom CSS) */
-
-*{
-color:blue;
-}

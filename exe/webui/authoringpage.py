@@ -144,9 +144,11 @@ class AuthoringPage(RenderableResource):
         html += common.hiddenField(u'clientHandleId', request.args['clientHandleId'][0])
         html += u'<!-- start authoring page -->\n'
         html += u'<div id="nodeDecoration">\n'
+        html += u'<div id="headerContent">\n'
         html += u'<h1 id="nodeTitle">\n'
         html += escape(topNode.titleLong)
         html += u'</h1>\n'
+        html += u'</div>\n'
         html += u'</div>\n'
 
         for block in self.blocks:

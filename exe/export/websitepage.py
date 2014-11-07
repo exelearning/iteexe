@@ -150,10 +150,12 @@ class WebsitePage(Page):
 
                 html += u"\""
             html += u">"
+            html += '<div id="headerContent">'
             html += escape(self.node.package.title)
+            html += '</div>'
             html += u"</"+headerTag+">"+lb
         else:
-            html += "<"+sectionTag+" id=\"emptyHeader\"></"+sectionTag+">"+lb
+            html += "<div id=\"emptyHeader\"></div>"+lb
         
         # add left navigation html
         html += u"<"+navTag+" id=\"siteNav\">"+lb
