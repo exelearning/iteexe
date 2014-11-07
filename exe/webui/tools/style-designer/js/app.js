@@ -39,7 +39,17 @@ var $appVars = [
 	['contentBGColor',6,18],
 	['contentBGURL',');',21],
 	['contentBGPosition',13,20],
-	['contentBGRepeat',9,18]
+	['contentBGRepeat',9,18],
+	
+	// Header tab
+	// fieldset #1
+	['headerHeight',4,7,'number'],
+	['headerBGColor',6,18],
+	['headerBGURL',');',21],
+	['headerBGPosition',13,20],
+	['headerBGRepeat',9,18],
+	// fieldset #2
+	['headerTitleTopMargin',4,12,'number']
 ];
 
 var $app = {
@@ -57,7 +67,9 @@ var $app = {
 		fontFamily : "Arial, Verdana, Helvetica, sans-serif",
 		bodyColor : "333",
 		aColor : "2495FF",
-		contentBGColor : "FFF" // IMS body background-color and website #content background-color
+		contentBGColor : "FFF", // IMS body background-color and website #content background-color,
+		headerHeight : 100,
+		headerTitleTopMargin : 60
 	},
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
@@ -190,7 +202,7 @@ var $app = {
 						val = val.split(";");
 						val = val[0];
 						$("#"+currentValue[0]).val(val);
-					}		
+					}					
 				} else {
 					if (currentValue[0].indexOf("BGURL")!=-1){
 						var a = c.split(currentValue[0]+'*/background-image:url(')[1];
@@ -203,6 +215,12 @@ var $app = {
 						var val = a.split(";")[0];
 						$("#"+currentValue[0]).val(val);
 					}				
+				}
+			} 
+			else {
+				// Set some default values (usability)
+				if (type=="content" && (currentValue[0]=="headerHeight" || currentValue[0]=="headerTitleTopMargin")) {
+					$("#"+currentValue[0]).val($app.defaultValues[currentValue[0]]);
 				}
 			}
 		}
@@ -307,7 +325,15 @@ var $app = {
 		var bodyBGColor = $("#bodyBGColor").val();
 		var bodyBGURL = $("#bodyBGURL").val();
 		var bodyBGPosition = $("#bodyBGPosition").val();
-		var bodyBGRepeat = $("#bodyBGRepeat").val();		
+		var bodyBGRepeat = $("#bodyBGRepeat").val();
+
+		// header
+		var headerHeight = $("#headerHeight").val();
+		var headerBGColor = $("#headerBGColor").val();
+		var headerBGURL = $("#headerBGURL").val();
+		var headerBGPosition = $("#headerBGPosition").val();
+		var headerBGRepeat = $("#headerBGRepeat").val();
+		var headerTitleTopMargin = $("#headerTitleTopMargin").val();
 		
 		// Default border width if not defined
 		if (contentBorderWidth=="") contentBorderWidth = $app.defaultValues.contentBorderWidth;
@@ -366,6 +392,28 @@ var $app = {
 			contentCSS+="}";
 		}
 		
+		// #header
+		if (headerHeight==$app.defaultValues.headerHeight) headerHeight = "";
+		if (headerHeight!="" || headerBGColor!="" || headerBGURL!="") {
+			contentCSS+="#header,#emptyHeader,#nodeDecoration{";
+				if (headerHeight!="") contentCSS+="/*headerHeight*/height:"+headerHeight+"px;";
+				if (headerBGColor!='') contentCSS+="/*headerBGColor*/background-color:#"+headerBGColor+";";
+				if (headerBGURL!='') {
+					if (headerBGURL.indexOf("http")!=0) headerBGURL = $app.stylePath+headerBGURL;
+					contentCSS+="/*headerBGURL*/background-image:url("+headerBGURL+");";
+					contentCSS+="/*headerBGRepeat*/background-repeat:"+headerBGRepeat+";";
+					contentCSS+="/*headerBGPosition*/background-position:"+headerBGPosition+";";				
+				}				
+			contentCSS+="}";
+		}
+		
+		if (headerTitleTopMargin==$app.defaultValues.headerTitleTopMargin) headerTitleTopMargin = "";
+		if (headerTitleTopMargin!="") {
+			contentCSS+="#headerContent{";
+				contentCSS+="/*headerTitleTopMargin*/padding-top:"+headerTitleTopMargin+"px;";
+			contentCSS+="}";
+		}
+		
 		// Default values
 		var defaultContentCSS = "";
 		var defaultNavCSS = "";
@@ -411,6 +459,20 @@ var $app = {
 				if (bodyBGURL=='') defaultNavCSS += "background-image:none;";
 			defaultNavCSS+="}"
 		}
+		
+		if (headerHeight=="" || headerBGColor=="" || headerBGURL=="") {
+			defaultContentCSS+="#header,#emptyHeader,#nodeDecoration{";
+				if (headerHeight=="") defaultContentCSS+="height:"+$app.defaultValues.headerHeight+"px;";
+				if (headerBGColor=='') defaultContentCSS+="background-color:inherit;";
+				if (headerBGURL=='') defaultContentCSS+="background-image:none;";
+			defaultContentCSS+="}";
+		}
+		
+		if (headerTitleTopMargin=="") {
+			defaultContentCSS+="#headerContent{";
+				defaultContentCSS+="padding-top:"+$app.defaultValues.headerTitleTopMargin+"px;";
+			defaultContentCSS+="}";
+		}		
 		
 		if (defaultContentCSS!="") defaultContentCSS=$app.defaultMark+defaultContentCSS+$app.defaultMark;
 		if (defaultNavCSS!="") defaultNavCSS=$app.defaultMark+defaultNavCSS+$app.defaultMark;

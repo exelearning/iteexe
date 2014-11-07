@@ -20,6 +20,7 @@
 			<ul id="tabs">
 				<li id="general-tab" class="current"><span><a href="#" onclick="$app.showTab('general');return false">%General%</a></span></li>
 				<li id="backgrounds-tab"><span><a href="#" onclick="$app.showTab('backgrounds');return false">%Backgrounds%</a></span></li>
+				<li id="header-tab"><span><a href="#" onclick="$app.showTab('header');return false">Cabecera</a></span></li>
                 <li id="css-tab"><span><a href="#" onclick="$app.showTab('css');return false">%Advanced%</a></span></li>
 				<li id="help-tab"><span><a href="#" onclick="$app.showTab('help');return false">%Help%</a></span></li>
 				<li id="content-css-tab"><span><a href="#" onclick="$app.showTab('content-css');return false">content.css</a></span></li>
@@ -107,7 +108,7 @@
 					</div>
 				</fieldset>				
 				
-			</div>
+			</div><!-- /#general panel -->
 			
 			<div id="backgrounds" class="panel">
             	<h2 class="scr-av">Backgrounds</h2>
@@ -128,7 +129,7 @@
 								<label for="bodyBGURL">Imagen fondo: </label>
 								<input type="text" size="6" id="bodyBGURL" class="large" />
 								<input type="file" id="bodyBGURLFile" style="display:none" onchange="$app.updateTextFieldFromFile(this)" />								
-								<a href="#" onclick="$app.openBrowser('bodyBGURL');" title="Disco duro virtual"><img src="images/browse.gif" width="20" height="18" alt="Examinar" style="vertical-align:bottom" /></a> (http://...)
+								<a href="#" onclick="$app.openBrowser('bodyBGURL');" title="Seleccionar imagen"><img src="images/browse.gif" width="20" height="18" alt="Examinar" style="vertical-align:bottom" /></a> (http://...)
 							</div>
 							<div class="field">
 								<label for="bodyBGPosition">Posici&oacute;n: </label>
@@ -172,7 +173,7 @@
 								<label for="contentBGURL">Imagen fondo: </label>
 								<input type="text" size="6" id="contentBGURL" class="large" />
 								<input type="file" id="contentBGURLFile" style="display:none" onchange="$app.updateTextFieldFromFile(this)" />								
-								<a href="#" onclick="$app.openBrowser('contentBGURL');" title="Disco duro virtual"><img src="images/browse.gif" width="20" height="18" alt="Examinar" style="vertical-align:bottom" /></a> (http://...)
+								<a href="#" onclick="$app.openBrowser('contentBGURL');" title="Seleccionar imagen"><img src="images/browse.gif" width="20" height="18" alt="Examinar" style="vertical-align:bottom" /></a> (http://...)
 							</div>
 							<div class="field">
 								<label for="contentBGPosition">Posici&oacute;n: </label>
@@ -202,7 +203,93 @@
 				</fieldset>
 				<p>El fondo de página solo afecta a la exportación como sitio web.</p>
 				<p>El apartado "Fondo de la zona de los contenidos" también afecta a la exportación como página sola, IMS, SCORM o ePub3.</p>
-			</div>
+			</div><!-- /#backgrounds-panel -->
+			
+            <div id="header" class="panel">
+            	<h2 class="scr-av">Cabecera</h2>
+				<fieldset>
+					<legend>Cabecera</legend>                  
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="headerHeight">Altura: </label><input type="text" size="6" id="headerHeight" /> px
+							</div>
+							<div class="field">
+								<label for="headerBGColor">Color de fondo: </label><input type="text" maxlength="6" size="6" id="headerBGColor" class="color" />
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="headerBGURL">Imagen: </label>
+								<input type="text" size="6" id="headerBGURL" class="large" />
+								<input type="file" id="headerBGURLFile" style="display:none" onchange="$app.updateTextFieldFromFile(this)" />								
+								<a href="#" onclick="$app.openBrowser('headerBGURL');" title="Seleccionar imagen"><img src="images/browse.gif" width="20" height="18" alt="Examinar" style="vertical-align:bottom" /></a> (http://...)
+							</div>						
+							<div class="field">
+								<label for="headerBGPosition">Posici&oacute;n: </label>
+								<select id="headerBGPosition">
+									<option value="0 0" selected="selected">Izquierda / Arriba</option>
+                                    <option value="0 50%">Izquierda / Centro</option>
+                                    <option value="0 bottom">Izquierda / Abajo</option>
+									<option value="50% 50%">Centro total</option>
+                                    <option value="50% 0">Centro / Arriba</option>
+                                    <option value="50% bottom">Centro / Abajo</option>
+									<option value="right 0">Derecha / Arriba</option>
+                                    <option value="right 50%">Derecha / Centro</option>
+                                    <option value="right bottom">Derecha / Abajo</option>
+								</select>            	
+							</div>
+							<div class="field">
+								<label for="headerBGRepeat">Repetir: </label>
+								<select id="headerBGRepeat">
+									<option value="repeat" selected="selected">S&iacute;</option>
+                                    <option value="no-repeat">No</option>
+									<option value="repeat-y">S&oacute;lo en vertical</option>
+									<option value="repeat-x">S&oacute;lo en horizontal</option>
+								</select>            	
+							</div>                                
+						</div>
+					</div>                                          
+				</fieldset>				
+				<fieldset>
+					<legend>Título del proyecto</legend>
+					<div class="col">
+						<div class="fields">
+							<!--<div class="field">
+								<label for="headerTitleFontFamily">Fuente: </label>
+								<select id="headerTitleFontFamily" class="font-family">
+									<option value=''>Predeterminada (Arial, Helvetica, sans-serif)</option>
+									<option value='Verdana, Geneva, Arial, Helvetica, sans-serif'>Verdana, Geneva, Arial, Helvetica, sans-serif</option>
+									<option value='"Times New Roman", Times, serif'>Times New Roman, Times, serif</option>
+									<option value='"Courier New", Courier, monospace'>Courier New, Courier, monospace</option>
+									<option value='Georgia, "Times New Roman", Times, serif'>Georgia, Times New Roman, Times, serif</option>
+									<option value='Tahoma, Geneva, Arial, Helvetica, sans-serif'>Tahoma, Geneva, Arial, Helvetica, sans-serif</option>
+									<option value='"Trebuchet MS", Arial, Helvetica, sans-serif'>Trebuchet MS, Arial, Helvetica, sans-serif</option>
+								</select>
+							</div>                        
+							<div class="field">
+								<label for="headerColor">Color texto: </label><input type="text" maxlength="6" size="6" id="headerColor" class="color" />
+							</div>
+                            <div class="field">
+								<label for="headerTextShadowColor">Color sombra: </label><input type="text" maxlength="6" size="6" id="headerTextShadowColor" class="color" />
+							</div>-->
+						</div>
+					</div>
+                    <div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="headerTitleTopMargin">Margen superior: </label><input type="text" size="6" id="headerTitleTopMargin" /> px
+							</div>
+                            <!--<div class="field">
+                                <label for="headerTitleFontSize">Tama&ntilde;o texto: </label>
+                                <input type="text" size="6" id="headerTitleFontSize" maxlength="3" /> %
+                            </div>-->
+						</div>
+					</div>			                        
+				</fieldset>
+			</div><!-- /#header panel -->		
             
             <div id="css" class="panel">
             	<h2 class="scr-av">Avanzado</h2>
