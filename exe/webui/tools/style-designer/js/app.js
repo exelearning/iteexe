@@ -55,7 +55,12 @@ var $appVars = [
 	['headerTitleTextShadowColor',6,25],
 	['headerTitleAlign',6,11],
 	['headerTitleFontSize',3,10,'number'],
-	['headerTitleTopMargin',4,12,'number']
+	['headerTitleTopMargin',4,12,'number'],
+	
+	// Navigation tag
+	// fieldset #1
+	['hideNavigation','checkbox'],
+	['horizontalNavigation','checkbox']
 ];
 
 var $app = {
@@ -220,10 +225,19 @@ var $app = {
 						var a = c.split(currentValue[0]+'*/font-family:')[1];
 						var val = a.split(";")[0];
 						$("#"+currentValue[0]).val(val);
+					// Header title
 					} else if (currentValue[0]=="hideProjectTitle") {
 						$("#hideProjectTitle").prop('checked', true);
 						$("#projectTitleOptions").hide();
+					} 
+					// Navigation
+					else if (currentValue[0]=="hideNavigation") {
+						$("#hideNavigation").prop('checked', true);
+						$("#navigationOptions").hide();
 					}
+					else if (currentValue[0]=="horizontalNavigation") {
+						$("#horizontalNavigation").prop('checked', true);
+					}					
 				}
 			} 
 			else {
@@ -253,6 +267,18 @@ var $app = {
 					if (this.id=="hideProjectTitle") {
 						var o = document.getElementById('projectTitleOptions');
 						if (this.checked) o.style.display="none";
+						else o.style.display="block";
+					}
+					else if (this.id=="hideNavigation") {
+						var o = document.getElementById('navigationOptions');
+						if (this.checked) {
+							// To do: Hide menu if ti's visible
+							//if (window.opener) {
+								//$("#toggle-nav",opener.document).unbind("click");
+								//if ($("#siteNav",opener.document).is(":visible") && navToggler.is(":visible") && navToggler.attr("class")=="show-nav") navToggler.click();
+							//}
+							o.style.display="none";
+						}
 						else o.style.display="block";
 					}
 					$app.getPreview(); 
@@ -357,6 +383,10 @@ var $app = {
 		var headerTitleFontSize = $("#headerTitleFontSize").val();
 		var headerTitleTopMargin = $("#headerTitleTopMargin").val();
 		
+		// #nav
+		var hideNavigation = $("#hideNavigation").prop("checked");
+		var horizontalNavigation = $("#horizontalNavigation").prop("checked");
+		
 		// Default border width if not defined
 		if (contentBorderWidth=="") contentBorderWidth = $app.defaultValues.contentBorderWidth;
 
@@ -448,6 +478,44 @@ var $app = {
 			contentCSS+="}";
 		}
 		
+		// #nav		
+		if (hideNavigation) {
+			navCSS+="/*hideNavigation*/";
+			navCSS+= "#siteNav,#nav-toggler{display:none;}";
+			navCSS+="#main{padding-left:20px;}";
+			navCSS+="@media all and (max-width: 1015px){";
+				navCSS+="#main,.no-nav #main{padding-top:20px;}";	
+			navCSS+="}";
+		} else {
+			if (horizontalNavigation) {
+				var hNavCSS = "\
+					#main,.no-nav #main{padding:0 20px;}\
+					#main-wrapper{float:none;width:100%;}\
+					#siteFooter{padding-left:20px;}\
+					#siteNav li:hover,#siteNav li.sfhover{background:#f9f9f9;}\
+					#siteNav .other-section{display:block;}\
+					#siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em;}\
+					#siteNav,#siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;border-color:#ddd;margin:0;line-height:1.2em;background:#fff;}\
+					#siteNav ul ul{line-height:1.1em;}\
+					#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none;}\
+					#siteNav a{display:block;text-decoration:none;padding:.4em 15px;border:none;}\
+					#siteNav li{float:left;}\
+					#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em;}\
+					* html #siteNav li ul{width:13em;}\
+					#siteNav li li{padding-right:1em;width:12.9em;}\
+					#siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px;}\
+					#siteNav li ul ul{margin:-2.15em 0 0 14em;}\
+					* html #siteNav li ul ul{margin-left:13em;}\
+					#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em;}\
+					#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto;}\
+					#siteNav .daddy{position:relative;}\
+					#siteNav .daddy span{display:inline;position:absolute;right:0;font-size:.8em;}\
+					#toggle-nav{display:none;}\
+				";
+				//navCSS += hNavCSS;
+			}
+		}
+		
 		// Default values
 		var defaultContentCSS = "";
 		var defaultNavCSS = "";
@@ -520,7 +588,16 @@ var $app = {
 				if (headerTitleAlign=="") defaultContentCSS+="text-align:left;";
 				if (headerTitleFontSize=="") defaultContentCSS+="font-size:100%;";
 			defaultContentCSS+="}";
-		}		
+		}	
+
+		if (!hideNavigation) {
+			defaultNavCSS+="/*hideNavigation*/";
+			defaultNavCSS+= "#siteNav,#nav-toggler{display:block;}";
+			defaultNavCSS+="#main{padding-left:250px;}";
+			defaultNavCSS+="@media all and (max-width: 1015px){";
+				defaultNavCSS+="#main{padding-top:0;}";	
+			defaultNavCSS+="}";
+		}
 		
 		if (defaultContentCSS!="") defaultContentCSS=$app.defaultMark+defaultContentCSS+$app.defaultMark;
 		if (defaultNavCSS!="") defaultNavCSS=$app.defaultMark+defaultNavCSS+$app.defaultMark;

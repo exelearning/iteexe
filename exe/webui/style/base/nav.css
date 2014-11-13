@@ -14,7 +14,7 @@ body{padding:0;text-align:center}
 #siteNav{width:230px;float:left;padding-right:20px}
 #siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
 #siteNav .other-section{display:none}
-#siteNav a{display:block;padding:4px 10px 4px 20px;border-width:0 0 1px 0;border-style:solid;color:#555;border-color:#ddd}
+#siteNav a{display:block;padding:4px 10px 4px 20px;border-width:0 0 1px 0;border-style:solid;border-color:#ddd;color:#555}
 #siteNav a:hover,#siteNav a:focus{color:#000;background:#f9f9f9}
 #siteNav .active{color:#A80003;font-weight:bold}
 #siteNav ul ul a{padding-left:35px;font-size:.95em}
@@ -50,43 +50,6 @@ html[xmlns] #content{display:block}
 #nav-toggler a:hover{background-color:#555;text-decoration:none}
 #skipNav{z-index:100px;padding-top:15px;text-align:center}
 
-/* Style Designer Options */
-
-/* Fullscreen */
-/*
-#content{border:none;width:100%;box-shadow:none}
-#main-wrapper{float:none;width:100%}
-#main{padding-left:250px}
-*/
-
-/* Horizontal navigation */
-/* Fullsreen mode */
-/* Horizontal navigation */
-/*
-#main,.no-nav #main{padding:0 20px}
-#main-wrapper{float:none;width:100%}
-#siteFooter{padding-left:20px}
-#siteNav li:hover,#siteNav li.sfhover{background:#f9f9f9}
-#siteNav .other-section{display:block}
-#siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
-#siteNav,#siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;border-color:#ddd;margin:0;line-height:1.2em;background:#fff}
-#siteNav ul ul{line-height:1.1em}
-#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none}
-#siteNav a{display:block;text-decoration:none;padding:.4em 15px;border:none}
-#siteNav li{float:left}
-#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}
-* html #siteNav li ul{width:13em}
-#siteNav li li{padding-right:1em;width:12.9em}
-#siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px}
-#siteNav li ul ul{margin:-2.15em 0 0 14em}
-* html #siteNav li ul ul{margin-left:13em}
-#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
-#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
-#siteNav .daddy{position:relative}
-#siteNav .daddy span{display:inline;position:absolute;right:0;font-size:.8em}	
-#toggle-nav{display:none}
-*/
-
 /* Pagination with icons */
 .js .pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 .js .pagination a{display:block;float:left;width:32px;height:32px;padding:0;background:url(_my_icons.png) no-repeat 0 0}
@@ -107,30 +70,29 @@ html[xmlns] #content{display:block}
 @media screen and (min-width: 701px) and (max-width: 1015px) {
     /* Fullsreen mode */
     .exe-web-site #content{border:none;width:100%;box-shadow:none}
-    /* Horizontal navigation */
     #main-wrapper{width:100%;float:none}
+	/* Horizontal navigation */
 	#main,.no-nav #main{padding:0 20px}
-    #siteFooter{padding-left:20px}
 	#siteNav li:hover,#siteNav li.sfhover{background:#f9f9f9}
-    #siteNav .other-section{display:block}
-    #siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
-    #siteNav,#siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;border-color:#ddd;margin:0;line-height:1.2em;background:#fff}
-    #siteNav ul ul{line-height:1.1em}
-    #siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none}
-    #siteNav a{display:block;text-decoration:none;padding:.4em 15px;border:none}
+	#siteNav .other-section{display:block}
+	#siteNav,#siteNav ul{float:left;width:100%;border-style:solid;border-width:1px 0;border-color:#ddd;margin:0;line-height:1.2em;background:#fff}
+	#siteNav ul ul{line-height:1.1em}
+	#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none;padding-right:0}
+	#siteNav a{padding:.4em 15px;border:none}
 	#siteNav li{float:left}
-    #siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}
-    * html #siteNav li ul{width:13em}
-    #siteNav li li{padding-right:1em;width:12.9em}
-    #siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px}
-    #siteNav li ul ul{margin:-2.15em 0 0 14em}
-    * html #siteNav li ul ul{margin-left:13em}
-    #siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
-    #siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
+	#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}
+	* html #siteNav li ul{width:13em}
+	#siteNav li li{padding-right:1em;width:12.9em}
+	#siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px}
+	#siteNav li ul ul{margin:-2.15em 0 0 14em}
+	* html #siteNav li ul ul{margin-left:13em}
+	#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
+	#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
 	#siteNav .daddy{position:relative}
 	#siteNav .daddy span{display:inline;position:absolute;right:0;font-size:.8em}	
-    #toggle-nav{display:none}
+	#toggle-nav{display:none}
 }
+
 
 @media all and (max-width: 700px) {
     .exe-web-site #content{width:100%;border:0;box-shadow:none}
@@ -138,9 +100,8 @@ html[xmlns] #content{display:block}
     #siteNav{float:none;width:100%;padding:0}
     #siteNav{line-height:1.5em;margin-bottom:15px}
     #main-wrapper{width:100%;float:none}    
-    #main,.no-nav #main{padding:0 10px}	
-    #siteFooter{padding-left:10px}
-    #bottomPagination{padding:0 10px 15px 10px}
+    #main,.no-nav #main{padding:0 20px}	
+    #bottomPagination{padding:0 20px 15px 20px}
     #content .exe-col{float:none;width:100%;padding:0}
     iframe,object,embed{max-width:100%}
     img,video{max-width:100%;height:auto}
@@ -160,3 +121,45 @@ html[xmlns] #content{display:block}
 }
 
 /* eXeLearning Style Designer */
+
+/* Horizontal navigation */
+#main,.no-nav #main{padding:0 20px}
+#siteNav li:hover,#siteNav li.sfhover{background:#f9f9f9}
+#siteNav .other-section{display:block}
+#siteNav,#siteNav ul{float:left;width:100%;border-style:solid;border-width:1px 0;border-color:#ddd;margin:0;line-height:1.2em;background:#fff}
+#siteNav ul ul{line-height:1.1em}
+#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none;padding-right:0}
+#siteNav a{padding:.4em 15px;border:none}
+#siteNav li{float:left}
+#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}
+* html #siteNav li ul{width:13em}
+#siteNav li li{padding-right:1em;width:12.9em}
+#siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px}
+#siteNav li ul ul{margin:-2.15em 0 0 14em}
+* html #siteNav li ul ul{margin-left:13em}
+#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
+#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
+#siteNav .daddy{position:relative}
+#siteNav .daddy span{display:inline;position:absolute;right:0;font-size:.8em}	
+#toggle-nav{display:none}
+
+/* Default values */
+#main,.no-nav #main{padding-left:250px}
+#siteNav li:hover,#siteNav li.sfhover{background:none}
+#siteNav .other-section{display:none}
+#siteNav,#siteNav ul{float:none;width:auto;border:none;margin:0;line-height:1.5em;background:#fff}
+#siteNav ul ul{line-height:1.3em}
+#siteNav{margin-bottom:0;width:230px;float:left;padding-right:20px}
+#siteNav a{padding:4px 10px 4px 20px;border-width:0 0 1px 0;border-style:solid;border-color:#ddd}
+	#siteNav ul ul a{padding-left:35px;font-size:.95em}
+		#siteNav ul ul ul a{padding-left:60px}
+
+#siteNav li{float:none}
+#siteNav li ul{position:static;left:auto;height:auto;width:auto;w\idth:auto;border-width:0}
+* html #siteNav li ul{width:auto}
+#siteNav li li{padding-right:0;width:auto}
+#siteNav li ul ul{margin:0}
+* html #siteNav li ul ul{margin-left:0}
+#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:auto}
+#siteNav .daddy span{display:none}	
+#toggle-nav{display:block}

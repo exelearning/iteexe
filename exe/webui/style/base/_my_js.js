@@ -5,11 +5,14 @@ var myTheme = {
 			$("#topPagination").wrap("<div />");
 			return false;
 		}
-        setTimeout(function(){
-            $(window).resize(function() {
-                myTheme.reset();
-            });
-        },1000);
+        /* 
+		No reset when resizing to avoid problems when hiding #nav using the Style Designer
+		setTimeout(function(){
+			$(window).resize(function() {
+				myTheme.reset();
+			});
+		},1000);
+		*/
 		var tit = $exe_i18n.menu+" ("+$exe_i18n.hide.toLowerCase()+")";
         var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this)" class="hide-nav" id="toggle-nav" title="'+tit+'"><span>'+$exe_i18n.menu+'</span></a></p>');
         $("#siteNav").before(l);
@@ -104,7 +107,7 @@ var myTheme = {
         });
     },
     reset : function() {
-        myTheme.toggleMenu();        
+        myTheme.toggleMenu();
     }    
 }
 
