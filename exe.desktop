@@ -1,14 +1,18 @@
 [Desktop Entry]
 Type=Application
-Encoding=UTF-8
+# Encoding=UTF-8
 Name=eXe
-Comment=eLearning XHTML editor
+Comment=eLearning XHTML & HTML5 editor to create educational resources
+Comment[es]=Editor XHTML y HTML5 para la creación de recursos educativos
 Comment[ru]=Редактор электронного обучения XHTML
+# Comment=eXe : elearning XHTML editor
 Exec=exe %f
-Icon=exe.png
+# Icon=exe.png
+Icon=exe
 Terminal=false
 MimeType=application/x-exe-learning;
-Categories=Education;Application;Utility;Editor;
+# Categories=Education;Application;Utility;Editor;
+Categories=Education;Utility;TextEditor;
 StartupWMClass=eXe
-X-Desktop-File-Install-Version=0.10
+# X-Desktop-File-Install-Version=0.10
 
