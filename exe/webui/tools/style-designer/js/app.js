@@ -49,6 +49,12 @@ var $appVars = [
 	['headerBGPosition',13,20],
 	['headerBGRepeat',9,18],
 	// fieldset #2
+	['hideProjectTitle','checkbox'],
+	['headerTitleFontFamily',''],
+	['headerTitleColor',6,7],
+	['headerTitleTextShadowColor',6,25],
+	['headerTitleAlign',6,11],
+	['headerTitleFontSize',3,10,'number'],
 	['headerTitleTopMargin',4,12,'number']
 ];
 
@@ -84,7 +90,7 @@ var $app = {
 		if (ie && ie<9) this.isOldBrowser = true;
 
 		$("#save").click(function(){
-			alert("Save.\n\nElimina el margin:0 auto de #content en nav.css antes\n\nY el text-align:center;");
+			alert("Save!");
 			// var css = $app.composeCSS();
 		});
 		
@@ -180,10 +186,10 @@ var $app = {
 		}
 		
 		var val;
-		for (i=0;i<$appVars.length;i++) {
+		for (var i=0;i<$appVars.length;i++) {
 			var currentValue = $appVars[i];
 			var index = c.indexOf("/*"+currentValue[0]+"*/");
-			if(index!=-1){
+			if (index!=-1){
 				if (typeof(currentValue[1])=='number') {
 					val = c.substr(index+(currentValue[0].length+4)+currentValue[2],currentValue[1]);
 					if (currentValue[3]=='number') val = parseFloat(val);
@@ -198,11 +204,11 @@ var $app = {
 						if (val.indexOf("0;")==0) $("#pageAlign").val("left");
 					}
 					// We get anything before the next rule (background-position and background-repeat)
-					if (currentValue[0].indexOf("BGPosition")!=-1 || currentValue[0].indexOf("BGRepeat")!=-1) {
+					if (currentValue[0].indexOf("BGPosition")!=-1 || currentValue[0].indexOf("BGRepeat")!=-1 || currentValue[0]=="headerTitleAlign") {
 						val = val.split(";");
 						val = val[0];
 						$("#"+currentValue[0]).val(val);
-					}					
+					}				
 				} else {
 					if (currentValue[0].indexOf("BGURL")!=-1){
 						var a = c.split(currentValue[0]+'*/background-image:url(')[1];
@@ -210,11 +216,14 @@ var $app = {
 						$("#"+currentValue[0]).val(val);
 					}
 					// Font family
-					else if (currentValue[0]=='fontFamily'){
-						var a = c.split('fontFamily*/font-family:')[1];
+					else if (currentValue[0].indexOf('ontFamily')!=-1){
+						var a = c.split(currentValue[0]+'*/font-family:')[1];
 						var val = a.split(";")[0];
 						$("#"+currentValue[0]).val(val);
-					}				
+					} else if (currentValue[0]=="hideProjectTitle") {
+						$("#hideProjectTitle").prop('checked', true);
+						$("#projectTitleOptions").hide();
+					}
 				}
 			} 
 			else {
@@ -240,7 +249,14 @@ var $app = {
 		for (i=0;i<f_inputs.length;i++){
 			var t= f_inputs[i].type;
 			if (t=="checkbox") {
-				$app.getPreview();
+				f_inputs[i].onchange=function() {
+					if (this.id=="hideProjectTitle") {
+						var o = document.getElementById('projectTitleOptions');
+						if (this.checked) o.style.display="none";
+						else o.style.display="block";
+					}
+					$app.getPreview(); 
+				}
 			} else {
 				f_inputs[i].onblur=function(){ $app.getPreview(); }
 			}
@@ -333,6 +349,12 @@ var $app = {
 		var headerBGURL = $("#headerBGURL").val();
 		var headerBGPosition = $("#headerBGPosition").val();
 		var headerBGRepeat = $("#headerBGRepeat").val();
+		var hideProjectTitle = $("#hideProjectTitle").prop("checked");
+		var headerTitleFontFamily = $("#headerTitleFontFamily").val();
+		var headerTitleColor = $("#headerTitleColor").val();
+		var headerTitleTextShadowColor = $("#headerTitleTextShadowColor").val();
+		var headerTitleAlign = $("#headerTitleAlign").val();
+		var headerTitleFontSize = $("#headerTitleFontSize").val();
 		var headerTitleTopMargin = $("#headerTitleTopMargin").val();
 		
 		// Default border width if not defined
@@ -407,10 +429,22 @@ var $app = {
 			contentCSS+="}";
 		}
 		
-		if (headerTitleTopMargin==$app.defaultValues.headerTitleTopMargin) headerTitleTopMargin = "";
-		if (headerTitleTopMargin!="") {
+		if (!hideProjectTitle) {
+			if (headerTitleFontFamily==fontFamily) headerTitleFontFamily = "";
+			if (headerTitleTopMargin==$app.defaultValues.headerTitleTopMargin) headerTitleTopMargin = "";
+			if (headerTitleTopMargin!="" || headerTitleFontFamily!="" || headerTitleColor!="" || headerTitleTextShadowColor!="" || headerTitleAlign!="" || headerTitleFontSize!="") {
+				contentCSS+="#headerContent{";
+					if (headerTitleTopMargin!="") contentCSS+="/*headerTitleTopMargin*/padding-top:"+headerTitleTopMargin+"px;";
+					if (headerTitleFontFamily!="") contentCSS+="/*headerTitleFontFamily*/font-family:"+headerTitleFontFamily+";";
+					if (headerTitleColor!="") contentCSS+="/*headerTitleColor*/color:#"+headerTitleColor+";";
+					if (headerTitleTextShadowColor!="") contentCSS+="/*headerTitleTextShadowColor*/text-shadow:1px 1px 1px #"+headerTitleTextShadowColor+";";
+					if (headerTitleAlign!="") contentCSS+="/*headerTitleAlign*/text-align:"+headerTitleAlign+";";
+					if (headerTitleFontSize!="") contentCSS+="/*headerTitleFontSize*/font-size:"+headerTitleFontSize+"%;";
+				contentCSS+="}";
+			}
+		} else {
 			contentCSS+="#headerContent{";
-				contentCSS+="/*headerTitleTopMargin*/padding-top:"+headerTitleTopMargin+"px;";
+				contentCSS+="/*hideProjectTitle*/position:absolute!important;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);";
 			contentCSS+="}";
 		}
 		
@@ -468,9 +502,23 @@ var $app = {
 			defaultContentCSS+="}";
 		}
 		
-		if (headerTitleTopMargin=="") {
+		if (!hideProjectTitle || headerTitleTopMargin=="" || headerTitleFontFamily=="" || headerTitleColor=="" || headerTitleTextShadowColor=="" || headerTitleAlign=="" || headerTitleFontSize=="") {
 			defaultContentCSS+="#headerContent{";
-				defaultContentCSS+="padding-top:"+$app.defaultValues.headerTitleTopMargin+"px;";
+				if (!hideProjectTitle) defaultContentCSS+="position:static!important;clip:rect(auto auto auto auto);clip:rect(auto,auto,auto,auto);";
+				if (headerTitleTopMargin=="") defaultContentCSS+="padding-top:"+$app.defaultValues.headerTitleTopMargin+"px;";
+				if (headerTitleFontFamily=="") {
+					headerTitleFontFamily = fontFamily;
+					if (fontFamily=='') headerTitleFontFamily = $app.defaultValues.fontFamily;
+					defaultContentCSS+="font-family:"+headerTitleFontFamily+";";
+				}
+				if (headerTitleColor=="") {
+					headerTitleColor = bodyColor;
+					if (bodyColor=='') headerTitleColor = $app.defaultValues.bodyColor;
+					defaultContentCSS+="color:#"+headerTitleColor+";";
+				}
+				if (headerTitleTextShadowColor=="") defaultContentCSS+="text-shadow:none;";
+				if (headerTitleAlign=="") defaultContentCSS+="text-align:left;";
+				if (headerTitleFontSize=="") defaultContentCSS+="font-size:100%;";
 			defaultContentCSS+="}";
 		}		
 		

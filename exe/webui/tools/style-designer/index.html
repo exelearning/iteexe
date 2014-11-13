@@ -255,39 +255,53 @@
 				</fieldset>				
 				<fieldset>
 					<legend>Título del proyecto</legend>
-					<div class="col">
-						<div class="fields">
-							<!--<div class="field">
-								<label for="headerTitleFontFamily">Fuente: </label>
-								<select id="headerTitleFontFamily" class="font-family">
-									<option value=''>Predeterminada (Arial, Helvetica, sans-serif)</option>
-									<option value='Verdana, Geneva, Arial, Helvetica, sans-serif'>Verdana, Geneva, Arial, Helvetica, sans-serif</option>
-									<option value='"Times New Roman", Times, serif'>Times New Roman, Times, serif</option>
-									<option value='"Courier New", Courier, monospace'>Courier New, Courier, monospace</option>
-									<option value='Georgia, "Times New Roman", Times, serif'>Georgia, Times New Roman, Times, serif</option>
-									<option value='Tahoma, Geneva, Arial, Helvetica, sans-serif'>Tahoma, Geneva, Arial, Helvetica, sans-serif</option>
-									<option value='"Trebuchet MS", Arial, Helvetica, sans-serif'>Trebuchet MS, Arial, Helvetica, sans-serif</option>
-								</select>
-							</div>                        
-							<div class="field">
-								<label for="headerColor">Color texto: </label><input type="text" maxlength="6" size="6" id="headerColor" class="color" />
+					<p class="checkbox">
+						<label for="hideProjectTitle"><input type="checkbox" id="hideProjectTitle" class="checkbox" /> Ocultar el título del proyecto</label>
+					</p>
+					<div id="projectTitleOptions">
+						<div class="col">
+							<div class="fields">
+								<div class="field">
+									<label for="headerTitleFontFamily">Fuente: </label>
+									<select id="headerTitleFontFamily" class="font-family">
+										<option value=''>Predeterminada (la misma que la página)</option>
+										<option value='Arial, Verdana, Helvetica, sans-serif'>Arial, Helvetica, sans-serif</option>
+										<option value='Verdana, Geneva, Arial, Helvetica, sans-serif'>Verdana, Geneva, Arial, Helvetica, sans-serif</option>
+										<option value='"Times New Roman", Times, serif'>Times New Roman, Times, serif</option>
+										<option value='"Courier New", Courier, monospace'>Courier New, Courier, monospace</option>
+										<option value='Georgia, "Times New Roman", Times, serif'>Georgia, Times New Roman, Times, serif</option>
+										<option value='Tahoma, Geneva, Arial, Helvetica, sans-serif'>Tahoma, Geneva, Arial, Helvetica, sans-serif</option>
+										<option value='"Trebuchet MS", Arial, Helvetica, sans-serif'>Trebuchet MS, Arial, Helvetica, sans-serif</option>
+									</select>
+								</div>                        
+								<div class="field">
+									<label for="headerTitleColor">Color texto: </label><input type="text" maxlength="6" size="6" id="headerTitleColor" class="color" />
+								</div>
+								<div class="field">
+									<label for="headerTitleTextShadowColor">Color sombra: </label><input type="text" maxlength="6" size="6" id="headerTitleTextShadowColor" class="color" />
+								</div>
 							</div>
-                            <div class="field">
-								<label for="headerTextShadowColor">Color sombra: </label><input type="text" maxlength="6" size="6" id="headerTextShadowColor" class="color" />
-							</div>-->
 						</div>
-					</div>
-                    <div class="col">
-						<div class="fields">
-							<div class="field">
-								<label for="headerTitleTopMargin">Margen superior: </label><input type="text" size="6" id="headerTitleTopMargin" /> px
+						<div class="col">
+							<div class="fields">
+								<div class="field">
+									<label for="headerTitleAlign">Alineación: </label>
+									<select id="headerTitleAlign">
+										<option value="" selected="selected">Izquierda</option>
+										<option value="center">Centro</option>
+										<option value="right">Derecha</option>
+									</select>
+								</div>						
+								<div class="field">
+									<label for="headerTitleTopMargin">Margen superior: </label><input type="text" size="6" id="headerTitleTopMargin" /> px
+								</div>
+								<div class="field">
+									<label for="headerTitleFontSize">Tama&ntilde;o texto: </label>
+									<input type="text" size="6" id="headerTitleFontSize" maxlength="3" /> %
+								</div>							
 							</div>
-                            <!--<div class="field">
-                                <label for="headerTitleFontSize">Tama&ntilde;o texto: </label>
-                                <input type="text" size="6" id="headerTitleFontSize" maxlength="3" /> %
-                            </div>-->
 						</div>
-					</div>			                        
+					</div><!-- / #showProjectTitleOptions -->
 				</fieldset>
 			</div><!-- /#header panel -->		
             

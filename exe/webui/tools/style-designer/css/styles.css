@@ -57,8 +57,7 @@ p{width:602px;margin:10px 0}
 #footer .field label{width:95px}
 #breadcrumbsOptions{margin:5px 0 0 20px}
 #breadcrumbsOptions .field label{width:90px}
-div.checkbox{width:100%}
-.chrome div.checkbox{display:table;margin-bottom:0}
+p.checkbox{margin-top:5px}
 #header .checkbox label,#menu .checkbox label,#general .checkbox label{width:auto;margin-bottom:5px;margin-right:10px}
 #portlets .checkbox label{width:auto;margin-bottom:5px;margin-right:10px}
 #contents .field label{width:101px}
