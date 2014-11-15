@@ -65,7 +65,8 @@ class CustomOptionParser(optparse.OptionParser):
 
 
 def prepareParser():
-    usage = _(u"Usage: %prog [options] input_file [output_file]\n\nTo show \
+    usage = _(u"%prog, the commandline version of eXe.\n\
+Usage: %prog [options] input_file [output_file]\n\nTo show \
 help:\n%prog -h").encode(sys.stdout.encoding)
     parser = CustomOptionParser(usage=usage, formatter=CustomHelpFormatter())
 
