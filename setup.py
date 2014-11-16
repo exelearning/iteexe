@@ -77,7 +77,7 @@ any Learning Management System.
 """,
       url="http://exelearning.net",
       author="INTEF-eXe Project",
-      author_email="administrador@exelearning.net",
+      author_email="admin@exelearning.net",
       license="GPL",
       scripts=["exe/exe", "exe/exe_do"],
       packages=["exe", "exe.webui", "exe.jsui",
