@@ -2,7 +2,7 @@
 #-*- coding: utf-8 -*-
 
 """
-JRJ: Representación de un estilo
+JRJ: RepresentaciÃ³n de un estilo
 (Display of styles)
 """
 
@@ -12,6 +12,11 @@ from exe.engine.persist   import Persistable
 from xml.dom              import minidom
 import collections
 import chardet
+if hasattr(collections, 'OrderedDict'):
+    OrderedDict = collections.OrderedDict
+else:
+    import ordereddict
+    OrderedDict = ordereddict.OrderedDict
 
 log = logging.getLogger(__name__)
 
@@ -40,7 +45,8 @@ class Style(Persistable):
                    }
     
     _attributesCode = ['extra-head', 'extra-body']
-    _attributes= collections.OrderedDict(sorted(_attributespre.items(), key=lambda t: t[1][2]))
+    _attributes= OrderedDict(sorted(_attributespre.items(), key=lambda t: t[1][2]))
+
     
 
     def __init__(self, styleDir):
@@ -97,7 +103,7 @@ class Style(Persistable):
             self._valid = False
             
 
-    # Métodos publicos de acceso
+    # MÃ©todos publicos de acceso
     # (Public access methods)
     def isValid(self):
         return self._valid
