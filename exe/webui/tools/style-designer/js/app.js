@@ -25,11 +25,12 @@ var $appVars = [
 	['pageWidth',4,6,'number'],
 	['pageAlign',6,7],
 	['wrapperShadowColor',6,23],
-	['contentBorderWidth',3,13,'number'],
+	['contentBorderWidth',3,0,'number'],
 	['contentBorderColor',6,1],
 	// fieldset #2
 	['fontFamily',''],
 	['bodyColor',6,7],
+	['fontSize',3,10,'number'],
 	['aColor',6,7],
 	['aHoverColor',6,7],	
 	
@@ -70,8 +71,7 @@ var $appVars = [
 	['navHoverBGColor',6,18],
 	['navAColor',6,7],
 	['navAHoverColor',6,7],
-	['navBorderColor',6,25],
-	['navFontSize',3,10,'number']
+	['navBorderColor',6,25]
 ];
 
 var $app = {
@@ -84,7 +84,7 @@ var $app = {
 		pageAlign : "0 auto",
 		wrapperShadowColor : "0 0 10px 0 #999",
 		contentBorderWidth : 1,
-		contentBorderColor : "DDD",
+		contentBorderColor : "DDDDDD",
 		bodyBGColor : "FFF", // website body background-color
 		headerBorderColor : "DDD",
 		fontFamily : "Arial, Verdana, Helvetica, sans-serif",
@@ -377,6 +377,7 @@ var $app = {
 		// body (content.css)
 		var fontFamily = $("#fontFamily").val();
 		var bodyColor = $("#bodyColor").val();
+		var fontSize = $("#fontSize").val();
 		var aColor = $("#aColor").val();
 		var aHoverColor = $("#aHoverColor").val();
 
@@ -409,7 +410,6 @@ var $app = {
 		var navAColor = $("#navAColor").val();
 		var navAHoverColor = $("#navAHoverColor").val();
 		var navBorderColor = $("#navBorderColor").val();
-		var navFontSize = $("#navFontSize").val();
 		// Horizontal navigation
 		var hNavBGColor = $app.defaultValues.navBGColor;
 		var hNavHoverBGColor = $app.defaultValues.navHoverBGColor;
@@ -419,16 +419,20 @@ var $app = {
 		if (navBorderColor!="") hNavBorderColor = navBorderColor;
 		
 		// Default border width if not defined
-		if (contentBorderWidth=="") contentBorderWidth = $app.defaultValues.contentBorderWidth;
+		// if (contentBorderWidth=="") contentBorderWidth = $app.defaultValues.contentBorderWidth;
 
-		if (contentBGColor!="" || contentBGURL!="" || pageWidth!="" || contentBorderColor!="" || contentBorderWidth!=$app.defaultValues.contentBorderWidth || pageAlign=="left" || wrapperShadowColor!=""){
+		if (contentBGColor!="" || contentBGURL!="" || pageWidth!="" || contentBorderColor!="" || contentBorderWidth!="" || pageAlign=="left" || wrapperShadowColor!=""){
 			navCSS+="#content{";
-				if (pageWidth!="100" && (contentBorderColor!="" || contentBorderWidth!=$app.defaultValues.contentBorderWidth)) {
+				if (pageWidth!="100" && (contentBorderColor!="" || contentBorderWidth!="")) {
+					/*
 					if (contentBorderWidth!=$app.defaultValues.contentBorderWidth && contentBorderColor=="") {
 						contentBorderColor = $app.defaultValues.contentBorderColor;
 					}
-					navCSS+="/*contentBorderWidth*/border-right:"+contentBorderWidth+"px solid /*contentBorderColor*/#"+contentBorderColor+";";
-					navCSS+= "border-left:"+contentBorderWidth+"px solid #"+contentBorderColor+";";
+					*/
+					//navCSS+="/*contentBorderWidth*/border-right:"+contentBorderWidth+"px solid /*contentBorderColor*/#"+contentBorderColor+";";
+					//navCSS+= "border-left:"+contentBorderWidth+"px solid #"+contentBorderColor+";";
+					if (contentBorderWidth!="") navCSS+="border-width:0 /*contentBorderWidth*/"+contentBorderWidth+"px;";
+					if (contentBorderColor!="") navCSS+="border-color:/*contentBorderColor*/#"+contentBorderColor+";";
 				}
 				if (pageWidth!="") navCSS+="/*pageWidth*/width:"+pageWidth+pageWidthUnit+";";
 				if (pageAlign=="left") navCSS+="/*pageAlign*/margin:0;";
@@ -447,10 +451,11 @@ var $app = {
 			navCSS+="}";
 		}
 		
-		if (fontFamily!='' || bodyColor!=''){
+		if (fontFamily!='' || bodyColor!='' || fontSize!=""){
 			contentCSS+="body{";
 				if (fontFamily!="") contentCSS+="/*fontFamily*/font-family:"+fontFamily+";";
 				if (bodyColor!="") contentCSS+="/*bodyColor*/color:#"+bodyColor+";";
+				if (fontSize!="") contentCSS+="/*fontSize*/font-size:"+fontSize+"%;";
 			contentCSS+="}";
 		}
 		if (aColor!='') contentCSS+="a{/*aColor*/color:#"+aColor+";}";
@@ -526,10 +531,6 @@ var $app = {
 				navCSS+="#main,.no-nav #main{padding-top:20px;}";	
 			navCSS+="}";
 		} else {
-			/*
-			To do:
-				navFontSize
-			*/
 			if (navBGColor!="" || navAColor!="" || navBorderColor!="") {
 				navCSS+="#siteNav a{";
 					if (navBGColor!="") navCSS+="/*navBGColor*/background-color:#"+navBGColor+";";
@@ -595,10 +596,11 @@ var $app = {
 		var defaultContentCSS = "";
 		var defaultNavCSS = "";
 		
-		if (fontFamily=='' || bodyColor==''){
+		if (fontFamily=='' || bodyColor=='' || fontSize==''){
 			defaultContentCSS+="body{";
 				if (fontFamily=="") defaultContentCSS+="font-family:"+$app.defaultValues.fontFamily+";";
 				if (bodyColor=="") defaultContentCSS+="color:#"+$app.defaultValues.bodyColor+";";
+				if (fontSize=="") defaultContentCSS+="font-size:100%;";
 			defaultContentCSS+="}";
 		}
 		
@@ -615,16 +617,14 @@ var $app = {
 			else defaultContentCSS+="a:hover,a:focus{color:#"+aColor+";}";
 		}
 		
-		if (contentBGColor=='' || contentBGURL=='' || pageWidth=="" || pageAlign=="center" || wrapperShadowColor=="" || contentBorderColor=="") {
+		if (contentBGColor=='' || contentBGURL=='' || pageWidth=="" || pageAlign=="center" || wrapperShadowColor=="" || contentBorderColor=="" || contentBorderWidth=="") {
 			defaultNavCSS+="#content{";
 				if (pageWidth=="") defaultNavCSS+="width:"+$app.defaultValues.pageWidth+";";
 				if (pageAlign=="center") defaultNavCSS+="margin:"+$app.defaultValues.pageAlign+";";
 				if (pageWidth!="100") {
 					if (wrapperShadowColor=="") defaultNavCSS+="box-shadow:"+$app.defaultValues.wrapperShadowColor+";";
-					if (contentBorderColor=="") {
-						defaultNavCSS+="border-left:"+contentBorderWidth+"px solid #"+$app.defaultValues.contentBorderColor+";";
-						defaultNavCSS+="border-right:"+contentBorderWidth+"px solid #"+$app.defaultValues.contentBorderColor+";";
-					}
+					if (contentBorderColor=="") defaultNavCSS+="border-color:#"+$app.defaultValues.contentBorderColor+";";
+					if (contentBorderWidth=="") defaultNavCSS+="border-width:0 "+$app.defaultValues.contentBorderWidth+"px;";
 				}
 				if (contentBGColor=='') defaultNavCSS+="background-color:#"+$app.defaultValues.contentBGColor+";";
 				if (contentBGURL=='') defaultNavCSS += "background-image:none;";				
@@ -673,7 +673,7 @@ var $app = {
 			defaultNavCSS+="#main{padding-left:250px;}";
 			defaultNavCSS+="@media all and (max-width: 1015px){";
 				defaultNavCSS+="#main{padding-top:0;}";	
-			defaultNavCSS+="}";
+			defaultNavCSS+="}";			
 		}
 		
 		var defaultNavAColor = $app.defaultValues.navAColor;
