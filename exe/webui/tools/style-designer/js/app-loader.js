@@ -38,6 +38,7 @@ var $designer = {
 		});
 	},
 	openDesigner : function(){
+		// return false;
 		// Settings
 		var mypage="/tools/style-designer/";
 		var myname="eXeLearning_Style_Designer";

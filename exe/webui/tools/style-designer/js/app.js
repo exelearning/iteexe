@@ -1,4 +1,8 @@
-﻿/*
+﻿/* To do:
+	Make these fields independent: contentBorder Width and contentBorderColor
+*/
+
+/*
  * eXeLearning Style Designer 1.0
  * By Ignacio Gros (http://www.gros.es/) for eXeLearning (http://exelearning.net/)
  * Creative Commons Attribution-ShareAlike (http://creativecommons.org/licenses/by-sa/3.0/)
@@ -45,6 +49,7 @@ var $appVars = [
 	// fieldset #1
 	['headerHeight',4,7,'number'],
 	['headerBGColor',6,18],
+	['headerBorderColor',6,1],
 	['headerBGURL',');',21],
 	['headerBGPosition',13,20],
 	['headerBGRepeat',9,18],
@@ -60,7 +65,13 @@ var $appVars = [
 	// Navigation tag
 	// fieldset #1
 	['hideNavigation','checkbox'],
-	['horizontalNavigation','checkbox']
+	['horizontalNavigation','checkbox'],
+	['navBGColor',6,18],
+	['navHoverBGColor',6,18],
+	['navAColor',6,7],
+	['navAHoverColor',6,7],
+	['navBorderColor',6,25],
+	['navFontSize',3,10,'number']
 ];
 
 var $app = {
@@ -73,14 +84,20 @@ var $app = {
 		pageAlign : "0 auto",
 		wrapperShadowColor : "0 0 10px 0 #999",
 		contentBorderWidth : 1,
-		contentBorderColor : "ddd",
+		contentBorderColor : "DDD",
 		bodyBGColor : "FFF", // website body background-color
+		headerBorderColor : "DDD",
 		fontFamily : "Arial, Verdana, Helvetica, sans-serif",
-		bodyColor : "333",
+		bodyColor : "333333",
 		aColor : "2495FF",
 		contentBGColor : "FFF", // IMS body background-color and website #content background-color,
 		headerHeight : 100,
-		headerTitleTopMargin : 60
+		headerTitleTopMargin : 60,
+		navBGColor : "FFFFFF",
+		navHoverBGColor : "F9F9F9",
+		navAColor : "555555",
+		navAHoverColor : "000000",
+		navBorderColor : "DDDDDD"
 	},
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
@@ -272,7 +289,7 @@ var $app = {
 					else if (this.id=="hideNavigation") {
 						var o = document.getElementById('navigationOptions');
 						if (this.checked) {
-							// To do: Hide menu if ti's visible
+							// To do: Hide menu if it's visible
 							//if (window.opener) {
 								//$("#toggle-nav",opener.document).unbind("click");
 								//if ($("#siteNav",opener.document).is(":visible") && navToggler.is(":visible") && navToggler.attr("class")=="show-nav") navToggler.click();
@@ -372,6 +389,7 @@ var $app = {
 		// header
 		var headerHeight = $("#headerHeight").val();
 		var headerBGColor = $("#headerBGColor").val();
+		var headerBorderColor = $("#headerBorderColor").val();
 		var headerBGURL = $("#headerBGURL").val();
 		var headerBGPosition = $("#headerBGPosition").val();
 		var headerBGRepeat = $("#headerBGRepeat").val();
@@ -386,26 +404,46 @@ var $app = {
 		// #nav
 		var hideNavigation = $("#hideNavigation").prop("checked");
 		var horizontalNavigation = $("#horizontalNavigation").prop("checked");
+		var navBGColor = $("#navBGColor").val();
+		var navHoverBGColor = $("#navHoverBGColor").val();
+		var navAColor = $("#navAColor").val();
+		var navAHoverColor = $("#navAHoverColor").val();
+		var navBorderColor = $("#navBorderColor").val();
+		var navFontSize = $("#navFontSize").val();
+		// Horizontal navigation
+		var hNavBGColor = $app.defaultValues.navBGColor;
+		var hNavHoverBGColor = $app.defaultValues.navHoverBGColor;
+		var hNavBorderColor = $app.defaultValues.navBorderColor;
+		if (navBGColor!="") hNavBGColor = navBGColor;
+		if (navHoverBGColor!="") hNavHoverBGColor = navHoverBGColor;
+		if (navBorderColor!="") hNavBorderColor = navBorderColor;
 		
 		// Default border width if not defined
 		if (contentBorderWidth=="") contentBorderWidth = $app.defaultValues.contentBorderWidth;
 
 		if (contentBGColor!="" || contentBGURL!="" || pageWidth!="" || contentBorderColor!="" || contentBorderWidth!=$app.defaultValues.contentBorderWidth || pageAlign=="left" || wrapperShadowColor!=""){
 			navCSS+="#content{";
-				if (contentBorderColor!="" || contentBorderWidth!=$app.defaultValues.contentBorderWidth) {
+				if (pageWidth!="100" && (contentBorderColor!="" || contentBorderWidth!=$app.defaultValues.contentBorderWidth)) {
+					if (contentBorderWidth!=$app.defaultValues.contentBorderWidth && contentBorderColor=="") {
+						contentBorderColor = $app.defaultValues.contentBorderColor;
+					}
 					navCSS+="/*contentBorderWidth*/border-right:"+contentBorderWidth+"px solid /*contentBorderColor*/#"+contentBorderColor+";";
 					navCSS+= "border-left:"+contentBorderWidth+"px solid #"+contentBorderColor+";";
 				}
 				if (pageWidth!="") navCSS+="/*pageWidth*/width:"+pageWidth+pageWidthUnit+";";
 				if (pageAlign=="left") navCSS+="/*pageAlign*/margin:0;";
-				if (wrapperShadowColor!="") navCSS+="/*wrapperShadowColor*/box-shadow:0 0 15px 0 #"+wrapperShadowColor+";";
+				if (wrapperShadowColor!="" && pageWidth!="100") navCSS+="/*wrapperShadowColor*/box-shadow:0 0 15px 0 #"+wrapperShadowColor+";";
 				if (contentBGColor!='') navCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
 				if (contentBGURL!='') {
 					if (contentBGURL.indexOf("http")!=0) contentBGURL = $app.stylePath+contentBGURL;
 					navCSS+="/*contentBGURL*/background-image:url("+contentBGURL+");";
 					navCSS+="/*contentBGRepeat*/background-repeat:"+contentBGRepeat+";";
 					navCSS+="/*contentBGPosition*/background-position:"+contentBGPosition+";";				
-				}				
+				}
+				if (pageWidth=="100") {
+					navCSS += "border:0;";
+					navCSS += "box-shadow:none;";
+				}
 			navCSS+="}";
 		}
 		
@@ -446,7 +484,7 @@ var $app = {
 		
 		// #header
 		if (headerHeight==$app.defaultValues.headerHeight) headerHeight = "";
-		if (headerHeight!="" || headerBGColor!="" || headerBGURL!="") {
+		if (headerHeight!="" || headerBGColor!="" || headerBGURL!="" || headerBorderColor!="") {
 			contentCSS+="#header,#emptyHeader,#nodeDecoration{";
 				if (headerHeight!="") contentCSS+="/*headerHeight*/height:"+headerHeight+"px;";
 				if (headerBGColor!='') contentCSS+="/*headerBGColor*/background-color:#"+headerBGColor+";";
@@ -454,8 +492,9 @@ var $app = {
 					if (headerBGURL.indexOf("http")!=0) headerBGURL = $app.stylePath+headerBGURL;
 					contentCSS+="/*headerBGURL*/background-image:url("+headerBGURL+");";
 					contentCSS+="/*headerBGRepeat*/background-repeat:"+headerBGRepeat+";";
-					contentCSS+="/*headerBGPosition*/background-position:"+headerBGPosition+";";				
-				}				
+					contentCSS+="/*headerBGPosition*/background-position:"+headerBGPosition+";";
+				}
+				if (headerBorderColor!="") contentCSS+="border:1px solid /*headerBorderColor*/#"+headerBorderColor+";";
 			contentCSS+="}";
 		}
 		
@@ -481,38 +520,74 @@ var $app = {
 		// #nav		
 		if (hideNavigation) {
 			navCSS+="/*hideNavigation*/";
-			navCSS+= "#siteNav,#nav-toggler{display:none;}";
+			navCSS+="#siteNav,#nav-toggler{display:none;}";
 			navCSS+="#main{padding-left:20px;}";
 			navCSS+="@media all and (max-width: 1015px){";
 				navCSS+="#main,.no-nav #main{padding-top:20px;}";	
 			navCSS+="}";
 		} else {
+			/*
+			To do:
+				navFontSize
+			*/
+			if (navBGColor!="" || navAColor!="" || navBorderColor!="") {
+				navCSS+="#siteNav a{";
+					if (navBGColor!="") navCSS+="/*navBGColor*/background-color:#"+navBGColor+";";
+					if (navAColor!="") navCSS+="/*navAColor*/color:#"+navAColor+";";
+					if (navBorderColor!="") navCSS+="/*navBorderColor*/border-color:#"+navBorderColor+";";
+				navCSS+="}";
+				if (navBGColor!="" || navBorderColor!="") {
+					navCSS+="@media screen and (min-width: 701px) and (max-width: 1015px){";
+						navCSS+='#siteNav,#siteNav ul{';
+							if (navBGColor!="") navCSS+='background-color:#'+hNavBGColor+';}';
+							if (navBorderColor!="") navCSS+='border-color:#'+navBorderColor+';}';
+						navCSS+='}';
+						if (navBGColor!="") navCSS+='#siteNav li{background-color:#'+hNavBGColor+';}'				
+					navCSS+="}";
+					if (navBorderColor!="") {
+						navCSS+="@media all and (max-width: 700px) {";
+							navCSS+='#siteNav,#siteNav ul{';
+								navCSS+='.js #siteNav{border-top:1px solid #'+navBorderColor+';';
+							navCSS+='}';
+						navCSS+="}";
+					}
+				}
+			}
+			if (navHoverBGColor!="" || navAHoverColor!="") {
+				navCSS+="#siteNav a:hover,#siteNav a:focus{";
+					if (navHoverBGColor!="") navCSS+="/*navHoverBGColor*/background-color:#"+navHoverBGColor+";";
+					if (navAHoverColor!="") navCSS+="/*navAHoverColor*/color:#"+navAHoverColor+";";
+				navCSS+="}";
+				if (navHoverBGColor!="") {
+					navCSS+="@media screen and (min-width: 701px) and (max-width: 1015px){";
+						navCSS+='#siteNav li:hover,#siteNav li.sfhover{background-color:#'+hNavHoverBGColor+';}';
+					navCSS+="}";
+				}				
+			}
 			if (horizontalNavigation) {
 				var hNavCSS = "\
-					#main,.no-nav #main{padding:0 20px;}\
-					#main-wrapper{float:none;width:100%;}\
-					#siteFooter{padding-left:20px;}\
-					#siteNav li:hover,#siteNav li.sfhover{background:#f9f9f9;}\
-					#siteNav .other-section{display:block;}\
-					#siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em;}\
-					#siteNav,#siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;border-color:#ddd;margin:0;line-height:1.2em;background:#fff;}\
-					#siteNav ul ul{line-height:1.1em;}\
-					#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none;}\
-					#siteNav a{display:block;text-decoration:none;padding:.4em 15px;border:none;}\
-					#siteNav li{float:left;}\
-					#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em;}\
-					* html #siteNav li ul{width:13em;}\
-					#siteNav li li{padding-right:1em;width:12.9em;}\
-					#siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px;}\
-					#siteNav li ul ul{margin:-2.15em 0 0 14em;}\
-					* html #siteNav li ul ul{margin-left:13em;}\
-					#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em;}\
-					#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto;}\
-					#siteNav .daddy{position:relative;}\
-					#siteNav .daddy span{display:inline;position:absolute;right:0;font-size:.8em;}\
-					#toggle-nav{display:none;}\
+/*horizontalNavigation*/\
+#main,.no-nav #main{padding:0 20px;}\
+#siteNav li:hover,#siteNav li.sfhover{background-color:#"+hNavBGColor+";}\
+#siteNav .other-section{display:block;}\
+#siteNav,#siteNav ul{float:left;width:100%;border-style:solid;border-width:1px 0;border-color:#"+hNavBorderColor+";margin:0;line-height:1.2em;background-color:#"+hNavBGColor+";}\
+#siteNav ul ul{line-height:1.1em;}\
+#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none;padding-right:0;}\
+#siteNav a{padding:.4em 15px;border:none;}\
+#siteNav li{float:left;background-color:#"+hNavBGColor+";}\
+#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em;}\
+* html #siteNav li ul{width:13em;}\
+#siteNav li li{width:13.9em;}\
+#siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px;}\
+#siteNav li ul ul{margin:-2.15em 0 0 14em;}\
+* html #siteNav li ul ul{margin-left:13em;}\
+#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em;}\
+#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto;}\
+#siteNav .daddy{position:relative;}\
+#siteNav .daddy span{display:inline;position:absolute;right:1em;font-size:.8em;}\
+#toggle-nav{display:none;}\
 				";
-				//navCSS += hNavCSS;
+				navCSS += hNavCSS;
 			}
 		}
 		
@@ -532,7 +607,7 @@ var $app = {
 				if (contentBGColor=='') defaultContentCSS+="background-color:#"+$app.defaultValues.contentBGColor+";";
 				if (contentBGURL=='') defaultContentCSS += "background-image:none;";				
 			defaultContentCSS+="}";
-		}		
+		}	
 		
 		if (aColor=='') defaultContentCSS+="a{color:#"+$app.defaultValues.aColor+";}";
 		if (aHoverColor=='') {
@@ -540,14 +615,16 @@ var $app = {
 			else defaultContentCSS+="a:hover,a:focus{color:#"+aColor+";}";
 		}
 		
-		if (contentBGColor=='' || contentBGURL=='' || pageWidth=="" || pageAlign=="center" || wrapperShadowColor=="" || contentBorderColor=="" && contentBorderWidth==$app.defaultValues.contentBorderWidth) {
+		if (contentBGColor=='' || contentBGURL=='' || pageWidth=="" || pageAlign=="center" || wrapperShadowColor=="" || contentBorderColor=="") {
 			defaultNavCSS+="#content{";
 				if (pageWidth=="") defaultNavCSS+="width:"+$app.defaultValues.pageWidth+";";
 				if (pageAlign=="center") defaultNavCSS+="margin:"+$app.defaultValues.pageAlign+";";
-				if (wrapperShadowColor=="") defaultNavCSS+="box-shadow:"+$app.defaultValues.wrapperShadowColor+";";
-				if (contentBorderColor=="") {
-					defaultNavCSS+="border-left:"+contentBorderWidth+"px solid #"+$app.defaultValues.contentBorderColor+";";
-					defaultNavCSS+="border-right:"+contentBorderWidth+"px solid #"+$app.defaultValues.contentBorderColor+";";
+				if (pageWidth!="100") {
+					if (wrapperShadowColor=="") defaultNavCSS+="box-shadow:"+$app.defaultValues.wrapperShadowColor+";";
+					if (contentBorderColor=="") {
+						defaultNavCSS+="border-left:"+contentBorderWidth+"px solid #"+$app.defaultValues.contentBorderColor+";";
+						defaultNavCSS+="border-right:"+contentBorderWidth+"px solid #"+$app.defaultValues.contentBorderColor+";";
+					}
 				}
 				if (contentBGColor=='') defaultNavCSS+="background-color:#"+$app.defaultValues.contentBGColor+";";
 				if (contentBGURL=='') defaultNavCSS += "background-image:none;";				
@@ -562,11 +639,12 @@ var $app = {
 			defaultNavCSS+="}"
 		}
 		
-		if (headerHeight=="" || headerBGColor=="" || headerBGURL=="") {
+		if (headerHeight=="" || headerBGColor=="" || headerBGURL=="" || headerBorderColor=="") {
 			defaultContentCSS+="#header,#emptyHeader,#nodeDecoration{";
 				if (headerHeight=="") defaultContentCSS+="height:"+$app.defaultValues.headerHeight+"px;";
 				if (headerBGColor=='') defaultContentCSS+="background-color:inherit;";
 				if (headerBGURL=='') defaultContentCSS+="background-image:none;";
+				if (headerBorderColor=="") defaultContentCSS+="border:1px solid #"+$app.defaultValues.headerBorderColor+";";
 			defaultContentCSS+="}";
 		}
 		
@@ -591,13 +669,70 @@ var $app = {
 		}	
 
 		if (!hideNavigation) {
-			defaultNavCSS+="/*hideNavigation*/";
 			defaultNavCSS+= "#siteNav,#nav-toggler{display:block;}";
 			defaultNavCSS+="#main{padding-left:250px;}";
 			defaultNavCSS+="@media all and (max-width: 1015px){";
 				defaultNavCSS+="#main{padding-top:0;}";	
 			defaultNavCSS+="}";
 		}
+		
+		var defaultNavAColor = $app.defaultValues.navAColor;
+		var defaultNavAHoverColor = $app.defaultValues.navAHoverColor;
+		if (navAColor!="") defaultNavAColor = navAColor;
+		if (navAHoverColor!="") defaultNavAHoverColor = navAHoverColor;		
+		
+		if (horizontalNavigation) {
+			defaultNavCSS+= "#nav-toggler{display:none;}";
+			defaultNavCSS+="#main{padding-left:20px;}";
+			defaultNavCSS+='#siteNav li:hover,#siteNav li.sfhover{background-color:#'+hNavHoverBGColor+';}';
+			defaultNavCSS+='#siteNav,#siteNav ul{background-color:#'+hNavBGColor+';}';
+			defaultNavCSS+='#siteNav a,#siteNav li{background-color:#'+hNavBGColor+';color:#'+defaultNavAColor+'}';
+			defaultNavCSS+='#siteNav a:hover,#siteNav a:focus{background-color:#'+hNavHoverBGColor+';color:#'+defaultNavAHoverColor+'}';
+		} else {
+			defaultNavCSS+='\
+#main,.no-nav #main{padding-left:250px;}\
+#siteNav li:hover,#siteNav li.sfhover{background:none;}\
+#siteNav .other-section{display:none;}\
+#siteNav,#siteNav ul{float:none;width:auto;border:none;margin:0;line-height:1.5em;background:#fff;}\
+#siteNav{margin-bottom:0;width:230px;float:left;padding-right:20px;}\
+#siteNav a{padding:4px 10px 4px 20px;border-width:0 0 1px 0;border-style:solid;border-color:#'+hNavBorderColor+';background-color:#'+hNavBGColor+';color:#'+defaultNavAColor+';}\
+#siteNav a:hover,#siteNav a:focus{background-color:#'+hNavHoverBGColor+';color:#'+defaultNavAHoverColor+';}\
+#siteNav ul ul{line-height:1.5em;}\
+#siteNav ul ul a{padding-left:35px;font-size:.95em;}\
+#siteNav ul ul ul a{padding-left:60px;}\
+#siteNav li{float:none;}\
+#siteNav li ul{position:static;left:auto;height:auto;width:auto;w\idth:auto;border-width:0;}\
+* html #siteNav li ul{width:auto;}\
+#siteNav li li{padding-right:0;width:auto;}\
+#siteNav li ul ul{margin:0;}\
+* html #siteNav li ul ul{margin-left:0;}\
+#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:auto;}\
+#siteNav .daddy span{display:none;}\
+#toggle-nav{display:block;}\
+@media screen and (min-width: 701px) and (max-width: 1015px) {\
+#main,.no-nav #main{padding:0 20px;}\
+#siteNav li:hover,#siteNav li.sfhover{background-color:#'+hNavHoverBGColor+';}\
+#siteNav .other-section{display:block;}\
+#siteNav,#siteNav ul{float:left;width:100%;border-style:solid;border-width:1px 0;border-color:#'+hNavBorderColor+';margin:0;line-height:1.2em;background-color:#'+hNavBGColor+';}\
+#siteNav ul ul{line-height:1.1em;}\
+#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none;padding-right:0;}\
+#siteNav a{padding:.4em 15px;border:none;}\
+#siteNav li{float:left;background-color:#'+hNavBGColor+';}\
+#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em;}\
+* html #siteNav li ul{width:13em;}\
+#siteNav li li{width:13.9em;}\
+#siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px;}\
+#siteNav li ul ul{margin:-2.15em 0 0 14em;}\
+* html #siteNav li ul ul{margin-left:13em;}\
+#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em;}\
+#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto;}\
+#siteNav .daddy{position:relative;}\
+#siteNav .daddy span{display:inline;position:absolute;right:1em;font-size:.8em;}\
+#toggle-nav{display:none;}\
+}\
+			';	
+		}
+		
 		
 		if (defaultContentCSS!="") defaultContentCSS=$app.defaultMark+defaultContentCSS+$app.defaultMark;
 		if (defaultNavCSS!="") defaultNavCSS=$app.defaultMark+defaultNavCSS+$app.defaultMark;
