@@ -1,8 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 #-*- coding: utf-8 -*-
 
 """
-JRJ: RepresentaciÃ³n de un estilo
+JRJ: Representación de un estilo
 (Display of styles)
 """
 
@@ -103,7 +103,7 @@ class Style(Persistable):
             self._valid = False
             
 
-    # MÃ©todos publicos de acceso
+    # Métodos públicos de acceso
     # (Public access methods)
     def isValid(self):
         return self._valid
