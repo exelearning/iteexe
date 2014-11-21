@@ -195,7 +195,7 @@ class Application:
         Starts the web server,
         this func doesn't return until after the app has finished
         """
-        print "Welcome to eXe: the eLearning XHTML editor"
+        print "Welcome to eXe: the EXtremely Easy to use eLearning authoring tool"
         log.info("eXe running...")
         self.webServer.run()
 
@@ -220,7 +220,8 @@ class Application:
         Print usage info
         """
         self.loadConfiguration()
-        print _("""Usage: %s [OPTION] [PACKAGE]
+        print _("""eXeLearning, the EXtremely Easy to use eLearning authoring tool
+   Usage: %s [OPTION] [PACKAGE]
   -V, --version    print version information and exit
   -h, --help       display this help and exit
   --standalone     Run totally from current directory
