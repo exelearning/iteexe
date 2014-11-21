@@ -1474,16 +1474,16 @@ var $exe = {
         }
         document.getElementsByTagName("head")[0].appendChild(s);
     },
-    toggleFeedback : function(e) {
+    toggleFeedback : function(e,changeText) {
         var id = e.name.replace("toggle-","");
         var f = document.getElementById(id);
         if (f) {
             if (f.className == "feedback js-feedback js-hidden") {
                 f.className = "feedback js-feedback";
-                e.value = $exe_i18n.hideFeedback
+                if (changeText) e.value = $exe_i18n.hideFeedback
             } else {
                 f.className = "feedback js-feedback js-hidden";
-                e.value = $exe_i18n.showFeedback
+                if (changeText) e.value = $exe_i18n.showFeedback
             }
         }
     }

@@ -421,7 +421,12 @@ def button(name, value, enabled=True, **kwargs):
     html += ' />'+lb
     return html
 
-def feedbackBlock(id,feedback):
+def feedbackBlock(id,feedback,buttonCaption=""):
+    buttonText = c_('Show Feedback')
+    changeText = 'true'
+    if buttonCaption != "":
+        buttonText = buttonCaption
+        changeText = 'false' # Do not change the text on click if the text is defined by the user or the iDevice
     lb = "\n" #Line breaks
     dT = getExportDocType()
     sectionTag = "div"
@@ -433,7 +438,7 @@ def feedbackBlock(id,feedback):
     html += lb
     html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
     html += '<p>'
-    html += '<input type="button" name="toggle-feedback-'+id+'" value="'+ c_('Show Feedback')+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this);return false" />'
+    html += '<input type="button" name="toggle-feedback-'+id+'" value="'+ buttonText+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this,'+changeText+');return false" />'
     html += '</p>'+lb
     html += '</div>'+lb
     html += '<'+sectionTag+' id="feedback-'+id+'" class="feedback js-feedback js-hidden">'+lb
