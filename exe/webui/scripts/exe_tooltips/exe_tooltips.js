@@ -2,8 +2,7 @@ $exe.tooltips = {
 	className : "exe-tooltip",
 	init : function(path){
 		this.path = path;
-		if (path=="") this.viewport = $("#content");
-		else this.viewport = $("#main");
+		this.viewport = $(window);
 		var as = $("A."+$exe.tooltips.className);
 		if (as.length>0) {
 			this.links = as;
