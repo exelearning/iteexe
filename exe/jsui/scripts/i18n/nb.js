@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2008-02-25 11:27+1300\nLast-Translator: H\u00e5vard Holte Os <havard.holte.os@froya.kommune.no>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: nb\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.1\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-11-24 23:01+0100\nPO-Revision-Date: 2008-02-25 11:27+1300\nLast-Translator: H\u00e5vard Holte Os <havard.holte.os@froya.kommune.no>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: nb\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Title": "Tittel", 
  "Text Line": "Tekstlinje", 
  "Xhosa ": "Xhosa", 
@@ -295,7 +295,6 @@ translations = {
  "Manx ": "Mansk", 
  "Shona ": "Shona", 
  "Kirghiz ": "Kirgisisk", 
- "Click Here": "Klikk her", 
  "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!": "Pakken er gammel. Vennligst oppgrader den (bruk Fil..\u00c5pen etterfulgt av Fil..Lagre som) f\u00f8r du pr\u00f8ver \u00e5 legge den inn i en annen pakke!", 
  "Select the appropriate language version \nof Wikipedia to search and enter search term.": "Velg spr\u00e5kversjonen av Wikipedia \ndu vil s\u00f8ke i, og skriv s\u00f8keordet.", 
  "Inupiak ": "Inupiak", 

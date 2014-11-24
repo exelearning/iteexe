@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage-Team: eXe <info@exelearning.org>\nLanguage: zh_Hans_CN\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.1\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-11-24 23:01+0100\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage-Team: eXe <info@exelearning.org>\nLanguage: zh_Hans_CN\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": " ", 
  "Title": "\u6807\u9898", 
  "Text Line": "\u5355\u884c\u6587\u5b57", 
@@ -372,7 +372,6 @@ translations = {
  "Manx ": "\u9a6c\u6069\u8bed", 
  "Shona ": "\u4fee\u7eb3\u8bed", 
  "Kirghiz ": "\u5409\u5c14\u5409\u65af\u8bed", 
- "Click Here": "\u70b9\u51fb", 
  "Select the appropriate language version \nof Wikipedia to search and enter search term.": "\u9009\u62e9\u9002\u5f53\u7684\u7ef4\u57fa\u8bed\u8a00\u7248\u672c\u6765\u641c\u5bfb, \u5e76\u8f93\u5165\u5173\u952e\u8bcd.", 
  "Feedback button will not appear if no \ndata is entered into this field.": "\u5982\u679c\u6b64\u680f\u7a7a\u767d, \u8bc4\u8bed\u6309\u94ae\u5c06\u4e0d\u663e\u793a.", 
  "Enter \nthe text you wish to associate with the file.": "\u8f93\u5165\u6709\u5173\u6587\u6863\u7684\u63cf\u8ff0.", 
