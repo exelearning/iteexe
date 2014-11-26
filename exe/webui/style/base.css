@@ -23,9 +23,8 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .popupDiv{background-color:#EDEFF0;border:2px solid #607489;padding:0 4px 4px 4px;margin-left:15px;text-align:left;z-index:99;border-radius:3px}
 .popupDivLabel{text-align:center;font:message-box;font-weight:bold;color:#fff;cursor:move;margin:0 -4px;background-image:url(popup_bg.gif)}
 @media print{
-    .feedback{display:block}
-    .feedbackbutton{display:none}
-    #navcontainer{display:none}
+    .feedback{display:block!important}
+    .feedbackbutton,.feedback-button{display:none!important}
     #main{margin-left:10px}
     div.node{page-break-after:always}
 }

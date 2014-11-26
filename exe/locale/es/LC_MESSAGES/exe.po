@@ -7,9 +7,9 @@
 # Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.0\n"
+"Project-Id-Version: eXeLearning 2.0.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2014-10-19 17:16+0200\n"
+"POT-Creation-Date: 2014-11-24 23:01+0100\n"
 "PO-Revision-Date: 2014-10-19 17:27+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -37,9 +37,10 @@ msgstr ""
 " de seguridad en %s"
 
 #: exe/application.py:223
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"Usage: %s [OPTION] [PACKAGE]\n"
+"eXeLearning, the EXtremely Easy to use eLearning authoring tool\n"
+"   Usage: %s [OPTION] [PACKAGE]\n"
 "  -V, --version    print version information and exit\n"
 "  -h, --help       display this help and exit\n"
 "  --standalone     Run totally from current directory\n"
@@ -734,7 +735,7 @@ msgstr ""
 #: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
 #: exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:533
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:538
 msgid "Instructions"
 msgstr "Instrucciones"
 
@@ -750,7 +751,7 @@ msgstr ""
 "Se insertará un texto por defecto si no hay cambios en este campo.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
-#: exe/webui/element.py:1418 exe/webui/listablock.py:258
+#: exe/webui/element.py:1420 exe/webui/listablock.py:258
 msgid "Cloze"
 msgstr "Rellenar huecos"
 
@@ -780,17 +781,17 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
 #: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
-#: exe/engine/field.py:3613 exe/engine/field.py:3661
+#: exe/engine/field.py:3614 exe/engine/field.py:3662
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:605
 #: exe/engine/idevicestore.py:714 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:182
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
-#: exe/webui/common.py:440 exe/webui/common.py:450
+#: exe/webui/common.py:445 exe/webui/common.py:455
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
-#: exe/webui/element.py:2373 exe/webui/element.py:2508
-#: exe/webui/element.py:2623 exe/webui/element.py:2824
+#: exe/webui/element.py:2375 exe/webui/element.py:2510
+#: exe/webui/element.py:2625 exe/webui/element.py:2826
 #: exe/webui/listablock.py:461 exe/webui/questionelement.py:113
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
@@ -842,38 +843,39 @@ msgstr "FPD - Actividad de Espacios en Blanco (Modificada)"
 msgid "Clozelang"
 msgstr "Espacios en blanco (Modificado)"
 
-#: exe/engine/config.py:63 exe/engine/config.py:64 exe/engine/config.py:68
-#: exe/engine/config.py:95
+#: exe/engine/config.py:66 exe/engine/config.py:67 exe/engine/config.py:71
+#: exe/engine/config.py:98
 msgid "Non-Interactive Activities"
 msgstr "Actividades no-interactivas"
 
-#: exe/engine/config.py:65 exe/engine/config.py:70 exe/engine/config.py:92
-#: exe/engine/config.py:93 exe/engine/config.py:94 exe/engine/config.py:96
-#: exe/engine/config.py:102 exe/engine/config.py:105
+#: exe/engine/config.py:68 exe/engine/config.py:73 exe/engine/config.py:95
+#: exe/engine/config.py:96 exe/engine/config.py:97 exe/engine/config.py:99
+#: exe/engine/config.py:105
 msgid "Interactive Activities"
 msgstr "Actividades interactivas"
 
-#: exe/engine/config.py:66 exe/engine/config.py:67 exe/engine/config.py:88
-#: exe/engine/config.py:89 exe/engine/config.py:97 exe/engine/config.py:98
-#: exe/engine/config.py:104
+#: exe/engine/config.py:69 exe/engine/config.py:70 exe/engine/config.py:91
+#: exe/engine/config.py:92 exe/engine/config.py:100 exe/engine/config.py:101
+#: exe/engine/config.py:107
 msgid "Non-Textual Information"
 msgstr "Información no-textual"
 
-#: exe/engine/config.py:69 exe/engine/config.py:90 exe/engine/config.py:91
-#: exe/engine/config.py:99
+#: exe/engine/config.py:72 exe/engine/config.py:93 exe/engine/config.py:94
+#: exe/engine/config.py:102
 msgid "Textual Information"
 msgstr "Información textual"
 
-#: exe/engine/config.py:71 exe/engine/config.py:72 exe/engine/config.py:73
 #: exe/engine/config.py:74 exe/engine/config.py:75 exe/engine/config.py:76
 #: exe/engine/config.py:77 exe/engine/config.py:78 exe/engine/config.py:79
 #: exe/engine/config.py:80 exe/engine/config.py:81 exe/engine/config.py:82
 #: exe/engine/config.py:83 exe/engine/config.py:84 exe/engine/config.py:85
-#: exe/engine/config.py:86 exe/engine/config.py:87
+#: exe/engine/config.py:86 exe/engine/config.py:87 exe/engine/config.py:88
+#: exe/engine/config.py:89 exe/engine/config.py:90
 msgid "FPD"
 msgstr "FPD"
 
-#: exe/engine/config.py:100 exe/engine/config.py:101 exe/engine/config.py:103
+#: exe/engine/config.py:103 exe/engine/config.py:104 exe/engine/config.py:106
+#: exe/engine/config.py:108
 msgid "Experimental"
 msgstr "Experimental"
 
@@ -1056,12 +1058,12 @@ msgstr ""
 "correcta; o \n"
 "\"Respuesta equivocada\" para las otras alternativas."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3684
-#: exe/engine/field.py:3749 exe/engine/multichoiceidevice.py:131
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3685
+#: exe/engine/field.py:3750 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:82
-#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2348
-#: exe/webui/element.py:2352 exe/webui/element.py:2801
-#: exe/webui/element.py:2805 exe/webui/testquestionelement.py:151
+#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2350
+#: exe/webui/element.py:2354 exe/webui/element.py:2803
+#: exe/webui/element.py:2807 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
 msgstr "Pregunta"
@@ -1204,11 +1206,7 @@ msgstr ""
 "Introduzca la URL que desea mostrar\n"
 "y seleccione el tamaño del área donde será mostrada."
 
-#: exe/engine/field.py:2642
-msgid "Click Here"
-msgstr "Pulse aquí"
-
-#: exe/engine/field.py:2837 exe/engine/field.py:2884
+#: exe/engine/field.py:2838 exe/engine/field.py:2885
 #: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
@@ -1217,7 +1215,7 @@ msgstr ""
 "Introduzca un título para el archivo MP3. \n"
 "Aparecerá en la barra de título del reproductor también."
 
-#: exe/engine/field.py:3020
+#: exe/engine/field.py:3021
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1249,7 +1247,7 @@ msgstr ""
 "Estricta?\" está activado y \"¿Comprobar mayúsculas/minúsculas?\" no, "
 "\"elefante\" también será aceptado.</p>"
 
-#: exe/engine/field.py:3041 exe/engine/field.py:3275
+#: exe/engine/field.py:3042 exe/engine/field.py:3276
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
@@ -1257,7 +1255,7 @@ msgstr ""
 "<p>Si está marcada esta opción, las respuestas enviadas con diferencias "
 "de uso de mayúsculas y minúsculas serán marcadas como incorrectas.</p>"
 
-#: exe/engine/field.py:3046 exe/engine/field.py:3280
+#: exe/engine/field.py:3047 exe/engine/field.py:3281
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -1268,7 +1266,7 @@ msgstr ""
 "la escriba el estudiante, en lugar de calificarse todas al final del \n"
 "ejercicio.</p>"
 
-#: exe/engine/field.py:3084 exe/engine/field.py:3322
+#: exe/engine/field.py:3085 exe/engine/field.py:3323
 #: exe/engine/listaidevice.py:398
 msgid ""
 "Allow auto completion when \n"
@@ -1278,7 +1276,7 @@ msgstr ""
 "                                       el usuario está rellenando los "
 "espacios en blanco."
 
-#: exe/engine/field.py:3254
+#: exe/engine/field.py:3255
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1310,11 +1308,11 @@ msgstr ""
 "Estricta?\" está activado y \"¿Comprobar mayúsculas/minúsculas?\" no, "
 "\"elefante\" también será aceptado.</p>"
 
-#: exe/engine/field.py:3285
+#: exe/engine/field.py:3286
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr "<p>Si está marcada esta opción, se mostrará la puntuación</p>"
 
-#: exe/engine/field.py:3364 exe/engine/field.py:3408
+#: exe/engine/field.py:3365 exe/engine/field.py:3409
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1322,7 +1320,7 @@ msgstr ""
 "Solamente seleccione archivos con extensión .swf (objetos flash) para \n"
 " este iDevice."
 
-#: exe/engine/field.py:3428 exe/engine/field.py:3492
+#: exe/engine/field.py:3429 exe/engine/field.py:3493
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1331,11 +1329,11 @@ msgstr ""
 " \n"
 "este iDevice."
 
-#: exe/engine/field.py:3504
+#: exe/engine/field.py:3505
 msgid "Type a discussion topic here."
 msgstr "Introduzca un tema de discusión."
 
-#: exe/engine/field.py:3533
+#: exe/engine/field.py:3534
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
@@ -1346,7 +1344,7 @@ msgstr ""
 "fragmentos en LATEX tal y como se mostrarán finalmente use el botón "
 "&lt;Vista previa&gt; de abajo.</p>"
 
-#: exe/engine/field.py:3541
+#: exe/engine/field.py:3542
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -1355,28 +1353,28 @@ msgstr ""
 "                                  para convertir el fragmento LATEX en "
 "una imagen."
 
-#: exe/engine/field.py:3609 exe/engine/field.py:3658
+#: exe/engine/field.py:3610 exe/engine/field.py:3659
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/webui/element.py:2085 exe/webui/element.py:2140
-#: exe/webui/element.py:2472 exe/webui/element.py:2564
+#: exe/webui/element.py:2087 exe/webui/element.py:2142
+#: exe/webui/element.py:2474 exe/webui/element.py:2566
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
 msgstr "Opción"
 
-#: exe/engine/field.py:3687 exe/engine/field.py:3753
+#: exe/engine/field.py:3688 exe/engine/field.py:3754
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:194
 msgid "Hint"
 msgstr "Sugerencia"
 
-#: exe/engine/field.py:3775 exe/engine/field.py:3812 exe/webui/element.py:2277
+#: exe/engine/field.py:3776 exe/engine/field.py:3813 exe/webui/element.py:2279
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "Opciones"
 
-#: exe/engine/field.py:3835
+#: exe/engine/field.py:3836
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -1387,15 +1385,15 @@ msgstr ""
 "La pregunta debe ser clara y no ambigua. Evite las premisas negativas \n"
 "ya que estas tienden a confundir a los estudiantes."
 
-#: exe/engine/field.py:3838 exe/engine/field.py:3919
+#: exe/engine/field.py:3839 exe/engine/field.py:3920
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
-#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2252
+#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2254
 msgid "Question:"
 msgstr "Pregunta:"
 
-#: exe/engine/field.py:3843
+#: exe/engine/field.py:3844
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -1407,7 +1405,7 @@ msgstr ""
 "Elimine opciones haciendo clic en la X que se encuentra a la derecha de "
 "cada opción."
 
-#: exe/engine/field.py:3847
+#: exe/engine/field.py:3848
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1416,7 +1414,7 @@ msgstr ""
 "como sean necesarias pulsando en la caja de selección que se encuentra al"
 " lado de cada opción."
 
-#: exe/engine/field.py:3850
+#: exe/engine/field.py:3851
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -1424,7 +1422,7 @@ msgstr ""
 "Escriba en la retroalimentación que desee\n"
 "proporcionar al estudiante."
 
-#: exe/engine/field.py:3852 exe/engine/field.py:3922
+#: exe/engine/field.py:3853 exe/engine/field.py:3923
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:200
@@ -1748,8 +1746,8 @@ msgstr "Texto del botón de reiniciar nivel"
 msgid "Text for reset button"
 msgstr "Texto del botón de reiniciar"
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1444
-#: exe/webui/element.py:1700
+#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1446
+#: exe/webui/element.py:1702
 msgid "Restart"
 msgstr "Reiniciar"
 
@@ -3360,7 +3358,9 @@ msgid "http://en.wikipedia.org/"
 msgstr "http://es.wikipedia.org/"
 
 #: exe/exe_do:68
+#, fuzzy
 msgid ""
+"%prog, the commandline version of eXe.\n"
 "Usage: %prog [options] input_file [output_file]\n"
 "\n"
 "To show help:\n"
@@ -3371,17 +3371,17 @@ msgstr ""
 "Para ver la ayuda:\n"
 "%prog -h"
 
-#: exe/exe_do:74
+#: exe/exe_do:75
 msgid "Set ELP field values. Example: -s style=Default,root.title='Root Node'"
 msgstr ""
 "Determinar los valores de los campos del ELP. Ejemplo: -s "
 "style=Default,root.title='Nodo raíz'"
 
-#: exe/exe_do:77
+#: exe/exe_do:78
 msgid "Set ELP field values options"
 msgstr "Determinar las opciones de los valores de los campos del ELP"
 
-#: exe/exe_do:78
+#: exe/exe_do:79
 msgid ""
 "Once you have chosen Set ELP field values option using '-s <values>' or"
 "     '--set <values>', it's possible to configure the following options:"
@@ -3390,11 +3390,11 @@ msgstr ""
 "campos del ELP, mediante '-s <valores>' o '--set <valores>', es posible "
 "configurar las siguientes opciones:"
 
-#: exe/exe_do:83
+#: exe/exe_do:84
 msgid "Write field values to ELP"
 msgstr "Escribir los valores de los campos en el ELP"
 
-#: exe/exe_do:89
+#: exe/exe_do:90
 msgid ""
 "Generates resource info report to text <output_file> from <input_file> "
 "elp package"
@@ -3402,14 +3402,18 @@ msgstr ""
 "Genera un informe con los datos de los recursos en el texto "
 "<fichero_de_salida> a partir del paquete ELP <fichero_de_entrada>"
 
-#: exe/exe_do:101
+#: exe/exe_do:102
 msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
 "given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage,"
 " xliff or epub3."
-msgstr "Exportar el paquete ELP <fichero_de_entrada> al <fichero_de_salida> (opcional) en uno de los siguientes formatos: xml, scorm12, scorm2004, ims, website (sitio web), webzip (paquete autocontenido), singlepage (página única), xliff o epub3."
+msgstr ""
+"Exportar el paquete ELP <fichero_de_entrada> al <fichero_de_salida> "
+"(opcional) en uno de los siguientes formatos: xml, scorm12, scorm2004, "
+"ims, website (sitio web), webzip (paquete autocontenido), singlepage "
+"(página única), xliff o epub3."
 
-#: exe/exe_do:107
+#: exe/exe_do:108
 msgid ""
 "Import to <output_file> elp package, <input_file> in one of the given "
 "formats: xml or xliff."
@@ -3417,21 +3421,21 @@ msgstr ""
 "Importar el archivo <fichero_de_entrada> al paquete ELP "
 "<fichero_de_salida> en alguno de los siguientes formatos: xml o xliff."
 
-#: exe/exe_do:112
+#: exe/exe_do:113
 msgid "Force overwrite of <output_file>"
 msgstr "Forzar sobreescritura de  <output_file>"
 
-#: exe/exe_do:116
+#: exe/exe_do:117
 msgid "Add the required files to generate a export editable by eXeLearning"
 msgstr ""
 "Añadir los archivos necesarios para generar una exportación editable por "
 "eXeLearning"
 
-#: exe/exe_do:121
+#: exe/exe_do:122
 msgid "XLIFF export options"
 msgstr "Opciones de exportación a XLIFF"
 
-#: exe/exe_do:122
+#: exe/exe_do:123
 msgid ""
 "Once you have chosen XLIFF export option using '-x xliff' or '--export "
 "xliff', it's possible to configure the following export options:"
@@ -3440,19 +3444,19 @@ msgstr ""
 "'-x xliff' o '--export xliff', es posible configurar las siguientes "
 "opciones de exportación:"
 
-#: exe/exe_do:127
+#: exe/exe_do:128
 msgid "Don't copy source in target"
 msgstr "No copiar origen en destino"
 
-#: exe/exe_do:132 exe/webui/xliffexportpreferencespage.py:123
+#: exe/exe_do:133 exe/webui/xliffexportpreferencespage.py:123
 msgid "Wrap fields in CDATA"
 msgstr "Envolver campos en CDATA"
 
-#: exe/exe_do:137
+#: exe/exe_do:138
 msgid "XLIFF import options"
 msgstr "Opciones de importación desde XLIFF"
 
-#: exe/exe_do:138
+#: exe/exe_do:139
 msgid ""
 "Once you have chosen XLIFF import option using  '-i xliff' or '--import "
 "xliff', it's possible to configure the following import options:"
@@ -3461,15 +3465,15 @@ msgstr ""
 "mediante '-i xliff' o '--import xliff', es posible configurar la "
 "siguiente opción de importación:"
 
-#: exe/exe_do:143 exe/webui/xliffimportpreferencespage.py:79
+#: exe/exe_do:144 exe/webui/xliffimportpreferencespage.py:79
 msgid "Import from source language"
 msgstr "Importar desde idioma origen"
 
-#: exe/exe_do:148
+#: exe/exe_do:149
 msgid "SCORM export options"
 msgstr "Opciones de exportación a SCORM"
 
-#: exe/exe_do:149
+#: exe/exe_do:150
 msgid ""
 "Once you have chosen one SCORM export option using '-x scorm12' or '-x "
 "scorm2004' or 'x agrega', it's possible to configure the following export"
@@ -3479,35 +3483,35 @@ msgstr ""
 "'-x scorm12', '-x scorm2004' o '-x agrega', es posible configurar las "
 "siguientes opciones de la exportación:"
 
-#: exe/exe_do:154
+#: exe/exe_do:155
 msgid "Include Single Page export file"
 msgstr "Incluir archivo de exportación a una sola página"
 
-#: exe/exe_do:159
+#: exe/exe_do:160
 msgid "Include Web Site export files"
 msgstr "Incluir archivos de exportación como sitio web"
 
-#: exe/exe_do:174
+#: exe/exe_do:175
 msgid "Options --export and --import are mutually exclusive."
 msgstr "Las opciones --import y --export son mutuamente excluyentes."
 
-#: exe/exe_do:177
+#: exe/exe_do:178
 msgid "No --export, --import, --set or --report option supplied."
 msgstr "No ha proporcionado ninguna opción --export, --import, --set ni --report."
 
-#: exe/exe_do:181
+#: exe/exe_do:182
 msgid "No file input supplied."
 msgstr "No se ha proporcionado archivo de entrada."
 
-#: exe/exe_do:190
+#: exe/exe_do:191
 msgid "Bad number of arguments supplied"
 msgstr "El número de argumentos proporcionado es incorrecto"
 
-#: exe/exe_do:207 exe/export/cmdlineexporter.py:84
+#: exe/exe_do:208 exe/export/cmdlineexporter.py:84
 msgid "Invalid input package"
 msgstr "Archivo de entrada no válido"
 
-#: exe/exe_do:227
+#: exe/exe_do:228
 #, python-format
 msgid ""
 "exe_do: error: Unable to set values from '%s'.\n"
@@ -3516,12 +3520,12 @@ msgstr ""
 "exe_do: error: Fallo al determinar valores a partir de '%s'.\n"
 "El error fue:"
 
-#: exe/exe_do:245
+#: exe/exe_do:246
 #, python-format
 msgid "Successfully exported '%s' from '%s'."
 msgstr "Se ha exportado correctamente '%s' desde '%s'."
 
-#: exe/exe_do:248
+#: exe/exe_do:249
 #, python-format
 msgid ""
 "exe_do: error: Unable to export from '%s'.\n"
@@ -3530,12 +3534,12 @@ msgstr ""
 "exe_do: error: no ha sido posible exportar desde '%s'.\n"
 "El error es:"
 
-#: exe/exe_do:256
+#: exe/exe_do:257
 #, python-format
 msgid "File '%s' successfully imported to '%s'."
 msgstr "El archivo '%s' se ha exportado correctamente a '%s'."
 
-#: exe/exe_do:259
+#: exe/exe_do:260
 #, python-format
 msgid ""
 "exe_do: error: Unable to import '%s'.\n"
@@ -3544,9 +3548,9 @@ msgstr ""
 "exe_do: error: no ha sido posible importar '%s'.\n"
 "El error es:"
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:291
-#: exe/jsui/mainpage.py:935 exe/jsui/mainpage.py:1099 exe/jsui/mainpage.py:1140
-#: exe/jsui/mainpage.py:1175 exe/jsui/mainpage.py:1196
+#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:296
+#: exe/jsui/mainpage.py:940 exe/jsui/mainpage.py:1104 exe/jsui/mainpage.py:1145
+#: exe/jsui/mainpage.py:1180 exe/jsui/mainpage.py:1201
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3741,19 +3745,19 @@ msgstr "Insertando %s"
 msgid "My iDevices"
 msgstr "Mis iDevices"
 
-#: exe/jsui/mainpage.py:309 exe/jsui/mainpage.py:774 exe/jsui/mainpage.py:927
+#: exe/jsui/mainpage.py:314 exe/jsui/mainpage.py:779 exe/jsui/mainpage.py:932
 msgid "Cannot access directory named "
 msgstr "No se puede acceder al directorio "
 
-#: exe/jsui/mainpage.py:309 exe/jsui/mainpage.py:776 exe/jsui/mainpage.py:927
+#: exe/jsui/mainpage.py:314 exe/jsui/mainpage.py:781 exe/jsui/mainpage.py:932
 msgid ". Please use ASCII names."
 msgstr ". Por favor use nombres en ASCII."
 
-#: exe/jsui/mainpage.py:318
+#: exe/jsui/mainpage.py:323
 msgid "SAVE FAILED!"
 msgstr "ERROR AL GUARDAR"
 
-#: exe/jsui/mainpage.py:322 exe/jsui/mainpage.py:630 exe/jsui/mainpage.py:1023
+#: exe/jsui/mainpage.py:327 exe/jsui/mainpage.py:635 exe/jsui/mainpage.py:1028
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3762,22 +3766,22 @@ msgstr ""
 "ERROR AL GUARDAR\n"
 "%s"
 
-#: exe/jsui/mainpage.py:326 exe/jsui/mainpage.py:331 exe/jsui/mainpage.py:334
+#: exe/jsui/mainpage.py:331 exe/jsui/mainpage.py:336 exe/jsui/mainpage.py:339
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Paquete guardado en: %s"
 
-#: exe/jsui/mainpage.py:552 exe/jsui/mainpage.py:658
+#: exe/jsui/mainpage.py:557 exe/jsui/mainpage.py:663
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "El directorio %s de vistas previas es un archivo, no se puede reemplazar"
 
-#: exe/jsui/mainpage.py:572
+#: exe/jsui/mainpage.py:577
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "El fichero local %s no existe, no se puede previsualizar"
 
-#: exe/jsui/mainpage.py:700
+#: exe/jsui/mainpage.py:705
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -3786,11 +3790,11 @@ msgstr ""
 "¡Falló la compilación de MimeTeX!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:739
+#: exe/jsui/mainpage.py:744
 msgid "Importing HTML..."
 msgstr "Importando HTML..."
 
-#: exe/jsui/mainpage.py:745
+#: exe/jsui/mainpage.py:750
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3799,26 +3803,26 @@ msgstr ""
 "¡FALLO en la importación de los metadatos LOM!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:748
+#: exe/jsui/mainpage.py:753
 msgid "Error importing HTML:\n"
 msgstr "Error al importar HTML:\n"
 
-#: exe/jsui/mainpage.py:797 exe/jsui/mainpage.py:802 exe/jsui/mainpage.py:805
-#: exe/jsui/mainpage.py:808 exe/jsui/mainpage.py:811 exe/jsui/mainpage.py:814
-#: exe/jsui/mainpage.py:819 exe/jsui/mainpage.py:1083 exe/jsui/mainpage.py:1156
+#: exe/jsui/mainpage.py:802 exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:810
+#: exe/jsui/mainpage.py:813 exe/jsui/mainpage.py:816 exe/jsui/mainpage.py:819
+#: exe/jsui/mainpage.py:824 exe/jsui/mainpage.py:1088 exe/jsui/mainpage.py:1161
 msgid "EXPORT FAILED!"
 msgstr "ERROR EN LA EXPORTACIÓN"
 
-#: exe/jsui/mainpage.py:890
+#: exe/jsui/mainpage.py:895
 msgid "Correct XLIFF import"
 msgstr "Importación XLIFF correcta"
 
-#: exe/jsui/mainpage.py:893
+#: exe/jsui/mainpage.py:898
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Error al importar XLIFF: %s"
 
-#: exe/jsui/mainpage.py:936 exe/jsui/mainpage.py:953
+#: exe/jsui/mainpage.py:941 exe/jsui/mainpage.py:958
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -3827,21 +3831,21 @@ msgstr ""
 "ERROR EN LA EXTRACCIÓN\n"
 "%s"
 
-#: exe/jsui/mainpage.py:955
+#: exe/jsui/mainpage.py:960
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Paquete extraído en: %s"
 
-#: exe/jsui/mainpage.py:967
+#: exe/jsui/mainpage.py:972
 msgid "Directory exists"
 msgstr "El directorio ya existe"
 
-#: exe/jsui/mainpage.py:981 exe/jsui/mainpage.py:1071 exe/jsui/mainpage.py:1087
-#: exe/jsui/mainpage.py:1100 exe/jsui/mainpage.py:1106
-#: exe/jsui/mainpage.py:1124 exe/jsui/mainpage.py:1141
-#: exe/jsui/mainpage.py:1147 exe/jsui/mainpage.py:1161
-#: exe/jsui/mainpage.py:1176 exe/jsui/mainpage.py:1182
-#: exe/jsui/mainpage.py:1197 exe/jsui/mainpage.py:1203
+#: exe/jsui/mainpage.py:986 exe/jsui/mainpage.py:1076 exe/jsui/mainpage.py:1092
+#: exe/jsui/mainpage.py:1105 exe/jsui/mainpage.py:1111
+#: exe/jsui/mainpage.py:1129 exe/jsui/mainpage.py:1146
+#: exe/jsui/mainpage.py:1152 exe/jsui/mainpage.py:1166
+#: exe/jsui/mainpage.py:1181 exe/jsui/mainpage.py:1187
+#: exe/jsui/mainpage.py:1202 exe/jsui/mainpage.py:1208
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3850,12 +3854,12 @@ msgstr ""
 "ERROR EN LA EXPORTACIÓN\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1009 exe/jsui/mainpage.py:1056
+#: exe/jsui/mainpage.py:1014 exe/jsui/mainpage.py:1061
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "El nombre de archivo %s ya existe, no se pudo reemplazar"
 
-#: exe/jsui/mainpage.py:1015 exe/jsui/mainpage.py:1063
+#: exe/jsui/mainpage.py:1020 exe/jsui/mainpage.py:1068
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -3864,27 +3868,27 @@ msgstr ""
 "El nombre de carpeta %s ya existe. Por favor seleccione otro o elimine el"
 " existente e inténtelo de nuevo."
 
-#: exe/jsui/mainpage.py:1029 exe/jsui/mainpage.py:1074
-#: exe/jsui/mainpage.py:1089 exe/jsui/mainpage.py:1108
-#: exe/jsui/mainpage.py:1126 exe/jsui/mainpage.py:1149
-#: exe/jsui/mainpage.py:1163 exe/jsui/mainpage.py:1184
-#: exe/jsui/mainpage.py:1205
+#: exe/jsui/mainpage.py:1034 exe/jsui/mainpage.py:1079
+#: exe/jsui/mainpage.py:1094 exe/jsui/mainpage.py:1113
+#: exe/jsui/mainpage.py:1131 exe/jsui/mainpage.py:1154
+#: exe/jsui/mainpage.py:1168 exe/jsui/mainpage.py:1189
+#: exe/jsui/mainpage.py:1210
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportado a %s"
 
-#: exe/jsui/mainpage.py:1238 exe/webui/stylemanagerpage.py:130
+#: exe/jsui/mainpage.py:1243 exe/webui/stylemanagerpage.py:130
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "El archivo %s no existe o no es accesible."
 
-#: exe/jsui/mainpage.py:1242
+#: exe/jsui/mainpage.py:1247
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "No se puede cargar el archivo, por favor envíe el archivo a "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1245
+#: exe/jsui/mainpage.py:1250
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3893,7 +3897,7 @@ msgstr ""
 "Formato de archivo incorrecto:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1247
+#: exe/jsui/mainpage.py:1252
 msgid "Sorry, wrong file format"
 msgstr "Formato de archivo incorrecto"
 
@@ -3912,8 +3916,8 @@ msgstr "Error al guardar las propiedades"
 msgid "Show Image"
 msgstr "Mostrar imagen"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:672
-#: exe/webui/element.py:1086
+#: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:674
+#: exe/webui/element.py:1088
 msgid "Select an image"
 msgstr "Seleccionar una imagen"
 
@@ -5563,7 +5567,7 @@ msgid "Resources Report"
 msgstr "Informe sobre recursos"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379 exe/webui/editorpane.py:268
-#: exe/webui/element.py:1994
+#: exe/webui/element.py:1996
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:11
@@ -7302,12 +7306,12 @@ msgstr "Aceptar URL"
 msgid "Applet Code:"
 msgstr "Código del applet:"
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:961
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:963
 msgid "Filename:"
 msgstr "Nombre del Archivo:"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
-#: exe/webui/element.py:971
+#: exe/webui/element.py:973
 msgid "Select a file"
 msgstr "Seleccionar un archivo"
 
@@ -7356,8 +7360,8 @@ msgstr "Sugerencia pedagógica"
 msgid "Information"
 msgstr "Información"
 
-#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:548
-#: exe/webui/common.py:549 exe/webui/editorpane.py:364
+#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:553
+#: exe/webui/common.py:554 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -7460,8 +7464,8 @@ msgstr "Mostrar"
 msgid "Hide"
 msgstr "Ocultar"
 
-#: exe/webui/common.py:216 exe/webui/common.py:436 exe/webui/element.py:1434
-#: exe/webui/element.py:2365 exe/webui/listablock.py:274
+#: exe/webui/common.py:216 exe/webui/common.py:425 exe/webui/element.py:1436
+#: exe/webui/element.py:2367 exe/webui/listablock.py:274
 msgid "Show Feedback"
 msgstr "Mostrar retroalimentación"
 
@@ -7469,12 +7473,12 @@ msgstr "Mostrar retroalimentación"
 msgid "Hide Feedback"
 msgstr "Ocultar retroalimentación"
 
-#: exe/webui/common.py:218 exe/webui/element.py:2168
+#: exe/webui/common.py:218 exe/webui/element.py:2170
 #: exe/webui/stylemanagerpage.py:184 exe/webui/stylemanagerpage.py:202
 msgid "Correct"
 msgstr "Correcto"
 
-#: exe/webui/common.py:219 exe/webui/element.py:2171
+#: exe/webui/common.py:219 exe/webui/element.py:2173
 msgid "Incorrect"
 msgstr "Incorrecto"
 
@@ -7488,7 +7492,7 @@ msgstr "Menú"
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: editor XHTML para eLearning"
 
-#: exe/webui/common.py:539 exe/webui/common.py:543
+#: exe/webui/common.py:544 exe/webui/common.py:548
 msgid "Click for completion instructions"
 msgstr "Pulse para recibir instrucciones sobre cómo completar la actividad"
 
@@ -7540,7 +7544,7 @@ msgstr "Derecha"
 msgid "Align:"
 msgstr "Alinear:"
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1785
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1787
 msgid "Select Flash Object"
 msgstr "Seleccione un objeto flash"
 
@@ -7548,7 +7552,7 @@ msgstr "Seleccione un objeto flash"
 msgid "Select MP3 file"
 msgstr "Seleccionar un archivo MP3"
 
-#: exe/webui/editorelement.py:311 exe/webui/element.py:765
+#: exe/webui/editorelement.py:311 exe/webui/element.py:767
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
@@ -7709,8 +7713,8 @@ msgstr "Iconos"
 msgid "Info"
 msgstr "Información"
 
-#: exe/webui/editorpane.py:430 exe/webui/element.py:1441
-#: exe/webui/element.py:1443 exe/webui/element.py:1699
+#: exe/webui/editorpane.py:430 exe/webui/element.py:1443
+#: exe/webui/element.py:1445 exe/webui/element.py:1701
 msgid "Submit"
 msgstr "Enviar"
 
@@ -7728,148 +7732,148 @@ msgstr "Por favor seleccione una respuesta correcta para cada pregunta."
 msgid "Add another question"
 msgstr "Añadir otra pregunta"
 
-#: exe/webui/element.py:70
+#: exe/webui/element.py:72
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
 msgstr "ERROR Element.process fue llamado directamente con la clase %s"
 
-#: exe/webui/element.py:79
+#: exe/webui/element.py:81
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "ERROR Element.renderEdit fue llamado directamente con la clase %s"
 
-#: exe/webui/element.py:96
+#: exe/webui/element.py:98
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "ERROR Element.renderView fue llamado directamente con la clase %s"
 
-#: exe/webui/element.py:649 exe/webui/element.py:1070
+#: exe/webui/element.py:651 exe/webui/element.py:1072
 msgid "Add Image"
 msgstr "Añadir imagen"
 
-#: exe/webui/element.py:675 exe/webui/element.py:1092 exe/webui/element.py:1789
+#: exe/webui/element.py:677 exe/webui/element.py:1094 exe/webui/element.py:1791
 msgid "Display as:"
 msgstr "Mostrar como:"
 
-#: exe/webui/element.py:682
+#: exe/webui/element.py:684
 msgid "by"
 msgstr "por"
 
-#: exe/webui/element.py:689 exe/webui/element.py:1108
+#: exe/webui/element.py:691 exe/webui/element.py:1110
 msgid "blank for original size"
 msgstr "en blanco para el tamaño original"
 
-#: exe/webui/element.py:759
+#: exe/webui/element.py:761
 msgid "Select an MP3"
 msgstr "Seleccionar un archivo MP3"
 
-#: exe/webui/element.py:1247 exe/webui/element.py:1580
+#: exe/webui/element.py:1249 exe/webui/element.py:1582
 msgid "Cloze Text"
 msgstr "Texto con huecos que rellenar"
 
-#: exe/webui/element.py:1255 exe/webui/element.py:1588
+#: exe/webui/element.py:1257 exe/webui/element.py:1590
 #: exe/webui/listablock.py:173
 msgid "Hide/Show Word"
 msgstr "Ocultar/Mostrar Palabra"
 
-#: exe/webui/element.py:1260 exe/webui/element.py:1593
+#: exe/webui/element.py:1262 exe/webui/element.py:1595
 msgid "Strict Marking?"
 msgstr "¿Calificación estricta?"
 
-#: exe/webui/element.py:1265
+#: exe/webui/element.py:1267
 msgid "Check Capitalization?"
 msgstr "¿Comprobar mayúsculas/minúsculas?"
 
-#: exe/webui/element.py:1270 exe/webui/element.py:1603
+#: exe/webui/element.py:1272 exe/webui/element.py:1605
 msgid "Instant Marking?"
 msgstr "¿Calificación inmediata?"
 
-#: exe/webui/element.py:1381 exe/webui/element.py:1638
+#: exe/webui/element.py:1383 exe/webui/element.py:1640
 #: exe/webui/listablock.py:222 exe/webui/quiztestblock.py:223
 #: exe/webui/quiztestblock.py:318 exe/webui/quiztestblock.py:372
 msgid "Your score is "
 msgstr "Su puntuación es "
 
-#: exe/webui/element.py:1431 exe/webui/element.py:1690
+#: exe/webui/element.py:1433 exe/webui/element.py:1692
 msgid "Get score"
 msgstr "Averiguar la puntuación"
 
-#: exe/webui/element.py:1437 exe/webui/element.py:1696
+#: exe/webui/element.py:1439 exe/webui/element.py:1698
 msgid "Show/Clear Answers"
 msgstr "Mostrar/Eliminar las respuestas"
 
-#: exe/webui/element.py:1447 exe/webui/element.py:1703
+#: exe/webui/element.py:1449 exe/webui/element.py:1705
 msgid "Show Answers"
 msgstr "Mostrar las respuestas"
 
-#: exe/webui/element.py:1483 exe/webui/element.py:1735
-#: exe/webui/element.py:2357 exe/webui/element.py:2817
+#: exe/webui/element.py:1485 exe/webui/element.py:1737
+#: exe/webui/element.py:2359 exe/webui/element.py:2819
 #: exe/webui/listablock.py:312 exe/webui/testquestionelement.py:158
 msgid "Answers"
 msgstr "Respuestas"
 
-#: exe/webui/element.py:1598
+#: exe/webui/element.py:1600
 msgid "Check Caps?"
 msgstr "¿Las Mayúsculas están bloqueadas?"
 
-#: exe/webui/element.py:1608
+#: exe/webui/element.py:1610
 msgid "Show Score?"
 msgstr "¿Mostrar la puntuación?"
 
-#: exe/webui/element.py:1693
+#: exe/webui/element.py:1695
 msgid "Show/Hide Feedback"
 msgstr "Mostrar/Ocultar retroalimentación"
 
-#: exe/webui/element.py:1851
+#: exe/webui/element.py:1853
 msgid "Please select a .flv file."
 msgstr "Por favor seleccione un archivo .FLV."
 
-#: exe/webui/element.py:1867
+#: exe/webui/element.py:1869
 msgid "Select a flash video"
 msgstr "Seleccionar un video FLV"
 
-#: exe/webui/element.py:1976
+#: exe/webui/element.py:1978
 msgid "text"
 msgstr "texto"
 
-#: exe/webui/element.py:1977
+#: exe/webui/element.py:1979
 msgid "newline"
 msgstr "Nueva línea"
 
-#: exe/webui/element.py:1980
+#: exe/webui/element.py:1982
 msgid "Select a font size: "
 msgstr "Seleccionar un tamaño de letra: "
 
-#: exe/webui/element.py:2090 exe/webui/element.py:2477
-#: exe/webui/element.py:2602 exe/webui/element.py:2620
+#: exe/webui/element.py:2092 exe/webui/element.py:2479
+#: exe/webui/element.py:2604 exe/webui/element.py:2622
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "Opción correcta"
 
-#: exe/webui/element.py:2118 exe/webui/element.py:2505
+#: exe/webui/element.py:2120 exe/webui/element.py:2507
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "Eliminar opción"
 
-#: exe/webui/element.py:2257 exe/webui/element.py:2712
+#: exe/webui/element.py:2259 exe/webui/element.py:2714
 #: exe/webui/questionelement.py:120 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "Eliminar pregunta"
 
-#: exe/webui/element.py:2292 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2294 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "Añadir otra opción"
 
-#: exe/webui/element.py:2393 exe/webui/element.py:2836
+#: exe/webui/element.py:2395 exe/webui/element.py:2838
 msgid "Solution"
 msgstr "Solución"
 
-#: exe/webui/element.py:2604 exe/webui/element.py:2622
+#: exe/webui/element.py:2606 exe/webui/element.py:2624
 msgid "Wrong"
 msgstr "Incorrecto"
 
-#: exe/webui/element.py:2727
+#: exe/webui/element.py:2729
 msgid "Add another option"
 msgstr "Añadir otra opción"
 
@@ -11082,3 +11086,4 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
+

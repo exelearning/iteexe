@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: tr\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.1\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-11-24 23:01+0100\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: tr\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Title": "Ba\u015fl\u0131k", 
  "Text Line": "Yaz\u0131 Sat\u0131r\u0131", 
  "Quit": "\u00c7\u0131k", 
@@ -261,7 +261,6 @@ translations = {
  "Insert Package": "Paket Ekle", 
  "Provide a caption for the flash movie \nyou have just inserted.": "\u015eu anda ekledi\u011finiz flash filmi i\u00e7in \nbir isim girin.", 
  "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one.": "Yeni iDevice'\u0131n\u0131z panelde bu ba\u015fl\u0131k ile g\u00f6r\u00fcnecek. Zorunlu bir b\u00f6l\u00fcmd\u00fcr, bo\u015f b\u0131rak\u0131lamaz.", 
- "Click Here": "Buraya T\u0131klay\u0131n", 
  "Select the appropriate language version \nof Wikipedia to search and enter search term.": "Aramalarda kullan\u0131lmak \u00fczere, Wikipedia'n\u0131n  \nuygun dildeki sayfas\u0131n\u0131 se\u00e7iniz.", 
  "Feedback button will not appear if no \ndata is entered into this field.": "E\u011fer bu b\u00f6lgede bir yaz\u0131 olmazsa  \ngeribildirim d\u00fc\u011fmesi g\u00f6sterilmeyecek.", 
  "Describe the prerequisite knowledge learners should have to effectively\ncomplete this learning.": "Bu \u00f6\u011fretimden tam olarak faydalanmalar\u0131 i\u00e7in \u00f6\u011frencilerde bulunmas\u0131 gereken\n\u00f6nbilgi seviyesini belirtin.", 

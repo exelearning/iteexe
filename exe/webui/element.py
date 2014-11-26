@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
@@ -15,7 +17,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # ===========================================================================
 """
 Classes to XHTML elements.  Used by GenericBlock
@@ -534,7 +536,7 @@ class FeedbackElement(ElementWithResources):
 
         html = ""
         if self.field.feedback != "": 
-            html += common.feedbackBlock(self.id,self.field.feedback)
+            html += common.feedbackBlock(self.id,self.field.feedback,self.field.buttonCaption)
         return html
 
 
