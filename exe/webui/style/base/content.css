@@ -1,5 +1,6 @@
 /* eXeLearning Style Designer Compatible Style */
-body{font:.85em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#333;background:#fff}
+html{font-size:.85em}
+body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#333;background:#fff}
 
 a{color:#2495FF}
 h2{font-size:1.3em}
