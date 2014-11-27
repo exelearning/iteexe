@@ -11,6 +11,7 @@ var $i18n = {
 	Reset : _("Reset"),
 	Finish : _("Finish"),
 	Browser_Incompatible : _("Your browser is not compatible with this tool."),
+	Hide_Show_Menu_Disabled : _("The Hide/Show menu option is disabled in the Style Designer"),
 	// Color Picker
 	Color_Picker : _("Color Picker"),
 	Color_Picker_Strings : {

@@ -103,6 +103,10 @@ var $app = {
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
 	defaultMark : "/* eXeLearning Style Designer (default CSS) */",
 	init : function() {
+	
+		opener.myTheme.toggleMenu = function(){
+			opener.alert($i18n.Hide_Show_Menu_Disabled);
+		}
 		
 		this.i18n();
 		
