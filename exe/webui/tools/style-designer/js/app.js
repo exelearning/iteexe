@@ -66,6 +66,7 @@ var $appVars = [
 	// Navigation tag
 	// fieldset #1
 	['hideNavigation','checkbox'],
+	['horizontalNavigation','checkbox'],	
 	['navBGColor',6,18],
 	['navHoverBGColor',6,18],
 	['navAColor',6,7],
@@ -254,7 +255,11 @@ var $app = {
 					else if (currentValue[0]=="hideNavigation") {
 						$("#hideNavigation").prop('checked', true);
 						$("#navigationOptions").hide();
-					}				
+					}
+					else if (currentValue[0]=="horizontalNavigation") {
+						$("#horizontalNavigation").prop('checked', true);
+						$app.hasHorizontalNavigation = true;
+					}
 				}
 			} 
 			else {
@@ -629,7 +634,7 @@ var $app = {
 		if (hideNavigation==false) {
 			
 			defaultNavCSS+= "#siteNav,#nav-toggler{display:block;}";
-			defaultNavCSS+="#main{padding-left:250px;}";
+			if (!$app.hasHorizontalNavigation) defaultNavCSS+="#main{padding-left:250px;}";
 			defaultNavCSS+="@media all and (max-width: 1015px){";
 				defaultNavCSS+="#main{padding-top:0;padding-left:20px;}";	
 			defaultNavCSS+="}";
@@ -683,6 +688,18 @@ var $app = {
 			
 		}
 		
+		if ($app.hasHorizontalNavigation) {
+			defaultNavCSS += '\
+@media screen and (min-width:701px){\
+#siteNav,#siteNav ul{\
+background-color:#'+defaultNavBGColor+';\
+border-color:#'+defaultBorderColor+';\
+}\
+#siteNav li{\
+background-color:#'+defaultNavBGColor+';\
+}\
+}';
+		}
 		
 		if (defaultContentCSS!="") defaultContentCSS=$app.defaultMark+defaultContentCSS+$app.defaultMark;
 		if (defaultNavCSS!="") defaultNavCSS=$app.defaultMark+defaultNavCSS+$app.defaultMark;
@@ -733,7 +750,46 @@ var $app = {
 		if (this.isOldBrowser) tag.cssText = css;
 		else tag.innerHTML = css;
 	},
-	getFinalCSS : function(css){
+	getHorizontalNavigationCSS : function(){
+	
+		var hNavBGColor = $app.defaultValues.navBGColor;
+		var navBGColor = $("#navBGColor").val();
+		if (navBGColor!="") hNavBGColor = navBGColor;	
+
+		var hNavHoverBGColor = $app.defaultValues.navHoverBGColor;
+		var navHoverBGColor = $("#navHoverBGColor").val();
+		if (navHoverBGColor!="") hNavHoverBGColor = navHoverBGColor;
+
+		var hNavBorderColor = $app.defaultValues.navBorderColor;
+		var navBorderColor = $("#navBorderColor").val();
+		if (navBorderColor!="") hNavBorderColor = navBorderColor;	
+		
+		var css = '\
+/*horizontalNavigation*/\
+@media screen and (min-width:701px){\
+#main,.no-nav #main{padding:0 20px}\
+#siteNav li:hover,#siteNav li.sfhover{background:#'+hNavHoverBGColor+'}\
+#siteNav .other-section{display:block}\
+#siteNav,#siteNav ul{float:left;width:100%;border-style:solid;border-width:1px 0;border-color:#'+hNavBorderColor+';margin:0;line-height:1.2em;background:#'+hNavBGColor+'}\
+#siteNav ul ul{line-height:1.1em}\
+#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none;padding-right:0}\
+#siteNav a{padding:.4em 15px;border:none}\
+#siteNav li{float:left}\
+#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}\
+* html #siteNav li ul{width:13em}\
+#siteNav li li{width:13.9em}\
+#siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px}\
+#siteNav li ul ul{margin:-2.15em 0 0 14em}\
+* html #siteNav li ul ul{margin-left:13em}\
+#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}\
+#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}\
+#siteNav .daddy{position:relative}\
+#siteNav .daddy span{display:inline;position:absolute;right:1em;font-size:.8em}\
+#toggle-nav{display:none!important}\
+}';
+		return css;
+	},
+	getFinalCSS : function(css,type){
 		
 		if ($app.includeDefaultStyles==true) return this.removeStylePath(css);
 		
@@ -744,6 +800,14 @@ var $app = {
 				css = parts[0]+parts[2];
 			}
 		}
+		
+		if (type=="nav") {
+			var horizontalNavigation = $("#horizontalNavigation").prop("checked");
+			if (horizontalNavigation) {
+				css += this.getHorizontalNavigationCSS();
+			}
+		}
+		
 		return this.removeStylePath(css); // css is already formatted with formatCSS
 		
 	},
@@ -760,8 +824,8 @@ var $app = {
 		this.setCSS(contentCSSTag,contentCSS);
 		
 		// content.css and nav.css TEXTAREAS
-		$("#my-content-css").val(this.getFinalCSS(css[0]));
-		$("#my-nav-css").val(this.getFinalCSS(css[1]));
+		$("#my-content-css").val(this.getFinalCSS(css[0],"content"));
+		$("#my-nav-css").val(this.getFinalCSS(css[1],"nav"));
 		//((css[1].split($app.defaultMark)[0]);
 		
 		// nav.css
