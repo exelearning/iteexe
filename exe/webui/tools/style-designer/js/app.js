@@ -774,6 +774,7 @@ var $app = {
 				localization : $i18n.Color_Picker_Strings
 			},
 			function(color, context){
+				$("div.jPicker").hide();
 				$app.getPreview();
 			}
 		);
