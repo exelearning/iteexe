@@ -1,5 +1,5 @@
 ﻿/* To do:
-	Make these fields independent: contentBorder Width and contentBorderColor
+	
 */
 
 /*
@@ -66,12 +66,11 @@ var $appVars = [
 	// Navigation tag
 	// fieldset #1
 	['hideNavigation','checkbox'],
-	['horizontalNavigation','checkbox'],
 	['navBGColor',6,18],
 	['navHoverBGColor',6,18],
 	['navAColor',6,7],
 	['navAHoverColor',6,7],
-	['navBorderColor',6,25]
+	['navBorderColor',6,14]
 ];
 
 var $app = {
@@ -255,10 +254,7 @@ var $app = {
 					else if (currentValue[0]=="hideNavigation") {
 						$("#hideNavigation").prop('checked', true);
 						$("#navigationOptions").hide();
-					}
-					else if (currentValue[0]=="horizontalNavigation") {
-						$("#horizontalNavigation").prop('checked', true);
-					}					
+					}				
 				}
 			} 
 			else {
@@ -292,14 +288,7 @@ var $app = {
 					}
 					else if (this.id=="hideNavigation") {
 						var o = document.getElementById('navigationOptions');
-						if (this.checked) {
-							// To do: Hide menu if it's visible
-							//if (window.opener) {
-								//$("#toggle-nav",opener.document).unbind("click");
-								//if ($("#siteNav",opener.document).is(":visible") && navToggler.is(":visible") && navToggler.attr("class")=="show-nav") navToggler.click();
-							//}
-							o.style.display="none";
-						}
+						if (this.checked) o.style.display="none";
 						else o.style.display="block";
 					}
 					$app.getPreview(); 
@@ -408,19 +397,11 @@ var $app = {
 		
 		// #nav
 		var hideNavigation = $("#hideNavigation").prop("checked");
-		var horizontalNavigation = $("#horizontalNavigation").prop("checked");
 		var navBGColor = $("#navBGColor").val();
 		var navHoverBGColor = $("#navHoverBGColor").val();
 		var navAColor = $("#navAColor").val();
 		var navAHoverColor = $("#navAHoverColor").val();
 		var navBorderColor = $("#navBorderColor").val();
-		// Horizontal navigation
-		var hNavBGColor = $app.defaultValues.navBGColor;
-		var hNavHoverBGColor = $app.defaultValues.navHoverBGColor;
-		var hNavBorderColor = $app.defaultValues.navBorderColor;
-		if (navBGColor!="") hNavBGColor = navBGColor;
-		if (navHoverBGColor!="") hNavHoverBGColor = navHoverBGColor;
-		if (navBorderColor!="") hNavBorderColor = navBorderColor;
 		
 		// Default border width if not defined
 		// if (contentBorderWidth=="") contentBorderWidth = $app.defaultValues.contentBorderWidth;
@@ -544,16 +525,14 @@ var $app = {
 				if (navBGColor!="" || navBorderColor!="") {
 					navCSS+="@media screen and (min-width: 701px) and (max-width: 1015px){";
 						navCSS+='#siteNav,#siteNav ul{';
-							if (navBGColor!="") navCSS+='background-color:#'+hNavBGColor+';}';
-							if (navBorderColor!="") navCSS+='border-color:#'+navBorderColor+';}';
+							if (navBGColor!="") navCSS+='background-color:#'+navBGColor+';';
+							if (navBorderColor!="") navCSS+='border-color:#'+navBorderColor+';';						
 						navCSS+='}';
-						if (navBGColor!="") navCSS+='#siteNav li{background-color:#'+hNavBGColor+';}'				
+						if (navBGColor!="") navCSS+='#siteNav li{background-color:#'+navBGColor+';}'						
 					navCSS+="}";
 					if (navBorderColor!="") {
-						navCSS+="@media all and (max-width: 700px) {";
-							navCSS+='#siteNav,#siteNav ul{';
-								navCSS+='.js #siteNav{border-top:1px solid #'+navBorderColor+';';
-							navCSS+='}';
+						navCSS+="@media all and (max-width: 700px){";
+								navCSS+='.js #siteNav{border-top:1px solid #'+navBorderColor+';}';
 						navCSS+="}";
 					}
 				}
@@ -565,34 +544,9 @@ var $app = {
 				navCSS+="}";
 				if (navHoverBGColor!="") {
 					navCSS+="@media screen and (min-width: 701px) and (max-width: 1015px){";
-						navCSS+='#siteNav li:hover,#siteNav li.sfhover{background-color:#'+hNavHoverBGColor+';}';
+						navCSS+='#siteNav li:hover,#siteNav li.sfhover{background-color:#'+navHoverBGColor+';}';
 					navCSS+="}";
 				}				
-			}
-			if (horizontalNavigation) {
-				var hNavCSS = "\
-/*horizontalNavigation*/\
-#main,.no-nav #main{padding:0 20px;}\
-#siteNav li:hover,#siteNav li.sfhover{background-color:#"+hNavBGColor+";}\
-#siteNav .other-section{display:block;}\
-#siteNav,#siteNav ul{float:left;width:100%;border-style:solid;border-width:1px 0;border-color:#"+hNavBorderColor+";margin:0;line-height:1.2em;background-color:#"+hNavBGColor+";}\
-#siteNav ul ul{line-height:1.1em;}\
-#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none;padding-right:0;}\
-#siteNav a{padding:.4em 15px;border:none;}\
-#siteNav li{float:left;background-color:#"+hNavBGColor+";}\
-#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em;}\
-* html #siteNav li ul{width:13em;}\
-#siteNav li li{width:13.9em;}\
-#siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px;}\
-#siteNav li ul ul{margin:-2.15em 0 0 14em;}\
-* html #siteNav li ul ul{margin-left:13em;}\
-#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em;}\
-#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto;}\
-#siteNav .daddy{position:relative;}\
-#siteNav .daddy span{display:inline;position:absolute;right:1em;font-size:.8em;}\
-#toggle-nav{display:none;}\
-				";
-				navCSS += hNavCSS;
 			}
 		}
 		
@@ -672,69 +626,61 @@ var $app = {
 			defaultContentCSS+="}";
 		}	
 
-		if (!hideNavigation) {
+		if (hideNavigation==false) {
+			
 			defaultNavCSS+= "#siteNav,#nav-toggler{display:block;}";
 			defaultNavCSS+="#main{padding-left:250px;}";
 			defaultNavCSS+="@media all and (max-width: 1015px){";
-				defaultNavCSS+="#main{padding-top:0;}";	
-			defaultNavCSS+="}";			
-		}
+				defaultNavCSS+="#main{padding-top:0;padding-left:20px;}";	
+			defaultNavCSS+="}";
 		
-		var defaultNavAColor = $app.defaultValues.navAColor;
-		var defaultNavAHoverColor = $app.defaultValues.navAHoverColor;
-		if (navAColor!="") defaultNavAColor = navAColor;
-		if (navAHoverColor!="") defaultNavAHoverColor = navAHoverColor;		
-		
-		if (horizontalNavigation) {
-			defaultNavCSS+= "#nav-toggler{display:none;}";
-			defaultNavCSS+="#main{padding-left:20px;}";
-			defaultNavCSS+='#siteNav li:hover,#siteNav li.sfhover{background-color:#'+hNavHoverBGColor+';}';
-			defaultNavCSS+='#siteNav,#siteNav ul{background-color:#'+hNavBGColor+';}';
-			defaultNavCSS+='#siteNav a,#siteNav li{background-color:#'+hNavBGColor+';color:#'+defaultNavAColor+'}';
-			defaultNavCSS+='#siteNav a:hover,#siteNav a:focus{background-color:#'+hNavHoverBGColor+';color:#'+defaultNavAHoverColor+'}';
-		} else {
-			defaultNavCSS+='\
-#main,.no-nav #main{padding-left:250px;}\
-#siteNav li:hover,#siteNav li.sfhover{background:none;}\
-#siteNav .other-section{display:none;}\
-#siteNav,#siteNav ul{float:none;width:auto;border:none;margin:0;line-height:1.5em;background:#fff;}\
-#siteNav{margin-bottom:0;width:230px;float:left;padding-right:20px;}\
-#siteNav a{padding:4px 10px 4px 20px;border-width:0 0 1px 0;border-style:solid;border-color:#'+hNavBorderColor+';background-color:#'+hNavBGColor+';color:#'+defaultNavAColor+';}\
-#siteNav a:hover,#siteNav a:focus{background-color:#'+hNavHoverBGColor+';color:#'+defaultNavAHoverColor+';}\
-#siteNav ul ul{line-height:1.5em;}\
-#siteNav ul ul a{padding-left:35px;font-size:.95em;}\
-#siteNav ul ul ul a{padding-left:60px;}\
-#siteNav li{float:none;}\
-#siteNav li ul{position:static;left:auto;height:auto;width:auto;w\idth:auto;border-width:0;}\
-* html #siteNav li ul{width:auto;}\
-#siteNav li li{padding-right:0;width:auto;}\
-#siteNav li ul ul{margin:0;}\
-* html #siteNav li ul ul{margin-left:0;}\
-#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:auto;}\
-#siteNav .daddy span{display:none;}\
-#toggle-nav{display:block;}\
-@media screen and (min-width: 701px) and (max-width: 1015px) {\
-#main,.no-nav #main{padding:0 20px;}\
-#siteNav li:hover,#siteNav li.sfhover{background-color:#'+hNavHoverBGColor+';}\
-#siteNav .other-section{display:block;}\
-#siteNav,#siteNav ul{float:left;width:100%;border-style:solid;border-width:1px 0;border-color:#'+hNavBorderColor+';margin:0;line-height:1.2em;background-color:#'+hNavBGColor+';}\
-#siteNav ul ul{line-height:1.1em;}\
-#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none;padding-right:0;}\
-#siteNav a{padding:.4em 15px;border:none;}\
-#siteNav li{float:left;background-color:#'+hNavBGColor+';}\
-#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em;}\
-* html #siteNav li ul{width:13em;}\
-#siteNav li li{width:13.9em;}\
-#siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px;}\
-#siteNav li ul ul{margin:-2.15em 0 0 14em;}\
-* html #siteNav li ul ul{margin-left:13em;}\
-#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em;}\
-#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto;}\
-#siteNav .daddy{position:relative;}\
-#siteNav .daddy span{display:inline;position:absolute;right:1em;font-size:.8em;}\
-#toggle-nav{display:none;}\
-}\
-			';	
+			// Navigation colors
+			var defaultNavAColor = $app.defaultValues.navAColor;
+			if (navAColor!="") defaultNavAColor = navAColor;
+			
+			var defaultNavAHoverColor = $app.defaultValues.navAHoverColor;
+			if (navAHoverColor!="") defaultNavAHoverColor = navAHoverColor;
+			
+			var defaultNavBGColor = $app.defaultValues.navBGColor;
+			if (navBGColor!="") defaultNavBGColor = navBGColor;	
+
+			var defaultNavHoverBGColor = $app.defaultValues.navHoverBGColor;
+			if (navHoverBGColor!="") defaultNavHoverBGColor = navHoverBGColor;
+
+			var defaultBorderColor = $app.defaultValues.navBorderColor;
+			if (navBorderColor!="") defaultBorderColor = navBorderColor;
+			
+			defaultNavCSS += '\
+			#siteNav a{\
+				background-color:#'+defaultNavBGColor+';\
+				color:#'+defaultNavAColor+';\
+				border-color:#'+defaultBorderColor+';\
+			}\
+			@media screen and (min-width: 701px) and (max-width: 1015px){\
+				#siteNav,#siteNav ul{\
+					background-color:#'+defaultNavBGColor+';\
+					border-color:#'+defaultBorderColor+';\
+				}\
+				#siteNav li{\
+					background-color:#'+defaultNavBGColor+';\
+				}\
+			}\
+			@media all and (max-width: 700px){\
+				.js #siteNav{\
+					border-top:1px solid #'+defaultBorderColor+';\
+				}\
+			}\
+			#siteNav a:hover,#siteNav a:focus{\
+				background-color:#'+defaultNavHoverBGColor+';\
+				color:#'+defaultNavAHoverColor+';\
+			}\
+			@media screen and (min-width: 701px) and (max-width: 1015px){\
+				#siteNav li:hover,#siteNav li.sfhover{\
+					background-color:#'+defaultNavHoverBGColor+';\
+				}\
+			}\
+			';
+			
 		}
 		
 		
