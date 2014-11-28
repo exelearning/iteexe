@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-24 23:01+0100\n"
-"PO-Revision-Date: 2014-07-05 13:26+0100\n"
+"PO-Revision-Date: 2014-11-28 21:18+0100\n"
 "Last-Translator: Heike Koch <info@hei-ke-koch.de>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft; Uwe "
 "Kohnle, lernmodule.net gGmbH <rh@dialoge.net>\n"
@@ -3510,7 +3510,7 @@ msgstr "Creative Commons Attribution No Derivatives License 3.0"
 
 #: exe/export/pages.py:81
 msgid "Creative Commons Attribution Non-commercial License 3.0"
-msgstr "Creative Commons Attribution No Derivatives License 3.0"
+msgstr "Creative Commons Attribution Non-commercial License 3.0"
 
 #: exe/export/pages.py:82
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
@@ -10961,4 +10961,3 @@ msgstr ""
 "Die idevice/generic.data Datei oder das von Ihnen geladene Paket wurde "
 "mit einer aktuelleren Version von eXe erstellt. Bitte aktualisieren Sie "
 "Ihre eXe Version und versuchen Sie es dann noch einmal. "
-
