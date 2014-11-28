@@ -1,9 +1,4 @@
-﻿/* To do:
-	.js #topPagination{visibility:visible} at the end of nav.css will change icons by text
-	#topPagination,#bottomPagination{display:none} will hide the Previous/Next buttons
-*/
-
-/*
+﻿/*
  * eXeLearning Style Designer 1.0
  * By Ignacio Gros (http://www.gros.es/) for eXeLearning (http://exelearning.net/)
  * Creative Commons Attribution-ShareAlike (http://creativecommons.org/licenses/by-sa/3.0/)
@@ -47,7 +42,7 @@ var $appVars = [
 	['contentBGPosition',13,20],
 	['contentBGRepeat',9,18],
 	
-	// Header tab
+	// Header and footer tab
 	// fieldset #1
 	['headerHeight',4,7,'number'],
 	['headerBGColor',6,18],
@@ -63,6 +58,14 @@ var $appVars = [
 	['headerTitleAlign',6,11],
 	['headerTitleFontSize',3,10,'number'],
 	['headerTitleTopMargin',4,12,'number'],
+	// #fieldset #3
+	// To do
+	// footerBorderColor
+	// footerColor
+	// footerTextAlign
+	// footerAColor
+	// footerAHoverColor
+	// footerFontSize	
 	
 	// Navigation tag
 	// fieldset #1
@@ -672,6 +675,7 @@ var $app = {
 		
 		if (!hidePagination) {
 			defaultNavCSS += "#topPagination,#bottomPagination{display:block;}";
+			defaultNavCSS += "@media all and (max-width: 700px){#topPagination{display:none;}}";
 		}
 		
 		if (useNavigationIcons==false) {
@@ -888,12 +892,16 @@ background-color:#'+defaultNavBGColor+';\
 
 		var hNavBorderColor = $app.defaultValues.navBorderColor;
 		var navBorderColor = $("#navBorderColor").val();
-		if (navBorderColor!="") hNavBorderColor = navBorderColor;	
+		if (navBorderColor!="") hNavBorderColor = navBorderColor;
+		
+		var hideNavigation = $("#hideNavigation").prop("checked");
+		var padding = "0 20px";
+		if (hideNavigation) padding = "20px 20px 0 20px";
 		
 		var css = '\
 /*horizontalNavigation*/\
 @media screen and (min-width:701px){\
-#main,.no-nav #main{padding:0 20px}\
+#main,.no-nav #main{padding:'+padding+'}\
 #siteNav li:hover,#siteNav li.sfhover{background:#'+hNavHoverBGColor+'}\
 #siteNav .other-section{display:block}\
 #siteNav,#siteNav ul{float:left;width:100%;border-style:solid;border-width:1px 0;border-color:#'+hNavBorderColor+';margin:0;line-height:1.2em;background:#'+hNavBGColor+'}\

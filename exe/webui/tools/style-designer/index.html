@@ -20,7 +20,7 @@
 			<ul id="tabs">
 				<li id="general-tab" class="current"><span><a href="#" onclick="$app.showTab('general');return false">%General%</a></span></li>
 				<li id="backgrounds-tab"><span><a href="#" onclick="$app.showTab('backgrounds');return false">%Backgrounds%</a></span></li>
-				<li id="header-tab"><span><a href="#" onclick="$app.showTab('header');return false">Cabecera</a></span></li>
+				<li id="header-tab"><span><a href="#" onclick="$app.showTab('header');return false">Cabecera y pie</a></span></li>
 				<li id="navigation-tab"><span><a href="#" onclick="$app.showTab('navigation');return false">Navegación</a></span></li>
                 <li id="css-tab"><span><a href="#" onclick="$app.showTab('css');return false">%Advanced%</a></span></li>
 				<!--<li id="help-tab"><span><a href="#" onclick="$app.showTab('help');return false">%Help%</a></span></li>-->
@@ -211,7 +211,7 @@
 			</div><!-- /#backgrounds-panel -->
 			
             <div id="header" class="panel">
-            	<h2 class="scr-av">Cabecera</h2>
+            	<h2 class="scr-av">Cabecera y pie</h2>
 				<fieldset>
 					<legend>Cabecera</legend>                  
 					<div class="col">
@@ -310,6 +310,42 @@
 							</div>
 						</div>
 					</div><!-- / #showProjectTitleOptions -->
+				</fieldset>
+				<fieldset>
+					<legend>Pie</legend>                  
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="footerBorderColor">Color del borde: </label><input type="text" maxlength="6" size="6" id="footerBorderColor" class="color" />
+							</div>
+							<div class="field">
+								<label for="footerColor">Color del texto: </label><input type="text" maxlength="6" size="6" id="footerColor" class="color" />
+							</div>
+							<div class="field">
+								<label for="footerTextAlign">Alineación: </label>
+								<select id="footerTextAlign">
+									<option value="" selected="selected">Izquierda</option>
+									<option value="center">Centro</option>
+									<option value="right">Derecha</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="footerAColor">Color enlaces: </label>
+								<input type="text" maxlength="6" size="6" id="footerAColor" class="color" />
+							</div>
+							<div class="field">
+								<label for="footerAHoverColor">Enlaces sobre: </label>
+								<input type="text" maxlength="6" size="6" id="footerAHoverColor" class="color" />
+							</div>
+							<div class="field">
+								<label for="footerFontSize">Tamaño texto: </label><input type="text" size="6" id="footerFontSize" maxlength="3" /> %
+							</div>							
+						</div>
+					</div>
 				</fieldset>
 			</div><!-- /#header panel -->
 
