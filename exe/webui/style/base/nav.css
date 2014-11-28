@@ -28,11 +28,11 @@ body{padding:0;text-align:center}
 
 #siteFooter{padding-left:20px}
 /* Pagination */
-.pagination{padding-top:15px;text-align:right;color:#fff;border-top:1px solid #ddd;font-size:.95em}
+.pagination{padding-top:15px;text-align:right;border-top:1px solid #ddd;font-size:.95em}
 .pagination .sep{display:none}
 .pagination .next{margin-left:11px}
-.pagination a{padding:5px 10px;border-radius:5px;background-color:#A80003;color:#FFF}
-.pagination a:hover,.pagination a:focus{text-decoration:none;background-color:#555}
+.pagination a{padding:5px 10px;border-radius:5px;background:#333333;color:#FFF}
+.pagination a:hover,.pagination a:focus{text-decoration:none;background:#555}
 #topPagination{position:absolute;top:0;right:20px}
 #topPagination .pagination{border:none}
 #bottomPagination{padding:0 20px;clear:both}
@@ -45,27 +45,10 @@ html[xmlns] #content{display:block}
 
 /* Hide/Show/Skip navigation */
 #nav-toggler{margin:0;position:absolute;top:15px;left:20px;font-size:.95em}
-#nav-toggler a,#skipNav a{background:#A80003;color:#FFF;padding:5px 10px;border-radius:5px}
+#nav-toggler a,#skipNav a{background:#333333;color:#FFF;padding:5px 10px;border-radius:5px}
 #skipNav a{background:#555;color:#FFF}
 #nav-toggler a:hover{background-color:#555;text-decoration:none}
 #skipNav{z-index:100px;padding-top:15px;text-align:center}
-
-/* Pagination with icons */
-.js .pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
-.js .pagination a{display:block;float:left;width:32px;height:32px;padding:0;background:url(_my_icons.png) no-repeat 0 0}
-.js .pagination a:hover,.js .pagination a:focus{background:url(_my_icons.png) no-repeat 0 -50px}
-.js .pagination .next{background-position:-50px 0}
-.js .pagination .next:hover,.js .pagination .next:focus{background-position:-50px -50px}
-.js #bottomPagination{height:47px;position:relative}
-.js #bottomPagination a{position:absolute;top:15px;right:63px;margin:0}
-.js #bottomPagination .next{right:20px}
-#nav-toggler a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
-#nav-toggler a{display:block;width:32px;height:32px;padding:0;background:url(_my_icons.png) no-repeat -100px 0}
-#nav-toggler a:hover{background:url(_my_icons.png) no-repeat -100px -50px}
-#nav-toggler .show-nav{background-position:-150px 0}
-#nav-toggler .show-nav:hover{background-position:-150px -50px}
-.js .pagination a,#nav-toggler a{filter:alpha(opacity=50);opacity:.5}
-.js .pagination a:hover,.js .pagination a:focus,#nav-toggler a:hover{filter:alpha(opacity=100);opacity:1}
 
 @media screen and (min-width: 701px) and (max-width: 1015px) {
     /* Fullsreen mode */
@@ -90,7 +73,8 @@ html[xmlns] #content{display:block}
 	#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
 	#siteNav .daddy{position:relative}
 	#siteNav .daddy span{display:inline;position:absolute;right:1em;font-size:.8em}	
-	#toggle-nav{display:none}
+	#siteNav{display:block!important}
+	#nav-toggler{display:none}
 }
 
 @media all and (max-width: 700px) {
@@ -99,24 +83,28 @@ html[xmlns] #content{display:block}
     #siteNav{float:none;width:100%;padding:0}
     #siteNav{line-height:1.5em;margin-bottom:15px}
     #main-wrapper{width:100%;float:none}    
-    #main,.no-nav #main{padding:0 20px}	
-    #bottomPagination{padding:0 20px 15px 20px}
+    #main,.no-nav #main{padding:10px 20px 0 20px}	
+    
+	#bottomPagination{padding:0 20px 15px 20px}
     #content .exe-col{float:none;width:100%;padding:0}
     iframe,object,embed{max-width:100%}
     img,video{max-width:100%;height:auto}
     .pagination{text-align:center;height:35px;position:relative}
     .pagination .prev{position:absolute;left:0}
     .pagination .next{position:absolute;right:0}
-    #nav-toggler{position:relative;top:0;left:0;margin:10px 10px 5px 10px;text-align:center}
+    #nav-toggler{position:relative;top:0;left:0;margin:10px 10px 15px 10px;text-align:center}
     #nav-toggler a{width:100%;display:block;padding:4px 0}
-}
-
-/* Pagination with icons */
-@media all and (max-width: 700px) {
-  #nav-toggler{height:32px;margin-bottom:10px;position:relative}
-  #nav-toggler a{padding:0;width:32px;position:absolute;left:50%;margin-left:-16px}
-  .js #siteNav{border-top:1px solid #ddd}
-  .js #bottomPagination .next{right:0}
+	#siteNav{border-top:1px solid #ddd}
 }
 
 /* eXeLearning Style Designer */
+.pagination a,#nav-toggler a,#skipNav a{
+/*nav2BGColor*/background-color:#7f0000;
+/*nav2AColor*/color:#e5e5e5;
+}
+
+.pagination a:hover,.pagination a:focus,#nav-toggler a:hover{
+/*nav2HoverBGColor*/background-color:#bf0000;
+/*nav2AHoverColor*/color:#ffffff;
+}
+

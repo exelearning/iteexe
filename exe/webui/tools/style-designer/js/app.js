@@ -1,5 +1,6 @@
 ﻿/* To do:
-	
+	.js #topPagination{visibility:visible} at the end of nav.css will change icons by text
+	#topPagination,#bottomPagination{display:none} will hide the Previous/Next buttons
 */
 
 /*
@@ -71,7 +72,14 @@ var $appVars = [
 	['navHoverBGColor',6,18],
 	['navAColor',6,7],
 	['navAHoverColor',6,7],
-	['navBorderColor',6,14]
+	['navBorderColor',6,14],
+	// fieldset #2
+	['hidePagination','checkbox'],
+	['useNavigationIcons','checkbox'],
+	['nav2BGColor',6,18],
+	['nav2HoverBGColor',6,18],
+	['nav2AColor',6,7],
+	['nav2AHoverColor',6,7],	
 ];
 
 var $app = {
@@ -97,13 +105,23 @@ var $app = {
 		navHoverBGColor : "F9F9F9",
 		navAColor : "555555",
 		navAHoverColor : "000000",
-		navBorderColor : "DDDDDD"
+		navBorderColor : "DDDDDD",
+		// Previous/Next and Hide/Show menu
+		nav2BGColor : "333333",
+		nav2HoverBGColor : "555555",
+		nav2AColor : "FFFFFF",
+		nav2AHoverColor : "FFFFFF"
 	},
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
 	defaultMark : "/* eXeLearning Style Designer (default CSS) */",
 	init : function() {
 	
+		if (!opener) {
+			this.quit();
+			return false;
+		}
+		
 		opener.myTheme.toggleMenu = function(){
 			opener.alert($i18n.Hide_Show_Menu_Disabled);
 		}
@@ -124,6 +142,12 @@ var $app = {
 		this.getCurrentCSS();
 		// Enable the Color Pickers after loading the current values
 		
+	},
+	quit : function(){
+		document.title = $i18n.No_Opener_Error;
+		$("#cssWizard").hide();
+		alert($i18n.No_Opener_Error+"\n\n"+$i18n.Quit_Warning);
+		window.close();
 	},
 	updateTextFieldFromFile : function(e){
 		//opener.parent.opener.document.getElementsByTagName("IFRAME")[0].contentWindow;
@@ -260,6 +284,14 @@ var $app = {
 						$("#horizontalNavigation").prop('checked', true);
 						$app.hasHorizontalNavigation = true;
 					}
+					// Other navigation options
+					else if (currentValue[0]=="hidePagination") {
+						$("#"+currentValue[0]).prop('checked', true);
+					}
+					else if (currentValue[0]=="useNavigationIcons") {
+						$("#useNavigationIcons").prop('checked', true);
+						$("#otherNavOptions").hide();
+					}			
 				}
 			} 
 			else {
@@ -296,6 +328,11 @@ var $app = {
 						if (this.checked) o.style.display="none";
 						else o.style.display="block";
 					}
+					else if (this.id=="useNavigationIcons") {
+						var o = document.getElementById('otherNavOptions');
+						if (this.checked) o.style.display="none";
+						else o.style.display="block";
+					}				
 					$app.getPreview(); 
 				}
 			} else {
@@ -407,20 +444,10 @@ var $app = {
 		var navAColor = $("#navAColor").val();
 		var navAHoverColor = $("#navAHoverColor").val();
 		var navBorderColor = $("#navBorderColor").val();
-		
-		// Default border width if not defined
-		// if (contentBorderWidth=="") contentBorderWidth = $app.defaultValues.contentBorderWidth;
 
 		if (contentBGColor!="" || contentBGURL!="" || pageWidth!="" || contentBorderColor!="" || contentBorderWidth!="" || pageAlign=="left" || wrapperShadowColor!=""){
 			navCSS+="#content{";
 				if (pageWidth!="100" && (contentBorderColor!="" || contentBorderWidth!="")) {
-					/*
-					if (contentBorderWidth!=$app.defaultValues.contentBorderWidth && contentBorderColor=="") {
-						contentBorderColor = $app.defaultValues.contentBorderColor;
-					}
-					*/
-					//navCSS+="/*contentBorderWidth*/border-right:"+contentBorderWidth+"px solid /*contentBorderColor*/#"+contentBorderColor+";";
-					//navCSS+= "border-left:"+contentBorderWidth+"px solid #"+contentBorderColor+";";
 					if (contentBorderWidth!="") navCSS+="border-width:0 /*contentBorderWidth*/"+contentBorderWidth+"px;";
 					if (contentBorderColor!="") navCSS+="border-color:/*contentBorderColor*/#"+contentBorderColor+";";
 				}
@@ -439,6 +466,55 @@ var $app = {
 					navCSS += "box-shadow:none;";
 				}
 			navCSS+="}";
+		}
+		
+		var hidePagination = $("#hidePagination").prop("checked");
+		var useNavigationIcons = $("#useNavigationIcons").prop("checked");
+		
+		if (hidePagination) {
+			navCSS += "/*hidePagination*/#topPagination,#bottomPagination{display:none;}";
+		}
+		
+		var nav2BGColor = $("#nav2BGColor").val();
+		var nav2HoverBGColor = $("#nav2HoverBGColor").val();
+		var nav2AColor = $("#nav2AColor").val();
+		var nav2AHoverColor = $("#nav2AHoverColor").val();
+		
+		if (useNavigationIcons) {
+			navCSS += '/*useNavigationIcons*/.pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0;}\
+.pagination a{display:block;float:left;width:32px;height:32px;padding:0;background:url('+$app.stylePath+'_my_icons.png) no-repeat 0 0;}\
+.pagination a:hover,.pagination a:focus{background:url('+$app.stylePath+'_my_icons.png) no-repeat 0 -50px;}\
+.pagination .next{background-position:-50px 0;}\
+.pagination .next:hover,.pagination .next:focus{background-position:-50px -50px;}\
+#bottomPagination{height:47px;position:relative;}\
+#bottomPagination a{position:absolute;top:15px;right:63px;margin:0;}\
+#bottomPagination .next{right:20px;}\
+#nav-toggler a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0;}\
+#nav-toggler a{display:block;width:32px;height:32px;padding:0;background:url('+$app.stylePath+'_my_icons.png) no-repeat -100px 0;}\
+#nav-toggler a:hover{background:url('+$app.stylePath+'_my_icons.png) no-repeat -100px -50px;}\
+#nav-toggler .show-nav{background-position:-150px 0;}\
+#nav-toggler .show-nav:hover{background-position:-150px -50px;}\
+.pagination a,#nav-toggler a{filter:alpha(opacity=50);opacity:.5;}\
+.pagination a:hover,.pagination a:focus,#nav-toggler a:hover{filter:alpha(opacity=100);opacity:1;}\
+@media all and (max-width: 700px){\
+#nav-toggler{height:32px;margin-bottom:10px;position:relative;}\
+#nav-toggler a{padding:0;width:32px;position:absolute;left:50%;margin-left:-16px;}\
+#siteNav{border-top:1px solid #ddd;}\
+#bottomPagination .next{right:0;}\
+}';
+		} else {
+			if (nav2BGColor!="" || nav2AColor!="") {
+				navCSS+=".pagination a,#nav-toggler a,#skipNav a{";
+					if (nav2BGColor!="") navCSS+="/*nav2BGColor*/background-color:#"+nav2BGColor+";";
+					if (nav2AColor!="") navCSS+="/*nav2AColor*/color:#"+nav2AColor+";";
+				navCSS+="}";
+			}
+			if (nav2HoverBGColor!="" || nav2AHoverColor!="") {
+				navCSS+=".pagination a:hover,.pagination a:focus,#nav-toggler a:hover{";
+					if (nav2HoverBGColor!="") navCSS+="/*nav2HoverBGColor*/background-color:#"+nav2HoverBGColor+";";
+					if (nav2AHoverColor!="") navCSS+="/*nav2AHoverColor*/color:#"+nav2AHoverColor+";";
+				navCSS+="}";
+			}		
 		}
 		
 		if (fontFamily!='' || bodyColor!='' || fontSize!=""){
@@ -593,6 +669,56 @@ var $app = {
 				if (contentBGURL=='') defaultNavCSS += "background-image:none;";				
 			defaultNavCSS+="}";
 		}
+		
+		if (!hidePagination) {
+			defaultNavCSS += "#topPagination,#bottomPagination{display:block;}";
+		}
+		
+		if (useNavigationIcons==false) {
+		
+			if (nav2BGColor=="" || nav2AColor=="") {
+				defaultNavCSS+=".pagination a,#nav-toggler a,#skipNav a{";
+					if (nav2BGColor=="") defaultNavCSS+="background-color:#"+$app.defaultValues.nav2BGColor+";";
+					if (nav2AColor=="") defaultNavCSS+="color:#"+$app.defaultValues.nav2AColor+";";
+				defaultNavCSS+="}";
+			}
+			if (nav2HoverBGColor=="" || nav2AHoverColor=="") {
+				defaultNavCSS+=".pagination a:hover,.pagination a:focus,#nav-toggler a:hover{";
+					if (nav2HoverBGColor=="") defaultNavCSS+="/*nav2HoverBGColor*/background-color:#"+$app.defaultValues.nav2HoverBGColor+";";
+					if (nav2AHoverColor=="") defaultNavCSS+="/*nav2AHoverColor*/color:#"+$app.defaultValues.nav2AHoverColor+";";
+				defaultNavCSS+="}";
+			}
+			
+			var _nav2BGColor = $app.defaultValues.nav2BGColor;
+			if (nav2BGColor!="") _nav2BGColor = nav2BGColor;
+			
+			var _nav2AColor = $app.defaultValues.nav2AColor;
+			if (nav2AColor!="") _nav2AColor = nav2AColor;
+
+			var _nav2HoverBGColor = $app.defaultValues.nav2HoverBGColor;
+			if (nav2HoverBGColor!="") _nav2HoverBGColor = nav2HoverBGColor;
+
+			var _nav2AHoverColor = $app.defaultValues.nav2AHoverColor;
+			if (nav2AHoverColor!="") _nav2AHoverColor = nav2AHoverColor;			
+			
+			defaultNavCSS += '.pagination a span,#nav-toggler a span{position:static;overflow:auto;clip:auto;height:auto;}\
+.pagination a{display:inline;float:none;width:auto;height:auto;padding:0;background-image:none;background:#'+_nav2BGColor+';padding:5px 10px;color:#'+_nav2AColor+'}\
+.pagination a:hover,.pagination a:focus{background:#'+_nav2HoverBGColor+';color:#'+_nav2AHoverColor+'}\
+#bottomPagination{height:auto;position:relative;}\
+#bottomPagination a{position:static;top:auto;right:auto;}\
+#bottomPagination .next{right:auto;margin-left:11px;}\
+#nav-toggler a,#skipNav a{display:inline;width:auto;height:auto;background:#'+_nav2BGColor+';padding:5px 10px;}\
+#nav-toggler a:hover{background:#'+_nav2HoverBGColor+';color:#'+_nav2AHoverColor+'}\
+.pagination a,#nav-toggler a{filter:alpha(opacity=100);opacity:1;}\
+@media all and (max-width: 700px){\
+#nav-toggler{position:relative;}\
+#nav-toggler a{display:block;padding:4px 0;position:relative;left:auto;margin-left:0;}\
+#siteNav{border-top:1px solid #ddd;}\
+#bottomPagination a{position:absolute;}\
+#bottomPagination .next{right:20px;}\
+#bottomPagination .next{right:0;}\
+}';
+		}	
 		
 		if (pageAlign=='center' || bodyBGColor=='' || bodyBGURL=='') {
 			defaultNavCSS+="body{"
@@ -814,7 +940,10 @@ background-color:#'+defaultNavBGColor+';\
 	getPreview : function(){
 		
 		var w = window.opener;
-		if (!w) return false;
+		if (!w) {
+			this.quit();
+			return false;
+		}
 		
 		// content.css
 		var contentCSSTag = w.document.getElementById("my-content-css");
