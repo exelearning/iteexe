@@ -59,14 +59,12 @@ var $appVars = [
 	['headerTitleFontSize',3,10,'number'],
 	['headerTitleTopMargin',4,12,'number'],
 	// #fieldset #3
-	// To do
-	// footerBorderColor
-	// footerColor
-	// footerTextAlign
-	// footerAColor
-	// footerAHoverColor
-	// footerFontSize	
-	
+	['footerBorderColor',6,1],
+	['footerColor',6,7],
+	['footerTextAlign',6,11],
+	['footerAColor',6,7],
+	['footerAHoverColor',6,7],
+	['footerFontSize',3,10,'number'],	
 	// Navigation tag
 	// fieldset #1
 	['hideNavigation','checkbox'],
@@ -96,8 +94,8 @@ var $app = {
 		wrapperShadowColor : "0 0 10px 0 #999",
 		contentBorderWidth : 1,
 		contentBorderColor : "DDDDDD",
-		bodyBGColor : "FFF", // website body background-color
-		headerBorderColor : "DDD",
+		bodyBGColor : "FFFFFF", // website body background-color
+		headerBorderColor : "DDDDDD",
 		fontFamily : "Arial, Verdana, Helvetica, sans-serif",
 		bodyColor : "333333",
 		aColor : "2495FF",
@@ -113,7 +111,11 @@ var $app = {
 		nav2BGColor : "333333",
 		nav2HoverBGColor : "555555",
 		nav2AColor : "FFFFFF",
-		nav2AHoverColor : "FFFFFF"
+		nav2AHoverColor : "FFFFFF",
+		// Footer
+		footerBorderColor : "DDDDDD",
+		footerColor : "333333",
+		footerAColor : "2495FF"		
 	},
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
@@ -257,7 +259,7 @@ var $app = {
 						if (val.indexOf("0;")==0) $("#pageAlign").val("left");
 					}
 					// We get anything before the next rule (background-position and background-repeat)
-					if (currentValue[0].indexOf("BGPosition")!=-1 || currentValue[0].indexOf("BGRepeat")!=-1 || currentValue[0]=="headerTitleAlign") {
+					if (currentValue[0].indexOf("BGPosition")!=-1 || currentValue[0].indexOf("BGRepeat")!=-1 || currentValue[0]=="headerTitleAlign" || currentValue[0]=="footerTextAlign") {
 						val = val.split(";");
 						val = val[0];
 						$("#"+currentValue[0]).val(val);
@@ -634,6 +636,40 @@ var $app = {
 			}
 		}
 		
+		// Footer
+		var footerBorderColor = $("#footerBorderColor").val();
+		var footerColor = $("#footerColor").val();
+		var footerTextAlign = $("#footerTextAlign").val();
+		var footerAColor = $("#footerAColor").val();
+		var footerAHoverColor = $("#footerAHoverColor").val();
+		var footerFontSize = $("#footerFontSize").val();
+		
+		if (footerBorderColor!="" || footerColor!="" || footerTextAlign!="" || footerFontSize!="") {
+			contentCSS += "#siteFooter{";
+				if (footerBorderColor!="") {
+					contentCSS += "border-top:1px solid /*footerBorderColor*/#"+footerBorderColor+";"
+					navCSS += ".pagination{";
+						navCSS += "border-color:#"+footerBorderColor+";";
+					navCSS += "}";
+				}
+				if (footerColor!="") contentCSS += "/*footerColor*/color:#"+footerColor+";"
+				if (footerTextAlign!="") contentCSS+="/*footerTextAlign*/text-align:"+footerTextAlign+";";
+				if (footerFontSize!="") contentCSS+="/*footerFontSize*/font-size:"+footerFontSize+"%;";
+			contentCSS += "}";
+		}
+		
+		if (footerAColor!="") {
+			contentCSS += "#siteFooter a{";
+				contentCSS += "/*footerAColor*/color:#"+footerAColor+";"
+			contentCSS += "}";
+		}
+		
+		if (footerAHoverColor!="") {
+			contentCSS += "#siteFooter a:hover,#siteFooter a:focus{";
+				contentCSS += "/*footerAHoverColor*/color:#"+footerAHoverColor+";"
+			contentCSS += "}";
+		}
+		
 		// Default values
 		var defaultContentCSS = "";
 		var defaultNavCSS = "";
@@ -829,6 +865,32 @@ border-color:#'+defaultBorderColor+';\
 background-color:#'+defaultNavBGColor+';\
 }\
 }';
+		}
+		
+		// Footer
+		if (footerBorderColor=="" || footerColor=="" || footerTextAlign=="" || footerFontSize=="") {
+			defaultContentCSS += "#siteFooter{";
+				if (footerBorderColor=="") {
+					defaultContentCSS += "border-top:1px solid #"+$app.defaultValues.footerBorderColor+";"
+					defaultNavCSS += ".pagination{";
+						defaultNavCSS += "border-color:#"+$app.defaultValues.footerBorderColor+";";
+					defaultNavCSS += "}";
+				}
+				if (footerColor=="") defaultContentCSS += "color:#"+$app.defaultValues.footerColor+";"
+				if (footerTextAlign=="") defaultContentCSS+="text-align:left;";
+				if (footerFontSize=="") defaultContentCSS+="font-size:100%;";
+			defaultContentCSS += "}";
+		}
+		if (footerAColor=="") {
+			defaultContentCSS += "#siteFooter a{";
+				defaultContentCSS += "color:#"+$app.defaultValues.footerAColor+";"
+			defaultContentCSS += "}";
+		}
+		if (footerAHoverColor=="") {
+			defaultContentCSS += "#siteFooter a:hover,#siteFooter a:focus{";
+				if (footerAColor=="") defaultContentCSS += "color:#"+$app.defaultValues.footerAColor+";"
+				else defaultContentCSS += "color:#"+footerAColor+";"
+			defaultContentCSS += "}";
 		}
 		
 		if (defaultContentCSS!="") defaultContentCSS=$app.defaultMark+defaultContentCSS+$app.defaultMark;
