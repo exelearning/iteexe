@@ -128,7 +128,9 @@ var $app = {
 		}
 		
 		opener.myTheme.toggleMenu = function(){
-			opener.alert($i18n.Hide_Show_Menu_Disabled);
+			if (opener) {
+				opener.alert($i18n.Hide_Show_Menu_Disabled);
+			}
 		}
 		
 		this.i18n();
@@ -487,19 +489,19 @@ var $app = {
 		
 		if (useNavigationIcons) {
 			navCSS += '/*useNavigationIcons*/.pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0;}\
-.pagination a{display:block;float:left;width:32px;height:32px;padding:0;background:url('+$app.stylePath+'_my_icons.png) no-repeat 0 0;}\
-.pagination a:hover,.pagination a:focus{background:url('+$app.stylePath+'_my_icons.png) no-repeat 0 -50px;}\
+.pagination a{display:block;float:left;width:32px;height:32px;padding:0;background:url('+$app.stylePath+'_style_icons.png) no-repeat 0 0;}\
+.pagination a:hover,.pagination a:focus{background:url('+$app.stylePath+'_style_icons.png) no-repeat 0 0;}\
 .pagination .next{background-position:-50px 0;}\
-.pagination .next:hover,.pagination .next:focus{background-position:-50px -50px;}\
+.pagination .next:hover,.pagination .next:focus{background-position:-50px 0;}\
 #bottomPagination{height:47px;position:relative;}\
 #bottomPagination a{position:absolute;top:15px;right:63px;margin:0;}\
 #bottomPagination .next{right:20px;}\
 #nav-toggler a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0;}\
-#nav-toggler a{display:block;width:32px;height:32px;padding:0;background:url('+$app.stylePath+'_my_icons.png) no-repeat -100px 0;}\
-#nav-toggler a:hover{background:url('+$app.stylePath+'_my_icons.png) no-repeat -100px -50px;}\
+#nav-toggler a{display:block;width:32px;height:32px;padding:0;background:url('+$app.stylePath+'_style_icons.png) no-repeat -100px 0;}\
+#nav-toggler a:hover{background:url('+$app.stylePath+'_style_icons.png) no-repeat -100px 0;}\
 #nav-toggler .show-nav{background-position:-150px 0;}\
-#nav-toggler .show-nav:hover{background-position:-150px -50px;}\
-.pagination a,#nav-toggler a{filter:alpha(opacity=50);opacity:.5;}\
+#nav-toggler .show-nav:hover{background-position:-150px 0;}\
+.pagination a,#nav-toggler a{filter:alpha(opacity=70);opacity:.7;}\
 .pagination a:hover,.pagination a:focus,#nav-toggler a:hover{filter:alpha(opacity=100);opacity:1;}\
 @media all and (max-width: 700px){\
 #nav-toggler{height:32px;margin-bottom:10px;position:relative;}\

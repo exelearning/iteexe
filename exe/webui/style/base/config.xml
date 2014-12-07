@@ -10,5 +10,5 @@
 	<description>Minimally-styled, feature rich responsive Style for eXe. Use it to create your own design. iDevice icons by Google (http://www.google.com/design/spec/resources/sticker-sheets.html), under Creative Attribution-ShareAlike 4.0 International.</description>
     <extra-head><![CDATA[<meta name="viewport" content="width=device-width, initial-scale=1" />
 ]]></extra-head>
-    <extra-body><![CDATA[<script type="text/javascript" src="_my_js.js"></script>]]></extra-body>
+    <extra-body><![CDATA[<script type="text/javascript" src="_style_js.js"></script>]]></extra-body>
 </theme>

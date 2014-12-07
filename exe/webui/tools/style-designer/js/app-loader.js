@@ -28,7 +28,7 @@ var $designer = {
 	},
 	printExtraBody : function(){
 		this.disableAllLinks();
-		document.write('<script type="text/javascript" src="/style/'+this.styleId+'/_my_js.js"></script>');
+		document.write('<script type="text/javascript" src="/style/'+this.styleId+'/_style_js.js"></script>');
 		if (this.isBrowserCompatible()) this.openDesigner();
 		else alert($i18n.Browser_Incompatible);
 	},
