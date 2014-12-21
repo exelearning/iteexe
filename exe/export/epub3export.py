@@ -353,7 +353,7 @@ class Epub3Page(Page):
                 if idevice.title != "Forum Discussion":
                     html += htmlentitydecode(self.processInternalLinks(
                         block.renderView(self.node.package.style)))
-            html += u'</' + articleTag + '>' + lb  # iDevice div
+                html += u'</' + articleTag + '>' + lb  # iDevice div
 
         html += u"</" + sectionTag + ">" + lb  # /#main
         html += self.renderLicense()
