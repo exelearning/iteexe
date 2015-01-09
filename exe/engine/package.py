@@ -1193,9 +1193,12 @@ class Package(Persistable):
                 newPackage, validxml = decodeObjectFromXML(fromxml)
             elif xml:
                 xmlinfo = zippedFile.getinfo(u"contentv3.xml")
-                datainfo = zippedFile.getinfo(u"content.data")
-                if xmlinfo.date_time >= datainfo.date_time:
+                if u"content.data" not in zippedFile.NameToInfo:
                     newPackage, validxml = decodeObjectFromXML(xml)
+                else:
+                    datainfo = zippedFile.getinfo(u"content.data")
+                    if xmlinfo.date_time >= datainfo.date_time:
+                        newPackage, validxml = decodeObjectFromXML(xml)
             if not validxml:
                 toDecode   = zippedFile.read(u"content.data")
                 newPackage = decodeObjectRaw(toDecode)
