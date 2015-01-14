@@ -639,14 +639,7 @@ var exe_tinymce = {
 		
 			// first, clear out any old value in the tinyMCE image filename field:
 			win.document.forms[0].elements[field_name].value = ""; 
-		
-			// PreviewImage is only available for images:
-			if (type == "image") {
-			   win.ImageDialog.showPreviewImage(" ");
-			} else if (type == "media") {
-			   win.window.Media.preview();
-			}    
-		
+
 			// set the tinyMCE image filename field:
 			win.document.forms[0].elements[field_name].value = full_previewImage_url;
 			// then force its onchange event:
