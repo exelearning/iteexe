@@ -579,16 +579,95 @@ Ext.define('eXe.controller.Toolbar', {
             callback: function(fp) {
                 if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
                     var preferences = new Ext.Window ({
-					  height: 300, 
-					  width: 650, 
-                      modal: true,
-                      id: 'xliffexportwin',
-					  title: _("XLIFF Export Preferences"),
-					  items: {
-                          xtype: 'uxiframe',
-                          src: '/xliffexportpreferences?path=' + fp.file.path,
-                          height: '100%'
-                      }
+                        modal: true,
+                        id: 'xliffexportwin',
+                        layout: 'fit',
+                        items: [{
+                            xtype: 'form',
+                            layout: 'anchor',
+                            defaults: {
+                                labelWidth: 130,
+                                margin: 10
+                            },
+                            items: [
+                                {
+                                    xtype: 'combobox',
+                                    inputId: 'source',
+                                    fieldLabel: _("Select source language"),
+                                    allowBlank: false,
+                                    value: eXe.app.config.lang,
+                                    queryModel: 'local',
+                                    displayField: 'text',
+                                    valueField: 'source',
+                                    store: langsStore
+                                },
+                                {
+                                    xtype: 'combobox',
+                                    inputId: 'target',
+                                    fieldLabel: _("Select target language"),
+                                    allowBlank: false,
+                                    value: 'eu',
+                                    queryModel: 'local',
+                                    displayField: 'text',
+                                    valueField: 'target',
+                                    store: langsStore
+                                },
+                                {
+                                    xtype: 'checkbox',
+                                    inputId: 'copy',
+                                    fieldLabel: _('Copy source also in target'),
+                                    valueField: 'copy',
+                                    checked: true,
+                                    tooltip: _("If you don't choose this \
+option, target field will be empty. Some Computer Aided Translation tools \
+(i.g. OmegaT ) just translate the content of the target field. If you are \
+using this kind of tools, you will need to pre-fill target field with a copy \
+of the source field.")
+                                },
+                                {
+                                    xtype: 'checkbox',
+                                    inputId: 'cdata',
+                                    fieldLabel: _('Wrap fields in CDATA'),
+                                    valueField: 'cdata',
+                                    tooltip: _('This option will wrap all \
+the exported fields in CDATA sections. This kind of sections are not \
+recommended by XLIFF standard but it could be a good option if you want to \
+use a pre-process tool (i.g.: Rainbow) before using the Computer Aided \
+Translation software.')
+                                }
+                            ],
+                            buttons: [
+                                {
+                                    text: _('Cancel'),
+                                    handler: function() {
+                                        this.up('window').close();
+                                    }
+                                },
+                                {
+                                    text: _('Ok'),
+                                    handler: function() {
+                                        var form = this.up('form').getForm();
+
+                                        if (form.isValid()) {
+                                            var values = form.getValues();
+
+                                            nevow_clientToServerEvent(
+                                                'exportXliffPackage',
+                                                this,
+                                                '',
+                                                fp.file.path,
+                                                values['source'],
+                                                values['target'],
+                                                values['copy'] !== undefined,
+                                                values['cdata'] !== undefined
+                                            );
+                                            this.up('window').close();
+                                        }
+                                    }
+                                }
+                            ]
+                        }],
+                        title: _("XLIFF Export Preferences")
 					});
                     preferences.show();
                 }
