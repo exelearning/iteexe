@@ -184,6 +184,9 @@ Section "exe" Section2
     
     IfFileExists "$APPDATA\exe\exe.conf" 0 NoIniUpdate
         WriteINIStr "$APPDATA\exe\exe.conf" system webDir "$INSTDIR"
+        WriteINIStr "$APPDATA\exe\exe.conf" system jsDir "$INSTDIR"
+        WriteINIStr "$APPDATA\exe\exe.conf" system localeDir "$INSTDIR"\locale
+        WriteINIStr "$APPDATA\exe\exe.conf" system mediaProfilePath "$INSTDIR"\mediaprofiles
     NoIniUpdate:
 	Call vcredist2008installer
 SectionEnd
