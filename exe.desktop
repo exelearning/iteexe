@@ -1,14 +1,15 @@
 [Desktop Entry]
 Type=Application
 Name=eXe
-Name[es]=eXe
-Name[es_ES]=eXe
+# Name[es]=eXe
+# Name[es_ES]=eXe
 Comment=The EXtremely Easy to use eLearning authoring tool
 Comment[es]=Herramienta para la creación fácil de recursos educativos
-Comment[ru]=Редактор электронного обучения XHTML
+Comment[ru]=Крайне простая в использовании утилита электронного обучения
 # Comment=eXe : elearning XHTML editor
 GenericName=Elearning XHTML/HTML5 editor
 GenericName[es]=Editor XHTML/HTML5 destinado a la educación
+GenericName[ru]=Редактор электронного обучения XHTML/HTML5
 Exec=exe %f
 # Icon=exe.png
 Icon=exe
