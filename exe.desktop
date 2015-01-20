@@ -1,10 +1,14 @@
 [Desktop Entry]
 Type=Application
 Name=eXe
+Name[es]=eXe
+Name[es_ES]=eXe
 Comment=The EXtremely Easy to use eLearning authoring tool
 Comment[es]=Herramienta para la creación fácil de recursos educativos
 Comment[ru]=Редактор электронного обучения XHTML
 # Comment=eXe : elearning XHTML editor
+GenericName=Elearning XHTML/HTML5 editor
+GenericName[es]=Editor XHTML/HTML5 destinado a la educación
 Exec=exe %f
 # Icon=exe.png
 Icon=exe
@@ -14,4 +18,3 @@ MimeType=application/x-exe-learning;
 Categories=Education;Utility;TextEditor;
 StartupWMClass=eXe
 # X-Desktop-File-Install-Version=0.10
-
