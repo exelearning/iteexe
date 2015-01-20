@@ -96,12 +96,10 @@ class Application:
         self.preLaunch()
         # preLaunch() has called find_port() to set config.port (the IP port #)
         if self.config.port >= 0:
-            reactor.callWhenRunning(self.launch)
             log.info('serving')
             self.serve()
             log.info('done serving')
         else:
-            #self.xulMessage(_('eXe appears to already be running'))
             log.error('eXe appears to already be running')
             log.error('looks like the eXe server was not able to find a valid port; terminating...')
         shutil.rmtree(self.tempWebDir, True)

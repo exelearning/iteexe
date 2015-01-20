@@ -826,29 +826,9 @@ class MainPage(RenderableLivePage):
 
     def handleQuit(self, client):
         """
-        Stops the server
+        Close client session
         """
-        # first, go ahead and clear out any temp job files still in 
-        # the temporary print directory:
-        log_dir_warnings = 0  
-        # don't warn of any issues with the directories at quit, 
-        # since already warned at initial directory creation
-        (parent_temp_print_dir, dir_warnings) = \
-                self.ClearParentTempPrintDirs(client, log_dir_warnings)
-
         client.close("window.location = \"quit\";")
-
-        if len(self.clientHandleFactory.clientHandles) <= 1:
-            self.webServer.monitoring = False
-            G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
-            try:
-                shutil.rmtree(G.application.tempWebDir, True)
-                shutil.rmtree(G.application.resourceDir, True)                
-            except:
-                log.debug('Don\'t delete temp directorys. ')
-            reactor.callLater(2, reactor.stop)
-        else:
-            log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))
 
     def handleBrowseURL(self, client, url):
         """visit the specified URL using the system browser
