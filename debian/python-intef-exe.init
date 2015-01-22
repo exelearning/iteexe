@@ -19,7 +19,8 @@ DESC="exe"
 NAME=exe
 DAEMON=/usr/bin/exe
 DAEMON_ARGS="--server"
-PIDFILE=/var/run/exe.pid
+PIDFILE=/var/run/exe/exe.pid
+SERVER_USER=exe
 SCRIPTNAME=/etc/init.d/exe
 
 # Exit if the package is not installed
@@ -42,7 +43,7 @@ SCRIPTNAME=/etc/init.d/exe
 do_start()
 {
     mkdir -p /var/run/exe
-    chown exe /var/run/exe
+    chown $SERVER_USER /var/run/exe
 	# Return
 	#   0 if daemon has been started
 	#   1 if daemon was already running
@@ -54,10 +55,10 @@ do_start()
 	#	|| return 2
 	# The above code will not work for interpreted scripts, use the next
 	# six lines below instead (Ref: #643337, start-stop-daemon(8) )
-	start-stop-daemon --start --quiet --pidfile $PIDFILE --startas $DAEMON \
+	start-stop-daemon --start --chuid $SERVER_USER --quiet --pidfile $PIDFILE --startas $DAEMON \
 		--name $NAME --test > /dev/null \
 		|| return 1
-	start-stop-daemon --start --quiet --pidfile $PIDFILE --startas $DAEMON \
+	start-stop-daemon --start --chuid $SERVER_USER --quiet --pidfile $PIDFILE --startas $DAEMON \
 		--name $NAME -- $DAEMON_ARGS \
 		|| return 2
 
