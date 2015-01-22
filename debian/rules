@@ -56,6 +56,7 @@ binary-arch: build install
 	dh_testroot
 	dh_pysupport
 	dh_python
+	dh_installinit --init-script=exe
 	dh_installchangelogs
 	dh_installmime
 	dh_link

@@ -74,8 +74,7 @@ class WebServer:
         self.about       = AboutPage(self.root)
         self.quit        = QuitPage(self.root)
         self.iecmwaring  = IECMWarningPage(self.root)
-        self.monitoring  = False
-
+        self.monitoring = False
 
     def find_port(self):
         """
@@ -95,10 +94,14 @@ class WebServer:
         found_other_eXe = 0
         test_port_num = self.config.port
         test_port_count = 0
+        interface = "127.0.0.1"
 
         # could set a maximum range within the users's config file, 
         # but for now, just hardcode a max:
         max_port_tests = 5000
+        if self.application.server:
+            max_port_tests = 1
+            interface = self.application.interface or "0.0.0.0"
         while not port_test_done:
             test_port_num = self.config.port + test_port_count
             try:
@@ -106,7 +109,7 @@ class WebServer:
                         test_port_num)
                 reactor.listenTCP(test_port_num, 
                                   eXeSite(self.root),
-                                  interface="127.0.0.1")
+                                  interface=interface)
                 log.debug("find_port(): still here without exception " \
                            "after listenTCP on port# %d", test_port_num)
                 found_port = 1
@@ -168,11 +171,11 @@ class WebServer:
                     + "was not available.")
 
     def monitor(self):
-        if self.monitoring:
+        if self.monitoring and not self.application.server:
             for mainpage in self.root.mainpages.values():
                 for mainpage in mainpage.values():
                     if mainpage.clientHandleFactory.clientHandles:
                         reactor.callLater(10, self.monitor)
                         return
-            G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
+            self.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
             reactor.stop()
