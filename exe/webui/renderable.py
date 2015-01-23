@@ -36,6 +36,7 @@ from twisted.web.resource import Resource
 from nevow import loaders
 from twisted.web import static
 from nevow.i18n import render as render_i18n
+from exe import globals as G
 
 import logging
 log = logging.getLogger(__name__)
@@ -208,8 +209,9 @@ class RenderableResource(_RenderablePage, Resource):
 
 class File(static.File):
     def render(self, request):
-        "Disable cache of static files"
-        request.setHeader('Expires', 'Fri, 25 Nov 1966 08:22:00 EST')
-        request.setHeader("Cache-Control", "no-store, no-cache, must-revalidate")
-        request.setHeader("Pragma", "no-cache")
+        if not G.application.server:
+            "Disable cache of static files"
+            request.setHeader('Expires', 'Fri, 25 Nov 1966 08:22:00 EST')
+            request.setHeader("Cache-Control", "no-store, no-cache, must-revalidate")
+            request.setHeader("Pragma", "no-cache")
         return static.File.render(self, request)
