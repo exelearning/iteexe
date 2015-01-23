@@ -64,6 +64,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 
 							xtype: 'container',
 							layout: 'hbox',
+                            hidden: eXe.app.config.server,
 							//layout:'column',
 							border: 1,
 							margin: 10,

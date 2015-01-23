@@ -26,12 +26,13 @@ The PreferencesPage is responsible for managing eXe preferences
 
 import logging
 import json
-from twisted.web.resource      import Resource
-from exe.webui.renderable      import RenderableResource
 import mywebbrowser
-from exe.engine.path import Path
 import os.path
-from exe.webui import common
+
+from twisted.web.resource import Resource
+from exe.webui.renderable import RenderableResource
+from exe.engine.path import Path
+from exe import globals as G
 
 log = logging.getLogger(__name__)
 
@@ -146,14 +147,15 @@ class PreferencesPage(RenderableResource):
             localeName += langName
             self.localeNames.append({'locale': locale, 'text': localeName})
         self.localeNames.sort()
-        for browser in mywebbrowser._browsers:
-            if (browser not in browsersHidden):
-                if browser in browserNames:
-                    self.browsersAvalaibles.append((browserNames[browser], browser))
-        self.browsersAvalaibles.sort()
-        self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
-        for browser in self.browsersAvalaibles:
-            self.browsers.append({'browser': browser[1], 'text': browser[0]})
+        if not G.application.server:
+            for browser in mywebbrowser._browsers:
+                if (browser not in browsersHidden):
+                    if browser in browserNames:
+                        self.browsersAvalaibles.append((browserNames[browser], browser))
+            self.browsersAvalaibles.sort()
+            self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
+            for browser in self.browsersAvalaibles:
+                self.browsers.append({'browser': browser[1], 'text': browser[0]})
 
             
 
@@ -175,17 +177,20 @@ class PreferencesPage(RenderableResource):
             data['docType'] = self.config.docType
             data['locale'] = self.config.locale
             data['internalAnchors'] = self.config.internalAnchors
-            browserSelected = "None"
-            for bname, item in mywebbrowser._browsers.items():
-                if bname not in browsersHidden:
-                    klass, instance = item
-                    if instance == self.config.browser:
-                        browserSelected = bname
-                        break
-            if browserSelected == "custom-browser":
-                if os.path.exists(self.config.browser.name):
-                    browserSelected = self.config.browser.name
-            data['browser'] = browserSelected
+
+            if not G.application.server:
+                browserSelected = "None"
+                for bname, item in mywebbrowser._browsers.items():
+                    if bname not in browsersHidden:
+                        klass, instance = item
+                        if instance == self.config.browser:
+                            browserSelected = bname
+                            break
+                if browserSelected == "custom-browser":
+                    if os.path.exists(self.config.browser.name):
+                        browserSelected = self.config.browser.name
+                data['browser'] = browserSelected
+
             data['showPreferencesOnStart'] = self.config.showPreferencesOnStart
         except Exception as e:
             log.exception(e)
@@ -212,19 +217,22 @@ class PreferencesPage(RenderableResource):
             doctypesel = request.args['docType'][0]
             self.config.docType = doctypesel
             self.config.configParser.set('user', 'docType', doctypesel)
-            browser = request.args['browser'][0]
-            if browser == "None":
-                browser = None
-            try:
-                self.config.browser = mywebbrowser.get(browser)
-            except Exception as e:
-                browser_path = Path(browser)
-                if browser_path.exists():
-                    mywebbrowser.register('custom-browser' , None, mywebbrowser.BackgroundBrowser(browser_path.abspath()), -1)
-                    self.config.browser = mywebbrowser.get('custom-browser')
-                else:
-                    raise e
-            self.config.configParser.set('system', 'browser', browser)
+
+            if not G.application.server:
+                browser = request.args['browser'][0]
+                if browser == "None":
+                    browser = None
+                try:
+                    self.config.browser = mywebbrowser.get(browser)
+                except Exception as e:
+                    browser_path = Path(browser)
+                    if browser_path.exists():
+                        mywebbrowser.register('custom-browser' , None, mywebbrowser.BackgroundBrowser(browser_path.abspath()), -1)
+                        self.config.browser = mywebbrowser.get('custom-browser')
+                    else:
+                        raise e
+                self.config.configParser.set('system', 'browser', browser)
+
             showPreferencesOnStart = request.args['showPreferencesOnStart'][0]
             self.config.showPreferencesOnStart = showPreferencesOnStart
             self.config.configParser.set('user', 'showPreferencesOnStart', showPreferencesOnStart)
