@@ -189,7 +189,7 @@ Ext.application({
         setTimeout(function(){
 		    Ext.get('loading').hide();
 		    Ext.get('loading-mask').fadeOut();
-		  }, 250);
+		  }, 50);
         
         if (!eXe.app.config.showIdevicesGrouped) {
         	var panel = Ext.ComponentQuery.query('#idevice_panel')[0],
