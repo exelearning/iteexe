@@ -856,37 +856,14 @@ class MainPage(RenderableLivePage):
                 log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))
 
     def handleBrowseURL(self, client, url):
-        """visit the specified URL using the system browser
-        
-        if the URL contains %s, substitute the local webDir
-        if the URL contains %t, show a temp file containing NEWS and README """
-        if url.find('%t') > -1:
-            release_notes = os.path.join(G.application.tempWebDir,
-                    'Release_Notes.html')
-            f = open(release_notes, 'wt')
-            f.write('''<html><head><title>eXe Release Notes</title></head>
-                <body><h1>News</h1><pre>\n''')
-            try:
-                news = open(os.path.join(self.config.webDir, 'NEWS'),
-                        'rt').read()
-                readme = open(os.path.join(self.config.webDir, 'README'),
-                        'rt').read()
-                f.write(news)
-                f.write('</pre><hr><h1>Read Me</h1><pre>\n')
-                f.write(readme)
-            except IOError:
-                # fail silently if we can't read either of the files
-                pass
-            f.write('</pre></body></html>')
-            f.close()
-            url = url.replace('%t', release_notes)
-        else:
-            url = url.replace('%s', self.config.webDir)
         log.debug(u'browseURL: ' + url)
-        if hasattr(os, 'startfile'):
-            os.startfile(url)
+        if G.application.server:
+            client.sendScript(u'window.open("%s");' % url)
         else:
-            G.application.config.browser.open(url, new=True)
+            if hasattr(os, 'startfile'):
+                os.startfile(url)
+            else:
+                G.application.config.browser.open(url, new=True)
 
     def handleMergeXliffPackage(self, client, filename, from_source):
         """

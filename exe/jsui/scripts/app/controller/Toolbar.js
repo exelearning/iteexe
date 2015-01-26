@@ -151,10 +151,10 @@ Ext.define('eXe.controller.Toolbar', {
                 click: this.fileOpenTutorial
             },
             '#help_manual': {
-                click: { fn: this.processBrowseEvent, url: 'file://%s/docs/manual/Online_manual.html' }
+                click: { fn: this.processBrowseEvent, url: 'docs/manual/Online_manual.html' }
             },
             '#help_notes': {
-                click: { fn: this.processBrowseEvent, url: 'file://%t' }
+                click: { fn: this.processBrowseEvent, url: 'release_notes' } //TODO: generate release_notes resource
             },
             '#help_website': {
                 click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/' }
