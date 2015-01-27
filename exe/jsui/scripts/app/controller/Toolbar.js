@@ -142,7 +142,7 @@ Ext.define('eXe.controller.Toolbar', {
             	click: { fn: this.processExportEvent, exportType: "csvReport" }
             },
             '#tools_preview': {
-                click: { fn: this.processBrowseEvent, url: location.href + '/preview', title: _('Preview'), id: 'preview_tab' }
+                click: { fn: this.processBrowseEvent, url: location.href + '/preview/', title: _('Preview'), id: 'preview_tab' }
             },
             '#tools_refresh': {
                 click: this.toolsRefresh
@@ -154,7 +154,7 @@ Ext.define('eXe.controller.Toolbar', {
                 click: { fn: this.processBrowseEvent, url: 'docs/manual/Online_manual.html', title: _('eXe Manual'), id: 'manual_tab' }
             },
             '#help_notes': {
-                click: { fn: this.processBrowseEvent, url: 'release_notes', title: _('Release Notes'), id: 'release_notes_tab'} //TODO: generate release_notes resource
+                click: { fn: this.processBrowseEvent, url: 'release_notes/', title: _('Release Notes'), id: 'release_notes_tab'} //TODO: generate release_notes resource
             },
             '#help_website': {
                 click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/', title: _('eXe Website'), id: 'website_tab' }
