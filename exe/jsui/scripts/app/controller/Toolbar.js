@@ -142,7 +142,7 @@ Ext.define('eXe.controller.Toolbar', {
             	click: { fn: this.processExportEvent, exportType: "csvReport" }
             },
             '#tools_preview': {
-                click: { fn: this.processBrowseEvent, url: location.href + '/preview' }
+                click: { fn: this.processBrowseEvent, url: location.href + '/preview', title: _('Preview'), id: 'preview_tab' }
             },
             '#tools_refresh': {
                 click: this.toolsRefresh
@@ -151,19 +151,19 @@ Ext.define('eXe.controller.Toolbar', {
                 click: this.fileOpenTutorial
             },
             '#help_manual': {
-                click: { fn: this.processBrowseEvent, url: 'docs/manual/Online_manual.html' }
+                click: { fn: this.processBrowseEvent, url: 'docs/manual/Online_manual.html', title: _('eXe Manual'), id: 'manual_tab' }
             },
             '#help_notes': {
-                click: { fn: this.processBrowseEvent, url: 'release_notes' } //TODO: generate release_notes resource
+                click: { fn: this.processBrowseEvent, url: 'release_notes', title: _('Release Notes'), id: 'release_notes_tab'} //TODO: generate release_notes resource
             },
             '#help_website': {
-                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/' }
+                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/', title: _('eXe Website'), id: 'website_tab' }
             },
             '#help_issue': {
-                click: { fn: this.processBrowseEvent, url: 'https://forja.cenatic.es/tracker/?group_id=197' }
+                click: { fn: this.processBrowseEvent, url: 'https://forja.cenatic.es/tracker/?group_id=197', title: _('Report an Issue'), id: 'issue_tab' }
             },
             '#help_forums': {
-                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/forums/' }
+                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/forums/', title: _('eXe Forums'), id: 'forums_tab' }
             },
             '#help_about': {
                 click: this.aboutPage
@@ -305,12 +305,24 @@ Ext.define('eXe.controller.Toolbar', {
         about.show();
 	},
     
-    browseURL: function(url) {
-        nevow_clientToServerEvent('browseURL', this, '', url);
+    browseURL: function(url, title, id) {
+        var tab_panel = Ext.ComponentQuery.query('#main_tab')[0];
+
+        if (!tab_panel.down('#' + id)) {
+            tab_panel.add({
+                xtype: 'uxiframe',
+                itemId: id,
+                closable: true,
+                src: url,
+                title: title
+            });
+        }
+
+        tab_panel.setActiveTab(id);
     },
     
     processBrowseEvent: function(menu, item, e, eOpts) {
-        this.browseURL(e.url)
+        this.browseURL(e.url, e.title, e.id)
     },
     
     fileOpenTutorial: function() {

@@ -182,7 +182,6 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleExport,          'exportPackage')
         setUpHandler(self.handleXliffExport,     'exportXliffPackage')
         setUpHandler(self.handleQuit,            'quit')
-        setUpHandler(self.handleBrowseURL,       'browseURL')
         setUpHandler(self.handleMergeXliffPackage,   'mergeXliffPackage')
         setUpHandler(self.handleInsertPackage,   'insertPackage')
         setUpHandler(self.handleExtractPackage,  'extractPackage')
@@ -854,16 +853,6 @@ class MainPage(RenderableLivePage):
                 reactor.callLater(2, reactor.stop)
             else:
                 log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))
-
-    def handleBrowseURL(self, client, url):
-        log.debug(u'browseURL: ' + url)
-        if G.application.server:
-            client.sendScript(u'window.open("%s");' % url)
-        else:
-            if hasattr(os, 'startfile'):
-                os.startfile(url)
-            else:
-                G.application.config.browser.open(url, new=True)
 
     def handleMergeXliffPackage(self, client, filename, from_source):
         """
