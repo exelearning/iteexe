@@ -43,18 +43,19 @@ class LocationButtons(object):
         self.buttons = []
         for key, value in self.names_map.items():
             try:
-                button = {'xtype': 'button', 'text': _(value),
-                          'location': self.MapDir(key)}
+                button = {
+                    'xtype': 'button',
+                    'text': _(value),
+                    'original_text': value,
+                    'location': self.MapDir(key)
+                }
                 self.buttons.append(button)
             except:
                 pass
 
     def updateText(self):
-        i = 0
-        for value in self.names_map.values():
-            button = self.buttons[i]
-            button['text'] = _(value)
-            i = i + 1
+        for button in self.buttons:
+            button['text'] = _(button['original_text'])
 
     def MapDir(self, code):
         if sys.platform[:3] == "win":
