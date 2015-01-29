@@ -306,9 +306,15 @@ Ext.define('eXe.controller.Toolbar', {
 	},
     
     browseURL: function(url, title, id) {
-        var tab_panel = Ext.ComponentQuery.query('#main_tab')[0];
+        var tab_panel = Ext.ComponentQuery.query('#main_tab')[0],
+            tab = tab_panel.down('#' + id);
 
-        if (!tab_panel.down('#' + id)) {
+        if (tab && tab.itemId === 'print_tab') {
+            tab_panel.remove(tab);
+            tab = null;
+        }
+
+        if (!tab) {
             tab_panel.add({
                 xtype: 'uxiframe',
                 itemId: id,

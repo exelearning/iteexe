@@ -120,7 +120,7 @@ class SinglePage(Page):
                     if hasGalleryIdevice(child):
                         return True
             return hasGallery
-        
+
         hasGallery = hasGalleryIdevice(self.node)
         def hasWikipediaIdevice(node):
             hasWikipedia = common.hasWikipediaIdevice(node)
@@ -129,7 +129,7 @@ class SinglePage(Page):
                     if hasWikipediaIdevice(child):
                         return True
             return hasWikipedia
-        
+
         hasWikipedia = hasWikipediaIdevice(self.node)
 
         def nodeHasMediaelement(node):
@@ -174,7 +174,7 @@ class SinglePage(Page):
         if dT == "HTML5" or self.hasMediaelement:
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         style = G.application.config.styleStore.getStyle(self.node.package.style)
-        
+
         # jQuery
         if style.hasValidConfig:
             if style.get_jquery() == True:
@@ -183,7 +183,7 @@ class SinglePage(Page):
                 html += u'<script type="text/javascript" src="'+style.get_jquery()+'"></script>'+lb
         else:
             html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
-            
+
         if hasGallery:
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
@@ -191,26 +191,21 @@ class SinglePage(Page):
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         if for_print:
-            # include extra print-script for onload bit 
-            html += u'<script type="text/javascript">' + lb
-            html += u'var interval;' + lb
-            html += u'function checkClose() {' + lb
-            html += u'    if (document.hasFocus()) {' + lb
-            html += u'        alert("' + _("You can close this window") + '");' + lb
-            html += u'        clearInterval(interval);' + lb
-#             html += u'        window.close();' + lb
-            html += u'    }' + lb
-            html += u'}' + lb
-            html += u'function print_page() {' + lb
-            html += u'     if(typeof document.hasFocus === "undefined") {' + lb
-            html += u'         document.hasFocus = function () {' + lb
-            html += u'             return document.visibilityState == "visible";' + lb
-            html += u'         }' + lb
-            html += u'     }' + lb
-            html += u'     window.print();' + lb
-            html += u'     interval = setInterval(checkClose, 300);' + lb
-            html += u'}' + lb
-            html += u'</script>' + lb
+            # include extra print-script for onload bit
+            html += u'''<script type="text/javascript">
+function print_page() {
+    var tab_panel = top.Ext.ComponentQuery.query("#main_tab")[0],
+        tab = tab_panel.down("#print_tab");
+    if (top.Ext.isIE || /trident/.test(top.Ext.userAgent))
+        document.execCommand('print', false, null);
+    else
+        window.print();
+    setInterval(function() {
+        tab_panel.remove(tab);
+    }, 300);
+}
+</script>
+'''
         if style.hasValidConfig:
             html += style.get_extra_head()
         html += u"</head>"+lb

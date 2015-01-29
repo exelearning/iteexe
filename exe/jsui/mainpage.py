@@ -428,8 +428,7 @@ class MainPage(RenderableLivePage):
             rel_name = rel_name.replace('\\', '/')
         if rel_name.startswith('/'):
             rel_name = rel_name[1:]
-        http_relative_pathname = "http://127.0.0.1:" + str(self.config.port) \
-                                     + '/' + rel_name
+        http_relative_pathname = '/' + rel_name
         log.debug('printdir http_relative_pathname=' + http_relative_pathname)
         return http_relative_pathname
 
@@ -795,7 +794,7 @@ class MainPage(RenderableLivePage):
                                                  stylesDir, printit)
             if printit == 1 and not exported_dir is None:
                 web_printdir = self.get_printdir_relative2web(exported_dir)
-                G.application.config.browser.open(web_printdir)
+                client.call(u'eXe.app.getController("Toolbar").browseURL', web_printdir, _('Print'), 'print_tab')
 
         elif exportType == 'webSite':
             self.exportWebSite(client, filename, stylesDir)
