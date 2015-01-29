@@ -417,7 +417,6 @@ class MainPage(RenderableLivePage):
         if (int(rm_top_dir) != 0):
             os.rmdir(tempdir)
       
-        
     def get_printdir_relative2web(self, exported_dir):
         """
         related to the following ClearParentTempPrintDirs(), return a
@@ -428,9 +427,8 @@ class MainPage(RenderableLivePage):
             rel_name = rel_name.replace('\\', '/')
         if rel_name.startswith('/'):
             rel_name = rel_name[1:]
-        http_relative_pathname = '/' + rel_name
-        log.debug('printdir http_relative_pathname=' + http_relative_pathname)
-        return http_relative_pathname
+        log.debug('printdir relname=' + rel_name)
+        return rel_name
 
     def ClearParentTempPrintDirs(self, client, log_dir_warnings):
         """
