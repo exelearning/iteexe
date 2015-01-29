@@ -794,8 +794,8 @@ class MainPage(RenderableLivePage):
             if printit == 1 and not exported_dir is None:
                 web_printdir = self.get_printdir_relative2web(exported_dir)
                 client.sendScript(
-                    u'eXe.app.getController("Toolbar").browseURL(%s, %s, %s)' % (
-                        'location.origin + ' + web_printdir,
+                    u'eXe.app.getController("Toolbar").browseURL(%s, "%s", "%s")' % (
+                        'location.origin + "%s"' % web_printdir,
                         _('Print'),
                         'print_tab'
                     )
