@@ -427,8 +427,9 @@ class MainPage(RenderableLivePage):
             rel_name = rel_name.replace('\\', '/')
         if rel_name.startswith('/'):
             rel_name = rel_name[1:]
-        log.debug('printdir relname=' + rel_name)
-        return rel_name
+        http_relative_pathname = '/' + rel_name
+        log.debug('printdir http_relative_pathname=' + http_relative_pathname)
+        return http_relative_pathname
 
     def ClearParentTempPrintDirs(self, client, log_dir_warnings):
         """
@@ -792,7 +793,12 @@ class MainPage(RenderableLivePage):
                                                  stylesDir, printit)
             if printit == 1 and not exported_dir is None:
                 web_printdir = self.get_printdir_relative2web(exported_dir)
-                client.call(u'eXe.app.getController("Toolbar").browseURL', web_printdir, _('Print'), 'print_tab')
+                client.call(
+                    u'eXe.app.getController("Toolbar").browseURL',
+                    'location.origin + ' + web_printdir,
+                    _('Print'),
+                    'print_tab'
+                )
 
         elif exportType == 'webSite':
             self.exportWebSite(client, filename, stylesDir)
