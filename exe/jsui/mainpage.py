@@ -793,11 +793,12 @@ class MainPage(RenderableLivePage):
                                                  stylesDir, printit)
             if printit == 1 and not exported_dir is None:
                 web_printdir = self.get_printdir_relative2web(exported_dir)
-                client.call(
-                    u'eXe.app.getController("Toolbar").browseURL',
-                    'location.origin + ' + web_printdir,
-                    _('Print'),
-                    'print_tab'
+                client.sendScript(
+                    u'eXe.app.getController("Toolbar").browseURL(%s, %s, %s)' % (
+                        'location.origin + ' + web_printdir,
+                        _('Print'),
+                        'print_tab'
+                    )
                 )
 
         elif exportType == 'webSite':
