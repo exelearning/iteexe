@@ -137,7 +137,14 @@ Ext.application({
             location = window.top.location.pathname;
         nevow_closeLive('window.top.location = "' + location + '";');
     },
-    
+
+    closeMessages: function() {
+        var messages = Ext.ComponentQuery.query("messagebox");
+
+        for(var i in messages)
+            messages[i].close();
+    },
+
     showLoadError: function() {
     	if (eXe.app.config.loadErrors.length > 0) {
     		Ext.Msg.alert(_('Load Error'), eXe.app.config.loadErrors.pop(), eXe.app.showLoadError);

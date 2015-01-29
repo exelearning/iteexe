@@ -306,25 +306,35 @@ Ext.define('eXe.controller.Toolbar', {
 	},
     
     browseURL: function(url, title, id) {
-        var tab_panel = Ext.ComponentQuery.query('#main_tab')[0],
-            tab = tab_panel.down('#' + id);
+        if (Ext.isSecure && url.substr(0, 7) === 'http://') {
+            Ext.Msg.alert(
+                title,
+                Ext.String.format(
+                    _('The requested url is not secure but eXe is hosted in a secure site. To prevent \
+browser restrictions, you must click in the url: {0}'),
+                    '<a href="' + url + '" target="_blank" onclick="eXe.app.closeMessages()">' + url + '</a>')
+            );
+        } else {
+            var tab_panel = Ext.ComponentQuery.query('#main_tab')[0],
+                tab = tab_panel.down('#' + id);
 
-        if (tab && tab.itemId === 'print_tab') {
-            tab_panel.remove(tab);
-            tab = null;
+            if (tab && tab.itemId === 'print_tab') {
+                tab_panel.remove(tab);
+                tab = null;
+            }
+
+            if (!tab) {
+                tab_panel.add({
+                    xtype: 'uxiframe',
+                    itemId: id,
+                    closable: true,
+                    src: url,
+                    title: title
+                });
+            }
+
+            tab_panel.setActiveTab(id);
         }
-
-        if (!tab) {
-            tab_panel.add({
-                xtype: 'uxiframe',
-                itemId: id,
-                closable: true,
-                src: url,
-                title: title
-            });
-        }
-
-        tab_panel.setActiveTab(id);
     },
     
     processBrowseEvent: function(menu, item, e, eOpts) {
