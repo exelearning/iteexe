@@ -74,13 +74,26 @@ function setAttrib(elm, attrib, value) {
 	dom.setAttrib(elm, attrib.toLowerCase(), value);
 }
 
+/* The new exelearning: audio and video are affected by class change, so we don't change class in some cases */
+function is_reserved_class(class_array) {
+	var reserved_classes = ["mceItemMedia", "mceItemVideo", "mceItemAudio", "mceItemAudio", "mceItemQuickTime", "mceItemRealMedia"]; 
+    for(var i=0; i<class_array.length; i++) {
+		for(var j=0; j<reserved_classes.length; j++) {
+			if (class_array[i] == reserved_classes[j]) return true;
+		}
+    }
+	return false;
+}
+/* The new exelearning */
+
 function setAllAttribs(elm) {
 	var f = document.forms[0];
 
 	setAttrib(elm, 'title');
 	setAttrib(elm, 'id');
 	setAttrib(elm, 'style');
-	setAttrib(elm, 'class', getSelectValue(f, 'classlist'));
+	if(is_reserved_class(elm.classList)==false)
+		setAttrib(elm, 'class', getSelectValue(f, 'classlist'));
 	setAttrib(elm, 'dir');
 	setAttrib(elm, 'lang');
 	setAttrib(elm, 'tabindex');
