@@ -39,6 +39,8 @@ function init() {
 
 	addClassesToList('classlist', 'advlink_styles');
 	selectByValue(f, 'classlist', className, true);
+	if(is_reserved_class(elm.classList)==true)
+		document.getElementById("classlist").disabled = true;
 
 	TinyMCE_EditableSelects.init();
 }
