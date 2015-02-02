@@ -312,7 +312,7 @@ class Package(Persistable):
     i.e. the "package".
     """
     persistenceVersion = 13
-    nonpersistant      = ['resourceDir', 'filename', 'previewDir']
+    nonpersistant      = ['resourceDir', 'filename', 'previewDir', 'printDir']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
     tempFile           = False # This is set when the package is saved as a temp copy file
@@ -351,6 +351,7 @@ class Package(Persistable):
         self.style         = G.application.config.defaultStyle
         self._isChanged    = False
         self.previewDir    = None
+        self.printDir      = None
         self.idevices      = []
         self.dublinCore    = DublinCore()
         self._lang = G.application.config.locale.split('_')[0]
@@ -946,7 +947,11 @@ class Package(Persistable):
             if hasattr(self, 'previewDir'):
                 if self.previewDir:
                     shutil.rmtree(self.previewDir, True)
+            if hasattr(self, 'printDir'):
+                if self.printDir:
+                    shutil.rmtree(self.printDir, True)
         self.previewDir = None
+        self.printDir = None
 
     # Properties
     isChanged     = property(lambda self: self._isChanged, set_changed)

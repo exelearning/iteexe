@@ -714,7 +714,7 @@ Translation software.')
     },
     
 	exportPackage: function(exportType, exportDir) {
-	    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage' || exportType == 'ipod' || exportType == 'mxml' ) {
+	    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'ipod' || exportType == 'mxml' ) {
 	        if (exportDir == '') {
                 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
 		            type: eXe.view.filepicker.FilePicker.modeGetFolder,
@@ -816,22 +816,8 @@ Translation software.')
 	},// exportPackage()
     
     filePrint: function() {
-	   // filePrint step#1: create a temporary print directory, 
-	   // and return that to filePrint2, which will then call exportPackage():
-	   var tmpdir_suffix = ""
-	   var tmpdir_prefix = "eXeTempPrintDir_"
-	   nevow_clientToServerEvent('makeTempPrintDir', this, '', tmpdir_suffix, 
-	                              tmpdir_prefix, "eXe.app.getController('Toolbar').filePrint2")
-	   // note: as discussed below, at the end of filePrint3_openPrintWin(), 
-	   // the above makeTempPrintDir also removes any previous print jobs
-	},
-	
-	filePrint2: function(tempPrintDir, printDir_warnings) {
-	   if (printDir_warnings.length > 0) {
-	      Ext.Msg.alert("", printDir_warnings)
-	   }
-	   this.exportPackage('printSinglePage', tempPrintDir);
-	},
+        this.browseURL(location.href + '/print/', _('Print'), 'print_tab');
+    },
 	
     recentRender: function() {
     	Ext.Ajax.request({

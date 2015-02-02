@@ -151,9 +151,7 @@ class WebServer:
         self.root.putChild("scripts",     File(webDir+"/scripts"))
         self.root.putChild("style",       File(self.config.stylesDir))
         self.root.putChild("docs",        File(webDir+"/docs"))
-        self.root.putChild("temp_print_dirs",
-                              File(self.tempWebDir+"/temp_print_dirs"))
-        self.root.putChild("previews",    
+        self.root.putChild("previews",
                               File(self.tempWebDir+"/previews"))
         self.root.putChild("templates",   File(webDir+"/templates"))
 
