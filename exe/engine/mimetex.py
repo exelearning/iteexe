@@ -38,6 +38,8 @@ def compile(latex, fontsize=4, latex_is_file=False):
         cmd = Path('/usr/lib/cgi-bin/mimetex.cgi')
         if not cmd.exists():
             cmd = Path('/var/www/cgi-bin/mimetex.cgi')
+            if not cmd.exists():
+                cmd = Path('/usr/bin/mimetex')
     log.debug(u"mimetex command=%s" % cmd)
     # Twisted uses SIGCHLD in a way that conflicts with the Popen() family
     # (see Twisted FAQ)  So save their handler and temporarily restore default.
