@@ -19,7 +19,7 @@ Prefix: %{_prefix}
 ExclusiveArch: i686
 BuildRequires: python-devel
 BuildRequires: python >= %{pyver}, GitPython
-Requires: python >= %{pyver}, python-setuptools, python-imaging, python-zope-interface, python-chardet, python-lxml
+Requires: python >= %{pyver}, python-setuptools, python-imaging, python-zope-interface, python-chardet, python-lxml, python-feedparser
 Obsoletes: exe-twisted, exe
 
 %description
