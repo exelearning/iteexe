@@ -57,6 +57,8 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .toggle-idevice{display:none}
 /* Autoclear */
 .exe-clear{overflow:auto}
+/* When exported, hide the elements with exe-hide class*/
+.exe-hide{display: none}
 /* JavaScript on/offf */
 .js-required{display:none}
 .js .js-required{display:block}
