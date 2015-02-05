@@ -51,7 +51,7 @@ dataFiles('exe/webui', '../Resources/exe',
         ['style', 'css', 'images', 'docs',
             'scripts', 'schemas', 'templates'
             ],
-          excludes=['mimetex.cgi', 'mimetex.64.cgi', 'mimetex.exe'])
+          excludes=['mimetex.exe'])
 
 # Add in the
 dataFiles('exe', '../Resources/exe', ['locale'])
