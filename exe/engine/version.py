@@ -26,25 +26,21 @@ Version Information
 project = "exe"
 pkg_version = None
 try:
-    pkg_version = open('version').readline()
-    release = pkg_version[0:-42]
+    line = open('debian/changelog').readline()
+    release = line.split(':')[1].split(')')[0]
 except:
     try:
-        line = open('debian/changelog').readline()
-        release = line.split(':')[1].split(')')[0]
+        import pkg_resources
+        pkg_version = pkg_resources.require(project)[0].version
+        release = pkg_version[0:-42]
     except:
-        try:
-            import pkg_resources
-            pkg_version = pkg_resources.require(project)[0].version
+        import sys
+        if sys.platform[:3] == "win":
+            pkg_version = open(sys.prefix + '/version').readline()
             release = pkg_version[0:-42]
-        except:
-            import sys
-            if sys.platform[:3] == "win":
-                pkg_version = open(sys.prefix + '/version').readline()
-                release = pkg_version[0:-42]
-            else:
-                pkg_version = open('../Resources/exe/version').readline()
-                release = pkg_version[0:-42]
+        else:
+            pkg_version = open('../Resources/exe/version').readline()
+            release = pkg_version[0:-42]
 
 try:
     import git
