@@ -1,9 +1,7 @@
 #!/usr/bin/python
 
 # setup.py
-from distutils.core            import setup
-import pkg_resources
-pkg_resources.require('gitpython>=0.3.1')
+from distutils.core import setup
 from exe.engine import version
 
 g_files = {'/usr/share/exe': ["README",

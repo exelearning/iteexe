@@ -1,13 +1,9 @@
 #!/usr/bin/python
 
 # setup.py
-import os
-import time
-from distutils.core            import setup
-from exe.engine.path           import Path
-import pkg_resources
-pkg_resources.require('gitpython>=0.3.1')
-from exe.engine                import version
+from distutils.core import setup
+from exe.engine.path import Path
+from exe.engine import version
 import py2app
 
 # Make main.py if it doesn't exist
