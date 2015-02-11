@@ -25,18 +25,9 @@
 WebServer module
 """
 
-# Redirect std err for importing twisted and nevow
-import sys
-from cStringIO import StringIO
-sys.stderr, oldStdErr = StringIO(), sys.stderr
-sys.stdout, oldStdOut = StringIO(), sys.stdout
-try:
-    from twisted.internet              import reactor
-    from twisted.internet.error        import CannotListenError
-    from exe.webui.packageredirectpage import PackageRedirectPage
-finally:
-    sys.stderr = oldStdErr
-    sys.stdout = oldStdOut
+from twisted.internet              import reactor
+from twisted.internet.error        import CannotListenError
+from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage          import EditorPage
 from exe.webui.stylemanagerpage    import StyleManagerPage
 from exe.webui.preferencespage     import PreferencesPage
@@ -108,7 +99,7 @@ class WebServer:
                 log.debug("find_port(): trying to listenTCP on port# %d", 
                         test_port_num)
                 reactor.listenTCP(test_port_num, 
-                                  eXeSite(self.root),
+                                  eXeSite(self.root, server=self),
                                   interface=interface)
                 log.debug("find_port(): still here without exception " \
                            "after listenTCP on port# %d", test_port_num)

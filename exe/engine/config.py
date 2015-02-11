@@ -108,7 +108,7 @@ class Config(object):
         'file attachments': [x_('Non-Textual Information')],
         'sort items': [x_('Experimental')]
     }
-    
+
     @classmethod
     def getConfigPath(cls):
         obj = cls.__new__(cls)
@@ -148,7 +148,7 @@ class Config(object):
         # None for system default
         self.browser = None
         # docType  is the HTML export format
-        self.docType = 'XHTML' 
+        self.docType = 'XHTML'
         # locale is the language of the user
         self.locale = chooseDefaultLocale(self.localeDir)
         # internalAnchors indicate which exe_tmp_anchor tags to generate for each tinyMCE field
@@ -158,7 +158,7 @@ class Config(object):
         self.showPreferencesOnStart = "1"
         self.showIdevicesGrouped = "1"
         # tinymce option
-        self.editorMode = 'permissive' 
+        self.editorMode = 'permissive'
         # styleSecureMode : if this [user] key is = 0  , exelearning can run python files in styles
         # as websitepage.py , ... ( deactivate secure mode )
         self.styleSecureMode="1"
@@ -329,11 +329,11 @@ class Config(object):
         if self.configParser.has_section('system'):
             system = self.configParser.system
 
-            
+
             self.port           = int(system.port)
             self.browser        = None if system.browser == u"None" else system.browser
-            
-            
+
+
             if not G.application.portable:
                 self.dataDir        = Path(system.dataDir)
                 self.configDir      = Path(system.configDir)
@@ -360,9 +360,9 @@ class Config(object):
         # new installation) create it
         if not self.configDir.exists():
             self.configDir.mkdir()
-		
-        if not G.application.standalone: 
-             #FM: Copy styles         
+
+        if not G.application.standalone:
+             #FM: Copy styles
             if not os.path.exists(self.stylesDir) or not os.listdir(self.stylesDir):
                 self.copyStyles() 
             else:
@@ -378,7 +378,7 @@ class Config(object):
             else:
                 self.stylesDir     = Path(self.webDir/'style').abspath()
             
-               
+
         # Get the list of recently opened projects
         self.recentProjects = []
         if self.configParser.has_section('recent_projects'):
@@ -390,7 +390,7 @@ class Config(object):
             recentProjectsItems.sort()
             for key, path in recentProjectsItems:
                 self.recentProjects.append(path)
-                
+
         # Load the list of "hidden" iDevices
         self.hiddeniDevices = []
         if self.configParser.has_section('idevices'):
@@ -534,7 +534,6 @@ class Config(object):
                     shutil.copytree(bksdirstyle, dstdirstyle)
                 else:
                     shutil.copy(bksdirstyle, dstdirstyle)                    
-                    
 
     def loadLocales(self):
         """
@@ -555,7 +554,3 @@ class Config(object):
                     log.debug(" loading locale %s" % locale)
                     self.locales[locale].install(unicode=True)
                     __builtins__['c_'] = lambda s: self.locales[locale].ugettext(s) if s else s
-
-
-
-# ===========================================================================

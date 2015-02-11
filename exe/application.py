@@ -31,11 +31,10 @@ import logging
 # Make it so we can import our own nevow and twisted etc.
 if os.name == 'posix' and not ('--standalone' in sys.argv or '--portable' in sys.argv):
     sys.path.insert(0, '/usr/share/exe')
+from exe.engine.userstore import UserStore
 from getopt import getopt, GetoptError
 from exe.webui.webserver import WebServer
 from exe.webui.browser import launchBrowser
-from exe.engine.idevicestore import IdeviceStore
-from exe.engine.translate import installSafeTranslate
 from exe.engine.package import Package
 from exe.engine import version
 from exe import globals
@@ -80,7 +79,8 @@ class Application:
         Initialize
         """
         self.config = None
-        self.ideviceStore = None
+        self.defaultConfig = None
+        self.userStore = None
         self.packagePath = None
         self.webServer = None
         self.standalone = False  # Used for the ready to run exe
@@ -102,7 +102,6 @@ class Application:
         """
         self.processArgs()
         self.loadConfiguration()
-        installSafeTranslate()
         self.preLaunch()
         # preLaunch() has called find_port() to set config.port (the IP port #)
         if self.config.port >= 0:
@@ -185,6 +184,8 @@ class Application:
             self.config = configKlass()
             self.loadErrors.append(
                 _(u'An error has occurred when loading your config. A backup is saved at %s') % backup)
+        self.defaultConfig = self.config
+        self.userStore = UserStore(self.config.configDir)
         log.debug("logging set up")
 
     def preLaunch(self):
@@ -193,19 +194,6 @@ class Application:
         Needed for unit tests
         """
         log.debug("preLaunch")
-        self.ideviceStore = IdeviceStore(self.config)
-        try:
-            self.ideviceStore.load()
-        except:
-            backup = self.config.configDir / 'idevices.backup'
-            if backup.exists():
-                backup.rmtree()
-            (self.config.configDir / 'idevices').move(backup)
-            self.loadErrors.append(
-                _(u'An error has occurred when loading your Idevice Store. A backup is saved at %s') % backup)
-            self.ideviceStore.load()
-        # Make it so jelly can load objects from ~/.exe/idevices
-        sys.path.append(self.config.configDir / 'idevices')
         self.webServer = WebServer(self, self.packagePath)
         # and determine the web server's port before launching the client, so it can use the same port#:
         self.webServer.find_port()
