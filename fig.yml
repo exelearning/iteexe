@@ -1,0 +1,17 @@
+front:
+  build: images/apache2
+  ports:
+    - "80:80"
+  links:
+    - app
+  volumes:
+    - images/apache2/sites:/etc/apache2/sites-enabled
+    - images/apache2/htaccess:/etc/apache2/htaccess
+    - images/apache2/log:/var/log/apache2
+
+app:
+  build: images/exe
+  volumes:
+    - .:/home/app
+  working_dir: /home/app
+  entrypoint: images/exe/run.sh
