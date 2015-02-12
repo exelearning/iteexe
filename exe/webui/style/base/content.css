@@ -73,19 +73,19 @@ li{list-style-position:outside}
 
 /* Header */
 
-.iDevice .iDevice_header{
+.ToDoiDevice .iDevice_header{
 background-color:#6699CC;
 color:#000;
 /*text-shadow:1px 1px 1px #FFFFFF;*/
 border:1px solid red;
 padding-left:0; /* To make toggle-idevice work in IE8  */
 }
-.iDeviceTitle{
+.ToDoiDeviceTitle{
 padding-left:35px;
 background-position:5px 0;
 }
-.iDevice_header .toggle-idevice{margin-right:10px}
-.iDevice_inner{border-top-right-radius:0;border-top-left-radius:0;
+.ToDoiDevice_header .toggle-idevice{margin-right:10px}
+.ToDoiDevice_inner{border-top-right-radius:0;border-top-left-radius:0;
 border-color:red;
 border-top:0;
 background-color:#FFFFCC;
@@ -114,12 +114,12 @@ background-position:0 0;
 
 /* emphasis0 iDevices */
 /* Wrapper */
-.iDevice.emphasis0{
+.ToDoiDevice.emphasis0{
 padding:10px 20px;border:1px solid #ddd;border-radius:5px;
 border-color:red;
 background-color:#FFFFCC;
 }
-.hidden-idevice .emphasis0{padding:0;visibility:hidden}
+.ToDohidden-idevice .emphasis0{padding:0;visibility:hidden}
 
 
 
@@ -155,6 +155,7 @@ background-color:#FFFFCC;
 .ReflectionIdevice .iDeviceTitle{background-image:url(icon_account_black.png)}
 .toggle-idevice a{background-image:url(_style_icons_black.png)}
 */
+/* Black icons:
 .iDeviceTitle{background-image:url(icon_star_black.png)}
 .activityIdevice .iDeviceTitle{background-image:url(icon_assignment_black.png)}
 .readingIdevice .iDeviceTitle{background-image:url(icon_unread_black.png)}
@@ -169,3 +170,4 @@ background-color:#FFFFCC;
 .objectivesIdevice .iDeviceTitle{background-image:url(icon_info_black.png)}
 .ReflectionIdevice .iDeviceTitle{background-image:url(icon_account_black.png)}
 .toggle-idevice a{background-image:url(_style_icons_black.png)}
+*/
