@@ -106,9 +106,13 @@ class Application:
         # preLaunch() has called find_port() to set config.port (the IP port #)
         if self.config.port >= 0:
             if self.server:
-                daemonize()
-                checkPID(PID_FILE)
-                open(PID_FILE, 'wb').write(str(os.getpid()))
+                pidfile = PID_FILE
+                if not self.standalone:
+                    daemonize()
+                else:
+                    pidfile = 'exe/config/exe.pid'
+                checkPID(pidfile)
+                open(pidfile, 'wb').write(str(os.getpid()))
             else:
                 reactor.callWhenRunning(self.launch)
             log.info('serving')

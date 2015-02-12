@@ -457,7 +457,7 @@ class Config(object):
         if G.application.server:
             startLoggingWithObserver(PythonLoggingObserver().emit)
 
-        if G.application.server and sys.platform[:5] == "linux":
+        if G.application.server and not G.application.standalone and sys.platform[:5] == "linux":
             hdlr = SysLogHandler(address="/dev/log", facility=SysLogHandler.LOG_DAEMON)
             format = "exe: %(name)s %(levelname)s %(message)s"
         else:

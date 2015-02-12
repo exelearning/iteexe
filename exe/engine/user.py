@@ -27,9 +27,9 @@ class User(object):
         self.name = name
         self.packageStore = PackageStore()
         configPath = configPath / name
-        self.initialConfig = False
+        self.initialConfig = True
         if configPath.exists():
-            self.initialConfig = True
+            self.initialConfig = False
         self.config = UserConfig(configPath)
         self.ideviceStore = IdeviceStore(self.config)
         self.ideviceStore.load()
