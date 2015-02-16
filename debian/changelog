@@ -1,3 +1,9 @@
+intef-exe (3:2.0.2~dev) UNRELEASED; urgency=low
+
+  * Prepare next bug fix release
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 16 Feb 2015 20:02:18 +0100
+
 python-intef-exe (3:2.0.1) lucid; urgency=low
 
   [Ignacio Gros]
