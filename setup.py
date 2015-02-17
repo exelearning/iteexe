@@ -10,7 +10,7 @@ g_files = {'/usr/share/exe': ["README",
                              "ChangeLog",
                              "exe/webui/mr_x.gif"],
           '/usr/share/applications': ["exe.desktop"],
-          '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
+          '/usr/share/icons/hicolor/48x48/apps': ["exe.xpm"],
         }
 
 g_oldBase = "exe/webui"
