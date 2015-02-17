@@ -563,6 +563,8 @@ var ImageDialog = {
 
 		u = tinyMCEPopup.editor.documentBaseURI.toAbsolute(u);
 
+		var source = document.getElementById('src').value;
+		tinyMCEPopup.dom.setAttrib('prev','onclick','ImageDialog.showPreviewImage("'+source+'")');
 		if (!st)
 			tinyMCEPopup.dom.setHTML('prev', '<img id="previewImg" src="' + u + '" border="0" onload="ImageDialog.updateImageData(this);" onerror="ImageDialog.resetImageData();" />');
 		else

@@ -2,14 +2,7 @@
 
 # setup.py
 from setuptools import setup
-import pkg_resources
-pkg_resources.require('gitpython>=0.3.1')
 from exe.engine import version
-from exe.engine.path import Path
-
-# Before we install, make sure all the mimetex binaries are executable
-Path('exe/webui/templates/mimetex.cgi').chmod(0755)
-Path('exe/webui/templates/mimetex.64.cgi').chmod(0755)
 
 g_files = {'/usr/share/exe': ["README",
                              "COPYING",
@@ -17,7 +10,7 @@ g_files = {'/usr/share/exe': ["README",
                              "ChangeLog",
                              "exe/webui/mr_x.gif"],
           '/usr/share/applications': ["exe.desktop"],
-          '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
+          '/usr/share/icons/hicolor/48x48/apps': ["exe.xpm"],
         }
 
 g_oldBase = "exe/webui"
