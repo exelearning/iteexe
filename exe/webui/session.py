@@ -34,19 +34,8 @@ def getLocaleFromRequest(request):
 
     return locale
 
-    def renderHTTP(self, ctx):
-        request = inevow.IRequest(ctx)
-        if self.real_prepath_len is not None:
-            path = request.postpath = request.prepath[self.real_prepath_len:]
-            del request.prepath[self.real_prepath_len:]
-        result = defer.maybeDeferred(self.renderLocalized, request).addCallback(
-            self._handle_NOT_DONE_YET, request)
-        return result
 
 compy.registerAdapter(appserver.OldResourceAdapter, resource.IResource, inevow.IResource)
-
-
-compy.registerAdapter(eXeResourceAdapter, resource.IResource, inevow.IResource)
 
 
 class eXeRequest(appserver.NevowRequest):
