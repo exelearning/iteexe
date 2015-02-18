@@ -1,5 +1,5 @@
 #!/bin/sh
-# postinst script for python-intef-exe
+# postinst script for intef-exe
 #
 # see: dh_installdeb(1)
 
