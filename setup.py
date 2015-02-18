@@ -2,8 +2,6 @@
 
 # setup.py
 from setuptools import setup
-import pkg_resources
-pkg_resources.require('gitpython>=0.3.1')
 from exe.engine import version
 
 g_files = {'/usr/share/exe': ["README",
@@ -12,7 +10,7 @@ g_files = {'/usr/share/exe': ["README",
                              "ChangeLog",
                              "exe/webui/mr_x.gif"],
           '/usr/share/applications': ["exe.desktop"],
-          '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
+          '/usr/share/icons/hicolor/48x48/apps': ["exe.xpm"],
         }
 
 g_oldBase = "exe/webui"

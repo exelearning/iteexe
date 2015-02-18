@@ -1,0 +1,126 @@
+'\" t
+.\"     Title: INTEF-EXE
+.\"    Author: Juan Rafael Fern\('andez <jrfern@telefonica.net>
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 02/16/2015
+.\"    Manual: exe_do User Manual
+.\"    Source: exe_do
+.\"  Language: English
+.\"
+.TH "INTEF\-EXE" "1" "02/16/2015" "exe_do" "exe_do User Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+exe_do \- the commandline version of eXe
+.SH "SYNOPSIS"
+.HP \w'\fBexe_do\ [options]\ input_file\ [output_file]\fR\ 'u
+\fBexe_do [options] input_file [output_file]\fR [{\fB\-h\fR}]
+.SH "DESCRIPTION"
+.PP
+This manual page documents briefly the
+\fBexe_do\fR
+and
+\fBbar\fR
+commands\&.
+.PP
+\fBexe_do\fR
+is the commandline version of eXe, The EXtremely Easy to use eLearning authoring tool, and was created for work with massive numbers of ELP files\&.
+.SH "OPTIONS"
+.PP
+The program follows the usual GNU command line syntax, with long options starting with two dashes (`\-\*(Aq)\&. A summary of options is included below\&.
+.PP
+\fB\-\-editable\fR, \fB\-r\fR, \fB\-\-report\fR
+.RS 4
+Add the required files to generate an export editable by eXeLearning\&.
+.PP
+\fB\-f\fR, \fB\-\-force\fR
+.RS 4
+Force overwrite of output_file\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-l\fR, \fB\-\-checker_logfile\fR
+.RS 4
+Display this help and exit\&.
+.PP
+\fB\-i\fR, \fB\-\-import\fR
+.RS 4
+Import to output_file ELP package, input_file in one of the given formats: xml or xliff\&.
+.RE
+Checker log file\&.
+.RE
+Generates resource info report to text output_file from input_file ELP package\&.
+.RE
+.PP
+\fB\-s\fR, \fB\-\-set\fR
+.RS 4
+Set ELP field values\&. Example: \-s style=Default,root\&.title=\*(AqRoot Node\*(Aq\&.
+.RE
+.PP
+\fB\-w\fR, \fB\-\-write_package\fR
+.RS 4
+Write field values to ELP\&.
+.RE
+.PP
+\fB\-x\fR, \fB\-\-export\fR
+.RS 4
+Export input_file ELP package to optional output_file on one of the given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage, xliff or epub3\&.
+.RE
+.SH "FILES"
+.PP
+${HOME}/\&.exe/exe\&.conf
+.RS 4
+The per\-user configuration file to control the behaviour of
+exe_do\&. See
+\fBexe.conf\fR(5)
+for further details\&.
+.RE
+.SH "BUGS"
+.PP
+The upstreams
+BTS
+can be found at
+\m[blue]\fB\%https://forja.cenatic.es/tracker/\fR\m[]\&.
+.SH "SEE ALSO"
+.PP
+\fBexe\fR(1),
+\fBexe.conf\fR(5)
+.PP
+The programs are documented fully by
+eXeLearning Manual
+available at
+\m[blue]\fB\%http://exelearning.net/html_manual/exe20/\fR\m[]\&.
+.SH "AUTHOR"
+.PP
+\fBJuan Rafael Fern\('andez\fR <\&jrfern@telefonica\&.net\&>
+.RS 4
+Wrote this manpage for the Debian system\&.
+.RE
+.SH "COPYRIGHT"
+.br
+Copyright \(co 2015 Juan Rafael Fern\('andez
+.br
+.PP
+This manual page was written for the Debian system (and may be used by others)\&.
+.PP
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU General Public License, Version 3 or any later version published by the Free Software Foundation\&.
+.PP
+On Debian systems, the complete text of the GNU General Public License can be found in
+/usr/share/common\-licenses/GPL\&.
+.sp
