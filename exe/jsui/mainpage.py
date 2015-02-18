@@ -237,7 +237,8 @@ class MainPage(RenderableLivePage):
                 self.package.name, IClientHandle(ctx).handleId
             ),
             'pathSep': os.path.sep,
-            'server': G.application.server
+            'server': G.application.server,
+            'user': G.application.config.configDir.basename()
         }
         G.application.preferencesShowed = True
         G.application.loadErrors = []

@@ -459,6 +459,11 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             }
                         ]
                     }
+                },
+                '->',
+                {
+                    xtype: 'accesskey_button',
+                    text: eXe.app.config.user
                 }
             ]
         });
