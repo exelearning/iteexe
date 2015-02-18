@@ -1,7 +1,7 @@
 # -- coding: utf-8 --
 # ===========================================================================
 # eXe
-# Copyright 2012, Pedro Pe�a P�rez, Open Phoenix IT
+# Copyright 2012, Pedro Peña Pérez, Open Phoenix IT
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,12 +21,11 @@
 
 import logging
 from exe.webui.renderable import Renderable
-from nevow  import rend
+from nevow import rend, inevow
 
 log = logging.getLogger(__name__)
 
 
-# ===========================================================================
 class QuitPage(Renderable, rend.Page):
     _templateFileName = 'quit.html'
     name = 'quit'
@@ -39,15 +38,23 @@ class QuitPage(Renderable, rend.Page):
         Renderable.__init__(self, parent)
         rend.Page.__init__(self)
 
-    def render_title(self, ctx, data):
+    def renderHTTP(self, ctx):
+        request = inevow.IRequest(ctx)
+        session = request.getSession()
+        session.expire()
+        return rend.Page.renderHTTP(self, ctx)
+
+    @staticmethod
+    def render_title(ctx, data):
         ctx.tag.clear()
         return ctx.tag()[_("eXe Closed")]
 
-    def render_msg1(self, ctx, data):
+    @staticmethod
+    def render_msg1(ctx, data):
         ctx.tag.clear()
         return ctx.tag()[_("eXe has finished running in this window.")]
 
-    def render_msg2(self, ctx, data):
+    @staticmethod
+    def render_msg2(ctx, data):
         ctx.tag.clear()
         return ctx.tag()[_("You can close it safely.")]
-# ===========================================================================
