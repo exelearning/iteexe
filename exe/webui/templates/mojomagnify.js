@@ -486,7 +486,7 @@ $(function(){
             img = img[0];
             var id = this.id.replace("image-thumbnail-","magnifier");
             var w = img.width;
-            var h = img.width;
+            var h = img.height;
             var c = img.className.split(" ");
             if (c.length==2) {
                 var size = c[0].replace("magnifier-size-","");
