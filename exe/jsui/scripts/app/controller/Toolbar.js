@@ -620,8 +620,8 @@ Ext.define('eXe.controller.Toolbar', {
                                     checked: true,
                                     tooltip: _("If you don't choose this \
 option, target field will be empty. Some Computer Aided Translation tools \
-(i.g. OmegaT ) just translate the content of the target field. If you are \
-using this kind of tools, you will need to pre-fill target field with a copy \
+(e.g. OmegaT) just translate the content of the target field. If you are \
+using this kind of tools, you will need to pre-fill the target field with a copy \
 of the source field.")
                                 },
                                 {

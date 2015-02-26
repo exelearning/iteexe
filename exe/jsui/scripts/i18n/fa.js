@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0.1\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2014-11-24 23:01+0100\nPO-Revision-Date: 2014-05-13 17:47+0330\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: fa <LL@li.org>\nLanguage: fa\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.2\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2015-02-26 13:24+0100\nPO-Revision-Date: 2014-05-13 17:47+0330\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: fa <LL@li.org>\nLanguage: fa\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "all": "\u0647\u0645\u0647", 
  "Style of timer (CSS)": "\u0627\u0633\u062a\u0627\u06cc\u0644 \u0632\u0645\u0627\u0646 \u0633\u0646\u062c (CSS)", 
  "Title": "\u0639\u0646\u0648\u0627\u0646", 
@@ -65,7 +65,6 @@ translations = {
  "Popup": "\u067e\u0646\u062c\u0631\u0647 \u0628\u0627\u0632 \u0634\u0648\u0646\u062f\u0647", 
  "Delete style: ": "\u062d\u0630\u0641 \u0627\u0633\u062a\u0627\u06cc\u0644:", 
  "Right to Left": "\u0631\u0627\u0633\u062a \u0628\u0647 \u0686\u067e", 
- "label": "\u0628\u0631\u0686\u0633\u0628", 
  "Title to show": "\u0639\u0646\u0648\u0627\u0646 \u0628\u0631\u0627\u06cc \u0646\u0645\u0627\u06cc\u0634", 
  "Link List": "\u0644\u06cc\u0633\u062a \u0644\u06cc\u0646\u06a9", 
  "Upload": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc", 
