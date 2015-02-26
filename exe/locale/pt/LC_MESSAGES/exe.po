@@ -9,9 +9,9 @@
 # de línguas.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.0.1\n"
+"Project-Id-Version: eXeLearning 2.0.2\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2014-11-24 23:01+0100\n"
+"POT-Creation-Date: 2015-02-26 13:11+0100\n"
 "PO-Revision-Date: 2014-10-22 23:33+0100\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
 "Language-Team: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
@@ -746,7 +746,7 @@ msgstr ""
 "quaisquer alterações neste campo. \n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
-#: exe/webui/element.py:1420 exe/webui/listablock.py:258
+#: exe/webui/element.py:1420 exe/webui/listablock.py:259
 msgid "Cloze"
 msgstr "Preenchimento de espaços"
 
@@ -787,7 +787,7 @@ msgstr ""
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
 #: exe/webui/element.py:2375 exe/webui/element.py:2510
 #: exe/webui/element.py:2625 exe/webui/element.py:2826
-#: exe/webui/listablock.py:461 exe/webui/questionelement.py:113
+#: exe/webui/listablock.py:462 exe/webui/questionelement.py:113
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
 msgstr "Feedback"
@@ -2043,7 +2043,7 @@ msgstr ""
 "para ser ampliado."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
-#: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:168
+#: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Text"
 msgstr "Texto"
@@ -2686,16 +2686,16 @@ msgstr ""
 "Guardar falhou!\n"
 "O último guardar válido foi a %s."
 
-#: exe/engine/package.py:1442 exe/jsui/scripts/app/controller/Toolbar.js:371
+#: exe/engine/package.py:1445 exe/jsui/scripts/app/controller/Toolbar.js:371
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "Editor de iDevices"
 
-#: exe/engine/package.py:1563
+#: exe/engine/package.py:1566
 msgid "My Catalog"
 msgstr "O meu catálogo"
 
-#: exe/engine/package.py:1570
+#: exe/engine/package.py:1573
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Default"
@@ -3121,8 +3121,8 @@ msgstr "Efeito para a imagem que indica resposta errada"
 msgid "Text for Check Button"
 msgstr "Texto do botão de verificação"
 
-#: exe/engine/sortidevice.py:61 exe/webui/listablock.py:270
-#: exe/webui/listablock.py:272
+#: exe/engine/sortidevice.py:61 exe/webui/listablock.py:271
+#: exe/webui/listablock.py:273
 msgid "Check"
 msgstr "Marcar"
 
@@ -3434,7 +3434,7 @@ msgstr ""
 msgid "Don't copy source in target"
 msgstr "Não copiar origem no destino"
 
-#: exe/exe_do:133 exe/webui/xliffexportpreferencespage.py:123
+#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:652
 msgid "Wrap fields in CDATA"
 msgstr "Incluir os campos em CDATA"
 
@@ -3912,13 +3912,13 @@ msgstr "Ficheiros de imagem"
 #: exe/jsui/scripts/app/controller/Toolbar.js:501
 #: exe/jsui/scripts/app/controller/Toolbar.js:520
 #: exe/jsui/scripts/app/controller/Toolbar.js:589
-#: exe/jsui/scripts/app/controller/Toolbar.js:621
-#: exe/jsui/scripts/app/controller/Toolbar.js:664
-#: exe/jsui/scripts/app/controller/Toolbar.js:681
-#: exe/jsui/scripts/app/controller/Toolbar.js:698
-#: exe/jsui/scripts/app/controller/Toolbar.js:727
-#: exe/jsui/scripts/app/controller/Toolbar.js:873
-#: exe/jsui/scripts/app/controller/Toolbar.js:975
+#: exe/jsui/scripts/app/controller/Toolbar.js:700
+#: exe/jsui/scripts/app/controller/Toolbar.js:743
+#: exe/jsui/scripts/app/controller/Toolbar.js:760
+#: exe/jsui/scripts/app/controller/Toolbar.js:777
+#: exe/jsui/scripts/app/controller/Toolbar.js:806
+#: exe/jsui/scripts/app/controller/Toolbar.js:952
+#: exe/jsui/scripts/app/controller/Toolbar.js:1054
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:139
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:321
@@ -4025,8 +4025,8 @@ msgstr "A inserir o pacote: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:444
 #: exe/jsui/scripts/app/controller/Toolbar.js:465
-#: exe/jsui/scripts/app/controller/Toolbar.js:872
-#: exe/jsui/scripts/app/controller/Toolbar.js:974
+#: exe/jsui/scripts/app/controller/Toolbar.js:951
+#: exe/jsui/scripts/app/controller/Toolbar.js:1053
 msgid "eXe Package Files"
 msgstr "Ficheiros de pacote eXe"
 
@@ -4079,7 +4079,7 @@ msgid "XLIFF Import Preferences"
 msgstr "Preferências de importação de XLIFF"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:588
-#: exe/jsui/scripts/app/controller/Toolbar.js:620
+#: exe/jsui/scripts/app/controller/Toolbar.js:699
 msgid "XLIFF Files"
 msgstr "Ficheiros XLIFF"
 
@@ -4087,94 +4087,152 @@ msgstr "Ficheiros XLIFF"
 msgid "Export to Xliff as"
 msgstr "Exportar para XLIFF como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:608
+#: exe/jsui/scripts/app/controller/Toolbar.js:618
+msgid "Select source language"
+msgstr "Escolha a língua de partida"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:629
+msgid "Select target language"
+msgstr "Escolha a língua de chegada"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:640
+msgid "Copy source also in target"
+msgstr "Copiar também a fonte no destino"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:643
+#, fuzzy
+msgid ""
+"If you don't choose this \r\n"
+"option, target field will be empty. Some Computer Aided Translation tools"
+" \r\n"
+"(i.g. OmegaT ) just translate the content of the target field. If you are"
+" \r\n"
+"using this kind of tools, you will need to pre-fill target field with a "
+"copy \r\n"
+"of the source field."
+msgstr ""
+"Se não marcar esta opção, o campo de destino ficará vazio. Algumas "
+"ferramentas de Tradução Assistida por Computador (i.e. OmegaT) traduzem "
+"automaticamente o conteúdo do campo de destino. Se está a utilizar este "
+"género de ferramentas, terá de preencher o campo de destino com a cópia "
+"do campo de origem."
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:654
+#, fuzzy
+msgid ""
+"This option will wrap all \r\n"
+"the exported fields in CDATA sections. This kind of sections are not \r\n"
+"recommended by XLIFF standard but it could be a good option if you want "
+"to \r\n"
+"use a pre-process tool (i.g.: Rainbow) before using the Computer Aided"
+" \r\n"
+"Translation software."
+msgstr ""
+"Esta opção irá envolver todos os campos exportados em secções CDATA. Este"
+" género de secções não são recomendadas pela norma padrão XLIFF mas podem"
+" ser uma boa opção se deseja utilizar uma ferramenta de pré-processamento"
+" (i.e.: Rainbow) antes de utilizar o software de Tradução Assistida por "
+"Computador."
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:663
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
+#: exe/webui/editorpane.py:273 exe/webui/xliffimportpreferencespage.py:94
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:669
+msgid "Ok"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:692
 msgid "XLIFF Export Preferences"
 msgstr "Preferências de exportação de XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:636
+#: exe/jsui/scripts/app/controller/Toolbar.js:715
 msgid "Select the parent folder for export."
 msgstr "Escolha a pasta superior para a exportação."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:654
+#: exe/jsui/scripts/app/controller/Toolbar.js:733
 msgid "Export text package as"
 msgstr "Exportar pacote de texto como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:663
+#: exe/jsui/scripts/app/controller/Toolbar.js:742
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:283
 msgid "Text File"
 msgstr "Ficheiro de texto"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:671
+#: exe/jsui/scripts/app/controller/Toolbar.js:750
 msgid "Save package resources report as"
 msgstr "Guardar relátorio de recursos do pacote como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:680
+#: exe/jsui/scripts/app/controller/Toolbar.js:759
 msgid "CSV File"
 msgstr "Ficheiro CSV"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:688
+#: exe/jsui/scripts/app/controller/Toolbar.js:767
 msgid "Export EPUB3 package as"
 msgstr "Exportar pacote EPUB3 como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:697
+#: exe/jsui/scripts/app/controller/Toolbar.js:776
 msgid "EPUB3 File"
 msgstr "Ficheiro EPUB3"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:705
+#: exe/jsui/scripts/app/controller/Toolbar.js:784
 msgid "Export SCORM package as"
 msgstr "Exportar pacote SCORM como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:707
+#: exe/jsui/scripts/app/controller/Toolbar.js:786
 msgid "Export IMS package as"
 msgstr "Exportar pacote IMS como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:709
+#: exe/jsui/scripts/app/controller/Toolbar.js:788
 msgid "Export Website package as"
 msgstr "Exportar pacote Sítio Web como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:711
+#: exe/jsui/scripts/app/controller/Toolbar.js:790
 msgid "Export Common Cartridge as"
 msgstr "Exportar Common Cartridge como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:713
+#: exe/jsui/scripts/app/controller/Toolbar.js:792
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "VALOR INVÁLIDO PASSADO PARA exportPackage"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:726
+#: exe/jsui/scripts/app/controller/Toolbar.js:805
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/arquivo ZIP"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:844
+#: exe/jsui/scripts/app/controller/Toolbar.js:923
 msgid "Loading package..."
 msgstr "A carregar o pacote..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:861
+#: exe/jsui/scripts/app/controller/Toolbar.js:940
 msgid "Open File"
 msgstr "Abrir Ficheiro"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:866
+#: exe/jsui/scripts/app/controller/Toolbar.js:945
 msgid "Loading package: {filename}"
 msgstr "A carregar o pacote: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:885
+#: exe/jsui/scripts/app/controller/Toolbar.js:964
 msgid "Save Package first?"
 msgstr "Guardar antes o pacote?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:886
+#: exe/jsui/scripts/app/controller/Toolbar.js:965
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr "O pacote atual foi modificado e ainda não foi guardado. Deseja guardá-lo?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:935
+#: exe/jsui/scripts/app/controller/Toolbar.js:1014
 msgid "Saving package to: {filename}"
 msgstr "A guardar o pacote em: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:954
+#: exe/jsui/scripts/app/controller/Toolbar.js:1033
 msgid "Save file"
 msgstr "Guardar ficheiro"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:960
+#: exe/jsui/scripts/app/controller/Toolbar.js:1039
 msgid "Saving package..."
 msgstr "A guardar o pacote..."
 
@@ -4240,13 +4298,6 @@ msgstr "Tipo"
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:100
 msgid "Modified"
 msgstr "Modificado"
-
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
-#: exe/webui/editorpane.py:273 exe/webui/xliffexportpreferencespage.py:143
-#: exe/webui/xliffimportpreferencespage.py:94
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
-msgid "Cancel"
-msgstr "Cancelar"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:52
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:112
@@ -5606,7 +5657,7 @@ msgstr ""
 "Se sair desta página, a aplicação eXe irá continuar aberta. Por favor, "
 "utilize o menu Ficheiro->Sair se desejar mesmo fechar a aplicação."
 
-#: exe/jsui/scripts/exe.js:213 exe/jsui/scripts/app/view/ui/LeftPanel.js:90
+#: exe/jsui/scripts/exe.js:218 exe/jsui/scripts/app/view/ui/LeftPanel.js:90
 msgid "Group iDevices"
 msgstr "Agrupar iDevices"
 
@@ -7443,7 +7494,7 @@ msgid "Hide"
 msgstr "Esconder"
 
 #: exe/webui/common.py:216 exe/webui/common.py:425 exe/webui/element.py:1436
-#: exe/webui/element.py:2367 exe/webui/listablock.py:274
+#: exe/webui/element.py:2367 exe/webui/listablock.py:275
 msgid "Show Feedback"
 msgstr "Mostrar feedback"
 
@@ -7465,7 +7516,6 @@ msgid "Menu"
 msgstr "Menu"
 
 #: exe/webui/common.py:241 exe/webui/editorpage.py:235
-#: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : editor XHTML para o e-learning"
@@ -7749,7 +7799,7 @@ msgid "Cloze Text"
 msgstr "Texto para preencher espaços"
 
 #: exe/webui/element.py:1257 exe/webui/element.py:1590
-#: exe/webui/listablock.py:173
+#: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
 msgstr "Ocultar/Mostrar palavra"
 
@@ -7766,7 +7816,7 @@ msgid "Instant Marking?"
 msgstr "Avaliação instantânea?"
 
 #: exe/webui/element.py:1383 exe/webui/element.py:1640
-#: exe/webui/listablock.py:222 exe/webui/quiztestblock.py:223
+#: exe/webui/listablock.py:223 exe/webui/quiztestblock.py:223
 #: exe/webui/quiztestblock.py:318 exe/webui/quiztestblock.py:372
 msgid "Your score is "
 msgstr "A sua pontuação é"
@@ -7785,7 +7835,7 @@ msgstr "Apresentar Respostas"
 
 #: exe/webui/element.py:1485 exe/webui/element.py:1737
 #: exe/webui/element.py:2359 exe/webui/element.py:2819
-#: exe/webui/listablock.py:312 exe/webui/testquestionelement.py:158
+#: exe/webui/listablock.py:313 exe/webui/testquestionelement.py:158
 msgid "Answers"
 msgstr "Respostas"
 
@@ -8021,7 +8071,7 @@ msgstr "Muito grande"
 msgid "Size of magnifying glass: "
 msgstr "Tamanho da lupa:"
 
-#: exe/webui/listablock.py:179
+#: exe/webui/listablock.py:180
 msgid "Other words"
 msgstr "Outras palavras"
 
@@ -10969,53 +11019,6 @@ msgstr "Sítio Web"
 msgid "Own site"
 msgstr "Sítio web próprio"
 
-#: exe/webui/xliffexportpreferencespage.py:54
-msgid "label"
-msgstr "título"
-
-#: exe/webui/xliffexportpreferencespage.py:102
-msgid "Select source language"
-msgstr "Escolha a língua de partida"
-
-#: exe/webui/xliffexportpreferencespage.py:107
-msgid "Select target language"
-msgstr "Escolha a língua de chegada"
-
-#: exe/webui/xliffexportpreferencespage.py:112
-msgid "Copy source also in target"
-msgstr "Copiar também a fonte no destino"
-
-#: exe/webui/xliffexportpreferencespage.py:117
-msgid ""
-"If you don't choose this option, target field will be empty. Some "
-"Computer Aided Translation tools (i.g. OmegaT ) just translate the "
-"content of the target field. If you are using this kind of tools, you "
-"will need to pre-fill target field with a copy of the source field."
-msgstr ""
-"Se não marcar esta opção, o campo de destino ficará vazio. Algumas "
-"ferramentas de Tradução Assistida por Computador (i.e. OmegaT) traduzem "
-"automaticamente o conteúdo do campo de destino. Se está a utilizar este "
-"género de ferramentas, terá de preencher o campo de destino com a cópia "
-"do campo de origem."
-
-#: exe/webui/xliffexportpreferencespage.py:128
-msgid ""
-"This option will wrap all the exported fields in CDATA sections. This "
-"kind of sections are not recommended by XLIFF standard but it could be a "
-"good option if you want to use a pre-process tool (i.g.: Rainbow) before "
-"using the Computer Aided Translation software."
-msgstr ""
-"Esta opção irá envolver todos os campos exportados em secções CDATA. Este"
-" género de secções não são recomendadas pela norma padrão XLIFF mas podem"
-" ser uma boa opção se deseja utilizar uma ferramenta de pré-processamento"
-" (i.e.: Rainbow) antes de utilizar o software de Tradução Assistida por "
-"Computador."
-
-#: exe/webui/xliffexportpreferencespage.py:136
-#: exe/webui/xliffimportpreferencespage.py:90
-msgid "OK"
-msgstr "OK"
-
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
 "If you choose this option, the import process will take the texts from "
@@ -11023,6 +11026,10 @@ msgid ""
 msgstr ""
 "Se marcar esta opção, o processo de importação utilizarã os textos da "
 "língua de partida em vez da língua de chegada."
+
+#: exe/webui/xliffimportpreferencespage.py:90
+msgid "OK"
+msgstr "OK"
 
 #: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
 #: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551

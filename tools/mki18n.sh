@@ -28,23 +28,26 @@
 # Changes
 # -------
 # 2013-10:
-# 	* Usage of Babel1.3 (Pedro Peña)
-# 		Uses python Babel 1.3 patched to include 'Language' header 
-#		(https://dl.dropboxusercontent.com/s/k1i7ph2m2g4s7kx/Babel-1.3.tar.gz)
-# 		as discussed here: 
-# 		https://forja.cenatic.es/tracker/index.php?func=detail&aid=1905&group_id=197&atid=883
+#     * Usage of Babel1.3 (Pedro Peña)
+#         Uses python Babel 1.3 patched to include 'Language' header 
+#        (https://dl.dropboxusercontent.com/s/k1i7ph2m2g4s7kx/Babel-1.3.tar.gz)
+#        as discussed here:
+#        https://forja.cenatic.es/tracker/index.php?func=detail&aid=1905&group_id=197&atid=883
 #
-#	* Changed --version from '1.04.1' to '2.0' (JRF)
+#    * Changed --version from '1.04.1' to '2.0' (JRF)
 #
 # 2014-03-17:
-#	* Changed options of pybabel update (JRF)
+#    * Changed options of pybabel update (JRF)
+#
+# 2015-02-26:
+#    * Version 2.0.2 (JRF)
 #
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.0.1"
+version="2.0.2"
 # 1.- Extraction of strings from *.py and *.js into new POT
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
 pybabel extract --keyword=x_ --keyword=c_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot

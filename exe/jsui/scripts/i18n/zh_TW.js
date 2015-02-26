@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0.1\nReport-Msgid-Bugs-To: translations@exelearning.net\nPOT-Creation-Date: 2014-11-24 23:01+0100\nPO-Revision-Date: 2014-05-15 18:08+0200\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage-Team: Chinese Traditional <zh-l10n@linux.org.tw>\nLanguage: zh_Hant_TW\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.2\nReport-Msgid-Bugs-To: translations@exelearning.net\nPOT-Creation-Date: 2015-02-26 13:11+0100\nPO-Revision-Date: 2014-05-15 18:08+0200\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage-Team: Chinese Traditional <zh-l10n@linux.org.tw>\nLanguage: zh_Hant_TW\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "\u5efa\u7acb\u6848\u4f8b\u6545\u4e8b\u3002\u4e00\u500b\u597d\u7684\u6848\u4f8b\u63cf\u8ff0\u4e00\u9805\u722d\u8b70\uff0c\u6216\u63cf\u8ff0\u5728\u67d0\u500b\u60c5\u5883\u4e0b\u7684\u67d0\u500b\u4eba\u7269\u3002\u5b83\u4e5f\u61c9\u8a72\u5141\u8a31\u5927\u5bb6\u63a1\u53d6\u67d0\u4e9b\u884c\u52d5\u4ee5\u4fbf\u89e3\u6c7a\u9019\u500b\u60c5\u5883\u3002", 
  "Xhosa ": "\u79d1\u85a9\u8a9e", 
  "Invoke URLs": "\u547c\u53eb\u7db2\u5740", 
@@ -810,7 +810,6 @@ translations = {
  "Force overwrite of <output_file>": "\u5f37\u5236\u8986\u5beb <\u8f38\u51fa\u6a94>", 
  "Delete style: ": "\u522a\u9664\u6a23\u5f0f\uff1a", 
  "Guarani ": "\u74dc\u62c9\u5c3c\u8a9e", 
- "label": "\u6a19\u7c64", 
  "Hours": "\u5c0f\u6642", 
  "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, .odp, etc.<\/p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.<\/p><p>For example: <code>Sales Forecast.doc (500kb)<\/code><\/p>": "<p>\u6307\u5b9a\u9644\u4ef6\u7684\u6a19\u7c64\u3002\u60a8\u53ef\u4ee5\u5728\u6a19\u7c64\u4e2d\u52a0\u5165\u6a94\u6848\u578b\u614b\uff0c\u5982 pdf, ppt, odp \u7b49\u7b49\u3002<\/p><p>\u53e6\u5916\u4e5f\u5efa\u8b70\u52a0\u4e0a\u9644\u4ef6\u7684\u5927\u5c0f\uff0c\u9019\u6a23\u7576\u60a8\u7684\u5957\u4ef6\u532f\u51fa\u5230\u7db2\u7ad9\u4e0a\u6642\uff0c\u5927\u5bb6\u5c31\u6703\u77e5\u9053\u4e0b\u8f09\u7684\u8a71\u5927\u6982\u9700\u8981\u591a\u4e45\u3002<\/p><p>\u4f8b\u5982\uff1a<code>Sales Forecast.doc (500kb)<\/code><\/p>", 
  "Successfully imported style: %s": "\u6210\u529f\u532f\u5165\u6a23\u5f0f\uff1a%s", 

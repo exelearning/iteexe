@@ -5,15 +5,16 @@
 # eXe Project <exe@exelearning.org>
 # Asmoz fundazioa, 2009
 #
+#
 # http://www.asmoz.org/index.php?option=com_content&view=article&id=131&Itemid=101&lang=es
 # Malen <mjareno@asmoz.org>
 # ULHI, 2012-2014 Joxemi Andonegi <jmandonegi@ulhi.net>
 # Mila esker Andoni Tolosari bere laguntzagatik
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.0.1\n"
+"Project-Id-Version: eXeLearning 2.0.2\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2014-11-24 23:01+0100\n"
+"POT-Creation-Date: 2015-02-26 13:11+0100\n"
 "PO-Revision-Date: 2014-10-22 22:32+0100\n"
 "Last-Translator: Joxemi Andonegi <jmandonegi@ulhi.net>\n"
 "Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
@@ -743,7 +744,7 @@ msgstr ""
 "Eremuan aldaketarik egiten ez bada, lehenetsitako testua txertatuko da.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
-#: exe/webui/element.py:1420 exe/webui/listablock.py:258
+#: exe/webui/element.py:1420 exe/webui/listablock.py:259
 msgid "Cloze"
 msgstr "Bete hutsuneak"
 
@@ -781,7 +782,7 @@ msgstr ""
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
 #: exe/webui/element.py:2375 exe/webui/element.py:2510
 #: exe/webui/element.py:2625 exe/webui/element.py:2826
-#: exe/webui/listablock.py:461 exe/webui/questionelement.py:113
+#: exe/webui/listablock.py:462 exe/webui/questionelement.py:113
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
 msgstr "Feedbacka"
@@ -1986,7 +1987,7 @@ msgstr ""
 "beheko irudia edo \"Gehitu irudia\" botoia, irudi bat handitzeko."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
-#: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:168
+#: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Text"
 msgstr "Testua"
@@ -2610,16 +2611,16 @@ msgstr ""
 "EZ DA GORDE!\n"
 "%s da ondo gordetako azken elementua."
 
-#: exe/engine/package.py:1442 exe/jsui/scripts/app/controller/Toolbar.js:371
+#: exe/engine/package.py:1445 exe/jsui/scripts/app/controller/Toolbar.js:371
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "iDevice editorea"
 
-#: exe/engine/package.py:1563
+#: exe/engine/package.py:1566
 msgid "My Catalog"
 msgstr "Nire katalogoa"
 
-#: exe/engine/package.py:1570
+#: exe/engine/package.py:1573
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Default"
@@ -3033,8 +3034,8 @@ msgstr "Gardenki okerra erakusteko efektua"
 msgid "Text for Check Button"
 msgstr "Egiaztatu botoiaren testua"
 
-#: exe/engine/sortidevice.py:61 exe/webui/listablock.py:270
-#: exe/webui/listablock.py:272
+#: exe/engine/sortidevice.py:61 exe/webui/listablock.py:271
+#: exe/webui/listablock.py:273
 msgid "Check"
 msgstr "Egiaztatu"
 
@@ -3337,7 +3338,7 @@ msgstr ""
 msgid "Don't copy source in target"
 msgstr "Ez kopiatu jatorrizko testua xedean"
 
-#: exe/exe_do:133 exe/webui/xliffexportpreferencespage.py:123
+#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:652
 msgid "Wrap fields in CDATA"
 msgstr "Eremuak CDATA sailetan bildu"
 
@@ -3819,13 +3820,13 @@ msgstr "Irudiak"
 #: exe/jsui/scripts/app/controller/Toolbar.js:501
 #: exe/jsui/scripts/app/controller/Toolbar.js:520
 #: exe/jsui/scripts/app/controller/Toolbar.js:589
-#: exe/jsui/scripts/app/controller/Toolbar.js:621
-#: exe/jsui/scripts/app/controller/Toolbar.js:664
-#: exe/jsui/scripts/app/controller/Toolbar.js:681
-#: exe/jsui/scripts/app/controller/Toolbar.js:698
-#: exe/jsui/scripts/app/controller/Toolbar.js:727
-#: exe/jsui/scripts/app/controller/Toolbar.js:873
-#: exe/jsui/scripts/app/controller/Toolbar.js:975
+#: exe/jsui/scripts/app/controller/Toolbar.js:700
+#: exe/jsui/scripts/app/controller/Toolbar.js:743
+#: exe/jsui/scripts/app/controller/Toolbar.js:760
+#: exe/jsui/scripts/app/controller/Toolbar.js:777
+#: exe/jsui/scripts/app/controller/Toolbar.js:806
+#: exe/jsui/scripts/app/controller/Toolbar.js:952
+#: exe/jsui/scripts/app/controller/Toolbar.js:1054
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:139
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:321
@@ -3932,8 +3933,8 @@ msgstr "Paketea txertatzen: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:444
 #: exe/jsui/scripts/app/controller/Toolbar.js:465
-#: exe/jsui/scripts/app/controller/Toolbar.js:872
-#: exe/jsui/scripts/app/controller/Toolbar.js:974
+#: exe/jsui/scripts/app/controller/Toolbar.js:951
+#: exe/jsui/scripts/app/controller/Toolbar.js:1053
 msgid "eXe Package Files"
 msgstr "eXe fitxategiak"
 
@@ -3986,7 +3987,7 @@ msgid "XLIFF Import Preferences"
 msgstr "XLIFF inportazioaren aukerak"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:588
-#: exe/jsui/scripts/app/controller/Toolbar.js:620
+#: exe/jsui/scripts/app/controller/Toolbar.js:699
 msgid "XLIFF Files"
 msgstr "XLIFF fitxategiak"
 
@@ -3994,94 +3995,150 @@ msgstr "XLIFF fitxategiak"
 msgid "Export to Xliff as"
 msgstr "XLIFF-era honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:608
+#: exe/jsui/scripts/app/controller/Toolbar.js:618
+msgid "Select source language"
+msgstr "Jatorrizko hizkuntza aukeratu"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:629
+msgid "Select target language"
+msgstr "Xede hizkuntza aukeratu"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:640
+msgid "Copy source also in target"
+msgstr "Jatorrizko testua xedean kopiatu"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:643
+#, fuzzy
+msgid ""
+"If you don't choose this \r\n"
+"option, target field will be empty. Some Computer Aided Translation tools"
+" \r\n"
+"(i.g. OmegaT ) just translate the content of the target field. If you are"
+" \r\n"
+"using this kind of tools, you will need to pre-fill target field with a "
+"copy \r\n"
+"of the source field."
+msgstr ""
+"Aukera hau ez baduzu klikatzen, helburu testua hutsik sortuko da. "
+"Itzulpen tresna batzuk (adib.: OmegaT) xede hizkuntzako testuekin lan "
+"egiten dute soilik eta jatorrizko eremuaren testuarekin aurre-beteta "
+"egotea behar dute."
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:654
+#, fuzzy
+msgid ""
+"This option will wrap all \r\n"
+"the exported fields in CDATA sections. This kind of sections are not \r\n"
+"recommended by XLIFF standard but it could be a good option if you want "
+"to \r\n"
+"use a pre-process tool (i.g.: Rainbow) before using the Computer Aided"
+" \r\n"
+"Translation software."
+msgstr ""
+"Aukera honek, esportatutako eremuak bilduko ditu CDATA ataletan. XLIFF "
+"estandarrak ez du gomendatzen atal hauen erabilera baina aukera "
+"interesgarri bat izan daiteke aurre-prozesaketa tresna bat erabili nahi "
+"baduzu (adib. Rainbow) itzulpen tresna erabili aurretik."
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:663
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
+#: exe/webui/editorpane.py:273 exe/webui/xliffimportpreferencespage.py:94
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Cancel"
+msgstr "Ezeztatu"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:669
+msgid "Ok"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:692
 msgid "XLIFF Export Preferences"
 msgstr "XLIFF esportazioaren aukerak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:636
+#: exe/jsui/scripts/app/controller/Toolbar.js:715
 msgid "Select the parent folder for export."
 msgstr "Esportazioaren karpeta "
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:654
+#: exe/jsui/scripts/app/controller/Toolbar.js:733
 msgid "Export text package as"
 msgstr "Testu paketea honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:663
+#: exe/jsui/scripts/app/controller/Toolbar.js:742
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:283
 msgid "Text File"
 msgstr "Testu fitxategia"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:671
+#: exe/jsui/scripts/app/controller/Toolbar.js:750
 msgid "Save package resources report as"
 msgstr "Honela gorde paketearen baliabide txostena "
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:680
+#: exe/jsui/scripts/app/controller/Toolbar.js:759
 msgid "CSV File"
 msgstr "CSV fitxategia"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:688
+#: exe/jsui/scripts/app/controller/Toolbar.js:767
 msgid "Export EPUB3 package as"
 msgstr "Esportatu EPUB paketea honela"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:697
+#: exe/jsui/scripts/app/controller/Toolbar.js:776
 msgid "EPUB3 File"
 msgstr "EPUB3 fitxategia"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:705
+#: exe/jsui/scripts/app/controller/Toolbar.js:784
 msgid "Export SCORM package as"
 msgstr "SCORM paketea honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:707
+#: exe/jsui/scripts/app/controller/Toolbar.js:786
 msgid "Export IMS package as"
 msgstr "IMS paketea honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:709
+#: exe/jsui/scripts/app/controller/Toolbar.js:788
 msgid "Export Website package as"
 msgstr "Webgune paketea honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:711
+#: exe/jsui/scripts/app/controller/Toolbar.js:790
 msgid "Export Common Cartridge as"
 msgstr "Common Cartridge-a honela esportatu (Common Cartridge-a)"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:713
+#: exe/jsui/scripts/app/controller/Toolbar.js:792
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "exportPackage-ari BALIO OKERRA EMAN ZAIO"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:726
+#: exe/jsui/scripts/app/controller/Toolbar.js:805
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/Zip fitxategia"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:844
+#: exe/jsui/scripts/app/controller/Toolbar.js:923
 msgid "Loading package..."
 msgstr "Paketea kargatzen..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:861
+#: exe/jsui/scripts/app/controller/Toolbar.js:940
 msgid "Open File"
 msgstr "Fitxategia ireki"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:866
+#: exe/jsui/scripts/app/controller/Toolbar.js:945
 msgid "Loading package: {filename}"
 msgstr "Paketea kargatzen: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:885
+#: exe/jsui/scripts/app/controller/Toolbar.js:964
 msgid "Save Package first?"
 msgstr "Paketea gorde?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:886
+#: exe/jsui/scripts/app/controller/Toolbar.js:965
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr "Paketea aldatu da eta oraindik ez da gorde. Gorde nahi duzu?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:935
+#: exe/jsui/scripts/app/controller/Toolbar.js:1014
 msgid "Saving package to: {filename}"
 msgstr "Paketea hemen gordetzen: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:954
+#: exe/jsui/scripts/app/controller/Toolbar.js:1033
 msgid "Save file"
 msgstr "Gorde fitxategia"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:960
+#: exe/jsui/scripts/app/controller/Toolbar.js:1039
 msgid "Saving package..."
 msgstr "Paketea gordetzen..."
 
@@ -4147,13 +4204,6 @@ msgstr "Mota"
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:100
 msgid "Modified"
 msgstr "Aldatua"
-
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
-#: exe/webui/editorpane.py:273 exe/webui/xliffexportpreferencespage.py:143
-#: exe/webui/xliffimportpreferencespage.py:94
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
-msgid "Cancel"
-msgstr "Ezeztatu"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:52
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:112
@@ -5512,7 +5562,7 @@ msgstr ""
 "Orri hau uzten baduzu, eXe aplikazioak martxan jarraituko du. Aplikazioa "
 "itxi nahi baduzu, Fitxategia->Irten menua erabili."
 
-#: exe/jsui/scripts/exe.js:213 exe/jsui/scripts/app/view/ui/LeftPanel.js:90
+#: exe/jsui/scripts/exe.js:218 exe/jsui/scripts/app/view/ui/LeftPanel.js:90
 msgid "Group iDevices"
 msgstr "iDeviceak taldekatu"
 
@@ -7341,7 +7391,7 @@ msgid "Hide"
 msgstr "Ezkutatu"
 
 #: exe/webui/common.py:216 exe/webui/common.py:425 exe/webui/element.py:1436
-#: exe/webui/element.py:2367 exe/webui/listablock.py:274
+#: exe/webui/element.py:2367 exe/webui/listablock.py:275
 msgid "Show Feedback"
 msgstr "Erakutsi feedbacka"
 
@@ -7363,7 +7413,6 @@ msgid "Menu"
 msgstr "Menua"
 
 #: exe/webui/common.py:241 exe/webui/editorpage.py:235
-#: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: XHTML editorea urruneko hezkuntzarako"
@@ -7647,7 +7696,7 @@ msgid "Cloze Text"
 msgstr "Hutsuneak betetzeko testua"
 
 #: exe/webui/element.py:1257 exe/webui/element.py:1590
-#: exe/webui/listablock.py:173
+#: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
 msgstr "Ezkutatu/Erakutsi hitza"
 
@@ -7664,7 +7713,7 @@ msgid "Instant Marking?"
 msgstr "Oraintxe zuzendu nahi?"
 
 #: exe/webui/element.py:1383 exe/webui/element.py:1640
-#: exe/webui/listablock.py:222 exe/webui/quiztestblock.py:223
+#: exe/webui/listablock.py:223 exe/webui/quiztestblock.py:223
 #: exe/webui/quiztestblock.py:318 exe/webui/quiztestblock.py:372
 msgid "Your score is "
 msgstr "Zure puntu kopurua hau da "
@@ -7683,7 +7732,7 @@ msgstr "Erakutsi erantzunak"
 
 #: exe/webui/element.py:1485 exe/webui/element.py:1737
 #: exe/webui/element.py:2359 exe/webui/element.py:2819
-#: exe/webui/listablock.py:312 exe/webui/testquestionelement.py:158
+#: exe/webui/listablock.py:313 exe/webui/testquestionelement.py:158
 msgid "Answers"
 msgstr "Erantzunak"
 
@@ -7921,7 +7970,7 @@ msgstr "Oso handia"
 msgid "Size of magnifying glass: "
 msgstr "Luparen neurria: "
 
-#: exe/webui/listablock.py:179
+#: exe/webui/listablock.py:180
 msgid "Other words"
 msgstr "Beste hitzak"
 
@@ -10871,51 +10920,6 @@ msgstr "Gunea"
 msgid "Own site"
 msgstr "Nire gunea"
 
-#: exe/webui/xliffexportpreferencespage.py:54
-msgid "label"
-msgstr "etiketa"
-
-#: exe/webui/xliffexportpreferencespage.py:102
-msgid "Select source language"
-msgstr "Jatorrizko hizkuntza aukeratu"
-
-#: exe/webui/xliffexportpreferencespage.py:107
-msgid "Select target language"
-msgstr "Xede hizkuntza aukeratu"
-
-#: exe/webui/xliffexportpreferencespage.py:112
-msgid "Copy source also in target"
-msgstr "Jatorrizko testua xedean kopiatu"
-
-#: exe/webui/xliffexportpreferencespage.py:117
-msgid ""
-"If you don't choose this option, target field will be empty. Some "
-"Computer Aided Translation tools (i.g. OmegaT ) just translate the "
-"content of the target field. If you are using this kind of tools, you "
-"will need to pre-fill target field with a copy of the source field."
-msgstr ""
-"Aukera hau ez baduzu klikatzen, helburu testua hutsik sortuko da. "
-"Itzulpen tresna batzuk (adib.: OmegaT) xede hizkuntzako testuekin lan "
-"egiten dute soilik eta jatorrizko eremuaren testuarekin aurre-beteta "
-"egotea behar dute."
-
-#: exe/webui/xliffexportpreferencespage.py:128
-msgid ""
-"This option will wrap all the exported fields in CDATA sections. This "
-"kind of sections are not recommended by XLIFF standard but it could be a "
-"good option if you want to use a pre-process tool (i.g.: Rainbow) before "
-"using the Computer Aided Translation software."
-msgstr ""
-"Aukera honek, esportatutako eremuak bilduko ditu CDATA ataletan. XLIFF "
-"estandarrak ez du gomendatzen atal hauen erabilera baina aukera "
-"interesgarri bat izan daiteke aurre-prozesaketa tresna bat erabili nahi "
-"baduzu (adib. Rainbow) itzulpen tresna erabili aurretik."
-
-#: exe/webui/xliffexportpreferencespage.py:136
-#: exe/webui/xliffimportpreferencespage.py:90
-msgid "OK"
-msgstr "Ados"
-
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
 "If you choose this option, the import process will take the texts from "
@@ -10923,6 +10927,10 @@ msgid ""
 msgstr ""
 "Aukera hau klikatzen baduzu, inportazio prozesuak jatorrizko hizkuntzatik"
 " hartuko ditu testuak helburu hizkuntzatik hartu ordez."
+
+#: exe/webui/xliffimportpreferencespage.py:90
+msgid "OK"
+msgstr "Ados"
 
 #: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
 #: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
