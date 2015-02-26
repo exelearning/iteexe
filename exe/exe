@@ -25,6 +25,9 @@ The eXe main script
 
 import os
 import sys
+
+sys.setrecursionlimit(2000)
+
 if '--portable' in sys.argv:
     exePath = os.path.abspath(sys.argv[0])
     exeDir  = os.path.dirname(exePath)
