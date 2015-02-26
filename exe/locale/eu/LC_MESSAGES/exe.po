@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0.2\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2015-02-26 13:11+0100\n"
+"POT-Creation-Date: 2015-02-26 13:24+0100\n"
 "PO-Revision-Date: 2014-10-22 22:32+0100\n"
 "Last-Translator: Joxemi Andonegi <jmandonegi@ulhi.net>\n"
 "Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
@@ -2611,7 +2611,7 @@ msgstr ""
 "EZ DA GORDE!\n"
 "%s da ondo gordetako azken elementua."
 
-#: exe/engine/package.py:1445 exe/jsui/scripts/app/controller/Toolbar.js:371
+#: exe/engine/package.py:1445 exe/jsui/scripts/app/controller/Toolbar.js:352
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "iDevice editorea"
@@ -3338,7 +3338,7 @@ msgstr ""
 msgid "Don't copy source in target"
 msgstr "Ez kopiatu jatorrizko testua xedean"
 
-#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:652
+#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:630
 msgid "Wrap fields in CDATA"
 msgstr "Eremuak CDATA sailetan bildu"
 
@@ -3815,18 +3815,18 @@ msgid "Image Files"
 msgstr "Irudiak"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:445
-#: exe/jsui/scripts/app/controller/Toolbar.js:466
-#: exe/jsui/scripts/app/controller/Toolbar.js:501
-#: exe/jsui/scripts/app/controller/Toolbar.js:520
-#: exe/jsui/scripts/app/controller/Toolbar.js:589
-#: exe/jsui/scripts/app/controller/Toolbar.js:700
-#: exe/jsui/scripts/app/controller/Toolbar.js:743
-#: exe/jsui/scripts/app/controller/Toolbar.js:760
-#: exe/jsui/scripts/app/controller/Toolbar.js:777
-#: exe/jsui/scripts/app/controller/Toolbar.js:806
-#: exe/jsui/scripts/app/controller/Toolbar.js:952
-#: exe/jsui/scripts/app/controller/Toolbar.js:1054
+#: exe/jsui/scripts/app/controller/Toolbar.js:423
+#: exe/jsui/scripts/app/controller/Toolbar.js:444
+#: exe/jsui/scripts/app/controller/Toolbar.js:479
+#: exe/jsui/scripts/app/controller/Toolbar.js:498
+#: exe/jsui/scripts/app/controller/Toolbar.js:567
+#: exe/jsui/scripts/app/controller/Toolbar.js:678
+#: exe/jsui/scripts/app/controller/Toolbar.js:720
+#: exe/jsui/scripts/app/controller/Toolbar.js:737
+#: exe/jsui/scripts/app/controller/Toolbar.js:754
+#: exe/jsui/scripts/app/controller/Toolbar.js:783
+#: exe/jsui/scripts/app/controller/Toolbar.js:919
+#: exe/jsui/scripts/app/controller/Toolbar.js:1016
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:139
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:321
@@ -3862,7 +3862,7 @@ msgstr "Formularioaren eremu batzuk ez dira baliagarriak. Mesedez, berrikusi."
 #: exe/jsui/scripts/app/controller/MainTab.js:273
 #: exe/jsui/scripts/app/controller/MainTab.js:326
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:380
+#: exe/jsui/scripts/app/controller/Toolbar.js:361
 msgid "Confirm"
 msgstr "Baieztatu"
 
@@ -3900,17 +3900,17 @@ msgstr "\"{node}\" nodoa berrizendatu"
 msgid "Enter the new name:"
 msgstr "Sartu izen berria:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:316
+#: exe/jsui/scripts/app/controller/Toolbar.js:298
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "About"
 msgstr "Honi buruz"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:352
+#: exe/jsui/scripts/app/controller/Toolbar.js:334
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
 msgid "Preferences"
 msgstr "Lehentasunak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:381
+#: exe/jsui/scripts/app/controller/Toolbar.js:362
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
@@ -3918,105 +3918,105 @@ msgstr ""
 "Aldaketak egin badituzu eta ez badituzu gorde, galduko dira. Benetan "
 "atera nahi duzu?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:410
+#: exe/jsui/scripts/app/controller/Toolbar.js:388
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
 msgid "Style Manager"
 msgstr "Estiloen kudeatzailea"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:433
+#: exe/jsui/scripts/app/controller/Toolbar.js:411
 msgid "Select package to insert"
 msgstr "Aukeratu txertatuko den paketea"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:438
+#: exe/jsui/scripts/app/controller/Toolbar.js:416
 msgid "Inserting package: {filename}"
 msgstr "Paketea txertatzen: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:444
-#: exe/jsui/scripts/app/controller/Toolbar.js:465
-#: exe/jsui/scripts/app/controller/Toolbar.js:951
-#: exe/jsui/scripts/app/controller/Toolbar.js:1053
+#: exe/jsui/scripts/app/controller/Toolbar.js:422
+#: exe/jsui/scripts/app/controller/Toolbar.js:443
+#: exe/jsui/scripts/app/controller/Toolbar.js:918
+#: exe/jsui/scripts/app/controller/Toolbar.js:1015
 msgid "eXe Package Files"
 msgstr "eXe fitxategiak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:454
+#: exe/jsui/scripts/app/controller/Toolbar.js:432
 msgid "Save extracted package as"
 msgstr "Ateratako paketea honela gorde"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:459
+#: exe/jsui/scripts/app/controller/Toolbar.js:437
 msgid "Extracting package: {filename}"
 msgstr "Atera paketea: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:475
+#: exe/jsui/scripts/app/controller/Toolbar.js:453
 msgid "Select the parent folder for import."
 msgstr "Aukeratu karpeta nagusia inportaziorako."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:490
+#: exe/jsui/scripts/app/controller/Toolbar.js:468
 msgid "Select the entry point for import."
 msgstr "Inportazioaren sarbidea aukeratu."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:500
+#: exe/jsui/scripts/app/controller/Toolbar.js:478
 msgid "HTML Files"
 msgstr "HTML fitxategiak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:509
+#: exe/jsui/scripts/app/controller/Toolbar.js:487
 msgid "Select LOM Metadata file to import."
 msgstr "Inportatuko den LOM metadatuen fitxategia aukeratu."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:519
+#: exe/jsui/scripts/app/controller/Toolbar.js:497
 msgid "XML Files"
 msgstr "XML fitxategiak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:534
+#: exe/jsui/scripts/app/controller/Toolbar.js:512
 msgid "Waiting progress..."
 msgstr "Itxarotearen aurreratzea... (aurrerapenaren egoera?)"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:542
+#: exe/jsui/scripts/app/controller/Toolbar.js:520
 msgid "Cancel Import?"
 msgstr "Inportazioa bertan behera utzi?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:543
+#: exe/jsui/scripts/app/controller/Toolbar.js:521
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr "Inportazio bat martxan dago. Deuseztatu nahi duzu?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:566
+#: exe/jsui/scripts/app/controller/Toolbar.js:544
 msgid "Select Xliff file to import"
 msgstr "Aukeratu XLIFF fitxategia inportatzeko"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:576
+#: exe/jsui/scripts/app/controller/Toolbar.js:554
 msgid "XLIFF Import Preferences"
 msgstr "XLIFF inportazioaren aukerak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:588
-#: exe/jsui/scripts/app/controller/Toolbar.js:699
+#: exe/jsui/scripts/app/controller/Toolbar.js:566
+#: exe/jsui/scripts/app/controller/Toolbar.js:677
 msgid "XLIFF Files"
 msgstr "XLIFF fitxategiak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:598
+#: exe/jsui/scripts/app/controller/Toolbar.js:576
 msgid "Export to Xliff as"
 msgstr "XLIFF-era honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:618
+#: exe/jsui/scripts/app/controller/Toolbar.js:596
 msgid "Select source language"
 msgstr "Jatorrizko hizkuntza aukeratu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:629
+#: exe/jsui/scripts/app/controller/Toolbar.js:607
 msgid "Select target language"
 msgstr "Xede hizkuntza aukeratu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:640
+#: exe/jsui/scripts/app/controller/Toolbar.js:618
 msgid "Copy source also in target"
 msgstr "Jatorrizko testua xedean kopiatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:643
+#: exe/jsui/scripts/app/controller/Toolbar.js:621
 #, fuzzy
 msgid ""
-"If you don't choose this \r\n"
+"If you don't choose this \n"
 "option, target field will be empty. Some Computer Aided Translation tools"
-" \r\n"
-"(i.g. OmegaT ) just translate the content of the target field. If you are"
-" \r\n"
-"using this kind of tools, you will need to pre-fill target field with a "
-"copy \r\n"
+" \n"
+"(e.g. OmegaT) just translate the content of the target field. If you are"
+" \n"
+"using this kind of tools, you will need to pre-fill the target field with"
+" a copy \n"
 "of the source field."
 msgstr ""
 "Aukera hau ez baduzu klikatzen, helburu testua hutsik sortuko da. "
@@ -4024,15 +4024,14 @@ msgstr ""
 "egiten dute soilik eta jatorrizko eremuaren testuarekin aurre-beteta "
 "egotea behar dute."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:654
+#: exe/jsui/scripts/app/controller/Toolbar.js:632
 #, fuzzy
 msgid ""
-"This option will wrap all \r\n"
-"the exported fields in CDATA sections. This kind of sections are not \r\n"
+"This option will wrap all \n"
+"the exported fields in CDATA sections. This kind of sections are not \n"
 "recommended by XLIFF standard but it could be a good option if you want "
-"to \r\n"
-"use a pre-process tool (i.g.: Rainbow) before using the Computer Aided"
-" \r\n"
+"to \n"
+"use a pre-process tool (i.g.: Rainbow) before using the Computer Aided \n"
 "Translation software."
 msgstr ""
 "Aukera honek, esportatutako eremuak bilduko ditu CDATA ataletan. XLIFF "
@@ -4040,105 +4039,105 @@ msgstr ""
 "interesgarri bat izan daiteke aurre-prozesaketa tresna bat erabili nahi "
 "baduzu (adib. Rainbow) itzulpen tresna erabili aurretik."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:663
+#: exe/jsui/scripts/app/controller/Toolbar.js:641
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/webui/editorpane.py:273 exe/webui/xliffimportpreferencespage.py:94
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Cancel"
 msgstr "Ezeztatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:669
+#: exe/jsui/scripts/app/controller/Toolbar.js:647
 msgid "Ok"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:692
+#: exe/jsui/scripts/app/controller/Toolbar.js:670
 msgid "XLIFF Export Preferences"
 msgstr "XLIFF esportazioaren aukerak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:715
+#: exe/jsui/scripts/app/controller/Toolbar.js:693
 msgid "Select the parent folder for export."
 msgstr "Esportazioaren karpeta "
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:733
+#: exe/jsui/scripts/app/controller/Toolbar.js:710
 msgid "Export text package as"
 msgstr "Testu paketea honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:742
+#: exe/jsui/scripts/app/controller/Toolbar.js:719
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:283
 msgid "Text File"
 msgstr "Testu fitxategia"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:750
+#: exe/jsui/scripts/app/controller/Toolbar.js:727
 msgid "Save package resources report as"
 msgstr "Honela gorde paketearen baliabide txostena "
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:759
+#: exe/jsui/scripts/app/controller/Toolbar.js:736
 msgid "CSV File"
 msgstr "CSV fitxategia"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:767
+#: exe/jsui/scripts/app/controller/Toolbar.js:744
 msgid "Export EPUB3 package as"
 msgstr "Esportatu EPUB paketea honela"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:776
+#: exe/jsui/scripts/app/controller/Toolbar.js:753
 msgid "EPUB3 File"
 msgstr "EPUB3 fitxategia"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:784
+#: exe/jsui/scripts/app/controller/Toolbar.js:761
 msgid "Export SCORM package as"
 msgstr "SCORM paketea honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:786
+#: exe/jsui/scripts/app/controller/Toolbar.js:763
 msgid "Export IMS package as"
 msgstr "IMS paketea honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:788
+#: exe/jsui/scripts/app/controller/Toolbar.js:765
 msgid "Export Website package as"
 msgstr "Webgune paketea honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:790
+#: exe/jsui/scripts/app/controller/Toolbar.js:767
 msgid "Export Common Cartridge as"
 msgstr "Common Cartridge-a honela esportatu (Common Cartridge-a)"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:792
+#: exe/jsui/scripts/app/controller/Toolbar.js:769
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "exportPackage-ari BALIO OKERRA EMAN ZAIO"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:805
+#: exe/jsui/scripts/app/controller/Toolbar.js:782
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/Zip fitxategia"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:923
+#: exe/jsui/scripts/app/controller/Toolbar.js:891
 msgid "Loading package..."
 msgstr "Paketea kargatzen..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:940
+#: exe/jsui/scripts/app/controller/Toolbar.js:907
 msgid "Open File"
 msgstr "Fitxategia ireki"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:945
+#: exe/jsui/scripts/app/controller/Toolbar.js:912
 msgid "Loading package: {filename}"
 msgstr "Paketea kargatzen: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:964
+#: exe/jsui/scripts/app/controller/Toolbar.js:931
 msgid "Save Package first?"
 msgstr "Paketea gorde?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:965
+#: exe/jsui/scripts/app/controller/Toolbar.js:932
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr "Paketea aldatu da eta oraindik ez da gorde. Gorde nahi duzu?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1014
+#: exe/jsui/scripts/app/controller/Toolbar.js:979
 msgid "Saving package to: {filename}"
 msgstr "Paketea hemen gordetzen: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1033
+#: exe/jsui/scripts/app/controller/Toolbar.js:995
 msgid "Save file"
 msgstr "Gorde fitxategia"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1039
+#: exe/jsui/scripts/app/controller/Toolbar.js:1001
 msgid "Saving package..."
 msgstr "Paketea gordetzen..."
 

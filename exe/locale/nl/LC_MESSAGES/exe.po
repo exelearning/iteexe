@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-26 13:11+0100\n"
+"POT-Creation-Date: 2015-02-26 13:24+0100\n"
 "PO-Revision-Date: 2014-10-21 15:46+0100\n"
 "Last-Translator: k.werschkull <k.werschkull@hccnet.nl>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
@@ -2638,7 +2638,7 @@ msgstr ""
 "OPSLAAN MISLUKT!\n"
 "Laatst succesvol opgeslagen is %s."
 
-#: exe/engine/package.py:1445 exe/jsui/scripts/app/controller/Toolbar.js:371
+#: exe/engine/package.py:1445 exe/jsui/scripts/app/controller/Toolbar.js:352
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "iDevice-editor"
@@ -3370,7 +3370,7 @@ msgstr ""
 msgid "Don't copy source in target"
 msgstr "Kopieer de bron niet naar het doel"
 
-#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:652
+#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:630
 msgid "Wrap fields in CDATA"
 msgstr "Opsluitvelden in CDATA"
 
@@ -3851,18 +3851,18 @@ msgid "Image Files"
 msgstr "Afbeeldingsbestanden"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:445
-#: exe/jsui/scripts/app/controller/Toolbar.js:466
-#: exe/jsui/scripts/app/controller/Toolbar.js:501
-#: exe/jsui/scripts/app/controller/Toolbar.js:520
-#: exe/jsui/scripts/app/controller/Toolbar.js:589
-#: exe/jsui/scripts/app/controller/Toolbar.js:700
-#: exe/jsui/scripts/app/controller/Toolbar.js:743
-#: exe/jsui/scripts/app/controller/Toolbar.js:760
-#: exe/jsui/scripts/app/controller/Toolbar.js:777
-#: exe/jsui/scripts/app/controller/Toolbar.js:806
-#: exe/jsui/scripts/app/controller/Toolbar.js:952
-#: exe/jsui/scripts/app/controller/Toolbar.js:1054
+#: exe/jsui/scripts/app/controller/Toolbar.js:423
+#: exe/jsui/scripts/app/controller/Toolbar.js:444
+#: exe/jsui/scripts/app/controller/Toolbar.js:479
+#: exe/jsui/scripts/app/controller/Toolbar.js:498
+#: exe/jsui/scripts/app/controller/Toolbar.js:567
+#: exe/jsui/scripts/app/controller/Toolbar.js:678
+#: exe/jsui/scripts/app/controller/Toolbar.js:720
+#: exe/jsui/scripts/app/controller/Toolbar.js:737
+#: exe/jsui/scripts/app/controller/Toolbar.js:754
+#: exe/jsui/scripts/app/controller/Toolbar.js:783
+#: exe/jsui/scripts/app/controller/Toolbar.js:919
+#: exe/jsui/scripts/app/controller/Toolbar.js:1016
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:139
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:321
@@ -3898,7 +3898,7 @@ msgstr "Het formulier bevat onjuiste velden. Controleer svp."
 #: exe/jsui/scripts/app/controller/MainTab.js:273
 #: exe/jsui/scripts/app/controller/MainTab.js:326
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:380
+#: exe/jsui/scripts/app/controller/Toolbar.js:361
 msgid "Confirm"
 msgstr "Stem in"
 
@@ -3936,121 +3936,121 @@ msgstr "Hernoemen \"{node}\" node"
 msgid "Enter the new name:"
 msgstr "Voer de nieuwe naam in:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:316
+#: exe/jsui/scripts/app/controller/Toolbar.js:298
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "About"
 msgstr "Over eXe"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:352
+#: exe/jsui/scripts/app/controller/Toolbar.js:334
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:381
+#: exe/jsui/scripts/app/controller/Toolbar.js:362
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
 msgstr "Niet opgeslagen wijzigingen zullen verloren gaan. Wilt u echt stoppen?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:410
+#: exe/jsui/scripts/app/controller/Toolbar.js:388
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
 msgid "Style Manager"
 msgstr "Stijl manager"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:433
+#: exe/jsui/scripts/app/controller/Toolbar.js:411
 msgid "Select package to insert"
 msgstr "Kies een bestand om in te voegen"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:438
+#: exe/jsui/scripts/app/controller/Toolbar.js:416
 msgid "Inserting package: {filename}"
 msgstr "Bestand invoegen {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:444
-#: exe/jsui/scripts/app/controller/Toolbar.js:465
-#: exe/jsui/scripts/app/controller/Toolbar.js:951
-#: exe/jsui/scripts/app/controller/Toolbar.js:1053
+#: exe/jsui/scripts/app/controller/Toolbar.js:422
+#: exe/jsui/scripts/app/controller/Toolbar.js:443
+#: exe/jsui/scripts/app/controller/Toolbar.js:918
+#: exe/jsui/scripts/app/controller/Toolbar.js:1015
 msgid "eXe Package Files"
 msgstr "eXe Package Files"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:454
+#: exe/jsui/scripts/app/controller/Toolbar.js:432
 msgid "Save extracted package as"
 msgstr "Sla het uitgepakte bestand op als "
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:459
+#: exe/jsui/scripts/app/controller/Toolbar.js:437
 msgid "Extracting package: {filename}"
 msgstr "bestand uitpakken: {filename} "
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:475
+#: exe/jsui/scripts/app/controller/Toolbar.js:453
 msgid "Select the parent folder for import."
 msgstr "Kies een bovenliggende map voor import."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:490
+#: exe/jsui/scripts/app/controller/Toolbar.js:468
 msgid "Select the entry point for import."
 msgstr "Kies het ingangspunt voor import."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:500
+#: exe/jsui/scripts/app/controller/Toolbar.js:478
 msgid "HTML Files"
 msgstr "HTML bestanden"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:509
+#: exe/jsui/scripts/app/controller/Toolbar.js:487
 msgid "Select LOM Metadata file to import."
 msgstr "Kies LOM Metadata bestand om te importeren."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:519
+#: exe/jsui/scripts/app/controller/Toolbar.js:497
 msgid "XML Files"
 msgstr "XML bestanden"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:534
+#: exe/jsui/scripts/app/controller/Toolbar.js:512
 msgid "Waiting progress..."
 msgstr "Wachten op voortgang..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:542
+#: exe/jsui/scripts/app/controller/Toolbar.js:520
 msgid "Cancel Import?"
 msgstr "Import annuleren?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:543
+#: exe/jsui/scripts/app/controller/Toolbar.js:521
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr "Import is bezig. Wilt U afbreken?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:566
+#: exe/jsui/scripts/app/controller/Toolbar.js:544
 msgid "Select Xliff file to import"
 msgstr "Kies XLIFF bestand voor import"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:576
+#: exe/jsui/scripts/app/controller/Toolbar.js:554
 msgid "XLIFF Import Preferences"
 msgstr "XLIFF import Voorkeuren"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:588
-#: exe/jsui/scripts/app/controller/Toolbar.js:699
+#: exe/jsui/scripts/app/controller/Toolbar.js:566
+#: exe/jsui/scripts/app/controller/Toolbar.js:677
 msgid "XLIFF Files"
 msgstr "XLIFF Bestanden"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:598
+#: exe/jsui/scripts/app/controller/Toolbar.js:576
 msgid "Export to Xliff as"
 msgstr "Exporteer naar XLIFF als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:618
+#: exe/jsui/scripts/app/controller/Toolbar.js:596
 msgid "Select source language"
 msgstr "Kies de brontaal"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:629
+#: exe/jsui/scripts/app/controller/Toolbar.js:607
 msgid "Select target language"
 msgstr "Kies de doeltaal"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:640
+#: exe/jsui/scripts/app/controller/Toolbar.js:618
 msgid "Copy source also in target"
 msgstr "Kopieer de bron ook naar het doel"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:643
+#: exe/jsui/scripts/app/controller/Toolbar.js:621
 #, fuzzy
 msgid ""
-"If you don't choose this \r\n"
+"If you don't choose this \n"
 "option, target field will be empty. Some Computer Aided Translation tools"
-" \r\n"
-"(i.g. OmegaT ) just translate the content of the target field. If you are"
-" \r\n"
-"using this kind of tools, you will need to pre-fill target field with a "
-"copy \r\n"
+" \n"
+"(e.g. OmegaT) just translate the content of the target field. If you are"
+" \n"
+"using this kind of tools, you will need to pre-fill the target field with"
+" a copy \n"
 "of the source field."
 msgstr ""
 "Als U deze optie open laat zal het overeenkomstige doelveld leegblijven. "
@@ -4058,15 +4058,14 @@ msgstr ""
 "uitsluitend de inhoud van het doelveld. Als U dit soort tools gebruikt "
 "zult U de doelveldden moeten vullen met een kopie van de bronvelden."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:654
+#: exe/jsui/scripts/app/controller/Toolbar.js:632
 #, fuzzy
 msgid ""
-"This option will wrap all \r\n"
-"the exported fields in CDATA sections. This kind of sections are not \r\n"
+"This option will wrap all \n"
+"the exported fields in CDATA sections. This kind of sections are not \n"
 "recommended by XLIFF standard but it could be a good option if you want "
-"to \r\n"
-"use a pre-process tool (i.g.: Rainbow) before using the Computer Aided"
-" \r\n"
+"to \n"
+"use a pre-process tool (i.g.: Rainbow) before using the Computer Aided \n"
 "Translation software."
 msgstr ""
 "Deze optie sluit alle geexporteerde velden op in CDATA elementen. Dit "
@@ -4074,91 +4073,91 @@ msgstr ""
 "een goede optie zijn als je een pre-process tool (zoals Rainbow) wilt "
 "gebruiken voordat je Computer Aided vertaal software wilt toepassen."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:663
+#: exe/jsui/scripts/app/controller/Toolbar.js:641
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/webui/editorpane.py:273 exe/webui/xliffimportpreferencespage.py:94
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:669
+#: exe/jsui/scripts/app/controller/Toolbar.js:647
 msgid "Ok"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:692
+#: exe/jsui/scripts/app/controller/Toolbar.js:670
 msgid "XLIFF Export Preferences"
 msgstr "XLIFF export opties"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:715
+#: exe/jsui/scripts/app/controller/Toolbar.js:693
 msgid "Select the parent folder for export."
 msgstr "Kies de hoofdmap voor export"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:733
+#: exe/jsui/scripts/app/controller/Toolbar.js:710
 msgid "Export text package as"
 msgstr "Exporteer tekstbestand als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:742
+#: exe/jsui/scripts/app/controller/Toolbar.js:719
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:283
 msgid "Text File"
 msgstr "Tekstbestand"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:750
+#: exe/jsui/scripts/app/controller/Toolbar.js:727
 msgid "Save package resources report as"
 msgstr "Sla het bronnenreport op als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:759
+#: exe/jsui/scripts/app/controller/Toolbar.js:736
 msgid "CSV File"
 msgstr "CSV bestand"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:767
+#: exe/jsui/scripts/app/controller/Toolbar.js:744
 msgid "Export EPUB3 package as"
 msgstr "Exporteer EPUB3 bestand als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:776
+#: exe/jsui/scripts/app/controller/Toolbar.js:753
 msgid "EPUB3 File"
 msgstr "EPUB3 bestand"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:784
+#: exe/jsui/scripts/app/controller/Toolbar.js:761
 msgid "Export SCORM package as"
 msgstr "Exporteer SCORM bestand als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:786
+#: exe/jsui/scripts/app/controller/Toolbar.js:763
 msgid "Export IMS package as"
 msgstr "Exporteer het IMS bestabnd als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:788
+#: exe/jsui/scripts/app/controller/Toolbar.js:765
 msgid "Export Website package as"
 msgstr "Exporteer het Website bestand als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:790
+#: exe/jsui/scripts/app/controller/Toolbar.js:767
 msgid "Export Common Cartridge as"
 msgstr "Exporteer Common Cartridge als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:792
+#: exe/jsui/scripts/app/controller/Toolbar.js:769
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "VERKEERDE WAARDE MEEGEGEVEN aan exportbestand"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:805
+#: exe/jsui/scripts/app/controller/Toolbar.js:782
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/ZipFile"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:923
+#: exe/jsui/scripts/app/controller/Toolbar.js:891
 msgid "Loading package..."
 msgstr "Bestand laden..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:940
+#: exe/jsui/scripts/app/controller/Toolbar.js:907
 msgid "Open File"
 msgstr "Open Bestand"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:945
+#: exe/jsui/scripts/app/controller/Toolbar.js:912
 msgid "Loading package: {filename}"
 msgstr "Bestand laden...(Bestandsnaam)"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:964
+#: exe/jsui/scripts/app/controller/Toolbar.js:931
 msgid "Save Package first?"
 msgstr "Bestand eerst opslaan?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:965
+#: exe/jsui/scripts/app/controller/Toolbar.js:932
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
@@ -4166,15 +4165,15 @@ msgstr ""
 "Het huidige bestand is gewijzigd en nog niet opgeslagen. Wilt U het eerst"
 " opslaan?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1014
+#: exe/jsui/scripts/app/controller/Toolbar.js:979
 msgid "Saving package to: {filename}"
 msgstr "Bestand opslaan als: (Bestandsnaam)"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1033
+#: exe/jsui/scripts/app/controller/Toolbar.js:995
 msgid "Save file"
 msgstr "Sla bestand op"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1039
+#: exe/jsui/scripts/app/controller/Toolbar.js:1001
 msgid "Saving package..."
 msgstr "Bestand opslaan"
 
