@@ -631,6 +631,8 @@ class MainPage(RenderableLivePage):
             descrip_file.flush()
             descrip_file.close()
 
+            client.sendScript('eXe.app.fireEvent("previewTinyMCEImageDone")')
+
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             log.error("handleTinyMCEimageChoice unable to copy local image "\
