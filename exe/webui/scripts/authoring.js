@@ -668,7 +668,7 @@ var exe_tinymce = {
             };
 
             eXe.app.on({
-                'previewTinyMCEImageDone': done
+                'previewTinyMCEImageDone': previewTinyMCEImageDone
             });
 
             // pass the file information on to the server,
