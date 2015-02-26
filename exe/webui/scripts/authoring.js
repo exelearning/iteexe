@@ -641,8 +641,10 @@ var exe_tinymce = {
 			win.document.forms[0].elements[field_name].value = ""; 
 
 			// set the tinyMCE image filename field:
-			win.document.forms[0].elements[field_name].value = full_previewImage_url;
+			var formField = win.document.forms[0].elements[field_name];
+			formField.value = full_previewImage_url;
 			// then force its onchange event:
+			$(formField).trigger("change");
 		
 			// PreviewImage is only available for images:
 			if (type == "image") {

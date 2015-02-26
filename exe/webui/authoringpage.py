@@ -23,6 +23,9 @@ area of the eXe web user interface.
 """
 import os
 import logging
+import time
+import exceptions
+import sys
 from twisted.web.resource    import Resource
 from exe.webui               import common
 from cgi                     import escape
@@ -74,9 +77,16 @@ class AuthoringPage(RenderableResource):
         webDir     = Path(G.application.tempWebDir) 
         previewDir  = webDir.joinpath('previews')
         for root, dirs, files in os.walk(previewDir, topdown=False): 
-            for name in files: 
-                os.remove(os.path.join(root, name))
-
+            for name in files:
+                if sys.platform[:3] == "win":
+                    for i in range(3):
+                        try:
+                            os.remove(os.path.join(root, name))
+                            break
+                        except exceptions.WindowsError:
+                            time.sleep(0.3)
+                else:
+                    os.remove(os.path.join(root, name))
         topNode = self.package.currentNode
         if "action" in request.args:
             if request.args["action"][0] == u"changeNode":

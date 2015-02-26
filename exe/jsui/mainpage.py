@@ -1,4 +1,5 @@
-# -- coding: utf-8 --
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
 # ===========================================================================
 # eXe
 # Copyright 2012, Pedro Peña Pérez, Open Phoenix IT
@@ -15,7 +16,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # ===========================================================================
 
 """
@@ -29,7 +30,7 @@ import logging
 import traceback
 import shutil
 import tempfile
-from exe.engine.version import release, revision
+from exe.engine.version          import release, revision
 from twisted.internet            import threads, reactor
 from exe.webui.livepage          import RenderableLivePage,\
     otherSessionPackageClients, allSessionClients, allSessionPackageClients
@@ -57,9 +58,9 @@ from exe                         import globals as G
 from tempfile                    import mkdtemp
 from exe.engine.mimetex          import compile
 from urllib                      import unquote, urlretrieve
-from exe.engine.locationbuttons import LocationButtons
-from exe.export.epub3export import Epub3Export
-from exe.export.xmlexport import XMLExport
+from exe.engine.locationbuttons  import LocationButtons
+from exe.export.epub3export      import Epub3Export
+from exe.export.xmlexport        import XMLExport
 
 from exe.engine.lom import lomsubs
 from exe.engine.lom.lomclassification import Classification
@@ -71,7 +72,7 @@ class MainPage(RenderableLivePage):
     """
     This is the main Javascript page.  Responsible for handling URLs.
     """
-    
+
     _templateFileName = 'mainpage.html'
     name = 'to_be_defined'
 
@@ -84,7 +85,7 @@ class MainPage(RenderableLivePage):
         self.session = session
         RenderableLivePage.__init__(self, parent, package, config)
         self.putChild("resources", File(package.resourceDir))
-		#styles directory
+        #styles directory
         #self.putChild("stylecss", File(self.config.stylesDir)
 
         mainjs = Path(self.config.jsDir).joinpath('templates', 'mainpage.html')
@@ -103,13 +104,16 @@ class MainPage(RenderableLivePage):
         self.authoringPages = {}
         self.classificationSources = {}
 
-        G.application.resourceDir=Path(package.resourceDir);
+        G.application.resourceDir=Path(package.resourceDir)
 
         self.location_buttons = LocationButtons()
 
 
     def child_authoring(self, ctx):
-        """Returns the authoring page that corresponds to the url http://127.0.0.1:port/package_name/authoring"""
+        """
+        Returns the authoring page that corresponds to
+        the url http://127.0.0.1:port/package_name/authoring
+        """
         request = inevow.IRequest(ctx)
         if 'clientHandleId' in request.args:
             clientid = request.args['clientHandleId'][0]
@@ -161,7 +165,7 @@ class MainPage(RenderableLivePage):
 
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
-#        inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
+        # inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
         # Set up named server side funcs that js can call
         def setUpHandler(func, name, *args, **kwargs):
             """
@@ -175,29 +179,28 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handlePackageFileName, 'getPackageFileName')
         setUpHandler(self.handleSavePackage,     'savePackage')
         setUpHandler(self.handleLoadPackage,     'loadPackage')
-        setUpHandler(self.recentMenu.handleLoadRecent,      'loadRecent')
+        setUpHandler(self.recentMenu.handleLoadRecent, 'loadRecent')
         setUpHandler(self.handleLoadTutorial,    'loadTutorial')
-        setUpHandler(self.recentMenu.handleClearRecent,     'clearRecent')
+        setUpHandler(self.recentMenu.handleClearRecent, 'clearRecent')
         setUpHandler(self.handleImport,          'importPackage')
         setUpHandler(self.handleCancelImport,    'cancelImportPackage')
         setUpHandler(self.handleExport,          'exportPackage')
         setUpHandler(self.handleXliffExport,     'exportXliffPackage')
         setUpHandler(self.handleQuit,            'quit')
         setUpHandler(self.handleBrowseURL,       'browseURL')
-        setUpHandler(self.handleMergeXliffPackage,   'mergeXliffPackage')
+        setUpHandler(self.handleMergeXliffPackage, 'mergeXliffPackage')
         setUpHandler(self.handleInsertPackage,   'insertPackage')
         setUpHandler(self.handleExtractPackage,  'extractPackage')
-        setUpHandler(self.outlinePane.handleSetTreeSelection,  
-                                                 'setTreeSelection')
-        setUpHandler(self.handleClearAndMakeTempPrintDir,
-                                                 'makeTempPrintDir')
+        setUpHandler(self.outlinePane.handleSetTreeSelection, 'setTreeSelection')
+        setUpHandler(self.handleClearAndMakeTempPrintDir, 'makeTempPrintDir')
         setUpHandler(self.handleRemoveTempDir,   'removeTempDir')
-        setUpHandler(self.handleTinyMCEimageChoice,   'previewTinyMCEimage')
+        setUpHandler(self.handleTinyMCEimageChoice, 'previewTinyMCEimage')
         setUpHandler(self.handleTinyMCEmath,     'generateTinyMCEmath')
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
-        setUpHandler(self.handleReload,       'reload')
+        setUpHandler(self.handleReload,          'reload')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
         setUpHandler(self.handleStyleDownload,   'styleDownload')
+
         
         #For the new ExtJS 4.0 interface
         setUpHandler(self.outlinePane.handleAddChild, 'AddChild')
@@ -212,7 +215,7 @@ class MainPage(RenderableLivePage):
         self.idevicePane.client = client
         self.styleMenu.client = client
         self.webServer.stylemanager.client = client
-        
+
 
         if not self.webServer.monitoring:
             self.webServer.monitoring = True
@@ -248,8 +251,8 @@ class MainPage(RenderableLivePage):
                 tags.p()["Revision: ", 
                          tags.a(href='%s;a=shortlog;h=%s' % (self.config.baseGitWebURL, revision),
                                 target='_blank')[revision]
-                         ]
-                ] 
+                        ]
+               ] 
 
     def handleTestPrintMsg(self, client, message): 
         """ 
@@ -304,7 +307,7 @@ class MainPage(RenderableLivePage):
         'filename' is the filename to save the package to
         'onDone' will be evaled after saving instead or redirecting
         to the new location (in cases of package name changes).
-        (This is used where the user goes file|open when their 
+        (This is used where the user goes file|open when their
         package is changed and needs saving)
         """
         filename = Path(filename, 'utf-8')
@@ -345,7 +348,7 @@ class MainPage(RenderableLivePage):
         self.webServer.root.bindNewPackage(package, self.session)
         client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
                           package.name).encode('utf8'), filter_func=filter_func)
- 
+
     def handleLoadTutorial(self, client):
         """
         Loads the tutorial file, from the Help menu
@@ -387,7 +390,7 @@ class MainPage(RenderableLivePage):
     def handleStyleDownload(self, client, url):
         """
         Download style from url and import into styles directory
-        
+
         TODO: This handler would make more sense in the StyleManagerPage class, move there
         """
         log.debug("Download style from %s" % url)
@@ -410,16 +413,16 @@ class MainPage(RenderableLivePage):
                 Path(filename).remove()
 
         d.addCallback(successDownload)
-        
+
     def handleReload(self, client):
         self.location_buttons.updateText()
         client.sendScript('eXe.app.gotoUrl()', filter_func=allSessionClients)
- 
+
     def handleRemoveTempDir(self, client, tempdir, rm_top_dir):
         """
         Removes a temporary directory and any contents therein
         (from the bottom up), and yup, that's all!
-        
+
         #
         # swiped from an example on:
         #     http://docs.python.org/lib/os-file-dir.html
@@ -437,10 +440,10 @@ class MainPage(RenderableLivePage):
                 os.rmdir(os.path.join(root, name))
         ##################################################################
         # and finally, go ahead and remove the top-level tempdir itself:
-        if (int(rm_top_dir) != 0):
+        if int(rm_top_dir) != 0:
             os.rmdir(tempdir)
-      
-        
+
+
     def get_printdir_relative2web(self, exported_dir):
         """
         related to the following ClearParentTempPrintDirs(), return a
@@ -479,7 +482,7 @@ class MainPage(RenderableLivePage):
         # if not, create it:
         if cmp(under_dirname,"") != 0:
             if os.path.exists(under_dirname):
-                if (os.path.isdir(under_dirname)):
+                if os.path.isdir(under_dirname):
                     # Yes, this directory already exists.  
                     # pre-clean it, keeping the clutter down:
                     clear_tempdir = 1
@@ -597,7 +600,7 @@ class MainPage(RenderableLivePage):
 
             localImagePath = Path(local_filename)
             log.debug('handleTinyMCEimageChoice: after Path, localImagePath= '
-                    + localImagePath);
+                    + localImagePath)
             if not localImagePath.exists() or not localImagePath.isfile():
                 client.alert( \
                      _(u'Local file %s is not found, cannot preview it') \
@@ -612,14 +615,14 @@ class MainPage(RenderableLivePage):
             # joinpath needs its join arguments to already be in Unicode:
             #preview_filename = toUnicode(preview_filename);
             # but that's okay, cuz preview_filename is now URI safe, right?
-            log.debug('URIencoded preview filename=' + preview_filename);
+            log.debug('URIencoded preview filename=' + preview_filename)
 
-            server_filename = previewDir.joinpath(preview_filename);
+            server_filename = previewDir.joinpath(preview_filename)
             log.debug("handleTinyMCEimageChoice copying image from \'"\
                     + local_filename + "\' to \'" \
-                    + server_filename.abspath() + "\'.");
+                    + server_filename.abspath() + "\'.")
             shutil.copyfile(local_filename, \
-                    server_filename.abspath());
+                    server_filename.abspath())
 
             # new optional description file to provide the 
             # actual base filename, such that once it is later processed
@@ -640,7 +643,7 @@ class MainPage(RenderableLivePage):
             descrip_file_path = Path(server_filename+".exe_info")
             log.debug("handleTinyMCEimageChoice creating preview " \
                     + "description file \'" \
-                    + descrip_file_path.abspath() + "\'.");
+                    + descrip_file_path.abspath() + "\'.")
             descrip_file = open(descrip_file_path, 'wb')
 
             # safety measures against TinyMCE, otherwise it will 
@@ -650,9 +653,9 @@ class MainPage(RenderableLivePage):
             unhashed_filename  = unspaced_filename.replace('#', '_num_')
             unamped_local_filename  = unhashed_filename.replace('&', '_and_')
             log.debug("and setting new file basename as: " 
-                    + unamped_local_filename);
+                    + unamped_local_filename)
             my_basename = os.path.basename(unamped_local_filename)
-            
+
             descrip_file.write((u"basename="+my_basename).encode('utf-8'))
             descrip_file.flush()
             descrip_file.close()
@@ -668,7 +671,7 @@ class MainPage(RenderableLivePage):
                              preview_image_filename, preview_math_srcfile):
         """
         Based off of handleTinyMCEimageChoice(), 
-        handleTinyMCEmath() is similar in that it places a .gif math image 
+        handleTinyMCEmath() is similar in that it places a .gif math image
         (and a corresponding .tex LaTeX source file) into the previews dir.
         Rather than copying the image from a user-selected directory, though,
         this routine actually generates the math image using mimetex.
@@ -707,7 +710,7 @@ class MainPage(RenderableLivePage):
         #        errors += 1
 
         # the mimetex usage code was swiped from the Math iDevice:
-        if latex_source <> "":
+        if latex_source != "":
 
             # first write the latex_source out into the preview_math_srcfile,
             # such that it can then be passed into the compile command:
@@ -734,17 +737,17 @@ class MainPage(RenderableLivePage):
                 raise
 
             # copy the file into previews
-            server_filename = previewDir.joinpath(preview_image_filename);
+            server_filename = previewDir.joinpath(preview_image_filename)
             log.debug("handleTinyMCEmath copying math image from \'"\
                     + tempFileName + "\' to \'" \
-                    + server_filename.abspath().encode('utf-8') + "\'.");
+                    + server_filename.abspath().encode('utf-8') + "\'.")
             shutil.copyfile(tempFileName, \
-                    server_filename.abspath().encode('utf-8'));
+                    server_filename.abspath().encode('utf-8'))
 
             # Delete the temp file made by compile 
             Path(tempFileName).remove()
         return
-    
+
     def getResources(self,dirname,html,client):
         Resources.cancel = False
         self.importresources = Resources(dirname,self.package.findNode(client.currentNodeId),client)
@@ -757,7 +760,7 @@ class MainPage(RenderableLivePage):
 #        k.output(data)
 #        data.close()
         self.importresources.insertNode([html.partition(dirname + os.sep)[2]])
-        
+
 
     def handleImport(self, client, importType, path, html=None):
         if importType == 'html':
@@ -787,15 +790,15 @@ class MainPage(RenderableLivePage):
     def handleCancelImport(self, client):
         log.info('Cancel import')
         Resources.cancelImport()
-        
+
     def handleExport(self, client, exportType, filename):
         """
         Called by js. 
         Exports the current package to one of the above formats
-        'exportType' can be one of 'singlePage' 'webSite' 'zipFile' 
-                     'textFile' or 'scorm'            
+        'exportType' can be one of 'singlePage' 'webSite' 'zipFile'
+                     'textFile' or 'scorm'
         'filename' is a file for scorm pages, and a directory for websites
-        """ 
+        """
         webDir     = Path(self.config.webDir)
         #stylesDir  = webDir.joinpath('style', self.package.style)
         stylesDir  = self.config.stylesDir/self.package.style
@@ -854,10 +857,10 @@ class MainPage(RenderableLivePage):
         """
         Stops the server
         """
-        # first, go ahead and clear out any temp job files still in 
+        # first, go ahead and clear out any temp job files still in
         # the temporary print directory:
         log_dir_warnings = 0  
-        # don't warn of any issues with the directories at quit, 
+        # don't warn of any issues with the directories at quit,
         # since already warned at initial directory creation
         (parent_temp_print_dir, dir_warnings) = \
                 self.ClearParentTempPrintDirs(client, log_dir_warnings)
@@ -869,7 +872,7 @@ class MainPage(RenderableLivePage):
             G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
             try:
                 shutil.rmtree(G.application.tempWebDir, True)
-                shutil.rmtree(G.application.resourceDir, True)                
+                shutil.rmtree(G.application.resourceDir, True)
             except:
                 log.debug('Don\'t delete temp directorys. ')
             reactor.callLater(2, reactor.stop)
@@ -878,20 +881,20 @@ class MainPage(RenderableLivePage):
 
     def handleBrowseURL(self, client, url):
         """visit the specified URL using the system browser
-        
+
         if the URL contains %s, substitute the local webDir
         if the URL contains %t, show a temp file containing NEWS and README """
         if url.find('%t') > -1:
             release_notes = os.path.join(G.application.tempWebDir,
                     'Release_Notes.html')
-            f = open(release_notes, 'wt')
+            f = open(release_notes, 'w')
             f.write('''<html><head><title>eXe Release Notes</title></head>
                 <body><h1>News</h1><pre>\n''')
             try:
                 news = open(os.path.join(self.config.webDir, 'NEWS'),
-                        'rt').read()
+                        'r').read()
                 readme = open(os.path.join(self.config.webDir, 'README'),
-                        'rt').read()
+                        'r').read()
                 f.write(news)
                 f.write('</pre><hr><h1>Read Me</h1><pre>\n')
                 f.write(readme)
@@ -1018,7 +1021,7 @@ class MainPage(RenderableLivePage):
         Export 'client' to a single web page,
         'webDir' is just read from config.webDir
         'stylesDir' is where to copy the style sheet information from
-        'printFlag' indicates whether or not this is for print 
+        'printFlag' indicates whether or not this is for print
                     (and whatever else that might mean)
         """
         try:
@@ -1044,8 +1047,8 @@ class MainPage(RenderableLivePage):
                 return
             else:
                 client.alert(_(u'Folder name %s already exists. '
-                                'Please choose another one or delete existing one then try again.') % filename)           
-                return 
+                                'Please choose another one or delete existing one then try again.') % filename)
+                return
             # Now do the export
             singlePageExport = SinglePageExport(stylesDir, filename, \
                                          imagesDir, scriptsDir, cssDir, templatesDir)
@@ -1118,7 +1121,7 @@ class MainPage(RenderableLivePage):
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
         client.alert(_(u'Exported to %s') % filename)
-        
+
     def exportText(self, client, filename):
         try:
             filename = Path(filename)
@@ -1137,7 +1140,7 @@ class MainPage(RenderableLivePage):
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
         client.alert(_(u'Exported to %s') % filename)
-        
+
     def handleXliffExport(self, client, filename, source, target, copy, cdata):
         """
         Exports this package to a XLIFF file
@@ -1280,6 +1283,3 @@ class MainPage(RenderableLivePage):
             log.error(u'Traceback:\n%s' % traceback.format_exc())
             raise
         return package
-    
-
-    

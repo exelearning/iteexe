@@ -22,5 +22,5 @@ span[size='7']{font-size:xx-large}
 .exe-layout-3-cols .exe-col-1,.exe-layout-3-cols .exe-col-2{padding-right:2%}
 
 .exe-clear {overflow:auto}
-/* In TinyMCE edition page, hidden elements are show */
-.exe-hide{display: block !important;opacity: 0.4;margin: 0.5em;padding: 0em 0.5em 0em 2em;background: url("../images/exe_hidden.png") no-repeat scroll left bottom transparent;} 
+/* In TinyMCE, hidden elements are shown */
+body .exe-hide{display:inherit;filter:alpha(opacity=40);opacity:0.4;margin:0.5em;padding-left:25px;background:url(../images/exe_hidden.png) no-repeat 0 0}

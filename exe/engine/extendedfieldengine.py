@@ -193,22 +193,24 @@ class ChoiceElement(Element):
     def renderPreview(self):
         return self.field.content
 
-"""
-Field for storing an individual file
-"""
+
 class FileField(Field):
-    persistenceVersion = 4
+    """
+    Field for storing an individual file
+    """
+    persistenceVersion = 5
     
     """
     alwaysNameTo - make sure that this file always a certain final name
     """
-    def __init__(self, idevice, alwaysNameTo = None, desc="File Field", help="File Field Help"):
+    def __init__(self, idevice, alwaysNameTo=None, desc="File Field", help="File Field Help"):
         Field.__init__(self, desc, help)
         self.idevice = idevice
         self.fileResource = None
         self.fileInstruc = "Upload a file"
         self.alwaysNameTo = alwaysNameTo
         self.fileDescription = TextField("Description")
+        self.fileDescription.idevice = self
         
     def uploadFile(self, filePath):
         if self.fileResource is not None:
@@ -237,6 +239,10 @@ class FileField(Field):
     
     def upgradeToVersion4(self):
         self.fileDescription = TextField("Description")
+
+    def upgradeToVersion5(self):
+        self.fileDescription.idevice = self
+
 
 class FileElement(Element):
     

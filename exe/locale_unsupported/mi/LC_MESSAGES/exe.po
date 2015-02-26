@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.0.1\n"
+"Project-Id-Version: eXeLearning 2.0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-09 07:07+0100\n"
 "PO-Revision-Date: 2006-09-20 11:25+1200\n"

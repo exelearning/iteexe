@@ -179,4 +179,11 @@ def decodeObjectFromXML(toDecode):
         return None, False
     log.debug("decodeObjectFromXML starting decode")
     du = UTF8DOMUnjellier()
-    return du.unjelly(document), True
+    try:
+        return du.unjelly(document), True
+    except RuntimeError as e:
+        if e.args == ('maximum recursion depth exceeded',):
+            log.error(e.message)
+            return None, False
+        else:
+            raise e
