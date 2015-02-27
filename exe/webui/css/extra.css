@@ -23,4 +23,5 @@ span[size='7']{font-size:xx-large}
 
 .exe-clear {overflow:auto}
 /* In TinyMCE, hidden elements are shown */
-body .exe-hide{display:inherit;filter:alpha(opacity=40);opacity:0.4;margin:0.5em;padding-left:25px;background:url(../images/exe_hidden.png) no-repeat 0 0}
+body .exe-hidden{display:inherit;filter:alpha(opacity=40);opacity:0.4;margin:0.5em;padding-left:25px;background:url(../images/exe_hidden.png) no-repeat 0 0}
+body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:auto;filter:alpha(opacity=40);opacity:0.4;margin:0.5em;padding-left:25px;background:url(../images/exe_hidden_accessible.png) no-repeat 0 0}
