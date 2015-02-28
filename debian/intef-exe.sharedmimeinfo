@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-exe-learning">
+    <comment>eXe eLearning authoring tool package</comment>
+    <comment xml:lang="es">Paquete eXe para la creación de recursos educativos</comment>
+    <icon name="exe"/>
+    <glob pattern="*.elp"/>
+  </mime-type>
+</mime-info>
+
