@@ -42,12 +42,18 @@
 # 2015-02-26:
 #    * Version 2.0.2 (JRF)
 #
+# 2015-03-01:
+#    * Update the po2json/transecma file, to the git version at 
+#      https://github.com/nandoflorestan/bag/tree/master/bag/web
+#      in order to try to fix bug 2410.
+#
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
 version="2.0.2"
+
 # 1.- Extraction of strings from *.py and *.js into new POT
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
 pybabel extract --keyword=x_ --keyword=c_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
@@ -77,4 +83,6 @@ find exe -name exe.po | xargs sed -i '1!N;1!N;/#~ msgid ""\n#~ msgstr ""/d' # Cl
 #
 # 4.- Generating the translated JS files for the different languages
 echo -e "\n\n\n *** Compiling javascript for jsui files ***\n"
-python tools/po2json.py --domain exe --directory exe/locale --output-dir exe/jsui/scripts/i18n
+# python tools/po2json.py --domain exe --directory exe/locale --output-dir exe/jsui/scripts/i18n
+python tools/transecma.py --domain exe --directory exe/locale --output-dir exe/jsui/scripts/i18n
+

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0.2\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2015-02-26 13:24+0100\n"
+"POT-Creation-Date: 2015-03-01 14:39+0100\n"
 "PO-Revision-Date: 2014-10-22 23:33+0100\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
 "Language-Team: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
@@ -196,8 +196,8 @@ msgstr ""
 "e a seguir acrescente o ficheiro de dados ou o applet gerado por esse "
 "programa."
 
-#: exe/engine/attachmentidevice.py:44 exe/engine/extendedfieldengine.py:330
-#: exe/engine/extendedfieldengine.py:332 exe/webui/editorelement.py:328
+#: exe/engine/attachmentidevice.py:44 exe/engine/extendedfieldengine.py:336
+#: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
 msgstr "Anexo"
@@ -1133,35 +1133,35 @@ msgstr "Transferir"
 msgid "Show Advanced Options"
 msgstr "Mostrar opções avançadas"
 
-#: exe/engine/extendedfieldengine.py:278
+#: exe/engine/extendedfieldengine.py:284
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Browse"
 msgstr "Procurar"
 
-#: exe/engine/extendedfieldengine.py:280
+#: exe/engine/extendedfieldengine.py:286
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace"
 msgstr "Substituir"
 
-#: exe/engine/extendedfieldengine.py:282 exe/webui/appletblock.py:157
+#: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:157
 #: exe/webui/appletblock.py:167
 msgid "Upload"
 msgstr "Upload"
 
-#: exe/engine/extendedfieldengine.py:292
+#: exe/engine/extendedfieldengine.py:298
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
 msgid "File"
 msgstr "Ficheiro"
 
-#: exe/engine/extendedfieldengine.py:297 exe/webui/appletblock.py:184
+#: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:184
 msgid "Delete File"
 msgstr "Eliminar Ficheiro"
 
-#: exe/engine/extendedfieldengine.py:300
+#: exe/engine/extendedfieldengine.py:306
 msgid "No File Uploaded Currently"
 msgstr "Neste momento não há qualquer ficheiro carregado"
 
-#: exe/engine/extendedfieldengine.py:332 exe/webui/editorelement.py:225
+#: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:225
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
 #: exe/webui/imagemagnifierblock.py:109 exe/webui/imagewithtextblock.py:83
 #: exe/webui/multimediablock.py:87
@@ -1169,7 +1169,7 @@ msgstr "Neste momento não há qualquer ficheiro carregado"
 msgid "None"
 msgstr "Nenhum"
 
-#: exe/engine/extendedfieldengine.py:564
+#: exe/engine/extendedfieldengine.py:570
 msgid "is not a valid number - please try again<br/>"
 msgstr "não é um número válido - por favor, tente novamente<br/>"
 
@@ -3534,8 +3534,8 @@ msgstr ""
 "O erro foi:"
 
 #: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:296
-#: exe/jsui/mainpage.py:940 exe/jsui/mainpage.py:1104 exe/jsui/mainpage.py:1145
-#: exe/jsui/mainpage.py:1180 exe/jsui/mainpage.py:1201
+#: exe/jsui/mainpage.py:942 exe/jsui/mainpage.py:1106 exe/jsui/mainpage.py:1147
+#: exe/jsui/mainpage.py:1182 exe/jsui/mainpage.py:1203
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3548,7 +3548,7 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "Formato de exportação não implementado"
 
-#: exe/export/epub3export.py:593 exe/export/imsexport.py:569
+#: exe/export/epub3export.py:596 exe/export/imsexport.py:569
 #: exe/export/scormexport.py:669 exe/export/websiteexport.py:96
 #, python-format
 msgid ""
@@ -3722,11 +3722,11 @@ msgstr "A inserir %s"
 msgid "My iDevices"
 msgstr "Os meus iDevices"
 
-#: exe/jsui/mainpage.py:314 exe/jsui/mainpage.py:779 exe/jsui/mainpage.py:932
+#: exe/jsui/mainpage.py:314 exe/jsui/mainpage.py:781 exe/jsui/mainpage.py:934
 msgid "Cannot access directory named "
 msgstr "Não é possível aceder à pasta indicada"
 
-#: exe/jsui/mainpage.py:314 exe/jsui/mainpage.py:781 exe/jsui/mainpage.py:932
+#: exe/jsui/mainpage.py:314 exe/jsui/mainpage.py:783 exe/jsui/mainpage.py:934
 msgid ". Please use ASCII names."
 msgstr ". Por favor use nomes ASCII."
 
@@ -3734,7 +3734,7 @@ msgstr ". Por favor use nomes ASCII."
 msgid "SAVE FAILED!"
 msgstr "Guardar falhou!"
 
-#: exe/jsui/mainpage.py:327 exe/jsui/mainpage.py:635 exe/jsui/mainpage.py:1028
+#: exe/jsui/mainpage.py:327 exe/jsui/mainpage.py:637 exe/jsui/mainpage.py:1030
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3748,7 +3748,7 @@ msgstr ""
 msgid "Package saved to: %s"
 msgstr "Pacote guardado em: %s"
 
-#: exe/jsui/mainpage.py:557 exe/jsui/mainpage.py:663
+#: exe/jsui/mainpage.py:557 exe/jsui/mainpage.py:665
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Pasta de pré-visualização %s é um ficheiro, não é possível substituí-lo."
@@ -3758,7 +3758,7 @@ msgstr "Pasta de pré-visualização %s é um ficheiro, não é possível substi
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Ficheiro local %s não encontrado, não pode ser pré-visualizado"
 
-#: exe/jsui/mainpage.py:705
+#: exe/jsui/mainpage.py:707
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -3767,11 +3767,11 @@ msgstr ""
 "A compilação de MimeTeX falhou!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:744
+#: exe/jsui/mainpage.py:746
 msgid "Importing HTML..."
 msgstr "A importar HTML..."
 
-#: exe/jsui/mainpage.py:750
+#: exe/jsui/mainpage.py:752
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3780,26 +3780,26 @@ msgstr ""
 "A importação de metadados LOM falhou!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:753
+#: exe/jsui/mainpage.py:755
 msgid "Error importing HTML:\n"
 msgstr "Erro ao importar HTML:\n"
 
-#: exe/jsui/mainpage.py:802 exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:810
-#: exe/jsui/mainpage.py:813 exe/jsui/mainpage.py:816 exe/jsui/mainpage.py:819
-#: exe/jsui/mainpage.py:824 exe/jsui/mainpage.py:1088 exe/jsui/mainpage.py:1161
+#: exe/jsui/mainpage.py:804 exe/jsui/mainpage.py:809 exe/jsui/mainpage.py:812
+#: exe/jsui/mainpage.py:815 exe/jsui/mainpage.py:818 exe/jsui/mainpage.py:821
+#: exe/jsui/mainpage.py:826 exe/jsui/mainpage.py:1090 exe/jsui/mainpage.py:1163
 msgid "EXPORT FAILED!"
 msgstr "A exportação falhou!"
 
-#: exe/jsui/mainpage.py:895
+#: exe/jsui/mainpage.py:897
 msgid "Correct XLIFF import"
 msgstr "Importação XLIFF correta"
 
-#: exe/jsui/mainpage.py:898
+#: exe/jsui/mainpage.py:900
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Erro ao importar XLIFF: %s"
 
-#: exe/jsui/mainpage.py:941 exe/jsui/mainpage.py:958
+#: exe/jsui/mainpage.py:943 exe/jsui/mainpage.py:960
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -3808,21 +3808,21 @@ msgstr ""
 "Extracção falhou!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:960
+#: exe/jsui/mainpage.py:962
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Pacote extraído para: %s"
 
-#: exe/jsui/mainpage.py:972
+#: exe/jsui/mainpage.py:974
 msgid "Directory exists"
 msgstr "A pasta já existe"
 
-#: exe/jsui/mainpage.py:986 exe/jsui/mainpage.py:1076 exe/jsui/mainpage.py:1092
-#: exe/jsui/mainpage.py:1105 exe/jsui/mainpage.py:1111
-#: exe/jsui/mainpage.py:1129 exe/jsui/mainpage.py:1146
-#: exe/jsui/mainpage.py:1152 exe/jsui/mainpage.py:1166
-#: exe/jsui/mainpage.py:1181 exe/jsui/mainpage.py:1187
-#: exe/jsui/mainpage.py:1202 exe/jsui/mainpage.py:1208
+#: exe/jsui/mainpage.py:988 exe/jsui/mainpage.py:1078 exe/jsui/mainpage.py:1094
+#: exe/jsui/mainpage.py:1107 exe/jsui/mainpage.py:1113
+#: exe/jsui/mainpage.py:1131 exe/jsui/mainpage.py:1148
+#: exe/jsui/mainpage.py:1154 exe/jsui/mainpage.py:1168
+#: exe/jsui/mainpage.py:1183 exe/jsui/mainpage.py:1189
+#: exe/jsui/mainpage.py:1204 exe/jsui/mainpage.py:1210
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3831,39 +3831,39 @@ msgstr ""
 "A exportação falhou! \n"
 "%s"
 
-#: exe/jsui/mainpage.py:1014 exe/jsui/mainpage.py:1061
+#: exe/jsui/mainpage.py:1016 exe/jsui/mainpage.py:1063
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Nome do ficheiro %s não pode ser alterado"
 
-#: exe/jsui/mainpage.py:1020 exe/jsui/mainpage.py:1068
+#: exe/jsui/mainpage.py:1022 exe/jsui/mainpage.py:1070
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr "A pasta %s já existe. Escolha outra pasta ou apague a existente."
 
-#: exe/jsui/mainpage.py:1034 exe/jsui/mainpage.py:1079
-#: exe/jsui/mainpage.py:1094 exe/jsui/mainpage.py:1113
-#: exe/jsui/mainpage.py:1131 exe/jsui/mainpage.py:1154
-#: exe/jsui/mainpage.py:1168 exe/jsui/mainpage.py:1189
-#: exe/jsui/mainpage.py:1210
+#: exe/jsui/mainpage.py:1036 exe/jsui/mainpage.py:1081
+#: exe/jsui/mainpage.py:1096 exe/jsui/mainpage.py:1115
+#: exe/jsui/mainpage.py:1133 exe/jsui/mainpage.py:1156
+#: exe/jsui/mainpage.py:1170 exe/jsui/mainpage.py:1191
+#: exe/jsui/mainpage.py:1212
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportado para %s"
 
-#: exe/jsui/mainpage.py:1243 exe/webui/stylemanagerpage.py:130
+#: exe/jsui/mainpage.py:1245 exe/webui/stylemanagerpage.py:130
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "O ficheiro %s não existe ou não foi possível efectuar a sua leitura."
 
-#: exe/jsui/mainpage.py:1247
+#: exe/jsui/mainpage.py:1249
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Não foi possível carregar o ficheiro, envie um e-mail para "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1250
+#: exe/jsui/mainpage.py:1252
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3872,7 +3872,7 @@ msgstr ""
 "Desculpe, formato de ficheiro incorreto:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1252
+#: exe/jsui/mainpage.py:1254
 msgid "Sorry, wrong file format"
 msgstr "Desculpe, formato de ficheiro incorreto"
 
@@ -4248,27 +4248,27 @@ msgstr "Não tem permissões para escrever na pasta"
 msgid "You do not have the permissions to open the file"
 msgstr "Não tem permissões para abrir o ficheiro"
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:324
+#: exe/jsui/scripts/app/controller/filepicker/File.js:336
 msgid "You do not have the permissions to  save into folder"
 msgstr "Não tem permissões para guardar na pasta"
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:336
+#: exe/jsui/scripts/app/controller/filepicker/File.js:348
 msgid "Create Folder"
 msgstr "Criar pasta"
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:337
+#: exe/jsui/scripts/app/controller/filepicker/File.js:349
 msgid "Enter the new folder name:"
 msgstr "Digite o nome da nova pasta:"
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:351
+#: exe/jsui/scripts/app/controller/filepicker/File.js:363
 msgid "You do not have the permissions to create a folder in folder"
 msgstr "Não tem permissões para criar uma subpasta na pasta"
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:357
+#: exe/jsui/scripts/app/controller/filepicker/File.js:369
 msgid "Confirm?"
 msgstr "Confirma?"
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:358
+#: exe/jsui/scripts/app/controller/filepicker/File.js:370
 msgid "The file already exists. Do you want to replace it?"
 msgstr "O ficheiro já existe. Deseja substituí-lo?"
 
