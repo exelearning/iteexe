@@ -53,16 +53,11 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .exe-layout-2-70-30 .exe-col-1{width:69%}
 .exe-layout-3-cols .exe-col{float:left;width:32%}
 .exe-layout-3-cols .exe-col-1,.exe-layout-3-cols .exe-col-2{padding-right:2%}
-/* iDevice Toggler */
-.toggle-idevice{display:none}
 /* Autoclear */
 .exe-clear{overflow:auto}
-/* When exported, hide the elements with exe-hide class*/
-.exe-hide{display: none}
 /* JavaScript on/offf */
-.js-required{display:none}
+.toggle-idevice,.exe-hidden,.js-required,.js .js-hidden{display:none}
 .js .js-required{display:block}
-.js .js-hidden{display:none}
 /* Hints */
 .js #main .iDevice_hint_title{font-size:1em;margin-top:0;font-weight:normal;*margin-top:1em}/* IE6, IE7 */
 .iDevice_hint{margin-bottom:1.5em}
@@ -78,6 +73,6 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .hidden-idevice .image_text{display:none} /* iDevice Toggler : Required for Magnifier */
 /* Accessibility */
 #skipNav{margin:0;position:absolute;width:100%}
-.sr-av,.js .js-sr-av,#skipNav a{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0} /* sr-av: Avaible for Screen Readers */
+.sr-av,.js .js-sr-av,#skipNav a,.exe-hidden-accessible{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0} /* sr-av: Avaible for Screen Readers */
 #skipNav a{background:#333;color:#fff;padding:.4em .85em} /* clip:rect(0 0 0 0) is for IE6 & 7 */
 #skipNav a:active,#skipNav a:focus{position:static;overflow:visible;clip:auto;height:auto}

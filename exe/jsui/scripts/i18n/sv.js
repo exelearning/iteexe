@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0.1\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-11-24 23:01+0100\nPO-Revision-Date: 2006-07-28 15:37+1200\nLast-Translator: Jenny <jennylin_nz@yahoo.com>\nLanguage-Team: Fredrik Paulsson <frepa@frepa.org>\nLanguage: sv\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-02-26 13:24+0100\nPO-Revision-Date: 2006-07-28 15:37+1200\nLast-Translator: Jenny <jennylin_nz@yahoo.com>\nLanguage-Team: Fredrik Paulsson <frepa@frepa.org>\nLanguage: sv\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Type in the feedback that you want the \nstudent to see when selecting the particular question. If you don't complete\nthis box, eXe will automatically provide default feedback as follows: \n\"Correct answer\" as indicated by the selection for the correct answer; or \n\"Wrong answer\" for the other alternatives.": "Fyll i den feedback du vill ge eleven n\u00e4r denne v\u00e4ljer en viss fr\u00e5ga. Om du inte fyller i\n detta f\u00e4lt kommer eXe automatiskt att fylla i: \n\"R\u00e4tt svar\" som indikation p\u00e5 val av r\u00e4tt svar, respektive \n\"Fel svar\" f\u00f6r alla andra alternativ.", 
  "Hide": "G\u00f6m", 
  "Some emphasis": "Delfokus", 
@@ -62,7 +62,6 @@ translations = {
  "Story:": "Story:", 
  "Image": "Bild", 
  "iDevice %s has no package": "iDevice %s har inget paket", 
- "label": "etikett", 
  "Objectives describe the expected outcomes of the learning and should\ndefine what the learners will be able to do when they have completed the\nlearning tasks.": "M\u00e5ls\u00e4ttning beskriver det f\u00f6rv\u00e4ntade reultatet av momentet och b\u00f6r\n definiera vad eleverna skall kunna n\u00e4r\n de avslutat momentet", 
  "Cloze Activity": "St\u00e4ng aktivitet", 
  "Exported to %s": "Exporterad till %s", 

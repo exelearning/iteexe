@@ -387,12 +387,11 @@
             
             //HTML5 video/audio preview
             var s = getVal("src");
-            if (preview_html.indexOf('src=""></audio>')!=-1 && s!=""){
-                preview_html = preview_html.replace('src=""></audio>','src="'+s+'" controls="controls"></audio>');
-            } else if (preview_html.indexOf('src=""></video>')!=-1 && s!=""){
-                preview_html = preview_html.replace('src=""></video>','src="'+s+'" controls="controls"></video>');
+            if (s!="" && preview_html.indexOf('<audio')!=-1 && preview_html.indexOf(' controls')==-1) {
+                preview_html = preview_html.replace('></audio>',' controls></audio>');
+            } else if (s!="" && preview_html.indexOf('<video')!=-1 && preview_html.indexOf(' controls')==-1) {
+				preview_html = preview_html.replace('></video>',' controls></video>');
             }
-            
             get('prev').innerHTML = preview_html;
             // /The New eXeLearning         
         },
