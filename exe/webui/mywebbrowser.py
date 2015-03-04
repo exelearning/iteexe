@@ -290,9 +290,9 @@ class Mozilla(UnixBrowser):
 
     raise_opts = []
     remote_args = ['%action', '%s']
-    remote_action = "--new-tab"
-    remote_action_newwin = "--new-window"
-    remote_action_newtab = "--new-tab"
+    remote_action = "-new-tab"
+    remote_action_newwin = "-new-window"
+    remote_action_newtab = "-new-tab"
     background = True
 
 Netscape = Mozilla
