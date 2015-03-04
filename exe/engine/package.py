@@ -1,6 +1,7 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # ===========================================================================
-# eXe 
+# eXe
 # Copyright 2004-2006, University of Auckland
 # Copyright 2006-2008 eXe Project, http://eXeLearning.org/
 #
@@ -68,7 +69,7 @@ from exe                       import globals as G
 from exe.engine.resource       import Resource
 from twisted.persisted.styles  import doUpgrade
 from twisted.spread.jelly      import Jellyable, Unjellyable
-from exe.engine.beautifulsoup  import BeautifulSoup
+from beautifulsoup  import BeautifulSoup
 from exe.engine.field          import Field, TextAreaField
 from exe.engine.persistxml     import encodeObjectToXML, decodeObjectFromXML
 from exe.engine.lom import lomsubs
@@ -81,23 +82,24 @@ log = logging.getLogger(__name__)
 def clonePrototypeIdevice(title):
     idevice = None
 
-    for prototype in G.application.ideviceStore.getIdevices(): 
+    for prototype in G.application.ideviceStore.getIdevices():
         if prototype.get_title() == title:
-            log.debug('have prototype of:' + prototype.get_title()) 
-            idevice = prototype.clone() 
+            log.debug('have prototype of:' + prototype.get_title())
+            idevice = prototype.clone()
             idevice.edit = False
-            break 
+            break
 
     return idevice
 
-def burstIdevice(idev_type, i, node): 
+
+def burstIdevice(idev_type, i, node):
     # given the iDevice type and the BeautifulSoup fragment i, burst it:
     idevice = clonePrototypeIdevice(idev_type)
     if idevice is None:
         log.warn("unable to clone " + idev_type + " idevice")
         freetext_idevice = clonePrototypeIdevice('Free Text')
         if freetext_idevice is None:
-            log.error("unable to clone Free Text for " + idev_type 
+            log.error("unable to clone Free Text for " + idev_type
                     + " idevice")
             return
         idevice = freetext_idevice
@@ -109,64 +111,65 @@ def burstIdevice(idev_type, i, node):
     idevice.burstHTML(i)
     return idevice
 
+
 def loadNodesIdevices(node, s):
     soup = BeautifulSoup(s)
     body = soup.find('body')
 
     if body:
-        idevices = body.findAll(name='div', 
-                attrs={'class' : re.compile('Idevice$') })
+        idevices = body.findAll(name='div',
+                attrs={'class': re.compile('Idevice$')})
         if len(idevices) > 0:
-            for i in idevices: 
+            for i in idevices:
                 # WARNING: none of the idevices yet re-attach their media,
                 # but they do attempt to re-attach images and other links.
 
-                if i.attrMap['class']=="activityIdevice":
+                if i.attrMap['class'] == "activityIdevice":
                     idevice = burstIdevice('Activity', i, node)
-                elif i.attrMap['class']=="objectivesIdevice":
+                elif i.attrMap['class'] == "objectivesIdevice":
                     idevice = burstIdevice('Objectives', i, node)
-                elif i.attrMap['class']=="preknowledgeIdevice":
+                elif i.attrMap['class'] == "preknowledgeIdevice":
                     idevice = burstIdevice('Preknowledge', i, node)
-                elif i.attrMap['class']=="readingIdevice":
+                elif i.attrMap['class'] == "readingIdevice":
                     idevice = burstIdevice('Reading Activity', i, node)
                 # the above are all Generic iDevices;
                 # below are all others:
-                elif i.attrMap['class']=="RssIdevice":
+                elif i.attrMap['class'] == "RssIdevice":
                     idevice = burstIdevice('RSS', i, node)
-                elif i.attrMap['class']=="WikipediaIdevice":
+                elif i.attrMap['class'] == "WikipediaIdevice":
                     # WARNING: Wiki problems loading images with accents, etc:
                     idevice = burstIdevice('Wiki Article', i, node)
-                elif i.attrMap['class']=="ReflectionIdevice":
+                elif i.attrMap['class'] == "ReflectionIdevice":
                     idevice = burstIdevice('Reflection', i, node)
-                elif i.attrMap['class']=="GalleryIdevice":
+                elif i.attrMap['class'] == "GalleryIdevice":
                     # WARNING: Gallery problems with the popup html:
                     idevice = burstIdevice('Image Gallery', i, node)
-                elif i.attrMap['class']=="ImageMagnifierIdevice":
+                elif i.attrMap['class'] == "ImageMagnifierIdevice":
                     # WARNING: Magnifier missing major bursting components:
                     idevice = burstIdevice('Image Magnifier', i, node)
-                elif i.attrMap['class']=="AppletIdevice":
+                elif i.attrMap['class'] == "AppletIdevice":
                     # WARNING: Applet missing file bursting components:
                     idevice = burstIdevice('Java Applet', i, node)
-                elif i.attrMap['class']=="ExternalUrlIdevice":
+                elif i.attrMap['class'] == "ExternalUrlIdevice":
                     idevice = burstIdevice('External Web Site', i, node)
-                elif i.attrMap['class']=="ClozeIdevice":
+                elif i.attrMap['class'] == "ClozeIdevice":
                     idevice = burstIdevice('Cloze Activity', i, node)
-                elif i.attrMap['class']=="FreeTextIdevice":
+                elif i.attrMap['class'] == "FreeTextIdevice":
                     idevice = burstIdevice('Free Text', i, node)
-                elif i.attrMap['class']=="CasestudyIdevice":
+                elif i.attrMap['class'] == "CasestudyIdevice":
                     idevice = burstIdevice('Case Study', i, node)
-                elif i.attrMap['class']=="MultichoiceIdevice":
+                elif i.attrMap['class'] == "MultichoiceIdevice":
                     idevice = burstIdevice('Multi-choice', i, node)
-                elif i.attrMap['class']=="MultiSelectIdevice":
+                elif i.attrMap['class'] == "MultiSelectIdevice":
                     idevice = burstIdevice('Multi-select', i, node)
-                elif i.attrMap['class']=="QuizTestIdevice":
+                elif i.attrMap['class'] == "QuizTestIdevice":
                     idevice = burstIdevice('SCORM Quiz', i, node)
-                elif i.attrMap['class']=="TrueFalseIdevice":
+                elif i.attrMap['class'] == "TrueFalseIdevice":
                     idevice = burstIdevice('True-False Question', i, node)
                 else:
                     # NOTE: no custom idevices burst yet,
                     # nor any deprecated idevices. Just burst into a FreeText:
-                    log.warn("unburstable idevice " + i.attrMap['class'] + 
+                    log.warn("unburstable idevice " + i.attrMap['class'] +
                             "; bursting into Free Text")
                     idevice = burstIdevice('Free Text', i, node)
 
@@ -187,6 +190,7 @@ def test_for_node(html_content):
         return True
     else:
         return False
+
 
 def loadNode(pass_num, resourceDir, zippedFile, node, doc, item, level):
     # populate this node
@@ -222,21 +226,21 @@ def loadNode(pass_num, resourceDir, zippedFile, node, doc, item, level):
                         # let these be re-created upon bursting.
                         if pass_num == 0:
                             # 1st pass call to unzip the resources:
-                            log.debug('ignoring resource file: '+ filename)
+                            log.debug('ignoring resource file: ' + filename)
                     else:
                         if pass_num == 0:
                             # 1st pass call to unzip the resources:
                             try:
                                 zipinfo = zippedFile.getinfo(filename)
                                 log.debug('unzipping resource file: '
-                                        + resourceDir/filename )
-                                outFile = open(resourceDir/filename, "wb") 
-                                outFile.write(zippedFile.read(filename)) 
-                                outFile.flush() 
+                                        + resourceDir/filename)
+                                outFile = open(resourceDir/filename, "wb")
+                                outFile.write(zippedFile.read(filename))
+                                outFile.flush()
                                 outFile.close()
                             except:
                                 log.warn('error unzipping resource file: '
-                                        + resourceDir/filename )
+                                        + resourceDir/filename)
                         ##########
                         # WARNING: the resource is now in the resourceDir,
                         # BUT it is NOT YET added into any of the project,
@@ -248,7 +252,7 @@ def loadNode(pass_num, resourceDir, zippedFile, node, doc, item, level):
 
     # process this node's children
     for subitem in item.childNodes:
-        if subitem.nodeName == 'item': 
+        if subitem.nodeName == 'item':
             # for the first pass, of unzipping only, do not
             # create any child nodes, just cruise on with this one:
             next_node = node
@@ -258,12 +262,13 @@ def loadNode(pass_num, resourceDir, zippedFile, node, doc, item, level):
             loadNode(pass_num, resourceDir, zippedFile, next_node,
                     doc, subitem, level+1)
 
+
 def loadCC(zippedFile, filename):
     """
     Load an IMS Common Cartridge or Content Package from filename
     """
     package = Package(Path(filename).namebase)
-    xmldoc = minidom.parseString( zippedFile.read('imsmanifest.xml')) 
+    xmldoc = minidom.parseString(zippedFile.read('imsmanifest.xml'))
 
     organizations_list = xmldoc.getElementsByTagName('organizations')
     level = 0
@@ -275,9 +280,10 @@ def loadCC(zippedFile, filename):
             for organization in organization_list:
                 for item in organization.childNodes:
                     if item.nodeName == 'item':
-                        loadNode(pass_num, package.resourceDir, zippedFile, 
+                        loadNode(pass_num, package.resourceDir, zippedFile,
                                 package.root, xmldoc, item, level)
     return package
+
 
 # ===========================================================================
 class DublinCore(Jellyable, Unjellyable):
@@ -305,7 +311,7 @@ class DublinCore(Jellyable, Unjellyable):
     def __setattr__(self, name, value):
         self.__dict__[name] = toUnicode(value)
 
-         
+
 class Package(Persistable):
     """
     Package represents the collection of resources the user is editing
@@ -314,26 +320,26 @@ class Package(Persistable):
     persistenceVersion = 13
     nonpersistant      = ['resourceDir', 'filename', 'previewDir']
     # Name is used in filenames and urls (saving and navigating)
-    _name              = '' 
+    _name              = ''
     tempFile           = False # This is set when the package is saved as a temp copy file
     # Title is rendered in exports
-    _title             = '' 
+    _title             = ''
     _author            = ''
     _description       = ''
     _backgroundImg     = ''
-    #styledefault=u"INTEF"
+    # styledefault=u"INTEF"
     # This is like a constant
     defaultLevelNames  = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
 
     def __init__(self, name):
         """
-        Initialize 
+        Initialize
         """
         log.debug(u"init " + repr(name))
         self._nextIdeviceId = 0
         self._nextNodeId    = 0
         # For looking up nodes by ids
-        self._nodeIdDict    = {} 
+        self._nodeIdDict    = {}
 
         self._levelNames    = self.defaultLevelNames[:]
         self.name           = name
@@ -346,8 +352,8 @@ class Package(Persistable):
 
         self.root          = Node(self, None, _(u"Home"))
         self.currentNode   = self.root
-#        self.style         = u"default" 
-        #self.styledefault=u"INTEF"
+        # self.style        = u"default"
+        # self.styledefault = u"INTEF"
         self.style         = G.application.config.defaultStyle
         self._isChanged    = False
         self.previewDir    = None
@@ -357,7 +363,7 @@ class Package(Persistable):
         self.setLomDefaults()
         self.setLomEsDefaults()
         self.scolinks      = False
-        self.scowsinglepage= False
+        self.scowsinglepage = False
         self.scowwebsite   = False
         self.exportSource    = True
         self.exportMetadataType = "LOMES"
@@ -372,21 +378,20 @@ class Package(Persistable):
         self._contextPlace = u''
         self._contextMode = u''
         self.compatibleWithVersion9 = False
-        
-        #for export to Sugar (e.g. OLPC)
+
+        # for export to Sugar (e.g. OLPC)
         self.sugaractivityname = ""
         self.sugarservicename = ""
-        
-        #for export to Ustad Mobile
+
+        # for export to Ustad Mobile
         self.mxmlprofilelist = ""
         self.mxmlheight = ""
         self.mxmlwidth = ""
         self.mxmlforcemediaonly = False
-        
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
-        self.resources = {} # Checksum-[_Resource(),..]
+        self.resources = {}  # Checksum-[_Resource(),..]
         self._docType    = G.application.config.docType
 
     def setLomDefaults(self):
@@ -398,7 +403,7 @@ class Package(Persistable):
         self.lomEs.addChilds(self.lomDefaults(self.dublinCore.identifier, 'LOM-ESv1.0', True))
 
     # Property Handlers
-    def set_docType(self,value):
+    def set_docType(self, value):
         self._docType = toUnicode(value)
         common.setExportDocType(value)
 
@@ -676,7 +681,7 @@ class Package(Persistable):
 
     def set_preknowledge(self, value):
         lang_str = self.lang.encode('utf-8')
-        value_str = c_("Preknowledge").upper() + ": "  + value.encode('utf-8')
+        value_str = c_("Preknowledge").upper() + ": " + value.encode('utf-8')
         for metadata in [self.lom, self.lomEs]:
             educationals = metadata.get_educational()
             description = lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])
@@ -701,7 +706,7 @@ class Package(Persistable):
             else:
                 if value:
                     educational = [lomsubs.educationalSub(description=[description])]
-                    metadata.set_educational(educational)        
+                    metadata.set_educational(educational)
         self._preknowledge = toUnicode(value)
 
     def license_map(self, source, value):
@@ -950,13 +955,13 @@ class Package(Persistable):
 
     # Properties
     isChanged     = property(lambda self: self._isChanged, set_changed)
-    name          = property(lambda self:self._name, set_name)
-    title         = property(lambda self:self._title, set_title)
+    name          = property(lambda self: self._name, set_name)
+    title         = property(lambda self: self._title, set_title)
     lang          = property(lambda self: self._lang, set_lang)
-    author        = property(lambda self:self._author, set_author)
-    description   = property(lambda self:self._description, set_description)
-    newlicense    = property(lambda self:self.license, set_license)
-    docType       = property(lambda self:self._docType, set_docType)
+    author        = property(lambda self: self._author, set_author)
+    description   = property(lambda self: self._description, set_description)
+    newlicense    = property(lambda self: self.license, set_license)
+    docType       = property(lambda self: self._docType, set_docType)
 
     backgroundImg = property(get_backgroundImg, set_backgroundImg)
 
@@ -982,9 +987,8 @@ class Package(Persistable):
         node = self._nodeIdDict.get(nodeId)
         if node and node.package is self:
             return node
-        else: 
+        else:
             return None
-
 
     def levelName(self, level):
         """
@@ -994,7 +998,6 @@ class Package(Persistable):
             return _(self._levelNames[level])
         else:
             return _(u"?????")
-        
 
     def save(self, filename=None, tempFile=False):
         """
@@ -1018,11 +1021,11 @@ class Package(Persistable):
             # raise an exception because, we need to have a new
             # file passed when a brand new package is saved
             raise AssertionError(u'No name passed when saving a new package')
-        #JR: Convertimos el nombre del paquete para evitar nombres problematicos
+        # JRJ: Convertimos el nombre del paquete para evitar nombres problemáticos
         import string
         validPackagenameChars = "-_. %s%s" % (string.ascii_letters, string.digits)
-        self.name = ''.join(c for c in self.name if c in validPackagenameChars).replace(' ','_')
-        #JR: Si por casualidad quedase vacio le damos un nombre por defecto
+        self.name = ''.join(c for c in self.name if c in validPackagenameChars).replace(' ', '_')
+        # JRJ: Si por casualidad quedase vacío le damos un nombre por defecto
         if self.name == "":
             self.name = "invalidpackagename"
         # Store our new filename for next file|save, and save the package
@@ -1066,7 +1069,7 @@ class Package(Persistable):
         """
         Actually performs the save to 'fileObj'.
         """
-        
+
         if self.compatibleWithVersion9:
             self.downgradeToVersion9()
         zippedFile = zipfile.ZipFile(fileObj, "w", zipfile.ZIP_DEFLATED)
@@ -1077,13 +1080,13 @@ class Package(Persistable):
 
             zinfo = zipfile.ZipInfo(filename='content.data',
                     date_time=time.localtime()[0:6])
-            zinfo.external_attr = 0100644<<16L
+            zinfo.external_attr = 0100644 << 16L
             zinfo.compress_type = zipfile.ZIP_DEFLATED
             zippedFile.writestr(zinfo, encodeObject(self))
 
             zinfo2 = zipfile.ZipInfo(filename='contentv3.xml',
                     date_time=time.localtime()[0:6])
-            zinfo2.external_attr = 0100644<<16L
+            zinfo2.external_attr = 0100644 << 16L
             zinfo2.compress_type = zipfile.ZIP_DEFLATED
             zippedFile.writestr(zinfo2, encodeObjectToXML(self))
 
@@ -1128,7 +1131,7 @@ class Package(Persistable):
         """
         Clones and extracts the currently selected node into a new package.
         """
-        newPackage = Package('NoName') # Name will be set once it is saved..
+        newPackage = Package('NoName')  # Name will be set once it is saved..
         newPackage.title  = self.currentNode.title
         newPackage.style  = self.style
         newPackage.author = self.author
@@ -1149,12 +1152,12 @@ class Package(Persistable):
         zippedFile = zipfile.ZipFile(filename, "r")
 
         xml = None
-        
+
         try:
             xml = zippedFile.read(u"contentv3.xml")
         except:
             pass
-        
+
         if not xml:
             try:
                 # Get the jellied package data
@@ -1165,16 +1168,16 @@ class Package(Persistable):
                 newPackage.tempFile = False
                 newPackage.isChanged = False
                 newPackage.filename = Path(filename)
-    
+
                 return newPackage
-            
+
         # Need to add a TempDirPath because it is a nonpersistant member
         resourceDir = TempDirPath()
 
         # Extract resource files from package to temporary directory
         for fn in zippedFile.namelist():
-            if unicode(fn, 'utf8') not in [u"content.data", u"content.xml", u"contentv2.xml", u"contentv3.xml", u"content.xsd" ]:
-                #JR: Hacemos las comprobaciones necesarias por si hay directorios
+            if unicode(fn, 'utf8') not in [u"content.data", u"content.xml", u"contentv2.xml", u"contentv3.xml", u"content.xsd"]:
+                # JRJ: Hacemos las comprobaciones necesarias por si hay directorios
                 if ("/" in fn):
                     dir = fn[:fn.index("/")]
                     Dir = Path(resourceDir/dir)
@@ -1222,19 +1225,19 @@ class Package(Persistable):
                         if (hasattr(res[0], 'testForAndDeleteZombieResources')):
                             res[0].testForAndDeleteZombieResources()
 
-            if newLoad: 
+            if newLoad:
                 # provide newPackage to doUpgrade's versionUpgrade() to
                 # correct old corrupt extracted packages by setting the
                 # any corrupt package references to the new package:
-                #JR: Convertimos el nombre del paquete para evitar nombres problematicos
+                # JRJ: Convertimos el nombre del paquete para evitar nombres problemáticos
                 import string
                 validPackagenameChars = "-_. %s%s" % (string.ascii_letters, string.digits)
-                newPackage._name = ''.join(c for c in newPackage._name if c in validPackagenameChars).replace(' ','_')
-                #JR: Si por casualidad quedase vacio le damos un nombre por defecto
+                newPackage._name = ''.join(c for c in newPackage._name if c in validPackagenameChars).replace(' ', '_')
+                # JRJ: Si por casualidad quedase vacío le damos un nombre por defecto
                 if newPackage._name == "":
                     newPackage._name = "invalidpackagename"
-                log.debug("load() about to doUpgrade newPackage \"" 
-                        + newPackage._name + "\" " + repr(newPackage) )
+                log.debug("load() about to doUpgrade newPackage \""
+                        + newPackage._name + "\" " + repr(newPackage))
                 if hasattr(newPackage, 'resourceDir'):
                     log.debug("newPackage resourceDir = "
                             + newPackage.resourceDir)
@@ -1247,34 +1250,34 @@ class Package(Persistable):
                 # after doUpgrade, compare the largest found field ID:
                 if G.application.maxFieldId >= Field.nextId:
                     Field.nextId = G.application.maxFieldId + 1
-                if hasattr(newPackage,'_docType'):
+                if hasattr(newPackage, '_docType'):
                     common.setExportDocType(newPackage.docType)
                 else:
                     newPackage.set_docType(toUnicode('XHTML'))
 
-            else: 
+            else:
                 # and when merging, automatically set package references to
                 # the destinationPackage, into which this is being merged:
 
-                log.debug("load() about to merge doUpgrade newPackage \"" 
+                log.debug("load() about to merge doUpgrade newPackage \""
                         + newPackage._name + "\" " + repr(newPackage)
-                        + " INTO destinationPackage \"" 
-                        + destinationPackage._name + "\" " 
+                        + " INTO destinationPackage \""
+                        + destinationPackage._name + "\" "
                         + repr(destinationPackage))
-                
+
                 log.debug("using their resourceDirs:")
                 if hasattr(newPackage, 'resourceDir'):
-                    log.debug("   newPackage resourceDir = " 
+                    log.debug("   newPackage resourceDir = "
                             + newPackage.resourceDir)
                 else:
                     log.error("newPackage has NO resourceDir!")
                 if hasattr(destinationPackage, 'resourceDir'):
-                    log.debug("   destinationPackage resourceDir = " 
+                    log.debug("   destinationPackage resourceDir = "
                             + destinationPackage.resourceDir)
                 else:
                     log.error("destinationPackage has NO resourceDir!")
 
-                doUpgrade(destinationPackage, 
+                doUpgrade(destinationPackage,
                         isMerge=True, preMergePackage=newPackage)
 
                 # after doUpgrade, compare the largest found field ID:
@@ -1308,14 +1311,14 @@ class Package(Persistable):
           for handler in G.application.afterUpgradeHandlers:
 
             if handler_priority == 0 and \
-            repr(handler.im_class)=="<class 'exe.engine.resource.Resource'>":
+            repr(handler.im_class) == "<class 'exe.engine.resource.Resource'>":
                 # level-0 handlers: Resource
                 handler()
 
             elif handler_priority == 1 and \
-            repr(handler.im_class)=="<class 'exe.engine.package.Package'>":
+            repr(handler.im_class) == "<class 'exe.engine.package.Package'>":
                 # level-1 handlers: Package (requires resources first)
-                if handler.im_self == newPackage: 
+                if handler.im_self == newPackage:
                     handler()
                 else:
                     log.warn("Extra package object found, " \
@@ -1323,14 +1326,14 @@ class Package(Persistable):
                        + repr(handler))
 
             elif handler_priority == 2 and \
-            repr(handler.im_class)!="<class 'exe.engine.resource.Resource'>" \
+            repr(handler.im_class) != "<class 'exe.engine.resource.Resource'>" \
             and \
             repr(handler.im_class)!="<class 'exe.engine.package.Package'>":
                 # level-2 handlers: all others
                 handler()
 
         G.application.afterUpgradeHandlers = []
-        
+
         num_zombies = len(G.application.afterUpgradeZombies2Delete)
         for i in range(num_zombies-1, -1, -1):
             zombie = G.application.afterUpgradeZombies2Delete[i]
@@ -1340,10 +1343,10 @@ class Package(Persistable):
             if isinstance(zombie, Node):
                 zombie_is_node = True
 
-            if zombie_is_node: 
-                zombie.delete(pruningZombies=True) 
+            if zombie_is_node:
+                zombie.delete(pruningZombies=True)
             else:
-                #JR: Eliminamos el recurso del idevice
+                # JRJ: Eliminamos el recurso del idevice
                 if hasattr(zombie._idevice, 'userResources'):
                     for i in range(len(zombie._idevice.userResources)-1, -1, -1):
                         if hasattr(zombie._idevice.userResources[i], 'storageName'):
@@ -1351,24 +1354,24 @@ class Package(Persistable):
                                 aux = zombie._idevice.userResources[i]
                                 zombie._idevice.userResources.remove(aux)
                                 aux.delete
-                #Eliminamos el recurso de los recursos del sistema
-                #for resource in newPackage.resources.keys():
+                # Eliminamos el recurso de los recursos del sistema
+                # for resource in newPackage.resources.keys():
                 #    if hasattr(newPackage.resources[resource][0], 'storageName'):
                 #        if newPackage.resources[resource][0].storageName == zombie.storageName:
                 #            del newPackage.resources[resource]
-                #JR: Esto ya no haria falta
-                #zombie.delete()
+                # JRJ: Esto ya no haría falta
+                # zombie.delete()
             del zombie
         userResourcesFiles = newPackage.getUserResourcesFiles(newPackage.root)
-        #JR: Borramos recursos que no estan siendo utilizados
+        # JRJ: Borramos recursos que no están siendo utilizados
         newPackage.cleanUpResources(userResourcesFiles)
         G.application.afterUpgradeZombies2Delete = []
 
         newPackage.updateRecentDocuments(newPackage.filename)
         newPackage.isChanged = False
-        nstyle=Path(G.application.config.stylesDir/newPackage.style)
+        nstyle = Path(G.application.config.stylesDir/newPackage.style)
         if not nstyle.isdir():
-            newPackage.style=G.application.config.defaultStyle       
+            newPackage.style = G.application.config.defaultStyle
         newPackage.lang = newPackage._lang
         return newPackage
 
@@ -1392,23 +1395,23 @@ class Package(Persistable):
         # but upgrading of resources and package happens in no particular order
         # and must be done after all resources have been upgraded
 
-        # some earlier .elp files appear to have been corrupted with 
+        # some earlier .elp files appear to have been corrupted with
         # two packages loaded, *possibly* from some strange extract/merge
         # functionality in earlier eXe versions?
         # Regardless, only the real package will have a resourceDir,
         # and the other will fail.
         # For now, then, put in this quick and easy safety check:
-        if not hasattr(self,'resourceDir'):
+        if not hasattr(self, 'resourceDir'):
             log.warn("cleanUpResources called on a redundant package")
             return
 
         existingFiles = set([fn.basename() for fn in self.resourceDir.files()])
-        #JR
+        # JRJ
         usedFiles = set([])
         for reses in self.resources.values():
             if hasattr(reses[0], 'storageName'):
                 usedFiles.add(reses[0].storageName)
-        #usedFiles = set([reses[0].storageName for reses in self.resources.values()])
+        # usedFiles = set([reses[0].storageName for reses in self.resources.values()])
         for fn in existingFiles - usedFiles - userResourcesFiles:
             log.debug('Removing unused resource %s' % fn)
             (self.resourceDir/fn).remove()
@@ -1416,7 +1419,7 @@ class Package(Persistable):
     def findResourceByName(self, queryName):
         """
         Support for merging, and anywhere else that unique names might be
-        checked before actually comparing against the files (as will be 
+        checked before actually comparing against the files (as will be
         done by the resource class itself in its _addOurselvesToPackage() )
         """
         foundResource = None
@@ -1427,7 +1430,6 @@ class Package(Persistable):
                     foundResource = this_resource
                     return foundResource
         return foundResource
-
 
     def upgradeToVersion1(self):
         """
@@ -1449,6 +1451,7 @@ class Package(Persistable):
         editor = getattr(self, 'editor')
         idevice.parentNode = editor
         editor.addIdevice(idevice)
+
         def superReg(node):
             """Registers all our nodes
             because in v0 they were not registered
@@ -1459,10 +1462,9 @@ class Package(Persistable):
                 superReg(child)
         superReg(self.root)
 
-
     def _regNewNode(self, node):
         """
-        Called only by nodes, 
+        Called only by nodes,
         stores the node in our id lookup dict
         returns a new unique id
         """
@@ -1471,7 +1473,6 @@ class Package(Persistable):
         self._nodeIdDict[id_] = node
         return id_
 
-
     def getNewIdeviceId(self):
         """
         Returns an iDevice Id which is unique for this package.
@@ -1479,7 +1480,6 @@ class Package(Persistable):
         id_ = unicode(self._nextIdeviceId)
         self._nextIdeviceId += 1
         return id_
-
 
     def upgradeToVersion2(self):
         """
@@ -1491,6 +1491,7 @@ class Package(Persistable):
         delattr(self, 'editor')
         # Need to renumber nodes because idevice node and draft nodes are gone
         self._nextNodeId = 0
+
         def renumberNode(node):
             """
             Gives the old node a number
@@ -1500,13 +1501,11 @@ class Package(Persistable):
                 renumberNode(child)
         renumberNode(self.root)
 
-
     def upgradeToVersion3(self):
         """
         Also called to upgrade from 0.4 release
         """
         self._nextIdeviceId = 0
-
 
     def upgradeToVersion4(self):
         """
@@ -1517,14 +1516,13 @@ class Package(Persistable):
         self._author = toUnicode(self.__dict__['author'])
         self._description = toUnicode(self.__dict__['description'])
 
-
     def upgradeToVersion5(self):
         """
         For version 0.11
         """
         self._levelNames = self.levelNames
         del self.levelNames
-    
+
     def upgradeToVersion6(self):
         """
         For version 0.14
@@ -1543,7 +1541,7 @@ class Package(Persistable):
         """
         self._backgroundImg = ''
         self.backgroundImgTile = False
-        
+
     def upgradeToVersion8(self):
         """
         For version 0.20, alpha, for nightlies r2469
@@ -1557,8 +1555,9 @@ class Package(Persistable):
         For version >= 0.20.4
         """
         if not hasattr(self, 'resources'):
-            # The hasattr is needed, because sometimes, Resource instances are upgraded
-            # first and they also set this attribute on the package
+            # The hasattr is needed, because sometimes, Resource instances
+            # are upgraded first and they also set this attribute on
+            # the package
             self.resources = {}
         G.application.afterUpgradeHandlers.append(self.cleanUpResources)
 
@@ -1631,7 +1630,7 @@ class Package(Persistable):
         if hasattr(self, 'scowsource'):
             del self.scowsource
         try:
-            if not self.license in self.oldLicenseMap.values():
+            if self.license not in self.oldLicenseMap.values():
                 self.newlicense = self.oldLicenseMap[self.license]
         except:
             self.license = u''
@@ -1651,17 +1650,17 @@ class Package(Persistable):
 
     def upgradeToVersion11(self):
         pass
-    
+
     def upgradeToVersion12(self):
-        
-        #because actually version 11 was exe-next-gen
+
+        # because actually version 11 was exe-next-gen
         self.upgradeToVersion9()
         self.upgradeToVersion10()
 
     def upgradeToVersion13(self):
         if not hasattr(self, '_docType'):
             self._docType = G.application.config.docType
-            
+
     def downgradeToVersion9(self):
         for attr in ['lomEs', 'lom', 'scowsinglepage', 'scowwebsite',
                      'exportSource', 'exportMetadataType', '_lang',
@@ -1704,17 +1703,17 @@ class Package(Persistable):
         VerdaderofalsofpdIdevice.persistenceVersion = 9
         WikipediaIdevice.persistenceVersion = 8
         Package.persistenceVersion = 9
-    
+
     def getExportDocType(self):
         return self._docType
-    
+
     def delNotes(self, node):
         """
         Delete all notes
         """
         for idevice in node.idevices:
             if idevice.klass == 'NotaIdevice':
-                idevice.delete()            
+                idevice.delete()
         for child in node.children:
             self.delNotes(child)
 # ===========================================================================
