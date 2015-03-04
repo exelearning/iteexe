@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe
 # Copyright 2012, Pere Crespo Molina
@@ -32,8 +34,8 @@ from exe.engine.error              import Error
 from exe.engine.path               import Path, TempDirPath
 from exe.engine.version            import release
 from exe.export.pages              import Page, uniquifyNames
-from exe                      	   import globals as G
-from exe.engine.beautifulsoup      import BeautifulSoup
+from exe import globals as G
+from beautifulsoup                 import BeautifulSoup
 from htmlentitydefs                import name2codepoint
 
 log = logging.getLogger(__name__)

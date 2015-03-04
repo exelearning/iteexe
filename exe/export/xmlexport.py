@@ -1,5 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # ===========================================================================
-# eXe 
+# eXe
 # Copyright 2004-2005, University of Auckland
 # Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
@@ -42,11 +44,10 @@ import sys, os, fnmatch, glob, shutil, codecs, md5
 
 log = logging.getLogger(__name__)
 
+
 # ===========================================================================
 class XMLExport(WebsiteExport):
-    
-    
-    
+
     """
     WebsiteExport will export a package as a website of HTML pages
     """
@@ -54,55 +55,52 @@ class XMLExport(WebsiteExport):
         WebsiteExport.__init__(self, config, styleDir, filename)
         self.langOverride = langOverride
         self.forceMediaOnly = forceMediaOnly
-    
+
     @staticmethod
     def encodeEntities(html):
         import cgi
-        return  cgi.escape(html)
-        
+        return cgi.escape(html)
 
     def export(self, package):
-        """ 
+        """
         Export to XML files
         Cleans up the previous packages pages and performs the export
         TODO: Make output directory for each type of export media profile
         """
         outputDir = self.filename
-        
-        #Command line option to override language for export
+
+        # Command line option to override language for export
         if self.langOverride != None:
             package.dublinCore.language = self.langOverride
-        
-        #track the number of working idevices on a page
-        #if 0 do not put page in TOC
+
+        # track the number of working idevices on a page
+        # if 0 do not put page in TOC
         numDevicesByPage = {}
-        
-        #track idevices that dont really  export
+
+        # track idevices that dont really  export
         nonDevices = []
-        
-        #copy needed files
-        if not outputDir.exists(): 
+
+        # copy needed files
+        if not outputDir.exists():
             outputDir.mkdir()
-        
+
         #
-        #This is passed from the command line export
+        # This is passed from the command line export
         #
         if self.forceMediaOnly == True:
             package.mxmlforcemediaonly = "true"
-        
+
         """
         Now go through the list of target media profiles and do the conversion
         for each one here.
-        
+
         For now this will just go through and create them - will settle on the
         last one
         """
-        
+
         if package.mxmlprofilelist is None or package.mxmlprofilelist == "":
             package.mxmlprofilelist = "nokia"
-        
-        
-        
+
         profileList = package.mxmlprofilelist.split(",")
         """
         Go through all the profiles in the list - and make a directory if
@@ -111,46 +109,39 @@ class XMLExport(WebsiteExport):
         """
         for currentProfile in profileList:
             mediaConverter = None
-            currentOutputDir = outputDir    
+            currentOutputDir = outputDir
 
             if currentProfile != "default":
                 mediaConverter = ExportMediaConverter(currentProfile)
                 mediaConverter.loadConfigVals()
                 mediaConverter.setCurrentPackage(package)
                 ExportMediaConverter.autoMediaOnly = package.mxmlforcemediaonly
-                
+
                 currentOutputDir = outputDir.joinpath(currentProfile)
-                if not currentOutputDir.exists(): 
+                if not currentOutputDir.exists():
                     currentOutputDir.mkdir()
-            
-            
+
                 ExportMediaConverter.setWorkingDir(currentOutputDir)
-    
-            
+
             self.copyFiles(package, currentOutputDir)
-            self.pages = [ XMLPage("index", 1, package.root) ]
+            self.pages = [XMLPage("index", 1, package.root)]
             self.generatePages(package.root, 1)
             uniquifyNames(self.pages)
-            
-        
+
             prevPage = None
             thisPage = self.pages[0]
-            
-    
+
             for nextPage in self.pages[1:]:
-                pageDevCount = thisPage.save(currentOutputDir, prevPage, \
+                pageDevCount = thisPage.save(currentOutputDir, prevPage,
                                              nextPage, self.pages, nonDevices)
                 numDevicesByPage[thisPage.name] = pageDevCount
                 prevPage = thisPage
                 thisPage = nextPage
-                 
+
             pageDevCount = thisPage.save(currentOutputDir, prevPage, None, self.pages, nonDevices)
             numDevicesByPage[thisPage.name] = pageDevCount
-            
+
             self._writeTOCXML(currentOutputDir, numDevicesByPage, nonDevices, package)
-        
-        
-        
 
 
     """
@@ -159,52 +150,46 @@ class XMLExport(WebsiteExport):
     def _writeTOCXML(self, outputDir, numDevicesByPage, nonDevices, package):
         xmlDirectoryFile = open(outputDir + "/exetoc.xml", "w")
         xmlDirectoryFile.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-        
+
         lang = package.dublinCore.language
         langAttrib = ""
-        
-        
+
         if lang is not None and lang != '':
-            langAttrib = " xml:lang='%s' " % lang 
-        
+            langAttrib = " xml:lang='%s' " % lang
+
         xmlDirectoryFile.write("<exebase%s>\n" % langAttrib)
-        
-        
-        
+
         for page in self.pages:
             if len(page.node.idevices) == 0:
                 continue
-            #Check the real number of devices on the page
+            # Check the real number of devices on the page
             if numDevicesByPage[page.name] == 0:
                 continue
-            
+
             lineStr = u"<page href='%(link)s.xml' title='%(title)s'>\n" \
-                % {"link" : page.name, "title" : XMLExport.encodeEntities(page.node.titleShort) }
+                % {"link": page.name, "title": XMLExport.encodeEntities(page.node.titleShort)}
             xmlDirectoryFile.write(lineStr.encode("UTF-8"))
             xmlDirectoryFile.write("\n")
             for idevice in page.node.idevices:
-                #TODO: Make sure that we do not have an idevice entry for 
-                #something on a page with real idevices 
+                # TODO: Make sure that we do not have an idevice entry for
+                # something on a page with real idevices
                 if idevice.__class__.__name__ in nonDevices:
                     pass
                 else:
                     ideviceLine = u"\t<idevice id='%(ideviceid)s' title='%(title)s'/>\n" % \
-                    { "ideviceid" : idevice.id, "title" : XMLExport.encodeEntities(idevice.get_title())}
+                        {"ideviceid": idevice.id, "title": XMLExport.encodeEntities(idevice.get_title())}
                     xmlDirectoryFile.write(ideviceLine.encode("UTF-8"))
-            
-            xmlDirectoryFile.write("</page>\n")    
-                
-            
-        
+
+            xmlDirectoryFile.write("</page>\n")
+
         xmlDirectoryFile.write("</exebase>")
-        xmlDirectoryFile.close()   
-        
-        
+        xmlDirectoryFile.close()
+
     def generatePages(self, node, depth):
         """
         Recursively generate pages and store in pages member variable
         for retrieving later
-        """           
+        """
         for child in node.children:
             pageName = child.titleShort.lower().replace(" ", "_")
             pageName = re.sub(r"\W", "", pageName)
@@ -213,28 +198,28 @@ class XMLExport(WebsiteExport):
 
             self.pages.append(XMLPage(pageName, depth, child))
             self.generatePages(child, depth + 1)
-            
+
     def copyFiles(self, package, outputDir):
-        
-        #copy defined items from the style directory for the mobile output
+
+        # copy defined items from the style directory for the mobile output
         styleFiles = self.stylesDir.files("icon_*.png")
         self.stylesDir.copylist(styleFiles, outputDir)
-        
+
         styleFiles = self.stylesDir.parent.files("icon_*.png")
         self.stylesDir.copylist(styleFiles, outputDir)
-        
+
         styleFiles = self.stylesDir.files("icon_*.gif")
         self.stylesDir.copylist(styleFiles, outputDir)
-        
+
         # copy the package's resource files
         package.resourceDir.copyfiles(outputDir)
-        
+
 
 """
 Utility method
-"""            
+"""
+
+
 def remove_html_tags(data):
     p = re.compile(r'<.*?>')
     return p.sub('', data)
- 
-

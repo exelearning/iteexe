@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # ===========================================================================
 # __init__.py
 # Copyright 2011, Mikel Larreategi, CodeSyntax Tknika
@@ -21,7 +23,7 @@
 import codecs
 from types import UnicodeType, StringType
 
-from exe.engine.beautifulsoup import BeautifulSoup
+from beautifulsoup import BeautifulSoup
 
 CDATA_BEGIN = u"<![CDATA["
 CDATA_END = u"]]>"
