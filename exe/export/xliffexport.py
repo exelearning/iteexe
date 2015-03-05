@@ -23,7 +23,7 @@
 import codecs
 from types import UnicodeType, StringType
 
-from beautifulsoup import BeautifulSoup
+from BeautifulSoup import BeautifulSoup
 
 CDATA_BEGIN = u"<![CDATA["
 CDATA_END = u"]]>"
