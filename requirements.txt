@@ -1,0 +1,8 @@
+zope.interface
+Pillow
+chardet
+feedparser
+lxml
+GitPython
+
+python-saml
