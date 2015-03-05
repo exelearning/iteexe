@@ -17,7 +17,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # ===========================================================================
 
 """
@@ -42,10 +42,19 @@ from exe.engine.translate import lateTranslate
 log = logging.getLogger(__name__)
 
 # Constants
-GEOGEBRA_FILE_NAMES = set(["geogebra.jar", "geogebra_algos.jar", "geogebra_cas.jar", "geogebra_export.jar", "geogebra_gui.jar", "geogebra_javascript.jar", "geogebra_main.jar", "geogebra_properties.jar", "jlatexmath.jar", "jlm_cyrillic.jar", "jlm_greek.jar"])
+GEOGEBRA_FILE_NAMES = set(["geogebra.jar", "geogebra_algos.jar",
+                           "geogebra_cas.jar", "geogebra_export.jar",
+                           "geogebra_gui.jar", "geogebra_javascript.jar",
+                           "geogebra_main.jar", "geogebra_properties.jar",
+                           "jlatexmath.jar", "jlm_cyrillic.jar",
+                           "jlm_greek.jar"])
 JCLIC_FILE_NAMES = set(["jclic.jar"])
 SCRATCH_FILE_NAMES = set(["ScratchApplet.jar", "soundbank.gm"])
-DESCARTES_FILE_NAMES = set(["Descartes.jar", "Descartes3.jar", "Descartes4.jar", "Descartes4Runtime.jar", "DescartesA.jar", "Descartes_A.jar", "DescartesCalc.jar", "Descartes_R.jar", "Descartes_S.jar", "descinst.jar"])
+DESCARTES_FILE_NAMES = set(["Descartes.jar", "Descartes3.jar",
+                            "Descartes4.jar", "Descartes4Runtime.jar",
+                            "DescartesA.jar", "Descartes_A.jar",
+                            "DescartesCalc.jar", "Descartes_R.jar",
+                            "Descartes_S.jar", "descinst.jar"])
 
 # Descartes requires scene_num
 SCENE_NUM = 1
@@ -74,7 +83,7 @@ class AppletIdevice(Idevice):
                          u"",
                          u"",
                          u"",
-                             parentNode)
+                         parentNode)
         self.emphasis          = Idevice.NoEmphasis
         self.appletCode        = u""
         self.type              = u"other"
@@ -177,7 +186,9 @@ you created in Geogebra.</p>""")
                 SCENE_NUM = 1
             else:
                 SCENE_NUM = int(filePath[:filePath.find(",")])
-        if self.type == "descartes" and (filePath.endswith(".htm") or filePath.endswith(".html")):
+        if (self.type == "descartes"
+            and (filePath.endswith(".htm")
+                 or filePath.endswith(".html"))):
             global url
             url = filePath
             self.appletCode = self.getAppletcodeDescartes(filePath)
@@ -189,7 +200,7 @@ you created in Geogebra.</p>""")
             resourceFile = Path(filePath)
             assert self.parentNode, _('file %s has no parentNode') % self.id
             assert self.parentNode.package, \
-                    _('iDevice %s has no package') % self.parentNode.id
+                _('iDevice %s has no package') % self.parentNode.id
             if resourceFile.isfile():
                 self.message = ""
                 Resource(self, resourceFile)
@@ -201,7 +212,8 @@ you created in Geogebra.</p>""")
                     self.appletCode = self.getAppletcodeScratch(resourceFile.basename().replace(' ', '_').replace(')', '').replace('(', ''))
                 if self.type == "descartes":
                     self.appletCode = self.getAppletcodeDescartes(resourceFile.basename())
-                ## next code should be used to load in the editor the HTML code of the html file:
+                # Next code should be used to load in the editor the HTML
+                # code of the html file:
                 # if self.type == "other":
                 #     if filePath.endswith(".html") or filePath.endswith(".htm"):
                 #         content = open(filePath, 'r')
@@ -295,8 +307,8 @@ you created in Geogebra.</p>""")
 
         # ONE: image files:
         key_image = ['archivo=', 'imagem_de_fundo=', 'imagem=', 'imagen=', 'file=', 'fitxer=',
-                             'artxibo=', 'image=', 'bg_image=', 'imatge=', 'immagine=', 'irudia=',
-                             'irundia=', 'fichier=', 'imaxe=', 'arquivo=', 'immagine_fondo=']
+                     'artxibo=', 'image=', 'bg_image=', 'imatge=', 'immagine=', 'irudia=',
+                     'irundia=', 'fichier=', 'imaxe=', 'arquivo=', 'immagine_fondo=']
         # paths to the images indicated in the applet code:
         imageslist = []
         for x in key_image:
@@ -313,8 +325,9 @@ you created in Geogebra.</p>""")
         for im in imageslist:
             # put as locals the images' path inside exe editor...
             stringappletmod = stringappletmod.replace(im, im[im.rfind("/")+1:])
-            # from imageslist, it's neccesary to create the list of absolute paths to the image
-            # files because we want to download this images and load them in the project:
+            # from imageslist, it's neccesary to create the list of absolute
+            # paths to the image files because we want to download these
+            # images and load them in the project:
             # first quit scene number
             urlnoesc = url[url.find(",")+1:]
             # cut the right side of the last /:
@@ -327,7 +340,8 @@ you created in Geogebra.</p>""")
         # of the file in the same place, so... a new extended list:
         urlimgslistextended = []
         for pathimg in urlimageslist:
-            # we trick to urlimageslist adding files that haven't been detected really
+            # we trick to urlimageslist adding files that haven't been
+            # detected really
             if pathimg not in urlimgslistextended:
                 urlimgslistextended.append(pathimg)
                 if string.find(pathimg, '.png') != -1:
@@ -378,8 +392,9 @@ you created in Geogebra.</p>""")
                     if result:
                         # tipo = macro or makro finded, now we need expresion
                         # parameter inside value tag
-                        key_macro = ['expresión=', 'expresion=', 'adierazpen=', 'espressione=', 'expresi&oacute;n=',
-                                               'expresi&oacute;=', 'expresi&amp;oacute;n=', 'express&atilde;o=']
+                        key_macro = ['expresión=', 'expresion=',
+                                     'adierazpen=', 'espressione=', 'expresi&oacute;n=',
+                                     'expresi&oacute;=', 'expresi&amp;oacute;n=', 'express&atilde;o=']
                         for y in key_macro:
                             if string.find(tag, y) != -1:
                                 # consider sometimes macro file has txt format but sometimes has not format...
@@ -526,7 +541,7 @@ you created in Geogebra.</p>""")
             self.message       = ""
             self._typeInstruc  = x_(u"""Click on the AddFiles button to select the .ggb file and then click on the Upload button.""")
         if self.type == "jclic":
-            #from exe.application import application
+            # from exe.application import application
             from exe import globals
             ideviceDir = globals.application.config.webDir/'templates'
             for file in JCLIC_FILE_NAMES:

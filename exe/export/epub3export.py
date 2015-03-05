@@ -16,7 +16,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # ===========================================================================
 """
 Exports an eXe package as a Epub3 package
@@ -55,9 +55,10 @@ def htmlentitydecode(s):
 # ===========================================================================
 class PublicationEpub3(object):
     """
-    EPUB Publications 3.0, defines publication-level semantics and conformance requirements for EPUB 3,
-    including the format of the Package Document and rules for how this document and other
-    Publication Resources are associated to create a conforming EPUB Publication
+    EPUB Publications 3.0, defines publication-level semantics and conformance
+    requirements for EPUB 3, including the format of the Package Document and
+    rules for how this document and other Publication Resources are associated
+    to create a conforming EPUB Publication
     """
 
     def __init__(self, config, outputDir, package, pages, cover):
@@ -108,7 +109,9 @@ class PublicationEpub3(object):
                 continue
 
             ext = epubFile.ext
-            name = epubFile.basename().translate({ord(u'.'): u'_', ord(u'('): u'', ord(u')'): u''})
+            name = epubFile.basename().translate({ord(u'.'): u'_',
+                                                  ord(u'('): u'',
+                                                  ord(u')'): u''})
             if name[0] in [unicode(i) for i in range(0, 10)]:
                 name = u'_' + name
 
@@ -173,7 +176,8 @@ class PublicationEpub3(object):
 
 class ContainerEpub3(object):
     """
-    Represents an META-INF/container.xml file .Read EPUB Open Container Format (OCF) 3.0
+    Represents an META-INF/container.xml file .Read EPUB
+    Open Container Format (OCF) 3.0
     """
 
     def __init__(self, outputDir):
@@ -317,7 +321,7 @@ class Epub3Page(Page):
 
         # jQuery
         if style.hasValidConfig:
-            if style.get_jquery() == True:
+            if style.get_jquery() is True:
                 html += u'<script type="text/javascript" src="exe_jquery.js"></script>' + lb
             else:
                 html += u'<script type="text/javascript" src="' + style.get_jquery() + '"></script>' + lb
@@ -362,18 +366,19 @@ class Epub3Page(Page):
 
         html += u"</" + sectionTag + ">" + lb  # /#main
         html += self.renderLicense()
-        html += unicode(BeautifulSoup(self.renderFooter(), convertEntities=BeautifulSoup.XHTML_ENTITIES))
+        html += unicode(BeautifulSoup(self.renderFooter(),
+                                      convertEntities=BeautifulSoup.XHTML_ENTITIES))
         html += u"</div>" + lb  # /#outer
         if style.hasValidConfig:
             html += style.get_extra_body()
         html += u'</body></html>'
         html = html.encode('utf8')
-        # JR: Eliminamos los atributos de las ecuaciones
+        # JRJ: Eliminamos los atributos de las ecuaciones
         aux = re.compile("exe_math_latex=\"[^\"]*\"")
         html = aux.sub("", html)
         aux = re.compile("exe_math_size=\"[^\"]*\"")
         html = aux.sub("", html)
-        # JR: Cambio el & en los enlaces del glosario
+        # JRJ: Cambio el & en los enlaces del glosario
         html = html.replace("&concept", "&amp;concept")
         # Remove "resources/" from data="resources/ and the url param
         html = html.replace("video/quicktime\" data=\"resources/", "video/quicktime\" data=\"")
@@ -556,7 +561,11 @@ class Epub3Export(object):
             imageGalleryCSS.copyfile(contentPages / 'exe_lightbox.css')
             imageGalleryJS = (self.scriptsDir / 'exe_lightbox.js')
             imageGalleryJS.copyfile(contentPages / 'exe_lightbox.js')
-            self.imagesDir.copylist(('exe_lightbox_close.png', 'exe_lightbox_loading.gif', 'exe_lightbox_next.png', 'exe_lightbox_prev.png'), contentPages)
+            self.imagesDir.copylist(('exe_lightbox_close.png',
+                                     'exe_lightbox_loading.gif',
+                                     'exe_lightbox_next.png',
+                                     'exe_lightbox_prev.png'),
+                                    contentPages)
         if hasWikipedia:
             wikipediaCSS = (self.cssDir / 'exe_wikipedia.css')
             wikipediaCSS.copyfile(contentPages / 'exe_wikipedia.css')
@@ -566,7 +575,7 @@ class Epub3Export(object):
 
         my_style = G.application.config.styleStore.getStyle(package.style)
         if my_style.hasValidConfig:
-            if my_style.get_jquery() == True:
+            if my_style.get_jquery() is True:
                 jsFile = (self.scriptsDir / 'exe_jquery.js')
                 jsFile.copyfile(contentPages / 'exe_jquery.js')
         else:
@@ -587,7 +596,11 @@ class Epub3Export(object):
         container.save()
 
         # Create the publication file
-        publication = PublicationEpub3(self.config, contentPages, package, self.pages, cover)
+        publication = PublicationEpub3(self.config,
+                                       contentPages,
+                                       package,
+                                       self.pages,
+                                       cover)
         publication.save("package.opf")
 
         # Create the container file
@@ -595,9 +608,11 @@ class Epub3Export(object):
         container.save("container.xml")
 
         # Zip it up!
-        self.filename.safeSave(self.doZip, _(u'EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
-        # Clean up the temporary dir
+        self.filename.safeSave(self.doZip,
+                               _(u'EXPORT FAILED!\nLast succesful export is %s.'),
+                               outputDir)
 
+        # Clean up the temporary dir
         outputDir.rmtree()
 
     def doZip(self, fileObj, outputDir):
@@ -619,8 +634,8 @@ class Epub3Export(object):
                 parentdir = parentdir.splitpath()[0]
 
             zipped.write(epubFile,
-                             relativePath.encode('utf8'),
-                             compress_type=ZIP_DEFLATED)
+                         relativePath.encode('utf8'),
+                         compress_type=ZIP_DEFLATED)
         zipped.close()
 
     def generatePages(self, node, depth):
