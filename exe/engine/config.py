@@ -544,6 +544,12 @@ class Config(object):
         self.locales = {}
         for subDir in self.localeDir.dirs():
             if (subDir/'LC_MESSAGES'/'exe.mo').exists():
+                # gettext.translation(domain[,
+                #                     localedir[,
+                #                     languages[, 
+                #                     class_[,
+                #                     fallback[,
+                #                     codeset]]]]])
                 self.locales[subDir.basename()] = \
                     gettext.translation('exe',
                                         self.localeDir,
@@ -551,6 +557,8 @@ class Config(object):
                 if subDir.basename() == self.locale:
                     locale = subDir.basename()
                     log.debug(" loading locale %s" % locale)
+                    # install([unicode[, names]])
+                    # this method installs self.ugettext() into the built-in namespace
                     self.locales[locale].install(unicode=True)
                     __builtins__['c_'] = lambda s: self.locales[locale].ugettext(s) if s else s
 
