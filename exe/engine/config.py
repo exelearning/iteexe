@@ -16,7 +16,8 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+# Foundation, Inc., 51 Franklin Street, Fifth Floor,
+# Boston, MA  02110-1301, USA.
 # ===========================================================================
 
 """
@@ -27,7 +28,7 @@ O/S specific config classes are derived from here
 
 from exe.engine.configparser import ConfigParser
 from exe.engine.path import Path
-from exe.engine.locales import chooseDefaultLocale
+import exe.engine.locales
 from exe.engine import version
 import logging
 from logging.handlers import RotatingFileHandler
@@ -139,7 +140,7 @@ class Config(object):
         self.webDir       = self.exePath.dirname()
         self.jsDir        = self.exePath.dirname()
         # localeDir is the base directory where all the locales are stored
-        # FIXME: this breaks the FHS (jrf)
+        # FIXME: this breaks the FHS in Linux (jrf)
         self.localeDir    = self.exePath.dirname()/"locale"
         # port is the port the exe webserver will listen on
         # (previous default, which very old users might still use, was 8081)
@@ -160,8 +161,8 @@ class Config(object):
         self.browser = None
         # docType  is the HTML export format ('XHTML' or 'HTML5')
         self.docType = 'XHTML'
-        # locale is the language of the user
-        self.locale = chooseDefaultLocale(self.localeDir)
+        # 'locale' is the language chosen by the user in preferences
+        self.locale = exe.engine.locales.chooseDefaultLocale(self.localeDir)
         # internalAnchors indicate which exe_tmp_anchor tags to generate
         # for each tinyMCE field available values =
         # "enable_all", "disable_autotop", or "disable_all"
@@ -169,7 +170,7 @@ class Config(object):
         self.lastDir = None
         self.showPreferencesOnStart = "1"
         self.showIdevicesGrouped = "1"
-        # tinymce option ('permissive' or 'restrictive')
+        # tinymce option ('permissive' or 'strict')
         self.editorMode = 'permissive'
         # styleSecureMode : if this [user] key is == 0, exelearning can
         # run python files in styles
@@ -439,9 +440,10 @@ class Config(object):
                 self.showIdevicesGrouped = self.configParser.user.showIdevicesGrouped
             if self.configParser.user.has_option('locale'):
                 self.locale = self.configParser.user.locale
-                return
+        return
 
-        self.locale = chooseDefaultLocale(self.localeDir)
+        # jrf: Comento la línea, esto ya lo hace __init__()
+        # self.locale = exe.engine.locales.chooseDefaultLocale(self.localeDir)
 
     def onWrite(self, configParser):
         """
@@ -534,23 +536,26 @@ class Config(object):
 
     def loadLocales(self):
         """
-        Scans the eXe locale directory and builds a list of locales
+        Scans the eXe locale directory and builds a list of locales (lsLocales)
+        jrf: it does more things - what?
         """
         log = logging.getLogger()
         log.debug("loadLocales")
         # gettext.install(domain[, localedir[, unicode[, codeset[, names]]]])
         # This installs the function _() in Python’s builtins namespace
         gettext.install('exe', self.localeDir, True)
-        self.locales = {}
+        # self.locales = {}  # jrf: don't get this, it creates a dictionary, not a list
+        self.lsLocales = [] 
         for subDir in self.localeDir.dirs():
             if (subDir/'LC_MESSAGES'/'exe.mo').exists():
-                # gettext.translation(domain[,
-                #                     localedir[,
-                #                     languages[, 
-                #                     class_[,
-                #                     fallback[,
-                #                     codeset]]]]])
-                self.locales[subDir.basename()] = \
+                # t = \
+                #    gettext.translation(domain[,
+                #                        localedir[,
+                #                        languages[,
+                #                        class_[,
+                #                        fallback[,
+                #                        codeset]]]]])
+                self.lsLocales[subDir.basename()] = \
                     gettext.translation('exe',
                                         self.localeDir,
                                         languages=[str(subDir.basename())])
@@ -558,8 +563,9 @@ class Config(object):
                     locale = subDir.basename()
                     log.debug(" loading locale %s" % locale)
                     # install([unicode[, names]])
-                    # this method installs self.ugettext() into the built-in namespace
-                    self.locales[locale].install(unicode=True)
-                    __builtins__['c_'] = lambda s: self.locales[locale].ugettext(s) if s else s
+                    # this method installs self.ugettext() into the
+                    # built-in namespace
+                    self.lsLocales[locale].install(unicode=True)
+                    __builtins__['c_'] = lambda s: self.lsLocales[locale].ugettext(s) if s else s
 
 # ===========================================================================
