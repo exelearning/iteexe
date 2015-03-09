@@ -538,6 +538,8 @@ class Config(object):
         """
         log = logging.getLogger()
         log.debug("loadLocales")
+        # gettext.install(domain[, localedir[, unicode[, codeset[, names]]]])
+        # This installs the function _() in Python’s builtins namespace
         gettext.install('exe', self.localeDir, True)
         self.locales = {}
         for subDir in self.localeDir.dirs():
