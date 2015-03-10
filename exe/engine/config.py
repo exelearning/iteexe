@@ -571,8 +571,7 @@ class Config(object):
                                         self.localeDir,
                                         languages=[str(subDir.basename())])
                 if subDir.basename() == self.locale:
-                    # jrf: renamed 'chosenLanguage', used to
-                    # be ambiguous 'locale'
+                    # jrf: renamed the ambiguous 'locale' to'chosenLanguage'
                     chosenLanguage = subDir.basename()
                     log.debug(" loading locale %s" % chosenLanguage)
                     # install([unicode[, names]])
