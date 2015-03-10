@@ -1,13 +1,16 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 """A more user friendly configParser
 
-Copyright 2005-2006 Matthew Sherborne. 
+Copyright 2005-2006 Matthew Sherborne.
 Copyright 2005-2007 eXe Project, New Zealand Tertiary Education Commisssion
 
 Released under the GPL2 license found at
 http://www.fsf.org/licensing/licenses/gpl.txt
 """
 
-import re, os
+import re
+import os
 import codecs
 
 exSection = re.compile('\[(?P<sectionname>(\w|\s)+)\]\s*')
@@ -28,15 +31,16 @@ UseDefault = object()
 # raise value error when trying to get non existant option values
 RaiseValueError = object()
 
+
 class ConfigParser(object):
     """For parsing and writing config files"""
 
     # The default char to put between option names and vals
     optionMiddle = ' = '
     # Set this to a default val for options that don't exist
-    defaultValue = RaiseValueError 
+    defaultValue = RaiseValueError
     # Set this to write after each attribute change
-    autoWrite = False 
+    autoWrite = False
 
     def __init__(self, onWrite=None):
         """
@@ -76,14 +80,15 @@ class ConfigParser(object):
             if attr.startswith('_'):
                 self.__dict__[attr] = value
             elif attr in self.__dict__ or attr in self.__class__.__dict__:
-                # Existing sections may only be replaced by other section objects
+                # Existing sections may only be replaced by other
+                # section objects
                 if attr in self._sections:
                     assert isinstance(value, Section)
                 self.__dict__[attr] = value
             else:
                 # Create a new section on the fly
                 Section(attr, self)
-            
+
     def __delattr__(self, attr):
         """
         Allows deletion of a section
@@ -121,7 +126,8 @@ class ConfigParser(object):
         self._originalFile = file_
         if isinstance(file_, basestring):
             file_ = open(file_)
-        # Apparently in files encoded with utf8, readlines works fine because \n
+        # Apparently in files encoded with utf8,
+        # readlines works fine because \n
         # is still the new line character in utf8.
         # However, in some other less popular encodings, line ending chars are
         # different
@@ -200,7 +206,8 @@ class ConfigParser(object):
                         opNewVal = self.get(sectionName, opName)
                         lines[i] = exOption.sub(r'\1\4', line) + opNewVal
                         optionOffsets[opName] = i
-                    else: lines[i] = None
+                    else:
+                        lines[i] = None
         # Add new options
         linesToAdd, lastSectionLines = \
             self.addNewOptions(lines, section, sectionOffsets)
@@ -222,15 +229,15 @@ class ConfigParser(object):
                     linesToInsert.append('')
                 linesToInsert.append('[%s]' % section)
                 newOpts = [(name, val)
-                           for name, (val) 
+                           for name, (val)
                            in self._sections[section].items()]
             else:
                 # Get a list of the "not already updated" options
                 offsets = sectionOffsets[section][1]
                 existingOptions = offsets.keys()
-                newOpts = [(name, val) 
-                           for name, val 
-                           in self._sections[section].items() 
+                newOpts = [(name, val)
+                           for name, val
+                           in self._sections[section].items()
                            if name not in existingOptions]
                 # Append new options on the end of the section,
                 # in the order they were added to 'self'
@@ -272,7 +279,8 @@ class ConfigParser(object):
         """Returns 1 if we know about this setting"""
         if self.has_section(sectionName):
             return optionName in self._sections[sectionName].keys()
-        else: return 0
+        else:
+            return 0
 
     def has_section(self, sectionName):
         """Returns 1 if this section has been defined"""
@@ -295,7 +303,7 @@ class ConfigParser(object):
     def set(self, sectionName, optionName, value):
         """Set's an option in a section to value,
         can be used for new options, new sections and pre-existing ones"""
-        sec = Section(sectionName, self) # This creates or gets a section
+        sec = Section(sectionName, self)  # This creates or gets a section
         if not isinstance(value, unicode):
             # Convert ints and floats to str before encoding to unicode
             if not isinstance(value, str):
@@ -305,8 +313,8 @@ class ConfigParser(object):
             sec[optionName] = value
             if self.autoWrite and self._originalFile is not None:
                 # Move the original file to the beginning if we can
-                if hasattr(self._originalFile, 'seek') and \
-                    callable(self._originalFile.seek):
+                if (hasattr(self._originalFile, 'seek') and
+                        callable(self._originalFile.seek)):
                     self._originalFile.seek(0)
                 # Can't use autowrite with append, writeonly or readonly files
                 if hasattr(self._originalFile, 'mode'):
@@ -332,7 +340,9 @@ class ConfigParser(object):
     def delete(self, sectionName, optionName=None):
         """Remove a section or optionName. Set optionName to None
         to remove the whole section"""
-        if self._sections.has_key(sectionName):
+        # has_key is obsolete, use in
+        # if self._sections.has_key(sectionName):
+        if sectionName in self._sections:
             if optionName is None:
                 del self._sections[sectionName]
                 delattr(self, sectionName)
@@ -340,7 +350,9 @@ class ConfigParser(object):
                     self.write()
             else:
                 sec = self._sections[sectionName]
-                if sec.has_key(optionName):
+                # has_key is obsolete, use in
+                # if sec.has_key(optionName):
+                if optionName in sec:
                     del sec[optionName]
                     if self.autoWrite:
                         self.write()
@@ -365,7 +377,7 @@ class Section(dict):
         self.__name = name
         self.__parent = parent
         self.__parent._sections[name] = self
-        dct = self.__parent.__dict__ 
+        dct = self.__parent.__dict__
         if name not in dct:
             dct[name] = self
 
@@ -395,7 +407,7 @@ class Section(dict):
         except ValueError:
             raise AttributeError('%s instance has no attribute %s' %
                                  (self.__class__.__name__, attr))
-        
+
     def __setattr__(self, attr, value):
         if attr.startswith('_'):
             self.__dict__[attr] = value
