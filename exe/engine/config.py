@@ -440,10 +440,16 @@ class Config(object):
                 self.showIdevicesGrouped = self.configParser.user.showIdevicesGrouped
             if self.configParser.user.has_option('locale'):
                 self.locale = self.configParser.user.locale
-        return
+                # jrf: Hemos leído un if en [user], y decidimos que
+                # podemos salir.
+                # Raro que dependa SOLO del último if. ¿Por qué?
+                return
 
-        # jrf: Comento la línea, esto ya lo hace __init__()
-        # self.locale = exe.engine.locales.chooseDefaultLocale(self.localeDir)
+        # jrf: dudo de la necesidad de esta línea, esto ya lo hace __init__()
+        # ¿Se puede llamar a loadSettings() sin pasar por __init__()?
+        # Han terminado los 'if' de las secciones [system] y [user],
+        # ¿y si no existían? Ponemos un locale
+        self.locale = exe.engine.locales.chooseDefaultLocale(self.localeDir)
 
     def onWrite(self, configParser):
         """
@@ -536,16 +542,19 @@ class Config(object):
 
     def loadLocales(self):
         """
-        Scans the eXe locale directory and builds a list of locales (lsLocales)
-        jrf: it does more things - what?
+        Scans the eXe locale directory and builds a list of locales
+        (now 'supportedLanguages', before ambiguous 'locales')
+        If chosenLanguage is in that list, prepares for translation.
+        Installs new builtins _() and c_()
         """
         log = logging.getLogger()
         log.debug("loadLocales")
         # gettext.install(domain[, localedir[, unicode[, codeset[, names]]]])
         # This installs the function _() in Python’s builtins namespace
         gettext.install('exe', self.localeDir, True)
-        # self.locales = {}  # jrf: don't get this, it creates a dictionary, not a list
-        self.lsLocales = [] 
+        # self.locales = {}  # jrf: don't get this, it creates a dictionary {},
+        # not a list []
+        self.supportedLanguages = []
         for subDir in self.localeDir.dirs():
             if (subDir/'LC_MESSAGES'/'exe.mo').exists():
                 # t = \
@@ -555,17 +564,20 @@ class Config(object):
                 #                        class_[,
                 #                        fallback[,
                 #                        codeset]]]]])
-                self.lsLocales[subDir.basename()] = \
+                self.supportedLanguages[subDir.basename()] = \
                     gettext.translation('exe',
                                         self.localeDir,
                                         languages=[str(subDir.basename())])
                 if subDir.basename() == self.locale:
-                    locale = subDir.basename()
-                    log.debug(" loading locale %s" % locale)
+                    # jrf: renamed 'chosenLanguage', used to
+                    # be ambiguous 'locale'
+                    chosenLanguage = subDir.basename()
+                    log.debug(" loading locale %s" % chosenLanguage)
                     # install([unicode[, names]])
                     # this method installs self.ugettext() into the
                     # built-in namespace
-                    self.lsLocales[locale].install(unicode=True)
-                    __builtins__['c_'] = lambda s: self.lsLocales[locale].ugettext(s) if s else s
+                    self.supportedLanguages[chosenLanguage].install(unicode=True)
+                    __builtins__['c_'] = \
+                      lambda s: self.supportedLanguages[chosenLanguage].ugettext(s) if s else s
 
 # ===========================================================================
