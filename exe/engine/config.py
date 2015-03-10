@@ -355,7 +355,10 @@ class Config(object):
             if self.configParser.has_option('system',
                                             'assumeMediaPlugins'):
                 value = system.assumeMediaPlugins.strip().lower()
-                if value == "1" or value == "yes" or value == "true" or value == "on":
+                if (value == "1"
+                        or value == "yes"
+                        or value == "true"
+                        or value == "on"):
                     self.assumeMediaPlugins = True
 
         # If the dataDir points to some other dir, fix it
@@ -542,8 +545,9 @@ class Config(object):
 
     def loadLocales(self):
         """
-        Scans the eXe locale directory and builds a list of locales
-        (now 'supportedLanguages', before ambiguous 'locales')
+        Scans the eXe locale directory and builds a dictionary (not
+        a list) of locales (meaning 'supportedLanguages';
+        self.locales used again in preferencespage.py).
         If chosenLanguage is in that list, prepares for translation.
         Installs new builtins _() and c_()
         """
@@ -552,9 +556,7 @@ class Config(object):
         # gettext.install(domain[, localedir[, unicode[, codeset[, names]]]])
         # This installs the function _() in Python’s builtins namespace
         gettext.install('exe', self.localeDir, True)
-        # self.locales = {}  # jrf: don't get this, it creates a dictionary {},
-        # not a list []
-        self.supportedLanguages = []
+        self.locales = {}
         for subDir in self.localeDir.dirs():
             if (subDir/'LC_MESSAGES'/'exe.mo').exists():
                 # t = \
@@ -564,7 +566,7 @@ class Config(object):
                 #                        class_[,
                 #                        fallback[,
                 #                        codeset]]]]])
-                self.supportedLanguages[subDir.basename()] = \
+                self.locales[subDir.basename()] = \
                     gettext.translation('exe',
                                         self.localeDir,
                                         languages=[str(subDir.basename())])
@@ -576,8 +578,8 @@ class Config(object):
                     # install([unicode[, names]])
                     # this method installs self.ugettext() into the
                     # built-in namespace
-                    self.supportedLanguages[chosenLanguage].install(unicode=True)
+                    self.locales[chosenLanguage].install(unicode=True)
                     __builtins__['c_'] = \
-                      lambda s: self.supportedLanguages[chosenLanguage].ugettext(s) if s else s
+                      lambda s: self.locales[chosenLanguage].ugettext(s) if s else s
 
 # ===========================================================================
