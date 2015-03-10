@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe config
 # Copyright 2004-2006, University of Auckland
@@ -14,7 +16,8 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor,
+# Boston, MA  02110-1301, USA.
 # ===========================================================================
 
 """
@@ -22,9 +25,11 @@ The StandAlone config overrides the Config class with Standalone specific
 configuration
 """
 
-import sys, os
+import sys
+import os
 from exe.engine.config import Config
 from exe.engine.path import Path
+
 
 # ===========================================================================
 class StandaloneConfig(Config):
@@ -32,7 +37,7 @@ class StandaloneConfig(Config):
     The StandaloneConfig overrides the Config class with ready-to-run specific
     configuration
     """
-    
+
     def _overrideDefaultVals(self):
         """
         Setup with our default settings

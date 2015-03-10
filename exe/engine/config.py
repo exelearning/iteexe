@@ -443,15 +443,8 @@ class Config(object):
                 self.showIdevicesGrouped = self.configParser.user.showIdevicesGrouped
             if self.configParser.user.has_option('locale'):
                 self.locale = self.configParser.user.locale
-                # jrf: Hemos leído un if en [user], y decidimos que
-                # podemos salir.
-                # Raro que dependa SOLO del último if. ¿Por qué?
                 return
 
-        # jrf: dudo de la necesidad de esta línea, esto ya lo hace __init__()
-        # ¿Se puede llamar a loadSettings() sin pasar por __init__()?
-        # Han terminado los 'if' de las secciones [system] y [user],
-        # ¿y si no existían? Ponemos un locale
         self.locale = exe.engine.locales.chooseDefaultLocale(self.localeDir)
 
     def onWrite(self, configParser):
@@ -497,18 +490,18 @@ class Config(object):
                     logging.getLogger(logger).setLevel(loggingLevels[level])
         if not G.application.portable:
             log.info("************** eXe logging started **************")
-            log.info("version     = %s" % version.version)
-            log.info("configPath  = %s" % self.configPath)
-            log.info("exePath     = %s" % self.exePath)
-            log.info("libPath     = %s" % Path(twisted.__path__[0]).splitpath()[0])
-            log.info("browser     = %s" % self.browser)
-            log.info("webDir      = %s" % self.webDir)
-            log.info("jsDir       = %s" % self.jsDir)
-            log.info("localeDir   = %s" % self.localeDir)
-            log.info("port        = %d" % self.port)
-            log.info("dataDir     = %s" % self.dataDir)
-            log.info("configDir   = %s" % self.configDir)
-            log.info("locale      = %s" % self.locale)
+            log.info("version         = %s" % version.version)
+            log.info("configPath      = %s" % self.configPath)
+            log.info("exePath         = %s" % self.exePath)
+            log.info("libPath         = %s" % Path(twisted.__path__[0]).splitpath()[0])
+            log.info("browser         = %s" % self.browser)
+            log.info("webDir          = %s" % self.webDir)
+            log.info("jsDir           = %s" % self.jsDir)
+            log.info("localeDir       = %s" % self.localeDir)
+            log.info("port            = %d" % self.port)
+            log.info("dataDir         = %s" % self.dataDir)
+            log.info("configDir       = %s" % self.configDir)
+            log.info("locale          = %s" % self.locale)
             log.info("internalAnchors = %s" % self.internalAnchors)
 
     def loadStyles(self):
@@ -579,6 +572,6 @@ class Config(object):
                     # built-in namespace
                     self.locales[chosenLanguage].install(unicode=True)
                     __builtins__['c_'] = \
-                      lambda s: self.locales[chosenLanguage].ugettext(s) if s else s
+                        lambda s: self.locales[chosenLanguage].ugettext(s) if s else s
 
 # ===========================================================================
