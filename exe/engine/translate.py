@@ -21,9 +21,13 @@
 # ===========================================================================
 """
 Functions that help with translation
+We'll have three builtins:
+_() translates a string into the language chosen in preferences
+c_() for content strings, into the language of properties->package
+x_() for late translation
 """
 
-# Install x_ as the fake/late translate mechanism before doing any serious
+# Install x_() as the fake/late translate mechanism before doing any serious
 # importing
 __builtins__['x_'] = lambda x: x
 
@@ -32,6 +36,9 @@ def lateTranslate(propName, content=False):
     """
     Given a property name, returns a read/write property that is translated
     every time it is read
+    Parameter 'content' and c_() added by Pedro Peña 2012-05-22.
+    c_() function to translate 'content strings', into the language
+    chosen at properties->package
     """
     propName = '_%s' % propName
 
@@ -66,6 +73,7 @@ def installSafeTranslate():
     """
     def checkInstall():
         return __builtins__['_'] is installSafeTranslate
+
     if checkInstall():
         return
     else:
