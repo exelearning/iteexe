@@ -45,14 +45,16 @@
 # 2015-03-01:
 #    * Update the po2json/transecma file, to the git version at 
 #      https://github.com/nandoflorestan/bag/tree/master/bag/web
-#      in order to try to fix bug 2410.
+#
+# 2015-03-10:
+#    * Version 2.0.4 (JRF)
 #
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.0.2"
+version="2.0.4"
 
 # 1.- Extraction of strings from *.py and *.js into new POT
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"

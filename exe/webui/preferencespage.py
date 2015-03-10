@@ -36,6 +36,7 @@ from exe.webui import common
 
 log = logging.getLogger(__name__)
 
+# This dictionary is used to show the native names of the languages supported
 langNames = {
    'ar': 'العربية',                       # Arabic
    'ast': 'asturianu',
@@ -73,11 +74,11 @@ langNames = {
    'pt': 'Português',                  # Portugu\xc3\xaas
    'pt_br': 'Português do Brazil',     # Brazillian Portuguese
    'ru': 'Русский',                     # Russian
-   'sk': 'Slovenčina, slovenský jazyk', #  Sloven\xc4\x8dina, Slovensk\xc3\xbd Jazyk - Slovak
+   'sk': 'Slovenčina, slovenský jazyk',  # Sloven\xc4\x8dina, Slovensk\xc3\xbd Jazyk - Slovak
    'sl': 'Slovenščina',                # Sloven\xc5\xa1\xc4\x8dina - Slovene
-   'sr': 'Српски / srpski',            # Srpski, serbio
+   'sr': 'Српски / srpski',             # Srpski, serbio
    'sv': 'Svenska',                    # Swedish
-   'th':  'ไทย',                       #   \xe0\xb8\xa0\xe0\xb8\xb2\xe0\xb8\xa9\xe0\xb8\xb2\xe0\xb9\x84\xe0\xb8\x97\xe0\xb8\xa2 - Thai
+   'th':  'ไทย',                        # \xe0\xb8\xa0\xe0\xb8\xb2\xe0\xb8\xa9\xe0\xb8\xb2\xe0\xb9\x84\xe0\xb8\x97\xe0\xb8\xa2 - Thai
    'tl': 'Wikang Tagalog, ᜏᜒᜃᜅ᜔ ᜆᜄᜎᜓᜄ᜔',  # Tagalog
    'tg': 'тоҷикӣ, toğikī, تاجیکی‎',      # Tajik
    'tr': 'Türkçe',                     # Turkish
@@ -146,6 +147,7 @@ class PreferencesPage(RenderableResource):
             localeName += langName
             self.localeNames.append({'locale': locale, 'text': localeName})
         self.localeNames.sort()
+
         for browser in mywebbrowser._browsers:
             if (browser not in browsersHidden):
                 if browser in browserNames:

@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
@@ -16,7 +17,8 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor,
+# Boston, MA  02110-1301, USA.
 # ===========================================================================
 
 """
@@ -44,15 +46,18 @@ from twisted.internet import reactor
 
 log = logging.getLogger(__name__)
 
+
 class Windows_Log(object):
     """
     Logging for py2exe application
     """
     def __init__(self, level):
         self.level = level
+
     def write(self, text):
         log.log(self.level, text)
-if sys.platform[:3] == "win" and not (sys.argv[0].endswith("exe_do") or \
+
+if sys.platform[:3] == "win" and not (sys.argv[0].endswith("exe_do") or
                                       sys.argv[0].endswith("exe_do.exe")):
     # put stderr and stdout into the log file
     sys.stdout = Windows_Log(logging.INFO)
@@ -61,6 +66,7 @@ del Windows_Log
 
 # Global application variable
 globals.application = None
+
 
 class Application:
     """
@@ -71,20 +77,20 @@ class Application:
         """
         Initialize
         """
-        self.config       = None
-        self.ideviceStore = None
-        self.packagePath  = None
-        self.webServer    = None
-        self.standalone   = False # Used for the ready to run exe
-        self.portable   = False # FM: portable mode
-        self.persistNonPersistants = False  
-        self.tempWebDir   = mkdtemp('.eXe')
-        self.resourceDir=None
-        self.afterUpgradeHandlers = []
-        self.preferencesShowed = False
-        self.loadErrors = []
+        self.config                = None
+        self.ideviceStore          = None
+        self.packagePath           = None
+        self.webServer             = None
+        self.standalone            = False  # Used for the ready to run exe
+        self.portable              = False  # FM: portable mode
+        self.persistNonPersistants = False
+        self.tempWebDir            = mkdtemp('.eXe')
+        self.resourceDir           = None
+        self.afterUpgradeHandlers  = []
+        self.preferencesShowed     = False
+        self.loadErrors            = []
         assert globals.application is None, "You tried to instantiate two Application objects"
-        globals.application = self
+        globals.application        = self
 
     def main(self):
         """
@@ -101,7 +107,7 @@ class Application:
             self.serve()
             log.info('done serving')
         else:
-            #self.xulMessage(_('eXe appears to already be running'))
+            # self.xulMessage(_('eXe appears to already be running'))
             log.error('eXe appears to already be running')
             log.error('looks like the eXe server was not able to find a valid port; terminating...')
         shutil.rmtree(self.tempWebDir, True)
@@ -111,8 +117,8 @@ class Application:
         Processes the command line arguments
         """
         try:
-            options, packages = getopt(sys.argv[1:], 
-                                       "hV", ["help", "version", "standalone","portable"])
+            options, packages = getopt(sys.argv[1:],
+                                       "hV", ["help", "version", "standalone", "portable"])
         except GetoptError:
             self.usage()
             sys.exit(2)
@@ -138,7 +144,6 @@ class Application:
                 self.standalone = True
                 self.portable = True
 
-    
     def loadConfiguration(self):
         """
         Loads the config file and applies all the settings
@@ -168,7 +173,7 @@ class Application:
 
     def preLaunch(self):
         """
-        Sets ourself up for running 
+        Sets ourself up for running
         Needed for unit tests
         """
         log.debug("preLaunch")
@@ -186,9 +191,9 @@ class Application:
         # Make it so jelly can load objects from ~/.exe/idevices
         sys.path.append(self.config.configDir/'idevices')
         self.webServer = WebServer(self, self.packagePath)
-        # and determine the web server's port before launching the client, so it can use the same port#:
+        # and determine the web server's port before launching the
+        # client,so it can use the same port#:
         self.webServer.find_port()
-
 
     def serve(self):
         """

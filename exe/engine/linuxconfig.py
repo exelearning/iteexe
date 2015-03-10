@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe config
 # Copyright 2004-2006, University of Auckland
@@ -14,7 +16,8 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor,
+# Boston, MA  02110-1301, USA.
 # ===========================================================================
 
 """
@@ -26,13 +29,14 @@ import os
 from exe.engine.config import Config
 from exe.engine.path import Path
 
+
 # ===========================================================================
 class LinuxConfig(Config):
     """
     The LinuxConfig overrides the Config class with Linux specific
     configuration
     """
-    
+
     def _overrideDefaultVals(self):
         """
         Setup with our default settings
@@ -40,15 +44,17 @@ class LinuxConfig(Config):
         # Override the default settings
         if Path("/usr/share/exe").isdir():
             self.webDir      = Path("/usr/share/exe")
-            self.jsDir      = Path("/usr/share/exe")
+            self.jsDir       = Path("/usr/share/exe")
+            # This breaks the FHS - jrf
             self.localeDir   = Path("/usr/share/exe/locale")
+            # self.localeDir   = Path("/usr/share/locale")
             self.mediaProfilePath = Path("/usr/share/exe/mediaprofiles")
-    
+
         self.dataDir     = Path(os.environ['HOME'])
         self.configDir   = Path(self.dataDir)/'.exe'
-        self.stylesDir =Path(self.configDir)/'style'
+        self.stylesDir   = Path(self.configDir)/'style'
         self.lastDir     = Path(os.environ['HOME'])
-        
+
         # Media converters - defaults for now
         self.videoMediaConverter_ogv = ""
         self.videoMediaConverter_3gp = '/usr/bin/ffmpeg -i %(infile)s -s qcif -vcodec h263 -acodec libvo_aacenc -ac 1 -ar 8000 -r 25 -ab 32 -y %(outfile)s'
@@ -57,7 +63,6 @@ class LinuxConfig(Config):
         self.audioMediaConverter_wav = "/usr/bin/sox %(infile)s %(outfile)s"
         self.audioMediaConverter_mp3 = "/usr/bin/sox %(infile)s -t wav - | /usr/bin/lame -b 32 - %(outfile)s"
         self.ffmpegPath = "/usr/bin/ffmpeg"
-
 
     def _getConfigPathOptions(self):
         """

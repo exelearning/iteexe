@@ -141,6 +141,7 @@ class Config(object):
         self.jsDir        = self.exePath.dirname()
         # localeDir is the base directory where all the locales are stored
         # FIXME: this breaks the FHS in Linux (jrf)
+        # To override in linuxconfig
         self.localeDir    = self.exePath.dirname()/"locale"
         # port is the port the exe webserver will listen on
         # (previous default, which very old users might still use, was 8081)
