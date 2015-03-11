@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # setup.py
+# Only used for Debian packaging
+
 from setuptools import setup
 from exe.engine import version
 
@@ -23,6 +25,7 @@ def dataFiles(dirs, excludes=[]):
     """Recursively get all the files in these directories"""
     import os.path
     import glob
+
     global dataFiles, g_oldBase, g_newBase, g_files
     for file in dirs:
         if not os.path.basename(file[0]).startswith("."):
@@ -46,12 +49,18 @@ dataFiles(["exe/webui/style",
            "exe/webui/schemas",
            "exe/webui/scripts",
            "exe/webui/templates"],
-           excludes=["exe/webui/templates/mimetex-darwin.cgi",
-                     "exe/webui/templates/mimetex.exe"])
+          excludes=["exe/webui/templates/mimetex-darwin.cgi",
+                    "exe/webui/templates/mimetex.exe"])
 
 g_oldBase = "exe"
 g_newBase = "/usr/share/exe"
-dataFiles(["exe/locale", "exe/mediaprofiles"])
+dataFiles(["exe/mediaprofiles"])
+
+# jrf - to comply with the FHS
+g_oldBase = "exe"
+# g_newBase = "/usr/share/exe"
+g_newBase = "/usr/share"
+dataFiles(["exe/locale"])
 
 g_oldBase = ""
 g_newBase = "/usr/share/exe"
