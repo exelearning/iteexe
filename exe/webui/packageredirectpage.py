@@ -58,7 +58,7 @@ class PackageRedirectPage(RenderableResource):
         This is probably because the url is in unicode
         """
         session = request.getSession()
-        if not session.user:
+        if not session.user and not request.getUser():
             return self.webServer.saml
         if name == '':
             return self
