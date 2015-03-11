@@ -53,17 +53,16 @@
 #      https://github.com/nandoflorestan/bag/tree/master/bag/web
 #
 # 2015-03-10:
-#    * Version 2.0.4 (JRF)
-#    * (Only) MO files should go to /usr/share/locale - how?
+#    * Version 2.1 (JRF)
 #
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.0.4"
+version="2.1"
 
-# 1.- Babel - Extraction of strings from *.py and *.js into new POT
+# 1.- pyBabel - Extraction of strings from *.py and *.js into new POT
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
 pybabel extract --keyword=x_ --keyword=c_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
 # tools/nevow-xmlgettext exe/jsui/templates/mainpage.html exe/webui/templates/about.html | msgcat exe/locale/messages.pot.tmp - -o exe/locale/messages.pot
@@ -71,17 +70,15 @@ pybabel extract --keyword=x_ --keyword=c_ --project "$project" --version "$versi
 # Removal of fuzzy comments from the POT file
 sed -i "s/^#, fuzzy\$//" exe/locale/messages.pot
 
-# 2.- Babel - Updating the PO files of the different languages
+# 2.- pyBabel - Updating the PO files of the different languages
 echo -e "\n\n\n *** Updating *.po files ***\n"
 pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/ --ignore-obsolete
 # Set correct Project-Id-Version
 find exe -name exe.po | xargs sed -i 's/Project-Id-Version:.*/Project-Id-Version: '"$project $version"'\\n"/' 
 
-# 3.- Babel - Compiling the MO files
+# 3.- pyBabel - Compiling the MO files
 echo -e "\n\n\n *** Compiling *.mo files ***\n"
 pybabel compile -D exe -d exe/locale/ --statistics
-# JRF, 2015-03-11 - Separation of PO and MO files
-# pybabel compile -D exe -d exe/locale/ -o locale/ --statistics
 # pybabel bugs fixing
 find exe -name exe.po | xargs sed -i 'N;N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
 find exe -name exe.po | xargs sed -i '1!N;1!N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
@@ -89,7 +86,5 @@ find exe -name exe.po | xargs sed -i '1!N;1!N;/#~ msgid ""\n#~ msgstr ""/d' # Cl
 # 4.- Transecma - Generating the translated JS files for the different languages
 echo -e "\n\n\n *** Compiling javascript for jsui files ***\n"
 # python tools/po2json.py --domain exe --directory exe/locale --output-dir exe/jsui/scripts/i18n
-# JRF, 2015-03-11 - new MO files directory
 python tools/transecma.py --domain exe --directory exe/locale --output-dir exe/jsui/scripts/i18n
-# python tools/transecma.py --domain exe --directory locale --output-dir exe/jsui/scripts/i18n
 
