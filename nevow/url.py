@@ -20,7 +20,8 @@ from twisted.web.util import redirectTo
 def _uqf(query):
     for x in query.split('&'):
         if '=' in x:
-            yield tuple( [raw(urllib.unquote(s)) for s in x.split('=')] )
+            equal = x.find('=')
+            yield (raw(x[:equal]), raw(x[equal + 1:]))
         elif x:
             yield (raw(urllib.unquote(x)), None)
 unquerify = lambda query: list(_uqf(query))

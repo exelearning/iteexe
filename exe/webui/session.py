@@ -39,9 +39,6 @@ compy.registerAdapter(appserver.OldResourceAdapter, resource.IResource, inevow.I
 
 
 class eXeRequest(appserver.NevowRequest):
-    def getUser(self):
-        # return self.args['user'][0]
-        return appserver.NevowRequest.getUser(self)
 
     def gotPageContext(self, pageContext):
         request = inevow.IRequest(pageContext)

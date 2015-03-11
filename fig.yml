@@ -2,6 +2,7 @@ front:
   build: images/apache2
   ports:
     - "80:80"
+    - "443:443"
   links:
     - app
   volumes:

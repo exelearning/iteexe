@@ -31,13 +31,14 @@ from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage          import EditorPage
 from exe.webui.stylemanagerpage    import StyleManagerPage
 from exe.webui.preferencespage     import PreferencesPage
-from exe.webui.aboutpage           import AboutPage 
+from exe.webui.aboutpage           import AboutPage
 from exe.webui.quitpage            import QuitPage
 from exe.webui.iecmwarning         import IECMWarningPage
 from exe.webui.renderable          import File
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
 from exe.webui.dirtree import DirTreePage
 from exe.webui.session import eXeSite
+from exe.webui.saml import SAMLPage
 from exe import globals as G
 
 
@@ -56,7 +57,8 @@ class WebServer:
         self.application = application
         self.config      = application.config
         self.tempWebDir  = application.tempWebDir
-        self.root        = PackageRedirectPage(self, packagePath)   
+        self.root        = PackageRedirectPage(self, packagePath)
+        self.saml        = SAMLPage(self.root)
         self.editor      = EditorPage(self.root)
         self.stylemanager = StyleManagerPage(self.root)
         self.preferences = PreferencesPage(self.root)

@@ -57,6 +57,9 @@ class PackageRedirectPage(RenderableResource):
         This is called if our ancestors can't find our child.
         This is probably because the url is in unicode
         """
+        session = request.getSession()
+        if not session.user:
+            return self.webServer.saml
         if name == '':
             return self
         else:
@@ -65,7 +68,6 @@ class PackageRedirectPage(RenderableResource):
             if result is not None:
                 return result
             else:
-                session = request.getSession()
                 if self.packagePath:
                     session.packageStore.addPackage(self.package)
                     self.bindNewPackage(self.package, session)

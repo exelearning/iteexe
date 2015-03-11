@@ -4,6 +4,8 @@ RUN apt-get update && apt-get -yq install python-setuptools python-zope.interfac
 
 RUN apt-get update && apt-get -yq install python-pip python-dev libxml2-dev libxmlsec1-dev swig
 
-RUN pip install python-saml
+RUN apt-get update && apt-get -yq install python-m2crypto python-isodate python-defusedxml
+
+RUN pip install dm.xmlsec.binding==1.3.2
 
 RUN mkdir /var/run/exe
