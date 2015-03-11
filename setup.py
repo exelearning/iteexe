@@ -22,7 +22,10 @@ g_newBase = "/usr/share/exe"
 
 
 def dataFiles(dirs, excludes=[]):
-    """Recursively get all the files in these directories"""
+    """
+    Recursively get all the files in these 'dirs' directories
+    except those listed in 'excludes'
+    """
     import os.path
     import glob
 
@@ -57,9 +60,14 @@ g_newBase = "/usr/share/exe"
 dataFiles(["exe/mediaprofiles"])
 
 # jrf - to comply with the FHS
-g_oldBase = "exe"
+# g_oldBase = "exe"
 # g_newBase = "/usr/share/exe"
-g_newBase = "/usr/share"
+g_oldBase = "exe/locale"
+g_newBase = "/usr/share/locale"
+# jrf - Experimental
+# .../*/*... da error
+# dataFiles(["exe/locale"],
+#          excludes=[exe/locale/*/*.po, exe/locale/messages.pot])
 dataFiles(["exe/locale"])
 
 g_oldBase = ""

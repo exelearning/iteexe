@@ -5,7 +5,7 @@ Maintainer: Pedro Peña <pedro.pena@open-phoenix.com>
 Homepage: http://exeLearning.net/
 Vcs-Browser: https://forja.cenatic.es/scm/browser.php?group_id=197
 Standards-Version: 3.9.6
-Build-Depends: debhelper (>= 9), python-all (>= 2.7), python-setuptools, docbook-xsl, docbook-xml, xsltproc
+Build-Depends: debhelper (>= 9), python-all (>= 2.7), dh-python, python-setuptools, docbook-xsl, docbook-xml, xsltproc
 X-Python-Version: >=2.7
 
 Package: intef-exe

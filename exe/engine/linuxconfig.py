@@ -45,9 +45,12 @@ class LinuxConfig(Config):
         if Path("/usr/share/exe").isdir():
             self.webDir      = Path("/usr/share/exe")
             self.jsDir       = Path("/usr/share/exe")
-            # This breaks the FHS - jrf
-            self.localeDir   = Path("/usr/share/exe/locale")
-            # self.localeDir   = Path("/usr/share/locale")
+
+            # 'usr/share/exe/locale/' breaks the FHS - jrf
+            # jrf - experimental
+            # self.localeDir = Path("/usr/share/exe/locale")
+            self.localeDir = Path("/usr/share/locale")
+
             self.mediaProfilePath = Path("/usr/share/exe/mediaprofiles")
 
         self.dataDir     = Path(os.environ['HOME'])
