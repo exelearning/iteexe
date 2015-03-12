@@ -9,7 +9,7 @@
 				ed.windowManager.open({
 					file : url + '/blockquoteandcite.htm',
 					width : 450,
-					height : 270,
+					height : 320,
 					inline : 1
 				});
 			});

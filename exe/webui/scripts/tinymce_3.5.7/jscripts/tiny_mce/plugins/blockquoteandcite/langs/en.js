@@ -11,5 +11,6 @@ tinyMCE.addI18n('en.blockquoteandcite',{
 	'no_quote' : _('Please write a quote'),
 	'no_author' : _('The "Authorship" field is empty'),
 	'lang_instructions1' : _('Specify the languages only if they are different from the rest of the content.'),
-	'lang_instructions2' : _('Use a two-letter ISO 639-1 code like "en", "es", "fr" or "de".')
+	'lang_instructions2' : _('Use a two-letter ISO 639-1 code like "en", "es", "fr" or "de".'),
+	'include_styles' : _('Include Styles (improves presentation)')
 });

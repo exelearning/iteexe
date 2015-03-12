@@ -16,6 +16,7 @@ function initCommonAttributes(elm) {
 		setFormValue('blockquoteLang', qlang);
 		setFormValue('author', author);
 		setFormValue('authorLang', alang);
+		if (elm.className.indexOf("styled-qc")==-1) document.forms[0].elements['styled'].checked=false;
 	}
 }
 
@@ -50,6 +51,7 @@ function insertQuote() {
 	var elm = tinyMCEPopup.editor.dom.getParent(tinyMCEPopup.editor.selection.getNode(), 'blockquote');
 	var formObj = document.forms[0];
 	var quote = formObj.elements['blockquote'];	
+	var styled = formObj.elements['styled'].checked;	
 	
 	if (quote.value == "") {
 		tinyMCEPopup.alert(tinyMCEPopup.getLang('blockquoteandcite.no_quote'));
@@ -70,7 +72,9 @@ function insertQuote() {
 	var qL = formObj.elements['blockquoteLang'].value;
 	var aL = formObj.elements['authorLang'].value;
 	
-	var h = '<blockquote class="exe-quote-cite"';
+	var cssClass = "exe-quote-cite";
+	if (styled) cssClass += " styled-qc";
+	var h = '<blockquote class="'+cssClass+'"';
 	if (qL != "") h += ' lang="' + qL + '"';
 	h += '><p>' + q + '</p>';
 	if (a != "") {
