@@ -24,7 +24,7 @@ A Wikipedia Idevice is one built from a Wikipedia article.
 """
 
 import re
-from exe.engine.beautifulsoup import BeautifulSoup, Comment
+from BeautifulSoup            import BeautifulSoup, Comment
 from exe.engine.idevice       import Idevice
 from exe.engine.field         import TextAreaField
 from exe.engine.translate     import lateTranslate
