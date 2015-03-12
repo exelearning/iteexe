@@ -65,10 +65,10 @@ dataFiles(["exe/mediaprofiles"])
 g_oldBase = "exe/locale"
 g_newBase = "/usr/share/locale"
 # jrf - Experimental
-# .../*/*... da error
-# dataFiles(["exe/locale"],
-#          excludes=[exe/locale/*/*.po, exe/locale/messages.pot])
-dataFiles(["exe/locale"])
+# .../*/*... no funciona, pero no da error - se puede dejar
+dataFiles(["exe/locale"],
+          excludes=["exe/locale/*/LC_MESSAGES/*.po", "exe/locale/messages.pot"])
+# dataFiles(["exe/locale"])
 
 g_oldBase = ""
 g_newBase = "/usr/share/exe"
