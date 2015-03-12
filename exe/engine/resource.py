@@ -452,14 +452,14 @@ class Resource(_Resource):
             # go ahead and adjust this within the package, as well:
             if hasattr(self._package, 'resources'): 
                 # Remove our old md5 from the package's list of resources:
-                siblings = self._package.resources[old_md5]
+                siblings = self._package.resources.get(old_md5, [])
                 # remove any multiple occurrences of this as well:
                 # (as might in corrupt files)
                 while self in siblings: 
                     siblings.remove(self)
                 if len(siblings) == 0:
                     # We are the last user of this file
-                    del self._package.resources[old_md5]
+                    self._package.resources.pop(old_md5, None)
                 if new_md5 is not None: 
                     # And add our new md5 to the package's list of resources:
                     siblings = self._package.resources.setdefault(new_md5, [])

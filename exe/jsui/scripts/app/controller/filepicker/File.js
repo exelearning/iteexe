@@ -188,19 +188,31 @@ Ext.define('eXe.controller.filepicker.File', {
 			if( record.get('type') == "directory" )
 				this.application.fireEvent( "dirchange" , record.get('realname') );
 			else {
-				fp.status = eXe.view.filepicker.FilePicker.returnOk;
-				fp.file = { 'path': record.get('realname') };
-				var filelist = this.getFilesList();
-				var selected = filelist.getSelectionModel().getSelection(), record;
-                if (selected.length) {
-                    fp.files = []
-                    for (record in selected) {
-                        if (selected[record].get('type') != "directory") {
-		                    fp.files.push({ 'path': selected[record].get('realname') });
-		                }
+                if (fp.type == eXe.view.filepicker.FilePicker.modeSave) {
+                    this.confirmReplace(function(status) {
+                        fp.status = status;
+                        fp.file = { 'path': record.get('realname') };
+                        fp.destroy();
+                    });
+                } else {
+                    var filelist = this.getFilesList(),
+                        selected = filelist.getSelectionModel().getSelection();
+
+                    fp.status = eXe.view.filepicker.FilePicker.returnOk;
+                    fp.file = { 'path': record.get('realname') };
+
+                    if (selected.length) {
+                        var record;
+
+                        fp.files = [];
+                        for (record in selected) {
+                            if (selected[record].get('type') != "directory") {
+                                fp.files.push({ 'path': selected[record].get('realname') });
+                            }
+                        }
                     }
+                    fp.destroy();
                 }
-				fp.destroy();
 		    }
         }
 	},

@@ -2218,7 +2218,7 @@ class SelectquestionElement(Element):
         """
         Process the request arguments from the web server
         """
-        log.info("process " + repr(request.args))
+        log.debug("process " + repr(request.args))
 
         is_cancel = common.requestHasCancel(request)
         
@@ -2676,7 +2676,7 @@ class QuizQuestionElement(Element):
         """
         Process the request arguments from the web server
         """
-        log.info("process " + repr(request.args))
+        log.debug("process " + repr(request.args))
         
         if self.questionId in request.args: 
             self.questionElement.process(request)

@@ -190,4 +190,5 @@ body:after{content:url(../images/exe_lightbox_close.png) url(../images/exe_light
 .lb-data .lb-number{color:#444}
 
 /* In the edition page, hidden elements are shown */
-body .exe-hide{display:inherit;filter:alpha(opacity=40);opacity:0.4;margin:0.5em;padding-left:25px;background:url(../images/exe_hidden.png) no-repeat 0 0}
+body .exe-hidden{display:inherit;filter:alpha(opacity=40);opacity:0.4;margin:0.5em;padding-left:25px;background:url(../images/exe_hidden.png) no-repeat 0 0}
+body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:auto;filter:alpha(opacity=40);opacity:0.4;margin:0.5em;padding-left:25px;background:url(../images/exe_hidden_accessible.png) no-repeat 0 0}

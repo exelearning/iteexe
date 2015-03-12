@@ -1,3 +1,84 @@
+intef-exe (3:2.0.3) lucid; urgency=low
+
+  [Mercedes Cotelo]
+    Fix bug [#2413]: Actualización Firefox 36.0 en Debian Ubuntu Problemas
+
+  [ Juan Rafael Fernández ]
+  * Trying to solve the menu+xpm / freedesktop+png confusion
+  * Another fix for bug [#2258] No call to update-mime-database
+
+  [ Pedro Peña Pérez ]
+  * Fix bug [#2303]: Wrong file format problem
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 04 Mar 2015 15:24:22 +0100
+
+intef-exe (3:2.0.2) lucid; urgency=low
+
+  [ José Miguel Andonegi ]
+  * Add class exe-hide to hide elements when exporting. In exe edition page and TinyMCE edition, hidden elements are
+    visible.
+  * Prevent class change in media elements
+  * Additional change in atributes.js: if media related classes are being used, the combo is disabled to prevent user
+    from changing it
+  * onclick event added to image preview so that user can refresh manually the image.
+  * <meta content="text/html; charset=utf-8" http-equiv="Content-Type">	added to all html in TinyMCE
+
+  [ Juan Rafael Fernández ]
+  * Contributes to updating Debian packaging to dh7, fixed naming,
+    permissions, adding dependencies etc.
+  * Contributes to making the Debian package valid for all architectures,
+    eliminating compiled files
+  * Improves the GNU Linux specific files: exe.desktop, exe.xml, menu
+  * Creates man files
+  * Fixes the address of the FSF (a very minor bug, spotted by automatic
+    tools).
+  * Fixes references to old eXeLearning.org: new project, url, email...
+  * Maintains the translation templates uptodate and prepares for new version
+  * Minor python language fixes: no 't' mode in open(), <> is obsolete...
+
+  [ Ignacio Gros ]
+  * Fix bug [#2305]: User's iDevices: The feedback button custom text was not displayed.
+  * Fix bug [#2274]: Print Style Sheet. Display feedbacks and results. + #navcontainer is not required (it's now called
+    #siteNav). The Print Styles have to be reviewed.
+  * Fix bug [#2291]: ePub3 & idevice NOTE ("Opening and ending tag mismatch").
+  * Fix bug [#2399]: (Image Magnifier). Problem with the proportions of the images (same height and width).
+  * eXe Tutorial. New version (eXe 2+).
+  * Fix bug [#2384]: TinyMCE's media preview does not show the video on new videos
+  * New exe-hidden and exe-hidden-accessible classes. CSS revision. See #2380
+
+  [ Fran Macías ]
+  * Use 'ordereddict' in python 2.6
+
+  [ Pedro Peña ]
+  * Allow open elp files without content.data
+  * Fix bug #[2359]: "When using an animated gif, exe process does not shut down after exiting"
+  * eXe sessions don't expires. Prevent errors after suspend/resume
+  * Migrate xliff export preferences window to ExtJS.
+    This prevents usage of old dublincore.xul to show language list ([#2249])
+  * Removed unnecessary dublincore files
+  * Natural sort for language selectors
+  * Fix bug [#2296]: Install directory not set
+  * Fix 4th problem of bug [#2335]: ePub3 + Readium problems
+  * Fix bug [#2288]: Privacy-breach-generic usr/share/exe/scripts/extjs/index.html.
+    Remove unnecessary extjs html
+  * Revert unnecessary upstream patches to twisted spread banana module.
+    Fix bug [#2306]: Possibly insecure files in /tmp
+  * Fix bug [#2287]: Let's use the system feedparser
+  * Fix bug [#2286]: Let's use the system mimetex
+  * Add version file to source package.
+    Use version file to guess version in builds outside of a git clone
+  * Fix bug [#2389] python-support is deprecated, we need to move to dh_python2
+  * Fix bug [#2387] The name of the package is wrong
+  * Fix bug [#2392] Are _c_urlarg.so and cBanana.so necessary?
+  * Fix bug [#2407]: Windows Error exception inserting image in Idevice
+  * Up recursion limit and fallback to content.data if recursion limit reached loading contentv3.xml
+  * Fix bug [#2394] iDevice ficheros adjuntos (campo descripción)
+  * Fix bug [#2383] TinyMCE's image preview does not show the image on new images
+  * Fix bug [#2337] Ask before overwriting
+  * Fix bug [#2298] Fill in the blanks, autohides special characters problem
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 27 Feb 2015 13:53:29 +0100
+
 python-intef-exe (3:2.0.1) lucid; urgency=low
 
   [Ignacio Gros]
@@ -8,12 +89,12 @@ python-intef-exe (3:2.0.1) lucid; urgency=low
   * Fix bug #2261: "Submit icons were not visible (Ubuntu / FF 32.0.4)"
   * Single Page Export: Add a new class to each node with its level ("level-1-node", etc.)
   * Fix bug #2273: "Some contents disappeared when the was an horizontal menu"
-  
+
   [Juan Rafael Fernández]
   * Debian package conformance review
   * Fix bug #2250: "Is XUL necessary to display the manual?"
   * License specified in the About page
-  
+
   [Mercedes Cotelo]
   * Fix bug #2211: "Cambio de nombre de plantilla carm a CARM"
   * Fix bug #2263: "Modificación estilo CARM y CeDeC Derivados"
@@ -22,12 +103,12 @@ python-intef-exe (3:2.0.1) lucid; urgency=low
   * Fix bug #2245: "Backwards compatibility may not work"
   * Fix bug #2258: "No call to update-mime-database"
   * Fix bug #2262: "Doble clic sobre archivo elp"
-  * New experimental category for Idevices 
+  * New experimental category for Idevices
 
   [Translation Teams]
   * Updated translations of Spanish, Russian, Italian, French, Dutch, Valencian, Basque,
     Portuguese and Gallician.
-  
+
  -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 29 Oct 2014 13:38:26 +0100
 
 python-intef-exe (3:2.0) lucid; urgency=low
@@ -740,13 +821,13 @@ python-exe (1:1.04.1.3605intef6.3rc1) lucid; urgency=low
  -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 28 Nov 2012 12:47:52 +0100
 
 python-exe (1:1.04.1.3605intef6.2) lucid; urgency=low
-  
+
   [Antonio Moreno]
   * Corregido bug #1436 (iDevice de wiki repite el artículo al cargarlo)
-  
+
   [Gaizka Bilbao]
   * Añadido estilo Tknika
-  
+
   [Ignacio Gros]
   * Añadidos estilos INTEF (por defecto) e INTEF (navegación horizontal)
   * Corregido bug #1411 (TinyMCE - Selector de color no funciona)
@@ -757,22 +838,22 @@ python-exe (1:1.04.1.3605intef6.2) lucid; urgency=low
   * Ruta al editor WYSIWYG configurable (permite cambiar el editor sin compilar)
   * Corregido bug #1446 (TinyMCE - Imágenes generadas por eXeLatex no son editables)
   * TinyMCE acepta cualquier etiqueta/atributo/valor (antes solamente XHTML 1.0 Strict)
-  
+
   [José Miguel Andonegi]
   * Actualizada la traducción al euskera
-  
+
   [Juan Rafael Fernández]
   * Actualizada la traducción al español
-  
+
   [Pedro Peña]
   * Revisión de textos y tamaño de ventana de los créditos
   * Reaplicado parche para que no aparezca el enlace "Resumen textual
     alternativo..." al insertar contenidos multimedia
   * Se tiene en cuenta posibles slots vacíos en el listado de recursos del
     paquete (http://exelearning.net/forums/topic/posible-bug-nueva-version-3605intef6-1-formato-incorrecto/)
-  * Añadidas opciones de exportación a SCORM para incluir página única y 
+  * Añadidas opciones de exportación a SCORM para incluir página única y
     sitio web
-  * Añadidos parámetros de configuración de exportación a SCORM y XLIFF 
+  * Añadidos parámetros de configuración de exportación a SCORM y XLIFF
     e importación a XLIFF en comando exe_do
   * Añadida opción para generar un SCORM editable por eXe (también a exe_do)
   * Corregida generación de indentaciones al exportar a xliff
@@ -783,7 +864,7 @@ python-exe (1:1.04.1.3605intef6.2) lucid; urgency=low
   * Corregido error al exportar a xliff usando exe_do
   * Se eliminan los comentarios HTML en los artículos de Wikipedia
     descargados
-  
+
  -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 27 Jul 2012 12:29:59 +0200
 
 python-exe (1:1.04.1.3605intef6.1) lucid; urgency=low
@@ -865,7 +946,7 @@ python-exe (1.04.1.3605ite6rc1) lucid; urgency=low
   * Revisión de la traducción al euskera de eXe
 
   [Pedro Peña]
-  * Al guardar un elp se incluye en éste un fichero xml "content.xml", 
+  * Al guardar un elp se incluye en éste un fichero xml "content.xml",
     junto con su esquema, equivalente al "content.data".
   * El "content.xml", en caso de que exista, prevalece sobre el "content.data"
     al abrir un elp.
@@ -937,7 +1018,7 @@ python-exe (1.04.1.3605ite5.1) lucid; urgency=low
   * Se vuelven a aplicar los cambios de TodoFP a common.js para que funcione el
     botón de feedback de algunos IDevices
   * Fijado valid_elements de TinyMCE para que valide lo especificado
-    estrictamente en el estándar XHTML 
+    estrictamente en el estándar XHTML
 
  -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 30 Nov 2011 09:36:33 +0100
 
@@ -950,7 +1031,7 @@ python-exe (1.04.1.3605ite5) lucid; urgency=low
 
   [Mikel Larreategi]
   * Importador/exportador de XLIFF
- 
+
   [Jose Miguel Andonegui]
   * Traducción al euskera de TinyMCE
 
@@ -979,10 +1060,10 @@ python-exe (1.04.1.3605ite4) lucid; urgency=low
  -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Sat, 15 Oct 2011 13:29:47 +0200
 
 python-exe (1.04.1.3605ite3) lucid; urgency=low
-  
+
   [Mario Izquierdo]
   * exe.desktop exe.xml debian/rules: Rename MIME to application/x-exe-learning
-    and install exe.xml in /usr/share/mime/packages  
+    and install exe.xml in /usr/share/mime/packages
   * exe/application.py: Fix exception IOError=>OSError, and catch posible UTF-8
     filename errors in splash
 
@@ -1041,7 +1122,7 @@ python-exe (1.04.1.3598op9) jaunty; urgency=low
 
   * Implementada la cancelación de la importación. Al cerrar la ventana información sobre
     la importación pide confirmación de la cancelación.
-  * Mejora en la detección del encoding del contenido HTML. Prevalece el valor que se 
+  * Mejora en la detección del encoding del contenido HTML. Prevalece el valor que se
     haya especificado en el propio documento mediante 'charset'.
   * Añadida dependencia de firefox o iceweasel.
 
@@ -1404,7 +1485,7 @@ python-exe (0.19-0.1ubuntu1) unstable; urgency=low
     * Turn Multichoice Question IDevice into Multichoice Quiz
     * New firefox
     * Other bug fixes (see http://exelearning.org/projects/exe1/milestone/0.19%20Tidy%20Tui)
-    
+
  -- Matthew Sherborne <matthew@exelearning.org>  Tue, 27 Oct 2006 11:56:57 +1300
 
 python-exe (0.18-0.1ubuntu1) unstable; urgency=low
@@ -1415,14 +1496,14 @@ python-exe (0.18-0.1ubuntu1) unstable; urgency=low
     * Added Czech, Tagalog, Twi and Ewe languages.
     * Have previous/next be translated in export to website.
     * Various bug fixes.
-    
+
  -- Matthew Sherborne <matthew@exelearning.org>  Tue, 12 Sep 2006 13:32:15 +1300
 
 python-exe (0.17-0.1ubuntu1) unstable; urgency=low
 
     * Text export for mobile devices
     * Various bug fixes
-    
+
  -- Matthew Sherborne <matthew@exelearning.org>  Tue, 01 Aug 2006 14:07:12 +1300
 
 python-exe (0.16-0.1ubuntu1) unstable; urgency=low
@@ -1430,7 +1511,7 @@ python-exe (0.16-0.1ubuntu1) unstable; urgency=low
     * Added slovenian and french languages
     * Fixed bug in True/False IDevice not storing instructions
     * Fixed bug with gallery images with umlautes in filenames
-    
+
  -- Matthew Sherborne <matthew@exelearning.org>  Wed, 12 Apr 2006 16:45:03 +1300
 
 python-exe (0.15-0.1ubuntu1) unstable; urgency=low
@@ -1453,7 +1534,7 @@ python-exe (0.15-0.1ubuntu1) unstable; urgency=low
     * Wikipedia storing emphasis
     * Wikipedia iDevice "saves" title edits
     * Images in Wikieducator iDevice
-    
+
  -- Matthew Sherborne <matthew@exelearning.org>  Wed, 12 Apr 2006 16:45:03 +1300
 
 python-exe (0.14-0.1ubuntu1) unstable; urgency=low
@@ -1470,7 +1551,7 @@ python-exe (0.14-0.1ubuntu1) unstable; urgency=low
 
 python-exe (0.13-0.1ubuntu1) unstable; urgency=low
 
-    * Cleverer ready to run version 
+    * Cleverer ready to run version
     * Better International Support
     * Image magnifier IDevice
     * New Gallery Interface
