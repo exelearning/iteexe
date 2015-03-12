@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
@@ -15,7 +17,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # ===========================================================================
 """
 Classes to XHTML elements.  Used by GenericBlock
@@ -534,7 +536,7 @@ class FeedbackElement(ElementWithResources):
 
         html = ""
         if self.field.feedback != "": 
-            html += common.feedbackBlock(self.id,self.field.feedback)
+            html += common.feedbackBlock(self.id,self.field.feedback,self.field.buttonCaption)
         return html
 
 
@@ -2082,7 +2084,7 @@ class SelectOptionElement(Element):
         Returns an XHTML string for editing this option element
         code is pretty much straight from the Multi-Option aka QuizOption
         """
-        html  = u"<tr><td align=\"left\"><b>%s</b>" % _("Option")
+        html  = u"<tr><td align=\"left\"><b id='ans%s-editor-label'>%s</b>" % (self.id,_("Option"))
         html += common.elementInstruc(self.field.question.optionInstruc)
 
         header = ""
@@ -2216,7 +2218,7 @@ class SelectquestionElement(Element):
         """
         Process the request arguments from the web server
         """
-        log.info("process " + repr(request.args))
+        log.debug("process " + repr(request.args))
 
         is_cancel = common.requestHasCancel(request)
         
@@ -2249,7 +2251,7 @@ class SelectquestionElement(Element):
         Returns an XHTML string with the form element for editing this element
         """
         html  = u"<div class=\"iDevice\">\n"
-        html += u"<b>" + _("Question:") + " </b>" 
+        html += u"<b id='question"+self.id+"-editor-label'>" + _("Question:") + " </b>" 
         html += common.elementInstruc(self.field.questionInstruc)
         html += u" " + common.submitImage("del" + self.id, 
                                    self.field.idevice.id, 
@@ -2674,7 +2676,7 @@ class QuizQuestionElement(Element):
         """
         Process the request arguments from the web server
         """
-        log.info("process " + repr(request.args))
+        log.debug("process " + repr(request.args))
         
         if self.questionId in request.args: 
             self.questionElement.process(request)

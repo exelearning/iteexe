@@ -12,6 +12,8 @@ var $exeTinyMCE = {
 		
 		var h = 300;
 		if (mode=="exact") h = 50;
+		var w = 882;
+		if (typeof($exeTinyMCEToggler.documentWidth)=='undefined' || (typeof($exeTinyMCEToggler.documentWidth)!='undefined' && $exeTinyMCEToggler.documentWidth<900)) w = '';
 
 		tinyMCE.init({
 			// General options
@@ -23,6 +25,7 @@ var $exeTinyMCE = {
 			schema : this.getSchema(),
 			content_css : "/css/extra.css," + exe_style,
 			height : h,
+			width : w,
 			plugins : "blockquoteandcite,definitionlist,tooltip,clearfloat,advalign,autolink,lists,pagebreak,style,layer,table,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,exemath,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,visualblocks,pastecode,inlinepopups,spellchecker,template",
 			valid_children : this.getValidChildren(),
 			valid_elements : this.getValidElements(),
@@ -77,7 +80,7 @@ var $exeTinyMCE = {
 	
 	getSchema : function(){
 		var s = "html4";
-		if (exe_export_format=="html5" && exe_editor_mode=='strict') s = "html5";
+		if (exe_export_format=="html5") s = "html5";
 		return s;
 	},
 	
@@ -89,6 +92,7 @@ var $exeTinyMCE = {
 	
 	getValidChildren : function(){
 		var v = "+body[style]";
+		if (exe_export_format=="html5") v += ",+video[a],+audio[a]";
 		if (exe_editor_mode=="strict") {
 			v = "";
 			if (exe_export_format=="html5") v = "+video[a],+audio[a]";
@@ -153,11 +157,16 @@ var $exeTinyMCEToggler = {
 	},
 	
 	createViewer : function(e){
+		if (typeof(this.documentWidth)=='undefined') {
+			this.documentWidth = $(document).width();
+		}
 		var id = e.attr("id");
 		var n = e.attr("name");
 		var c = e.val();
+		var w = ";width:852px";
+		if (this.documentWidth<900) w = "";
 		$exeTinyMCEToggler.createEditorLink(e,n);
-		var v = $('<div id="'+id+'-viewer" style="height:96px;padding:2px 15px;border:1px solid #ccc;overflow:auto" onclick="$exeTinyMCEToggler.removeViewer(\''+id+'\')">'+c+'</div>');
+		var v = $('<div id="'+id+'-viewer" style="height:96px;padding:2px 15px;border:1px solid #ccc;overflow:auto'+w+'" onclick="$exeTinyMCEToggler.removeViewer(\''+id+'\')">'+c+'</div>');
 		e.hide().before(v);
 	},
 	
@@ -167,6 +176,10 @@ var $exeTinyMCEToggler = {
 	},
 	
 	getHelpLink : function(e) {
+    
+        // The textarea has a label with an ID: textareaID-editor-label
+        var w = $("#"+e.attr("id")+"-editor-label");
+        if (w.length>0) return w;
 
 		// Get the help link to insert the TinyMCE toggler after it
 		var r = "";

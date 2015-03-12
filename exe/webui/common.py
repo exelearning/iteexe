@@ -337,7 +337,7 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
     return new_html
 
 
-def image(name, value, width="", height="", alt=None):
+def image(name, value, width="", height="", alt=None, cssClass=None):
     """Returns the XHTML for an image"""
     if alt is None:
         alt = name
@@ -348,6 +348,8 @@ def image(name, value, width="", height="", alt=None):
         html += u"width=\"%s\" " % width
     if height:
         html += u"height=\"%s\" " % height
+    if cssClass:
+        html += u"class=\"%s\" " % cssClass
     html += u"src=\"%s\" " % value
     html += u"/>\n"
     return html
@@ -419,7 +421,12 @@ def button(name, value, enabled=True, **kwargs):
     html += ' />'+lb
     return html
 
-def feedbackBlock(id,feedback):
+def feedbackBlock(id,feedback,buttonCaption=""):
+    buttonText = c_('Show Feedback')
+    changeText = 'true'
+    if buttonCaption != "":
+        buttonText = buttonCaption
+        changeText = 'false' # Do not change the text on click if the text is defined by the user or the iDevice
     lb = "\n" #Line breaks
     dT = getExportDocType()
     sectionTag = "div"
@@ -431,7 +438,7 @@ def feedbackBlock(id,feedback):
     html += lb
     html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
     html += '<p>'
-    html += '<input type="button" name="toggle-feedback-'+id+'" value="'+ c_('Show Feedback')+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this);return false" />'
+    html += '<input type="button" name="toggle-feedback-'+id+'" value="'+ buttonText+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this,'+changeText+');return false" />'
     html += '</p>'+lb
     html += '</div>'+lb
     html += '<'+sectionTag+' id="feedback-'+id+'" class="feedback js-feedback js-hidden">'+lb
@@ -464,7 +471,7 @@ def submitImage(action, object_, imageFile, title=u"", isChanged=1, relative=Fal
         relativeText = u'style="position:relative;z-index:100000"'
     html  = u'<a %s' % titleText
     html += u' href="#" onclick="%s" %s>' % (onclick, relativeText)
-    html += u'<img alt="%s" class="submit" src="%s"/>' % (title, imageFile)
+    html += u'<img alt="%s" class="submit" width="16" height="16" src="%s" />' % (title, imageFile)
     html += u'</a>\n' 
     return html
 
@@ -494,7 +501,7 @@ def confirmThenSubmitImage(message, action, object_, imageFile,
     html += " href=\"#\" "
     html += "onclick=\"confirmThenSubmitLink('"+re.escape(message)+"', '"+action+"', "
     html += "'"+object_+"', "+unicode(isChanged)+");\" >"
-    html += u'<img alt="%s" class="submit" src="%s"/>' % (title, imageFile)
+    html += u'<img alt="%s" class="submit" width="16" height="16" src="%s" />' % (title, imageFile)
     html += u'</a>\n' 
     return html
 
@@ -557,7 +564,10 @@ def formField(type_, package, caption, action, object_='', instruction='', \
     package is only needed for richTextArea, to present all available internal anchors.
     """
     html  = '<div class="block">'
-    html += '<strong>%s</strong>' % caption
+    html += '<strong'
+    if type_ == 'richTextArea':
+        html += ' id="'+action+object_+'-editor-label"' # ID to create the Show/Hide Editor Link
+    html += '>%s</strong>' % caption
     if instruction:
         html += elementInstruc(instruction)
     html += '</div>'

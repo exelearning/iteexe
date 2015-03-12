@@ -16,7 +16,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #
 # Help
 #-----
@@ -28,23 +28,26 @@
 # Changes
 # -------
 # 2013-10:
-# 	* Usage of Babel1.3 (Pedro Peña)
-# 		Uses python Babel 1.3 patched to include 'Language' header 
-#		(https://dl.dropboxusercontent.com/s/k1i7ph2m2g4s7kx/Babel-1.3.tar.gz)
-# 		as discussed here: 
-# 		https://forja.cenatic.es/tracker/index.php?func=detail&aid=1905&group_id=197&atid=883
+#     * Usage of Babel1.3 (Pedro Peña)
+#         Uses python Babel 1.3 patched to include 'Language' header 
+#        (https://dl.dropboxusercontent.com/s/k1i7ph2m2g4s7kx/Babel-1.3.tar.gz)
+#        as discussed here:
+#        https://forja.cenatic.es/tracker/index.php?func=detail&aid=1905&group_id=197&atid=883
 #
-#	* Changed --version from '1.04.1' to '2.0' (JRF)
+#    * Changed --version from '1.04.1' to '2.0' (JRF)
 #
 # 2014-03-17:
-#	* Changed options of pybabel update (JRF)
+#    * Changed options of pybabel update (JRF)
+#
+# 2015-02-26:
+#    * Version 2.0.2 (JRF)
 #
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.0"
+version="2.0.2"
 # 1.- Extraction of strings from *.py and *.js into new POT
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
 pybabel extract --keyword=x_ --keyword=c_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot

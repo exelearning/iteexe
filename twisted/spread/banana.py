@@ -17,18 +17,11 @@ for more details.
 
 __version__ = "$Revision: 1.37 $"[11:-2]
 
-from twisted.internet   import protocol
-from twisted.persisted  import styles
-from twisted.python     import log
-from exe                import globals
+from twisted.internet import protocol
+from twisted.persisted import styles
+from twisted.python import log
 
 import types, copy, cStringIO, struct
-import time
-import re
-import os
-import getpass
-import logging
-log = logging.getLogger(__name__)
 
 class BananaError(Exception):
     pass
@@ -42,14 +35,18 @@ def int2b128(integer, stream):
         stream(chr(integer & 0x7f))
         integer = integer >> 7
 
-def b1282int(st, _powersOfOneTwentyEight = []):
+def b1282int(st):
+    oneHundredAndTwentyEight = 128l
     i = 0
-    if len(st) > len(_powersOfOneTwentyEight):
-        _powersOfOneTwentyEight.extend([128 ** n for n in xrange(len(_powersOfOneTwentyEight), len(st))])
-    for place, char in enumerate(st):
+    place = 0
+    for char in st:
         num = ord(char)
-        i = i + (num * _powersOfOneTwentyEight[place])
-    return i
+        i = i + (num * (oneHundredAndTwentyEight ** place))
+        place = place + 1
+    if i <= 2147483647:
+        return int(i)
+    else:
+        return i
 
 # delimiter characters.
 LIST     = chr(0x80)
@@ -119,36 +116,9 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
     buffer = ''
 
     def dataReceived(self, chunk):
-
-        cList = 0
-        cString = 0
-        cInt = 0
-        cLongInt = 0 
-        cLongNeg = 0 
-        cNeg = 0
-        cVocab = 0
-        cFloat = 0
-        cInvalid = 0
-
         buffer = self.buffer + chunk
         listStack = self.listStack
         gotItem = self.gotItem
-
-        bufLen = len(buffer)
-        percentDone = 10
-        percentDoneLast = 0
-        updateTimeLast = 0
-
-        try:
-            username = getpass.getuser()
-        except ImportError:
-            username = ''
-        eXeStart = globals.application.tempWebDir
-        eXeStart = re.sub("[\/|\\\\][^\/|\\\\]*$","",eXeStart)
-        eXeStart = eXeStart + '/tmpExeStartupTime.' + username
-        chmodOnceOnly=1
-
-        ##### XXXX xxxx
         while buffer:
             assert self.buffer != buffer, "This ain't right: %s %s" % (repr(self.buffer), repr(buffer))
             self.buffer = buffer
@@ -159,34 +129,11 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
                 pos = pos + 1
             else:
                 if pos > 64:
-                    raise BananaError("Security precaution: prefix > 64 bytes")
+                    raise BananaError("Security precaution: more than 64 bytes of prefix")
                 return
-        
-            # tracking of percent done
-            updateTime = int (time.time())
-            if(updateTime > updateTimeLast):
-                curBufLen = len(buffer)
-                percentDone = int( (900 * (bufLen - curBufLen)/bufLen) + 100 )
-
-                outStartFH=open(eXeStart, "w")
-                outStartFH.write(`updateTime`)
-                outStartFH.close()
-                if(chmodOnceOnly):
-                    os.chmod(eXeStart,0666)
-                    chmodOnceOnly=0
-
-                if(percentDone > percentDoneLast):
-                    outSplashFH=open(globals.application.tempWebDir + \
-                                       '/splash.dat',"w")
-                    outSplashFH.write(`percentDone`)
-                    outSplashFH.close()
-                    updateTimeLast = updateTime
-                    percentDoneLast = percentDone
-
             num = buffer[:pos]
             typebyte = buffer[pos]
             rest = buffer[pos+1:]
-
             if len(num) > 64:
                 raise BananaError("Security precaution: longer than 64 bytes worth of prefix")
             if typebyte == LIST:
@@ -195,8 +142,6 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
                     raise BananaError("Security precaution: List too long.")
                 listStack.append((num, []))
                 buffer = rest
-                cList += 1
-
             elif typebyte == STRING:
                 num = b1282int(num)
                 if num > SIZE_LIMIT:
@@ -206,57 +151,38 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
                     gotItem(rest[:num])
                 else:
                     return
-                cString += 1
             elif typebyte == INT:
                 buffer = rest
                 num = b1282int(num)
                 gotItem(int(num))
-                cInt += 1
             elif typebyte == LONGINT:
                 buffer = rest
                 num = b1282int(num)
                 gotItem(long(num))
-                cLongInt += 1
             elif typebyte == LONGNEG:
                 buffer = rest
                 num = b1282int(num)
                 gotItem(-long(num))
-                cLongNeg += 1
             elif typebyte == NEG:
                 buffer = rest
                 num = -b1282int(num)
                 gotItem(num)
-                cNeg += 1
             elif typebyte == VOCAB:
                 buffer = rest
                 num = b1282int(num)
                 gotItem(self.incomingVocabulary[num])
-                cVocab += 1
             elif typebyte == FLOAT:
                 if len(rest) >= 8:
                     buffer = rest[8:]
                     gotItem(struct.unpack("!d", rest[:8])[0])
                 else:
                     return
-                cFloat += 1
             else:
-                raise NotImplementedError(("Invalid Type %r" % (typebyte,)))
-                cInvalid += 1
-
+                raise NotImplementedError(("Invalid Type Byte %r" % (typebyte,)))
             while listStack and (len(listStack[-1][1]) == listStack[-1][0]):
                 item = listStack.pop()[1]
                 gotItem(item)
         self.buffer = ''
-        log.info('Banana Import Statistics')
-        log.info('cList: ' + `cList`)
-        log.info('cString: ' + `cString`)
-        log.info('cInt: ' + `cInt`)
-        log.info('cLongInt: ' + `cLongInt`)
-        log.info('cLongNeg: ' + `cLongNeg`)
-        log.info('cNeg: ' + `cNeg`)
-        log.info('cVocab: ' + `cVocab`)
-        log.info('cFloat: ' + `cFloat`)
-        log.info('cInvalid: ' + `cInvalid`)
 
 
     def expressionReceived(self, lst):

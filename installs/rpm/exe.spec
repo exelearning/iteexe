@@ -18,8 +18,8 @@ BuildRoot: %{_tmppath}/exe-buildroot
 Prefix: %{_prefix}
 ExclusiveArch: i686
 BuildRequires: python-devel
-BuildRequires: python >= %{pyver}, GitPython
-Requires: python >= %{pyver}, python-setuptools, python-imaging, python-zope-interface, python-chardet, python-lxml
+BuildRequires: python >= %{pyver}
+Requires: python >= %{pyver}, python-setuptools, python-imaging, python-zope-interface, python-chardet, python-lxml, python-feedparser, mimetex
 Obsoletes: exe-twisted, exe
 
 %description
@@ -32,9 +32,8 @@ Management System.
 %prep
 %setup -n exe
 # remove the other platform binaries
-rm -f exe/webui/templates/mimetex.64.cgi exe/webui/templates/mimetex.exe
+rm -f exe/webui/templates/mimetex.exe
 rm -f exe/webui/templates/mimetex-darwin.cgi
-rm -f exe/msvcr71.dll
 rm -f twisted/spread/cBanana.so
 rm -f twisted/protocols/_c_urlarg.so
 
@@ -57,7 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%attr(755,root,root) %{_datadir}/exe/templates/mimetex.cgi
 %{_bindir}/exe
 %{_bindir}/exe_do
 %{_libdir}/python%{pyver}/site-packages/exe

@@ -2,14 +2,7 @@
 
 # setup.py
 from setuptools import setup
-import pkg_resources
-pkg_resources.require('gitpython>=0.3.1')
 from exe.engine import version
-from exe.engine.path import Path
-
-# Before we install, make sure all the mimetex binaries are executable
-Path('exe/webui/templates/mimetex.cgi').chmod(0755)
-Path('exe/webui/templates/mimetex.64.cgi').chmod(0755)
 
 g_files = {'/usr/share/exe': ["README",
                              "COPYING",
@@ -18,6 +11,7 @@ g_files = {'/usr/share/exe': ["README",
                              "exe/webui/mr_x.gif"],
           '/usr/share/applications': ["exe.desktop"],
           '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
+          '/usr/share/pixmaps': ["exe.xpm"],
         }
 
 g_oldBase = "exe/webui"
@@ -68,16 +62,16 @@ dataFiles(["exe/jsui/scripts",
 
 setup(name=version.project,
       version=version.version,
-      description="eLearning XHTML editor",
+      description="The EXtremely Easy to use eLearning authoring tool",
       long_description="""\
 The eXe project is an authoring environment to enable teachers
 to publish web content without the need to become proficient in
 HTML or XML markup.  Content generated using eXe can be used by
 any Learning Management System.
 """,
-      url="http://exelearning.org",
-      author="eXe Project",
-      author_email="exe@exelearning.org",
+      url="http://exelearning.net",
+      author="INTEF-eXe Project",
+      author_email="admin@exelearning.net",
       license="GPL",
       scripts=["exe/exe", "exe/exe_do"],
       packages=["exe", "exe.webui", "exe.jsui",

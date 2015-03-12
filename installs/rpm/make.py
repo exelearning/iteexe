@@ -12,6 +12,8 @@ from exe.engine import version
 clrelease = 1
 print "Making version: %s release: %s" % (version.version, clrelease)
 
+open('version', 'w').write(version.version)
+
 # create the source tarball
 os.chdir('..')
 tarball = 'intef-exe-' + version.release + '-source.tgz'

@@ -14,7 +14,7 @@ body,html  {
     background-color:#fff;
     color:#646464;
     font-family:Verdana,Arial, Helvetica, sans-serif !important;
-    line-height:120%;
+    line-height: 120%;
 }
 
 body {
@@ -24,6 +24,7 @@ body {
 h1, h2, h3, h4, h5 {
 	margin:0;
 	padding:0;
+	line-height: 120%;
 }
 
 p {
@@ -121,10 +122,14 @@ de la jerarquía de contenidos que crearemos con eXe */
 .iDevice_content{*zoom:1}/* IE6/7: Trigger hasLayout and contain floats */
 
 /* SCORM y otros comparten apariencia: esta es la apariencia por defecto */
+/* El encabezado de los iDevices con imagen de fondo no debe ser mayor que
+   el alto de la imagen de fondo, o saldrán huecos
+   imagen (70px) = alto (20px) + padding (2 * 25px) */
 .emphasis1 .iDevice_header{
     background:url(icon_question.gif) no-repeat 0 0;
     padding:25px 25px 25px 100px;
-    color:#BE4D4C
+    color:#BE4D4C;
+    max-height: 20px;
 }
 .iDevice.emphasis1{
     background:url(sup_der_hojas.gif) no-repeat right 0;
@@ -143,7 +148,8 @@ de la jerarquía de contenidos que crearemos con eXe */
 .activityIdevice .iDevice_header{
     background:url(icon_activity.gif) no-repeat 0 0;
     padding:25px 25px 25px 100px;
-    margin-left:-3px
+    margin-left:-3px;
+    max-height: 20px;
 }
 .activityIdevice .iDevice{
     background:url(sup_der_activity.gif) no-repeat right 0;

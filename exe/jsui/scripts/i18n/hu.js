@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2007-12-07 17:53+1300\nLast-Translator: Jim Tittsler <jim@exelearning.org>\nLanguage-Team: CONSEDU <info@consedu.hu>\nLanguage: hu\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-02-26 13:24+0100\nPO-Revision-Date: 2007-12-07 17:53+1300\nLast-Translator: Jim Tittsler <jim@exelearning.org>\nLanguage-Team: CONSEDU <info@consedu.hu>\nLanguage: hu\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "A tan\u00e1roknak \u00e9szben kellene tartaniuk a k\u00f6vetkez\u0151t mikor haszn\u00e1lja ezt az iDevice modult:  <ol><li>Gondoljon arra a tananyagegys\u00e9g tev\u00e9kenys\u00e9geinek tervez\u00e9sekor, hogy vizu\u00e1lisan is jel\u00f6lje a tartalmat. Ker\u00fclje a t\u00fal sok k\u00fcl\u00f6nb\u00f6z\u0151 t\u00edpus\u00fa vagy besorol\u00e1s\u00fa tev\u00e9kenys\u00e9g haszn\u00e1lat\u00e1t, mert a tanul\u00f3kat megzavarhatja. \u00c1ltal\u00e1ban h\u00e1rom n\u00e9gy k\u00fcl\u00f6nb\u00f6z\u0151 t\u00edpus t\u00f6bb, mint megfelel\u0151 egy tananyagegys\u00e9gen bel\u00fcl .<\/li><li>A vizu\u00e1lis megjelen\u00e9s tervez\u00e9se sor\u00e1n ker\u00fclje, hogy k\u00f6zvetlen\u00fcl egym\u00e1s ut\u00e1n k\u00e9t iDevice k\u00f6vesse egym\u00e1st sz\u00f6veges elv\u00e1laszt\u00e1s n\u00e9lk\u00fcl. Ha ez m\u00e9gis el\u0151fordul, fontolja meg, hogan lehet egyetlen iDevice modullal megoldani ugyanazt! <\/li><li>Gondolja v\u00e9gig, hogy a k\u00fcl\u00f6nb\u00f6z\u0151 esetekben melyik modul lehet hat\u00e9konyabb, melyik milyen el\u0151nyoket k\u00edn\u00e1l, melyik ny\u00fajt t\u00f6bbet. <\/li><\/ol>", 
  "Title": "C\u00edm", 
  "Text Line": "Sz\u00f6vegsor", 
@@ -255,7 +255,6 @@ translations = {
  "text": "sz\u00f6veg", 
  "English Wikipedia Article": "Angol nyelv\u0171 Wikip\u00e9dia sz\u00f3cikk", 
  "Button Caption": "Gomb felirata", 
- "label": "c\u00edmke", 
  "Attachment %s has no parentNode": "A csatolt \u00e1llom\u00e1ny %s nem sz\u00fcl\u0151csom\u00f3pont", 
  "EXTRACT FAILED!\n%s": "SIKERTELEN KICSOMAGOL\u00c1S!\n%s", 
  "Add files": "\u00c1llom\u00e1ny hozz\u00e1ad\u00e1sa", 
@@ -362,7 +361,6 @@ translations = {
  "Manx ": "Manx", 
  "Shona ": "Shona", 
  "Kirghiz ": "Kirgiz", 
- "Click Here": "Kattintson ide", 
  "Select the appropriate language version \nof Wikipedia to search and enter search term.": "V\u00e1lassza ki a Wikip\u00e9di\u00e1nak azt a nyelvi v\u00e1ltozat\u00e1t, \namelyben keresni szeretne \u00e9s keressen egy kifejez\u00e9sre!", 
  "Feedback button will not appear if no \ndata is entered into this field.": "A Visszajelz\u00e9s gomb nem fog meg\u00f3jelenni, \nha nem \u00edrnak adatokat ebbe a mez\u0151be.", 
  "Enter \nthe text you wish to associate with the file.": "\u00cdrja be azt a sz\u00f6veget, amely kapcsol\u00f3dik az \u00e1llom\u00e1nyhoz.", 

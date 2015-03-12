@@ -311,15 +311,6 @@ class GenericIdevice(Idevice):
         Upgrades to v0.20
         """
         self.nextFieldId = 0
-        
-    def upgradeToVersion9(self):
-        """
-        Upgrades to v0.24
-        """
-        for field in self.fields:
-            if isinstance(field, ImageField):
-                field.isFeedback = False
-
 
     def upgradeToVersion9(self):
         """

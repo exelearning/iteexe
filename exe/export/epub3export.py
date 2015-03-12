@@ -38,13 +38,17 @@ from htmlentitydefs                import name2codepoint
 
 log = logging.getLogger(__name__)
 
-name2codepoint.pop('amp')
-name2codepoint.pop('lt')
-name2codepoint.pop('gt')
+entitymap = name2codepoint.copy()
+entitymap.pop('amp')
+entitymap.pop('lt')
+entitymap.pop('gt')
+entitymap.pop('quot')
+
 
 def htmlentitydecode(s):
-    return re.sub('&(%s);' % '|'.join(name2codepoint),
-            lambda m: unichr(name2codepoint[m.group(1)]), s)
+    return re.sub('&(%s);' % '|'.join(entitymap),
+                  lambda m: unichr(entitymap[m.group(1)]), s)
+
 
 # ===========================================================================
 class PublicationEpub3(object):
@@ -290,7 +294,7 @@ class Epub3Page(Page):
             else:
                 html += escape(self.node.titleLong)
         html += u" </title>" + lb
-#         html += u"<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />" + lb
+        html += u'<meta charset="utf-8" />' + lb
         if dT != "HTML5" and self.node.package.lang != "":
             html += '<meta http-equiv="content-language" content="' + lenguaje + '" />' + lb
         if self.node.package.author != "":
@@ -352,7 +356,7 @@ class Epub3Page(Page):
                 if idevice.title != "Forum Discussion":
                     html += htmlentitydecode(self.processInternalLinks(
                         block.renderView(self.node.package.style)))
-            html += u'</' + articleTag + '>' + lb  # iDevice div
+                html += u'</' + articleTag + '>' + lb  # iDevice div
 
         html += u"</" + sectionTag + ">" + lb  # /#main
         html += self.renderLicense()
@@ -374,7 +378,7 @@ class Epub3Page(Page):
         html = html.replace("application/x-mplayer2\" data=\"resources/", "application/x-mplayer2\" data=\"")
         html = html.replace("audio/x-pn-realaudio-plugin\" data=\"resources/", "audio/x-pn-realaudio-plugin\" data=\"")
         html = html.replace("<param name=\"url\" value=\"resources/", "<param name=\"url\" value=\"")
-        
+
         common.setExportDocType(old_dT)
         return html
 
@@ -633,7 +637,7 @@ class Epub3Export(object):
         pageName = re.sub(r"\W", "", pageName)
         if not pageName:
             pageName = u"__"
-            
+
         if pageName[0] in [unicode(i) for i in range(0, 10)]:
             pageName = u'_' + pageName
 

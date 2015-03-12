@@ -519,7 +519,7 @@ function insertAction() {
 			elm.title = getFullTitle(elm.title);
 			// Add a space after the SPAN element
 			if (elm.nextSibling!=null) {
-				var sep = document.createTextNode(" ");
+				var sep = document.createTextNode(".");
 				var ref = elm.nextSibling;
 				ref.parentNode.insertBefore(sep,ref.nextSibling);
 			}			

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2008-02-27 23:10+1300\nLast-Translator: Andres Mellik <andres@jukulab.ee>\nLanguage-Team: eXe <info@exelearning.org>\nLanguage: et\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-02-26 13:24+0100\nPO-Revision-Date: 2008-02-27 23:10+1300\nLast-Translator: Andres Mellik <andres@jukulab.ee>\nLanguage-Team: eXe <info@exelearning.org>\nLanguage: et\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>\u00d5petajad peaksid seda iDevice-i kasutades meeles pidama j\u00e4rgmist:<\/p><ol><li>P\u00f6\u00f6ra t\u00e4helepanu erinevatele \u00f5pperessursis sisalduvate tegevuste t\u00fc\u00fcpidele, mis on visuaalsed n\u00e4htavad. V\u00e4ltimaks \u00f5pilase segadusse viimist, \u00e4ra kasuta liiga palju erinevaid tegevuste t\u00fc\u00fcpe v\u00f5i klassifikatsioone. Tavaliselt piisab \u00fche \u00f5pperessursi jaoks 3-4 t\u00fc\u00fcbist t\u00e4ielikult.<\/li><li>Visuaalse disaini vaatenurgast v\u00e4ldi kahte j\u00e4rjestikust iDevice-i ilma mingi tekstita nende vahel. Kui see on siiski vajalik, siis pigem koonda kaks k\u00fcsimust v\u00f5i s\u00fcndmust samasse iDevice-i.<\/li><li>M\u00f5tle selliste tegevuste peale, kus tegevuse l\u00e4bimise tajutav kasu kaalub \u00fcles sellele kuluva aja ja pingutuse.<\/li><\/ol>", 
  "Title": "Pealkiri", 
  "Text Line": "Teksti joon", 
@@ -270,7 +270,6 @@ translations = {
  "text": "tekst", 
  "English Wikipedia Article": "Inglise Wikipedia artikkel", 
  "Button Caption": "Nupu tekst", 
- "label": "m\u00e4rge", 
  "Attachment %s has no parentNode": "Manusel %s puudub parentNode", 
  "Select a Format.": "Vali formaat.", 
  "EXTRACT FAILED!\n%s": "LAHTIPAKKIMINE EBA\u00d5NNESTUS!\n%s", 
@@ -388,7 +387,6 @@ translations = {
  "Manx ": "Manksi", 
  "Shona ": "Shona", 
  "Kirghiz ": "Kirgiisi", 
- "Click Here": "Kliki siia", 
  "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!": "Pakett on vana. Palun uuenda seda (kasutades Fail...Ava ja seej\u00e4rel Fail..Salvesta kui..) enne kui \u00fcritad seda m\u00f5nda teise paketti integreerida!", 
  "Select the appropriate language version \nof Wikipedia to search and enter search term.": "Otsinguks vali Wikipediast sobivas keeles \nversioon ja sisesta otsingus\u00f5na(d).", 
  "Feedback button will not appear if no \ndata is entered into this field.": "Tagasiside nuppu ei n\u00e4idata, kui sellesse v\u00e4lja  \npole infot sisestatud.", 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2006-07-28 15:29+1200\nLast-Translator: Jenny <jennylin_nz@yahoo.com>\nLanguage-Team: <sfj@fb.is>\nLanguage: is\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-02-26 13:24+0100\nPO-Revision-Date: 2006-07-28 15:29+1200\nLast-Translator: Jenny <jennylin_nz@yahoo.com>\nLanguage-Team: <sfj@fb.is>\nLanguage: is\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Type in the feedback that you want the \nstudent to see when selecting the particular question. If you don't complete\nthis box, eXe will automatically provide default feedback as follows: \n\"Correct answer\" as indicated by the selection for the correct answer; or \n\"Wrong answer\" for the other alternatives.": "H\u00e9r skr\u00e1ir \u00fe\u00fa \u00fe\u00e1 endurgj\u00f6f sem \u00fe\u00fa vilt birtist nemendum \n\u00feegar \u00feeir velja \u00e1kve\u00f0ina spurningu. Ef \u00fe\u00fa skilur \u00feennan reit au\u00f0ann \nmun exe birta eftirfarandi endurgj\u00f6f: \"R\u00e9tt \nsv\u00f6r\" \u00ed samr\u00e6mi vi\u00f0 val nemenda, e\u00f0a \"R\u00f6ng sv\u00f6r\"\nfyrir hinn valkostinn.", 
  "Hide": "Fela", 
  "Some emphasis": "S\u00fdna \u00e1herslur", 
@@ -68,7 +68,6 @@ translations = {
  "Story:": "Fr\u00e1s\u00f6gn", 
  "Image": "Mynd", 
  "iDevice %s has no package": "%s n\u00e1mst\u00e6ki\u00f0 inniheldur engan pakka", 
- "label": "Snepill", 
  "Objectives describe the expected outcomes of the learning and should\ndefine what the learners will be able to do when they have completed the\nlearning tasks.": "Markmi\u00f0sl\u00fdsingar gefa nemendum til kenna hva\u00f0 \u00e6tlast er til a\u00f0 \u00feeir \nkunni\/geti eftir a\u00f0 hafa loki\u00f0 tilteknu vi\u00f0fangsefni\/verkefni. ", 
  "Cloze Activity": "Ey\u00f0ufyllingarverkefni", 
  "Unit": "Eining", 

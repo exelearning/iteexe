@@ -1,9 +1,7 @@
 #!/usr/bin/python
 
 # setup.py
-from distutils.core            import setup
-import pkg_resources
-pkg_resources.require('gitpython>=0.3.1')
+from distutils.core import setup
 from exe.engine import version
 
 g_files = {'/usr/share/exe': ["README",
@@ -56,15 +54,15 @@ opts = {
 }
 setup(name=version.project,
       version=version.version,
-      description="eLearning XHTML editor",
+      description="The EXtremely Easy to use eLearning authoring tool",
       long_description="""\
 The eXe project is an authoring environment to enable teachers to publish
 web content without the need to become proficient in HTML or XML markup.
 Content generated using eXe can be used by any Learning Management System.
 """,
-      url="http://exelearning.org",
-      author="eXe Project",
-      author_email="exe@exelearning.org",
+      url="http://exelearning.net",
+      author="INTEF-eXe Project",
+      author_email="admin@exelearning.net",
       license="GPL",
       scripts=["exe/exe", "exe/exe_do"],
       packages=["exe", "exe.webui", "exe.jsui",

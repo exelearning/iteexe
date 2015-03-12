@@ -26,8 +26,6 @@ except ImportError:
     pass
 from distutils.core import setup
 import py2exe
-import pkg_resources
-pkg_resources.require('gitpython>=0.3.1')
 from exe.engine import version
 
 g_files = {'.': ["README",
@@ -65,7 +63,7 @@ dataFiles(["exe/webui/style",
            "exe/webui/scripts",
            "exe/webui/schemas",
            "exe/webui/templates"],
-           excludes = ['mimetex.cgi', 'mimetex.64.cgi', 'mimetex-darwin.cgi'])
+           excludes = ['mimetex-darwin.cgi'])
 
 g_oldBase = "exe"
 g_newBase = "."
@@ -78,7 +76,7 @@ dataFiles(["exe/jsui/templates",
 
 opts = {
  "py2exe": {
-   "packages": ["encodings", "nevow", "nevow.flat", "cProfile", "functools", "csv", "libxml2", "robotparser", "chardet", "lxml"],
+   "packages": ["encodings", "nevow", "nevow.flat", "cProfile", "functools", "csv", "libxml2", "robotparser", "chardet", "lxml", "feedparser"],
    "includes": ["PngImagePlugin", "JpegImagePlugin", "GifImagePlugin",
                 "IcoImagePlugin", "BmpImagePlugin"],
 
@@ -90,10 +88,10 @@ setup(windows=["exe/exe"],
       name=version.project,
       version=version.version,
       packages=["exe", "exe.engine", "exe.webui", "exe.export", "exe.importers", "exe.jsui", "exe.engine.lom"],
-      description="eLearning XHTML editor",
-      url="http://exelearning.org",
-      author="eXe Project",
-      author_email="exe@exelearning.org",
+      description="The EXtremely Easy to use eLearning authoring tool",
+      url="http://exelearning.net",
+      author="INTEF-eXe Project",
+      author_email="admin@exelearning.net",
       license="GPL",
       scripts=["exe/exe"],
       options=opts,

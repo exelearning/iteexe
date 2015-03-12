@@ -12,13 +12,20 @@ Centre for Flexible and Distance Learning
     font-weight:normal;
 }
 
-#nodeDecoration{margin-bottom:20px;}
+#nodeDecoration{
+	margin-bottom:30px;
+}
 
 /* Pagination */
 .pagination,.noprt{padding-top:10px;text-align:right}
 .pagination a,.noprt a{padding:3px;}
 .pagination a:hover,.noprt a:hover{text-decoration:none}
-#topPagination{position:absolute;right:20px;top:40px;z-index:99}
+#topPagination{
+	position:absolute;
+	right:20px;
+	top:40px;
+	z-index:99
+}
 #topPagination .pagination{border:none}
 
 #main {

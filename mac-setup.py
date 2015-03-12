@@ -1,13 +1,9 @@
 #!/usr/bin/python
 
 # setup.py
-import os
-import time
-from distutils.core            import setup
-from exe.engine.path           import Path
-import pkg_resources
-pkg_resources.require('gitpython>=0.3.1')
-from exe.engine                import version
+from distutils.core import setup
+from exe.engine.path import Path
+from exe.engine import version
 import py2app
 
 # Make main.py if it doesn't exist
@@ -51,7 +47,7 @@ dataFiles('exe/webui', '../Resources/exe',
         ['style', 'css', 'images', 'docs',
             'scripts', 'schemas', 'templates'
             ],
-          excludes=['mimetex.cgi', 'mimetex.64.cgi', 'mimetex.exe'])
+          excludes=['mimetex.exe'])
 
 # Add in the
 dataFiles('exe', '../Resources/exe', ['locale'])
@@ -80,20 +76,21 @@ py2appParams = {
   'includes': 'PngImagePlugin,JpegImagePlugin,GifImagePlugin,IcoImagePlugin,BmpImagePlugin',
   'packages': 'encodings,nevow,lxml',
   'argv_emulation': True,
+  'semi_standalone': False,
   'plist': plist,
   'iconfile': 'exe.icns'}
 
 setup(name=version.project,
       version=version.version,
-      description="eLearning XHTML editor",
+      description="The EXtremely Easy to use eLearning authoring tool",
       long_description="""\
 The eXe project is an authoring environment to enable teachers to publish
 web content without the need to become proficient in HTML or XML markup.
 Content generated using eXe can be used by any Learning Management System.
 """,
-      url="http://exelearning.org",
-      author="eXe Project",
-      author_email="exe@exelearning.org",
+      url="http://exelearning.net",
+      author="INTEF-eXe Project",
+      author_email="admin@exelearning.net",
       license="GPL",
       packages=["exe", "exe.webui", "exe.jsui",
                       "exe.engine", "exe.export", "exe.importers", "exe.engine.lom"],

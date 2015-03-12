@@ -1,20 +1,19 @@
-Source: python-intef-exe
+Source: intef-exe
 Section: python
 Priority: optional
 Maintainer: Pedro Peña <pedro.pena@open-phoenix.com>
 Homepage: http://exeLearning.net/
 Vcs-Browser: https://forja.cenatic.es/scm/browser.php?group_id=197
-Standards-Version: 3.6.1
-Build-Depends-Indep: debhelper (>= 5.0.38), python-support (>=0.5.3), python-all-dev (>= 2.6), python-setuptools, python-git
-XS-Python-Version: >=2.6
+Standards-Version: 3.9.6
+Build-Depends: debhelper (>= 9), python-all (>= 2.7), dh-python, python-setuptools, docbook-xsl, docbook-xml, xsltproc
+X-Python-Version: >=2.7
 
-Package: python-intef-exe
-Architecture: any
-Depends: ${python:Depends}, python-setuptools, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging, python-chardet, python-lxml, www-browser
-Conflicts: python2.3-exe, python2.4-exe, python2.5-exe, python-exe
-Replaces: python2.3-exe, python2.4-exe, python2.5-exe, python-exe
+Package: intef-exe
+Architecture: all
+Depends: ${python:Depends}, python-setuptools, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging, python-chardet, python-lxml, iceweasel | www-browser, python-feedparser, mimetex
+Conflicts: python2.3-exe, python2.4-exe, python2.5-exe, python-exe, python-intef-exe
+Replaces: python2.3-exe, python2.4-exe, python2.5-exe, python-exe, python-intef-exe
 Description: eLearning XHTML editor
  The eXe project is an authoring environment to enable teachers to publish
  web content without the need to become proficient in HTML or XML markup.
  Content generated using eXe can be used by any Learning Management System.
-

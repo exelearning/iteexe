@@ -290,6 +290,7 @@ class IMSPage(Page):
             lenguaje = self.node.package.dublinCore.language
         html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
         html += u"<head>"+lb
+        html += u"<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />"+lb
         html += u"<title>"
         if self.node.id=='0':
             if self.node.package.title!='':
@@ -302,7 +303,6 @@ class IMSPage(Page):
             else:
                 html += escape(self.node.titleLong)
         html += u" </title>"+lb   
-        html += u"<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />"+lb
         if dT != "HTML5" and self.node.package.dublinCore.language!="":
             html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'+lb
         if self.node.package.author!="":

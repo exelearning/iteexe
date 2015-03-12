@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-06-25 20:38+0200\nPO-Revision-Date: 2008-01-28 00:15+1300\nLast-Translator: Pekka Henttonen <pekka.henttonen@uta.fi>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fi\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-02-26 13:24+0100\nPO-Revision-Date: 2008-01-28 00:15+1300\nLast-Translator: Pekka Henttonen <pekka.henttonen@uta.fi>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fi\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Click for completion instructions": "Klikkaa saadaksesi t\u00e4ydennysohjeita", 
  "Click \non the picture below or the \"Add Image\" button to select an image file to be \nmagnified.": "Klikkaa \nallaolevaa kuvaa tai \"Lis\u00e4\u00e4 kuva\" -painiketta valitaksesi \nsuurennettavan kuvan.", 
  "Emphasis": "Korostus", 
@@ -23,7 +23,6 @@ translations = {
  "\"Find the .txt file (in the applet file) \nand open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \ncode field.": "\"Etsi txt-tiedosto appletissa \nja avaa se. Kopioi tiedoston sis\u00e4lt\u00f6 appletin (ctrl-A, ctrl-C)\ncode-kentt\u00e4\u00e4n.", 
  "Cloze": "Aukko", 
  "Add a text entry box to an iDevice. Used for entering larger amounts of textual content.": "Lis\u00e4\u00e4 laatikko suuren tekstim\u00e4\u00e4r\u00e4n kirjoittamista varten.", 
- "Click Here": "Klikkaa t\u00e4t\u00e4", 
  "Article": "Artikkeli", 
  "Delete Image": "Poista kuva", 
  "Clear Recent Projects List": "Tyhjenn\u00e4 lista viimeaikaisista projekteista", 

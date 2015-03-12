@@ -226,6 +226,8 @@ class EditorPage(RenderableResource):
         html += "@import url(/css/exe.css);\n"
         html += '@import url(/style/base.css);\n'
         html += "@import url(/style/standardwhite/content.css);</style>\n"
+        html += '<script type="text/javascript" src="/scripts/authoring.js">'
+        html += '</script>\n'
         html += '<script type="text/javascript" src="/scripts/common.js">'
         html += '</script>\n'
         html += '<script type="text/javascript" src="/scripts/editor.js">'

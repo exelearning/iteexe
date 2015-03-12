@@ -2,130 +2,102 @@
 Copyright University of Auckland 2004
 Created by Brent Simpson, brent.simpson@auckland.ac.nz
 Centre for Flexible and Distance Learning
-
 	Modificado: Aníbal de la Torre /Juan Diego Pérez
-	
-	
 ============================================= */
-
 #header {
-    color: #598AC3;
-    background-color: #FFFFFF;
-    height: 60px;
-    padding: 65px 20px 0; 
-    font-weight: normal;
+    color:#598AC3;
+    background-color:#fff;
+    height:60px;
+    padding:65px 20px 0; 
+    font-weight:normal;
+}
+
+#nodeDecoration{
+	margin-bottom:35px;
 }
 
 /* Pagination */
 .pagination,.noprt{padding-top:10px;text-align:right}
 .pagination a,.noprt a{padding:3px;}
 .pagination a:hover,.noprt a:hover{text-decoration:none}
-#topPagination{position:absolute;top:55px;right:20px}
+#topPagination{
+	position:absolute;
+	right:20px;
+	top:50px;
+	z-index:99
+}
 #topPagination .pagination{border:none}
 
-/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
-* html p {
-height: 1%;
-margin-left: 0;
-}
-/* End hide from IE5/mac */
-
-/* MAIN CONTENT STYLES */
-#container {
-	border-top: 0px solid #CCC;
-	position:absolute;
-}
-
 #main {
-	padding: 18px;
-	padding-top: 0px;
-	margin: 0px 10px 10px 180px;
-	margin-left: 220px;
-	margin-top: 10px;
+	padding:0 18px;
+	margin:0 10px 0 180px;
+	margin-left:220px;
+	margin-top:10px;
 	text-align:left;
-	width: 76%;
+	width:76%;
 }
-#content{width:985px;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0;border-top:0}
-/* ITE elements */
-#skipNav{
-    text-align:center;
-    font-size:.9em;
-}
-
+#content{width:985px;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0;border-top:0;padding-bottom:28px}
 #skipNav a{
+    font-size:.9em;
     background:#598AC3;
 }
-
 #siteNav{
 	z-index:1000;
-	width: 220px;
-	float: left;
+	width:220px;
+	float:left;
 	text-align:left;
-	padding-right: 5px;
-	border: 1px solid #FFF;
-	border-right: 1px dashed #365475;
-	font-family: Verdana,Arial, Helvetica, sans-serif;
+	padding-right:5px;
+	border-right:1px dashed #365475;
 }
-
 #siteNav ul,#siteNav li{
 	margin:0;
 	padding:0;
 	list-style:none;
-	list-style-image:none;
 }
-
 #siteNav a{
-	display: block;
-	padding: 4px 0px 4px 18px;
-	color: #598AC3;
-	font-weight: bold;
-	background-color: #FFFFF;
-	text-decoration: none;
-	width: 198px;
+	display:block;
+	padding:4px 0 4px 18px;
+	color:#598AC3;
+	font-weight:bold;
+	background-color:#fff;
+	text-decoration:none;
+	width:198px;
 }
-
 #siteNav a:hover{
-	color: #365475;
+	color:#365475;
 	font-weight:bold;
 	background-color:#F5F5F5;
-	border: 1px dashed #CCCCCC;
+	border:1px dashed #ccc;
 }
-
 #siteNav .daddy{
-	background-image: url(collapse2.gif);
-	background-repeat: no-repeat;
-	background-position: 2px 6px;
+	background-image:url(collapse2.gif);
+	background-repeat:no-repeat;
+	background-position:2px 6px;
 }
-
 #siteNav .active{
-	background-color: #FDFAF9;
-	background-repeat: no-repeat;
-	color: #BD4949;
-	font-weight: bold;
+	background-color:#FDFAF9;
+	background-repeat:no-repeat;
+	color:#BD4949;
+	font-weight:bold;
 }
-
 #siteNav .daddy.active{
-	background-image: url(collapse.gif) !important;
+	background-image:url(collapse.gif) !important;
 }
-
 #siteNav ul ul .active{
 	background-image:none !important;
 }
-
 #siteNav#siteNav .no-ch{
 	font-size:.82em;
 }
-
 #siteNav ul ul ul a{
 	padding-left:28px;
-	width: 188px;
+	width:188px;
 	font-size:.82em;
 }
-
 #siteNav ul ul ul ul a,#siteNav#siteNav ul ul ul ul .no-ch{
 	font-size:1em;
 }
-
 #siteNav .other-section{
 	display:none; /* Remove if you want all levels to be displayed */
 }
+#siteFooter{padding-left:238px}

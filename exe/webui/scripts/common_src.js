@@ -259,47 +259,6 @@ function convertToDropType() {
 
 var lastTouch;
 
-
-
-function showMe(ident, w, h)
-{
-    var elmDiv = document.getElementById('popupmessage');
-    hideMe();
-        
-    if (!elmDiv || 
-        elmDiv.innerHTML != document.getElementById(ident).innerHTML){
-
-        elmDiv = document.createElement('div');
-        elmDiv.id = 'popupmessage';
-        elmDiv.className="popupDiv";
-    var xloc = (xpos+w > 740) ? Math.max(0, xpos-w-15) : xpos;
-        elmDiv.style.cssText = 'position:absolute; left: ' + 
-                               (xloc) + 'px; top: '+(ypos - h/2) + 
-                               'px; width: ' + w + 'px;';
-        elmDiv.innerHTML = document.getElementById(ident).innerHTML;
-        document.body.appendChild(elmDiv);
-        new dragElement('popupmessage');
-    }
-}
-
-function hideMe() {
-    var elmDiv = document.getElementById('popupmessage');
-    if (elmDiv) {
-        // removes the div from the document
-        elmDiv.parentNode.removeChild(elmDiv);
-    }
-}
-
-function updateCoords(e) {
-    if (e.pageX == null && e.clientX != null ) { //IE<9
-        var b = document.body;
-        e.pageX = e.clientX + (e && e.scrollLeft || b.scrollLeft || 0);
-        e.pageY = e.clientY + (e && e.scrollTop || b.scrollTop || 0);
-    }
-    xpos = e.pageX;
-    ypos = e.pageY;      
-}
-
 function getFeedback(optionId, optionsNum, ideviceId, mode) {
     var i, id;
     if (mode=="truefalse") {
@@ -1315,89 +1274,9 @@ if (navigator.appName=="Microsoft Internet Explorer") {
     }   
 }
 
-/* libot_drag.js */
-var dO=new Object();
-dO.snapthresh=20;    // THIS VALUE IS THE SNAPTO INCREMENT.
-dO.snapto=false;       // SET TO true TO ENABLE SNAPTO, false TO DISABLE IT.
-
-dO.currID=null;
-dO.z=0;
-dO.xo=0;
-dO.yo=0;
-dO.ns4=(document.layers)?true:false;
-dO.ns6=(document.getElementById&&!document.all)?true:false;
-dO.ie4=(document.all&&!document.getElementById)?true:false;
-dO.ie5=(document.all&&document.getElementById)?true:false;
-dO.w3c=(document.getElementById)?true:false;
-
-function invsnap(){
-dO.snapto=!dO.snapto;
-}
-
-//NEAT FUNCTION BY MIKE HALL (OF BRAINJAR.COM) THAT FINDS NESTED LAYERS FOR NS4.x
-function findnestedlayer(name,doc){
-var i,layer;
-for(i=0;i<doc.layers.length;i++){
-layer=doc.layers[i];
-if(layer.name==name)return layer;
-if(layer.document.layers.length>0)
-if((layer=findlayer(name,layer.document))!=null)
-return layer;
-}
-return null;
-}
-
-function trckM(e){
-if(dO.currID!=null){
-var x=(dO.ie4||dO.ie5)?event.clientX+document.body.scrollLeft:e.pageX;
-var y=(dO.ie4||dO.ie5)?event.clientY+document.body.scrollTop:e.pageY;
-if(dO.snapto){
-x=Math.ceil(x/dO.snapthresh)*dO.snapthresh;
-y=Math.ceil(y/dO.snapthresh)*dO.snapthresh;
-}
-if(dO.ns4)dO.currID.moveTo(x-dO.xo, y-dO.yo);
-else{
-dO.currID.style.top=y-dO.yo+'px';
-dO.currID.style.left=x-dO.xo+'px'; 
-}}
-return false;
-}
-
-function drgI(e){
-if(dO.currID==null){
-var tx=(dO.ns4)? this.left : parseInt(this.style.left);
-var ty=(dO.ns4)? this.top : parseInt(this.style.top);
-dO.currID=this;
-if(dO.ns4)this.zIndex=document.images.length+(dO.z++);
-else this.style.zIndex=document.images.length+(dO.z++);
-dO.xo=((dO.ie4||dO.ie5)?event.clientX+document.body.scrollLeft:e.pageX)-tx;
-dO.yo=((dO.ie4||dO.ie5)?event.clientY+document.body.scrollTop:e.pageY)-ty;
-if(dO.snapto){
-dO.xo=Math.ceil(dO.xo/dO.snapthresh)*dO.snapthresh;
-dO.yo=Math.ceil(dO.yo/dO.snapthresh)*dO.snapthresh;
-}
-return false;
-}}
-
-function dragElement(id){
-this.idRef=(dO.ns4)? findnestedlayer(id,document) : (dO.ie4)? document.all[id] : document.getElementById(id);
-if(dO.ns4)this.idRef.captureEvents(Event.MOUSEDOWN | Event.MOUSEUP);
-this.idRef.onmousedown=drgI;
-this.idRef.onmouseup=function(){dO.currID=null}
-}
-
-if(dO.ns4)document.captureEvents(Event.MOUSEMOVE);
-document.onmousemove=trckM;
-
-
-window.onresize=function(){
-if(dO.ns4)setTimeout('history.go(0)',300);
-}
-
 var $exe = {
     init : function(){
         var d = document.body.className;
-        d += ' js';
         $exe.addRoles();
         //iDevice Toggler
         if (d!='exe-single-page js') {
@@ -1407,7 +1286,7 @@ var $exe = {
             } else $exe.iDeviceToggler.init();
         }
         //Load exe_media.js
-        if (document.body.getAttribute('class') != "exe-epub3") {
+        if (d.indexOf("exe-epub3")!=0) {
         	var h=document.body.innerHTML;
         	if(h.indexOf(' class="mediaelement"')!=-1 || h.indexOf(" class='mediaelement")!=-1){
         		$exe.loadMediaPlayer.getPlayer()
@@ -1417,8 +1296,12 @@ var $exe = {
         $exe.setIframesProtocol();
 		$exe.hasTooltips();
     },
-	hasTooltips : function(){
-		if ($("A.exe-tooltip").length>0) $exe.loadScript("exe_tooltips.js","$exe.tooltips.init()");
+	hasTooltips:function(){
+		if($("A.exe-tooltip").length>0){
+			var p = "";
+			if (typeof(exe_editor_mode)!="undefined") p = "/scripts/exe_tooltips/";
+			$exe.loadScript(p+"exe_tooltips.js","$exe.tooltips.init('"+p+"')");
+		}
 	},
     addRoles : function(){
         $('#header').attr('role','banner'); 
@@ -1599,16 +1482,16 @@ var $exe = {
         }
         document.getElementsByTagName("head")[0].appendChild(s);
     },
-    toggleFeedback : function(e) {
+    toggleFeedback : function(e,changeText) {
         var id = e.name.replace("toggle-","");
         var f = document.getElementById(id);
         if (f) {
             if (f.className == "feedback js-feedback js-hidden") {
                 f.className = "feedback js-feedback";
-                e.value = $exe_i18n.hideFeedback
+                if (changeText) e.value = $exe_i18n.hideFeedback
             } else {
                 f.className = "feedback js-feedback js-hidden";
-                e.value = $exe_i18n.showFeedback
+                if (changeText) e.value = $exe_i18n.showFeedback
             }
         }
     }

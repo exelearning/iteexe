@@ -153,11 +153,11 @@ class SinglePage(Page):
             html = u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb
             html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
         html += u"<head>"+lb
+        html += u"<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />"+lb
         html += u"<title>"
         html += name
-        html += "</title>"
+        html += "</title>"+lb
         html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"+lb
-        html += u"<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />"+lb
         if dT != "HTML5" and self.node.package.dublinCore.language!="":
             html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'+lb
         if self.node.package.author!="":
@@ -225,17 +225,16 @@ class SinglePage(Page):
         lb = "\n" #Line breaks
         headerTag = "div"
         articleTag = "div"
-        nivel = 1 #Always H1
         if dT == "HTML5":
             headerTag = "header"
             articleTag = "article"
         
         html = ""
-        html += '<'+articleTag+' class="node">'+lb
+        html += '<'+articleTag+' class="node level-'+str(nivel)+'-node">'+lb
         html += '<'+headerTag+' class=\"nodeDecoration\">'
-        html += u'<h' + str(nivel) + ' id=\"' + node.GetAnchorName() + '\" class=\"nodeTitle\">'
+        html += u'<h1 id=\"' + node.GetAnchorName() + '\" class=\"nodeTitle\">'
         html += escape(node.titleLong)
-        html += '</h' + str(nivel) + '></'+headerTag+'>'+lb
+        html += '</h1></'+headerTag+'>'+lb
         
         style = self.node.package.style
 

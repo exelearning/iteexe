@@ -92,6 +92,7 @@ with a different filename') % outputf
             raise Exception(_(u"Export format not implemented")\
 .encode(sys.stdout.encoding))
 
+
     def export_xml(self, pkg, outputf):
         open(outputf, "w").write(encodeObjectToXML(pkg))
 
