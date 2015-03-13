@@ -1,5 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # ===========================================================================
-# eXe 
+# eXe
 # Copyright 2004-2006, University of Auckland
 #
 # This program is free software; you can redistribute it and/or modify
@@ -14,30 +16,42 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor,
+# Boston, MA  02110-1301, USA.
 # ===========================================================================
 """
 Functions that help with translation
+We'll have three builtins:
+_() translates a string into the language chosen in preferences
+c_() for content strings, into the language of properties->package
+x_() for late translation
 """
 
-# Install x_ as the fake/late translate mechanism before doing any serious
+# Install x_() as the fake/late translate mechanism before doing any serious
 # importing
-__builtins__['x_'] = lambda x:x
+__builtins__['x_'] = lambda x: x
+
 
 def lateTranslate(propName, content=False):
     """
     Given a property name, returns a read/write property that is translated
     every time it is read
+    Parameter 'content' and c_() added by Pedro Peña 2012-05-22.
+    c_() function to translate 'content strings', into the language
+    chosen at properties->package
     """
     propName = '_%s' % propName
+
     def set_prop(self, value):
         """
         Used to write the property
         """
-        #return lambda self, value: setattr(self, propName, value)
+        # return lambda self, value: setattr(self, propName, value)
         transFunc = c_ if content else _
-        if not hasattr(self, propName) or transFunc(getattr(self, propName)) != value:
+        if (not hasattr(self, propName)
+                or transFunc(getattr(self, propName)) != value):
             setattr(self, propName, value)
+
     def get_prop(self):
         """
         Translates a property value on the fly
@@ -51,6 +65,7 @@ def lateTranslate(propName, content=False):
             return value
     return property(get_prop, set_prop)
 
+
 def installSafeTranslate():
     """
     Makes '_' do safe translating
@@ -58,10 +73,13 @@ def installSafeTranslate():
     """
     def checkInstall():
         return __builtins__['_'] is installSafeTranslate
-    if checkInstall(): return
+
+    if checkInstall():
+        return
     else:
         __builtins__['__old_translate__'] = __builtins__['_']
         __builtins__['_'] = safeTranslate
+
 
 def safeTranslate(message, encoding='utf-8'):
     """

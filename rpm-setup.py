@@ -5,10 +5,10 @@ from distutils.core import setup
 from exe.engine import version
 
 g_files = {'/usr/share/exe': ["README",
-                               "COPYING",
-                               "NEWS",
-                               "ChangeLog",
-                               "exe/webui/mr_x.gif"]}
+                              "COPYING",
+                              "NEWS",
+                              "ChangeLog",
+                              "exe/webui/mr_x.gif"]}
 g_oldBase = "exe/webui"
 g_newBase = "/usr/share/exe"
 
@@ -37,7 +37,8 @@ dataFiles(["exe/webui/style",
            "exe/webui/schemas",
            "exe/webui/scripts",
            "exe/webui/templates"],
-    excludes=["exe/webui/templates/mimetex-darwin.cgi", "exe/webui/templates/mimetex.exe"])
+          excludes=["exe/webui/templates/mimetex-darwin.cgi",
+                    "exe/webui/templates/mimetex.exe"])
 
 g_oldBase = "exe"
 g_newBase = "/usr/share/exe"
@@ -48,17 +49,18 @@ g_newBase = "/usr/share/exe"
 dataFiles(["exe/jsui/scripts",
            "exe/jsui/templates"])
 opts = {
-  "bdist_rpm": {
-  "requires": ["python-imaging"]
- }
-}
+    "bdist_rpm": {
+        "requires": ["python-imaging"]
+        }
+    }
 setup(name=version.project,
       version=version.version,
       description="The EXtremely Easy to use eLearning authoring tool",
       long_description="""\
-The eXe project is an authoring environment to enable teachers to publish
-web content without the need to become proficient in HTML or XML markup.
-Content generated using eXe can be used by any Learning Management System.
+The eXeLearning project is an authoring environment which enables
+teachers to publish web content without the need to become proficient
+in HTML or XML markup. Content generated using eXe can be used by any
+Learning Management System.
 """,
       url="http://exelearning.net",
       author="INTEF-eXe Project",
@@ -66,7 +68,7 @@ Content generated using eXe can be used by any Learning Management System.
       license="GPL",
       scripts=["exe/exe", "exe/exe_do"],
       packages=["exe", "exe.webui", "exe.jsui",
-                      "exe.engine", "exe.export", "exe.importers", "exe.engine.lom"],
+                "exe.engine", "exe.export",
+                "exe.importers", "exe.engine.lom"],
       data_files=g_files.items(),
-      options=opts
-     )
+      options=opts)

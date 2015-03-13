@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe config
 # Copyright 2004-2006, University of Auckland
@@ -14,18 +16,19 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor,
+# Boston, MA  02110-1301, USA.
 # ===========================================================================
 
 """
 Config settings loaded from exe.conf
-Is responsible for the system-wide settings we use
-O/S specific config classes are derieved from here
+It is responsible for the system-wide settings we use
+O/S specific config classes are derived from here
 """
 
 from exe.engine.configparser import ConfigParser
 from exe.engine.path import Path
-from exe.engine.locales import chooseDefaultLocale
+import exe.engine.locales
 from exe.engine import version
 import logging
 from logging.handlers import RotatingFileHandler
@@ -35,8 +38,8 @@ import gettext
 import tempfile
 import twisted
 import shutil
-from exe                      import globals as G
-from exe.engine.stylestore  import StyleStore
+from exe import globals as G
+from exe.engine.stylestore import StyleStore
 from exe.webui import common
 
 x_ = lambda s: s
@@ -59,7 +62,13 @@ class Config(object):
                    'videoMediaConverter_avi', 'audioMediaConverter_ogg',
                    'audioMediaConverter_au', 'audioMediaConverter_mp3',
                    'audioMediaConverter_wav', 'ffmpegPath'),
-        'user': ('locale', 'lastDir', 'showPreferencesOnStart','defaultStyle', 'showIdevicesGrouped','docType','editorMode'),
+        'user': ('locale',
+                 'lastDir',
+                 'showPreferencesOnStart',
+                 'defaultStyle',
+                 'showIdevicesGrouped',
+                 'docType',
+                 'editorMode'),
     }
 
     idevicesCategories = {
@@ -107,7 +116,7 @@ class Config(object):
         'file attachments': [x_('Non-Textual Information')],
         'sort items': [x_('Experimental')]
     }
-    
+
     @classmethod
     def getConfigPath(cls):
         obj = cls.__new__(cls)
@@ -120,54 +129,61 @@ class Config(object):
         """
         Initialise
         """
-        self.configPath = None
+        self.configPath   = None
         self.configParser = ConfigParser(self.onWrite)
         # Set default values
         # exePath is the whole path and filename of the exe executable
-        self.exePath     = Path(sys.argv[0]).abspath()
-        # webDir is the parent directory for styles,scripts and templates
-        self.webDir      = self.exePath.dirname()
-        self.jsDir       = self.exePath.dirname()
+        self.exePath      = Path(sys.argv[0]).abspath()
+        # webDir is the parent directory for styles, scripts and templates
+        # FIXME: please consider an independent docDir, for
+        # the documentation (jrf)
+        self.webDir       = self.exePath.dirname()
+        self.jsDir        = self.exePath.dirname()
         # localeDir is the base directory where all the locales are stored
-        self.localeDir   = self.exePath.dirname()/"locale"
-        # port is the port the exe webserver will listen on 
-        # (previous default, which earlier users might still use, was 8081)
-        self.port        = 51235
+        # FIXME: this breaks the FHS in Linux (jrf)
+        # To override in linuxconfig
+        self.localeDir    = self.exePath.dirname()/"locale"
+        # port is the port the exe webserver will listen on
+        # (previous default, which very old users might still use, was 8081)
+        self.port         = 51235
         # dataDir is the default directory that is shown to the user
         # to save packages and exports in
-        self.dataDir     = Path(".")
+        self.dataDir      = Path(".")
         # configDir is the dir for storing user profiles
         # and user made idevices and the config file
-        self.configDir   = Path(".")
-		#FM: New Styles Directory path
-        self.stylesDir =Path(self.configDir/'style').abspath()
-        #FM: Default Style name
-        self.defaultStyle= u"INTEF"
-        # browser is the name of a predefined browser specified at http://docs.python.org/library/webbrowser.html.
+        self.configDir    = Path(".")
+        # FM: New Styles Directory path
+        self.stylesDir    = Path(self.configDir/'style').abspath()
+        # FM: Default Style name
+        self.defaultStyle = u"INTEF"
+        # browser is the name of a predefined browser specified
+        # at http://docs.python.org/library/webbrowser.html.
         # None for system default
         self.browser = None
-        # docType  is the HTML export format
-        self.docType = 'XHTML' 
-        # locale is the language of the user
-        self.locale = chooseDefaultLocale(self.localeDir)
-        # internalAnchors indicate which exe_tmp_anchor tags to generate for each tinyMCE field
-        # available values = "enable_all", "disable_autotop", or "disable_all"
+        # docType  is the HTML export format ('XHTML' or 'HTML5')
+        self.docType = 'XHTML'
+        # 'locale' is the language chosen by the user in preferences
+        self.locale = exe.engine.locales.chooseDefaultLocale(self.localeDir)
+        # internalAnchors indicate which exe_tmp_anchor tags to generate
+        # for each tinyMCE field available values =
+        # "enable_all", "disable_autotop", or "disable_all"
         self.internalAnchors = "enable_all"
         self.lastDir = None
         self.showPreferencesOnStart = "1"
         self.showIdevicesGrouped = "1"
-        # tinymce option
-        self.editorMode = 'permissive' 
-        # styleSecureMode : if this [user] key is = 0  , exelearning can run python files in styles
-        # as websitepage.py , ... ( deactivate secure mode )
-        self.styleSecureMode="1"
+        # tinymce option ('permissive' or 'strict')
+        self.editorMode = 'permissive'
+        # styleSecureMode : if this [user] key is == 0, exelearning can
+        # run python files in styles
+        # as websitepage.py , ... (deactivate secure mode)
+        self.styleSecureMode = "1"
         # styles is the list of style names available for loading
         self.styles      = []
         # The documents that we've recently looked at
         self.recentProjects = []
         # canonical (English) names of iDevices not to show in the iDevice pane
         self.hiddeniDevices = []
-        #Media conversion programs used for XML export system
+        # Media conversion programs used for XML export system
         self.videoMediaConverter_ogv = ""
         self.videoMediaConverter_3gp = ""
         self.videoMediaConverter_avi = ""
@@ -178,27 +194,25 @@ class Config(object):
         self.audioMediaConverter_wav = ""
         self.ffmpegPath = ""
         self.mediaProfilePath = self.exePath.dirname()/'mediaprofiles'
-        
-        # likewise, a canonical (English) names of iDevices not to show in the
-        # iDevice pane but, contrary to the hiddens, these are ones that the 
-        # configuration can specify to turn ON:
-        self.deprecatediDevices = [ "flash with text", "flash movie", "mp3", \
-                                    "attachment"]
-        # by default, only allow embedding of media types for which a 
+
+        # likewise, a list of canonical (English) names of iDevices not to
+        # show in the iDevice pane but, contrary to hiddeniDevices,
+        # these are ones that the configuration can specify to turn ON:
+        self.deprecatediDevices = ["flash with text", "flash movie", "mp3",
+                                   "attachment"]
+        # by default, only allow embedding of media types for which a
         # browser plugin is found:
-        self.assumeMediaPlugins = False;
+        self.assumeMediaPlugins = False
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
         # Try to make the defaults a little intelligent
         # Under devel trees, webui is the default webdir
         self.webDir = Path(self.webDir)
-        if not (self.webDir/'scripts').isdir() \
-           and (self.webDir/'webui').isdir():
+        if not (self.webDir/'scripts').isdir() and (self.webDir/'webui').isdir():
             self.webDir /= 'webui'
         self.jsDir = Path(self.jsDir)
-        if not (self.jsDir/'scripts').isdir() \
-           and (self.jsDir/'jsui').isdir():
+        if not (self.jsDir/'scripts').isdir() and (self.jsDir/'jsui').isdir():
             self.jsDir /= 'jsui'
         # Find where the config file will be saved
         self.__setConfigPath()
@@ -209,8 +223,6 @@ class Config(object):
         self.setupLogging()
         self.loadLocales()
         self.loadStyles()
-
-
 
     def _overrideDefaultVals(self):
         """
@@ -226,22 +238,21 @@ class Config(object):
         """
         return ['exe.conf']
 
-
     def _writeDefaultConfigFile(self):
         """
-        [Over]writes 'self.configPath' with a default config file 
+        [Over]writes 'self.configPath' with a default config file
         (auto write is on so we don't need to write the file at the end)
         """
         if not G.application.portable:
             for sectionName, optionNames in self.optionNames.items():
                 for optionName in optionNames:
                     defaultVal = getattr(self, optionName)
-                    self.configParser.setdefault(sectionName, 
-                                             optionName, 
-                                             defaultVal)
-                    # Logging can't really be changed from inside the program at the moment...
+                    self.configParser.setdefault(sectionName,
+                                                 optionName,
+                                                 defaultVal)
+                    # Logging can't really be changed from inside the program
+                    # at the moment...
             self.configParser.setdefault('logging', 'root', 'INFO')
-
 
     def __setConfigPath(self):
         """
@@ -277,7 +288,6 @@ class Config(object):
         self.configParser.read(self.configPath)
         self.configParser.autoWrite = True
 
-
     def upgradeFile(self):
         """
         Called before loading the config file,
@@ -288,12 +298,12 @@ class Config(object):
             if system.has_option('appDataDir'):
                 # Older config files had configDir stored as appDataDir
                 self.configDir = Path(system.appDataDir)
-                self.stylesDir =Path(self.configDir)/'style'
+                self.stylesDir = Path(self.configDir)/'style'
                 # We'll just upgrade their config file for them for now...
                 system.configDir = self.configDir
-                system.stylesDir =Path(self.configDir)/'style'
+                system.stylesDir = Path(self.configDir)/'style'
                 del system.appDataDir
-                
+
                 self.audioMediaConverter_au = system.audioMediaConverter_au
                 self.audioMediaConverter_wav = system.audioMediaConverter_wav
                 self.videoMediaConverter_ogv = system.videoMediaConverter_ogv
@@ -303,13 +313,12 @@ class Config(object):
                 self.audioMediaConverter_ogg = system.audioMediaConverter_ogg
                 self.audioMediaConverter_mp3 = system.audioMediaConverter_mp3
                 self.ffmpegPath = system.ffmpegPath
-            
+
             self.mediaProfilePath = system.mediaProfilePath
-                
+
             if system.has_option('greDir'):
                 # No longer used, system should automatically support
                 del system.greDir
-
 
     def loadSettings(self):
         """
@@ -319,36 +328,39 @@ class Config(object):
         # Set up the parser so that if a certain value is not in the config
         # file, it will use the value from our default values
         def defVal(dummy, option):
-            """If something is not in the config file, just use the default in
-            'self'"""
+            """
+            If something is not in the config file, just use the default in
+            'self'
+            """
             return getattr(self, option)
+
         self.configParser.defaultValue = defVal
         self.upgradeFile()
+
         # System Section
         if self.configParser.has_section('system'):
-            system = self.configParser.system
+            system       = self.configParser.system
+            self.port    = int(system.port)
+            self.browser = None if system.browser == u"None" else system.browser
 
-            
-            self.port           = int(system.port)
-            self.browser        = None if system.browser == u"None" else system.browser
-            
-            
             if not G.application.portable:
-                self.dataDir        = Path(system.dataDir)
-                self.configDir      = Path(system.configDir)
-                self.webDir         = Path(system.webDir)
-                self.stylesDir      = Path(self.configDir)/'style'
-                self.jsDir          = Path(system.jsDir)
+                self.dataDir    = Path(system.dataDir)
+                self.configDir  = Path(system.configDir)
+                self.webDir     = Path(system.webDir)
+                self.stylesDir  = Path(self.configDir)/'style'
+                self.jsDir      = Path(system.jsDir)
             else:
-                self.stylesDir      = Path(self.webDir/'style').abspath()
-            
-            self.assumeMediaPlugins = False;
-            if self.configParser.has_option('system', \
-                    'assumeMediaPlugins'):
-               value = system.assumeMediaPlugins.strip().lower()
-               if value == "1" or value == "yes" or value == "true" or \
-                   value == "on":
-                       self.assumeMediaPlugins = True;
+                self.stylesDir  = Path(self.webDir/'style').abspath()
+
+            self.assumeMediaPlugins = False
+            if self.configParser.has_option('system',
+                                            'assumeMediaPlugins'):
+                value = system.assumeMediaPlugins.strip().lower()
+                if (value == "1"
+                        or value == "yes"
+                        or value == "true"
+                        or value == "on"):
+                    self.assumeMediaPlugins = True
 
         # If the dataDir points to some other dir, fix it
         if not self.dataDir.isdir():
@@ -359,57 +371,55 @@ class Config(object):
         # new installation) create it
         if not self.configDir.exists():
             self.configDir.mkdir()
-		
-        if not G.application.standalone: 
-             #FM: Copy styles         
+
+        if not G.application.standalone:
+            # FM: Copy styles
             if not os.path.exists(self.stylesDir) or not os.listdir(self.stylesDir):
-                self.copyStyles() 
+                self.copyStyles()
             else:
-                self.updateStyles()                      
+                self.updateStyles()
         else:
             if G.application.portable:
-                if os.name == 'posix': 
+                if os.name == 'posix':
                     self.stylesDir      = Path(self.webDir/'..'/'..'/'..'/'style')
-                else: 
+                else:
                     self.stylesDir      = Path(self.webDir/'..'/'style')
-                if not os.path.exists(self.stylesDir) or not os.listdir(self.stylesDir): 
+                if not os.path.exists(self.stylesDir) or not os.listdir(self.stylesDir):
                     self.copyStyles()
             else:
-                self.stylesDir     = Path(self.webDir/'style').abspath()
-            
-               
+                self.stylesDir = Path(self.webDir/'style').abspath()
+
         # Get the list of recently opened projects
         self.recentProjects = []
         if self.configParser.has_section('recent_projects'):
             recentProjectsSection = self.configParser.recent_projects
-            # recentProjectsSection.items() is in the wrong order, keys are alright.
-            # Sorting list by key before adding to self.recentProjects, to avoid wrong ordering
-            # in Recent Projects menu list
-            recentProjectsItems = recentProjectsSection.items();
+            # recentProjectsSection.items() is in the wrong order,
+            # keys are alright.
+            # Sorting list by key before adding to self.recentProjects,
+            # to avoid wrong ordering in Recent Projects menu list
+            recentProjectsItems = recentProjectsSection.items()
             recentProjectsItems.sort()
             for key, path in recentProjectsItems:
                 self.recentProjects.append(path)
-                
+
         # Load the list of "hidden" iDevices
         self.hiddeniDevices = []
         if self.configParser.has_section('idevices'):
             idevicesSection = self.configParser.idevices
-            for key,value in idevicesSection.items():
+            for key, value in idevicesSection.items():
                 # emulate standard library's getboolean()
                 value = value.strip().lower()
-                if value == "0" or value == "no" or value == "false" or \
-                        value == "off":
+                if value == "0" or value == "no" or value == "false" or value == "off":
                     self.hiddeniDevices.append(key.lower())
 
-        #self.deprecatediDevices = [ "flash with text", "flash movie", ...]
+        # self.deprecatediDevices = [ "flash with text", "flash movie", ...]
         # and UN-Load from the list of "deprecated" iDevices
         if self.configParser.has_section('deprecated'):
             deprecatedSection = self.configParser.deprecated
-            for key,value in deprecatedSection.items():
+            for key, value in deprecatedSection.items():
                 # emulate standard library's getboolean()
                 value = value.strip().lower()
-                if value == "1" or value == "yes" or value == "true" or \
-                        value == "on":
+                if value == "1" or value == "yes" or value == "true" or value == "on":
                     if key.lower() in self.deprecatediDevices:
                         self.deprecatediDevices.remove(key.lower())
 
@@ -421,9 +431,9 @@ class Config(object):
                 self.docType = self.configParser.user.docType
                 common.setExportDocType(self.configParser.user.docType)
             if self.configParser.user.has_option('defaultStyle'):
-                self.defaultStyle= self.configParser.user.defaultStyle
+                self.defaultStyle = self.configParser.user.defaultStyle
             if self.configParser.user.has_option('styleSecureMode'):
-                self.styleSecureMode= self.configParser.user.styleSecureMode
+                self.styleSecureMode = self.configParser.user.styleSecureMode
             if self.configParser.user.has_option('internalAnchors'):
                 self.internalAnchors = self.configParser.user.internalAnchors
             if self.configParser.user.has_option('lastDir'):
@@ -435,12 +445,13 @@ class Config(object):
             if self.configParser.user.has_option('locale'):
                 self.locale = self.configParser.user.locale
                 return
-        self.locale = chooseDefaultLocale(self.localeDir)
+
+        self.locale = exe.engine.locales.chooseDefaultLocale(self.localeDir)
 
     def onWrite(self, configParser):
         """
         Called just before the config file is written.
-        We use it to fill out any settings that are stored here and 
+        We use it to fill out any settings that are stored here and
         not in the config parser itself
         """
         # Recent projects
@@ -454,7 +465,7 @@ class Config(object):
         setup logging file
         """
         try:
-            hdlr = RotatingFileHandler(self.configDir/'exe.log', 'a', 
+            hdlr = RotatingFileHandler(self.configDir/'exe.log', 'a',
                                        500000, 10)
             hdlr.doRollover()
         except OSError:
@@ -462,7 +473,7 @@ class Config(object):
             hdlr = logging.FileHandler(self.configDir/'exe.log')
 
         format = "%(asctime)s %(name)s %(levelname)s %(message)s"
-        log    = logging.getLogger()
+        log = logging.getLogger()
         hdlr.setFormatter(logging.Formatter(format))
         log.addHandler(hdlr)
 
@@ -470,9 +481,8 @@ class Config(object):
                          "INFO"     : logging.INFO,
                          "WARNING"  : logging.WARNING,
                          "ERROR"    : logging.ERROR,
-                         "CRITICAL" : logging.CRITICAL }
+                         "CRITICAL" : logging.CRITICAL}
 
-    
         if self.configParser.has_section('logging'):
             for logger, level in self.configParser._sections["logging"].items():
                 if logger == "root":
@@ -481,20 +491,19 @@ class Config(object):
                     logging.getLogger(logger).setLevel(loggingLevels[level])
         if not G.application.portable:
             log.info("************** eXe logging started **************")
-            log.info("version     = %s" % version.version)
-            log.info("configPath  = %s" % self.configPath)
-            log.info("exePath     = %s" % self.exePath)
-            log.info("libPath     = %s" % Path(twisted.__path__[0]).splitpath()[0])
-            log.info("browser     = %s" % self.browser)
-            log.info("webDir      = %s" % self.webDir)
-            log.info("jsDir       = %s" % self.jsDir)
-            log.info("localeDir   = %s" % self.localeDir)
-            log.info("port        = %d" % self.port)
-            log.info("dataDir     = %s" % self.dataDir)
-            log.info("configDir   = %s" % self.configDir)
-            log.info("locale      = %s" % self.locale)
+            log.info("version         = %s" % version.version)
+            log.info("configPath      = %s" % self.configPath)
+            log.info("exePath         = %s" % self.exePath)
+            log.info("libPath         = %s" % Path(twisted.__path__[0]).splitpath()[0])
+            log.info("browser         = %s" % self.browser)
+            log.info("webDir          = %s" % self.webDir)
+            log.info("jsDir           = %s" % self.jsDir)
+            log.info("localeDir       = %s" % self.localeDir)
+            log.info("port            = %d" % self.port)
+            log.info("dataDir         = %s" % self.dataDir)
+            log.info("configDir       = %s" % self.configDir)
+            log.info("locale          = %s" % self.locale)
             log.info("internalAnchors = %s" % self.internalAnchors)
-                    
 
     def loadStyles(self):
         """
@@ -504,49 +513,66 @@ class Config(object):
         listStyles = self.styleStore.getStyles()
         for style in listStyles:
             self.styles.append(style)
-            #print style
-            
+            # print style
+
     def copyStyles(self):
-        bkstyle=self.webDir/'style'
-        dststyle=self.stylesDir
-        if os.path.exists(bkstyle):            
-            if os.path.exists(dststyle) and not os.listdir(self.stylesDir): shutil.rmtree(dststyle)                 
-            shutil.copytree(bkstyle,dststyle )
-            
+        bkstyle = self.webDir/'style'
+        dststyle = self.stylesDir
+        if os.path.exists(bkstyle):
+            if os.path.exists(dststyle) and not os.listdir(self.stylesDir):
+                shutil.rmtree(dststyle)
+            shutil.copytree(bkstyle, dststyle)
+
     def updateStyles(self):
-        bkstyle=self.webDir/'style'
-        dststyle=self.stylesDir
+        bkstyle = self.webDir/'style'
+        dststyle = self.stylesDir
         if os.stat(bkstyle).st_mtime - os.stat(dststyle).st_mtime > 1:
             for name in os.listdir(bkstyle):
-                bksdirstyle=os.path.join(bkstyle, name)
-                dstdirstyle=os.path.join(dststyle, name)
+                bksdirstyle = os.path.join(bkstyle, name)
+                dstdirstyle = os.path.join(dststyle, name)
                 if os.path.isdir(bksdirstyle):
-                    if os.path.exists(dstdirstyle):shutil.rmtree(dstdirstyle)
+                    if os.path.exists(dstdirstyle):
+                        shutil.rmtree(dstdirstyle)
                     shutil.copytree(bksdirstyle, dstdirstyle)
                 else:
-                    shutil.copy(bksdirstyle, dstdirstyle)                    
-                    
+                    shutil.copy(bksdirstyle, dstdirstyle)
 
     def loadLocales(self):
         """
-        Scans the eXe locale directory and builds a list of locales
+        Scans the eXe locale directory and builds a dictionary (not
+        a list) of locales (meaning 'supportedLanguages';
+        self.locales used again in preferencespage.py).
+        If chosenLanguage is in that list, prepares for translation.
+        Installs new builtins _() and c_()
         """
         log = logging.getLogger()
         log.debug("loadLocales")
+        # gettext.install(domain[, localedir[, unicode[, codeset[, names]]]])
+        # This installs the function _() in Python’s builtins namespace
         gettext.install('exe', self.localeDir, True)
         self.locales = {}
         for subDir in self.localeDir.dirs():
             if (subDir/'LC_MESSAGES'/'exe.mo').exists():
+                # t = \
+                #    gettext.translation(domain[,
+                #                        localedir[,
+                #                        languages[,
+                #                        class_[,
+                #                        fallback[,
+                #                        codeset]]]]])
                 self.locales[subDir.basename()] = \
-                    gettext.translation('exe', 
-                                        self.localeDir, 
+                    gettext.translation('exe',
+                                        self.localeDir,
                                         languages=[str(subDir.basename())])
                 if subDir.basename() == self.locale:
-                    locale = subDir.basename()
-                    log.debug(" loading locale %s" % locale)
-                    self.locales[locale].install(unicode=True)
-                    __builtins__['c_'] = lambda s: self.locales[locale].ugettext(s) if s else s
-
-
+                    # jrf: renamed the ambiguous 'locale' to'chosenLanguage'
+                    chosenLanguage = subDir.basename()
+                    log.debug(" loading locale %s" % chosenLanguage)
+                    # install([unicode[, names]])
+                    # this method installs self.ugettext() into the
+                    # built-in namespace
+                    self.locales[chosenLanguage].install(unicode=True)
+                    __builtins__['c_'] = \
+                        lambda s: self.locales[chosenLanguage].ugettext(s) if s else s
 
 # ===========================================================================
