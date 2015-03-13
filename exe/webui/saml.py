@@ -59,9 +59,9 @@ def prepare_nevow_request(request):
 
 
 class ACSPage(rend.Page):
-    def __init__(self, configDir):
+    def __init__(self, name, configDir):
         self.configDir = configDir
-        rend.Page.__init__(self)
+        rend.Page.__init__(self, name)
 
     def renderHTTP(self, context):
         request = inevow.IRequest(context)
