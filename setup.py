@@ -4,6 +4,8 @@
 # setup.py
 # Only used for Debian packaging
 
+import os.path
+import glob
 from setuptools import setup
 from exe.engine import version
 
@@ -26,9 +28,6 @@ def dataFiles(dirs, excludes=[]):
     Recursively get all the files in these 'dirs' directories
     except those listed in 'excludes'
     """
-    import os.path
-    import glob
-
     global dataFiles, g_oldBase, g_newBase, g_files
     for file in dirs:
         if not os.path.basename(file[0]).startswith("."):
@@ -64,10 +63,15 @@ dataFiles(["exe/mediaprofiles"])
 # g_newBase = "/usr/share/exe"
 g_oldBase = "exe/locale"
 g_newBase = "/usr/share/locale"
+exc = []
+exc = glob.glob(g_oldBase + "/*/LC_MESSAGES/*.po")
+exc.append(g_oldBase + "/ja/exe_jp.xlf")
+exc.append(g_oldBase + "/ja/exe_ja.xlf")
+exc.append(g_oldBase + "/messages.pot")
+exc.sort()
+
 dataFiles(["exe/locale"],
-          excludes=["exe/locale/messages.pot",
-                    "exe/locale/ja/exe_jp.xlf",
-                    "exe/locale/ja/exe_ja.xlf"])
+          excludes=exc)
 
 g_oldBase = ""
 g_newBase = "/usr/share/exe"
