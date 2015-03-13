@@ -175,7 +175,7 @@ function ClickInOrder(gameId) {
         }
         
         //bounds x, y, width, height
-        if( (x > bounds[BOUND_X] && x < (bounds[BOUND_X] + bounds[BOUND_WIDTH])) && (y > bounds[BOUND_Y] && (bounds[BOUND_Y] + bounds[BOUND_HEIGHT]))) {
+        if( (x > bounds[BOUND_X] && x < (bounds[BOUND_X] + bounds[BOUND_WIDTH])) && (y > bounds[BOUND_Y] && y < (bounds[BOUND_Y] + bounds[BOUND_HEIGHT]))) {
             this.correctAnswer(this.areasToClick[this.currentClickableItemIndex].clickAreaId);
         }else if((new Date().getTime() - this.lastValidClickTime ) > 100) {
             this.showFeedback("#clickableAreaNegativeFeedback" + this.gameId);
