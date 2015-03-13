@@ -27,8 +27,8 @@ import logging
 log = logging.getLogger(__name__)
 
 
-def init_saml_auth(req):
-    saml_config_dir = G.application.config.configDir/'saml'
+def init_saml_auth(req, configDir):
+    saml_config_dir = configDir/'saml'
     if not saml_config_dir.isdir():
         template_config = G.application.config.exePath.parent/'saml_template'
         if template_config.exists():
@@ -59,10 +59,14 @@ def prepare_nevow_request(request):
 
 
 class ACSPage(rend.Page):
+    def __init__(self, configDir):
+        self.configDir = configDir
+        rend.Page.__init__(self)
+
     def renderHTTP(self, context):
         request = inevow.IRequest(context)
         req = prepare_nevow_request(request)
-        auth = init_saml_auth(req)
+        auth = init_saml_auth(req, self.configDir)
         auth.process_response()
         errors = auth.get_errors()
         if len(errors) == 0 and auth.is_authenticated():
@@ -77,16 +81,18 @@ class ACSPage(rend.Page):
 class SAMLPage(rend.Page):
     name = 'saml'
 
-    def __init__(self, parent):
+    def __init__(self, parent, configDir):
         parent.putChild(self.name, self)
+        self.configDir = configDir
         rend.Page.__init__(self)
 
-    child_acs = ACSPage('acs')
+    def child_acs(self, context):
+        return ACSPage('acs', self.configDir)
 
     def renderHTTP(self, context):
         request = inevow.IRequest(context)
         req = prepare_nevow_request(request)
-        auth = init_saml_auth(req)
+        auth = init_saml_auth(req, self.configDir)
         if auth:
             start_url = auth.login('%s://%s' % (req['scheme'], req['http_host']))
             return url.URL.fromString(start_url)

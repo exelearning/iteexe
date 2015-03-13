@@ -45,6 +45,7 @@ from exe import globals as G
 import logging
 log = logging.getLogger(__name__)
 
+
 class WebServer:
     """
     Encapsulates some twisted components to serve
@@ -58,7 +59,7 @@ class WebServer:
         self.config      = application.config
         self.tempWebDir  = application.tempWebDir
         self.root        = PackageRedirectPage(self, packagePath)
-        self.saml        = SAMLPage(self.root)
+        self.saml        = SAMLPage(self.root, self.config.configDir)
         self.editor      = EditorPage(self.root)
         self.stylemanager = StyleManagerPage(self.root)
         self.preferences = PreferencesPage(self.root)
