@@ -72,7 +72,7 @@ class ACSPage(rend.Page):
         if len(errors) == 0 and auth.is_authenticated():
             attributes = auth.get_attributes()
             session = request.getSession()
-            session.setUser(attributes['email'][0])
+            session.setUser(attributes['email'][0], attributes.get('picture', [None])[0])
             return url.URL.fromString(req['post_data']['RelayState'])
         request.setResponseCode(http.INTERNAL_SERVER_ERROR)
         return auth.get_last_error_reason()

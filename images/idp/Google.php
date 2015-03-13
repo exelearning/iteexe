@@ -231,7 +231,7 @@ class sspmod_authgoogle_Auth_Source_Google extends SimpleSAML_Auth_Source {
 		SimpleSAML_Logger::debug('Google userinfo : ' .  var_export($userinfo, true));
 		$attributes = array();
 		$attributes['email'] = array($userinfo['email']);
-		$attributes['picture'] = array($userinfo['picture']);
+		$attributes['picture'] = array(str_replace('sz=50', 'sz=16', $userinfo['picture']));
 		$state['Attributes'] = $attributes;
 
 	}

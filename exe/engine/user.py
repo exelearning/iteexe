@@ -23,8 +23,9 @@ from exe.engine.userconfig import UserConfig
 
 
 class User(object):
-    def __init__(self, name, configPath):
+    def __init__(self, name, configPath, picture=None):
         self.name = name
+        self.picture = picture
         self.packageStore = PackageStore()
         configPath = configPath / name
         self.initialConfig = True

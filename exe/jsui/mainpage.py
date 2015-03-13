@@ -108,6 +108,8 @@ class MainPage(RenderableLivePage):
 
         self.location_buttons = LocationButtons()
 
+    def __repr__(self):
+        return super(MainPage, self).__repr__() + repr(self.authoringPages)
 
     def child_authoring(self, ctx):
         """
@@ -227,6 +229,8 @@ class MainPage(RenderableLivePage):
             self.webServer.monitor()
 
     def render_config(self, ctx, data):
+        request = inevow.IRequest(ctx)
+        session = request.getSession()
         config = {
             'lastDir': G.application.config.lastDir,
             'locationButtons': self.location_buttons.buttons,
@@ -239,7 +243,8 @@ class MainPage(RenderableLivePage):
             ),
             'pathSep': os.path.sep,
             'server': G.application.server,
-            'user': G.application.config.configDir.basename()
+            'user': session.user.name,
+            'user_picture': session.user.picture
         }
         G.application.preferencesShowed = True
         G.application.loadErrors = []
@@ -722,6 +727,8 @@ class MainPage(RenderableLivePage):
         Close client session and stops the server if necessary
         """
         client.close("window.location = \"quit\";")
+        # self.authoringPages.pop(client.handleId)
+        # self.webServer.root.mainpages[self.session.uid].pop(self.package.name)
 
         if not self.webServer.application.server:
             # first, go ahead and clear out any temp job files still in

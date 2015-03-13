@@ -79,8 +79,9 @@ class eXeSession(server.Session):
         self.user = None
         self.packageStore = None
 
-    def setUser(self, name):
+    def setUser(self, name, picture=None):
         self.user = G.application.userStore.getUser(name)
+        self.user.picture = picture
         self.packageStore = self.user.packageStore
 
 
