@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # ===========================================================================
 # __init__.py
 # Copyright 2011, Mikel Larreategi, CodeSyntax Tknika
@@ -14,9 +16,8 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # ===========================================================================
-
 
 
 import logging
@@ -34,11 +35,11 @@ class XliffImport(object):
 
     def parseAndImport(self, import_from_source=False):
 
-        from exe.engine.beautifulsoup import BeautifulSoup
+        from BeautifulSoup import BeautifulSoup
         fp = open(self.filename)
         bs = BeautifulSoup(fp.read().replace(CDATA_BEGIN, "").replace(CDATA_END, ""))
         fp.close()
-        
+
         for transunit in bs.findAll('trans-unit'):
             item_id = transunit.get('id', None)
             if item_id is None:
@@ -88,9 +89,6 @@ class XliffImport(object):
             ##     field.content_w_resourcePaths = content
             ##     field.TwistedRePersist()
 
-
-
-
     def getNodeFrom(self, somewhere, raw_id):
         # raw_id == 'node5'
         id = raw_id.split('node')[1]
@@ -136,5 +134,5 @@ class XliffImport(object):
                     # This is the item's title (the last one),
                     # so return the previous item: the IDevice
                     return what
-                    
+
         return what
