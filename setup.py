@@ -1,35 +1,41 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 # setup.py
+# Only used for Debian packaging
+
+import os.path
+import glob
 from setuptools import setup
 from exe.engine import version
 
 g_files = {'/usr/share/exe': ["README",
-                             "COPYING",
-                             "NEWS",
-                             "ChangeLog",
-                             "exe/webui/mr_x.gif"],
-          '/usr/share/applications': ["exe.desktop"],
-          '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
-          '/usr/share/pixmaps': ["exe.xpm"],
-        }
+                              "COPYING",
+                              "NEWS",
+                              "ChangeLog",
+                              "exe/webui/mr_x.gif"],
+           '/usr/share/applications': ["exe.desktop"],
+           '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
+           '/usr/share/pixmaps': ["exe.xpm"]
+           }
 
 g_oldBase = "exe/webui"
 g_newBase = "/usr/share/exe"
 
 
 def dataFiles(dirs, excludes=[]):
-    """Recursively get all the files in these directories"""
-    import os.path
-    import glob
+    """
+    Recursively get all the files in these 'dirs' directories
+    except those listed in 'excludes'
+    """
     global dataFiles, g_oldBase, g_newBase, g_files
     for file in dirs:
         if not os.path.basename(file[0]).startswith("."):
             if os.path.isfile(file) and file not in excludes:
-		if len(g_oldBase) >= 1:
-	                path = file[len(g_oldBase) + 1:]
-		else:
-			path = file
+                if len(g_oldBase) >= 1:
+                    path = file[len(g_oldBase) + 1:]
+                else:
+                    path = file
                 dir = g_newBase + "/" + os.path.dirname(path)
                 if dir in g_files:
                     g_files[dir].append(file)
@@ -45,11 +51,27 @@ dataFiles(["exe/webui/style",
            "exe/webui/schemas",
            "exe/webui/scripts",
            "exe/webui/templates"],
-    excludes=["exe/webui/templates/mimetex-darwin.cgi", "exe/webui/templates/mimetex.exe"])
+          excludes=["exe/webui/templates/mimetex-darwin.cgi",
+                    "exe/webui/templates/mimetex.exe"])
 
 g_oldBase = "exe"
 g_newBase = "/usr/share/exe"
-dataFiles(["exe/locale", "exe/mediaprofiles"])
+dataFiles(["exe/mediaprofiles"])
+
+# jrf - to comply with the FHS
+# g_oldBase = "exe"
+# g_newBase = "/usr/share/exe"
+g_oldBase = "exe/locale"
+g_newBase = "/usr/share/locale"
+exc = []
+exc = glob.glob(g_oldBase + "/*/LC_MESSAGES/*.po")
+exc.append(g_oldBase + "/ja/exe_jp.xlf")
+exc.append(g_oldBase + "/ja/exe_ja.xlf")
+exc.append(g_oldBase + "/messages.pot")
+exc.sort()
+
+dataFiles(["exe/locale"],
+          excludes=exc)
 
 g_oldBase = ""
 g_newBase = "/usr/share/exe"
@@ -75,6 +97,7 @@ any Learning Management System.
       license="GPL",
       scripts=["exe/exe", "exe/exe_do"],
       packages=["exe", "exe.webui", "exe.jsui",
-                      "exe.engine", "exe.export", "exe.importers", "exe.engine.lom"],
+                "exe.engine", "exe.export",
+                "exe.importers", "exe.engine.lom"],
       data_files=g_files.items()
-     )
+      )

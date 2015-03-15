@@ -10,10 +10,10 @@ X-Python-Version: >=2.7
 
 Package: intef-exe
 Architecture: all
-Depends: ${python:Depends}, python-setuptools, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging, python-chardet, python-lxml, iceweasel | www-browser, python-feedparser, mimetex
+Depends: ${python:Depends}, python-setuptools, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging, python-chardet, python-lxml, iceweasel | www-browser, python-feedparser, mimetex, python-beautifulsoup
 Conflicts: python2.3-exe, python2.4-exe, python2.5-exe, python-exe, python-intef-exe
 Replaces: python2.3-exe, python2.4-exe, python2.5-exe, python-exe, python-intef-exe
-Description: eLearning XHTML editor
+Description: eLearning XHTML & HTML5 editor
  The eXe project is an authoring environment to enable teachers to publish
  web content without the need to become proficient in HTML or XML markup.
  Content generated using eXe can be used by any Learning Management System.
