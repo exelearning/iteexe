@@ -152,7 +152,8 @@ class StyleManagerPage(RenderableResource):
             self.doStyleImportRepository(request.args['style_name'][0])
         elif request.args['action'][0] == 'doList':
             self.doList()
-        #return self.render_GET(None)
+            
+        return ''
     
     def reloadPanel(self, action):
         self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").reload("%s")' % (action),
@@ -443,4 +444,4 @@ class StyleManagerPage(RenderableResource):
             percent = 100
         client.sendScript('Ext.MessageBox.updateProgress(%f, "%d%%", "Downloading...")'
                           % (float(percent) / 100, percent))
-        log.info('%3d' % (percent))
+        log.debug('%3d' % (percent))
