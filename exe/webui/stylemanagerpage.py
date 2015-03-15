@@ -24,21 +24,19 @@ JR: The StyleManagerPage is responsible for managing styles
 
 import logging
 import os
-import sys
 import shutil
 from zipfile                   import ZipFile, ZIP_DEFLATED
 import json
-from twisted.internet          import threads, reactor
+from twisted.internet          import threads
 from twisted.web.resource      import Resource
 from twisted.web.xmlrpc        import Proxy
 from exe.webui.livepage        import allSessionClients
 from exe.webui.renderable      import RenderableResource
-from exe.engine.path           import Path, toUnicode, TempDirPath
+from exe.engine.path           import Path
 from exe.engine.style          import Style
-from urllib                    import unquote, urlretrieve
-from urlparse                  import urlparse, urlsplit
+from urllib                    import urlretrieve
+from urlparse                  import urlsplit
 import locale
-import base64
 
 
 log = logging.getLogger(__name__)
