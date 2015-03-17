@@ -14,7 +14,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with this program; if not, write to the Free Software
-// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //===========================================================================
 
 Ext.define('eXe.controller.Toolbar', {
@@ -155,8 +155,7 @@ Ext.define('eXe.controller.Toolbar', {
             //    click: { fn: this.processBrowseEvent, url: 'file://%s/docs/manual/Online_manual.html' }
             // },
             '#help_tutorial': {
-                click: { fn: this.processBrowseEvent, 
-                         url: 'http://exelearning.net/html_manual/exe20_en/' }
+                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/html_manual/exe20_en/' }
             },
             '#help_notes': {
                 click: { fn: this.processBrowseEvent, url: 'file://%t' }
@@ -318,13 +317,14 @@ Ext.define('eXe.controller.Toolbar', {
         this.browseURL(e.url)
     },
     
-    fileOpenTutorial: function() {
-        this.askDirty("eXe.app.getController('Toolbar').fileOpenTutorial2()");
-    },
+    // Not used - Task 1080, jrf
+    // fileOpenTutorial: function() {
+    //    this.askDirty("eXe.app.getController('Toolbar').fileOpenTutorial2()");
+    // },
     
-    fileOpenTutorial2: function() {
-        nevow_clientToServerEvent('loadTutorial', this, '');
-    },
+    // fileOpenTutorial2: function() {
+    //    nevow_clientToServerEvent('loadTutorial', this, '');
+    // },
     
     toolsRefresh: function() {
         eXe.app.reload();
@@ -381,7 +381,7 @@ Ext.define('eXe.controller.Toolbar', {
         editor.show();        
 	},
 	
-	// JR: Launch the Style Manager Window
+	// JRJ: Launch the Style Manager Window
 	toolsStyleManager: function() {
         var stylemanager = new Ext.Window ({
           maxHeight: eXe.app.getMaxHeight(800), 
@@ -627,7 +627,7 @@ Ext.define('eXe.controller.Toolbar', {
 + "option, target field will be empty. Some Computer Aided Translation tools "
 + "(e.g. OmegaT) just translate the content of the target field. If you are "
 + "using this kind of tools, you will need to pre-fill the target field with a copy "
-" of the source field.")
++ " of the source field.")
                                 },
                                 {
                                     xtype: 'checkbox',
@@ -637,8 +637,8 @@ Ext.define('eXe.controller.Toolbar', {
                                     tooltip: _("This option will wrap all "
 + "the exported fields in CDATA sections. This kind of sections are not "
 + "recommended by XLIFF standard but it could be a good option if you want to "
-" use a pre-process tool (i.g.: Rainbow) before using the Computer Aided "
-"Translation software.")
++ " use a pre-process tool (i.g.: Rainbow) before using the Computer Aided "
++ "Translation software.")
                                 }
                             ],
                             buttons: [
@@ -873,8 +873,8 @@ Ext.define('eXe.controller.Toolbar', {
 		}
 		item.setChecked(true);
 		item.parentMenu.hide();
-		//provisional
-		//item.parentMenu.parentMenu.hide();
+		// provisional
+		// item.parentMenu.parentMenu.hide();
 		item.parentMenu.hide();
 		//
         var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();

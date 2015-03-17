@@ -16,8 +16,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor,
-# Boston, MA  02110-1301, USA.
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # ===========================================================================
 
 """
@@ -81,6 +80,7 @@ class MainPage(RenderableLivePage):
         Initialize a new Javascript page
         'package' is the package that we look after
         """
+        # log.debug("Initializing MainPage")
         self.name = package.name
         self.session = session
         RenderableLivePage.__init__(self, parent, package, config)
@@ -93,12 +93,17 @@ class MainPage(RenderableLivePage):
 
         # Create all the children on the left
         self.outlinePane = OutlinePane(self)
+        # log.debug("   created OutlinePane")
         self.idevicePane = IdevicePane(self)
+        # log.debug("   created idevicePane")
         self.styleMenu   = StyleMenu(self)
+        # log.debug("   created styleMenu")
         self.recentMenu  = RecentMenu(self)
+        # log.debug("   created RecentMenu")
 
         # And in the main section
         self.propertiesPage = PropertiesPage(self)
+        # log.debug("   created PropiertiesPage")
         self.authoringPage = None
         self.previewDir = None
         self.authoringPages = {}
@@ -145,8 +150,7 @@ class MainPage(RenderableLivePage):
 
                         self.classificationSources[source] = Classification()
                         try:
-                            self.classificationSources[source].setSource(source,
-                                                                         self.config.configDir)
+                            self.classificationSources[source].setSource(source, self.config.configDir)
                         except:
                             pass
                     identifier = request.args['identifier'][0]
@@ -157,8 +161,7 @@ class MainPage(RenderableLivePage):
                     else:
                         stype = 1
                     try:
-                        data = self.classificationSources[source].getDataByIdentifier(identifier,
-                                                                                      stype=stype)
+                        data = self.classificationSources[source].getDataByIdentifier(identifier, stype=stype)
                     except:
                         pass
 
@@ -225,8 +228,8 @@ class MainPage(RenderableLivePage):
         config = {'lastDir': G.application.config.lastDir,
                   'locationButtons': self.location_buttons.buttons,
                   'lang': G.application.config.locale.split('_')[0],
-                  'showPreferences': (G.application.config.showPreferencesOnStart == '1'
-                                      and not G.application.preferencesShowed),
+                  'showPreferences': G.application.config.showPreferencesOnStart == '1' \
+                      and not G.application.preferencesShowed,
                   'loadErrors': G.application.loadErrors,
                   'showIdevicesGrouped': G.application.config.showIdevicesGrouped == '1',
                   'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (self.package.name, IClientHandle(ctx).handleId),
@@ -252,9 +255,7 @@ class MainPage(RenderableLivePage):
     def render_version(self, ctx, data):
         return [tags.p()["Version: %s" % release],
                 tags.p()["Revision: ",
-                         tags.a(href='%s;a=shortlog;h=%s' % (self.config.baseGitWebURL,
-                                                             revision),
-                                target='_blank')[revision]
+                         tags.a(href='%s;a=shortlog;h=%s' % (self.config.baseGitWebURL, revision), target='_blank')[revision]
                         ]
                ]
 
@@ -267,9 +268,9 @@ class MainPage(RenderableLivePage):
     def handleIsPackageDirty(self, client, ifClean, ifDirty):
         """
         Called by js to know if the package is dirty or not.
-        ifClean is JavaScript to be evaled on the client if the package has
+        ifClean is JavaScript to be eval'ed on the client if the package has
         been changed
-        ifDirty is JavaScript to be evaled on the client if the package has not
+        ifDirty is JavaScript to be eval'ed on the client if the package has not
         been changed
         """
         if self.package.isChanged:
@@ -290,7 +291,7 @@ class MainPage(RenderableLivePage):
     def b4save(self, client, inputFilename, ext, msg):
         """
         Call this before saving a file to get the right filename.
-        Returns a new filename or 'None' when attempt to overide
+        Returns a new filename or 'None' when attempt to override
         'inputFilename' is the filename given by the user
         'ext' is the extension that the filename should have
         'msg' will be shown if the filename already exists
@@ -361,6 +362,7 @@ class MainPage(RenderableLivePage):
     #    """
     #    Loads the tutorial file, from the Help menu
     #    """
+    #    log.debug("   handleLoadTutorial")
     #    filename = self.config.webDir.joinpath("docs") \
     #        .joinpath("eXe-tutorial.elp")
     #    self.handleLoadPackage(client, filename)
@@ -378,10 +380,8 @@ class MainPage(RenderableLivePage):
         Download taxon sources from url and deploy in $HOME/.exe/classification_sources
         """
         url = 'http://forja.cenatic.es/frs/download.php/file/1624/classification_sources.zip'
-        client.sendScript('Ext.MessageBox.progress("Sources Download",
-                                                   "Connecting to classification sources repository...")')
-        d = threads.deferToThread(urlretrieve, url, None,
-                                  lambda n, b, f: self.progressDownload(n, b, f, client))
+        client.sendScript('Ext.MessageBox.progress("Sources Download", "Connecting to classification sources repository...")')
+        d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
 
         def successDownload(result):
             filename = result[0]
@@ -437,7 +437,7 @@ class MainPage(RenderableLivePage):
         if rel_name.startswith('/'):
             rel_name = rel_name[1:]
         http_relative_pathname = "http://127.0.0.1:" + str(self.config.port) \
-                                     + '/' + rel_name
+                                 + '/' + rel_name
         log.debug('printdir http_relative_pathname=' + http_relative_pathname)
         return http_relative_pathname
 
@@ -528,8 +528,7 @@ class MainPage(RenderableLivePage):
         # First get the name of the parent temp directory, after making it
         # (if necessary) and clearing (if applicable):
         log_dir_warnings = 1
-        (under_dirname, dir_warnings) = self.ClearParentTempPrintDirs(client,
-                                                                      log_dir_warnings)
+        (under_dirname, dir_warnings) = self.ClearParentTempPrintDirs(client, log_dir_warnings)
 
         # Next, go ahead and create this particular print job's temporary
         # directory under the parent temp directory:
@@ -567,8 +566,7 @@ class MainPage(RenderableLivePage):
         elif not previewDir.isdir():
             client.alert(_(u'Preview directory %s is a file, cannot replace it') % previewDir)
             log.error("Couldn't preview tinyMCE-chosen image: " +
-                      "Preview dir %s is a file, cannot replace it"
-                      % previewDir)
+                      "Preview dir %s is a file, cannot replace it" % previewDir)
             callback_errors = "Preview dir is a file, cannot replace"
             errors += 1
 
@@ -598,8 +596,7 @@ class MainPage(RenderableLivePage):
             log.debug("handleTinyMCEimageChoice copying image from \'"
                       + local_filename + "\' to \'"
                       + server_filename.abspath() + "\'.")
-            shutil.copyfile(local_filename,
-                            server_filename.abspath())
+            shutil.copyfile(local_filename, server_filename.abspath())
 
             # new optional description file to provide the
             # actual base filename, such that once it is later processed
@@ -808,36 +805,29 @@ class MainPage(RenderableLivePage):
         elif exportType == 'csvReport':
             self.exportReport(client, filename, stylesDir)
         elif exportType == 'zipFile':
-            filename = self.b4save(client, filename, '.zip',
-                                   _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportWebZip(client, filename, stylesDir)
         elif exportType == 'textFile':
             self.exportText(client, filename)
         elif exportType == 'scorm1.2':
-            filename = self.b4save(client, filename, '.zip',
-                                   _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "scorm1.2")
         elif exportType == "scorm2004":
-            filename = self.b4save(client, filename, '.zip',
-                                   _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "scorm2004")
         elif exportType == "agrega":
-            filename = self.b4save(client, filename, '.zip',
-                                   _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "agrega")
         elif exportType == 'epub3':
-            filename = self.b4save(client, filename, '.epub',
-                                   _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.epub', _(u'EXPORT FAILED!'))
             self.exportEpub3(client, filename, stylesDir)
         elif exportType == "commoncartridge":
-            filename = self.b4save(client, filename, '.zip',
-                                   _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "commoncartridge")
         elif exportType == 'mxml':
             self.exportXML(client, filename, stylesDir)
         else:
-            filename = self.b4save(client, filename, '.zip',
-                                   _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportIMS(client, filename, stylesDir)
 
     def handleQuit(self, client):
@@ -856,13 +846,12 @@ class MainPage(RenderableLivePage):
 
         if len(self.clientHandleFactory.clientHandles) <= 1:
             self.webServer.monitoring = False
-            G.application.config.configParser.set('user', 'lastDir',
-                                                  G.application.config.lastDir)
+            G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
             try:
                 shutil.rmtree(G.application.tempWebDir, True)
                 shutil.rmtree(G.application.resourceDir, True)
             except:
-                log.debug('Don\'t delete temp directorys. ')
+                log.debug('Don\'t delete temp directories. ')
             reactor.callLater(2, reactor.stop)
         else:
             log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))
@@ -873,16 +862,13 @@ class MainPage(RenderableLivePage):
         if the URL contains %s, substitute the local webDir
         if the URL contains %t, show a temp file containing NEWS and README """
         if url.find('%t') > -1:
-            release_notes = os.path.join(G.application.tempWebDir,
-                                         'Release_Notes.html')
+            release_notes = os.path.join(G.application.tempWebDir, 'Release_Notes.html')
             f = open(release_notes, 'w')
             f.write('''<html><head><title>eXe Release Notes</title></head>
                 <body><h1>News</h1><pre>\n''')
             try:
-                news = open(os.path.join(self.config.webDir, 'NEWS'),
-                            'r').read()
-                readme = open(os.path.join(self.config.webDir, 'README'),
-                              'r').read()
+                news = open(os.path.join(self.config.webDir, 'NEWS'), 'r').read()
+                readme = open(os.path.join(self.config.webDir, 'README'), 'r').read()
                 f.write(news)
                 f.write('</pre><hr><h1>Read Me</h1><pre>\n')
                 f.write(readme)
@@ -924,8 +910,7 @@ class MainPage(RenderableLivePage):
         package = self._loadPackage(client, filename, newLoad=True)
         tmpfile = Path(tempfile.mktemp())
         package.save(tmpfile)
-        loadedPackage = self._loadPackage(client, tmpfile, newLoad=False,
-                                          destinationPackage=self.package)
+        loadedPackage = self._loadPackage(client, tmpfile, newLoad=False, destinationPackage=self.package)
         newNode = loadedPackage.root.copyToPackage(self.package,
                                                    self.package.currentNode)
         # trigger a rename of all of the internal nodes and links,
@@ -1030,8 +1015,7 @@ class MainPage(RenderableLivePage):
             if not filename.exists():
                 filename.makedirs()
             elif not filename.isdir():
-                client.alert(_(u'Filename %s is a file, cannot replace it') %
-                             filename)
+                client.alert(_(u'Filename %s is a file, cannot replace it') % filename)
                 log.error("Couldn't export web page: " +
                           "Filename %s is a file, cannot replace it" % filename)
                 return
@@ -1040,9 +1024,7 @@ class MainPage(RenderableLivePage):
                              'Please choose another one or delete existing one then try again.') % filename)
                 return
             # Now do the export
-            singlePageExport = SinglePageExport(stylesDir, filename,
-                                                imagesDir, scriptsDir,
-                                                cssDir, templatesDir)
+            singlePageExport = SinglePageExport(stylesDir, filename, imagesDir, scriptsDir, cssDir, templatesDir)
             singlePageExport.export(self.package, printFlag)
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
@@ -1104,8 +1086,7 @@ class MainPage(RenderableLivePage):
             log.debug(u"exportWebsite, filename=%s" % filename)
             filename = Path(filename)
             # Do the export
-            filename = self.b4save(client, filename, '.zip',
-                                   _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             websiteExport = WebsiteExport(self.config, stylesDir, filename)
             websiteExport.exportZip(self.package)
         except Exception, e:
@@ -1143,8 +1124,7 @@ class MainPage(RenderableLivePage):
             log.debug(u"exportXliff, filename=%s" % filename)
             if not filename.lower().endswith('.xlf'):
                 filename += '.xlf'
-            xliffExport = XliffExport(self.config,
-                                      filename, source, target, copy, cdata)
+            xliffExport = XliffExport(self.config, filename, source, target, copy, cdata)
             xliffExport.export(self.package)
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
@@ -1166,8 +1146,7 @@ class MainPage(RenderableLivePage):
                     client.alert(_(u'EXPORT FAILED!\n%s') % msg)
                     return
             # Do the export
-            scormExport = ScormExport(self.config, stylesDir,
-                                      filename, scormType)
+            scormExport = ScormExport(self.config, stylesDir, filename, scormType)
             scormExport.export(self.package)
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
@@ -1179,8 +1158,7 @@ class MainPage(RenderableLivePage):
             log.debug(u"exportEpub3, filename=%s" % filename)
             filename = Path(filename)
             # Do the export
-            filename = self.b4save(client, filename, '.epub',
-                                   _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.epub', _(u'EXPORT FAILED!'))
             epub3Export = Epub3Export(self.config, stylesDir, filename)
             epub3Export.export(self.package)
             # epub3Export.exportZip(self.package)
@@ -1273,8 +1251,7 @@ class MainPage(RenderableLivePage):
                 client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
             else:
                 client.alert(_(u'Sorry, wrong file format'))
-            log.error(u'Error loading package "%s": %s' % (filename2,
-                                                           unicode(exc)))
+            log.error(u'Error loading package "%s": %s' % (filename2, unicode(exc)))
             log.error(u'Traceback:\n%s' % traceback.format_exc())
             raise
         return package
