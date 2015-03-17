@@ -147,11 +147,16 @@ Ext.define('eXe.controller.Toolbar', {
             '#tools_refresh': {
                 click: this.toolsRefresh
             },
+            // Task 1080. jrf
+            // '#help_tutorial': {
+            //    click: this.fileOpenTutorial
+            // },
+            // '#help_manual': {
+            //    click: { fn: this.processBrowseEvent, url: 'file://%s/docs/manual/Online_manual.html' }
+            // },
             '#help_tutorial': {
-                click: this.fileOpenTutorial
-            },
-            '#help_manual': {
-                click: { fn: this.processBrowseEvent, url: 'file://%s/docs/manual/Online_manual.html' }
+                click: { fn: this.processBrowseEvent, 
+                         url: 'http://exelearning.net/html_manual/exe20_en/' }
             },
             '#help_notes': {
                 click: { fn: this.processBrowseEvent, url: 'file://%t' }
@@ -618,22 +623,22 @@ Ext.define('eXe.controller.Toolbar', {
                                     fieldLabel: _('Copy source also in target'),
                                     valueField: 'copy',
                                     checked: true,
-                                    tooltip: _("If you don't choose this \
-option, target field will be empty. Some Computer Aided Translation tools \
-(e.g. OmegaT) just translate the content of the target field. If you are \
-using this kind of tools, you will need to pre-fill the target field with a copy \
-of the source field.")
+                                    tooltip: _("If you don't choose this "
++ "option, target field will be empty. Some Computer Aided Translation tools "
++ "(e.g. OmegaT) just translate the content of the target field. If you are "
++ "using this kind of tools, you will need to pre-fill the target field with a copy "
+" of the source field.")
                                 },
                                 {
                                     xtype: 'checkbox',
                                     inputId: 'cdata',
                                     fieldLabel: _('Wrap fields in CDATA'),
                                     valueField: 'cdata',
-                                    tooltip: _('This option will wrap all \
-the exported fields in CDATA sections. This kind of sections are not \
-recommended by XLIFF standard but it could be a good option if you want to \
-use a pre-process tool (i.g.: Rainbow) before using the Computer Aided \
-Translation software.')
+                                    tooltip: _("This option will wrap all "
++ "the exported fields in CDATA sections. This kind of sections are not "
++ "recommended by XLIFF standard but it could be a good option if you want to "
+" use a pre-process tool (i.g.: Rainbow) before using the Computer Aided "
+"Translation software.")
                                 }
                             ],
                             buttons: [

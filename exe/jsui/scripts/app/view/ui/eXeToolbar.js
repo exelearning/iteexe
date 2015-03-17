@@ -415,12 +415,13 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 accesskey: 't',
                                 text: _('eXe Tutorial')
                             },
-                            {
-                                xtype: 'accesskey_menuitem',
-                                itemId: 'help_manual',
-                                accesskey: 'm',
-                                text: _('eXe Manual')
-                            },
+                            // Task 1080, jrf
+                            // {
+                            //    xtype: 'accesskey_menuitem',
+                            //    itemId: 'help_manual',
+                            //    accesskey: 'm',
+                            //    text: _('eXe Manual')
+                            // },
                             {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'help_notes',
