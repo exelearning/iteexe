@@ -5,7 +5,7 @@ body{padding:0;text-align:center;background:#fff url(_max_fondo_pagina.gif)}
 #main-wrapper{padding:10px 20px 0 250px}
 .no-nav #main-wrapper{padding-left:20px}
 #main{width:100%}
-#header,#emptyHeader{border-top:none;overflow:hidden} /* overflow is for IE6 */
+#header,#emptyHeader{border-top:none;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:200px}
 #main #nodeDecoration{padding:0;background:none}
 /* Navigation */
 #skipNav{width:50%;padding:10px}
@@ -80,7 +80,7 @@ html[xmlns] #content{display:block}
 
 @media all and (max-width: 700px) {
 	body{background:#fff}
-	#header, #emptyHeader{background:#fff;padding-left:10px;height:3.8em;line-height:3.8em;font-size:1.3em}
+	#header,#emptyHeader{background:#fff;padding-left:10px;height:3.8em;line-height:3.8em;font-size:1.3em;padding-right:10px}
 	#content{width:100%;min-width:0;background:#fff;border:none;box-shadow:none;margin:0}
 	#skipNav{width:100%;padding:10px 0;text-align:right}
 	#skipNav a{border-right:10px solid #fff}

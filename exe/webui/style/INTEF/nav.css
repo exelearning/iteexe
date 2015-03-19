@@ -39,13 +39,14 @@ body{
 }
 
 /* Otras definiciones */
-body{padding:0;text-align:center}
+body{padding:0 0 15px 0;text-align:center}
 #content{width:985px;margin:0 auto 10px auto;padding-bottom:11px;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0;box-shadow:0 0 10px 0 #999;border-bottom-right-radius:8px;border-bottom-left-radius:8px}
 #main-wrapper{width:735px;float:right}
 #main{padding:10px 20px 0 0}
 .no-nav #main-wrapper{width:100%}
 .no-nav #main{padding-left:20px}
-#header,#emptyHeader{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px}
+.no-nav #nodeTitle{left:20px}
+#header,#emptyHeader{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 20px 0 20px;text-align:right;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 #nodeTitle{position:absolute;top:55px;left:250px;font-size:1.6em;margin:20px 10px 0 0}
 #main #nodeDecoration{background:none;padding:0 10px;border:none}
 /* Menú */
@@ -66,7 +67,6 @@ body{padding:0;text-align:center}
 #topPagination{position:absolute;top:0;right:20px}
 #topPagination .pagination{border:none}
 #bottomPagination{padding:0 20px 2px 20px;clear:both}
-/* .js #bottomPagination{margin-top:15px} */
 /* Pie de página e iDevices */
 .iDeviceTitle{vertical-align:top}
 /* Autoclear */
@@ -90,14 +90,13 @@ html[xmlns] #content{display:block}
 
 @media screen and (min-width: 701px) and (max-width: 1015px) {
 	/* Fullsreen mode */
+	body{padding:0}
 	#content{border:none;width:100%;box-shadow:none}
 	#header,#emptyHeader{background-image:url(my_header_fullscreen.jpg)}
 	/* Horizontal navigation */
 	#main-wrapper{width:100%}
 	#main,.no-nav #main{padding:0 20px}
 	#nodeTitle{left:20px}
-	#header{text-align:right;padding-right:20px}
-	#siteFooter{padding-left:20px}
 	#siteNav li:hover,#siteNav li.sfhover{background:#E2E6E9}
 	#siteNav .other-section{display:block}
 	#siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
@@ -119,16 +118,17 @@ html[xmlns] #content{display:block}
 }
 
 @media all and (max-width: 700px) {
+	body{padding:0}
 	#content{width:100%;border:0;box-shadow:none}
 	#userOptionsBar,#topPagination{display:none}
 	#siteNav{float:none;width:100%;padding:0}
 	#siteNav{line-height:1.5em}
 	#main-wrapper{width:100%}    
 	#main,.no-nav #main{padding:0 10px}	
-	#header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px;font-size:1em}
-	#nodeTitle{position:absolute;top:1px;left:10px;font-size:1.4em}
+	#header,#emptyHeader{background-position:0 -54px;padding:4px 10px 0 10px;font-size:1em}
+	#nodeTitle,.no-nav #nodeTitle{top:1px;left:10px;font-size:1.4em}
 	#header{text-align:right;padding-right:10px}
-	#siteFooter{padding-left:10px}
+	#siteFooter{padding:10px 10px 0 10px;text-align:center}
 	#bottomPagination{padding:0 10px}
 	#content .exe-col{float:none;width:100%;padding:0}
 	iframe,object,embed{max-width:100%}

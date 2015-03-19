@@ -9,7 +9,7 @@ body{padding:0;background:#fff url(_slate_side_bg.gif) repeat-y}
 #content{width:100%;position:relative;padding-bottom:10px;min-width:380px}
 #main-wrapper{padding:10px 20px 0 250px}
 #main{width:100%}
-#header,#emptyHeader{border-top:none;padding-left:15px;background:#CAC3B5}
+#header,#emptyHeader{border-top:none;padding-left:15px;background:#CAC3B5;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:220px}
 #nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:0 0 .7em 0;border-bottom:4px solid #8B8B89}
 .iDevice,.readingIdevice .iDevice{margin:2em 0;padding:0}
@@ -63,9 +63,10 @@ body.no-nav{background-image:none}
 	#siteNav{width:200px}
 }
 @media all and (max-width: 780px) {
-	#main-wrapper,.no-nav #main-wrapper{padding:10px}
-	#siteNav{width:100%;float:none;padding-right:0}
 	body{background-image:none}
+	#main-wrapper,.no-nav #main-wrapper{padding:10px}
+	#header,#emptyHeader{padding-right:15px}
+	#siteNav{width:100%;float:none;padding-right:0}
 	#siteFooter,.no-nav #siteFooter{padding:0 10px 10px 10px;text-align:center}
 	.pagination{font-weight:bold;font-size:1.1em}
 	#topPagination{position:relative;top:auto;width:100%;right:auto;padding:0}

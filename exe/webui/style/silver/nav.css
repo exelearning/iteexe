@@ -11,7 +11,7 @@ body{background:#DBDAD2}
 #main-wrapper{padding:10px 20px 0 250px}
 #main{width:100%}
 #content{padding-bottom:21px}
-#header,#emptyHeader{border-top:none;background:#D9D9CE}
+#header,#emptyHeader{border-top:none;background:#D9D9CE;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:220px}
 #nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.1em 0 .6em 0;border-bottom:2px solid #E5E4E0}
 /* Navigation */
@@ -66,6 +66,7 @@ html[xmlns] #content{display:block}
 @media all and (max-width: 780px) {
 	#siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
 	#main-wrapper,.no-nav #main-wrapper{padding:10px}
+	#header,#emptyHeader{padding-right:15px}
 	#siteNav{width:100%;float:none;padding-right:0}
 	#content{background-image:none}
 	#siteFooter,.no-nav #siteFooter{padding:0 10px;text-align:center}
