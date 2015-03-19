@@ -66,7 +66,7 @@ class WebServer:
         self.xliffimportpreferences = XliffImportPreferencesPage(self.root)
         self.dirtree     = DirTreePage(self.root)
         self.about       = AboutPage(self.root)
-        self.quit        = QuitPage(self.root)
+        self.quit        = QuitPage(self.root, self.config.configDir)
         self.iecmwaring  = IECMWarningPage(self.root)
         self.monitoring = False
 

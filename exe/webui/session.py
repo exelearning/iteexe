@@ -78,6 +78,8 @@ class eXeSession(server.Session):
         server.Session.__init__(self, *args, **kwargs)
         self.user = None
         self.packageStore = None
+        self.samlNameId = None
+        self.samlSessionIndex = None
 
     def setUser(self, name, picture=None):
         self.user = G.application.userStore.getUser(name)

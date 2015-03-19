@@ -58,6 +58,25 @@ def prepare_nevow_request(request):
     }
 
 
+class SLSPage(rend.Page):
+    def __init__(self, name, configDir):
+        self.configDir = configDir
+        rend.Page.__init__(self, name)
+
+    def renderHTTP(self, context):
+        request = inevow.IRequest(context)
+        req = prepare_nevow_request(request)
+        auth = init_saml_auth(req, self.configDir)
+        auth.process_slo()
+        errors = auth.get_errors()
+        if len(errors) == 0:
+            session = request.getSession()
+            session.user = None
+            return url.URL.fromString('%s://%s/quit' % (req['scheme'], req['http_host']))
+        request.setResponseCode(http.INTERNAL_SERVER_ERROR)
+        return auth.get_last_error_reason()
+
+
 class ACSPage(rend.Page):
     def __init__(self, name, configDir):
         self.configDir = configDir
@@ -72,6 +91,8 @@ class ACSPage(rend.Page):
         if len(errors) == 0 and auth.is_authenticated():
             attributes = auth.get_attributes()
             session = request.getSession()
+            session.samlNameId = auth.get_nameid()
+            session.samlSessionIndex = auth.get_session_index()
             session.setUser(attributes['email'][0], attributes.get('picture', [None])[0])
             return url.URL.fromString(req['post_data']['RelayState'])
         request.setResponseCode(http.INTERNAL_SERVER_ERROR)
@@ -88,6 +109,9 @@ class SAMLPage(rend.Page):
 
     def child_acs(self, context):
         return ACSPage('acs', self.configDir)
+
+    def child_sls(self, context):
+        return SLSPage('sls', self.configDir)
 
     def renderHTTP(self, context):
         request = inevow.IRequest(context)

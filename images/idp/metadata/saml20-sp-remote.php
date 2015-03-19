@@ -71,5 +71,8 @@ MIIDYTCCAkmgAwIBAgIJAJiTLubDiBvxMA0GCSqGSIb3DQEBCwUAMEcxCzAJBgNVBAYTAkVTMQ0wCwYD
   ),
   'nameid.encryption' => true,
   'validate.authnrequest' => true,
+  'sign.logout' => true,
+  'redirect.sign' => true,
+  'redirect.validate' => true,
   'saml20.sign.assertion' => true,
 );

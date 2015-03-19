@@ -10,9 +10,10 @@ body{font:12px/1.5 Tahoma,Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;
 h1{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 p{margin:0}
 #exe{width:720px;height:420px;margin:10px auto;position:absolute;margin:-210px 0 0 -360px;left:50%;top:50%}
-#closed{width:720px;height: 320px;position:absolute;top:10px;left:10px;padding:10px 0 10px 0;overflow:auto;background:url(../images/exit.png) no-repeat 50% 200px}
+#closed{width:720px;height: 400px;position:absolute;top:10px;left:10px;padding:10px 0 10px 0;overflow:auto;background:url(../images/exit.png) no-repeat 50% 200px}
 .a{background:url(../images/exe_logo.png) no-repeat 50% 0;padding-top:100px}
-.b{position:absolute;bottom:50px;display:block;width:100%}
+.b{position:absolute;bottom:130px;display:block;width:100%}
+.c{position:absolute;bottom:20px;display:block;width:100%}
 </style>
 </head>
 <body>
@@ -21,6 +22,7 @@ p{margin:0}
         <h1 nevow:render="title">eXe Closed</h1>
         <p class="a" nevow:render="msg1">eXe has finished running in this window.</p>
         <p class="b" nevow:render="msg2">You can close it safely.</p>
+        <p class="c" nevow:render="msg3"></p>
 	  </div>
 	</div>    
 </body>
