@@ -9,7 +9,6 @@ body{
 	background:#ffffff; /* Color de fondo del contenedor principal */
 }
 .pagination{
-	color:#fff; /* Color de texto del bloque Anterior/Siguiente: igual que el color de fondo de la página */
 	border-color:#999; /* Color de borde del bloque: borde superior */
 }
 .pagination a{
@@ -41,14 +40,12 @@ body{
 
 /* Otras definiciones */
 body{padding:0;text-align:center}
-#content{width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0;box-shadow:0 0 10px 0 #999;border-bottom-right-radius:8px;border-bottom-left-radius:8px}
+#content{width:985px;margin:0 auto 10px auto;padding-bottom:11px;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0;box-shadow:0 0 10px 0 #999;border-bottom-right-radius:8px;border-bottom-left-radius:8px}
 #main-wrapper{width:735px;float:right}
 #main{padding:10px 20px 0 0}
 .no-nav #main-wrapper{width:100%}
 .no-nav #main{padding-left:20px}
-#content{padding-bottom:11px}
 #header,#emptyHeader{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px}
-* html #header,* html #emptyHeader{height:110px} /* IE6 */
 #nodeTitle{position:absolute;top:55px;left:250px;font-size:1.6em;margin:20px 10px 0 0}
 #main #nodeDecoration{background:none;padding:0 10px;border:none}
 /* Menú */
@@ -60,15 +57,16 @@ body{padding:0;text-align:center}
 #siteNav a.main-node:hover{text-decoration:underline;background:none}
 #siteNav ul ul a{padding-left:25px;font-size:.95em}
 #siteNav ul ul ul a{padding-left:50px}
-#siteFooter{padding-left:20px}
+#siteFooter{padding:10px 20px 0 20px}
 /* Pagination */
-.pagination{border-style:dotted;border-width:1px 0 0 0;padding-top:10px;text-align:right}
-.pagination a{padding:4px 7px;border-radius:5px}
+.pagination{border-style:dotted;border-width:1px 0 0 0;padding-top:12px;text-align:right}
+.pagination .sep{display:none}
+.pagination a{padding:4px 7px;border-radius:5px;margin-left:10px}
 .pagination a:hover,.pagination a:focus{text-decoration:none}
 #topPagination{position:absolute;top:0;right:20px}
 #topPagination .pagination{border:none}
-#bottomPagination{padding:0 20px;clear:both}
-.js #bottomPagination{margin-top:15px}
+#bottomPagination{padding:0 20px 2px 20px;clear:both}
+/* .js #bottomPagination{margin-top:15px} */
 /* Pie de página e iDevices */
 .iDeviceTitle{vertical-align:top}
 /* Autoclear */
@@ -78,59 +76,66 @@ html[xmlns] #content{display:block}
 * html #content{height: 1%;overflow:visible}
 
 /* Hide/Show/Skip navigation */
-#nav-toggler{margin:0;position:absolute;top:10px;left:10px}
+#nav-toggler{margin:0;position:absolute;top:10px;left:20px}
 #nav-toggler a,#skipNav a{background:#e6e9ed;color:#FF1E00;padding:4px 7px;border-radius:5px}
 #nav-toggler a:hover,#nav-toggler a:focus{background-color:#cfd9ea;color:#263264;text-decoration:none}
 #skipNav{z-index:100px;padding-top:10px;text-align:center}
 
+/* IE6 */
+* html body{padding-bottom:20px}
+* html #main{width:auto}
+* html #siteNav a{width:214px}
+* html #siteNav ul ul a{width:199px}
+* html #siteNav ul ul ul a{width:174px}
+
 @media screen and (min-width: 701px) and (max-width: 1015px) {
-    /* Fullsreen mode */
-    #content{border:none;width:100%;box-shadow:none}
-    #header,#emptyHeader{background-image:url(my_header_fullscreen.jpg)}
-    /* Horizontal navigation */
-    #main-wrapper{width:100%}
+	/* Fullsreen mode */
+	#content{border:none;width:100%;box-shadow:none}
+	#header,#emptyHeader{background-image:url(my_header_fullscreen.jpg)}
+	/* Horizontal navigation */
+	#main-wrapper{width:100%}
 	#main,.no-nav #main{padding:0 20px}
-    #nodeTitle{left:20px}
-    #header{text-align:right;padding-right:20px}
-    #siteFooter{padding-left:20px}
-    #siteNav li:hover,#siteNav li.sfhover{background:#E2E6E9}
-    #siteNav .other-section{display:block}
-    #siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
-    #siteNav,#siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;border-color:#E2E6E9;margin:0;line-height:1.2em;background:#fff}
-    #siteNav ul ul{line-height:1.1em}
-    #siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none}
-    #siteNav a{display:block;text-decoration:none;padding:.4em 20px;border:none}
-    #siteNav ul ul .daddy{background:url(my_nav_arrow.gif) no-repeat right 50%}
-    #siteNav li{float:left}
-    #siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}
-    * html #siteNav li ul{width:13em}
-    #siteNav li li{padding-right:1em;width:13em}
-    #siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px}
-    #siteNav li ul ul{margin:-1.95em 0 0 14em}
-    * html #siteNav li ul ul{margin-left:13em}
-    #siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
-    #siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
-    #toggle-nav{display:none}
+	#nodeTitle{left:20px}
+	#header{text-align:right;padding-right:20px}
+	#siteFooter{padding-left:20px}
+	#siteNav li:hover,#siteNav li.sfhover{background:#E2E6E9}
+	#siteNav .other-section{display:block}
+	#siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
+	#siteNav,#siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;border-color:#E2E6E9;margin:0;line-height:1.2em;background:#fff}
+	#siteNav ul ul{line-height:1.1em}
+	#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none}
+	#siteNav a{display:block;text-decoration:none;padding:.4em 20px;border:none}
+	#siteNav ul ul .daddy{background:url(my_nav_arrow.gif) no-repeat right 50%}
+	#siteNav li{float:left}
+	#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}
+	* html #siteNav li ul{width:13em}
+	#siteNav li li{padding-right:1em;width:13em}
+	#siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px}
+	#siteNav li ul ul{margin:-1.95em 0 0 14em}
+	* html #siteNav li ul ul{margin-left:13em}
+	#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
+	#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
+	#toggle-nav{display:none}
 }
 
 @media all and (max-width: 700px) {
-    #content{width:100%;border:0;box-shadow:none}
-    #userOptionsBar,#topPagination{display:none}
-    #siteNav{float:none;width:100%;padding:0}
-    #siteNav{line-height:1.5em}
-    #main-wrapper{width:100%}    
-    #main,.no-nav #main{padding:0 10px}	
-    #header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px;font-size:1em}
-    #nodeTitle{position:absolute;top:1px;left:10px;font-size:1.4em}
-    #header{text-align:right;padding-right:10px}
-    #siteFooter{padding-left:10px}
-    #bottomPagination{padding:0 10px}
-    #content .exe-col{float:none;width:100%;padding:0}
-    iframe,object,embed{max-width:100%}
-    img,video{max-width:100%;height:auto}
-    .pagination{text-align:center;height:35px;position:relative}
-    .pagination .prev{position:absolute;left:0}
-    .pagination .next{position:absolute;right:0}
-    #nav-toggler{position:relative;top:0;left:0;margin:10px 10px 5px 10px;text-align:center}
-    #nav-toggler a{width:100%;display:block;padding:4px 0}
+	#content{width:100%;border:0;box-shadow:none}
+	#userOptionsBar,#topPagination{display:none}
+	#siteNav{float:none;width:100%;padding:0}
+	#siteNav{line-height:1.5em}
+	#main-wrapper{width:100%}    
+	#main,.no-nav #main{padding:0 10px}	
+	#header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px;font-size:1em}
+	#nodeTitle{position:absolute;top:1px;left:10px;font-size:1.4em}
+	#header{text-align:right;padding-right:10px}
+	#siteFooter{padding-left:10px}
+	#bottomPagination{padding:0 10px}
+	#content .exe-col{float:none;width:100%;padding:0}
+	iframe,object,embed{max-width:100%}
+	img,video{max-width:100%;height:auto}
+	.pagination{text-align:center;height:35px;position:relative}
+	.pagination .prev{position:absolute;left:0;margin-left:0}
+	.pagination .next{position:absolute;right:0}
+	#nav-toggler{position:relative;top:0;left:0;margin:10px 10px 5px 10px;text-align:center}
+	#nav-toggler a{width:100%;display:block;padding:4px 0}
 }

@@ -27,8 +27,9 @@ body{padding:0;text-align:center;background:#fafafa url(_em_fondo_pagina.gif)}
 #siteNav .other-section{display:none}
 #siteNav ul ul ul a{padding-left:50px}
 /* Pagination */
-.pagination{border-top:1px solid #f3f3f3;padding-top:20px;text-align:right;color:#fff}
-.pagination a{padding:4px 6px;border-radius:5px;background-color:#f3f3f3;color:#DB0B00;box-shadow:0 0 3px 0 #ccc;margin-left:10px}
+.pagination{border-top:1px solid #f3f3f3;padding-top:20px;text-align:right}
+.pagination .sep{display:none}
+.pagination a{padding:4px 6px;border-radius:5px;background-color:#f3f3f3;color:#DB0B00;box-shadow:0 0 3px 0 #ccc;margin-left:20px}
 .pagination a:hover,.pagination a:focus,#topPagination .pagination a:hover,#topPagination .pagination a:focus{text-decoration:none;background-color:#DB0B00;color:#fff}
 #topPagination{position:absolute;top:7px;width:100%;right:20px}
 #topPagination a{background:#fff;box-shadow:0 0 3px 0 #ddd}
@@ -41,6 +42,13 @@ body{padding:0;text-align:center;background:#fafafa url(_em_fondo_pagina.gif)}
 #content{display:inline-block}
 html[xmlns] #content{display:block}
 * html #content{height: 1%;overflow:visible}
+
+/* IE6 */
+* html body{padding-bottom:20px}
+* html #main{width:auto}
+* html #siteNav a{width:220px}
+* html #siteNav ul ul a{width:205px}
+* html #siteNav ul ul ul a{width:180px}
 
 #nav-toggler{margin:0;position:absolute;top:7.7em;right:20px}
 #nav-toggler a{display:block;width:11px;height:11px;background:url(_em_max_min.gif) no-repeat 0 0;outline:none}
@@ -74,24 +82,24 @@ html[xmlns] #content{display:block}
 }
 
 @media all and (max-width: 700px) {
-    body{background:#fff}
+	body{background:#fff}
 	#content{width:100%;background:#fff;border:none;box-shadow:none;margin:0}
-    #topPagination{display:none}
-    #bottomPagination,.no-nav #bottomPagination{padding:0 10px}
-    #siteNav{float:none;width:100%;padding:0}
-    #main-wrapper,.no-nav #main-wrapper{padding:0 10px}
-    #nodeTitle{margin-top:.5em}
+	#topPagination{display:none}
+	#bottomPagination,.no-nav #bottomPagination{padding:0 10px}
+	#siteNav{float:none;width:100%;padding:0}
+	#main-wrapper,.no-nav #main-wrapper{padding:0 10px}
+	#nodeTitle{margin-top:.5em}
 	#siteFooter,.no-nav #siteFooter{padding:15px 10px 0 10px}
-    #content .exe-col{float:none;width:100%;padding:0}
-    iframe,object,embed{max-width:100%}
-    img,video{max-width:100%;height:auto}
-    .pagination{text-align:center;height:35px;position:relative}
+	#content .exe-col{float:none;width:100%;padding:0}
+	iframe,object,embed{max-width:100%}
+	img,video{max-width:100%;height:auto}
+	.pagination{text-align:center;height:35px;position:relative}
 	.pagination a{padding:3px 6px}
-    .pagination .prev{position:absolute;left:0;margin:0}
-    .pagination .next{position:absolute;right:0}
+	.pagination .prev{position:absolute;left:0;margin:0}
+	.pagination .next{position:absolute;right:0}
 	#nav-toggler span{position:static;overflow:visible;clip:auto;height:auto} /* Reset */
-    #nav-toggler{position:relative;top:0;left:0;margin:0;text-align:center}
-    #nav-toggler a{width:100%;height:auto;background:none;background:#F9F9F9;color:#333;border-bottom:1px solid #e3e3e3;line-height:2.3em;font-weight:bold;letter-spacing:1px}
+	#nav-toggler{position:relative;top:0;left:0;margin:0;text-align:center}
+	#nav-toggler a{width:100%;height:auto;background:none;background:#F9F9F9;color:#333;border-bottom:1px solid #e3e3e3;line-height:2.3em;font-weight:bold;letter-spacing:1px}
 	#nav-toggler a:hover{background:#F0F0F0;text-decoration:none;text-shadow:1px 1px 1px #fff}		
 	#nav-toggler a:focus{text-decoration:none}
 }
