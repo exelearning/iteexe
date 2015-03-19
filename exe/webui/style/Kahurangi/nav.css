@@ -2,9 +2,11 @@
 Copyright University of Auckland 2004
 Created by Brent Simpson, brent.simpson@auckland.ac.nz
 Centre for Flexible and Distance Learning
-Modified by eXeLearning.net
+
+Modified by Ignacio Gros for eXeLearning.net
+See Help - eXe Tutorial for more info on how to modify this style for your needs.
 */
-#content{width:100%;position:relative;padding-bottom:10px;min-width:985px;border:1px solid #FFFFFF;border-radius:5px;background:url(_kahurangi_white.gif) repeat-y 229px 0}
+#content{width:100%;position:relative;padding-bottom:10px;min-width:380px;border:1px solid #FFFFFF;border-radius:5px;background:url(_kahurangi_white.gif) repeat-y 229px 0}
 #main-wrapper{padding:10px 20px 0 250px}
 #main{width:100%}
 #content{padding-bottom:21px}
@@ -33,7 +35,6 @@ Modified by eXeLearning.net
 .pagination{border-top:1px solid #FFFFFF;padding-top:20px;text-align:right;color:#263264}
 .pagination a{padding:0;margin:0 5px;color:#263264}
 #topPagination{position:absolute;top:-2px;width:100%;right:20px}
-#topPagination .prev{margin-left:20px}
 #topPagination .pagination{border:none}
 #bottomPagination{padding:0 20px 0 250px}
 /* Autoclear */
@@ -41,3 +42,38 @@ Modified by eXeLearning.net
 #content{display:inline-block}
 html[xmlns] #content{display:block}
 * html #content{height: 1%;overflow:visible}
+
+/* No menu */
+.no-nav #main-wrapper,.no-nav #bottomPagination,.no-nav #siteFooter{padding-left:20px}
+.no-nav #content{background-image:none}
+
+/* IE6 */
+* html #main{width:auto}
+* html #siteNav a{width:203px}
+* html #siteNav ul ul a{width:193px}
+* html #siteNav ul ul ul a{width:183px}
+
+/* Responsive design */
+@media all and (max-width: 980px) {
+	body{padding:0}
+	#content{border:none;background-position:199px 0}
+	#main-wrapper,#bottomPagination,#siteFooter{padding-left:220px}
+	#siteNav{width:200px}
+}
+@media all and (max-width: 780px) {
+	#siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
+	#main-wrapper,.no-nav #main-wrapper{padding:10px}
+	#siteNav{width:100%;float:none;padding-right:0}
+	#content{background-image:none}
+	#siteFooter,.no-nav #siteFooter{padding:0 10px;text-align:center}
+	.pagination{font-weight:bold;font-size:1.1em}
+	.pagination .sep{display:none}
+	#topPagination{position:relative;top:auto;width:100%;right:auto;padding:0}
+	#topPagination .pagination{padding:0;text-align:center;background:#5C6D84;border-bottom:1px solid #fff}
+	#topPagination .prev,#topPagination .next{display:none}
+	#bottomPagination,.no-nav #bottomPagination{position:relative;padding:0 10px 15px 10px}
+	#bottomPagination .prev{position:absolute;left:10px;margin-left:0}
+	#nav-toggler a,#nav-toggler a:focus{display:inline-block;padding:4px;width:80%;color:#fff;font-variant:small-caps;letter-spacing:1px;outline:none;text-decoration:none}
+	iframe,object,embed{max-width:100%}
+	img,video{max-width:100%;height:auto}
+}
