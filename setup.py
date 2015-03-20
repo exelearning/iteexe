@@ -10,10 +10,10 @@ from setuptools import setup
 from exe.engine import version
 
 g_files = {'/usr/share/exe': ["README",
-                              "COPYING",
-                              "NEWS",
-                              "ChangeLog",
-                              "exe/webui/mr_x.gif"],
+                              "NEWS",             # Files still called from Help menu
+                              "COPYING",          # to be moved to .../doc or removed
+                              "ChangeLog"],
+           # '/usr/share/doc/intef-exe': ["exe/webui/mr_x.gif"],
            '/usr/share/applications': ["exe.desktop"],
            '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
            '/usr/share/pixmaps': ["exe.xpm"]
@@ -44,21 +44,24 @@ def dataFiles(dirs, excludes=[]):
             elif os.path.isdir(file) and file not in excludes:
                 dataFiles(glob.glob(file + "/*"), excludes)
 
+# jrf - task 1080, the manual is no longer included
 dataFiles(["exe/webui/style",
            "exe/webui/css",
-           "exe/webui/docs",
+           # "exe/webui/docs",
            "exe/webui/images",
            "exe/webui/schemas",
            "exe/webui/scripts",
            "exe/webui/templates"],
           excludes=["exe/webui/templates/mimetex-darwin.cgi",
-                    "exe/webui/templates/mimetex.exe"])
+                    "exe/webui/templates/mimetex.exe",
+                    "exe/webui/docs/credits.xhtml"])
 
 g_oldBase = "exe"
 g_newBase = "/usr/share/exe"
 dataFiles(["exe/mediaprofiles"])
 
-# jrf - to comply with the FHS
+# jrf - bug 2402, to comply with the FHS
+# locales
 # g_oldBase = "exe"
 # g_newBase = "/usr/share/exe"
 g_oldBase = "exe/locale"
@@ -73,10 +76,12 @@ exc.sort()
 dataFiles(["exe/locale"],
           excludes=exc)
 
+# Python libraries (we should be using the installed versions)
 g_oldBase = ""
 g_newBase = "/usr/share/exe"
 dataFiles(["twisted", "nevow", "formless"])
 
+# Javascript section
 g_oldBase = "exe/jsui"
 g_newBase = "/usr/share/exe"
 dataFiles(["exe/jsui/scripts",
