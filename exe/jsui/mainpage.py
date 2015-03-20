@@ -199,7 +199,6 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
         setUpHandler(self.handleReload,          'reload')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
-        setUpHandler(self.handleStyleDownload,   'styleDownload')
 
         
         #For the new ExtJS 4.0 interface
@@ -211,6 +210,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.outlinePane.handleUp, 'UpNode')
         setUpHandler(self.outlinePane.handleDown, 'DownNode')
         setUpHandler(self.handleCreateDir, 'CreateDir')
+        setUpHandler(self.handleOverwriteLocalStyle, 'overwriteLocalStyle')
 
         self.idevicePane.client = client
         self.styleMenu.client = client
@@ -387,32 +387,13 @@ class MainPage(RenderableLivePage):
 
         d.addCallback(successDownload)
 
-    def handleStyleDownload(self, client, url):
+    def handleOverwriteLocalStyle(self, client, style_dir, downloaded_file):
         """
-        Download style from url and import into styles directory
-
-        TODO: This handler would make more sense in the StyleManagerPage class, move there
+        Delete locally installed style and import new version from URL
         """
-        log.debug("Download style from %s" % url)
-        client.sendScript('Ext.MessageBox.progress("Style Download", "Connecting to style URL...")')
-        d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
-
-        def successDownload(result):
-            filename = result[0]
-            try:
-                log.debug(filename)
-                stylemanager = StyleManagerPage(self)
-                stylemanager.client = client
-                try :
-                    stylemanager.doImportStyle(filename)
-                    client.sendScript('Ext.MessageBox.updateProgress(1, "100%", "Success!")')
-                except Exception, e :
-                    self.alert(_(u'Error'), _(u'Error while installing style: %s') % str(e))
-                
-            finally:
-                Path(filename).remove()
-
-        d.addCallback(successDownload)
+        stylemanager = StyleManagerPage(self)
+        stylemanager.client = client
+        stylemanager.overwriteLocalStyle(style_dir, downloaded_file)
 
     def handleReload(self, client):
         self.location_buttons.updateText()

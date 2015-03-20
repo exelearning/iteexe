@@ -46,6 +46,21 @@ class ImportStyleError(Exception):
     pass
 
 
+class ImportStyleExistsError(ImportStyleError):
+    def __init__(self, local_style, absolute_style_dir, message=''):
+        self.local_style = local_style
+        self.absolute_style_dir = absolute_style_dir
+        if message == '':
+            self.message = u'Error importing style, local style already exists. '
+        else:
+            self.message = message
+
+    def __str__(self):
+        return repr(self.message)
+
+    pass
+
+
 class StyleManagerPage(RenderableResource):
     """
     The StyleManagerPage is responsible for managing styles
@@ -205,9 +220,10 @@ class StyleManagerPage(RenderableResource):
         try:
             sourceZip = ZipFile(filename, 'r')
         except IOError:
-            raise Exception('Can not create dom object')
+            raise ImportStyleError('Can not create dom object')
         if os.path.isdir(absoluteTargetDir):
-            raise Exception(u'Style directory already exists')
+            style = Style(absoluteTargetDir)
+            raise ImportStyleExistsError(style, absoluteTargetDir, u'Style directory already exists')
         else:
             os.mkdir(absoluteTargetDir)
             for name in sourceZip.namelist():
@@ -217,10 +233,10 @@ class StyleManagerPage(RenderableResource):
             if style.isValid():
                 if not self.config.styleStore.addStyle(style):
                     absoluteTargetDir.rmtree()
-                    raise Exception(u'The style name already exists')
+                    raise ImportStyleExistsError(style, absoluteTargetDir, u'The style name already exists')
             else:
                 absoluteTargetDir.rmtree()
-                raise Exception(u'Incorrect style format (does not include content.css')
+                raise ImportStyleError(u'Incorrect style format (does not include content.css')
 
         # If not error was thrown, style was successfully imported
         # Let the calling function inform the user as appropriate
@@ -262,26 +278,74 @@ class StyleManagerPage(RenderableResource):
         except Exception, e:
             errorStylesList(str(e))
 
+    def overwriteLocalStyle(self, style_dir, filename):
+        """ Overwrites an already installed style with a new version from file """
+        log.debug(u"Overwriting style %s with style from %s" % (style_dir, filename))
+        try:
+            # Delete local style
+            style_path = Path(style_dir)
+            styleDelete = Style(style_path)
+            self.__deleteStyle(styleDelete)
+            # Import downloaded style
+            self.doImportStyle(filename)
+            self.client.sendScript("Ext.MessageBox.alert('Correct', 'Style updated correctly')")
+        except:
+            self.client.sendScript("Ext.MessageBox.alert('Error', 'An unexpected error has occurred')")
+
     def doStyleImportURL(self, url, style_name=''):
         """ Download style from url and import into styles directory """
         def successDownload(result):
             filename = result[0]
             try:
-                log.debug("Installing style %s from %s"
-                          % (style_name, filename))
+                log.debug("Installing style %s from %s" % (style_name, filename))
                 self.doImportStyle(filename)
                 self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(%s, \'%s\')'
                                        % (json.dumps(self.rep_styles), style_name))
                 self.alert(_(u'Success'),
                            _(u'Style successfully downloaded and installed'))
+                Path(filename).remove()
+            except ImportStyleExistsError, e:
+                # This might retry installation from already downloaded file, do not delete
+                warnLocalStyleExists(e.absolute_style_dir, filename)
+
             except Exception, e:
-                log.error("Error when installing style %s from %s: %s"
-                          % (style_name, filename, str(e)))
+                log.error("Error when installing style %s from %s: %s" % (style_name, filename, str(e)))
                 self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(%s, \'%s\')'
                                        % (json.dumps(self.rep_styles), style_name))
                 self.alert(_(u'Error'), _(u'Error while installing style'))
-            finally:
                 Path(filename).remove()
+
+        def warnLocalStyleExists(style_dir, downloaded_file):
+            """ Shows confirmation dialog box to the user, before triggering the overwriteLocaStyle event
+
+            A local version of this style is already installed, so a confirm dialog box must be shown to the user,
+            asking if the remote style should overwrite the local one.
+            1. 'Ext.Msg.confirm' shows such dialog. Accepts a callback parameter, that will be triggered when the
+               user clicks ANY button: yes, no or close
+            2. That callback will be a lambda function, that will trigger a different importing event in eXe's
+               engine (nevow_clientToServerEvent(...))
+            3. nevow_clientToServerEvent() must pass back to the engine the data needed to delete and reinstall
+               this style (local style name directory and downloaded file)
+            4. 'overwriteLocalStyle' event will be handled by MainPage::handleOverwriteLocalStyle, and will delete
+               local style before importing the downloaded one
+            """
+            # 1. Ext.Msg.confirm title and description
+            title = _(u'Overwrite local version of this style?')
+            message = (
+                _(u'Style already exists. ')
+              + _(u'Importing this style will overwrite local style, this action cannot be undone. ')
+              + _(u'Are you sure you want to install remote style?. ')
+            )
+
+            # 3. Prepare nevow_clientToServerEvent call, with local and remote styles info
+            trigger_overwrite = ("nevow_clientToServerEvent('overwriteLocalStyle', this, '', '%s', '%s')"
+                        % (style_dir, downloaded_file))
+
+            # 2. Ext.Msg.confirm callback function. Checks the button clicked before sending event to server
+            callback = ("function(btn) {console.log(btn);if (btn == 'yes') {%s;}}" % (trigger_overwrite))
+
+            # 1. Show dialog box to user
+            self.client.sendScript("Ext.Msg.confirm('%s', '%s', %s)" % (title, message, callback))
 
         def errorDownload(value):
             log.error("Error when downloading style from %s: %s" % (url, str(value)))
@@ -400,22 +464,22 @@ class StyleManagerPage(RenderableResource):
         self.action = ""
 
     def doDeleteStyle(self, style):
-        styleDir = self.config.stylesDir
-        styleDelete = Style(styleDir / style)
-        self.__deleteStyle(styleDelete)
-
-    def __deleteStyle(self, style):
-        """ Deletes the given style from local installation """
-        log.debug("delete style")
         try:
-            shutil.rmtree(style.get_style_dir())
-            self.config.styleStore.delStyle(style)
-            log.debug("delete style: %s" % style.get_name())
+            styleDir = self.config.stylesDir
+            styleDelete = Style(styleDir / style)
+            self.__deleteStyle(styleDelete)
             self.alert(_(u'Correct'), _(u'Style deleted correctly'))
             self.reloadPanel('doList')
         except:
             self.alert(_(u'Error'), _(u'An unexpected error has occurred'))
         self.action = ""
+
+    def __deleteStyle(self, style):
+        """ Deletes the given style from local installation """
+        log.debug("delete style")
+        shutil.rmtree(style.get_style_dir())
+        self.config.styleStore.delStyle(style)
+        log.debug("delete style: %s" % style.get_name())
 
     def doPropertiesStyle(self, style):
         styleDir = self.config.stylesDir
