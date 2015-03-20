@@ -237,7 +237,7 @@ class MainPage(RenderableLivePage):
         return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")
 
     def render_extjslang(self, ctx, data):
-        return ctx.tag(src="../jsui/extjs/locale/ext-lang-" + unicode(G.application.config.locale) + ".js")
+        return ctx.tag(src="../jsui/extjs/packages/ext-locale/build/ext-locale-" + unicode(G.application.config.locale) + ".js")
 
     def render_htmllang(self, ctx, data):
         lang = G.application.config.locale.replace('_', '-').split('@')[0]

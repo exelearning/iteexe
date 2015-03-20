@@ -35,7 +35,7 @@ Ext.define('eXe.view.ui.button', {
             }
         }
 
-        me.callParent();
+        me.callParent(arguments);
     }
 });
 
@@ -47,7 +47,8 @@ Ext.define('eXe.view.ui.menuitem', {
 
     beforeRender: function() {
         var me = this, pat, rep, key, keymap;
-
+        
+        
         if (me.accesskey) {
             pat = new RegExp(me.accesskey,'i');
             key = pat.exec(me.text);
@@ -55,6 +56,8 @@ Ext.define('eXe.view.ui.menuitem', {
 	            rep = "<u>" + key + "</u>";
 	            me.text = me.text.replace(pat, rep);
             }
+            
+            /*
 	        keymap = new Ext.util.KeyMap({
 	            target: me.up().el,
 	            binding: {
@@ -71,8 +74,9 @@ Ext.define('eXe.view.ui.menuitem', {
 	                defaultEventAction: 'stopEvent'
 	            }
 	        });
+	        */
         }
-        me.callParent();
+        me.callParent(arguments);
     }
 });
 
@@ -82,7 +86,31 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 
     initComponent: function() {
         var me = this;
-
+        
+        /*
+        Ext.applyIf(me, {
+            items: [
+                {
+                    xtype: 'accesskey_button',
+                    text: _('File'),
+                    itemId: 'file',
+                    accesskey: 'f',
+                    menu: {
+                        xtype: 'menu',
+                        items: [
+                            {
+                                xtype: 'menuitem',
+                                text: _('New'),
+                                accesskey: 'n',
+                                //tooltip: 'Ctrl+Alt+N',
+                                itemId: 'file_new'
+                            }
+                        ]
+                    }
+                }
+            ]});
+        */
+        
         Ext.applyIf(me, {
             items: [
                 {
@@ -100,6 +128,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 tooltip: 'Ctrl+Alt+N',
                                 itemId: 'file_new'
                             },
+                            
                             {
                                 xtype: 'accesskey_menuitem',
                                 text: _('New Window'),
@@ -337,9 +366,11 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 tooltip: 'Ctrl+Q',
                                 text: _('Quit')
                             }
+                            
                         ]
                     }
                 },
+                
                 {
                     xtype: 'accesskey_button',
                     text: _('Tools'),
@@ -460,9 +491,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                         ]
                     }
                 }
+                
             ]
         });
-
-        me.callParent(arguments);
+		
+        
+        //me.callParent(arguments);
+        this.callSuper(arguments);
     }
 });

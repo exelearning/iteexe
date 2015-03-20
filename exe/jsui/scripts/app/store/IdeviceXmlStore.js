@@ -31,12 +31,12 @@ Ext.define('eXe.store.IdeviceXmlStore', {
                 url: 'idevicePane', //Modified on beforeload
                 reader: {
                     type: 'xml',
-                    root: 'idevices',
+                    rootProperty: 'idevices',
                     record: 'idevice'
                 },
                 writer: {
                 	type: 'json',
-                	root: 'idevices',
+                	rootProperty: 'idevices',
                 	encode: true
                 }
             },

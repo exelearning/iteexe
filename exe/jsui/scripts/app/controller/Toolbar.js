@@ -172,7 +172,7 @@ Ext.define('eXe.controller.Toolbar', {
         
         this.keymap_config = [
 			{
-				key: Ext.EventObject.N,
+				key: Ext.event.Event.N,
 				ctrl: true,
                 alt: true,
 				handler: function() {
@@ -182,7 +182,7 @@ Ext.define('eXe.controller.Toolbar', {
 				defaultEventAction: "stopEvent"
 			},
 			{
-				key: Ext.EventObject.W,
+				key: Ext.event.Event.W,
 				ctrl: true,
                 alt: true,
 				handler: function() {
@@ -192,7 +192,7 @@ Ext.define('eXe.controller.Toolbar', {
 				defaultEventAction: "stopEvent"
 			},
 			{
-			     key: Ext.EventObject.O,
+			     key: Ext.event.Event.O,
 			     ctrl: true,
 			     handler: function() {
 			          this.fileOpen();
@@ -201,7 +201,7 @@ Ext.define('eXe.controller.Toolbar', {
 			     defaultEventAction: "stopEvent"
 			},
 			{
-				key: Ext.EventObject.S,
+				key: Ext.event.Event.S,
 				ctrl: true,
 				handler: function() {
 				 this.fileSave();
@@ -210,7 +210,7 @@ Ext.define('eXe.controller.Toolbar', {
 				defaultEventAction: "stopEvent"
 			},
 			{
-			     key: Ext.EventObject.P,
+			     key: Ext.event.Event.P,
 			     ctrl: true,
 			     handler: function() {
 			          this.filePrint();
@@ -219,7 +219,7 @@ Ext.define('eXe.controller.Toolbar', {
 			     defaultEventAction: "stopEvent"
 			},
 			{
-			     key: Ext.EventObject.Q,
+			     key: Ext.event.Event.Q,
 			     ctrl: true,
 			     handler: function() {
 			          this.fileQuit();
@@ -228,7 +228,7 @@ Ext.define('eXe.controller.Toolbar', {
 			     defaultEventAction: "stopEvent"
 			},
 			{
-			     key: Ext.EventObject.F,
+			     key: Ext.event.Event.F,
 			     alt: true,
 			     handler: function() {
 			          this.showMenu(Ext.ComponentQuery.query('#file')[0]);
@@ -237,7 +237,7 @@ Ext.define('eXe.controller.Toolbar', {
 			     defaultEventAction: "stopEvent"
 			},
 			{
-			     key: Ext.EventObject.T,
+			     key: Ext.event.Event.T,
 			     alt: true,
 			     handler: function() {
 			          this.showMenu(Ext.ComponentQuery.query('#tools')[0]);
@@ -246,7 +246,7 @@ Ext.define('eXe.controller.Toolbar', {
 			     defaultEventAction: "stopEvent"
 			},
 			{
-			     key: Ext.EventObject.S,
+			     key: Ext.event.Event.S,
 			     alt: true,
 			     handler: function() {
 			          this.showMenu(Ext.ComponentQuery.query('#styles_button')[0]);
@@ -255,7 +255,7 @@ Ext.define('eXe.controller.Toolbar', {
 			     defaultEventAction: "stopEvent"
 			},
 			{
-			     key: Ext.EventObject.H,
+			     key: Ext.event.Event.H,
 			     alt: true,
 			     handler: function() {
 			          this.showMenu(Ext.ComponentQuery.query('#help')[0]);
@@ -264,7 +264,7 @@ Ext.define('eXe.controller.Toolbar', {
 			     defaultEventAction: "stopEvent"
 			},
             {
-	            key: Ext.EventObject.F5,
+	            key: Ext.event.Event.F5,
 	            handler: function() {
 	                 this.toolsRefresh();
 	            },

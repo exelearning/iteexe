@@ -55,7 +55,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									url: 'preferences',
 									reader: {
 										type: 'json',
-										root: 'locales'
+										rootProperty: 'locales'
 									}
 								},
 								autoLoad: true
@@ -86,7 +86,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 											url: 'preferences',
 											reader: {
 												type: 'json',
-												root: 'browsers'
+												rootProperty: 'browsers'
 											}
 										},
 										autoLoad: true

@@ -56,10 +56,11 @@ Ext.define('eXe.store.filepicker.File', {
         extraParams:{ action:"getdircontents" },
 		reader: {
 			type: "json",
-			root: "items",
+			rootProperty: "items",
 			totalProperty: "totalCount"
 		}
     },
+    /* ExtJS Upgrade: Check if this is the cause of an error message
     getSorter: function(name, direction) {
     	return sorterFNS;
     },
@@ -69,7 +70,8 @@ Ext.define('eXe.store.filepicker.File', {
     		direction: "ASC",
     		sorterFn: sorterFNS
     	}
-    ],
+    ],*/
+    
     listeners: {
         load: {
             fn: function(store, records, successful) {

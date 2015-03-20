@@ -34,7 +34,7 @@ Ext.define('eXe.store.OutlineXmlTreeStore', {
                 url: 'outlinePane', //Modified on beforeload
                 reader: {
                     type: 'xml',
-                    root: 'nodes',
+                    rootProperty: 'nodes',
                     record: 'node'
                 }
             }

@@ -71,8 +71,9 @@ Ext.define('eXe.controller.Outline', {
         });
         
         var keymap = new Ext.util.KeyMap(Ext.getBody(), [
+             
 	        {
-               	 key: Ext.EventObject.INSERT,
+               	 key: Ext.event.Event.INSERT,
 		    	 handler: function() {
 		    		 this.onNodeAdd();
 		    	 },
@@ -81,7 +82,7 @@ Ext.define('eXe.controller.Outline', {
 		    	 defaultEventAction: "stopEvent"
 		     },
 		     {
-		    	 key: Ext.EventObject.DELETE,
+		    	 key: Ext.event.Event.DELETE,
 		    	 handler: function() {
 		    		 this.onNodeDel();
 		    	 },
@@ -90,7 +91,7 @@ Ext.define('eXe.controller.Outline', {
 		    	 defaultEventAction: "stopEvent"
 		     },
 		     {
-		    	 key: Ext.EventObject.R,
+		    	 key: Ext.event.Event.R,
                  ctrl: true,
 		    	 handler: function() {
 		    		 this.onNodeRename();
@@ -99,7 +100,7 @@ Ext.define('eXe.controller.Outline', {
 		    	 defaultEventAction: "stopEvent"
 		     },
 		     {
-		    	 key: Ext.EventObject.UP,
+		    	 key: Ext.event.Event.UP,
                  ctrl: true,
 		    	 handler: function() {
 		    		 this.nodeAction('PromoteNode');
@@ -108,7 +109,7 @@ Ext.define('eXe.controller.Outline', {
 		    	 defaultEventAction: "stopEvent"
 		     },
 		     {
-		    	 key: Ext.EventObject.DOWN,
+		    	 key: Ext.event.Event.DOWN,
                  ctrl: true,
 		    	 handler: function() {
 		    		 this.nodeAction('DemoteNode');
@@ -117,7 +118,7 @@ Ext.define('eXe.controller.Outline', {
 		    	 defaultEventAction: "stopEvent"
 		     },
 		     {
-		    	 key: Ext.EventObject.U,
+		    	 key: Ext.event.Event.U,
                  ctrl: true,
 		    	 handler: function() {
 		    		 this.nodeAction('UpNode');
@@ -126,7 +127,7 @@ Ext.define('eXe.controller.Outline', {
 		    	 defaultEventAction: "stopEvent"
 		     },
 		     {
-		    	 key: Ext.EventObject.D,
+		    	 key: Ext.event.Event.D,
                  ctrl: true,
 		    	 handler: function() {
 		    		 this.nodeAction('DownNode');

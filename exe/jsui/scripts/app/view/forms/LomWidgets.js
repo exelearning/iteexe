@@ -497,7 +497,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 			        reader: {
 			        	idProperty: 'identifier',
 			        	successProperty: 'success',
-			            root: 'data',
+			            rootProperty: 'data',
 			            type: 'json'
 			        }
 			    },
