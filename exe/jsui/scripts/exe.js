@@ -32,24 +32,6 @@ Ext.Loader.setConfig({
     }
 });
 
-var conf = {
-	/*
-    onRender: function() {
-        var me = this;
-        debugger;
-        me.callParent(arguments);
-        if (me.tooltip) {
-            Ext.tip.QuickTipManager.register(Ext.apply({
-                target: me.el,
-                text: me.tooltip
-            }));
-        }
-    }*/
-	onRender: function() {
-		this.callParent(arguments);
-	}
-};
-
 //Call authoring page when zindex is modified and consider problematic plugins with no zindex support
 Ext.override(Ext.WindowManager, {
     bringToFront: function(comp) {
@@ -87,22 +69,34 @@ Ext.override(Ext.WindowManager, {
         }
     }
 });
-/* TODO:ExtJS5-Upgrade Problem caused here?
- */  
-//Ext.override(Ext.form.field.Text, conf);
-Ext.define("eXe.form.field.OverRider", {
-	override : "Ext.form.field.Text",
-	onRender: function() {
-		this.callParent(arguments);
-	}
-});
 
 
-/*
-Ext.override(Ext.form.field.TextArea, conf);
-Ext.override(Ext.form.field.Checkbox, conf);
-Ext.override(Ext.form.field.Hidden, conf);
-*/
+/**
+ * Use overrides for the tooltip property to work on these
+ * fields
+ */
+var fieldsToOverride = [
+                        "Ext.form.field.Text",
+                        "Ext.form.field.TextArea",
+                        "Ext.form.field.Checkbox",
+                        "Ext.form.field.Hidden"
+                        ];
+for(var i = 0; i < fieldsToOverride.length; i++) {
+	Ext.define(fieldsToOverride[i], {
+		override : fieldsToOverride[i],
+		onRender: function() {
+			var me = this;
+			this.callParent(arguments);
+			
+			if (me.tooltip) {
+	            Ext.tip.QuickTipManager.register(Ext.apply({
+	                target: me.el,
+	                text: me.tooltip
+	            }));
+	        }
+		}
+	});
+}
 
 Ext.require("eXe.view.ui.eXeViewport");
 
