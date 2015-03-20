@@ -26,6 +26,7 @@ import logging
 from exe.webui.block   import Block
 from exe.webui         import common
 from exe.webui.element import TextAreaElement, ElementWithResources
+from cgi import escape
 import random
 
 
@@ -247,7 +248,7 @@ class ListaElement(ElementWithResources):
         wordsarraylimpo= [wordsarray[i] for i in range(len(wordsarray)) if wordsarray[i] not in wordsarray[:i]]
         random.shuffle(wordsarraylimpo)
         for wdlista in wordsarraylimpo:
-           wordslista +='<option value="%s">%s</option>' %(wdlista[0], wdlista[0])
+           wordslista +='<option value="%s">%s</option>' % (escape(wdlista[0], True), wdlista[0])
           
         for i, (text, missingWord) in enumerate(self.field.parts):
             if text:

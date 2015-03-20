@@ -34,7 +34,7 @@ class XliffImport(object):
 
     def parseAndImport(self, import_from_source=False):
 
-        from exe.engine.beautifulsoup import BeautifulSoup
+        from BeautifulSoup import BeautifulSoup
         fp = open(self.filename)
         bs = BeautifulSoup(fp.read().replace(CDATA_BEGIN, "").replace(CDATA_END, ""))
         fp.close()

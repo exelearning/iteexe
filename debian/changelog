@@ -1,3 +1,84 @@
+intef-exe (3:2.0.3) lucid; urgency=low
+
+  [ Mercedes Cotelo ]
+    Fix bug [#2413]: Actualización Firefox 36.0 en Debian Ubuntu Problemas
+
+  [ Juan Rafael Fernández ]
+  * Trying to solve the menu+xpm / freedesktop+png confusion
+  * Another fix for bug [#2258] No call to update-mime-database
+
+  [ Pedro Peña ]
+  * Fix bug [#2303]: Wrong file format problem
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 04 Mar 2015 15:24:22 +0100
+
+intef-exe (3:2.0.2) lucid; urgency=low
+
+  [ José Miguel Andonegi ]
+  * Add class exe-hide to hide elements when exporting. In exe edition page and TinyMCE edition, hidden elements are
+    visible.
+  * Prevent class change in media elements
+  * Additional change in atributes.js: if media related classes are being used, the combo is disabled to prevent user
+    from changing it
+  * onclick event added to image preview so that user can refresh manually the image.
+  * <meta content="text/html; charset=utf-8" http-equiv="Content-Type">	added to all html in TinyMCE
+
+  [ Juan Rafael Fernández ]
+  * Contributes to updating Debian packaging to dh7, fixed naming,
+    permissions, adding dependencies etc.
+  * Contributes to making the Debian package valid for all architectures,
+    eliminating compiled files
+  * Improves the GNU Linux specific files: exe.desktop, exe.xml, menu
+  * Creates man files
+  * Fixes the address of the FSF (a very minor bug, spotted by automatic
+    tools).
+  * Fixes references to old eXeLearning.org: new project, url, email...
+  * Maintains the translation templates uptodate and prepares for new version
+  * Minor python language fixes: no 't' mode in open(), <> is obsolete...
+
+  [ Ignacio Gros ]
+  * Fix bug [#2305]: User's iDevices: The feedback button custom text was not displayed.
+  * Fix bug [#2274]: Print Style Sheet. Display feedbacks and results. + #navcontainer is not required (it's now called
+    #siteNav). The Print Styles have to be reviewed.
+  * Fix bug [#2291]: ePub3 & idevice NOTE ("Opening and ending tag mismatch").
+  * Fix bug [#2399]: (Image Magnifier). Problem with the proportions of the images (same height and width).
+  * eXe Tutorial. New version (eXe 2+).
+  * Fix bug [#2384]: TinyMCE's media preview does not show the video on new videos
+  * New exe-hidden and exe-hidden-accessible classes. CSS revision. See #2380
+
+  [ Fran Macías ]
+  * Use 'ordereddict' in python 2.6
+
+  [ Pedro Peña ]
+  * Allow open elp files without content.data
+  * Fix bug #[2359]: "When using an animated gif, exe process does not shut down after exiting"
+  * eXe sessions don't expires. Prevent errors after suspend/resume
+  * Migrate xliff export preferences window to ExtJS.
+    This prevents usage of old dublincore.xul to show language list ([#2249])
+  * Removed unnecessary dublincore files
+  * Natural sort for language selectors
+  * Fix bug [#2296]: Install directory not set
+  * Fix 4th problem of bug [#2335]: ePub3 + Readium problems
+  * Fix bug [#2288]: Privacy-breach-generic usr/share/exe/scripts/extjs/index.html.
+    Remove unnecessary extjs html
+  * Revert unnecessary upstream patches to twisted spread banana module.
+    Fix bug [#2306]: Possibly insecure files in /tmp
+  * Fix bug [#2287]: Let's use the system feedparser
+  * Fix bug [#2286]: Let's use the system mimetex
+  * Add version file to source package.
+    Use version file to guess version in builds outside of a git clone
+  * Fix bug [#2389] python-support is deprecated, we need to move to dh_python2
+  * Fix bug [#2387] The name of the package is wrong
+  * Fix bug [#2392] Are _c_urlarg.so and cBanana.so necessary?
+  * Fix bug [#2407]: Windows Error exception inserting image in Idevice
+  * Up recursion limit and fallback to content.data if recursion limit reached loading contentv3.xml
+  * Fix bug [#2394] iDevice ficheros adjuntos (campo descripción)
+  * Fix bug [#2383] TinyMCE's image preview does not show the image on new images
+  * Fix bug [#2337] Ask before overwriting
+  * Fix bug [#2298] Fill in the blanks, autohides special characters problem
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 27 Feb 2015 13:53:29 +0100
+
 python-intef-exe (3:2.0.1) lucid; urgency=low
 
   [Ignacio Gros]

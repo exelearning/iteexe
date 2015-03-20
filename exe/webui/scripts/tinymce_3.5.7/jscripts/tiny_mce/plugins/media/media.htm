@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>	
 	<title>{#media_dlg.title}</title>
 	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
 	<script type="text/javascript" src="js/media.js"></script>
@@ -48,7 +49,7 @@
 												<td><input id="controlselement" type="checkbox" name="controlselement" class="checkbox" checked="checked" /></td>
                                                 <td><label id="controlselementlabel" for="controlselement">{#media_dlg.use_controls}</label></td>
                                                 
-                                                <td><input id="autoplayelement" type="checkbox" name="autoplayelement" class="checkbox" /></td>
+                                                <td><input id="autoplayelement" type="checkbox" name="autoplayelement" class="checkbox"  onchange="Media.formToData();"/></td>
                                                 <td><label id="autoplayelementlabel" for="autoplayelement">{#media_dlg.use_autoplay}</label></td>
                                                 <!-- /* /The New eXeLearning */ -->
 											</tr>
@@ -225,6 +226,14 @@
 										<td><input type="checkbox" class="checkbox" id="video_controls" name="video_controls" onchange="Media.formToData();" /></td>
 										<td><label for="video_controls">{#media_dlg.controls}</label></td>
 									</tr>
+									
+									<!--  New eXeLearning  -->
+									<tr>
+                                        <td><input type="text" class="checkbox" id="video_class" name="video_class" value="mediaelement" onchange="Media.formToData();" /></td>
+                                        <td><label for="video_controls">{#media_dlg.controls}</label></td>
+                                    </tr>
+                                    
+                                    <!--  // New eXeLearning  -->
 								</table>
 							</td>
 						</tr>

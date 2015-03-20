@@ -6,7 +6,6 @@ import subprocess
 from tempfile import mkstemp
 from exe.engine.path import Path
 from exe import globals as G
-import platform
 
 warnings.filterwarnings('ignore', 'tmpnam is a potential security risk to your program')
 log = logging.getLogger(__name__)
@@ -35,10 +34,12 @@ def compile(latex, fontsize=4, latex_is_file=False):
         cmd = G.application.config.webDir/'templates'/'mimetex.exe'
     elif sys.platform[:6] == "darwin":
         cmd = G.application.config.webDir/'templates'/'mimetex-darwin.cgi'
-    elif '64' in platform.machine():
-        cmd = G.application.config.webDir/'templates'/'mimetex.64.cgi'
     else:
-        cmd = G.application.config.webDir/'templates'/'mimetex.cgi'
+        cmd = Path('/usr/lib/cgi-bin/mimetex.cgi')
+        if not cmd.exists():
+            cmd = Path('/var/www/cgi-bin/mimetex.cgi')
+            if not cmd.exists():
+                cmd = Path('/usr/bin/mimetex')
     log.debug(u"mimetex command=%s" % cmd)
     # Twisted uses SIGCHLD in a way that conflicts with the Popen() family
     # (see Twisted FAQ)  So save their handler and temporarily restore default.

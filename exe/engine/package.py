@@ -68,7 +68,7 @@ from exe                       import globals as G
 from exe.engine.resource       import Resource
 from twisted.persisted.styles  import doUpgrade
 from twisted.spread.jelly      import Jellyable, Unjellyable
-from exe.engine.beautifulsoup  import BeautifulSoup
+from BeautifulSoup import BeautifulSoup
 from exe.engine.field          import Field, TextAreaField
 from exe.engine.persistxml     import encodeObjectToXML, decodeObjectFromXML
 from exe.engine.lom import lomsubs
@@ -1193,9 +1193,12 @@ class Package(Persistable):
                 newPackage, validxml = decodeObjectFromXML(fromxml)
             elif xml:
                 xmlinfo = zippedFile.getinfo(u"contentv3.xml")
-                datainfo = zippedFile.getinfo(u"content.data")
-                if xmlinfo.date_time >= datainfo.date_time:
+                if u"content.data" not in zippedFile.NameToInfo:
                     newPackage, validxml = decodeObjectFromXML(xml)
+                else:
+                    datainfo = zippedFile.getinfo(u"content.data")
+                    if xmlinfo.date_time >= datainfo.date_time:
+                        newPackage, validxml = decodeObjectFromXML(xml)
             if not validxml:
                 toDecode   = zippedFile.read(u"content.data")
                 newPackage = decodeObjectRaw(toDecode)

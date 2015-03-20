@@ -387,12 +387,11 @@
             
             //HTML5 video/audio preview
             var s = getVal("src");
-            if (preview_html.indexOf('src=""></audio>')!=-1 && s!=""){
-                preview_html = preview_html.replace('src=""></audio>','src="'+s+'" controls="controls"></audio>');
-            } else if (preview_html.indexOf('src=""></video>')!=-1 && s!=""){
-                preview_html = preview_html.replace('src=""></video>','src="'+s+'" controls="controls"></video>');
+            if (s!="" && preview_html.indexOf('<audio')!=-1 && preview_html.indexOf(' controls')==-1) {
+                preview_html = preview_html.replace('></audio>',' controls></audio>');
+            } else if (s!="" && preview_html.indexOf('<video')!=-1 && preview_html.indexOf(' controls')==-1) {
+				preview_html = preview_html.replace('></video>',' controls></video>');
             }
-            
             get('prev').innerHTML = preview_html;
             // /The New eXeLearning         
         },
@@ -497,6 +496,35 @@
                 if (data.type == "video" || data.type == "audio") {
                     if (!data.video.sources)
                         data.video.sources = [];
+                    
+                    if(!data.attrs) {
+                    	data.video.attrs = {};
+                    }
+                    
+                    if(get("autoplayelement").checked) {
+                    	data.video.attrs.autoplay = "autoplay";
+                    	document.getElementById("video_autoplay").checked = true;
+                    }else if(data.video.attrs.autoplay) {
+                		delete data.video.attrs.autoplay;
+                		document.getElementById("video_autoplay").checked = false;
+                    }
+                    
+                    if(get("controlselement").checked) {
+                    	data.video.attrs.controls = "controls";
+                    	document.getElementById("video_controls").checked = true;
+                    }else if(data.video.attrs.autoplay) {
+                		delete data.video.attrs.controls;
+                		document.getElementById("video_controls").checked = false;
+                    }
+                    
+                    if(get("mediaelement").checked) {
+                    	data.video.attrs.class = "mediaelement";
+                    	document.getElementById("video_class").value = "mediaelement";
+                    }else {
+                		data.video.attrs.class = "";
+                		document.getElementById("video_class").value = "";
+                    }
+                    
 
                     data.video.sources[0] = {src: getVal('src')};
                 }
@@ -560,21 +588,30 @@
                     if (src)
                         setVal('video_altsource2', src.src);
 
-                    if (!data.video.attrs || (data.video.attrs.class && data.video.attrs.class == 'mediaelement'))
+                    if (!data.video.attrs || (data.video.attrs.class && data.video.attrs.class == 'mediaelement')) {
                         setVal('mediaelement', true);
-                    else
+                        document.getElementById("video_class").value= "mediaelement";
+                    }else {
                         setVal('mediaelement', false);
+                        document.getElementById("video_class").value= "";
+                    }
                         
                     // The New eXeLearning
-                    if (data.video.attrs && data.video.attrs.autoplay && data.video.attrs.autoplay == 'autoplay')
+                    if (data.video.attrs && data.video.attrs.autoplay && data.video.attrs.autoplay == 'autoplay') {
                         setVal('autoplayelement', true);
-                    else
+                        document.getElementById("video_autoplay").checked = true;
+                    }else {
                         setVal('autoplayelement', false);
-                        
-                    if (!data.video.attrs || (data.video.attrs.controls && data.video.attrs.controls == 'controls'))
+                        document.getElementById("video_autoplay").checked = false;
+                    }
+                    
+                    if (!data.video.attrs || (data.video.attrs.controls && data.video.attrs.controls == 'controls')) {
                         setVal('controlselement', true);
-                    else
+                        document.getElementById("video_controls").checked = true;
+                    } else {
                         setVal('controlselement', false);
+                        document.getElementById("video_controls").checked = false;
+                    }
                     // /The New eXeLearning
                 } else if (data.type == 'audio') {
                     if (data.video.sources[0])
@@ -588,21 +625,29 @@
                     if (src)
                         setVal('audio_altsource2', src.src);
 
-                    if (!data.video.attrs || (data.video.attrs.class && data.video.attrs.class == 'mediaelement'))
+                    if (!data.video.attrs || (data.video.attrs.class && data.video.attrs.class == 'mediaelement')) {
                         setVal('mediaelement', true);
-                    else
+                        document.getElementById("video_class").value= "mediaelement";
+                    }else {
                         setVal('mediaelement', false);
-                    
+                        document.getElementById("video_class").value= "";
+                    }
                     // The New eXeLearning    
-                    if (data.video.attrs && data.video.attrs.autoplay && data.video.attrs.autoplay == 'autoplay')
+                    if (data.video.attrs && data.video.attrs.autoplay && data.video.attrs.autoplay == 'autoplay') {
                         setVal('autoplayelement', true);
-                    else
+                    	document.getElementById("video_autoplay").checked = true;
+                    }else {
                         setVal('autoplayelement', false);
-                        
-                    if (!data.video.attrs || (data.video.attrs.controls && data.video.attrs.controls == 'controls'))
+                        document.getElementById("video_autoplay").checked = false;
+                    }
+                    
+                    if (!data.video.attrs || (data.video.attrs.controls && data.video.attrs.controls == 'controls')) {
                         setVal('controlselement', true);
-                    else
+                    	document.getElementById("video_controls").checked = true;
+                    }else {
                         setVal('controlselement', false);
+                        document.getElementById("video_controls").checked = false;
+                    }
                     // /The New eXeLearning
                 } else {
                     // Check flash vars
@@ -698,7 +743,7 @@
                     setVal('src', src);
                     setVal('media_type', data.type);
                 }
-
+                
                 if (data.type == 'video') {
                     if (!data.video.sources)
                         data.video.sources = [];
@@ -803,12 +848,17 @@
                     setVal('height', 240);              
                 }
                 
+                //show advanced tab for now
+                /*
                 if (get('media_type').value=='quicktime' || get('media_type').value=='windowsmedia' || get('media_type').value=='realmedia' || get('media_type').value=='video' || get('media_type').value=='audio') {
                     get('advanced_tab').style.display='none';                   
                 }
                 else {
                     get('advanced_tab').style.display='block';                  
                 }
+                */
+                get('advanced_tab').style.display='block';
+                
                 if (get('media_type').value == 'video' || get('media_type').value == 'audio') {
                     get('use_mediaelement').style.display = 'table-row';
                 }else {

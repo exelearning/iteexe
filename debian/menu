@@ -1,5 +1,5 @@
-?package(exe):needs="X11"\
+?package(intef-exe):needs="X11"\
   section="Applications/Education"\
   title="eXeLearning"\
-  icon="/usr/share/icons/hicolor/48x48/apps/exe.png"\
+  icon="/usr/share/pixmaps/exe.xpm"\
   command="/usr/bin/exe"

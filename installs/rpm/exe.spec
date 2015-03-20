@@ -4,7 +4,7 @@
 
 %define debug_package %{nil}
 
-Summary: eXe eLearning XHTML editor
+Summary: The EXtremely Easy to use eLearning authoring tool
 Name: intef-exe
 Version: %{?clversion}%{!?clversion:%{ver}}
 Release: %{?clrelease}%{?dist:%{dist}}%{!?clrelease:1%{?dist:%{dist}}}
@@ -12,18 +12,18 @@ Epoch: 1
 Source0: intef-exe-%{version}-source.tgz
 License: GPL
 Group: Applications/Editors
-Vendor: The eXeLearning Project <exe@exelearning.org>
-Url: http://exelearning.org/
+Vendor: The INTEF-eXe Project <admin@exelearning.net>
+Url: http://exelearning.net/
 BuildRoot: %{_tmppath}/exe-buildroot
 Prefix: %{_prefix}
 ExclusiveArch: i686
 BuildRequires: python-devel
-BuildRequires: python >= %{pyver}, GitPython
-Requires: python >= %{pyver}, python-setuptools, python-imaging, python-zope-interface, python-chardet, python-lxml
+BuildRequires: python >= %{pyver}
+Requires: python >= %{pyver}, python-setuptools, python-imaging, python-zope-interface, python-chardet, python-lxml, python-feedparser, mimetex, python-BeautifulSoup
 Obsoletes: exe-twisted, exe
 
 %description
-eXe, the eLearning XHTML editor, is an authoring environment which enables
+eXe, the eLearning editor, is an authoring environment which enables
 teachers to publish web content in standard package formats (like IMS
 Content Packages and SCORM) without the need to become proficient in HTML
 or XML markup.  Content generated using eXe can be used by any Learning
@@ -32,9 +32,8 @@ Management System.
 %prep
 %setup -n exe
 # remove the other platform binaries
-rm -f exe/webui/templates/mimetex.64.cgi exe/webui/templates/mimetex.exe
+rm -f exe/webui/templates/mimetex.exe
 rm -f exe/webui/templates/mimetex-darwin.cgi
-rm -f exe/msvcr71.dll
 rm -f twisted/spread/cBanana.so
 rm -f twisted/protocols/_c_urlarg.so
 
@@ -57,7 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%attr(755,root,root) %{_datadir}/exe/templates/mimetex.cgi
 %{_bindir}/exe
 %{_bindir}/exe_do
 %{_libdir}/python%{pyver}/site-packages/exe

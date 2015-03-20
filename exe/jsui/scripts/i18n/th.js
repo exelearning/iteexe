@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2007-09-12 06:29+1200\nLast-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: th\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-02-26 13:24+0100\nPO-Revision-Date: 2007-09-12 06:29+1200\nLast-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: th\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Hide": "\u0e0b\u0e48\u0e2d\u0e19", 
  "Title": "\u0e0a\u0e37\u0e48\u0e2d\u0e40\u0e23\u0e37\u0e48\u0e2d\u0e07", 
  "iDevice Editor": "\u0e15\u0e31\u0e27\u0e1b\u0e23\u0e31\u0e1a\u0e41\u0e15\u0e48\u0e07 iDevice", 
@@ -71,7 +71,6 @@ translations = {
  "Package": "\u0e41\u0e1e\u0e04\u0e40\u0e01\u0e08", 
  "Text Box": "\u0e01\u0e25\u0e48\u0e2d\u0e07\u0e02\u0e49\u0e2d\u0e04\u0e27\u0e32\u0e21", 
  "Image with Text": "\u0e23\u0e39\u0e1b\u0e20\u0e32\u0e1e \u0e01\u0e31\u0e1a\u0e15\u0e31\u0e27\u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d", 
- "Click Here": "\u0e04\u0e25\u0e34\u0e01\u0e17\u0e35\u0e48\u0e19\u0e35\u0e48", 
  "Show\/Clear Answers": "\u0e41\u0e2a\u0e14\u0e07\/\u0e25\u0e1a \u0e04\u0e33\u0e15\u0e2d\u0e1a", 
  "Strict Marking?": "\u0e40\u0e02\u0e49\u0e21\u0e07\u0e27\u0e14\u0e01\u0e31\u0e1a\u0e2a\u0e31\u0e0d\u0e25\u0e31\u0e01\u0e29\u0e13\u0e4c?", 
  "Maths": "\u0e04\u0e13\u0e34\u0e15\u0e28\u0e32\u0e2a\u0e15\u0e23\u0e4c", 

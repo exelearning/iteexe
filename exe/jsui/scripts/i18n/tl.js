@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2014-10-19 17:16+0200\nPO-Revision-Date: 2006-12-06 20:36+1300\nLast-Translator: Roel Cantada <matangdilis@yahoo.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fil_PH\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-02-26 13:24+0100\nPO-Revision-Date: 2006-12-06 20:36+1300\nLast-Translator: Roel Cantada <matangdilis@yahoo.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fil_PH\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>Dapat isaisip ng mga guro ang sumusunod kapag gumagamit ng iDevice na ito: <\/p><ol><li>Pag-isipan ninyo ang dami ng magkakaibang uri ng aktibidad na binabalak para sa rekurso, na ihahandog ng biswal sa nilalaman.  Iwasan ang paggamit ng napakaraming magkakaibang uri o klasipikasyon ng aktibidad, baka malito ang mag-aaral.  Kadalasan ay sapat na ang tatlo o apat na magkakaibang uri para sa isang rekursong panturo.<\/li><li>Sa pananaw ng pagdidisenyong biswal, iwasan ang magkadikit na iDevice na walang teksto sa pagitan.  Kung kailangan ito, pag-isahin na lamang ang dalawang tanong o pangyayari sa isang iDevice. <\/li><li>Mag-isip kayo ng mga aktibidad na ang inaasahang benepisyo sa paggawa ng aktibidad ay higit sa hirap at oras na gugugulin sa pagtapos ng aktibidad.  <\/li><\/ol>", 
  "Title": "Pamagat", 
  "Text Line": "Linya ng Teksto", 
@@ -226,7 +226,6 @@ translations = {
  "text": "teksto", 
  "English Wikipedia Article": "Ingles na Artikulong Wikipedia", 
  "Button Caption": "Pamagat ng Buton", 
- "label": "etiketa", 
  "Attachment %s has no parentNode": "Ang kalakip na %s ay walang parentNode", 
  "Add files": "Magdagdag ng sako", 
  "Moldavian ": "Moldavian ", 
@@ -319,7 +318,6 @@ translations = {
  "Scots; Gaelic ": "Scots; Gaelic ", 
  "Manx ": "Manx ", 
  "Kirghiz ": "Kirghiz ", 
- "Click Here": "Iklik Ito", 
  "Select the appropriate language version \nof Wikipedia to search and enter search term.": "Piliin ang angkop na bersiyon ng wika\nng Wikipedia na hahanapan at ipasok ang terminong hahanapin.", 
  "Feedback button will not appear if no \ndata is entered into this field.": "Hindi lilitaw ang buton ng puna kung \nwalang datos na ipinasok sa pitak na ito.", 
  "Enter \nthe text you wish to associate with the file.": "Ipasok \nang teksto na nais mong iugnay sa sako.", 

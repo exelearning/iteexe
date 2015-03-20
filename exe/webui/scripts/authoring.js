@@ -596,82 +596,85 @@ var exe_tinymce = {
 	chooseImage : function(field_name, url, type, win) {
 		
 		var fn = function(local_imagePath) {
-			win.focus();
-		
-			// if the user hits CANCEL, then bail "immediately",
-			// i.e., after bringing the tinyMCE image dialog back into focus, above.
-			if (local_imagePath == "") {
-			   return;
-			}
-		
-			// UNescape, to remove the %20's for spaces, etc.:
-			var unescaped_local_imagePath = unescape(local_imagePath);
-			var oldImageStr = new String(unescaped_local_imagePath);
-			
-			/* HTML 5 */
-			exe_tinymce.uploaded_file_1_name = "";
-			
-			var last_uploaded_file_path = unescaped_local_imagePath.split("\\");
-			var last_uploaded_file_name = last_uploaded_file_path[last_uploaded_file_path.length-1];
-			/* Main file */
-			if (field_name=="src") {
-				exe_tinymce.uploaded_file_1_name = last_uploaded_file_name;
-			}		
-			/* /HTML5 */		
-		
-			// and replace path delimiters (':', '\', or '/') or '%', ' ', or '&' 
-			// with '_':
-			var RegExp1 = /[\ \\\/\:\%\&]/g;
-			var ReplaceStr1 = new String("_");
-			var newImageStr = oldImageStr.replace(RegExp1, ReplaceStr1);
-		
-			// For simplicity across various file encoding schemes, etc.,
-			// just ensure that the TinyMCE media window also gets a URI safe link, 
-			// for doing its showPreview():
-			var early_preview_imageName = encodeURIComponent(newImageStr);
-			// and one more escaping of the '%'s to '_'s, to flatten for simplicity:
-			var preview_imageName  = early_preview_imageName.replace(RegExp1, ReplaceStr1);
-			var full_previewImage_url = "/previews/"+preview_imageName;
-		
-			// pass the file information on to the server,
-			// to copy it into the server's "previews" directory:
-			window.parent.nevow_clientToServerEvent('previewTinyMCEimage', this, '', win, win.name, field_name, unescaped_local_imagePath, preview_imageName)
-		
-			// first, clear out any old value in the tinyMCE image filename field:
-			win.document.forms[0].elements[field_name].value = ""; 
-		
-			// PreviewImage is only available for images:
-			if (type == "image") {
-			   win.ImageDialog.showPreviewImage(" ");
-			} else if (type == "media") {
-			   win.window.Media.preview();
-			}    
-		
-			// set the tinyMCE image filename field:
-			win.document.forms[0].elements[field_name].value = full_previewImage_url;
-			// then force its onchange event:
-		
-			// PreviewImage is only available for images:
-			if (type == "image") {
-			   win.ImageDialog.showPreviewImage(full_previewImage_url);
-			}
-			else if (type == "media") {
-			   win.window.Media.preview();
-			}
-		
-			// this onchange works, but it's dirty because it is hardcoding the 
-			// onChange=".." event of that field, and if that were to ever change 
-			// in tinyMCE, then this would be out of sync.
-		
-			// and finally, be sure to update the tinyMCE window's image data:
-			if (win.getImageData) {
-				win.getImageData();
-			} else {
-				if (window.tinyMCE.getImageData) {
-				   window.tinyMCE.getImageData();
-				}
-			}
-		}
+            win.focus();
+
+            // if the user hits CANCEL, then bail "immediately",
+            // i.e., after bringing the tinyMCE image dialog back into focus, above.
+            if (local_imagePath == "") {
+                return;
+            }
+
+            // UNescape, to remove the %20's for spaces, etc.:
+            var unescaped_local_imagePath = unescape(local_imagePath);
+            var oldImageStr = new String(unescaped_local_imagePath);
+
+            /* HTML 5 */
+            exe_tinymce.uploaded_file_1_name = "";
+
+            var last_uploaded_file_path = unescaped_local_imagePath.split("\\");
+            var last_uploaded_file_name = last_uploaded_file_path[last_uploaded_file_path.length - 1];
+            /* Main file */
+            if (field_name == "src") {
+                exe_tinymce.uploaded_file_1_name = last_uploaded_file_name;
+            }
+            /* /HTML5 */
+
+            // and replace path delimiters (':', '\', or '/') or '%', ' ', or '&'
+            // with '_':
+            var RegExp1 = /[\ \\\/\:\%\&]/g;
+            var ReplaceStr1 = new String("_");
+            var newImageStr = oldImageStr.replace(RegExp1, ReplaceStr1);
+
+            // For simplicity across various file encoding schemes, etc.,
+            // just ensure that the TinyMCE media window also gets a URI safe link,
+            // for doing its showPreview():
+            var early_preview_imageName = encodeURIComponent(newImageStr);
+            // and one more escaping of the '%'s to '_'s, to flatten for simplicity:
+            var preview_imageName = early_preview_imageName.replace(RegExp1, ReplaceStr1);
+            var full_previewImage_url = "/previews/" + preview_imageName;
+
+            var previewTinyMCEImageDone = function() {
+                // first, clear out any old value in the tinyMCE image filename field:
+                win.document.forms[0].elements[field_name].value = "";
+
+                // set the tinyMCE image filename field:
+                var formField = win.document.forms[0].elements[field_name];
+                formField.value = full_previewImage_url;
+                // then force its onchange event:
+                $(formField).trigger("change");
+
+                // PreviewImage is only available for images:
+                if (type == "image") {
+                    win.ImageDialog.showPreviewImage(full_previewImage_url);
+                }
+                else if (type == "media") {
+                    win.window.Media.preview();
+                }
+
+                // this onchange works, but it's dirty because it is hardcoding the
+                // onChange=".." event of that field, and if that were to ever change
+                // in tinyMCE, then this would be out of sync.
+
+                // and finally, be sure to update the tinyMCE window's image data:
+                if (win.getImageData) {
+                    win.getImageData();
+                } else {
+                    if (window.tinyMCE.getImageData) {
+                        window.tinyMCE.getImageData();
+                    }
+                }
+
+                eXe.app.un('previewTinyMCEImageDone', previewTinyMCEImageDone);
+            };
+
+            eXe.app.on({
+                'previewTinyMCEImageDone': previewTinyMCEImageDone
+            });
+
+            // pass the file information on to the server,
+            // to copy it into the server's "previews" directory:
+            window.parent.nevow_clientToServerEvent('previewTinyMCEimage', this, '', win, win.name, field_name, unescaped_local_imagePath, preview_imageName)
+        }
 		// ask user for image or media, depending on type requested:
 		if (type == "image") {
 		   askUserForImage(false, fn);

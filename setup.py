@@ -1,41 +1,41 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 # setup.py
-from setuptools import setup
-import pkg_resources
-pkg_resources.require('gitpython>=0.3.1')
-from exe.engine import version
-from exe.engine.path import Path
+# Only used for Debian packaging
 
-# Before we install, make sure all the mimetex binaries are executable
-Path('exe/webui/templates/mimetex.cgi').chmod(0755)
-Path('exe/webui/templates/mimetex.64.cgi').chmod(0755)
+import os.path
+import glob
+from setuptools import setup
+from exe.engine import version
 
 g_files = {'/usr/share/exe': ["README",
-                             "COPYING",
-                             "NEWS",
-                             "ChangeLog",
-                             "exe/webui/mr_x.gif"],
-          '/usr/share/applications': ["exe.desktop"],
-          '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
-        }
+                              "COPYING",
+                              "NEWS",
+                              "ChangeLog",
+                              "exe/webui/mr_x.gif"],
+           '/usr/share/applications': ["exe.desktop"],
+           '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
+           '/usr/share/pixmaps': ["exe.xpm"]
+           }
 
 g_oldBase = "exe/webui"
 g_newBase = "/usr/share/exe"
 
 
 def dataFiles(dirs, excludes=[]):
-    """Recursively get all the files in these directories"""
-    import os.path
-    import glob
+    """
+    Recursively get all the files in these 'dirs' directories
+    except those listed in 'excludes'
+    """
     global dataFiles, g_oldBase, g_newBase, g_files
     for file in dirs:
         if not os.path.basename(file[0]).startswith("."):
             if os.path.isfile(file) and file not in excludes:
-		if len(g_oldBase) >= 1:
-	                path = file[len(g_oldBase) + 1:]
-		else:
-			path = file
+                if len(g_oldBase) >= 1:
+                    path = file[len(g_oldBase) + 1:]
+                else:
+                    path = file
                 dir = g_newBase + "/" + os.path.dirname(path)
                 if dir in g_files:
                     g_files[dir].append(file)
@@ -51,11 +51,27 @@ dataFiles(["exe/webui/style",
            "exe/webui/schemas",
            "exe/webui/scripts",
            "exe/webui/templates"],
-    excludes=["exe/webui/templates/mimetex-darwin.cgi", "exe/webui/templates/mimetex.exe"])
+          excludes=["exe/webui/templates/mimetex-darwin.cgi",
+                    "exe/webui/templates/mimetex.exe"])
 
 g_oldBase = "exe"
 g_newBase = "/usr/share/exe"
-dataFiles(["exe/locale", "exe/mediaprofiles"])
+dataFiles(["exe/mediaprofiles"])
+
+# jrf - to comply with the FHS
+# g_oldBase = "exe"
+# g_newBase = "/usr/share/exe"
+g_oldBase = "exe/locale"
+g_newBase = "/usr/share/locale"
+exc = []
+exc = glob.glob(g_oldBase + "/*/LC_MESSAGES/*.po")
+exc.append(g_oldBase + "/ja/exe_jp.xlf")
+exc.append(g_oldBase + "/ja/exe_ja.xlf")
+exc.append(g_oldBase + "/messages.pot")
+exc.sort()
+
+dataFiles(["exe/locale"],
+          excludes=exc)
 
 g_oldBase = ""
 g_newBase = "/usr/share/exe"
@@ -68,19 +84,20 @@ dataFiles(["exe/jsui/scripts",
 
 setup(name=version.project,
       version=version.version,
-      description="eLearning XHTML editor",
+      description="The EXtremely Easy to use eLearning authoring tool",
       long_description="""\
 The eXe project is an authoring environment to enable teachers
 to publish web content without the need to become proficient in
 HTML or XML markup.  Content generated using eXe can be used by
 any Learning Management System.
 """,
-      url="http://exelearning.org",
-      author="eXe Project",
-      author_email="exe@exelearning.org",
+      url="http://exelearning.net",
+      author="INTEF-eXe Project",
+      author_email="admin@exelearning.net",
       license="GPL",
       scripts=["exe/exe", "exe/exe_do"],
       packages=["exe", "exe.webui", "exe.jsui",
-                      "exe.engine", "exe.export", "exe.importers", "exe.engine.lom"],
+                "exe.engine", "exe.export",
+                "exe.importers", "exe.engine.lom"],
       data_files=g_files.items()
-     )
+      )

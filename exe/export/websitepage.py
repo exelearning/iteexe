@@ -155,7 +155,7 @@ class WebsitePage(Page):
             html += '</div>'
             html += u"</"+headerTag+">"+lb
         else:
-            html += "<div id=\"emptyHeader\"></div>"+lb
+            html += "<"+sectionTag+" id=\"emptyHeader\"></"+sectionTag+">"+lb			
         
         # add left navigation html
         html += u"<"+navTag+" id=\"siteNav\">"+lb

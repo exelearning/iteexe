@@ -173,6 +173,11 @@ Ext.application({
             nevow_clientToServerEvent('quit', '', '');
         };
 		*/
+
+        langsStore.sort(function(a, b) {
+            return a[1].localeCompare(b[1]);
+        });
+
         if (Ext.isGecko || Ext.isSafari)
         	window.addEventListener('keydown', function(e) {(e.keyCode == 27 && e.preventDefault())});
 

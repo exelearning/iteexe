@@ -15,6 +15,10 @@
 
         Diseño gráfico
         Francisco Javier Pulido Cuadrado
+		
+        Diseño adaptativo ("responsive design")
+        Ignacio Gros
+        http://www.gros.es		
 
         Trabajo derivado de:
 
@@ -39,4 +43,7 @@
              1.- Reconocimiento. Debe reconocer los créditos de la obra de la manera especificada por el autor o el licenciador (pero no de una manera que sugiera que tiene su apoyo o apoyan el uso que hace de su obra).
              2.- Compartir bajo la misma licencia. Si altera o transforma esta obra, o genera una obra derivada, sólo puede distribuir la obra generada bajo una licencia idéntica a ésta.
     </description>
+    <extra-head><![CDATA[<meta name="viewport" content="width=device-width, initial-scale=1" />
+    ]]></extra-head>
+    <extra-body><![CDATA[<script type="text/javascript" src="_carm_js.js"></script>]]></extra-body>	
 </theme>

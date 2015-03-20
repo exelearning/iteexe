@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+
+<!--
+
+`xsltproc -''-nonet \
+          -''-param man.charmap.use.subset "0" \
+          -''-param make.year.ranges "1" \
+          -''-param make.single.year.ranges "1" \
+          /usr/share/xml/docbook/stylesheet/docbook-xsl/manpages/docbook.xsl \
+          manpage.xml'
+
+A manual page <package>.<section> will be generated. You may view the
+manual page with: nroff -man <package>.<section> | less'. A typical entry
+in a Makefile or Makefile.am is:
+
+DB2MAN = /usr/share/sgml/docbook/stylesheet/xsl/docbook-xsl/manpages/docbook.xsl
+XP     = xsltproc -''-nonet -''-param man.charmap.use.subset "0"
+
+manpage.1: manpage.xml
+        $(XP) $(DB2MAN) $<
+
+The xsltproc binary is found in the xsltproc package. The XSL files are in
+docbook-xsl. A description of the parameters you can use can be found in the
+docbook-xsl-doc-* packages. Please remember that if you create the nroff
+version in one of the debian/rules file targets (such as build), you will need
+to include xsltproc and docbook-xsl in your Build-Depends control field.
+Alternatively use the xmlto command/package. That will also automatically
+pull in xsltproc and docbook-xsl.
+
+Notes for using docbook2x: docbook2x-man does not automatically create the
+AUTHOR(S) and COPYRIGHT sections. In this case, please add them manually as
+<refsect1> ... </refsect1>.
+
+To disable the automatic creation of the AUTHOR(S) and COPYRIGHT sections
+read /usr/share/doc/docbook-xsl/doc/manpages/authors.html. This file can be
+found in the docbook-xsl-doc-html package.
+
+Validation can be done using: `xmllint -''-noout -''-valid manpage.xml`
+
+General documentation about man-pages and man-page-formatting:
+man(1), man(7), http://www.tldp.org/HOWTO/Man-Page/
+
+-->
+
+  <!-- Fill in your name for FIRSTNAME and SURNAME. -->
+  <!ENTITY dhfirstname "Juan Rafael">
+  <!ENTITY dhsurname   "Fernández">
+  <!-- dhusername could also be set to "&dhfirstname; &dhsurname;". -->
+  <!ENTITY dhusername  "Juan Rafael Fernández">
+  <!ENTITY dhemail     "jrfern@telefonica.net">
+  <!-- SECTION should be 1-8, maybe w/ subsection other parameters are
+       allowed: see man(7), man(1) and
+       http://www.tldp.org/HOWTO/Man-Page/q2.html. -->
+  <!ENTITY dhsection   "1">
+  <!-- TITLE should be something like "User commands" or similar (see
+       http://www.tldp.org/HOWTO/Man-Page/q2.html). -->
+  <!ENTITY dhtitle     "exe_do User Manual">
+  <!ENTITY dhucpackage "INTEF-EXE">
+  <!ENTITY dhpackage   "exe_do">
+]>
+
+<refentry>
+  <refentryinfo>
+    <title>&dhtitle;</title>
+    <productname>&dhpackage;</productname>
+    <authorgroup>
+      <author>
+       <firstname>&dhfirstname;</firstname>
+        <surname>&dhsurname;</surname>
+        <contrib>Wrote this manpage for the Debian system.</contrib>
+        <address>
+          <email>&dhemail;</email>
+        </address>
+      </author>
+    </authorgroup>
+    <copyright>
+      <year>2015</year>
+      <holder>&dhusername;</holder>
+    </copyright>
+    <legalnotice>
+      <para>This manual page was written for the Debian system
+        (and may be used by others).</para>
+      <para>Permission is granted to copy, distribute and/or modify this
+        document under the terms of the GNU General Public License,
+        Version 3 or any later version published by
+        the Free Software Foundation.</para>
+      <para>On Debian systems, the complete text of the GNU General Public
+        License can be found in
+        <filename>/usr/share/common-licenses/GPL</filename>.</para>
+    </legalnotice>
+  </refentryinfo>
+  <refmeta>
+    <refentrytitle>&dhucpackage;</refentrytitle>
+    <manvolnum>&dhsection;</manvolnum>
+  </refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+    <refpurpose>the commandline version of eXe</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+
+    <cmdsynopsis>
+      <command>&dhpackage; [options] input_file [output_file]</command>
+      <!-- Normally the help and version options make the programs stop
+           right after outputting the requested information. -->
+      <group choice="opt">
+        <arg choice="plain">
+          <group choice="req">
+            <arg choice="plain"><option>-h</option></arg>
+          </group>
+        </arg>
+      </group>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id="description">
+    <title>DESCRIPTION</title>
+    <para>This manual page documents briefly the
+      <command>&dhpackage;</command> and <command>bar</command>
+      commands.</para>
+    <para><command>&dhpackage;</command> is the commandline version of eXe, 
+	The EXtremely Easy to use eLearning authoring tool, and was created for work
+	with massive numbers of ELP files.</para>
+  </refsect1>
+
+  <refsect1 id="options">
+    <title>OPTIONS</title>
+    <para>The program follows the usual GNU command line syntax,
+      with long options starting with two dashes (`-').  A summary of
+      options is included below.</para>
+    <variablelist>
+      <!-- Use the variablelist.term.separator and the
+           variablelist.term.break.after parameters to
+           control the term elements. -->
+
+      <varlistentry>
+        <term><option>--editable</option></term>
+        <listitem>
+          <para>Add the required files to generate an export editable by eXeLearning.</para>
+        </listitem>
+
+      <varlistentry>
+        <term><option>-f</option></term>
+        <term><option>--force</option></term>
+        <listitem>
+          <para>Force overwrite of output_file.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-h</option></term>
+        <listitem>
+          <para>Display this help and exit.</para>
+        </listitem>
+
+      <varlistentry>
+        <term><option>-i</option></term>
+        <term><option>--import</option></term>
+        <listitem>
+          <para>Import to output_file ELP package, input_file 
+		in one of the given formats: xml or xliff.</para>
+        </listitem>
+      </varlistentry>
+
+        <term><option>-l</option></term>
+        <term><option>--checker_logfile</option></term>
+        <listitem>
+          <para>Checker log file.</para>
+        </listitem>
+
+      </varlistentry>
+        <term><option>-r</option></term>
+        <term><option>--report</option></term>
+        <listitem>
+          <para>Generates resource info report to text output_file from input_file ELP package.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-s</option></term>
+        <term><option>--set</option></term>
+        <listitem>
+          <para>Set ELP field values. Example: -s style=Default,root.title='Root Node'.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-w</option></term>
+        <term><option>--write_package</option></term>
+        <listitem>
+          <para>Write field values to ELP.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-x</option></term>
+        <term><option>--export</option></term>
+        <listitem>
+          <para>Export input_file ELP package to optional output_file on one of 
+		the given formats: xml, scorm12, scorm2004, ims, 
+		website, webzip, singlepage, xliff or epub3.</para>
+        </listitem>
+      </varlistentry>
+
+
+    </variablelist>
+  </refsect1>
+
+  <refsect1 id="files">
+    <title>FILES</title>
+    <variablelist>
+      <varlistentry>
+        <term><filename>${HOME}/.exe/exe.conf</filename></term>
+        <listitem>
+          <para>The per-user configuration file to control the
+             behaviour of <application>&dhpackage;</application>. See
+             <citerefentry>
+               <refentrytitle>exe.conf</refentrytitle>
+               <manvolnum>5</manvolnum>
+             </citerefentry> for further details.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+
+  <refsect1 id="bugs">
+    <!-- Or use this section to tell about upstream BTS. -->
+    <title>BUGS</title>
+    <para>The upstreams <acronym>BTS</acronym> can be found
+      at <ulink url="https://forja.cenatic.es/tracker/"/>.</para>
+  </refsect1>
+
+  <refsect1 id="see_also">
+    <title>SEE ALSO</title>
+    <!-- In alphabetical order. -->
+    <para>
+      <citerefentry>
+        <refentrytitle>exe</refentrytitle>
+        <manvolnum>1</manvolnum>
+      </citerefentry>,  
+      <citerefentry>
+        <refentrytitle>exe.conf</refentrytitle>
+        <manvolnum>5</manvolnum>
+      </citerefentry>
+    </para>
+    <para>The programs are documented fully by <citetitle>eXeLearning 
+    Manual</citetitle> available at
+     <ulink url="http://exelearning.net/html_manual/exe20/"/>.</para>
+  </refsect1>
+</refentry>
+
