@@ -495,11 +495,12 @@ function createPanel() {
 Ext.define('eXe.view.forms.StyleManagerPanel', {
     extend: 'Ext.form.Panel',
     alias: 'widget.stylemanager',
+    scrollable : "vertical",
+    
     initComponent: function() {	
         var me = this;
 		var panel=createPanel();
         Ext.applyIf(me, {
-            autoScroll: true,
             trackResetOnLoad: true,
             url: 'stylemanager',
             items: panel		

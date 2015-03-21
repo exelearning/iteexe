@@ -20,7 +20,7 @@
 Ext.define('eXe.view.forms.LomDataPanel', {
     extend: 'Ext.form.Panel',
     alias: 'widget.lomdata',
-
+    scrollable : "vertical",
     requires: [
         'eXe.view.forms.HelpContainer',
         'eXe.view.forms.InsertDeleteFieldSet',
@@ -167,7 +167,8 @@ Ext.define('eXe.view.forms.LomDataPanel', {
           scp= {'scope': eXe.view.forms.LomWidgets, 'combo': taxon};
           el = nextbutdel.getEl();
           if (el) {
-          	el.removeAllListeners();
+          	//el.removeAllListeners();
+        	el.clearListeners();
           	el.addListener( 'click', eXe.view.forms.LomWidgets.addDelEvent, scp);
           }
           if (!nextTaxon || nextTaxon.up('insertdelfieldset') != taxon.up('insertdelfieldset')) {
@@ -248,7 +249,6 @@ Ext.define('eXe.view.forms.LomDataPanel', {
             widgets = eXe.view.forms.LomWidgets;
 
         Ext.applyIf(me, {
-            autoScroll: true,
             trackResetOnLoad: true,
             defaults: {
                 margin: 20

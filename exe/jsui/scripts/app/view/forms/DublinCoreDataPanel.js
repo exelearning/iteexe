@@ -20,6 +20,7 @@
 Ext.define('eXe.view.forms.DublinCoreDataPanel', {
     extend: 'Ext.form.Panel',
     alias: 'widget.dublincoredata',
+    scrollable : "vertical",
 
     requires: ['eXe.view.forms.HelpContainer'],
     
@@ -27,7 +28,6 @@ Ext.define('eXe.view.forms.DublinCoreDataPanel', {
         var me = this;
 
         Ext.applyIf(me, {
-            autoScroll: true,
             trackResetOnLoad: true,            
             items: [
                 {

@@ -21,6 +21,7 @@
 Ext.define('eXe.view.forms.PackagePanel', {
     extend: 'Ext.form.Panel',
     alias: 'widget.package',
+    scrollable : "vertical",
     statics: { eXeLicenses: [
                          [
                              "propietary license", 
@@ -136,7 +137,6 @@ Ext.define('eXe.view.forms.PackagePanel', {
         var me = this;
 
         Ext.applyIf(me, {
-            autoScroll: true,
             trackResetOnLoad: true,
             items: [
                 {
