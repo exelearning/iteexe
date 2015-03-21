@@ -291,6 +291,8 @@ class StyleManagerPage(RenderableResource):
             self.client.sendScript("Ext.MessageBox.alert('Correct', 'Style updated correctly')")
         except:
             self.client.sendScript("Ext.MessageBox.alert('Error', 'An unexpected error has occurred')")
+        finally:
+            Path(filename).remove()
 
     def doStyleImportURL(self, url, style_name=''):
         """ Download style from url and import into styles directory """
