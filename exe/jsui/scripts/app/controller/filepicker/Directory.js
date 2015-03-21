@@ -61,7 +61,6 @@ Ext.define('eXe.controller.filepicker.Directory', {
 			path = path.replace(/_RRR_$/, '');	    	
 	    }
         
-        /** ExtJS-Upgrade - testing layout - disabled temp
         dirtree.expandPath(path, "realtext", sep, function() {
             if (selection == "/")
                 dirtree.getSelectionModel().select(dirtree.getRootNode());
@@ -69,7 +68,7 @@ Ext.define('eXe.controller.filepicker.Directory', {
                 dirtree.selectPath(path, "realtext", sep);
             }
         }, this);
-        */
+        
 	},
 	
 	onDirSelect: function( selModel, selection ) {

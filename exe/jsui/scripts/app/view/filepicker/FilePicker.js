@@ -77,7 +77,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
         		buttons[2] = { xtype: 'button', text: _('Save'), itemId: 'filepicker_save' };
                 top_buttons[eXe.app.config.locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
 		        top_buttons.unshift({
-		            xtype: 'text',
+		            xtype: 'label',
 		            text: _('Save in:'),
 		            padding: '2px 15px 0px 0px'
 		        });
