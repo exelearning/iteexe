@@ -19,11 +19,11 @@
 
 var ICON_MAP = {
 	"directory": {
-        "true": "../jsui/extjs/resources/themes/images/gray/tree/folder.gif",
-        "false": "../jsui/extjs/resources/themes/images/gray/grid/hmenu-lock.gif"
+        "true": "../jsui/extjs/packages/ext-theme-neptune/build/resources/images/tree/folder.png",
+        "false": "../jsui/extjs/packages/ext-theme-neptune/build/resources/images/tree/hmenu-lock.png"
     }
 };
-var DEFAULT_ICON = "../jsui/extjs/resources/themes/images/gray/tree/leaf.gif";
+var DEFAULT_ICON = "../jsui/extjs/packages/ext-theme-neptune/build/resources/images/tree/leaf.png";
 
 Ext.define('eXe.view.filepicker.FileList', {
     extend: 'Ext.grid.Panel',

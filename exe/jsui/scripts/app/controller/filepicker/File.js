@@ -111,11 +111,9 @@ Ext.define('eXe.controller.filepicker.File', {
 				/**
 				 * ExtJS-Upgrade
 				 */
-				if(this.getPlaceField()) {
-					if (clear === true)
-					    this.getPlaceField().clearValue();
-					this.getPlaceField().focus();
-				}
+				if (clear === true)
+				    this.getPlaceField().clearValue();
+				this.getPlaceField().focus();
                 
 			},
 			params: {
@@ -385,7 +383,6 @@ Ext.define('eXe.controller.filepicker.File', {
 		});
 	},
 	onFilePickerShow: function() {
-		debugger;
 		var fp = this.getFilePicker();
 		var combo = this.getFiletypeCombo();
         var place = this.getPlaceField();
@@ -405,7 +402,7 @@ Ext.define('eXe.controller.filepicker.File', {
 	},
 	onFilterChange: function(field, newValue, oldValue, eOpts) {
 		var store = this.getFilepickerFileStore();
-		
+		store.clearFilter();
 		store.filterBy( function(record, id) {
 			if (record.get("type") == "directory")
 				return true;

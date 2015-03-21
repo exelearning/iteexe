@@ -50,9 +50,7 @@ Ext.define('eXe.controller.filepicker.Directory', {
 
         if (clear === true)
             this.getPlaceField().setValue("");
-        if(this.getPlaceField()) {
-        	this.getPlaceField().focus();
-        }
+    	this.getPlaceField().focus();
         
         if (selection[0] == "/")
 	        path = sep + '/' + selection.replace(/\//g, sep);
