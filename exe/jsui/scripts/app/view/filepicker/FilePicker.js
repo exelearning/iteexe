@@ -90,7 +90,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
         		break;
         }
         
-        Ext.applyIf(me, {
+        Ext.apply(me, {
         	width: 800,
             height: eXe.app.getMaxHeight(600),
             layout:'border',
@@ -141,8 +141,8 @@ Ext.define('eXe.view.filepicker.FilePicker', {
                     }
                 }
 			],
-            fbar: [
-			],
+            /*fbar: [
+			],*/
 			items: [
 				{
 					xtype: "dirtree",

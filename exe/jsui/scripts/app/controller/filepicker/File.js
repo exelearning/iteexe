@@ -19,6 +19,7 @@
 
 Ext.define('eXe.controller.filepicker.File', {
     extend: 'Ext.app.Controller',
+    referenceHolder: true,
 	stores: ['filepicker.File'],
 	views: ['filepicker.FileList', 'filepicker.DirectoryTree', 'filepicker.FilePicker'],
 	requires: [
@@ -107,9 +108,15 @@ Ext.define('eXe.controller.filepicker.File', {
 		var fileStore = this.getFilepickerFileStore();
 		fileStore.load({
 			callback: function() {
-                if (clear === true)
-				    this.getPlaceField().clearValue();
-				this.getPlaceField().focus();
+				/**
+				 * ExtJS-Upgrade
+				 */
+				if(this.getPlaceField()) {
+					if (clear === true)
+					    this.getPlaceField().clearValue();
+					this.getPlaceField().focus();
+				}
+                
 			},
 			params: {
 				sendWhat: this.sendWhat,
@@ -378,17 +385,19 @@ Ext.define('eXe.controller.filepicker.File', {
 		});
 	},
 	onFilePickerShow: function() {
-		var fp = this.getFilePicker(),
-			combo = this.getFiletypeCombo(),
-            place = this.getPlaceField();
-
+		debugger;
+		var fp = this.getFilePicker();
+		var combo = this.getFiletypeCombo();
+        var place = this.getPlaceField();
+        
         fp.status = eXe.view.filepicker.FilePicker.returnCancel;
 		var prevalue=fp.prefilename;
 		if (prevalue==undefined){
-		prevalue="";
+			prevalue="";
 		}
-        place.setValue(prevalue);
-        place.focus();
+		place.setValue(prevalue);
+    	place.focus();
+        
         if (combo)
 		  combo.setValue(fp.filetypes.getAt(0).get('regex'));
 		this.currentDir = Ext.state.Manager.get('filepicker-currentDir', '/');

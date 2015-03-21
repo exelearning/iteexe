@@ -914,11 +914,13 @@ Translation software.')
                 }
 		    }
 		});
+		
 		f.appendFilters([
 			{ "typename": _("eXe Package Files"), "extension": "*.elp", "regex": /.*\.elp$/ },
 			{ "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
 			]
 		);
+		
 		f.show();
     },
     

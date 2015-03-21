@@ -35,6 +35,7 @@ function connect(outputNum) {
                     eval(xmlhttp.responseText)
                 } catch (e) {
                     alert(EXCEPTION_ + e.toString()+'\n'+CAUSED_BY_SCRIPT_+xmlhttp.responseText)
+                    console.log(e.stack);
                     throw e
                 }
                 if (!liveevil_unload && auto_open) {

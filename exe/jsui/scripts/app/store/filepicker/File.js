@@ -60,17 +60,19 @@ Ext.define('eXe.store.filepicker.File', {
 			totalProperty: "totalCount"
 		}
     },
-    /* ExtJS Upgrade: Check if this is the cause of an error message
+    
     getSorter: function(name, direction) {
     	return sorterFNS;
     },
+    
     sorters: [
     	{
-    		property: "name",
+			//ExtJS-Upgrade : Having both property and sorterFn throws an error
+    		//property: "name",
     		direction: "ASC",
     		sorterFn: sorterFNS
     	}
-    ],*/
+    ],
     
     listeners: {
         load: {
@@ -90,11 +92,13 @@ Ext.define('eXe.store.filepicker.File', {
         },
     	beforeload: {
     		fn: function( store, operation, opts ) {
-    			if( operation.params && operation.params.dir ) {
-    			 	this.currentDir = operation.params.dir
+    			var params = operation.getParams();
+    			if( params && params.dir ) {
+    			 	this.currentDir = params.dir;
         		}
                 else {
-    				operation.params["dir"] = this.currentDir
+    				params.dir = this.currentDir;
+    				operation.setParams(params);
         		}
     		},
     		scope: this

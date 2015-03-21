@@ -46,8 +46,11 @@ Ext.define('eXe.store.filepicker.DirectoryTree', {
     listeners: {
         beforeload: {
             fn: function(store, operation) {
-                if (operation.params.node == "root")
-                    operation.params.node = "/";
+            	var params = operation.getParams();
+            	if(operation.node && operation.node.id === "root") {
+            		params.node = "/";
+            		operation.setParams(params);
+            	}
             }
         }
     }
