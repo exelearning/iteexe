@@ -1,6 +1,7 @@
 # compiled python
 *.py[co]
 build
+!exe/jsui/scripts/extjs/**/build
 build-stamp
 exe.egg-info
 # editor debris
