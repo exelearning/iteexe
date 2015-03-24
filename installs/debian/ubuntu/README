@@ -7,9 +7,9 @@ Building from source on Ubuntu
  $ apt-get install python-feedparser python-beautifulsoup
 
 3. Clone the git repo
- $ git clone git clone https://forja.cenatic.es/anonscm/git/iteexe/iteexe.git
+ $ git clone https://forja.cenatic.es/anonscm/git/iteexe/iteexe.git
  
-4. cd to directory and run the make process
+4. cd to this directory and run the make process
  $ cd <checkoutdir>/iteexe/installs/debian/ubuntu
  $ python make.py
  
