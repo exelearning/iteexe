@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2015-03-25 21:13+0100\n"
-"PO-Revision-Date: 2015-02-26 13:29+0100\n"
+"PO-Revision-Date: 2015-03-25 23:01+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -8209,9 +8209,9 @@ msgid "SUBMIT ANSWERS"
 msgstr "ENVIAR RESPUESTAS"
 
 #: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318
-#, fuzzy, python-format
+#, python-format
 msgid "Your score is %f%"
-msgstr "Su puntuación es "
+msgstr "Su puntuación es %f%"
 
 #: exe/webui/recomendacionfpdblock.py:68
 msgid "A Piece of Advice"
@@ -11100,4 +11100,3 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
-
