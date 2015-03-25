@@ -219,9 +219,9 @@ class QuizTestBlock(Block):
             actualScore =  Math.round(rawScore / numQuestions * 100);
             document.getElementById("quizForm%s").submitB.disabled = true;
             """ % self.idevice.id
-        scriptStr += 'alert("'
-        scriptStr += c_("Your score is ")
-        scriptStr += '" + actualScore + "%")'
+        scriptStr += '            var msg_str ="' + c_("Your score is %f%") + '";'
+        scriptStr += '            alert(msg_str.replace("%f",actualScore));'
+
         scriptStr += """
            
         }
@@ -314,9 +314,9 @@ class QuizTestBlock(Block):
           
            actualScore = Math.round(rawScore / numQuestions * 100);
         """
-        scriptStr += 'alert("'
-        scriptStr += c_("Your score is ")
-        scriptStr += '" + actualScore + "%")'
+
+        scriptStr += '            var msg_str ="' + c_("Your score is %f%") + '";'
+        scriptStr += '            alert(msg_str.replace("%f",actualScore));'
         scriptStr += """  
           
            scorm.SetScoreRaw(actualScore+"" );
