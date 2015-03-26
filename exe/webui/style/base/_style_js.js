@@ -1,52 +1,55 @@
 var myTheme = {
     init : function(){
 		var ie_v = $exe.isIE();
-		if (ie_v && ie_v<8) {
-			$("#topPagination").wrap("<div />");
-			return false;
-		}
-        /* 
-		No reset when resizing to avoid problems when hiding #nav using the Style Designer
-		setTimeout(function(){
-			$(window).resize(function() {
-				myTheme.reset();
-			});
-		},1000);
-		*/
-		var tit = $exe_i18n.menu+" ("+$exe_i18n.hide.toLowerCase()+")";
-        var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this)" class="hide-nav" id="toggle-nav" title="'+tit+'"><span>'+$exe_i18n.menu+'</span></a></p>');
+        if (ie_v && ie_v<8) return false;
+        setTimeout(function(){
+            $(window).resize(function() {
+                myTheme.reset();
+            });
+        },1000);
+        var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this)" class="hide-nav" id="toggle-nav" title="'+$exe_i18n.hide+'"><span>'+$exe_i18n.menu+'</span></a></p>');
         $("#siteNav").before(l);
         var url = window.location.href;
         url = url.split("?");
         if (url.length>1){
             if (url[1].indexOf("nav=false")!=-1) {
                 myTheme.hideMenu();
+				return false;
             }
         }
-		this.addNavArrows();
-		this.addPaginationTitles();
+		myTheme.setNavHeight();
+		// We execute this more than once because sometimes the height changes because of the videos, etc.
+		setTimeout(function(){
+			myTheme.setNavHeight();
+		},1000);
+		$(window).load(function(){
+			myTheme.setNavHeight();
+		});
     },
-	addPaginationTitles : function(){
-		$("A","#topPagination,#bottomPagination").each(
-			function(){
-				this.title = $(this).text();
-			}
-		);
-	},
-	addNavArrows : function(){
-		$("#siteNav ul ul .daddy").each(
-			function(){
-				this.innerHTML+=' <span>&#9658;</span>';
-			}
-		)
-	},
     hideMenu : function(){
         $("#siteNav").hide();
         $(document.body).addClass("no-nav");
         myTheme.params("add");
-		var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
-        $("#toggle-nav").attr("class","show-nav").attr("title",tit);
+        $("#toggle-nav").attr("class","show-nav").attr("title",$exe_i18n.show);
     },
+	setNavHeight : function(){
+		var n = $("#siteNav");
+		var c = $("#main-wrapper");
+		var nH = n.height();
+		var cH = c.height();
+		var h = cH-nH+40;
+		var m = 0;
+		if ($("#siteNav").css("float")=="none") {
+			h = 0;
+			m = 15;
+		}
+		if (n.css("display")!="table") {
+			n.css({
+				"padding-bottom":h+"px",
+				"margin-bottom":m+"px"
+			});
+		}
+	},
     toggleMenu : function(e){
         if (typeof(myTheme.isToggling)=='undefined') myTheme.isToggling = false;
         if (myTheme.isToggling) return false;
@@ -54,32 +57,26 @@ var myTheme = {
         var l = $("#toggle-nav");
         
         if (!e && $(window).width()<900 && l.css("display")!='none') return false; // No reset in mobile view
-        if (!e) {
-            var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
-            l.attr("class","show-nav").attr("title",tit); // Reset
-        }
+        if (!e) l.attr("class","show-nav").attr("title",$exe_i18n.show); // Reset
         
         myTheme.isToggling = true;
         
-        if (l.attr("class")=='hide-nav') {  
-			var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
-            l.attr("class","show-nav").attr("title",tit);
-            $("#siteFooter").hide();
-			$("#siteNav").hide(); // No effects
-			//$("#siteNav").slideUp(400,function(){
+        if (l.attr("class")=='hide-nav') {       
+            l.attr("class","show-nav").attr("title",$exe_i18n.show);
+			$("#siteFooter").hide();
+			$("#siteNav").slideUp(400,function(){
                 $(document.body).addClass("no-nav");
                 $("#siteFooter").show();
                 myTheme.isToggling = false;
-            //});
+            }); 
             myTheme.params("add");
         } else {
-            var tit = $exe_i18n.menu+" ("+$exe_i18n.hide.toLowerCase()+")";
-			l.attr("class","hide-nav").attr("title",tit);
+            l.attr("class","hide-nav").attr("title",$exe_i18n.hide);
             $(document.body).removeClass("no-nav");
-			$("#siteNav").show(); // No effects
-			//$("#siteNav").slideDown(400,function(){
+			$("#siteNav").slideDown(400,function(){
                 myTheme.isToggling = false;
-            //});
+				myTheme.setNavHeight();
+            });
             myTheme.params("delete");            
         }
         
@@ -107,7 +104,8 @@ var myTheme = {
         });
     },
     reset : function() {
-        myTheme.toggleMenu();
+        myTheme.toggleMenu();        
+		myTheme.setNavHeight();
     }    
 }
 
@@ -116,28 +114,3 @@ $(function(){
         myTheme.init();
     }
 });
-
-$exe.iDeviceToggler.toggle = function(e,id,em){
-	var t = $exe_i18n.hide;
-	var i = $("#"+id);
-	var sel = ".iDevice_content";
-	if (em=="em1") sel = ".iDevice_inner";
-	var iC = $(sel,i);
-	var c = i.attr("class");
-	if (typeof(c)=='undefined') return false;
-	if (c.indexOf(" hidden-idevice")==-1) {
-		t = $exe_i18n.show;
-		c += " hidden-idevice";
-		iC.hide();
-		e.className = "show-idevice";
-		e.title = t;
-		e.innerHTML = "<span>"+t+"</span>";
-	} else {
-		c = c.replace(" hidden-idevice","");
-		iC.show();
-		e.className = "hide-idevice";
-		e.title = t;
-		e.innerHTML = "<span>"+t+"</span>";
-	}
-	i.attr("class",c);
-}

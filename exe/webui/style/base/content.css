@@ -1,31 +1,35 @@
 /* eXeLearning Style Designer Compatible Style */
-html{font-size:.85em}
-body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#333;background:#fff}
+html{font-size:1em}
+body{font:105%/1.5 'Open Sans',Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#333;background:#f9f9f9}
 
 a{color:#2495FF}
 h2{font-size:1.3em}
 h3{font-size:1.2em}
 h4{font-size:1.1em}
 h5{font-size:1em}
+p{margin:1em 0}
 
 #header,#emptyHeader,#nodeDecoration{
+background-color:#FFF;
 padding:0 20px;
-height:100px;
-font-size:1.3em;
+height:120px;
+font-size:1.6em;
+font-weight:300;
 border:1px solid #ddd;
 }
-#headerContent{padding-top:60px}
+#headerContent{padding-top:70px}
 #header h1,#nodeDecoration h1{margin:0;font-size:1em;text-align:left}
 #nodeDecoration{margin-bottom:15px} /* Single page */
 
 .nodeDecoration h1{font-size:1.5em}
 
 /* iDevices */
-.iDevice{margin:10px 0 20px 0}
-.iDevice_header{line-height:34px;letter-spacing:.5px}
-.iDeviceTitle{font-size:1.2em;vertical-align:bottom;top:auto;display:inline;
-padding:3px 10px 3px 30px;background-image:url(icon_star.png);background-repeat:no-repeat;background-position:0 0}
+.iDevice{margin:20px 0 30px 0}
+.iDevice_header{letter-spacing:.5px;height:2.7em;line-height:2.7em}
+.iDeviceTitle{font-size:1.3em;vertical-align:bottom;top:auto;display:inline-block;font-weight:300;
+padding:0 10px 0 35px;background-image:url(icon_star.png);background-repeat:no-repeat;background-position:0 50%;margin:0}
 .iDevice_inner{padding:10px 20px;border:1px solid #ddd;border-radius:5px}
+.iDeviceTitle{background-image:url(icon_star.gif)}
 
 /* Icons */
 .activityIdevice .iDeviceTitle{background-image:url(icon_assignment.png)}
@@ -42,18 +46,30 @@ padding:3px 10px 3px 30px;background-image:url(icon_star.png);background-repeat:
 .ReflectionIdevice .iDeviceTitle{background-image:url(icon_account.png)}
 
 /* Clearfix */
-.iDevice_content:before,.iDevice_content:after{content:"";display:table}
-.iDevice_content:after{clear:both}
-.iDevice_content{*zoom:1}/* IE6/7: Trigger hasLayout and contain floats */
+.iDevice_content{overflow:auto}
 
 /* Hide/Show iDevice */
 .toggle-idevice{display:block;margin:0;text-align:right}
-.iDevice_header .toggle-idevice{float:right;padding-top:2px;margin:0}
+.iDevice_header .toggle-idevice{float:right;padding-top:2px;margin-top:13px}
 .toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(_style_icons.png) no-repeat -50px -50px;outline:none}
 .toggle-idevice .show-idevice{background-position:0 -50px}
 .toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 /*.toggle-idevice a{filter:alpha(opacity=70);opacity:.7}*/
 .toggle-idevice a:hover,.toggle-idevice a:focus{filter:alpha(opacity=100);opacity:1}
+
+/* iDevice title with background-color */
+.iDevice_header{background-color:#FFF;border:1px solid #DDD;padding-left:13px;border-top-left-radius:5px;border-top-right-radius:5px}
+.hidden-idevice .iDevice_header{border-radius:5px}
+.iDevice_header .toggle-idevice{margin-right:15px}
+.iDevice_inner{border-top-right-radius:0;border-top-left-radius:0;
+border-color:#DDD;
+border-top:0;
+background-color:#FFF;
+}
+/*
+.iDevice.emphasis0{padding:10px 20px;border:1px solid #DDD;border-radius:5px;background-color:#FFF}
+.hidden-idevice .emphasis0{padding:0;visibility:hidden}
+*/
 
 /* Reset base.css */
 .block,.feedback{padding:0}
@@ -62,112 +78,4 @@ li{list-style-position:outside}
 
 #siteFooter{padding-top:15px}
 
-.iDevice_header{border-top-left-radius:5px;border-top-right-radius:5px}
-.hidden-idevice .iDevice_header{border-radius:5px}
-
 /* eXeLearning Style Designer */
-
-/* To do */
-
-/* iDevices */
-
-/* Header */
-
-.ToDoiDevice .iDevice_header{
-background-color:#6699CC;
-color:#000;
-/*text-shadow:1px 1px 1px #FFFFFF;*/
-border:1px solid red;
-padding-left:0; /* To make toggle-idevice work in IE8  */
-}
-.ToDoiDeviceTitle{
-padding-left:35px;
-background-position:5px 0;
-}
-.ToDoiDevice_header .toggle-idevice{margin-right:10px}
-.ToDoiDevice_inner{border-top-right-radius:0;border-top-left-radius:0;
-border-color:red;
-border-top:0;
-background-color:#FFFFCC;
-/*
-background-image:url(icon_account.png);
-background-repeat:repeat;
-background-position:0 0;
-*/
-}
-/* No icons */
-/*
-.iDevice .iDeviceTitle{
-.iDevice .iDeviceTitle{
-background-image:none;
-padding-left:15px;
-}
-*/
-/* Custom bg image */
-/*
-.iDevice_header{
-background-image:url(icon_account.png);
-background-repeat:repeat;
-background-position:0 0;
-}
-*/
-
-/* emphasis0 iDevices */
-/* Wrapper */
-.ToDoiDevice.emphasis0{
-padding:10px 20px;border:1px solid #ddd;border-radius:5px;
-border-color:red;
-background-color:#FFFFCC;
-}
-.ToDohidden-idevice .emphasis0{padding:0;visibility:hidden}
-
-
-
-/* White and black icons */
-/*
-.iDeviceTitle{background-image:url(icon_star_white.png)}
-.activityIdevice .iDeviceTitle{background-image:url(icon_assignment_white.png)}
-.readingIdevice .iDeviceTitle{background-image:url(icon_unread_white.png)}
-.ListaIdevice .iDeviceTitle,
-.QuizTestIdevice .iDeviceTitle,
-.MultichoiceIdevice .iDeviceTitle,
-.TrueFalseIdevice .iDeviceTitle,
-.MultiSelectIdevice .iDeviceTitle,
-.ClozeIdevice .iDeviceTitle{background-image:url(icon_question_white.png)}
-.preknowledgeIdevice .iDeviceTitle{background-image:url(icon_renew_white.png)}
-.GalleryIdevice .iDeviceTitle{background-image:url(icon_media_white.png)}
-.objectivesIdevice .iDeviceTitle{background-image:url(icon_info_white.png)}
-.ReflectionIdevice .iDeviceTitle{background-image:url(icon_account_white.png)}
-.toggle-idevice a{background-image:url(_style_icons_white.png)}
-
-.iDeviceTitle{background-image:url(icon_star_black.png)}
-.activityIdevice .iDeviceTitle{background-image:url(icon_assignment_black.png)}
-.readingIdevice .iDeviceTitle{background-image:url(icon_unread_black.png)}
-.ListaIdevice .iDeviceTitle,
-.QuizTestIdevice .iDeviceTitle,
-.MultichoiceIdevice .iDeviceTitle,
-.TrueFalseIdevice .iDeviceTitle,
-.MultiSelectIdevice .iDeviceTitle,
-.ClozeIdevice .iDeviceTitle{background-image:url(icon_question_black.png)}
-.preknowledgeIdevice .iDeviceTitle{background-image:url(icon_renew_black.png)}
-.GalleryIdevice .iDeviceTitle{background-image:url(icon_media_black.png)}
-.objectivesIdevice .iDeviceTitle{background-image:url(icon_info_black.png)}
-.ReflectionIdevice .iDeviceTitle{background-image:url(icon_account_black.png)}
-.toggle-idevice a{background-image:url(_style_icons_black.png)}
-*/
-/* Black icons:
-.iDeviceTitle{background-image:url(icon_star_black.png)}
-.activityIdevice .iDeviceTitle{background-image:url(icon_assignment_black.png)}
-.readingIdevice .iDeviceTitle{background-image:url(icon_unread_black.png)}
-.ListaIdevice .iDeviceTitle,
-.QuizTestIdevice .iDeviceTitle,
-.MultichoiceIdevice .iDeviceTitle,
-.TrueFalseIdevice .iDeviceTitle,
-.MultiSelectIdevice .iDeviceTitle,
-.ClozeIdevice .iDeviceTitle{background-image:url(icon_question_black.png)}
-.preknowledgeIdevice .iDeviceTitle{background-image:url(icon_renew_black.png)}
-.GalleryIdevice .iDeviceTitle{background-image:url(icon_media_black.png)}
-.objectivesIdevice .iDeviceTitle{background-image:url(icon_info_black.png)}
-.ReflectionIdevice .iDeviceTitle{background-image:url(icon_account_black.png)}
-.toggle-idevice a{background-image:url(_style_icons_black.png)}
-*/
