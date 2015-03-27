@@ -10,20 +10,41 @@ var $designer = {
 		var sd_href_parts = sd_href.split("?style=");
 		if (sd_href_parts.length==2) sd_style = sd_href_parts[1];
 		this.styleId = sd_style;
+		this.styleBasePath = "/style/"+sd_style+"/";
 	},
 	isBrowserCompatible : function(){
 		var n = navigator.userAgent.toLowerCase();
 		n = (n.indexOf('msie') != -1) ? parseInt(n.split('msie')[1]) : false;
 		if (n && n<7) return false;
 		return true;
-	},	
+	},
+	getStylesContent : function(type){
+		var url = "/style/"+this.styleId+"/"+type+".css";
+		var tag = document.getElementById("my-"+type+"-css");
+		$.ajax({
+			type: "GET",
+			url: url,
+			success: function(res){
+				if (this.isOldBrowser) tag.cssText = res;
+				else tag.innerHTML = res;
+				if (type=="content") $designer.contentCSS = res;
+				else $designer.navCSS = res;
+			}
+		});
+	},
 	printStyles : function(type){
+		// Is it IE<9?
+		this.isOldBrowser = false;
+		var ie = this.checkIE;
+		if (ie && ie<9) this.isOldBrowser = true;		
 		document.write('<link rel="stylesheet" type="text/css" href="/style/base.css" />');
-		document.write('<link rel="stylesheet" type="text/css" href="/style/'+this.styleId+'/content.css" id="base-content-css" />');
+		// To review: document.write('<link rel="stylesheet" type="text/css" href="/style/'+this.styleId+'/content.css" id="base-content-css" />');
 		document.write('<style type="text/css" id="my-content-css"></style>');
+		this.getStylesContent("content");
 		if (type=='website') {
-			document.write('<link rel="stylesheet" type="text/css" href="/style/'+this.styleId+'/nav.css" id="base-nav-css" />');
+			// To review: document.write('<link rel="stylesheet" type="text/css" href="/style/'+this.styleId+'/nav.css" id="base-nav-css" />');
 			document.write('<style type="text/css" id="my-nav-css"></style>');
+			this.getStylesContent("nav");
 		}
 	},
 	printExtraBody : function(){

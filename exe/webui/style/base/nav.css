@@ -1,6 +1,6 @@
 /* eXeLearning Style Designer Compatible Style */
 body{padding:0;text-align:center}
-#content{background-color:#fff;width:100%;margin:0 auto;text-align:left;position:relative;background:#f9f9f9;border-style:solid;border-width:0;border-color:#DDD;box-shadow:0 0 10px 0 #999}
+#content{width:100%;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0;box-shadow:0 0 10px 0 #999}
 #main-wrapper{width:100%;*width:auto}/* * is for IE6 and IE7 */
 #main{padding:20px 40px 30px 320px;height:auto!important;height:200px;min-height:200px;*padding-left:0}
 
@@ -13,11 +13,10 @@ body{padding:0;text-align:center}
 #nodeTitle{font-weight:300}
 
 /* Menú */
-#siteNav{width:280px;float:left;margin-right:40px;margin-bottom:40px;background-color:#F9F9F9}
+#siteNav{width:280px;float:left;margin-right:40px;margin-bottom:40px}
 #siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
 #siteNav .other-section{display:none}
-#siteNav a{display:block;padding:8px 10px 8px 20px;border-width:0 0 1px 0;border-style:solid;border-color:#ddd;color:#555;background-color:#F9F9F9}
-#siteNav a:hover,#siteNav a:focus{color:#000;background:#FFFFFF}
+#siteNav a{display:block;padding:8px 10px 8px 20px;border-width:0 0 1px 0;border-style:solid}
 #siteNav .active{font-weight:bold;text-decoration:underline}
 #siteNav ul ul a{padding-left:35px;font-size:.95em}
 #siteNav ul ul ul a{padding-left:60px}
@@ -29,31 +28,26 @@ body{padding:0;text-align:center}
 * html #siteNav ul ul ul a{width:190px}
 * html #main{padding:20px 20px 0 0}
 
-#siteFooter{padding:0 20px 20px 20px;border:0;background:#fff}
+#siteFooter{padding:0 20px 20px 20px;border:0;
+/* To do */background:#fff}
 /* Pagination */
 .pagination{text-align:right;border-top:1px solid #ddd;font-size:.95em;padding:20px 0}
 .pagination .sep{display:none}
-.pagination a{display:inline-block;padding:5px 10px;border-radius:5px;background:#333333;color:#FFF;margin-left:20px}
-.pagination a:hover,.pagination a:focus{text-decoration:none;background:#555}
+.pagination a{display:inline-block;padding:5px 10px;border-radius:5px;margin-left:20px}
+.pagination a:hover,.pagination a:focus{text-decoration:none}
 #topPagination{position:absolute;top:0;right:20px}
 #topPagination .pagination{border:none}
-#bottomPagination{clear:both;background:#fff}
+#bottomPagination{clear:both;
+/* To do */background:#fff}
 #bottomPagination a{margin:0 20px 0 0}
-
-/* Opacity */
-/*
-.pagination a,#nav-toggler a{opacity:.6;filter:alpha(opacity=60)}
-.pagination a:hover,#nav-toggler a:hover{opacity:1;filter:alpha(opacity=100)}
-*/
 
 /* Autoclear */
 #content{overflow:auto}
 
 /* Hide/Show/Skip navigation */
 #nav-toggler{margin:0;position:absolute;top:20px;left:20px;font-size:.95em}
-#nav-toggler a,#skipNav a{background:#333333;color:#FFF;padding:5px 10px;border-radius:5px}
-#skipNav a{background:#555;color:#FFF}
-#nav-toggler a:hover{background-color:#555;text-decoration:none}
+#nav-toggler a,#skipNav a{padding:5px 10px;border-radius:5px}
+#nav-toggler a:hover{text-decoration:none}
 #skipNav{z-index:100px;padding-top:15px;text-align:center}
 
 @media screen and (min-width: 701px) and (max-width: 1000px) {
@@ -90,3 +84,51 @@ body{padding:0;text-align:center}
 }
 
 /* eXeLearning Style Designer */
+#content{
+/*contentBGColor*/
+background-color:#f9f9f9;
+}
+.pagination a,#nav-toggler a,#skipNav a{
+/*nav2BGColor*/
+background-color:#333333;
+/*nav2AColor*/
+color:#ffffff;
+}
+.pagination a:hover,.pagination a:focus,#nav-toggler a:hover{
+/*nav2HoverBGColor*/
+background-color:#555555;
+}
+body{
+}
+#siteNav,#siteNav a{
+/*navBGColor*/
+background-color:#f9f9f9;
+/*navAColor*/
+color:#555555;
+/*navBorderColor*/
+border-color:#dddddd;
+}
+@media screen and (min-width: 701px) and (max-width: 1015px){
+#siteNav,#siteNav ul{
+background-color:#f9f9f9;border-color:#dddddd;
+}
+#siteNav li{
+background-color:#f9f9f9;
+}
+}
+@media all and (max-width: 700px){
+.js #siteNav{
+border-top:1px solid #dddddd;
+}
+}
+#siteNav a:hover,#siteNav a:focus{
+/*navHoverBGColor*/
+background-color:#ffffff;
+/*navAHoverColor*/
+color:#000000;
+}
+@media screen and (min-width: 701px) and (max-width: 1015px){
+#siteNav li:hover,#siteNav li.sfhover{
+background-color:#ffffff;
+}
+}

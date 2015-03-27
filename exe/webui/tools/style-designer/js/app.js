@@ -84,10 +84,7 @@ var $appVars = [
 ];
 
 var $app = {
-	// Debug
-	includeDefaultStyles : false,
-	returnFullContent : false,
-	// /Debug
+	returnFullContent : true,
 	defaultValues : {
 		pageWidth : "100%",
 		pageAlign : "0 auto",
@@ -153,7 +150,7 @@ var $app = {
 			// var css = $app.composeCSS();
 		});
 		
-		this.stylePath = opener.document.getElementById("base-content-css").href.replace("content.css","");
+		this.stylePath = opener.$designer.styleBasePath;
 		this.getCurrentCSS();
 		// Enable the Color Pickers after loading the current values
 		
@@ -194,39 +191,26 @@ var $app = {
 	getCurrentCSS : function(){
 		
 		// content.css
-		var contentCSSFile = opener.document.getElementById("base-content-css");
-		var url = contentCSSFile.href;
-		$.ajax({
-			type: "GET",
-			url: url,
-			success: function(res){
-				var contentCSS = res.split($app.mark);
-				$app.baseContentCSS = contentCSS[0];
-				var myContentCSS = "";
-				if (contentCSS.length==2) {
-					myContentCSS = contentCSS[1];
-				}
-				$app.myContentCSS = myContentCSS;
-				$app.getAllValues("content",$app.myContentCSS);
-			}
-		});
+		var contentCSS = opener.$designer.contentCSS.split($app.mark);
+		$app.baseContentCSS = contentCSS[0].replace(/\s+$/, ''); // Remove the last space
+		var myContentCSS = "";
+		if (contentCSS.length==2) {
+			myContentCSS = contentCSS[1];
+			myContentCSS = myContentCSS.replace(/(\r\n|\n|\r)/gm,"");
+		}
+		$app.myContentCSS = myContentCSS;
+		$app.getAllValues("content",$app.myContentCSS);
 		
 		// nav.css
-		url = url.replace("content.css","nav.css")
-		$.ajax({
-			type: "GET",
-			url: url,
-			success: function(res){
-				var navCSS = res.split($app.mark);
-				$app.baseNavCSS = navCSS[0];
-				var myNavCSS = "";
-				if (navCSS.length==2) {
-					myNavCSS = navCSS[1];
-				}
-				$app.myNavCSS = myNavCSS;
-				$app.getAllValues("nav",$app.myNavCSS);
-			}
-		});
+		var navCSS = opener.$designer.navCSS.split($app.mark);
+		$app.baseNavCSS = navCSS[0].replace(/\s+$/, ''); // Remove the last space
+		var myNavCSS = "";
+		if (navCSS.length==2) {
+			myNavCSS = navCSS[1];
+			myNavCSS = myNavCSS.replace(/(\r\n|\n|\r)/gm,"");
+		}
+		$app.myNavCSS = myNavCSS;
+		$app.getAllValues("nav",$app.myNavCSS);
 		
 	},
 	addStylePath : function(c){
@@ -252,11 +236,11 @@ var $app = {
 		
 		// Get CSS onload
 		if (type=="content") {
-			if ($app.returnFullContent==true) $("#my-content-css").val($app.baseContentCSS+"\n"+$app.mark+"\n\n"+c);
-			else $("#my-content-css").val(this.formatCSS(c));
+			if ($app.returnFullContent==true) $("#my-content-css").val($app.baseContentCSS+"\n"+$app.mark+"\n"+c);
+			else $("#my-content-css").val(c);
 		} else {
-			if ($app.returnFullContent==true) $("#my-nav-css").val($app.baseNavCSS+"\n"+$app.mark+"\n\n"+c);
-			else $("#my-nav-css").val(this.formatCSS(c));
+			if ($app.returnFullContent==true) $("#my-nav-css").val($app.baseNavCSS+"\n"+$app.mark+"\n"+c);
+			else $("#my-nav-css").val(c);
 		}
 		
 		var val;
@@ -410,10 +394,12 @@ var $app = {
 	formatCSS : function(css) {
 		css = css.replace(/(\r\n|\n|\r)/gm,"");
 		css=css.replace(/{/g, "{\n");
-		css=css.replace(/}/g, "}\n\n");
-		css=css.replace(/;/g, ";\n");
-		css=css.replace(/\n$/, ""); // Remove the last \n
-		css=css.replace($app.advancedMark,$app.advancedMark+"\n")
+		css=css.replace(/}/g, "\n}\n");
+		css=css.replace(/\t/g,"");
+		css=css.replace(/\*\//g,'*/\n');
+		css=css.replace(/;\/\*/g,';\n/*');
+		css = css.replace(/\n\n/gm,"\n");
+		css = css.replace(/\s+$/, ''); // Remove the last space
 		return css;	
 	},
 	composeCSS : function(){
@@ -560,7 +546,7 @@ var $app = {
 		if (aHoverColor!='') contentCSS+="a:hover,a:focus{/*aHoverColor*/color:#"+aHoverColor+";}";		
 		
 		// BODY and #content
-		if (contentBGColor!='' || contentBGURL!='' || bodyBGColor!='' || pageAlign=='left' || bodyBGURL!='') {
+		if (contentBGColor!='' || contentBGURL!='' || bodyBGColor!='' || (pageAlign=='left'&&pageWidth!="100") || bodyBGURL!='') {
 			navCSS+="body{"
 				if (pageAlign=='left') navCSS+="text-align:left;";
 				if (bodyBGColor!='') navCSS+="/*bodyBGColor*/background-color:#"+bodyBGColor+";";
@@ -697,237 +683,6 @@ var $app = {
 			contentCSS += "}";
 		}
 		
-		// Default values
-		var defaultContentCSS = "";
-		var defaultNavCSS = "";
-		
-		if (fontFamily=='' || bodyColor=='' || fontSize==''){
-			defaultContentCSS+="body{";
-				if (fontFamily=="") defaultContentCSS+="font-family:"+$app.defaultValues.fontFamily+";";
-				if (bodyColor=="") defaultContentCSS+="color:#"+$app.defaultValues.bodyColor+";";
-				if (fontSize=="") defaultContentCSS+="font-size:100%;";
-			defaultContentCSS+="}";
-		}
-		
-		if (contentBGColor=='' || contentBGURL==''){
-			defaultContentCSS+=".exe-single-page,.exe-scorm,.exe-ims,.exe-epub3{";
-				if (contentBGColor=='') defaultContentCSS+="background-color:#"+$app.defaultValues.contentBGColor+";";
-				if (contentBGURL=='') defaultContentCSS += "background-image:none;";				
-			defaultContentCSS+="}";
-		}	
-		
-		if (aColor=='') defaultContentCSS+="a{color:#"+$app.defaultValues.aColor+";}";
-		if (aHoverColor=='') {
-			if (aColor=='') defaultContentCSS+="a:hover,a:focus{color:#"+$app.defaultValues.aColor+";}";
-			else defaultContentCSS+="a:hover,a:focus{color:#"+aColor+";}";
-		}
-		
-		if (contentBGColor=='' || contentBGURL=='' || pageWidth=="" || pageAlign=="center" || wrapperShadowColor=="" || contentBorderColor=="" || contentBorderWidth=="") {
-			defaultNavCSS+="#content{";
-				if (pageWidth=="") defaultNavCSS+="width:"+$app.defaultValues.pageWidth+";";
-				if (pageAlign=="center") defaultNavCSS+="margin:"+$app.defaultValues.pageAlign+";";
-				//if (pageWidth!="100") {
-					if (wrapperShadowColor=="") defaultNavCSS+="box-shadow:"+$app.defaultValues.wrapperShadowColor+";";
-					if (contentBorderColor=="") defaultNavCSS+="border-color:#"+$app.defaultValues.contentBorderColor+";";
-					if (contentBorderWidth=="") defaultNavCSS+="border-width:0 "+$app.defaultValues.contentBorderWidth+"px;";
-				//}
-				if (contentBGColor=='') defaultNavCSS+="background-color:#"+$app.defaultValues.contentBGColor+";";
-				if (contentBGURL=='') defaultNavCSS += "background-image:none;";				
-			defaultNavCSS+="}";
-		}
-		
-		if (!hidePagination) {
-			defaultNavCSS += "#topPagination,#bottomPagination{display:block;}";
-			defaultNavCSS += "@media all and (max-width: 700px){#topPagination{display:none;}}";
-		}
-		
-		if (useNavigationIcons==false) {
-		
-			if (nav2BGColor=="" || nav2AColor=="") {
-				defaultNavCSS+=".pagination a,#nav-toggler a,#skipNav a{";
-					if (nav2BGColor=="") defaultNavCSS+="background-color:#"+$app.defaultValues.nav2BGColor+";";
-					if (nav2AColor=="") defaultNavCSS+="color:#"+$app.defaultValues.nav2AColor+";";
-				defaultNavCSS+="}";
-			}
-			if (nav2HoverBGColor=="" || nav2AHoverColor=="") {
-				defaultNavCSS+=".pagination a:hover,.pagination a:focus,#nav-toggler a:hover{";
-					if (nav2HoverBGColor=="") defaultNavCSS+="/*nav2HoverBGColor*/background-color:#"+$app.defaultValues.nav2HoverBGColor+";";
-					if (nav2AHoverColor=="") defaultNavCSS+="/*nav2AHoverColor*/color:#"+$app.defaultValues.nav2AHoverColor+";";
-				defaultNavCSS+="}";
-			}
-			
-			var _nav2BGColor = $app.defaultValues.nav2BGColor;
-			if (nav2BGColor!="") _nav2BGColor = nav2BGColor;
-			
-			var _nav2AColor = $app.defaultValues.nav2AColor;
-			if (nav2AColor!="") _nav2AColor = nav2AColor;
-
-			var _nav2HoverBGColor = $app.defaultValues.nav2HoverBGColor;
-			if (nav2HoverBGColor!="") _nav2HoverBGColor = nav2HoverBGColor;
-
-			var _nav2AHoverColor = $app.defaultValues.nav2AHoverColor;
-			if (nav2AHoverColor!="") _nav2AHoverColor = nav2AHoverColor;			
-			
-			/*defaultNavCSS += '.pagination a span,#nav-toggler a span{position:static;overflow:auto;clip:auto;height:auto;}\
-.pagination a{display:inline;float:none;width:auto;height:auto;padding:0;background-image:none;background:#'+_nav2BGColor+';padding:5px 10px;color:#'+_nav2AColor+'}\
-.pagination a:hover,.pagination a:focus{background:#'+_nav2HoverBGColor+';color:#'+_nav2AHoverColor+'}\
-#bottomPagination{height:auto;position:relative;}\
-#bottomPagination a{position:static;top:auto;right:auto;}\
-#bottomPagination .next{right:auto;margin-left:11px;}\
-#nav-toggler a,#skipNav a{display:inline;width:auto;height:auto;background:#'+_nav2BGColor+';padding:5px 10px;}\
-#nav-toggler a:hover{background:#'+_nav2HoverBGColor+';color:#'+_nav2AHoverColor+'}\
-.pagination a,#nav-toggler a{filter:alpha(opacity=100);opacity:1;}\
-@media all and (max-width: 700px){\
-#nav-toggler{position:relative;}\
-#nav-toggler a{display:block;padding:4px 0;position:relative;left:auto;margin-left:0;}\
-#siteNav{border-top:1px solid #ddd;}\
-#bottomPagination a{position:absolute;}\
-#bottomPagination .next{right:20px;}\
-#bottomPagination .next{right:0;}\
-}';*/
-		}	
-		
-		if (pageAlign=='center' || bodyBGColor=='' || bodyBGURL=='') {
-			defaultNavCSS+="body{"
-				if (pageAlign=='center') defaultNavCSS+="text-align:center;";
-				if (bodyBGColor=='') defaultNavCSS+="background-color:#"+$app.defaultValues.bodyBGColor+";";
-				if (bodyBGURL=='') defaultNavCSS += "background-image:none;";
-			defaultNavCSS+="}"
-		}
-		
-		if (headerHeight=="" || headerBGColor=="" || headerBGURL=="" || headerBorderColor=="") {
-			defaultContentCSS+="#header,#emptyHeader,#nodeDecoration{";
-				if (headerHeight=="") defaultContentCSS+="height:"+$app.defaultValues.headerHeight+"px;";
-				if (headerBGColor=='') defaultContentCSS+="background-color:inherit;";
-				if (headerBGURL=='') defaultContentCSS+="background-image:none;";
-				if (headerBorderColor=="") defaultContentCSS+="border:1px solid #"+$app.defaultValues.headerBorderColor+";";
-			defaultContentCSS+="}";
-		}
-		
-		if (!hideProjectTitle || headerTitleTopMargin=="" || headerTitleFontFamily=="" || headerTitleColor=="" || headerTitleTextShadowColor=="" || headerTitleAlign=="" || headerTitleFontSize=="") {
-			defaultContentCSS+="#headerContent{";
-				if (!hideProjectTitle) defaultContentCSS+="position:static!important;clip:rect(auto auto auto auto);clip:rect(auto,auto,auto,auto);";
-				if (headerTitleTopMargin=="") defaultContentCSS+="padding-top:"+$app.defaultValues.headerTitleTopMargin+"px;";
-				if (headerTitleFontFamily=="") {
-					headerTitleFontFamily = fontFamily;
-					if (fontFamily=='') headerTitleFontFamily = $app.defaultValues.fontFamily;
-					defaultContentCSS+="font-family:"+headerTitleFontFamily+";";
-				}
-				if (headerTitleColor=="") {
-					headerTitleColor = bodyColor;
-					if (bodyColor=='') headerTitleColor = $app.defaultValues.bodyColor;
-					defaultContentCSS+="color:#"+headerTitleColor+";";
-				}
-				if (headerTitleTextShadowColor=="") defaultContentCSS+="text-shadow:none;";
-				if (headerTitleAlign=="") defaultContentCSS+="text-align:left;";
-				if (headerTitleFontSize=="") defaultContentCSS+="font-size:100%;";
-			defaultContentCSS+="}";
-		}	
-
-		if (hideNavigation==false) {
-			
-			defaultNavCSS+= "#siteNav,#nav-toggler{display:block;}";
-			if (!$app.hasHorizontalNavigation) {
-				defaultNavCSS+="#main{padding-left:320px;}";
-				defaultNavCSS+="@media screen and (max-width: 1150px){#main{padding:20px 40px 0 290px}}";
-			}
-			defaultNavCSS+="@media all and (max-width: 1015px){";
-				defaultNavCSS+="#main{padding-top:0;padding-left:20px;}";	
-			defaultNavCSS+="}";
-		
-			// Navigation colors
-			var defaultNavAColor = $app.defaultValues.navAColor;
-			if (navAColor!="") defaultNavAColor = navAColor;
-			
-			var defaultNavAHoverColor = $app.defaultValues.navAHoverColor;
-			if (navAHoverColor!="") defaultNavAHoverColor = navAHoverColor;
-			
-			var defaultNavBGColor = $app.defaultValues.navBGColor;
-			if (navBGColor!="") defaultNavBGColor = navBGColor;	
-
-			var defaultNavHoverBGColor = $app.defaultValues.navHoverBGColor;
-			if (navHoverBGColor!="") defaultNavHoverBGColor = navHoverBGColor;
-
-			var defaultBorderColor = $app.defaultValues.navBorderColor;
-			if (navBorderColor!="") defaultBorderColor = navBorderColor;
-			
-			defaultNavCSS += '\
-			#siteNav,#siteNav a{\
-				background-color:#'+defaultNavBGColor+';\
-				color:#'+defaultNavAColor+';\
-				border-color:#'+defaultBorderColor+';\
-			}\
-			@media screen and (min-width: 701px) and (max-width: 1015px){\
-				#siteNav,#siteNav ul{\
-					background-color:#'+defaultNavBGColor+';\
-					border-color:#'+defaultBorderColor+';\
-				}\
-				#siteNav li{\
-					background-color:#'+defaultNavBGColor+';\
-				}\
-			}\
-			@media all and (max-width: 700px){\
-				.js #siteNav{\
-					border-top:1px solid #'+defaultBorderColor+';\
-				}\
-			}\
-			#siteNav a:hover,#siteNav a:focus{\
-				background-color:#'+defaultNavHoverBGColor+';\
-				color:#'+defaultNavAHoverColor+';\
-			}\
-			@media screen and (min-width: 701px) and (max-width: 1015px){\
-				#siteNav li:hover,#siteNav li.sfhover{\
-					background-color:#'+defaultNavHoverBGColor+';\
-				}\
-			}\
-			';
-			
-		}
-		
-		if ($app.hasHorizontalNavigation) {
-			defaultNavCSS += '\
-@media screen and (min-width:701px){\
-#siteNav,#siteNav ul{\
-background-color:#'+defaultNavBGColor+';\
-border-color:#'+defaultBorderColor+';\
-}\
-#siteNav li{\
-background-color:#'+defaultNavBGColor+';\
-}\
-}';
-		}
-		
-		// Footer
-		if (footerBorderColor=="" || footerColor=="" || footerTextAlign=="" || footerFontSize=="") {
-			defaultContentCSS += "#siteFooter{";
-				if (footerBorderColor=="") {
-					defaultContentCSS += "border-top:1px solid #"+$app.defaultValues.footerBorderColor+";"
-					defaultNavCSS += ".pagination{";
-						defaultNavCSS += "border-color:#"+$app.defaultValues.footerBorderColor+";";
-					defaultNavCSS += "}";
-				}
-				if (footerColor=="") defaultContentCSS += "color:#"+$app.defaultValues.footerColor+";"
-				if (footerTextAlign=="") defaultContentCSS+="text-align:left;";
-				if (footerFontSize=="") defaultContentCSS+="font-size:100%;";
-			defaultContentCSS += "}";
-		}
-		if (footerAColor=="") {
-			defaultContentCSS += "#siteFooter a{";
-				defaultContentCSS += "color:#"+$app.defaultValues.footerAColor+";"
-			defaultContentCSS += "}";
-		}
-		if (footerAHoverColor=="") {
-			defaultContentCSS += "#siteFooter a:hover,#siteFooter a:focus{";
-				if (footerAColor=="") defaultContentCSS += "color:#"+$app.defaultValues.footerAColor+";"
-				else defaultContentCSS += "color:#"+footerAColor+";"
-			defaultContentCSS += "}";
-		}
-		
-		if (defaultContentCSS!="") defaultContentCSS=$app.defaultMark+defaultContentCSS+$app.defaultMark;
-		if (defaultNavCSS!="") defaultNavCSS=$app.defaultMark+defaultNavCSS+$app.defaultMark;
-		contentCSS += defaultContentCSS;
-		navCSS += defaultNavCSS;
-		
 		contentCSS = this.formatCSS(contentCSS);
 		navCSS = this.formatCSS(navCSS);
 
@@ -1017,9 +772,8 @@ background-color:#'+defaultNavBGColor+';\
 	},
 	getFinalCSS : function(css,type){
 		
-		if ($app.includeDefaultStyles==true) return this.removeStylePath(css);
-		
 		// Remove all default values from the CSS to include in content.css and nav.css
+		/*
 		if (css.indexOf($app.defaultMark)!=-1) {
 			var parts = css.split($app.defaultMark);
 			if (parts.length==3) {
@@ -1033,7 +787,13 @@ background-color:#'+defaultNavBGColor+';\
 				css += this.getHorizontalNavigationCSS();
 			}
 		}
+		*/
 		
+		css = this.formatCSS(css);
+		if ($app.returnFullContent==true) {
+				if (type=="content") css = $app.baseContentCSS+"\n\n"+$app.mark+"\n"+css;
+				else css = $app.baseNavCSS+"\n\n"+$app.mark+"\n"+css;
+		}
 		return this.removeStylePath(css); // css is already formatted with formatCSS
 		
 	},
@@ -1050,7 +810,8 @@ background-color:#'+defaultNavBGColor+';\
 		if (!contentCSSTag) return false;
 		var css = this.composeCSS();
 		var contentCSS = css[0];
-		this.setCSS(contentCSSTag,contentCSS);
+		contentCSS = $app.baseContentCSS+$app.advancedMark+contentCSS;
+		this.setCSS(contentCSSTag,$app.baseContentCSS+contentCSS);
 		
 		// content.css and nav.css TEXTAREAS
 		$("#my-content-css").val(this.getFinalCSS(css[0],"content"));
@@ -1061,6 +822,8 @@ background-color:#'+defaultNavBGColor+';\
 		var navCSSTag = w.document.getElementById("my-nav-css");
 		if (!navCSSTag) return false;		
 		var navCSS = css[1];
+		// advancedMark
+		navCSS = $app.baseNavCSS+$app.advancedMark+navCSS;
 		this.setCSS(navCSSTag,navCSS);
 		
 		// Menu height
