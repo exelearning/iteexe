@@ -48,7 +48,7 @@ padding:0 10px 0 35px;background-image:url(icon_star.png);background-repeat:no-r
 
 /* Hide/Show iDevice */
 .toggle-idevice{display:block;margin:0;text-align:right}
-.iDevice_header .toggle-idevice{float:right;padding-top:2px;margin-top:13px}
+.iDevice_header .toggle-idevice{float:right;padding-top:2px}
 .toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(_style_icons.png) no-repeat -50px -50px;outline:none}
 .toggle-idevice .show-idevice{background-position:0 -50px}
 .toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}

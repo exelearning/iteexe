@@ -1,4 +1,21 @@
 ﻿/*
+To do:
+	Eliminar la opción para ocultar la navegación secuencial.
+	Añadir color de fondo al pie de página (se aplica a #siteFooter y #bottomPagination)
+	Eliminar los "defaultValues" innecesarios.
+	Permitir el control de los iDevices
+	Con énfasis (mostrar caja / ocultar caja). Si mostrar: 
+		color fondo, color texto, color borde
+		color fondo título, color título
+		icono mostrar (blanco, negro, gris)
+	Con énfasis (mostrar caja / ocultar caja). Si mostrar: 
+		color fondo, color texto, color borde
+		icono mostrar (blanco, negro, gris)
+	Mejorar presentación h2, h3, etc. en contenido.
+	¿Eliminar la navegación con iconos?
+*/
+
+/*
  * eXeLearning Style Designer 1.0
  * By Ignacio Gros (http://www.gros.es/) for eXeLearning (http://exelearning.net/)
  * Creative Commons Attribution-ShareAlike (http://creativecommons.org/licenses/by-sa/3.0/)
