@@ -198,7 +198,7 @@ var $app = {
 			myContentCSS = contentCSS[1];
 			myContentCSS = myContentCSS.replace(/(\r\n|\n|\r)/gm,"");
 		}
-		$app.myContentCSS = myContentCSS;
+		$app.myContentCSS = $app.removeStylePath(myContentCSS);
 		$app.getAllValues("content",$app.myContentCSS);
 		
 		// nav.css
@@ -209,14 +209,16 @@ var $app = {
 			myNavCSS = navCSS[1];
 			myNavCSS = myNavCSS.replace(/(\r\n|\n|\r)/gm,"");
 		}
-		$app.myNavCSS = myNavCSS;
+		$app.myNavCSS = $app.removeStylePath(myNavCSS);
 		$app.getAllValues("nav",$app.myNavCSS);
 		
 	},
 	addStylePath : function(c){
 		c = c.replace(/url\(http:/g,'url--http:');
+		c = c.replace(/url\(https:/g,'url--https:');
 		c = c.replace(/url\(/g,'url('+$app.stylePath);
 		c = c.replace(/url--http:/g,'url(http:');
+		c = c.replace(/url--https:/g,'url(https:');
 		return c;
 	},
 	removeStylePath : function(c){
@@ -685,6 +687,13 @@ var $app = {
 		
 		contentCSS = this.formatCSS(contentCSS);
 		navCSS = this.formatCSS(navCSS);
+		
+		var horizontalNavigation = $("#horizontalNavigation").prop("checked");
+		if (horizontalNavigation) {
+			var hideNavigation = $("#hideNavigation").prop("checked");
+			if (!hideNavigation) navCSS += this.getHorizontalNavigationCSS();
+		}		
+		opener.myTheme.setNavHeight();
 
 		// Advanced tab
 		var advContentCSS = $("#extra-content-css").val();
@@ -749,12 +758,13 @@ var $app = {
 /*horizontalNavigation*/\
 @media screen and (min-width:701px){\
 #main,.no-nav #main{padding:'+padding+'}\
+#siteNav{display:table;margin-bottom:40px}\
 #siteNav li:hover,#siteNav li.sfhover{background:#'+hNavHoverBGColor+'}\
 #siteNav .other-section{display:block}\
 #siteNav,#siteNav ul{float:left;width:100%;border-style:solid;border-width:1px 0;border-color:#'+hNavBorderColor+';margin:0;line-height:1.2em;background:#'+hNavBGColor+'}\
 #siteNav ul ul{line-height:1.1em}\
 #siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none;padding-right:0}\
-#siteNav a{padding:.4em 15px;border:none}\
+#siteNav a{padding:.6em 15px;border:none}\
 #siteNav li{float:left}\
 #siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}\
 * html #siteNav li ul{width:13em}\
@@ -780,14 +790,13 @@ var $app = {
 				css = parts[0]+parts[2];
 			}
 		}
-		
 		if (type=="nav") {
 			var horizontalNavigation = $("#horizontalNavigation").prop("checked");
 			if (horizontalNavigation) {
 				css += this.getHorizontalNavigationCSS();
 			}
-		}
-		*/
+		}		
+		*/		
 		
 		css = this.formatCSS(css);
 		if ($app.returnFullContent==true) {

@@ -18,6 +18,15 @@ var $designer = {
 		if (n && n<7) return false;
 		return true;
 	},
+	addStylePath : function(c){
+		var p = "/style/"+this.styleId+"/";
+		c = c.replace(/url\(http:/g,'url--http:');
+		c = c.replace(/url\(https:/g,'url--https:');
+		c = c.replace(/url\(/g,'url('+p);
+		c = c.replace(/url--http:/g,'url(http:');
+		c = c.replace(/url--https:/g,'url(https:');
+		return c;
+	},	
 	getStylesContent : function(type){
 		var url = "/style/"+this.styleId+"/"+type+".css";
 		var tag = document.getElementById("my-"+type+"-css");
@@ -25,6 +34,7 @@ var $designer = {
 			type: "GET",
 			url: url,
 			success: function(res){
+				res = $designer.addStylePath(res);
 				if (this.isOldBrowser) tag.cssText = res;
 				else tag.innerHTML = res;
 				if (type=="content") $designer.contentCSS = res;

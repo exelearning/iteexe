@@ -17,6 +17,7 @@ var myTheme = {
 				return false;
             }
         }
+		this.addNavArrows();
 		myTheme.setNavHeight();
 		// We execute this more than once because sometimes the height changes because of the videos, etc.
 		setTimeout(function(){
@@ -26,6 +27,13 @@ var myTheme = {
 			myTheme.setNavHeight();
 		});
     },
+	addNavArrows : function(){
+		$("#siteNav ul ul .daddy").each(
+			function(){
+				this.innerHTML+=' <span>&#9658;</span>';
+			}
+		);
+	},	
     hideMenu : function(){
         $("#siteNav").hide();
         $(document.body).addClass("no-nav");
@@ -37,18 +45,19 @@ var myTheme = {
 		var c = $("#main-wrapper");
 		var nH = n.height();
 		var cH = c.height();
-		var h = cH-nH+40;
-		var m = 0;
+		var h = (cH-nH+40)+"px";
+		var m = "40px";
 		if ($("#siteNav").css("float")=="none") {
 			h = 0;
-			m = 15;
+			m = "15px";
+		} else if (n.css("display")=="table") {
+			h = 0;
+			m = "40px";
 		}
-		if (n.css("display")!="table") {
-			n.css({
-				"padding-bottom":h+"px",
-				"margin-bottom":m+"px"
-			});
-		}
+		n.css({
+			"padding-bottom":h,
+			"margin-bottom":m
+		});
 	},
     toggleMenu : function(e){
         if (typeof(myTheme.isToggling)=='undefined') myTheme.isToggling = false;
