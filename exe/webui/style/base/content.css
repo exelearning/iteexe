@@ -1,6 +1,6 @@
 /* eXeLearning Style Designer Compatible Style */
-html{font-size:1em}
-body{font:105%/1.5 'Open Sans',Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#333;background:#f9f9f9}
+html{font-size:105%}
+body{font:100%/1.5 'Open Sans',Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#333;background:#f9f9f9}
 
 a{color:#2495FF}
 h2{font-size:1.3em}
@@ -79,3 +79,7 @@ li{list-style-position:outside}
 #siteFooter{padding-top:15px}
 
 /* eXeLearning Style Designer */
+#header,#emptyHeader,#nodeDecoration{
+/*headerBGColor*/background-color:#ffaaaa;
+}
+

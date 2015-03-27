@@ -89,21 +89,21 @@ var $app = {
 	returnFullContent : false,
 	// /Debug
 	defaultValues : {
-		pageWidth : "985px",
+		pageWidth : "100%",
 		pageAlign : "0 auto",
 		wrapperShadowColor : "0 0 10px 0 #999",
-		contentBorderWidth : 1,
+		contentBorderWidth : 0,
 		contentBorderColor : "DDDDDD",
-		bodyBGColor : "FFFFFF", // website body background-color
+		bodyBGColor : "000000", // website body background-color
 		headerBorderColor : "DDDDDD",
-		fontFamily : "Arial, Verdana, Helvetica, sans-serif",
+		fontFamily : "'Open Sans',Arial,Verdana,Helvetica,sans-serif",
 		bodyColor : "333333",
 		aColor : "2495FF",
-		contentBGColor : "FFF", // IMS body background-color and website #content background-color,
-		headerHeight : 100,
-		headerTitleTopMargin : 60,
-		navBGColor : "FFFFFF",
-		navHoverBGColor : "F9F9F9",
+		contentBGColor : "F9F9F9", // IMS body background-color and website #content background-color,
+		headerHeight : 120,
+		headerTitleTopMargin : 70,
+		navBGColor : "F9F9F9",
+		navHoverBGColor : "FFFFFF",
 		navAColor : "555555",
 		navAHoverColor : "000000",
 		navBorderColor : "DDDDDD",
@@ -123,13 +123,21 @@ var $app = {
 	init : function() {
 	
 		if (!opener) {
-			this.quit();
+			this.quit($i18n.No_Opener_Error);
+			return false;
+		}
+		
+		if ($(opener).width()<800) {
+			this.quit($i18n.Not_Enough_Resolution);
 			return false;
 		}
 		
 		opener.myTheme.toggleMenu = function(){
 			if (opener) {
-				opener.alert($i18n.Hide_Show_Menu_Disabled);
+				if (typeof(Hide_Show_Menu_Disabled_Warned)=='undefined') {
+					opener.alert($i18n.Hide_Show_Menu_Disabled);
+					Hide_Show_Menu_Disabled_Warned = true;
+				}
 			}
 		}
 		
@@ -150,10 +158,10 @@ var $app = {
 		// Enable the Color Pickers after loading the current values
 		
 	},
-	quit : function(){
-		document.title = $i18n.No_Opener_Error;
+	quit : function(msg){
+		document.title = msg;
 		$("#cssWizard").hide();
-		alert($i18n.No_Opener_Error+"\n\n"+$i18n.Quit_Warning);
+		alert(msg+"\n\n"+$i18n.Quit_Warning);
 		window.close();
 	},
 	updateTextFieldFromFile : function(e){
@@ -173,6 +181,15 @@ var $app = {
 		}
 		*/
 		$("#"+id+"File").click();
+	},
+	setWidth : function(e){
+		var w = $("#pageWidth");
+		var v = w.val();
+		if (e.value=="px") {
+			if (v=="" || v=="100") w.val(985);
+		} else {
+			if (v=="" || v>100) w.val(100);
+		}
 	},
 	getCurrentCSS : function(){
 		
@@ -349,7 +366,10 @@ var $app = {
 		// SELECT
 		var f_selects = f.getElementsByTagName("SELECT");
 		for (z=0;z<f_selects.length;z++){
-			f_selects[z].onchange=function(){ $app.getPreview(); }	
+			f_selects[z].onchange=function(){ 
+				if (this.id=="pageWidthUnit") $app.setWidth(this);
+				$app.getPreview(); 
+			}	
 		}
 		// Advanced tab
 		document.getElementById("extra-content-css").onkeyup=function(){ $app.getPreview(); }
@@ -404,6 +424,9 @@ var $app = {
 		
 		// #content
 		var pageWidth = $("#pageWidth").val();
+		// px or %
+		// if (pageWidth>100) $("#pageWidthUnit").val("px");
+		// else $("#pageWidthUnit").val("%");
 		var pageWidthUnit = $("#pageWidthUnit").val();
 		var pageAlign = $("#pageAlign").val();
 		var wrapperShadowColor = $("#wrapperShadowColor").val();
@@ -455,8 +478,10 @@ var $app = {
 		if (contentBGColor!="" || contentBGURL!="" || pageWidth!="" || contentBorderColor!="" || contentBorderWidth!="" || pageAlign=="left" || wrapperShadowColor!=""){
 			navCSS+="#content{";
 				if (pageWidth!="100" && (contentBorderColor!="" || contentBorderWidth!="")) {
-					if (contentBorderWidth!="") navCSS+="border-width:0 /*contentBorderWidth*/"+contentBorderWidth+"px;";
-					if (contentBorderColor!="") navCSS+="border-color:/*contentBorderColor*/#"+contentBorderColor+";";
+					if (contentBorderWidth!="") {
+						navCSS+="border-width:0 /*contentBorderWidth*/"+contentBorderWidth+"px;";
+						if (contentBorderColor!="") navCSS+="border-color:/*contentBorderColor*/#"+contentBorderColor+";";
+					}
 				}
 				if (pageWidth!="") navCSS+="/*pageWidth*/width:"+pageWidth+pageWidthUnit+";";
 				if (pageAlign=="left") navCSS+="/*pageAlign*/margin:0;";
@@ -469,8 +494,8 @@ var $app = {
 					navCSS+="/*contentBGPosition*/background-position:"+contentBGPosition+";";				
 				}
 				if (pageWidth=="100") {
-					navCSS += "border:0;";
-					navCSS += "box-shadow:none;";
+					//navCSS += "border:0;";
+					//navCSS += "box-shadow:none;";
 				}
 			navCSS+="}";
 		}
@@ -605,7 +630,7 @@ var $app = {
 			navCSS+="}";
 		} else {
 			if (navBGColor!="" || navAColor!="" || navBorderColor!="") {
-				navCSS+="#siteNav a{";
+				navCSS+="#siteNav,#siteNav a{";
 					if (navBGColor!="") navCSS+="/*navBGColor*/background-color:#"+navBGColor+";";
 					if (navAColor!="") navCSS+="/*navAColor*/color:#"+navAColor+";";
 					if (navBorderColor!="") navCSS+="/*navBorderColor*/border-color:#"+navBorderColor+";";
@@ -701,11 +726,11 @@ var $app = {
 			defaultNavCSS+="#content{";
 				if (pageWidth=="") defaultNavCSS+="width:"+$app.defaultValues.pageWidth+";";
 				if (pageAlign=="center") defaultNavCSS+="margin:"+$app.defaultValues.pageAlign+";";
-				if (pageWidth!="100") {
+				//if (pageWidth!="100") {
 					if (wrapperShadowColor=="") defaultNavCSS+="box-shadow:"+$app.defaultValues.wrapperShadowColor+";";
 					if (contentBorderColor=="") defaultNavCSS+="border-color:#"+$app.defaultValues.contentBorderColor+";";
 					if (contentBorderWidth=="") defaultNavCSS+="border-width:0 "+$app.defaultValues.contentBorderWidth+"px;";
-				}
+				//}
 				if (contentBGColor=='') defaultNavCSS+="background-color:#"+$app.defaultValues.contentBGColor+";";
 				if (contentBGURL=='') defaultNavCSS += "background-image:none;";				
 			defaultNavCSS+="}";
@@ -743,7 +768,7 @@ var $app = {
 			var _nav2AHoverColor = $app.defaultValues.nav2AHoverColor;
 			if (nav2AHoverColor!="") _nav2AHoverColor = nav2AHoverColor;			
 			
-			defaultNavCSS += '.pagination a span,#nav-toggler a span{position:static;overflow:auto;clip:auto;height:auto;}\
+			/*defaultNavCSS += '.pagination a span,#nav-toggler a span{position:static;overflow:auto;clip:auto;height:auto;}\
 .pagination a{display:inline;float:none;width:auto;height:auto;padding:0;background-image:none;background:#'+_nav2BGColor+';padding:5px 10px;color:#'+_nav2AColor+'}\
 .pagination a:hover,.pagination a:focus{background:#'+_nav2HoverBGColor+';color:#'+_nav2AHoverColor+'}\
 #bottomPagination{height:auto;position:relative;}\
@@ -759,7 +784,7 @@ var $app = {
 #bottomPagination a{position:absolute;}\
 #bottomPagination .next{right:20px;}\
 #bottomPagination .next{right:0;}\
-}';
+}';*/
 		}	
 		
 		if (pageAlign=='center' || bodyBGColor=='' || bodyBGURL=='') {
@@ -802,7 +827,10 @@ var $app = {
 		if (hideNavigation==false) {
 			
 			defaultNavCSS+= "#siteNav,#nav-toggler{display:block;}";
-			if (!$app.hasHorizontalNavigation) defaultNavCSS+="#main{padding-left:250px;}";
+			if (!$app.hasHorizontalNavigation) {
+				defaultNavCSS+="#main{padding-left:320px;}";
+				defaultNavCSS+="@media screen and (max-width: 1150px){#main{padding:20px 40px 0 290px}}";
+			}
 			defaultNavCSS+="@media all and (max-width: 1015px){";
 				defaultNavCSS+="#main{padding-top:0;padding-left:20px;}";	
 			defaultNavCSS+="}";
@@ -824,7 +852,7 @@ var $app = {
 			if (navBorderColor!="") defaultBorderColor = navBorderColor;
 			
 			defaultNavCSS += '\
-			#siteNav a{\
+			#siteNav,#siteNav a{\
 				background-color:#'+defaultNavBGColor+';\
 				color:#'+defaultNavAColor+';\
 				border-color:#'+defaultBorderColor+';\
@@ -1013,7 +1041,7 @@ background-color:#'+defaultNavBGColor+';\
 		
 		var w = window.opener;
 		if (!w) {
-			this.quit();
+			this.quit($i18n.No_Opener_Error);
 			return false;
 		}
 		
@@ -1034,6 +1062,9 @@ background-color:#'+defaultNavBGColor+';\
 		if (!navCSSTag) return false;		
 		var navCSS = css[1];
 		this.setCSS(navCSSTag,navCSS);
+		
+		// Menu height
+		w.myTheme.setNavHeight();
 	}
 }
 $(function(){
