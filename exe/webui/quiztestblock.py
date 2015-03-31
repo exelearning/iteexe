@@ -219,8 +219,8 @@ class QuizTestBlock(Block):
             actualScore =  Math.round(rawScore / numQuestions * 100);
             document.getElementById("quizForm%s").submitB.disabled = true;
             """ % self.idevice.id
-        scriptStr += '            var msg_str ="' + c_("Your score is %f%") + '";'
-        scriptStr += '            alert(msg_str.replace("%f",actualScore));'
+        scriptStr += '            var msg_str ="' + c_("Your score is %d%%") + '";'
+        scriptStr += '            alert(msg_str.replace("%d",actualScore).replace("%%","%"));'
 
         scriptStr += """
            
@@ -315,8 +315,8 @@ class QuizTestBlock(Block):
            actualScore = Math.round(rawScore / numQuestions * 100);
         """
 
-        scriptStr += '            var msg_str ="' + c_("Your score is %f%") + '";'
-        scriptStr += '            alert(msg_str.replace("%f",actualScore));'
+        scriptStr += '            var msg_str ="' + c_("Your score is %d%%") + '";'
+        scriptStr += '            alert(msg_str.replace("%d",actualScore).replace("%%","%"));'
         scriptStr += """  
           
            scorm.SetScoreRaw(actualScore+"" );
@@ -369,7 +369,7 @@ class QuizTestBlock(Block):
         html += '</div>'+lb
         
         if not self.idevice.score == -1:
-            message = c_("Your score is ") + unicode(self.idevice.score) + "%"
+            message = c_("Your score is %d%%")%self.idevice.score
             html += '<script type="text/javascript">alert("'+ message+ '")</script>'
 
         self.idevice.score = -1   
