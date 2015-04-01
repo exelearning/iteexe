@@ -19,7 +19,7 @@
 Ext.define('eXe.view.forms.PreferencesPanel', {
     extend: 'Ext.form.Panel',
     alias: 'widget.preferences',
-
+    
     initComponent: function () {
         var me = this;
         var lngsel = _("Select Browser");
@@ -143,7 +143,21 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 								}
 
 							]
-						}]
+						},
+						{
+							xtype: 'combobox',
+							fieldLabel: _('Theme'),
+							inputId: "theme",
+							labelWidth: 130,
+							margin: 10,
+							store: [
+								["neptune",_("Neptune")], 
+				                ["classic",_("Classic")], 
+				                ["crisp", _("Crisp")],
+				                ["gray",_("Gray")]
+							]
+						}
+						]
 					}, 
 					// /Tab0
 					//Tab1

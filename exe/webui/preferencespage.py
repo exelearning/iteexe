@@ -187,6 +187,7 @@ class PreferencesPage(RenderableResource):
                     browserSelected = self.config.browser.name
             data['browser'] = browserSelected
             data['showPreferencesOnStart'] = self.config.showPreferencesOnStart
+            data['theme'] = self.config.theme
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to get preferences")})
@@ -209,6 +210,9 @@ class PreferencesPage(RenderableResource):
             editormodesel = request.args['editorMode'][0]
             self.config.editorMode=editormodesel
             self.config.configParser.set('user', 'editorMode', editormodesel)
+            theme = request.args['theme'][0]
+            self.config.theme = theme
+            self.config.configParser.set('user', 'theme', theme)
             doctypesel = request.args['docType'][0]
             self.config.docType = doctypesel
             self.config.configParser.set('user', 'docType', doctypesel)

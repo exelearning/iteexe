@@ -19,11 +19,14 @@
 
 var ICON_MAP = {
 	"directory": {
-        "true": "../jsui/extjs/packages/ext-theme-neptune/build/resources/images/tree/folder.png",
-        "false": "../jsui/extjs/packages/ext-theme-neptune/build/resources/images/tree/hmenu-lock.png"
+        "true": "../jsui/extjs/packages/ext-theme-" + "__EXETHEME__" + 
+        	"/build/resources/images/tree/folder.png",
+        "false": "../jsui/extjs/packages/ext-theme-" + "__EXETHEME__" +
+        	"/build/resources/images/tree/hmenu-lock.png"
     }
 };
-var DEFAULT_ICON = "../jsui/extjs/packages/ext-theme-neptune/build/resources/images/tree/leaf.png";
+var DEFAULT_ICON = "../jsui/extjs/packages/ext-theme-" + "__EXETHEME__" + 
+	"/build/resources/images/tree/leaf.png";
 
 Ext.define('eXe.view.filepicker.FileList', {
     extend: 'Ext.grid.Panel',
@@ -58,6 +61,8 @@ Ext.define('eXe.view.filepicker.FileList', {
                         icon = ICON_MAP[record.get('type')][locked];
 					if (!icon)
 						icon = DEFAULT_ICON;
+					debugger;
+					icon = icon.replace("__EXETHEME__", eXe.app.config.theme);
 			        return t.apply([icon, value] );
 			    },
 			    doSort: function(state) {

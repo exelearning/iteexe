@@ -59,7 +59,7 @@ class Config(object):
                    'videoMediaConverter_avi', 'audioMediaConverter_ogg',
                    'audioMediaConverter_au', 'audioMediaConverter_mp3',
                    'audioMediaConverter_wav', 'ffmpegPath'),
-        'user': ('locale', 'lastDir', 'showPreferencesOnStart','defaultStyle', 'showIdevicesGrouped','docType','editorMode'),
+        'user': ('locale', 'lastDir', 'showPreferencesOnStart','defaultStyle', 'showIdevicesGrouped','docType','editorMode', 'theme'),
     }
 
     idevicesCategories = {
@@ -178,6 +178,9 @@ class Config(object):
         self.audioMediaConverter_wav = ""
         self.ffmpegPath = ""
         self.mediaProfilePath = self.exePath.dirname()/'mediaprofiles'
+        
+        #ExtJS5 theme to use (default gray)
+        self.theme = "gray"
         
         # likewise, a canonical (English) names of iDevices not to show in the
         # iDevice pane but, contrary to the hiddens, these are ones that the 
@@ -432,6 +435,8 @@ class Config(object):
                 self.showPreferencesOnStart = self.configParser.user.showPreferencesOnStart
             if self.configParser.user.has_option('showIdevicesGrouped'):
                 self.showIdevicesGrouped = self.configParser.user.showIdevicesGrouped
+            if self.configParser.user.has_option('theme'):
+                self.theme = self.configParser.user.theme
             if self.configParser.user.has_option('locale'):
                 self.locale = self.configParser.user.locale
                 return

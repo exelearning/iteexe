@@ -227,7 +227,8 @@ class MainPage(RenderableLivePage):
                   'loadErrors': G.application.loadErrors,
                   'showIdevicesGrouped': G.application.config.showIdevicesGrouped == '1',
                   'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (self.package.name, IClientHandle(ctx).handleId),
-                  'pathSep': os.path.sep
+                  'pathSep': os.path.sep,
+                  'theme' : G.application.config.theme
                  }
         G.application.preferencesShowed = True
         G.application.loadErrors = []
@@ -238,7 +239,16 @@ class MainPage(RenderableLivePage):
 
     def render_extjslang(self, ctx, data):
         return ctx.tag(src="../jsui/extjs/packages/ext-locale/build/ext-locale-" + unicode(G.application.config.locale) + ".js")
-
+    
+    def render_extjsthemecss(self, ctx, data):
+        theme_src = "../jsui/extjs/packages/ext-theme-%(theme)s/build/resources/ext-theme-%(theme)s-all-debug.css" % \
+            {"theme": G.application.config.theme}
+        return ctx.tag(href = theme_src)
+    
+    def render_extjsthemejs(self, ctx, data):
+        theme_js_src = "../jsui/extjs/packages/ext-theme-%(theme)s/build/ext-theme-%(theme)s-debug.js" % \
+            {"theme" : G.application.config.theme}
+    
     def render_htmllang(self, ctx, data):
         lang = G.application.config.locale.replace('_', '-').split('@')[0]
         attribs = {'lang': unicode(lang), 'xml:lang': unicode(lang), 'xmlns': 'http://www.w3.org/1999/xhtml'}
