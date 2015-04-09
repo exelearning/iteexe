@@ -27,7 +27,6 @@ border:1px solid #ddd;
 .iDeviceTitle{font-size:1.3em;vertical-align:bottom;top:auto;display:inline-block;font-weight:300;
 padding:0 10px 0 35px;background-image:url(icon_star.png);background-repeat:no-repeat;background-position:0 50%;margin:0}
 .iDevice_inner{padding:10px 20px;border:1px solid #ddd;border-radius:5px}
-.iDeviceTitle{background-image:url(icon_star.gif)}
 
 /* Icons */
 .activityIdevice .iDeviceTitle{background-image:url(icon_assignment.png)}
@@ -64,10 +63,6 @@ border-color:#DDD;
 border-top:0;
 background-color:#FFF;
 }
-/*
-.iDevice.emphasis0{padding:10px 20px;border:1px solid #DDD;border-radius:5px;background-color:#FFF}
-.hidden-idevice .emphasis0{padding:0;visibility:hidden}
-*/
 
 /* Reset base.css */
 .block,.feedback{padding:0}
@@ -90,9 +85,15 @@ color:#2495ff;
 background-color:#f9f9f9;
 }
 #header,#emptyHeader,#nodeDecoration{
+/*headerHeight*/
+height:120px;
 /*headerBGColor*/
 background-color:#ffffff;border:1px solid /*headerBorderColor*/
 #dddddd;
+}
+#headerContent{
+/*headerTitleTopMargin*/
+padding-top:70px;
 }
 #siteFooter{
 border:1px solid /*footerBorderColor*/

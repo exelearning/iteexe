@@ -22,8 +22,8 @@
 				<li id="page-tab"><span><a href="#" onclick="$app.showTab('page');return false">%Page%</a></span></li>
 				<li id="header-tab"><span><a href="#" onclick="$app.showTab('header');return false">Cabecera y pie</a></span></li>
 				<li id="navigation-tab"><span><a href="#" onclick="$app.showTab('navigation');return false">Navegación</a></span></li>
+				<li id="idevices-tab"><span><a href="#" onclick="$app.showTab('idevices');return false">iDevices</a></span></li>
                 <li id="css-tab"><span><a href="#" onclick="$app.showTab('css');return false">%Advanced%</a></span></li>
-				<!--<li id="help-tab"><span><a href="#" onclick="$app.showTab('help');return false">%Help%</a></span></li>-->
 				<li id="content-css-tab"><span><a href="#" onclick="$app.showTab('content-css');return false">content.css</a></span></li>
 				<li id="nav-css-tab"><span><a href="#" onclick="$app.showTab('nav-css');return false">nav.css</a></span></li>
 			</ul>
@@ -432,7 +432,47 @@
 						</div>
 					</div>
 				</fieldset>
-			</div><!-- /#navigation panel -->			
+			</div><!-- /#navigation panel -->
+
+			<div id="idevices" class="panel">
+            	<h2 class="scr-av">iDevices</h2>
+				<fieldset>
+					<legend>No emphasis (Free Text...)</legend>
+					<p class="field">
+						<label for="noEmColor">Color texto: </label>
+						<input type="text" maxlength="6" size="6" id="noEmColor" class="color" />
+					</p>
+					<p class="checkbox">
+						<label for="noEmShowBox"><input type="checkbox" id="noEmShowBox" class="checkbox" /> Mostrar caja</label>
+					</p>
+					<div id="noEmBoxOptions" class="autoclear" style="display:none">
+						<div class="col">
+							<div class="fields">
+								<div class="field">
+									<label for="noEmBGColor">Color fondo: </label>
+									<input type="text" maxlength="6" size="6" id="noEmBGColor" class="color" />
+								</div>							                            
+							</div>
+						</div>
+						<div class="col">
+							<div class="fields">
+								<div class="field">
+									<label for="noEmBorderColor">Color borde: </label>
+									<input type="text" maxlength="6" size="6" id="noEmBorderColor" class="color" />
+								</div>
+							</div>
+						</div>						
+					</div>
+					<p class="radios">
+						<strong>Icono para mostar/ocultar iDevice:</strong>
+						<span>
+							<label for="noEmIconColor1"><input type="radio" name="noEmIconColor" id="noEmIconColor1" checked="checked" value="" /> Gris</label> 
+							<label for="noEmIconColor2"><input type="radio" name="noEmIconColor" id="noEmIconColor2" value="black" /> Negro</label> 
+							<label for="noEmIconColor3"><input type="radio" name="noEmIconColor" id="noEmIconColor3" value="white" /> Blanco</label>
+						</span>
+					</p>
+				</fieldset>
+			</div><!-- /#idevices panel -->
             
             <div id="css" class="panel">
             	<h2 class="scr-av">Avanzado</h2>
@@ -452,11 +492,6 @@
 						<p class="info">nav.css se incluye solo al exportar como sitio web, y siempre después de content.css</p>
 					</div>
 				</fieldset>				
-			</div>
-			
-			<div id="help" class="panel">
-            	<h2 class="scr-av">Ayuda</h2>
-                <p>Rellena los campos y, una vez conseguida la apariencia deseada, pulsa "Finalizar".</p>
 			</div>
 			
 			<div id="content-css" class="panel">

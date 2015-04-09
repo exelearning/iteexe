@@ -1356,9 +1356,10 @@ var $exe = {
                     if (c == 'em1') {
                         var h = e.html();
                         e.html(h+l);
-                    }
-                    else
-                        e.before(l);
+                    } else {
+						l = l.replace("toggle-idevice ","toggle-idevice toggle-idevice0 ");
+						e.before(l);	
+					}
                 }
             });
             $("INPUT.autocomplete-off").attr("autocomplete","off");

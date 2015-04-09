@@ -94,6 +94,13 @@ var $appVars = [
 	['nav2HoverBGColor',6,18],
 	['nav2AColor',6,7],
 	['nav2AHoverColor',6,7],	
+	// iDevices tab
+	// fielset #1
+	['noEmShowBox','checkbox'],
+	['noEmBGColor',6,18],
+	['noEmColor',6,7],
+	['noEmBorderColor',6,1],
+	['noEmIconColor','radio']
 ];
 
 var $app = {
@@ -103,7 +110,7 @@ var $app = {
 		headerTitleTopMargin : 70,
 		navBGColor : "F9F9F9",
 		navHoverBGColor : "FFFFFF",
-		navBorderColor : "DDDDDD"
+		borderColor : "DDDDDD"
 	},
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
@@ -265,6 +272,11 @@ var $app = {
 						var a = c.split(currentValue[0]+'*/background-image:url(')[1];
 						var val = a.split(");")[0];
 						$("#"+currentValue[0]).val(val);
+					} else if (currentValue[0]=="noEmIconColor"){
+						var a = c.split(currentValue[0]+'*/background-image:url(')[1];
+						var val = a.split(");")[0];
+						if (val.indexOf("_black.png")!=-1) $("#noEmIconColor2").prop('checked',true);
+						else if (val.indexOf("_white.png")!=-1) $("#noEmIconColor3").prop('checked',true);
 					}
 					// Font family
 					else if (currentValue[0].indexOf('ontFamily')!=-1){
@@ -283,13 +295,16 @@ var $app = {
 					}
 					else if (currentValue[0]=="horizontalNavigation") {
 						$("#horizontalNavigation").prop('checked', true);
-						$app.hasHorizontalNavigation = true;
+					}
+					else if (currentValue[0]=="noEmShowBox") {
+						$("#noEmShowBox").prop('checked', true);
+						$("#noEmBoxOptions").show();
 					}
 					// Other navigation options
 					else if (currentValue[0]=="useNavigationIcons") {
 						$("#useNavigationIcons").prop('checked', true);
 						$("#otherNavOptions").hide();
-					}			
+					}
 				}
 			} 
 			else {
@@ -314,12 +329,17 @@ var $app = {
 		var f_inputs = f.getElementsByTagName("INPUT");
 		for (i=0;i<f_inputs.length;i++){
 			var t= f_inputs[i].type;
-			if (t=="checkbox") {
+			if (t=="checkbox" || t=="radio") {
 				f_inputs[i].onchange=function() {
 					if (this.id=="hideProjectTitle") {
 						var o = document.getElementById('projectTitleOptions');
 						if (this.checked) o.style.display="none";
 						else o.style.display="block";
+					}
+					else if (this.id=="noEmShowBox") {
+						var o = document.getElementById('noEmBoxOptions');
+						if (this.checked) o.style.display="block";
+						else o.style.display="none";
 					}
 					else if (this.id=="hideNavigation") {
 						var o = document.getElementById('navigationOptions');
@@ -442,6 +462,32 @@ var $app = {
 		var headerTitleAlign = $("#headerTitleAlign").val();
 		var headerTitleFontSize = $("#headerTitleFontSize").val();
 		var headerTitleTopMargin = $("#headerTitleTopMargin").val();
+		
+		// iDevices
+		// No emphasis
+		var noEmColor = $("#noEmColor").val();
+		var noEmShowBox = $("#noEmShowBox").prop("checked");
+		if (noEmColor!="" || noEmShowBox) {
+			contentCSS += ".iDevice.emphasis0{";
+				if (noEmColor!="") contentCSS += "/*noEmColor*/color:#"+noEmColor+";"
+				if (noEmShowBox) {
+					var noEmBGColor = $("#noEmBGColor").val();
+					var noEmBorderColor = $("#noEmBorderColor").val();
+					if (noEmBorderColor=="") noEmBorderColor = $app.defaultValues.borderColor;
+					contentCSS += "/*noEmShowBox*/padding:10px 20px;border:1px solid /*noEmBorderColor*/#"+noEmBorderColor+";border-radius:5px;";
+					if (noEmBGColor!="") {
+						contentCSS+="/*noEmBGColor*/background-color:#"+noEmBGColor+";";
+					}
+				}
+			contentCSS += "}";
+			if (noEmShowBox) contentCSS += ".hidden-idevice .emphasis0{padding:0;visibility:hidden;}";
+		}
+		
+		//.toggle-idevice0 a{background-image:url(_style_icons_white.png)}
+		var noEmIconColor = $('input[name=noEmIconColor]:checked').val();
+		if (noEmIconColor!='') {
+			contentCSS += ".toggle-idevice0 a{/*noEmIconColor*/background-image:url("+this.stylePath+"_style_icons_"+noEmIconColor+".png);}";
+		}
 		
 		// #nav
 		var hideNavigation = $("#hideNavigation").prop("checked");
@@ -732,7 +778,7 @@ var $app = {
 		var navHoverBGColor = $("#navHoverBGColor").val();
 		if (navHoverBGColor!="") hNavHoverBGColor = navHoverBGColor;
 
-		var hNavBorderColor = $app.defaultValues.navBorderColor;
+		var hNavBorderColor = $app.defaultValues.borderColor;
 		var navBorderColor = $("#navBorderColor").val();
 		if (navBorderColor!="") hNavBorderColor = navBorderColor;
 		
