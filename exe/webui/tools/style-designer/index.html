@@ -19,7 +19,7 @@
 		<div class="tabs">
 			<ul id="tabs">
 				<li id="general-tab" class="current"><span><a href="#" onclick="$app.showTab('general');return false">%General%</a></span></li>
-				<li id="backgrounds-tab"><span><a href="#" onclick="$app.showTab('backgrounds');return false">%Backgrounds%</a></span></li>
+				<li id="page-tab"><span><a href="#" onclick="$app.showTab('page');return false">%Page%</a></span></li>
 				<li id="header-tab"><span><a href="#" onclick="$app.showTab('header');return false">Cabecera y pie</a></span></li>
 				<li id="navigation-tab"><span><a href="#" onclick="$app.showTab('navigation');return false">Navegación</a></span></li>
                 <li id="css-tab"><span><a href="#" onclick="$app.showTab('css');return false">%Advanced%</a></span></li>
@@ -115,8 +115,8 @@
 				
 			</div><!-- /#general panel -->
 			
-			<div id="backgrounds" class="panel">
-            	<h2 class="scr-av">Backgrounds</h2>
+			<div id="page" class="panel">
+            	<h2 class="scr-av">Page</h2>
 				
 				<fieldset>
 					<legend>Fondo de p&aacute;gina (solo sitio web)</legend>
@@ -208,7 +208,7 @@
 				</fieldset>
 				<p>El fondo de página solo afecta a la exportación como sitio web.</p>
 				<p>El apartado "Fondo de la zona de los contenidos" también afecta a la exportación como página sola, IMS, SCORM o ePub3.</p>
-			</div><!-- /#backgrounds-panel -->
+			</div><!-- /#page-panel -->
 			
             <div id="header" class="panel">
             	<h2 class="scr-av">Cabecera y pie</h2>
@@ -334,6 +334,10 @@
 					<div class="col">
 						<div class="fields">
 							<div class="field">
+								<label for="footerBGColor">Color de fondo: </label>
+								<input type="text" maxlength="6" size="6" id="footerBGColor" class="color" />
+							</div>
+							<div class="field">
 								<label for="footerAColor">Color enlaces: </label>
 								<input type="text" maxlength="6" size="6" id="footerAColor" class="color" />
 							</div>
@@ -341,9 +345,6 @@
 								<label for="footerAHoverColor">Enlaces sobre: </label>
 								<input type="text" maxlength="6" size="6" id="footerAHoverColor" class="color" />
 							</div>
-							<div class="field">
-								<label for="footerFontSize">Tamaño texto: </label><input type="text" size="6" id="footerFontSize" maxlength="3" /> %
-							</div>							
 						</div>
 					</div>
 				</fieldset>
@@ -396,9 +397,11 @@
 				</fieldset>
 				<fieldset>
 					<legend>Otras opciones de navegación</legend>
+					<!-- To do?
 					<p class="checkbox">
 						<label for="hidePagination"><input type="checkbox" id="hidePagination" class="checkbox" /> Ocultar los botones de Anterior/Siguiente</label>
 					</p>
+					-->
 					<p class="checkbox">
 						<label for="useNavigationIcons"><input type="checkbox" id="useNavigationIcons" class="checkbox" /> Usar iconos</label>
 					</p>					

@@ -48,7 +48,7 @@ padding:0 10px 0 35px;background-image:url(icon_star.png);background-repeat:no-r
 
 /* Hide/Show iDevice */
 .toggle-idevice{display:block;margin:0;text-align:right}
-.iDevice_header .toggle-idevice{float:right;padding-top:2px}
+.iDevice_header .toggle-idevice{float:right;margin-top:14px;line-height:16px}
 .toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(_style_icons.png) no-repeat -50px -50px;outline:none}
 .toggle-idevice .show-idevice{background-position:0 -50px}
 .toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
@@ -74,7 +74,7 @@ background-color:#FFF;
 .feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 li{list-style-position:outside}
 
-#siteFooter{padding-top:15px}
+#siteFooter{padding:20px}
 
 /* eXeLearning Style Designer */
 body{
@@ -91,5 +91,12 @@ background-color:#f9f9f9;
 }
 #header,#emptyHeader,#nodeDecoration{
 /*headerBGColor*/
+background-color:#ffffff;border:1px solid /*headerBorderColor*/
+#dddddd;
+}
+#siteFooter{
+border:1px solid /*footerBorderColor*/
+#dddddd;
+/*footerBGColor*/
 background-color:#ffffff;
 }

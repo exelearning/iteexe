@@ -1,8 +1,5 @@
 ﻿/*
 To do:
-	Eliminar la opción para ocultar la navegación secuencial.
-	Añadir color de fondo al pie de página (se aplica a #siteFooter y #bottomPagination)
-	Eliminar los "defaultValues" innecesarios.
 	Permitir el control de los iDevices
 	Con énfasis (mostrar caja / ocultar caja). Si mostrar: 
 		color fondo, color texto, color borde
@@ -79,9 +76,9 @@ var $appVars = [
 	['footerBorderColor',6,1],
 	['footerColor',6,7],
 	['footerTextAlign',6,11],
+	['footerBGColor',6,18],
 	['footerAColor',6,7],
 	['footerAHoverColor',6,7],
-	['footerFontSize',3,10,'number'],	
 	// Navigation tag
 	// fieldset #1
 	['hideNavigation','checkbox'],
@@ -92,7 +89,6 @@ var $appVars = [
 	['navAHoverColor',6,7],
 	['navBorderColor',6,14],
 	// fieldset #2
-	['hidePagination','checkbox'],
 	['useNavigationIcons','checkbox'],
 	['nav2BGColor',6,18],
 	['nav2HoverBGColor',6,18],
@@ -103,33 +99,11 @@ var $appVars = [
 var $app = {
 	returnFullContent : true,
 	defaultValues : {
-		pageWidth : "100%",
-		pageAlign : "0 auto",
-		wrapperShadowColor : "0 0 10px 0 #999",
-		contentBorderWidth : 0,
-		contentBorderColor : "DDDDDD",
-		bodyBGColor : "000000", // website body background-color
-		headerBorderColor : "DDDDDD",
-		fontFamily : "'Open Sans',Arial,Verdana,Helvetica,sans-serif",
-		bodyColor : "333333",
-		aColor : "2495FF",
-		contentBGColor : "F9F9F9", // IMS body background-color and website #content background-color,
 		headerHeight : 120,
 		headerTitleTopMargin : 70,
 		navBGColor : "F9F9F9",
 		navHoverBGColor : "FFFFFF",
-		navAColor : "555555",
-		navAHoverColor : "000000",
-		navBorderColor : "DDDDDD",
-		// Previous/Next and Hide/Show menu
-		nav2BGColor : "333333",
-		nav2HoverBGColor : "555555",
-		nav2AColor : "FFFFFF",
-		nav2AHoverColor : "FFFFFF",
-		// Footer
-		footerBorderColor : "DDDDDD",
-		footerColor : "333333",
-		footerAColor : "2495FF"		
+		navBorderColor : "DDDDDD"
 	},
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
@@ -312,9 +286,6 @@ var $app = {
 						$app.hasHorizontalNavigation = true;
 					}
 					// Other navigation options
-					else if (currentValue[0]=="hidePagination") {
-						$("#"+currentValue[0]).prop('checked', true);
-					}
 					else if (currentValue[0]=="useNavigationIcons") {
 						$("#useNavigationIcons").prop('checked', true);
 						$("#otherNavOptions").hide();
@@ -474,6 +445,7 @@ var $app = {
 		
 		// #nav
 		var hideNavigation = $("#hideNavigation").prop("checked");
+		var useNavigationIcons = $("#useNavigationIcons").prop("checked");
 		var navBGColor = $("#navBGColor").val();
 		var navHoverBGColor = $("#navHoverBGColor").val();
 		var navAColor = $("#navAColor").val();
@@ -503,13 +475,6 @@ var $app = {
 					//navCSS += "box-shadow:none;";
 				}
 			navCSS+="}";
-		}
-		
-		var hidePagination = $("#hidePagination").prop("checked");
-		var useNavigationIcons = $("#useNavigationIcons").prop("checked");
-		
-		if (hidePagination) {
-			navCSS += "/*hidePagination*/#topPagination,#bottomPagination{display:none;}";
 		}
 		
 		var nav2BGColor = $("#nav2BGColor").val();
@@ -591,7 +556,6 @@ var $app = {
 		}
 		
 		// #header
-		if (headerHeight==$app.defaultValues.headerHeight) headerHeight = "";
 		if (headerHeight!="" || headerBGColor!="" || headerBGURL!="" || headerBorderColor!="") {
 			contentCSS+="#header,#emptyHeader,#nodeDecoration{";
 				if (headerHeight!="") contentCSS+="/*headerHeight*/height:"+headerHeight+"px;";
@@ -608,7 +572,6 @@ var $app = {
 		
 		if (!hideProjectTitle) {
 			if (headerTitleFontFamily==fontFamily) headerTitleFontFamily = "";
-			if (headerTitleTopMargin==$app.defaultValues.headerTitleTopMargin) headerTitleTopMargin = "";
 			if (headerTitleTopMargin!="" || headerTitleFontFamily!="" || headerTitleColor!="" || headerTitleTextShadowColor!="" || headerTitleAlign!="" || headerTitleFontSize!="") {
 				contentCSS+="#headerContent{";
 					if (headerTitleTopMargin!="") contentCSS+="/*headerTitleTopMargin*/padding-top:"+headerTitleTopMargin+"px;";
@@ -672,22 +635,28 @@ var $app = {
 		var footerBorderColor = $("#footerBorderColor").val();
 		var footerColor = $("#footerColor").val();
 		var footerTextAlign = $("#footerTextAlign").val();
+		var footerBGColor = $("#footerBGColor").val();
 		var footerAColor = $("#footerAColor").val();
 		var footerAHoverColor = $("#footerAHoverColor").val();
-		var footerFontSize = $("#footerFontSize").val();
 		
-		if (footerBorderColor!="" || footerColor!="" || footerTextAlign!="" || footerFontSize!="") {
+		if (footerBorderColor!="" || footerColor!="" || footerTextAlign!="" || footerBGColor!='') {
 			contentCSS += "#siteFooter{";
 				if (footerBorderColor!="") {
-					contentCSS += "border-top:1px solid /*footerBorderColor*/#"+footerBorderColor+";"
+					contentCSS += "border:1px solid /*footerBorderColor*/#"+footerBorderColor+";"
 					navCSS += ".pagination{";
 						navCSS += "border-color:#"+footerBorderColor+";";
 					navCSS += "}";
 				}
 				if (footerColor!="") contentCSS += "/*footerColor*/color:#"+footerColor+";"
 				if (footerTextAlign!="") contentCSS+="/*footerTextAlign*/text-align:"+footerTextAlign+";";
-				if (footerFontSize!="") contentCSS+="/*footerFontSize*/font-size:"+footerFontSize+"%;";
+				if (footerBGColor!='') contentCSS+="/*footerBGColor*/background-color:#"+footerBGColor+";";
 			contentCSS += "}";
+		}
+		
+		if (footerBGColor!='') {
+			navCSS+="#bottomPagination{";
+				navCSS+="background-color:#"+footerBGColor+";";
+			navCSS += "}";
 		}
 		
 		if (footerAColor!="") {
