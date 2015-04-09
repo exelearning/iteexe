@@ -36,11 +36,13 @@ Ext.define('eXe.view.ui.MainTabPanel', {
             itemId: 'main_tab',
             items: [
                 {
-                    xtype: 'uxiframe',
+                	xtype: 'uxiframe',
                     itemId: 'authoring',
                     src: eXe.app.config.authoringIFrameSrc,
                     id: 'authoringIFrame1',
-                    title: _('Authoring')
+                    title: _('Authoring'),
+                    margin: "0 4",
+                    padding: "0 2"
                 },
                 {
                     xtype: 'tabpanel',
