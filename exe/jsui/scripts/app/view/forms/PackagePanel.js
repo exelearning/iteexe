@@ -310,25 +310,14 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                 {
                                     xtype: 'helpcontainer',
                                     margin: '0 0 10 0',
-                                    item: {
-                                        xtype: 'fieldcontainer',
+                                    item:{
+                                    	xtype: "checkbox",
+                                    	inputId: 'pp_intendedEndUserRoleGroup',
+                                        dirtyCls: 'property-form-dirty',
+                                        inputValue: true,
+                                        uncheckedValue: false,
                                         fieldLabel: _('For Group Work'),
-                                        tooltip: _('For Group Work'),
-                                        items: [
-                                            {
-                                                xtype: 'container',
-                                                layout: 'hbox',
-                                                items: [
-                                                    {
-                                                        xtype: 'checkbox',
-                                                        inputId: 'pp_intendedEndUserRoleGroup',
-                                                        dirtyCls: 'property-form-dirty',
-                                                        inputValue: true,
-                                                        uncheckedValue: false
-                                                    }
-                                                ]
-                                            }
-                                        ]
+                                        tooltip: _("For Group Work")
                                     },
                                     help: _('For Group Work')
                                 },
@@ -336,25 +325,14 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                     xtype: 'helpcontainer',
                                     margin: '0 0 10 0',
                                     item: {
-                                        xtype: 'fieldcontainer',
-                                        fieldLabel: _('For Individual Tuition'),
-                                        tooltip: _('For Individual Tuition'),
-                                        items: [
-                                            {
-                                                xtype: 'container',
-                                                layout: 'hbox',
-                                                items: [
-                                                    {
-                                                        xtype: 'checkbox',
-                                                        inputId: 'pp_intendedEndUserRoleTutor',
-                                                        dirtyCls: 'property-form-dirty',
-                                                        inputValue: true,
-                                                        uncheckedValue: false
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
+                                    	xtype: "checkbox",
+                                    	fieldLabel: _("For Individual Tuition"),
+                                    	inputId: 'pp_intendedEndUserRoleTutor',
+                                        dirtyCls: 'property-form-dirty',
+                                        inputValue: true,
+                                        uncheckedValue: false,
+                                        tooltip: _("For Individual Tuition")
+                                	},
                                     help: _('For Individual Tuition')
                                 },
                                 {
