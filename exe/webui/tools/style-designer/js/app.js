@@ -1,31 +1,8 @@
 ﻿/*
-To do:
-	Permitir el control de los iDevices
-	Con énfasis (mostrar caja / ocultar caja). Si mostrar: 
-		color fondo, color texto, color borde
-		color fondo título, color título
-		icono mostrar (blanco, negro, gris)
-	Con énfasis (mostrar caja / ocultar caja). Si mostrar: 
-		color fondo, color texto, color borde
-		icono mostrar (blanco, negro, gris)
-	Mejorar presentación h2, h3, etc. en contenido.
-	¿Eliminar la navegación con iconos?
-*/
-
-/*
  * eXeLearning Style Designer 1.0
  * By Ignacio Gros (http://www.gros.es/) for eXeLearning (http://exelearning.net/)
  * Creative Commons Attribution-ShareAlike (http://creativecommons.org/licenses/by-sa/3.0/)
  */
-
-/* 
-* Right now the BODY tag can have any of these classes 
- * exe-web-site
-* exe-single-page
-* exe-scorm
-* exe-ims
-* exe-epub3
-*/
 
 var $appVars = [
 	//Field, value length or "", starting position (Ej: color:# => 7).
@@ -42,9 +19,8 @@ var $appVars = [
 	['bodyColor',6,7],
 	['fontSize',3,10,'number'],
 	['aColor',6,7],
-	['aHoverColor',6,7],	
 	
-	// Backgrounds tab
+	// Page tab
 	// fieldset #1
 	['bodyBGColor',6,18],
 	['bodyBGURL',');',21],
@@ -78,7 +54,7 @@ var $appVars = [
 	['footerTextAlign',6,11],
 	['footerBGColor',6,18],
 	['footerAColor',6,7],
-	['footerAHoverColor',6,7],
+	
 	// Navigation tag
 	// fieldset #1
 	['hideNavigation','checkbox'],
@@ -93,12 +69,23 @@ var $appVars = [
 	['nav2BGColor',6,18],
 	['nav2HoverBGColor',6,18],
 	['nav2AColor',6,7],
-	['nav2AHoverColor',6,7],	
+	['nav2AHoverColor',6,7],
+	['navigationIconsColor','radio'],
+	
 	// iDevices tab
 	// fielset #1
+	['emTitleColor',6,7],
+	['emTitleBGColor',6,18],
+	['emColor',6,7],
+	['emAColor',6,7],
+	['emBGColor',6,18],
+	['emBorderColor',6,1],
+	['emIconColor','radio'],
+	// fielset #2
 	['noEmShowBox','checkbox'],
 	['noEmBGColor',6,18],
 	['noEmColor',6,7],
+	['noEmAColor',6,7],
 	['noEmBorderColor',6,1],
 	['noEmIconColor','radio']
 ];
@@ -110,7 +97,8 @@ var $app = {
 		headerTitleTopMargin : 70,
 		navBGColor : "F9F9F9",
 		navHoverBGColor : "FFFFFF",
-		borderColor : "DDDDDD"
+		borderColor : "DDDDDD",
+		shadowColor : "999999"
 	},
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
@@ -277,6 +265,11 @@ var $app = {
 						var val = a.split(");")[0];
 						if (val.indexOf("_black.png")!=-1) $("#noEmIconColor2").prop('checked',true);
 						else if (val.indexOf("_white.png")!=-1) $("#noEmIconColor3").prop('checked',true);
+					} else if (currentValue[0]=="emIconColor"){
+						var a = c.split(currentValue[0]+'*/background-image:url(')[1];
+						var val = a.split(");")[0];
+						if (val.indexOf("_black.png")!=-1) $("#emIconColor2").prop('checked',true);
+						else if (val.indexOf("_white.png")!=-1) $("#emIconColor3").prop('checked',true);
 					}
 					// Font family
 					else if (currentValue[0].indexOf('ontFamily')!=-1){
@@ -304,6 +297,9 @@ var $app = {
 					else if (currentValue[0]=="useNavigationIcons") {
 						$("#useNavigationIcons").prop('checked', true);
 						$("#otherNavOptions").hide();
+						$("#navigationIconsOptions").show();
+						if (c.indexOf("/*blackNavigationIcons*/")!=-1) $("#navigationIconsColor2").prop('checked', true);
+						else if (c.indexOf("/*whiteNavigationIcons*/")!=-1) $("#navigationIconsColor3").prop('checked', true);
 					}
 				}
 			} 
@@ -348,8 +344,14 @@ var $app = {
 					}
 					else if (this.id=="useNavigationIcons") {
 						var o = document.getElementById('otherNavOptions');
-						if (this.checked) o.style.display="none";
-						else o.style.display="block";
+						var n = document.getElementById('navigationIconsOptions');
+						if (this.checked) {
+							o.style.display="none";
+							n.style.display="block";
+						} else {
+							n.style.display="none";
+							o.style.display="block";
+						}
 					}				
 					$app.getPreview(); 
 				}
@@ -440,7 +442,6 @@ var $app = {
 		var bodyColor = $("#bodyColor").val();
 		var fontSize = $("#fontSize").val();
 		var aColor = $("#aColor").val();
-		var aHoverColor = $("#aHoverColor").val();
 
 		// body (website)
 		var bodyBGColor = $("#bodyBGColor").val();
@@ -464,6 +465,36 @@ var $app = {
 		var headerTitleTopMargin = $("#headerTitleTopMargin").val();
 		
 		// iDevices
+		// With emphasis
+		var emTitleColor = $("#emTitleColor").val();
+		var emTitleBGColor = $("#emTitleBGColor").val();
+		var emBorderColor = $("#emBorderColor").val();
+		if (emTitleColor!="" || emTitleBGColor!="" || emBorderColor!=""){
+			contentCSS += ".iDevice_header{";
+				if (emTitleColor!="") contentCSS += "/*emTitleColor*/color:#"+emTitleColor+";"
+				if (emTitleBGColor!="") contentCSS+="/*emTitleBGColor*/background-color:#"+emTitleBGColor+";";
+				if (emBorderColor!="") contentCSS+="border-color:#"+emBorderColor+";";
+			contentCSS += "}";
+		}
+		var emColor = $("#emColor").val();
+		var emBGColor = $("#emBGColor").val();
+		if (emColor!="" || emBGColor!="" || emBorderColor!=""){
+			contentCSS += ".iDevice_inner{";
+				if (emColor!="") contentCSS += "/*emColor*/color:#"+emColor+";"
+				if (emBGColor!="") contentCSS+="/*emBGColor*/background-color:#"+emBGColor+";";
+				if (emBorderColor!="") contentCSS+="border-color:/*emBorderColor*/#"+emBorderColor+";";
+			contentCSS += "}";			
+		}
+		var emAColor = $("#emAColor").val();
+		if (emAColor!=""){
+			contentCSS += ".iDevice_inner a{";
+				contentCSS += "/*emAColor*/color:#"+emAColor+";"
+			contentCSS += "}";			
+		}
+		var emIconColor = $('input[name=emIconColor]:checked').val();
+		if (emIconColor!='') {
+			contentCSS += ".iDevice_header .toggle-idevice a{/*emIconColor*/background-image:url("+this.stylePath+"_style_icons_"+emIconColor+".png);}";
+		}		
 		// No emphasis
 		var noEmColor = $("#noEmColor").val();
 		var noEmShowBox = $("#noEmShowBox").prop("checked");
@@ -475,15 +506,17 @@ var $app = {
 					var noEmBorderColor = $("#noEmBorderColor").val();
 					if (noEmBorderColor=="") noEmBorderColor = $app.defaultValues.borderColor;
 					contentCSS += "/*noEmShowBox*/padding:10px 20px;border:1px solid /*noEmBorderColor*/#"+noEmBorderColor+";border-radius:5px;";
-					if (noEmBGColor!="") {
-						contentCSS+="/*noEmBGColor*/background-color:#"+noEmBGColor+";";
-					}
+					if (noEmBGColor!="") contentCSS+="/*noEmBGColor*/background-color:#"+noEmBGColor+";";
 				}
 			contentCSS += "}";
 			if (noEmShowBox) contentCSS += ".hidden-idevice .emphasis0{padding:0;visibility:hidden;}";
 		}
-		
-		//.toggle-idevice0 a{background-image:url(_style_icons_white.png)}
+		var noEmAColor = $("#noEmAColor").val();
+		if (noEmAColor!=""){
+			contentCSS += ".emphasis0 a{";
+				contentCSS += "/*noEmAColor*/color:#"+noEmAColor+";"
+			contentCSS += "}";	
+		}
 		var noEmIconColor = $('input[name=noEmIconColor]:checked').val();
 		if (noEmIconColor!='') {
 			contentCSS += ".toggle-idevice0 a{/*noEmIconColor*/background-image:url("+this.stylePath+"_style_icons_"+noEmIconColor+".png);}";
@@ -506,9 +539,14 @@ var $app = {
 						if (contentBorderColor!="") navCSS+="border-color:/*contentBorderColor*/#"+contentBorderColor+";";
 					}
 				}
-				if (pageWidth!="") navCSS+="/*pageWidth*/width:"+pageWidth+pageWidthUnit+";";
+				if (pageWidth!="") {
+					navCSS+="/*pageWidth*/width:"+pageWidth+pageWidthUnit+";";
+					if (wrapperShadowColor=="") wrapperShadowColor = $app.defaultValues.shadowColor;
+					navCSS+="/*wrapperShadowColor*/box-shadow:0 0 15px 0 #"+wrapperShadowColor+";";					
+				}
 				if (pageAlign=="left") navCSS+="/*pageAlign*/margin:0;";
-				if (wrapperShadowColor!="" && pageWidth!="100") navCSS+="/*wrapperShadowColor*/box-shadow:0 0 15px 0 #"+wrapperShadowColor+";";
+				// if (wrapperShadowColor!="" && pageWidth!="100") navCSS+="/*wrapperShadowColor*/box-shadow:0 0 15px 0 #"+wrapperShadowColor+";";
+				
 				if (contentBGColor!='') navCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
 				if (contentBGURL!='') {
 					if (contentBGURL.indexOf("http")!=0) contentBGURL = $app.stylePath+contentBGURL;
@@ -529,26 +567,33 @@ var $app = {
 		var nav2AHoverColor = $("#nav2AHoverColor").val();
 		
 		if (useNavigationIcons) {
-			navCSS += '/*useNavigationIcons*/.pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0;}\
-.pagination a{display:block;float:left;width:32px;height:32px;padding:0;background:url('+$app.stylePath+'_style_icons.png) no-repeat 0 0;}\
-.pagination a:hover,.pagination a:focus{background:url('+$app.stylePath+'_style_icons.png) no-repeat 0 0;}\
+			var iconsColor = "";
+			var iconColorComment = "/*defaultNavigationIcons*/";
+			var navigationIconsColor = $('input[name=navigationIconsColor]:checked').val();
+			if (navigationIconsColor!="") {
+				iconsColor += "_"+navigationIconsColor;
+				iconColorComment = "/*"+navigationIconsColor+"NavigationIcons*/";
+			}
+			var icon = $app.stylePath+'_style_icons'+iconsColor+'.png';
+			navCSS += '/*useNavigationIcons*/'+iconColorComment+'.pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0;}\
+.pagination a{display:block;float:left;width:32px;height:32px;padding:0;background:url('+icon+') no-repeat 0 0;}\
+.pagination a:hover,.pagination a:focus{background:url('+icon+') no-repeat 0 0;}\
 .pagination .next{background-position:-50px 0;}\
 .pagination .next:hover,.pagination .next:focus{background-position:-50px 0;}\
-#bottomPagination{height:47px;position:relative;}\
-#bottomPagination a{position:absolute;top:15px;right:63px;margin:0;}\
+#bottomPagination{height:72px;position:relative;overflow:hidden}\
+#bottomPagination a{position:absolute;top:20px;right:74px;margin:0;}\
 #bottomPagination .next{right:20px;}\
 #nav-toggler a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0;}\
-#nav-toggler a{display:block;width:32px;height:32px;padding:0;background:url('+$app.stylePath+'_style_icons.png) no-repeat -100px 0;}\
-#nav-toggler a:hover{background:url('+$app.stylePath+'_style_icons.png) no-repeat -100px 0;}\
+#nav-toggler a{display:block;width:32px;height:32px;padding:0;background:url('+icon+') no-repeat -100px 0;}\
+#nav-toggler a:hover{background:url('+icon+') no-repeat -100px 0;}\
 #nav-toggler .show-nav{background-position:-150px 0;}\
 #nav-toggler .show-nav:hover{background-position:-150px 0;}\
 .pagination a,#nav-toggler a{filter:alpha(opacity=70);opacity:.7;}\
 .pagination a:hover,.pagination a:focus,#nav-toggler a:hover{filter:alpha(opacity=100);opacity:1;}\
 @media all and (max-width: 700px){\
-#nav-toggler{height:32px;margin-bottom:10px;position:relative;}\
+#nav-toggler{height:32px;position:relative;}\
 #nav-toggler a{padding:0;width:32px;position:absolute;left:50%;margin-left:-16px;}\
 #siteNav{border-top:1px solid #ddd;}\
-#bottomPagination .next{right:0;}\
 }';
 		} else {
 			if (nav2BGColor!="" || nav2AColor!="") {
@@ -573,7 +618,6 @@ var $app = {
 			contentCSS+="}";
 		}
 		if (aColor!='') contentCSS+="a{/*aColor*/color:#"+aColor+";}";
-		if (aHoverColor!='') contentCSS+="a:hover,a:focus{/*aHoverColor*/color:#"+aHoverColor+";}";		
 		
 		// BODY and #content
 		if (contentBGColor!='' || contentBGURL!='' || bodyBGColor!='' || (pageAlign=='left'&&pageWidth!="100") || bodyBGURL!='') {
@@ -683,7 +727,6 @@ var $app = {
 		var footerTextAlign = $("#footerTextAlign").val();
 		var footerBGColor = $("#footerBGColor").val();
 		var footerAColor = $("#footerAColor").val();
-		var footerAHoverColor = $("#footerAHoverColor").val();
 		
 		if (footerBorderColor!="" || footerColor!="" || footerTextAlign!="" || footerBGColor!='') {
 			contentCSS += "#siteFooter{";
@@ -708,12 +751,6 @@ var $app = {
 		if (footerAColor!="") {
 			contentCSS += "#siteFooter a{";
 				contentCSS += "/*footerAColor*/color:#"+footerAColor+";"
-			contentCSS += "}";
-		}
-		
-		if (footerAHoverColor!="") {
-			contentCSS += "#siteFooter a:hover,#siteFooter a:focus{";
-				contentCSS += "/*footerAHoverColor*/color:#"+footerAHoverColor+";"
 			contentCSS += "}";
 		}
 		

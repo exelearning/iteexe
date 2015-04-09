@@ -92,26 +92,22 @@
 							<div class="field">
 								<label for="bodyColor">Color texto: </label>
 								<input type="text" maxlength="6" size="6" id="bodyColor" class="color" />
-							</div>
-							<div class="field">
-								<label for="fontSize">Tama&ntilde;o texto: </label>
-								<input type="text" size="6" id="fontSize" maxlength="3" /> %
-							</div>							
+							</div>						
 						</div>
 					</div>
 					<div class="col">
 						<div class="fields">
 							<div class="field">
+								<label for="fontSize">Tama&ntilde;o texto: </label>
+								<input type="text" size="6" id="fontSize" maxlength="3" /> %
+							</div>						
+							<div class="field">
 								<label for="aColor">Color enlaces: </label>
 								<input type="text" maxlength="6" size="6" id="aColor" class="color" />
 							</div>
-							<div class="field">
-								<label for="aHoverColor">Enlaces sobre: </label>
-								<input type="text" maxlength="6" size="6" id="aHoverColor" class="color" />
-							</div>                               
 						</div>
 					</div>
-				</fieldset>				
+				</fieldset>	
 				
 			</div><!-- /#general panel -->
 			
@@ -341,10 +337,6 @@
 								<label for="footerAColor">Color enlaces: </label>
 								<input type="text" maxlength="6" size="6" id="footerAColor" class="color" />
 							</div>
-							<div class="field">
-								<label for="footerAHoverColor">Enlaces sobre: </label>
-								<input type="text" maxlength="6" size="6" id="footerAHoverColor" class="color" />
-							</div>
 						</div>
 					</div>
 				</fieldset>
@@ -404,7 +396,17 @@
 					-->
 					<p class="checkbox">
 						<label for="useNavigationIcons"><input type="checkbox" id="useNavigationIcons" class="checkbox" /> Usar iconos</label>
-					</p>					
+					</p>
+					<div id="navigationIconsOptions" style="display:none">
+						<p class="radios">
+							<strong>Color de los iconos:</strong>
+							<span>
+								<label for="navigationIconsColor1"><input type="radio" name="navigationIconsColor" id="navigationIconsColor1" checked="checked" value="" /> Gris</label> 
+								<label for="navigationIconsColor2"><input type="radio" name="navigationIconsColor" id="navigationIconsColor2" value="black" /> Negro</label> 
+								<label for="navigationIconsColor3"><input type="radio" name="navigationIconsColor" id="navigationIconsColor3" value="white" /> Blanco</label>
+							</span>
+						</p>					
+					</div>
 					<div id="otherNavOptions">
 						<div class="col">
 							<div class="fields">
@@ -437,11 +439,76 @@
 			<div id="idevices" class="panel">
             	<h2 class="scr-av">iDevices</h2>
 				<fieldset>
+					<legend>With emphasis</legend>
+					<div class="fields">
+						<div class="autoclear">
+							<div class="col">
+								<div class="field">
+									<label for="emTitleColor">Color título: </label>
+									<input type="text" maxlength="6" size="6" id="emTitleColor" class="color" />
+								</div>						
+							</div>
+							<div class="col">
+								<div class="field">
+									<label for="emTitleBGColor">Fondo título: </label>
+									<input type="text" maxlength="6" size="6" id="emTitleBGColor" class="color" />
+								</div>
+							</div>
+						</div>
+						<div class="autoclear">
+							<div class="col">
+								<div class="field">
+									<label for="emColor">Color texto: </label>
+									<input type="text" maxlength="6" size="6" id="emColor" class="color" />
+								</div>						
+							</div>
+							<div class="col">
+								<div class="field">
+									<label for="emAColor">Color enlaces: </label>
+									<input type="text" maxlength="6" size="6" id="emAColor" class="color" />
+								</div>
+							</div>
+						</div>
+						<div class="autoclear">
+							<div class="col">
+								<div class="field">
+									<label for="emBGColor">Color fondo: </label>
+									<input type="text" maxlength="6" size="6" id="emBGColor" class="color" />
+								</div>						
+							</div>
+							<div class="col">
+								<div class="field">
+									<label for="emBorderColor">Color borde: </label>
+									<input type="text" maxlength="6" size="6" id="emBorderColor" class="color" />
+								</div>
+							</div>
+						</div>
+						<p class="radios">
+							<strong>Color de los iconos:</strong>
+							<span>
+								<label for="emIconColor1"><input type="radio" name="emIconColor" id="emIconColor1" checked="checked" value="" /> Gris</label> 
+								<label for="emIconColor2"><input type="radio" name="emIconColor" id="emIconColor2" value="black" /> Negro</label> 
+								<label for="emIconColor3"><input type="radio" name="emIconColor" id="emIconColor3" value="white" /> Blanco</label>
+							</span>
+						</p>
+					</div>
+				</fieldset>				
+				<fieldset>
 					<legend>No emphasis (Free Text...)</legend>
-					<p class="field">
-						<label for="noEmColor">Color texto: </label>
-						<input type="text" maxlength="6" size="6" id="noEmColor" class="color" />
-					</p>
+					<div class="fields autoclear">
+						<div class="col">
+							<div class="field">
+								<label for="noEmColor">Color texto: </label>
+								<input type="text" maxlength="6" size="6" id="noEmColor" class="color" />
+							</div>						
+						</div>
+						<div class="col">
+							<div class="field">
+								<label for="noEmAColor">Color enlaces: </label>
+								<input type="text" maxlength="6" size="6" id="noEmAColor" class="color" />
+							</div>
+						</div>
+					</div>
 					<p class="checkbox">
 						<label for="noEmShowBox"><input type="checkbox" id="noEmShowBox" class="checkbox" /> Mostrar caja</label>
 					</p>
@@ -471,7 +538,7 @@
 							<label for="noEmIconColor3"><input type="radio" name="noEmIconColor" id="noEmIconColor3" value="white" /> Blanco</label>
 						</span>
 					</p>
-				</fieldset>
+				</fieldset>				
 			</div><!-- /#idevices panel -->
             
             <div id="css" class="panel">

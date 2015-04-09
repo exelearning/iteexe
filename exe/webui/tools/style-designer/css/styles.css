@@ -54,6 +54,7 @@ p{width:602px;margin:10px 0}
 #general .field label{width:105px}
 #header .field label{width:105px}
 #menu .field label{width:130px}
+#idevices .field label{width:105px}
 #menu .general label{width:100px}
 #portlets .field label{width:100px}
 #footer .field label{width:95px}
@@ -132,6 +133,6 @@ table.jPicker{margin-top:69px;margin-left:48px}
 .jPicker .Move{display:none}
 .jPicker.Container{width:100%;height:100%;background:rgba(240,240,238,.8)}
 
-.radios{margin-top:.5em}
+.radios{margin:.5em 0 .5em .5em}
 .radios span{display:block;margin-top:.5em}
 .radios label{margin-left:1em}
