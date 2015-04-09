@@ -28,10 +28,16 @@ Ext.define('eXe.view.ui.eXeViewport', {
     layout: {
         type: 'border'
     },
+    
+    /* Some ExtJS themes use bigger fonts */
+    leftWidthByTheme: {
+    	"crisp" : 280,
+    	"neptune" : 280
+    },
 
     initComponent: function() {
         var me = this;
-
+        
         Ext.applyIf(me, {
             items: [
                 {
@@ -46,7 +52,7 @@ Ext.define('eXe.view.ui.eXeViewport', {
                     xtype: 'leftpanel',
                     region: 'west',
                     split: true,
-                    width: 250
+                    width: this.leftWidthByTheme[eXe.app.config.theme] || 250
                 }
             ],
             itemId: 'eXeViewport',
