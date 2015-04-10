@@ -77,7 +77,7 @@ var $designer = {
 		var h=500;
 		var features="";
 		// / Settings
-		var win = null;
+		// var style = null;
 		var winl = (screen.width-w)/2;
 		var wint = (screen.height-h)/2;
 		if (winl < 0) winl = 0;
@@ -87,8 +87,8 @@ var $designer = {
 		settings += 'top=' + wint + ',';
 		settings += 'left=' + winl + ',';
 		settings += features;
-		win = window.open(mypage,myname,settings);
-		if (win) win.focus();
+		styleDesignerPopup = window.open(mypage,myname,settings);
+		if (styleDesignerPopup) styleDesignerPopup.focus();
 	}
 }
 $designer.init();

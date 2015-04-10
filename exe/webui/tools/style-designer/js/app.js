@@ -132,8 +132,18 @@ var $app = {
 		if (ie && ie<9) this.isOldBrowser = true;
 
 		$("#save").click(function(){
-			alert("Save!");
-			// var css = $app.composeCSS();
+			$app.getPreview();
+			var content = $("#my-content-css").val();
+			var nav = $("#my-nav-css").val();
+			try {
+				opener.opener.eXe.app.getController('Toolbar').styleDesigner.saveStyle(content,nav);
+			} catch(e) {
+				// To do (show the content.css and the nav.css tabs and tell the user to copy their content)
+				alert($i18n.No_Opener_Error);
+			}
+		});
+		$("#restore").click(function(){
+			alert($i18n.Restore_Instructions);
 		});
 		
 		this.stylePath = opener.$designer.styleBasePath;
@@ -148,8 +158,8 @@ var $app = {
 		window.close();
 	},
 	updateTextFieldFromFile : function(e){
-		//opener.parent.opener.document.getElementsByTagName("IFRAME")[0].contentWindow;
-		//opener.parent.opener.window.nevow_clientToServerEvent('quit', '', '');
+		// opener.parent.opener.document.getElementsByTagName("IFRAME")[0].contentWindow;
+		// opener.parent.opener.window.nevow_clientToServerEvent('quit', '', '');
 		var id = e.id.replace("File","");
 		$("#"+id).val($(e).val());
 		$app.getPreview();
@@ -492,9 +502,27 @@ var $app = {
 			contentCSS += "}";			
 		}
 		var emIconColor = $('input[name=emIconColor]:checked').val();
+		var iconsExtension = "";
 		if (emIconColor!='') {
+			iconsExtension = "_"+emIconColor;
 			contentCSS += ".iDevice_header .toggle-idevice a{/*emIconColor*/background-image:url("+this.stylePath+"_style_icons_"+emIconColor+".png);}";
-		}		
+		}
+		// iDevice icons
+		contentCSS +='\
+			.iDeviceTitle{background-image:url('+this.stylePath+'icon_star'+iconsExtension+'.png);}\
+			.activityIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_assignment'+iconsExtension+'.png);}\
+			.readingIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_unread'+iconsExtension+'.png);}\
+			.ListaIdevice .iDeviceTitle,\
+			.QuizTestIdevice .iDeviceTitle,\
+			.MultichoiceIdevice .iDeviceTitle,\
+			.TrueFalseIdevice .iDeviceTitle,\
+			.MultiSelectIdevice .iDeviceTitle,\
+			.ClozeIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_question'+iconsExtension+'.png);}\
+			.preknowledgeIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_renew'+iconsExtension+'.png);}\
+			.GalleryIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_media'+iconsExtension+'.png);}\
+			.objectivesIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_info'+iconsExtension+'.png);}\
+			.ReflectionIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_account'+iconsExtension+'.png);}\
+		';
 		// No emphasis
 		var noEmColor = $("#noEmColor").val();
 		var noEmShowBox = $("#noEmShowBox").prop("checked");

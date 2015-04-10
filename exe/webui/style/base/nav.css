@@ -30,7 +30,7 @@ body{padding:0;text-align:center}
 
 #siteFooter{padding:0 20px 20px 20px;border:0}
 /* Pagination */
-.pagination{text-align:right;border-top:1px solid #ddd;font-size:.95em;padding:20px 0}
+.pagination{text-align:right;border-top:1px solid;font-size:.95em;padding:20px 0}
 .pagination .sep{display:none}
 .pagination a{display:inline-block;padding:5px 10px;border-radius:5px;margin-left:20px}
 .pagination a:hover,.pagination a:focus{text-decoration:none}
@@ -78,7 +78,7 @@ body{padding:0;text-align:center}
 	.pagination .next{position:absolute;right:0}
 	#nav-toggler{position:relative;top:0;left:0;margin:20px 19px;text-align:center}
 	#nav-toggler a{width:100%;display:block;padding:8px 0}
-	#siteNav{border-top:1px solid #ddd}
+	#siteNav{border-top:1px solid}
 }
 
 /* eXeLearning Style Designer */

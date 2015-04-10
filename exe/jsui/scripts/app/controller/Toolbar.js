@@ -409,11 +409,40 @@ Ext.define('eXe.controller.Toolbar', {
 	
 	// Style designer
 	styleDesigner : {
+		open : function(btn,text){
+			Ext.Msg.alert(_('New Style'), _("Your Style has been created. Time to make it pretty."),function(){
+				alert("Creo el directorio, etc.: "+text+"\n\nMira cómo se le pasa el estilo por GET en editStyle.");
+				styleDesignerWindow = window.open("/tools/style-designer/previews/website/");
+			});
+		},
 		createStyle : function(){
-			window.open("/tools/style-designer/previews/website/");
+			Ext.MessageBox.prompt(_("New Style"), 'Please enter the new Style name:', this.styleDesigner.open);
 		},
 		notCompatitle : function(){
 			Ext.Msg.alert("", _("The current Style is not compatible with the Style Designer"));
+		},
+		errorSaving : function(){
+			Ext.Msg.alert(_('Error'), _("Your Style could not be saved because an unknown error occurred."));
+		},
+		saveStyle : function(content,nav) {
+			alert('Hay que guardar los cambios (esta función está en Toolbar.js).\n\nRecibo dos parámetros: el contenido de content.css y el de nav.css.\n\nEso es lo que hay que guardar');
+			Ext.Ajax.request({
+				url: window.location.href, // Replace this URL with the one that saves
+				scope: this,
+				success: function(response) {
+					alert("Recibo la respuesta (response.responseText) con un mensaje de éxito o error y lo muestro con Ext.Msg.alert.");
+					try {
+						styleDesignerWindow.styleDesignerPopup.close();
+						styleDesignerWindow.close();
+					} catch(e) {
+						
+					}
+				},
+				error: function(){
+					this.styleDesigner.errorSaving();
+				}
+			});
+			
 		},
 		editStyle : function(){
 			Ext.Ajax.request({
@@ -424,7 +453,7 @@ Ext.define('eXe.controller.Toolbar', {
 					if (res.indexOf("/* eXeLearning Style Designer Compatible Style */")!=0) {
 						this.styleDesigner.notCompatitle();
 					} else {
-						window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId());		
+						styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId());		
 					}
 				},
 				error: function(){

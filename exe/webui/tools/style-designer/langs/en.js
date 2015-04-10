@@ -15,6 +15,7 @@ var $i18n = {
 	Not_Enough_Resolution : _("Please, make your browser bigger. The Style Designer requires at least a 1024x768 screen resolution"),
 	No_Opener_Error : _("The Style Designer window is not open."),
 	Quit_Warning : _("This window will be closed. Please restart the tool."),
+	Restore_Instructions : _("Just close this window and your design preview without clicking on Finish."),
 	// Color Picker
 	Color_Picker : _("Color Picker"),
 	Color_Picker_Strings : {
