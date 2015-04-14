@@ -512,13 +512,15 @@ var $app = {
 			.iDeviceTitle{background-image:url('+this.stylePath+'icon_star'+iconsExtension+'.png);}\
 			.activityIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_assignment'+iconsExtension+'.png);}\
 			.readingIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_unread'+iconsExtension+'.png);}\
+			.FileAttachIdeviceInc .iDeviceTitle{background-image:url('+this.stylePath+'icon_download'+iconsExtension+'.png);}\
+			.WikipediaIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_description'+iconsExtension+'.png);}\
 			.ListaIdevice .iDeviceTitle,\
 			.QuizTestIdevice .iDeviceTitle,\
 			.MultichoiceIdevice .iDeviceTitle,\
 			.TrueFalseIdevice .iDeviceTitle,\
 			.MultiSelectIdevice .iDeviceTitle,\
 			.ClozeIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_question'+iconsExtension+'.png);}\
-			.preknowledgeIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_renew'+iconsExtension+'.png);}\
+			.preknowledgeIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_announcement'+iconsExtension+'.png);}\
 			.GalleryIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_media'+iconsExtension+'.png);}\
 			.objectivesIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_info'+iconsExtension+'.png);}\
 			.ReflectionIdevice .iDeviceTitle{background-image:url('+this.stylePath+'icon_account'+iconsExtension+'.png);}\
