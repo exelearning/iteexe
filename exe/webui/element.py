@@ -1453,7 +1453,7 @@ class ClozeElement(ElementWithResources):
         html += [common.javaScriptIsRequired()]
         html += ['</p>']
         html += ['</div>']
-        html += ['<div id="clozeScore%s"></div>' % self.id]
+        html += ['<div id="clozeScore%s" class="score js-feedback"></div>' % self.id]
         html += ['</div>']
         if preview:
             html += ['</div>']
