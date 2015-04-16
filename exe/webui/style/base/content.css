@@ -58,7 +58,7 @@ input,select{font-size:1em;font-family:inherit}
 .TrueFalseIdevice .activity-form{margin-top:1.5em}
 .TrueFalseIdevice .activity-form:first-child{margin-top:0}
 .TrueFalseIdevice label{margin:0 1em}
-.MultichoiceIdevice input,.MultiSelectIdevice input[type=checkbox],.QuizTestIdevice input[type=radio]{margin:.35em 0 0 .7em}
+.MultichoiceIdevice input,.MultiSelectIdevice input[type=checkbox],.QuizTestIdevice input[type=radio]{width:16px;height:16px;margin:5px 0 0 12px}
 .MultichoiceIdevice .feedback{margin-top:1em}
 .right-option,.wrong-option{font-style:italic}
 .readingIdevice .iDevice_content:first-child p:last-child,
