@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="js/app.js"></script>
     <title>%Style_Designer%</title>
 </head>
-<body>
+<body><script type="text/javascript">document.body.className="debug-"+$app.debug</script>
 <div id="cssWizard">
 	<h1>%Style_Designer%</h1>
     <form onsubmit="return false;" action="#" id="myForm"> 
@@ -24,10 +24,8 @@
 				<li id="navigation-tab"><span><a href="#" onclick="$app.showTab('navigation');return false">Navegación</a></span></li>
 				<li id="idevices-tab"><span><a href="#" onclick="$app.showTab('idevices');return false">iDevices</a></span></li>
                 <li id="css-tab"><span><a href="#" onclick="$app.showTab('css');return false">%Advanced%</a></span></li>
-				<!--
 				<li id="content-css-tab"><span><a href="#" onclick="$app.showTab('content-css');return false">content.css</a></span></li>
 				<li id="nav-css-tab"><span><a href="#" onclick="$app.showTab('nav-css');return false">nav.css</a></span></li>
-				-->
 			</ul>
 		</div>
 
