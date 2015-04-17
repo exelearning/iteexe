@@ -137,7 +137,9 @@ var $app = {
 			var content = $("#my-content-css").val();
 			var nav = $("#my-nav-css").val();
 			try {
-				opener.opener.eXe.app.getController('Toolbar').styleDesigner.saveStyle(content,nav);
+				if (confirm($i18n.Finish_confirmation)) {
+					opener.opener.eXe.app.getController('Toolbar').styleDesigner.saveStyle(content,nav);
+				}
 			} catch(e) {
 				// To do (show the content.css and the nav.css tabs and tell the user to copy their content)
 				alert($i18n.No_Opener_Error);
