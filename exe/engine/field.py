@@ -2628,20 +2628,19 @@ class FeedbackField(FieldWithResources):
     rendered as an XHTML element
     """
 
-    persistenceVersion = 2
+    persistenceVersion = 3
 
     # these will be recreated in FieldWithResources' TwistedRePersist:
     nonpersistant      = ['content', 'content_wo_resourcePaths']
 
-    def __init__(self, name, instruc=""):
+    def __init__(self, name, instruc="", content="",btfeedback=""):
         """
         Initialize 
         """
-        FieldWithResources.__init__(self, name, instruc)
+        FieldWithResources.__init__(self, name, instruc,content)
 
         # self._buttonCaption = x_(u"Click Here")
-        self._buttonCaption = "" # Empty button caption (see common.feedbackBlock). "Click Here" does not describe the purpose of the button.
-
+        self.buttonCaption = btfeedback
         self.feedback      = ""
         # Note: now that FeedbackField extends from FieldWithResources,
         # the above feedback attribute will likely be used much less than
@@ -2649,7 +2648,7 @@ class FeedbackField(FieldWithResources):
         self.content      = ""
     
     # Properties
-    buttonCaption = lateTranslate('buttonCaption')
+    #buttonCaption = lateTranslate('buttonCaption')
 
     def upgradeToVersion1(self):
         """
@@ -2671,6 +2670,11 @@ class FeedbackField(FieldWithResources):
         self.content_wo_resourcePaths = self.feedback
         # NOTE: we don't need to actually process any of those contents for 
         # image paths, either, since this is an upgrade from pre-images!
+    def upgradeToVersion3(self):
+        """
+        Upgrade
+        """
+        self.buttonCaption = btfeedback
 
 # ===========================================================================
 
