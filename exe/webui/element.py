@@ -494,21 +494,32 @@ class FeedbackElement(ElementWithResources):
             # and begin by choosing the content for preview mode, WITH paths:
             self.field.feedback = self.field.content_w_resourcePaths
 
+            if "btnCaption" + self.id in request.args:
+                self.field.buttonCaption = request.args["btnCaption"+self.id][0]
+
+
     def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this field
         """
         # to render, choose the content with the preview-able resource paths:
         self.field.feedback = self.field.content_w_resourcePaths
-
         this_package = None
         if self.field_idevice is not None \
         and self.field_idevice.parentNode is not None:
             this_package = self.field_idevice.parentNode.package
-        html = common.formField('richTextArea', this_package, 
-                                self.field.name,'',
-                                self.id, self.field.instruc,
+        html ='<strong>'+self.field.name+'</strong>'
+        if self.field.instruc:
+            html += common.elementInstruc(self.field.instruc)
+        html +='<p><label for="btnCaption'+self.id+'">'+_("Button Caption")+'</label>'
+        html += common.textInput('btnCaption'+self.id, self.field.buttonCaption, 40)
+        html +='</p>'
+        html += common.formField('richTextArea', this_package, 
+                                '','',
+                                self.id, '',
                                 self.field.feedback)
+        
+        html +='<br/>'
         return html
 
     def renderView(self):
@@ -522,6 +533,7 @@ class FeedbackElement(ElementWithResources):
         Returns an XHTML string for previewing this question element
         """
         return self.doRender(preview=True)
+
 
     def doRender(self, preview=False):
         """
@@ -1453,7 +1465,7 @@ class ClozeElement(ElementWithResources):
         html += [common.javaScriptIsRequired()]
         html += ['</p>']
         html += ['</div>']
-        html += ['<div id="clozeScore%s" class="score js-feedback"></div>' % self.id]
+        html += ['<div id="clozeScore%s"></div>' % self.id]
         html += ['</div>']
         if preview:
             html += ['</div>']

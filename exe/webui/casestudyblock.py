@@ -26,6 +26,7 @@ from exe.webui.questionelement     import QuestionElement
 from exe.webui.element             import ImageElement
 from exe.webui                     import common
 from exe.webui.element             import TextAreaElement
+from exe.webui.element             import FeedbackElement
 
 
 log = logging.getLogger(__name__)

@@ -29,6 +29,7 @@ from exe.engine.translate import lateTranslate
 from exe.engine.path      import toUnicode
 from exe                  import globals as G
 from exe.engine.field     import TextAreaField
+from exe.engine.field     import FeedbackField
 import os
 import re
 
@@ -51,7 +52,7 @@ class Question(Persistable):
         self.questionTextArea = TextAreaField(u'', u'', u'')
         self.questionTextArea.idevice = idevice 
 
-        self.feedbackTextArea = TextAreaField(u'', u'', u'')
+        self.feedbackTextArea = FeedbackField(u'', u'', u'')
         self.feedbackTextArea.idevice = idevice
 
     def setupImage(self, idevice):
@@ -187,7 +188,7 @@ class CasestudyIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 9
+    persistenceVersion = 10
 
     def __init__(self, story="", defaultImage=None):
         """
@@ -292,7 +293,8 @@ situation.""")
         self.title = title.renderContents().decode('utf-8')
 
         inner = i.find(name='div', attrs={'class' : 'iDevice_inner' })
-
+        _btfeedBack= inner.find(name='input', attrs={'name' : re.compile('^toggle-feedback-') })
+        self.answerTextArea.buttonCaption=_btfeedBack
         story = inner.find(name='div', 
                 attrs={'class' : 'block' , 'id' : re.compile('^ta') })
         self.storyTextArea.content_wo_resourcePaths = \
@@ -433,6 +435,11 @@ situation.""")
         Delete icon from system resources
         """
         self._upgradeIdeviceToVersion3()
+    def upgradeToVersion10(self):
+        """
+        Delete icon from system resources
+        """
+        self.answerTextArea.buttonCaption=''
 
     def embedImagesInFeedback(self):
         """
