@@ -153,9 +153,10 @@ class SinglePageExport(object):
         hasWikipedia      = False
         hasInstructions   = False
         hasMediaelement   = False
+        hasTooltips       = False
 
     	for idevice in node.idevices:
-    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement):
+    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
     	    	break
     	    if not hasFlowplayer:
     	    	if 'flowPlayer.swf' in idevice.systemResources:
@@ -176,6 +177,8 @@ class SinglePageExport(object):
     				hasInstructions = True
             if not hasMediaelement:
                     hasMediaelement = common.ideviceHasMediaelement(idevice)
+            if not hasTooltips:
+                hasTooltips = common.ideviceHasTooltips(idevice)
                             
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -207,6 +210,9 @@ class SinglePageExport(object):
             if dT != "HTML5":
                 jsFile = (self.scriptsDir/'exe_html5.js')
                 jsFile.copyfile(self.outputDir/'exe_html5.js')
+        if hasTooltips:
+            exe_tooltips = (self.scriptsDir/'exe_tooltips')
+            exe_tooltips.copyfiles(self.outputDir)
 
         for child in node.children:
             self.compruebaReproductores(child)

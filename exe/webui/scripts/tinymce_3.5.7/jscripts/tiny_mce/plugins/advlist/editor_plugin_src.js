@@ -76,6 +76,29 @@
 					if (format) {
 						list = dom.getParent(sel.getNode(), 'ol,ul');
 						if (list) {
+						
+							// The New eXeLearning
+							if (typeof(format.cssClass)!='undefined') {
+								var currentClass = dom.getAttrib(list, "class");
+								var newClass = "";
+								var classToAdd = format.cssClass;
+								
+								var currentClasses = currentClass.split(" ");
+								var l = currentClasses.length;
+								
+								for (i=0;i<l;i++) {
+									var c = currentClasses[i];
+									if (c!="" && c!="auto-numbered") {
+										newClass += c;
+										if (i<(l-1)) newClass += " ";
+									}
+								}
+								
+								newClass += classToAdd;
+								dom.setAttrib(list, "class", newClass);
+							}
+							// /The New eXeLearning
+					
 							dom.setStyles(list, format.styles);
 							list.removeAttribute('data-mce-style');
 						}

@@ -1,339 +1,294 @@
-/* ********************************************* */
-/* **** IMÁGENES UTILIZADAS ******************* */
-/* ******************************************* */
-
-/* my_logo.jpg - Imagen de la cabecera de los documentos exportados como Página sola */
-/* my_list.gif - Sustituye al punto de las listas no numeradas introducidas desde eXeLearning  */
-/* my_ims_header.jpg - Imagen de fondo para el título de cada página en los IMS y en los documentos exportados como Página sola */
-/* my_header.jpg - Imagen de la cabecera de los documentos exportados como Sitio web */
-
-/* ********************************************* */
-/* **** TABLA DE COLORES ********************** */
-/* ******************************************* */
-
 body{
-	color:#000000; /* Cuerpo de texto */
-	background:#ffffff; /* Color de fondo */
+	padding: 15px;
+	margin: 0;
+	text-align: left;
+	color: #000;
+	background: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+	line-height: 1.5;
 }
 
 a{
-	color: #919D22; /* Enlaces */
+	color:#919D22;
 }
 
-#header{
-	/* Título del proyecto */
-	font-size: 1.7em;
-	padding-top: 15px;
-	text-align: center;
-	font-weight: normal;
-	text-decoration: underline;
-	vertical-align: baseline;
-	word-spacing: 1em;
+#header,#emptyHeader{
+	text-align: left;
+	height: 75px;
+	font-size: 1.25em;
+	vertical-align: bottom;
 	color: #000;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	border-top-width: 5px;
+	border-bottom-width: 5px;
+	border-top-style: none;
+	border-bottom-style: solid;
+	border-top-color: #000;
+	border-bottom-color: #C6D644;
+	line-height: 101px;
+	padding-left: 250px;
+	background-color: #000;
+	background-image: url(tknika_logo.png);
 }
 
-#nodeTitle{
-	color:#000000; /* Título de cada página */
-}
-
-#main #nodeDecoration{
-	border-color:#000000; /* Borde del título de cada página */
-	background-color:#C6D644; /* Color de fondo */
-}
-
-.iDeviceTitle{
-	color: #000000; /* Títulos de los iDevices */
-}
-
-.iDevice_inner{
-	background-color: #d6e178; /* Fondo del cuerpo del iDevice */
-	color: #4d4d4d;
-}
-.iDevice_inner a{
-	color: #828200;
-	}
-
-#pageFooter{
-	color:#666666; /* Texto del pie de página */
-}
-
-#pageFooter a{
-	color:#c6d644; /* Enlaces del pie de página */
-}
-
-input.feedbackbutton{
-	background-color: #E6E6E6; /* Color de fondo del botón de feedback */
-}
-
-.pre-code{
-	background:#112C4A; /* Color de fondo del código de ordenador intertado desde TinyMCE */
-	color:#EBF5D3; /* Color del texto */
-	font-family:Monaco,Courier,monospace; /* Fuente */
-}
-
-/* PARA QUE AL EXPORTAR SE QUITEN LOS BORDES DE LAS PREGUNTAS */
-/*.question table
-{
-	border: 0;
-}
-
-.question td
-{
-	border: 0;
-}*/
-
-/* ********************************************* */
-/* **** OTRAS DEFINICIONES ******************** */
-/* ******************************************* */
-
-body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
-a{text-decoration:none}
-a:hover{text-decoration:underline}
-#nodeTitle{
-	font-size:1.8em;
-	font-weight:bold;
-	margin:0;
-	text-align:left;
-	line-height: 1.4em;
-	border-left-width: 5px;
-	border-left-style: solid;
-	border-left-color: #c6d644;
-	padding-left: 10px;
-}
-#main #nodeDecoration{
-	padding:20px 15px 5px 15px;
-	margin-bottom:15px;
-	background-repeat:no-repeat;
-	background-position:right 0;
-	background-image:url(my_ims_header.jpg);
-	border-top-width: 8px;
-	border-right-width: 8px;
-	border-bottom-width: 8px;
-	border-left-width: 8px;
-	border-top-style: solid;
-	border-right-style: none;
-	border-bottom-style: none;
-	border-left-style: none;
-}
-#header{
-	height:35px;
-	background-repeat:no-repeat;
-	background-position:0 0;
-	background-image:url(my_logo.jpg);
-	font-size:1.2em;
-	font-weight:bold;
-	color: #000;
-	padding-top: 59px;
-	padding-right: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	text-transform: capitalize;
-}
 #header h1{
 	margin:0;
 	font-size:1em;
-	color: #000;
-	line-height: 1em;
 }
-#main ul li{
-	width: auto;
-	list-style-image: url(my_list.gif); margin-bottom: 0.2em;
+
+#nodeTitle,.nodeTitle{
+	font-size: 1.6em;
+	margin: 0;
+	text-align: left;
+	font-weight: bold;
+	color: #222;
+	border-left-width: 5px;
+	border-left-style: solid;
+	border-left-color: #C6D644;
+	padding-top: 0.5em;
+	padding-right: 0;
+	padding-bottom: 0.6em;
+	padding-left: 0.7em;
+	text-transform: uppercase;
+	font-variant: normal;
+	background-image: url(tknika_tit.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+} 
+
+/* .nodeTitle when single page */
+
+#main .nodeTitle{
+	margin-top:.6em;
+	color:#222;
 }
-#main h2{font-size:1.4em}
-#main h3{font-size:1.3em}
-#main h4{font-size:1.2em}
-#main h5{font-size:1.1em}
+
+#main #nodeDecoration{
+/*	padding:10px 0 5px 0;
+*/	margin-bottom:15px;
+	border:0;
+	background:url(tit_tknika.jpg) no-repeat right 0;
+	text-align:left;
+}
+
+#main h2{
+	font-size: 1.4em;
+	color: #4d4d4d;
+}
+
+#main .iDeviceTitle{
+	display: inline;
+	font-size: 1.8em;
+	color: #4d4d4d;
+}
+
+#main h3{
+	font-size: 1.3em;
+/*	color: #C6D644;
+*/}
+
+#main h4{
+	font-size:1.2em;
+}
+
+#main h5{
+	font-size:1.1em;
+}
+
 .iDevice{
-	margin-top: 10px;
-	margin-right: 0;
-	margin-bottom: 20px;
-	margin-left: 0;
-	padding-top: 10px;
-	border-top-width: 2px;
-	border-right-width: 2px;
 	border-bottom-width: 2px;
-	border-left-width: 2px;
-	border-top-style: dotted;
-	border-top-color: #CCC;
-	border-right-color: #CCC;
+	border-bottom-style: dotted;
 	border-bottom-color: #CCC;
-	border-left-color: #CCC;
+	margin-top: 1.8em;
+	margin-right: 0;
+	margin-bottom: 1.8em;
+	margin-left: 0;
+	padding-bottom: 1.8em;
 }
 .iDeviceTitle{
-	font-size:1.6em;
-	vertical-align:bottom;
-	color: #333;
-	height: 60px;
-	margin-left: 20px;
-} 
-.iDevice_icon{
-	width:60px;
-	height:auto;
-	margin-right:5px
+	font-size: 1.2em;
+	vertical-align: middle;
+	color: #666;
+	line-height: 1em;
+	top: 38px;
 }
+
+.iDevice_icon{
+	width:23px;
+	height:auto;
+	margin-right:5px;
+} 
+
+
+/* iDevice iconos */
+.iDevice_header{
+	background: url(icon_generic.gif) no-repeat 0 0;
+	padding-left: 70px;
+	height: 85px;	
+}
+
+.activityIdevice .iDevice_header{
+	background-image:url(icon_activity.gif);
+}
+
+.readingIdevice .iDevice_header{
+	background-image:url(icon_reading.gif);
+}
+
+.ListaIdevice .iDevice_header,
+.QuizTestIdevice .iDevice_header,
+.MultichoiceIdevice .iDevice_header,
+.MultiSelectIdevice .iDevice_header,
+.ClozeIdevice .iDevice_header{
+	background-image:url(icon_question.gif);
+}
+
+.TrueFalseIdevice .iDevice_header{
+	background-image:url(icon_question.gif);
+	}
+
+.CasestudyIdevice .iDevice_header{
+	background-image:url(icon_casestudy.gif);
+}
+
+.preknowledgeIdevice .iDevice_header{
+	background-image:url(icon_preknowledge.gif);
+}
+
+.GalleryIdevice .iDevice_header{
+	background-image:url(icon_gallery.gif);
+}
+
+.objectivesIdevice .iDevice_header{
+	background-image:url(icon_objectives.gif);
+}
+
+.ReflectionIdevice .iDevice_header{
+	background-image:url(icon_reflection.gif);
+}
+
 .iDevice_content{
-    overflow:auto
+	overflow:auto;
 }
 .iDevice_inner{
-	margin-top: 15px;
-	padding-top: 10px;
-	padding-right: 20px;
-	padding-bottom: 20px;
-	padding-left: 30px;
-	border-top-width: 1px;
-	border-right-width: 4px;
-	border-bottom-width: 4px;
-	border-left-width: 4px;
-	border-top-style: none;
-	border-right-style: none;
-	border-bottom-style: none;
-	border-left-style: solid;
-	border-top-color: #000000;
-	border-right-color: #c6d644;
-	border-bottom-color: #c6d644;
-	border-left-color: #000000;
+	color: #444;
+	border-radius: 2px;
+	background-color: #D6E178;
 	background-image: url(idevice_lateral.gif);
 	background-repeat: repeat-y;
 	background-position: 0px 0px;
-}
-#pageFooter{font-size:.9em}
-#pageFooter p{margin:3px 0}
-.pre-code{border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
-/*.image_text {border:1px solid #9D9D9D;background:transparent;padding: 4px;margin:0px 20px 4px 4px}*/
-
-
-
-#main h2.iDeviceTitle{
-	display:inline;
-	font-size:1.8em;
-	font-weight: bold;
-	vertical-align:bottom;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	padding-left: 40px;
 }
 
-.block, .feedback
-
-{
-    display: block;
-    padding: 1em;
+#siteFooter{
+	color: #666666;
+	font-size: .95em;
+	padding: 15px 0;
+	border-top-width: 5px;
+	border-top-style: solid;
+	border-top-color: #c6d644;
 }
 
-.feedback
-
-{
-	font-size: 100%;
-	background-color: #FFF;
-	padding: 10px;
-	border: 2px solid #000000;
-	font-style: normal;
-	margin-top: 15px;
-}
-#popupmessage
-{
-	background-color: #FFF;
-	border: 2px solid #000;
-	}
-/* ********************************************************* */
-/* **** ESTILOS ESPECÍFICOS de cada IDevice ****** */
-/* ******************************************************* */ 
-
-/*Estilo eDevice Imagen Ampliada */
-
-.image_text
-{
-	color: #333333;
-	}
-	
-.image_text .image
-{
-	background-image:url(icon_magnifier.gif);
-	background-position: left top;
-	background-repeat: no-repeat;
+#siteFooter a{
+	color:#000;
 }
 
-.image object
-{
-	margin: 0px;
-	padding: 0px;
-	margin-top: 85px;	
-}
-.image_text + .block
-{
-	float:left;
-	color: #000000;
-	margin-top: 85px;
-	margin-bottom: 5px;
-	margin-left: 10px;
-	text-align: right;
-}
-.iDevice_inner div div div div input[type="radio"] {
-margin: 15px 5px 7px 20px;}
-.iDevice_inner div div div div input[type="checkbox"] {
-margin: 25px 5px 7px 20px;}
-.iDevice_inner table{
-	width: 680px;
-	border-spacing: 0px;
-	}
-	.iDevice_inner td {
-	border: 1px solid #fff;
-	padding-top: 2px;
-	padding-right: 4px;
-	padding-bottom: 2px;
-	padding-left: 4px;
-}
-.iDevice_inner th{
-	border: thin solid #fff;
-	background-color: #919D22;
-	color: #fff;
-	text-align: center;
-	text-transform: capitalize;
-	}
-.iDevice_inner caption {
-	padding: 0.3em;
-	color: #000;
-	text-align: center;
-	font-weight: bold;
-	background-color: #FFFFFF;
-	text-transform: capitalize;
-	border: 1px solid #fff;
-}
-tr:nth-child(2n+1) {
-	background-color: #999;
-	color: #fff
-}
-tr:nth-child(2n) {
-	background-color: #666;
-	color: #fff
+input,select,textarea{
+	font-family:Arial,Verdana,Helvetica,sans-serif;
+	font-size:1em;
 }
 
-
- table{
-	border-spacing: 0px;
-	}
-	 td {
-	border: 1px solid #fff;
-	padding-top: 2px;
-	padding-right: 4px;
-	padding-bottom: 2px;
-	padding-left: 4px;
-}
- th{
-	border: thin solid #fff;
-	background-color: #919D22;
-	color: #fff;
-	text-align: center;
-	text-transform: capitalize;	
-	}
- caption {
-	padding: 0.3em;
-	color: #fff;
-	text-align: center;
-	font-weight: bold;
-	background-color: #000;
-	text-transform: capitalize;
-	border: 1px solid #fff;
+#lbOverlay{
+	background-color:#f3f3f3;
 }
 
-.WikipediaIdevice td{
+#lbOuterContainer{
+	border-color:#ddd;
+}
+
+.ExternalUrlIdevice iframe{
+	border:none;
+}
+
+/* base.css */
+
+.block,.feedback{
+	padding:0;
+}
+
+.feedback{
+	font-family:Arial,Verdana,Helvetica,sans-serif;
+	font-size:1em;
 	background-color: #fff;
-	color: #000;	
+	padding: 10px;
+	border: solid 1px #000;
+}
+
+li{
+	list-style-position:outside;
+}
+
+#wikipedia-content ul li{
+	list-style-image:none;
+	margin-bottom:auto;
+}
+
+/* Form buttons */
+
+.iDevice_inner input[type=submit],.iDevice_inner input[type=button],.feedbackbutton{
+	padding: 3px 5px;
+	color: #000;
+	border-radius: 3px;
+	margin-bottom: 1em;
+	background-color: #C6D644;
+	border: 1px solid #000;
+}
+
+.iDevice_inner input[type=submit]:hover,.iDevice_inner input[type=button]:hover,.feedbackbutton:hover{
+	background:#000;
+	color:#f3f3f3;
+}
+
+/* Hide/Show iDevice */
+
+.toggle-idevice{
+	margin:12px 0 0;
+	text-align:right;
+	display:block;
+}
+
+.iDevice_header .toggle-idevice{
+	float:right;
+	padding-top:2px;
+	margin:0;
+}
+
+.toggle-idevice a{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url(tknika_ver_ocu.gif);
+	background-repeat: no-repeat;
+	background-position: 4px -16px;
+}
+
+.toggle-idevice .show-idevice{
+	background-position:4px 0;
+}
+
+.toggle-idevice span{
+	position:absolute;
+	overflow:hidden;
+	clip:rect(0,0,0,0);
+	height:0;
+}
+@media (max-width: 700px) {
+	#main .iDeviceTitle{
+	font-size: 1.4em;		
+		}
 	}
