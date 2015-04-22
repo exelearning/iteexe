@@ -16,7 +16,8 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,
+# USA.
 # ===========================================================================
 
 """
@@ -42,6 +43,7 @@ from exe.jsui.recentmenu         import RecentMenu
 from exe.jsui.stylemenu          import StyleMenu
 from exe.jsui.propertiespage     import PropertiesPage
 from exe.webui.authoringpage     import AuthoringPage
+from exe.webui.stylemanagerpage  import StyleManagerPage
 from exe.webui.renderable        import File
 from exe.export.websiteexport    import WebsiteExport
 from exe.export.textexport       import TextExport
@@ -88,13 +90,13 @@ class MainPage(RenderableLivePage):
         #self.putChild("stylecss", File(self.config.stylesDir)
 
         mainjs = Path(self.config.jsDir).joinpath('templates', 'mainpage.html')
-        self.docFactory  = loaders.htmlfile(mainjs)
+        self.docFactory = loaders.htmlfile(mainjs)
 
         # Create all the children on the left
         self.outlinePane = OutlinePane(self)
         self.idevicePane = IdevicePane(self)
-        self.styleMenu   = StyleMenu(self)
-        self.recentMenu  = RecentMenu(self)
+        self.styleMenu = StyleMenu(self)
+        self.recentMenu = RecentMenu(self)
 
         # And in the main section
         self.propertiesPage = PropertiesPage(self)
@@ -103,10 +105,9 @@ class MainPage(RenderableLivePage):
         self.authoringPages = {}
         self.classificationSources = {}
 
-        G.application.resourceDir=Path(package.resourceDir)
+        G.application.resourceDir = Path(package.resourceDir)
 
         self.location_buttons = LocationButtons()
-
 
     def child_authoring(self, ctx):
         """
@@ -173,32 +174,31 @@ class MainPage(RenderableLivePage):
             """
             kwargs['identifier'] = name
             hndlr = handler(func, *args, **kwargs)
-            hndlr(ctx, client) # Stores it
-        setUpHandler(self.handleIsPackageDirty,  'isPackageDirty')
+            hndlr(ctx, client)     # Stores it
+        setUpHandler(self.handleIsPackageDirty, 'isPackageDirty')
         setUpHandler(self.handlePackageFileName, 'getPackageFileName')
-        setUpHandler(self.handleSavePackage,     'savePackage')
-        setUpHandler(self.handleLoadPackage,     'loadPackage')
+        setUpHandler(self.handleSavePackage, 'savePackage')
+        setUpHandler(self.handleLoadPackage, 'loadPackage')
         setUpHandler(self.recentMenu.handleLoadRecent, 'loadRecent')
-        setUpHandler(self.handleLoadTutorial,    'loadTutorial')
+        setUpHandler(self.handleLoadTutorial, 'loadTutorial')
         setUpHandler(self.recentMenu.handleClearRecent, 'clearRecent')
-        setUpHandler(self.handleImport,          'importPackage')
-        setUpHandler(self.handleCancelImport,    'cancelImportPackage')
-        setUpHandler(self.handleExport,          'exportPackage')
-        setUpHandler(self.handleXliffExport,     'exportXliffPackage')
-        setUpHandler(self.handleQuit,            'quit')
-        setUpHandler(self.handleBrowseURL,       'browseURL')
+        setUpHandler(self.handleImport, 'importPackage')
+        setUpHandler(self.handleCancelImport, 'cancelImportPackage')
+        setUpHandler(self.handleExport, 'exportPackage')
+        setUpHandler(self.handleXliffExport, 'exportXliffPackage')
+        setUpHandler(self.handleQuit, 'quit')
+        setUpHandler(self.handleBrowseURL, 'browseURL')
         setUpHandler(self.handleMergeXliffPackage, 'mergeXliffPackage')
-        setUpHandler(self.handleInsertPackage,   'insertPackage')
-        setUpHandler(self.handleExtractPackage,  'extractPackage')
+        setUpHandler(self.handleInsertPackage, 'insertPackage')
+        setUpHandler(self.handleExtractPackage, 'extractPackage')
         setUpHandler(self.outlinePane.handleSetTreeSelection, 'setTreeSelection')
         setUpHandler(self.handleClearAndMakeTempPrintDir, 'makeTempPrintDir')
-        setUpHandler(self.handleRemoveTempDir,   'removeTempDir')
+        setUpHandler(self.handleRemoveTempDir, 'removeTempDir')
         setUpHandler(self.handleTinyMCEimageChoice, 'previewTinyMCEimage')
-        setUpHandler(self.handleTinyMCEmath,     'generateTinyMCEmath')
-        setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
-        setUpHandler(self.handleReload,          'reload')
+        setUpHandler(self.handleTinyMCEmath, 'generateTinyMCEmath')
+        setUpHandler(self.handleTestPrintMsg, 'testPrintMessage')
+        setUpHandler(self.handleReload, 'reload')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
-
 
         #For the new ExtJS 4.0 interface
         setUpHandler(self.outlinePane.handleAddChild, 'AddChild')
@@ -209,11 +209,11 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.outlinePane.handleUp, 'UpNode')
         setUpHandler(self.outlinePane.handleDown, 'DownNode')
         setUpHandler(self.handleCreateDir, 'CreateDir')
+        setUpHandler(self.handleOverwriteLocalStyle, 'overwriteLocalStyle')
 
         self.idevicePane.client = client
         self.styleMenu.client = client
         self.webServer.stylemanager.client = client
-
 
         if not self.webServer.monitoring:
             self.webServer.monitoring = True
@@ -250,19 +250,19 @@ class MainPage(RenderableLivePage):
                          tags.a(href='%s;a=shortlog;h=%s' % (self.config.baseGitWebURL, revision),
                                 target='_blank')[revision]
                         ]
-               ] 
+               ]
 
-    def handleTestPrintMsg(self, client, message): 
-        """ 
-        Prints a test message, and yup, that's all! 
-        """ 
+    def handleTestPrintMsg(self, client, message):
+        """
+        Prints a test message, and yup, that's all!
+        """
         print "Test Message: ", message, " [eol, eh!]"
 
     def handleIsPackageDirty(self, client, ifClean, ifDirty):
         """
         Called by js to know if the package is dirty or not.
         ifClean is JavaScript to be evaled on the client if the package has
-        been changed 
+        been changed
         ifDirty is JavaScript to be evaled on the client if the package has not
         been changed
         """
@@ -270,7 +270,6 @@ class MainPage(RenderableLivePage):
             client.sendScript(ifDirty)
         else:
             client.sendScript(ifClean)
-
 
     def handlePackageFileName(self, client, onDone, onDoneParam):
         """
@@ -309,7 +308,7 @@ class MainPage(RenderableLivePage):
         package is changed and needs saving)
         """
         filename = Path(filename, 'utf-8')
-        saveDir  = filename.dirname()
+        saveDir = filename.dirname()
         if saveDir and not saveDir.isdir():
             client.alert(_(u'Cannot access directory named ') + unicode(saveDir) + _(u'. Please use ASCII names.'))
             return
@@ -322,7 +321,7 @@ class MainPage(RenderableLivePage):
         # Add the extension if its not already there and give message if not saved
         filename = self.b4save(client, filename, '.elp', _(u'SAVE FAILED!'))
         try:
-            self.package.save(filename) # This can change the package name
+            self.package.save(filename)  # This can change the package name
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
@@ -337,7 +336,6 @@ class MainPage(RenderableLivePage):
                          filter_func=otherSessionPackageClients)
         else:
             client.alert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
-
 
     def handleLoadPackage(self, client, filename, filter_func=None):
         """Load the package named 'filename'"""
@@ -385,6 +383,14 @@ class MainPage(RenderableLivePage):
 
         d.addCallback(successDownload)
 
+    def handleOverwriteLocalStyle(self, client, style_dir, downloaded_file):
+        """
+        Delete locally installed style and import new version from URL
+        """
+        stylemanager = StyleManagerPage(self)
+        stylemanager.client = client
+        stylemanager.overwriteLocalStyle(style_dir, downloaded_file)
+
     def handleReload(self, client):
         self.location_buttons.updateText()
         client.sendScript('eXe.app.gotoUrl()', filter_func=allSessionClients)
@@ -414,7 +420,6 @@ class MainPage(RenderableLivePage):
         if int(rm_top_dir) != 0:
             os.rmdir(tempdir)
 
-
     def get_printdir_relative2web(self, exported_dir):
         """
         related to the following ClearParentTempPrintDirs(), return a
@@ -432,11 +437,11 @@ class MainPage(RenderableLivePage):
 
     def ClearParentTempPrintDirs(self, client, log_dir_warnings):
         """
-        Determine the parent temporary printing directory, and clear them 
+        Determine the parent temporary printing directory, and clear them
         if safe to do so (i.e., if not the config dir itself, for example)
-        Makes (if necessary), and clears out (if applicable) the parent 
+        Makes (if necessary), and clears out (if applicable) the parent
         temporary directory.
-        The calling handleClearAndMakeTempPrintDir() shall then make a 
+        The calling handleClearAndMakeTempPrintDir() shall then make a
         specific print-job subdirectory.
         """
         #
@@ -445,16 +450,16 @@ class MainPage(RenderableLivePage):
         # (eventually may want to allow this information to be configured by
         #  the user, stored in globals, etc.)
         web_dirname = G.application.tempWebDir
-        under_dirname = os.path.join(web_dirname,"temp_print_dirs")
+        under_dirname = os.path.join(web_dirname, "temp_print_dirs")
         clear_tempdir = 0
         dir_warnings = ""
 
-        # but first need to ensure that under_dirname itself is available; 
+        # but first need to ensure that under_dirname itself is available;
         # if not, create it:
-        if cmp(under_dirname,"") != 0:
+        if cmp(under_dirname, "") != 0:
             if os.path.exists(under_dirname):
                 if os.path.isdir(under_dirname):
-                    # Yes, this directory already exists.  
+                    # Yes, this directory already exists.
                     # pre-clean it, keeping the clutter down:
                     clear_tempdir = 1
                 else:
@@ -469,9 +474,9 @@ class MainPage(RenderableLivePage):
                     under_dirname = web_dirname
                     # but, we can't just put the tempdirs directly underneath
                     # the webDir, since no server object exists for it.
-                    # So, as a quick and dirty solution, go ahead and put 
+                    # So, as a quick and dirty solution, go ahead and put
                     # them in the images folder:
-                    under_dirname = os.path.join(under_dirname,"images")
+                    under_dirname = os.path.join(under_dirname, "images")
 
                     dir_warnings += "    RECOMMENDATION: please " \
                             + "remove/rename this file to allow eXe easier "\
@@ -479,7 +484,7 @@ class MainPage(RenderableLivePage):
                     dir_warnings += "     eXe will create the temporary " \
                            + "printing directory directly under \"" \
                            + under_dirname + "\" instead, but this might "\
-                           +"leave some files around after eXe terminates..."
+                           + "leave some files around after eXe terminates..."
                     if log_dir_warnings:
                         log.warn("    RECOMMENDATION: please remove/rename "\
                             + "this file to allow eXe easier management of "\
@@ -489,20 +494,20 @@ class MainPage(RenderableLivePage):
                             + "instead, but this might leave some files " \
                             + "around after eXe terminates...", \
                             under_dirname)
-                    # and note that we do NOT want to clear_tempdir 
+                    # and note that we do NOT want to clear_tempdir
                     # on the config dir itself!!!!!
             else:
                 os.makedirs(under_dirname)
                 # and while we could clear_tempdir on it, there's no need to.
-        if clear_tempdir : 
-            # before making this particular print job's temporary print 
-            # directory underneath the now-existing temp_print_dirs, 
-            # go ahead and clear out temp_print_dirs such that we have 
+        if clear_tempdir:
+            # before making this particular print job's temporary print
+            # directory underneath the now-existing temp_print_dirs,
+            # go ahead and clear out temp_print_dirs such that we have
             # AT MOST one old temporary set of print job files still existing
             # once eXe terminates:
-            rm_topdir = "0"  
-            # note: rm_topdir is passed in as a STRING since 
-            # handleRemoveTempDir expects as such from nevow's 
+            rm_topdir = "0"
+            # note: rm_topdir is passed in as a STRING since
+            # handleRemoveTempDir expects as such from nevow's
             # clientToServerEvent() call:
             self.handleRemoveTempDir(client, under_dirname, rm_topdir)
 
@@ -514,15 +519,15 @@ class MainPage(RenderableLivePage):
         Makes a temporary printing directory, and yup, that's pretty much it!
         """
 
-        # First get the name of the parent temp directory, after making it 
+        # First get the name of the parent temp directory, after making it
         # (if necessary) and clearing (if applicable):
-        log_dir_warnings = 1  
+        log_dir_warnings = 1
         (under_dirname, dir_warnings) = self.ClearParentTempPrintDirs( \
                                              client, log_dir_warnings)
 
-        # Next, go ahead and create this particular print job's temporary 
+        # Next, go ahead and create this particular print job's temporary
         # directory under the parent temp directory:
-        temp_dir = mkdtemp(suffix, prefix, under_dirname) 
+        temp_dir = mkdtemp(suffix, prefix, under_dirname)
 
         # Finally, pass the created temp_dir back to the expecting callback:
         client.call(callback, temp_dir, dir_warnings)
@@ -530,23 +535,22 @@ class MainPage(RenderableLivePage):
     def handleTinyMCEimageChoice(self, client, tinyMCEwin, tinyMCEwin_name, \
                              tinyMCEfield, local_filename, preview_filename):
         """
-        Once an image is selected in the file browser that is spawned by the 
-        TinyMCE image dialog, copy this file (which is local to the user's 
-        machine) into the server space, under a preview directory 
+        Once an image is selected in the file browser that is spawned by the
+        TinyMCE image dialog, copy this file (which is local to the user's
+        machine) into the server space, under a preview directory
         (after checking if this exists, and creating it if necessary).
-        Note that this IS a "cheat", in violation of the client-server 
-        separation, but can be done since we know that the eXe server is 
+        Note that this IS a "cheat", in violation of the client-server
+        separation, but can be done since we know that the eXe server is
         actually sitting on the client host.
         """
         server_filename = ""
-        callback_errors = ""
         errors = 0
 
-        log.debug('handleTinyMCEimageChoice: image local = ' + local_filename 
+        log.debug('handleTinyMCEimageChoice: image local = ' + local_filename
                 + ', base=' + os.path.basename(local_filename))
 
-        webDir     = Path(G.application.tempWebDir)
-        previewDir  = webDir.joinpath('previews')
+        webDir = Path(G.application.tempWebDir)
+        previewDir = webDir.joinpath('previews')
 
         if not previewDir.exists():
             log.debug("image previews directory does not yet exist; " \
@@ -556,10 +560,9 @@ class MainPage(RenderableLivePage):
             client.alert( \
                 _(u'Preview directory %s is a file, cannot replace it') \
                 % previewDir)
-            log.error("Couldn't preview tinyMCE-chosen image: "+
+            log.error("Couldn't preview tinyMCE-chosen image: " +
                       "Preview dir %s is a file, cannot replace it" \
                       % previewDir)
-            callback_errors =  "Preview dir is a file, cannot replace"
             errors += 1
 
         if errors == 0:
@@ -578,8 +581,6 @@ class MainPage(RenderableLivePage):
                      % localImagePath)
                 log.error("Couldn't find tinyMCE-chosen image: %s" \
                         % localImagePath)
-                callback_errors = "Image file %s not found, cannot preview" \
-                        % localImagePath
                 errors += 1
 
         try:
@@ -595,13 +596,13 @@ class MainPage(RenderableLivePage):
             shutil.copyfile(local_filename, \
                     server_filename.abspath())
 
-            # new optional description file to provide the 
+            # new optional description file to provide the
             # actual base filename, such that once it is later processed
             # copied into the resources directory, it can be done with
             # only the basename.   Otherwise the resource filenames
             # are too long for some users, preventing them from making
             # backup CDs of the content, for example.
-            # 
+            #
             # Remember that the full path of the
             # file is only used here as an easy way to keep the names
             # unique WITHOUT requiring a roundtrip call from the Javascript
@@ -611,23 +612,23 @@ class MainPage(RenderableLivePage):
             # to just its basename, since the resource parts have their
             # own unique-ification mechanisms already in place.
 
-            descrip_file_path = Path(server_filename+".exe_info")
+            descrip_file_path = Path(server_filename + ".exe_info")
             log.debug("handleTinyMCEimageChoice creating preview " \
                     + "description file \'" \
                     + descrip_file_path.abspath() + "\'.")
             descrip_file = open(descrip_file_path, 'wb')
 
-            # safety measures against TinyMCE, otherwise it will 
+            # safety measures against TinyMCE, otherwise it will
             # later take ampersands and entity-escape them into '&amp;',
             # and filenames with hash signs will not be found, etc.:
-            unspaced_filename  = local_filename.replace(' ','_')
-            unhashed_filename  = unspaced_filename.replace('#', '_num_')
-            unamped_local_filename  = unhashed_filename.replace('&', '_and_')
-            log.debug("and setting new file basename as: " 
+            unspaced_filename = local_filename.replace(' ', '_')
+            unhashed_filename = unspaced_filename.replace('#', '_num_')
+            unamped_local_filename = unhashed_filename.replace('&', '_and_')
+            log.debug("and setting new file basename as: "
                     + unamped_local_filename)
             my_basename = os.path.basename(unamped_local_filename)
 
-            descrip_file.write((u"basename="+my_basename).encode('utf-8'))
+            descrip_file.write((u"basename=" + my_basename).encode('utf-8'))
             descrip_file.flush()
             descrip_file.close()
 
@@ -635,26 +636,25 @@ class MainPage(RenderableLivePage):
 
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
-            log.error("handleTinyMCEimageChoice unable to copy local image "\
-                    +"file to server prevew, error = " + str(e))
+            log.error("handleTinyMCEimageChoice unable to copy local image "
+                    + "file to server prevew, error = " + str(e))
             raise
 
     def handleTinyMCEmath(self, client, tinyMCEwin, tinyMCEwin_name, \
                              tinyMCEfield, latex_source, math_fontsize, \
                              preview_image_filename, preview_math_srcfile):
         """
-        Based off of handleTinyMCEimageChoice(), 
+        Based off of handleTinyMCEimageChoice(),
         handleTinyMCEmath() is similar in that it places a .gif math image
         (and a corresponding .tex LaTeX source file) into the previews dir.
         Rather than copying the image from a user-selected directory, though,
         this routine actually generates the math image using mimetex.
         """
         server_filename = ""
-        callback_errors = ""
         errors = 0
 
-        webDir     = Path(G.application.tempWebDir)
-        previewDir  = webDir.joinpath('previews')
+        webDir = Path(G.application.tempWebDir)
+        previewDir = webDir.joinpath('previews')
 
         if not previewDir.exists():
             log.debug("image previews directory does not yet exist; " \
@@ -664,10 +664,9 @@ class MainPage(RenderableLivePage):
             client.alert( \
                 _(u'Preview directory %s is a file, cannot replace it') \
                 % previewDir)
-            log.error("Couldn't preview tinyMCE-chosen image: "+
+            log.error("Couldn't preview tinyMCE-chosen image: " +
                       "Preview dir %s is a file, cannot replace it" \
                       % previewDir)
-            callback_errors =  "Preview dir is a file, cannot replace"
             errors += 1
 
         #if errors == 0:
@@ -698,15 +697,14 @@ class MainPage(RenderableLivePage):
             math_file.flush()
             math_file.close()
 
-
-            try: 
+            try:
                 use_latex_sourcefile = math_filename_str
                 tempFileName = compile(use_latex_sourcefile, math_fontsize, \
                         latex_is_file=True)
             except Exception, e:
                 client.alert(_('MimeTeX compile failed!\n%s') % str(e))
-                log.error("handleTinyMCEmath unable to compile LaTeX using "\
-                    +"mimetex, error = " + str(e))
+                log.error("handleTinyMCEmath unable to compile LaTeX using "
+                        + "mimetex, error = " + str(e))
                 raise
 
             # copy the file into previews
@@ -717,13 +715,13 @@ class MainPage(RenderableLivePage):
             shutil.copyfile(tempFileName, \
                     server_filename.abspath().encode('utf-8'))
 
-            # Delete the temp file made by compile 
+            # Delete the temp file made by compile
             Path(tempFileName).remove()
         return
 
-    def getResources(self,dirname,html,client):
+    def getResources(self, dirname, html, client):
         Resources.cancel = False
-        self.importresources = Resources(dirname,self.package.findNode(client.currentNodeId),client)
+        self.importresources = Resources(dirname, self.package.findNode(client.currentNodeId), client)
 #        import cProfile
 #        import lsprofcalltree
 #        p = cProfile.Profile()
@@ -733,7 +731,6 @@ class MainPage(RenderableLivePage):
 #        k.output(data)
 #        data.close()
         self.importresources.insertNode([html.partition(dirname + os.sep)[2]])
-
 
     def handleImport(self, client, importType, path, html=None):
         if importType == 'html':
@@ -755,7 +752,7 @@ class MainPage(RenderableLivePage):
         client.alert(_(u'Error importing HTML:\n') + unicode(failure.getBriefTraceback()), \
                      (u'eXe.app.gotoUrl("/%s")' % self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
 
-    def handleImportCallback(self,resources,client):
+    def handleImportCallback(self, resources, client):
         client.call('eXe.app.getController("Toolbar").closeImportProgressWindow')
         client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
                       self.package.name).encode('utf8'), filter_func=allSessionPackageClients)
@@ -766,24 +763,24 @@ class MainPage(RenderableLivePage):
 
     def handleExport(self, client, exportType, filename):
         """
-        Called by js. 
+        Called by js.
         Exports the current package to one of the above formats
         'exportType' can be one of 'singlePage' 'webSite' 'zipFile'
                      'textFile' or 'scorm'
         'filename' is a file for scorm pages, and a directory for websites
         """
-        webDir     = Path(self.config.webDir)
+        webDir = Path(self.config.webDir)
         #stylesDir  = webDir.joinpath('style', self.package.style)
-        stylesDir  = self.config.stylesDir/self.package.style
+        stylesDir = self.config.stylesDir / self.package.style
         filename = Path(filename, 'utf-8')
-        exportDir  = Path(filename).dirname()
+        exportDir = Path(filename).dirname()
         if exportDir and not exportDir.exists():
             client.alert(_(u'Cannot access directory named ') +
                          unicode(exportDir) +
                          _(u'. Please use ASCII names.'))
             return
 
-        """ 
+        """
         adding the print feature in using the same export functionality:
         """
         if exportType == 'singlePage' or exportType == 'printSinglePage':
@@ -832,7 +829,7 @@ class MainPage(RenderableLivePage):
         """
         # first, go ahead and clear out any temp job files still in
         # the temporary print directory:
-        log_dir_warnings = 0  
+        log_dir_warnings = 0
         # don't warn of any issues with the directories at quit,
         # since already warned at initial directory creation
         (parent_temp_print_dir, dir_warnings) = \
@@ -896,10 +893,9 @@ class MainPage(RenderableLivePage):
             importer.parseAndImport(from_source)
             client.alert(_(u'Correct XLIFF import'), (u'eXe.app.gotoUrl("/%s")' % \
                            self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
-        except Exception,e:
+        except Exception, e:
             client.alert(_(u'Error importing XLIFF: %s') % e, (u'eXe.app.gotoUrl("/%s")' % \
                            self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
-
 
     def handleInsertPackage(self, client, filename):
         """
@@ -910,7 +906,7 @@ class MainPage(RenderableLivePage):
         package.save(tmpfile)
         loadedPackage = self._loadPackage(client, tmpfile, newLoad=False,
                                           destinationPackage=self.package)
-        newNode = loadedPackage.root.copyToPackage(self.package, 
+        newNode = loadedPackage.root.copyToPackage(self.package,
                                                    self.package.currentNode)
         # trigger a rename of all of the internal nodes and links,
         # and to add any such anchors into the dest package via isMerge:
@@ -922,13 +918,12 @@ class MainPage(RenderableLivePage):
         client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
                           self.package.name).encode('utf8'), filter_func=allSessionPackageClients)
 
-
     def handleExtractPackage(self, client, filename, existOk):
         """
         Create a new package consisting of the current node and export
         'existOk' means the user has been informed of existance and ok'd it
         """
-        filename  = Path(filename, 'utf-8')
+        filename = Path(filename, 'utf-8')
         saveDir = filename.dirname()
         if saveDir and not saveDir.exists():
             client.alert(_(u'Cannot access directory named ') + unicode(saveDir) + _(u'. Please use ASCII names.'))
@@ -951,7 +946,7 @@ class MainPage(RenderableLivePage):
             # and to remove any old anchors from the dest package,
             # and remove any zombie links via isExtract:
             newNode = newPackage.root
-            if newNode: 
+            if newNode:
                 newNode.RenamedNodePath(isExtract=True)
 
             # Save the new package
@@ -965,7 +960,7 @@ class MainPage(RenderableLivePage):
         try:
             d = Path(currentDir, 'utf-8') / newDir
             d.makedirs()
-            client.sendScript(u"""eXe.app.getStore('filepicker.DirectoryTree').load({ 
+            client.sendScript(u"""eXe.app.getStore('filepicker.DirectoryTree').load({
                 callback: function() {
                     eXe.app.fireEvent( "dirchange", %s );
                 }
@@ -983,7 +978,7 @@ class MainPage(RenderableLivePage):
     def exportXML(self, client, filename, stylesDir):
         try:
             xmlExport = XMLExport(self.config, stylesDir, filename)
-            xmlExport.export(self.package)        
+            xmlExport.export(self.package)
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
@@ -998,9 +993,9 @@ class MainPage(RenderableLivePage):
                     (and whatever else that might mean)
         """
         try:
-            imagesDir    = webDir.joinpath('images')
-            scriptsDir   = webDir.joinpath('scripts')
-            cssDir       = webDir.joinpath('css')
+            imagesDir = webDir.joinpath('images')
+            scriptsDir = webDir.joinpath('scripts')
+            cssDir = webDir.joinpath('css')
             templatesDir = webDir.joinpath('templates')
             # filename is a directory where we will export the website to
             # We assume that the user knows what they are doing
@@ -1013,9 +1008,9 @@ class MainPage(RenderableLivePage):
             if not filename.exists():
                 filename.makedirs()
             elif not filename.isdir():
-                client.alert(_(u'Filename %s is a file, cannot replace it') % 
+                client.alert(_(u'Filename %s is a file, cannot replace it') %
                              filename)
-                log.error("Couldn't export web page: "+
+                log.error("Couldn't export web page: " +
                           "Filename %s is a file, cannot replace it" % filename)
                 return
             else:
@@ -1035,7 +1030,7 @@ class MainPage(RenderableLivePage):
             if client:
                 client.alert(_(u'Exported to %s') % filename)
 
-        # and return a string of the actual directory name, 
+        # and return a string of the actual directory name,
         # in case the package name was added, etc.:
         return filename.abspath().encode('utf-8')
         # WARNING: the above only returns the RELATIVE pathname
@@ -1060,16 +1055,16 @@ class MainPage(RenderableLivePage):
                 filename.makedirs()
             elif not filename.isdir():
                 if client:
-                    client.alert(_(u'Filename %s is a file, cannot replace it') % 
+                    client.alert(_(u'Filename %s is a file, cannot replace it') %
                              filename)
-                log.error("Couldn't export web page: "+
+                log.error("Couldn't export web page: " +
                           "Filename %s is a file, cannot replace it" % filename)
                 return
             else:
                 if client:
                     client.alert(_(u'Folder name %s already exists. '
-                                'Please choose another one or delete existing one then try again.') % filename)           
-                return 
+                                'Please choose another one or delete existing one then try again.') % filename)
+                return
             # Now do the export
             websiteExport = WebsiteExport(self.config, stylesDir, filename)
             websiteExport.export(self.package)
@@ -1127,11 +1122,10 @@ class MainPage(RenderableLivePage):
                 filename += '.xlf'
             xliffExport = XliffExport(self.config, filename, source, target, copy, cdata)
             xliffExport.export(self.package)
-        except Exception,e:
+        except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
         client.alert(_(u'Exported to %s') % filename)
-
 
     def exportScorm(self, client, filename, stylesDir, scormType):
         """
@@ -1223,7 +1217,7 @@ class MainPage(RenderableLivePage):
                 os.startfile(filename.encode(Path.fileSystemEncoding))
         else:
             filename /= 'index.html'
-            G.application.config.browser.open('file://'+filename)
+            G.application.config.browser.open('file://' + filename)
 
     def _loadPackage(self, client, filename, newLoad=True,
                      destinationPackage=None):
