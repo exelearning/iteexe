@@ -91,7 +91,7 @@ var $appVars = [
 ];
 
 var $app = {
-	debug : "off", // off/on
+	debug : "on", // off/on
 	returnFullContent : true,
 	defaultValues : {
 		headerHeight : 120,
@@ -195,7 +195,7 @@ var $app = {
 		var myContentCSS = "";
 		if (contentCSS.length==2) {
 			myContentCSS = contentCSS[1];
-			myContentCSS = myContentCSS.replace(/(\r\n|\n|\r)/gm,"");
+			// myContentCSS = myContentCSS.replace(/(\r\n|\n|\r)/gm,"");
 		}
 		$app.myContentCSS = $app.removeStylePath(myContentCSS);
 		$app.getAllValues("content",$app.myContentCSS);
@@ -206,7 +206,7 @@ var $app = {
 		var myNavCSS = "";
 		if (navCSS.length==2) {
 			myNavCSS = navCSS[1];
-			myNavCSS = myNavCSS.replace(/(\r\n|\n|\r)/gm,"");
+			// myNavCSS = myNavCSS.replace(/(\r\n|\n|\r)/gm,"");
 		}
 		$app.myNavCSS = $app.removeStylePath(myNavCSS);
 		$app.getAllValues("nav",$app.myNavCSS);
@@ -226,14 +226,18 @@ var $app = {
 	},
 	getAllValues : function(type,content){
 		
-		var c = content.replace("\r\n\r\n","");
+		var c = content;
 		
 		// Advanced CSS
 		var adv = c.split($app.advancedMark);
 		if (adv.length==2 && adv[1]!="") {
 			adv = adv[1];
+			adv = adv.replace("\r\n","");
 			$("#extra-"+type+"-css").val(adv);
 		}
+		
+		// c = c.replace("\r\n\r\n","");
+		c = c.replace(/(\r\n|\n|\r)/gm,"");
 		
 		// Get CSS onload
 		if (type=="content") {
@@ -330,6 +334,9 @@ var $app = {
 		// Enable real time preview
 		this.trackChanges();
 		
+		// Regenerate the code (format it)
+		this.getPreview();
+		
 	},
 	trackChanges : function(){
 		
@@ -416,8 +423,17 @@ var $app = {
 		}
 		return "";
 	},
-	formatCSS : function(css) {
-		css = css.replace(/(\r\n|\n|\r)/gm,"");
+	formatCSS : function(full) {
+		var css = full;
+		var adv = "";
+		var hasCustomCSS = false;
+		if (css.indexOf($app.advancedMark)!=-1) {
+			var _css = css.split($app.advancedMark);
+			css = _css[0];
+			adv = _css[1];
+			hasCustomCSS = true;
+		}
+		var css = css.replace(/(\r\n|\n|\r)/gm,"");
 		css=css.replace(/{/g, "{\n");
 		css=css.replace(/}/g, "\n}\n");
 		css=css.replace(/\t/g,"");
@@ -425,6 +441,8 @@ var $app = {
 		css=css.replace(/;\/\*/g,';\n/*');
 		css = css.replace(/\n\n/gm,"\n");
 		css = css.replace(/\s+$/, ''); // Remove the last space
+		
+		if (hasCustomCSS) return css+"\n"+$app.advancedMark+adv;
 		return css;	
 	},
 	composeCSS : function(){
@@ -643,11 +661,19 @@ var $app = {
 			}		
 		}
 		
-		if (fontFamily!='' || bodyColor!='' || fontSize!=""){
+		if (fontFamily!='' || bodyColor!='' || fontSize!="" || contentBGColor!='' || contentBGURL!=''){
 			contentCSS+="body{";
 				if (fontFamily!="") contentCSS+="/*fontFamily*/font-family:"+fontFamily+";";
 				if (bodyColor!="") contentCSS+="/*bodyColor*/color:#"+bodyColor+";";
 				if (fontSize!="") contentCSS+="/*fontSize*/font-size:"+fontSize+"%;";
+				// IMS, etc. body background
+				if (contentBGColor!='') contentCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
+				if (contentBGURL!='') {
+					if (contentBGURL.indexOf("http")!=0) contentBGURL = $app.stylePath+contentBGURL;
+					contentCSS+="/*contentBGURL*/background-image:url("+contentBGURL+");";
+					contentCSS+="/*contentBGRepeat*/background-repeat:"+contentBGRepeat+";";
+					contentCSS+="/*contentBGPosition*/background-position:"+contentBGPosition+";";				
+				}							
 			contentCSS+="}";
 		}
 		if (aColor!='') contentCSS+="a{/*aColor*/color:#"+aColor+";}";
@@ -664,18 +690,6 @@ var $app = {
 					navCSS+="/*bodyBGPosition*/background-position:"+bodyBGPosition+";";				
 				}
 			navCSS+="}";
-		}
-		// IMS
-		if (contentBGColor!='' || contentBGURL!='') {		
-			contentCSS+=".exe-single-page,.exe-scorm,.exe-ims,.exe-epub3{";
-				if (contentBGColor!='') contentCSS+="/*contentBGColor*/background-color:#"+contentBGColor+";";
-				if (contentBGURL!='') {
-					if (contentBGURL.indexOf("http")!=0) contentBGURL = $app.stylePath+contentBGURL;
-					contentCSS+="/*contentBGURL*/background-image:url("+contentBGURL+");";
-					contentCSS+="/*contentBGRepeat*/background-repeat:"+contentBGRepeat+";";
-					contentCSS+="/*contentBGPosition*/background-position:"+contentBGPosition+";";				
-				}				
-			contentCSS+="}";
 		}
 		
 		// #header
@@ -795,7 +809,7 @@ var $app = {
 			var hideNavigation = $("#hideNavigation").prop("checked");
 			if (!hideNavigation) navCSS += this.getHorizontalNavigationCSS();
 		}		
-		opener.myTheme.setNavHeight();
+		if (typeof(opener.myTheme.setNavHeight)!='undefined') opener.myTheme.setNavHeight();
 
 		// Advanced tab
 		var advContentCSS = $("#extra-content-css").val();
@@ -938,7 +952,7 @@ var $app = {
 		this.setCSS(navCSSTag,navCSS);
 		
 		// Menu height
-		w.myTheme.setNavHeight();
+		if (typeof(w.myTheme.setNavHeight)!='undefined') w.myTheme.setNavHeight();
 	}
 }
 $(function(){

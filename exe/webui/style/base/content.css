@@ -95,7 +95,7 @@ background-image:url(icon_unread.png);
 .FileAttachIdeviceInc .iDeviceTitle{
 background-image:url(icon_download.png);
 }
-.WikipediaIdevice  .iDeviceTitle{
+.WikipediaIdevice .iDeviceTitle{
 background-image:url(icon_description.png);
 }
 .ListaIdevice .iDeviceTitle,.QuizTestIdevice .iDeviceTitle,.MultichoiceIdevice .iDeviceTitle,.TrueFalseIdevice .iDeviceTitle,.MultiSelectIdevice .iDeviceTitle,.ClozeIdevice .iDeviceTitle{
@@ -116,14 +116,12 @@ background-image:url(icon_account.png);
 body{
 /*bodyColor*/
 color:#333333;
+/*contentBGColor*/
+background-color:#f9f9f9;
 }
 a{
 /*aColor*/
 color:#2495ff;
-}
-.exe-single-page,.exe-scorm,.exe-ims,.exe-epub3{
-/*contentBGColor*/
-background-color:#f9f9f9;
 }
 #header,#emptyHeader,#nodeDecoration{
 /*headerHeight*/
