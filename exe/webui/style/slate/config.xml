@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <theme>
-    <name>Slate</name>
-    <version>2.0</version>
-    <compatibility>2.0+</compatibility>
-    <author>eXeLearning.org</author>
-    <author-url>http://www.exelearning.org</author-url>
-    <description>See content.css and nav.css for details.</description>
+	<name>Slate</name>
+	<version>2.0</version>
+	<compatibility>2.0+</compatibility>
+	<author>eXeLearning.org</author>
+	<author-url>http://www.exelearning.org</author-url>
+	<description>See content.css and nav.css for details.</description>
+	<extra-head><![CDATA[<meta name="viewport" content="width=device-width, initial-scale=1" />
+	]]></extra-head>
+	<extra-body><![CDATA[<script type="text/javascript" src="_slate_js.js"></script>]]></extra-body>	
 </theme>

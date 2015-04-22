@@ -31,6 +31,7 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 /* The New eXeLearning */
 /* Include these styles in the old themes */
 .pre-code{background:#112C4A;color:#E7ECF1;font-family:Monaco,Courier,monospace;border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
+* html .pre-code{width:90%} /* IE6 */
 .iDevice_content{position:relative;max-width:100%}
 .exe-epub3 .iDevice_content{position:static}
 .iDevice_header{background-position:0 50%;background-repeat:no-repeat}
@@ -75,8 +76,8 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .hidden-idevice .image_text{display:none} /* iDevice Toggler : Required for Magnifier */
 /* Accessibility */
 #skipNav{margin:0;position:absolute;width:100%}
-.sr-av,.js .js-sr-av,#skipNav a,.exe-hidden-accessible{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0} /* sr-av: Avaible for Screen Readers */
-#skipNav a{background:#333;color:#fff;padding:.4em .85em} /* clip:rect(0 0 0 0) is for IE6 & 7 */
+.sr-av,.js .js-sr-av,#skipNav a,.exe-hidden-accessible{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0} /* sr-av: Avaible for Screen Readers. (0 0 0 0) is for IE6 & 7 */
+#skipNav a{background:#333;color:#fff;padding:.4em .85em}
 #skipNav a:active,#skipNav a:focus{position:static;overflow:visible;clip:auto;height:auto}
 /* Tooltips */
 body .qtip {font-size:.85em;line-height:1.5em}
@@ -94,3 +95,7 @@ ol.auto-numbered{counter-reset:item}
 /* Quote With Authorship */
 .styled-qc{font-family:Georgia,serif;font-style:italic;width:80%;margin:1.5em auto;padding:0.25em 40px;position:relative}
 .styled-qc:before{display:block;content:"\201C";font-size:5em;position:absolute;left:0;top:-20px}
+/* Responsive design */
+@media all and (max-width: 780px) {
+	.exe-layout-2-cols .exe-col,.exe-layout-3-cols .exe-col{float:none;width:100%;padding:0}
+}

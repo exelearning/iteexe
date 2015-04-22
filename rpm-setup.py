@@ -56,7 +56,7 @@ setup(name=version.project,
       version=version.version,
       description="The EXtremely Easy to use eLearning authoring tool",
       long_description="""\
-The eXe project is an authoring environment to enable teachers to publish
+The eXeLearning project is an authoring environment which enables teachers to publish
 web content without the need to become proficient in HTML or XML markup.
 Content generated using eXe can be used by any Learning Management System.
 """,

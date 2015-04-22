@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0.2\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2015-02-26 13:24+0100\nPO-Revision-Date: 2015-02-26 13:29+0100\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage-Team: Spanish <jrfern@telefonica.net>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.1\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2015-03-25 21:13+0100\nPO-Revision-Date: 2015-03-25 23:01+0100\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage-Team: Spanish <jrfern@telefonica.net>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Actividad desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cree el caso pr\u00e1ctico. Un buen caso es aquel \nque describe una controversia o propone una escena describiendo los personajes \ninvolucrados y la situaci\u00f3n. Tambi\u00e9n debe permitir que se realicen acciones \npara obtener la resoluci\u00f3n de la situaci\u00f3n.", 
  "Telugu ": "Telugu ", 
@@ -18,6 +18,7 @@ translations = {
  "Keyword": "Palabra clave", 
  "void": "vac\u00edo", 
  "voice-over": "locuci\u00f3n", 
+ "Your score is %f%": "Su puntuaci\u00f3n es %f%", 
  "Tongan  ": "Tongan\u00e9s  ", 
  "Default name for level 2 nodes": "Nombre por defecto para los nodos de nivel 2", 
  "school": "escuela", 

@@ -2,13 +2,15 @@
 Copyright University of Auckland 2004
 Created by Brent Simpson, brent.simpson@auckland.ac.nz
 Centre for Flexible and Distance Learning
-Modified by eXeLearning.net
+
+Modified by Ignacio Gros for eXeLearning.net
+See Help - eXe Tutorial for more info on how to modify this style for your needs.
 */
-#content{width:100%;position:relative;padding-bottom:10px;min-width:985px;border-top:2px solid #ACBF60}
+#content{width:100%;position:relative;padding-bottom:10px;min-width:380px;border-top:2px solid #ACBF60}
 #main-wrapper{padding:10px 0 0 250px}
 #main{width:100%}
 #content{padding-bottom:21px}
-#header,#emptyHeader{border-top:none}
+#header,#emptyHeader{border-top:none;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:220px}
 #nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.1em 0 .6em 0;border-bottom:2px solid #ACBF60}
 /* Navigation */
@@ -27,11 +29,11 @@ Modified by eXeLearning.net
 #siteNav ul ul ul a{padding-left:45px}
 #siteFooter{padding-left:250px}
 /* Pagination */
-.pagination{border-top:2px solid #ACBF60;padding-top:20px;text-align:right;color:#F5FFCF}
-.pagination a{padding:0;margin:0 5px;color:#B34700}
+.pagination{border-top:2px solid #ACBF60;padding-top:20px;text-align:right}
+.pagination .sep{display:none}
+.pagination a{padding:0;margin-left:20px;color:#B34700}
 .pagination a:hover,.pagination a:focus{color:#E65C00}
 #topPagination{position:absolute;top:-2px;width:100%;right:0}
-#topPagination .prev{margin-left:20px}
 #topPagination .pagination{border:none}
 #bottomPagination{padding-left:250px}
 /* Autoclear */
@@ -39,3 +41,36 @@ Modified by eXeLearning.net
 #content{display:inline-block}
 html[xmlns] #content{display:block}
 * html #content{height: 1%;overflow:visible}
+
+/* IE6 */
+* html #main{width:auto}
+* html #siteNav a{width:213px}
+* html #siteNav ul ul a{width:198px}
+* html #siteNav ul ul ul a{width:183px}
+
+/* No menu */
+.no-nav #main-wrapper,.no-nav #bottomPagination,.no-nav #siteFooter{padding-left:0}
+
+/* Responsive design */
+@media all and (max-width: 980px) {
+	#main-wrapper,#siteFooter,#bottomPagination{padding-left:220px}
+	#siteNav{width:200px}
+}
+@media all and (max-width: 780px) {
+	body{padding:10px}
+	#siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
+	#main-wrapper{padding:10px 0}
+	#header,#emptyHeader{padding-right:20px}
+	#siteNav{width:100%;float:none;padding-right:0}
+	#siteFooter{padding-left:0;text-align:center}
+	.pagination{font-weight:bold;font-size:1.1em}
+	.pagination a{margin:0}
+	#topPagination{position:relative;top:auto;width:100%;right:auto;padding:0}
+	#topPagination .pagination{padding:0;text-align:center;background:#889F65;border-bottom:2px solid #ACBF60}
+	#topPagination .prev,#topPagination .next{display:none}
+	#bottomPagination{position:relative;padding:0 0 15px 0}
+	#bottomPagination .prev{position:absolute;left:0}
+	#nav-toggler a,#nav-toggler a:focus{display:inline-block;padding:4px;width:80%;color:#fff;font-variant:small-caps;letter-spacing:1px;outline:none;text-decoration:none}
+	iframe,object,embed{max-width:100%}
+	img,video{max-width:100%;height:auto}	
+}

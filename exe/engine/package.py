@@ -68,7 +68,7 @@ from exe                       import globals as G
 from exe.engine.resource       import Resource
 from twisted.persisted.styles  import doUpgrade
 from twisted.spread.jelly      import Jellyable, Unjellyable
-from exe.engine.beautifulsoup  import BeautifulSoup
+from BeautifulSoup import BeautifulSoup
 from exe.engine.field          import Field, TextAreaField
 from exe.engine.persistxml     import encodeObjectToXML, decodeObjectFromXML
 from exe.engine.lom import lomsubs

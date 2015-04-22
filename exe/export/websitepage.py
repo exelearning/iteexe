@@ -327,7 +327,7 @@ class WebsitePage(Page):
 
         if nextPage:
             if prevPage:
-                html += " | "
+                html += ' <span class="sep">| </span>'
             html += "<a href=\""+quote(nextPage.name)+".html\" class=\"next\">"
             html += " %s<span> &raquo;</span></a>" % c_('Next')
             
