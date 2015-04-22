@@ -386,6 +386,9 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
                 self.scriptsDir = self.config.webDir/"scripts"
                 jsFile = (self.scriptsDir/'exe_html5.js')
                 jsFile.copyfile(self.outputDir/'exe_html5.js')
+                
+        if common.nodeHasTooltips(page.node):
+            resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_tooltips').files()]
         
         if common.hasGalleryIdevice(page.node):
             self.resStr += '\n'
@@ -579,12 +582,13 @@ class ScormExport(object):
         isBreak           = False
         hasInstructions   = False
         hasMediaelement   = False
+        hasTooltips       = False
 
         for page in self.pages:
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -606,6 +610,8 @@ class ScormExport(object):
                         hasInstructions = True
                 if not hasMediaelement:
                     hasMediaelement = common.ideviceHasMediaelement(idevice)
+                if not hasTooltips:
+                    hasTooltips = common.ideviceHasTooltips(idevice)
 
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -635,6 +641,9 @@ class ScormExport(object):
             mediaelement.copyfiles(outputDir)
             if dT != "HTML5":
                 jsFile = (self.scriptsDir/'exe_html5.js')
+        if hasTooltips:
+            exe_tooltips = (self.scriptsDir/'exe_tooltips')
+            exe_tooltips.copyfiles(outputDir)
 
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004":
             if package.license == "license GFDL":

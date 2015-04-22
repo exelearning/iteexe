@@ -1294,7 +1294,15 @@ var $exe = {
         }
         $exe.hint.init();
         $exe.setIframesProtocol();
+		$exe.hasTooltips();
     },
+	hasTooltips:function(){
+		if($("A.exe-tooltip").length>0){
+			var p = "";
+			if (typeof(exe_editor_mode)!="undefined") p = "/scripts/exe_tooltips/";
+			$exe.loadScript(p+"exe_tooltips.js","$exe.tooltips.init('"+p+"')");
+		}
+	},
     addRoles : function(){
         $('#header').attr('role','banner'); 
         $('#siteNav').attr('role','navigation'); 
