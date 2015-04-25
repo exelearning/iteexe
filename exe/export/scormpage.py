@@ -121,9 +121,12 @@ class ScormPage(Page):
         html += u"<div id=\"outer\">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
         html += u"<"+headerTag+" id=\"nodeDecoration\">"
+        html += u"<div id=\"headerContent\">"
         html += u"<h1 id=\"nodeTitle\">"
         html += escape(self.node.titleLong)
-        html += u'</h1></'+headerTag+'>'+lb
+        html += u'</h1>'
+        html += u'</div>'
+        html += u'</'+headerTag+'>'+lb
 
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
