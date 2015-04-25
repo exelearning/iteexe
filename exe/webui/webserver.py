@@ -40,7 +40,8 @@ finally:
 from exe.webui.editorpage          import EditorPage
 from exe.webui.stylemanagerpage    import StyleManagerPage
 from exe.webui.preferencespage     import PreferencesPage
-from exe.webui.aboutpage           import AboutPage 
+from exe.webui.aboutpage           import AboutPage
+from exe.webui.releasenotespage import ReleaseNotesPage
 from exe.webui.quitpage            import QuitPage
 from exe.webui.iecmwarning         import IECMWarningPage
 from exe.webui.renderable          import File
@@ -72,6 +73,7 @@ class WebServer:
         self.xliffimportpreferences = XliffImportPreferencesPage(self.root)
         self.dirtree     = DirTreePage(self.root)
         self.about       = AboutPage(self.root)
+        self.releasenotes = ReleaseNotesPage(self.root)
         self.quit        = QuitPage(self.root)
         self.iecmwaring  = IECMWarningPage(self.root)
         self.monitoring  = False

@@ -154,7 +154,7 @@ Ext.define('eXe.controller.Toolbar', {
                 click: { fn: this.processBrowseEvent, url: 'file://%s/docs/manual/Online_manual.html' }
             },
             '#help_notes': {
-                click: { fn: this.processBrowseEvent, url: 'file://%t' }
+                click: { fn: this.releaseNotesPage }
             },
             '#help_website': {
                 click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/' }
@@ -304,7 +304,23 @@ Ext.define('eXe.controller.Toolbar', {
         });
         about.show();
 	},
-    
+
+    releaseNotesPage: function() {
+        var about = new Ext.Window ({
+          height: eXe.app.getMaxHeight(700),
+          width: 900,
+          modal: true,
+          resizable: false,
+          id: 'releasenoteswin',
+          title: _("Release notes"),
+          items: {
+              xtype: 'uxiframe',
+              src: '/release-notes',
+              height: '100%'
+          }
+        });
+        about.show();
+    },
     browseURL: function(url) {
         nevow_clientToServerEvent('browseURL', this, '', url);
     },
