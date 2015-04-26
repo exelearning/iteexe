@@ -9,11 +9,11 @@ import glob
 from setuptools import setup
 from exe.engine import version
 
-g_files = {'/usr/share/exe': ["README",
-                              # "COPYING",              # Removed, this is the copyright
+g_files = {'/usr/share/exe': ["ChangeLog"],             # Although this is a copy of debian/changelog.gz
+                              # "COPYING",              # Removed, this is the GPL - to copyright
                               # "NEWS",			# No longer used, after bug 2284 was fixed
-                              "ChangeLog"],
-           # '/usr/share/doc/intef-exe': ["exe/webui/mr_x.gif"],
+           '/usr/share/doc/intef-exe': ["README"],
+                                        # "exe/webui/mr_x.gif",
            '/usr/share/applications': ["exe.desktop"],
            '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
            '/usr/share/pixmaps': ["exe.xpm"]
