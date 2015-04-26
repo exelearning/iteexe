@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe
 # Copyright 2012, Pedro Peña Pérez, Open Phoenix IT
@@ -16,8 +16,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,
-# USA.
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # ===========================================================================
 
 """
@@ -86,8 +85,8 @@ class MainPage(RenderableLivePage):
         self.session = session
         RenderableLivePage.__init__(self, parent, package, config)
         self.putChild("resources", File(package.resourceDir))
-        #styles directory
-        #self.putChild("stylecss", File(self.config.stylesDir)
+        # styles directory
+        # self.putChild("stylecss", File(self.config.stylesDir)
 
         mainjs = Path(self.config.jsDir).joinpath('templates', 'mainpage.html')
         self.docFactory = loaders.htmlfile(mainjs)
@@ -142,7 +141,7 @@ class MainPage(RenderableLivePage):
             if 'identifier' in request.args:
                 source = request.args['source'][0]
                 if source:
-                    if not source in self.classificationSources:
+                    if source not in self.classificationSources:
 
                         self.classificationSources[source] = Classification()
                         try:
@@ -180,7 +179,8 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleSavePackage, 'savePackage')
         setUpHandler(self.handleLoadPackage, 'loadPackage')
         setUpHandler(self.recentMenu.handleLoadRecent, 'loadRecent')
-        setUpHandler(self.handleLoadTutorial, 'loadTutorial')
+        # Task 1080, jrf
+        # setUpHandler(self.handleLoadTutorial, 'loadTutorial')
         setUpHandler(self.recentMenu.handleClearRecent, 'clearRecent')
         setUpHandler(self.handleImport, 'importPackage')
         setUpHandler(self.handleCancelImport, 'cancelImportPackage')
@@ -200,7 +200,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleReload, 'reload')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
 
-        #For the new ExtJS 4.0 interface
+        # For the new ExtJS 4.0 interface
         setUpHandler(self.outlinePane.handleAddChild, 'AddChild')
         setUpHandler(self.outlinePane.handleDelNode, 'DelNode')
         setUpHandler(self.outlinePane.handleRenNode, 'RenNode')
@@ -246,7 +246,7 @@ class MainPage(RenderableLivePage):
 
     def render_version(self, ctx, data):
         return [tags.p()["Version: %s" % release],
-                tags.p()["Revision: ", 
+                tags.p()["Revision: ",
                          tags.a(href='%s;a=shortlog;h=%s' % (self.config.baseGitWebURL, revision),
                                 target='_blank')[revision]
                         ]
@@ -261,9 +261,9 @@ class MainPage(RenderableLivePage):
     def handleIsPackageDirty(self, client, ifClean, ifDirty):
         """
         Called by js to know if the package is dirty or not.
-        ifClean is JavaScript to be evaled on the client if the package has
+        ifClean is JavaScript to be eval'ed on the client if the package has
         been changed
-        ifDirty is JavaScript to be evaled on the client if the package has not
+        ifDirty is JavaScript to be eval'ed on the client if the package has not
         been changed
         """
         if self.package.isChanged:
@@ -284,7 +284,7 @@ class MainPage(RenderableLivePage):
     def b4save(self, client, inputFilename, ext, msg):
         """
         Call this before saving a file to get the right filename.
-        Returns a new filename or 'None' when attempt to overide
+        Returns a new filename or 'None' when attempt to override
         'inputFilename' is the filename given by the user
         'ext' is the extension that the filename should have
         'msg' will be shown if the filename already exists
@@ -345,13 +345,14 @@ class MainPage(RenderableLivePage):
         client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
                           package.name).encode('utf8'), filter_func=filter_func)
 
-    def handleLoadTutorial(self, client):
-        """
-        Loads the tutorial file, from the Help menu
-        """
-        filename = self.config.webDir.joinpath("docs")\
-                .joinpath("eXe-tutorial.elp")
-        self.handleLoadPackage(client, filename)
+    # No longer used - Task 1080, jrf
+    # def handleLoadTutorial(self, client):
+    #    """
+    #    Loads the tutorial file, from the Help menu
+    #    """
+    #    filename = self.config.webDir.joinpath("docs")\
+    #            .joinpath("eXe-tutorial.elp")
+    #    self.handleLoadPackage(client, filename)
 
     def progressDownload(self, numblocks, blocksize, filesize, client):
         try:
@@ -789,7 +790,7 @@ class MainPage(RenderableLivePage):
                 printit = 1
             exported_dir = self.exportSinglePage(client, filename, webDir, \
                                                  stylesDir, printit)
-            if printit == 1 and not exported_dir is None:
+            if printit == 1 and exported_dir is not None:
                 web_printdir = self.get_printdir_relative2web(exported_dir)
                 G.application.config.browser.open(web_printdir)
 
