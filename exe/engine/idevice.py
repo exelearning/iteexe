@@ -321,5 +321,7 @@ class Idevice(Persistable):
             icon = "icon_" + self.icon + ".gif"
             if icon in self.systemResources:
                 self.systemResources.remove(icon)
+    def _upgradeIdeviceToVersion4(self):
+        pass
             
 # ===========================================================================
