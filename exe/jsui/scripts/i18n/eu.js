@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.1\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2015-04-22 23:34+0200\nPO-Revision-Date: 2015-02-26 22:34+0100\nLast-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nLanguage: eu\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.1\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2015-04-27 22:58+0200\nPO-Revision-Date: 2015-02-26 22:34+0100\nLast-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nLanguage: eu\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Jarduera zabalgarria", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Sortu kasuaren istorioa. Kasuak, ona izateko, \ngatazka bat deskribatu beharko luke, edo pertsonaien bidez egoera azaldu. \nGainera, gatazka konpondu ahal izateko \nhainbat ekintza gauzatzeko aukera eman beharko luke.", 
  "Telugu ": "Telugua", 
@@ -1357,7 +1357,6 @@ translations = {
  "Letter Button Style Right Guess": "Letra botoiaren estiloa; asmatu denean", 
  "master class": "ikasgai magistrala", 
  "navigation map": "nabigaziorako mapa", 
- "eXe Manual": "eXe-ren eskuliburua", 
  "Installation Remarks": "Instalaziorako oharrak", 
  "ERROR Element.renderView called directly with %s class": "ERROREA Element.renderView %s klasearekin deitu dute zuzenean", 
  "Keep Linebreaks": "Mantendu lerro-jauziak", 

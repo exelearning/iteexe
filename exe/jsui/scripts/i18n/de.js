@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.1\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-04-22 23:34+0200\nPO-Revision-Date: 2014-11-28 21:18+0100\nLast-Translator: Heike Koch <info@hei-ke-koch.de>\nLanguage-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft; Uwe Kohnle, lernmodule.net gGmbH <rh@dialoge.net>\nLanguage: de\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.1\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-04-27 22:58+0200\nPO-Revision-Date: 2014-11-28 21:18+0100\nLast-Translator: Heike Koch <info@hei-ke-koch.de>\nLanguage-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft; Uwe Kohnle, lernmodule.net gGmbH <rh@dialoge.net>\nLanguage: de\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "DropDown Aktivit\u00e4t", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Geben Sie die Fallsituation ein. Eine gute Fallstudie\nbeschreibt ein Szenario, eine Kontroverse oder verschiedene\nCharaktere. Es sollte m\u00f6glich sein, mit der Fallstudie \neine gut l\u00f6sbare Aufgabenstellung zu verbinden.", 
  "Xhosa ": "Xhosa", 
@@ -1063,7 +1063,6 @@ translations = {
  "Find What": "Suche nach", 
  "Table Caption": "Tabellen\u00fcberschrift", 
  "Letter Button Style Right Guess": "Stil der Buchstaben-Buttons wenn richtig geraten (CSS)", 
- "eXe Manual": "eXe Handbuch", 
  "Installation Remarks": "Installatsionshinweise", 
  "ERROR Element.renderView called directly with %s class": "ERROR Element.renderView called directly with %s class", 
  "Samoan ": "Samoan", 

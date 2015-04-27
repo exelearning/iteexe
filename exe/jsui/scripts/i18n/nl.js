@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.1\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-04-22 23:34+0200\nPO-Revision-Date: 2014-10-21 15:46+0100\nLast-Translator: k.werschkull <k.werschkull@hccnet.nl>\nLanguage-Team: Dutch <exe@exelearning.org>\nLanguage: nl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.1\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-04-27 22:58+0200\nPO-Revision-Date: 2014-10-21 15:46+0100\nLast-Translator: k.werschkull <k.werschkull@hccnet.nl>\nLanguage-Team: Dutch <exe@exelearning.org>\nLanguage: nl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Selectielijst activiteit", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Omschrijf het geval. Een goede gevalstudie\nbevat een controverse of beschrijft de situatie en de personen die erbij\nbetrokken zijn. Er moet ook ruimte zijn voor beslissingen of acties die\nwaardoor iemand de situatie kan controleren.", 
  "Telugu ": "Telugu", 
@@ -1355,7 +1355,6 @@ translations = {
  "Letter Button Style Right Guess": "Stijl van de knop \"Juist geraden\"", 
  "master class": "Masterclass", 
  "navigation map": "navigatiekaart", 
- "eXe Manual": "Handleiding eXe", 
  "Installation Remarks": "Installatie aanwijzingen", 
  "ERROR Element.renderView called directly with %s class": "FOUT Element.renderView rechtstreeks aangeroepen met klasse %s", 
  "Keep Linebreaks": "Regelafbreking bewaren", 
