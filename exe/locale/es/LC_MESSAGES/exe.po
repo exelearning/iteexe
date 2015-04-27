@@ -4257,7 +4257,11 @@ msgid ""
 "Computer Aided Translation tools (e.g. OmegaT) just translate the content"
 " of the target field. If you are using this kind of tools, you will need "
 "to pre-fill the target field with a copy of the source field."
-msgstr "Si no elige esta opción, el campo destino estará vacío. Algunas herramientas de ayuda a la  traducción (p.e. OmegaT) se limitan a traducir el contenido del campo destino. Si va a utilizar una herramienta que funcione de este modo, necesitará precargar el campo destino con una copia del campo origen."
+msgstr ""
+"Si no elige esta opción, el campo destino estará vacío. Algunas "
+"herramientas de ayuda a la  traducción (p.e. OmegaT) se limitan a traducir"
+" el contenido del campo destino. Si va a utilizar una herramienta que funcione "
+"de este modo, deberá precargar el campo destino con una copia del campo origen."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:653
 msgid ""
@@ -4265,7 +4269,11 @@ msgid ""
 "kind of sections are not recommended by XLIFF standard but it could be a "
 "good option if you want to use a pre-process tool (i.g.: Rainbow) before "
 "using the Computer Aided Translation software."
-msgstr "Está opción envolverá todos los campos exportados en secciones CDATA. Este tipo de secciones no están recomendadas por el estándar XLIFF pero pueden ser un buena opción si desea usar una herramienta de preprocesado (p.e.: Rainbow) antes de utilizar el software de ayuda a la traducción."
+msgstr ""
+"Está opción envolverá todos los campos exportados en secciones CDATA. Este "
+"tipo de secciones no están recomendadas por el estándar XLIFF pero pueden "
+"ser un buena opción si desea usar una herramienta de preprocesado (p.e.: Rainbow) "
+"antes de utilizar el software de ayuda a la traducción."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:662
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
@@ -8369,8 +8377,8 @@ msgid ""
 "blocking on this site in order to fully utilize this tool."
 msgstr ""
 "Lo sentimos, su bloqueo de ventanas emergentes ha deshabilitado una "
-"ventana que provee funcionalidades a la aplicación. Necesita deshabilitar"
-" este bloqueo en este sitio para poder utilizar todas las funciones."
+"ventana que proporciona funcionalidades a la aplicación. Debe deshabilitar "
+"el bloqueo en este sitio para poder utilizar todas las funciones."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Currently not supported by your browser, use keyboard shortcuts instead."
@@ -8509,8 +8517,8 @@ msgid ""
 "paste mode. After you paste something you will be returned to regular "
 "paste mode."
 msgstr ""
-"Pegar ahora está en modo de texto plano. Pulse otra vez para volver al "
-"modo de pegado normal."
+"Pegar ahora está en modo texto plano. Pulse otra vez para volver al "
+"modo de pegado normal. Cuando pegue algo, volverá al modo de pegado normal."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Select All"
@@ -9452,7 +9460,7 @@ msgstr "Tipo MIME del destino"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/tooltip/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Link URL"
-msgstr "URL del hipervínculo"
+msgstr "Dirección del hipervínculo"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
@@ -9833,7 +9841,7 @@ msgstr "Fuente"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Link Color"
-msgstr "Color de vínculo"
+msgstr "Color del enlace"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Hover Color"
@@ -10779,7 +10787,7 @@ msgstr "Elegir plantilla"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Warning: Updating a template with a different one may cause data loss."
-msgstr "Cuidado: Actualizar una plantilla con otra puede causar pérdida de datos."
+msgstr "Cuidado: actualizar una plantilla con otra distinta puede causar pérdida de datos."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 #, python-format
@@ -10816,7 +10824,7 @@ msgstr "Crea una página con un iDevice de Texto libre."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/tooltip/langs/en.js:12
 msgid "No selection and not in link"
-msgstr "sin selección"
+msgstr "No ha seleccionado nada y no es un enlace"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
 msgid "Pages"
@@ -11352,7 +11360,7 @@ msgstr "El estilo ya existe."
 msgid ""
 "Importing this style will overwrite local style, this action cannot be "
 "undone. "
-msgstr "Si importa este estilo sobreescribirá la versión local - esta acción no tiene vuelta atrás."
+msgstr "Si importa el estilo sobreescribirá la versión local - esta acción no tiene vuelta atrás."
 
 #: exe/webui/stylemanagerpage.py:340
 msgid "Are you sure you want to install remote style?. "
