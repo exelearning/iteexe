@@ -1,0 +1,27 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    install|upgrade)
+    if dpkg --compare-versions "$2" lt "3:2.1"; then
+        # Updating to 2.1 o greater
+        # Remove directories we're going to replace with symlinks
+        if [ -d /usr/share/exe/locale ]; then
+            rm -rf /usr/share/exe/locale
+        fi
+        if [ -d /usr/share/exe/docs ]; then
+            rm -rf /usr/share/exe/docs
+        fi
+    fi
+    if dpkg --compare-versions "$2" gt "3:2.1"; then
+        # Going back below 2.1
+        # Remove symlinks
+        if [ -L /usr/share/exe/locale ]; then
+            rm -f /usr/share/exe/locale
+        fi
+        if [ -L /usr/share/exe/docs ]; then
+            rm -f /usr/share/exe/docs
+        fi
+    fi
+esac
