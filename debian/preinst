@@ -25,3 +25,4 @@ case "$1" in
         fi
     fi
 esac
+#DEBHELPER#
