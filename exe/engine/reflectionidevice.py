@@ -26,7 +26,7 @@ before they look at the answer/s
 import logging
 from exe.engine.idevice   import Idevice
 from exe.engine.translate import lateTranslate
-from exe.engine.field     import TextAreaField, Feedback2Field
+from exe.engine.field     import TextAreaField
 import re
 log = logging.getLogger(__name__)
 
@@ -36,7 +36,7 @@ class ReflectionIdevice(Idevice):
     A Reflection Idevice presents question/s for the student to think about
     before they look at the answer/s
     """
-    persistenceVersion = 9
+    persistenceVersion = 8
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -63,8 +63,8 @@ reflective feedback).""")
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
-        self.answerTextArea = Feedback2Field(x_(u'Feedback:'), 
-                                   self._answerInstruc, answer,'')
+        self.answerTextArea = TextAreaField(x_(u'Feedback:'), 
+                                   self._answerInstruc, answer)
         self.answerTextArea.idevice = self
 
     # Properties
@@ -129,8 +129,6 @@ reflective feedback).""")
                         self.activityTextArea.content_wo_resourcePaths)
             self.activityTextArea.content = \
                     self.activityTextArea.content_w_resourcePaths
-            _btfeedBack= inner.find(name='input', attrs={'name' : re.compile('^toggle-feedback-') })
-            self.answerTextArea.buttonCaption=_btfeedBack
         # 2nd = field[1] == Answer
         if len(reflections) >= 2:
             self.answerTextArea.content_wo_resourcePaths = \
@@ -141,8 +139,6 @@ reflective feedback).""")
                         self.answerTextArea.content_wo_resourcePaths)
             self.answerTextArea.content = \
                     self.answerTextArea.content_w_resourcePaths
-            _btfeedBack= inner.find(name='input', attrs={'name' : re.compile('^toggle-feedback-') })
-            self.answerTextArea.buttonCaption=_btfeedBack
 
     def upgradeToVersion1(self):
         """

@@ -26,7 +26,6 @@ import logging
 from exe.webui           import common
 from exe.webui.element   import ImageElement
 from exe.webui.element             import TextAreaElement
-from exe.webui.element             import Feedback2Element
 
 
 log = logging.getLogger(__name__)
@@ -76,7 +75,7 @@ class QuestionElement(object):
         
         question.feedbackTextArea.htmlTag = "div"
         
-        self.question_feedback = Feedback2Element(question.feedbackTextArea)
+        self.question_feedback = TextAreaElement(question.feedbackTextArea)
         self.question_feedback.id = self.feedbackId 
 
     def process(self, request):
@@ -137,7 +136,7 @@ class QuestionElement(object):
                 feedback = self.question_feedback.renderPreview() 
             else: 
                 feedback = self.question_feedback.renderView()
-            html +=feedback
+            html += common.feedbackBlock(self.id,feedback)
         
         return html
 

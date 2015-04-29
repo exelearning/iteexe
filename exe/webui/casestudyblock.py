@@ -28,7 +28,6 @@ from exe.webui                     import common
 from exe.webui.element             import TextAreaElement
 
 
-
 log = logging.getLogger(__name__)
 
 

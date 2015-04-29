@@ -25,7 +25,7 @@ The collection of iDevices available
 
 from exe.engine         import persist
 from exe.engine.idevice import Idevice
-from exe.engine.field   import TextAreaField, FeedbackField,Feedback2Field
+from exe.engine.field   import TextAreaField, FeedbackField
 from nevow.flat         import flatten
 
 import imp
