@@ -497,7 +497,8 @@
                     if (!data.video.sources)
                         data.video.sources = [];
                     
-                    if(!data.attrs) {
+                    // The New eXeLearning					
+					if(!data.attrs) {
                     	data.video.attrs = {};
                     }
                     
@@ -524,7 +525,7 @@
                 		data.video.attrs.class = "";
                 		document.getElementById("video_class").value = "";
                     }
-                    
+					// /The New eXeLearning                    
 
                     data.video.sources[0] = {src: getVal('src')};
                 }
@@ -588,19 +589,19 @@
                     if (src)
                         setVal('video_altsource2', src.src);
 
+                    // The New eXeLearning
                     if (!data.video.attrs || (data.video.attrs.class && data.video.attrs.class == 'mediaelement')) {
                         setVal('mediaelement', true);
                         document.getElementById("video_class").value= "mediaelement";
-                    }else {
+                    } else {
                         setVal('mediaelement', false);
                         document.getElementById("video_class").value= "";
-                    }
-                        
-                    // The New eXeLearning
+                    }					
+					
                     if (data.video.attrs && data.video.attrs.autoplay && data.video.attrs.autoplay == 'autoplay') {
                         setVal('autoplayelement', true);
                         document.getElementById("video_autoplay").checked = true;
-                    }else {
+                    } else {
                         setVal('autoplayelement', false);
                         document.getElementById("video_autoplay").checked = false;
                     }
@@ -625,18 +626,19 @@
                     if (src)
                         setVal('audio_altsource2', src.src);
 
-                    if (!data.video.attrs || (data.video.attrs.class && data.video.attrs.class == 'mediaelement')) {
+					// The New eXeLearning    
+					if (!data.video.attrs || (data.video.attrs.class && data.video.attrs.class == 'mediaelement')) {
                         setVal('mediaelement', true);
                         document.getElementById("video_class").value= "mediaelement";
-                    }else {
+                    } else {
                         setVal('mediaelement', false);
                         document.getElementById("video_class").value= "";
                     }
-                    // The New eXeLearning    
+                    
                     if (data.video.attrs && data.video.attrs.autoplay && data.video.attrs.autoplay == 'autoplay') {
                         setVal('autoplayelement', true);
                     	document.getElementById("video_autoplay").checked = true;
-                    }else {
+                    } else {
                         setVal('autoplayelement', false);
                         document.getElementById("video_autoplay").checked = false;
                     }
@@ -664,36 +666,51 @@
             } else {
                 src = getVal("src");
 				
-				// YouTube *NEW*
-                if (src.match(/youtu.be\/[a-z1-9.-_]+/)) {
-                    data.width = 425;
-                    data.height = 350;
-                    data.params.frameborder = '0';
-                    data.type = 'iframe';
-                    //src = 'http://www.youtube.com/embed/' + src.match(/youtu.be\/([a-z1-9.-_]+)/)[1];
-                    // The New eXeLearning
-                    src = '//www.youtube.com/embed/' + src.match(/youtu.be\/([a-z1-9.-_]+)/)[1];
-                    // /The New eXeLearning					
-                    setVal('src', src);
-                    setVal('media_type', data.type);
-                }
+				// YouTube Embed
+				if (src.match(/youtube\.com\/embed\/\w+/)) {
+					data.width = 425;
+					data.height = 350;
+					data.params.frameborder = '0';
+					data.type = 'iframe';
+					// The New eXeLearning
+					if (src.indexOf("https:")==0) src = src.replace("https:","");
+					else if (src.indexOf("http:")==0) src = src.replace("http:","");
+					// /The New eXeLearning
+					setVal('src', src);
+					setVal('media_type', data.type);
+				} else {
+					// YouTube *NEW*
+					if (src.match(/youtu\.be\/[a-z1-9.-_]+/)) {
+						data.width = 425;
+						data.height = 350;
+						data.params.frameborder = '0';
+						data.type = 'iframe';
+						//src = 'http://www.youtube.com/embed/' + src.match(/youtu.be\/([a-z1-9.-_]+)/)[1];
+						// The New eXeLearning
+						src = '//www.youtube.com/embed/' + src.match(/youtu.be\/([a-z1-9.-_]+)/)[1];
+						// /The New eXeLearning					
+						setVal('src', src);
+						setVal('media_type', data.type);
+					}
 
-                // YouTube
-                if (src.match(/youtube.com(.+)v=([^&]+)/)) {
-                    data.width = 425;
-                    data.height = 350;
-                    data.params.frameborder = '0';
-                    data.type = 'iframe';
-                    //src = 'http://www.youtube.com/embed/' + src.match(/v=([^&]+)/)[1];
-                    // The New eXeLearning
-                    src = '//www.youtube.com/embed/' + src.match(/v=([^&]+)/)[1];
-                    // /The New eXeLearning					
-                    setVal('src', src);
-                    setVal('media_type', data.type);
-                }
+					// YouTube
+					if (src.match(/youtube\.com(.+)v=([^&]+)/)) {
+						data.width = 425;
+						data.height = 350;
+						data.params.frameborder = '0';
+						data.type = 'iframe';
+						//src = 'http://www.youtube.com/embed/' + src.match(/v=([^&]+)/)[1];
+						// The New eXeLearning
+						src = '//www.youtube.com/embed/' + src.match(/v=([^&]+)/)[1];
+						// /The New eXeLearning					
+						setVal('src', src);
+						setVal('media_type', data.type);
+					}
+				
+				}
 
                 // Google video
-                if (src.match(/video.google.com(.+)docid=([^&]+)/)) {
+                if (src.match(/video\.google\.com(.+)docid=([^&]+)/)) {
                     data.width = 425;
                     data.height = 326;
                     data.type = 'flash';
@@ -706,7 +723,7 @@
                 }
                 
                 // Vimeo
-                if (src.match(/vimeo.com\/([0-9]+)/)) {
+                if (src.match(/vimeo\.com\/([0-9]+)/)) {
                     data.width = 425;
                     data.height = 350;
                     data.params.frameborder = '0';
@@ -720,7 +737,7 @@
                 }
             
                 // stream.cz
-                if (src.match(/stream.cz\/((?!object).)*\/([0-9]+)/)) {
+                if (src.match(/stream\.cz\/((?!object).)*\/([0-9]+)/)) {
                     data.width = 425;
                     data.height = 350;
                     data.params.frameborder = '0';
@@ -731,7 +748,7 @@
                 }
                 
                 // Google maps
-                if (src.match(/maps.google.([a-z]{2,3})\/maps\/(.+)msid=(.+)/)) {
+                if (src.match(/maps\.google\.([a-z]{2,3})\/maps\/(.+)msid=(.+)/)) {
                     data.width = 425;
                     data.height = 350;
                     data.params.frameborder = '0';
@@ -739,7 +756,7 @@
                     //src = 'http://maps.google.com/maps/ms?msid=' + src.match(/msid=(.+)/)[1] + "&output=embed";
                     // The New eXeLearning
                     src = '//maps.google.com/maps/ms?msid=' + src.match(/msid=(.+)/)[1] + "&output=embed";
-                    // /The New eXeLearning					
+                    // /The New eXeLearning
                     setVal('src', src);
                     setVal('media_type', data.type);
                 }
@@ -748,7 +765,10 @@
                     if (!data.video.sources)
                         data.video.sources = [];
 
-                    data.video.sources[0] = {src : src, class: 'mediaelement'};
+					// The New eXeLearning
+					//data.video.sources[0] = {src : src};                    
+					data.video.sources[0] = {src : src, class: 'mediaelement'};
+					// /The New eXeLearning
 
                     src = getVal("video_altsource1");
                     if (src)
