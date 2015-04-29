@@ -1,0 +1,159 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{#tooltip.title}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script language="javascript" type="text/javascript" src="js/tooltip.js"></script>
+	<script type="text/javascript" src="../../utils/mctabs.js"></script>
+	<link href="css/tooltip.css" rel="stylesheet" type="text/css" />
+</head>
+<body onLoad="tinyMCEPopup.executeOnLoad('onLoadInit();');" style="display: none">
+<form name="tooltipOptions" id="tooltipOptions" onsubmit="TooltipDialog.insert();return false" action="#">
+	
+	<div class="tabs">
+		<ul>
+			<li id="general_tab" class="current"><span><a href="#general_panel" onclick="mcTabs.displayTab('general_tab','general_panel');return false">{#tooltip.tab_general}</a></span></li>
+			<li id="behaviour_tab"><span><a href="#behaviour_panel" onclick="mcTabs.displayTab('behaviour_tab','behaviour_panel');return false">{#tooltip.tab_behaviour}</a></span></li>
+			<li id="appearance_tab"><span><a href="#appearance_panel" onclick="mcTabs.displayTab('appearance_tab','appearance_panel');return false">{#tooltip.tab_appearance}</a></span></li>
+		</ul>
+	</div>
+
+	<div class="panel_wrapper">
+	
+		<div id="general_panel" class="panel">
+			<p class="scr-av">{#tooltip.desc}<br /></p>
+			<p style="margin-top:1.5em"><strong>{#tooltip.choose_a_type}</strong></p>
+			<p id="types">
+			
+				<input type="hidden" id="extraClassNames" name="extraClassNames" value="" />
+				<input type="radio" id="type1" name="type" value="type1" checked="checked"  />
+				<label for="type1" style="margin-right:1em">{#tooltip.type1}</label>
+				<span id="type1-desc" style="display:none">{#tooltip.type1_desc}</span>
+				
+				<input type="radio" id="type2" name="type" value="type2"  />
+				<label for="type2" style="margin-right:1em">{#tooltip.type2}</label>
+				<span id="type2-desc" style="display:none">{#tooltip.type2_desc}</span>
+				
+				<input type="radio" id="type3" name="type" value="type3"  />
+				<label for="type3" style="margin-right:1em">{#tooltip.type3}</label>
+				<span id="type3-desc" style="display:none">{#tooltip.type3_desc}</span>
+				
+				<!-- 
+					This will be available when eXe has a Glossary iDevice
+					Right now, it just lets you choose the page where the glossary is, being the glossary a definition list created with the TinyMCE definitionlist plugin
+					You should set definitionlists_auto_ids : true in tinyMCE.init
+					
+					<input type="radio" id="type4" name="type" value="type4"  />
+					<label for="type4">{#tooltip.type4}</label>
+					<span id="type4-desc" style="display:none">{#tooltip.type4_desc}</span>
+				-->
+			</p>
+			<p id="type-desc"></p>
+			<fieldset id="common-options">
+				<legend>{#tooltip.link}</legend>
+				<table border="0" cellpadding="4" cellspacing="0">
+					<tr id="href-row">
+						<td class="nowrap"><label id="hreflabel" for="href">{#tooltip.url}</label></td>
+							<td><table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td><input id="href" name="href" type="text" class="mceFocus" value="" aria-required="true" /></td>
+							<td id="hrefbrowsercontainer">&nbsp;</td>
+						</tr>
+						</table></td>
+					</tr>
+					<tr>
+						<td class="column1"><label for="node">{#tooltip.pages}</label></td>
+						<td colspan="2" id="nodescontainer"><select id="node"><option value=""></option></select></td>
+					</tr>
+					<tr>
+						<td class="column1"><label for="linkTitle">{#tooltip.link_title}</label></td>
+						<td><input id="linkTitle" name="linkTitle" type="text" value="" /></td>
+					</tr>
+					<tr>
+						<td class="column1"><label for="tooltipTitle">{#tooltip.tooltip_title}</label></td>
+						<td><input id="tooltipTitle" name="tooltipTitle" type="text" value="" /></td>
+					</tr>					
+				</table>
+			</fieldset>
+			<div id="type1-options" style="display:none">
+				<p>{#tooltip.type1_instructions}</p>
+			</div>
+			<div id="type2-options" style="display:none">
+				<label for="longtext" style="font-weight:bold">{#tooltip.type2_label}</label>
+					<textarea id="longtext" name="longtext" style="width:100%;height:40px;margin-top:5px"></textarea>
+					<p style="margin-top:5px">{#tooltip.type2_instructions}</p>
+			</div>
+			<div id="type3-options" style="display:none">
+				<p><strong>{#tooltip.instructions}</strong></p>
+				<ul style="line-height:20px">
+					<li>{#tooltip.instructions_step0}</li>
+					<li>{#tooltip.type3_instructions1}</li>
+					<li>{#tooltip.type3_instructions2}</li>
+				</ul>				
+			</div>
+			<div id="type4-options" style="display:none">
+				<p><strong>{#tooltip.instructions}</strong></p>
+				<ul style="line-height:20px">
+					<li>{#tooltip.instructions_step0}</li>
+					<li>{#tooltip.type4_instructions1} <img src="img/definitionlist.gif" style="vertical-align:middle" width="20" height="20" alt="{#tooltip.dl_button}" title="{#tooltip.dl_button}" /></li>
+					<li>{#tooltip.type4_instructions2}</li>
+					<li>{#tooltip.type4_instructions3}</li>
+				</ul>
+			</div>
+		</div><!-- /#general_panel -->	
+		
+		<div id="behaviour_panel" class="panel">
+			<p style="margin-top:1.5em"><strong>{#tooltip.close_behaviour}</strong></p>
+			<p>
+				<input type="radio" id="close_behaviour1" name="close_behaviour" value="" checked="checked"  />
+				<label for="close_behaviour1">{#tooltip.close_behaviour1}</label>
+			</p>
+			<p id="types">
+				<input type="radio" id="close_behaviour2" name="close_behaviour" value=" with-button"  />
+				<label for="close_behaviour2">{#tooltip.close_behaviour2}</label>
+			</p>
+			<p style="margin-top:1.5em"><strong>{#tooltip.link_behaviour}</strong></p>
+			<p>
+				<input type="radio" id="link_behaviour1" name="target" value="" checked="checked"  />
+				<label for="link_behaviour1">{#tooltip.link_behaviour1}</label>
+			</p>
+			<p id="types">
+				<input type="radio" id="link_behaviour2" name="target" value="_blank"  />
+				<label for="link_behaviour2">{#tooltip.link_behaviour2}</label>
+			</p>
+		</div><!-- /#behaviour_panel -->
+	
+		<div id="appearance_panel" class="panel">
+			<p style="margin-top:1.5em"><strong>{#tooltip.change_the_styling}</strong></p>
+			<p>
+				<span><input type="radio" id="color1" name="color" value="" checked="checked"  /> <label for="color1">{#tooltip.yellow}</label></span>
+				<span><input type="radio" id="color2" name="color" value="light"  /> <label for="color2">{#tooltip.light}</label></span>
+				<span><input type="radio" id="color3" name="color" value="dark"  /> <label for="color3">{#tooltip.dark}</label></span>
+			</p>
+			<p>
+				<span><input type="radio" id="color4" name="color" value="red"  /> <label for="color4">{#tooltip.red}</label></span>
+				<span><input type="radio" id="color5" name="color" value="blue"  /> <label for="color5">{#tooltip.blue}</label></span>
+				<span><input type="radio" id="color6" name="color" value="green"  /> <label for="color6">{#tooltip.green}</label></span>
+			</p>
+			<p><img src="img/appearance1.png" width="340" height="55" alt="" id="preview" /></p>
+			<p id="appearance-options">
+				<span><input type="checkbox" id="rounded" name="rounded" /> <label for="rounded">{#tooltip.rounded}</label></span>
+				<span><input type="checkbox" id="shadow" name="shadow" /> <label for="rounded">{#tooltip.shadow}</label></span>
+			</p>
+		</div><!-- /#appearance_panel -->
+	
+	</div><!-- /panel_wrapper -->
+
+	<div class="mceActionPanel">
+		<div style="float: left">
+			<input type="submit" name="insert" value="{#insert}" id="insert" />
+		</div>
+
+		<div style="float: right">
+			<input type="button" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" id="cancel" />
+		</div>
+	</div>
+	
+</form>
+</body> 
+</html>
