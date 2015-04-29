@@ -39,12 +39,14 @@ class Style(Persistable):
                    'license-url': ['License URL',0,7], 
                    'description': ['Description',1,1],
                    'extra-head': ['Extra head',1,8],
+                   'edition-extra-head': ['Extra head (when editing)',1,8],
                    'jquery': ['Path to jQuery (if different)',0,10],
                    'extra-body': ['Extra body',1,9],
+                   'edition-extra-body': ['Extra body (when editing)',1,9],
                    'name': ['Name',0,0]
                    }
     
-    _attributesCode = ['extra-head', 'extra-body']
+    _attributesCode = ['extra-head', 'edition-extra-head', 'extra-body', 'edition-extra-body']
     _attributes= OrderedDict(sorted(_attributespre.items(), key=lambda t: t[1][2]))
 
     
@@ -63,8 +65,10 @@ class Style(Persistable):
         self._license_url   = ''
         self._description   = ''
         self._extra_head    = ''
+        self._edition_extra_head    = ''
         self._jquery        = True
         self._extra_body    = ''
+        self._edition_extra_body    = ''
         self._validConfig   = False
         self._valid         = False
         self._checkValid()
@@ -154,11 +158,17 @@ class Style(Persistable):
     def get_extra_head(self):
         return self._extra_head
         
+    def get_edition_extra_head(self):
+        return self._edition_extra_head
+        
     def get_jquery(self):
         return self._jquery
         
     def get_extra_body(self):
         return self._extra_body
+
+    def get_edition_extra_body(self):
+        return self._edition_extra_body
     
     
     def renderPropertiesHTML(self):
