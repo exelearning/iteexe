@@ -40,7 +40,8 @@ finally:
 from exe.webui.editorpage          import EditorPage
 from exe.webui.stylemanagerpage    import StyleManagerPage
 from exe.webui.preferencespage     import PreferencesPage
-from exe.webui.aboutpage           import AboutPage 
+from exe.webui.aboutpage           import AboutPage
+from exe.webui.releasenotespage    import ReleaseNotesPage
 from exe.webui.quitpage            import QuitPage
 from exe.webui.iecmwarning         import IECMWarningPage
 from exe.webui.renderable          import File
@@ -53,6 +54,7 @@ from exe import globals as G
 import logging
 log = logging.getLogger(__name__)
 
+
 class WebServer:
     """
     Encapsulates some twisted components to serve
@@ -63,29 +65,29 @@ class WebServer:
         Initialize
         """
         self.application = application
-        self.config      = application.config
-        self.tempWebDir  = application.tempWebDir
-        self.root        = PackageRedirectPage(self, packagePath)   
-        self.editor      = EditorPage(self.root)
+        self.config = application.config
+        self.tempWebDir = application.tempWebDir
+        self.root = PackageRedirectPage(self, packagePath)
+        self.editor = EditorPage(self.root)
         self.stylemanager = StyleManagerPage(self.root)
         self.preferences = PreferencesPage(self.root)
         self.xliffimportpreferences = XliffImportPreferencesPage(self.root)
-        self.dirtree     = DirTreePage(self.root)
-        self.about       = AboutPage(self.root)
-        self.quit        = QuitPage(self.root)
-        self.iecmwaring  = IECMWarningPage(self.root)
-        self.monitoring  = False
-
+        self.dirtree = DirTreePage(self.root)
+        self.about = AboutPage(self.root)
+        self.releasenotes = ReleaseNotesPage(self.root)
+        self.quit = QuitPage(self.root)
+        self.iecmwaring = IECMWarningPage(self.root)
+        self.monitoring = False
 
     def find_port(self):
         """
         Previously part of the run() method, this will find the port for this
-        server.  Moved outside such that it could be called prior to run() 
-        [via application's serve()], which doesn't get called until the 
-        client has already been started [via application's launch()]. 
-        Instead, we want to determine the server's port first [via 
+        server.  Moved outside such that it could be called prior to run()
+        [via application's serve()], which doesn't get called until the
+        client has already been started [via application's launch()].
+        Instead, we want to determine the server's port first [via
         application's prelaunch()] such that the client knows it.
-        Note: for safety down the road once run() is called, the port will 
+        Note: for safety down the road once run() is called, the port will
         be set to -1 if none is found.
         """
         # check the configured port.  If not available, then
@@ -96,13 +98,13 @@ class WebServer:
         test_port_num = self.config.port
         test_port_count = 0
 
-        # could set a maximum range within the users's config file, 
+        # could set a maximum range within the users's config file,
         # but for now, just hardcode a max:
         max_port_tests = 5000
         while not port_test_done:
             test_port_num = self.config.port + test_port_count
             try:
-                log.debug("find_port(): trying to listenTCP on port# %d", 
+                log.debug("find_port(): trying to listenTCP on port# %d",
                         test_port_num)
                 reactor.listenTCP(test_port_num, 
                                   eXeSite(self.root),
@@ -140,26 +142,26 @@ class WebServer:
         Start serving webpages from the local web server
         """
         log.debug("start web server running")
-        
+
         # web resources
         webDir = self.config.webDir
-        self.root.putChild("images",      File(webDir+"/images"))
-        self.root.putChild("css",         File(webDir+"/css"))
-        self.root.putChild("scripts",     File(webDir+"/scripts"))
-        self.root.putChild("style",       File(self.config.stylesDir))
-        self.root.putChild("docs",        File(webDir+"/docs"))
+        self.root.putChild("images", File(webDir + "/images"))
+        self.root.putChild("css", File(webDir + "/css"))
+        self.root.putChild("scripts", File(webDir + "/scripts"))
+        self.root.putChild("style", File(self.config.stylesDir))
+        self.root.putChild("docs", File(webDir + "/docs"))
         self.root.putChild("temp_print_dirs",
-                              File(self.tempWebDir+"/temp_print_dirs"))
-        self.root.putChild("previews",    
-                              File(self.tempWebDir+"/previews"))
-        self.root.putChild("templates",   File(webDir+"/templates"))
-        self.root.putChild("tools",   File(webDir+"/tools"))
+                              File(self.tempWebDir + "/temp_print_dirs"))
+        self.root.putChild("previews",
+                              File(self.tempWebDir + "/previews"))
+        self.root.putChild("templates", File(webDir + "/templates"))
+        self.root.putChild("tools", File(webDir + "/tools"))
 
         # new ExtJS 4.0 Interface
         jsDir = self.config.jsDir
         self.root.putChild("jsui", File(jsDir + "/scripts"))
 
-        # A port for this server was looked for earlier by find_port.  
+        # A port for this server was looked for earlier by find_port.
         # Ensure that it is valid (>= 0):
         if self.config.port >= 0:
             log.info("run() using eXe port# %d", self.config.port)

@@ -14,7 +14,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with this program; if not, write to the Free Software
-// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //===========================================================================
 
 Ext.define('eXe.controller.Toolbar', {
@@ -147,7 +147,7 @@ Ext.define('eXe.controller.Toolbar', {
             '#style_designer_edit_style': {
                 click: this.styleDesigner.editStyle
             },
-            // / Style designer
+            // / Style designer            
             '#tools_preferences': {
                 click: this.toolsPreferences
             },
@@ -160,14 +160,18 @@ Ext.define('eXe.controller.Toolbar', {
             '#tools_refresh': {
                 click: this.toolsRefresh
             },
+            // Task 1080. jrf
+            // '#help_tutorial': {
+            //    click: this.fileOpenTutorial
+            // },
+            // '#help_manual': {
+            //    click: { fn: this.processBrowseEvent, url: 'file://%s/docs/manual/Online_manual.html' }
+            // },
             '#help_tutorial': {
-                click: this.fileOpenTutorial
-            },
-            '#help_manual': {
-                click: { fn: this.processBrowseEvent, url: 'file://%s/docs/manual/Online_manual.html' }
+                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/html_manual/exe20_en/' }
             },
             '#help_notes': {
-                click: { fn: this.processBrowseEvent, url: 'file://%t' }
+                click: { fn: this.releaseNotesPage }
             },
             '#help_website': {
                 click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/' }
@@ -317,7 +321,23 @@ Ext.define('eXe.controller.Toolbar', {
         });
         about.show();
 	},
-    
+
+    releaseNotesPage: function() {
+        var about = new Ext.Window ({
+          height: eXe.app.getMaxHeight(700),
+          width: 900,
+          modal: true,
+          resizable: false,
+          id: 'releasenoteswin',
+          title: _("Release notes"),
+          items: {
+              xtype: 'uxiframe',
+              src: '/release-notes',
+              height: '100%'
+          }
+        });
+        about.show();
+    },
     browseURL: function(url) {
         nevow_clientToServerEvent('browseURL', this, '', url);
     },
@@ -325,14 +345,15 @@ Ext.define('eXe.controller.Toolbar', {
     processBrowseEvent: function(menu, item, e, eOpts) {
         this.browseURL(e.url)
     },
+
+    // Not used - Task 1080, jrf
+    // fileOpenTutorial: function() {
+    //    this.askDirty("eXe.app.getController('Toolbar').fileOpenTutorial2()");
+    // },
     
-    fileOpenTutorial: function() {
-        this.askDirty("eXe.app.getController('Toolbar').fileOpenTutorial2()");
-    },
-    
-    fileOpenTutorial2: function() {
-        nevow_clientToServerEvent('loadTutorial', this, '');
-    },
+    // fileOpenTutorial2: function() {
+    //     nevow_clientToServerEvent('loadTutorial', this, '');
+    // },
     
     toolsRefresh: function() {
         eXe.app.reload();
@@ -389,7 +410,7 @@ Ext.define('eXe.controller.Toolbar', {
         editor.show();        
 	},
 	
-	// JR: Launch the Style Manager Window
+	// JRJ: Launch the Style Manager Window
 	toolsStyleManager: function() {
         var stylemanager = new Ext.Window ({
           maxHeight: eXe.app.getMaxHeight(800), 
@@ -406,7 +427,7 @@ Ext.define('eXe.controller.Toolbar', {
         });
         stylemanager.show();        
 	},
-	
+    
 	// Style designer
 	styleDesigner : {
 		open : function(btn,text){
@@ -471,8 +492,8 @@ Ext.define('eXe.controller.Toolbar', {
 			return document.getElementsByTagName("IFRAME")[0].contentWindow.exe_style;
 		}
 	},
-	// / Style designer	
-	
+	// / Style designer	    
+    
     fileQuit: function() {
 	    this.saveWorkInProgress();
 	    this.askDirty("eXe.app.getController('Toolbar').doQuit()", "quit");
@@ -698,22 +719,22 @@ Ext.define('eXe.controller.Toolbar', {
                                     fieldLabel: _('Copy source also in target'),
                                     valueField: 'copy',
                                     checked: true,
-                                    tooltip: _("If you don't choose this \
-option, target field will be empty. Some Computer Aided Translation tools \
-(e.g. OmegaT) just translate the content of the target field. If you are \
-using this kind of tools, you will need to pre-fill the target field with a copy \
-of the source field.")
+                                    tooltip: _("If you don't choose this "
++ "option, target field will be empty. Some Computer Aided Translation tools "
++ "(e.g. OmegaT) just translate the content of the target field. If you are "
++ "using this kind of tools, you will need to pre-fill the target field with a copy "
++ "of the source field.")
                                 },
                                 {
                                     xtype: 'checkbox',
                                     inputId: 'cdata',
                                     fieldLabel: _('Wrap fields in CDATA'),
                                     valueField: 'cdata',
-                                    tooltip: _('This option will wrap all \
-the exported fields in CDATA sections. This kind of sections are not \
-recommended by XLIFF standard but it could be a good option if you want to \
-use a pre-process tool (i.g.: Rainbow) before using the Computer Aided \
-Translation software.')
+                                    tooltip: _('This option will wrap all '
++ 'the exported fields in CDATA sections. This kind of sections are not '
++ 'recommended by XLIFF standard but it could be a good option if you want to '
++ 'use a pre-process tool (i.g.: Rainbow) before using the Computer Aided '
++ 'Translation software.')
                                 }
                             ],
                             buttons: [
@@ -915,7 +936,7 @@ Translation software.')
     		success: function(response) {
 				var styles = Ext.JSON.decode(response.responseText),
 					menu = this.getStylesMenu(), i, item;
-					//JR: Primero los borro
+					// JRJ: Primero los borro
 					menu.removeAll();
     			for (i = styles.length-1; i >= 0; i--) {
                     item = Ext.create('Ext.menu.CheckItem', { text: styles[i].label, itemId: styles[i].style, checked: styles[i].selected });
@@ -948,8 +969,8 @@ Translation software.')
 		}
 		item.setChecked(true);
 		item.parentMenu.hide();
-		//provisional
-		//item.parentMenu.parentMenu.hide();
+		// provisional
+		// item.parentMenu.parentMenu.hide();
 		item.parentMenu.hide();
 		//
         var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();

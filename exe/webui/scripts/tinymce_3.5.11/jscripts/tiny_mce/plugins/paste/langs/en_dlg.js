@@ -1,0 +1,1 @@
+tinyMCE.addI18n('en.paste_dlg',{"word_title":_("Use Ctrl+V on your keyboard to paste the text into the window."),"text_linebreaks":_("Keep Linebreaks"),"text_title":_("Use Ctrl+V on your keyboard to paste the text into the window.")});

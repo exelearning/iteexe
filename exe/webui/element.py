@@ -494,8 +494,96 @@ class FeedbackElement(ElementWithResources):
             # and begin by choosing the content for preview mode, WITH paths:
             self.field.feedback = self.field.content_w_resourcePaths
 
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        # to render, choose the content with the preview-able resource paths:
+        self.field.feedback = self.field.content_w_resourcePaths
+
+        this_package = None
+        if self.field_idevice is not None \
+        and self.field_idevice.parentNode is not None:
+            this_package = self.field_idevice.parentNode.package
+        html = common.formField('richTextArea', this_package, 
+                                self.field.name,'',
+                                self.id, self.field.instruc,
+                                self.field.feedback)
+        return html
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing this question element
+        """
+        return self.doRender(preview=False)
+    
+    def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this question element
+        """
+        return self.doRender(preview=True)
+
+    def doRender(self, preview=False):
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
+        if preview: 
+            # to render, use the content with the preview-able resource paths:
+            self.field.feedback = self.field.content_w_resourcePaths
+        else:
+            # to render, use the flattened content, withOUT resource paths: 
+            self.field.feedback = self.field.content_wo_resourcePaths
+
+        html = ""
+        if self.field.feedback != "": 
+            html += common.feedbackBlock(self.id,self.field.feedback,self.field.buttonCaption)
+        return html
+
+
+# ===========================================================================
+class Feedback2Element(ElementWithResources):
+    """
+    FeedbackElement is a text which can be show and hide
+    """
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        ElementWithResources.__init__(self, field)
+
+    def process(self, request):
+        """
+        Process arguments from the web server.
+        """
+        is_cancel = common.requestHasCancel(request)
+
+        if is_cancel:
+            self.field.idevice.edit = False
+            # but double-check for first-edits, and ensure proper attributes:
+            if not hasattr(self.field, 'content_w_resourcePaths'):
+                self.field.content_w_resourcePaths = ""
+            if not hasattr(self.field, 'content_wo_resourcePaths'):
+                self.field.content_wo_resourcePaths = ""
+                self.field.content = self.field.content_wo_resourcePaths
+            
+            return
+
+        if self.id in request.args:
+            # process any new images and other resources courtesy of tinyMCE:
+
+            self.field.content_w_resourcePaths = \
+                self.field.ProcessPreviewed(request.args[self.id][0])
+            # likewise determining the paths for exports, etc.:
+            self.field.content_wo_resourcePaths = \
+                    self.field.MassageContentForRenderView( \
+                         self.field.content_w_resourcePaths)
+            # and begin by choosing the content for preview mode, WITH paths:
+            self.field.feedback = self.field.content_w_resourcePaths
+            
+
             if "btnCaption" + self.id in request.args:
                 self.field.buttonCaption = request.args["btnCaption"+self.id][0]
+            self.field.content = self.field.feedback
 
 
     def renderEdit(self):
@@ -511,7 +599,7 @@ class FeedbackElement(ElementWithResources):
         html ='<strong>'+self.field.name+'</strong>'
         if self.field.instruc:
             html += common.elementInstruc(self.field.instruc)
-        html +='<p><label for="btnCaption'+self.id+'">'+_("Button Caption")+'</label>'
+        html +='<p><label for="btnCaption'+self.id+'">'+_("Button Caption")+': </label>'
         html += common.textInput('btnCaption'+self.id, self.field.buttonCaption, 40)
         html +='</p>'
         html += common.formField('richTextArea', this_package, 
@@ -542,9 +630,11 @@ class FeedbackElement(ElementWithResources):
         if preview: 
             # to render, use the content with the preview-able resource paths:
             self.field.feedback = self.field.content_w_resourcePaths
+            #self.field.content = self.field.content_w_resourcePaths
         else:
             # to render, use the flattened content, withOUT resource paths: 
             self.field.feedback = self.field.content_wo_resourcePaths
+            #self.field.content = self.field.content_w_resourcePaths
 
         html = ""
         if self.field.feedback != "": 

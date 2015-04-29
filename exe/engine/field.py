@@ -51,7 +51,7 @@ class Field(Persistable):
     rendered as an XHTML element
     """
     # Class attributes
-    persistenceVersion = 3
+    persistenceVersion = 4
     nextId = 1
 
     def __init__(self, name, instruc=""):
@@ -145,6 +145,9 @@ class Field(Persistable):
         """
         Called from Idevices to upgrade fields to exe v0.24
         """
+        pass
+    def _upgradeFieldToVersion4(self):
+
         pass
 
 # ===========================================================================
@@ -2596,7 +2599,7 @@ class TextAreaField(FieldWithResources):
     Note that TextAreaFields can now hold any number of image resources,
     which will typically be inserted by way of tinyMCE.
     """
-    persistenceVersion = 2
+    persistenceVersion = 3
 
     # these will be recreated in FieldWithResources' TwistedRePersist:
     nonpersistant      = ['content', 'content_wo_resourcePaths']
@@ -2620,6 +2623,8 @@ class TextAreaField(FieldWithResources):
     def upgradeToVersion2(self):
         if self._instruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
             self._instruc = u"""Enter the text that will appear on this iDevice"""
+    def upgradeToVersion3(self):            
+            self.buttonCaption =''
 
 # ===========================================================================
 class FeedbackField(FieldWithResources):
@@ -2675,6 +2680,66 @@ class FeedbackField(FieldWithResources):
         Upgrade
         """
         self.buttonCaption = btfeedback
+
+# ===========================================================================
+class Feedback2Field(FieldWithResources):
+    """
+    A Generic iDevice is built up of these fields.  Each field can be
+    rendered as an XHTML element
+    """
+
+    persistenceVersion = 1
+
+    # these will be recreated in FieldWithResources' TwistedRePersist:
+    nonpersistant      = ['content', 'content_wo_resourcePaths']
+
+    def __init__(self, name, instruc="", content="",btfeedback=""):
+        """
+        Initialize 
+        """
+        FieldWithResources.__init__(self, name, instruc,content)
+
+        # self._buttonCaption = x_(u"Click Here")
+        self.buttonCaption = btfeedback
+        self.feedback      = content
+        # Note: now that FeedbackField extends from FieldWithResources,
+        # the above feedback attribute will likely be used much less than
+        # the following new content attribute, but remains in case needed.
+        self.content      = ""
+        self.content_w_resourcePaths = content 
+        self.content_wo_resourcePaths = content
+        self.buttonCaption = btfeedback
+
+    
+    # Properties
+    #buttonCaption = lateTranslate('buttonCaption')
+    '''
+    def upgradeToVersion1(self):
+        """
+        Upgrades to version 0.14
+        """
+        self.buttonCaption = self.__dict__['buttonCaption']
+
+    def upgradeToVersion2(self):
+        """
+        Upgrades to somewhere before version 0.25 (post-v0.24) 
+        to reflect that FeedbackField now inherits from FieldWithResources,
+        and will need its corresponding fields populated from content.
+        [see also the related (and likely redundant) upgrades to FeedbackField 
+         in: idevicestore.py's  __upgradeGeneric() for readingActivity, 
+         and: genericidevice.py's upgradeToVersion9() for the same]
+        """ 
+        self.content = self.feedback 
+        self.content_w_resourcePaths = self.feedback 
+        self.content_wo_resourcePaths = self.feedback
+        # NOTE: we don't need to actually process any of those contents for 
+        # image paths, either, since this is an upgrade from pre-images!
+    def upgradeToVersion3(self):
+        """
+        Upgrade
+        """
+        self.buttonCaption = btfeedback
+    '''
 
 # ===========================================================================
 

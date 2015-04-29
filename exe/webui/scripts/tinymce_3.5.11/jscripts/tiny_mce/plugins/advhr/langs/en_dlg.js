@@ -1,0 +1,1 @@
+tinyMCE.addI18n('en.advhr_dlg',{size:_("Height"),noshade:_("No Shadow"),width:_("Width"),normal:_("Normal"),widthunits:_("Units")});

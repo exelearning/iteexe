@@ -26,8 +26,7 @@ before they look at the answer/s
 import logging
 from exe.engine.idevice   import Idevice
 from exe.engine.translate import lateTranslate
-from exe.engine.field     import TextAreaField
-from exe.engine.field     import FeedbackField
+from exe.engine.field     import TextAreaField, Feedback2Field
 import re
 log = logging.getLogger(__name__)
 
@@ -64,7 +63,8 @@ reflective feedback).""")
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
-        self.answerTextArea = FeedbackField(x_(u'Feedback:'),self._answerInstruc, answer,'')
+        self.answerTextArea = Feedback2Field(x_(u'Feedback:'), 
+                                   self._answerInstruc, answer,'')
         self.answerTextArea.idevice = self
 
     # Properties
@@ -129,6 +129,8 @@ reflective feedback).""")
                         self.activityTextArea.content_wo_resourcePaths)
             self.activityTextArea.content = \
                     self.activityTextArea.content_w_resourcePaths
+            _btfeedBack= inner.find(name='input', attrs={'name' : re.compile('^toggle-feedback-') })
+            self.answerTextArea.buttonCaption=_btfeedBack
         # 2nd = field[1] == Answer
         if len(reflections) >= 2:
             self.answerTextArea.content_wo_resourcePaths = \
@@ -208,7 +210,4 @@ reflective feedback).""")
         Delete icon from system resources
         """
         self._upgradeIdeviceToVersion3()
-        
-    def upgradeToVersion9(self):
-        self.answerTextArea.buttonCaption=''
 # ===========================================================================

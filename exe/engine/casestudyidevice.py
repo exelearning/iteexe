@@ -28,8 +28,7 @@ from exe.engine.field     import ImageField
 from exe.engine.translate import lateTranslate
 from exe.engine.path      import toUnicode
 from exe                  import globals as G
-from exe.engine.field     import TextAreaField
-from exe.engine.field     import FeedbackField
+from exe.engine.field     import TextAreaField, Feedback2Field
 import os
 import re
 
@@ -44,7 +43,8 @@ class Question(Persistable):
     A Case iDevice is built up of question and options.  Each option can 
     be rendered as an XHTML element
     """
-    persistenceVersion = 1
+    persistenceVersion = 2
+    
     def __init__(self, idevice):
         """
         Initialize 
@@ -52,7 +52,7 @@ class Question(Persistable):
         self.questionTextArea = TextAreaField(u'', u'', u'')
         self.questionTextArea.idevice = idevice 
 
-        self.feedbackTextArea = FeedbackField(u'', u'', u'')
+        self.feedbackTextArea = Feedback2Field(u'', u'', u'')
         self.feedbackTextArea.idevice = idevice
 
     def setupImage(self, idevice):
@@ -112,6 +112,8 @@ class Question(Persistable):
         """
         log.debug(u"Upgrading iDevice")
         self.image.isFeedback   = True
+    def upgradeToVersion2(self):
+        pass
     
 
     def embedImageInFeedback(self):
@@ -188,7 +190,7 @@ class CasestudyIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 10
+    persistenceVersion = 9
 
     def __init__(self, story="", defaultImage=None):
         """
@@ -203,11 +205,11 @@ based in reality, and asks learners to demonstrate or describe what action they
 would take to complete a task or resolve a situation. The case study allows 
 learners apply their own knowledge and experience to completing the tasks 
 assigned. when designing a case study consider the following:<ul> 
-<li>	What educational points are conveyed in the story</li>
-<li>	What preparation will the learners need to do prior to working on the 
+<li>    What educational points are conveyed in the story</li>
+<li>    What preparation will the learners need to do prior to working on the 
 case study</li>
-<li>	Where the case study fits into the rest of the course</li>
-<li>	How the learners will interact with the materials and each other e.g.
+<li>    Where the case study fits into the rest of the course</li>
+<li>    How the learners will interact with the materials and each other e.g.
 if run in a classroom situation can teams be setup to work on different aspects
 of the case and if so how are ideas feed back to the class</li></ul>"""), 
                          "",
@@ -293,8 +295,7 @@ situation.""")
         self.title = title.renderContents().decode('utf-8')
 
         inner = i.find(name='div', attrs={'class' : 'iDevice_inner' })
-        _btfeedBack= inner.find(name='input', attrs={'name' : re.compile('^toggle-feedback-') })
-        self.answerTextArea.buttonCaption=_btfeedBack
+
         story = inner.find(name='div', 
                 attrs={'class' : 'block' , 'id' : re.compile('^ta') })
         self.storyTextArea.content_wo_resourcePaths = \
@@ -345,12 +346,16 @@ situation.""")
                             self.questions[question_num].feedbackTextArea.content_wo_resourcePaths)
                 self.questions[question_num].feedbackTextArea.content = \
                         self.questions[question_num].feedbackTextArea.content_w_resourcePaths
+                _btfeedBack= inner.find(name='input', attrs={'name' : re.compile('^toggle-feedback-') })
+                #self.questions[question_num].buttonCaption=_btfeedBack
             else:
                 self.questions[question_num].feedbackTextArea.content = ""
                 self.questions[question_num].feedbackTextArea.content_w_resourcePaths \
                         = ""
                 self.questions[question_num].feedbackTextArea.content_wo_resourcePaths \
                         = ""
+                _btfeedBack= inner.find(name='input', attrs={'name' : re.compile('^toggle-feedback-') })
+                #self.questions[question_num].buttonCaption=_btfeedBack
 
 
     def upgradeToVersion1(self):
@@ -435,11 +440,6 @@ situation.""")
         Delete icon from system resources
         """
         self._upgradeIdeviceToVersion3()
-    def upgradeToVersion10(self):
-        """
-        Delete icon from system resources
-        """
-        self.answerTextArea.buttonCaption=''
 
     def embedImagesInFeedback(self):
         """

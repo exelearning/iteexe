@@ -24,7 +24,7 @@ import logging
 from exe.webui.block               import Block
 from exe.webui                     import common
 from exe.webui.element      import TextAreaElement
-from exe.webui.element      import FeedbackElement
+from exe.webui.element      import Feedback2Element
 
 log = logging.getLogger(__name__)
 
@@ -50,7 +50,7 @@ class ReflectionBlock(Block):
             idevice.answerTextArea.idevice = idevice
 
         self.activityElement  = TextAreaElement(idevice.activityTextArea)
-        self.answerElement    = FeedbackElement(idevice.answerTextArea)
+        self.answerElement    = Feedback2Element(idevice.answerTextArea)
 
         self.previewing        = False # In view or preview render
 
@@ -119,6 +119,4 @@ class ReflectionBlock(Block):
 
 from exe.engine.reflectionidevice  import ReflectionIdevice
 from exe.webui.blockfactory        import g_blockFactory
-g_blockFactory.registerBlockType(ReflectionBlock, ReflectionIdevice)    
-
-# ===========================================================================
+g_blockFactory.registerBlockType(ReflectionBlock, ReflectionIdevice)
