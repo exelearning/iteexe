@@ -146,7 +146,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 						},
 						{
 							xtype: 'combobox',
-							fieldLabel: _('Theme'),
+							fieldLabel: _('Skin'),
 							inputId: "theme",
 							labelWidth: 130,
 							margin: 10,
