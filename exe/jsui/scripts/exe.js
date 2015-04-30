@@ -98,6 +98,50 @@ for(var i = 0; i < fieldsToOverride.length; i++) {
 	});
 }
 
+/* 
+ * Override the TabPanel to workaround ExtJS tabpanel switch bug:
+ *
+ * See https://www.sencha.com/forum/showthread.php?294953-Tab-switching-bug
+ * 
+ * This should be removable once ExtJS5.1.1 GPL is released.
+ */
+Ext.define('EXTJS-15862.tab.Bar', {
+    override: 'Ext.tab.Bar',
+    
+    initComponent: function() {
+        var me = this,
+            initialLayout = me.initialConfig.layout,
+            initialAlign = initialLayout && initialLayout.align,
+            initialOverflowHandler = initialLayout && initialLayout.overflowHandler,
+            layout;
+
+
+        if (me.plain) {
+            me.addCls(me.baseCls + '-plain');
+        }
+
+
+        me.callParent();
+
+
+        me.setLayout({
+            align: initialAlign || (me.getTabStretchMax() ? 'stretchmax' :
+                    me._layoutAlign[me.dock]),
+            overflowHandler: initialOverflowHandler || 'scroller'
+        });
+
+
+        // We have to use mousedown here as opposed to click event, because
+        // Firefox will not fire click in certain cases if mousedown/mouseup
+        // happens within btnInnerEl.
+        me.on({
+            mousedown: me.onClick,
+            element: 'el',
+            scope: me
+        });
+    }
+});
+
 Ext.require("eXe.view.ui.eXeViewport");
 
 Ext.onReady(function() {
