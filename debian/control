@@ -14,6 +14,8 @@ Depends: ${python:Depends}, ${misc:Depends}, python-setuptools, python-zopeinter
 Conflicts: python2.3-exe, python2.4-exe, python2.5-exe, python-exe, python-intef-exe
 Replaces: python2.3-exe, python2.4-exe, python2.5-exe, python-exe, python-intef-exe
 Description: eLearning XHTML & HTML5 editor
- The eXe project is an authoring environment to enable teachers to publish
- web content without the need to become proficient in HTML or XML markup.
- Content generated using eXe can be used by any Learning Management System.
+ The eXeLearning project is an authoring environment that enables teachers 
+ and students to create and publish open educational resources without the
+ need to become proficient in HTML or XML markup. Content generated using
+ eXeLearning can be exported as web pages, as educational-standard packages
+ used by any Learning Management System, as epub3 files and on mobile devices.
