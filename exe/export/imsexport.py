@@ -226,6 +226,8 @@ class Manifest(object):
         my_style = G.application.config.styleStore.getStyle(page.node.package.style)
         if common.nodeHasMediaelement(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'mediaelement').files()]
+        if common.nodeHasTooltips(page.node):
+            resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_tooltips').files()]
         if common.hasGalleryIdevice(page.node):
             self.resStr += '    <file href="exe_lightbox.js"/>\n'
             self.resStr += '    <file href="exe_lightbox.css"/>\n'
@@ -342,9 +344,11 @@ class IMSPage(Page):
         html += u"<div id=\"outer\">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
         html += u"<"+headerTag+" id=\"nodeDecoration\">"
+        html += u"<div id=\"headerContent\">"
         html += u'<h1 id=\"nodeTitle\">'
         html += escape(self.node.titleLong)
         html += u'</h1>'
+        html += u'</div>'
         html += u"</"+headerTag+">"+lb
 
         for idevice in self.node.idevices:
@@ -499,12 +503,13 @@ class IMSExport(object):
         isBreak           = False
         hasInstructions   = False
         hasMediaelement   = False
+        hasTooltips       = False
         
         for page in self.pages:
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -526,6 +531,8 @@ class IMSExport(object):
                         hasInstructions = True
                 if not hasMediaelement:
                     hasMediaelement = common.ideviceHasMediaelement(idevice)
+                if not hasTooltips:
+                    hasTooltips = common.ideviceHasTooltips(idevice)
 
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -556,6 +563,9 @@ class IMSExport(object):
             if dT != "HTML5":
                 jsFile = (self.scriptsDir/'exe_html5.js')
                 jsFile.copyfile(outputDir/'exe_html5.js')
+        if hasTooltips:
+            exe_tooltips = (self.scriptsDir/'exe_tooltips')
+            exe_tooltips.copyfiles(outputDir)
         if hasattr(package, 'exportSource') and package.exportSource:
             (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
             (outputDir/'content.data').write_bytes(encodeObject(package))

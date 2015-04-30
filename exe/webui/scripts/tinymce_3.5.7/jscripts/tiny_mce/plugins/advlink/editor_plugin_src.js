@@ -30,6 +30,12 @@
 					plugin_url : url
 				});
 			});
+			
+			// The New eXeLearning
+			ed.onInit.add(function() {
+				if (ed.settings.content_css !== false) ed.dom.loadCSS(url + "/css/content.css");
+			});
+			// /The New eXeLearning
 
 			// Register buttons
 			ed.addButton('link', {

@@ -53,7 +53,8 @@ class Config(object):
     # Class attributes
     optionNames = {
         'system': ('webDir', 'jsDir', 'port', 'dataDir',
-                   'configDir', 'localeDir', 'browser', 'mediaProfilePath',
+                   'configDir', 'localeDir', 'stylesRepository',
+                   'browser', 'mediaProfilePath',
                    'videoMediaConverter_ogv', 'videoMediaConverter_3gp',
                    'videoMediaConverter_mpg',
                    'videoMediaConverter_avi', 'audioMediaConverter_ogg',
@@ -143,6 +144,9 @@ class Config(object):
         self.stylesDir =Path(self.configDir/'style').abspath()
         #FM: Default Style name
         self.defaultStyle= u"INTEF"
+        # Styles repository XML-RPC endpoint
+        # self.stylesRepository = 'http://www.exelearning.es/xmlrpc.php'
+        self.stylesRepository = 'http://www.exelearning.net/xmlrpc.php'
         # browser is the name of a predefined browser specified at http://docs.python.org/library/webbrowser.html.
         # None for system default
         self.browser = None
@@ -334,7 +338,7 @@ class Config(object):
             
             self.port           = int(system.port)
             self.browser        = None if system.browser == u"None" else system.browser
-            
+            self.stylesRepository = system.stylesRepository
             
             if not G.application.portable:
                 self.dataDir        = Path(system.dataDir)

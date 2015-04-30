@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>	
+	<title>{#pastecode.paste_code_desc}</title>
+	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script language="javascript" type="text/javascript" src="js/pastecode.js"></script>
+	<base target="_self" />
+</head>
+<body onLoad="tinyMCEPopup.executeOnLoad('onLoadInit();');" style="display: none">
+<form name="source" onsubmit="PasteCodeDialog.insert()">
+	<div style="float: left" class="title">{#pastecode.paste_code_desc}</div>
+
+	<div style="float: right">
+		<input type="checkbox" name="wrapper" id="wrapper" class="includeWrapperCode" checked="checked" /><label for="linebreaks">{#pastecode.paste_include_wrapper}</label>
+	</div>
+
+	<br style="clear: both" />
+
+	<div>{#pastecode.paste_code_title}</div>
+
+	<textarea name="htmlSource" id="htmlSource" rows="15" cols="100" style="width: 100%; height: 319px; font-family: 'Courier New',Courier,mono; font-size: 12px;" dir="ltr" wrap="soft"></textarea>
+
+	<div class="mceActionPanel">
+		<div style="float: left">
+			<input type="submit" name="insert" value="{#insert}" id="insert" />
+		</div>
+
+		<div style="float: right">
+			<input type="button" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" id="cancel" />
+		</div>
+	</div>
+</form>
+</body> 
+</html>

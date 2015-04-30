@@ -1,4 +1,5 @@
-# -- coding: utf-8 --
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
@@ -17,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # ===========================================================================
 
 """
@@ -26,8 +27,8 @@ The PreferencesPage is responsible for managing eXe preferences
 
 import logging
 import json
-from twisted.web.resource      import Resource
-from exe.webui.renderable      import RenderableResource
+from twisted.web.resource import Resource
+from exe.webui.renderable import RenderableResource
 import mywebbrowser
 from exe.engine.path import Path
 import os.path
@@ -36,20 +37,22 @@ from exe.webui import common
 log = logging.getLogger(__name__)
 
 langNames = {
-   'ar': 'العربية',                    # Arabic
+   'am': 'አማርኛ',                       # Amharic አማርኛ
+   'ar': 'العربية',                       # Arabic
    'ast': 'asturianu',
-   'bg': 'Български',                  # Bulgarian
+   'bg': 'Български',                   # Bulgarian
+   'bn': 'বাংলা',                       # Bengali
    'br': 'Brezhoneg',                  # Breton
-   'ca': 'Català',                     # Catal\xc3\xa0, Catalonian
-   # 'ca_VALENCIA': 'Valencià',        # Valenci\xc3\xa0
-   'ca_ES@valencia': 'Valencià',       # Valenci\xc3\xa0, Valencian Catalonian
+   'ca': 'Català',                     # Catalonian
+   # 'ca_VALENCIA': 'Valencià',        # Valencian Catalonian
+   'ca_ES@valencia': 'Valencià',       # Valencian Catalonian
    'cs': 'Čeština, český jazyk',       # \xc4\x8cesky, Czech
    'da': 'Dansk',
    'de': 'Deutsch',                    # German
    'ee': 'Eʋegbe',                     # Ewe
-   'el': 'Ελληνικά',                   # \xce\x95\xce\xbb\xce\xbb\xce\xb7\xce\xbd\xce\xb9\xce\xba\xce\xac, Greek
+   'el': 'Ελληνικά',                    # \xce\x95\xce\xbb\xce\xbb\xce\xb7\xce\xbd\xce\xb9\xce\xba\xce\xac, Greek
    'en': 'English',
-   'es': 'Español',                    # Espa\xc3\xb1ol, Spanish
+   'es': 'Español',                    # Español, Spanish
    'et': 'Eesti',                      # Estonian
    'eu': 'Euskara',                    # Basque
    'fa': 'فارسی',                      # Farsi, Persian
@@ -63,8 +66,8 @@ langNames = {
    'is': 'Íslenska',                   # \xc3\x8dslenska, Icelandic
    'it': 'Italiano',
    'ja': '日本語',                      # \xe6\x97\xa5\xe6\x9c\xac\xe8\xaa\x9e', Japanese
-   'km': 'ភាសាខ្មែរ',                        # Khmer, Cambodyan
-   'lo': 'ພາສາລາວ',                                         # Lao, Laotian
+   'km': 'ភាសាខ្មែរ',                                               # Khmer, Cambodyan
+   'lo': 'ພາສາລາວ',                                     # Lao, Laotian
    'mi': 'Māori',                      # M\xc4\x81ori
    'nb':  'Norsk bokmål',              # Bokm\xc3\xa5l, Norwegian Bokmål
    'nl': 'Nederlands',                 # Dutch
@@ -72,12 +75,12 @@ langNames = {
    'pt': 'Português',                  # Portugu\xc3\xaas
    'pt_br': 'Português do Brazil',     # Brazillian Portuguese
    'ru': 'Русский',                    # Russian
-   'sk': 'Slovenčina, slovenský jazyk', # Sloven\xc4\x8dina, Slovensk\xc3\xbd Jazyk - Slovak
+   'sk': 'Slovenčina, slovenský jazyk',  # Sloven\xc4\x8dina, Slovensk\xc3\xbd Jazyk - Slovak
    'sl': 'Slovenščina',                # Sloven\xc5\xa1\xc4\x8dina - Slovene
    'sr': 'Српски / srpski',            # Srpski, serbio
    'sv': 'Svenska',                    # Swedish
-   'th':  'ไทย',                                                            #  \xe0\xb8\xa0\xe0\xb8\xb2\xe0\xb8\xa9\xe0\xb8\xb2\xe0\xb9\x84\xe0\xb8\x97\xe0\xb8\xa2 - Thai
-   'tl': 'Wikang Tagalog, ᜏᜒᜃᜅ᜔ ᜆᜄᜎᜓᜄ᜔', # Tagalog
+   'th':  'ไทย',                                                            # \xe0\xb8\xa0\xe0\xb8\xb2\xe0\xb8\xa9\xe0\xb8\xb2\xe0\xb9\x84\xe0\xb8\x97\xe0\xb8\xa2 - Thai
+   'tl': 'Wikang Tagalog, ᜏᜒᜃᜅ᜔ ᜆᜄᜎᜓᜄ᜔',  # Tagalog
    'tg': 'тоҷикӣ, toğikī, تاجیکی‎',    # Tajik
    'tr': 'Türkçe',                     # Turkish
    'tw': 'Twi',
@@ -91,7 +94,7 @@ langNames = {
    'zu': 'isiZulu'
 }
 
-browsersHidden = ('xdg-open', 'gvfs-open', 'x-www-browser', 'gnome-open', 'kfmclient', 'www-browser', 'links', 
+browsersHidden = ('xdg-open', 'gvfs-open', 'x-www-browser', 'gnome-open', 'kfmclient', 'www-browser', 'links',
                      'elinks', 'lynx', 'w3m', 'windows-default', 'macosx', 'konqueror', 'MacOSX')
 browserNames = {
                 "internet-explorer": "Internet Explorer",
@@ -128,8 +131,7 @@ class PreferencesPage(RenderableResource):
     The PreferencesPage is responsible for managing eXe preferences
     """
     name = 'preferences'
-    
-    
+
     browsersAvalaibles = []
 
     def __init__(self, parent):
@@ -155,7 +157,6 @@ class PreferencesPage(RenderableResource):
         for browser in self.browsersAvalaibles:
             self.browsers.append({'browser': browser[1], 'text': browser[0]})
 
-            
 
     def getChild(self, name, request):
         """
@@ -208,7 +209,7 @@ class PreferencesPage(RenderableResource):
             self.config.internalAnchors = internalAnchors
             self.config.configParser.set('user', 'internalAnchors', internalAnchors)
             editormodesel = request.args['editorMode'][0]
-            self.config.editorMode=editormodesel
+            self.config.editorMode = editormodesel
             self.config.configParser.set('user', 'editorMode', editormodesel)
             theme = request.args['theme'][0]
             self.config.theme = theme
@@ -224,7 +225,7 @@ class PreferencesPage(RenderableResource):
             except Exception as e:
                 browser_path = Path(browser)
                 if browser_path.exists():
-                    mywebbrowser.register('custom-browser' , None, mywebbrowser.BackgroundBrowser(browser_path.abspath()), -1)
+                    mywebbrowser.register('custom-browser', None, mywebbrowser.BackgroundBrowser(browser_path.abspath()), -1)
                     self.config.browser = mywebbrowser.get('custom-browser')
                 else:
                     raise e
@@ -242,7 +243,7 @@ class PreferencesPage(RenderableResource):
         It would be the TinyMCE lang
         """
         return self.config.locale
-        
+
     def getEditorMode(self):
         """
         It would be the TinyMCE lang

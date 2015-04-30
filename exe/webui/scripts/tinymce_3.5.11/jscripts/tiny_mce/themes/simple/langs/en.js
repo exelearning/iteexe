@@ -1,0 +1,1 @@
+tinyMCE.addI18n('en.simple',{"cleanup_desc":_("Cleanup Messy Code"),"redo_desc":_("Redo (Ctrl+Y)"),"undo_desc":_("Undo (Ctrl+Z)"),"numlist_desc":_("Insert/Remove Numbered List"),"bullist_desc":_("Insert/Remove Bulleted List"),"striketrough_desc":_("Strikethrough"),"underline_desc":_("Underline (Ctrl+U)"),"italic_desc":_("Italic (Ctrl+I)"),"bold_desc":_("Bold (Ctrl+B)")});

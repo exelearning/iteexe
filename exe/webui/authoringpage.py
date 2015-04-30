@@ -163,6 +163,9 @@ class AuthoringPage(RenderableResource):
             html += block.render(self.package.style)
 
         html += u'</div>'
+        style = G.application.config.styleStore.getStyle(self.package.style)
+        if style.hasValidConfig:
+            html += style.get_edition_extra_body()
         html += '<script type="text/javascript">$exeAuthoring.ready()</script>\n'
         html += common.footer()
 
@@ -216,6 +219,9 @@ class AuthoringPage(RenderableResource):
         html += u'<title>"+_("eXe : elearning XHTML editor")+"</title>\n'
         html += u'<meta http-equiv="content-type" content="text/html; '
         html += u' charset=UTF-8" />\n'
+        style = G.application.config.styleStore.getStyle(self.package.style)
+        if style.hasValidConfig:
+            html += style.get_edition_extra_head()        
         html += u'</head>\n'
         return html
 

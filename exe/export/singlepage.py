@@ -77,7 +77,9 @@ class SinglePage(Page):
         html += u'<script type="text/javascript">document.body.className+=" js"</script>'+lb
         html += u"<div id=\"content\">"+lb
         html += u"<"+headerTag+" id=\"header\">"
+        html += u"<div id=\"headerContent\">"
         html += "<h1>"+escape(package.title)+"</h1>"
+        html += u"</div>"
         html += u"</"+headerTag+">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
         html += self.renderNode(package.root, 1)

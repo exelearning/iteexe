@@ -45,7 +45,7 @@
 				longname : 'Paste code',
 				author : 'Ignacio Gros',
 				authorurl : 'http://www.gros.es',
-				version : "2.0"
+				version : "2.1"
 			};
 		}
 	});

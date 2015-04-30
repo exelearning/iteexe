@@ -336,9 +336,11 @@ class Epub3Page(Page):
         html += u"<div id=\"outer\">" + lb
         html += u"<" + sectionTag + " id=\"main\">" + lb
         html += u"<" + headerTag + " id=\"nodeDecoration\">"
+        html += u"<div id=\"headerContent\">"
         html += u'<h1 id=\"nodeTitle\">'
         html += escape(self.node.titleLong)
         html += u'</h1>'
+        html += u'</div>'
         html += u"</" + headerTag + ">" + lb
 
         for idevice in self.node.idevices:
@@ -512,6 +514,7 @@ class Epub3Export(object):
         hasWikipedia = False
         isBreak = False
         hasInstructions = False
+        hasTooltips = False
 
         for page in self.pages:
             if isBreak:
@@ -537,6 +540,8 @@ class Epub3Export(object):
                 if not hasInstructions:
                     if 'TrueFalseIdevice' == idevice.klass or 'MultichoiceIdevice' == idevice.klass or 'VerdaderofalsofpdIdevice' == idevice.klass or 'EleccionmultiplefpdIdevice' == idevice.klass:
                         hasInstructions = True
+                if not hasTooltips:
+                    hasTooltips = common.ideviceHasTooltips(idevice)
 
         if hasFlowplayer:
             videofile = (self.templatesDir / 'flowPlayer.swf')
@@ -561,6 +566,9 @@ class Epub3Export(object):
         if hasInstructions:
             common.copyFileIfNotInStyle('panel-amusements.png', self, contentPages)
             common.copyFileIfNotInStyle('stock-stop.png', self, contentPages)
+        if hasTooltips:
+            exe_tooltips = (self.scriptsDir / 'exe_tooltips')
+            exe_tooltips.copyfiles(contentPages)
 
         my_style = G.application.config.styleStore.getStyle(package.style)
         if my_style.hasValidConfig:
