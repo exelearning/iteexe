@@ -28,6 +28,7 @@ import os
 import shutil
 from zipfile                   import ZipFile, ZIP_DEFLATED
 import json
+from tempfile                  import gettempdir
 from urllib                    import urlretrieve
 from urlparse                  import urlsplit
 import locale
@@ -386,9 +387,11 @@ class StyleManagerPage(RenderableResource):
             # Downloaded ZIP file must have the same name than the remote file,
             # otherwise file would be saved to a random temporary name, that
             # 'doImportStyle' would use as style target directory
-            log.debug("Downloading style %s from %s" % (style_name, url))
+            temp_path = gettempdir()
+            filename_path = os.path.join(temp_path, filename)
+            log.debug("Downloading style %s from %s into %s" % (style_name, url, filename_path))
             d = threads.deferToThread(
-                                      urlretrieve, url, filename,
+                                      urlretrieve, url, filename_path,
                                       lambda n, b, f: self.progressDownload(n, b, f, self.client))
             d.addCallbacks(successDownload, errorDownload)
 
