@@ -428,6 +428,13 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 accesskey: 'n',
                                 text: _('Release Notes')
                             },
+                            // jrf - legal notes
+                            {
+                                xtype: 'accesskey_menuitem',
+                                itemId: 'help_legal',
+                                accesskey: 'l',
+                                text: _('Legal Notes')
+                            },
                             {
                                 xtype: 'menuseparator'
                             },

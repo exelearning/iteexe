@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
@@ -18,7 +19,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # ===========================================================================
 
 """
@@ -42,6 +43,8 @@ from exe.webui.stylemanagerpage    import StyleManagerPage
 from exe.webui.preferencespage     import PreferencesPage
 from exe.webui.aboutpage           import AboutPage
 from exe.webui.releasenotespage    import ReleaseNotesPage
+# jrf - legal notes
+from exe.webui.legalpage import LegalPage
 from exe.webui.quitpage            import QuitPage
 from exe.webui.iecmwarning         import IECMWarningPage
 from exe.webui.renderable          import File
@@ -75,6 +78,8 @@ class WebServer:
         self.dirtree = DirTreePage(self.root)
         self.about = AboutPage(self.root)
         self.releasenotes = ReleaseNotesPage(self.root)
+        # jrf - legal notes
+        self.legal = LegalPage(self.root)
         self.quit = QuitPage(self.root)
         self.iecmwaring = IECMWarningPage(self.root)
         self.monitoring = False
