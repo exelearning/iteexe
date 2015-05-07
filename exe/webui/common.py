@@ -427,7 +427,7 @@ def feedbackBlock(id,feedback,buttonCaption=""):
     buttonCaptionArr=[]
     buttonTextAll = buttonText
     if buttonCaption != "": 
-        buttonTextAll = buttonCaption        
+        buttonTextAll = buttonCaption     
         buttonCaptionArr=buttonCaption.split('|')
         buttonText=buttonCaptionArr[0]
         changeText = 'false' # Do not change the text on click if the text is defined by the user or the iDevice
@@ -442,7 +442,8 @@ def feedbackBlock(id,feedback,buttonCaption=""):
     html += lb
     html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
     html += '<p>'
-    html += '<input type="button" name="toggle-feedback-'+id+'" value="'+ buttonText+'"  data-text="'+ buttonTextAll+'"  class="feedbackbutton" onclick="$exe.toggleFeedback(this,'+changeText+');return false" />'
+    html += '<script type="text/javascript">var feedback'+id+'text = "'+buttonTextAll+'";</script>'
+    html += '<input type="button" name="toggle-feedback-'+id+'" value="'+ buttonText+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this,'+changeText+');return false" />'
     html += '</p>'+lb
     html += '</div>'+lb
     html += '<'+sectionTag+' id="feedback-'+id+'" class="feedback js-feedback js-hidden">'+lb
