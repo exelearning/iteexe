@@ -75,6 +75,10 @@ File: /usr/share/exe/webui/scripts/exe_html5.js (HTML5 Shiv)
 Copyright: Alexander Farkas
 License: MIT | GPL-2
 
+File: exe/webui/tools/style-designer/js/jpicker-1.1.6.min.js
+Copyright: Christopher T. Tillman
+License: MIT
+
 
 License: GPL-2
  On Debian systems and derivatives, the full text of the GNU General Public License
