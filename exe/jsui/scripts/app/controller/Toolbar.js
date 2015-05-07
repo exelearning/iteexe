@@ -135,19 +135,6 @@ Ext.define('eXe.controller.Toolbar', {
             '#tools_stylemanager': {
                 click: this.toolsStyleManager
             },
-            // Style designer
-			// To do:
-			/* 
-				nav.css:
-					overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:200px should be applied to #headerContent
-			*/
-            '#style_designer_new_style': {
-                click: this.styleDesigner.createStyle
-            },
-            '#style_designer_edit_style': {
-                click: this.styleDesigner.editStyle
-            },
-            // / Style designer            		
             '#tools_preferences': {
                 click: this.toolsPreferences
             },
@@ -185,6 +172,9 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#help_forums': {
                 click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/forums/' }
+            },
+            '#help_last': {
+                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/downloads/' }
             },
             '#help_about': {
                 click: this.aboutPage
@@ -347,7 +337,7 @@ Ext.define('eXe.controller.Toolbar', {
     legalPage: function() {
         var legalnotes = new Ext.Window ({
           height: eXe.app.getMaxHeight(700),
-          width: 800,
+          width: 420,
           modal: true,
           resizable: false,
           id: 'legal',
@@ -450,73 +440,6 @@ Ext.define('eXe.controller.Toolbar', {
         });
         stylemanager.show();        
 	},
-	
-	// Style designer
-	styleDesigner : {
-		open : function(btn,text){
-			Ext.Msg.alert(_('New Style'), _("Your Style has been created. Time to make it pretty."),function(){
-				alert("Creo el directorio, etc.: "+text+"\n\nMira cómo se le pasa el estilo por GET en editStyle.");
-				styleDesignerWindow = window.open("/tools/style-designer/previews/website/");
-			});
-		},
-		createStyle : function(){
-			Ext.MessageBox.prompt(_("New Style"), 'Please enter the new Style name:', this.styleDesigner.open);
-		},
-		notCompatitle : function(){
-			Ext.Msg.alert("", _("The current Style is not compatible with the Style Designer"));
-		},
-		errorSaving : function(){
-			Ext.Msg.alert(_('Error'), _("Your Style could not be saved because an unknown error occurred."));
-		},
-		saveStyle : function(content,nav) {
-			alert('Hay que guardar los cambios (esta función está en Toolbar.js).\n\nRecibo dos parámetros: el contenido de content.css y el de nav.css.\n\nEso es lo que hay que guardar');
-			Ext.Ajax.request({
-				url: window.location.href, // Replace this URL with the one that saves
-				scope: this,
-				success: function(response) {
-					alert("Recibo la respuesta (response.responseText) con un mensaje de éxito o error y lo muestro con Ext.Msg.alert.");
-					try {
-						styleDesignerWindow.styleDesignerPopup.close();
-						styleDesignerWindow.close();
-					} catch(e) {
-						
-					}
-				},
-				error: function(){
-					this.styleDesigner.errorSaving();
-				}
-			});
-			
-		},
-		editStyle : function(){
-			Ext.Ajax.request({
-				url: this.styleDesigner.getCurrentStyleFilePath(),
-				scope: this,
-				success: function(response) {
-					var res = response.responseText;
-					if (res.indexOf("/* eXeLearning Style Designer Compatible Style */")!=0) {
-						this.styleDesigner.notCompatitle();
-					} else {
-						styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId());		
-					}
-				},
-				error: function(){
-					this.styleDesigner.notCompatitle();
-				}
-			});
-		},
-		getCurrentStyleId : function(){
-			var id = this.getCurrentStyleFilePath();
-			id = id.replace("/","");
-			id = id.split("/")[1];
-			return id;
-		},
-		getCurrentStyleFilePath : function(){ // It returns "/style/INTEF/content.css", being X your style
-			return document.getElementsByTagName("IFRAME")[0].contentWindow.exe_style;
-		}
-	},
-	// / Style designer	  	
-	
     fileQuit: function() {
 	    this.saveWorkInProgress();
 	    this.askDirty("eXe.app.getController('Toolbar').doQuit()", "quit");
