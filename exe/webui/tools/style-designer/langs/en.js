@@ -48,7 +48,7 @@ var $i18n = {
 	_Only_horizontal : _("Only horizontal"),
 	Contents_area_background : _("Contents area background"),
 	Background_instructions_1 : _('The "Page background" will only be used when exporting as Web Site.'),
-	Background_instructions_2 : _('The "Contents area background" will also be used when exporing as IMS, SCORM or ePub3.'),
+	Background_instructions_2 : _('The "Contents area background" will also be used when exporting as IMS, SCORM or ePub3.'),
 	// #3	
 	Header_and_Footer : _("Header and Footer"),
 	Header : _("Header"),
