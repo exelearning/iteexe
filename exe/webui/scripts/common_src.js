@@ -1483,19 +1483,27 @@ var $exe = {
         }
         document.getElementsByTagName("head")[0].appendChild(s);
     },
-    toggleFeedback : function(e,changeText) {
-        var id = e.name.replace("toggle-","");
-        var f = document.getElementById(id);
-        if (f) {
-            if (f.className == "feedback js-feedback js-hidden") {
-                f.className = "feedback js-feedback";
-                if (changeText) e.value = $exe_i18n.hideFeedback
-            } else {
-                f.className = "feedback js-feedback js-hidden";
-                if (changeText) e.value = $exe_i18n.showFeedback
-            }
-        }
-    }
+	toggleFeedback:function(e,changeText){
+		var t=e.name.replace("toggle-","");
+		var n=document.getElementById(t);
+		var customText = false;
+		var r = window[t.replace("-","")+"text"];
+		if (typeof(r)!='undefined') {
+			r = r.split("|");
+			if (r.length>1) customText = true;
+		}
+		if(n){
+			if(n.className=="feedback js-feedback js-hidden"){
+				n.className="feedback js-feedback";
+				if (changeText) e.value = $exe_i18n.hideFeedback;
+				else if (customText) e.value = r[1];
+			} else {
+				n.className="feedback js-feedback js-hidden";
+				if (changeText) e.value=$exe_i18n.showFeedback;
+				else if (customText) e.value = r[0];
+			}
+		}
+	}
 }
 
 if (typeof jQuery != 'undefined') {

@@ -147,7 +147,7 @@ Ext.define('eXe.controller.Toolbar', {
             '#style_designer_edit_style': {
                 click: this.styleDesigner.editStyle
             },
-            // / Style designer            
+            // / Style designer            		
             '#tools_preferences': {
                 click: this.toolsPreferences
             },
@@ -172,6 +172,10 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#help_notes': {
                 click: { fn: this.releaseNotesPage }
+            },
+	    // jrf - legal notes
+            '#help_legal': {
+                click: this.legalPage
             },
             '#help_website': {
                 click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/' }
@@ -305,7 +309,7 @@ Ext.define('eXe.controller.Toolbar', {
         window.open(location.href);
     },
 
-	aboutPage: function() {
+    aboutPage: function() {
         var about = new Ext.Window ({
           height: eXe.app.getMaxHeight(700),
           width: 420,
@@ -320,7 +324,7 @@ Ext.define('eXe.controller.Toolbar', {
           }
         });
         about.show();
-	},
+    },
 
     releaseNotesPage: function() {
         var about = new Ext.Window ({
@@ -338,6 +342,25 @@ Ext.define('eXe.controller.Toolbar', {
         });
         about.show();
     },
+
+    // jrf - legal notes
+    legalPage: function() {
+        var legalnotes = new Ext.Window ({
+          height: eXe.app.getMaxHeight(700),
+          width: 800,
+          modal: true,
+          resizable: false,
+          id: 'legal',
+          title: _("Legal Notes"),
+          items: {
+              xtype: 'uxiframe',
+              src: '/legal',
+              height: '100%'
+          }
+        });
+        legalnotes.show();
+    },
+
     browseURL: function(url) {
         nevow_clientToServerEvent('browseURL', this, '', url);
     },
@@ -427,7 +450,7 @@ Ext.define('eXe.controller.Toolbar', {
         });
         stylemanager.show();        
 	},
-    
+	
 	// Style designer
 	styleDesigner : {
 		open : function(btn,text){
@@ -492,8 +515,8 @@ Ext.define('eXe.controller.Toolbar', {
 			return document.getElementsByTagName("IFRAME")[0].contentWindow.exe_style;
 		}
 	},
-	// / Style designer	    
-    
+	// / Style designer	  	
+	
     fileQuit: function() {
 	    this.saveWorkInProgress();
 	    this.askDirty("eXe.app.getController('Toolbar').doQuit()", "quit");

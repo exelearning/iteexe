@@ -1,8 +1,9 @@
 # eXeLearning Spanish PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2015 EXELearning.net
-# This file is distributed under the same license as the EXE package.
-# eXe Project <exe@exelearning.org>
+# Copyright (C) 2011-2015 eXeLearning.net
+# This file is distributed under the same license as the eXeLearning
+# package.
+# eXeLearning.net Project <admin@exelearning.net>
 # Asociacion Cultural Reggae <acreggae@acreggae.com>, 2009.
 # Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2015.
 msgid ""

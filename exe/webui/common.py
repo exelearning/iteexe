@@ -424,8 +424,12 @@ def button(name, value, enabled=True, **kwargs):
 def feedbackBlock(id,feedback,buttonCaption=""):
     buttonText = c_('Show Feedback')
     changeText = 'true'
-    if buttonCaption != "":
-        buttonText = buttonCaption
+    buttonCaptionArr=[]
+    buttonTextAll = buttonText
+    if buttonCaption != "": 
+        buttonTextAll = buttonCaption     
+        buttonCaptionArr=buttonCaption.split('|')
+        buttonText=buttonCaptionArr[0]
         changeText = 'false' # Do not change the text on click if the text is defined by the user or the iDevice
     lb = "\n" #Line breaks
     dT = getExportDocType()
@@ -438,6 +442,7 @@ def feedbackBlock(id,feedback,buttonCaption=""):
     html += lb
     html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
     html += '<p>'
+    html += '<script type="text/javascript">var feedback'+id+'text = "'+buttonTextAll+'";</script>'
     html += '<input type="button" name="toggle-feedback-'+id+'" value="'+ buttonText+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this,'+changeText+');return false" />'
     html += '</p>'+lb
     html += '</div>'+lb
@@ -968,5 +973,22 @@ def ideviceHasMediaelement(idevice):
 def nodeHasMediaelement(node):
     for idevice in node.idevices:
         if ideviceHasMediaelement(idevice):
+            return True
+    return False
+    
+def ideviceHasTooltips(idevice):
+    block = g_blockFactory.createBlock(None, idevice)
+    if not block:
+        log.critical("Unable to render iDevice.")
+        raise Error("Unable to render iDevice.")
+    content = block.renderView('default')
+    if re.search('<a .*class=[\'"]exe-tooltip ', content):
+        return True
+    return False
+
+
+def nodeHasTooltips(node):
+    for idevice in node.idevices:
+        if ideviceHasTooltips(idevice):
             return True
     return False
