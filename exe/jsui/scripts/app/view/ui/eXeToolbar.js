@@ -363,6 +363,9 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             // Style designer
                             {
                                 xtype: 'accesskey_menuitem',
+								style: {
+									display: "none"
+								},						
                                 text: _('Style Designer'),
                                 menu: {
                                     xtype: 'menu',
