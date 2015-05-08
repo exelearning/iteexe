@@ -1,0 +1,139 @@
+/* Kids Style for eXeLearning (see config.xml for details) */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(open-sans.woff2) format('woff2'), url(open-sans.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(open-sans-bold.woff2) format('woff2'), url(open-sans-bold.woff) format('woff');
+}
+html{font-size:105%}
+body{font:100%/1.5 'Open Sans',Arial,Verdana,Helvetica,sans-serif;line-height:1.5em;padding:15px;margin:0;text-align:left;color:#333;background-color:#aee7d3}
+
+h2{font-size:1.3em}
+h3{font-size:1.2em}
+h4{font-size:1.1em}
+h5{font-size:1em}
+p{margin:1em 0}
+a{color:#771F35}
+.iDevice_inner a{color:#B85F75}
+.score.js-feedback{margin-bottom:1em}
+
+#header,#emptyHeader,#nodeDecoration{padding:0 20px;height:112px;line-height:112px;font-size:1.8em;font-weight:700;background-color:#5ab493;border:10px solid #468770}
+#headerContent{color:#cff0e5}
+#header h1,#nodeDecoration h1{margin:0;font-size:1em;text-align:center;color:#cff0e5}
+#nodeDecoration{margin-bottom:15px} /* Single page */
+.nodeDecoration h1{font-size:1.5em}
+
+.exe-single-page #headerContent{padding-top:0}
+.exe-single-page .nodeTitle{font-size:1.8em;font-weight:700;margin:1.5em 0}
+
+/* iDevices */
+.iDevice{margin:20px 0 30px 0}
+.iDevice_header{letter-spacing:.5px;height:60px;line-height:60px;border:#60c29e solid;border-width:8px 8px 0 8px;padding-left:13px;border-top-left-radius:15px;border-top-right-radius:15px;background:#7ca2d7 url(_style_idevice_header.png) repeat-x 0 bottom}
+.iDeviceTitle{height:60px;font-size:1.3em;vertical-align:bottom;top:auto;display:inline-block;font-weight:700;padding:0 20px 0 130px;background-repeat:no-repeat;background-position:0 50%;margin:0;color:#FFF}
+.iDevice_inner{padding:10px 20px 20px 20px;border:8px solid #60c29e;border-bottom-right-radius:15px;border-bottom-left-radius:15px;border-top:0;background-color:#f9fffc}
+
+/* Clearfix */
+.iDevice_content{overflow:auto}
+.FileAttachIdeviceInc .iDevice_content{margin-bottom:-.5em}
+
+/* Hide/Show iDevice */
+.toggle-idevice{display:block;margin:0;text-align:right}
+.iDevice_header .toggle-idevice{float:right;margin-top:16px;line-height:25px}
+.toggle-idevice a{display:inline-block;width:25px;height:25px;background:url(_style_icons.png) no-repeat 0 -200px;outline:none}
+.toggle-em0 a{background-position:0 -300px}
+.toggle-idevice .show-idevice{background-position:-100px -200px}
+.toggle-em0 .show-idevice{background-position:-100px -300px}
+
+.toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+
+/* iDevice title with background-color */
+input.feedbackbutton{margin:0}
+.hidden-idevice .iDevice_header{border-radius:15px;border-width:8px}
+.iDevice_header .toggle-idevice{margin-right:15px}
+
+.ExternalUrlIdevice iframe{border:0}
+
+/* Reset base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:inherit;font-size:1em}
+li{list-style-position:outside}
+.pre-code{font-size:1.2em}
+
+/* Forms */
+input,select{font-size:1em;font-family:inherit}
+.iDevice_hint_title a{padding-left:25px}
+.MultichoiceIdevice .activity-form,.MultiSelectIdevice .activity-form{margin-bottom:1em}
+.TrueFalseIdevice .activity-form{margin-top:1.5em}
+.TrueFalseIdevice .activity-form:first-child{margin-top:0}
+.TrueFalseIdevice label{margin:0 1em}
+.MultichoiceIdevice input,.MultiSelectIdevice input[type=checkbox],.QuizTestIdevice input[type=radio]{width:16px;height:16px;margin:5px 0 0 12px}
+.MultiSelectIdevice .feedback.iDevice_content{margin-top:1.5em}
+.right-option,.wrong-option{font-style:italic}
+.readingIdevice .iDevice_content:first-child p:last-child,
+.CasestudyIdevice .iDevice_content:first-child p:last-child{margin-bottom:0}
+/* Non-Interactive Activities */
+.readingIdevice .feedbackbutton,
+.CasestudyIdevice .feedbackbutton,
+.ReflectionIdevice .feedbackbutton{margin:.5em 0}
+ 
+/* Submit buttons */
+.iDevice_buttons input[type=submit],.iDevice_buttons input[type=button],.iDevice_buttons input[type=reset]{
+-moz-border-bottom-colors:none;
+-moz-border-left-colors:none;
+-moz-border-right-colors:none;
+-moz-border-top-colors:none;
+background-color:#f1f1f1;
+background-image:linear-gradient(to bottom, #f6f6f6, #eaeaea);
+background-repeat:repeat-x;
+border-color:#cfcfcf #cfcfcf #b5b5b5;
+border-image:none;
+border-radius:5px;
+border-style:solid;
+border-width:1px;
+box-shadow:0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+display:inline-block;
+line-height:2em;
+font-size:1em;
+padding:5px 15px;
+color:#444;
+margin-right:.5em;
+text-shadow:0 1px 1px rgba(255, 255, 255, 0.75)
+}
+
+/* Hint & Feedback */
+.iDevice_hint_content{border-radius:10px;border:1px solid #EEE;background:#f9f9f9}
+.iDevice_inner .feedback{background:#fff6db;border-radius:10px;border:1px solid #ffe38e;padding:0 1em;margin-top:1em}
+.iDevice_inner .iDevice_answer-feedback{background:none;border:none;padding:0;margin:0}
+.TrueFalseIdevice .feedback{margin-top:1.5em}   
+
+/* Icons */
+.iDeviceTitle{background-image:url(icon_exe.png)}
+.ListaIdevice .iDeviceTitle,
+.QuizTestIdevice .iDeviceTitle,
+.MultichoiceIdevice .iDeviceTitle,
+.TrueFalseIdevice .iDeviceTitle,
+.MultiSelectIdevice .iDeviceTitle,
+.ClozeIdevice .iDeviceTitle{background-image:url(icon_question.png)}
+.CasestudyIdevice .iDeviceTitle{background-image:url(icon_tool.png)}
+.preknowledgeIdevice .iDeviceTitle{background-image:url(icon_cabinet.png)}
+.GalleryIdevice .iDeviceTitle{background-image:url(icon_picture.png)}
+.objectivesIdevice .iDeviceTitle{background-image:url(icon_objective.png)}
+.ReflectionIdevice .iDeviceTitle{background-image:url(icon_reflection.png)}
+.readingIdevice .iDeviceTitle{background-image:url(icon_reading.png)}
+.activityIdevice .iDeviceTitle{background-image:url(icon_internet.png)}
+.WikipediaIdevice .iDeviceTitle{background-image:url(icon_wikipedia.png)}
+
+.js .em_iDevice{position:relative;padding-top:10px}
+.icon_wrapper{width:120px;height:120px;background-repeat:no-repeat;position:absolute;top:0;left:20px}
+.js .iDevice_inner{padding-top:20px}
+
+#siteFooter{padding:20px;text-align:center;border:1px solid #aee7d3}
+
+/* Lightbox */
+.pp_overlay{filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100)!important;opacity:1!important}
