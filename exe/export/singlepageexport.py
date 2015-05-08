@@ -192,11 +192,8 @@ class SinglePageExport(object):
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(self.outputDir/'xspf_player.swf')
         if hasGallery:
-            imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
-            imageGalleryCSS.copyfile(self.outputDir/'exe_lightbox.css') 
-            imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
-            imageGalleryJS.copyfile(self.outputDir/'exe_lightbox.js') 
-            self.imagesDir.copylist(('exe_lightbox_close.png', 'exe_lightbox_loading.gif', 'exe_lightbox_next.png', 'exe_lightbox_prev.png'), self.outputDir)
+            exeLightbox = (self.scriptsDir/'exe_lightbox')
+            exeLightbox.copyfiles(self.outputDir)
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(self.outputDir/'exe_wikipedia.css')

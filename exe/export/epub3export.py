@@ -555,11 +555,8 @@ class Epub3Export(object):
             videofile = (self.templatesDir / 'xspf_player.swf')
             videofile.copyfile(contentPages / 'xspf_player.swf')
         if hasGallery:
-            imageGalleryCSS = (self.cssDir / 'exe_lightbox.css')
-            imageGalleryCSS.copyfile(contentPages / 'exe_lightbox.css')
-            imageGalleryJS = (self.scriptsDir / 'exe_lightbox.js')
-            imageGalleryJS.copyfile(contentPages / 'exe_lightbox.js')
-            self.imagesDir.copylist(('exe_lightbox_close.png', 'exe_lightbox_loading.gif', 'exe_lightbox_next.png', 'exe_lightbox_prev.png'), contentPages)
+            exeLightbox = (self.scriptsDir / 'exe_lightbox')
+            exeLightbox.copyfiles(contentPages)
         if hasWikipedia:
             wikipediaCSS = (self.cssDir / 'exe_wikipedia.css')
             wikipediaCSS.copyfile(contentPages / 'exe_wikipedia.css')
