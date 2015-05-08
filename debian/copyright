@@ -67,9 +67,9 @@ File: /usr/share/exe/webui/templates/mojomagnify.js
 Copyright: 2008-2010 Jacob Seidelin, modified 2013 by Fran Macías
 License: MIT
 
-File: /usr/share/exe/webui/scripts/exe_lightbox.js
-Copyright: Lokesh Dhakar
-License: CC-BY-2.5
+Files: exe/webui/scripts/exe_lightbox/ (prettyPhoto)
+Copyright: Stephane Caron
+License: GPL-2 | CC-BY-2.5
 
 File: /usr/share/exe/webui/scripts/exe_html5.js (HTML5 Shiv)
 Copyright: Alexander Farkas
