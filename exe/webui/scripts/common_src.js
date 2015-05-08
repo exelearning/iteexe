@@ -1295,7 +1295,7 @@ var $exe = {
         $exe.hint.init();
         $exe.setIframesProtocol();
 		$exe.hasTooltips();
-        if (typeof($.prettyPhoto)!='undefined') $("a[rel^='lightbox']").prettyPhoto({social_tools:"",deeplinking:false,opacity:0.85});
+        if (typeof($.prettyPhoto)!='undefined') $("a[rel^='lightbox']").prettyPhoto({social_tools:"",deeplinking:false,opacity:0.95});
     },
 	hasTooltips:function(){
 		if($("A.exe-tooltip").length>0){
