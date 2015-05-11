@@ -25,6 +25,7 @@ AppletBlock can render and process AppletIdevices as XHTML
 import os.path
 from exe.webui.block   import Block
 from exe.webui         import common
+from exe               import globals as G
 #from string            import Template
 
 import logging
@@ -197,7 +198,7 @@ class AppletBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
-        resources = "http://127.0.0.1:%s/%s/resources" % (self.config.port, self.package.name)
+        resources = "%s/%s/resources" % (G.application.exeAppUri, self.package.name)
         appletcode = self.idevice.appletCode
         appletcode = appletcode.replace('&gt;', '>')
         appletcode = appletcode.replace('&lt;', '<')

@@ -60,7 +60,11 @@ https://www.dropbox.com/sh/e14myu6uauy4cre/reQJsHBmOD
 
 20. Install feedparser (available in wheel format from http://www.lfd.uci.edu/~gohlke/pythonlibs/) Unzip it into C:\Python27\Lib .
 
-19. Run make.py
+21. Install Google API and oAuth2 client libraries
+ $ easy_install --upgrade oauth2client
+ $ easy_install --upgrade google-api-python-client
+
+22. Run make.py
 $ cd /path/to/source/installs/windows
 $ python make.py
 

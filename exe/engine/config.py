@@ -190,6 +190,11 @@ class Config(object):
                                     "attachment"]
         # by default, only allow embedding of media types for which a 
         # browser plugin is found:
+        
+        # Set Google API Client Id, must be not empty to enable the publishing
+        # to Google Drive feature
+        self.googleApiClientID = ''
+        
         self.assumeMediaPlugins = False;
         # Let our children override our defaults depending
         # on the OS that we're running on
@@ -438,6 +443,8 @@ class Config(object):
                 self.showIdevicesGrouped = self.configParser.user.showIdevicesGrouped
             if self.configParser.user.has_option('locale'):
                 self.locale = self.configParser.user.locale
+            if self.configParser.user.has_option('googleApiClientID'):
+                self.googleApiClientID = self.configParser.user.googleApiClientID
                 return
         self.locale = chooseDefaultLocale(self.localeDir)
 
