@@ -211,6 +211,24 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'accesskey_menuitem',
+                                text: _('Publish'),
+                                itemId: 'publish',
+                                accesskey: 'l',
+                                menu: {
+                                    xtype: 'menu',
+                                    items: 
+                                    [
+                                        {
+                                        	xtype: 'accesskey_menuitem',
+                                        	text: _('Google Drive'),
+                                        	accesskey: 'G',
+                                        	itemId: 'file_export_googledrive'
+                                         },
+                                    ]
+                                },
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
                                 text: _('Export'),
                                 accesskey: 'e',
                                 menu: {
@@ -262,12 +280,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                                         text: _('Self-contained Folder'),
                                                         accesskey: 'f',
                                                         itemId: 'file_export_website'
-                                                    },
-                                                    {
-                                                        xtype: 'accesskey_menuitem',
-                                                        text: _('Publish in Google Drive'),
-                                                        accesskey: 'f',
-                                                        itemId: 'file_export_googledrive'
                                                     },
                                                     {
                                                         xtype: 'accesskey_menuitem',
