@@ -786,11 +786,25 @@ Ext.define('eXe.controller.Toolbar', {
             // This will open a pop-up window, on wich it the Google auth pages
             // will be loaded. After authorization the user will be redirected
             // to eXe's callback URI. The script on that URI must take access_token
-            // from URL and call the appropiate function in this page
-            gapi.auth.authorize(
-                {'client_id': GOOGLE_API_CLIENT_ID, 'scope': GOOGLE_API_SCOPES.join(' '), 'redirect_uri' : GOOGLE_API_REDIRECT_URI, 'immediate': false},
-                this.processExportGoogleDrive
-            );
+            // from URL and call the appropiate function in this page.
+            // If the authorization process is started without user interaction,
+            // the pop-up window might be blocked, attaching the gapi.auth.authorize()
+            // call to a button click event will prevent that.
+            Ext.Msg.show({
+                title: _('You must authorize eXe Learning to export contents into your Google Drive account'),
+                msg: _('Are you sure you want to start authorization process?'),
+                scope: this,
+                modal: true,
+                buttons: Ext.Msg.YESNO,
+                fn: function(button) {
+                    if (button == "yes") {  
+                        gapi.auth.authorize(
+                            {'client_id': GOOGLE_API_CLIENT_ID, 'scope': GOOGLE_API_SCOPES.join(' '), 'redirect_uri' : GOOGLE_API_REDIRECT_URI, 'immediate': false},
+                            this.processExportGoogleDrive
+                        );
+                    }
+                }
+            });
         }
         else {
             eXe.controller.eXeViewport.prototype.gDriveNotificationStatus('Starting publication of this document in Google Drive');
