@@ -992,3 +992,18 @@ def nodeHasTooltips(node):
         if ideviceHasTooltips(idevice):
             return True
     return False
+## JM_INI
+def hasQuizTest(node):
+    for idevice in node.idevices:
+        if hasattr(idevice, "isQuiz"):
+            if idevice.isQuiz == True:
+                return True
+    return False
+
+def getQuizTestPassRate(node):
+    for idevice in node.idevices:
+        if hasattr(idevice, "isQuiz"):
+            if idevice.isQuiz == True:
+                return idevice.passRate
+    return False
+## JM_END
