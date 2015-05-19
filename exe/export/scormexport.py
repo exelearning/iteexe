@@ -333,10 +333,11 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
         else:
             self.itemStr += escape(page.node.titleShort)
         self.itemStr += "</title>\n"
-        ## JM_INI
+
+        ## SCORM 12 specific metadata: Mastery Score is an ADL extension to the IMS Content Packaging Information Model
+        ## Added for FR [#2501] Add masteryscore to manifest in evaluable nodes
         if self.scormType == "scorm1.2" and common.hasQuizTest(page.node):
             self.itemStr += "    <adlcp:masteryscore>%s</adlcp:masteryscore>\n" % common.getQuizTestPassRate(page.node)
-        ## JM_END
         
         ## RESOURCES
         
