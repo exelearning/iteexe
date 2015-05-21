@@ -67,7 +67,13 @@ dataFiles(["exe/webui/style",
 
 g_oldBase = "exe"
 g_newBase = "."
-dataFiles(["exe/locale", "exe/mediaprofiles"])
+exc = []
+exc = glob.glob(g_oldBase + "/locale/*/LC_MESSAGES/*.po")
+exc.append(g_oldBase + "/locale/ja/exe_jp.xlf")
+exc.append(g_oldBase + "/locale/ja/exe_ja.xlf")
+exc.append(g_oldBase + "/locale/messages.pot")
+exc.sort()
+dataFiles(["exe/locale", "exe/mediaprofiles"], exc)
 
 g_oldBase = "exe/jsui"
 g_newBase = "."
@@ -78,7 +84,7 @@ opts = {
  "py2exe": {
    "packages": ["encodings", "nevow", "nevow.flat", "cProfile", "functools", "csv", "libxml2", "robotparser", "chardet", "lxml", "feedparser", "BeautifulSoup", "oauth2client", "googleapiclient", "BaseHTTPServer"],
    "includes": ["PngImagePlugin", "JpegImagePlugin", "GifImagePlugin",
-                "IcoImagePlugin", "BmpImagePlugin", "httplib2"],
+                "IcoImagePlugin", "BmpImagePlugin"],
 
  }
 }
