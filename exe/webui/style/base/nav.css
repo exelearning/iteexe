@@ -60,6 +60,7 @@ body{padding:0;text-align:center}
 
 @media screen and (max-width: 980px) {
 	.exe-web-site #content{width:100%;border:0;box-shadow:none}
+	.iDeviceTitle {max-width:80%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 	#main{padding:20px 30px 0 280px}
 	#siteNav{width:250px;margin-right:30px}
 }

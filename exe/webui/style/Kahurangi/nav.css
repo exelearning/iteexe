@@ -56,6 +56,7 @@ html[xmlns] #content{display:block}
 /* Responsive design */
 @media all and (max-width: 980px) {
 	body{padding:0}
+	#main .iDeviceTitle{max-width:85%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline-block;margin:0}
 	#content{border:none;background-position:199px 0}
 	#main-wrapper,#bottomPagination,#siteFooter{padding-left:220px}
 	#siteNav{width:200px}
