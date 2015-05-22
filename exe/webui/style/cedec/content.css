@@ -86,6 +86,10 @@ ul li {
 	list-style-image:url(bullet.gif);
 }
 
+/* Cita con autoría */
+.styled-qc{margin-top:2.5em}
+.styled-qc:before{top:0}
+
 /* Estilo para el título del NODO, que es cada una de las entradas
 de la jerarquía de contenidos que crearemos con eXe */
 #main {

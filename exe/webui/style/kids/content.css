@@ -64,6 +64,8 @@ input.feedbackbutton{margin:0}
 .feedback{font-family:inherit;font-size:1em}
 li{list-style-position:outside}
 .pre-code{font-size:1.2em}
+.styled-qc{margin-top:2.5em}
+.styled-qc:before{top:0}
 
 /* Forms */
 input,select{font-size:1em;font-family:inherit}

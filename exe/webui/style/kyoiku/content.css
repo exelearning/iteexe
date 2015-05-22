@@ -219,6 +219,10 @@ span.iDeviceTitle{height:48px;display:block}
 	overflow-y:auto;
 }
 
+/* Cita con autoría */
+.styled-qc{margin-top:2.5em}
+.styled-qc:before{top:0}
+
 /* Formularios y botones */
 input {
 	font-weight:bold;
