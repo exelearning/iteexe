@@ -216,6 +216,7 @@ body{
 	border-top-color: #C6D644;
 	position: fixed;
 	width: 100%;
+	height:4px;
 	left: 0px;
 	bottom: 0px;
 	background-image: url(tknika_adarrak.jpg);
@@ -228,9 +229,9 @@ body{
 	display: none;	
 }
 	
-.no-nav #bottomPagination{
+/*.no-nav #bottomPagination{
 	padding-left:20px;
-}
+}*/
 	
 /* Autoclear */
 
@@ -328,6 +329,7 @@ html[xmlns] #content{
 	#bottomPagination{
 /*		margin-bottom:15px;
 */		padding-left:20px;
+		position: fixed;
 		
 	}
 		
@@ -539,6 +541,7 @@ html[xmlns] #content{
 		
     #bottomPagination,.no-nav #bottomPagination{
 		height:50px;
+		position: fixed;
 	}
 		
 	#bottomPagination .pagination a{
@@ -592,7 +595,7 @@ html[xmlns] #content{
 	font-weight: bold;
 	letter-spacing: 1px;
 	font-variant: normal;
-	background-color: #1a1a1a;
+	background-color: #000;
 	text-transform: uppercase;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -603,11 +606,26 @@ html[xmlns] #content{
 	z-index: 100;
 	background-attachment: fixed;
 	}
+	
+	#nav-toggler .hide-nav{
+	background-image: url(ocultar.jpg);
+	background-repeat: no-repeat;
+	background-position: 50% 70px;
+	background-color: #000;
+	
+}
+	#nav-toggler .show-nav{
+	background-image: url(ver.jpg);
+	background-repeat: no-repeat;
+	background-position: 50% 65px;
+	background-color: #000;
+
+}
 		
 	#nav-toggler a:hover{
 	text-decoration: none;
 	color: #fff;
-	background-color: #000000;
+	/*background-color: #000000;*/
 	}
 		
 	#nav-toggler a:focus{
