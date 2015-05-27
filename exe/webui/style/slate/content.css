@@ -54,6 +54,8 @@ input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1
 .feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+.exe-dl .icon{line-height:17px}
+.js .exe-dl dd{margin-left:34px}
 /* Form buttons */
 .feedbackbutton{background:#FFFDB1;margin-bottom:1em}
 /* Hide/Show iDevice */

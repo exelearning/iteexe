@@ -46,6 +46,8 @@ input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1
 .feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+.exe-dl .icon{line-height:16px}
+.js .exe-dl dd{margin-left:34px}
 /* Form buttons */
 .iDevice_inner input[type=submit],.feedbackbutton{background:#888;border:0;padding:3px 5px;color:#fff;border-radius:5px;text-shadow:1px 1px 1px #000;box-shadow:1px 1px 3px 0 #ccc;margin-bottom:1em}
 .iDevice_inner input[type=submit]:hover,.feedbackbutton:hover{background:#555;color:#f3f3f3;box-shadow:none}

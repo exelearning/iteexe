@@ -1296,7 +1296,49 @@ var $exe = {
         $exe.setIframesProtocol();
 		$exe.hasTooltips();
         if (typeof($.prettyPhoto)!='undefined') $("a[rel^='lightbox']").prettyPhoto({social_tools:"",deeplinking:false,opacity:0.95});
+		$exe.dl.init();
     },
+	rgb2hex : function(rgb) {
+		if (/^#[0-9A-F]{6}$/i.test(rgb)) return rgb;
+		rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+		function hex(x) {
+			return ("0" + parseInt(x).toString(16)).slice(-2);
+		}
+		return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+	},
+	useBlackOrWhite : function(h){
+		var r = parseInt(h.substr(0,2),16);
+		var g = parseInt(h.substr(2,2),16);
+		var b = parseInt(h.substr(4,2),16);
+		var y = ((r*299)+(g*587)+(b*114))/1000;
+		return (y >= 128) ? 'black' : 'white';
+	},
+	dl : {
+		init : function(){
+			var l = $("dl.exe-dl");
+			if(l.length==0) return false;
+			var h, e, t, bg, tc, s, id;
+			l.each(function(i){
+				e = this;
+				bg = $exe.rgb2hex($(e).css("color"));
+				tc = $exe.useBlackOrWhite(bg.replace("#",""));
+				s = " style='text-decoration:none;background:"+bg+";color:"+tc+"'";
+				if (e.id=="") e.id = "exe-dl-"+i;
+				id = e.id;
+				$("dt",e).each(function(){
+					t = this;
+					h = $(t).html();
+					$(t).html("<span class='icon'"+s+">» </span><a href='#' onclick='$exe.dl.toggle(this);return false' class='exe-dl-"+i+"-a'>"+h+"</a>");
+				});
+				$(e).before("<p class='exe-dl-toggler'><a href='#"+id+"' onclick='$exe.dl.toggle(\"show\",\""+id+"\");return false;' title='"+$exe_i18n.show+"'"+s+">+</a> <a href='#"+id+"' onclick='$exe.dl.toggle(\"hide\",\""+id+"\");return false;' title='"+$exe_i18n.hide+"'"+s+">-</a></p>");
+			});
+		},
+		toggle : function(e,id) {
+			if (e=="show") $("#"+id+" dd").show();
+			else if (e=="hide") $("#"+id+" dd").hide();
+			else $(e).parent().next("dd").toggle();
+		}
+	},	
 	hasTooltips:function(){
 		if($("A.exe-tooltip").length>0){
 			var p = "";

@@ -302,6 +302,9 @@ iframe {
 	border-radius:9px;
 }
 
+/* base.css */
+.js .exe-dl dd{margin-left:35px}
+
 /* ESTILOS PARA IMPRIMIR */
 img {
 	page-break-inside:avoid;
