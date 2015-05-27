@@ -1,3 +1,10 @@
+intef-exe (3:2.0.4) lucid; urgency=low
+
+  [ Pedro Peña ]
+  * Fix bug with sub menus in Chrome 43
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 22 May 2015 14:25:46 +0200
+
 intef-exe (3:2.0.3) lucid; urgency=low
 
   [Mercedes Cotelo]
