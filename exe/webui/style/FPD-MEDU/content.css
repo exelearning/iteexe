@@ -1,28 +1,20 @@
 /*  ===========================================================================
-    Estilo modificado para el proyecto FPD - MEDU (José Ramón Jiménez Reyes)
+    Estilo creado para el proyecto FPD - MEDU (José Ramón Jiménez Reyes)
     =========================================================================== */
 
 body {
     background: #FFFFFF;
     color: #000000;
-    font-size: 14px;
+    font-size: 1em;
     margin: 1em;;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     text-align: justify;
 }
 
-a { 
+a {
     color: #0087FF;
     text-decoration: none;
     border: 0;
-}
-
-p,.question .iDevice_content p:first-child {
-    margin: 1em 0;
-}
-
-.iDevice_content p:first-child,.iDevice_answer .iDevice_content p:first-child{
-    margin-top:0;
 }
 
 #header {
@@ -85,7 +77,6 @@ h6 {
 /*Listas (están al final debido a un problema con IE)*/
 
 /*Imágenes*/
-
 img {
     margin: 0.5em;
 }
@@ -100,11 +91,12 @@ a .imagen_ampliable {
     border: 0;
 }
 
-.titulo {
+.titulo, .figcaption.header {
+	font-size: 1em;
     text-align: center;
     font-weight: bold;
 }
-.credenciales {
+.credenciales, .figcaption {
     text-align: center;
     font-size: xx-small;
 }
@@ -151,16 +143,16 @@ a .imagen_ampliable {
 }
 pre {
 	color: #000000;
-	margin-top:0;
-	margin-bottom:0;
+	margin-top: -0.4em;
+	margin-bottom: 0.4em;
 	font-size: 12px;
-	font-family: "DejaVu Sans Mono"; 
-	line-height: 20px;	
+	font-family: "DejaVu Sans Mono";
+	line-height: 20px;
 }
 * code {
 	font-size: 12px;
-	font-family: "DejaVu Sans Mono"; 
-	font-weight: bold;	
+	font-family: "DejaVu Sans Mono";
+	font-weight: bold;
 }
 
 pre code {
@@ -237,18 +229,18 @@ table[align="center"] {
 
 /*Tipos de ficheros*/
 .enlace_centrado{text-align: center;margin:1em 0em 1em 0em;}
-.documento{padding:0.2em 0em 0.5em 2em; background:url(./documento.png) no-repeat top left;}
-.pdf{padding:0.2em 0em 0.5em 2em;background:url(./pdf.png) no-repeat top left;}
-.hcalculo{padding:0.2em 0em 0.5em 2em;background:url(./hcalculo.png) no-repeat top left;}
-.dibujo{padding:0.2em 0em 0.5em 2em;background:url(./dibujo.png) no-repeat top left;}
-.presentacion{padding:0.2em 0em 0.5em 2em;background:url(./presentacion.png) no-repeat top left;}
-.imagen{padding:0.2em 0em 0.5em 2em;background:url(./imagen.png) no-repeat top left;}
-.audio{padding:0.2em 0em 0.5em 2em;background:url(./audio.png) no-repeat top left;}
-.video{padding:0.2em 0em 0.5em 2em;background:url(./video.png) no-repeat top left;}
-.paquete{padding:0.2em 0em 0.5em 2em;background:url(./paquete.png) no-repeat top left;}
-.binario{padding:0.2em 0em 0.5em 2em;background:url(./binario.png) no-repeat top left;}
-.html{padding:0.2em 0em 0.5em 2em;background:url(./html.png) no-repeat top left;}
-.tamano{font-size: xx-small;}
+.documento{padding:0.2em 0em 0.5em 2em; background:url(./documento.png) no-repeat 0.5em 25%;}
+.pdf{padding:0.2em 0em 0.5em 2em;background:url(./pdf.png) no-repeat 0.5em 25%;}
+.hcalculo{padding:0.2em 0em 0.5em 2em;background:url(./hcalculo.png) no-repeat 0.5em 25%;}
+.dibujo{padding:0.2em 0em 0.5em 2em;background:url(./dibujo.png) no-repeat 0.5em 25%;}
+.presentacion{padding:0.2em 0em 0.5em 2em;background:url(./presentacion.png) no-repeat 0.5em 25%;}
+.imagen{padding:0.2em 0em 0.5em 2em;background:url(./imagen.png) no-repeat 0.5em 25%;}
+.audio{padding:0.2em 0em 0.5em 2em;background:url(./audio.png) no-repeat 0.5em 25%;}
+.video{padding:0.2em 0em 0.5em 2em;background:url(./video.png) no-repeat 0.5em 25%;}
+.paquete{padding:0.2em 0em 0.5em 2em;background:url(./paquete.png) no-repeat 0.5em 25%;}
+.binario{padding:0.2em 0em 0.5em 2em;background:url(./binario.png) no-repeat 0.5em 25%;}
+.html{padding:0.2em 0em 0.5em 2em;background:url(./html.png) no-repeat 0.5em 25%;}
+.tamano{font-size: xx-small;vertical-align: middle;}
 
 /*Credenciales CC*/
 .cc-by {
@@ -296,7 +288,7 @@ table[align="center"] {
 
 /*glosario*/
 .glosario {
-	border-bottom: 1px dotted; 
+	border-bottom: 1px dotted;
 	border-bottom-color: inherit;
 	outline: none;
 	cursor: help; text-decoration: none;
@@ -313,11 +305,11 @@ a.glosario:hover { text-decoration:none; }
 	text-align: justify;
 	background-image: url("postit.png");
 	background-repeat: no-repeat;
-	background-position: 1em 1em; 
+	background-position: 1em 1em;
 	display: none;
 }
 .glosario:hover span {
-	border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; 
+	border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
 	z-index: 99;
 	display: block;
@@ -331,7 +323,7 @@ a.glosario:hover { text-decoration:none; }
 }
 .glosario:hover em {
 	font-size: 1.2em; font-weight: bold;
-	display: block; 
+	display: block;
 	padding: 1em 0 0.6em 0;
 	margin-left: 3em;
 }
@@ -343,7 +335,7 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
     font-size: 2em;
     top: -0.2em;
     display: inline;
-} 
+}
 
 .emphasis1, .iDevice_wrapper[class*="fpd"] > .iDevice[class*="fpd"] {
     border-radius: 1em;
@@ -373,13 +365,66 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
 {
 	margin: 1em;
 }
+.feedback {
 
+}
 .iDevice_answer .feedback{
     margin-bottom:1em;
 }
-.feedback p{
-	margin-bottom: 0em;
+.feedback p {
+	margin: 0.5em;
 }
+
+.js .iDevice_answer-feedback {
+    padding-left: 0.5em;
+}
+
+.iDevice_answer-field {
+    width: 2em;
+}
+
+.iDevice_answer{
+    padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	margin: 0em;
+}
+.iDevice_answer-content .block{
+    padding: 0em;
+}
+
+.iDevice_answer p {
+    margin-top: 0px;
+}
+
+.VerdaderofalsofpdIdevice .question {
+	margin: 0.5em 0;
+}
+
+p, .question .iDevice_content p:first-child {
+    margin: 0 0 1em 0;
+}
+
+.iDevice_content p:first-child,.iDevice_answer .iDevice_content p:first-child{
+    margin-top: 0em;
+}
+
+.iDevice_content_wrapper br {display: none;}
+
+/*Lighbox*/
+.pp_default {
+	font-size: 0.1em;
+}
+.exeImageGallery {
+	overflow: hidden;
+}
+.pp_gallery {
+  display: none !important;
+}
+div.pp_default .pp_nav .currentTextHolder {
+  font-size: 15px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
 /*Evitamos que se monten los elementos flotantes en otro iDevice*/
 .iDevice_content:before,.iDevice_content:after{content:"";display:table}
 .iDevice_content:after{clear:both}
@@ -562,13 +607,13 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
     -webkit-border-radius: 0.5em;
     padding: 0.15em 0.5em 0.15em 0.5em;
 }
-.resaltado_inline { 
-    background-color: #004781; 
+.resaltado_inline {
+    background-color: #004781;
     border-radius: 0.5em;
     -moz-border-radius: 0.5em;
     -webkit-border-radius: 0.5em;
     color: #FFFFFF;
-    padding: 0.15em 0.5em 0.15em 0.5em; 
+    padding: 0.15em 0.5em 0.15em 0.5em;
 }
 
 /* Estilo para las retroalimentaciones */
@@ -583,7 +628,7 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
     padding: 0.5em;
     margin: 0.5em;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 1em;	
+    font-size: 1em;
 }
 
 
@@ -638,14 +683,14 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
 
 .preknowledgeIdevice table {
 	color: #236122;
-} 
+}
 
 /* Idevice objectives */
 .objectivesIdevice  .iDevice_header{
 	background-image:url(icon_objectives.png);
 }
 
-.objectivesIdevice  .emphasis1 {	
+.objectivesIdevice  .emphasis1 {
 	color: #612413;
 	background-color: #FADAC0;
 	border: 0.1em solid #612413;
@@ -653,14 +698,14 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
 
 .objectivesIdevice table {
 	color: #612413;
-} 
+}
 
 /* Idevice Casestudy*/
 .CasestudyIdevice .iDevice_header {
 	background-image:url(icon_casestudy.png);
 }
 
-.CasestudyIdevice .emphasis1 {	
+.CasestudyIdevice .emphasis1 {
 	color: #0C3052;
 	background-color: #F4F8AC;
 	border: 0.1em solid #0C3052;
@@ -668,7 +713,7 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
 
 .CasestudyIdevice table {
 	color: #0C3052;
-} 
+}
 
 .CasestudyIdevice input.feedbackbutton {
 	text-align: center;
@@ -680,7 +725,7 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
 }
 
 /* Idevice actividad de lectura */
-.readingIdevice .iDevice_header{    
+.readingIdevice .iDevice_header{
 	background-image:url(icon_reading.png);
 }
 
@@ -698,7 +743,7 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
 
 .readingIdevice table {
 	color: #7C3812;
-} 
+}
 
 .readingIdevice  input.feedbackbutton {
 	text-align: center;
@@ -714,7 +759,7 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
 	background-image:url(icon_reflection.png);
 }
 
-.ReflectionIdevice .emphasis1 {	
+.ReflectionIdevice .emphasis1 {
 	color: #660F0F;
 	background-color: #F0D3D3;
 	border: 0.1em solid #660F0F;
@@ -722,7 +767,7 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
 
 .ReflectionIdevice table {
 	color: #660F0F;
-} 
+}
 
 .ReflectionIdevice  input.feedbackbutton {
 	text-align: center;
@@ -738,7 +783,7 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
 	background-image:url(icon_question.gif);
 }
 
-.QuizTestIdevice .emphasis1, .MultiSelectIdevice .emphasis1, .MultichoiceIdevice .emphasis1, .ClozeIdevice .emphasis1, .ClozelangIdevice .emphasis1, .TrueFalseIdevice .emphasis1, .ListaIdevice .emphasis1 {	
+.QuizTestIdevice .emphasis1, .MultiSelectIdevice .emphasis1, .MultichoiceIdevice .emphasis1, .ClozeIdevice .emphasis1, .ClozelangIdevice .emphasis1, .TrueFalseIdevice .emphasis1, .ListaIdevice .emphasis1 {
 	background-color: #DEEDFA;
 	color: #044085;
 	border: 0.1em solid #044085;
@@ -751,7 +796,7 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
 }
 .QuizTestIdevice table , .MultiSelectIdevice table , .MultichoiceIdevice table , .ClozeIdevice table , .ClozelangIdevice table , .TrueFalseIdevice table, .ListaIdevice table {
 	color: #044085;
-} 
+}
 
 .QuizTestIdevice .question, .MultiSelectIdevice .question, .MultichoiceIdevice .question, .ClozeIdevice .question, .ClozelangIdevice .question, .TrueFalseIdevice .question, ListaIdevice .question
 {
@@ -815,7 +860,7 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
 ol.lista_esquema { counter-reset: item }
 .lista_esquema ol{ counter-reset: item }
 .lista_esquema li{ display: block }
-.lista_esquema li:before { 
+.lista_esquema li:before {
       content: counters(item, ".") ".- ";
       counter-increment: item;
 }

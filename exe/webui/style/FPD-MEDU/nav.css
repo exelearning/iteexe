@@ -1,19 +1,17 @@
 /* MAIN CONTENT STYLES */
-
 #content {
-
 }
 
 #main-wrapper{
-	margin-left: 260px;
+	margin-left: 285px;
 	margin-top: 0px;
-	margin-right: 20px;
-	/*position: absolute;
-	text-align:left;*/    
 }
 
 #main{
-    width:100%;
+}
+
+#main #nodeDecoration {
+	padding-top: 0px;
 }
 
 /* ITE elements */
@@ -21,11 +19,13 @@
 	width: 250px;
 	float: left;
 	margin-top: 0px;
-	margin-left:10px;
-	padding-top: 20px;
 	text-align:left;
-	position:absolute;
+	position:fixed;
 	font-family: Helvetica, sans-serif;
+	background-color: rgba(4,64,133,0.5);
+	border-radius: 10px;
+	padding: 10px;
+	margin-right: 1em;
 }
 
 #siteNav ul,#siteNav li{
@@ -36,16 +36,11 @@
 
 #siteNav a {
 	display: block;
-	padding: 4px 0 4px 18px;
-	border-bottom: 1px solid #ffffff;
-	width: 195px;
-	border-top: 1px solid #ffffff;
+	padding: 4px 0 4px 20px;
 	color: #044085;
 	background-color: #DEEDFA;
 	text-decoration: none;
 	border-radius: 1em;
-    	-moz-border-radius: 1em;
-    	-webkit-border-radius: 1em;
 }
 
 #siteNav a:hover {
@@ -57,11 +52,13 @@
 #siteNav #active .active {
 	background-color: #C3DCF7;
 	color: #044085;
-	border-bottom: 1px solid #fff;
 	background-image:url(active_bg.gif);
-	background-position: -2px 1px;
+	background-position: 2px 4px;
 	background-repeat:no-repeat;
 	font-weight: bold;
+}
+#siteNav a{
+
 }
 
 /* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
@@ -72,9 +69,20 @@
 #siteNav ul ul a{
 	display: block;
 	border: 0 !important;
-	width: 187px;
-	margin-left: 10px;
-	padding: 4px 0 4px 16px;
+	margin-left: 0.5em;
+	padding: 4px 0 4px 20px;
+}
+#siteNav ul ul ul a{
+	display: block;
+	border: 0 !important;
+	margin-left: 1em;
+	padding: 4px 0 4px 20px;
+}
+#siteNav ul ul ul ul a{
+	display: block;
+	border: 0 !important;
+	margin-left: 1.5em;
+	padding: 4px 0 4px 20px;
 }
 
 #siteNav .other-section{
@@ -91,8 +99,6 @@
 	padding: 4px 4px 4px 18px;
 	font-weight: bold;
 	border-radius: 1em 0 0 1em;
-    	-moz-border-radius: 1em 0 0 1em;
-    	-webkit-border-radius: 1em 0 0 1em;
 }
 .pagination .prev:hover{
 	color: #044085;
@@ -105,8 +111,6 @@
 	padding: 4px 18px 4px 4px;
 	font-weight: bold;
 	border-radius: 0 1em 1em 0;
-    	-moz-border-radius: 0 1em 1em 0;
-    	-webkit-border-radius: 0 1em 1em 0;
 }
 .pagination .next:hover{
 	color: #044085;
@@ -125,4 +129,162 @@
 #bottomPagination{
     padding:0 20px 20px 0;
     color:#fff;
+}
+
+/* Hide/Show/Skip navigation */
+#nav-toggler {
+	position: relative;
+	z-index:999;
+}
+#nav-toggler a {
+	position: fixed;
+	top:1em; 
+	right:1em;
+}
+#nav-toggler {
+	margin:0px 0px -1em;
+	float:right;
+	top:0px;
+	left:0px;
+	position: relative;
+	z-index:999;
+}
+#nav-toggler a,#skipNav a{
+	padding:4px 7px;
+	border-radius:5px;
+	width: 30px;
+	height: 20px;
+	color: rgba(255, 255, 255, 0);
+	border-radius: 0.5em;
+	background-color: #C3DCF7;
+	box-shadow: 0px 0px 10px 1px rgba(0, 90, 138, 0.3);
+	background: url("icono-menu.png") no-repeat 12px 7px #C3DCF7;
+	position: fixed;top:1em; right:1em;
+}
+#nav-toggler a:hover,#nav-toggler a:focus{
+	background-color:#C3DCF7;
+	color: transparent;
+	text-decoration:none
+	}
+#skipNav{
+	z-index:100px;
+	padding-top:10px;
+	text-align:center;
+	width: 10em;
+}
+
+
+.no-nav #main-wrapper {margin: 0px;}
+
+@media screen and (min-width: 701px) and (max-width: 1015px) {
+	/* Fullsreen mode */
+	body{
+	}
+	#content{
+	}
+	/* Horizontal navigation */
+	#main-wrapper{
+		width:100%;
+		margin-left:0px;
+	}
+	#siteNav .current-page-parent {
+		background-color: #C3DCF7;
+		color: #044085;
+		background-image:url(active_bg.gif);
+		background-position: 2px 4px;
+		background-repeat:no-repeat;
+		font-weight: bold;
+		border-radius: 1em;
+	}
+	#siteNav  li  li {
+		margin-left:1em;
+		width: 12.5em;
+	}
+	#siteNav  ul li li a, #siteNav  ul li li li a {
+		margin-left: 0em;
+	}
+	#siteNav li ul ul {
+		margin:-2.5em 0 0 12.5em;
+		padding-left: 0em;
+	}
+	#siteNav {
+		z-index:999;
+		position:relative;
+		background-color: rgba(4,64,133,0.5);
+		border-radius: 10px;
+		width:100%;
+		list-style:none;
+		padding:0;
+		line-height:1.2em;
+	}
+	#siteNav ul {
+		float:left;
+		width:100%;
+		padding: 10px;
+	}
+	#siteNav ul ul {
+		background-color: rgba(4,64,133,0.5);
+		border-radius: 10px;
+		padding-left: 0em;
+	}
+	#siteNav a {
+		display:block;
+		padding:0.4em 1.2em;
+	}
+	#siteNav li {
+		float:left;
+		margin-left:0.5em;
+	}
+	#siteNav li ul {
+		position:absolute;
+		left:-999em;
+		height:auto;
+		width:14em;
+	}
+	#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul {
+		left:-999em
+	}
+	#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul {
+		left:auto;
+		display:block;
+	}
+	#toggle-nav{
+		display:none;
+	}
+}
+
+@media all and (max-width: 700px) {
+
+	#content .exe-col {
+		float:none;
+		width:100%;
+		padding:0;
+	}
+	iframe,object,embed,table {
+		max-width:100%;
+	}
+	img,video {
+		max-width:100%;
+		height:auto;
+	}
+	#siteNav {
+		float: none;
+		display: block;
+		clear: both;
+		padding: 0px;
+		position: fixed;
+		margin-left: auto;
+		margin-right: auto;
+		width: 200px;
+		background-color: rgba(4,64,133,0.5);
+		border-radius: 10px;
+		padding: 10px;
+		z-index:99;
+	}
+	body {
+		font-size: 0.9em;
+	}
+	#main-wrapper {
+		margin-left: 0px;
+	}
 }
