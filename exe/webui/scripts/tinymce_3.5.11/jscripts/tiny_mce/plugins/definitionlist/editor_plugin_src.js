@@ -8,7 +8,7 @@
 
                 var se = ed.selection;
 
-                var term = "<dt>"+ed.translate('definitionlist.term')+"</dt>\n<dd>"+ed.translate('definitionlist.definition')+"</dd>\n";
+                var term = "<dt>"+ed.translate('definitionlist.term')+"</dt>\n<dd><p>"+ed.translate('definitionlist.definition')+"</p></dd>\n";
                 
                 // No selection and not in DL
                 var p = ed.dom.getParent(se.getNode(), 'DL');
