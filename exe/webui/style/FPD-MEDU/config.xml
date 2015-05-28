@@ -7,4 +7,7 @@
     <author-url>http://www.exelearning.net</author-url>	
     <description>Estilo realizado por José Ramón Jiménez Reyes para el proyecto TodoFP del Ministerio de Educación en el que se elaboraban materiales de Ciclos Formativos de Formación Profesional.</description>
     <license>Creative Commons by-sa</license>
-    <license-url>http://creativecommons.org/licenses/by-sa/3.0/</license-url></theme>
+    <license-url>http://creativecommons.org/licenses/by-sa/3.0/</license-url>
+    <extra-head><![CDATA[<meta name="viewport" content="width=device-width, initial-scale=1" />]]></extra-head>
+	<extra-body><![CDATA[<script type="text/javascript" src="_fpd_js.js"></script>]]></extra-body>
+</theme>
