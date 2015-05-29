@@ -1,15 +1,15 @@
 tinyMCE.addI18n('en.codemagic_dlg', {
-    code_title: "CodeMagic - syntax coloring and intendation",
-    code_label: "Edit code",
-    toggle_highlighting: "Syntax highlighting",
-    toggle_autocompletion: "Auto completion",
-    toggle_wraptext: "Wrap text",
-    search: "Search",
-    replace: "Replace",
-    undo: "Undo",
-    redo: "Redo",
-    search_replace: "Search and Replace",
-    reintendt: "Format HTML code",
-    nothing_found: "Nothing found.",
-    nothing_to_replace: "Nothing to replace."
+    code_title: _("CodeMagic"),
+    code_label: _("Edit HTML Source"),
+    toggle_highlighting: _("Syntax highlighting"),
+    toggle_autocompletion: _("Auto completion"),
+    toggle_wraptext: _("Word Wrap"),
+    search: _("Search"),
+    replace: _("Replace"),
+    undo: _("Undo"),
+    redo: _("Redo"),
+    search_replace: _("Search and Replace"),
+    reintendt: _("Format HTML code"),
+    nothing_found: _("Nothing found."),
+    nothing_to_replace: _("Nothing to replace.")
 });

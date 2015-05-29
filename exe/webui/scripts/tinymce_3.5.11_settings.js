@@ -12,7 +12,7 @@ var $exeTinyMCE = {
     plugins : "exeeffects,addcontent,blockquoteandcite,definitionlist,tooltip,clearfloat,advalign,autolink,lists,pagebreak,style,layer,table,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,exemath,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,visualblocks,pastecode,inlinepopups,spellchecker,template,codemagic",
     buttons1 : "newdocument,spellchecker,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,clearfloat,addcontent,|,bullist,numlist,definitionlist,|,outdent,indent,blockquote,blockquoteandcite,|,formatselect,fontsizeselect,fontselect,|,forecolor,backcolor,|,sub,sup,|,fullscreen",
     buttons2 : "undo,redo,|,cut,copy,paste,pastetext,pasteword,|,pastehtml,pastecode,|,search,replace,|,link,unlink,anchor,tooltip,|,image,media,exeeffects,|,removeformat,cleanup,|,insertdate,inserttime,advhr,cite,abbr,acronym,del,ins,attribs,nonbreaking,|,charmap,exemath,|,styleprops",
-    buttons3 : "template,|,tablecontrols,|,code,codemagic,help",
+    buttons3 : "template,|,tablecontrols,|,codemagic,help",
     templates : "/scripts/tinymce_templates/lang/"+tinyMCE_language+".js",
     
 	init : function(mode,criteria,hide){

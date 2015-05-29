@@ -106,3 +106,20 @@ span.CodeMirror-selected {
 .wrapText {
     word-wrap: break-word;
 }
+
+/* The New eXeLearning */
+.editor-buttons{margin-left:-15em}
+.wrapText .CodeMirror-lines pre {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap
+	white-space: -pre-wrap
+	white-space: -o-pre-wrap
+	word-wrap: break-word;
+}
+.wrapText .CodeMirror-lines {
+	padding:.4em 0;
+}
+.wrapText .CodeMirror-lines div {
+	max-width:100%;
+}
+/* / The New eXeLearning */

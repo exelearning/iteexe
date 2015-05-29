@@ -57,7 +57,7 @@ function onLoadInit() {
     document.getElementById("htmlSource").value = tinyMCEPopup.editor.getContent({ source_view : true });
 
     // format the source code using JS Beautifier plugin
-    beautify("htmlSource");
+    // beautify("htmlSource"); The New eXeLearning (no beautify because it changes the PRE tags content)
 
     if(the.coloring_active) {
         // activate syntax coloring
