@@ -11,5 +11,8 @@ tinyMCE.addI18n('en.codemagic_dlg', {
     search_replace: _("Search and Replace"),
     reintendt: _("Format HTML code"),
     nothing_found: _("Nothing found."),
-    nothing_to_replace: _("Nothing to replace.")
+    nothing_to_replace: _("Nothing to replace."),
+	// The New eXeLearning
+	confirm_beautify: _("Your code has at least one PRE tag.\n\nThis will change the prefformatted content.\n\nDo you really want to continue?")
+	// / The New eXeLearning
 });

@@ -603,6 +603,8 @@ function getCompletions(token, startingTag) {
 *  Vasilevsky, Vital Batmanov, Ron Baldwin, Gabriel Harrison, Chris J. Hull and
 *  others.
 */
+/* The New eXeLearning */
+/* Original function
 function beautify(id) {
     if (the.beautify_in_progress)
         return;
@@ -616,3 +618,21 @@ function beautify(id) {
     document.getElementById(id).value = style_html(source, indent_size, indent_char, 120, brace_style);
     the.beautify_in_progress = false;
 }
+*/
+function executeBeautify(e) {
+	the.beautify_in_progress = true;
+    var source = e.value.replace(/^\s+/, '');
+    var indent_size = 4;
+    var indent_char = ' ';
+    var brace_style = 'collapse';
+    e.value = style_html(source, indent_size, indent_char, 120, brace_style);
+    the.beautify_in_progress = false;
+}
+function beautify(id) {
+    if (the.beautify_in_progress) return;
+    var e = document.getElementById(id);
+	if (e.value.indexOf('</pre>')!=-1) {	
+		if (confirm(tinyMCEPopup.getLang('codemagic_dlg.confirm_beautify'))) executeBeautify(e);
+	} else executeBeautify(e);
+}
+/* / The New eXeLearning */
