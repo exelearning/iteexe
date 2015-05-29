@@ -10,7 +10,7 @@ body{
 }
 
 a{
-	color:#919D22;
+	color:#707820;
 }
 
 #header,#emptyHeader{
@@ -175,7 +175,7 @@ a{
 .iDevice_inner{
 	color: #444;
 	border-radius: 2px;
-	background-color: #D6E178;
+	background-color: #EAF2A8;
 	background-image: url(idevice_lateral.gif);
 	background-repeat: repeat-y;
 	background-position: 0px 0px;
