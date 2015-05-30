@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2015-05-29 17:38+0200\n"
-"PO-Revision-Date: 2015-04-28 00:02+0200\n"
+"PO-Revision-Date: 2015-05-30 13:38+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -3699,53 +3699,53 @@ msgstr "Puede cerrar esta ventana"
 
 #: exe/export/websiteexport.py:94
 msgid "Deleting temporary directory"
-msgstr ""
+msgstr "Borrando directorio temporal"
 
 #: exe/export/websiteexport.py:99
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
 "visit exported site\">%s</a>"
-msgstr ""
+msgstr "Paquete exportado a <a href=\"%s\" target=\"_blank\" title=\"Pulse para visitar el sitio exportado\">%s</a>"
 
 #: exe/export/websiteexport.py:130
 #, python-format
 msgid ""
 "Uploading <em>%s</em> to public folder <a href=\"%s\" target=\"_blank\" "
 "title=\"Click to visit exported site\">%s</a> (%d/%d)"
-msgstr ""
+msgstr "Subiendo <em>%s</em> a la carpeta pública <a href=\"%s\" target=\"_blank\" title=\"Pulse para visitar el sitio exportado\">%s</a> (%d/%d)"
 
 #: exe/export/websiteexport.py:141
 #, python-format
 msgid "File <em>%s</em> skipped, unknown filetype (%d/%d)"
-msgstr ""
+msgstr "Omitido el fichero <em>%s</em>, tipo de fichero desconocido (%d/%d)"
 
 #: exe/export/websiteexport.py:144
 #, python-format
 msgid "Failed upload of file %s (%d/%d)"
-msgstr ""
+msgstr "Fallo al subir el fichero %s (%d/%d)"
 
 #: exe/export/websiteexport.py:150 exe/export/websiteexport.py:182
 msgid "Failed exporting to GoogleDrive"
-msgstr ""
+msgstr "Fallo en la exportación a GoogleDrive"
 
 #: exe/export/websiteexport.py:164
 msgid "Creating public folder to host published web site"
-msgstr ""
+msgstr "Creación de la carpeta pública que contendrá el sitio web"
 
 #: exe/export/websiteexport.py:186
 #, python-format
 msgid "Created public folder to host published web site: %s"
-msgstr ""
+msgstr "Creada la carpeta pública que alojará el sitio web publicado: %s"
 
 #: exe/export/websiteexport.py:193
 #, python-format
 msgid "Exporting package as web site in: %s"
-msgstr ""
+msgstr "Exportando el paquete como sitio web en: %s"
 
 #: exe/export/websiteexport.py:196
 msgid "Starting authorized connection to Google Drive API"
-msgstr ""
+msgstr "Iniciando conexión con autorización a la API de Google Drive"
 
 #: exe/export/websiteexport.py:224 exe/jsui/mainpage.py:828
 #: exe/jsui/mainpage.py:833 exe/jsui/mainpage.py:836 exe/jsui/mainpage.py:839
@@ -3908,7 +3908,7 @@ msgstr "Error al importar HTML:\n"
 #: exe/jsui/mainpage.py:788
 #, python-format
 msgid "Error exporting package %s to Google Drive: %s"
-msgstr ""
+msgstr "Error en la exportación del paquete %s a Google Drive: %s"
 
 #: exe/jsui/mainpage.py:900 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
@@ -4179,9 +4179,8 @@ msgstr "Notas de la versión"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:347
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:485
-#, fuzzy
 msgid "Legal Notes"
-msgstr "Notas de la versión"
+msgstr "Notas legales"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:384
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:416
@@ -4330,13 +4329,13 @@ msgstr "Preferencias de exportación a XLIFF"
 #: exe/jsui/scripts/app/controller/Toolbar.js:760
 #: exe/jsui/scripts/app/controller/Toolbar.js:766
 msgid "Google API Javascript library not available. "
-msgstr ""
+msgstr "La biblioteca javascript de la API de Google no está disponible. "
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:755
 #: exe/jsui/scripts/app/controller/Toolbar.js:761
 #: exe/jsui/scripts/app/controller/Toolbar.js:767
 msgid "Missing Google's client library. "
-msgstr ""
+msgstr "Falta la biblioteca del cliente de Google. "
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:756
 #: exe/jsui/scripts/app/controller/Toolbar.js:762
@@ -4344,32 +4343,31 @@ msgstr ""
 msgid ""
 "Google's API client library is not available, please check your Internet "
 "connection. "
-msgstr ""
+msgstr "No está disponible la biblioteca del cliente de la API de Google, por favor compruebe su conexión a internet. "
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:774
 msgid "App Client ID not set. "
-msgstr ""
+msgstr "ID del cliente de aplicación no establecido. "
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:775
 msgid "Missing App Client ID. "
-msgstr ""
+msgstr "Falta el ID del cliente de aplicación. "
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:776
 msgid ""
 "Please check the App Client ID set in <strong>Tools > Preferences > "
 "Publish to Google Drive</strong>. "
-msgstr ""
+msgstr "Por favor compruebe el ID del cliente de aplicación establecido en <strong>Utilidades > Preferencias > Publicar en Google Drive</strong>. "
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:794
 msgid ""
 "You must authorize eXe Learning to export contents into your Google Drive"
 " account"
-msgstr ""
+msgstr "Debe autorizar a eXeLearning a exportar contenidos a su cuenta de Google Drive"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:795
-#, fuzzy
 msgid "Are you sure you want to start authorization process?"
-msgstr " ¿Seguro que desea deshacer los cambios a todos los campos del formulario?"
+msgstr " ¿Confirma que desea iniciar el proceso de autorización?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:824
 msgid "Select the parent folder for export."
@@ -5557,21 +5555,21 @@ msgstr "Deshabilitar los enlaces internos"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:214
 msgid "Publish to Google Drive"
-msgstr ""
+msgstr "Publicar en Google Drive"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:222
 msgid "Google API client Id"
-msgstr ""
+msgstr "ID de cliente de la API de Google"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:223
 msgid "The ID get from Google Developer console."
-msgstr ""
+msgstr "El ID recibido desde la consola de desarrolladores de Google."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:230
 msgid ""
 "This ID can be obtained from your Google Developer console and identifies"
 " your eXe installation as an unique app with access to Google API's"
-msgstr ""
+msgstr "Puede obtener este ID desde la consola de desarrolladores de Google e identifica su instalación de eXe como una aplicación única con acceso a la APIs de Google"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:269
 msgid "Show this window on eXe start"
@@ -5799,13 +5797,12 @@ msgid "XLIFF File"
 msgstr "Archivo XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
-#, fuzzy
 msgid "Publish"
-msgstr "editor de publicación"
+msgstr "Publicar"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:223
 msgid "Google Drive"
-msgstr ""
+msgstr "Google Drive"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:239
 msgid "Educational Standard"
@@ -5837,7 +5834,7 @@ msgstr "Carpeta auto-contenida"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:286
 msgid "Publish in Google Drive"
-msgstr ""
+msgstr "Publicar en Google Drive"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
 msgid "Zip File"
@@ -5873,18 +5870,16 @@ msgstr "Utilidades"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:393
 #: exe/webui/tools/style-designer/langs/en.js:6
-#, fuzzy
 msgid "Style Designer"
-msgstr "diseñador educativo"
+msgstr "Diseñador de estilos"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:401
-#, fuzzy
 msgid "Create new Style"
-msgstr "¿Borrar el estilo?"
+msgstr "¿Crear un estilo nuevo?"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:406
 msgid "Edit current Style"
-msgstr ""
+msgstr "Editar el estilo actual"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:422
 msgid "Resources Report"
@@ -11567,394 +11562,359 @@ msgid "An unexpected error has occurred"
 msgstr "Se ha producido un error inesperado"
 
 #: exe/webui/tools/style-designer/langs/en.js:9
-#, fuzzy
 msgid "General settings"
 msgstr "Configuración general"
 
 #: exe/webui/tools/style-designer/langs/en.js:10
-#, fuzzy
 msgid "Page width"
-msgstr "Reemplazar por"
+msgstr "Ancho de la página"
 
 #: exe/webui/tools/style-designer/langs/en.js:11
-#, fuzzy
 msgid "Percentage"
-msgstr "Experimental"
+msgstr "Porcentaje"
 
 #: exe/webui/tools/style-designer/langs/en.js:12
-#, fuzzy
 msgid "Pixels"
-msgstr "Ancho (píxeles)"
+msgstr "Píxeles"
 
 #: exe/webui/tools/style-designer/langs/en.js:13
-#, fuzzy
 msgid "Page position"
-msgstr "Posición"
+msgstr "Posición de la página"
 
 #: exe/webui/tools/style-designer/langs/en.js:16
-#, fuzzy
 msgid "Shadow color"
-msgstr "¿Mostrar la puntuación?"
+msgstr "Color de la sombra"
 
 #: exe/webui/tools/style-designer/langs/en.js:17
-#, fuzzy
 msgid "Border width"
-msgstr "border"
+msgstr "Ancho del borde"
 
 #: exe/webui/tools/style-designer/langs/en.js:18
-#, fuzzy
 msgid "Border color"
 msgstr "Color del borde"
 
 #: exe/webui/tools/style-designer/langs/en.js:19
-#, fuzzy
 msgid "Text and Links"
-msgstr "Indexar y seguir los vínculos"
+msgstr "Texto y enlaces"
 
 #: exe/webui/tools/style-designer/langs/en.js:22
-#, fuzzy
 msgid "Text color"
 msgstr "Color del texto"
 
 #: exe/webui/tools/style-designer/langs/en.js:24
-#, fuzzy
 msgid "Links"
-msgstr "Parpadeo"
+msgstr "Enlaces"
 
 #: exe/webui/tools/style-designer/langs/en.js:25
-#, fuzzy
 msgid "Links color"
-msgstr "Color del enlace"
+msgstr "Color de los enlaces"
 
 #: exe/webui/tools/style-designer/langs/en.js:28
 msgid "Page background (only Web Site)"
-msgstr ""
+msgstr "Fondo de la página (sólo sitio web)"
 
 #: exe/webui/tools/style-designer/langs/en.js:30
-#, fuzzy
 msgid "Background color"
-msgstr "Color de fondo"
+msgstr "Color del fondo"
 
 #: exe/webui/tools/style-designer/langs/en.js:31
-#, fuzzy
 msgid "Select image"
 msgstr "Seleccionar una imagen"
 
 #: exe/webui/tools/style-designer/langs/en.js:35
 msgid "Left - Top"
-msgstr ""
+msgstr "Izquierda - Arriba"
 
 #: exe/webui/tools/style-designer/langs/en.js:36
-#, fuzzy
 msgid "Left - Center"
-msgstr "Seleccionar licencia."
+msgstr "Izquierda - Centro"
 
 #: exe/webui/tools/style-designer/langs/en.js:37
-#, fuzzy
 msgid "Left - Bottom"
-msgstr "Texto abajo"
+msgstr "Izquierda - Abajo"
 
 #: exe/webui/tools/style-designer/langs/en.js:38
 msgid "Center - Center"
-msgstr ""
+msgstr "Centro - Centro"
 
 #: exe/webui/tools/style-designer/langs/en.js:39
 msgid "Center - Top"
-msgstr ""
+msgstr "Centro - Arriba"
 
 #: exe/webui/tools/style-designer/langs/en.js:40
-#, fuzzy
 msgid "Center - Bottom"
-msgstr "Texto abajo"
+msgstr "Centro - Abajo"
 
 #: exe/webui/tools/style-designer/langs/en.js:41
 msgid "Right - Top"
-msgstr ""
+msgstr "Derecha - Arriba"
 
 #: exe/webui/tools/style-designer/langs/en.js:42
-#, fuzzy
 msgid "Right - Center"
-msgstr "Alinear al centro"
+msgstr "Derecha - Centro"
 
 #: exe/webui/tools/style-designer/langs/en.js:43
 msgid "Right - Bottom"
-msgstr ""
+msgstr "Derecha - Abajo"
 
 #: exe/webui/tools/style-designer/langs/en.js:47
 msgid "Only vertical"
-msgstr ""
+msgstr "Sólo vertical"
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Only horizontal"
-msgstr ""
+msgstr "Sólo horizontal"
 
 #: exe/webui/tools/style-designer/langs/en.js:49
 msgid "Contents area background"
-msgstr ""
+msgstr "Fondo del área de contenido"
 
 #: exe/webui/tools/style-designer/langs/en.js:50
 msgid "The \"Page background\" will only be used when exporting as Web Site."
-msgstr ""
+msgstr "El \"fondo de la página\" sólo se usará en la exportación a sitio web."
 
 #: exe/webui/tools/style-designer/langs/en.js:51
 msgid ""
 "The \"Contents area background\" will also be used when exporting as IMS,"
 " SCORM or ePub3."
-msgstr ""
+msgstr "El \"fondo del área de contenido\" sólo se usará en las exportaciones a IMS, SCORM o ePub3."
 
 #: exe/webui/tools/style-designer/langs/en.js:53
-#, fuzzy
 msgid "Header and Footer"
-msgstr "Lea y complete"
+msgstr "Cabecera y pie"
 
 #: exe/webui/tools/style-designer/langs/en.js:57
-#, fuzzy
 msgid "Project title"
-msgstr "Propiedades del proyecto"
+msgstr "Título del proyecto"
 
 #: exe/webui/tools/style-designer/langs/en.js:58
 msgid "Hide the title"
-msgstr ""
+msgstr "Ocultar el título"
 
 #: exe/webui/tools/style-designer/langs/en.js:60
 msgid "same font as the page"
-msgstr ""
+msgstr "mismo tipo de letra que la página"
 
 #: exe/webui/tools/style-designer/langs/en.js:63
-#, fuzzy
 msgid "Top margin"
 msgstr "Margen superior"
 
 #: exe/webui/tools/style-designer/langs/en.js:64
-#, fuzzy
 msgid "Font size"
-msgstr "Tamaño de fuente:"
+msgstr "Tamaño del tipo de letra:"
 
 #: exe/webui/tools/style-designer/langs/en.js:66
-#, fuzzy
 msgid "Navigation"
-msgstr "mapa de navegación"
+msgstr "Navegación"
 
 #: exe/webui/tools/style-designer/langs/en.js:67
 msgid "Main menu"
-msgstr ""
+msgstr "Menú principal"
 
 #: exe/webui/tools/style-designer/langs/en.js:68
 msgid "Hide the menu"
-msgstr ""
+msgstr "Ocultar el menú"
 
 #: exe/webui/tools/style-designer/langs/en.js:69
-#, fuzzy
 msgid "Horizontal navigation"
-msgstr "Posición horizontal"
+msgstr "Navegación horizontal"
 
 #: exe/webui/tools/style-designer/langs/en.js:70
-#, fuzzy
 msgid "Active background"
-msgstr "¿Ajustar imagen de fondo?"
+msgstr "Fondo activo"
 
 #: exe/webui/tools/style-designer/langs/en.js:71
-#, fuzzy
 msgid "Active link color"
-msgstr "Color activo"
+msgstr "Color de enlace activo"
 
 #: exe/webui/tools/style-designer/langs/en.js:72
-#, fuzzy
 msgid "Other navigation options"
-msgstr "mapa de navegación"
+msgstr "Otras opciones de navegación"
 
 #: exe/webui/tools/style-designer/langs/en.js:73
-#, fuzzy
 msgid "Use icons"
-msgstr "Segundos"
+msgstr "Usar iconos"
 
 #: exe/webui/tools/style-designer/langs/en.js:75
-#, fuzzy
 msgid "Icons color"
-msgstr "Color del enlace"
+msgstr "Color de los iconos"
 
 #: exe/webui/tools/style-designer/langs/en.js:76
-#, fuzzy
 msgid "Grey"
-msgstr "figura"
+msgstr "Gris"
 
 #: exe/webui/tools/style-designer/langs/en.js:80
-#, fuzzy
 msgid "With emphasis"
-msgstr "Sin destacar"
+msgstr "Destacado"
 
 #: exe/webui/tools/style-designer/langs/en.js:81
-#, fuzzy
 msgid "Title color"
-msgstr "Color activo"
+msgstr "Color del título"
 
 #: exe/webui/tools/style-designer/langs/en.js:82
-#, fuzzy
 msgid "Title background"
-msgstr "¿Ajustar imagen de fondo?"
+msgstr "Fondo del título"
 
 #: exe/webui/tools/style-designer/langs/en.js:83
 msgid "No emphasis (Free Text...)"
-msgstr ""
+msgstr "Sin destacar (texto libre...)"
 
 #: exe/webui/tools/style-designer/langs/en.js:84
 msgid "Show box"
-msgstr ""
+msgstr "Mostrar recuadro"
 
 #: exe/webui/tools/style-designer/langs/en.js:85
 msgid "Icon to hide/show the iDevice"
-msgstr ""
+msgstr "Icono para mostrar/ocultar el iDevice"
 
 #: exe/webui/tools/style-designer/langs/en.js:88
 msgid "This code will be included at the end of content.css"
-msgstr ""
+msgstr "Este código va incluido al final de content.css"
 
 #: exe/webui/tools/style-designer/langs/en.js:89
 msgid "content.css is included any time you export, and always after base.css."
-msgstr ""
+msgstr "content.css se incluye cada vez que usted hace una exportación, y siempre tras base.css."
 
 #: exe/webui/tools/style-designer/langs/en.js:90
 msgid "This code will be included at the end of nav.css"
-msgstr ""
+msgstr "Este código va incluido al final de nav.css"
 
 #: exe/webui/tools/style-designer/langs/en.js:91
 msgid ""
 "nav.css is only included when you export as Web Site, and always after "
 "content.css."
-msgstr ""
+msgstr "nav.css sólo se incluye si usted hace una exportación a sitio web, y siempre tras content.css."
 
 #: exe/webui/tools/style-designer/langs/en.js:92
 msgid "content.css content"
-msgstr ""
+msgstr "Contenido de content.css"
 
 #: exe/webui/tools/style-designer/langs/en.js:93
 msgid "nav.css content"
-msgstr ""
+msgstr "Contenido de nav.css"
 
 #: exe/webui/tools/style-designer/langs/en.js:94
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
-msgstr ""
+msgstr "Las sombras no funcionarán en navegadores que no reconozcan CSS3 (IE6, IE7...)."
 
 #: exe/webui/tools/style-designer/langs/en.js:97
-#, fuzzy
 msgid "Finish"
-msgstr "Finlandés "
+msgstr "Finalizar"
 
 #: exe/webui/tools/style-designer/langs/en.js:98
 msgid "Save the current design and close the Style Designer?"
-msgstr ""
+msgstr "¿Guardar el diseño actual y cerrar el diseñador de estilos?"
 
 #: exe/webui/tools/style-designer/langs/en.js:99
 msgid "Your browser is not compatible with this tool."
-msgstr ""
+msgstr "Su navegador no es compatible con esta herramienta."
 
 #: exe/webui/tools/style-designer/langs/en.js:100
 msgid "The Hide/Show menu option is disabled in the Style Designer"
-msgstr ""
+msgstr "La opción del menú Ocultar/Mostrar está desabilitada en el diseñador de estilos"
 
 #: exe/webui/tools/style-designer/langs/en.js:101
 msgid ""
 "Please, make your browser bigger. The Style Designer requires at least a "
 "1024x768 screen resolution"
-msgstr ""
+msgstr "Por favor amplíe su navegador. El diseñador de estilos necesita al menos una resolución de pantalla de 1024x768"
 
 #: exe/webui/tools/style-designer/langs/en.js:102
 msgid "The Style Designer window is not open."
-msgstr ""
+msgstr "La ventana del diseñador de estilos no está abierta."
 
 #: exe/webui/tools/style-designer/langs/en.js:103
 msgid "This window will be closed. Please restart the tool."
-msgstr ""
+msgstr "Se va a cerrar esta ventana. Por favor reinicie la utilidad."
 
 #: exe/webui/tools/style-designer/langs/en.js:104
 msgid "Just close this window and your design preview without clicking on Finish."
-msgstr ""
+msgstr "Cierre esta ventana y la vista previa del diseño sin pulsar en Finalizar."
 
 #: exe/webui/tools/style-designer/langs/en.js:109
 msgid "Drag markers to pick a color"
-msgstr ""
+msgstr "Arrastre los marcadores para elegir un color"
 
 #: exe/webui/tools/style-designer/langs/en.js:111
-#, fuzzy
 msgid "Current"
-msgstr "representar"
+msgstr "Actual"
 
 #: exe/webui/tools/style-designer/langs/en.js:117
 msgid "New Color - Press OK to Commit"
-msgstr ""
+msgstr "Color nuevo - pulse en De acuerdo para guardarlo"
 
 #: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Click to revert to original color"
-msgstr ""
+msgstr "Pulse para volver al color original"
 
 #: exe/webui/tools/style-designer/langs/en.js:121
 msgid "Commit to this color selection"
-msgstr ""
+msgstr "Confirmar esta selección de color"
 
 #: exe/webui/tools/style-designer/langs/en.js:122
 msgid "Cancel and revert to original color"
-msgstr ""
+msgstr "Cancelar y volver al color original"
 
 #: exe/webui/tools/style-designer/langs/en.js:125
 msgid "Set to Hue color mode"
-msgstr ""
+msgstr "Cambiar a modo de tono de color"
 
 #: exe/webui/tools/style-designer/langs/en.js:126
 msgid "Enter a Hue value (0-360º)"
-msgstr ""
+msgstr "Introduzca un valor de tono (0-360º)"
 
 #: exe/webui/tools/style-designer/langs/en.js:129
 msgid "Set to Saturation color mode"
-msgstr ""
+msgstr "Cambiar a modo de saturación de color"
 
 #: exe/webui/tools/style-designer/langs/en.js:130
 msgid "Enter a Saturation value (0-100%)"
-msgstr ""
+msgstr "Introduzca un valor de saturación (0-100%)"
 
 #: exe/webui/tools/style-designer/langs/en.js:133
 msgid "Set to Value color mode"
-msgstr ""
+msgstr "Cambiar al modo de valor de color"
 
 #: exe/webui/tools/style-designer/langs/en.js:134
 msgid "Enter a Value (0-100%)"
-msgstr ""
+msgstr "Introduzca un valor (0-100%)"
 
 #: exe/webui/tools/style-designer/langs/en.js:137
 msgid "Set to Red color mode"
-msgstr ""
+msgstr "Cambiar a modo de color Rojo"
 
 #: exe/webui/tools/style-designer/langs/en.js:138
 msgid "Enter a Red value (0-255)"
-msgstr ""
+msgstr "Introducir un valor de rojo (0-255)"
 
 #: exe/webui/tools/style-designer/langs/en.js:141
 msgid "Set to Green color mode"
-msgstr ""
+msgstr "Cambiar al modo de color Verde"
 
 #: exe/webui/tools/style-designer/langs/en.js:142
 msgid "Enter a Green value (0-255)"
-msgstr ""
+msgstr "Introduzca un valor de verde (0-255)"
 
 #: exe/webui/tools/style-designer/langs/en.js:145
 msgid "Set to Blue color mode"
-msgstr ""
+msgstr "Cambiar al modo de color Azul"
 
 #: exe/webui/tools/style-designer/langs/en.js:146
 msgid "Enter a Blue value (0-255)"
-msgstr ""
+msgstr "Introduzca un valor de azul (0-255)"
 
 #: exe/webui/tools/style-designer/langs/en.js:149
 msgid "Set to Alpha color mode"
-msgstr ""
+msgstr "Cambiar al modo de color Alfa"
 
 #: exe/webui/tools/style-designer/langs/en.js:150
 #: exe/webui/tools/style-designer/langs/en.js:154
 msgid "Enter an Alpha value (0-100)"
-msgstr ""
+msgstr "Introduzca un valor de alfa (0-100)"
 
 #: exe/webui/tools/style-designer/langs/en.js:153
 msgid "Enter an Hex color value (#000000-#ffffff)"
-msgstr ""
+msgstr "Introduzca un valor de color hexacesimal (#000000-#ffffff)"
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
@@ -12098,4 +12058,3 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
-
