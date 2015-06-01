@@ -84,7 +84,7 @@ var eXeEffects = {
 			div.attr("class",div.attr("class").replace(classToRemove,classToAdd));
 			// alert(div.attr("class").replace(classToRemove,classToAdd))			
 		} else {
-			var c = '<div class="'+classToAdd+'">';
+			var c = '<div class="exe-fx '+classToAdd+'">';
 				c += '<h2>'+tinyMCEPopup.getLang("exeeffects.h2")+'</h2>';
 				c += '<p>'+tinyMCEPopup.getLang("exeeffects.write_your_content")+'</p>';
 				c += '<h2>'+tinyMCEPopup.getLang("exeeffects.h2")+'</h2>';
@@ -93,7 +93,7 @@ var eXeEffects = {
 			inst.execCommand('mceInsertContent', false, c);			
 		}
 		tinyMCEPopup.execCommand("mceEndUndoLevel");
-		tinyMCEPopup.close();		
+		tinyMCEPopup.close();
 	},
 	enableTypeChange : function(){
 		var x;

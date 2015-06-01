@@ -1,6 +1,3 @@
-.exe-accordion,.exe-tabs,.exe-paginated,.exe-carousel{padding:0 1em;border:1px solid #CCC;background:#F7F7F7 url(../img/exeeffects.png) no-repeat 5px 5px;border-radius:4px;overflow:hidden;box-shadow:0px 1px 3px rgba(0,0,0,0.25);border-radius:3px}
-.exe-accordion h2,.exe-tabs h2,.exe-paginated h2,.exe-carousel h2{background:#333;color:#FFF;font-size:1.2em;padding:5px 15px;border-radius:2px}
-.exe-accordion:before,
-.exe-tabs:before,
-.exe-paginated:before,
-.exe-carousel:before{content:" - "attr(class);color:#666;font-size:.8em;padding-left:9px;font-style:italic}
+.exe-fx{padding:.5em 1em;border:1px solid #CCC;background:#F7F7F7 url(../img/exeeffects.png) no-repeat 5px 5px;border-radius:4px;overflow:hidden;box-shadow:0px 1px 3px rgba(0,0,0,0.25);border-radius:3px}
+.exe-fx h2{background:#333;color:#FFF;font-size:1.2em;padding:5px 15px;border-radius:2px}
+.exe-fx:before{content:attr(class);color:#666;font-size:.8em;font-style:italic;text-align:right;display:block}

@@ -124,6 +124,17 @@ class SinglePage(Page):
             return hasGallery
         
         hasGallery = hasGalleryIdevice(self.node)
+        
+        def hasFX(node):
+            hasEffects = common.hasFX(node)
+            if not hasEffects:
+                for child in node.children:
+                    if hasFX(child):
+                        return True
+            return hasEffects
+        
+        hasEffects = hasFX(self.node)
+        
         def hasWikipediaIdevice(node):
             hasWikipedia = common.hasWikipediaIdevice(node)
             if not hasWikipedia:
@@ -172,6 +183,8 @@ class SinglePage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
         if hasGallery:
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+        if hasEffects:
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5" or self.hasMediaelement:
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
@@ -188,6 +201,8 @@ class SinglePage(Page):
             
         if hasGallery:
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
+        if hasEffects:
+            html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):

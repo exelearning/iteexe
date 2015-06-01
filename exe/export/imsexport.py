@@ -230,6 +230,8 @@ class Manifest(object):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_tooltips').files()]
         if common.hasGalleryIdevice(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_lightbox').files()]
+        if common.hasFX(page.node):
+            resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_effects').files()]
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
                 self.resStr += '    <file href="exe_jquery.js"/>\n'
@@ -311,6 +313,8 @@ class IMSPage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb    
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+        if common.hasFX(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
@@ -327,6 +331,8 @@ class IMSPage(Page):
         
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
+        if common.hasFX(self.node):
+            html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
@@ -494,6 +500,7 @@ class IMSExport(object):
         hasMagnifier      = False
         hasXspfplayer     = False
         hasGallery        = False
+        hasFX             = False
         hasWikipedia      = False
         isBreak           = False
         hasInstructions   = False
@@ -504,7 +511,7 @@ class IMSExport(object):
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -518,6 +525,8 @@ class IMSExport(object):
                         hasXspfplayer = True
                 if not hasGallery:
                     hasGallery = common.ideviceHasGallery(idevice)
+                if not hasFX:
+                    hasFX = common.ideviceHasFX(idevice)
                 if not hasWikipedia:
                     if 'WikipediaIdevice' == idevice.klass:
                         hasWikipedia = True
@@ -543,6 +552,9 @@ class IMSExport(object):
         if hasGallery:
             exeLightbox = (self.scriptsDir/'exe_lightbox')
             exeLightbox.copyfiles(outputDir)
+        if hasFX:
+            exeEffects = (self.scriptsDir/'exe_effects')
+            exeEffects.copyfiles(outputDir)
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(outputDir/'exe_wikipedia.css')

@@ -211,6 +211,8 @@ def fieldShowEditMessageEle(element):
     
 def getJavaScriptStrings():
     s = '<script type="text/javascript">$exe_i18n={'
+    s += 'previous:"'+c_("Previous")+'",'
+    s += 'next:"'+c_("Next")+'",'
     s += 'show:"'+c_("Show")+'",'
     s += 'hide:"'+c_("Hide")+'",'
     s += 'showFeedback:"'+c_("Show Feedback")+'",'
@@ -934,6 +936,16 @@ def hasWikipediaIdevice(node):
             return True
     return False
 
+def ideviceHasFX(idevice):
+    block = g_blockFactory.createBlock(None, idevice)
+    if not block:
+        log.critical("Unable to render iDevice.")
+        raise Error("Unable to render iDevice.")
+    content = block.renderView('default')
+    if re.search(' class=[\'"]exe-fx', content):
+        return True
+    return False
+    
 def ideviceHasGallery(idevice):
     if idevice.klass == 'GalleryIdevice':
         return True
@@ -946,6 +958,12 @@ def ideviceHasGallery(idevice):
         return True
     return False
 
+def hasFX(node):
+    for idevice in node.idevices:
+        if ideviceHasFX(idevice):
+            return True
+    return False
+    
 def hasGalleryIdevice(node):
     for idevice in node.idevices:
         if ideviceHasGallery(idevice):

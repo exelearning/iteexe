@@ -150,13 +150,14 @@ class SinglePageExport(object):
         hasMagnifier      = False
         hasXspfplayer     = False
         hasGallery        = False
+        hasFX             = False
         hasWikipedia      = False
         hasInstructions   = False
         hasMediaelement   = False
         hasTooltips       = False
 
     	for idevice in node.idevices:
-    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
+    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
     	    	break
     	    if not hasFlowplayer:
     	    	if 'flowPlayer.swf' in idevice.systemResources:
@@ -169,6 +170,8 @@ class SinglePageExport(object):
     			    hasXspfplayer = True
             if not hasGallery:
                 hasGallery = common.ideviceHasGallery(idevice)
+            if not hasFX:
+                hasFX = common.ideviceHasFX(idevice)
             if not hasWikipedia:
     			if 'WikipediaIdevice' == idevice.klass:
     				hasWikipedia = True
@@ -194,6 +197,9 @@ class SinglePageExport(object):
         if hasGallery:
             exeLightbox = (self.scriptsDir/'exe_lightbox')
             exeLightbox.copyfiles(self.outputDir)
+        if hasFX:
+            exeEffects = (self.scriptsDir/'exe_effects')
+            exeEffects.copyfiles(self.outputDir)
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(self.outputDir/'exe_wikipedia.css')

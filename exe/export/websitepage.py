@@ -83,6 +83,8 @@ class WebsitePage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb    
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+        if common.hasFX(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"nav.css\" />"+lb
         html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
@@ -123,6 +125,8 @@ class WebsitePage(Page):
         
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
+        if common.hasFX(self.node):
+            html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
