@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2015-05-29 17:38+0200\n"
+"POT-Creation-Date: 2015-06-02 16:33+0200\n"
 "PO-Revision-Date: 2014-05-15 18:08+0200\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language-Team: Chinese Traditional <zh-l10n@linux.org.tw>\n"
@@ -60,7 +60,7 @@ msgid "Java Applet"
 msgstr "Java Applet"
 
 #: exe/engine/appletidevice.py:71 exe/engine/attachmentidevice.py:45
-#: exe/engine/casestudyidevice.py:198 exe/engine/clozefpdidevice.py:51
+#: exe/engine/casestudyidevice.py:201 exe/engine/clozefpdidevice.py:51
 #: exe/engine/clozeidevice.py:50 exe/engine/clozelangfpdidevice.py:51
 #: exe/engine/ejercicioresueltofpdidevice.py:199
 #: exe/engine/eleccionmultiplefpdidevice.py:62
@@ -215,26 +215,26 @@ msgstr ""
 msgid "Attachment %s has no parentNode"
 msgstr "附件 %s 沒有父節點"
 
-#: exe/engine/casestudyidevice.py:63
+#: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/tools/style-designer/langs/en.js:33
 msgid "Image"
 msgstr "影像"
 
-#: exe/engine/casestudyidevice.py:64
+#: exe/engine/casestudyidevice.py:65
 #: exe/engine/ejercicioresueltofpdidevice.py:65
 msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
 msgstr "選擇一個影像，在完成此問題後顯示給學生"
 
-#: exe/engine/casestudyidevice.py:197
+#: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
 msgstr "案例分析"
 
-#: exe/engine/casestudyidevice.py:199
-#: exe/engine/ejercicioresueltofpdidevice.py:200
+#: exe/engine/casestudyidevice.py:202
+#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -246,12 +246,12 @@ msgid ""
 "learners apply their own knowledge and experience to completing the tasks"
 " \n"
 "assigned. when designing a case study consider the following:<ul> \n"
-"<li>\tWhat educational points are conveyed in the story</li>\n"
-"<li>\tWhat preparation will the learners need to do prior to working on "
-"the \n"
+"<li>    What educational points are conveyed in the story</li>\n"
+"<li>    What preparation will the learners need to do prior to working on"
+" the \n"
 "case study</li>\n"
-"<li>\tWhere the case study fits into the rest of the course</li>\n"
-"<li>\tHow the learners will interact with the materials and each other "
+"<li>    Where the case study fits into the rest of the course</li>\n"
+"<li>    How the learners will interact with the materials and each other "
 "e.g.\n"
 "if run in a classroom situation can teams be setup to work on different "
 "aspects\n"
@@ -266,7 +266,7 @@ msgstr ""
 "<li>\t學生對此案例的各種可能反應。例如：在教室的情境中，如何設立團隊解決案例中不同角度的問題，以及想法如何回饋到班上</li>\n"
 "</ul>"
 
-#: exe/engine/casestudyidevice.py:216
+#: exe/engine/casestudyidevice.py:219
 #: exe/engine/ejercicioresueltofpdidevice.py:218
 msgid ""
 "Create the case story. A good case is one \n"
@@ -277,13 +277,13 @@ msgid ""
 "in order to gain resolution of the situation."
 msgstr "建立案例故事。一個好的案例描述一項爭議，或描述在某個情境下的某個人物。它也應該允許大家採取某些行動以便解決這個情境。"
 
-#: exe/engine/casestudyidevice.py:220 exe/engine/casestudyidevice.py:406
+#: exe/engine/casestudyidevice.py:223 exe/engine/casestudyidevice.py:411
 #: exe/engine/ejercicioresueltofpdidevice.py:222
 #: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
 msgstr "故事："
 
-#: exe/engine/casestudyidevice.py:225
+#: exe/engine/casestudyidevice.py:228
 #: exe/engine/ejercicioresueltofpdidevice.py:227
 msgid ""
 "Describe the activity tasks relevant \n"
@@ -293,7 +293,7 @@ msgid ""
 "presented. "
 msgstr "描述與此案例故事相關的活動與工作。它可以是一些問題，或是指示，讓學生解決該情境。"
 
-#: exe/engine/casestudyidevice.py:229
+#: exe/engine/casestudyidevice.py:232
 #: exe/engine/ejercicioresueltofpdidevice.py:231
 msgid ""
 "Provide relevant feedback on the \n"
@@ -639,7 +639,7 @@ msgid ""
 msgstr "提供怎樣完成克漏字填空的說明。若是不變更此欄位，則會提供預設的文字。\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
-#: exe/webui/element.py:1420 exe/webui/listablock.py:259
+#: exe/webui/element.py:1522 exe/webui/listablock.py:259
 msgid "Cloze"
 msgstr "克漏字"
 
@@ -661,7 +661,7 @@ msgstr "<p>輸入克漏字測驗的文字。您可以從別處剪貼文字過來
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
 #: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
-#: exe/engine/field.py:3614 exe/engine/field.py:3662
+#: exe/engine/field.py:3679 exe/engine/field.py:3727
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:605
 #: exe/engine/idevicestore.py:714 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
@@ -670,9 +670,9 @@ msgstr "<p>輸入克漏字測驗的文字。您可以從別處剪貼文字過來
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
 #: exe/webui/common.py:450 exe/webui/common.py:460
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
-#: exe/webui/element.py:2375 exe/webui/element.py:2510
-#: exe/webui/element.py:2625 exe/webui/element.py:2826
-#: exe/webui/listablock.py:462 exe/webui/questionelement.py:113
+#: exe/webui/element.py:2477 exe/webui/element.py:2612
+#: exe/webui/element.py:2727 exe/webui/element.py:2928
+#: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
 msgstr "回饋意見"
@@ -791,6 +791,38 @@ msgstr "「突顯」的文字："
 msgid "FPD - Translation"
 msgstr "FPD - 翻譯"
 
+#: exe/engine/ejercicioresueltofpdidevice.py:200
+msgid ""
+"A case study is a device that provides learners \n"
+"with a simulation that has an educational basis. It takes a situation, "
+"generally \n"
+"based in reality, and asks learners to demonstrate or describe what "
+"action they \n"
+"would take to complete a task or resolve a situation. The case study "
+"allows \n"
+"learners apply their own knowledge and experience to completing the tasks"
+" \n"
+"assigned. when designing a case study consider the following:<ul> \n"
+"<li>\tWhat educational points are conveyed in the story</li>\n"
+"<li>\tWhat preparation will the learners need to do prior to working on "
+"the \n"
+"case study</li>\n"
+"<li>\tWhere the case study fits into the rest of the course</li>\n"
+"<li>\tHow the learners will interact with the materials and each other "
+"e.g.\n"
+"if run in a classroom situation can teams be setup to work on different "
+"aspects\n"
+"of the case and if so how are ideas feed back to the class</li></ul>"
+msgstr ""
+"案例分析提供學生們一個有教育意義的模擬情境。通常它會基於一個真實的情境，要求學生來展示實作，或是描述他們可能會怎麼完成一份工作來解決該情境的問題。案例分析允許學生使用他們自己的知識與經驗來解決指定的工作。當設計案例分析時您可考慮以下的因素："
+"\n"
+"<ul> \n"
+"<li>\t在這個故事情境中您所要傳達的教學要點</li>\n"
+"<li>\t學生需要做什麼準備工作以便進行這個案例分析</li>\n"
+"<li>\t這個案例是否適用此課程的其他部份</li>\n"
+"<li>\t學生對此案例的各種可能反應。例如：在教室的情境中，如何設立團隊解決案例中不同角度的問題，以及想法如何回饋到班上</li>\n"
+"</ul>"
+
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 msgid "FPD - Multi Choice Activity"
 msgstr "FPD - 選擇題測驗"
@@ -902,12 +934,12 @@ msgid ""
 "for the other options."
 msgstr "輸入學生選擇特定選項時要看到的回饋意見。如果您未輸入，eXe 將會自動提供以下的回饋：選正確選項時會顯示「正確答案」；其他選項則顯示「錯誤答案」。"
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3685
-#: exe/engine/field.py:3750 exe/engine/multichoiceidevice.py:131
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3750
+#: exe/engine/field.py:3815 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:82
-#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2350
-#: exe/webui/element.py:2354 exe/webui/element.py:2803
-#: exe/webui/element.py:2807 exe/webui/testquestionelement.py:151
+#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2452
+#: exe/webui/element.py:2456 exe/webui/element.py:2905
+#: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
 msgstr "問題"
@@ -1045,14 +1077,14 @@ msgid ""
 "and select the size of the area to display it in."
 msgstr "輸入所要顯示網頁的網址，並選擇顯示的大小尺寸。"
 
-#: exe/engine/field.py:2838 exe/engine/field.py:2885
+#: exe/engine/field.py:2903 exe/engine/field.py:2950
 #: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr "提供 MP3 檔的標題。也會出現在播放器的標題列。"
 
-#: exe/engine/field.py:3021
+#: exe/engine/field.py:3086
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1069,27 +1101,27 @@ msgid ""
 "will also be accepted.</p>"
 msgstr ""
 
-#: exe/engine/field.py:3042 exe/engine/field.py:3276
+#: exe/engine/field.py:3107 exe/engine/field.py:3341
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
 msgstr "<p>若勾選此選項，則提交的答案大小寫不符則會視為不正確。</p>"
 
-#: exe/engine/field.py:3047 exe/engine/field.py:3281
+#: exe/engine/field.py:3112 exe/engine/field.py:3346
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr "<p>若設定此選項，則學生輸入每個單字時就會標記，而不會等測驗完畢後才全部標記。</p>"
 
-#: exe/engine/field.py:3085 exe/engine/field.py:3323
+#: exe/engine/field.py:3150 exe/engine/field.py:3388
 #: exe/engine/listaidevice.py:398
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr "當學生填空時，允許自動完成。"
 
-#: exe/engine/field.py:3255
+#: exe/engine/field.py:3320
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1106,61 +1138,61 @@ msgid ""
 "will also be accepted.</p>"
 msgstr ""
 
-#: exe/engine/field.py:3286
+#: exe/engine/field.py:3351
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr "<p>若是設定此選項，則會顯示分數。</p>"
 
-#: exe/engine/field.py:3365 exe/engine/field.py:3409
+#: exe/engine/field.py:3430 exe/engine/field.py:3474
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "此 iDevice 只能選用 .swf (Flash 物件)。"
 
-#: exe/engine/field.py:3429 exe/engine/field.py:3493
+#: exe/engine/field.py:3494 exe/engine/field.py:3558
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr "此 iDevice 只能選用 .flv (Flash 影像檔)。"
 
-#: exe/engine/field.py:3505
+#: exe/engine/field.py:3570
 msgid "Type a discussion topic here."
 msgstr "在此輸入討論主題。"
 
-#: exe/engine/field.py:3534
+#: exe/engine/field.py:3599
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
 msgstr "<p>在底下的文字編輯器中選擇符號，或是手動輸入 LATEX 的文稿來建立數學式。要預覽您的 LATEX 內容，請用下方的「預覽」鍵。</p>"
 
-#: exe/engine/field.py:3542
+#: exe/engine/field.py:3607
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr "點擊「預覽」鍵將 latex 轉換成影像。"
 
-#: exe/engine/field.py:3610 exe/engine/field.py:3659
+#: exe/engine/field.py:3675 exe/engine/field.py:3724
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/webui/element.py:2087 exe/webui/element.py:2142
-#: exe/webui/element.py:2474 exe/webui/element.py:2566
+#: exe/webui/element.py:2189 exe/webui/element.py:2244
+#: exe/webui/element.py:2576 exe/webui/element.py:2668
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
 msgstr "選項"
 
-#: exe/engine/field.py:3688 exe/engine/field.py:3754
+#: exe/engine/field.py:3753 exe/engine/field.py:3819
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:194
 msgid "Hint"
 msgstr "提示"
 
-#: exe/engine/field.py:3776 exe/engine/field.py:3813 exe/webui/element.py:2279
+#: exe/engine/field.py:3841 exe/engine/field.py:3878 exe/webui/element.py:2381
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "選項"
 
-#: exe/engine/field.py:3836
+#: exe/engine/field.py:3901
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -1170,15 +1202,15 @@ msgstr ""
 "輸入問題。\n"
 "問題的陳述要清晰而不含糊。避免負面的假設，因為可能會造成學生混淆。"
 
-#: exe/engine/field.py:3839 exe/engine/field.py:3920
+#: exe/engine/field.py:3904 exe/engine/field.py:3985
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
-#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2254
+#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
 msgid "Question:"
 msgstr "問題："
 
-#: exe/engine/field.py:3844
+#: exe/engine/field.py:3909
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -1188,22 +1220,22 @@ msgstr ""
 "在此輸入選擇題的選項。\n"
 "點擊「新增其它選項」按鈕來增加選項。點擊選項旁邊的\"X\" 可刪除這個選項。"
 
-#: exe/engine/field.py:3848
+#: exe/engine/field.py:3913
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr "在選項旁的勾選盒選擇您認為正確的答案。"
 
-#: exe/engine/field.py:3851
+#: exe/engine/field.py:3916
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr "輸入您要提供給學生的回饋意見。"
 
-#: exe/engine/field.py:3853 exe/engine/field.py:3923
+#: exe/engine/field.py:3918 exe/engine/field.py:3988
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
-#: exe/engine/reflectionidevice.py:200
+#: exe/engine/reflectionidevice.py:204
 msgid "Feedback:"
 msgstr "回饋意見："
 
@@ -1491,8 +1523,8 @@ msgstr "重新開始關卡按鍵文字"
 msgid "Text for reset button"
 msgstr "重置按鍵文字"
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1446
-#: exe/webui/element.py:1702
+#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1548
+#: exe/webui/element.py:1804
 msgid "Restart"
 msgstr "重新開始"
 
@@ -1597,7 +1629,7 @@ msgstr "輸入閱讀內容的詳情，包括參考資料詳情。使用的參考
 #: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:640
 #: exe/engine/idevicestore.py:648 exe/engine/idevicestore.py:710
 #: exe/engine/idevicestore.py:747 exe/engine/idevicestore.py:755
-#: exe/webui/questionelement.py:109
+#: exe/webui/questionelement.py:110
 msgid "Activity"
 msgstr "學習活動"
 
@@ -2271,8 +2303,8 @@ msgstr ""
 "儲存失敗。\n"
 "上次成功儲存於 %s。"
 
-#: exe/engine/package.py:1445 exe/jsui/scripts/app/controller/Toolbar.js:402
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
+#: exe/engine/package.py:1445 exe/jsui/scripts/app/controller/Toolbar.js:415
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "iDevice Editor"
 msgstr "iDevice 編輯器"
 
@@ -2530,7 +2562,7 @@ msgstr ""
 #: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
-#: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:197
+#: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:201
 msgid "Reflective question:"
 msgstr "思考反應問題："
 
@@ -2926,7 +2958,7 @@ msgstr "您用 '-x xliff' 或 '--export xliff' 選擇 XLIFF 後，可以設定�
 msgid "Don't copy source in target"
 msgstr "不要將源碼複製到目標"
 
-#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:680
+#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:760
 msgid "Wrap fields in CDATA"
 msgstr "用 CDATA 包裝欄位"
 
@@ -3488,8 +3520,8 @@ msgstr "儲存屬性失敗"
 msgid "Show Image"
 msgstr "顯示影像"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:674
-#: exe/webui/element.py:1088
+#: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
+#: exe/webui/element.py:1190
 msgid "Select an image"
 msgstr "選擇影像"
 
@@ -3506,18 +3538,18 @@ msgstr "影像檔"
 #: exe/jsui/scripts/app/controller/MainTab.js:204
 #: exe/jsui/scripts/app/controller/StyleManager.js:161
 #: exe/jsui/scripts/app/controller/StyleManager.js:207
-#: exe/jsui/scripts/app/controller/Toolbar.js:473
-#: exe/jsui/scripts/app/controller/Toolbar.js:494
-#: exe/jsui/scripts/app/controller/Toolbar.js:529
-#: exe/jsui/scripts/app/controller/Toolbar.js:548
-#: exe/jsui/scripts/app/controller/Toolbar.js:617
-#: exe/jsui/scripts/app/controller/Toolbar.js:728
-#: exe/jsui/scripts/app/controller/Toolbar.js:851
-#: exe/jsui/scripts/app/controller/Toolbar.js:868
-#: exe/jsui/scripts/app/controller/Toolbar.js:885
-#: exe/jsui/scripts/app/controller/Toolbar.js:914
-#: exe/jsui/scripts/app/controller/Toolbar.js:1050
-#: exe/jsui/scripts/app/controller/Toolbar.js:1147
+#: exe/jsui/scripts/app/controller/Toolbar.js:553
+#: exe/jsui/scripts/app/controller/Toolbar.js:574
+#: exe/jsui/scripts/app/controller/Toolbar.js:609
+#: exe/jsui/scripts/app/controller/Toolbar.js:628
+#: exe/jsui/scripts/app/controller/Toolbar.js:697
+#: exe/jsui/scripts/app/controller/Toolbar.js:808
+#: exe/jsui/scripts/app/controller/Toolbar.js:931
+#: exe/jsui/scripts/app/controller/Toolbar.js:948
+#: exe/jsui/scripts/app/controller/Toolbar.js:965
+#: exe/jsui/scripts/app/controller/Toolbar.js:994
+#: exe/jsui/scripts/app/controller/Toolbar.js:1130
+#: exe/jsui/scripts/app/controller/Toolbar.js:1227
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 msgid "All Files"
 msgstr "所有檔案"
@@ -3536,6 +3568,7 @@ msgstr "設定已儲存"
 #: exe/jsui/scripts/app/controller/StyleManager.js:200
 #: exe/jsui/scripts/app/controller/StyleManager.js:241
 #: exe/jsui/scripts/app/controller/StyleManager.js:269
+#: exe/jsui/scripts/app/controller/Toolbar.js:475
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:253
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:334
@@ -3554,7 +3587,7 @@ msgstr "此表單中包含不合法的欄位。請檢查。"
 #: exe/jsui/scripts/app/controller/MainTab.js:273
 #: exe/jsui/scripts/app/controller/MainTab.js:326
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:411
+#: exe/jsui/scripts/app/controller/Toolbar.js:424
 msgid "Confirm"
 msgstr "確認"
 
@@ -3573,12 +3606,12 @@ msgid "LOM Metadata import success!"
 msgstr "LOM 中繼資料匯入成功。"
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
 msgid "Insert Package"
 msgstr "插入套件"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:349
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Extract Package"
 msgstr "展開套件"
 
@@ -3618,123 +3651,141 @@ msgstr "要刪除樣式嗎？"
 msgid "Do you want to delete this style?"
 msgstr "您要刪除此樣式嗎？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:312
+#: exe/jsui/scripts/app/controller/Toolbar.js:325
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "About"
 msgstr "關於"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:329
+#: exe/jsui/scripts/app/controller/Toolbar.js:342
 #, fuzzy
 msgid "Release notes"
 msgstr "釋出宣告"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:347
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:485
+#: exe/jsui/scripts/app/controller/Toolbar.js:360
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:476
 #, fuzzy
 msgid "Legal Notes"
 msgstr "釋出宣告"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:384
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:416
+#: exe/jsui/scripts/app/controller/Toolbar.js:397
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
 msgid "Preferences"
 msgstr "喜好設定"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:412
+#: exe/jsui/scripts/app/controller/Toolbar.js:425
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
 msgstr "若您已做了變更但尚未儲存，變更的部份會遺失。您確定要離開嗎？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:438
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:385
+#: exe/jsui/scripts/app/controller/Toolbar.js:451
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
 msgid "Style Manager"
 msgstr "樣式管理員"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:461
+#: exe/jsui/scripts/app/controller/Toolbar.js:463
+msgid "Your Style has been created. Time to make it pretty."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:463
+#: exe/jsui/scripts/app/controller/Toolbar.js:469
+#, fuzzy
+msgid "New Style"
+msgstr "新行"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:472
+msgid "The current Style is not compatible with the Style Designer"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:475
+msgid "Your Style could not be saved because an unknown error occurred."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:541
 msgid "Select package to insert"
 msgstr "選擇要插入的套件"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:466
+#: exe/jsui/scripts/app/controller/Toolbar.js:546
 msgid "Inserting package: {filename}"
 msgstr "插入套件中：{filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:472
-#: exe/jsui/scripts/app/controller/Toolbar.js:493
-#: exe/jsui/scripts/app/controller/Toolbar.js:1049
-#: exe/jsui/scripts/app/controller/Toolbar.js:1146
+#: exe/jsui/scripts/app/controller/Toolbar.js:552
+#: exe/jsui/scripts/app/controller/Toolbar.js:573
+#: exe/jsui/scripts/app/controller/Toolbar.js:1129
+#: exe/jsui/scripts/app/controller/Toolbar.js:1226
 msgid "eXe Package Files"
 msgstr "eXe 套件檔"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:482
+#: exe/jsui/scripts/app/controller/Toolbar.js:562
 msgid "Save extracted package as"
 msgstr "將展開的套件另存為"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:487
+#: exe/jsui/scripts/app/controller/Toolbar.js:567
 msgid "Extracting package: {filename}"
 msgstr "展開套件中：{filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:503
+#: exe/jsui/scripts/app/controller/Toolbar.js:583
 msgid "Select the parent folder for import."
 msgstr "選擇要匯入的父目錄。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:518
+#: exe/jsui/scripts/app/controller/Toolbar.js:598
 msgid "Select the entry point for import."
 msgstr "選擇要匯入的進入點。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:528
+#: exe/jsui/scripts/app/controller/Toolbar.js:608
 msgid "HTML Files"
 msgstr "HTML 檔"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:537
+#: exe/jsui/scripts/app/controller/Toolbar.js:617
 msgid "Select LOM Metadata file to import."
 msgstr "選擇要匯入的 LOM 中繼資料檔"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:547
+#: exe/jsui/scripts/app/controller/Toolbar.js:627
 msgid "XML Files"
 msgstr "XML 檔"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:562
+#: exe/jsui/scripts/app/controller/Toolbar.js:642
 msgid "Waiting progress..."
 msgstr "等待進度中..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:570
+#: exe/jsui/scripts/app/controller/Toolbar.js:650
 msgid "Cancel Import?"
 msgstr "要取消匯入嗎？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:571
+#: exe/jsui/scripts/app/controller/Toolbar.js:651
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr "匯入正在進行中。您要取消嗎？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:594
+#: exe/jsui/scripts/app/controller/Toolbar.js:674
 msgid "Select Xliff file to import"
 msgstr "選擇要匯入的 Xliff 檔"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:604
+#: exe/jsui/scripts/app/controller/Toolbar.js:684
 msgid "XLIFF Import Preferences"
 msgstr "XLIFF 匯入喜好設定"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:616
-#: exe/jsui/scripts/app/controller/Toolbar.js:727
+#: exe/jsui/scripts/app/controller/Toolbar.js:696
+#: exe/jsui/scripts/app/controller/Toolbar.js:807
 msgid "XLIFF Files"
 msgstr "XLIFF 檔"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:626
+#: exe/jsui/scripts/app/controller/Toolbar.js:706
 msgid "Export to Xliff as"
 msgstr "將 Xliff 匯出為"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:646
+#: exe/jsui/scripts/app/controller/Toolbar.js:726
 msgid "Select source language"
 msgstr "選擇來源語言"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:657
+#: exe/jsui/scripts/app/controller/Toolbar.js:737
 msgid "Select target language"
 msgstr "選擇目標語言"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:668
+#: exe/jsui/scripts/app/controller/Toolbar.js:748
 msgid "Copy source also in target"
 msgstr "在目標也複製來源"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:671
+#: exe/jsui/scripts/app/controller/Toolbar.js:751
 msgid ""
 "If you don't choose this option, target field will be empty. Some "
 "Computer Aided Translation tools (e.g. OmegaT) just translate the content"
@@ -3742,7 +3793,7 @@ msgid ""
 "to pre-fill the target field with a copy of the source field."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:682
+#: exe/jsui/scripts/app/controller/Toolbar.js:762
 msgid ""
 "This option will wrap all the exported fields in CDATA sections. This "
 "kind of sections are not recommended by XLIFF standard but it could be a "
@@ -3750,7 +3801,7 @@ msgid ""
 "using the Computer Aided Translation software."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:691
+#: exe/jsui/scripts/app/controller/Toolbar.js:771
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/webui/editorpane.py:273 exe/webui/xliffimportpreferencespage.py:94
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -3758,143 +3809,143 @@ msgstr ""
 msgid "Cancel"
 msgstr "取消"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:697
+#: exe/jsui/scripts/app/controller/Toolbar.js:777
 msgid "Ok"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:720
+#: exe/jsui/scripts/app/controller/Toolbar.js:800
 msgid "XLIFF Export Preferences"
 msgstr "XLIFF 匯出喜好設定"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:754
-#: exe/jsui/scripts/app/controller/Toolbar.js:760
-#: exe/jsui/scripts/app/controller/Toolbar.js:766
+#: exe/jsui/scripts/app/controller/Toolbar.js:834
+#: exe/jsui/scripts/app/controller/Toolbar.js:840
+#: exe/jsui/scripts/app/controller/Toolbar.js:846
 msgid "Google API Javascript library not available. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:755
-#: exe/jsui/scripts/app/controller/Toolbar.js:761
-#: exe/jsui/scripts/app/controller/Toolbar.js:767
+#: exe/jsui/scripts/app/controller/Toolbar.js:835
+#: exe/jsui/scripts/app/controller/Toolbar.js:841
+#: exe/jsui/scripts/app/controller/Toolbar.js:847
 msgid "Missing Google's client library. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:756
-#: exe/jsui/scripts/app/controller/Toolbar.js:762
-#: exe/jsui/scripts/app/controller/Toolbar.js:768
+#: exe/jsui/scripts/app/controller/Toolbar.js:836
+#: exe/jsui/scripts/app/controller/Toolbar.js:842
+#: exe/jsui/scripts/app/controller/Toolbar.js:848
 msgid ""
 "Google's API client library is not available, please check your Internet "
 "connection. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:774
+#: exe/jsui/scripts/app/controller/Toolbar.js:854
 msgid "App Client ID not set. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:775
+#: exe/jsui/scripts/app/controller/Toolbar.js:855
 msgid "Missing App Client ID. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:776
+#: exe/jsui/scripts/app/controller/Toolbar.js:856
 msgid ""
 "Please check the App Client ID set in <strong>Tools > Preferences > "
 "Publish to Google Drive</strong>. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:794
+#: exe/jsui/scripts/app/controller/Toolbar.js:874
 msgid ""
 "You must authorize eXe Learning to export contents into your Google Drive"
 " account"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:795
+#: exe/jsui/scripts/app/controller/Toolbar.js:875
 #, fuzzy
 msgid "Are you sure you want to start authorization process?"
 msgstr "您確定要清除所有內容嗎？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:824
+#: exe/jsui/scripts/app/controller/Toolbar.js:904
 msgid "Select the parent folder for export."
 msgstr "選擇要匯出的父資料夾。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:841
+#: exe/jsui/scripts/app/controller/Toolbar.js:921
 msgid "Export text package as"
 msgstr "將文字套件匯出為"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:850
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:307
+#: exe/jsui/scripts/app/controller/Toolbar.js:930
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Text File"
 msgstr "文字檔"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:858
+#: exe/jsui/scripts/app/controller/Toolbar.js:938
 msgid "Save package resources report as"
 msgstr "將套件資源報告另存為"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:867
+#: exe/jsui/scripts/app/controller/Toolbar.js:947
 msgid "CSV File"
 msgstr "CSV 檔"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:875
+#: exe/jsui/scripts/app/controller/Toolbar.js:955
 msgid "Export EPUB3 package as"
 msgstr "將 EPUB3 套件匯出為"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:884
+#: exe/jsui/scripts/app/controller/Toolbar.js:964
 msgid "EPUB3 File"
 msgstr "EPUB3 檔"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:892
+#: exe/jsui/scripts/app/controller/Toolbar.js:972
 msgid "Export SCORM package as"
 msgstr "將 SCORM 套件匯出為"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:894
+#: exe/jsui/scripts/app/controller/Toolbar.js:974
 msgid "Export IMS package as"
 msgstr "將 IMS 套件匯出為"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:896
+#: exe/jsui/scripts/app/controller/Toolbar.js:976
 msgid "Export Website package as"
 msgstr "將網站套件匯出為"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:898
+#: exe/jsui/scripts/app/controller/Toolbar.js:978
 msgid "Export Common Cartridge as"
 msgstr "將共用卡匣匯出為"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:900
+#: exe/jsui/scripts/app/controller/Toolbar.js:980
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "傳給 exportPackage 的值不合法"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:913
+#: exe/jsui/scripts/app/controller/Toolbar.js:993
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/Zip檔"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1022
+#: exe/jsui/scripts/app/controller/Toolbar.js:1102
 msgid "Loading package..."
 msgstr "載入套件中..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1038
+#: exe/jsui/scripts/app/controller/Toolbar.js:1118
 msgid "Open File"
 msgstr "開啟檔案"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1043
+#: exe/jsui/scripts/app/controller/Toolbar.js:1123
 msgid "Loading package: {filename}"
 msgstr "載入套件中：{filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1062
+#: exe/jsui/scripts/app/controller/Toolbar.js:1142
 msgid "Save Package first?"
 msgstr "要先儲存套件嗎？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1063
+#: exe/jsui/scripts/app/controller/Toolbar.js:1143
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr "目前的套件已變更但尚未儲存。您要先儲存嗎？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1110
+#: exe/jsui/scripts/app/controller/Toolbar.js:1190
 msgid "Saving package to: {filename}"
 msgstr "正在儲存套件到：{filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1126
+#: exe/jsui/scripts/app/controller/Toolbar.js:1206
 msgid "Save file"
 msgstr "儲存檔案"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1132
+#: exe/jsui/scripts/app/controller/Toolbar.js:1212
 msgid "Saving package..."
 msgstr "儲存套件中..."
 
@@ -5243,62 +5294,58 @@ msgid "Self-contained Folder"
 msgstr "自包含資料夾"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:286
-msgid "Publish in Google Drive"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
 msgid "Zip File"
 msgstr "Zip 檔"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:298
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
 msgid "Single Page"
 msgstr "單一頁面"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:313
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:307
 msgid "Ustad Mobile"
 msgstr "Ustad Mobile"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:319
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:313
 msgid "XLIFF"
 msgstr "XLIFF"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:325
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:319
 msgid "EPUB3"
 msgstr "EPUB3"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:334
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:328
 msgid "Merging"
 msgstr "合併中"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:362 exe/webui/editorpage.py:269
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:356 exe/webui/editorpage.py:269
 msgid "Quit"
 msgstr "離開"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:369
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:363
 msgid "Tools"
 msgstr "工具"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:393
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:384
 #: exe/webui/tools/style-designer/langs/en.js:6
 #, fuzzy
 msgid "Style Designer"
 msgstr "說明設計者"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:401
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:392
 #, fuzzy
 msgid "Create new Style"
 msgstr "要刪除樣式嗎？"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:406
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:397
 msgid "Edit current Style"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:422
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:413
 msgid "Resources Report"
 msgstr "資源報告"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428 exe/webui/editorpane.py:268
-#: exe/webui/element.py:1996
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:419 exe/webui/editorpane.py:268
+#: exe/webui/element.py:2098
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:10
@@ -5308,42 +5355,42 @@ msgstr "資源報告"
 msgid "Preview"
 msgstr "預覽"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:437
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Refresh Display"
 msgstr "刷新顯示"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:445
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:436
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Styles"
 msgstr "樣式"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:455
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:446
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Help"
 msgstr "說明"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:465
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:456
 msgid "eXe Tutorial"
 msgstr "eXe 教學"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:478
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:469
 msgid "Release Notes"
 msgstr "釋出宣告"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:494
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:485
 msgid "eXe Web Site"
 msgstr "eXe 網站"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:500
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:491
 msgid "Report an Issue"
 msgstr "回報問題"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:506
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:497
 msgid "eXe Forums"
 msgstr "eXe 論壇"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:515
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:506
 msgid "About eXe"
 msgstr "關於 eXe"
 
@@ -7022,12 +7069,12 @@ msgstr "接受網址"
 msgid "Applet Code:"
 msgstr "小程式源碼："
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:963
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
 msgid "Filename:"
 msgstr "檔案名稱："
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
-#: exe/webui/element.py:973
+#: exe/webui/element.py:1075
 msgid "Select a file"
 msgstr "選擇檔案"
 
@@ -7097,7 +7144,7 @@ msgstr "錯誤：直接呼叫了 Block.renderViewContent"
 msgid "Edit"
 msgstr "編輯"
 
-#: exe/webui/casestudyblock.py:113 exe/webui/ejercicioresueltofpdblock.py:130
+#: exe/webui/casestudyblock.py:114 exe/webui/ejercicioresueltofpdblock.py:130
 msgid "Add another activity"
 msgstr "加入活動"
 
@@ -7166,8 +7213,8 @@ msgstr "顯示"
 msgid "Hide"
 msgstr "隱藏"
 
-#: exe/webui/common.py:216 exe/webui/common.py:425 exe/webui/element.py:1436
-#: exe/webui/element.py:2367 exe/webui/listablock.py:275
+#: exe/webui/common.py:216 exe/webui/common.py:425 exe/webui/element.py:1538
+#: exe/webui/element.py:2469 exe/webui/listablock.py:275
 msgid "Show Feedback"
 msgstr "顯示意見回饋"
 
@@ -7175,12 +7222,12 @@ msgstr "顯示意見回饋"
 msgid "Hide Feedback"
 msgstr "隱藏意見回饋"
 
-#: exe/webui/common.py:218 exe/webui/element.py:2170
+#: exe/webui/common.py:218 exe/webui/element.py:2272
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
 msgstr "正確"
 
-#: exe/webui/common.py:219 exe/webui/element.py:2173
+#: exe/webui/common.py:219 exe/webui/element.py:2275
 msgid "Incorrect"
 msgstr "不正確"
 
@@ -7209,7 +7256,7 @@ msgstr "文字行"
 msgid "Text Box"
 msgstr "文字盒"
 
-#: exe/webui/editorelement.py:149
+#: exe/webui/editorelement.py:149 exe/webui/element.py:602
 msgid "Button Caption"
 msgstr "按鈕標籤"
 
@@ -7247,7 +7294,7 @@ msgstr "右"
 msgid "Align:"
 msgstr "對齊："
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1787
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1889
 msgid "Select Flash Object"
 msgstr "選擇 Flash 物件"
 
@@ -7255,7 +7302,7 @@ msgstr "選擇 Flash 物件"
 msgid "Select MP3 file"
 msgstr "選擇 MP3 檔案"
 
-#: exe/webui/editorelement.py:311 exe/webui/element.py:767
+#: exe/webui/editorelement.py:311 exe/webui/element.py:869
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
@@ -7399,8 +7446,8 @@ msgstr "圖示"
 msgid "Info"
 msgstr "資訊"
 
-#: exe/webui/editorpane.py:430 exe/webui/element.py:1443
-#: exe/webui/element.py:1445 exe/webui/element.py:1701
+#: exe/webui/editorpane.py:430 exe/webui/element.py:1545
+#: exe/webui/element.py:1547 exe/webui/element.py:1803
 msgid "Submit"
 msgstr "提交"
 
@@ -7433,132 +7480,132 @@ msgstr "%s 類別錯誤地直接呼叫了 Element.renderEdit"
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "%s 類別錯誤地直接呼叫了 Element.renderView"
 
-#: exe/webui/element.py:651 exe/webui/element.py:1072
+#: exe/webui/element.py:753 exe/webui/element.py:1174
 msgid "Add Image"
 msgstr "新增影像"
 
-#: exe/webui/element.py:677 exe/webui/element.py:1094 exe/webui/element.py:1791
+#: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
 msgid "Display as:"
 msgstr "顯示為："
 
-#: exe/webui/element.py:684
+#: exe/webui/element.py:786
 msgid "by"
 msgstr "由"
 
-#: exe/webui/element.py:691 exe/webui/element.py:1110
+#: exe/webui/element.py:793 exe/webui/element.py:1212
 msgid "blank for original size"
 msgstr "原來大小的空白"
 
-#: exe/webui/element.py:761
+#: exe/webui/element.py:863
 msgid "Select an MP3"
 msgstr "選擇 MP3 檔案"
 
-#: exe/webui/element.py:1249 exe/webui/element.py:1582
+#: exe/webui/element.py:1351 exe/webui/element.py:1684
 msgid "Cloze Text"
 msgstr "克漏字填空文字"
 
-#: exe/webui/element.py:1257 exe/webui/element.py:1590
+#: exe/webui/element.py:1359 exe/webui/element.py:1692
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
 msgstr "隱藏/顯示單字"
 
-#: exe/webui/element.py:1262 exe/webui/element.py:1595
+#: exe/webui/element.py:1364 exe/webui/element.py:1697
 msgid "Strict Marking?"
 msgstr "要嚴格評分嗎？"
 
-#: exe/webui/element.py:1267
+#: exe/webui/element.py:1369
 msgid "Check Capitalization?"
 msgstr ""
 
-#: exe/webui/element.py:1272 exe/webui/element.py:1605
+#: exe/webui/element.py:1374 exe/webui/element.py:1707
 msgid "Instant Marking?"
 msgstr "要快速評分嗎？"
 
-#: exe/webui/element.py:1383 exe/webui/element.py:1640
+#: exe/webui/element.py:1485 exe/webui/element.py:1742
 #: exe/webui/listablock.py:223
 msgid "Your score is "
 msgstr "您的分數是"
 
-#: exe/webui/element.py:1433 exe/webui/element.py:1692
+#: exe/webui/element.py:1535 exe/webui/element.py:1794
 msgid "Get score"
 msgstr "取得分數"
 
-#: exe/webui/element.py:1439 exe/webui/element.py:1698
+#: exe/webui/element.py:1541 exe/webui/element.py:1800
 msgid "Show/Clear Answers"
 msgstr "顯示/清除答案"
 
-#: exe/webui/element.py:1449 exe/webui/element.py:1705
+#: exe/webui/element.py:1551 exe/webui/element.py:1807
 msgid "Show Answers"
 msgstr "顯示答案"
 
-#: exe/webui/element.py:1485 exe/webui/element.py:1737
-#: exe/webui/element.py:2359 exe/webui/element.py:2819
+#: exe/webui/element.py:1587 exe/webui/element.py:1839
+#: exe/webui/element.py:2461 exe/webui/element.py:2921
 #: exe/webui/listablock.py:313 exe/webui/testquestionelement.py:158
 msgid "Answers"
 msgstr "答案"
 
-#: exe/webui/element.py:1600
+#: exe/webui/element.py:1702
 msgid "Check Caps?"
 msgstr "要檢查大小寫嗎？"
 
-#: exe/webui/element.py:1610
+#: exe/webui/element.py:1712
 msgid "Show Score?"
 msgstr "要顯示分數嗎？"
 
-#: exe/webui/element.py:1695
+#: exe/webui/element.py:1797
 msgid "Show/Hide Feedback"
 msgstr "顯示/隱藏意見回饋"
 
-#: exe/webui/element.py:1853
+#: exe/webui/element.py:1955
 msgid "Please select a .flv file."
 msgstr "請選擇一個 .flv 檔。"
 
-#: exe/webui/element.py:1869
+#: exe/webui/element.py:1971
 msgid "Select a flash video"
 msgstr "請選擇一 flash 影片"
 
-#: exe/webui/element.py:1978
+#: exe/webui/element.py:2080
 msgid "text"
 msgstr "文字"
 
-#: exe/webui/element.py:1979
+#: exe/webui/element.py:2081
 msgid "newline"
 msgstr "新行"
 
-#: exe/webui/element.py:1982
+#: exe/webui/element.py:2084
 msgid "Select a font size: "
 msgstr "選擇字型大小："
 
-#: exe/webui/element.py:2092 exe/webui/element.py:2479
-#: exe/webui/element.py:2604 exe/webui/element.py:2622
+#: exe/webui/element.py:2194 exe/webui/element.py:2581
+#: exe/webui/element.py:2706 exe/webui/element.py:2724
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "正確選項"
 
-#: exe/webui/element.py:2120 exe/webui/element.py:2507
+#: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "刪除選項"
 
-#: exe/webui/element.py:2259 exe/webui/element.py:2714
-#: exe/webui/questionelement.py:120 exe/webui/testquestionelement.py:104
+#: exe/webui/element.py:2361 exe/webui/element.py:2816
+#: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "刪除問題"
 
-#: exe/webui/element.py:2294 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "新增其他選項"
 
-#: exe/webui/element.py:2395 exe/webui/element.py:2838
+#: exe/webui/element.py:2497 exe/webui/element.py:2940
 msgid "Solution"
 msgstr "答案"
 
-#: exe/webui/element.py:2606 exe/webui/element.py:2624
+#: exe/webui/element.py:2708 exe/webui/element.py:2726
 msgid "Wrong"
 msgstr "錯誤"
 
-#: exe/webui/element.py:2729
+#: exe/webui/element.py:2831
 msgid "Add another option"
 msgstr "新增其他選項"
 

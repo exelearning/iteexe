@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-29 17:38+0200\n"
+"POT-Creation-Date: 2015-06-02 16:33+0200\n"
 "PO-Revision-Date: 2007-12-04 01:11+1300\n"
 "Last-Translator: Toha Mustofa <toha.mustofa@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -50,7 +50,7 @@ msgid "Java Applet"
 msgstr "Applet Java"
 
 #: exe/engine/appletidevice.py:71 exe/engine/attachmentidevice.py:45
-#: exe/engine/casestudyidevice.py:198 exe/engine/clozefpdidevice.py:51
+#: exe/engine/casestudyidevice.py:201 exe/engine/clozefpdidevice.py:51
 #: exe/engine/clozeidevice.py:50 exe/engine/clozelangfpdidevice.py:51
 #: exe/engine/ejercicioresueltofpdidevice.py:199
 #: exe/engine/eleccionmultiplefpdidevice.py:62
@@ -219,14 +219,14 @@ msgstr ""
 msgid "Attachment %s has no parentNode"
 msgstr "Sisipan %s tidak memiliki simpul induk"
 
-#: exe/engine/casestudyidevice.py:63
+#: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/tools/style-designer/langs/en.js:33
 msgid "Image"
 msgstr "Gambar"
 
-#: exe/engine/casestudyidevice.py:64
+#: exe/engine/casestudyidevice.py:65
 #: exe/engine/ejercicioresueltofpdidevice.py:65
 msgid ""
 "Choose an optional image to be shown to the student on completion of this"
@@ -235,12 +235,12 @@ msgstr ""
 "Pilih sebuah gambar opsional untuk ditunjukan kepada siswa pada saat "
 "menyelesaikan pertanyaan ini"
 
-#: exe/engine/casestudyidevice.py:197
+#: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
 msgstr "Studi Kasus"
 
-#: exe/engine/casestudyidevice.py:199
-#: exe/engine/ejercicioresueltofpdidevice.py:200
+#: exe/engine/casestudyidevice.py:202
+#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -252,12 +252,12 @@ msgid ""
 "learners apply their own knowledge and experience to completing the tasks"
 " \n"
 "assigned. when designing a case study consider the following:<ul> \n"
-"<li>\tWhat educational points are conveyed in the story</li>\n"
-"<li>\tWhat preparation will the learners need to do prior to working on "
-"the \n"
+"<li>    What educational points are conveyed in the story</li>\n"
+"<li>    What preparation will the learners need to do prior to working on"
+" the \n"
 "case study</li>\n"
-"<li>\tWhere the case study fits into the rest of the course</li>\n"
-"<li>\tHow the learners will interact with the materials and each other "
+"<li>    Where the case study fits into the rest of the course</li>\n"
+"<li>    How the learners will interact with the materials and each other "
 "e.g.\n"
 "if run in a classroom situation can teams be setup to work on different "
 "aspects\n"
@@ -287,7 +287,7 @@ msgstr ""
 "kasus dan jika bisa bagaimana ide tersebut dapat di umpan balik kan pada "
 "kelas</li></ul>"
 
-#: exe/engine/casestudyidevice.py:216
+#: exe/engine/casestudyidevice.py:219
 #: exe/engine/ejercicioresueltofpdidevice.py:218
 msgid ""
 "Create the case story. A good case is one \n"
@@ -304,13 +304,13 @@ msgstr ""
 "diizinkan untuk diambil \n"
 "dalam rangka mengembangkan pemecahan situasi."
 
-#: exe/engine/casestudyidevice.py:220 exe/engine/casestudyidevice.py:406
+#: exe/engine/casestudyidevice.py:223 exe/engine/casestudyidevice.py:411
 #: exe/engine/ejercicioresueltofpdidevice.py:222
 #: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
 msgstr "Cerita:"
 
-#: exe/engine/casestudyidevice.py:225
+#: exe/engine/casestudyidevice.py:228
 #: exe/engine/ejercicioresueltofpdidevice.py:227
 msgid ""
 "Describe the activity tasks relevant \n"
@@ -325,7 +325,7 @@ msgstr ""
 " \n"
 "dilema."
 
-#: exe/engine/casestudyidevice.py:229
+#: exe/engine/casestudyidevice.py:232
 #: exe/engine/ejercicioresueltofpdidevice.py:231
 msgid ""
 "Provide relevant feedback on the \n"
@@ -705,7 +705,7 @@ msgstr ""
 "isian ini.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
-#: exe/webui/element.py:1420 exe/webui/listablock.py:259
+#: exe/webui/element.py:1522 exe/webui/listablock.py:259
 msgid "Cloze"
 msgstr "\"Cloze\""
 
@@ -733,7 +733,7 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
 #: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
-#: exe/engine/field.py:3614 exe/engine/field.py:3662
+#: exe/engine/field.py:3679 exe/engine/field.py:3727
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:605
 #: exe/engine/idevicestore.py:714 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
@@ -742,9 +742,9 @@ msgstr ""
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
 #: exe/webui/common.py:450 exe/webui/common.py:460
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
-#: exe/webui/element.py:2375 exe/webui/element.py:2510
-#: exe/webui/element.py:2625 exe/webui/element.py:2826
-#: exe/webui/listablock.py:462 exe/webui/questionelement.py:113
+#: exe/webui/element.py:2477 exe/webui/element.py:2612
+#: exe/webui/element.py:2727 exe/webui/element.py:2928
+#: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
 msgstr "Umpanbalik"
@@ -864,6 +864,53 @@ msgstr ""
 #: exe/engine/ejercicioresueltofpdidevice.py:198
 msgid "FPD - Translation"
 msgstr ""
+
+#: exe/engine/ejercicioresueltofpdidevice.py:200
+msgid ""
+"A case study is a device that provides learners \n"
+"with a simulation that has an educational basis. It takes a situation, "
+"generally \n"
+"based in reality, and asks learners to demonstrate or describe what "
+"action they \n"
+"would take to complete a task or resolve a situation. The case study "
+"allows \n"
+"learners apply their own knowledge and experience to completing the tasks"
+" \n"
+"assigned. when designing a case study consider the following:<ul> \n"
+"<li>\tWhat educational points are conveyed in the story</li>\n"
+"<li>\tWhat preparation will the learners need to do prior to working on "
+"the \n"
+"case study</li>\n"
+"<li>\tWhere the case study fits into the rest of the course</li>\n"
+"<li>\tHow the learners will interact with the materials and each other "
+"e.g.\n"
+"if run in a classroom situation can teams be setup to work on different "
+"aspects\n"
+"of the case and if so how are ideas feed back to the class</li></ul>"
+msgstr ""
+"Studi kasus adalah perangkat yang menyediakan siswa \n"
+"sebuah simulasi yang memiliki dasar pendidikan. Situasi yang terjadi, "
+"umumnya \n"
+"berdasarkan kejadian nyata, dan meminta siswa untuk mendemonstrasikan "
+"atau menggambarkan aksi apa yang akan mereka \n"
+"ambil untuk menyelesaikan sebuah tugas atau memecahkan sebuah situasi. "
+"Studi kasus mengizinkan \n"
+"siswa untuk menerapkan pengetahuan dan pengalaman mereka untuk "
+"menyelesaikan tugas  \n"
+"yang diberikan. Ketika mendesain sebuah studi kasus pertimbangkan hal - "
+"hal berikut ini:<ul> \n"
+"<li>\tPokok - pokok pendidikan apa yang ingin disampaikan pada cerita "
+"tersebut</li>\n"
+"<li>\tPersiapan apa yang akan perlu dilakukan siswa sebelum bekerja "
+"dengan studi kasus \n"
+"tersebut</li>\n"
+"<li>\tDi bagian mana studi kasus cocok pada keseluruhan pelajaran</li>\n"
+"<li>\tBagaimana siswa akan berinteraksi dengan materi dan satu sama lain "
+"contoh.\n"
+"Jika dijalankan dalam kelas dapatkah tim dibentuk untuk bekerja pada "
+"beragam aspek\n"
+"kasus dan jika bisa bagaimana ide tersebut dapat di umpan balik kan pada "
+"kelas</li></ul>"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 msgid "FPD - Multi Choice Activity"
@@ -1005,12 +1052,12 @@ msgstr ""
 "benar\" untuk pilihan jawaban yang benar; atau or \"Jawaban salah\"\n"
 "untuk pilihan yang salah."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3685
-#: exe/engine/field.py:3750 exe/engine/multichoiceidevice.py:131
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3750
+#: exe/engine/field.py:3815 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:82
-#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2350
-#: exe/webui/element.py:2354 exe/webui/element.py:2803
-#: exe/webui/element.py:2807 exe/webui/testquestionelement.py:151
+#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2452
+#: exe/webui/element.py:2456 exe/webui/element.py:2905
+#: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
 msgstr "Pertanyaan"
@@ -1155,7 +1202,7 @@ msgstr ""
 "Masukan URL yang anda ingin tampilkan\n"
 "dan pilih ukuran area untuk menampilkannya."
 
-#: exe/engine/field.py:2838 exe/engine/field.py:2885
+#: exe/engine/field.py:2903 exe/engine/field.py:2950
 #: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
@@ -1164,7 +1211,7 @@ msgstr ""
 "Menyediakan sebuah judul untuk berkas \n"
 "MP3. Hal ini juga akan muncul pada balok judul pada saat dimainkan."
 
-#: exe/engine/field.py:3021
+#: exe/engine/field.py:3086
 #, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
@@ -1195,7 +1242,7 @@ msgstr ""
 "is \"Elephant\". If only \"Strict Marking\" is checked and \"Check "
 "Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 
-#: exe/engine/field.py:3042 exe/engine/field.py:3276
+#: exe/engine/field.py:3107 exe/engine/field.py:3341
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
@@ -1203,7 +1250,7 @@ msgstr ""
 "<p>Jika opsi ini terpilih, jawaban yang dimasukkan dengan kapitalisasi "
 "yang tidak sesuai akan dianggap tidak benar.</p>"
 
-#: exe/engine/field.py:3047 exe/engine/field.py:3281
+#: exe/engine/field.py:3112 exe/engine/field.py:3346
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -1213,7 +1260,7 @@ msgstr ""
 "siswa yang mengetikkan itu daripada semua kata ditandai pada akhir dari \n"
 "latihan.</p>"
 
-#: exe/engine/field.py:3085 exe/engine/field.py:3323
+#: exe/engine/field.py:3150 exe/engine/field.py:3388
 #: exe/engine/listaidevice.py:398
 msgid ""
 "Allow auto completion when \n"
@@ -1222,7 +1269,7 @@ msgstr ""
 "Mengizinkan pelengkapan otomatis ketika \n"
 "pengguna mengisi celah yang masih kosong."
 
-#: exe/engine/field.py:3255
+#: exe/engine/field.py:3320
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1252,11 +1299,11 @@ msgstr ""
 "is \"Elephant\". If only \"Strict Marking\" is checked and \"Check "
 "Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 
-#: exe/engine/field.py:3286
+#: exe/engine/field.py:3351
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr ""
 
-#: exe/engine/field.py:3365 exe/engine/field.py:3409
+#: exe/engine/field.py:3430 exe/engine/field.py:3474
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1264,7 +1311,7 @@ msgstr ""
 "Hanya pilih .swf (Obyek Flash) untuk \n"
 "\"iDevice\" ini."
 
-#: exe/engine/field.py:3429 exe/engine/field.py:3493
+#: exe/engine/field.py:3494 exe/engine/field.py:3558
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1272,11 +1319,11 @@ msgstr ""
 "Hanya pilih .flv (Berkas Video Flash) untuk \n"
 "\"iDevice\" ini."
 
-#: exe/engine/field.py:3505
+#: exe/engine/field.py:3570
 msgid "Type a discussion topic here."
 msgstr "Ketik sebuah topik diskusi di sini."
 
-#: exe/engine/field.py:3534
+#: exe/engine/field.py:3599
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
@@ -1287,7 +1334,7 @@ msgstr ""
 " LATEX anda dimana akan ditampilkan tombol &lt;Tampilan Sementara&gt; di "
 "bawah.</p>"
 
-#: exe/engine/field.py:3542
+#: exe/engine/field.py:3607
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -1295,28 +1342,28 @@ msgstr ""
 "Klik tombol Tampilan Sementara untuk mengkonversi \n"
 "latex menjadi sebuah gambar."
 
-#: exe/engine/field.py:3610 exe/engine/field.py:3659
+#: exe/engine/field.py:3675 exe/engine/field.py:3724
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/webui/element.py:2087 exe/webui/element.py:2142
-#: exe/webui/element.py:2474 exe/webui/element.py:2566
+#: exe/webui/element.py:2189 exe/webui/element.py:2244
+#: exe/webui/element.py:2576 exe/webui/element.py:2668
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
 msgstr "Opsi"
 
-#: exe/engine/field.py:3688 exe/engine/field.py:3754
+#: exe/engine/field.py:3753 exe/engine/field.py:3819
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:194
 msgid "Hint"
 msgstr "Petunjuk"
 
-#: exe/engine/field.py:3776 exe/engine/field.py:3813 exe/webui/element.py:2279
+#: exe/engine/field.py:3841 exe/engine/field.py:3878 exe/webui/element.py:2381
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "Opsi - opsi"
 
-#: exe/engine/field.py:3836
+#: exe/engine/field.py:3901
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -1328,15 +1375,15 @@ msgstr ""
 "pemikiran negatif karene hal ini \n"
 "cenderung untuk membingungkan siswa."
 
-#: exe/engine/field.py:3839 exe/engine/field.py:3920
+#: exe/engine/field.py:3904 exe/engine/field.py:3985
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
-#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2254
+#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
 msgid "Question:"
 msgstr "Pertanyaan:"
 
-#: exe/engine/field.py:3844
+#: exe/engine/field.py:3909
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -1348,7 +1395,7 @@ msgstr ""
 "lain\". Hapus pilihan dengan cara \n"
 "klik X merah di sebelah pilihan."
 
-#: exe/engine/field.py:3848
+#: exe/engine/field.py:3913
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1356,7 +1403,7 @@ msgstr ""
 "Pilih sebanyak mungkin jawaban yang benar \n"
 "yang dibutuhkan dengan melakukan klik kotak cek di samping pilihan."
 
-#: exe/engine/field.py:3851
+#: exe/engine/field.py:3916
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -1364,10 +1411,10 @@ msgstr ""
 "Ketik pada umpan balik yang ingin anda \n"
 "sediakan bagi siswa."
 
-#: exe/engine/field.py:3853 exe/engine/field.py:3923
+#: exe/engine/field.py:3918 exe/engine/field.py:3988
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
-#: exe/engine/reflectionidevice.py:200
+#: exe/engine/reflectionidevice.py:204
 msgid "Feedback:"
 msgstr "Umpanbalik:"
 
@@ -1686,8 +1733,8 @@ msgstr ""
 msgid "Text for reset button"
 msgstr ""
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1446
-#: exe/webui/element.py:1702
+#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1548
+#: exe/webui/element.py:1804
 msgid "Restart"
 msgstr "Mulai Lagi"
 
@@ -1816,7 +1863,7 @@ msgstr ""
 #: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:640
 #: exe/engine/idevicestore.py:648 exe/engine/idevicestore.py:710
 #: exe/engine/idevicestore.py:747 exe/engine/idevicestore.py:755
-#: exe/webui/questionelement.py:109
+#: exe/webui/questionelement.py:110
 msgid "Activity"
 msgstr "Aktivitas"
 
@@ -2594,8 +2641,8 @@ msgstr ""
 "PENYIMPANAN GAGAL!\n"
 "Penyimpanan berhasil yang terakhir pada %s."
 
-#: exe/engine/package.py:1445 exe/jsui/scripts/app/controller/Toolbar.js:402
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
+#: exe/engine/package.py:1445 exe/jsui/scripts/app/controller/Toolbar.js:415
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "iDevice Editor"
 msgstr "Editor \"iDevice\""
 
@@ -2870,7 +2917,7 @@ msgstr ""
 #: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
-#: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:197
+#: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:201
 msgid "Reflective question:"
 msgstr "Pertanyaan Reflektif:"
 
@@ -3298,7 +3345,7 @@ msgstr ""
 msgid "Don't copy source in target"
 msgstr ""
 
-#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:680
+#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:760
 msgid "Wrap fields in CDATA"
 msgstr ""
 
@@ -3850,8 +3897,8 @@ msgstr ""
 msgid "Show Image"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:674
-#: exe/webui/element.py:1088
+#: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
+#: exe/webui/element.py:1190
 msgid "Select an image"
 msgstr "Pilih gambar"
 
@@ -3868,18 +3915,18 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:204
 #: exe/jsui/scripts/app/controller/StyleManager.js:161
 #: exe/jsui/scripts/app/controller/StyleManager.js:207
-#: exe/jsui/scripts/app/controller/Toolbar.js:473
-#: exe/jsui/scripts/app/controller/Toolbar.js:494
-#: exe/jsui/scripts/app/controller/Toolbar.js:529
-#: exe/jsui/scripts/app/controller/Toolbar.js:548
-#: exe/jsui/scripts/app/controller/Toolbar.js:617
-#: exe/jsui/scripts/app/controller/Toolbar.js:728
-#: exe/jsui/scripts/app/controller/Toolbar.js:851
-#: exe/jsui/scripts/app/controller/Toolbar.js:868
-#: exe/jsui/scripts/app/controller/Toolbar.js:885
-#: exe/jsui/scripts/app/controller/Toolbar.js:914
-#: exe/jsui/scripts/app/controller/Toolbar.js:1050
-#: exe/jsui/scripts/app/controller/Toolbar.js:1147
+#: exe/jsui/scripts/app/controller/Toolbar.js:553
+#: exe/jsui/scripts/app/controller/Toolbar.js:574
+#: exe/jsui/scripts/app/controller/Toolbar.js:609
+#: exe/jsui/scripts/app/controller/Toolbar.js:628
+#: exe/jsui/scripts/app/controller/Toolbar.js:697
+#: exe/jsui/scripts/app/controller/Toolbar.js:808
+#: exe/jsui/scripts/app/controller/Toolbar.js:931
+#: exe/jsui/scripts/app/controller/Toolbar.js:948
+#: exe/jsui/scripts/app/controller/Toolbar.js:965
+#: exe/jsui/scripts/app/controller/Toolbar.js:994
+#: exe/jsui/scripts/app/controller/Toolbar.js:1130
+#: exe/jsui/scripts/app/controller/Toolbar.js:1227
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 msgid "All Files"
 msgstr ""
@@ -3898,6 +3945,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/StyleManager.js:200
 #: exe/jsui/scripts/app/controller/StyleManager.js:241
 #: exe/jsui/scripts/app/controller/StyleManager.js:269
+#: exe/jsui/scripts/app/controller/Toolbar.js:475
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:253
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:334
@@ -3916,7 +3964,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:273
 #: exe/jsui/scripts/app/controller/MainTab.js:326
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:411
+#: exe/jsui/scripts/app/controller/Toolbar.js:424
 msgid "Confirm"
 msgstr ""
 
@@ -3933,12 +3981,12 @@ msgid "LOM Metadata import success!"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
 msgid "Insert Package"
 msgstr "Sisipkan Paket"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:349
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Extract Package"
 msgstr "Ekstrak Paket"
 
@@ -3978,121 +4026,139 @@ msgstr ""
 msgid "Do you want to delete this style?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:312
+#: exe/jsui/scripts/app/controller/Toolbar.js:325
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "About"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:329
+#: exe/jsui/scripts/app/controller/Toolbar.js:342
 msgid "Release notes"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:347
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:485
+#: exe/jsui/scripts/app/controller/Toolbar.js:360
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:476
 msgid "Legal Notes"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:384
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:416
+#: exe/jsui/scripts/app/controller/Toolbar.js:397
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
 msgid "Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:412
+#: exe/jsui/scripts/app/controller/Toolbar.js:425
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:438
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:385
+#: exe/jsui/scripts/app/controller/Toolbar.js:451
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
 msgid "Style Manager"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:461
+#: exe/jsui/scripts/app/controller/Toolbar.js:463
+msgid "Your Style has been created. Time to make it pretty."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:463
+#: exe/jsui/scripts/app/controller/Toolbar.js:469
+#, fuzzy
+msgid "New Style"
+msgstr "garisbaru"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:472
+msgid "The current Style is not compatible with the Style Designer"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:475
+msgid "Your Style could not be saved because an unknown error occurred."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:541
 msgid "Select package to insert"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:466
+#: exe/jsui/scripts/app/controller/Toolbar.js:546
 msgid "Inserting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:472
-#: exe/jsui/scripts/app/controller/Toolbar.js:493
-#: exe/jsui/scripts/app/controller/Toolbar.js:1049
-#: exe/jsui/scripts/app/controller/Toolbar.js:1146
+#: exe/jsui/scripts/app/controller/Toolbar.js:552
+#: exe/jsui/scripts/app/controller/Toolbar.js:573
+#: exe/jsui/scripts/app/controller/Toolbar.js:1129
+#: exe/jsui/scripts/app/controller/Toolbar.js:1226
 msgid "eXe Package Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:482
+#: exe/jsui/scripts/app/controller/Toolbar.js:562
 msgid "Save extracted package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:487
+#: exe/jsui/scripts/app/controller/Toolbar.js:567
 msgid "Extracting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:503
+#: exe/jsui/scripts/app/controller/Toolbar.js:583
 msgid "Select the parent folder for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:518
+#: exe/jsui/scripts/app/controller/Toolbar.js:598
 msgid "Select the entry point for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:528
+#: exe/jsui/scripts/app/controller/Toolbar.js:608
 msgid "HTML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:537
+#: exe/jsui/scripts/app/controller/Toolbar.js:617
 msgid "Select LOM Metadata file to import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:547
+#: exe/jsui/scripts/app/controller/Toolbar.js:627
 msgid "XML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:562
+#: exe/jsui/scripts/app/controller/Toolbar.js:642
 msgid "Waiting progress..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:570
+#: exe/jsui/scripts/app/controller/Toolbar.js:650
 msgid "Cancel Import?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:571
+#: exe/jsui/scripts/app/controller/Toolbar.js:651
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:594
+#: exe/jsui/scripts/app/controller/Toolbar.js:674
 msgid "Select Xliff file to import"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:604
+#: exe/jsui/scripts/app/controller/Toolbar.js:684
 msgid "XLIFF Import Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:616
-#: exe/jsui/scripts/app/controller/Toolbar.js:727
+#: exe/jsui/scripts/app/controller/Toolbar.js:696
+#: exe/jsui/scripts/app/controller/Toolbar.js:807
 msgid "XLIFF Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:626
+#: exe/jsui/scripts/app/controller/Toolbar.js:706
 msgid "Export to Xliff as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:646
+#: exe/jsui/scripts/app/controller/Toolbar.js:726
 msgid "Select source language"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:657
+#: exe/jsui/scripts/app/controller/Toolbar.js:737
 msgid "Select target language"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:668
+#: exe/jsui/scripts/app/controller/Toolbar.js:748
 msgid "Copy source also in target"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:671
+#: exe/jsui/scripts/app/controller/Toolbar.js:751
 msgid ""
 "If you don't choose this option, target field will be empty. Some "
 "Computer Aided Translation tools (e.g. OmegaT) just translate the content"
@@ -4100,7 +4166,7 @@ msgid ""
 "to pre-fill the target field with a copy of the source field."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:682
+#: exe/jsui/scripts/app/controller/Toolbar.js:762
 msgid ""
 "This option will wrap all the exported fields in CDATA sections. This "
 "kind of sections are not recommended by XLIFF standard but it could be a "
@@ -4108,7 +4174,7 @@ msgid ""
 "using the Computer Aided Translation software."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:691
+#: exe/jsui/scripts/app/controller/Toolbar.js:771
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/webui/editorpane.py:273 exe/webui/xliffimportpreferencespage.py:94
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -4116,142 +4182,142 @@ msgstr ""
 msgid "Cancel"
 msgstr "Batalkan"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:697
+#: exe/jsui/scripts/app/controller/Toolbar.js:777
 msgid "Ok"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:720
+#: exe/jsui/scripts/app/controller/Toolbar.js:800
 msgid "XLIFF Export Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:754
-#: exe/jsui/scripts/app/controller/Toolbar.js:760
-#: exe/jsui/scripts/app/controller/Toolbar.js:766
+#: exe/jsui/scripts/app/controller/Toolbar.js:834
+#: exe/jsui/scripts/app/controller/Toolbar.js:840
+#: exe/jsui/scripts/app/controller/Toolbar.js:846
 msgid "Google API Javascript library not available. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:755
-#: exe/jsui/scripts/app/controller/Toolbar.js:761
-#: exe/jsui/scripts/app/controller/Toolbar.js:767
+#: exe/jsui/scripts/app/controller/Toolbar.js:835
+#: exe/jsui/scripts/app/controller/Toolbar.js:841
+#: exe/jsui/scripts/app/controller/Toolbar.js:847
 msgid "Missing Google's client library. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:756
-#: exe/jsui/scripts/app/controller/Toolbar.js:762
-#: exe/jsui/scripts/app/controller/Toolbar.js:768
+#: exe/jsui/scripts/app/controller/Toolbar.js:836
+#: exe/jsui/scripts/app/controller/Toolbar.js:842
+#: exe/jsui/scripts/app/controller/Toolbar.js:848
 msgid ""
 "Google's API client library is not available, please check your Internet "
 "connection. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:774
+#: exe/jsui/scripts/app/controller/Toolbar.js:854
 msgid "App Client ID not set. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:775
+#: exe/jsui/scripts/app/controller/Toolbar.js:855
 msgid "Missing App Client ID. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:776
+#: exe/jsui/scripts/app/controller/Toolbar.js:856
 msgid ""
 "Please check the App Client ID set in <strong>Tools > Preferences > "
 "Publish to Google Drive</strong>. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:794
+#: exe/jsui/scripts/app/controller/Toolbar.js:874
 msgid ""
 "You must authorize eXe Learning to export contents into your Google Drive"
 " account"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:795
+#: exe/jsui/scripts/app/controller/Toolbar.js:875
 msgid "Are you sure you want to start authorization process?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:824
+#: exe/jsui/scripts/app/controller/Toolbar.js:904
 msgid "Select the parent folder for export."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:841
+#: exe/jsui/scripts/app/controller/Toolbar.js:921
 msgid "Export text package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:850
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:307
+#: exe/jsui/scripts/app/controller/Toolbar.js:930
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Text File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:858
+#: exe/jsui/scripts/app/controller/Toolbar.js:938
 msgid "Save package resources report as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:867
+#: exe/jsui/scripts/app/controller/Toolbar.js:947
 msgid "CSV File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:875
+#: exe/jsui/scripts/app/controller/Toolbar.js:955
 msgid "Export EPUB3 package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:884
+#: exe/jsui/scripts/app/controller/Toolbar.js:964
 msgid "EPUB3 File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:892
+#: exe/jsui/scripts/app/controller/Toolbar.js:972
 msgid "Export SCORM package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:894
+#: exe/jsui/scripts/app/controller/Toolbar.js:974
 msgid "Export IMS package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:896
+#: exe/jsui/scripts/app/controller/Toolbar.js:976
 msgid "Export Website package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:898
+#: exe/jsui/scripts/app/controller/Toolbar.js:978
 msgid "Export Common Cartridge as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:900
+#: exe/jsui/scripts/app/controller/Toolbar.js:980
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:913
+#: exe/jsui/scripts/app/controller/Toolbar.js:993
 msgid "SCORM/IMS/ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1022
+#: exe/jsui/scripts/app/controller/Toolbar.js:1102
 msgid "Loading package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1038
+#: exe/jsui/scripts/app/controller/Toolbar.js:1118
 msgid "Open File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1043
+#: exe/jsui/scripts/app/controller/Toolbar.js:1123
 msgid "Loading package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1062
+#: exe/jsui/scripts/app/controller/Toolbar.js:1142
 msgid "Save Package first?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1063
+#: exe/jsui/scripts/app/controller/Toolbar.js:1143
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1110
+#: exe/jsui/scripts/app/controller/Toolbar.js:1190
 msgid "Saving package to: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1126
+#: exe/jsui/scripts/app/controller/Toolbar.js:1206
 msgid "Save file"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1132
+#: exe/jsui/scripts/app/controller/Toolbar.js:1212
 msgid "Saving package..."
 msgstr ""
 
@@ -5588,60 +5654,56 @@ msgid "Self-contained Folder"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:286
-msgid "Publish in Google Drive"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
 msgid "Zip File"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:298
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
 msgid "Single Page"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:313
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:307
 msgid "Ustad Mobile"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:319
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:313
 msgid "XLIFF"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:325
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:319
 msgid "EPUB3"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:334
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:328
 msgid "Merging"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:362 exe/webui/editorpage.py:269
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:356 exe/webui/editorpage.py:269
 msgid "Quit"
 msgstr "Keluar"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:369
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:363
 msgid "Tools"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:393
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:384
 #: exe/webui/tools/style-designer/langs/en.js:6
 msgid "Style Designer"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:401
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:392
 msgid "Create new Style"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:406
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:397
 msgid "Edit current Style"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:422
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:413
 msgid "Resources Report"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428 exe/webui/editorpane.py:268
-#: exe/webui/element.py:1996
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:419 exe/webui/editorpane.py:268
+#: exe/webui/element.py:2098
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:10
@@ -5651,42 +5713,42 @@ msgstr ""
 msgid "Preview"
 msgstr "Tampilan Sementara"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:437
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Refresh Display"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:445
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:436
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Styles"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:455
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:446
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Help"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:465
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:456
 msgid "eXe Tutorial"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:478
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:469
 msgid "Release Notes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:494
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:485
 msgid "eXe Web Site"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:500
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:491
 msgid "Report an Issue"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:506
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:497
 msgid "eXe Forums"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:515
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:506
 msgid "About eXe"
 msgstr ""
 
@@ -7365,12 +7427,12 @@ msgstr ""
 msgid "Applet Code:"
 msgstr "Kode Applet:"
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:963
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
 msgid "Filename:"
 msgstr "Nama berkas:"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
-#: exe/webui/element.py:973
+#: exe/webui/element.py:1075
 msgid "Select a file"
 msgstr "Pilih berkas"
 
@@ -7440,7 +7502,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Ubah"
 
-#: exe/webui/casestudyblock.py:113 exe/webui/ejercicioresueltofpdblock.py:130
+#: exe/webui/casestudyblock.py:114 exe/webui/ejercicioresueltofpdblock.py:130
 msgid "Add another activity"
 msgstr "Tambahkan aktivitas lain"
 
@@ -7509,8 +7571,8 @@ msgstr ""
 msgid "Hide"
 msgstr "Sembunyikan"
 
-#: exe/webui/common.py:216 exe/webui/common.py:425 exe/webui/element.py:1436
-#: exe/webui/element.py:2367 exe/webui/listablock.py:275
+#: exe/webui/common.py:216 exe/webui/common.py:425 exe/webui/element.py:1538
+#: exe/webui/element.py:2469 exe/webui/listablock.py:275
 msgid "Show Feedback"
 msgstr "Tunjukan Umpan Balik"
 
@@ -7518,12 +7580,12 @@ msgstr "Tunjukan Umpan Balik"
 msgid "Hide Feedback"
 msgstr "Sembunyikan Umpanbalik"
 
-#: exe/webui/common.py:218 exe/webui/element.py:2170
+#: exe/webui/common.py:218 exe/webui/element.py:2272
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
 msgstr "Benar"
 
-#: exe/webui/common.py:219 exe/webui/element.py:2173
+#: exe/webui/common.py:219 exe/webui/element.py:2275
 msgid "Incorrect"
 msgstr "Salah"
 
@@ -7552,7 +7614,7 @@ msgstr "Baris Teks"
 msgid "Text Box"
 msgstr "Kotak Teks"
 
-#: exe/webui/editorelement.py:149
+#: exe/webui/editorelement.py:149 exe/webui/element.py:602
 msgid "Button Caption"
 msgstr "Tombol Judul Keterangan"
 
@@ -7590,7 +7652,7 @@ msgstr "Benar"
 msgid "Align:"
 msgstr "Luruskan:"
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1787
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1889
 msgid "Select Flash Object"
 msgstr "Pilih Obyek Flash"
 
@@ -7598,7 +7660,7 @@ msgstr "Pilih Obyek Flash"
 msgid "Select MP3 file"
 msgstr "Pilih berkas MP3"
 
-#: exe/webui/editorelement.py:311 exe/webui/element.py:767
+#: exe/webui/editorelement.py:311 exe/webui/element.py:869
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
@@ -7759,8 +7821,8 @@ msgstr "Ikon"
 msgid "Info"
 msgstr "Info"
 
-#: exe/webui/editorpane.py:430 exe/webui/element.py:1443
-#: exe/webui/element.py:1445 exe/webui/element.py:1701
+#: exe/webui/editorpane.py:430 exe/webui/element.py:1545
+#: exe/webui/element.py:1547 exe/webui/element.py:1803
 msgid "Submit"
 msgstr "Kirim"
 
@@ -7793,132 +7855,132 @@ msgstr ""
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr ""
 
-#: exe/webui/element.py:651 exe/webui/element.py:1072
+#: exe/webui/element.py:753 exe/webui/element.py:1174
 msgid "Add Image"
 msgstr "Tambahkan Gambar"
 
-#: exe/webui/element.py:677 exe/webui/element.py:1094 exe/webui/element.py:1791
+#: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
 msgid "Display as:"
 msgstr "Tampilkan sebagai:"
 
-#: exe/webui/element.py:684
+#: exe/webui/element.py:786
 msgid "by"
 msgstr ""
 
-#: exe/webui/element.py:691 exe/webui/element.py:1110
+#: exe/webui/element.py:793 exe/webui/element.py:1212
 msgid "blank for original size"
 msgstr "kosongkan untuk ukuran aslinya"
 
-#: exe/webui/element.py:761
+#: exe/webui/element.py:863
 msgid "Select an MP3"
 msgstr "Pilih MP3"
 
-#: exe/webui/element.py:1249 exe/webui/element.py:1582
+#: exe/webui/element.py:1351 exe/webui/element.py:1684
 msgid "Cloze Text"
 msgstr "Teks \"Cloze\""
 
-#: exe/webui/element.py:1257 exe/webui/element.py:1590
+#: exe/webui/element.py:1359 exe/webui/element.py:1692
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
 msgstr "Sembunyika/Tampilkan Kata"
 
-#: exe/webui/element.py:1262 exe/webui/element.py:1595
+#: exe/webui/element.py:1364 exe/webui/element.py:1697
 msgid "Strict Marking?"
 msgstr "Penandaan yang Ketat?"
 
-#: exe/webui/element.py:1267
+#: exe/webui/element.py:1369
 msgid "Check Capitalization?"
 msgstr ""
 
-#: exe/webui/element.py:1272 exe/webui/element.py:1605
+#: exe/webui/element.py:1374 exe/webui/element.py:1707
 msgid "Instant Marking?"
 msgstr "Penandaan Seketika?"
 
-#: exe/webui/element.py:1383 exe/webui/element.py:1640
+#: exe/webui/element.py:1485 exe/webui/element.py:1742
 #: exe/webui/listablock.py:223
 msgid "Your score is "
 msgstr ""
 
-#: exe/webui/element.py:1433 exe/webui/element.py:1692
+#: exe/webui/element.py:1535 exe/webui/element.py:1794
 msgid "Get score"
 msgstr "Ambil nilai"
 
-#: exe/webui/element.py:1439 exe/webui/element.py:1698
+#: exe/webui/element.py:1541 exe/webui/element.py:1800
 msgid "Show/Clear Answers"
 msgstr "Tunjukan/Hilangkan Jawaban"
 
-#: exe/webui/element.py:1449 exe/webui/element.py:1705
+#: exe/webui/element.py:1551 exe/webui/element.py:1807
 msgid "Show Answers"
 msgstr "Tunjukan Jawaban"
 
-#: exe/webui/element.py:1485 exe/webui/element.py:1737
-#: exe/webui/element.py:2359 exe/webui/element.py:2819
+#: exe/webui/element.py:1587 exe/webui/element.py:1839
+#: exe/webui/element.py:2461 exe/webui/element.py:2921
 #: exe/webui/listablock.py:313 exe/webui/testquestionelement.py:158
 msgid "Answers"
 msgstr ""
 
-#: exe/webui/element.py:1600
+#: exe/webui/element.py:1702
 msgid "Check Caps?"
 msgstr "Periksa tombol Caps?"
 
-#: exe/webui/element.py:1610
+#: exe/webui/element.py:1712
 msgid "Show Score?"
 msgstr ""
 
-#: exe/webui/element.py:1695
+#: exe/webui/element.py:1797
 msgid "Show/Hide Feedback"
 msgstr "Tunjukan/Hilangkan Umpan Balik"
 
-#: exe/webui/element.py:1853
+#: exe/webui/element.py:1955
 msgid "Please select a .flv file."
 msgstr "Pilih sebuah berkas .flv"
 
-#: exe/webui/element.py:1869
+#: exe/webui/element.py:1971
 msgid "Select a flash video"
 msgstr "Pilih video flash"
 
-#: exe/webui/element.py:1978
+#: exe/webui/element.py:2080
 msgid "text"
 msgstr "teks"
 
-#: exe/webui/element.py:1979
+#: exe/webui/element.py:2081
 msgid "newline"
 msgstr "garisbaru"
 
-#: exe/webui/element.py:1982
+#: exe/webui/element.py:2084
 msgid "Select a font size: "
 msgstr "Pilih ukuran huruf:"
 
-#: exe/webui/element.py:2092 exe/webui/element.py:2479
-#: exe/webui/element.py:2604 exe/webui/element.py:2622
+#: exe/webui/element.py:2194 exe/webui/element.py:2581
+#: exe/webui/element.py:2706 exe/webui/element.py:2724
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr ""
 
-#: exe/webui/element.py:2120 exe/webui/element.py:2507
+#: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "Hapus pilihan"
 
-#: exe/webui/element.py:2259 exe/webui/element.py:2714
-#: exe/webui/questionelement.py:120 exe/webui/testquestionelement.py:104
+#: exe/webui/element.py:2361 exe/webui/element.py:2816
+#: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "Hapus pertanyaan"
 
-#: exe/webui/element.py:2294 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "Tambahkan opsi yang lain"
 
-#: exe/webui/element.py:2395 exe/webui/element.py:2838
+#: exe/webui/element.py:2497 exe/webui/element.py:2940
 msgid "Solution"
 msgstr ""
 
-#: exe/webui/element.py:2606 exe/webui/element.py:2624
+#: exe/webui/element.py:2708 exe/webui/element.py:2726
 msgid "Wrong"
 msgstr "Salah"
 
-#: exe/webui/element.py:2729
+#: exe/webui/element.py:2831
 msgid "Add another option"
 msgstr "Tambahkan opsi yang lain"
 
