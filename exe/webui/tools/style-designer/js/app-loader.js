@@ -4,13 +4,28 @@
  * Creative Commons Attribution-ShareAlike (http://creativecommons.org/licenses/by-sa/3.0/)
  */
 var $designer = {
+	langs : ['en'], // langs : ['en','es',...], (use that if you want the Web Designer to use its own translations instead of eXe's translation mechanism)
 	init : function(){	
+		var lang = "en";
 		var sd_style = "base";
 		var sd_href= window.location.href;
 		var sd_href_parts = sd_href.split("?style=");
-		if (sd_href_parts.length==2) sd_style = sd_href_parts[1];
+		if (sd_href_parts.length==2) {
+			sd_style = sd_href_parts[1];	
+			sd_style = sd_style.split("&")[0];		
+		}
 		this.styleId = sd_style;
 		this.styleBasePath = "/style/"+sd_style+"/";
+		// Get lang
+		sd_href_parts = sd_href.split("lang=");
+		if (sd_href_parts.length==2) {
+			if (sd_href_parts[1]!="") {
+				for (var i=0;i<this.langs.length;i++) {
+					if (this.langs[i]===sd_href_parts[1]) lang = this.langs[i];
+				}
+			}
+		}
+		this.language = lang;
 	},
 	isBrowserCompatible : function(){
 		var n = navigator.userAgent.toLowerCase();
