@@ -4,7 +4,7 @@
  * Creative Commons Attribution-ShareAlike (http://creativecommons.org/licenses/by-sa/3.0/)
  */
 var $designer = {
-	langs : ['en','es'],
+	langs : ['en'], // langs : ['en','es',...], (use that if you want the Web Designer to use its own translations instead of eXe's translation mechanism)
 	init : function(){	
 		var lang = "en";
 		var sd_style = "base";
