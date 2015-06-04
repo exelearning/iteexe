@@ -462,7 +462,10 @@ Ext.define('eXe.controller.Toolbar', {
 		open : function(btn,text){
 			Ext.Msg.alert(_('New Style'), _("Your Style has been created. Time to make it pretty."),function(){
 				alert("Creo el directorio, etc.: "+text+"\n\nMira cómo se le pasa el estilo por GET en editStyle.");
-				styleDesignerWindow = window.open("/tools/style-designer/previews/website/");
+				var lang = "en"; // Default language
+				var l = document.documentElement.lang;
+				if (l && l!="") lang = l;				
+				styleDesignerWindow = window.open("/tools/style-designer/previews/website/?lang="+lang);
 			});
 		},
 		createStyle : function(){
@@ -503,7 +506,10 @@ Ext.define('eXe.controller.Toolbar', {
 					if (res.indexOf("/* eXeLearning Style Designer Compatible Style */")!=0) {
 						this.styleDesigner.notCompatitle();
 					} else {
-						styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId());		
+						var lang = "en"; // Default language
+						var l = document.documentElement.lang;
+						if (l && l!="") lang = l;
+						styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId()+"&lang="+lang);		
 					}
 				},
 				error: function(){
