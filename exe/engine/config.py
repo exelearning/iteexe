@@ -152,6 +152,8 @@ class Config(object):
         self.browser = None
         # docType  is the HTML export format
         self.docType = 'XHTML' 
+        # locale is the language of the user
+        self.locale = chooseDefaultLocale(self.localeDir)
         # internalAnchors indicate which exe_tmp_anchor tags to generate for each tinyMCE field
         # available values = "enable_all", "disable_autotop", or "disable_all"
         self.internalAnchors = "enable_all"
@@ -197,8 +199,6 @@ class Config(object):
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
-        # locale is the language of the user. localeDir can be overridden
-        self.locale = chooseDefaultLocale(self.localeDir)
         # Try to make the defaults a little intelligent
         # Under devel trees, webui is the default webdir
         self.webDir = Path(self.webDir)
@@ -445,6 +445,8 @@ class Config(object):
                 self.locale = self.configParser.user.locale
             if self.configParser.user.has_option('googleApiClientID'):
                 self.googleApiClientID = self.configParser.user.googleApiClientID
+                return
+        self.locale = chooseDefaultLocale(self.localeDir)
 
     def onWrite(self, configParser):
         """

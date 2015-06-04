@@ -95,20 +95,13 @@ var $i18n = {
 	// Common
 	Reset : _("Reset"),
 	Finish : _("Finish"),
-	Save : _("Save"),
-	Save_as : _("Save as"),
-	Confirm : _("Confirm"),
 	Finish_confirmation : _("Save the current design and close the Style Designer?"),
-	Save_confirmation : _("Save all changes? This cannot be undone."),
-	Save_as_dialog_instructions : _("Style name:"),
 	Browser_Incompatible : _("Your browser is not compatible with this tool."),
 	Hide_Show_Menu_Disabled : _("The Hide/Show menu option is disabled in the Style Designer"),
 	Not_Enough_Resolution : _("Please, make your browser bigger. The Style Designer requires at least a 1024x768 screen resolution"),
 	No_Opener_Error : _("The Style Designer window is not open."),
 	Quit_Warning : _("This window will be closed. Please restart the tool."),
 	Restore_Instructions : _("Just close this window and your design preview without clicking on Finish."),
-	OK : _("OK"),
-	Cancel : _("Cancel"),
 	// Color Picker
 	Color_Picker : _("Color Picker"),
 	Color_Picker_Strings : {

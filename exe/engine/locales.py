@@ -40,17 +40,16 @@ def chooseDefaultLocale(localeDir):
     possibleDirs = []
     if localeDir.isdir():
         for sub in localeDir.dirs():
-            if (sub/'LC_MESSAGES'/'exe.mo').exists():
-                lang, country, encoding = splitLocaleName(sub.basename())
-                points = 0
-                if lang == myLang:
-                    points += 1
-                if country == myCountry:
-                    points += 1
-                if encoding == myEncoding:
-                    points += 1
-                if points:
-                    possibleDirs.append((points, sub.basename()))
+            lang, country, encoding = splitLocaleName(sub.basename())
+            points = 0
+            if lang == myLang:
+                points += 1
+            if country == myCountry:
+                points += 1
+            if encoding == myEncoding:
+                points += 1
+            if points:
+                possibleDirs.append((points, sub.basename()))
         possibleDirs.sort()
         if possibleDirs:
             return possibleDirs[-1][-1]

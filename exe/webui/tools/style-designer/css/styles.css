@@ -21,7 +21,7 @@ a img{border:none}
 a:link, a:visited {color:black;}
 a:hover {color:#2B6FB6;}
 .nowrap {white-space: nowrap}
-.scr-av{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+h1,.scr-av{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 h3{font-size:1.1em}
 
 /* Forms */
@@ -67,10 +67,10 @@ p.checkbox{margin-top:5px}
 #tables .field label{width:130px}
 
 /* Buttons */
-.mceActionPanel input {
+#save, #preview, input.button, #restore {
 border:0; margin:0; padding:0;
 font-weight:bold;
-width:104px; height:26px;
+width:94px; height:26px;
 background:url(../images/default/buttons.png) 0 -26px;
 cursor:pointer;
 padding-bottom:2px;
@@ -93,7 +93,7 @@ padding-bottom:2px;
 .tabs a:link, .tabs a:visited, .tabs a:hover {color:black;}
 
 /* Panels */
-.panel{height:420px;padding:10px;max-width:612px}
+.panel{height:420px;padding:10px}
 .panel_wrapper{position:relative}
 #css-warning{position:absolute;bottom:10px;color:#555;margin:0 10px;font-size:10px}
 .panel_wrapper div.panel {display:none;}
@@ -138,13 +138,3 @@ table.jPicker{margin-top:69px;margin-left:48px}
 .radios label{margin-left:1em}
 
 .debug-off #content-css-tab,.debug-off #nav-css-tab{display:none}
-
-/* jQuery Alert Dialogs Plugin */
-#popup_container{min-width:300px;max-width:600px;background:#FFF;border:solid 5px #999;color:#000;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}
-#popup_title{font-size:13px;font-weight:bold;text-align:center;line-height:1.75em;color:#666;background:#CCC url(../images/alerts/title.gif) top repeat-x;border:solid 1px #FFF;border-bottom:solid 1px #999;cursor:default;padding:0em;margin:0em}
-#popup_content{background:16px 16px no-repeat url(../images/alerts/info.gif);padding:1em 1.75em;margin:0em}
-#popup_content.confirm{background-image:url(../images/alerts/important.gif)}
-#popup_content.prompt{background-image:url(../images/alerts/help.gif)}
-#popup_message{padding-left:48px}
-#popup_panel{text-align:center;margin:1em 0em 0em 1em}
-#popup_prompt{margin:.5em 0em}
