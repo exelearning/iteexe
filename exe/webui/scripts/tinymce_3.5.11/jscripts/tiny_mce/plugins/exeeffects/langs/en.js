@@ -4,10 +4,7 @@ tinyMCE.addI18n('en.exeeffects',{
 	instructions : _("Instructions"),
 	h2 : _("Heading 2"),
 	write_your_content : _("Write your content..."),
-	instructions1 : _("Choose an effect (you can change it later)."),
-	instructions2 : "To add a new tab, block, page... just add a second level title (Heading 2) followed by its content.",
-	instructions3 : "All blocks must start with a second level title (Heading 2).",
-	instructions4 : "Please do not overuse this effects.",	
+	// "" : _(""),
 	choose_a_type : _("Choose a type:"),
 	// Type 1
 	type1 : _("Accordion"),

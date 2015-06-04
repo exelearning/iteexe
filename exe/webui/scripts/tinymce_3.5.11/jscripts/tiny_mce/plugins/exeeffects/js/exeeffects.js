@@ -116,7 +116,6 @@ var eXeEffects = {
 	},	
 	showTypeOptions : function(id) {
 		if (!id) var id = this.getSelectedOption("type");
-		document.getElementById("type-thumb").src="img/"+id+".png";		
 		document.getElementById("type-desc").innerHTML = document.getElementById(id+"-desc").innerHTML;
 	}	
 }
