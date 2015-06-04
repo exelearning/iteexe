@@ -133,41 +133,44 @@ var $app = {
 		if (ie && ie<9) this.isOldBrowser = true;
 		
 		$("#restore").click(function(){
-			alert($i18n.Restore_Instructions);
+			jAlert($i18n.Restore_Instructions);
 		});
 
 		$("#saveAs").click(function(){
 			$app.getPreview();
-			var newName = prompt($i18n.Save_as_dialog_instructions);
-			if (newName!=null) {
-				alert("Guardamos una copia llamada "+newName+"\n\nLas variables content y nav contienen el código CSS a guardar.\n\nSeguimos editando "+newName+".");
-				var content = $("#my-content-css").val();
-				var nav = $("#my-nav-css").val();				
-			}
+			var content = $("#my-content-css").val();
+			var nav = $("#my-nav-css").val();			
+			jPrompt($i18n.Save_as_dialog_instructions, '', $i18n.Save_as, function(r) {
+				if (r) {
+					alert("Guardamos una copia llamada "+r+"\n\nLas variables content y nav contienen el código CSS a guardar.\n\nSeguimos editando "+r+".");
+				}
+			});	
 		});
 
 		$("#save").click(function(){
 			$app.getPreview();
 			var content = $("#my-content-css").val();
 			var nav = $("#my-nav-css").val();
-			if (confirm($i18n.Save_confirmation)) {
-				opener.opener.eXe.app.getController('Toolbar').styleDesigner.saveStyle(content,nav);
-			}			
-			alert("Guardamos los cambios.\n\nLas variables content y nav contienen el código CSS a guardar.\n\nSeguimos editando.");
+			jConfirm($i18n.Save_confirmation+"\n", $i18n.Confirm, function(r){
+				if (r) {
+					alert("Guardamos los cambios.\n\nLas variables content y nav contienen el código CSS a guardar.\n\nSeguimos editando.");
+				}
+			});
 		});		
 
 		$("#finish").click(function(){
 			$app.getPreview();
 			var content = $("#my-content-css").val();
 			var nav = $("#my-nav-css").val();
-			try {
-				if (confirm($i18n.Finish_confirmation)) {
-					opener.opener.eXe.app.getController('Toolbar').styleDesigner.saveStyle(content,nav);
+			jConfirm($i18n.Finish_confirmation+"\n", $i18n.Confirm, function(r){
+				if (r) {
+					try {
+						opener.opener.eXe.app.getController('Toolbar').styleDesigner.saveStyle(content,nav);	
+					} catch(e){
+						jAlert($i18n.No_Opener_Error);
+					}
 				}
-			} catch(e) {
-				// To do (show the content.css and the nav.css tabs and tell the user to copy their content)
-				alert($i18n.No_Opener_Error);
-			}
+			});
 		});
 		
 		this.stylePath = opener.$designer.styleBasePath;
@@ -178,7 +181,7 @@ var $app = {
 	quit : function(msg){
 		document.title = msg;
 		$("#cssWizard").hide();
-		alert(msg+"\n\n"+$i18n.Quit_Warning);
+		jAlert(msg+"\n\n"+$i18n.Quit_Warning);
 		window.close();
 	},
 	updateTextFieldFromFile : function(e){
