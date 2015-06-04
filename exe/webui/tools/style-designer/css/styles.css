@@ -93,7 +93,7 @@ padding-bottom:2px;
 .tabs a:link, .tabs a:visited, .tabs a:hover {color:black;}
 
 /* Panels */
-.panel{height:420px;padding:10px}
+.panel{height:420px;padding:10px;max-width:612px}
 .panel_wrapper{position:relative}
 #css-warning{position:absolute;bottom:10px;color:#555;margin:0 10px;font-size:10px}
 .panel_wrapper div.panel {display:none;}
