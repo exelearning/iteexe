@@ -79,6 +79,10 @@ File: exe/webui/tools/style-designer/js/jpicker-1.1.6.min.js
 Copyright: Christopher T. Tillman
 License: MIT
 
+File: exe/webui/tools/style-designer/js/jquery.alerts.js
+Copyright: Cory S.N. LaViska
+License: MIT | GPL
+
 
 License: GPL-2
  On Debian systems and derivatives, the full text of the GNU General Public License
