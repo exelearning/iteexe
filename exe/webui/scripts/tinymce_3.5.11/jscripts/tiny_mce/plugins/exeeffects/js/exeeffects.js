@@ -40,6 +40,7 @@ var eXeEffects = {
 		}
 		
 		if (inside) {
+			document.getElementById("insert").value=tinyMCEPopup.getLang("exeeffects.update");
 			var radios = document.getElementsByName("type");
 			for (var i = 0, length = radios.length; i < length; i++) {
 				if (radios[i].className==classToSelect) {

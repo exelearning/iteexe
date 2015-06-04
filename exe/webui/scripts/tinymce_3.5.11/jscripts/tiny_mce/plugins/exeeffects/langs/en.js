@@ -9,6 +9,7 @@ tinyMCE.addI18n('en.exeeffects',{
 	instructions3 : "All blocks must start with a second level title (Heading 2).",
 	instructions4 : "Please do not overuse this effects.",	
 	choose_a_type : _("Choose a type:"),
+	update : _("Update"),
 	// Type 1
 	type1 : _("Accordion"),
 	type1_desc : _("Collapsible content panels for presenting information in a limited space."),
