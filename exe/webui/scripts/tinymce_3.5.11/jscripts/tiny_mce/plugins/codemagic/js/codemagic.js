@@ -9,6 +9,7 @@ var lastPos = null;
 var lastQuery = null;
 var marked = [];
 var pluginCodeMirror = null;
+var highlightingStatus = "on"; // The New eXeLearning
 var pluginOptions = {
     lineNumbers: true,
     mode: "text/html",
@@ -139,8 +140,10 @@ function deactivateWrapText() {
 function toggleHighlighting(elm, id) {
     if (elm.checked) {
         activateCodeColoring(id);
+        highlightingStatus = "on"; // The New eXeLearning
     } else {
         deactivateCodeColoring();
+        highlightingStatus = "off"; // The New eXeLearning
     }
 }
 
@@ -164,7 +167,13 @@ function toggleWrapText(elm) {
 
 // save content back to tinymce editor
 function saveContent() {
-    tinyMCEPopup.editor.setContent(pluginCodeMirror.getValue(), { source_view : true });
+    /* The New eXeLearning */
+    // tinyMCEPopup.editor.setContent(pluginCodeMirror.getValue(), { source_view : true });
+    var c = "";
+    if (highlightingStatus=="on") c = pluginCodeMirror.getValue();
+    else c = document.getElementById("htmlSource").value;
+    tinyMCEPopup.editor.setContent(c, { source_view : true });
+    /* / The New eXeLearning */
     tinyMCEPopup.close();
 }
 
