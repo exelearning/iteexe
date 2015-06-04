@@ -67,10 +67,10 @@ p.checkbox{margin-top:5px}
 #tables .field label{width:130px}
 
 /* Buttons */
-#save, #preview, input.button, #restore {
+.mceActionPanel input {
 border:0; margin:0; padding:0;
 font-weight:bold;
-width:94px; height:26px;
+width:104px; height:26px;
 background:url(../images/default/buttons.png) 0 -26px;
 cursor:pointer;
 padding-bottom:2px;

@@ -131,8 +131,32 @@ var $app = {
 		this.isOldBrowser = false;
 		var ie = this.checkIE;
 		if (ie && ie<9) this.isOldBrowser = true;
+		
+		$("#restore").click(function(){
+			alert($i18n.Restore_Instructions);
+		});
+
+		$("#saveAs").click(function(){
+			$app.getPreview();
+			var newName = prompt($i18n.Save_as_dialog_instructions);
+			if (newName!=null) {
+				alert("Guardamos una copia llamada "+newName+"\n\nLas variables content y nav contienen el código CSS a guardar.\n\nSeguimos editando "+newName+".");
+				var content = $("#my-content-css").val();
+				var nav = $("#my-nav-css").val();				
+			}
+		});
 
 		$("#save").click(function(){
+			$app.getPreview();
+			var content = $("#my-content-css").val();
+			var nav = $("#my-nav-css").val();
+			if (confirm($i18n.Save_confirmation)) {
+				opener.opener.eXe.app.getController('Toolbar').styleDesigner.saveStyle(content,nav);
+			}			
+			alert("Guardamos los cambios.\n\nLas variables content y nav contienen el código CSS a guardar.\n\nSeguimos editando.");
+		});		
+
+		$("#finish").click(function(){
 			$app.getPreview();
 			var content = $("#my-content-css").val();
 			var nav = $("#my-nav-css").val();
@@ -144,9 +168,6 @@ var $app = {
 				// To do (show the content.css and the nav.css tabs and tell the user to copy their content)
 				alert($i18n.No_Opener_Error);
 			}
-		});
-		$("#restore").click(function(){
-			alert($i18n.Restore_Instructions);
 		});
 		
 		this.stylePath = opener.$designer.styleBasePath;

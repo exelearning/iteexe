@@ -92,7 +92,11 @@ var $i18n = {
 	// Common
 	Reset : "Restablecer",
 	Finish : "Finalizar",
+	Save : "Guardar",
+	Save_as : "Guardar como",	
 	Finish_confirmation : "¿Guardar el diseño actual y cerrar el Diseñador de Estilos?",
+	Save_confirmation : "¿Guardar cambios? No se puede deshacer.",
+	Save_as_dialog_instructions : "Guardar como... Nombre del Estilo:",
 	Browser_Incompatible : "Tu navegador no es compatible con esta herramienta.",
 	Hide_Show_Menu_Disabled : "Ocultar/mostrar el menú no está disponible en el Diseñador de Estilos",
 	Not_Enough_Resolution : "Por favor, haz tu navegador más grande. El Diseñador de Estilos necesita al menos 1024x768 píxeles.",
