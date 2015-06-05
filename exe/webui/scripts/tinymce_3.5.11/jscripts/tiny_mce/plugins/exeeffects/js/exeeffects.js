@@ -1,3 +1,8 @@
+/*
+ * Effects Plugin for eXeLearning
+ * By Ignacio Gros (http://www.gros.es/) for eXeLearning (http://exelearning.net/)
+ * Creative Commons Attribution-ShareAlike (http://creativecommons.org/licenses/by-sa/3.0/)
+ */
 var eXeEffects = {
 	values : [
 		'accordion',
@@ -7,10 +12,19 @@ var eXeEffects = {
 	],
 	init : function() {
 		mcTabs.displayTab('general_tab','general_panel');
+		this.addAdvancedLink();
 		this.enableTypeChange();
 		this.showTypeOptions();
 		this.getCurrentValues();
 	},	
+	addAdvancedLink : function(){
+		var e = document.getElementById("advanced-instructions");
+		if (e) {
+			var h = e.innerHTML;
+			h = h.replace("exeeffects.txt","<a href='exeeffects.txt' target='_blank'>exeeffects.txt</a>");
+			e.innerHTML = h;
+		}
+	},
 	getCurrentValues : function(){
 		
 		if (!parent) {

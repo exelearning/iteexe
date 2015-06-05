@@ -2,12 +2,12 @@
 .exe-accordion,.exe-accordion *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 .exe-accordion{width:90%;margin:2em 0 2em 5%}
 .js .exe-accordion{overflow:hidden;box-shadow:0px 1px 3px rgba(0,0,0,0.25);border-radius:3px;background:#fff;width:96%;margin-left:2%}
-.exe-accordion-section-title,.exe-accordion h2{width:100%;padding:15px;display:inline-block;border-bottom:1px solid #1a1a1a;background:#333;transition:all linear 0.15s;text-shadow:0px 1px 0px #1a1a1a;color:#fff}
+.exe-accordion-title,.exe-accordion h2{width:100%;padding:15px;display:inline-block;border-bottom:1px solid #1a1a1a;background:#333;transition:all linear 0.15s;text-shadow:0px 1px 0px #1a1a1a;color:#fff}
 #main .exe-accordion h2{border-radius:3px;margin:0;font-size:1em}
 .js .exe-accordion h2{padding:0;border:0;display:block;background:none;border-radius:3px}
-.exe-accordion-section-title.active,.exe-accordion-section-title:hover{background:#4c4c4c;text-decoration:none}
-.exe-accordion-section:last-child .exe-accordion-section-title{border-bottom:none}
-.exe-accordion-section-content{padding:0 15px;display:none}
+.exe-accordion-title.active,.exe-accordion-title:hover{background:#4c4c4c;text-decoration:none}
+.exe-accordion-section:last-child .exe-accordion-title{border-bottom:none}
+.exe-accordion-content{padding:0 15px;display:none}
 /* Tabs */
 .exe-tabs{margin:2em auto;width:90%}
 .js .exe-tabs{width:96%}
@@ -32,8 +32,8 @@
 .fx-pagination .disabled{filter:alpha(opacity=30);opacity:.3}
 .fx-pagination .disabled,.fx-pagination .disabled a,.fx-pagination .disabled a:hover{cursor:text;text-decoration:none}
 .fx-pagination .current a{background:#333;color:#fff}
-.fx-page-content{display:none;background:#ededed;padding:1px 15px;border-radius:5px}
-.fx-page-content.current{display:block}
+.page-content{display:none;background:#ededed;padding:1px 15px;border-radius:5px}
+.page-content.current{display:block}
 /* Carousel */
 .exe-carousel{margin:2em auto;width:90%;position:relative}
 .js .exe-carousel{width:96%}
@@ -55,37 +55,3 @@
 .carousel-pagination .exe-carousel-pg.disabled a:hover{filter:alpha(opacity=20);opacity:.2}
 .carousel-pagination .exe-carousel-next{left:auto;right:0}
 .carousel-pagination .exe-carousel-next a{text-indent:14px}
-/* Colors */
-/*
-/* Accordion */
-/*
-.js .exe-accordion{
-box-shadow:0px 1px 3px rgba(0,0,0,0.25);
-background:#fff;
-}
-.exe-accordion-section-title,.exe-accordion h2{
-border-bottom-color:#1a1a1a;
-background:#333;
-text-shadow:0px 1px 0px #1a1a1a;
-color:#fff;
-}
-.exe-accordion-section-title.active,.exe-accordion-section-title:hover{
-background:#4c4c4c;
-}
-*/
-/* Tabs, Pagination, Carousel */
-/*
-.exe-tabs .tabs .current a,
-.exe-tabs .tab-content,
-.fx-page-content,
-.carousel-page-content,
-.fx-pagination a,
-.carousel-pagination a{
-	background:#ededed;
-}
-
-.carousel-pagination .current a,.fx-pagination .current a,.carousel-pagination .exe-carousel-pg a:hover{
-background:#333;
-color:#fff;
-}
-*/

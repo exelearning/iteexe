@@ -1,3 +1,6 @@
+// Effects Plugin for eXeLearning
+// By Ignacio Gros (http://www.gros.es/) for eXeLearning (http://exelearning.net/)
+// Creative Commons Attribution-ShareAlike (http://creativecommons.org/licenses/by-sa/3.0/)
 $exeFX = {
 	init : function(){
 		var f = $(".exe-fx");
@@ -11,11 +14,11 @@ $exeFX = {
 	},
 	accordion : {
 		closeBlock : function(aID){
-			$('.exe-accordion-section-title',"#"+aID).removeClass('active');
-			$('.exe-accordion-section-content',"#"+aID).slideUp(300).removeClass('open');		
+			$('.exe-accordion-title',"#"+aID).removeClass('active');
+			$('.exe-accordion-content',"#"+aID).slideUp(300).removeClass('open');		
 		},
 		enable : function(x){
-			$('.exe-accordion-section-title',x).click(function(e) {
+			$('.exe-accordion-title',x).click(function(e) {
 				var aID = this.id.split("-")[0];
 				aID = aID.replace("_","-").replace("_","-");
 				var currentAttrValue = $(this).attr('href');
@@ -42,14 +45,14 @@ $exeFX = {
 			}
 			html = html.replace(/<h2/g, '</div>\n<h2');
 			html = html.replace('</div>\n<h2','<h2')
-			html = html.replace(/<\/h2>/g, '</h2>\n<div class="exe-accordion-section-content">');
+			html = html.replace(/<\/h2>/g, '</h2>\n<div class="exe-accordion-content">');
 			html = html + '</div>';
 			e.html('<div id="exe-accordion-'+i+'">\n<div class="exe-accordion-section">\n'+html+'\n</div>\n</div>\n');
 			var h2 = $("h2",e);
-			$(".exe-accordion-section-content",e).each(function(y){
+			$(".exe-accordion-content",e).each(function(y){
 				var id = "exe-accordion-"+i+"-"+y;
 				this.id = id;
-				h2.eq(y).wrap('<a class="exe-accordion-section-title" href="#'+id+'" id="'+id.replace("-","_").replace("-","_")+'-trigger"></a>');
+				h2.eq(y).wrap('<a class="exe-accordion-title" href="#'+id+'" id="'+id.replace("-","_").replace("-","_")+'-trigger"></a>');
 			});
 			$exeFX.accordion.enable(e);
 		},
@@ -82,11 +85,11 @@ $exeFX = {
 			}
 			html = html.replace(/<h2/g, '</div>\n<h2');
 			html = html.replace('</div>\n<h2','<h2');
-			html = html.replace(/<h2/g, '<div class="tab-content">\n<h2 class="sr-av"');
+			html = html.replace(/<h2/g, '<div class="fx-content tab-content">\n<h2 class="sr-av"');
 			html = html + '</div>';
 			e.attr("id",gID).html(html);
 			
-			var ul = '<ul class="tabs">\n';
+			var ul = '<ul class="fx-nav tabs">\n';
 			$(".tab-content",e).each(function(y){
 				var h2 = $("H2",this).eq(0);
 				var t = h2.text();
@@ -161,7 +164,7 @@ $exeFX = {
 			
 			lis.removeClass("current");
 			$("#"+id+"-link").addClass("current");
-			$(".fx-page-content",g).removeClass("current");
+			$(".page-content",g).removeClass("current");
 			$("#"+id).addClass("current");
 		},	
 		init : function(x,i){
@@ -181,15 +184,15 @@ $exeFX = {
 			}
 			html = html.replace(/<h2/g, '</div>\n<h2');
 			html = html.replace('</div>\n<h2','<h2');
-			html = html.replace(/<h2/g, '<div class="fx-page-content">\n<h2');
+			html = html.replace(/<h2/g, '<div class="fx-content page-content">\n<h2');
 			html = html + '</div>';
 			e.attr("id",gID).html(html);
 			
 			var counter = 0;
 			var hasNext = false;
-			var ul = '<ul class="fx-pagination">\n';
+			var ul = '<ul class="fx-nav fx-pagination">\n';
 			ul += '<li id="exe-paginated-'+i+'-prev" class="fx-pg fx-prev disabled"><a href="#" id="exe-paginated-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'">&#9668;</a></li>';
-			$(".fx-page-content",e).each(function(y){
+			$(".page-content",e).each(function(y){
 				var t = $("H2",this).eq(0).text();
 				t = t.replace(/\"/g, '&quot;');
 				var id = "exe-paginated-"+i+"-"+y;
@@ -277,14 +280,14 @@ $exeFX = {
 			}
 			html = html.replace(/<h2/g, '</div>\n<h2');
 			html = html.replace('</div>\n<h2','<h2');
-			html = html.replace(/<h2/g, '<div class="carousel-page-content">\n<h2');
+			html = html.replace(/<h2/g, '<div class="fx-content carousel-page-content">\n<h2');
 			html = html + '</div>';
 			e.attr("id",gID).html(html);
 			
 			var counter = 0;
 			var hasNext = false;
-			var ul = '<ul class="carousel-pagination">\n';
-			ul += '<li id="exe-carousel-'+i+'-prev" class="exe-carousel-pg exe-carousel-prev disabled"><a href="#" id="exe-carousel-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'">&#9668;</a></li>';
+			var ul = '<ul class="fx-nav carousel-pagination">\n';
+			ul += '<li id="exe-carousel-'+i+'-prev" class="exe-carousel-pg exe-carousel-prev disabled"><a href="#" id="exe-carousel-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'"><span>&#9668;</span></a></li>';
 			$(".carousel-page-content",e).each(function(y){
 				var t = $("H2",this).eq(0).text();
 				t = t.replace(/\"/g, '&quot;');
@@ -303,7 +306,7 @@ $exeFX = {
 			if (!hasNext) ul += ' disabled';
 			ul +='"><a href="#" id="exe-carousel-'+i+'-next-lnk" title="'+$exe_i18n.next+'"';
 			if (hasNext) ul += ' onclick="$exeFX.carousel.show(\''+gID+'\',\''+gID+'-1\',1);return false"'
-			ul += '>&#9658;</a></li>';
+			ul += '><span>&#9658;</span></a></li>';
 			ul += '</ul>';
 			e.append(ul);
 		}
