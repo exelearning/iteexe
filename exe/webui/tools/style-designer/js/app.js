@@ -106,7 +106,7 @@ var $app = {
 	defaultMark : "/* eXeLearning Style Designer (default CSS) */",
 	init : function() {
 	
-		if (!opener) {
+		if (!opener || !opener.opener) {
 			this.quit($i18n.No_Opener_Error);
 			return false;
 		}
