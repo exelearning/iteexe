@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: eXeLearning.net Translation Team "
 "<translations@exelearning.net>\n"
-"POT-Creation-Date: 2015-06-02 16:33+0200\n"
+"POT-Creation-Date: 2015-06-04 20:26+0200\n"
 "PO-Revision-Date: 2015-05-01 01:24+0200\n"
 "Last-Translator: eXeLearning.net Translation Team "
 "<translations@exelearning.net>\n"
@@ -2859,7 +2859,7 @@ msgstr ""
 msgid "Don't copy source in target"
 msgstr "উৎসকেও লক্ষ্যতে অনুলিপি করুন"
 
-#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:760
+#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:799
 msgid "Wrap fields in CDATA"
 msgstr ""
 
@@ -3429,18 +3429,18 @@ msgstr "চিত্র ফাইলগুলি"
 #: exe/jsui/scripts/app/controller/MainTab.js:204
 #: exe/jsui/scripts/app/controller/StyleManager.js:161
 #: exe/jsui/scripts/app/controller/StyleManager.js:207
-#: exe/jsui/scripts/app/controller/Toolbar.js:553
-#: exe/jsui/scripts/app/controller/Toolbar.js:574
-#: exe/jsui/scripts/app/controller/Toolbar.js:609
-#: exe/jsui/scripts/app/controller/Toolbar.js:628
-#: exe/jsui/scripts/app/controller/Toolbar.js:697
-#: exe/jsui/scripts/app/controller/Toolbar.js:808
-#: exe/jsui/scripts/app/controller/Toolbar.js:931
-#: exe/jsui/scripts/app/controller/Toolbar.js:948
-#: exe/jsui/scripts/app/controller/Toolbar.js:965
-#: exe/jsui/scripts/app/controller/Toolbar.js:994
-#: exe/jsui/scripts/app/controller/Toolbar.js:1130
-#: exe/jsui/scripts/app/controller/Toolbar.js:1227
+#: exe/jsui/scripts/app/controller/Toolbar.js:592
+#: exe/jsui/scripts/app/controller/Toolbar.js:613
+#: exe/jsui/scripts/app/controller/Toolbar.js:648
+#: exe/jsui/scripts/app/controller/Toolbar.js:667
+#: exe/jsui/scripts/app/controller/Toolbar.js:736
+#: exe/jsui/scripts/app/controller/Toolbar.js:847
+#: exe/jsui/scripts/app/controller/Toolbar.js:970
+#: exe/jsui/scripts/app/controller/Toolbar.js:987
+#: exe/jsui/scripts/app/controller/Toolbar.js:1004
+#: exe/jsui/scripts/app/controller/Toolbar.js:1033
+#: exe/jsui/scripts/app/controller/Toolbar.js:1169
+#: exe/jsui/scripts/app/controller/Toolbar.js:1266
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 msgid "All Files"
 msgstr "সব ফাইলগুলি"
@@ -3459,7 +3459,8 @@ msgstr "সেটিং সংরক্ষণ করা হয়েছে"
 #: exe/jsui/scripts/app/controller/StyleManager.js:200
 #: exe/jsui/scripts/app/controller/StyleManager.js:241
 #: exe/jsui/scripts/app/controller/StyleManager.js:269
-#: exe/jsui/scripts/app/controller/Toolbar.js:475
+#: exe/jsui/scripts/app/controller/Toolbar.js:478
+#: exe/jsui/scripts/app/controller/Toolbar.js:484
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:253
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:334
@@ -3479,6 +3480,7 @@ msgstr "ফর্মে অবৈধ ক্ষেত্র আছে। অন�
 #: exe/jsui/scripts/app/controller/MainTab.js:326
 #: exe/jsui/scripts/app/controller/Outline.js:204
 #: exe/jsui/scripts/app/controller/Toolbar.js:424
+#: exe/webui/tools/style-designer/langs/en.js:100
 msgid "Confirm"
 msgstr "নিশ্চিত করুন"
 
@@ -3579,104 +3581,121 @@ msgid "Your Style has been created. Time to make it pretty."
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:463
-#: exe/jsui/scripts/app/controller/Toolbar.js:469
+#: exe/jsui/scripts/app/controller/Toolbar.js:472
 #, fuzzy
 msgid "New Style"
 msgstr "নতুন লাইন"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:472
+#: exe/jsui/scripts/app/controller/Toolbar.js:475
 msgid "The current Style is not compatible with the Style Designer"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:475
+#: exe/jsui/scripts/app/controller/Toolbar.js:478
+#, fuzzy
+msgid "An unknown error occurred."
+msgstr "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:481
+msgid ""
+"That's one of eXe's default Styles, and it cannot be edited.\n"
+"\n"
+"Please choose a different Style or create a new one."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:481 exe/webui/block.py:263
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Information"
+msgstr "তথ্য"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:484
 msgid "Your Style could not be saved because an unknown error occurred."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:541
+#: exe/jsui/scripts/app/controller/Toolbar.js:580
 msgid "Select package to insert"
 msgstr "সন্নিবেশের জন্য প্যাকেজ বাছুন"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:546
+#: exe/jsui/scripts/app/controller/Toolbar.js:585
 msgid "Inserting package: {filename}"
 msgstr "প্যাকেজ সন্নিবেশ করা হচ্ছে: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:552
-#: exe/jsui/scripts/app/controller/Toolbar.js:573
-#: exe/jsui/scripts/app/controller/Toolbar.js:1129
-#: exe/jsui/scripts/app/controller/Toolbar.js:1226
+#: exe/jsui/scripts/app/controller/Toolbar.js:591
+#: exe/jsui/scripts/app/controller/Toolbar.js:612
+#: exe/jsui/scripts/app/controller/Toolbar.js:1168
+#: exe/jsui/scripts/app/controller/Toolbar.js:1265
 msgid "eXe Package Files"
 msgstr "eXe প্যাকেজ ফাইলগুলি"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:562
+#: exe/jsui/scripts/app/controller/Toolbar.js:601
 msgid "Save extracted package as"
 msgstr "সম্প্রসারিত প্যাকেজ সংরক্ষণ করুন এই প্রকারে"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:567
+#: exe/jsui/scripts/app/controller/Toolbar.js:606
 msgid "Extracting package: {filename}"
 msgstr "প্যাকেজ সম্প্রসারণ করা হচ্ছে: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:583
+#: exe/jsui/scripts/app/controller/Toolbar.js:622
 msgid "Select the parent folder for import."
 msgstr "আমদানির জন্য মূল ফোল্ডারটি বাছুন।"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:598
+#: exe/jsui/scripts/app/controller/Toolbar.js:637
 msgid "Select the entry point for import."
 msgstr "আমদানির জন্য প্রবেশক বিন্দু বাছুন।"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:608
+#: exe/jsui/scripts/app/controller/Toolbar.js:647
 msgid "HTML Files"
 msgstr "HTML ফাইলগুলি"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:617
+#: exe/jsui/scripts/app/controller/Toolbar.js:656
 msgid "Select LOM Metadata file to import."
 msgstr "আমদানি করার জন্য LOM মেটাডেটা বাছুন।"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:627
+#: exe/jsui/scripts/app/controller/Toolbar.js:666
 msgid "XML Files"
 msgstr "XML ফাইলগুলি"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:642
+#: exe/jsui/scripts/app/controller/Toolbar.js:681
 msgid "Waiting progress..."
 msgstr "অগ্রগতির জন্য অপেক্ষা করা হচ্ছে..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:650
+#: exe/jsui/scripts/app/controller/Toolbar.js:689
 msgid "Cancel Import?"
 msgstr "আমদানি বাতিল করবেন?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:651
+#: exe/jsui/scripts/app/controller/Toolbar.js:690
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr "একটি চলমান আমদানি আছে। আপনি কি এটি বাতিল করতে চান?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:674
+#: exe/jsui/scripts/app/controller/Toolbar.js:713
 msgid "Select Xliff file to import"
 msgstr "আমদানি করার জন্য Xliff ফাইল বাছুন"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:684
+#: exe/jsui/scripts/app/controller/Toolbar.js:723
 msgid "XLIFF Import Preferences"
 msgstr "XLIFF আমদানি পছন্দগুলি"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:696
-#: exe/jsui/scripts/app/controller/Toolbar.js:807
+#: exe/jsui/scripts/app/controller/Toolbar.js:735
+#: exe/jsui/scripts/app/controller/Toolbar.js:846
 msgid "XLIFF Files"
 msgstr "XLIFF ফাইলগুলি"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:706
+#: exe/jsui/scripts/app/controller/Toolbar.js:745
 msgid "Export to Xliff as"
 msgstr "Xliff-কে রপ্তানি করুন এই প্রকারে"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:726
+#: exe/jsui/scripts/app/controller/Toolbar.js:765
 msgid "Select source language"
 msgstr "একটি উৎস ভাষা বাছুন"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:737
+#: exe/jsui/scripts/app/controller/Toolbar.js:776
 msgid "Select target language"
 msgstr "একটি লক্ষ্য ভাষা বাছুন"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:748
+#: exe/jsui/scripts/app/controller/Toolbar.js:787
 msgid "Copy source also in target"
 msgstr "উৎসকেও লক্ষ্যতে অনুলিপি করুন"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:751
+#: exe/jsui/scripts/app/controller/Toolbar.js:790
 msgid ""
 "If you don't choose this option, target field will be empty. Some "
 "Computer Aided Translation tools (e.g. OmegaT) just translate the content"
@@ -3684,7 +3703,7 @@ msgid ""
 "to pre-fill the target field with a copy of the source field."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:762
+#: exe/jsui/scripts/app/controller/Toolbar.js:801
 msgid ""
 "This option will wrap all the exported fields in CDATA sections. This "
 "kind of sections are not recommended by XLIFF standard but it could be a "
@@ -3692,137 +3711,138 @@ msgid ""
 "using the Computer Aided Translation software."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:771
+#: exe/jsui/scripts/app/controller/Toolbar.js:810
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/webui/editorpane.py:273 exe/webui/xliffimportpreferencespage.py:94
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:113
+#: exe/webui/tools/style-designer/langs/en.js:111
+#: exe/webui/tools/style-designer/langs/en.js:120
 msgid "Cancel"
 msgstr "বাতিল করুন"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:777
+#: exe/jsui/scripts/app/controller/Toolbar.js:816
 msgid "Ok"
 msgstr "ঠিক আছে"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:800
+#: exe/jsui/scripts/app/controller/Toolbar.js:839
 msgid "XLIFF Export Preferences"
 msgstr "XLIFF রপ্তানি পছন্দগুলি"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:834
-#: exe/jsui/scripts/app/controller/Toolbar.js:840
-#: exe/jsui/scripts/app/controller/Toolbar.js:846
+#: exe/jsui/scripts/app/controller/Toolbar.js:873
+#: exe/jsui/scripts/app/controller/Toolbar.js:879
+#: exe/jsui/scripts/app/controller/Toolbar.js:885
 msgid "Google API Javascript library not available. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:835
-#: exe/jsui/scripts/app/controller/Toolbar.js:841
-#: exe/jsui/scripts/app/controller/Toolbar.js:847
+#: exe/jsui/scripts/app/controller/Toolbar.js:874
+#: exe/jsui/scripts/app/controller/Toolbar.js:880
+#: exe/jsui/scripts/app/controller/Toolbar.js:886
 msgid "Missing Google's client library. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:836
-#: exe/jsui/scripts/app/controller/Toolbar.js:842
-#: exe/jsui/scripts/app/controller/Toolbar.js:848
+#: exe/jsui/scripts/app/controller/Toolbar.js:875
+#: exe/jsui/scripts/app/controller/Toolbar.js:881
+#: exe/jsui/scripts/app/controller/Toolbar.js:887
 msgid ""
 "Google's API client library is not available, please check your Internet "
 "connection. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:854
+#: exe/jsui/scripts/app/controller/Toolbar.js:893
 msgid "App Client ID not set. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:855
+#: exe/jsui/scripts/app/controller/Toolbar.js:894
 msgid "Missing App Client ID. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:856
+#: exe/jsui/scripts/app/controller/Toolbar.js:895
 msgid ""
 "Please check the App Client ID set in <strong>Tools > Preferences > "
 "Publish to Google Drive</strong>. "
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:874
+#: exe/jsui/scripts/app/controller/Toolbar.js:913
 msgid ""
 "You must authorize eXe Learning to export contents into your Google Drive"
 " account"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:875
+#: exe/jsui/scripts/app/controller/Toolbar.js:914
 #, fuzzy
 msgid "Are you sure you want to start authorization process?"
 msgstr "আপনি কি সব ফর্ম ক্ষেত্র রিসেট করতে চান?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:904
+#: exe/jsui/scripts/app/controller/Toolbar.js:943
 msgid "Select the parent folder for export."
 msgstr "রপ্তানির জন্য মূল ফোল্ডারটি বাছুন।"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:921
+#: exe/jsui/scripts/app/controller/Toolbar.js:960
 msgid "Export text package as"
 msgstr "টেক্সট প্যাকেজকে রপ্তানি করুন এই প্রকারে"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:930
+#: exe/jsui/scripts/app/controller/Toolbar.js:969
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Text File"
 msgstr "টেক্সট ফাইল"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:938
+#: exe/jsui/scripts/app/controller/Toolbar.js:977
 msgid "Save package resources report as"
 msgstr "প্যাকেজ রিসোর্স রিপোর্টকে সংরক্ষণ করুন এই প্রকারে"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:947
+#: exe/jsui/scripts/app/controller/Toolbar.js:986
 msgid "CSV File"
 msgstr "CSV ফাইল"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:955
+#: exe/jsui/scripts/app/controller/Toolbar.js:994
 msgid "Export EPUB3 package as"
 msgstr "EPUB3 প্যাকেজকে রপ্তানি করুন এই প্রকারে"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:964
+#: exe/jsui/scripts/app/controller/Toolbar.js:1003
 msgid "EPUB3 File"
 msgstr "EPUB3 ফাইল"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:972
+#: exe/jsui/scripts/app/controller/Toolbar.js:1011
 msgid "Export SCORM package as"
 msgstr "SCORM প্যাকেজকে রপ্তানি করুন এই প্রকারে"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:974
+#: exe/jsui/scripts/app/controller/Toolbar.js:1013
 msgid "Export IMS package as"
 msgstr "IMS প্যাকেজকে রপ্তানি করুন এই প্রকারে"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:976
+#: exe/jsui/scripts/app/controller/Toolbar.js:1015
 msgid "Export Website package as"
 msgstr "ওয়েবসাইট প্যাকেজকে রপ্তানি করুন এই প্রকারে"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:978
+#: exe/jsui/scripts/app/controller/Toolbar.js:1017
 msgid "Export Common Cartridge as"
 msgstr "সাধারণ কার্টিজকে রপ্তানি করুন এই প্রকারে"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:980
+#: exe/jsui/scripts/app/controller/Toolbar.js:1019
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "exportPackage -এ অবৈধ মান দেওয়া হয়েছে"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:993
+#: exe/jsui/scripts/app/controller/Toolbar.js:1032
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/ZipFile"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1102
+#: exe/jsui/scripts/app/controller/Toolbar.js:1141
 msgid "Loading package..."
 msgstr "প্যাকেজ লোড করা হচ্ছে..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1118
+#: exe/jsui/scripts/app/controller/Toolbar.js:1157
 msgid "Open File"
 msgstr "ফাইল খুলুন"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1123
+#: exe/jsui/scripts/app/controller/Toolbar.js:1162
 msgid "Loading package: {filename}"
 msgstr "প্যাকেজ লোড করা হচ্ছে: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1142
+#: exe/jsui/scripts/app/controller/Toolbar.js:1181
 msgid "Save Package first?"
 msgstr "প্রথমে প্যাকেজ সংরক্ষণ করুন?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1143
+#: exe/jsui/scripts/app/controller/Toolbar.js:1182
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
@@ -3830,15 +3850,15 @@ msgstr ""
 "বর্তমান প্যাকেজ পরিবর্তন করা হয়েছে এবং সেটি এখনও সংরক্ষণ করা হয় নি। আপনি "
 "কি এখন সেটি সংরক্ষণ করতে চান?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1190
+#: exe/jsui/scripts/app/controller/Toolbar.js:1229
 msgid "Saving package to: {filename}"
 msgstr "প্যাকেজ সংরক্ষণ হচ্ছে এখানে: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1206
+#: exe/jsui/scripts/app/controller/Toolbar.js:1245
 msgid "Save file"
 msgstr "ফাইল সংরক্ষণ করুন"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1212
+#: exe/jsui/scripts/app/controller/Toolbar.js:1251
 msgid "Saving package..."
 msgstr "প্যাকেজ সংরক্ষণ হচ্ছে..."
 
@@ -3919,6 +3939,7 @@ msgstr "খুলুন"
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:244
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:260
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/tools/style-designer/langs/en.js:98
 msgid "Save"
 msgstr "সংরক্ষণ করুন"
 
@@ -5098,7 +5119,7 @@ msgid "Move node down"
 msgstr "নোট নিচে নিয়ে যান"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
-#: exe/webui/tools/style-designer/langs/en.js:110
+#: exe/webui/tools/style-designer/langs/en.js:117
 msgid "New"
 msgstr "নতুন"
 
@@ -6997,11 +7018,6 @@ msgstr "---সরান এখানে---"
 #: exe/webui/block.py:258 exe/webui/editorpane.py:377
 msgid "Pedagogical Help"
 msgstr "শিক্ষাগত সহায্য"
-
-#: exe/webui/block.py:263
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-msgid "Information"
-msgstr "তথ্য"
 
 #: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:558
 #: exe/webui/common.py:559 exe/webui/editorpane.py:364
@@ -10712,7 +10728,7 @@ msgid "Invalid color value"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:106
+#: exe/webui/tools/style-designer/langs/en.js:113
 msgid "Color Picker"
 msgstr ""
 
@@ -11063,119 +11079,132 @@ msgstr ""
 msgid "Finish"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:98
-msgid "Save the current design and close the Style Designer?"
-msgstr ""
-
 #: exe/webui/tools/style-designer/langs/en.js:99
-msgid "Your browser is not compatible with this tool."
-msgstr ""
-
-#: exe/webui/tools/style-designer/langs/en.js:100
-msgid "The Hide/Show menu option is disabled in the Style Designer"
+msgid "Save as"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:101
+msgid "Save the current design and close the Style Designer?"
+msgstr ""
+
+#: exe/webui/tools/style-designer/langs/en.js:102
+msgid "Save all changes? This cannot be undone."
+msgstr ""
+
+#: exe/webui/tools/style-designer/langs/en.js:103
+#, fuzzy
+msgid "Style name:"
+msgstr "ফাইলের নাম:"
+
+#: exe/webui/tools/style-designer/langs/en.js:104
+msgid "Your browser is not compatible with this tool."
+msgstr ""
+
+#: exe/webui/tools/style-designer/langs/en.js:105
+msgid "The Hide/Show menu option is disabled in the Style Designer"
+msgstr ""
+
+#: exe/webui/tools/style-designer/langs/en.js:106
 msgid ""
 "Please, make your browser bigger. The Style Designer requires at least a "
 "1024x768 screen resolution"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:102
+#: exe/webui/tools/style-designer/langs/en.js:107
 msgid "The Style Designer window is not open."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:103
+#: exe/webui/tools/style-designer/langs/en.js:108
 msgid "This window will be closed. Please restart the tool."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:104
+#: exe/webui/tools/style-designer/langs/en.js:109
 msgid "Just close this window and your design preview without clicking on Finish."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:109
+#: exe/webui/tools/style-designer/langs/en.js:116
 msgid "Drag markers to pick a color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:111
+#: exe/webui/tools/style-designer/langs/en.js:118
 #, fuzzy
 msgid "Current"
 msgstr "নাম প্রিসেট"
 
-#: exe/webui/tools/style-designer/langs/en.js:117
+#: exe/webui/tools/style-designer/langs/en.js:124
 msgid "New Color - Press OK to Commit"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:118
+#: exe/webui/tools/style-designer/langs/en.js:125
 msgid "Click to revert to original color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:121
+#: exe/webui/tools/style-designer/langs/en.js:128
 msgid "Commit to this color selection"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:122
+#: exe/webui/tools/style-designer/langs/en.js:129
 msgid "Cancel and revert to original color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:125
+#: exe/webui/tools/style-designer/langs/en.js:132
 msgid "Set to Hue color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:126
+#: exe/webui/tools/style-designer/langs/en.js:133
 msgid "Enter a Hue value (0-360º)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:129
+#: exe/webui/tools/style-designer/langs/en.js:136
 msgid "Set to Saturation color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:130
+#: exe/webui/tools/style-designer/langs/en.js:137
 msgid "Enter a Saturation value (0-100%)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:133
+#: exe/webui/tools/style-designer/langs/en.js:140
 msgid "Set to Value color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:134
+#: exe/webui/tools/style-designer/langs/en.js:141
 msgid "Enter a Value (0-100%)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:137
+#: exe/webui/tools/style-designer/langs/en.js:144
 msgid "Set to Red color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:138
+#: exe/webui/tools/style-designer/langs/en.js:145
 msgid "Enter a Red value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:141
+#: exe/webui/tools/style-designer/langs/en.js:148
 msgid "Set to Green color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:142
+#: exe/webui/tools/style-designer/langs/en.js:149
 msgid "Enter a Green value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:145
+#: exe/webui/tools/style-designer/langs/en.js:152
 msgid "Set to Blue color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:146
+#: exe/webui/tools/style-designer/langs/en.js:153
 msgid "Enter a Blue value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:149
+#: exe/webui/tools/style-designer/langs/en.js:156
 msgid "Set to Alpha color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:150
-#: exe/webui/tools/style-designer/langs/en.js:154
+#: exe/webui/tools/style-designer/langs/en.js:157
+#: exe/webui/tools/style-designer/langs/en.js:161
 msgid "Enter an Alpha value (0-100)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:153
+#: exe/webui/tools/style-designer/langs/en.js:160
 msgid "Enter an Hex color value (#000000-#ffffff)"
 msgstr ""
 
@@ -11288,7 +11317,8 @@ msgid ""
 msgstr ""
 
 #: exe/webui/xliffimportpreferencespage.py:90
-#: exe/webui/tools/style-designer/langs/en.js:112
+#: exe/webui/tools/style-designer/langs/en.js:110
+#: exe/webui/tools/style-designer/langs/en.js:119
 msgid "OK"
 msgstr "ঠিক আছে"
 

@@ -1,6 +1,3 @@
-function _(str){
-	return str;
-}
 var $i18n = {
 	// Style Designer
 	Style_Designer : _("Style Designer"),
