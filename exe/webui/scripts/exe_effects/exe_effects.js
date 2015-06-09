@@ -2,6 +2,7 @@
 // By Ignacio Gros (http://www.gros.es/) for eXeLearning (http://exelearning.net/)
 // Creative Commons Attribution-ShareAlike (http://creativecommons.org/licenses/by-sa/3.0/)
 $exeFX = {
+	baseClass : "exe",
 	h2 : "h2",
 	isOldBrowser : false,	
 	init : function(){
@@ -10,13 +11,14 @@ $exeFX = {
 			$exeFX.isOldBrowser = true;	
 			$exeFX.h2 = "H2";	
 		}		
-		var f = $(".exe-fx");
-		$(".exe-fx").each(function(i){
+		var k = $exeFX.baseClass;
+		var f = $("."+k+"-fx");
+		$("."+k+"-fx").each(function(i){
 			var c = this.className;
-			if (c.indexOf(" exe-accordion")!=-1) $exeFX.accordion.init(this,i);
-			else if (c.indexOf(" exe-tabs")!=-1) $exeFX.tabs.init(this,i);
-			else if (c.indexOf(" exe-paginated")!=-1) $exeFX.paginated.init(this,i);
-			else if (c.indexOf(" exe-carousel")!=-1) $exeFX.carousel.init(this,i);
+			if (c.indexOf(" "+k+"-accordion")!=-1) $exeFX.accordion.init(this,i);
+			else if (c.indexOf(" "+k+"-tabs")!=-1) $exeFX.tabs.init(this,i);
+			else if (c.indexOf(" "+k+"-paginated")!=-1) $exeFX.paginated.init(this,i);
+			else if (c.indexOf(" "+k+"-carousel")!=-1) $exeFX.carousel.init(this,i);
 		});
 	},
 	rftTitles : function(t) {
@@ -32,11 +34,13 @@ $exeFX = {
 	},
 	accordion : {
 		closeBlock : function(aID){
-			$('.exe-accordion-title',"#"+aID).removeClass('active');
-			$('.exe-accordion-content',"#"+aID).slideUp(300).removeClass('open');		
+			var k = $exeFX.baseClass;
+			$('.'+k+'-accordion-title',"#"+aID).removeClass('active');
+			$('.'+k+'-accordion-content',"#"+aID).slideUp(300).removeClass('open');		
 		},
 		enable : function(x){
-			$('.exe-accordion-title',x).click(function(e) {
+			var k = $exeFX.baseClass;
+			$('.'+k+'-accordion-title',x).click(function(e) {
 				var aID = this.id.split("-")[0];
 				aID = aID.replace("_","-").replace("_","-");
 				var currentAttrValue = $(this).attr('href');
@@ -59,7 +63,7 @@ $exeFX = {
 				} else {
 					$exeFX.accordion.closeBlock(aID);
 					$(this).addClass('active');
-					$('.exe-accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
+					$('.'+k+'-accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
 				}
 				e.preventDefault();
 			});		
@@ -75,23 +79,24 @@ $exeFX = {
 				}
 			}			
 
+			var k = $exeFX.baseClass;
 			if ($exeFX.isOldBrowser) {
 				html = html.replace(/<H2/g, '</div>\n<H2');
 				html = html.replace('</div>\n<H2','<H2')
-				html = html.replace(/<\/H2>/g, '</H2>\n<div class="exe-accordion-content">');				
+				html = html.replace(/<\/H2>/g, '</H2>\n<div class="'+k+'-accordion-content">');				
 			} else {
 				html = html.replace(/<h2/g, '</div>\n<h2');
 				html = html.replace('</div>\n<h2','<h2')
-				html = html.replace(/<\/h2>/g, '</h2>\n<div class="exe-accordion-content">');
+				html = html.replace(/<\/h2>/g, '</h2>\n<div class="'+k+'-accordion-content">');
 			}
 
 			html = html + '</div>';
-			e.html('<div id="exe-accordion-'+i+'">\n<div class="exe-accordion-section">\n'+html+'\n</div>\n</div>\n');
+			e.html('<div id="'+k+'-accordion-'+i+'">\n<div class="'+k+'-accordion-section">\n'+html+'\n</div>\n</div>\n');
 			var h2 = $("h2",e);
-			$(".exe-accordion-content",e).each(function(y){
-				var id = "exe-accordion-"+i+"-"+y;
+			$("."+k+"-accordion-content",e).each(function(y){
+				var id = k+"-accordion-"+i+"-"+y;
 				this.id = id;
-				h2.eq(y).wrap('<a class="exe-accordion-title" href="#'+id+'" id="'+id.replace("-","_").replace("-","_")+'-trigger"></a>');
+				h2.eq(y).wrap('<a class="'+k+'-accordion-title" href="#'+id+'" id="'+id.replace("-","_").replace("-","_")+'-trigger"></a>');
 			});
 			$exeFX.accordion.enable(e);
 		},
@@ -111,7 +116,8 @@ $exeFX = {
 		},
 		rft : function(e,i){
 			var html = "";
-			var gID = "exe-tabs-"+i;
+			var k = $exeFX.baseClass;
+			var gID = k+"-tabs-"+i;
 			var h = e.html();
 			h = $exeFX.rftTitles(h);
 			var p = h.split('<'+$exeFX.h2+'>');
@@ -144,7 +150,7 @@ $exeFX = {
 						h2.removeClass("sr-av")
 					}
 				}
-				var id = "exe-tab-"+i+"-"+y;
+				var id = k+"-tab-"+i+"-"+y;
 				var c = "";
 				if (y==0) {
 					c += ' class="current"';
@@ -217,7 +223,8 @@ $exeFX = {
 		},
 		rft : function(e,i){
 			var html = "";
-			var gID = "exe-paginated-"+i;
+			var k = $exeFX.baseClass;
+			var gID = k+"-paginated-"+i;
 			var h = e.html();
 			h = $exeFX.rftTitles(h);
 			var p = h.split('<'+$exeFX.h2+'>');
@@ -241,11 +248,11 @@ $exeFX = {
 			var counter = 0;
 			var hasNext = false;
 			var ul = '<ul class="fx-nav fx-pagination">\n';
-			ul += '<li id="exe-paginated-'+i+'-prev" class="fx-pg fx-prev disabled"><a href="#" id="exe-paginated-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'">&#9668;</a></li>';
+			ul += '<li id="'+k+'-paginated-'+i+'-prev" class="fx-pg fx-prev disabled"><a href="#" id="'+k+'-paginated-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'">&#9668;</a></li>';
 			$(".page-content",e).each(function(y){
 				var t = $("H2",this).eq(0).text();
 				t = t.replace(/\"/g, '&quot;');
-				var id = "exe-paginated-"+i+"-"+y;
+				var id = k+"-paginated-"+i+"-"+y;
 				var c = "";
 				if (y==0) {
 					c += ' class="current"';
@@ -256,9 +263,9 @@ $exeFX = {
 				counter ++;
 			});
 			if (counter>1) hasNext = true;
-			ul += '<li id="exe-paginated-'+i+'-next" class="fx-pg fx-next';
+			ul += '<li id="'+k+'-paginated-'+i+'-next" class="fx-pg fx-next';
 			if (!hasNext) ul += ' disabled';
-			ul +='"><a href="#" id="exe-paginated-'+i+'-next-lnk" title="'+$exe_i18n.next+'"';
+			ul +='"><a href="#" id="'+k+'-paginated-'+i+'-next-lnk" title="'+$exe_i18n.next+'"';
 			if (hasNext) ul += ' onclick="$exeFX.paginated.show(\''+gID+'\',\''+gID+'-1\',1);return false"'
 			ul += '>&#9658;</a></li>';
 			ul += '</ul>';
@@ -320,7 +327,8 @@ $exeFX = {
 		},
 		rft : function(e,i){
 			var html = "";
-			var gID = "exe-carousel-"+i;
+			var k = $exeFX.baseClass;
+			var gID = k+"-carousel-"+i;
 			var h = e.html();
 			h = $exeFX.rftTitles(h);
 			var p = h.split('<'+$exeFX.h2+'>');
@@ -344,11 +352,11 @@ $exeFX = {
 			var counter = 0;
 			var hasNext = false;
 			var ul = '<ul class="fx-nav carousel-pagination">\n';
-			ul += '<li id="exe-carousel-'+i+'-prev" class="exe-carousel-pg exe-carousel-prev disabled"><a href="#" id="exe-carousel-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'"><span>&#9668;</span></a></li>';
+			ul += '<li id="'+k+'-carousel-'+i+'-prev" class="'+k+'-carousel-pg '+k+'-carousel-prev disabled"><a href="#" id="exe-carousel-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'"><span>&#9668;</span></a></li>';
 			$(".carousel-page-content",e).each(function(y){
 				var t = $("H2",this).eq(0).text();
 				t = t.replace(/\"/g, '&quot;');
-				var id = "exe-carousel-"+i+"-"+y;
+				var id = k+"-carousel-"+i+"-"+y;
 				var c = "";
 				if (y==0) {
 					c += ' class="current"';
@@ -359,9 +367,9 @@ $exeFX = {
 				counter ++;
 			});
 			if (counter>1) hasNext = true;
-			ul += '<li id="exe-carousel-'+i+'-next" class="exe-carousel-pg exe-carousel-next';
+			ul += '<li id="'+k+'-carousel-'+i+'-next" class="'+k+'-carousel-pg '+k+'-carousel-next';
 			if (!hasNext) ul += ' disabled';
-			ul +='"><a href="#" id="exe-carousel-'+i+'-next-lnk" title="'+$exe_i18n.next+'"';
+			ul +='"><a href="#" id="'+k+'-carousel-'+i+'-next-lnk" title="'+$exe_i18n.next+'"';
 			if (hasNext) ul += ' onclick="$exeFX.carousel.show(\''+gID+'\',\''+gID+'-1\',1);return false"'
 			ul += '><span>&#9658;</span></a></li>';
 			ul += '</ul>';
