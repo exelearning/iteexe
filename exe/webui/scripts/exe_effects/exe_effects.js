@@ -2,7 +2,14 @@
 // By Ignacio Gros (http://www.gros.es/) for eXeLearning (http://exelearning.net/)
 // Creative Commons Attribution-ShareAlike (http://creativecommons.org/licenses/by-sa/3.0/)
 $exeFX = {
+	h2 : "h2",
+	isOldBrowser : false,	
 	init : function(){
+		var ie = $exeFX.checkIE();
+		if ((!isNaN(parseFloat(ie)) && isFinite(ie)) && ie<9) {
+			$exeFX.isOldBrowser = true;	
+			$exeFX.h2 = "H2";	
+		}		
 		var f = $(".exe-fx");
 		$(".exe-fx").each(function(i){
 			var c = this.className;
@@ -11,6 +18,17 @@ $exeFX = {
 			else if (c.indexOf(" exe-paginated")!=-1) $exeFX.paginated.init(this,i);
 			else if (c.indexOf(" exe-carousel")!=-1) $exeFX.carousel.init(this,i);
 		});
+	},
+	rftTitles : function(t) {
+		// Replace <h2 title=""></h2> by <h2><span title=""></span></h2>. That's how TinyMCE inserts the title when using the Insert/Edit Attributes option
+		var s = t.split('<'+$exeFX.h2+' title="');
+		var n ="";
+		for (var i=0;i<s.length;i++) {
+		  n += s[i];
+		  if (i<(s.length-1))n += '<'+$exeFX.h2+'><span title="';
+		  n = n.replace("</"+$exeFX.h2+">","</span></"+$exeFX.h2+">");
+		}
+		return n;
 	},
 	accordion : {
 		closeBlock : function(aID){
@@ -22,11 +40,23 @@ $exeFX = {
 				var aID = this.id.split("-")[0];
 				aID = aID.replace("_","-").replace("_","-");
 				var currentAttrValue = $(this).attr('href');
+				
+				// IE7 retrieves link#hash instead of #hash
+				currentAttrValue = currentAttrValue.split("#");
+				currentAttrValue = "#"+currentAttrValue[1];
+				// / IE7
+				
 				var target = $(e.target);
-				if (target[0].localName=="h2") target = target.parent();
+				var targetName;
+
+				if ($exeFX.isOldBrowser) targetName = target[0].nodeName;
+				else targetName = target[0].localName;
+				
+				if (targetName==$exeFX.h2) target = target.parent();
+				
 				if(target.is('.active')) {
 					$exeFX.accordion.closeBlock(aID);
-				}else {
+				} else {
 					$exeFX.accordion.closeBlock(aID);
 					$(this).addClass('active');
 					$('.exe-accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
@@ -37,15 +67,24 @@ $exeFX = {
 		rft : function(e,i){
 			var html = "";
 			var h = e.html();
-			var p = h.split('<h2>');
-			if (p.length==h.split('</h2>').length) {
+			h = $exeFX.rftTitles(h);
+			var p = h.split('<'+$exeFX.h2+'>');
+			if (p.length==h.split('</'+$exeFX.h2+'>').length) {
 				for (var x=1; x<p.length; x++) {
-					html += '<h2>'+p[x];
+					html += '<'+$exeFX.h2+'>'+p[x];
 				}
+			}			
+
+			if ($exeFX.isOldBrowser) {
+				html = html.replace(/<H2/g, '</div>\n<H2');
+				html = html.replace('</div>\n<H2','<H2')
+				html = html.replace(/<\/H2>/g, '</H2>\n<div class="exe-accordion-content">');				
+			} else {
+				html = html.replace(/<h2/g, '</div>\n<h2');
+				html = html.replace('</div>\n<h2','<h2')
+				html = html.replace(/<\/h2>/g, '</h2>\n<div class="exe-accordion-content">');
 			}
-			html = html.replace(/<h2/g, '</div>\n<h2');
-			html = html.replace('</div>\n<h2','<h2')
-			html = html.replace(/<\/h2>/g, '</h2>\n<div class="exe-accordion-content">');
+
 			html = html + '</div>';
 			e.html('<div id="exe-accordion-'+i+'">\n<div class="exe-accordion-section">\n'+html+'\n</div>\n</div>\n');
 			var h2 = $("h2",e);
@@ -59,10 +98,7 @@ $exeFX = {
 		init : function(x,i){
 			var e = $(x);
 			var a = $("h2",e);
-			if (a.length>0) {
-				has = true;
-				$exeFX.accordion.rft(e,i);					
-			}
+			if (a.length>0) $exeFX.accordion.rft(e,i);
 		}
 	},
 	tabs : {
@@ -77,15 +113,22 @@ $exeFX = {
 			var html = "";
 			var gID = "exe-tabs-"+i;
 			var h = e.html();
-			var p = h.split('<h2>');
-			if (p.length==h.split('</h2>').length) {
+			h = $exeFX.rftTitles(h);
+			var p = h.split('<'+$exeFX.h2+'>');
+			if (p.length==h.split('</'+$exeFX.h2+'>').length) {
 				for (var x=1; x<p.length; x++) {
-					html += '<h2>'+p[x];
+					html += '<'+$exeFX.h2+'>'+p[x];
 				}
 			}
-			html = html.replace(/<h2/g, '</div>\n<h2');
-			html = html.replace('</div>\n<h2','<h2');
-			html = html.replace(/<h2/g, '<div class="fx-content tab-content">\n<h2 class="sr-av"');
+			if ($exeFX.isOldBrowser) {
+				html = html.replace(/<H2/g, '</div>\n<H2');
+				html = html.replace('</div>\n<H2','<H2');
+				html = html.replace(/<H2/g, '<div class="fx-content tab-content">\n<H2 class="sr-av"');
+			} else {
+				html = html.replace(/<h2/g, '</div>\n<h2');
+				html = html.replace('</div>\n<h2','<h2');
+				html = html.replace(/<h2/g, '<div class="fx-content tab-content">\n<h2 class="sr-av"');
+			}
 			html = html + '</div>';
 			e.attr("id",gID).html(html);
 			
@@ -176,15 +219,22 @@ $exeFX = {
 			var html = "";
 			var gID = "exe-paginated-"+i;
 			var h = e.html();
-			var p = h.split('<h2>');
-			if (p.length==h.split('</h2>').length) {
+			h = $exeFX.rftTitles(h);
+			var p = h.split('<'+$exeFX.h2+'>');
+			if (p.length==h.split('</'+$exeFX.h2+'>').length) {
 				for (var x=1; x<p.length; x++) {
-					html += '<h2>'+p[x];
+					html += '<'+$exeFX.h2+'>'+p[x];
 				}
 			}
-			html = html.replace(/<h2/g, '</div>\n<h2');
-			html = html.replace('</div>\n<h2','<h2');
-			html = html.replace(/<h2/g, '<div class="fx-content page-content">\n<h2');
+			if ($exeFX.isOldBrowser) {
+				html = html.replace(/<H2/g, '</div>\n<H2');
+				html = html.replace('</div>\n<H2','<H2');
+				html = html.replace(/<H2/g, '<div class="fx-content page-content">\n<H2');				
+			} else {
+				html = html.replace(/<h2/g, '</div>\n<h2');
+				html = html.replace('</div>\n<h2','<h2');
+				html = html.replace(/<h2/g, '<div class="fx-content page-content">\n<h2');
+			}
 			html = html + '</div>';
 			e.attr("id",gID).html(html);
 			
@@ -272,15 +322,22 @@ $exeFX = {
 			var html = "";
 			var gID = "exe-carousel-"+i;
 			var h = e.html();
-			var p = h.split('<h2>');
-			if (p.length==h.split('</h2>').length) {
+			h = $exeFX.rftTitles(h);
+			var p = h.split('<'+$exeFX.h2+'>');
+			if (p.length==h.split('</'+$exeFX.h2+'>').length) {
 				for (var x=1; x<p.length; x++) {
-					html += '<h2>'+p[x];
+					html += '<'+$exeFX.h2+'>'+p[x];
 				}
 			}
-			html = html.replace(/<h2/g, '</div>\n<h2');
-			html = html.replace('</div>\n<h2','<h2');
-			html = html.replace(/<h2/g, '<div class="fx-content carousel-page-content">\n<h2');
+			if ($exeFX.isOldBrowser) {
+				html = html.replace(/<H2/g, '</div>\n<H2');
+				html = html.replace('</div>\n<H2','<H2');
+				html = html.replace(/<H2/g, '<div class="fx-content carousel-page-content">\n<H2');
+			} else {
+				html = html.replace(/<h2/g, '</div>\n<h2');
+				html = html.replace('</div>\n<h2','<h2');
+				html = html.replace(/<h2/g, '<div class="fx-content carousel-page-content">\n<h2');
+			}
 			html = html + '</div>';
 			e.attr("id",gID).html(html);
 			
@@ -310,6 +367,10 @@ $exeFX = {
 			ul += '</ul>';
 			e.append(ul);
 		}
+	},
+	checkIE : function(){
+		var n = navigator.userAgent.toLowerCase();
+		return (n.indexOf('msie') != -1) ? parseInt(n.split('msie')[1]) : false;
 	}	
 }
 $(function(){

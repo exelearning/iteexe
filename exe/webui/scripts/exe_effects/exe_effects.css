@@ -14,6 +14,7 @@
 .exe-tabs .tabs{margin:0;padding:0;list-style:none;overflow:auto}
 .exe-tabs h2{margin-top:2em}
 .js .exe-tabs h2{margin-top:.5em}
+* html .exe-tabs .tabs{width:100%} /* IE6 */
 .exe-tabs .tabs li{display:inline}
 .exe-tabs .tabs a{display:block;padding:10px 15px;outline:none;float:left}
 .exe-tabs .tabs .current a{background:#ededed;border-top-left-radius:5px;border-top-right-radius:5px}
@@ -27,6 +28,7 @@
 .exe-paginated h2{margin-top:2em}
 .js .exe-paginated h2{margin-top:1em}
 .fx-pagination li{display:inline;padding:0;margin:0 3px}
+.fx-pagination .fx-prev{margin-right:6px}
 .fx-pagination a{outline:none;display:inline-block;padding:3px 11px;cursor:pointer;border-radius:5px;background:#ededed}
 .fx-pg a{font-family:Arial,Verdana,Helvetica,sans-serif}
 .fx-pagination .disabled{filter:alpha(opacity=30);opacity:.3}
@@ -48,7 +50,7 @@
 .carousel-page-content{display:none;background:#ededed;padding:1px 15px;border-radius:5px;margin:0 65px}
 .carousel-page-content.current{display:block}
 .carousel-pagination li{font-size:.85em}
-.carousel-pagination .exe-carousel-pg{position:absolute;top:15px;left:0}
+.carousel-pagination .exe-carousel-pg{position:absolute;top:15px;left:0;*left:-10px} /* IE6, IE7 */
 .carousel-pagination .exe-carousel-pg a{width:50px;height:50px;padding:0;line-height:50px;font-size:25px;font-family:Arial,Verdana,Helvetica,sans-serif;border-radius:25px;text-align:left;text-indent:10px}
 .carousel-pagination .exe-carousel-pg a:hover{text-decoration:none;background:#333;color:#fff}
 .carousel-pagination .exe-carousel-pg a:focus{text-decoration:none}
