@@ -249,7 +249,7 @@ $exeFX = {
 				var c = "";
 				if (y==0) {
 					c += ' class="current"';
-					this.className += " current default-panel";
+					this.className += " current";
 				}
 				ul += '<li'+c+' id="'+id+'-link"><a href="#'+id+'" onclick="$exeFX.paginated.show(\''+gID+'\',\''+id+'\','+y+');return false" title="'+t+'">'+(y+1)+'</a></li>\n';
 				this.id = id;
@@ -352,7 +352,7 @@ $exeFX = {
 				var c = "";
 				if (y==0) {
 					c += ' class="current"';
-					this.className += " current default-panel";
+					this.className += " current";
 				}
 				ul += '<li'+c+' id="'+id+'-link"><a href="#'+id+'" onclick="$exeFX.carousel.show(\''+gID+'\',\''+id+'\','+y+');return false" title="'+t+'">'+(y+1)+'</a></li>\n';
 				this.id = id;
