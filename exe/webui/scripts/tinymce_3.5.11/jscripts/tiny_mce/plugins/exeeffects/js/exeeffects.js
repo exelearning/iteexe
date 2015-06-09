@@ -12,19 +12,10 @@ var eXeEffects = {
 	],
 	init : function() {
 		mcTabs.displayTab('general_tab','general_panel');
-		this.addAdvancedLink();
 		this.enableTypeChange();
 		this.showTypeOptions();
 		this.getCurrentValues();
 	},	
-	addAdvancedLink : function(){
-		var e = document.getElementById("advanced-instructions");
-		if (e) {
-			var h = e.innerHTML;
-			h = h.replace("exeeffects.txt","<a href='exeeffects.txt' target='_blank'>exeeffects.txt</a>");
-			e.innerHTML = h;
-		}
-	},
 	getCurrentValues : function(){
 		
 		if (!parent) {

@@ -8,8 +8,6 @@ tinyMCE.addI18n('en.exeeffects',{
 	instructions2 : "To add a new tab, block, page... just add a second level title (Heading 2) followed by its content.",
 	instructions3 : "All blocks must start with a second level title (Heading 2).",
 	instructions4 : "Please do not overuse these effects.",	
-	instructions5_title : _("Advanced user guide:"),	
-	instructions5 : _("Read exeeffects.txt to find out how to change the colors with CSS."),	
 	choose_a_type : _("Choose a type:"),
 	update : _("Update"),
 	// Type 1
