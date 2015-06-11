@@ -133,16 +133,26 @@ var $app = {
 		if (ie && ie<9) this.isOldBrowser = true;
 		
 		$("#restore").click(function(){
-			jAlert($i18n.Restore_Instructions);
+			Ext.Msg.show({
+				title: $i18n.Information,
+				msg: $i18n.Restore_Instructions,
+				buttonText: {yes:$i18n.OK}
+			});			
 		});
 
 		$("#saveAs").click(function(){
 			$app.getPreview();
 			var content = $("#my-content-css").val();
-			var nav = $("#my-nav-css").val();			
-			jPrompt($i18n.Save_as_dialog_instructions, '', $i18n.Save_as, function(r) {
-				if (r) {
-					alert("Guardamos una copia llamada "+r+"\n\nLas variables content y nav contienen el código CSS a guardar.\n\nSeguimos editando "+r+".");
+			var nav = $("#my-nav-css").val();
+			Ext.Msg.show({
+				title: $i18n.Save_as,
+				msg: $i18n.Save_as_dialog_instructions,
+				prompt: true,
+				buttonText: {yes:$i18n.Save, no:$i18n.Cancel},
+				fn: function(button,txt) {
+					if (button === 'yes') {
+						alert("Guardamos una copia llamada "+txt+"\n\nLas variables content y nav contienen el código CSS a guardar.\n\nSeguimos editando "+txt+".");
+					}
 				}
 			});	
 		});
@@ -151,9 +161,14 @@ var $app = {
 			$app.getPreview();
 			var content = $("#my-content-css").val();
 			var nav = $("#my-nav-css").val();
-			jConfirm($i18n.Save_confirmation+"\n", $i18n.Confirm, function(r){
-				if (r) {
-					alert("Guardamos los cambios.\n\nLas variables content y nav contienen el código CSS a guardar.\n\nSeguimos editando.");
+			Ext.Msg.show({
+				title: $i18n.Confirm,
+				msg: $i18n.Save_confirmation,
+				buttonText: {yes:$i18n.Yes, no:$i18n.No},
+				fn: function(button) {
+					if (button === 'yes') {
+						alert("Guardamos los cambios.\n\nLas variables content y nav contienen el código CSS a guardar.\n\nSeguimos editando.");
+					}
 				}
 			});
 		});		
@@ -162,12 +177,21 @@ var $app = {
 			$app.getPreview();
 			var content = $("#my-content-css").val();
 			var nav = $("#my-nav-css").val();
-			jConfirm($i18n.Finish_confirmation+"\n", $i18n.Confirm, function(r){
-				if (r) {
-					try {
-						opener.opener.eXe.app.getController('Toolbar').styleDesigner.saveStyle(content,nav);	
-					} catch(e){
-						jAlert($i18n.No_Opener_Error);
+			Ext.Msg.show({
+				title: $i18n.Confirm,
+				msg: $i18n.Finish_confirmation,
+				buttonText: {yes:$i18n.Yes, no:$i18n.No},
+				fn: function(button) {
+					if (button === 'yes') {
+						try {
+							opener.opener.eXe.app.getController('Toolbar').styleDesigner.saveStyle(content,nav);	
+						} catch(e){
+							Ext.Msg.show({
+								title: $i18n.Information,
+								msg: $i18n.No_Opener_Error,
+								buttonText: {yes:$i18n.OK}
+							});
+						}
 					}
 				}
 			});
@@ -181,8 +205,16 @@ var $app = {
 	quit : function(msg){
 		document.title = msg;
 		$("#cssWizard").hide();
-		jAlert(msg+"\n\n"+$i18n.Quit_Warning);
-		window.close();
+		Ext.Msg.show({
+			title: "",
+			msg: msg+"\n\n"+$i18n.Quit_Warning,
+			buttonText: {yes:$i18n.OK},
+				fn: function(button,txt) {
+					if (button === 'yes') {
+						window.close();
+					}
+				}
+		});
 	},
 	updateTextFieldFromFile : function(e){
 		// opener.parent.opener.document.getElementsByTagName("IFRAME")[0].contentWindow;

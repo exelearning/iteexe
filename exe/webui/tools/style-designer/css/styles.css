@@ -1,3 +1,14 @@
+/* Reset ext-all-gray.css */
+#cssWizard,.jPicker{font-size: 11px;line-height:1.5em;font-family: Verdana, Arial, Helvetica, sans-serif}
+#cssWizard .panel{height:440px}
+#cssWizard fieldset{padding:4px 9px}
+#content-css fieldset,#nav-css fieldset{padding-bottom:1em}
+#cssWizard legend{padding:0 4px}
+#cssWizard p.checkbox{margin-left:4px}
+.jPicker .Grid{margin-bottom:10px}
+tr.Hex input.Hex{margin-bottom:10px}
+.jPicker .Grid span.QuickColor{height:19px!important;width:19px!important}
+.x-mask {filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=85);opacity:0.85}
 /* Generic */
 body {
 font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;
@@ -138,13 +149,3 @@ table.jPicker{margin-top:69px;margin-left:48px}
 .radios label{margin-left:1em}
 
 .debug-off #content-css-tab,.debug-off #nav-css-tab{display:none}
-
-/* jQuery Alert Dialogs Plugin */
-#popup_container{min-width:300px;max-width:600px;background:#FFF;border:solid 5px #999;color:#000;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}
-#popup_title{font-size:13px;font-weight:bold;text-align:center;line-height:1.75em;color:#666;background:#CCC url(../images/alerts/title.gif) top repeat-x;border:solid 1px #FFF;border-bottom:solid 1px #999;cursor:default;padding:0em;margin:0em}
-#popup_content{background:16px 16px no-repeat url(../images/alerts/info.gif);padding:1em 1.75em;margin:0em}
-#popup_content.confirm{background-image:url(../images/alerts/important.gif)}
-#popup_content.prompt{background-image:url(../images/alerts/help.gif)}
-#popup_message{padding-left:48px}
-#popup_panel{text-align:center;margin:1em 0em 0em 1em}
-#popup_prompt{margin:.5em 0em}

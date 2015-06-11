@@ -1,3 +1,9 @@
+if (typeof(_)=='undefined') {
+	if (opener) _ = opener._
+	else _ = function(str) {
+		return str;
+	}
+}
 var $i18n = {
 	// Style Designer
 	Style_Designer : _("Style Designer"),
@@ -39,6 +45,7 @@ var $i18n = {
 	_Right_Center : _("Right - Center"),
 	_Right_Bottom : _("Right - Bottom"),
 	Background_repeat : _("Repeat"),
+	OK : _("OK"),
 	Yes : _("Yes"),
 	No : _("No"),
 	_Only_vertical : _("Only vertical"),
@@ -103,6 +110,7 @@ var $i18n = {
 	Not_Enough_Resolution : _("Please, make your browser bigger. The Style Designer requires at least a 1024x768 screen resolution"),
 	No_Opener_Error : _("The Style Designer window is not open."),
 	Quit_Warning : _("This window will be closed. Please restart the tool."),
+	Information : _("Information"),
 	Restore_Instructions : _("Just close this window and your design preview without clicking on Finish."),
 	OK : _("OK"),
 	Cancel : _("Cancel"),
