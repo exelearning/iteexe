@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: eXeLearning.net Translation Team "
 "<translations@exelearning.net>\n"
-"POT-Creation-Date: 2015-06-04 20:26+0200\n"
+"POT-Creation-Date: 2015-06-05 17:57+0200\n"
 "PO-Revision-Date: 2015-05-01 01:24+0200\n"
 "Last-Translator: eXeLearning.net Translation Team "
 "<translations@exelearning.net>\n"
@@ -205,7 +205,7 @@ msgstr "አባሪ %s ምንም parentNode የለውም"
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
-#: exe/webui/tools/style-designer/langs/en.js:33
+#: exe/webui/tools/style-designer/langs/en.js:30
 msgid "Image"
 msgstr "ምስል"
 
@@ -943,7 +943,7 @@ msgstr "አንሸታትት"
 #: exe/jsui/scripts/app/view/forms/LomSections.js:96
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:23
+#: exe/webui/tools/style-designer/langs/en.js:20
 msgid "Size"
 msgstr "መጠን"
 
@@ -962,7 +962,7 @@ msgstr "የላቁ አማራጮችን አሳይ"
 
 #: exe/engine/extendedfieldengine.py:284
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:32
+#: exe/webui/tools/style-designer/langs/en.js:29
 msgid "Browse"
 msgstr "አሳይ"
 
@@ -1194,13 +1194,13 @@ msgstr "የፋይል አባሪዎች Idevice።"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#: exe/webui/tools/style-designer/langs/en.js:45
+#: exe/webui/tools/style-designer/langs/en.js:42
 msgid "Yes"
 msgstr "አዎ"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#: exe/webui/tools/style-designer/langs/en.js:46
+#: exe/webui/tools/style-designer/langs/en.js:43
 msgid "No"
 msgstr "አይ"
 
@@ -1686,7 +1686,7 @@ msgstr ""
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
-#: exe/webui/tools/style-designer/langs/en.js:21
+#: exe/webui/tools/style-designer/langs/en.js:18
 msgid "Text"
 msgstr "ጽሁፍ"
 
@@ -2230,7 +2230,7 @@ msgstr "የእኔ ካታሎግ"
 #: exe/engine/package.py:1573
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:59
+#: exe/webui/tools/style-designer/langs/en.js:56
 msgid "Default"
 msgstr "ነባሪ"
 
@@ -3450,7 +3450,7 @@ msgstr "ቅጹ ትክክል ያልሆኑ መስኮችን አካቷል። እባ�
 #: exe/jsui/scripts/app/controller/MainTab.js:326
 #: exe/jsui/scripts/app/controller/Outline.js:204
 #: exe/jsui/scripts/app/controller/Toolbar.js:424
-#: exe/webui/tools/style-designer/langs/en.js:100
+#: exe/webui/tools/style-designer/langs/en.js:97
 msgid "Confirm"
 msgstr "አረጋግጥ"
 
@@ -3683,8 +3683,8 @@ msgstr ""
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/webui/editorpane.py:273 exe/webui/xliffimportpreferencespage.py:94
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:111
-#: exe/webui/tools/style-designer/langs/en.js:120
+#: exe/webui/tools/style-designer/langs/en.js:108
+#: exe/webui/tools/style-designer/langs/en.js:117
 msgid "Cancel"
 msgstr "ተወው"
 
@@ -3905,7 +3905,7 @@ msgstr "ክፈት"
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:244
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:260
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:98
+#: exe/webui/tools/style-designer/langs/en.js:95
 msgid "Save"
 msgstr "አስቀምጥ"
 
@@ -4120,7 +4120,7 @@ msgstr "አጽዳ"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:629
-#: exe/webui/tools/style-designer/langs/en.js:96
+#: exe/webui/tools/style-designer/langs/en.js:93
 msgid "Reset"
 msgstr "ዳግም አቀናብር"
 
@@ -4231,7 +4231,7 @@ msgstr "ታክሶኖሚ"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:8
+#: exe/webui/tools/style-designer/langs/en.js:5
 msgid "General"
 msgstr "አጠቃላይ"
 
@@ -4735,7 +4735,7 @@ msgstr "የዳራ ምስልን ሰድር?"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:509
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:55
+#: exe/webui/tools/style-designer/langs/en.js:52
 msgid "Footer"
 msgstr "ግርጌ"
 
@@ -4828,7 +4828,7 @@ msgstr "ቋንቋ ምረጥ"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:87
+#: exe/webui/tools/style-designer/langs/en.js:84
 msgid "Advanced"
 msgstr "የላቀ"
 
@@ -5083,7 +5083,7 @@ msgid "Move node down"
 msgstr "አንጓን ወደ ታች ያንቀሳቅሱ"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
-#: exe/webui/tools/style-designer/langs/en.js:117
+#: exe/webui/tools/style-designer/langs/en.js:114
 msgid "New"
 msgstr "አዲስ"
 
@@ -5191,7 +5191,7 @@ msgid "Tools"
 msgstr "መሳሪያዎች"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:384
-#: exe/webui/tools/style-designer/langs/en.js:6
+#: exe/webui/tools/style-designer/langs/en.js:3
 #, fuzzy
 msgid "Style Designer"
 msgstr "ስሪት"
@@ -7130,7 +7130,7 @@ msgstr "የአዝራር ማብራሪያ ጽሁፍ"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:15
+#: exe/webui/tools/style-designer/langs/en.js:12
 msgid "Left"
 msgstr "ግራ"
 
@@ -7144,7 +7144,7 @@ msgstr "ግራ"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:62
+#: exe/webui/tools/style-designer/langs/en.js:59
 msgid "Right"
 msgstr "ቀኝ"
 
@@ -8226,7 +8226,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:36
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:61
+#: exe/webui/tools/style-designer/langs/en.js:58
 msgid "Alignment"
 msgstr "እውነተኛ አካባቢ"
 
@@ -8272,7 +8272,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:14
+#: exe/webui/tools/style-designer/langs/en.js:11
 msgid "Center"
 msgstr "መለያ"
 
@@ -8405,12 +8405,12 @@ msgid "Rich Text Area"
 msgstr "ብልጽግ ጽሁፍ"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:77
+#: exe/webui/tools/style-designer/langs/en.js:74
 msgid "White"
 msgstr "ጣቢያ"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:78
+#: exe/webui/tools/style-designer/langs/en.js:75
 msgid "Black"
 msgstr "ግብረ መልስ"
 
@@ -8451,7 +8451,7 @@ msgstr "ስፋት"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:69
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:56
+#: exe/webui/tools/style-designer/langs/en.js:53
 msgid "Height"
 msgstr "ቁመት"
 
@@ -8661,7 +8661,7 @@ msgstr "creative commons: attribution 4.0"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:13
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:54
+#: exe/webui/tools/style-designer/langs/en.js:51
 msgid "Header"
 msgstr ""
 
@@ -9358,8 +9358,8 @@ msgstr "የዳራ ምስልን ሰድር?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:29
-#: exe/webui/tools/style-designer/langs/en.js:74
+#: exe/webui/tools/style-designer/langs/en.js:26
+#: exe/webui/tools/style-designer/langs/en.js:71
 msgid "Color"
 msgstr "ውጤት"
 
@@ -9967,17 +9967,17 @@ msgid "Strikethrough"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:20
+#: exe/webui/tools/style-designer/langs/en.js:17
 msgid "Font"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:34
+#: exe/webui/tools/style-designer/langs/en.js:31
 msgid "Position"
 msgstr "አማራጭ"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:44
+#: exe/webui/tools/style-designer/langs/en.js:41
 msgid "Repeat"
 msgstr ""
 
@@ -10235,7 +10235,7 @@ msgid "You may use HTML. You can edit it later in the editor itself."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
-#: exe/webui/tools/style-designer/langs/en.js:27
+#: exe/webui/tools/style-designer/langs/en.js:24
 #, fuzzy
 msgid "Page"
 msgstr "ገጽ አክል"
@@ -10692,7 +10692,7 @@ msgid "Invalid color value"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:113
+#: exe/webui/tools/style-designer/langs/en.js:110
 msgid "Color Picker"
 msgstr ""
 
@@ -10781,394 +10781,394 @@ msgstr "ቅጥ በተሳካ ሁኔታ ተሰርዟል"
 msgid "An unexpected error has occurred"
 msgstr "ያልተጠበቀ ስህተት ተከስቷል"
 
-#: exe/webui/tools/style-designer/langs/en.js:9
+#: exe/webui/tools/style-designer/langs/en.js:6
 #, fuzzy
 msgid "General settings"
 msgstr "አጠቃላይ ቅንብሮች"
 
-#: exe/webui/tools/style-designer/langs/en.js:10
+#: exe/webui/tools/style-designer/langs/en.js:7
 #, fuzzy
 msgid "Page width"
 msgstr "ተካ"
 
-#: exe/webui/tools/style-designer/langs/en.js:11
+#: exe/webui/tools/style-designer/langs/en.js:8
 msgid "Percentage"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:12
+#: exe/webui/tools/style-designer/langs/en.js:9
 msgid "Pixels"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:13
+#: exe/webui/tools/style-designer/langs/en.js:10
 #, fuzzy
 msgid "Page position"
 msgstr "አማራጭ"
 
-#: exe/webui/tools/style-designer/langs/en.js:16
+#: exe/webui/tools/style-designer/langs/en.js:13
 #, fuzzy
 msgid "Shadow color"
 msgstr "ውጤት ይታይ?"
 
-#: exe/webui/tools/style-designer/langs/en.js:17
+#: exe/webui/tools/style-designer/langs/en.js:14
 #, fuzzy
 msgid "Border width"
 msgstr "አቃፊ"
 
-#: exe/webui/tools/style-designer/langs/en.js:18
+#: exe/webui/tools/style-designer/langs/en.js:15
 #, fuzzy
 msgid "Border color"
 msgstr "የሽፋን አዶ:"
 
-#: exe/webui/tools/style-designer/langs/en.js:19
+#: exe/webui/tools/style-designer/langs/en.js:16
 msgid "Text and Links"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:22
+#: exe/webui/tools/style-designer/langs/en.js:19
 #, fuzzy
 msgid "Text color"
 msgstr "ውጤት አግኝ"
 
-#: exe/webui/tools/style-designer/langs/en.js:24
+#: exe/webui/tools/style-designer/langs/en.js:21
 #, fuzzy
 msgid "Links"
 msgstr "እውር"
 
-#: exe/webui/tools/style-designer/langs/en.js:25
+#: exe/webui/tools/style-designer/langs/en.js:22
 msgid "Links color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:28
+#: exe/webui/tools/style-designer/langs/en.js:25
 msgid "Page background (only Web Site)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:30
+#: exe/webui/tools/style-designer/langs/en.js:27
 #, fuzzy
 msgid "Background color"
 msgstr "ዳራ"
 
-#: exe/webui/tools/style-designer/langs/en.js:31
+#: exe/webui/tools/style-designer/langs/en.js:28
 #, fuzzy
 msgid "Select image"
 msgstr "ምስል ምረጥ"
 
-#: exe/webui/tools/style-designer/langs/en.js:35
+#: exe/webui/tools/style-designer/langs/en.js:32
 msgid "Left - Top"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:36
+#: exe/webui/tools/style-designer/langs/en.js:33
 #, fuzzy
 msgid "Left - Center"
 msgstr "ፈቃድ ይምረጡ።"
 
-#: exe/webui/tools/style-designer/langs/en.js:37
+#: exe/webui/tools/style-designer/langs/en.js:34
 msgid "Left - Bottom"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:38
+#: exe/webui/tools/style-designer/langs/en.js:35
 msgid "Center - Center"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:39
+#: exe/webui/tools/style-designer/langs/en.js:36
 msgid "Center - Top"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:40
+#: exe/webui/tools/style-designer/langs/en.js:37
 msgid "Center - Bottom"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:41
+#: exe/webui/tools/style-designer/langs/en.js:38
 msgid "Right - Top"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:42
+#: exe/webui/tools/style-designer/langs/en.js:39
 msgid "Right - Center"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:43
+#: exe/webui/tools/style-designer/langs/en.js:40
 msgid "Right - Bottom"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:47
+#: exe/webui/tools/style-designer/langs/en.js:44
 msgid "Only vertical"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:48
+#: exe/webui/tools/style-designer/langs/en.js:45
 msgid "Only horizontal"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:49
+#: exe/webui/tools/style-designer/langs/en.js:46
 msgid "Contents area background"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:50
+#: exe/webui/tools/style-designer/langs/en.js:47
 msgid "The \"Page background\" will only be used when exporting as Web Site."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:51
+#: exe/webui/tools/style-designer/langs/en.js:48
 msgid ""
 "The \"Contents area background\" will also be used when exporting as IMS,"
 " SCORM or ePub3."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:53
+#: exe/webui/tools/style-designer/langs/en.js:50
 #, fuzzy
 msgid "Header and Footer"
 msgstr "አንብብና አጠናቅቅ"
 
-#: exe/webui/tools/style-designer/langs/en.js:57
+#: exe/webui/tools/style-designer/langs/en.js:54
 #, fuzzy
 msgid "Project title"
 msgstr "የፕሮጀክት ባህሪያት"
 
-#: exe/webui/tools/style-designer/langs/en.js:58
+#: exe/webui/tools/style-designer/langs/en.js:55
 msgid "Hide the title"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:60
+#: exe/webui/tools/style-designer/langs/en.js:57
 msgid "same font as the page"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:63
+#: exe/webui/tools/style-designer/langs/en.js:60
 #, fuzzy
 msgid "Top margin"
 msgstr "ምስልን ሰርዝ"
 
-#: exe/webui/tools/style-designer/langs/en.js:64
+#: exe/webui/tools/style-designer/langs/en.js:61
 #, fuzzy
 msgid "Font size"
 msgstr "የቁምፊ መጠን ምረጥ:"
 
-#: exe/webui/tools/style-designer/langs/en.js:66
+#: exe/webui/tools/style-designer/langs/en.js:63
 #, fuzzy
 msgid "Navigation"
 msgstr "አሰሳን ይዝለሉ"
 
-#: exe/webui/tools/style-designer/langs/en.js:67
+#: exe/webui/tools/style-designer/langs/en.js:64
 msgid "Main menu"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:68
+#: exe/webui/tools/style-designer/langs/en.js:65
 msgid "Hide the menu"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:69
+#: exe/webui/tools/style-designer/langs/en.js:66
 #, fuzzy
 msgid "Horizontal navigation"
 msgstr "አሰሳን ይዝለሉ"
 
-#: exe/webui/tools/style-designer/langs/en.js:70
+#: exe/webui/tools/style-designer/langs/en.js:67
 #, fuzzy
 msgid "Active background"
 msgstr "የዳራ ምስልን ሰድር?"
 
-#: exe/webui/tools/style-designer/langs/en.js:71
+#: exe/webui/tools/style-designer/langs/en.js:68
 msgid "Active link color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:72
+#: exe/webui/tools/style-designer/langs/en.js:69
 #, fuzzy
 msgid "Other navigation options"
 msgstr "አሰሳን ይዝለሉ"
 
-#: exe/webui/tools/style-designer/langs/en.js:73
+#: exe/webui/tools/style-designer/langs/en.js:70
 #, fuzzy
 msgid "Use icons"
 msgstr "አዶዎች"
 
-#: exe/webui/tools/style-designer/langs/en.js:75
+#: exe/webui/tools/style-designer/langs/en.js:72
 msgid "Icons color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:76
+#: exe/webui/tools/style-designer/langs/en.js:73
 msgid "Grey"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:80
+#: exe/webui/tools/style-designer/langs/en.js:77
 #, fuzzy
 msgid "With emphasis"
 msgstr "ምንም አትኩሮት የለም"
 
-#: exe/webui/tools/style-designer/langs/en.js:81
+#: exe/webui/tools/style-designer/langs/en.js:78
 msgid "Title color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:82
+#: exe/webui/tools/style-designer/langs/en.js:79
 #, fuzzy
 msgid "Title background"
 msgstr "የዳራ ምስልን ሰድር?"
 
-#: exe/webui/tools/style-designer/langs/en.js:83
+#: exe/webui/tools/style-designer/langs/en.js:80
 msgid "No emphasis (Free Text...)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:84
+#: exe/webui/tools/style-designer/langs/en.js:81
 msgid "Show box"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:85
+#: exe/webui/tools/style-designer/langs/en.js:82
 msgid "Icon to hide/show the iDevice"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:88
+#: exe/webui/tools/style-designer/langs/en.js:85
 msgid "This code will be included at the end of content.css"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:89
+#: exe/webui/tools/style-designer/langs/en.js:86
 msgid "content.css is included any time you export, and always after base.css."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:90
+#: exe/webui/tools/style-designer/langs/en.js:87
 msgid "This code will be included at the end of nav.css"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:91
+#: exe/webui/tools/style-designer/langs/en.js:88
 msgid ""
 "nav.css is only included when you export as Web Site, and always after "
 "content.css."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:92
+#: exe/webui/tools/style-designer/langs/en.js:89
 msgid "content.css content"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:93
+#: exe/webui/tools/style-designer/langs/en.js:90
 msgid "nav.css content"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:94
+#: exe/webui/tools/style-designer/langs/en.js:91
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:97
+#: exe/webui/tools/style-designer/langs/en.js:94
 msgid "Finish"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:99
+#: exe/webui/tools/style-designer/langs/en.js:96
 msgid "Save as"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:101
+#: exe/webui/tools/style-designer/langs/en.js:98
 msgid "Save the current design and close the Style Designer?"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:102
+#: exe/webui/tools/style-designer/langs/en.js:99
 msgid "Save all changes? This cannot be undone."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:103
+#: exe/webui/tools/style-designer/langs/en.js:100
 #, fuzzy
 msgid "Style name:"
 msgstr "የፋይል ስም:"
 
-#: exe/webui/tools/style-designer/langs/en.js:104
+#: exe/webui/tools/style-designer/langs/en.js:101
 msgid "Your browser is not compatible with this tool."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:105
+#: exe/webui/tools/style-designer/langs/en.js:102
 msgid "The Hide/Show menu option is disabled in the Style Designer"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:106
+#: exe/webui/tools/style-designer/langs/en.js:103
 msgid ""
 "Please, make your browser bigger. The Style Designer requires at least a "
 "1024x768 screen resolution"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:107
+#: exe/webui/tools/style-designer/langs/en.js:104
 msgid "The Style Designer window is not open."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:108
+#: exe/webui/tools/style-designer/langs/en.js:105
 msgid "This window will be closed. Please restart the tool."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:109
+#: exe/webui/tools/style-designer/langs/en.js:106
 msgid "Just close this window and your design preview without clicking on Finish."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:116
+#: exe/webui/tools/style-designer/langs/en.js:113
 msgid "Drag markers to pick a color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:118
+#: exe/webui/tools/style-designer/langs/en.js:115
 #, fuzzy
 msgid "Current"
 msgstr "የስም ቅድመ ቅንብር"
 
-#: exe/webui/tools/style-designer/langs/en.js:124
+#: exe/webui/tools/style-designer/langs/en.js:121
 msgid "New Color - Press OK to Commit"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:125
+#: exe/webui/tools/style-designer/langs/en.js:122
 msgid "Click to revert to original color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:128
+#: exe/webui/tools/style-designer/langs/en.js:125
 msgid "Commit to this color selection"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:129
+#: exe/webui/tools/style-designer/langs/en.js:126
 msgid "Cancel and revert to original color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:132
+#: exe/webui/tools/style-designer/langs/en.js:129
 msgid "Set to Hue color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:133
+#: exe/webui/tools/style-designer/langs/en.js:130
 msgid "Enter a Hue value (0-360º)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:136
+#: exe/webui/tools/style-designer/langs/en.js:133
 msgid "Set to Saturation color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:137
+#: exe/webui/tools/style-designer/langs/en.js:134
 msgid "Enter a Saturation value (0-100%)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:140
+#: exe/webui/tools/style-designer/langs/en.js:137
 msgid "Set to Value color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:141
+#: exe/webui/tools/style-designer/langs/en.js:138
 msgid "Enter a Value (0-100%)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:144
+#: exe/webui/tools/style-designer/langs/en.js:141
 msgid "Set to Red color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:145
+#: exe/webui/tools/style-designer/langs/en.js:142
 msgid "Enter a Red value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:148
+#: exe/webui/tools/style-designer/langs/en.js:145
 msgid "Set to Green color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:149
+#: exe/webui/tools/style-designer/langs/en.js:146
 msgid "Enter a Green value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:152
+#: exe/webui/tools/style-designer/langs/en.js:149
 msgid "Set to Blue color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:153
+#: exe/webui/tools/style-designer/langs/en.js:150
 msgid "Enter a Blue value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:156
+#: exe/webui/tools/style-designer/langs/en.js:153
 msgid "Set to Alpha color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:157
-#: exe/webui/tools/style-designer/langs/en.js:161
+#: exe/webui/tools/style-designer/langs/en.js:154
+#: exe/webui/tools/style-designer/langs/en.js:158
 msgid "Enter an Alpha value (0-100)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:160
+#: exe/webui/tools/style-designer/langs/en.js:157
 msgid "Enter an Hex color value (#000000-#ffffff)"
 msgstr ""
 
@@ -11281,8 +11281,8 @@ msgid ""
 msgstr ""
 
 #: exe/webui/xliffimportpreferencespage.py:90
-#: exe/webui/tools/style-designer/langs/en.js:110
-#: exe/webui/tools/style-designer/langs/en.js:119
+#: exe/webui/tools/style-designer/langs/en.js:107
+#: exe/webui/tools/style-designer/langs/en.js:116
 msgid "OK"
 msgstr "እሺ"
 

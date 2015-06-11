@@ -222,9 +222,11 @@ class Block(Renderable):
                                    _(u"Done"),1)
 
         if undo:
-            html  += common.submitImage(u"cancel", self.id, 
-                                   u"/images/stock-undo.png", 
-                                   _(u"Undo Edits"),1)
+            html += common.confirmThenSubmitImage(
+                _(u"Exit without saving?"),
+                u"cancel",
+                self.id, u"/images/stock-undo.png", 
+                _(u"Undo Edits"), 1)
         else:
             html  += common.submitImage(u"no_cancel", self.id, 
                                    u"/images/stock-undoNOT.png", 

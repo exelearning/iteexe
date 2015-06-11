@@ -171,7 +171,7 @@ Ext.define('eXe.controller.Toolbar', {
             //    click: { fn: this.processBrowseEvent, url: 'file://%s/docs/manual/Online_manual.html' }
             // },
             '#help_tutorial': {
-                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/html_manual/exe20_en/' }
+                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/html_manual/exe20_en/') }
             },
             '#help_notes': {
                 click: { fn: this.releaseNotesPage }
@@ -181,16 +181,16 @@ Ext.define('eXe.controller.Toolbar', {
                 click: this.legalPage
             },
             '#help_website': {
-                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/' }
+                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/?lang=en') }
             },
             '#help_issue': {
-                click: { fn: this.processBrowseEvent, url: 'https://forja.cenatic.es/tracker/?group_id=197' }
+                click: { fn: this.processBrowseEvent, url: _('https://forja.cenatic.es/tracker/?group_id=197') }
             },
             '#help_forums': {
-                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/forums/' }
+                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/forums/') }
             },
             '#help_last': {
-                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/downloads/' }
+                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/downloads/') }
             },
             '#help_about': {
                 click: this.aboutPage
