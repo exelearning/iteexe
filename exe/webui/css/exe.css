@@ -143,6 +143,7 @@ color: #000000;
 /* adds tiny bit of padding to edit.png when in preview mode */
 img.submit {
     padding: 0 0 2px 2px;
+    margin-right:2px;
 }
 
 /* exe_lightbox.css */
