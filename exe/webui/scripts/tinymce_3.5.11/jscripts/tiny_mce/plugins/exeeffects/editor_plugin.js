@@ -1,3 +1,6 @@
+// Effects Plugin for eXeLearning
+// By Ignacio Gros (http://www.gros.es/) for eXeLearning (http://exelearning.net/)
+// Creative Commons Attribution-ShareAlike (http://creativecommons.org/licenses/by-sa/3.0/)
 (function() {
 	tinymce.PluginManager.requireLangPack('exeeffects');
 	tinymce.create('tinymce.plugins.eXeEffects', {
@@ -25,6 +28,19 @@
 
 			ed.onInit.add(function() {
 				if (ed.settings.content_css !== false) ed.dom.loadCSS(url + "/css/content.css");
+				// i18n in CSS (We want the name of the effects in the right language)
+				if (typeof(jQuery)!='function') {
+					alert(ed.getLang("exeeffects.jquery_is_required"));
+					return false;			
+				}
+				var d = ed.getDoc();
+				var s = '<style type="text/css">';
+					s += '.exe-fx.exe-accordion:before{content:"'+ed.getLang("exeeffects.type1")+'"}';
+					s += '.exe-fx.exe-paginated:before{content:"'+ed.getLang("exeeffects.type2")+'"}';
+					s += '.exe-fx.exe-tabs:before{content:"'+ed.getLang("exeeffects.type3")+'"}';
+					s += '.exe-fx.exe-carousel:before{content:"'+ed.getLang("exeeffects.type4")+'"}';
+				s += '</style>';
+				jQuery("HEAD",d).append(s);
 			});			
 	
 			// Register plugin buttons

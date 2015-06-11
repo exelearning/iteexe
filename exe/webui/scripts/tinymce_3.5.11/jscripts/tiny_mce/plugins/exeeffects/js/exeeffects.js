@@ -95,7 +95,7 @@ var eXeEffects = {
 				c += '<p>'+tinyMCEPopup.getLang("exeeffects.write_your_content")+'</p>';
 				c += '<h2>'+tinyMCEPopup.getLang("exeeffects.h2")+'</h2>';
 				c += '<p>'+tinyMCEPopup.getLang("exeeffects.write_your_content")+'</p>';				
-			c += '</div>';
+			c += '</div><br />';
 			inst.execCommand('mceInsertContent', false, c);			
 		}
 		tinyMCEPopup.execCommand("mceEndUndoLevel");

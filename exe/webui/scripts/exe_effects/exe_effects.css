@@ -34,7 +34,7 @@
 .fx-pagination .disabled{filter:alpha(opacity=30);opacity:.3}
 .fx-pagination .disabled,.fx-pagination .disabled a,.fx-pagination .disabled a:hover{cursor:text;text-decoration:none}
 .fx-pagination .current a{background:#333;color:#fff}
-.page-content{display:none;background:#ededed;padding:1px 15px;border-radius:5px}
+.page-content{display:none;background:#ededed;padding:1px 15px .5em 15px;border-radius:5px}
 .page-content.current{display:block}
 /* Carousel */
 .exe-carousel{margin:2em auto;width:90%;position:relative}
@@ -47,7 +47,7 @@
 .carousel-pagination .disabled{filter:alpha(opacity=30);opacity:.3}
 .carousel-pagination .disabled,.carousel-pagination .disabled a,.carousel-pagination .disabled a:hover{cursor:text;text-decoration:none}
 .carousel-pagination .current a{background:#333;color:#fff}
-.carousel-page-content{display:none;background:#ededed;padding:1px 15px;border-radius:5px;margin:0 65px}
+.carousel-page-content{display:none;background:#ededed;padding:1px 15px .5em 15px;border-radius:5px;margin:0 65px}
 .carousel-page-content.current{display:block}
 .carousel-pagination li{font-size:.85em}
 .carousel-pagination .exe-carousel-pg{position:absolute;top:15px;left:0;*left:-10px} /* IE6, IE7 */
