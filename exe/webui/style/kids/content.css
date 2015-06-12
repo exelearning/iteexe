@@ -142,3 +142,11 @@ text-shadow:0 1px 1px rgba(255, 255, 255, 0.75)
 
 /* Lightbox */
 .pp_overlay{filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100)!important;opacity:1!important}
+
+/* Effects */
+.exe-fx .fx-C2,.exe-fx .fx-C2 a,.fx-pagination a{background:#FFF}
+.exe-fx .fx-C1,.exe-fx .fx-C1 a{background:#468770;color:#FFF}
+/* iDevices with emphasis */
+.emphasis1 .exe-fx .fx-C1,.emphasis1 .exe-fx .fx-C1 a{background:#468770}
+.js .exe-fx .fx-accordion-title,.js .exe-fx.exe-accordion h2{background:#333}
+.emphasis1 .exe-fx .fx-C2,.emphasis1 .exe-fx .fx-C2 a,.emphasis1 .fx-pagination a{background:#E7F8F2}

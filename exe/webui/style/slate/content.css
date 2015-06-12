@@ -61,3 +61,15 @@ li{list-style-position:outside}
 /* Hide/Show iDevice */
 .toggle-idevice{margin:12px 0 0;text-align:right;display:block}
 .iDevice_header .toggle-idevice{float:right;margin:0}
+/* Effects */
+.exe-fx .fx-C2,
+.exe-fx .fx-C2 a,
+.fx-pagination a{background:#FFF}
+.emphasis1 .exe-fx .fx-C2,
+.emphasis1 .exe-fx .fx-C2 a,
+.emphasis1 .fx-pagination a,
+.exe-web-site .exe-fx .fx-C2,
+.exe-web-site .exe-fx .fx-C2 a,
+.exe-web-site .fx-pagination a{
+background:#ededed;
+}
