@@ -35,12 +35,17 @@ $exeFX = {
 	accordion : {
 		closeBlock : function(aID){
 			var k = $exeFX.baseClass;
-			$('.'+k+'-accordion-title',"#"+aID).removeClass('active');
-			$('.'+k+'-accordion-content',"#"+aID).slideUp(300).removeClass('open');		
+			$('.fx-accordion-title',"#"+aID).removeClass('active');
+			$('.fx-accordion-content',"#"+aID).slideUp(300).removeClass('open');		
 		},
 		enable : function(x){
 			var k = $exeFX.baseClass;
-			$('.'+k+'-accordion-title',x).click(function(e) {
+			var t = $('.fx-accordion-title',x);
+			// Get the box shadow color
+			var color = t.eq(0).css("background-color");
+			color = color.replace("rgb(","rgba(").replace(")",",0.5)");
+			if (color.indexOf("rgba(")==0) x.css("box-shadow","0px 1px 3px "+color);
+			t.click(function(e) {
 				var aID = this.id.split("-")[0];
 				aID = aID.replace("_","-").replace("_","-");
 				var currentAttrValue = $(this).attr('href');
@@ -83,20 +88,20 @@ $exeFX = {
 			if ($exeFX.isOldBrowser) {
 				html = html.replace(/<H2/g, '</div>\n<H2');
 				html = html.replace('</div>\n<H2','<H2')
-				html = html.replace(/<\/H2>/g, '</H2>\n<div class="'+k+'-accordion-content">');				
+				html = html.replace(/<\/H2>/g, '</H2>\n<div class="fx-accordion-content">');				
 			} else {
 				html = html.replace(/<h2/g, '</div>\n<h2');
 				html = html.replace('</div>\n<h2','<h2')
-				html = html.replace(/<\/h2>/g, '</h2>\n<div class="'+k+'-accordion-content">');
+				html = html.replace(/<\/h2>/g, '</h2>\n<div class="fx-accordion-content">');
 			}
 
 			html = html + '</div>';
-			e.html('<div id="'+k+'-accordion-'+i+'">\n<div class="'+k+'-accordion-section">\n'+html+'\n</div>\n</div>\n');
+			e.html('<div id="'+k+'-accordion-'+i+'">\n<div class="fx-accordion-section">\n'+html+'\n</div>\n</div>\n');
 			var h2 = $("h2",e);
-			$("."+k+"-accordion-content",e).each(function(y){
+			$(".fx-accordion-content",e).each(function(y){
 				var id = k+"-accordion-"+i+"-"+y;
 				this.id = id;
-				h2.eq(y).wrap('<a class="'+k+'-accordion-title" href="#'+id+'" id="'+id.replace("-","_").replace("-","_")+'-trigger"></a>');
+				h2.eq(y).wrap('<a class="fx-accordion-title fx-C1" href="#'+id+'" id="'+id.replace("-","_").replace("-","_")+'-trigger"></a>');
 			});
 			$exeFX.accordion.enable(e);
 		},
@@ -109,10 +114,10 @@ $exeFX = {
 	tabs : {
 		show : function(gID,id){
 			var g = $("#"+gID);
-			$(".tabs li",g).removeClass("current");
-			$("#"+id+"-link").addClass("current");
-			$(".tab-content",g).removeClass("current");
-			$("#"+id).addClass("current");
+			$(".fx-tabs li",g).removeClass("fx-current").removeClass("fx-C2");
+			$("#"+id+"-link").addClass("fx-current fx-C2");
+			$(".fx-tab-content",g).removeClass("fx-current");
+			$("#"+id).addClass("fx-current");
 		},
 		rft : function(e,i){
 			var html = "";
@@ -129,17 +134,17 @@ $exeFX = {
 			if ($exeFX.isOldBrowser) {
 				html = html.replace(/<H2/g, '</div>\n<H2');
 				html = html.replace('</div>\n<H2','<H2');
-				html = html.replace(/<H2/g, '<div class="fx-content tab-content">\n<H2 class="sr-av"');
+				html = html.replace(/<H2/g, '<div class="fx-tab-content fx-C2">\n<H2 class="sr-av"');
 			} else {
 				html = html.replace(/<h2/g, '</div>\n<h2');
 				html = html.replace('</div>\n<h2','<h2');
-				html = html.replace(/<h2/g, '<div class="fx-content tab-content">\n<h2 class="sr-av"');
+				html = html.replace(/<h2/g, '<div class="fx-tab-content fx-C2">\n<h2 class="sr-av"');
 			}
 			html = html + '</div>';
 			e.attr("id",gID).html(html);
 			
-			var ul = '<ul class="fx-nav tabs">\n';
-			$(".tab-content",e).each(function(y){
+			var ul = '<ul class="fx-tabs">\n';
+			$(".fx-tab-content",e).each(function(y){
 				var h2 = $("H2",this).eq(0);
 				var t = h2.text();
 				var hT = $("SPAN",h2);
@@ -153,8 +158,8 @@ $exeFX = {
 				var id = k+"-tab-"+i+"-"+y;
 				var c = "";
 				if (y==0) {
-					c += ' class="current"';
-					this.className += " current default-panel";
+					c += ' class="fx-current fx-C2"';
+					this.className += " fx-current fx-default-panel";
 				}
 				ul += '<li'+c+' id="'+id+'-link"><a href="#'+id+'" onclick="$exeFX.tabs.show(\''+gID+'\',\''+id+'\');return false">'+t+'</a></li>\n';
 				this.id = id;
@@ -183,27 +188,27 @@ $exeFX = {
 			if (!prevA || !nextA) return false;
 			if (n==0) {
 				// Prev
-				prevLi.addClass("disabled");
+				prevLi.addClass("fx-disabled");
 				prevA.onclick = function(){ return false }
 				// Next
-				nextLi.removeClass("disabled");
+				nextLi.removeClass("fx-disabled");
 				nextA.onclick = function(){
 					$exeFX.paginated.show(gID,gID+"-1",1);
 					return false;
 				}
 			} else {
 				// Prev
-				prevLi.removeClass("disabled");
+				prevLi.removeClass("fx-disabled");
 				prevA.onclick = function(){
 					$exeFX.paginated.show(gID,gID+"-"+(n-1),(n-1));
 					return false;
 				}	
 				// Next
 				if ((n+2)>l) {
-					nextLi.addClass("disabled");
+					nextLi.addClass("fx-disabled");
 					nextA.onclick = function(){ return false }
 				} else {
-					nextLi.removeClass("disabled");
+					nextLi.removeClass("fx-disabled");
 					nextA.onclick = function(){
 						$exeFX.paginated.show(gID,gID+"-"+(n+1),(n+1));
 						return false;					
@@ -211,10 +216,10 @@ $exeFX = {
 				}
 			}
 			
-			lis.removeClass("current");
-			$("#"+id+"-link").addClass("current");
-			$(".page-content",g).removeClass("current");
-			$("#"+id).addClass("current");
+			lis.removeClass("fx-current").removeClass("fx-C1");
+			$("#"+id+"-link").addClass("fx-current fx-C1");
+			$(".fx-page-content",g).removeClass("fx-current");
+			$("#"+id).addClass("fx-current");
 		},	
 		init : function(x,i){
 			var e = $(x);
@@ -236,38 +241,38 @@ $exeFX = {
 			if ($exeFX.isOldBrowser) {
 				html = html.replace(/<H2/g, '</div>\n<H2');
 				html = html.replace('</div>\n<H2','<H2');
-				html = html.replace(/<H2/g, '<div class="fx-content page-content">\n<H2');				
+				html = html.replace(/<H2/g, '<div class="fx-page-content fx-C2">\n<H2');				
 			} else {
 				html = html.replace(/<h2/g, '</div>\n<h2');
 				html = html.replace('</div>\n<h2','<h2');
-				html = html.replace(/<h2/g, '<div class="fx-content page-content">\n<h2');
+				html = html.replace(/<h2/g, '<div class="fx-page-content fx-C2">\n<h2');
 			}
 			html = html + '</div>';
 			e.attr("id",gID).html(html);
 			
 			var counter = 0;
 			var hasNext = false;
-			var ul = '<ul class="fx-nav fx-pagination">\n';
-			ul += '<li id="'+k+'-paginated-'+i+'-prev" class="fx-pg fx-prev disabled"><a href="#" id="'+k+'-paginated-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'">&#9668;</a></li>';
-			$(".page-content",e).each(function(y){
+			var ul = '<ul class="fx-pagination">\n';
+			ul += '<li id="'+k+'-paginated-'+i+'-prev" class="fx-prev-next fx-prev fx-disabled"><a href="#" id="'+k+'-paginated-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'" onclick="return false"><span>&#9668;</span></a></li>';
+			$(".fx-page-content",e).each(function(y){
 				var t = $("H2",this).eq(0).text();
 				t = t.replace(/\"/g, '&quot;');
 				var id = k+"-paginated-"+i+"-"+y;
 				var c = "";
 				if (y==0) {
-					c += ' class="current"';
-					this.className += " current";
+					c += ' class="fx-current fx-C1"';
+					this.className += " fx-current";
 				}
 				ul += '<li'+c+' id="'+id+'-link"><a href="#'+id+'" onclick="$exeFX.paginated.show(\''+gID+'\',\''+id+'\','+y+');return false" title="'+t+'">'+(y+1)+'</a></li>\n';
 				this.id = id;
 				counter ++;
 			});
 			if (counter>1) hasNext = true;
-			ul += '<li id="'+k+'-paginated-'+i+'-next" class="fx-pg fx-next';
-			if (!hasNext) ul += ' disabled';
+			ul += '<li id="'+k+'-paginated-'+i+'-next" class="fx-prev-next fx-next';
+			if (!hasNext) ul += ' fx-disabled';
 			ul +='"><a href="#" id="'+k+'-paginated-'+i+'-next-lnk" title="'+$exe_i18n.next+'"';
 			if (hasNext) ul += ' onclick="$exeFX.paginated.show(\''+gID+'\',\''+gID+'-1\',1);return false"'
-			ul += '>&#9658;</a></li>';
+			ul += '><span>&#9658;</span></a></li>';
 			ul += '</ul>';
 			e.prepend(ul);
 		}
@@ -275,7 +280,7 @@ $exeFX = {
 	carousel : {
 		show : function(gID,id,n){
 			var g = $("#"+gID);
-			var lis = $(".carousel-pagination li",g);
+			var lis = $(".fx-carousel-pagination li",g);
 			
 			// Pagination
 			var l = (lis.length-2);
@@ -287,27 +292,27 @@ $exeFX = {
 			if (!prevA || !nextA) return false;
 			if (n==0) {
 				// Prev
-				prevLi.addClass("disabled");
+				prevLi.addClass("fx-disabled");
 				prevA.onclick = function(){ return false }
 				// Next
-				nextLi.removeClass("disabled");
+				nextLi.removeClass("fx-disabled");
 				nextA.onclick = function(){
 					$exeFX.carousel.show(gID,gID+"-1",1);
 					return false;
 				}
 			} else {
 				// Prev
-				prevLi.removeClass("disabled");
+				prevLi.removeClass("fx-disabled");
 				prevA.onclick = function(){
 					$exeFX.carousel.show(gID,gID+"-"+(n-1),(n-1));
 					return false;
 				}	
 				// Next
 				if ((n+2)>l) {
-					nextLi.addClass("disabled");
+					nextLi.addClass("fx-disabled");
 					nextA.onclick = function(){ return false }
 				} else {
-					nextLi.removeClass("disabled");
+					nextLi.removeClass("fx-disabled");
 					nextA.onclick = function(){
 						$exeFX.carousel.show(gID,gID+"-"+(n+1),(n+1));
 						return false;					
@@ -315,9 +320,9 @@ $exeFX = {
 				}
 			}
 			
-			lis.removeClass("current");
-			$("#"+id+"-link").addClass("current");
-			$(".carousel-page-content",g).hide();
+			lis.removeClass("fx-current").removeClass("fx-C1");
+			$("#"+id+"-link").addClass("fx-current fx-C1");
+			$(".fx-carousel-content",g).hide();
 			$("#"+id).fadeIn("slow");
 		},	
 		init : function(x,i){
@@ -340,35 +345,35 @@ $exeFX = {
 			if ($exeFX.isOldBrowser) {
 				html = html.replace(/<H2/g, '</div>\n<H2');
 				html = html.replace('</div>\n<H2','<H2');
-				html = html.replace(/<H2/g, '<div class="fx-content carousel-page-content">\n<H2');
+				html = html.replace(/<H2/g, '<div class="fx-carousel-content fx-C2">\n<H2');
 			} else {
 				html = html.replace(/<h2/g, '</div>\n<h2');
 				html = html.replace('</div>\n<h2','<h2');
-				html = html.replace(/<h2/g, '<div class="fx-content carousel-page-content">\n<h2');
+				html = html.replace(/<h2/g, '<div class="fx-carousel-content fx-C2">\n<h2');
 			}
 			html = html + '</div>';
 			e.attr("id",gID).html(html);
 			
 			var counter = 0;
 			var hasNext = false;
-			var ul = '<ul class="fx-nav carousel-pagination">\n';
-			ul += '<li id="'+k+'-carousel-'+i+'-prev" class="'+k+'-carousel-pg '+k+'-carousel-prev disabled"><a href="#" id="exe-carousel-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'"><span>&#9668;</span></a></li>';
-			$(".carousel-page-content",e).each(function(y){
+			var ul = '<ul class="fx-pagination fx-carousel-pagination">\n';
+			ul += '<li id="'+k+'-carousel-'+i+'-prev" class="fx-carousel-prev-next fx-carousel-prev fx-disabled fx-C2"><a href="#" id="exe-carousel-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'" onclick="return false"><span>&#9668;</span></a></li>';
+			$(".fx-carousel-content",e).each(function(y){
 				var t = $("H2",this).eq(0).text();
 				t = t.replace(/\"/g, '&quot;');
 				var id = k+"-carousel-"+i+"-"+y;
 				var c = "";
 				if (y==0) {
-					c += ' class="current"';
-					this.className += " current";
+					c += ' class="fx-current fx-C1"';
+					this.className += " fx-current";
 				}
 				ul += '<li'+c+' id="'+id+'-link"><a href="#'+id+'" onclick="$exeFX.carousel.show(\''+gID+'\',\''+id+'\','+y+');return false" title="'+t+'">'+(y+1)+'</a></li>\n';
 				this.id = id;
 				counter ++;
 			});
 			if (counter>1) hasNext = true;
-			ul += '<li id="'+k+'-carousel-'+i+'-next" class="'+k+'-carousel-pg '+k+'-carousel-next';
-			if (!hasNext) ul += ' disabled';
+			ul += '<li id="'+k+'-carousel-'+i+'-next" class="fx-carousel-prev-next fx-carousel-next fx-C2';
+			if (!hasNext) ul += ' fx-disabled';
 			ul +='"><a href="#" id="'+k+'-carousel-'+i+'-next-lnk" title="'+$exe_i18n.next+'"';
 			if (hasNext) ul += ' onclick="$exeFX.carousel.show(\''+gID+'\',\''+gID+'-1\',1);return false"'
 			ul += '><span>&#9658;</span></a></li>';

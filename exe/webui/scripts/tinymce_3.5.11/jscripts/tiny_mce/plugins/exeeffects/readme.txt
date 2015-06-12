@@ -4,13 +4,15 @@
 
 	<div class="exe-fx exe-accordion">
 		<div>
-			<div class="exe-accordion-section">
-				<!-- Accordion block -->
-				<a class="exe-accordion-title" href="#"><h2>Heading 2</h2></a>
-				<div class="exe-accordion-content">
-					...
+			<div class="fx-accordion-section">
+				<a class="fx-accordion-title fx-C1" href="#"><h2>Title A</h2></a>
+				<div class="fx-accordion-content">
+					<p>...</p>
 				</div>
-				<!-- / Accordion block -->
+				<a class="fx-accordion-title fx-C1" href="#"><h2>Title B</h2></a>
+				<div class="fx-accordion-content">
+					<p>...</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -18,106 +20,115 @@
 /* Tabs HTML */
 
 	<div class="exe-fx exe-tabs">
-		<ul class="fx-nav tabs">
-			<li class="current"><a href="#" onclick="">Heading 2</a></li>
-			<li><a href="#" onclick="">Heading 2</a></li>
+		<ul class="fx-tabs">
+			<li class="fx-current fx-C2"><a href="#">Title A</a></li>
+			<li><a href="#">Title B</a></li>
 		</ul>
-		<div class="fx-content tab-content current default-panel">
-			<h2 class="sr-av">Heading 2</h2>
-			...
+		<div class="fx-tab-content fx-C2 fx-current fx-default-panel">
+			<h2 class="sr-av">Title A</h2>
+			<p>...</p>
 		</div>
-		<div class="fx-content tab-content">
-			<h2 class="sr-av">Heading 2</h2>
-			...
+		<div class="fx-tab-content fx-C2">
+			<h2 class="sr-av">Title B</h2>
+			<p>...</p>
 		</div>
 	</div>
 
 /* Pagination HTML */
 
 	<div class="exe-fx exe-paginated">
-		<ul class="fx-nav fx-pagination">
-			<li class="fx-pg fx-prev disabled"><a href="#" title="Previous">◄</a></li>
-			<li class="current"><a href="#" onclick="" title="Heading 2">1</a></li>
-			<li><a href="#" onclick="" title="Heading 2">2</a></li>
-			<li class="fx-pg fx-next"><a href="#" title="Next" onclick="">►</a></li>
+		<ul class="fx-pagination">
+			<li class="fx-prev-next fx-prev fx-disabled"><a href="#" title="Previous" onclick="return false"><span>◄</span></a></li>
+			<li class="fx-current fx-C1"><a href="#" title="Title A">1</a></li>
+			<li><a href="#" title="Title B">2</a></li>
+			<li class="fx-prev-next fx-next"><a href="#" title="Next"><span>►</span></a></li>
 		</ul>
-			<div class="fx-content page-content current">
-			<h2>Heading 2</h2>
-			...
+		<div class="fx-page-content fx-C2 fx-current">
+			<h2>Title A</h2>
+			<p>...</p>
 		</div>
-		<div class="fx-content page-content">
-			<h2>Heading 2</h2>
-			...
+		<div class="fx-page-content fx-C2">
+			<h2>Title B</h2>
+			<p>...</p>
 		</div>
 	</div>
 
 /* Carousel HTML */
 
 	<div class="exe-fx exe-carousel">
-		<div class="fx-content carousel-page-content current">
-			<h2>Heading 2</h2>
-			...
+		<div class="fx-carousel-content fx-C2 fx-current">
+			<h2>Title A</h2>
+			<p>...</p>
 		</div>
-		<div class="fx-content carousel-page-content">
-			<h2>Heading 2</h2>
-			...
+		<div class="fx-carousel-content fx-C2">
+			<h2>Title B</h2>
+			<p>...</p>
 		</div>
-		<ul class="carousel-pagination">
-			<li class="exe-carousel-pg exe-carousel-prev disabled"><a href="#" title="Previous"><span>◄</span></a></li>
-			<li class="current"><a href="#" onclick="" title="Heading 2">1</a></li>
-			<li><a href="#" onclick="" title="Heading 2">2</a></li>
-			<li class="exe-carousel-pg exe-carousel-next"><a href="#" title="Next" onclick=""><span>►</span></a></li>
+			<ul class="fx-pagination fx-carousel-pagination">
+			<li class="fx-carousel-prev-next fx-carousel-prev fx-disabled fx-C2"><a href="#" title="Previous"><span>◄</span></a></li>
+			<li class="fx-current fx-C1" id="exe-carousel-3-0-link"><a href="#" title="Title A">1</a></li>
+			<li><a href="#" title="Title B">2</a></li>
+			<li class="fx-carousel-prev-next fx-carousel-next fx-C2"><a href="#" title="Next"><span>►</span></a></li>
 		</ul>
 	</div>
 
 /* CSS (colors) */
 
-/* Accordion */
+/* Simplified (just 3 colors) */
 
 	.js .exe-accordion{
-		box-shadow:0px 1px 3px rgba(0,0,0,0.25);
-		background:#fff;
+		background:#FFFFFF;
 	}
-	.exe-accordion-title,
-	.exe-accordion h2{
-		border-bottom-color:#1a1a1a;
-		background:#333;
-		text-shadow:0px 1px 0px #1a1a1a;
-		color:#fff;
+	.exe-fx .fx-C1,.exe-fx .fx-C1 a{
+		background:#333333;
 	}
-	.exe-accordion-title.active,
-	.exe-accordion-title:hover{
-		background:#4c4c4c;
-	}
-
-/* Tabs, Pagination, Carousel */
-
-	.exe-tabs .tabs .current a,
-	.exe-tabs .tab-content,
-	.page-content,
-	.carousel-page-content,
-	.fx-pagination a,
-	.carousel-pagination a{
+	.exe-fx .fx-C2,
+	.exe-fx .fx-C2 a,
+	.fx-pagination a{
 		background:#ededed;
 	}
-	.carousel-pagination .current a,
-	.fx-pagination .current a,
-	.carousel-pagination .exe-carousel-pg a:hover{
-		background:#333;
-		color:#fff;
-	}
 
-/* Tabs, Pagination, Carousel (simplified) */
+	/* iDevices with emphasis */
 
-	.exe-fx .fx-content,
-	.exe-fx .fx-nav .current a,
-	.exe-fx .carousel-pagination a:hover {
-		background:#000;
-		color:#FFF;
-	}
+		.emphasis1 .js .exe-accordion{
+			background:#FFFFFF;
+		}
+		.emphasis1 .exe-fx .fx-C1,
+		.emphasis1 .exe-fx .fx-C1 a{
+			background:#333333;
+		}
+		.emphasis1 .exe-fx .fx-C2,
+		.emphasis1 .exe-fx .fx-C2 a,
+		.emphasis1 .fx-pagination a{
+			background:#ededed;
+		}
+	
+/* Or... */
 
-	.exe-fx .fx-pagination a,
-	.carousel-pagination a {
-		background:blue;
-		color:yellow;
-	}
+	/* Accordion */
+
+		.js .exe-accordion{
+			background:#fff;
+		}
+		.exe-fx .fx-accordion-title,
+		.exe-fx.exe-accordion h2{
+			background:#333;
+			color:#fff;
+		}
+
+	/* Tabs, Pagination, Carousel */
+
+		.exe-tabs .fx-tabs .fx-current a,
+		.exe-tabs .fx-tab-content,
+		.exe-fx .fx-page-content,
+		.exe-fx .fx-carousel-content,
+		.fx-pagination a,
+		.exe-fx .fx-carousel-pagination a{
+			background:#ededed;
+		}
+		.fx-carousel-pagination .fx-current a,
+		.fx-pagination .fx-current a,
+		.fx-carousel-pagination .fx-carousel-prev-next a:hover{
+			background:#333;
+			color:#fff;
+		}
