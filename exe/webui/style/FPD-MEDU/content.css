@@ -864,3 +864,7 @@ ol.lista_esquema { counter-reset: item }
       content: counters(item, ".") ".- ";
       counter-increment: item;
 }
+
+
+.exe-fx .fx-accordion-content{padding-top:1em}
+.exe-fx .fx-tab-content{padding-top:1.5em}

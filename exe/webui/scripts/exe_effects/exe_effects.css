@@ -2,24 +2,25 @@
 .exe-accordion,.exe-accordion *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 .exe-accordion{width:90%;margin:2em 0 2em 5%}
 .js .exe-accordion{overflow:hidden;box-shadow:0px 1px 3px rgba(0,0,0,0.25);border-radius:3px;background:#fff;width:96%;margin-left:2%}
-.exe-accordion-section-title,.exe-accordion h2{width:100%;padding:15px;display:inline-block;border-bottom:1px solid #1a1a1a;background:#333;transition:all linear 0.15s;text-shadow:0px 1px 0px #1a1a1a;color:#fff}
+.fx-accordion-title,.exe-accordion h2{width:100%;padding:15px;display:inline-block;background:#333;transition:all linear 0.15s;color:#fff}
 #main .exe-accordion h2{border-radius:3px;margin:0;font-size:1em}
 .js .exe-accordion h2{padding:0;border:0;display:block;background:none;border-radius:3px}
-.exe-accordion-section-title.active,.exe-accordion-section-title:hover{background:#4c4c4c;text-decoration:none}
-.exe-accordion-section:last-child .exe-accordion-section-title{border-bottom:none}
-.exe-accordion-section-content{padding:0 15px;display:none}
+.fx-accordion-title.active,.fx-accordion-title:hover{/*background:#4c4c4c;*/filter:alpha(opacity=90);opacity:.9;text-decoration:none}
+.fx-accordion-section:last-child .fx-accordion-title{border-bottom:none}
+.fx-accordion-content{padding:0 15px;display:none}
 /* Tabs */
 .exe-tabs{margin:2em auto;width:90%}
 .js .exe-tabs{width:96%}
-.exe-tabs .tabs{margin:0;padding:0;list-style:none;overflow:auto}
+.exe-tabs .fx-tabs{margin:0;padding:0;list-style:none;overflow:auto}
 .exe-tabs h2{margin-top:2em}
 .js .exe-tabs h2{margin-top:.5em}
-.exe-tabs .tabs li{display:inline}
-.exe-tabs .tabs a{display:block;padding:10px 15px;outline:none;float:left}
-.exe-tabs .tabs .current a{background:#ededed;border-top-left-radius:5px;border-top-right-radius:5px}
-.exe-tabs .tab-content{display:none;background:#ededed;padding:15px;border-radius:5px}
-.exe-tabs .default-panel{border-top-left-radius:0}
-.exe-tabs .tab-content.current{display:block}
+* html .exe-tabs .fx-tabs{width:100%} /* IE6 */
+.exe-tabs .fx-tabs li{display:inline}
+.exe-tabs .fx-tabs a{display:block;padding:10px 15px;outline:none;float:left}
+.fx-tabs .fx-current a{background:#ededed;border-top-left-radius:5px;border-top-right-radius:5px}
+.exe-tabs .fx-tab-content{display:none;background:#ededed;padding:15px;border-radius:5px}
+.exe-tabs .fx-default-panel{border-top-left-radius:0}
+.exe-tabs .fx-tab-content.fx-current{display:block}
 /* Pagination */
 .exe-paginated{margin:2em auto;width:90%}
 .js .exe-paginated{width:96%}
@@ -27,65 +28,45 @@
 .exe-paginated h2{margin-top:2em}
 .js .exe-paginated h2{margin-top:1em}
 .fx-pagination li{display:inline;padding:0;margin:0 3px}
+.fx-pagination .fx-prev{margin-right:6px}
 .fx-pagination a{outline:none;display:inline-block;padding:3px 11px;cursor:pointer;border-radius:5px;background:#ededed}
-.fx-pg a{font-family:Arial,Verdana,Helvetica,sans-serif}
-.fx-pagination .disabled{filter:alpha(opacity=30);opacity:.3}
-.fx-pagination .disabled,.fx-pagination .disabled a,.fx-pagination .disabled a:hover{cursor:text;text-decoration:none}
-.fx-pagination .current a{background:#333;color:#fff}
-.fx-page-content{display:none;background:#ededed;padding:1px 15px;border-radius:5px}
-.fx-page-content.current{display:block}
+.fx-pagination a:hover,.fx-pagination a:focus{color:inherit}
+.fx-prev-next a{font-family:Arial,Verdana,Helvetica,sans-serif}
+.fx-pagination .fx-disabled{filter:alpha(opacity=30);opacity:.3}
+.fx-pagination .fx-disabled,.fx-pagination .fx-disabled a,.fx-pagination .fx-disabled a:hover{cursor:text;text-decoration:none}
+.fx-pagination .fx-current a{background:#333;color:#fff}
+.fx-page-content{display:none;background:#ededed;padding:1px 15px .5em 15px;border-radius:5px}
+.fx-page-content.fx-current{display:block}
 /* Carousel */
 .exe-carousel{margin:2em auto;width:90%;position:relative}
 .js .exe-carousel{width:96%}
-.carousel-pagination{margin:11px 0 0 0;padding:0;list-style:none;text-align:center;overflow:auto}
+.fx-carousel-pagination{margin:11px 0 0 0;padding:0;list-style:none;text-align:center;overflow:auto}
 .exe-carousel h2{margin-top:2em}
 .js .exe-carousel h2{margin-top:1em}
-.carousel-pagination li{display:inline;padding:0;margin:0 3px}
-.carousel-pagination a{outline:none;display:inline-block;padding:3px 11px;border-radius:5px;background:#ededed}
-.carousel-pagination .disabled{filter:alpha(opacity=30);opacity:.3}
-.carousel-pagination .disabled,.carousel-pagination .disabled a,.carousel-pagination .disabled a:hover{cursor:text;text-decoration:none}
-.carousel-pagination .current a{background:#333;color:#fff}
-.carousel-page-content{display:none;background:#ededed;padding:1px 15px;border-radius:5px;margin:0 65px}
-.carousel-page-content.current{display:block}
-.carousel-pagination li{font-size:.85em}
-.carousel-pagination .exe-carousel-pg{position:absolute;top:15px;left:0}
-.carousel-pagination .exe-carousel-pg a{width:50px;height:50px;padding:0;line-height:50px;font-size:25px;font-family:Arial,Verdana,Helvetica,sans-serif;border-radius:25px;text-align:left;text-indent:10px}
-.carousel-pagination .exe-carousel-pg a:hover{text-decoration:none;background:#333;color:#fff}
-.carousel-pagination .exe-carousel-pg a:focus{text-decoration:none}
-.carousel-pagination .exe-carousel-pg.disabled a:hover{filter:alpha(opacity=20);opacity:.2}
-.carousel-pagination .exe-carousel-next{left:auto;right:0}
-.carousel-pagination .exe-carousel-next a{text-indent:14px}
-/* Colors */
-/*
-/* Accordion */
-/*
-.js .exe-accordion{
-box-shadow:0px 1px 3px rgba(0,0,0,0.25);
-background:#fff;
-}
-.exe-accordion-section-title,.exe-accordion h2{
-border-bottom-color:#1a1a1a;
+.fx-carousel-pagination li{display:inline;padding:0;margin:0 3px}
+.fx-carousel-pagination a{outline:none;display:inline-block;padding:3px 11px;border-radius:5px;background:#ededed}
+.fx-carousel-pagination .fx-disabled{filter:alpha(opacity=30);opacity:.3}
+.fx-carousel-pagination .fx-disabled,.fx-carousel-pagination .fx-disabled a,.fx-carousel-pagination .fx-disabled a:hover{cursor:text;text-decoration:none}
+.fx-carousel-pagination .fx-current a{background:#333;color:#fff}
+.fx-carousel-content{display:none;background:#ededed;padding:1px 15px .5em 15px;border-radius:5px;margin:0 65px}
+.fx-carousel-content.fx-current{display:block}
+.fx-carousel-pagination li{font-size:.85em}
+.fx-carousel-pagination .fx-carousel-prev-next{position:absolute;top:15px;left:0;*left:-10px} /* IE6, IE7 */
+.fx-carousel-pagination .fx-carousel-prev-next a{width:50px;height:50px;padding:0;line-height:50px;font-size:25px;font-family:Arial,Verdana,Helvetica,sans-serif;border-radius:25px;text-align:left;text-indent:10px}
+.fx-carousel-pagination .fx-carousel-prev-next a:hover{text-decoration:none;color:inherit}
+.fx-carousel-pagination .fx-carousel-prev-next a:focus{text-decoration:none}
+.fx-carousel-pagination .fx-carousel-next{left:auto;right:0}
+.fx-carousel-pagination .fx-carousel-next a{text-indent:14px}
+/* Colors (simplified) */
+.iDevice .exe-carousel li.fx-C2{background:none}
+/* iDevices with emphasis */
+.emphasis1 .exe-fx .fx-C1,
+.emphasis1 .exe-fx .fx-C1 a{
 background:#333;
-text-shadow:0px 1px 0px #1a1a1a;
-color:#fff;
+color:#FFF;
 }
-.exe-accordion-section-title.active,.exe-accordion-section-title:hover{
-background:#4c4c4c;
+.emphasis1 .exe-fx .fx-C2,
+.emphasis1 .exe-fx .fx-C2 a,
+.emphasis1 .fx-pagination a{
+background:#FFF;
 }
-*/
-/* Tabs, Pagination, Carousel */
-/*
-.exe-tabs .tabs .current a,
-.exe-tabs .tab-content,
-.fx-page-content,
-.carousel-page-content,
-.fx-pagination a,
-.carousel-pagination a{
-	background:#ededed;
-}
-
-.carousel-pagination .current a,.fx-pagination .current a,.carousel-pagination .exe-carousel-pg a:hover{
-background:#333;
-color:#fff;
-}
-*/

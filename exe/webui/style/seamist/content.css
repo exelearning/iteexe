@@ -64,3 +64,7 @@ li{list-style-position:outside}
 .toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(_seamist_hide_show.gif) no-repeat 0 -16px}
 .toggle-idevice .show-idevice{background-position:0 0}
 .toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+/* Effects */
+.exe-fx .fx-C2,
+.exe-fx .fx-C2 a,
+.fx-pagination a{background:#FFF}

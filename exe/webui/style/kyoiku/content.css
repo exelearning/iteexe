@@ -309,3 +309,10 @@ iframe {
 img {
 	page-break-inside:avoid;
 }
+
+/* Efectos */
+.exe-fx .fx-C2,
+.exe-fx .fx-C2 a,
+.fx-pagination a{
+background:#F3F3F3;
+}

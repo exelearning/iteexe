@@ -14,7 +14,7 @@ a:hover,a:focus{color:#B34700}
 #nodeDecoration{text-align:left;padding:1em 0;margin-bottom:2em;background:#F3FFC3;text-shadow:1px 1px 1px #fff;border-bottom:2px solid #ACBF60;border-top:2px solid #ACBF60;color:#889F65}
 #nodeTitle,.nodeTitle{font-size:1.5em;margin:0;font-weight:bold;text-align:right} /* .nodeTitle when single page */
 .nodeTitle{padding:.1em 0 .6em 0;border-bottom:2px solid #ACBF60;margin-top:1em;text-align:right;color:#889F65;text-shadow:1px 1px 1px #fff}
-#main h2{font-size:1.4em}
+h2{font-size:1.4em}
 #main .iDeviceTitle{display:inline;font-size:1.4em}
 h3{font-size:1.25em;color:#666}
 #main h4{font-size:1.2em}
@@ -57,3 +57,15 @@ li{list-style-position:outside}
 /* Hide/Show iDevice */
 .toggle-idevice{margin:12px 0 0;text-align:right;display:block}
 .iDevice_header .toggle-idevice{float:right;margin:0}
+/* Effects */
+.exe-fx .fx-C2,
+.exe-fx .fx-C2 a,
+.fx-pagination a{
+background:#FAFFE6;
+}
+/* iDevices with emphasis */
+.emphasis1 .exe-fx .fx-C2,
+.emphasis1 .exe-fx .fx-C2 a,
+.emphasis1 .fx-pagination a{
+background:#F2FFBF;
+}

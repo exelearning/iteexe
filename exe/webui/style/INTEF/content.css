@@ -94,6 +94,13 @@ li{list-style-position:outside}
 .toggle-idevice .show-idevice{background-position:0 0}
 .toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 
+/* Effects */
+.exe-fx .fx-C2,
+.exe-fx .fx-C2 a,
+.fx-pagination a{
+	background:#EEF2F5;
+}
+
 /* To review */
 .TrueFalseIdevice .question{margin-bottom:25px}
 .TrueFalseIdevice .question:last-child{margin-bottom:0}
