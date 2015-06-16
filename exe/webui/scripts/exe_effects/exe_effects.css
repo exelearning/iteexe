@@ -57,6 +57,11 @@
 .fx-carousel-pagination .fx-carousel-prev-next a:focus{text-decoration:none}
 .fx-carousel-pagination .fx-carousel-next{left:auto;right:0}
 .fx-carousel-pagination .fx-carousel-next a{text-indent:14px}
+@media all and (max-width: 700px){
+	.exe-carousel{margin-top:85px}
+	.fx-carousel-content{margin:65px 0 0}
+	.fx-carousel-pagination .fx-carousel-prev-next{top:-65px}
+}
 /* Colors (simplified) */
 .iDevice .exe-carousel li.fx-C2{background:none}
 /* iDevices with emphasis */
