@@ -5,11 +5,11 @@
 	<div class="exe-fx exe-accordion">
 		<div>
 			<div class="fx-accordion-section">
-				<a class="fx-accordion-title fx-C1" href="#"><h2>Title A</h2></a>
+				<a class="fx-accordion-title fx-accordion-title-0 fx-C1" href="#"><h2>Title A</h2></a>
 				<div class="fx-accordion-content">
 					<p>...</p>
 				</div>
-				<a class="fx-accordion-title fx-C1" href="#"><h2>Title B</h2></a>
+				<a class="fx-accordion-title fx-accordion-title-1 fx-C1" href="#"><h2>Title B</h2></a>
 				<div class="fx-accordion-content">
 					<p>...</p>
 				</div>

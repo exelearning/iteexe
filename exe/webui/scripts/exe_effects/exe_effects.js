@@ -101,7 +101,7 @@ $exeFX = {
 			$(".fx-accordion-content",e).each(function(y){
 				var id = k+"-accordion-"+i+"-"+y;
 				this.id = id;
-				h2.eq(y).wrap('<a class="fx-accordion-title fx-C1" href="#'+id+'" id="'+id.replace("-","_").replace("-","_")+'-trigger"></a>');
+				h2.eq(y).wrap('<a class="fx-accordion-title fx-accordion-title-'+y+' fx-C1" href="#'+id+'" id="'+id.replace("-","_").replace("-","_")+'-trigger"></a>');
 			});
 			$exeFX.accordion.enable(e);
 		},
