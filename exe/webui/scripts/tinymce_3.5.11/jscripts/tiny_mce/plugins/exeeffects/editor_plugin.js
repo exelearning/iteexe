@@ -36,8 +36,8 @@
 				var d = ed.getDoc();
 				var s = '<style type="text/css">';
 					s += '.exe-fx.exe-accordion:before{content:"'+ed.getLang("exeeffects.type1")+'"}';
-					s += '.exe-fx.exe-paginated:before{content:"'+ed.getLang("exeeffects.type2")+'"}';
-					s += '.exe-fx.exe-tabs:before{content:"'+ed.getLang("exeeffects.type3")+'"}';
+					s += '.exe-fx.exe-tabs:before{content:"'+ed.getLang("exeeffects.type2")+'"}';
+					s += '.exe-fx.exe-paginated:before{content:"'+ed.getLang("exeeffects.type3")+'"}';
 					s += '.exe-fx.exe-carousel:before{content:"'+ed.getLang("exeeffects.type4")+'"}';
 				s += '</style>';
 				jQuery("HEAD",d).append(s);
