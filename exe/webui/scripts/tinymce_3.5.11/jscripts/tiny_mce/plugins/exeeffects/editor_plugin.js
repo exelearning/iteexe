@@ -18,7 +18,7 @@
 					
 				ed.windowManager.open({
 					file : url + '/exeeffects.htm',
-					width : 500,
+					width : 550,
 					height : 400,
 					inline : 1
 				}, {
@@ -39,6 +39,7 @@
 					s += '.exe-fx.exe-tabs:before{content:"'+ed.getLang("exeeffects.type2")+'"}';
 					s += '.exe-fx.exe-paginated:before{content:"'+ed.getLang("exeeffects.type3")+'"}';
 					s += '.exe-fx.exe-carousel:before{content:"'+ed.getLang("exeeffects.type4")+'"}';
+					s += '.exe-fx.exe-timeline:before{content:"'+ed.getLang("exeeffects.type5")+'"}';
 				s += '</style>';
 				jQuery("HEAD",d).append(s);
 			});			

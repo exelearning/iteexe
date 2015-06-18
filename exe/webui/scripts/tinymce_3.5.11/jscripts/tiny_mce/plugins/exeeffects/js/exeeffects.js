@@ -8,8 +8,10 @@ var eXeEffects = {
 		'accordion',
 		'tabs',
 		'paginated',
-		'carousel'
+		'carousel',
+		'timeline'
 	],
+	mode : 'create',
 	init : function() {
 		mcTabs.displayTab('general_tab','general_panel');
 		this.enableTypeChange();
@@ -45,6 +47,8 @@ var eXeEffects = {
 		}
 		
 		if (inside) {
+			eXeEffects.mode = "edit";
+			eXeEffects.currentType = classToSelect;
 			document.getElementById("insert").value=tinyMCEPopup.getLang("exeeffects.update");
 			var radios = document.getElementsByName("type");
 			for (var i = 0, length = radios.length; i < length; i++) {
@@ -88,13 +92,21 @@ var eXeEffects = {
 		if (inside) {
 			var div = e.parents("."+classToRemove);
 			div.attr("class",div.attr("class").replace(classToRemove,classToAdd));
-			// alert(div.attr("class").replace(classToRemove,classToAdd))			
 		} else {
 			var c = '<div class="exe-fx '+classToAdd+'">';
-				c += '<h2>'+tinyMCEPopup.getLang("exeeffects.h2")+'</h2>';
-				c += '<p>'+tinyMCEPopup.getLang("exeeffects.write_your_content")+'</p>';
-				c += '<h2>'+tinyMCEPopup.getLang("exeeffects.h2")+'</h2>';
-				c += '<p>'+tinyMCEPopup.getLang("exeeffects.write_your_content")+'</p>';				
+				if (classToAdd=="exe-timeline") {
+					c += '<h2>'+tinyMCEPopup.getLang("exeeffects.h2")+'</h2>';
+					c += '<h3>'+tinyMCEPopup.getLang("exeeffects.h3")+'</h3>';
+					c += '<p>'+tinyMCEPopup.getLang("exeeffects.write_your_content")+'</p>';
+					c += '<h2>'+tinyMCEPopup.getLang("exeeffects.h2")+'</h2>';
+					c += '<h3>'+tinyMCEPopup.getLang("exeeffects.h3")+'</h3>';
+					c += '<p>'+tinyMCEPopup.getLang("exeeffects.write_your_content")+'</p>';					
+				} else {
+					c += '<h2>'+tinyMCEPopup.getLang("exeeffects.h2")+'</h2>';
+					c += '<p>'+tinyMCEPopup.getLang("exeeffects.write_your_content")+'</p>';
+					c += '<h2>'+tinyMCEPopup.getLang("exeeffects.h2")+'</h2>';
+					c += '<p>'+tinyMCEPopup.getLang("exeeffects.write_your_content")+'</p>';	
+				}			
 			c += '</div><br />';
 			inst.execCommand('mceInsertContent', false, c);			
 		}
@@ -122,6 +134,22 @@ var eXeEffects = {
 	},	
 	showTypeOptions : function(id) {
 		if (!id) var id = this.getSelectedOption("type");
+		if (id == "type5" && eXeEffects.mode=="edit") {
+			// You're trying to make a timeline out of any other effect (an accordion, for example)
+			if (eXeEffects.currentType!="exe-timeline") {
+				tinyMCEPopup.confirm(tinyMCEPopup.getLang('exeeffects.instructions6')+"\n\n"+tinyMCEPopup.getLang('exeeffects.type5_confirm'), function(s) {
+					if (s) eXeEffects.currentTypeID = id;
+					// Select the previous value
+					else {
+						parent.jQuery("#"+eXeEffects.currentTypeID).prop("checked",true).trigger("change");
+						document.getElementById(eXeEffects.currentTypeID).checked = true;
+						eXeEffects.showTypeOptions(eXeEffects.currentTypeID);
+					}
+				});			
+			}
+		} else {
+			eXeEffects.currentTypeID = id;
+		}
 		document.getElementById("type-thumb").src="img/"+id+".png";		
 		document.getElementById("type-desc").innerHTML = document.getElementById(id+"-desc").innerHTML;
 	}	
