@@ -71,8 +71,31 @@
 			<li class="fx-carousel-prev-next fx-carousel-next fx-C2"><a href="#" title="Next"><span>►</span></a></li>
 		</ul>
 	</div>
+	
+/* Timeline HTML */
+	<div class="exe-fx exe-timeline">
+		<div class="fx-timeline-toggler">
+			<p><a href="#" class="fx-timeline-expand" style="background-color:...;color:...">Show</a></p>
+		</div>
+		<div class="fx-timeline-major">
+			<h2 class="fx-timeline-marker"><span><a href="#" style="background:...">Heading 2</a></span></h2>
+			<div class="fx-timeline-minor">
+				<h3 class="fx-timeline-event-trigger"><a href="#" style="color:...">Heading 3</a></h3>
+				<div class="fx-timeline-event">
+					...
+				</div>
+			</div>
+		</div>
+		<div class="fx-timeline-major">
+			...
+		</div>
+	</div>
 
 /* CSS (colors) */
+
+	The timeline has the same color as the text of your iDevice. 
+	It's defined in its HTML (above) using "style". 
+	Use !important in your content.css file to change it.
 
 /* Simplified (just 3 colors) */
 
