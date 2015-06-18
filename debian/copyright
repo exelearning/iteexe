@@ -30,7 +30,11 @@ License: MIT
 
 Files: /usr/share/exe/webui/scripts/exe_tooltips/
 Copyright: Craig Michael Thompson
-Licnese: MIT | GPL-2
+License: MIT | GPL-2
+
+Files: /usr/share/exe/webui/scripts/exe_effects/exe_effects.js (Timeliner.js 1.x)
+Copyright: Tarek Anandan
+License: CC-BY-SA-3.0
 
 Files: /usr/share/exe/style/*
 Copyright: different authors (see config.xml in each directory).
