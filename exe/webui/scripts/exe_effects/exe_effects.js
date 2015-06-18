@@ -45,6 +45,15 @@ $exeFX = {
 			var color = t.eq(0).css("background-color");
 			color = color.replace("rgb(","rgba(").replace(")",",0.5)");
 			if (color.indexOf("rgba(")==0) x.css("box-shadow","0px 1px 3px "+color);
+			// Get border color (titles)
+			color = x.css("background-color");
+			color = color.replace("rgb(","rgba(").replace(")",",0.2)");
+			if (color.indexOf("rgba(")==0) {
+				t.each(function(){
+					this.style.borderColor=color;
+				});
+			}
+			// onclick
 			t.click(function(e) {
 				var aID = this.id.split("-")[0];
 				aID = aID.replace("_","-").replace("_","-");
