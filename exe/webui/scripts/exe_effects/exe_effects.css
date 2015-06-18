@@ -67,7 +67,7 @@
 /* Timeline */
 div.fx-timeline-container{border-left:2px solid #333;margin:20px auto;width:95%}
 div.fx-timeline-toggler{float:right;margin-right:0;white-space:nowrap}
-.fx-timeline-container a.fx-timeline-expand{color:#fff;cursor:pointer;background:#333;border-radius:4px;font-size:.85em;padding:3px 5px;display:block}
+.fx-timeline-container a.fx-timeline-expand{color:#fff;cursor:pointer;background:#333;border-radius:4px;font-size:.95em;padding:3px 5px;display:block}
 .fx-timeline-container a.fx-timeline-expand:hover{filter:alpha(opacity=80);opacity:.8}
 div.fx-timeline-major{clear:left;float:left;margin:0 0 12px;width:95%}
 .fx-timeline-major h2{cursor:pointer;font-size:1.2em;margin:0 0 10px;padding:4px 4px 4px 20px}
