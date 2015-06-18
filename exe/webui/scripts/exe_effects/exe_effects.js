@@ -13,13 +13,35 @@ $exeFX = {
 		}		
 		var k = $exeFX.baseClass;
 		var f = $("."+k+"-fx");
+		var hasTimeLines = false;
 		$("."+k+"-fx").each(function(i){
 			var c = this.className;
 			if (c.indexOf(" "+k+"-accordion")!=-1) $exeFX.accordion.init(this,i);
 			else if (c.indexOf(" "+k+"-tabs")!=-1) $exeFX.tabs.init(this,i);
 			else if (c.indexOf(" "+k+"-paginated")!=-1) $exeFX.paginated.init(this,i);
 			else if (c.indexOf(" "+k+"-carousel")!=-1) $exeFX.carousel.init(this,i);
+			else if (c.indexOf(" "+k+"-timeline")!=-1) {
+				$exeFX.timeline.init(this,i);
+				hasTimeLines = true;
+			}
 		});
+		if (hasTimeLines) {
+			setTimeout(function(){$.timeliner({});},500);
+		}
+	},
+	hex2rgb : function(h,a){
+		// h should be #rrggbb
+		var hex = parseInt(h.substring(1), 16);
+		var r = (hex & 0xff0000) >> 16;
+		var g = (hex & 0x00ff00) >> 8;
+		var b = hex & 0x0000ff;
+		// return [r, g, b];
+		var c = "rgb";
+		if (a) c += "a";
+		c += "("+r+","+g+","+b+"";
+		if (a) c+= ","+a;
+		c += ")";
+		return c;		
 	},
 	rftTitles : function(t) {
 		// Replace <h2 title=""></h2> by <h2><span title=""></span></h2>. That's how TinyMCE inserts the title when using the Insert/Edit Attributes option
@@ -118,6 +140,103 @@ $exeFX = {
 			var e = $(x);
 			var a = $("h2",e);
 			if (a.length>0) $exeFX.accordion.rft(e,i);
+		}
+	},
+	timeline : {
+		getColor : function(e){
+			var c = e.css("color");
+			if (c.indexOf("rgb")!=0) return c;
+			return $exe.rgb2hex(c);
+		},
+		rft : function(e,i){
+			var k = $exeFX.baseClass;
+			var gID = k+"-timeline-"+i;
+			e.attr("id",gID);
+			var mainColor = $exeFX.timeline.getColor(e);
+			var titlesColor = $exe.useBlackOrWhite(mainColor.replace("#",""));
+			var html = "";
+			var o = e.html();
+			var h2 = "<h2>";
+			var _h2 = "</h2>";
+			var h3 = "<h3>";
+			var _h3 = "<h3>";						
+			var oldB = false;
+			if (o.indexOf("<H2")!=-1) {
+				h2 = "<H2>";
+				_h2 = "</H2>";
+				h3 = "<H3>";
+				_h3 = "</H3>";
+				oldB = true;
+			} else {
+				// To rgba
+				mainColor = $exeFX.hex2rgb(mainColor,"0.8");
+			}
+			// Remove first line if empty
+			if (o.indexOf(h2)!=0) {
+				var x = o.split(h2);
+				if (x.length==1) return false;
+				o = o.replace(x[0],"")
+			}
+			var n = o.split(h2);
+			for (i=0;i<n.length;i++) {
+				if (n[i].length>0) {
+					var partTitle = "";
+					var partContent = "";
+					var part = n[i];
+					var part2 = part.split(_h2);
+					if (part2.length==2) {
+						partTitle = part2[0];
+						partContent = part2[1];
+						// Count the number of H3 in each content
+						var p2 = partContent.split(_h3)									
+						if (p2.length==1 || p2.length==0) {
+							partTitle = "";
+							partContent = "";										
+						} else {
+							if (oldB) {
+								partContent = partContent.replace(/\<\/H3>/g,'</a></h3>\n<div class="fx-timeline-event" style="display:none">');
+								partContent = partContent.replace(/\<H3>/g,'</div>\n<h3 class="fx-timeline-event-trigger"><a href="#" style="color:'+mainColor+'">');								
+							} else {
+								partContent = partContent.replace(/\<\/h3>/g,'</a></h3>\n<div class="fx-timeline-event" style="display:none">');
+								partContent = partContent.replace(/\<h3>/g,'</div>\n<h3 class="fx-timeline-event-trigger"><a href="#" style="color:'+mainColor+'">');
+							}					
+							partContent = partContent.replace('</div>','');
+							partContent += '</div>';
+							partContent = '<div class="fx-timeline-major">\n<h2 class="fx-timeline-marker"><span><a href="#" style="background:'+mainColor+'">'+partTitle+'</a></span></h2>\n<div class="fx-timeline-minor">\n'+partContent+'\n</div>\n</div>'
+							html += partContent;
+						}
+					}								
+				}							
+			}
+			if (html!="") {
+				e.addClass("fx-timeline-container").css("border-color",mainColor);
+				var ie = $exeFX.checkIE();
+				if ((!isNaN(parseFloat(ie)) && isFinite(ie)) && ie<8) {
+					e.addClass("fx-static-timeline-container");
+					html = html.replace(/<h2/g, '<span class="fx-ie-dash">—</span><h2');
+					e.html(html);	
+				} else {
+					e.html('<div class="fx-timeline-toggler"><p><a href="#" class="fx-timeline-expand" style="background-color:'+mainColor+';color:'+titlesColor+'">'+$exe_i18n.show+'</a></p></div>'+html)
+				}
+				$(".fx-timeline-event",e).each(function(z){
+					this.id = "event-"+e.attr("id")+"-"+z+"EX";
+				});
+				$(".fx-timeline-event-trigger",e).each(function(z){
+					this.id = "event-"+e.attr("id")+"-"+z;
+				});
+			}
+			// Add a STYLE tag HEAD
+			if (oldB==false) {
+				var css = "<style type='text/css'>#"+gID+" .fx-timeline-major h2:before,#"+gID+" .fx-timeline-major h3:before{color:"+mainColor+"}</style>";
+				$("HEAD").append(css);
+			}
+		},
+		init : function(x,i) {
+			var e = $(x);
+			var h2 = $("H2",e);
+			var h3 = $("H3",e);
+			if (h2.length>0 && h3.length>0) $exeFX.timeline.rft(e,i);
+			
 		}
 	},
 	tabs : {
@@ -398,3 +517,9 @@ $exeFX = {
 $(function(){
 	$exeFX.init();
 });
+/*
+* Timeliner.js
+* @version      1.5.1
+* @copyright    Tarek Anandan (http://www.technotarek.com)
+*/
+;(function(e){var t;e.timeliner=function(n){t=jQuery.extend({timelineContainer:".fx-timeline-container",startState:"closed",startOpen:[],baseSpeed:100,speed:4,fontOpen:"1.1em",fontClosed:"1em",expandAllText:$exe_i18n.show,collapseAllText:$exe_i18n.hide},n);e(document).ready(function(){function n(n,r){e(n).removeClass("closed").addClass("open").animate({fontSize:t.fontOpen},t.baseSpeed);e(r).show(t.speed*t.baseSpeed)}function r(n,r){e(n).animate({fontSize:t.fontClosed},0).removeClass("open").addClass("closed");e(r).hide(t.speed*t.baseSpeed)}if(t.startState==="closed"){e(".fx-timeline-event").hide();e.each(e(t.startOpen),function(t,r){n(e(r).parent(".fx-timeline-minor").find("h3 a"),e(r))})}else{n(e(".fx-timeline-minor h3 a"),e(".fx-timeline-event"))}e(t.timelineContainer).on("click",".fx-timeline-minor h3",function(){var t=e(this).attr("id");if(e(this).find("a").is(".open")){r(e("a",this),e("#"+t+"EX"));return false}else{n(e("a",this),e("#"+t+"EX"))}return false});e(t.timelineContainer).on("click",".fx-timeline-marker",function(){var t=e(this).parents(".fx-timeline-major").find(".fx-timeline-minor").length;var i=e(this).parents(".fx-timeline-major").find(".open").length;if(t>i){n(e(this).parents(".fx-timeline-major").find("h3 a",".fx-timeline-minor"),e(this).parents(".fx-timeline-major").find(".fx-timeline-event"))}else{r(e(this).parents(".fx-timeline-major").find(".fx-timeline-minor a"),e(this).parents(".fx-timeline-major").find(".fx-timeline-event"))}return false});e(".fx-timeline-expand").click(function(){if(e(this).hasClass("expanded")){r(e(this).parents(t.timelineContainer).find("h3 a",".fx-timeline-minor"),e(this).parents(t.timelineContainer).find(".fx-timeline-event"));e(this).removeClass("expanded").html(t.expandAllText)}else{n(e(this).parents(t.timelineContainer).find("h3 a",".fx-timeline-minor"),e(this).parents(t.timelineContainer).find(".fx-timeline-event"));e(this).addClass("expanded").html(t.collapseAllText)}return false})})}})(jQuery);

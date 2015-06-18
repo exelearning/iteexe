@@ -64,6 +64,29 @@
 	.fx-carousel-content{margin:65px 0 0}
 	.fx-carousel-pagination .fx-carousel-prev-next{top:-65px}
 }
+/* Timeline */
+div.fx-timeline-container{border-left:2px solid #333;margin:20px auto;width:95%}
+div.fx-timeline-toggler{float:right;margin-right:0;white-space:nowrap}
+.fx-timeline-container a.fx-timeline-expand{color:#fff;cursor:pointer;background:#333;border-radius:4px;font-size:12px;padding:3px 5px;display:block}
+.fx-timeline-container a.fx-timeline-expand:hover{filter:alpha(opacity=80);opacity:.8}
+div.fx-timeline-major{clear:left;float:left;margin:0 0 12px;width:95%}
+.fx-timeline-major h2{cursor:pointer;font-size:2em;font-weight:400;margin:0 0 10px;padding:4px 4px 4px 20px}
+.fx-timeline-major h2:before{content:"—";margin-left:-20px}
+.fx-timeline-major h2 a{background:#333;border-radius:4px;color:#fff;line-height:2.3em;padding:5px 10px 3px 10px}
+dl.fx-timeline-minor{clear:left;float:left;margin:0 12px 0 0;padding:4px 4px 4px 0;position:relative;width:880px}
+.fx-timeline-minor h3{clear:left;font-size:1.25em;list-style-type:none;line-height:1.2em;margin:5px 0 12px;padding:0 0 0 24px;white-space:nowrap}
+.fx-timeline-major h3:before{content:"‒";margin:0 9px 0 -25px}
+.fx-timeline-minor h3 a{color:#333;cursor:pointer}
+.fx-timeline-minor h3 a.closed{font-size:1em}
+.fx-timeline-event{padding-left:19px;width:100%}
+.fx-timeline-event p{line-height:1.5em;margin:6px 0 10px}
+.fx-timeline-container:after,.fx-timeline-event:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
+.fx-timeline-container,.fx-timeline-event{display:inline-block}
+html[xmlns] .fx-timeline-container,html[xmlns] .fx-timeline-event{display:block}
+* html .fx-timeline-container,* html .fx-timeline-event{height:1%;overflow:visible}
+.fx-static-timeline-container p{margin-left:6px}
+.fx-ie-dash{float:left;line-height:3.2em;font-weight:bolder} /* IE<8 */
+
 /* Colors (simplified) */
 .iDevice .exe-carousel li.fx-C2{background:none}
 /* iDevices with emphasis */
