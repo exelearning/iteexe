@@ -73,7 +73,7 @@ div.fx-timeline-major{clear:left;float:left;margin:0 0 12px;width:95%}
 .fx-timeline-major h2{cursor:pointer;font-size:2em;font-weight:400;margin:0 0 10px;padding:4px 4px 4px 20px}
 .fx-timeline-major h2:before{content:"—";margin-left:-20px}
 .fx-timeline-major h2 a{background:#333;border-radius:4px;color:#fff;line-height:2.3em;padding:5px 10px 3px 10px}
-dl.fx-timeline-minor{clear:left;float:left;margin:0 12px 0 0;padding:4px 4px 4px 0;position:relative;width:880px}
+div.fx-timeline-minor{clear:left;float:left;margin:0 12px 0 0;padding:4px 4px 4px 0;position:relative}
 .fx-timeline-minor h3{clear:left;font-size:1.25em;list-style-type:none;line-height:1.2em;margin:5px 0 12px;padding:0 0 0 24px;white-space:nowrap}
 .fx-timeline-major h3:before{content:"‒";margin:0 9px 0 -25px}
 .fx-timeline-minor h3 a{color:#333;cursor:pointer}

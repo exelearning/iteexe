@@ -169,7 +169,7 @@ $exeFX = {
 				oldB = true;
 			} else {
 				// To rgba
-				mainColor = $exeFX.hex2rgb(mainColor,"0.8");
+				if (mainColor.length==7) mainColor = $exeFX.hex2rgb(mainColor,"0.8");
 			}
 			// Remove first line if empty
 			if (o.indexOf(h2)!=0) {
