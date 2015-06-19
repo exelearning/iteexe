@@ -14,6 +14,9 @@ var $exeTinyMCE = {
     buttons2 : "undo,redo,|,cut,copy,paste,pastetext,pasteword,|,pastehtml,pastecode,|,search,replace,|,link,unlink,anchor,tooltip,|,image,media,exeeffects,|,removeformat,cleanup,|,insertdate,inserttime,advhr,cite,abbr,acronym,del,ins,attribs,nonbreaking,|,charmap,exemath,|,styleprops",
     buttons3 : "template,|,tablecontrols,|,codemagic,help",
     templates : "/scripts/tinymce_templates/lang/"+tinyMCE_language+".js",
+    theme : "advanced",
+    skin : "default",
+    skin_variant : "",
     
 	init : function(mode,criteria,hide){
 		
@@ -27,7 +30,9 @@ var $exeTinyMCE = {
 			mode : mode,
 			elements : criteria,
 			editor_selector : criteria,	
-			theme : "advanced",
+			theme : this.theme,
+			skin : this.skin,
+			skin_variant : this.skin_variant,
 			convert_urls : false,
 			schema : this.getSchema(),
 			content_css : "/css/extra.css," + exe_style,
