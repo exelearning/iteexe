@@ -188,8 +188,8 @@
 .moodleSkin span.mce_strikethrough {background:url(img/strikethrough.png) center center no-repeat;}
 .moodleSkin span.mce_undo {background:url(img/undo.png) center center no-repeat;}
 .moodleSkin span.mce_redo {background:url(img/redo.png) center center no-repeat;}
-.moodleSkin span.mce_bullist {background:url(img/bullet_list.png) center center no-repeat;}
-.moodleSkin span.mce_numlist {background:url(img/numbered_list.png) center center no-repeat;}
+.moodleSkin span.mce_bullist {background:url(img/bullet_list.png) top center no-repeat;}
+.moodleSkin span.mce_numlist {background:url(img/numbered_list.png) top center no-repeat;}
 .moodleSkin span.mce_justifyleft {background:url(img/align_left.png) center center no-repeat;}
 .moodleSkin span.mce_justifyright {background:url(img/align_right.png) center center no-repeat;}
 .moodleSkin span.mce_justifycenter {background:url(img/align_center.png) center center no-repeat;}
@@ -276,3 +276,22 @@
 /* Theme */
 .moodleSkin td.mceToolbar, .moodleSkin td.mceStatusbar, .moodleSkin .mceMenuItemTitle a {background:#F2F2F2}
 .moodleSkin .mceListBox .mceText {background:#FFF}
+
+/* The new eXeLearning */
+.moodleSkin span.mce_tooltip {background:url(img/tooltip.png) center center no-repeat}
+.moodleSkin span.mce_tooltip .mceIcon{display:none}
+.moodleSkin span.mce_pastecode {background:url(img/pastecode.png) center center no-repeat}
+.moodleSkin span.mce_pastecode .mceIcon{display:none}
+.moodleSkin span.mce_pastehtml {background:url(img/pastehtml.png) center center no-repeat}
+.moodleSkin span.mce_pastehtml .mceIcon{display:none}
+.moodleSkin span.mce_exemath {background:url(img/dragmath.png) center center no-repeat}
+.moodleSkin span.mce_exemath .mceIcon{display:none}
+.moodleSkin span.mce_blockquoteandcite {background:url(img/blockquoteandcite.png) center center no-repeat}
+.moodleSkin span.mce_blockquoteandcite .mceIcon{display:none}
+.moodleSkin span.mce_clearfloat {background:url(img/clearfloat.png) center center no-repeat}
+.moodleSkin span.mce_clearfloat .mceIcon{display:none}
+.moodleSkin span.mce_bullist .mceIcon{display:none}
+.moodleSkin span.mce_addcontent {background:url(img/addcontent.png) center center no-repeat}
+.moodleSkin span.mce_addcontent .mceIcon{display:none}
+.moodleSkin span.mce_codemagic {background:url(img/code.png) center center no-repeat}
+.moodleSkin span.mce_codemagic .mceIcon{display:none}
