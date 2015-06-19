@@ -24,6 +24,10 @@ Files: /usr/share/exe/scripts/tinymce_3.5.11/*
 Copyright: Moxiecode Systems AB
 License: LGPL-2.1
 
+Files: /usr/share/exe/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/skins/moodle/*
+These files are part of Moodle - http://moodle.org/
+License: GPL-3+
+
 Files: /usr/share/exe/webui/scripts/mediaelement/*
 Copyright: 2013-2015 John Dyer
 License: MIT
