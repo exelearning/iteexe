@@ -3,6 +3,7 @@
   <mime-type type="application/x-exe-learning">
     <comment>eXe eLearning authoring tool package</comment>
     <comment xml:lang="es">Paquete eXe para la creación de recursos educativos</comment>
+    <comment xml:lang="ru">Пакет для создания образовательных ресурсов eXe</comment>
     <icon name="exe"/>
     <glob pattern="*.elp"/>
   </mime-type>
