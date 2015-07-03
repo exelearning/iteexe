@@ -70,6 +70,8 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 /* JavaScript on/offf */
 .toggle-idevice,.exe-hidden,.js-required,.js .js-hidden{display:none}
 .js .js-required{display:block}
+/* License */
+#packageLicense{text-align:center}
 /* Hints */
 .js #main .iDevice_hint_title{font-size:1em;margin-top:0;font-weight:normal;*margin-top:1em}/* IE6, IE7 */
 .iDevice_hint{margin-bottom:1.5em}

@@ -66,7 +66,87 @@ def docType():
         return '<!DOCTYPE html>'+lb
     else:
         return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
-            
+
+def renderLicense(plicense,mode="export"):
+    """
+    Returns an XHTML string rendering the license.
+    """
+    licenses = {"license GFDL": "http://www.gnu.org/copyleft/fdl.html",
+                "creative commons: attribution 2.5": "http://creativecommons.org/licenses/by/2.5/",
+                "creative commons: attribution - share alike 2.5": "http://creativecommons.org/licenses/by-sa/2.5/",
+                "creative commons: attribution - non derived work 2.5": "http://creativecommons.org/licenses/by-nd/2.5/",
+                "creative commons: attribution - non commercial 2.5": "http://creativecommons.org/licenses/by-nc/2.5/",
+                "creative commons: attribution - non commercial - share alike 2.5": "http://creativecommons.org/licenses/by-nc-sa/2.5/",
+                "creative commons: attribution - non derived work - non commercial 2.5": "http://creativecommons.org/licenses/by-nc-nd/2.5/",
+                "creative commons: attribution 3.0": "http://creativecommons.org/licenses/by/3.0/",
+                "creative commons: attribution - share alike 3.0": "http://creativecommons.org/licenses/by-sa/3.0/",
+                "creative commons: attribution - non derived work 3.0": "http://creativecommons.org/licenses/by-nd/3.0/",
+                "creative commons: attribution - non commercial 3.0": "http://creativecommons.org/licenses/by-nc/3.0/",
+                "creative commons: attribution - non commercial - share alike 3.0": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+                "creative commons: attribution - non derived work - non commercial 3.0": "http://creativecommons.org/licenses/by-nc-nd/3.0/",
+                "creative commons: attribution 4.0": "http://creativecommons.org/licenses/by/4.0/",
+                "creative commons: attribution - share alike 4.0": "http://creativecommons.org/licenses/by-sa/4.0/",
+                "creative commons: attribution - non derived work 4.0": "http://creativecommons.org/licenses/by-nd/4.0/",
+                "creative commons: attribution - non commercial 4.0": "http://creativecommons.org/licenses/by-nc/4.0/",
+                "creative commons: attribution - non commercial - share alike 4.0": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+                "creative commons: attribution - non derived work - non commercial 4.0": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+                "free software license GPL": "http://www.gnu.org/copyleft/gpl.html"
+               }
+    licenses_names = {"license GFDL": c_("GNU Free Documentation License"),
+                      "creative commons: attribution 2.5": c_("Creative Commons Attribution License 2.5"),
+                      "creative commons: attribution - share alike 2.5": c_("Creative Commons Attribution Share Alike License 2.5"),
+                      "creative commons: attribution - non derived work 2.5": c_("Creative Commons Attribution No Derivatives License 2.5"),
+                      "creative commons: attribution - non commercial 2.5": c_("Creative Commons Attribution Non-commercial License 2.5"),
+                      "creative commons: attribution - non commercial - share alike 2.5": c_("Creative Commons Attribution Non-commercial Share Alike License 2.5"),
+                      "creative commons: attribution - non derived work - non commercial 2.5": c_("Creative Commons Attribution Non-commercial No Derivatives License 2.5"),
+                      "creative commons: attribution 3.0": c_("Creative Commons Attribution License 3.0"),
+                      "creative commons: attribution - share alike 3.0": c_("Creative Commons Attribution Share Alike License 3.0"),
+                      "creative commons: attribution - non derived work 3.0": c_("Creative Commons Attribution No Derivatives License 3.0"),
+                      "creative commons: attribution - non commercial 3.0": c_("Creative Commons Attribution Non-commercial License 3.0"),
+                      "creative commons: attribution - non commercial - share alike 3.0": c_("Creative Commons Attribution Non-commercial Share Alike License 3.0"),
+                      "creative commons: attribution - non derived work - non commercial 3.0": c_("Creative Commons Attribution Non-commercial No Derivatives License 3.0"),
+                      "creative commons: attribution 4.0": c_("Creative Commons Attribution License 4.0"),
+                      "creative commons: attribution - share alike 4.0": c_("Creative Commons Attribution Share Alike License 4.0"),
+                      "creative commons: attribution - non derived work 4.0": c_("Creative Commons Attribution No Derivatives License 4.0"),
+                      "creative commons: attribution - non commercial 4.0": c_("Creative Commons Attribution Non-commercial License 4.0"),
+                      "creative commons: attribution - non commercial - share alike 4.0": c_("Creative Commons Attribution Non-commercial Share Alike License 4.0"),
+                      "creative commons: attribution - non derived work - non commercial 4.0": c_("Creative Commons Attribution Non-commercial No Derivatives License 4.0"),
+                      "free software license GPL": c_("GNU General Public License")
+                     }
+
+    html = ""
+    lb = "\n" #Line breaks
+
+    if plicense in licenses:
+        html += '<div id="packageLicense">'+lb
+        html += '<p><span>'
+        html += c_("Licensed under the")
+        html += '</span> '
+        html += '<a rel="license" href="%s">%s</a>' % (licenses[plicense], licenses_names[plicense])
+        if mode == "authoring":
+            html += " <em>"+_('(you can change this in the Properties tab)')+"</em>"
+        else:
+            if plicense == 'license GFDL' and mode != "":
+                html += ' <a href="fdl.html" class="local-version">(%s)</a>' % c_('Local Version')
+        html += '</p>'+lb
+        html += '</div>'+lb
+
+    return html
+  
+def renderFooter(footer):
+    """
+    Returns an XHTML string rendering the footer.
+    """
+    html = ""
+    if footer != "":
+        dT = getExportDocType()
+        footerTag = "div"
+        if dT == "HTML5":
+            footerTag = "footer"        
+        html += '<' + footerTag + ' id="siteFooter">'
+        html += footer + "</" + footerTag + ">"
+    return html
+  
 def themeHasConfigXML(style):
     themePath = Path(G.application.config.stylesDir/style)
     themeXMLFile = themePath.joinpath("config.xml")
