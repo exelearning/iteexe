@@ -150,3 +150,5 @@ text-shadow:0 1px 1px rgba(255, 255, 255, 0.75)
 .emphasis1 .exe-fx .fx-C1,.emphasis1 .exe-fx .fx-C1 a{background:#468770}
 .js .exe-fx .fx-accordion-title,.js .exe-fx.exe-accordion h2{background:#333}
 .emphasis1 .exe-fx .fx-C2,.emphasis1 .exe-fx .fx-C2 a,.emphasis1 .fx-pagination a{background:#E7F8F2}
+/* Licenses */
+#packageLicense{font-size:.85em}

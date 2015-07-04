@@ -57,3 +57,12 @@ li{list-style-position:outside}
 .toggle-idevice a{display:inline-block;width:14px;height:14px;background:url(_em_ocultar_mostrar.gif) no-repeat 0 -14px}
 .toggle-idevice .show-idevice{background-position:0 0}
 .toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+/* Licenses */
+#packageLicense{text-align:left;color:#444}
+#packageLicense a{color:#666}
+#packageLicense.cc{padding-left:90px;background:url(_em_licenses.gif) no-repeat 0 0}
+#packageLicense.cc-by-sa{background-position:0 -100px}
+#packageLicense.cc-by-nd{background-position:0 -200px}
+#packageLicense.cc-by-nc-sa{background-position:0 -300px}
+#packageLicense.cc-by-nc-nd{background-position:0 -400px}
+#packageLicense.cc-0{background-position:0 -500px}
