@@ -113,12 +113,33 @@ def renderLicense(plicense,mode="export"):
                       "creative commons: attribution - non derived work - non commercial 4.0": c_("Creative Commons Attribution Non-commercial No Derivatives License 4.0"),
                       "free software license GPL": c_("GNU General Public License")
                      }
+    licenses_css = {"license GFDL": "gfdl",
+                "creative commons: attribution 2.5": "cc cc-by",
+                "creative commons: attribution - share alike 2.5": "cc cc-by-sa",
+                "creative commons: attribution - non derived work 2.5": "cc cc-by-nd",
+                "creative commons: attribution - non commercial 2.5": "cc cc-by-nc",
+                "creative commons: attribution - non commercial - share alike 2.5": "cc cc-by-nc-sa",
+                "creative commons: attribution - non derived work - non commercial 2.5": "cc cc-by-nc-nd",
+                "creative commons: attribution 3.0": "cc cc-by",
+                "creative commons: attribution - share alike 3.0": "cc cc-by-sa",
+                "creative commons: attribution - non derived work 3.0": "cc cc-by-nd",
+                "creative commons: attribution - non commercial 3.0": "cc cc-by-nc",
+                "creative commons: attribution - non commercial - share alike 3.0": "cc cc-by-nc-sa",
+                "creative commons: attribution - non derived work - non commercial 3.0": "cc cc-by-nc-nd",
+                "creative commons: attribution 4.0": "cc cc-by",
+                "creative commons: attribution - share alike 4.0": "cc cc-by-sa",
+                "creative commons: attribution - non derived work 4.0": "cc cc-by-nd",
+                "creative commons: attribution - non commercial 4.0": "cc cc-by-nc",
+                "creative commons: attribution - non commercial - share alike 4.0": "cc cc-by-nc-sa",
+                "creative commons: attribution - non derived work - non commercial 4.0": "cc cc-by-nc-nd",
+                "free software license GPL": "gpl"
+               } 
 
     html = ""
     lb = "\n" #Line breaks
 
     if plicense in licenses:
-        html += '<div id="packageLicense">'+lb
+        html += '<div id="packageLicense" class="'+licenses_css[plicense]+'">'+lb
         html += '<p><span>'
         html += c_("Licensed under the")
         html += '</span> '
