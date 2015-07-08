@@ -11,8 +11,9 @@ html,body{margin:0;padding:0;text-align:center;background:#FFF}
 #siteFooter{position:fixed;bottom:0;width:100%}
 /*.no-nav #siteFooter{padding-left:20px}*/
 @media all and (min-width: 700px) {
-    #packageLicense.cc{position:fixed;bottom:60px;right:10px;width:80px;height:15px;padding:0}
-    #packageLicense p{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+    #packageLicense{position:fixed;bottom:50px;right:0;width:100%;padding:0;text-indent:20px}
+    #packageLicense.cc{width:80px;height:15px;padding:0;;right:10px;bottom:60px}
+    #packageLicense.cc p{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
     #packageLicense.cc{background-image:url(_simplepoint_licenses.gif);background-repeat:no-repeat;background-position:0 0}
     #packageLicense.cc-by-sa{background-position:0 -100px}
     #packageLicense.cc-by-nd{background-position:0 -200px}

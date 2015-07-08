@@ -20,9 +20,12 @@ var myTheme = {
 		// Enable keyboard
 		document.onkeydown = myTheme.checkKey;
         // License icon
-        $("#packageLicense").css("cursor","pointer").click(function(){
-            window.open($("A",this).attr("href"));
-        });
+        var l = $("#packageLicense");
+        if (l.attr("class").indexOf("cc ")==0) {
+            l.css("cursor","pointer").click(function(){
+                window.open($("A",this).attr("href"));
+            });
+        }
     },
 	isLightboxOpen : function(){
 		if (typeof($.prettyPhoto)!='undefined' && $(".pp_pic_holder").css("display")=="block") return true;
