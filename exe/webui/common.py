@@ -139,16 +139,19 @@ def renderLicense(plicense,mode="export"):
     lb = "\n" #Line breaks
 
     if plicense in licenses:
+        target = ""
+        if mode == "authoring":
+            target = ' target="_blank"'
         html += '<div id="packageLicense" class="'+licenses_css[plicense]+'">'+lb
         html += '<p><span>'
         html += c_("Licensed under the")
         html += '</span> '
-        html += '<a rel="license" href="%s">%s</a>' % (licenses[plicense], licenses_names[plicense])
-        if mode == "authoring":
-            html += " <em>"+_('(you can change this in the Properties tab)')+"</em>"
-        else:
-            if plicense == 'license GFDL' and mode != "":
-                html += ' <a href="fdl.html" class="local-version">(%s)</a>' % c_('Local Version')
+        html += '<a rel="license" href="%s"%s>%s</a>' % (licenses[plicense], target, licenses_names[plicense])
+        if plicense == 'license GFDL':
+            link = "fdl.html"
+            if mode == "authoring":
+                link = "/templates/fdl.html"
+            html += ' <a href="'+link+'" class="local-version"'+target+'>(%s)</a>' % c_('Local Version')
         html += '</p>'+lb
         html += '</div>'+lb
 
