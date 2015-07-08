@@ -67,10 +67,18 @@ def docType():
     else:
         return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
 
-def renderLicense(plicense,mode="export"):
-    """
-    Returns an XHTML string rendering the license.
-    """
+def getLicenseMetadata(license):
+    if license=="":
+        return ""
+    
+    licenses = getLicenses()
+    if license in licenses:
+        lb = "\n" #Line breaks
+        return '<link rel="license" type="text/html" href="'+licenses[license]+'" />'+lb
+    else:
+        return ""
+        
+def getLicenses():
     licenses = {"license GFDL": "http://www.gnu.org/copyleft/fdl.html",
                 "creative commons: attribution 2.5": "http://creativecommons.org/licenses/by/2.5/",
                 "creative commons: attribution - share alike 2.5": "http://creativecommons.org/licenses/by-sa/2.5/",
@@ -92,6 +100,13 @@ def renderLicense(plicense,mode="export"):
                 "creative commons: attribution - non derived work - non commercial 4.0": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
                 "free software license GPL": "http://www.gnu.org/copyleft/gpl.html"
                }
+    return licenses
+        
+def renderLicense(plicense,mode="export"):
+    """
+    Returns an XHTML string rendering the license.
+    """
+    licenses = getLicenses()
     licenses_names = {"license GFDL": c_("GNU Free Documentation License"),
                       "creative commons: attribution 2.5": c_("Creative Commons Attribution License 2.5"),
                       "creative commons: attribution - share alike 2.5": c_("Creative Commons Attribution Share Alike License 2.5"),

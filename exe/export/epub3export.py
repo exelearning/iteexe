@@ -299,6 +299,7 @@ class Epub3Page(Page):
             html += '<meta http-equiv="content-language" content="' + lenguaje + '" />' + lb
         if self.node.package.author != "":
             html += '<meta name="author" content="' + escape(self.node.package.author, True) + '" />' + lb
+        html += common.getLicenseMetadata(self.node.package.license)
         html += '<meta name="generator" content="eXeLearning ' + release + ' - exelearning.net" />' + lb
         if self.node.id == '0':
             if self.node.package.description != "":
