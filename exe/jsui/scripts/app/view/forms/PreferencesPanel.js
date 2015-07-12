@@ -205,6 +205,34 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									["disable_all", _("Disable All Internal Linking")]
 								],
 								margin: 10
+							},
+							{
+								xtype: 'helpcontainer',
+								item: {
+									xtype: 'combobox',
+									inputId: 'defaultLicense',
+									dirtyCls: 'property-form-dirty',
+									fieldLabel: _("Default license for the new documents"),
+									labelWidth: 350,
+									labelAlign:'top',
+									queryModel: 'local',
+									displayField: 'text',
+									valueField: 'licenseName',
+									store: {
+										fields: ['licenseName','text'],
+										proxy: {
+											type: 'ajax',
+											url: 'preferences',
+											reader: {
+												type: 'json',
+												root: 'licensesNames'
+											}
+										},
+										autoLoad: true
+									},
+								},
+								margin: 10,
+								help: _('The current document license can be modified in the Properties tab.')								
 							}
 						]
 					},

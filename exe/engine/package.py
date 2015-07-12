@@ -361,7 +361,7 @@ class Package(Persistable):
         self.scowwebsite   = False
         self.exportSource    = True
         self.exportMetadataType = "LOMES"
-        self.license       = u''
+        self.license       = G.application.config.defaultLicense
         self.footer        = ""
         self._objectives = u''
         self._preknowledge = u''

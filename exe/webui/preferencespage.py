@@ -141,6 +141,7 @@ class PreferencesPage(RenderableResource):
         RenderableResource.__init__(self, parent)
         self.localeNames = []
         self.browsers = []
+        self.licensesNames=[]
 
         for locale in self.config.locales.keys():
             localeName = locale + ": "
@@ -156,6 +157,10 @@ class PreferencesPage(RenderableResource):
         self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
         for browser in self.browsersAvalaibles:
             self.browsers.append({'browser': browser[1], 'text': browser[0]})
+        a=common.getLicenses()
+        for licenses in common.getLicenses():
+            self.licensesNames.append({'licenseName': licenses,'text':_(licenses)})
+
 
 
     def getChild(self, name, request):
@@ -177,6 +182,7 @@ class PreferencesPage(RenderableResource):
             data['locale'] = self.config.locale
             data['internalAnchors'] = self.config.internalAnchors
             data['googleApiClientID'] = self.config.googleApiClientID
+            data['defaultLicense'] = self.config.defaultLicense
             browserSelected = "None"
             for bname, item in mywebbrowser._browsers.items():
                 if bname not in browsersHidden:
@@ -192,7 +198,7 @@ class PreferencesPage(RenderableResource):
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to get preferences")})
-        return json.dumps({'success': True, 'data': data, 'locales': self.localeNames, 'browsers': self.browsers})
+        return json.dumps({'success': True, 'data': data, 'locales': self.localeNames, 'browsers': self.browsers,'licensesNames':self.licensesNames})
 
     def render_POST(self, request):
         """
@@ -221,7 +227,11 @@ class PreferencesPage(RenderableResource):
             googleApiClientID = request.args['googleApiClientID'][0]
             self.config.googleApiClientID = googleApiClientID
             self.config.configParser.set('user', 'googleApiClientID', googleApiClientID)
-
+            
+            defaultLicense = request.args['defaultLicense'][0]
+            self.config.defaultLicense = defaultLicense
+            self.config.configParser.set('user', 'defaultLicense', defaultLicense)
+            
             browser = request.args['browser'][0]
             if browser == "None":
                 browser = None

@@ -320,7 +320,15 @@ class PropertiesPage(Renderable, Resource):
                             if name=='docType':              
                                 data[key]=self.package.getExportDocType()
                             else:
-                                data[key] = getattr(obj, name)
+                                if name=='newlicense':
+                                    _a=getattr(obj, name)
+                                    if getattr(obj, name)=='':                                                 
+                                        data[key]=_(self.package.license)
+                                    else:
+                                        data[key]=getattr(obj, name)
+                                else:
+                                    data[key] = getattr(obj, name)
+                            
 
         except Exception as e:
             log.exception(e)

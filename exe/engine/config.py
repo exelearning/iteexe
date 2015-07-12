@@ -63,7 +63,7 @@ class Config(object):
                    'audioMediaConverter_au', 'audioMediaConverter_mp3',
                    'audioMediaConverter_wav', 'ffmpegPath'),
         'user': ('locale', 'lastDir', 'showPreferencesOnStart',
-                 'defaultStyle', 'showIdevicesGrouped', 'docType', 'editorMode'),
+                 'defaultStyle', 'showIdevicesGrouped', 'docType', 'editorMode','defaultLicense'),
     }
 
     idevicesCategories = {
@@ -196,6 +196,9 @@ class Config(object):
         # Set Google API Client Id, must be not empty to enable the publishing
         # to Google Drive feature
         self.googleApiClientID = ''
+
+
+        self.defaultLicense='creative commons: attribution - share alike 4.0'
 
         self.assumeMediaPlugins = False
         # Let our children override our defaults depending
@@ -444,6 +447,8 @@ class Config(object):
                 self.locale = self.configParser.user.locale
             if self.configParser.user.has_option('googleApiClientID'):
                 self.googleApiClientID = self.configParser.user.googleApiClientID
+            if self.configParser.user.has_option('defaultLicense'):
+                self.defaultLicense = self.configParser.user.defaultLicense
 
     def onWrite(self, configParser):
         """
@@ -501,6 +506,7 @@ class Config(object):
             log.info("configDir   = %s" % self.configDir)
             log.info("locale      = %s" % self.locale)
             log.info("internalAnchors = %s" % self.internalAnchors)
+            log.info("License = %s" % self.defaultLicense)
 
     def loadStyles(self):
         """
