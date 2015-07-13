@@ -57,13 +57,22 @@ html[xmlns] #content{display:block}
 * html #siteNav ul ul ul a{width:380px}
 
 #nav-toggler{margin:0;position:absolute;top:17px;right:17px}
-#nav-toggler a{display:block;width:16px;height:16px;background:url(_simplepoint_navigation.png) no-repeat 0 0	;outline:none}
-#nav-toggler span,.pagination a span,#nodeDecoration{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+#info-toggler{margin:0;position:absolute;top:17px;right:43px}
+#nav-toggler a,#info-toggler a{display:block;width:16px;height:16px;background:url(_simplepoint_navigation.png) no-repeat 0 0;outline:none}
+#info-toggler a{background-position:-50px 0}
+#nav-toggler span,.pagination a span,#nodeDecoration,#info-toggler span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 
 @media screen and (min-width: 701px) and (max-width: 1015px) {
 	#siteNav{width:230px}
 	#main-wrapper{padding-left:250px}
 }
+
+.show-instructions .iDevice,.show-instructions .toggle-idevice{display:none!important}
+.show-instructions #style-instructions{display:block!important}
+#style-instructions{max-width:900px;margin:2em auto;font-size:1.2em;line-height:2em}
+#style-instructions ul,#style-instructions li{margin:0;padding:0;list-style:none;line-height:3.5em}
+#style-instructions strong{display:block;float:left;width:3em;font-size:1.3em;text-align:center}
+#style-instructions span{margin-right:1em;color:#777}
 
 @media all and (max-width: 700px) {
     body{background:#fff}
@@ -79,6 +88,7 @@ html[xmlns] #content{display:block}
 	#content .exe-col{float:none;width:100%;padding:0}
 	iframe,object,embed{max-width:100%}
 	img,video{max-width:100%;height:auto}
+	#info-toggler{right:17px}
 	#nav-toggler span{position:static;overflow:visible;clip:auto;height:auto} /* Reset */
 	#nav-toggler{position:relative;top:0;left:0;margin:0;text-align:center}
 	#nav-toggler a{width:100%;height:auto;background:none;background:#F9F9F9;color:#333;border-bottom:1px solid #e3e3e3;line-height:2.3em;font-weight:bold;letter-spacing:1px}

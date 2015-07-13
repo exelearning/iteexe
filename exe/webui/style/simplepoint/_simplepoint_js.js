@@ -1,15 +1,26 @@
 var myTheme = {
     init : function(){
-		var ie_v = $exe.isIE();
-		if (ie_v && ie_v<8) return false;
+        var ie_v = $exe.isIE();
+        if (ie_v && ie_v<8) return false;
         setTimeout(function(){
             $(window).resize(function() {
                 myTheme.reset();
             });
         },1000);
-		var tit = $exe_i18n.menu+" ("+$exe_i18n.hide.toLowerCase()+")";
-        var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this)" class="hide-nav" id="toggle-nav" title="'+tit+'"><span>'+$exe_i18n.menu+'</span></a></p>');
-        $("#siteNav").before(l);
+        var nav = $("#siteNav");
+        var as = $("A",nav);
+        var a0 = as.eq(0).text();
+        var a1 = as.eq(as.length-1).text();
+        var i = $('<div id="style-instructions" style="display:none"><ul>\
+            <li><strong>&uarr;</strong> <span>= </span>'+a0+'</li>\
+            <li><strong>&larr;</strong> <span>= </span>'+$exe_i18n.previous+'</li>\
+            <li><strong>&rarr;</strong> <span>= </span>'+$exe_i18n.next+'</li>\
+            <li><strong>&darr;</strong> <span>= </span>'+a1+'</li>\
+            <li><strong>m</strong> <span>= </span>'+$exe_i18n.menu+'</li>\
+        </ul></div>');
+        $("#nodeDecoration").after(i);
+        var l = $('<p id="info-toggler"><a href="#" class="instructions" title="?" onclick="myTheme.toggleInstructions(this);return false"><span>?</span></a></p><p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this)" class="hide-nav" id="toggle-nav" title="'+$exe_i18n.menu+" ("+$exe_i18n.hide.toLowerCase()+")"+'"><span>'+$exe_i18n.menu+'</span></a></p>');
+        nav.before(l);
         var url = window.location.href;
         url = url.split("?");
         if (url.length>1){
@@ -17,8 +28,8 @@ var myTheme = {
                 myTheme.hideMenu();
             }
         }
-		// Enable keyboard
-		document.onkeydown = myTheme.checkKey;
+        // Enable keyboard
+        document.onkeydown = myTheme.checkKey;
         // License icon
         var l = $("#packageLicense");
         if (l.attr("class").indexOf("cc ")==0) {
@@ -78,6 +89,15 @@ var myTheme = {
         myTheme.params("add");
 		var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
         $("#toggle-nav").attr("class","show-nav").attr("title",tit);
+    },
+    toggleInstructions : function(e) {
+        if (e.className=="instructions") {
+            $("#main-wrapper").addClass("show-instructions");
+            e.className="instructions hide-instructions";
+        } else {
+            $("#main-wrapper").removeClass("show-instructions");
+            e.className="instructions";
+        }
     },
     toggleMenu : function(e){
         if (typeof(myTheme.isToggling)=='undefined') myTheme.isToggling = false;
