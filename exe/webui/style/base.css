@@ -30,8 +30,8 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 }
 /* The New eXeLearning */
 /* Include these styles in the old themes */
-.iDevice a,#siteFooter a,#packageLicense a{text-decoration:underline}
-.iDevice a:hover,#siteFooter a:hover,#packageLicense a:hover{text-decoration:none}
+.iDevice a,#siteFooter a,#packageLicense a,.toggle-idevice a{text-decoration:underline}
+.iDevice a:hover,#siteFooter a:hover,#packageLicense a:hover,.toggle-idevice a:hover{text-decoration:none}
 .pre-code{background:#112C4A;color:#E7ECF1;font-family:Monaco,Courier,monospace;border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
 * html .pre-code{width:90%} /* IE6 */
 .iDevice_content{position:relative;max-width:100%}
