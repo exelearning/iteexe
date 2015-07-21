@@ -78,6 +78,4 @@ html[xmlns] #content{display:block}
 	#bottomPagination .prev{left:10px}
 	#bottomPagination .next{right:10px}
 	#nav-toggler a,#nav-toggler a:hover,#nav-toggler a:focus{box-shadow:none;background:#706F61;display:inline-block;padding:4px;width:80%;color:#fff;font-variant:small-caps;letter-spacing:1px;outline:none;text-decoration:none}
-	iframe,object,embed{max-width:100%}
-	img,video{max-width:100%;height:auto}
 }

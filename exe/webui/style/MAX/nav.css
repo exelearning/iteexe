@@ -90,8 +90,6 @@ html[xmlns] #content{display:block}
 	#nodeTitle{margin-top:.5em}
 	#siteFooter,.no-nav #siteFooter{padding:10px 10px 0 10px;text-align:center}
 	#content .exe-col{float:none;width:100%;padding:0}
-	iframe,object,embed{max-width:100%}
-	img,video{max-width:100%;height:auto}
 	#topPagination{display:none}
 	#bottomPagination,.no-nav #bottomPagination{padding:0 10px}
 	.pagination{text-align:center;height:35px;position:relative}

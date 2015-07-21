@@ -131,8 +131,6 @@ html[xmlns] #content{display:block}
 	#siteFooter{padding:10px 10px 0 10px;text-align:center}
 	#bottomPagination{padding:0 10px}
 	#content .exe-col{float:none;width:100%;padding:0}
-	iframe,object,embed{max-width:100%}
-	img,video{max-width:100%;height:auto}
 	.pagination{text-align:center;height:35px;position:relative}
 	.pagination .prev{position:absolute;left:0;margin-left:0}
 	.pagination .next{position:absolute;right:0}

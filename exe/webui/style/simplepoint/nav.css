@@ -86,8 +86,6 @@ html[xmlns] #content{display:block}
 	#siteFooter,.no-nav #siteFooter{position:static;bottom:auto;width:auto;padding-top:50px;text-align:center}
     #packageLicense,#packageLicense a{background:none;padding:0;text-align:center;color:#444}
 	#content .exe-col{float:none;width:100%;padding:0}
-	iframe,object,embed{max-width:100%}
-	img,video{max-width:100%;height:auto}
 	#info-toggler{right:17px}
 	#nav-toggler span{position:static;overflow:visible;clip:auto;height:auto} /* Reset */
 	#nav-toggler{position:relative;top:0;left:0;margin:0;text-align:center}

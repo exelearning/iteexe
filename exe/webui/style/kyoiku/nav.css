@@ -121,6 +121,4 @@ html[xmlns] #content{display:block}
 	#bottomPagination{position:relative;margin-bottom:15px}
 	#bottomPagination .prev{position:absolute;left:15px}
 	#bottomPagination .next{position:absolute;right:15px}
-	iframe,object,embed{max-width:100%}
-	img,video{max-width:100%;height:auto}	
 }

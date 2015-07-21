@@ -130,6 +130,4 @@ Centre for Flexible and Distance Learning
 	#bottomPagination a{display:inline-block}
 	#bottomPagination .prev{position:absolute;left:10px}
 	#nav-toggler a,#nav-toggler a:focus{display:block;background:#BD4949;padding:7px 0;width:100%;color:#fff;outline:none;text-decoration:none}
-	iframe,object,embed{max-width:100%}
-	img,video{max-width:100%;height:auto}
 }

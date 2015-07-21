@@ -111,4 +111,6 @@ ol.auto-numbered{counter-reset:item}
 /* Responsive design */
 @media all and (max-width: 780px) {
 	.exe-layout-2-cols .exe-col,.exe-layout-3-cols .exe-col{float:none;width:100%;padding:0}
+	iframe,object,embed{max-width:100%}
+	img,video{max-width:100%;height:auto}    
 }

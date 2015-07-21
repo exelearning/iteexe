@@ -526,15 +526,6 @@ html[xmlns] #content{
 		padding:0;
 	}
 		
-    iframe,object,embed{
-		max-width:100%;
-	}
-		
-    img,video{
-		max-width:100%;
-		height:auto;
-	}
-		
 	#topPagination{
 		display:none;
 	}

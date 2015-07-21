@@ -260,12 +260,8 @@
 		width:100%;
 		padding:0;
 	}
-	iframe,object,embed,table {
+	table {
 		max-width:100%;
-	}
-	img,video {
-		max-width:100%;
-		height:auto;
 	}
 	#siteNav {
 		float: none;

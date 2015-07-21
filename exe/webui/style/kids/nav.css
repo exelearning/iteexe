@@ -87,8 +87,6 @@ h1#nodeTitle{font-weight:700;color:#1B4D3B}
 	.js #siteNav,.top-right-radius,.bottom-right-radius{border-radius:0}	
 	#main,.no-nav #main{padding:10px 20px 0 20px}    
 	#content .exe-col{float:none;width:100%;padding:0}
-	iframe,object,embed{max-width:100%}
-	img,video{max-width:100%;height:auto}
 	#nav-toggler{position:relative;top:0;left:0;margin:20px 19px;text-align:center}
 	#nav-toggler a{width:100%;display:block;padding:8px 0;border-radius:15px}
 }

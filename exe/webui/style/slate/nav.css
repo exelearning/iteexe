@@ -76,6 +76,4 @@ body.no-nav{background-image:none}
 	#bottomPagination,.no-nav #bottomPagination{position:relative;padding:5px 10px 15px 10px}
 	#bottomPagination .prev{position:absolute;left:10px;margin-left:0}
 	#nav-toggler a,#nav-toggler a:focus{display:inline-block;padding:4px;width:80%;color:#fff;font-variant:small-caps;letter-spacing:1px;outline:none;text-decoration:none}
-	iframe,object,embed{max-width:100%}
-	img,video{max-width:100%;height:auto}
 }

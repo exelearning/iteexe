@@ -72,8 +72,6 @@ body{padding:0;text-align:center}
 	#main-wrapper{width:100%;float:none}    
 	#main,.no-nav #main{padding:10px 20px 0 20px}    
 	#content .exe-col{float:none;width:100%;padding:0}
-	iframe,object,embed{max-width:100%}
-	img,video{max-width:100%;height:auto}
 	.pagination{text-align:center;height:35px;position:relative}
 	.pagination .prev{position:absolute;left:20px}
 	.pagination .next{position:absolute;right:0}
