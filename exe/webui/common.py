@@ -83,15 +83,15 @@ def getLicenseMetadata(license):
         return ""
         
 def getPackageLicenses():
-    licenses = {
-        '''
-            "license name" : [
-                c_("license name"),        
-                "license url",
-                "css class",
-                0 for old licenses and 1 for the new ones 
-            ]
-        '''        
+    '''
+        "license name" : [
+            c_("license name"),        
+            "license url",
+            "css class",
+            0 for old licenses and 1 for the new ones 
+        ]
+    '''
+    licenses = {       
         "creative commons: attribution 4.0" : [
             c_("Creative Commons Attribution License 4.0"),        
             "http://creativecommons.org/licenses/by/4.0/",
