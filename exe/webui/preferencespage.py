@@ -157,8 +157,8 @@ class PreferencesPage(RenderableResource):
         self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
         for browser in self.browsersAvalaibles:
             self.browsers.append({'browser': browser[1], 'text': browser[0]})
-        a=common.getLicenses()
-        for licenses in common.getLicenses():
+        a=common.getPackageLicenses()
+        for licenses in a:
             self.licensesNames.append({'licenseName': licenses,'text':_(licenses)})
 
 

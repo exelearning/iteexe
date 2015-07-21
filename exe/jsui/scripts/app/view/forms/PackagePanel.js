@@ -247,7 +247,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                 tooltip: _('Select a license.'),
                                 anchor: '100%'
                             },
-                            help: _('Select a license.')
+                            help: _('Select a license or write your own one.')
                         },
                         {
                             xtype: 'helpcontainer',
