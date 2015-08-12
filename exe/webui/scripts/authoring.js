@@ -27,7 +27,8 @@
 var Ext = parent.Ext;
 var eXe = parent.eXe;
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
-	enableAnchors, gotoAnchor, preventEscKey, preventHistoryBack, loadKeymap, hideObjectTags];
+	enableAnchors, httpsInNewWindow, gotoAnchor, preventEscKey, preventHistoryBack,
+    loadKeymap, hideObjectTags];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load
@@ -532,6 +533,16 @@ function enableAnchors() {
                 outline.hash = node_anchor[1];
             return false;
         };
+}
+
+function httpsInNewWindow() {
+	var links = parent.Ext.DomQuery.select('a[href^=https]', document);
+
+	for (var i=0; i < links.length; i++) {
+        if (!links[i].getAttribute('target')) {
+            links[i].setAttribute('target', '_blank');
+        }
+    }
 }
 
 function gotoAnchor() {
