@@ -4,6 +4,7 @@ chardet
 feedparser
 lxml
 GitPython
+google-api-python-client
 
 python-saml==2.1.2
 M2Crypto==0.22.3
