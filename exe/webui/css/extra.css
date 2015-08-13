@@ -22,6 +22,14 @@ span[size='7']{font-size:xx-large}
 .exe-layout-3-cols .exe-col-1,.exe-layout-3-cols .exe-col-2{padding-right:2%}
 
 .exe-clear {overflow:auto}
+/* Structured lists */
+ol.auto-numbered{counter-reset:item}
+.auto-numbered ol{counter-reset:item}
+.auto-numbered li{display:block}
+.auto-numbered li:before {content:counters(item,".") ".- ";counter-increment:item}
 /* In TinyMCE, hidden elements are shown */
 body .exe-hidden{display:inherit;filter:alpha(opacity=40);opacity:0.4;margin:0.5em;padding-left:25px;background:url(../images/exe_hidden.png) no-repeat 0 0}
 body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:auto;filter:alpha(opacity=40);opacity:0.4;margin:0.5em;padding-left:25px;background:url(../images/exe_hidden_accessible.png) no-repeat 0 0}
+/* Quote With Authorship */
+.styled-qc{font-family:Georgia,serif;font-style:italic;width:80%;margin:1.5em auto;padding:0.25em 40px;position:relative}
+.styled-qc:before{display:block;content:"\201C";font-size:5em;position:absolute;left:0;top:-20px}

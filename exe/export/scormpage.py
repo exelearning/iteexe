@@ -76,6 +76,7 @@ class ScormPage(Page):
             html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'+lb
         if self.node.package.author!="":
             html += '<meta name="author" content="'+self.node.package.author+'" />'+lb
+        html += common.getLicenseMetadata(self.node.package.license)
         html += '<meta name="generator" content="eXeLearning '+release+' - exelearning.net" />'+lb
         if self.node.id=='0':
             if self.node.package.description!="":
@@ -85,6 +86,8 @@ class ScormPage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+        if common.hasFX(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
@@ -100,6 +103,8 @@ class ScormPage(Page):
         
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
+        if common.hasFX(self.node):
+            html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
@@ -121,9 +126,12 @@ class ScormPage(Page):
         html += u"<div id=\"outer\">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
         html += u"<"+headerTag+" id=\"nodeDecoration\">"
+        html += u"<div id=\"headerContent\">"
         html += u"<h1 id=\"nodeTitle\">"
         html += escape(self.node.titleLong)
-        html += u'</h1></'+headerTag+'>'+lb
+        html += u'</h1>'
+        html += u'</div>'
+        html += u'</'+headerTag+'>'+lb
 
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':

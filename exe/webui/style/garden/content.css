@@ -1,8 +1,9 @@
 /*
 eXe
 Copyright 2004-2005, University of Auckland
-garden theme display styles.
-Modified by eXeLearning.net
+
+Modified by Ignacio Gros for eXeLearning.net
+See Help - eXe Tutorial for more info on how to modify this style for your needs.
 */
 html{padding:0}
 body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#222;background:#F2FFBF}
@@ -13,7 +14,7 @@ a:hover,a:focus{color:#B34700}
 #nodeDecoration{text-align:left;padding:1em 0;margin-bottom:2em;background:#F3FFC3;text-shadow:1px 1px 1px #fff;border-bottom:2px solid #ACBF60;border-top:2px solid #ACBF60;color:#889F65}
 #nodeTitle,.nodeTitle{font-size:1.5em;margin:0;font-weight:bold;text-align:right} /* .nodeTitle when single page */
 .nodeTitle{padding:.1em 0 .6em 0;border-bottom:2px solid #ACBF60;margin-top:1em;text-align:right;color:#889F65;text-shadow:1px 1px 1px #fff}
-#main h2{font-size:1.4em}
+h2{font-size:1.4em}
 #main .iDeviceTitle{display:inline;font-size:1.4em}
 h3{font-size:1.25em;color:#666}
 #main h4{font-size:1.2em}
@@ -49,8 +50,22 @@ input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1
 .feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+.exe-dl .icon{line-height:17px}
+.js .exe-dl dd{margin-left:34px}
 /* Form buttons */
 .feedbackbutton{background:#AACCB5;margin-bottom:1em}
 /* Hide/Show iDevice */
 .toggle-idevice{margin:12px 0 0;text-align:right;display:block}
 .iDevice_header .toggle-idevice{float:right;margin:0}
+/* Effects */
+.exe-fx .fx-C2,
+.exe-fx .fx-C2 a,
+.fx-pagination a{
+background:#FAFFE6;
+}
+/* iDevices with emphasis */
+.emphasis1 .exe-fx .fx-C2,
+.emphasis1 .exe-fx .fx-C2 a,
+.emphasis1 .fx-pagination a{
+background:#F2FFBF;
+}

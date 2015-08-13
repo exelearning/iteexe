@@ -1,0 +1,158 @@
+/* eXeLearning Style Designer Compatible Style */
+html{font-size:105%}
+body{font:100%/1.5 'Open Sans',Arial,Verdana,Helvetica,sans-serif;line-height:1.5em;padding:15px;margin:0;text-align:left}
+
+h2{font-size:1.3em}
+h3{font-size:1.2em}
+h4{font-size:1.1em}
+h5{font-size:1em}
+p{margin:1em 0}
+.score.js-feedback{margin-bottom:1em}
+
+#header,#emptyHeader,#nodeDecoration{padding:0 20px;height:120px;font-size:1.6em;font-weight:300;border-style:1px;border-width:1px}
+#headerContent{padding-top:70px}
+#header h1,#nodeDecoration h1{margin:0;font-size:1em;text-align:left}
+#nodeDecoration{margin-bottom:15px} /* Single page */
+
+.nodeDecoration h1{font-size:1.5em}
+
+/* iDevices */
+.iDevice{margin:20px 0 30px 0}
+.iDevice_header{letter-spacing:.5px;height:2.7em;line-height:2.7em}
+.iDeviceTitle{font-size:1.3em;vertical-align:bottom;top:auto;display:inline-block;font-weight:300;
+padding:0 10px 0 35px;background-repeat:no-repeat;background-position:0 50%;margin:0}
+.iDevice_inner{padding:10px 20px;border-width:1px;border-style:solid;border-radius:5px}
+
+/* Clearfix */
+.iDevice_content{overflow:auto}
+.FileAttachIdeviceInc .iDevice_content{margin-bottom:-.5em}
+
+/* Hide/Show iDevice */
+.toggle-idevice{display:block;margin:0;text-align:right}
+.iDevice_header .toggle-idevice{float:right;margin-top:14px;line-height:16px}
+.toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(_style_icons.png) no-repeat -50px -50px;outline:none}
+.toggle-idevice .show-idevice{background-position:0 -50px}
+.toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+.toggle-idevice a:hover,.toggle-idevice a:focus{filter:alpha(opacity=100);opacity:1}
+
+/* iDevice title with background-color */
+input.feedbackbutton{margin:0}
+.iDevice_header{border-width:1px;border-style:solid;padding-left:13px;border-top-left-radius:5px;border-top-right-radius:5px}
+.hidden-idevice .iDevice_header{border-radius:5px}
+.iDevice_header .toggle-idevice{margin-right:15px}
+.iDevice_inner{border-top-right-radius:0;border-top-left-radius:0;border-top:0}
+
+.ExternalUrlIdevice iframe{border:0}
+
+/* Reset base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:inherit;font-size:1em}
+li{list-style-position:outside}
+.styled-qc{margin-top:2.5em}
+.styled-qc:before{top:0}
+.exe-dl .icon,.exe-dl-toggler a{width:24px;height:24px;border-radius:12px}
+.exe-dl-toggler a{line-height:22px}
+.js .exe-dl dd{margin-left:44px}
+
+/* Forms */
+input,select{font-size:1em;font-family:inherit}
+.iDevice_hint_title a{padding-left:25px}
+.iDevice_buttons input{font-size:1em;margin-right:.5em;padding:.15em .45em}
+.MultichoiceIdevice .feedback p:first-child{margin-top:0}
+.MultichoiceIdevice .activity-form,.MultiSelectIdevice .activity-form{margin-bottom:1em}
+.TrueFalseIdevice .activity-form{margin-top:1.5em}
+.TrueFalseIdevice .activity-form:first-child{margin-top:0}
+.TrueFalseIdevice label{margin:0 1em}
+.MultichoiceIdevice input,.MultiSelectIdevice input[type=checkbox],.QuizTestIdevice input[type=radio]{width:16px;height:16px;margin:5px 0 0 12px}
+.custom-inputs .iDevice_answer-field{width:40px}
+.custom-inputs  .iDevice_answer-content,.custom-inputs  .iDevice_answer-feedback{padding-left:55px}
+.custom-inputs  .iDevice_answer-content{padding-top:4px}
+.styledRadio,.styledCheckbox{margin-left:12px}
+.MultichoiceIdevice .feedback{margin-top:1em}
+.right-option,.wrong-option{font-style:italic}
+.readingIdevice .iDevice_content:first-child p:last-child,
+.CasestudyIdevice .iDevice_content:first-child p:last-child{margin-bottom:0}
+.readingIdevice .feedbackbutton,
+.CasestudyIdevice .feedbackbutton,
+.ReflectionIdevice .feedbackbutton{margin:.5em 0 1em 0}
+
+#siteFooter{padding:20px}
+
+/* Lightbox */
+.lightboxOverlay{filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=95);opacity:0.95}
+#lightbox .lb-caption{font-size:1em}
+
+/* Effects - iDevices with emphasis */
+.emphasis1 .exe-fx .fx-C2,
+.emphasis1 .exe-fx .fx-C2 a,
+.emphasis1 .fx-pagination a{
+background:#ededed;
+}
+
+/* eXeLearning Style Designer */
+.iDevice_header{
+/*emTitleBGColor*/
+background-color:#ffffff;border-color:#dddddd;
+}
+.iDevice_inner{
+/*emBGColor*/
+background-color:#ffffff;border-color:/*emBorderColor*/
+#dddddd;
+}
+.iDeviceTitle{
+background-image:url(icon_star.png);
+}
+.activityIdevice .iDeviceTitle{
+background-image:url(icon_assignment.png);
+}
+.readingIdevice .iDeviceTitle{
+background-image:url(icon_unread.png);
+}
+.FileAttachIdeviceInc .iDeviceTitle{
+background-image:url(icon_download.png);
+}
+.WikipediaIdevice .iDeviceTitle{
+background-image:url(icon_description.png);
+}
+.ListaIdevice .iDeviceTitle,.QuizTestIdevice .iDeviceTitle,.MultichoiceIdevice .iDeviceTitle,.TrueFalseIdevice .iDeviceTitle,.MultiSelectIdevice .iDeviceTitle,.ClozeIdevice .iDeviceTitle{
+background-image:url(icon_question.png);
+}
+.preknowledgeIdevice .iDeviceTitle{
+background-image:url(icon_announcement.png);
+}
+.GalleryIdevice .iDeviceTitle{
+background-image:url(icon_media.png);
+}
+.objectivesIdevice .iDeviceTitle{
+background-image:url(icon_info.png);
+}
+.ReflectionIdevice .iDeviceTitle{
+background-image:url(icon_account.png);
+}
+body{
+/*bodyColor*/
+color:#333333;
+/*contentBGColor*/
+background-color:#f9f9f9;
+}
+a{
+/*aColor*/
+color:#2495ff;
+}
+#header,#emptyHeader,#nodeDecoration{
+/*headerHeight*/
+height:120px;
+/*headerBGColor*/
+background-color:#ffffff;border:1px solid /*headerBorderColor*/
+#dddddd;
+}
+#headerContent{
+/*headerTitleTopMargin*/
+padding-top:70px;
+}
+#siteFooter{
+border:1px solid /*footerBorderColor*/
+#dddddd;
+/*footerBGColor*/
+background-color:#ffffff;
+}

@@ -150,12 +150,14 @@ class SinglePageExport(object):
         hasMagnifier      = False
         hasXspfplayer     = False
         hasGallery        = False
+        hasFX             = False
         hasWikipedia      = False
         hasInstructions   = False
         hasMediaelement   = False
+        hasTooltips       = False
 
     	for idevice in node.idevices:
-    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement):
+    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
     	    	break
     	    if not hasFlowplayer:
     	    	if 'flowPlayer.swf' in idevice.systemResources:
@@ -168,6 +170,8 @@ class SinglePageExport(object):
     			    hasXspfplayer = True
             if not hasGallery:
                 hasGallery = common.ideviceHasGallery(idevice)
+            if not hasFX:
+                hasFX = common.ideviceHasFX(idevice)
             if not hasWikipedia:
     			if 'WikipediaIdevice' == idevice.klass:
     				hasWikipedia = True
@@ -176,6 +180,8 @@ class SinglePageExport(object):
     				hasInstructions = True
             if not hasMediaelement:
                     hasMediaelement = common.ideviceHasMediaelement(idevice)
+            if not hasTooltips:
+                hasTooltips = common.ideviceHasTooltips(idevice)
                             
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -189,11 +195,11 @@ class SinglePageExport(object):
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(self.outputDir/'xspf_player.swf')
         if hasGallery:
-            imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
-            imageGalleryCSS.copyfile(self.outputDir/'exe_lightbox.css') 
-            imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
-            imageGalleryJS.copyfile(self.outputDir/'exe_lightbox.js') 
-            self.imagesDir.copylist(('exe_lightbox_close.png', 'exe_lightbox_loading.gif', 'exe_lightbox_next.png', 'exe_lightbox_prev.png'), self.outputDir)
+            exeLightbox = (self.scriptsDir/'exe_lightbox')
+            exeLightbox.copyfiles(self.outputDir)
+        if hasFX:
+            exeEffects = (self.scriptsDir/'exe_effects')
+            exeEffects.copyfiles(self.outputDir)
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(self.outputDir/'exe_wikipedia.css')
@@ -207,6 +213,9 @@ class SinglePageExport(object):
             if dT != "HTML5":
                 jsFile = (self.scriptsDir/'exe_html5.js')
                 jsFile.copyfile(self.outputDir/'exe_html5.js')
+        if hasTooltips:
+            exe_tooltips = (self.scriptsDir/'exe_tooltips')
+            exe_tooltips.copyfiles(self.outputDir)
 
         for child in node.children:
             self.compruebaReproductores(child)

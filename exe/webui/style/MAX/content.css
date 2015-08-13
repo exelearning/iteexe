@@ -5,7 +5,7 @@ a{color:#CE2239}
 #nodeTitle,.nodeTitle{font-size:1.5em;margin:0;text-align:left;font-weight:bold;color:#222;padding:.1em 0 .6em 0;border-bottom:5px solid #B50536} /* .nodeTitle when single page */
 #main .nodeTitle{margin-top:.6em;color:#222}
 #main #nodeDecoration{padding:10px 0 5px 0;margin-bottom:15px;border:0;background:url(_max_titulo_nodo.jpg) no-repeat right 0;text-align:left}
-#main h2{font-size:1.4em;color:#9A042F}
+h2{font-size:1.4em;color:#9A042F}
 #main .iDeviceTitle{display:inline;font-size:1.2em;color:#9A042F}
 #main h3{font-size:1.3em;color:#1E80B8}
 #main h4{font-size:1.2em}
@@ -43,6 +43,8 @@ input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1
 .feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+.exe-dl .icon{line-height:16px}
+.js .exe-dl dd{margin-left:34px}
 /* Form buttons */
 .iDevice_inner input[type=submit],.iDevice_inner input[type=button],.feedbackbutton{background:#B50536;border:0;padding:3px 5px;color:#fff;border-radius:5px;text-shadow:1px 1px 1px #000;box-shadow:1px 1px 3px 0 #ccc;margin-bottom:1em}
 .iDevice_inner input[type=submit]:hover,.iDevice_inner input[type=button]:hover,.feedbackbutton:hover{background:#000;color:#f3f3f3}
@@ -53,3 +55,6 @@ li{list-style-position:outside}
 .toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(_max_ocultar_mostrar.gif) no-repeat 0 -16px}
 .toggle-idevice .show-idevice{background-position:0 0}
 .toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+
+/* Effects */
+.exe-fx .fx-C2,.exe-fx .fx-C2 a,.fx-pagination a{background:#F7F7F7}

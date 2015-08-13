@@ -21,7 +21,7 @@
 import codecs
 from types import UnicodeType, StringType
 
-from exe.engine.beautifulsoup import BeautifulSoup
+from BeautifulSoup import BeautifulSoup
 
 CDATA_BEGIN = u"<![CDATA["
 CDATA_END = u"]]>"

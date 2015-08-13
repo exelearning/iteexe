@@ -66,7 +66,265 @@ def docType():
         return '<!DOCTYPE html>'+lb
     else:
         return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
-            
+
+def getLicenseMetadata(license):
+    if license == "":
+        return ""
+    
+    licenses = getPackageLicenses()
+    if license in licenses:
+        lb = "\n" #Line breaks
+        l = licenses[license][1]
+        if l:
+            return '<link rel="license" type="text/html" href="'+l+'" />'+lb
+        else:
+            return ""
+    else:
+        return ""
+        
+def getPackageLicenses():
+    '''
+        "license name" : [
+            c_("license name"),        
+            "license url",
+            "css class",
+            0 for old licenses and 1 for the new ones 
+        ]
+    '''
+    licenses = {       
+        "creative commons: attribution 4.0" : [
+            c_("Creative Commons Attribution License 4.0"),        
+            "http://creativecommons.org/licenses/by/4.0/",
+            "cc cc-by",
+            1
+        ],
+        "creative commons: attribution - share alike 4.0" : [
+            c_("Creative Commons Attribution Share Alike License 4.0"),
+            "http://creativecommons.org/licenses/by-sa/4.0/",
+            "cc cc-by-sa",
+            1           
+        ],
+        "creative commons: attribution - non derived work 4.0" : [
+            c_("Creative Commons Attribution No Derivatives License 4.0"),        
+            "http://creativecommons.org/licenses/by-nd/4.0/",
+            "cc cc-by-nd",
+            1              
+        ],
+        "creative commons: attribution - non commercial 4.0" : [
+            c_("Creative Commons Attribution Non-commercial License 4.0"),        
+            "http://creativecommons.org/licenses/by-nc/4.0/",
+            "cc cc-by-nc",
+            1            
+        ],
+        "creative commons: attribution - non commercial - share alike 4.0" : [
+            c_("Creative Commons Attribution Non-commercial Share Alike License 4.0"),        
+            "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+            "cc cc-by-nc-sa",
+            1            
+        ],
+        "creative commons: attribution - non derived work - non commercial 4.0" : [
+            c_("Creative Commons Attribution Non-commercial No Derivatives License 4.0"),
+            "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+            "cc cc-by-nc-nd",
+            1
+        ],    
+        "license GFDL" : [
+           c_("GNU Free Documentation License"),
+           "http://www.gnu.org/copyleft/fdl.html",
+           "gfdl",
+            1        
+        ],
+        "free software license GPL" : [
+            c_("GNU General Public License"),
+            "http://www.gnu.org/copyleft/gpl.html",
+            "gpl",
+            1
+        ],
+        "free software license GPL" : [
+            c_("GNU General Public License"),
+            "http://www.gnu.org/copyleft/gpl.html",
+            "gpl",
+            1
+        ],
+        "public domain" : [
+            c_("public domain"),
+            "",
+            "public-domain",
+            1
+        ], 
+        "free software license EUPL" : [
+            c_("free software license EUPL"),
+            "",
+            "free-software",
+            1
+        ],
+        "free software license GPL" : [
+            c_("free software license GPL"),
+            "",
+            "gpl",
+            1
+        ],
+        "dual free content license GPL and EUPL" : [
+            c_("dual free content license GPL and EUPL"),
+            "",
+            "gpl-eupl",
+            1
+        ],
+        "other free software licenses" : [
+            c_("other free software licenses"),
+            "",
+            "other-free-software",
+            1
+        ],
+        "propietary license" : [
+            c_("propietary license"),
+            "",
+            "propietary",
+            1
+        ],        
+        "intellectual property license" : [
+            c_("intellectual property license"),
+            "",
+            "",
+            1
+        ],  
+        "not appropriate" : [
+            c_("not appropriate"),
+            "",
+            "none",
+            1
+        ],        
+        # Old licenses
+        "creative commons: attribution 3.0" : [
+            c_("Creative Commons Attribution License 3.0"),        
+            "http://creativecommons.org/licenses/by/3.0/",
+            "cc cc-by",
+            0            
+        ],
+        "creative commons: attribution - share alike 3.0" : [
+            c_("Creative Commons Attribution Share Alike License 3.0"),        
+            "http://creativecommons.org/licenses/by-sa/3.0/",
+            "cc cc-by-sa",
+            0            
+        ],
+        "creative commons: attribution - non derived work 3.0" : [
+            c_("Creative Commons Attribution No Derivatives License 3.0"),        
+            "http://creativecommons.org/licenses/by-nd/3.0/",
+            "cc cc-by-nd",
+            0
+        ],
+        "creative commons: attribution - non commercial 3.0" : [
+            c_("Creative Commons Attribution Non-commercial License 3.0"),        
+            "http://creativecommons.org/licenses/by-nc/3.0/",
+            "cc cc-by-nc",
+            0           
+        ],
+        "creative commons: attribution - non commercial - share alike 3.0" : [
+            c_("Creative Commons Attribution Non-commercial Share Alike License 3.0"),        
+            "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+            "cc cc-by-nc-sa",
+            0            
+        ],
+        "creative commons: attribution - non derived work - non commercial 3.0" : [
+            c_("Creative Commons Attribution Non-commercial No Derivatives License 3.0"),        
+            "http://creativecommons.org/licenses/by-nc-nd/3.0/",
+            "cc cc-by-nc-nd",
+            0            
+        ],
+        "creative commons: attribution 2.5" : [
+            c_("Creative Commons Attribution License 2.5"),
+            "http://creativecommons.org/licenses/by/2.5/",
+            "cc cc-by",
+            0           
+        ],
+        "creative commons: attribution - share alike 2.5" : [
+            c_("Creative Commons Attribution Share Alike License 2.5"),        
+            "http://creativecommons.org/licenses/by-sa/2.5/",
+            "cc cc-by-sa",
+            0            
+        ],
+        "creative commons: attribution - non derived work 2.5" : [
+            c_("Creative Commons Attribution No Derivatives License 2.5"),
+            "http://creativecommons.org/licenses/by-nd/2.5/",
+            "cc cc-by-nd",
+            0            
+        ],
+        "creative commons: attribution - non commercial 2.5" : [
+            c_("Creative Commons Attribution Non-commercial License 2.5"),        
+            "http://creativecommons.org/licenses/by-nc/2.5/",
+            "cc cc-by-nc",
+            0            
+        ],
+        "creative commons: attribution - non commercial - share alike 2.5" : [
+            c_("Creative Commons Attribution Non-commercial Share Alike License 2.5"),       
+            "http://creativecommons.org/licenses/by-nc-sa/2.5/",
+            "cc cc-by-nc-sa",
+            0            
+        ],
+        "creative commons: attribution - non derived work - non commercial 2.5" : [
+            c_("Creative Commons Attribution Non-commercial No Derivatives License 2.5"),       
+            "http://creativecommons.org/licenses/by-nc-nd/2.5/",
+            "cc cc-by-nc-nd",
+            0            
+        ]
+    }   
+    
+    return licenses
+        
+def renderLicense(plicense,mode="export"):
+    """
+    Returns an XHTML string rendering the license.
+    """
+    if plicense == "" or plicense == "not appropriate":
+        return ""
+    
+    licenses = getPackageLicenses()
+
+    html = ""
+    lb = "\n" #Line breaks
+
+    if plicense in licenses:
+        target = ""
+        if mode == "authoring":
+            target = ' target="_blank"'
+        html += '<div id="packageLicense" class="'+licenses[plicense][2]+'">'+lb
+        html += '<p><span>'
+        if licenses[plicense][1] != "":
+            html += c_("Licensed under the")
+            html += '</span> '        
+            html += '<a rel="license" href="%s"%s>%s</a>' % (licenses[plicense][1], target, licenses[plicense][0])
+        else:
+            html += c_("License:")+" "
+            html += '</span> '        
+            html += licenses[plicense][0]
+        if plicense == 'license GFDL':
+            link = "fdl.html"
+            if mode == "authoring":
+                link = "/templates/fdl.html"
+            html += ' <a href="'+link+'" class="local-version"'+target+'>(%s)</a>' % c_('Local Version')
+        html += '</p>'+lb
+        html += '</div>'+lb
+    else:
+        html += '<div id="packageLicense">'+lb
+        html += '<p>'+plicense+'</p>'+lb
+        html += '</div>'
+
+    return html
+  
+def renderFooter(footer):
+    """
+    Returns an XHTML string rendering the footer.
+    """
+    html = ""
+    if footer != "":
+        dT = getExportDocType()
+        footerTag = "div"
+        if dT == "HTML5":
+            footerTag = "footer"        
+        html += '<' + footerTag + ' id="siteFooter">'
+        html += footer + "</" + footerTag + ">"
+    return html
+  
 def themeHasConfigXML(style):
     themePath = Path(G.application.config.stylesDir/style)
     themeXMLFile = themePath.joinpath("config.xml")
@@ -211,6 +469,8 @@ def fieldShowEditMessageEle(element):
     
 def getJavaScriptStrings():
     s = '<script type="text/javascript">$exe_i18n={'
+    s += 'previous:"'+c_("Previous")+'",'
+    s += 'next:"'+c_("Next")+'",'
     s += 'show:"'+c_("Show")+'",'
     s += 'hide:"'+c_("Hide")+'",'
     s += 'showFeedback:"'+c_("Show Feedback")+'",'
@@ -424,8 +684,12 @@ def button(name, value, enabled=True, **kwargs):
 def feedbackBlock(id,feedback,buttonCaption=""):
     buttonText = c_('Show Feedback')
     changeText = 'true'
-    if buttonCaption != "":
-        buttonText = buttonCaption
+    buttonCaptionArr=[]
+    buttonTextAll = buttonText
+    if buttonCaption != "": 
+        buttonTextAll = buttonCaption     
+        buttonCaptionArr=buttonCaption.split('|')
+        buttonText=buttonCaptionArr[0]
         changeText = 'false' # Do not change the text on click if the text is defined by the user or the iDevice
     lb = "\n" #Line breaks
     dT = getExportDocType()
@@ -438,6 +702,7 @@ def feedbackBlock(id,feedback,buttonCaption=""):
     html += lb
     html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
     html += '<p>'
+    html += '<script type="text/javascript">var feedback'+id+'text = "'+buttonTextAll+'";</script>'
     html += '<input type="button" name="toggle-feedback-'+id+'" value="'+ buttonText+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this,'+changeText+');return false" />'
     html += '</p>'+lb
     html += '</div>'+lb
@@ -929,6 +1194,16 @@ def hasWikipediaIdevice(node):
             return True
     return False
 
+def ideviceHasFX(idevice):
+    block = g_blockFactory.createBlock(None, idevice)
+    if not block:
+        log.critical("Unable to render iDevice.")
+        raise Error("Unable to render iDevice.")
+    content = block.renderView('default')
+    if re.search(' class=[\'"]exe-fx', content):
+        return True
+    return False
+    
 def ideviceHasGallery(idevice):
     if idevice.klass == 'GalleryIdevice':
         return True
@@ -941,6 +1216,12 @@ def ideviceHasGallery(idevice):
         return True
     return False
 
+def hasFX(node):
+    for idevice in node.idevices:
+        if ideviceHasFX(idevice):
+            return True
+    return False
+    
 def hasGalleryIdevice(node):
     for idevice in node.idevices:
         if ideviceHasGallery(idevice):
@@ -969,4 +1250,40 @@ def nodeHasMediaelement(node):
     for idevice in node.idevices:
         if ideviceHasMediaelement(idevice):
             return True
+    return False
+    
+def ideviceHasTooltips(idevice):
+    block = g_blockFactory.createBlock(None, idevice)
+    if not block:
+        log.critical("Unable to render iDevice.")
+        raise Error("Unable to render iDevice.")
+    content = block.renderView('default')
+    if re.search('<a .*class=[\'"]exe-tooltip ', content):
+        return True
+    return False
+
+
+def nodeHasTooltips(node):
+    for idevice in node.idevices:
+        if ideviceHasTooltips(idevice):
+            return True
+    return False
+
+
+## Added for [#2501] Add masteryscore to manifest in evaluable nodes
+## Maybe we should reorder all this common code and move it to an Objecto Oriented logic
+def hasQuizTest(node):
+    for idevice in node.idevices:
+        if hasattr(idevice, "isQuiz"):
+            if idevice.isQuiz == True:
+                return True
+    return False
+
+## Added for [#2501] Add masteryscore to manifest in evaluable nodes
+## Maybe we should reorder all this common code and move it to an Objecto Oriented logic
+def getQuizTestPassRate(node):
+    for idevice in node.idevices:
+        if hasattr(idevice, "isQuiz"):
+            if idevice.isQuiz == True:
+                return idevice.passRate
     return False

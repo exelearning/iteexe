@@ -1,0 +1,1 @@
+tinyMCE.addI18n('en.addcontent',{"add_content":_("Add a paragraph at the end")});

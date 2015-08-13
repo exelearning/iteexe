@@ -206,11 +206,62 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									["disable_all", _("Disable All Internal Linking")]
 								],
 								margin: 10
+							},
+							{
+								xtype: 'helpcontainer',
+								item: {
+									xtype: 'combobox',
+									inputId: 'defaultLicense',
+									dirtyCls: 'property-form-dirty',
+									fieldLabel: _("Default license for the new documents"),
+									labelWidth: 350,
+									labelAlign:'top',
+									queryModel: 'local',
+									displayField: 'text',
+									valueField: 'licenseName',
+									store: {
+										fields: ['licenseName','text'],
+										proxy: {
+											type: 'ajax',
+											url: 'preferences',
+											reader: {
+												type: 'json',
+												root: 'licensesNames'
+											}
+										},
+										autoLoad: true
+									},
+								},
+								margin: 10,
+								help: _('The current document license can be modified in the Properties tab.')								
 							}
 						]
-					}
-					// /Tab1				
-				]
+					},
+					// /Tab1
+                    //Tab2
+                    {
+                        title: _('Publish to Google Drive'),
+                        bodyPadding: 10,
+                        items: [
+                            {
+                                xtype: 'helpcontainer',
+                                item: {
+                                    xtype: 'textfield',
+                                    inputId: 'googleApiClientID',
+                                    fieldLabel: _('Google API client Id'),
+                                    tooltip: _('The ID get from Google Developer console.'),
+                                    anchor: '100%',
+                                    style: {
+                                        //marginBottom: '10px'
+                                    },
+                                },
+                                margin: 10,
+                                help: _('This ID can be obtained from your Google Developer console and identifies your eXe installation as an unique app with access to Google API\'s')
+                            },
+                        ],
+                    },
+                    // /Tab2
+				],
             }, {
                 xtype: 'container',
                 layout: 'hbox',

@@ -1,0 +1,609 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<!-- eXe's extjs -->
+	<link rel="stylesheet" type="text/css" href="/jsui/extjs/resources/css/ext-all-gray.css" />
+	<script type="text/javascript" src="/jsui/extjs/ext-all-debug.js"></script>    
+	<!-- / eXe's extjs -->
+	
+	<link rel="stylesheet" href="css/styles.css" type="text/css" />
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/styles_ie_lt9.css" type="text/css" />
+	<![endif]-->    
+	<script type="text/javascript" src="/scripts/exe_jquery.js"></script>
+	<script src="js/jpicker-1.1.6.min.js" type="text/javascript"></script>
+	<!--<script type="text/javascript" src="langs/en.js"></script>-->
+	<script type="text/javascript">
+		function _(s) { return s; }	
+		if (opener && opener.opener) _ = opener.opener._;
+	</script>
+	<script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="langs/'+opener.$designer.language+'.js"></sc'+'ript>');</script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<title>%Style_Designer%</title>
+</head>
+<body><script type="text/javascript">document.body.className="debug-"+$app.debug</script>
+<div id="cssWizard">
+	<h1 class="scr-av">%Style_Designer%</h1>
+    <form onsubmit="return false;" action="#" id="myForm"> 
+		<div class="tabs">
+			<ul id="tabs">
+				<li id="general-tab" class="current"><span><a href="#" onclick="$app.showTab('general');return false">%General%</a></span></li>
+				<li id="page-tab"><span><a href="#" onclick="$app.showTab('page');return false">%Page%</a></span></li>
+				<li id="header-tab"><span><a href="#" onclick="$app.showTab('header');return false">%Header_and_Footer%</a></span></li>
+				<li id="navigation-tab"><span><a href="#" onclick="$app.showTab('navigation');return false">%Navigation%</a></span></li>
+				<li id="idevices-tab"><span><a href="#" onclick="$app.showTab('idevices');return false">iDevices</a></span></li>
+                <li id="css-tab"><span><a href="#" onclick="$app.showTab('css');return false">%Advanced%</a></span></li>
+				<li id="content-css-tab"><span><a href="#" onclick="$app.showTab('content-css');return false">content.css</a></span></li>
+				<li id="nav-css-tab"><span><a href="#" onclick="$app.showTab('nav-css');return false">nav.css</a></span></li>
+			</ul>
+		</div>
+
+		<div class="panel_wrapper">
+
+			<div id="general" class="panel current">
+            	<h2 class="scr-av">%General%</h2>
+				
+				<fieldset>
+					<legend>%General_settings%</legend>   
+                    <div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="pageWidth">%Page_width%: </label>
+								<input type="text" maxlength="4" size="6" id="pageWidth" /> 
+								<select id="pageWidthUnit">
+									<option value="%">%Percentage% (%)</option>
+									<option value="px">%Pixels% (px)</option>
+								</select>
+							</div>
+							<div class="field">
+								<label for="pageAlign">%Page_position%: </label>
+								<select id="pageAlign">
+									<option value="center" selected="selected">%Center%</option>
+									<option value="left">%Left%</option>                    
+								</select>
+							</div>
+                            <div class="field">
+								<label for="wrapperShadowColor">%Shadow_color%: </label>
+								<input type="text" maxlength="6" size="6" id="wrapperShadowColor" class="color" />
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="fields">
+                            <div class="field">
+                                <label for="contentBorderWidth">%Border_width%: </label>                                    
+                                <input type="text" maxlength="3" size="6" id="contentBorderWidth" /> px
+                            </div>                        
+							<div class="field">
+								<label for="contentBorderColor">%Border_color%: </label>
+								<input type="text" maxlength="6" size="6" id="contentBorderColor" class="color" />
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+                <fieldset>
+					<legend>%Text_and_Links%</legend>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="fontFamily">%Font%: </label>
+								<select id="fontFamily" class="font-family">
+									<option value=''>%Default_font% ('Open Sans', Arial,Verdana, Helvetica, sans-serif)</option>
+									<option value='Verdana, Geneva, Arial, Helvetica, sans-serif'>Verdana, Geneva, Arial, Helvetica, sans-serif</option>
+									<option value='"Times New Roman", Times, serif'>Times New Roman, Times, serif</option>
+									<option value='"Courier New", Courier, monospace'>Courier New, Courier, monospace</option>
+									<option value='Georgia, "Times New Roman", Times, serif'>Georgia, Times New Roman, Times, serif</option>
+									<option value='Tahoma, Geneva, Arial, Helvetica, sans-serif'>Tahoma, Geneva, Arial, Helvetica, sans-serif</option>
+									<option value='"Trebuchet MS", Arial, Helvetica, sans-serif'>Trebuchet MS, Arial, Helvetica, sans-serif</option>
+								</select>
+							</div>						
+							<div class="field">
+								<label for="bodyColor">%Text_color%: </label>
+								<input type="text" maxlength="6" size="6" id="bodyColor" class="color" />
+							</div>						
+						</div>
+					</div>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="fontSize">%Text_size%: </label>
+								<input type="text" size="6" id="fontSize" maxlength="3" /> %
+							</div>						
+							<div class="field">
+								<label for="aColor">%Links_color%: </label>
+								<input type="text" maxlength="6" size="6" id="aColor" class="color" />
+							</div>
+						</div>
+					</div>
+				</fieldset>	
+				
+			</div><!-- /#general panel -->
+			
+			<div id="page" class="panel">
+            	<h2 class="scr-av">%Page%</h2>
+				<fieldset>
+					<legend>%Page_background%</legend>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="bodyBGColor">%Background_color%: </label>
+								<input type="text" maxlength="6" size="6" id="bodyBGColor" class="color" />
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="bodyBGURL">%Background_image%: </label>
+								<input type="text" size="6" id="bodyBGURL" class="large" />
+								<input type="file" id="bodyBGURLFile" style="display:none" onchange="$app.updateTextFieldFromFile(this)" />								
+								<a href="#" onclick="$app.openBrowser('bodyBGURL');" title="%Select_image%"><img src="images/browse.gif" width="20" height="18" alt="%Browse%" style="vertical-align:bottom" /></a> (http://...)
+							</div>
+							<div class="field">
+								<label for="bodyBGPosition">%Background_position%: </label>
+								<select id="bodyBGPosition">	
+									<option value="0 0" selected="selected">%_Left_Top%</option>
+                                    <option value="0 50%">%_Left_Center%</option>
+                                    <option value="0 bottom">%_Left_Bottom%</option>
+									<option value="50% 50%">%_Center%</option>
+                                    <option value="50% 0">%_Center_Top%</option>
+                                    <option value="50% bottom">%_Center_Bottom%</option>
+									<option value="right 0">%_Right_Top%</option>
+                                    <option value="right 50%">%_Right_Center%</option>
+                                    <option value="right bottom">%_Right_Bottom%</option>
+								</select>            	
+							</div>
+							<div class="field">
+								<label for="bodyBGRepeat">%Background_repeat%: </label>
+								<select id="bodyBGRepeat">
+									<option value="repeat" selected="selected">%Yes%</option>
+                                    <option value="no-repeat">%No%</option>
+									<option value="repeat-y">%_Only_vertical%</option>
+									<option value="repeat-x">%_Only_horizontal%</option>
+								</select>            	
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>%Contents_area_background%</legend>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="contentBGColor">%Background_color%: </label>
+								<input type="text" maxlength="6" size="6" id="contentBGColor" class="color" />
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="contentBGURL">%Background_image%: </label>
+								<input type="text" size="6" id="contentBGURL" class="large" />
+								<input type="file" id="contentBGURLFile" style="display:none" onchange="$app.updateTextFieldFromFile(this)" />								
+								<a href="#" onclick="$app.openBrowser('contentBGURL');" title="%Select_image%"><img src="images/browse.gif" width="20" height="18" alt="%Browse%" style="vertical-align:bottom" /></a> (http://...)
+							</div>
+							<div class="field">
+								<label for="contentBGPosition">%Background_position%: </label>
+								<select id="contentBGPosition">
+									<option value="0 0" selected="selected">%_Left_Top%</option>
+                                    <option value="0 50%">%_Left_Center%</option>
+                                    <option value="0 bottom">%_Left_Bottom%</option>
+									<option value="50% 50%">%_Center%</option>
+                                    <option value="50% 0">%_Center_Top%</option>
+                                    <option value="50% bottom">%_Center_Bottom%</option>
+									<option value="right 0">%_Right_Top%</option>
+                                    <option value="right 50%">%_Right_Center%</option>
+                                    <option value="right bottom">%_Right_Bottom%</option>
+								</select>            	
+							</div>
+							<div class="field">
+								<label for="contentBGRepeat">%Background_repeat%: </label>
+								<select id="contentBGRepeat">
+									<option value="repeat" selected="selected">%Yes%</option>
+                                    <option value="no-repeat">%No%</option>
+									<option value="repeat-y">%_Only_vertical%</option>
+									<option value="repeat-x">%_Only_horizontal%</option>
+								</select>            	
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<p>%Background_instructions_1%</p>
+				<p>%Background_instructions_2%</p>
+			</div><!-- /#page-panel -->
+			
+            <div id="header" class="panel">
+            	<h2 class="scr-av">%Header_and_Footer%</h2>
+				<fieldset>
+					<legend>%Header%</legend>                  
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="headerHeight">%Height%: </label><input type="text" size="6" id="headerHeight" /> px
+							</div>
+							<div class="field">
+								<label for="headerBGColor">%Background_color_FULL%: </label><input type="text" maxlength="6" size="6" id="headerBGColor" class="color" />
+							</div>
+							<div class="field">
+								<label for="headerBorderColor">%Border_color%: </label><input type="text" maxlength="6" size="6" id="headerBorderColor" class="color" />
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="headerBGURL">%Background_image%: </label>
+								<input type="text" size="6" id="headerBGURL" class="large" />
+								<input type="file" id="headerBGURLFile" style="display:none" onchange="$app.updateTextFieldFromFile(this)" />								
+								<a href="#" onclick="$app.openBrowser('headerBGURL');" title="%Select_image%"><img src="images/browse.gif" width="20" height="18" alt="%Browse%" style="vertical-align:bottom" /></a> (http://...)
+							</div>						
+							<div class="field">
+								<label for="headerBGPosition">%Background_position%: </label>
+								<select id="headerBGPosition">
+									<option value="0 0" selected="selected">%_Left_Top%</option>
+                                    <option value="0 50%">%_Left_Center%</option>
+                                    <option value="0 bottom">%_Left_Bottom%</option>
+									<option value="50% 50%">%_Center%</option>
+                                    <option value="50% 0">%_Center_Top%</option>
+                                    <option value="50% bottom">%_Center_Bottom%</option>
+									<option value="right 0">%_Right_Top%</option>
+                                    <option value="right 50%">%_Right_Center%</option>
+                                    <option value="right bottom">%_Right_Bottom%</option>
+								</select>            	
+							</div>
+							<div class="field">
+								<label for="headerBGRepeat">%Background_repeat%: </label>
+								<select id="headerBGRepeat">
+									<option value="repeat" selected="selected">%Yes%</option>
+                                    <option value="no-repeat">%No%</option>
+									<option value="repeat-y">%_Only_vertical%</option>
+									<option value="repeat-x">%_Only_horizontal%</option>
+								</select>            	
+							</div>                                
+						</div>
+					</div>                                          
+				</fieldset>				
+				<fieldset>
+					<legend>%Project_title%</legend>
+					<p class="checkbox">
+						<label for="hideProjectTitle"><input type="checkbox" id="hideProjectTitle" class="checkbox" /> %Hide_the_title%</label>
+					</p>
+					<div id="projectTitleOptions">
+						<div class="col">
+							<div class="fields">
+								<div class="field">
+									<label for="headerTitleFontFamily">%Font%: </label>
+									<select id="headerTitleFontFamily" class="font-family">
+										<option value=''>%Default_font% (%use_the_page_font%)</option>
+										<option value='Arial, Verdana, Helvetica, sans-serif'>Arial, Helvetica, sans-serif</option>
+										<option value='Verdana, Geneva, Arial, Helvetica, sans-serif'>Verdana, Geneva, Arial, Helvetica, sans-serif</option>
+										<option value='"Times New Roman", Times, serif'>Times New Roman, Times, serif</option>
+										<option value='"Courier New", Courier, monospace'>Courier New, Courier, monospace</option>
+										<option value='Georgia, "Times New Roman", Times, serif'>Georgia, Times New Roman, Times, serif</option>
+										<option value='Tahoma, Geneva, Arial, Helvetica, sans-serif'>Tahoma, Geneva, Arial, Helvetica, sans-serif</option>
+										<option value='"Trebuchet MS", Arial, Helvetica, sans-serif'>Trebuchet MS, Arial, Helvetica, sans-serif</option>
+									</select>
+								</div>                        
+								<div class="field">
+									<label for="headerTitleColor">%Text_color%: </label><input type="text" maxlength="6" size="6" id="headerTitleColor" class="color" />
+								</div>
+								<div class="field">
+									<label for="headerTitleTextShadowColor">%Shadow_color%: </label><input type="text" maxlength="6" size="6" id="headerTitleTextShadowColor" class="color" />
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="fields">
+								<div class="field">
+									<label for="headerTitleAlign">%Alignment%: </label>
+									<select id="headerTitleAlign">
+										<option value="" selected="selected">%Left%</option>
+										<option value="center">%Center%</option>
+										<option value="right">%Right%</option>
+									</select>
+								</div>						
+								<div class="field">
+									<label for="headerTitleTopMargin">%Top_margin%: </label><input type="text" size="6" id="headerTitleTopMargin" /> px
+								</div>
+								<div class="field">
+									<label for="headerTitleFontSize">%Font_size%: </label>
+									<input type="text" size="6" id="headerTitleFontSize" maxlength="3" /> %
+								</div>							
+							</div>
+						</div>
+					</div><!-- / #showProjectTitleOptions -->
+				</fieldset>
+				<fieldset>
+					<legend>%Footer%</legend>                  
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="footerBorderColor">%Border_color%: </label><input type="text" maxlength="6" size="6" id="footerBorderColor" class="color" />
+							</div>
+							<div class="field">
+								<label for="footerColor">%Text_color_FULL%: </label><input type="text" maxlength="6" size="6" id="footerColor" class="color" />
+							</div>
+							<div class="field">
+								<label for="footerTextAlign">%Alignment%: </label>
+								<select id="footerTextAlign">
+									<option value="" selected="selected">%Left%</option>
+									<option value="center">%Center%</option>
+									<option value="right">%Right%</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="footerBGColor">%Background_color_FULL%: </label>
+								<input type="text" maxlength="6" size="6" id="footerBGColor" class="color" />
+							</div>
+							<div class="field">
+								<label for="footerAColor">%Links_color%: </label>
+								<input type="text" maxlength="6" size="6" id="footerAColor" class="color" />
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div><!-- /#header panel -->
+
+			<div id="navigation" class="panel">
+            	<h2 class="scr-av">%Navigation%</h2>
+				<fieldset>
+					<legend>%Main_menu%</legend>
+					<p class="checkbox">
+						<label for="hideNavigation"><input type="checkbox" id="hideNavigation" class="checkbox" /> %Hide_the_menu%</label>
+					</p>
+					<div id="navigationOptions">
+						<p class="checkbox">
+							<label for="horizontalNavigation"><input type="checkbox" id="horizontalNavigation" class="checkbox" /> %Horizontal_navigation%</label>
+						</p>
+						<div class="col">
+							<div class="fields">
+								<div class="field">
+									<label for="navBGColor">%Background_color_FULL%: </label>
+									<input type="text" maxlength="6" size="6" id="navBGColor" class="color" />
+								</div>
+								<div class="field">
+									<label for="navHoverBGColor">%Active_background%: </label>
+									<input type="text" maxlength="6" size="6" id="navHoverBGColor" class="color" />
+								</div>							                            
+							</div>
+						</div>
+						<div class="col">
+							<div class="fields">
+								<div class="field">
+									<label for="navAColor">%Links_color%: </label>
+									<input type="text" maxlength="6" size="6" id="navAColor" class="color" />
+								</div>
+								<div class="field">
+									<label for="navAHoverColor">%Active_link_color%: </label>
+									<input type="text" maxlength="6" size="6" id="navAHoverColor" class="color" />
+								</div>                           						
+							</div>
+						</div>
+						<div class="col">
+							<div class="fields">
+								<div class="field">
+									<label for="navBorderColor">%Border_color%: </label>
+									<input type="text" maxlength="6" size="6" id="navBorderColor" class="color" />
+								</div>
+							</div>
+						</div>						
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>%Other_navigation_options%</legend>
+					<!-- To do?
+					<p class="checkbox">
+						<label for="hidePagination"><input type="checkbox" id="hidePagination" class="checkbox" /> Ocultar los botones de Anterior/Siguiente</label>
+					</p>
+					-->
+					<p class="checkbox">
+						<label for="useNavigationIcons"><input type="checkbox" id="useNavigationIcons" class="checkbox" /> %Use_icons%</label>
+					</p>
+					<div id="navigationIconsOptions" style="display:none">
+						<p class="radios">
+							<strong>%Icons_color%:</strong>
+							<span>
+								<label for="navigationIconsColor1"><input type="radio" name="navigationIconsColor" id="navigationIconsColor1" checked="checked" value="" /> %Grey%</label> 
+								<label for="navigationIconsColor2"><input type="radio" name="navigationIconsColor" id="navigationIconsColor2" value="black" /> %Black%</label> 
+								<label for="navigationIconsColor3"><input type="radio" name="navigationIconsColor" id="navigationIconsColor3" value="white" /> %White%</label>
+							</span>
+						</p>					
+					</div>
+					<div id="otherNavOptions">
+						<div class="col">
+							<div class="fields">
+								<div class="field">
+									<label for="nav2BGColor">%Background_color_FULL%: </label>
+									<input type="text" maxlength="6" size="6" id="nav2BGColor" class="color" />
+								</div>
+								<div class="field">
+									<label for="nav2HoverBGColor">%Active_background%: </label>
+									<input type="text" maxlength="6" size="6" id="nav2HoverBGColor" class="color" />
+								</div>							                            
+							</div>
+						</div>
+						<div class="col">
+							<div class="fields">
+								<div class="field">
+									<label for="nav2AColor">%Links_color%: </label>
+									<input type="text" maxlength="6" size="6" id="nav2AColor" class="color" />
+								</div>
+								<div class="field">
+									<label for="nav2AHoverColor">%Active_link_color%: </label>
+									<input type="text" maxlength="6" size="6" id="nav2AHoverColor" class="color" />
+								</div>                           						
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div><!-- /#navigation panel -->
+
+			<div id="idevices" class="panel">
+            	<h2 class="scr-av">iDevices</h2>
+				<fieldset>
+					<legend>%With_emphasis%</legend>
+					<div class="fields">
+						<div class="autoclear">
+							<div class="col">
+								<div class="field">
+									<label for="emTitleColor">%Title_color%: </label>
+									<input type="text" maxlength="6" size="6" id="emTitleColor" class="color" />
+								</div>						
+							</div>
+							<div class="col">
+								<div class="field">
+									<label for="emTitleBGColor">%Title_background%: </label>
+									<input type="text" maxlength="6" size="6" id="emTitleBGColor" class="color" />
+								</div>
+							</div>
+						</div>
+						<div class="autoclear">
+							<div class="col">
+								<div class="field">
+									<label for="emColor">%Text_color_FULL%: </label>
+									<input type="text" maxlength="6" size="6" id="emColor" class="color" />
+								</div>						
+							</div>
+							<div class="col">
+								<div class="field">
+									<label for="emAColor">%Links_color_FULL%: </label>
+									<input type="text" maxlength="6" size="6" id="emAColor" class="color" />
+								</div>
+							</div>
+						</div>
+						<div class="autoclear">
+							<div class="col">
+								<div class="field">
+									<label for="emBGColor">%Background_color_FULL%: </label>
+									<input type="text" maxlength="6" size="6" id="emBGColor" class="color" />
+								</div>						
+							</div>
+							<div class="col">
+								<div class="field">
+									<label for="emBorderColor">%Border_color%: </label>
+									<input type="text" maxlength="6" size="6" id="emBorderColor" class="color" />
+								</div>
+							</div>
+						</div>
+						<p class="radios">
+							<strong>%Icons_color_FULL%:</strong>
+							<span>
+								<label for="emIconColor1"><input type="radio" name="emIconColor" id="emIconColor1" checked="checked" value="" /> %Grey%</label> 
+								<label for="emIconColor2"><input type="radio" name="emIconColor" id="emIconColor2" value="black" /> %Black%</label> 
+								<label for="emIconColor3"><input type="radio" name="emIconColor" id="emIconColor3" value="white" /> %White%</label>
+							</span>
+						</p>
+					</div>
+				</fieldset>				
+				<fieldset>
+					<legend>%No_emphasis%</legend>
+					<div class="fields autoclear">
+						<div class="col">
+							<div class="field">
+								<label for="noEmColor">%Text_color_FULL%: </label>
+								<input type="text" maxlength="6" size="6" id="noEmColor" class="color" />
+							</div>						
+						</div>
+						<div class="col">
+							<div class="field">
+								<label for="noEmAColor">%Links_color_FULL%: </label>
+								<input type="text" maxlength="6" size="6" id="noEmAColor" class="color" />
+							</div>
+						</div>
+					</div>
+					<p class="checkbox">
+						<label for="noEmShowBox"><input type="checkbox" id="noEmShowBox" class="checkbox" /> %Show_box%</label>
+					</p>
+					<div id="noEmBoxOptions" class="autoclear" style="display:none">
+						<div class="col">
+							<div class="fields">
+								<div class="field">
+									<label for="noEmBGColor">%Background_color_FULL%: </label>
+									<input type="text" maxlength="6" size="6" id="noEmBGColor" class="color" />
+								</div>							                            
+							</div>
+						</div>
+						<div class="col">
+							<div class="fields">
+								<div class="field">
+									<label for="noEmBorderColor">%Border_color%: </label>
+									<input type="text" maxlength="6" size="6" id="noEmBorderColor" class="color" />
+								</div>
+							</div>
+						</div>						
+					</div>
+					<p class="radios">
+						<strong>%Toggler_icon_color%:</strong>
+						<span>
+							<label for="noEmIconColor1"><input type="radio" name="noEmIconColor" id="noEmIconColor1" checked="checked" value="" /> %Grey%</label> 
+							<label for="noEmIconColor2"><input type="radio" name="noEmIconColor" id="noEmIconColor2" value="black" /> %Black%</label> 
+							<label for="noEmIconColor3"><input type="radio" name="noEmIconColor" id="noEmIconColor3" value="white" /> %White%</label>
+						</span>
+					</p>
+				</fieldset>				
+			</div><!-- /#idevices panel -->
+            
+            <div id="css" class="panel">
+            	<h2 class="scr-av">%Advanced%</h2>
+				<fieldset>
+					<legend>content.css</legend>
+					<div class="fields">
+						<label for="extra-content-css">%content_css_1%:</label>
+						<textarea name="extra-content-css" id="extra-content-css" cols="32" rows="6"></textarea>
+						<p class="info">%content_css_2%</p>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>nav.css</legend>
+					<div class="fields">
+						<label for="extra-nav-css">%nav_css_1%:</label>
+						<textarea name="extra-nav-css" id="extra-nav-css" cols="32" rows="6"></textarea>
+						<p class="info">%nav_css_2%</p>
+					</div>
+				</fieldset>				
+			</div>
+			
+			<div id="content-css" class="panel">
+            	<h2 class="scr-av">content.css</h2>
+				<fieldset>
+					<legend>content.css</legend>
+					<div class="fields">
+						<label for="my-content-css">%content_css_content%:</label>
+						<textarea name="my-content-css" id="my-content-css" cols="32" rows="6"></textarea>
+					</div>
+				</fieldset> 
+			</div>
+			
+			<div id="nav-css" class="panel">
+            	<h2 class="scr-av">nav.css</h2>
+				<fieldset>
+					<legend>nav.css</legend>
+					<div class="fields">
+						<label for="my-nav-css">%nav_css_content%:</label>
+						<textarea name="my-nav-css" id="my-nav-css" cols="32" rows="6"></textarea>
+					</div>
+				</fieldset> 
+			</div>
+            
+			<p id="css-warning">%css3_warning%</p>
+
+		</div>
+
+		<div class="mceActionPanel">
+        	<input type="button" id="restore" name="restore" value="%Reset%" />
+			<input type="button" id="saveAs" name="saveAs" value="%Save_as%" />
+			<input type="button" id="save" name="save" value="%Save%" />
+			<input type="button" id="finish" name="finish" value="%Finish%" />
+		</div>
+    </form>        
+</div>
+</body>
+</html>

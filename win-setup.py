@@ -26,6 +26,7 @@ except ImportError:
     pass
 from distutils.core import setup
 import py2exe
+import httplib2
 from exe.engine import version
 
 g_files = {'.': ["README",
@@ -35,6 +36,7 @@ g_files = {'.': ["README",
                   "exe/webui/images/eXe_icon.ico",
                   "exe/webui/mr_x.gif",
                   "installs/windows/exeLicense.txt",
+                  os.path.join(os.path.dirname(httplib2.__file__), 'cacerts.txt'),
                   ]}
 g_oldBase = "exe/webui"
 g_newBase = "."
@@ -67,7 +69,16 @@ dataFiles(["exe/webui/style",
 
 g_oldBase = "exe"
 g_newBase = "."
-dataFiles(["exe/locale", "exe/mediaprofiles"])
+exc = [
+       "exe.po",
+       "exe_ja.xlf",
+       "exe_jp.xlf",
+       "messages.pot",
+       "exe_l7.po",
+       "exe_le.po",
+       "exe_tt.po"
+    ]
+dataFiles(["exe/locale", "exe/mediaprofiles"], exc)
 
 g_oldBase = "exe/jsui"
 g_newBase = "."
@@ -76,7 +87,7 @@ dataFiles(["exe/jsui/templates",
 
 opts = {
  "py2exe": {
-   "packages": ["encodings", "nevow", "nevow.flat", "cProfile", "functools", "csv", "libxml2", "robotparser", "chardet", "lxml", "feedparser"],
+   "packages": ["encodings", "nevow", "nevow.flat", "cProfile", "functools", "csv", "libxml2", "robotparser", "chardet", "lxml", "feedparser", "BeautifulSoup", "oauth2client", "googleapiclient", "BaseHTTPServer"],
    "includes": ["PngImagePlugin", "JpegImagePlugin", "GifImagePlugin",
                 "IcoImagePlugin", "BmpImagePlugin"],
 

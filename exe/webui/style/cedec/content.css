@@ -6,7 +6,7 @@
      Fecha: Mayo 2011
      Descripcion: Hoja de estilos principal
      Company:   cedec - Centro Nacional de desarrollo Curricular en Sistemas No propietarios.
-     Referencias: Obra derivada de (ver license.txt)
+     Referencias: Obra derivada de (ver config.xml)
      
    ================================================== */
 
@@ -85,6 +85,10 @@ td {
 ul li {
 	list-style-image:url(bullet.gif);
 }
+
+/* Cita con autoría */
+.styled-qc{margin-top:2.5em}
+.styled-qc:before{top:0}
 
 /* Estilo para el título del NODO, que es cada una de las entradas
 de la jerarquía de contenidos que crearemos con eXe */

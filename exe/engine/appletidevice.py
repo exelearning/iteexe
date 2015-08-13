@@ -284,7 +284,7 @@ you created in Geogebra.</p>""")
         3 download and store them into the exe project (absolute urls are required).
         Return the code modified.
         """
-        from exe.engine.beautifulsoup import BeautifulSoup, BeautifulStoneSoup
+        from BeautifulSoup import BeautifulSoup, BeautifulStoneSoup
         import re
         import urllib
         import urllib2
@@ -435,7 +435,7 @@ you created in Geogebra.</p>""")
         html = ""
         if not filename.endswith(".jar"):
             if filename.endswith(".html") or filename.endswith(".htm"):
-                from exe.engine.beautifulsoup import BeautifulSoup, BeautifulStoneSoup   
+                from BeautifulSoup import BeautifulSoup, BeautifulStoneSoup   
                 import urllib2
                 if filename.find(",") == -1:    
                     # firstly verify the URL is reachable, or come back:

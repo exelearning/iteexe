@@ -154,15 +154,24 @@ class AuthoringPage(RenderableResource):
         html += common.hiddenField(u'clientHandleId', request.args['clientHandleId'][0])
         html += u'<!-- start authoring page -->\n'
         html += u'<div id="nodeDecoration">\n'
+        html += u'<div id="headerContent">\n'
         html += u'<h1 id="nodeTitle">\n'
         html += escape(topNode.titleLong)
         html += u'</h1>\n'
+        html += u'</div>\n'
         html += u'</div>\n'
 
         for block in self.blocks:
             html += block.render(self.package.style)
 
         html += u'</div>'
+        style = G.application.config.styleStore.getStyle(self.package.style)
+        
+        html += common.renderLicense(self.package.license,"authoring")
+        html += common.renderFooter(self.package.footer)
+        
+        if style.hasValidConfig:
+            html += style.get_edition_extra_body()
         html += '<script type="text/javascript">$exeAuthoring.ready()</script>\n'
         html += common.footer()
 
@@ -194,6 +203,7 @@ class AuthoringPage(RenderableResource):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/base.css\" />"
             
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/exe_wikipedia.css\" />"
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/scripts/exe_effects/exe_effects.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/%s/content.css\" />" % self.package.style
         if G.application.config.assumeMediaPlugins: 
             html += u"<script type=\"text/javascript\">var exe_assume_media_plugins = true;</script>\n"
@@ -209,13 +219,17 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript" src="../jsui/native.history.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/authoring.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_jquery.js"></script>\n'
-        html += u'<script type="text/javascript" src="/scripts/exe_lightbox.js"></script>\n'
+        html += u'<script type="text/javascript" src="/scripts/exe_lightbox/exe_lightbox.js"></script>\n'
+        html += u'<script type="text/javascript" src="/scripts/exe_effects/exe_effects.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/common.js"></script>\n'
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_settings_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
         html += u'<title>"+_("eXe : elearning XHTML editor")+"</title>\n'
         html += u'<meta http-equiv="content-type" content="text/html; '
         html += u' charset=UTF-8" />\n'
+        style = G.application.config.styleStore.getStyle(self.package.style)
+        if style.hasValidConfig:
+            html += style.get_edition_extra_head()        
         html += u'</head>\n'
         return html
 

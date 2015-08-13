@@ -1,0 +1,70 @@
+Building from source on Windows:
+
+Tested on Windows 7 (32 Bit) and Win2008 Server :
+
+You can download most Windows build requirements from:
+https://www.dropbox.com/sh/e14myu6uauy4cre/reQJsHBmOD
+
+
+1. Install Git (from https://git-scm.com/download/win)
+
+2. Install Python 2.7.5 32bit (From dropbox folder above or Python Website)
+
+3. Install Pillow (use Pillow-2.4.0.win32-py2.7.exe from https://pypi.python.org/pypi/Pillow/2.4.0#downloads)
+
+3. Copy ez_setup from Dropbox folder C:\Python27\Tools\Scripts
+
+4. Open Git bash from start menu and install easy_install
+ $ cd /C/Python2.7/Tools/Scripts 
+ $ cp ~/Downloads/Path/To/ez_setup.py 
+ $ PATH=$PATH:/C/Python27 
+ $ export PATH ./ez_setup.py
+
+5. Install PIL
+ $ cd /C/Python27/Scripts/ 
+ $ easy_install PIL
+
+6. Install py2exe (file in Dropbox or use py2exe-0.6.9.win32-py2.7.exe from http://sourceforge.net/projects/py2exe/files/py2exe/0.6.9/)
+
+7. Install setuptools
+ $ easy_install setuptools
+
+8. Install zope.interface
+ $ easy_install zope.interface
+
+9. Install libxml2 (From dropbox folder or http://users.skynet.be/sbi/libxml-python/)
+10. Install chardet library (From dropbox or downloading .tar.gz file from https://pypi.python.org/pypi/chardet and unzipping chardet ( .py files from chardet-2.1.1 contained within the zip) into C:\Python27\Lib\site-packages
+
+11. Install NSIS (From Dropbox or version 2.46 from http://nsis.sourceforge.net/Main_Page)
+
+12. Unzip NewAdvSplash.zip (from Dropbox) into Program Files\NSIS\
+
+13. Unzip LoadingBar.zip (from Dropbox) into Program Files\NSIS\Contrib\UIs
+
+14. Cop nsprocess.dll and nsprocessw.dll into Program Files\NSIS\Plugins
+
+15. Make a directory for the git checkout and do git checkout (using git bash)
+
+ $ mkdir somedir
+ $ git clone https://forja.cenatic.es/anonscm/git/iteexe/iteexe.git
+
+16. Use python easy_install to install gitpython (in Python2.7/Scripts)
+ $ easy_install gitpython
+
+17. Install lxml
+ $ easy_install lxml
+
+18. Install pywin32 (from dropbox folder or http://sourceforge.net/projects/pywin32/)
+
+19. Install BeautifulSoup (available in wheel format from http://www.lfd.uci.edu/~gohlke/pythonlibs/).  Unzip it into C:\Python27\Lib .
+
+20. Install feedparser (available in wheel format from http://www.lfd.uci.edu/~gohlke/pythonlibs/) Unzip it into C:\Python27\Lib .
+
+21. Install Google API and oAuth2 client libraries
+ $ easy_install --upgrade oauth2client
+ $ easy_install --upgrade google-api-python-client
+
+22. Run make.py
+$ cd /path/to/source/installs/windows
+$ python make.py
+

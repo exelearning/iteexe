@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<theme>
+    <name>SimplePoint (presentations)</name>
+    <version>1.0</version>
+    <compatibility>2.0.3+</compatibility>
+    <author>Ignacio Gros</author>
+    <author-url>http://www.gros.es/</author-url>
+	<license>Creative Commons by-sa</license>
+	<license-url>http://creativecommons.org/licenses/by-sa/3.0/</license-url>
+	<description>Create presentations with eXe. Easy to use. Responsive design. Design and programming by Ignacio Gros for eXeLearning (http://exelearning.net/). 
+    
+This Style uses the Open Sans font family, designed by Steve Matteson. Open Sans License (Apache License, version 2.0):
+
+Copyright: Steve Matteson.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</description>
+    <extra-head><![CDATA[<meta name="viewport" content="width=device-width, initial-scale=1" />
+]]></extra-head>
+    <extra-body><![CDATA[<script type="text/javascript" src="_simplepoint_js.js"></script>]]></extra-body>
+    <edition-extra-body><![CDATA[<script type="text/javascript" src="/style/simplepoint/_simplepoint_js.js"></script>]]></edition-extra-body>
+</theme>

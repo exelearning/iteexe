@@ -2,7 +2,9 @@
 eXe
 Copyright 2004-2005, eXelearning. 
 style for  slate
-Modified by eXeLearning.net
+
+Modified by Ignacio Gros for eXeLearning.net
+See Help - eXe Tutorial for more info on how to modify this style for your needs.
 */
 html{padding:0}
 body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#222;background:#CAC3B5}
@@ -52,8 +54,22 @@ input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1
 .feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+.exe-dl .icon{line-height:17px}
+.js .exe-dl dd{margin-left:34px}
 /* Form buttons */
 .feedbackbutton{background:#FFFDB1;margin-bottom:1em}
 /* Hide/Show iDevice */
 .toggle-idevice{margin:12px 0 0;text-align:right;display:block}
 .iDevice_header .toggle-idevice{float:right;margin:0}
+/* Effects */
+.exe-fx .fx-C2,
+.exe-fx .fx-C2 a,
+.fx-pagination a{background:#FFF}
+.emphasis1 .exe-fx .fx-C2,
+.emphasis1 .exe-fx .fx-C2 a,
+.emphasis1 .fx-pagination a,
+.exe-web-site .exe-fx .fx-C2,
+.exe-web-site .exe-fx .fx-C2 a,
+.exe-web-site .fx-pagination a{
+background:#ededed;
+}

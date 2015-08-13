@@ -77,7 +77,9 @@ class SinglePage(Page):
         html += u'<script type="text/javascript">document.body.className+=" js"</script>'+lb
         html += u"<div id=\"content\">"+lb
         html += u"<"+headerTag+" id=\"header\">"
+        html += u"<div id=\"headerContent\">"
         html += "<h1>"+escape(package.title)+"</h1>"
+        html += u"</div>"
         html += u"</"+headerTag+">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
         html += self.renderNode(package.root, 1)
@@ -122,6 +124,17 @@ class SinglePage(Page):
             return hasGallery
 
         hasGallery = hasGalleryIdevice(self.node)
+        
+        def hasFX(node):
+            hasEffects = common.hasFX(node)
+            if not hasEffects:
+                for child in node.children:
+                    if hasFX(child):
+                        return True
+            return hasEffects
+        
+        hasEffects = hasFX(self.node)
+        
         def hasWikipediaIdevice(node):
             hasWikipedia = common.hasWikipediaIdevice(node)
             if not hasWikipedia:
@@ -162,6 +175,7 @@ class SinglePage(Page):
             html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'+lb
         if self.node.package.author!="":
             html += '<meta name="author" content="'+self.node.package.author+'" />'+lb
+        html += common.getLicenseMetadata(self.node.package.license)
         html += '<meta name="generator" content="eXeLearning '+release+' - exelearning.net" />'+lb
         if self.node.package.description!="":
             html += '<meta name="description" content="'+self.node.package.description+'" />'+lb
@@ -170,6 +184,8 @@ class SinglePage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
         if hasGallery:
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+        if hasEffects:
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5" or self.hasMediaelement:
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
@@ -186,6 +202,8 @@ class SinglePage(Page):
 
         if hasGallery:
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
+        if hasEffects:
+            html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):

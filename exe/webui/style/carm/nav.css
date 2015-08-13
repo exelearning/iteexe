@@ -2,7 +2,8 @@
 Copyright University of Auckland 2004
 Created by Brent Simpson, brent.simpson@auckland.ac.nz
 Centre for Flexible and Distance Learning
-	Modificado: Aníbal de la Torre /Juan Diego Pérez
+	Modificado: Aníbal de la Torre / Juan Diego Pérez
+	Responsive design by Ignacio Gros
 ============================================= */
 #header {
     color:#598AC3;
@@ -10,6 +11,7 @@ Centre for Flexible and Distance Learning
     height:60px;
     padding:65px 20px 0; 
     font-weight:normal;
+    line-height:1.2em
 }
 
 #nodeDecoration{
@@ -17,26 +19,20 @@ Centre for Flexible and Distance Learning
 }
 
 /* Pagination */
-.pagination,.noprt{padding-top:10px;text-align:right}
-.pagination a,.noprt a{padding:3px;}
-.pagination a:hover,.noprt a:hover{text-decoration:none}
+.pagination{padding-top:10px;text-align:right}
+.pagination a{padding:3px}
+.pagination a:hover{text-decoration:none}
 #topPagination{
 	position:absolute;
 	right:20px;
-	top:50px;
+	top:7px;
 	z-index:99
 }
 #topPagination .pagination{border:none}
+#main-wrapper{padding:10px 0 0 238px}
+#main{width:100%}
 
-#main {
-	padding:0 18px;
-	margin:0 10px 0 180px;
-	margin-left:220px;
-	margin-top:10px;
-	text-align:left;
-	width:76%;
-}
-#content{width:985px;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0;border-top:0;padding-bottom:28px}
+#content{width:985px;margin:0 auto;text-align:left;position:relative;padding-bottom:28px}
 #skipNav a{
     font-size:.9em;
     background:#598AC3;
@@ -55,6 +51,7 @@ Centre for Flexible and Distance Learning
 	list-style:none;
 }
 #siteNav a{
+	list-style-image:none;
 	display:block;
 	padding:4px 0 4px 18px;
 	color:#598AC3;
@@ -100,4 +97,37 @@ Centre for Flexible and Distance Learning
 #siteNav .other-section{
 	display:none; /* Remove if you want all levels to be displayed */
 }
-#siteFooter{padding-left:238px}
+#siteFooter{padding:10px 0 0 238px}
+
+/* No menu */
+.no-nav #main-wrapper,.no-nav #siteFooter{padding-left:0}
+
+/* IE6 */
+* html #main{width:auto}
+* html #main-wrapper{padding-left:250px}
+
+/* Responsive design */
+@media all and (max-width: 1020px) {
+	body{margin:0;padding:0}
+	#content{width:100%;max-width:985px}
+	#siteNav{margin-left:10px}
+	#main-wrapper{padding:10px 10px 0 248px}
+	.no-nav #main-wrapper,.no-nav #siteFooter{padding-left:10px}
+	#bottomPagination{margin-right:10px}
+}
+@media all and (max-width: 780px) {
+	#siteNav{width:auto;float:none;padding:0;margin-bottom:10px;border:none}
+	#content #siteNav a{width:80%;line-height:1.5em}
+	#content #siteNav a:hover,#content #siteNav .active{border:0;background-color:#fff}
+	#main-wrapper,.no-nav #main-wrapper{padding:10px 10px 0 10px}
+	#siteFooter,.no-nav #siteFooter{padding:10px 10px 0 10px;text-align:center}
+	.pagination{font-weight:bold;font-size:1.1em}
+	.pagination .sep{display:none}
+	#topPagination{position:relative;top:auto;width:100%;right:auto;padding:0}
+	#topPagination .pagination{padding:0 10px;text-align:center}
+	#topPagination .prev,#topPagination .next{display:none}
+	#bottomPagination,.no-nav #bottomPagination{position:relative;padding:0 10px 10px 10px}
+	#bottomPagination a{display:inline-block}
+	#bottomPagination .prev{position:absolute;left:10px}
+	#nav-toggler a,#nav-toggler a:focus{display:block;background:#BD4949;padding:7px 0;width:100%;color:#fff;outline:none;text-decoration:none}
+}

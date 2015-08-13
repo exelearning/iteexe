@@ -1,0 +1,92 @@
+/* Kids Style for eXeLearning (see config.xml for details) */
+body{padding:0;text-align:center;background:#aee7d3}
+#content{width:100%;margin:0 auto;text-align:left;position:relative;background-color:#aee7d3;overflow:auto}
+#main-wrapper{width:100%;*width:auto}/* * IE 6 & 7 */
+#main{padding:20px 40px 30px 320px;height:auto!important;height:200px;min-height:200px;*padding-left:0}
+
+.no-nav #main{padding:20px 40px 0 40px}
+
+#header,#emptyHeader{border-top-width:0;border-right-width:0;border-left-width:0;line-height:1em}
+#headerContent{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:230px;min-height:1.1em;padding-top:65px}
+
+#nodeDecoration{background:none;padding:0;border:none;margin:20px 0;height:auto;font-size:1.6em;line-height:1em}
+h1#nodeTitle{font-weight:700;color:#1B4D3B}
+
+/* Menú */
+#siteNav{font-weight:bold;width:280px;float:left;margin:85px 40px 40px 0;border-top:1px solid #000;border-right:1px solid #000}
+#siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
+#siteNav .other-section{display:none}
+#siteNav a{display:block;padding:8px 10px 8px 20px;border-width:0 0 1px 0;border-style:solid}
+#siteNav .active{text-decoration:underline}
+#siteNav ul ul a{padding-left:35px;font-size:.95em;font-weight:normal}
+#siteNav ul ul ul a{padding-left:60px}
+#siteNav .daddy span{display:none}
+/* Colors */
+#siteNav,#siteNav a{background-color:#e9c34f;color:#000;border-color:#000}
+#siteNav a:hover,#siteNav a:focus,#siteNav .active{background-color:#FFF;color:#666}
+#siteNav ul ul a{color:#222;background:#FFE38E}
+/* .top-... and .bottom are added with JS */
+.js #siteNav,.top-right-radius{border-top-right-radius:15px}
+.js #siteNav,.bottom-right-radius{border-bottom-right-radius:15px}
+
+/* IE6 */
+* html #siteNav a{display:inline-block;width:250px}
+* html #siteNav ul ul a{width:235px}
+* html #siteNav ul ul ul a{width:190px}
+* html #main{padding:20px 20px 0 0}
+
+#siteFooter{padding:0 20px 20px 20px;border:0}
+
+/* Hide/Show/Skip navigation */
+#nav-toggler{margin:0;position:absolute;top:152px;left:0;text-transform:lowercase}
+#nav-toggler a,#skipNav a{padding:10px 20px;border-radius:15px;box-shadow:0 0 8px 0 #999;outline:none;background:#D7F3E9;color:#808080;border:1px solid #88B5A5}
+#nav-toggler a:hover,#nav-toggler a:focus{background:#FFF}
+#nav-toggler a{border-top-left-radius:0;border-bottom-left-radius:0;padding-right:35px}
+#nav-toggler a:hover{text-decoration:none}
+#skipNav{z-index:100px;padding-top:15px;text-align:center}
+
+/*Navigation icons */
+/* Pagination */
+.pagination{padding:20px 0}
+.pagination .sep{display:none}
+.pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+.pagination a{display:block;float:left;width:71px;height:71px;padding:0;background:url(_style_icons.png) no-repeat 0 0;margin-right:40px}
+.pagination a:hover,.pagination a:focus{background-position:0 -100px}
+.pagination .next{background-position:-100px 0}
+.pagination .next:hover,.pagination .next:focus{background-position:-100px -100px}
+#topPagination{position:absolute;top:0;right:0}
+#bottomPagination{height:71px;position:relative;overflow:hidden;margin:20px 0;clear:both}
+#bottomPagination a{position:absolute;top:0;left:40px;margin:0}
+#bottomPagination .next{left:auto;right:40px}
+
+@media screen and (min-width: 701px) and (max-width: 1000px) {
+	#main{padding:20px 20px 0 240px}
+	#siteNav{width:220px;margin-right:20px}
+}
+
+@media screen and (max-width: 1150px) {
+	#main{padding:20px 40px 0 290px}
+	.no-nav #main{padding:20px 20px 0 20px}
+	#siteNav{width:250px;margin-right:40px}
+}
+
+@media screen and (max-width: 980px) {
+	#main{padding:20px 30px 0 280px}
+	.iDeviceTitle {max-width:55%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+	#siteNav{width:250px;margin-right:30px}
+	.pagination a{margin-right:20px}
+	#bottomPagination .next{right:20px}
+	#bottomPagination .prev{left:20px}    
+}
+
+@media all and (max-width: 700px) {
+    .iDevice_wrapper{margin-top:0!important}
+	#headerContent {padding-top:0;line-height:120px}
+	#topPagination{display:none}
+	#siteNav{float:none;width:100%;padding:0;margin:0;line-height:1.5em;border-right:0}
+	.js #siteNav,.top-right-radius,.bottom-right-radius{border-radius:0}	
+	#main,.no-nav #main{padding:10px 20px 0 20px}    
+	#content .exe-col{float:none;width:100%;padding:0}
+	#nav-toggler{position:relative;top:0;left:0;margin:20px 19px;text-align:center}
+	#nav-toggler a{width:100%;display:block;padding:8px 0;border-radius:15px}
+}

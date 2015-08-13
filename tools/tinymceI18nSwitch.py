@@ -27,7 +27,7 @@ from exe.engine.path import Path
 import demjson
 
 if __name__ == '__main__':
-    basedir = Path() / 'exe' / 'webui' / 'scripts' / 'tinymce_3.5.7' / 'jscripts' / 'tiny_mce'
+    basedir = Path() / 'exe' / 'webui' / 'scripts' / 'tinymce_3.5.11' / 'jscripts' / 'tiny_mce'
     for path in basedir.walk('en*.js'):
         pathdir = path.dirname()
         f = path.bytes()

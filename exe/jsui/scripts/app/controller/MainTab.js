@@ -242,7 +242,7 @@ Ext.define('eXe.controller.MainTab', {
                             formpanel.clear();
                         };
                         Ext.iterate(formpanel.up().query('lomdata'), formclear);
-                        if (form.getFieldValues(true).pp_lang) {
+                        if ((form.getFieldValues(true).pp_lang)||(form.getFieldValues(true).pp_newlicense)) {
                             var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
                             if (authoring && authoring.submitLink) {
                             	var outlineTreePanel = eXe.app.getController("Outline").getOutlineTreePanel(),

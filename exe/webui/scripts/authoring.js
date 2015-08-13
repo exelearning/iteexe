@@ -27,7 +27,8 @@
 var Ext = parent.Ext;
 var eXe = parent.eXe;
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
-	enableAnchors, gotoAnchor, preventEscKey, preventHistoryBack, loadKeymap, hideObjectTags];
+	enableAnchors, httpsInNewWindow, gotoAnchor, preventEscKey, preventHistoryBack,
+    loadKeymap, hideObjectTags];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load
@@ -98,17 +99,19 @@ function askUserForImage(multiple, fn, filter) {
 }
 
 // Asks the user for a media file, returns the path or an empty string
-function askUserForMedia(fn) {
+function askUserForMedia(fn,win) {
     var fp = parent.Ext.create("eXe.view.filepicker.FilePicker", {
         type: parent.eXe.view.filepicker.FilePicker.modeOpen,
         title: parent._("Select a file"),
         modal: true,
         scope: this,
         callback: function(fp) {
-            if (fp.status == parent.eXe.view.filepicker.FilePicker.returnOk)
-                fn(fp.file.path);
-            else
-                fn("");
+			if (fp.status == parent.eXe.view.filepicker.FilePicker.returnOk) {
+				fn(fp.file.path);
+				if (typeof(win)!="undefined") win.document.forms[0].elements['href'].onchange();
+			} else {
+				fn("");
+			}
         }
     });
     fp.appendFilters([
@@ -532,6 +535,16 @@ function enableAnchors() {
         };
 }
 
+function httpsInNewWindow() {
+	var links = parent.Ext.DomQuery.select('a[href^=https]', document);
+
+	for (var i=0; i < links.length; i++) {
+        if (!links[i].getAttribute('target')) {
+            links[i].setAttribute('target', '_blank');
+        }
+    }
+}
+
 function gotoAnchor() {
     if (typeof(parent.eXe)!='undefined' && typeof(parent.eXe.app)!='undefined') {
         var outline = parent.eXe.app.getController('Outline');
@@ -564,8 +577,8 @@ function loadKeymap() {
 
 // Common settings
 var eXeLearning_settings = {
-    wysiwyg_path : "/scripts/tinymce_3.5.7/jscripts/tiny_mce/tiny_mce.js",
-    wysiwyg_settings_path : "/scripts/tinymce_3.5.7_settings.js"
+    wysiwyg_path : "/scripts/tinymce_3.5.11/jscripts/tiny_mce/tiny_mce.js",
+    wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
 }
 
 // browse the specified URL in system browser
@@ -683,7 +696,7 @@ var exe_tinymce = {
 		} else if (type == "file") {
 		   // new for advlink plugin, to link ANY resource into text:
 		   // re-use the Media browser, which defaults to All file types (*.*)
-		   askUserForMedia(fn);
+		   askUserForMedia(fn,win);
 		} else if (type == "image2insert" || type == "media2insert" || type == "file2insert") {
 			if (type == "file2insert" && url.indexOf('#') >= 0) {
 				// looks like a link to an internal anchor due to the #, so do

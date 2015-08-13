@@ -83,6 +83,8 @@ class WebsitePage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb    
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+        if common.hasFX(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"nav.css\" />"+lb
         html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
@@ -104,6 +106,7 @@ class WebsitePage(Page):
             html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'+lb
         if self.node.package.author!="":
             html += '<meta name="author" content="'+self.node.package.author+'" />'+lb
+        html += common.getLicenseMetadata(self.node.package.license)
         html += '<meta name="generator" content="eXeLearning '+release+' - exelearning.net" />'+lb
         if self.node.id=='0':
             if self.node.package.description!="":
@@ -123,6 +126,8 @@ class WebsitePage(Page):
         
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
+        if common.hasFX(self.node):
+            html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
@@ -150,10 +155,12 @@ class WebsitePage(Page):
 
                 html += u"\""
             html += u">"
+            html += '<div id="headerContent">'
             html += escape(self.node.package.title)
+            html += '</div>'
             html += u"</"+headerTag+">"+lb
         else:
-            html += "<"+sectionTag+" id=\"emptyHeader\"></"+sectionTag+">"+lb
+            html += "<"+sectionTag+" id=\"emptyHeader\"></"+sectionTag+">"+lb			
         
         # add left navigation html
         html += u"<"+navTag+" id=\"siteNav\">"+lb
@@ -322,14 +329,14 @@ class WebsitePage(Page):
         html = "<"+navTag+" class=\"pagination noprt\">"+lb
 
         if prevPage:
-            html += "<a href=\""+quote(prevPage.name)+".html\" class=\"prev\">"
-            html += "<span>&laquo; </span>%s</a>" % c_('Previous')
+            html += "<a href=\""+quote(prevPage.name)+".html\" class=\"prev\"><span>"
+            html += "<span>&laquo; </span>%s</span></a>" % c_('Previous')
 
         if nextPage:
             if prevPage:
-                html += " | "
-            html += "<a href=\""+quote(nextPage.name)+".html\" class=\"next\">"
-            html += " %s<span> &raquo;</span></a>" % c_('Next')
+                html += ' <span class="sep">| </span>'
+            html += "<a href=\""+quote(nextPage.name)+".html\" class=\"next\"><span>"
+            html += "%s<span> &raquo;</span></span></a>" % c_('Next')
             
         html += lb+"</"+navTag+">"+lb
         return html

@@ -226,13 +226,12 @@ class Manifest(object):
         my_style = G.application.config.styleStore.getStyle(page.node.package.style)
         if common.nodeHasMediaelement(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'mediaelement').files()]
+        if common.nodeHasTooltips(page.node):
+            resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_tooltips').files()]
         if common.hasGalleryIdevice(page.node):
-            self.resStr += '    <file href="exe_lightbox.js"/>\n'
-            self.resStr += '    <file href="exe_lightbox.css"/>\n'
-            self.resStr += '    <file href="exe_lightbox_close.png"/>\n'
-            self.resStr += '    <file href="exe_lightbox_loading.gif"/>\n'
-            self.resStr += '    <file href="exe_lightbox_next.png"/>\n'
-            self.resStr += '    <file href="exe_lightbox_prev.png"/>\n'
+            resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_lightbox').files()]
+        if common.hasFX(page.node):
+            resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_effects').files()]
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
                 self.resStr += '    <file href="exe_jquery.js"/>\n'
@@ -305,6 +304,7 @@ class IMSPage(Page):
             html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'+lb
         if self.node.package.author!="":
             html += '<meta name="author" content="'+self.node.package.author+'" />'+lb
+        html += common.getLicenseMetadata(self.node.package.license)      
         html += '<meta name="generator" content="eXeLearning '+release+' - exelearning.net" />'+lb
         if self.node.id=='0':
             if self.node.package.description!="":
@@ -314,6 +314,8 @@ class IMSPage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb    
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+        if common.hasFX(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
@@ -330,6 +332,8 @@ class IMSPage(Page):
         
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
+        if common.hasFX(self.node):
+            html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
@@ -342,9 +346,11 @@ class IMSPage(Page):
         html += u"<div id=\"outer\">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
         html += u"<"+headerTag+" id=\"nodeDecoration\">"
+        html += u"<div id=\"headerContent\">"
         html += u'<h1 id=\"nodeTitle\">'
         html += escape(self.node.titleLong)
         html += u'</h1>'
+        html += u'</div>'
         html += u"</"+headerTag+">"+lb
 
         for idevice in self.node.idevices:
@@ -495,16 +501,18 @@ class IMSExport(object):
         hasMagnifier      = False
         hasXspfplayer     = False
         hasGallery        = False
+        hasFX             = False
         hasWikipedia      = False
         isBreak           = False
         hasInstructions   = False
         hasMediaelement   = False
+        hasTooltips       = False
         
         for page in self.pages:
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -518,6 +526,8 @@ class IMSExport(object):
                         hasXspfplayer = True
                 if not hasGallery:
                     hasGallery = common.ideviceHasGallery(idevice)
+                if not hasFX:
+                    hasFX = common.ideviceHasFX(idevice)
                 if not hasWikipedia:
                     if 'WikipediaIdevice' == idevice.klass:
                         hasWikipedia = True
@@ -526,6 +536,8 @@ class IMSExport(object):
                         hasInstructions = True
                 if not hasMediaelement:
                     hasMediaelement = common.ideviceHasMediaelement(idevice)
+                if not hasTooltips:
+                    hasTooltips = common.ideviceHasTooltips(idevice)
 
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -539,11 +551,11 @@ class IMSExport(object):
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(outputDir/'xspf_player.swf')
         if hasGallery:
-            imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
-            imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
-            imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
-            imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
-            self.imagesDir.copylist(('exe_lightbox_close.png', 'exe_lightbox_loading.gif', 'exe_lightbox_next.png', 'exe_lightbox_prev.png'), outputDir)
+            exeLightbox = (self.scriptsDir/'exe_lightbox')
+            exeLightbox.copyfiles(outputDir)
+        if hasFX:
+            exeEffects = (self.scriptsDir/'exe_effects')
+            exeEffects.copyfiles(outputDir)
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(outputDir/'exe_wikipedia.css')
@@ -556,6 +568,9 @@ class IMSExport(object):
             if dT != "HTML5":
                 jsFile = (self.scriptsDir/'exe_html5.js')
                 jsFile.copyfile(outputDir/'exe_html5.js')
+        if hasTooltips:
+            exe_tooltips = (self.scriptsDir/'exe_tooltips')
+            exe_tooltips.copyfiles(outputDir)
         if hasattr(package, 'exportSource') and package.exportSource:
             (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
             (outputDir/'content.data').write_bytes(encodeObject(package))

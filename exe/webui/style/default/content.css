@@ -1,11 +1,9 @@
 /*
 eXe
 Copyright 2007-2008. eXelearning Project, http://eXeLearning.org/
-style sheet for default theme
-see: http://exelearning.org/Creating_a_new_Style for more info on how
-to modify this style for your needs.
-=================================
-Modified by eXeLearning.net
+
+Modified by Ignacio Gros for eXeLearning.net
+See Help - eXe Tutorial for more info on how to modify this style for your needs.
 */
 html{padding:0}
 body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#444;background:#E0DFD8}
@@ -52,6 +50,8 @@ input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1
 .feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+.exe-dl .icon{line-height:17px}
+.js .exe-dl dd{margin-left:34px}
 /* Form buttons */
 .feedbackbutton{background:#DBE992;margin-bottom:1em}
 /* Hide/Show iDevice */
@@ -60,3 +60,7 @@ li{list-style-position:outside}
 .toggle-idevice a{display:inline-block;width:14px;height:14px;background:url(_default_hide_show.gif) no-repeat 0 -14px}
 .toggle-idevice .show-idevice{background-position:0 0}
 .toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+/* Effects */
+.exe-fx .fx-C2,
+.exe-fx .fx-C2 a,
+.fx-pagination a{background:#FFF}

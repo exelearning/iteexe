@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<theme>
+    <name>Kids</name>
+    <version>1.0</version>
+    <compatibility>2.0.4+</compatibility>
+    <author>Francisco Javier Pulido Cuadrado and Ignacio Gros (http://www.gros.es/) for eXeLearning.net</author>
+    <license>Creative Commons by-sa</license>
+	<license-url>http://creativecommons.org/licenses/by-sa/3.0/</license-url>
+	<description>For Kids! Colourful, big icons, big fonts... Responsive design. Design and icons by Francisco Javier Pulido Cuadrado. CSS and JavaScript by Ignacio Gros. 
+    
+This Style uses the Open Sans font family, designed by Steve Matteson. Open Sans License (Apache License, version 2.0):
+
+Copyright: Steve Matteson.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</description>
+    <extra-head><![CDATA[<meta name="viewport" content="width=device-width, initial-scale=1" />
+]]></extra-head>
+    <extra-body><![CDATA[<script type="text/javascript" src="_style_js.js"></script>]]></extra-body>
+    <edition-extra-body><![CDATA[<script type="text/javascript">
+		$(".iDevice_wrapper").each(function(i){
+            if (this.className.indexOf("em_iDevice")!=-1) {
+                var e = $(this);
+                var t = $(".iDeviceTitle",e);
+                var c = t.css("background-image");
+                if (c!="") {
+                    t.css("background-image","none");
+                    e.prepend("<div class='icon_wrapper' style='background-image:"+c+"'></div>");
+                }
+			}
+		});
+    </script>]]></edition-extra-body>
+</theme>

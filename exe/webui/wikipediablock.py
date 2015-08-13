@@ -28,6 +28,7 @@ from exe.webui         import common
 from exe.webui.element import TextAreaElement
 from exe.engine.idevice   import Idevice
 from exe.engine.resource  import Resource
+from exe                  import globals as G
 
 log = logging.getLogger(__name__)
 
@@ -188,7 +189,7 @@ class WikipediaBlock(Block):
         log.debug("renderView")
         content = self.articleElement.renderView()
         # content = re.sub(r'src="resources/', 'src="', content)
-        content = re.sub(r'src="http://127.0.0.1:\d+/newPackage.*/resources/', 'src="', content)
+        content = re.sub(r'src="%s/newPackage.*/resources/'%(G.application.exeAppUri), 'src="', content)
         content = re.sub(r'src="/newPackage.*/resources/', 'src="', content)
         content = re.sub(r'src=\'/newPackage.*/resources/', 'src="', content)
         content = re.sub(r'src=\"/newPackage.*/resources/', 'src="', content)

@@ -85,6 +85,48 @@ Ext.override(Ext.form.field.TextArea, conf);
 Ext.override(Ext.form.field.Checkbox, conf);
 Ext.override(Ext.form.field.Hidden, conf);
 
+Ext.override(Ext.menu.Menu,{
+      onMouseOver: function(e) {
+            var me = this,
+                  fromEl = e.getRelatedTarget(),
+                  mouseEnter = !me.el.contains(fromEl),
+                  item = me.getItemFromEvent(e),
+                  parentMenu = me.parentMenu,
+                  ownerCmp = me.ownerCmp;
+
+            if (mouseEnter && parentMenu) {
+                  //original
+                  //parentMenu.setActiveItem(ownerCmp);
+                  //ownerCmp.cancelDeferHide();
+                  //parentMenu.mouseMonitor.mouseenter();
+                  //end original
+
+                  //fix
+                  if(ownerCmp){
+                        parentMenu.setActiveItem(ownerCmp);
+                        ownerCmp.cancelDeferHide();
+                  }
+                  setTimeout(parentMenu.mouseMonitor.mouseenter,5);
+                  //end fix
+            }
+
+            if (me.disabled) {
+                  return;
+            }
+
+            if (item && !item.activated) {
+                  me.setActiveItem(item);
+                  if (item.activated && item.expandMenu) {
+                        item.expandMenu();
+                  }
+            }
+            if (mouseEnter) {
+                  me.fireEvent('mouseenter', me, e);
+            }
+            me.fireEvent('mouseover', me, item, e);
+      }
+});
+
 Ext.application({
     name: 'eXe',
 
@@ -100,10 +142,12 @@ Ext.application({
     ],
     
     controllers: [
+        'eXeViewport',
     	'Idevice',
         'MainTab',
     	'Outline',
-    	'Toolbar',
+        'Toolbar',
+        'StyleManager',
     	'filepicker.Directory',
     	'filepicker.File'
     ],

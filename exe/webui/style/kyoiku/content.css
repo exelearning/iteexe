@@ -129,7 +129,7 @@ span.iDeviceTitle{height:48px;display:block}
 .iDevice.emphasis1{
     color:#000;
     background:#F4FAFF url(fondoev.gif) repeat-y 0 0;
-    margin:15px 10px 25px 0;
+    margin:15px 0 25px 0;
     border:1px solid #ABCCEE;
     color:#000080
 }
@@ -219,6 +219,10 @@ span.iDeviceTitle{height:48px;display:block}
 	overflow-y:auto;
 }
 
+/* Cita con autoría */
+.styled-qc{margin-top:2.5em}
+.styled-qc:before{top:0}
+
 /* Formularios y botones */
 input {
 	font-weight:bold;
@@ -298,7 +302,17 @@ iframe {
 	border-radius:9px;
 }
 
+/* base.css */
+.js .exe-dl dd{margin-left:35px}
+
 /* ESTILOS PARA IMPRIMIR */
 img {
 	page-break-inside:avoid;
+}
+
+/* Efectos */
+.exe-fx .fx-C2,
+.exe-fx .fx-C2 a,
+.fx-pagination a{
+background:#F3F3F3;
 }

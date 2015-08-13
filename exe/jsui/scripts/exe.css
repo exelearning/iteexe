@@ -37,3 +37,65 @@
 fieldset.collapsed-with-data > legend > div, fieldset.collapsed-with-data > legend > div > bold > i {
   font-weight: bold;
 }
+
+/* Styles Manager window */
+#stylemanagerwin {
+}
+#stylemanagerwin .repository-style {
+  text-align: center;
+}
+/* Expanded panels, header background matching content background (white) and bigger title */
+#stylemanagerwin :not(.x-panel-collapsed).import-style-url .x-panel-header,
+#stylemanagerwin :not(.x-panel-collapsed).repository-style .x-panel-header {
+  background-color: #ffffff !important;
+  border-bottom: none;
+  font-weight: bold;
+}
+#stylemanagerwin :not(.x-panel-collapsed).repository-style .x-accordion-hd.x-panel-header .x-panel-header-text {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+#stylemanagerwin .repository-style .x-panel-body {
+	border: none;
+}
+#stylemanagerwin .repository-style .x-panel-body img {
+  max-width: 90%;
+  max-height: 90%;
+  height: auto;
+  margin: 1em auto;
+}
+#stylemanagerwin .repository-style .x-panel-body ul {
+  display: inline-block;
+  float: left;
+  margin: 0.25em;
+  margin-left: 1em;
+}
+#stylemanagerwin .repository-style .x-panel-body ul li {
+  display: inline-block;
+  float: left;
+  margin: 0.25em;
+  padding: 3px;
+  border-radius: 3px;
+  border: 1px solid #cfcfcf;
+  background-color: #fcfcfc;
+}
+#stylemanagerwin .repository-style .x-panel-body .repository-style-author, 
+#stylemanagerwin .repository-style .x-panel-body .repository-style-license, 
+#stylemanagerwin .repository-style .x-panel-body .repository-style-read-more {
+  text-align: left;
+  margin-left: 1em;
+}
+#stylemanagerwin .repository-style .x-panel-body .repository-style-author a,
+#stylemanagerwin .repository-style .x-panel-body .repository-style-license a,
+#stylemanagerwin .repository-style .x-panel-body .repository-style-read-more a {
+	text-decoration: none;
+	color: #5D7E1A;
+	font-weight: bold;
+}
+#stylemanagerwin .repository-style .x-panel-body .repository-style-read-more a:before {
+	content: "+ ";
+}
+}
+#stylemanagerwin .import-style-url .x-panel-body .x-btn {
+	margin-left: 1em;
+}

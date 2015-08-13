@@ -191,6 +191,7 @@ class Application:
         self.defaultConfig = self.config
         self.userStore = UserStore(self.config.configDir)
         log.debug("logging set up")
+        globals.application.exeAppUri = 'http://localhost:%d' % (self.config.port)
 
     def preLaunch(self):
         """
@@ -201,6 +202,7 @@ class Application:
         self.webServer = WebServer(self, self.packagePath)
         # and determine the web server's port before launching the client, so it can use the same port#:
         self.webServer.find_port()
+
 
     def serve(self):
         """

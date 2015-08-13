@@ -135,6 +135,10 @@ ul li
 	list-style-image: url(bullet.gif);
 }
 
+/* Cita con autoría */
+.styled-qc{margin-top:2.5em}
+.styled-qc:before{top:0}
+
 /* Estilo para el título del NODO, que es cada una de las entradas
 de la jerarquía de contenidos que crearemos con eXe */
 #main {
@@ -1414,4 +1418,20 @@ img
 	overflow:auto;
 	padding:20px;
 	border-radius:9px;
+}
+
+/* Effects - iDevices with emphasis */
+.exe-fx .fx-accordion-content{
+	padding-top:1em;
+	padding-bottom:1em;
+}
+.exe-fx .fx-tab-content,
+.exe-fx .fx-page-content,
+.exe-fx .fx-carousel-content{
+	padding-bottom:1.5em;
+}
+.emphasis1 .exe-fx .fx-C2,
+.emphasis1 .exe-fx .fx-C2 a,
+.emphasis1 .fx-pagination a{
+	background:#ededed;
 }
