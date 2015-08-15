@@ -101,9 +101,14 @@ class DirTreePage(RenderableResource):
         return Resource.getChild(self, path, request)
 
     def render(self, request):
+        l = {}
+        session = request.getSession()
+        rootdir = session.user.root
         if "sendWhat" in request.args:
             if request.args['sendWhat'][0] == 'dirs':
                 pathdir = Path(unquote(request.args['node'][0].decode('utf-8')))
+                if pathdir == '/':
+                    pathdir = rootdir
                 l = []
                 if pathdir == '/' and sys.platform[:3] == "win":
                     for d in get_drives():
@@ -138,8 +143,8 @@ class DirTreePage(RenderableResource):
                                       "is_writable": is_writable(d)})
                 else:
                     parent = pathdir.parent
-                    if (parent == pathdir):
-                        realname = '/'
+                    if parent == rootdir.parent:
+                        realname = rootdir.abspath()
                     else:
                         realname = parent.abspath()
                     items.append({"name": '.', "realname": pathdir.abspath(), "size": pathdir.size, "type": "directory", "modified": int(pathdir.mtime),
@@ -165,15 +170,14 @@ class DirTreePage(RenderableResource):
                                         else:
                                             pathtype = "None"
                                         items.append({"name": getname(d), "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
-                                          "is_readable": is_readable(d),
-                                          "is_writable": is_writable(d)})
+                                                      "is_readable": is_readable(d),
+                                                      "is_writable": is_writable(d)})
                             except:
                                 pass
                         G.application.config.lastDir = pathdir
                     except:
                         pass
                 l = {"totalCount": len(items), 'results': len(items), 'items': items}
-            return json.dumps(l).encode('utf-8')
         elif "query" in request.args:
             query = request.args['query'][0]
             pathdir = Path(unquote(request.args['dir'][0].decode('utf-8')))
@@ -208,5 +212,4 @@ class DirTreePage(RenderableResource):
                         pass
 
             l = {"totalCount": len(items), 'results': len(items), 'items': items}
-            return json.dumps(l).encode('utf-8')
-        return ""
+        return json.dumps(l).encode('utf-8')

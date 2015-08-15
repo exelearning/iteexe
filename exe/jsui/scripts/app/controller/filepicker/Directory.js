@@ -46,8 +46,19 @@ Ext.define('eXe.controller.filepicker.Directory', {
 	},
 	loadDirectory: function(selection, clear) {
         var dirtree = this.getDirTree(),
-            sep = '_RRR_', path;
+            sep = '_RRR_', path, root = eXe.app.config.user_root,
+            rootNode = dirtree.getRootNode();
 
+        if (eXe.app.config.server) {
+            rootNode.set('text', eXe.app.config.user);
+            rootNode.commit();
+        }
+
+        if (selection == root) {
+            selection = '/';
+        } else {
+            selection = selection.replace(root, '');
+        }
         if (clear === true)
             this.getPlaceField().setValue("");
         this.getPlaceField().focus();
@@ -59,7 +70,7 @@ Ext.define('eXe.controller.filepicker.Directory', {
 	    }
         dirtree.expandPath(path, "realtext", sep, function() {
             if (selection == "/")
-                dirtree.getSelectionModel().select(dirtree.getRootNode());
+                dirtree.getSelectionModel().select(rootNode);
             else {
                 dirtree.selectPath(path, "realtext", sep);
             }
@@ -67,7 +78,7 @@ Ext.define('eXe.controller.filepicker.Directory', {
 	},
 	
 	onDirSelect: function( selModel, selection ) {
-        var dir = selection[0].data.id == "root"? "/": selection[0].data.id;
+        var dir = selection[0].data.id == "root"? eXe.app.config.user_root: selection[0].data.id;
 
         if (!selection[0].data.icon)
             this.application.fireEvent('dirchange', dir);

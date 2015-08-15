@@ -27,10 +27,13 @@ class User(object):
         self.name = name
         self.picture = picture
         self.packageStore = PackageStore()
-        configPath = configPath / name
+        configPath = configPath.abspath() / name
+        self.root = configPath / 'fs'
         self.initialConfig = True
         if configPath.exists():
             self.initialConfig = False
         self.config = UserConfig(configPath)
         self.ideviceStore = IdeviceStore(self.config)
         self.ideviceStore.load()
+        if not self.root.exists():
+            self.root.mkdir()

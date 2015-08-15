@@ -247,7 +247,8 @@ class MainPage(RenderableLivePage):
             'pathSep': os.path.sep,
             'server': G.application.server,
             'user': session.user.name,
-            'user_picture': session.user.picture
+            'user_picture': session.user.picture,
+            'user_root': session.user.root
         }
         G.application.preferencesShowed = True
         G.application.loadErrors = []

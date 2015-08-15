@@ -29,6 +29,7 @@ class UserConfig(LinuxConfig):
     def _overrideDefaultVals(self):
         super(UserConfig, self)._overrideDefaultVals()
         self.configDir = self.path
+        self.lastDir = self.configDir / 'fs'
 
     def _getConfigPathOptions(self):
         return [self.configDir/'exe.conf']
