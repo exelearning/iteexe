@@ -107,8 +107,6 @@ class DirTreePage(RenderableResource):
         if "sendWhat" in request.args:
             if request.args['sendWhat'][0] == 'dirs':
                 pathdir = Path(unquote(request.args['node'][0].decode('utf-8')))
-                if pathdir == '/':
-                    pathdir = rootdir
                 l = []
                 if pathdir == '/' and sys.platform[:3] == "win":
                     for d in get_drives():
@@ -121,6 +119,8 @@ class DirTreePage(RenderableResource):
                         except:
                             pass
                 else:
+                    if not pathdir.startswith(rootdir):
+                        pathdir = rootdir
                     for d in pathdir.dirs():
                         try:
                             if not d.name.startswith('.') or sys.platform[:3] == "win":
@@ -142,6 +142,8 @@ class DirTreePage(RenderableResource):
                                       "is_readable": is_readable(d),
                                       "is_writable": is_writable(d)})
                 else:
+                    if not pathdir.startswith(rootdir):
+                        pathdir = rootdir
                     parent = pathdir.parent
                     if parent == rootdir.parent:
                         realname = rootdir.abspath()
@@ -186,6 +188,8 @@ class DirTreePage(RenderableResource):
                 for d in get_drives():
                     items.append({"name": d, "realname": d + '\\', "size": 0, "type": 'directory', "modified": 0})
             else:
+                if not pathdir.startswith(rootdir):
+                    pathdir = rootdir
                 parent = pathdir.parent
                 if (parent == pathdir):
                     realname = '/'
