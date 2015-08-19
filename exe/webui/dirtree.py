@@ -101,7 +101,7 @@ class DirTreePage(RenderableResource):
         return Resource.getChild(self, path, request)
 
     def render(self, request):
-        l = {}
+        l = {'success': True}
         session = request.getSession()
         rootdir = session.user.root
         if "sendWhat" in request.args:
@@ -190,11 +190,6 @@ class DirTreePage(RenderableResource):
             else:
                 if not pathdir.startswith(rootdir):
                     pathdir = rootdir
-                parent = pathdir.parent
-                if (parent == pathdir):
-                    realname = '/'
-                else:
-                    realname = parent.abspath()
                 for d in pathdir.listdir():
                     try:
                         if d.isdir():
@@ -216,4 +211,19 @@ class DirTreePage(RenderableResource):
                         pass
 
             l = {"totalCount": len(items), 'results': len(items), 'items': items}
+        elif "upload_filename" in request.args:
+            pathdir = Path(request.args["upload_currentdir"][0]).abspath()
+            if not pathdir.startswith(rootdir):
+                pathdir = rootdir
+            filename = pathdir / Path(request.args["upload_filename"][0])
+            filename.write_bytes(request.args["upload_content"][0])
+        elif "remove" in request.args:
+            for path in request.args["remove"]:
+                path = Path(path).abspath()
+                if path.startswith(rootdir):
+                    if path.exists():
+                        if path.isdir():
+                            path.rmtree()
+                        if path.isfile():
+                            path.remove()
         return json.dumps(l).encode('utf-8')

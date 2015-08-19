@@ -88,6 +88,39 @@ Ext.define('eXe.view.filepicker.FilePicker', {
                 buttons[2] = { xtype: 'button', text: _('Select Folder'), itemId: 'filepicker_open' };
                 top_buttons[eXe.app.config.locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
         		break;
+        	case eXe.view.filepicker.FilePicker.modeOpen:
+        		if(eXe.app.config.server) {
+					top_buttons[eXe.app.config.locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
+        			top_buttons[eXe.app.config.locationButtons.length + 2] =
+        			{
+    					xtype: "form",
+    					layout: {
+    						type: "hbox"
+    					},
+                        border: false,
+    					items: [
+                            {
+                                xtype: 'filefield',
+                                name: 'upload_content',
+                                itemId: "upload_filefield",
+                                buttonOnly: true,
+                                hideLabel: true,
+                                buttonText: _('Upload File')
+                            },
+                            {
+                                xtype: "hidden",
+                                name: "upload_filename",
+                                itemId: "upload_filename"
+                            },
+                            {
+                                xtype: "hidden",
+                                name: "upload_currentdir",
+                                itemId: "upload_currentdir"
+                            }
+                        ]
+        			};
+        		}
+                break;
         }
         
         Ext.applyIf(me, {
