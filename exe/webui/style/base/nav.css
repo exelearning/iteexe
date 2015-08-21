@@ -66,6 +66,7 @@ body{padding:0;text-align:center}
 }
 
 @media all and (max-width: 700px) {
+	#headerContent{font-size:.7em;padding-right:0;white-space:normal}
 	#topPagination{display:none}
 	#siteNav{float:none;width:100%;padding:0}
 	#siteNav{line-height:1.5em;margin-bottom:15px}
