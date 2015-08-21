@@ -20,7 +20,7 @@ $exeFX = {
 			else if (c.indexOf(" "+k+"-tabs")!=-1) $exeFX.tabs.init(this,i);
 			else if (c.indexOf(" "+k+"-paginated")!=-1) $exeFX.paginated.init(this,i);
 			else if (c.indexOf(" "+k+"-carousel")!=-1) $exeFX.carousel.init(this,i);
-			else if (c.indexOf(" "+k+"-timeline")!=-1) {
+			else if (c.indexOf(" "+k+"-timeline")!=-1 && document.body.className.indexOf("exe-epub3")!=0) {
 				$exeFX.timeline.init(this,i);
 				hasTimeLines = true;
 			}
@@ -43,13 +43,17 @@ $exeFX = {
 		c += ")";
 		return c;		
 	},
+	removeXMLNS : function(t) {
+		if (document.body.className.indexOf("exe-epub3")==0) {
+			var xmlnsString = 'h2 xmlns="http://www.w3.org/1999/xhtml"';
+			var xmlnsStringExp = new RegExp(xmlnsString, 'g');
+			t = t.replace(xmlnsStringExp, 'h2');
+		}
+		return t;
+	},
 	rftTitles : function(t) {
 		// Remove xmlns="http://www.w3.org/1999/xhtml"
-		if (document.body.className.indexOf("exe-epub3")==0) {
-			var xmlnsString = ' xmlns="http://www.w3.org/1999/xhtml"';
-			var xmlnsStringExp = new RegExp(xmlnsString, 'g');
-			t = t.replace(xmlnsStringExp, '');	
-		}		
+		t = $exeFX.removeXMLNS(t);
 		// Replace <h2 title=""></h2> by <h2><span title=""></span></h2>. That's how TinyMCE inserts the title when using the Insert/Edit Attributes option
 		var s = t.split('<'+$exeFX.h2+' title="');
 		var n ="";
