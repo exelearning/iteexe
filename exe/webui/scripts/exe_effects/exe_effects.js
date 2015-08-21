@@ -44,9 +44,16 @@ $exeFX = {
 		return c;		
 	},
 	rftTitles : function(t) {
+		// Remove xmlns="http://www.w3.org/1999/xhtml"
+		if (document.body.className.indexOf("exe-epub3")==0) {
+			var xmlnsString = ' xmlns="http://www.w3.org/1999/xhtml"';
+			var xmlnsStringExp = new RegExp(xmlnsString, 'g');
+			t = t.replace(xmlnsStringExp, '');	
+		}		
 		// Replace <h2 title=""></h2> by <h2><span title=""></span></h2>. That's how TinyMCE inserts the title when using the Insert/Edit Attributes option
 		var s = t.split('<'+$exeFX.h2+' title="');
 		var n ="";
+		if (s.length<2) return t;
 		for (var i=0;i<s.length;i++) {
 		  n += s[i];
 		  if (i<(s.length-1))n += '<'+$exeFX.h2+'><span title="';
@@ -274,7 +281,21 @@ $exeFX = {
 			var ul = '<ul class="fx-tabs">\n';
 			$(".fx-tab-content",e).each(function(y){
 				var h2 = $("H2",this).eq(0);
-				var t = h2.text();
+				
+				// Default tab title
+				var t = y+1;
+				if (h2.length==0) {
+					// Can't getElementsByTagName("H2") in some ePub readers (xmlns="http://www.w3.org/1999/xhtml"...)
+					var tit = this.innerHTML.split(">");
+					if (tit.length>1) tit = tit[1];
+					tit = tit.split("<");
+					if (tit.length>1) tit = tit[0];
+					if (tit.length>0) t = tit;
+				} else {
+					// Normal behavior
+					t = h2.text();
+				}
+				
 				var hT = $("SPAN",h2);
 				if (hT.length==1) {
 					hT = hT.eq(0).attr("title");
