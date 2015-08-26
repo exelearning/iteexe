@@ -243,6 +243,11 @@ table[align="center"] {
 .tamano{font-size: xx-small;vertical-align: middle;}
 
 /*Credenciales CC*/
+#packageLicense.cc {
+	background: none;
+	padding: 0;
+	line-height: inherit;
+}
 .cc-by {
 	background: url('cc-by.png') no-repeat center ;
 	padding: 5px 36px;
