@@ -247,7 +247,6 @@ $exeFX = {
 			var h2 = $("H2",e);
 			var h3 = $("H3",e);
 			if (h2.length>0 && h3.length>0) $exeFX.timeline.rft(e,i);
-			
 		}
 	},
 	tabs : {
