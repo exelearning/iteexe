@@ -23,7 +23,7 @@ a{color:#771F35}
 .iDevice_inner a{color:#B85F75}
 .score.js-feedback{margin-bottom:1em}
 
-#header,#emptyHeader,#nodeDecoration{padding:0 20px;height:auto!important;height:112px;min-height:112px;line-height:112px;font-size:1.8em;font-weight:700;background-color:#5ab493;border:10px solid #468770}
+#header,#emptyHeader,#nodeDecoration{padding:28px 20px;height:auto!important;height:56px;min-height:56px;line-height:56px;font-size:1.8em;font-weight:700;background-color:#5ab493;border:10px solid #468770}
 #headerContent{color:#cff0e5}
 #header h1,#nodeDecoration h1{margin:0;font-size:1em;text-align:center;color:#cff0e5}
 #nodeDecoration{margin-bottom:15px} /* Single page */
@@ -34,8 +34,8 @@ a{color:#771F35}
 
 /* iDevices */
 .iDevice{margin:20px 0 30px 0}
-.iDevice_header{letter-spacing:.5px;height:60px;line-height:60px;border:#60c29e solid;border-width:8px 8px 0 8px;padding-left:13px;border-top-left-radius:15px;border-top-right-radius:15px;background:#7ca2d7 url(_style_idevice_header.gif) repeat-x 0 bottom}
-.iDeviceTitle{height:60px;font-size:1.3em;vertical-align:bottom;top:auto;display:inline-block;font-weight:700;padding:0 20px 0 130px;background-repeat:no-repeat;background-position:0 50%;margin:0;color:#FFF}
+.iDevice_header{letter-spacing:.5px;height:auto!important;height:60px;min-height:60px;border:#60c29e solid;border-width:8px 8px 0 8px;padding-left:13px;border-top-left-radius:15px;border-top-right-radius:15px;background:#7ca2d7 url(_style_idevice_header.gif) repeat-x 0 bottom;position:static}
+.iDeviceTitle{height:auto!important;height:30px;min-height:30px;line-height:30px;font-size:1.3em;vertical-align:bottom;top:auto;display:inline-block;font-weight:700;padding:15px 45px 15px 130px;background-repeat:no-repeat;background-position:0 50%;margin:0;color:#FFF}
 .iDevice_inner{padding:10px 20px 20px 20px;border:8px solid #60c29e;border-bottom-right-radius:15px;border-bottom-left-radius:15px;border-top:0;background-color:#f9fffc}
 
 /* Clearfix */
@@ -44,7 +44,7 @@ a{color:#771F35}
 
 /* Hide/Show iDevice */
 .toggle-idevice{display:block;margin:0;text-align:right}
-.iDevice_header .toggle-idevice{float:right;margin-top:16px;line-height:25px}
+.iDevice_header .toggle-idevice{line-height:25px;position:absolute;top:53px;right:8px}
 .toggle-idevice a{display:inline-block;width:25px;height:25px;background:url(_style_icons.png) no-repeat 0 -200px;outline:none}
 .toggle-em0 a{background-position:0 -300px}
 .toggle-idevice .show-idevice{background-position:-100px -200px}
