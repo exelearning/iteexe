@@ -10,7 +10,7 @@ body{padding:15px 20px}
 #content{width:100%;position:relative;padding-bottom:21px;min-width:380px;}
 #main-wrapper{padding-left:250px;background:none}
 #main{width:100%}
-#header,#emptyHeader{border:none;background:none;padding:0 200px 0 0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+#header,#emptyHeader{border:none;background:none;padding:.75em 200px .75em 0}
 #nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.3em 15px;border-top:1px solid #B3B3B3;border-bottom:1px solid #B3B3B3}
 /* Navigation */
@@ -51,7 +51,6 @@ html[xmlns] #content{display:block}
 
 /* Responsive design */
 @media all and (max-width: 980px) {
-	#main .iDeviceTitle{max-width:85%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline-block;margin:0}
 	#main-wrapper,#siteFooter{padding-left:220px}
 	#siteNav{width:200px}
 }

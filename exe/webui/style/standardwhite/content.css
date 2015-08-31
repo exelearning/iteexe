@@ -10,13 +10,13 @@ html{padding:0}
 body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#000;background:#fafafa}
 a{color:#036}
 a:hover,a:focus{color:#3C5866}
-#header,#emptyHeader{background:#fafafa url(_standardwhite_title_bg.gif) repeat-x bottom;text-align:left;height:3em;padding-left:15px;font-size:1.5em;line-height:3em;border-bottom:1px solid #B3B3B3;border-top:1px solid #B3B3B3;text-shadow:1px 1px 1px #fff} /* Header is also in single page */
+#header,#emptyHeader{background:#fafafa url(_standardwhite_title_bg.gif) repeat-x bottom;text-align:left;height:auto!important;height:1.5em;min-height:1.5em;padding:.75em 15px;font-size:1.5em;border-bottom:1px solid #B3B3B3;border-top:1px solid #B3B3B3;text-shadow:1px 1px 1px #fff} /* Header is also in single page */
 #header h1{margin:0;font-size:1em}
 #nodeDecoration{text-align:left;margin-bottom:1.5em;border-bottom:1px solid #B3B3B3;border-top:1px solid #B3B3B3}
 #nodeTitle,.nodeTitle{background:#fafafa url(_standardwhite_title_bg.gif) repeat-x bottom;font-size:1.5em;margin:0;font-weight:bold;text-align:right;color:#4D4D4D;text-shadow:1px 1px 1px #fff;padding:.3em 15px} /* .nodeTitle when single page */
 .nodeTitle{padding:.1em 15px .6em 0;border-bottom:1px solid #B3B3B3;margin-top:1em;text-align:right}
 #main h2{font-size:1.4em}
-#main .iDeviceTitle{display:inline;font-weight:normal;font-size:1.4em}
+#main .iDeviceTitle{display:inline-block;font-weight:normal;font-size:1.4em}
 h3{font-size:1.25em}
 #main h4{font-size:1.2em}
 #main h5{font-size:1.1em}
@@ -25,7 +25,7 @@ h3{font-size:1.25em}
 
 /* iDevice icons */
 .iDevice_icon{height:48px;width:auto;margin-right:8px}
-.iDevice_header{background:url(icon_generic.gif) no-repeat 0 0;padding-left:56px}
+.iDevice_header{background:url(icon_generic.gif) no-repeat 0 0;padding-left:56px;position:relative}
 .activityIdevice .iDevice_header{background-image:url(icon_activity.gif)}
 .readingIdevice .iDevice_header{background-image:url(icon_reading.gif)}
 .ListaIdevice .iDevice_header,
@@ -40,7 +40,8 @@ h3{font-size:1.25em}
 .objectivesIdevice .iDevice_header{background-image:url(icon_objectives.gif)}
 .ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.gif)}
 
-.iDeviceTitle{font-size:1.3em;vertical-align:top;top:0;color:#3C5866;line-height:3em}
+.iDeviceTitle{vertical-align:top;top:0;color:#3C5866;height:auto!important;height:1.5em;min-height:1.5em;padding-right:40px}
+.iDeviceTitle{*display:inline;*line-height:3em}/* IE6, IE7 */
 .iDevice_content{overflow:auto}
 .iDevice_inner{padding:0 10px}
 .emphasis0 .iDevice_inner{padding:0}
@@ -60,7 +61,7 @@ li{list-style-position:outside}
 .feedbackbutton{background:#FFFDB1;margin-bottom:1em}
 /* Hide/Show iDevice */
 .toggle-idevice{margin:12px 0 0;text-align:right;display:block}
-.iDevice_header .toggle-idevice{float:right;padding-top:2px;margin:0}
+.iDevice_header .toggle-idevice{padding-top:2px;margin:0;position:absolute;top:0;right:0}
 .toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(_standardwhite_hide_show.png) no-repeat 0 -16px}
 .toggle-idevice .show-idevice{background-position:0 0}
 .toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}

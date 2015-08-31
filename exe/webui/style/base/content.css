@@ -1,6 +1,6 @@
 /* eXeLearning Style Designer Compatible Style */
 html{font-size:105%}
-body{font:100%/1.5 'Open Sans',Arial,Verdana,Helvetica,sans-serif;line-height:1.5em;padding:15px;margin:0;text-align:left}
+body{font:100%/1.5 'Open Sans',Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
 
 h2{font-size:1.3em}
 h3{font-size:1.2em}
@@ -9,18 +9,19 @@ h5{font-size:1em}
 p{margin:1em 0}
 .score.js-feedback{margin-bottom:1em}
 
-#header,#emptyHeader,#nodeDecoration{padding:0 20px;height:120px;font-size:1.6em;font-weight:300;border-style:1px;border-width:1px}
+#header,#emptyHeader,#nodeDecoration{padding:0 20px;height:auto!important;height:120px;min-height:120px;font-size:1.6em;font-weight:300;border-style:1px;border-width:1px}
 #headerContent{padding-top:70px}
-#header h1,#nodeDecoration h1{margin:0;font-size:1em;text-align:left}
+#header h1,#nodeDecoration h1{margin:-.5em 0 1em 0;font-size:1em;text-align:left}
 #nodeDecoration{margin-bottom:15px} /* Single page */
 
 .nodeDecoration h1{font-size:1.5em}
 
 /* iDevices */
 .iDevice{margin:20px 0 30px 0}
-.iDevice_header{letter-spacing:.5px;height:2.7em;line-height:2.7em}
+.iDevice_header{letter-spacing:.5px;padding:.5em 40px .5em 0;height:auto!important;height:1.7em;min-height:1.7em;position:relative}
 .iDeviceTitle{font-size:1.3em;vertical-align:bottom;top:auto;display:inline-block;font-weight:300;
 padding:0 10px 0 35px;background-repeat:no-repeat;background-position:0 50%;margin:0}
+.iDeviceTitle{*display:inline;*line-height:2em}/* IE6, IE7 */
 .iDevice_inner{padding:10px 20px;border-width:1px;border-style:solid;border-radius:5px}
 
 /* Clearfix */
@@ -29,7 +30,7 @@ padding:0 10px 0 35px;background-repeat:no-repeat;background-position:0 50%;marg
 
 /* Hide/Show iDevice */
 .toggle-idevice{display:block;margin:0;text-align:right}
-.iDevice_header .toggle-idevice{float:right;margin-top:14px;line-height:16px}
+.iDevice_header .toggle-idevice{position:absolute;top:14px;right:0}
 .toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(_style_icons.png) no-repeat -50px -50px;outline:none}
 .toggle-idevice .show-idevice{background-position:0 -50px}
 .toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
@@ -140,8 +141,10 @@ a{
 color:#2495ff;
 }
 #header,#emptyHeader,#nodeDecoration{
+height:auto!important;
 /*headerHeight*/
 height:120px;
+min-height:120px;
 /*headerBGColor*/
 background-color:#ffffff;border:1px solid /*headerBorderColor*/
 #dddddd;

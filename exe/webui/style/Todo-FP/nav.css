@@ -126,7 +126,7 @@ html[xmlns] #content{display:block}
 }
 
 @media all and (max-width: 780px) {
-	#header,#emptyHeader{background-position:-294px 0;padding:69px 10px 0 10px}
+	#header,#emptyHeader{background-position:-294px 0;padding:69px 10px 0 10px;font-size:1.3em}
 	#siteNav{width:100%;float:none;padding:0;background-image:none}
 	#siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
 	#main-wrapper,.no-nav #main-wrapper{padding:10px 10px 0 10px}

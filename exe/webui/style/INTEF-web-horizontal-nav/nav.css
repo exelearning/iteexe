@@ -50,7 +50,7 @@ body{padding:0 0 15px 0;text-align:center}
 #main-wrapper{padding:10px 20px 0 20px}
 #main{width:100%}
 #content{padding-bottom:11px}
-#header,#emptyHeader{height:39px;background:url(my_header.jpg) no-repeat 0 0;padding:69px 10px 0 10px;font-size:1.5em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+#header,#emptyHeader{height:39px;background:url(my_header.jpg) no-repeat 0 0;padding:69px 10px 0 10px;font-size:1.5em}
 #nodeTitle{font-size:1.5em}
 #main #nodeDecoration{background:none;padding:0;border:none}
 /* Menú desplegable */
@@ -119,7 +119,7 @@ html[xmlns] #content{display:block}
 	#siteNav .active{font-weight:bold;border-color:#0460B3}
 	#main-wrapper{padding:0 10px}
 	#header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px;height:49px;font-size:1em}
-	#nodeTitle{position:absolute;top:1px;left:10px;margin:20px 10px 0 0;font-size:1.4em}
+	#nodeTitle{margin:20px 10px 0 0;font-size:1.4em}
 	#header{text-align:right;padding-right:10px}
 	#bottomPagination{padding:0 10px}
 	#siteFooter{padding-left:10px}

@@ -72,7 +72,8 @@ h1#nodeTitle{font-weight:700;color:#1B4D3B}
 
 @media screen and (max-width: 980px) {
 	#main{padding:20px 30px 0 280px}
-	.iDeviceTitle {max-width:55%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+	#headerContent{font-size:.9em}	
+	.iDeviceTitle {max-width:55%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:1.1em}
 	#siteNav{width:250px;margin-right:30px}
 	.pagination a{margin-right:20px}
 	#bottomPagination .next{right:20px}

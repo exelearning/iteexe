@@ -10,7 +10,7 @@ html{padding:0}
 body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#444;background:#E0DFD8}
 a{color:#374990}
 a:hover,a:focus{color:#263264}
-#header,#emptyHeader{text-align:left;height:3em;padding-left:15px;font-size:1.5em;line-height:3em;text-shadow:1px 1px 1px #444;border-bottom:2px solid #E5E4E0;border-top:2px solid #E5E4E0;color:#fff} /* Header is also in single page */
+#header,#emptyHeader{text-align:left;height:auto!important;height:1.5em;min-height:1.5em;padding:.75em 15px;font-size:1.5em;text-shadow:1px 1px 1px #444;border-bottom:2px solid #E5E4E0;border-top:2px solid #E5E4E0;color:#fff} /* Header is also in single page */
 #header h1{margin:0;font-size:1em}
 #nodeDecoration{text-align:left;padding:1em 20px;margin-bottom:2em;background:#D9D9CE;text-shadow:1px 1px 1px #f9f9f9;border-bottom:2px solid #E5E4E0;border-top:2px solid #E5E4E0;color:#4D4D4D}
 #nodeTitle,.nodeTitle{font-size:1.5em;margin:0;font-weight:bold;text-align:right} /* .nodeTitle when single page */

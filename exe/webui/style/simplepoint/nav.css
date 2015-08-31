@@ -5,7 +5,7 @@ html,body{margin:0;padding:0;text-align:center;background:#FFF}
 #main-wrapper{padding:10px 20px 0 470px}
 .no-nav #main-wrapper{padding-left:20px}
 #main{width:100%}
-#header,#emptyHeader{border-top:none;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:200px;height:50px;line-height:50px;font-size:1.1em;letter-spacing:1px}
+#header,#emptyHeader{border-top:none;padding-right:200px;height:auto!important;height:50px;min-height:50px;line-height:50px;font-size:1.1em;letter-spacing:1px}
 #nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.1em 0 .6em 0;border-bottom:1px solid #f3f3f3}
 #siteFooter{position:fixed;bottom:0;width:100%}

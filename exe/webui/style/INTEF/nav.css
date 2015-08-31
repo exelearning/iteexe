@@ -46,7 +46,7 @@ body{padding:0 0 15px 0;text-align:center}
 .no-nav #main-wrapper{width:100%}
 .no-nav #main{padding-left:20px}
 .no-nav #nodeTitle{left:20px}
-#header,#emptyHeader{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 20px 0 20px;text-align:right;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+#header,#emptyHeader{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 20px 0 20px;text-align:right}
 #nodeTitle{position:absolute;top:55px;left:250px;font-size:1.6em;margin:20px 10px 0 0}
 #main #nodeDecoration{background:none;padding:0 10px;border:none}
 /* Menú */
@@ -126,7 +126,7 @@ html[xmlns] #content{display:block}
 	#main-wrapper{width:100%}    
 	#main,.no-nav #main{padding:0 10px}	
 	#header,#emptyHeader{background-position:0 -54px;padding:4px 10px 0 10px;font-size:1em}
-	#nodeTitle,.no-nav #nodeTitle{top:1px;left:10px;font-size:1.4em}
+	#nodeTitle,.no-nav #nodeTitle{font-size:1.4em;position:static;margin-left:-10px}
 	#header{text-align:right;padding-right:10px}
 	#siteFooter{padding:10px 10px 0 10px;text-align:center}
 	#bottomPagination{padding:0 10px}

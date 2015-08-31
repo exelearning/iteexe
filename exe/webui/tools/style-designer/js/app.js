@@ -751,7 +751,11 @@ var $app = {
 		// #header
 		if (headerHeight!="" || headerBGColor!="" || headerBGURL!="" || headerBorderColor!="") {
 			contentCSS+="#header,#emptyHeader,#nodeDecoration{";
-				if (headerHeight!="") contentCSS+="/*headerHeight*/height:"+headerHeight+"px;";
+				if (headerHeight!="") {
+					contentCSS+="height:auto!important;";
+					contentCSS+="/*headerHeight*/height:"+headerHeight+"px;";
+					contentCSS+="min-height:"+headerHeight+"px;";
+				}
 				if (headerBGColor!='') contentCSS+="/*headerBGColor*/background-color:#"+headerBGColor+";";
 				if (headerBGURL!='') {
 					if (headerBGURL.indexOf("http")!=0) headerBGURL = $app.stylePath+headerBGURL;

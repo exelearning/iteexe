@@ -58,3 +58,7 @@ li{list-style-position:outside}
 
 /* Effects */
 .exe-fx .fx-C2,.exe-fx .fx-C2 a,.fx-pagination a{background:#F7F7F7}
+
+@media all and (max-width: 600px) {
+	#main #nodeDecoration{background:none}	
+}

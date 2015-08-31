@@ -107,7 +107,8 @@ de la jerarquía de contenidos que crearemos con eXe */
 	line-height:30px;
 	border-bottom:3px solid #BD4949;
 	padding-top:1px;
-	padding-bottom:5px
+	padding-bottom:5px;
+	padding-right:80px;
 }
 
 #nodeDecoration{
