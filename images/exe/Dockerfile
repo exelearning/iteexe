@@ -8,6 +8,8 @@ RUN apt-get update && apt-get -yq install python-m2crypto python-isodate python-
 
 RUN apt-get update && apt-get -yq install python-beautifulsoup python-oauth2client python-googleapi
 
+RUN apt-get update && apt-get -yq install python-passlib
+
 RUN pip install dm.xmlsec.binding==1.3.2
 
 RUN mkdir /var/run/exe

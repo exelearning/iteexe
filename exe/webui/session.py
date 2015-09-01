@@ -17,6 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+from exe.engine.path import Path
 from twisted.web import server, resource
 from nevow import compy, appserver, inevow
 from nevow.i18n import languagesFactory
@@ -27,12 +28,13 @@ log = logging.getLogger(__name__)
 
 
 def getLocaleFromRequest(request):
+    locale = None
     acceptedLocales = languagesFactory(request)
     for locale in acceptedLocales:
         if locale in G.application.config.locales:
             break
 
-    return locale
+    return locale or 'en'
 
 
 compy.registerAdapter(appserver.OldResourceAdapter, resource.IResource, inevow.IResource)
@@ -46,7 +48,18 @@ class eXeRequest(appserver.NevowRequest):
         if not session.user:
             user = request.getUser()
             if user:
-                session.setUser(user)
+                try:
+                    from passlib.apache import HtpasswdFile
+
+                    htpasswd = Path(G.application.defaultConfig.configDir) / 'htpasswd'
+                    password = request.getPassword()
+                    htpasswd.bytes()
+                    ht = HtpasswdFile(htpasswd)
+                    if ht.verify(user, password):
+                        session.setUser(user)
+                except Exception as e:
+                    log.exception(e.message)
+                    pass
         if session.user:
             if session.user.initialConfig:
                 locale = getLocaleFromRequest(request)

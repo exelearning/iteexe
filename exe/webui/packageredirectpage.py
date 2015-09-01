@@ -23,11 +23,9 @@ anything it just redirects the user to a new package.
 """
 
 import logging
-import os
-from exe                      import globals as G
-from exe.webui.renderable     import RenderableResource
+from exe.webui.renderable import RenderableResource
 from exe.jsui.mainpage import MainPage
-from twisted.web import error
+from twisted.web import error, http
 
 log = logging.getLogger(__name__)
 
@@ -144,6 +142,9 @@ class PackageRedirectPage(RenderableResource):
         log.debug("render_GET" + repr(request.args))
         # Create new package
         session = request.getSession()
+        if not session.user:
+            request.setResponseCode(http.FORBIDDEN)
+            return ''
         package = session.packageStore.createPackage()
         self.bindNewPackage(package, session)
         log.info("Created a new package name="+ package.name)
