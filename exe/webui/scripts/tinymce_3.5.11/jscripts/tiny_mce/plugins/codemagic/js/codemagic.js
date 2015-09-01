@@ -1,7 +1,7 @@
 var the = {
     beautify_in_progress: false,
     coloring_active: true,
-    autocompletion_active: true,
+    autocompletion_active: false,
     wraptext_active: false
 }
 var hlLine = null;
@@ -72,6 +72,14 @@ function onLoadInit() {
     } else {
 	document.getElementById('wraptext').checked = false;
     }
+	
+	// The New eXeLearning
+	if (!the.coloring_active) {
+		document.getElementById("highlighting").checked = false;
+		the.autocompletion_active = false;
+		highlightingStatus = "off";
+	}
+	if (!the.autocompletion_active) document.getElementById("autocompletion").checked = false;
 
     // resize window to fit the textarea
     resizeInputs("htmlSource");
@@ -116,7 +124,7 @@ function deactivateCodeColoring() {
 
 function activateWrapText() {
     the.wraptext_active = true;
-
+    if (highlightingStatus=="off") return false; // The New eXeLearning
     var elm = document.getElementById("htmlSource").nextSibling;
     if (elm.className.indexOf("wrapText") == -1) {
         elm.className += ' wrapText';
@@ -125,7 +133,7 @@ function activateWrapText() {
 
 function deactivateWrapText() {
     the.wraptext_active = false;
-
+    if (highlightingStatus=="off") return false; // The New eXeLearning
     var elm = document.getElementById("htmlSource").nextSibling;
     var classes = elm.className.split(" ");
     var wrap = classes.indexOf("wrapText");
