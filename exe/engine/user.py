@@ -58,7 +58,7 @@ class Quota(object):
         if value:
             log.error('mkfs.ext3 command failed with exit value %d' % value)
         else:
-            cmd = '/bin/mount -o loop %s %s' % (datafile, self.path)
+            cmd = '/sbin/mount.fuseext2 %s %s' % (datafile, self.path)
             cmd = cmd.split()
             utils.getProcessValue(cmd[0], cmd[1:]).addCallback(self.check_mount)
 
