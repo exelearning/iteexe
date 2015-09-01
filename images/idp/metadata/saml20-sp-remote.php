@@ -36,15 +36,15 @@ MIIDYTCCAkmgAwIBAgIJAJiTLubDiBvxMA0GCSqGSIb3DQEBCwUAMEcxCzAJBgNVBAYTAkVTMQ0wCwYD
   'validate.authnrequest' => true,
   'saml20.sign.assertion' => true,
 );
-$metadata['https://localhost/saml/metadata/'] = array (
-  'entityid' => 'https://localhost/saml/metadata/',
+$metadata['https://front.local/saml/metadata/'] = array (
+  'entityid' => 'https://front.local/saml/metadata/',
   'metadata-set' => 'saml20-sp-remote',
   'AssertionConsumerService' =>
   array (
     0 =>
     array (
       'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
-      'Location' => 'https://localhost/saml/acs',
+      'Location' => 'https://front.local/saml/acs',
       'index' => 1,
     ),
   ),
@@ -53,7 +53,7 @@ $metadata['https://localhost/saml/metadata/'] = array (
     0 =>
     array (
       'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect',
-      'Location' => 'https://localhost/saml/sls',
+      'Location' => 'https://front.local/saml/sls',
     ),
   ),
   'NameIDFormat' => 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient',

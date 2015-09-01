@@ -362,6 +362,8 @@ class Config(object):
                 value = system.assumeMediaPlugins.strip().lower()
                 if value == "1" or value == "yes" or value == "true" or value == "on":
                     self.assumeMediaPlugins = True
+            if G.application.server:
+                self.quota = int(system.quota)
 
         # If the dataDir points to some other dir, fix it
         if not self.dataDir.isdir():

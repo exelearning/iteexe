@@ -2,13 +2,13 @@
     "strict": true,
     "debug": false,
     "sp": {
-        "entityId": "https://localhost/saml/metadata/",
+        "entityId": "https://front.local/saml/metadata/",
         "assertionConsumerService": {
-            "url": "https://localhost/saml/acs",
+            "url": "https://front.local/saml/acs",
             "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
         },
         "singleLogoutService": {
-            "url": "https://localhost/saml/sls",
+            "url": "https://front.local/saml/sls",
             "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
         },
         "NameIDFormat": "urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified",

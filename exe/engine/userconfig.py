@@ -19,6 +19,7 @@
 # ===========================================================================
 
 from exe.engine.linuxconfig import LinuxConfig
+from exe import globals
 
 
 class UserConfig(LinuxConfig):
@@ -30,6 +31,7 @@ class UserConfig(LinuxConfig):
         super(UserConfig, self)._overrideDefaultVals()
         self.configDir = self.path
         self.lastDir = self.configDir / 'fs'
+        self.quota = globals.application.defaultConfig.quota
 
     def _getConfigPathOptions(self):
         return [self.configDir/'exe.conf']

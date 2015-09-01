@@ -26,6 +26,6 @@ class UserStore(object):
         self.loaded = {}
 
     def getUser(self, name):
-        if not name in self.loaded:
+        if name not in self.loaded:
             self.loaded[name] = User(name, self.configPath)
         return self.loaded[name]

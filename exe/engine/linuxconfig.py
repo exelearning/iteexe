@@ -67,6 +67,8 @@ class LinuxConfig(Config):
         self.audioMediaConverter_mp3 = "/usr/bin/sox %(infile)s -t wav - | /usr/bin/lame -b 32 - %(outfile)s"
         self.ffmpegPath = "/usr/bin/ffmpeg"
 
+        self.quota = 0
+
     def _getConfigPathOptions(self):
         """
         Returns the best places for a linux config file
