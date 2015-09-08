@@ -1,0 +1,115 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>{#codemagic_dlg.code_title}</title>
+    <script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+    <script type="text/javascript" src="js/codemirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="js/codemirror/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="js/codemirror/mode/javascript/javascript.js"></script>
+    <script type="text/javascript" src="js/codemirror/mode/css/css.js"></script>
+    <script type="text/javascript" src="js/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script type="text/javascript" src="js/codemirror/addon/search/search.js"></script>
+    <script type="text/javascript" src="js/codemirror/addon/search/searchcursor.js"></script>
+    <script type="text/javascript" src="js/codemirror/addon/dialog/dialog.js"></script>
+    <script type="text/javascript" src="js/codemirror/addon/edit/closetag.js"></script>
+    <script type="text/javascript" src="js/codemirror/addon/edit/matchtags.js"></script>
+    <script type="text/javascript" src="js/codemirror/addon/fold/foldcode.js"></script>
+    <script type="text/javascript" src="js/codemirror/addon/fold/foldgutter.js"></script>
+    <script type="text/javascript" src="js/codemirror/addon/fold/xml-fold.js"></script>
+    <script type="text/javascript" src="js/codemirror/addon/fold/comment-fold.js"></script>
+    <script type="text/javascript" src="js/codemirror/addon/fold/brace-fold.js"></script>
+    <script type="text/javascript" src="js/codemagic.js"></script>
+    <link href="js/codemirror/lib/codemirror.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/addon/dialog/dialog.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/addon/hint/show-hint.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/addon/fold/foldgutter.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/3024-day.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/3024-night.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/ambiance.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/base16-dark.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/base16-light.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/blackboard.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/cobalt.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/eclipse.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/elegant.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/erlang-dark.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/lesser-dark.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/mbo.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/midnight.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/monokai.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/neat.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/night.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/paraiso-dark.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/paraiso-light.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/rubyblue.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/solarized.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/the-matrix.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/tomorrow-night-eighties.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/twilight.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/vibrant-ink.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/xq-dark.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/codemirror/theme/xq-light.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+
+<body onresize="resize();" style="display:none; overflow: hidden;">
+    <form name="source" onsubmit="save(); return false;" action="#">
+
+        <div id="headerContainer">
+            <div style="float: left" class="title" id="headTitle">
+                <label for="htmlSource">{#codemagic_dlg.code_label}</label>
+            </div>
+            <div id="editorOptions" style="float: right">
+                <label class="nowrap" style="margin-right:4em;">
+                    <input id="toggleHighlight" type="checkbox" onclick="toggle('highlight', this);" checked="checked" /> {#codemagic_dlg.toggle_highlight}</label>
+                <label class="nowrap" style="margin-right:4em;">
+                    <input id="toggleWrap" type="checkbox" onclick="toggle('wrap', this);" checked="checked" /> {#codemagic_dlg.toggle_wraptext}</label>
+                <label class="nowrap" style="margin-right:4em;">
+                    <input id="toggleAutoclose" type="checkbox" onclick="toggle('autoclosetags', this);" checked="checked" /> {#codemagic_dlg.toggle_autoclosetags}</label>
+                <label><span class="nowrap">{#codemagic_dlg.theme_select}:</span> <select id="themeselect" onchange="toggle('theme', this);">
+                    <option>default</option>
+                    <!-- The New eXeLearning <option>3024-day</option>-->
+                    <!-- The New eXeLearning <option>3024-night</option>-->
+                    <option>ambiance</option>
+                    <!-- The New eXeLearning <option>base16-dark</option>-->
+                    <!-- The New eXeLearning <option>base16-light</option>-->
+                    <option>blackboard</option>
+                    <option>cobalt</option>
+                    <!-- The New eXeLearning <option>eclipse</option>-->
+                    <!-- The New eXeLearning <option>elegant</option>-->
+                    <option>erlang-dark</option>
+                    <option>lesser-dark</option>
+                    <!-- The New eXeLearning <option>mbo</option>-->
+                    <!-- The New eXeLearning <option>midnight</option>-->
+                    <option>monokai</option>
+                    <!-- The New eXeLearning <option>neat</option>-->
+                    <option>night</option>
+                    <!-- The New eXeLearning <option>paraiso-dark</option>-->
+                    <!-- The New eXeLearning <option>paraiso-light</option>-->
+                    <option>rubyblue</option>
+                    <option>solarized</option>
+                    <!-- The New eXeLearning <option>the-matrix</option>-->
+                    <!-- The New eXeLearning <option>tomorrow-night-eighties</option>-->
+                    <option>twilight</option>
+                    <option>vibrant-ink</option>
+                    <option>xq-dark</option>
+                    <option>xq-light</option>
+                </select></label>
+            </div>
+        </div>
+
+        <div style="clear: both;"></div>
+        
+        <textarea name="htmlSource" id="htmlSource" style="width:100%;height:20em;" class="htmlSource"></textarea>
+
+        <div class="mceActionPanel" id="mceActionPanel">
+            <p style="margin-top:0;" id="searchKeys"><strong>{#codemagic_dlg.search}</strong>: Ctrl-F / Cmd-F, <strong>{#codemagic_dlg.find_next}</strong>: Ctrl-G / Cmd-G, <strong>{#codemagic_dlg.find_previous}</strong>: Shift-Ctrl-G / Shift-Cmd-G<br />
+            <strong>{#codemagic_dlg.replace}</strong>: Shift-Ctrl-F / Cmd-Option-F, <strong>{#codemagic_dlg.replace_all}</strong>: Shift-Ctrl-R / Shift-Cmd-Option-F
+            <!-- The New eXeLearning <br /><strong>Match tag</strong>: Ctrl-J, <strong>Code (un)fold</strong>: Ctrl-Q --></p>
+            <input type="submit" role="button" name="insert" value="{#update}" id="insert" />
+            <input type="button" role="button" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" id="cancel" />
+        </div>
+    </form>
+</body>
+
+</html>
