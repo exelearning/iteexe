@@ -9,6 +9,8 @@ var myTheme = {
 		},1000);
 		var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this)" class="hide-nav" id="toggle-nav" title="'+$exe_i18n.hide+'"><span>'+$exe_i18n.menu+'</span></a></p>');
 		$("#siteNav").before(l);
+		this.addNavArrows();
+		this.bigInputs();		
 		var url = window.location.href;
 		url = url.split("?");
 		if (url.length>1){
@@ -17,8 +19,6 @@ var myTheme = {
 				return false;
 			}
 		}
-		this.addNavArrows();
-		this.bigInputs();
 		myTheme.setNavHeight();
 		// We execute this more than once because sometimes the height changes because of the videos, etc.
 		setTimeout(function(){
