@@ -45,6 +45,7 @@ body{padding:0;text-align:center}
 /* Hide/Show/Skip navigation */
 #nav-toggler{margin:0;position:absolute;top:20px;left:20px;font-size:.95em}
 #nav-toggler a,#skipNav a{padding:5px 10px;border-radius:5px}
+#nav-toggler a{display:block}
 #nav-toggler a:hover{text-decoration:none}
 #skipNav{z-index:100px;padding-top:15px;text-align:center}
 
@@ -78,6 +79,12 @@ body{padding:0;text-align:center}
 	#nav-toggler{position:relative;top:0;left:0;margin:20px 19px;text-align:center}
 	#nav-toggler a{width:100%;display:block;padding:8px 0}
 	#siteNav{border-top:1px solid}
+}
+
+@media print{
+	#siteNav,#nav-toggler,.noprt,.toggle-idevice{display:none}
+	#main{padding:20px 20px 0 20px}
+	body #content{background:#FFF}
 }
 
 /* eXeLearning Style Designer */

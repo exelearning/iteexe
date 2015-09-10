@@ -7,8 +7,9 @@ var myTheme = {
 				myTheme.reset();
 			});
 		},1000);
-		var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this)" class="hide-nav" id="toggle-nav" title="'+$exe_i18n.hide+'"><span>'+$exe_i18n.menu+'</span></a></p>');
+		var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this);return false" class="hide-nav" id="toggle-nav" title="'+$exe_i18n.hide+'"><span>'+$exe_i18n.menu+'</span></a></p>');
 		$("#siteNav").before(l);
+		$("#topPagination a").eq(0).before('<a href="#" onclick="myTheme.print();return false" title="'+$exe_i18n.print+'" class="print-page"><span>'+$exe_i18n.print+'</span></a> ');
 		this.addNavArrows();
 		this.bigInputs();		
 		var url = window.location.href;
@@ -27,6 +28,19 @@ var myTheme = {
 		$(window).load(function(){
 			myTheme.setNavHeight();
 		});
+	},
+	print : function(){
+		if (typeof(this.hasPrinted)=='undefined') {
+			$("IFRAME").each(function(){
+				var s = this.src;
+				var d = window.location.protocol+"://"
+				if (s.indexOf(d)!=0) {
+					$(this).addClass("external-iframe").before("<span class='external-iframe-src' style='display:none'>"+this.src+"</span>");
+					myTheme.hasPrinted = true;
+				}
+			});
+		}
+		window.print();
 	},
 	isMobile : function(){
 		try {

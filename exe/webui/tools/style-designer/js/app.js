@@ -683,10 +683,9 @@ var $app = {
 			}
 			var icon = $app.stylePath+'_style_icons'+iconsColor+'.png';
 			navCSS += '/*useNavigationIcons*/'+iconColorComment+'.pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0;}\
-.pagination a{display:block;float:left;width:32px;height:32px;padding:0;background:url('+icon+') no-repeat 0 0;}\
-.pagination a:hover,.pagination a:focus{background:url('+icon+') no-repeat 0 0;}\
-.pagination .next{background-position:-50px 0;}\
-.pagination .next:hover,.pagination .next:focus{background-position:-50px 0;}\
+.pagination a,.pagination a:hover,.pagination a:focus{display:block;float:left;width:32px;height:32px;padding:0;background:url('+icon+') no-repeat 0 0;}\
+.pagination .next,.pagination .next:hover,.pagination .next:focus{background-position:-50px 0;}\
+.pagination .print-page,.pagination .print-page:hover,.pagination .print-page:focus{background-position:-200px 0;}\
 #bottomPagination{height:72px;position:relative;overflow:hidden}\
 #bottomPagination a{position:absolute;top:20px;right:74px;margin:0;}\
 #bottomPagination .next{right:20px;}\
