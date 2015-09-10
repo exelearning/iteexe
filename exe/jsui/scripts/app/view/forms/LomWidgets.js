@@ -210,6 +210,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	        if (storeName == 'roleValues' && id.indexOf('metaMetadata') !== -1)
 	        	storeName = 'roleMetaValues';
 		    if (/^(lom|lomes)+_classification[0-9]*/.exec(id)){
+				combo.item.forceSelection = !optional;
 		    	if (/_source_string1$/.exec(id)){
 		    		combo.item.listeners = {
 			            	 scope: this,
@@ -234,10 +235,18 @@ Ext.define('eXe.view.forms.LomWidgets', {
 			                'change': this.changePurpose
 			           };
 		    	}
+			} else {
+				combo.item.forceSelection = true;
+				combo.item.listeners = {
+					'change': function(me, newValue) {
+						if (newValue === null) {
+							me.setValue('');
+						}
+					}
+		 	    };
 			}
 		    combo.item.xtype = 'combobox';
 		    combo.item.store = Ext.ClassManager.getByAlias(ids[0]).vocab[storeName];
-            combo.item.forceSelection = !optional;
             combo.item.queryMode = 'local';
 		    return combo;
 		},
