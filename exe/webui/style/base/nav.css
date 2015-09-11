@@ -84,8 +84,9 @@ body{padding:0;text-align:center}
 
 @media print{
 	#siteNav,#nav-toggler,.noprt,.toggle-idevice{display:none}
-	#main{padding:20px 20px 0 20px}
+	#main{padding:20px 0}
 	body #content{background:#FFF}
+	#headerContent{white-space:normal;text-overflow:normal;padding-right:0;font-weight:bold}
 }
 
 /* eXeLearning Style Designer */

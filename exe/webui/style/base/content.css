@@ -91,14 +91,17 @@ background:#ededed;
 }
 
 @media print {
+    div.node{page-break-after:auto} /* base.css */
+    #main{margin-left:0} /* base.css */
+    .iDevice{margin-bottom:20px}
 	html body{background:#fff;color:#000;font-size:11pt}
 	@page{margin:2cm}
-	.iDevice a{font-weight: bolder;text-decoration:none}
-	.iDevice a[href^=http]:after{content:" <" attr(href) "> "}
+	a{font-weight:bolder;text-decoration:none}
+	a[href^=http]:after{content:" <" attr(href) "> "}
 	.external-iframe{display:none}
 	.external-iframe-src{display:block!important;margin:2em auto;font-size:.95em}
 	#main .iDeviceTitle{background:none;padding-left:0}
-	body #header,body #emptyHeader,body #nodeDecoration{height:auto!important;min-height:0;border:none}
+	body #header,body #emptyHeader,body #nodeDecoration{height:auto!important;min-height:0;border:none;padding:0}
 }
 
 /* eXeLearning Style Designer */
