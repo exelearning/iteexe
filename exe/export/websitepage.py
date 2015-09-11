@@ -110,7 +110,9 @@ class WebsitePage(Page):
         html += '<meta name="generator" content="eXeLearning '+release+' - exelearning.net" />'+lb
         if self.node.id=='0':
             if self.node.package.description!="":
-                html += '<meta name="description" content="'+self.node.package.description+'" />'+lb
+                desc = self.node.package.description
+                desc = desc.replace('"', '&quot;')
+                html += '<meta name="description" content="'+desc+'" />'+lb
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         style = G.application.config.styleStore.getStyle(self.node.package.style)

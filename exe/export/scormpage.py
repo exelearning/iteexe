@@ -80,7 +80,9 @@ class ScormPage(Page):
         html += '<meta name="generator" content="eXeLearning '+release+' - exelearning.net" />'+lb
         if self.node.id=='0':
             if self.node.package.description!="":
-                html += '<meta name="description" content="'+self.node.package.description+'" />'+lb
+                desc = self.node.package.description
+                desc = desc.replace('"', '&quot;')            
+                html += '<meta name="description" content="'+desc+'" />'+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
         if common.hasWikipediaIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb

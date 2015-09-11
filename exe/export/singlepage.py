@@ -178,7 +178,9 @@ class SinglePage(Page):
         html += common.getLicenseMetadata(self.node.package.license)
         html += '<meta name="generator" content="eXeLearning '+release+' - exelearning.net" />'+lb
         if self.node.package.description!="":
-            html += '<meta name="description" content="'+self.node.package.description+'" />'+lb
+            desc = self.node.package.description
+            desc = desc.replace('"', '&quot;')        
+            html += '<meta name="description" content="'+desc+'" />'+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
         if hasWikipedia:
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
