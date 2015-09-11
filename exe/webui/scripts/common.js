@@ -1,40 +1,3 @@
-function playAndReset(e) {
-    if (e.paused == true && e.currentTime == 0) {
-        try {
-            e.play()
-        } catch (t) {}
-    } else {
-        try {
-            e.pause();
-            e.addEventListener("seeked", function() {
-                e.play()
-            }, true);
-            e.currentTime = 0
-        } catch (n) {}
-    }
-}
-
-function playPositiveFeedbackDefault() {
-    var e = Math.floor(Math.random() * 3);
-    var t = document.getElementById("exesfx_good" + e);
-    playAndReset(t)
-}
-
-function playNegativeFeedbackDefault() {
-    var e = document.getElementById("exesfx_wrong");
-    playAndReset(e)
-}
-
-function doTouchScreenDetect() {
-    if (touchScreenDetectDone == true) {
-        return
-    }
-    var e = navigator.userAgent;
-    if (e.indexOf("Android") != -1) {
-        exe_isTouchScreenDev = true
-    }
-}
-
 function getFeedback(e, t, n, r) {
     var i, s;
     if (r == "truefalse") {
@@ -693,9 +656,7 @@ function toggleClozelangFeedback(e) {
         toggleElementVisible(n)
     }
 }
-var exe_isTouchScreenDev = false;
-var touchScreenDetectDone = false;
-doTouchScreenDetect();
+
 NOT_ATTEMPTED = 0;
 WRONG = 1;
 CORRECT = 2;

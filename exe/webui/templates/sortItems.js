@@ -1,3 +1,43 @@
+// Before in common.js
+function playAndReset(e) {
+    if (e.paused == true && e.currentTime == 0) {
+        try {
+            e.play()
+        } catch (t) {}
+    } else {
+        try {
+            e.pause();
+            e.addEventListener("seeked", function() {
+                e.play()
+            }, true);
+            e.currentTime = 0
+        } catch (n) {}
+    }
+}
+
+function playPositiveFeedbackDefault() {
+    var e = Math.floor(Math.random() * 3);
+    var t = document.getElementById("exesfx_good" + e);
+    playAndReset(t)
+}
+
+function playNegativeFeedbackDefault() {
+    var e = document.getElementById("exesfx_wrong");
+    playAndReset(e)
+}
+var exe_isTouchScreenDev = false;
+var touchScreenDetectDone = false;
+function doTouchScreenDetect() {
+    if (touchScreenDetectDone == true) {
+        return
+    }
+    var e = navigator.userAgent;
+    if (e.indexOf("Android") != -1) {
+        exe_isTouchScreenDev = true
+    }
+}
+doTouchScreenDetect();
+// / Before in common.js
 
 //if this variable is set then we will not check the text value to automatically mark something correct
 // for sorting e.g. B-O-B

@@ -1,3 +1,19 @@
+// Before in common.js
+var exe_isTouchScreenDev = false;
+var touchScreenDetectDone = false;
+function doTouchScreenDetect() {
+    if (touchScreenDetectDone == true) {
+        return
+    }
+    var e = navigator.userAgent;
+    if (e.indexOf("Android") != -1) {
+        exe_isTouchScreenDev = true
+    }
+}
+doTouchScreenDetect();
+// / Before in common.js
+
+
 /*
 
 Place the Objects supporting javascript
