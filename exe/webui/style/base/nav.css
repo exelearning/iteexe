@@ -9,8 +9,9 @@ body{padding:0;text-align:center}
 
 #header,#emptyHeader{border-top-width:0;border-right-width:0;border-left-width:0}
 #headerContent{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:230px;min-height:1.1em}
-#nodeDecoration{background:none;padding:0;border:none;margin:20px 0;height:auto;font-size:1.6em}
+#nodeDecoration{background:none;padding:0;border:none;margin:20px 0;height:auto;min-height:0}
 #nodeTitle{font-weight:300}
+.iDevice_wrapper{margin-top:-10px}
 
 /* Menú */
 #siteNav{width:280px;float:left;margin-right:40px;margin-bottom:40px}
