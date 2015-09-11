@@ -1,79 +1,3 @@
-function exeWriteSFXAudioTags() {
-    if (addedAudioTags == false) {
-        if (audioTagInterval == null) {
-            audioTagInterval = setInterval("exeWriteSFXAudioTags()", 30)
-        }
-        if (document.body != null) {
-            var e = 0;
-            clearInterval(audioTagInterval);
-            audioTagInterval = null;
-            addedAudioTags = true;
-            var t = makeSoundDOMElements();
-            var n = 0;
-            for (var r = 0; r < t.length; r++) {
-                document.body.appendChild(t[r])
-            }
-        }
-    }
-}
-
-function findAllMediaInElement(e) {
-    var t = new Array;
-    for (var n = 0; n < e.childNodes.length; n++) {
-        var r = e.childNodes[n];
-        if (r.childNodes.length > 0) {
-            var i = findAllMediaInElement(r);
-            for (var s = 0; s < i.length; s++) {
-                t[t.length] = i[s]
-            }
-            if (r.nodeName == "AUDIO" | r.nodeName == "VIDEO") {
-                t[t.length] = r
-            }
-        }
-    }
-    return t
-}
-
-function checkAllMediaLoaded(e, t) {
-    if (mediaCheckElement == null) {
-        mediaCheckElement = e
-    }
-    if (mediaLoadInterval == null) {
-        mediaToWaitFor = findAllMediaInElement(e);
-        mediaCallback = t;
-        mediaLoadInterval = setInterval("checkAllMediaLoaded(null,'" + t + "')", 300)
-    } else {
-        var n = true;
-        for (var r = 0; r < mediaToWaitFor.length; r++) {
-            if (mediaToWaitFor[r].readyState < 4) {
-                n = false
-            }
-        }
-        if (n == true) {
-            mediaCheckElement = null;
-            clearInterval(mediaLoadInterval);
-            mediaLoadInterval = null;
-            setTimeout(new String(t), 10);
-            mediaCallback = null
-        }
-    }
-    return 1
-}
-
-function getMaxMediaDuration(e, t) {
-    var n = 0;
-    var r = findAllMediaInElement(e);
-    for (var i = 0; i < r.length; i++) {
-        if (t == true) {
-            r[i].play()
-        }
-        if (r[i].duration > n) {
-            n = r[i].duration
-        }
-    }
-    return n
-}
-
 function playAndReset(e) {
     if (e.paused == true && e.currentTime == 0) {
         try {
@@ -101,28 +25,6 @@ function playNegativeFeedbackDefault() {
     playAndReset(e)
 }
 
-function playClickSound() {}
-
-function makeSoundDOMElements() {
-    var e = new Array;
-    for (var t = 0; t < 3; t++) {
-        e[t] = document.createElement("audio");
-        e[t].setAttribute("src", "exesfx_good" + t + ".ogg");
-        e[t].setAttribute("id", "exesfx_good" + t);
-        e[t].setAttribute("preload", "auto")
-    }
-    e[3] = document.createElement("audio");
-    e[3].setAttribute("src", "exesfx_wrong.ogg");
-    e[3].setAttribute("id", "exesfx_wrong");
-    e[3].setAttribute("preload", "auto");
-    return e
-}
-
-function appendSoundHTML() {
-    var e = makeSoundHTML();
-    document.body.innerHTML += e
-}
-
 function doTouchScreenDetect() {
     if (touchScreenDetectDone == true) {
         return
@@ -130,19 +32,6 @@ function doTouchScreenDetect() {
     var e = navigator.userAgent;
     if (e.indexOf("Android") != -1) {
         exe_isTouchScreenDev = true
-    }
-}
-
-function convertToDropType() {
-    if (exe_isTouchScreenDev) {
-        $(".ClozeIdevice INPUT.clozeblank").each(function() {
-            $(this).css("display", "none");
-            var e = $(this).attr("id");
-            var t = e.substring(10);
-            var n = "setClozeBlankFromCurrentValue('" + t + "')";
-            $(this).after("<span id='span_" + e + "' onclick=\"" + n + "\" class='idevicesubblank'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>")
-        });
-        $(".ClozeInstructions LI").css("display", "none")
     }
 }
 
@@ -249,22 +138,6 @@ function fillClozeInputs(e, t) {
         r.value = i;
         markClozeWord(r, CORRECT);
         r.setAttribute("readonly", "readonly")
-    }
-}
-
-function clearClozeInputs(e, t) {
-    if (!t) {
-        var t = getCloseInputs(e)
-    }
-    for (var n = 0; n < t.length; n++) {
-        var r = t[n];
-        if (r.className.indexOf("autocomplete-off width-") != -1) {
-            var i = r.className.replace("autocomplete-off width-", "");
-            r.style.width = i
-        }
-        r.value = "";
-        markClozeWord(r, NOT_ATTEMPTED);
-        r.removeAttribute("readonly")
     }
 }
 
@@ -573,52 +446,6 @@ function showFeedback(e, t, n) {
     }
 }
 
-function detectQuickTime() {
-    pluginFound = detectPlugin("QuickTime");
-    return pluginFound
-}
-
-function detectReal() {
-    pluginFound = detectPlugin("RealPlayer");
-    return pluginFound
-}
-
-function detectFlash() {
-    pluginFound = detectPlugin("Shockwave", "Flash");
-    return pluginFound
-}
-
-function detectDirector() {
-    pluginFound = detectPlugin("Shockwave", "Director");
-    return pluginFound
-}
-
-function detectWindowsMedia() {
-    pluginFound = detectPlugin("Windows Media");
-    return pluginFound
-}
-
-function detectPlugin() {
-    var e = detectPlugin.arguments;
-    var t = false;
-    if (navigator.plugins && navigator.plugins.length > 0) {
-        var n = navigator.plugins.length;
-        for (var r = 0; r < n; r++) {
-            var i = 0;
-            for (var s = 0; s < e.length; s++) {
-                if (navigator.plugins[r].name.indexOf(e[s]) >= 0 || navigator.plugins[r].description.indexOf(e[s]) >= 0) {
-                    i++
-                }
-            }
-            if (i == e.length) {
-                t = true;
-                break
-            }
-        }
-    }
-    return t
-}
-
 function onClozelangChange(ele) {
     var ident = getClozelangIds(ele)[0];
     var instant = eval(document.getElementById("clozelangFlag" + ident + ".instantMarking").value);
@@ -866,17 +693,9 @@ function toggleClozelangFeedback(e) {
         toggleElementVisible(n)
     }
 }
-var objBrowse = navigator.appName;
 var exe_isTouchScreenDev = false;
-var addedAudioTags = false;
-var audioTagInterval = null;
-var mediaLoadInterval = null;
-var mediaCheckElement = null;
-var mediaCallback = null;
-var mediaToWaitFor = null;
 var touchScreenDetectDone = false;
 doTouchScreenDetect();
-var lastTouch;
 NOT_ATTEMPTED = 0;
 WRONG = 1;
 CORRECT = 2;
