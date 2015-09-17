@@ -165,12 +165,14 @@ delayToShow - how long to show the message.  -1 to show forever
 */
 function showAlert(gameId, msg, delayToShow) {
         var alertAreaElement = document.getElementById(gameId + "_alertarea");
-        alertAreaElement.innerHTML = msg;
-        alertAreaElement.style.visibility = '';
-        if(delayToShow > 0) {
-                setTimeout('document.getElementById("' + gameId + 
-                        '_alertarea").style.visibility = "hidden"', delayToShow);
-        }
+		if (alertAreaElement) {
+			alertAreaElement.innerHTML = msg;
+			alertAreaElement.style.visibility = '';
+			if(delayToShow > 0) {
+					setTimeout('document.getElementById("' + gameId + 
+							'_alertarea").style.visibility = "hidden"', delayToShow);
+			}
+		}
 }
 
 function playLevelCompleteSound() {
