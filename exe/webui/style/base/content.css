@@ -50,7 +50,6 @@ input.feedbackbutton{margin:0}
 .feedback{font-family:inherit;font-size:1em}
 li{list-style-position:outside}
 .styled-qc{margin-top:2.5em}
-.styled-qc:before{top:0}
 .exe-dl .icon,.exe-dl-toggler a{width:24px;height:24px;border-radius:12px}
 .exe-dl-toggler a{line-height:22px}
 .js .exe-dl dd{margin-left:44px}
@@ -77,6 +76,7 @@ input,select{font-size:1em;font-family:inherit}
 .CasestudyIdevice .feedbackbutton,
 .ReflectionIdevice .feedbackbutton{margin:.5em 0 1em 0}
 
+#packageLicense{margin-top:2.5em}
 #siteFooter{padding:20px}
 
 /* Lightbox */
@@ -96,8 +96,10 @@ background:#ededed;
     .iDevice{margin-bottom:20px}
 	html body{background:#fff;color:#000;font-size:11pt}
 	@page{margin:2cm}
-	a{font-weight:bolder;text-decoration:none}
+	/* Uncomment this to print URL after links:
+	a{font-weight:bolder;text-decoration:none!important}
 	a[href^=http]:after{content:" <" attr(href) "> "}
+	*/
 	.external-iframe{display:none}
 	.external-iframe-src{display:block!important;margin:2em auto;font-size:.95em}
 	#main .iDeviceTitle{background:none;padding-left:0}
