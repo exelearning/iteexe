@@ -50,7 +50,6 @@ input.feedbackbutton{margin:0}
 .feedback{font-family:inherit;font-size:1em}
 li{list-style-position:outside}
 .styled-qc{margin-top:2.5em}
-.styled-qc:before{top:0}
 .exe-dl .icon,.exe-dl-toggler a{width:24px;height:24px;border-radius:12px}
 .exe-dl-toggler a{line-height:22px}
 .js .exe-dl dd{margin-left:44px}
