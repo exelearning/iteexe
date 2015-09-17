@@ -746,7 +746,7 @@ def insertSymbol(name, image, title, string, text ='', num=0):
     Adds an image link which will trigger the javascript needed to
     post a form with the action and object passed in the args
     """
-    onclick = "insertSymbol('%s', '%s', %d);" % (name, string, num)
+    onclick = "$exe.insertSymbol('%s', '%s', %d);" % (name, string, num)
     html = u'<a onclick="%s" ' % onclick
     html += u'title="%s">' % title
     html += text

@@ -1,715 +1,3 @@
-function onClozeChange(ele) {
-    var ident = getClozeIds(ele)[0];
-    var instant = eval(document.getElementById("clozeFlag" + ident + ".instantMarking").value);
-    if (instant) {
-        checkAndMarkClozeWord(ele);
-        var scorePara = document.getElementById("clozeScore" + ident);
-        scorePara.innerHTML = ""
-    }
-}
-
-function clozeSubmit(e) {
-    showClozeScore(e, 1);
-    toggleElementVisible("submit" + e);
-    toggleElementVisible("restart" + e);
-    toggleElementVisible("showAnswersButton" + e);
-    toggleClozeFeedback(e)
-}
-
-function clozeRestart(e) {
-    toggleClozeFeedback(e);
-    toggleClozeAnswers(e, true);
-    toggleElementVisible("restart" + e);
-    toggleElementVisible("showAnswersButton" + e);
-    toggleElementVisible("submit" + e)
-}
-
-function toggleClozeAnswers(e, t) {
-    var n = true;
-    var r = getCloseInputs(e);
-    if (!t) {
-        for (var i = 0; i < r.length; i++) {
-            var s = r[i];
-            if (getClozeMark(s) != 2) {
-                n = false;
-                break
-            }
-        }
-    }
-    if (n) {
-        clearClozeInputs(e, r)
-    } else {
-        fillClozeInputs(e, r)
-    }
-    var o = document.getElementById("clozeScore" + e);
-    o.innerHTML = "";
-    var u = document.getElementById("getScore" + e);
-    if (u) {
-        u.disabled = !n
-    }
-}
-
-function fillClozeInputs(e, t) {
-    if (!t) {
-        var t = getCloseInputs(e)
-    }
-    for (var n = 0; n < t.length; n++) {
-        var r = t[n];
-        var i = getClozeAnswer(r);
-        i = i.trim();
-        var s = false;
-        if (i.indexOf("|") == 0 && i.charAt(i.length - 1) == "|") {
-            var o = i;
-            var o = o.substring(1, o.length - 1);
-            var u = o.split("|");
-            if (u.length > 1) {
-                s = true;
-                var a = "";
-                for (x = 0; x < u.length; x++) {
-                    a += u[x];
-                    if (x < u.length - 1) a += " — ";
-                    if (u[x] == "") s = false
-                }
-            }
-            if (s) {
-                r.className = "autocomplete-off width-" + r.style.width;
-                r.style.width = "auto";
-                i = a
-            }
-        }
-        r.value = i;
-        markClozeWord(r, CORRECT);
-        r.setAttribute("readonly", "readonly")
-    }
-}
-
-function clearClozeInputs(e, t) {
-    if (!t) {
-        var t = getCloseInputs(e)
-    }
-    for (var n = 0; n < t.length; n++) {
-        var r = t[n];
-        r.value = "";
-        markClozeWord(r, NOT_ATTEMPTED);
-        r.removeAttribute("readonly")
-    }
-}
-
-function checkAndMarkClozeWord(e) {
-    var t = checkClozeWord(e);
-    if (t != "") {
-        markClozeWord(e, CORRECT);
-        e.value = t;
-        return CORRECT
-    } else if (!e.value) {
-        markClozeWord(e, NOT_ATTEMPTED);
-        return NOT_ATTEMPTED
-    } else {
-        markClozeWord(e, WRONG);
-        return WRONG
-    }
-}
-
-function markClozeWord(e, t) {
-    switch (t) {
-        case 0:
-            e.style.backgroundColor = "";
-            e.style.color = "";
-            break;
-        case 1:
-            e.style.backgroundColor = "#FF9999";
-            e.style.color = "#000000";
-            break;
-        case 2:
-            e.style.backgroundColor = "#CCFF99";
-            e.style.color = "#000000";
-            break
-    }
-    return t
-}
-
-function getClozeMark(e) {
-    var t = checkClozeWord(e);
-    if (t != "") {
-        return CORRECT
-    } else if (!e.value) {
-        return NOT_ATTEMPTED
-    } else {
-        return WRONG
-    }
-}
-
-function getClozeAnswer(e) {
-    var t = getClozeIds(e);
-    var n = t[0];
-    var r = t[1];
-    var i = document.getElementById("clozeAnswer" + n + "." + r);
-    var s = i.innerHTML;
-    s = decode64(s);
-    s = unescape(s);
-    result = "";
-    var o = "X".charCodeAt(0);
-    for (var u = 0; u < s.length; u++) {
-        var a = s.charCodeAt(u);
-        o ^= a;
-        result += String.fromCharCode(o)
-    }
-    return result
-}
-
-function decode64(e) {
-    var t = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-    var n = "";
-    var r, i, s;
-    var o, u, a, f;
-    var l = 0;
-    e = e.replace(/[^A-Za-z0-9\+\/\=]/g, "");
-    do {
-        o = t.indexOf(e.charAt(l++));
-        u = t.indexOf(e.charAt(l++));
-        a = t.indexOf(e.charAt(l++));
-        f = t.indexOf(e.charAt(l++));
-        r = o << 2 | u >> 4;
-        i = (u & 15) << 4 | a >> 2;
-        s = (a & 3) << 6 | f;
-        n = n + String.fromCharCode(r);
-        if (a != 64) {
-            n = n + String.fromCharCode(i)
-        }
-        if (f != 64) {
-            n = n + String.fromCharCode(s)
-        }
-    } while (l < e.length);
-    return n
-}
-
-function checkClozeWord(e) {
-    var t = e.value;
-    var n = getClozeAnswer(e);
-    var r = n;
-    r = r.trim();
-    var i = r.indexOf("|");
-    var s = r.lastIndexOf("|");
-    if (i == 0 && s == r.length - 1) {
-        var o = r.split("|");
-        var u;
-        for (var a in o) {
-            if (o[a] != "") {
-                u = checkClozeWordAnswer(e, o[a]);
-                if (u != "") return o[a]
-            }
-        }
-        return ""
-    } else return checkClozeWordAnswer(e, r)
-}
-
-function checkClozeWordAnswer(ele, original_answer) {
-    original_answer = original_answer.trim();
-    var guess = ele.value;
-    var answer = original_answer;
-    var ident = getClozeIds(ele)[0];
-    var strictMarking = eval(document.getElementById("clozeFlag" + ident + ".strictMarking").value);
-    var checkCaps = eval(document.getElementById("clozeFlag" + ident + ".checkCaps").value);
-    if (!checkCaps) {
-        guess = guess.toLowerCase();
-        answer = answer.toLowerCase()
-    }
-    if (guess == answer) return original_answer;
-    else if (strictMarking || answer.length <= 4) return "";
-    else {
-        var i = 0;
-        var j = 0;
-        var orders = [
-            [answer, guess],
-            [guess, answer]
-        ];
-        var maxMisses = Math.floor(answer.length / 6) + 1;
-        var misses = 0;
-        if (guess.length <= maxMisses) {
-            misses = Math.abs(guess.length - answer.length);
-            for (i = 0; i < guess.length; i++) {
-                if (answer.search(guess[i]) == -1) {
-                    misses += 1
-                }
-            }
-            if (misses <= maxMisses) {
-                return original_answer
-            } else {
-                return ""
-            }
-        }
-        for (i = 0; i < 2; i++) {
-            var string1 = orders[i][0];
-            var string2 = orders[i][1];
-            while (string1) {
-                misses = Math.floor((Math.abs(string1.length - string2.length) + Math.abs(guess.length - answer.length)) / 2);
-                var max = Math.min(string1.length, string2.length);
-                for (j = 0; j < max; j++) {
-                    var a = string2.charAt(j);
-                    var b = string1.charAt(j);
-                    if (a != b) misses += 1;
-                    if (misses > maxMisses) break
-                }
-                if (misses <= maxMisses) return original_answer;
-                string1 = string1.substr(1)
-            }
-        }
-        return ""
-    }
-}
-
-function getClozeIds(e) {
-    var t = e.id.slice(10);
-    var n = t.indexOf(".");
-    var r = t.slice(0, n);
-    var i = t.slice(t.indexOf(".") + 1);
-    return [r, i]
-}
-
-function showClozeScore(e, t) {
-    var n = 0;
-    var r = document.getElementById("cloze" + e);
-    var i = getCloseInputs(e);
-    for (var s = 0; s < i.length; s++) {
-        var o = i[s];
-        if (t) {
-            var u = checkAndMarkClozeWord(o)
-        } else {
-            var u = getClozeMark(o)
-        }
-        if (u == 2) {
-            n++
-        }
-    }
-    var a = document.getElementById("clozeScore" + e);
-    a.innerHTML = YOUR_SCORE_IS + n + "/" + i.length + "."
-}
-
-function getCloseInputs(e) {
-    var t = new Array;
-    var n = document.getElementById("cloze" + e);
-    recurseFindClozeInputs(n, e, t);
-    return t
-}
-
-function recurseFindClozeInputs(e, t, n) {
-    for (var r = 0; r < e.childNodes.length; r++) {
-        var i = e.childNodes[r];
-        if (i.id) {
-            if (i.id.search("clozeBlank" + t) == 0) {
-                n.push(i);
-                continue
-            }
-        }
-        if (i.hasChildNodes()) {
-            recurseFindClozeInputs(i, t, n)
-        }
-    }
-}
-
-function toggleClozeFeedback(e, t) {
-    var n = document.getElementById("clozeVar" + e + ".feedbackId");
-    if (n) {
-        var r = n.value;
-        if (t) {
-            if (t.value == $exe_i18n.showFeedback) t.value = $exe_i18n.hideFeedback;
-            else t.value = $exe_i18n.showFeedback
-        }
-        toggleElementVisible(r)
-    }
-}
-
-function toggleElementVisible(e) {
-    $("#" + e).toggle()
-}
-
-function insertAtCursor(e, t, n) {
-    if (e.selectionStart || e.selectionStart == "0") {
-        var r = e.selectionStart;
-        var i = e.selectionEnd;
-        e.value = e.value.substring(0, r) + t + e.value.substring(i, e.value.length);
-        e.selectionStart = r + t.length - n
-    } else {
-        e.value += t
-    }
-    e.selectionEnd = e.selectionStart;
-    e.focus()
-}
-
-function insertSymbol(e, t, n) {
-    var r = document.getElementById(e);
-    insertAtCursor(r, t, n)
-}
-
-function calcScore(e, t) {
-    var n = 0,
-        r, i;
-    for (r = 0; r < e; r++) {
-        var s = document.getElementById(t + r.toString());
-        var o = document.getElementById("ans" + t + r.toString());
-        i = "False";
-        if (s.checked == 1) i = "True";
-        if (i == s.value) {
-            n++;
-            o.style.color = "black"
-        } else {
-            o.style.color = "red"
-        }
-    }
-    var u = document.getElementById("f" + t);
-    u.style.display = "block";
-    alert(YOUR_SCORE_IS + n + "/" + e)
-}
-
-function showFeedback(e, t, n) {
-    var r, i, s, o;
-    for (r = 0; r < t; r++) {
-        var u = n + r.toString();
-        var a = document.getElementById("op" + u);
-        i = "False";
-        s = $exe_i18n.incorrect;
-        o = "wrong";
-        if (a.checked == 1) i = "True";
-        if (i == a.value) {
-            s = "<strong>" + $exe_i18n.correct + "</strong>";
-            o = "right"
-        }
-        var f = '<p class="' + o + '-option">' + s + "</p>";
-        var l = $("#feedback-" + u);
-        if (e.value == $exe_i18n.showFeedback) l.html(f).show();
-        else l.hide()
-    }
-    if (e.value == $exe_i18n.showFeedback) {
-        $("#f" + n).show();
-        e.value = $exe_i18n.hideFeedback
-    } else {
-        $("#f" + n).hide();
-        e.value = $exe_i18n.showFeedback
-    }
-}
-
-function onClozelangChange(ele) {
-    var ident = getClozelangIds(ele)[0];
-    var instant = eval(document.getElementById("clozelangFlag" + ident + ".instantMarking").value);
-    if (instant) {
-        checkAndMarkClozelangWord(ele);
-        var scorePara = document.getElementById("clozelangScore" + ident);
-        scorePara.innerHTML = ""
-    }
-}
-
-function clozelangSubmit(e) {
-    showClozelangScore(e, 1);
-    toggleElementVisible("submit" + e);
-    toggleClozelangFeedback(e)
-}
-
-function clozelangRestart(e) {
-    toggleClozelangFeedback(e);
-    toggleClozelangAnswers(e, true);
-    toggleElementVisible("restart" + e);
-    toggleElementVisible("showAnswersButton" + e);
-    toggleElementVisible("submit" + e)
-}
-
-function toggleClozelangAnswers(e, t) {
-    var n = true;
-    var r = getCloseInputsCloze(e);
-    if (!t) {
-        for (var i = 0; i < r.length; i++) {
-            var s = r[i];
-            if (getClozelangMark(s) != 2) {
-                n = false;
-                break
-            }
-        }
-    }
-    if (n) {
-        clearClozelangInputs(e, r)
-    } else {
-        fillClozelangInputs(e, r)
-    }
-    var o = document.getElementById("clozelangScore" + e);
-    o.innerHTML = "";
-    var u = document.getElementById("getScore" + e);
-    if (u) {
-        u.disabled = !n
-    }
-}
-
-function fillClozelangInputs(e, t) {
-    if (!t) {
-        var t = getCloseInputsCloze(e)
-    }
-    for (var n = 0; n < t.length; n++) {
-        var r = t[n];
-        r.value = getClozelangAnswer(r);
-        markClozeWord(r, CORRECT);
-        r.setAttribute("readonly", "readonly")
-    }
-}
-
-function clearClozelangInputs(e, t) {
-    if (!t) {
-        var t = getCloseInputsCloze(e)
-    }
-    for (var n = 0; n < t.length; n++) {
-        var r = t[n];
-        r.value = "";
-        markClozeWord(r, NOT_ATTEMPTED);
-        r.removeAttribute("readonly")
-    }
-}
-
-function checkAndMarkClozelangWord(e) {
-    var t = checkClozelangWord(e);
-    if (t != "") {
-        markClozelangWord(e, CORRECT);
-        e.value = t;
-        return CORRECT
-    } else if (!e.value) {
-        markClozelangWord(e, NOT_ATTEMPTED);
-        return NOT_ATTEMPTED
-    } else {
-        markClozelangWord(e, WRONG);
-        return WRONG
-    }
-}
-
-function markClozelangWord(e, t) {
-    switch (t) {
-        case 0:
-            e.style.backgroundColor = "";
-            break;
-        case 1:
-            e.style.backgroundColor = "#FF9999";
-            break;
-        case 2:
-            e.style.backgroundColor = "#CCFF99";
-            break
-    }
-    return t
-}
-
-function getClozelangMark(e) {
-    switch (e.style.backgroundColor) {
-        case "#FF9999":
-            return 1;
-        case "#CCFF99":
-            return 2;
-        default:
-            return 0
-    }
-}
-
-function getClozelangAnswer(e) {
-    var t = getClozelangIds(e);
-    var n = t[0];
-    var r = t[1];
-    var i = document.getElementById("clozelangAnswer" + n + "." + r);
-    var s = i.innerHTML;
-    s = decode64(s);
-    s = unescape(s);
-    result = "";
-    var o = "X".charCodeAt(0);
-    for (var u = 0; u < s.length; u++) {
-        var a = s.charCodeAt(u);
-        o ^= a;
-        result += String.fromCharCode(o)
-    }
-    return result
-}
-
-function checkClozelangWord(ele) {
-    var guess = ele.value;
-    var original = getClozelangAnswer(ele);
-    var answer = original;
-    var guess = ele.value;
-    var ident = getClozelangIds(ele)[0];
-    var strictMarking = eval(document.getElementById("clozelangFlag" + ident + ".strictMarking").value);
-    var checkCaps = eval(document.getElementById("clozelangFlag" + ident + ".checkCaps").value);
-    if (!checkCaps) {
-        guess = guess.toLowerCase();
-        answer = original.toLowerCase()
-    }
-    if (guess == answer) return original;
-    else if (strictMarking || answer.length <= 4) return "";
-    else {
-        var i = 0;
-        var j = 0;
-        var orders = [
-            [answer, guess],
-            [guess, answer]
-        ];
-        var maxMisses = Math.floor(answer.length / 6) + 1;
-        var misses = 0;
-        if (guess.length <= maxMisses) {
-            misses = Math.abs(guess.length - answer.length);
-            for (i = 0; i < guess.length; i++) {
-                if (answer.search(guess[i]) == -1) {
-                    misses += 1
-                }
-            }
-            if (misses <= maxMisses) {
-                return answer
-            } else {
-                return ""
-            }
-        }
-        for (i = 0; i < 2; i++) {
-            var string1 = orders[i][0];
-            var string2 = orders[i][1];
-            while (string1) {
-                misses = Math.floor((Math.abs(string1.length - string2.length) + Math.abs(guess.length - answer.length)) / 2);
-                var max = Math.min(string1.length, string2.length);
-                for (j = 0; j < max; j++) {
-                    var a = string2.charAt(j);
-                    var b = string1.charAt(j);
-                    if (a != b) misses += 1;
-                    if (misses > maxMisses) break
-                }
-                if (misses <= maxMisses) return answer;
-                string1 = string1.substr(1)
-            }
-        }
-        return ""
-    }
-}
-
-function getClozelangIds(e) {
-    var t = e.id.slice(14);
-    var n = t.indexOf(".");
-    var r = t.slice(0, n);
-    var i = t.slice(t.indexOf(".") + 1);
-    return [r, i]
-}
-
-function showClozelangScore(ident, mark) {
-    var showScore = eval(document.getElementById("clozelangFlag" + ident + ".showScore").value);
-    if (showScore) {
-        var score = 0;
-        var div = document.getElementById("clozelang" + ident);
-        var inputs = getCloseInputsCloze(ident);
-        for (var i = 0; i < inputs.length; i++) {
-            var input = inputs[i];
-            if (mark) {
-                var result = checkAndMarkClozelangWord(input)
-            } else {
-                var result = getClozelangMark(input)
-            }
-            if (result == 2) {
-                score++
-            }
-        }
-        var scorePara = document.getElementById("clozelangScore" + ident);
-        scorePara.innerHTML = YOUR_SCORE_IS + score + "/" + inputs.length + "."
-    }
-}
-
-function getCloseInputsCloze(e) {
-    var t = new Array;
-    var n = document.getElementById("clozelang" + e);
-    recurseFindClozelangInputs(n, e, t);
-    return t
-}
-
-function recurseFindClozelangInputs(e, t, n) {
-    for (var r = 0; r < e.childNodes.length; r++) {
-        var i = e.childNodes[r];
-        if (i.id) {
-            if (i.id.search("clozelangBlank" + t) == 0) {
-                n.push(i);
-                continue
-            }
-        }
-        if (i.hasChildNodes()) {
-            recurseFindClozelangInputs(i, t, n)
-        }
-    }
-}
-
-function toggleClozelangFeedback(e) {
-    var t = document.getElementById("clozelangVar" + e + ".feedbackId");
-    if (t) {
-        var n = t.value;
-        toggleElementVisible(n)
-    }
-}
-
-NOT_ATTEMPTED = 0;
-WRONG = 1;
-CORRECT = 2;
-NOT_ATTEMPTED = 0;
-WRONG = 1;
-CORRECT = 2;
-sfHover = function() {
-    var e = document.getElementById("siteNav");
-    if (e) {
-        var t = e.getElementsByTagName("LI");
-        for (var n = 0; n < t.length; n++) {
-            t[n].onmouseover = function() {
-                this.className = "sfhover"
-            };
-            t[n].onmouseout = function() {
-                this.className = "sfout"
-            }
-        }
-        var r = e.getElementsByTagName("A");
-        for (var n = 0; n < r.length; n++) {
-            r[n].onfocus = function() {
-                this.className += (this.className.length > 0 ? " " : "") + "sffocus";
-                this.parentNode.className += (this.parentNode.className.length > 0 ? " " : "") + "sfhover";
-                if (this.parentNode.parentNode.parentNode.nodeName == "LI") {
-                    this.parentNode.parentNode.parentNode.className += (this.parentNode.parentNode.parentNode.className.length > 0 ? " " : "") + "sfhover";
-                    if (this.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "LI") {
-                        this.parentNode.parentNode.parentNode.parentNode.parentNode.className += (this.parentNode.parentNode.parentNode.parentNode.parentNode.className.length > 0 ? " " : "") + "sfhover"
-                    }
-                }
-            };
-            r[n].onblur = function() {
-                this.className = this.className.replace(new RegExp("( ?|^)sffocus\\b"), "");
-                this.parentNode.className = this.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
-                if (this.parentNode.parentNode.parentNode.nodeName == "LI") {
-                    this.parentNode.parentNode.parentNode.className = this.parentNode.parentNode.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
-                    if (this.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "LI") {
-                        this.parentNode.parentNode.parentNode.parentNode.parentNode.className = this.parentNode.parentNode.parentNode.parentNode.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"), "")
-                    }
-                }
-            }
-        }
-    }
-};
-if (document.addEventListener) {
-    window.addEventListener("load", sfHover, false)
-} else {
-    window.attachEvent("onload", sfHover)
-}
-var ie_media_replace = function() {
-    var e = document.getElementsByTagName("OBJECT");
-    var t = e.length;
-    while (t--) {
-        if (e[t].type == "video/quicktime" || e[t].type == "audio/x-pn-realaudio-plugin") {
-            if (typeof e.classid == "undefined") {
-                e[t].style.display = "none";
-                var n = "02BF25D5-8C17-4B23-BC80-D3488ABDDC6B";
-                if (e[t].type == "audio/x-pn-realaudio-plugin") n = "CFCDAA03-8BE4-11CF-B84B-0020AFBBCCFA";
-                var r = e[t].height;
-                var i = e[t].width;
-                var s = e[t].data;
-                var o = document.createElement("DIV");
-                o.innerHTML = '<object classid="clsid:' + n + '" data="' + s + '" width="' + i + '" height="' + r + '"><param name="controller" value="true" /><param name="src" value="' + s + '" /><param name="autoplay" value="false" /></object>';
-                e[t].parentNode.insertBefore(o, e[t])
-            }
-        }
-    }
-};
-if (navigator.appName == "Microsoft Internet Explorer") {
-    if (document.addEventListener) {
-        window.addEventListener("load", ie_media_replace, false)
-    } else {
-        window.attachEvent("onload", ie_media_replace)
-    }
-}
 var $exe = {
     init: function() {
         var e = document.body.className;
@@ -734,8 +22,67 @@ var $exe = {
             deeplinking: false,
             opacity: 0.95
         });
-        $exe.dl.init()
+        $exe.dl.init();
+		$exe.sfHover();
     },
+	sfHover : function() {
+		var e = document.getElementById("siteNav");
+		if (e) {
+			var t = e.getElementsByTagName("LI");
+			for (var n = 0; n < t.length; n++) {
+				t[n].onmouseover = function() {
+					this.className = "sfhover"
+				};
+				t[n].onmouseout = function() {
+					this.className = "sfout"
+				}
+			}
+			var r = e.getElementsByTagName("A");
+			for (var n = 0; n < r.length; n++) {
+				r[n].onfocus = function() {
+					this.className += (this.className.length > 0 ? " " : "") + "sffocus";
+					this.parentNode.className += (this.parentNode.className.length > 0 ? " " : "") + "sfhover";
+					if (this.parentNode.parentNode.parentNode.nodeName == "LI") {
+						this.parentNode.parentNode.parentNode.className += (this.parentNode.parentNode.parentNode.className.length > 0 ? " " : "") + "sfhover";
+						if (this.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "LI") {
+							this.parentNode.parentNode.parentNode.parentNode.parentNode.className += (this.parentNode.parentNode.parentNode.parentNode.parentNode.className.length > 0 ? " " : "") + "sfhover"
+						}
+					}
+				};
+				r[n].onblur = function() {
+					this.className = this.className.replace(new RegExp("( ?|^)sffocus\\b"), "");
+					this.parentNode.className = this.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
+					if (this.parentNode.parentNode.parentNode.nodeName == "LI") {
+						this.parentNode.parentNode.parentNode.className = this.parentNode.parentNode.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
+						if (this.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "LI") {
+							this.parentNode.parentNode.parentNode.parentNode.parentNode.className = this.parentNode.parentNode.parentNode.parentNode.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"), "")
+						}
+					}
+				}
+			}
+		}
+	},
+	ieMediaReplace : function() {
+		if (navigator.appName == "Microsoft Internet Explorer") {
+			var e = document.getElementsByTagName("OBJECT");
+			var t = e.length;
+			while (t--) {
+				if (e[t].type == "video/quicktime" || e[t].type == "audio/x-pn-realaudio-plugin") {
+					if (typeof e.classid == "undefined") {
+						e[t].style.display = "none";
+						var n = "02BF25D5-8C17-4B23-BC80-D3488ABDDC6B";
+						if (e[t].type == "audio/x-pn-realaudio-plugin") n = "CFCDAA03-8BE4-11CF-B84B-0020AFBBCCFA";
+						var r = e[t].height;
+						var i = e[t].width;
+						var s = e[t].data;
+						var o = document.createElement("DIV");
+						o.innerHTML = '<object classid="clsid:' + n + '" data="' + s + '" width="' + i + '" height="' + r + '"><param name="controller" value="true" /><param name="src" value="' + s + '" /><param name="autoplay" value="false" /></object>';
+						e[t].parentNode.insertBefore(o, e[t])
+					}
+				}
+			}
+		}
+	},
     rgb2hex: function(a) {
         if (/^#[0-9A-F]{6}$/i.test(a)) return a;
         a = a.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
@@ -978,6 +325,33 @@ var $exe = {
 			}
 		}
 	},
+	// element.py (To review: When is it used?)
+	showFeedback : function(e, t, n) {
+		var r, i, s, o;
+		for (r = 0; r < t; r++) {
+			var u = n + r.toString();
+			var a = document.getElementById("op" + u);
+			i = "False";
+			s = $exe_i18n.incorrect;
+			o = "wrong";
+			if (a.checked == 1) i = "True";
+			if (i == a.value) {
+				s = "<strong>" + $exe_i18n.correct + "</strong>";
+				o = "right"
+			}
+			var f = '<p class="' + o + '-option">' + s + "</p>";
+			var l = $("#feedback-" + u);
+			if (e.value == $exe_i18n.showFeedback) l.html(f).show();
+			else l.hide()
+		}
+		if (e.value == $exe_i18n.showFeedback) {
+			$("#f" + n).show();
+			e.value = $exe_i18n.hideFeedback
+		} else {
+			$("#f" + n).hide();
+			e.value = $exe_i18n.showFeedback
+		}
+	},	
     toggleFeedback: function(e, b) {
         var t = e.name.replace("toggle-", "");
         var n = document.getElementById(t);
@@ -998,10 +372,577 @@ var $exe = {
                 else if (d) e.value = r[0]
             }
         }
-    }
+    },
+	// To do: 
+	// calcScore2 (quiztestblock.py)
+	// To review:
+	insertSymbol : function(e, t, n) {
+		var r = document.getElementById(e);
+		$exe.insertAtCursor(r, t, n)
+	},	
+	insertAtCursor : function(e, t, n) {
+		if (e.selectionStart || e.selectionStart == "0") {
+			var r = e.selectionStart;
+			var i = e.selectionEnd;
+			e.value = e.value.substring(0, r) + t + e.value.substring(i, e.value.length);
+			e.selectionStart = r + t.length - n
+		} else {
+			e.value += t
+		}
+		e.selectionEnd = e.selectionStart;
+		e.focus()
+	}	
 };
+// Cloze iDevice
+$exe.cloze = {
+	NOT_ATTEMPTED : 0,
+	WRONG : 1,
+	CORRECT : 2,
+	change : function(ele){
+		var ident = $exe.cloze.getIds(ele)[0];
+		var instant = eval(document.getElementById("clozeFlag" + ident + ".instantMarking").value);
+		if (instant) {
+			$exe.cloze.checkAndMarkWord(ele);
+			var scorePara = document.getElementById("clozeScore" + ident);
+			scorePara.innerHTML = ""
+		}
+	},
+	submit : function(e){
+		$exe.cloze.showScore(e, 1);
+		$exe.cloze.toggle("submit" + e);
+		$exe.cloze.toggle("restart" + e);
+		$exe.cloze.toggle("showAnswersButton" + e);
+		$exe.cloze.toggleFeedback(e)	
+	},
+	restart : function(e){
+		$exe.cloze.toggleFeedback(e);
+		$exe.cloze.toggleAnswers(e, true);
+		$exe.cloze.toggle("restart" + e);
+		$exe.cloze.toggle("showAnswersButton" + e);
+		$exe.cloze.toggle("submit" + e)		
+	},
+	toggleAnswers : function(e, t) {
+		var n = true;
+		var r = $exe.cloze.getInputs(e);
+		if (!t) {
+			for (var i = 0; i < r.length; i++) {
+				var s = r[i];
+				if ($exe.cloze.getMark(s) != 2) {
+					n = false;
+					break
+				}
+			}
+		}
+		if (n) {
+			$exe.cloze.clearInputs(e, r)
+		} else {
+			$exe.cloze.fillInputs(e, r)
+		}
+		var o = document.getElementById("clozeScore" + e);
+		o.innerHTML = "";
+		var u = document.getElementById("getScore" + e);
+		if (u) {
+			u.disabled = !n
+		}
+	},
+	fillInputs : function(e, t) {
+		if (!t) {
+			var t = $exe.cloze.getInputs(e)
+		}
+		for (var n = 0; n < t.length; n++) {
+			var r = t[n];
+			var i = $exe.cloze.getAnswer(r);
+			i = i.trim();
+			var s = false;
+			if (i.indexOf("|") == 0 && i.charAt(i.length - 1) == "|") {
+				var o = i;
+				var o = o.substring(1, o.length - 1);
+				var u = o.split("|");
+				if (u.length > 1) {
+					s = true;
+					var a = "";
+					for (x = 0; x < u.length; x++) {
+						a += u[x];
+						if (x < u.length - 1) a += " — ";
+						if (u[x] == "") s = false
+					}
+				}
+				if (s) {
+					r.className = "autocomplete-off width-" + r.style.width;
+					r.style.width = "auto";
+					i = a
+				}
+			}
+			r.value = i;
+			$exe.cloze.markWord(r, $exe.cloze.CORRECT);
+			r.setAttribute("readonly", "readonly")
+		}
+	},
+	clearInputs : function(e, t) {
+		if (!t) {
+			var t = $exe.cloze.getInputs(e)
+		}
+		for (var n = 0; n < t.length; n++) {
+			var r = t[n];
+			r.value = "";
+			$exe.cloze.markWord(r, $exe.cloze.NOT_ATTEMPTED);
+			r.removeAttribute("readonly")
+		}
+	},
+	checkAndMarkWord : function(e) {
+		var t = $exe.cloze.checkWord(e);
+		if (t != "") {
+			$exe.cloze.markWord(e, $exe.cloze.CORRECT);
+			e.value = t;
+			return $exe.cloze.CORRECT
+		} else if (!e.value) {
+			$exe.cloze.markWord(e, $exe.cloze.NOT_ATTEMPTED);
+			return $exe.cloze.NOT_ATTEMPTED
+		} else {
+			$exe.cloze.markWord(e, $exe.cloze.WRONG);
+			return $exe.cloze.WRONG
+		}
+	},
+	markWord : function(e, t) {
+		switch (t) {
+			case 0:
+				e.style.backgroundColor = "";
+				e.style.color = "";
+				break;
+			case 1:
+				e.style.backgroundColor = "#FF9999";
+				e.style.color = "#000000";
+				break;
+			case 2:
+				e.style.backgroundColor = "#CCFF99";
+				e.style.color = "#000000";
+				break
+		}
+		return t
+	},
+	getMark : function(e) {
+		var t = $exe.cloze.checkWord(e);
+		if (t != "") {
+			return $exe.cloze.CORRECT
+		} else if (!e.value) {
+			return $exe.cloze.NOT_ATTEMPTED
+		} else {
+			return $exe.cloze.WRONG
+		}
+	},
+	getAnswer : function(e) {
+		var t = $exe.cloze.getIds(e);
+		var n = t[0];
+		var r = t[1];
+		var i = document.getElementById("clozeAnswer" + n + "." + r);
+		var s = i.innerHTML;
+		s = $exe.cloze.decode64(s);
+		s = unescape(s);
+		result = "";
+		var o = "X".charCodeAt(0);
+		for (var u = 0; u < s.length; u++) {
+			var a = s.charCodeAt(u);
+			o ^= a;
+			result += String.fromCharCode(o)
+		}
+		return result
+	},
+	decode64 : function(e) {
+		var t = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+		var n = "";
+		var r, i, s;
+		var o, u, a, f;
+		var l = 0;
+		e = e.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+		do {
+			o = t.indexOf(e.charAt(l++));
+			u = t.indexOf(e.charAt(l++));
+			a = t.indexOf(e.charAt(l++));
+			f = t.indexOf(e.charAt(l++));
+			r = o << 2 | u >> 4;
+			i = (u & 15) << 4 | a >> 2;
+			s = (a & 3) << 6 | f;
+			n = n + String.fromCharCode(r);
+			if (a != 64) {
+				n = n + String.fromCharCode(i)
+			}
+			if (f != 64) {
+				n = n + String.fromCharCode(s)
+			}
+		} while (l < e.length);
+		return n
+	},
+	checkWord : function(e) {
+		var t = e.value;
+		var n = $exe.cloze.getAnswer(e);
+		var r = n;
+		r = r.trim();
+		var i = r.indexOf("|");
+		var s = r.lastIndexOf("|");
+		if (i == 0 && s == r.length - 1) {
+			var o = r.split("|");
+			var u;
+			for (var a in o) {
+				if (o[a] != "") {
+					u = $exe.cloze.checkWordAnswer(e, o[a]);
+					if (u != "") return o[a]
+				}
+			}
+			return ""
+		} else return $exe.cloze.checkWordAnswer(e, r)
+	},
+	checkWordAnswer : function(ele, original_answer) {
+		original_answer = original_answer.trim();
+		var guess = ele.value;
+		var answer = original_answer;
+		var ident = $exe.cloze.getIds(ele)[0];
+		var strictMarking = eval(document.getElementById("clozeFlag" + ident + ".strictMarking").value);
+		var checkCaps = eval(document.getElementById("clozeFlag" + ident + ".checkCaps").value);
+		if (!checkCaps) {
+			guess = guess.toLowerCase();
+			answer = answer.toLowerCase()
+		}
+		if (guess == answer) return original_answer;
+		else if (strictMarking || answer.length <= 4) return "";
+		else {
+			var i = 0;
+			var j = 0;
+			var orders = [
+				[answer, guess],
+				[guess, answer]
+			];
+			var maxMisses = Math.floor(answer.length / 6) + 1;
+			var misses = 0;
+			if (guess.length <= maxMisses) {
+				misses = Math.abs(guess.length - answer.length);
+				for (i = 0; i < guess.length; i++) {
+					if (answer.search(guess[i]) == -1) {
+						misses += 1
+					}
+				}
+				if (misses <= maxMisses) {
+					return original_answer
+				} else {
+					return ""
+				}
+			}
+			for (i = 0; i < 2; i++) {
+				var string1 = orders[i][0];
+				var string2 = orders[i][1];
+				while (string1) {
+					misses = Math.floor((Math.abs(string1.length - string2.length) + Math.abs(guess.length - answer.length)) / 2);
+					var max = Math.min(string1.length, string2.length);
+					for (j = 0; j < max; j++) {
+						var a = string2.charAt(j);
+						var b = string1.charAt(j);
+						if (a != b) misses += 1;
+						if (misses > maxMisses) break
+					}
+					if (misses <= maxMisses) return original_answer;
+					string1 = string1.substr(1)
+				}
+			}
+			return ""
+		}
+	},
+	getIds : function(e) {
+		var t = e.id.slice(10);
+		var n = t.indexOf(".");
+		var r = t.slice(0, n);
+		var i = t.slice(t.indexOf(".") + 1);
+		return [r, i]
+	},
+	showScore : function(e, t) {
+		var n = 0;
+		var r = document.getElementById("cloze" + e);
+		var i = $exe.cloze.getInputs(e);
+		for (var s = 0; s < i.length; s++) {
+			var o = i[s];
+			if (t) {
+				var u = $exe.cloze.checkAndMarkWord(o)
+			} else {
+				var u = $exe.cloze.getMark(o)
+			}
+			if (u == 2) {
+				n++
+			}
+		}
+		var a = document.getElementById("clozeScore" + e);
+		a.innerHTML = YOUR_SCORE_IS + n + "/" + i.length + "."
+	},
+	getInputs : function(e) {
+		var t = new Array;
+		var n = document.getElementById("cloze" + e);
+		$exe.cloze.recurseFindInputs(n, e, t);
+		return t
+	},
+	recurseFindInputs : function(e, t, n) {
+		for (var r = 0; r < e.childNodes.length; r++) {
+			var i = e.childNodes[r];
+			if (i.id) {
+				if (i.id.search("clozeBlank" + t) == 0) {
+					n.push(i);
+					continue
+				}
+			}
+			if (i.hasChildNodes()) {
+				$exe.cloze.recurseFindInputs(i, t, n)
+			}
+		}
+	},
+	toggleFeedback : function(e, t) {
+		var n = document.getElementById("clozeVar" + e + ".feedbackId");
+		if (n) {
+			var r = n.value;
+			if (t) {
+				if (t.value == $exe_i18n.showFeedback) t.value = $exe_i18n.hideFeedback;
+				else t.value = $exe_i18n.showFeedback
+			}
+			$exe.cloze.toggle(r)
+		}
+	},
+	toggle : function(e) {
+		$("#" + e).toggle()
+	},
+	onLangChange : function(ele) {
+		var ident = $exe.cloze.getLangIds(ele)[0];
+		var instant = eval(document.getElementById("clozelangFlag" + ident + ".instantMarking").value);
+		if (instant) {
+			$exe.cloze.checkAndMarkLangWord(ele);
+			var scorePara = document.getElementById("clozelangScore" + ident);
+			scorePara.innerHTML = ""
+		}
+	},
+	langSubmit : function(e) {
+		$exe.cloze.showLangScore(e, 1);
+		$exe.cloze.toggle("submit" + e);
+		$exe.cloze.toggleLangFeedback(e)
+	},
+	langRestart : function(e) {
+		$exe.cloze.toggleLangFeedback(e);
+		$exe.cloze.toggleLangAnswers(e, true);
+		$exe.cloze.toggle("restart" + e);
+		$exe.cloze.toggle("showAnswersButton" + e);
+		$exe.cloze.toggle("submit" + e)
+	},
+	toggleLangAnswers: function(e, t) {
+		var n = true;
+		var r = $exe.cloze.getLangInputs(e);
+		if (!t) {
+			for (var i = 0; i < r.length; i++) {
+				var s = r[i];
+				if ($exe.cloze.getLangMark(s) != 2) {
+					n = false;
+					break
+				}
+			}
+		}
+		if (n) {
+			$exe.cloze.clearLangInputs(e, r)
+		} else {
+			$exe.cloze.fillLangInputs(e, r)
+		}
+		var o = document.getElementById("clozelangScore" + e);
+		o.innerHTML = "";
+		var u = document.getElementById("getScore" + e);
+		if (u) {
+			u.disabled = !n
+		}
+	},
+	fillLangInputs: function(e, t) {
+		if (!t) {
+			var t = $exe.cloze.getLangInputs(e)
+		}
+		for (var n = 0; n < t.length; n++) {
+			var r = t[n];
+			r.value = $exe.cloze.getLangAnswer(r);
+			$exe.cloze.markWord(r, $exe.cloze.CORRECT);
+			r.setAttribute("readonly", "readonly")
+		}
+	},
+	clearLangInputs : function(e, t) {
+		if (!t) {
+			var t = $exe.cloze.getLangInputs(e)
+		}
+		for (var n = 0; n < t.length; n++) {
+			var r = t[n];
+			r.value = "";
+			$exe.cloze.markWord(r, $exe.cloze.NOT_ATTEMPTED);
+			r.removeAttribute("readonly")
+		}
+	},
+	checkAndMarkLangWord : function(e) {
+		var t = $exe.cloze.checkLangWord(e);
+		if (t != "") {
+			$exe.cloze.markLangWord(e, $exe.cloze.CORRECT);
+			e.value = t;
+			return $exe.cloze.CORRECT
+		} else if (!e.value) {
+			$exe.cloze.markLangWord(e, $exe.cloze.NOT_ATTEMPTED);
+			return $exe.cloze.NOT_ATTEMPTED
+		} else {
+			$exe.cloze.markLangWord(e, $exe.cloze.WRONG);
+			return $exe.cloze.WRONG
+		}
+	},
+	markLangWord : function(e, t) {
+		switch (t) {
+			case 0:
+				e.style.backgroundColor = "";
+				break;
+			case 1:
+				e.style.backgroundColor = "#FF9999";
+				break;
+			case 2:
+				e.style.backgroundColor = "#CCFF99";
+				break
+		}
+		return t
+	},
+	getLangMark : function(e) {
+		switch (e.style.backgroundColor) {
+			case "#FF9999":
+				return 1;
+			case "#CCFF99":
+				return 2;
+			default:
+				return 0
+		}
+	},
+	getLangAnswer : function(e) {
+		var t = $exe.cloze.getLangIds(e);
+		var n = t[0];
+		var r = t[1];
+		var i = document.getElementById("clozelangAnswer" + n + "." + r);
+		var s = i.innerHTML;
+		s = $exe.cloze.decode64(s);
+		s = unescape(s);
+		result = "";
+		var o = "X".charCodeAt(0);
+		for (var u = 0; u < s.length; u++) {
+			var a = s.charCodeAt(u);
+			o ^= a;
+			result += String.fromCharCode(o)
+		}
+		return result
+	},
+	checkLangWord : function(ele) {
+		var guess = ele.value;
+		var original = $exe.cloze.getLangAnswer(ele);
+		var answer = original;
+		var guess = ele.value;
+		var ident = $exe.cloze.getLangIds(ele)[0];
+		var strictMarking = eval(document.getElementById("clozelangFlag" + ident + ".strictMarking").value);
+		var checkCaps = eval(document.getElementById("clozelangFlag" + ident + ".checkCaps").value);
+		if (!checkCaps) {
+			guess = guess.toLowerCase();
+			answer = original.toLowerCase()
+		}
+		if (guess == answer) return original;
+		else if (strictMarking || answer.length <= 4) return "";
+		else {
+			var i = 0;
+			var j = 0;
+			var orders = [
+				[answer, guess],
+				[guess, answer]
+			];
+			var maxMisses = Math.floor(answer.length / 6) + 1;
+			var misses = 0;
+			if (guess.length <= maxMisses) {
+				misses = Math.abs(guess.length - answer.length);
+				for (i = 0; i < guess.length; i++) {
+					if (answer.search(guess[i]) == -1) {
+						misses += 1
+					}
+				}
+				if (misses <= maxMisses) {
+					return answer
+				} else {
+					return ""
+				}
+			}
+			for (i = 0; i < 2; i++) {
+				var string1 = orders[i][0];
+				var string2 = orders[i][1];
+				while (string1) {
+					misses = Math.floor((Math.abs(string1.length - string2.length) + Math.abs(guess.length - answer.length)) / 2);
+					var max = Math.min(string1.length, string2.length);
+					for (j = 0; j < max; j++) {
+						var a = string2.charAt(j);
+						var b = string1.charAt(j);
+						if (a != b) misses += 1;
+						if (misses > maxMisses) break
+					}
+					if (misses <= maxMisses) return answer;
+					string1 = string1.substr(1)
+				}
+			}
+			return ""
+		}
+	},
+	getLangIds : function(e) {
+		var t = e.id.slice(14);
+		var n = t.indexOf(".");
+		var r = t.slice(0, n);
+		var i = t.slice(t.indexOf(".") + 1);
+		return [r, i]
+	},
+	showLangScore : function(ident, mark) {
+		var showScore = eval(document.getElementById("clozelangFlag" + ident + ".showScore").value);
+		if (showScore) {
+			var score = 0;
+			var div = document.getElementById("clozelang" + ident);
+			var inputs = $exe.cloze.getLangInputs(ident);
+			for (var i = 0; i < inputs.length; i++) {
+				var input = inputs[i];
+				if (mark) {
+					var result = $exe.cloze.checkAndMarkLangWord(input)
+				} else {
+					var result = $exe.cloze.getLangMark(input)
+				}
+				if (result == 2) {
+					score++
+				}
+			}
+			var scorePara = document.getElementById("clozelangScore" + ident);
+			scorePara.innerHTML = YOUR_SCORE_IS + score + "/" + inputs.length + "."
+		}
+	},
+	recurseFindLangInputs : function(e, t, n) {
+		for (var r = 0; r < e.childNodes.length; r++) {
+			var i = e.childNodes[r];
+			if (i.id) {
+				if (i.id.search("clozelangBlank" + t) == 0) {
+					n.push(i);
+					continue
+				}
+			}
+			if (i.hasChildNodes()) {
+				$exe.cloze.recurseFindLangInputs(i, t, n)
+			}
+		}
+	},	
+	getLangInputs : function(e) {
+		var t = new Array;
+		var n = document.getElementById("clozelang" + e);
+		$exe.cloze.recurseFindLangInputs(n, e, t);
+		return t
+	},
+	toggleLangFeedback : function(e) {
+		var t = document.getElementById("clozelangVar" + e + ".feedbackId");
+		if (t) {
+			var n = t.value;
+			$exe.cloze.toggle(n)
+		}
+	}	
+}
+// Execute
 if (typeof jQuery != "undefined") {
     $(function() {
-        $exe.init()
-    })
+        $exe.init();
+    });
+	$(window).load(function(){
+		$exe.ieMediaReplace();
+	});	
 }

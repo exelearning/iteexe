@@ -1478,7 +1478,7 @@ class ClozeElement(ElementWithResources):
         else:
             # to render, use the flattened content, withOUT resource paths: 
             self.field.encodedContent = self.field.content_wo_resourcePaths
-            html += ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="clozeSubmit(\''+self.id+'\');return false" class="activity-form">']
+            html += ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="$exe.cloze.submit(\''+self.id+'\');return false" class="activity-form">']
 
         html += ['<div id="cloze%s">' % self.id]
 
@@ -1521,7 +1521,7 @@ class ClozeElement(ElementWithResources):
                 #'  autocomplete="off"',
                 inputHtml = ['<label for="clozeBlank%s.%s" class="sr-av">%s (%s):</label>' % (self.id, i, c_("Cloze"), (i+1))]
                 if self.field.instantMarking:
-                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" onkeyup="onClozeChange(this)" />' % (self.id, i, lenWord)]
+                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" onkeyup="$exe.cloze.change(this)" />' % (self.id, i, lenWord)]
                 else:
                     inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" />' % (self.id, i, lenWord)]
                 html += inputHtml
@@ -1532,24 +1532,24 @@ class ClozeElement(ElementWithResources):
         html += ['<div class="block iDevice_buttons">']
         html += ['<p>']
         if self.field.instantMarking:
-            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozeScore(\'%s\')" />' % ( c_(u"Get score"), self.id, self.id)]
+            html += ['<input type="button" value="%s" id="getScore%s" onclick="$exe.cloze.showScore(\'%s\')" />' % ( c_(u"Get score"), self.id, self.id)]
 
             if feedbackId is not None:
-                html += [common.feedbackButton('feedback'+self.id, c_(u"Show Feedback"), onclick="toggleClozeFeedback('%s',this)" % self.id)]
+                html += [common.feedbackButton('feedback'+self.id, c_(u"Show Feedback"), onclick="$exe.cloze.toggleFeedback('%s',this)" % self.id)]
             # Set the show/hide answers button attributes
             style = ''
             value = c_(u"Show/Clear Answers")
-            onclick = "toggleClozeAnswers('%s')" % self.id
+            onclick = "$exe.cloze.toggleAnswers('%s')" % self.id
         else:
             if preview:
-                html += [common.button('submit%s' % self.id, c_(u"Submit"),id='submit%s' % self.id,onclick="clozeSubmit('%s')" % self.id)]            
+                html += [common.button('submit%s' % self.id, c_(u"Submit"),id='submit%s' % self.id,onclick="$exe.cloze.submit('%s')" % self.id)]            
             else:
                 html += [common.submitButton('submit%s' % self.id, c_(u"Submit"),id='submit%s' % self.id)]
-            html += [common.button('restart%s' % self.id, c_(u"Restart"),id='restart%s' % self.id,style="display:none",onclick="clozeRestart('%s')" % self.id)]
+            html += [common.button('restart%s' % self.id, c_(u"Restart"),id='restart%s' % self.id,style="display:none",onclick="$exe.cloze.restart('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display:none'
             value = c_(u"Show Answers")
-            onclick = "fillClozeInputs('%s')" % self.id
+            onclick = "$exe.cloze.fillInputs('%s')" % self.id
         # Show/hide answers button
         html += [' ',common.button('%sshowAnswersButton' % self.id, value, id='showAnswersButton%s' % self.id, style=style, onclick=onclick)]
         html += [common.javaScriptIsRequired()]
@@ -1782,7 +1782,7 @@ class ClozelangElement(ElementWithResources):
 #                    '    autocomplete="off"',
                     '    style="width:%sem"/>\n' % lenWord]
                 if self.field.instantMarking:
-                    inputHtml.insert(2, '  onKeyUp="onClozelangChange(this)"')
+                    inputHtml.insert(2, '  onkeyup="$exe.cloze.onLangChange(this)"')
                 html += inputHtml
                 # Hidden span with correct answer
                 html += ['<span style="display:none" ', 'id="clozelangAnswer%s.%s">%s</span>' % (self.id, i, encrypt(missingWord))]
@@ -1791,21 +1791,21 @@ class ClozelangElement(ElementWithResources):
         html += ['<div class="block iDevice_buttons">']
         html += ['<p>\n']
         if self.field.instantMarking:
-            html += ['<input type="button" value="%s" id="getScore%s" onclick="showClozelangScore(\'%s\')" />' % ( c_(u"Get score"), self.id, self.id)]
+            html += ['<input type="button" value="%s" id="getScore%s" onclick="$exe.cloze.showLangScore(\'%s\')" />' % ( c_(u"Get score"), self.id, self.id)]
 
             if feedbackId is not None:
-                html += [common.feedbackButton('feedback'+self.id,  c_(u"Show/Hide Feedback"), onclick="toggleClozelangFeedback('%s')" % self.id)]
+                html += [common.feedbackButton('feedback'+self.id,  c_(u"Show/Hide Feedback"), onclick="$exe.cloze.toggleLangFeedback('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display: inline;'
             value = c_(u"Show/Clear Answers")
-            onclick = "toggleClozelangAnswers('%s')" % self.id
+            onclick = "$exe.cloze.toggleLangAnswers('%s')" % self.id
         else:
-            html += [common.button('submit%s' % self.id, c_(u"Submit"), id='submit%s' % self.id, onclick="clozelangSubmit('%s')" % self.id),
-                     common.button('restart%s' % self.id, c_(u"Restart"), id='restart%s' % self.id, style="display:none", onclick="clozelangRestart('%s')" % self.id)]
+            html += [common.button('submit%s' % self.id, c_(u"Submit"), id='submit%s' % self.id, onclick="$exe.cloze.langSubmit('%s')" % self.id),
+                     common.button('restart%s' % self.id, c_(u"Restart"), id='restart%s' % self.id, style="display:none", onclick="$exe.cloze.langRestart('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display:none'
             value = c_(u"Show Answers")
-            onclick = "fillClozelangInputs('%s')" % self.id
+            onclick = "$exe.cloze.fillLangInputs('%s')" % self.id
         # Show/hide answers button
         html += [' ',
                  common.button('%sshowAnswersButton' % self.id, value, id='showAnswersButton%s' % self.id, style=style, onclick=onclick),
@@ -2466,7 +2466,7 @@ class SelectquestionElement(Element):
         # Feedback button
         html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
         html += '<p>'+lb
-        html += '<input type="button" name="submitSelect" class="feedbackbutton" value="%s" onclick="showFeedback(this,%d,\'%s\')"/> ' %( c_("Show Feedback"),len(self.field.options),self.field.id)   
+        html += '<input type="button" name="submitSelect" class="feedbackbutton" value="%s" onclick="$exe.showFeedback(this,%d,\'%s\')"/> ' %( c_("Show Feedback"),len(self.field.options),self.field.id)   
         html += lb
         html += '</p>'+lb
         html += '</div>'+lb
