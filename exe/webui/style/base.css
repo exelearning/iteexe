@@ -106,10 +106,11 @@ ol.auto-numbered{counter-reset:item}
 .exe-link-data{font-size:.8em;margin:0 .2em}
 .exe-link-data abbr{cursor:help}
 /* Quote With Authorship */
-.styled-qc{font-family:Georgia,serif;font-style:italic;width:80%;margin:1.5em auto;padding:0.25em 3.5em;position:relative}
+.styled-qc{font-family:Georgia,serif;font-style:italic;margin:1.5em 2.5em;padding:0.25em 3.5em;position:relative}
 .styled-qc:before{display:block;content:"\201C";font-size:5em;position:absolute;left:0;top:-20px}
 /* Responsive design */
 @media all and (max-width: 780px) {
+	.styled-qc{margin:1.5em .5em}
 	.exe-layout-2-cols .exe-col,.exe-layout-3-cols .exe-col{float:none;width:100%;padding:0}
 	iframe,object,embed{max-width:100%}
 	img,video{max-width:100%;height:auto}    
