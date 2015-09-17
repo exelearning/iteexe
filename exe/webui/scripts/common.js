@@ -1,24 +1,3 @@
-function getFeedback(e, t, n, r) {
-    var i, s;
-    if (r == "truefalse") {
-        var o = "right";
-        if (e == 1) o = "wrong";
-        var u = document.getElementById("s" + n + "-result");
-        var a = document.getElementById("s" + n);
-        if (!u || !a) return false;
-        var f = $exe_i18n.incorrect;
-        if (u.className == o) f = $exe_i18n.correct;
-        u.innerHTML = f;
-        a.style.display = "block"
-    } else {
-        for (i = 0; i < t; i++) {
-            s = "sa" + i + "b" + n;
-            if (i == e) document.getElementById(s).style.display = "block";
-            else document.getElementById(s).style.display = "none"
-        }
-    }
-}
-
 function onClozeChange(ele) {
     var ident = getClozeIds(ele)[0];
     var instant = eval(document.getElementById("clozeFlag" + ident + ".instantMarking").value);
@@ -977,6 +956,28 @@ var $exe = {
         }
         document.getElementsByTagName("head")[0].appendChild(s)
     },
+	// True-False Question and Multi-choice (truefalseelement.py and element.py)
+	getFeedback: function(e, t, n, r) {
+		var i, s;
+		if (r == "truefalse") {
+			var o = "right";
+			if (e == 1) o = "wrong";
+			var u = document.getElementById("s" + n + "-result");
+			var a = document.getElementById("s" + n);
+			if (!u || !a) return false;
+			var f = $exe_i18n.incorrect;
+			if (u.className == o) f = $exe_i18n.correct;
+			u.innerHTML = f;
+			a.style.display = "block"
+		} else {
+			for (i = 0; i < t; i++) {
+				s = "sa" + i + "b" + n;
+				var d = "none";
+				if (i == e) d = "block";
+				document.getElementById(s).style.display = d;
+			}
+		}
+	},
     toggleFeedback: function(e, b) {
         var t = e.name.replace("toggle-", "");
         var n = document.getElementById(t);
