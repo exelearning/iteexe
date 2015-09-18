@@ -20,7 +20,7 @@
 
 // ClozelangElement's functions by José Ramón Jiménez Reyes
 // More than one right answer in the Cloze iDevice by José Miguel Andonegi
-// 2015. Refactorized and completed by Ignacio Gros (http://www.gros.es) for http://exelearning.net/
+// 2015. Refactored and completed by Ignacio Gros (http://www.gros.es) for http://exelearning.net/
 
 var $exe = {
 	
