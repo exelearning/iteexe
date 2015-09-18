@@ -425,19 +425,8 @@ function clearClozeInputs(e, t) {
         }
         r.value = "";
         markClozeWord(r, NOT_ATTEMPTED);
-        r.removeAttribute("readonly")
-    }
-}
-function clearClozeInputs(ident, inputs) {
-    if (!inputs) {
-        var inputs = getCloseInputs(ident)
-    }
-    for (var i=0; i<inputs.length; i++) {
-        var input = inputs[i];
-        input.value="";
-        markClozeWord(input, NOT_ATTEMPTED);
         // Toggle the readonlyness of the answers also
-        input.removeAttribute('readonly');
+		r.removeAttribute("readonly")
     }
 }
 
