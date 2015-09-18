@@ -1,4 +1,26 @@
+// ===========================================================================
+// eXe
+// Copyright 2004-2005, University of Auckland
+// Copyright 2004-2008 eXe Project, http://eXeLearning.org/
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+// ===========================================================================
+
+// 2015. Refactorized and completed by Ignacio Gros (http://www.gros.es) for http://exelearning.net/
 var $exe = {
+	
     init: function() {
         var e = document.body.className;
         $exe.addRoles();
@@ -8,7 +30,8 @@ var $exe = {
                 if (t > 7) $exe.iDeviceToggler.init()
             } else $exe.iDeviceToggler.init()
         }
-        if (e.indexOf("exe-epub3") != 0) {
+        // No MediaElement in ePub3
+		if (e.indexOf("exe-epub3") != 0) {
             var n = document.body.innerHTML;
             if (n.indexOf(' class="mediaelement"') != -1 || n.indexOf(" class='mediaelement") != -1) {
                 $exe.loadMediaPlayer.getPlayer()
@@ -25,6 +48,9 @@ var $exe = {
         $exe.dl.init();
 		$exe.sfHover();
     },
+	
+	// Apply the 'sfhover' class to li elements when they are 'moused over'
+	// Old browsers need this because they don't support li:hover
 	sfHover : function() {
 		var e = document.getElementById("siteNav");
 		if (e) {
@@ -37,6 +63,7 @@ var $exe = {
 					this.className = "sfout"
 				}
 			}
+			// Enable Keyboard:
 			var r = e.getElementsByTagName("A");
 			for (var n = 0; n < r.length; n++) {
 				r[n].onfocus = function() {
@@ -62,6 +89,8 @@ var $exe = {
 			}
 		}
 	},
+	
+	// Quicktime and Real Media for IE
 	ieMediaReplace : function() {
 		if (navigator.appName == "Microsoft Internet Explorer") {
 			var e = document.getElementsByTagName("OBJECT");
@@ -83,7 +112,9 @@ var $exe = {
 			}
 		}
 	},
-    rgb2hex: function(a) {
+	
+    // RGB color to HEX
+	rgb2hex: function(a) {
         if (/^#[0-9A-F]{6}$/i.test(a)) return a;
         a = a.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
 
@@ -92,14 +123,18 @@ var $exe = {
         }
         return "#" + hex(a[1]) + hex(a[2]) + hex(a[3])
     },
-    useBlackOrWhite: function(h) {
+	
+    // Use black or white text depending on the background color
+	useBlackOrWhite: function(h) {
         var r = parseInt(h.substr(0, 2), 16);
         var g = parseInt(h.substr(2, 2), 16);
         var b = parseInt(h.substr(4, 2), 16);
         var y = ((r * 299) + (g * 587) + (b * 114)) / 1000;
         return (y >= 128) ? 'black' : 'white'
     },
-    dl: {
+	
+    // Definition lists with improved presentation
+	dl: {
         init: function() {
             var l = $("dl.exe-dl");
             if (l.length == 0) return false;
@@ -125,30 +160,40 @@ var $exe = {
             else $(e).parent().next("dd").toggle()
         }
     },
-    hasTooltips: function() {
+	
+    // If the page has tooltips we load the JS file
+	hasTooltips: function() {
         if ($("A.exe-tooltip").length > 0) {
             var p = "";
             if (typeof(exe_editor_mode) != "undefined") p = "/scripts/exe_tooltips/";
             $exe.loadScript(p + "exe_tooltips.js", "$exe.tooltips.init('" + p + "')")
         }
     },
-    addRoles: function() {
+	
+    // Add WAI-ARIA roles
+	addRoles: function() {
         $("#header").attr("role", "banner");
         $("#siteNav").attr("role", "navigation");
         $("#main").attr("role", "main");
         $("#siteFooter").attr("role", "contentinfo");
         $(".js-feedback").attr("role", "status")
     },
-    isIE: function() {
+	
+    // Internet Explorer?
+	isIE: function() {
         var e = navigator.userAgent.toLowerCase();
         return e.indexOf("msie") != -1 ? parseInt(e.split("msie")[1]) : false
     },
-    imageGallery: {
+	
+    // Enable "Lightbox"
+	imageGallery: {
         init: function(e) {
             $("A", "#" + e).attr("rel", "lightbox[" + e + "]")
         }
     },
-    hint: {
+	
+    // Show/Hide tips
+	hint: {
         init: function() {
             $(".iDevice_hint").each(function(e) {
                 var t = e + 1;
@@ -178,7 +223,9 @@ var $exe = {
             }
         }
     },
-    iDeviceToggler: {
+	
+    // Hide/Show iDevices (base.css hides this)
+	iDeviceToggler: {
         init: function() {
             if ($(".iDevice").length < 2) return false;
             var t = $(".iDevice_header,.iDevice.emphasis0");
@@ -220,7 +267,9 @@ var $exe = {
             i.attr("class", u)
         }
     },
-    alignMediaElement: function(e) {
+	
+    // The MediaElement did not respect the alignment
+	alignMediaElement: function(e) {
         var t = $(e);
         var n = t.parents().eq(2);
         var r = n.attr("class");
@@ -230,7 +279,9 @@ var $exe = {
             if (i == "auto" && i == s) $(n).wrap('<div style="text-align:center"></div>')
         }
     },
-    loadMediaPlayer: {
+	
+    // Load MediaElement if required
+	loadMediaPlayer: {
         getPlayer: function() {
             $exe.mediaelements = $(".mediaelement");
             $exe.mediaelements.each(function() {
@@ -249,16 +300,19 @@ var $exe = {
             if (typeof eXe != "undefined") {
                 e = "../scripts/mediaelement/" + e
             }
-            $exe.loadScript(e, "$exe.loadMediaPlayer.getCSS()")
+            // Load the JS file and then load the CSS
+			$exe.loadScript(e, "$exe.loadMediaPlayer.getCSS()")
         },
-        getCSS: function() {
+        // Load the CSS file and start MediaElement
+		getCSS: function() {
             var e = "exe_media.css";
             if (typeof eXe != "undefined") {
                 e = "../scripts/mediaelement/" + e
             }
             $exe.loadScript(e, "$exe.loadMediaPlayer.init()")
         },
-        init: function() {
+        // Start MediaElement
+		init: function() {
             if (typeof eXe != "undefined") {
                 mejs.MediaElementDefaults.flashName = "../scripts/mediaelement/" + mejs.MediaElementDefaults.flashName;
                 mejs.MediaElementDefaults.silverlightName = "../scripts/mediaelement/" + mejs.MediaElementDefaults.silverlightName
@@ -268,7 +322,9 @@ var $exe = {
             })
         }
     },
-    setIframesProtocol: function() {
+	
+    // Add "http" to the IFRAMES without protocol in local pages
+	setIframesProtocol: function() {
         var e = window.location.protocol;
         var t = false;
         if (e != "http" && e != "https") t = true;
@@ -277,7 +333,9 @@ var $exe = {
             if (t && e.indexOf("//") == 0) $(this).attr("src", "http:" + e)
         })
     },
-    loadScript: function(url, callback) {
+	
+    // Load a JavaScript or CSS file (in HEAD)
+	loadScript: function(url, callback) {
         var s;
         if (url.split(".").pop() == "css") {
             s = document.createElement("link");
@@ -289,7 +347,7 @@ var $exe = {
             s.type = "text/javascript";
             s.src = url
         }
-        if (s.readyState) {
+        if (s.readyState) { // IE
             s.onreadystatechange = function() {
                 if (s.readyState == "loaded" || s.readyState == "complete") {
                     s.onreadystatechange = null;
@@ -303,6 +361,7 @@ var $exe = {
         }
         document.getElementsByTagName("head")[0].appendChild(s)
     },
+	
 	// True-False Question and Multi-choice (truefalseelement.py and element.py)
 	getFeedback: function(e, t, n, r) {
 		var i, s;
@@ -317,6 +376,7 @@ var $exe = {
 			u.innerHTML = f;
 			a.style.display = "block"
 		} else {
+			// Multi choice iDevice (mode=='multi')
 			for (i = 0; i < t; i++) {
 				s = "sa" + i + "b" + n;
 				var d = "none";
@@ -325,7 +385,8 @@ var $exe = {
 			}
 		}
 	},
-	// element.py (To review: When is it used?)
+	
+	// used to show question's feedback for multi-select idevice 	
 	showFeedback : function(e, t, n) {
 		var r, i, s, o;
 		for (r = 0; r < t; r++) {
@@ -351,8 +412,10 @@ var $exe = {
 			$("#f" + n).hide();
 			e.value = $exe_i18n.showFeedback
 		}
-	},	
-    toggleFeedback: function(e, b) {
+	},
+	
+    // Common feedback (see common.py)
+	toggleFeedback: function(e, b) {
         var t = e.name.replace("toggle-", "");
         var n = document.getElementById(t);
         var d = false;
@@ -373,14 +436,20 @@ var $exe = {
             }
         }
     },
+	
 	// To do: 
+	// calcScore was used for multiple select idevice for calculating score and showing feedback.
 	// calcScore2 (quiztestblock.py)
-	// To review:
+	
+	// used by maths idevice
 	insertSymbol : function(e, t, n) {
 		var r = document.getElementById(e);
 		$exe.insertAtCursor(r, t, n)
-	},	
+	},
+	
+	// To review:
 	insertAtCursor : function(e, t, n) {
+		// MOZILLA/NETSCAPE support
 		if (e.selectionStart || e.selectionStart == "0") {
 			var r = e.selectionStart;
 			var i = e.selectionEnd;
@@ -391,38 +460,65 @@ var $exe = {
 		}
 		e.selectionEnd = e.selectionStart;
 		e.focus()
-	}	
+	}
+	
 };
 // Cloze iDevice
 $exe.cloze = {
+	
+	// Constants
 	NOT_ATTEMPTED : 0,
 	WRONG : 1,
 	CORRECT : 2,
+	
+	// Functions
+	
+	// Called when a learner types something into a cloze word space
 	change : function(ele){
 		var ident = $exe.cloze.getIds(ele)[0];
 		var instant = eval(document.getElementById("clozeFlag" + ident + ".instantMarking").value);
 		if (instant) {
 			$exe.cloze.checkAndMarkWord(ele);
+			// Hide the score paragraph if visible
 			var scorePara = document.getElementById("clozeScore" + ident);
 			scorePara.innerHTML = ""
 		}
 	},
+
+	// Recieves and marks answers from student
 	submit : function(e){
+		// Mark all of the words
 		$exe.cloze.showScore(e, 1);
+		// Hide Submit
 		$exe.cloze.toggle("submit" + e);
+		// Show Restart
 		$exe.cloze.toggle("restart" + e);
+		// Show Show Answers Button
 		$exe.cloze.toggle("showAnswersButton" + e);
+		// Show feedback
 		$exe.cloze.toggleFeedback(e)	
-	},
+	},	
+	
+	// Makes cloze idevice like new:
 	restart : function(e){
+		// Hide Feedback
 		$exe.cloze.toggleFeedback(e);
+		// Clear the answers (Also hides score)
 		$exe.cloze.toggleAnswers(e, true);
+		// Hide Restart
 		$exe.cloze.toggle("restart" + e);
+		// Hide Show Answers Button
 		$exe.cloze.toggle("showAnswersButton" + e);
+		// Show Submit
 		$exe.cloze.toggle("submit" + e)		
 	},
+	
+	// Show/Hide all answers in the cloze idevice
+	// 'clear' is an optional argument, that forces all the answers to be cleared
+	// whether they are all finished and correct or not	
 	toggleAnswers : function(e, t) {
-		var n = true;
+		// See if any have not been answered yet		
+		var n = true; // allCorrect
 		var r = $exe.cloze.getInputs(e);
 		if (!t) {
 			for (var i = 0; i < r.length; i++) {
@@ -434,28 +530,38 @@ $exe.cloze = {
 			}
 		}
 		if (n) {
+			// Clear all answers
 			$exe.cloze.clearInputs(e, r)
 		} else {
+			// Write all answers
 			$exe.cloze.fillInputs(e, r)
 		}
+		// Hide the score paragraph, irrelevant now
 		var o = document.getElementById("clozeScore" + e);
 		o.innerHTML = "";
+		// If the get score button is visible and we just filled in all the right
+		// answers, disable it until they clear the scores again.		
 		var u = document.getElementById("getScore" + e);
 		if (u) {
 			u.disabled = !n
 		}
 	},
+	
+	// Shows all answers for a cloze field
+	// 'inputs' is an option argument containing a list of the 'input' elements for
+	// the field	
 	fillInputs : function(e, t) {
 		if (!t) {
 			var t = $exe.cloze.getInputs(e)
 		}
 		for (var n = 0; n < t.length; n++) {
 			var r = t[n];
-			var i = $exe.cloze.getAnswer(r);
+			var i = $exe.cloze.getAnswer(r); // Right Answer
 			i = i.trim();
 			var s = false;
+			// Check if it has more than one right answer: |dog|bird|cat|
 			if (i.indexOf("|") == 0 && i.charAt(i.length - 1) == "|") {
-				var o = i;
+				var o = i; // Right answer (to operate with this var)
 				var o = o.substring(1, o.length - 1);
 				var u = o.split("|");
 				if (u.length > 1) {
@@ -468,27 +574,42 @@ $exe.cloze = {
 					}
 				}
 				if (s) {
+					// Update the field width to display all the answers and save the previous width (the user may want to try again)
 					r.className = "autocomplete-off width-" + r.style.width;
 					r.style.width = "auto";
 					i = a
 				}
 			}
+			// Show the right answer
 			r.value = i;
 			$exe.cloze.markWord(r, $exe.cloze.CORRECT);
 			r.setAttribute("readonly", "readonly")
 		}
 	},
+	
+	// Blanks all the answers for a cloze field
+	// 'inputs' is an option argument containing a list of the 'input' elements for
+	// the field	
 	clearInputs : function(e, t) {
 		if (!t) {
 			var t = $exe.cloze.getInputs(e)
 		}
 		for (var n = 0; n < t.length; n++) {
 			var r = t[n];
+			// Reset the field width if it has more than one right answer: |dog|bird|cat|
+			if (r.className.indexOf("autocomplete-off width-") != -1) {
+				var i = r.className.replace("autocomplete-off width-", "");
+				r.style.width = i
+			}
 			r.value = "";
 			$exe.cloze.markWord(r, $exe.cloze.NOT_ATTEMPTED);
+			// Toggle the readonlyness of the answers also
 			r.removeAttribute("readonly")
 		}
 	},
+	
+	// Marks a cloze word in view mode.
+	// Returns NOT_ATTEMPTED, CORRECT, or WRONG	
 	checkAndMarkWord : function(e) {
 		var t = $exe.cloze.checkWord(e);
 		if (t != "") {
@@ -503,23 +624,31 @@ $exe.cloze = {
 			return $exe.cloze.WRONG
 		}
 	},
+	
+	// Marks a cloze question (at the moment just changes the color)
+	// 'mark' should be 0=Not Answered, 1=Wrong, 2=Right	
 	markWord : function(e, t) {
 		switch (t) {
 			case 0:
+				// Not attempted
 				e.style.backgroundColor = "";
 				e.style.color = "";
 				break;
 			case 1:
+				// Wrong
 				e.style.backgroundColor = "#FF9999";
 				e.style.color = "#000000";
 				break;
 			case 2:
+				// Correct
 				e.style.backgroundColor = "#CCFF99";
 				e.style.color = "#000000";
 				break
 		}
 		return t
 	},
+	
+	// Return the last mark applied to a word	
 	getMark : function(e) {
 		var t = $exe.cloze.checkWord(e);
 		if (t != "") {
@@ -530,6 +659,8 @@ $exe.cloze = {
 			return $exe.cloze.WRONG
 		}
 	},
+	
+	// Decrypts and returns the answer for a certain cloze field word
 	getAnswer : function(e) {
 		var t = $exe.cloze.getIds(e);
 		var n = t[0];
@@ -538,6 +669,7 @@ $exe.cloze = {
 		var s = i.innerHTML;
 		s = $exe.cloze.decode64(s);
 		s = unescape(s);
+		// XOR "Decrypt"
 		result = "";
 		var o = "X".charCodeAt(0);
 		for (var u = 0; u < s.length; u++) {
@@ -547,12 +679,16 @@ $exe.cloze = {
 		}
 		return result
 	},
+	
+	// Base64 Decode
+	// Base64 code from Tyler Akins -- http://rumkin.com	
 	decode64 : function(e) {
 		var t = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 		var n = "";
 		var r, i, s;
 		var o, u, a, f;
 		var l = 0;
+		// Remove all characters that are not A-Z, a-z, 0-9, +, /, or =
 		e = e.replace(/[^A-Za-z0-9\+\/\=]/g, "");
 		do {
 			o = t.indexOf(e.charAt(l++));
@@ -572,8 +708,11 @@ $exe.cloze = {
 		} while (l < e.length);
 		return n
 	},
+	
+	// Returns the corrected word or an empty string	
 	checkWord : function(e) {
 		var t = e.value;
+		// Extract the idevice id and the input number out of the element's id
 		var n = $exe.cloze.getAnswer(e);
 		var r = n;
 		r = r.trim();
@@ -591,20 +730,30 @@ $exe.cloze = {
 			return ""
 		} else return $exe.cloze.checkWordAnswer(e, r)
 	},
+	
+	// Returns the corrected word or an empty string agains one of the possible answers
 	checkWordAnswer : function(ele, original_answer) {
 		original_answer = original_answer.trim();
 		var guess = ele.value;
+		// Extract the idevice id and the input number out of the element's id
+		//var original = getClozeAnswer(ele);		
 		var answer = original_answer;
 		var ident = $exe.cloze.getIds(ele)[0];
+		// Read the flags for checking answers
 		var strictMarking = eval(document.getElementById("clozeFlag" + ident + ".strictMarking").value);
 		var checkCaps = eval(document.getElementById("clozeFlag" + ident + ".checkCaps").value);
 		if (!checkCaps) {
 			guess = guess.toLowerCase();
 			answer = answer.toLowerCase()
 		}
-		if (guess == answer) return original_answer;
-		else if (strictMarking || answer.length <= 4) return "";
-		else {
+		if (guess == answer) {
+			 // You are right!
+			return original_answer;
+		} else if (strictMarking || answer.length <= 4) {
+			// You are wrong!
+			return "";
+		} else {
+			// Now use the similarity check algorythm
 			var i = 0;
 			var j = 0;
 			var orders = [
@@ -626,6 +775,7 @@ $exe.cloze = {
 					return ""
 				}
 			}
+			// Iterate through the different orders of checking
 			for (i = 0; i < 2; i++) {
 				var string1 = orders[i][0];
 				var string2 = orders[i][1];
@@ -638,20 +788,30 @@ $exe.cloze = {
 						if (a != b) misses += 1;
 						if (misses > maxMisses) break
 					}
-					if (misses <= maxMisses) return original_answer;
+					if (misses <= maxMisses) {
+						// You are right
+						return original_answer;
+					}
 					string1 = string1.substr(1)
 				}
 			}
+			// You are wrong!
 			return ""
 		}
 	},
+	
+	// Extracts the idevice id and input id from a javascript element
 	getIds : function(e) {
+		// Extract the idevice id and the input number out of the element's id
+		// id is "clozeBlank%s.%s" % (idevice.id, input number)		
 		var t = e.id.slice(10);
 		var n = t.indexOf(".");
 		var r = t.slice(0, n);
 		var i = t.slice(t.indexOf(".") + 1);
 		return [r, i]
 	},
+	
+	// Calculate the score for cloze idevice
 	showScore : function(e, t) {
 		var n = 0;
 		var r = document.getElementById("cloze" + e);
@@ -667,29 +827,40 @@ $exe.cloze = {
 				n++
 			}
 		}
+		// Show it in a nice paragraph
 		var a = document.getElementById("clozeScore" + e);
 		a.innerHTML = YOUR_SCORE_IS + n + "/" + i.length + "."
 	},
+	
+	// Returns an array of input elements that are associated with a certain idevice
 	getInputs : function(e) {
 		var t = new Array;
 		var n = document.getElementById("cloze" + e);
 		$exe.cloze.recurseFindInputs(n, e, t);
 		return t
 	},
+	
+	// Adds any cloze inputs found to result, recurses down
 	recurseFindInputs : function(e, t, n) {
 		for (var r = 0; r < e.childNodes.length; r++) {
 			var i = e.childNodes[r];
+			// See if it is a blank
 			if (i.id) {
 				if (i.id.search("clozeBlank" + t) == 0) {
 					n.push(i);
 					continue
 				}
 			}
+			// See if it contains blanks
 			if (i.hasChildNodes()) {
 				$exe.cloze.recurseFindInputs(i, t, n)
 			}
 		}
 	},
+	
+	// Pass the cloze element's id, and the visible property of the feedback element
+	// associated with it will be toggled. If there is no feedback field, does
+	// nothing	
 	toggleFeedback : function(e, t) {
 		var n = document.getElementById("clozeVar" + e + ".feedbackId");
 		if (n) {
@@ -701,32 +872,54 @@ $exe.cloze = {
 			$exe.cloze.toggle(r)
 		}
 	},
+	
+	// Toggle the visiblity of an element from it's id
 	toggle : function(e) {
 		$("#" + e).toggle()
 	},
+	
+	// Called when a learner types something into a cloze word space
 	onLangChange : function(ele) {
 		var ident = $exe.cloze.getLangIds(ele)[0];
 		var instant = eval(document.getElementById("clozelangFlag" + ident + ".instantMarking").value);
 		if (instant) {
 			$exe.cloze.checkAndMarkLangWord(ele);
+			// Hide the score paragraph if visible
 			var scorePara = document.getElementById("clozelangScore" + ident);
 			scorePara.innerHTML = ""
 		}
 	},
+
+	// Recieves and marks answers from student
 	langSubmit : function(e) {
+		// Mark all of the words
 		$exe.cloze.showLangScore(e, 1);
+		// Hide Submit
 		$exe.cloze.toggle("submit" + e);
+		// Show feedback
 		$exe.cloze.toggleLangFeedback(e)
 	},
+	
+	// Makes cloze idevice like new:	
 	langRestart : function(e) {
+		// Hide Feedback
 		$exe.cloze.toggleLangFeedback(e);
+		// Clear the answers (Also hides score)
 		$exe.cloze.toggleLangAnswers(e, true);
+		// Hide Restart
 		$exe.cloze.toggle("restart" + e);
+		// Hide Show Answers Button
 		$exe.cloze.toggle("showAnswersButton" + e);
+		// Show Submit
 		$exe.cloze.toggle("submit" + e)
 	},
+	
+	// Show/Hide all answers in the cloze idevice
+	// 'clear' is an optional argument, that forces all the answers to be cleared
+	// whether they are all finished and correct or not	
 	toggleLangAnswers: function(e, t) {
-		var n = true;
+		// See if any have not been answered yet
+		var n = true; // allCorrect
 		var r = $exe.cloze.getLangInputs(e);
 		if (!t) {
 			for (var i = 0; i < r.length; i++) {
@@ -738,17 +931,26 @@ $exe.cloze = {
 			}
 		}
 		if (n) {
+			// Clear all answers
 			$exe.cloze.clearLangInputs(e, r)
 		} else {
+			// Write all answers
 			$exe.cloze.fillLangInputs(e, r)
 		}
+		// Hide the score paragraph, irrelevant now
 		var o = document.getElementById("clozelangScore" + e);
 		o.innerHTML = "";
+		// If the get score button is visible and we just filled in all the right
+		// answers, disable it until they clear the scores again.		
 		var u = document.getElementById("getScore" + e);
 		if (u) {
 			u.disabled = !n
 		}
 	},
+	
+	// Shows all answers for a cloze field
+	// 'inputs' is an option argument containing a list of the 'input' elements for
+	// the field	
 	fillLangInputs: function(e, t) {
 		if (!t) {
 			var t = $exe.cloze.getLangInputs(e)
@@ -757,9 +959,14 @@ $exe.cloze = {
 			var r = t[n];
 			r.value = $exe.cloze.getLangAnswer(r);
 			$exe.cloze.markWord(r, $exe.cloze.CORRECT);
+			// Toggle the readonlyness of the answers also
 			r.setAttribute("readonly", "readonly")
 		}
 	},
+	
+	// Blanks all the answers for a cloze field
+	// 'inputs' is an option argument containing a list of the 'input' elements for
+	// the field	
 	clearLangInputs : function(e, t) {
 		if (!t) {
 			var t = $exe.cloze.getLangInputs(e)
@@ -768,9 +975,13 @@ $exe.cloze = {
 			var r = t[n];
 			r.value = "";
 			$exe.cloze.markWord(r, $exe.cloze.NOT_ATTEMPTED);
+			// Toggle the readonlyness of the answers also
 			r.removeAttribute("readonly")
 		}
 	},
+	
+	// Marks a cloze word in view mode.
+	// Returns NOT_ATTEMPTED, CORRECT, or WRONG	
 	checkAndMarkLangWord : function(e) {
 		var t = $exe.cloze.checkLangWord(e);
 		if (t != "") {
@@ -785,30 +996,41 @@ $exe.cloze = {
 			return $exe.cloze.WRONG
 		}
 	},
+	
+	// Marks a cloze question (at the moment just changes the color)
+	// 'mark' (t) should be 0=Not Answered, 1=Wrong, 2=Right	
 	markLangWord : function(e, t) {
 		switch (t) {
 			case 0:
+				// Not attempted
 				e.style.backgroundColor = "";
 				break;
 			case 1:
+				// Wrong
 				e.style.backgroundColor = "#FF9999";
 				break;
 			case 2:
+				// Correct
 				e.style.backgroundColor = "#CCFF99";
 				break
 		}
 		return t
 	},
+	
+	// Return the last mark applied to a word
 	getLangMark : function(e) {
+		// Return last mark applied
 		switch (e.style.backgroundColor) {
 			case "#FF9999":
-				return 1;
+				return 1; // Wrong
 			case "#CCFF99":
-				return 2;
+				return 2; // Correct
 			default:
-				return 0
+				return 0 // Not attempted
 		}
 	},
+	
+	// Decrypts and returns the answer for a certain cloze field word
 	getLangAnswer : function(e) {
 		var t = $exe.cloze.getLangIds(e);
 		var n = t[0];
@@ -817,6 +1039,7 @@ $exe.cloze = {
 		var s = i.innerHTML;
 		s = $exe.cloze.decode64(s);
 		s = unescape(s);
+		// XOR "Decrypt"
 		result = "";
 		var o = "X".charCodeAt(0);
 		for (var u = 0; u < s.length; u++) {
@@ -826,21 +1049,30 @@ $exe.cloze = {
 		}
 		return result
 	},
+	
+	// Returns the corrected word or an empty string
 	checkLangWord : function(ele) {
 		var guess = ele.value;
+		// Extract the idevice id and the input number out of the element's id
 		var original = $exe.cloze.getLangAnswer(ele);
 		var answer = original;
 		var guess = ele.value;
 		var ident = $exe.cloze.getLangIds(ele)[0];
+		// Read the flags for checking answers
 		var strictMarking = eval(document.getElementById("clozelangFlag" + ident + ".strictMarking").value);
 		var checkCaps = eval(document.getElementById("clozelangFlag" + ident + ".checkCaps").value);
 		if (!checkCaps) {
 			guess = guess.toLowerCase();
 			answer = original.toLowerCase()
 		}
-		if (guess == answer) return original;
-		else if (strictMarking || answer.length <= 4) return "";
-		else {
+		if (guess == answer) {
+			// You are right!
+			return original;
+		} else if (strictMarking || answer.length <= 4) {
+			// You are wrong!
+			return "";
+		} else {
+			// Now use the similarity check algorythm
 			var i = 0;
 			var j = 0;
 			var orders = [
@@ -862,6 +1094,7 @@ $exe.cloze = {
 					return ""
 				}
 			}
+			// Iterate through the different orders of checking
 			for (i = 0; i < 2; i++) {
 				var string1 = orders[i][0];
 				var string2 = orders[i][1];
@@ -874,20 +1107,30 @@ $exe.cloze = {
 						if (a != b) misses += 1;
 						if (misses > maxMisses) break
 					}
-					if (misses <= maxMisses) return answer;
+					if (misses <= maxMisses) {
+						// You are right
+						return answer;
+					}
 					string1 = string1.substr(1)
 				}
 			}
+			// You are wrong!
 			return ""
 		}
 	},
+	
+	// Extracts the idevice id and input id from a javascript element	
 	getLangIds : function(e) {
+		// Extract the idevice id and the input number out of the element's id
+		// id is "clozelangBlank%s.%s" % (idevice.id, input number)		
 		var t = e.id.slice(14);
 		var n = t.indexOf(".");
 		var r = t.slice(0, n);
 		var i = t.slice(t.indexOf(".") + 1);
 		return [r, i]
 	},
+	
+	// Calculate the score for cloze idevice	
 	showLangScore : function(ident, mark) {
 		var showScore = eval(document.getElementById("clozelangFlag" + ident + ".showScore").value);
 		if (showScore) {
@@ -905,30 +1148,41 @@ $exe.cloze = {
 					score++
 				}
 			}
+			// Show it in a nice paragraph
 			var scorePara = document.getElementById("clozelangScore" + ident);
 			scorePara.innerHTML = YOUR_SCORE_IS + score + "/" + inputs.length + "."
 		}
 	},
+		
+	// Adds any cloze inputs found to result, recurses down
 	recurseFindLangInputs : function(e, t, n) {
 		for (var r = 0; r < e.childNodes.length; r++) {
 			var i = e.childNodes[r];
+			// See if it is a blank
 			if (i.id) {
 				if (i.id.search("clozelangBlank" + t) == 0) {
 					n.push(i);
 					continue
 				}
 			}
+			// See if it contains blanks
 			if (i.hasChildNodes()) {
 				$exe.cloze.recurseFindLangInputs(i, t, n)
 			}
 		}
 	},	
+	
+	// Returns an array of input elements that are associated with a certain idevice
 	getLangInputs : function(e) {
 		var t = new Array;
 		var n = document.getElementById("clozelang" + e);
 		$exe.cloze.recurseFindLangInputs(n, e, t);
 		return t
 	},
+	
+	// Pass the cloze element's id, and the visible property of the feedback element
+	// associated with it will be toggled. If there is no feedback field, does
+	// nothing	
 	toggleLangFeedback : function(e) {
 		var t = document.getElementById("clozelangVar" + e + ".feedbackId");
 		if (t) {
