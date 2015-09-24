@@ -46,7 +46,7 @@ var $exe = {
         if (typeof($.prettyPhoto) != 'undefined') $("a[rel^='lightbox']").prettyPhoto({
             social_tools: "",
             deeplinking: false,
-            opacity: 0.95
+            opacity: 0.85
         });
         $exe.dl.init();
 		$exe.sfHover();
