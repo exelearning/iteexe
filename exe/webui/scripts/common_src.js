@@ -1295,7 +1295,7 @@ var $exe = {
         $exe.hint.init();
         $exe.setIframesProtocol();
 		$exe.hasTooltips();
-        if (typeof($.prettyPhoto)!='undefined') $("a[rel^='lightbox']").prettyPhoto({social_tools:"",deeplinking:false,opacity:0.95});
+        if (typeof($.prettyPhoto)!='undefined') $("a[rel^='lightbox']").prettyPhoto({social_tools:"",deeplinking:false,opacity:0.85});
 		$exe.dl.init();
     },
 	rgb2hex : function(rgb) {
