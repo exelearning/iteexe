@@ -343,7 +343,7 @@ class IdeviceStore:
         
         factoryExtendedIdevices.append(SortIdeviceInc())
         factoryExtendedIdevices.append(HangmanIdeviceInc())
-        #factoryExtendedIdevices.append(ClickInOrderIdeviceInc())
+        factoryExtendedIdevices.append(ClickInOrderIdeviceInc())
         factoryExtendedIdevices.append(MemoryMatchIdeviceInc())
         #factoryExtendedIdevices.append(PlaceTheObjectsIdeviceInc())
         factoryExtendedIdevices.append(FileAttachIdeviceInc())
