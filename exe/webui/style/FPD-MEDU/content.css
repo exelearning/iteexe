@@ -292,7 +292,7 @@ table[align="center"] {
 }
 
 /*glosario*/
-.glosario {
+.glosario,a.term-tt {
 	border-bottom: 1px dotted;
 	border-bottom-color: inherit;
 	outline: none;
@@ -301,7 +301,7 @@ table[align="center"] {
 	color: inherit;
 	padding:0em 0em 0em 1.5em;background:url(./glosario.png) no-repeat top left;
 }
-a.glosario:hover { text-decoration:none; }
+a.glosario:hover{ text-decoration:none; }
 .glosario span {
 	margin-left: -999em;
 	position: absolute;

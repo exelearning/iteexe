@@ -47,6 +47,7 @@ var TooltipDialog = {
 			
 			// Get the type
 			if (cls.indexOf(" inline-tt")!=-1) type = 2;
+			else if (cls.indexOf(" term-tt")!=-1) type = 5;
 			else if (cls.indexOf(" ajax-tt")!=-1) type = 3;
 			else if (cls.indexOf(" glossary-tt")!=-1) type = 4;
 			
@@ -117,14 +118,16 @@ var TooltipDialog = {
 			document.getElementById("extraClassNames").value+=extra;
 			
 			// Set the tooltip content
-			if (type==2) {
+			if (type==2 || type==5) {
 				var id = inst.dom.getAttrib(elm, 'id');
 				id = id.replace("link","t");
 				var e = inst.dom.select("#"+id);
 				var e = inst.contentWindow.document.getElementById(id);
 				if (e) {
 					if (ref.indexOf("#")==0) href.value = "#";
-					document.getElementById('longtext').value=e.innerHTML;
+					var fieldID = 'longtext';
+					if (type==5) fieldID = 'definition';
+					document.getElementById(fieldID).value=e.innerHTML;
 				}
 			}
 		} else {
@@ -206,15 +209,24 @@ var TooltipDialog = {
 		document.getElementById("type-desc").innerHTML = document.getElementById(id+"-desc").innerHTML;
 		
 		var ref = document.getElementById("href");
-		if (id=="type2") {
+		if (id=="type2" || id=="type5") {
 			if (ref.value=="") ref.value = "#";
 		} else {
 			if (ref.value=="#") ref.value = "";
 		}
 		
-		var display = "";
-		if (id=="type3" || id=="type4") display = "none";
+		// Hide/Show some fields (Page and Link URL)
+		var display = "none";
+		if (id=="type1") display = "";
 		document.getElementById("href-row").style.display = display;
+		if (id=="type3") display = "";
+		document.getElementById("pages-row").style.display = display;
+		
+		// Change the label for the tooltipTitle field
+		var txt = tinyMCEPopup.getLang("tooltip.tooltip_title");
+		if (id=="type5") txt = tinyMCEPopup.getLang("tooltip.term");
+		document.getElementById("tooltipTitleLabel").innerHTML = txt;
+
 	},
 	getNodesList : function(id,target){
 		var i;
@@ -248,10 +260,12 @@ var TooltipDialog = {
 		var tit = document.getElementById("tooltipTitle").value;
 		var txt = document.getElementById("linkTitle").value;
 		var lng = document.getElementById("longtext").value;
+		var def = document.getElementById("definition").value;
 		
 		if (ref=="") return tinyMCEPopup.getLang("tooltip.link_is_required");
 		if (t==1 && txt=="") return tinyMCEPopup.getLang("tooltip.title_is_required");
 		if (t==2 && lng=="") return tinyMCEPopup.getLang("tooltip.tooltip_content_is_required");
+		if (t==5 && def=="") return tinyMCEPopup.getLang("tooltip.definition_is_required");
 		
 		return "";
 	},
@@ -294,9 +308,11 @@ var TooltipDialog = {
 		}
 		
 		// Inline HTMLL
-		if (type=="type2") {
+		if (type=="type2" || type=="type5") {
 			// Get the tooltip content
-			var lng = document.getElementById("longtext").value;
+			var fieldID = "longtext";
+			if (type=="type5") fieldID = "definition";
+			var lng = document.getElementById(fieldID).value;
 			if (!this.hasHTML(lng)) lng = "<p>"+lng+"</p>";
 			// Get the link ID
 			var id = "";
@@ -347,8 +363,9 @@ var TooltipDialog = {
 		var tit = document.getElementById("tooltipTitle").value;
 		if (t==1) {
 			cls += "plain-tt";
-		} else if (t==2) {
-			cls += "inline-tt";
+		} else if (t==2 || t==5) {
+			if (t==2) cls += "inline-tt";
+			if (t==5) cls += "term-tt";
 			// Set the ID
 			var inst = tinyMCEPopup.editor;
 			var elm = inst.selection.getNode();
