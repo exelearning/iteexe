@@ -215,6 +215,20 @@ var TooltipDialog = {
 			if (ref.value=="#") ref.value = "";
 		}
 		
+		// Default title for the definition (just for the new tooltips)
+		var elm;
+		var inst = tinyMCEPopup.editor;
+		elm = inst.selection.getNode();
+		elm = inst.dom.getParent(elm, "A");
+		if (elm == null) {
+			var tit = document.getElementById("linkTitle");
+			if (id=="type5") {
+				if (tit.value=="") tit.value = tinyMCEPopup.getLang("tooltip.see_definition");
+			} else {
+				if (tit.value==tinyMCEPopup.getLang("tooltip.see_definition")) tit.value = "";
+			}			
+		}
+		
 		// Hide/Show some fields (Page and Link URL)
 		var display = "none";
 		if (id=="type1") display = "";

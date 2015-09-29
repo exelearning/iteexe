@@ -42,6 +42,7 @@ tinyMCE.addI18n('en.tooltip',{
 	type5_desc : _("Write the term and its definition. You may use HTML and edit it in the editor."),
 	type5_label : _("Definition:"),
 	type5_instructions : _("The tooltip will show the term and its definition."),
+	see_definition : _("See definition"),
 	// Validation
 	link_is_required : _("The Link is required"),
 	title_is_required : _("The Link title is required"),
