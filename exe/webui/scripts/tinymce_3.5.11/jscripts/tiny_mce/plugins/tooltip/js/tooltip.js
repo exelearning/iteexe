@@ -335,7 +335,12 @@ var TooltipDialog = {
 			} else {
 				id = inst.dom.getAttrib(elm, 'id');
 			}
+			// Get the link to update its href
+			var l = inst.dom.select("#"+id);
+			// Get the ID of the content
 			id = id.replace("link","t");
+			// Update the link's href
+			inst.dom.setAttribs(l, {'href': '#'+id});
 			// Create or update the content
 			var e = inst.dom.select("#"+id);
 			// Add a class if it's a definition
