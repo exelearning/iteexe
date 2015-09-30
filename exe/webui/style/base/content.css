@@ -101,7 +101,7 @@ background:#ededed;
 	a[href^=http]:after{content:" <" attr(href) "> "}
 	*/
 	.external-iframe{display:none}
-	.external-iframe-src{display:block!important;margin:2em auto;font-size:.95em}
+	.external-iframe-src{display:block!important;margin:2em 0;font-size:.95em;text-align:center}
 	#main .iDeviceTitle{background:none;padding-left:0}
 	body #header,body #emptyHeader,body #nodeDecoration{height:auto!important;min-height:0;border:none;padding:0}
 }

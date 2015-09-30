@@ -36,10 +36,19 @@ tinyMCE.addI18n('en.tooltip',{
 	type4_instructions1 : _('Use the "Definition List" button to add terms and definitions:'),
 	type4_instructions2 : _("Define the Link: Select the page where the definitions are."),
 	type4_instructions3 : _("The tooltip will show the term definition."),
+	// Type 5
+	type5 : _("Definition"),
+	term : _("Term"),
+	type5_desc : _("Write the term and its definition. You may use HTML and edit it in the editor."),
+	type5_label : _("Definition:"),
+	type5_instructions : _("The tooltip will show the term and its definition."),
+	see_definition : _("See definition"),
 	// Validation
+	jquery_is_required : _('jQuery is required'),
 	link_is_required : _("The Link is required"),
 	title_is_required : _("The Link title is required"),
 	tooltip_content_is_required : _("Fill in the Tooltip content"),
+	definition_is_required : _("The Definition is empty"),
 	// Behaviour
 	close_behaviour : _("Close behaviour:"),
 	close_behaviour1 : _("Automatically close the tooltip when moving the mouse out of the link"),
