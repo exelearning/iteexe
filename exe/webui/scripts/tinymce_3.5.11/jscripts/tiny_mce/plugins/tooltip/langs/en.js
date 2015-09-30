@@ -44,6 +44,7 @@ tinyMCE.addI18n('en.tooltip',{
 	type5_instructions : _("The tooltip will show the term and its definition."),
 	see_definition : _("See definition"),
 	// Validation
+	jquery_is_required : _('jQuery is required'),
 	link_is_required : _("The Link is required"),
 	title_is_required : _("The Link title is required"),
 	tooltip_content_is_required : _("Fill in the Tooltip content"),

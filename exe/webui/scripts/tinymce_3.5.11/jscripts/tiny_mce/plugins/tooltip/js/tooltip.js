@@ -338,9 +338,13 @@ var TooltipDialog = {
 			id = id.replace("link","t");
 			// Create or update the content
 			var e = inst.dom.select("#"+id);
+			// Add a class if it's a definition
+			var cssClass = this.className+"-text";
+			if (type=="type5") cssClass += " "+this.className+"-definition";			
 			if (e.length==0) {
-				inst.dom.add(inst.getBody(), 'div', { id : id, class : this.className+'-text' }, lng);
+				inst.dom.add(inst.getBody(), 'div', { id : id, class : cssClass }, lng);
 			} else {
+				inst.dom.setAttribs(e, {'class': cssClass});
 				inst.dom.setHTML(e, lng);
 			}
 		}
