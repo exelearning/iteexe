@@ -34,10 +34,6 @@
 				<label for="type2" style="margin-right:1em">{#tooltip.type2}</label>
 				<span id="type2-desc" style="display:none">{#tooltip.type2_desc}</span>
 				
-				<input type="radio" id="type5" name="type" value="type5"  />
-				<label for="type5" style="margin-right:1em">{#tooltip.type5}</label>
-				<span id="type5-desc" style="display:none">{#tooltip.type5_desc}</span>				
-				
 				<input type="radio" id="type3" name="type" value="type3"  />
 				<label for="type3" style="margin-right:1em">{#tooltip.type3}</label>
 				<span id="type3-desc" style="display:none">{#tooltip.type3_desc}</span>
@@ -82,11 +78,6 @@
 			<div id="type1-options" style="display:none">
 				<p>{#tooltip.type1_instructions}</p>
 			</div>
-			<div id="type5-options" style="display:none">
-				<label for="definition" style="font-weight:bold">{#tooltip.type5_label}</label>
-				<textarea id="definition" name="definition" style="width:100%;height:40px;margin-top:5px"></textarea>
-				<p style="margin-top:5px">{#tooltip.type5_instructions}</p>
-			</div>			
 			<div id="type2-options" style="display:none">
 				<label for="longtext" style="font-weight:bold">{#tooltip.type2_label}</label>
 				<textarea id="longtext" name="longtext" style="width:100%;height:40px;margin-top:5px"></textarea>
@@ -121,15 +112,17 @@
 				<input type="radio" id="close_behaviour2" name="close_behaviour" value=" with-button"  />
 				<label for="close_behaviour2">{#tooltip.close_behaviour2}</label>
 			</p>
-			<p style="margin-top:1.5em"><strong>{#tooltip.link_behaviour}</strong></p>
-			<p>
-				<input type="radio" id="link_behaviour1" name="target" value="" checked="checked"  />
-				<label for="link_behaviour1">{#tooltip.link_behaviour1}</label>
-			</p>
-			<p id="types">
-				<input type="radio" id="link_behaviour2" name="target" value="_blank"  />
-				<label for="link_behaviour2">{#tooltip.link_behaviour2}</label>
-			</p>
+			<div id="target-options">
+				<p style="margin-top:1.5em"><strong>{#tooltip.link_behaviour}</strong></p>
+				<p>
+					<input type="radio" id="link_behaviour1" name="target" value="" checked="checked"  />
+					<label for="link_behaviour1">{#tooltip.link_behaviour1}</label>
+				</p>
+				<p id="types">
+					<input type="radio" id="link_behaviour2" name="target" value="_blank"  />
+					<label for="link_behaviour2">{#tooltip.link_behaviour2}</label>
+				</p>
+			</div>
 		</div><!-- /#behaviour_panel -->
 	
 		<div id="appearance_panel" class="panel">

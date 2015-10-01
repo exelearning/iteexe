@@ -33,7 +33,6 @@
 				var d = ed.getDoc();
 				var s = '<style type="text/css">';
 					s += '.exe-tooltip-text:before{content:"'+ed.getLang("tooltip.title")+' - '+ed.getLang("tooltip.type2")+'"}';
-					s += '.exe-tooltip-definition:before{content:"'+ed.getLang("tooltip.title")+' - '+ed.getLang("tooltip.type5")+'"}';
 				s += '</style>';
 				jQuery("HEAD",d).append(s);				
 			});

@@ -20,10 +20,12 @@ tinyMCE.addI18n('en.tooltip',{
 	type1_desc : _("Plain text. You can add a title."),
 	type1_instructions : _("The tooltip will show the Link title."),
 	// Type 2
-	type2 : _("Inline HTML"),
-	type2_desc : _("Inline HTML. You can use complex HTML and edit it in TinyMCE."),
-	type2_label : _("Tooltip content:"),
-	type2_instructions : _("You may use HTML. You can edit it later in the editor itself."),
+	type2 : _("Definition"),
+	term : _("Term"),
+	type2_desc : _("Write the term and its definition. You may use HTML and edit it in the editor."),
+	type2_label : _("Definition:"),
+	type2_instructions : _("The tooltip will show the term and its definition."),
+	see_definition : _("See definition"),
 	// Type 3
 	type3 : _("Page"),
 	type3_desc : _("Show the content of the first Free Text iDevice in the specified page."),	
@@ -36,19 +38,12 @@ tinyMCE.addI18n('en.tooltip',{
 	type4_instructions1 : _('Use the "Definition List" button to add terms and definitions:'),
 	type4_instructions2 : _("Define the Link: Select the page where the definitions are."),
 	type4_instructions3 : _("The tooltip will show the term definition."),
-	// Type 5
-	type5 : _("Definition"),
-	term : _("Term"),
-	type5_desc : _("Write the term and its definition. You may use HTML and edit it in the editor."),
-	type5_label : _("Definition:"),
-	type5_instructions : _("The tooltip will show the term and its definition."),
-	see_definition : _("See definition"),
 	// Validation
 	jquery_is_required : _('jQuery is required'),
 	link_is_required : _("The Link is required"),
+	page_is_required : _("Please select a Page"),
 	title_is_required : _("The Link title is required"),
-	tooltip_content_is_required : _("Fill in the Tooltip content"),
-	definition_is_required : _("The Definition is empty"),
+	definition_is_required : _("Please write the Definition"),
 	// Behaviour
 	close_behaviour : _("Close behaviour:"),
 	close_behaviour1 : _("Automatically close the tooltip when moving the mouse out of the link"),
