@@ -292,7 +292,7 @@ table[align="center"] {
 }
 
 /*glosario*/
-.glosario,a.term-tt {
+.glosario,a.definition-tt {
 	border-bottom: 1px dotted;
 	border-bottom-color: inherit;
 	outline: none;
