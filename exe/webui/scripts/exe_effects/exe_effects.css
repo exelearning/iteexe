@@ -91,6 +91,12 @@ html[xmlns] .fx-timeline-container,html[xmlns] .fx-timeline-event{display:block}
 .fx-static-timeline-container p{margin-left:6px}
 .fx-ie-dash{float:left;line-height:3.2em;font-weight:bolder} /* IE<8 */
 
+/* Print version */
+@media print{
+    .exe-tabs .fx-tab-content,.exe-paginated .fx-page-content,.exe-carousel .fx-carousel-content{display:block!important;margin-bottom:1.5em}
+    .exe-tabs .fx-tab-content h2.sr-av{position:relative;overflow:auto;clip:auto;height:auto}
+}
+
 /* ePub */
 .exe-epub3 .exe-timeline{background:#fff;color:#333;margin:20px auto;padding:25px;border-radius:5px;border-top-left-radius:0;border-bottom-left-radius:0;border-left:2px solid #555}
 .exe-epub3 .exe-timeline h2{background:#555;color:#FFF;padding:5px 20px;border-radius:5px;border-top-left-radius:0;border-bottom-left-radius:0;margin:5px 0 5px -25px;display:inline-block}
