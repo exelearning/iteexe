@@ -83,16 +83,13 @@ Centre for Flexible and Distance Learning
 #siteNav ul ul .active{
 	background-image:none !important;
 }
-#siteNav#siteNav .no-ch{
-	font-size:.82em;
-}
-#siteNav ul ul ul a{
+#siteNav ul ul a{
 	padding-left:28px;
 	width:188px;
 	font-size:.82em;
 }
-#siteNav ul ul ul ul a,#siteNav#siteNav ul ul ul ul .no-ch{
-	font-size:1em;
+#siteNav ul ul ul a{
+	padding-left:38px;
 }
 #siteNav .other-section{
 	display:none; /* Remove if you want all levels to be displayed */
