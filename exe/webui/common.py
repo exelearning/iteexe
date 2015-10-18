@@ -466,7 +466,8 @@ def fieldShowEditMessageEle(element):
         return editModeHeading(element.field.message)
     else:
         return ""
-    
+
+# Required until a better i18n solution works        
 def getJavaScriptStrings():
     s = '<script type="text/javascript">$exe_i18n={'
     s += 'previous:"'+c_("Previous")+'",'
@@ -482,6 +483,34 @@ def getJavaScriptStrings():
     s += '}</script>'
     
     return s
+    
+# Required until a better i18n solution works
+def getGamesJavaScriptStrings():
+    s = '<script type="text/javascript">$exe_i18n.exeGames={'
+    s += 'hangManGame:"'+c_('Hangman Game')+'",'
+    s += 'accept:"'+c_("Accept")+'",'
+    s += 'yes:"'+c_("Yes")+'",'
+    s += 'no:"'+c_("No")+'",'
+    s += 'right:"'+c_("Correct")+'",'
+    s += 'wrong:"'+c_("Wrong")+'",'
+    s += 'rightAnswer:"'+c_("Right answer")+'",'
+    s += 'status:"'+c_("Status")+'",'
+    s += 'selectedLetters:"'+c_("Selected letters")+'",'
+    s += 'word:"'+c_("Word")+'",'
+    s += 'words:"'+c_("Words")+'",'
+    s += 'play:"'+c_("Play")+'",'
+    s += 'playAgain:"'+c_("Reiniciar")+'",'
+    s += 'results:"'+c_("Results")+'",'
+    s += 'total:"'+c_("Total")+'",'
+    s += 'otherWord:"'+c_("Other word")+'",'
+    s += 'gameOver:"'+c_("Game over.")+'",'
+    s += 'confirmReload:"'+c_("Reload the game?")+'",'
+    s += 'clickOnPlay:\''+c_('Click on "Play" to start a new game.')+'\','
+    s += 'clickOnOtherWord:\''+c_('Click on "Other word" to continue.')+'\','
+    s += 'az:"'+c_("abcdefghijklmnopqrstuvwxyz")+'"'
+    s += '}</script>'
+    
+    return s    
 
 def header(style=u'default'):
     """Generates the common header XHTML"""
@@ -1205,6 +1234,16 @@ def ideviceHasFX(idevice):
         return True
     return False
     
+def ideviceHasGames(idevice):
+    block = g_blockFactory.createBlock(None, idevice)
+    if not block:
+        log.critical("Unable to render iDevice.")
+        raise Error("Unable to render iDevice.")
+    content = block.renderView('default')
+    if re.search(' class=[\'"]exe-game ', content):
+        return True
+    return False
+    
 def ideviceHasGallery(idevice):
     if idevice.klass == 'GalleryIdevice':
         return True
@@ -1220,6 +1259,12 @@ def ideviceHasGallery(idevice):
 def hasFX(node):
     for idevice in node.idevices:
         if ideviceHasFX(idevice):
+            return True
+    return False
+    
+def hasGames(node):
+    for idevice in node.idevices:
+        if ideviceHasGames(idevice):
             return True
     return False
     

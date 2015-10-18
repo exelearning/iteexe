@@ -311,6 +311,8 @@ class Epub3Page(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />" + lb
         if common.hasFX(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />" + lb
+        if common.hasGames(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />" + lb       
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />" + lb
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->' + lb
@@ -330,6 +332,10 @@ class Epub3Page(Page):
         if common.hasFX(self.node):
             html += u'<script type="text/javascript" src="exe_effects.js"></script>' + lb
         html += common.getJavaScriptStrings() + lb
+        if common.hasGames(self.node):
+            # The games require additional strings
+            html += common.getGamesJavaScriptStrings() + lb
+            html += u'<script type="text/javascript" src="exe_games.js"></script>' + lb
         html += u'<script type="text/javascript" src="common.js"></script>' + lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>' + lb
@@ -517,6 +523,7 @@ class Epub3Export(object):
         hasXspfplayer = False
         hasGallery = False
         hasFX = False
+        hasGames = False
         hasWikipedia = False
         isBreak = False
         hasInstructions = False
@@ -526,7 +533,7 @@ class Epub3Export(object):
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasWikipedia):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasGames and hasWikipedia):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -542,6 +549,8 @@ class Epub3Export(object):
                     hasGallery = common.ideviceHasGallery(idevice)
                 if not hasFX:
                     hasFX = common.ideviceHasFX(idevice)
+                if not hasGames:
+                    hasGames = common.ideviceHasGames(idevice)
                 if not hasWikipedia:
                     if 'WikipediaIdevice' == idevice.klass:
                         hasWikipedia = True
@@ -568,6 +577,9 @@ class Epub3Export(object):
         if hasFX:
             exeEffects = (self.scriptsDir / 'exe_effects')
             exeEffects.copyfiles(contentPages)
+        if hasGames:
+            exeGames = (self.scriptsDir / 'exe_games')
+            exeGames.copyfiles(contentPages)
         if hasWikipedia:
             wikipediaCSS = (self.cssDir / 'exe_wikipedia.css')
             wikipediaCSS.copyfile(contentPages / 'exe_wikipedia.css')

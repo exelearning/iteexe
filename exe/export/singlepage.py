@@ -135,6 +135,16 @@ class SinglePage(Page):
         
         hasEffects = hasFX(self.node)
         
+        def hasGames(node):
+            hasJSGames = common.hasGames(node)
+            if not hasJSGames:
+                for child in node.children:
+                    if hasGames(child):
+                        return True
+            return hasJSGames
+        
+        hasJSGames = hasGames(self.node)
+        
         def hasWikipediaIdevice(node):
             hasWikipedia = common.hasWikipediaIdevice(node)
             if not hasWikipedia:
@@ -188,6 +198,8 @@ class SinglePage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
         if hasEffects:
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
+        if hasJSGames:
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5" or self.hasMediaelement:
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
@@ -207,6 +219,10 @@ class SinglePage(Page):
         if hasEffects:
             html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
+        if hasJSGames:
+            # The games require additional strings
+            html += common.getGamesJavaScriptStrings() + lb
+            html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
