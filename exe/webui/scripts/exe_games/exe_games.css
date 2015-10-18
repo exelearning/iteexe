@@ -17,7 +17,8 @@
 .exe-game-msg a:hover,.exe-game-msg a:focus{background:#dedede;text-decoration:underline}
 /* Hangman Game */
 .exe-hangman .wording ol{padding:1.1em 0 0}
-.exe-hangman .wording li{list-style-position:inside;margin-bottom:.5em}
+.exe-hangman .wording li{list-style-position:inside;margin-bottom:.5em;color:#999}
+.exe-hangman .wording .current{color:#333;font-weight:bold}
 .exe-hangman .abc ul{margin:1.5em 0 0;padding:0;list-style:none;overflow:auto;line-height:2em;font-size: 1.1em}
 #main .exe-hangman .abc li{margin:0 7px 7px 0;padding:0;list-style:none;font-weight:bold;font-size:1.2em;float:left}
 .exe-hangman .abc a{background:#777;color:#fff;min-width:1.6em;display:inline-block;text-align:center;text-decoration:none;border-radius:3px}

@@ -197,7 +197,13 @@ var hangMan = {
 
 		if (order>(words.length-2)) $("#start-"+id).hide();
 		window["hangMan"+id].playedWords = order+1;
+        hangMan.showQuestion(id,order);
 	},
+    showQuestion : function(id,order){
+        var lis = $("#question-"+id+" li");
+        lis.removeClass("current");
+        lis.eq(order).addClass("current");
+    },
 	start : function(id){
 		$("#hangManResults"+id).show();
         $("#hangManWrapper"+id).show();
@@ -249,13 +255,13 @@ var hangMan = {
 		s.style.display = "inline";
         $("#hangManResults"+id).hide();
         $("#hangManWrapper"+id).hide();
+        $("#question-"+id+" li").removeClass("current");        
         document.getElementById("clean-"+id).style.display = "none";
 		window["hangMan"+id].playedWords  = 0;
 		window["hangMan"+id].isPlaying = false;
 		window["hangMan"+id].isWordFinished = null;
         document.getElementById("displayLetters-"+id).value="";
         document.getElementById("displayMan-"+id).value="";
-		// document.getElementById("hangMan"+id).reset();
 		document.getElementById("total-"+id+"-counter").innerHTML = window["hangMan"+id].words.length;	
 		document.getElementById("won-"+id).value = 0;
 		document.getElementById("lost-"+id).value = 0;
