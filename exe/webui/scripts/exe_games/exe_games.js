@@ -102,7 +102,7 @@ var hangMan = {
 					</div>\
 				</div>\
 				<p>\
-					<label for="displayWord-'+id+'">'+$exe_i18n.exeGames.word+':</label>\
+					<label for="displayWord-'+id+'">'+$exe_i18n.exeGames.word+' <span id="currentWord-'+id+'"></span>:</label>\
 					<input type="text" name="displayWord-'+id+'" id="displayWord-'+id+'" readonly="readonly" /> <span id="displayWord-'+id+'-feedback"></span>\
 					<input type="hidden" name="won-'+id+'" id="won-'+id+'" value="0" />\
 					<input type="hidden" name="lost-'+id+'" id="lost-'+id+'" value="0" />\
@@ -202,6 +202,7 @@ var hangMan = {
     showQuestion : function(id,order){
         var lis = $("#question-"+id+" li");
         lis.removeClass("current");
+        $("#currentWord-"+id).html(order+1);
         lis.eq(order).addClass("current");
     },
 	start : function(id){
