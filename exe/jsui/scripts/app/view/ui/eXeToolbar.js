@@ -283,6 +283,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                                     },
                                                     {
                                                         xtype: 'accesskey_menuitem',
+                                                        text: _('Publish in Google Drive'),
+                                                        accesskey: 'f',
+                                                        itemId: 'file_export_googledrive'
+                                                    },
+                                                    {
+                                                        xtype: 'accesskey_menuitem',
                                                         text: _('Zip File'),
                                                         accesskey: 'z',
                                                         itemId: 'file_export_zip'
