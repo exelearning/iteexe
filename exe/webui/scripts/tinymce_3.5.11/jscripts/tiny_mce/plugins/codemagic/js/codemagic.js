@@ -24,9 +24,11 @@ function _init()
     toggle('wrap', document.getElementById('toggleWrap'));
     document.getElementById('toggleAutoclose').checked = settings.autoclose;
     toggle('autoclosetags', document.getElementById('toggleAutoclose'));
+    setTimeout(function(){ // The New eXeLearning
     document.getElementById('toggleHighlight').checked = settings.highlight;
     toggle('highlight', document.getElementById('toggleHighlight'));
     resize();
+    },100); // The New eXeLearning
 }
 
 function save()
