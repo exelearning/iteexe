@@ -26,7 +26,6 @@ except ImportError:
     pass
 from distutils.core import setup
 import py2exe
-import httplib2
 from exe.engine import version
 
 g_files = {'.': ["README",
@@ -36,7 +35,6 @@ g_files = {'.': ["README",
                   "exe/webui/images/eXe_icon.ico",
                   "exe/webui/mr_x.gif",
                   "installs/windows/exeLicense.txt",
-                  os.path.join(os.path.dirname(httplib2.__file__), 'cacerts.txt'),
                   ]}
 g_oldBase = "exe/webui"
 g_newBase = "."
@@ -69,15 +67,12 @@ dataFiles(["exe/webui/style",
 
 g_oldBase = "exe"
 g_newBase = "."
-exc = [
-       "exe.po",
-       "exe_ja.xlf",
-       "exe_jp.xlf",
-       "messages.pot",
-       "exe_l7.po",
-       "exe_le.po",
-       "exe_tt.po"
-    ]
+exc = []
+exc = glob.glob(g_oldBase + "/locale/*/LC_MESSAGES/*.po")
+exc.append(g_oldBase + "/locale/ja/exe_jp.xlf")
+exc.append(g_oldBase + "/locale/ja/exe_ja.xlf")
+exc.append(g_oldBase + "/locale/messages.pot")
+exc.sort()
 dataFiles(["exe/locale", "exe/mediaprofiles"], exc)
 
 g_oldBase = "exe/jsui"

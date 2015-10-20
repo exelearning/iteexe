@@ -17,12 +17,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
-
+from exe.engine.resource import Resource
 """
 WebsiteExport will export a package as a website of HTML pages
 """
 
-import sys
 import logging
 import re
 import imp
@@ -30,7 +29,6 @@ from shutil                   import rmtree
 from exe.engine.path          import Path, TempDirPath
 from exe.export.pages         import uniquifyNames
 from exe.export.websitepage   import WebsitePage
-from exe.engine.resource      import Resource
 from zipfile                  import ZipFile, ZIP_DEFLATED
 from exe.webui                import common
 from exe.webui.livepage       import allSessionClients
@@ -48,7 +46,6 @@ from oauth2client.client      import AccessTokenCredentials
 from apiclient                import errors
 from apiclient.discovery      import build
 from apiclient.http           import MediaFileUpload
-from nevow.livepage           import jquote
 
 log = logging.getLogger(__name__)
 
@@ -190,15 +187,12 @@ class WebsiteExport(object):
             # Creates a new temporary dir to export the package to, it will be deleted
             # once the export process is finished
             self.filename = Path(mkdtemp())
-            self.gDriveNotificationStatus(client, _(u'Exporting package as web site in: %s') % (jquote(self.filename)))
+            self.gDriveNotificationStatus(client, _(u'Exporting package as web site in: %s') % (self.filename))
             outputDir = self.export(package)
             
             self.gDriveNotificationStatus(client, _(u'Starting authorized connection to Google Drive API'))
             credentials = AccessTokenCredentials(auth_token, user_agent)
-            ca_certs = None
-            if hasattr(sys, 'frozen'):
-                ca_certs = 'cacerts.txt'
-            http = httplib2.Http(ca_certs=ca_certs)
+            http = httplib2.Http()
             http = credentials.authorize(http)
             drive_service = build('drive', 'v2', http=http)
             
