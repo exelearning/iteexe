@@ -23,8 +23,6 @@ anything it just redirects the user to a new package.
 """
 
 import logging
-import os
-from exe                      import globals as G
 from exe.webui.renderable     import RenderableResource
 from exe.jsui.mainpage import MainPage
 from twisted.web import error
@@ -48,7 +46,6 @@ class PackageRedirectPage(RenderableResource):
         RenderableResource.__init__(self, None, None, webServer)
         self.webServer = webServer
         self.packagePath = packagePath
-        self.package_name = ''
         # See if all out main pages are not showing
         # This is a twisted timer
         self.stopping = None
@@ -62,44 +59,6 @@ class PackageRedirectPage(RenderableResource):
         """
         if name == '':
             return self
-        
-        elif name == 'gdrive-callback' :
-            gdrive_callback = '''
-            <html>
-              <head>
-                <title>Export Package to Google Drive</title>
-                <script type="text/javascript">
-                  function getAuthResult() {
-                      var authResult = {};
-                      var paramsString =  window.location.hash.substring(1);
-                      var paramsArray = paramsString.split('&');
-                      for (var i = 0; i < paramsArray.length; i++) {
-                        var kvp = paramsArray[i].split('=');
-                        console.log(kvp);
-                        
-                        // Check multiple values
-                        value = decodeURIComponent(kvp[1]).split('+');
-                        if (value.length == 1) {
-                          value = value[0];
-                        }
-                        
-                        key = decodeURIComponent(kvp[0]);
-                        
-                        authResult[key] = value;
-                      }
-                      return authResult;
-                  }
-                  authResult = getAuthResult();
-                  opener.eXe.controller.Toolbar.prototype.processExportGoogleDrive(authResult);
-                  window.close();
-                </script>
-              </head>
-              <body>
-                <h1>Export Package to Google Drive</h1>
-              </body>
-            </html>'''
-            return gdrive_callback
-            
         else:
             name = unicode(name, 'utf8')
             result = self.children.get(name)

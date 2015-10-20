@@ -29,7 +29,6 @@ import logging
 from urllib import quote
 import mywebbrowser
 from exe.engine.path import Path
-from exe             import globals as G
 
 log = logging.getLogger(__name__)
 
@@ -38,7 +37,7 @@ def launchBrowser(config, packageName):
     """
     Launch the configured webbrowser for this platform
     """
-    url = u'%s/%s' % (G.application.exeAppUri, quote(packageName))
+    url = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
     log.info(u"url " + url)
     dfbrw=mywebbrowser.get()
     withdefaultbrowser=True

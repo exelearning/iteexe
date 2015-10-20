@@ -193,11 +193,6 @@ class Config(object):
         # by default, only allow embedding of media types for which a
         # browser plugin is found:
 
-        # Set Google API Client Id, must be not empty to enable the publishing
-        # to Google Drive feature
-        self.googleApiClientID = ''
-
-
         self.defaultLicense='creative commons: attribution - share alike 4.0'
 
         self.assumeMediaPlugins = False
@@ -445,8 +440,6 @@ class Config(object):
                 self.showIdevicesGrouped = self.configParser.user.showIdevicesGrouped
             if self.configParser.user.has_option('locale'):
                 self.locale = self.configParser.user.locale
-            if self.configParser.user.has_option('googleApiClientID'):
-                self.googleApiClientID = self.configParser.user.googleApiClientID
             if self.configParser.user.has_option('defaultLicense'):
                 self.defaultLicense = self.configParser.user.defaultLicense
 

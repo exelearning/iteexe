@@ -65,8 +65,8 @@ from exe.export.xmlexport        import XMLExport
 from exe.engine.lom import lomsubs
 from exe.engine.lom.lomclassification import Classification
 import zipfile
-
 log = logging.getLogger(__name__)
+
 
 class MainPage(RenderableLivePage):
     """
@@ -185,7 +185,6 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleImport, 'importPackage')
         setUpHandler(self.handleCancelImport, 'cancelImportPackage')
         setUpHandler(self.handleExport, 'exportPackage')
-        setUpHandler(self.handleExportGoogleDrive, 'exportGoogleDrive')
         setUpHandler(self.handleXliffExport, 'exportXliffPackage')
         setUpHandler(self.handleQuit, 'quit')
         setUpHandler(self.handleBrowseURL, 'browseURL')
@@ -252,15 +251,6 @@ class MainPage(RenderableLivePage):
                                 target='_blank')[revision]
                         ]
                ]
-
-    def render_googleapiinit(self, ctx, data):
-        google_api_script = (
-          "var GOOGLE_API_CLIENT_ID = '%s'; " % (self.config.googleApiClientID)
-        + "var GOOGLE_API_SCOPES = [ "
-        + "  'https://www.googleapis.com/auth/drive.file', "
-        + "]; "
-        + "var GOOGLE_API_REDIRECT_URI = 'http://localhost:51235/gdrive-callback'; ")
-        return ctx.tag()[google_api_script]
 
     def handleTestPrintMsg(self, client, message):
         """
@@ -441,8 +431,9 @@ class MainPage(RenderableLivePage):
             rel_name = rel_name.replace('\\', '/')
         if rel_name.startswith('/'):
             rel_name = rel_name[1:]
-        http_relative_pathname = '%s/%s'%(G.application.exeAppUri, rel_name)
-        log.debug('printdir http_relative_pathname=%s'%(http_relative_pathname))
+        http_relative_pathname = "http://127.0.0.1:" + str(self.config.port) \
+                                     + '/' + rel_name
+        log.debug('printdir http_relative_pathname=' + http_relative_pathname)
         return http_relative_pathname
 
     def ClearParentTempPrintDirs(self, client, log_dir_warnings):
@@ -771,23 +762,6 @@ class MainPage(RenderableLivePage):
         log.info('Cancel import')
         Resources.cancelImport()
 
-    def handleExportGoogleDrive(self, client, auth_token, user_agent):
-        """
-        Called by js
-        Exports the current page as webSite and starts the upload to GDrive
-        """ 
-        try:
-            stylesDir  = self.config.stylesDir/self.package.style
-            
-            # Export full website, but do not show result to client
-            websiteExport = WebsiteExport(self.config, stylesDir, None)
-            websiteExport.exportGoogleDrive(self.package, client, auth_token, user_agent)
-            
-        except Exception, e:
-            log.error('An error occured when exporting package to Google Drive')
-            client.alert(_(u'Error exporting package %s to Google Drive: %s') % (self.package.name, str(e)))
-            return None
-        
     def handleExport(self, client, exportType, filename):
         """
         Called by js.
@@ -1082,8 +1056,6 @@ class MainPage(RenderableLivePage):
             client.alert(_(u'Exported to %s') % filename)
             # Show the newly exported web site in a new window
             self._startFile(filename)
-        else :
-            return filename
 
     def exportWebZip(self, client, filename, stylesDir):
         try:

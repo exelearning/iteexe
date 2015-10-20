@@ -142,7 +142,6 @@ Ext.application({
     ],
     
     controllers: [
-        'eXeViewport',
     	'Idevice',
         'MainTab',
     	'Outline',
