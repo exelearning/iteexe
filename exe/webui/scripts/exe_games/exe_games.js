@@ -5,7 +5,7 @@
 // $exe_i18n.exeGames is defined in common.py
 
 $exeGames = {
-    init : function(){
+	init : function(){
         var games = $("div.exe-game");
         if (games.length==0) return false;
         var hasHangMan = false;
@@ -19,7 +19,7 @@ $exeGames = {
             var css = '<style type="text/css">';
                 css += '.exe-hangman:before{content:"'+$exe_i18n.exeGames.hangManGame+'"}';
             css += '</style>';
-            $("HEAD").append(css);           
+            $("HEAD").append(css);
         }
     },
     // Confirmed action
@@ -41,7 +41,7 @@ $exeGames = {
             var message = $("#"+id+"-message p");
             var gameHeight = game.height();
             var messageHeight = message.height();
-            var margin = parseInt(gameHeight/2-messageHeight*2);
+            var margin = parseInt(gameHeight/2-messageHeight/2);
             message.css("margin-top",margin+"px");
         },
         hide : function(id){
@@ -150,7 +150,11 @@ var hangMan = {
 			</tbody>\
 		</table>';
         c += "</div>";
-		$("#exe-hangman-"+id).html(c);
+		// Check if it's IE<9 to add a className
+		var extraCSS = "";
+		var t = $exe.isIE();
+		if (t && t<9) extraCSS = "ie-lt-9";
+		$("#exe-hangman-"+id).addClass(extraCSS).html(c);
 		hangMan.init(id,words,isCaseSensitive);
 	},
 	init : function(id,words,isCaseSensitive){

@@ -8,7 +8,7 @@
 	<link href="css/exegames.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="tinyMCEPopup.executeOnLoad('onLoadInit();');" style="display: none">
-<form name="tooltipOptions" id="tooltipOptions" onsubmit="eXeGames.insert();return false" action="#">
+<form name="eXeGameOptions" id="eXeGameOptions" onsubmit="eXeGames.insert();return false" action="#">
 	
 	<div class="tabs">
 		<ul>
@@ -90,7 +90,15 @@
 		
 		<div id="instructions_panel" class="panel">
 			<div id="type1-instructions" class="type-instructions">
-                <p>...</p>
+				<p><strong>{#exegames.hangman}:</strong></p>
+				<ul>
+					<li>{#exegames.hangmanInstructions_1}</li>
+					<li>{#exegames.hangmanInstructions_2}</li>
+					<li>{#exegames.hangmanInstructions_3}</li>
+					<li>{#exegames.hangmanInstructions_4}</li>
+					<li>{#exegames.deleteGameInstructions}</li>
+				</ul>
+				<p>{#exegames.accessibilityReminder}</p>
             </div>
             <div id="type2-instructions" class="type-instructions">
                 <!-- To create a new type -->
