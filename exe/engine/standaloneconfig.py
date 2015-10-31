@@ -49,6 +49,8 @@ class StandaloneConfig(Config):
         self.styles        = []
         self.lastDir       = exePath
 
+        self.quota = 0
+
     def _getConfigPathOptions(self):
         """
         Returns the best places for a linux config file

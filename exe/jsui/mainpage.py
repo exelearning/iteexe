@@ -30,6 +30,7 @@ import logging
 import traceback
 import shutil
 import tempfile
+import uuid
 from exe.engine.version          import release, revision
 from twisted.internet            import threads, reactor
 from exe.webui.livepage          import RenderableLivePage,\
@@ -55,7 +56,6 @@ from exe.importers.scanresources import Resources
 from exe.engine.path             import Path, toUnicode, TempDirPath
 from exe.engine.package          import Package
 from exe                         import globals as G
-from tempfile                    import mkdtemp
 from exe.engine.mimetex          import compile
 from urllib                      import unquote, urlretrieve
 from exe.engine.locationbuttons  import LocationButtons
@@ -86,6 +86,8 @@ class MainPage(RenderableLivePage):
         self.session = session
         RenderableLivePage.__init__(self, parent, package, config)
         self.putChild("resources", File(package.resourceDir))
+        self.tempDir = TempDirPath()
+        self.putChild("temp", File(self.tempDir, 'application/octet-stream', ('*')))
         # styles directory
         # self.putChild("stylecss", File(self.config.stylesDir)
 
@@ -174,6 +176,12 @@ class MainPage(RenderableLivePage):
                         pass
 
         return json.dumps({'success': True, 'data': data})
+
+    def child_temp_file(self, ctx):
+        request = inevow.IRequest(ctx)
+        filetype = request.args.get('filetype', [''])[0]
+        path = self.tempDir / uuid.uuid4() + filetype[1:]
+        return json.dumps({'success': True, 'path': path, 'name': path.basename()})
 
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
@@ -357,15 +365,15 @@ class MainPage(RenderableLivePage):
             raise
         # Tell the user and continue
         if onDone:
-            client.alert(_(u'Package saved to: %s') % filename, onDone)
+            client.filePickerAlert(_(u'Package saved to: %s') % filename, onDone)
         elif self.package.name != oldName:
             # Redirect the client if the package name has changed
             self.webServer.root.putChild(self.package.name, self)
             log.info('Package saved, redirecting client to /%s' % self.package.name)
-            client.alert(_(u'Package saved to: %s') % filename, 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'), \
+            client.filePickerAlert(_(u'Package saved to: %s') % filename, 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'), \
                          filter_func=otherSessionPackageClients)
         else:
-            client.alert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
+            client.filePickerAlert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
 
     def handleLoadPackage(self, client, filename, filter_func=None):
         """Load the package named 'filename'"""
@@ -852,7 +860,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXTRACT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Package extracted to: %s') % filename)
+        client.filePickerAlert(_(u'Package extracted to: %s') % filename)
 
     def handleCreateDir(self, client, currentDir, newDir):
         try:
@@ -1028,7 +1036,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.filePickerAlert(_(u'Exported to %s') % filename)
 
     def exportScorm(self, client, filename, stylesDir, scormType):
         """

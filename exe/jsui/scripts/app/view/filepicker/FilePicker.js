@@ -40,6 +40,53 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 
 	file: {},
 
+	remote: false,
+
+	show: function() {
+		eXe.app.filepicker = this;
+		if (this.remote) {
+			Ext.Ajax.request({
+				url: window.location.href + '/temp_file',
+				params: { filetype: this.filetypes.getAt(0).get('extension') },
+				success: function (response) {
+					this.status = eXe.view.filepicker.FilePicker.returnOk;
+					this.file = JSON.parse(response.responseText);
+					this.callback.call(this.scope, this);
+				},
+				scope: this
+			});
+		} else {
+			this.callParent();
+		}
+	},
+
+	alert: function(title, message, func) {
+		if (this.remote) {
+			eXe.app.browseURL(window.location.href + '/temp/' + this.file.name, _('Download'), 'download_tab');
+			if (func) {
+				func();
+			} else {
+				try {
+					Ext.Msg.close();
+				} catch (err) {
+
+				}
+
+				setTimeout(function(){
+					var tab_panel = Ext.ComponentQuery.query('#main_tab')[0],
+                		tab = tab_panel.down('#download_tab');
+
+					if (tab) {
+						tab_panel.remove(tab);
+						tab = null;
+					}
+				}, 3000);
+			}
+		} else {
+			Ext.Msg.alert(title, message, func);
+		}
+	},
+
     initComponent: function() {
         var me = this,
             ft = Ext.create("Ext.data.Store",{ fields: ['typename', 'extension', 'regex'] }),

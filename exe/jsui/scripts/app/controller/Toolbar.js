@@ -331,38 +331,6 @@ Ext.define('eXe.controller.Toolbar', {
         });
         about.show();
 	},
-    
-    browseURL: function(url, title, id) {
-        if (Ext.isSecure && url.substr(0, 7) === 'http://') {
-            Ext.Msg.alert(
-                title,
-                Ext.String.format(
-                    _('The requested url is not secure but eXe is hosted in a secure site. To prevent \
-browser restrictions, you must click in the url: {0}'),
-                    '<a href="' + url + '" target="_blank" onclick="eXe.app.closeMessages()">' + url + '</a>')
-            );
-        } else {
-            var tab_panel = Ext.ComponentQuery.query('#main_tab')[0],
-                tab = tab_panel.down('#' + id);
-
-            if (tab && tab.itemId === 'print_tab') {
-                tab_panel.remove(tab);
-                tab = null;
-            }
-
-            if (!tab) {
-                tab_panel.add({
-                    xtype: 'uxiframe',
-                    itemId: id,
-                    closable: true,
-                    src: url,
-                    title: title
-                });
-            }
-
-            tab_panel.setActiveTab(id);
-        }
-    },
 
     releaseNotesPage: function() {
         var about = new Ext.Window ({
@@ -400,7 +368,7 @@ browser restrictions, you must click in the url: {0}'),
     },
 
     processBrowseEvent: function(menu, item, e, eOpts) {
-        this.browseURL(e.url, e.title, e.id)
+        eXe.app.browseURL(e.url, e.title, e.id)
     },
 
     // Not used - Task 1080, jrf
@@ -627,6 +595,7 @@ browser restrictions, you must click in the url: {0}'),
         var f = Ext.create("eXe.view.filepicker.FilePicker", {
             type: eXe.view.filepicker.FilePicker.modeSave,
             title: _("Save extracted package as"),
+            remote: true,
             modal: true,
             scope: this,
             callback: function(fp) {
@@ -771,6 +740,7 @@ browser restrictions, you must click in the url: {0}'),
         var fp = Ext.create("eXe.view.filepicker.FilePicker", {
             type: eXe.view.filepicker.FilePicker.modeSave,
             title: _("Export to Xliff as"),
+            remote: true,
             modal: true,
             scope: this,
             callback: function(fp) {
@@ -1066,7 +1036,7 @@ browser restrictions, you must click in the url: {0}'),
 	},// exportPackage()
     
     filePrint: function() {
-        this.browseURL(location.href + '/print/', _('Print'), 'print_tab');
+        eXe.app.browseURL(location.href + '/print/', _('Print'), 'print_tab');
     },
 	
     recentRender: function() {
