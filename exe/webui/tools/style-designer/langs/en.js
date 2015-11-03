@@ -26,6 +26,16 @@ var $i18n = {
 	Text_size : _("Size"),
 	Links_color : _("Links"),
 	Links_color_FULL : _("Links color"),
+	// Description
+	Style_Description : _("Style description"),
+	Author : _("Author"),
+	Author_URL : _("Author URL"),
+	Style_Name : _("Style name"),
+	Save_to_name : _("Save to name the new Style."),
+	Style_Version : _("Style version"),
+	Style_Version_Instructions : _("Style version number is automatically increased when you save, use this selector to reset it."),
+	License : _("License"),
+	Original_License : _("(license of the original Style)"),
 	// #2
 	Page : _("Page"),
 	Page_background : _("Page background (only Web Site)"),
@@ -111,7 +121,7 @@ var $i18n = {
 	No_Opener_Error : _("The Style Designer window is not open."),
 	Quit_Warning : _("This window will be closed. Please restart the tool."),
 	Information : _("Information"),
-	Restore_Instructions : _("Just close this window and your design preview without clicking on Finish."),
+	Restore_Instructions : _("Undo changes since last time you saved? This cannot be undone. "),
 	OK : _("OK"),
 	Cancel : _("Cancel"),
 	// Color Picker

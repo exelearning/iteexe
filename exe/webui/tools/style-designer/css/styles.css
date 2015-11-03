@@ -57,6 +57,15 @@ textarea{width:500px;height:238px;display:block;margin-top:.3em;padding:2px}
 p{width:602px;margin:10px 0}
 .fields .info{margin:.3em 0 5px 0;color:#666}
 
+#info textarea{height:40px;margin-bottom:10px}
+#info input{width:160px}
+#license{border:0;font-weight:bold}
+#info a{margin-right:.5em}
+#info .autoclear{margin:10px 0}
+#info .col{width:50%;float:left;padding:0}
+#info .col label{margin-right:5px}
+#info .info{margin-top:-5px}
+
 .field{margin:1px 0 5px 0}
 .field label{float:left;display:block;text-align:right;padding-right:5px}
 .col{float:left;padding-right:20px}
