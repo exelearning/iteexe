@@ -477,38 +477,7 @@ Ext.define('eXe.controller.Toolbar', {
 		errorSaving : function(){
 			Ext.Msg.alert(_('Error'), _("Your Style could not be saved because an unknown error occurred."));
 		},
-		saveStyle : function(content, nav) {
-			alert('Hay que guardar los cambios (esta función está en Toolbar.js).\n\nRecibo dos parámetros: el contenido de content.css y el de nav.css.\n\nEso es lo que hay que guardar');
-			Ext.Ajax.request({
-	    		url: location.pathname + '/styleDesigner',
-	    		method: "POST",
-	    		params: {
-	    			'content': content,
-	    			'nav': nav,
-	    		},
-				scope: this,
-				success: function(response) {
-					alert("Recibo la respuesta (response.responseText) con un mensaje de éxito y lo muestro con Ext.Msg.alert.");
-					console.log("Ext.Ajax.Request, success");
-					console.log(response);
-					try {
-						styleDesignerWindow.styleDesignerPopup.close();
-						styleDesignerWindow.close();
-					} catch(e) {
-						
-					}
-				},
-				error: function(){
-					alert("Recibo la respuesta (response.responseText) con un mensaje de error.");
-					this.styleDesigner.errorSaving();
-					console.log("Ext.Ajax.Request, erro");
-					console.log(arguments);
-				}
-			});
-			
-		},
 		editStyle : function(){
-			
 			var stylePath = this.styleDesigner.getCurrentStyleFilePath();
 			
 			// We check if the Style is in the list exelearning-default-styles.txt

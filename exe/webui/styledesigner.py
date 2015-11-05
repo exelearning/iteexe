@@ -176,7 +176,7 @@ class StyleDesigner(Renderable, Resource):
             
         styleDir = self.config.stylesDir / style_dirname
         if os.path.isdir(styleDir):
-            raise CreateStyleExistsError(styleDir, _(u'Style %s directory already exists') % (style_dirname))
+            raise CreateStyleExistsError(styleDir, _(u'Style directory %s already exists') % (style_dirname))
         else:
             try:
                 os.mkdir(styleDir)
