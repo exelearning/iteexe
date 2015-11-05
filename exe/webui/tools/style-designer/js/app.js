@@ -1192,100 +1192,67 @@ var $app = {
 		if (closeDesigner == undefined) {
 			closeDesigner = false;
 		}
-		createStyleWin = new Ext.Window({
-            width: 475,
-            maxHeight: opener.opener.eXe.app.getMaxHeight(150),
-            modal: true,
-            title: _('Create new style'),
-            items: [
-                new Ext.create('Ext.form.Panel', {
-					url: '/styleDesigner',
-		            id: 'styledesignercreateform',
-		            padding: 5,
-				    items: [
-				        {
-				        	xtype: 'textfield',
-				        	fieldLabel: _('Style name'),
-				        	name: 'style_name',
-				        	allowBlank: false,
-				            width: '80%',
-				            padding: 5,
-				        },
-				    ],
-		            buttons: [
-		               {
-		            	   text: _('Continue'),
-		            	   handler: function() {
-		            		   // get the form panel
-		            		   var form = this.up('form').getForm();
-		            		   // make sure the form contains valid data before submitting
-		            		   if (form.isValid()) { 
-		            			   // Collect data from the main edition form except style_name,  
-		            			   // that is read from this interactive form
-		            			   var data = $app.collectAjaxData(content, nav, 'createStyle', copyFrom);
-		            			   var style_name = form.findField('style_name');
-		            			   data.set('style_name', style_name.getValue());
-		            			   jQuery.ajax({
-										url: '/styleDesigner',
-									    data: data,
-									    cache: false,
-									    contentType: false,
-									    processData: false,
-									    type: 'POST',
-										success: function(response, action) {
-											// Form request can success, even if the create/save operation failed
-											result = JSON.parse(response);
-											if (result.success) {
-												var message = result.message + '<br/>';
-												if (closeDesigner) {
-													message += _('Style Designer windows will be closed. ');
-												}
-												else {
-													message += _('Page will be reloaded. ');
-												}
-												Ext.Msg.alert(
-													'Success',
-													message,
-													function(btn, txt) {
-														createStyleWin.close();
-														$app.loadNewStyle(result.style_dirname);   
-														if (closeDesigner) {
-															opener.window.close();
-															window.close();
-														}
-													}
-												);
-											}
-											else {
-												Ext.Msg.alert(
-													'Failed',
-													result.message,
-													function(btn, txt) {
-														createStyleWin.close();
-													}
-												);
-											}   
-										},
-										failure: function(response, action) {
-											Ext.Msg.alert(
-												'Failed',
-												function(btn, txt) {
-													createStyleWin.close();
-												}
-											);
-										}
-		            			   });
-		                      }
-		                      else { // display error alert if the data is invalid
-		                          Ext.Msg.alert('Invalid Data', 'Please correct form errors.')
-		                      }
-		                  }
-		               }
-		            ]
-			    }),
-            ],
-		});
-		createStyleWin.show();
+		Ext.Msg.prompt(
+			_('Create new style'),
+			_('Name the new style'),
+			function(button, input_value) {
+				if (button === 'ok') {
+					// Collect data from the main edition form except style_name,
+					// that is read from this interactive form
+					var data = $app.collectAjaxData(content, nav, 'createStyle', copyFrom);
+		            data.set('style_name', input_value);
+		            jQuery.ajax({
+		            	url: '/styleDesigner',
+		            	data: data,
+		            	cache: false,
+		            	contentType: false,
+		            	processData: false,
+		            	type: 'POST',
+		            	success: function(response, action) {
+		            		// Form request can success, even if the create/save operation failed
+		            		result = JSON.parse(response);
+		            		if (result.success) {
+		            			var message = result.message + '<br/>';
+		            			if (closeDesigner) {
+		            				message += _('Style Designer windows will be closed. ');
+		            			}
+		            			else {
+		            				message += _('Page will be reloaded. ');
+		            			}
+		            			Ext.Msg.alert(
+	            					'Success',
+	            					message,
+	            					function(btn, txt) {
+	            						$app.loadNewStyle(result.style_dirname);
+	            						if (closeDesigner) {
+	            							opener.window.close();
+	            							window.close();
+	            						}
+	            					}
+		            			);
+		            		}
+		            		else {
+		            			Ext.Msg.alert(
+	            					'Failed',
+	            					result.message,
+	            					function(btn, txt) {
+	            						createStyleWin.close();
+	            					}
+		            			);
+		            		}
+		            	},
+		            	failure: function(response, action) {
+		            		Ext.Msg.alert(
+	            				'Failed',
+	            				function(btn, txt) {
+	            					createStyleWin.close();
+	            				}
+		            		);
+		            	}
+		            });
+				}
+			}
+		);
 	},
 }
 $(function(){
