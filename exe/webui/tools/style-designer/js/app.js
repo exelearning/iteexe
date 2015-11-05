@@ -1219,9 +1219,15 @@ var $app = {
                {
             	   text: _('Continue'),
             	   handler: function() {
-            		   var form = this.up('form').getForm(); // get the form panel
-            		   if (form.isValid()) { // make sure the form contains valid data before submitting
+            		   // get the form panel
+            		   var form = this.up('form').getForm();
+            		   // make sure the form contains valid data before submitting
+            		   if (form.isValid()) { 
+            			   // Collect data from the main edition form except style_name,  
+            			   // that is read from this interactive form
             			   var data = $app.collectAjaxData(content, nav, 'createStyle', copyFrom);
+            			   var style_name = form.findField('style_name');
+            			   data.set('style_name', style_name.getValue());
 
             			   jQuery.ajax({
 								url: '/styleDesigner',
