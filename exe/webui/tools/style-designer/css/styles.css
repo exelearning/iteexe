@@ -24,6 +24,9 @@ background:#F0F0EE;
 padding:0;
 margin:8px 8px 0 8px;
 }
+/* Activity indicator */
+.sending-form{background:#fff url(../images/loading.gif) no-repeat 50% 50%}
+.sending-form #cssWizard *{visibility:hidden!important}
 
 html {background:#F0F0EE;}
 .fields {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:10px;}
@@ -75,6 +78,7 @@ p{width:602px;margin:10px 0}
 #header .field label{width:105px}
 #menu .field label{width:130px}
 #idevices .field label{width:105px}
+#page .field label{width:95px}
 #menu .general label{width:100px}
 #portlets .field label{width:100px}
 #footer .field label{width:95px}

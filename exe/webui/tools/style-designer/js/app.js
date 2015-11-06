@@ -168,7 +168,7 @@ var $app = {
 			else  {
 				// Send POST request to update current style
  			   var data = $app.collectAjaxData(content, nav, 'saveStyle');
- 			   
+ 			   $app.preloader.show();
  			   jQuery.ajax({
 					url: '/styleDesigner',
 					data: data,
@@ -177,6 +177,7 @@ var $app = {
 					processData: false,
 					type: 'POST',
 					success: function(response, action) {
+						$app.preloader.hide();
 						// Form request can success, even if the create/save operation failed
 						result = JSON.parse(response);
 						if (result.success) {
@@ -188,6 +189,7 @@ var $app = {
 						}	   
 					},
 					failure: function(response, action) {
+						$app.preloader.hide();
 						Ext.Msg.alert('Failed', response.statusText);
 					}
  			   });
@@ -214,7 +216,7 @@ var $app = {
 						else  {
 							// Send POST request to update current style
 							var data = $app.collectAjaxData(content, nav, 'saveStyle');
-							   
+							$app.preloader.show();   
 							jQuery.ajax({
 								url: '/styleDesigner',
 								data: data,
@@ -223,6 +225,7 @@ var $app = {
 								processData: false,
 								type: 'POST',
 								success: function(response, action) {
+									$app.preloader.hide();
 									// Form request can success, even if the create/save operation failed
 									result = JSON.parse(response);
 									if (result.success) {
@@ -240,6 +243,7 @@ var $app = {
 									}	   
 								},
 								failure: function(response, action) {
+									$app.preloader.hide();
 									Ext.Msg.alert('Failed', response.statusText);
 								}
 							});
@@ -253,6 +257,14 @@ var $app = {
 		this.getCurrentCSS();
 		// Enable the Color Pickers after loading the current values
 		
+	},
+	preloader : {
+		show : function(){
+			$(document.body).addClass("sending-form");
+		},
+		hide : function(){
+			$(document.body).removeClass("sending-form");
+		}
 	},
 	quit : function(msg){
 		document.title = msg;
@@ -329,7 +341,8 @@ var $app = {
 		
 		// content.css
 		var contentCSS = opener.$designer.contentCSS.split($app.mark);
-		$app.baseContentCSS = contentCSS[0].replace(/\s+$/, ''); // Remove the last space
+		// To review: $app.baseContentCSS = contentCSS[0].replace(/\s+$/, ''); // Remove the last space
+		$app.baseContentCSS = contentCSS[0];
 		var myContentCSS = "";
 		if (contentCSS.length==2) {
 			myContentCSS = contentCSS[1];
@@ -341,7 +354,8 @@ var $app = {
 		
 		// nav.css
 		var navCSS = opener.$designer.navCSS.split($app.mark);
-		$app.baseNavCSS = navCSS[0].replace(/\s+$/, ''); // Remove the last space
+		// To review: $app.baseNavCSS = navCSS[0].replace(/\s+$/, ''); // Remove the last space
+		$app.baseNavCSS = navCSS[0];
 		var myNavCSS = "";
 		if (navCSS.length==2) {
 			myNavCSS = navCSS[1];
@@ -390,9 +404,12 @@ var $app = {
 		return c.replace(reg, "");
 	},
 	loadConfig : function() {
-		jQuery('#styleName').val(opener.$designer.config.styleName);
+		var nameField = jQuery('#styleName');
+		nameField.val(opener.$designer.config.styleName).keyup(function(){
+			this.value = this.value.replace(/["]+/g, '');
+		});
 		// Hide the name field if it's a new Style
-		if ($("#styleName").val()=="") $("#currentStyleInfo").hide().before($i18n.Save_to_name);		
+		if (nameField.val()=="") $("#currentStyleInfo").hide().before($i18n.Save_to_name);		
 		
 		jQuery('#authorName').val(opener.$designer.config.authorName);
 		jQuery('#authorURL').val(opener.$designer.config.authorURL);
@@ -756,7 +773,7 @@ var $app = {
 		}
 		var noEmIconColor = $('input[name=noEmIconColor]:checked').val();
 		if (noEmIconColor!='') {
-			contentCSS += ".toggle-idevice0 a{/*noEmIconColor*/background-image:url("+this.stylePath+"_style_icons_"+noEmIconColor+".png);}";
+			contentCSS += ".toggle-em0 a{/*noEmIconColor*/background-image:url("+this.stylePath+"_style_icons_"+noEmIconColor+".png);}";
 		}
 		
 		// #nav
@@ -1201,7 +1218,8 @@ var $app = {
 					// that is read from this interactive form
 					var data = $app.collectAjaxData(content, nav, 'createStyle', copyFrom);
 		            data.set('style_name', input_value);
-		            jQuery.ajax({
+		            $app.preloader.show();
+					jQuery.ajax({
 		            	url: '/styleDesigner',
 		            	data: data,
 		            	cache: false,
@@ -1209,6 +1227,7 @@ var $app = {
 		            	processData: false,
 		            	type: 'POST',
 		            	success: function(response, action) {
+							$app.preloader.hide();
 		            		// Form request can success, even if the create/save operation failed
 		            		result = JSON.parse(response);
 		            		if (result.success) {
@@ -1242,6 +1261,7 @@ var $app = {
 		            		}
 		            	},
 		            	failure: function(response, action) {
+							$app.preloader.hide();
 		            		Ext.Msg.alert(
 	            				'Failed',
 	            				function(btn, txt) {
