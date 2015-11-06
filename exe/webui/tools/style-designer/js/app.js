@@ -935,7 +935,7 @@ var $app = {
 		if (hideNavigation) {
 			navCSS+="/*hideNavigation*/";
 			navCSS+="#siteNav,#nav-toggler{display:none;}";
-			navCSS+="#main{padding-left:20px;}";
+			navCSS+="#main{padding-left:20px;padding-right:20px}";
 			navCSS+="@media all and (max-width: 1015px){";
 				navCSS+="#main,.no-nav #main{padding-top:20px;}";	
 			navCSS+="}";

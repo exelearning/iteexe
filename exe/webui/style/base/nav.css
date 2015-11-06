@@ -50,16 +50,6 @@ body{padding:0;text-align:center}
 #nav-toggler a:hover{text-decoration:none}
 #skipNav{z-index:100px;padding-top:15px;text-align:center}
 
-@media screen and (min-width: 701px) and (max-width: 1000px) {
-	#main{padding:20px 20px 0 240px}
-	#siteNav{width:220px;margin-right:20px}
-}
-
-@media screen and (max-width: 1150px) {
-	#main{padding:20px 40px 0 290px}
-	#siteNav{width:250px;margin-right:40px}
-}
-
 @media screen and (max-width: 980px) {
 	.exe-web-site #content{width:100%;border:0;box-shadow:none}
 	#main{padding:20px 30px 0 280px}
