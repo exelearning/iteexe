@@ -188,7 +188,7 @@ var $app = {
 							Ext.Msg.alert('Failed', result.message);
 						}	   
 					},
-					failure: function(response, action) {
+					error: function(response) {
 						$app.preloader.hide();
 						Ext.Msg.alert('Failed', response.statusText);
 					}
@@ -242,7 +242,7 @@ var $app = {
 										Ext.Msg.alert('Failed', result.message);
 									}	   
 								},
-								failure: function(response, action) {
+								error: function(response) {
 									$app.preloader.hide();
 									Ext.Msg.alert('Failed', response.statusText);
 								}
@@ -1260,7 +1260,7 @@ var $app = {
 		            			);
 		            		}
 		            	},
-		            	failure: function(response, action) {
+		            	error: function(response) {
 							$app.preloader.hide();
 		            		Ext.Msg.alert(
 	            				'Failed',
