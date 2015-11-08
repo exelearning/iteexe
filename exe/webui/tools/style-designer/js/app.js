@@ -165,12 +165,12 @@ var $app = {
 				// open dialog to create a new one from base style
 				$app.createStyle(content, nav);
 			}
-			else  {
+			else {
 				// Send POST request to update current style
- 			   var data = $app.collectAjaxData(content, nav, 'saveStyle');
- 			   $app.preloader.show();
- 			   jQuery.ajax({
-					url: '/styleDesigner',
+ 				var data = $app.collectAjaxData(content, nav, 'saveStyle');
+ 				$app.preloader.show();
+ 				jQuery.ajax({
+ 					url: '/styleDesigner',
 					data: data,
 					cache: false,
 					contentType: false,
@@ -186,13 +186,13 @@ var $app = {
 						}
 						else {
 							Ext.Msg.alert('Failed', result.message);
-						}	   
+						}
 					},
-					failure: function(response, action) {
+					error: function(response) {
 						$app.preloader.hide();
 						Ext.Msg.alert('Failed', response.statusText);
 					}
- 			   });
+ 				});
 			}
 		});		
 
@@ -213,10 +213,10 @@ var $app = {
 							// open dialog to create a new one instead
 							$app.createStyle(content, nav, 'base', true);
 						}
-						else  {
+						else {
 							// Send POST request to update current style
 							var data = $app.collectAjaxData(content, nav, 'saveStyle');
-							$app.preloader.show();   
+							$app.preloader.show();
 							jQuery.ajax({
 								url: '/styleDesigner',
 								data: data,
@@ -230,19 +230,19 @@ var $app = {
 									result = JSON.parse(response);
 									if (result.success) {
 										Ext.Msg.alert(
-											'Success', 
+											'Success',
 											result.message,
 											function(btn, txt) {
-											   opener.window.close();
-											   window.close();
+												opener.window.close();
+												window.close();
 											}
 										);
 									}
 									else {
 										Ext.Msg.alert('Failed', result.message);
-									}	   
+									}
 								},
-								failure: function(response, action) {
+								error: function(response) {
 									$app.preloader.hide();
 									Ext.Msg.alert('Failed', response.statusText);
 								}
@@ -421,8 +421,8 @@ var $app = {
 			|| opener.$designer.config.styleVersionMajor > 20
 			|| opener.$designer.config.styleVersionMajor < 1) {
 			$('#styleVersion').append($('<option>', {
-			    value: opener.$designer.config.styleVersion,
-			    text: opener.$designer.config.styleVersion
+				value: opener.$designer.config.styleVersion,
+				text: opener.$designer.config.styleVersion
 			}));
 		}
 		jQuery('#styleVersion').val(opener.$designer.config.styleVersion);
@@ -500,7 +500,7 @@ var $app = {
 					} else if (currentValue[0]=="hideProjectTitle") {
 						$("#hideProjectTitle").prop('checked', true);
 						$("#projectTitleOptions").hide();
-					} 
+					}
 					// Navigation
 					else if (currentValue[0]=="hideNavigation") {
 						$("#hideNavigation").prop('checked', true);
@@ -522,7 +522,7 @@ var $app = {
 						else if (c.indexOf("/*whiteNavigationIcons*/")!=-1) $("#navigationIconsColor3").prop('checked', true);
 					}
 				}
-			} 
+			}
 			else {
 				// Set some default values (usability)
 				if (type=="content" && (currentValue[0]=="headerHeight" || currentValue[0]=="headerTitleTopMargin")) {
@@ -576,7 +576,7 @@ var $app = {
 							o.style.display="block";
 						}
 					}				
-					$app.getPreview(); 
+					$app.getPreview();
 				}
 			} else {
 				f_inputs[i].onblur=function(){ $app.getPreview(); }
@@ -585,9 +585,9 @@ var $app = {
 		// SELECT
 		var f_selects = f.getElementsByTagName("SELECT");
 		for (z=0;z<f_selects.length;z++){
-			f_selects[z].onchange=function(){ 
+			f_selects[z].onchange=function(){
 				if (this.id=="pageWidthUnit") $app.setWidth(this);
-				$app.getPreview(); 
+				$app.getPreview();
 			}	
 		}
 		// Advanced tab
@@ -1217,59 +1217,59 @@ var $app = {
 					// Collect data from the main edition form except style_name,
 					// that is read from this interactive form
 					var data = $app.collectAjaxData(content, nav, 'createStyle', copyFrom);
-		            data.set('style_name', input_value);
-		            $app.preloader.show();
+					data.set('style_name', input_value);
+					$app.preloader.show();
 					jQuery.ajax({
-		            	url: '/styleDesigner',
-		            	data: data,
-		            	cache: false,
-		            	contentType: false,
-		            	processData: false,
-		            	type: 'POST',
-		            	success: function(response, action) {
+						url: '/styleDesigner',
+						data: data,
+						cache: false,
+						contentType: false,
+						processData: false,
+						type: 'POST',
+						success: function(response, action) {
 							$app.preloader.hide();
-		            		// Form request can success, even if the create/save operation failed
-		            		result = JSON.parse(response);
-		            		if (result.success) {
-		            			var message = result.message + '<br/>';
-		            			if (closeDesigner) {
-		            				message += _('Style Designer windows will be closed. ');
-		            			}
-		            			else {
-		            				message += _('Page will be reloaded. ');
-		            			}
-		            			Ext.Msg.alert(
-	            					'Success',
-	            					message,
-	            					function(btn, txt) {
-	            						$app.loadNewStyle(result.style_dirname);
-	            						if (closeDesigner) {
-	            							opener.window.close();
-	            							window.close();
-	            						}
-	            					}
-		            			);
-		            		}
-		            		else {
-		            			Ext.Msg.alert(
-	            					'Failed',
-	            					result.message,
-	            					function(btn, txt) {
-	            						createStyleWin.close();
-	            					}
-		            			);
-		            		}
-		            	},
-		            	failure: function(response, action) {
+							// Form request can success, even if the create/save operation failed
+							result = JSON.parse(response);
+							if (result.success) {
+								var message = result.message + '<br/>';
+								if (closeDesigner) {
+									message += _('Style Designer windows will be closed. ');
+								}
+								else {
+									message += _('Page will be reloaded. ');
+								}
+								Ext.Msg.alert(
+									'Success',
+									message,
+									function(btn, txt) {
+										$app.loadNewStyle(result.style_dirname);
+										if (closeDesigner) {
+											opener.window.close();
+											window.close();
+										}
+									}
+								);
+							}
+							else {
+								Ext.Msg.alert(
+									'Failed',
+									result.message,
+									function(btn, txt) {
+										createStyleWin.close();
+									}
+								);
+							}
+						},
+						error: function(response) {
 							$app.preloader.hide();
-		            		Ext.Msg.alert(
-	            				'Failed',
-	            				function(btn, txt) {
-	            					createStyleWin.close();
-	            				}
-		            		);
-		            	}
-		            });
+							Ext.Msg.alert(
+								'Failed',
+								function(btn, txt) {
+									createStyleWin.close();
+								}
+							);
+						}
+					});
 				}
 			}
 		);
