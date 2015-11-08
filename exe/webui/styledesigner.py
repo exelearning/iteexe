@@ -158,9 +158,24 @@ class StyleDesigner(Renderable, Resource):
         ET.SubElement(theme, 'license-url').text = style_config['license-url']
         ET.SubElement(theme, 'description').text = style_config['description']
         
+        # 'extra-head' and 'extra-body' can contain scripts and headers, they
+        # must be enclosed on <![CDATA[ ]]> tags and HTML entities should not
+        # be escaped
+        #ET.SubElement(theme, 'extra-head').text = '<![CDATA[' + style_config['extra-head'] + ']]>'
+        #ET.SubElement(theme, 'extra-body').text = '<![CDATA[' + style_config['extra-body'] + ']]>'
+        
         configxml = ET.tostring(theme, 'utf-8')
         configxml_parsed = minidom.parseString(configxml)
         configxml_pretty = configxml_parsed.toprettyxml(indent = "    ")
+        
+        # UGLY HACK (mclois): 'extra-head' and 'extra-body' can contain HTML headers and scripts,
+        # they must be wrapped on <![CDATA[ ]] tags, and HTML entities should not be escaped
+        # ElementTree escapes HTML entities, so I add those attributes here
+        extra = '<extra-head><![CDATA[' + style_config['extra-head'] + ']]></extra-head>'
+        extra = extra + '<extra-body><![CDATA[' + style_config['extra-body'] + ']]></extra-body>'
+        extra = extra + '</theme>'
+        configxml_pretty = configxml_pretty.replace('</theme>', extra)
+        
         configxml_file = open(styleDir / 'config.xml', 'w')
         configxml_file.write(configxml_pretty)
         configxml_file.close()
@@ -208,7 +223,15 @@ class StyleDesigner(Renderable, Resource):
                 description = ''
                 if 'description' in style_data :
                     description = cgi.escape(style_data['description'][0], True)
-                    
+                
+                # extra-head and extra-body attributes can contain user defined scripts or headers
+                # ('base' style contains scripts and parameters needed for responsiveness).
+                # The UI has no fields to modify these attributes, so they will never be in
+                # 'style_data', but since user can edit 'config.xml' any time, the values
+                # present in there must be kept 
+                config_base = ET.parse(baseStyleDir / 'config.xml')
+                extra_head = config_base.find('extra-head').text
+                extra_body = config_base.find('extra-body').text
                 configxml = {
                     'name':  style_data['style_name'][0],
                     'version': '1.0',
@@ -218,6 +241,8 @@ class StyleDesigner(Renderable, Resource):
                     'license': 'Creative Commons by-sa',
                     'license-url': 'http://creativecommons.org/licenses/by-sa/3.0/',
                     'description': description,
+                    'extra-head': extra_head,
+                    'extra-body': extra_body,
                 }
                 self.updateStyle(styleDir, contentcss, navcss, configxml)
                 
@@ -280,6 +305,14 @@ class StyleDesigner(Renderable, Resource):
                     next_version = (current_version[0], current_version[1] + 1);
                     next_version = '.'.join(map(str, next_version))
                     
+                # extra-head and extra-body attributes can contain user defined scripts or headers
+                # ('base' style contains scripts and parameters needed for responsiveness).
+                # The UI has no fields to modify these attributes, so they will never be in
+                # 'style_data', but since user can edit 'config.xml' any time, the values
+                # present in there must be kept 
+                config_org = ET.parse(styleDir / 'config.xml')
+                extra_head = config_org.find('extra-head').text
+                extra_body = config_org.find('extra-body').text
                 configxml = {
                     'name':  style_data['style_name'][0],
                     'version': next_version,
@@ -289,6 +322,8 @@ class StyleDesigner(Renderable, Resource):
                     'license': 'Creative Commons by-sa',
                     'license-url': 'http://creativecommons.org/licenses/by-sa/3.0/',
                     'description': description,
+                    'extra-head': extra_head,
+                    'extra-body': extra_body,
                 }
                 self.updateStyle(styleDir, contentcss, navcss, configxml)
                 return style
