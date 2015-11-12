@@ -33,6 +33,7 @@ try:
 except ImportError:
     import xml.etree.ElementTree as ET
 from xml.dom import minidom
+import ImageFile
 from twisted.web.resource import Resource
 from exe.webui.renderable import Renderable
 from exe.engine import version
@@ -337,17 +338,20 @@ class StyleDesigner(Renderable, Resource):
         """
         
         if 'bodyBGURLFile_0' in uploaded :
-            out = open(targetDir / uploaded['bodyBGURLFilename_0'][0], 'w')
-            out.write(uploaded['bodyBGURLFile_0'][0])
-            out.close()
+            body_parser = ImageFile.Parser()
+            body_parser.feed(uploaded['bodyBGURLFile_0'][0])
+            body_out = body_parser.close()
+            body_out.save(targetDir / uploaded['bodyBGURLFilename_0'][0])
         
         if 'contentBGURLFile_0' in uploaded :
-            out = open(targetDir / uploaded['contentBGURLFilename_0'][0], 'w')
-            out.write(uploaded['contentBGURLFile_0'][0])
-            out.close()
+            content_parser = ImageFile.Parser()
+            content_parser.feed(uploaded['contentBGURLFile_0'][0])
+            content_out = content_parser.close()
+            content_out.save(targetDir / uploaded['contentBGURLFilename_0'][0])
         
         if 'headerBGURLFile_0' in uploaded :
-            out = open(targetDir / uploaded['headerBGURLFilename_0'][0], 'w')
-            out.write(uploaded['headerBGURLFile_0'][0])
-            out.close()
+            header_parser = ImageFile.Parser()
+            header_parser.feed(uploaded['headerBGURLFile_0'][0])
+            header_out = header_parser.close()
+            header_out.save(targetDir / uploaded['headerBGURLFilename_0'][0])
         
