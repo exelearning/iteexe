@@ -1,7 +1,7 @@
 /* eXeLearning Style Designer Compatible Style */
 body{padding:0;text-align:center}
 #content{width:100%;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0}
-#main-wrapper{width:100%;*width:auto}/* * is for IE6 and IE7 */
+#main-wrapper{padding-bottom:1.5em;width:100%;*width:auto}/* * is for IE6 and IE7 */
 #main{padding:20px 40px 30px 320px;height:auto!important;height:200px;min-height:200px;*padding-left:0}
 
 .no-nav #main-wrapper{width:100%}
@@ -14,7 +14,7 @@ body{padding:0;text-align:center}
 .iDevice_wrapper{margin-top:-10px}
 
 /* Menú */
-#siteNav{width:280px;float:left;margin-right:40px;margin-bottom:40px}
+#siteNav{width:280px;float:left;margin-right:40px}
 #siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
 #siteNav .other-section{display:none}
 #siteNav a{display:block;padding:8px 10px 8px 20px;border-width:0 0 1px 0;border-style:solid}
