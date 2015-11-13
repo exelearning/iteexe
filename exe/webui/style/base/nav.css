@@ -8,7 +8,7 @@ body{padding:0;text-align:center}
 .no-nav #main{padding:20px 20px 0 20px}
 
 #header,#emptyHeader{border-top-width:0;border-right-width:0;border-left-width:0}
-#headerContent{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:230px;min-height:1.1em}
+#headerContent{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;min-height:1.1em}
 #nodeDecoration{background:none;padding:0;border:none;margin:20px 0;height:auto;min-height:0}
 #nodeTitle{font-weight:300}
 .iDevice_wrapper{margin-top:-10px}
@@ -57,7 +57,7 @@ body{padding:0;text-align:center}
 }
 
 @media all and (max-width: 700px) {
-	#headerContent{font-size:.7em;padding-right:0;white-space:normal}
+	#headerContent{font-size:.7em;white-space:normal}
 	#topPagination{display:none}
 	#siteNav{float:none;width:100%;padding:0}
 	#siteNav{line-height:1.5em;margin-bottom:15px}
@@ -76,7 +76,7 @@ body{padding:0;text-align:center}
 	#siteNav,#nav-toggler,.noprt,.toggle-idevice{display:none}
 	#main{padding:20px 0}
 	body #content{background:#FFF}
-	#headerContent{white-space:normal;text-overflow:normal;padding-right:0;font-weight:bold}
+	#headerContent{white-space:normal;text-overflow:normal;font-weight:bold}
 }
 
 /* eXeLearning Style Designer */
