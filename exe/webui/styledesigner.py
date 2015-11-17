@@ -33,7 +33,10 @@ try:
 except ImportError:
     import xml.etree.ElementTree as ET
 from xml.dom import minidom
-import ImageFile
+try:
+    from PIL import ImageFile
+except:
+    import ImageFile
 from twisted.web.resource import Resource
 from exe.webui.renderable import Renderable
 from exe.engine import version
