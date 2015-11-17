@@ -36,7 +36,8 @@ dataFiles(["exe/webui/style",
            "exe/webui/images",
            "exe/webui/schemas",
            "exe/webui/scripts",
-           "exe/webui/templates"],
+           "exe/webui/templates",
+           "exe/webui/tools"],
     excludes=["exe/webui/templates/mimetex-darwin.cgi", "exe/webui/templates/mimetex.exe"])
 
 g_oldBase = "exe"
