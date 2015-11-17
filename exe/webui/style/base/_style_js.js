@@ -81,14 +81,18 @@ var myTheme = {
 		var c = $("#main-wrapper");
 		var nH = n.height();
 		var cH = c.height();
+		var isMobile = $("#siteNav").css("float")=="none";
+		if (cH<nH) {
+			cH = nH;
+			if (!isMobile) c.height(cH);
+		}
 		var h = (cH-nH+40)+"px";
-		var m = "40px";
-		if ($("#siteNav").css("float")=="none") {
+		var m = 0;
+		if (isMobile) {
 			h = 0;
 			m = "15px";
 		} else if (n.css("display")=="table") {
 			h = 0;
-			m = "40px";
 		}
 		n.css({
 			"padding-bottom":h,
