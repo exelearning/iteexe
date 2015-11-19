@@ -577,8 +577,10 @@ function loadKeymap() {
 
 // Common settings
 var eXeLearning_settings = {
-    wysiwyg_path : "/scripts/tinymce_3.5.11/jscripts/tiny_mce/tiny_mce.js",
-    wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
+    // wysiwyg_path : "/scripts/tinymce_3.5.11/jscripts/tiny_mce/tiny_mce.js",
+    // wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
+    wysiwyg_path : "/scripts/tinymce_4.2.7/js/tinymce/tinymce.min.js",
+    wysiwyg_settings_path : "/scripts/tinymce_4.2.7_settings.js"	
 }
 
 // browse the specified URL in system browser
