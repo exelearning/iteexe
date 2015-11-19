@@ -576,11 +576,16 @@ function loadKeymap() {
 /* ********************************* */
 
 // Common settings
+var tinyMCEversion = 4;
 var eXeLearning_settings = {
-    // wysiwyg_path : "/scripts/tinymce_3.5.11/jscripts/tiny_mce/tiny_mce.js",
-    // wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
-    wysiwyg_path : "/scripts/tinymce_4.2.7/js/tinymce/tinymce.min.js",
-    wysiwyg_settings_path : "/scripts/tinymce_4.2.7_settings.js"	
+    wysiwyg_path : "/scripts/tinymce_3.5.11/jscripts/tiny_mce/tiny_mce.js",
+    wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
+}
+if (tinyMCEversion==4) {
+	eXeLearning_settings = {
+		wysiwyg_path : "/scripts/tinymce_4.2.7/js/tinymce/tinymce.min.js",
+		wysiwyg_settings_path : "/scripts/tinymce_4.2.7_settings.js"	
+	}
 }
 
 // browse the specified URL in system browser
@@ -650,20 +655,38 @@ var exe_tinymce = {
 
             var previewTinyMCEImageDone = function() {
                 // first, clear out any old value in the tinyMCE image filename field:
-                win.document.forms[0].elements[field_name].value = "";
+				var formField = win.document.getElementById(field_name);
+				formField.value = "";
 
                 // set the tinyMCE image filename field:
-                var formField = win.document.forms[0].elements[field_name];
                 formField.value = full_previewImage_url;
                 // then force its onchange event:
                 $(formField).trigger("change");
 
                 // PreviewImage is only available for images:
                 if (type == "image") {
-                    win.ImageDialog.showPreviewImage(full_previewImage_url);
+					if (tinyMCEversion==3) win.ImageDialog.showPreviewImage(full_previewImage_url);
+					else {
+						formField.value = full_previewImage_url;
+						// Set the image dimensions
+						var img = new Image() ;
+						img.src = full_previewImage_url;
+						img.onload = function() {
+							// We know field_name, but not the IDs of the fields to set the dimensions 
+							var fieldOrder = field_name;
+							fieldOrder = fieldOrder.split("-")[0];
+							fieldOrder = fieldOrder.split("_");
+							if (fieldOrder.length==2) {
+								fieldOrder = Number(fieldOrder[1]);
+								$("#mceu_"+(fieldOrder+3)).val(img.width);
+								$("#mceu_"+(fieldOrder+5)).val(img.height);
+							}
+						}
+					}
                 }
                 else if (type == "media") {
-                    win.window.Media.preview();
+                    if (tinyMCEversion==3) win.window.Media.preview();
+					else formField.value = full_previewImage_url;
                 }
 
                 // this onchange works, but it's dirty because it is hardcoding the
@@ -671,13 +694,15 @@ var exe_tinymce = {
                 // in tinyMCE, then this would be out of sync.
 
                 // and finally, be sure to update the tinyMCE window's image data:
-                if (win.getImageData) {
-                    win.getImageData();
-                } else {
-                    if (window.tinyMCE.getImageData) {
-                        window.tinyMCE.getImageData();
-                    }
-                }
+                if (tinyMCEversion==3) {
+					if (win.getImageData) {
+						win.getImageData();
+					} else {
+						if (window.tinyMCE.getImageData) {
+							window.tinyMCE.getImageData();
+						}
+					}
+				}
 
                 eXe.app.un('previewTinyMCEImageDone', previewTinyMCEImageDone);
             };

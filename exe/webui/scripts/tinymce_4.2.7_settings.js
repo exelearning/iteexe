@@ -35,12 +35,16 @@ var $exeTinyMCE = {
 		tinymce.init({
 			language: "all",
 			selector: selector,
+			convert_urls: false,
 			plugins: [
 				"advlist autolink lists link image charmap print preview anchor",
 				"searchreplace visualblocks code fullscreen",
 				"insertdatetime media table contextmenu paste pastecode pastecode2 example"
 			],
 			image_advtab: true,
+			file_browser_callback: function(field_name, url, type, win){
+				exe_tinymce.chooseImage(field_name, url, type, win);
+			},
 			toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media pastecode pastecode2"
 		});
 		

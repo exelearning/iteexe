@@ -10,7 +10,10 @@
 
 /*global tinymce:true */
 
-tinymce.PluginManager.add('image', function(editor) {
+// The New eXeLearning
+// tinymce.PluginManager.add('image', function(editor) {
+tinymce.PluginManager.add('image', function(editor, url) {
+// / The New eXeLearning
 	function getImageSize(url, callback) {
 		var img = document.createElement('img');
 
@@ -168,6 +171,111 @@ tinymce.PluginManager.add('image', function(editor) {
 			if (!data.style) {
 				data.style = null;
 			}
+			
+			// The New eXeLearning
+			if (document.getElementById("imageheader")) { // We are not editing, so these fields exist
+				var c = editor.dom.createHTML('img', data);
+				var imageHeader = data.imageheader;
+				var imageTitle = data.imagetitle;
+				var imageTitleLink = data.imagetitlelink;
+				var authorName = data.authorname;
+				var authorNameLink = data.authornamelink;
+				var captionLicense = data.captionlicense;
+				var imageAlignment = data.align;
+				if (imageHeader!="" || imageTitle!="" || imageTitleLink!="" || authorName!="" || authorNameLink!="" || captionLicense!="") {
+					var hText = "";
+					var cText = "";
+					var license = "";
+					
+					var figureTag = "div";
+					var headerFigcaptionTag = "div";
+					var footerFigcaptionTag = "div";
+					if (parent.exe_export_format=="html5") {
+						figureTag = "figure";
+						if (imageTitle=="" && imageTitleLink=="" && authorName=="" && authorNameLink=="" && captionLicense=="") headerFigcaptionTag = "figcaption";
+						footerFigcaptionTag = "figcaption";
+					}                
+					
+					//Header
+					if (imageHeader!="") {
+						hText = "<"+headerFigcaptionTag+" class='figcaption header'><strong>"+imageHeader+"</strong></"+headerFigcaptionTag+">";
+					}
+					
+					//Author and link
+					if (authorName!="") {
+						if (authorNameLink!="") {
+							cText+="<a href='"+authorNameLink+"' target='_blank' class='author'>"+authorName+"</a>";
+						} else {
+							cText+="<span class='author'>"+authorName+"</span>";
+						}
+					} else {
+						if (authorNameLink!="") {
+							cText+="<a href='"+authorNameLink+"' target='_blank' class='author'>"+authorNameLink+"</a>";
+						}
+					}
+					
+					//Title and link
+					if (imageTitle!="") {
+						if (cText!="") cText+=". ";
+						if (imageTitleLink!="") {
+							cText+="<a href='"+imageTitleLink+"' target='_blank' class='title'><em>"+imageTitle+"</em></a>";
+						} else {
+							cText+="<span class='title'><em>"+imageTitle+"</em></span>";
+						}
+					} else {
+						if (imageTitleLink!="") {
+							if (cText!="") cText+=" - ";
+							cText+="<a href='"+imageTitleLink+"' target='_blank' class='title'><em>"+imageTitleLink+"</em></a>";
+						}
+					}
+					
+					//License:
+					var licenseLang = "en";
+					var ccLink = "http://creativecommons.org/licenses/";
+					var w = window.opener;
+					if (!w) w = window.parent;
+					if (w && w.document.getElementsByTagName) {
+						var lang = w.document.getElementsByTagName("HTML")[0].lang;
+						if (lang && lang != "") licenseLang = lang;
+						if (lang!="en") ccLink += "?lang="+lang;
+					}  
+					
+					if (captionLicense!="") {
+						if (captionLicense=="pd") {
+							license = "<span>"+_("Public Domain")+"</span>";
+						} else if (captionLicense=="gnu-gpl") {
+							license = "<a href='http://www.gnu.org/licenses/gpl.html' rel='license nofollow' target='_blank'>GNU/GPL</a>";
+						} else if (captionLicense=="CC0") {
+							license = "<a href='http://creativecommons.org/publicdomain/zero/1.0/deed."+licenseLang+"' rel='license nofollow' target='_blank' title='Creative Commons (CC0)'>CC0</a>";
+						} else if (captionLicense=="copyright") {
+							license = "<span>"+_("All Rights Reserved")+"</span>";
+						} else {
+							license = "<a href='"+ccLink+"' rel='license nofollow' target='_blank' title='"+captionLicense.replace("CC-","Creative Commons ")+"'>"+captionLicense.replace("CC-","CC ")+"</a>";
+						}
+
+						if (cText!="") {
+							license = ' <span class="license"><span class="sep">(</span>'+license+'<span class="sep">)</span></span>';
+						} else {
+							license = '<span class="license"><span class="tit">'+_("License")+": </span>"+license+"</span>";
+						}
+						
+					}
+					
+					var defaultPos = "position-center";
+					if (imageAlignment=="left" || imageAlignment=="right") defaultPos = "float-"+imageAlignment;
+					var cssClass = "exe-figure exe-image "+defaultPos;
+					if (captionLicense!="") cssClass += " license-"+captionLicense;
+					var extraStyle="width:"+data.width+"px;";
+
+					var fText = "";
+					if (cText!="" || license!="") fText = "<"+footerFigcaptionTag+" class='figcaption'>"+cText+license+"</"+footerFigcaptionTag+">";
+
+					c = "<"+figureTag+" class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+fText+"</"+figureTag+"><br />";
+					editor.execCommand('mceInsertContent', false, c, {skip_undo : 1});
+					return;
+				}
+			}
+			// / The New eXeLearning
 
 			// Setup new data excluding style properties
 			/*eslint dot-notation: 0*/
@@ -475,6 +583,81 @@ tinymce.PluginManager.add('image', function(editor) {
 			}
 
 			// Advanced dialog shows general+advanced tabs
+			
+			// The New eXeLearning
+			function getTabContent() {
+				if (imgElm) {
+					return [
+						{
+							id: 'intructions',
+							type: 'textbox',
+							name: 'intructions',
+							value: _("The header and the caption can't be edited from this dialog. You can change or remove them editing the text itself."),
+							multiline: true,
+							minHeight: 100,
+							disabled: true,
+							style: "border:0;padding:0;color:#333"
+						}						
+					]
+				}
+				return [
+							{
+								label: _("Header"),
+								name: 'imageheader',
+								id: 'imageheader',
+								type: 'textbox'
+							},
+							{
+								label: _("Image Title"),
+								name: 'imagetitle',
+								id: 'imagetitle',
+								type: 'textbox'
+							},
+							{
+								label: _("Title Link"),
+								name: 'imagetitlelink',
+								id: 'imagetitlelink',
+								type: 'textbox'
+							},
+							{
+								label: _("Source/Author"),
+								name: 'authorname',
+								id: 'authorname',
+								type: 'textbox'
+							},
+							{
+								label: _("Source/Author Link"),
+								name: 'authornamelink',
+								id: 'authornamelink',
+								type: 'textbox'
+							},
+							{
+								name: 'captionlicense',
+								id: 'captionlicense',
+								type: 'listbox',
+								label: _("License"),
+								values: [
+									{text: _("Choose a license..."), value: ''},
+									{text: _("Public Domain"), value: 'pd'},
+									{text: "GNU/GPL", value: 'gnu-gpl'},
+									{text: "Creative Commons ("+_("Public Domain")+")", value: 'CC0'},
+									{text: "Creative Commons BY", value: 'CC-BY'},
+									{text: "Creative Commons BY-SA", value: 'CC-BY-SA'},
+									{text: "Creative Commons BY-ND", value: 'CC-BY-ND'},
+									{text: "Creative Commons BY-NC", value: 'CC-BY-NC'},
+									{text: "Creative Commons BY-NC-SA", value: 'CC-BY-NC-SA'},
+									{text: "Creative Commons BY-NC-ND", value: 'CC-BY-NC-ND'},
+									{text: "Copyright ("+_("All Rights Reserved")+")", value: 'copyright'}
+								]
+							},
+							{
+								type: 'label',
+								text: _("You will not be able to edit the header or the caption from this dialog.")
+							}						
+						]
+			}
+			// / The New eXeLearning
+			
 			win = editor.windowManager.open({
 				title: 'Insert/edit image',
 				data: data,
@@ -516,10 +699,20 @@ tinymce.PluginManager.add('image', function(editor) {
 								]
 							}
 						]
+					},
+					
+					// The New eXeLearning
+					{
+						title: _("Title and Attribution"),
+						type: 'form',
+						pack: 'start',
+						items: getTabContent()
 					}
+					// / The New eXeLearning		
+					
 				],
 				onSubmit: onSubmitForm
-			});
+			});	
 		} else {
 			// Simple default dialog
 			win = editor.windowManager.open({
@@ -545,6 +738,12 @@ tinymce.PluginManager.add('image', function(editor) {
 		context: 'insert',
 		prependToContext: true
 	});
+	
+	// The New eXeLearning
+	editor.on('init', function(e) {
+		editor.dom.loadCSS(url + "/css/content.css");
+	});	
+	// / The New eXeLearning
 
 	editor.addCommand('mceImage', createImageList(showDialog));
 });
