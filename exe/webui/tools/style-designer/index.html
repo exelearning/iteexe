@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -15,11 +15,11 @@
 	<script type="text/javascript" src="/scripts/exe_jquery.js"></script>
 	<script src="js/jpicker-1.1.6.min.js" type="text/javascript"></script>
 	<!--<script type="text/javascript" src="langs/en.js"></script>-->
-	<script type="text/javascript">
+	<script type="text/javascript">/*<![CDATA[*/
 		function _(s) { return s; }	
 		if (opener && opener.opener) _ = opener.opener._;
-	</script>
-	<script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="langs/'+opener.$designer.language+'.js"></sc'+'ript>');</script>
+		document.write('<scr'+'ipt type="text/javascript" src="langs/'+opener.$designer.language+'.js"></sc'+'ript>');
+	/*]]>*/</script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<title>%Style_Designer%</title>
 </head>
@@ -44,6 +44,63 @@
 
 			<div id="general" class="panel current">
             	<h2 class="scr-av">%General%</h2>
+				
+				<fieldset id="info">
+					<legend>%Information%</legend>
+					<div class="fields" id="currentStyleInfo">
+						<div class="autoclear">
+							<div class="col">
+								<label for="styleName">%Style_Name%: </label>
+								<input type="text" size="30" id="styleName" value="" />
+							</div>
+							<div class="col">
+								<label for="styleVersion">%Style_Version%: </label>
+								<select id="styleVersion">
+									<option value="1.0">1.0</option>
+									<option value="2.0">2.0</option>
+									<option value="3.0">3.0</option>
+									<option value="4.0">4.0</option>
+									<option value="5.0">5.0</option>
+									<option value="6.0">6.0</option>
+									<option value="7.0">7.0</option>
+									<option value="8.0">8.0</option>
+									<option value="9.0">9.0</option>
+									<option value="10.0">10.0</option>
+									<option value="11.0">11.0</option>
+									<option value="12.0">12.0</option>
+									<option value="13.0">13.0</option>
+									<option value="14.0">14.0</option>
+									<option value="15.0">15.0</option>
+									<option value="16.0">16.0</option>
+									<option value="17.0">17.0</option>
+									<option value="18.0">18.0</option>
+									<option value="19.0">19.0</option>
+									<option value="20.0">20.0</option>
+								</select>
+							</div>
+						</div>
+						<p class="info">%Style_Version_Instructions%</p>
+					</div>
+					<div class="autoclear">
+						<div class="col">
+							<label for="authorName">%Author%: </label>
+							<input type="text" size="30" id="authorName" value="eXeLearning.net"/>
+						</div>
+						<div class="col">
+							<label for="authorURL">%Author_URL%: </label>
+							<input type="text" size="30" id="authorURL" value="http://exelearning.net/"/>
+						</div>
+					</div>				
+					<p>
+						<label for="license">%License%: </label>
+						<input type="hidden" id="license" value="Creative Commons by-sa" />
+						<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons by-sa</a> %Original_License%
+					</p>
+					<div class="fields">
+						<label for="styleDescription">%Style_Description%:</label>
+						<textarea name="styleDescription" id="styleDescription" cols="32" rows="6"></textarea>
+					</div>
+				</fieldset>				
 				
 				<fieldset>
 					<legend>%General_settings%</legend>   
@@ -139,6 +196,7 @@
 							<div class="field">
 								<label for="bodyBGURL">%Background_image%: </label>
 								<input type="text" size="6" id="bodyBGURL" class="large" />
+								<input type="hidden" size="6" id="bodyBGURLTempURL" class="large" />
 								<input type="file" id="bodyBGURLFile" style="display:none" onchange="$app.updateTextFieldFromFile(this)" />								
 								<a href="#" onclick="$app.openBrowser('bodyBGURL');" title="%Select_image%"><img src="images/browse.gif" width="20" height="18" alt="%Browse%" style="vertical-align:bottom" /></a> (http://...)
 							</div>
@@ -183,6 +241,7 @@
 							<div class="field">
 								<label for="contentBGURL">%Background_image%: </label>
 								<input type="text" size="6" id="contentBGURL" class="large" />
+								<input type="hidden" size="6" id="contentBGURLTempURL" class="large" />
 								<input type="file" id="contentBGURLFile" style="display:none" onchange="$app.updateTextFieldFromFile(this)" />								
 								<a href="#" onclick="$app.openBrowser('contentBGURL');" title="%Select_image%"><img src="images/browse.gif" width="20" height="18" alt="%Browse%" style="vertical-align:bottom" /></a> (http://...)
 							</div>
@@ -238,6 +297,7 @@
 							<div class="field">
 								<label for="headerBGURL">%Background_image%: </label>
 								<input type="text" size="6" id="headerBGURL" class="large" />
+								<input type="hidden" size="6" id="headerBGURLTempURL" class="large" />
 								<input type="file" id="headerBGURLFile" style="display:none" onchange="$app.updateTextFieldFromFile(this)" />								
 								<a href="#" onclick="$app.openBrowser('headerBGURL');" title="%Select_image%"><img src="images/browse.gif" width="20" height="18" alt="%Browse%" style="vertical-align:bottom" /></a> (http://...)
 							</div>						

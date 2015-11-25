@@ -835,20 +835,16 @@ def elementInstruc(instruc, imageFile="help.gif", label=None):
         html = u''
     else:
         id_ = newId()
-        html  = u' <a onmousedown="Javascript:updateCoords(event);" '
+        html  = u'<a href="javascript:void(o)" '
         html += u' title="%s" ' % _(u'Click for completion instructions')
-        html += u'onclick="Javascript:showMe(\'i%s\', 350, 100);" ' % id_
-        html += u'href="Javascript:void(0)" style="cursor:help;">' 
-        html += u'<img class="help" alt="%s" ' \
-                % _(u'Click for completion instructions')
+        html += u'onclick="showMessageBox(\'%s\');" ' % id_
+        html += u'style="cursor:help;margin-left:.2em;">' 
+        html += u'<img class="help" alt="%s" ' % _(u'Click for completion instructions')
         html += u'src="/images/%s" style="vertical-align:middle;"/>' % imageFile
         html += u'</a>\n'
-        html += u'<div id="i%s" style="display:none;">' % id_
-        html += u'<div style="float:right;" >'
-        html += u'<img alt="%s" ' % _("Close")
-        html += u'src="/images/stock-stop.png" title="%s" ' % _("Close")
-        html += u' onmousedown="Javascript:hideMe();"/></div>'
-        html += u'<div class="popupDivLabel">%s</div>%s' % (label, instruc)
+        html += u'<div style="display:none;">'
+        html += u'<div id="%stitle">%s</div>' % (id_, label)
+        html += u'<div id="%scontent">%s</div>' % (id_, instruc)
         html += u'</div>\n'
     return html
 

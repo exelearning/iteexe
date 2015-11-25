@@ -24,6 +24,9 @@ background:#F0F0EE;
 padding:0;
 margin:8px 8px 0 8px;
 }
+/* Activity indicator */
+.sending-form{background:#fff url(../images/loading.gif) no-repeat 50% 50%}
+.sending-form #cssWizard *{visibility:hidden!important}
 
 html {background:#F0F0EE;}
 .fields {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:10px;}
@@ -57,15 +60,25 @@ textarea{width:500px;height:238px;display:block;margin-top:.3em;padding:2px}
 p{width:602px;margin:10px 0}
 .fields .info{margin:.3em 0 5px 0;color:#666}
 
+#info textarea{height:40px;margin-bottom:10px}
+#info input{width:160px}
+#license{border:0;font-weight:bold}
+#info a{margin-right:.5em}
+#info .autoclear{margin:10px 0}
+#info .col{width:50%;float:left;padding:0}
+#info .col label{margin-right:5px}
+#info .info{margin-top:-5px}
+
 .field{margin:1px 0 5px 0}
 .field label{float:left;display:block;text-align:right;padding-right:5px}
 .col{float:left;padding-right:20px}
 #navigationOptions .col,#otherNavOptions .col{padding-right:10px}
-#navigationOptions .col label,#otherNavOptions .col label{width:11.5em}
+#navigationOptions .col label,#otherNavOptions .col label{width:15em}
 #general .field label{width:105px}
 #header .field label{width:105px}
 #menu .field label{width:130px}
 #idevices .field label{width:105px}
+#page .field label{width:95px}
 #menu .general label{width:100px}
 #portlets .field label{width:100px}
 #footer .field label{width:95px}

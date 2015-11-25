@@ -76,7 +76,14 @@ input,select{font-size:1em;font-family:inherit}
 .CasestudyIdevice .feedbackbutton,
 .ReflectionIdevice .feedbackbutton{margin:.5em 0 1em 0}
 
-#packageLicense{margin-top:2.5em}
+/* Licenses */
+#packageLicense{margin:2.5em 0 1.5em 0;text-align:left;line-height:1.2em;font-size:.9em}
+#packageLicense.cc{padding-left:95px;background:url(_style_licenses.png) no-repeat 0 0}
+#packageLicense.cc-by-sa{background-position:0 -100px}
+#packageLicense.cc-by-nd{background-position:0 -200px}
+#packageLicense.cc-by-nc-sa{background-position:0 -300px}
+#packageLicense.cc-by-nc-nd{background-position:0 -400px}
+#packageLicense.cc-0{background-position:0 -500px}
 #siteFooter{padding:20px}
 
 /* Lightbox */

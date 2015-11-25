@@ -287,7 +287,6 @@ data is entered into this field."""))
             function submitLink(action, object, changed) 
             {
                 var form = document.getElementById("contentForm")
-            
                 form.action.value = action;
                 form.object.value = object;
                 form.isChanged.value = changed;
@@ -350,23 +349,27 @@ data is entered into this field."""))
             
             if self.idevice.emphasis > 0:
                 html += self.__renderStyles() + " "
-                html += u'<a href="#" '
-                html += u'onmousedown="Javascript:updateCoords(event);"\n'
-                html += u'onclick="Javascript:showMe(\'iconpanel\', 350, 100);">'
-                html += u'Select an icon:</a> \n'
+                html += u'<a style="margin-right:.5em" href="javascript:void(0)" '
+                html += u'onclick="showMessageBox(\'iconpanel\');">'
+                html += u'%s</a>' % _('Select an icon')
                 icon = self.idevice.icon
                 if icon != "":
-                    html += '<img align="middle" '
-                    html += 'src="/style/%s/icon_%s' % (self.style.get_dirname(), icon)
-                    html += '.gif"/><br/>'
-                html += u'<div id="iconpanel" style="display:none; z-index:99;">'
-                html += u'<div style="float:right;" >\n'
-                html += u'<img alt="%s" ' % _("Close")
-                html += u'src="/images/stock-stop.png" title="%s"\n' % _("Close")
-                html += u'onmousedown="Javascript:hideMe();"/></div><br/> \n'
-                html += u'<div align="center"><b>%s:</b></div><br/>' % _("Icons")
+                
+                    myIcon = Path(G.application.config.stylesDir/self.style.get_dirname()/"icon_" + self.idevice.icon + ".gif")
+                    #myIcon = themePath.joinpath("icon_" + self.idevice.icon + ".gif")
+                    #if not myIcon.exists():
+                        #myIcon = Path(G.application.config.stylesDir/self.style.get_dirname()/"icon_" + self.idevice.icon + ".png")
+                    if myIcon.exists():
+                        html += '<img align="middle" '
+                        html += 'src="/style/%s/icon_%s' % (self.style.get_dirname(), icon)
+                        html += '%s"/><br/>' % myIcon.ext
+                        
+                html += u'<div style="display:none;z-index:99;">'
+                html += u'<div id="iconpaneltitle">'+_("Icons")+'</div>'
+                html += u'<div id="iconpanelcontent">'
                 html += self.__renderIcons()
-                html += u'</div><br/>\n'
+                html += u'</div>'
+                html += u'</div>\n'
             for element in self.elements:
                 html += element.renderEdit()       
         else:
@@ -375,23 +378,19 @@ data is entered into this field."""))
                 html += element.renderPreview()               
             if self.idevice.purpose != "" or self.idevice.tip != "":
                 html += "<a title=\""+_("Pedagogical Help")+"\" "
-                html += "onmousedown=\"Javascript:updateCoords(event);\" \n"
-                html += "onclick=\"Javascript:showMe('phelp', 380, 240);\" \n" 
-                html += "href=\"Javascript:void(0)\" style=\"cursor:help;\">\n " 
-                html += '<img alt="%s" src="/images/info.png" border="0" \n' % _('Info')
+                html += "onclick=\"showMessageBox('phelp');\" " 
+                html += "href=\"javascript:void(0)\" style=\"cursor:help;\">\n " 
+                html += '<img alt="%s" src="/images/info.png" border="0" ' % _('Info')
                 html += "align=\"middle\" /></a>\n"
-                html += "<div id=\"phelp\" style=\"display:none;\">\n"
-                html += "<div style=\"float:right;\" "
-                html += '<img alt="%s" src="/images/stock-stop.png" \n' % _('Close')
-                html += " title='"+_("Close")+"' border='0' align='middle' \n"
-                html += "onmousedown=\"Javascript:hideMe();\"/></div>\n"
+                html += "<div style='display:none;'>"
                 if self.idevice.purpose != "":
-                    html += "<b>Purpose:</b><br/>%s<br/>" % self.purpose
-                    
+                    html += "<div id='phelptitle'>"+_('Purpose')+"</div>"
+                    html += "<div id='phelpcontent'>"+self.purpose+"</div>"
                 if self.idevice.tip != "":
-                    html += "<b>Tip:</b><br/>%s<br/>" % self.idevice.tip
-                    
-                html += "</div>\n"  
+                    html += "<div id='phelptitle'>"+_('Tip:')+"</div>"
+                    html += "<div id='phelpcontent'>"+self.idevice.tip+"</div>"
+                html += "</div>"  
+                html += "</div>\n"
         html += "</div>\n"
         self.message = ""
 
@@ -428,7 +427,8 @@ data is entered into this field."""))
             html += u'margin-right:10px; margin-bottom:10px" > '
             html += u'<img src="%s" \n' % filename
             html += u' alt="%s" ' % _("Submit")
-            html += u"onclick=\"submitLink('selectIcon','%s',1)\">\n" % icon
+            # window[2] because we use Ext.MessageBox instead of libot_drag.js
+            html += u"onclick=\"window[2].submitLink('selectIcon','%s',1)\">\n" % icon
             html += u'<br/>%s.gif</div>\n' % icon
         return html
 # ===========================================================================

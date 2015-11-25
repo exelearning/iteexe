@@ -43,6 +43,7 @@ from exe.webui.stylemanagerpage    import StyleManagerPage
 from exe.webui.preferencespage     import PreferencesPage
 from exe.webui.aboutpage           import AboutPage
 from exe.webui.releasenotespage    import ReleaseNotesPage
+from exe.webui.styledesigner import StyleDesigner
 # jrf - legal notes
 from exe.webui.legalpage import LegalPage
 from exe.webui.quitpage            import QuitPage
@@ -78,6 +79,7 @@ class WebServer:
         self.dirtree = DirTreePage(self.root)
         self.about = AboutPage(self.root)
         self.releasenotes = ReleaseNotesPage(self.root)
+        self.styledesigner = StyleDesigner(self.root)
         # jrf - legal notes
         self.legal = LegalPage(self.root)
         self.quit = QuitPage(self.root)
