@@ -186,6 +186,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleCancelImport, 'cancelImportPackage')
         setUpHandler(self.handleExport, 'exportPackage')
         setUpHandler(self.handleExportGoogleDrive, 'exportGoogleDrive')
+        setUpHandler(self.handleExportProcomun, 'exportProcomun')
         setUpHandler(self.handleXliffExport, 'exportXliffPackage')
         setUpHandler(self.handleQuit, 'quit')
         setUpHandler(self.handleBrowseURL, 'browseURL')
@@ -787,7 +788,14 @@ class MainPage(RenderableLivePage):
             log.error('An error occured when exporting package to Google Drive')
             client.alert(_(u'Error exporting package %s to Google Drive: %s') % (self.package.name, str(e)))
             return None
-        
+
+    def handleExportProcomun(self, client):
+        log.info(_(u'You must authorize eXe Learning to publish content into your Procomún account'))
+        log.info(_(u'Are you sure you want to start authorization process?'))
+        log.info(_(u'Exporting package as SCORM in: %s'))
+        log.info(_(u'Starting authorized connection to Procomún API'))
+        log.info(_(u'Error exporting package %s to Procomún: %s'))
+
     def handleExport(self, client, exportType, filename):
         """
         Called by js.

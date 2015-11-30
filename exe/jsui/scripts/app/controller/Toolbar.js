@@ -94,7 +94,10 @@ Ext.define('eXe.controller.Toolbar', {
                 click: { fn: this.processExportEvent, exportType: "webSite" }
             },
             '#file_export_googledrive': {
-                click: { fn: this.startExportGoogleDrive}
+                click: { fn: this.startExportGoogleDrive }
+            },
+            '#file_export_procomun': {
+                click: { fn: this.exportProcomun }
             },
             '#file_export_zip': {
                 click: { fn: this.processExportEvent, exportType: "zipFile" }
@@ -902,15 +905,20 @@ Ext.define('eXe.controller.Toolbar', {
             });
         }
         else {
-            eXe.controller.eXeViewport.prototype.gDriveNotificationStatus('Starting publication of this document in Google Drive');
+            eXe.controller.eXeViewport.prototype.gDriveNotificationStatus(_('Starting publication of this document in Google Drive'));
 
             // Access token has been successfully retrieved, requests can be sent to the API
             nevow_clientToServerEvent('exportGoogleDrive', this, '', authResult.access_token, navigator.userAgent);
             
-            eXe.controller.eXeViewport.prototype.gDriveNotificationStatus('Publication of this document in your Google Drive account started. ');
+            eXe.controller.eXeViewport.prototype.gDriveNotificationStatus(_('Publication of this document in your Google Drive account started'));
         }
     },
-    
+
+    exportProcomun: function() {
+        this.saveWorkInProgress();
+        nevow_clientToServerEvent('exportProcomun', this, '');
+    },
+
 	exportPackage: function(exportType, exportDir) {
 	    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage' || exportType == 'ipod' || exportType == 'mxml' ) {
 	        if (exportDir == '') {
