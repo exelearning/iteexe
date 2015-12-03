@@ -322,10 +322,11 @@ class WebsiteExport(object):
 
             if self.prefix == "":
                 self.copyFiles(package, outputDir)
-        else:
-            self.filename.write_text(self.report, 'utf-8')
+                
+            return outputDir
             
-        return outputDir
+        else:
+            self.filename.write_text(self.report, 'utf-8')            
 
 
     def copyFiles(self, package, outputDir):

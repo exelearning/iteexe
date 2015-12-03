@@ -2724,7 +2724,7 @@ class QuizOptionElement(Element):
             html += c_("Correct Option")
         else:
             html += c_("Wrong")
-        html += '</a> (<a href="#sa'+str(self.index)+'b'+self.field.question.id+'">' + c_("Feedback")+'</a>)</li>'
+        html += '</a><span> (<a href="#sa'+str(self.index)+'b'+self.field.question.id+'">' + c_("Feedback")+'</a>)</span></li>'
         html += lb
         '''
         if preview: 
