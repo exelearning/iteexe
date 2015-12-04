@@ -133,6 +133,7 @@ ol,ul
 ul li
 {
 	list-style-image: url(bullet.gif);
+	list-style-position:outside;
 }
 
 /* Cita con autoría */
