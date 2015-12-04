@@ -129,6 +129,9 @@ class ScormPage(Page):
                 html += style.get_extra_head()
             html += u"</head>"+lb            
             html += u'<body class=\"exe-scorm\" onload="loadPage()" '
+        if common.hasQuizTest(self.node):
+            html += u'onunload="unloadPage(true)">'
+        else:
             html += u'onunload="unloadPage()">'
         html += u'<script type="text/javascript">document.body.className+=" js"</script>'+lb
         html += u"<div id=\"outer\">"+lb
