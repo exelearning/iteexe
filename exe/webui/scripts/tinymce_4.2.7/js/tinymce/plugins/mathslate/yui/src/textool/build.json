@@ -1,0 +1,8 @@
+{
+  "name" : "moodle-tinymce_mathslate-textool" ,
+  "builds" : {
+      "moodle-tinymce_mathslate-textool": { 
+          "jsfiles" : [ "textool.js" ]
+       }
+  }
+}

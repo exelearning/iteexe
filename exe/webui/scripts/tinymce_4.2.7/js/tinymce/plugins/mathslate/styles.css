@@ -1,0 +1,138 @@
+.mathslate-tinymce .mathslate-highlight {
+    color: yellow
+}
+
+.mathslate-tinymce .mathslate-workspace .mathslate-selected {
+    color: green
+}
+
+.mathslate-tinymce .mathslate-workspace-dragged {
+    color: #888;
+}
+
+.mathslate-tinymce .mathslate-toolbox-drag, .mathslate-workspace-drag {
+    color: #FFF;
+}
+
+.mathslate-tinymce .mathslate-preview {
+    height: 130px;
+    border: solid 1px #888;
+    overflow: scroll;
+    text-align: left;
+    background: #111;
+    color: #FFF;
+}
+
+.mathslate-tinymce .mathslate-preview div {
+    padding-left: 10px;
+}
+
+.mathslate-tinymce .mathslate-preview .mathslate-selected div {
+}
+
+.mathslate-tinymce .mathslate-preview .mathslate-selected {
+    border-left: solid 5px #green;
+    background-color: #121;
+}
+
+.mathslate-tinymce iframe {
+    background: #FFF;
+    height: 130px;
+    padding: 0;
+    border: 0px;
+}
+
+.mathslate-tinymce .mathslate-preview .mathslate-selected {
+    background-color: #333;
+    border-left: solid 5px green;
+    animation-duration: 750ms;
+    animation-name: flash;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes flash {
+    from {
+    border-left: solid 5px #1F1;
+    }
+    35% {
+    border-left: solid 5px #1E1;
+    }
+    65% {
+    border-left: solid 5px #131;
+    }
+    to {
+    border-left: solid 5px #121;
+    }
+}
+
+.mathslate-tinymce .mathslate-workspace {
+    margin: 0px;
+    background-color: #333; 
+    color: #EEE; 
+    height: 100px;
+    line-height: 100px;
+    vertical-align: middle;
+    text-align: center;
+    border: solid #666 6px;
+    border-top: solid #999 4px;
+    border-right: solid #888 6px;
+    border-bottom: solid #555 4px;
+}
+
+.mathslate-tinymce .mathslate-toolbox {
+color: #888
+}
+
+.mathslate-tinymce .yui3-tabview-panel p {
+padding-bottom: 0px,
+padding-bottom: 1px
+}
+
+.mathslate-tinymce .mathslate-toolbox .yui3-tabview-panel {
+    background: #EEE;
+    background: radial-gradient(#EEE,#BBB)
+}
+
+.mathslate-tinymce .mathslate-toolbox .yui3-tab-label {
+    height: 2em;
+    width: 3.25em
+}
+
+.mathslate-tinymce .mathslate-toolbox .yui3-tab-selected .yui3-tab-focused {
+    background-image: none ;
+    background: linear-gradient(to top,#444,#888)
+}
+
+.mathslate-tinymce .mathslate-toolbox .yui3-tab-selected .yui3-tab-label {
+    background: #444;
+    background-image: none;
+    background: linear-gradient(to bottom,#AAA,#444)
+}
+
+.mathslate-tinymce .mathslate-toolbox .yui3-tabview-list {
+    border-color: #444
+}
+
+.mathslate-tinymce .yui3-tabview-panel {
+height: 100px
+}
+
+.mathslate-tinymce .mathslate-delete-button {
+}
+
+.mathslate-tinymce .mathslate-undo-button {
+}
+
+.mathslate-tinymce .mathslate-redo-button {
+}
+
+.mathslate-tinymce form button {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    padding: 0px;
+}
+
+.mathslate-tinymce .mathslate-help-box {
+}

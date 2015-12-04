@@ -1,0 +1,6 @@
+{
+  "moodle-tinymce_mathslate-editor" : {
+      "requires" : [ "dd-drag", "dd-proxy", "dd-drop", "event", "tabview", "io-base", "json", "moodle-tinymce_mathslate-textool", "moodle-tinymce_mathslate-mathjaxeditor" ]
+  }
+}
+

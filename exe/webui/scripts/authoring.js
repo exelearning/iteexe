@@ -576,15 +576,40 @@ function loadKeymap() {
 /* ********************************* */
 
 // Common settings
+function wysiwyg_extras(){
+    // document.write(unescape("%3Cscript src=\'/scripts/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML\' type=\'text/javascript\'%3E%3C/script%3E"));
+    document.write(unescape("%3Cscript src=\'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\' type=\'text/javascript\'%3E%3C/script%3E"));
+    document.write(unescape("%3Cscript src=\'http://code.jquery.com/ui/1.10.3/jquery-ui.js' type=\'text/javascript\'%3E%3C/script%3E"));
+    document.write(unescape("%3Cscript src=\'/scripts/writemaths/rangy-core.js\' type=\'text/javascript\'%3E%3C/script%3E"));
+    document.write(unescape("%3Cscript src=\'/scripts/writemaths/textinputs_jquery.js\' type=\'text/javascript\'%3E%3C/script%3E"));
+    document.write(unescape("%3Cscript src=\'/scripts/writemaths/writemaths.js\' type=\'text/javascript\'%3E%3C/script%3E"));
+    $(function(){
+        $("IMG.exe-latex").each(function(){
+            var img = $(this);
+            img.css("visibility","hidden");
+            $.ajax(img.attr("exe_math_latex"))
+            .done(function(res) {
+                img.before(res).remove();
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            });
+        });
+    });
+}
 var tinyMCEversion = 4;
 var eXeLearning_settings = {
     wysiwyg_path : "/scripts/tinymce_3.5.11/jscripts/tiny_mce/tiny_mce.js",
-    wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
+    wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js",
+    wysiwyg_extras : function(){
+        wysiwyg_extras();
+    }
 }
 if (tinyMCEversion==4) {
 	eXeLearning_settings = {
 		wysiwyg_path : "/scripts/tinymce_4.2.7/js/tinymce/tinymce.min.js",
-		wysiwyg_settings_path : "/scripts/tinymce_4.2.7_settings.js"	
+		wysiwyg_settings_path : "/scripts/tinymce_4.2.7_settings.js",
+        wysiwyg_extras : function(){
+            wysiwyg_extras();
+        }
 	}
 }
 

@@ -1,0 +1,8 @@
+{
+  "name" : "moodle-tinymce_mathslate-editor" ,
+  "builds" : {
+      "moodle-tinymce_mathslate-editor": { 
+          "jsfiles" : [ "editor.js" ]
+       }
+  }
+}

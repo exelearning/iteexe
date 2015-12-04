@@ -39,80 +39,19 @@ var $exeTinyMCE = {
 			plugins: [
 				"advlist autolink lists link image charmap print preview anchor",
 				"searchreplace visualblocks code fullscreen",
-				"insertdatetime media table contextmenu paste pastecode pastecode2 example"
+				"insertdatetime media table contextmenu paste pastecode pastecode2 example mathslate spellchecker"
 			],
+            init_instance_callback: function(ed){
+                jQuery(ed.getContentAreaContainer()).writemaths({position:'center top', previewPosition: 'left middle', iFrame: true});
+            },            
+			valid_children : this.getValidChildren(),
+			valid_elements : "*[*]",
 			image_advtab: true,
 			file_browser_callback: function(field_name, url, type, win){
 				exe_tinymce.chooseImage(field_name, url, type, win);
 			},
-			toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media pastecode pastecode2"
+			toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media pastecode pastecode2 | mathslate"
 		});
-		
-		
-		/* Old
-		tinyMCE.init({
-			// General options
-			mode : mode,
-			elements : criteria,
-			editor_selector : criteria,	
-			theme : this.theme,
-			skin : this.skin,
-			skin_variant : this.skin_variant,
-			convert_urls : false,
-			schema : this.getSchema(),
-			content_css : this.content_css,
-			height : h,
-			width : w,
-			plugins : this.plugins,
-			valid_children : this.getValidChildren(),
-			valid_elements : this.getValidElements(),
-			extended_valid_elements : this.getExtendedValidElements(),
-			entity_encoding : "raw",
-			// Theme options
-			theme_advanced_buttons1 : this.buttons1,
-			theme_advanced_buttons2 : this.buttons2,
-			theme_advanced_buttons3 : this.buttons3,
-			theme_advanced_toolbar_location : "top",
-			theme_advanced_toolbar_align : "left",
-			theme_advanced_statusbar_location : "bottom",
-			theme_advanced_resizing : true,
-
-			// Numbered lists
-			advlist_number_styles: [
-				{title : _("Default"), styles : { listStyleType : '' } },
-				{title : _("Lower Alpha"), styles : { listStyleType : 'lower-alpha' }, cssClass : '' },
-				{title : _("Lower Greek"), styles : { listStyleType : 'lower-greek' }, cssClass : '' },
-				{title : _("Lower Roman"), styles : { listStyleType : 'lower-roman' }, cssClass : '' },
-				{title : _("Upper Alpha"), styles : { listStyleType : 'upper-alpha' }, cssClass : '' },
-				{title : _("Upper Roman"), styles : { listStyleType : 'upper-roman' }, cssClass : '' },
-				{title : _("Automatic Numbering"), styles : { listStyleType : 'decimal' }, cssClass : 'auto-numbered' }
-			],
-
-			template_external_list_url : this.templates,
-			// No new base64 images
-			setup : function(ed) {
-				ed.onInit.add(function(ed, e) {
-					if (mode=="exact") $exeTinyMCEToggler.init(ed.editorId,hide);
-					$exeAuthoring.countBase64(ed);
-					$(ed.getDoc()).bind('drop', function(event){
-						return tinymce.dom.Event.cancel(event);
-					});		
-				});	
-				ed.onChange.add(function(ed, e) {
-					$exeAuthoring.compareBase64(ed);
-				});
-			},
-			// Spell check
-			init_instance_callback : function() {
-				if (tinyMCE.activeEditor.execCommands.mceSpellCheck) tinymce.execCommand('mceSpellCheck', true);
-			},   
-			// Image & media
-			file_browser_callback : "exe_tinymce.chooseImage",
-			media_types: "flash=swf,mp3,mp4,flv;qt=mov,qt,mpg,mpeg;wmp=avi,wmv,wm,asf;rmp=rm,ra,ram",		
-			flash_video_player_url: "../templates/flowPlayer.swf"	
-
-		});
-		*/
 		
 	},
     
@@ -333,5 +272,5 @@ $(function(){
 		$exeTinyMCEToggler.startEditor(id,false);
 		*/
 	}
-	else $exeTinyMCEToggler.setup(eds);
+	else $exeTinyMCEToggler.setup(eds);    
 });
