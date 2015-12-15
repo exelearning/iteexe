@@ -52,6 +52,7 @@ li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
 .exe-dl .icon{line-height:17px}
 .js .exe-dl dd{margin-left:34px}
+.exe-enlarge-icon b{font-size:1.7em}
 /* Form buttons */
 .feedbackbutton{background:#DBE992;margin-bottom:1em}
 /* Hide/Show iDevice */

@@ -69,7 +69,10 @@ li{list-style-position:outside}
 .exe-dl .icon,.exe-dl-toggler a{width:24px;height:24px;border-radius:12px}
 .exe-dl-toggler a{line-height:22px}
 .js .exe-dl dd{margin-left:44px}
-
+/* Enlarge icon */
+.exe-enlarge-icon{width:50px;height:50px;margin:-25px 0 0 -25px;border-radius:25px;background:#468770}
+.exe-enlarge-icon b{width:50px;height:50px;line-height:50px}
+.exe-enlarge-icon b{font-size:1.7em}
 /* Forms */
 input,select{font-size:1em;font-family:inherit}
 .iDevice_hint_title a{padding-left:25px}

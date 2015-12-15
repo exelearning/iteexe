@@ -49,6 +49,14 @@ var $exe = {
             opacity: 0.85
         });
         $exe.dl.init();
+		// Add a zoom icon to the images using CSS 
+		$("a.exe-enlarge").each(function(i){
+			 var e = $(this);
+			 var c = $(this).children();
+			 if (c.length==1 && c.eq(0).prop("tagName")=="IMG") {
+				e.prepend('<span class="exe-enlarge-icon"><b></b></span>');
+			 }
+		});
 		$exe.sfHover();
     },
 	

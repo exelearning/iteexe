@@ -69,6 +69,13 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .exe-layout-2-70-30 .exe-col-1{width:69%}
 .exe-layout-3-cols .exe-col{float:left;width:32%}
 .exe-layout-3-cols .exe-col-1,.exe-layout-3-cols .exe-col-2{padding-right:2%}
+/* Enlarge icon */
+.js a.exe-enlarge{position:relative;display:block}
+.exe-enlarge-icon{display:none;width:30px;height:30px;position:absolute;top:50%;left:50%;margin:-15px 0 0 -15px;border-radius:15px;background:#333;z-index:10;box-shadow:0 0 7px 0 #DDD}
+.exe-enlarge-icon b{width:30px;height:30px;line-height:30px;text-align:center;display:block;font-size:1.3em;color:#FFF}
+.exe-enlarge-icon b:before{content:"+"}
+.js a.exe-enlarge:hover img,.js a.exe-enlarge:focus img{opacity:0.7;filter:alpha(opacity=70)}
+a.exe-enlarge:hover .exe-enlarge-icon,a.exe-enlarge:focus .exe-enlarge-icon{display:block;*display:none}/* IE6, IE7 */
 /* Autoclear */
 .exe-clear{overflow:auto}
 /* JavaScript on/offf */
