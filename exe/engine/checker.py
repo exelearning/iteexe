@@ -168,7 +168,12 @@ class Checker:
             for path in self.package.resourceDir.files():
                 if path in self.idevices:
                     for idevice in self.idevices[path]:
-                        resource = Resource(idevice, path)
+                        try:
+                            resource = Resource(idevice, path)
+                        except:
+                            msg = "%s referenced in idevice %s of node %s not exists" % (path, idevice.idevice.klass, idevice.parentNode.title)
+                            log.error('New inconsistency of type packageResourceNonExistant: %s' % (msg))
+                            continue                        
                         if isinstance(idevice, FieldWithResources):
                             galleryimage = GalleryImage(idevice, '', None, mkThumbnail=False)
                             galleryimage._imageResource = resource
