@@ -244,7 +244,7 @@ var $exe = {
                 var t = $exe_i18n.hide;
                 e = $(this), c = e.hasClass("iDevice_header") ? "em1" : "em0", eP = e.parents(".iDevice_wrapper");
                 if (eP.length) {
-                    var n = '<p class="toggle-idevice toggle-' + c + '"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\'' + eP.attr("id") + "','" + c + '\')" title="' + t + '"><span>' + t + "</span></a></p>";
+                    var n = '<p class="toggle-idevice toggle-' + c + '"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\'' + eP.attr("id") + "','" + c + '\');return false" title="' + t + '"><span>' + t + "</span></a></p>";
                     if (c == "em1") {
                         var r = e.html();
                         e.html(r + n)
