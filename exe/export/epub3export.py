@@ -226,14 +226,23 @@ class NavEpub3(object):
                 </head>
                 <body>
                     <nav epub:type="toc" id="toc">
-                        <ol>
         """
 
+        currentDepth = 1
         for page in self.pages[1:]:
+            if page.depth > currentDepth:
+                xmlStr += u'<ol>\n'
+                currentDepth = page.depth
+            while currentDepth > page.depth:
+                xmlStr += u'</ol>\n'
+                currentDepth -= 1
             xmlStr += u"<li><a href=\"%s\">%s</a></li>\n" % (page.name + ".xhtml", escape(page.node.title))
 
+        while currentDepth > 1:
+            xmlStr += u'</ol>\n'
+            currentDepth -= 1
+
         xmlStr += u"""
-                        </ol>
                     </nav>
                 </body>
             </html>
