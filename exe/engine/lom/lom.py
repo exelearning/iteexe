@@ -803,8 +803,11 @@ class LangString(GeneratedsSuper):
             outfile.write('/>%s' % (eol_, ))
     def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='LangString'):
         if self.language is not None and 'language' not in already_processed:
+            language = self.language
+            if hasattr(language, 'get_valueOf_'):
+                language = self.language.get_valueOf_()
             already_processed.add('language')
-            outfile.write(' language=%s' % (self.gds_format_string(quote_attrib(self.language).encode(ExternalEncoding), input_name='language'), ))
+            outfile.write(' language=%s' % (self.gds_format_string(quote_attrib(language).encode(ExternalEncoding), input_name='language'), ))
     def exportChildren(self, outfile, level, namespace_='', name_='LangString', fromsubclass_=False, pretty_print=True):
         pass
     def exportLiteral(self, outfile, level, name_='LangString'):
