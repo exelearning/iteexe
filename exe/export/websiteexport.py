@@ -382,6 +382,7 @@ class WebsiteExport(object):
         hasXspfplayer     = False
         hasGallery        = False
         hasFX             = False
+        hasSH             = False
         hasGames          = False
         hasWikipedia      = False
         isBreak           = False
@@ -393,7 +394,7 @@ class WebsiteExport(object):
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasGames and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -409,6 +410,8 @@ class WebsiteExport(object):
                     hasGallery = common.ideviceHasGallery(idevice)
                 if not hasFX:
                     hasFX = common.ideviceHasFX(idevice)
+                if not hasSH:
+                    hasSH = common.ideviceHasSH(idevice)
                 if not hasGames:
                     hasGames = common.ideviceHasGames(idevice)
                 if not hasWikipedia:
@@ -439,6 +442,9 @@ class WebsiteExport(object):
         if hasFX:
             exeEffects = (self.scriptsDir/'exe_effects')
             exeEffects.copyfiles(outputDir)
+        if hasSH:
+            exeSH = (self.scriptsDir/'exe_highlighter')
+            exeSH.copyfiles(outputDir)
         if hasGames:
             exeGames = (self.scriptsDir/'exe_games')
             exeGames.copyfiles(outputDir)

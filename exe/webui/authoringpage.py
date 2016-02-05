@@ -204,6 +204,7 @@ class AuthoringPage(RenderableResource):
             
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/exe_wikipedia.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/scripts/exe_effects/exe_effects.css\" />"
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/scripts/exe_highlighter/exe_highlighter.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/scripts/exe_games/exe_games.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/%s/content.css\" />" % self.package.style
         if G.application.config.assumeMediaPlugins: 
@@ -224,6 +225,7 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript" src="/scripts/exe_jquery.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_lightbox/exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_effects/exe_effects.js"></script>\n'
+        html += u'<script type="text/javascript" src="/scripts/exe_highlighter/exe_highlighter.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_games/exe_games.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/common.js"></script>\n'
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
