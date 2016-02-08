@@ -275,7 +275,7 @@ def renderLicense(plicense,mode="export"):
     """
     Returns an XHTML string rendering the license.
     """
-    if plicense == "" or plicense == "not appropriate":
+    if plicense in ["", "not appropriate", "None"]:
         return ""
     
     licenses = getPackageLicenses()
