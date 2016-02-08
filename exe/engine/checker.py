@@ -164,7 +164,7 @@ class Checker:
                 idevice.id = unicode(int(idevice.id) + 1)
             idevice_ids.append(idevice.id)
 
-        max_idevice_id = max(map(lambda x: int(x), idevice_ids))
+        max_idevice_id = 0 if not idevice_ids else max(map(lambda x: int(x), idevice_ids))
         if Idevice.nextId <= max_idevice_id:
             log.error('Wrong idevice next id. Fixing...')
             Idevice.nextId = max_idevice_id + 1
