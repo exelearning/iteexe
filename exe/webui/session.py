@@ -91,6 +91,7 @@ class eXeSession(server.Session):
     def __init__(self, *args, **kwargs):
         server.Session.__init__(self, *args, **kwargs)
         self.packageStore = PackageStore()
+        self.oauthToken = {}
 
 
 class eXeSite(appserver.NevowSite):

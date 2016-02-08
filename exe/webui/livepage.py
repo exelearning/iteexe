@@ -72,6 +72,15 @@ class eXeClientHandle(ClientHandle):
                     client.sendScript(onDone)
         self.sendScript(script)
 
+    def notifyStatus(self, title, msg):
+        self.sendScript("eXe.controller.eXeViewport.prototype.eXeNotificationStatus('%s', '%s');" % (title, msg), filter_func=allSessionClients)
+
+    def hideStatus(self):
+        self.sendScript('Ext.ComponentQuery.query("#eXeNotification")[0].hide();', filter_func=allSessionClients)
+
+    def notifyNotice(self, title, msg, type):
+        self.sendScript("eXe.controller.eXeViewport.prototype.eXeNotificationNotice('%s','%s', '%s');" % (title, msg, type), filter_func=allSessionClients)
+
 
 class eXeClientHandleFactory(DefaultClientHandleFactory):
     clientHandleClass = eXeClientHandle
@@ -80,6 +89,7 @@ class eXeClientHandleFactory(DefaultClientHandleFactory):
         handle = DefaultClientHandleFactory.newClientHandle(self, ctx, refreshInterval, targetTimeoutCount)
         handle.currentNodeId = ctx.tag.package.currentNode.id
         handle.packageName = ctx.tag.package.name
+        handle.session = inevow.ISession(ctx)
         log.debug('New client handle %s. Handles %s' % (handle.handleId, self.clientHandles))
         return handle
 

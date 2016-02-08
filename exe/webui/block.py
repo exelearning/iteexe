@@ -258,29 +258,22 @@ class Block(Renderable):
 
         if self.purpose.strip() or self.tip.strip():
             html += u'<a title="%s" ' % _(u'Pedagogical Help')
-            html += u'onmousedown="Javascript:updateCoords(event);" '
-            html += u"onclick=\"Javascript:showMe('p"+self.id+"', 420, 240);\" "
-            html += u'href="Javascript:void(0)" style="cursor:help;"> ' 
+            html += u"onclick=\"showMessageBox('"+self.id+"');\" "
+            html += u'href="javascript:void(0)" style="cursor:help;margin-left:.2em;">' 
             html += u'<img alt="%s" class="info" src="/images/info.png" ' \
                     % _('Information')
             html += u'style="align:middle;" /></a>\n'
-            html += u'<div id="p%s" style="display:none;">' % self.id
-            html += u'<div style="float:right;">'
-            html += u'<img alt="%s" src="/images/stock-stop.png" ' % _('Close')
-            html += u' title="%s" ' % _(u"Close")
-            html += u'onmousedown="Javascript:hideMe();"/></div>'
+            html += u'<div style="display:none;">'
 
             if self.purpose != "":
-                html += u'<div class="popupDivLabel">'
-                html += u' ' + _(u"Purpose") + u'</div>'
-                html += self.purpose 
+                html += u'<div id="'+self.id+'title">'+_(u"Purpose")+'</div>'
+                html += u'<div id="'+self.id+'content">'+self.purpose+'</div>'
                 
             if self.tip != "":
-                html += u'<div class="block"><b>' + _(u"Tip:") + u'</b></div>'
-                html += self.tip 
-                html += u'\n'
+                html += u'<div id="'+self.id+'title">'+_(u"Tip:")+'</div>'
+                html += u'<div id="'+self.id+'content">'+self.tip+'</div>'
                 
-            html += u'</div><br/><br/>\n'    
+            html += u'</div>\n'    
         
         return html
 

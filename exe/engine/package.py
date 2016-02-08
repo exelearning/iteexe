@@ -30,6 +30,7 @@ import logging
 import time
 import zipfile
 import uuid
+from dateutil.tz import tzlocal
 import re
 from xml.dom                   import minidom
 from exe.engine.path           import Path, TempDirPath, toUnicode
@@ -493,7 +494,10 @@ class Package(Persistable):
             role.set_uniqueElementName('role')
             entity = lomsubs.entitySub(vcard % value_str)
             dateTime = lomsubs.DateTimeValueSub()
-            dateTime.set_valueOf_(datetime.datetime.now().strftime('%Y-%m-%d'))
+            now = list(datetime.datetime.now(tzlocal()).strftime('%Y-%m-%dT%H:%M:%S.00%z'))
+            now.insert(-2, ':')
+            now = ''.join(now)
+            dateTime.set_valueOf_(now)
             dateTime.set_uniqueElementName('dateTime')
             lang_str = self.lang.encode('utf-8')
             value_meta_str = c_(u'Metadata creation date').encode('utf-8')

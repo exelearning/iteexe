@@ -95,6 +95,8 @@ color:#ffffff;
 background-color:#555555;
 }
 body{
+/*bodyBGColor*/
+background-color:#ffffff;
 }
 #siteNav,#siteNav a{
 /*navBGColor*/

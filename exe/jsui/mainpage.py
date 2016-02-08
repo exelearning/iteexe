@@ -30,6 +30,7 @@ import logging
 import traceback
 import shutil
 import tempfile
+import base64
 from exe.engine.version          import release, revision
 from twisted.internet            import threads, reactor
 from exe.webui.livepage          import RenderableLivePage,\
@@ -55,17 +56,23 @@ from exe.importers.scanresources import Resources
 from exe.engine.path             import Path, toUnicode, TempDirPath
 from exe.engine.package          import Package
 from exe                         import globals as G
-from tempfile                    import mkdtemp
+from tempfile                    import mkdtemp, mkstemp
 from exe.engine.mimetex          import compile
 from urllib                      import unquote, urlretrieve
 from exe.engine.locationbuttons  import LocationButtons
 from exe.export.epub3export      import Epub3Export
 from exe.export.xmlexport        import XMLExport
+from requests_oauthlib           import OAuth2Session
+from exe.webui.oauthpage         import ProcomunOauth
+from suds.client                 import Client
+from exe.engine.sslcontext       import create_ssl_context, HTTPSTransport
 
 from exe.engine.lom import lomsubs
 from exe.engine.lom.lomclassification import Classification
 import zipfile
 log = logging.getLogger(__name__)
+PROCOMUN_WSDL = 'https://agrega2-front-pre.emergya.es/oauth_services?wsdl'
+
 
 
 class MainPage(RenderableLivePage):
@@ -185,6 +192,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleImport, 'importPackage')
         setUpHandler(self.handleCancelImport, 'cancelImportPackage')
         setUpHandler(self.handleExport, 'exportPackage')
+        setUpHandler(self.handleExportProcomun, 'exportProcomun')
         setUpHandler(self.handleXliffExport, 'exportXliffPackage')
         setUpHandler(self.handleQuit, 'quit')
         setUpHandler(self.handleBrowseURL, 'browseURL')
@@ -761,6 +769,57 @@ class MainPage(RenderableLivePage):
     def handleCancelImport(self, client):
         log.info('Cancel import')
         Resources.cancelImport()
+
+    def handleExportProcomun(self, client):
+        if not client.session.oauthToken.get('procomun'):
+            oauth2Session = OAuth2Session(ProcomunOauth.CLIENT_ID, redirect_uri=ProcomunOauth.REDIRECT_URI)
+            oauth2Session.verify = False
+            authorization_url, state = oauth2Session.authorization_url(ProcomunOauth.AUTHORIZATION_BASE_URL)
+            self.webServer.oauth.procomun.saveState(state, oauth2Session, client)
+
+            client.call('eXe.app.getController("Toolbar").getProcomunAuthToken', authorization_url)
+
+            return
+
+        title = 'Procomún'
+        statusTitle = _(u'Publishing document to Procomún')
+        client.notifyStatus(statusTitle, _(u'Exporting package as SCORM'))
+        token = client.session.oauthToken['procomun']
+        stylesDir = self.config.stylesDir / self.package.style
+        fd, filename = mkstemp('.zip')
+        scorm = ScormExport(self.config, stylesDir, filename, 'scorm1.2')
+        scorm.export(self.package)
+
+        sslverify = False
+        cafile = None
+        capath = None
+
+        kwargs = {}
+        sslContext = create_ssl_context(sslverify, cafile, capath)
+        headers = {'Authorization': 'Bearer %s' % str(token['access_token']),
+                   'Connection': 'close'}
+        kwargs['transport'] = HTTPSTransport(sslContext, headers=headers)
+
+        procomun = Client(PROCOMUN_WSDL, **kwargs)
+
+        ode = procomun.factory.create('xsd:anyType')
+
+        ode.content = base64.b64encode(open(filename).read())
+        ode.fileName = self.package.name
+
+        client.notifyStatus(statusTitle, _(u'Starting authorized connection to Procomún API'))
+        result = procomun.service.odes_soap_create(ode)
+
+        parsedResult = dict()
+        for item in result.item:
+            parsedResult[item.key] = item.value
+
+        if parsedResult['status'] == 'true':
+            link_url = 'https://agrega2-front-pre.emergya.es/'
+            client.notifyStatus(statusTitle, _(u'Package exported to <a href="%s" target="_blank" title="Click to visit exported site">%s</a>') % (link_url, self.package.name))
+        else:
+            client.hideStatus()
+            client.notifyNotice(title, _(u'Error exporting package %s to Procomún: %s') % (self.package.name, parsedResult['message']), 'error')
 
     def handleExport(self, client, exportType, filename):
         """

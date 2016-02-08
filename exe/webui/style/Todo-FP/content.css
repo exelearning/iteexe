@@ -83,6 +83,7 @@ input.feedbackbutton{margin:0}
 li{list-style-position:outside}
 .exe-dl .icon{line-height:17px}
 .js .exe-dl dd{margin-left:34px}
+.exe-enlarge-icon b{font-size:1.7em}
 /* Hide/Show iDevice */
 .toggle-idevice{margin:12px 0 0;text-align:right;display:block}
 .iDevice_header .toggle-idevice{float:right;padding-top:2px;margin:0}

@@ -93,6 +93,9 @@ Ext.define('eXe.controller.Toolbar', {
             '#file_export_website': {
                 click: { fn: this.processExportEvent, exportType: "webSite" }
             },
+            '#file_export_procomun': {
+                click: { fn: this.exportProcomun }
+            },
             '#file_export_zip': {
                 click: { fn: this.processExportEvent, exportType: "zipFile" }
             },
@@ -827,6 +830,38 @@ Ext.define('eXe.controller.Toolbar', {
         this.exportPackage(e.exportType, "");
     },
     
+    exportProcomun: function() {
+        this.saveWorkInProgress();
+        nevow_clientToServerEvent('exportProcomun', this, '');
+    },
+
+    getProcomunAuthToken: function(url) {
+        Ext.Msg.show({
+            title: _('You must authorize eXe Learning to publish content into your Procomún account'),
+            msg: _('Are you sure you want to start authorization process?'),
+            scope: this,
+            modal: true,
+            buttons: Ext.Msg.YESNO,
+            fn: function(button) {
+                if (button == "yes") {
+                    var authwindow = new Ext.Window ({
+                        height: eXe.app.getMaxHeight(700),
+                        width: 800,
+                        modal: true,
+                        id: 'oauthprocomun',
+                        title: _("Procomún OAuth"),
+                        items: {
+                            xtype: 'uxiframe',
+                            src: url,
+                            height: '100%'
+                        },
+                    });
+                    authwindow.show();
+                }
+            }
+        });
+    },
+
 	exportPackage: function(exportType, exportDir) {
 	    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage' || exportType == 'ipod' || exportType == 'mxml' ) {
 	        if (exportDir == '') {

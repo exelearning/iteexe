@@ -47,6 +47,17 @@ Ext.define('eXe.view.ui.eXeViewport', {
                     region: 'west',
                     split: true,
                     width: 250
+                },
+                {
+                    xtype: 'uxNotification',
+                    region: 'south',
+                    itemId: 'eXeNotification',
+                    closeAction: 'hide',
+                    autoClose: false,
+                    position: 'b',
+                    useXAxis: false,
+                    cls: 'ux-notification-light',
+                    iconCls: 'ux-notification-icon-information'
                 }
             ],
             itemId: 'eXeViewport',

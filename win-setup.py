@@ -62,7 +62,8 @@ dataFiles(["exe/webui/style",
            "exe/webui/docs",
            "exe/webui/scripts",
            "exe/webui/schemas",
-           "exe/webui/templates"],
+           "exe/webui/templates",
+           "exe/webui/tools"],
            excludes = ['mimetex-darwin.cgi'])
 
 g_oldBase = "exe"
@@ -82,7 +83,8 @@ dataFiles(["exe/jsui/templates",
 
 opts = {
  "py2exe": {
-   "packages": ["encodings", "nevow", "nevow.flat", "cProfile", "functools", "csv", "libxml2", "robotparser", "chardet", "lxml", "feedparser", "BeautifulSoup"],
+   "packages": ["encodings", "nevow", "nevow.flat", "cProfile", "functools", "csv", "libxml2", "robotparser", "chardet",
+                "lxml", "feedparser", "BeautifulSoup", "BaseHTTPServer", "oauthlib"],
    "includes": ["PngImagePlugin", "JpegImagePlugin", "GifImagePlugin",
                 "IcoImagePlugin", "BmpImagePlugin"],
 

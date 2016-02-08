@@ -211,6 +211,24 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'accesskey_menuitem',
+                                text: _('Publish'),
+                                itemId: 'publish',
+                                accesskey: 'l',
+                                menu: {
+                                    xtype: 'menu',
+                                    items: 
+                                    [
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            text: _('Procomún'),
+                                            accesskey: 'P',
+                                            itemId: 'file_export_procomun'
+                                        },
+                                    ]
+                                },
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
                                 text: _('Export'),
                                 accesskey: 'e',
                                 menu: {
