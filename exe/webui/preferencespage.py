@@ -210,15 +210,19 @@ class PreferencesPage(RenderableResource):
             self.config.locale = locale
             self.config.locales[locale].install(unicode=True)
             self.config.configParser.set('user', 'locale', locale)
+
             internalAnchors = request.args['internalAnchors'][0]
             self.config.internalAnchors = internalAnchors
             self.config.configParser.set('user', 'internalAnchors', internalAnchors)
+
             editormodesel = request.args['editorMode'][0]
             self.config.editorMode = editormodesel
             self.config.configParser.set('user', 'editorMode', editormodesel)
+
             doctypesel = request.args['docType'][0]
             self.config.docType = doctypesel
             self.config.configParser.set('user', 'docType', doctypesel)
+
             defaultLicense = request.args['defaultLicense'][0]
             self.config.defaultLicense = defaultLicense
             self.config.configParser.set('user', 'defaultLicense', defaultLicense)
@@ -236,6 +240,7 @@ class PreferencesPage(RenderableResource):
                 else:
                     raise e
             self.config.configParser.set('system', 'browser', browser)
+            
             showPreferencesOnStart = request.args['showPreferencesOnStart'][0]
             self.config.showPreferencesOnStart = showPreferencesOnStart
             self.config.configParser.set('user', 'showPreferencesOnStart', showPreferencesOnStart)

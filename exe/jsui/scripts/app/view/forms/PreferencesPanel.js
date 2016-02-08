@@ -235,9 +235,9 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 								help: _('The current document license can be modified in the Properties tab.')								
 							}
 						]
-					}
-					// /Tab1				
-				]
+					},
+					// /Tab1
+				],
             }, {
                 xtype: 'container',
                 layout: 'hbox',

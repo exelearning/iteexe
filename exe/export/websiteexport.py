@@ -25,6 +25,7 @@ WebsiteExport will export a package as a website of HTML pages
 import logging
 import re
 import imp
+from shutil                   import rmtree
 from exe.engine.path          import Path, TempDirPath
 from exe.export.pages         import uniquifyNames
 from exe.export.websitepage   import WebsitePage

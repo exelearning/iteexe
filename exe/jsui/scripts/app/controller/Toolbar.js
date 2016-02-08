@@ -148,7 +148,7 @@ Ext.define('eXe.controller.Toolbar', {
                 overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:200px should be applied to #headerContent
             */
             '#style_designer_new_style': {
-                click: this.styleDesigner.createStyle
+                click: this.styleDesigner.open
             },
             '#style_designer_edit_style': {
                 click: this.styleDesigner.editStyle

@@ -38,7 +38,7 @@ from exe.engine.idevicestore import IdeviceStore
 from exe.engine.translate    import installSafeTranslate
 from exe.engine.package      import Package
 from exe.engine              import version
-from exe                     import globals
+from exe                     import globals as G
 import logging
 from twisted.internet import reactor
 
@@ -60,7 +60,7 @@ if sys.platform[:3] == "win" and not (sys.argv[0].endswith("exe_do") or \
 del Windows_Log
 
 # Global application variable
-globals.application = None
+G.application = None
 
 class Application:
     """
@@ -85,8 +85,8 @@ class Application:
         self.afterUpgradeHandlers = []
         self.preferencesShowed = False
         self.loadErrors = []
-        assert globals.application is None, "You tried to instantiate two Application objects"
-        globals.application = self
+        assert G.application is None, "You tried to instantiate two Application objects"
+        G.application = self
 
     def main(self):
         """
@@ -188,6 +188,7 @@ class Application:
             self.loadErrors.append(
                _(u'An error has occurred when loading your config. A backup is saved at %s') % backup)
         log.debug("logging set up")
+        G.application.exeAppUri = 'http://localhost:%d' % (self.config.port)
 
     def preLaunch(self):
         """

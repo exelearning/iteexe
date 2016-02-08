@@ -23,6 +23,8 @@ anything it just redirects the user to a new package.
 """
 
 import logging
+import os
+from exe                      import globals as G
 from exe.webui.renderable     import RenderableResource
 from exe.jsui.mainpage import MainPage
 from twisted.web import error
@@ -46,6 +48,7 @@ class PackageRedirectPage(RenderableResource):
         RenderableResource.__init__(self, None, None, webServer)
         self.webServer = webServer
         self.packagePath = packagePath
+        self.package_name = ''
         # See if all out main pages are not showing
         # This is a twisted timer
         self.stopping = None

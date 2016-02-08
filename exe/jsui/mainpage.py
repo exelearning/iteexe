@@ -439,9 +439,8 @@ class MainPage(RenderableLivePage):
             rel_name = rel_name.replace('\\', '/')
         if rel_name.startswith('/'):
             rel_name = rel_name[1:]
-        http_relative_pathname = "http://127.0.0.1:" + str(self.config.port) \
-                                     + '/' + rel_name
-        log.debug('printdir http_relative_pathname=' + http_relative_pathname)
+        http_relative_pathname = '%s/%s'%(G.application.exeAppUri, rel_name)
+        log.debug('printdir http_relative_pathname=%s'%(http_relative_pathname))
         return http_relative_pathname
 
     def ClearParentTempPrintDirs(self, client, log_dir_warnings):

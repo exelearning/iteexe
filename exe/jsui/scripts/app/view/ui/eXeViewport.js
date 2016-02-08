@@ -18,11 +18,13 @@
 //===========================================================================
 
 Ext.define('eXe.view.ui.eXeViewport', {
+    id: 'exe-viewport',
     extend: 'Ext.container.Viewport',
     requires: [
         'eXe.view.ui.eXeToolbar',
         'eXe.view.ui.MainTabPanel',
-        'eXe.view.ui.LeftPanel'
+        'eXe.view.ui.LeftPanel',
+        'Ext.ux.window.Notification'
     ],
 
     layout: {
@@ -65,5 +67,5 @@ Ext.define('eXe.view.ui.eXeViewport', {
         });
 
         me.callParent(arguments);
-    }
+    },
 });
