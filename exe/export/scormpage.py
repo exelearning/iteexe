@@ -90,6 +90,8 @@ class ScormPage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
         if common.hasFX(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
+        if common.hasSH(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_highlighter.css\" />"+lb
         if common.hasGames(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
@@ -109,6 +111,8 @@ class ScormPage(Page):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         if common.hasFX(self.node):
             html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
+        if common.hasSH(self.node):
+            html += u'<script type="text/javascript" src="exe_highlighter.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         if common.hasGames(self.node):
             # The games require additional strings

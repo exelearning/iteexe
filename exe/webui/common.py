@@ -275,7 +275,7 @@ def renderLicense(plicense,mode="export"):
     """
     Returns an XHTML string rendering the license.
     """
-    if plicense == "" or plicense == "not appropriate":
+    if plicense in ["", "not appropriate", "None"]:
         return ""
     
     licenses = getPackageLicenses()
@@ -1230,6 +1230,17 @@ def ideviceHasFX(idevice):
         return True
     return False
     
+# Syntax highlighting
+def ideviceHasSH(idevice):
+    block = g_blockFactory.createBlock(None, idevice)
+    if not block:
+        log.critical("Unable to render iDevice.")
+        raise Error("Unable to render iDevice.")
+    content = block.renderView('default')
+    if re.search(' class=[\'"]highlighted-code', content):
+        return True
+    return False
+    
 def ideviceHasGames(idevice):
     block = g_blockFactory.createBlock(None, idevice)
     if not block:
@@ -1255,6 +1266,13 @@ def ideviceHasGallery(idevice):
 def hasFX(node):
     for idevice in node.idevices:
         if ideviceHasFX(idevice):
+            return True
+    return False
+    
+# Syntax highlighting
+def hasSH(node):
+    for idevice in node.idevices:
+        if ideviceHasSH(idevice):
             return True
     return False
     

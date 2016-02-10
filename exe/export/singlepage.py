@@ -135,6 +135,16 @@ class SinglePage(Page):
         
         hasEffects = hasFX(self.node)
         
+        def hasSH(node):
+            hasHighlighter = common.hasSH(node)
+            if not hasHighlighter:
+                for child in node.children:
+                    if hasSH(child):
+                        return True
+            return hasHighlighter
+        
+        hasHighlighter = hasSH(self.node)
+        
         def hasGames(node):
             hasJSGames = common.hasGames(node)
             if not hasJSGames:
@@ -198,6 +208,8 @@ class SinglePage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
         if hasEffects:
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
+        if hasHighlighter:
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_highlighter.css\" />"+lb
         if hasJSGames:
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
@@ -218,6 +230,8 @@ class SinglePage(Page):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         if hasEffects:
             html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
+        if hasHighlighter:
+            html += u'<script type="text/javascript" src="exe_highlighter.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         if hasJSGames:
             # The games require additional strings
