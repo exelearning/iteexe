@@ -32,8 +32,20 @@
 				}
 				var d = ed.getDoc();
 				var s = '<style type="text/css">';
+					// Default title
 					s += '.exe-tooltip-text:before{content:"'+ed.getLang("tooltip.title")+' - '+ed.getLang("tooltip.type2")+'"}';
-				s += '</style>';
+					// Get the text of each tooltip to replace the default title
+					jQuery(".exe-tooltip-text",d).each(function(){
+						var dt = jQuery("a[href$='"+this.id+"']",d);
+						if (dt.length==0) {
+							// "The term could not be found"
+							s += '#'+this.id+':before{content:"'+ed.getLang("tooltip.title")+' - '+ed.getLang("tooltip.type2_not_found")+'"}';
+						} else if (dt.length==1) {
+							var content = dt.text();
+							if (content!="") s += '#'+this.id+':before{content:"'+ed.getLang("tooltip.title")+' - '+ed.getLang("tooltip.type2")+' - '+content+'"}';
+						}
+					});				
+					s += '</style>';
 				jQuery("HEAD",d).append(s);				
 			});
 	
@@ -52,7 +64,7 @@
 				longname : 'Tooltips',
 				author : 'Ignacio Gros',
 				authorurl : 'http://www.gros.es',
-				version : "2.0"
+				version : "2.1"
 			};
 		}
 	});

@@ -343,6 +343,18 @@ var TooltipDialog = {
 				} else {
 					inst.dom.setHTML(e, lng);
 				}
+				// Get the text of the link and show it in the definition
+				if (typeof(parent.jQuery)=='function') {
+					var d = inst.getDoc();
+					var dt = parent.jQuery("a[href$='"+id+"']",d);
+					if (dt.length==1) {
+						var content = dt.text();
+						if (content!="") {
+							var s = '<style type="text/css">#'+id+':before{content:"'+inst.getLang("tooltip.title")+' - '+inst.getLang("tooltip.type2")+' - '+content+'"}</style>';
+							parent.jQuery("HEAD",d).append(s);
+						}
+					}
+				}				
 			}
 			inst.dom.setAttribs(elm, {
 				// Make sure that you link to the anchor
