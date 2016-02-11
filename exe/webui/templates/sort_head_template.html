@@ -4,6 +4,46 @@ ${instructions}
 
 <script src="${RESPATH}jquery-ui-1.10.3.custom.min.js" type='text/javascript'> </script>
 <script type="text/javascript">
+	// Before in common.js
+	function playAndReset(e) {
+		if (e && e.paused == true && e.currentTime == 0) {
+			try {
+				e.play()
+			} catch (t) {}
+		} else {
+			try {
+				e.pause();
+				e.addEventListener("seeked", function() {
+					e.play()
+				}, true);
+				e.currentTime = 0
+			} catch (n) {}
+		}
+	}
+
+	function playPositiveFeedbackDefault() {
+		var e = Math.floor(Math.random() * 3);
+		var t = document.getElementById("exesfx_good" + e);
+		playAndReset(t)
+	}
+
+	function playNegativeFeedbackDefault() {
+		var e = document.getElementById("exesfx_wrong");
+		playAndReset(e)
+	}
+	var exe_isTouchScreenDev = false;
+	var touchScreenDetectDone = false;
+	function doTouchScreenDetect() {
+		if (touchScreenDetectDone == true) {
+			return
+		}
+		var e = navigator.userAgent;
+		if (e.indexOf("Android") != -1) {
+			exe_isTouchScreenDev = true
+		}
+	}
+	doTouchScreenDetect();
+	// / Before in common.js
 
 	var sortmeItemIds${ideviceid} = new Array();
 

@@ -7,6 +7,8 @@
 
 import sys
 import re
+import dateutil.parser
+from datetime import datetime
 
 
 import lom as supermod
@@ -247,7 +249,10 @@ class lomSub(supermod.lom):
 
         elif hasattr(rootObj, 'get_valueOf_'):
             if base.endswith('_dateTime'):
-                form[base[:-9]] = rootObj.get_valueOf_()
+                dateObj = dateutil.parser.parse(rootObj.get_valueOf_())
+                date = list(dateObj.strftime('%Y-%m-%dT%H:%M:%S.00%z'))
+                date.insert(-2, ':')
+                form[base[:-9]] = ''.join(date)
             elif base.endswith('_source'):
                 pass
             elif re.findall("_entity[0-9]*$", base):

@@ -197,19 +197,37 @@ function doQuit()
 ** eXe team: we've added this doLMSSetValue here to get tracking working with Moodle
 ** cmi.core.lesson_status is now set to 'completed' whenever a sco is unloaded.
 ** brent simpson. July 7, 2005. exe@auckland.ac.nz
+**
+**
+** New eXeLearning: we add a new parameter (isScorm) with a default value (false)
+** In 'normal' pages, the status is set to completed but 
+** if the page has a SCORM Quizz and the quizz has not been answered,
+** the status is set to incomplete. 
+** José Miguel Andonegi November 17
+**
 *******************************************************************************/
-function unloadPage()
+function unloadPage(isSCORM)
 {
+	if (typeof isSCORM == "undefined"){
+		isSCORM = false;
+	}
 	//console.trace('exitPageStatus'+exitPageStatus);
 
 	var status;
 	if (exitPageStatus != true)
 	{
-		status = scorm.GetCompletionStatus();
+		status = scorm.GetSuccessStatus();
 		// In SCORM12, information about completion and success is stored in the same place (cmi.core.lesson_status)
 		if (status!="passed" && status!="failed")
 		{
-			scorm.SetCompletionStatus("completed");
+			if(isSCORM==true)
+			{
+				scorm.SetCompletionStatus("incomplete");
+			}
+			else
+			{
+				scorm.SetCompletionStatus("completed");
+			}
 		}
 		doQuit();
 	}
@@ -218,7 +236,6 @@ function unloadPage()
 	//		  string from this function or IE will take the
 	//		  liberty of displaying a confirm message box.
 }
-
 
 function goBack() {
 	pipwerks.nav.goBack();

@@ -135,6 +135,26 @@ class SinglePage(Page):
         
         hasEffects = hasFX(self.node)
         
+        def hasSH(node):
+            hasHighlighter = common.hasSH(node)
+            if not hasHighlighter:
+                for child in node.children:
+                    if hasSH(child):
+                        return True
+            return hasHighlighter
+        
+        hasHighlighter = hasSH(self.node)
+        
+        def hasGames(node):
+            hasJSGames = common.hasGames(node)
+            if not hasJSGames:
+                for child in node.children:
+                    if hasGames(child):
+                        return True
+            return hasJSGames
+        
+        hasJSGames = hasGames(self.node)
+        
         def hasWikipediaIdevice(node):
             hasWikipedia = common.hasWikipediaIdevice(node)
             if not hasWikipedia:
@@ -178,7 +198,9 @@ class SinglePage(Page):
         html += common.getLicenseMetadata(self.node.package.license)
         html += '<meta name="generator" content="eXeLearning '+release+' - exelearning.net" />'+lb
         if self.node.package.description!="":
-            html += '<meta name="description" content="'+self.node.package.description+'" />'+lb
+            desc = self.node.package.description
+            desc = desc.replace('"', '&quot;')        
+            html += '<meta name="description" content="'+desc+'" />'+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
         if hasWikipedia:
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
@@ -186,6 +208,10 @@ class SinglePage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
         if hasEffects:
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
+        if hasHighlighter:
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_highlighter.css\" />"+lb
+        if hasJSGames:
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5" or self.hasMediaelement:
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
@@ -204,7 +230,13 @@ class SinglePage(Page):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         if hasEffects:
             html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
+        if hasHighlighter:
+            html += u'<script type="text/javascript" src="exe_highlighter.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
+        if hasJSGames:
+            # The games require additional strings
+            html += common.getGamesJavaScriptStrings() + lb
+            html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb

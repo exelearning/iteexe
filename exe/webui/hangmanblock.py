@@ -186,7 +186,7 @@ class HangmanBlockInc(Block):
         
         resPath = ""
         if mode ==  "preview":
-            resPath = "resources/"       
+            resPath = "/templates/"       
         
         html = u"<script src='" + resPath + "hangman.js' type='text/javascript'></script>\n"
         html += common.ideviceHeader(self, style, mode)

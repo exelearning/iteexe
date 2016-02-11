@@ -325,11 +325,11 @@
                     } else if (captionLicense=="gnu-gpl") {
                         license = "<a href='http://www.gnu.org/licenses/gpl.html' rel='license nofollow' target='_blank'>GNU/GPL</a>";
                     } else if (captionLicense=="CC0") {
-                        license = "<a href='http://creativecommons.org/publicdomain/zero/1.0/deed."+licenseLang+"' rel='license nofollow' target='_blank'>CC0</a>";
+                        license = "<a href='http://creativecommons.org/publicdomain/zero/1.0/deed."+licenseLang+"' rel='license nofollow' target='_blank' title='Creative Commons (CC0)'>CC0</a>";
                     } else if (captionLicense=="copyright") {
                         license = "<span>"+tinyMCEPopup.getLang("media_dlg.all_rights_reserved")+"</span>";
                     } else {
-                        license = "<a href='"+ccLink+"' rel='license nofollow' target='_blank'>"+captionLicense.replace("CC-","CC ")+"</a>";
+                        license = "<a href='"+ccLink+"' rel='license nofollow' target='_blank' title='"+captionLicense.replace("CC-","Creative Commons ")+"'>"+captionLicense.replace("CC-","CC ")+"</a>";
                     }
                     
                     if (cText!="") {

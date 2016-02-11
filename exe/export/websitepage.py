@@ -85,6 +85,10 @@ class WebsitePage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
         if common.hasFX(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
+        if common.hasSH(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_highlighter.css\" />"+lb
+        if common.hasGames(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"nav.css\" />"+lb
         html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
@@ -110,7 +114,9 @@ class WebsitePage(Page):
         html += '<meta name="generator" content="eXeLearning '+release+' - exelearning.net" />'+lb
         if self.node.id=='0':
             if self.node.package.description!="":
-                html += '<meta name="description" content="'+self.node.package.description+'" />'+lb
+                desc = self.node.package.description
+                desc = desc.replace('"', '&quot;')
+                html += '<meta name="description" content="'+desc+'" />'+lb
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         style = G.application.config.styleStore.getStyle(self.node.package.style)
@@ -128,7 +134,13 @@ class WebsitePage(Page):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         if common.hasFX(self.node):
             html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
+        if common.hasSH(self.node):
+            html += u'<script type="text/javascript" src="exe_highlighter.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
+        if common.hasGames(self.node):
+            # The games require additional strings
+            html += common.getGamesJavaScriptStrings() + lb
+            html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb

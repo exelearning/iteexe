@@ -93,6 +93,7 @@ class eXeSession(server.Session):
         self.packageStore = None
         self.samlNameId = None
         self.samlSessionIndex = None
+        self.oauthToken = {}
 
     def setUser(self, name, picture=None):
         self.user = G.application.userStore.getUser(name)

@@ -91,7 +91,7 @@ var $appVars = [
 ];
 
 var $app = {
-	debug : "on", // off/on
+	debug : "off", // off/on
 	returnFullContent : true,
 	defaultValues : {
 		headerHeight : 120,
@@ -134,9 +134,16 @@ var $app = {
 		
 		$("#restore").click(function(){
 			Ext.Msg.show({
-				title: $i18n.Information,
+				title: $i18n.Confirm,
 				msg: $i18n.Restore_Instructions,
-				buttonText: {yes:$i18n.OK}
+				buttonText: {yes:$i18n.Yes, no:$i18n.No},
+				fn: function(button) {
+					if (button === 'yes') {
+						// Reload last saved version of current style
+						var currentStyle = $app.getCurrentStyle();
+						$app.loadNewStyle(currentStyle);
+					}
+				}
 			});			
 		});
 
@@ -144,52 +151,101 @@ var $app = {
 			$app.getPreview();
 			var content = $("#my-content-css").val();
 			var nav = $("#my-nav-css").val();
-			Ext.Msg.show({
-				title: $i18n.Save_as,
-				msg: $i18n.Save_as_dialog_instructions,
-				prompt: true,
-				buttonText: {yes:$i18n.Save, no:$i18n.Cancel},
-				fn: function(button,txt) {
-					if (button === 'yes') {
-						alert("Guardamos una copia llamada "+txt+"\n\nLas variables content y nav contienen el código CSS a guardar.\n\nSeguimos editando "+txt+".");
-					}
-				}
-			});	
+			$app.createStyle(content, nav, $app.getCurrentStyle());
 		});
 
 		$("#save").click(function(){
 			$app.getPreview();
 			var content = $("#my-content-css").val();
 			var nav = $("#my-nav-css").val();
-			Ext.Msg.show({
-				title: $i18n.Confirm,
-				msg: $i18n.Save_confirmation,
-				buttonText: {yes:$i18n.Yes, no:$i18n.No},
-				fn: function(button) {
-					if (button === 'yes') {
-						alert("Guardamos los cambios.\n\nLas variables content y nav contienen el código CSS a guardar.\n\nSeguimos editando.");
+			var currentStyle = $app.getCurrentStyle();
+			
+			if (currentStyle == 'base') {
+				// If user is editing base style it must be because style has not been saved yet,
+				// open dialog to create a new one from base style
+				$app.createStyle(content, nav);
+			}
+			else {
+				// Send POST request to update current style
+ 				var data = $app.collectAjaxData(content, nav, 'saveStyle');
+ 				$app.preloader.show();
+ 				jQuery.ajax({
+ 					url: '/styleDesigner',
+					data: data,
+					cache: false,
+					contentType: false,
+					processData: false,
+					type: 'POST',
+					success: function(response, action) {
+						$app.preloader.hide();
+						// Form request can success, even if the create/save operation failed
+						result = JSON.parse(response);
+						if (result.success) {
+							Ext.Msg.alert('Success', result.message);
+							opener.window.location.reload();
+						}
+						else {
+							Ext.Msg.alert('Failed', result.message);
+						}
+					},
+					error: function(response) {
+						$app.preloader.hide();
+						Ext.Msg.alert('Failed', response.statusText);
 					}
-				}
-			});
+ 				});
+			}
 		});		
 
 		$("#finish").click(function(){
 			$app.getPreview();
+			var currentStyle = $app.getCurrentStyle();
 			var content = $("#my-content-css").val();
 			var nav = $("#my-nav-css").val();
+			
 			Ext.Msg.show({
 				title: $i18n.Confirm,
 				msg: $i18n.Finish_confirmation,
 				buttonText: {yes:$i18n.Yes, no:$i18n.No},
 				fn: function(button) {
 					if (button === 'yes') {
-						try {
-							opener.opener.eXe.app.getController('Toolbar').styleDesigner.saveStyle(content,nav);	
-						} catch(e){
-							Ext.Msg.show({
-								title: $i18n.Information,
-								msg: $i18n.No_Opener_Error,
-								buttonText: {yes:$i18n.OK}
+						if (currentStyle == 'base') {
+							// If user is editing base style it must be because style has not been saved yet,
+							// open dialog to create a new one instead
+							$app.createStyle(content, nav, 'base', true);
+						}
+						else {
+							// Send POST request to update current style
+							var data = $app.collectAjaxData(content, nav, 'saveStyle');
+							$app.preloader.show();
+							jQuery.ajax({
+								url: '/styleDesigner',
+								data: data,
+								cache: false,
+								contentType: false,
+								processData: false,
+								type: 'POST',
+								success: function(response, action) {
+									$app.preloader.hide();
+									// Form request can success, even if the create/save operation failed
+									result = JSON.parse(response);
+									if (result.success) {
+										Ext.Msg.alert(
+											'Success',
+											result.message,
+											function(btn, txt) {
+												opener.window.close();
+												window.close();
+											}
+										);
+									}
+									else {
+										Ext.Msg.alert('Failed', result.message);
+									}
+								},
+								error: function(response) {
+									$app.preloader.hide();
+									Ext.Msg.alert('Failed', response.statusText);
+								}
 							});
 						}
 					}
@@ -201,6 +257,14 @@ var $app = {
 		this.getCurrentCSS();
 		// Enable the Color Pickers after loading the current values
 		
+	},
+	preloader : {
+		show : function(){
+			$(document.body).addClass("sending-form");
+		},
+		hide : function(){
+			$(document.body).removeClass("sending-form");
+		}
 	},
 	quit : function(msg){
 		document.title = msg;
@@ -216,11 +280,41 @@ var $app = {
 				}
 		});
 	},
+	loadNewStyle : function(newStyle){
+		var currentStyle = this.getCurrentStyle();
+		var currentURL = opener.window.location.href;
+		var newURL;
+		
+		if (currentStyle != 'base') {
+			newURL = currentURL.replace("style="+currentStyle,"style="+newStyle);
+		}
+		else {
+			var queryStart = currentURL.search("\\?");
+			if (queryStart == -1) {
+				currentURL = currentURL + "?";
+			}
+			else {
+				currentURL = currentURL + "&";
+			}
+			newURL = currentURL + "style="+newStyle;
+		}
+		
+		opener.window.location = newURL;
+	},
+	getCurrentStyle : function() {
+		var currentStyle = this.stylePath;
+		currentStyle = currentStyle.replace("/style/","").replace("/","");
+		return currentStyle;
+	},
 	updateTextFieldFromFile : function(e){
 		// opener.parent.opener.document.getElementsByTagName("IFRAME")[0].contentWindow;
 		// opener.parent.opener.window.nevow_clientToServerEvent('quit', '', '');
 		var id = e.id.replace("File","");
+		// Show file name in the file input
 		$("#"+id).val($(e).val());
+		// Save temporary file URL in hidden input
+		$("#"+id+'TempURL').val(window.URL.createObjectURL(e.files[0]).toString());
+		
 		$app.getPreview();
 	},
 	openBrowser : function(id){
@@ -247,7 +341,8 @@ var $app = {
 		
 		// content.css
 		var contentCSS = opener.$designer.contentCSS.split($app.mark);
-		$app.baseContentCSS = contentCSS[0].replace(/\s+$/, ''); // Remove the last space
+		// To review: $app.baseContentCSS = contentCSS[0].replace(/\s+$/, ''); // Remove the last space
+		$app.baseContentCSS = contentCSS[0];
 		var myContentCSS = "";
 		if (contentCSS.length==2) {
 			myContentCSS = contentCSS[1];
@@ -255,10 +350,12 @@ var $app = {
 		}
 		$app.myContentCSS = $app.removeStylePath(myContentCSS);
 		$app.getAllValues("content",$app.myContentCSS);
+		$app.loadConfig();
 		
 		// nav.css
 		var navCSS = opener.$designer.navCSS.split($app.mark);
-		$app.baseNavCSS = navCSS[0].replace(/\s+$/, ''); // Remove the last space
+		// To review: $app.baseNavCSS = navCSS[0].replace(/\s+$/, ''); // Remove the last space
+		$app.baseNavCSS = navCSS[0];
 		var myNavCSS = "";
 		if (navCSS.length==2) {
 			myNavCSS = navCSS[1];
@@ -269,16 +366,66 @@ var $app = {
 		
 	},
 	addStylePath : function(c){
+		c = $app.removeStylePath(c);
 		c = c.replace(/url\(http:/g,'url--http:');
 		c = c.replace(/url\(https:/g,'url--https:');
 		c = c.replace(/url\(/g,'url('+$app.stylePath);
 		c = c.replace(/url--http:/g,'url(http:');
 		c = c.replace(/url--https:/g,'url(https:');
+		
+		// Replace relative paths to background images with its temporary URLs
+		// (required when file is changed but not yet saved)
+		var bodyBGURL_tempURL = $('#bodyBGURLTempURL').val();
+		if (bodyBGURL_tempURL){
+			var bodyBGURL_filename = $('#bodyBGURL').val();
+			c = $app.replaceBackgroundImage(c, bodyBGURL_filename, bodyBGURL_tempURL);
+		}
+		var bodyBGURL_tempURL = $('#contentBGURLTempURL').val();
+		if (bodyBGURL_tempURL){
+			var bodyBGURL_filename = $('#contentBGURL').val();
+			c = $app.replaceBackgroundImage(c, bodyBGURL_filename, bodyBGURL_tempURL);
+		}
+		var bodyBGURL_tempURL = $('#headerBGURLTempURL').val();
+		if (bodyBGURL_tempURL){
+			var bodyBGURL_filename = $('#headerBGURL').val();
+			c = $app.replaceBackgroundImage(c, bodyBGURL_filename, bodyBGURL_tempURL);
+		}
+		
 		return c;
+	},
+	replaceBackgroundImage : function(content, filename, fullURL) {
+		var relativePath = 'background-image:url(' + $app.stylePath + filename + ')';
+		var replacement = 'background-image:url(' + fullURL + ')';
+		
+		return content.replace(relativePath, replacement);
 	},
 	removeStylePath : function(c){
 		var reg = new RegExp($app.stylePath, "g");
 		return c.replace(reg, "");
+	},
+	loadConfig : function() {
+		var nameField = jQuery('#styleName');
+		nameField.val(opener.$designer.config.styleName).keyup(function(){
+			this.value = this.value.replace(/["]+/g, '');
+		});
+		// Hide the name field if it's a new Style
+		if (nameField.val()=="") $("#currentStyleInfo").hide().before($i18n.Save_to_name);		
+		
+		jQuery('#authorName').val(opener.$designer.config.authorName);
+		jQuery('#authorURL').val(opener.$designer.config.authorURL);
+		jQuery('#styleDescription').val(opener.$designer.config.styleDescription);
+		
+		// If current styleVersion is not available in the default option list,
+		// append it to available options before setting value
+		if (   opener.$designer.config.styleVersionMinor != 0
+			|| opener.$designer.config.styleVersionMajor > 20
+			|| opener.$designer.config.styleVersionMajor < 1) {
+			$('#styleVersion').append($('<option>', {
+				value: opener.$designer.config.styleVersion,
+				text: opener.$designer.config.styleVersion
+			}));
+		}
+		jQuery('#styleVersion').val(opener.$designer.config.styleVersion);
 	},
 	getAllValues : function(type,content){
 		
@@ -353,7 +500,7 @@ var $app = {
 					} else if (currentValue[0]=="hideProjectTitle") {
 						$("#hideProjectTitle").prop('checked', true);
 						$("#projectTitleOptions").hide();
-					} 
+					}
 					// Navigation
 					else if (currentValue[0]=="hideNavigation") {
 						$("#hideNavigation").prop('checked', true);
@@ -375,7 +522,7 @@ var $app = {
 						else if (c.indexOf("/*whiteNavigationIcons*/")!=-1) $("#navigationIconsColor3").prop('checked', true);
 					}
 				}
-			} 
+			}
 			else {
 				// Set some default values (usability)
 				if (type=="content" && (currentValue[0]=="headerHeight" || currentValue[0]=="headerTitleTopMargin")) {
@@ -429,7 +576,7 @@ var $app = {
 							o.style.display="block";
 						}
 					}				
-					$app.getPreview(); 
+					$app.getPreview();
 				}
 			} else {
 				f_inputs[i].onblur=function(){ $app.getPreview(); }
@@ -438,9 +585,9 @@ var $app = {
 		// SELECT
 		var f_selects = f.getElementsByTagName("SELECT");
 		for (z=0;z<f_selects.length;z++){
-			f_selects[z].onchange=function(){ 
+			f_selects[z].onchange=function(){
 				if (this.id=="pageWidthUnit") $app.setWidth(this);
-				$app.getPreview(); 
+				$app.getPreview();
 			}	
 		}
 		// Advanced tab
@@ -626,7 +773,7 @@ var $app = {
 		}
 		var noEmIconColor = $('input[name=noEmIconColor]:checked').val();
 		if (noEmIconColor!='') {
-			contentCSS += ".toggle-idevice0 a{/*noEmIconColor*/background-image:url("+this.stylePath+"_style_icons_"+noEmIconColor+".png);}";
+			contentCSS += ".toggle-em0 a{/*noEmIconColor*/background-image:url("+this.stylePath+"_style_icons_"+noEmIconColor+".png);}";
 		}
 		
 		// #nav
@@ -683,10 +830,9 @@ var $app = {
 			}
 			var icon = $app.stylePath+'_style_icons'+iconsColor+'.png';
 			navCSS += '/*useNavigationIcons*/'+iconColorComment+'.pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0;}\
-.pagination a{display:block;float:left;width:32px;height:32px;padding:0;background:url('+icon+') no-repeat 0 0;}\
-.pagination a:hover,.pagination a:focus{background:url('+icon+') no-repeat 0 0;}\
-.pagination .next{background-position:-50px 0;}\
-.pagination .next:hover,.pagination .next:focus{background-position:-50px 0;}\
+.pagination a,.pagination a:hover,.pagination a:focus{display:block;float:left;width:32px;height:32px;padding:0;background:url('+icon+') no-repeat 0 0;}\
+.pagination .next,.pagination .next:hover,.pagination .next:focus{background-position:-50px 0;}\
+.pagination .print-page,.pagination .print-page:hover,.pagination .print-page:focus{background-position:-200px 0;}\
 #bottomPagination{height:72px;position:relative;overflow:hidden}\
 #bottomPagination a{position:absolute;top:20px;right:74px;margin:0;}\
 #bottomPagination .next{right:20px;}\
@@ -751,7 +897,11 @@ var $app = {
 		// #header
 		if (headerHeight!="" || headerBGColor!="" || headerBGURL!="" || headerBorderColor!="") {
 			contentCSS+="#header,#emptyHeader,#nodeDecoration{";
-				if (headerHeight!="") contentCSS+="/*headerHeight*/height:"+headerHeight+"px;";
+				if (headerHeight!="") {
+					contentCSS+="height:auto!important;";
+					contentCSS+="/*headerHeight*/height:"+headerHeight+"px;";
+					contentCSS+="min-height:"+headerHeight+"px;";
+				}
 				if (headerBGColor!='') contentCSS+="/*headerBGColor*/background-color:#"+headerBGColor+";";
 				if (headerBGURL!='') {
 					if (headerBGURL.indexOf("http")!=0) headerBGURL = $app.stylePath+headerBGURL;
@@ -785,7 +935,7 @@ var $app = {
 		if (hideNavigation) {
 			navCSS+="/*hideNavigation*/";
 			navCSS+="#siteNav,#nav-toggler{display:none;}";
-			navCSS+="#main{padding-left:20px;}";
+			navCSS+="#main{padding-left:20px;padding-right:20px}";
 			navCSS+="@media all and (max-width: 1015px){";
 				navCSS+="#main,.no-nav #main{padding-top:20px;}";	
 			navCSS+="}";
@@ -992,6 +1142,7 @@ var $app = {
 		var css = this.composeCSS();
 		var contentCSS = css[0];
 		contentCSS = $app.baseContentCSS+$app.advancedMark+contentCSS;
+		contentCSS = $app.addStylePath(contentCSS);
 		this.setCSS(contentCSSTag,$app.baseContentCSS+contentCSS);
 		
 		// content.css and nav.css TEXTAREAS
@@ -1005,11 +1156,124 @@ var $app = {
 		var navCSS = css[1];
 		// advancedMark
 		navCSS = $app.baseNavCSS+$app.advancedMark+navCSS;
+		navCSS = $app.addStylePath(navCSS);
 		this.setCSS(navCSSTag,navCSS);
 		
 		// Menu height
 		if (typeof(w.myTheme.setNavHeight)!='undefined') w.myTheme.setNavHeight();
-	}
+	},
+	collectAjaxData : function(content, nav, op, copyFrom) {
+		if (copyFrom == undefined) {
+			copyFrom = 'base';
+		}
+		var data = new FormData();
+		
+		data.append('contentcss', content);
+		data.append('navcss', nav);
+		if (op == 'saveStyle') {
+			// Style has already been created, send the current Style Id as its directory name
+			data.append('style_dirname', $app.getCurrentStyle());
+		}
+		data.append('action', op);
+		
+		// Get files uploaded to the editor form
+		jQuery.each(jQuery('#bodyBGURLFile')[0].files, function(i, file) {
+			data.append('bodyBGURLFile_'+i, file);
+			data.append('bodyBGURLFilename_'+i, file.name);
+		});
+		jQuery.each(jQuery('#contentBGURLFile')[0].files, function(i, file) {
+			data.append('contentBGURLFile_'+i, file);
+			data.append('contentBGURLFilename_'+i, file.name);
+		});
+		jQuery.each(jQuery('#headerBGURLFile')[0].files, function(i, file) {
+			data.append('headerBGURLFile_'+i, file);
+			data.append('headerBGURLFilename_'+i, file.name);
+		});
+		if (op == 'createStyle') {
+			data.append('copy_from', copyFrom);
+		}
+		
+		// Get style name, author and description
+		data.append('style_name', jQuery('#styleName').val());
+		data.append('author', jQuery('#authorName').val());
+		data.append('author_url', jQuery('#authorURL').val());
+		data.append('description', jQuery('#styleDescription').val());
+		data.append('version', jQuery('#styleVersion').val());
+		
+		return data;
+	},
+	createStyle : function(content, nav, copyFrom, closeDesigner){
+		if (copyFrom == undefined) {
+			copyFrom = 'base';
+		}
+		if (closeDesigner == undefined) {
+			closeDesigner = false;
+		}
+		Ext.Msg.prompt(
+			_('Create new style'),
+			_('Name the new style'),
+			function(button, input_value) {
+				if (button === 'ok') {
+					// Collect data from the main edition form except style_name,
+					// that is read from this interactive form
+					var data = $app.collectAjaxData(content, nav, 'createStyle', copyFrom);
+					data.set('style_name', input_value);
+					$app.preloader.show();
+					jQuery.ajax({
+						url: '/styleDesigner',
+						data: data,
+						cache: false,
+						contentType: false,
+						processData: false,
+						type: 'POST',
+						success: function(response, action) {
+							$app.preloader.hide();
+							// Form request can success, even if the create/save operation failed
+							result = JSON.parse(response);
+							if (result.success) {
+								var message = result.message + '<br/>';
+								if (closeDesigner) {
+									message += _('Style Designer windows will be closed. ');
+								}
+								else {
+									message += _('Page will be reloaded. ');
+								}
+								Ext.Msg.alert(
+									'Success',
+									message,
+									function(btn, txt) {
+										$app.loadNewStyle(result.style_dirname);
+										if (closeDesigner) {
+											opener.window.close();
+											window.close();
+										}
+									}
+								);
+							}
+							else {
+								Ext.Msg.alert(
+									'Failed',
+									result.message,
+									function(btn, txt) {
+										createStyleWin.close();
+									}
+								);
+							}
+						},
+						error: function(response) {
+							$app.preloader.hide();
+							Ext.Msg.alert(
+								'Failed',
+								function(btn, txt) {
+									createStyleWin.close();
+								}
+							);
+						}
+					});
+				}
+			}
+		);
+	},
 }
 $(function(){
 	$app.init();

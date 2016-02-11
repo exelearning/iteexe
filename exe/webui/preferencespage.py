@@ -182,7 +182,6 @@ class PreferencesPage(RenderableResource):
             data['docType'] = self.config.docType
             data['locale'] = self.config.locale
             data['internalAnchors'] = self.config.internalAnchors
-            data['googleApiClientID'] = self.config.googleApiClientID
             data['defaultLicense'] = self.config.defaultLicense
             if not G.application.server:
                 browserSelected = "None"
@@ -226,10 +225,6 @@ class PreferencesPage(RenderableResource):
             self.config.docType = doctypesel
             self.config.configParser.set('user', 'docType', doctypesel)
 
-            googleApiClientID = request.args['googleApiClientID'][0]
-            self.config.googleApiClientID = googleApiClientID
-            self.config.configParser.set('user', 'googleApiClientID', googleApiClientID)
-            
             defaultLicense = request.args['defaultLicense'][0]
             self.config.defaultLicense = defaultLicense
             self.config.configParser.set('user', 'defaultLicense', defaultLicense)

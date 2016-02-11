@@ -1,4 +1,3 @@
-
 //if this variable is set then we will not check the text value to automatically mark something correct
 // for sorting e.g. B-O-B
 var sortActivityExcludeAutoText = new Array();

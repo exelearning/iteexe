@@ -1,18 +1,13 @@
-tinyMCE.addI18n('en.codemagic_dlg', {
-    code_title: _("CodeMagic"),
-    code_label: _("Edit HTML Source"),
-    toggle_highlighting: _("Syntax highlighting"),
-    toggle_autocompletion: _("Auto completion"),
-    toggle_wraptext: _("Word Wrap"),
-    search: _("Search"),
-    replace: _("Replace"),
-    undo: _("Undo"),
-    redo: _("Redo"),
-    search_replace: _("Search and Replace"),
-    reintendt: _("Format HTML code"),
-    nothing_found: _("Nothing found."),
-    nothing_to_replace: _("Nothing to replace."),
-	// The New eXeLearning
-	confirm_beautify: _("Your code has at least one PRE tag.\n\nThis will change the prefformatted content.\n\nDo you really want to continue?")
-	// / The New eXeLearning
+tinyMCE.addI18n('en.codemagic_dlg',{
+    code_title           : _("CodeMagic - syntax coloring and intendation"),
+    code_label           : _("Edit code"),
+    toggle_autoclosetags : _("Auto close tags"),
+    toggle_wraptext      : _("Wrap text"),
+    toggle_highlight     : _("Highlight syntax"),
+    theme_select         : _("Select a theme"),
+    search               : _("Search"),
+    find_next            : _("Find next"),
+    find_previous        : _("Find previous"),
+    replace              : _("Replace"),
+    replace_all          : _("Replace all")
 });

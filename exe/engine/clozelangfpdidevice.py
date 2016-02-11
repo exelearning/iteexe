@@ -217,7 +217,7 @@ click on the Hide/Show Word button below.</p><p>More than one possible answer ca
                 if this_content.__str__().startswith('<span'):
                     # Now, decode the answer
                     # with code reverse-engineered from:
-                    # a) Cloze's getClozeAnswer() in common.js
+                    # a) Cloze's $exe.cloze.getAnswer() in common.js
                     # b) ClozeElement's renderView() + encrypt()
                     answer = ""
                     code_key = 'X'

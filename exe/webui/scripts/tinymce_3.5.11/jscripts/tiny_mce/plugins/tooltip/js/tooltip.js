@@ -3,7 +3,7 @@ var TooltipDialog = {
 	otherClassNames : [
 		// Type
 		'plain-tt',
-		'inline-tt',
+		'definition-tt',
 		'ajax-tt',
 		'glossary-tt',
 		// Title
@@ -46,7 +46,7 @@ var TooltipDialog = {
 			var trg = inst.dom.getAttrib(elm, 'target');
 			
 			// Get the type
-			if (cls.indexOf(" inline-tt")!=-1) type = 2;
+			if (cls.indexOf(" definition-tt")!=-1) type = 2;
 			else if (cls.indexOf(" ajax-tt")!=-1) type = 3;
 			else if (cls.indexOf(" glossary-tt")!=-1) type = 4;
 			
@@ -212,9 +212,33 @@ var TooltipDialog = {
 			if (ref.value=="#") ref.value = "";
 		}
 		
-		var display = "";
-		if (id=="type3" || id=="type4") display = "none";
+		// Default title for the definition (just for the new tooltips)
+		var elm;
+		var inst = tinyMCEPopup.editor;
+		elm = inst.selection.getNode();
+		elm = inst.dom.getParent(elm, "A");
+		if (elm == null) {
+			var tit = document.getElementById("linkTitle");
+			if (id=="type2") {
+				if (tit.value=="") tit.value = tinyMCEPopup.getLang("tooltip.see_definition");
+			} else {
+				if (tit.value==tinyMCEPopup.getLang("tooltip.see_definition")) tit.value = "";
+			}			
+		}
+
+		// Hide/Show some fields (Page, Link URL and the target options)
+		var display = "none";
+		if (id=="type1") display = "";
 		document.getElementById("href-row").style.display = display;
+		document.getElementById("target-options").style.display = display;
+		if (id=="type3") display = "";
+		document.getElementById("pages-row").style.display = display;
+		
+		// Change the label for the tooltipTitle field
+		var txt = tinyMCEPopup.getLang("tooltip.tooltip_title");
+		if (id=="type2") txt = tinyMCEPopup.getLang("tooltip.term");
+		document.getElementById("tooltipTitleLabel").innerHTML = txt;
+		
 	},
 	getNodesList : function(id,target){
 		var i;
@@ -249,9 +273,12 @@ var TooltipDialog = {
 		var txt = document.getElementById("linkTitle").value;
 		var lng = document.getElementById("longtext").value;
 		
-		if (ref=="") return tinyMCEPopup.getLang("tooltip.link_is_required");
+		if (ref=="") {
+			if (t==3) return tinyMCEPopup.getLang("tooltip.page_is_required");
+			else return tinyMCEPopup.getLang("tooltip.link_is_required");
+		}
 		if (t==1 && txt=="") return tinyMCEPopup.getLang("tooltip.title_is_required");
-		if (t==2 && lng=="") return tinyMCEPopup.getLang("tooltip.tooltip_content_is_required");
+		if (t==2 && lng=="") return tinyMCEPopup.getLang("tooltip.definition_is_required");
 		
 		return "";
 	},
@@ -293,11 +320,12 @@ var TooltipDialog = {
 			tinyMCEPopup.storeSelection();
 		}
 		
-		// Inline HTMLL
+		// Definition
 		if (type=="type2") {
 			// Get the tooltip content
 			var lng = document.getElementById("longtext").value;
 			if (!this.hasHTML(lng)) lng = "<p>"+lng+"</p>";
+			
 			// Get the link ID
 			var id = "";
 			if (elm == null) {
@@ -305,9 +333,16 @@ var TooltipDialog = {
 			} else {
 				id = inst.dom.getAttrib(elm, 'id');
 			}
+			
+			// Get the link to update its href
+			var l = inst.dom.select("#"+id);
+			// Get the ID of the content
 			id = id.replace("link","t");
+			// Update the link's href
+			inst.dom.setAttribs(l, {'href': '#'+id});
 			// Create or update the content
 			var e = inst.dom.select("#"+id);
+			
 			if (e.length==0) {
 				inst.dom.add(inst.getBody(), 'div', { id : id, class : this.className+'-text' }, lng);
 			} else {
@@ -348,7 +383,7 @@ var TooltipDialog = {
 		if (t==1) {
 			cls += "plain-tt";
 		} else if (t==2) {
-			cls += "inline-tt";
+			cls += "definition-tt";
 			// Set the ID
 			var inst = tinyMCEPopup.editor;
 			var elm = inst.selection.getNode();
@@ -370,7 +405,9 @@ var TooltipDialog = {
 			txt = tit+" | "+txt;
 		}
 		
-		var trg = this.getSelectedOption("target");
+		// Only Type 1 allows target="_blank"
+		var trg = "";
+		if (t==1) trg = this.getSelectedOption("target");
 		
 		// With or without close button
 		var btn = this.getSelectedOption("close_behaviour");

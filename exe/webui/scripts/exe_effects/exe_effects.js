@@ -20,7 +20,7 @@ $exeFX = {
 			else if (c.indexOf(" "+k+"-tabs")!=-1) $exeFX.tabs.init(this,i);
 			else if (c.indexOf(" "+k+"-paginated")!=-1) $exeFX.paginated.init(this,i);
 			else if (c.indexOf(" "+k+"-carousel")!=-1) $exeFX.carousel.init(this,i);
-			else if (c.indexOf(" "+k+"-timeline")!=-1) {
+			else if (c.indexOf(" "+k+"-timeline")!=-1 && document.body.className.indexOf("exe-epub3")!=0) {
 				$exeFX.timeline.init(this,i);
 				hasTimeLines = true;
 			}
@@ -43,10 +43,34 @@ $exeFX = {
 		c += ")";
 		return c;		
 	},
+	removeXMLNS : function(t) {
+		if (document.body.className.indexOf("exe-epub3")==0) {
+			var xmlnsString = 'h2 xmlns="http://www.w3.org/1999/xhtml"';
+			var xmlnsStringExp = new RegExp(xmlnsString, 'g');
+			t = t.replace(xmlnsStringExp, 'h2');
+		}
+		return t;
+	},	
 	rftTitles : function(t) {
+		// Remove all attributes (except the title)
+		var div = $("<div></div>");
+		div.html(t);		
+		$("h2",div).each(function() {
+			var attributes = $.map(this.attributes, function(item) {
+				return item.name;
+			});
+			var title = $(this);
+			$.each(attributes, function(i, item) {
+				if (item.toLowerCase()!="title") title.removeAttr(item);
+			});
+		});		
+		t = div.html();
+		// Remove xmlns="http://www.w3.org/1999/xhtml"
+		t = $exeFX.removeXMLNS(t);		
 		// Replace <h2 title=""></h2> by <h2><span title=""></span></h2>. That's how TinyMCE inserts the title when using the Insert/Edit Attributes option
 		var s = t.split('<'+$exeFX.h2+' title="');
 		var n ="";
+		if (s.length<2) return t;
 		for (var i=0;i<s.length;i++) {
 		  n += s[i];
 		  if (i<(s.length-1))n += '<'+$exeFX.h2+'><span title="';
@@ -64,17 +88,25 @@ $exeFX = {
 			var k = $exeFX.baseClass;
 			var t = $('.fx-accordion-title',x);
 			// Get the box shadow color
-			var color = t.eq(0).css("background-color");
-			color = color.replace("rgb(","rgba(").replace(")",",0.5)");
-			if (color.indexOf("rgba(")==0) x.css("box-shadow","0px 1px 3px "+color);
-			// Get border color (titles)
-			color = x.css("background-color");
-			color = color.replace("rgb(","rgba(").replace(")",",0.2)");
-			if (color.indexOf("rgba(")==0) {
-				t.each(function(){
-					this.style.borderColor=color;
-				});
-			}
+			var color = '';
+			var title = t.eq(0);
+			if (title.length==1) {
+				color = title.css("background-color");
+				if (typeof(color)=="string") {
+					color = color.replace("rgb(","rgba(").replace(")",",0.5)");
+					if (color.indexOf("rgba(")==0) x.css("box-shadow","0px 1px 3px "+color);
+					// Get border color (titles)
+					color = x.css("background-color");
+					if (typeof(color)=="string") {
+						color = color.replace("rgb(","rgba(").replace(")",",0.2)");
+						if (color.indexOf("rgba(")==0) {
+							t.each(function(){
+								this.style.borderColor=color;
+							});
+						}
+					}
+				}
+			}			
 			// onclick
 			t.click(function(e) {
 				var aID = this.id.split("-")[0];
@@ -236,7 +268,6 @@ $exeFX = {
 			var h2 = $("H2",e);
 			var h3 = $("H3",e);
 			if (h2.length>0 && h3.length>0) $exeFX.timeline.rft(e,i);
-			
 		}
 	},
 	tabs : {
@@ -274,7 +305,21 @@ $exeFX = {
 			var ul = '<ul class="fx-tabs">\n';
 			$(".fx-tab-content",e).each(function(y){
 				var h2 = $("H2",this).eq(0);
-				var t = h2.text();
+				
+				// Default tab title
+				var t = y+1;
+				if (h2.length==0) {
+					// Can't getElementsByTagName("H2") in some ePub readers (xmlns="http://www.w3.org/1999/xhtml"...)
+					var tit = this.innerHTML.split(">");
+					if (tit.length>1) tit = tit[1];
+					tit = tit.split("<");
+					if (tit.length>1) tit = tit[0];
+					if (tit.length>0) t = tit;
+				} else {
+					// Normal behavior
+					t = h2.text();
+				}
+				
 				var hT = $("SPAN",h2);
 				if (hT.length==1) {
 					hT = hT.eq(0).attr("title");

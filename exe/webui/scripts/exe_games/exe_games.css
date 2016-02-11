@@ -1,0 +1,42 @@
+.exe-game{background:#FFF;color:#333;box-shadow:0px 1px 3px rgba(0,0,0,0.25);border-radius:3px;background:#fff;width:96%;margin:2em 0 2em 2%;position:relative}
+.exe-game:before{font-size:.9em;font-style:italic;position:absolute;top:7px;right:11px;color:#999}
+.exe-game-warning{padding:1em 0;text-align:center}
+.exe-game-content,.js .exe-game-warning{display:none}
+.exe-game-js-content{padding:.5em 1.5em}
+/* Messages */
+.exe-game .success{background:#F4FDEF;border:1px solid #ACDFA7;padding:4px 1em;border-radius:3px;margin-left:.5em;font-weight:bold}
+.exe-game .error{background:#fdd;border:1px solid #f00;color:#c30;padding:4px 1em;border-radius:3px;margin-left:.5em}
+.exe-game .error strong{margin-right:.3em}
+.exe-game .activity-actions input{background:#e6e6e6;border:none;padding:.5em 1em;border-radius:3px;letter-spacing:.5px;cursor:pointer;margin:.5em 1em .3em 0}
+.exe-game .activity-actions input:hover{background:#dedede}
+.exe-game-msg{text-align:center;position:absolute;top:0;left:0;border-radius:3px;width:100%;height:100%;z-index:999;background:rgba(85,85,85,0.8);box-shadow:0px 1px 3px rgba(0,0,0,0.9)}
+.ie-lt-9 .exe-game-msg{background:#777}
+.exe-game-msg p{line-height:2em;margin:1.5em;background:#fff;padding:1.5em;border-radius:3px}
+.exe-game-msg a{margin-left:1em;background:#e6e6e6;color:#333;border-radius:3px;padding:.5em 1em;text-decoration:none}
+.exe-game-msg a:hover,.exe-game-msg a:focus{background:#dedede;text-decoration:underline}
+/* Hangman Game */
+.exe-hangman .wording ol{padding:1.1em 0 0}
+.exe-hangman .wording li{list-style-position:inside;margin-bottom:.5em;color:#999}
+.exe-hangman .wording .current{color:#333;font-weight:bold}
+.exe-hangman .abc ul{margin:1.5em 0 0;padding:0;list-style:none;overflow:auto;line-height:2em;font-size: 1.1em}
+#main .exe-hangman .abc li{margin:0 7px 7px 0;padding:0;list-style:none;font-weight:bold;font-size:1.2em;float:left}
+.exe-hangman .abc a{background:#777;color:#fff;min-width:1.6em;display:inline-block;text-align:center;text-decoration:none;border-radius:3px}
+.exe-hangman .abc .first-capital-letter{clear:both}
+.exe-hangman .abc a:hover,.exe-hangman .abc a:focus{text-decoration:underline;background:#333}
+.exe-hangman input[type=text]{min-width:300px;padding:3px 5px;border:1px solid #ddd}
+.hangman-blocks{overflow:auto;margin-bottom:1.5em}
+.exe-hangman label{font-weight:bold;margin-right:.2em}
+.hangman-blocks label{display:block}
+.exe-hangman textarea{font-family:inherit;font-size:1em;background:#fff;height:8.5em;border:1px solid #ddd;padding:.1em}
+.exe-hangman .man{width:7em;resize:none;overflow:hidden}
+.exe-hangman .man label{visibility:hidden}
+.exe-hangman .man textarea{border:none;padding:0}
+.hangman-blocks .block{float:left;margin-right:1.5em}
+.exe-hangman table{width:100%;border-collapse:collapse;border:1px solid #ddd;margin:1.5em 0;display:none}
+.exe-hangman th,.exe-hangman td{border:1px solid #ddd;text-align:left;padding:.2em .5em;vertical-align:top}
+.exe-hangman th{background:#e9e9e9}
+@media all and (max-width: 700px){
+    .exe-game .error,.exe-game .success{display:block;margin:1em 0;padding:.5em 1em}
+    .exe-game-msg a{display:block;margin:1em auto 0 auto;max-width:60%}
+    .exe-hangman textarea{width:10em}
+}

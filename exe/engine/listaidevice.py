@@ -226,7 +226,7 @@ click on the 'Hide/Show' button below.</p>"""))
                 if this_content.__str__().startswith('<span'):
                     # Now, decode the answer
                     # with code reverse-engineered from:
-                    # a) Cloze's getClozeAnswer() in common.js
+                    # a) Cloze's $exe.cloze.getAnswer() in common.js
                     # b) listaElement's renderView() + encrypt()
                     answer = ""
                     code_key = 'X'

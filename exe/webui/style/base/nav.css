@@ -1,19 +1,20 @@
 /* eXeLearning Style Designer Compatible Style */
 body{padding:0;text-align:center}
 #content{width:100%;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0}
-#main-wrapper{width:100%;*width:auto}/* * is for IE6 and IE7 */
+#main-wrapper{padding-bottom:1.5em;width:100%;*width:auto}/* * is for IE6 and IE7 */
 #main{padding:20px 40px 30px 320px;height:auto!important;height:200px;min-height:200px;*padding-left:0}
 
 .no-nav #main-wrapper{width:100%}
 .no-nav #main{padding:20px 20px 0 20px}
 
 #header,#emptyHeader{border-top-width:0;border-right-width:0;border-left-width:0}
-#headerContent{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:230px;min-height:1.1em}
-#nodeDecoration{background:none;padding:0;border:none;margin:20px 0;height:auto;font-size:1.6em}
+#headerContent{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;min-height:1.1em}
+#nodeDecoration{background:none;padding:0;border:none;margin:20px 0;height:auto;min-height:0}
 #nodeTitle{font-weight:300}
+.iDevice_wrapper{margin-top:-10px}
 
 /* Menú */
-#siteNav{width:280px;float:left;margin-right:40px;margin-bottom:40px}
+#siteNav{width:280px;float:left;margin-right:40px}
 #siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
 #siteNav .other-section{display:none}
 #siteNav a{display:block;padding:8px 10px 8px 20px;border-width:0 0 1px 0;border-style:solid}
@@ -45,27 +46,18 @@ body{padding:0;text-align:center}
 /* Hide/Show/Skip navigation */
 #nav-toggler{margin:0;position:absolute;top:20px;left:20px;font-size:.95em}
 #nav-toggler a,#skipNav a{padding:5px 10px;border-radius:5px}
+#nav-toggler a{display:block}
 #nav-toggler a:hover{text-decoration:none}
 #skipNav{z-index:100px;padding-top:15px;text-align:center}
 
-@media screen and (min-width: 701px) and (max-width: 1000px) {
-	#main{padding:20px 20px 0 240px}
-	#siteNav{width:220px;margin-right:20px}
-}
-
-@media screen and (max-width: 1150px) {
-	#main{padding:20px 40px 0 290px}
-	#siteNav{width:250px;margin-right:40px}
-}
-
 @media screen and (max-width: 980px) {
 	.exe-web-site #content{width:100%;border:0;box-shadow:none}
-	.iDeviceTitle {max-width:80%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 	#main{padding:20px 30px 0 280px}
 	#siteNav{width:250px;margin-right:30px}
 }
 
 @media all and (max-width: 700px) {
+	#headerContent{font-size:.7em;white-space:normal}
 	#topPagination{display:none}
 	#siteNav{float:none;width:100%;padding:0}
 	#siteNav{line-height:1.5em;margin-bottom:15px}
@@ -78,6 +70,13 @@ body{padding:0;text-align:center}
 	#nav-toggler{position:relative;top:0;left:0;margin:20px 19px;text-align:center}
 	#nav-toggler a{width:100%;display:block;padding:8px 0}
 	#siteNav{border-top:1px solid}
+}
+
+@media print{
+	#siteNav,#nav-toggler,.noprt,.toggle-idevice{display:none}
+	#main{padding:20px 0}
+	body #content{background:#FFF}
+	#headerContent{white-space:normal;text-overflow:normal;font-weight:bold}
 }
 
 /* eXeLearning Style Designer */
@@ -96,6 +95,8 @@ color:#ffffff;
 background-color:#555555;
 }
 body{
+/*bodyBGColor*/
+background-color:#ffffff;
 }
 #siteNav,#siteNav a{
 /*navBGColor*/

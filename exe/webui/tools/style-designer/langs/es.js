@@ -20,6 +20,16 @@ var $i18n = {
 	Text_size : "Tamaño",
 	Links_color : "Enlaces",
 	Links_color_FULL : "Color enlaces",
+	// Description
+	Style_Description : "Descripción del Estilo",
+	Author : "Autor",
+	Author_URL : "Web del autor",
+	Style_Name : "Nombre del estilo",
+	Save_to_name : _("Guarda los cambios para darle un nombre al Estilo."),
+	Style_Version : "Versión del estilo",
+	Style_Version_Instructions : "El número de versión se incrementa automáticamente cada vez que guardas, utiliza este desplegable para resetearlo.",
+	License : "Licencia",
+	Original_License : "(la licencia del Estilo original)",	
 	// #2
 	Page : "Página",
 	Page_background : "Fondo de página (solo sitio web)", // Fondo de p&aacute;gina (solo sitio web)
@@ -105,7 +115,7 @@ var $i18n = {
 	No_Opener_Error : "En Diseñador de Estilos no está abierto.",
 	Quit_Warning : "Esta ventana se va a cerrar. Por favor, vuelve a abrir el Diseñador de Estilos.",
 	Information : "Información",
-	Restore_Instructions : 'Solo tienes que cerrar esta ventana y la vista preliminar sin pulsar en "Finalizar".',
+	Restore_Instructions : '¿Descartar los cambios desde la última vez que guardaste? No se puede deshacer.',
 	OK : "OK",
 	Cancel : "Cancelar",
 	// Color Picker

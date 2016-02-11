@@ -217,7 +217,7 @@ class ListaElement(ElementWithResources):
         else:
             # to render, use the flattened content, withOUT resource paths: 
             self.field.encodedContent = self.field.content_wo_resourcePaths
-            html += ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="showClozeScore(\''+self.id+'\',1);return false" class="activity-form">']
+            html += ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="$exe.cloze.showScore(\''+self.id+'\',1);return false" class="activity-form">']
 
         html += ['<div id="cloze%s">' % self.id]
         html += ['<script type="text/javascript">var YOUR_SCORE_IS="%s"</script>' % c_('Your score is ')]
@@ -268,11 +268,11 @@ class ListaElement(ElementWithResources):
         html += ['<p>']
         
         if preview:
-            html += [common.button('getScore%s' % self.id, c_(u"Check"), id='getScore%s' % self.id, onclick="showClozeScore('%s',1)" % self.id)]
+            html += [common.button('getScore%s' % self.id, c_(u"Check"), id='getScore%s' % self.id, onclick="$exe.cloze.showScore('%s',1)" % self.id)]
         else:
             html += [common.submitButton('getScore%s' % self.id, c_(u"Check"), id='getScore%s' % self.id)]
         if feedbackId:
-            html += [common.feedbackButton('feedback%s' % self.id, c_(u"Show Feedback"), onclick = "toggleClozeFeedback('%s',this)" % self.id)]
+            html += [common.feedbackButton('feedback%s' % self.id, c_(u"Show Feedback"), onclick = "$exe.cloze.toggleFeedback('%s',this)" % self.id)]
          
         codotras=self.ecrypt(self.field.otras)
         html += [common.hiddenField('clozeOtras%s' % self.id,codotras)]   

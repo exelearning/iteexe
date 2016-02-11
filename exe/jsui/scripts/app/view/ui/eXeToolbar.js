@@ -219,11 +219,11 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     items: 
                                     [
                                         {
-                                        	xtype: 'accesskey_menuitem',
-                                        	text: _('Google Drive'),
-                                        	accesskey: 'G',
-                                        	itemId: 'file_export_googledrive'
-                                         },
+                                            xtype: 'accesskey_menuitem',
+                                            text: _('Procomún'),
+                                            accesskey: 'P',
+                                            itemId: 'file_export_procomun'
+                                        },
                                     ]
                                 },
                             },

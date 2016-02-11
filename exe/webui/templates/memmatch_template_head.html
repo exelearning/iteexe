@@ -1,3 +1,33 @@
+<script type="text/javascript">
+// Before in common.js
+function playAndReset(e) {
+    if (e && e.paused == true && e.currentTime == 0) {
+        try {
+            e.play()
+        } catch (t) {}
+    } else {
+        try {
+            e.pause();
+            e.addEventListener("seeked", function() {
+                e.play()
+            }, true);
+            e.currentTime = 0
+        } catch (n) {}
+    }
+}
+
+function playPositiveFeedbackDefault() {
+    var e = Math.floor(Math.random() * 3);
+    var t = document.getElementById("exesfx_good" + e);
+    playAndReset(t)
+}
+
+function playNegativeFeedbackDefault() {
+    var e = document.getElementById("exesfx_wrong");
+    playAndReset(e)
+}
+// / Before in common.js
+</script>
 <script src='${RESPATH}memmatch-0.2.js' type='text/javascript'> </script>
 <script src="${RESPATH}jquery-ui-1.10.3.custom.min.js" type="text/javascript"> </script>
 

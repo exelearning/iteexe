@@ -84,6 +84,7 @@ td {
 /* Cambio el icono para las listas si numerar */
 ul li {
 	list-style-image:url(bullet.gif);
+	list-style-position:outside;
 }
 
 /* Cita con autoría */
@@ -107,7 +108,8 @@ de la jerarquía de contenidos que crearemos con eXe */
 	line-height:30px;
 	border-bottom:3px solid #BD4949;
 	padding-top:1px;
-	padding-bottom:5px
+	padding-bottom:5px;
+	padding-right:80px;
 }
 
 #nodeDecoration{

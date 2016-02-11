@@ -17,12 +17,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
-
+from exe.engine.resource import Resource
 """
 WebsiteExport will export a package as a website of HTML pages
 """
 
-import sys
 import logging
 import re
 import imp
@@ -30,25 +29,12 @@ from shutil                   import rmtree
 from exe.engine.path          import Path, TempDirPath
 from exe.export.pages         import uniquifyNames
 from exe.export.websitepage   import WebsitePage
-from exe.engine.resource      import Resource
 from zipfile                  import ZipFile, ZIP_DEFLATED
 from exe.webui                import common
-from exe.webui.livepage       import allSessionClients
 from exe                      import globals as G
 import os
-import mimetypes
-from tempfile                 import mkdtemp
-from exe.engine.persist       import encodeObject
-from exe.engine.persistxml    import encodeObjectToXML
-
-from twisted.internet         import threads
-
-import httplib2
-from oauth2client.client      import AccessTokenCredentials
-from apiclient                import errors
-from apiclient.discovery      import build
-from apiclient.http           import MediaFileUpload
-from nevow.livepage           import jquote
+from exe.engine.persist import encodeObject
+from exe.engine.persistxml import encodeObjectToXML
 
 log = logging.getLogger(__name__)
 
@@ -74,157 +60,8 @@ class WebsiteExport(object):
         self.prefix          = prefix
         self.report          = report
         self.styleSecureMode = config.styleSecureMode
-        
-    def gDriveNotificationStatus(self, client, mesg):
-        client.sendScript("eXe.controller.eXeViewport.prototype.gDriveNotificationStatus('%s');" % (mesg), filter_func=allSessionClients)
-        
-    def gDriveNotificationNotice(self, client, mesg, type):
-        client.sendScript("eXe.controller.eXeViewport.prototype.gDriveNotificationNotice('%s', '%s');" % (mesg, type), filter_func=allSessionClients)
-        
-    def exportGoogleDrive(self, package, client, auth_token, user_agent):
-        """
-        Creates an authorized HTTP conexion, exports the current package as
-        'webSite' to a temporary directory and uploads the exported files to
-        Google Drive
-        """
-        num_total = 0;
-        file_num = 0;
-        
-        def finishExport(public_folder, outputDir):
-            self.gDriveNotificationStatus(client, _(u'Deleting temporary directory'))
-            rmtree(outputDir)
-            
-            link_url = 'http://googledrive.com/host/%s'%(public_folder['id'])
-            link_text = public_folder['title']
-            self.gDriveNotificationStatus(client, _(u'Package exported to <a href="%s" target="_blank" title="Click to visit exported site">%s</a>') %(link_url,link_text))
-            return public_folder
-        
-        def insertFile(public_folder, drive, upload_file, file_num):
-            """
-            Creates the deferred that will upload files to the public folder
-            once it is created
-            """
-            upload_content_d = threads.deferToThread(uploadContent, public_folder, drive, upload_file, file_num)
-            upload_content_d.addCallbacks(uploadContent_onSuccess, uploadContent_onFail)
-            
-            return upload_content_d
-        
-        def uploadContent(public_folder, drive, upload_file, file_num):
-            """
-            Uploads one file to the given GDrive folder
-            """ 
-            try :
-                filepath = os.path.join(self.filename, upload_file)
-                filetype = mimetypes.guess_type(filepath, False)
-                
-                if filetype[0] is None :
-                    # Hard-coded types for special cases not detected by mimetypes.guess_type() 
-                    if upload_file == 'content.data' :
-                        filetype = ('application/octet-stream', None)
-                    
-                    
-                if filetype[0] is not None :
-                    link_url = 'http://googledrive.com/host/%s'%(public_folder['id'])
-                    link_text = public_folder['title']
-                    #self.gDriveNotificationStatus(client, _(u'Package exported to <a href="%s" target="_blank" title="Click to visit exported site">%s</<a>') %(link_url,link_text))
-                    self.gDriveNotificationStatus(client, _(u'Uploading <em>%s</em> to public folder <a href="%s" target="_blank" title="Click to visit exported site">%s</a> (%d/%d)') 
-                                                             %(upload_file, link_url, link_text, file_num, num_total))
-                    mimetype = filetype[0]
-                    meta = {
-                      'title': upload_file,
-                      'mimeType': mimetype,
-                      'parents' : [{'id' : public_folder['id']}]
-                    }
-                    media_body = MediaFileUpload(filepath, mimetype, resumable=True)
-                    drive.files().insert(body=meta, media_body=media_body).execute()
-                else :
-                    self.gDriveNotificationNotice(client, _(u'File <em>%s</em> skipped, unknown filetype (%d/%d)') %(upload_file, file_num, num_total), 'warning')
-            except Exception, e :
-                log.error(str(e))
-                self.gDriveNotificationNotice(client, _(u'Failed upload of file %s (%d/%d)') % (upload_file, file_num, num_total), 'error')
-            
-            return public_folder
-            
-        def uploadContent_onFail(err):
-            log.error(str(err))
-            self.gDriveNotificationNotice(client, _(u'Failed exporting to GoogleDrive'), 'error')
-            return err
-            
-        def uploadContent_onSuccess(public_folder):
-            # self.gDriveNotificationStatus(client, _(u'Exported to GoogleDrive: %s') % public_folder['title'])
-            return public_folder
-                
-        def publicFolder(drive, folder_name):
-            """
-            Creates a Public Web folder, that can be read as a web site with any
-            web browser, and populates it with the content of the given directory
-            """
-            
-            # Create public folder
-            self.gDriveNotificationStatus(client, _(u'Creating public folder to host published web site'))
-            body = {
-                'title': folder_name,
-                'mimeType': 'application/vnd.google-apps.folder'
-            }
-            public_folder = drive.files().insert(body=body).execute()
-            
-            permission = {
-                'value': '',
-                'type': 'anyone',
-                'role': 'reader'
-            }
-            drive.permissions().insert(fileId=public_folder['id'], body=permission).execute()
-            
-            return public_folder
-            
-        def publicFolder_onFail(err):
-            log.error(str(err))
-            self.gDriveNotificationNotice(client, _(u'Failed exporting to GoogleDrive'), 'error')
-            return err
-            
-        def publicFolder_onSuccess(public_folder):
-            self.gDriveNotificationStatus(client, _(u'Created public folder to host published web site: %s') % (public_folder['title']))
-            return public_folder
-            
-        try:
-            # Creates a new temporary dir to export the package to, it will be deleted
-            # once the export process is finished
-            self.filename = Path(mkdtemp())
-            self.gDriveNotificationStatus(client, _(u'Exporting package as web site in: %s') % (jquote(self.filename)))
-            outputDir = self.export(package)
-            
-            self.gDriveNotificationStatus(client, _(u'Starting authorized connection to Google Drive API'))
-            credentials = AccessTokenCredentials(auth_token, user_agent)
-            ca_certs = None
-            if hasattr(sys, 'frozen'):
-                ca_certs = 'cacerts.txt'
-            http = httplib2.Http(ca_certs=ca_certs)
-            http = credentials.authorize(http)
-            drive_service = build('drive', 'v2', http=http)
-            
-            publicFolder_d = threads.deferToThread(publicFolder, drive_service, package.name)
-            publicFolder_d.addCallbacks(publicFolder_onSuccess, publicFolder_onFail)
-            
-            # Loop through files in exportDir, each upload will be called from
-            # a chained callback function. These callbacks will return a 
-            # deferred so the file N upload will start when file N-1 has 
-            # successfully called its own callback 
-            # (Deferred chain, see: http://krondo.com/?p=2159#attachment_2196)
-            for upload_file in os.listdir(outputDir):
-                file_num = file_num + 1
-                publicFolder_d.addCallback(insertFile, drive_service, upload_file, file_num)
-                
-            num_total = file_num
-            publicFolder_d.addCallback(finishExport, outputDir)
-            
-            # TODO clean exportDir after uploading has finished
-            
-        except Exception, e:
-            log.error(str(e))
-            self.gDriveNotificationNotice(client, _('EXPORT FAILED!'), 'error')
-            raise
-        #client.alert(_(u'Exported to %s') % filename)
 
+        
     def exportZip(self, package):
         """ 
         Export web site
@@ -322,10 +159,11 @@ class WebsiteExport(object):
 
             if self.prefix == "":
                 self.copyFiles(package, outputDir)
-        else:
-            self.filename.write_text(self.report, 'utf-8')
+                
+            return outputDir
             
-        return outputDir
+        else:
+            self.filename.write_text(self.report, 'utf-8')            
 
 
     def copyFiles(self, package, outputDir):
@@ -385,6 +223,8 @@ class WebsiteExport(object):
         hasXspfplayer     = False
         hasGallery        = False
         hasFX             = False
+        hasSH             = False
+        hasGames          = False
         hasWikipedia      = False
         isBreak           = False
         hasInstructions   = False
@@ -395,7 +235,7 @@ class WebsiteExport(object):
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -411,6 +251,10 @@ class WebsiteExport(object):
                     hasGallery = common.ideviceHasGallery(idevice)
                 if not hasFX:
                     hasFX = common.ideviceHasFX(idevice)
+                if not hasSH:
+                    hasSH = common.ideviceHasSH(idevice)
+                if not hasGames:
+                    hasGames = common.ideviceHasGames(idevice)
                 if not hasWikipedia:
                     if 'WikipediaIdevice' == idevice.klass:
                         hasWikipedia = True
@@ -439,6 +283,12 @@ class WebsiteExport(object):
         if hasFX:
             exeEffects = (self.scriptsDir/'exe_effects')
             exeEffects.copyfiles(outputDir)
+        if hasSH:
+            exeSH = (self.scriptsDir/'exe_highlighter')
+            exeSH.copyfiles(outputDir)
+        if hasGames:
+            exeGames = (self.scriptsDir/'exe_games')
+            exeGames.copyfiles(outputDir)
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(outputDir/'exe_wikipedia.css')

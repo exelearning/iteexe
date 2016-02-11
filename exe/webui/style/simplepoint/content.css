@@ -61,7 +61,8 @@ li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
 .exe-dl .icon{line-height:16px}
 .js .exe-dl dd{margin-left:34px}
-.styled-qc:before{top:-10px}
+.styled-qc{margin-top:2.5em;padding-left:3.8em}
+.styled-qc:before{top:10px}
 /* Form buttons */
 .iDevice_inner input[type=submit],.feedbackbutton{background:#888;border:0;padding:3px 5px;color:#fff;border-radius:5px;text-shadow:1px 1px 1px #000;box-shadow:1px 1px 3px 0 #ccc;margin-bottom:1em}
 .iDevice_inner input[type=submit]:hover,.feedbackbutton:hover{background:#555;color:#f3f3f3;box-shadow:none}

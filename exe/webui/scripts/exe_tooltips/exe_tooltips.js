@@ -169,6 +169,7 @@ $exe.tooltips = {
 		
 		if (c.indexOf("rounded-tt")!=-1) k += " qtip-rounded";
 		if (c.indexOf("shadowed-tt")!=-1) k += " qtip-shadow";
+		if (c.indexOf("definition-tt")!=-1) k += " qtip-definition";	
 		
 		return k;
 	},
@@ -196,7 +197,7 @@ $exe.tooltips = {
 					}					
 				});
 				
-			} else if (c.indexOf("inline")==0) {
+			} else if (c.indexOf("definition")==0) {
 				
 				var id = this.id.replace("link","t");
 				$(this).qtip({

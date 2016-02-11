@@ -238,29 +238,6 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 						]
 					},
 					// /Tab1
-                    //Tab2
-                    {
-                        title: _('Publish to Google Drive'),
-                        bodyPadding: 10,
-                        items: [
-                            {
-                                xtype: 'helpcontainer',
-                                item: {
-                                    xtype: 'textfield',
-                                    inputId: 'googleApiClientID',
-                                    fieldLabel: _('Google API client Id'),
-                                    tooltip: _('The ID get from Google Developer console.'),
-                                    anchor: '100%',
-                                    style: {
-                                        //marginBottom: '10px'
-                                    },
-                                },
-                                margin: 10,
-                                help: _('This ID can be obtained from your Google Developer console and identifies your eXe installation as an unique app with access to Google API\'s')
-                            },
-                        ],
-                    },
-                    // /Tab2
 				],
             }, {
                 xtype: 'container',

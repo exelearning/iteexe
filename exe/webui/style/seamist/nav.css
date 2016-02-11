@@ -11,7 +11,7 @@ body{padding:15px 20px 20px 20px}
 #main-wrapper{padding:20px 20px 0 260px;background:none}
 #main{width:100%;padding:0}
 #content{padding-bottom:21px}
-#header,#emptyHeader{border-top:none;background:#fff;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:220px}
+#header,#emptyHeader{border-top:none;background:#fff;padding-right:220px}
 #nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.5em 0;border-top:1px solid #fff;border-bottom:1px solid #fff}
 #siteFooter{margin-top:10px;padding-left:260px}
@@ -57,7 +57,6 @@ html[xmlns] #content{display:block}
 /* Responsive design */
 @media all and (max-width: 980px) {
 	#content{background-position:-30px 0}
-	#main .iDeviceTitle{max-width:85%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline-block;margin:0}
 	#main-wrapper,#siteFooter,#bottomPagination{padding-left:230px}
 	#siteNav{width:190px}
 }

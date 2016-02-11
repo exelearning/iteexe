@@ -61,7 +61,7 @@
 						</tr>
 						</table></td>
 					</tr>
-					<tr>
+					<tr id="pages-row">
 						<td class="column1"><label for="node">{#tooltip.pages}</label></td>
 						<td colspan="2" id="nodescontainer"><select id="node"><option value=""></option></select></td>
 					</tr>
@@ -70,7 +70,7 @@
 						<td><input id="linkTitle" name="linkTitle" type="text" value="" /></td>
 					</tr>
 					<tr>
-						<td class="column1"><label for="tooltipTitle">{#tooltip.tooltip_title}</label></td>
+						<td class="column1"><label for="tooltipTitle" id="tooltipTitleLabel">{#tooltip.tooltip_title}</label></td>
 						<td><input id="tooltipTitle" name="tooltipTitle" type="text" value="" /></td>
 					</tr>					
 				</table>
@@ -80,8 +80,8 @@
 			</div>
 			<div id="type2-options" style="display:none">
 				<label for="longtext" style="font-weight:bold">{#tooltip.type2_label}</label>
-					<textarea id="longtext" name="longtext" style="width:100%;height:40px;margin-top:5px"></textarea>
-					<p style="margin-top:5px">{#tooltip.type2_instructions}</p>
+				<textarea id="longtext" name="longtext" style="width:100%;height:40px;margin-top:5px"></textarea>
+				<p style="margin-top:5px">{#tooltip.type2_instructions}</p>
 			</div>
 			<div id="type3-options" style="display:none">
 				<p><strong>{#tooltip.instructions}</strong></p>
@@ -112,15 +112,17 @@
 				<input type="radio" id="close_behaviour2" name="close_behaviour" value=" with-button"  />
 				<label for="close_behaviour2">{#tooltip.close_behaviour2}</label>
 			</p>
-			<p style="margin-top:1.5em"><strong>{#tooltip.link_behaviour}</strong></p>
-			<p>
-				<input type="radio" id="link_behaviour1" name="target" value="" checked="checked"  />
-				<label for="link_behaviour1">{#tooltip.link_behaviour1}</label>
-			</p>
-			<p id="types">
-				<input type="radio" id="link_behaviour2" name="target" value="_blank"  />
-				<label for="link_behaviour2">{#tooltip.link_behaviour2}</label>
-			</p>
+			<div id="target-options">
+				<p style="margin-top:1.5em"><strong>{#tooltip.link_behaviour}</strong></p>
+				<p>
+					<input type="radio" id="link_behaviour1" name="target" value="" checked="checked"  />
+					<label for="link_behaviour1">{#tooltip.link_behaviour1}</label>
+				</p>
+				<p id="types">
+					<input type="radio" id="link_behaviour2" name="target" value="_blank"  />
+					<label for="link_behaviour2">{#tooltip.link_behaviour2}</label>
+				</p>
+			</div>
 		</div><!-- /#behaviour_panel -->
 	
 		<div id="appearance_panel" class="panel">

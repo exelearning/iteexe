@@ -1,6 +1,8 @@
 // ===========================================================================
 // eXeLearning
-// Copyright 2014, Mercedes Cotelo Lois
+// Copyright 2014, Mercedes Cotelo Lois <mclois@gmail.com>
+// Copyright 2013, Fran Macías <franmate@gmail.com>>
+// Copyright 2013, José Ramón Jiménez Reyes <jrjimenezr@gmail.com>
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by

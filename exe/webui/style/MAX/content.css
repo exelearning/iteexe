@@ -45,6 +45,7 @@ li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
 .exe-dl .icon{line-height:16px}
 .js .exe-dl dd{margin-left:34px}
+.exe-enlarge-icon b{font-size:1.7em}
 /* Form buttons */
 .iDevice_inner input[type=submit],.iDevice_inner input[type=button],.feedbackbutton{background:#B50536;border:0;padding:3px 5px;color:#fff;border-radius:5px;text-shadow:1px 1px 1px #000;box-shadow:1px 1px 3px 0 #ccc;margin-bottom:1em}
 .iDevice_inner input[type=submit]:hover,.iDevice_inner input[type=button]:hover,.feedbackbutton:hover{background:#000;color:#f3f3f3}
@@ -58,3 +59,7 @@ li{list-style-position:outside}
 
 /* Effects */
 .exe-fx .fx-C2,.exe-fx .fx-C2 a,.fx-pagination a{background:#F7F7F7}
+
+@media all and (max-width: 600px) {
+	#main #nodeDecoration{background:none}	
+}

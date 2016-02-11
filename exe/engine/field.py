@@ -2633,7 +2633,7 @@ class FeedbackField(FieldWithResources):
     rendered as an XHTML element
     """
 
-    persistenceVersion = 2
+    persistenceVersion = 3
 
     # these will be recreated in FieldWithResources' TwistedRePersist:
     nonpersistant      = ['content', 'content_wo_resourcePaths']
@@ -2676,6 +2676,10 @@ class FeedbackField(FieldWithResources):
         self.content_wo_resourcePaths = self.feedback
         # NOTE: we don't need to actually process any of those contents for 
         # image paths, either, since this is an upgrade from pre-images!
+
+    def upgradeToVersion3(self):
+        self._buttonCaption = ''
+
 
 # ===========================================================================
 class Feedback2Field(FieldWithResources):

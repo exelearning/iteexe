@@ -25,6 +25,16 @@
 
 			ed.onInit.add(function() {
 				if (ed.settings.content_css !== false) ed.dom.loadCSS(url + "/css/content.css");
+				// i18n in CSS (type names in the right language)
+				if (typeof(jQuery)!='function') {
+					alert(ed.getLang("tooltip.jquery_is_required"));
+					return false;			
+				}
+				var d = ed.getDoc();
+				var s = '<style type="text/css">';
+					s += '.exe-tooltip-text:before{content:"'+ed.getLang("tooltip.title")+' - '+ed.getLang("tooltip.type2")+'"}';
+				s += '</style>';
+				jQuery("HEAD",d).append(s);				
 			});
 	
 			// Register plugin buttons

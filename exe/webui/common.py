@@ -275,7 +275,7 @@ def renderLicense(plicense,mode="export"):
     """
     Returns an XHTML string rendering the license.
     """
-    if plicense == "" or plicense == "not appropriate":
+    if plicense in ["", "not appropriate", "None"]:
         return ""
     
     licenses = getPackageLicenses()
@@ -466,7 +466,8 @@ def fieldShowEditMessageEle(element):
         return editModeHeading(element.field.message)
     else:
         return ""
-    
+
+# Required until a better i18n solution works        
 def getJavaScriptStrings():
     s = '<script type="text/javascript">$exe_i18n={'
     s += 'previous:"'+c_("Previous")+'",'
@@ -477,10 +478,39 @@ def getJavaScriptStrings():
     s += 'hideFeedback:"'+c_("Hide Feedback")+'",'
     s += 'correct:"'+c_("Correct")+'",'
     s += 'incorrect:"'+c_("Incorrect")+'",'
-    s += 'menu:"'+c_("Menu")+'"'
+    s += 'menu:"'+c_("Menu")+'",'
+    s += 'print:"'+c_("Print")+'"'	
     s += '}</script>'
     
     return s
+    
+# Required until a better i18n solution works
+def getGamesJavaScriptStrings():
+    s = '<script type="text/javascript">$exe_i18n.exeGames={'
+    s += 'hangManGame:"'+c_('Hangman Game')+'",'
+    s += 'accept:"'+c_("Accept")+'",'
+    s += 'yes:"'+c_("Yes")+'",'
+    s += 'no:"'+c_("No")+'",'
+    s += 'right:"'+c_("Correct")+'",'
+    s += 'wrong:"'+c_("Wrong")+'",'
+    s += 'rightAnswer:"'+c_("Right answer")+'",'
+    s += 'status:"'+c_("Status")+'",'
+    s += 'selectedLetters:"'+c_("Selected letters")+'",'
+    s += 'word:"'+c_("Word")+'",'
+    s += 'words:"'+c_("Words")+'",'
+    s += 'play:"'+c_("Play")+'",'
+    s += 'playAgain:"'+c_("Reiniciar")+'",'
+    s += 'results:"'+c_("Results")+'",'
+    s += 'total:"'+c_("Total")+'",'
+    s += 'otherWord:"'+c_("Other word")+'",'
+    s += 'gameOver:"'+c_("Game over.")+'",'
+    s += 'confirmReload:"'+c_("Reload the game?")+'",'
+    s += 'clickOnPlay:\''+c_('Click on "Play" to start a new game.')+'\','
+    s += 'clickOnOtherWord:\''+c_('Click on "Other word" to continue.')+'\','
+    s += 'az:"'+c_("abcdefghijklmnopqrstuvwxyz")+'"'
+    s += '}</script>'
+    
+    return s    
 
 def header(style=u'default'):
     """Generates the common header XHTML"""
@@ -745,7 +775,7 @@ def insertSymbol(name, image, title, string, text ='', num=0):
     Adds an image link which will trigger the javascript needed to
     post a form with the action and object passed in the args
     """
-    onclick = "insertSymbol('%s', '%s', %d);" % (name, string, num)
+    onclick = "$exe.insertSymbol('%s', '%s', %d);" % (name, string, num)
     html = u'<a onclick="%s" ' % onclick
     html += u'title="%s">' % title
     html += text
@@ -805,20 +835,16 @@ def elementInstruc(instruc, imageFile="help.gif", label=None):
         html = u''
     else:
         id_ = newId()
-        html  = u'<a onmousedown="Javascript:updateCoords(event);" '
+        html  = u'<a href="javascript:void(o)" '
         html += u' title="%s" ' % _(u'Click for completion instructions')
-        html += u'onclick="Javascript:showMe(\'i%s\', 350, 100);" ' % id_
-        html += u'href="Javascript:void(0)" style="cursor:help;"> ' 
-        html += u'<img class="help" alt="%s" ' \
-                % _(u'Click for completion instructions')
+        html += u'onclick="showMessageBox(\'%s\');" ' % id_
+        html += u'style="cursor:help;margin-left:.2em;">' 
+        html += u'<img class="help" alt="%s" ' % _(u'Click for completion instructions')
         html += u'src="/images/%s" style="vertical-align:middle;"/>' % imageFile
         html += u'</a>\n'
-        html += u'<div id="i%s" style="display:none;">' % id_
-        html += u'<div style="float:right;" >'
-        html += u'<img alt="%s" ' % _("Close")
-        html += u'src="/images/stock-stop.png" title="%s" ' % _("Close")
-        html += u' onmousedown="Javascript:hideMe();"/></div>'
-        html += u'<div class="popupDivLabel">%s</div>%s' % (label, instruc)
+        html += u'<div style="display:none;">'
+        html += u'<div id="%stitle">%s</div>' % (id_, label)
+        html += u'<div id="%scontent">%s</div>' % (id_, instruc)
         html += u'</div>\n'
     return html
 
@@ -1204,6 +1230,27 @@ def ideviceHasFX(idevice):
         return True
     return False
     
+# Syntax highlighting
+def ideviceHasSH(idevice):
+    block = g_blockFactory.createBlock(None, idevice)
+    if not block:
+        log.critical("Unable to render iDevice.")
+        raise Error("Unable to render iDevice.")
+    content = block.renderView('default')
+    if re.search(' class=[\'"]highlighted-code', content):
+        return True
+    return False
+    
+def ideviceHasGames(idevice):
+    block = g_blockFactory.createBlock(None, idevice)
+    if not block:
+        log.critical("Unable to render iDevice.")
+        raise Error("Unable to render iDevice.")
+    content = block.renderView('default')
+    if re.search(' class=[\'"]exe-game ', content):
+        return True
+    return False
+    
 def ideviceHasGallery(idevice):
     if idevice.klass == 'GalleryIdevice':
         return True
@@ -1219,6 +1266,19 @@ def ideviceHasGallery(idevice):
 def hasFX(node):
     for idevice in node.idevices:
         if ideviceHasFX(idevice):
+            return True
+    return False
+    
+# Syntax highlighting
+def hasSH(node):
+    for idevice in node.idevices:
+        if ideviceHasSH(idevice):
+            return True
+    return False
+    
+def hasGames(node):
+    for idevice in node.idevices:
+        if ideviceHasGames(idevice):
             return True
     return False
     

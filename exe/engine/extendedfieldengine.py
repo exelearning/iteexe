@@ -287,7 +287,7 @@ class FileElement(Element):
         if self.field.fileResource is None:
             buttonName = _(u"Upload") 
         
-        html += u'<input type="submit" name="%s" value="%s"' % ("upload"+self.id,
+        html += u'<input type="submit" name="%s" value="%s" />' % ("upload"+self.id,
                                                                 buttonName)
         html += common.elementInstruc(self.field.fileInstruc)
         
