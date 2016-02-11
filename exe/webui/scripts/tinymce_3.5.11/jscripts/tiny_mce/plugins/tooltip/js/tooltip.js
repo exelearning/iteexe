@@ -334,21 +334,25 @@ var TooltipDialog = {
 				id = inst.dom.getAttrib(elm, 'id');
 				if (id=="") id = "link"+this.generateID();
 			}
-			
-			// Get the link to update its href
-			var l = inst.dom.select("#"+id);
-			// Get the ID of the content
 			id = id.replace("link","t");
-			// Update the link's href
-			inst.dom.setAttribs(l, {'href': '#'+id});
-			// Create or update the content
-			var e = inst.dom.select("#"+id);
-			
-			if (e.length==0) {
-				inst.dom.add(inst.getBody(), 'div', { id : id, class : this.className+'-text' }, lng);
-			} else {
-				inst.dom.setHTML(e, lng);
+			if (id!="") {
+				var e = inst.dom.select("#"+id);
+				// Create or update the content
+				if (e.length==0) {
+					inst.dom.add(inst.getBody(), 'div', { id : id, class : this.className+'-text' }, lng);
+				} else {
+					inst.dom.setHTML(e, lng);
+				}
 			}
+			inst.dom.setAttribs(elm, {
+				// Make sure that you link to the anchor
+				'href': '#'+id,
+				// Update the id too
+				'id': id.replace("t","link"),
+				// And the className (or it won't work inside accordions and other blocks with effects)
+				// class="exe-tooltip definition-tt..."
+				'class': this.currentClassNames
+			});
 		}
 		
 		tinyMCEPopup.execCommand("mceEndUndoLevel");
@@ -440,8 +444,9 @@ var TooltipDialog = {
 		this.setAttrib(elm, 'href', ref);
 		this.setAttrib(elm, 'title', txt);
 		this.setAttrib(elm, 'target', trg);
-		//this.setAttrib(elm, 'id');
+		// this.setAttrib(elm, 'id');
 		this.setAttrib(elm, 'class', cls);
+		this.currentClassNames = cls;
 
 		// Refresh in old MSIE
 		if (tinyMCE.isMSIE5) elm.outerHTML = elm.outerHTML;
