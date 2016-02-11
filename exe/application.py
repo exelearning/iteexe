@@ -141,6 +141,9 @@ class Application:
     def upgradeToVersion1(self):
         """Hide experimental idevices"""
         log.info('Upgrading to version 1')
+        if not hasattr(self, 'ideviceStore'):
+            return
+
         for idevice in self.ideviceStore.getIdevices():
             lower_title = idevice._title.lower()
             if self.config.idevicesCategories.get(lower_title, '') == ['Experimental']:

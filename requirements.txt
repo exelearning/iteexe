@@ -14,3 +14,7 @@ defusedxml==0.4.1
 dm.xmlsec.binding==1.3.2
 
 passlib==1.5.3
+
+python-dateutil
+suds
+requests-oauthlib
