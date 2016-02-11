@@ -332,6 +332,7 @@ var TooltipDialog = {
 				if (typeof(this.currentLinkId)!='undefined') id = id = this.currentLinkId;
 			} else {
 				id = inst.dom.getAttrib(elm, 'id');
+				if (id=="") id = "link"+this.generateID();
 			}
 			
 			// Get the link to update its href
