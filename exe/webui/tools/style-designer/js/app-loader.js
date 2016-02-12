@@ -68,11 +68,14 @@ var $designer = {
 			}
 		});
 	},
+	config : {
+		// It has to be defined or it won't work in IE 11
+	},
 	getConfig : function(){
 		if (this.styleId == 'base') {
 			// Use default name, author and description: 'base' style has some custom
 			// values in author and description, not really suitable as starting template
-			styleConfig = {};
+			var styleConfig = {};
 			
 			styleConfig.styleName = '';
 			
