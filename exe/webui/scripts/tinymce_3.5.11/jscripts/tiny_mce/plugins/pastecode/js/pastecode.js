@@ -162,11 +162,15 @@ var PasteCodeDialog = {
 			if (wrapper) {
 				var defaultClass = "pre-code";
 				if (highlight) {
+					if (lang=="") {
+						tinyMCEPopup.alert(tinyMCEPopup.getLang('pastecode.language_missing'));
+						return;					
+					}
 					defaultClass = "highlighted-code";
 					// Dark or default
 					if (skin!="") defaultClass += " "+skin;
 					// Language
-					if (lang!="") defaultClass += " language-"+lang;
+					defaultClass += " language-"+lang;
 					// Show line numbers + Highlight specific lines
 					if (showLines || linesToShow!="") {
 						defaultClass += " line-numbers";

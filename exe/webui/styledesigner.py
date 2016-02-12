@@ -119,7 +119,7 @@ class StyleDesigner(Renderable, Resource):
                 
             if action == 'createStyle':
                 # Get style directory (which is also the style ID) from the style name
-                style_dirname = self.styleIdFromName(request.args['style_name'][0])
+                style_dirname = self.styleIdFromName(request.args['style_name'][-1])
                 style = self.createStyle(style_dirname, request.args)
                 response['style_dirname'] = style.get_dirname()
                 response['success'] = True
@@ -237,7 +237,7 @@ class StyleDesigner(Renderable, Resource):
                 extra_head = config_base.find('extra-head').text
                 extra_body = config_base.find('extra-body').text
                 configxml = {
-                    'name':  style_data['style_name'][0],
+                    'name':  style_data['style_name'][-1],
                     'version': '1.0',
                     'compatibility': version.version,
                     'author': author,
@@ -318,7 +318,7 @@ class StyleDesigner(Renderable, Resource):
                 extra_head = config_org.find('extra-head').text
                 extra_body = config_org.find('extra-body').text
                 configxml = {
-                    'name':  style_data['style_name'][0],
+                    'name':  style_data['style_name'][-1],
                     'version': next_version,
                     'compatibility': version.version,
                     'author': author,

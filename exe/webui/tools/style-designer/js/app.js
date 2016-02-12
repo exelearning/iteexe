@@ -1217,7 +1217,7 @@ var $app = {
 					// Collect data from the main edition form except style_name,
 					// that is read from this interactive form
 					var data = $app.collectAjaxData(content, nav, 'createStyle', copyFrom);
-					data.set('style_name', input_value);
+					data.append('style_name', input_value);
 					$app.preloader.show();
 					jQuery.ajax({
 						url: '/styleDesigner',
