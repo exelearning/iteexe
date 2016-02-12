@@ -719,19 +719,23 @@ class MainPage(RenderableLivePage):
 
         ode = procomun.factory.create('xsd:anyType')
 
-        ode.content = base64.b64encode(open(filename).read())
-        ode.fileName = self.package.name
+        ode.file = base64.b64encode(open(filename).read())
+        ode.file_name = self.package.name
 
         client.notifyStatus(statusTitle, _(u'Starting authorized connection to Procomún API'))
         result = procomun.service.odes_soap_create(ode)
 
-        parsedResult = dict()
+        parsedResult = {}
         for item in result.item:
             parsedResult[item.key] = item.value
+            if str(item.key) == 'data':
+                parsedResult[item.key] = {}
+                if item.value:
+                    parsedResult[item.key][item.value.item.key] = item.value.item.value
 
         if parsedResult['status'] == 'true':
-            link_url = 'https://agrega2-front-pre.emergya.es/'
-            client.notifyStatus(statusTitle, _(u'Package exported to <a href="%s" target="_blank" title="Click to visit exported site">%s</a>') % (link_url, self.package.name))
+            link_url = 'https://agrega2-front-pre.emergya.es/ode/view/%s' % parsedResult['data']['documentId']
+            client.notifyStatus(statusTitle, _(u'Package exported to <a href="%s" target="_blank" title="Click to visit exported site">%s</a>') % (link_url, self.package.title))
         else:
             client.hideStatus()
             client.notifyNotice(title, _(u'Error exporting package %s to Procomún: %s') % (self.package.name, parsedResult['message']), 'error')
