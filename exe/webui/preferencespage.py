@@ -59,6 +59,7 @@ langNames = {
    'fi': 'Suomi',                      # Finnish
    'fr': 'Français',                   # Fran\xc3\xa7ais, French
    'gl': 'Galego',                     # Galician
+   'he': 'עברית',                      # Hebrew
    'hr': 'Hrvatski',                   # Croatian
    'hu': 'Magyar',                     # Hungarian
    'id': 'Bahasa Indonesia',           # Indonesian
