@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-14 17:22+0100\n"
+"POT-Creation-Date: 2016-02-14 19:03+0100\n"
 "PO-Revision-Date: 2014-10-20 15:21+0100\n"
 "Last-Translator: Jesús Miguel Domínguez <miguelcaliban@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -1766,8 +1766,8 @@ msgstr "Texte du bouton de réinitialisation du niveau"
 msgid "Text for reset button"
 msgstr "Texte pour le bouton de réinitialisation"
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1548
-#: exe/webui/element.py:1804
+#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
+#: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
 msgstr "Recommencer"
 
@@ -4582,6 +4582,7 @@ msgstr "Une référence à une ressource dont la ressource courrante est dériv�
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "Langue"
@@ -7829,11 +7830,6 @@ msgstr "Mots-clés"
 msgid "Play"
 msgstr "planification"
 
-#: exe/webui/common.py:502
-#, fuzzy
-msgid "Reiniciar"
-msgstr "initiateur"
-
 #: exe/webui/common.py:503
 msgid "Results"
 msgstr ""
@@ -7845,7 +7841,7 @@ msgstr "tutoriel"
 
 #: exe/webui/common.py:505
 #, fuzzy
-msgid "Other word"
+msgid "Another word"
 msgstr "Autres mots"
 
 #: exe/webui/common.py:506
@@ -7862,7 +7858,7 @@ msgid "Click on \"Play\" to start a new game."
 msgstr "Cliquer sur cet élément pour démarrer le jeu"
 
 #: exe/webui/common.py:509
-msgid "Click on \"Other word\" to continue."
+msgid "Click on \"Another word\" to continue."
 msgstr ""
 
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
@@ -10958,11 +10954,6 @@ msgstr "Coller fragment de HTML (code intégré)"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:7
 msgid "Include wrapper (improves presentation)"
 msgstr "Inclure contenant (la presentation sera ameliorée)"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#, fuzzy
-msgid "Lenguage"
-msgstr "Langue"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 #, fuzzy

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2016-02-14 17:22+0100\n"
-"PO-Revision-Date: 2016-02-14 18:31+0100\n"
+"POT-Creation-Date: 2016-02-14 19:03+0100\n"
+"PO-Revision-Date: 2016-02-14 19:14+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -1807,8 +1807,8 @@ msgstr "Texto del botón de reiniciar nivel"
 msgid "Text for reset button"
 msgstr "Texto del botón de reiniciar"
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1548
-#: exe/webui/element.py:1804
+#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
+#: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
 msgstr "Reiniciar"
 
@@ -4320,7 +4320,9 @@ msgstr "Preferencias de exportación a XLIFF"
 msgid ""
 "You must authorize eXe Learning to publish content into your Procomún "
 "account"
-msgstr "Debe autorizar a eXeLearning a publicar contenidos en su cuenta de Procomún"
+msgstr ""
+"Debe autorizar a eXeLearning a publicar contenidos en su cuenta de "
+"Procomún"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:841
 msgid "Are you sure you want to start authorization process?"
@@ -4662,6 +4664,7 @@ msgstr "Referencia a un recurso del que deriva el recurso actual."
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "Idioma"
@@ -5534,7 +5537,9 @@ msgstr "Licencia predeterminada para documentos nuevos"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:235
 msgid "The current document license can be modified in the Properties tab."
-msgstr "La licencia actual del documento puede ser modificada en la pestaña Propiedades."
+msgstr ""
+"La licencia actual del documento puede ser modificada en la pestaña "
+"Propiedades."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:274
 msgid "Show this window on eXe start"
@@ -7875,11 +7880,6 @@ msgstr "Palabras"
 msgid "Play"
 msgstr "Jugar"
 
-#: exe/webui/common.py:502
-#, fuzzy
-msgid "Reiniciar"
-msgstr "iniciador"
-
 #: exe/webui/common.py:503
 msgid "Results"
 msgstr "Resultados"
@@ -7889,7 +7889,7 @@ msgid "Total"
 msgstr "Total"
 
 #: exe/webui/common.py:505
-msgid "Other word"
+msgid "Another word"
 msgstr "Otra palabra"
 
 #: exe/webui/common.py:506
@@ -7905,7 +7905,7 @@ msgid "Click on \"Play\" to start a new game."
 msgstr "Pulse en \"Jugar\" para iniciar una nueva partida o juego."
 
 #: exe/webui/common.py:509
-msgid "Click on \"Other word\" to continue."
+msgid "Click on \"Another word\" to continue."
 msgstr "Pulse en \"Otra palabra\" para continuar."
 
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
@@ -9113,7 +9113,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Emotions"
-msgstr "Emoticones"
+msgstr "Emociones"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:15
@@ -9944,7 +9944,7 @@ msgstr "Término"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
 msgid "Term definition"
-msgstr "Definición"
+msgstr "Definición del término"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
@@ -10053,11 +10053,15 @@ msgstr "Elija un efecto (podrá cambiarlo más tarde)."
 msgid ""
 "To add a new tab, block, page... just add a second level title (Heading "
 "2) followed by its content."
-msgstr "Para agregar una etiqueta, bloque, página... nuevos, añada un título de segundo nivel (Encabezado 2) seguido por su contenido."
+msgstr ""
+"Para agregar una etiqueta, bloque, página... nuevos, añada un título de "
+"segundo nivel (Encabezado 2) seguido por su contenido."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:10
 msgid "All blocks must start with a second level title (Heading 2)."
-msgstr "Todos los bloques deben comenzar con un título de segundo nivel (Encabezado 2)."
+msgstr ""
+"Todos los bloques deben comenzar con un título de segundo nivel "
+"(Encabezado 2)."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:11
 msgid "Please do not overuse these effects."
@@ -10067,13 +10071,17 @@ msgstr "Por favor no abuse de estos efectos."
 msgid ""
 "Change the text of the tabs adding a title to each Heading 2 with the "
 "\"Insert/Edit Attributes\" option:"
-msgstr "Cambie el texto de las pestañas añadiendo un título a cada Encabezado 2 con la opción \"Insertar/editar atributos\":"
+msgstr ""
+"Cambie el texto de las pestañas añadiendo un título a cada Encabezado 2 "
+"con la opción \"Insertar/editar atributos\":"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:13
 msgid ""
 "Timelines require a third level title (Heading 3) right after each "
 "Heading 2."
-msgstr "Las Líneas de tiempo requieren un título de nivel tres (Encabezado 3) inmediatamente después de cada Encabezado 2."
+msgstr ""
+"Las Líneas de tiempo requieren un título de nivel tres (Encabezado 3) "
+"inmediatamente después de cada Encabezado 2."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
@@ -10087,7 +10095,9 @@ msgstr "Acordeón"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:18
 msgid "Collapsible content panels for presenting information in a limited space."
-msgstr "Paneles de contenido colapsable para presentar información en un espacio limitado."
+msgstr ""
+"Paneles de contenido colapsable para presentar información en un espacio "
+"limitado."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:20
 msgid "Tabs"
@@ -10119,7 +10129,9 @@ msgstr "Línea de tiempo"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
-msgstr "Sencilla Línea de tiempo interactiva que puede mostrar casi cualquier tipo de contenido."
+msgstr ""
+"Sencilla Línea de tiempo interactiva que puede mostrar casi cualquier "
+"tipo de contenido."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:31
 msgid "Make a timeline?"
@@ -10143,7 +10155,7 @@ msgstr "Juegos (el ahorcado...)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:8
 msgid "Please enable JavaScript to play this game."
-msgstr "Por favor habilite JavaScript para poder jugar a este juego."
+msgstr "Por favor active JavaScript para poder jugar a este juego."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:9
 msgid "Accessibility"
@@ -10167,7 +10179,7 @@ msgstr "Puede cambiarlo en cualquier momento."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:14
 msgid "Provide a warning to users who have JavaScript disabled (Accessibility)."
-msgstr "Crear un aviso para los usuarios con JavasScript deshabilitado (Accesibilidad)."
+msgstr "Crear un aviso para los usuarios con JavasScript desactivado (Accesibilidad)."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:17
 msgid "Guess letters to complete each word."
@@ -10473,7 +10485,7 @@ msgstr "Elemento Base"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Comment Node"
-msgstr "Nodo Comment"
+msgstr "Nodo Comentario"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Comment"
@@ -10685,7 +10697,7 @@ msgstr "Caché de destino"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Play Every Frame"
-msgstr "Reproducir todo los frames"
+msgstr "Reproducir todos los fotogramas"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Kiosk Mode"
@@ -10969,11 +10981,6 @@ msgstr "Pegar fragmento de HTML (código embebido)"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:7
 msgid "Include wrapper (improves presentation)"
 msgstr "Incluir contenedor (mejora la presentación)"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#, fuzzy
-msgid "Lenguage"
-msgstr "Idioma"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 msgid "Please select a language"
@@ -11438,7 +11445,9 @@ msgstr "Término no encontrado"
 msgid ""
 "Write the term and its definition. You may use HTML and edit it in the "
 "editor."
-msgstr "Escriba el texto y su definición. Puede usar HTML  y editarlo con el editor."
+msgstr ""
+"Escriba el texto y su definición. Puede usar HTML  y editarlo con el "
+"editor."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
 msgid "Definition:"
@@ -12096,7 +12105,9 @@ msgstr "Versión del estilo"
 msgid ""
 "Style version number is automatically increased when you save, use this "
 "selector to reset it."
-msgstr "El número de versión del estilo se incrementa automáticamente cuando lo guarda, use este selector para modificarlo."
+msgstr ""
+"El número de versión del estilo se incrementa automáticamente cuando lo "
+"guarda, use este selector para modificarlo."
 
 #: exe/webui/tools/style-designer/langs/en.js:38
 msgid "(license of the original Style)"
@@ -12346,7 +12357,9 @@ msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:124
 msgid "Undo changes since last time you saved? This cannot be undone. "
-msgstr "¿Desechar los cambios realizados desde que guardó por última vez? Esta acción no se puede deshacer."
+msgstr ""
+"¿Desechar los cambios realizados desde que guardó por última vez? Esta "
+"acción no se puede deshacer."
 
 #: exe/webui/tools/style-designer/langs/en.js:131
 msgid "Drag markers to pick a color"
@@ -12577,3 +12590,4 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
+

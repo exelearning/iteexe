@@ -6,6 +6,7 @@
 # eXeLearning.net Project <admin@exelearning.net>
 # Asmoz fundazioa, 2009
 #
+#
 # http://www.asmoz.org/index.php?option=com_content&view=article&id=131&Itemid=101&lang=es
 # Malen <mjareno@asmoz.org>
 # 2012-2015 Joxemi Andonegi <jm.andonegi@gmail.com>
@@ -14,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2016-02-14 17:22+0100\n"
+"POT-Creation-Date: 2016-02-14 19:03+0100\n"
 "PO-Revision-Date: 2015-10-07 23:31+0100\n"
 "Last-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\n"
 "Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
@@ -1753,8 +1754,8 @@ msgstr "Berrabiarazi botoiaren testu-maila"
 msgid "Text for reset button"
 msgstr "Berrarabiazi botoiaren testua"
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1548
-#: exe/webui/element.py:1804
+#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
+#: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
 msgstr "Berriz hasi"
 
@@ -4547,6 +4548,7 @@ msgstr "Baliabide honen jatorria den baliabidearen aipamena."
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "Hizkuntza"
@@ -7760,11 +7762,6 @@ msgstr "Hitz-gakoak"
 msgid "Play"
 msgstr "planifikatu"
 
-#: exe/webui/common.py:502
-#, fuzzy
-msgid "Reiniciar"
-msgstr "abiarazlea"
-
 #: exe/webui/common.py:503
 msgid "Results"
 msgstr ""
@@ -7776,7 +7773,7 @@ msgstr "tutoriala"
 
 #: exe/webui/common.py:505
 #, fuzzy
-msgid "Other word"
+msgid "Another word"
 msgstr "Beste hitzak"
 
 #: exe/webui/common.py:506
@@ -7793,7 +7790,7 @@ msgid "Click on \"Play\" to start a new game."
 msgstr "Erabiltzaileak hemen egingo du klik jokoa hasteko"
 
 #: exe/webui/common.py:509
-msgid "Click on \"Other word\" to continue."
+msgid "Click on \"Another word\" to continue."
 msgstr ""
 
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
@@ -10874,11 +10871,6 @@ msgstr "HTML kodea itsatsi (kaptsulatutako kodea)"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:7
 msgid "Include wrapper (improves presentation)"
 msgstr "Edukitzailea sartu (itxura hobetzen du)"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#, fuzzy
-msgid "Lenguage"
-msgstr "Hizkuntza"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 #, fuzzy

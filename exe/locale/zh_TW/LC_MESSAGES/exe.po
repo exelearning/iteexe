@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2016-02-14 17:22+0100\n"
+"POT-Creation-Date: 2016-02-14 19:03+0100\n"
 "PO-Revision-Date: 2014-05-15 18:08+0200\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language-Team: Chinese Traditional <zh-l10n@linux.org.tw>\n"
@@ -1533,8 +1533,8 @@ msgstr "重新開始關卡按鍵文字"
 msgid "Text for reset button"
 msgstr "重置按鍵文字"
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1548
-#: exe/webui/element.py:1804
+#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
+#: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
 msgstr "重新開始"
 
@@ -4082,6 +4082,7 @@ msgstr "資源從哪裡衍生而來。"
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "語言"
@@ -7255,11 +7256,6 @@ msgstr "關鍵字"
 msgid "Play"
 msgstr "計畫"
 
-#: exe/webui/common.py:502
-#, fuzzy
-msgid "Reiniciar"
-msgstr "發起者"
-
 #: exe/webui/common.py:503
 msgid "Results"
 msgstr ""
@@ -7271,7 +7267,7 @@ msgstr "教學"
 
 #: exe/webui/common.py:505
 #, fuzzy
-msgid "Other word"
+msgid "Another word"
 msgstr "其他單字"
 
 #: exe/webui/common.py:506
@@ -7288,7 +7284,7 @@ msgid "Click on \"Play\" to start a new game."
 msgstr "使用者會點擊此處開始遊戲"
 
 #: exe/webui/common.py:509
-msgid "Click on \"Other word\" to continue."
+msgid "Click on \"Another word\" to continue."
 msgstr ""
 
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
@@ -10318,11 +10314,6 @@ msgstr "貼上 HTML 片段（嵌入碼）"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:7
 msgid "Include wrapper (improves presentation)"
 msgstr "包含包裝（改善呈現方式）"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#, fuzzy
-msgid "Lenguage"
-msgstr "語言"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 #, fuzzy

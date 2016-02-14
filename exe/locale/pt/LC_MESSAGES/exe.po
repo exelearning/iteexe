@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2016-02-14 17:22+0100\n"
+"POT-Creation-Date: 2016-02-14 19:03+0100\n"
 "PO-Revision-Date: 2014-10-22 23:33+0100\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
 "Language-Team: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
@@ -1795,8 +1795,8 @@ msgstr "Texto para o botão de recomeçar o nível"
 msgid "Text for reset button"
 msgstr "Texto para o botão de reinício"
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1548
-#: exe/webui/element.py:1804
+#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
+#: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
 msgstr "Reiniciar"
 
@@ -4644,6 +4644,7 @@ msgstr "A referência a um recurso de que se deriva o presente recurso."
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "Língua"
@@ -7869,11 +7870,6 @@ msgstr "Palavras-chave"
 msgid "Play"
 msgstr "planifique"
 
-#: exe/webui/common.py:502
-#, fuzzy
-msgid "Reiniciar"
-msgstr "iniciador"
-
 #: exe/webui/common.py:503
 msgid "Results"
 msgstr ""
@@ -7885,7 +7881,7 @@ msgstr "tutorial"
 
 #: exe/webui/common.py:505
 #, fuzzy
-msgid "Other word"
+msgid "Another word"
 msgstr "Outras palavras"
 
 #: exe/webui/common.py:506
@@ -7902,7 +7898,7 @@ msgid "Click on \"Play\" to start a new game."
 msgstr "O utilizador irá clicar aqui para começar o jogo"
 
 #: exe/webui/common.py:509
-msgid "Click on \"Other word\" to continue."
+msgid "Click on \"Another word\" to continue."
 msgstr ""
 
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
@@ -10985,11 +10981,6 @@ msgstr "Colar fragmento de HTML (código incrustado)"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:7
 msgid "Include wrapper (improves presentation)"
 msgstr "Incluir contentor (melhora a apresentação)"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#, fuzzy
-msgid "Lenguage"
-msgstr "Língua"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 #, fuzzy

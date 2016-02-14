@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-14 17:22+0100\n"
+"POT-Creation-Date: 2016-02-14 19:03+0100\n"
 "PO-Revision-Date: 2007-12-04 01:11+1300\n"
 "Last-Translator: Toha Mustofa <toha.mustofa@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -1743,8 +1743,8 @@ msgstr ""
 msgid "Text for reset button"
 msgstr ""
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1548
-#: exe/webui/element.py:1804
+#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
+#: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
 msgstr "Mulai Lagi"
 
@@ -4449,6 +4449,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr ""
@@ -7602,10 +7603,6 @@ msgstr ""
 msgid "Play"
 msgstr "Kirim"
 
-#: exe/webui/common.py:502
-msgid "Reiniciar"
-msgstr ""
-
 #: exe/webui/common.py:503
 msgid "Results"
 msgstr ""
@@ -7615,8 +7612,9 @@ msgid "Total"
 msgstr ""
 
 #: exe/webui/common.py:505
-msgid "Other word"
-msgstr ""
+#, fuzzy
+msgid "Another word"
+msgstr "Tambahkan opsi yang lain"
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7631,7 +7629,7 @@ msgid "Click on \"Play\" to start a new game."
 msgstr ""
 
 #: exe/webui/common.py:509
-msgid "Click on \"Other word\" to continue."
+msgid "Click on \"Another word\" to continue."
 msgstr ""
 
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
@@ -10649,11 +10647,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:7
 msgid "Include wrapper (improves presentation)"
 msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#, fuzzy
-msgid "Lenguage"
-msgstr "Pilih Bahasa"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 #, fuzzy
