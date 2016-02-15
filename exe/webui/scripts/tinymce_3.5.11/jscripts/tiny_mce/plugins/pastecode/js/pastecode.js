@@ -164,7 +164,7 @@ var PasteCodeDialog = {
 				if (highlight) {
 					if (lang=="") {
 						tinyMCEPopup.alert(tinyMCEPopup.getLang('pastecode.language_missing'));
-						return;					
+						return false;					
 					}
 					defaultClass = "highlighted-code";
 					// Dark or default
