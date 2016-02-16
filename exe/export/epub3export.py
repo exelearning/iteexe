@@ -219,34 +219,33 @@ class NavEpub3(object):
 
     def createXML(self):
         xmlStr = u"""<?xml version="1.0" encoding="UTF-8"?>
-            <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-                xmlns:epub="http://www.idpf.org/2007/ops">
-                <head>
-                    <meta charset="utf-8"></meta>
-                </head>
-                <body>
-                    <nav epub:type="toc" id="toc">
-        """
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+    xmlns:epub="http://www.idpf.org/2007/ops">
+    <head>
+        <meta charset="utf-8"></meta>
+    </head>
+    <body>
+        <nav epub:type="toc" id="toc">"""
 
         currentDepth = 1
         for page in self.pages[1:]:
             if page.depth > currentDepth:
                 xmlStr += u'<ol>\n'
                 currentDepth = page.depth
+            else:
+                xmlStr += u'</li>\n'
             while currentDepth > page.depth:
-                xmlStr += u'</ol>\n'
+                xmlStr += u'</ol>\n</li>\n'
                 currentDepth -= 1
-            xmlStr += u"<li><a href=\"%s\">%s</a></li>\n" % (page.name + ".xhtml", escape(page.node.title))
+            xmlStr += u"<li><a href=\"%s\">%s</a>\n" % (page.name + ".xhtml", escape(page.node.title))
 
         while currentDepth > 1:
-            xmlStr += u'</ol>\n'
+            xmlStr += u'</li>\n</ol>\n'
             currentDepth -= 1
 
-        xmlStr += u"""
-                    </nav>
-                </body>
-            </html>
-        """
+        xmlStr += u"""      </nav>
+    </body>
+</html>"""
 
         return xmlStr
 
