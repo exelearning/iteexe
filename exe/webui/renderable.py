@@ -207,6 +207,7 @@ class RenderableResource(_RenderablePage, Resource):
         request.setHeader("X-XSS-Protection", "0")
         return Resource.render(self, request)
 
+
 class File(static.File):
     def render(self, request):
         if not G.application.server:
@@ -215,3 +216,11 @@ class File(static.File):
             request.setHeader("Cache-Control", "no-store, no-cache, must-revalidate")
             request.setHeader("Pragma", "no-cache")
         return static.File.render(self, request)
+
+
+class Download(File):
+    def render(self, request):
+        self.type, self.encoding = static.getTypeAndEncoding(self.basename(), self.contentTypes, self.contentEncodings,
+                                                             self.defaultType)
+        self.type = self.defaultType
+        return File.render(self, request)

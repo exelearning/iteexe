@@ -883,6 +883,7 @@ Ext.define('eXe.controller.Toolbar', {
                 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
                     type: eXe.view.filepicker.FilePicker.modeSave,
                     title: _("Export text package as"),
+                    remote: true,
                     modal: true,
                     scope: this,
                     callback: function(fp) {
@@ -900,6 +901,7 @@ Ext.define('eXe.controller.Toolbar', {
             var fp = Ext.create("eXe.view.filepicker.FilePicker", {
                 type: eXe.view.filepicker.FilePicker.modeSave,
                 title: _("Save package resources report as"),
+                remote: true,
                 modal: true,
                 scope: this,
                 callback: function(fp) {
@@ -917,6 +919,7 @@ Ext.define('eXe.controller.Toolbar', {
                 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
                     type: eXe.view.filepicker.FilePicker.modeSave,
                     title: _("Export EPUB3 package as"),
+                    remote: true,
                     modal: true,
                     scope: this,
                     callback: function(fp) {
@@ -946,6 +949,7 @@ Ext.define('eXe.controller.Toolbar', {
             var fp = Ext.create("eXe.view.filepicker.FilePicker", {
 	            type: eXe.view.filepicker.FilePicker.modeSave,
 	            title: title,
+                remote: true,
 	            modal: true,
 	            scope: this,
 	            callback: function(fp) {
@@ -954,7 +958,7 @@ Ext.define('eXe.controller.Toolbar', {
 	            }
 	        });
 	        fp.appendFilters([
-	            { "typename": _("SCORM/IMS/ZipFile"), "extension": "*.txt", "regex": /.*\.zip$/ },
+	            { "typename": _("SCORM/IMS/ZipFile"), "extension": "*.zip", "regex": /.*\.zip$/ },
 	            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
 	            ]
 	        );

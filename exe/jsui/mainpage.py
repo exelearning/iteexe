@@ -45,7 +45,7 @@ from exe.jsui.stylemenu          import StyleMenu
 from exe.jsui.propertiespage     import PropertiesPage
 from exe.webui.authoringpage     import AuthoringPage
 from exe.webui.stylemanagerpage  import StyleManagerPage
-from exe.webui.renderable        import File
+from exe.webui.renderable        import File, Download
 from exe.export.websiteexport    import WebsiteExport
 from exe.export.textexport       import TextExport
 from exe.export.singlepageexport import SinglePageExport
@@ -93,7 +93,7 @@ class MainPage(RenderableLivePage):
         RenderableLivePage.__init__(self, parent, package, config)
         self.putChild("resources", File(package.resourceDir))
         self.tempDir = TempDirPath()
-        self.putChild("temp", File(self.tempDir, 'application/octet-stream', ('*')))
+        self.putChild("temp", Download(self.tempDir, 'application/octet-stream', ('*')))
         # styles directory
         # self.putChild("stylecss", File(self.config.stylesDir)
 
@@ -1032,7 +1032,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.filePickerAlert(_(u'Exported to %s') % filename)
 
     def exportText(self, client, filename):
         try:
@@ -1051,7 +1051,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.filePickerAlert(_(u'Exported to %s') % filename)
 
     def handleXliffExport(self, client, filename, source, target, copy, cdata):
         """
@@ -1091,7 +1091,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.filePickerAlert(_(u'Exported to %s') % filename)
 
     def exportEpub3(self, client, filename, stylesDir):
         try:
@@ -1105,7 +1105,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s' % str(e)))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.filePickerAlert(_(u'Exported to %s') % filename)
 
     def exportReport(self, client, filename, stylesDir):
         """
@@ -1126,7 +1126,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s' % str(e)))
             raise
-        client.alert(_(u'Exported to %s' % filename))
+        client.filePickerAlert(_(u'Exported to %s' % filename))
 
     def exportIMS(self, client, filename, stylesDir):
         """
@@ -1147,7 +1147,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.filePickerAlert(_(u'Exported to %s') % filename)
 
     # Utility methods
     def _startFile(self, filename):
