@@ -199,8 +199,8 @@ var $app = {
 		$("#finish").click(function(){
 			$app.getPreview();
 			var currentStyle = $app.getCurrentStyle();
-			var content = $("#my-content-css").val();
-			var nav = $("#my-nav-css").val();
+			var content = $app.formatToSave($("#my-content-css").val());
+			var nav = $app.formatToSave($("#my-nav-css").val());
 			
 			Ext.Msg.show({
 				title: $i18n.Confirm,
@@ -647,6 +647,29 @@ var $app = {
 		
 		if (hasCustomCSS) return css+"\n"+$app.advancedMark+adv;
 		return css;	
+	},
+	minify : function(str){
+		return str.replace(/(\r\n|\n|\r)/gm,"").replace("*/","*/\n").replace(/}/g,"}\n");
+	},
+	formatToSave : function(str){
+		var parts;
+		// Remove C:\fakepath\ (Google Chrome)
+		var path = "\\fakepath\\";
+		if (str.indexOf(path)!=-1) {
+			parts = str.split(path);
+			var start = parts[0];
+			path = start.slice((start.length-2),start.length)+path;
+			for (var i=0;i<3;i++) { // #bodyBGURL, #contentBGURL, #headerBGURL
+				str = str.replace(path, '');
+			}
+		}
+		// Minify
+		parts = str.split($app.advancedMark);
+		if (parts.length==2) {
+			str = this.minify(parts[0])+$app.advancedMark+parts[1];
+		}
+		str = str.replace(/(\r\n|\n|\r)/gm,"\n");
+		return str;
 	},
 	composeCSS : function(){
 		
