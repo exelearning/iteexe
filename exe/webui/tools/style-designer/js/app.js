@@ -1145,8 +1145,8 @@ var $app = {
 		
 		css = this.formatCSS(css);
 		if ($app.returnFullContent==true) {
-				if (type=="content") css = $app.baseContentCSS+"\n\n"+$app.mark+"\n"+css;
-				else css = $app.baseNavCSS+"\n\n"+$app.mark+"\n"+css;
+				if (type=="content") css = $app.baseContentCSS+$app.mark+"\n"+css;
+				else css = $app.baseNavCSS+$app.mark+"\n"+css;
 		}
 		return this.removeStylePath(css); // css is already formatted with formatCSS
 		
