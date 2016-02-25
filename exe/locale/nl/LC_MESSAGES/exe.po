@@ -3,13 +3,13 @@
 # Copyright (C) 2011-2016 EXELearning.net
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
-# Karel Werschkull <k.werschkull@hccnet.nl> 2013-2016.
+# Karel Werschkull <k.werschkull@@hccnet.nl> 2013-2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-02-14 19:03+0100\n"
-"PO-Revision-Date: 2016-02-24 15:20+0100\n"
+"PO-Revision-Date: 2016-02-25 10:53+0100\n"
 "Last-Translator: k.werschkull <k.werschkull@hccnet.nl>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
 "Language: nl\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Generator: Poedit 1.8.7\n"
 
 #: exe/application.py:189
-#, fuzzy, python-format
+#, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
 msgstr ""
 "Er is een fout opgetreden tijdens het laden  van het config bestand. Een backup is opgeslagen "
@@ -35,7 +35,7 @@ msgstr ""
 "%s"
 
 #: exe/application.py:247
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "eXeLearning, the EXtremely Easy to use eLearning authoring tool\n"
 "   Usage: %s [OPTION] [PACKAGE]\n"
@@ -47,6 +47,7 @@ msgid ""
 "in Documents and Settings/<user name>/Application Data/exe on Windows XP or\n"
 "Users/<user name>/AppData/Roaming/exe on Windows 7"
 msgstr ""
+"eXeLearning, het \n"
 "Gebruik: %s [OPTIE] [PACKAGE]\n"
 "  -V, --versie     print versie-informatie en stop \n"
 "  -h, --help       toon deze help en stop\n"
@@ -246,7 +247,6 @@ msgid "Case Study"
 msgstr "Gevalstudie"
 
 #: exe/engine/casestudyidevice.py:202
-#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, generally \n"
@@ -262,17 +262,19 @@ msgid ""
 "if run in a classroom situation can teams be setup to work on different aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
-"Een gevalstudie is een verhaal met een \n"
-"educatieve boodschap. Ze stelt een praktijkgeval voor, een realistische situatie\n"
-"waarop de student zijn kennis en ervaring kan toepassen. Bij het samenstellen van een \n"
+"Een case-study is een instrument dat leerlingen een oefening met een educatieve \n"
+"achtergrond geeft. Het beschrijft een praktijkgeval, in het algemeen een realistische "
+"situatie\n"
+"en vraagt de student om te demonstreren of te beschrijven welke actie zij zouden ondernemen \n"
+"om de taak af te handelen of een situatie op te lossen. De Case-study schept een situatie \n"
+"waarin de student zijn kennis en ervaring kan toepassen. Bij het samenstellen van een \n"
 "casestudy houdt u best rekening met volgende factoren:<ul> \n"
-"<li>\tWelke educatieve elementen bevat het verhaal</li>\n"
-"<li>\tWelke voorafgaande voorbereiding is nodig om de gevalstudie \n"
-"te kunnen aanvatten</li>\n"
-"<li>\tHoe past de gevalstudie in het geheel van de cursus</li>\n"
-"<li>\tHoe moeten de studenten omgaan met het materiaal en met elkaar bijv.\n"
-"kunnen in een klassituatie groepen worden gevormd rond bepaalde aspecten\n"
-"van de zaak en hoe wordt hun inbreng dan gecommuniceerd naar de anderen</li></ul>"
+"<li>  Welke educatieve elementen bevat het verhaal</li>\n"
+"<li>  Welke voorafgaande voorbereiding is nodig om met de Cas-study te kunnen beginnen</li>\n"
+"<li>  Hoe past de Case-study in de rest van de cursus</li>\n"
+"<li>  Hoe moeten de studenten omgaan met het materiaal en met elkaar bijv.\n"
+"Kunnen in een klassensituatie groepen worden gevormd rond bepaalde aspecten van het geval\n"
+"en zo ja, hoe wordt hun inbreng dan gecommuniceerd naar de klas</li></ul>"
 
 #: exe/engine/casestudyidevice.py:219 exe/engine/ejercicioresueltofpdidevice.py:218
 msgid ""
@@ -3022,7 +3024,6 @@ msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
 #: exe/exe_do:68
-#, fuzzy
 msgid ""
 "%prog, the commandline version of eXe.\n"
 "Usage: %prog [options] input_file [output_file]\n"
@@ -3030,6 +3031,7 @@ msgid ""
 "To show help:\n"
 "%prog -h"
 msgstr ""
+"%prog, de opdrachtregel versie van eXe.\n"
 "Gebruik: %prog [options] input_file [output_file]\n"
 "\n"
 "Om help te tonen:\n"
@@ -3385,9 +3387,8 @@ msgid "Publishing document to Procomún"
 msgstr "Publiceer algemeen document"
 
 #: exe/jsui/mainpage.py:785
-#, fuzzy
 msgid "Exporting package as SCORM"
-msgstr "Exporteer het IMS bestabnd als"
+msgstr "Exporteer het pakket als SCORM"
 
 #: exe/jsui/mainpage.py:809
 msgid "Starting authorized connection to Procomún API"
@@ -3651,23 +3652,20 @@ msgid "http://exelearning.net/html_manual/exe20_en/"
 msgstr "http://exelearning.net/html_manual/exe20_nl/"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:187
-#, fuzzy
 msgid "http://exelearning.net/?lang=en"
-msgstr "exelearning.net"
+msgstr "http://exelearning.net/?lang=en"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:190
 msgid "https://forja.cenatic.es/tracker/?group_id=197"
 msgstr "https://forja.cenatic.es/tracker/?group_id=197"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:193
-#, fuzzy
 msgid "http://exelearning.net/forums/"
-msgstr "exelearning.net"
+msgstr "http://exelearning.net/forums/"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:196
-#, fuzzy
 msgid "http://exelearning.net/downloads/"
-msgstr "exelearning.net"
+msgstr "http://exelearning.net/downloads/"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -3675,14 +3673,12 @@ msgid "About"
 msgstr "Over eXe"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:345
-#, fuzzy
 msgid "Release notes"
-msgstr "Release Notes"
+msgstr "Release notes"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:363 exe/jsui/scripts/app/view/ui/eXeToolbar.js:476
-#, fuzzy
 msgid "Legal Notes"
-msgstr "Release Notes"
+msgstr "Juridische opmerkingen"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:400 exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
 msgid "Preferences"
@@ -3703,9 +3699,8 @@ msgid "The current Style is not compatible with the Style Designer"
 msgstr "De huidige stijl is niet compatibel met de Style Designer"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:475
-#, fuzzy
 msgid "An unknown error occurred."
-msgstr "Er is een onverwachte fout opgetreden"
+msgstr "Er is een onverwachte fout opgetreden."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:478
 msgid ""
@@ -3810,25 +3805,23 @@ msgid "Copy source also in target"
 msgstr "Kopieer de bron ook naar het doel"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:766
-#, fuzzy
 msgid ""
 "If you don't choose this option, target field will be empty. Some Computer Aided Translation "
 "tools (e.g. OmegaT) just translate the content of the target field. If you are using this "
 "kind of tools, you will need to pre-fill the target field with a copy of the source field."
 msgstr ""
-"Als U deze optie open laat zal het overeenkomstige doelveld leegblijven. Sommige "
-"geuatomatiseerde vertaalprogramma's (b.v. OmegaT) vertalen uitsluitend de inhoud van het "
-"doelveld. Als U dit soort tools gebruikt zult U de doelveldden moeten vullen met een kopie "
-"van de bronvelden."
+"Als U deze optie open laat zal het overeenkomstige doelveld leeg blijven. Sommige "
+"geautomatiseerde vertaalprogramma's (b.v. OmegaT) vertalen uitsluitend de inhoud van het "
+"doelveld. Als U dit soort tools gebruikt zult U de doelvelden moeten vullen met een kopie van "
+"de bronvelden."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:777
-#, fuzzy
 msgid ""
 "This option will wrap all the exported fields in CDATA sections. This kind of sections are "
 "not recommended by XLIFF standard but it could be a good option if you want to use a pre-"
 "process tool (i.g.: Rainbow) before using the Computer Aided Translation software."
 msgstr ""
-"Deze optie sluit alle geexporteerde velden op in CDATA elementen. Dit soort elementen worden "
+"Deze optie sluit alle geëxporteerde velden op in CDATA elementen. Dit soort elementen worden "
 "niet aanbevolen door de XLIFF standaard maar kan een goede optie zijn als je een pre-process "
 "tool (zoals Rainbow) wilt gebruiken voordat je Computer Aided vertaal software wilt toepassen."
 
@@ -3853,9 +3846,8 @@ msgid "You must authorize eXe Learning to publish content into your Procomún ac
 msgstr "Je moet eXe Learning toestaan om materiaaql te publiceren in je algemene account "
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:841
-#, fuzzy
 msgid "Are you sure you want to start authorization process?"
-msgstr "Weet u zeker dat u alle velden van het formulier opnieuw wilt instellen?"
+msgstr "Weet u zeker dat u wilt beginnen met het goedkeuringsproces?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:852
 msgid "Procomún OAuth"
@@ -5026,14 +5018,12 @@ msgid "Disable All Internal Linking"
 msgstr "Interne hyperlinks volledig uitschakelen"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:215
-#, fuzzy
 msgid "Default license for the new documents"
-msgstr "Standaard opmaak voor het nieuwe document"
+msgstr "Standaard licentie voor de nieuwe documenten"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:235
-#, fuzzy
 msgid "The current document license can be modified in the Properties tab."
-msgstr "De huidige documentopmaak kan worden aangepast in de Eigenschappen tab"
+msgstr "De huidige document-licentie kan worden aangepast op het tabblad Eigenschappen."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:274
 msgid "Show this window on eXe start"
@@ -5094,9 +5084,8 @@ msgid "Return"
 msgstr "Enter"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:419
-#, fuzzy
 msgid "Read more"
-msgstr "maker"
+msgstr "Verder lezen"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:425
 msgid "Download style from repository and import into system."
@@ -5107,18 +5096,16 @@ msgid "Import style from custom URL"
 msgstr "Importeer de stijl vanuit een speciale URL"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:472
-#, fuzzy
 msgid "URL"
-msgstr "Paars"
+msgstr "URL"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:473
 msgid "URL to download the style from."
 msgstr "URL waar de stijl van gedownload kan worden"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:478
-#, fuzzy
 msgid "Import Style from URL"
-msgstr "Import stijl"
+msgstr "Importeer stijl vanuit URL"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:479
 msgid "Download style from URL and import into system."
@@ -5257,9 +5244,8 @@ msgid "XLIFF File"
 msgstr "XLIFF bestand"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
-#, fuzzy
 msgid "Publish"
-msgstr "uitgever"
+msgstr "Publiceren"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:223
 msgid "Procomún"
@@ -5326,14 +5312,12 @@ msgid "Tools"
 msgstr "Tools"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:384 exe/webui/tools/style-designer/langs/en.js:9
-#, fuzzy
 msgid "Style Designer"
-msgstr "instructie ontwerper"
+msgstr "Style Designer"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:392
-#, fuzzy
 msgid "Create new Style"
-msgstr "Verwijder stijl?"
+msgstr "Ontwerp een nieuwe stijl"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:397
 msgid "Edit current Style"
@@ -7285,9 +7269,8 @@ msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
 msgstr "Creative Commons Naamsvermelding Niet Commercieel Geen afgeleide werken Licentie 2.5"
 
 #: exe/webui/common.py:297
-#, fuzzy
 msgid "License:"
-msgstr "Licentie"
+msgstr "Licentie:"
 
 #: exe/webui/common.py:304
 msgid "Local Version"
@@ -7329,52 +7312,44 @@ msgid "Menu"
 msgstr "Menu"
 
 #: exe/webui/common.py:491
-#, fuzzy
 msgid "Accept"
-msgstr "Accepteer URL"
+msgstr "Accepteren"
 
 #: exe/webui/common.py:495 exe/webui/element.py:2708 exe/webui/element.py:2726
 msgid "Wrong"
 msgstr "Fout"
 
 #: exe/webui/common.py:496
-#, fuzzy
 msgid "Right answer"
-msgstr "Centreren"
+msgstr "Juiste antwoord"
 
 #: exe/webui/common.py:498
-#, fuzzy
 msgid "Selected letters"
-msgstr "Gekozen bestand"
+msgstr "Gekozen letters"
 
 #: exe/webui/common.py:499
-#, fuzzy
 msgid "Word"
-msgstr "Sleutelwoord"
+msgstr "Woord"
 
 #: exe/webui/common.py:500
-#, fuzzy
 msgid "Words"
-msgstr "Sleutelwoorden"
+msgstr "Woorden"
 
 #: exe/webui/common.py:501
-#, fuzzy
 msgid "Play"
-msgstr "plannen"
+msgstr "Spelen"
 
 #: exe/webui/common.py:503
 msgid "Results"
 msgstr "Resultaten"
 
 #: exe/webui/common.py:504
-#, fuzzy
 msgid "Total"
-msgstr "handleiding"
+msgstr "Totaal"
 
 #: exe/webui/common.py:505
-#, fuzzy
 msgid "Another word"
-msgstr "andere woorden"
+msgstr "Het volgende woord"
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7385,9 +7360,8 @@ msgid "Reload the game?"
 msgstr "Spel opnieuw beginnen?"
 
 #: exe/webui/common.py:508
-#, fuzzy
 msgid "Click on \"Play\" to start a new game."
-msgstr "De gebruiker moet hierop klikken om het spel te beginnen"
+msgstr "Klik op \"Spelen\" om een nieuw spel te beginnen"
 
 #: exe/webui/common.py:509
 msgid "Click on \"Another word\" to continue."
@@ -7602,9 +7576,8 @@ msgid "Some emphasis"
 msgstr "Lichte nadruk"
 
 #: exe/webui/editorpane.py:354
-#, fuzzy
 msgid "Select an icon"
-msgstr "Kies een licentie"
+msgstr "Kies een icoon"
 
 #: exe/webui/editorpane.py:368
 msgid "Icons"
@@ -8036,9 +8009,9 @@ msgid "SUBMIT ANSWERS"
 msgstr "VERZEND ANTWOORDEN"
 
 #: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318 exe/webui/quiztestblock.py:372
-#, fuzzy, python-format
+#, python-format
 msgid "Your score is %d%%"
-msgstr "Je score is"
+msgstr "Je score is %d%%"
 
 #: exe/webui/recomendacionfpdblock.py:68
 msgid "A Piece of Advice"
@@ -9207,9 +9180,8 @@ msgid "Node"
 msgstr "Knooppunt"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
-#, fuzzy
 msgid "Download Information"
-msgstr "Meta informatie"
+msgstr "Download informatie"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
@@ -9220,9 +9192,8 @@ msgid "File Type/Extension"
 msgstr "Bestands Soort/Extensie"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:9
-#, fuzzy
 msgid "Include File Information"
-msgstr "Textuele inormatie"
+msgstr "Bestands informatie toevoegen"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:10
 msgid "Remember that the text of the link should describe its purpose."
@@ -9250,19 +9221,16 @@ msgid "Attributes"
 msgstr "Attributen"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:6
-#, fuzzy
 msgid "Quote"
-msgstr "OPmerking"
+msgstr "Citaat"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
-#, fuzzy
 msgid "Quote Language"
-msgstr "Taal"
+msgstr "Taal van het citaat"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
-#, fuzzy
 msgid "Authorship"
-msgstr "auteur"
+msgstr "Auteurschap"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:9
 msgid "Authorship Language"
@@ -9285,105 +9253,89 @@ msgid "Use a two-letter ISO 639-1 code like \"en\", \"es\", \"fr\" or \"de\"."
 msgstr "Gebruik een 2-letter ISO 639-1 code zoals \"en\", \"es\", \"fr\" of \"de\"."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:15
-#, fuzzy
 msgid "Include Styles (improves presentation)"
-msgstr "Gebruik grafische schil (verbeterd weergave)"
+msgstr "Voeg stijlen in (verbetert de weergave)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/clearfloat/langs/en.js:3
 msgid "Clear (new line or block)"
 msgstr "Wis (nieuwe regel of blok) "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:2
-#, fuzzy
 msgid "Edit source code"
-msgstr "Opmaak modus"
+msgstr "Bewerk broncode "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:4
-#, fuzzy
 msgid "Search:"
-msgstr "Perzik"
+msgstr "Zoek:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:5
 msgid "Search for:"
 msgstr "Zoek naar:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:6
-#, fuzzy
 msgid "Replace:"
-msgstr "Vervangen"
+msgstr "Vervangen:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:7
 msgid "(Use /re/ syntax for regexp search)"
 msgstr "(Gebruik /re/ syntaxis voor regexp zoekopdracht)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:8
-#, fuzzy
 msgid "Replace?"
-msgstr "Vervangen"
+msgstr "Vervangen?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:11
-#, fuzzy
 msgid "Stop"
-msgstr "Bureaublad"
+msgstr "Stoppen"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
-#, fuzzy
 msgid "Replace with:"
-msgstr "Vervangen door"
+msgstr "Vervangen door:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
 msgstr "CodeMagic - syntax kleuring en inspringen"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
-#, fuzzy
 msgid "Edit code"
-msgstr "Opmaak modus"
+msgstr "Bwerk de code"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:4
 msgid "Auto close tags"
 msgstr "Sluit tags automatisch"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:5
-#, fuzzy
 msgid "Wrap text"
-msgstr "letterlijke tekst"
+msgstr "Tekstterugloop"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
-#, fuzzy
 msgid "Highlight syntax"
-msgstr "Markeren"
+msgstr "Markeer de syntax"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
-#, fuzzy
 msgid "Select a theme"
 msgstr "Selecteer een sjabloon"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
-#, fuzzy
 msgid "Search"
-msgstr "Perzik"
+msgstr "Zoek"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:9
-#, fuzzy
 msgid "Find next"
-msgstr "Zoeken"
+msgstr "Zoek de volgende"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
-#, fuzzy
 msgid "Find previous"
-msgstr "Vorige"
+msgstr "oek de vorige"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
-#, fuzzy
 msgid "Replace all"
-msgstr "Alles verv."
+msgstr "Alles vervangen"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:3
-#, fuzzy
 msgid "Definition List"
-msgstr "Definitiebeschrijving"
+msgstr "Definitielijst"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:4
 msgid ""
@@ -9397,14 +9349,12 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
-#, fuzzy
 msgid "Term"
-msgstr "anders"
+msgstr "Uitdrukking"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
-#, fuzzy
 msgid "Term definition"
-msgstr "afsluiter"
+msgstr "Omschrijving van de uitdrukking"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
@@ -9540,50 +9490,44 @@ msgstr "Tijdlijnen vereisen een derde niveau titel (Heading 3) meteen na elke He
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
-#, fuzzy
 msgid "Choose a type:"
-msgstr "Kies een afbeelding"
+msgstr "Kies een type"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
-#, fuzzy
 msgid "Accordion"
-msgstr "Decoratie"
+msgstr "Accordeon"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:18
 msgid "Collapsible content panels for presenting information in a limited space."
 msgstr "Inklapbare inhoud panelen voor het presenteren van informatie in een beperkte ruimte."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:20
-#, fuzzy
 msgid "Tabs"
-msgstr "tabel"
+msgstr "Tabbladen"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:21
 msgid "A single content area with multiple panels."
 msgstr "Een enkel inhoudveld met meerdere panelen"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
-#, fuzzy
 msgid "Pagination"
-msgstr "animatie"
+msgstr "Paginering"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
 msgid "Divide your content into different pages."
 msgstr "Verdeel je inhoud over verschillende pagina's"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:26
-#, fuzzy
 msgid "Carousel"
-msgstr "Faroese "
+msgstr "Carousel"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:27
 msgid "Present a list of contents in horizontal order."
 msgstr "Toon een horizontaal geordend inhoudsoverzicht. "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
-#, fuzzy
 msgid "Timeline"
-msgstr "nieuwe regel"
+msgstr "Tijdlijn"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
@@ -9602,9 +9546,8 @@ msgstr "Th plugin \"inlinepopups\" moet geactiveerd zijn"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:34
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:37
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:43
-#, fuzzy
 msgid "jQuery is required"
-msgstr "isvereistdoor"
+msgstr "jQuery is vereist"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:2
 msgid "Games (hangman...)"
@@ -9615,9 +9558,8 @@ msgid "Please enable JavaScript to play this game."
 msgstr "Gelieve Javascript in te schakelen om dit spel te spelen."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:9
-#, fuzzy
 msgid "Accessibility"
-msgstr "Hulp m.b.t. Toegankelijkheid"
+msgstr "Toegankelijkheid"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:10
 msgid "These games require JavaScript."
@@ -9628,9 +9570,8 @@ msgid "This is the message that the users with no JavaScript will see:"
 msgstr "Dit is de mededeling die gebruikers zonder javascript zullen zien"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
-#, fuzzy
 msgid "Message:"
-msgstr "Gebruik"
+msgstr "Mededeling:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
 msgid "You can change it at any time."
@@ -9653,29 +9594,24 @@ msgid "Case sensitive"
 msgstr "Hoofdlettergevoelig"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:21
-#, fuzzy
 msgid "abcdefghijklmnñopqrstuvwxyz"
-msgstr "abcdefghijklmnopqrstuvwxyz"
+msgstr "abcdefghijklmnopqrstuvwxyz "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:22
-#, fuzzy
 msgid "Words to guess"
-msgstr "Woord dat geraden moet worden"
+msgstr "Woord dat geraden moet worden "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:23
-#, fuzzy
 msgid "Word to guess"
-msgstr "Woord dat geraden moet worden"
+msgstr "Woord dat geraden moet worden "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:24
-#, fuzzy
 msgid "Hint or definition"
-msgstr "afsluiter"
+msgstr "Hint of definitie"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:25
-#, fuzzy
 msgid "Please write the Alphabet to Select From"
-msgstr "Alfabet waaruit een kjeuze gemaakt moet worden"
+msgstr "Alfabet waaruit een keuze gemaakt moet worden"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:26
 msgid "A word to guess is missing"
@@ -10439,24 +10375,21 @@ msgid "Include wrapper (improves presentation)"
 msgstr "Gebruik grafische schil (verbeterd weergave)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
-#, fuzzy
 msgid "Please select a language"
-msgstr "Kies de taal"
+msgstr "Kies een taal"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
 msgstr "Markup (HTML, etc.)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:14
-#, fuzzy
 msgid "C type"
-msgstr "Doctype"
+msgstr "C type"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
-#, fuzzy
 msgid "Light"
-msgstr "Rechts"
+msgstr "Licht"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
@@ -10468,9 +10401,8 @@ msgid "Line numbers"
 msgstr "Regelnummers"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:19
-#, fuzzy
 msgid "Line highlight"
-msgstr "Markeren"
+msgstr "Regel markeren"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Find What"
@@ -10857,33 +10789,28 @@ msgid "Behaviour"
 msgstr "Gedrag"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
-#, fuzzy
 msgid "Link"
-msgstr "Knipperen"
+msgstr "Snelkoppeling"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
-#, fuzzy
 msgid "Instructions:"
-msgstr "Aanwijzingen"
+msgstr "Aanwijzingen:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
 msgstr "Maak een pagina met een beschikbaar Tekst iDevice"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:12
-#, fuzzy
 msgid "No selection and not in link"
-msgstr "Toon omschrijving en link"
+msgstr "Geen selectie en niet in de snelkoppeling"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
-#, fuzzy
 msgid "Pages"
-msgstr "groot"
+msgstr "Pagina's"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
-#, fuzzy
 msgid "Link title"
-msgstr "Wiki-artikel"
+msgstr "Titel van de link"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
@@ -10898,9 +10825,8 @@ msgid "The tooltip will show the Link title."
 msgstr "De titel van de link verschijnt in de tooltip"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
-#, fuzzy
 msgid "Definition"
-msgstr "afsluiter"
+msgstr "Definitie"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
 msgid "The term could not be found"
@@ -10913,24 +10839,21 @@ msgstr ""
 "in de editor. "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
-#, fuzzy
 msgid "Definition:"
-msgstr "afsluiter"
+msgstr "Definitie:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
 msgstr "De tooltip toont de uitdrukking en de definitie."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:29
-#, fuzzy
 msgid "See definition"
-msgstr "afsluiter"
+msgstr "Zie definitie"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
-#, fuzzy
 msgid "Page"
-msgstr "groot"
+msgstr "Pagina"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
@@ -10941,9 +10864,8 @@ msgid "Define the Link: Select that page."
 msgstr "Definieer de link: Kies die pagina."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:34
-#, fuzzy
 msgid "The tooltip will show the content of the Free Text iDevice."
-msgstr "Het onderwerp van deze bron"
+msgstr "De tooltip toont de inhoud van het beschikbare Text iDevice"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:36
 msgid "Glossary"
@@ -10954,9 +10876,8 @@ msgid "Choose a page. Add a Free Text iDevice with a Definition List in it."
 msgstr "Kies een pagina. Maak een vrije tekst iDevice aan die een Definitie Lijst bevat."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:38
-#, fuzzy
 msgid "Definition List button"
-msgstr "Definitiebeschrijving"
+msgstr "Knop lijst met omschrijvingen"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:39
 msgid "Use the \"Definition List\" button to add terms and definitions:"
@@ -10971,23 +10892,20 @@ msgid "The tooltip will show the term definition."
 msgstr "De tooltip toont de betekenis van de uitdrukking"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:44
-#, fuzzy
 msgid "The Link is required"
-msgstr "isvereistdoor"
+msgstr "De snelkoppeling is noodzakelijk"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
-#, fuzzy
 msgid "Please select a Page"
-msgstr "Selecteer een .flv-bestand."
+msgstr "Kies een pagina"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
 msgid "The Link title is required"
 msgstr "De link is vereist"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:47
-#, fuzzy
 msgid "Please write the Definition"
-msgstr "afsluiter"
+msgstr "Maak de omschrijving"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:49
 msgid "Close behaviour:"
@@ -11006,28 +10924,24 @@ msgid "Link behaviour:"
 msgstr "Link gedrag:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:53
-#, fuzzy
 msgid "Open in the same window"
-msgstr "Link in hetzelfde venster openen"
+msgstr "Open in hetzelfde venster"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:54
-#, fuzzy
 msgid "Open in a new window"
-msgstr "In nieuw venster openen"
+msgstr "Open in een nieuw venster"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:56
 msgid "Change the styling:"
 msgstr "verander de opmaak:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:63
-#, fuzzy
 msgid "Rounded"
-msgstr "Geluid"
+msgstr "Afgerond"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:64
-#, fuzzy
 msgid "Shadow"
-msgstr "Geen schaduw"
+msgstr "Schaduw"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Insert Current Date/Time"
@@ -11392,24 +11306,23 @@ msgid "Error creating style, local style already exists. "
 msgstr "Fout bij het aanmaken van de stijl, de locale stijl bestaat al"
 
 #: exe/webui/styledesigner.py:126
-#, fuzzy, python-format
+#, python-format
 msgid "Style %s successfully created!"
-msgstr "Bestand '%s' met succes geimporteerd naar '%s'."
+msgstr "Stijl %s met succes aangemaakt!"
 
 #: exe/webui/styledesigner.py:134
-#, fuzzy, python-format
+#, python-format
 msgid "Style %s successfully saved!"
-msgstr "Bestand '%s' met succes geimporteerd naar '%s'."
+msgstr "Stijl %s met succes opgeslagen"
 
 #: exe/webui/styledesigner.py:198
-#, fuzzy, python-format
+#, python-format
 msgid "Style directory %s already exists"
-msgstr "De stijlnaam bestaat al: %s"
+msgstr "Stijlmap %s bestaat al"
 
 #: exe/webui/styledesigner.py:258
-#, fuzzy
 msgid "The style name already exists"
-msgstr "De stijlnaam bestaat al: %s"
+msgstr "De stijlnaam bestaat al"
 
 #: exe/webui/styledesigner.py:275
 msgid "Error saving style, style directory does not exist"
@@ -11420,9 +11333,8 @@ msgid "Success"
 msgstr "Succes"
 
 #: exe/webui/stylemanagerpage.py:152
-#, fuzzy
 msgid "Successfully imported style"
-msgstr "Stijl succesvol geimporteerd: %s"
+msgstr "Stijl succesvol geimporteerd"
 
 #: exe/webui/stylemanagerpage.py:156
 #, python-format
@@ -11446,9 +11358,8 @@ msgid "Overwrite local version of this style?"
 msgstr "DE locale versie van deze stijl overschrijven?"
 
 #: exe/webui/stylemanagerpage.py:339
-#, fuzzy
 msgid "Style already exists. "
-msgstr "De stijlnaam bestaat al: %s"
+msgstr "De stijl bestaat al."
 
 #: exe/webui/stylemanagerpage.py:340
 msgid "Importing this style will overwrite local style, this action cannot be undone. "
@@ -11457,9 +11368,8 @@ msgstr ""
 "ongedaan gemaakt worden."
 
 #: exe/webui/stylemanagerpage.py:341
-#, fuzzy
 msgid "Are you sure you want to install remote style?. "
-msgstr "Weet u zeker dat u alle inhoud wilt wissen?"
+msgstr "Weet u zeker dat u de stijl wilt installeren?"
 
 #: exe/webui/stylemanagerpage.py:363
 msgid "Error when downloading style from repository"
@@ -11497,89 +11407,72 @@ msgid "An unexpected error has occurred"
 msgstr "Er is een onverwachte fout opgetreden"
 
 #: exe/webui/tools/style-designer/langs/en.js:12
-#, fuzzy
 msgid "General settings"
-msgstr "Algemene instellingen"
+msgstr "Algemene instellingen "
 
 #: exe/webui/tools/style-designer/langs/en.js:13
-#, fuzzy
 msgid "Page width"
-msgstr "Vervangen door"
+msgstr "Pagina breedte"
 
 #: exe/webui/tools/style-designer/langs/en.js:14
-#, fuzzy
 msgid "Percentage"
-msgstr "Eexperimenteel"
+msgstr "Percentage"
 
 #: exe/webui/tools/style-designer/langs/en.js:15
-#, fuzzy
 msgid "Pixels"
-msgstr "Breedte (pixels)"
+msgstr "Pixels"
 
 #: exe/webui/tools/style-designer/langs/en.js:16
-#, fuzzy
 msgid "Page position"
-msgstr "Positie"
+msgstr "Paginapositie"
 
 #: exe/webui/tools/style-designer/langs/en.js:19
-#, fuzzy
 msgid "Shadow color"
-msgstr "Score tonen?"
+msgstr "Schaduwkleur"
 
 #: exe/webui/tools/style-designer/langs/en.js:20
-#, fuzzy
 msgid "Border width"
-msgstr "Rand"
+msgstr "Rand breedte"
 
 #: exe/webui/tools/style-designer/langs/en.js:21
-#, fuzzy
 msgid "Border color"
-msgstr "Randkleur"
+msgstr "Randkleur "
 
 #: exe/webui/tools/style-designer/langs/en.js:22
-#, fuzzy
 msgid "Text and Links"
-msgstr "Links indexeren en volgen"
+msgstr "Tekst en snelkoppelingen"
 
 #: exe/webui/tools/style-designer/langs/en.js:25
-#, fuzzy
 msgid "Text color"
-msgstr "Tekstkleur"
+msgstr "Tekstkleur "
 
 #: exe/webui/tools/style-designer/langs/en.js:27
-#, fuzzy
 msgid "Links"
-msgstr "Knipperen"
+msgstr "Snelkoppelingen"
 
 #: exe/webui/tools/style-designer/langs/en.js:28
-#, fuzzy
 msgid "Links color"
-msgstr "Linkkleur"
+msgstr "Kleur snelkoppelingen"
 
 #: exe/webui/tools/style-designer/langs/en.js:30
-#, fuzzy
 msgid "Style description"
-msgstr "Beschrijving"
+msgstr "Beschrijving van de stijl"
 
 #: exe/webui/tools/style-designer/langs/en.js:32
-#, fuzzy
 msgid "Author URL"
-msgstr "auteur"
+msgstr "Nieuwe URL"
 
 #: exe/webui/tools/style-designer/langs/en.js:33
-#, fuzzy
 msgid "Style name"
-msgstr "Bestandsnaam:"
+msgstr "Stijlnaam"
 
 #: exe/webui/tools/style-designer/langs/en.js:34
-#, fuzzy
 msgid "Save to name the new Style."
-msgstr "Verwijder stijl?"
+msgstr "Stijl opslaan onder een neiuwe naam."
 
 #: exe/webui/tools/style-designer/langs/en.js:35
-#, fuzzy
 msgid "Style version"
-msgstr "heeftversie"
+msgstr "Versie van de style"
 
 #: exe/webui/tools/style-designer/langs/en.js:36
 msgid ""
@@ -11597,28 +11490,24 @@ msgid "Page background (only Web Site)"
 msgstr "Achtergrond van de pagina (alleen voor website)"
 
 #: exe/webui/tools/style-designer/langs/en.js:43
-#, fuzzy
 msgid "Background color"
-msgstr "Achtergrondkleur"
+msgstr "Achtergrondkleur "
 
 #: exe/webui/tools/style-designer/langs/en.js:44
-#, fuzzy
 msgid "Select image"
-msgstr "Kies een afbeelding"
+msgstr "Kies een afbeelding "
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
 msgstr "Links - Boven"
 
 #: exe/webui/tools/style-designer/langs/en.js:49
-#, fuzzy
 msgid "Left - Center"
-msgstr "Kies een licentie"
+msgstr "Links - Midden"
 
 #: exe/webui/tools/style-designer/langs/en.js:50
-#, fuzzy
 msgid "Left - Bottom"
-msgstr "Onderkant tekst"
+msgstr "Links - Onderaan"
 
 #: exe/webui/tools/style-designer/langs/en.js:51
 msgid "Center - Center"
@@ -11629,18 +11518,16 @@ msgid "Center - Top"
 msgstr "Midden - Boven"
 
 #: exe/webui/tools/style-designer/langs/en.js:53
-#, fuzzy
 msgid "Center - Bottom"
-msgstr "Onderkant tekst"
+msgstr "Midden - Onder"
 
 #: exe/webui/tools/style-designer/langs/en.js:54
 msgid "Right - Top"
 msgstr "Rechts - Boven"
 
 #: exe/webui/tools/style-designer/langs/en.js:55
-#, fuzzy
 msgid "Right - Center"
-msgstr "Centreren"
+msgstr "Rechts - Onder"
 
 #: exe/webui/tools/style-designer/langs/en.js:56
 msgid "Right - Bottom"
@@ -11670,14 +11557,12 @@ msgstr ""
 "SCORM of EPUB3-."
 
 #: exe/webui/tools/style-designer/langs/en.js:67
-#, fuzzy
 msgid "Header and Footer"
-msgstr "Lees en vul aan"
+msgstr "KOptekst en voettekst"
 
 #: exe/webui/tools/style-designer/langs/en.js:71
-#, fuzzy
 msgid "Project title"
-msgstr "Project kenmerken"
+msgstr "Project titel"
 
 #: exe/webui/tools/style-designer/langs/en.js:72
 msgid "Hide the title"
@@ -11688,19 +11573,16 @@ msgid "same font as the page"
 msgstr "zelfde lettertype als de pagina"
 
 #: exe/webui/tools/style-designer/langs/en.js:77
-#, fuzzy
 msgid "Top margin"
-msgstr "Bovenmarge"
+msgstr "Bovengrens"
 
 #: exe/webui/tools/style-designer/langs/en.js:78
-#, fuzzy
 msgid "Font size"
-msgstr "Tekengrootte:"
+msgstr "Grootte  van de letters"
 
 #: exe/webui/tools/style-designer/langs/en.js:80
-#, fuzzy
 msgid "Navigation"
-msgstr "navigatiekaart"
+msgstr "Navigatie"
 
 #: exe/webui/tools/style-designer/langs/en.js:81
 msgid "Main menu"
@@ -11711,54 +11593,44 @@ msgid "Hide the menu"
 msgstr "Verbewrg het menu"
 
 #: exe/webui/tools/style-designer/langs/en.js:83
-#, fuzzy
 msgid "Horizontal navigation"
-msgstr "Horizontale positie"
+msgstr "Horizontale navigatie"
 
 #: exe/webui/tools/style-designer/langs/en.js:84
-#, fuzzy
 msgid "Active background"
-msgstr "Titel van de achtergrond afbeelding?"
+msgstr "Active achtergrond"
 
 #: exe/webui/tools/style-designer/langs/en.js:85
-#, fuzzy
 msgid "Active link color"
-msgstr "Actieve kleur"
+msgstr "Kleur van de actieve link"
 
 #: exe/webui/tools/style-designer/langs/en.js:86
-#, fuzzy
 msgid "Other navigation options"
-msgstr "navigatiekaart"
+msgstr "Andere navigatie opties"
 
 #: exe/webui/tools/style-designer/langs/en.js:87
-#, fuzzy
 msgid "Use icons"
-msgstr "Seconden"
+msgstr "Gebruik iconen"
 
 #: exe/webui/tools/style-designer/langs/en.js:89
-#, fuzzy
 msgid "Icons color"
-msgstr "Linkkleur"
+msgstr "Icon kleur"
 
 #: exe/webui/tools/style-designer/langs/en.js:90
-#, fuzzy
 msgid "Grey"
-msgstr "afbeelding"
+msgstr "Grijs"
 
 #: exe/webui/tools/style-designer/langs/en.js:94
-#, fuzzy
 msgid "With emphasis"
-msgstr "Geen nadruk"
+msgstr "Met nadruk"
 
 #: exe/webui/tools/style-designer/langs/en.js:95
-#, fuzzy
 msgid "Title color"
-msgstr "Actieve kleur"
+msgstr "Titel kleur"
 
 #: exe/webui/tools/style-designer/langs/en.js:96
-#, fuzzy
 msgid "Title background"
-msgstr "Titel van de achtergrond afbeelding?"
+msgstr "Titel van de achtergrond afbeelding"
 
 #: exe/webui/tools/style-designer/langs/en.js:97
 msgid "No emphasis (Free Text...)"
@@ -11802,14 +11674,12 @@ msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr "Schaduwen werken niet in browsers die SSS3 niet ondersteunen (IE6, IE7...)."
 
 #: exe/webui/tools/style-designer/langs/en.js:111
-#, fuzzy
 msgid "Finish"
-msgstr "Fins"
+msgstr "Beeindigen"
 
 #: exe/webui/tools/style-designer/langs/en.js:113
-#, fuzzy
 msgid "Save as"
-msgstr "zeer gemakkelijk"
+msgstr "Opslaan als"
 
 #: exe/webui/tools/style-designer/langs/en.js:115
 msgid "Save the current design and close the Style Designer?"
@@ -11820,9 +11690,8 @@ msgid "Save all changes? This cannot be undone."
 msgstr "Alle wijzigingen opslaan? Dit kan niet ongedaan gemaakt worden."
 
 #: exe/webui/tools/style-designer/langs/en.js:117
-#, fuzzy
 msgid "Style name:"
-msgstr "Bestandsnaam:"
+msgstr "Naam van de stijl"
 
 #: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Your browser is not compatible with this tool."
@@ -11859,9 +11728,8 @@ msgid "Drag markers to pick a color"
 msgstr "Sleep markers om een kleur te kiezen"
 
 #: exe/webui/tools/style-designer/langs/en.js:133
-#, fuzzy
 msgid "Current"
-msgstr "vertegenwoordigen"
+msgstr "Huidige"
 
 #: exe/webui/tools/style-designer/langs/en.js:139
 msgid "New Color - Press OK to Commit"
