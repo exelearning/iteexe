@@ -22,10 +22,10 @@ from nevow import rend, inevow
 
 
 class ProcomunOauth(Renderable, rend.Page):
-    CLIENT_ID = 'H5hAmUY6TpszVrKVDrsHdzOF8TDCEkwM'
-    CLIENT_SECRET = '2CztfIIaAD4C7iZdIUgfJRivFfOFNQaGekuYHdnGrMdnLhC6'
+    CLIENT_ID = 'qJjpq2uU2dDlp4a3teMTXPILrHMqYOoI'
+    CLIENT_SECRET = '1RVxCfU4XeFhGkwf1zMVhA5ySPDJIiz7wjZjK4O0wUH5MFRc'
     BASE_URL = 'https://agrega2-front-pre.emergya.es'
-    REDIRECT_URI = 'http://localhost:51235/oauth/procomun/callback'
+    REDIRECT_URI = 'https://exe.open-phoenix.com/oauth/procomun/callback'
     AUTHORIZATION_BASE_URL = BASE_URL + '/oauth2/authorize'
     TOKEN_URL = BASE_URL + '/oauth2/token'
     name = 'procomun'
