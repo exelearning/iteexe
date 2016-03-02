@@ -132,7 +132,10 @@ var $exe = {
 					w = this.width || 320;
 					h = this.height || 240;
 					f = v.attr("value");
-					e.before('<video width="' + w + '" height="' + h + '" src="' + f + '" controls="controls"><a href="' + f + '">' + f + '</a></video>').remove()
+					var l = '<a href="' + f + '" download>' + f + '</a>'; // Link to the file
+					var c = '<video width="' + w + '" height="' + h + '" src="' + f + '" controls="controls">'+l.replace(" download","")+'</video>'; // Code to insert
+					if (f.substr(f.length-4)==".flv") c = l+"<br />"+c; // Add a link to FLV file before the VIDEO
+					e.before(c).remove();
 				} else if (p.indexOf("xspf_player.swf?song_url=") == 0) {
 					f = p.replace("xspf_player.swf?song_url=", "");
 					f = f.split("&")[0];
