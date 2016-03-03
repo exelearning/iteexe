@@ -1,32 +1,33 @@
 # eXeLearning Catalan (Valencia) PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2001-2014 eXeLearning.net
+# Copyright (C) 2001-2016 eXeLearning.net
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
 # Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012.
-# Pilar Embid Giner <embid_mar@gva.es>, 2012, 2013, 2014.
 # Angel Berlanas Vicente <angel.berlanas@gmail.com>, 2013-2014.
+# Pilar Embid Giner <embid_mar@gva.es>, 2012, 2013, 2014, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2016-02-14 19:03+0100\n"
-"PO-Revision-Date: 2014-10-23 10:36+0200\n"
+"PO-Revision-Date: 2016-03-03 12:54+0200\n"
 "Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
 "Language-Team: LliureX\n"
-"Language: ca_ES\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "Generated-By: Babel 1.3\n"
 
 #: exe/application.py:189
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
 msgstr ""
-"S'ha produït un error mentres es carregava la vostra configuració. S'ha "
-"guardat una còpia de seguretat a %s"
+"S'ha produït un error mentre es carregava el fitxer de configuració. S'ha "
+"guardat una còpia de seguretat en %s"
 
 #: exe/application.py:208
 #, python-format
@@ -34,11 +35,11 @@ msgid ""
 "An error has occurred when loading your Idevice Store. A backup is saved "
 "at %s"
 msgstr ""
-"S'ha produït un error mentres es carregava el magatzem d'Idevice. S'ha "
-"guardat una còpia de seguretat a %s"
+"S'ha produït un error mentre es carregava el magatzem Idevice. S'ha guardat "
+"una còpia de seguretat en %s"
 
 #: exe/application.py:247
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "eXeLearning, the EXtremely Easy to use eLearning authoring tool\n"
 "   Usage: %s [OPTION] [PACKAGE]\n"
@@ -51,15 +52,16 @@ msgid ""
 "or\n"
 "Users/<user name>/AppData/Roaming/exe on Windows 7"
 msgstr ""
+"eXeLearning, l'eina d'autoria d'aprenentatge electrònic EXtremadament fàcil "
+"d'utilitzar\n"
 "Ús: %s [OPCION] [PACKAGE]\n"
 "  -V, --version    mostra la informació de la versió i ix\n"
-"  -h, --help       mostra esta ajuda i ix\n"
-"  --standalone     executa completament des del directori actual\n"
-"  --portable       executa en mode portable\n"
-"Els paràmetres es lligen a exe.conf a $HOME/.exe en Linux/Unix/Mac OS o\n"
-"als Documents and Settings/<user name>/Application Data/exe en Windows XP"
-" o\n"
-"Users/<user name>/AppData/Roaming/exe en Windows 7."
+"  -h, --help       mostra l'ajuda i ix\n"
+"  --standalone     s'executa completament des del directori actual\n"
+"  --portable       s'executa en mode portable\n"
+"La configuració es llig en exe.conf en $HOME/.exe en Linux/Unix/Mac OS o\n"
+"en Els meus documents/<user name>/Aplicacions/exe en Windows XP o\n"
+"Usuaris/<user name>/AppData/Roaming/exe en Windows 7."
 
 #: exe/engine/appletidevice.py:70
 msgid "Java Applet"
@@ -95,10 +97,10 @@ msgid ""
 "buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
-"Afig tots els fitxers proporcionats per a l'aplicació\n"
-"excepte el fitxer .txt, d'un en un, utilitzant els botons d'afig fitxers "
-"i penja. Els \n"
-"fitxers, una vegada penjats, es mostren davall del camp de codi de "
+"Afig tots els fitxers proporcionats per a l'aplicació,\n"
+"excepte el fitxer .txt, d'un en un utilitzant els botons d'afegir i penjar "
+"fitxers.\n"
+"Els fitxers, una vegada penjats, es mostren davall del camp de codi de "
 "l'aplicació."
 
 #: exe/engine/appletidevice.py:82
@@ -109,7 +111,7 @@ msgid ""
 "code field."
 msgstr ""
 "\"Busqueu el fitxer .txt (al fitxer de l'aplicació de Java) \n"
-"i obriu-lo. Copieu els continguts d'este fitxer <ctrl A, ctrl C> al camp "
+"i obriu-lo. Copieu els continguts d'aquest fitxer <ctrl A, ctrl C> al camp "
 "del codi de l'aplicació \n"
 "de Java."
 
@@ -123,10 +125,10 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr ""
 " <p>Si l'aplicació de Java que esteu afegint ha sigut generada\n"
-" per un dels programes d'este menú desplegable, seleccioneu-lo, \n"
+" per un dels programes d'aquest menú desplegable, seleccioneu-lo, \n"
 "després afegiu el fitxer de dades generat pel vostre programa.</p>\n"
-"<p>Ex. per a aplicacions en Java del Geogebra, seleccioneu Geogebra i "
-"afegiu després el fitxer .ggb \n"
+"<p>Ex. per a aplicacions en Java del Geogebra, seleccioneu Geogebra i afegiu "
+"després el fitxer .ggb \n"
 "creat amb el Geogebra.</p>"
 
 #: exe/engine/appletidevice.py:190
@@ -141,14 +143,14 @@ msgstr "L'iDevice %s no té paquet"
 
 #: exe/engine/appletidevice.py:443
 msgid "Sorry, this URL is unreachable"
-msgstr "Este URL no és accessible"
+msgstr "Aquest URL no és accessible."
 
 #: exe/engine/appletidevice.py:528
 msgid ""
 "Click on the AddFiles button to select the .ggb file and then click on "
 "the Upload button."
 msgstr ""
-"Feu clic en el botó Afig fitxers per a seleccionar el fitxer .ggb i a "
+"Feu clic en el botó «Afig fitxers» per a seleccionar el fitxer .ggb i a "
 "continuació feu clic en el botó Penja."
 
 #: exe/engine/appletidevice.py:538
@@ -157,16 +159,16 @@ msgid ""
 " on the Upload button.<p>The activity will be visible when the HTML file "
 "will be generated from eXe."
 msgstr ""
-"Feu clic en el botó Afig fitxers per a seleccionar el fitxer .jclic i a "
-"continuació feu clic en el botó Penja.<p>L'activitat serà visible quan es"
-" genere el fitxer HTML des de l'eXe."
+"Feu clic en el botó «Afig fitxers» per a seleccionar el fitxer .jclic i a "
+"continuació feu clic en el botó Penja.<p>L'activitat serà visible quan es "
+"genere el fitxer HTML des de l'eXe."
 
 #: exe/engine/appletidevice.py:548
 msgid ""
 "Click on the AddFiles button to select the .sb or .scratch file and then "
 "click on the Upload button."
 msgstr ""
-"Feu clic en el botó Afig fitxers per a seleccionar el fitxer .sb o "
+"Feu clic en el botó «Afig fitxers» per a seleccionar el fitxer .sb o "
 ".scratch i a continuació feu clic en el botó Penja."
 
 #: exe/engine/appletidevice.py:559
@@ -192,7 +194,7 @@ msgid ""
 "then add the data/applet file generated by your program."
 msgstr ""
 " <p>Si l'aplicació de Java que esteu afegint ha sigut generada\n"
-" per un dels programes d'este menú desplegable, seleccioneu-lo, \n"
+" per un dels programes d'aquest menú desplegable, seleccioneu-lo, \n"
 "després afegiu el fitxer de dades generat pel vostre programa."
 
 #: exe/engine/attachmentidevice.py:44 exe/engine/extendedfieldengine.py:336
@@ -210,11 +212,11 @@ msgid ""
 " the file is. Learners can click on the attachment link and can download "
 "the attachment."
 msgstr ""
-"L'iDevice Adjunt s'utilitza per a adjuntar fitxers al vostre contingut "
-".elp. Per exemple, si teniu un fitxer PDF o un fitxer de presentació PPT "
-"(ODP) que voleu que l'alumnat mire, este fitxer es pot adjuntar i "
-"etiquetar per a indicar què és i la mida que té. L'alumnat pot fer clic "
-"en l'enllaç de l'adjunt i baixar-lo."
+"L'iDevice Adjunt s'utilitza per a adjuntar fitxers al contingut .elp. Per "
+"exemple, si teniu un fitxer PDF o un fitxer de presentació PPT (ODP) que "
+"voleu que l'alumnat mire, aquest fitxer es pot adjuntar i etiquetar per a "
+"indicar què és i la mida que té. L'alumnat pot fer clic en l'enllaç de "
+"l'adjunt i baixar-lo."
 
 #: exe/engine/attachmentidevice.py:58
 msgid ""
@@ -222,10 +224,9 @@ msgid ""
 "want to provide instructions on what you require the learner to do once "
 "the file is downloaded or how the material should be used."
 msgstr ""
-"Escriviu el text que voleu associar amb la baixada del fitxer. Podeu "
-"donar \n"
-"instruccions sobre què ha de fer l'alumnat amb el fitxer  baixat o com "
-"s'ha d'utilitzar el material."
+"Escriviu el text que voleu associar amb la baixada del fitxer. Podeu donar \n"
+"instruccions sobre què ha de fer l'alumnat amb el fitxer  baixat o com s'ha "
+"d'utilitzar el material."
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
@@ -248,11 +249,11 @@ msgid ""
 "attachment.</p><p>For example: <code>Sales Forecast.doc "
 "(500kb)</code></p>"
 msgstr ""
-"<p>Assigneu una etiqueta a cada fitxer adjunt. És útil incloure el tipus "
-"de fitxer; per exemple, pdf, doc (odt), ppt (odp), etc.</p> <p> També és "
-"molt recomanable incloure'n la mida per tal que quan s'exporte el fitxer "
-"a un lloc web, es tinga una idea del temps que tardarà en baixar el "
-"fitxer adjunt.</p> <p> Per exemple: <code>Vendes.odt (500 kb)</code> </p>"
+"<p>Assigneu una etiqueta a cada fitxer adjunt. És útil incloure el tipus de "
+"fitxer; per exemple, pdf, doc (odt), ppt (odp), etc.</p> <p> També és molt "
+"recomanable incloure'n la mida per tal que quan s'exporte el fitxer a un "
+"lloc web, es tinga una idea del temps que tardarà en baixar el fitxer "
+"adjunt.</p> <p> Per exemple: <code>Vendes.odt (500 kb)</code> </p>"
 
 #: exe/engine/attachmentidevice.py:105
 #, python-format
@@ -272,15 +273,14 @@ msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
 msgstr ""
-"Escolliu una imatge opcional que es mostrarà a l'alumnat en completar "
-"esta pregunta."
+"Trieu una imatge opcional que es mostrarà a l'alumnat en completar la "
+"pregunta."
 
 #: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
 msgstr "Cas d'estudi"
 
 #: exe/engine/casestudyidevice.py:202
-#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -303,22 +303,20 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
-"Un cas d'estudi és un iDevice que proveïx l'alumnat \n"
-"d'una simulació que s'usa com a base de l'aprenentatge. A partir de "
-"situacions, generalment, \n"
-"basades en la realitat, l'alumnat ha de demostrar o descriure les accions"
-" que faria \n"
+"Un cas d'estudi és un iDevice que proveeix l'alumnat \n"
+"d'una simulació d'un concepte bàsic. A partir de situacions, generalment, \n"
+"basades en la realitat, l'alumnat ha de demostrar o descriure les accions "
+"que faria \n"
 "per a completar la tasca o resoldre la situació. El cas d'estudi \n"
-"permet a l'alumnat aplicar els seus coneixements i la seua experiència "
-"per a completar les tasques \n"
-"assignades. Quan dissenyeu el cas d'estudi tingueu en compte:<ul> \n"
+"permet a l'alumnat aplicar els seus coneixements i la seua experiència per a "
+"completar les tasques \n"
+"assignades. En dissenyar el cas d'estudi tingueu en compte el següent:<ul> \n"
 "<li>\t Quins elements d'aprenentatge es tracten en la història</li>\n"
 "<li>\t Quina preparació prèvia li cal a l'alumnat per a resoldre el cas "
 "d'estudi. </li>\n"
 "<li>\t On s'ha de col·locar el cas d'estudi en la resta del curs.</li>\n"
-"<li>\t Com interacciona l'alumnat entre si i amb el material proposat. \n"
-"P. ex: A l'aula, com poden els equips treballar diferents aspectes del "
-"cas, \n"
+"<li>\t Com interacciona l'alumnat entre si i amb els materials. \n"
+"P. ex: A l'aula, com poden els equips treballar diferents aspectes del cas, \n"
 "i com es fa la posada en comú a la resta de la classe</li></ul> "
 
 #: exe/engine/casestudyidevice.py:219
@@ -332,8 +330,7 @@ msgid ""
 "in order to gain resolution of the situation."
 msgstr ""
 "Crea la història del cas. Un bon cas és aquell \n"
-"que descriu una controvèrsia o mostra una escena descrivint els caràcters"
-" \n"
+"que descriu una controvèrsia o mostra una escena descrivint els caràcters \n"
 "involucrats en la situació. També ha de permetre les accions \n"
 "encaminades a resoldre el conflicte de la situació."
 
@@ -353,7 +350,7 @@ msgid ""
 "presented. "
 msgstr ""
 "Descriu les tasques rellevants a la història \n"
-"del cas proporcionat. Estes poden ser en forma de preguntes o "
+"del cas proporcionat. Aquestes poden ser en forma de preguntes o "
 "instruccions \n"
 "amb les quals l'alumnat pot resoldre el dilema \n"
 "presentat."
@@ -397,7 +394,7 @@ msgstr ""
 #: exe/engine/parasabermasfpdidevice.py:35
 #: exe/engine/recomendacionfpdidevice.py:35
 msgid "Enter the text that will appear on this iDevice"
-msgstr "Introduïu el text que apareixerà en este iDevice"
+msgstr "Introduïu el text que apareixerà en aquest iDevice"
 
 #: exe/engine/casopracticofpdidevice.py:38
 #: exe/engine/casopracticofpdidevice.py:136
@@ -633,11 +630,11 @@ msgstr "Després del retard (ms) oculta el contingut mostrat anteriorment"
 
 #: exe/engine/clickinorderidevice.py:166
 msgid "Hint to Show for this item"
-msgstr "Pista que s'ha de mostrar per a este element"
+msgstr "Pista que s'ha de mostrar per a aquest element"
 
 #: exe/engine/clickinorderidevice.py:166
 msgid "The hint that will appear under the map for this item"
-msgstr "La pista que apareixerà davall del mapa d'este element"
+msgstr "La pista que apareixerà davall del mapa d'aquest element"
 
 #: exe/engine/clickinorderidevice.py:167
 msgid "Item Revealed"
@@ -663,13 +660,12 @@ msgid ""
 " </li></ol>"
 msgstr ""
 "<p> Els exercicis de compleció són texts o frases en què l'alumnat ha "
-"d'omplir un text amb les paraules que hi falten. S'utilitzen sovint per "
-"als propòsits següents:</p><ol><li> Per a avaluar els coneixements dels "
-"conceptes principals (així es pot fer un preexamen, un exercici formatiu "
-"o una avaluació sumatòria).</li><li>Per a avaluar la comprensió "
-"lectora.</li><li> Per a avaluar el coneixement del vocabulari.</li><li> "
-"Per a avaluar la formació de mots i/o la competència "
-"gramatical.></li></ol>"
+"d'omplir un text amb les paraules que hi falten. S'utilitzen sovint per als "
+"propòsits següents:</p><ol><li> Per a avaluar els coneixements dels "
+"conceptes principals (així es pot fer un preexamen, un exercici formatiu o "
+"una avaluació sumatòria).</li><li>Per a avaluar la comprensió "
+"lectora.</li><li> Per a avaluar el coneixement del vocabulari.</li><li> Per "
+"a avaluar la formació de mots i/o la competència gramatical.></li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -695,27 +691,27 @@ msgid ""
 " idea to get a colleague to test the test/exercise to make sure there are"
 " no surprises!  </p>  </dd></dl>"
 msgstr ""
-"<dl>  <dt>Si l'objectiu és avaluar la comprensió dels conceptes "
-"principals o la comprensió lectora  </dt>  <dd> <p> Escriviu un resum del"
-" concepte o de la lectura prou llargs per a avaluar-ne adequadament el "
-"coneixement, però suficientment curt per a no avorrir. Menys d'una pàgina"
-" escrita és probablement adequat, però probablement bastant menys per a "
-"joves estudiants o principiants. </p>   <p> Seleccioneu al text paraules "
-"clau per a entendre els conceptes. Estes paraules són verbs, noms i "
-"adverbis, probablement. Escolliu alternatives amb una resposta clara.  "
-"</p>  </dd>  <dt> Si l'objectiu és avaluar el coneixement de vocabulari  "
-"</dt>  <dd><p>Escriviu un text utilitzant el vocabulari fixat com a "
-"objectiu. El text ha de ser coherent i cohesionat, i tindre una longitud "
-"apropiada. Marqueu les paraules objectiu al text. Escolliu alternatives "
-"amb una resposta clara.</p> </dd>  <dt>Si l'objectiu és avaluar la "
-"formació de mots/gramàtica:  </dt>  <dd>  <p>Escriviu un text utilitzant "
-"les formes que voleu avaluar. Este text ha de ser coherent, cohesionat, i"
-" tindre una longitud apropiada. Recordeu que l'objectiu no és el "
-"coneixement del vocabulari, per tant, el significat principal de l'arrel "
-"de les paraules ha de ser ben conegut pels estudiants.</p>  <p>Marqueu "
-"les paraules objectiu al text. Proporcioneu alternatives amb la mateixa "
-"arrel, però amb afixos diferents. És una bona idea tindre un company per "
-"a provar que ho heu fet bé i així no tindre sorpreses. </p>  </dd></dl> "
+"<dl>  <dt>Si l'objectiu és avaluar la comprensió dels conceptes principals o "
+"la comprensió lectora  </dt>  <dd> <p> Escriviu un resum del concepte o de "
+"la lectura prou llargs per a avaluar-ne adequadament el coneixement, però "
+"suficientment curt per a no avorrir. Menys d'una pàgina escrita és "
+"probablement adequat, però probablement bastant menys per a joves estudiants "
+"o principiants. </p>   <p> Seleccioneu al text paraules clau per a entendre "
+"els conceptes. Aquestes paraules són verbs, noms i adverbis, probablement. "
+"Trieu alternatives amb una resposta clara.  </p>  </dd>  <dt> Si l'objectiu "
+"és avaluar el coneixement de vocabulari  </dt>  <dd><p>Escriviu un text "
+"utilitzant el vocabulari fixat com a objectiu. El text ha de ser coherent i "
+"cohesionat, i tindre una longitud apropiada. Marqueu les paraules objectiu "
+"al text. Trieu alternatives amb una resposta clara.</p> </dd>  <dt>Si "
+"l'objectiu és avaluar la formació de mots/gramàtica:  </dt>  <dd>  "
+"<p>Escriviu un text utilitzant les formes que voleu avaluar. Aquest text ha "
+"de ser coherent, cohesionat, i tindre una longitud apropiada. Recordeu que "
+"l'objectiu no és el coneixement del vocabulari, per tant, el significat "
+"principal de l'arrel de les paraules ha de ser ben conegut pels "
+"estudiants.</p>  <p>Marqueu les paraules objectiu al text. Proporcioneu "
+"alternatives amb la mateixa arrel, però amb afixos diferents. És una bona "
+"idea tindre un company per a provar que ho heu fet bé i així no tindre "
+"sorpreses. </p>  </dd></dl> "
 
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
@@ -738,8 +734,8 @@ msgid ""
 "field.\n"
 msgstr ""
 "Introduïu instruccions sobre com s'ha de completar \n"
-"l'activitat de compleció. Es mostrarà el text per defecte si no hi ha "
-"canvis en este camp.\n"
+"l'activitat de compleció. Es mostrarà el text per defecte si no hi ha canvis "
+"en aquest camp.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
 #: exe/webui/element.py:1522 exe/webui/listablock.py:259
@@ -792,8 +788,8 @@ msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
 msgstr ""
-"Escriviu qualsevol retroacció que vulgueu proporcionar a l'alumnat dins "
-"del camp retroacció. Podeu deixar este camp buit."
+"Escriviu qualsevol retroacció que vulgueu proporcionar a l'alumnat dins del "
+"camp retroacció. Podeu deixar aquest camp buit."
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
@@ -881,8 +877,8 @@ msgid ""
 "You Should Know is an iDevice that helps the student widen her knowledge "
 "with core contents."
 msgstr ""
-"Cal que conegues és un iDevice que permet a l'alumnat ampliar "
-"coneixements, que són obligatoris per al seu aprenentatge."
+"Cal que conegues és un iDevice que permet a l'alumnat ampliar coneixements, "
+"que són obligatoris per al seu aprenentatge."
 
 #: exe/engine/debesconocerfpdidevice.py:37
 #: exe/engine/debesconocerfpdidevice.py:136
@@ -898,8 +894,8 @@ msgid ""
 "Highlighted is an iDevice that emphasizes text to catch the student's "
 "attention."
 msgstr ""
-"Destacat és un iDevice que permet ressaltar text per a cridar l'atenció "
-"de l'alumnat."
+"Destacat és un iDevice que permet ressaltar text per a cridar l'atenció de "
+"l'alumnat."
 
 #: exe/engine/destacadofpdidevice.py:36 exe/engine/destacadofpdidevice.py:134
 msgid "Highlighted Text:"
@@ -932,22 +928,21 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
-"Un cas d'estudi és un iDevice que proveïx l'alumnat \n"
+"Un cas d'estudi és un iDevice que proveeix l'alumnat \n"
 "d'una simulació que s'usa com a base de l'aprenentatge. A partir de "
 "situacions, generalment, \n"
-"basades en la realitat, l'alumnat ha de demostrar o descriure les accions"
-" que faria \n"
+"basades en la realitat, l'alumnat ha de demostrar o descriure les accions "
+"que faria \n"
 "per a completar la tasca o resoldre la situació. El cas d'estudi \n"
-"permet a l'alumnat aplicar els seus coneixements i la seua experiència "
-"per a completar les tasques \n"
+"permet a l'alumnat aplicar els seus coneixements i la seua experiència per a "
+"completar les tasques \n"
 "assignades. Quan dissenyeu el cas d'estudi tingueu en compte:<ul> \n"
 "<li>\t Quins elements d'aprenentatge es tracten en la història</li>\n"
 "<li>\t Quina preparació prèvia li cal a l'alumnat per a resoldre el cas "
 "d'estudi. </li>\n"
 "<li>\t On s'ha de col·locar el cas d'estudi en la resta del curs.</li>\n"
 "<li>\t Com interacciona l'alumnat entre si i amb el material proposat. \n"
-"P. ex: A l'aula, com poden els equips treballar diferents aspectes del "
-"cas, \n"
+"P. ex: A l'aula, com poden els equips treballar diferents aspectes del cas, \n"
 "i com es fa la posada en comú a la resta de la classe</li></ul> "
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
@@ -974,9 +969,9 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
-"Tot i que sovint s'empren en proves més formals, \n"
-"les situacions MCQ es poden utilitzar com a ferramenta per a estimular el"
-" pensament i \n"
+"Tot i que sovint s'utilitzen en proves més formals, \n"
+"les situacions MCQ es poden utilitzar com a eina per a estimular el "
+"pensament i \n"
 "la discussió de temes que l'alumnat és un poc reticent a respondre. \n"
 "Quan dissenyem una prova MCQ considerarem el següent: \n"
 "<ul>\n"
@@ -985,8 +980,7 @@ msgstr ""
 "<li>Quines competències intel·lectuals s'avaluaran</li>\n"
 "<li>Quines són les competències lingüístiques de l'audiència.</li>\n"
 "<li>Els aspectes culturals i de gènere</li>\n"
-"<li>Eviteu expressions i estructures gramaticals que puguen proporcionar"
-" \n"
+"<li>Eviteu expressions i estructures gramaticals que puguen proporcionar \n"
 "\tpistes</li>\n"
 "</ul>\n"
 " "
@@ -1029,7 +1023,7 @@ msgid ""
 "do not want to provide a hint, leave this field blank."
 msgstr ""
 "Escriviu una pista ací. Si no voleu donar \n"
-"cap pista, deixeu en blanc este camp."
+"cap pista, deixeu en blanc aquest camp."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
@@ -1041,7 +1035,7 @@ msgid ""
 msgstr ""
 "Escriviu la pregunta principal. \n"
 "La pregunta ha de ser clara i inequívoca. Eviteu premisses negatives \n"
-"ja que tendixen a ser ambigües."
+"ja que tendeixen a ser ambigües."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:106
 #: exe/engine/multichoiceidevice.py:104
@@ -1078,7 +1072,7 @@ msgid ""
 "for the other options."
 msgstr ""
 "Escriviu la retroacció que voleu que l'alumnat \n"
-"veja quan seleccione l'opció escollida. Si no escriviu res \n"
+"veja quan seleccione l'opció triada. Si no escriviu res \n"
 "l'eXe proporcionarà automàticament la següent retroacció per defecte: \n"
 "«Resposta correcta» quan la resposta siga correcta o \n"
 "«Resposta incorrecta» quan siga incorrecta."
@@ -1100,7 +1094,7 @@ msgid ""
 " blank."
 msgstr ""
 "Escriviu una pista ací. Si no voleu donar \n"
-"cap pista, deixeu en blanc este camp."
+"cap pista, deixeu en blanc aquest camp."
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
@@ -1158,7 +1152,7 @@ msgstr "Canvia d'escala"
 
 #: exe/engine/extendedfieldengine.py:39
 msgid "Transfer"
-msgstr "Transferix"
+msgstr "Transfereix"
 
 #: exe/engine/extendedfieldengine.py:45 exe/webui/hangmanblock.py:329
 msgid "Show Advanced Options"
@@ -1220,10 +1214,10 @@ msgid ""
 "will be viewed by learners online."
 msgstr ""
 "L'iDevice Lloc web extern carrega una pàgina \n"
-"web dins d'un marc en línia amb el vostre contingut eXe en comptes "
-"d'obrir una finestra emergent. \n"
-"D'esta manera l'alumnat no tindrà massa finestres. \n"
-"Este iDevice només s'ha d'utilitzar si el contingut es visualitzarà en "
+"web dins d'un marc en línia amb el vostre contingut eXe en comptes d'obrir "
+"una finestra emergent. \n"
+"D'aquesta manera l'alumnat no tindrà massa finestres. \n"
+"Aquest iDevice només s'ha d'utilitzar si el contingut es visualitzarà en "
 "línia."
 
 #: exe/engine/externalurlidevice.py:49 exe/engine/externalurlidevice.py:116
@@ -1240,7 +1234,7 @@ msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
-"Inserix un títol per al fitxer MP3. \n"
+"Insereix un títol per al fitxer MP3. \n"
 "També apareixerà en la barra del títol dels reproductors."
 
 #: exe/engine/field.py:3090
@@ -1259,20 +1253,19 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
-"<p>Si no marqueu esta opció, s'acceptarà un nombre xicotet d'errors "
-"d'ortografia i d'ús de les majúscules. Si la marqueu només s'acceptarà "
-"una coincidència exacta en l'ortografia i en les "
-"majúscules.</p><p><strong>Per exemple,</strong> si la resposta correcta "
-"és <code>Elefant</code> llavors les dos <code>elefant</code> i "
-"<code>Elifant</code> es consideraran com a <em>«prou pròximes»</em> per "
-"l'algoritme, ja que sols tenen una lletra incorrecta, encara que "
-"\"Correcció de majúscules\" estiga seleccionada.</p><p>Si en l'exemple "
-"d'abans la casella \"Correcció de majúscules\" no està marcada, la lletra"
-" minúscula <code>e</code> no es considerarà un error i "
-"<code>elifant</code> també s'acceptarà.</p><p> Si seleccioneu \"Correcció"
-" estricta\" i \"Correcció de majúscules\" al mateix temps, l'única "
-"paraula correcta serà \"Elefant\". Si sols seleccioneu \"Correcció "
-"estricta\" i \"Correcció de majúscules\" no ho està, \"elefant\" també "
+"<p>Si no marqueu aquesta opció, s'acceptarà un nombre xicotet d'errors "
+"d'ortografia i d'ús de les majúscules. Si la marqueu només s'acceptarà una "
+"coincidència exacta en l'ortografia i en les majúscules.</p><p><strong>Per "
+"exemple,</strong> si la resposta correcta és <code>Elefant</code> llavors "
+"les dos <code>elefant</code> i <code>Elifant</code> es consideraran com a "
+"<em>«prou pròximes»</em> per l'algoritme, ja que sols tenen una lletra "
+"incorrecta, encara que \"Correcció de majúscules\" estiga "
+"seleccionada.</p><p>Si en l'exemple d'abans la casella \"Correcció de "
+"majúscules\" no està marcada, la lletra minúscula <code>e</code> no es "
+"considerarà un error i <code>elifant</code> també s'acceptarà.</p><p> Si "
+"seleccioneu \"Correcció estricta\" i \"Correcció de majúscules\" al mateix "
+"temps, l'única paraula correcta serà \"Elefant\". Si sols seleccioneu "
+"\"Correcció estricta\" i \"Correcció de majúscules\" no ho està, \"elefant\" també "
 "s'acceptarà.</p>"
 
 #: exe/engine/field.py:3111 exe/engine/field.py:3345
@@ -1280,7 +1273,7 @@ msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
 msgstr ""
-"<p>Si marqueu esta opció, les respostes amb un ús diferent de les "
+"<p>Si marqueu aquesta opció, les respostes amb un ús diferent de les "
 "majúscules es consideraran incorrectes.</p>"
 
 #: exe/engine/field.py:3116 exe/engine/field.py:3350
@@ -1289,9 +1282,9 @@ msgid ""
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
-"<p>Si marqueu esta opció, cada paraula es marcarà \n"
-"a mesura que l'alumnat l'escriu en comptes de marcar totes les paraules "
-"al final \n"
+"<p>Si marqueu aquesta opció, cada paraula es marcarà \n"
+"a mesura que l'alumnat l'escriu en comptes de marcar totes les paraules al "
+"final \n"
 "de l'exercici.</p>"
 
 #: exe/engine/field.py:3154 exe/engine/field.py:3392
@@ -1319,25 +1312,24 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
-"<p>Si no marqueu esta opció, s'acceptarà un nombre xicotet d'errors "
-"d'ortografia i d'ús de les majúscules. Si la marqueu només s'acceptarà "
-"una coincidència exacta en l'ortografia i en les "
-"majúscules.</p><p><strong>Per exemple,</strong> si la resposta correcta "
-"és <code>Elefant</code> llavors les dos <code>elefant</code> i "
-"<code>Elifant</code> seran considerades com a <em>«prou pròximes»</em> "
-"per l'algoritme, ja que sols tenen una lletra incorrecta, encara que "
-"\"Correcció de majúscules\" estiga seleccionada.</p><p>Si en l'exemple "
-"d'abans la casella \"Correcció de majúscules\" no està marcada, la lletra"
-" minúscula <code>e</code> no es considerarà un error i "
-"<code>elifant</code> també s'acceptarà.</p><p> Si seleccioneu \"Correcció"
-" estricta\" i \"Correcció de majúscules\" al mateix temps, l'única "
-"paraula correcta serà \"Elefant\". Si sols seleccioneu \"Correcció "
-"estricta\" i \"Correcció de majúscules\" no ho està, \"elefant\" també "
+"<p>Si no marqueu aquesta opció, s'acceptarà un nombre xicotet d'errors "
+"d'ortografia i d'ús de les majúscules. Si la marqueu només s'acceptarà una "
+"coincidència exacta en l'ortografia i en les majúscules.</p><p><strong>Per "
+"exemple,</strong> si la resposta correcta és <code>Elefant</code> llavors "
+"les dos <code>elefant</code> i <code>Elifant</code> seran considerades com a "
+"<em>«prou pròximes»</em> per l'algoritme, ja que sols tenen una lletra "
+"incorrecta, encara que \"Correcció de majúscules\" estiga "
+"seleccionada.</p><p>Si en l'exemple d'abans la casella \"Correcció de "
+"majúscules\" no està marcada, la lletra minúscula <code>e</code> no es "
+"considerarà un error i <code>elifant</code> també s'acceptarà.</p><p> Si "
+"seleccioneu \"Correcció estricta\" i \"Correcció de majúscules\" al mateix "
+"temps, l'única paraula correcta serà \"Elefant\". Si sols seleccioneu "
+"\"Correcció estricta\" i \"Correcció de majúscules\" no ho està, \"elefant\" també "
 "s'acceptarà.</p>"
 
 #: exe/engine/field.py:3355
 msgid "<p>If this option is set, the score will be shown.</p>"
-msgstr "<p>Si es marca esta opció, es mostrarà la puntuació</p>"
+msgstr "<p>Si es marca aquesta opció, es mostrarà la puntuació</p>"
 
 #: exe/engine/field.py:3434 exe/engine/field.py:3478
 msgid ""
@@ -1345,7 +1337,7 @@ msgid ""
 "this iDevice."
 msgstr ""
 "Seleccioneu sols .swf (objectes en Flash) per a \n"
-"este iDevice."
+"aquest iDevice."
 
 #: exe/engine/field.py:3498 exe/engine/field.py:3562
 msgid ""
@@ -1353,7 +1345,7 @@ msgid ""
 "this iDevice."
 msgstr ""
 "Seleccioneu sols .flv (fitxers de vídeo en Flash) per a \n"
-" este iDevice."
+" aquest iDevice."
 
 #: exe/engine/field.py:3574
 msgid "Type a discussion topic here."
@@ -1508,12 +1500,11 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
-"Este iDevice sols admet vídeos en format Flash (.FLV), i no accepta\n"
-" altres formats de vídeo. No obstant això, podeu convertir altres formats"
-" de vídeo\n"
-" (p. ex. mov, wmf, etc.) al format .FLV utilitzant codificadors de vídeo "
-"de\n"
-" tercers (p. ex. en Linux: ffmpeg, winff). Estos codificadors no se "
+"Aquest iDevice sols admet vídeos en format Flash (.FLV), i no accepta\n"
+" altres formats de vídeo. No obstant això, podeu convertir altres formats de "
+"vídeo\n"
+" (p. ex. mov, wmf, etc.) al format .FLV utilitzant codificadors de vídeo de\n"
+" tercers (p. ex. en Linux: ffmpeg, winff). Aquests codificadors no se "
 "subministren amb l'eXe.\n"
 " Els usuaris també han de baixar el reproductor de Flash 8 des "
 "d'http://www.macromedia.com/ per a reproduir el vídeo."
@@ -1563,9 +1554,9 @@ msgid ""
 "file \n"
 "the learners will view."
 msgstr ""
-"L'iDevice Flash amb text vos permet \n"
-"associar informació escrita addicional a un fitxer en Flash. Això pot ser"
-" útil \n"
+"L'iDevice Flash amb text us permet \n"
+"associar informació escrita addicional a un fitxer en Flash. Això pot ser "
+"útil \n"
 "per a proporcionar instruccions a l'alumnat a l'hora de visualitzar un "
 "fitxer en Flash."
 
@@ -1593,7 +1584,7 @@ msgid ""
 "The width and height dimensions will alter proportionally."
 msgstr ""
 "Introduïu les dimensions de la pantalla Flash (en píxels) i \n"
-"determineu l'alineament de la imatge en la pantalla. \n"
+"determineu l'alineació de la imatge en la pantalla. \n"
 "L'amplària i l'alçària s'alteraran proporcionalment."
 
 #: exe/engine/freetextfpdidevice.py:39
@@ -1610,10 +1601,10 @@ msgid ""
 "delivered."
 msgstr ""
 "L'aspecte essencial d'un recurs d'aprenentatge \n"
-"consistix en l'elaboració d'un context, la definició de les instruccions "
-"i la informació general. \n"
+"consisteix en l'elaboració d'un context, la definició de les instruccions i "
+"la informació general. \n"
 "Això proporciona el marc en el qual les activitats d'aprenentatge es "
-"construïxen i es lliuren."
+"construeixen i es lliuren."
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
@@ -1627,15 +1618,15 @@ msgid ""
 "applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
-"Utilitzeu este camp per a escriure text. \n"
-"En este iDevice no s'ha aplicat èmfasi \n"
+"Utilitzeu aquest camp per a escriure text. \n"
+"En aquest iDevice no s'ha aplicat èmfasi \n"
 "tot i que es pot aplicar al text formatació limitada \n"
 "amb els botons d'edició de text associats al camp."
 
 #: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
 msgstr ""
-"Este és un camp de text lliure en el qual podeu introduir contingut "
+"Aquest és un camp de text lliure en el qual podeu introduir contingut "
 "d'aprenentatge."
 
 #: exe/engine/galleryidevice.py:140 exe/engine/galleryidevice.py:191
@@ -1671,7 +1662,7 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:463
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr "Utilitzeu este iDevice si teniu moltes imatges per mostrar."
+msgstr "Utilitzeu aquest iDevice si teniu moltes imatges per mostrar."
 
 #: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
@@ -1793,7 +1784,7 @@ msgstr "Missatge per als errors"
 
 #: exe/engine/hangmanidevice.py:109 exe/engine/hangmanidevice.py:171
 msgid "Player will see this message when they guess a letter wrong"
-msgstr "L'usuari veurà este missatge quan prove una lletra incorrecta."
+msgstr "L'usuari veurà aquest missatge quan prove una lletra incorrecta."
 
 #: exe/engine/hangmanidevice.py:111 exe/engine/hangmanidevice.py:158
 msgid "Lost Level Message"
@@ -1801,7 +1792,7 @@ msgstr "Missatge per a nivell no superat"
 
 #: exe/engine/hangmanidevice.py:112 exe/engine/hangmanidevice.py:159
 msgid "Player will see this message when they loose the level"
-msgstr "L'usuari veurà este missatge quan no supere el nivell."
+msgstr "L'usuari veurà aquest missatge quan no supere el nivell."
 
 #: exe/engine/hangmanidevice.py:114 exe/engine/hangmanidevice.py:162
 msgid "Level Passed Message"
@@ -1809,7 +1800,7 @@ msgstr "Missatge per a nivell superat"
 
 #: exe/engine/hangmanidevice.py:115 exe/engine/hangmanidevice.py:163
 msgid "Player will see this message when they guess the word correctly"
-msgstr "L'usuari veurà este missatge quan supere el nivell."
+msgstr "L'usuari veurà aquest missatge quan supere el nivell."
 
 #: exe/engine/hangmanidevice.py:117 exe/engine/hangmanidevice.py:166
 msgid "Game Won Message"
@@ -1817,7 +1808,7 @@ msgstr "Missatge que es mostra quan l'usuari ha guanyat"
 
 #: exe/engine/hangmanidevice.py:118 exe/engine/hangmanidevice.py:167
 msgid "Player will see this message when they guess all words correctly"
-msgstr "L'usuari veurà este missatge quan haja encertat totes les paraules."
+msgstr "L'usuari veurà aquest missatge quan haja encertat totes les paraules."
 
 #: exe/engine/hangmanidevice.py:142
 msgid "chance"
@@ -1871,17 +1862,16 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
-"<p>És recomanable que el professorat tinga present el següent quan "
-"utilitze este iDevice:</p><ol><li>Penseu en diferents tipus d'activitats "
-"que facen el contingut visualment atractiu. Utilitzar massa tipus "
-"diferents d'activitats pot confondre l'alumnat; normalment tres o quatre "
-"tipus diferents són suficients per a un recurs d'aprenentatge.</li><li> "
-"Des d'una perspectiva de disseny visual, eviteu tindre dos iDevices l'un "
-"a continuació de l'altre sense cap text que els separe. Si calen dos "
-"iDevices ajunteu dos qüestions dins el mateix iDevice. </li><li>Penseu en"
-" activitats que siguen percebudes com a atractives i beneficioses, de "
-"manera que pague la pena invertir temps i esforç a completar-"
-"les.</li></ol>"
+"<p>És recomanable que el professorat tinga present el següent quan utilitze "
+"aquest iDevice:</p><ol><li>Penseu en diferents tipus d'activitats que facen "
+"el contingut visualment atractiu. Utilitzar massa tipus diferents "
+"d'activitats pot confondre l'alumnat; normalment tres o quatre tipus "
+"diferents són suficients per a un recurs d'aprenentatge.</li><li> Des d'una "
+"perspectiva de disseny visual, eviteu tindre dos iDevices l'un a continuació "
+"de l'altre sense cap text que els separe. Si calen dos iDevices ajunteu dos "
+"qüestions dins el mateix iDevice. </li><li>Penseu en activitats que siguen "
+"percebudes com a atractives i beneficioses, de manera que pague la pena "
+"invertir temps i esforç a completar-les.</li></ol>"
 
 #: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:706
 msgid "What to read"
@@ -1946,7 +1936,7 @@ msgstr ""
 
 #: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
 msgid "Type the learning objectives for this resource."
-msgstr "Escriviu els objectius d'aprenentatge per a este recurs."
+msgstr "Escriviu els objectius d'aprenentatge per a aquest recurs."
 
 #: exe/engine/idevicestore.py:625 exe/engine/idevicestore.py:635
 #: exe/engine/idevicestore.py:732 exe/engine/idevicestore.py:742
@@ -1965,21 +1955,20 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools "
 "</li></ul>\n"
 msgstr ""
-"El requisit de coneixements previs es referix \n"
+"El requisit de coneixements previs es refereix \n"
 "als coneixements que l'alumnat ha de tindre per a poder completar \n"
-" l'aprenentatge de manera efectiva. Exemples de coneixements previs poden"
-" ser: <ul>\n"
+" l'aprenentatge de manera efectiva. Exemples de coneixements previs poden "
+"ser: <ul>\n"
 "<li>    L'alumnat ha de tindre un nivell 4 d'anglés</li>\n"
-"<li>    L'alumnat ha de saber muntar ferramentes electròniques</li></ul>\n"
+"<li>    L'alumnat ha de saber muntar eines electròniques</li></ul>\n"
 
 #: exe/engine/idevicestore.py:636 exe/engine/idevicestore.py:743
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
-"Descriu els coneixements previs que l'alumnat ha de tindre per a "
-"completar \n"
-"este aprenentatge de manera efectiva. "
+"Descriu els coneixements previs que l'alumnat ha de tindre per a completar \n"
+"aquest aprenentatge de manera efectiva. "
 
 #: exe/engine/idevicestore.py:643 exe/engine/idevicestore.py:750
 msgid ""
@@ -2009,11 +1998,11 @@ msgid ""
 "reflective guidance.</p>"
 msgstr ""
 "<p>L'activitat de lectura, com el seu nom \n"
-"suggerix, sol demanar a l'alumnat un esforç per a fer l'activitat. Esta "
+"suggereix, sol demanar a l'alumnat un esforç per a fer l'activitat. Aquesta "
 "activitat \n"
 "ha d'estar relacionada directament amb el contingut del text llegit. \n"
-"La retroacció de l'activitat és molt apropiada ja que proporciona una "
-"guia per a reflexionar.</p>"
+"La retroacció de l'activitat és molt apropiada ja que proporciona una guia "
+"per a reflexionar.</p>"
 
 #: exe/engine/idevicestore.py:671
 msgid ""
@@ -2030,16 +2019,15 @@ msgid ""
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
 "És recomanable que el professorat tinga present el següent quan utilitze "
-"este iDevice: <ol><li>Penseu en diferents tipus d'activitats que facen el"
-" contingut visualment atractiu. Utilitzar massa tipus diferents "
-"d'activitats pot confondre l'alumnat; normalment tres o quatre tipus "
-"diferents són suficients per a un recurs d'aprenentatge. </li><li> Des "
-"d'una perspectiva de disseny visual, eviteu tindre dos iDevices un a "
-"continuació de l'altre sense cap text que els separe. Si calen dos "
-"iDevices ajunteu dos qüestions dins el mateix iDevice. </li><li>Penseu en"
-" activitats que siguen percebudes com a atractives i beneficioses, de "
-"manera que pague la pena invertir temps i esforç a completar-"
-"les.</li></ol>"
+"aquest iDevice: <ol><li>Penseu en diferents tipus d'activitats que facen el "
+"contingut visualment atractiu. Utilitzar massa tipus diferents d'activitats "
+"pot confondre l'alumnat; normalment tres o quatre tipus diferents són "
+"suficients per a un recurs d'aprenentatge. </li><li> Des d'una perspectiva "
+"de disseny visual, eviteu tindre dos iDevices un a continuació de l'altre "
+"sense cap text que els separe. Si calen dos iDevices ajunteu dos qüestions "
+"dins el mateix iDevice. </li><li>Penseu en activitats que siguen percebudes "
+"com a atractives i beneficioses, de manera que pague la pena invertir temps "
+"i esforç a completar-les.</li></ol>"
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
@@ -2059,7 +2047,7 @@ msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Choose an Image"
-msgstr "Escolliu una imatge"
+msgstr "Trieu una imatge"
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid ""
@@ -2094,7 +2082,7 @@ msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
 msgstr ""
-"Inserix un títol per a \n"
+"Insereix un títol per a \n"
 "la imatge que s'ha d'ampliar."
 
 #: exe/engine/imagemagnifieridevice.py:62
@@ -2106,7 +2094,7 @@ msgid ""
 " \n"
 "image to display at its original size."
 msgstr ""
-"Escolliu la mida que voleu \n"
+"Trieu la mida que voleu \n"
 "que tinga la imatge. Les mesures són en píxels. Generalment, 100 \n"
 "píxels equivalen a 3 cm. Deixeu els dos camps en blanc si voleu que  \n"
 "la imatge és mostre amb la mida original."
@@ -2117,7 +2105,7 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
-"L'alineament vos permet escollir \n"
+"L'alineació us permet triar \n"
 "on es col·locarà la imatge en la pantalla."
 
 #: exe/engine/imagemagnifieridevice.py:68
@@ -2182,7 +2170,7 @@ msgid ""
 "</p>"
 msgstr ""
 "<p>\n"
-" L'iDevice imatge amb text es pot emprar de diverses maneres per a "
+" L'iDevice imatge amb text es pot utilitzar de diverses maneres per a "
 "incloure\n"
 "conjuntament la tasca emocional (afectiva) i la tasca d'aprenentatge "
 "(cognitiva)\n"
@@ -2194,14 +2182,14 @@ msgstr ""
 "imatge representativa i un resum verbal (que es presenten\n"
 "simultàniament) pot reduir la càrrega cognitiva i augmentar el nivell de "
 "retenció.\n"
-"Este iDevice es pot emprar per a presentar una imatge (fotografia, "
+"Aquest iDevice es pot utilitzar per a presentar una imatge (fotografia, "
 "diagrama o\n"
-"gràfic) amb un breu resum verbal que cobrisca els principals punts "
-"relatius a\n"
-"la imatge. Per exemple, quan ensenyeu les funcions del motor de combustió"
-" de quatre temps,\n"
-"podeu tindre una representació visual de cadascuna de les quatre "
-"posicions del pistó\n"
+"gràfic) amb un breu resum verbal que cobrisca els principals punts relatius "
+"a\n"
+"la imatge. Per exemple, quan ensenyeu les funcions del motor de combustió de "
+"quatre temps,\n"
+"podeu tindre una representació visual de cadascuna de les quatre posicions "
+"del pistó\n"
 "amb un breu resum dels aspectes clau de cada representació visual.\n"
 "</p>"
 
@@ -2239,14 +2227,13 @@ msgid ""
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
 msgstr ""
-"<p> Els exercicis de menú desplegable són texts o frases en què l'alumnat"
-" ha de seleccionat la paraula correcta. S'utilitzen sovint per als "
-"propòsits següents:</p><ol><li> Per a avaluar els coneixements dels "
-"conceptes principals (així es pot fer un preexamen, un exercici formatiu "
-"o una avaluació sumatòria).</li><li>Per a avaluar la comprensió "
-"lectora.</li><li> Per a avaluar el coneixement del vocabulari.</li><li> "
-"Per a avaluar la formació de mots i/o la competència "
-"gramatical.></li></ol>"
+"<p> Els exercicis de menú desplegable són texts o frases en què l'alumnat ha "
+"de seleccionat la paraula correcta. S'utilitzen sovint per als propòsits "
+"següents:</p><ol><li> Per a avaluar els coneixements dels conceptes "
+"principals (així es pot fer un preexamen, un exercici formatiu o una "
+"avaluació sumatòria).</li><li>Per a avaluar la comprensió lectora.</li><li> "
+"Per a avaluar el coneixement del vocabulari.</li><li> Per a avaluar la "
+"formació de mots i/o la competència gramatical.></li></ol>"
 
 #: exe/engine/listaidevice.py:80
 msgid ""
@@ -2268,27 +2255,27 @@ msgid ""
 "colleague to test the test/exercise to make sure there are no surprises!"
 "  </p>  </dd></dl>"
 msgstr ""
-"<dl>  <dt>Si l'objectiu és avaluar la comprensió dels conceptes "
-"principals o la comprensió lectora  </dt>  <dd> <p> Escriviu un resum del"
-" concepte o de la lectura prou llargs per a avaluar-ne adequadament el "
-"coneixement, però suficientment curt per a no avorrir. Menys d'una pàgina"
-" escrita és probablement adequat, però probablement bastant menys per a "
-"joves estudiants o principiants. </p>   <p> Seleccioneu al text paraules "
-"clau per a entendre els conceptes. Estes paraules són verbs, noms i "
-"adverbis, probablement. Escolliu alternatives amb una resposta clara.  "
-"</p>  </dd>  <dt> Si l'objectiu és avaluar el coneixement de vocabulari  "
-"</dt>  <dd><p>Escriviu un text utilitzant el vocabulari fixat com a "
-"objectiu. El text ha de ser coherent i cohesionat, i tindre una longitud "
-"apropiada. Marqueu les paraules objectiu al text. Escolliu alternatives "
-"amb una resposta clara.</p> </dd>  <dt>Si l'objectiu és avaluar la "
-"formació de mots/gramàtica:  </dt>  <dd>  <p>Escriviu un text utilitzant "
-"les formes que voleu avaluar. Este text ha de ser coherent, cohesionat, i"
-" tindre una longitud apropiada. Recordeu que l'objectiu no és el "
-"coneixement del vocabulari, per tant, el significat principal de l'arrel "
-"de les paraules ha de ser ben conegut pels estudiants.</p>  <p>Marqueu "
-"les paraules objectiu al text. Proporcioneu alternatives amb la mateixa "
-"arrel, però amb afixos diferents. És una bona idea tindre un company per "
-"a provar que ho heu fet bé i així no tindre sorpreses. </p>  </dd></dl>"
+"<dl>  <dt>Si l'objectiu és avaluar la comprensió dels conceptes principals o "
+"la comprensió lectora  </dt>  <dd> <p> Escriviu un resum del concepte o de "
+"la lectura prou llargs per a avaluar-ne adequadament el coneixement, però "
+"suficientment curt per a no avorrir. Menys d'una pàgina escrita és "
+"probablement adequat, però probablement bastant menys per a joves estudiants "
+"o principiants. </p>   <p> Seleccioneu al text paraules clau per a entendre "
+"els conceptes. Aquestes paraules són verbs, noms i adverbis, probablement. "
+"Trieu alternatives amb una resposta clara.  </p>  </dd>  <dt> Si l'objectiu "
+"és avaluar el coneixement de vocabulari  </dt>  <dd><p>Escriviu un text "
+"utilitzant el vocabulari fixat com a objectiu. El text ha de ser coherent i "
+"cohesionat, i tindre una longitud apropiada. Marqueu les paraules objectiu "
+"al text. Trieu alternatives amb una resposta clara.</p> </dd>  <dt>Si "
+"l'objectiu és avaluar la formació de mots/gramàtica:  </dt>  <dd>  "
+"<p>Escriviu un text utilitzant les formes que voleu avaluar. Aquest text ha "
+"de ser coherent, cohesionat, i tindre una longitud apropiada. Recordeu que "
+"l'objectiu no és el coneixement del vocabulari, per tant, el significat "
+"principal de l'arrel de les paraules ha de ser ben conegut pels "
+"estudiants.</p>  <p>Marqueu les paraules objectiu al text. Proporcioneu "
+"alternatives amb la mateixa arrel, però amb afixos diferents. És una bona "
+"idea tindre un company per a provar que ho heu fet bé i així no tindre "
+"sorpreses. </p>  </dd></dl>"
 
 #: exe/engine/listaidevice.py:130
 msgid "Provide instruction on how the dropdown activity should be completed."
@@ -2331,9 +2318,9 @@ msgid ""
 " | (vertical bar ) to separate words.</br>This field can be left blank. "
 "</p>"
 msgstr ""
-"<p>Opcional: Escriviu altres paraules per a completar l'activitat de menú"
-" desplegable.</br>Utilitzeu «|» (barra vertical) per a separar les "
-"paraules.</br>Este camp es pot deixar en blanc. </p>"
+"<p>Opcional: Escriviu altres paraules per a completar l'activitat de menú "
+"desplegable.</br>Utilitzeu «|» (barra vertical) per a separar les "
+"paraules.</br>Aquest camp es pot deixar en blanc. </p>"
 
 #: exe/engine/locationbuttons.py:29 exe/engine/locationbuttons.py:33
 #: exe/engine/locationbuttons.py:37
@@ -2378,13 +2365,13 @@ msgstr ""
 "l'interior del contingut eXe. \n"
 "               Recomanem que utilitzeu l'iDevice Text lliure per a "
 "proporcionar explicacions i \n"
-"               instruccions en este gràfic."
+"               instruccions en aquest gràfic."
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
 msgstr ""
-"Podeu utilitzar la barra de ferramentes o introduir manualment el LaTeX "
-"en l'àrea de text."
+"Podeu utilitzar la barra d'eines o introduir manualment el LaTeX en l'àrea "
+"de text."
 
 #: exe/engine/memorymatchidevice.py:44
 msgid "Memory Match Game"
@@ -2408,7 +2395,7 @@ msgstr "Nombre de columnes"
 
 #: exe/engine/memorymatchidevice.py:58
 msgid "Split Question/Answer Pairs"
-msgstr "Dividix els parells Pregunta/Resposta"
+msgstr "Divideix els parells Pregunta/Resposta"
 
 #: exe/engine/memorymatchidevice.py:60
 msgid "Feedback to show on correct match"
@@ -2599,12 +2586,12 @@ msgid ""
 "The MP3 iDevice allows you to attach an MP3 media file to your content "
 "along with relevant textuallearning instructions."
 msgstr ""
-"L'iDevice MP3 vos permet adjuntar un fitxer MP3 al contingut, amb "
+"L'iDevice MP3 us permet adjuntar un fitxer MP3 al contingut, amb "
 "instruccions rellevants per a l'aprenentatge."
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr "Escolliu un fitxer MP3"
+msgstr "Trieu un fitxer MP3"
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -2616,20 +2603,20 @@ msgid ""
 "would like the iDevice to       display e.g. 'Some emphasis' applies a "
 "border and icon to the iDevice content displayed.</li></ol>"
 msgstr ""
-"<ol>  <li>Premeu &lt;Escolliu un fitxer MP3&gt; i navegueu fins al fitxer"
-" MP3 que voleu inserir</li>  <li>Feu clic en el menú desplegable per a "
+"<ol>  <li>Premeu &lt;Trieu un fitxer MP3&gt; i navegueu fins al fitxer MP3 "
+"que voleu inserir</li>  <li>Feu clic en el menú desplegable per a "
 "seleccionar la posició en què voleu que es mostre el fitxer en la "
 "pantalla.</li>  <li>Introduïu un títol opcional per al fitxer.</li>  "
-"<li>Associeu al fitxer MP3 qualsevol text rellevant.</li><li>Escolliu el "
-"tipus d'estil que voleu mostrar en l'iDevice. P. ex. «Amb èmfasi» aplica "
-"una vora i una icona al contingut de l'iDevice mostrat. </li></ol>"
+"<li>Associeu al fitxer MP3 qualsevol text rellevant.</li><li>Trieu el tipus "
+"d'estil que voleu mostrar en l'iDevice. P. ex. «Amb èmfasi» aplica una vora "
+"i una icona al contingut de l'iDevice mostrat. </li></ol>"
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
-"L'alineament vos permet escollir \n"
+"L'alineació us permet triar \n"
 "on es col·locarà el reproductor multimèdia en la pantalla."
 
 #: exe/engine/multiselectidevice.py:45
@@ -2677,8 +2664,8 @@ msgid ""
 "Guidelines Teacher is an iDevice that lets the teacher know the learning "
 "objectives of the students."
 msgstr ""
-"Orientacions per a la tutoria és un iDevice que permet al professorat "
-"donar a conéixer els objectius d'aprenentatge de l'alumnat."
+"Orientacions per a la tutoria és un iDevice que permet al professorat donar "
+"a conéixer els objectius d'aprenentatge de l'alumnat."
 
 #: exe/engine/orientacionestutoriafpdidevice.py:38
 msgid "Guidelines Teacher Text"
@@ -2778,7 +2765,7 @@ msgstr "L'usuari ha de situar diversos objectes al lloc correcte."
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr "Este és un camp de text lliure."
+msgstr "Aquest és un camp de text lliure."
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
@@ -2786,7 +2773,9 @@ msgstr "Àrea principal"
 
 #: exe/engine/placetheobjectsidevice.py:62
 msgid "This is the main image where the user will drag / drop items to"
-msgstr "Esta es la imatge principal on l'usuari ha d'arrossegar i soltar elements."
+msgstr ""
+"Aquesta és la imatge principal on l'usuari ha d'arrossegar i soltar "
+"elements."
 
 #: exe/engine/placetheobjectsidevice.py:66
 msgid "Time Limit (mm:ss)"
@@ -2860,7 +2849,7 @@ msgstr "Lloc correcte (x)"
 
 #: exe/engine/placetheobjectsidevice.py:124
 msgid "Where this object belongs in the main area x coordinate"
-msgstr "Lloc correcte d'este objecte en la coordenada x de l'àrea principal"
+msgstr "Lloc correcte d'aquest objecte en la coordenada x de l'àrea principal"
 
 #: exe/engine/placetheobjectsidevice.py:127
 msgid "Correct Location (y)"
@@ -2868,7 +2857,7 @@ msgstr "Lloc correcte (y)"
 
 #: exe/engine/placetheobjectsidevice.py:127
 msgid "Where this object belongs in the main area y coordinate"
-msgstr "Lloc correcte d'este objecte en la coordenada y de l'àrea principal"
+msgstr "Lloc correcte d'aquest objecte en la coordenada y de l'àrea principal"
 
 #: exe/engine/placetheobjectsidevice.py:130
 msgid "Width (pixels)"
@@ -3051,10 +3040,10 @@ msgid ""
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
 "L'iDevice RSS s'utilitza \n"
-"per a proporcionar continguts nous a usuaris individuals. Utilitzant este"
-" iDevice \n"
-"podeu proporcionar enllaços des d'un canal que seleccioneu perquè "
-"l'alumnat el veja."
+"per a proporcionar continguts nous a usuaris individuals. Utilitzant aquest "
+"iDevice \n"
+"podeu proporcionar enllaços des d'un canal que seleccioneu perquè l'alumnat "
+"el veja."
 
 #: exe/engine/rssidevice.py:51
 msgid ""
@@ -3078,18 +3067,18 @@ msgstr ""
 "Escriviu un URL d'RSS per al canal RSS que voleu \n"
 "afegir als continguts. Sovint els canals estan identificats per icones "
 "gràfiques (molt sovint semblants a \n"
-"<img src=\"/images/feed-icon.png\" />) o pel text «RSS». Quan feu clic en"
-" la icona o el text \n"
-"es mostrarà un canal RSS al vostre navegador. Podeu copiar i apegar l'URL"
-" dins d'este camp. \n"
-"Alternativament, quan feu clic amb el botó dret del ratolí en l'enllaç o "
-"el gràfic, s'obrirà un quadre de menú;\n"
+"<img src=\"/images/feed-icon.png\" />) o pel text «RSS». Quan feu clic en la "
+"icona o el text \n"
+"es mostrarà un canal RSS al vostre navegador. Podeu copiar i apegar l'URL "
+"dins d'aquest camp. \n"
+"Alternativament, quan feu clic amb el botó dret del ratolí en l'enllaç o el "
+"gràfic, s'obrirà un quadre de menú;\n"
 "feu clic en COPIA L'ENLLAÇ o copieu la drecera. Torneu a l'eXe, obriu "
 "l'iDevice d'adreces d'interés d'RSS \n"
-"i apegueu l'URL dins del camp d'URL d'RSS i feu clic en el botó CARREGA. "
-"Açò extraurà els títols des del \n"
-"vostre canal i els mostrarà com a enllaços en el contingut. Des d'ací "
-"podeu editar les adreces d'interés i afegir \n"
+"i apegueu l'URL dins del camp d'URL d'RSS i feu clic en el botó CARREGA. Açò "
+"extraurà els títols des del \n"
+"vostre canal i els mostrarà com a enllaços en el contingut. Des d'ací podeu "
+"editar les adreces d'interés i afegir \n"
 "instruccions o informació addicional per a l'aprenentatge."
 
 #: exe/engine/rssidevice.py:110 exe/engine/rssidevice.py:113
@@ -3143,7 +3132,7 @@ msgstr "Efecte per a mostrar la superposició de resposta correcta"
 
 #: exe/engine/sortidevice.py:56
 msgid "Effect showing correct overlay"
-msgstr "Efecte mentres es mostra la superposició de resposta correcta"
+msgstr "Efecte mentre es mostra la superposició de resposta correcta"
 
 #: exe/engine/sortidevice.py:58
 msgid "Effect showing wrong answer overlay"
@@ -3151,7 +3140,7 @@ msgstr "Efecte que mostra la superposició de resposta incorrecta"
 
 #: exe/engine/sortidevice.py:58
 msgid "Effect for showing wrong overlay"
-msgstr "Efecte mentres es mostra la superposició de resposta incorrecta"
+msgstr "Efecte mentre es mostra la superposició de resposta incorrecta"
 
 #: exe/engine/sortidevice.py:60
 msgid "Text for Check Button"
@@ -3244,12 +3233,10 @@ msgid ""
 "either/or \n"
 "responses."
 msgstr ""
-"Les qüestions de veritat/fals presenten una expressió \n"
-"que l'alumnat ha de decidir si és certa o falsa. Este tipus de qüestions"
-" \n"
-"funcionen bé per a informació objectiva que es presta a respostes del "
-"tipus \n"
-"«o este valor/o este altre»."
+"Les qüestions de verdader/fals presenten una expressió \n"
+"que l'alumnat ha de decidir si és certa o falsa. Aquest tipus de qüestions \n"
+"funcionen bé per a informació objectiva que es presta a respostes del tipus \n"
+"«o aquest valor/o aquest altre»."
 
 #: exe/engine/truefalseidevice.py:151
 #: exe/engine/verdaderofalsofpdidevice.py:153
@@ -3268,9 +3255,9 @@ msgid ""
 "tend to \n"
 "be ambiguous."
 msgstr ""
-"Escriviu la pregunta principal. Esta pregunta \n"
-" ha de ser clara i inequívoca. Eviteu les premisses negatives ja que "
-"solen ser ambigües."
+"Escriviu la pregunta principal. Aquesta pregunta \n"
+" ha de ser clara i inequívoca. Eviteu les premisses negatives ja que solen "
+"ser ambigües."
 
 #: exe/engine/truefalseidevice.py:158
 #: exe/engine/verdaderofalsofpdidevice.py:160
@@ -3281,7 +3268,7 @@ msgid ""
 "default feedback will be provided."
 msgstr ""
 "Escriviu qualsevol retroacció que vulgueu \n"
-"proporcionar a l'alumnat. Si este camp el deixeu en blanc  no es "
+"proporcionar a l'alumnat. Si aquest camp el deixeu en blanc  no es "
 "proporcionarà \n"
 "cap retroacció quan l'alumnat done una resposta incorrecta."
 
@@ -3307,7 +3294,7 @@ msgid ""
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
 "Escriviu la retroacció que voleu que l'alumnat \n"
-"veja quan seleccione la pregunta escollida. Si no escriviu res \n"
+"veja quan seleccione la pregunta triada. Si no escriviu res \n"
 "l'eXe proporcionarà automàticament la següent retroacció per defecte: \n"
 "«Resposta correcta» quan la resposta siga correcta o \n"
 "«Resposta incorrecta» quan siga incorrecta."
@@ -3335,17 +3322,17 @@ msgid ""
 "content \n"
 "is covered by the GNU free documentation license.</p>"
 msgstr ""
-"<p> L'iDevice Viquipèdia vos permet localitzar un article que estiga en "
-"la Viquipèdia i \n"
-"baixar-lo al recurs de l'eXe. L'iDevice Viquipèdia fa una còpia "
-"instantània del contingut de l'article. \n"
-"Els canvis en la Viquipèdia no s'actualitzen automàticament en la còpia "
-"que teniu a l'eXe: si la voleu actualitzar caldrà que torneu a baixar una"
-" còpia de l'article. \n"
-"Així mateix, els canvis fets a l'article en l'eXe no s'actualitzaran en "
-"la Viquipèdia. \n"
-"</p><p> El contingut de la Viquipèdia és sota la llicència de "
-"documentació lliure GNU (GFDL).</p> "
+"<p> L'iDevice Viquipèdia us permet localitzar un article que estiga en la "
+"Viquipèdia i \n"
+"baixar-lo al recurs de l'eXe. L'iDevice Viquipèdia fa una còpia instantània "
+"del contingut de l'article. \n"
+"Els canvis en la Viquipèdia no s'actualitzen automàticament en la còpia que "
+"teniu a l'eXe: si la voleu actualitzar caldrà que torneu a baixar una còpia "
+"de l'article. \n"
+"Així mateix, els canvis fets a l'article en l'eXe no s'actualitzaran en la "
+"Viquipèdia. \n"
+"</p><p> El contingut de la Viquipèdia és sota la llicència de documentació "
+"lliure GNU (GFDL).</p> "
 
 #: exe/engine/wikipediaidevice.py:65
 msgid "Article"
@@ -3357,7 +3344,7 @@ msgid ""
 "of Wikipedia to search and enter search term."
 msgstr ""
 "Seleccioneu l'idioma apropiat de la Viquipèdia \n"
-"per a buscar i introduïu un terme de busca."
+"per a buscar i introduïu un terme de cerca."
 
 #: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:361
 msgid ""
@@ -3381,7 +3368,6 @@ msgid "http://en.wikipedia.org/"
 msgstr "http://ca.wikipedia.org/"
 
 #: exe/exe_do:68
-#, fuzzy
 msgid ""
 "%prog, the commandline version of eXe.\n"
 "Usage: %prog [options] input_file [output_file]\n"
@@ -3389,7 +3375,7 @@ msgid ""
 "To show help:\n"
 "%prog -h"
 msgstr ""
-"Ús: %prog [opcions] fitxer_d'entrada [fitxer_d'eixida]\n"
+"%prog [opcions] fitxer_d'entrada [fitxer_d'eixida]\n"
 "\n"
 "Per a mostrar l'ajuda:\n"
 "%prog -h"
@@ -3409,8 +3395,8 @@ msgid ""
 "Once you have chosen Set ELP field values option using '-s <values>' or"
 "     '--set <values>', it's possible to configure the following options:"
 msgstr ""
-"Quan heu escollit l'opció dels valors del camp ELP utilitzant '-s "
-"<values>' o     '--set <values>', podeu configurar les opcions següents:"
+"Quan heu triat l'opció dels valors del camp ELP utilitzant '-s <values>' o "
+"    '--set <values>', podeu configurar les opcions següents:"
 
 #: exe/exe_do:84
 msgid "Write field values to ELP"
@@ -3461,9 +3447,8 @@ msgid ""
 "Once you have chosen XLIFF export option using '-x xliff' or '--export "
 "xliff', it's possible to configure the following export options:"
 msgstr ""
-"Quan heu escollit l'opció d'exportar en XLIFF utilitzant «-x xliff» o "
-"«--export xliff», és possible configurar les opcions d'exportació "
-"següents:"
+"Quan heu triat l'opció d'exportar en XLIFF utilitzant «-x xliff» o «--export "
+"xliff», és possible configurar les opcions d'exportació següents:"
 
 #: exe/exe_do:128
 msgid "Don't copy source in target"
@@ -3482,9 +3467,8 @@ msgid ""
 "Once you have chosen XLIFF import option using  '-i xliff' or '--import "
 "xliff', it's possible to configure the following import options:"
 msgstr ""
-"Quan heu escollit l'opció d'importar en XLIFF utilitzant «-x xliff» o "
-"«--export xliff», és possible configurar les opcions d'importació "
-"següents:"
+"Quan heu triat l'opció d'importar en XLIFF utilitzant «-x xliff» o «--export "
+"xliff», és possible configurar les opcions d'importació següents:"
 
 #: exe/exe_do:144 exe/webui/xliffimportpreferencespage.py:79
 msgid "Import from source language"
@@ -3500,9 +3484,9 @@ msgid ""
 "scorm2004' or 'x agrega', it's possible to configure the following export"
 " options:"
 msgstr ""
-"Quan heu escollit una opció d'exportar en SCORM utilitzant «-x scorm12» o"
-" «-x scorm2004» o «x agrega» , és possible configurar les opcions "
-"d'exportació següents:"
+"Quan heu triat una opció d'exportar en SCORM utilitzant «-x scorm12» o «-x "
+"scorm2004» o «x agrega» , és possible configurar les opcions d'exportació "
+"següents:"
 
 #: exe/exe_do:155
 msgid "Include Single Page export file"
@@ -3583,7 +3567,7 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
-"\"%s\" ja existix.\n"
+"\"%s\" ja existeix.\n"
 "Intenteu-ho una altra vegada amb un nom diferent"
 
 #: exe/export/cmdlineexporter.py:92
@@ -3612,7 +3596,7 @@ msgstr "Següent"
 
 #: exe/export/singlepage.py:249
 msgid "You can close this window"
-msgstr "Podeu tancar esta finestra"
+msgstr "Podeu tancar aquesta finestra"
 
 #: exe/export/textexport.py:54 exe/webui/common.py:293
 msgid "Licensed under the"
@@ -3765,16 +3749,15 @@ msgstr "S'ha produït un error en importar l'HTML:\n"
 
 #: exe/jsui/mainpage.py:784
 msgid "Publishing document to Procomún"
-msgstr ""
+msgstr "S'està publicant el document en Procomún"
 
 #: exe/jsui/mainpage.py:785
-#, fuzzy
 msgid "Exporting package as SCORM"
-msgstr "Anomena i exporta el paquet IMS"
+msgstr "Exporta el paquet com a SCORM"
 
 #: exe/jsui/mainpage.py:809
 msgid "Starting authorized connection to Procomún API"
-msgstr ""
+msgstr "S'està iniciant la connexió autoritzada a l'API de Procomún"
 
 #: exe/jsui/mainpage.py:822
 #, python-format
@@ -3782,11 +3765,13 @@ msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
 "visit exported site\">%s</a>"
 msgstr ""
+"S'ha exportat el paquet a <a href=\"%s\" target=\"_blank\" title=\"Click to visit "
+"exported site\">%s</a>"
 
 #: exe/jsui/mainpage.py:825
 #, python-format
 msgid "Error exporting package %s to Procomún: %s"
-msgstr ""
+msgstr "S'ha produït un error en exportar el paquet %s a Procomún: %s"
 
 #: exe/jsui/mainpage.py:864 exe/jsui/mainpage.py:869 exe/jsui/mainpage.py:872
 #: exe/jsui/mainpage.py:875 exe/jsui/mainpage.py:878 exe/jsui/mainpage.py:881
@@ -3874,8 +3859,8 @@ msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr ""
-"El nom de carpeta %s ja existix. Escolliu-ne un altre o esborreu-lo i "
-"torneu-ho a provar."
+"El nom de carpeta %s ja existeix. Trieu-ne un altre o esborreu-lo i torneu-"
+"ho a provar."
 
 #: exe/jsui/mainpage.py:1073 exe/jsui/mainpage.py:1118
 #: exe/jsui/mainpage.py:1133 exe/jsui/mainpage.py:1152
@@ -4019,7 +4004,7 @@ msgstr "La importació de metadades LOM s'ha realitzat correctament."
 #: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
 msgid "Insert Package"
-msgstr "Inserix un paquet"
+msgstr "Insereix un paquet"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
@@ -4060,30 +4045,27 @@ msgstr "Voleu suprimir l'estil?"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:230
 msgid "Do you want to delete this style?"
-msgstr "Voleu suprimir este estil?"
+msgstr "Voleu suprimir aquest estil?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:177
 msgid "http://exelearning.net/html_manual/exe20_en/"
-msgstr ""
+msgstr "http://exelearning.net/html_manual/exe20_en/"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:187
-#, fuzzy
 msgid "http://exelearning.net/?lang=en"
-msgstr "exelearning.net"
+msgstr "http://exelearning.net/?lang=en"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:190
 msgid "https://forja.cenatic.es/tracker/?group_id=197"
-msgstr ""
+msgstr "https://forja.cenatic.es/tracker/?group_id=197"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:193
-#, fuzzy
 msgid "http://exelearning.net/forums/"
-msgstr "exelearning.net"
+msgstr "http://exelearning.net/forums/"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:196
-#, fuzzy
 msgid "http://exelearning.net/downloads/"
-msgstr "exelearning.net"
+msgstr "http://exelearning.net/downloads/"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -4091,15 +4073,13 @@ msgid "About"
 msgstr "Quant a"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:345
-#, fuzzy
 msgid "Release notes"
 msgstr "Notes de la versió"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:363
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:476
-#, fuzzy
 msgid "Legal Notes"
-msgstr "Notes de la versió"
+msgstr "Informació legal"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:400
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
@@ -4111,8 +4091,8 @@ msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
 msgstr ""
-"Si heu fet canvis i no els heu guardat, es perdran. Esteu segur que voleu"
-" eixir?"
+"Si heu fet canvis i no els heu guardat, es perdran. Esteu segur que voleu "
+"eixir?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:454
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
@@ -4121,12 +4101,11 @@ msgstr "Gestor d'estils"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:472
 msgid "The current Style is not compatible with the Style Designer"
-msgstr ""
+msgstr "L'estil actual no és compatible amb el dissenyador d'estils."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:475
-#, fuzzy
 msgid "An unknown error occurred."
-msgstr "S'ha produït un error inesperat."
+msgstr "S'ha produït un error desconegut."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:478
 msgid ""
@@ -4134,6 +4113,9 @@ msgid ""
 "\n"
 "Please choose a different Style or create a new one."
 msgstr ""
+"Aquest és un dels estils per defecte de l'eXe, i no és pot editar.\n"
+"\n"
+"Trieu un estil diferent o creeu-ne un de nou."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:478 exe/webui/block.py:264
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
@@ -4144,6 +4126,7 @@ msgstr "Informació"
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 msgid "Your Style could not be saved because an unknown error occurred."
 msgstr ""
+"El vostre estil no és pot guardar perquè s'ha produït un error desconegut."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:556
 msgid "Select package to insert"
@@ -4230,31 +4213,29 @@ msgid "Copy source also in target"
 msgstr "Copieu l'origen també en la destinació"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:766
-#, fuzzy
 msgid ""
 "If you don't choose this option, target field will be empty. Some "
 "Computer Aided Translation tools (e.g. OmegaT) just translate the content"
 " of the target field. If you are using this kind of tools, you will need "
 "to pre-fill the target field with a copy of the source field."
 msgstr ""
-"Si no escolliu esta opció, el camp destinació estarà buit. Algunes "
-"ferramentes de traducció assistida (p.e. l'OmegaT) només traduïxen el "
-"contingut del camp destinació. Si utilitzeu este tipus de ferramentes vos"
-" caldrà omplir el camp destinació amb una còpia del camp origen."
+"Si no trieu aquesta opció, el camp destinació estarà buit. Algunes eines "
+"d'ajuda a la traducció (p.e. l'OmegaT) només tradueixen el contingut del "
+"camp destinació. Si utilitzeu eines d'aquest tipus us caldrà omplir el camp "
+"destinació amb una còpia del camp origen."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:777
-#, fuzzy
 msgid ""
 "This option will wrap all the exported fields in CDATA sections. This "
 "kind of sections are not recommended by XLIFF standard but it could be a "
 "good option if you want to use a pre-process tool (i.g.: Rainbow) before "
 "using the Computer Aided Translation software."
 msgstr ""
-"Esta opció embolcallarà tots els camps exportats en seccions  CDATA. Este"
-" tipus de seccions no estan recomanades per l'estàndard  XLIFF però poden"
-" ser una bona opció si voleu utilitzar una ferramenta de preprocessament "
-"de camps (p.e.: Rainbow) abans d'utilitzar el programari de traducció "
-"assistida."
+"Aquesta opció embolcallarà tots els camps exportats en seccions  CDATA. "
+"Aquest tipus de seccions no estan recomanades per l'estàndard  XLIFF però "
+"poden ser una bona opció si voleu utilitzar una eina de preprocessament de "
+"camps (p.e.: Rainbow) abans d'utilitzar el programari d'ajuda a la "
+"traducció."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:786
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
@@ -4267,7 +4248,7 @@ msgstr "Cancel·la"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:792
 msgid "Ok"
-msgstr ""
+msgstr "D'acord"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:815
 msgid "XLIFF Export Preferences"
@@ -4278,15 +4259,16 @@ msgid ""
 "You must authorize eXe Learning to publish content into your Procomún "
 "account"
 msgstr ""
+"Heu d'autoritzar l'eXe Learning a publicar contingut en el vostre compte de "
+"Procomún"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:841
-#, fuzzy
 msgid "Are you sure you want to start authorization process?"
-msgstr "Esteu segur que voleu restaurar tots els camps de formulari?"
+msgstr "Esteu segur que voleu iniciar el procés d'autorització?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:852
 msgid "Procomún OAuth"
-msgstr ""
+msgstr "Procomún OAuth"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:870
 msgid "Select the parent folder for export."
@@ -4412,7 +4394,7 @@ msgstr "Confirmeu"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:370
 msgid "The file already exists. Do you want to replace it?"
-msgstr "El fitxer ja existix. Voleu reemplaçar-lo?"
+msgstr "El fitxer ja existeix. Voleu reemplaçar-lo?"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:48
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:54
@@ -4577,9 +4559,9 @@ msgid ""
 msgstr ""
 "El tipus inclou els termes que descriuen les categories generals, les "
 "funcions o els gèneres del contingut. La pràctica més recomanada és "
-"seleccionar un valor d'un vocabulari o esquema de classificació "
-"controlats. Utilitzeu l'element FORMAT per a descriure la manifestació "
-"física o digital del recurs."
+"seleccionar un valor d'un vocabulari o esquema de classificació controlats. "
+"Utilitzeu l'element FORMAT per a descriure la manifestació física o digital "
+"del recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
 #: exe/jsui/scripts/app/view/forms/LomSections.js:95
@@ -4670,12 +4652,12 @@ msgid ""
 "no assumptions can be made about the status of these and other rights "
 "with respect to the resource."
 msgstr ""
-"Normalment, l'element Drets conté una declaració de gestió de drets per "
-"al recurs o fa referència a un servici que proporciona esta informació. "
-"La informació dels drets sovint inclou Drets de Propietat Intel·lectual "
-"(DPI), Copyright i diversos Drets de Propietat. Si la declaració de Drets"
-" és absent, no es pot fer cap suposició quant als drets en relació al "
-"contingut educatiu."
+"Normalment, l'element Drets conté una declaració de gestió de drets per al "
+"recurs o fa referència a un servei que proporciona aquesta informació. La "
+"informació dels drets sovint inclou Drets de Propietat Intel·lectual (DPI), "
+"Copyright i diversos Drets de Propietat. Si la declaració de Drets és "
+"absent, no es pot fer cap suposició quant als drets en relació al contingut "
+"educatiu."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:189
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:130
@@ -4728,7 +4710,7 @@ msgid ""
 "Checking this option, the exported component will be editable with "
 "eXeLearning."
 msgstr ""
-"Si marqueu esta casella, el component exportat es podrà editar amb "
+"Si marqueu aquesta casella, el component exportat es podrà editar amb "
 "l'eXeLearning."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:76
@@ -4745,8 +4727,8 @@ msgid ""
 "individual pages within your SCO. The LMS will also still add this kind "
 "of functionality."
 msgstr ""
-"Si marqueu esta casella l'eXe afegirà els enllaços anterior i següent a "
-"pàgines individuals dins dels SCO. També l'LMS afegirà este tipus de "
+"Si marqueu aquesta casella l'eXe afegirà els enllaços anterior i següent a "
+"pàgines individuals dins dels SCO. També l'LMS afegirà aquest tipus de "
 "funcionalitat."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:91
@@ -4755,10 +4737,9 @@ msgid ""
 "individual pages within your SCO.  This requires a non-standard extension"
 " to SCORM 1.2 and is only known to work with some versions of Moodle."
 msgstr ""
-"Si marqueu esta casella l'eXe afegirà els enllaços anterior i següent a "
-"pàgines individuals dins dels SCO. Això requerix una extensió no "
-"estàndard a l'SCORM 1.2 i se sap que sols funciona en algunes versions "
-"del Moodle."
+"Si marqueu aquesta casella l'eXe afegirà els enllaços anterior i següent a "
+"pàgines individuals dins dels SCO. Això requereix una extensió no estàndard "
+"a l'SCORM 1.2 i se sap que sols funciona en algunes versions del Moodle."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:97
 msgid "Include Single Page export file?"
@@ -4771,8 +4752,8 @@ msgid ""
 "\"singlepage_index.html\" containing the result of exporting this eXe "
 "package as a single page."
 msgstr ""
-"Si marqueu esta opció, el fitxer SCORM exportat inclourà un fitxer "
-"anomenat «singlepage_index.html» amb el resultat d'exportar este paquet "
+"Si marqueu aquesta opció, el fitxer SCORM exportat inclourà un fitxer "
+"anomenat «singlepage_index.html» amb el resultat d'exportar aquest paquet "
 "eXe com a una sola pàgina."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:110
@@ -4786,8 +4767,8 @@ msgid ""
 "exporting this eXe package as Web Site. All the html files will have the "
 "\"website_\" prefix to differentiate them from their SCORM equivalent."
 msgstr ""
-"Si marqueu esta opció, el fitxer SCORM exportat inclourà el resultat "
-"d'exportar este paquet eXe com a lloc web. Tots els fitxers HTML tindran "
+"Si marqueu aquesta opció, el fitxer SCORM exportat inclourà el resultat "
+"d'exportar aquest paquet eXe com a lloc web. Tots els fitxers HTML tindran "
 "el prefix «website_» per a diferenciar-los dels seus equivalents SCORM."
 
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:53
@@ -5075,14 +5056,16 @@ msgid ""
 "You will loss all taxon config for this source. Would you like to "
 "continue?"
 msgstr ""
-"Perdreu la configuració de tots els tàxons per a esta font. Voleu "
+"Perdreu la configuració de tots els tàxons per a aquesta font. Voleu "
 "continuar?"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:182
 msgid ""
 "You will loss all taxon config in this section. Would you like to "
 "continue?"
-msgstr "Perdreu la configuració de tots els tàxons d'esta secció. Voleu continuar?"
+msgstr ""
+"Perdreu la configuració de tots els tàxons d'aquesta secció. Voleu "
+"continuar?"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:366
 msgid "Years"
@@ -5118,7 +5101,7 @@ msgstr "Afig una secció"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:668
 msgid "Delete Section"
-msgstr "Suprimix la secció"
+msgstr "Suprimeix la secció"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:682
 msgid "Notice"
@@ -5126,7 +5109,7 @@ msgstr "Avís"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:682
 msgid "Should be at least one section of this type"
-msgstr "Ha d'haver-hi almenys una secció d'este tipus"
+msgstr "Ha d'haver-hi almenys una secció d'aquest tipus"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:27
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -5256,7 +5239,7 @@ msgstr "Trieu una llicència."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:268
 msgid "Select a license or write your own one."
-msgstr ""
+msgstr "Trieu una llicència o escriviu-ne una"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:290
 msgid "Usage"
@@ -5371,8 +5354,8 @@ msgid ""
 "This overrides for this Package the \"Default format for the new "
 "documents\" set in Tools - Preferences"
 msgstr ""
-"Açò substituïx per a este paquet el \"Format per defecte per als "
-"documents nous\" definit a Ferramentes - Preferències"
+"Açò substitueix per a aquest paquet el \"Format per defecte per als documents "
+"nous\" definit a Eines - Preferències"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:578
 msgid "Taxonomy"
@@ -5418,7 +5401,7 @@ msgstr "Voleu crear un paquet compatible amb les versions antigues de l'eXe?"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:634
 msgid "Checking this option, the saved package may be opened with eXe >= 0.20.4"
 msgstr ""
-"Si marqueu esta opció, el paquet guardat es podrà obrir amb l'eXe >= "
+"Si marqueu aquesta opció, el paquet guardat es podrà obrir amb l'eXe >= "
 "0.20.4."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:25
@@ -5472,7 +5455,7 @@ msgid ""
 "and AUDIO) when using XHTML format."
 msgstr ""
 "\"Permissiu\" permet qualsevol etiquetatge. \"Estricte\" permet només "
-"etiquetatge vàlid: suprimix qualsevol codi invàlid, fins i tot etiquetes "
+"etiquetatge vàlid: suprimeix qualsevol codi invàlid, fins i tot etiquetes "
 "HTML5 (excepte VÍDEO i ÀUDIO) quan s'utilitza el format XHTML."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:199
@@ -5492,18 +5475,17 @@ msgid "Disable All Internal Linking"
 msgstr "Desactiva tots els enllaços interns"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:215
-#, fuzzy
 msgid "Default license for the new documents"
-msgstr "Format per defecte per als documents nous"
+msgstr "Llicència per defecte per als documents nous"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:235
-#, fuzzy
 msgid "The current document license can be modified in the Properties tab."
-msgstr "El format de document actual es pot modificar en la pestanya Propietats"
+msgstr ""
+"La llicència del document actual es pot modificar en la pestanya Propietats"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:274
 msgid "Show this window on eXe start"
-msgstr "Mostra esta finestra en iniciar l'eXe"
+msgstr "Mostra aquesta finestra en iniciar l'eXe"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:81
 msgid "Export style: "
@@ -5518,7 +5500,7 @@ msgstr "Exporta"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
 msgid "Delete style: "
-msgstr "Suprimix l'estil:"
+msgstr "Suprimeix l'estil:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:125
 msgid "Show properties of style: "
@@ -5535,11 +5517,11 @@ msgstr "Importa l'estil"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:206
 msgid "Styles repository"
-msgstr ""
+msgstr "Repositori d'estils"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
 msgid "Search and download new styles from the styles repository"
-msgstr ""
+msgstr "Busca i baixa estils nous des del repositori d'estils"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:216
 msgid "List of styles in your system"
@@ -5560,39 +5542,36 @@ msgid "Return"
 msgstr "Retorn"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:419
-#, fuzzy
 msgid "Read more"
-msgstr "creador/a"
+msgstr "Més informació"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:425
 msgid "Download style from repository and import into system."
-msgstr ""
+msgstr "Baixa l'estil des del repositori i importa'l al sistema."
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:457
 msgid "Import style from custom URL"
-msgstr ""
+msgstr "Importa l'estil des de l'URL personalitzat"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:472
-#, fuzzy
 msgid "URL"
-msgstr "Morat"
+msgstr "URL"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:473
 msgid "URL to download the style from."
-msgstr ""
+msgstr "URL des del qual baixar l'estil"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:478
-#, fuzzy
 msgid "Import Style from URL"
-msgstr "Importa l'estil"
+msgstr "Importa l'estil des de l'URL"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:479
 msgid "Download style from URL and import into system."
-msgstr ""
+msgstr "Baixa l'estil des de l'URL i importa'l al sistema."
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:507
 msgid "Check and install styles in the repository"
-msgstr ""
+msgstr "Comprova i instal·la estils en el repositori"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
@@ -5730,13 +5709,12 @@ msgid "XLIFF File"
 msgstr "Fitxer XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
-#, fuzzy
 msgid "Publish"
-msgstr "editor/a"
+msgstr "Editor"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:223
 msgid "Procomún"
-msgstr ""
+msgstr "Procomún"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:239
 msgid "Educational Standard"
@@ -5796,22 +5774,20 @@ msgstr "Ix"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:363
 msgid "Tools"
-msgstr "Ferramentes"
+msgstr "Eines"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:384
 #: exe/webui/tools/style-designer/langs/en.js:9
-#, fuzzy
 msgid "Style Designer"
-msgstr "disseny didàctic"
+msgstr "Dissenyador d'estils"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:392
-#, fuzzy
 msgid "Create new Style"
-msgstr "Voleu suprimir l'estil?"
+msgstr "Crea un estil nou"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:397
 msgid "Edit current Style"
-msgstr ""
+msgstr "Edita l'estil actual"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:413
 msgid "Resources Report"
@@ -5876,8 +5852,8 @@ msgid ""
 "If you leave this page eXe application continues to run. Please use the "
 "menu File->Quit if you really want to exit the application."
 msgstr ""
-"Si abandoneu esta pàgina l'aplicació eXe continua executant-se. Utilitzeu"
-" el menú Fitxer->Ix si voleu eixir de l'aplicació."
+"Si abandoneu aquesta pàgina l'aplicació eXe continua executant-se. Utilitzeu "
+"el menú Fitxer->Ix si voleu eixir de l'aplicació."
 
 #: exe/jsui/scripts/exe.js:269 exe/jsui/scripts/app/view/ui/LeftPanel.js:90
 msgid "Group iDevices"
@@ -7213,62 +7189,61 @@ msgstr "blog"
 
 #: exe/jsui/scripts/lomvocab.js:778
 msgid "multimedia creation/edition tool"
-msgstr "ferramenta d'edició/creació multimèdia"
+msgstr "eina d'edició/creació multimèdia"
 
 #: exe/jsui/scripts/lomvocab.js:782
 msgid "web design tool"
-msgstr "ferramenta de disseny web"
+msgstr "eina de disseny web"
 
 #: exe/jsui/scripts/lomvocab.js:786
 msgid "office tool"
-msgstr "ferramenta d'oficina"
+msgstr "eina d'oficina"
 
 #: exe/jsui/scripts/lomvocab.js:790
 msgid "programming tool"
-msgstr "ferramenta de programació"
+msgstr "eina de programació"
 
 #: exe/jsui/scripts/lomvocab.js:794
 msgid "information/knowledgeanalysis/organization tool"
-msgstr "ferramenta d'organització / informació / anàlisi del coneixement"
+msgstr "eina d'organització / informació / anàlisi del coneixement"
 
 #: exe/jsui/scripts/lomvocab.js:798
 msgid "process/procedure supporting tools"
-msgstr "ferramentes de suport de procediments / processaments"
+msgstr "eines de suport de procediments / processaments"
 
 #: exe/jsui/scripts/lomvocab.js:802
 msgid "individual/cooperative/collaborative learning/working management tool"
 msgstr ""
-"ferramenta de gestió de treball / aprenentatge "
-"col·laboratiu/cooperatiu/individual"
+"eina de gestió de treball / aprenentatge col·laboratiu/cooperatiu/individual"
 
 #: exe/jsui/scripts/lomvocab.js:806
 msgid "multimedia creation/edition service"
-msgstr "servici d'edició/creació multimèdia"
+msgstr "servei d'edició/creació multimèdia"
 
 #: exe/jsui/scripts/lomvocab.js:810
 msgid "web design service"
-msgstr "servici de disseny web"
+msgstr "servei de disseny web"
 
 #: exe/jsui/scripts/lomvocab.js:814
 msgid "office service"
-msgstr "servici d'oficina"
+msgstr "servei d'oficina"
 
 #: exe/jsui/scripts/lomvocab.js:818
 msgid "programming service"
-msgstr "servici de programació"
+msgstr "servei de programació"
 
 #: exe/jsui/scripts/lomvocab.js:822
 msgid "information/knowledgeanalysis/organization service"
-msgstr "servici d'organització / informació / anàlisi del coneixement"
+msgstr "servei d'organització / informació / anàlisi del coneixement"
 
 #: exe/jsui/scripts/lomvocab.js:826
 msgid "process/procedure supporting service"
-msgstr "servici de suport de procediments / processaments"
+msgstr "servei de suport de procediments / processaments"
 
 #: exe/jsui/scripts/lomvocab.js:830
 msgid "individual/cooperative/collaborative learning/working management service"
 msgstr ""
-"servici de gestió de treball / aprenentatge "
+"servei de gestió de treball / aprenentatge "
 "col·laboratiu/cooperatiu/individual"
 
 #: exe/jsui/scripts/lomvocab.js:834
@@ -7578,7 +7553,7 @@ msgstr "Fet"
 
 #: exe/webui/block.py:226
 msgid "Exit without saving?"
-msgstr ""
+msgstr "Voleu eixir sense guardar?"
 
 #: exe/webui/block.py:229
 msgid "Undo Edits"
@@ -7590,7 +7565,7 @@ msgstr "NO es pot desfer l'edició"
 
 #: exe/webui/block.py:236 exe/webui/block.py:330
 msgid "This will delete this iDevice. Do you really want to do this?"
-msgstr "Açò suprimirà este iDevice. Esteu segur que voleu fer-ho?"
+msgstr "Açò suprimirà aquest iDevice. Esteu segur que voleu fer-ho?"
 
 #: exe/webui/block.py:246
 msgid "Move Up"
@@ -7653,10 +7628,10 @@ msgstr ""
 "\n"
 "        <h2>Feu clic als elements en el joc d'ordenar</h2>\n"
 "        <p>\n"
-"                Açò contruïx un joc en Javascript en què l'usuari ha de "
-"fer clic en un lloc concret a l'àrea principal segons la pista.  \n"
-"                Quan clica l'àrea correcta apareix una retroacció "
-"positiva i el joc avança. En canvi, si ho fa en l'àrea incorrecta\n"
+"                Açò contrueix un joc en Javascript en què l'usuari ha de fer "
+"clic en un lloc concret a l'àrea principal segons la pista.  \n"
+"                Quan clica l'àrea correcta apareix una retroacció positiva i "
+"el joc avança. En canvi, si ho fa en l'àrea incorrecta\n"
 "                apareix una retroacció negativa. Quan clica en l'àrea "
 "correcta es mostra un element allí. Es pot establir\n"
 "                un retard per a fer que desaparega l'element després del "
@@ -7679,7 +7654,7 @@ msgstr "Afig una àrea sensible"
 
 #: exe/webui/clickinorderblock.py:410
 msgid "Delete Clickable Area"
-msgstr "Suprimix l'àrea sensible"
+msgstr "Suprimeix l'àrea sensible"
 
 #: exe/webui/clozefpdblock.py:117 exe/webui/eleccionmultiplefpdblock.py:114
 #: exe/webui/seleccionmultiplefpdblock.py:91
@@ -7778,9 +7753,8 @@ msgstr ""
 "derivades."
 
 #: exe/webui/common.py:297
-#, fuzzy
 msgid "License:"
-msgstr "Llicència"
+msgstr "Llicència:"
 
 #: exe/webui/common.py:304
 msgid "Local Version"
@@ -7822,69 +7796,60 @@ msgid "Menu"
 msgstr "Menú"
 
 #: exe/webui/common.py:491
-#, fuzzy
 msgid "Accept"
-msgstr "Accepta l'URL"
+msgstr "Accepta"
 
 #: exe/webui/common.py:495 exe/webui/element.py:2708 exe/webui/element.py:2726
 msgid "Wrong"
 msgstr "Incorrecte"
 
 #: exe/webui/common.py:496
-#, fuzzy
 msgid "Right answer"
-msgstr "Alinea al centre"
+msgstr "Resposta correcta"
 
 #: exe/webui/common.py:498
-#, fuzzy
 msgid "Selected letters"
-msgstr "Fitxer seleccionat"
+msgstr "Lletres seleccionades"
 
 #: exe/webui/common.py:499
-#, fuzzy
 msgid "Word"
-msgstr "Paraula clau"
+msgstr "Paraula"
 
 #: exe/webui/common.py:500
-#, fuzzy
 msgid "Words"
-msgstr "Paraules clau"
+msgstr "Paraules"
 
 #: exe/webui/common.py:501
-#, fuzzy
 msgid "Play"
-msgstr "planifica"
+msgstr "Reprodueix"
 
 #: exe/webui/common.py:503
 msgid "Results"
-msgstr ""
+msgstr "Resultats"
 
 #: exe/webui/common.py:504
-#, fuzzy
 msgid "Total"
-msgstr "programa d'aprenentatge"
+msgstr "Total"
 
 #: exe/webui/common.py:505
-#, fuzzy
 msgid "Another word"
-msgstr "Altres paraules"
+msgstr "Una altra paraula"
 
 #: exe/webui/common.py:506
 msgid "Game over."
-msgstr ""
+msgstr "Fi del joc"
 
 #: exe/webui/common.py:507
 msgid "Reload the game?"
-msgstr ""
+msgstr "Voleu tornar a carregar el joc?"
 
 #: exe/webui/common.py:508
-#, fuzzy
 msgid "Click on \"Play\" to start a new game."
-msgstr "L'usuari ha de fer clic en açò per a iniciar el joc."
+msgstr "Feu clic a «Reprodueix» per a iniciar el joc."
 
 #: exe/webui/common.py:509
 msgid "Click on \"Another word\" to continue."
-msgstr ""
+msgstr "Feu clic a «Una altra paraula» per a continuar"
 
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
@@ -7985,30 +7950,29 @@ msgid ""
 " a compulsory field and you will be prompted to enter a label if you try "
 "to submit your iDevice without one."
 msgstr ""
-"El vostre iDevice nou apareixerà en la subfinestra d'iDevices amb este "
-"títol. Este és un camp obligatori i apareixerà una finestra per a "
-"escriure una etiqueta si proveu d'enviar l'iDevide sense emplenar-lo."
+"El vostre iDevice nou apareixerà en la subfinestra d'iDevices amb aquest "
+"títol. Aquest és un camp obligatori i apareixerà una finestra per a escriure "
+"una etiqueta si proveu d'enviar l'iDevide sense omplir-lo."
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
-msgstr "Este és un camp opcional."
+msgstr "Aquest és un camp opcional."
 
 #: exe/webui/editorpane.py:72
 msgid ""
 "The purpose dialogue allows you to describe your intended purpose of the "
 "iDevice to other potential users."
 msgstr ""
-"El diàleg de Propòsit vos permet descriure la finalitat de l'iDevice per "
-"a altres usuaris potencials."
+"El diàleg de Propòsit us permet descriure la finalitat de l'iDevice per a "
+"altres usuaris potencials."
 
 #: exe/webui/editorpane.py:75
 msgid ""
 "Use this pulldown to select whether or not  the iDevice should have any "
 "formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr ""
-"Utilitzeu este menú desplegable per a seleccionar si l'iDevice ha de "
-"tindre o un format aplicat per a distingir-lo; p. ex.: una vora i una "
-"icona."
+"Utilitzeu el menú desplegable per a seleccionar si l'iDevice ha de tindre o "
+"un format aplicat per a distingir-lo; p. ex.: una vora i una icona."
 
 #: exe/webui/editorpane.py:79
 msgid ""
@@ -8016,9 +7980,9 @@ msgid ""
 "device's development. This can be useful if your iDevice is to be "
 "exported for others to use."
 msgstr ""
-"Utilitzeu este camp per a descriure l'ús i la pedagogia que hi ha darrere"
-" de l'elaboració de l'iDevice. Això pot ser molt útil si penseu exportar "
-"este contingut perquè l'utilitzen altres."
+"Utilitzeu aquest camp per a descriure l'ús i la pedagogia que hi ha darrere "
+"de l'elaboració de l'iDevice. Això pot ser molt útil si penseu exportar el "
+"contingut perquè l'utilitzen altres."
 
 #: exe/webui/editorpane.py:84
 msgid ""
@@ -8073,7 +8037,7 @@ msgid ""
 "data is entered into this field."
 msgstr ""
 "El botó de retroacció no apareixerà si no \n"
-"s'han introduït dades en este camp."
+"s'han introduït dades en aquest camp."
 
 #: exe/webui/editorpane.py:198
 msgid "Please enter<br />an idevice name."
@@ -8107,9 +8071,8 @@ msgid "Some emphasis"
 msgstr "Amb èmfasi"
 
 #: exe/webui/editorpane.py:354
-#, fuzzy
 msgid "Select an icon"
-msgstr "Trieu una llicència."
+msgstr "Seleccioneu una icona"
 
 #: exe/webui/editorpane.py:368
 msgid "Icons"
@@ -8264,13 +8227,13 @@ msgstr "Opció correcta"
 #: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
-msgstr "Suprimix l'opció"
+msgstr "Suprimeix l'opció"
 
 #: exe/webui/element.py:2361 exe/webui/element.py:2816
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
-msgstr "Suprimix la pregunta"
+msgstr "Suprimeix la pregunta"
 
 #: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
@@ -8369,23 +8332,23 @@ msgstr "Vés avant (no està disponible)"
 
 #: exe/webui/galleryblock.py:300
 msgid "Delete Image"
-msgstr "Suprimix la imatge"
+msgstr "Suprimeix la imatge"
 
 #: exe/webui/galleryblock.py:301
 msgid "Delete this image?"
-msgstr "Voleu suprimir esta imatge?"
+msgstr "Voleu suprimir aquesta imatge?"
 
 #: exe/webui/hangmanblock.py:125
 msgid ""
 "One or more words or hints are blank.  Please do not have any blank hints"
 " or words - you can delete unused ones."
 msgstr ""
-"Una o més paraules o pistes estan en blanc. No les deixeu en blanc; podeu"
-" eliminar les que no s'utilitzen."
+"Una o més paraules o pistes estan en blanc. No les deixeu en blanc; podeu "
+"eliminar les que no s'utilitzen."
 
 #: exe/webui/hangmanblock.py:350
 msgid "Remove This Life"
-msgstr "Suprimix esta vida"
+msgstr "Suprimeix aquesta vida"
 
 #: exe/webui/hangmanblock.py:352
 msgid "Add Chance"
@@ -8397,7 +8360,7 @@ msgstr "<h2>Paraules que cal endevinar</h2>"
 
 #: exe/webui/hangmanblock.py:366
 msgid "Remove This Word"
-msgstr "Suprimix esta paraula"
+msgstr "Suprimeix aquesta paraula"
 
 #: exe/webui/hangmanblock.py:368
 msgid "Add Word"
@@ -8490,7 +8453,7 @@ msgstr "Mostra/Oculta"
 
 #: exe/webui/notablock.py:119
 msgid "Delete all notes"
-msgstr "Suprimix totes les notes"
+msgstr "Suprimeix totes les notes"
 
 #: exe/webui/notablock.py:119
 msgid "Would you delete all notes?"
@@ -8542,7 +8505,7 @@ msgstr "S'ha tancat l'eXe"
 
 #: exe/webui/quitpage.py:49
 msgid "eXe has finished running in this window."
-msgstr "L'eXe ha acabat d'executar-se en esta finestra."
+msgstr "L'eXe ha acabat d'executar-se en aquesta finestra."
 
 #: exe/webui/quitpage.py:53
 msgid "You can close it safely."
@@ -8558,9 +8521,9 @@ msgstr "ENVIA LES RESPOSTES"
 
 #: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318
 #: exe/webui/quiztestblock.py:372
-#, fuzzy, python-format
+#, python-format
 msgid "Your score is %d%%"
-msgstr "La vostra puntuació és "
+msgstr "La vostra puntuació és %d%%"
 
 #: exe/webui/recomendacionfpdblock.py:68
 msgid "A Piece of Advice"
@@ -8578,6 +8541,7 @@ msgstr "Carrega"
 #: exe/webui/scripts/exe_tooltips/exe_tooltips.js:145
 msgid "Go to Tools - Preview to see the tooltip content"
 msgstr ""
+"Vés a eines: Previsualitza per a veure el contingut de l'indicador de funció"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Error: Invalid values entered, these are marked in red."
@@ -8589,10 +8553,10 @@ msgid ""
 "that provides application functionality. You will need to disable popup "
 "blocking on this site in order to fully utilize this tool."
 msgstr ""
-"Ens hem adonat que el bloquejador de finestres emergents ha inhabilitat "
-"una finestra que proporciona algunes funcions de l'aplicació. Heu "
-"d'inhabilitar el bloqueig de finestres emergents en este lloc per a poder"
-" utilitzar completament esta ferramenta."
+"Ens hem adonat que el bloquejador de finestres emergents ha inhabilitat una "
+"finestra que proporciona algunes funcions de l'aplicació. Heu d'inhabilitar "
+"el bloqueig de finestres emergents en aquest lloc per a poder utilitzar "
+"completament aquesta eina."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Currently not supported by your browser, use keyboard shortcuts instead."
@@ -8634,11 +8598,11 @@ msgstr "complet"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Time"
-msgstr "Inserix l'hora"
+msgstr "Insereix l'hora"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Date"
-msgstr "Inserix la data"
+msgstr "Insereix la data"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "%H:%M:%S"
@@ -8675,7 +8639,7 @@ msgstr "Mou cap avant"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert New Layer"
-msgstr "Inserix una capa nova"
+msgstr "Insereix una capa nova"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Cancel All Changes"
@@ -8683,7 +8647,7 @@ msgstr "Cancel·la els canvis"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Non-Breaking Space Character"
-msgstr "Inserix un caràcter d'espai no separable"
+msgstr "Insereix un caràcter d'espai no separable"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "ieSpell not detected. Do you want to install it now?"
@@ -8757,7 +8721,7 @@ msgstr "Fila"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Delete Table"
-msgstr "Suprimix la taula"
+msgstr "Suprimeix la taula"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Copy Table Row"
@@ -8781,31 +8745,31 @@ msgstr "Propietats de la taula"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Split Merged Table Cells"
-msgstr "Dividix les cel·les fusionades"
+msgstr "Divideix les cel·les fusionades"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Delete Column"
-msgstr "Suprimix la columna"
+msgstr "Suprimeix la columna"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Column After"
-msgstr "Inserix una columna després"
+msgstr "Insereix una columna després"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Column Before"
-msgstr "Inserix una columna abans"
+msgstr "Insereix una columna abans"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Delete Row"
-msgstr "Suprimix la fila"
+msgstr "Suprimeix la fila"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Row After"
-msgstr "Inserix una fila després"
+msgstr "Insereix una fila després"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Row Before"
-msgstr "Inserix una fila abans"
+msgstr "Insereix una fila abans"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Restore auto-saved content."
@@ -8869,7 +8833,7 @@ msgstr "Aprén la paraula"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Page Break for Printing"
-msgstr "Inserix un salt de pàgina en la impressió"
+msgstr "Insereix un salt de pàgina en la impressió"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Types"
@@ -9083,8 +9047,8 @@ msgid ""
 "\n"
 "Are you sure you want to restore the saved content?"
 msgstr ""
-"Si restaureu el contingut guardat, perdreu el contingut que hi ha a "
-"l'editor actualment.\n"
+"Si restaureu el contingut guardat, perdreu el contingut que hi ha a l'editor "
+"actualment.\n"
 "\n"
 "Esteu segur que voleu restaurar el contingut guardat?"
 
@@ -9204,7 +9168,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Insert Predefined Template Content"
-msgstr "Inserix el contingut de la plantilla predefinida"
+msgstr "Insereix el contingut de la plantilla predefinida"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:57
@@ -9242,14 +9206,14 @@ msgid ""
 "Copy/Cut/Paste is not available in Mozilla and Firefox.\n"
 "Do you want more information about this issue?"
 msgstr ""
-"Les accions de copiar, retallar i apegar no estan disponibles al Mozilla "
-"ni al Firefox.\n"
-"Voleu més informació sobre este tema?"
+"Les accions de copiar, retallar i apegar no estan disponibles al Mozilla ni "
+"al Firefox.\n"
+"Voleu més informació sobre aquest tema?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Insert Horizontal Line"
-msgstr "Inserix una línia horitzontal"
+msgstr "Insereix una línia horitzontal"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
@@ -9268,7 +9232,7 @@ msgstr "Negre"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/addcontent/langs/en.js:1
 msgid "Add a paragraph at the end"
-msgstr ""
+msgstr "Afig un paràgraf al final"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advalign/langs/en.js:3
 msgid ""
@@ -9452,10 +9416,10 @@ msgid ""
 "disabilities, or to those using a text browser, or browsing the Web with "
 "images turned off."
 msgstr ""
-"Esteu segur que voleu continuar sense incloure una descripció de la "
-"imatge? Si ho feu així, és possible que la imatge no siga accessible per "
-"a usuaris amb discapacitats o que utilitzen un navegador de text o "
-"naveguen amb les imatges desactivades."
+"Esteu segur que voleu continuar sense incloure una descripció de la imatge? "
+"Si ho feu així, és possible que la imatge no siga accessible per a usuaris "
+"amb discapacitats o que utilitzen un navegador de text o naveguen amb les "
+"imatges desactivades."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:46
@@ -9565,7 +9529,7 @@ msgstr "Tots els drets reservats"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:22
 msgid "You will not be able to edit the header or the caption from this dialog."
-msgstr "No podreu editar la capçalera ni el títol des d'este diàleg."
+msgstr "No podreu editar la capçalera ni el títol des d'aquest diàleg."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:23
@@ -9573,7 +9537,7 @@ msgid ""
 "The header and the caption can't be edited from this dialog. You can "
 "change or remove them editing the text itself."
 msgstr ""
-"Ni la capçalera ni el títol es poden editar des d'este diàleg. Podeu "
+"Ni la capçalera ni el títol es poden editar des d'aquest diàleg. Podeu "
 "canviar-los o suprimir-los editant el text mateix."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -9602,7 +9566,7 @@ msgstr "Mostra la barra de menú"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Show Toolbars"
-msgstr "Mostra les barres de ferramentes"
+msgstr "Mostra les barres d'eines"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Show Status Bar"
@@ -9614,7 +9578,7 @@ msgstr "Mostra les barres de desplaçament"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Insert 'return false'"
-msgstr "Inserix «return false»"
+msgstr "Insereix «return false»"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Window Name"
@@ -9642,7 +9606,7 @@ msgstr "Obri en la finestra / marc pare"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Open in This Window/Frame"
-msgstr "Obri en esta finestra / marc"
+msgstr "Obri en aquesta finestra / marc"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Anchors"
@@ -9726,8 +9690,8 @@ msgid ""
 "The URL you entered seems to be an external link. Do you want to add the "
 "required http:// prefix?"
 msgstr ""
-"L'URL que heu introduït sembla un enllaç extern. Voleu afegir-hi el "
-"prefix requerit http://?"
+"L'URL que heu introduït sembla un enllaç extern. Voleu afegir-hi el prefix "
+"requerit http://?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -9735,8 +9699,8 @@ msgid ""
 "The URL you entered seems to be an email address. Do you want to add the "
 "required mailto: prefix?"
 msgstr ""
-"L'URL que heu introduït sembla una adreça electrònica. Voleu afegir-hi el"
-" prefix requerit mailto:?"
+"L'URL que heu introduït sembla una adreça electrònica. Voleu afegir-hi el "
+"prefix requerit mailto:?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:3
 msgid "Anchors and nodes"
@@ -9747,34 +9711,32 @@ msgid "Node"
 msgstr "Node"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
-#, fuzzy
 msgid "Download Information"
-msgstr "Metainformació"
+msgstr "Baixa la informació"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
-msgstr ""
+msgstr "Mida del fitxer"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:7
 msgid "File Type/Extension"
-msgstr ""
+msgstr "Tipus/extensió del fitxer"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:9
-#, fuzzy
 msgid "Include File Information"
-msgstr "Informació textual"
+msgstr "Informació la informació del fitxer"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:10
 msgid "Remember that the text of the link should describe its purpose."
-msgstr ""
+msgstr "Recordeu que el text de l'enllaç ha de descriure el seu propòsit"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:11
 msgid "Specify the file size"
-msgstr ""
+msgstr "Especifiqueu la mida del fitxer"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:12
 msgid "Specify the file type"
-msgstr ""
+msgstr "Especifiqueu el tipus de fitxer"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/autosave/langs/en.js:2
 msgid "Restore auto-saved content"
@@ -9782,7 +9744,7 @@ msgstr "Restaura el contingut guardat automàticament"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:3
 msgid "Quote With Authorship"
-msgstr ""
+msgstr "Citació amb autoria"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
@@ -9790,142 +9752,125 @@ msgid "Attributes"
 msgstr "Atributs"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:6
-#, fuzzy
 msgid "Quote"
-msgstr "Nota"
+msgstr "Citació"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
-#, fuzzy
 msgid "Quote Language"
-msgstr "Idioma"
+msgstr "Idioma de la citació"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
-#, fuzzy
 msgid "Authorship"
-msgstr "autor/a"
+msgstr "Autoria"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:9
 msgid "Authorship Language"
-msgstr ""
+msgstr "Idioma de l'autoria"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:11
 msgid "Please write a quote"
-msgstr ""
+msgstr "Escriviu una citació"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:12
 msgid "The \"Authorship\" field is empty"
-msgstr ""
+msgstr "El camp «Autoria\" és buit."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:13
 msgid ""
 "Specify the languages only if they are different from the rest of the "
 "content."
 msgstr ""
+"Especifiqueu els idiomes només si són diferents de la resta del contingut"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:14
 msgid "Use a two-letter ISO 639-1 code like \"en\", \"es\", \"fr\" or \"de\"."
 msgstr ""
+"Utilitzeu un codi ISO 639-1 de dos lletres com ara «en», «es», «fr» o «de»."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:15
-#, fuzzy
 msgid "Include Styles (improves presentation)"
-msgstr "Inclou un embolcall (millora la presentació)"
+msgstr "Inclou estils (millora la presentació)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/clearfloat/langs/en.js:3
 msgid "Clear (new line or block)"
 msgstr "Neteja (línia nova o bloc)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:2
-#, fuzzy
 msgid "Edit source code"
-msgstr "Mode d'editor"
+msgstr "Edita el codi font"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:4
-#, fuzzy
 msgid "Search:"
-msgstr "Bresquilla"
+msgstr "Busca:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:5
 msgid "Search for:"
-msgstr ""
+msgstr "Busca per:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:6
-#, fuzzy
 msgid "Replace:"
-msgstr "Reemplaça"
+msgstr "Reemplaça:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:7
 msgid "(Use /re/ syntax for regexp search)"
-msgstr ""
+msgstr "(Utilitza la sintaxi /re/ per a una cerca per expressió regular)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:8
-#, fuzzy
 msgid "Replace?"
-msgstr "Reemplaça"
+msgstr "Voleu reemplaçar-ho?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:11
-#, fuzzy
 msgid "Stop"
-msgstr "Escriptori"
+msgstr "Para"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
-#, fuzzy
 msgid "Replace with:"
-msgstr "Reemplaça per"
+msgstr "Reemplaça amb:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
-msgstr ""
+msgstr "CodeMagic: color i sagnia de la sintaxi"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
-#, fuzzy
 msgid "Edit code"
-msgstr "Mode d'editor"
+msgstr "Edita el codi"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:4
 msgid "Auto close tags"
-msgstr ""
+msgstr "Les etiquetes es tanquen automàticament"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:5
-#, fuzzy
 msgid "Wrap text"
-msgstr "text sense format"
+msgstr "Ajusta el text"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
-#, fuzzy
 msgid "Highlight syntax"
-msgstr "Ressaltat"
+msgstr "Ressaltat de sintaxi"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
-#, fuzzy
 msgid "Select a theme"
-msgstr "Seleccioneu una plantilla"
+msgstr "Seleccioneu un tema"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
-#, fuzzy
 msgid "Search"
-msgstr "Bresquilla"
+msgstr "Busca"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:9
-#, fuzzy
 msgid "Find next"
-msgstr "Busca el següent"
+msgstr "Busca la següent"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
-#, fuzzy
 msgid "Find previous"
-msgstr "Anterior"
+msgstr "Busca l'anterior"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
-#, fuzzy
 msgid "Replace all"
 msgstr "Reemplaça-ho tot"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:3
-#, fuzzy
 msgid "Definition List"
-msgstr "Descripció de la definició"
+msgstr "Llista de definicions"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:4
 msgid ""
@@ -9933,17 +9878,18 @@ msgid ""
 "To add a new term, just place the cursor at the end of a definition and "
 "click again the Definition List button.\n"
 msgstr ""
+"Es crearà una llista nova de definicions.\n"
+"Per a afegir-hi un nou terme, col·loqueu el cursor al final d'una definició "
+"i torneu a fer clic al botó Llista de definicions.\n"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
-#, fuzzy
 msgid "Term"
-msgstr "altre"
+msgstr "Terme"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
-#, fuzzy
 msgid "Term definition"
-msgstr "terminador"
+msgstr "Definició del terme"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
@@ -9955,7 +9901,7 @@ msgstr "Amb ulleres de sol"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Insert Emotion"
-msgstr "Inserix una emoticona"
+msgstr "Insereix una emoticona"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Yell"
@@ -10028,7 +9974,7 @@ msgstr "Això és un títol d'exemple."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:2
 msgid "Effects (accordion, tabs, pagination...)"
-msgstr ""
+msgstr "Efectes (acordió, pestanyes, paginació...)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
@@ -10042,93 +9988,99 @@ msgstr "Encapçalament 3"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:7
 msgid "Write your content..."
-msgstr ""
+msgstr "Escriviu el contingut..."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:8
 msgid "Choose an effect (you can change it later)."
-msgstr ""
+msgstr "Trieu un efecte (podeu canviar-lo més tard)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:9
 msgid ""
 "To add a new tab, block, page... just add a second level title (Heading "
 "2) followed by its content."
 msgstr ""
+"Per a afegir una altra pestanya, pàgina, bloc... afegiu un títol de segon "
+"nivell (Encapçalament 2) seguit del seu contingut."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:10
 msgid "All blocks must start with a second level title (Heading 2)."
 msgstr ""
+"Tots els blocs han de començar amb un títol de segon nivell (Encapçalament "
+"2)."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:11
 msgid "Please do not overuse these effects."
-msgstr ""
+msgstr "No utilitzeu excessivament aquests efectes."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:12
 msgid ""
 "Change the text of the tabs adding a title to each Heading 2 with the "
 "\"Insert/Edit Attributes\" option:"
 msgstr ""
+"Canvia el text de les pestanyes per a afegir un títol a cada encapçalament 2 "
+"amb l'opció «Insereix/Edita atributs»:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:13
 msgid ""
 "Timelines require a third level title (Heading 3) right after each "
 "Heading 2."
 msgstr ""
+"La línia de temps requereix un títol de tercer nivell (Encapçalament 3) just "
+"després de cada Encapçalament 2."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
-#, fuzzy
 msgid "Choose a type:"
-msgstr "Escolliu una imatge"
+msgstr "Trieu un tipus:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
-#, fuzzy
 msgid "Accordion"
-msgstr "Decoracions"
+msgstr "Acordió"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:18
 msgid "Collapsible content panels for presenting information in a limited space."
 msgstr ""
+"Taulers de contingut que es poden plegar per a presentar informació en un "
+"espai limitat. "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:20
-#, fuzzy
 msgid "Tabs"
-msgstr "taula"
+msgstr "Pestanyes"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:21
 msgid "A single content area with multiple panels."
-msgstr ""
+msgstr "Una àrea de contingut únic amb múltiples taulers"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
-#, fuzzy
 msgid "Pagination"
-msgstr "animació"
+msgstr "Paginació"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
 msgid "Divide your content into different pages."
-msgstr ""
+msgstr "Divideix el contingut en diferents pàgines."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:26
-#, fuzzy
 msgid "Carousel"
-msgstr "Feroés "
+msgstr "Caroussel"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:27
 msgid "Present a list of contents in horizontal order."
-msgstr ""
+msgstr "Presenta una llista de continguts en ordre horitzontal."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
-#, fuzzy
 msgid "Timeline"
-msgstr "línia nova"
+msgstr "Línia de temps"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
 msgstr ""
+"Línia de temps senzilla, interactiva que pot gestionar quasi qualsevol forma "
+"de contingut."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:31
 msgid "Make a timeline?"
-msgstr ""
+msgstr "Voleu construir una línia de temps?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:33
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:36
@@ -10139,120 +10091,116 @@ msgstr "Cal habilitar el connector «inlinepopups»"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:34
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:37
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:43
-#, fuzzy
 msgid "jQuery is required"
-msgstr "requerit per"
+msgstr "Cal jQuery"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:2
 msgid "Games (hangman...)"
-msgstr ""
+msgstr "Jocs (el penjat...)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:8
 msgid "Please enable JavaScript to play this game."
-msgstr ""
+msgstr "Habiliteu el JavaScript per a jugar a aquest joc"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:9
-#, fuzzy
 msgid "Accessibility"
-msgstr "Ajuda d'accessibilitat"
+msgstr "Accessibilitat"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:10
 msgid "These games require JavaScript."
-msgstr ""
+msgstr "Aquests jocs requereixen JavaScript."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:11
 msgid "This is the message that the users with no JavaScript will see:"
-msgstr ""
+msgstr "Aquest és el missatge que veuran els usuaris que no tenen JavaScript:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
-#, fuzzy
 msgid "Message:"
-msgstr "Ús"
+msgstr "Ús:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
 msgid "You can change it at any time."
-msgstr ""
+msgstr "Es pot canviar en qualsevol moment."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:14
 msgid "Provide a warning to users who have JavaScript disabled (Accessibility)."
 msgstr ""
+"Dóna una avís als usuaris que tenen JavaScript inhabilitat (Accessibilitat)."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:17
 msgid "Guess letters to complete each word."
-msgstr ""
+msgstr "Endevineu lletres per a completar cada paraula."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:19
 msgid "Automatically include capital letters"
-msgstr ""
+msgstr "Inclou automàticament lletres majúscules"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:20
 msgid "Case sensitive"
-msgstr ""
+msgstr "Distingeix majúscules i minúscules"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:21
-#, fuzzy
 msgid "abcdefghijklmnñopqrstuvwxyz"
 msgstr "abcçdefghijklmnopqrstuvwxyz"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:22
-#, fuzzy
 msgid "Words to guess"
-msgstr "Paraula que cal endevinar"
+msgstr "Paraules per endevinar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:23
-#, fuzzy
 msgid "Word to guess"
 msgstr "Paraula que cal endevinar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:24
-#, fuzzy
 msgid "Hint or definition"
-msgstr "terminador"
+msgstr "Suggeriment o definició"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:25
-#, fuzzy
 msgid "Please write the Alphabet to Select From"
-msgstr "Alfabet que s'ha de seleccionar a"
+msgstr "Escriviu l'alfabet del qual s'ha de seleccionar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:26
 msgid "A word to guess is missing"
-msgstr ""
+msgstr "Falta la paraula que cal endevinar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:27
 msgid "A hint or definition is missing"
-msgstr ""
+msgstr "Falta el suggeriment o la definició"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:28
 msgid "Please add at least one word to guess"
-msgstr ""
+msgstr "Afegiu almenys una paraula per endevinar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:29
 msgid "Write the list of letters and/or numbers to choose from."
 msgstr ""
+"Escriviu la llista de lletres i/o nombres d'entre els quals s'ha de triar."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:30
 msgid "You may include capital letters or they can be automatically included."
 msgstr ""
+"Podeu incloure-hi lletres majúscules o s'hi poden incloure automàticament."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:31
 msgid "Choose if you want the game to be case sensitive."
-msgstr ""
+msgstr "Trieu si voleu que el joc distingisca majúscules i minúscules."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:32
 msgid "Add at least one word to guess (question or definition + word)."
 msgstr ""
+"Afegiu almenys una paraula per endevinar (pregunta o definició + paraula)."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:33
 msgid "You may delete the game from the editor itself."
-msgstr ""
+msgstr "Podeu suprimir el joc des de l'editor mateix."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:34
 msgid "Don't forget to check the Accessibility tab."
-msgstr ""
+msgstr "No oblideu comprovar la pestanya Accessibilitat"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:38
 msgid "Error recovering data"
-msgstr ""
+msgstr "S'ha produït un error en recuperar les dades."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:4
 msgid "LaTeX to Math for eXe"
@@ -10412,7 +10360,7 @@ msgstr "Color actiu"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Index and Follow the Links"
-msgstr "Indexa i seguix els enllaços"
+msgstr "Indexa i segueix els enllaços"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Index and Don't Follow the Links"
@@ -10420,7 +10368,7 @@ msgstr "Indexa i no seguisques els enllaços"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Do Not Index but Follow the Links"
-msgstr "No indexes però seguix els enllaços"
+msgstr "No indexes però segueix els enllaços"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Do Not Index and Don't Follow the Links"
@@ -10444,15 +10392,15 @@ msgstr "Afig un element nou"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Remove Selected Element"
-msgstr "Suprimix l'element seleccionat"
+msgstr "Suprimeix l'element seleccionat"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Move Selected Element Up"
-msgstr "Suprimix l'element seleccionat cap amunt"
+msgstr "Suprimeix l'element seleccionat cap amunt"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Move Selected Element Down"
-msgstr "Suprimix l'element seleccionat cap avall"
+msgstr "Suprimeix l'element seleccionat cap avall"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Head Elements"
@@ -10570,8 +10518,8 @@ msgid ""
 "Advanced tab.\n"
 "You should also add a non-streamed version to the Source field."
 msgstr ""
-"Els recursos RTSP en flux de dades s'han d'afegir al camp de fonts en QT "
-"en la pestanya «Avançat»."
+"Els recursos RTSP en flux de dades s'han d'afegir al camp de fonts en QT en "
+"la pestanya «Avançat»."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "QT Source"
@@ -10695,7 +10643,7 @@ msgstr "Memòria cau de destinació"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Play Every Frame"
-msgstr "Reproduïx cada fotograma"
+msgstr "Reprodueix cada fotograma"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Kiosk Mode"
@@ -10715,7 +10663,7 @@ msgstr "Bucle"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Auto Play"
-msgstr "Reproduïx automàticament"
+msgstr "Reprodueix automàticament"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "H-Space"
@@ -10936,7 +10884,7 @@ msgid ""
 "For Web browsers that do not support this video, a link to the video file"
 " will be displayed."
 msgstr ""
-"Per a navegadors web que no admeten este vídeo, es mostrarà un enllaç al "
+"Per a navegadors web que no admeten aquest vídeo, es mostrarà un enllaç al "
 "fitxer del vídeo."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:9
@@ -10944,7 +10892,7 @@ msgid ""
 "For Web browsers that do not support this audio, a link to the audio file"
 " will be displayed."
 msgstr ""
-"Per a navegadors web que no admeten este àudio, es mostrarà un enllaç al "
+"Per a navegadors web que no admeten aquest àudio, es mostrarà un enllaç al "
 "fitxer de l'àudio."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:10
@@ -10965,7 +10913,7 @@ msgstr "Utilitza els controls"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:3
 msgid "Insert HTML code as text"
-msgstr "Inserix codi HTML com a text"
+msgstr "Insereix codi HTML com a text"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:6
@@ -10981,38 +10929,34 @@ msgid "Include wrapper (improves presentation)"
 msgstr "Inclou un embolcall (millora la presentació)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
-#, fuzzy
 msgid "Please select a language"
 msgstr "Seleccioneu l'idioma."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
-msgstr ""
+msgstr "Etiquetatge (HTML, etc.)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:14
-#, fuzzy
 msgid "C type"
-msgstr "Tipus de document"
+msgstr "Tipus C"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
-#, fuzzy
 msgid "Light"
-msgstr "Dreta"
+msgstr "Clar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
 msgid "Dark"
-msgstr ""
+msgstr "Fosc"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:18
 msgid "Line numbers"
-msgstr ""
+msgstr "Números de línia"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:19
-#, fuzzy
 msgid "Line highlight"
-msgstr "Ressaltat"
+msgstr "Ressaltat de línia"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Find What"
@@ -11036,7 +10980,7 @@ msgstr "Avall"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Match Case"
-msgstr "Distingix majúscules i minúscules"
+msgstr "Distingeix majúscules i minúscules"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Find Next"
@@ -11044,7 +10988,7 @@ msgstr "Busca el següent"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "All occurrences of the search string were replaced."
-msgstr "S'han reemplaçat totes les coincidències de la cadena de busca."
+msgstr "S'han reemplaçat totes les coincidències de la cadena de cerca."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Find Again"
@@ -11052,7 +10996,7 @@ msgstr "Torna a buscar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "The search has been completed. The search string could not be found."
-msgstr "La busca ha finalitzat i no s'ha trobat la cadena de busca."
+msgstr "La cerca ha finalitzat i no s'ha trobat la cadena de cerca."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace All"
@@ -11084,7 +11028,7 @@ msgstr "Bloc"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Insert span at selection"
-msgstr "Inserix un espai en la selecció"
+msgstr "Insereix un espai en la selecció"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Clip"
@@ -11202,7 +11146,7 @@ msgstr "Posició"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:57
 msgid "Repeat"
-msgstr "Repetix"
+msgstr "Repeteix"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "border"
@@ -11270,10 +11214,10 @@ msgid ""
 "table header cell. Without it, it may be difficult for some users with "
 "disabilities to understand the content or data displayed of the table."
 msgstr ""
-"Esteu segur que voleu continuar sense especificar l'abast de la cel·la de"
-" capçalera de la taula? Si ho feu així, és possible que usuaris amb "
-"discapacitats tinguen dificultat per a entendre el contingut o les dades "
-"de la taula."
+"Esteu segur que voleu continuar sense especificar l'abast de la cel·la de "
+"capçalera de la taula? Si ho feu així, és possible que usuaris amb "
+"discapacitats tinguen dificultat per a entendre el contingut o les dades de "
+"la taula."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "You've exceeded the maximum number of cells of {$cells}."
@@ -11388,196 +11332,190 @@ msgstr "%d-%m-%Y %H:%M:%S"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:3
 msgid "Tooltip"
-msgstr ""
+msgstr "Indicador de funció"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:4
 msgid "Display the link title, a term definition or content from another page."
 msgstr ""
+"Mostra el títol de l'enllaç, una definició del terme o el contingut des "
+"d'una altra pàgina."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:6
 msgid "Behaviour"
-msgstr ""
+msgstr "Comportament"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
-#, fuzzy
 msgid "Link"
-msgstr "Parpelleig"
+msgstr "Enllaç"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
-#, fuzzy
 msgid "Instructions:"
-msgstr "Instruccions "
+msgstr "Instruccions:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
-msgstr ""
+msgstr "Crea una pàgina amb un iDevice de text lliure."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:12
-#, fuzzy
 msgid "No selection and not in link"
-msgstr "Mostra l'enllaç i la descripció"
+msgstr "No hi ha cap selecció i no és a l'enllaç"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
-#, fuzzy
 msgid "Pages"
-msgstr "gran"
+msgstr "Pàgines"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
-#, fuzzy
 msgid "Link title"
-msgstr "Article Wiki"
+msgstr "Títol de l'enllaç"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
-msgstr ""
+msgstr "Títol de l'indicador de funció"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:20
 msgid "Plain text. You can add a title."
-msgstr ""
+msgstr "Text net. Podeu afegir un títol."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:21
 msgid "The tooltip will show the Link title."
-msgstr ""
+msgstr "L'indicador de funció mostrarà el títol de l'enllaç."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
-#, fuzzy
 msgid "Definition"
-msgstr "terminador"
+msgstr "Definició"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
 msgid "The term could not be found"
-msgstr ""
+msgstr "No s'ha pogut trobar el terme."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:26
 msgid ""
 "Write the term and its definition. You may use HTML and edit it in the "
 "editor."
 msgstr ""
+"Escriviu el terme i la seua definició. Tal vegada podeu utilitzar HTML i "
+"editar-lo en un editor."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
-#, fuzzy
 msgid "Definition:"
-msgstr "terminador"
+msgstr "Definició:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
-msgstr ""
+msgstr "L'indicador de funció mostrarà el terme i la seua definició."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:29
-#, fuzzy
 msgid "See definition"
-msgstr "terminador"
+msgstr "Mostra la definició"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
-#, fuzzy
 msgid "Page"
-msgstr "gran"
+msgstr "Pàgina"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
 msgstr ""
+"Mostra el contingut del primer iDevice de text lliure en la pàgina "
+"especificada."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:33
 msgid "Define the Link: Select that page."
-msgstr ""
+msgstr "Defineix l'enllaç: selecciona aqueixa pàgina."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:34
-#, fuzzy
 msgid "The tooltip will show the content of the Free Text iDevice."
-msgstr "El tema del contingut del recurs."
+msgstr ""
+"L'indicador de funció mostrarà el contingut de l'iDevice de text lliure."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:36
 msgid "Glossary"
-msgstr ""
+msgstr "Glossari"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:37
 msgid "Choose a page. Add a Free Text iDevice with a Definition List in it."
 msgstr ""
+"Tria una pàgina. Afig un iDevice de text lliure amb una llista de "
+"definicions dins."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:38
-#, fuzzy
 msgid "Definition List button"
-msgstr "Descripció de la definició"
+msgstr "Botó de la llista de definicions"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:39
 msgid "Use the \"Definition List\" button to add terms and definitions:"
 msgstr ""
+"Utilitza el botó «Llista de definicions» per a afegir termes i definicions:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:40
 msgid "Define the Link: Select the page where the definitions are."
-msgstr ""
+msgstr "Defineix l'enllaç: selecciona la pàgina que té les definicions. "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:41
 msgid "The tooltip will show the term definition."
-msgstr ""
+msgstr "L'indicador de funció mostrarà la definició del terme."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:44
-#, fuzzy
 msgid "The Link is required"
-msgstr "requerit per"
+msgstr "Es requereix l'enllaç."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
-#, fuzzy
 msgid "Please select a Page"
-msgstr "Seleccioneu un fitxer .flv"
+msgstr "Seleccioneu una pàgina"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
 msgid "The Link title is required"
-msgstr ""
+msgstr "Es requereix el títol de l'enllaç."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:47
-#, fuzzy
 msgid "Please write the Definition"
-msgstr "terminador"
+msgstr "Escriviu la definició"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:49
 msgid "Close behaviour:"
-msgstr ""
+msgstr "Tanca el comportament:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:50
 msgid "Automatically close the tooltip when moving the mouse out of the link"
 msgstr ""
+"Tanca automàticament l'indicador de funció quan es mou el ratolí fora de "
+"l'enllaç."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:51
 msgid "Close button: It will close the tooltip when clicked"
-msgstr ""
+msgstr "Tanca el botó: tancarà l'indicador de funció quan es clique."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:52
 msgid "Link behaviour:"
-msgstr ""
+msgstr "Comportament de l'enllaç:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:53
-#, fuzzy
 msgid "Open in the same window"
 msgstr "Obri l'enllaç en la mateixa finestra"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:54
-#, fuzzy
 msgid "Open in a new window"
 msgstr "Obri en una finestra nova"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:56
 msgid "Change the styling:"
-msgstr ""
+msgstr "Canvia l'estil:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:63
-#, fuzzy
 msgid "Rounded"
-msgstr "So"
+msgstr "Arredonit"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:64
-#, fuzzy
 msgid "Shadow"
-msgstr "Sense ombra"
+msgstr "Amb ombra"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Insert Current Date/Time"
-msgstr "Inserix la data / l'hora actuals"
+msgstr "Insereix la data / l'hora actuals"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Remove"
-msgstr "Suprimix"
+msgstr "Suprimeix"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Citation Element"
@@ -11676,8 +11614,8 @@ msgid ""
 "Jump to tool buttons - Alt+Q, Jump to editor - Alt-Z, Jump to element "
 "path - Alt-X"
 msgstr ""
-"Salta a botons de ferramenta - Alt+Q, Salta a l'editor - Alt-Z, Salta al "
-"camí de l'element - Alt-X"
+"Salta a botons d'eina - Alt+Q, Salta a l'editor - Alt-Z, Salta al camí de "
+"l'element - Alt-X"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Are you sure you want clear all contents?"
@@ -11713,7 +11651,7 @@ msgstr "Mostra / Oculta elements invisibles / orientacions"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Insert Special Character"
-msgstr "Inserix caràcters especials"
+msgstr "Insereix caràcters especials"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Select Background Color"
@@ -11729,7 +11667,7 @@ msgstr "La vostra descripció personalitzada ací"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Remove Formatting"
-msgstr "Suprimix la formatació"
+msgstr "Suprimeix la formatació"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Superscript"
@@ -11753,7 +11691,7 @@ msgstr "Augmenta el sagnat"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Decrease Indent"
-msgstr "Reduïx el sagnat"
+msgstr "Redueix el sagnat"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Align Full"
@@ -11773,7 +11711,7 @@ msgstr "Alineació esquerra"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Press ALT-F10 for toolbar. Press ALT-0 for help"
-msgstr "Premeu ALT-F10 per a la barra de ferramentes. Premeu ALT-0 per a l'ajuda"
+msgstr "Premeu ALT-F10 per a la barra d'eines. Premeu ALT-0 per a l'ajuda"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Accessability Help"
@@ -11781,12 +11719,12 @@ msgstr "Ajuda d'accessibilitat"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Toolbar"
-msgstr "Barra de ferramentes"
+msgstr "Barra d'eines"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Insert/Edit Anchor"
-msgstr "Inserix/Edita l'àncora"
+msgstr "Insereix/Edita l'àncora"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
@@ -11821,12 +11759,12 @@ msgstr "Desfés (Ctrl+Z)"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
 msgid "Insert/Remove Numbered List"
-msgstr "Inserix / Suprimix la llista numerada"
+msgstr "Insereix / Suprimeix la llista numerada"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
 msgid "Insert/Remove Bulleted List"
-msgstr "Inserix / Suprimix la llista de pics"
+msgstr "Insereix / Suprimeix la llista de pics"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Open Link in a New Window"
@@ -11927,102 +11865,105 @@ msgstr "Afig un altre element per ordenar"
 
 #: exe/webui/styledesigner.py:51
 msgid "Error saving style. "
-msgstr ""
+msgstr "S'ha produït un error en guardar l'estil."
 
 #: exe/webui/styledesigner.py:60
 msgid "Error creating style. "
-msgstr ""
+msgstr "S'ha produït un error en crear l'estil."
 
 #: exe/webui/styledesigner.py:70
 msgid "Error creating style, local style already exists. "
-msgstr ""
+msgstr "S'ha produït un error en crear l'estil, l'estil local ja existeix."
 
 #: exe/webui/styledesigner.py:126
-#, fuzzy, python-format
+#, python-format
 msgid "Style %s successfully created!"
-msgstr "El fitxer «%s» s'ha importat correctament a «%s»."
+msgstr "L'estil «%s» s'ha creat correctament."
 
 #: exe/webui/styledesigner.py:134
-#, fuzzy, python-format
+#, python-format
 msgid "Style %s successfully saved!"
-msgstr "El fitxer «%s» s'ha importat correctament a «%s»."
+msgstr "L'estil «%s» s'ha guardat correctament."
 
 #: exe/webui/styledesigner.py:198
-#, fuzzy, python-format
+#, python-format
 msgid "Style directory %s already exists"
-msgstr "El nom de l'estil ja existix: %s."
+msgstr "El directori d'estil %s ja existeix. "
 
 #: exe/webui/styledesigner.py:258
-#, fuzzy
 msgid "The style name already exists"
-msgstr "El nom de l'estil ja existix: %s."
+msgstr "El nom de l'estil ja existeix."
 
 #: exe/webui/styledesigner.py:275
 msgid "Error saving style, style directory does not exist"
 msgstr ""
+"S'ha produït un error en guardar l'estil, el directori d'estil no existeix."
 
 #: exe/webui/stylemanagerpage.py:151 exe/webui/stylemanagerpage.py:308
 msgid "Success"
 msgstr "Correcte"
 
 #: exe/webui/stylemanagerpage.py:152
-#, fuzzy
 msgid "Successfully imported style"
-msgstr "L'estil s'ha importat correctament: %s."
+msgstr "L'estil s'ha importat correctament."
 
 #: exe/webui/stylemanagerpage.py:156
 #, python-format
 msgid "Error while installing style: %s"
-msgstr ""
+msgstr "S'ha produït un error mentre s'instal·lava l'estil: %s"
 
 #: exe/webui/stylemanagerpage.py:268
 msgid "Error while getting styles list from the repository"
 msgstr ""
+"S'ha produït un error mentre s'obtenia la llista d'estils des del "
+"repositori."
 
 #: exe/webui/stylemanagerpage.py:309
 msgid "Style successfully downloaded and installed"
-msgstr ""
+msgstr "L'estil s'ha baixat i instal·lat correctament."
 
 #: exe/webui/stylemanagerpage.py:319
 msgid "Error while installing style"
-msgstr ""
+msgstr "S'ha produït un error mentre s'instal·lava l'estil."
 
 #: exe/webui/stylemanagerpage.py:337
 msgid "Overwrite local version of this style?"
-msgstr ""
+msgstr "Voleu sobreescriure la versió local d'aquest estil?"
 
 #: exe/webui/stylemanagerpage.py:339
-#, fuzzy
 msgid "Style already exists. "
-msgstr "El nom de l'estil ja existix: %s."
+msgstr "L'estil ja existeix."
 
 #: exe/webui/stylemanagerpage.py:340
 msgid ""
 "Importing this style will overwrite local style, this action cannot be "
 "undone. "
 msgstr ""
+"La importació d'aquest estil sobreescriurà l'estil local, aquesta acció no "
+"es pot desfer."
 
 #: exe/webui/stylemanagerpage.py:341
-#, fuzzy
 msgid "Are you sure you want to install remote style?. "
-msgstr "Esteu segur que voleu eliminar tots els continguts?"
+msgstr "Esteu segur que voleu instal·lar l'estil remot?"
 
 #: exe/webui/stylemanagerpage.py:363
 msgid "Error when downloading style from repository"
-msgstr ""
+msgstr "S'ha produït un error mentre es baixava l'estil des del repositori."
 
 #: exe/webui/stylemanagerpage.py:373 exe/webui/stylemanagerpage.py:384
 msgid "URL not valid. "
-msgstr ""
+msgstr "L'URL no és vàlid. "
 
 #: exe/webui/stylemanagerpage.py:421
 msgid "Style download URL not found"
-msgstr ""
+msgstr "No s'ha trobat l'URL de baixada de l'estil."
 
 #: exe/webui/stylemanagerpage.py:430
 #, python-format
 msgid "Error when getting style URL from repository styles list: %s"
 msgstr ""
+"S'ha produït un error mentre s'obtenia l'URL de l'estil des de la llista "
+"d'estils del repositori: %s"
 
 #: exe/webui/stylemanagerpage.py:468
 #, python-format
@@ -12043,443 +11984,414 @@ msgid "An unexpected error has occurred"
 msgstr "S'ha produït un error inesperat."
 
 #: exe/webui/tools/style-designer/langs/en.js:12
-#, fuzzy
 msgid "General settings"
-msgstr "Paràmetres generals"
+msgstr "Configuració general"
 
 #: exe/webui/tools/style-designer/langs/en.js:13
-#, fuzzy
 msgid "Page width"
-msgstr "Reemplaça per"
+msgstr "Amplària de la pàgina"
 
 #: exe/webui/tools/style-designer/langs/en.js:14
-#, fuzzy
 msgid "Percentage"
-msgstr "Experimental"
+msgstr "Percentatge"
 
 #: exe/webui/tools/style-designer/langs/en.js:15
-#, fuzzy
 msgid "Pixels"
-msgstr "Amplària (píxels)"
+msgstr "Píxels"
 
 #: exe/webui/tools/style-designer/langs/en.js:16
-#, fuzzy
 msgid "Page position"
-msgstr "Posició"
+msgstr "Posició de la pàgina"
 
 #: exe/webui/tools/style-designer/langs/en.js:19
-#, fuzzy
 msgid "Shadow color"
-msgstr "Voleu que es mostre la puntuació?"
+msgstr "Color de l'ombra"
 
 #: exe/webui/tools/style-designer/langs/en.js:20
-#, fuzzy
 msgid "Border width"
-msgstr "Vora"
+msgstr "Amplària de la vora"
 
 #: exe/webui/tools/style-designer/langs/en.js:21
-#, fuzzy
 msgid "Border color"
 msgstr "Color de la vora"
 
 #: exe/webui/tools/style-designer/langs/en.js:22
-#, fuzzy
 msgid "Text and Links"
-msgstr "Indexa i seguix els enllaços"
+msgstr "Text i enllaços"
 
 #: exe/webui/tools/style-designer/langs/en.js:25
-#, fuzzy
 msgid "Text color"
 msgstr "Color del text"
 
 #: exe/webui/tools/style-designer/langs/en.js:27
-#, fuzzy
 msgid "Links"
-msgstr "Parpelleig"
+msgstr "Enllaços"
 
 #: exe/webui/tools/style-designer/langs/en.js:28
-#, fuzzy
 msgid "Links color"
-msgstr "Color de l'enllaç"
+msgstr "Color dels enllaços"
 
 #: exe/webui/tools/style-designer/langs/en.js:30
-#, fuzzy
 msgid "Style description"
-msgstr "Descripció"
+msgstr "Descripció de l'estil"
 
 #: exe/webui/tools/style-designer/langs/en.js:32
-#, fuzzy
 msgid "Author URL"
-msgstr "autor/a"
+msgstr "URL de l'autor"
 
 #: exe/webui/tools/style-designer/langs/en.js:33
-#, fuzzy
 msgid "Style name"
-msgstr "Nom del fitxer:"
+msgstr "Nom de l'estil"
 
 #: exe/webui/tools/style-designer/langs/en.js:34
-#, fuzzy
 msgid "Save to name the new Style."
-msgstr "Voleu suprimir l'estil?"
+msgstr "Guarda el nom de l'estil nou."
 
 #: exe/webui/tools/style-designer/langs/en.js:35
-#, fuzzy
 msgid "Style version"
-msgstr "té una versió"
+msgstr "Versió de l'estil"
 
 #: exe/webui/tools/style-designer/langs/en.js:36
 msgid ""
 "Style version number is automatically increased when you save, use this "
 "selector to reset it."
 msgstr ""
+"El número de versió de l'estil augmenta automàticament quan es guarda, "
+"utilitzeu aquest selector per a reinicialitzar-lo."
 
 #: exe/webui/tools/style-designer/langs/en.js:38
 msgid "(license of the original Style)"
-msgstr ""
+msgstr "(llicència de l'estil original)"
 
 #: exe/webui/tools/style-designer/langs/en.js:41
 msgid "Page background (only Web Site)"
-msgstr ""
+msgstr "Fons de la pàgina (només en llocs web)"
 
 #: exe/webui/tools/style-designer/langs/en.js:43
-#, fuzzy
 msgid "Background color"
 msgstr "Color de fons"
 
 #: exe/webui/tools/style-designer/langs/en.js:44
-#, fuzzy
 msgid "Select image"
 msgstr "Seleccioneu una imatge"
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
-msgstr ""
+msgstr "Superior esquerra"
 
 #: exe/webui/tools/style-designer/langs/en.js:49
-#, fuzzy
 msgid "Left - Center"
-msgstr "Trieu una llicència."
+msgstr "Centre esquerra"
 
 #: exe/webui/tools/style-designer/langs/en.js:50
-#, fuzzy
 msgid "Left - Bottom"
-msgstr "Part inferior del text"
+msgstr "Inferior esquerra"
 
 #: exe/webui/tools/style-designer/langs/en.js:51
 msgid "Center - Center"
-msgstr ""
+msgstr "Centre centrat"
 
 #: exe/webui/tools/style-designer/langs/en.js:52
 msgid "Center - Top"
-msgstr ""
+msgstr "Superior centrat"
 
 #: exe/webui/tools/style-designer/langs/en.js:53
-#, fuzzy
 msgid "Center - Bottom"
-msgstr "Part inferior del text"
+msgstr "Inferior centrat"
 
 #: exe/webui/tools/style-designer/langs/en.js:54
 msgid "Right - Top"
-msgstr ""
+msgstr "Superior dreta"
 
 #: exe/webui/tools/style-designer/langs/en.js:55
-#, fuzzy
 msgid "Right - Center"
-msgstr "Alinea al centre"
+msgstr "Centre dreta"
 
 #: exe/webui/tools/style-designer/langs/en.js:56
 msgid "Right - Bottom"
-msgstr ""
+msgstr "Inferior dreta"
 
 #: exe/webui/tools/style-designer/langs/en.js:61
 msgid "Only vertical"
-msgstr ""
+msgstr "Només vertical"
 
 #: exe/webui/tools/style-designer/langs/en.js:62
 msgid "Only horizontal"
-msgstr ""
+msgstr "Només horitzontal"
 
 #: exe/webui/tools/style-designer/langs/en.js:63
 msgid "Contents area background"
-msgstr ""
+msgstr "Fons de l'àrea de contingut"
 
 #: exe/webui/tools/style-designer/langs/en.js:64
 msgid "The \"Page background\" will only be used when exporting as Web Site."
 msgstr ""
+"El «fons de la pàgina» només s'utilitzarà quan s'exporte com a lloc web."
 
 #: exe/webui/tools/style-designer/langs/en.js:65
 msgid ""
 "The \"Contents area background\" will also be used when exporting as IMS,"
 " SCORM or ePub3."
 msgstr ""
+"El «fons de l'àrea de contingut» també s'utilitzarà quan s'exporte com a "
+"IMS, SCORM o ePub3."
 
 #: exe/webui/tools/style-designer/langs/en.js:67
-#, fuzzy
 msgid "Header and Footer"
-msgstr "Llegiu i completeu"
+msgstr "Capçalera i peu de pàgina"
 
 #: exe/webui/tools/style-designer/langs/en.js:71
-#, fuzzy
 msgid "Project title"
-msgstr "Propietats del projecte"
+msgstr "Títol del projecte"
 
 #: exe/webui/tools/style-designer/langs/en.js:72
 msgid "Hide the title"
-msgstr ""
+msgstr "Amaga el títol"
 
 #: exe/webui/tools/style-designer/langs/en.js:74
 msgid "same font as the page"
-msgstr ""
+msgstr "el mateix tipus de lletra que en la pàgina"
 
 #: exe/webui/tools/style-designer/langs/en.js:77
-#, fuzzy
 msgid "Top margin"
 msgstr "Marge superior"
 
 #: exe/webui/tools/style-designer/langs/en.js:78
-#, fuzzy
 msgid "Font size"
-msgstr "Grandària de la lletra:"
+msgstr "Mida de la lletra"
 
 #: exe/webui/tools/style-designer/langs/en.js:80
-#, fuzzy
 msgid "Navigation"
-msgstr "mapa de navegació"
+msgstr "Navegació"
 
 #: exe/webui/tools/style-designer/langs/en.js:81
 msgid "Main menu"
-msgstr ""
+msgstr "Menú principal"
 
 #: exe/webui/tools/style-designer/langs/en.js:82
 msgid "Hide the menu"
-msgstr ""
+msgstr "Amaga el menú"
 
 #: exe/webui/tools/style-designer/langs/en.js:83
-#, fuzzy
 msgid "Horizontal navigation"
-msgstr "Posició horitzontal"
+msgstr "Navegació horitzontal"
 
 #: exe/webui/tools/style-designer/langs/en.js:84
-#, fuzzy
 msgid "Active background"
-msgstr "Voleu la imatge de fons en mosaic?"
+msgstr "Fons actiu"
 
 #: exe/webui/tools/style-designer/langs/en.js:85
-#, fuzzy
 msgid "Active link color"
-msgstr "Color actiu"
+msgstr "Color de l'enllaç actiu"
 
 #: exe/webui/tools/style-designer/langs/en.js:86
-#, fuzzy
 msgid "Other navigation options"
-msgstr "mapa de navegació"
+msgstr "Altres opcions de navegació"
 
 #: exe/webui/tools/style-designer/langs/en.js:87
-#, fuzzy
 msgid "Use icons"
-msgstr "Segons"
+msgstr "Utilitza icones"
 
 #: exe/webui/tools/style-designer/langs/en.js:89
-#, fuzzy
 msgid "Icons color"
-msgstr "Color de l'enllaç"
+msgstr "Color de les icones"
 
 #: exe/webui/tools/style-designer/langs/en.js:90
-#, fuzzy
 msgid "Grey"
-msgstr "figures"
+msgstr "Gris"
 
 #: exe/webui/tools/style-designer/langs/en.js:94
-#, fuzzy
 msgid "With emphasis"
-msgstr "Sense èmfasi"
+msgstr "Amb èmfasi"
 
 #: exe/webui/tools/style-designer/langs/en.js:95
-#, fuzzy
 msgid "Title color"
-msgstr "Color actiu"
+msgstr "Color del títol"
 
 #: exe/webui/tools/style-designer/langs/en.js:96
-#, fuzzy
 msgid "Title background"
-msgstr "Voleu la imatge de fons en mosaic?"
+msgstr "Fons del títol"
 
 #: exe/webui/tools/style-designer/langs/en.js:97
 msgid "No emphasis (Free Text...)"
-msgstr ""
+msgstr "Sense èmfasi (text lliure...)"
 
 #: exe/webui/tools/style-designer/langs/en.js:98
 msgid "Show box"
-msgstr ""
+msgstr "Mostra el quadre"
 
 #: exe/webui/tools/style-designer/langs/en.js:99
 msgid "Icon to hide/show the iDevice"
-msgstr ""
+msgstr "Icona per a mostrar/amagar l'iDevice"
 
 #: exe/webui/tools/style-designer/langs/en.js:102
 msgid "This code will be included at the end of content.css"
-msgstr ""
+msgstr "Aquest codi s'inclourà al final de content.css"
 
 #: exe/webui/tools/style-designer/langs/en.js:103
 msgid "content.css is included any time you export, and always after base.css."
-msgstr ""
+msgstr "content.css s'inclou sempre que exporteu, i sempre després de base.css."
 
 #: exe/webui/tools/style-designer/langs/en.js:104
 msgid "This code will be included at the end of nav.css"
-msgstr ""
+msgstr "Aquest codi s'inclourà al final de nav.css"
 
 #: exe/webui/tools/style-designer/langs/en.js:105
 msgid ""
 "nav.css is only included when you export as Web Site, and always after "
 "content.css."
 msgstr ""
+"nav.css només s'inclou quan exporteu com a lloc web, i sempre després de "
+"content.css."
 
 #: exe/webui/tools/style-designer/langs/en.js:106
 msgid "content.css content"
-msgstr ""
+msgstr "contingut content.css"
 
 #: exe/webui/tools/style-designer/langs/en.js:107
 msgid "nav.css content"
-msgstr ""
+msgstr "contingut de nav.css"
 
 #: exe/webui/tools/style-designer/langs/en.js:108
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
+"Les ombres no funcionen en navegadors que no admeten CSS3 (IE6, IE7...)."
 
 #: exe/webui/tools/style-designer/langs/en.js:111
-#, fuzzy
 msgid "Finish"
-msgstr "Finés "
+msgstr "Finalitza"
 
 #: exe/webui/tools/style-designer/langs/en.js:113
-#, fuzzy
 msgid "Save as"
-msgstr "molt fàcil"
+msgstr "Anomena i guarda"
 
 #: exe/webui/tools/style-designer/langs/en.js:115
 msgid "Save the current design and close the Style Designer?"
-msgstr ""
+msgstr "Voleu guardar el disseny actual i tancar el Dissenyador d'estils?"
 
 #: exe/webui/tools/style-designer/langs/en.js:116
 msgid "Save all changes? This cannot be undone."
-msgstr ""
+msgstr "Voleu guardar tots els canvis? Açò no es pot desfer."
 
 #: exe/webui/tools/style-designer/langs/en.js:117
-#, fuzzy
 msgid "Style name:"
-msgstr "Nom del fitxer:"
+msgstr "Nom de l'estil:"
 
 #: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Your browser is not compatible with this tool."
-msgstr ""
+msgstr "El vostre navegador no és compatible amb aquesta eina."
 
 #: exe/webui/tools/style-designer/langs/en.js:119
 msgid "The Hide/Show menu option is disabled in the Style Designer"
 msgstr ""
+"L'opció de menú Amaga/Mostra està inhabilitada en el Dissenyador d'estils."
 
 #: exe/webui/tools/style-designer/langs/en.js:120
 msgid ""
 "Please, make your browser bigger. The Style Designer requires at least a "
 "1024x768 screen resolution"
 msgstr ""
+"Amplieu el navegador. El Dissenyador d'estils requereix una resolució de "
+"pantalla de 1024x768 com a mínim"
 
 #: exe/webui/tools/style-designer/langs/en.js:121
 msgid "The Style Designer window is not open."
-msgstr ""
+msgstr "La finestra del Dissenyador d'estils no està oberta."
 
 #: exe/webui/tools/style-designer/langs/en.js:122
 msgid "This window will be closed. Please restart the tool."
-msgstr ""
+msgstr "Aquesta finestra es tancarà. Reinicieu l'eina."
 
 #: exe/webui/tools/style-designer/langs/en.js:124
 msgid "Undo changes since last time you saved? This cannot be undone. "
 msgstr ""
+"Voleu desfer els canvis fets des de l'última vegada que vau guardar? Açò no "
+"es pot desfer."
 
 #: exe/webui/tools/style-designer/langs/en.js:131
 msgid "Drag markers to pick a color"
-msgstr ""
+msgstr "Arrossegueu els marcadors per a capturar un color"
 
 #: exe/webui/tools/style-designer/langs/en.js:133
-#, fuzzy
 msgid "Current"
-msgstr "representa"
+msgstr "Actual"
 
 #: exe/webui/tools/style-designer/langs/en.js:139
 msgid "New Color - Press OK to Commit"
-msgstr ""
+msgstr "Color nou: premeu D'acord per a confirmar"
 
 #: exe/webui/tools/style-designer/langs/en.js:140
 msgid "Click to revert to original color"
-msgstr ""
+msgstr "Feu clic per a tornar al color original"
 
 #: exe/webui/tools/style-designer/langs/en.js:143
 msgid "Commit to this color selection"
-msgstr ""
+msgstr "Confirma per a la selecció d'aquest color"
 
 #: exe/webui/tools/style-designer/langs/en.js:144
 msgid "Cancel and revert to original color"
-msgstr ""
+msgstr "Cancel·la i torna al color original"
 
 #: exe/webui/tools/style-designer/langs/en.js:147
 msgid "Set to Hue color mode"
-msgstr ""
+msgstr "Estableix a «To» el mode de color"
 
 #: exe/webui/tools/style-designer/langs/en.js:148
 msgid "Enter a Hue value (0-360º)"
-msgstr ""
+msgstr "Introduïu un valor per a «To» (0-360º)"
 
 #: exe/webui/tools/style-designer/langs/en.js:151
 msgid "Set to Saturation color mode"
-msgstr ""
+msgstr "Estableix a «Saturació» el mode de color"
 
 #: exe/webui/tools/style-designer/langs/en.js:152
 msgid "Enter a Saturation value (0-100%)"
-msgstr ""
+msgstr "Introduïu un valor per a «Saturació» (0-100%)"
 
 #: exe/webui/tools/style-designer/langs/en.js:155
 msgid "Set to Value color mode"
-msgstr ""
+msgstr "Estableix a «Valor» el mode de color"
 
 #: exe/webui/tools/style-designer/langs/en.js:156
 msgid "Enter a Value (0-100%)"
-msgstr ""
+msgstr "Introduïu un «Valor» (0-100%)"
 
 #: exe/webui/tools/style-designer/langs/en.js:159
 msgid "Set to Red color mode"
-msgstr ""
+msgstr "Estableix a «Roig» el mode de color"
 
 #: exe/webui/tools/style-designer/langs/en.js:160
 msgid "Enter a Red value (0-255)"
-msgstr ""
+msgstr "Introduïu un valor per a «Roig» (0-255)"
 
 #: exe/webui/tools/style-designer/langs/en.js:163
 msgid "Set to Green color mode"
-msgstr ""
+msgstr "Estableix a «Verd» el mode de color"
 
 #: exe/webui/tools/style-designer/langs/en.js:164
 msgid "Enter a Green value (0-255)"
-msgstr ""
+msgstr "Introduïu un valor per a «Verd» (0-255)"
 
 #: exe/webui/tools/style-designer/langs/en.js:167
 msgid "Set to Blue color mode"
-msgstr ""
+msgstr "Estableix a «Blau» el mode de color"
 
 #: exe/webui/tools/style-designer/langs/en.js:168
 msgid "Enter a Blue value (0-255)"
-msgstr ""
+msgstr "Introduïu un valor per a «Blau» (0-255)"
 
 #: exe/webui/tools/style-designer/langs/en.js:171
 msgid "Set to Alpha color mode"
-msgstr ""
+msgstr "Estableix a «Alfa» el mode de color"
 
 #: exe/webui/tools/style-designer/langs/en.js:172
 #: exe/webui/tools/style-designer/langs/en.js:176
 msgid "Enter an Alpha value (0-100)"
-msgstr ""
+msgstr "Introduïu un valor per a «Alfa» (0-100)"
 
 #: exe/webui/tools/style-designer/langs/en.js:175
 msgid "Enter an Hex color value (#000000-#ffffff)"
-msgstr ""
+msgstr "Introduïu un valor de color «Hex» (#000000-#ffffff)"
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
@@ -12588,8 +12500,8 @@ msgid ""
 "If you choose this option, the import process will take the texts from "
 "source language instead of target language."
 msgstr ""
-"Si escolliu esta opció, el procés d'importació prendrà els texts de "
-"l'idioma d'origen en lloc de l'idioma de destinació."
+"Si trieu aquesta opció, el procés d'importació prendrà els texts de l'idioma "
+"d'origen en lloc de l'idioma de destinació."
 
 #: exe/webui/xliffimportpreferencespage.py:90
 #: exe/webui/tools/style-designer/langs/en.js:58
@@ -12625,4 +12537,3 @@ msgstr ""
 "El fitxer d'iDevices/generic.data o el paquet que proveu de carregar s'ha"
 " creat amb una versió més nova de l'eXe. Actualitzeu l'eXe i torneu-ho a "
 "provar."
-
