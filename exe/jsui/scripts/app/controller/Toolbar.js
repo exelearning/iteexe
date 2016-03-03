@@ -93,9 +93,6 @@ Ext.define('eXe.controller.Toolbar', {
             '#file_export_website': {
                 click: { fn: this.processExportEvent, exportType: "webSite" }
             },
-            '#file_export_googledrive': {
-                click: { fn: this.startExportGoogleDrive }
-            },
             '#file_export_procomun': {
                 click: { fn: this.exportProcomun }
             },
@@ -832,91 +829,37 @@ Ext.define('eXe.controller.Toolbar', {
         this.saveWorkInProgress();
         this.exportPackage(e.exportType, "");
     },
-
-    startExportGoogleDrive: function(menu, item, e, eOpts) {
-        this.saveWorkInProgress();
-        
-        var preconditions = this.checkExportGoogleDrivePreconditions()
-        
-        if (preconditions) {
-            var gapi_auth_state = gapi.auth.authorize(
-                {'client_id': GOOGLE_API_CLIENT_ID, 'scope': GOOGLE_API_SCOPES.join(' '), 'immediate': true},
-                this.processExportGoogleDrive
-            );
-            console.log(gapi_auth_state);
-        }
-    },
     
-    checkExportGoogleDrivePreconditions: function() {
-        if (typeof(gapi) === 'undefined') {
-            console.error(_('Google API Javascript library not available. '));
-            Ext.Msg.alert(_('Missing Google\'s client library. '),
-                          _('Google\'s API client library is not available, please check your Internet connection. '));
-            return false;
-        }
-        if (typeof(gapi.auth) == 'undefined') {
-            console.error(_('Google API Javascript library not available. '));
-            Ext.Msg.alert(_('Missing Google\'s client library. '),
-                          _('Google\'s API client library is not available, please check your Internet connection. '));
-            return false;
-        }
-        if (typeof(gapi.auth.authorize) !== 'function') {
-            console.error(_('Google API Javascript library not available. '));
-            Ext.Msg.alert(_('Missing Google\'s client library. '),
-                          _('Google\'s API client library is not available, please check your Internet connection. '));
-            return false;
-        }
-        
-        
-        if (!GOOGLE_API_CLIENT_ID) {
-            console.error(_('App Client ID not set. '));
-            Ext.Msg.alert(_('Missing App Client ID. '),
-                          _('Please check the App Client ID set in <strong>Tools > Preferences > Publish to Google Drive</strong>. '));
-            return false;
-        }
-        
-        return true;
-    },
-    
-    processExportGoogleDrive : function (authResult) {
-        if (!authResult || authResult.error == 'immediate_failed') {
-            // No access token could be retrieved, force the authorization flow.
-            // This will open a pop-up window, on wich it the Google auth pages
-            // will be loaded. After authorization the user will be redirected
-            // to eXe's callback URI. The script on that URI must take access_token
-            // from URL and call the appropiate function in this page.
-            // If the authorization process is started without user interaction,
-            // the pop-up window might be blocked, attaching the gapi.auth.authorize()
-            // call to a button click event will prevent that.
-            Ext.Msg.show({
-                title: _('You must authorize eXe Learning to export contents into your Google Drive account'),
-                msg: _('Are you sure you want to start authorization process?'),
-                scope: this,
-                modal: true,
-                buttons: Ext.Msg.YESNO,
-                fn: function(button) {
-                    if (button == "yes") {  
-                        gapi.auth.authorize(
-                            {'client_id': GOOGLE_API_CLIENT_ID, 'scope': GOOGLE_API_SCOPES.join(' '), 'redirect_uri' : GOOGLE_API_REDIRECT_URI, 'immediate': false},
-                            this.processExportGoogleDrive
-                        );
-                    }
-                }
-            });
-        }
-        else {
-            eXe.controller.eXeViewport.prototype.gDriveNotificationStatus(_('Starting publication of this document in Google Drive'));
-
-            // Access token has been successfully retrieved, requests can be sent to the API
-            nevow_clientToServerEvent('exportGoogleDrive', this, '', authResult.access_token, navigator.userAgent);
-            
-            eXe.controller.eXeViewport.prototype.gDriveNotificationStatus(_('Publication of this document in your Google Drive account started'));
-        }
-    },
-
     exportProcomun: function() {
         this.saveWorkInProgress();
         nevow_clientToServerEvent('exportProcomun', this, '');
+    },
+
+    getProcomunAuthToken: function(url) {
+        Ext.Msg.show({
+            title: _('You must authorize eXe Learning to publish content into your Procomún account'),
+            msg: _('Are you sure you want to start authorization process?'),
+            scope: this,
+            modal: true,
+            buttons: Ext.Msg.YESNO,
+            fn: function(button) {
+                if (button == "yes") {
+                    var authwindow = new Ext.Window ({
+                        height: eXe.app.getMaxHeight(700),
+                        width: 800,
+                        modal: true,
+                        id: 'oauthprocomun',
+                        title: _("Procomún OAuth"),
+                        items: {
+                            xtype: 'uxiframe',
+                            src: url,
+                            height: '100%'
+                        },
+                    });
+                    authwindow.show();
+                }
+            }
+        });
     },
 
 	exportPackage: function(exportType, exportDir) {

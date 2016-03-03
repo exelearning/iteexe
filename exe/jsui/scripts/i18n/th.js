@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.1\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-06-05 17:57+0200\nPO-Revision-Date: 2007-09-12 06:29+1200\nLast-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: th\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.1\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2016-02-14 19:03+0100\nPO-Revision-Date: 2007-09-12 06:29+1200\nLast-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: th\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Hide": "\u0e0b\u0e48\u0e2d\u0e19", 
  "Title": "\u0e0a\u0e37\u0e48\u0e2d\u0e40\u0e23\u0e37\u0e48\u0e2d\u0e07", 
  "iDevice Editor": "\u0e15\u0e31\u0e27\u0e1b\u0e23\u0e31\u0e1a\u0e41\u0e15\u0e48\u0e07 iDevice", 

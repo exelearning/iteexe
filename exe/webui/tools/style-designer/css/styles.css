@@ -65,7 +65,7 @@ p{width:602px;margin:10px 0}
 #license{border:0;font-weight:bold}
 #info a{margin-right:.5em}
 #info .autoclear{margin:10px 0}
-#info .col{width:50%;float:left;padding:0}
+#info .col{width:40%;float:left;padding:0}
 #info .col label{margin-right:5px}
 #info .info{margin-top:-5px}
 
@@ -162,3 +162,7 @@ table.jPicker{margin-top:69px;margin-left:48px}
 .radios label{margin-left:1em}
 
 .debug-off #content-css-tab,.debug-off #nav-css-tab{display:none}
+
+/* To review */
+#info .info{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#info .col-b{width:60%}

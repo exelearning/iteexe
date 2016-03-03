@@ -84,6 +84,7 @@ td {
 /* Cambio el icono para las listas si numerar */
 ul li {
 	list-style-image:url(bullet.gif);
+	list-style-position:outside;
 }
 
 /* Cita con autoría */

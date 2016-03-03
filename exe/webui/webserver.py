@@ -52,6 +52,7 @@ from exe.webui.renderable          import File
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
 from exe.webui.dirtree import DirTreePage
 from exe.webui.session import eXeSite
+from exe.webui.oauthpage import OauthPage
 from exe import globals as G
 
 
@@ -84,6 +85,7 @@ class WebServer:
         self.legal = LegalPage(self.root)
         self.quit = QuitPage(self.root)
         self.iecmwaring = IECMWarningPage(self.root)
+        self.oauth = OauthPage(self.root)
         self.monitoring = False
 
     def find_port(self):

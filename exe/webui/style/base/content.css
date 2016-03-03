@@ -53,6 +53,7 @@ li{list-style-position:outside}
 .exe-dl .icon,.exe-dl-toggler a{width:24px;height:24px;border-radius:12px}
 .exe-dl-toggler a{line-height:22px}
 .js .exe-dl dd{margin-left:44px}
+.exe-enlarge-icon b{font-size:1.2em}
 
 /* Forms */
 input,select{font-size:1em;font-family:inherit}
@@ -166,8 +167,7 @@ color:#2495ff;
 #header,#emptyHeader,#nodeDecoration{
 height:auto!important;
 /*headerHeight*/
-height:120px;
-min-height:120px;
+height:120px;min-height:120px;
 /*headerBGColor*/
 background-color:#ffffff;border:1px solid /*headerBorderColor*/
 #dddddd;

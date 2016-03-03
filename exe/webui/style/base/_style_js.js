@@ -66,7 +66,7 @@ var myTheme = {
 	addNavArrows : function(){
 		$("#siteNav ul ul .daddy").each(
 			function(){
-				this.innerHTML+=' <span>&#9658;</span>';
+				this.innerHTML+='<span> &#9658;</span>';
 			}
 		);
 	},	

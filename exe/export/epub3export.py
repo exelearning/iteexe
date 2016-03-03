@@ -219,25 +219,33 @@ class NavEpub3(object):
 
     def createXML(self):
         xmlStr = u"""<?xml version="1.0" encoding="UTF-8"?>
-            <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-                xmlns:epub="http://www.idpf.org/2007/ops">
-                <head>
-                    <meta charset="utf-8"></meta>
-                </head>
-                <body>
-                    <nav epub:type="toc" id="toc">
-                        <ol>
-        """
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+    xmlns:epub="http://www.idpf.org/2007/ops">
+    <head>
+        <meta charset="utf-8"></meta>
+    </head>
+    <body>
+        <nav epub:type="toc" id="toc">"""
 
+        currentDepth = 1
         for page in self.pages[1:]:
-            xmlStr += u"<li><a href=\"%s\">%s</a></li>\n" % (page.name + ".xhtml", escape(page.node.title))
+            if page.depth > currentDepth:
+                xmlStr += u'<ol>\n'
+                currentDepth = page.depth
+            else:
+                xmlStr += u'</li>\n'
+            while currentDepth > page.depth:
+                xmlStr += u'</ol>\n</li>\n'
+                currentDepth -= 1
+            xmlStr += u"<li><a href=\"%s\">%s</a>\n" % (page.name + ".xhtml", escape(page.node.title))
 
-        xmlStr += u"""
-                        </ol>
-                    </nav>
-                </body>
-            </html>
-        """
+        while currentDepth > 1:
+            xmlStr += u'</li>\n</ol>\n'
+            currentDepth -= 1
+
+        xmlStr += u"""      </nav>
+    </body>
+</html>"""
 
         return xmlStr
 
@@ -311,6 +319,8 @@ class Epub3Page(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />" + lb
         if common.hasFX(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />" + lb
+        if common.hasSH(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_highlighter.css\" />" + lb
         if common.hasGames(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />" + lb       
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />" + lb
@@ -331,6 +341,8 @@ class Epub3Page(Page):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>' + lb
         if common.hasFX(self.node):
             html += u'<script type="text/javascript" src="exe_effects.js"></script>' + lb
+        if common.hasSH(self.node):
+            html += u'<script type="text/javascript" src="exe_highlighter.js"></script>' + lb
         html += common.getJavaScriptStrings() + lb
         if common.hasGames(self.node):
             # The games require additional strings
@@ -523,6 +535,7 @@ class Epub3Export(object):
         hasXspfplayer = False
         hasGallery = False
         hasFX = False
+        hasSH = False
         hasGames = False
         hasWikipedia = False
         isBreak = False
@@ -533,7 +546,7 @@ class Epub3Export(object):
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasGames and hasWikipedia):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasWikipedia):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -549,6 +562,8 @@ class Epub3Export(object):
                     hasGallery = common.ideviceHasGallery(idevice)
                 if not hasFX:
                     hasFX = common.ideviceHasFX(idevice)
+                if not hasSH:
+                    hasSH = common.ideviceHasSH(idevice)
                 if not hasGames:
                     hasGames = common.ideviceHasGames(idevice)
                 if not hasWikipedia:
@@ -577,6 +592,9 @@ class Epub3Export(object):
         if hasFX:
             exeEffects = (self.scriptsDir / 'exe_effects')
             exeEffects.copyfiles(contentPages)
+        if hasSH:
+            exeSH = (self.scriptsDir / 'exe_highlighter')
+            exeSH.copyfiles(contentPages)
         if hasGames:
             exeGames = (self.scriptsDir / 'exe_games')
             exeGames.copyfiles(contentPages)

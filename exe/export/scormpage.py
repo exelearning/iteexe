@@ -90,6 +90,8 @@ class ScormPage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
         if common.hasFX(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
+        if common.hasSH(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_highlighter.css\" />"+lb
         if common.hasGames(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
@@ -109,6 +111,8 @@ class ScormPage(Page):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         if common.hasFX(self.node):
             html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
+        if common.hasSH(self.node):
+            html += u'<script type="text/javascript" src="exe_highlighter.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         if common.hasGames(self.node):
             # The games require additional strings
@@ -129,6 +133,9 @@ class ScormPage(Page):
                 html += style.get_extra_head()
             html += u"</head>"+lb            
             html += u'<body class=\"exe-scorm\" onload="loadPage()" '
+        if common.hasQuizTest(self.node):
+            html += u'onunload="unloadPage(true)">'
+        else:
             html += u'onunload="unloadPage()">'
         html += u'<script type="text/javascript">document.body.className+=" js"</script>'+lb
         html += u"<div id=\"outer\">"+lb

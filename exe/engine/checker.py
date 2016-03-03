@@ -112,9 +112,14 @@ class Checker:
         self.nodes = [self.package.root] + list(self.package.root.walkDescendants())
         self.clear = clear
         self.idevices = {}
+        idevice_ids = []
+        duplicated_idevice_ids = []
         log.info('Computing content resource references')
         for node in self.nodes:
             for idevice in node.idevices:
+                if idevice.id in idevice_ids:
+                    duplicated_idevice_ids.append((idevice, node))
+                idevice_ids.append(idevice.id)
                 if not idevice.parentNode:
                     log.error('No parent node for idevice %s in node %s! Fixing...' % (idevice.klass, node.title))
                     idevice.parentNode = node
@@ -130,7 +135,7 @@ class Checker:
                                 field.parentNode = node
                             if field.parentNode != node:
                                 log.error('Parent node of field in idevice %s in node %s not match! Fixing...' % (idevice.klass, node.title))
-                                field.parentNode = node 
+                                field.parentNode = node
                         for resource in field.ListActiveResources(field.content_w_resourcePaths):
                             path = self.package.resourceDir / resource
                             if not path.exists():
@@ -153,6 +158,17 @@ class Checker:
                             else:
                                 self.idevices[path] = [idevice]
 
+        for idevice, node in duplicated_idevice_ids:
+            log.error('Duplicated idevice id %s in node %s of type %s. Fixing...' % (idevice.id, node.title, idevice.klass))
+            while idevice.id in idevice_ids:
+                idevice.id = unicode(int(idevice.id) + 1)
+            idevice_ids.append(idevice.id)
+
+        max_idevice_id = 0 if not idevice_ids else max(map(lambda x: int(x), idevice_ids))
+        if Idevice.nextId <= max_idevice_id:
+            log.error('Wrong idevice next id. Fixing...')
+            Idevice.nextId = max_idevice_id + 1
+
     def clear_resourceReferences(self):
         self.package.resources = {}
         for node in self.nodes:
@@ -168,7 +184,12 @@ class Checker:
             for path in self.package.resourceDir.files():
                 if path in self.idevices:
                     for idevice in self.idevices[path]:
-                        resource = Resource(idevice, path)
+                        try:
+                            resource = Resource(idevice, path)
+                        except:
+                            msg = "%s referenced in idevice %s of node %s not exists" % (path, idevice.idevice.klass, idevice.parentNode.title)
+                            log.error('New inconsistency of type packageResourceNonExistant: %s' % (msg))
+                            continue                        
                         if isinstance(idevice, FieldWithResources):
                             galleryimage = GalleryImage(idevice, '', None, mkThumbnail=False)
                             galleryimage._imageResource = resource

@@ -23,6 +23,10 @@ Ext.define('eXe.view.forms.PackagePanel', {
     alias: 'widget.package',
     statics: { eXeLicenses: [
                          [
+                             "None",
+                             "(" + _("void") + ")"
+                         ],
+                         [
                              "propietary license", 
                              _("propietary license")
                          ], 

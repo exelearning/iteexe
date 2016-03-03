@@ -49,6 +49,14 @@ var $exe = {
             opacity: 0.85
         });
         $exe.dl.init();
+		// Add a zoom icon to the images using CSS 
+		$("a.exe-enlarge").each(function(i){
+			 var e = $(this);
+			 var c = $(this).children();
+			 if (c.length==1 && c.eq(0).prop("tagName")=="IMG") {
+				e.prepend('<span class="exe-enlarge-icon"><b></b></span>');
+			 }
+		});
 		$exe.sfHover();
     },
 	
@@ -93,8 +101,8 @@ var $exe = {
 		}
 	},
 	
-	// Quicktime and Real Media for IE
-	ieMediaReplace : function() {
+	mediaReplace : function() {
+		// Quicktime and Real Media for IE
 		if (navigator.appName == "Microsoft Internet Explorer") {
 			var e = document.getElementsByTagName("OBJECT");
 			var t = e.length;
@@ -113,6 +121,24 @@ var $exe = {
 					}
 				}
 			}
+		} else if (document.body.className.indexOf("exe-epub3")==0) {
+			// Replace OBJECT with VIDEO and AUDIO in ePub
+			$("object").each(function() {
+				var e = $(this);
+				var p = e.attr("data"); // Player
+				var w, h, f; // Width, Height, File
+				var v = $("param[name=flv_src]", e);
+				if (p == "flowPlayer.swf" && v.length==1) {
+					w = this.width || 320;
+					h = this.height || 240;
+					f = v.attr("value");
+					e.before('<video width="' + w + '" height="' + h + '" src="' + f + '" controls="controls"><a href="' + f + '">' + f + '</a></video>').remove()
+				} else if (p.indexOf("xspf_player.swf?song_url=") == 0) {
+					f = p.replace("xspf_player.swf?song_url=", "");
+					f = f.split("&")[0];
+					e.before('<audio width="300" height="32" src="' + f + '" controls="controls"><a href="' + f + '">' + f + '</a></audio>').remove()
+				}
+			});
 		}
 	},
 	
@@ -236,7 +262,7 @@ var $exe = {
                 var t = $exe_i18n.hide;
                 e = $(this), c = e.hasClass("iDevice_header") ? "em1" : "em0", eP = e.parents(".iDevice_wrapper");
                 if (eP.length) {
-                    var n = '<p class="toggle-idevice toggle-' + c + '"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\'' + eP.attr("id") + "','" + c + '\')" title="' + t + '"><span>' + t + "</span></a></p>";
+                    var n = '<p class="toggle-idevice toggle-' + c + '"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\'' + eP.attr("id") + "','" + c + '\');return false" title="' + t + '"><span>' + t + "</span></a></p>";
                     if (c == "em1") {
                         var r = e.html();
                         e.html(r + n)
@@ -1222,6 +1248,6 @@ if (typeof jQuery != "undefined") {
         $exe.init();
     });
 	$(window).load(function(){
-		$exe.ieMediaReplace();
+		$exe.mediaReplace();
 	});	
 }

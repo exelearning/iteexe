@@ -21,6 +21,7 @@ tinyMCE.addI18n('en.tooltip',{
 	type1_instructions : _("The tooltip will show the Link title."),
 	// Type 2
 	type2 : _("Definition"),
+	type2_not_found : _("The term could not be found"),
 	term : _("Term"),
 	type2_desc : _("Write the term and its definition. You may use HTML and edit it in the editor."),
 	type2_label : _("Definition:"),

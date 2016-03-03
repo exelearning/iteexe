@@ -50,10 +50,23 @@ $exeFX = {
 			t = t.replace(xmlnsStringExp, 'h2');
 		}
 		return t;
-	},
+	},	
 	rftTitles : function(t) {
+		// Remove all attributes (except the title)
+		var div = $("<div></div>");
+		div.html(t);		
+		$("h2",div).each(function() {
+			var attributes = $.map(this.attributes, function(item) {
+				return item.name;
+			});
+			var title = $(this);
+			$.each(attributes, function(i, item) {
+				if (item.toLowerCase()!="title") title.removeAttr(item);
+			});
+		});		
+		t = div.html();
 		// Remove xmlns="http://www.w3.org/1999/xhtml"
-		t = $exeFX.removeXMLNS(t);
+		t = $exeFX.removeXMLNS(t);		
 		// Replace <h2 title=""></h2> by <h2><span title=""></span></h2>. That's how TinyMCE inserts the title when using the Insert/Edit Attributes option
 		var s = t.split('<'+$exeFX.h2+' title="');
 		var n ="";
@@ -75,17 +88,25 @@ $exeFX = {
 			var k = $exeFX.baseClass;
 			var t = $('.fx-accordion-title',x);
 			// Get the box shadow color
-			var color = t.eq(0).css("background-color");
-			color = color.replace("rgb(","rgba(").replace(")",",0.5)");
-			if (color.indexOf("rgba(")==0) x.css("box-shadow","0px 1px 3px "+color);
-			// Get border color (titles)
-			color = x.css("background-color");
-			color = color.replace("rgb(","rgba(").replace(")",",0.2)");
-			if (color.indexOf("rgba(")==0) {
-				t.each(function(){
-					this.style.borderColor=color;
-				});
-			}
+			var color = '';
+			var title = t.eq(0);
+			if (title.length==1) {
+				color = title.css("background-color");
+				if (typeof(color)=="string") {
+					color = color.replace("rgb(","rgba(").replace(")",",0.5)");
+					if (color.indexOf("rgba(")==0) x.css("box-shadow","0px 1px 3px "+color);
+					// Get border color (titles)
+					color = x.css("background-color");
+					if (typeof(color)=="string") {
+						color = color.replace("rgb(","rgba(").replace(")",",0.2)");
+						if (color.indexOf("rgba(")==0) {
+							t.each(function(){
+								this.style.borderColor=color;
+							});
+						}
+					}
+				}
+			}			
 			// onclick
 			t.click(function(e) {
 				var aID = this.id.split("-")[0];
