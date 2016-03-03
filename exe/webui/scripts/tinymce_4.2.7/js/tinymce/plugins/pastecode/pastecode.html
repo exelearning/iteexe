@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>	
+	<title>{#pastecode.paste_code_desc}</title>	
+	<link rel="stylesheet" type="text/css" href="css/dialog.css" />
+	<script language="javascript" type="text/javascript" src="js/pastecode.js"></script>
+</head>
+<body style="display:none">
+	<form name="source" onsubmit="return PasteCodeDialog.insert()">
+		<div class="dialogContent">
+			<div style="float: left">{#pastecode.paste_code_title}</div>
+			<div style="float: right">
+				<input type="checkbox" name="wrapper" id="wrapper" checked="checked" /><label for="linebreaks">{#pastecode.paste_include_wrapper}</label>
+			</div>
+			<br style="clear: both" />
+			<textarea name="htmlSource" id="htmlSource" rows="15" cols="100" dir="ltr" wrap="soft"></textarea>
+		</div>
+		<div class="actionButtons">		
+			<input type="submit" name="insert" value="{#pastecode.insert}" id="insert" />
+			<input type="button" name="cancel" value="{#pastecode.close}" onclick="PasteCodeDialog.close();" id="cancel" />
+		</div>
+	</form>
+</body> 
+</html>

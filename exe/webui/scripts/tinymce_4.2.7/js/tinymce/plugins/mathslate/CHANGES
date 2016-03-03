@@ -1,0 +1,20 @@
+Version 1.1
+
+This release adds to the original 1.0 version some technical improvements.
+
+    1. The editor now supports MathJax Output modes NativeMML and SVG
+    in addittion to HTML-CSS.  It will use the current output jax to
+    display all mathematics.
+
+    2. The TeX tool now has a more robust XML parser so that it should be
+    able to convert any TeX expression supported by the MathJax
+    configuration to work within the editor.
+
+    3. JSON to MathML conversions has be improved to provide more complete
+    MathML configuration of editor.
+
+    4. The default configuration has been updated slightly to utilize
+    some of the improvements.
+
+    5. Some improvements have been made in the API to make it more easily 
+    used in other plugins.

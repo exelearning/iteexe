@@ -1,0 +1,10 @@
+{
+  "name": "moodle-tinymce_mathslate-dialogue",
+  "builds": {
+    "moodle-tinymce_mathslate-dialogue": {
+      "jsfiles": [
+        "dialogue.js"
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "moodle-tinymce_mathslate-snippeteditor": {
+      "requires": [ "json" ] 
+  }
+}
+
