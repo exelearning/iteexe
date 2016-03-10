@@ -187,7 +187,7 @@ Ext.define('eXe.controller.Toolbar', {
                 click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/?lang=en') }
             },
             '#help_issue': {
-                click: { fn: this.processBrowseEvent, url: _('https://forja.cenatic.es/tracker/?group_id=197') }
+                click: { fn: this.processBrowseEvent, url: 'https://github.com/exelearning/iteexe/issues' }
             },
             '#help_forums': {
                 click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/forums/') }

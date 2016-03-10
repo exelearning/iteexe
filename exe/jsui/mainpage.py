@@ -255,7 +255,7 @@ class MainPage(RenderableLivePage):
     def render_version(self, ctx, data):
         return [tags.p()["Version: %s" % release],
                 tags.p()["Revision: ",
-                         tags.a(href='%s;a=shortlog;h=%s' % (self.config.baseGitWebURL, revision),
+                         tags.a(href='%s/commits/%s' % (self.config.baseGitWebURL, revision),
                                 target='_blank')[revision]
                         ]
                ]

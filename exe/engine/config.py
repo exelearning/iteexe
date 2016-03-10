@@ -50,7 +50,7 @@ class Config(object):
     """
 
     # To build link to git revision
-    baseGitWebURL = 'https://forja.cenatic.es/plugins/scmgit/cgi-bin/gitweb.cgi?p=iteexe/iteexe.git'
+    baseGitWebURL = 'https://github.com/exelearning/iteexe'
 
     # Class attributes
     optionNames = {
