@@ -200,7 +200,7 @@ man(1), man(7), http://www.tldp.org/HOWTO/Man-Page/
     <!-- Or use this section to tell about upstream BTS. -->
     <title>BUGS</title>
     <para>The upstreams <acronym>BTS</acronym> can be found
-      at <ulink url="https://forja.cenatic.es/tracker/"/>.</para>
+      at <ulink url="https://github.com/exelearning/iteexe/issues"/>.</para>
   </refsect1>
 
   <refsect1 id="see_also">

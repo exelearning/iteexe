@@ -39,7 +39,7 @@ def replaceLinks(matchobj, package_name):
     # only modify links to external targets
     if do \
     and do.group(1).find('http://') >=0 \
-    and not do.group(1).find('http://127.0.0.1') >= 0:
+    and not do.group(1).find(G.application.exeAppUri) >= 0:
         return re.sub(r'(?i)href\s*=\s*"?([^>"]+)"?',
                 r'''href="\1" onclick="browseURL(this); return false"''',
                 anchor)
@@ -47,7 +47,7 @@ def replaceLinks(matchobj, package_name):
     and do.group(1).startswith('resources/'):
         clean_url = urllib.quote(package_name.encode('utf-8'))
         return re.sub(r'(?i)href\s*=\s*"?([^>"]+)"?',
-                r'''href="\1" onclick="browseURL('http://127.0.0.1:%d/%s/\1'); return false"''' % (G.application.config.port, clean_url),
+                r'''href="\1" onclick="browseURL('%s/%s/\1'); return false"''' % (G.application.exeAppUri, clean_url),
                 anchor)
     else:
         return anchor
