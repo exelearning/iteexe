@@ -187,7 +187,7 @@ Ext.define('eXe.controller.Toolbar', {
                 click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/?lang=en', title: _('eXe Website'), id: 'website_tab' }
             },
             '#help_issue': {
-                click: { fn: this.processBrowseEvent, url: 'https://forja.cenatic.es/tracker/?group_id=197', title: _('Report an Issue'), id: 'issue_tab' }
+                click: { fn: this.processBrowseEvent, url: 'https://github.com/exelearning/iteexe/issues', title: _('Report an Issue'), id: 'issue_tab' }
             },
             '#help_forums': {
                 click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/forums/', title: _('eXe Forums'), id: 'forums_tab' }

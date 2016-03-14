@@ -7,7 +7,7 @@
 			ed.addCommand('mcePasteCode', function() {
 				ed.windowManager.open({
 					file : url + '/pastecode.htm',
-					width : 500,
+					width : 550,
 					height : 400,
 					inline : 1
 				}, {
@@ -17,7 +17,7 @@
 			ed.addCommand('mcePasteHtml', function() {
 				ed.windowManager.open({
 					file : url + '/pastehtml.htm',
-					width : 500,
+					width : 550,
 					height : 400,
 					inline : 1
 				}, {

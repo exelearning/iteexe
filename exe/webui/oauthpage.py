@@ -22,9 +22,9 @@ from nevow import rend, inevow
 
 
 class ProcomunOauth(Renderable, rend.Page):
-    CLIENT_ID = 'qJjpq2uU2dDlp4a3teMTXPILrHMqYOoI'
-    CLIENT_SECRET = '1RVxCfU4XeFhGkwf1zMVhA5ySPDJIiz7wjZjK4O0wUH5MFRc'
-    BASE_URL = 'https://agrega2-front-pre.emergya.es'
+    CLIENT_ID = 'J5eLqvTobTdPNcOclgOHjZe4S1mLtvGG'
+    CLIENT_SECRET = '85I8Q4eR9UsvjpkzhdV4KVqWq4ePUlNNLkxxX4wpbky9Nb7G'
+    BASE_URL = 'https://procomun.educalab.es'
     REDIRECT_URI = 'https://exe.open-phoenix.com/oauth/procomun/callback'
     AUTHORIZATION_BASE_URL = BASE_URL + '/oauth2/authorize'
     TOKEN_URL = BASE_URL + '/oauth2/token'

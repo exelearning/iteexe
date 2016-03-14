@@ -308,7 +308,8 @@ class ClientHandle(object):
 
     def _closeComplete(self, failure=None):
         self.closed = True
-        self.timeoutLoop.stop()
+        if self.timeoutLoop:
+            self.timeoutLoop.stop()
         self.timeoutLoop = None
         for notify in self.closeNotifications[:]:
             if failure is not None:

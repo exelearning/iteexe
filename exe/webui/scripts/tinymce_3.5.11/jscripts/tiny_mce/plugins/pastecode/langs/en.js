@@ -7,7 +7,7 @@ paste_html_title : _('Use CTRL+V on your keyboard to paste the code into the win
 paste_include_wrapper : _('Include wrapper (improves presentation)'),
 highlight_syntax : _('Highlight syntax'),
 options : _('Options'),
-language : _('Lenguage'),
+language : _('Language'),
 language_missing : _('Please select a language'),
 not_defined : _('-- Not Set --'),
 markup : _('Markup (HTML, etc.)'),

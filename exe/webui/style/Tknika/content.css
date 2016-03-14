@@ -74,7 +74,7 @@ a{
 	text-align:left;
 }
 
-#main h2{
+h2{
 	font-size: 1.4em;
 	color: #4d4d4d;
 }
@@ -85,16 +85,16 @@ a{
 	color: #4d4d4d;
 }
 
-#main h3{
+h3{
 	font-size: 1.3em;
 /*	color: #C6D644;
 */}
 
-#main h4{
+h4{
 	font-size:1.2em;
 }
 
-#main h5{
+h5{
 	font-size:1.1em;
 }
 

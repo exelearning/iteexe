@@ -658,7 +658,7 @@ var exe_tinymce = {
 
                 // PreviewImage is only available for images:
                 if (type == "image") {
-                    win.ImageDialog.showPreviewImage(full_previewImage_url);
+					if (typeof(win.ImageDialog)!='undefined') win.ImageDialog.showPreviewImage(full_previewImage_url);
                 }
                 else if (type == "media") {
                     win.window.Media.preview();

@@ -75,7 +75,8 @@ def uniquifyNames(pages):
         uniquifier = pageNames[page.name]
         if uniquifier:
             pageNames[page.name] = uniquifier + 1
-            page.name += unicode(uniquifier)
+            if uniquifier > 1:
+                page.name += unicode(uniquifier)
         # for export, temporarily set this unique name on the node itself,
         # such that any links to it can use the proper target; also
         # including the quote() & ".html", as per WebsitePage's:
