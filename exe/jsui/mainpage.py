@@ -65,13 +65,12 @@ from exe.export.xmlexport        import XMLExport
 from requests_oauthlib           import OAuth2Session
 from exe.webui.oauthpage         import ProcomunOauth
 from suds.client                 import Client
-from exe.engine.sslcontext       import create_ssl_context, HTTPSTransport
 
 from exe.engine.lom import lomsubs
 from exe.engine.lom.lomclassification import Classification
 import zipfile
 log = logging.getLogger(__name__)
-PROCOMUN_WSDL = 'https://agrega2-front-pre.emergya.es/oauth_services?wsdl'
+PROCOMUN_WSDL = ProcomunOauth.BASE_URL + '/oauth_services?wsdl'
 
 
 
@@ -772,7 +771,6 @@ class MainPage(RenderableLivePage):
     def handleExportProcomun(self, client):
         if not client.session.oauthToken.get('procomun'):
             oauth2Session = OAuth2Session(ProcomunOauth.CLIENT_ID, redirect_uri=ProcomunOauth.REDIRECT_URI)
-            oauth2Session.verify = False
             authorization_url, state = oauth2Session.authorization_url(ProcomunOauth.AUTHORIZATION_BASE_URL)
             self.webServer.oauth.procomun.saveState(state, oauth2Session, client)
 
@@ -789,17 +787,10 @@ class MainPage(RenderableLivePage):
         scorm = ScormExport(self.config, stylesDir, filename, 'scorm1.2')
         scorm.export(self.package)
 
-        sslverify = False
-        cafile = None
-        capath = None
-
-        kwargs = {}
-        sslContext = create_ssl_context(sslverify, cafile, capath)
         headers = {'Authorization': 'Bearer %s' % str(token['access_token']),
                    'Connection': 'close'}
-        kwargs['transport'] = HTTPSTransport(sslContext, headers=headers)
 
-        procomun = Client(PROCOMUN_WSDL, **kwargs)
+        procomun = Client(PROCOMUN_WSDL, headers=headers)
 
         ode = procomun.factory.create('xsd:anyType')
 
@@ -818,7 +809,7 @@ class MainPage(RenderableLivePage):
                     parsedResult[item.key][item.value.item.key] = item.value.item.value
 
         if parsedResult['status'] == 'true':
-            link_url = 'https://agrega2-front-pre.emergya.es/ode/view/%s' % parsedResult['data']['documentId']
+            link_url = ProcomunOauth.BASE_URL + '/ode/view/%s' % parsedResult['data']['documentId']
             client.notifyStatus(statusTitle, _(u'Package exported to <a href="%s" target="_blank" title="Click to visit exported site">%s</a>') % (link_url, self.package.title))
         else:
             client.hideStatus()
