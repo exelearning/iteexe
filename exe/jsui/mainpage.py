@@ -770,7 +770,11 @@ class MainPage(RenderableLivePage):
 
     def handleExportProcomun(self, client):
         if not client.session.oauthToken.get('procomun'):
+            verify = True
+            if hasattr(sys, 'frozen'):
+                verify = 'cacerts.txt'
             oauth2Session = OAuth2Session(ProcomunOauth.CLIENT_ID, redirect_uri=ProcomunOauth.REDIRECT_URI)
+            oauth2Session.verify = verify
             authorization_url, state = oauth2Session.authorization_url(ProcomunOauth.AUTHORIZATION_BASE_URL)
             self.webServer.oauth.procomun.saveState(state, oauth2Session, client)
 
