@@ -788,6 +788,7 @@ class MainPage(RenderableLivePage):
         token = client.session.oauthToken['procomun']
         stylesDir = self.config.stylesDir / self.package.style
         fd, filename = mkstemp('.zip')
+        os.close(fd)
         scorm = ScormExport(self.config, stylesDir, filename, 'scorm1.2')
         scorm.export(self.package)
 
