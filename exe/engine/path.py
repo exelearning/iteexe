@@ -616,7 +616,7 @@ class Path(unicode):
                     backupName = self.dirname() / self.namebase + '.old' + str(i) + self.ext
                 self.rename(backupName)
             except Exception, e:
-                log.warn('Failed to rename file on saving: %s -> %s -- %s' % (self, backupName, str(e)))
+                log.warn('Failed to rename file on saving: %s -> %s -- %s' % (repr(self), repr(backupName), str(e)))
                 backupName = None
             try:        
                 # Begin saving
