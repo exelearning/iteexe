@@ -641,7 +641,7 @@ class Path(unicode):
                     backupName.rename(self)
                 raise Exception(_("%s\n%s unchanged" % (e, self)))
             # If save completed ok, delete backup
-            if backupName.exists():
+            if backupName and backupName.exists():
                 try:
                     backupName.remove()
                 except Exception, e:
