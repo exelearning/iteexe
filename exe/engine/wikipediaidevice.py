@@ -58,7 +58,8 @@ resource. The Wikipedia Article iDevice takes a snapshot copy of the article
 content. Changes in Wikipedia will not automatically update individual snapshot 
 copies in eXe, a fresh copy of the article will need to be taken. Likewise, 
 changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia content 
-is covered by the GNU free documentation license.</p>"""), 
+is covered by the GNU Free Documentation 1.2 License, and since 2009 additionally
+by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"""), 
                          u"", u"")
         self.emphasis         = Idevice.NoEmphasis
         self.articleName      = u""
@@ -162,7 +163,8 @@ within Wikipedia.""")
             imageName = imageName.replace('%28', '(')
             imageName = imageName.replace('%29', ')')
             imageName = imageName.replace('%C3%A5', 'å')
-            #JR: decodificamos el nombre de la imagen
+            #JRJ: decodificamos el nombre de la imagen
+            # (we decode the name of the image)
             imageName = urllib.unquote(imageName)
             # Search if we've already got this image
             if imageName not in self.images:
@@ -173,7 +175,7 @@ within Wikipedia.""")
                     else:
                         imageSrc = '%s/%s/%s' % (netloc, path, imageSrc)               
                 try:
-                # download whith its original name... in ASCII:
+                # download with its original name... in ASCII:
                 ## er... just because some repositories do not undestand no ascii names of files:
                     imageName = imageName.encode('ascii', 'ignore')
                     urllib.urlretrieve(imageSrc, tmpDir/imageName)
