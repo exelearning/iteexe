@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.1\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2016-02-14 19:03+0100\nPO-Revision-Date: 2016-02-14 19:14+0100\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage-Team: Spanish <jrfern@telefonica.net>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.1\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2016-02-14 19:03+0100\nPO-Revision-Date: 2016-03-21 17:03+0100\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage-Team: Spanish <jrfern@telefonica.net>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Actividad desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cree el caso pr\u00e1ctico. Un buen caso es aquel \nque describe una controversia o propone una escena describiendo los personajes \ninvolucrados y la situaci\u00f3n. Tambi\u00e9n debe permitir que se realicen acciones \npara obtener la resoluci\u00f3n de la situaci\u00f3n.", 
  "Telugu ": "Telugu ", 
@@ -303,7 +303,7 @@ translations = {
  "Template": "Plantilla", 
  "Situation": "Caso pr\u00e1ctico", 
  "Directory exists": "El directorio ya existe", 
- "CodeMagic - syntax coloring and intendation": "CodeMagic - coloreado e indentaci\u00f3n sint\u00e1cticos", 
+ "CodeMagic - syntax coloring and intendation": "CodeMagic - resaltado de sintaxis", 
  "Download Classification Sources": "Descargar las fuentes de la taxonom\u00eda", 
  "programming service": "servicio de programaci\u00f3n", 
  "Import to <output_file> elp package, <input_file> in one of the given formats: xml or xliff.": "Importar el archivo <fichero_de_entrada> al paquete ELP <fichero_de_salida> en alguno de los siguientes formatos: xml o xliff.", 

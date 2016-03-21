@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2016-02-14 19:03+0100\n"
-"PO-Revision-Date: 2016-02-14 19:14+0100\n"
+"PO-Revision-Date: 2016-03-21 17:03+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -9884,7 +9884,7 @@ msgstr "Reemplazar por:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
-msgstr "CodeMagic - coloreado e indentación sintácticos"
+msgstr "CodeMagic - resaltado de sintaxis"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
 msgid "Edit code"
