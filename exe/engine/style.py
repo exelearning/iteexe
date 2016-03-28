@@ -80,9 +80,12 @@ class Style(Persistable):
                 configStyle = self._styleDir/'config.xml'
                 if configStyle.exists():
                     configdata = open(configStyle).read()
-                    configcharset = chardet.detect(configdata)
-                    newconfigdata=configdata.decode(configcharset['encoding'], 'replace')
-                    xmldoc = minidom.parseString(newconfigdata)            
+                    try:
+                        newconfigdata = configdata.decode()
+                    except UnicodeDecodeError:
+                        configcharset = chardet.detect(configdata)
+                        newconfigdata = configdata.decode(configcharset['encoding'], 'replace')
+                    xmldoc = minidom.parseString(newconfigdata)
                     theme = xmldoc.getElementsByTagName('theme')                    
                     if (len(theme) > 0):
                         for attribute in self._attributes.keys():
