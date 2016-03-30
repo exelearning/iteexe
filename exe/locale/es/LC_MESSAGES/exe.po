@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2016-03-30 17:33+0200\n"
-"PO-Revision-Date: 2016-03-21 17:03+0100\n"
+"PO-Revision-Date: 2016-03-30 19:57+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -3364,7 +3364,6 @@ msgid "Wiki Article"
 msgstr "Artículo de la wikipedia"
 
 #: exe/engine/wikipediaidevice.py:55
-#, fuzzy
 msgid ""
 "<p>The Wikipedia iDevice allows you to locate \n"
 "existing content from within Wikipedia and download this content into "
@@ -3381,16 +3380,14 @@ msgid ""
 "additionally\n"
 "by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
 msgstr ""
-"<p>El iDevice Wikipedia permite que usted encuentre \n"
-"contenido existente en Wikipedia y descargue este contenido a eXe. \n"
-"El iDevice artículo de la wikipedia toma una copia del contenido del \n"
-" artículo. Los cambios posteriores que se produzcan en la Wikipedia no se"
-" reflejarán automáticamente en la copia \n"
-" del artículo en eXe, será necesario realizar una nueva copia del "
-"artículo. Asímismo, \n"
-"los cambios realizados en eXe no producirán efectos en los artículos de "
-"la Wikipedia. </p> <p>El Contenido de Wikipedia \n"
-"esta protegido por la licencia de documentación libre de GNU.</p>"
+"<p>El iDevice Wikipedia le permite buscar \n"
+"contenido existente en la Wikipedia y descargar este contenido en su recurso eXe. \n"
+"El iDevice Artículo de la wikipedia lo que hace es una copia del contenido del \n"
+" artículo; los cambios posteriores que se produzcan en la Wikipedia no se reflejarán automáticamente en la copia \n"
+" del artículo en eXe, será necesario realizar una nueva copia. Asímismo, \n"
+"los cambios realizados en eXe no producirán efectos en los artículos de la Wikipedia. </p> <p>El Contenido de la Wikipedia \n"
+"esta protegido por la Licencia de documentación libre de GNU 1.2, y desde 2009 además\n"
+"por la licencia CreativeCommons Reconocimiento-compartir igual 3.0 Unported.</p>"
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
@@ -8610,76 +8607,70 @@ msgid "Load"
 msgstr "Cargar"
 
 #: exe/webui/scripts/authoring.js:69
-#, fuzzy
 msgid "Select one or more images"
-msgstr "Seleccionar una imagen"
+msgstr "Seleccionar una o más imágenes"
 
 #: exe/webui/scripts/authoring.js:94
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
-msgstr ""
+msgstr "Ficheros de imagen (.jpg, .jpeg, .png, .gif, .svg)"
 
 #: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
-#, fuzzy
 msgid "Flash Movie (.flv)"
-msgstr "Vídeo FLV"
+msgstr "Vídeo FLV (.flv)"
 
 #: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
 msgid "Flash Object (.swf)"
-msgstr ""
+msgstr "Objeto flash (.swf)"
 
 #: exe/webui/scripts/authoring.js:121
-#, fuzzy
 msgid "Quicktime Files (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
-msgstr "QuickTime (mov, mp4, mpeg)"
+msgstr "Ficheros QuickTime (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
 
 #: exe/webui/scripts/authoring.js:122
 msgid "Windows Media Player Files (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
-msgstr ""
+msgstr "Ficheros Windows Media Player (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx) "
 
 #: exe/webui/scripts/authoring.js:123
 msgid "RealMedia Audio Files (.rm, .ra, .ram, .mp3)"
-msgstr ""
+msgstr "Ficheros de audio RealMedia (.rm, .ra, .ram, .mp3)"
 
 #: exe/webui/scripts/authoring.js:175
 msgid "JPEG Files (.jpg, .jpeg)"
-msgstr ""
+msgstr "Ficheros JPEG (.jpg, .jpeg)"
 
 #: exe/webui/scripts/authoring.js:375
 msgid "MP3 Audio (.mp3)"
-msgstr ""
+msgstr "Audio MP3 (.mp3)"
 
 #: exe/webui/scripts/authoring.js:378
-#, fuzzy
 msgid "Select an mp3 file"
-msgstr "Seleccionar un archivo"
+msgstr "Seleccionar un archivo mp3"
 
 #: exe/webui/scripts/authoring.js:386
-#, fuzzy
 msgid "Select a package"
-msgstr "Seleccionar una imagen"
+msgstr "Seleccionar un paquete"
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
 "Embed images shouldn't be pasted directly into the editor. Please use "
 "Insert/Edit Image."
-msgstr ""
+msgstr "Las imágenes no deben pegarse directamente en el editor. Por favor use Insertar/Editar imagen."
 
 #: exe/webui/scripts/authoring.js:744
 msgid "This change will be undone."
-msgstr ""
+msgstr "Se va a deshacer este cambio."
 
 #: exe/webui/scripts/editor.js:35
 msgid "Do you want to overwrite the existing idevice {idevice}?"
-msgstr ""
+msgstr "¿Desea sobreescribir el iDevice ya existente {idevice}?"
 
 #: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
-#, fuzzy
 msgid "eXe Idevices"
-msgstr "Guardar los iDevices"
+msgstr "iDevices de eXe"
 
 #: exe/webui/scripts/editor.js:87
 msgid "Please save the idevice first, then try to export it."
-msgstr ""
+msgstr "Por favor guarde el iDevice primero, y después trate de exportarlo."
 
 #: exe/webui/scripts/exe_tooltips/exe_tooltips.js:79
 #: exe/webui/scripts/exe_tooltips/exe_tooltips.js:145
@@ -8687,9 +8678,8 @@ msgid "Go to Tools - Preview to see the tooltip content"
 msgstr "Ir a Utilidades - Visualización previa para ver el contenido del bocadillo"
 
 #: exe/webui/scripts/stylemanager.js:78
-#, fuzzy
 msgid "Do you want to delete the selected style?"
-msgstr "¿Desea borrar este estilo?"
+msgstr "¿Desea borrar el estilo seleccionado?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Error: Invalid values entered, these are marked in red."
@@ -12010,13 +12000,12 @@ msgstr "Números romanos (mayúsculas)"
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:64
 msgid "Automatic Numbering"
-msgstr ""
+msgstr "Numeración automática"
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
-#, fuzzy
 msgid "Editor"
-msgstr "editor de contenido"
+msgstr "Editor"
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
@@ -12140,23 +12129,20 @@ msgid "An unexpected error has occurred"
 msgstr "Se ha producido un error inesperado"
 
 #: exe/webui/tools/style-designer/js/app.js:1236
-#, fuzzy
 msgid "Create new style"
 msgstr "Crear un estilo nuevo"
 
 #: exe/webui/tools/style-designer/js/app.js:1237
-#, fuzzy
 msgid "Name the new style"
-msgstr "Guardar para darle nombre al nuevo estilo."
+msgstr "Darle nombre al estilo nuevo"
 
 #: exe/webui/tools/style-designer/js/app.js:1259
-#, fuzzy
 msgid "Style Designer windows will be closed. "
-msgstr "El diseñador de estilos no está abierto."
+msgstr "Se va a proceder a cerrar las ventanas del diseñador de estilos."
 
 #: exe/webui/tools/style-designer/js/app.js:1262
 msgid "Page will be reloaded. "
-msgstr ""
+msgstr "Se va a proceder a recargar la página."
 
 #: exe/webui/tools/style-designer/langs/en.js:12
 msgid "General settings"
@@ -12715,4 +12701,3 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
-
