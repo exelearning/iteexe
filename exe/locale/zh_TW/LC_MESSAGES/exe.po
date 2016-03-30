@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2016-02-14 19:03+0100\n"
+"POT-Creation-Date: 2016-03-30 17:33+0200\n"
 "PO-Revision-Date: 2014-05-15 18:08+0200\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language-Team: Chinese Traditional <zh-l10n@linux.org.tw>\n"
@@ -20,19 +20,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 
-#: exe/application.py:189
+#: exe/application.py:191
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
 msgstr ""
 
-#: exe/application.py:208
+#: exe/application.py:209
 #, python-format
 msgid ""
 "An error has occurred when loading your Idevice Store. A backup is saved "
 "at %s"
 msgstr ""
 
-#: exe/application.py:247
+#: exe/application.py:248
 #, fuzzy, python-format
 msgid ""
 "eXeLearning, the EXtremely Easy to use eLearning authoring tool\n"
@@ -2322,7 +2322,7 @@ msgstr "iDevice 編輯器"
 msgid "My Catalog"
 msgstr "我的目錄"
 
-#: exe/engine/package.py:1577
+#: exe/engine/package.py:1577 exe/webui/scripts/tinymce_3.5.11_settings.js:58
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:73
@@ -2862,33 +2862,35 @@ msgid ""
 "Likewise, \n"
 "changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia "
 "content \n"
-"is covered by the GNU free documentation license.</p>"
+"is covered by the GNU Free Documentation 1.2 License, and since 2009 "
+"additionally\n"
+"by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
 msgstr ""
 
-#: exe/engine/wikipediaidevice.py:65
+#: exe/engine/wikipediaidevice.py:66
 msgid "Article"
 msgstr "文章"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:359
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr "選擇適當的維基百科語言版本來搜尋，並輸入搜尋字串。"
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:361
+#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:363
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
 msgstr "請輸入您要在維基百科內搜尋的片語或字串。"
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:137
+#: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
 #, python-format
 msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
 msgstr "無法從 %s 下載<br/>請檢查拼字與連線，然後再試一次。"
 
-#: exe/engine/wikipediaidevice.py:313
+#: exe/engine/wikipediaidevice.py:315
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
@@ -3062,9 +3064,9 @@ msgstr ""
 "exe_do：錯誤：無法匯入 '%s'。\n"
 "錯誤為："
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:303
-#: exe/jsui/mainpage.py:979 exe/jsui/mainpage.py:1143 exe/jsui/mainpage.py:1183
-#: exe/jsui/mainpage.py:1218 exe/jsui/mainpage.py:1239
+#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:302
+#: exe/jsui/mainpage.py:975 exe/jsui/mainpage.py:1139 exe/jsui/mainpage.py:1179
+#: exe/jsui/mainpage.py:1214 exe/jsui/mainpage.py:1235
 #: exe/jsui/mainpage_antes_jr_docs.py:295
 #: exe/jsui/mainpage_antes_jr_docs.py:916
 #: exe/jsui/mainpage_antes_jr_docs.py:1080
@@ -3083,7 +3085,7 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "匯出格式未實作"
 
-#: exe/export/epub3export.py:643 exe/export/imsexport.py:612
+#: exe/export/epub3export.py:642 exe/export/imsexport.py:612
 #: exe/export/scormexport.py:701 exe/export/websiteexport.py:98
 #, python-format
 msgid ""
@@ -3176,25 +3178,25 @@ msgstr "插入 %s 中"
 msgid "My iDevices"
 msgstr "我的 iDevice"
 
-#: exe/jsui/mainpage.py:321 exe/jsui/mainpage.py:841 exe/jsui/mainpage.py:971
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:837 exe/jsui/mainpage.py:967
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
 msgstr "不能識別路徑名稱"
 
-#: exe/jsui/mainpage.py:321 exe/jsui/mainpage.py:843 exe/jsui/mainpage.py:971
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:839 exe/jsui/mainpage.py:967
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
 msgstr "。名稱請使用 ASCII 碼。"
 
-#: exe/jsui/mainpage.py:330 exe/jsui/mainpage_antes_jr_docs.py:322
+#: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
 msgstr "儲存失敗。"
 
-#: exe/jsui/mainpage.py:334 exe/jsui/mainpage.py:646 exe/jsui/mainpage.py:1067
+#: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1063
 #: exe/jsui/mainpage_antes_jr_docs.py:326
 #: exe/jsui/mainpage_antes_jr_docs.py:638
 #: exe/jsui/mainpage_antes_jr_docs.py:1004
@@ -3206,7 +3208,7 @@ msgstr ""
 "儲存失敗。\n"
 "%s"
 
-#: exe/jsui/mainpage.py:338 exe/jsui/mainpage.py:343 exe/jsui/mainpage.py:346
+#: exe/jsui/mainpage.py:337 exe/jsui/mainpage.py:342 exe/jsui/mainpage.py:345
 #: exe/jsui/mainpage_antes_jr_docs.py:330
 #: exe/jsui/mainpage_antes_jr_docs.py:335
 #: exe/jsui/mainpage_antes_jr_docs.py:338
@@ -3214,19 +3216,19 @@ msgstr ""
 msgid "Package saved to: %s"
 msgstr "套件已儲存至：%s"
 
-#: exe/jsui/mainpage.py:569 exe/jsui/mainpage.py:673
+#: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:672
 #: exe/jsui/mainpage_antes_jr_docs.py:561
 #: exe/jsui/mainpage_antes_jr_docs.py:665
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "預覽目錄 %s 是個檔案，無法取代"
 
-#: exe/jsui/mainpage.py:588 exe/jsui/mainpage_antes_jr_docs.py:580
+#: exe/jsui/mainpage.py:587 exe/jsui/mainpage_antes_jr_docs.py:580
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "找不到本地端檔案 %s，無法預覽"
 
-#: exe/jsui/mainpage.py:713 exe/jsui/mainpage_antes_jr_docs.py:705
+#: exe/jsui/mainpage.py:712 exe/jsui/mainpage_antes_jr_docs.py:705
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -3235,11 +3237,11 @@ msgstr ""
 "MimeTex 編譯失敗。\n"
 "%s"
 
-#: exe/jsui/mainpage.py:751 exe/jsui/mainpage_antes_jr_docs.py:743
+#: exe/jsui/mainpage.py:750 exe/jsui/mainpage_antes_jr_docs.py:743
 msgid "Importing HTML..."
 msgstr "匯入 HTML 中..."
 
-#: exe/jsui/mainpage.py:757 exe/jsui/mainpage_antes_jr_docs.py:749
+#: exe/jsui/mainpage.py:756 exe/jsui/mainpage_antes_jr_docs.py:749
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3248,38 +3250,38 @@ msgstr ""
 "LOM 中繼資料匯入失敗。\n"
 "%s"
 
-#: exe/jsui/mainpage.py:760 exe/jsui/mainpage_antes_jr_docs.py:752
+#: exe/jsui/mainpage.py:759 exe/jsui/mainpage_antes_jr_docs.py:752
 msgid "Error importing HTML:\n"
 msgstr "匯入 HTML 時發生錯誤：\n"
 
-#: exe/jsui/mainpage.py:784
+#: exe/jsui/mainpage.py:786
 msgid "Publishing document to Procomún"
 msgstr ""
 
-#: exe/jsui/mainpage.py:785
+#: exe/jsui/mainpage.py:787
 #, fuzzy
 msgid "Exporting package as SCORM"
 msgstr "將 IMS 套件匯出為"
 
-#: exe/jsui/mainpage.py:809
+#: exe/jsui/mainpage.py:805
 msgid "Starting authorized connection to Procomún API"
 msgstr ""
 
-#: exe/jsui/mainpage.py:822
+#: exe/jsui/mainpage.py:818
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
 "visit exported site\">%s</a>"
 msgstr ""
 
-#: exe/jsui/mainpage.py:825
+#: exe/jsui/mainpage.py:821
 #, python-format
 msgid "Error exporting package %s to Procomún: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:864 exe/jsui/mainpage.py:869 exe/jsui/mainpage.py:872
-#: exe/jsui/mainpage.py:875 exe/jsui/mainpage.py:878 exe/jsui/mainpage.py:881
-#: exe/jsui/mainpage.py:886 exe/jsui/mainpage.py:1127 exe/jsui/mainpage.py:1199
+#: exe/jsui/mainpage.py:860 exe/jsui/mainpage.py:865 exe/jsui/mainpage.py:868
+#: exe/jsui/mainpage.py:871 exe/jsui/mainpage.py:874 exe/jsui/mainpage.py:877
+#: exe/jsui/mainpage.py:882 exe/jsui/mainpage.py:1123 exe/jsui/mainpage.py:1195
 #: exe/jsui/mainpage_antes_jr_docs.py:801
 #: exe/jsui/mainpage_antes_jr_docs.py:806
 #: exe/jsui/mainpage_antes_jr_docs.py:809
@@ -3292,16 +3294,16 @@ msgstr ""
 msgid "EXPORT FAILED!"
 msgstr "匯出失敗。"
 
-#: exe/jsui/mainpage.py:936 exe/jsui/mainpage_antes_jr_docs.py:873
+#: exe/jsui/mainpage.py:932 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
 msgstr "正確的 XLIFF 匯入"
 
-#: exe/jsui/mainpage.py:939 exe/jsui/mainpage_antes_jr_docs.py:876
+#: exe/jsui/mainpage.py:935 exe/jsui/mainpage_antes_jr_docs.py:876
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "匯入 XLIFF 時發生錯誤：%s"
 
-#: exe/jsui/mainpage.py:980 exe/jsui/mainpage.py:997
+#: exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:993
 #: exe/jsui/mainpage_antes_jr_docs.py:917
 #: exe/jsui/mainpage_antes_jr_docs.py:934
 #, python-format
@@ -3312,22 +3314,22 @@ msgstr ""
 "展開失敗。\n"
 "%s"
 
-#: exe/jsui/mainpage.py:999 exe/jsui/mainpage_antes_jr_docs.py:936
+#: exe/jsui/mainpage.py:995 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "套件展開到：%s"
 
-#: exe/jsui/mainpage.py:1011 exe/jsui/mainpage_antes_jr_docs.py:948
+#: exe/jsui/mainpage.py:1007 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
 msgstr "目錄已存在"
 
-#: exe/jsui/mainpage.py:1025 exe/jsui/mainpage.py:1115
-#: exe/jsui/mainpage.py:1131 exe/jsui/mainpage.py:1144
-#: exe/jsui/mainpage.py:1150 exe/jsui/mainpage.py:1168
-#: exe/jsui/mainpage.py:1184 exe/jsui/mainpage.py:1190
-#: exe/jsui/mainpage.py:1204 exe/jsui/mainpage.py:1219
-#: exe/jsui/mainpage.py:1225 exe/jsui/mainpage.py:1240
-#: exe/jsui/mainpage.py:1246 exe/jsui/mainpage_antes_jr_docs.py:962
+#: exe/jsui/mainpage.py:1021 exe/jsui/mainpage.py:1111
+#: exe/jsui/mainpage.py:1127 exe/jsui/mainpage.py:1140
+#: exe/jsui/mainpage.py:1146 exe/jsui/mainpage.py:1164
+#: exe/jsui/mainpage.py:1180 exe/jsui/mainpage.py:1186
+#: exe/jsui/mainpage.py:1200 exe/jsui/mainpage.py:1215
+#: exe/jsui/mainpage.py:1221 exe/jsui/mainpage.py:1236
+#: exe/jsui/mainpage.py:1242 exe/jsui/mainpage_antes_jr_docs.py:962
 #: exe/jsui/mainpage_antes_jr_docs.py:1052
 #: exe/jsui/mainpage_antes_jr_docs.py:1068
 #: exe/jsui/mainpage_antes_jr_docs.py:1081
@@ -3348,14 +3350,14 @@ msgstr ""
 "匯出失敗。\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1053 exe/jsui/mainpage.py:1100
+#: exe/jsui/mainpage.py:1049 exe/jsui/mainpage.py:1096
 #: exe/jsui/mainpage_antes_jr_docs.py:990
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "檔案 %s 已存在，無法取代它"
 
-#: exe/jsui/mainpage.py:1059 exe/jsui/mainpage.py:1107
+#: exe/jsui/mainpage.py:1055 exe/jsui/mainpage.py:1103
 #: exe/jsui/mainpage_antes_jr_docs.py:996
 #: exe/jsui/mainpage_antes_jr_docs.py:1044
 #, python-format
@@ -3364,11 +3366,11 @@ msgid ""
 "existing one then try again."
 msgstr "資料夾 %s 已存在。請選擇其他資料夾，或是將現有的刪除然後再試一次。"
 
-#: exe/jsui/mainpage.py:1073 exe/jsui/mainpage.py:1118
-#: exe/jsui/mainpage.py:1133 exe/jsui/mainpage.py:1152
-#: exe/jsui/mainpage.py:1170 exe/jsui/mainpage.py:1192
-#: exe/jsui/mainpage.py:1206 exe/jsui/mainpage.py:1227
-#: exe/jsui/mainpage.py:1248 exe/jsui/mainpage_antes_jr_docs.py:1010
+#: exe/jsui/mainpage.py:1069 exe/jsui/mainpage.py:1114
+#: exe/jsui/mainpage.py:1129 exe/jsui/mainpage.py:1148
+#: exe/jsui/mainpage.py:1166 exe/jsui/mainpage.py:1188
+#: exe/jsui/mainpage.py:1202 exe/jsui/mainpage.py:1223
+#: exe/jsui/mainpage.py:1244 exe/jsui/mainpage_antes_jr_docs.py:1010
 #: exe/jsui/mainpage_antes_jr_docs.py:1055
 #: exe/jsui/mainpage_antes_jr_docs.py:1070
 #: exe/jsui/mainpage_antes_jr_docs.py:1089
@@ -3381,16 +3383,16 @@ msgstr "資料夾 %s 已存在。請選擇其他資料夾，或是將現有的�
 msgid "Exported to %s"
 msgstr "匯出至 %s"
 
-#: exe/jsui/mainpage.py:1281 exe/jsui/mainpage_antes_jr_docs.py:1218
+#: exe/jsui/mainpage.py:1277 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "檔案 %s 不存在，或是無法讀取。"
 
-#: exe/jsui/mainpage.py:1285 exe/jsui/mainpage_antes_jr_docs.py:1222
+#: exe/jsui/mainpage.py:1281 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "無法載入檔案，請將檔案寄到 bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1288 exe/jsui/mainpage_antes_jr_docs.py:1225
+#: exe/jsui/mainpage.py:1284 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3399,7 +3401,7 @@ msgstr ""
 "對不起，檔案格式錯誤:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1290 exe/jsui/mainpage_antes_jr_docs.py:1227
+#: exe/jsui/mainpage.py:1286 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
 msgstr "對不起，檔案格式錯誤"
 
@@ -3419,7 +3421,7 @@ msgid "Show Image"
 msgstr "顯示影像"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
-#: exe/webui/element.py:1190
+#: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
 msgid "Select an image"
 msgstr "選擇影像"
 
@@ -3449,6 +3451,11 @@ msgstr "影像檔"
 #: exe/jsui/scripts/app/controller/Toolbar.js:1096
 #: exe/jsui/scripts/app/controller/Toolbar.js:1193
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
+#: exe/webui/scripts/authoring.js:95 exe/webui/scripts/authoring.js:118
+#: exe/webui/scripts/authoring.js:359 exe/webui/scripts/authoring.js:368
+#: exe/webui/scripts/authoring.js:376 exe/webui/scripts/authoring.js:397
+#: exe/webui/scripts/editor.js:80 exe/webui/scripts/editor.js:107
+#: exe/webui/scripts/stylemanager.js:42 exe/webui/scripts/stylemanager.js:66
 msgid "All Files"
 msgstr "所有檔案"
 
@@ -3487,6 +3494,7 @@ msgstr "此表單中包含不合法的欄位。請檢查。"
 #: exe/jsui/scripts/app/controller/MainTab.js:326
 #: exe/jsui/scripts/app/controller/Outline.js:204
 #: exe/jsui/scripts/app/controller/Toolbar.js:427
+#: exe/webui/scripts/editor.js:37
 #: exe/webui/tools/style-designer/langs/en.js:114
 msgid "Confirm"
 msgstr "確認"
@@ -3528,22 +3536,27 @@ msgid "Enter the new name:"
 msgstr "輸入新名稱："
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:140
+#: exe/webui/scripts/stylemanager.js:28
 msgid "Select ZIP Style file to import."
 msgstr "選擇要匯入的 ZIP 樣式檔。"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:160
+#: exe/webui/scripts/stylemanager.js:41
 msgid "ZIP Style"
 msgstr "ZIP 樣式"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:188
+#: exe/webui/scripts/stylemanager.js:53
 msgid "Export to ZIP Style as"
 msgstr "匯出 ZIP 樣式為"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:206
+#: exe/webui/scripts/stylemanager.js:65
 msgid "ZipFile"
 msgstr "Zip 檔"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:229
+#: exe/webui/scripts/stylemanager.js:77
 msgid "Delete style?"
 msgstr "要刪除樣式嗎？"
 
@@ -3559,10 +3572,6 @@ msgstr ""
 #, fuzzy
 msgid "http://exelearning.net/?lang=en"
 msgstr "exelearning.net"
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:190
-msgid "https://forja.cenatic.es/tracker/?group_id=197"
-msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:193
 #, fuzzy
@@ -6981,7 +6990,9 @@ msgid "Filename:"
 msgstr "檔案名稱："
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
-#: exe/webui/element.py:1075
+#: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
+#: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
+#: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
 msgid "Select a file"
 msgstr "選擇檔案"
 
@@ -7893,15 +7904,15 @@ msgstr "在遊戲中顯示計時器"
 msgid "Add Placable Object"
 msgstr "新增可擺放物件"
 
-#: exe/webui/preferencespage.py:157
+#: exe/webui/preferencespage.py:158
 msgid "Default browser in your system"
 msgstr "您系統中的預設瀏覽器"
 
-#: exe/webui/preferencespage.py:199
+#: exe/webui/preferencespage.py:200
 msgid "Failed to get preferences"
 msgstr "取得喜好設定失敗"
 
-#: exe/webui/preferencespage.py:249
+#: exe/webui/preferencespage.py:250
 msgid "Failed to save preferences"
 msgstr "儲存喜好設定失敗"
 
@@ -7943,10 +7954,87 @@ msgstr "想一想"
 msgid "Load"
 msgstr "載入"
 
+#: exe/webui/scripts/authoring.js:69
+#, fuzzy
+msgid "Select one or more images"
+msgstr "選擇影像"
+
+#: exe/webui/scripts/authoring.js:94
+msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
+#, fuzzy
+msgid "Flash Movie (.flv)"
+msgstr "Flash 電影"
+
+#: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
+msgid "Flash Object (.swf)"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:121
+#, fuzzy
+msgid "Quicktime Files (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
+msgstr "QuickTime (mov, mp4, mpeg)"
+
+#: exe/webui/scripts/authoring.js:122
+msgid "Windows Media Player Files (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:123
+msgid "RealMedia Audio Files (.rm, .ra, .ram, .mp3)"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:175
+msgid "JPEG Files (.jpg, .jpeg)"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:375
+msgid "MP3 Audio (.mp3)"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:378
+#, fuzzy
+msgid "Select an mp3 file"
+msgstr "選擇檔案"
+
+#: exe/webui/scripts/authoring.js:386
+#, fuzzy
+msgid "Select a package"
+msgstr "選擇影像"
+
+#: exe/webui/scripts/authoring.js:744
+msgid ""
+"Embed images shouldn't be pasted directly into the editor. Please use "
+"Insert/Edit Image."
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:744
+msgid "This change will be undone."
+msgstr ""
+
+#: exe/webui/scripts/editor.js:35
+msgid "Do you want to overwrite the existing idevice {idevice}?"
+msgstr ""
+
+#: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
+#, fuzzy
+msgid "eXe Idevices"
+msgstr "儲存 iDevice"
+
+#: exe/webui/scripts/editor.js:87
+msgid "Please save the idevice first, then try to export it."
+msgstr ""
+
 #: exe/webui/scripts/exe_tooltips/exe_tooltips.js:79
 #: exe/webui/scripts/exe_tooltips/exe_tooltips.js:145
 msgid "Go to Tools - Preview to see the tooltip content"
 msgstr ""
+
+#: exe/webui/scripts/stylemanager.js:78
+#, fuzzy
+msgid "Do you want to delete the selected style?"
+msgstr "您要刪除此樣式嗎？"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Error: Invalid values entered, these are marked in red."
@@ -8232,26 +8320,6 @@ msgstr "插入頁面中斷以便列印"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Types"
 msgstr "類型"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Lower Alpha"
-msgstr "小寫 Alpha"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Lower Greek"
-msgstr "小寫希臘字母"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Lower Roman"
-msgstr "小寫羅馬字母"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Upper Alpha"
-msgstr "大寫 Alpha"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Upper Roman"
-msgstr "大寫羅馬字母"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Circle"
@@ -11248,15 +11316,50 @@ msgstr "不合法的顏色值"
 msgid "Color Picker"
 msgstr "顏色挑選器"
 
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:59
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Lower Alpha"
+msgstr "小寫 Alpha"
+
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:60
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Lower Greek"
+msgstr "小寫希臘字母"
+
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:61
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Lower Roman"
+msgstr "小寫羅馬字母"
+
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:62
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Upper Alpha"
+msgstr "大寫 Alpha"
+
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:63
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Upper Roman"
+msgstr "大寫羅馬字母"
+
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:64
+msgid "Automatic Numbering"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:237
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:262
+#, fuzzy
+msgid "Editor"
+msgstr "編輯者"
+
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
 msgstr "新增另一個要排序的項目"
 
-#: exe/webui/styledesigner.py:51
+#: exe/webui/styledesigner.py:53
 msgid "Error saving style. "
 msgstr ""
 
-#: exe/webui/styledesigner.py:60
+#: exe/webui/styledesigner.py:61
 msgid "Error creating style. "
 msgstr ""
 
@@ -11264,27 +11367,27 @@ msgstr ""
 msgid "Error creating style, local style already exists. "
 msgstr ""
 
-#: exe/webui/styledesigner.py:126
+#: exe/webui/styledesigner.py:125
 #, fuzzy, python-format
 msgid "Style %s successfully created!"
 msgstr "檔案 '%s' 已成功匯入到 '%s'。"
 
-#: exe/webui/styledesigner.py:134
+#: exe/webui/styledesigner.py:133
 #, fuzzy, python-format
 msgid "Style %s successfully saved!"
 msgstr "檔案 '%s' 已成功匯入到 '%s'。"
 
-#: exe/webui/styledesigner.py:198
+#: exe/webui/styledesigner.py:197
 #, fuzzy, python-format
 msgid "Style directory %s already exists"
 msgstr "樣式名稱已存在：%s"
 
-#: exe/webui/styledesigner.py:258
+#: exe/webui/styledesigner.py:257
 #, fuzzy
 msgid "The style name already exists"
 msgstr "樣式名稱已存在：%s"
 
-#: exe/webui/styledesigner.py:275
+#: exe/webui/styledesigner.py:274
 msgid "Error saving style, style directory does not exist"
 msgstr ""
 
@@ -11368,6 +11471,24 @@ msgstr "樣式已正確刪除"
 #: exe/webui/stylemanagerpage.py:483
 msgid "An unexpected error has occurred"
 msgstr "發生未知的錯誤"
+
+#: exe/webui/tools/style-designer/js/app.js:1236
+#, fuzzy
+msgid "Create new style"
+msgstr "要刪除樣式嗎？"
+
+#: exe/webui/tools/style-designer/js/app.js:1237
+#, fuzzy
+msgid "Name the new style"
+msgstr "要刪除樣式嗎？"
+
+#: exe/webui/tools/style-designer/js/app.js:1259
+msgid "Style Designer windows will be closed. "
+msgstr ""
+
+#: exe/webui/tools/style-designer/js/app.js:1262
+msgid "Page will be reloaded. "
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:12
 #, fuzzy

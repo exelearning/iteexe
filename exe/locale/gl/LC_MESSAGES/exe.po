@@ -6,9 +6,10 @@
 # Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>, 2012-2016.
 #
 msgid ""
-msgstr "Project-Id-Version: eXeLearning 2.1\n"
+msgstr ""
+"Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2016-02-14 19:03+0100\n"
+"POT-Creation-Date: 2016-03-30 17:33+0200\n"
 "PO-Revision-Date: 2016-03-17 17:16+0100\n"
 "Last-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\n"
 "Language-Team: TAGEN ATA <localizacion@tagenata.net>\n"
@@ -19,19 +20,23 @@ msgstr "Project-Id-Version: eXeLearning 2.1\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 
-#: exe/application.py:189
+#: exe/application.py:191
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
-msgstr "Produciuse un erro ao cargar a súa configuración. Gardouse unha copia de seguridade en %s"
+msgstr ""
+"Produciuse un erro ao cargar a súa configuración. Gardouse unha copia de "
+"seguridade en %s"
 
-#: exe/application.py:208
+#: exe/application.py:209
 #, python-format
 msgid ""
 "An error has occurred when loading your Idevice Store. A backup is saved "
 "at %s"
-msgstr "Produciuse un erro ao cargar o almacén de iDevices.  Gradada copia de seguridade en %s"
+msgstr ""
+"Produciuse un erro ao cargar o almacén de iDevices.  Gradada copia de "
+"seguridade en %s"
 
-#: exe/application.py:247
+#: exe/application.py:248
 #, python-format
 msgid ""
 "eXeLearning, the EXtremely Easy to use eLearning authoring tool\n"
@@ -44,13 +49,16 @@ msgid ""
 "in Documents and Settings/<user name>/Application Data/exe on Windows XP "
 "or\n"
 "Users/<user name>/AppData/Roaming/exe on Windows 7"
-msgstr "eXeLearning, la herramienta de autor más fácil de utilizar\n"
+msgstr ""
+"eXeLearning, la herramienta de autor más fácil de utilizar\n"
 "   Uso: %s [OPTION] [PACKAGE]\n"
 "  -V, --version    imprimir información da versión e saír\n"
 "  -h, --help       amosar esta axuda e saír\n"
 "  --standalone     Executar totalmente dende o cartafol actual\n"
 "  --portable       Executar en modo portable\n"
-"A configuración lese do exe.conf presente en $HOME/.exe en Linux/Unix/Mac OS ou en Documents and Settings/<user name>/Application Data/exe en Windows XP ou\n"
+"A configuración lese do exe.conf presente en $HOME/.exe en Linux/Unix/Mac"
+" OS ou en Documents and Settings/<user name>/Application Data/exe en "
+"Windows XP ou\n"
 "Users/<user name>/AppData/Roaming/exe en Windows 7"
 
 #: exe/engine/appletidevice.py:70
@@ -86,7 +94,10 @@ msgid ""
 "except the .txt file one at a time using the add files and upload "
 "buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
-msgstr "Engada tódolos arquivos que precisa o applet excepto o arquivo .txt un a un, utilizando os botóns Engadir arquivos e Cargar. Os arquivos aparecerán debaixo do campo Código do applet."
+msgstr ""
+"Engada tódolos arquivos que precisa o applet excepto o arquivo .txt un a "
+"un, utilizando os botóns Engadir arquivos e Cargar. Os arquivos "
+"aparecerán debaixo do campo Código do applet."
 
 #: exe/engine/appletidevice.py:82
 msgid ""
@@ -94,7 +105,9 @@ msgid ""
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the "
 "applet \n"
 "code field."
-msgstr "\"Busque o arquivo .txt (no arquivo do applet) e ábrao.  Copie os contidos deste arquivo <ctrl A, ctrl C> dentro do campo Código do applet."
+msgstr ""
+"\"Busque o arquivo .txt (no arquivo do applet) e ábrao.  Copie os "
+"contidos deste arquivo <ctrl A, ctrl C> dentro do campo Código do applet."
 
 #: exe/engine/appletidevice.py:85
 msgid ""
@@ -104,10 +117,13 @@ msgid ""
 "<p>eg. For Geogebra applets, select geogebra, then add the .ggb file that"
 " \n"
 "you created in Geogebra.</p>"
-msgstr " <p>Se o applet que está engadindo foi xerado \n"
+msgstr ""
+" <p>Se o applet que está engadindo foi xerado \n"
 "por un dos programas deste menú despregable, porfavor seleccioneo, \n"
-"e a continuación engada o ficheiro de datos/applet xerado polo seu programa. </p>\n"
-"<p>eg. Para applets de Geogebra, seleccione Geogebra, e engada o ficheiro .gbb creado con Geogebra."
+"e a continuación engada o ficheiro de datos/applet xerado polo seu "
+"programa. </p>\n"
+"<p>eg. Para applets de Geogebra, seleccione Geogebra, e engada o ficheiro"
+" .gbb creado con Geogebra."
 
 #: exe/engine/appletidevice.py:190
 #, python-format
@@ -127,41 +143,54 @@ msgstr "Sentímolo, esta URL non é válida."
 msgid ""
 "Click on the AddFiles button to select the .ggb file and then click on "
 "the Upload button."
-msgstr "Clica no botón EngadirArquivos para seleccionar o arquivo .ggb. Logo clica no botón Subir"
+msgstr ""
+"Clica no botón EngadirArquivos para seleccionar o arquivo .ggb. Logo "
+"clica no botón Subir"
 
 #: exe/engine/appletidevice.py:538
 msgid ""
 "Click on the AddFiles button to select the .jclic.zip file and then click"
 " on the Upload button.<p>The activity will be visible when the HTML file "
 "will be generated from eXe."
-msgstr "Clica no botón EngadirArquivos para seleccionar o arquivo .jclic .zip e despois clica no botón Subir.<p>A actividade será visible cando eXe xere o arquivo HTML ."
+msgstr ""
+"Clica no botón EngadirArquivos para seleccionar o arquivo .jclic .zip e "
+"despois clica no botón Subir.<p>A actividade será visible cando eXe xere "
+"o arquivo HTML ."
 
 #: exe/engine/appletidevice.py:548
 msgid ""
 "Click on the AddFiles button to select the .sb or .scratch file and then "
 "click on the Upload button."
-msgstr "Clica no botón EngadirArquivos para seleccionar o arquivo .sb ou .scratch e despois clica no botón Subir."
+msgstr ""
+"Clica no botón EngadirArquivos para seleccionar o arquivo .sb ou .scratch"
+" e despois clica no botón Subir."
 
 #: exe/engine/appletidevice.py:559
 msgid ""
 "Please enter: scene number,URL (no spaces) that include it, eg: "
 "3,http://example.com; click on the Upload button afterwards."
-msgstr "Porfavor introduce: numero de escena, URL incluída (sen espazos), ex: 3,http://example.com; Logo clica no botón Subir."
+msgstr ""
+"Porfavor introduce: numero de escena, URL incluída (sen espazos), ex: "
+"3,http://example.com; Logo clica no botón Subir."
 
 #: exe/engine/appletidevice.py:561
 msgid ""
 "Click on the AddFiles button to select the .html or .htm file and then "
 "click on the Upload button to get its content."
-msgstr "Clica no botón EngadirArquivos para seleccionar o arquivo .html ou .htm e despois clica no botón Subir para obter o contido."
+msgstr ""
+"Clica no botón EngadirArquivos para seleccionar o arquivo .html ou .htm e"
+" despois clica no botón Subir para obter o contido."
 
 #: exe/engine/appletidevice.py:572
 msgid ""
 " <p>If the applet you're adding was generated \n"
 "by one of the programs in this drop down, please select it, \n"
 "then add the data/applet file generated by your program."
-msgstr " <p>Se o applet que está engadindo foi xerado \n"
+msgstr ""
+" <p>Se o applet que está engadindo foi xerado \n"
 "por un dos programas deste menú despregable, porfavor seleccioneo, \n"
-"e a continuación engada o ficheiro de datos/applet xerado polo seu programa."
+"e a continuación engada o ficheiro de datos/applet xerado polo seu "
+"programa."
 
 #: exe/engine/attachmentidevice.py:44 exe/engine/extendedfieldengine.py:336
 #: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
@@ -177,14 +206,24 @@ msgid ""
 " be attached and labeled to indicate what the attachment is and how large"
 " the file is. Learners can click on the attachment link and can download "
 "the attachment."
-msgstr "O iDevice Anexo utilízase para engadir ficheiros existentes ao contido do seu ELP. Por exemplo, quizáis teña un ficheiro PDF ou unha presentación en IMPRESS aos que queira que teñan acceso os seus estudantes, estes poden ser anexados e etiquetados para indicar en que consiste o arquivo e que tamaño ten o ficheiro. Os estudantes poden pulsar na ligazón ao anexo para descargar o ficheiro. Os estudantes poden pulsar na ligazón ao adxunto e poden descargar o ficheiro."
+msgstr ""
+"O iDevice Anexo utilízase para engadir ficheiros existentes ao contido do"
+" seu ELP. Por exemplo, quizáis teña un ficheiro PDF ou unha presentación "
+"en IMPRESS aos que queira que teñan acceso os seus estudantes, estes "
+"poden ser anexados e etiquetados para indicar en que consiste o arquivo e"
+" que tamaño ten o ficheiro. Os estudantes poden pulsar na ligazón ao "
+"anexo para descargar o ficheiro. Os estudantes poden pulsar na ligazón ao"
+" adxunto e poden descargar o ficheiro."
 
 #: exe/engine/attachmentidevice.py:58
 msgid ""
 "Enter the text you wish to associate with the downloaded file. You might "
 "want to provide instructions on what you require the learner to do once "
 "the file is downloaded or how the material should be used."
-msgstr "Introduza o texto que quere asociar ao ficheiro. Podería querer indicar as instrucións  sobre o que é necesario que o alumno faga despois de descargar o ficheiro ou sobre como se debe usar o material."
+msgstr ""
+"Introduza o texto que quere asociar ao ficheiro. Podería querer indicar "
+"as instrucións  sobre o que é necesario que o alumno faga despois de "
+"descargar o ficheiro ou sobre como se debe usar o material."
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
@@ -194,7 +233,9 @@ msgstr "Descrición:"
 msgid ""
 "Click <strong>Select a file</strong>, browse to the file you want to "
 "attach and select it."
-msgstr "Prema en <strong>Seleccionar un ficheiro</strong>, procure o ficheiro que quere anexar e seleccióneo."
+msgstr ""
+"Prema en <strong>Seleccionar un ficheiro</strong>, procure o ficheiro que"
+" quere anexar e seleccióneo."
 
 #: exe/engine/attachmentidevice.py:72
 msgid ""
@@ -204,7 +245,12 @@ msgid ""
 "will have an idea how long it would take to download this "
 "attachment.</p><p>For example: <code>Sales Forecast.doc "
 "(500kb)</code></p>"
-msgstr "<p>Engadir etiqueta para o adxunto É útil para incluir o tipo de ficheiro. Ex. pdf, odt, dop, etc.</p><p>Tamén recoméndase incluir o tamaño para que, cando exporte o paquete a un sitio web, o usuario poida facerse unha idea do que tardaría en descargar o anexo.</p><p>Por exemplo: <code>Tipos_Licenzas_Libres.odt (500kb)</code></p>"
+msgstr ""
+"<p>Engadir etiqueta para o adxunto É útil para incluir o tipo de "
+"ficheiro. Ex. pdf, odt, dop, etc.</p><p>Tamén recoméndase incluir o "
+"tamaño para que, cando exporte o paquete a un sitio web, o usuario poida "
+"facerse unha idea do que tardaría en descargar o anexo.</p><p>Por "
+"exemplo: <code>Tipos_Licenzas_Libres.odt (500kb)</code></p>"
 
 #: exe/engine/attachmentidevice.py:105
 #, python-format
@@ -223,7 +269,9 @@ msgstr "Imaxe"
 msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
-msgstr "Seleccione unha imaxe opcional que lle será mostrada ao alumno ao terminar esta cuestión"
+msgstr ""
+"Seleccione unha imaxe opcional que lle será mostrada ao alumno ao "
+"terminar esta cuestión"
 
 #: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
@@ -251,12 +299,23 @@ msgid ""
 "if run in a classroom situation can teams be setup to work on different "
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
-msgstr "Un caso de práctico é un iDevice que presenta aos estudantes unha simulación que ten unha base educativa. Parte dunha situación , xeralmente baseada na realidade, e pide aos estudantes que demostren ou describan que acción levarían a cabo para completar a tarefa e resolver a situación. O caso práctico permite aos estudantes aplicar os seus coñecementos e experiencia propios para completar tarefas asignadas. Cando deseña un caso práctico considere o seguinte:<ul> \n"
+msgstr ""
+"Un caso de práctico é un iDevice que presenta aos estudantes unha "
+"simulación que ten unha base educativa. Parte dunha situación , "
+"xeralmente baseada na realidade, e pide aos estudantes que demostren ou "
+"describan que acción levarían a cabo para completar a tarefa e resolver a"
+" situación. O caso práctico permite aos estudantes aplicar os seus "
+"coñecementos e experiencia propios para completar tarefas asignadas. "
+"Cando deseña un caso práctico considere o seguinte:<ul> \n"
 "<li>\tQue puntos educativos estarán presentes na historia</li>\n"
-"<li>\tQue preparación precisarán facer os estudantes antes de traballar no caso práctico</li>\n"
+"<li>\tQue preparación precisarán facer os estudantes antes de traballar "
+"no caso práctico</li>\n"
 "<li>\tOnde encaixa o caso práctico dentro do resto do curso</li>\n"
-"<li>\tComo actuarán recíprocamente os estudantes cos materiais e entre eles. Ex.\n"
-"no caso de realizarse na aula, poden crearse equipos para que traballen diferentes aspectos do caso, de ser así, como se achegan as ideas ao resto da clase</li></ul>"
+"<li>\tComo actuarán recíprocamente os estudantes cos materiais e entre "
+"eles. Ex.\n"
+"no caso de realizarse na aula, poden crearse equipos para que traballen "
+"diferentes aspectos do caso, de ser así, como se achegan as ideas ao "
+"resto da clase</li></ul>"
 
 #: exe/engine/casestudyidevice.py:219
 #: exe/engine/ejercicioresueltofpdidevice.py:218
@@ -267,9 +326,13 @@ msgid ""
 "involved and the situation. It should also allow for some action to be "
 "taken \n"
 "in order to gain resolution of the situation."
-msgstr "Crear un caso práctico Un bo caso é aquel que describe unha controversia ou define a escena describindo os personaxes \n"
-"que fan parte da situación. Debe permitir ademais iniciar algunha acción no sentido de obter a resolución da situación.\n"
-" Debe permitir ademais iniciar algunha acción no sentido de obter a resolución da situación."
+msgstr ""
+"Crear un caso práctico Un bo caso é aquel que describe unha controversia "
+"ou define a escena describindo os personaxes \n"
+"que fan parte da situación. Debe permitir ademais iniciar algunha acción "
+"no sentido de obter a resolución da situación.\n"
+" Debe permitir ademais iniciar algunha acción no sentido de obter a "
+"resolución da situación."
 
 #: exe/engine/casestudyidevice.py:223 exe/engine/casestudyidevice.py:411
 #: exe/engine/ejercicioresueltofpdidevice.py:222
@@ -285,8 +348,11 @@ msgid ""
 "instructions for activity which may lead the learner to resolving a "
 "dilemma \n"
 "presented. "
-msgstr "Describa as tarefas que os alumnos deberían completar. Estas poderían ir en forma de preguntas ou \n"
-"instrucións para a actividade que poden levar o alumno a resolver o dilema \n"
+msgstr ""
+"Describa as tarefas que os alumnos deberían completar. Estas poderían ir "
+"en forma de preguntas ou \n"
+"instrucións para a actividade que poden levar o alumno a resolver o "
+"dilema \n"
 "presentado. "
 
 #: exe/engine/casestudyidevice.py:232
@@ -294,7 +360,8 @@ msgstr "Describa as tarefas que os alumnos deberían completar. Estas poderían 
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
-msgstr "Proporcione a información de retroacción relevante na \n"
+msgstr ""
+"Proporcione a información de retroacción relevante na \n"
 "situación."
 
 #: exe/engine/casopracticofpdidevice.py:30
@@ -315,7 +382,9 @@ msgstr "José Ramón Jiménez Reyes"
 msgid ""
 "Situation is an iDevice that provides the student with a story that will "
 "guide her along the learning process."
-msgstr "Caso Práctico é un iDevice que proporciona ao estudante unha historia que o guía ao longo do proceso de ensino/aprendizaxe"
+msgstr ""
+"Caso Práctico é un iDevice que proporciona ao estudante unha historia que"
+" o guía ao longo do proceso de ensino/aprendizaxe"
 
 #: exe/engine/casopracticofpdidevice.py:35
 #: exe/engine/citasparapensarfpdidevice.py:37
@@ -340,7 +409,9 @@ msgstr "FPD - Citas para pensar"
 msgid ""
 "Quotation is an iDevice that provides the students with quotations to "
 "reflect upon."
-msgstr "Citas para Pensar é un iDevice que proporcionar aos estudantes citas sobre as que reflexionar."
+msgstr ""
+"Citas para Pensar é un iDevice que proporcionar aos estudantes citas "
+"sobre as que reflexionar."
 
 #: exe/engine/citasparapensarfpdidevice.py:40
 #: exe/engine/citasparapensarfpdidevice.py:139
@@ -446,7 +517,9 @@ msgstr "Estilo do elemento contador"
 
 #: exe/engine/clickinorderidevice.py:80
 msgid "Use CSS to style element that counts number items found"
-msgstr "Utilizar CSS para dar estilo ao elemento que leva a conta do número de obxectos atopados"
+msgstr ""
+"Utilizar CSS para dar estilo ao elemento que leva a conta do número de "
+"obxectos atopados"
 
 #: exe/engine/clickinorderidevice.py:81
 msgid "Hint Width"
@@ -587,7 +660,15 @@ msgid ""
 " check reading comprehension.</li><li>To check vocabulary "
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
-msgstr "<p>Os exercizos de encher ocos consisten en textos ou oracións onde os estudantes deben completar as palabras que faltan. Utilízanse normalmente coas seguintes finalidades:</p><ol><li>Para verificar o coñecemento dos conceptos chave dun curso (podería ser un test de precoñecemento, un exercicio formativo ou unha verificación sumativa).</li><li>Para verificar a comprensión lectora.</li><li>Para verificar os coñecementos de vocabulario.</li><li>Para verificar a formación de palabras ou a competencia gramatical. \n"
+msgstr ""
+"<p>Os exercizos de encher ocos consisten en textos ou oracións onde os "
+"estudantes deben completar as palabras que faltan. Utilízanse normalmente"
+" coas seguintes finalidades:</p><ol><li>Para verificar o coñecemento dos "
+"conceptos chave dun curso (podería ser un test de precoñecemento, un "
+"exercicio formativo ou unha verificación sumativa).</li><li>Para "
+"verificar a comprensión lectora.</li><li>Para verificar os coñecementos "
+"de vocabulario.</li><li>Para verificar a formación de palabras ou a "
+"competencia gramatical. \n"
 " </li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
@@ -613,7 +694,30 @@ msgid ""
 "alternatives with the same word stem, but different affixes. It is a good"
 " idea to get a colleague to test the test/exercise to make sure there are"
 " no surprises!  </p>  </dd></dl>"
-msgstr "<dl>  <dt>Si o seu obxectivo é avaliar a comprensión lectora dos conceptos clave dun curso, ou a comprensión lectora</dt>  <dd>    <p> Escriba un resumo do concepto de lectura o suficientemente longo como para que avalíe adecuadamente o coñecemento do obxectivo, pero o suficientemente curso como para que non produza fatiga. Probablemente unha páxina impresa sexa un tamaño adecuado, pero considere a posibilidade de utilizar un texto menor para nenos ou principiantes.    </p>    <p>Seleccione palabras do texto que sexan claves para a comprensión dos conceptos. Estas serán probablemente verbos, sustantivos e adverbios clave. Elixa alternativas con unha resposta clara.    </p>  </dd>  <dt>Si o seu obxectivo é avaliar o coñecemento de vocabulario </dt>  <dd><p>Escriba un texto utilizando como obxectivo o vocabulario. Este texto debe ser coherente e ter sentido completo, ademais de ter unha lonxitude adecuada. Resalte as palabras clave no texto. Escolla alternativas con unha resposta clara.</p>  </dd>  <dt> Si o seu obxectivo é avaliar o morfoloxía ou gramática:  </dt>  <dd>  <p>Escriba un texto no que se utilicen esas formas. Este texto debe ser coherente e ter sentido completo, ademais de ter unha lonxitude adecuada. Recorda que o obxectivo non é o vocabulario, e polo tanto o significado básico das raíces deben ser ben coñecidos polos estudantes.  </p>Resalta as palabras clave no texto. Propoña alternativas coa mesma raíz pero con diferentes sufixos. É unha boa idea conseguir que un amigo probe os exercicios para asegurarse que non haxa sorpresas!  </p>  </dd></dl>"
+msgstr ""
+"<dl>  <dt>Si o seu obxectivo é avaliar a comprensión lectora dos "
+"conceptos clave dun curso, ou a comprensión lectora</dt>  <dd>    <p> "
+"Escriba un resumo do concepto de lectura o suficientemente longo como "
+"para que avalíe adecuadamente o coñecemento do obxectivo, pero o "
+"suficientemente curso como para que non produza fatiga. Probablemente "
+"unha páxina impresa sexa un tamaño adecuado, pero considere a "
+"posibilidade de utilizar un texto menor para nenos ou principiantes.    "
+"</p>    <p>Seleccione palabras do texto que sexan claves para a "
+"comprensión dos conceptos. Estas serán probablemente verbos, sustantivos "
+"e adverbios clave. Elixa alternativas con unha resposta clara.    </p>  "
+"</dd>  <dt>Si o seu obxectivo é avaliar o coñecemento de vocabulario "
+"</dt>  <dd><p>Escriba un texto utilizando como obxectivo o vocabulario. "
+"Este texto debe ser coherente e ter sentido completo, ademais de ter unha"
+" lonxitude adecuada. Resalte as palabras clave no texto. Escolla "
+"alternativas con unha resposta clara.</p>  </dd>  <dt> Si o seu obxectivo"
+" é avaliar o morfoloxía ou gramática:  </dt>  <dd>  <p>Escriba un texto "
+"no que se utilicen esas formas. Este texto debe ser coherente e ter "
+"sentido completo, ademais de ter unha lonxitude adecuada. Recorda que o "
+"obxectivo non é o vocabulario, e polo tanto o significado básico das "
+"raíces deben ser ben coñecidos polos estudantes.  </p>Resalta as palabras"
+" clave no texto. Propoña alternativas coa mesma raíz pero con diferentes "
+"sufixos. É unha boa idea conseguir que un amigo probe os exercicios para "
+"asegurarse que non haxa sorpresas!  </p>  </dd></dl>"
 
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
@@ -634,7 +738,9 @@ msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this "
 "field.\n"
-msgstr "Pode proporcionar instrucións sobre como completar a actividade. Mostrarase o texto predeterminado se non hai modificacións neste campo.\n"
+msgstr ""
+"Pode proporcionar instrucións sobre como completar a actividade. "
+"Mostrarase o texto predeterminado se non hai modificacións neste campo.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
 #: exe/webui/element.py:1522 exe/webui/listablock.py:259
@@ -653,10 +759,15 @@ msgid ""
 "click on the Hide/Show Word button below.</p><p>More than one possible "
 "answer can be defined enclosing them with pipes (|). I.e.: "
 "|dog|cat|bird|</p>"
-msgstr "<p>Escriba o texto no campo baleiro para a actividade de espazos baleiros \n"
+msgstr ""
+"<p>Escriba o texto no campo baleiro para a actividade de espazos baleiros"
+" \n"
 "ben pegando o texto desde outra fonte ou escribíndoo directamente no \n"
-"campo.</p><p> Para seleccionar as palabras que hai que ocultar, prema dúas veces na palabra para seleccionala e \n"
-"prema o botón Ocultar/Mostrar Palabra de abaixo.</p><p>Outras posibilidades de resposta poden ser definidas utilizando as tuberías (|). Ple.: |can|gato|paxaro|</p>"
+"campo.</p><p> Para seleccionar as palabras que hai que ocultar, prema "
+"dúas veces na palabra para seleccionala e \n"
+"prema o botón Ocultar/Mostrar Palabra de abaixo.</p><p>Outras "
+"posibilidades de resposta poden ser definidas utilizando as tuberías (|)."
+" Ple.: |can|gato|paxaro|</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -682,7 +793,9 @@ msgstr "Retroalimentación"
 msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
-msgstr "Introduza calquera retroacción que pretenda fornecer ao alumno no campo resposta. Este campo debe quedar baleiro."
+msgstr ""
+"Introduza calquera retroacción que pretenda fornecer ao alumno no campo "
+"resposta. Este campo debe quedar baleiro."
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
@@ -765,7 +878,9 @@ msgstr "FPD - Debes Coñecer"
 msgid ""
 "You Should Know is an iDevice that helps the student widen her knowledge "
 "with core contents."
-msgstr "Debes coñecer é un iDevice que recomenda aos estudantes coñecementos ampliados sobre os contidos básicos."
+msgstr ""
+"Debes coñecer é un iDevice que recomenda aos estudantes coñecementos "
+"ampliados sobre os contidos básicos."
 
 #: exe/engine/debesconocerfpdidevice.py:37
 #: exe/engine/debesconocerfpdidevice.py:136
@@ -780,7 +895,9 @@ msgstr "FPD - Destacado"
 msgid ""
 "Highlighted is an iDevice that emphasizes text to catch the student's "
 "attention."
-msgstr "Destacado é un iDevice que fai fincapé nun texto para chamar a atención do alumnado."
+msgstr ""
+"Destacado é un iDevice que fai fincapé nun texto para chamar a atención "
+"do alumnado."
 
 #: exe/engine/destacadofpdidevice.py:36 exe/engine/destacadofpdidevice.py:134
 msgid "Highlighted Text:"
@@ -812,12 +929,23 @@ msgid ""
 "if run in a classroom situation can teams be setup to work on different "
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
-msgstr "Un caso de práctico é un iDevice que presenta aos estudantes unha simulación que ten unha base educativa. Parte dunha situación , xeralmente baseada na realidade, e pide aos estudantes que demostren ou describan que acción levarían a cabo para completar a tarefa e resolver a situación. O caso práctico permite aos estudantes aplicar os seus coñecementos e experiencia propios para completar tarefas asignadas. Cando deseña un caso práctico considere o seguinte:<ul> \n"
+msgstr ""
+"Un caso de práctico é un iDevice que presenta aos estudantes unha "
+"simulación que ten unha base educativa. Parte dunha situación , "
+"xeralmente baseada na realidade, e pide aos estudantes que demostren ou "
+"describan que acción levarían a cabo para completar a tarefa e resolver a"
+" situación. O caso práctico permite aos estudantes aplicar os seus "
+"coñecementos e experiencia propios para completar tarefas asignadas. "
+"Cando deseña un caso práctico considere o seguinte:<ul> \n"
 "<li>\tQue puntos educativos estarán presentes na historia</li>\n"
-"<li>\tQue preparación precisarán facer os estudantes antes de traballar no caso práctico</li>\n"
+"<li>\tQue preparación precisarán facer os estudantes antes de traballar "
+"no caso práctico</li>\n"
 "<li>\tOnde encaixa o caso práctico dentro do resto do curso</li>\n"
-"<li>\tComo actuarán recíprocamente os estudantes cos materiais e entre eles. Ex.\n"
-"no caso de realizarse na aula, poden crearse equipos para que traballen diferentes aspectos do caso, de ser así, como se achegan as ideas ao resto da clase</li></ul>"
+"<li>\tComo actuarán recíprocamente os estudantes cos materiais e entre "
+"eles. Ex.\n"
+"no caso de realizarse na aula, poden crearse equipos para que traballen "
+"diferentes aspectos do caso, de ser así, como se achegan as ideas ao "
+"resto da clase</li></ul>"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 msgid "FPD - Multi Choice Activity"
@@ -842,18 +970,25 @@ msgid ""
 "     clues</li>\n"
 "</ul>\n"
 " "
-msgstr "A pesar de seren usados con maior frecuencia en situacións formais de test, \n"
-"as Preguntas de selección múltiple pódense usar como unha ferramenta de test para estimular o pensamento e \n"
-"a discusión sobre aqueles temas en que os estudantes que se poderían mostar un pouco reticentes a responder. \n"
+msgstr ""
+"A pesar de seren usados con maior frecuencia en situacións formais de "
+"test, \n"
+"as Preguntas de selección múltiple pódense usar como unha ferramenta de "
+"test para estimular o pensamento e \n"
+"a discusión sobre aqueles temas en que os estudantes que se poderían "
+"mostar un pouco reticentes a responder. \n"
 " \n"
 "\n"
-"o deseñar un test de Preguntas de selección múltiple considere as seguintes cuestións:\n"
+"o deseñar un test de Preguntas de selección múltiple considere as "
+"seguintes cuestións:\n"
 "<ul>\n"
-"<li> Sobre que resultados da aprendizaxe están incidindo as preguntas?</li>\n"
+"<li> Sobre que resultados da aprendizaxe están incidindo as "
+"preguntas?</li>\n"
 "<li> Que capacidades intelectuais se están probando?</li>\n"
 "<li> Cales son as habilidades lingüísticas dos destinatarios?</li>\n"
 "<li>As cuestións culturais e de xénero</li>\n"
-"<li> Evite as estruturas sintácticas e as estruturas das preguntas que podan ofrecer \n"
+"<li> Evite as estruturas sintácticas e as estruturas das preguntas que "
+"podan ofrecer \n"
 "     pistas</li>\n"
 "</ul>\n"
 " "
@@ -876,14 +1011,19 @@ msgid ""
 "distractors </li>\n"
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
-msgstr "Cando constrúa un test de Preguntas de resposta múltiple considerere o seguinte: <ul>\n"
+msgstr ""
+"Cando constrúa un test de Preguntas de resposta múltiple considerere o "
+"seguinte: <ul>\n"
 "<li> Use frases coas que os alumnos estean familiarizados e \n"
 "teñan visto no seu estudo </li>\n"
 "<li>Manteña as respostas nunha forma concisa </li>\n"
-"<li> Debería haber unha certa consustencia entre a raíz das preguntas e as respostas </li>\n"
-"<li> Proporcione as opcións suficientes para desafiar os alumnos a que pensen as respostas\n"
+"<li> Debería haber unha certa consustencia entre a raíz das preguntas e "
+"as respostas </li>\n"
+"<li> Proporcione as opcións suficientes para desafiar os alumnos a que "
+"pensen as respostas\n"
 "</li>\n"
-"<li> Intente asegurarse de que as respostas correctas  non son máis detalladas do que \n"
+"<li> Intente asegurarse de que as respostas correctas  non son máis "
+"detalladas do que \n"
 "os distraidores </li>\n"
 "<li> Os distraidores deberían ser incorrectos mais plausíbeis </li>\n"
 "</ul>\n"
@@ -893,7 +1033,8 @@ msgstr "Cando constrúa un test de Preguntas de resposta múltiple considerere o
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
-msgstr "Introduza o título aquí Se non \n"
+msgstr ""
+"Introduza o título aquí Se non \n"
 "quere engadir unha indicación, deixe este campo en branco."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:103
@@ -903,7 +1044,8 @@ msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
-msgstr "Introduza a pregunta. \n"
+msgstr ""
+"Introduza a pregunta. \n"
 "A pregunta debe ser clara e non ambigua. Evite as premisas negativas \n"
 "porque tenden a ser ambiguas."
 
@@ -912,7 +1054,8 @@ msgstr "Introduza a pregunta. \n"
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
-msgstr "Seleccione a opción correcta premendo \n"
+msgstr ""
+"Seleccione a opción correcta premendo \n"
 "o botón de opción."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:108
@@ -922,8 +1065,10 @@ msgid ""
 "You can add options by clicking the \"Add Another Option\" button. Delete"
 " options \n"
 "by clicking the red \"X\" next to the Option."
-msgstr "Introduza as opcións dispoñibles aquí. \n"
-"Pode engadir máis opcións premendo o botón \"Engadir outra opción\". Elimine opcións clicando nas aspa vermella \"X\" ao carón de Opción."
+msgstr ""
+"Introduza as opcións dispoñibles aquí. \n"
+"Pode engadir máis opcións premendo o botón \"Engadir outra opción\". "
+"Elimine opcións clicando nas aspa vermella \"X\" ao carón de Opción."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:111
 #: exe/engine/multichoiceidevice.py:109
@@ -936,8 +1081,13 @@ msgid ""
 "answer\" as indicated by the selection for the correct answer; or \"Wrong"
 " answer\"\n"
 "for the other options."
-msgstr "Escriba a retroacción que quere que \n"
-"o alumno vexa cando seleccione unha opción en particular. Se non enche esta caixa de texto, eXe proporcionará automaticamente a retroalimentación predeterminada como segue: \"Resposta correcta\" como indicada pola selección da resposta correcta, ou \"Resposta errada\" para as outras opcións."
+msgstr ""
+"Escriba a retroacción que quere que \n"
+"o alumno vexa cando seleccione unha opción en particular. Se non enche "
+"esta caixa de texto, eXe proporcionará automaticamente a "
+"retroalimentación predeterminada como segue: \"Resposta correcta\" como "
+"indicada pola selección da resposta correcta, ou \"Resposta errada\" para"
+" as outras opcións."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3754
 #: exe/engine/field.py:3819 exe/engine/multichoiceidevice.py:131
@@ -954,7 +1104,8 @@ msgstr "Pregunta"
 msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
 " blank."
-msgstr "Introduza o título aquí Se non \n"
+msgstr ""
+"Introduza o título aquí Se non \n"
 "quere engadir unha indicación, deixe este campo en branco.."
 
 #: exe/engine/extendedfieldengine.py:36
@@ -1073,9 +1224,12 @@ msgid ""
 "This means learners are not having to juggle windows. \n"
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
-msgstr "O iDevice Sitio web externo carga un sitio web externo \n"
-"nun marco en liña dentro do contido do eXe, en vez de abrilo nunha ventá emerxente. \n"
-"Isto significa que os alumnos non teñen que facer malabarismos coas ventás. \n"
+msgstr ""
+"O iDevice Sitio web externo carga un sitio web externo \n"
+"nun marco en liña dentro do contido do eXe, en vez de abrilo nunha ventá "
+"emerxente. \n"
+"Isto significa que os alumnos non teñen que facer malabarismos coas "
+"ventás. \n"
 "Isto significa que os estudantes non terán que mudar de ventás. \n"
 "Este iDevice só se debe usar se o seu contido \n"
 "vai ser visualizado en liña polos alumnos."
@@ -1084,7 +1238,8 @@ msgstr "O iDevice Sitio web externo carga un sitio web externo \n"
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
-msgstr "Introduza o URL que quere mostrar\n"
+msgstr ""
+"Introduza o URL que quere mostrar\n"
 "e seleccione o tamaño da área onde se mostrará."
 
 #: exe/engine/field.py:2907 exe/engine/field.py:2954
@@ -1092,7 +1247,9 @@ msgstr "Introduza o URL que quere mostrar\n"
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
-msgstr "Proporcione un título para o ficheiro MP3.  Será tamén visíbel na barra de título do reprodutor."
+msgstr ""
+"Proporcione un título para o ficheiro MP3.  Será tamén visíbel na barra "
+"de título do reprodutor."
 
 #: exe/engine/field.py:3090
 msgid ""
@@ -1109,20 +1266,40 @@ msgid ""
 "are set, the only correct answer is \"Elephant\". If only \"Strict "
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
-msgstr "<p>Si non se selecciona, aceptarase un pequeno número de erros. Se non se selecciona, aceptarase un pequeno número de erros de deletreo e de capitalización. <p> Se se marca só se aceptará unha resposta exacta en termos de ortografía e maiúsculas/minúsculas.</p><p><strong>Por exemplo:</strong> Se a resposta correcta é <code>Elefante</code> entón tanto <code>elefante</code> como <code>Elefantes</code> serán xulgados como <em>\"suficientemente correctos\"</em> polo algoritmo, xa que só ten unha letra errada, aínda que \"Verificar Maiúsculas\" estea activada.</p><p>Se a verificación das maiúsculas está desactivada no exemplo anterior, a minúscula <code>e</code> non se considerará como un erro e <code>elefante</code> tamén será aceptada.</p><p>Se tanto \"Marcación estrita\" como \"Verificar maiúsculas\" están seleccionadas, a única resposta correcta é \"Elefante\".</p> Se só está seleccionada a \"Marcación estrita\" e \"Verificar Maiúsculas\" non o está, \"elefante\" será entón aceptada. Si soamente marca \"Calificación Stricta\" e non \"Comprobar maiúsculas/minúsculas\" is not, \"elefante\" tamén será aceptado.</p>"
+msgstr ""
+"<p>Si non se selecciona, aceptarase un pequeno número de erros. Se non se"
+" selecciona, aceptarase un pequeno número de erros de deletreo e de "
+"capitalización. <p> Se se marca só se aceptará unha resposta exacta en "
+"termos de ortografía e maiúsculas/minúsculas.</p><p><strong>Por "
+"exemplo:</strong> Se a resposta correcta é <code>Elefante</code> entón "
+"tanto <code>elefante</code> como <code>Elefantes</code> serán xulgados "
+"como <em>\"suficientemente correctos\"</em> polo algoritmo, xa que só ten"
+" unha letra errada, aínda que \"Verificar Maiúsculas\" estea "
+"activada.</p><p>Se a verificación das maiúsculas está desactivada no "
+"exemplo anterior, a minúscula <code>e</code> non se considerará como un "
+"erro e <code>elefante</code> tamén será aceptada.</p><p>Se tanto "
+"\"Marcación estrita\" como \"Verificar maiúsculas\" están seleccionadas, "
+"a única resposta correcta é \"Elefante\".</p> Se só está seleccionada a "
+"\"Marcación estrita\" e \"Verificar Maiúsculas\" non o está, \"elefante\""
+" será entón aceptada. Si soamente marca \"Calificación Stricta\" e non "
+"\"Comprobar maiúsculas/minúsculas\" is not, \"elefante\" tamén será "
+"aceptado.</p>"
 
 #: exe/engine/field.py:3111 exe/engine/field.py:3345
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
-msgstr "<p>Se esta opción for seleccionada, as respostas enviadas con maiúsculas/minúsculas diferentes serán marcadas como incorrectas.</p>"
+msgstr ""
+"<p>Se esta opción for seleccionada, as respostas enviadas con "
+"maiúsculas/minúsculas diferentes serán marcadas como incorrectas.</p>"
 
 #: exe/engine/field.py:3116 exe/engine/field.py:3350
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
-msgstr "<p>Se se marca esta opción, cada palabra será marcada no momento \n"
+msgstr ""
+"<p>Se se marca esta opción, cada palabra será marcada no momento \n"
 "en que o alumno a escriba en vez de marcar todas as palabras ao final \n"
 "do exercicio.</p>"
 
@@ -1131,7 +1308,8 @@ msgstr "<p>Se se marca esta opción, cada palabra será marcada no momento \n"
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
-msgstr "Permitir o completado automático cando \n"
+msgstr ""
+"Permitir o completado automático cando \n"
 "                                       o usuario encha os espazos."
 
 #: exe/engine/field.py:3324
@@ -1149,7 +1327,22 @@ msgid ""
 "are set, the only correct answer is \"Elephant\". If only \"Strict "
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
-msgstr "<p>Si non se selecciona, aceptarase un pequeno número de erros. Se se marca só se aceptará unha resposta exacta en termos de ortografía e maiúsculas/minúsculas.</p><p><strong>Por exemplo:</strong> Se a resposta correcta é <code>Elefante</code> entón tanto <code>elefante</code> como <code>Elefantes</code> serán xulgados como <em>\"suficientemente correctos\"</em> polo algoritmo, xa que só ten unha letra errada, aínda que \"Verificar Maiúsculas\" estea activada.</p><p>Se a verificación das maiúsculas está desactivada no exemplo anterior, a minúscula <code>e</code> non se considerará como un erro e <code>elefante</code> tamén será aceptada.</p><p>Se tanto \"Marcación estrita\" como \"Verificar maiúsculas\" están seleccionadas, a única resposta correcta é \"Elefante\".</p> Se só está seleccionada a \"Marcación estrita\" e \"Verificar Maiúsculas\" non o está, \"elefante\" será entón aceptada. Si soamente marca \"Calificación Stricta\" e non \"Comprobar maiúsculas/minúsculas\" is not, \"elefante\" tamén será aceptado.</p>"
+msgstr ""
+"<p>Si non se selecciona, aceptarase un pequeno número de erros. Se se "
+"marca só se aceptará unha resposta exacta en termos de ortografía e "
+"maiúsculas/minúsculas.</p><p><strong>Por exemplo:</strong> Se a resposta "
+"correcta é <code>Elefante</code> entón tanto <code>elefante</code> como "
+"<code>Elefantes</code> serán xulgados como <em>\"suficientemente "
+"correctos\"</em> polo algoritmo, xa que só ten unha letra errada, aínda "
+"que \"Verificar Maiúsculas\" estea activada.</p><p>Se a verificación das "
+"maiúsculas está desactivada no exemplo anterior, a minúscula "
+"<code>e</code> non se considerará como un erro e <code>elefante</code> "
+"tamén será aceptada.</p><p>Se tanto \"Marcación estrita\" como "
+"\"Verificar maiúsculas\" están seleccionadas, a única resposta correcta é"
+" \"Elefante\".</p> Se só está seleccionada a \"Marcación estrita\" e "
+"\"Verificar Maiúsculas\" non o está, \"elefante\" será entón aceptada. Si"
+" soamente marca \"Calificación Stricta\" e non \"Comprobar "
+"maiúsculas/minúsculas\" is not, \"elefante\" tamén será aceptado.</p>"
 
 #: exe/engine/field.py:3355
 msgid "<p>If this option is set, the score will be shown.</p>"
@@ -1159,14 +1352,16 @@ msgstr "<p>Se esta opción está seleccionada amosarase a puntuación.</p>"
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
-msgstr "Seleccionar só .swf (Obxectos Flash) para \n"
+msgstr ""
+"Seleccionar só .swf (Obxectos Flash) para \n"
 "este iDevice."
 
 #: exe/engine/field.py:3498 exe/engine/field.py:3562
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
-msgstr "Seleccionar só .flv (Ficheiro de video Flash) para \n"
+msgstr ""
+"Seleccionar só .flv (Ficheiro de video Flash) para \n"
 "este iDevice."
 
 #: exe/engine/field.py:3574
@@ -1178,13 +1373,18 @@ msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
-msgstr "<p>Seleccione os símbolos no editor de texto de abaixo ou introduza o código LaTeX manualmente para crear fórmulas matemáticas. Para previsualizar como se mostrará o LaTeX utilice o botón &lt;Previsualizar&gt; abaixo.</p>"
+msgstr ""
+"<p>Seleccione os símbolos no editor de texto de abaixo ou introduza o "
+"código LaTeX manualmente para crear fórmulas matemáticas. Para "
+"previsualizar como se mostrará o LaTeX utilice o botón "
+"&lt;Previsualizar&gt; abaixo.</p>"
 
 #: exe/engine/field.py:3611
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
-msgstr "Prema o botón Previsualizar para converter \n"
+msgstr ""
+"Prema o botón Previsualizar para converter \n"
 "                                  o código latex nunha imaxe."
 
 #: exe/engine/field.py:3679 exe/engine/field.py:3728
@@ -1215,7 +1415,8 @@ msgid ""
 "The question should be clear and unambiguous. Avoid negative premises as "
 "these \n"
 "can tend to confuse learners."
-msgstr "Introduza a pregunta. \n"
+msgstr ""
+"Introduza a pregunta. \n"
 "A pregunta debe ser clara e non ambigua. Evite as premisas negativas \n"
 "porque tenden a ser ambiguas.."
 
@@ -1233,21 +1434,25 @@ msgid ""
 "You can add options by clicking the \"Add another option\" button. Delete"
 " options by \n"
 "clicking the red X next to the option."
-msgstr "Introduza as opcións dispoñibles aquí. \n"
-"Pode engadir máis opcións premendo o botón \"Engadir outra opción\". Elimine opcións clicando nas aspa vermella \"X\" ao carón de Opción."
+msgstr ""
+"Introduza as opcións dispoñibles aquí. \n"
+"Pode engadir máis opcións premendo o botón \"Engadir outra opción\". "
+"Elimine opcións clicando nas aspa vermella \"X\" ao carón de Opción."
 
 #: exe/engine/field.py:3917
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
-msgstr "Seleccione tantas respostas correctas \n"
+msgstr ""
+"Seleccione tantas respostas correctas \n"
 "como sexa necesario premendo nas caixas de verificación ao lado da opción."
 
 #: exe/engine/field.py:3920
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
-msgstr "Escriba a retroacción que quere \n"
+msgstr ""
+"Escriba a retroacción que quere \n"
 "prporcionar ao alumno."
 
 #: exe/engine/field.py:3922 exe/engine/field.py:3992
@@ -1311,13 +1516,19 @@ msgid ""
 "These\n"
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
-msgstr "Este iDevice só soporta arquivos en formato Flash Video (.FLV)  Pode converter outros formatos de vídeo mov, wmf etc) ao formato .FLV utilizando outras aplicacións de terceiros. Estas aplicacións non veñen con eXe. Precisará o resproductor Flash 8 que pode descargar dende http://www.macromedia.com/ para visualizar o vídeo."
+msgstr ""
+"Este iDevice só soporta arquivos en formato Flash Video (.FLV)  Pode "
+"converter outros formatos de vídeo mov, wmf etc) ao formato .FLV "
+"utilizando outras aplicacións de terceiros. Estas aplicacións non veñen "
+"con eXe. Precisará o resproductor Flash 8 que pode descargar dende "
+"http://www.macromedia.com/ para visualizar o vídeo."
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
-msgstr "Introduza \n"
+msgstr ""
+"Introduza \n"
 "o texto que quere asociar ao ficheiro."
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
@@ -1340,7 +1551,8 @@ msgstr "Descrición"
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
-msgstr "Proporcione un título para o filme flash \n"
+msgstr ""
+"Proporcione un título para o filme flash \n"
 "que ven de inserir."
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
@@ -1355,15 +1567,19 @@ msgid ""
 "where you wish to provide educational instruction regarding the flash "
 "file \n"
 "the learners will view."
-msgstr "O iDevice de flash con texto permítelle \n"
-"asociar información textual adicional a un ficheiro flash. Isto pode ser útil cando quere proporcionar instrucións educacionais adicionais sobre o ficheiro flash \n"
+msgstr ""
+"O iDevice de flash con texto permítelle \n"
+"asociar información textual adicional a un ficheiro flash. Isto pode ser "
+"útil cando quere proporcionar instrucións educacionais adicionais sobre o"
+" ficheiro flash \n"
 "que os alumnos verán."
 
 #: exe/engine/flashwithtextidevice.py:53
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
-msgstr "Introduza o texto que quere \n"
+msgstr ""
+"Introduza o texto que quere \n"
 " \n"
 "                                 asociar ao ficheiro."
 
@@ -1371,7 +1587,8 @@ msgstr "Introduza o texto que quere \n"
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
-msgstr "Proporcione un título para o filme flash \n"
+msgstr ""
+"Proporcione un título para o filme flash \n"
 "                                  que ven de inserir."
 
 #: exe/engine/flashwithtextidevice.py:60 exe/engine/flashwithtextidevice.py:120
@@ -1380,7 +1597,8 @@ msgid ""
 "dimensions (in pixels) and determine the alignment of the image on "
 "screen. \n"
 "The width and height dimensions will alter proportionally."
-msgstr "ntroduza as dimensións do flash \n"
+msgstr ""
+"ntroduza as dimensións do flash \n"
 "(en píxeles) e determine o aliñamento da imaxe na pantalla. . \n"
 "As dimensións da largura e altura serán modificadas proporcionalmente."
 
@@ -1396,9 +1614,12 @@ msgid ""
 "This provides the framework within which the learning activities are "
 "built and \n"
 "delivered."
-msgstr "A maior parte de un recurso de aprendizaxe \n"
-"dedicarase a establecer o contexto, fornecer instrucións e proporcionar información xeral.\n"
-"Isto proporciona o marco de traballo en que as actividades de aprendizaxe son construídas \n"
+msgstr ""
+"A maior parte de un recurso de aprendizaxe \n"
+"dedicarase a establecer o contexto, fornecer instrucións e proporcionar "
+"información xeral.\n"
+"Isto proporciona o marco de traballo en que as actividades de aprendizaxe"
+" son construídas \n"
 "e distribuídas."
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
@@ -1412,24 +1633,34 @@ msgid ""
 "iDevice has no emphasis applied although limited formatting can be "
 "applied to \n"
 "text through the text editing buttons associated with the field."
-msgstr "Utilice este campo para introducir texto. A este iDevice non se lle aplica énfase, aínda que se lle pode aplicar un formatado limitado \n"
+msgstr ""
+"Utilice este campo para introducir texto. A este iDevice non se lle "
+"aplica énfase, aínda que se lle pode aplicar un formatado limitado \n"
 "ao texto a través dos botóns de edición asociados ao campo."
 
 #: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
-msgstr "Este é un campo de texto libre onde se pode introducir contidos xerais de aprendizaxe."
+msgstr ""
+"Este é un campo de texto libre onde se pode introducir contidos xerais de"
+" aprendizaxe."
 
 #: exe/engine/galleryidevice.py:140 exe/engine/galleryidevice.py:191
 msgid "No Thumbnail Available. Could not load original image."
-msgstr "Non hai ningunha miniatura dispoñible. Non se puido cargar a imaxe orixinal."
+msgstr ""
+"Non hai ningunha miniatura dispoñible. Non se puido cargar a imaxe "
+"orixinal."
 
 #: exe/engine/galleryidevice.py:148 exe/engine/galleryidevice.py:198
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr "Non hai ningunha miniatura dispoñible. Non se puido cargar a imaxe orixinal."
+msgstr ""
+"Non hai ningunha miniatura dispoñible. Non se puido cargar a imaxe "
+"orixinal."
 
 #: exe/engine/galleryidevice.py:221
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr "Non hai ningunha miniatura dispoñible. Non se puido cargar a imaxe orixinal."
+msgstr ""
+"Non hai ningunha miniatura dispoñible. Non se puido cargar a imaxe "
+"orixinal."
 
 #: exe/engine/galleryidevice.py:458
 msgid "Image Gallery"
@@ -1445,8 +1676,10 @@ msgid ""
 "to each other or to a particular learning exercise you may wish to "
 "display \n"
 "these in a gallery context rather then individually.</p>"
-msgstr "<p>Cando teña un certo número de imaxes relacionadas  \n"
-"entre si ou con calquera exercicio particular de aprendizaxe, podería querer mostralos \n"
+msgstr ""
+"<p>Cando teña un certo número de imaxes relacionadas  \n"
+"entre si ou con calquera exercicio particular de aprendizaxe, podería "
+"querer mostralos \n"
 "no contexto dunha galería en vez de facelo individualmente.</p>"
 
 #: exe/engine/galleryidevice.py:463
@@ -1462,8 +1695,11 @@ msgid ""
 "Click on the Add images button to select an image file. The image will "
 "appear below where you will be able to label it. It's always good "
 "practice to put the file size in the label."
-msgstr "Prema \n"
-"na imaxe de abaixo ou no botón \"Engadir imaxe\" para seleccionar un ficheiro de imaxe. A imaxe aparecerá abaixo onde poderá etiquetala. Unha boa práctica é a de escribir sempre o tamaño da imaxe na etiqueta."
+msgstr ""
+"Prema \n"
+"na imaxe de abaixo ou no botón \"Engadir imaxe\" para seleccionar un "
+"ficheiro de imaxe. A imaxe aparecerá abaixo onde poderá etiquetala. Unha "
+"boa práctica é a de escribir sempre o tamaño da imaxe na etiqueta."
 
 #: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:663
 msgid "Reading Activity 0.11"
@@ -1627,8 +1863,12 @@ msgid ""
 "the reading, or by having them complete some other possibly more physical"
 " task \n"
 "based on the reading.</p>"
-msgstr "<p>A actividade de lectura usarase en primeiro lugar \n"
-"para verificar a comprensión dun texto dado. Isto pódese facer solicitándolle ao alumno que reflicta sobre a lectura e que responda a algunhas preguntas sobre ela ou ben tendo completado eles algunha outra tarefa probabelmente máis física \n"
+msgstr ""
+"<p>A actividade de lectura usarase en primeiro lugar \n"
+"para verificar a comprensión dun texto dado. Isto pódese facer "
+"solicitándolle ao alumno que reflicta sobre a lectura e que responda a "
+"algunhas preguntas sobre ela ou ben tendo completado eles algunha outra "
+"tarefa probabelmente máis física \n"
 "baseada na lectura.</p>"
 
 #: exe/engine/idevicestore.py:562
@@ -1644,7 +1884,18 @@ msgid ""
 "questions or events into one iDevice. </li><li>Think about activities "
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
-msgstr "<p>Os docentes deben recordar o seguinte cando estean a utilizar este iDevice: </p><ol><li>Pense na cantidade de diferentes tipos de actividades planificadas como recurso que serán sinaladas visualmente como contido. Tente non utilizar moitos tipos diferentes de clasificacións de actividades para non confundir ao alumnado. Normalmente tres ou catro tipos diferentes son máis que suficientes para un recurso de ensinanza.</li><li>Dende unhas perspectiva de deseño visual, tenta non poñer os iDevices xuntos sen texto no medio. Si pensa que é necesario, una dúas preguntas e eventos dun IDevice. </li><li>Pense actividades nas que o beneficio de completar a actividade supere ao custe en tempo e esforzo de completala. </li></ol>"
+msgstr ""
+"<p>Os docentes deben recordar o seguinte cando estean a utilizar este "
+"iDevice: </p><ol><li>Pense na cantidade de diferentes tipos de "
+"actividades planificadas como recurso que serán sinaladas visualmente "
+"como contido. Tente non utilizar moitos tipos diferentes de "
+"clasificacións de actividades para non confundir ao alumnado. Normalmente"
+" tres ou catro tipos diferentes son máis que suficientes para un recurso "
+"de ensinanza.</li><li>Dende unhas perspectiva de deseño visual, tenta non"
+" poñer os iDevices xuntos sen texto no medio. Si pensa que é necesario, "
+"una dúas preguntas e eventos dun IDevice. </li><li>Pense actividades nas "
+"que o beneficio de completar a actividade supere ao custe en tempo e "
+"esforzo de completala. </li></ol>"
 
 #: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:706
 msgid "What to read"
@@ -1655,7 +1906,10 @@ msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
-msgstr "ntroduza os pormenores das lecturas incluíndo os detalles das referencias.  O estilo de referencias que se vai usar dependerá das preferencias do seu departamento ou \n"
+msgstr ""
+"ntroduza os pormenores das lecturas incluíndo os detalles das "
+"referencias.  O estilo de referencias que se vai usar dependerá das "
+"preferencias do seu departamento ou \n"
 "facultade."
 
 #: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:640
@@ -1669,7 +1923,9 @@ msgstr "Actividade"
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
-msgstr "Describa as tarefas relacionadas coa lectura que o alumno debe levar a cabo.  \n"
+msgstr ""
+"Describa as tarefas relacionadas coa lectura que o alumno debe levar a "
+"cabo.  \n"
 "Isto axuda a mostrar as partes importantes aos alumnos."
 
 #: exe/engine/idevicestore.py:606 exe/engine/idevicestore.py:715
@@ -1678,8 +1934,11 @@ msgid ""
 "or as a starting point for further analysis of the reading by posing a "
 "question \n"
 "or providing a statement to begin a debate."
-msgstr "Use a retroacción para proporcionar un resumo dos puntos cubertos na lectura \n"
-"ou como un punto de inicio para unha análise adicional da lectura deixando unha pregunta\n"
+msgstr ""
+"Use a retroacción para proporcionar un resumo dos puntos cubertos na "
+"lectura \n"
+"ou como un punto de inicio para unha análise adicional da lectura "
+"deixando unha pregunta\n"
 " ou proporcionando unha premisa para comezar o debate."
 
 #: exe/engine/idevicestore.py:612 exe/engine/idevicestore.py:621
@@ -1694,8 +1953,11 @@ msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
-msgstr "Os obxectivos describen os resultados que se espera que o alumno alcance e deberían\n"
-"definir o que serán capaces de facer os alumnos cando terminen as tarefas\n"
+msgstr ""
+"Os obxectivos describen os resultados que se espera que o alumno alcance "
+"e deberían\n"
+"definir o que serán capaces de facer os alumnos cando terminen as tarefas"
+"\n"
 "de aprendizaxe."
 
 #: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
@@ -1718,17 +1980,22 @@ msgid ""
 "<li>        Learners must have level 4 English </li>\n"
 "<li>        Learners must be able to assemble standard power tools "
 "</li></ul>\n"
-msgstr "Requisitos previos refírese ao coñecemento que os alumnos deberían\n"
-"posuír para seren quen de terminar efectivamente a tarefa de aprendizaxe. Algúns exemplos\n"
+msgstr ""
+"Requisitos previos refírese ao coñecemento que os alumnos deberían\n"
+"posuír para seren quen de terminar efectivamente a tarefa de aprendizaxe."
+" Algúns exemplos\n"
 " de requisitos previos poden ser: <ul>\n"
 "<li>       Os alumnos deben ter o nivel 4 de inglés </li>\n"
-"<li>       Os alumnos deben ser capaces de usar un procesador de texto </li></ul>\n"
+"<li>       Os alumnos deben ser capaces de usar un procesador de texto "
+"</li></ul>\n"
 
 #: exe/engine/idevicestore.py:636 exe/engine/idevicestore.py:743
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
-msgstr "Describa os requisitos previos de coñecemento que os alumnos deberían ter \n"
+msgstr ""
+"Describa os requisitos previos de coñecemento que os alumnos deberían ter"
+" \n"
 "para completar eficazmente esta lección."
 
 #: exe/engine/idevicestore.py:643 exe/engine/idevicestore.py:750
@@ -1737,9 +2004,13 @@ msgid ""
 "complete. Provide a clear statement of the task and consider any "
 "conditions\n"
 "that may help or hinder the learner in the performance of the task."
-msgstr "Unha actividade pódese definir como unha tarefa ou un conxunto de tarefas que un estudante debe \n"
-"completar. Proporcione un enunciado claro da tarefa e considere calquera condición\n"
-"que poda axudar ou dificultar o traballo do alumno na realización da tarefa."
+msgstr ""
+"Unha actividade pódese definir como unha tarefa ou un conxunto de tarefas"
+" que un estudante debe \n"
+"completar. Proporcione un enunciado claro da tarefa e considere calquera "
+"condición\n"
+"que poda axudar ou dificultar o traballo do alumno na realización da "
+"tarefa."
 
 #: exe/engine/idevicestore.py:649 exe/engine/idevicestore.py:756
 msgid "Describe the tasks the learners should complete."
@@ -1755,8 +2026,13 @@ msgid ""
 "Feedback to the activity where appropriate, can provide the learner with "
 "some \n"
 "reflective guidance.</p>"
-msgstr "<p>A actividade de lectura, como o seu nome indica, debería suxerirlle ao alumno a realización dun tipo de actividade. Esta actividade debería estar directamente relacionada co texto que se lle indicou como lectura.  \n"
-"A retroacción na actividade, cando é apropiada, pódelle proporcionar ao alumno unha \n"
+msgstr ""
+"<p>A actividade de lectura, como o seu nome indica, debería suxerirlle ao"
+" alumno a realización dun tipo de actividade. Esta actividade debería "
+"estar directamente relacionada co texto que se lle indicou como lectura."
+"  \n"
+"A retroacción na actividade, cando é apropiada, pódelle proporcionar ao "
+"alumno unha \n"
 "orientación para a reflexión.</p>"
 
 #: exe/engine/idevicestore.py:671
@@ -1772,7 +2048,17 @@ msgid ""
 "questions or events into one iDevice. </li><li>Think about activities "
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
-msgstr "Os docentes deben recordar o seguinte cando estean a utilizar este iDevice: <ol><li>Pense na cantidade de tipos diferentes de actividades que poden ser indicadas visualmente como contido. Tente non utilizar moitos tipos diferentes de clasificacións de actividades para non confundir ao alumnado. Normalmente tres ou catro tipos diferentes son máis que suficientes para un recurso de ensinanza.</li><li>Dende unhas perspectiva de deseño visual, tenta non poñer os iDevices xuntos sen texto no medio. Si pensa que é necesario, una dúas preguntas e eventos dun IDevice. </li><li>Pense actividades nas que o beneficio de completar a actividade supere ao custe en tempo e esforzo de completala. </li></ol>"
+msgstr ""
+"Os docentes deben recordar o seguinte cando estean a utilizar este "
+"iDevice: <ol><li>Pense na cantidade de tipos diferentes de actividades "
+"que poden ser indicadas visualmente como contido. Tente non utilizar "
+"moitos tipos diferentes de clasificacións de actividades para non "
+"confundir ao alumnado. Normalmente tres ou catro tipos diferentes son "
+"máis que suficientes para un recurso de ensinanza.</li><li>Dende unhas "
+"perspectiva de deseño visual, tenta non poñer os iDevices xuntos sen "
+"texto no medio. Si pensa que é necesario, una dúas preguntas e eventos "
+"dun IDevice. </li><li>Pense actividades nas que o beneficio de completar "
+"a actividade supere ao custe en tempo e esforzo de completala. </li></ol>"
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
@@ -1784,9 +2070,11 @@ msgid ""
 " learners to magnify the view of the image they have been given. Moving "
 "the \n"
 "magnifying glass over the image allows larger detail to be studied."
-msgstr "A lupa é unha ferramenta que permite\n"
+msgstr ""
+"A lupa é unha ferramenta que permite\n"
 "  os estudantes \n"
-" agrandar a visualización da imaxe. Ao mover a lupa sobre a imaxe aprécianse máis detalles para o estudo."
+" agrandar a visualización da imaxe. Ao mover a lupa sobre a imaxe "
+"aprécianse máis detalles para o estudo."
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Choose an Image"
@@ -1798,8 +2086,10 @@ msgid ""
 "on the picture below or the \"Add Image\" button to select an image file "
 "to be \n"
 "magnified."
-msgstr "Prema \n"
-"na imaxe de abaixo ou no botón \"Engadir imaxe\" para seleccionar un ficheiro de imaxe \n"
+msgstr ""
+"Prema \n"
+"na imaxe de abaixo ou no botón \"Engadir imaxe\" para seleccionar un "
+"ficheiro de imaxe \n"
 "que será ampliado."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
@@ -1814,14 +2104,16 @@ msgstr "Texto"
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
-msgstr "Introduza o texto que quere \n"
+msgstr ""
+"Introduza o texto que quere \n"
 "asociar ao ficheiro."
 
 #: exe/engine/imagemagnifieridevice.py:60
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
-msgstr "Proporcione un título para a \n"
+msgstr ""
+"Proporcione un título para a \n"
 "imaxe que se vai ampliar."
 
 #: exe/engine/imagemagnifieridevice.py:62
@@ -1832,7 +2124,10 @@ msgid ""
 "pixels equals approximately 3cm. Leave both fields blank if you want the"
 " \n"
 "image to display at its original size."
-msgstr "Seleccione a dimensión na que quere que se a mose a imaxe. Ancho das celas (en píxeles). Xeralmente, 100 píxeles equivale a 3cm. Deixe os dous campos en branco se pretende \n"
+msgstr ""
+"Seleccione a dimensión na que quere que se a mose a imaxe. Ancho das "
+"celas (en píxeles). Xeralmente, 100 píxeles equivale a 3cm. Deixe os dous"
+" campos en branco se pretende \n"
 "que a imaxe sexa mostrada no seu tamaño original."
 
 #: exe/engine/imagemagnifieridevice.py:66
@@ -1840,7 +2135,8 @@ msgstr "Seleccione a dimensión na que quere que se a mose a imaxe. Ancho das ce
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
-msgstr "O aliñamento permítelle escoller \n"
+msgstr ""
+"O aliñamento permítelle escoller \n"
 "o lugar da pantalla en que será posicionada unha imaxe."
 
 #: exe/engine/imagemagnifieridevice.py:68
@@ -1848,15 +2144,18 @@ msgstr "O aliñamento permítelle escoller \n"
 msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
-msgstr "Defina o valor inicial de zoom \n"
-"cando se cargue o iDevice, como unha porcentaxe do tamaño orixinal da imaxe"
+msgstr ""
+"Defina o valor inicial de zoom \n"
+"cando se cargue o iDevice, como unha porcentaxe do tamaño orixinal da "
+"imaxe"
 
 #: exe/engine/imagemagnifieridevice.py:70
 #: exe/engine/imagemagnifieridevice.py:146
 msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
-msgstr "Defina o nivel máximo de zoom, \n"
+msgstr ""
+"Defina o nivel máximo de zoom, \n"
 "como unha porcentaxe do tamaño orixinal da imaxe"
 
 #: exe/engine/imagemagnifieridevice.py:72
@@ -1867,7 +2166,8 @@ msgstr "Seleccionar o tamaño da lupa"
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
-msgstr "Isto define o tamaño inicial \n"
+msgstr ""
+"Isto define o tamaño inicial \n"
 "da lupa"
 
 #: exe/engine/imagewithtextidevice.py:43
@@ -1899,20 +2199,31 @@ msgid ""
 "the piston with a brief textual summary of the key aspects of each "
 "visual.\n"
 "</p>"
-msgstr "<p>\n"
-"O iDevice Imaxe con texto pode utilizarse de diferentes xeitos para apoiar as dúas dimensións de contido en eXe: a emocional (afectiva) e a actividade de aprendizaxe (cognitiva). \n"
+msgstr ""
+"<p>\n"
+"O iDevice Imaxe con texto pode utilizarse de diferentes xeitos para "
+"apoiar as dúas dimensións de contido en eXe: a emocional (afectiva) e a "
+"actividade de aprendizaxe (cognitiva). \n"
 "</p><p>\n"
 "<b>Integración de elementos visuais con resumos verbais</b>\n"
 "</p><p>\n"
-"Os psicólogos indican que presentar ao alumnado unha imaxe representativa e un resumo verbal simultaneamente pode reducir a carga cognitiva e aumentar a retención da aprendizaxe.\n"
-"Este iDevice pode utilizarse para presentar unha imaxe (foto, diagrama ou gráfico) con un breve resumo verbal que cubra os puntos principais relativos á imaxe. Por exemplo, si estivera explicando as funcións dun motor de combustión de catro tempos, podería ter unha respresentación visual de cada unha das posicións do pistón con un breve resumo verbal dos aspectos clave de cada imaxe.\n"
+"Os psicólogos indican que presentar ao alumnado unha imaxe representativa"
+" e un resumo verbal simultaneamente pode reducir a carga cognitiva e "
+"aumentar a retención da aprendizaxe.\n"
+"Este iDevice pode utilizarse para presentar unha imaxe (foto, diagrama ou"
+" gráfico) con un breve resumo verbal que cubra os puntos principais "
+"relativos á imaxe. Por exemplo, si estivera explicando as funcións dun "
+"motor de combustión de catro tempos, podería ter unha respresentación "
+"visual de cada unha das posicións do pistón con un breve resumo verbal "
+"dos aspectos clave de cada imaxe.\n"
 "</p>"
 
 #: exe/engine/imagewithtextidevice.py:66
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
-msgstr "Introduza o texto que quere \n"
+msgstr ""
+"Introduza o texto que quere \n"
 " \n"
 "                                                asociar ao ficheiro."
 
@@ -1920,7 +2231,8 @@ msgstr "Introduza o texto que quere \n"
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
-msgstr "Proporcione un título para a imaxe \n"
+msgstr ""
+"Proporcione un título para a imaxe \n"
 "que ven de inserir."
 
 #: exe/engine/listaidevice.py:66
@@ -1940,7 +2252,15 @@ msgid ""
 " check reading comprehension.</li><li>To check vocabulary "
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
-msgstr "<p>Os exercicios nos que se utilizar a Actividade Despregable son textos ou oracións onde os estudantes deben elixir as palabras correctas. Utilízanse normalmente coas seguintes finalidades:</p><ol><li>Para verificar o coñecemento dos conceptos chave dun curso (podería ser un test de precoñecemento, un exercicio formativo ou unha verificación sumativa).</li><li>Para verificar a comprensión lectora.</li><li>Para verificar os coñecementos de vocabulario.</li><li>Para verificar a formación de palabras ou a competencia gramatical. \n"
+msgstr ""
+"<p>Os exercicios nos que se utilizar a Actividade Despregable son textos "
+"ou oracións onde os estudantes deben elixir as palabras correctas. "
+"Utilízanse normalmente coas seguintes finalidades:</p><ol><li>Para "
+"verificar o coñecemento dos conceptos chave dun curso (podería ser un "
+"test de precoñecemento, un exercicio formativo ou unha verificación "
+"sumativa).</li><li>Para verificar a comprensión lectora.</li><li>Para "
+"verificar os coñecementos de vocabulario.</li><li>Para verificar a "
+"formación de palabras ou a competencia gramatical. \n"
 " </li></ol>"
 
 #: exe/engine/listaidevice.py:80
@@ -1962,11 +2282,33 @@ msgid ""
 "same word stem, but different affixes. It is a good idea to get a "
 "colleague to test the test/exercise to make sure there are no surprises!"
 "  </p>  </dd></dl>"
-msgstr "<dl>  <dt>Si o seu obxectivo é avaliar a comprensión lectora dos conceptos clave dun curso, ou a comprensión lectora</dt>  <dd>    <p> Escriba un resumo do concepto de lectura o suficientemente longo como para que avalíe adecuadamente o coñecemento do obxectivo, pero o suficientemente curso como para que non produza fatiga. Probablemente unha páxina impresa sexa un tamaño adecuado, pero considere a posibilidade de utilizar un texto menor para nenos ou principiantes.    </p>    <p>Seleccione palabras do texto que sexan claves para c omprensión dos concpetos. Estas serán probablemente verbos, sustantivos e adverbios clave. Elixa alternativas con unha resposta clara.    </p>  </dd>  <dt>Si o seu obxectivo é avaliar o coñecemento de vocabulario  </dt>  <dt>Si o seu obxectivo é avaliar a morfoloxía e a gramática:  </dt>  <dd>  <p>Escriba un texto onde se utilicen estas formas. Este texto debe ser coherente e ter sentido completo, ademais de ter unha lonxitude adecuada. Recorda que o obxectivo non é o vocabulario, e polo tanto o significado básico das raíces deben ser ben coñecidos polos estudantes.  </p>Resalta as palabras clave no texto. Propoña alternativas coa mesma raíz pero con diferentes sufixos. É unha boa idea conseguir que un amigo probe os exercicios para asegurarse que non haxa sorpresas!  </p>  </dd></dl>"
+msgstr ""
+"<dl>  <dt>Si o seu obxectivo é avaliar a comprensión lectora dos "
+"conceptos clave dun curso, ou a comprensión lectora</dt>  <dd>    <p> "
+"Escriba un resumo do concepto de lectura o suficientemente longo como "
+"para que avalíe adecuadamente o coñecemento do obxectivo, pero o "
+"suficientemente curso como para que non produza fatiga. Probablemente "
+"unha páxina impresa sexa un tamaño adecuado, pero considere a "
+"posibilidade de utilizar un texto menor para nenos ou principiantes.    "
+"</p>    <p>Seleccione palabras do texto que sexan claves para c "
+"omprensión dos concpetos. Estas serán probablemente verbos, sustantivos e"
+" adverbios clave. Elixa alternativas con unha resposta clara.    </p>  "
+"</dd>  <dt>Si o seu obxectivo é avaliar o coñecemento de vocabulario  "
+"</dt>  <dt>Si o seu obxectivo é avaliar a morfoloxía e a gramática:  "
+"</dt>  <dd>  <p>Escriba un texto onde se utilicen estas formas. Este "
+"texto debe ser coherente e ter sentido completo, ademais de ter unha "
+"lonxitude adecuada. Recorda que o obxectivo non é o vocabulario, e polo "
+"tanto o significado básico das raíces deben ser ben coñecidos polos "
+"estudantes.  </p>Resalta as palabras clave no texto. Propoña alternativas"
+" coa mesma raíz pero con diferentes sufixos. É unha boa idea conseguir "
+"que un amigo probe os exercicios para asegurarse que non haxa sorpresas!"
+"  </p>  </dd></dl>"
 
 #: exe/engine/listaidevice.py:130
 msgid "Provide instruction on how the dropdown activity should be completed."
-msgstr "Pode proporcionar instrucións sobre como completar a actividade despregable."
+msgstr ""
+"Pode proporcionar instrucións sobre como completar a actividade "
+"despregable."
 
 #: exe/engine/listaidevice.py:131
 msgid "Read and complete"
@@ -1984,7 +2326,11 @@ msgid ""
 "field.</p><p> To select words to choose, double click on the word to "
 "select it and \n"
 "click on the 'Hide/Show' button below.</p>"
-msgstr "<p>Introduza o texto da actividade despregable no campo despregable xa sexa pegando texto dende outra orixe ou escribindo texto directamente no campo.</p> Para seleccionar as palabras a elixir, faga dobre clic na palabra para seleccionala e faga clic no botón 'Ocultar/Amosar'"
+msgstr ""
+"<p>Introduza o texto da actividade despregable no campo despregable xa "
+"sexa pegando texto dende outra orixe ou escribindo texto directamente no "
+"campo.</p> Para seleccionar as palabras a elixir, faga dobre clic na "
+"palabra para seleccionala e faga clic no botón 'Ocultar/Amosar'"
 
 #: exe/engine/listaidevice.py:292
 msgid "Read the paragraph below and choose the correct words"
@@ -1995,7 +2341,10 @@ msgid ""
 "<p>Optional: Write other words to complete the dropdown activity.</br>Use"
 " | (vertical bar ) to separate words.</br>This field can be left blank. "
 "</p>"
-msgstr "<p>Opcional: Escribir outras palabras para completar a actividade despregable.</br>Utilice | (barra vertical) para separar palabras.</br>Este campo pode deixarse en branco. </p>"
+msgstr ""
+"<p>Opcional: Escribir outras palabras para completar a actividade "
+"despregable.</br>Utilice | (barra vertical) para separar "
+"palabras.</br>Este campo pode deixarse en branco. </p>"
 
 #: exe/engine/locationbuttons.py:29 exe/engine/locationbuttons.py:33
 #: exe/engine/locationbuttons.py:37
@@ -2032,7 +2381,8 @@ msgid ""
 "                        explanatory notes and learning instruction around"
 " \n"
 "                        this graphic."
-msgstr "A linguaxe matemática látex permite \n"
+msgstr ""
+"A linguaxe matemática látex permite \n"
 "                        a entrada de fórmulas matemáticas \n"
 "                         no contido. Isto realízase convertendo \n"
 "                        o código LATEX nunha imaxe que é amosada\n"
@@ -2043,7 +2393,9 @@ msgstr "A linguaxe matemática látex permite \n"
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
-msgstr "Pode usar a barra de ferramentas ou introducir manualmente o LaTeX na caixa de texto. "
+msgstr ""
+"Pode usar a barra de ferramentas ou introducir manualmente o LaTeX na "
+"caixa de texto. "
 
 #: exe/engine/memorymatchidevice.py:44
 msgid "Memory Match Game"
@@ -2255,7 +2607,9 @@ msgstr "Auckland University of Technology"
 msgid ""
 "The MP3 iDevice allows you to attach an MP3 media file to your content "
 "along with relevant textuallearning instructions."
-msgstr "O iDevice MP3 permítelle anexar un ficheiro MP3 ao seu contido con instrucións pedagóxicas relevantes."
+msgstr ""
+"O iDevice MP3 permítelle anexar un ficheiro MP3 ao seu contido con "
+"instrucións pedagóxicas relevantes."
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
@@ -2270,13 +2624,23 @@ msgid ""
 "relevant text to the MP3 file.</li> <li>Choose the type of style you "
 "would like the iDevice to       display e.g. 'Some emphasis' applies a "
 "border and icon to the iDevice content displayed.</li></ol>"
-msgstr "<ol>  <li>Prema en &lt;Seleccionar un MP3&gt; e procure o ficheiro MP3 que quere inserir</li> <li>Prema no menu despregábel para seleccionar a posición na pantalla en que quere mostrar o ficheiro.</li>  <li>Introduza un título opcional para o seu ficheiro.</li> <li>Asócielle unha descrición relevante ao ficheiro MP3.</li> <li>Seleccione o tipo de estilo que quere que mostre o iDevice, por exemplo 'Énfase' aplícalle un bordo e unha icona ao contido do iDevice mostrado.</li></ol> 'Algo de énfase' aplica un borde e unha icona ao contido do iDevice amosado.</li></ol>"
+msgstr ""
+"<ol>  <li>Prema en &lt;Seleccionar un MP3&gt; e procure o ficheiro MP3 "
+"que quere inserir</li> <li>Prema no menu despregábel para seleccionar a "
+"posición na pantalla en que quere mostrar o ficheiro.</li>  <li>Introduza"
+" un título opcional para o seu ficheiro.</li> <li>Asócielle unha "
+"descrición relevante ao ficheiro MP3.</li> <li>Seleccione o tipo de "
+"estilo que quere que mostre o iDevice, por exemplo 'Énfase' aplícalle un "
+"bordo e unha icona ao contido do iDevice mostrado.</li></ol> 'Algo de "
+"énfase' aplica un borde e unha icona ao contido do iDevice "
+"amosado.</li></ol>"
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
-msgstr "O aliñamento permítelle escoller \n"
+msgstr ""
+"O aliñamento permítelle escoller \n"
 "o lugar da pantalla en que será posicionado o reproductor."
 
 #: exe/engine/multiselectidevice.py:45
@@ -2303,7 +2667,9 @@ msgstr "FPD - Orientacións alumnado"
 msgid ""
 "Guidelines Students is an iDevice that permits students know the "
 "objectives of their learning."
-msgstr "Orientacións Alumnado é un iDevice que permite aos estudantes coñecer os obxectivos para a súa aprendizaxe."
+msgstr ""
+"Orientacións Alumnado é un iDevice que permite aos estudantes coñecer os "
+"obxectivos para a súa aprendizaxe."
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:38
 msgid "Guidelines Students Text"
@@ -2321,7 +2687,9 @@ msgstr "FPD - Orientación Titoría"
 msgid ""
 "Guidelines Teacher is an iDevice that lets the teacher know the learning "
 "objectives of the students."
-msgstr "Orientacións Titoría é un iDevice que permite ao docente coñecer os obxectivos da aprendizaxe dos estudantes"
+msgstr ""
+"Orientacións Titoría é un iDevice que permite ao docente coñecer os "
+"obxectivos da aprendizaxe dos estudantes"
 
 #: exe/engine/orientacionestutoriafpdidevice.py:38
 msgid "Guidelines Teacher Text"
@@ -2361,7 +2729,8 @@ msgstr "?????"
 msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
-msgstr "FALLOU AO GARDAR!\n"
+msgstr ""
+"FALLOU AO GARDAR!\n"
 "A última copia gardada é %s."
 
 #: exe/engine/package.py:1449 exe/jsui/scripts/app/controller/Toolbar.js:418
@@ -2373,7 +2742,7 @@ msgstr "Editor de iDevice"
 msgid "My Catalog"
 msgstr "O meu catálogo"
 
-#: exe/engine/package.py:1577
+#: exe/engine/package.py:1577 exe/webui/scripts/tinymce_3.5.11_settings.js:58
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:73
@@ -2388,7 +2757,9 @@ msgstr "FPD - Para Saber Máis"
 msgid ""
 "A Step Ahead is an iDevice that permits students widen their knowledge "
 "with further contents."
-msgstr "Para Saber Máis é un iDevice que permite aos estudantes ampliar os seus coñecementos con outros contidos."
+msgstr ""
+"Para Saber Máis é un iDevice que permite aos estudantes ampliar os seus "
+"coñecementos con outros contidos."
 
 #: exe/engine/parasabermasfpdidevice.py:38
 #: exe/engine/parasabermasfpdidevice.py:137
@@ -2400,7 +2771,8 @@ msgstr "Texto de Para Saber Máis"
 msgid ""
 "%s\n"
 "%s unchanged"
-msgstr "%s\n"
+msgstr ""
+"%s\n"
 "%s sin cambios"
 
 #: exe/engine/placetheobjectsidevice.py:48
@@ -2425,7 +2797,9 @@ msgstr "Área principal"
 
 #: exe/engine/placetheobjectsidevice.py:62
 msgid "This is the main image where the user will drag / drop items to"
-msgstr "Esta é a imaxe principal sobre a que o usuario arrastrará ou soltará obxectos"
+msgstr ""
+"Esta é a imaxe principal sobre a que o usuario arrastrará ou soltará "
+"obxectos"
 
 #: exe/engine/placetheobjectsidevice.py:66
 msgid "Time Limit (mm:ss)"
@@ -2537,14 +2911,17 @@ msgid ""
 "a range of plausible distractors (usually 3-4) as well as the correct "
 "answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
-msgstr "Introduza unha opción de resposta. Proporcione un número plausible de distractores (normalmente 3-4) así como a resposta correcta.  \n"
+msgstr ""
+"Introduza unha opción de resposta. Proporcione un número plausible de "
+"distractores (normalmente 3-4) así como a resposta correcta.  \n"
 "Pulse o botón &lt;Engadir outra opción&gt; para engadir outra resposta."
 
 #: exe/engine/quiztestidevice.py:126 exe/engine/quiztestidevice.py:202
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
-msgstr "Para indicar a resposta correcta, \n"
+msgstr ""
+"Para indicar a resposta correcta, \n"
 "prema o botón de opción ao lado da opción correcta."
 
 #: exe/engine/quiztestidevice.py:244
@@ -2560,7 +2937,11 @@ msgid ""
 "had \n"
 "time to learn and practice using the information or skill.\n"
 " "
-msgstr "A diferenza da Pregunta de Elección Múltiple, o cuestionario SCORM utilízase para probar o coñecemento do alumnado sobre un tema sen ofrecer retroalimentación á resposta correcta. O exercicio debería presentarse unha vez o alumnado tivo tempo de aprender e practicar.\n"
+msgstr ""
+"A diferenza da Pregunta de Elección Múltiple, o cuestionario SCORM "
+"utilízase para probar o coñecemento do alumnado sobre un tema sen ofrecer"
+" retroalimentación á resposta correcta. O exercicio debería presentarse "
+"unha vez o alumnado tivo tempo de aprender e practicar.\n"
 " "
 
 #: exe/engine/recomendacionfpdidevice.py:30
@@ -2571,7 +2952,9 @@ msgstr "FPD - Recomendación"
 msgid ""
 "A Piece of Advice is an iDevice that permits the teacher give advice on "
 "interesting books, films..."
-msgstr "Recomendación é un iDevice que permite ao profesor dar consellos sobre libros interesantes, películas..."
+msgstr ""
+"Recomendación é un iDevice que permite ao profesor dar consellos sobre "
+"libros interesantes, películas..."
 
 #: exe/engine/recomendacionfpdidevice.py:38
 #: exe/engine/recomendacionfpdidevice.py:137
@@ -2596,10 +2979,16 @@ msgid ""
 "are useful tools for collecting observation data. Rubrics and guides can "
 "be \n"
 "effective feedback tools."
-msgstr "A reflexión é un método de ensinanza de uso frecuente para conectar a teoría coa práctica.  As tarefas de reflexión proporcionan a miúdo aos alumnos \n"
-"unha oportunidade para observar e reflexionar sobre as súas observacións antes de presentalas \n"
-"como unha peza do traballo académico. Os xornais, diarios, perfís e os cartafoles \n"
-"son ferramentas útiles para recoller os datos da observación. As rúbricas e guías poden ser ferramentas de análise eficaces."
+msgstr ""
+"A reflexión é un método de ensinanza de uso frecuente para conectar a "
+"teoría coa práctica.  As tarefas de reflexión proporcionan a miúdo aos "
+"alumnos \n"
+"unha oportunidade para observar e reflexionar sobre as súas observacións "
+"antes de presentalas \n"
+"como unha peza do traballo académico. Os xornais, diarios, perfís e os "
+"cartafoles \n"
+"son ferramentas útiles para recoller os datos da observación. As rúbricas"
+" e guías poden ser ferramentas de análise eficaces."
 
 #: exe/engine/reflectionfpdidevice.py:57
 #: exe/engine/reflectionfpdmodifidevice.py:56
@@ -2607,7 +2996,8 @@ msgstr "A reflexión é un método de ensinanza de uso frecuente para conectar a
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
-msgstr "Introduza unha cuestión para que os alumnos \n"
+msgstr ""
+"Introduza unha cuestión para que os alumnos \n"
 "pensen sobre ela."
 
 #: exe/engine/reflectionfpdidevice.py:59
@@ -2616,7 +3006,10 @@ msgid ""
 "they have done in the exercise. (Rubrics are useful devices for providing"
 " \n"
 "reflective feedback.)"
-msgstr "Describe como serán evaluados os alumnos que fagan o exercicio.  (as rúbricas son elementos útiles para a prestación da retroalimentación reflexiva)."
+msgstr ""
+"Describe como serán evaluados os alumnos que fagan o exercicio.  (as "
+"rúbricas son elementos útiles para a prestación da retroalimentación "
+"reflexiva)."
 
 #: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
@@ -2639,7 +3032,10 @@ msgid ""
 "they have done in the exercise (rubrics are useful devices for providing"
 " \n"
 "reflective feedback)."
-msgstr "Describe como serán evaluados os alumnos que fagan o exercicio (as rúbricas son elementos útiles para a prestación da retroalimentación reflexiva)"
+msgstr ""
+"Describe como serán evaluados os alumnos que fagan o exercicio (as "
+"rúbricas son elementos útiles para a prestación da retroalimentación "
+"reflexiva)"
 
 #: exe/engine/resource.py:597
 msgid ""
@@ -2656,8 +3052,11 @@ msgid ""
 "The RSS iDevice is used \n"
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
-msgstr "O iDevice RSS úsase para proporcionar novo contido a unha máquina dos usuarios individual. Utilizando este\n"
-"iDevice pode proprocionar ligazóns desde unha fonte que seleccione para que a vexan os alumnos."
+msgstr ""
+"O iDevice RSS úsase para proporcionar novo contido a unha máquina dos "
+"usuarios individual. Utilizando este\n"
+"iDevice pode proprocionar ligazóns desde unha fonte que seleccione para "
+"que a vexan os alumnos."
 
 #: exe/engine/rssidevice.py:51
 msgid ""
@@ -2677,9 +3076,18 @@ msgid ""
 "display them as links in your content. From here you can edit the "
 "bookmarks and add\n"
 " instructions or additional learning information."
-msgstr "Introduza unha URL RSS para a fonte RSS que queres engadir ao contido. As fontes son identificadas por inha icona pequena\n"
-" (normalmente como esta <img src=\"/images/feed-icon.png\" />) ou o texto \"RSS\". Premento na \n"
-" icona ou o texto amosarase a fonte RSS correctamente no seu navegador. Pode copiar e pegar a URL dentro do campo. Alternativamente, pode premer o botón dereito no vínculo ou icona e abrirase un menú; prema en COPIAR LOCALIZACIÓN DA LIGAZÓN ou COPIAR ACCESO DIRECTOR Volva a eXe e peque o vínculo no campo URL do iDevice RSS e pulse o botón Subir. Isto extraerá os títulos da súa canle RSS e amosará como vínculos o contido. Dende aquí podes editar os favoritos e agregar\n"
+msgstr ""
+"Introduza unha URL RSS para a fonte RSS que queres engadir ao contido. As"
+" fontes son identificadas por inha icona pequena\n"
+" (normalmente como esta <img src=\"/images/feed-icon.png\" />) ou o texto"
+" \"RSS\". Premento na \n"
+" icona ou o texto amosarase a fonte RSS correctamente no seu navegador. "
+"Pode copiar e pegar a URL dentro do campo. Alternativamente, pode premer "
+"o botón dereito no vínculo ou icona e abrirase un menú; prema en COPIAR "
+"LOCALIZACIÓN DA LIGAZÓN ou COPIAR ACCESO DIRECTOR Volva a eXe e peque o "
+"vínculo no campo URL do iDevice RSS e pulse o botón Subir. Isto extraerá "
+"os títulos da súa canle RSS e amosará como vínculos o contido. Dende aquí"
+" podes editar os favoritos e agregar\n"
 " instrucións e información adicional da aprendizaxe."
 
 #: exe/engine/rssidevice.py:110 exe/engine/rssidevice.py:113
@@ -2687,7 +3095,9 @@ msgstr "Introduza unha URL RSS para a fonte RSS que queres engadir ao contido. A
 msgid ""
 "Unable to load RSS feed from %s <br/>Please check the spelling and "
 "connection and try again."
-msgstr "Non é posible cargar a fonte RSS de %s <br/>Verifique que está ben escrito, a conexión e ténteo de novo."
+msgstr ""
+"Non é posible cargar a fonte RSS de %s <br/>Verifique que está ben "
+"escrito, a conexión e ténteo de novo."
 
 #: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid "FPD - Multi Select Activity"
@@ -2831,14 +3241,19 @@ msgid ""
 "well for factual information and information that lends itself to "
 "either/or \n"
 "responses."
-msgstr "As preguntas verdadeiro/falso presentan unha afirmación na que o alumno debe decidir se é correcta.   Este tipo de preguntas son boas para traballar información sobre feitos ou información que presenta calquera das respostas."
+msgstr ""
+"As preguntas verdadeiro/falso presentan unha afirmación na que o alumno "
+"debe decidir se é correcta.   Este tipo de preguntas son boas para "
+"traballar información sobre feitos ou información que presenta calquera "
+"das respostas."
 
 #: exe/engine/truefalseidevice.py:151
 #: exe/engine/verdaderofalsofpdidevice.py:153
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
-msgstr "Pódese fornecer unha indicación para axudar \n"
+msgstr ""
+"Pódese fornecer unha indicación para axudar \n"
 "ao alumno a responder á pregunta."
 
 #: exe/engine/truefalseidevice.py:154
@@ -2848,7 +3263,9 @@ msgid ""
 "should be clear and unambiguous. Avoid negative premises as these can "
 "tend to \n"
 "be ambiguous."
-msgstr "Escriba a pregunta. A pregunta debe ser clara e non ambigua. Evite as premisas negativas \n"
+msgstr ""
+"Escriba a pregunta. A pregunta debe ser clara e non ambigua. Evite as "
+"premisas negativas \n"
 "porque tenden a ser ambiguas."
 
 #: exe/engine/truefalseidevice.py:158
@@ -2858,7 +3275,10 @@ msgid ""
 "to the learner. This field may be left blank. if this field is left blank"
 " \n"
 "default feedback will be provided."
-msgstr "Introduza calquera retroacción que pretenda proporcionar ao alumno. Este campo debe quedar baleiro. se este campo se deixa en branco proporcionarase a retroalimentación por defecto."
+msgstr ""
+"Introduza calquera retroacción que pretenda proporcionar ao alumno. Este "
+"campo debe quedar baleiro. se este campo se deixa en branco "
+"proporcionarase a retroalimentación por defecto."
 
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
 #: exe/engine/verdaderofalsofpdidevice.py:167
@@ -2866,7 +3286,8 @@ msgstr "Introduza calquera retroacción que pretenda proporcionar ao alumno. Est
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
-msgstr "Indique as instrucións sobre como se deben completar as preguntas \n"
+msgstr ""
+"Indique as instrucións sobre como se deben completar as preguntas \n"
 " Verdadeira/Falsa."
 
 #: exe/engine/truefalseidevice.py:372
@@ -2879,8 +3300,13 @@ msgid ""
 "\"Correct answer\" as indicated by the selection for the correct answer; "
 "or \n"
 "\"Wrong answer\" for the other alternatives."
-msgstr "Escriba a retroacción que quere que \n"
-"o alumno vexa cando seleccione unha opción en particular. Se non enche esta caixa de texto, eXe proporcionará automaticamente a retroalimentación predeterminada como segue: \"Resposta correcta\" como indicada pola selección da resposta correcta, ou \"Resposta errada\" para as outras opcións."
+msgstr ""
+"Escriba a retroacción que quere que \n"
+"o alumno vexa cando seleccione unha opción en particular. Se non enche "
+"esta caixa de texto, eXe proporcionará automaticamente a "
+"retroalimentación predeterminada como segue: \"Resposta correcta\" como "
+"indicada pola selección da resposta correcta, ou \"Resposta errada\" para"
+" as outras opcións."
 
 #: exe/engine/verdaderofalsofpdidevice.py:145
 msgid "FPD - True/False Activity"
@@ -2891,6 +3317,7 @@ msgid "Wiki Article"
 msgstr "Artigo Wiki"
 
 #: exe/engine/wikipediaidevice.py:55
+#, fuzzy
 msgid ""
 "<p>The Wikipedia iDevice allows you to locate \n"
 "existing content from within Wikipedia and download this content into "
@@ -2903,35 +3330,48 @@ msgid ""
 "Likewise, \n"
 "changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia "
 "content \n"
-"is covered by the GNU free documentation license.</p>"
-msgstr "<p>O iDevice Wikipedia permite localizar contido existente en Wikipedia e descargar este contido a eXe. O iDevice Artigo da Wikipedia toma unha coipa do contido de ese momento. Os cambios na Wikipedia no actualizarán o contido automaticamente en eXe, polo que é preciso actualizala no futuro. Asimesmo, os cambios que se fagan en eXe non actualizarán a Wikipedia. </p> <p>O contido da WIkipedia está protexido por unha licenza Creative Commons CompartirIgual 3.0.</p>"
+"is covered by the GNU Free Documentation 1.2 License, and since 2009 "
+"additionally\n"
+"by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
+msgstr ""
+"<p>O iDevice Wikipedia permite localizar contido existente en Wikipedia e"
+" descargar este contido a eXe. O iDevice Artigo da Wikipedia toma unha "
+"coipa do contido de ese momento. Os cambios na Wikipedia no actualizarán "
+"o contido automaticamente en eXe, polo que é preciso actualizala no "
+"futuro. Asimesmo, os cambios que se fagan en eXe non actualizarán a "
+"Wikipedia. </p> <p>O contido da WIkipedia está protexido por unha licenza"
+" Creative Commons CompartirIgual 3.0.</p>"
 
-#: exe/engine/wikipediaidevice.py:65
+#: exe/engine/wikipediaidevice.py:66
 msgid "Article"
 msgstr "Artigo"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:359
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
-msgstr "Seleccione a versión de lingua correcta \n"
+msgstr ""
+"Seleccione a versión de lingua correcta \n"
 "da Wikipedia en que buscar e introducir o termo de busca."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:361
+#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:363
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
-msgstr "Introduza a frase ou termo que quere procurar \n"
+msgstr ""
+"Introduza a frase ou termo que quere procurar \n"
 "na Wikipedia."
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:137
+#: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
 #, python-format
 msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
-msgstr "Non é posible descargar de %s <br/>Verifique que está ben escrito, a conexión e ténteo de novo."
+msgstr ""
+"Non é posible descargar de %s <br/>Verifique que está ben escrito, a "
+"conexión e ténteo de novo."
 
-#: exe/engine/wikipediaidevice.py:313
+#: exe/engine/wikipediaidevice.py:315
 msgid "http://en.wikipedia.org/"
 msgstr "http://gl.wikipedia.org/"
 
@@ -2942,7 +3382,8 @@ msgid ""
 "\n"
 "To show help:\n"
 "%prog -h"
-msgstr "%prog, a versión de eXe para liña de comandos.\n"
+msgstr ""
+"%prog, a versión de eXe para liña de comandos.\n"
 "Uso: %prog [options] input_file [output_file]\n"
 "\n"
 "To show help:\n"
@@ -2950,7 +3391,9 @@ msgstr "%prog, a versión de eXe para liña de comandos.\n"
 
 #: exe/exe_do:75
 msgid "Set ELP field values. Example: -s style=Default,root.title='Root Node'"
-msgstr "Estableza as opción do campo ELP Exemplo: -s style=Default,root.title='Root Node'"
+msgstr ""
+"Estableza as opción do campo ELP Exemplo: -s "
+"style=Default,root.title='Root Node'"
 
 #: exe/exe_do:78
 msgid "Set ELP field values options"
@@ -2960,7 +3403,10 @@ msgstr "Estableza as opción do campo ELP"
 msgid ""
 "Once you have chosen Set ELP field values option using '-s <values>' or"
 "     '--set <values>', it's possible to configure the following options:"
-msgstr "Unha vez que seleccionou a opción \"Establecer os valores do campo ELP, mediante '-s <values>' ou     '--set <values>', é posible configurar as seguintes opcións:"
+msgstr ""
+"Unha vez que seleccionou a opción \"Establecer os valores do campo ELP, "
+"mediante '-s <values>' ou     '--set <values>', é posible configurar as "
+"seguintes opcións:"
 
 #: exe/exe_do:84
 msgid "Write field values to ELP"
@@ -2970,20 +3416,27 @@ msgstr "Escribir os valores dos campos ELP"
 msgid ""
 "Generates resource info report to text <output_file> from <input_file> "
 "elp package"
-msgstr "Xera un informe cos datos dos recursos no texto <output_file> a partires do paquete ELP <input_file>"
+msgstr ""
+"Xera un informe cos datos dos recursos no texto <output_file> a partires "
+"do paquete ELP <input_file>"
 
 #: exe/exe_do:102
 msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
 "given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage,"
 " xliff or epub3."
-msgstr "Exporta o paquete ELP <input_file> no <output_file> opcional en un dos seguintes formatos: xml, scorm12, scorm2004, ims, website, webzip, singlepage, xliff ou epub3."
+msgstr ""
+"Exporta o paquete ELP <input_file> no <output_file> opcional en un dos "
+"seguintes formatos: xml, scorm12, scorm2004, ims, website, webzip, "
+"singlepage, xliff ou epub3."
 
 #: exe/exe_do:108
 msgid ""
 "Import to <output_file> elp package, <input_file> in one of the given "
 "formats: xml or xliff."
-msgstr "Importar o arivo <input_file> ao paquete elp <output_file> en algún dos seguintes formatos: xml o xliff."
+msgstr ""
+"Importar o arivo <input_file> ao paquete elp <output_file> en algún dos "
+"seguintes formatos: xml o xliff."
 
 #: exe/exe_do:113
 msgid "Force overwrite of <output_file>"
@@ -2991,7 +3444,9 @@ msgstr "Forzar a sobreescritura do <output_file>"
 
 #: exe/exe_do:117
 msgid "Add the required files to generate a export editable by eXeLearning"
-msgstr "Engadir os arquivos necesarios para xerar unha exportación editable por eXeLearning"
+msgstr ""
+"Engadir os arquivos necesarios para xerar unha exportación editable por "
+"eXeLearning"
 
 #: exe/exe_do:122
 msgid "XLIFF export options"
@@ -3001,7 +3456,10 @@ msgstr "opcións de exportación XLIFF"
 msgid ""
 "Once you have chosen XLIFF export option using '-x xliff' or '--export "
 "xliff', it's possible to configure the following export options:"
-msgstr "Unha vez seleccionada a opción de exportación a formato XLIFF mediante '-x xliff' ou '--export xliff', é posible configurar as seguintes opcións de exportación:"
+msgstr ""
+"Unha vez seleccionada a opción de exportación a formato XLIFF mediante "
+"'-x xliff' ou '--export xliff', é posible configurar as seguintes opcións"
+" de exportación:"
 
 #: exe/exe_do:128
 msgid "Don't copy source in target"
@@ -3019,7 +3477,10 @@ msgstr "Opcións de importación dende XLIFF"
 msgid ""
 "Once you have chosen XLIFF import option using  '-i xliff' or '--import "
 "xliff', it's possible to configure the following import options:"
-msgstr "Unha vez seleccionada a opción de importanción dende o formato XLIFF mediante '-i xliff' ou '--import xliff', é posible configurar a seguinte opción de importanción"
+msgstr ""
+"Unha vez seleccionada a opción de importanción dende o formato XLIFF "
+"mediante '-i xliff' ou '--import xliff', é posible configurar a seguinte "
+"opción de importanción"
 
 #: exe/exe_do:144 exe/webui/xliffimportpreferencespage.py:79
 msgid "Import from source language"
@@ -3034,7 +3495,10 @@ msgid ""
 "Once you have chosen one SCORM export option using '-x scorm12' or '-x "
 "scorm2004' or 'x agrega', it's possible to configure the following export"
 " options:"
-msgstr "Unha vez seleccione unha opción de exportación SCORM mediante '-x scorm12' ou '-x scorm2004' ou 'x agrega', é posible configurar as seguintes opcións de exportación:"
+msgstr ""
+"Unha vez seleccione unha opción de exportación SCORM mediante '-x "
+"scorm12' ou '-x scorm2004' ou 'x agrega', é posible configurar as "
+"seguintes opcións de exportación:"
 
 #: exe/exe_do:155
 msgid "Include Single Page export file"
@@ -3069,7 +3533,8 @@ msgstr "Paquete de entrada non valido"
 msgid ""
 "exe_do: error: Unable to set values from '%s'.\n"
 "The error was:"
-msgstr "exe_do: error: Non foi posible exportar dende '%s'.\n"
+msgstr ""
+"exe_do: error: Non foi posible exportar dende '%s'.\n"
 "O erro foi:"
 
 #: exe/exe_do:246
@@ -3082,7 +3547,8 @@ msgstr "Exportado '%s' con éxito de '%s'"
 msgid ""
 "exe_do: error: Unable to export from '%s'.\n"
 "The error was:"
-msgstr "exe_do: error: Non foi posible exportar dende '%s'.\n"
+msgstr ""
+"exe_do: error: Non foi posible exportar dende '%s'.\n"
 "O erro foi:"
 
 #: exe/exe_do:257
@@ -3095,12 +3561,13 @@ msgstr "Arquivo '%s' importado con éxito a '%s'."
 msgid ""
 "exe_do: error: Unable to import '%s'.\n"
 "The error was:"
-msgstr "exe_do: error: Non foi posible importar '%s'.\n"
+msgstr ""
+"exe_do: error: Non foi posible importar '%s'.\n"
 "O erro foi:"
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:303
-#: exe/jsui/mainpage.py:979 exe/jsui/mainpage.py:1143 exe/jsui/mainpage.py:1183
-#: exe/jsui/mainpage.py:1218 exe/jsui/mainpage.py:1239
+#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:302
+#: exe/jsui/mainpage.py:975 exe/jsui/mainpage.py:1139 exe/jsui/mainpage.py:1179
+#: exe/jsui/mainpage.py:1214 exe/jsui/mainpage.py:1235
 #: exe/jsui/mainpage_antes_jr_docs.py:295
 #: exe/jsui/mainpage_antes_jr_docs.py:916
 #: exe/jsui/mainpage_antes_jr_docs.py:1080
@@ -3111,20 +3578,22 @@ msgstr "exe_do: error: Non foi posible importar '%s'.\n"
 msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
-msgstr "\"%s\" xa existe.\n"
+msgstr ""
+"\"%s\" xa existe.\n"
 "Porfavor ténteo con outro nome de arquivo"
 
 #: exe/export/cmdlineexporter.py:92
 msgid "Export format not implemented"
 msgstr "Formato de exportación non implementado"
 
-#: exe/export/epub3export.py:643 exe/export/imsexport.py:612
+#: exe/export/epub3export.py:642 exe/export/imsexport.py:612
 #: exe/export/scormexport.py:701 exe/export/websiteexport.py:98
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
-msgstr "FALLOU A EXPORTACIÓN!\n"
+msgstr ""
+"FALLOU A EXPORTACIÓN!\n"
 "A última operación válida foi %s."
 
 #: exe/export/scormpage.py:177 exe/export/websitepage.py:345
@@ -3157,7 +3626,8 @@ msgstr "Exemplo Exemplo"
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
-msgstr "Este é un exemplo de un plugin de iDevice\n"
+msgstr ""
+"Este é un exemplo de un plugin de iDevice\n"
 "creado por un usuario."
 
 #: exe/idevices/exampleidevice.py:44
@@ -3211,25 +3681,25 @@ msgstr "Insertando %s"
 msgid "My iDevices"
 msgstr "Os meus iDevices"
 
-#: exe/jsui/mainpage.py:321 exe/jsui/mainpage.py:841 exe/jsui/mainpage.py:971
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:837 exe/jsui/mainpage.py:967
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
 msgstr "Non se pode acceder ao directorio nomeado "
 
-#: exe/jsui/mainpage.py:321 exe/jsui/mainpage.py:843 exe/jsui/mainpage.py:971
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:839 exe/jsui/mainpage.py:967
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
 msgstr ". Porfavor, utilice nomes ASCII."
 
-#: exe/jsui/mainpage.py:330 exe/jsui/mainpage_antes_jr_docs.py:322
+#: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
 msgstr "FALLOU AO GARDAR!"
 
-#: exe/jsui/mainpage.py:334 exe/jsui/mainpage.py:646 exe/jsui/mainpage.py:1067
+#: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1063
 #: exe/jsui/mainpage_antes_jr_docs.py:326
 #: exe/jsui/mainpage_antes_jr_docs.py:638
 #: exe/jsui/mainpage_antes_jr_docs.py:1004
@@ -3237,10 +3707,11 @@ msgstr "FALLOU AO GARDAR!"
 msgid ""
 "SAVE FAILED!\n"
 "%s"
-msgstr "FALLOU AO GARDAR!\n"
+msgstr ""
+"FALLOU AO GARDAR!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:338 exe/jsui/mainpage.py:343 exe/jsui/mainpage.py:346
+#: exe/jsui/mainpage.py:337 exe/jsui/mainpage.py:342 exe/jsui/mainpage.py:345
 #: exe/jsui/mainpage_antes_jr_docs.py:330
 #: exe/jsui/mainpage_antes_jr_docs.py:335
 #: exe/jsui/mainpage_antes_jr_docs.py:338
@@ -3248,69 +3719,73 @@ msgstr "FALLOU AO GARDAR!\n"
 msgid "Package saved to: %s"
 msgstr "Paquete gardado en: %s"
 
-#: exe/jsui/mainpage.py:569 exe/jsui/mainpage.py:673
+#: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:672
 #: exe/jsui/mainpage_antes_jr_docs.py:561
 #: exe/jsui/mainpage_antes_jr_docs.py:665
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "O directorio de previsualización %s é un  ficheiro, non se pode substituír"
 
-#: exe/jsui/mainpage.py:588 exe/jsui/mainpage_antes_jr_docs.py:580
+#: exe/jsui/mainpage.py:587 exe/jsui/mainpage_antes_jr_docs.py:580
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Non se encontrou o ficheiro local %s, non se pode previsualizar"
 
-#: exe/jsui/mainpage.py:713 exe/jsui/mainpage_antes_jr_docs.py:705
+#: exe/jsui/mainpage.py:712 exe/jsui/mainpage_antes_jr_docs.py:705
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
 "%s"
-msgstr "Fallou a compliación MimeTeX!\n"
+msgstr ""
+"Fallou a compliación MimeTeX!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:751 exe/jsui/mainpage_antes_jr_docs.py:743
+#: exe/jsui/mainpage.py:750 exe/jsui/mainpage_antes_jr_docs.py:743
 msgid "Importing HTML..."
 msgstr "Importando HTML..."
 
-#: exe/jsui/mainpage.py:757 exe/jsui/mainpage_antes_jr_docs.py:749
+#: exe/jsui/mainpage.py:756 exe/jsui/mainpage_antes_jr_docs.py:749
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
 "%s"
-msgstr "Importación de metadatos LOM ERRADA!\n"
+msgstr ""
+"Importación de metadatos LOM ERRADA!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:760 exe/jsui/mainpage_antes_jr_docs.py:752
+#: exe/jsui/mainpage.py:759 exe/jsui/mainpage_antes_jr_docs.py:752
 msgid "Error importing HTML:\n"
 msgstr "Erro na importación HTML:\n"
 
-#: exe/jsui/mainpage.py:784
+#: exe/jsui/mainpage.py:786
 msgid "Publishing document to Procomún"
 msgstr "Publicando documento en Procomún"
 
-#: exe/jsui/mainpage.py:785
+#: exe/jsui/mainpage.py:787
 msgid "Exporting package as SCORM"
 msgstr "Exportar paquete como SCORM"
 
-#: exe/jsui/mainpage.py:809
+#: exe/jsui/mainpage.py:805
 msgid "Starting authorized connection to Procomún API"
 msgstr "Iniciando conexión con autorización á API de Procomún"
 
-#: exe/jsui/mainpage.py:822
+#: exe/jsui/mainpage.py:818
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
 "visit exported site\">%s</a>"
-msgstr "Paquete exportado a <a href=\"%s\" target=\"_blank\" title=\"Prema para visitar o sitio exportado\">%s</a>"
+msgstr ""
+"Paquete exportado a <a href=\"%s\" target=\"_blank\" title=\"Prema para "
+"visitar o sitio exportado\">%s</a>"
 
-#: exe/jsui/mainpage.py:825
+#: exe/jsui/mainpage.py:821
 #, python-format
 msgid "Error exporting package %s to Procomún: %s"
 msgstr "Erro ao exportar o paquete %s a Procomún: %s"
 
-#: exe/jsui/mainpage.py:864 exe/jsui/mainpage.py:869 exe/jsui/mainpage.py:872
-#: exe/jsui/mainpage.py:875 exe/jsui/mainpage.py:878 exe/jsui/mainpage.py:881
-#: exe/jsui/mainpage.py:886 exe/jsui/mainpage.py:1127 exe/jsui/mainpage.py:1199
+#: exe/jsui/mainpage.py:860 exe/jsui/mainpage.py:865 exe/jsui/mainpage.py:868
+#: exe/jsui/mainpage.py:871 exe/jsui/mainpage.py:874 exe/jsui/mainpage.py:877
+#: exe/jsui/mainpage.py:882 exe/jsui/mainpage.py:1123 exe/jsui/mainpage.py:1195
 #: exe/jsui/mainpage_antes_jr_docs.py:801
 #: exe/jsui/mainpage_antes_jr_docs.py:806
 #: exe/jsui/mainpage_antes_jr_docs.py:809
@@ -3323,41 +3798,42 @@ msgstr "Erro ao exportar o paquete %s a Procomún: %s"
 msgid "EXPORT FAILED!"
 msgstr "FALLOU A EXPORTACIÓN!"
 
-#: exe/jsui/mainpage.py:936 exe/jsui/mainpage_antes_jr_docs.py:873
+#: exe/jsui/mainpage.py:932 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
 msgstr "Importación XLIFF correcta"
 
-#: exe/jsui/mainpage.py:939 exe/jsui/mainpage_antes_jr_docs.py:876
+#: exe/jsui/mainpage.py:935 exe/jsui/mainpage_antes_jr_docs.py:876
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Erro na importación XLIFF: %s"
 
-#: exe/jsui/mainpage.py:980 exe/jsui/mainpage.py:997
+#: exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:993
 #: exe/jsui/mainpage_antes_jr_docs.py:917
 #: exe/jsui/mainpage_antes_jr_docs.py:934
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
 "%s"
-msgstr "FALLOU A EXTRACCIÓN!\n"
+msgstr ""
+"FALLOU A EXTRACCIÓN!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:999 exe/jsui/mainpage_antes_jr_docs.py:936
+#: exe/jsui/mainpage.py:995 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "O paquete foi extraído en: %s"
 
-#: exe/jsui/mainpage.py:1011 exe/jsui/mainpage_antes_jr_docs.py:948
+#: exe/jsui/mainpage.py:1007 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
 msgstr "Existe o directorio"
 
-#: exe/jsui/mainpage.py:1025 exe/jsui/mainpage.py:1115
-#: exe/jsui/mainpage.py:1131 exe/jsui/mainpage.py:1144
-#: exe/jsui/mainpage.py:1150 exe/jsui/mainpage.py:1168
-#: exe/jsui/mainpage.py:1184 exe/jsui/mainpage.py:1190
-#: exe/jsui/mainpage.py:1204 exe/jsui/mainpage.py:1219
-#: exe/jsui/mainpage.py:1225 exe/jsui/mainpage.py:1240
-#: exe/jsui/mainpage.py:1246 exe/jsui/mainpage_antes_jr_docs.py:962
+#: exe/jsui/mainpage.py:1021 exe/jsui/mainpage.py:1111
+#: exe/jsui/mainpage.py:1127 exe/jsui/mainpage.py:1140
+#: exe/jsui/mainpage.py:1146 exe/jsui/mainpage.py:1164
+#: exe/jsui/mainpage.py:1180 exe/jsui/mainpage.py:1186
+#: exe/jsui/mainpage.py:1200 exe/jsui/mainpage.py:1215
+#: exe/jsui/mainpage.py:1221 exe/jsui/mainpage.py:1236
+#: exe/jsui/mainpage.py:1242 exe/jsui/mainpage_antes_jr_docs.py:962
 #: exe/jsui/mainpage_antes_jr_docs.py:1052
 #: exe/jsui/mainpage_antes_jr_docs.py:1068
 #: exe/jsui/mainpage_antes_jr_docs.py:1081
@@ -3374,30 +3850,33 @@ msgstr "Existe o directorio"
 msgid ""
 "EXPORT FAILED!\n"
 "%s"
-msgstr "FALLOU A EXPORTACIÓN!\n"
+msgstr ""
+"FALLOU A EXPORTACIÓN!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1053 exe/jsui/mainpage.py:1100
+#: exe/jsui/mainpage.py:1049 exe/jsui/mainpage.py:1096
 #: exe/jsui/mainpage_antes_jr_docs.py:990
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "O nome do ficheiro %s é un ficheiro, non se pode substituír"
 
-#: exe/jsui/mainpage.py:1059 exe/jsui/mainpage.py:1107
+#: exe/jsui/mainpage.py:1055 exe/jsui/mainpage.py:1103
 #: exe/jsui/mainpage_antes_jr_docs.py:996
 #: exe/jsui/mainpage_antes_jr_docs.py:1044
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
-msgstr "O nome do cartafol %s xa existe. Porfavor múdeo por outro ou elimine o existente e ténteo de novo."
+msgstr ""
+"O nome do cartafol %s xa existe. Porfavor múdeo por outro ou elimine o "
+"existente e ténteo de novo."
 
-#: exe/jsui/mainpage.py:1073 exe/jsui/mainpage.py:1118
-#: exe/jsui/mainpage.py:1133 exe/jsui/mainpage.py:1152
-#: exe/jsui/mainpage.py:1170 exe/jsui/mainpage.py:1192
-#: exe/jsui/mainpage.py:1206 exe/jsui/mainpage.py:1227
-#: exe/jsui/mainpage.py:1248 exe/jsui/mainpage_antes_jr_docs.py:1010
+#: exe/jsui/mainpage.py:1069 exe/jsui/mainpage.py:1114
+#: exe/jsui/mainpage.py:1129 exe/jsui/mainpage.py:1148
+#: exe/jsui/mainpage.py:1166 exe/jsui/mainpage.py:1188
+#: exe/jsui/mainpage.py:1202 exe/jsui/mainpage.py:1223
+#: exe/jsui/mainpage.py:1244 exe/jsui/mainpage_antes_jr_docs.py:1010
 #: exe/jsui/mainpage_antes_jr_docs.py:1055
 #: exe/jsui/mainpage_antes_jr_docs.py:1070
 #: exe/jsui/mainpage_antes_jr_docs.py:1089
@@ -3410,24 +3889,27 @@ msgstr "O nome do cartafol %s xa existe. Porfavor múdeo por outro ou elimine o 
 msgid "Exported to %s"
 msgstr "Exportado a %s"
 
-#: exe/jsui/mainpage.py:1281 exe/jsui/mainpage_antes_jr_docs.py:1218
+#: exe/jsui/mainpage.py:1277 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "O ficheiro %s non existe ou non é lexíbel."
 
-#: exe/jsui/mainpage.py:1285 exe/jsui/mainpage_antes_jr_docs.py:1222
+#: exe/jsui/mainpage.py:1281 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr "Non se puido cargar o ficheiro, envíe un correo electrónico a bugs@exelearning.org"
+msgstr ""
+"Non se puido cargar o ficheiro, envíe un correo electrónico a "
+"bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1288 exe/jsui/mainpage_antes_jr_docs.py:1225
+#: exe/jsui/mainpage.py:1284 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
 "%s"
-msgstr "O formato de ficheiro non é correcto:\n"
+msgstr ""
+"O formato de ficheiro non é correcto:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1290 exe/jsui/mainpage_antes_jr_docs.py:1227
+#: exe/jsui/mainpage.py:1286 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
 msgstr "O formato de ficheiro non é correcto"
 
@@ -3447,7 +3929,7 @@ msgid "Show Image"
 msgstr "Amosar imaxe"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
-#: exe/webui/element.py:1190
+#: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
 msgid "Select an image"
 msgstr "Seleccionar unha imaxe"
 
@@ -3477,6 +3959,11 @@ msgstr "Arquivos de imaxe"
 #: exe/jsui/scripts/app/controller/Toolbar.js:1096
 #: exe/jsui/scripts/app/controller/Toolbar.js:1193
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
+#: exe/webui/scripts/authoring.js:95 exe/webui/scripts/authoring.js:118
+#: exe/webui/scripts/authoring.js:359 exe/webui/scripts/authoring.js:368
+#: exe/webui/scripts/authoring.js:376 exe/webui/scripts/authoring.js:397
+#: exe/webui/scripts/editor.js:80 exe/webui/scripts/editor.js:107
+#: exe/webui/scripts/stylemanager.js:42 exe/webui/scripts/stylemanager.js:66
 msgid "All Files"
 msgstr "Todos os arquivos"
 
@@ -3515,6 +4002,7 @@ msgstr "O formulario contén campos inválidos. Porfavor, revíseo."
 #: exe/jsui/scripts/app/controller/MainTab.js:326
 #: exe/jsui/scripts/app/controller/Outline.js:204
 #: exe/jsui/scripts/app/controller/Toolbar.js:427
+#: exe/webui/scripts/editor.js:37
 #: exe/webui/tools/style-designer/langs/en.js:114
 msgid "Confirm"
 msgstr "Confirmar"
@@ -3554,22 +4042,27 @@ msgid "Enter the new name:"
 msgstr "Introduza o novo nome:"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:140
+#: exe/webui/scripts/stylemanager.js:28
 msgid "Select ZIP Style file to import."
 msgstr "Seleccionar ficheiro ZIP de estilo para importar."
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:160
+#: exe/webui/scripts/stylemanager.js:41
 msgid "ZIP Style"
 msgstr "Estilo ZIP"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:188
+#: exe/webui/scripts/stylemanager.js:53
 msgid "Export to ZIP Style as"
 msgstr "Exportar a un ficheiro de estilo ZIP como"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:206
+#: exe/webui/scripts/stylemanager.js:65
 msgid "ZipFile"
 msgstr "Ficheiro ZIP"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:229
+#: exe/webui/scripts/stylemanager.js:77
 msgid "Delete style?"
 msgstr "Eliminar estilo?"
 
@@ -3583,10 +4076,6 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:187
 msgid "http://exelearning.net/?lang=en"
-msgstr ""
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:190
-msgid "https://forja.cenatic.es/tracker/?group_id=197"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:193
@@ -3620,7 +4109,9 @@ msgstr "Preferencias"
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
-msgstr "Se vostede fixo cambios e non os gardou, estes perderanse. Esta seguro de querer saír?"
+msgstr ""
+"Se vostede fixo cambios e non os gardou, estes perderanse. Esta seguro de"
+" querer saír?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:454
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
@@ -3640,7 +4131,8 @@ msgid ""
 "That's one of eXe's default Styles, and it cannot be edited.\n"
 "\n"
 "Please choose a different Style or create a new one."
-msgstr "Este é un dos estilos por defecto de eXe, e non pode ser editado.\n"
+msgstr ""
+"Este é un dos estilos por defecto de eXe, e non pode ser editado.\n"
 "\n"
 "Porfavor seleccione un estilo diferente ou cree un novo."
 
@@ -3744,7 +4236,12 @@ msgid ""
 "Computer Aided Translation tools (e.g. OmegaT) just translate the content"
 " of the target field. If you are using this kind of tools, you will need "
 "to pre-fill the target field with a copy of the source field."
-msgstr "Se non elixe esta opción, o campo destina quedará baleiro.  Algunha das ferramentas de tradución asistida por ordenador (p.e. OmetaT) poden traducir contido on elementos das etiquetas. Se está a utilizar este tipo de ferramentas ten que encher o campo destino cunha copia do campo de orixe."
+msgstr ""
+"Se non elixe esta opción, o campo destina quedará baleiro.  Algunha das "
+"ferramentas de tradución asistida por ordenador (p.e. OmetaT) poden "
+"traducir contido on elementos das etiquetas. Se está a utilizar este tipo"
+" de ferramentas ten que encher o campo destino cunha copia do campo de "
+"orixe."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:777
 msgid ""
@@ -3752,7 +4249,11 @@ msgid ""
 "kind of sections are not recommended by XLIFF standard but it could be a "
 "good option if you want to use a pre-process tool (i.g.: Rainbow) before "
 "using the Computer Aided Translation software."
-msgstr "Esta opción axustará tódolos campos exportados en seccións CDATA.  Este tipo de seccións non están recomendadas para o estándar XLIFF pero pode ser unha boa opción se quere utilizar unha ferramenta tipo Rainvow antes de utilizar un software de traducción."
+msgstr ""
+"Esta opción axustará tódolos campos exportados en seccións CDATA.  Este "
+"tipo de seccións non están recomendadas para o estándar XLIFF pero pode "
+"ser unha boa opción se quere utilizar unha ferramenta tipo Rainvow antes "
+"de utilizar un software de traducción."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:786
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
@@ -3858,7 +4359,9 @@ msgstr "Gardar o paquete primeiro?"
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
-msgstr "O paquete actual foi modificado pero anon se gardou aínda. Gustaríalle gardalo?"
+msgstr ""
+"O paquete actual foi modificado pero anon se gardou aínda. Gustaríalle "
+"gardalo?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1156
 msgid "Saving package to: {filename}"
@@ -4002,7 +4505,11 @@ msgid ""
 "classification codes that describe a topic of the resource. Recommended "
 "best practice is to select a value from a controlled vocabulary or formal"
 " classification scheme."
-msgstr "Polo xeral, o asunto expresarase como palabras chave, frases ou códigos de clasificación que describen o tema dun recursos.  A práctica máis recomendada é seleccionar un valor dun vocabulario controlado ou dun esquema de clasificación formal."
+msgstr ""
+"Polo xeral, o asunto expresarase como palabras chave, frases ou códigos "
+"de clasificación que describen o tema dun recursos.  A práctica máis "
+"recomendada é seleccionar un valor dun vocabulario controlado ou dun "
+"esquema de clasificación formal."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:71
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
@@ -4026,7 +4533,9 @@ msgstr "Colaboradores"
 msgid ""
 "An entity responsible for making contributions to the content of the "
 "resource."
-msgstr "Unha entidade responsable para facer as contribucións ao contido do recurso."
+msgstr ""
+"Unha entidade responsable para facer as contribucións ao contido do "
+"recurso."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:100
 #: exe/jsui/scripts/app/view/forms/LomSections.js:67
@@ -4046,7 +4555,13 @@ msgid ""
 "defined in a profile called <em>ISO 8601</em> <a href=\"/docs/W3C-NOTE-"
 "datetime.html\" target=\"_blank\">W3C Date and Time Formats</a> and "
 "includes (among others) dates of the form YYYY-MM-DD."
-msgstr "Polo xeral, o asunto expresarase como palabras chave, frases ou códigos de clasificación que describen o tema dun recursos. A práctica recomendada para coficiar o valor \"data\" defínese no perfil chamado <em>ISO 8601</em> <a href=\"/docs/W3C-NOTE-datetime.html\" target=\"_blank\">W3C Date and Time Formats</a> e inclúe, entre outras, datas do tipo AAAA-MM-DD."
+msgstr ""
+"Polo xeral, o asunto expresarase como palabras chave, frases ou códigos "
+"de clasificación que describen o tema dun recursos. A práctica "
+"recomendada para coficiar o valor \"data\" defínese no perfil chamado "
+"<em>ISO 8601</em> <a href=\"/docs/W3C-NOTE-datetime.html\" "
+"target=\"_blank\">W3C Date and Time Formats</a> e inclúe, entre outras, "
+"datas do tipo AAAA-MM-DD."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:113
 msgid "The nature or genre of the content of the resource."
@@ -4059,7 +4574,12 @@ msgid ""
 "controlled vocabulary or controlled classification scheme. To describe "
 "the physical or digital manifestation of the resource, use the FORMAT "
 "element."
-msgstr "O tipo inclúe termos que describen categorías xerais, funcións ou xéneros do contido. A práctica máis recomendada é seleccionar un valor dun vocabulario controlado ou dun esquema de clasificación formal. Para describir as manifestacións física ou dixital do recurso, utilice o elemento FORMATO."
+msgstr ""
+"O tipo inclúe termos que describen categorías xerais, funcións ou xéneros"
+" do contido. A práctica máis recomendada é seleccionar un valor dun "
+"vocabulario controlado ou dun esquema de clasificación formal. Para "
+"describir as manifestacións física ou dixital do recurso, utilice o "
+"elemento FORMATO."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
 #: exe/jsui/scripts/app/view/forms/LomSections.js:95
@@ -4149,7 +4669,14 @@ msgid ""
 "Copyright, and various Property Rights. If the Rights element is absent, "
 "no assumptions can be made about the status of these and other rights "
 "with respect to the resource."
-msgstr "Típicamente, un elemento Dereitos contén unha premisa de xestión de dereitos para o recurso, ou remiten a un servizo que proporciona esa información.  A información de dereitos de autor normalmente contempla os Dereitos de Propiedade Intelectual, os Dereitos de Autor e varios Dereitos de Propiedade. Se o elemento Dereitos está ausente non se pode facer ningunha asunción sobre o estatus destes e doutros dereitos en relación ao recurso."
+msgstr ""
+"Típicamente, un elemento Dereitos contén unha premisa de xestión de "
+"dereitos para o recurso, ou remiten a un servizo que proporciona esa "
+"información.  A información de dereitos de autor normalmente contempla os"
+" Dereitos de Propiedade Intelectual, os Dereitos de Autor e varios "
+"Dereitos de Propiedade. Se o elemento Dereitos está ausente non se pode "
+"facer ningunha asunción sobre o estatus destes e doutros dereitos en "
+"relación ao recurso."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:189
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:130
@@ -4216,14 +4743,21 @@ msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO. The LMS will also still add this kind "
 "of functionality."
-msgstr "Se marca esta caixa fará que eXe engada as ligazóns Anterior e Seguinte nas páxinas individuais do seu contido SCORM O LMS tamén engadirá este tipo de funcionalidade."
+msgstr ""
+"Se marca esta caixa fará que eXe engada as ligazóns Anterior e Seguinte "
+"nas páxinas individuais do seu contido SCORM O LMS tamén engadirá este "
+"tipo de funcionalidade."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:91
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO.  This requires a non-standard extension"
 " to SCORM 1.2 and is only known to work with some versions of Moodle."
-msgstr "Se marca esta caixa fará que eXe engada as ligazóns Anterior e Seguinte nas páxinas individuais do seu contido SCORM  sto require unha extensión non estándar para o SCORM 1.2 e sábese que funciona só con algunhas versións de Moodle"
+msgstr ""
+"Se marca esta caixa fará que eXe engada as ligazóns Anterior e Seguinte "
+"nas páxinas individuais do seu contido SCORM  sto require unha extensión "
+"non estándar para o SCORM 1.2 e sábese que funciona só con algunhas "
+"versións de Moodle"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:97
 msgid "Include Single Page export file?"
@@ -4235,7 +4769,10 @@ msgid ""
 "Checking this option the exported SCORM file will include a file named "
 "\"singlepage_index.html\" containing the result of exporting this eXe "
 "package as a single page."
-msgstr "Marcando esta opción, o arquivo SCORM exportado incluirá un ficheiro de nome \"simglepage_index.html\" co restulado de exportar este paquete eXe como unha páxina html única."
+msgstr ""
+"Marcando esta opción, o arquivo SCORM exportado incluirá un ficheiro de "
+"nome \"simglepage_index.html\" co restulado de exportar este paquete eXe "
+"como unha páxina html única."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:110
 msgid "Include Web Site export files?"
@@ -4247,7 +4784,10 @@ msgid ""
 "Checking this option the exported SCORM file will include the result of "
 "exporting this eXe package as Web Site. All the html files will have the "
 "\"website_\" prefix to differentiate them from their SCORM equivalent."
-msgstr "Marcando esta opción, o arquivo SCORM incluirá o restulado de exportar este paquete eXe como sitio web. Tódolos ficheiros HTML terán o prefixo \"website_\" para diferencialos do seu equivalente SCORM."
+msgstr ""
+"Marcando esta opción, o arquivo SCORM incluirá o restulado de exportar "
+"este paquete eXe como sitio web. Tódolos ficheiros HTML terán o prefixo "
+"\"website_\" para diferencialos do seu equivalente SCORM."
 
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:53
 msgid "Language of the field"
@@ -4533,13 +5073,17 @@ msgstr "Atención"
 msgid ""
 "You will loss all taxon config for this source. Would you like to "
 "continue?"
-msgstr "Perderá toda a configuración taxonómica de esta fonte. Confirma que desexa continuar?"
+msgstr ""
+"Perderá toda a configuración taxonómica de esta fonte. Confirma que "
+"desexa continuar?"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:182
 msgid ""
 "You will loss all taxon config in this section. Would you like to "
 "continue?"
-msgstr "Perderá toda a configuración taxonómica de esta sección. Confirma que desexa continuar?"
+msgstr ""
+"Perderá toda a configuración taxonómica de esta sección. Confirma que "
+"desexa continuar?"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:366
 msgid "Years"
@@ -4777,7 +5321,9 @@ msgstr "Fondo da cabeceira"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:479
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr "Imaxe de fondo para unha cabeceira (unha imaxe duns 100px é o recomendado)."
+msgstr ""
+"Imaxe de fondo para unha cabeceira (unha imaxe duns 100px é o "
+"recomendado)."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:497
 msgid "Load Image"
@@ -4819,7 +5365,9 @@ msgstr "Garde os cambios realizados no seu iDevice antes de mudar o DOCTYPE"
 msgid ""
 "This overrides for this Package the \"Default format for the new "
 "documents\" set in Tools - Preferences"
-msgstr "Esta instrución modifica para este panel o \"formado predeterminado para novos documentos\" definidos en Ferramentas - Preferencias"
+msgstr ""
+"Esta instrución modifica para este panel o \"formado predeterminado para "
+"novos documentos\" definidos en Ferramentas - Preferencias"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:578
 msgid "Taxonomy"
@@ -4896,7 +5444,9 @@ msgstr "Formato por defecto para os novos documentos"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:172
 msgid "The current document format can be modified in the Properties tab"
-msgstr "O formato actual do documento pode ser modificado na lapela \"Propiedades\""
+msgstr ""
+"O formato actual do documento pode ser modificado na lapela "
+"\"Propiedades\""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:182
 msgid "Editor mode"
@@ -4915,7 +5465,10 @@ msgid ""
 "\"Permissive\" will allow any markup. \"Strict\" will allow only valid "
 "markup: It will remove any invalid code, even HTML5 tags (except VIDEO "
 "and AUDIO) when using XHTML format."
-msgstr "\"Permissive\" admitirá calquera etiqueta.  \"Estrito\" só permitirá marcado válido: eliminará o código inválido, incluídas as etiquetas HTML5 (excepto VIDEO e AUDIO) cando se utilice o formato XHTML."
+msgstr ""
+"\"Permissive\" admitirá calquera etiqueta.  \"Estrito\" só permitirá "
+"marcado válido: eliminará o código inválido, incluídas as etiquetas HTML5"
+" (excepto VIDEO e AUDIO) cando se utilice o formato XHTML."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:199
 msgid "Internal Linking (for Web Site Exports only)"
@@ -4939,7 +5492,9 @@ msgstr "Formato por defecto para os novos documentos"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:235
 msgid "The current document license can be modified in the Properties tab."
-msgstr "O formato actual do documento pode ser modificado na lapela \"Propiedades\"."
+msgstr ""
+"O formato actual do documento pode ser modificado na lapela "
+"\"Propiedades\"."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:274
 msgid "Show this window on eXe start"
@@ -5309,7 +5864,9 @@ msgstr "Erro de carga"
 msgid ""
 "If you leave this page eXe application continues to run. Please use the "
 "menu File->Quit if you really want to exit the application."
-msgstr "Se sae de esta páxina a aplicación eXe seguirá executándose.  Por favor utilice o menú Arquivo > Saír se realmente quere saír da aplicación."
+msgstr ""
+"Se sae de esta páxina a aplicación eXe seguirá executándose.  Por favor "
+"utilice o menú Arquivo > Saír se realmente quere saír da aplicación."
 
 #: exe/jsui/scripts/exe.js:269 exe/jsui/scripts/app/view/ui/LeftPanel.js:90
 msgid "Group iDevices"
@@ -6669,7 +7226,9 @@ msgstr "ferramenta de apoio a procesos/procedementos"
 
 #: exe/jsui/scripts/lomvocab.js:802
 msgid "individual/cooperative/collaborative learning/working management tool"
-msgstr "ferramenta de xestión da aprendizaxe/traballo individual/cooperativo/colaborativo"
+msgstr ""
+"ferramenta de xestión da aprendizaxe/traballo "
+"individual/cooperativo/colaborativo"
 
 #: exe/jsui/scripts/lomvocab.js:806
 msgid "multimedia creation/edition service"
@@ -6697,7 +7256,9 @@ msgstr "servizo de apoio a procesos/procedementos"
 
 #: exe/jsui/scripts/lomvocab.js:830
 msgid "individual/cooperative/collaborative learning/working management service"
-msgstr "servizo de xestión de aprendizaxe/traballo individual/cooperativo/colaborativo"
+msgstr ""
+"servizo de xestión de aprendizaxe/traballo "
+"individual/cooperativo/colaborativo"
 
 #: exe/jsui/scripts/lomvocab.js:834
 msgid "guided reading"
@@ -6938,7 +7499,12 @@ msgid ""
 "access the desired scene in your regular browser, click with right mouse "
 "button on it and in config > codigo is its associated code. Copy and "
 "paste it directly into an Applet iDevice such as Other."
-msgstr "eXe non pode acceder a ningunha escena do sitio web indicado.  De tódolos xeitos podes acceder á escena dende o teu navegador habitual, fai clic co botón dereito do rato sobre ela e en configuración > código está o código asociado. Copia e pégado directamente no Applet iDevice Copie e pégueo directamente no iDevice Applet de java do tipo Outro."
+msgstr ""
+"eXe non pode acceder a ningunha escena do sitio web indicado.  De tódolos"
+" xeitos podes acceder á escena dende o teu navegador habitual, fai clic "
+"co botón dereito do rato sobre ela e en configuración > código está o "
+"código asociado. Copia e pégado directamente no Applet iDevice Copie e "
+"pégueo directamente no iDevice Applet de java do tipo Outro."
 
 #: exe/webui/appletblock.py:130
 msgid "Descartes"
@@ -6981,7 +7547,9 @@ msgid "Filename:"
 msgstr "Nome do ficheiro:"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
-#: exe/webui/element.py:1075
+#: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
+#: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
+#: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
 msgid "Select a file"
 msgstr "Seleccionar un ficheiro"
 
@@ -7070,13 +7638,20 @@ msgid ""
 "        </p>\n"
 "\n"
 "        "
-msgstr "\n"
+msgstr ""
+"\n"
 "        <h2>Xogo de facer clic por orde</h2>\n"
 "        <p>\n"
-"                Este iDevice constrúe un xogo en Javascript no que o xogador ten que premer nun sitio determinado da área principal segundo a axuda.  \n"
-"                Cando se preme correctamente aparecerá unha retroalimentación positiva e avanzarase no xogo.  Cando se prema erróneamente\n"
-"                aparecerá unha retroalimentación.  Cando se prema a área correcta pode descubrirse o obxecto.  Pode\n"
-"                fixarse un retraso que faca que o obxecto desapareza tras ese tempo.\n"
+"                Este iDevice constrúe un xogo en Javascript no que o "
+"xogador ten que premer nun sitio determinado da área principal segundo a "
+"axuda.  \n"
+"                Cando se preme correctamente aparecerá unha "
+"retroalimentación positiva e avanzarase no xogo.  Cando se prema "
+"erróneamente\n"
+"                aparecerá unha retroalimentación.  Cando se prema a área "
+"correcta pode descubrirse o obxecto.  Pode\n"
+"                fixarse un retraso que faca que o obxecto desapareza tras"
+" ese tempo.\n"
 "        </p>\n"
 "\n"
 "        "
@@ -7384,7 +7959,10 @@ msgid ""
 "Your new iDevice will appear in the iDevice pane with this title. This is"
 " a compulsory field and you will be prompted to enter a label if you try "
 "to submit your iDevice without one."
-msgstr "O seu novo iDevice aparecerá no panel de iDevices con este título.  Este é un campo obrigatorio e pediráselle que introduza unha etiqueta se intentan gardar o iDevice sen ela."
+msgstr ""
+"O seu novo iDevice aparecerá no panel de iDevices con este título.  Este "
+"é un campo obrigatorio e pediráselle que introduza unha etiqueta se "
+"intentan gardar o iDevice sen ela."
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
@@ -7394,32 +7972,44 @@ msgstr "Este é un campo opcional."
 msgid ""
 "The purpose dialogue allows you to describe your intended purpose of the "
 "iDevice to other potential users."
-msgstr "O diálogo de propósito permítelle describir os seus propósitos do iDevice a outros potenciais usuarios."
+msgstr ""
+"O diálogo de propósito permítelle describir os seus propósitos do iDevice"
+" a outros potenciais usuarios."
 
 #: exe/webui/editorpane.py:75
 msgid ""
 "Use this pulldown to select whether or not  the iDevice should have any "
 "formatting  applied to it to distinguish it; ie. a border and an icon."
-msgstr "Utilice este menú despregable para seleccionar se ao iDevice se lle debe aplicar algún formato para distinguilo ou non, por exemplo  un borde ou unha icona"
+msgstr ""
+"Utilice este menú despregable para seleccionar se ao iDevice se lle debe "
+"aplicar algún formato para distinguilo ou non, por exemplo  un borde ou "
+"unha icona"
 
 #: exe/webui/editorpane.py:79
 msgid ""
 "Use this field to describe your intended use and the pedagogy behind the "
 "device's development. This can be useful if your iDevice is to be "
 "exported for others to use."
-msgstr "Utilice este campo para describir o obxectivo do contido e a pedagoxía que está detrás do seu desenvolvemento.  Isto pode ser útil se vai exportar o seu iDevice para que o utilicen outras persoas."
+msgstr ""
+"Utilice este campo para describir o obxectivo do contido e a pedagoxía "
+"que está detrás do seu desenvolvemento.  Isto pode ser útil se vai "
+"exportar o seu iDevice para que o utilicen outras persoas."
 
 #: exe/webui/editorpane.py:84
 msgid ""
 "Add a single text line to an iDevice. Useful if you want the ability to "
 "place a label within the iDevice."
-msgstr "Engada unha liña simple de texto a un iDevice.  É útil se quere engadir unha etiqueta no iDevice."
+msgstr ""
+"Engada unha liña simple de texto a un iDevice.  É útil se quere engadir "
+"unha etiqueta no iDevice."
 
 #: exe/webui/editorpane.py:87
 msgid ""
 "Add a text entry box to an iDevice. Used for entering larger amounts of "
 "textual content."
-msgstr "Engada unha caixa de texto no iDevice. Utilízase para introducir cantidades máis grandes de cotido de texto."
+msgstr ""
+"Engada unha caixa de texto no iDevice. Utilízase para introducir "
+"cantidades máis grandes de cotido de texto."
 
 #: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
@@ -7456,7 +8046,8 @@ msgstr "Introduza as intrucións para o completado aquí"
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
-msgstr "O botón de restroacción non aparecerá se \n"
+msgstr ""
+"O botón de restroacción non aparecerá se \n"
 "non se introducen datos neste campo."
 
 #: exe/webui/editorpane.py:198
@@ -7693,7 +8284,9 @@ msgstr "<h2>Arquivo adxunto</h2>"
 msgid ""
 "<p>Here you can attach arbitary files to the package that will be "
 "included with the export</p>"
-msgstr "<p>Aquí pode adxuntar arquivos arbitrarios ao paquete, que serán incluidos ao esportalo</p>"
+msgstr ""
+"<p>Aquí pode adxuntar arquivos arbitrarios ao paquete, que serán "
+"incluidos ao esportalo</p>"
 
 #: exe/webui/fileattachblock.py:95
 msgid "<p>You can choose to display links or not below</p>"
@@ -7756,7 +8349,9 @@ msgstr "Eliminar esta imaxe?"
 msgid ""
 "One or more words or hints are blank.  Please do not have any blank hints"
 " or words - you can delete unused ones."
-msgstr "Unha ou máis palabras ou pistas están en branco.   Por favor non deixe ningunha pista ou palabra en branco - pode borrar as que non empregue."
+msgstr ""
+"Unha ou máis palabras ou pistas están en branco.   Por favor non deixe "
+"ningunha pista ou palabra en branco - pode borrar as que non empregue."
 
 #: exe/webui/hangmanblock.py:350
 msgid "Remove This Life"
@@ -7784,7 +8379,9 @@ msgstr "Problema de eXe"
 
 #: exe/webui/iecmwarning.py:46
 msgid "The Compatibility View of your browser (Internet Explorer) is turned on."
-msgstr "A Vista de Compatibilidade do teu navegador (Internet Explorer) está activo."
+msgstr ""
+"A Vista de Compatibilidade do teu navegador (Internet Explorer) está "
+"activo."
 
 #: exe/webui/iecmwarning.py:50
 msgid "Please click on the Compatibility View button to turn it off:"
@@ -7834,15 +8431,21 @@ msgstr "O número de filas x o número de columnas ten que ser un número par"
 msgid ""
 "After you set the number of rows/cols please click Create/Trim pairs "
 "button at the bottom and enter in the matching pairs for the game"
-msgstr "Tras establecer o número de filas e columnas, por favor pulse no botón Crear/Eliminar parellas de abaixo e introduza as parellas que haberá que buscar no xogo"
+msgstr ""
+"Tras establecer o número de filas e columnas, por favor pulse no botón "
+"Crear/Eliminar parellas de abaixo e introduza as parellas que haberá que "
+"buscar no xogo"
 
 #: exe/webui/memorymatchblock.py:187
 msgid ""
 "<p>Click the button below to create the matching pairs or \n"
 "                trim in case you reduced the number of rows / columns</p>"
 "\n"
-msgstr "<p>Pulse no botón de abaixo para crear as parellas que haberá que buscar  \n"
-"                ou eliminar no caso de que reducise o número de filas ou columnas</p>\n"
+msgstr ""
+"<p>Pulse no botón de abaixo para crear as parellas que haberá que buscar"
+"  \n"
+"                ou eliminar no caso de que reducise o número de filas ou "
+"columnas</p>\n"
 
 #: exe/webui/memorymatchblock.py:189
 msgid "Create / Trim Pairs"
@@ -7893,15 +8496,15 @@ msgstr "Mostrar o cronómetro no xogo"
 msgid "Add Placable Object"
 msgstr "Engadir un obxecto que situar"
 
-#: exe/webui/preferencespage.py:157
+#: exe/webui/preferencespage.py:158
 msgid "Default browser in your system"
 msgstr "Navegador predeterminado no seu sistema"
 
-#: exe/webui/preferencespage.py:199
+#: exe/webui/preferencespage.py:200
 msgid "Failed to get preferences"
 msgstr "Erro ao obter as preferencias"
 
-#: exe/webui/preferencespage.py:249
+#: exe/webui/preferencespage.py:250
 msgid "Failed to save preferences"
 msgstr "Erro ao gardar as preferencias"
 
@@ -7943,10 +8546,87 @@ msgstr "Pense niso"
 msgid "Load"
 msgstr "Cargar"
 
+#: exe/webui/scripts/authoring.js:69
+#, fuzzy
+msgid "Select one or more images"
+msgstr "Seleccionar unha imaxe"
+
+#: exe/webui/scripts/authoring.js:94
+msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
+#, fuzzy
+msgid "Flash Movie (.flv)"
+msgstr "Filme flash"
+
+#: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
+msgid "Flash Object (.swf)"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:121
+#, fuzzy
+msgid "Quicktime Files (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
+msgstr "QuickTime (mov, mp4, mpeg)"
+
+#: exe/webui/scripts/authoring.js:122
+msgid "Windows Media Player Files (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:123
+msgid "RealMedia Audio Files (.rm, .ra, .ram, .mp3)"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:175
+msgid "JPEG Files (.jpg, .jpeg)"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:375
+msgid "MP3 Audio (.mp3)"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:378
+#, fuzzy
+msgid "Select an mp3 file"
+msgstr "Seleccionar un ficheiro"
+
+#: exe/webui/scripts/authoring.js:386
+#, fuzzy
+msgid "Select a package"
+msgstr "Seleccionar unha imaxe"
+
+#: exe/webui/scripts/authoring.js:744
+msgid ""
+"Embed images shouldn't be pasted directly into the editor. Please use "
+"Insert/Edit Image."
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:744
+msgid "This change will be undone."
+msgstr ""
+
+#: exe/webui/scripts/editor.js:35
+msgid "Do you want to overwrite the existing idevice {idevice}?"
+msgstr ""
+
+#: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
+#, fuzzy
+msgid "eXe Idevices"
+msgstr "Gardar iDevices"
+
+#: exe/webui/scripts/editor.js:87
+msgid "Please save the idevice first, then try to export it."
+msgstr ""
+
 #: exe/webui/scripts/exe_tooltips/exe_tooltips.js:79
 #: exe/webui/scripts/exe_tooltips/exe_tooltips.js:145
 msgid "Go to Tools - Preview to see the tooltip content"
 msgstr "Ir a Ferramentas - Previsualizar para ver o contido do bocadillo"
+
+#: exe/webui/scripts/stylemanager.js:78
+#, fuzzy
+msgid "Do you want to delete the selected style?"
+msgstr "Realmente quere eliminar este estilo?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Error: Invalid values entered, these are marked in red."
@@ -7957,7 +8637,11 @@ msgid ""
 "Sorry, but we have noticed that your popup-blocker has disabled a window "
 "that provides application functionality. You will need to disable popup "
 "blocking on this site in order to fully utilize this tool."
-msgstr "Sentímolo, pero o seu bloqueador de ventás emerxente deshabilitou unha ventá que precisa para o funcionamento da aplicación.  Precisa deshabilitar o bloquedo de 'popups' neste sitio para utilizar ao máximo esta ferramenta."
+msgstr ""
+"Sentímolo, pero o seu bloqueador de ventás emerxente deshabilitou unha "
+"ventá que precisa para o funcionamento da aplicación.  Precisa "
+"deshabilitar o bloquedo de 'popups' neste sitio para utilizar ao máximo "
+"esta ferramenta."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Currently not supported by your browser, use keyboard shortcuts instead."
@@ -8080,14 +8764,19 @@ msgstr "Cita"
 msgid ""
 "Paste is now in plain text mode. Click again to toggle back to regular "
 "paste mode."
-msgstr "Pegue agora en modo texto plano. Clique outra vez para cambiar ao modo de pegado habitual."
+msgstr ""
+"Pegue agora en modo texto plano. Clique outra vez para cambiar ao modo de"
+" pegado habitual."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid ""
 "Paste is now in plain text mode. Click again to toggle back to regular "
 "paste mode. After you paste something you will be returned to regular "
 "paste mode."
-msgstr "Pegue agora en modo texto plano. Clique outra vez para cambiar ao modo de pegado habitual. Despois de pegar algo deberá volver ao modo habitual de pegado."
+msgstr ""
+"Pegue agora en modo texto plano. Clique outra vez para cambiar ao modo de"
+" pegado habitual. Despois de pegar algo deberá volver ao modo habitual de"
+" pegado."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Select All"
@@ -8232,26 +8921,6 @@ msgstr "Insertar fin de páxina"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Types"
 msgstr "Tipos"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Lower Alpha"
-msgstr "Alfa baixo"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Lower Greek"
-msgstr "Grego baixo"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Lower Roman"
-msgstr "Romano baixo"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Upper Alpha"
-msgstr "Alfa alto"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Upper Roman"
-msgstr "Romano alto"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Circle"
@@ -8440,7 +9109,9 @@ msgid ""
 "currently in the editor.\n"
 "\n"
 "Are you sure you want to restore the saved content?"
-msgstr "Si restaura o contido gardado, perderá todo o contido que hai actualmente no editor.\n"
+msgstr ""
+"Si restaura o contido gardado, perderá todo o contido que hai actualmente"
+" no editor.\n"
 "\n"
 "Seguro que desexa reiniciar tódolos campos?"
 
@@ -8593,7 +9264,8 @@ msgstr "Mais cores"
 msgid ""
 "Copy/Cut/Paste is not available in Mozilla and Firefox.\n"
 "Do you want more information about this issue?"
-msgstr "Copiar/Cortar/Pegar non está dispoñible en Mozilla Firefox.\n"
+msgstr ""
+"Copiar/Cortar/Pegar non está dispoñible en Mozilla Firefox.\n"
 "Quere máis información sobre este problema?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -8624,7 +9296,9 @@ msgstr "Engada un parágrafo ao final"
 msgid ""
 "TinyMCE \"advalign\" plugin error: \"execcommand_callback\" is already "
 "defined"
-msgstr "Erro no plugin de TinyMCE \"advalign\": xa se definíu: \"execcommand_callback\""
+msgstr ""
+"Erro no plugin de TinyMCE \"advalign\": xa se definíu: "
+"\"execcommand_callback\""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advalign/langs/en.js:4
 msgid "\"advalign\" for TinyMCE requires jQuery"
@@ -8799,7 +9473,11 @@ msgid ""
 " Without it the image may not be accessible to some users with "
 "disabilities, or to those using a text browser, or browsing the Web with "
 "images turned off."
-msgstr "Seguro que quere continuar sen engadir unha descrición á imaxe? Sen ela pode non ser accesible para usuarios con discapacidades, ou para aqueles que utilicen navegadores en modo texto, ou teñan deshabilitadas as imaxes da páxina."
+msgstr ""
+"Seguro que quere continuar sen engadir unha descrición á imaxe? Sen ela "
+"pode non ser accesible para usuarios con discapacidades, ou para aqueles "
+"que utilicen navegadores en modo texto, ou teñan deshabilitadas as imaxes"
+" da páxina."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:46
@@ -8916,7 +9594,9 @@ msgstr "O encabezamento e o pé de foto non serán editables neste diálogo."
 msgid ""
 "The header and the caption can't be edited from this dialog. You can "
 "change or remove them editing the text itself."
-msgstr "O encabezamento e o título non se poden editar dende este cuadro de diálogo.  Pode modificalos ou editalos ende o editor de texto."
+msgstr ""
+"O encabezamento e o título non se poden editar dende este cuadro de "
+"diálogo.  Pode modificalos ou editalos ende o editor de texto."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Target Name"
@@ -9067,14 +9747,18 @@ msgstr "Lista de vínculos"
 msgid ""
 "The URL you entered seems to be an external link. Do you want to add the "
 "required http:// prefix?"
-msgstr "A URL que engadíu parece ser unha ligazón externa. Quere engadir o prefixo requerido http:// ?"
+msgstr ""
+"A URL que engadíu parece ser unha ligazón externa. Quere engadir o "
+"prefixo requerido http:// ?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid ""
 "The URL you entered seems to be an email address. Do you want to add the "
 "required mailto: prefix?"
-msgstr "A URL que engadíu semella ser unha dirección de correo. Quere engadir o prefixo requeiro mailto: ?"
+msgstr ""
+"A URL que engadíu semella ser unha dirección de correo. Quere engadir o "
+"prefixo requeiro mailto: ?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:3
 msgid "Anchors and nodes"
@@ -9249,8 +9933,10 @@ msgid ""
 "A new Definition List will be created.\n"
 "To add a new term, just place the cursor at the end of a definition and "
 "click again the Definition List button.\n"
-msgstr "Unha nova Lista de Definición será creada.\n"
-"Para engadir un novo termo sitúe o cursos no final dunha definición e prema outra vez o botón.\n"
+msgstr ""
+"Unha nova Lista de Definición será creada.\n"
+"Para engadir un novo termo sitúe o cursos no final dunha definición e "
+"prema outra vez o botón.\n"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
@@ -9368,11 +10054,15 @@ msgstr "Selecione un efecto (vostede poder cambialo logo)."
 msgid ""
 "To add a new tab, block, page... just add a second level title (Heading "
 "2) followed by its content."
-msgstr "Para engadir unha nova lapela, bloque, páxina... debe engadir un título de nivel dous (Heading 2) a continuación deste contido."
+msgstr ""
+"Para engadir unha nova lapela, bloque, páxina... debe engadir un título "
+"de nivel dous (Heading 2) a continuación deste contido."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:10
 msgid "All blocks must start with a second level title (Heading 2)."
-msgstr "Tódolos bloques deben comezar un un título de segundo nivel (Encabezamento 2)"
+msgstr ""
+"Tódolos bloques deben comezar un un título de segundo nivel "
+"(Encabezamento 2)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:11
 msgid "Please do not overuse these effects."
@@ -9382,13 +10072,17 @@ msgstr "Porfavor non abuse destes efectos."
 msgid ""
 "Change the text of the tabs adding a title to each Heading 2 with the "
 "\"Insert/Edit Attributes\" option:"
-msgstr "Cambie o texto das pestañas engandindo un título a cada Encabezamento 2 coa opción \"Insertar/Editar atributos\":"
+msgstr ""
+"Cambie o texto das pestañas engandindo un título a cada Encabezamento 2 "
+"coa opción \"Insertar/Editar atributos\":"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:13
 msgid ""
 "Timelines require a third level title (Heading 3) right after each "
 "Heading 2."
-msgstr "As liñas de tempo requiren un título de nivel tres (Encabezamento 3) inmediatamente despois de cada Encabezamento 2"
+msgstr ""
+"As liñas de tempo requiren un título de nivel tres (Encabezamento 3) "
+"inmediatamente despois de cada Encabezamento 2"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
@@ -9402,7 +10096,9 @@ msgstr "Acordeón"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:18
 msgid "Collapsible content panels for presenting information in a limited space."
-msgstr "Paneles de contido colapsables para presentar información nun espazo limitado."
+msgstr ""
+"Paneles de contido colapsables para presentar información nun espazo "
+"limitado."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:20
 msgid "Tabs"
@@ -9434,7 +10130,9 @@ msgstr "Liña do tempo"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
-msgstr "Sinxela liña do tempo interactiva que pode amosar case calquera tipo de contido."
+msgstr ""
+"Sinxela liña do tempo interactiva que pode amosar case calquera tipo de "
+"contido."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:31
 msgid "Make a timeline?"
@@ -9542,7 +10240,9 @@ msgstr "Elixa se quere que o xogo distinga entre maiúsculas e minúsculas."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:32
 msgid "Add at least one word to guess (question or definition + word)."
-msgstr "Por favor engada unha palabra que adiviñar (pregunta ou definición + palabra)."
+msgstr ""
+"Por favor engada unha palabra que adiviñar (pregunta ou definición + "
+"palabra)."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:33
 msgid "You may delete the game from the editor itself."
@@ -9871,7 +10571,9 @@ msgid ""
 "Streamed RTSP resources should be added to the QT Source field under the "
 "Advanced tab.\n"
 "You should also add a non-streamed version to the Source field."
-msgstr "Os recursos streaming RTSP deben engadirse ao campo QT Fontes dende a pestaña Avanzado\n"
+msgstr ""
+"Os recursos streaming RTSP deben engadirse ao campo QT Fontes dende a "
+"pestaña Avanzado\n"
 "\n"
 "Debera engadir unha versión non-streaming no campo Orixe."
 
@@ -10237,13 +10939,17 @@ msgstr "Non se puido xerar unha previsualización"
 msgid ""
 "For Web browsers that do not support this video, a link to the video file"
 " will be displayed."
-msgstr "Se o navegador do usuario non pode reproducilo vídeo amosarase un enlace ao arquivo."
+msgstr ""
+"Se o navegador do usuario non pode reproducilo vídeo amosarase un enlace "
+"ao arquivo."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:9
 msgid ""
 "For Web browsers that do not support this audio, a link to the audio file"
 " will be displayed."
-msgstr "Se o navegador do usuario non pode reproducilo audio amosarase un enlace ao arquivo."
+msgstr ""
+"Se o navegador do usuario non pode reproducilo audio amosarase un enlace "
+"ao arquivo."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:10
 msgid "Use JavaScript player"
@@ -10563,7 +11269,10 @@ msgid ""
 "Are you sure you want to continue without specifying a scope for this "
 "table header cell. Without it, it may be difficult for some users with "
 "disabilities to understand the content or data displayed of the table."
-msgstr "Está seguro que desexa continuar sen especificar o alcance para o encabezamendo desta celda? Sin el podería ser dificultoso para algúns usuarios comprender o contido ou os datos amosados na táboa."
+msgstr ""
+"Está seguro que desexa continuar sen especificar o alcance para o "
+"encabezamendo desta celda? Sin el podería ser dificultoso para algúns "
+"usuarios comprender o contido ou os datos amosados na táboa."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "You've exceeded the maximum number of cells of {$cells}."
@@ -10734,7 +11443,9 @@ msgstr "O termo non pode ser atopado"
 msgid ""
 "Write the term and its definition. You may use HTML and edit it in the "
 "editor."
-msgstr "Escriba o termo e a súa definición. Pode utilizar HTML e editalo cun editor."
+msgstr ""
+"Escriba o termo e a súa definición. Pode utilizar HTML e editalo cun "
+"editor."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
 msgid "Definition:"
@@ -10771,7 +11482,9 @@ msgstr "Glosario"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:37
 msgid "Choose a page. Add a Free Text iDevice with a Definition List in it."
-msgstr "Seleccionar unha páxina Engadir un iDevice Texto Libre wen a Listaxe de definición dentro."
+msgstr ""
+"Seleccionar unha páxina Engadir un iDevice Texto Libre wen a Listaxe de "
+"definición dentro."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:38
 msgid "Definition List button"
@@ -10779,7 +11492,9 @@ msgstr "Botón para crear a lista de definicións"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:39
 msgid "Use the \"Definition List\" button to add terms and definitions:"
-msgstr "Utilice o botón \"Lista de definicións\" para engadir termos e definicións:"
+msgstr ""
+"Utilice o botón \"Lista de definicións\" para engadir termos e "
+"definicións:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:40
 msgid "Define the Link: Select the page where the definitions are."
@@ -10945,7 +11660,9 @@ msgstr "Párrafo"
 msgid ""
 "Jump to tool buttons - Alt+Q, Jump to editor - Alt-Z, Jump to element "
 "path - Alt-X"
-msgstr "Ir ós botóns de ferramentas - Alt+Q, Ir ó editor - Alt-Z, Ir á ruta do elemento - Alt-X"
+msgstr ""
+"Ir ós botóns de ferramentas - Alt+Q, Ir ó editor - Alt-Z, Ir á ruta do "
+"elemento - Alt-X"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Are you sure you want clear all contents?"
@@ -11189,15 +11906,50 @@ msgstr "Valor de cor inválida"
 msgid "Color Picker"
 msgstr "Selector de cores"
 
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:59
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Lower Alpha"
+msgstr "Alfa baixo"
+
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:60
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Lower Greek"
+msgstr "Grego baixo"
+
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:61
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Lower Roman"
+msgstr "Romano baixo"
+
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:62
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Upper Alpha"
+msgstr "Alfa alto"
+
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:63
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Upper Roman"
+msgstr "Romano alto"
+
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:64
+msgid "Automatic Numbering"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:237
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:262
+#, fuzzy
+msgid "Editor"
+msgstr "editor"
+
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
 msgstr "Engadir outro elemento a ordear"
 
-#: exe/webui/styledesigner.py:51
+#: exe/webui/styledesigner.py:53
 msgid "Error saving style. "
 msgstr "Error gardando o estilo. "
 
-#: exe/webui/styledesigner.py:60
+#: exe/webui/styledesigner.py:61
 msgid "Error creating style. "
 msgstr "Error creando estilo. "
 
@@ -11205,26 +11957,26 @@ msgstr "Error creando estilo. "
 msgid "Error creating style, local style already exists. "
 msgstr "Error creado estilo, o estilo xa existe. "
 
-#: exe/webui/styledesigner.py:126
+#: exe/webui/styledesigner.py:125
 #, python-format
 msgid "Style %s successfully created!"
 msgstr "O estilo %s foi creado con éxito!"
 
-#: exe/webui/styledesigner.py:134
+#: exe/webui/styledesigner.py:133
 #, python-format
 msgid "Style %s successfully saved!"
 msgstr "O estilo %s foi gardado con éxito!"
 
-#: exe/webui/styledesigner.py:198
+#: exe/webui/styledesigner.py:197
 #, python-format
 msgid "Style directory %s already exists"
 msgstr "O directorio de estilo %s xa existe"
 
-#: exe/webui/styledesigner.py:258
+#: exe/webui/styledesigner.py:257
 msgid "The style name already exists"
 msgstr "O nome de estilo xa existe"
 
-#: exe/webui/styledesigner.py:275
+#: exe/webui/styledesigner.py:274
 msgid "Error saving style, style directory does not exist"
 msgstr "Erro gardando o estilo, o cartafol de estilos non existe"
 
@@ -11265,7 +12017,9 @@ msgstr "O estilo xa existe. "
 msgid ""
 "Importing this style will overwrite local style, this action cannot be "
 "undone. "
-msgstr "Impartir este estilo sobreescribirá o actual, esta acción non se pode desfacer. "
+msgstr ""
+"Impartir este estilo sobreescribirá o actual, esta acción non se pode "
+"desfacer. "
 
 #: exe/webui/stylemanagerpage.py:341
 msgid "Are you sure you want to install remote style?. "
@@ -11305,6 +12059,25 @@ msgstr "Estilo eliminado correctamente"
 #: exe/webui/stylemanagerpage.py:483
 msgid "An unexpected error has occurred"
 msgstr "Ocorreu un erro inesperado"
+
+#: exe/webui/tools/style-designer/js/app.js:1236
+#, fuzzy
+msgid "Create new style"
+msgstr "Crear novo estilo"
+
+#: exe/webui/tools/style-designer/js/app.js:1237
+#, fuzzy
+msgid "Name the new style"
+msgstr "Garde o nome do novo estilo."
+
+#: exe/webui/tools/style-designer/js/app.js:1259
+#, fuzzy
+msgid "Style Designer windows will be closed. "
+msgstr "O deseñador de estilos non está aberto."
+
+#: exe/webui/tools/style-designer/js/app.js:1262
+msgid "Page will be reloaded. "
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:12
 msgid "General settings"
@@ -11378,7 +12151,9 @@ msgstr "Estilo da versión"
 msgid ""
 "Style version number is automatically increased when you save, use this "
 "selector to reset it."
-msgstr "O número de versión de estilo increméntase automaticamente cando o garda, utilice este selecctor para modificalo."
+msgstr ""
+"O número de versión de estilo increméntase automaticamente cando o garda,"
+" utilice este selecctor para modificalo."
 
 #: exe/webui/tools/style-designer/langs/en.js:38
 msgid "(license of the original Style)"
@@ -11452,7 +12227,9 @@ msgstr "O fondo da páxina só afecta á exportación como sitio web."
 msgid ""
 "The \"Contents area background\" will also be used when exporting as IMS,"
 " SCORM or ePub3."
-msgstr "O apartado \"Fondo da zona dos contidos\" tamén afecta á exportación como IMS, SCORM ou ePub3."
+msgstr ""
+"O apartado \"Fondo da zona dos contidos\" tamén afecta á exportación como"
+" IMS, SCORM ou ePub3."
 
 #: exe/webui/tools/style-designer/langs/en.js:67
 msgid "Header and Footer"
@@ -11558,7 +12335,9 @@ msgstr "Este código será incluida ao final do arquivo nav.css"
 msgid ""
 "nav.css is only included when you export as Web Site, and always after "
 "content.css."
-msgstr "nav.css só se inclúe cando se exporta como sitio web, e sempre despois de content.css."
+msgstr ""
+"nav.css só se inclúe cando se exporta como sitio web, e sempre despois de"
+" content.css."
 
 #: exe/webui/tools/style-designer/langs/en.js:106
 msgid "content.css content"
@@ -11570,7 +12349,9 @@ msgstr "nav.css contido"
 
 #: exe/webui/tools/style-designer/langs/en.js:108
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
-msgstr "As sombras non traballan en navegadores que non soporte CSS3 (IE6, IE7...)."
+msgstr ""
+"As sombras non traballan en navegadores que non soporte CSS3 (IE6, "
+"IE7...)."
 
 #: exe/webui/tools/style-designer/langs/en.js:111
 msgid "Finish"
@@ -11604,7 +12385,10 @@ msgstr "A opción do menú ocultar/amosar está deshabilitada no Deseñador de E
 msgid ""
 "Please, make your browser bigger. The Style Designer requires at least a "
 "1024x768 screen resolution"
-msgstr "Por favor maximice o seu navegador. O deseñador de estilos precisa polo menos 1024x768 píxeles. O Deseñador de Estilos require unha resolución de pantalla mínima de 1024x768"
+msgstr ""
+"Por favor maximice o seu navegador. O deseñador de estilos precisa polo "
+"menos 1024x768 píxeles. O Deseñador de Estilos require unha resolución de"
+" pantalla mínima de 1024x768"
 
 #: exe/webui/tools/style-designer/langs/en.js:121
 msgid "The Style Designer window is not open."
@@ -11616,7 +12400,9 @@ msgstr "Esta ventá será pechada Porfavor reinicie a ferramenta"
 
 #: exe/webui/tools/style-designer/langs/en.js:124
 msgid "Undo changes since last time you saved? This cannot be undone. "
-msgstr "Desfacer os cambios dende a última vez que foi gardado? Isto non se pode desfacer "
+msgstr ""
+"Desfacer os cambios dende a última vez que foi gardado? Isto non se pode "
+"desfacer "
 
 #: exe/webui/tools/style-designer/langs/en.js:131
 msgid "Drag markers to pick a color"
@@ -11809,7 +12595,9 @@ msgstr "Sitio propio"
 msgid ""
 "If you choose this option, the import process will take the texts from "
 "source language instead of target language."
-msgstr "Se elixe esta opción, o proceso de importación tomará os textos da lingua de orixe en vez da lingua de saída."
+msgstr ""
+"Se elixe esta opción, o proceso de importación tomará os textos da lingua"
+" de orixe en vez da lingua de saída."
 
 #: exe/webui/xliffimportpreferencespage.py:90
 #: exe/webui/tools/style-designer/langs/en.js:58
@@ -11823,17 +12611,26 @@ msgstr "Aceptar"
 msgid ""
 "Package is old. Please upgrade it (using File..Open followed by "
 "File..Save As) before attempting to insert it into another package!"
-msgstr "O paquete é antigo Por favor actualíceo (Arquivo -> Abrir -> Gardar como) antes de intentar inserir en outro paquete!"
+msgstr ""
+"O paquete é antigo Por favor actualíceo (Arquivo -> Abrir -> Gardar como)"
+" antes de intentar inserir en outro paquete!"
 
 #: twisted/persisted/styles.py:437
 msgid ""
 "Unable to merge: duplicate Java Applet resource names exist (including: "
 "\"\"). Please see the log file for the names of ALL such problem "
 "resources."
-msgstr "Non é posible mesturar: Existen nomes de Applet Java duplicados (incluíndo: \"\").  Porfavor consulte no arquivo de rexistro os nomes de tódolos recursos."
+msgstr ""
+"Non é posible mesturar: Existen nomes de Applet Java duplicados "
+"(incluíndo: \"\").  Porfavor consulte no arquivo de rexistro os nomes de "
+"tódolos recursos."
 
 #: twisted/persisted/styles.py:541
 msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
-msgstr "O seu ficheiro idevices/generic.data ou o paquete que está a cargar foi creado con unha versión máis recente de eXe.  Porfavor actualice eXe e ténteo de novo."
+msgstr ""
+"O seu ficheiro idevices/generic.data ou o paquete que está a cargar foi "
+"creado con unha versión máis recente de eXe.  Porfavor actualice eXe e "
+"ténteo de novo."
+
