@@ -178,7 +178,7 @@ var $exe = {
                 $("dt", e).each(function() {
                     t = this;
                     h = $(t).html();
-                    $(t).html("<span class='icon'" + s + ">» </span><a href='#' onclick='$exe.dl.toggle(this);return false' class='exe-dl-" + i + "-a'>" + h + "</a>")
+                    $(t).html("<a href='#' onclick='$exe.dl.toggle(this);return false' class='exe-dl-" + i + "-a'><span class='icon'" + s + ">» </span>" + h + "</a>")
                 });
                 $(e).before("<p class='exe-dl-toggler'><a href='#" + id + "' onclick='$exe.dl.toggle(\"show\",\"" + id + "\");return false;' title='" + $exe_i18n.show + "'" + s + ">+</a> <a href='#" + id + "' onclick='$exe.dl.toggle(\"hide\",\"" + id + "\");return false;' title='" + $exe_i18n.hide + "'" + s + ">-</a></p>")
             })
