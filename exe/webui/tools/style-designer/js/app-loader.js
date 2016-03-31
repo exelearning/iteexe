@@ -100,10 +100,10 @@ var $designer = {
 				success: function(config){
 					var styleConfig = {};
 					
-					var styleName = "";
+					var styleName = this.styleId;
 					var name = $(config).find('name');
 					if (name.length==1) styleName = name.eq(0).text()
-					styleConfig.styleName = styleName;
+					styleConfig.styleName = this.styleId;
 				
 					var authorName = "eXeLearning.net";
 					var author = $(config).find('author');
