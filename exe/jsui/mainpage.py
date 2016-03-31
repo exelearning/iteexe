@@ -373,7 +373,7 @@ class MainPage(RenderableLivePage):
         """
         Download taxon sources from url and deploy in $HOME/.exe/classification_sources
         """
-        url = 'http://forja.cenatic.es/frs/download.php/file/1624/classification_sources.zip'
+        url = 'https://github.com/exelearning/classification_sources/raw/master/classification_sources.zip'
         client.sendScript('Ext.MessageBox.progress("Sources Download", "Connecting to classification sources repository...")')
         d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
 
