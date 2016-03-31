@@ -9899,7 +9899,7 @@ msgstr ""
 msgid "Use a two-letter ISO 639-1 code like \"en\", \"es\", \"fr\" or \"de\"."
 msgstr ""
 "Use un código ISO 639-1 de dos letras, como por ejemplo \"en\", \"es\", "
-"\"fr\" or \"de\"."
+"\"fr\" o \"de\"."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:15
 msgid "Include Styles (improves presentation)"
@@ -10308,7 +10308,7 @@ msgstr "Puede borrar el juego desde el mismo editor."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:34
 msgid "Don't forget to check the Accessibility tab."
-msgstr "No olvide marcar la pestaña Accesibilidad."
+msgstr "No olvide revisar la pestaña Accesibilidad."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:38
 msgid "Error recovering data"
