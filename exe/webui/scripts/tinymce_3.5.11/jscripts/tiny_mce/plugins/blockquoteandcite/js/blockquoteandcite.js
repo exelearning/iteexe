@@ -44,6 +44,9 @@ function init() {
 
 	document.forms[0].insert.value = tinyMCEPopup.getLang(action, 'Insert', true);
 	
+	var intructions = document.getElementById("lang_instructions2");
+	intructions.innerHTML = intructions.innerHTML.replace("ISO 639-1","<a href='https://en.wikipedia.org/wiki/ISO_639-1' target='_blank'>ISO 639-1</a>");
+	
 }
 
 function insertQuote() {
