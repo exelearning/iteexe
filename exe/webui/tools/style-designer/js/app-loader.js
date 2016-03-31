@@ -99,16 +99,33 @@ var $designer = {
 				url: url,
 				success: function(config){
 					var styleConfig = {};
-	
-					styleConfig.styleName = config.evaluate('/theme[1]/name[1]', config, null, XPathResult.STRING_TYPE, null).stringValue;
 					
-					styleConfig.authorName = config.evaluate('/theme[1]/author[1]', config, null, XPathResult.STRING_TYPE, null).stringValue;
-					styleConfig.authorURL = config.evaluate('/theme[1]/author-url[1]', config, null, XPathResult.STRING_TYPE, null).stringValue;
+					var styleName = "";
+					var name = $(config).find('name');
+					if (name.length==1) styleName = name.eq(0).text()
+					styleConfig.styleName = styleName;
+				
+					var authorName = "eXeLearning.net";
+					var author = $(config).find('author');
+					if (author.length==1) authorName = author.eq(0).text()
+					styleConfig.authorName = authorName;	
+
+					var authorURL = "http://exelearning.net";
+					var url = $(config).find('author-url');
+					if (url.length==1) authorURL = url.eq(0).text()
+					styleConfig.authorURL = authorURL;	
+
+					var styleDescription = "";
+					var description = $(config).find('description');
+					if (description.length>0) styleDescription = description.eq(0).text()
+					styleConfig.styleDescription = styleDescription;
+
+					var styleVersion = "1.0";
+					var version = $(config).find('version');
+					if (version.length>0) styleVersion = version.eq(0).text()
+					styleConfig.styleVersion = styleVersion;				
 					
-					styleConfig.styleDescription = config.evaluate('/theme[1]/description[1]', config, null, XPathResult.STRING_TYPE, null).stringValue;
-					
-					styleConfig.styleVersion = config.evaluate('/theme[1]/version[1]', config, null, XPathResult.STRING_TYPE, null).stringValue;
-					var version = styleConfig.styleVersion.split('.');
+					version = styleVersion.split('.');
 					styleConfig.styleVersionMajor = version[0];
 					styleConfig.styleVersionMinor = version[1];
 					
