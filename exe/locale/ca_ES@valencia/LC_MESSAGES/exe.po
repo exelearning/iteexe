@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2016-03-30 17:33+0200\n"
+"POT-Creation-Date: 2016-04-12 16:37+0200\n"
 "PO-Revision-Date: 2016-03-03 12:54+0200\n"
 "Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
 "Language-Team: LliureX\n"
@@ -4630,7 +4630,6 @@ msgstr "Una referència al recurs del qual s'ha derivat l'actual."
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "Idioma"
@@ -11017,6 +11016,11 @@ msgstr "Apega el fragment en HTML (codi incrustat)"
 msgid "Include wrapper (improves presentation)"
 msgstr "Inclou un embolcall (millora la presentació)"
 
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
+msgid "Markup language"
+msgstr "Llenguatge resultant"
+
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 msgid "Please select a language"
 msgstr "Seleccioneu l'idioma."
@@ -12108,22 +12112,22 @@ msgstr "S'ha suprimit l'estil correctament."
 msgid "An unexpected error has occurred"
 msgstr "S'ha produït un error inesperat."
 
-#: exe/webui/tools/style-designer/js/app.js:1236
+#: exe/webui/tools/style-designer/js/app.js:1241
 #, fuzzy
 msgid "Create new style"
 msgstr "Crea un estil nou"
 
-#: exe/webui/tools/style-designer/js/app.js:1237
+#: exe/webui/tools/style-designer/js/app.js:1242
 #, fuzzy
 msgid "Name the new style"
 msgstr "Guarda el nom de l'estil nou."
 
-#: exe/webui/tools/style-designer/js/app.js:1259
+#: exe/webui/tools/style-designer/js/app.js:1264
 #, fuzzy
 msgid "Style Designer windows will be closed. "
 msgstr "La finestra del Dissenyador d'estils no està oberta."
 
-#: exe/webui/tools/style-designer/js/app.js:1262
+#: exe/webui/tools/style-designer/js/app.js:1267
 msgid "Page will be reloaded. "
 msgstr ""
 

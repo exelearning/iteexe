@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2016-03-30 17:33+0200\n"
+"POT-Creation-Date: 2016-04-12 16:37+0200\n"
 "PO-Revision-Date: 2016-03-30 19:57+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -3381,13 +3381,20 @@ msgid ""
 "by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
 msgstr ""
 "<p>El iDevice Wikipedia le permite buscar \n"
-"contenido existente en la Wikipedia y descargar este contenido en su recurso eXe. \n"
-"El iDevice Artículo de la wikipedia lo que hace es una copia del contenido del \n"
-" artículo; los cambios posteriores que se produzcan en la Wikipedia no se reflejarán automáticamente en la copia \n"
-" del artículo en eXe, será necesario realizar una nueva copia. Asímismo, \n"
-"los cambios realizados en eXe no producirán efectos en los artículos de la Wikipedia. </p> <p>El Contenido de la Wikipedia \n"
-"esta protegido por la Licencia de documentación libre de GNU 1.2, y desde 2009 además\n"
-"por la licencia CreativeCommons Reconocimiento-compartir igual 3.0 Unported.</p>"
+"contenido existente en la Wikipedia y descargar este contenido en su "
+"recurso eXe. \n"
+"El iDevice Artículo de la wikipedia lo que hace es una copia del "
+"contenido del \n"
+" artículo; los cambios posteriores que se produzcan en la Wikipedia no se"
+" reflejarán automáticamente en la copia \n"
+" del artículo en eXe, será necesario realizar una nueva copia. Asímismo,"
+" \n"
+"los cambios realizados en eXe no producirán efectos en los artículos de "
+"la Wikipedia. </p> <p>El Contenido de la Wikipedia \n"
+"esta protegido por la Licencia de documentación libre de GNU 1.2, y desde"
+" 2009 además\n"
+"por la licencia CreativeCommons Reconocimiento-compartir igual 3.0 "
+"Unported.</p>"
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
@@ -4671,7 +4678,6 @@ msgstr "Referencia a un recurso del que deriva el recurso actual."
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "Idioma"
@@ -8654,7 +8660,9 @@ msgstr "Seleccionar un paquete"
 msgid ""
 "Embed images shouldn't be pasted directly into the editor. Please use "
 "Insert/Edit Image."
-msgstr "Las imágenes no deben pegarse directamente en el editor. Por favor use Insertar/Editar imagen."
+msgstr ""
+"Las imágenes no deben pegarse directamente en el editor. Por favor use "
+"Insertar/Editar imagen."
 
 #: exe/webui/scripts/authoring.js:744
 msgid "This change will be undone."
@@ -11043,6 +11051,11 @@ msgstr "Pegar fragmento de HTML (código embebido)"
 msgid "Include wrapper (improves presentation)"
 msgstr "Incluir contenedor (mejora la presentación)"
 
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
+msgid "Markup language"
+msgstr "Lenguaje del Target"
+
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 msgid "Please select a language"
 msgstr "Por favor seleccione el idioma"
@@ -12128,19 +12141,19 @@ msgstr "Estilo borrado correctamente"
 msgid "An unexpected error has occurred"
 msgstr "Se ha producido un error inesperado"
 
-#: exe/webui/tools/style-designer/js/app.js:1236
+#: exe/webui/tools/style-designer/js/app.js:1241
 msgid "Create new style"
 msgstr "Crear un estilo nuevo"
 
-#: exe/webui/tools/style-designer/js/app.js:1237
+#: exe/webui/tools/style-designer/js/app.js:1242
 msgid "Name the new style"
 msgstr "Darle nombre al estilo nuevo"
 
-#: exe/webui/tools/style-designer/js/app.js:1259
+#: exe/webui/tools/style-designer/js/app.js:1264
 msgid "Style Designer windows will be closed. "
 msgstr "Se va a proceder a cerrar las ventanas del diseñador de estilos."
 
-#: exe/webui/tools/style-designer/js/app.js:1262
+#: exe/webui/tools/style-designer/js/app.js:1267
 msgid "Page will be reloaded. "
 msgstr "Se va a proceder a recargar la página."
 
@@ -12701,3 +12714,4 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
+

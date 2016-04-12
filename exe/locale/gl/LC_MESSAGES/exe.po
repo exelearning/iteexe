@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2016-03-30 17:33+0200\n"
+"POT-Creation-Date: 2016-04-12 16:37+0200\n"
 "PO-Revision-Date: 2016-03-17 17:16+0100\n"
 "Last-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\n"
 "Language-Team: TAGEN ATA <localizacion@tagenata.net>\n"
@@ -4621,7 +4621,6 @@ msgstr "Unha referencia a un recurso do que o presente recurso se deriva."
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "Idioma"
@@ -10984,6 +10983,11 @@ msgstr "Pegar anaco de HTML (código embebido)"
 msgid "Include wrapper (improves presentation)"
 msgstr "Incluir contedor (mellora a presentación)"
 
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
+msgid "Markup language"
+msgstr "Lenguaxe do obxetivo"
+
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 msgid "Please select a language"
 msgstr "Porfavor seleccione un idioma"
@@ -12060,22 +12064,22 @@ msgstr "Estilo eliminado correctamente"
 msgid "An unexpected error has occurred"
 msgstr "Ocorreu un erro inesperado"
 
-#: exe/webui/tools/style-designer/js/app.js:1236
+#: exe/webui/tools/style-designer/js/app.js:1241
 #, fuzzy
 msgid "Create new style"
 msgstr "Crear novo estilo"
 
-#: exe/webui/tools/style-designer/js/app.js:1237
+#: exe/webui/tools/style-designer/js/app.js:1242
 #, fuzzy
 msgid "Name the new style"
 msgstr "Garde o nome do novo estilo."
 
-#: exe/webui/tools/style-designer/js/app.js:1259
+#: exe/webui/tools/style-designer/js/app.js:1264
 #, fuzzy
 msgid "Style Designer windows will be closed. "
 msgstr "O deseñador de estilos non está aberto."
 
-#: exe/webui/tools/style-designer/js/app.js:1262
+#: exe/webui/tools/style-designer/js/app.js:1267
 msgid "Page will be reloaded. "
 msgstr ""
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-30 17:33+0200\n"
+"POT-Creation-Date: 2016-04-12 16:37+0200\n"
 "PO-Revision-Date: 2008-11-24 21:02+1300\n"
 "Last-Translator: Gürkan Gür <seqizz@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -4104,7 +4104,6 @@ msgstr "Oluşturulurken kullanılan kaynakların referansları."
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr ""
@@ -10351,6 +10350,11 @@ msgstr ""
 msgid "Include wrapper (improves presentation)"
 msgstr ""
 
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
+msgid "Markup language"
+msgstr "Bir dil seçin."
+
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 #, fuzzy
 msgid "Please select a language"
@@ -11424,19 +11428,19 @@ msgstr ""
 msgid "An unexpected error has occurred"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1236
+#: exe/webui/tools/style-designer/js/app.js:1241
 msgid "Create new style"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1237
+#: exe/webui/tools/style-designer/js/app.js:1242
 msgid "Name the new style"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1259
+#: exe/webui/tools/style-designer/js/app.js:1264
 msgid "Style Designer windows will be closed. "
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1262
+#: exe/webui/tools/style-designer/js/app.js:1267
 msgid "Page will be reloaded. "
 msgstr ""
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-30 17:33+0200\n"
+"POT-Creation-Date: 2016-04-12 16:37+0200\n"
 "PO-Revision-Date: 2014-11-28 21:18+0100\n"
 "Last-Translator: Heike Koch <info@hei-ke-koch.de>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft; Uwe "
@@ -4550,7 +4550,6 @@ msgstr "Quelle aus der der Inhalt abgeleitet wurde."
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "Sprache"
@@ -10940,6 +10939,11 @@ msgstr "HTML Element einfügen (verbesserte Darstellung)"
 msgid "Include wrapper (improves presentation)"
 msgstr "Wrapper einfügen (verbesserte Präsentation)"
 
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
+msgid "Markup language"
+msgstr "Sprache"
+
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 #, fuzzy
 msgid "Please select a language"
@@ -12041,21 +12045,21 @@ msgstr "Style korrekt gelöscht. "
 msgid "An unexpected error has occurred"
 msgstr "Ein unerwarteter Fehler ist aufgetreten. "
 
-#: exe/webui/tools/style-designer/js/app.js:1236
+#: exe/webui/tools/style-designer/js/app.js:1241
 #, fuzzy
 msgid "Create new style"
 msgstr "Stil löschen?"
 
-#: exe/webui/tools/style-designer/js/app.js:1237
+#: exe/webui/tools/style-designer/js/app.js:1242
 #, fuzzy
 msgid "Name the new style"
 msgstr "Stil löschen?"
 
-#: exe/webui/tools/style-designer/js/app.js:1259
+#: exe/webui/tools/style-designer/js/app.js:1264
 msgid "Style Designer windows will be closed. "
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1262
+#: exe/webui/tools/style-designer/js/app.js:1267
 msgid "Page will be reloaded. "
 msgstr ""
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2016-03-30 17:33+0200\n"
+"POT-Creation-Date: 2016-04-12 16:37+0200\n"
 "PO-Revision-Date: 2016-02-24 14:32+0100\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
 "Language-Team: EXE Team <translations@exelearning.net>\n"
@@ -4635,7 +4635,6 @@ msgstr "Ссылка на ресурс, для которого настоящи
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "Язык"
@@ -11002,6 +11001,11 @@ msgstr "Вставьте HTML фрагмент (код для вставки)"
 msgid "Include wrapper (improves presentation)"
 msgstr "Включите обёртки (улучшает презентацию)"
 
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
+msgid "Markup language"
+msgstr "Язык цели"
+
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 msgid "Please select a language"
 msgstr "Пожалуйста, выберите язык"
@@ -12081,22 +12085,22 @@ msgstr "Стиль удалён корректно"
 msgid "An unexpected error has occurred"
 msgstr "Произошла непредвиденная ошибка"
 
-#: exe/webui/tools/style-designer/js/app.js:1236
+#: exe/webui/tools/style-designer/js/app.js:1241
 #, fuzzy
 msgid "Create new style"
 msgstr "Создать новый стиль"
 
-#: exe/webui/tools/style-designer/js/app.js:1237
+#: exe/webui/tools/style-designer/js/app.js:1242
 #, fuzzy
 msgid "Name the new style"
 msgstr "Сохранить как имя нового стиля."
 
-#: exe/webui/tools/style-designer/js/app.js:1259
+#: exe/webui/tools/style-designer/js/app.js:1264
 #, fuzzy
 msgid "Style Designer windows will be closed. "
 msgstr "Окно Дизайнера стилей не открыто."
 
-#: exe/webui/tools/style-designer/js/app.js:1262
+#: exe/webui/tools/style-designer/js/app.js:1267
 msgid "Page will be reloaded. "
 msgstr ""
 

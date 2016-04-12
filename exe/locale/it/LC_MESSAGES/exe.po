@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-30 17:33+0200\n"
+"POT-Creation-Date: 2016-04-12 16:37+0200\n"
 "PO-Revision-Date: 2016-02-17 22:33+0100\n"
 "Last-Translator: Andrea Primiani <primiani@dag.it>\n"
 "Language-Team: Andrea Primiani <primiani@dag.it>\n"
@@ -4646,7 +4646,6 @@ msgstr "Riferimento ad una risorsa da cui questa risorsa deriva."
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "Lingua"
@@ -11010,6 +11009,11 @@ msgstr "Incolla frammento HTML (codice incluso)"
 msgid "Include wrapper (improves presentation)"
 msgstr "Includi contenitore (vista migliore)"
 
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
+msgid "Markup language"
+msgstr "Lingua del target"
+
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 msgid "Please select a language"
 msgstr "Selezionare una lingua"
@@ -12090,22 +12094,22 @@ msgstr "Stile cancellato"
 msgid "An unexpected error has occurred"
 msgstr "Errore inaspettato"
 
-#: exe/webui/tools/style-designer/js/app.js:1236
+#: exe/webui/tools/style-designer/js/app.js:1241
 #, fuzzy
 msgid "Create new style"
 msgstr "Crea nuovo stile"
 
-#: exe/webui/tools/style-designer/js/app.js:1237
+#: exe/webui/tools/style-designer/js/app.js:1242
 #, fuzzy
 msgid "Name the new style"
 msgstr "Salvare per dare il nome al nuovo stile."
 
-#: exe/webui/tools/style-designer/js/app.js:1259
+#: exe/webui/tools/style-designer/js/app.js:1264
 #, fuzzy
 msgid "Style Designer windows will be closed. "
 msgstr "La finestra dell'Editor dello stile non è aperta."
 
-#: exe/webui/tools/style-designer/js/app.js:1262
+#: exe/webui/tools/style-designer/js/app.js:1267
 msgid "Page will be reloaded. "
 msgstr ""
 

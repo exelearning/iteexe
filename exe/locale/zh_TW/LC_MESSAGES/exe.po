@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2016-03-30 17:33+0200\n"
+"POT-Creation-Date: 2016-04-12 16:37+0200\n"
 "PO-Revision-Date: 2014-05-15 18:08+0200\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language-Team: Chinese Traditional <zh-l10n@linux.org.tw>\n"
@@ -4091,7 +4091,6 @@ msgstr "資源從哪裡衍生而來。"
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "語言"
@@ -10383,6 +10382,11 @@ msgstr "貼上 HTML 片段（嵌入碼）"
 msgid "Include wrapper (improves presentation)"
 msgstr "包含包裝（改善呈現方式）"
 
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
+msgid "Markup language"
+msgstr "目標語言"
+
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 #, fuzzy
 msgid "Please select a language"
@@ -11472,21 +11476,21 @@ msgstr "樣式已正確刪除"
 msgid "An unexpected error has occurred"
 msgstr "發生未知的錯誤"
 
-#: exe/webui/tools/style-designer/js/app.js:1236
+#: exe/webui/tools/style-designer/js/app.js:1241
 #, fuzzy
 msgid "Create new style"
 msgstr "要刪除樣式嗎？"
 
-#: exe/webui/tools/style-designer/js/app.js:1237
+#: exe/webui/tools/style-designer/js/app.js:1242
 #, fuzzy
 msgid "Name the new style"
 msgstr "要刪除樣式嗎？"
 
-#: exe/webui/tools/style-designer/js/app.js:1259
+#: exe/webui/tools/style-designer/js/app.js:1264
 msgid "Style Designer windows will be closed. "
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1262
+#: exe/webui/tools/style-designer/js/app.js:1267
 msgid "Page will be reloaded. "
 msgstr ""
 
