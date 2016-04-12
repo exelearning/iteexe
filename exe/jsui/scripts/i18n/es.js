@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.1\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2016-04-12 16:37+0200\nPO-Revision-Date: 2016-03-30 19:57+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage-Team: Spanish <jrfern@telefonica.net>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.1\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2016-04-12 16:37+0200\nPO-Revision-Date: 2016-04-12 16:43+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage-Team: Spanish <jrfern@telefonica.net>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Actividad desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cree el caso pr\u00e1ctico. Un buen caso es aquel \nque describe una controversia o propone una escena describiendo los personajes \ninvolucrados y la situaci\u00f3n. Tambi\u00e9n debe permitir que se realicen acciones \npara obtener la resoluci\u00f3n de la situaci\u00f3n.", 
  "Telugu ": "Telugu ", 
@@ -2305,6 +2305,7 @@ translations = {
  "Strict": "Estricto", 
  "Automatically close the tooltip when moving the mouse out of the link": "Se cierra autom\u00e1ticamente cuando el rat\u00f3n deja de estar sobre el enlace", 
  "And, add your own LaTeX directly into the following:": "Y a\u00f1ada su propio c\u00f3digo LaTeX directamente:", 
+ "Markup language": "Lenguaje", 
  "Please, make your browser bigger. The Style Designer requires at least a 1024x768 screen resolution": "Por favor, agrande su navegador. El dise\u00f1ador de estilos necesita al menos 1024x768 p\u00edxeles.", 
  "Return": "Salir", 
  "Center - Center": "Centro \/ Centro", 
