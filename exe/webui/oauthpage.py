@@ -53,7 +53,6 @@ class ProcomunOauth(Renderable, rend.Page):
             oauth2Session, client = state
             client.session.oauthToken['procomun'] = oauth2Session.fetch_token(self.TOKEN_URL, client_secret=self.CLIENT_SECRET, code=code)
             script = ('''
-                top.eXe.controller.eXeViewport.prototype.eXeNotificationStatus(top._('Publishing document to Procomún'), top._('Exporting package as SCORM'));
                 top.nevow_clientToServerEvent('exportProcomun', this, '');
                 top.Ext.getCmp('oauthprocomun').close()
             ''')
