@@ -2,7 +2,7 @@ var $exeTinyMCE = {
     
 	init : function(mode,criteria,hide){
 		tinymce.init({
-			language: "en",
+			language: "all",
 			selector: "textarea",
 			convert_urls: false,
 			plugins: [
