@@ -24,6 +24,7 @@
 // action and object fields so they can be used by submitLink
 
 // An array of js strings to evaluate on document load
+var tinyMCEversion = 4;
 var Ext = parent.Ext;
 var eXe = parent.eXe;
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
@@ -579,6 +580,13 @@ function loadKeymap() {
 var eXeLearning_settings = {
     wysiwyg_path : "/scripts/tinymce_3.5.11/jscripts/tiny_mce/tiny_mce.js",
     wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
+}
+
+if (tinyMCEversion==4) {
+	eXeLearning_settings = {
+		wysiwyg_path : "/scripts/tinymce_4/js/tinymce/tinymce.min.js",
+		wysiwyg_settings_path : "/scripts/tinymce_4_settings.js"
+	}
 }
 
 // browse the specified URL in system browser
