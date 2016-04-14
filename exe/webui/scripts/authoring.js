@@ -24,7 +24,7 @@
 // action and object fields so they can be used by submitLink
 
 // An array of js strings to evaluate on document load
-var tinyMCEversion = 4;
+var tinyMCEversion = 4; // $exeAuthoring.countBase64 and $exeAuthoring.compareBase64 will not be used
 var Ext = parent.Ext;
 var eXe = parent.eXe;
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 

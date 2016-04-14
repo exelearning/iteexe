@@ -1,6 +1,13 @@
 _ = parent._;
 
 var $exeTinyMCE = {
+	
+	plugins : "advlist autolink lists link charmap print preview anchor,searchreplace visualblocks code fullscreen,insertdatetime table contextmenu paste example",
+	buttons1 : "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify",
+	buttons2 : "bullist numlist outdent indent",
+	buttons3 : "link",	
+	content_css : "/css/extra.css," + exe_style,
+	browser_spellcheck : true,
     
 	init : function(mode,criteria,hide){
 		
@@ -16,19 +23,65 @@ var $exeTinyMCE = {
 			width : w,
 			height : h,
 			convert_urls : false,
+			schema : this.getSchema(),
+			content_css : this.content_css,			
 			resize : "both",
-			plugins : [
-				"advlist autolink lists link charmap print preview anchor",
-				"searchreplace visualblocks code fullscreen",
-				"insertdatetime table contextmenu paste example spellchecker"
-			],
-			toolbar : "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link",
+			entity_encoding : "raw",
+			valid_children : this.getValidChildren(),
+			valid_elements : this.getValidElements(),
+			extended_valid_elements : this.getExtendedValidElements(),			
+			plugins : this.plugins,
+			browser_spellcheck: this.browser_spellcheck,
+			toolbar: [
+				this.buttons1,
+				this.buttons2,
+				this.buttons3
+			],			
 			init_instance_callback : function(ed) {
 				if (mode=="exact") {
 					$exeTinyMCEToggler.init(ed.id,hide);
 				}
+				// Spell checker
+				if (tinyMCE.activeEditor.execCommands.mceSpellCheck) {
+					tinymce.execCommand('mceSpellCheck', true);
+				}
 			}			
 		});
+	},
+	
+	getSchema : function(){
+		var s = "html4";
+		if (exe_export_format=="html5") s = "html5";
+		return s;
+	},
+	
+	getValidElements : function(){
+		var e = "*[*]";
+		if (exe_editor_mode=="strict") e = "";
+		return e;
+	},
+	
+	getValidChildren : function(){
+		var v = "+body[style]";
+		if (exe_export_format=="html5") v += ",+video[a],+audio[a]";
+		if (exe_editor_mode=="strict") {
+			v = "";
+			if (exe_export_format=="html5") v = "+video[a],+audio[a]";
+		}
+		return v;
+	},
+	
+	getExtendedValidElements : function(){
+		var e = "";
+		if (exe_editor_mode=="strict") {
+			// To review (this is not really Strict)
+			// Allow exe_math_latex for images and allowfullscreen for iframes
+			// We just allow any attributes and values for both tags
+			e = "img[*],iframe[*]";
+			// Allow lang for span in HTML5
+			if (exe_export_format=="html5") e += ",span[*]";
+		}
+		return e;
 	}
 	
 }
