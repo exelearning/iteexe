@@ -1,15 +1,27 @@
+// To do:
+// Add to pybabel.conf
+	// all.js instead of en.js and en_dlg.js
+	// plugin.min.js
+	// tinymce_4_settings.js
+
 _ = parent._;
 
 var $exeTinyMCE = {
 	
-	plugins : "advlist autolink lists link charmap print preview anchor,searchreplace visualblocks code fullscreen,insertdatetime table contextmenu paste example",
-	buttons1 : "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify",
-	buttons2 : "bullist numlist outdent indent",
-	buttons3 : "link",	
-	content_css : "/css/extra.css," + exe_style,
-	browser_spellcheck : true,
+	plugins: "advlist autolink lists link charmap print preview anchor,searchreplace visualblocks code fullscreen,insertdatetime table contextmenu paste template",
+	buttons1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify",
+	buttons2: "bullist numlist outdent indent",
+	buttons3: "link | template",	
+	content_css: "/css/extra.css," + exe_style,
+	browser_spellcheck: true,
+	templates: [
+		{ title: _("2 columns 50% 50%"), url: "/scripts/tinymce_templates/2-50-50.html" },
+		{ title: _("2 columns 30% 70%"), url: "/scripts/tinymce_templates/2-30-70.html" },
+		{ title: _("2 columns 70% 30%"), url: "/scripts/tinymce_templates/2-70-30.html" },
+		{ title: _("3 columns"), url: "/scripts/tinymce_templates/3.html" }
+	],
     
-	init : function(mode,criteria,hide){
+	init: function(mode,criteria,hide){
 		
 		var h = 300;
 		if (mode=="exact") h = 50;
@@ -18,26 +30,27 @@ var $exeTinyMCE = {
 		
 		tinymce.init({
 			language: "all",
-			mode : mode,
-			elements : criteria,
-			width : w,
-			height : h,
-			convert_urls : false,
-			schema : this.getSchema(),
-			content_css : this.content_css,			
-			resize : "both",
-			entity_encoding : "raw",
-			valid_children : this.getValidChildren(),
-			valid_elements : this.getValidElements(),
-			extended_valid_elements : this.getExtendedValidElements(),			
-			plugins : this.plugins,
+			mode: mode,
+			elements: criteria,
+			width: w,
+			height: h,
+			convert_urls: false,
+			schema: this.getSchema(),
+			content_css: this.content_css,			
+			resize: "both",
+			entity_encoding: "raw",
+			valid_children: this.getValidChildren(),
+			valid_elements: this.getValidElements(),
+			extended_valid_elements: this.getExtendedValidElements(),			
+			plugins: this.plugins,
 			browser_spellcheck: this.browser_spellcheck,
+			templates: this.templates,
 			toolbar: [
 				this.buttons1,
 				this.buttons2,
 				this.buttons3
 			],			
-			init_instance_callback : function(ed) {
+			init_instance_callback: function(ed) {
 				if (mode=="exact") {
 					$exeTinyMCEToggler.init(ed.id,hide);
 				}
@@ -49,19 +62,19 @@ var $exeTinyMCE = {
 		});
 	},
 	
-	getSchema : function(){
+	getSchema: function(){
 		var s = "html4";
 		if (exe_export_format=="html5") s = "html5";
 		return s;
 	},
 	
-	getValidElements : function(){
+	getValidElements: function(){
 		var e = "*[*]";
 		if (exe_editor_mode=="strict") e = "";
 		return e;
 	},
 	
-	getValidChildren : function(){
+	getValidChildren: function(){
 		var v = "+body[style]";
 		if (exe_export_format=="html5") v += ",+video[a],+audio[a]";
 		if (exe_editor_mode=="strict") {
@@ -71,7 +84,7 @@ var $exeTinyMCE = {
 		return v;
 	},
 	
-	getExtendedValidElements : function(){
+	getExtendedValidElements: function(){
 		var e = "";
 		if (exe_editor_mode=="strict") {
 			// To review (this is not really Strict)
@@ -100,9 +113,9 @@ var $exeTinyMCEToggler = {
 	// init - Init TinyMCE (called from startEditor)
 	// toggle - Toggle the editor
 	
-	mode : "always", // "always" if you don't want to have contents without HTML (plain textareas). Any other value if you do.
+	mode: "always", // "always" if you don't want to have contents without HTML (plain textareas). Any other value if you do.
 	
-	setup : function(eds){
+	setup: function(eds){
 		eds.each(function(){
 			var n = this.name;
 			this.id = n;
@@ -113,11 +126,11 @@ var $exeTinyMCEToggler = {
 				if (e.val()=="" || e.val()==e.html()) {
 					// No HTML (plain textarea)
 					e.css({
-						border : "1px solid #ccc",
-						height : "1.5em",
-						width : "80%",
-						padding : "15px",
-						margin : "0 0 1.5em 0"
+						border: "1px solid #ccc",
+						height: "1.5em",
+						width: "80%",
+						padding: "15px",
+						margin: "0 0 1.5em 0"
 					});
 					$exeTinyMCEToggler.createEditorLink(e,n);
 				} else {
@@ -127,7 +140,7 @@ var $exeTinyMCEToggler = {
 		});
 	},
 	
-	createViewer : function(e){
+	createViewer: function(e){
 		if (typeof(this.documentWidth)=='undefined') {
 			this.documentWidth = $(document).width();
 		}
@@ -141,12 +154,12 @@ var $exeTinyMCEToggler = {
 		e.before(v).addClass("sr-av"); // If we use e.hide() TinyMCE won't be properly displayed
 	},
 	
-	removeViewer : function(id){
+	removeViewer: function(id){
 		$('#'+id+'-toggler').remove();
 		this.startEditor(id,true);
 	},
 	
-	getHelpLink : function(e) {
+	getHelpLink: function(e) {
     
         // The textarea has a label with an ID: textareaID-editor-label
         var w = $("#"+e.attr("id")+"-editor-label");
@@ -189,7 +202,7 @@ var $exeTinyMCEToggler = {
 		
 	}, 
 	
-	createEditorLink : function(e,id) {
+	createEditorLink: function(e,id) {
         var f = this.getHelpLink(e);
         if (f!="") {
             var l = $('<a href="#" id="'+id+'-toggler" onclick="$exeTinyMCEToggler.startEditor(\''+id+'\',false);$(this).remove();return false" class="visible-editor">'+_("Editor")+'</a>');
@@ -200,18 +213,18 @@ var $exeTinyMCEToggler = {
         }        
 	},
 	
-	startEditor : function(id,hide){
+	startEditor: function(id,hide){
 		$("#"+id+"-viewer").remove();
 		$("#"+id).show();
 		$exeTinyMCE.init("exact",id,hide);
 	},
 	
-	addLinkAndToggle : function(id,lab,l,hide) {
+	addLinkAndToggle: function(id,lab,l,hide) {
 		lab.css("margin-right","5px").after(l);
 		if (hide!=false) this.toggle(id,document.getElementById(id+"-toggler"));
 	},
 	
-	init : function(id,hide) {
+	init: function(id,hide) {
 
         var e = $("#"+id);
         var f = this.getHelpLink(e);
@@ -223,7 +236,7 @@ var $exeTinyMCEToggler = {
 
 	},
 	
-	toggle : function(id,e) {
+	toggle: function(id,e) {
 		var p = $("#"+id).parent();
 		window[e.id+"-iframeHeight"] = "134px";
 		var t = $("IFRAME",p);
