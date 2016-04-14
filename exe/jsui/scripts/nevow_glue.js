@@ -53,6 +53,7 @@ function connect(outputNum) {
             }, 4000);
         }
     }
+    xmlhttp.onerror = xmlhttp.onabort;
     xmlhttp.open("GET", base_url + "nevow_liveOutput?outputNum=" + outputNum + "&client-handle-id=" + nevow_clientHandleId, true)
     xmlhttp.send(null)
 }
