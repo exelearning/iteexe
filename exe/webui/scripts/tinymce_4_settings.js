@@ -1,3 +1,5 @@
+_ = parent._;
+
 var $exeTinyMCE = {
     
 	init : function(mode,criteria,hide){
