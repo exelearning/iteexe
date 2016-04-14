@@ -2,16 +2,20 @@
 // Add to pybabel.conf
 	// all.js instead of en.js and en_dlg.js
 	// plugin.min.js
-	// tinymce_4_settings.js
+	// tinymce_4_settings.js (notice that the files in \exe\webui\scripts\tinymce_templates\lang\ are no longer used)
 
 _ = parent._;
 
 var $exeTinyMCE = {
 	
-	plugins: "advlist autolink lists link charmap print preview anchor,searchreplace visualblocks code fullscreen,insertdatetime table contextmenu paste template",
-	buttons1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify",
-	buttons2: "bullist numlist outdent indent",
-	buttons3: "link | template",	
+	plugins: "advlist autolink lists link charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime table contextmenu paste template textcolor hr",
+	buttons1 : "newdocument | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent blockquote | formatselect | fontsizeselect | fontselect | forecolor backcolor | fullscreen",	
+	buttons2 : "undo redo | cut copy paste pastetext | searchreplace | link unlink anchor | removeformat | insertdatetime hr | charmap",
+	buttons3 : "template | table | code help",
+	// To add:
+		// buttons1 : "clearfloat,addcontent,definitionlist,blockquoteandcite,sub,sup",
+		// buttons2 : "pasteword,pastehtml,pastecode,tooltip,image,media,exeeffects,exegames,cleanup,cite,abbr,acronym,del,ins,attribs,nonbreaking,charmap,exemath,styleprops",
+		// buttons3 : "codemagic",	
 	content_css: "/css/extra.css," + exe_style,
 	browser_spellcheck: true,
 	templates: [
@@ -44,6 +48,19 @@ var $exeTinyMCE = {
 			extended_valid_elements: this.getExtendedValidElements(),			
 			plugins: this.plugins,
 			browser_spellcheck: this.browser_spellcheck,
+			// Numbered lists
+			/*
+			advlist_number_styles: [
+				{title : _("Default"), styles : { listStyleType : '' } },
+				{title : _("Lower Alpha"), styles : { listStyleType : 'lower-alpha' }, cssClass : '' },
+				{title : _("Lower Greek"), styles : { listStyleType : 'lower-greek' }, cssClass : '' },
+				{title : _("Lower Roman"), styles : { listStyleType : 'lower-roman' }, cssClass : '' },
+				{title : _("Upper Alpha"), styles : { listStyleType : 'upper-alpha' }, cssClass : '' },
+				{title : _("Upper Roman"), styles : { listStyleType : 'upper-roman' }, cssClass : '' },
+				{title : _("Automatic Numbering"), styles : { listStyleType : 'decimal' }, cssClass : 'auto-numbered' }
+			],
+			*/
+			// advlist_number_styles : "default,lower-alpha,lower-greek,lower-roman,upper-alpha,upper-roman",
 			templates: this.templates,
 			toolbar: [
 				this.buttons1,
