@@ -548,7 +548,7 @@ function insertAction() {
 		}
 		else {
 			elmSize = elm.nextSibling;
-			if (elmSize != null)
+			if (elmSize != null && elmSize.className == "exe-link-data file-size")
 				elm.parentNode.removeChild(elmSize);
 		}
 		// /JR
