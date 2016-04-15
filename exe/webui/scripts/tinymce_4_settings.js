@@ -8,7 +8,7 @@ _ = parent._;
 
 var $exeTinyMCE = {
 	
-	plugins: "advlist autolink lists link charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime table contextmenu paste template textcolor hr",
+	plugins: "exelist autolink lists link charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime table contextmenu paste template textcolor hr",
 	buttons1 : "newdocument | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent blockquote | formatselect | fontsizeselect | fontselect | forecolor backcolor | fullscreen",	
 	buttons2 : "undo redo | cut copy paste pastetext | searchreplace | link unlink anchor | removeformat | insertdatetime hr | charmap",
 	buttons3 : "template | table | code help",
@@ -48,19 +48,6 @@ var $exeTinyMCE = {
 			extended_valid_elements: this.getExtendedValidElements(),			
 			plugins: this.plugins,
 			browser_spellcheck: this.browser_spellcheck,
-			// Numbered lists
-			/*
-			advlist_number_styles: [
-				{title : _("Default"), styles : { listStyleType : '' } },
-				{title : _("Lower Alpha"), styles : { listStyleType : 'lower-alpha' }, cssClass : '' },
-				{title : _("Lower Greek"), styles : { listStyleType : 'lower-greek' }, cssClass : '' },
-				{title : _("Lower Roman"), styles : { listStyleType : 'lower-roman' }, cssClass : '' },
-				{title : _("Upper Alpha"), styles : { listStyleType : 'upper-alpha' }, cssClass : '' },
-				{title : _("Upper Roman"), styles : { listStyleType : 'upper-roman' }, cssClass : '' },
-				{title : _("Automatic Numbering"), styles : { listStyleType : 'decimal' }, cssClass : 'auto-numbered' }
-			],
-			*/
-			// advlist_number_styles : "default,lower-alpha,lower-greek,lower-roman,upper-alpha,upper-roman",
 			templates: this.templates,
 			toolbar: [
 				this.buttons1,
@@ -70,10 +57,6 @@ var $exeTinyMCE = {
 			init_instance_callback: function(ed) {
 				if (mode=="exact") {
 					$exeTinyMCEToggler.init(ed.id,hide);
-				}
-				// Spell checker
-				if (tinyMCE.activeEditor.execCommands.mceSpellCheck) {
-					tinymce.execCommand('mceSpellCheck', true);
 				}
 			}			
 		});
