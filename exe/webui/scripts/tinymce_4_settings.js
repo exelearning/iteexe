@@ -8,8 +8,8 @@ _ = parent._;
 
 var $exeTinyMCE = {
 	
-	plugins: "exelist autolink lists link charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat",
-	buttons1 : "newdocument | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify clearfloat | bullist numlist | outdent indent blockquote | formatselect | fontsizeselect | fontselect | forecolor backcolor | fullscreen",	
+	plugins: "exelist autolink lists link charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent",
+	buttons1 : "newdocument | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify clearfloat addcontent | bullist numlist | outdent indent blockquote | formatselect | fontsizeselect | fontselect | forecolor backcolor | fullscreen",	
 	buttons2 : "undo redo | cut copy paste pastetext | searchreplace | link unlink anchor | removeformat | insertdatetime hr | charmap",
 	buttons3 : "template | table | code help",
 	// To add:
