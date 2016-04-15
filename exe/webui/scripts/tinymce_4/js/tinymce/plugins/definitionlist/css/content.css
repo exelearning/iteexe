@@ -1,0 +1,4 @@
+.exe-dl{margin:1.5em 0}
+.exe-dl dt{font-weight:bold}
+.exe-dl dd{margin:1em 1.5em 1em 30px}
+.exe-dl dt:before{content:"»";font-size:1.2em;margin-right:10px;padding:0 5px;color:#FFF;background-color:#000;border-radius:2px}
