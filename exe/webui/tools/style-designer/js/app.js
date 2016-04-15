@@ -309,9 +309,14 @@ var $app = {
 	updateTextFieldFromFile : function(e){
 		// opener.parent.opener.document.getElementsByTagName("IFRAME")[0].contentWindow;
 		// opener.parent.opener.window.nevow_clientToServerEvent('quit', '', '');
-		var id = e.id.replace("File","");
+		var id = e.id.replace("File",""),
+		    // Encode URL
+		    fileName = this.removeLocalPath(e.id, "save");
+
+		fileName = decodeURIComponent(fileName);
+		fileName = encodeURI(fileName);
 		// Show file name in the file input
-		$("#"+id).val($(e).val());
+		$("#"+id).val(fileName);
 		// Save temporary file URL in hidden input
 		$("#"+id+'TempURL').val(window.URL.createObjectURL(e.files[0]).toString());
 		
@@ -671,7 +676,7 @@ var $app = {
 			}
 		}
 		return path;
-	},	
+	},
 	composeCSS : function(mode){
 		
 		var css = new Array();
@@ -679,7 +684,7 @@ var $app = {
 		var navCSS = "";
 		
 		if (!mode) mode = "";
-		
+
 		// #content
 		var pageWidth = $("#pageWidth").val();
 		// px or %
@@ -1163,7 +1168,7 @@ var $app = {
 		}
 		
 		if (!mode) mode = "";
-		
+
 		// content.css
 		var contentCSSTag = w.document.getElementById("my-content-css");
 		if (!contentCSSTag) return false;
