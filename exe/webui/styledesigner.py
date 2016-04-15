@@ -24,6 +24,7 @@ StyleDesigner provides the functions to create and save the Styles edited with t
 import logging
 import re
 import os
+import sys
 import shutil
 import json
 import unicodedata
@@ -96,9 +97,9 @@ class StyleDesigner(Renderable, Resource):
         Replaces ' ', '\t', '\f', '\r' with '_', accented with non accented characters,
         cleans non alphanumeric chars and converts to lower case
         """
-        style_id = str(style_name)
+        style_id = style_name.decode(sys.getdefaultencoding(), 'ignore')
         style_id = style_id.lower()
-        style_id = unicodedata.normalize('NFKD', unicode(style_id))
+        style_id = unicodedata.normalize('NFKD', style_id)
         style_id = style_id.encode('ascii', 'ignore')
 
         clean_non_alphanum = re.compile('\W+')
