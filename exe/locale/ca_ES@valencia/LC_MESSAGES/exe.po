@@ -11,22 +11,23 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2016-04-12 16:37+0200\n"
-"PO-Revision-Date: 2016-03-03 12:54+0200\n"
+"PO-Revision-Date: 2016-04-15 12:15+0200\n"
 "Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
 "Language-Team: LliureX\n"
-"Language: ca_ES\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "Generated-By: Babel 1.3\n"
 
 #: exe/application.py:191
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
 msgstr ""
-"S'ha produït un error mentre es carregava el fitxer de configuració. S'ha"
-" guardat una còpia de seguretat en %s"
+"S'ha produït un error mentre es carregava el fitxer de configuració. S'ha "
+"guardat una còpia de seguretat en %s"
 
 #: exe/application.py:209
 #, python-format
@@ -34,8 +35,8 @@ msgid ""
 "An error has occurred when loading your Idevice Store. A backup is saved "
 "at %s"
 msgstr ""
-"S'ha produït un error mentre es carregava el magatzem Idevice. S'ha "
-"guardat una còpia de seguretat en %s"
+"S'ha produït un error mentre es carregava el magatzem Idevice. S'ha guardat "
+"una còpia de seguretat en %s"
 
 #: exe/application.py:248
 #, python-format
@@ -211,10 +212,10 @@ msgid ""
 " the file is. Learners can click on the attachment link and can download "
 "the attachment."
 msgstr ""
-"L'iDevice Adjunt s'utilitza per a adjuntar fitxers al contingut .elp. Per"
-" exemple, si teniu un fitxer PDF o un fitxer de presentació PPT (ODP) que"
-" voleu que l'alumnat mire, aquest fitxer es pot adjuntar i etiquetar per "
-"a indicar què és i la mida que té. L'alumnat pot fer clic en l'enllaç de "
+"L'iDevice Adjunt s'utilitza per a adjuntar fitxers al contingut .elp. Per "
+"exemple, si teniu un fitxer PDF o un fitxer de presentació PPT (ODP) que "
+"voleu que l'alumnat mire, aquest fitxer es pot adjuntar i etiquetar per a "
+"indicar què és i la mida que té. L'alumnat pot fer clic en l'enllaç de "
 "l'adjunt i baixar-lo."
 
 #: exe/engine/attachmentidevice.py:58
@@ -304,22 +305,19 @@ msgid ""
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
 "Un cas d'estudi és un iDevice que proveeix l'alumnat \n"
-"d'una simulació d'un concepte bàsic. A partir de situacions, generalment,"
-" \n"
-"basades en la realitat, l'alumnat ha de demostrar o descriure les accions"
-" que faria \n"
+"d'una simulació d'un concepte bàsic. A partir de situacions, generalment, \n"
+"basades en la realitat, l'alumnat ha de demostrar o descriure les accions "
+"que faria \n"
 "per a completar la tasca o resoldre la situació. El cas d'estudi \n"
-"permet a l'alumnat aplicar els seus coneixements i la seua experiència "
-"per a completar les tasques \n"
-"assignades. En dissenyar el cas d'estudi tingueu en compte el "
-"següent:<ul> \n"
+"permet a l'alumnat aplicar els seus coneixements i la seua experiència per a "
+"completar les tasques \n"
+"assignades. En dissenyar el cas d'estudi tingueu en compte el següent:<ul> \n"
 "<li>\t Quins elements d'aprenentatge es tracten en la història</li>\n"
 "<li>\t Quina preparació prèvia li cal a l'alumnat per a resoldre el cas "
 "d'estudi. </li>\n"
 "<li>\t On s'ha de col·locar el cas d'estudi en la resta del curs.</li>\n"
 "<li>\t Com interacciona l'alumnat entre si i amb els materials. \n"
-"P. ex: A l'aula, com poden els equips treballar diferents aspectes del "
-"cas, \n"
+"P. ex: A l'aula, com poden els equips treballar diferents aspectes del cas, \n"
 "i com es fa la posada en comú a la resta de la classe</li></ul> "
 
 #: exe/engine/casestudyidevice.py:219
@@ -882,8 +880,8 @@ msgid ""
 "You Should Know is an iDevice that helps the student widen her knowledge "
 "with core contents."
 msgstr ""
-"Cal que conegues és un iDevice que permet a l'alumnat ampliar "
-"coneixements, que són obligatoris per al seu aprenentatge."
+"Cal que conegues és un iDevice que permet a l'alumnat ampliar coneixements, "
+"que són obligatoris per al seu aprenentatge."
 
 #: exe/engine/debesconocerfpdidevice.py:37
 #: exe/engine/debesconocerfpdidevice.py:136
@@ -899,8 +897,8 @@ msgid ""
 "Highlighted is an iDevice that emphasizes text to catch the student's "
 "attention."
 msgstr ""
-"Destacat és un iDevice que permet ressaltar text per a cridar l'atenció "
-"de l'alumnat."
+"Destacat és un iDevice que permet ressaltar text per a cridar l'atenció de "
+"l'alumnat."
 
 #: exe/engine/destacadofpdidevice.py:36 exe/engine/destacadofpdidevice.py:134
 msgid "Highlighted Text:"
@@ -936,19 +934,18 @@ msgstr ""
 "Un cas d'estudi és un iDevice que proveeix l'alumnat \n"
 "d'una simulació que s'usa com a base de l'aprenentatge. A partir de "
 "situacions, generalment, \n"
-"basades en la realitat, l'alumnat ha de demostrar o descriure les accions"
-" que faria \n"
+"basades en la realitat, l'alumnat ha de demostrar o descriure les accions "
+"que faria \n"
 "per a completar la tasca o resoldre la situació. El cas d'estudi \n"
-"permet a l'alumnat aplicar els seus coneixements i la seua experiència "
-"per a completar les tasques \n"
+"permet a l'alumnat aplicar els seus coneixements i la seua experiència per a "
+"completar les tasques \n"
 "assignades. Quan dissenyeu el cas d'estudi tingueu en compte:<ul> \n"
 "<li>\t Quins elements d'aprenentatge es tracten en la història</li>\n"
 "<li>\t Quina preparació prèvia li cal a l'alumnat per a resoldre el cas "
 "d'estudi. </li>\n"
 "<li>\t On s'ha de col·locar el cas d'estudi en la resta del curs.</li>\n"
 "<li>\t Com interacciona l'alumnat entre si i amb el material proposat. \n"
-"P. ex: A l'aula, com poden els equips treballar diferents aspectes del "
-"cas, \n"
+"P. ex: A l'aula, com poden els equips treballar diferents aspectes del cas, \n"
 "i com es fa la posada en comú a la resta de la classe</li></ul> "
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
@@ -1221,8 +1218,8 @@ msgid ""
 "will be viewed by learners online."
 msgstr ""
 "L'iDevice Lloc web extern carrega una pàgina \n"
-"web dins d'un marc en línia amb el vostre contingut eXe en comptes "
-"d'obrir una finestra emergent. \n"
+"web dins d'un marc en línia amb el vostre contingut eXe en comptes d'obrir "
+"una finestra emergent. \n"
 "D'aquesta manera l'alumnat no tindrà massa finestres. \n"
 "Aquest iDevice només s'ha d'utilitzar si el contingut es visualitzarà en "
 "línia."
@@ -1510,10 +1507,9 @@ msgid ""
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
 "Aquest iDevice sols admet vídeos en format Flash (.FLV), i no accepta\n"
-" altres formats de vídeo. No obstant això, podeu convertir altres formats"
-" de vídeo\n"
-" (p. ex. mov, wmf, etc.) al format .FLV utilitzant codificadors de vídeo "
-"de\n"
+" altres formats de vídeo. No obstant això, podeu convertir altres formats de "
+"vídeo\n"
+" (p. ex. mov, wmf, etc.) al format .FLV utilitzant codificadors de vídeo de\n"
 " tercers (p. ex. en Linux: ffmpeg, winff). Aquests codificadors no se "
 "subministren amb l'eXe.\n"
 " Els usuaris també han de baixar el reproductor de Flash 8 des "
@@ -1565,8 +1561,8 @@ msgid ""
 "the learners will view."
 msgstr ""
 "L'iDevice Flash amb text us permet \n"
-"associar informació escrita addicional a un fitxer en Flash. Això pot ser"
-" útil \n"
+"associar informació escrita addicional a un fitxer en Flash. Això pot ser "
+"útil \n"
 "per a proporcionar instruccions a l'alumnat a l'hora de visualitzar un "
 "fitxer en Flash."
 
@@ -3324,7 +3320,6 @@ msgid "Wiki Article"
 msgstr "Article Wiki"
 
 #: exe/engine/wikipediaidevice.py:55
-#, fuzzy
 msgid ""
 "<p>The Wikipedia iDevice allows you to locate \n"
 "existing content from within Wikipedia and download this content into "
@@ -3341,17 +3336,17 @@ msgid ""
 "additionally\n"
 "by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
 msgstr ""
-"<p> L'iDevice Viquipèdia us permet localitzar un article que estiga en la"
-" Viquipèdia i \n"
-"baixar-lo al recurs de l'eXe. L'iDevice Viquipèdia fa una còpia "
-"instantània del contingut de l'article. \n"
-"Els canvis en la Viquipèdia no s'actualitzen automàticament en la còpia "
-"que teniu a l'eXe: si la voleu actualitzar caldrà que torneu a baixar una"
-" còpia de l'article. \n"
-"Així mateix, els canvis fets a l'article en l'eXe no s'actualitzaran en "
-"la Viquipèdia. \n"
-"</p><p> El contingut de la Viquipèdia és sota la llicència de "
-"documentació lliure GNU (GFDL).</p> "
+"<p> L'iDevice Viquipèdia us permet localitzar un article que estiga en la "
+"Viquipèdia i \n"
+"baixar-lo al recurs de l'eXe. L'iDevice Viquipèdia fa una còpia instantània "
+"del contingut de l'article. \n"
+"Els canvis en la Viquipèdia no s'actualitzen automàticament en la còpia que "
+"teniu a l'eXe: si la voleu actualitzar caldrà que torneu a baixar una còpia "
+"de l'article. \n"
+"Així mateix, els canvis fets a l'article en l'eXe no s'actualitzaran en la "
+"Viquipèdia. \n"
+"</p><p> El contingut de la Viquipèdia és sota la llicència de documentació "
+"lliure GNU (GFDL).</p> "
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
@@ -8570,76 +8565,72 @@ msgid "Load"
 msgstr "Carrega"
 
 #: exe/webui/scripts/authoring.js:69
-#, fuzzy
 msgid "Select one or more images"
-msgstr "Seleccioneu una imatge"
+msgstr "Seleccioneu una o més imatges"
 
 #: exe/webui/scripts/authoring.js:94
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
-msgstr ""
+msgstr "Fitxers d'imatge (.jpg, .jpeg, .png, .gif, .svg)"
 
 #: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
-#, fuzzy
 msgid "Flash Movie (.flv)"
-msgstr "Pel·lícula en Flash"
+msgstr "Pel·lícula en Flash (.flv)"
 
 #: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
 msgid "Flash Object (.swf)"
-msgstr ""
+msgstr "Objecte Flash (.swf)"
 
 #: exe/webui/scripts/authoring.js:121
-#, fuzzy
 msgid "Quicktime Files (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
-msgstr "QuickTime (mov, mp4, mpeg)"
+msgstr "Fitxers Quicktime (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
 
 #: exe/webui/scripts/authoring.js:122
 msgid "Windows Media Player Files (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
-msgstr ""
+msgstr "Fitxers Windows Media Player (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
 
 #: exe/webui/scripts/authoring.js:123
 msgid "RealMedia Audio Files (.rm, .ra, .ram, .mp3)"
-msgstr ""
+msgstr "Fitxers d'àudio RealMedia (.rm, .ra, .ram, .mp3)"
 
 #: exe/webui/scripts/authoring.js:175
 msgid "JPEG Files (.jpg, .jpeg)"
-msgstr ""
+msgstr "Fitxers JPEG (.jpg, .jpeg)"
 
 #: exe/webui/scripts/authoring.js:375
 msgid "MP3 Audio (.mp3)"
-msgstr ""
+msgstr "Fitxer d'àudio MP3 (.mp3)"
 
 #: exe/webui/scripts/authoring.js:378
-#, fuzzy
 msgid "Select an mp3 file"
-msgstr "Seleccioneu un fitxer"
+msgstr "Seleccioneu un fitxer MP3"
 
 #: exe/webui/scripts/authoring.js:386
-#, fuzzy
 msgid "Select a package"
-msgstr "Seleccioneu una imatge"
+msgstr "Seleccioneu un paquet"
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
 "Embed images shouldn't be pasted directly into the editor. Please use "
 "Insert/Edit Image."
 msgstr ""
+"Les imatges incrustades no s'han d'apegar directament en l'editor. Utilitzeu "
+"Insereix/Edita la imatge."
 
 #: exe/webui/scripts/authoring.js:744
 msgid "This change will be undone."
-msgstr ""
+msgstr "Aquest canvi es desfarà."
 
 #: exe/webui/scripts/editor.js:35
 msgid "Do you want to overwrite the existing idevice {idevice}?"
-msgstr ""
+msgstr "Voleu sobreescriure l'iDevice existent {idevice}?"
 
 #: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
-#, fuzzy
 msgid "eXe Idevices"
-msgstr "Guarda els iDevices"
+msgstr "iDevices de l'eXe"
 
 #: exe/webui/scripts/editor.js:87
 msgid "Please save the idevice first, then try to export it."
-msgstr ""
+msgstr "En primer lloc, guardeu l'iDevice, després proveu d'exportar-lo."
 
 #: exe/webui/scripts/exe_tooltips/exe_tooltips.js:79
 #: exe/webui/scripts/exe_tooltips/exe_tooltips.js:145
@@ -8649,9 +8640,8 @@ msgstr ""
 "funció"
 
 #: exe/webui/scripts/stylemanager.js:78
-#, fuzzy
 msgid "Do you want to delete the selected style?"
-msgstr "Voleu suprimir aquest estil?"
+msgstr "Voleu suprimir l'estil seleccionat?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Error: Invalid values entered, these are marked in red."
@@ -8663,10 +8653,10 @@ msgid ""
 "that provides application functionality. You will need to disable popup "
 "blocking on this site in order to fully utilize this tool."
 msgstr ""
-"Ens hem adonat que el bloquejador de finestres emergents ha inhabilitat "
-"una finestra que proporciona algunes funcions de l'aplicació. Heu "
-"d'inhabilitar el bloqueig de finestres emergents en aquest lloc per a "
-"poder utilitzar completament aquesta eina."
+"Ens hem adonat que el bloquejador de finestres emergents ha inhabilitat una "
+"finestra que proporciona algunes funcions de l'aplicació. Heu d'inhabilitar "
+"el bloqueig de finestres emergents en aquest lloc per a poder utilitzar "
+"completament aquesta eina."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Currently not supported by your browser, use keyboard shortcuts instead."
@@ -10215,8 +10205,7 @@ msgstr "Es pot canviar en qualsevol moment."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:14
 msgid "Provide a warning to users who have JavaScript disabled (Accessibility)."
 msgstr ""
-"Dóna una avís als usuaris que tenen JavaScript inhabilitat "
-"(Accessibilitat)."
+"Dóna una avís als usuaris que tenen JavaScript inhabilitat (Accessibilitat)."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:17
 msgid "Guess letters to complete each word."
@@ -11017,9 +11006,8 @@ msgid "Include wrapper (improves presentation)"
 msgstr "Inclou un embolcall (millora la presentació)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#, fuzzy
 msgid "Markup language"
-msgstr "Llenguatge resultant"
+msgstr "Llenguatge d'etiquetatge"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
 msgid "Please select a language"
@@ -11518,7 +11506,8 @@ msgstr "Defineix l'enllaç: selecciona aqueixa pàgina."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:34
 msgid "The tooltip will show the content of the Free Text iDevice."
-msgstr "L'indicador de funció mostrarà el contingut de l'iDevice de text lliure."
+msgstr ""
+"L'indicador de funció mostrarà el contingut de l'iDevice de text lliure."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:36
 msgid "Glossary"
@@ -11979,13 +11968,12 @@ msgstr "Llatina majúscula"
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:64
 msgid "Automatic Numbering"
-msgstr ""
+msgstr "Numeració automàtica"
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
-#, fuzzy
 msgid "Editor"
-msgstr "redactor/a"
+msgstr "Redactor/a"
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
@@ -12113,23 +12101,20 @@ msgid "An unexpected error has occurred"
 msgstr "S'ha produït un error inesperat."
 
 #: exe/webui/tools/style-designer/js/app.js:1241
-#, fuzzy
 msgid "Create new style"
 msgstr "Crea un estil nou"
 
 #: exe/webui/tools/style-designer/js/app.js:1242
-#, fuzzy
 msgid "Name the new style"
-msgstr "Guarda el nom de l'estil nou."
+msgstr "Anomeneu l'estil nou"
 
 #: exe/webui/tools/style-designer/js/app.js:1264
-#, fuzzy
 msgid "Style Designer windows will be closed. "
-msgstr "La finestra del Dissenyador d'estils no està oberta."
+msgstr "Les finestres del Dissenyador d'estils es tancaran."
 
 #: exe/webui/tools/style-designer/js/app.js:1267
 msgid "Page will be reloaded. "
-msgstr ""
+msgstr "La pàgina es tornarà a carregar."
 
 #: exe/webui/tools/style-designer/langs/en.js:12
 msgid "General settings"
@@ -12679,7 +12664,6 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
-"El fitxer d'iDevices/generic.data o el paquet que proveu de carregar s'ha"
-" creat amb una versió més nova de l'eXe. Actualitzeu l'eXe i torneu-ho a "
+"El fitxer d'iDevices/generic.data o el paquet que proveu de carregar s'ha "
+"creat amb una versió més nova de l'eXe. Actualitzeu l'eXe i torneu-ho a "
 "provar."
-
