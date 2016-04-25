@@ -56,6 +56,8 @@ function insertAction() {
 	var elm = inst.selection.getNode();
 	
 	// The New eXeLearning
+	// Based in a previous work by José Ramón Jiménez Reyes
+	// Creative Commons Attribution 4.0 International: http://creativecommons.org/licenses/by/4.0/
 	var c = inst.selection.getContent();
 	if (c!="" && elm.localName!="span") {
 		
