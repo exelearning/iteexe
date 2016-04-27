@@ -1,3 +1,204 @@
+intef-exe (3:2.1) lucid; urgency=medium
+
+  [ Ignacio Gros ]
+  * Style Designer - Front-end development.
+
+  * TinyMCE - Update from 3.5.7 to 3.5.11 (3.5.7 didn't work with IE 11).
+  * TinyMCE - Effects plugin (accordion, tabs, pagination, carousel, timeline).
+  * TinyMCE - Tooltips plugin: Simple, inline HTML and AJAX tooltips.
+  * TinyMCE - Definition Lists plugin.
+  * TinyMCE - Games plugin (just a Hangman Game for the moment).
+  * TinyMCE - advlist plugin: Auto-numbered lists. Idea and CSS by José Miguel Andonegi.
+  * TinyMCE - media plugin: Allow custom width and height.
+  * TinyMCE - Paste Code Plugin: Edit the CODE, add inline CODE tags and wrap or unwrap the selected CODE.
+  * TinyMCE - Paste Code Plugin (Insert HTML code as text): New Syntax highlighting options.
+  * TinyMCE - Quote With Authorship plugin. Based in a previous work by José Ramón Jiménez Reyes.
+  * TinyMCE - Add Content Plugin, by Philipp Urlich. Add content at the end of the body outside a single DIV.
+  * TinyMCE - Configuration revision (valid_elements or extended_valid_elements). To review.
+  * TinyMCE - Configuration file. Now it's easier to overwrite some values using the Style's edition-extra-head new option.
+  * TinyMCE - CodeMagic advanced source code editor (sutulustus.com). Andrew Collington's (amnuts.com) version. It uses CodeMirror (codemirror.net).
+  * HTML - Website pagination: Add a span to the pagination links for presentation purposes.
+  * HTML - The main title is now wrapped into a DIV with the "headerContent" ID. Controlling the height of the header is now easier.
+  * HTML - Legal Notes (HTML revision). Work done by Juan Rafael Fernández and Antonio Monje.
+  * HTML - Package license (valid XHTML).
+  * HTML - Document metadata: License included.
+
+  * Styles - New Base Style (use it or edit a copy of it with the Style Designer).
+  * Styles - New Kids Style, designed by Francisco Javier Pulido Cuadrado.
+  * Styles - New SimplePoint Style for presentations.
+  * Styles - Responsive design + Compatibility with old browsers.
+  * Styles - Responsive design. iDevices with a long title.
+  * Styles - New options in the config.xml file (edition-extra-head and edition-extra-body).
+  * Styles - Package license presentation.
+  * Styles - Accessibility: Underlined links.
+  * Styles - Print problems fixed.
+  * Styles - Style with print button.
+  * Styles - Some Styles have been removed. They'll be available at exelearning.net.
+  * Styles - Add a zoom icon to the images using CSS (use the "exe-enlarge" class).
+  * Styles - Updated licenses.
+  * Styles - Images and media with caption (better presentation).
+  * Styles - Tknika Style with responsive design, by Ikuspe Sormen Estudioa.
+
+  * JavaScript - common.js has been refactored (all the previous functions are now part of $exe).
+  * JavaScript - "Hide feedback" custom text enabled.
+  * JavaScript - prettyPhoto (by Stephane Caron) instead of Lightbox (by Lokesh Dhakar). You can now show videos too.
+  * JavaScript - Experimental iDevices' JavaScript code out of common.js.
+  * JavaScript - We use Ext.MessageBox instead of libot_drag.js.
+  * JavaScript - Syntax highlighting: Prism, by Lea Verou.
+
+  * Edition - Confirm before undoing edits.
+  * Edition - License and footer are also visible while editing.
+  * Edition - When "creative commons: attribution 4.0" was selected, common.renderLicense was not returning the expected HTML.
+
+  * ePub3 - Presentation and JavaScript functionality revision.
+  * ePub3 - Use VIDEO or AUDIO instead of OBJECT. Add a link to FLV file before the VIDEO. Suggested by Rafael Vidal.
+
+  * HTML, JS and CSS bug fix:
+     * qTip out of the window. forja.cenatic.es: 1726.
+     * Click in order game error. Fixed by "frecorp". forja.cenatic.es: 2412.
+     * Image Gallery - Visible scrollbar while editing.
+     * Tknika Style revision.
+     * jQuery. sourceMappingURL removed. forja.cenatic.es: 2745.
+     * Package description should be escaped. forja.cenatic.es: 2680.
+     * Navigation menu font size problem.
+     * 404 errors.
+     * Initial splash image encoding problem (Windows 32).
+     * TinyMCE: Text deleted when updating a link (#42).
+     * Other minor CSS changes.
+
+  [ Juan Rafael Fernández ]
+  * Improved the .deb packaging
+    - Removed copied libraries, we'll use libraries available as dependencies
+    instead (BeautifulSoup, Feedparser, mimetex ...)
+    - Respect the FHS (locale, doc) with links
+    - The PO files are no longer installed, just the MO files
+    - New debian/copyright file, maintained it
+    - Fixed several lintian warnings and errors
+  * Documentation and English messages.
+    - Task 1080 - removed obsolete Manual.
+    - New mock 'definition' of eXe
+    - Rewrote README (HTML5 mentioned) and copyright files.
+    - New page, Legal Notes
+    - Fixed minor encoding (python vs. js) and spelling problems
+    - Fixed the FSF address.
+    - As spotted by Pablo Nimo, Wikipedia has a CC -by-sa license now
+    too. Added.
+  * Translations
+    - prepared mki18n.sh for 2.1.
+    - Prepared eXe for Amharic, Bengali, Farsi, Hebrew
+  * Updated the versions of some of the libraries used
+    - Updated flowPlayer.swf from v3.2.7 to v3.2.18 (now GPL-3)
+
+  [Translation Teams]
+  * New full Russian translation, by Alexey Loginov
+  * New full Basque translation, by Joxemi Andonegi
+  * New full Valencian translaton, by Pilar Embid Giner
+  * New full Italian translation, by Andrea Primiani
+  * New full French translation, by Jesús Miguel Domínguez
+  * New full Portuguese translation, by Dionisio Martínez Soler
+  * New full Dutch translation, by Karel Werschkull
+  * New full Galician translation, by Pablo Nimo Liboreiro
+  * New full Catalan translation, by Carles Ferrando García
+  * New Spanish translation, by Juan Rafael Fernández
+  * Updated Norwegian translation, by Per-Henrik Kvalnes
+  * Initial partial translations into Arabic, Amharic and Bengali
+
+  [ Mike Dawson ]
+  * Fix Bug #2408.
+  * Remove PlaceTheObjects from list of idevices for users
+
+  [ Fran Macías ]
+  * New Feedback button for some idevices
+  * Add license management.
+
+  [ Antonio Monje ]
+  * Update contributors list, legal page and supported by...
+  * Update image in windows installer
+
+  [ Mercedes Cotelo Lois ]
+  * Fixed [iteexe-Bugs][2487] Contradictory licenses for CARM style
+  * Fixed [#2284] Outdated Release Notes on Help > Release Notes menu
+  * [#2493] No funciona repositorio estilos en Windows.
+    Explicitly set the downloaded ZIP file to be saved in temporary directory
+  * [#2493] No funciona repositorio estilos en Windows.
+    Escape Windows path backslashes in Javascript strings
+  * Implement Google Drive publication (disabled)
+  * Fix bug of false 'Style directory already exist' errors on creating style, caused by the absence of the 'style_name' field value
+  * Fix text of error message when style directory already exists
+  * Dialog box with style name input field must be a modal window
+  * Discard unused function 'styleDesigner.saveStyle'
+  * Easier modal window to prompt for style name when saving a new style
+  * Add 'extra-head' and 'extra-body' attributes to style config.xml file.
+  * On Windows, uploaded image files were corrupt.
+  * File '/tools' must be available with the other data files, as styles, or user config.
+
+  [ José Miguel Andonegi Martínez ]
+  * SCORM message text is changed to allow % character order change in Basque translation
+  * TinyMCE - Moodle skin with eXeLearning's icons.
+  * TinyMCE - Configuration: Theme, skin and skin variant. They are now easier to change using the Styles' config.xml file.
+  * Styles - Auto-numbered lists CSS and idea.
+  * JavaScript - SCORM: There's a case in which "completion_status" should be "incomplete".
+  * Edition - Show a warning message if a referenced resource does not exist.
+
+  [ José Ramón Jiménez Reyes ]
+  * TinyMCE - xhtmlxtras plugin: Specify the language of the current selection. Modified by Ignacio Gros.
+  * TinyMCE - advlink plugin: Provide linked file information (size and extension).
+  * Styles - Updated FPD-MEDU, now is responsive design.
+
+  [ Pedro Peña Pérez ]
+  * Update installers to include new needed libraries
+  * Fix problem with translations in tinymce 3.5.11 popups
+  * Fix [#2519]: Error on Debian eXe development package (02/06/2015)
+    Fix problem by which user configured locale is overriden by chooseDefaultLocale if not googleApiClientID is configured
+    Fix chooseDefaultLocale: in Debian systems, localeDir (/usr/share/locale) can contain locale directories without exe.mo, so no choose these dirs
+    Guess correct locale based in user environment when no locale is configured in config file
+  * Fix [#2546] Link to https makes eXe crash.
+  * Fix [#2661]: Problema en el texto del botón de retroalimentación
+  * Fix [#2662]: Write texts in dropdown . Form lom and lom es
+  * Force selection of value in combo boxes of Properties->Package tab
+  * Fix [#2687]: Ocultar los idevices experimentales.
+  * Implement Procomún publication
+  * Show nested nodes in epub3 navigation.
+    Fixes [#2806]: "No se mantiene sangrado índices exportaciones epub3"
+  * Add checkers to detect duplicated idevice ids and wrong idevice next id.
+    Fixes [#2763]: Comportamiento extraño en idevice
+  * Allow any iso 8601 date time format for datetime fields in lom/lom.es metadata.
+    Fixes [#2710] Caso extraño en importados de metadatos
+  * Set correct language when inserting an empty optional field in lom metadata form.
+    Fixes [#2793] Bug metadatos lom-es
+  * Fix wrong file format error opening elp without idevices
+  * Allow to set empty value for license: "(void)"
+    Don't show license footer when no license setted (for example with old package versions)
+    Fixes [#2758]: License problem and [#2655]: The package license can't be deleted
+  * Fix style creation in some browsers
+  * Fix epub3 table of contents nesting
+  * Escape xml entities when exporting LOM and LOM-ES metadata.
+    Fixes #22
+  * Preserve first html filename when uniquifying html file names for exports.
+    Fixes #18
+  * Replace some forja.cenatic.es links
+  * Replace some 127.0.0.1 references with exeAppUri.
+    Fixes #20
+  * Fallback to english locale if not locale autodetected
+  * Configure pybabel to catch more strings to translate.
+    Fixes #26
+  * Calculate exeAppUri after server initialization (found free port)
+    Fixes #19
+  * Add exe/tools to Mac OS X package.
+    Fixes #25
+  * Don't try to autodetect encoding of config.xml of a style until default decode error.
+    Fixes #27
+  * Move LOM.es classification sources file to github.
+    Fixes #28
+  * Don't close and clear client handle on connection failure.
+    Fixes #23
+  * More reliable styleIdFromName.
+    Fixes #27
+  * Encode file name urls of files added to a style.
+    Fixes #31
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 27 Apr 2016 13:27:17 +0200
+
 intef-exe (3:2.0.4) lucid; urgency=low
 
   [ Pedro Peña ]
@@ -7,14 +208,14 @@ intef-exe (3:2.0.4) lucid; urgency=low
 
 intef-exe (3:2.0.3) lucid; urgency=low
 
-  [Mercedes Cotelo]
+  [ Mercedes Cotelo ]
     Fix bug [#2413]: Actualización Firefox 36.0 en Debian Ubuntu Problemas
 
   [ Juan Rafael Fernández ]
   * Trying to solve the menu+xpm / freedesktop+png confusion
   * Another fix for bug [#2258] No call to update-mime-database
 
-  [ Pedro Peña Pérez ]
+  [ Pedro Peña ]
   * Fix bug [#2303]: Wrong file format problem
 
  -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 04 Mar 2015 15:24:22 +0100
@@ -96,12 +297,12 @@ python-intef-exe (3:2.0.1) lucid; urgency=low
   * Fix bug #2261: "Submit icons were not visible (Ubuntu / FF 32.0.4)"
   * Single Page Export: Add a new class to each node with its level ("level-1-node", etc.)
   * Fix bug #2273: "Some contents disappeared when the was an horizontal menu"
-
+  
   [Juan Rafael Fernández]
   * Debian package conformance review
   * Fix bug #2250: "Is XUL necessary to display the manual?"
   * License specified in the About page
-
+  
   [Mercedes Cotelo]
   * Fix bug #2211: "Cambio de nombre de plantilla carm a CARM"
   * Fix bug #2263: "Modificación estilo CARM y CeDeC Derivados"
@@ -110,19 +311,18 @@ python-intef-exe (3:2.0.1) lucid; urgency=low
   * Fix bug #2245: "Backwards compatibility may not work"
   * Fix bug #2258: "No call to update-mime-database"
   * Fix bug #2262: "Doble clic sobre archivo elp"
-  * New experimental category for Idevices
+  * New experimental category for Idevices 
 
   [Translation Teams]
   * Updated translations of Spanish, Russian, Italian, French, Dutch, Valencian, Basque,
     Portuguese and Gallician.
-
+  
  -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 29 Oct 2014 13:38:26 +0100
 
 python-intef-exe (3:2.0) lucid; urgency=low
 
   [Antonio Moreno]
-  * Fix bug #1501: Java applet does not allow insertion htm files.
-    Now inside "Others" section
+  * Fix bug #1501: Java applet does not allow insertion htm files. Now inside "Others" section.
   * Fix bug #1657: Accessibility license related Wikipedia  downloads
   * Updated file SCORM_API_wrapper.js for SCORM12 and SCORM2004
   * Change: APIWwraper.js  replaced by  SCORM_API_Wrapper.js
@@ -132,8 +332,7 @@ python-intef-exe (3:2.0) lucid; urgency=low
   * Replacing SCORM2004 schemes
   * Including an XSD file for SCORM exports.
   * Including AC_RunActiveContent.js inside SCORM1.2
-  * Colaboration fixing bug #1672: "Malfunction Next and Prev buttons inside
-    SCORM exports"
+  * Colaboration fixing bug #1672: "Malfunction Next and Prev buttons inside SCORM exports"
   * Enabling SCORM1.2 and SCORM2004 exports.
   * New functions added to SCORM_API_Wrapper.js
   * Fix bug #1630: Error 404 with wikipedia images.
@@ -151,52 +350,40 @@ python-intef-exe (3:2.0) lucid; urgency=low
 
   [Fran Macías]
   * New button to delete the idevice.
-  * Using a default style. If the style don't exist when user open a elp,
-    the default is used.
+  * Using a default style. If the style don't exist when user open a elp, the default is used.
   * Idevice "Image Magnify": migration from flash to javascript.
   * Adaptation of the script "mojomagnify.js" ( http://www.nihilogic.dk/labs/mojomagnify/).
   * New idevice "Note", to create non-exportable comments.
   * Fix bug:  "Image magnify IE8 compatibility"
   * New button in idevice "Note": "Delete all notes", to clear all comments.
-  * New option in the "Preferences" dialog: the user can select any Internet browser
-    (installed or not installed browsers).
+  * New option in the "Preferences" dialog: the user can select any Internet browser (installed or not installed browsers).
   * Restore styles. If the user styles folder is empty, eXeLearning restore the styles.
   * Fix bug: Removed reference to icon notaidevice.
   * Open filepicker (select file dialog)  with default file name
   * Added new key("defaultStyle") in "exe.conf" to define default style.
-  * Added new key("styleSecureMode") in "exe.conf" to allow execution python
-    scripts in export.[User] styleSecureMode = 0 ,allows execution of
-    scripts
-  * Fix bug [#2094]: "Imported .zip file style doesn't update" (don't import
-    style with config.xml not utf-8  charset)
-  * Update styles folder (only when user style folder date < exelearning style
-    folder date). For preinstalled styles, not for personal/downloaded styles.
+  * Added new key("styleSecureMode") in "exe.conf" to allow execution python scripts in export.[User] styleSecureMode = 0 ,allows execution of scripts
+  * Fix bug [#2094]: "Imported .zip file style doesn't update" (don't import style with config.xml not utf-8  charset)
+  * Update styles folder (  only when user style folder date < exelearning style folder date ). For preinstalled styles, not for personal/downloaded styles.
   * New option 'docType' in Preferences Panel.
   * Now "Cloze idevice" allows hide sentences with blanks.
   * Modified  input length for multiple correct answers  (Cloze and Clozelang idevices)
-  * Removed references to 'magnifier.swf' when the user open a elp created with older
-    versions.
+  * Removed references to 'magnifier.swf' when the user open a elp created with older versions.
 
   [Ignacio Gros]
-  * Fixed bug #1630: "Images with relative path (404 errors when exporting a Wikipedia
-    article)"
-  * New - Styles: Default styles revision (unused and unnecessary icons, CSS and images
-    removed)
-  * New - Some files (panel-amusements.png, stock-stop.png...) are copied to the destination
-    folder (only when they are not in the Style)
+  * Fixed bug #1630: "Images with relative path (404 errors when exporting a Wikipedia article)"
+  * New - Styles: Default styles revision (unused and unnecessary icons, CSS and images removed)
+  * New - Some files (panel-amusements.png, stock-stop.png...) are copied to the destination folder (only when they are not in the Style)
   * New - Styles: Presentation (font sizes, etc.) revision
   * Feature Request #1832 - All Styles have free licenses
   * Feature Request #2073 - Styles: favicon.ico is not required
   * Feature Request #2074 - Use the Style's base.css file if it exists while editing too
   * Feature Request #1591 - common.js should be included just once
-  * Fixed bug #1576 - swf: Wrong path after changing its size when the elp name had a space
-    or special characters
+  * Fixed bug #1576 - swf: Wrong path after changing its size when the elp name had a space or special characters
   * New - HTML cleanup: Unnecessary line breaks removed
   * Feature Request #1667 - Wikipedia styles in an external file
   * New - No more inline styles in the content wrapper
   * Fixed bug #1861 - Clearfix solution improved
-  * Fixed bug #1723 - Magnifier and image gallery: Clearfix problem when creating a website
-    with a high menu
+  * Fixed bug #1723 - Magnifier and image gallery: Clearfix problem when creating a website with a high menu
   * Feature Request #1690 - "IE Compatibility View on" warning page
   * Feature Request #1592 - iDevices icons out of the HTML (CSS instead) + Styles compatibility
   * New - Display the icons only if they exist
@@ -207,42 +394,35 @@ python-intef-exe (3:2.0) lucid; urgency=low
   * New - "idevice_inner" is only present when the iDevice has "emphasis"
   * New - MAX and EducaMadrid Styles
   * New - Todo-FP and INTEF logos update (no institutional logos)
-  * New - The iDevice content is now in a container called "iDevice_content_wrapper" to make
-    the appearance control easier
+  * New - The iDevice content is now in a container called "iDevice_content_wrapper" to make the appearance control easier
   * New - "iDevice_wrapper" wraps each iDevice
   * New - Unique ID for each iDevice when creating a single page
-  * New - Style revision: Position of some elements (iDevice titles, iDevice headers...) in
-    different Styles
+  * New - Style revision: Position of some elements (iDevice titles, iDevice headers...) in different Styles
   * New - Style information update (config.xml)
   * Feature Request #1664 - libot_drag.js is now part of common.js
   * Fixed bug #1756 - Error showing/hiding the feedback due to a change made in element.py
   * New - HTML Meta Tags (language, description, author)
-  * New - HTML Meta Tags (generator meta tag in HEAD instead of an HTML comment): It includes
-    the program version
+  * New - HTML Meta Tags (generator meta tag in HEAD instead of an HTML comment): It includes the program version
   * Fixed bug - True/False iDevice: No space between CLASS and STYLE
   * Fixed bug - True/False iDevice: JavaScript error handling (undefined ID)
   * Fixed bug #1760 - SCORM/IMS export: Some files were missing in the imsmanifest.xml file
   * Feature Request #1761 - #siteFooter out of #main + #siteFooter in #outer in SCORM
   * New - The bottom pagination is now outside #main, right before the footer
-  * New - #main has now a wrapper to solve some problems like the Internet Explorer focus bug
-    (fixed in all Styles)
-  * New - The HTML is not minified: We get the line breaks back to make it easier to edit
-    (the line breaks are now in a variable to make minimization easier)
+  * New - #main has now a wrapper to solve some problems like the Internet Explorer focus bug (fixed in all Styles)
+  * New - The HTML is not minified: We get the line breaks back to make it easier to edit (the line breaks are now in a variable to make minimization easier)
   * Collaboration - HEAD and BODY extra content (defined in the config.xml file of the Style)
   * Fixed bug - Right/Wrong answers background and text colors
   * New - JavaScript: MediaElement.js player: Dynamic load
   * New - JavaScript: jQuery in exported and incluided in HEAD
   * New - JavaScript: i18n (in HEAD)
-  * New - JavaScript: Hide/Show iDevices (available in all Styles but hidden by default) when
-    there's more than one iDevice
+  * New - JavaScript: Hide/Show iDevices (available in all Styles but hidden by default) when there's more than one iDevice
   * New - JavaScript: Hide/Show iDevice option visible in some Styles
   * New - JavaScript: jQuery Lightbox2 by Lokesh Dhaka (Image Gallery iDevice)
   * New - Lightbox can now be used out of the Image Gallery iDevice
   * New - JavaScript: Adding the "js" class to the BOBY tag when JS is enabled
   * New - Gallery iDevice: Files should be referenced only once in the imsmanifest.xml file
   * New - CSS: Responsive design (INTEF, INTEF-web-horizontal-nav, EducaMadrid and MAX Styles)
-  * New - JavaScript: Hide/Show navigation link in some Styles (INTEF, INTEF-web-horizontal-nav,
-    EducaMadrid, MAX)
+  * New - JavaScript: Hide/Show navigation link in some Styles (INTEF, INTEF-web-horizontal-nav, EducaMadrid, MAX)
   * Feature Request #1343 - "Skip navigation" link (it becomes visible with keyboard focus)
   * New - XML tag removed from the beginning of the XHTML code to prevent problems in some servers
   * New - Credits (about eXe): New contents and design
@@ -250,11 +430,9 @@ python-intef-exe (3:2.0) lucid; urgency=low
   * Fixed bug #1948 - Problems with iframes and wide contents
   * Collaboration - CSS: MAX Style (background image for the node title by Ana Simón)
   * Fixed bug #2028 - MediaElement.js did not respect the paragraph text alignment
-  * Fixed bug #2042 - Problems with svg in the authoring page + 404 error caused by background
-    image CSS property in browsers with no svg
+  * Fixed bug #2042 - Problems with svg in the authoring page + 404 error caused by background image CSS property in browsers with no svg
   * Fixed bug #1910 - 404 errors caused by common.js (provisional solution)
-  * Fixed bug #2032 - Youtube iframes: wmode=transparent so the videos don't hide the menus and
-    some dialogs
+  * Fixed bug #2032 - Youtube iframes: wmode=transparent so the videos don't hide the menus and some dialogs
   * Fixed bug #1375 - iDevices: (X)HTML and accessibility revision (only eXe's and FPD's iDevices)
   * New - Full Styles revision after the accessibility revision
   * Feature Request #1834 - Single page: Node titles level (more than one H1)
@@ -268,18 +446,14 @@ python-intef-exe (3:2.0) lucid; urgency=low
     Editor height
     New - Image header and caption (advimage and media plugins)
     New - Advanced alignment plugin: Align images and media elements with caption and/or footer
-    Feature Request #1543 - CSS multi-column layouts (templates): template_external_list_url
-    depends on eXe's language
-    Fixed bug #1927 - HTML5 audio error: Replace all spaces by _ (the file name changes, so the src
-    has to change too)
+    Feature Request #1543 - CSS multi-column layouts (templates): template_external_list_url depends on eXe's language
+    Fixed bug #1927 - HTML5 audio error: Replace all spaces by _ (the file name changes, so the src has to change too)
     Fixed bug #1811 - Encoding problems (entity_encoding set to "raw")
-    Collaboration #2018 - Close full screen TinyMCE before executing "changeNode" so all the changes
-    are saved
+    Collaboration #2018 - Close full screen TinyMCE before executing "changeNode" so all the changes are saved
     New - Clearing Plugin
     New - Media plugin: Hide the file browser when "iframe" is selected (see FR #2044)
     Fixed bug #2092 - No new base64 images + Drag and drop disabled
-    Fixed bug #2120 - Media plugin (iframe): We remove the protocol from Youtube, Google Maps, Vimeo
-    and G. Video and we add it with JS in local files
+    Fixed bug #2120 - Media plugin (iframe): We remove the protocol from Youtube, Google Maps, Vimeo and G. Video and we add it with JS in local files
     New - Default configuration: It allows anything
     Fixed bug #2064 - Enable/Disable TinyMCE on demand when there's more than one
     New - Paste code plugin: We add a BR after the code so it's easier to write more
@@ -290,8 +464,7 @@ python-intef-exe (3:2.0) lucid; urgency=low
   * Design and implementation of LOM/LOM-ES support in eXe and their forms
 
   [José Miguel Andonegui]
-  * Improve Resources Report: now pages and idevices without resources are referenced and a new filed
-    is added to reference .elp file
+  * Improve Resources Report: now pages and idevices without resources are referenced and a new filed is added to reference .elp file
   * Fix bug [#2159] favicon.ico is not included in SCORM export when extra export formats are included
   * Fix bug [#2155] Two issues related to XLIFF import
   * Fix bug [#2150] Upgrade FPD idevices to translate instructions from Spanish to English
@@ -308,51 +481,32 @@ python-intef-exe (3:2.0) lucid; urgency=low
   * FR [#2002] TinyMCE configuration options: entities vs UTF-8: now Tiny works in UTF-8
 
   [José Ramón Jiménez]
-  * Fix bug #1451: "Error de funcionamiento Actividad espacios en blanco con opción
-    calificación inmediata activada"
-  * Fix bug #1560: "Agrega no acepta el caracter ':' en los nombres de fichero incluidos
-    en un zip a importar" Make the problem that will not accept SCORM files with strange
-    names corrected. All names by passing files to ascii characters are normalized and
-    subsequently removed other than letters, numbers, or [-_.] And turning the blanks
-    with "_".
-  * Fix bug #1655: "Incorrecto funcionamiento galería de imágenes" The problem adding
-    images to the gallery before doubling the previous corrected.
-  * Fix bug #1662: "Error autopublicación Agrega" The problem is corrected zombies
-    resources loading package. The names of the images are normalized to avoid
-    weird characters and not complain Make.
-  * Fix Bug #1687: "No se elimina archivo flv" Resources are removed in a .elp that were
-    not being used.
-  * Fix bug #1693: "elp con espacio en blanco al final" The package name becomes when
-    you have strange characters to avoid problems with spaces, colons, etc.
-  * Fix bug #1976] "Any resource created in old version of eXeLearning with space in
-    name gets deleted" It prevents the name of a resource may be blank, in which
-    case it is encoded in hexadecimal.
+  * Fix bug #1451: "Error de funcionamiento Actividad espacios en blanco con opción calificación inmediata activada"
+  * Fix bug #1560: "Agrega no acepta el caracter ':' en los nombres de fichero incluidos en un zip a importar" Make the problem that will not accept SCORM files with strange names corrected. All names by passing files to ascii characters are normalized and subsequently removed other than letters, numbers, or [-_.] And turning the blanks with "_".
+  * Fix bug #1655: "Incorrecto funcionamiento galería de imágenes" The problem adding images to the gallery before doubling the previous corrected.
+  * Fix bug #1662: "Error autopublicación Agrega" The problem is corrected zombies resources loading package. The names of the images are normalized to avoid weird characters and not complain Make.
+  * Fix Bug #1687: "No se elimina archivo flv" Resources are removed in a .elp that were not being used.
+  * Fiz bug #1693: "elp con espacio en blanco al final" The package name becomes when you have strange characters to avoid problems with spaces, colons, etc.
+  * Fix bug #1976] "Any resource created in old version of eXeLearning with space in name gets deleted" It prevents the name of a resource may be blank, in which case it is encoded in hexadecimal.
   * Fix bug #1937: "FPDTruefalse doesn't render images in instruction"
-  * Fix bug #1964: "iDevice sitio web externo" When a url is entered in this idevice,
-    if exe detects that leads http: // in the description it is put. This is not done
-    because there is no way around the passive block mixed content.
+  * Fix bug #1964: "iDevice sitio web externo" When a url is entered in this idevice, if exe detects that leads http: // in the description it is put. This is not done because there is no way around the passive block mixed content.
   * Added possibility to choose browser in preferences menu.
   * Styles manager using ajax + extjs + json implemented.
   * FPD-MEDU style is updated to match the new format of the iDevices.
 
   [Juan Rafael Fernández]
-  * Improved the English of many UI messages and in-code comments, and translation into
-    English of the ones still in Spanish
+  * Improved the English of many UI messages and in-code comments, and translation into English of the ones still in Spanish
   * Converted to utf-8 the .py files that have Spanish comments
-  * Removed plenty of obsolete, redundant and useless PO files (btw, Maori is a
-    non-supported language now)
-  * Fixed  mistakes on the headers of  PO files, caused by a script in a former commit.
-    Added the Language field
+  * Removed plenty of obsolete, redundant and useless PO files (btw, Maori is a non-supported language now)
+  * Fixed  mistakes on the headers of  PO files, caused by a script in a former commit. Added the Language field
   * Found some non-localized strings. Localized them.
   * Fixed the permissions of some files (no need to have the -x bit on)
   * No need for ^M newline codes in code files. dos2unix'ed them.
   * Cleaned the tools directory, removed obsolete scripts
   * Mki18n.sh: updated --version from '1.04.1' to '2.0'. Documented the script.
-  * Some work on the languages at preferencespage.py. Improvements in the names of the
-    languages. Added "Galician Wikipedia Article" to Wiki iDevice options.
+  * Some work on the languages at preferencespage.py. Improvements in the names of the languages. Added "Galician Wikipedia Article" to Wiki iDevice options.
   * Attachmentidevice: added .odp examples to the .ppt references
-  * Add a comment to the point in lomvocab.js that is wrong and will have to be fixed some
-    day. Compatibility of Spanish translations with the official LOM-ES standard.
+  * Add a comment to the point in lomvocab.js that is wrong and will have to be fixed some day. Compatibility of Spanish translations with the official LOM-ES standard.
 
   [Mercedes Cotelo]
   * Fix bug #1951: ".svg files are image files"
@@ -383,25 +537,20 @@ python-intef-exe (3:2.0) lucid; urgency=low
   * Prepared to translate internet explorer compatibility mode warning page [#1690]
   * Check that eXe is not running before install and uninstall on windows
   * Better tilde and other symbols management in filenames on windows systems
-  * Open elp files with double click when filename has tilde and others symbols on windows
-    systems
+  * Open elp files with double click when filename has tilde and others symbols on windows systems
   * Not show symlinks in windows filepicker
-  * Localize directory names (Documents -> Mis documentos, Pictures -> Mis Imágenes, ...)
-    in windows filepicker.
+  * Localize directory names (Documents -> Mis documentos, Pictures -> Mis Imágenes, ...) in windows filepicker.
   * Disable problematic installation directory selection in windows installer
-  * Fix bug #1630: "Artículo Wikipedia: faltan varias imágenes (error 404)" Not added
-    duplicated user resources in wikipedia idevice
+  * Fix bug #1630: "Artículo Wikipedia: faltan varias imágenes (error 404)" Not added duplicated user resources in wikipedia idevice
   * Implementation and improvements of EPUB3 exporter based on previous work
   * Prevent using installed eXe libs when launching in standalone or portable mode
   * Prevent show system critical-error-handler message box. Instead send to eXe process
   * Design and implementation of LOM/LOM-ES support in eXe and their forms
   * Integration of LOM/LOM-ES metadata with SCORM exports
-  * Refactor package properties form to adapt and autocomplete some fields of metadata
-    forms: new unified cataloguing section.
+  * Refactor package properties form to adapt and autocomplete some fields of metadata forms: new unified cataloguing section.
   * Mark visually dirty fields when changed in all forms
   * Added LOM metadata importers
-  * Include mediaelement javascript library for FR #1539. Added checkbox to TinyMCE media
-    plugin. Include in all exports when needed.
+  * Include mediaelement javascript library for FR #1539. Added checkbox to TinyMCE media plugin. Include in all exports when needed.
   * Save package on success form submit. Mark dirty when no previously saved
   * Implementation of new preview tool
   * Migrated preferences windows from iframe to javascript
@@ -409,33 +558,27 @@ python-intef-exe (3:2.0) lucid; urgency=low
   * Fix iframe bug in Chrome/Chromium in about, preferences, xliff... pages
   * Fix bug #1836: "Single page export: No alert after finishing"
   * Changed policy when printing: no autoclose temporary printing document, ask user to close.
-  * Update version format of content.xml to v3 to fix #1865: "Character sequences lost in
-    saving (\t and \n)"
-  * Disable browser history. Fix #1799: "Error cuando se clica sobre avanzar o retroceder
-    página del navegador"
-  * Update cmdline usage info for exe executable, now translatable. Fix #1785:
-    "Parámetro -h da información incompleta"
+  * Update version format of content.xml to v3 to fix #1865: "Character sequences lost in saving (\t and \n)"
+  * Disable browser history. Fix #1799: "Error cuando se clica sobre avanzar o retrocederr página del navegador"
+  * Update cmdline usage info for exe executable, now translatable. Fix #1785: "Parámetro -h da información incompleta"
   * Fix bug #1851: "Problemas con audio mp3 al exportar"
   * Fix bug #1871: "Fallo al guardar como (guarda undefined.elp)"
   * Fix bug #1624: "La exportación a XLIFF falla si hay presente un Idevice Rellenar Huecos"
   * Prevent cross site scripting problems in some browsers previewing java applets
   * Fix preview problems in java applet idevice
   * Not try to generate debug package for Fedora/Redhat
-  * Refactoring of version release and revision compute. Updated loading mask and about
-    page to present correctly the revision
+  * Refactoring of version release and revision compute. Updated loading mask and about page to present correctly the revision
   * Idevice panel refactoring: group idevices by default and edit visibility
   * Always show preferences window on eXe start. Added checkbox to disable show on start
   * Fix bug persisting selected web browser
   * Fix preferences window browser selector in Mac OS X
   * Fix minor bugs in style manager panel
-  * Delegate idevice sorting to python code (prevents javascript sorting based in
-    local browser language)
+  * Delegate idevice sorting to python code (prevents javascript sorting based in local browser language)
   * Locale alphabetical sort of style names in style manager and style menu
   * Disable old idevices hidding mechanism
   * Translate old idevices hidding mechanism config to new
   * Adapt idevice editor to new Style object
-  * Refactor ideviceToggler.init to prevent javascript error in some idevices
-    (ImageMagnifier and RSS for example).
+  * Refactor ideviceToggler.init to prevent javascript error in some idevices (ImageMagnifier and RSS for example).
   * All exports editable by default (include content.* in exports)
   * Add option to exe_do to establish field values of Package object. Patch from ULHI
   * Implemented CSV resource report in exe_do. Patch from ULHI
@@ -445,11 +588,9 @@ python-intef-exe (3:2.0) lucid; urgency=low
     -Scan contents to find really used resources
     -Build metadata according to found resources in previos pass
   * Add resources report to tools menu. Partial patch from ULHI
-  * Added advanced option to generate ELP package that may be opened with old versions
-    of eXe
+  * Added advanced option to generate ELP package that may be opened with old versions of eXe
   * Rename produced packages to include INTEF word
-  * Include VC2008 redist in windows installers and install if necessary (fix eXe launch
-    when user not have msvcrt90.dll)
+  * Include VC2008 redist in windows installers and install if necessary (fix eXe launch when user not have msvcrt90.dll)
   * Fix version check in windows standalone mode (not always extract)
   * Mark package as dirty when style change (activates preview refresh)
   * More reliability checking existing web browsers
@@ -457,71 +598,51 @@ python-intef-exe (3:2.0) lucid; urgency=low
   * Unit test to check duplicated idevice names in all languages
   * Fix run of unit tests
   * Implement style name translation. Fixes bug #1906 "Strings not internationalized"
-  * Added zh_CN lang copied from zh. Fixes bug #1907 "The zh is needed by gettext and
-    can not disappear mki18n.sh execution to create the new lang"
+  * Added zh_CN lang copied from zh. Fixes bug #1907 "The zh is needed by gettext and can not disappear mki18n.sh execution to create the new lang"
   * Renamed exe/locale dirs to complain gettext locale names standard
   * Add lang attributes to html tag of eXe main page
   * Simple changes to add compatibility with pillow library
   * Fix bug #1855: "Error fusionar elp"
-  * Clean up unused resources after check package when loading elp. Fixes bug #1801:
-    "Archivo fantasma"
-  * Apply patch
-    https://github.com/twisted/twisted/commit/f8b6c1b53e446f73f5a8907519ef9b4b2da9682d
-    to support Range header request in eXe internal web server. This allows seeking
-    in video/audio content in preview mode and prevents some errors.
-  * Correctly map package license with exported html footer license. Fixes bug #1864
-    "Added link to local FDL license when needed Updated local FDL license to 1.3"
-  * Properly upgrade idevices that used libot_drag.js Fix #1929 "Error Agrega: archivo
-    no existe y error metadatos" (file not found part)
+  * Clean up unused resources after check package when loading elp. Fixes bug #1801: "Archivo fantasma"
+  * Apply patch https://github.com/twisted/twisted/commit/f8b6c1b53e446f73f5a8907519ef9b4b2da9682d to support Range header request in eXe internal web server. This allows seeking in video/audio content in preview mode and prevents some errors.
+  * Correctly map package license with exported html footer license. Fixes bug #1864 "Added link to local FDL license when needed Updated local FDL license to 1.3"
+  * Properly upgrade idevices that used libot_drag.js Fix #1929 "Error Agrega: archivo no existe y error metadatos" (file not found part)
   * Fix bug #1925: "Error when merging files"
   * Fix bug #1931: "Error exportado scorm1.2"
-  * Fix "C:\Program Files (x86)\exe\library.zip\nevow\liveevil.py:315: UserWarning:
-    Could not open liveevil.js" error launching installed eXe in Windows
+  * Fix "C:\Program Files (x86)\exe\library.zip\nevow\liveevil.py:315: UserWarning: Could not open liveevil.js" error launching installed eXe in Windows
   * Clean wrong fuzzy msgids in po files. Set correct project id in po files
-  * Fix first part of bug [#1946] "ERROR EN LA EXPORTACIÓN cannot concatenate 'str'
-    and 'NoneType' objects"
-  * Persist in exe.conf the group idevice user selection. Fixes bug #1936: "Opción
-    desagrupar idevices"
+  * Fix first part of bug [#1946] "ERROR EN LA EXPORTACIÓN cannot concatenate 'str' and 'NoneType' objects"
+  * Persist in exe.conf the group idevice user selection. Fixes bug #1936: "Opción desagrupar idevices"
   * Disable mediaelement in EPUB3 exports
   * Added creative commons versions to eXe licences
-  * Fix error in imsmanifest when wikipedia idevice is present: resource "fdl.html"
-    listed but not included
-  * Fix bug #1976: "Any resource created in old version of eXeLearning with space in
-    name gets deleted"
+  * Fix error in imsmanifest when wikipedia idevice is present: resource "fdl.html" listed but not included
+  * Fix bug #1976: "Any resource created in old version of eXeLearning with space in name gets deleted"
   * Fix bug #1966: "Popup URL field doesn't manage correctly uploaded files"
   * Fix bug #1991: "Insertar /editar medio embebido. Insert/edit embedded media"
   * Fix bug #1999: "Visualización menú preferencias en Mac os x 10.9"
-  * Set correct path separator in javascript filepicker code when using windows.
-    Fixes bug #2011: "Exportar como página html única"
+  * Set correct path separator in javascript filepicker code when using windows. Fixes bug #2011: "Exportar como página html única"
   * Fix bug #2015: "Problemas sistema de búsqueda a la hora de nombrar archivos. Filepicker"
   * Fix bug #2093: "Exportación IMS CP no incluye metadatos LOM-es"
   * Fix bug #2084: "No reconoce campos de propiedades paquete elp de versión 7.2"
-  * Wait until authoring page reload before eXe main page reload. This prevents loss
-    changes in tinymce full screen mode
-  * Removed non-standard adlcp namespace from IMS exports. Fixes validation of ims
-    exports from LOM/LOM-ES metadata
-  * Implement c_ translation function: translates strings to language specified in
-    package properties
+  * Wait until authoring page reload before eXe main page reload. This prevents loss changes in tinymce full screen mode
+  * Removed non-standard adlcp namespace from IMS exports. Fixes validation of ims exports from LOM/LOM-ES metadata
+  * Implement c_ translation function: translates strings to language specified in package properties
   * Reload authoring page if package language changed
   * Clear and reset buttons in all properties forms
-  * Rename exe.conf and idevice store and inform user if problems during load.
-    Fixes bug #2047: "New installations don't fix wrong exe.conf and iDevice stores"
-  * Change node of idevice does not modify idevice id. Fixes bug #2123: "Problem in
-    Multi-choice and FPD-Multichoice idevices"
+  * Rename exe.conf and idevice store and inform user if problems during load. Fixes bug #2047: "New installations don't fix wrong exe.conf and iDevice stores"
+  * Change node of idevice does not modify idevice id. Fixes bug #2123: "Problem in Multi-choice and FPD-Multichoice idevices"
   * Fix navigation generation of scorm1.2 exports. Fixes bug #2138: "Ode que no valida"
   * Fix memory leaks when reloading authoring iframe. Fixes bug #2127: "Consumo de RAM"
   * Upgrade instructions in cloze idevices also in idevice store of user
   * Implement scorm2004 compliant navigation in scorm2004 exports
-  * Fix bug building imsmanifest resource files of style when using and imported style
-    in scorm exports.
+  * Fix bug building imsmanifest resource files of style when using and imported style in scorm exports.
   * Fix bug #2148: "Desaparecen textos en rellenar huecos"
   * Accept JSON format in --set option of exe_do (useful in some cases)
   * Fix --write_package option in exe_do if used with a export or import option
   * Added logfile param to exe_do that dumps checker info when loading a package
 
   [Translation Teams]
-  * New complete translations for Basque, Catalan, Dutch, French, Galician, Italian,
-    Portuguese, Russian, Spanish and Valencian
+  * New complete translations for Basque, Catalan, Dutch, French, Galician, Italian, Portuguese, Russian, Spanish and Valencian
   * Much improved translations for Farsi, German and Traditional Chinese
   * Prepared the system for Arab, Asturianu, Aragonés
 
@@ -544,12 +665,12 @@ python-intef-exe (2:2.0beta2) lucid; urgency=low
 
  -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 16 Dec 2013 17:25:12 +0100
 
-python-exe (2:2.0beta1) lucid; urgency=low
+python-intef-exe (2:2.0beta1) lucid; urgency=low
 
   [Pedro Peña]
   * Preparing changelog for next release
 
- -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 23 Sep 2013 09:15:29 +0200
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 14 Oct 2013 18:50:50 +0200
 
 python-exe (2:1.04.1.3605intef7.2) lucid; urgency=low
 
@@ -575,8 +696,7 @@ python-exe (2:1.04.1.3605intef7.1) lucid; urgency=low
 
   [Antonio Moreno]
   * Corregido bug #1657: "Accesibilidad a la licencia relacionada con las descargas de la wikipedia"
-  * Corregido bug #1630: "Artículo Wikipedia: faltan varias imágenes (error 404)". Con ayuda
-    de Ignacio Gros y Pedro Peña
+  * Corregido bug #1630: "Artículo Wikipedia: faltan varias imágenes (error 404)". Con ayuda de Ignacio Gros y Pedro Peña
 
   [Francisco Macías]
   * Añadido botón para borrar idevice sin necesidad de editar
@@ -589,8 +709,7 @@ python-exe (2:1.04.1.3605intef7.1) lucid; urgency=low
   * Revisión de los estilos por defecto, Intef, Cedec, Carm y Todo-FP
   * Aviso de vista de compatibilidad de Internet Explorer activada. Con ayuda de Pedro Peña
   * Corregido bug #1723: "Mala visión Galería de imágenes y Lupa en determinadas ocasiones"
-  * Añadidos nuevos estilos MAX y Educamadrid aportados por la Consejería de Educación de la
-    Comunidad de Madrid
+  * Añadidos nuevos estilos MAX y Educamadrid aportados por la Consejería de Educación de la Comunidad de Madrid
 
   [Juan Rafael Fernández]
   * Mejoras en algunas cadenas y textos originales
@@ -598,8 +717,7 @@ python-exe (2:1.04.1.3605intef7.1) lucid; urgency=low
   * Coordinación de la actualización de traducciones
 
   [José Ramón Jiménez]
-  * Corregido bug #1560: "Agrega no acepta el caracter ':' en los nombres de fichero incluidos en un zip
-    a importar"
+  * Corregido bug #1560: "Agrega no acepta el caracter ':' en los nombres de fichero incluidos en un zip a importar"
   * Corregido bug #1662: "Error autopublicación Agrega"
   * Corregido bug #1687: "No se elimina archivo flv"
   * Revisión de estilo FPD-MEDU
