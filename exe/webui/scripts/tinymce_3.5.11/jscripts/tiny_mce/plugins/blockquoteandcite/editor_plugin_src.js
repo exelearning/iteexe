@@ -1,5 +1,6 @@
 // Ignacio Gros (http://www.gros.es) for eXeLearning.net
-// Based in OtherXtras by José Ramón Jiménez Reyes para eXeLearning.net
+// Based in OtherXtras by José Ramón Jiménez Reyes for eXeLearning.net
+// Creative Commons Attribution 4.0 International: http://creativecommons.org/licenses/by/4.0/
 (function() {
 	tinymce.PluginManager.requireLangPack('blockquoteandcite');
 	tinymce.create('tinymce.plugins.BlockQuoteAndCite', {
@@ -8,7 +9,7 @@
 			ed.addCommand('mceBlockQuoteAndCite', function() {
 				ed.windowManager.open({
 					file : url + '/blockquoteandcite.htm',
-					width : 450,
+					width : 520,
 					height : 320,
 					inline : 1
 				});

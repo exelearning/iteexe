@@ -1,7 +1,6 @@
 /* 
-	exelearning's exemath plugin for TinyMCE 3.5.4.1
+	exelearning's exemath plugin for TinyMCE 3.5.11
 	Adapted by Ignacio Gros (http://www.gros.es) 
-	eXeLearning version: intef6.2 (available at https://forja.cenatic.es/frs/?group_id=197) 
 	Last eXeLearning version download page: http://exelearning.net/descargas/
 */
 (function() {
@@ -13,7 +12,7 @@
 			ed.addCommand('mceExeMath', function() {
 				ed.windowManager.open({
 					file : url + '/exemath.htm',
-					width : 600,
+					width : 650,
 					height : 620,
 					inline : 1
 				}, {
