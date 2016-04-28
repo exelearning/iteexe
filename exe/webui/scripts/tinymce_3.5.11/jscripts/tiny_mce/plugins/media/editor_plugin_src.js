@@ -1,7 +1,6 @@
 /* 
 	Moxiecode's media plugin adapted to eXeLearning by Ignacio Gros (http://www.gros.es) 
-	TinyMCE version: 3.5.7
-	eXeLearning version: intef6.3 (available at https://forja.cenatic.es/frs/?group_id=197) 
+	TinyMCE version: 3.5.11
 	Last eXeLearning version download page: http://exelearning.net/descargas/
 */
 // The New eXeLearning
