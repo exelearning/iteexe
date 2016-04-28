@@ -19,4 +19,5 @@ iframe {border: 1px solid gray}
 #video_options, #audio_options, #quicktime_options { display:none !important }
 #caption_panel fieldset input{width:240px}
 #use_mediaelement { display:none }
+#prev { height: 250px }
 /* /The New eXeLearning */

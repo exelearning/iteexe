@@ -395,7 +395,8 @@ function parse_media_html_attributes(c) {
 
 				ed.windowManager.open({
 					file : url + '/media.htm',
-					width : 430 + parseInt(ed.getLang('media.delta_width', 0)),
+					// The New eXeLearning (width was 430 instead of 500)
+					width : 500 + parseInt(ed.getLang('media.delta_width', 0)),
 					height : 500 + parseInt(ed.getLang('media.delta_height', 0)),
 					inline : 1
 				}, {

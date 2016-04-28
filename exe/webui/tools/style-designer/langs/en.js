@@ -121,6 +121,7 @@ var $i18n = {
 	No_Opener_Error : _("The Style Designer window is not open."),
 	Quit_Warning : _("This window will be closed. Please restart the tool."),
 	Information : _("Information"),
+	Error : _("Error"),
 	Restore_Instructions : _("Undo changes since last time you saved? This cannot be undone. "),
 	OK : _("OK"),
 	Cancel : _("Cancel"),

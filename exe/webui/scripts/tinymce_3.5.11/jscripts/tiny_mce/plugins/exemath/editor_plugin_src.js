@@ -13,7 +13,7 @@
 			ed.addCommand('mceExeMath', function() {
 				ed.windowManager.open({
 					file : url + '/exemath.htm',
-					width : 600,
+					width : 650,
 					height : 620,
 					inline : 1
 				}, {

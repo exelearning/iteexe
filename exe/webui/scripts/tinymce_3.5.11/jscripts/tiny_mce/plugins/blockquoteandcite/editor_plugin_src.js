@@ -9,7 +9,7 @@
 			ed.addCommand('mceBlockQuoteAndCite', function() {
 				ed.windowManager.open({
 					file : url + '/blockquoteandcite.htm',
-					width : 450,
+					width : 520,
 					height : 320,
 					inline : 1
 				});
