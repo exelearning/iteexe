@@ -8,12 +8,12 @@ _ = parent._;
 
 var $exeTinyMCE = {
 	
-	plugins: "exelist autolink lists link charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode",
+	plugins: "exelist autolink lists link charmap print preview anchor tooltips searchreplace visualblocks code fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode",
 	buttons1 : "newdocument | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify clearfloat addcontent | bullist numlist definitionlist | outdent indent blockquote blockquoteandcite | formatselect | fontsizeselect | fontselect | forecolor backcolor | superscript subscript | fullscreen",	
-	buttons2 : "undo redo | cut copy paste pastetext | pastehtml pastecode | searchreplace | link unlink anchor | removeformat | insertdatetime hr | charmap",
+	buttons2 : "undo redo | cut copy paste pastetext | pastehtml pastecode | searchreplace | link unlink anchor tooltips | removeformat | insertdatetime hr | charmap",
 	buttons3 : "template | table | code help",
 	// To add:
-		// buttons2 : "tooltip,image,media,exeeffects,exegames,cleanup,cite,abbr,acronym,del,ins,attribs,nonbreaking,charmap,exemath,styleprops",
+		// buttons2 : "image,media,exeeffects,exegames,cleanup,cite,abbr,acronym,del,ins,attribs,nonbreaking,charmap,exemath,styleprops",
 		// buttons3 : "codemagic",	
 	content_css: "/css/extra.css," + exe_style,
 	browser_spellcheck: true,
