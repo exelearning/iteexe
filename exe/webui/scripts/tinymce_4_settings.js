@@ -23,6 +23,7 @@ var $exeTinyMCE = {
 		{ title: _("2 columns 70% 30%"), url: "/scripts/tinymce_templates/2-70-30.html" },
 		{ title: _("3 columns"), url: "/scripts/tinymce_templates/3.html" }
 	],
+	path_to_folder: "/scripts/tinymce_4/js/tinymce/",
     
 	init: function(mode,criteria,hide){
 		
@@ -48,6 +49,8 @@ var $exeTinyMCE = {
 			plugins: this.plugins,
 			browser_spellcheck: this.browser_spellcheck,
 			templates: this.templates,
+			// Base URL
+			path_to_folder: this.path_to_folder,
 			// Images
 			image_advtab: true,
 			file_browser_callback: function(field_name, url, type, win){
