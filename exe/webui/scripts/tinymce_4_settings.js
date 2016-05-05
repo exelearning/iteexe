@@ -48,6 +48,11 @@ var $exeTinyMCE = {
 			plugins: this.plugins,
 			browser_spellcheck: this.browser_spellcheck,
 			templates: this.templates,
+			// Images
+			image_advtab: true,
+			file_browser_callback: function(field_name, url, type, win){
+				exe_tinymce.chooseImage(field_name, url, type, win);
+			},
 			toolbar: [
 				this.buttons1,
 				this.buttons2,
