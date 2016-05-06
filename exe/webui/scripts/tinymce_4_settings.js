@@ -46,6 +46,7 @@ var $exeTinyMCE = {
 			valid_children: this.getValidChildren(),
 			valid_elements: this.getValidElements(),
 			extended_valid_elements: this.getExtendedValidElements(),			
+			fix_list_elements: true,
 			plugins: this.plugins,
 			browser_spellcheck: this.browser_spellcheck,
 			templates: this.templates,
