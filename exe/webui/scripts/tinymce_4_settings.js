@@ -57,6 +57,9 @@ var $exeTinyMCE = {
 			file_browser_callback: function(field_name, url, type, win){
 				exe_tinymce.chooseImage(field_name, url, type, win);
 			},
+			// Media
+			media_alt_source: false,
+			media_poster: false,
 			toolbar: [
 				this.buttons1,
 				this.buttons2,
