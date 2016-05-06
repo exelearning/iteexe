@@ -8,7 +8,7 @@ _ = parent._;
 
 var $exeTinyMCE = {
 	
-	plugins: "exelist autolink lists link charmap print preview anchor tooltips searchreplace visualblocks code fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode exeimage",
+	plugins: "exelist autolink lists link charmap print preview anchor tooltips searchreplace visualblocks code fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode exeimage exealign",
 	buttons1 : "newdocument | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify clearfloat addcontent | bullist numlist definitionlist | outdent indent blockquote blockquoteandcite | formatselect | fontsizeselect | fontselect | forecolor backcolor | superscript subscript | fullscreen",	
 	buttons2 : "undo redo | cut copy paste pastetext | pastehtml pastecode | searchreplace | link unlink anchor tooltips | exeimage | removeformat | insertdatetime hr | charmap",
 	buttons3 : "template | table | code help",
