@@ -9,11 +9,14 @@ _ = parent._;
 var $exeTinyMCE = {
 	
 	plugins: "exelist autolink lists link charmap print preview anchor tooltips searchreplace visualblocks codemagic fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode exeimage exealign exemedia abbr",
-	buttons1 : "newdocument | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify clearfloat addcontent | bullist numlist definitionlist | outdent indent blockquote blockquoteandcite | formatselect | fontsizeselect | fontselect | forecolor backcolor | superscript subscript | fullscreen",	
-	buttons2 : "undo redo | cut copy paste pastetext | pastehtml pastecode | searchreplace | link unlink anchor tooltips | exeimage exemedia | removeformat | insertdatetime hr | charmap",
-	buttons3 : "template | table | codemagic help",
+	// buttons1 : "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify clearfloat addcontent | bullist numlist definitionlist | outdent indent blockquote blockquoteandcite | formatselect | fontsizeselect | fontselect | forecolor backcolor | superscript subscript | fullscreen",	
+	// buttons2 : "undo redo | cut copy paste pastetext | pastehtml pastecode | searchreplace | link unlink anchor tooltips | exeimage exemedia | removeformat | insertdatetime hr del ins | charmap",
+	// buttons3 : "template | table | codemagic help",
+	buttons1 : "bold italic | formatselect fontsizeselect fontselect | forecolor backcolor",
+	buttons2 : "alignleft aligncenter alignright alignjustify clearfloat addcontent | bullist numlist definitionlist | link unlink | outdent indent | blockquote blockquoteandcite",	
+	buttons3 : "undo redo | cut copy paste pastetext | pastehtml pastecode | tooltips | exeimage exemedia | template | table | codemagic | fullscreen",	
 	// To add:
-		// buttons2 : "exeeffects,exegames,cite,abbr,acronym,del,ins,attribs,nonbreaking,exemath,styleprops"
+		// buttons2 : "exeeffects,exegames,cite,del,ins,attribs,nonbreaking,exemath,styleprops"
 	content_css: "/css/extra.css," + exe_style,
 	browser_spellcheck: true,
 	templates: [
