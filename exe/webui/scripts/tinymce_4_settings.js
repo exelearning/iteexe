@@ -9,9 +9,6 @@ _ = parent._;
 var $exeTinyMCE = {
 	
 	plugins: "exelist autolink lists link charmap print preview anchor tooltips searchreplace visualblocks codemagic fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode exeimage exealign exemedia abbr",
-	// buttons1 : "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify clearfloat addcontent | bullist numlist definitionlist | outdent indent blockquote blockquoteandcite | formatselect | fontsizeselect | fontselect | forecolor backcolor | superscript subscript | fullscreen",	
-	// buttons2 : "undo redo | cut copy paste pastetext | pastehtml pastecode | searchreplace | link unlink anchor tooltips | exeimage exemedia | removeformat | insertdatetime hr del ins | charmap",
-	// buttons3 : "template | table | codemagic help",
 	buttons1 : "bold italic | formatselect fontsizeselect fontselect | forecolor backcolor",
 	buttons2 : "alignleft aligncenter alignright alignjustify clearfloat addcontent | bullist numlist definitionlist | link unlink | outdent indent | blockquote blockquoteandcite",	
 	buttons3 : "undo redo | cut copy paste pastetext | pastehtml pastecode | tooltips | exeimage exemedia | template | table | codemagic | fullscreen",	
@@ -62,6 +59,21 @@ var $exeTinyMCE = {
 			// Media
 			media_alt_source: false,
 			media_poster: false,
+			// Style Formats
+			style_formats : [
+				{title: _('Inline'), items: [
+					{title: _('Bold'), icon: 'bold', format: 'bold'},
+					{title: _('Italic'), icon: 'italic', format: 'italic'},
+					{title: _('Underline'), icon: 'underline', format: 'underline'},
+					{title: _('Strikethrough'), icon: 'strikethrough', format: 'strikethrough'},
+					{title: _('Superscript'), icon: 'superscript', format: 'superscript'},
+					{title: _('Subscript'), icon: 'subscript', format: 'subscript'},
+					{title: _('Code'), icon: 'code', format: 'code'},
+					// Deletion and Insertion are not part of the default list
+					{title: _('Deletion'), inline: 'del'},
+					{title: _('Insertion'), inline: 'ins'}
+				]}
+			],
 			toolbar: [
 				this.buttons1,
 				this.buttons2,
