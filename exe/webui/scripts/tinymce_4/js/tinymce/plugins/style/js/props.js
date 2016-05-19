@@ -64,7 +64,10 @@ function init(ed) {
 	document.getElementById('toggle_insert_span').checked = applyActionIsInsert;
 
 	h = getBrowserHTML('background_image_browser','background_image','image','advimage');
-	document.getElementById("background_image_browser").innerHTML = h;
+	// The New eXeLearning
+	// document.getElementById("background_image_browser").innerHTML = h;
+	// We comment the previous line because that won't work in eXe
+	// / The New eXeLearning
 
 	document.getElementById('text_color_pickcontainer').innerHTML = getColorPickerHTML('text_color_pick','text_color');
 	document.getElementById('background_color_pickcontainer').innerHTML = getColorPickerHTML('background_color_pick','background_color');
@@ -271,6 +274,17 @@ function setupFormData() {
 		selectByValue(f, 'positioning_clip_top_measurement', getMeasurement(getVal(s, 0)));
 		f.positioning_clip_right.value = f.positioning_clip_bottom.value = f.positioning_clip_left.value;
 	}
+	
+	// The New eXeLearning	
+	// We hide the color picker links because they're not working
+	// We still have to enable them with getColorPickerHTML or we'll get an error
+	var spans = document.getElementById("styleprops").getElementsByTagName("SPAN");
+	for (var x=0;x<spans.length;x++) {
+		if (spans[x].id.indexOf("_color_pick")!=-1) {
+			spans[x].style.display = "none";
+		}
+	}
+	// / The New eXeLearning
 
 //	setupBox(f, ce, '', 'border', 'Color');
 }
@@ -434,6 +448,11 @@ function applyAction() {
 
 		ed.dom.setAttrib(nodes, 'style', tinyMCEPopup.editor.dom.serializeStyle(newStyles));
 	}
+	
+	// The New eXeLearning
+	ed.undoManager.add();
+	// / The New eXeLearning	
+	
 }
 
 function updateAction() {

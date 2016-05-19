@@ -8,12 +8,12 @@ _ = parent._;
 
 var $exeTinyMCE = {
 	
-	plugins: "nonbreaking exegames_hangman exeeffects easyattributes exelist autolink lists link charmap print preview anchor tooltips searchreplace visualblocks codemagic fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode exeimage exealign exemedia abbr",
+	plugins: "compat3x nonbreaking exegames_hangman exeeffects easyattributes exelist autolink lists link charmap print preview anchor tooltips searchreplace visualblocks codemagic fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode exeimage exealign exemedia abbr",
 	buttons1 : "bold italic | formatselect fontsizeselect fontselect | forecolor backcolor",
 	buttons2 : "alignleft aligncenter alignright alignjustify clearfloat addcontent | bullist numlist definitionlist | link unlink | outdent indent | blockquote blockquoteandcite",	
 	buttons3 : "undo redo | cut copy paste pastetext | pastehtml pastecode | tooltips exeeffects | exeimage exemedia | template | table | easyattributes | codemagic | fullscreen",	
 	// To add:
-		// buttons2 : "exemath,styleprops"
+		// buttons2 : "exemath"
 	content_css: "/css/extra.css," + exe_style,
 	browser_spellcheck: true,
 	templates: [
@@ -85,6 +85,9 @@ var $exeTinyMCE = {
 				if (mode=="exact") {
 					$exeTinyMCEToggler.init(ed.id,hide);
 				}
+			},
+			external_plugins: {
+				"style": "/scripts/tinymce_4/js/tinymce/plugins/style/editor_plugin_src.js"
 			}			
 		});
 	},

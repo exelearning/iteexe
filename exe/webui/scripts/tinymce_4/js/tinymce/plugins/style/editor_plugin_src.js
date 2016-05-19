@@ -31,7 +31,10 @@
 				ed.windowManager.open({
 					file : url + '/props.htm',
 					width : 480 + parseInt(ed.getLang('style.delta_width', 0)),
-					height : 340 + parseInt(ed.getLang('style.delta_height', 0)),
+					// The New eXeLearning
+					// height : 340 + parseInt(ed.getLang('style.delta_height', 0)),
+					height: 350,
+					// / The New eXeLearning
 					inline : 1
 				}, {
 					applyStyleToBlocks : applyStyleToBlocks,
@@ -52,7 +55,17 @@
 			});
 
 			// Register buttons
-			ed.addButton('styleprops', {title : 'style.desc', cmd : 'mceStyleProps'});
+			// The New eXeLearning
+			// ed.addButton('styleprops', {title : 'style.desc', cmd : 'mceStyleProps'});
+			ed.addMenuItem('style', {
+				// icon: 'image',
+				text: _("Edit CSS Style"),
+				onclick: function(){
+					ed.execCommand('mceStyleProps');
+				},
+				context: 'edit'
+			});	
+			// / The New eXeLearning			
 		},
 
 		getInfo : function() {
