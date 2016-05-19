@@ -7,6 +7,9 @@
  * License: http://www.tinymce.com/license
  * Contributing: http://www.tinymce.com/contributing
  */
+// The New eXeLearning
+_ = parent._
+// /The New eXeLearning
 
 var tinymce, tinyMCE;
 
