@@ -40,7 +40,7 @@
 #    * Changed options of pybabel update (JRF)
 #         trying to fix the duplicate msgstr problem
 #         comment the -N option out
-#         Option -N, --no-fuzzy-matching: "do not use fuzzy matching" (default False)
+#            Option -N, --no-fuzzy-matching: "do not use fuzzy matching" (default False)
 #         add --ignore-obsolete
 #    * Pybabel compile (JRF)
 #         documented that we've never used option -f ("also include fuzzy translations") ¿?
@@ -51,12 +51,16 @@
 # 2015-03-10:
 #    * Preparing version 2.1 (JRF)
 #
+# 2016-05-22
+#    * Preparing version 2.1.1 (JRF)
+#    * Babel v.2.3.4 (the 'Language' header bug has been fixed and our fork is no longer necessary)
+#
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.1"
+version="2.1.1"
 
 # 1.- pyBabel - Extraction of strings from *.py and *.js into new POT
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
