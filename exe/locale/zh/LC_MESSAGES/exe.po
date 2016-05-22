@@ -5,18 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.1\n"
+"Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-12 16:37+0200\n"
+"POT-Creation-Date: 2016-05-22 13:57+0200\n"
 "PO-Revision-Date: 2007-08-08 10:27+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\n"
-"Language-Team: eXe <info@exelearning.org>\n"
 "Language: zh\n"
+"Language-Team: eXe <info@exelearning.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 1.3\n"
+"Generated-By: Babel 2.3.4\n"
 
 #: exe/application.py:191
 #, python-format
@@ -47,7 +47,7 @@ msgstr ""
 
 #: exe/engine/appletidevice.py:70
 msgid "Java Applet"
-msgstr "Java Applet"
+msgstr ""
 
 #: exe/engine/appletidevice.py:71 exe/engine/attachmentidevice.py:45
 #: exe/engine/casestudyidevice.py:201 exe/engine/clozefpdidevice.py:51
@@ -70,7 +70,7 @@ msgstr "Java Applet"
 #: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
-msgstr "奥克兰大学"
+msgstr ""
 
 #: exe/engine/appletidevice.py:79
 msgid ""
@@ -79,8 +79,6 @@ msgid ""
 "buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
-"加载除.txt文档外所有的applet文档. 使用\"添加文档\"和\"上载\"按钮,一次加载一个文档. 已上载的文档将显示在Applet "
-"code栏域下面."
 
 #: exe/engine/appletidevice.py:82
 msgid ""
@@ -88,7 +86,7 @@ msgid ""
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the "
 "applet \n"
 "code field."
-msgstr "找到.txt文档并打开它,复制所有内容,然后粘贴至applet code栏域."
+msgstr ""
 
 #: exe/engine/appletidevice.py:85
 msgid ""
@@ -98,17 +96,17 @@ msgid ""
 "<p>eg. For Geogebra applets, select geogebra, then add the .ggb file that"
 " \n"
 "you created in Geogebra.</p>"
-msgstr " "
+msgstr ""
 
 #: exe/engine/appletidevice.py:190
 #, python-format
 msgid "file %s has no parentNode"
-msgstr "file %s has no parentNode"
+msgstr ""
 
 #: exe/engine/appletidevice.py:192 exe/engine/attachmentidevice.py:107
 #, python-format
 msgid "iDevice %s has no package"
-msgstr "iDevice %s has no package"
+msgstr ""
 
 #: exe/engine/appletidevice.py:443
 msgid "Sorry, this URL is unreachable"
@@ -156,7 +154,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
-msgstr "附件"
+msgstr ""
 
 #: exe/engine/attachmentidevice.py:46
 msgid ""
@@ -173,17 +171,17 @@ msgid ""
 "Enter the text you wish to associate with the downloaded file. You might "
 "want to provide instructions on what you require the learner to do once "
 "the file is downloaded or how the material should be used."
-msgstr "输入有关文档的描述."
+msgstr ""
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
-msgstr "描述:"
+msgstr ""
 
 #: exe/engine/attachmentidevice.py:69
 msgid ""
 "Click <strong>Select a file</strong>, browse to the file you want to "
 "attach and select it."
-msgstr "点击<strong>选择文档</strong>, 选择您要上载的文件. 注意:文件名不可含有中文字, 否则该软件不识别."
+msgstr ""
 
 #: exe/engine/attachmentidevice.py:72
 msgid ""
@@ -198,28 +196,27 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:105
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr "Attachment %s has no parentNode"
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/tools/style-designer/langs/en.js:46
 msgid "Image"
-msgstr "图像"
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:65
 #: exe/engine/ejercicioresueltofpdidevice.py:65
 msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
-msgstr "选择一个用于在学生完成问题时显示的图案"
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
-msgstr "案例分析"
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:202
-#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -242,14 +239,6 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
-"案例分析是个意在传达教学资讯的案例. 可以是一个实例让学生将所学知识及经验应用上. \n"
-"当设计案例分析时你可考虑以下:\n"
-"<ul> \n"
-"<li>\t在这个案例中你所要传达的教学要点</li>\n"
-"<li>\t学生需要做什么准备工作以便进行这个案例分析</li>\n"
-"<li>\t这个案例是否适用此课程的其它部份</li>\n"
-"<li>\t学生对此案例的各种可能反应. </li>\n"
-"</ul>"
 
 #: exe/engine/casestudyidevice.py:219
 #: exe/engine/ejercicioresueltofpdidevice.py:218
@@ -260,13 +249,13 @@ msgid ""
 "involved and the situation. It should also allow for some action to be "
 "taken \n"
 "in order to gain resolution of the situation."
-msgstr "拟写案例故事.一个好的案例描述有争议性的,或不同人物和环境的情景.并能采取某些行动来解决问题."
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:223 exe/engine/casestudyidevice.py:411
 #: exe/engine/ejercicioresueltofpdidevice.py:222
 #: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
-msgstr "事件:"
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:228
 #: exe/engine/ejercicioresueltofpdidevice.py:227
@@ -276,14 +265,14 @@ msgid ""
 "instructions for activity which may lead the learner to resolving a "
 "dilemma \n"
 "presented. "
-msgstr "描述学生应完成的阅读任务."
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:232
 #: exe/engine/ejercicioresueltofpdidevice.py:231
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
-msgstr "提供相关评语. "
+msgstr ""
 
 #: exe/engine/casopracticofpdidevice.py:30
 msgid "FPD - Situation"
@@ -362,7 +351,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Title"
-msgstr "标题"
+msgstr ""
 
 #: exe/engine/clickinorderidevice.py:61
 msgid "Game Instructions"
@@ -575,7 +564,7 @@ msgid ""
 " check reading comprehension.</li><li>To check vocabulary "
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
-msgstr "填空练习是一段文章中, 有些字或词被删除. 学生需填上这些空格."
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -600,7 +589,7 @@ msgid ""
 "alternatives with the same word stem, but different affixes. It is a good"
 " idea to get a colleague to test the test/exercise to make sure there are"
 " no surprises!  </p>  </dd></dl>"
-msgstr " "
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
@@ -613,7 +602,7 @@ msgstr " "
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 msgid "Instructions"
-msgstr "说明"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
 #: exe/engine/clozelangfpdidevice.py:121
@@ -621,17 +610,16 @@ msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this "
 "field.\n"
-msgstr "提供怎样完成填空题的说明.\n"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
 #: exe/webui/element.py:1522 exe/webui/listablock.py:259
 msgid "Cloze"
-msgstr "填空题"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
-#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -641,7 +629,7 @@ msgid ""
 "click on the Hide/Show Word button below.</p><p>More than one possible "
 "answer can be defined enclosing them with pipes (|). I.e.: "
 "|dog|cat|bird|</p>"
-msgstr "输入填空练习的内容. 双击所要隐藏的字, 然后点击<i>隐藏/显示 文字</i> 按钮使之变为空格."
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -660,52 +648,51 @@ msgstr "输入填空练习的内容. 双击所要隐藏的字, 然后点击<i>�
 #: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
-msgstr "评语"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
 #: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
 msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
-msgstr "用评语栏输入评语提供给学生. 此栏可空白."
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
 msgid "Instructions For Learners"
-msgstr "练习说明"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
 #: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
-msgstr "在此输入完成说明"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:284
 msgid "Read the paragraph below and fill in the missing words"
-msgstr "阅读以下段落并填空"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
 #: exe/engine/clozelangfpdidevice.py:296
 msgid "Allow auto completion when user filling the gaps."
-msgstr "当学生填空时, 允许自动完成."
+msgstr ""
 
 #: exe/engine/clozeidevice.py:49
 msgid "Cloze Activity"
-msgstr "填空练习"
+msgstr ""
 
 #: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
-msgstr "阅读以下段落并填空."
+msgstr ""
 
 #: exe/engine/clozelangfpdidevice.py:50
 msgid "FPD - Cloze Activity (Modified)"
 msgstr ""
 
 #: exe/engine/clozelangfpdidevice.py:126
-#, fuzzy
 msgid "Clozelang"
-msgstr "填空题"
+msgstr ""
 
 #: exe/engine/config.py:70 exe/engine/config.py:71 exe/engine/config.py:75
 #: exe/engine/config.py:102
@@ -799,14 +786,6 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
-"案例分析是个意在传达教学资讯的案例. 可以是一个实例让学生将所学知识及经验应用上. \n"
-"当设计案例分析时你可考虑以下:\n"
-"<ul> \n"
-"<li>\t在这个案例中你所要传达的教学要点</li>\n"
-"<li>\t学生需要做什么准备工作以便进行这个案例分析</li>\n"
-"<li>\t这个案例是否适用此课程的其它部份</li>\n"
-"<li>\t学生对此案例的各种可能反应. </li>\n"
-"</ul>"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 msgid "FPD - Multi Choice Activity"
@@ -831,7 +810,7 @@ msgid ""
 "     clues</li>\n"
 "</ul>\n"
 " "
-msgstr " "
+msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:76
 #: exe/engine/multichoiceidevice.py:75 exe/engine/multiselectidevice.py:60
@@ -852,21 +831,13 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
-"当设计选择题时, 可考虑如下: <ul>\n"
-"<li> 使用学生在学习时所熟悉的语句. </li>\n"
-"<li> 回应要简明扼要 </li>\n"
-"<li> 问题与回应要有相当的一致性. </li>\n"
-"<li> 提供足够的选项来激励学生思考他们的回应.</li>\n"
-"<li> 试着不要让正确的选项比错误选项具体.</li>\n"
-"<li> 错误选项应是不正确的,但似乎合理的. </li>\n"
-"</ul>\n"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:101
 #: exe/engine/multichoiceidevice.py:99
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
-msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
+msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
@@ -875,14 +846,14 @@ msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
-msgstr "输入问题. 问题的陈述要清晰而不含糊."
+msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:106
 #: exe/engine/multichoiceidevice.py:104
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
-msgstr "点击选项旁的点选钮来选择正确选项."
+msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:108
 #: exe/engine/multichoiceidevice.py:106
@@ -891,7 +862,7 @@ msgid ""
 "You can add options by clicking the \"Add Another Option\" button. Delete"
 " options \n"
 "by clicking the red \"X\" next to the Option."
-msgstr "输入各个选项以让学生从其间选择最合适的一项. 点击\"新增选项\" 按钮来增加选项. 点击选项旁边的\"x\" 可删除该选项."
+msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:111
 #: exe/engine/multichoiceidevice.py:109
@@ -904,7 +875,7 @@ msgid ""
 "answer\" as indicated by the selection for the correct answer; or \"Wrong"
 " answer\"\n"
 "for the other options."
-msgstr "输入评语, 可让学生在点选次项时看见. 如果你不输入, eXe将会自动提供以下评语:\"回答正确 \"给正确选项; \"回答错误 \"给其它选项."
+msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3754
 #: exe/engine/field.py:3819 exe/engine/multichoiceidevice.py:131
@@ -914,14 +885,14 @@ msgstr "输入评语, 可让学生在点选次项时看见. 如果你不输入, 
 #: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
-msgstr "问题"
+msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:287
 #: exe/engine/multichoiceidevice.py:285
 msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
 " blank."
-msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
+msgstr ""
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
@@ -1000,7 +971,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:158
 #: exe/webui/appletblock.py:168
 msgid "Upload"
-msgstr "上载"
+msgstr ""
 
 #: exe/engine/extendedfieldengine.py:298
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
@@ -1009,7 +980,7 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:185
 msgid "Delete File"
-msgstr "删除文档"
+msgstr ""
 
 #: exe/engine/extendedfieldengine.py:306
 msgid "No File Uploaded Currently"
@@ -1021,7 +992,7 @@ msgstr ""
 #: exe/webui/multimediablock.py:87
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
-msgstr "无"
+msgstr ""
 
 #: exe/engine/extendedfieldengine.py:570
 msgid "is not a valid number - please try again<br/>"
@@ -1029,7 +1000,7 @@ msgstr ""
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
-msgstr "外部网页"
+msgstr ""
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -1039,23 +1010,22 @@ msgid ""
 "This means learners are not having to juggle windows. \n"
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
-msgstr " "
+msgstr ""
 
 #: exe/engine/externalurlidevice.py:49 exe/engine/externalurlidevice.py:116
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
-msgstr "输入所要显示网页的网址并选择显示的大小尺寸."
+msgstr ""
 
 #: exe/engine/field.py:2907 exe/engine/field.py:2954
 #: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
-msgstr " "
+msgstr ""
 
 #: exe/engine/field.py:3090
-#, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1070,27 +1040,27 @@ msgid ""
 "are set, the only correct answer is \"Elephant\". If only \"Strict "
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
-msgstr " "
+msgstr ""
 
 #: exe/engine/field.py:3111 exe/engine/field.py:3345
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
-msgstr " "
+msgstr ""
 
 #: exe/engine/field.py:3116 exe/engine/field.py:3350
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
-msgstr " "
+msgstr ""
 
 #: exe/engine/field.py:3154 exe/engine/field.py:3392
 #: exe/engine/listaidevice.py:398
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
-msgstr "当学生填空时, 允许自动完成."
+msgstr ""
 
 #: exe/engine/field.py:3324
 msgid ""
@@ -1107,7 +1077,7 @@ msgid ""
 "are set, the only correct answer is \"Elephant\". If only \"Strict "
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
-msgstr " "
+msgstr ""
 
 #: exe/engine/field.py:3355
 msgid "<p>If this option is set, the score will be shown.</p>"
@@ -1117,30 +1087,30 @@ msgstr ""
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
-msgstr "只能选用.swf (Flash Object)."
+msgstr ""
 
 #: exe/engine/field.py:3498 exe/engine/field.py:3562
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
-msgstr "只能选用.flv (Flash Video Files)."
+msgstr ""
 
 #: exe/engine/field.py:3574
 msgid "Type a discussion topic here."
-msgstr "输入讨论主题:"
+msgstr ""
 
 #: exe/engine/field.py:3603
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
-msgstr "  "
+msgstr ""
 
 #: exe/engine/field.py:3611
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
-msgstr "点击预览按钮显示数学符号."
+msgstr ""
 
 #: exe/engine/field.py:3679 exe/engine/field.py:3728
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
@@ -1148,21 +1118,21 @@ msgstr "点击预览按钮显示数学符号."
 #: exe/webui/element.py:2576 exe/webui/element.py:2668
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
-msgstr "选项"
+msgstr ""
 
 #: exe/engine/field.py:3757 exe/engine/field.py:3823
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:452
 msgid "Hint"
-msgstr "提示"
+msgstr ""
 
 #: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2381
-#: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
+#: exe/webui/testquestionelement.py:110
 msgid "Options"
-msgstr "选项"
+msgstr ""
 
 #: exe/engine/field.py:3905
 msgid ""
@@ -1170,7 +1140,7 @@ msgid ""
 "The question should be clear and unambiguous. Avoid negative premises as "
 "these \n"
 "can tend to confuse learners."
-msgstr "输入问题. 问题的陈述要清晰而不含糊."
+msgstr ""
 
 #: exe/engine/field.py:3908 exe/engine/field.py:3989
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
@@ -1178,7 +1148,7 @@ msgstr "输入问题. 问题的陈述要清晰而不含糊."
 #: exe/engine/verdaderofalsofpdidevice.py:47
 #: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
 msgid "Question:"
-msgstr "问题:"
+msgstr ""
 
 #: exe/engine/field.py:3913
 msgid ""
@@ -1186,26 +1156,26 @@ msgid ""
 "You can add options by clicking the \"Add another option\" button. Delete"
 " options by \n"
 "clicking the red X next to the option."
-msgstr "输入各个选项以让学生从其间选择最合适的一项. 点击\"新增选项\" 按钮来增加选项. 点击选项旁边的\"x\" 可删除该选项."
+msgstr ""
 
 #: exe/engine/field.py:3917
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
-msgstr "选择所有正确选项."
+msgstr ""
 
 #: exe/engine/field.py:3920
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
-msgstr "输入给学生的评语。"
+msgstr ""
 
 #: exe/engine/field.py:3922 exe/engine/field.py:3992
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:204
 msgid "Feedback:"
-msgstr "评语:"
+msgstr ""
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
@@ -1250,7 +1220,7 @@ msgstr ""
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr "Flash 电影"
+msgstr ""
 
 #: exe/engine/flashmovieidevice.py:41
 msgid ""
@@ -1261,13 +1231,13 @@ msgid ""
 "These\n"
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
-msgstr "这个 iDevice只支持Flash Video文档(.FLV)格式, 而非其它视频文档格式. "
+msgstr ""
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
-msgstr "输入有关文档的描述."
+msgstr ""
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:70
@@ -1283,17 +1253,17 @@ msgstr "输入有关文档的描述."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Description"
-msgstr "描述"
+msgstr ""
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:109
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
-msgstr "为 flash电影提供标题."
+msgstr ""
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
-msgstr "文字及Flash"
+msgstr ""
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1303,19 +1273,19 @@ msgid ""
 "where you wish to provide educational instruction regarding the flash "
 "file \n"
 "the learners will view."
-msgstr "这个 iDevice 能让你提供与flash文档相关的文字说明. "
+msgstr ""
 
 #: exe/engine/flashwithtextidevice.py:53
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
-msgstr "输入有关图片的描述."
+msgstr ""
 
 #: exe/engine/flashwithtextidevice.py:58 exe/engine/flashwithtextidevice.py:118
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
-msgstr "为你所插入的flash提供标题."
+msgstr ""
 
 #: exe/engine/flashwithtextidevice.py:60 exe/engine/flashwithtextidevice.py:120
 msgid ""
@@ -1323,7 +1293,7 @@ msgid ""
 "dimensions (in pixels) and determine the alignment of the image on "
 "screen. \n"
 "The width and height dimensions will alter proportionally."
-msgstr "输入显示flash的尺寸并选择向哪边对齐. flash的长和宽会按比例自动调节."
+msgstr ""
 
 #: exe/engine/freetextfpdidevice.py:39
 msgid "FPD - Free Text"
@@ -1337,12 +1307,12 @@ msgid ""
 "This provides the framework within which the learning activities are "
 "built and \n"
 "delivered."
-msgstr "大多数课件都是要编写课文，传授知识和提供基本信息。这个iDevice提供了一个框架让学习活动得以建立和传授。"
+msgstr ""
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
 msgid "Free Text"
-msgstr "自由文本"
+msgstr ""
 
 #: exe/engine/freetextfpdidevice.py:47 exe/engine/freetextidevice.py:46
 msgid ""
@@ -1350,31 +1320,31 @@ msgid ""
 "iDevice has no emphasis applied although limited formatting can be "
 "applied to \n"
 "text through the text editing buttons associated with the field."
-msgstr " "
+msgstr ""
 
 #: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
-msgstr "这是一个自由文字栏域, 可输入一般的课程内容."
+msgstr ""
 
 #: exe/engine/galleryidevice.py:140 exe/engine/galleryidevice.py:191
 msgid "No Thumbnail Available. Could not load original image."
-msgstr "No Thumbnail Available. Could not load original image."
+msgstr ""
 
 #: exe/engine/galleryidevice.py:148 exe/engine/galleryidevice.py:198
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr "No Thumbnail Available. Could not shrink image."
+msgstr ""
 
 #: exe/engine/galleryidevice.py:221
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr "No Thumbnail Available. Could not shrink image."
+msgstr ""
 
 #: exe/engine/galleryidevice.py:458
 msgid "Image Gallery"
-msgstr "图象画廊"
+msgstr ""
 
 #: exe/engine/galleryidevice.py:459
 msgid "eXe Project"
-msgstr "eXe项目"
+msgstr ""
 
 #: exe/engine/galleryidevice.py:460
 msgid ""
@@ -1382,31 +1352,31 @@ msgid ""
 "to each other or to a particular learning exercise you may wish to "
 "display \n"
 "these in a gallery context rather then individually.</p>"
-msgstr "当有一组相关的图片要展示时或对一个特定的练习,要显示几张图片."
+msgstr ""
 
 #: exe/engine/galleryidevice.py:463
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr "用此可展示许多图片."
+msgstr ""
 
 #: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
-msgstr "输入标题为图象画廊."
+msgstr ""
 
 #: exe/engine/galleryidevice.py:473
 msgid ""
 "Click on the Add images button to select an image file. The image will "
 "appear below where you will be able to label it. It's always good "
 "practice to put the file size in the label."
-msgstr "点击\"添加图片\"按钮来选择图片文档.所选图片将显示在下面,你可为其加上标签. 最好在标签上加上文档大小."
+msgstr ""
 
 #: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:663
 msgid "Reading Activity 0.11"
-msgstr "阅读活动 0.11"
+msgstr ""
 
 #: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:510
 #: exe/engine/idevicestore.py:554
 msgid "Reading Activity"
-msgstr "阅读活动"
+msgstr ""
 
 #: exe/engine/hangmanidevice.py:51 exe/webui/common.py:490
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
@@ -1489,7 +1459,7 @@ msgstr ""
 #: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
 #: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
-msgstr "重新开始"
+msgstr ""
 
 #: exe/engine/hangmanidevice.py:104
 msgid "Restart Level Button Style (CSS)"
@@ -1561,7 +1531,7 @@ msgid ""
 "the reading, or by having them complete some other possibly more physical"
 " task \n"
 "based on the reading.</p>"
-msgstr "<p>阅读活动主要用于检查学生对指定课文的理解. 可通过回答问题等完成.</p>"
+msgstr ""
 
 #: exe/engine/idevicestore.py:562
 msgid ""
@@ -1576,31 +1546,31 @@ msgid ""
 "questions or events into one iDevice. </li><li>Think about activities "
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
-msgstr " "
+msgstr ""
 
 #: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:706
 msgid "What to read"
-msgstr "阅读资料"
+msgstr ""
 
 #: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:707
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
-msgstr "提供此阅读内容所引用的参考文献的详细咨讯. 参考文献的格式取决于你们院校所采用的模式."
+msgstr ""
 
 #: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:640
 #: exe/engine/idevicestore.py:648 exe/engine/idevicestore.py:710
 #: exe/engine/idevicestore.py:747 exe/engine/idevicestore.py:755
 #: exe/webui/questionelement.py:110
 msgid "Activity"
-msgstr "学习活动"
+msgstr ""
 
 #: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:711
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
-msgstr "描述学生应完成的阅读任务."
+msgstr ""
 
 #: exe/engine/idevicestore.py:606 exe/engine/idevicestore.py:715
 msgid ""
@@ -1608,32 +1578,32 @@ msgid ""
 "or as a starting point for further analysis of the reading by posing a "
 "question \n"
 "or providing a statement to begin a debate."
-msgstr "这个栏目是可灵活使用的. 可用它来提供所涉及阅读资料的重点概括, 也可以提出问题或辩论话题作为下一步阅读分析的起点."
+msgstr ""
 
 #: exe/engine/idevicestore.py:612 exe/engine/idevicestore.py:621
 #: exe/engine/idevicestore.py:719 exe/engine/idevicestore.py:728
 #: exe/engine/package.py:653 exe/engine/package.py:664
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:216
 msgid "Objectives"
-msgstr "目的"
+msgstr ""
 
 #: exe/engine/idevicestore.py:615 exe/engine/idevicestore.py:722
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
-msgstr "用于描述学习此课的目的及将要达到的结果."
+msgstr ""
 
 #: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
 msgid "Type the learning objectives for this resource."
-msgstr "学习此课的目的"
+msgstr ""
 
 #: exe/engine/idevicestore.py:625 exe/engine/idevicestore.py:635
 #: exe/engine/idevicestore.py:732 exe/engine/idevicestore.py:742
 #: exe/engine/package.py:683 exe/engine/package.py:694
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
 msgid "Preknowledge"
-msgstr "预备知识"
+msgstr ""
 
 #: exe/engine/idevicestore.py:628 exe/engine/idevicestore.py:735
 msgid ""
@@ -1644,13 +1614,13 @@ msgid ""
 "<li>        Learners must have level 4 English </li>\n"
 "<li>        Learners must be able to assemble standard power tools "
 "</li></ul>\n"
-msgstr "预备知识是指学生为完成此课所应具备的知识.\n"
+msgstr ""
 
 #: exe/engine/idevicestore.py:636 exe/engine/idevicestore.py:743
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
-msgstr "用于描述学生为完成此课所应具备的知识."
+msgstr ""
 
 #: exe/engine/idevicestore.py:643 exe/engine/idevicestore.py:750
 msgid ""
@@ -1658,11 +1628,11 @@ msgid ""
 "complete. Provide a clear statement of the task and consider any "
 "conditions\n"
 "that may help or hinder the learner in the performance of the task."
-msgstr "学习活动可被定义为学生必须完成的一个或一组任务. 提供清晰的任务陈述以及考虑任何条件会帮助或阻碍学生完成任务."
+msgstr ""
 
 #: exe/engine/idevicestore.py:649 exe/engine/idevicestore.py:756
 msgid "Describe the tasks the learners should complete."
-msgstr "描述学生需要完成的学习任务."
+msgstr ""
 
 #: exe/engine/idevicestore.py:666
 msgid ""
@@ -1674,7 +1644,7 @@ msgid ""
 "Feedback to the activity where appropriate, can provide the learner with "
 "some \n"
 "reflective guidance.</p>"
-msgstr " <P>阅读活动, 顾名思义是要学生完成一些任务. 此活动须与阅读内容直接相关. 可给学生一些相应的评语, 提供回答问题的指导.</P>"
+msgstr ""
 
 #: exe/engine/idevicestore.py:671
 msgid ""
@@ -1689,11 +1659,11 @@ msgid ""
 "questions or events into one iDevice. </li><li>Think about activities "
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
-msgstr "  "
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
-msgstr "图像放大器"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:43
 msgid ""
@@ -1701,11 +1671,11 @@ msgid ""
 " learners to magnify the view of the image they have been given. Moving "
 "the \n"
 "magnifying glass over the image allows larger detail to be studied."
-msgstr "图象放大镜是放大图象的工具, 移动放大镜用户可放大图象, 研究细节."
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Choose an Image"
-msgstr "选择图片"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid ""
@@ -1713,7 +1683,7 @@ msgid ""
 "on the picture below or the \"Add Image\" button to select an image file "
 "to be \n"
 "magnified."
-msgstr "点击图片或\"添加图片\"按钮来选择所要放大的图片文档."
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
@@ -1721,19 +1691,19 @@ msgstr "点击图片或\"添加图片\"按钮来选择所要放大的图片文�
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/tools/style-designer/langs/en.js:24
 msgid "Text"
-msgstr "文字"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:55 exe/engine/multimediaidevice.py:65
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
-msgstr "输入有关文档的描述."
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:60
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
-msgstr "为插图提供标题."
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:62
 msgid ""
@@ -1743,42 +1713,42 @@ msgid ""
 "pixels equals approximately 3cm. Leave both fields blank if you want the"
 " \n"
 "image to display at its original size."
-msgstr "选择图片显示的尺寸, 单位为像素. 100像素像约为3厘米. 如要显示图片原尺寸, 则让此二栏空白."
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:66
 #: exe/engine/imagemagnifieridevice.py:142
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
-msgstr "对齐可用于选择图象显示的位置."
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:68
 #: exe/engine/imagemagnifieridevice.py:144
 msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
-msgstr "设置初始放大倍数, 为原图象尺寸的百分比."
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:70
 #: exe/engine/imagemagnifieridevice.py:146
 msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
-msgstr "设置最大放大倍数, 为原图象尺寸的百分比. "
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:72
 msgid "Select the size of the magnifying glass"
-msgstr "选择放大镜尺寸"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:148
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
-msgstr "选择最初放大镜的大小"
+msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
-msgstr "文字及插图"
+msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -1805,19 +1775,19 @@ msgid ""
 "the piston with a brief textual summary of the key aspects of each "
 "visual.\n"
 "</p>"
-msgstr "图象及文字解释能为学习提供感性和知性的帮助."
+msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:66
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
-msgstr "输入有关图象的描述."
+msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:71 exe/engine/imagewithtextidevice.py:118
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
-msgstr "为插图提供标题."
+msgstr ""
 
 #: exe/engine/listaidevice.py:66
 msgid "DropDown Activity"
@@ -1912,7 +1882,7 @@ msgstr ""
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
-msgstr "数学公式"
+msgstr ""
 
 #: exe/engine/mathidevice.py:43
 msgid ""
@@ -1927,11 +1897,11 @@ msgid ""
 "                        explanatory notes and learning instruction around"
 " \n"
 "                        this graphic."
-msgstr "LATEX是用于创建公式符号的数学语言. 这个iDevice将LATEX转化成数学符号的图象, 可显示在课程内容中."
+msgstr ""
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
-msgstr "您可选用工具栏上的符号或输入latex."
+msgstr ""
 
 #: exe/engine/memorymatchidevice.py:44
 msgid "Memory Match Game"
@@ -2129,25 +2099,25 @@ msgstr ""
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
-msgstr "选择题"
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
-msgstr "MP3"
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:41
 msgid "Auckland University of Technology"
-msgstr "奥克兰技术大学"
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:42
 msgid ""
 "The MP3 iDevice allows you to attach an MP3 media file to your content "
 "along with relevant textuallearning instructions."
-msgstr "MP3 iDevice可用于播放MP3音乐及附上相关的说明."
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr "选择MP3文档"
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -2158,17 +2128,17 @@ msgid ""
 "relevant text to the MP3 file.</li> <li>Choose the type of style you "
 "would like the iDevice to       display e.g. 'Some emphasis' applies a "
 "border and icon to the iDevice content displayed.</li></ol>"
-msgstr " "
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
-msgstr "对齐可用于选择播放器显示的位置."
+msgstr ""
 
 #: exe/engine/multiselectidevice.py:45
 msgid "Multi-select"
-msgstr "多项选择题"
+msgstr ""
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
@@ -2220,20 +2190,20 @@ msgstr ""
 
 #: exe/engine/package.py:327
 msgid "Topic"
-msgstr "课题"
+msgstr ""
 
 #: exe/engine/package.py:327
 msgid "Section"
-msgstr "节"
+msgstr ""
 
 #: exe/engine/package.py:327
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
 msgid "Unit"
-msgstr "单元"
+msgstr ""
 
 #: exe/engine/package.py:348
 msgid "Home"
-msgstr "首页"
+msgstr ""
 
 #: exe/engine/package.py:503
 msgid "Metadata creation date"
@@ -2241,7 +2211,7 @@ msgstr ""
 
 #: exe/engine/package.py:1000
 msgid "?????"
-msgstr "?????"
+msgstr ""
 
 #: exe/engine/package.py:1038 exe/engine/package.py:1045
 #, python-format
@@ -2249,21 +2219,20 @@ msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
-"保存失败!\n"
-"最后一次成功的存档是%s."
 
 #: exe/engine/package.py:1449 exe/jsui/scripts/app/controller/Toolbar.js:418
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "iDevice Editor"
-msgstr "iDevice 编辑器"
+msgstr ""
 
 #: exe/engine/package.py:1570
 msgid "My Catalog"
 msgstr ""
 
-#: exe/engine/package.py:1577 exe/webui/scripts/tinymce_3.5.11_settings.js:58
+#: exe/engine/package.py:1577
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:58
 #: exe/webui/tools/style-designer/langs/en.js:73
 msgid "Default"
 msgstr ""
@@ -2304,7 +2273,7 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr "这是一个自由文字域."
+msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
@@ -2424,17 +2393,17 @@ msgid ""
 "a range of plausible distractors (usually 3-4) as well as the correct "
 "answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
-msgstr "输入回答选项. 提供几个错误选项(通常3-4)和一个正确选项. 点击&lt;添加选项&gt;来加增选项."
+msgstr ""
 
 #: exe/engine/quiztestidevice.py:126 exe/engine/quiztestidevice.py:202
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
-msgstr "要指明正确答案, 点击正确选项旁的点选按钮."
+msgstr ""
 
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
-msgstr "SCORM 练习题"
+msgstr ""
 
 #: exe/engine/quiztestidevice.py:246
 msgid ""
@@ -2445,7 +2414,7 @@ msgid ""
 "had \n"
 "time to learn and practice using the information or skill.\n"
 " "
-msgstr " "
+msgstr ""
 
 #: exe/engine/recomendacionfpdidevice.py:30
 msgid "FPD - A Piece of Advice"
@@ -2480,7 +2449,7 @@ msgid ""
 "are useful tools for collecting observation data. Rubrics and guides can "
 "be \n"
 "effective feedback tools."
-msgstr "立时回应是一种常用于联系理论和实践的教学方式. 立时回应常给学生在提交一份学术工作前提供一个观察及对所观察的事物回应的机会."
+msgstr ""
 
 #: exe/engine/reflectionfpdidevice.py:57
 #: exe/engine/reflectionfpdmodifidevice.py:56
@@ -2488,7 +2457,7 @@ msgstr "立时回应是一种常用于联系理论和实践的教学方式. 立�
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
-msgstr "输入问题."
+msgstr ""
 
 #: exe/engine/reflectionfpdidevice.py:59
 msgid ""
@@ -2496,14 +2465,14 @@ msgid ""
 "they have done in the exercise. (Rubrics are useful devices for providing"
 " \n"
 "reflective feedback.)"
-msgstr "描述学生应怎样评估和完成练习."
+msgstr ""
 
 #: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:201
 msgid "Reflective question:"
-msgstr "问题:"
+msgstr ""
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
 msgid "FPD - Think About It (without Feedback)"
@@ -2511,7 +2480,7 @@ msgstr ""
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
-msgstr "问题与回答"
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:57
 msgid ""
@@ -2529,14 +2498,14 @@ msgstr ""
 
 #: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:48
 msgid "RSS"
-msgstr "RSS"
+msgstr ""
 
 #: exe/engine/rssidevice.py:42
 msgid ""
 "The RSS iDevice is used \n"
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
-msgstr " "
+msgstr ""
 
 #: exe/engine/rssidevice.py:51
 msgid ""
@@ -2556,14 +2525,14 @@ msgid ""
 "display them as links in your content. From here you can edit the "
 "bookmarks and add\n"
 " instructions or additional learning information."
-msgstr " "
+msgstr ""
 
 #: exe/engine/rssidevice.py:110 exe/engine/rssidevice.py:113
 #, python-format
 msgid ""
 "Unable to load RSS feed from %s <br/>Please check the spelling and "
 "connection and try again."
-msgstr "无法从%s下载 RSS Feed 请检查拼写, 然后再连接."
+msgstr ""
 
 #: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid "FPD - Multi Select Activity"
@@ -2696,7 +2665,7 @@ msgstr ""
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
-msgstr "判断题"
+msgstr ""
 
 #: exe/engine/truefalseidevice.py:146
 #: exe/engine/verdaderofalsofpdidevice.py:147
@@ -2707,14 +2676,14 @@ msgid ""
 "well for factual information and information that lends itself to "
 "either/or \n"
 "responses."
-msgstr "是非题提供一个陈述句, 让学生判断其陈述是否正确."
+msgstr ""
 
 #: exe/engine/truefalseidevice.py:151
 #: exe/engine/verdaderofalsofpdidevice.py:153
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
-msgstr "可提供提示来帮助学生回答问题."
+msgstr ""
 
 #: exe/engine/truefalseidevice.py:154
 #: exe/engine/verdaderofalsofpdidevice.py:156
@@ -2723,7 +2692,7 @@ msgid ""
 "should be clear and unambiguous. Avoid negative premises as these can "
 "tend to \n"
 "be ambiguous."
-msgstr "输入问题. 问题的陈述应是清楚而不含糊的."
+msgstr ""
 
 #: exe/engine/truefalseidevice.py:158
 #: exe/engine/verdaderofalsofpdidevice.py:160
@@ -2732,7 +2701,7 @@ msgid ""
 "to the learner. This field may be left blank. if this field is left blank"
 " \n"
 "default feedback will be provided."
-msgstr "用评语栏输入评语提供给学生. 此栏可空白."
+msgstr ""
 
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
 #: exe/engine/verdaderofalsofpdidevice.py:167
@@ -2740,7 +2709,7 @@ msgstr "用评语栏输入评语提供给学生. 此栏可空白."
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
-msgstr "提供怎样完成判断题的说明."
+msgstr ""
 
 #: exe/engine/truefalseidevice.py:372
 #: exe/engine/verdaderofalsofpdidevice.py:375
@@ -2752,7 +2721,7 @@ msgid ""
 "\"Correct answer\" as indicated by the selection for the correct answer; "
 "or \n"
 "\"Wrong answer\" for the other alternatives."
-msgstr "输入评语, 可让学生在点选次项时看见. 如果你不输入, eXe将会自动提供以下评语:\"回答正确 \"给正确选项; \"回答错误 \"给其它选项. "
+msgstr ""
 
 #: exe/engine/verdaderofalsofpdidevice.py:145
 msgid "FPD - True/False Activity"
@@ -2760,10 +2729,9 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:53
 msgid "Wiki Article"
-msgstr "Wikibooks 文章"
+msgstr ""
 
 #: exe/engine/wikipediaidevice.py:55
-#, fuzzy
 msgid ""
 "<p>The Wikipedia iDevice allows you to locate \n"
 "existing content from within Wikipedia and download this content into "
@@ -2779,34 +2747,34 @@ msgid ""
 "is covered by the GNU Free Documentation 1.2 License, and since 2009 "
 "additionally\n"
 "by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
-msgstr "<p>可用这个 iDevice将维基百科全书的内容下载至你的课件中.</p>  <p>维基百科全书的内容受GNU 通用公共授权的保护.</p>"
+msgstr ""
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
-msgstr "文章"
+msgstr ""
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
-msgstr "选择适当的维基语言版本来搜寻, 并输入关键词."
+msgstr ""
 
 #: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:363
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
-msgstr " 输入关键词."
+msgstr ""
 
 #: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
 #, python-format
 msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
-msgstr "无法从%s下载<br/>请检查拼写, 然后再连接."
+msgstr ""
 
 #: exe/engine/wikipediaidevice.py:315
 msgid "http://en.wikipedia.org/"
-msgstr "http://en.wikipedia.org/"
+msgstr ""
 
 #: exe/exe_do:68
 msgid ""
@@ -2965,8 +2933,8 @@ msgid ""
 msgstr ""
 
 #: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:302
-#: exe/jsui/mainpage.py:975 exe/jsui/mainpage.py:1139 exe/jsui/mainpage.py:1179
-#: exe/jsui/mainpage.py:1214 exe/jsui/mainpage.py:1235
+#: exe/jsui/mainpage.py:983 exe/jsui/mainpage.py:1147 exe/jsui/mainpage.py:1187
+#: exe/jsui/mainpage.py:1222 exe/jsui/mainpage.py:1243
 #: exe/jsui/mainpage_antes_jr_docs.py:295
 #: exe/jsui/mainpage_antes_jr_docs.py:916
 #: exe/jsui/mainpage_antes_jr_docs.py:1080
@@ -2977,7 +2945,7 @@ msgstr ""
 msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
-msgstr "\"%s\" 已存在, 请使用别的文件名."
+msgstr ""
 
 #: exe/export/cmdlineexporter.py:92
 msgid "Export format not implemented"
@@ -2990,27 +2958,24 @@ msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
-"导出失败!\n"
-"最后一次成功的导出是 %s."
 
 #: exe/export/scormpage.py:177 exe/export/websitepage.py:345
 #: exe/webui/common.py:473
 msgid "Previous"
-msgstr "前一页"
+msgstr ""
 
 #: exe/export/scormpage.py:178 exe/export/websitepage.py:351
 #: exe/webui/common.py:474
 msgid "Next"
-msgstr "下一页"
+msgstr ""
 
 #: exe/export/singlepage.py:249
 msgid "You can close this window"
 msgstr ""
 
 #: exe/export/textexport.py:54 exe/webui/common.py:293
-#, fuzzy
 msgid "Licensed under the"
-msgstr "Licensed under the "
+msgstr ""
 
 #: exe/export/websitepage.py:153
 msgid "Skip navigation"
@@ -3018,18 +2983,18 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr "例子"
+msgstr ""
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
-msgstr "这是用户自创教学组件插件的例子."
+msgstr ""
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
 msgid "Example"
-msgstr "例子"
+msgstr ""
 
 #: exe/importers/cmdlineimporter.py:44
 msgid "Import format not implemented"
@@ -3077,25 +3042,25 @@ msgstr ""
 msgid "My iDevices"
 msgstr ""
 
-#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:837 exe/jsui/mainpage.py:967
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:845 exe/jsui/mainpage.py:975
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
-msgstr "不能识别路径名称"
+msgstr ""
 
-#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:839 exe/jsui/mainpage.py:967
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:847 exe/jsui/mainpage.py:975
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
-msgstr ". 请使用ASCII码, 如英文, 拼音等来命名路径, 包括其中所有的文件夾."
+msgstr ""
 
 #: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
-msgstr "保存失败!"
+msgstr ""
 
-#: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1063
+#: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1071
 #: exe/jsui/mainpage_antes_jr_docs.py:326
 #: exe/jsui/mainpage_antes_jr_docs.py:638
 #: exe/jsui/mainpage_antes_jr_docs.py:1004
@@ -3104,8 +3069,6 @@ msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
-"保存失败!\n"
-"%s"
 
 #: exe/jsui/mainpage.py:337 exe/jsui/mainpage.py:342 exe/jsui/mainpage.py:345
 #: exe/jsui/mainpage_antes_jr_docs.py:330
@@ -3113,19 +3076,19 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:338
 #, python-format
 msgid "Package saved to: %s"
-msgstr "课件存至: %s"
+msgstr ""
 
 #: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:672
 #: exe/jsui/mainpage_antes_jr_docs.py:561
 #: exe/jsui/mainpage_antes_jr_docs.py:665
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
-msgstr "予览文件夹%s是个文档, 无法取代它"
+msgstr ""
 
 #: exe/jsui/mainpage.py:587 exe/jsui/mainpage_antes_jr_docs.py:580
-#, fuzzy, python-format
+#, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr "无法找到图象文件 %s, 不能予览"
+msgstr ""
 
 #: exe/jsui/mainpage.py:712 exe/jsui/mainpage_antes_jr_docs.py:705
 #, python-format
@@ -3133,8 +3096,6 @@ msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
-"MimeTeX compile failed!\n"
-"%s"
 
 #: exe/jsui/mainpage.py:750 exe/jsui/mainpage_antes_jr_docs.py:743
 msgid "Importing HTML..."
@@ -3155,29 +3116,29 @@ msgstr ""
 msgid "Publishing document to Procomún"
 msgstr ""
 
-#: exe/jsui/mainpage.py:787
+#: exe/jsui/mainpage.py:789
 msgid "Exporting package as SCORM"
 msgstr ""
 
-#: exe/jsui/mainpage.py:805
+#: exe/jsui/mainpage.py:810
 msgid "Starting authorized connection to Procomún API"
 msgstr ""
 
-#: exe/jsui/mainpage.py:818
+#: exe/jsui/mainpage.py:823
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
 "visit exported site\">%s</a>"
 msgstr ""
 
-#: exe/jsui/mainpage.py:821
+#: exe/jsui/mainpage.py:826
 #, python-format
 msgid "Error exporting package %s to Procomún: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:860 exe/jsui/mainpage.py:865 exe/jsui/mainpage.py:868
-#: exe/jsui/mainpage.py:871 exe/jsui/mainpage.py:874 exe/jsui/mainpage.py:877
-#: exe/jsui/mainpage.py:882 exe/jsui/mainpage.py:1123 exe/jsui/mainpage.py:1195
+#: exe/jsui/mainpage.py:868 exe/jsui/mainpage.py:873 exe/jsui/mainpage.py:876
+#: exe/jsui/mainpage.py:879 exe/jsui/mainpage.py:882 exe/jsui/mainpage.py:885
+#: exe/jsui/mainpage.py:890 exe/jsui/mainpage.py:1131 exe/jsui/mainpage.py:1203
 #: exe/jsui/mainpage_antes_jr_docs.py:801
 #: exe/jsui/mainpage_antes_jr_docs.py:806
 #: exe/jsui/mainpage_antes_jr_docs.py:809
@@ -3188,18 +3149,18 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1064
 #: exe/jsui/mainpage_antes_jr_docs.py:1136
 msgid "EXPORT FAILED!"
-msgstr "导出失败!"
+msgstr ""
 
-#: exe/jsui/mainpage.py:932 exe/jsui/mainpage_antes_jr_docs.py:873
+#: exe/jsui/mainpage.py:940 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:935 exe/jsui/mainpage_antes_jr_docs.py:876
+#: exe/jsui/mainpage.py:943 exe/jsui/mainpage_antes_jr_docs.py:876
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:993
+#: exe/jsui/mainpage.py:984 exe/jsui/mainpage.py:1001
 #: exe/jsui/mainpage_antes_jr_docs.py:917
 #: exe/jsui/mainpage_antes_jr_docs.py:934
 #, python-format
@@ -3207,25 +3168,23 @@ msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
-"引出失败!\n"
-"%s"
 
-#: exe/jsui/mainpage.py:995 exe/jsui/mainpage_antes_jr_docs.py:936
+#: exe/jsui/mainpage.py:1003 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
-msgstr "课件存至: %s"
+msgstr ""
 
-#: exe/jsui/mainpage.py:1007 exe/jsui/mainpage_antes_jr_docs.py:948
+#: exe/jsui/mainpage.py:1015 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1021 exe/jsui/mainpage.py:1111
-#: exe/jsui/mainpage.py:1127 exe/jsui/mainpage.py:1140
-#: exe/jsui/mainpage.py:1146 exe/jsui/mainpage.py:1164
-#: exe/jsui/mainpage.py:1180 exe/jsui/mainpage.py:1186
-#: exe/jsui/mainpage.py:1200 exe/jsui/mainpage.py:1215
-#: exe/jsui/mainpage.py:1221 exe/jsui/mainpage.py:1236
-#: exe/jsui/mainpage.py:1242 exe/jsui/mainpage_antes_jr_docs.py:962
+#: exe/jsui/mainpage.py:1029 exe/jsui/mainpage.py:1119
+#: exe/jsui/mainpage.py:1135 exe/jsui/mainpage.py:1148
+#: exe/jsui/mainpage.py:1154 exe/jsui/mainpage.py:1172
+#: exe/jsui/mainpage.py:1188 exe/jsui/mainpage.py:1194
+#: exe/jsui/mainpage.py:1208 exe/jsui/mainpage.py:1223
+#: exe/jsui/mainpage.py:1229 exe/jsui/mainpage.py:1244
+#: exe/jsui/mainpage.py:1250 exe/jsui/mainpage_antes_jr_docs.py:962
 #: exe/jsui/mainpage_antes_jr_docs.py:1052
 #: exe/jsui/mainpage_antes_jr_docs.py:1068
 #: exe/jsui/mainpage_antes_jr_docs.py:1081
@@ -3243,30 +3202,28 @@ msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
-"导出失败!\n"
-"%s"
 
-#: exe/jsui/mainpage.py:1049 exe/jsui/mainpage.py:1096
+#: exe/jsui/mainpage.py:1057 exe/jsui/mainpage.py:1104
 #: exe/jsui/mainpage_antes_jr_docs.py:990
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr "文件名%s是个文档, 无法覆盖它"
+msgstr ""
 
-#: exe/jsui/mainpage.py:1055 exe/jsui/mainpage.py:1103
+#: exe/jsui/mainpage.py:1063 exe/jsui/mainpage.py:1111
 #: exe/jsui/mainpage_antes_jr_docs.py:996
 #: exe/jsui/mainpage_antes_jr_docs.py:1044
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
-msgstr "文件夹%s 已存在,请选择另一个或删除已有的,然后再试."
+msgstr ""
 
-#: exe/jsui/mainpage.py:1069 exe/jsui/mainpage.py:1114
-#: exe/jsui/mainpage.py:1129 exe/jsui/mainpage.py:1148
-#: exe/jsui/mainpage.py:1166 exe/jsui/mainpage.py:1188
-#: exe/jsui/mainpage.py:1202 exe/jsui/mainpage.py:1223
-#: exe/jsui/mainpage.py:1244 exe/jsui/mainpage_antes_jr_docs.py:1010
+#: exe/jsui/mainpage.py:1077 exe/jsui/mainpage.py:1122
+#: exe/jsui/mainpage.py:1137 exe/jsui/mainpage.py:1156
+#: exe/jsui/mainpage.py:1174 exe/jsui/mainpage.py:1196
+#: exe/jsui/mainpage.py:1210 exe/jsui/mainpage.py:1231
+#: exe/jsui/mainpage.py:1252 exe/jsui/mainpage_antes_jr_docs.py:1010
 #: exe/jsui/mainpage_antes_jr_docs.py:1055
 #: exe/jsui/mainpage_antes_jr_docs.py:1070
 #: exe/jsui/mainpage_antes_jr_docs.py:1089
@@ -3277,29 +3234,27 @@ msgstr "文件夹%s 已存在,请选择另一个或删除已有的,然后再试.
 #: exe/jsui/mainpage_antes_jr_docs.py:1185
 #, python-format
 msgid "Exported to %s"
-msgstr "导出至 %s"
+msgstr ""
 
-#: exe/jsui/mainpage.py:1277 exe/jsui/mainpage_antes_jr_docs.py:1218
+#: exe/jsui/mainpage.py:1285 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr "文档%s不存在或不可读."
+msgstr ""
 
-#: exe/jsui/mainpage.py:1281 exe/jsui/mainpage_antes_jr_docs.py:1222
+#: exe/jsui/mainpage.py:1289 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr " "
+msgstr ""
 
-#: exe/jsui/mainpage.py:1284 exe/jsui/mainpage_antes_jr_docs.py:1225
+#: exe/jsui/mainpage.py:1292 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
-"对不起, 文件格式错误:\n"
-"%s"
 
-#: exe/jsui/mainpage.py:1286 exe/jsui/mainpage_antes_jr_docs.py:1227
+#: exe/jsui/mainpage.py:1294 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
-msgstr "对不起, 文件格式错误"
+msgstr ""
 
 #: exe/jsui/propertiespage.py:335
 msgid "Failed to get properties"
@@ -3319,7 +3274,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
 #: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
 msgid "Select an image"
-msgstr "选择图片"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/MainTab.js:194
 #: exe/jsui/scripts/app/controller/MainTab.js:228
@@ -3379,6 +3334,7 @@ msgstr ""
 #: exe/webui/stylemanagerpage.py:373 exe/webui/stylemanagerpage.py:384
 #: exe/webui/stylemanagerpage.py:421 exe/webui/stylemanagerpage.py:428
 #: exe/webui/stylemanagerpage.py:471 exe/webui/stylemanagerpage.py:483
+#: exe/webui/tools/style-designer/langs/en.js:124
 msgid "Error"
 msgstr ""
 
@@ -3410,12 +3366,12 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
 msgid "Insert Package"
-msgstr "插入课件"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Extract Package"
-msgstr "引出课件"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Delete \"{node}\" node and all its children?"
@@ -3491,7 +3447,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:400
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
 msgid "Preferences"
-msgstr "使用偏好"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:428
 msgid ""
@@ -3523,7 +3479,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:123
 msgid "Information"
-msgstr "资讯"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 msgid "Your Style could not be saved because an unknown error occurred."
@@ -3631,12 +3587,13 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:786
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
-#: exe/webui/editorpane.py:273 exe/webui/xliffimportpreferencespage.py:94
+#: exe/webui/editorpane.py:273
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:126
-#: exe/webui/tools/style-designer/langs/en.js:135
+#: exe/webui/tools/style-designer/langs/en.js:127
+#: exe/webui/tools/style-designer/langs/en.js:136
+#: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:792
 msgid "Ok"
@@ -3794,7 +3751,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
-msgstr "名称"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:95
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
@@ -3817,7 +3774,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:77
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:183
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:124
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:122
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:228
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:640
@@ -3826,7 +3783,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/en.js:112
 msgid "Save"
-msgstr "保存"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:78
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:89
@@ -3847,14 +3804,13 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:35
 msgid "Dublin Core Metadata"
-msgstr "Dublin Core 元数据"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:45
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:171
-#, fuzzy
 msgid "The name given to the resource."
-msgstr "学习此课的目的"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:51
 msgid "Creator"
@@ -3945,9 +3901,8 @@ msgid "Format"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
-#, fuzzy
 msgid "Select a Format."
-msgstr "选择格式"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomSections.js:40
@@ -3985,9 +3940,8 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:182
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:189
-#, fuzzy
 msgid "Select a language."
-msgstr "选择语言"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
@@ -4026,10 +3980,10 @@ msgid ""
 "Copyright, and various Property Rights. If the Rights element is absent, "
 "no assumptions can be made about the status of these and other rights "
 "with respect to the resource."
-msgstr " "
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:189
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:130
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:128
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:233
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:273
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:646
@@ -4038,14 +3992,13 @@ msgid "Clear"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:195
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:136
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
 #: exe/webui/tools/style-designer/langs/en.js:110
-#, fuzzy
 msgid "Reset"
-msgstr "法罗语"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
@@ -4081,46 +4034,46 @@ msgid ""
 "eXeLearning."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:76
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:74
 msgid "SCORM Options (1.2 and 2004)"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:84
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:82
 msgid "Add Previous/Next links within SCOs?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:88
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:86
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO. The LMS will also still add this kind "
 "of functionality."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:91
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:89
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO.  This requires a non-standard extension"
 " to SCORM 1.2 and is only known to work with some versions of Moodle."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:97
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:95
 msgid "Include Single Page export file?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:101
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:104
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:99
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:102
 msgid ""
 "Checking this option the exported SCORM file will include a file named "
 "\"singlepage_index.html\" containing the result of exporting this eXe "
 "package as a single page."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:110
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:108
 msgid "Include Web Site export files?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:114
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:117
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:112
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:115
 msgid ""
 "Checking this option the exported SCORM file will include the result of "
 "exporting this eXe package as Web Site. All the html files will have the "
@@ -4364,7 +4317,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:269
 #: exe/webui/editorpane.py:387
 msgid "Purpose"
-msgstr "用途"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:166
 msgid "Download Classification Sources"
@@ -4755,7 +4708,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:45
 msgid "Select Language"
-msgstr "选择语言"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:151
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -4785,9 +4738,8 @@ msgid "Permissive"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
-#, fuzzy
 msgid "Strict"
-msgstr "重新开始"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:192
 msgid ""
@@ -4833,7 +4785,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
 msgid "Export"
-msgstr "导出"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
 msgid "Delete style: "
@@ -4912,7 +4864,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
-msgstr "目录"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:85
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:88
@@ -4933,7 +4885,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:155
 msgid "iDevices"
-msgstr "iDevices"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "Category"
@@ -4945,21 +4897,21 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
 msgid "Authoring"
-msgstr "制作"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:47
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Properties"
-msgstr "属性"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
 msgid "Package"
-msgstr "课件"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:58
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
 msgid "Metadata"
-msgstr "元数据"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:195
@@ -4973,7 +4925,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
-msgstr "添加页面"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:239
 #: exe/webui/block.py:333 exe/webui/editorelement.py:78
@@ -4984,11 +4936,11 @@ msgstr "添加页面"
 #: exe/webui/galleryblock.py:303
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
-msgstr "删除"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
-msgstr "重命名"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
 msgid "Promote node up in hierarchy"
@@ -4999,17 +4951,15 @@ msgid "Demote node down in hierarchy"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:45
-#, fuzzy
 msgid "Move node up"
-msgstr "上移"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:51
-#, fuzzy
 msgid "Move node down"
-msgstr "下移"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
-#: exe/webui/tools/style-designer/langs/en.js:132
+#: exe/webui/tools/style-designer/langs/en.js:133
 msgid "New"
 msgstr ""
 
@@ -5024,7 +4974,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
-msgstr "清除当前项目列"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
 msgid "Save As..."
@@ -5077,15 +5027,15 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:273
 msgid "Web Site"
-msgstr "网页"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:280
 msgid "Self-contained Folder"
-msgstr "独立的文件夹"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:286
 msgid "Zip File"
-msgstr "Zip文档"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
 msgid "Single Page"
@@ -5109,7 +5059,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:356 exe/webui/editorpage.py:269
 msgid "Quit"
-msgstr "退出"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:363
 msgid "Tools"
@@ -5141,7 +5091,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Preview"
-msgstr "预览"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Refresh Display"
@@ -5192,397 +5142,397 @@ msgid ""
 "menu File->Quit if you really want to exit the application."
 msgstr ""
 
-#: exe/jsui/scripts/exe.js:269 exe/jsui/scripts/app/view/ui/LeftPanel.js:90
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:90 exe/jsui/scripts/exe.js:269
 msgid "Group iDevices"
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
-msgstr "阿法尔 语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:8
 msgid "Abkhazian "
-msgstr "阿布哈西亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:12
 msgid "Avestan "
-msgstr "阿维斯陀语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:16
 msgid "Afrikaans "
-msgstr "南非荷兰语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:20
 msgid "Amharic "
-msgstr "阿比西尼亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:24
 msgid "Arabic "
-msgstr "阿拉伯语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:28
 msgid "Assamese "
-msgstr "阿萨姆语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:32
 msgid "Aymara "
-msgstr "艾马拉语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:36
 msgid "Azerbaijani "
-msgstr "阿塞拜疆语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:40
 msgid "Bashkir "
-msgstr "巴什基尔语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:44
 msgid "Byelorussian; Belarusian "
-msgstr "白俄罗斯语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:48
 msgid "Bulgarian "
-msgstr "保加利亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:52
 msgid "Bihari "
-msgstr "比哈里 语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:56
 msgid "Bislama "
-msgstr "比斯拉马语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:60
 msgid "Bengali; Bangla "
-msgstr "孟加拉语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:64
 msgid "Tibetan "
-msgstr "藏语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:68
 msgid "Breton "
-msgstr "不列塔尼语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:72
 msgid "Bosnian "
-msgstr "波西尼亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:76
 msgid "Catalan "
-msgstr "加泰罗尼亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:80
 msgid "Chechen "
-msgstr "车臣语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:84
 msgid "Chamorro "
-msgstr "查莫罗语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:88
 msgid "Corsican "
-msgstr "科西嘉语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:92
 msgid "Czech "
-msgstr "捷克语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:96
 msgid "Church Slavic "
-msgstr "教会斯拉夫语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:100
 msgid "Chuvash "
-msgstr "楚瓦什语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:104
 msgid "Welsh "
-msgstr "威尔士语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:108
 msgid "Danish "
-msgstr "丹麦语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:112
 msgid "German "
-msgstr "丹麦语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:116
 msgid "Dzongkha; Bhutani "
-msgstr "宗卡语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:120
 msgid "Greek "
-msgstr "希腊语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:124
 msgid "English "
-msgstr "英语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:128
 msgid "Esperanto "
-msgstr "世界语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:132
 msgid "Spanish "
-msgstr "西班牙语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:136
 msgid "Estonian "
-msgstr "爱沙尼亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:140
 msgid "Basque "
-msgstr "巴斯克语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:144
 msgid "Persian "
-msgstr "波斯语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:148
 msgid "Finnish "
-msgstr "芬兰语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:152
 msgid "Fijian; Fiji "
-msgstr "斐济语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:156
 msgid "Faroese "
-msgstr "法罗语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:160
 msgid "French "
-msgstr "法语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:164
 msgid "Frisian "
-msgstr "弗里西亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:168
 msgid "Irish "
-msgstr "爱尔兰语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:172
 msgid "Scots; Gaelic "
-msgstr "苏格兰盖尔语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:176
 msgid "Gallegan; Galician "
-msgstr "加利西亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:180
 msgid "Guarani "
-msgstr "瓜拉尼语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:184
 msgid "Gujarati "
-msgstr "古吉拉特语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:188
 msgid "Manx "
-msgstr "马恩语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:192
 msgid "Hausa (?) "
-msgstr "豪萨语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:196
 msgid "Hebrew (formerly iw) "
-msgstr "希伯来语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:200
 msgid "Hindi "
-msgstr "印地语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:204
 msgid "Hiri Motu "
-msgstr "希里莫图语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:208
 msgid "Croatian "
-msgstr "克罗地亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:212
 msgid "Hungarian "
-msgstr "匈牙利语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:216
 msgid "Armenian "
-msgstr "亚美尼亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:220
 msgid "Herero "
-msgstr "赫雷罗语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:224
 msgid "Interlingua "
-msgstr "拉丁国际语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:228
 msgid "Indonesian (formerly in) "
-msgstr "印尼语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:232
 msgid "Interlingue "
-msgstr "国际语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:236
 msgid "Inupiak "
-msgstr "伊帕语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:240
 msgid "Ido "
-msgstr "伊多语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:244
 msgid "Icelandic "
-msgstr "冰岛语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:248
 msgid "Italian "
-msgstr "意大利语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:252
 msgid "Inuktitut "
-msgstr "伊努克迪特语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:256
 msgid "Japanese "
-msgstr "日语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:260
 msgid "Javanese "
-msgstr "爪哇语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:264
 msgid "Georgian "
-msgstr "格鲁吉亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:268
 msgid "Kikuyu "
-msgstr "吉库犹语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:272
 msgid "Kuanyama "
-msgstr "夸尼亚玛语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:276
 msgid "Kazakh "
-msgstr "哈萨克 语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:280
 msgid "Kalaallisut; Greenlandic "
-msgstr "格陵兰语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:284
 msgid "Khmer; Cambodian "
-msgstr "柬埔语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:288
 msgid "Kannada "
-msgstr "坎拿达语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:292
 msgid "Korean "
-msgstr "韩国语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:296
 msgid "Kashmiri "
-msgstr "克什米尔语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:300
 msgid "Kurdish "
-msgstr "库尔德语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:304
 msgid "Komi "
-msgstr "科米语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:308
 msgid "Cornish "
-msgstr "科尼什语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:312
 msgid "Kirghiz "
-msgstr "吉尔吉斯语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:316
 msgid "Latin "
-msgstr "拉丁语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:320
 msgid "Letzeburgesch "
-msgstr "立陶宛语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:324
 msgid "Lingala "
-msgstr "林加拉语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:328
 msgid "Lao; Laotian "
-msgstr "老挝语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:332
 msgid "Lithuanian "
-msgstr "立陶宛语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:336
 msgid "Latvian; Lettish "
-msgstr "拉脱维亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:340
 msgid "Malagasy "
-msgstr "马达加斯加语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:344
 msgid "Marshall "
-msgstr "马歇尔语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:348
 msgid "Maori "
-msgstr "毛利语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:352
 msgid "Macedonian "
-msgstr "马其顿语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:356
 msgid "Malayalam "
-msgstr "马拉亚拉姆语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:360
 msgid "Mongolian "
-msgstr "蒙古文"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:364
 msgid "Moldavian "
-msgstr "摩尔多瓦语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:368
 msgid "Marathi "
-msgstr "马拉提语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:372
 msgid "Malay "
-msgstr "马来语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:376
 msgid "Maltese "
-msgstr "马尔他语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:380
 msgid "Burmese "
-msgstr "缅甸语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:384
 msgid "Nauru "
-msgstr "瑙鲁语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:388
 msgid "Norwegian Bokmål "
-msgstr "挪威语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:392
 msgid "Ndebele,North "
@@ -5590,23 +5540,23 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:396
 msgid "Nepali "
-msgstr "尼泊尔语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:400
 msgid "Ndonga "
-msgstr "尼东阁语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:404
 msgid "Dutch "
-msgstr "荷兰语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:408
 msgid "Norwegian Nynorsk "
-msgstr "新挪威语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:412
 msgid "Norwegian "
-msgstr "挪威语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:416
 msgid "Ndebele,South "
@@ -5614,39 +5564,39 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:420
 msgid "Navajo "
-msgstr "那伐鹤语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:424
 msgid "Chichewa; Nyanja "
-msgstr "齐切瓦语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:428
 msgid "Occitan; Provençal "
-msgstr "奥克西唐语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:432
 msgid "(Afan) Oromo "
-msgstr "阿芳·奥洛莫语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:436
 msgid "Oriya "
-msgstr "奥里亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:440
 msgid "Ossetian; Ossetic "
-msgstr "奥塞梯语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:444
 msgid "Panjabi; Punjabi "
-msgstr "旁遮普语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:448
 msgid "Pali "
-msgstr "巴利语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:452
 msgid "Polish "
-msgstr "波兰语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:456
 msgid "Pashto,Pushto "
@@ -5654,87 +5604,87 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:460
 msgid "Portuguese "
-msgstr "葡萄牙语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:464
 msgid "Quechua "
-msgstr "克家语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:468
 msgid "Rhaeto-Romance "
-msgstr "利托—罗曼语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:472
 msgid "Rundi; Kirundi "
-msgstr "隆迪语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:476
 msgid "Romanian "
-msgstr "罗马尼亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:480
 msgid "Russian "
-msgstr "俄语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:484
 msgid "Kinyarwanda "
-msgstr "基尼亚卢旺达语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:488
 msgid "Sanskrit "
-msgstr "梵语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:492
 msgid "Sardinian "
-msgstr "萨丁语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:496
 msgid "Sindhi "
-msgstr "辛地语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:500
 msgid "Northern Sami "
-msgstr "萨摩亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:504
 msgid "Sango; Sangro "
-msgstr "桑戈语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:508
 msgid "Sinhalese "
-msgstr "僧伽罗语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:512
 msgid "Slovak "
-msgstr "斯洛伐克语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:516
 msgid "Slovenian "
-msgstr "斯洛文尼亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:520
 msgid "Samoan "
-msgstr "萨摩亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:524
 msgid "Shona "
-msgstr "修纳语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:528
 msgid "Somali "
-msgstr "索马里语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:532
 msgid "Albanian "
-msgstr "阿尔巴尼亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:536
 msgid "Serbian "
-msgstr "塞尔维亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:540
 msgid "Swati; Siswati "
-msgstr "斯瓦特语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:544
 msgid "Sesotho; Sotho,Southern "
@@ -5742,87 +5692,87 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:548
 msgid "Sundanese "
-msgstr "巽他语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:552
 msgid "Swedish "
-msgstr "瑞典语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:556
 msgid "Swahili "
-msgstr "斯瓦希里语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:560
 msgid "Tamil "
-msgstr "泰米尔语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:564
 msgid "Telugu "
-msgstr "泰卢固语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:568
 msgid "Tajik "
-msgstr "塔吉克语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:572
 msgid "Thai "
-msgstr "泰国语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:576
 msgid "Tigrinya "
-msgstr "提格里尼亚语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:580
 msgid "Turkmen "
-msgstr "土库曼语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:584
 msgid "Tagalog "
-msgstr "塔加拉族语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:588
 msgid "Tswana; Setswana "
-msgstr "茨瓦纳语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:592
 msgid "Tongan  "
-msgstr "汤加语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:596
 msgid "Turkish "
-msgstr "土耳其语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:600
 msgid "Tsonga "
-msgstr "通加语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:604
 msgid "Tatar "
-msgstr "鞑靼语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:608
 msgid "Twi "
-msgstr "特威语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:612
 msgid "Tahitian "
-msgstr "塔西提语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:616
 msgid "Uighur "
-msgstr "回鹘文"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:620
 msgid "Ukrainian "
-msgstr "乌克兰语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:624
 msgid "Urdu "
-msgstr "晤鲁都语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:628
 msgid "Uzbek "
-msgstr "乌兹别克语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:632
 msgid "Valencian "
@@ -5830,43 +5780,43 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:636
 msgid "Vietnamese "
-msgstr "越南语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:640
 msgid "Volapük; Volapuk "
-msgstr "沃拉普克语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:644
 msgid "Walloon "
-msgstr "华隆语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:648
 msgid "Wolof "
-msgstr "沃洛夫语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:652
 msgid "Xhosa "
-msgstr "科萨语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:656
 msgid "Yiddish (formerly ji) "
-msgstr "意第绪语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:660
 msgid "Yoruba "
-msgstr "约鲁巴人语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:664
 msgid "Zhuang "
-msgstr "壮族语"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:668
 msgid "Chinese "
-msgstr "中文"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:672
 msgid "Zulu "
-msgstr "祖鲁语"
+msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:5 exe/jsui/scripts/lomvocab.js:664
 msgid "active"
@@ -6672,43 +6622,43 @@ msgstr ""
 msgid "distance"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1274
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:31 exe/webui/common.py:180
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:31
+#: exe/jsui/scripts/lomvocab.js:1274 exe/webui/common.py:180
 msgid "propietary license"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1278
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:35 exe/webui/common.py:156
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:35
+#: exe/jsui/scripts/lomvocab.js:1278 exe/webui/common.py:156
 msgid "free software license EUPL"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1282
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:39 exe/webui/common.py:162
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
+#: exe/jsui/scripts/lomvocab.js:1282 exe/webui/common.py:162
 msgid "free software license GPL"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1286
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:43 exe/webui/common.py:168
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:43
+#: exe/jsui/scripts/lomvocab.js:1286 exe/webui/common.py:168
 msgid "dual free content license GPL and EUPL"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1290
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:47 exe/webui/common.py:174
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:47
+#: exe/jsui/scripts/lomvocab.js:1290 exe/webui/common.py:174
 msgid "other free software licenses"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1294
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:51 exe/webui/common.py:150
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:51
+#: exe/jsui/scripts/lomvocab.js:1294 exe/webui/common.py:150
 msgid "public domain"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1298
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:55 exe/webui/common.py:192
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:55
+#: exe/jsui/scripts/lomvocab.js:1298 exe/webui/common.py:192
 msgid "not appropriate"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1302
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:59 exe/webui/common.py:186
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:59
+#: exe/jsui/scripts/lomvocab.js:1302 exe/webui/common.py:186
 msgid "intellectual property license"
 msgstr ""
 
@@ -6736,8 +6686,8 @@ msgstr ""
 msgid "creative commons: attribution - share alike"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1330
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
+#: exe/jsui/scripts/lomvocab.js:1330
 msgid "license GFDL"
 msgstr ""
 
@@ -6799,7 +6749,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:85
 msgid "Please upload a .ggb file."
-msgstr "请上传一个.ggb文件."
+msgstr ""
 
 #: exe/webui/appletblock.py:87
 msgid "Please upload a .jclic.zip file."
@@ -6827,7 +6777,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:131
 msgid "Geogebra"
-msgstr "Geogebra"
+msgstr ""
 
 #: exe/webui/appletblock.py:132
 msgid "JClic"
@@ -6839,15 +6789,15 @@ msgstr ""
 
 #: exe/webui/appletblock.py:134 exe/webui/wikipediablock.py:136
 msgid "Other"
-msgstr "其它"
+msgstr ""
 
 #: exe/webui/appletblock.py:135
 msgid "Applet Type"
-msgstr "Applet 类别"
+msgstr ""
 
 #: exe/webui/appletblock.py:156 exe/webui/appletblock.py:166
 msgid "Add files"
-msgstr "添加文档"
+msgstr ""
 
 #: exe/webui/appletblock.py:162
 msgid "Accept URL"
@@ -6855,30 +6805,30 @@ msgstr ""
 
 #: exe/webui/appletblock.py:172
 msgid "Applet Code:"
-msgstr "Applet Code:"
+msgstr ""
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
 msgid "Filename:"
-msgstr "文件名:"
+msgstr ""
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
 #: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
 #: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
 msgid "Select a file"
-msgstr "选择文档"
+msgstr ""
 
 #: exe/webui/attachmentblock.py:108
 msgid "Label:"
-msgstr "标签:"
+msgstr ""
 
 #: exe/webui/block.py:184
 msgid "IDevice broken"
-msgstr "IDevice broken"
+msgstr ""
 
 #: exe/webui/block.py:222
 msgid "Done"
-msgstr "完成"
+msgstr ""
 
 #: exe/webui/block.py:226
 msgid "Exit without saving?"
@@ -6898,36 +6848,36 @@ msgstr ""
 
 #: exe/webui/block.py:246
 msgid "Move Up"
-msgstr "上移"
+msgstr ""
 
 #: exe/webui/block.py:253
 msgid "Move Down"
-msgstr "下移"
+msgstr ""
 
 #: exe/webui/block.py:255
 msgid "---Move To---"
-msgstr "---移至---"
+msgstr ""
 
 #: exe/webui/block.py:260 exe/webui/editorpane.py:380
 msgid "Pedagogical Help"
-msgstr "教学帮助"
+msgstr ""
 
 #: exe/webui/block.py:273 exe/webui/editorpane.py:390
 msgid "Tip:"
-msgstr "提示:"
+msgstr ""
 
 #: exe/webui/block.py:318
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr "ERROR: Block.renderViewContent called directly"
+msgstr ""
 
 #: exe/webui/block.py:328 exe/webui/editorpage.py:286
 #: exe/webui/editorpane.py:270
 msgid "Edit"
-msgstr "编辑"
+msgstr ""
 
 #: exe/webui/casestudyblock.py:114 exe/webui/ejercicioresueltofpdblock.py:130
 msgid "Add another activity"
-msgstr "添加另一项活动"
+msgstr ""
 
 #: exe/webui/casopracticofpdblock.py:68
 msgid "Situation"
@@ -7080,25 +7030,25 @@ msgstr ""
 
 #: exe/webui/common.py:476
 msgid "Hide"
-msgstr "隐藏"
+msgstr ""
 
 #: exe/webui/common.py:477 exe/webui/common.py:715 exe/webui/element.py:1538
 #: exe/webui/element.py:2469 exe/webui/listablock.py:275
 msgid "Show Feedback"
-msgstr "显示评语"
+msgstr ""
 
 #: exe/webui/common.py:478
 msgid "Hide Feedback"
-msgstr "隐藏 评语"
+msgstr ""
 
 #: exe/webui/common.py:479 exe/webui/common.py:494 exe/webui/element.py:2272
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
-msgstr "正确"
+msgstr ""
 
 #: exe/webui/common.py:480 exe/webui/element.py:2275
 msgid "Incorrect"
-msgstr "不正确"
+msgstr ""
 
 #: exe/webui/common.py:481
 msgid "Menu"
@@ -7110,7 +7060,7 @@ msgstr ""
 
 #: exe/webui/common.py:495 exe/webui/element.py:2708 exe/webui/element.py:2726
 msgid "Wrong"
-msgstr "错误"
+msgstr ""
 
 #: exe/webui/common.py:496
 msgid "Right answer"
@@ -7129,9 +7079,8 @@ msgid "Words"
 msgstr ""
 
 #: exe/webui/common.py:501
-#, fuzzy
 msgid "Play"
-msgstr "上载"
+msgstr ""
 
 #: exe/webui/common.py:503
 msgid "Results"
@@ -7142,9 +7091,8 @@ msgid "Total"
 msgstr ""
 
 #: exe/webui/common.py:505
-#, fuzzy
 msgid "Another word"
-msgstr "添加选项"
+msgstr ""
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7165,11 +7113,11 @@ msgstr ""
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
-msgstr "eXe:  elearning XHTML 编辑器"
+msgstr ""
 
 #: exe/webui/common.py:839 exe/webui/common.py:842
 msgid "Click for completion instructions"
-msgstr "点击看完成说明."
+msgstr ""
 
 #: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
@@ -7177,15 +7125,15 @@ msgstr ""
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:251
 msgid "Text Line"
-msgstr "单行文字"
+msgstr ""
 
 #: exe/webui/editorelement.py:111 exe/webui/editorpane.py:253
 msgid "Text Box"
-msgstr "多行文字"
+msgstr ""
 
 #: exe/webui/editorelement.py:149 exe/webui/element.py:602
 msgid "Button Caption"
-msgstr "按钮标签:"
+msgstr ""
 
 #: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
 #: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
@@ -7199,7 +7147,7 @@ msgstr "按钮标签:"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:18
 msgid "Left"
-msgstr "左"
+msgstr ""
 
 #: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
 #: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
@@ -7213,175 +7161,174 @@ msgstr "左"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:76
 msgid "Right"
-msgstr "右"
+msgstr ""
 
 #: exe/webui/editorelement.py:228 exe/webui/flashmovieblock.py:87
 #: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/imagewithtextblock.py:88 exe/webui/multimediablock.py:92
 msgid "Align:"
-msgstr "对齐:"
+msgstr ""
 
 #: exe/webui/editorelement.py:268 exe/webui/element.py:1889
 msgid "Select Flash Object"
-msgstr "选择flash文档"
+msgstr ""
 
 #: exe/webui/editorelement.py:308
 msgid "Select MP3 file"
-msgstr "选择MP3 文档"
+msgstr ""
 
 #: exe/webui/editorelement.py:311 exe/webui/element.py:869
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
-msgstr "标题:"
+msgstr ""
 
 #: exe/webui/editorpage.py:125
 msgid "Please enter an idevice name."
-msgstr "请填入iDevice名称."
+msgstr ""
 
 #: exe/webui/editorpage.py:188 exe/webui/editorpage.py:200
 msgid "Sorry, wrong file format."
-msgstr "对不起, 文件格式错误"
+msgstr ""
 
 #: exe/webui/editorpage.py:262
 msgid "Import iDevice"
-msgstr "输入iDevice"
+msgstr ""
 
 #: exe/webui/editorpage.py:265
 msgid "Export iDevice"
-msgstr "输出iDevice"
+msgstr ""
 
 #: exe/webui/editorpage.py:291
 msgid "New iDevice"
-msgstr "新的 iDevice"
+msgstr ""
 
 #: exe/webui/editorpane.py:67
 msgid ""
 "Your new iDevice will appear in the iDevice pane with this title. This is"
 " a compulsory field and you will be prompted to enter a label if you try "
 "to submit your iDevice without one."
-msgstr "你新的iDevice将以此名称列在iDevice栏中. 这是一个必须填写的栏目."
+msgstr ""
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
-msgstr "这是一个非必要栏域."
+msgstr ""
 
 #: exe/webui/editorpane.py:72
 msgid ""
 "The purpose dialogue allows you to describe your intended purpose of the "
 "iDevice to other potential users."
-msgstr "描述这个iDevice的目的."
+msgstr ""
 
 #: exe/webui/editorpane.py:75
 msgid ""
 "Use this pulldown to select whether or not  the iDevice should have any "
 "formatting  applied to it to distinguish it; ie. a border and an icon."
-msgstr " "
+msgstr ""
 
 #: exe/webui/editorpane.py:79
 msgid ""
 "Use this field to describe your intended use and the pedagogy behind the "
 "device's development. This can be useful if your iDevice is to be "
 "exported for others to use."
-msgstr "描述这个iDevice的教学用途."
+msgstr ""
 
 #: exe/webui/editorpane.py:84
 msgid ""
 "Add a single text line to an iDevice. Useful if you want the ability to "
 "place a label within the iDevice."
-msgstr "添加单行文字, 用于这 iDevice内的标题."
+msgstr ""
 
 #: exe/webui/editorpane.py:87
 msgid ""
 "Add a text entry box to an iDevice. Used for entering larger amounts of "
 "textual content."
-msgstr "添加多行文字栏域, 用于大量的文字描述."
+msgstr ""
 
 #: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
-msgstr "添加互动式评语."
+msgstr ""
 
 #: exe/webui/editorpane.py:91
 msgid "Add a flash video to your iDevice."
-msgstr "添加flash video."
+msgstr ""
 
 #: exe/webui/editorpane.py:92
 msgid "Add an mp3 file to your iDevice."
-msgstr "添加mp3文档."
+msgstr ""
 
 #: exe/webui/editorpane.py:93
 msgid "Add an attachment file to your iDevice."
-msgstr "添加附件."
+msgstr ""
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:152
 #: exe/webui/editorpane.py:160 exe/webui/editorpane.py:176
 #: exe/webui/editorpane.py:186
 msgid "Enter the label here"
-msgstr "在此输入标题"
+msgstr ""
 
 #: exe/webui/editorpane.py:146
 msgid "Enter instructions for completion here"
-msgstr "在此输入完成说明"
+msgstr ""
 
 #: exe/webui/editorpane.py:153 exe/webui/editorpane.py:177
 #: exe/webui/editorpane.py:187
 msgid "Enter the instructions for completion here"
-msgstr "在此输入完成说明"
+msgstr ""
 
 #: exe/webui/editorpane.py:161
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
-msgstr "如果此栏空白, 评语按钮将不显示."
+msgstr ""
 
 #: exe/webui/editorpane.py:198
 msgid "Please enter<br />an idevice name."
-msgstr "请填入iDevice名称."
+msgstr ""
 
 #: exe/webui/editorpane.py:250
 msgid "Add Field"
-msgstr "添加栏目"
+msgstr ""
 
 #: exe/webui/editorpane.py:265
 msgid "Actions"
-msgstr "动作"
+msgstr ""
 
 #: exe/webui/editorpane.py:332
 msgid "Pedagogical Tip"
-msgstr "教学提示"
+msgstr ""
 
 #: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:163
 msgid "Emphasis"
-msgstr "强调"
+msgstr ""
 
 #: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:160
 msgid "No emphasis"
-msgstr "不强调"
+msgstr ""
 
 #: exe/webui/editorpane.py:339 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:161
 msgid "Some emphasis"
-msgstr "一般强调"
+msgstr ""
 
 #: exe/webui/editorpane.py:354
-#, fuzzy
 msgid "Select an icon"
-msgstr "选择图片"
+msgstr ""
 
 #: exe/webui/editorpane.py:368
 msgid "Icons"
-msgstr "图标"
+msgstr ""
 
 #: exe/webui/editorpane.py:383
 msgid "Info"
-msgstr "资讯"
+msgstr ""
 
 #: exe/webui/editorpane.py:429 exe/webui/element.py:1545
 #: exe/webui/element.py:1547 exe/webui/element.py:1803
 msgid "Submit"
-msgstr "提交"
+msgstr ""
 
 #: exe/webui/ejercicioresueltofpdblock.py:122
 msgid "Translation"
@@ -7390,35 +7337,35 @@ msgstr ""
 #: exe/webui/eleccionmultiplefpdblock.py:98 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
-msgstr "请为每个问题选择一个正确的答案."
+msgstr ""
 
 #: exe/webui/eleccionmultiplefpdblock.py:124 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:119
 msgid "Add another question"
-msgstr "添加问题"
+msgstr ""
 
 #: exe/webui/element.py:72
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr "ERROR Element.process called directly with %s class"
+msgstr ""
 
 #: exe/webui/element.py:81
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
-msgstr "ERROR Element.renderEdit called directly with %s class"
+msgstr ""
 
 #: exe/webui/element.py:98
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
-msgstr "ERROR Element.renderView called directly with %s class"
+msgstr ""
 
 #: exe/webui/element.py:753 exe/webui/element.py:1174
 msgid "Add Image"
-msgstr "添加图片"
+msgstr ""
 
 #: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
 msgid "Display as:"
-msgstr "显示为:"
+msgstr ""
 
 #: exe/webui/element.py:786
 msgid "by"
@@ -7426,24 +7373,24 @@ msgstr ""
 
 #: exe/webui/element.py:793 exe/webui/element.py:1212
 msgid "blank for original size"
-msgstr "空白为原来的大小尺寸"
+msgstr ""
 
 #: exe/webui/element.py:863
 msgid "Select an MP3"
-msgstr "选择MP3"
+msgstr ""
 
 #: exe/webui/element.py:1351 exe/webui/element.py:1684
 msgid "Cloze Text"
-msgstr "填空题"
+msgstr ""
 
 #: exe/webui/element.py:1359 exe/webui/element.py:1692
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
-msgstr "隐藏/显示 文字"
+msgstr ""
 
 #: exe/webui/element.py:1364 exe/webui/element.py:1697
 msgid "Strict Marking?"
-msgstr "严格评分?"
+msgstr ""
 
 #: exe/webui/element.py:1369
 msgid "Check Capitalization?"
@@ -7451,7 +7398,7 @@ msgstr ""
 
 #: exe/webui/element.py:1374 exe/webui/element.py:1707
 msgid "Instant Marking?"
-msgstr "快速评分?"
+msgstr ""
 
 #: exe/webui/element.py:1485 exe/webui/element.py:1742
 #: exe/webui/listablock.py:223
@@ -7460,15 +7407,15 @@ msgstr ""
 
 #: exe/webui/element.py:1535 exe/webui/element.py:1794
 msgid "Get score"
-msgstr "得分"
+msgstr ""
 
 #: exe/webui/element.py:1541 exe/webui/element.py:1800
 msgid "Show/Clear Answers"
-msgstr "显示/清除 答案"
+msgstr ""
 
 #: exe/webui/element.py:1551 exe/webui/element.py:1807
 msgid "Show Answers"
-msgstr "显示 答案"
+msgstr ""
 
 #: exe/webui/element.py:1587 exe/webui/element.py:1839
 #: exe/webui/element.py:2461 exe/webui/element.py:2921
@@ -7478,7 +7425,7 @@ msgstr ""
 
 #: exe/webui/element.py:1702
 msgid "Check Caps?"
-msgstr "检查大小写?"
+msgstr ""
 
 #: exe/webui/element.py:1712
 msgid "Show Score?"
@@ -7486,49 +7433,48 @@ msgstr ""
 
 #: exe/webui/element.py:1797
 msgid "Show/Hide Feedback"
-msgstr "显示/隐藏 评语"
+msgstr ""
 
 #: exe/webui/element.py:1955
 msgid "Please select a .flv file."
-msgstr "请选择 .flv 文档."
+msgstr ""
 
 #: exe/webui/element.py:1971
 msgid "Select a flash video"
-msgstr "选择flash电影文档"
+msgstr ""
 
 #: exe/webui/element.py:2080
 msgid "text"
-msgstr "文字"
+msgstr ""
 
 #: exe/webui/element.py:2081
 msgid "newline"
-msgstr "换行"
+msgstr ""
 
 #: exe/webui/element.py:2084
 msgid "Select a font size: "
-msgstr "选择字体大小:"
+msgstr ""
 
 #: exe/webui/element.py:2194 exe/webui/element.py:2581
 #: exe/webui/element.py:2706 exe/webui/element.py:2724
 #: exe/webui/testoptionelement.py:111
-#, fuzzy
 msgid "Correct Option"
-msgstr "正确"
+msgstr ""
 
 #: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
-msgstr "删除选项"
+msgstr ""
 
 #: exe/webui/element.py:2361 exe/webui/element.py:2816
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
-msgstr "删除问题"
+msgstr ""
 
 #: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
-msgstr "添加选项"
+msgstr ""
 
 #: exe/webui/element.py:2497 exe/webui/element.py:2940
 msgid "Solution"
@@ -7536,11 +7482,11 @@ msgstr ""
 
 #: exe/webui/element.py:2831
 msgid "Add another option"
-msgstr "添加选项"
+msgstr ""
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
-msgstr "URL:"
+msgstr ""
 
 #: exe/webui/externalurlblock.py:72
 msgid "small"
@@ -7556,7 +7502,7 @@ msgstr ""
 
 #: exe/webui/externalurlblock.py:81
 msgid "Frame Height:"
-msgstr "页框高:"
+msgstr ""
 
 #: exe/webui/fileattachblock.py:92
 msgid "<div>\n"
@@ -7591,39 +7537,39 @@ msgstr ""
 #: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:307
 #: exe/webui/galleryblock.py:308
 msgid "Add images"
-msgstr "添加图片"
+msgstr ""
 
 #: exe/webui/galleryblock.py:230 exe/webui/galleryblock.py:332
 msgid "No Images Loaded"
-msgstr "无图像显示"
+msgstr ""
 
 #: exe/webui/galleryblock.py:246 exe/webui/galleryblock.py:264
 msgid "Change Image"
-msgstr "改换图片"
+msgstr ""
 
 #: exe/webui/galleryblock.py:271
 msgid "Move Image Left"
-msgstr "图像移向左边"
+msgstr ""
 
 #: exe/webui/galleryblock.py:273
 msgid "Go Back"
-msgstr "退后"
+msgstr ""
 
 #: exe/webui/galleryblock.py:285
 msgid "Move Image Right"
-msgstr "图片移向右边"
+msgstr ""
 
 #: exe/webui/galleryblock.py:287
 msgid "Go Forward"
-msgstr "向前"
+msgstr ""
 
 #: exe/webui/galleryblock.py:295
 msgid "Go Forward (Not Available)"
-msgstr "Go Forward (Not Available)"
+msgstr ""
 
 #: exe/webui/galleryblock.py:300
 msgid "Delete Image"
-msgstr "删除图片"
+msgstr ""
 
 #: exe/webui/galleryblock.py:301
 msgid "Delete this image?"
@@ -7673,31 +7619,31 @@ msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
-msgstr "初始放大倍数"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:153
 msgid "Maximum zoom"
-msgstr "最大放大倍数"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:159
 msgid "Small"
-msgstr "小"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:160
 msgid "Medium"
-msgstr "中"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:161
 msgid "Large"
-msgstr "大"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:162
 msgid "Extra large"
-msgstr "特大"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
-msgstr "放大镜尺寸:"
+msgstr ""
 
 #: exe/webui/listablock.py:180
 msgid "Other words"
@@ -7727,7 +7673,7 @@ msgstr ""
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:100
 msgid "Add another Question"
-msgstr "添加问题"
+msgstr ""
 
 #: exe/webui/notablock.py:104
 msgid "Show/Hide"
@@ -7795,11 +7741,11 @@ msgstr ""
 
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
-msgstr "选择及格线"
+msgstr ""
 
 #: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:368
 msgid "SUBMIT ANSWERS"
-msgstr "提交答案"
+msgstr ""
 
 #: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318
 #: exe/webui/quiztestblock.py:372
@@ -7817,21 +7763,19 @@ msgstr ""
 
 #: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:156
 msgid "Load"
-msgstr "载入"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:69
-#, fuzzy
 msgid "Select one or more images"
-msgstr "选择图片"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:94
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
-#, fuzzy
 msgid "Flash Movie (.flv)"
-msgstr "Flash 电影"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
 msgid "Flash Object (.swf)"
@@ -7858,14 +7802,12 @@ msgid "MP3 Audio (.mp3)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:378
-#, fuzzy
 msgid "Select an mp3 file"
-msgstr "选择文档"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:386
-#, fuzzy
 msgid "Select a package"
-msgstr "选择图片"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
@@ -7882,9 +7824,8 @@ msgid "Do you want to overwrite the existing idevice {idevice}?"
 msgstr ""
 
 #: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
-#, fuzzy
 msgid "eXe Idevices"
-msgstr "iDevices"
+msgstr ""
 
 #: exe/webui/scripts/editor.js:87
 msgid "Please save the idevice first, then try to export it."
@@ -7916,7 +7857,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
-msgstr "关闭"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert"
@@ -9013,9 +8954,8 @@ msgid "Node"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
-#, fuzzy
 msgid "Download Information"
-msgstr "资讯"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
@@ -9059,14 +8999,12 @@ msgid "Quote"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
-#, fuzzy
 msgid "Quote Language"
-msgstr "选择语言"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
-#, fuzzy
 msgid "Authorship"
-msgstr "制作"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:9
 msgid "Authorship Language"
@@ -9127,27 +9065,24 @@ msgid "Stop"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
-#, fuzzy
 msgid "Replace with:"
-msgstr "文字及插图"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
-#, fuzzy
 msgid "Edit code"
-msgstr "得分"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:4
 msgid "Auto close tags"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:5
-#, fuzzy
 msgid "Wrap text"
-msgstr "文字"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
@@ -9155,9 +9090,8 @@ msgid "Highlight syntax"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
-#, fuzzy
 msgid "Select a theme"
-msgstr "选择图片"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
 msgid "Search"
@@ -9168,9 +9102,8 @@ msgid "Find next"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
-#, fuzzy
 msgid "Find previous"
-msgstr "前一页"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
 msgid "Replace all"
@@ -9189,9 +9122,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
-#, fuzzy
 msgid "Term"
-msgstr "其它"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
 msgid "Term definition"
@@ -9329,9 +9261,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
-#, fuzzy
 msgid "Choose a type:"
-msgstr "选择图片"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
 msgid "Accordion"
@@ -9350,27 +9281,24 @@ msgid "A single content area with multiple panels."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
-#, fuzzy
 msgid "Pagination"
-msgstr "选项"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
 msgid "Divide your content into different pages."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:26
-#, fuzzy
 msgid "Carousel"
-msgstr "法罗语"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:27
 msgid "Present a list of contents in horizontal order."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
-#, fuzzy
 msgid "Timeline"
-msgstr "换行"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
@@ -9413,9 +9341,8 @@ msgid "This is the message that the users with no JavaScript will see:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
-#, fuzzy
 msgid "Message:"
-msgstr "图像"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
 msgid "You can change it at any time."
@@ -10218,14 +10145,12 @@ msgid "Include wrapper (improves presentation)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#, fuzzy
 msgid "Markup language"
-msgstr "选择语言"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
-#, fuzzy
 msgid "Please select a language"
-msgstr "选择语言"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
@@ -10237,9 +10162,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
-#, fuzzy
 msgid "Light"
-msgstr "右"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
@@ -10633,14 +10557,12 @@ msgid "Behaviour"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
-#, fuzzy
 msgid "Link"
-msgstr "对齐:"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
-#, fuzzy
 msgid "Instructions:"
-msgstr "说明"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
@@ -10651,14 +10573,12 @@ msgid "No selection and not in link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
-#, fuzzy
 msgid "Pages"
-msgstr "大"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
-#, fuzzy
 msgid "Link title"
-msgstr "Wikibooks 文章"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
@@ -10673,9 +10593,8 @@ msgid "The tooltip will show the Link title."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
-#, fuzzy
 msgid "Definition"
-msgstr "问题与回答"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
 msgid "The term could not be found"
@@ -10688,9 +10607,8 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
-#, fuzzy
 msgid "Definition:"
-msgstr "描述:"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
@@ -10702,9 +10620,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
-#, fuzzy
 msgid "Page"
-msgstr "大"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
@@ -10747,9 +10664,8 @@ msgid "The Link is required"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
-#, fuzzy
 msgid "Please select a Page"
-msgstr "请选择 .flv 文档."
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
 msgid "The Link title is required"
@@ -11139,32 +11055,32 @@ msgid "Invalid color value"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:128
+#: exe/webui/tools/style-designer/langs/en.js:129
 msgid "Color Picker"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:59
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:59
 msgid "Lower Alpha"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:60
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:60
 msgid "Lower Greek"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:61
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:61
 msgid "Lower Roman"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:62
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:62
 msgid "Upper Alpha"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:63
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:63
 msgid "Upper Roman"
 msgstr ""
 
@@ -11174,46 +11090,45 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
-#, fuzzy
 msgid "Editor"
-msgstr "iDevice 编辑器"
+msgstr ""
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
 msgstr ""
 
-#: exe/webui/styledesigner.py:53
+#: exe/webui/styledesigner.py:54
 msgid "Error saving style. "
 msgstr ""
 
-#: exe/webui/styledesigner.py:61
+#: exe/webui/styledesigner.py:62
 msgid "Error creating style. "
 msgstr ""
 
-#: exe/webui/styledesigner.py:70
+#: exe/webui/styledesigner.py:71
 msgid "Error creating style, local style already exists. "
 msgstr ""
 
-#: exe/webui/styledesigner.py:125
+#: exe/webui/styledesigner.py:126
 #, python-format
 msgid "Style %s successfully created!"
 msgstr ""
 
-#: exe/webui/styledesigner.py:133
+#: exe/webui/styledesigner.py:134
 #, python-format
 msgid "Style %s successfully saved!"
 msgstr ""
 
-#: exe/webui/styledesigner.py:197
+#: exe/webui/styledesigner.py:198
 #, python-format
 msgid "Style directory %s already exists"
 msgstr ""
 
-#: exe/webui/styledesigner.py:257
+#: exe/webui/styledesigner.py:258
 msgid "The style name already exists"
 msgstr ""
 
-#: exe/webui/styledesigner.py:274
+#: exe/webui/styledesigner.py:275
 msgid "Error saving style, style directory does not exist"
 msgstr ""
 
@@ -11295,19 +11210,19 @@ msgstr ""
 msgid "An unexpected error has occurred"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1241
+#: exe/webui/tools/style-designer/js/app.js:1246
 msgid "Create new style"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1242
+#: exe/webui/tools/style-designer/js/app.js:1247
 msgid "Name the new style"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1264
+#: exe/webui/tools/style-designer/js/app.js:1269
 msgid "Style Designer windows will be closed. "
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1267
+#: exe/webui/tools/style-designer/js/app.js:1272
 msgid "Page will be reloaded. "
 msgstr ""
 
@@ -11316,9 +11231,8 @@ msgid "General settings"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:13
-#, fuzzy
 msgid "Page width"
-msgstr "文字及插图"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:14
 msgid "Percentage"
@@ -11349,32 +11263,28 @@ msgid "Text and Links"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:25
-#, fuzzy
 msgid "Text color"
-msgstr "得分"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:27
-#, fuzzy
 msgid "Links"
-msgstr "对齐:"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:28
 msgid "Links color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:30
-#, fuzzy
 msgid "Style description"
-msgstr "描述"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:32
 msgid "Author URL"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:33
-#, fuzzy
 msgid "Style name"
-msgstr "文件名:"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:34
 msgid "Save to name the new Style."
@@ -11403,9 +11313,8 @@ msgid "Background color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:44
-#, fuzzy
 msgid "Select image"
-msgstr "选择图片"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
@@ -11486,9 +11395,8 @@ msgid "Top margin"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:78
-#, fuzzy
 msgid "Font size"
-msgstr "选择字体大小:"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:80
 msgid "Navigation"
@@ -11531,9 +11439,8 @@ msgid "Grey"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:94
-#, fuzzy
 msgid "With emphasis"
-msgstr "不强调"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:95
 msgid "Title color"
@@ -11586,9 +11493,8 @@ msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:111
-#, fuzzy
 msgid "Finish"
-msgstr "芬兰语"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:113
 msgid "Save as"
@@ -11603,9 +11509,8 @@ msgid "Save all changes? This cannot be undone."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:117
-#, fuzzy
 msgid "Style name:"
-msgstr "文件名:"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Your browser is not compatible with this tool."
@@ -11629,109 +11534,108 @@ msgstr ""
 msgid "This window will be closed. Please restart the tool."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:124
+#: exe/webui/tools/style-designer/langs/en.js:125
 msgid "Undo changes since last time you saved? This cannot be undone. "
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:131
+#: exe/webui/tools/style-designer/langs/en.js:132
 msgid "Drag markers to pick a color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:133
-#, fuzzy
+#: exe/webui/tools/style-designer/langs/en.js:134
 msgid "Current"
-msgstr "不正确"
-
-#: exe/webui/tools/style-designer/langs/en.js:139
-msgid "New Color - Press OK to Commit"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:140
+msgid "New Color - Press OK to Commit"
+msgstr ""
+
+#: exe/webui/tools/style-designer/langs/en.js:141
 msgid "Click to revert to original color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:143
+#: exe/webui/tools/style-designer/langs/en.js:144
 msgid "Commit to this color selection"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:144
+#: exe/webui/tools/style-designer/langs/en.js:145
 msgid "Cancel and revert to original color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:147
+#: exe/webui/tools/style-designer/langs/en.js:148
 msgid "Set to Hue color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:148
+#: exe/webui/tools/style-designer/langs/en.js:149
 msgid "Enter a Hue value (0-360º)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:151
+#: exe/webui/tools/style-designer/langs/en.js:152
 msgid "Set to Saturation color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:152
+#: exe/webui/tools/style-designer/langs/en.js:153
 msgid "Enter a Saturation value (0-100%)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:155
+#: exe/webui/tools/style-designer/langs/en.js:156
 msgid "Set to Value color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:156
+#: exe/webui/tools/style-designer/langs/en.js:157
 msgid "Enter a Value (0-100%)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:159
+#: exe/webui/tools/style-designer/langs/en.js:160
 msgid "Set to Red color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:160
+#: exe/webui/tools/style-designer/langs/en.js:161
 msgid "Enter a Red value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:163
+#: exe/webui/tools/style-designer/langs/en.js:164
 msgid "Set to Green color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:164
+#: exe/webui/tools/style-designer/langs/en.js:165
 msgid "Enter a Green value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:167
+#: exe/webui/tools/style-designer/langs/en.js:168
 msgid "Set to Blue color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:168
+#: exe/webui/tools/style-designer/langs/en.js:169
 msgid "Enter a Blue value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:171
+#: exe/webui/tools/style-designer/langs/en.js:172
 msgid "Set to Alpha color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:172
-#: exe/webui/tools/style-designer/langs/en.js:176
+#: exe/webui/tools/style-designer/langs/en.js:173
+#: exe/webui/tools/style-designer/langs/en.js:177
 msgid "Enter an Alpha value (0-100)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:175
+#: exe/webui/tools/style-designer/langs/en.js:176
 msgid "Enter an Hex color value (#000000-#ffffff)"
 msgstr ""
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
 msgid "True"
-msgstr "对"
+msgstr ""
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:218
 #: exe/webui/truefalseelement.py:264
 msgid "False"
-msgstr "错"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:115
 msgid "English Wikipedia Article"
-msgstr "英文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:116
 msgid "Basque Wikipedia Article"
@@ -11739,23 +11643,23 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:117
 msgid "Catalan Wikipedia Article"
-msgstr "加泰隆尼亚文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:118
 msgid "Chinese Wikipedia Article"
-msgstr "中文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:119
 msgid "Dutch Wikipedia Article"
-msgstr "荷兰文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:120
 msgid "French Wikipedia Article"
-msgstr "法文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:121
 msgid "German Wikipedia Article"
-msgstr "德文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:122
 msgid "Galician Wikipedia Article"
@@ -11763,63 +11667,63 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Greek Wikipedia Article"
-msgstr "希腊文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:124
 msgid "Italian Wikipedia Article"
-msgstr "意大利文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:125
 msgid "Japanese Wikipedia Article"
-msgstr "日文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:126
 msgid "Magyar Wikipedia Article"
-msgstr "马札儿语Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:127
 msgid "Polish Wikipedia Article"
-msgstr "波兰文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:128
 msgid "Portugese Wikipedia Article"
-msgstr "葡萄牙文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:129
 msgid "Slovenian Wikipedia Article"
-msgstr "斯洛法尼亚文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:130
 msgid "Spanish Wikipedia Article"
-msgstr "西班牙文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:131
 msgid "Swedish Wikipedia Article"
-msgstr "瑞典文Wikipedia 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:132
 msgid "Wikibooks Article"
-msgstr "Wikibooks 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:133
 msgid "Wikiversity"
-msgstr "Wikiversity"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:134
 msgid "Wiktionary"
-msgstr "Wiktionary"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:135
 msgid "Wikieducator Content"
-msgstr "Wikieducato 文章"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:141
 msgid "Site"
-msgstr "Site"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:151
 msgid "Own site"
-msgstr "自定义网页"
+msgstr ""
 
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
@@ -11827,12 +11731,12 @@ msgid ""
 "source language instead of target language."
 msgstr ""
 
-#: exe/webui/xliffimportpreferencespage.py:90
 #: exe/webui/tools/style-designer/langs/en.js:58
-#: exe/webui/tools/style-designer/langs/en.js:125
-#: exe/webui/tools/style-designer/langs/en.js:134
+#: exe/webui/tools/style-designer/langs/en.js:126
+#: exe/webui/tools/style-designer/langs/en.js:135
+#: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
 #: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
@@ -11852,5 +11756,5 @@ msgstr ""
 msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
-msgstr "你所试图打开的课件, 或 idevices/generic.data 文档可能是用新版本eXe创建的. 请升级你的eXe, 然后再试."
+msgstr ""
 

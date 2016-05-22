@@ -21,7 +21,7 @@
 # Help
 #-----
 # Pybabel doc http://babel.pocoo.org/docs/cmdline/
-# Pybabel source https://github.com/mitsuhiko/babel
+# Pybabel source https://github.com/python-babel/babel
 # Transecma (py2json.py) https://github.com/nandoflorestan/bag/tree/master/bag/web
 #
 #
@@ -64,7 +64,8 @@ version="2.1.1"
 
 # 1.- pyBabel - Extraction of strings from *.py and *.js into new POT
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
-pybabel extract --keyword=x_ --keyword=c_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
+# pybabel extract --keyword=x_ --keyword=c_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
+pybabel extract --keyword=x_ --keyword=c_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . --output="exe/locale/messages.pot"
 # tools/nevow-xmlgettext exe/jsui/templates/mainpage.html exe/webui/templates/about.html | msgcat exe/locale/messages.pot.tmp - -o exe/locale/messages.pot
 # rm exe/locale/messages.pot.tmp
 # Removal of fuzzy comments from the POT file

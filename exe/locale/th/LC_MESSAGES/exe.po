@@ -5,18 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.1\n"
+"Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-12 16:37+0200\n"
+"POT-Creation-Date: 2016-05-22 13:57+0200\n"
 "PO-Revision-Date: 2007-09-12 06:29+1200\n"
 "Last-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\n"
-"Language-Team: EXE Team <exe@exelearning.org>\n"
 "Language: th\n"
+"Language-Team: EXE Team <exe@exelearning.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 1.3\n"
+"Generated-By: Babel 2.3.4\n"
 
 #: exe/application.py:191
 #, python-format
@@ -101,12 +101,12 @@ msgstr ""
 #: exe/engine/appletidevice.py:190
 #, python-format
 msgid "file %s has no parentNode"
-msgstr "ไฟล์ %s ไม่มี parentNode"
+msgstr ""
 
 #: exe/engine/appletidevice.py:192 exe/engine/attachmentidevice.py:107
 #, python-format
 msgid "iDevice %s has no package"
-msgstr "iDevice %s ไม่มี แพคเกจ"
+msgstr ""
 
 #: exe/engine/appletidevice.py:443
 msgid "Sorry, this URL is unreachable"
@@ -154,7 +154,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
-msgstr "สิ่งที่แนบมาด้วย"
+msgstr ""
 
 #: exe/engine/attachmentidevice.py:46
 msgid ""
@@ -175,7 +175,7 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
-msgstr "คำอธิบาย:"
+msgstr ""
 
 #: exe/engine/attachmentidevice.py:69
 msgid ""
@@ -196,25 +196,25 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:105
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr "การแนบ %s ไม่มี parentNode"
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/tools/style-designer/langs/en.js:46
 msgid "Image"
-msgstr "รูปภาพ"
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:65
 #: exe/engine/ejercicioresueltofpdidevice.py:65
 msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
-msgstr "เลือกรูปภาพที่จะแสดงให้กับนักเรียนเมื่อทำการเฉลยคำถามนี้"
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
-msgstr "กรณีศึกษา"
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:202
 msgid ""
@@ -255,7 +255,7 @@ msgstr ""
 #: exe/engine/ejercicioresueltofpdidevice.py:222
 #: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
-msgstr "เนื้อเรื่อง:"
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:228
 #: exe/engine/ejercicioresueltofpdidevice.py:227
@@ -351,7 +351,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Title"
-msgstr "ชื่อเรื่อง"
+msgstr ""
 
 #: exe/engine/clickinorderidevice.py:61
 msgid "Game Instructions"
@@ -602,7 +602,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 msgid "Instructions"
-msgstr "คำสั่ง"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
 #: exe/engine/clozelangfpdidevice.py:121
@@ -660,17 +660,17 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
 msgid "Instructions For Learners"
-msgstr "คำสั่งสำหรับผู้เรียน"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
 #: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
-msgstr "ใส่ คำสั่ง สำหรับผู้เรียน ที่นี่"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:284
 msgid "Read the paragraph below and fill in the missing words"
-msgstr "อ่านข้อความต่อไปนี้ แล้วจงเติมคำที่ขาดหาย"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
 #: exe/engine/clozelangfpdidevice.py:296
@@ -679,12 +679,12 @@ msgstr ""
 
 #: exe/engine/clozeidevice.py:49
 msgid "Cloze Activity"
-msgstr "กิจกรรมเติมคำในช่องว่าง"
+msgstr ""
 
 #: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
-msgstr "อ่านข้อความต่อไปนี้ แล้วจงเติมคำที่ขาดหาย."
+msgstr ""
 
 #: exe/engine/clozelangfpdidevice.py:50
 msgid "FPD - Cloze Activity (Modified)"
@@ -838,8 +838,6 @@ msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
-"ใส่คำใบ้ที่นี่. ถ้าคุณ\n"
-"ไม่ต้องการคำใบ้, ให้ปล่อยว่างไว้"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
@@ -856,8 +854,6 @@ msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
 msgstr ""
-"เลือก ตัวเลือกที่ถูกต้อง\n"
-"."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:108
 #: exe/engine/multichoiceidevice.py:106
@@ -889,14 +885,14 @@ msgstr ""
 #: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
-msgstr "คำถาม"
+msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:287
 #: exe/engine/multichoiceidevice.py:285
 msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
 " blank."
-msgstr "ใส่คำใบ้ที่นี่. ถ้าคุณไม่ต้องการคำใบ้, ให้ปล่อยว่างไว้"
+msgstr ""
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
@@ -984,7 +980,7 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:185
 msgid "Delete File"
-msgstr "ลบไฟล์"
+msgstr ""
 
 #: exe/engine/extendedfieldengine.py:306
 msgid "No File Uploaded Currently"
@@ -996,7 +992,7 @@ msgstr ""
 #: exe/webui/multimediablock.py:87
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
-msgstr "ปล่อยว่าง"
+msgstr ""
 
 #: exe/engine/extendedfieldengine.py:570
 msgid "is not a valid number - please try again<br/>"
@@ -1004,7 +1000,7 @@ msgstr ""
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
-msgstr "เว็บไซต์ภายนอก"
+msgstr ""
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -1092,20 +1088,16 @@ msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
-"เลือกเฉพาะ .swf (ไฟล์ Flash) สำหรับ\n"
-" iDevice นี้"
 
 #: exe/engine/field.py:3498 exe/engine/field.py:3562
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
-"เลือกเฉพาะ .flv (ไฟล์ Flash Video) สำหรับ\n"
-" iDevice นี้"
 
 #: exe/engine/field.py:3574
 msgid "Type a discussion topic here."
-msgstr "พิมพ์หัวข้อการอภิปรายที่นี่."
+msgstr ""
 
 #: exe/engine/field.py:3603
 msgid ""
@@ -1126,21 +1118,21 @@ msgstr ""
 #: exe/webui/element.py:2576 exe/webui/element.py:2668
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
-msgstr "ตัวเลือก"
+msgstr ""
 
 #: exe/engine/field.py:3757 exe/engine/field.py:3823
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:452
 msgid "Hint"
-msgstr "คำใบ้"
+msgstr ""
 
 #: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2381
-#: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
+#: exe/webui/testquestionelement.py:110
 msgid "Options"
-msgstr "ตัวเลือก"
+msgstr ""
 
 #: exe/engine/field.py:3905
 msgid ""
@@ -1156,7 +1148,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:47
 #: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
 msgid "Question:"
-msgstr "คำถาม:"
+msgstr ""
 
 #: exe/engine/field.py:3913
 msgid ""
@@ -1171,8 +1163,6 @@ msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr ""
-"เลือกหลายคำตอบ\n"
-"โดยการ คลิก ที่ กล่อง ข้าง ๆ ตัวเลือก"
 
 #: exe/engine/field.py:3920
 msgid ""
@@ -1263,7 +1253,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Description"
-msgstr "การอธิบาย"
+msgstr ""
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:109
 msgid ""
@@ -1273,7 +1263,7 @@ msgstr ""
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
-msgstr "Flash กับตัวหนังสือ"
+msgstr ""
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1322,7 +1312,7 @@ msgstr ""
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
 msgid "Free Text"
-msgstr "ข้อความ"
+msgstr ""
 
 #: exe/engine/freetextfpdidevice.py:47 exe/engine/freetextidevice.py:46
 msgid ""
@@ -1334,23 +1324,23 @@ msgstr ""
 
 #: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
-msgstr "นี่คือ ช่องข้อความอิสระ ข้อมูลการเรียนรู้ทั่วไปสามารถใส่ได้ที่นี่."
+msgstr ""
 
 #: exe/engine/galleryidevice.py:140 exe/engine/galleryidevice.py:191
 msgid "No Thumbnail Available. Could not load original image."
-msgstr "ไม่สามารถใช้รูปแบบภาพเล็กได้ เนื่องจาก ไม่สามารถโหลดภาพต้นฉบับได้"
+msgstr ""
 
 #: exe/engine/galleryidevice.py:148 exe/engine/galleryidevice.py:198
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr "ไม่สามารถใช้รูปแบบภาพเล็กได้ เนื่องจากไม่สามารถย่อภาพต้นฉบับได้"
+msgstr ""
 
 #: exe/engine/galleryidevice.py:221
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr "ไม่สามารถใช้รูปแบบภาพเล็กได้ เนื่องจากไม่สามารถย่อภาพได้"
+msgstr ""
 
 #: exe/engine/galleryidevice.py:458
 msgid "Image Gallery"
-msgstr "แกลลอรี่รูปภาพ"
+msgstr ""
 
 #: exe/engine/galleryidevice.py:459
 msgid "eXe Project"
@@ -1366,11 +1356,11 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:463
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr "ใช้ IDevice นี้ ถ้าคุณมีรูปภาพจำนวนมากที่ต้องการแสดง"
+msgstr ""
 
 #: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
-msgstr "ใส่ หัวข้อ สำหรับแกลลอรี่"
+msgstr ""
 
 #: exe/engine/galleryidevice.py:473
 msgid ""
@@ -1381,12 +1371,12 @@ msgstr ""
 
 #: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:663
 msgid "Reading Activity 0.11"
-msgstr "กิจกรรมการอ่าน 0.11"
+msgstr ""
 
 #: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:510
 #: exe/engine/idevicestore.py:554
 msgid "Reading Activity"
-msgstr "กิจกรรมการอ่าน"
+msgstr ""
 
 #: exe/engine/hangmanidevice.py:51 exe/webui/common.py:490
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
@@ -1469,7 +1459,7 @@ msgstr ""
 #: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
 #: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
-msgstr "เริ่มใหม่"
+msgstr ""
 
 #: exe/engine/hangmanidevice.py:104
 msgid "Restart Level Button Style (CSS)"
@@ -1560,7 +1550,7 @@ msgstr ""
 
 #: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:706
 msgid "What to read"
-msgstr "อ่านอะไร"
+msgstr ""
 
 #: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:707
 msgid ""
@@ -1574,7 +1564,7 @@ msgstr ""
 #: exe/engine/idevicestore.py:747 exe/engine/idevicestore.py:755
 #: exe/webui/questionelement.py:110
 msgid "Activity"
-msgstr "กิจกรรม"
+msgstr ""
 
 #: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:711
 msgid ""
@@ -1595,7 +1585,7 @@ msgstr ""
 #: exe/engine/package.py:653 exe/engine/package.py:664
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:216
 msgid "Objectives"
-msgstr "เป้าหมาย"
+msgstr ""
 
 #: exe/engine/idevicestore.py:615 exe/engine/idevicestore.py:722
 msgid ""
@@ -1673,7 +1663,7 @@ msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
-msgstr "แว่นขยายรูปภาพ"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:43
 msgid ""
@@ -1685,7 +1675,7 @@ msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Choose an Image"
-msgstr "เลือกรูปภาพ"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid ""
@@ -1701,7 +1691,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/tools/style-designer/langs/en.js:24
 msgid "Text"
-msgstr "ข้อความ"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:55 exe/engine/multimediaidevice.py:65
 msgid ""
@@ -1738,8 +1728,6 @@ msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
-"ตั้งค่าเริ่มต้นของขนาดการขยาย\n"
-"เมื่อ iDevice โหลด, ในลักษณะของ ร้อยละ จากภาพต้นฉบับ"
 
 #: exe/engine/imagemagnifieridevice.py:70
 #: exe/engine/imagemagnifieridevice.py:146
@@ -1747,12 +1735,10 @@ msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
-"ตั้งค่าสูงสุดของการขยาย,\n"
-" ในลักษณะของ ร้อยละ จากภาพต้นฉบับ"
 
 #: exe/engine/imagemagnifieridevice.py:72
 msgid "Select the size of the magnifying glass"
-msgstr "เลือกขนาดแว่นขยาย"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:148
 msgid ""
@@ -1762,7 +1748,7 @@ msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
-msgstr "รูปภาพ กับตัวหนังสือ"
+msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -1896,7 +1882,7 @@ msgstr ""
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
-msgstr "คณิตศาสตร์"
+msgstr ""
 
 #: exe/engine/mathidevice.py:43
 msgid ""
@@ -2113,7 +2099,7 @@ msgstr ""
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
-msgstr "คำถาม หลายตัวเลือก"
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
@@ -2131,7 +2117,7 @@ msgstr ""
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr "เลือกไฟล์ MP3"
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -2152,7 +2138,7 @@ msgstr ""
 
 #: exe/engine/multiselectidevice.py:45
 msgid "Multi-select"
-msgstr "คำถาม ตอบได้หลายตัว"
+msgstr ""
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
@@ -2208,7 +2194,7 @@ msgstr ""
 
 #: exe/engine/package.py:327
 msgid "Section"
-msgstr "การเลือก"
+msgstr ""
 
 #: exe/engine/package.py:327
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
@@ -2225,7 +2211,7 @@ msgstr ""
 
 #: exe/engine/package.py:1000
 msgid "?????"
-msgstr "?????"
+msgstr ""
 
 #: exe/engine/package.py:1038 exe/engine/package.py:1045
 #, python-format
@@ -2233,21 +2219,20 @@ msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
-"การบันทึก (Save) ล้มเหลว!\n"
-"ส่วนครั้งที่สำเร็จล่าสุดคือ %s."
 
 #: exe/engine/package.py:1449 exe/jsui/scripts/app/controller/Toolbar.js:418
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "iDevice Editor"
-msgstr "ตัวปรับแต่ง iDevice"
+msgstr ""
 
 #: exe/engine/package.py:1570
 msgid "My Catalog"
 msgstr ""
 
-#: exe/engine/package.py:1577 exe/webui/scripts/tinymce_3.5.11_settings.js:58
+#: exe/engine/package.py:1577
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:58
 #: exe/webui/tools/style-designer/langs/en.js:73
 msgid "Default"
 msgstr ""
@@ -2288,7 +2273,7 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr "นี่คือ ช่องข้อความอิสระ"
+msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
@@ -2418,7 +2403,7 @@ msgstr ""
 
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
-msgstr "แบบทดสอบคิดร้อยละ(SCORM Quiz)"
+msgstr ""
 
 #: exe/engine/quiztestidevice.py:246
 msgid ""
@@ -2487,7 +2472,7 @@ msgstr ""
 #: exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:201
 msgid "Reflective question:"
-msgstr "คำถามสำหรับการโต้ตอบ:"
+msgstr ""
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
 msgid "FPD - Think About It (without Feedback)"
@@ -2495,7 +2480,7 @@ msgstr ""
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
-msgstr "การโต้ตอบ"
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:57
 msgid ""
@@ -2680,7 +2665,7 @@ msgstr ""
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
-msgstr "คำถามจริง/เท็จ"
+msgstr ""
 
 #: exe/engine/truefalseidevice.py:146
 #: exe/engine/verdaderofalsofpdidevice.py:147
@@ -2744,7 +2729,7 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:53
 msgid "Wiki Article"
-msgstr "บทความจากวิกิพีเดีย"
+msgstr ""
 
 #: exe/engine/wikipediaidevice.py:55
 msgid ""
@@ -2766,7 +2751,7 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
-msgstr "บทความ"
+msgstr ""
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
 msgid ""
@@ -2948,8 +2933,8 @@ msgid ""
 msgstr ""
 
 #: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:302
-#: exe/jsui/mainpage.py:975 exe/jsui/mainpage.py:1139 exe/jsui/mainpage.py:1179
-#: exe/jsui/mainpage.py:1214 exe/jsui/mainpage.py:1235
+#: exe/jsui/mainpage.py:983 exe/jsui/mainpage.py:1147 exe/jsui/mainpage.py:1187
+#: exe/jsui/mainpage.py:1222 exe/jsui/mainpage.py:1243
 #: exe/jsui/mainpage_antes_jr_docs.py:295
 #: exe/jsui/mainpage_antes_jr_docs.py:916
 #: exe/jsui/mainpage_antes_jr_docs.py:1080
@@ -2973,18 +2958,16 @@ msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
-"การส่งออกล้มเหลว!\n"
-"การส่งออกที่สำเร็จครั้งล่าสุดคือ %s"
 
 #: exe/export/scormpage.py:177 exe/export/websitepage.py:345
 #: exe/webui/common.py:473
 msgid "Previous"
-msgstr "ก่อนหน้านี้"
+msgstr ""
 
 #: exe/export/scormpage.py:178 exe/export/websitepage.py:351
 #: exe/webui/common.py:474
 msgid "Next"
-msgstr "ถัดไป"
+msgstr ""
 
 #: exe/export/singlepage.py:249
 msgid "You can close this window"
@@ -3000,20 +2983,18 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr "ตัวอย่าง ตัวอย่าง"
+msgstr ""
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
 msgstr ""
-"นี่คือตัวอย่าง plugin ของ iDevice\n"
-"ที่ผู้ใช้เป็นผู้สร้าง."
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
 msgid "Example"
-msgstr "ตัวอย่าง"
+msgstr ""
 
 #: exe/importers/cmdlineimporter.py:44
 msgid "Import format not implemented"
@@ -3061,25 +3042,25 @@ msgstr ""
 msgid "My iDevices"
 msgstr ""
 
-#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:837 exe/jsui/mainpage.py:967
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:845 exe/jsui/mainpage.py:975
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
-msgstr "ไม่สามารถเข้าถึง directory ชื่อนี้ได้"
+msgstr ""
 
-#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:839 exe/jsui/mainpage.py:967
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:847 exe/jsui/mainpage.py:975
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
-msgstr ". กรุณาใช้ชื่อที่เป็น ASCII"
+msgstr ""
 
 #: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
-msgstr "การบันทึก (Save) ล้มเหลว!"
+msgstr ""
 
-#: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1063
+#: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1071
 #: exe/jsui/mainpage_antes_jr_docs.py:326
 #: exe/jsui/mainpage_antes_jr_docs.py:638
 #: exe/jsui/mainpage_antes_jr_docs.py:1004
@@ -3088,8 +3069,6 @@ msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
-"การบันทึก (Save) ล้มเหลว!\n"
-"%s"
 
 #: exe/jsui/mainpage.py:337 exe/jsui/mainpage.py:342 exe/jsui/mainpage.py:345
 #: exe/jsui/mainpage_antes_jr_docs.py:330
@@ -3097,7 +3076,7 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:338
 #, python-format
 msgid "Package saved to: %s"
-msgstr "แพคเกจถูก บันทึก (Save) ที่ : %s"
+msgstr ""
 
 #: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:672
 #: exe/jsui/mainpage_antes_jr_docs.py:561
@@ -3107,9 +3086,9 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr ""
 
 #: exe/jsui/mainpage.py:587 exe/jsui/mainpage_antes_jr_docs.py:580
-#, fuzzy, python-format
+#, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr "ไม่พบไฟล์รูปภาพ %s, จึงไม่สามารถแสดงผลได้"
+msgstr ""
 
 #: exe/jsui/mainpage.py:712 exe/jsui/mainpage_antes_jr_docs.py:705
 #, python-format
@@ -3137,29 +3116,29 @@ msgstr ""
 msgid "Publishing document to Procomún"
 msgstr ""
 
-#: exe/jsui/mainpage.py:787
+#: exe/jsui/mainpage.py:789
 msgid "Exporting package as SCORM"
 msgstr ""
 
-#: exe/jsui/mainpage.py:805
+#: exe/jsui/mainpage.py:810
 msgid "Starting authorized connection to Procomún API"
 msgstr ""
 
-#: exe/jsui/mainpage.py:818
+#: exe/jsui/mainpage.py:823
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
 "visit exported site\">%s</a>"
 msgstr ""
 
-#: exe/jsui/mainpage.py:821
+#: exe/jsui/mainpage.py:826
 #, python-format
 msgid "Error exporting package %s to Procomún: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:860 exe/jsui/mainpage.py:865 exe/jsui/mainpage.py:868
-#: exe/jsui/mainpage.py:871 exe/jsui/mainpage.py:874 exe/jsui/mainpage.py:877
-#: exe/jsui/mainpage.py:882 exe/jsui/mainpage.py:1123 exe/jsui/mainpage.py:1195
+#: exe/jsui/mainpage.py:868 exe/jsui/mainpage.py:873 exe/jsui/mainpage.py:876
+#: exe/jsui/mainpage.py:879 exe/jsui/mainpage.py:882 exe/jsui/mainpage.py:885
+#: exe/jsui/mainpage.py:890 exe/jsui/mainpage.py:1131 exe/jsui/mainpage.py:1203
 #: exe/jsui/mainpage_antes_jr_docs.py:801
 #: exe/jsui/mainpage_antes_jr_docs.py:806
 #: exe/jsui/mainpage_antes_jr_docs.py:809
@@ -3170,18 +3149,18 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1064
 #: exe/jsui/mainpage_antes_jr_docs.py:1136
 msgid "EXPORT FAILED!"
-msgstr "การส่งออกล้มเหลว!"
+msgstr ""
 
-#: exe/jsui/mainpage.py:932 exe/jsui/mainpage_antes_jr_docs.py:873
+#: exe/jsui/mainpage.py:940 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:935 exe/jsui/mainpage_antes_jr_docs.py:876
+#: exe/jsui/mainpage.py:943 exe/jsui/mainpage_antes_jr_docs.py:876
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:993
+#: exe/jsui/mainpage.py:984 exe/jsui/mainpage.py:1001
 #: exe/jsui/mainpage_antes_jr_docs.py:917
 #: exe/jsui/mainpage_antes_jr_docs.py:934
 #, python-format
@@ -3190,22 +3169,22 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:995 exe/jsui/mainpage_antes_jr_docs.py:936
+#: exe/jsui/mainpage.py:1003 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
-msgstr "แพคเกจ ถูกแตกออกสู่ที่ : %s"
+msgstr ""
 
-#: exe/jsui/mainpage.py:1007 exe/jsui/mainpage_antes_jr_docs.py:948
+#: exe/jsui/mainpage.py:1015 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1021 exe/jsui/mainpage.py:1111
-#: exe/jsui/mainpage.py:1127 exe/jsui/mainpage.py:1140
-#: exe/jsui/mainpage.py:1146 exe/jsui/mainpage.py:1164
-#: exe/jsui/mainpage.py:1180 exe/jsui/mainpage.py:1186
-#: exe/jsui/mainpage.py:1200 exe/jsui/mainpage.py:1215
-#: exe/jsui/mainpage.py:1221 exe/jsui/mainpage.py:1236
-#: exe/jsui/mainpage.py:1242 exe/jsui/mainpage_antes_jr_docs.py:962
+#: exe/jsui/mainpage.py:1029 exe/jsui/mainpage.py:1119
+#: exe/jsui/mainpage.py:1135 exe/jsui/mainpage.py:1148
+#: exe/jsui/mainpage.py:1154 exe/jsui/mainpage.py:1172
+#: exe/jsui/mainpage.py:1188 exe/jsui/mainpage.py:1194
+#: exe/jsui/mainpage.py:1208 exe/jsui/mainpage.py:1223
+#: exe/jsui/mainpage.py:1229 exe/jsui/mainpage.py:1244
+#: exe/jsui/mainpage.py:1250 exe/jsui/mainpage_antes_jr_docs.py:962
 #: exe/jsui/mainpage_antes_jr_docs.py:1052
 #: exe/jsui/mainpage_antes_jr_docs.py:1068
 #: exe/jsui/mainpage_antes_jr_docs.py:1081
@@ -3223,17 +3202,15 @@ msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
-"การส่งออกล้มเหลว!\n"
-"%s"
 
-#: exe/jsui/mainpage.py:1049 exe/jsui/mainpage.py:1096
+#: exe/jsui/mainpage.py:1057 exe/jsui/mainpage.py:1104
 #: exe/jsui/mainpage_antes_jr_docs.py:990
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr "ไฟล์ที่ชื่อ %s , ไม่สามารถเขียนทับได้"
+msgstr ""
 
-#: exe/jsui/mainpage.py:1055 exe/jsui/mainpage.py:1103
+#: exe/jsui/mainpage.py:1063 exe/jsui/mainpage.py:1111
 #: exe/jsui/mainpage_antes_jr_docs.py:996
 #: exe/jsui/mainpage_antes_jr_docs.py:1044
 #, python-format
@@ -3242,11 +3219,11 @@ msgid ""
 "existing one then try again."
 msgstr ""
 
-#: exe/jsui/mainpage.py:1069 exe/jsui/mainpage.py:1114
-#: exe/jsui/mainpage.py:1129 exe/jsui/mainpage.py:1148
-#: exe/jsui/mainpage.py:1166 exe/jsui/mainpage.py:1188
-#: exe/jsui/mainpage.py:1202 exe/jsui/mainpage.py:1223
-#: exe/jsui/mainpage.py:1244 exe/jsui/mainpage_antes_jr_docs.py:1010
+#: exe/jsui/mainpage.py:1077 exe/jsui/mainpage.py:1122
+#: exe/jsui/mainpage.py:1137 exe/jsui/mainpage.py:1156
+#: exe/jsui/mainpage.py:1174 exe/jsui/mainpage.py:1196
+#: exe/jsui/mainpage.py:1210 exe/jsui/mainpage.py:1231
+#: exe/jsui/mainpage.py:1252 exe/jsui/mainpage_antes_jr_docs.py:1010
 #: exe/jsui/mainpage_antes_jr_docs.py:1055
 #: exe/jsui/mainpage_antes_jr_docs.py:1070
 #: exe/jsui/mainpage_antes_jr_docs.py:1089
@@ -3257,29 +3234,27 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1185
 #, python-format
 msgid "Exported to %s"
-msgstr "ส่งออกไปยัง %s"
+msgstr ""
 
-#: exe/jsui/mainpage.py:1277 exe/jsui/mainpage_antes_jr_docs.py:1218
+#: exe/jsui/mainpage.py:1285 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr "ไฟล์ %s ไม่มี หรือ ไม่สามารถอ่านได้"
+msgstr ""
 
-#: exe/jsui/mainpage.py:1281 exe/jsui/mainpage_antes_jr_docs.py:1222
+#: exe/jsui/mainpage.py:1289 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr "ไม่สามารถโหลดไฟล์ได้, กรุณาส่ง email แจ้งมาที่ bugs@exelearning.org"
+msgstr ""
 
-#: exe/jsui/mainpage.py:1284 exe/jsui/mainpage_antes_jr_docs.py:1225
+#: exe/jsui/mainpage.py:1292 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
-"ขออภัย, รูปแบบไฟล์ไม่ถูกต้อง:\n"
-"%s"
 
-#: exe/jsui/mainpage.py:1286 exe/jsui/mainpage_antes_jr_docs.py:1227
+#: exe/jsui/mainpage.py:1294 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
-msgstr "ขออภัย, รูปแบบไฟล์ไม่ถูกต้อง"
+msgstr ""
 
 #: exe/jsui/propertiespage.py:335
 msgid "Failed to get properties"
@@ -3299,7 +3274,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
 #: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
 msgid "Select an image"
-msgstr "เลือกรูปภาพ"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/MainTab.js:194
 #: exe/jsui/scripts/app/controller/MainTab.js:228
@@ -3359,6 +3334,7 @@ msgstr ""
 #: exe/webui/stylemanagerpage.py:373 exe/webui/stylemanagerpage.py:384
 #: exe/webui/stylemanagerpage.py:421 exe/webui/stylemanagerpage.py:428
 #: exe/webui/stylemanagerpage.py:471 exe/webui/stylemanagerpage.py:483
+#: exe/webui/tools/style-designer/langs/en.js:124
 msgid "Error"
 msgstr ""
 
@@ -3390,12 +3366,12 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
 msgid "Insert Package"
-msgstr "แทรก แพคเกจ"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Extract Package"
-msgstr "แตก แพคเกจ ออก"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Delete \"{node}\" node and all its children?"
@@ -3471,7 +3447,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:400
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
 msgid "Preferences"
-msgstr "ปรับแต่ง"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:428
 msgid ""
@@ -3503,7 +3479,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:123
 msgid "Information"
-msgstr "ข้อมูลที่เกี่ยวข้อง"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 msgid "Your Style could not be saved because an unknown error occurred."
@@ -3611,12 +3587,13 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:786
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
-#: exe/webui/editorpane.py:273 exe/webui/xliffimportpreferencespage.py:94
+#: exe/webui/editorpane.py:273
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:126
-#: exe/webui/tools/style-designer/langs/en.js:135
+#: exe/webui/tools/style-designer/langs/en.js:127
+#: exe/webui/tools/style-designer/langs/en.js:136
+#: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
-msgstr "ยกเลิก"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:792
 msgid "Ok"
@@ -3774,7 +3751,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
-msgstr "ชื่อ"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:95
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
@@ -3797,7 +3774,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:77
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:183
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:124
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:122
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:228
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:640
@@ -3806,7 +3783,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/en.js:112
 msgid "Save"
-msgstr "บันทึก (Save)"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:78
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:89
@@ -3924,9 +3901,8 @@ msgid "Format"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
-#, fuzzy
 msgid "Select a Format."
-msgstr "เลือกรูปแบบ"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomSections.js:40
@@ -3964,9 +3940,8 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:182
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:189
-#, fuzzy
 msgid "Select a language."
-msgstr "เลือกภาษา"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
@@ -4008,7 +3983,7 @@ msgid ""
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:189
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:130
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:128
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:233
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:273
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:646
@@ -4017,7 +3992,7 @@ msgid "Clear"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:195
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:136
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
@@ -4059,46 +4034,46 @@ msgid ""
 "eXeLearning."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:76
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:74
 msgid "SCORM Options (1.2 and 2004)"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:84
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:82
 msgid "Add Previous/Next links within SCOs?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:88
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:86
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO. The LMS will also still add this kind "
 "of functionality."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:91
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:89
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO.  This requires a non-standard extension"
 " to SCORM 1.2 and is only known to work with some versions of Moodle."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:97
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:95
 msgid "Include Single Page export file?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:101
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:104
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:99
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:102
 msgid ""
 "Checking this option the exported SCORM file will include a file named "
 "\"singlepage_index.html\" containing the result of exporting this eXe "
 "package as a single page."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:110
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:108
 msgid "Include Web Site export files?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:114
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:117
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:112
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:115
 msgid ""
 "Checking this option the exported SCORM file will include the result of "
 "exporting this eXe package as Web Site. All the html files will have the "
@@ -4342,7 +4317,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:269
 #: exe/webui/editorpane.py:387
 msgid "Purpose"
-msgstr "จุดประสงค์"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:166
 msgid "Download Classification Sources"
@@ -4733,7 +4708,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:45
 msgid "Select Language"
-msgstr "เลือกภาษา"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:151
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -4763,9 +4738,8 @@ msgid "Permissive"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
-#, fuzzy
 msgid "Strict"
-msgstr "เริ่มใหม่"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:192
 msgid ""
@@ -4811,7 +4785,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
 msgid "Export"
-msgstr "ส่งออก"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
 msgid "Delete style: "
@@ -4890,7 +4864,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
-msgstr "โดยรวม"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:85
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:88
@@ -4932,7 +4906,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
 msgid "Package"
-msgstr "แพคเกจ"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:58
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
@@ -4951,7 +4925,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
-msgstr "เพิ่มหน้าใหม่"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:239
 #: exe/webui/block.py:333 exe/webui/editorelement.py:78
@@ -4962,11 +4936,11 @@ msgstr "เพิ่มหน้าใหม่"
 #: exe/webui/galleryblock.py:303
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
-msgstr "ลบ"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
-msgstr "เปลี่ยนชื่อ"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
 msgid "Promote node up in hierarchy"
@@ -4977,17 +4951,15 @@ msgid "Demote node down in hierarchy"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:45
-#, fuzzy
 msgid "Move node up"
-msgstr "ย้ายขึ้น"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:51
-#, fuzzy
 msgid "Move node down"
-msgstr "ย้ายลง"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
-#: exe/webui/tools/style-designer/langs/en.js:132
+#: exe/webui/tools/style-designer/langs/en.js:133
 msgid "New"
 msgstr ""
 
@@ -5002,7 +4974,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
-msgstr "ลบรายชื่องานที่ทำเร็วๆ นี้"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
 msgid "Save As..."
@@ -5055,7 +5027,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:273
 msgid "Web Site"
-msgstr "เว็บไซต์"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:280
 msgid "Self-contained Folder"
@@ -5087,7 +5059,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:356 exe/webui/editorpage.py:269
 msgid "Quit"
-msgstr "ปิดโปรแกรม"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:363
 msgid "Tools"
@@ -5119,7 +5091,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Preview"
-msgstr "แสดงผล"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Refresh Display"
@@ -5170,7 +5142,7 @@ msgid ""
 "menu File->Quit if you really want to exit the application."
 msgstr ""
 
-#: exe/jsui/scripts/exe.js:269 exe/jsui/scripts/app/view/ui/LeftPanel.js:90
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:90 exe/jsui/scripts/exe.js:269
 msgid "Group iDevices"
 msgstr ""
 
@@ -5744,7 +5716,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:572
 msgid "Thai "
-msgstr "ไทย"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:576
 msgid "Tigrinya "
@@ -6650,43 +6622,43 @@ msgstr ""
 msgid "distance"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1274
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:31 exe/webui/common.py:180
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:31
+#: exe/jsui/scripts/lomvocab.js:1274 exe/webui/common.py:180
 msgid "propietary license"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1278
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:35 exe/webui/common.py:156
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:35
+#: exe/jsui/scripts/lomvocab.js:1278 exe/webui/common.py:156
 msgid "free software license EUPL"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1282
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:39 exe/webui/common.py:162
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
+#: exe/jsui/scripts/lomvocab.js:1282 exe/webui/common.py:162
 msgid "free software license GPL"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1286
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:43 exe/webui/common.py:168
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:43
+#: exe/jsui/scripts/lomvocab.js:1286 exe/webui/common.py:168
 msgid "dual free content license GPL and EUPL"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1290
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:47 exe/webui/common.py:174
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:47
+#: exe/jsui/scripts/lomvocab.js:1290 exe/webui/common.py:174
 msgid "other free software licenses"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1294
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:51 exe/webui/common.py:150
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:51
+#: exe/jsui/scripts/lomvocab.js:1294 exe/webui/common.py:150
 msgid "public domain"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1298
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:55 exe/webui/common.py:192
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:55
+#: exe/jsui/scripts/lomvocab.js:1298 exe/webui/common.py:192
 msgid "not appropriate"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1302
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:59 exe/webui/common.py:186
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:59
+#: exe/jsui/scripts/lomvocab.js:1302 exe/webui/common.py:186
 msgid "intellectual property license"
 msgstr ""
 
@@ -6714,8 +6686,8 @@ msgstr ""
 msgid "creative commons: attribution - share alike"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1330
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
+#: exe/jsui/scripts/lomvocab.js:1330
 msgid "license GFDL"
 msgstr ""
 
@@ -6777,7 +6749,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:85
 msgid "Please upload a .ggb file."
-msgstr "กรุณา อัพโหลด ไฟล์ .ggb"
+msgstr ""
 
 #: exe/webui/appletblock.py:87
 msgid "Please upload a .jclic.zip file."
@@ -6817,15 +6789,15 @@ msgstr ""
 
 #: exe/webui/appletblock.py:134 exe/webui/wikipediablock.py:136
 msgid "Other"
-msgstr "อื่นๆ"
+msgstr ""
 
 #: exe/webui/appletblock.py:135
 msgid "Applet Type"
-msgstr "ประเภท Applet"
+msgstr ""
 
 #: exe/webui/appletblock.py:156 exe/webui/appletblock.py:166
 msgid "Add files"
-msgstr "เพิ่มไฟล์"
+msgstr ""
 
 #: exe/webui/appletblock.py:162
 msgid "Accept URL"
@@ -6837,26 +6809,26 @@ msgstr ""
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
 msgid "Filename:"
-msgstr "ชื่อไฟล์:"
+msgstr ""
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
 #: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
 #: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
 msgid "Select a file"
-msgstr "เลือกไฟล์"
+msgstr ""
 
 #: exe/webui/attachmentblock.py:108
 msgid "Label:"
-msgstr "ป้าย:"
+msgstr ""
 
 #: exe/webui/block.py:184
 msgid "IDevice broken"
-msgstr "IDevice เสีย"
+msgstr ""
 
 #: exe/webui/block.py:222
 msgid "Done"
-msgstr "เสร็จสิ้น"
+msgstr ""
 
 #: exe/webui/block.py:226
 msgid "Exit without saving?"
@@ -6876,15 +6848,15 @@ msgstr ""
 
 #: exe/webui/block.py:246
 msgid "Move Up"
-msgstr "ย้ายขึ้น"
+msgstr ""
 
 #: exe/webui/block.py:253
 msgid "Move Down"
-msgstr "ย้ายลง"
+msgstr ""
 
 #: exe/webui/block.py:255
 msgid "---Move To---"
-msgstr "---ย้ายไปที่---"
+msgstr ""
 
 #: exe/webui/block.py:260 exe/webui/editorpane.py:380
 msgid "Pedagogical Help"
@@ -6892,7 +6864,7 @@ msgstr ""
 
 #: exe/webui/block.py:273 exe/webui/editorpane.py:390
 msgid "Tip:"
-msgstr "เคล็ดลับ:"
+msgstr ""
 
 #: exe/webui/block.py:318
 msgid "ERROR: Block.renderViewContent called directly"
@@ -6901,11 +6873,11 @@ msgstr ""
 #: exe/webui/block.py:328 exe/webui/editorpage.py:286
 #: exe/webui/editorpane.py:270
 msgid "Edit"
-msgstr "แก้ไข"
+msgstr ""
 
 #: exe/webui/casestudyblock.py:114 exe/webui/ejercicioresueltofpdblock.py:130
 msgid "Add another activity"
-msgstr "เพิ่มกิจกรรมอื่น"
+msgstr ""
 
 #: exe/webui/casopracticofpdblock.py:68
 msgid "Situation"
@@ -7058,25 +7030,25 @@ msgstr ""
 
 #: exe/webui/common.py:476
 msgid "Hide"
-msgstr "ซ่อน"
+msgstr ""
 
 #: exe/webui/common.py:477 exe/webui/common.py:715 exe/webui/element.py:1538
 #: exe/webui/element.py:2469 exe/webui/listablock.py:275
 msgid "Show Feedback"
-msgstr "แสดง Feedback"
+msgstr ""
 
 #: exe/webui/common.py:478
 msgid "Hide Feedback"
-msgstr "ซ่อน Feedback"
+msgstr ""
 
 #: exe/webui/common.py:479 exe/webui/common.py:494 exe/webui/element.py:2272
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
-msgstr "ถูกต้อง"
+msgstr ""
 
 #: exe/webui/common.py:480 exe/webui/element.py:2275
 msgid "Incorrect"
-msgstr "ผิด"
+msgstr ""
 
 #: exe/webui/common.py:481
 msgid "Menu"
@@ -7088,7 +7060,7 @@ msgstr ""
 
 #: exe/webui/common.py:495 exe/webui/element.py:2708 exe/webui/element.py:2726
 msgid "Wrong"
-msgstr "ผิด"
+msgstr ""
 
 #: exe/webui/common.py:496
 msgid "Right answer"
@@ -7119,9 +7091,8 @@ msgid "Total"
 msgstr ""
 
 #: exe/webui/common.py:505
-#, fuzzy
 msgid "Another word"
-msgstr "เพิ่มตัวเลือกอื่น"
+msgstr ""
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7154,15 +7125,15 @@ msgstr ""
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:251
 msgid "Text Line"
-msgstr "บรรทัดข้อความ"
+msgstr ""
 
 #: exe/webui/editorelement.py:111 exe/webui/editorpane.py:253
 msgid "Text Box"
-msgstr "กล่องข้อความ"
+msgstr ""
 
 #: exe/webui/editorelement.py:149 exe/webui/element.py:602
 msgid "Button Caption"
-msgstr "หัวข้อของปุ่ม"
+msgstr ""
 
 #: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
 #: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
@@ -7176,7 +7147,7 @@ msgstr "หัวข้อของปุ่ม"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:18
 msgid "Left"
-msgstr "ซ้าย"
+msgstr ""
 
 #: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
 #: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
@@ -7190,47 +7161,47 @@ msgstr "ซ้าย"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:76
 msgid "Right"
-msgstr "ขวา"
+msgstr ""
 
 #: exe/webui/editorelement.py:228 exe/webui/flashmovieblock.py:87
 #: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/imagewithtextblock.py:88 exe/webui/multimediablock.py:92
 msgid "Align:"
-msgstr "จัดวาง:"
+msgstr ""
 
 #: exe/webui/editorelement.py:268 exe/webui/element.py:1889
 msgid "Select Flash Object"
-msgstr "เลือก ไฟล์ Flash"
+msgstr ""
 
 #: exe/webui/editorelement.py:308
 msgid "Select MP3 file"
-msgstr "เลือกไฟล์ MP3"
+msgstr ""
 
 #: exe/webui/editorelement.py:311 exe/webui/element.py:869
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
-msgstr "หัวข้อ:"
+msgstr ""
 
 #: exe/webui/editorpage.py:125
 msgid "Please enter an idevice name."
-msgstr "กรุณาใส่ชื่อ iDevice"
+msgstr ""
 
 #: exe/webui/editorpage.py:188 exe/webui/editorpage.py:200
 msgid "Sorry, wrong file format."
-msgstr "ขออภัย, รูปแบบไฟล์ไม่ถูกต้อง."
+msgstr ""
 
 #: exe/webui/editorpage.py:262
 msgid "Import iDevice"
-msgstr "นำเข้า IDevice"
+msgstr ""
 
 #: exe/webui/editorpage.py:265
 msgid "Export iDevice"
-msgstr "ส่งออก IDevice"
+msgstr ""
 
 #: exe/webui/editorpage.py:291
 msgid "New iDevice"
-msgstr "สร้าง iDevice ใหม่"
+msgstr ""
 
 #: exe/webui/editorpane.py:67
 msgid ""
@@ -7241,7 +7212,7 @@ msgstr ""
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
-msgstr "นี่คือช่องเพิ่มเติม(This is optional field.)"
+msgstr ""
 
 #: exe/webui/editorpane.py:72
 msgid ""
@@ -7280,11 +7251,11 @@ msgstr ""
 
 #: exe/webui/editorpane.py:91
 msgid "Add a flash video to your iDevice."
-msgstr "เพิ่ม flash video สู่ iDevice"
+msgstr ""
 
 #: exe/webui/editorpane.py:92
 msgid "Add an mp3 file to your iDevice."
-msgstr "เพิ่มไฟล์ mp3 สู่ iDevice ของคุณ"
+msgstr ""
 
 #: exe/webui/editorpane.py:93
 msgid "Add an attachment file to your iDevice."
@@ -7294,7 +7265,7 @@ msgstr ""
 #: exe/webui/editorpane.py:160 exe/webui/editorpane.py:176
 #: exe/webui/editorpane.py:186
 msgid "Enter the label here"
-msgstr "ใส่ชื่อหัวข้อที่นี่"
+msgstr ""
 
 #: exe/webui/editorpane.py:146
 msgid "Enter instructions for completion here"
@@ -7310,16 +7281,14 @@ msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr ""
-"ปุ่ม Feedback จะไม่แสดงถ้า\n"
-" ไม่มีข้อมูลในช่องนี้"
 
 #: exe/webui/editorpane.py:198
 msgid "Please enter<br />an idevice name."
-msgstr "กรุณาใส่<br/>ชื่อ iDevice"
+msgstr ""
 
 #: exe/webui/editorpane.py:250
 msgid "Add Field"
-msgstr "เพิ่มฟิลด์"
+msgstr ""
 
 #: exe/webui/editorpane.py:265
 msgid "Actions"
@@ -7337,30 +7306,29 @@ msgstr ""
 #: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:160
 msgid "No emphasis"
-msgstr "ไม่สำคัญ"
+msgstr ""
 
 #: exe/webui/editorpane.py:339 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:161
 msgid "Some emphasis"
-msgstr "ส่วนที่ต้องการเน้นย้ำ"
+msgstr ""
 
 #: exe/webui/editorpane.py:354
-#, fuzzy
 msgid "Select an icon"
-msgstr "เลือกรูปภาพ"
+msgstr ""
 
 #: exe/webui/editorpane.py:368
 msgid "Icons"
-msgstr "ไอคอน"
+msgstr ""
 
 #: exe/webui/editorpane.py:383
 msgid "Info"
-msgstr "ข้อมูลรายละเอียด"
+msgstr ""
 
 #: exe/webui/editorpane.py:429 exe/webui/element.py:1545
 #: exe/webui/element.py:1547 exe/webui/element.py:1803
 msgid "Submit"
-msgstr "ส่ง"
+msgstr ""
 
 #: exe/webui/ejercicioresueltofpdblock.py:122
 msgid "Translation"
@@ -7369,12 +7337,12 @@ msgstr ""
 #: exe/webui/eleccionmultiplefpdblock.py:98 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
-msgstr "กรุณาเลือก คำตอบที่ถูกต้อง สำหรับแต่ละคำถาม"
+msgstr ""
 
 #: exe/webui/eleccionmultiplefpdblock.py:124 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:119
 msgid "Add another question"
-msgstr "เพิ่มคำถามอื่น"
+msgstr ""
 
 #: exe/webui/element.py:72
 #, python-format
@@ -7393,11 +7361,11 @@ msgstr ""
 
 #: exe/webui/element.py:753 exe/webui/element.py:1174
 msgid "Add Image"
-msgstr "เพิ่มรูปภาพ"
+msgstr ""
 
 #: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
 msgid "Display as:"
-msgstr "แสดงผลในรูปของ:"
+msgstr ""
 
 #: exe/webui/element.py:786
 msgid "by"
@@ -7405,24 +7373,24 @@ msgstr ""
 
 #: exe/webui/element.py:793 exe/webui/element.py:1212
 msgid "blank for original size"
-msgstr "ปล่อยว่าง สำหรับขนาดของต้นฉบับ"
+msgstr ""
 
 #: exe/webui/element.py:863
 msgid "Select an MP3"
-msgstr "เลือกไฟล์ MP3"
+msgstr ""
 
 #: exe/webui/element.py:1351 exe/webui/element.py:1684
 msgid "Cloze Text"
-msgstr "ข้อความสำหรับกิจกรรมเติมคำ"
+msgstr ""
 
 #: exe/webui/element.py:1359 exe/webui/element.py:1692
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
-msgstr "ซ่อน/แสดง คำ"
+msgstr ""
 
 #: exe/webui/element.py:1364 exe/webui/element.py:1697
 msgid "Strict Marking?"
-msgstr "เข้มงวดกับสัญลักษณ์?"
+msgstr ""
 
 #: exe/webui/element.py:1369
 msgid "Check Capitalization?"
@@ -7430,7 +7398,7 @@ msgstr ""
 
 #: exe/webui/element.py:1374 exe/webui/element.py:1707
 msgid "Instant Marking?"
-msgstr "ทำสัญลักษณ์ทันที"
+msgstr ""
 
 #: exe/webui/element.py:1485 exe/webui/element.py:1742
 #: exe/webui/listablock.py:223
@@ -7439,15 +7407,15 @@ msgstr ""
 
 #: exe/webui/element.py:1535 exe/webui/element.py:1794
 msgid "Get score"
-msgstr "ขอคะแนน"
+msgstr ""
 
 #: exe/webui/element.py:1541 exe/webui/element.py:1800
 msgid "Show/Clear Answers"
-msgstr "แสดง/ลบ คำตอบ"
+msgstr ""
 
 #: exe/webui/element.py:1551 exe/webui/element.py:1807
 msgid "Show Answers"
-msgstr "แสดงคำตอบ"
+msgstr ""
 
 #: exe/webui/element.py:1587 exe/webui/element.py:1839
 #: exe/webui/element.py:2461 exe/webui/element.py:2921
@@ -7457,7 +7425,7 @@ msgstr ""
 
 #: exe/webui/element.py:1702
 msgid "Check Caps?"
-msgstr "ตรวจสอบ ตัวอักษรเล็ก/ใหญ่"
+msgstr ""
 
 #: exe/webui/element.py:1712
 msgid "Show Score?"
@@ -7465,49 +7433,48 @@ msgstr ""
 
 #: exe/webui/element.py:1797
 msgid "Show/Hide Feedback"
-msgstr "แสดง/ซ่อน Feedback"
+msgstr ""
 
 #: exe/webui/element.py:1955
 msgid "Please select a .flv file."
-msgstr "กรุณาเลือกไฟล์ .flv"
+msgstr ""
 
 #: exe/webui/element.py:1971
 msgid "Select a flash video"
-msgstr "เลือก flash video"
+msgstr ""
 
 #: exe/webui/element.py:2080
 msgid "text"
-msgstr "ข้อความ"
+msgstr ""
 
 #: exe/webui/element.py:2081
 msgid "newline"
-msgstr "ขึ้นบรรทัดใหม่"
+msgstr ""
 
 #: exe/webui/element.py:2084
 msgid "Select a font size: "
-msgstr "เลือกขนาด ฟอนต์:"
+msgstr ""
 
 #: exe/webui/element.py:2194 exe/webui/element.py:2581
 #: exe/webui/element.py:2706 exe/webui/element.py:2724
 #: exe/webui/testoptionelement.py:111
-#, fuzzy
 msgid "Correct Option"
-msgstr "ถูกต้อง"
+msgstr ""
 
 #: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
-msgstr "ลบตัวเลือก"
+msgstr ""
 
 #: exe/webui/element.py:2361 exe/webui/element.py:2816
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
-msgstr "ลบคำถาม"
+msgstr ""
 
 #: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
-msgstr "เพิ่มตัวเลือก"
+msgstr ""
 
 #: exe/webui/element.py:2497 exe/webui/element.py:2940
 msgid "Solution"
@@ -7515,7 +7482,7 @@ msgstr ""
 
 #: exe/webui/element.py:2831
 msgid "Add another option"
-msgstr "เพิ่มตัวเลือกอื่น"
+msgstr ""
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
@@ -7535,7 +7502,7 @@ msgstr ""
 
 #: exe/webui/externalurlblock.py:81
 msgid "Frame Height:"
-msgstr "ความสูงของกรอบ:"
+msgstr ""
 
 #: exe/webui/fileattachblock.py:92
 msgid "<div>\n"
@@ -7570,39 +7537,39 @@ msgstr ""
 #: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:307
 #: exe/webui/galleryblock.py:308
 msgid "Add images"
-msgstr "เพิ่มรูปภาพ"
+msgstr ""
 
 #: exe/webui/galleryblock.py:230 exe/webui/galleryblock.py:332
 msgid "No Images Loaded"
-msgstr "ไม่มีภาพใดๆ ถูกโหลด"
+msgstr ""
 
 #: exe/webui/galleryblock.py:246 exe/webui/galleryblock.py:264
 msgid "Change Image"
-msgstr "เปลี่ยนรูปภาพ"
+msgstr ""
 
 #: exe/webui/galleryblock.py:271
 msgid "Move Image Left"
-msgstr "ย้ายรูปภาพไปทางซ้าย"
+msgstr ""
 
 #: exe/webui/galleryblock.py:273
 msgid "Go Back"
-msgstr "ถอยกลับ"
+msgstr ""
 
 #: exe/webui/galleryblock.py:285
 msgid "Move Image Right"
-msgstr "ย้ายรูปภาพไปทางขวา"
+msgstr ""
 
 #: exe/webui/galleryblock.py:287
 msgid "Go Forward"
-msgstr "ไปข้างหน้า"
+msgstr ""
 
 #: exe/webui/galleryblock.py:295
 msgid "Go Forward (Not Available)"
-msgstr "ไปข้างหน้า (ไม่สามารถใช้งานได้)"
+msgstr ""
 
 #: exe/webui/galleryblock.py:300
 msgid "Delete Image"
-msgstr "ลบรูปภาพ"
+msgstr ""
 
 #: exe/webui/galleryblock.py:301
 msgid "Delete this image?"
@@ -7652,31 +7619,31 @@ msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
-msgstr "เริ่มต้นการขยาย"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:153
 msgid "Maximum zoom"
-msgstr "ขยายสูงสุด"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:159
 msgid "Small"
-msgstr "เล็ก"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:160
 msgid "Medium"
-msgstr "ปานกลาง"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:161
 msgid "Large"
-msgstr "ใหญ่"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:162
 msgid "Extra large"
-msgstr "ใหญ่พิเศษ"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
-msgstr "ขนาดของแว่นขยาย:"
+msgstr ""
 
 #: exe/webui/listablock.py:180
 msgid "Other words"
@@ -7706,7 +7673,7 @@ msgstr ""
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:100
 msgid "Add another Question"
-msgstr "เพิ่มคำถามอื่น"
+msgstr ""
 
 #: exe/webui/notablock.py:104
 msgid "Show/Hide"
@@ -7774,11 +7741,11 @@ msgstr ""
 
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
-msgstr "เลือกอัตราการผ่าน:"
+msgstr ""
 
 #: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:368
 msgid "SUBMIT ANSWERS"
-msgstr "ส่งคำตอบ"
+msgstr ""
 
 #: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318
 #: exe/webui/quiztestblock.py:372
@@ -7796,12 +7763,11 @@ msgstr ""
 
 #: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:156
 msgid "Load"
-msgstr "โหลด"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:69
-#, fuzzy
 msgid "Select one or more images"
-msgstr "เลือกรูปภาพ"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:94
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
@@ -7836,14 +7802,12 @@ msgid "MP3 Audio (.mp3)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:378
-#, fuzzy
 msgid "Select an mp3 file"
-msgstr "เลือกไฟล์"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:386
-#, fuzzy
 msgid "Select a package"
-msgstr "เลือกรูปภาพ"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
@@ -7860,9 +7824,8 @@ msgid "Do you want to overwrite the existing idevice {idevice}?"
 msgstr ""
 
 #: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
-#, fuzzy
 msgid "eXe Idevices"
-msgstr "สร้าง iDevice ใหม่"
+msgstr ""
 
 #: exe/webui/scripts/editor.js:87
 msgid "Please save the idevice first, then try to export it."
@@ -7894,7 +7857,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
-msgstr "ปิด"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert"
@@ -8991,9 +8954,8 @@ msgid "Node"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
-#, fuzzy
 msgid "Download Information"
-msgstr "ข้อมูลที่เกี่ยวข้อง"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
@@ -9037,9 +8999,8 @@ msgid "Quote"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
-#, fuzzy
 msgid "Quote Language"
-msgstr "เลือกภาษา"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
 msgid "Authorship"
@@ -9104,27 +9065,24 @@ msgid "Stop"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
-#, fuzzy
 msgid "Replace with:"
-msgstr "รูปภาพ กับตัวหนังสือ"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
-#, fuzzy
 msgid "Edit code"
-msgstr "ขอคะแนน"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:4
 msgid "Auto close tags"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:5
-#, fuzzy
 msgid "Wrap text"
-msgstr "ข้อความ"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
@@ -9132,9 +9090,8 @@ msgid "Highlight syntax"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
-#, fuzzy
 msgid "Select a theme"
-msgstr "เลือกรูปภาพ"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
 msgid "Search"
@@ -9145,9 +9102,8 @@ msgid "Find next"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
-#, fuzzy
 msgid "Find previous"
-msgstr "ก่อนหน้านี้"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
 msgid "Replace all"
@@ -9166,9 +9122,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
-#, fuzzy
 msgid "Term"
-msgstr "อื่นๆ"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
 msgid "Term definition"
@@ -9306,9 +9261,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
-#, fuzzy
 msgid "Choose a type:"
-msgstr "เลือกรูปภาพ"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
 msgid "Accordion"
@@ -9327,9 +9281,8 @@ msgid "A single content area with multiple panels."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
-#, fuzzy
 msgid "Pagination"
-msgstr "ตัวเลือก"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
 msgid "Divide your content into different pages."
@@ -9344,9 +9297,8 @@ msgid "Present a list of contents in horizontal order."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
-#, fuzzy
 msgid "Timeline"
-msgstr "ขึ้นบรรทัดใหม่"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
@@ -9389,9 +9341,8 @@ msgid "This is the message that the users with no JavaScript will see:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
-#, fuzzy
 msgid "Message:"
-msgstr "รูปภาพ"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
 msgid "You can change it at any time."
@@ -10194,14 +10145,12 @@ msgid "Include wrapper (improves presentation)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#, fuzzy
 msgid "Markup language"
-msgstr "เลือกภาษา"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
-#, fuzzy
 msgid "Please select a language"
-msgstr "เลือกภาษา"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
@@ -10213,9 +10162,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
-#, fuzzy
 msgid "Light"
-msgstr "ขวา"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
@@ -10609,14 +10557,12 @@ msgid "Behaviour"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
-#, fuzzy
 msgid "Link"
-msgstr "จัดวาง:"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
-#, fuzzy
 msgid "Instructions:"
-msgstr "คำสั่ง"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
@@ -10627,14 +10573,12 @@ msgid "No selection and not in link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
-#, fuzzy
 msgid "Pages"
-msgstr "ใหญ่"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
-#, fuzzy
 msgid "Link title"
-msgstr "บทความจากวิกิพีเดีย"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
@@ -10649,9 +10593,8 @@ msgid "The tooltip will show the Link title."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
-#, fuzzy
 msgid "Definition"
-msgstr "การโต้ตอบ"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
 msgid "The term could not be found"
@@ -10664,9 +10607,8 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
-#, fuzzy
 msgid "Definition:"
-msgstr "คำอธิบาย:"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
@@ -10678,9 +10620,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
-#, fuzzy
 msgid "Page"
-msgstr "ใหญ่"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
@@ -10723,9 +10664,8 @@ msgid "The Link is required"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
-#, fuzzy
 msgid "Please select a Page"
-msgstr "กรุณาเลือกไฟล์ .flv"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
 msgid "The Link title is required"
@@ -11115,32 +11055,32 @@ msgid "Invalid color value"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:128
+#: exe/webui/tools/style-designer/langs/en.js:129
 msgid "Color Picker"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:59
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:59
 msgid "Lower Alpha"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:60
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:60
 msgid "Lower Greek"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:61
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:61
 msgid "Lower Roman"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:62
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:62
 msgid "Upper Alpha"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:63
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:63
 msgid "Upper Roman"
 msgstr ""
 
@@ -11150,46 +11090,45 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
-#, fuzzy
 msgid "Editor"
-msgstr "ตัวปรับแต่ง iDevice"
+msgstr ""
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
 msgstr ""
 
-#: exe/webui/styledesigner.py:53
+#: exe/webui/styledesigner.py:54
 msgid "Error saving style. "
 msgstr ""
 
-#: exe/webui/styledesigner.py:61
+#: exe/webui/styledesigner.py:62
 msgid "Error creating style. "
 msgstr ""
 
-#: exe/webui/styledesigner.py:70
+#: exe/webui/styledesigner.py:71
 msgid "Error creating style, local style already exists. "
 msgstr ""
 
-#: exe/webui/styledesigner.py:125
+#: exe/webui/styledesigner.py:126
 #, python-format
 msgid "Style %s successfully created!"
 msgstr ""
 
-#: exe/webui/styledesigner.py:133
+#: exe/webui/styledesigner.py:134
 #, python-format
 msgid "Style %s successfully saved!"
 msgstr ""
 
-#: exe/webui/styledesigner.py:197
+#: exe/webui/styledesigner.py:198
 #, python-format
 msgid "Style directory %s already exists"
 msgstr ""
 
-#: exe/webui/styledesigner.py:257
+#: exe/webui/styledesigner.py:258
 msgid "The style name already exists"
 msgstr ""
 
-#: exe/webui/styledesigner.py:274
+#: exe/webui/styledesigner.py:275
 msgid "Error saving style, style directory does not exist"
 msgstr ""
 
@@ -11271,19 +11210,19 @@ msgstr ""
 msgid "An unexpected error has occurred"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1241
+#: exe/webui/tools/style-designer/js/app.js:1246
 msgid "Create new style"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1242
+#: exe/webui/tools/style-designer/js/app.js:1247
 msgid "Name the new style"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1264
+#: exe/webui/tools/style-designer/js/app.js:1269
 msgid "Style Designer windows will be closed. "
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1267
+#: exe/webui/tools/style-designer/js/app.js:1272
 msgid "Page will be reloaded. "
 msgstr ""
 
@@ -11292,9 +11231,8 @@ msgid "General settings"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:13
-#, fuzzy
 msgid "Page width"
-msgstr "รูปภาพ กับตัวหนังสือ"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:14
 msgid "Percentage"
@@ -11325,32 +11263,28 @@ msgid "Text and Links"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:25
-#, fuzzy
 msgid "Text color"
-msgstr "ขอคะแนน"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:27
-#, fuzzy
 msgid "Links"
-msgstr "จัดวาง:"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:28
 msgid "Links color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:30
-#, fuzzy
 msgid "Style description"
-msgstr "การอธิบาย"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:32
 msgid "Author URL"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:33
-#, fuzzy
 msgid "Style name"
-msgstr "ชื่อไฟล์:"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:34
 msgid "Save to name the new Style."
@@ -11379,9 +11313,8 @@ msgid "Background color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:44
-#, fuzzy
 msgid "Select image"
-msgstr "เลือกรูปภาพ"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
@@ -11462,9 +11395,8 @@ msgid "Top margin"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:78
-#, fuzzy
 msgid "Font size"
-msgstr "เลือกขนาด ฟอนต์:"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:80
 msgid "Navigation"
@@ -11507,9 +11439,8 @@ msgid "Grey"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:94
-#, fuzzy
 msgid "With emphasis"
-msgstr "ไม่สำคัญ"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:95
 msgid "Title color"
@@ -11578,9 +11509,8 @@ msgid "Save all changes? This cannot be undone."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:117
-#, fuzzy
 msgid "Style name:"
-msgstr "ชื่อไฟล์:"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Your browser is not compatible with this tool."
@@ -11604,109 +11534,108 @@ msgstr ""
 msgid "This window will be closed. Please restart the tool."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:124
+#: exe/webui/tools/style-designer/langs/en.js:125
 msgid "Undo changes since last time you saved? This cannot be undone. "
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:131
+#: exe/webui/tools/style-designer/langs/en.js:132
 msgid "Drag markers to pick a color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:133
-#, fuzzy
+#: exe/webui/tools/style-designer/langs/en.js:134
 msgid "Current"
-msgstr "ผิด"
-
-#: exe/webui/tools/style-designer/langs/en.js:139
-msgid "New Color - Press OK to Commit"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:140
+msgid "New Color - Press OK to Commit"
+msgstr ""
+
+#: exe/webui/tools/style-designer/langs/en.js:141
 msgid "Click to revert to original color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:143
+#: exe/webui/tools/style-designer/langs/en.js:144
 msgid "Commit to this color selection"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:144
+#: exe/webui/tools/style-designer/langs/en.js:145
 msgid "Cancel and revert to original color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:147
+#: exe/webui/tools/style-designer/langs/en.js:148
 msgid "Set to Hue color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:148
+#: exe/webui/tools/style-designer/langs/en.js:149
 msgid "Enter a Hue value (0-360º)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:151
+#: exe/webui/tools/style-designer/langs/en.js:152
 msgid "Set to Saturation color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:152
+#: exe/webui/tools/style-designer/langs/en.js:153
 msgid "Enter a Saturation value (0-100%)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:155
+#: exe/webui/tools/style-designer/langs/en.js:156
 msgid "Set to Value color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:156
+#: exe/webui/tools/style-designer/langs/en.js:157
 msgid "Enter a Value (0-100%)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:159
+#: exe/webui/tools/style-designer/langs/en.js:160
 msgid "Set to Red color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:160
+#: exe/webui/tools/style-designer/langs/en.js:161
 msgid "Enter a Red value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:163
+#: exe/webui/tools/style-designer/langs/en.js:164
 msgid "Set to Green color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:164
+#: exe/webui/tools/style-designer/langs/en.js:165
 msgid "Enter a Green value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:167
+#: exe/webui/tools/style-designer/langs/en.js:168
 msgid "Set to Blue color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:168
+#: exe/webui/tools/style-designer/langs/en.js:169
 msgid "Enter a Blue value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:171
+#: exe/webui/tools/style-designer/langs/en.js:172
 msgid "Set to Alpha color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:172
-#: exe/webui/tools/style-designer/langs/en.js:176
+#: exe/webui/tools/style-designer/langs/en.js:173
+#: exe/webui/tools/style-designer/langs/en.js:177
 msgid "Enter an Alpha value (0-100)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:175
+#: exe/webui/tools/style-designer/langs/en.js:176
 msgid "Enter an Hex color value (#000000-#ffffff)"
 msgstr ""
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
 msgid "True"
-msgstr "จริง"
+msgstr ""
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:218
 #: exe/webui/truefalseelement.py:264
 msgid "False"
-msgstr "เท็จ"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:115
 msgid "English Wikipedia Article"
-msgstr "บทความใน วิกิพีเดีย ภาษาอังกฤษ"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:116
 msgid "Basque Wikipedia Article"
@@ -11774,7 +11703,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:132
 msgid "Wikibooks Article"
-msgstr "บทความจากหนังสือวิกิพีเดีย"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:133
 msgid "Wikiversity"
@@ -11794,7 +11723,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:151
 msgid "Own site"
-msgstr "ไซต์ของตัวเอง"
+msgstr ""
 
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
@@ -11802,12 +11731,12 @@ msgid ""
 "source language instead of target language."
 msgstr ""
 
-#: exe/webui/xliffimportpreferencespage.py:90
 #: exe/webui/tools/style-designer/langs/en.js:58
-#: exe/webui/tools/style-designer/langs/en.js:125
-#: exe/webui/tools/style-designer/langs/en.js:134
+#: exe/webui/tools/style-designer/langs/en.js:126
+#: exe/webui/tools/style-designer/langs/en.js:135
+#: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
-msgstr "ตกลง"
+msgstr ""
 
 #: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
 #: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
@@ -11815,8 +11744,6 @@ msgid ""
 "Package is old. Please upgrade it (using File..Open followed by "
 "File..Save As) before attempting to insert it into another package!"
 msgstr ""
-"แพคเกจเก่า. กรุณา upgrade (โดยไปที่ File..Open ตามด้วย File..Save As) "
-"ก่อนที่จะใส่ใน แพคเกจอื่นๆ"
 
 #: twisted/persisted/styles.py:437
 msgid ""

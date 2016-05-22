@@ -4,18 +4,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.1\n"
+"Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-12 16:37+0200\n"
+"POT-Creation-Date: 2016-05-22 13:57+0200\n"
 "PO-Revision-Date: 2008-11-24 21:02+1300\n"
 "Last-Translator: Gürkan Gür <seqizz@gmail.com>\n"
-"Language-Team: EXE Team <exe@exelearning.org>\n"
 "Language: tr\n"
+"Language-Team: EXE Team <exe@exelearning.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 1.3\n"
+"Generated-By: Babel 2.3.4\n"
 
 #: exe/application.py:191
 #, python-format
@@ -46,7 +46,7 @@ msgstr ""
 
 #: exe/engine/appletidevice.py:70
 msgid "Java Applet"
-msgstr "Java Appleti"
+msgstr ""
 
 #: exe/engine/appletidevice.py:71 exe/engine/attachmentidevice.py:45
 #: exe/engine/casestudyidevice.py:201 exe/engine/clozefpdidevice.py:51
@@ -69,7 +69,7 @@ msgstr "Java Appleti"
 #: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
-msgstr "Auckland Üniversitesi"
+msgstr ""
 
 #: exe/engine/appletidevice.py:79
 msgid ""
@@ -86,9 +86,6 @@ msgid ""
 "applet \n"
 "code field."
 msgstr ""
-"(Applet dosyasındaki) .txt dosyasını bulun \n"
-"ve içeriğini <ctrl A, ctrl C> tümüyle kod bölgesine \n"
-"yapıştırın."
 
 #: exe/engine/appletidevice.py:85
 msgid ""
@@ -103,12 +100,12 @@ msgstr ""
 #: exe/engine/appletidevice.py:190
 #, python-format
 msgid "file %s has no parentNode"
-msgstr "%s dosyasının üst kategorisi yok"
+msgstr ""
 
 #: exe/engine/appletidevice.py:192 exe/engine/attachmentidevice.py:107
 #, python-format
 msgid "iDevice %s has no package"
-msgstr "%s iDevice'ı bir pakede sahip değil"
+msgstr ""
 
 #: exe/engine/appletidevice.py:443
 msgid "Sorry, this URL is unreachable"
@@ -156,7 +153,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
-msgstr "Ek"
+msgstr ""
 
 #: exe/engine/attachmentidevice.py:46
 msgid ""
@@ -177,15 +174,13 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
-msgstr "Tanım:"
+msgstr ""
 
 #: exe/engine/attachmentidevice.py:69
 msgid ""
 "Click <strong>Select a file</strong>, browse to the file you want to "
 "attach and select it."
 msgstr ""
-"<strong>Bir dosya seçin</strong>'e tıklayın, eklemek istediğiniz dosyanın"
-" dizinine gidin ve dosyayı seçin."
 
 #: exe/engine/attachmentidevice.py:72
 msgid ""
@@ -200,14 +195,14 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:105
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr "%s ekinin üst kategorisi bulunmamakta"
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/tools/style-designer/langs/en.js:46
 msgid "Image"
-msgstr "Resim"
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:65
 #: exe/engine/ejercicioresueltofpdidevice.py:65
@@ -259,7 +254,7 @@ msgstr ""
 #: exe/engine/ejercicioresueltofpdidevice.py:222
 #: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
-msgstr "Hikaye:"
+msgstr ""
 
 #: exe/engine/casestudyidevice.py:228
 #: exe/engine/ejercicioresueltofpdidevice.py:227
@@ -355,7 +350,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Title"
-msgstr "Başlık"
+msgstr ""
 
 #: exe/engine/clickinorderidevice.py:61
 msgid "Game Instructions"
@@ -606,7 +601,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 msgid "Instructions"
-msgstr "Yönlendirmeler"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
 #: exe/engine/clozelangfpdidevice.py:121
@@ -615,18 +610,15 @@ msgid ""
 "completed. Default text will be entered if there are no changes to this "
 "field.\n"
 msgstr ""
-"Bu alanda Cloze alıştırmasının nasıl tamamlanması gerektiği hakkında \n"
-"bilgi verin. Eğer değişiklik yapılmazsa öntanımlı yazı sunulacaktır.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
 #: exe/webui/element.py:1522 exe/webui/listablock.py:259
 msgid "Cloze"
-msgstr "Cloze"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
-#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -637,10 +629,6 @@ msgid ""
 "answer can be defined enclosing them with pipes (|). I.e.: "
 "|dog|cat|bird|</p>"
 msgstr ""
-"<p>Cloze alıştırması için doldurulacak metni yazın veya yapıştırın. \n"
-"</p><p> Gizlenecek kelimeler için, kelimeyi çift tıklayarak seçin ve "
-"aşağıdaki\n"
-"Kelimeyi Gizle/Göster tuşunu tıklayın.</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -659,7 +647,7 @@ msgstr ""
 #: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
-msgstr "Geribildirim"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
 #: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
@@ -671,17 +659,17 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
 msgid "Instructions For Learners"
-msgstr "Öğrenciler İçin Yönlendirmeler"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
 #: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
-msgstr "Buraya öğrenciler için yönlendirmeleri girin"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:284
 msgid "Read the paragraph below and fill in the missing words"
-msgstr "Aşağıdaki paragrafı okuyun ve kayıp kelimeleri doldurun"
+msgstr ""
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
 #: exe/engine/clozelangfpdidevice.py:296
@@ -690,21 +678,20 @@ msgstr ""
 
 #: exe/engine/clozeidevice.py:49
 msgid "Cloze Activity"
-msgstr "Cloze Alıştırması"
+msgstr ""
 
 #: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
-msgstr "Aşağıdaki paragrafı okuyun ve kayıp kelimeleri doldurun."
+msgstr ""
 
 #: exe/engine/clozelangfpdidevice.py:50
 msgid "FPD - Cloze Activity (Modified)"
 msgstr ""
 
 #: exe/engine/clozelangfpdidevice.py:126
-#, fuzzy
 msgid "Clozelang"
-msgstr "Cloze"
+msgstr ""
 
 #: exe/engine/config.py:70 exe/engine/config.py:71 exe/engine/config.py:75
 #: exe/engine/config.py:102
@@ -850,8 +837,6 @@ msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
-"Buraya bir ipucu girin. Eğer\n"
-"ipucu vermek istemiyorsanız bu alanı boş bırakın."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
@@ -868,8 +853,6 @@ msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
 msgstr ""
-"Yuvarlak tuşa tıklayarak doğru \n"
-"şıkkı seçin."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:108
 #: exe/engine/multichoiceidevice.py:106
@@ -879,10 +862,6 @@ msgid ""
 " options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
-"Buraya seçilebilecek şıkları girin. \n"
-"Daha fazla seçenek eklemek için \"Başka Seçenek Ekle\" tuşuna "
-"tıklayabilir, istediğiniz \n"
-"seçeneği yanındaki kırmızı \"X\"e tıklayarak silebilirsiniz."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:111
 #: exe/engine/multichoiceidevice.py:109
@@ -896,12 +875,6 @@ msgid ""
 " answer\"\n"
 "for the other options."
 msgstr ""
-"Buraya, öğrenci bu seçeneği seçtiğinde görmesini \n"
-"istediğiniz geribildirimi girin. Eğer bu alanı boş bırakırsanız, eXe "
-"otomatik olarak \n"
-"şu şekilde öntanımlı çıktılar gösterecektir: Doğru seçim için \"Doğru\" \n"
-"; ya da diğer seçeneklerden birisi seçilmesi halinde \n"
-"\"Yanlış\"."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3754
 #: exe/engine/field.py:3819 exe/engine/multichoiceidevice.py:131
@@ -911,7 +884,7 @@ msgstr ""
 #: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
-msgstr "Soru"
+msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:287
 #: exe/engine/multichoiceidevice.py:285
@@ -997,7 +970,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:158
 #: exe/webui/appletblock.py:168
 msgid "Upload"
-msgstr "Karşıya Yükle"
+msgstr ""
 
 #: exe/engine/extendedfieldengine.py:298
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
@@ -1006,7 +979,7 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:185
 msgid "Delete File"
-msgstr "Dosyayı Sil"
+msgstr ""
 
 #: exe/engine/extendedfieldengine.py:306
 msgid "No File Uploaded Currently"
@@ -1018,7 +991,7 @@ msgstr ""
 #: exe/webui/multimediablock.py:87
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
-msgstr "Hiçbiri"
+msgstr ""
 
 #: exe/engine/extendedfieldengine.py:570
 msgid "is not a valid number - please try again<br/>"
@@ -1026,7 +999,7 @@ msgstr ""
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
-msgstr "Harici Web Sitesi"
+msgstr ""
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -1037,19 +1010,12 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
-"Harici web sitesi aracı sayesinde, bir web sitesini yeni pencerede \n"
-"açmak yerine, içeriğin yanında istediğiniz boyutlarda gömebilirsiniz. \n"
-"Bu sayede öğrenciler pencereler ile uğraşmak zorunda kalmazlar. \n"
-"Ancak bu araç yalnızca öğrencilerin internet bağlantısı olan \n"
-"bir ortamda kullanılmalıdır."
 
 #: exe/engine/externalurlidevice.py:49 exe/engine/externalurlidevice.py:116
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
 msgstr ""
-"Görüntülenmesini istediğiniz web adresini\n"
-"girip, gösterileceği bölgenin boyutunu seçin."
 
 #: exe/engine/field.py:2907 exe/engine/field.py:2954
 #: exe/engine/multimediaidevice.py:71
@@ -1057,8 +1023,6 @@ msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
-"MP3 dosyası için bir isim \n"
-"yazın. Bu, oynatıcı çubuğunda görünecektir."
 
 #: exe/engine/field.py:3090
 msgid ""
@@ -1123,20 +1087,16 @@ msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
-"Bu iDevice için sadece .swf (Flash Nesnesi)\n"
-"dosyalarını seç."
 
 #: exe/engine/field.py:3498 exe/engine/field.py:3562
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
-"Bu iDevice için sadece .flv (Flash Video)\n"
-"dosyalarını seç."
 
 #: exe/engine/field.py:3574
 msgid "Type a discussion topic here."
-msgstr "Buraya bir tartışma başlığı yazın."
+msgstr ""
 
 #: exe/engine/field.py:3603
 msgid ""
@@ -1157,21 +1117,21 @@ msgstr ""
 #: exe/webui/element.py:2576 exe/webui/element.py:2668
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
-msgstr "Seçenek"
+msgstr ""
 
 #: exe/engine/field.py:3757 exe/engine/field.py:3823
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:452
 msgid "Hint"
-msgstr "İpucu"
+msgstr ""
 
 #: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2381
-#: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
+#: exe/webui/testquestionelement.py:110
 msgid "Options"
-msgstr "Seçenekler"
+msgstr ""
 
 #: exe/engine/field.py:3905
 msgid ""
@@ -1187,7 +1147,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:47
 #: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
 msgid "Question:"
-msgstr "Soru:"
+msgstr ""
 
 #: exe/engine/field.py:3913
 msgid ""
@@ -1196,33 +1156,25 @@ msgid ""
 " options by \n"
 "clicking the red X next to the option."
 msgstr ""
-"Buraya seçilebilecek şıkları girin. \n"
-"Daha fazla seçenek eklemek için \"Başka Seçenek Ekle\" tuşuna "
-"tıklayabilir, istediğiniz \n"
-"seçeneği yanındaki kırmızı X'e tıklayarak silebilirsiniz."
 
 #: exe/engine/field.py:3917
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr ""
-"Doğru olan seçeneklerin yanındaki\n"
-"kutucukları işaretleyin."
 
 #: exe/engine/field.py:3920
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr ""
-"Öğrenciye doğru şıklarla beraber \n"
-"sunmak istediğiniz geribildirimi yazın."
 
 #: exe/engine/field.py:3922 exe/engine/field.py:3992
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:204
 msgid "Feedback:"
-msgstr "Geribildirim:"
+msgstr ""
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
@@ -1267,7 +1219,7 @@ msgstr ""
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr "Flash Filmi"
+msgstr ""
 
 #: exe/engine/flashmovieidevice.py:41
 msgid ""
@@ -1279,15 +1231,6 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
-"Bu iDevice sadece Flash Video Dosyası (.FLV) formatını destekler ve diğer"
-"\n"
-"video türlerini kabul etmez. Dilerseniz eXe tarafından desteklenmeyen "
-"diğer\n"
-"formatları (örn. mov, wmv gibi) harici araçlar kullanarak .FLV "
-"dosyalarına\n"
-"dönüştürebilirsiniz. Ayrıca kullanıcıların bu videoyu oynatabilmek için "
-"Flash 8\n"
-"oynatıcısına sahip olmaları gerekir. http://www.macromedia.com/"
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
@@ -1309,19 +1252,17 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Description"
-msgstr "Tanım"
+msgstr ""
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:109
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr ""
-"Şu anda eklediğiniz flash filmi için \n"
-"bir isim girin."
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
-msgstr "Yazı ile Flash"
+msgstr ""
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1338,16 +1279,12 @@ msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
 msgstr ""
-"Buraya resimle ilişkilendirmek \n"
-"                                 istediğini yazıyı yazın."
 
 #: exe/engine/flashwithtextidevice.py:58 exe/engine/flashwithtextidevice.py:118
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr ""
-"Şu anda eklediğiniz flash için \n"
-"                                  bir isim girin."
 
 #: exe/engine/flashwithtextidevice.py:60 exe/engine/flashwithtextidevice.py:120
 msgid ""
@@ -1374,7 +1311,7 @@ msgstr ""
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
 msgid "Free Text"
-msgstr "Serbest Yazı"
+msgstr ""
 
 #: exe/engine/freetextfpdidevice.py:47 exe/engine/freetextidevice.py:46
 msgid ""
@@ -1383,34 +1320,30 @@ msgid ""
 "applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
-"Bu bölümü yazı girmek için kullanabilirsiniz. \n"
-"Bu yazıya herhangi bir biçimlendirme yapılmayacak, aşağıda uyguladığınız"
-" \n"
-"biçimlendirme şekli korunacaktır."
 
 #: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
-msgstr "Bu bir serbest yazı alanıdır, öğretilecek bilgileri girilebilir."
+msgstr ""
 
 #: exe/engine/galleryidevice.py:140 exe/engine/galleryidevice.py:191
 msgid "No Thumbnail Available. Could not load original image."
-msgstr "Önizleme Yok. Orijinal resim yüklenemedi."
+msgstr ""
 
 #: exe/engine/galleryidevice.py:148 exe/engine/galleryidevice.py:198
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr "Önizleme Yok. Orijinal resim boyutlandırılamadı."
+msgstr ""
 
 #: exe/engine/galleryidevice.py:221
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr "Önizleme Yok. Resim boyutlandırılamadı."
+msgstr ""
 
 #: exe/engine/galleryidevice.py:458
 msgid "Image Gallery"
-msgstr "Resim Galerisi"
+msgstr ""
 
 #: exe/engine/galleryidevice.py:459
 msgid "eXe Project"
-msgstr "eXe Projesi"
+msgstr ""
 
 #: exe/engine/galleryidevice.py:460
 msgid ""
@@ -1422,11 +1355,11 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:463
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr "Birçok resim göstermek isterseniz bu iDevice'ı kullanın."
+msgstr ""
 
 #: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
-msgstr "Galeri için bir başlık girin"
+msgstr ""
 
 #: exe/engine/galleryidevice.py:473
 msgid ""
@@ -1434,18 +1367,15 @@ msgid ""
 "appear below where you will be able to label it. It's always good "
 "practice to put the file size in the label."
 msgstr ""
-"Bir resim dosyası seçmek için Resim ekle'yi tıklayın. Resmin altında onu "
-"etiketleyebileceğiniz bir alan da çıkacaktır. Etikette dosya boyutunu da "
-"yazmak faydalı olabilir."
 
 #: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:663
 msgid "Reading Activity 0.11"
-msgstr "Okuma Alıştırması 0.11"
+msgstr ""
 
 #: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:510
 #: exe/engine/idevicestore.py:554
 msgid "Reading Activity"
-msgstr "Okuma Alıştırması"
+msgstr ""
 
 #: exe/engine/hangmanidevice.py:51 exe/webui/common.py:490
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
@@ -1528,7 +1458,7 @@ msgstr ""
 #: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
 #: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
-msgstr "Yeniden başlat"
+msgstr ""
 
 #: exe/engine/hangmanidevice.py:104
 msgid "Restart Level Button Style (CSS)"
@@ -1619,7 +1549,7 @@ msgstr ""
 
 #: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:706
 msgid "What to read"
-msgstr "Okunacak bölüm"
+msgstr ""
 
 #: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:707
 msgid ""
@@ -1633,7 +1563,7 @@ msgstr ""
 #: exe/engine/idevicestore.py:747 exe/engine/idevicestore.py:755
 #: exe/webui/questionelement.py:110
 msgid "Activity"
-msgstr "Alıştırma"
+msgstr ""
 
 #: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:711
 msgid ""
@@ -1654,7 +1584,7 @@ msgstr ""
 #: exe/engine/package.py:653 exe/engine/package.py:664
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:216
 msgid "Objectives"
-msgstr "Hedefler"
+msgstr ""
 
 #: exe/engine/idevicestore.py:615 exe/engine/idevicestore.py:722
 msgid ""
@@ -1662,8 +1592,6 @@ msgid ""
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr ""
-"Hedefler bu bölümün amaçlarını, bitirildiğinde öğrencilerin kazanacağı\n"
-"beceri ve bilgileri anlatan basit görev planlarıdır."
 
 #: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
 msgid "Type the learning objectives for this resource."
@@ -1674,7 +1602,7 @@ msgstr ""
 #: exe/engine/package.py:683 exe/engine/package.py:694
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
 msgid "Preknowledge"
-msgstr "Önbilgi"
+msgstr ""
 
 #: exe/engine/idevicestore.py:628 exe/engine/idevicestore.py:735
 msgid ""
@@ -1686,22 +1614,12 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools "
 "</li></ul>\n"
 msgstr ""
-"Önbilgi seviyesi, bu bölüme gelmiş öğrencilerin konuları tam olarak "
-"kavraması\n"
-"için zaten bilmesi gereken bilgi ve yeteneklerin bir listesidir. Örneğin:"
-" <ul>\n"
-"<li>        Öğrenciler 4. seviye İngilizce dersi almış olmalı </li>\n"
-"<li>        Öğrenciler standart güç aletlerini ve işlevlerini biliyor "
-"olmalı </li></ul>\n"
 
 #: exe/engine/idevicestore.py:636 exe/engine/idevicestore.py:743
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
-"Bu öğretimden tam olarak faydalanmaları için öğrencilerde bulunması "
-"gereken\n"
-"önbilgi seviyesini belirtin."
 
 #: exe/engine/idevicestore.py:643 exe/engine/idevicestore.py:750
 msgid ""
@@ -1710,14 +1628,10 @@ msgid ""
 "conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
-"Alıştırma, öğrencilerin tamamlaması gereken bir veya birden fazla ödev\n"
-"olarak tanımlanabilir. Aktivitenin anlaşılır bir açıklamasını belirtin ve"
-" öğrencinin\n"
-"performansını etkileyebilecek öğeleri sıralayın."
 
 #: exe/engine/idevicestore.py:649 exe/engine/idevicestore.py:756
 msgid "Describe the tasks the learners should complete."
-msgstr "Öğrencilerin tamamlaması gereken adımları açıklayın."
+msgstr ""
 
 #: exe/engine/idevicestore.py:666
 msgid ""
@@ -1748,7 +1662,7 @@ msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
-msgstr "Resim Büyüteci"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:43
 msgid ""
@@ -1757,14 +1671,10 @@ msgid ""
 "the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
-"Resim yakınlaştırma aracı, öğrencilerin\n"
-" öğrenmeleri gereken nesneyi daha yakından inceleyebilmelerine yardımcı "
-"olur. \n"
-"Merceği oynatarak detayları daha net görebilirler."
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Choose an Image"
-msgstr "Bir Resim Seçin"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid ""
@@ -1773,9 +1683,6 @@ msgid ""
 "to be \n"
 "magnified."
 msgstr ""
-"Aşağıdaki \n"
-"resme tıklayarak ya da \"Bir Resim Seçin\" tuşu yardımıyla büyütülecek \n"
-"resmi seçin."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
@@ -1783,23 +1690,19 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/tools/style-designer/langs/en.js:24
 msgid "Text"
-msgstr "Yazı"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:55 exe/engine/multimediaidevice.py:65
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
 msgstr ""
-"Buraya dosyayla ilişkilendirmek \n"
-"istediğini yazıyı yazın."
 
 #: exe/engine/imagemagnifieridevice.py:60
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
 msgstr ""
-"Mercek altına alınacak dosya için \n"
-"bir isim girin."
 
 #: exe/engine/imagemagnifieridevice.py:62
 msgid ""
@@ -1810,12 +1713,6 @@ msgid ""
 " \n"
 "image to display at its original size."
 msgstr ""
-"Seçtiğiniz resmin görüntülenmesini \n"
-"istediğiniz boyutu seçin. Değişkenler pixel cinsindendir. Yaklaşık "
-"olarak, 100 \n"
-"pixel, 3cm kadar büyüklük demektir. Resmin orijinal boyutlarının "
-"korunması için \n"
-"her iki alanı da boş bırakın."
 
 #: exe/engine/imagemagnifieridevice.py:66
 #: exe/engine/imagemagnifieridevice.py:142
@@ -1823,8 +1720,6 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
-"Hizalama bölümünü kullanarak \n"
-"resmi ekranın istediğiniz bir tarafına yerleştirebilirsiniz."
 
 #: exe/engine/imagemagnifieridevice.py:68
 #: exe/engine/imagemagnifieridevice.py:144
@@ -1832,8 +1727,6 @@ msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
-"IDevice'ın ilk yüklendiği anda \n"
-"kullanacağı yakınlaştırma miktarının, orijinal boyuta oranı."
 
 #: exe/engine/imagemagnifieridevice.py:70
 #: exe/engine/imagemagnifieridevice.py:146
@@ -1841,12 +1734,10 @@ msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
-"En fazla olası yakınlaştırma oranının, \n"
-"resmin orijinal boyutuna yüzdesi"
 
 #: exe/engine/imagemagnifieridevice.py:72
 msgid "Select the size of the magnifying glass"
-msgstr "Merceğin boyutunu seçin"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:148
 msgid ""
@@ -1856,7 +1747,7 @@ msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
-msgstr "Yazılı Resim"
+msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -1890,8 +1781,6 @@ msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
 msgstr ""
-"Buraya resimle ilişkilendirmek \n"
-"                                                istediğini yazıyı yazın."
 
 #: exe/engine/imagewithtextidevice.py:71 exe/engine/imagewithtextidevice.py:118
 msgid ""
@@ -2209,15 +2098,15 @@ msgstr ""
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
-msgstr "Çoktan seçmeli"
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
-msgstr "MP3"
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:41
 msgid "Auckland University of Technology"
-msgstr "Auckland Teknoloji Üniversitesi"
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:42
 msgid ""
@@ -2227,7 +2116,7 @@ msgstr ""
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr "Bir MP3 Dosyası Seçin"
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -2248,7 +2137,7 @@ msgstr ""
 
 #: exe/engine/multiselectidevice.py:45
 msgid "Multi-select"
-msgstr "Çoklu seçim"
+msgstr ""
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
@@ -2300,20 +2189,20 @@ msgstr ""
 
 #: exe/engine/package.py:327
 msgid "Topic"
-msgstr "Başlık"
+msgstr ""
 
 #: exe/engine/package.py:327
 msgid "Section"
-msgstr "Bölüm"
+msgstr ""
 
 #: exe/engine/package.py:327
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
 msgid "Unit"
-msgstr "Ünite"
+msgstr ""
 
 #: exe/engine/package.py:348
 msgid "Home"
-msgstr "Anasayfa"
+msgstr ""
 
 #: exe/engine/package.py:503
 msgid "Metadata creation date"
@@ -2321,7 +2210,7 @@ msgstr ""
 
 #: exe/engine/package.py:1000
 msgid "?????"
-msgstr "?????"
+msgstr ""
 
 #: exe/engine/package.py:1038 exe/engine/package.py:1045
 #, python-format
@@ -2329,21 +2218,20 @@ msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
-"KAYIT HATALI!\n"
-"Son başarılı kayıt, %s."
 
 #: exe/engine/package.py:1449 exe/jsui/scripts/app/controller/Toolbar.js:418
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "iDevice Editor"
-msgstr "iDevice Editörü"
+msgstr ""
 
 #: exe/engine/package.py:1570
 msgid "My Catalog"
 msgstr ""
 
-#: exe/engine/package.py:1577 exe/webui/scripts/tinymce_3.5.11_settings.js:58
+#: exe/engine/package.py:1577
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:58
 #: exe/webui/tools/style-designer/langs/en.js:73
 msgid "Default"
 msgstr ""
@@ -2384,7 +2272,7 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr "Bu bir serbest yazı alanıdır."
+msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
@@ -2505,21 +2393,16 @@ msgid ""
 "answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
 msgstr ""
-"Buraya bir cevap seçeneği girin. Seçilebilecek\n"
-"doğru şık ile beraber birkaç şık (genellikle 3-4) girin.\n"
-"Başka bir cevap eklemek için &lt;Başka Seçenek Ekle&gt; butonuna tıklayın."
 
 #: exe/engine/quiztestidevice.py:126 exe/engine/quiztestidevice.py:202
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
-"Doğru şıkkı belirlemek için, \n"
-"doğru olan kutucuğun yanındaki yuvarlak seçim alanını işaretleyin."
 
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
-msgstr "SCORM Testi"
+msgstr ""
 
 #: exe/engine/quiztestidevice.py:246
 msgid ""
@@ -2566,13 +2449,6 @@ msgid ""
 "be \n"
 "effective feedback tools."
 msgstr ""
-"Yansıma, teoriyi pratiğe dökme alıştırmaları \n"
-"sırasında sıklıkla kullanılan bir öğretim yöntemidir. Öğrencilerin "
-"aldıkları bilgiyi kullanmadan önce bilgiye ne kadar hakim olduklarının \n"
-"karşılaştırmasını yapabilmeyi sağlar. Yol gösterici belgeler oldukça "
-"etkili \n"
-"bir geribildirim aracıdır.\n"
-"."
 
 #: exe/engine/reflectionfpdidevice.py:57
 #: exe/engine/reflectionfpdmodifidevice.py:56
@@ -2581,8 +2457,6 @@ msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
 msgstr ""
-"Öğrencilerden geribildirim beklediğiniz \n"
-"bir soru girin."
 
 #: exe/engine/reflectionfpdidevice.py:59
 msgid ""
@@ -2591,17 +2465,13 @@ msgid ""
 " \n"
 "reflective feedback.)"
 msgstr ""
-"Öğrencilere bu alıştırmayı nasıl \n"
-"cevaplamaları gerektiği konusunda yol gösterin. (Ayırıcı bilgilere sahip"
-" \n"
-"bir yazı faydalı olabilir.)"
 
 #: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:201
 msgid "Reflective question:"
-msgstr "Yansıma sorusu:"
+msgstr ""
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
 msgid "FPD - Think About It (without Feedback)"
@@ -2609,7 +2479,7 @@ msgstr ""
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
-msgstr "Yansıma"
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:57
 msgid ""
@@ -2627,7 +2497,7 @@ msgstr ""
 
 #: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:48
 msgid "RSS"
-msgstr "RSS"
+msgstr ""
 
 #: exe/engine/rssidevice.py:42
 msgid ""
@@ -2655,20 +2525,6 @@ msgid ""
 "bookmarks and add\n"
 " instructions or additional learning information."
 msgstr ""
-"İçeriğinize eklemek istediğiniz bir veri akışı (RSS) \n"
-"adresi yazın. Veri akışları genellikle ufak bir simge yardımıyla\n"
-" (şu şekilde <img src=\"/images/feed-icon.png\" />) ya da \"RSS\" yazısı "
-"ile belirtilir. Simgenin veya \n"
-" RSS yazısının üzerine veri akışını tıklayamak tarayıcınızda "
-"görüntüleyecektir. O bölgedeki adresi\n"
-"kopyalayabilirsiniz. İsterseniz, simgeye sağ tıklayarak gelen menü "
-"penceresinden;\n"
-"\"Kısayolu Kopyala\" veya \"Bağlantı Konumunu Kopyala\" seçenekleri ile "
-"de kopyalayabilirsiniz. \n"
-"Adresi yapıştırdıktan sonra Yükle tuşuna tıklayarak veri akışında olan "
-"başlıkları birer link olarak\n"
-"içeriğinize ekleyebilirsiniz. Buradan yer imleri ve çeşitli eğitim "
-"bilgilerini de düzenleyebilirsiniz."
 
 #: exe/engine/rssidevice.py:110 exe/engine/rssidevice.py:113
 #, python-format
@@ -2676,8 +2532,6 @@ msgid ""
 "Unable to load RSS feed from %s <br/>Please check the spelling and "
 "connection and try again."
 msgstr ""
-"%s adresinden RSS veri akışı yüklenemedi <br/>Lütfen doğru yazdığınızdan "
-"emin olun ve bağlantıyı kontrol edin."
 
 #: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid "FPD - Multi Select Activity"
@@ -2810,7 +2664,7 @@ msgstr ""
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
-msgstr "Doğru-Yanlış Sorusu"
+msgstr ""
 
 #: exe/engine/truefalseidevice.py:146
 #: exe/engine/verdaderofalsofpdidevice.py:147
@@ -2867,12 +2721,6 @@ msgid ""
 "or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
-"Buraya, öğrenci bu soruyu seçtiğinde görmesini \n"
-"istediğiniz geribildirimi girin. Eğer bu alanı boş bırakırsanız, eXe "
-"otomatik olarak \n"
-"şu şekilde öntanımlı çıktılar gösterecektir: Doğru seçim için \"Doğru\" \n"
-"; ya da diğer seçeneklerden birisi seçilmesi halinde \n"
-"\"Yanlış\"."
 
 #: exe/engine/verdaderofalsofpdidevice.py:145
 msgid "FPD - True/False Activity"
@@ -2880,7 +2728,7 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:53
 msgid "Wiki Article"
-msgstr "Wiki Makalesi"
+msgstr ""
 
 #: exe/engine/wikipediaidevice.py:55
 msgid ""
@@ -2902,21 +2750,19 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
-msgstr "Makale"
+msgstr ""
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr ""
-"Aramalarda kullanılmak üzere, Wikipedia'nın  \n"
-"uygun dildeki sayfasını seçiniz."
 
 #: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:363
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
-msgstr "Wikipedia'da aranacak olan ifadeyi giriniz."
+msgstr ""
 
 #: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
 #, python-format
@@ -2924,12 +2770,10 @@ msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
 msgstr ""
-"%s adresinden indirilemiyor <br/>Lütfen doğru yazdığınızdan emin olun ve "
-"bağlantıyı kontrol edin."
 
 #: exe/engine/wikipediaidevice.py:315
 msgid "http://en.wikipedia.org/"
-msgstr "http://tr.wikipedia.org/"
+msgstr ""
 
 #: exe/exe_do:68
 msgid ""
@@ -3088,8 +2932,8 @@ msgid ""
 msgstr ""
 
 #: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:302
-#: exe/jsui/mainpage.py:975 exe/jsui/mainpage.py:1139 exe/jsui/mainpage.py:1179
-#: exe/jsui/mainpage.py:1214 exe/jsui/mainpage.py:1235
+#: exe/jsui/mainpage.py:983 exe/jsui/mainpage.py:1147 exe/jsui/mainpage.py:1187
+#: exe/jsui/mainpage.py:1222 exe/jsui/mainpage.py:1243
 #: exe/jsui/mainpage_antes_jr_docs.py:295
 #: exe/jsui/mainpage_antes_jr_docs.py:916
 #: exe/jsui/mainpage_antes_jr_docs.py:1080
@@ -3101,8 +2945,6 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
-"\"%s\" dosyası zaten var.\n"
-"Lütfen başka bir dosya adı ile tekrar deneyiniz"
 
 #: exe/export/cmdlineexporter.py:92
 msgid "Export format not implemented"
@@ -3115,18 +2957,16 @@ msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
-"AKTARMA HATALI!\n"
-"Son başarılı aktarma, %s."
 
 #: exe/export/scormpage.py:177 exe/export/websitepage.py:345
 #: exe/webui/common.py:473
 msgid "Previous"
-msgstr "Önceki"
+msgstr ""
 
 #: exe/export/scormpage.py:178 exe/export/websitepage.py:351
 #: exe/webui/common.py:474
 msgid "Next"
-msgstr "İleri"
+msgstr ""
 
 #: exe/export/singlepage.py:249
 msgid "You can close this window"
@@ -3134,7 +2974,7 @@ msgstr ""
 
 #: exe/export/textexport.py:54 exe/webui/common.py:293
 msgid "Licensed under the"
-msgstr "Dağıtım lisansı"
+msgstr ""
 
 #: exe/export/websitepage.py:153
 msgid "Skip navigation"
@@ -3142,20 +2982,18 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr "Örnek Örnek"
+msgstr ""
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
 msgstr ""
-"Bu, kullanıcı tarafından oluşturulmuş bir\n"
-"iDevice eklentisi örneğidir."
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
 msgid "Example"
-msgstr "Örnek"
+msgstr ""
 
 #: exe/importers/cmdlineimporter.py:44
 msgid "Import format not implemented"
@@ -3203,25 +3041,25 @@ msgstr ""
 msgid "My iDevices"
 msgstr ""
 
-#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:837 exe/jsui/mainpage.py:967
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:845 exe/jsui/mainpage.py:975
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
 msgstr ""
 
-#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:839 exe/jsui/mainpage.py:967
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:847 exe/jsui/mainpage.py:975
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
-msgstr "Lütfen ASCII karakterleri kullanınız"
+msgstr ""
 
 #: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
-msgstr "KAYIT HATALI!"
+msgstr ""
 
-#: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1063
+#: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1071
 #: exe/jsui/mainpage_antes_jr_docs.py:326
 #: exe/jsui/mainpage_antes_jr_docs.py:638
 #: exe/jsui/mainpage_antes_jr_docs.py:1004
@@ -3230,8 +3068,6 @@ msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
-"KAYIT HATALI!\n"
-"%s"
 
 #: exe/jsui/mainpage.py:337 exe/jsui/mainpage.py:342 exe/jsui/mainpage.py:345
 #: exe/jsui/mainpage_antes_jr_docs.py:330
@@ -3239,19 +3075,19 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:338
 #, python-format
 msgid "Package saved to: %s"
-msgstr "Paket şuraya kaydedildi: %s"
+msgstr ""
 
 #: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:672
 #: exe/jsui/mainpage_antes_jr_docs.py:561
 #: exe/jsui/mainpage_antes_jr_docs.py:665
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
-msgstr "Önizleme dizini %s bir dosya, yer değiştirilemiyor"
+msgstr ""
 
 #: exe/jsui/mainpage.py:587 exe/jsui/mainpage_antes_jr_docs.py:580
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr "Yerel dosya %s bulunamadı, önizleme yapılamıyor"
+msgstr ""
 
 #: exe/jsui/mainpage.py:712 exe/jsui/mainpage_antes_jr_docs.py:705
 #, python-format
@@ -3259,8 +3095,6 @@ msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
-"MimeTeX derlemesi hatalı!\n"
-"%s"
 
 #: exe/jsui/mainpage.py:750 exe/jsui/mainpage_antes_jr_docs.py:743
 msgid "Importing HTML..."
@@ -3281,29 +3115,29 @@ msgstr ""
 msgid "Publishing document to Procomún"
 msgstr ""
 
-#: exe/jsui/mainpage.py:787
+#: exe/jsui/mainpage.py:789
 msgid "Exporting package as SCORM"
 msgstr ""
 
-#: exe/jsui/mainpage.py:805
+#: exe/jsui/mainpage.py:810
 msgid "Starting authorized connection to Procomún API"
 msgstr ""
 
-#: exe/jsui/mainpage.py:818
+#: exe/jsui/mainpage.py:823
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
 "visit exported site\">%s</a>"
 msgstr ""
 
-#: exe/jsui/mainpage.py:821
+#: exe/jsui/mainpage.py:826
 #, python-format
 msgid "Error exporting package %s to Procomún: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:860 exe/jsui/mainpage.py:865 exe/jsui/mainpage.py:868
-#: exe/jsui/mainpage.py:871 exe/jsui/mainpage.py:874 exe/jsui/mainpage.py:877
-#: exe/jsui/mainpage.py:882 exe/jsui/mainpage.py:1123 exe/jsui/mainpage.py:1195
+#: exe/jsui/mainpage.py:868 exe/jsui/mainpage.py:873 exe/jsui/mainpage.py:876
+#: exe/jsui/mainpage.py:879 exe/jsui/mainpage.py:882 exe/jsui/mainpage.py:885
+#: exe/jsui/mainpage.py:890 exe/jsui/mainpage.py:1131 exe/jsui/mainpage.py:1203
 #: exe/jsui/mainpage_antes_jr_docs.py:801
 #: exe/jsui/mainpage_antes_jr_docs.py:806
 #: exe/jsui/mainpage_antes_jr_docs.py:809
@@ -3314,18 +3148,18 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1064
 #: exe/jsui/mainpage_antes_jr_docs.py:1136
 msgid "EXPORT FAILED!"
-msgstr "AKTARMA HATALI!"
+msgstr ""
 
-#: exe/jsui/mainpage.py:932 exe/jsui/mainpage_antes_jr_docs.py:873
+#: exe/jsui/mainpage.py:940 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:935 exe/jsui/mainpage_antes_jr_docs.py:876
+#: exe/jsui/mainpage.py:943 exe/jsui/mainpage_antes_jr_docs.py:876
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:993
+#: exe/jsui/mainpage.py:984 exe/jsui/mainpage.py:1001
 #: exe/jsui/mainpage_antes_jr_docs.py:917
 #: exe/jsui/mainpage_antes_jr_docs.py:934
 #, python-format
@@ -3333,25 +3167,23 @@ msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
-"ÇIKARTMA HATALI!\n"
-"%s"
 
-#: exe/jsui/mainpage.py:995 exe/jsui/mainpage_antes_jr_docs.py:936
+#: exe/jsui/mainpage.py:1003 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
-msgstr "Paket şuraya çıkartıldı: %s"
+msgstr ""
 
-#: exe/jsui/mainpage.py:1007 exe/jsui/mainpage_antes_jr_docs.py:948
+#: exe/jsui/mainpage.py:1015 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1021 exe/jsui/mainpage.py:1111
-#: exe/jsui/mainpage.py:1127 exe/jsui/mainpage.py:1140
-#: exe/jsui/mainpage.py:1146 exe/jsui/mainpage.py:1164
-#: exe/jsui/mainpage.py:1180 exe/jsui/mainpage.py:1186
-#: exe/jsui/mainpage.py:1200 exe/jsui/mainpage.py:1215
-#: exe/jsui/mainpage.py:1221 exe/jsui/mainpage.py:1236
-#: exe/jsui/mainpage.py:1242 exe/jsui/mainpage_antes_jr_docs.py:962
+#: exe/jsui/mainpage.py:1029 exe/jsui/mainpage.py:1119
+#: exe/jsui/mainpage.py:1135 exe/jsui/mainpage.py:1148
+#: exe/jsui/mainpage.py:1154 exe/jsui/mainpage.py:1172
+#: exe/jsui/mainpage.py:1188 exe/jsui/mainpage.py:1194
+#: exe/jsui/mainpage.py:1208 exe/jsui/mainpage.py:1223
+#: exe/jsui/mainpage.py:1229 exe/jsui/mainpage.py:1244
+#: exe/jsui/mainpage.py:1250 exe/jsui/mainpage_antes_jr_docs.py:962
 #: exe/jsui/mainpage_antes_jr_docs.py:1052
 #: exe/jsui/mainpage_antes_jr_docs.py:1068
 #: exe/jsui/mainpage_antes_jr_docs.py:1081
@@ -3369,17 +3201,15 @@ msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
-"AKTARMA HATALI!\n"
-"%s"
 
-#: exe/jsui/mainpage.py:1049 exe/jsui/mainpage.py:1096
+#: exe/jsui/mainpage.py:1057 exe/jsui/mainpage.py:1104
 #: exe/jsui/mainpage_antes_jr_docs.py:990
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr "%s var olan bir dosya, yerine yazılamıyor"
+msgstr ""
 
-#: exe/jsui/mainpage.py:1055 exe/jsui/mainpage.py:1103
+#: exe/jsui/mainpage.py:1063 exe/jsui/mainpage.py:1111
 #: exe/jsui/mainpage_antes_jr_docs.py:996
 #: exe/jsui/mainpage_antes_jr_docs.py:1044
 #, python-format
@@ -3387,14 +3217,12 @@ msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr ""
-"Dizin adı %s zaten var. Lütfen başka bir isim seçin veya önceki dizini "
-"silerek tekrar deneyin."
 
-#: exe/jsui/mainpage.py:1069 exe/jsui/mainpage.py:1114
-#: exe/jsui/mainpage.py:1129 exe/jsui/mainpage.py:1148
-#: exe/jsui/mainpage.py:1166 exe/jsui/mainpage.py:1188
-#: exe/jsui/mainpage.py:1202 exe/jsui/mainpage.py:1223
-#: exe/jsui/mainpage.py:1244 exe/jsui/mainpage_antes_jr_docs.py:1010
+#: exe/jsui/mainpage.py:1077 exe/jsui/mainpage.py:1122
+#: exe/jsui/mainpage.py:1137 exe/jsui/mainpage.py:1156
+#: exe/jsui/mainpage.py:1174 exe/jsui/mainpage.py:1196
+#: exe/jsui/mainpage.py:1210 exe/jsui/mainpage.py:1231
+#: exe/jsui/mainpage.py:1252 exe/jsui/mainpage_antes_jr_docs.py:1010
 #: exe/jsui/mainpage_antes_jr_docs.py:1055
 #: exe/jsui/mainpage_antes_jr_docs.py:1070
 #: exe/jsui/mainpage_antes_jr_docs.py:1089
@@ -3405,29 +3233,27 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1185
 #, python-format
 msgid "Exported to %s"
-msgstr "Şuraya aktarıldı: %s"
+msgstr ""
 
-#: exe/jsui/mainpage.py:1277 exe/jsui/mainpage_antes_jr_docs.py:1218
+#: exe/jsui/mainpage.py:1285 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr "%s dosyası yok ya da okunabilir değil."
+msgstr ""
 
-#: exe/jsui/mainpage.py:1281 exe/jsui/mainpage_antes_jr_docs.py:1222
+#: exe/jsui/mainpage.py:1289 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr "Dosya yüklenemedi, lütfen dosyayı bugs@exelearning.org adresine bildirin"
+msgstr ""
 
-#: exe/jsui/mainpage.py:1284 exe/jsui/mainpage_antes_jr_docs.py:1225
+#: exe/jsui/mainpage.py:1292 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
-"Üzgünüm, yanlış dosya formatı:\n"
-"%s"
 
-#: exe/jsui/mainpage.py:1286 exe/jsui/mainpage_antes_jr_docs.py:1227
+#: exe/jsui/mainpage.py:1294 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
-msgstr "Üzgünüm, yanlış dosya formatı"
+msgstr ""
 
 #: exe/jsui/propertiespage.py:335
 msgid "Failed to get properties"
@@ -3447,7 +3273,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
 #: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
 msgid "Select an image"
-msgstr "Bir resim seçin"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/MainTab.js:194
 #: exe/jsui/scripts/app/controller/MainTab.js:228
@@ -3507,6 +3333,7 @@ msgstr ""
 #: exe/webui/stylemanagerpage.py:373 exe/webui/stylemanagerpage.py:384
 #: exe/webui/stylemanagerpage.py:421 exe/webui/stylemanagerpage.py:428
 #: exe/webui/stylemanagerpage.py:471 exe/webui/stylemanagerpage.py:483
+#: exe/webui/tools/style-designer/langs/en.js:124
 msgid "Error"
 msgstr ""
 
@@ -3538,12 +3365,12 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
 msgid "Insert Package"
-msgstr "Paket Ekle"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Extract Package"
-msgstr "Dışa Paket Aktar"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Delete \"{node}\" node and all its children?"
@@ -3619,7 +3446,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:400
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
 msgid "Preferences"
-msgstr "Seçenekler"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:428
 msgid ""
@@ -3651,7 +3478,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:123
 msgid "Information"
-msgstr "Bilgi"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 msgid "Your Style could not be saved because an unknown error occurred."
@@ -3759,12 +3586,13 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:786
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
-#: exe/webui/editorpane.py:273 exe/webui/xliffimportpreferencespage.py:94
+#: exe/webui/editorpane.py:273
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:126
-#: exe/webui/tools/style-designer/langs/en.js:135
+#: exe/webui/tools/style-designer/langs/en.js:127
+#: exe/webui/tools/style-designer/langs/en.js:136
+#: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
-msgstr "İptal"
+msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:792
 msgid "Ok"
@@ -3922,7 +3750,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
-msgstr "İsim"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:95
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
@@ -3945,7 +3773,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:77
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:183
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:124
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:122
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:228
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:640
@@ -3954,7 +3782,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/en.js:112
 msgid "Save"
-msgstr "Kaydet"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:78
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:89
@@ -4011,7 +3839,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:207
 msgid "An account of the content of the resource."
-msgstr "İçerik hakkında bilgilendirme."
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:78
 msgid "Publisher"
@@ -4073,7 +3901,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
 msgid "Select a Format."
-msgstr "Bir Format Seçin."
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomSections.js:40
@@ -4094,7 +3922,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:142
 msgid "A Reference to a resource from which the present resource is derived."
-msgstr "Oluşturulurken kullanılan kaynakların referansları."
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:148
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:51
@@ -4112,7 +3940,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:182
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:189
 msgid "Select a language."
-msgstr "Bir dil seçin."
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
@@ -4122,7 +3950,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:157
 msgid "A reference to a related resource."
-msgstr "Kaynakla ilişkili bir referans."
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:163
 #: exe/jsui/scripts/app/view/forms/LomSections.js:52
@@ -4141,7 +3969,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:173
 msgid "Information about rights held in and over the resource."
-msgstr "Belge ile ilgili patent bilgilerini."
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:177
 msgid ""
@@ -4154,7 +3982,7 @@ msgid ""
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:189
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:130
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:128
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:233
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:273
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:646
@@ -4163,14 +3991,13 @@ msgid "Clear"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:195
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:136
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
 #: exe/webui/tools/style-designer/langs/en.js:110
-#, fuzzy
 msgid "Reset"
-msgstr "Farsi"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
@@ -4206,46 +4033,46 @@ msgid ""
 "eXeLearning."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:76
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:74
 msgid "SCORM Options (1.2 and 2004)"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:84
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:82
 msgid "Add Previous/Next links within SCOs?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:88
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:86
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO. The LMS will also still add this kind "
 "of functionality."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:91
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:89
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO.  This requires a non-standard extension"
 " to SCORM 1.2 and is only known to work with some versions of Moodle."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:97
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:95
 msgid "Include Single Page export file?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:101
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:104
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:99
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:102
 msgid ""
 "Checking this option the exported SCORM file will include a file named "
 "\"singlepage_index.html\" containing the result of exporting this eXe "
 "package as a single page."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:110
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:108
 msgid "Include Web Site export files?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:114
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:117
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:112
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:115
 msgid ""
 "Checking this option the exported SCORM file will include the result of "
 "exporting this eXe package as Web Site. All the html files will have the "
@@ -4317,9 +4144,8 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:23
 #: exe/jsui/scripts/app/view/forms/LomSections.js:193
-#, fuzzy
 msgid "resources and integrated resources"
-msgstr "Kaynakla ilişkili bir referans."
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:24
 #: exe/jsui/scripts/app/view/forms/LomSections.js:194
@@ -4881,7 +4707,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:45
 msgid "Select Language"
-msgstr "Dil Seçin"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:151
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -4911,9 +4737,8 @@ msgid "Permissive"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
-#, fuzzy
 msgid "Strict"
-msgstr "Yeniden başlat"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:192
 msgid ""
@@ -4924,19 +4749,19 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:199
 msgid "Internal Linking (for Web Site Exports only)"
-msgstr "Dahili Linkler (deneyimli Web tasarımcıları için)"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:203
 msgid "Enable All Internal Linking"
-msgstr "Dahili Linkleri Aktifleştir"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:204
 msgid "Disable Auto-Top Internal Linking"
-msgstr "Sadece Otomatik Dahili Linkleri Pasifleştir"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:205
 msgid "Disable All Internal Linking"
-msgstr "Bütün Dahili Linkleri Pasifleştir"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:215
 msgid "Default license for the new documents"
@@ -4959,7 +4784,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
 msgid "Export"
-msgstr "Dışa Aktar"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
 msgid "Delete style: "
@@ -5038,7 +4863,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
-msgstr "Ağaç Görünümü"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:85
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:88
@@ -5059,7 +4884,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:155
 msgid "iDevices"
-msgstr "iDevice'lar"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "Category"
@@ -5071,21 +4896,21 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
 msgid "Authoring"
-msgstr "Yönetim"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:47
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Properties"
-msgstr "Özellikler"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
 msgid "Package"
-msgstr "Paket"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:58
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
 msgid "Metadata"
-msgstr "Altbilgi"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:195
@@ -5099,7 +4924,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
-msgstr "Sayfa Ekle"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:239
 #: exe/webui/block.py:333 exe/webui/editorelement.py:78
@@ -5110,30 +4935,30 @@ msgstr "Sayfa Ekle"
 #: exe/webui/galleryblock.py:303
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
-msgstr "Sil"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
-msgstr "Yeniden Adlandır"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
 msgid "Promote node up in hierarchy"
-msgstr "Seçimi hiyerarşide üst basamağa çıkar"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
 msgid "Demote node down in hierarchy"
-msgstr "Seçimi hiyerarşide alt basamağa indir"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:45
 msgid "Move node up"
-msgstr "Seçimi yukarı taşı"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:51
 msgid "Move node down"
-msgstr "Seçimi aşağı taşı"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
-#: exe/webui/tools/style-designer/langs/en.js:132
+#: exe/webui/tools/style-designer/langs/en.js:133
 msgid "New"
 msgstr ""
 
@@ -5148,7 +4973,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
-msgstr "Son Kullanılan Proje Listesini Temizle"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
 msgid "Save As..."
@@ -5201,7 +5026,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:273
 msgid "Web Site"
-msgstr "Web Sitesi"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:280
 msgid "Self-contained Folder"
@@ -5209,7 +5034,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:286
 msgid "Zip File"
-msgstr "Zip Dosyası"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
 msgid "Single Page"
@@ -5233,7 +5058,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:356 exe/webui/editorpage.py:269
 msgid "Quit"
-msgstr "Çık"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:363
 msgid "Tools"
@@ -5265,7 +5090,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Preview"
-msgstr "Önizleme"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Refresh Display"
@@ -5316,7 +5141,7 @@ msgid ""
 "menu File->Quit if you really want to exit the application."
 msgstr ""
 
-#: exe/jsui/scripts/exe.js:269 exe/jsui/scripts/app/view/ui/LeftPanel.js:90
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:90 exe/jsui/scripts/exe.js:269
 msgid "Group iDevices"
 msgstr ""
 
@@ -5326,7 +5151,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:8
 msgid "Abkhazian "
-msgstr "Abhazca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:12
 msgid "Avestan "
@@ -5342,7 +5167,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:24
 msgid "Arabic "
-msgstr "Arapça"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:28
 msgid "Assamese "
@@ -5354,7 +5179,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:36
 msgid "Azerbaijani "
-msgstr "Azerice"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:40
 msgid "Bashkir "
@@ -5366,7 +5191,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:48
 msgid "Bulgarian "
-msgstr "Bulgarca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:52
 msgid "Bihari "
@@ -5382,7 +5207,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:64
 msgid "Tibetan "
-msgstr "Tibetçe"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:68
 msgid "Breton "
@@ -5394,7 +5219,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:76
 msgid "Catalan "
-msgstr "Katalanca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:80
 msgid "Chechen "
@@ -5410,7 +5235,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:92
 msgid "Czech "
-msgstr "Çekçe"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:96
 msgid "Church Slavic "
@@ -5430,19 +5255,19 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:112
 msgid "German "
-msgstr "Almanca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:116
 msgid "Dzongkha; Bhutani "
-msgstr "Bhutan Dili"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:120
 msgid "Greek "
-msgstr "Yunanca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:124
 msgid "English "
-msgstr "İngilizce"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:128
 msgid "Esperanto "
@@ -5450,7 +5275,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:132
 msgid "Spanish "
-msgstr "İspanyolca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:136
 msgid "Estonian "
@@ -5462,23 +5287,23 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:144
 msgid "Persian "
-msgstr "Farsi"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:148
 msgid "Finnish "
-msgstr "Fince"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:152
 msgid "Fijian; Fiji "
-msgstr "Fiji Dili"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:156
 msgid "Faroese "
-msgstr "Farsi"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:160
 msgid "French "
-msgstr "Fransızca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:164
 msgid "Frisian "
@@ -5514,11 +5339,11 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:196
 msgid "Hebrew (formerly iw) "
-msgstr "İbranice"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:200
 msgid "Hindi "
-msgstr "Hintçe"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:204
 msgid "Hiri Motu "
@@ -5526,15 +5351,15 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:208
 msgid "Croatian "
-msgstr "Hırvatça"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:212
 msgid "Hungarian "
-msgstr "Macarca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:216
 msgid "Armenian "
-msgstr "Ermenice"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:220
 msgid "Herero "
@@ -5566,7 +5391,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:248
 msgid "Italian "
-msgstr "İtalyanca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:252
 msgid "Inuktitut "
@@ -5574,7 +5399,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:256
 msgid "Japanese "
-msgstr "Japonca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:260
 msgid "Javanese "
@@ -5582,7 +5407,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:264
 msgid "Georgian "
-msgstr "Gürcü Dili"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:268
 msgid "Kikuyu "
@@ -5594,7 +5419,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:276
 msgid "Kazakh "
-msgstr "Kazakça"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:280
 msgid "Kalaallisut; Greenlandic "
@@ -5610,7 +5435,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:292
 msgid "Korean "
-msgstr "Korece"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:296
 msgid "Kashmiri "
@@ -5618,7 +5443,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:300
 msgid "Kurdish "
-msgstr "Kürtçe"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:304
 msgid "Komi "
@@ -5634,7 +5459,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:316
 msgid "Latin "
-msgstr "Latince"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:320
 msgid "Letzeburgesch "
@@ -5650,7 +5475,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:332
 msgid "Lithuanian "
-msgstr "Litvanya Dili"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:336
 msgid "Latvian; Lettish "
@@ -5678,11 +5503,11 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:360
 msgid "Mongolian "
-msgstr "Moğolca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:364
 msgid "Moldavian "
-msgstr "Moldovyaca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:368
 msgid "Marathi "
@@ -5702,7 +5527,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:384
 msgid "Nauru "
-msgstr "Nauru Dili"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:388
 msgid "Norwegian Bokmål "
@@ -5722,7 +5547,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:404
 msgid "Dutch "
-msgstr "Hollandaca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:408
 msgid "Norwegian Nynorsk "
@@ -5778,7 +5603,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:460
 msgid "Portuguese "
-msgstr "Portekizce"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:464
 msgid "Quechua "
@@ -5798,7 +5623,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:480
 msgid "Russian "
-msgstr "Rusça"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:484
 msgid "Kinyarwanda "
@@ -5870,7 +5695,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:552
 msgid "Swedish "
-msgstr "İsveççe"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:556
 msgid "Swahili "
@@ -5890,7 +5715,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:572
 msgid "Thai "
-msgstr "Taice"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:576
 msgid "Tigrinya "
@@ -5898,7 +5723,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:580
 msgid "Turkmen "
-msgstr "Türkmence"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:584
 msgid "Tagalog "
@@ -5914,7 +5739,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:596
 msgid "Turkish "
-msgstr "Türkçe"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:600
 msgid "Tsonga "
@@ -5922,7 +5747,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:604
 msgid "Tatar "
-msgstr "Tatarca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:608
 msgid "Twi "
@@ -5938,7 +5763,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:620
 msgid "Ukrainian "
-msgstr "Ukraynaca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:624
 msgid "Urdu "
@@ -5946,7 +5771,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:628
 msgid "Uzbek "
-msgstr "Özbekçe"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:632
 msgid "Valencian "
@@ -5954,7 +5779,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:636
 msgid "Vietnamese "
-msgstr "Vietnamca"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:640
 msgid "Volapük; Volapuk "
@@ -5986,11 +5811,11 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:668
 msgid "Chinese "
-msgstr "Çince"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:672
 msgid "Zulu "
-msgstr "Zulu Dili"
+msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:5 exe/jsui/scripts/lomvocab.js:664
 msgid "active"
@@ -6796,43 +6621,43 @@ msgstr ""
 msgid "distance"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1274
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:31 exe/webui/common.py:180
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:31
+#: exe/jsui/scripts/lomvocab.js:1274 exe/webui/common.py:180
 msgid "propietary license"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1278
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:35 exe/webui/common.py:156
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:35
+#: exe/jsui/scripts/lomvocab.js:1278 exe/webui/common.py:156
 msgid "free software license EUPL"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1282
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:39 exe/webui/common.py:162
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
+#: exe/jsui/scripts/lomvocab.js:1282 exe/webui/common.py:162
 msgid "free software license GPL"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1286
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:43 exe/webui/common.py:168
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:43
+#: exe/jsui/scripts/lomvocab.js:1286 exe/webui/common.py:168
 msgid "dual free content license GPL and EUPL"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1290
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:47 exe/webui/common.py:174
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:47
+#: exe/jsui/scripts/lomvocab.js:1290 exe/webui/common.py:174
 msgid "other free software licenses"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1294
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:51 exe/webui/common.py:150
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:51
+#: exe/jsui/scripts/lomvocab.js:1294 exe/webui/common.py:150
 msgid "public domain"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1298
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:55 exe/webui/common.py:192
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:55
+#: exe/jsui/scripts/lomvocab.js:1298 exe/webui/common.py:192
 msgid "not appropriate"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1302
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:59 exe/webui/common.py:186
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:59
+#: exe/jsui/scripts/lomvocab.js:1302 exe/webui/common.py:186
 msgid "intellectual property license"
 msgstr ""
 
@@ -6860,8 +6685,8 @@ msgstr ""
 msgid "creative commons: attribution - share alike"
 msgstr ""
 
-#: exe/jsui/scripts/lomvocab.js:1330
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
+#: exe/jsui/scripts/lomvocab.js:1330
 msgid "license GFDL"
 msgstr ""
 
@@ -6923,7 +6748,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:85
 msgid "Please upload a .ggb file."
-msgstr "Lütfen bir .ggb dosyası yükleyin."
+msgstr ""
 
 #: exe/webui/appletblock.py:87
 msgid "Please upload a .jclic.zip file."
@@ -6963,15 +6788,15 @@ msgstr ""
 
 #: exe/webui/appletblock.py:134 exe/webui/wikipediablock.py:136
 msgid "Other"
-msgstr "Diğer"
+msgstr ""
 
 #: exe/webui/appletblock.py:135
 msgid "Applet Type"
-msgstr "Applet Türü"
+msgstr ""
 
 #: exe/webui/appletblock.py:156 exe/webui/appletblock.py:166
 msgid "Add files"
-msgstr "Dosya ekle"
+msgstr ""
 
 #: exe/webui/appletblock.py:162
 msgid "Accept URL"
@@ -6979,30 +6804,30 @@ msgstr ""
 
 #: exe/webui/appletblock.py:172
 msgid "Applet Code:"
-msgstr "Applet Kodu:"
+msgstr ""
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
 msgid "Filename:"
-msgstr "Dosya adı:"
+msgstr ""
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
 #: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
 #: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
 msgid "Select a file"
-msgstr "Bir dosya seçin"
+msgstr ""
 
 #: exe/webui/attachmentblock.py:108
 msgid "Label:"
-msgstr "Etiket:"
+msgstr ""
 
 #: exe/webui/block.py:184
 msgid "IDevice broken"
-msgstr "IDevice bozuk"
+msgstr ""
 
 #: exe/webui/block.py:222
 msgid "Done"
-msgstr "Tamam"
+msgstr ""
 
 #: exe/webui/block.py:226
 msgid "Exit without saving?"
@@ -7010,11 +6835,11 @@ msgstr ""
 
 #: exe/webui/block.py:229
 msgid "Undo Edits"
-msgstr "Düzenlemeleri Geri Al"
+msgstr ""
 
 #: exe/webui/block.py:233
 msgid "Can NOT Undo Edits"
-msgstr "Düzenlemeler Geri ALINAMIYOR"
+msgstr ""
 
 #: exe/webui/block.py:236 exe/webui/block.py:330
 msgid "This will delete this iDevice. Do you really want to do this?"
@@ -7022,36 +6847,36 @@ msgstr ""
 
 #: exe/webui/block.py:246
 msgid "Move Up"
-msgstr "Yukarı Taşı"
+msgstr ""
 
 #: exe/webui/block.py:253
 msgid "Move Down"
-msgstr "Aşağı Taşı"
+msgstr ""
 
 #: exe/webui/block.py:255
 msgid "---Move To---"
-msgstr "---Taşı---"
+msgstr ""
 
 #: exe/webui/block.py:260 exe/webui/editorpane.py:380
 msgid "Pedagogical Help"
-msgstr "Pedagojik Yardım"
+msgstr ""
 
 #: exe/webui/block.py:273 exe/webui/editorpane.py:390
 msgid "Tip:"
-msgstr "İpucu:"
+msgstr ""
 
 #: exe/webui/block.py:318
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr "HATA: Block.renderViewContent direkt olarak çağrıldı"
+msgstr ""
 
 #: exe/webui/block.py:328 exe/webui/editorpage.py:286
 #: exe/webui/editorpane.py:270
 msgid "Edit"
-msgstr "Düzenle"
+msgstr ""
 
 #: exe/webui/casestudyblock.py:114 exe/webui/ejercicioresueltofpdblock.py:130
 msgid "Add another activity"
-msgstr "Başka alıştırma ekle"
+msgstr ""
 
 #: exe/webui/casopracticofpdblock.py:68
 msgid "Situation"
@@ -7204,25 +7029,25 @@ msgstr ""
 
 #: exe/webui/common.py:476
 msgid "Hide"
-msgstr "Gizle"
+msgstr ""
 
 #: exe/webui/common.py:477 exe/webui/common.py:715 exe/webui/element.py:1538
 #: exe/webui/element.py:2469 exe/webui/listablock.py:275
 msgid "Show Feedback"
-msgstr "Geribildirimi Göster"
+msgstr ""
 
 #: exe/webui/common.py:478
 msgid "Hide Feedback"
-msgstr "Yardımı Gizle"
+msgstr ""
 
 #: exe/webui/common.py:479 exe/webui/common.py:494 exe/webui/element.py:2272
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
-msgstr "Doğru"
+msgstr ""
 
 #: exe/webui/common.py:480 exe/webui/element.py:2275
 msgid "Incorrect"
-msgstr "Yanlış"
+msgstr ""
 
 #: exe/webui/common.py:481
 msgid "Menu"
@@ -7234,7 +7059,7 @@ msgstr ""
 
 #: exe/webui/common.py:495 exe/webui/element.py:2708 exe/webui/element.py:2726
 msgid "Wrong"
-msgstr "Yanlış"
+msgstr ""
 
 #: exe/webui/common.py:496
 msgid "Right answer"
@@ -7253,9 +7078,8 @@ msgid "Words"
 msgstr ""
 
 #: exe/webui/common.py:501
-#, fuzzy
 msgid "Play"
-msgstr "Karşıya Yükle"
+msgstr ""
 
 #: exe/webui/common.py:503
 msgid "Results"
@@ -7266,9 +7090,8 @@ msgid "Total"
 msgstr ""
 
 #: exe/webui/common.py:505
-#, fuzzy
 msgid "Another word"
-msgstr "Başka Seçenek ekle"
+msgstr ""
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7289,11 +7112,11 @@ msgstr ""
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
-msgstr "eXe : e-öğrenme XHTML editorü"
+msgstr ""
 
 #: exe/webui/common.py:839 exe/webui/common.py:842
 msgid "Click for completion instructions"
-msgstr "Tamamlama yardımı için tıklayın"
+msgstr ""
 
 #: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
@@ -7301,15 +7124,15 @@ msgstr ""
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:251
 msgid "Text Line"
-msgstr "Yazı Satırı"
+msgstr ""
 
 #: exe/webui/editorelement.py:111 exe/webui/editorpane.py:253
 msgid "Text Box"
-msgstr "Yazı Kutusu"
+msgstr ""
 
 #: exe/webui/editorelement.py:149 exe/webui/element.py:602
 msgid "Button Caption"
-msgstr "Tuş Yazısı"
+msgstr ""
 
 #: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
 #: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
@@ -7323,7 +7146,7 @@ msgstr "Tuş Yazısı"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:18
 msgid "Left"
-msgstr "Sol"
+msgstr ""
 
 #: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
 #: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
@@ -7337,21 +7160,21 @@ msgstr "Sol"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:76
 msgid "Right"
-msgstr "Sağ"
+msgstr ""
 
 #: exe/webui/editorelement.py:228 exe/webui/flashmovieblock.py:87
 #: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/imagewithtextblock.py:88 exe/webui/multimediablock.py:92
 msgid "Align:"
-msgstr "Hizala"
+msgstr ""
 
 #: exe/webui/editorelement.py:268 exe/webui/element.py:1889
 msgid "Select Flash Object"
-msgstr "Flash Nesnesi Seçin"
+msgstr ""
 
 #: exe/webui/editorelement.py:308
 msgid "Select MP3 file"
-msgstr "MP3 dosyası seçin"
+msgstr ""
 
 #: exe/webui/editorelement.py:311 exe/webui/element.py:869
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
@@ -7361,23 +7184,23 @@ msgstr ""
 
 #: exe/webui/editorpage.py:125
 msgid "Please enter an idevice name."
-msgstr "Lütfen bir iDevice ismi girin."
+msgstr ""
 
 #: exe/webui/editorpage.py:188 exe/webui/editorpage.py:200
 msgid "Sorry, wrong file format."
-msgstr "Üzgünüm, yanlış dosya formatı."
+msgstr ""
 
 #: exe/webui/editorpage.py:262
 msgid "Import iDevice"
-msgstr "iDevice Al"
+msgstr ""
 
 #: exe/webui/editorpage.py:265
 msgid "Export iDevice"
-msgstr "iDevice Çıkart"
+msgstr ""
 
 #: exe/webui/editorpage.py:291
 msgid "New iDevice"
-msgstr "Yeni iDevice"
+msgstr ""
 
 #: exe/webui/editorpane.py:67
 msgid ""
@@ -7385,12 +7208,10 @@ msgid ""
 " a compulsory field and you will be prompted to enter a label if you try "
 "to submit your iDevice without one."
 msgstr ""
-"Yeni iDevice'ınız panelde bu başlık ile görünecek. Zorunlu bir bölümdür, "
-"boş bırakılamaz."
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
-msgstr "Bu seçime bağlı bir alandır."
+msgstr ""
 
 #: exe/webui/editorpane.py:72
 msgid ""
@@ -7410,113 +7231,103 @@ msgid ""
 "device's development. This can be useful if your iDevice is to be "
 "exported for others to use."
 msgstr ""
-"Bu bölüme oluşturduğunuz iDevice'ın amacını ve geliştirilmesindeki "
-"pedagojik sebepleri yazabilirsiniz. Eğer iDevice'ınız dışa aktarılırsa, "
-"buraya yazdıklarınız başkalarının kullanmasında yardımcı olabilir."
 
 #: exe/webui/editorpane.py:84
 msgid ""
 "Add a single text line to an iDevice. Useful if you want the ability to "
 "place a label within the iDevice."
 msgstr ""
-"iDevice'a tek satırlık bir yazı ekleyin. Kısa bir tanıtım etiketi gibi "
-"kullanmak için ideal."
 
 #: exe/webui/editorpane.py:87
 msgid ""
 "Add a text entry box to an iDevice. Used for entering larger amounts of "
 "textual content."
 msgstr ""
-"Uzun bir yazı ya da açıklama girmek isterseniz iDevice'a bir yazı kutusu "
-"ekleyin."
 
 #: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
-msgstr "iDevice'a interaktif bir geribildirim alanı ekleyin."
+msgstr ""
 
 #: exe/webui/editorpane.py:91
 msgid "Add a flash video to your iDevice."
-msgstr "iDevice flash video yükle"
+msgstr ""
 
 #: exe/webui/editorpane.py:92
 msgid "Add an mp3 file to your iDevice."
-msgstr "iDevice'ye mp3 dosyası ekle"
+msgstr ""
 
 #: exe/webui/editorpane.py:93
 msgid "Add an attachment file to your iDevice."
-msgstr "iDevice'a bir dosya ekleyin."
+msgstr ""
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:152
 #: exe/webui/editorpane.py:160 exe/webui/editorpane.py:176
 #: exe/webui/editorpane.py:186
 msgid "Enter the label here"
-msgstr "Buraya etiketi girin"
+msgstr ""
 
 #: exe/webui/editorpane.py:146
 msgid "Enter instructions for completion here"
-msgstr "Buraya tamamlama için gerekli yönlendirmeleri girin"
+msgstr ""
 
 #: exe/webui/editorpane.py:153 exe/webui/editorpane.py:177
 #: exe/webui/editorpane.py:187
 msgid "Enter the instructions for completion here"
-msgstr "Buraya tamamlama için gereken yönergeleri yazın"
+msgstr ""
 
 #: exe/webui/editorpane.py:161
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr ""
-"Eğer bu bölgede bir yazı olmazsa  \n"
-"geribildirim düğmesi gösterilmeyecek."
 
 #: exe/webui/editorpane.py:198
 msgid "Please enter<br />an idevice name."
-msgstr "Lütfen bir<br />iDevice ismi girin."
+msgstr ""
 
 #: exe/webui/editorpane.py:250
 msgid "Add Field"
-msgstr "Alan Ekle"
+msgstr ""
 
 #: exe/webui/editorpane.py:265
 msgid "Actions"
-msgstr "Eylemler"
+msgstr ""
 
 #: exe/webui/editorpane.py:332
 msgid "Pedagogical Tip"
-msgstr "Pedagojik İpucu"
+msgstr ""
 
 #: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:163
 msgid "Emphasis"
-msgstr "Vurgu"
+msgstr ""
 
 #: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:160
 msgid "No emphasis"
-msgstr "Vurgu yok"
+msgstr ""
 
 #: exe/webui/editorpane.py:339 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:161
 msgid "Some emphasis"
-msgstr "Biraz vurgulu"
+msgstr ""
 
 #: exe/webui/editorpane.py:354
-#, fuzzy
 msgid "Select an icon"
-msgstr "Bir resim seçin"
+msgstr ""
 
 #: exe/webui/editorpane.py:368
 msgid "Icons"
-msgstr "Simgeler"
+msgstr ""
 
 #: exe/webui/editorpane.py:383
 msgid "Info"
-msgstr "Bilgi"
+msgstr ""
 
 #: exe/webui/editorpane.py:429 exe/webui/element.py:1545
 #: exe/webui/element.py:1547 exe/webui/element.py:1803
 msgid "Submit"
-msgstr "Gönder"
+msgstr ""
 
 #: exe/webui/ejercicioresueltofpdblock.py:122
 msgid "Translation"
@@ -7525,35 +7336,35 @@ msgstr ""
 #: exe/webui/eleccionmultiplefpdblock.py:98 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
-msgstr "Lütfen her soru için doğru cevabı seçin."
+msgstr ""
 
 #: exe/webui/eleccionmultiplefpdblock.py:124 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:119
 msgid "Add another question"
-msgstr "Başka soru ekle"
+msgstr ""
 
 #: exe/webui/element.py:72
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr "HATA Element.process direkt olarak %s sınıfı ile çağrıldı"
+msgstr ""
 
 #: exe/webui/element.py:81
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
-msgstr "HATA Element.renderEdit direkt olarak %s sınıfı ile çağrıldı"
+msgstr ""
 
 #: exe/webui/element.py:98
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
-msgstr "HATA Element.renderView direkt olarak %s sınıfı ile çağrıldı"
+msgstr ""
 
 #: exe/webui/element.py:753 exe/webui/element.py:1174
 msgid "Add Image"
-msgstr "Resim Ekle"
+msgstr ""
 
 #: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
 msgid "Display as:"
-msgstr "Gösterme şekli:"
+msgstr ""
 
 #: exe/webui/element.py:786
 msgid "by"
@@ -7561,20 +7372,20 @@ msgstr ""
 
 #: exe/webui/element.py:793 exe/webui/element.py:1212
 msgid "blank for original size"
-msgstr "orijinal boyut için boş bırakın"
+msgstr ""
 
 #: exe/webui/element.py:863
 msgid "Select an MP3"
-msgstr "Bir MP3 seçin"
+msgstr ""
 
 #: exe/webui/element.py:1351 exe/webui/element.py:1684
 msgid "Cloze Text"
-msgstr "Cloze Yazısı"
+msgstr ""
 
 #: exe/webui/element.py:1359 exe/webui/element.py:1692
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
-msgstr "Kelimeyi Göster/Gizle"
+msgstr ""
 
 #: exe/webui/element.py:1364 exe/webui/element.py:1697
 msgid "Strict Marking?"
@@ -7595,15 +7406,15 @@ msgstr ""
 
 #: exe/webui/element.py:1535 exe/webui/element.py:1794
 msgid "Get score"
-msgstr "Puanı al"
+msgstr ""
 
 #: exe/webui/element.py:1541 exe/webui/element.py:1800
 msgid "Show/Clear Answers"
-msgstr "Cevapları Göster/Temizle"
+msgstr ""
 
 #: exe/webui/element.py:1551 exe/webui/element.py:1807
 msgid "Show Answers"
-msgstr "Cevapları Göster"
+msgstr ""
 
 #: exe/webui/element.py:1587 exe/webui/element.py:1839
 #: exe/webui/element.py:2461 exe/webui/element.py:2921
@@ -7613,7 +7424,7 @@ msgstr ""
 
 #: exe/webui/element.py:1702
 msgid "Check Caps?"
-msgstr "Büyük harf kontrolü?"
+msgstr ""
 
 #: exe/webui/element.py:1712
 msgid "Show Score?"
@@ -7621,15 +7432,15 @@ msgstr ""
 
 #: exe/webui/element.py:1797
 msgid "Show/Hide Feedback"
-msgstr "Geribildirimi Göster/Gizle"
+msgstr ""
 
 #: exe/webui/element.py:1955
 msgid "Please select a .flv file."
-msgstr "Lütfen bir .flv dosyası seçin."
+msgstr ""
 
 #: exe/webui/element.py:1971
 msgid "Select a flash video"
-msgstr "Bir flash video seçin"
+msgstr ""
 
 #: exe/webui/element.py:2080
 msgid "text"
@@ -7641,28 +7452,28 @@ msgstr ""
 
 #: exe/webui/element.py:2084
 msgid "Select a font size: "
-msgstr "Bir font boyutu seçin:"
+msgstr ""
 
 #: exe/webui/element.py:2194 exe/webui/element.py:2581
 #: exe/webui/element.py:2706 exe/webui/element.py:2724
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
-msgstr "Doğru Seçenek"
+msgstr ""
 
 #: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
-msgstr "Seçeneği sil"
+msgstr ""
 
 #: exe/webui/element.py:2361 exe/webui/element.py:2816
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
-msgstr "Soruyu sil"
+msgstr ""
 
 #: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
-msgstr "Başka Seçenek Ekle"
+msgstr ""
 
 #: exe/webui/element.py:2497 exe/webui/element.py:2940
 msgid "Solution"
@@ -7670,11 +7481,11 @@ msgstr ""
 
 #: exe/webui/element.py:2831
 msgid "Add another option"
-msgstr "Başka Seçenek ekle"
+msgstr ""
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
-msgstr "URL:"
+msgstr ""
 
 #: exe/webui/externalurlblock.py:72
 msgid "small"
@@ -7690,7 +7501,7 @@ msgstr ""
 
 #: exe/webui/externalurlblock.py:81
 msgid "Frame Height:"
-msgstr "Çerçeve Yüksekliği:"
+msgstr ""
 
 #: exe/webui/fileattachblock.py:92
 msgid "<div>\n"
@@ -7725,39 +7536,39 @@ msgstr ""
 #: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:307
 #: exe/webui/galleryblock.py:308
 msgid "Add images"
-msgstr "Resim ekle"
+msgstr ""
 
 #: exe/webui/galleryblock.py:230 exe/webui/galleryblock.py:332
 msgid "No Images Loaded"
-msgstr "Resim Yüklenmedi"
+msgstr ""
 
 #: exe/webui/galleryblock.py:246 exe/webui/galleryblock.py:264
 msgid "Change Image"
-msgstr "Resmi Değiştir"
+msgstr ""
 
 #: exe/webui/galleryblock.py:271
 msgid "Move Image Left"
-msgstr "Resmi Sola Taşı"
+msgstr ""
 
 #: exe/webui/galleryblock.py:273
 msgid "Go Back"
-msgstr "Geri Git"
+msgstr ""
 
 #: exe/webui/galleryblock.py:285
 msgid "Move Image Right"
-msgstr "Resmi Sağa Taşı"
+msgstr ""
 
 #: exe/webui/galleryblock.py:287
 msgid "Go Forward"
-msgstr "İleri Git"
+msgstr ""
 
 #: exe/webui/galleryblock.py:295
 msgid "Go Forward (Not Available)"
-msgstr "İleri Git (ulaşılamaz)"
+msgstr ""
 
 #: exe/webui/galleryblock.py:300
 msgid "Delete Image"
-msgstr "Resmi Sil"
+msgstr ""
 
 #: exe/webui/galleryblock.py:301
 msgid "Delete this image?"
@@ -7807,31 +7618,31 @@ msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
-msgstr "Başlangıçtaki Yakınlaştırma"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:153
 msgid "Maximum zoom"
-msgstr "Maksimum yakınlaştırma"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:159
 msgid "Small"
-msgstr "Küçük"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:160
 msgid "Medium"
-msgstr "Orta"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:161
 msgid "Large"
-msgstr "Geniş"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:162
 msgid "Extra large"
-msgstr "En büyük"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
-msgstr "Merceğin Boyutu:"
+msgstr ""
 
 #: exe/webui/listablock.py:180
 msgid "Other words"
@@ -7861,7 +7672,7 @@ msgstr ""
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:100
 msgid "Add another Question"
-msgstr "Başka soru ekle"
+msgstr ""
 
 #: exe/webui/notablock.py:104
 msgid "Show/Hide"
@@ -7929,11 +7740,11 @@ msgstr ""
 
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
-msgstr "Geçme yüzdesini seçiniz:"
+msgstr ""
 
 #: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:368
 msgid "SUBMIT ANSWERS"
-msgstr "CEVAPLARI GÖNDER"
+msgstr ""
 
 #: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318
 #: exe/webui/quiztestblock.py:372
@@ -7951,21 +7762,19 @@ msgstr ""
 
 #: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:156
 msgid "Load"
-msgstr "Yükle"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:69
-#, fuzzy
 msgid "Select one or more images"
-msgstr "Bir resim seçin"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:94
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
-#, fuzzy
 msgid "Flash Movie (.flv)"
-msgstr "Flash Filmi"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
 msgid "Flash Object (.swf)"
@@ -7992,14 +7801,12 @@ msgid "MP3 Audio (.mp3)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:378
-#, fuzzy
 msgid "Select an mp3 file"
-msgstr "Bir dosya seçin"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:386
-#, fuzzy
 msgid "Select a package"
-msgstr "Bir resim seçin"
+msgstr ""
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
@@ -8016,9 +7823,8 @@ msgid "Do you want to overwrite the existing idevice {idevice}?"
 msgstr ""
 
 #: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
-#, fuzzy
 msgid "eXe Idevices"
-msgstr "iDevice'lar"
+msgstr ""
 
 #: exe/webui/scripts/editor.js:87
 msgid "Please save the idevice first, then try to export it."
@@ -8050,7 +7856,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
-msgstr "Kapat"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert"
@@ -9147,9 +8953,8 @@ msgid "Node"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
-#, fuzzy
 msgid "Download Information"
-msgstr "Bilgi"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
@@ -9193,14 +8998,12 @@ msgid "Quote"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
-#, fuzzy
 msgid "Quote Language"
-msgstr "Bir dil seçin."
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
-#, fuzzy
 msgid "Authorship"
-msgstr "Yönetim"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:9
 msgid "Authorship Language"
@@ -9261,18 +9064,16 @@ msgid "Stop"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
-#, fuzzy
 msgid "Replace with:"
-msgstr "Yazılı Resim"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
-#, fuzzy
 msgid "Edit code"
-msgstr "Puanı al"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:4
 msgid "Auto close tags"
@@ -9288,9 +9089,8 @@ msgid "Highlight syntax"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
-#, fuzzy
 msgid "Select a theme"
-msgstr "Bir resim seçin"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
 msgid "Search"
@@ -9301,9 +9101,8 @@ msgid "Find next"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
-#, fuzzy
 msgid "Find previous"
-msgstr "Önceki"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
 msgid "Replace all"
@@ -9322,9 +9121,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
-#, fuzzy
 msgid "Term"
-msgstr "Diğer"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
 msgid "Term definition"
@@ -9462,9 +9260,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
-#, fuzzy
 msgid "Choose a type:"
-msgstr "Bir Resim Seçin"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
 msgid "Accordion"
@@ -9483,27 +9280,24 @@ msgid "A single content area with multiple panels."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
-#, fuzzy
 msgid "Pagination"
-msgstr "Seçenek"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
 msgid "Divide your content into different pages."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:26
-#, fuzzy
 msgid "Carousel"
-msgstr "Farsi"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:27
 msgid "Present a list of contents in horizontal order."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
-#, fuzzy
 msgid "Timeline"
-msgstr "Ağaç Görünümü"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
@@ -9546,9 +9340,8 @@ msgid "This is the message that the users with no JavaScript will see:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
-#, fuzzy
 msgid "Message:"
-msgstr "Resim"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
 msgid "You can change it at any time."
@@ -10351,14 +10144,12 @@ msgid "Include wrapper (improves presentation)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#, fuzzy
 msgid "Markup language"
-msgstr "Bir dil seçin."
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
-#, fuzzy
 msgid "Please select a language"
-msgstr "Bir dil seçin."
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
@@ -10370,9 +10161,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
-#, fuzzy
 msgid "Light"
-msgstr "Sağ"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
@@ -10766,14 +10556,12 @@ msgid "Behaviour"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
-#, fuzzy
 msgid "Link"
-msgstr "Hizala"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
-#, fuzzy
 msgid "Instructions:"
-msgstr "Yönlendirmeler"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
@@ -10784,14 +10572,12 @@ msgid "No selection and not in link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
-#, fuzzy
 msgid "Pages"
-msgstr "Geniş"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
-#, fuzzy
 msgid "Link title"
-msgstr "Wiki Makalesi"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
@@ -10806,9 +10592,8 @@ msgid "The tooltip will show the Link title."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
-#, fuzzy
 msgid "Definition"
-msgstr "Yansıma"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
 msgid "The term could not be found"
@@ -10821,9 +10606,8 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
-#, fuzzy
 msgid "Definition:"
-msgstr "Tanım:"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
@@ -10835,9 +10619,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
-#, fuzzy
 msgid "Page"
-msgstr "Geniş"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
@@ -10880,9 +10663,8 @@ msgid "The Link is required"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
-#, fuzzy
 msgid "Please select a Page"
-msgstr "Lütfen bir .flv dosyası seçin."
+msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
 msgid "The Link title is required"
@@ -11272,32 +11054,32 @@ msgid "Invalid color value"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:128
+#: exe/webui/tools/style-designer/langs/en.js:129
 msgid "Color Picker"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:59
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:59
 msgid "Lower Alpha"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:60
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:60
 msgid "Lower Greek"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:61
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:61
 msgid "Lower Roman"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:62
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:62
 msgid "Upper Alpha"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11_settings.js:63
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11_settings.js:63
 msgid "Upper Roman"
 msgstr ""
 
@@ -11307,46 +11089,45 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
-#, fuzzy
 msgid "Editor"
-msgstr "iDevice Editörü"
+msgstr ""
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
 msgstr ""
 
-#: exe/webui/styledesigner.py:53
+#: exe/webui/styledesigner.py:54
 msgid "Error saving style. "
 msgstr ""
 
-#: exe/webui/styledesigner.py:61
+#: exe/webui/styledesigner.py:62
 msgid "Error creating style. "
 msgstr ""
 
-#: exe/webui/styledesigner.py:70
+#: exe/webui/styledesigner.py:71
 msgid "Error creating style, local style already exists. "
 msgstr ""
 
-#: exe/webui/styledesigner.py:125
+#: exe/webui/styledesigner.py:126
 #, python-format
 msgid "Style %s successfully created!"
 msgstr ""
 
-#: exe/webui/styledesigner.py:133
+#: exe/webui/styledesigner.py:134
 #, python-format
 msgid "Style %s successfully saved!"
 msgstr ""
 
-#: exe/webui/styledesigner.py:197
+#: exe/webui/styledesigner.py:198
 #, python-format
 msgid "Style directory %s already exists"
 msgstr ""
 
-#: exe/webui/styledesigner.py:257
+#: exe/webui/styledesigner.py:258
 msgid "The style name already exists"
 msgstr ""
 
-#: exe/webui/styledesigner.py:274
+#: exe/webui/styledesigner.py:275
 msgid "Error saving style, style directory does not exist"
 msgstr ""
 
@@ -11428,19 +11209,19 @@ msgstr ""
 msgid "An unexpected error has occurred"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1241
+#: exe/webui/tools/style-designer/js/app.js:1246
 msgid "Create new style"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1242
+#: exe/webui/tools/style-designer/js/app.js:1247
 msgid "Name the new style"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1264
+#: exe/webui/tools/style-designer/js/app.js:1269
 msgid "Style Designer windows will be closed. "
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1267
+#: exe/webui/tools/style-designer/js/app.js:1272
 msgid "Page will be reloaded. "
 msgstr ""
 
@@ -11449,9 +11230,8 @@ msgid "General settings"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:13
-#, fuzzy
 msgid "Page width"
-msgstr "Yazılı Resim"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:14
 msgid "Percentage"
@@ -11482,32 +11262,28 @@ msgid "Text and Links"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:25
-#, fuzzy
 msgid "Text color"
-msgstr "Puanı al"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:27
-#, fuzzy
 msgid "Links"
-msgstr "Hizala"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:28
 msgid "Links color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:30
-#, fuzzy
 msgid "Style description"
-msgstr "Tanım"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:32
 msgid "Author URL"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:33
-#, fuzzy
 msgid "Style name"
-msgstr "Dosya adı:"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:34
 msgid "Save to name the new Style."
@@ -11536,9 +11312,8 @@ msgid "Background color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:44
-#, fuzzy
 msgid "Select image"
-msgstr "Bir resim seçin"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
@@ -11619,9 +11394,8 @@ msgid "Top margin"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:78
-#, fuzzy
 msgid "Font size"
-msgstr "Bir font boyutu seçin:"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:80
 msgid "Navigation"
@@ -11664,9 +11438,8 @@ msgid "Grey"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:94
-#, fuzzy
 msgid "With emphasis"
-msgstr "Vurgu yok"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:95
 msgid "Title color"
@@ -11719,9 +11492,8 @@ msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:111
-#, fuzzy
 msgid "Finish"
-msgstr "Fince"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:113
 msgid "Save as"
@@ -11736,9 +11508,8 @@ msgid "Save all changes? This cannot be undone."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:117
-#, fuzzy
 msgid "Style name:"
-msgstr "Dosya adı:"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Your browser is not compatible with this tool."
@@ -11762,109 +11533,108 @@ msgstr ""
 msgid "This window will be closed. Please restart the tool."
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:124
+#: exe/webui/tools/style-designer/langs/en.js:125
 msgid "Undo changes since last time you saved? This cannot be undone. "
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:131
+#: exe/webui/tools/style-designer/langs/en.js:132
 msgid "Drag markers to pick a color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:133
-#, fuzzy
+#: exe/webui/tools/style-designer/langs/en.js:134
 msgid "Current"
-msgstr "Yanlış"
-
-#: exe/webui/tools/style-designer/langs/en.js:139
-msgid "New Color - Press OK to Commit"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:140
+msgid "New Color - Press OK to Commit"
+msgstr ""
+
+#: exe/webui/tools/style-designer/langs/en.js:141
 msgid "Click to revert to original color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:143
+#: exe/webui/tools/style-designer/langs/en.js:144
 msgid "Commit to this color selection"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:144
+#: exe/webui/tools/style-designer/langs/en.js:145
 msgid "Cancel and revert to original color"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:147
+#: exe/webui/tools/style-designer/langs/en.js:148
 msgid "Set to Hue color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:148
+#: exe/webui/tools/style-designer/langs/en.js:149
 msgid "Enter a Hue value (0-360º)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:151
+#: exe/webui/tools/style-designer/langs/en.js:152
 msgid "Set to Saturation color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:152
+#: exe/webui/tools/style-designer/langs/en.js:153
 msgid "Enter a Saturation value (0-100%)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:155
+#: exe/webui/tools/style-designer/langs/en.js:156
 msgid "Set to Value color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:156
+#: exe/webui/tools/style-designer/langs/en.js:157
 msgid "Enter a Value (0-100%)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:159
+#: exe/webui/tools/style-designer/langs/en.js:160
 msgid "Set to Red color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:160
+#: exe/webui/tools/style-designer/langs/en.js:161
 msgid "Enter a Red value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:163
+#: exe/webui/tools/style-designer/langs/en.js:164
 msgid "Set to Green color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:164
+#: exe/webui/tools/style-designer/langs/en.js:165
 msgid "Enter a Green value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:167
+#: exe/webui/tools/style-designer/langs/en.js:168
 msgid "Set to Blue color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:168
+#: exe/webui/tools/style-designer/langs/en.js:169
 msgid "Enter a Blue value (0-255)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:171
+#: exe/webui/tools/style-designer/langs/en.js:172
 msgid "Set to Alpha color mode"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:172
-#: exe/webui/tools/style-designer/langs/en.js:176
+#: exe/webui/tools/style-designer/langs/en.js:173
+#: exe/webui/tools/style-designer/langs/en.js:177
 msgid "Enter an Alpha value (0-100)"
 msgstr ""
 
-#: exe/webui/tools/style-designer/langs/en.js:175
+#: exe/webui/tools/style-designer/langs/en.js:176
 msgid "Enter an Hex color value (#000000-#ffffff)"
 msgstr ""
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
 msgid "True"
-msgstr "Doğru"
+msgstr ""
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:218
 #: exe/webui/truefalseelement.py:264
 msgid "False"
-msgstr "Yanlış"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:115
 msgid "English Wikipedia Article"
-msgstr "İngilizce Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:116
 msgid "Basque Wikipedia Article"
@@ -11872,23 +11642,23 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:117
 msgid "Catalan Wikipedia Article"
-msgstr "Katalanca Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:118
 msgid "Chinese Wikipedia Article"
-msgstr "Çince Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:119
 msgid "Dutch Wikipedia Article"
-msgstr "Hollandaca Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:120
 msgid "French Wikipedia Article"
-msgstr "Fransızca Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:121
 msgid "German Wikipedia Article"
-msgstr "Almanca Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:122
 msgid "Galician Wikipedia Article"
@@ -11896,59 +11666,59 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Greek Wikipedia Article"
-msgstr "Yunanca Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:124
 msgid "Italian Wikipedia Article"
-msgstr "İtalyanca Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:125
 msgid "Japanese Wikipedia Article"
-msgstr "Japonca Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:126
 msgid "Magyar Wikipedia Article"
-msgstr "Macarca Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:127
 msgid "Polish Wikipedia Article"
-msgstr "Lehçe Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:128
 msgid "Portugese Wikipedia Article"
-msgstr "Portekizce Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:129
 msgid "Slovenian Wikipedia Article"
-msgstr "Slovakça Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:130
 msgid "Spanish Wikipedia Article"
-msgstr "İspanyolca Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:131
 msgid "Swedish Wikipedia Article"
-msgstr "İsveççe Wikipedia Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:132
 msgid "Wikibooks Article"
-msgstr "Wikibooks Makalesi"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:133
 msgid "Wikiversity"
-msgstr "Wikiversity"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:134
 msgid "Wiktionary"
-msgstr "Wiktionary"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:135
 msgid "Wikieducator Content"
-msgstr "Wikieducator İçeriği"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:141
 msgid "Site"
-msgstr "Site"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:151
 msgid "Own site"
@@ -11960,12 +11730,12 @@ msgid ""
 "source language instead of target language."
 msgstr ""
 
-#: exe/webui/xliffimportpreferencespage.py:90
 #: exe/webui/tools/style-designer/langs/en.js:58
-#: exe/webui/tools/style-designer/langs/en.js:125
-#: exe/webui/tools/style-designer/langs/en.js:134
+#: exe/webui/tools/style-designer/langs/en.js:126
+#: exe/webui/tools/style-designer/langs/en.js:135
+#: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
-msgstr "Tamam"
+msgstr ""
 
 #: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
 #: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
