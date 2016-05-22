@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-22 13:57+0200\n"
+"POT-Creation-Date: 2016-05-22 14:14+0200\n"
 "PO-Revision-Date: 2007-03-02 10:24+1200\n"
 "Last-Translator: \n"
 "Language: lo\n"
@@ -2211,7 +2211,7 @@ msgstr ""
 
 #: exe/engine/package.py:1000
 msgid "?????"
-msgstr ""
+msgstr "?????"
 
 #: exe/engine/package.py:1038 exe/engine/package.py:1045
 #, python-format

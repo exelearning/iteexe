@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-22 13:57+0200\n"
+"POT-Creation-Date: 2016-05-22 14:14+0200\n"
 "PO-Revision-Date: 2008-03-16 14:35+0200\n"
 "Last-Translator: Svetoslav Stefanov <lfu.project@gmail.com>\n"
 "Language: bg\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: exe/engine/appletidevice.py:70
 msgid "Java Applet"
-msgstr ""
+msgstr "Java аплет"
 
 #: exe/engine/appletidevice.py:71 exe/engine/attachmentidevice.py:45
 #: exe/engine/casestudyidevice.py:201 exe/engine/clozefpdidevice.py:51
@@ -70,7 +70,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
-msgstr ""
+msgstr "University of Auckland"
 
 #: exe/engine/appletidevice.py:79
 msgid ""
@@ -79,6 +79,9 @@ msgid ""
 "buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
+"Добавете всички файлове за аплета\n"
+"без .txt като използвате бутоните за добавяне и качване.\n"
+"Веднъж заредени, файловете ще бъдат показани под полето с код на аплета."
 
 #: exe/engine/appletidevice.py:82
 msgid ""
@@ -87,6 +90,9 @@ msgid ""
 "applet \n"
 "code field."
 msgstr ""
+"\"Намерете .txt файлът (във файла на аплета) \n"
+"и го отворете. Копирайте съдържанието му<ctrl A, ctrl C> в полето за код "
+"на аплета."
 
 #: exe/engine/appletidevice.py:85
 msgid ""
@@ -97,16 +103,23 @@ msgid ""
 " \n"
 "you created in Geogebra.</p>"
 msgstr ""
+" <p>Ако аплета, който добавяте е генериран \n"
+"от някоя от програмите в този списък, моля изберете я, \n"
+"а след това добавете данните/аплета, които са генерирани от вашата "
+"програма. </p>\n"
+"<p>Например за Geogebra аплети изберете geogebra, след това добавете .ggb"
+" файла, който \n"
+"сте създали в Geogebra.</p>"
 
 #: exe/engine/appletidevice.py:190
 #, python-format
 msgid "file %s has no parentNode"
-msgstr ""
+msgstr "Файлът %s няма родителски елемент"
 
 #: exe/engine/appletidevice.py:192 exe/engine/attachmentidevice.py:107
 #, python-format
 msgid "iDevice %s has no package"
-msgstr ""
+msgstr "Помощното средство %s няма пакет"
 
 #: exe/engine/appletidevice.py:443
 msgid "Sorry, this URL is unreachable"
@@ -154,7 +167,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
-msgstr ""
+msgstr "Прикачен файл"
 
 #: exe/engine/attachmentidevice.py:46
 msgid ""
@@ -172,16 +185,21 @@ msgid ""
 "want to provide instructions on what you require the learner to do once "
 "the file is downloaded or how the material should be used."
 msgstr ""
+"Въведете текстът, който искате да свържете с сваленият файл. Може да "
+"зададете указания какво да прави учащият след свалянето на файла или как "
+"да бъде използван материалът."
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
-msgstr ""
+msgstr "Описание:"
 
 #: exe/engine/attachmentidevice.py:69
 msgid ""
 "Click <strong>Select a file</strong>, browse to the file you want to "
 "attach and select it."
 msgstr ""
+"Цъкнете <strong>Избиране на файл</strong>, отидете до файла, който искате"
+" да прикачите и го изберете."
 
 #: exe/engine/attachmentidevice.py:72
 msgid ""
@@ -196,14 +214,14 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:105
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr ""
+msgstr "Прикаченият файл %s няма родителски елемент"
 
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/tools/style-designer/langs/en.js:46
 msgid "Image"
-msgstr ""
+msgstr "Изображение"
 
 #: exe/engine/casestudyidevice.py:65
 #: exe/engine/ejercicioresueltofpdidevice.py:65
@@ -211,12 +229,15 @@ msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
 msgstr ""
+"Изберете допълнително изображение, което да се покаже на учащия при "
+"отговор на този въпрос"
 
 #: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
-msgstr ""
+msgstr "Изследване"
 
 #: exe/engine/casestudyidevice.py:202
+#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -239,6 +260,23 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Изследването е Помощно средство, което дава на учащите \n"
+"симулация, основана на вече изучен материал. Тя взема пример, обикновено"
+" \n"
+"от реалността  и изисква от учащите да покажат или опишат какво действие"
+" \n"
+"биха предприели за да завършат задачата или да решат ситуацията. "
+"Изследването позволява \n"
+"на учащите да приложат собственото си познание и опит \n"
+"за изпълнение на задачата. При създаване на такова задание вземете под "
+"внимание:<ul> \n"
+"<li>\tКакви учебни точки са застъпени в историята</li>\n"
+"<li>\tКаква предварителна подготовка трябва да имат учащите</li>\n"
+"<li>\tКъде се вмъква изследването в общия курс на обучение</li>\n"
+"<li>\tКак ще взаимодействат учащите с материалите и помежду си. Например\n"
+"ако се извършва в час, възможно ли е различни екипи да работят \n"
+"по различни аспекти на изследването и ако да - как ще представят идеите "
+"си.</li></ul>"
 
 #: exe/engine/casestudyidevice.py:219
 #: exe/engine/ejercicioresueltofpdidevice.py:218
@@ -250,12 +288,16 @@ msgid ""
 "taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
+"Създайте история на изследването. Добра история е тази, \n"
+"която описва спорните въпроси или поставя основата като описва \n"
+"участниците и ситуацията. Тя трябва също да позволява да се предприемат \n"
+"допълнителни действия за да се намери решение на ситуацията."
 
 #: exe/engine/casestudyidevice.py:223 exe/engine/casestudyidevice.py:411
 #: exe/engine/ejercicioresueltofpdidevice.py:222
 #: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
-msgstr ""
+msgstr "История"
 
 #: exe/engine/casestudyidevice.py:228
 #: exe/engine/ejercicioresueltofpdidevice.py:227
@@ -266,6 +308,10 @@ msgid ""
 "dilemma \n"
 "presented. "
 msgstr ""
+"Опишете дейностите по задачата, които \n"
+"се отнасят за представената история на изследването. Те трябва \n"
+"да са под формата на въпроси или указания, които водят учащия към \n"
+"решаване на представената дилема."
 
 #: exe/engine/casestudyidevice.py:232
 #: exe/engine/ejercicioresueltofpdidevice.py:231
@@ -273,6 +319,8 @@ msgid ""
 "Provide relevant feedback on the \n"
 "situation."
 msgstr ""
+"Дайте отнасяща се към ситуацията \n"
+"помощна информация"
 
 #: exe/engine/casopracticofpdidevice.py:30
 msgid "FPD - Situation"
@@ -351,7 +399,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Title"
-msgstr ""
+msgstr "Заглавие"
 
 #: exe/engine/clickinorderidevice.py:61
 msgid "Game Instructions"
@@ -565,6 +613,12 @@ msgid ""
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
 msgstr ""
+"<p>Упражненията с допълване са текстове или изречения, в които учащите "
+"трябва да попълнят липсващи думи. Често те се използват за следните "
+"цели:</p><ol><li>За да се провери знанието за основните концепции на "
+"курса</li><li>За да проверите разбирането на текста.</li><li>За да "
+"проверите езиковото богатство.</li><li>За да проверите словообразуването "
+"и/или граматичните знания. </li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -590,6 +644,26 @@ msgid ""
 " idea to get a colleague to test the test/exercise to make sure there are"
 " no surprises!  </p>  </dd></dl>"
 msgstr ""
+"<dl>  <dt>Ако целта ви е да проверите разбирането на основните положения "
+"или вникването в прочетеното  </dt>  <dd>    <p>  Напишете резюме, "
+"достатъчно дълго да провери познанията на целевата група и същевременно "
+"достатъчно късо за да не предизвика умора. Вероятно страница е "
+"достатъчно, а за по-малки ученици и начинаещи може и по-малко.    </p>"
+"    <p>Изберете думи, които са ключови за разбиране на основните "
+"концепции. Вероятно това ще са глаголи, съществителни и ключови наречия. "
+"Изберете алтернативи с един ясен отговор. </p>  </dd>  <dt>Ако целта ви е"
+" да изпитате словесното богатство:  </dt>  <dd><p>Напишете текст като "
+"използвате целевата словесна област. Той трябва да е разбираем, стегнат и"
+" с подходяща дължина. Осветете целевите думи в текста. Изберете "
+"алтернативи с един ясен отговор.</p>  </dd>  <dt>Ако целта ви е да "
+"изпитвате словообразуване/граматика:  </dt>  <dd>  <p>Напишете текст като"
+" използвате целеви форми. Той трябва да е разбираем, стегнат и с "
+"подходяща дължина. Запомнете че целта не е езиково познание, така че "
+"основното значение на корена трябва да е добре познато на учениците.  "
+"</p>  <p>Осветете целевите думи в текста. Дайте алтернативи със същият "
+"корен но с различен афикси. Добра идея е намерите колега, който да "
+"изпробва теста/упражнението за да се уверите, че няма изненади!  </p>  "
+"</dd></dl>"
 
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
@@ -602,7 +676,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 msgid "Instructions"
-msgstr ""
+msgstr "Указания"
 
 #: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
 #: exe/engine/clozelangfpdidevice.py:121
@@ -611,15 +685,19 @@ msgid ""
 "completed. Default text will be entered if there are no changes to this "
 "field.\n"
 msgstr ""
+"Дайте указания как да за проведе \n"
+"упражнението. В противен случай ще бъде даден \n"
+"текстът по подразбиране.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
 #: exe/webui/element.py:1522 exe/webui/listablock.py:259
 msgid "Cloze"
-msgstr ""
+msgstr "Допълване"
 
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
+#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -630,6 +708,12 @@ msgid ""
 "answer can be defined enclosing them with pipes (|). I.e.: "
 "|dog|cat|bird|</p>"
 msgstr ""
+"<p>Въведете текста за упражнението в полето \n"
+"чрез поставяне на текст от друг източник или чрез директно въвеждане.\n"
+"</p><p> За да изберете думите, които ще са скрити, цъкнете два пъти върху"
+" думата \n"
+"за да я изберете и след това цъкнете върху бутон Скриване/Показване на "
+"Дума. </p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -648,7 +732,7 @@ msgstr ""
 #: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
-msgstr ""
+msgstr "Помощна информация"
 
 #: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
 #: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
@@ -656,43 +740,46 @@ msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
 msgstr ""
+"Въведете някаква помощна информация, която желаете да дадете. Това поле "
+"може да се остави празно."
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
 msgid "Instructions For Learners"
-msgstr ""
+msgstr "Указания за Учащи"
 
 #: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
 #: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
-msgstr ""
+msgstr "Тук поставете указания за учащите"
 
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:284
 msgid "Read the paragraph below and fill in the missing words"
-msgstr ""
+msgstr "Прочетете абзацът по-долу и попълнете липсващите думи"
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
 #: exe/engine/clozelangfpdidevice.py:296
 msgid "Allow auto completion when user filling the gaps."
-msgstr ""
+msgstr "Позволете автоматично допълване когато потребителят попълва празнините."
 
 #: exe/engine/clozeidevice.py:49
 msgid "Cloze Activity"
-msgstr ""
+msgstr "Допълване"
 
 #: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
-msgstr ""
+msgstr "Прочетете абзацът по-долу и попълнете липсващите думи."
 
 #: exe/engine/clozelangfpdidevice.py:50
 msgid "FPD - Cloze Activity (Modified)"
 msgstr ""
 
 #: exe/engine/clozelangfpdidevice.py:126
+#, fuzzy
 msgid "Clozelang"
-msgstr ""
+msgstr "Допълване"
 
 #: exe/engine/config.py:70 exe/engine/config.py:71 exe/engine/config.py:75
 #: exe/engine/config.py:102
@@ -786,6 +873,23 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Изследването е Помощно средство, което дава на учащите \n"
+"симулация, основана на вече изучен материал. Тя взема пример, обикновено"
+" \n"
+"от реалността  и изисква от учащите да покажат или опишат какво действие"
+" \n"
+"биха предприели за да завършат задачата или да решат ситуацията. "
+"Изследването позволява \n"
+"на учащите да приложат собственото си познание и опит \n"
+"за изпълнение на задачата. При създаване на такова задание вземете под "
+"внимание:<ul> \n"
+"<li>\tКакви учебни точки са застъпени в историята</li>\n"
+"<li>\tКаква предварителна подготовка трябва да имат учащите</li>\n"
+"<li>\tКъде се вмъква изследването в общия курс на обучение</li>\n"
+"<li>\tКак ще взаимодействат учащите с материалите и помежду си. Например\n"
+"ако се извършва в час, възможно ли е различни екипи да работят \n"
+"по различни аспекти на изследването и ако да - как ще представят идеите "
+"си.</li></ul>"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 msgid "FPD - Multi Choice Activity"
@@ -811,6 +915,21 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
+"Въпреки че по-често се използват при стандартни изпити, \n"
+"тестовете с един верен отговор може да се използват и като \n"
+"инструмент за подтикване към размисъл и дискусия върху теми, \n"
+"по които учащите са в известна степен сдържани да отговарят \n"
+"\n"
+"Когато изготвяте тест с един възможен отговор, вземете предвид следното:\n"
+"<ul>\n"
+"<li> Какво цел преследват въпросите</li>\n"
+"<li> Какви интелектуални умения се изпитват</li>\n"
+"<li> Какви са езиковите умения на публиката</li>\n"
+"<li> Полови и културни особености</li>\n"
+"<li> Избягвайте граматичен език и въпроси, които могат да  \n"
+"подскажат отговора.</li>\n"
+"</ul>\n"
+" "
 
 #: exe/engine/eleccionmultiplefpdidevice.py:76
 #: exe/engine/multichoiceidevice.py:75 exe/engine/multiselectidevice.py:60
@@ -831,6 +950,20 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
+"Когато създавате тестове с един верен отговор, вземете предвид следното: "
+"<ul>\n"
+"<li> Използвайте фрази, които са познати на учащите  \n"
+"и са ги срещали в учебния процес </li>\n"
+"<li> Давайте кратки отговори </li>\n"
+"<li> Трябва да има някаква връзка между въпросите и отговорите </li>\n"
+"<li> Осигурете достатъчен брой варианти за да предизвикате учащите да "
+"помислят \n"
+"върху отговора си \n"
+"</li>\n"
+"<li> Уверете се, че правилните отговори не са по-подробни от подвеждащите"
+" </li>\n"
+"<li> Подвеждащите отговори трябва да са грешни но възможни </li>\n"
+"</ul>\n"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:101
 #: exe/engine/multichoiceidevice.py:99
@@ -838,6 +971,8 @@ msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
+"Въведете подсказка. Ако \n"
+"не желаете да давате подсказка, оставете полето празно."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
@@ -847,6 +982,10 @@ msgid ""
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
+"Въведете ключовият въпрос. \n"
+"Въпросът трябва да е ясен и недвусмислен. Избягвайте отрицателни условия,"
+" \n"
+"тъй като те могат да са двусмислени."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:106
 #: exe/engine/multichoiceidevice.py:104
@@ -854,6 +993,8 @@ msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
 msgstr ""
+"Изберете правилният вариант като цъкнете \n"
+"на радио бутона."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:108
 #: exe/engine/multichoiceidevice.py:106
@@ -863,6 +1004,12 @@ msgid ""
 " options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
+"Въведете наличните отговори тук. \n"
+"Може да добавяте нови варианти като натиснете \"Добавяне на друг "
+"вариант.\"\n"
+"Изтривайте варианти \n"
+"чрез натискане на червеният \"X\"\n"
+"до Вариант"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:111
 #: exe/engine/multichoiceidevice.py:109
@@ -876,6 +1023,12 @@ msgid ""
 " answer\"\n"
 "for the other options."
 msgstr ""
+"Напишете помощната информация, \n"
+"която искате да получи ученика при избор на определен отговор. Ако не \n"
+"попълните това поле, еХе автоматично ще осигури помощната информация по "
+"подразбиране: \n"
+"\"Правилен отговор\" при избор на правилният отговор или \n"
+"\"Грешен отговор\" за другите варианти."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3754
 #: exe/engine/field.py:3819 exe/engine/multichoiceidevice.py:131
@@ -885,7 +1038,7 @@ msgstr ""
 #: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
-msgstr ""
+msgstr "Въпрос"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:287
 #: exe/engine/multichoiceidevice.py:285
@@ -893,6 +1046,8 @@ msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
 " blank."
 msgstr ""
+"Въведете подсказка. Ако не желаете да давате подсказка, оставете полето "
+"празно."
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
@@ -971,7 +1126,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:158
 #: exe/webui/appletblock.py:168
 msgid "Upload"
-msgstr ""
+msgstr "Качване"
 
 #: exe/engine/extendedfieldengine.py:298
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
@@ -980,7 +1135,7 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:185
 msgid "Delete File"
-msgstr ""
+msgstr "Изтриване на файл"
 
 #: exe/engine/extendedfieldengine.py:306
 msgid "No File Uploaded Currently"
@@ -992,7 +1147,7 @@ msgstr ""
 #: exe/webui/multimediablock.py:87
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
-msgstr ""
+msgstr "Без"
 
 #: exe/engine/extendedfieldengine.py:570
 msgid "is not a valid number - please try again<br/>"
@@ -1000,7 +1155,7 @@ msgstr ""
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
-msgstr ""
+msgstr "Външен уеб сайт"
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -1011,12 +1166,21 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
+"Помощното средство Външен уеб сайт зарежда външен уеб сайт \n"
+"във вградена рамка в еХе съдържанието ви, вместо да го отваря в отделен "
+"прозорец. \n"
+"Това значи, че на учащите няма да им се налага да работят с различни "
+"прозорци. \n"
+"Това Помощно средство може да бъде използвано само ако съдържанието ви \n"
+"ще бъде гледано онлайн."
 
 #: exe/engine/externalurlidevice.py:49 exe/engine/externalurlidevice.py:116
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
 msgstr ""
+"Въведете URL, който искате да се показва \n"
+"и изберете размерът на областта, която да се показва в него."
 
 #: exe/engine/field.py:2907 exe/engine/field.py:2954
 #: exe/engine/multimediaidevice.py:71
@@ -1024,8 +1188,11 @@ msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
+"Осигурете заглавие за \n"
+"МР3 файла. То ще се появи и в заглавната лента на плейърите. "
 
 #: exe/engine/field.py:3090
+#, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1041,12 +1208,28 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p>Ако не се постави отметка, малък брой грешки в правописа и "
+"главни/малки букви ще бъдат приети. Ако е избрано ще се приема само пълно"
+" съвпадение на правописа и главни/малки "
+"букви.</p><p><strong>Например:</strong> Ако правилният отговор е "
+"<code>Слон</code> тогава и двата варианта <code>слон</code> и "
+"<code>слан</code> ще бъдат приети като <em>\"достатъчно близки\"</em> от "
+"алгоритъма, тъй като имат само по една грешна буква, дори да е включена "
+"\"Проверка за главни/малки букви\".</p><p>Ако проверката за главни/малки "
+"букви е изключена, малката буква <code>с</code> няма да се счита за "
+"грешка и <code>слан</code> също ще бъде приета.</p><p>Ако \"Точно "
+"Отчитане\" и \"Проверка на главни/малки букви\" са включени, единственият"
+" верен отговор е \"Слон\". Ако е включено само \"Точно Отчитане\", а "
+"\"Проверка на главни малки букви\" не е, \"слон\" също ще бъде "
+"приета.</p>"
 
 #: exe/engine/field.py:3111 exe/engine/field.py:3345
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
 msgstr ""
+"<p>Ако тази настройка е активирана, дадените отговори с различни "
+"главни/малки букви ще бъдат отчетени като грешни.</p>"
 
 #: exe/engine/field.py:3116 exe/engine/field.py:3350
 msgid ""
@@ -1054,6 +1237,9 @@ msgid ""
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
+"<p>Ако тази настройка е отметната всяка дума ще бъде отчитана \n"
+"с изписването и, вместо всички думи да бъдат отчетени вкупом в \n"
+"края на упражнението.</p>"
 
 #: exe/engine/field.py:3154 exe/engine/field.py:3392
 #: exe/engine/listaidevice.py:398
@@ -1061,6 +1247,8 @@ msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
+"Позволете автоматично допълване когато\n"
+"                                       потребителят попълва празнините."
 
 #: exe/engine/field.py:3324
 msgid ""
@@ -1078,6 +1266,20 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p>Ако не се постави отметка, малък брой грешки в правописа и "
+"главни/малки букви ще бъдат приети. Ако е избрано ще се приема само пълно"
+" съвпадение на правописа и главни/малки "
+"букви.</p><p><strong>Например:</strong> Ако правилният отговор е "
+"<code>Слон</code> тогава и двата варианта <code>слон</code> и "
+"<code>слан</code> ще бъдат приети като <em>\"достатъчно близки\"</em> от "
+"алгоритъма, тъй като имат само по една грешна буква, дори да е включена "
+"\"Проверка за главни/малки букви\".</p><p>Ако проверката за главни/малки "
+"букви е изключена, малката буква <code>с</code> няма да се счита за "
+"грешка и <code>слан</code> също ще бъде приета.</p><p>Ако \"Точно "
+"Отчитане\" и \"Проверка на главни/малки букви\" са включени, единственият"
+" верен отговор е \"Слон\". Ако е включено само \"Точно Отчитане\", а "
+"\"Проверка на главни малки букви\" не е, \"слон\" също ще бъде "
+"приета.</p>"
 
 #: exe/engine/field.py:3355
 msgid "<p>If this option is set, the score will be shown.</p>"
@@ -1088,16 +1290,20 @@ msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
+"Избирайте само .swf (Flash обекти) за \n"
+"това Помощно средство."
 
 #: exe/engine/field.py:3498 exe/engine/field.py:3562
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
+"Избирайте само .flv (Flash видео файлове) за \n"
+"това Помощно средство."
 
 #: exe/engine/field.py:3574
 msgid "Type a discussion topic here."
-msgstr ""
+msgstr "Въведете тема за дискусия"
 
 #: exe/engine/field.py:3603
 msgid ""
@@ -1105,12 +1311,17 @@ msgid ""
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
 msgstr ""
+"<p>Изберете символи от текстовият редактор или въведете LATEX ръчно за да"
+" създадете математическа формула. За да видите как ще се показва вашият "
+"LATEX, използвайте бутона &lt;Преглед&gt; по-долу.</p>"
 
 #: exe/engine/field.py:3611
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr ""
+"Натиснете на бутона Преглед за да конвертирате \n"
+"                                  latex в изображение."
 
 #: exe/engine/field.py:3679 exe/engine/field.py:3728
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
@@ -1118,21 +1329,21 @@ msgstr ""
 #: exe/webui/element.py:2576 exe/webui/element.py:2668
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
-msgstr ""
+msgstr "Вариант"
 
 #: exe/engine/field.py:3757 exe/engine/field.py:3823
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:452
 msgid "Hint"
-msgstr ""
+msgstr "Подсказка"
 
 #: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2381
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
 #: exe/webui/testquestionelement.py:110
 msgid "Options"
-msgstr ""
+msgstr "Настройки"
 
 #: exe/engine/field.py:3905
 msgid ""
@@ -1141,6 +1352,10 @@ msgid ""
 "these \n"
 "can tend to confuse learners."
 msgstr ""
+"Въведете ключовият въпрос. \n"
+"Въпросът трябва да е ясен и недвусмислен. Избягвайте отрицателни условия,"
+" \n"
+"тъй като те могат да са двусмислени."
 
 #: exe/engine/field.py:3908 exe/engine/field.py:3989
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
@@ -1148,7 +1363,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:47
 #: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
 msgid "Question:"
-msgstr ""
+msgstr "Въпрос"
 
 #: exe/engine/field.py:3913
 msgid ""
@@ -1157,25 +1372,35 @@ msgid ""
 " options by \n"
 "clicking the red X next to the option."
 msgstr ""
+"Въведете наличните отговори тук. \n"
+"Може да добавяте нови вариант като натиснете \"Добавяне на друг "
+"вариант.\"\n"
+"Изтривайте варианти \n"
+"чрез натискане на червеният \"X\"\n"
+"до Вариант"
 
 #: exe/engine/field.py:3917
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr ""
+"Изберете желаният брой верни отговори \n"
+"като поставите отметка до варианта."
 
 #: exe/engine/field.py:3920
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr ""
+"Напишете помощната информация, \n"
+"която искате да предоставите на учащия."
 
 #: exe/engine/field.py:3922 exe/engine/field.py:3992
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:204
 msgid "Feedback:"
-msgstr ""
+msgstr "Помощна информация:"
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
@@ -1220,7 +1445,7 @@ msgstr ""
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr ""
+msgstr "Flash видео"
 
 #: exe/engine/flashmovieidevice.py:41
 msgid ""
@@ -1232,12 +1457,21 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
+"Това Помощно средство поддържа единствено Flash Video File (.FLV) формат "
+"и няма \n"
+"да приеме други видео формати. Вие обаче можете да превърнете други \n"
+"видео формати (като mov, wmf и др.) във .FLV формат чрез използване на \n"
+"външни програми. С еХе такива не са предоставени. Потребителите ще \n"
+"трябва и да свалят Flash 8 плейъра от http://www.macromedia.com/ за да \n"
+"гледат видеото."
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
 msgstr ""
+"Въведете \n"
+"текстът, който искате да асоциирате с файла."
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:70
@@ -1253,17 +1487,19 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Description"
-msgstr ""
+msgstr "Описание"
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:109
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr ""
+"Осигурете заглавие за flash видеото, \n"
+"което вмъкнахте."
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
-msgstr ""
+msgstr "Flash с текст"
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1274,18 +1510,26 @@ msgid ""
 "file \n"
 "the learners will view."
 msgstr ""
+"Помощното средство Flash с текст ви позволява да \n"
+"свържете допълнителна текстуална информация към flash файл. \n"
+"Това може да е полезно в случаите, в които искате да дадете \n"
+"инструкция, касаеща flash файла, който учащите ще видят."
 
 #: exe/engine/flashwithtextidevice.py:53
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
 msgstr ""
+"Въведете текстът, който искате да \n"
+"                                 свържете с изображението."
 
 #: exe/engine/flashwithtextidevice.py:58 exe/engine/flashwithtextidevice.py:118
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr ""
+"Осигурете заглавие за flash видеото, \n"
+"                                  което вмъкнахте."
 
 #: exe/engine/flashwithtextidevice.py:60 exe/engine/flashwithtextidevice.py:120
 msgid ""
@@ -1294,6 +1538,9 @@ msgid ""
 "screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr ""
+"Въведете размерите на \n"
+"flash екрана (в пиксели) и определете равняването на изображението. \n"
+"Ширината и височината ще се променят пропорционално."
 
 #: exe/engine/freetextfpdidevice.py:39
 msgid "FPD - Free Text"
@@ -1308,11 +1555,15 @@ msgid ""
 "built and \n"
 "delivered."
 msgstr ""
+"По-голямата част от учебните ресурси ще се \n"
+"основават на контекст, предоставяйки указания и обща информация. \n"
+"Това осигурява рамката, в която учебните дейности ще се изграждат и \n"
+"предоставят."
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
 msgid "Free Text"
-msgstr ""
+msgstr "Свободен текст"
 
 #: exe/engine/freetextfpdidevice.py:47 exe/engine/freetextidevice.py:46
 msgid ""
@@ -1321,30 +1572,36 @@ msgid ""
 "applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
+"Използвайте това поле за да въведете текст. \n"
+"Върху това Помощно средство не е приложено наблягане, въпреки че \n"
+"може да се приложи ограничено форматиране  чрез бутоните за \n"
+"редактиране на текст, асоциирани с полето."
 
 #: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
 msgstr ""
+"Това е поле за свободен текст, в което може да се вмъкне учебно "
+"съдържание с общо предназначение."
 
 #: exe/engine/galleryidevice.py:140 exe/engine/galleryidevice.py:191
 msgid "No Thumbnail Available. Could not load original image."
-msgstr ""
+msgstr "Не е налична миниатюра. Оригиналното изображение не може да се зареди."
 
 #: exe/engine/galleryidevice.py:148 exe/engine/galleryidevice.py:198
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr ""
+msgstr "Не е налична миниатюра. Оригиналното изображение не може да се свие."
 
 #: exe/engine/galleryidevice.py:221
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr ""
+msgstr "Не е налична миниатюра. Изображението не може да се свие."
 
 #: exe/engine/galleryidevice.py:458
 msgid "Image Gallery"
-msgstr ""
+msgstr "Галерия от изображения"
 
 #: exe/engine/galleryidevice.py:459
 msgid "eXe Project"
-msgstr ""
+msgstr "eXe Проект"
 
 #: exe/engine/galleryidevice.py:460
 msgid ""
@@ -1353,14 +1610,19 @@ msgid ""
 "display \n"
 "these in a gallery context rather then individually.</p>"
 msgstr ""
+"<p>Където имате много изображения, свързани помежду си или към определено"
+" \n"
+"упражнение, може да искате да ги покажете в галерия, вместо поотделно.</p>"
 
 #: exe/engine/galleryidevice.py:463
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr ""
+"Използвайте това Помощно средство ако имате много изображения за "
+"показване."
 
 #: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
-msgstr ""
+msgstr "Въведете заглавие за галерията"
 
 #: exe/engine/galleryidevice.py:473
 msgid ""
@@ -1368,15 +1630,19 @@ msgid ""
 "appear below where you will be able to label it. It's always good "
 "practice to put the file size in the label."
 msgstr ""
+"Натиснете бутонът Добавяне на изображения за да изберете файл с "
+"изображение. \n"
+"То ще бъде поставено отдолу, където ще може да му поставите етикет. \n"
+"Добра практика е в него да поставите големината на файла."
 
 #: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:663
 msgid "Reading Activity 0.11"
-msgstr ""
+msgstr "Четене 0.11"
 
 #: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:510
 #: exe/engine/idevicestore.py:554
 msgid "Reading Activity"
-msgstr ""
+msgstr "Четене"
 
 #: exe/engine/hangmanidevice.py:51 exe/webui/common.py:490
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
@@ -1459,7 +1725,7 @@ msgstr ""
 #: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
 #: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
-msgstr ""
+msgstr "Рестартиране"
 
 #: exe/engine/hangmanidevice.py:104
 msgid "Restart Level Button Style (CSS)"
@@ -1532,6 +1798,12 @@ msgid ""
 " task \n"
 "based on the reading.</p>"
 msgstr ""
+"<p>Дейностите с четене се използват преди всичко \n"
+"за да се провери разбирането на даден текст. Това може да се направи \n"
+"като се изисква от учащият да разсъждава върху прочетеното и да отговаря "
+"на въпроси \n"
+"по него или да извърши някаква друга, вероятно по-физическа дейност, \n"
+"основана на прочетеното.</p>"
 
 #: exe/engine/idevicestore.py:562
 msgid ""
@@ -1547,10 +1819,21 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"<p>Когато използват това Помощно средство, учителите трябва да имат "
+"предвид следното: </p><ol><li>Помислете за броят на различните типове "
+"дейност, които ще бъдат в отбелязани в съдържанието. Избягвайте "
+"използването на прекалено много типове дейности, защото учащият може да "
+"се обърка. Обикновено три-четири различни типа дейност са напълно "
+"достатъчни за учебен материал.</li><li>От визуална гледна точка, "
+"избягвайте поставянето на две Помощно средства едно след друго без да "
+"имат текст помежду си. Ако това е необходимо, по-добре е да слеете двата "
+"въпроса или събития в едно Помощно средство. </li><li>Мислете за "
+"дейности, при които получената полза от работата по тях надхвърля времето"
+" и усилията, необходими за завършването им. </li></ol>"
 
 #: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:706
 msgid "What to read"
-msgstr ""
+msgstr "Какво да се прочете"
 
 #: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:707
 msgid ""
@@ -1558,19 +1841,26 @@ msgid ""
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr ""
+"Вмъкнете подробностите от прочетеното като включите \n"
+"и информация за материалите, които сте ползвали. Стилът \n"
+"на посочване на използваните материали ще зависи от \n"
+"предпочитанията на вашия факултет или отдел."
 
 #: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:640
 #: exe/engine/idevicestore.py:648 exe/engine/idevicestore.py:710
 #: exe/engine/idevicestore.py:747 exe/engine/idevicestore.py:755
 #: exe/webui/questionelement.py:110
 msgid "Activity"
-msgstr ""
+msgstr "Дейност"
 
 #: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:711
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr ""
+"Опишете задачите, свързани с прочетеното, които \n"
+"учащите трябва да предприемат. \n"
+"Това помага да се покаже връзката между отделните задачи."
 
 #: exe/engine/idevicestore.py:606 exe/engine/idevicestore.py:715
 msgid ""
@@ -1579,13 +1869,17 @@ msgid ""
 "question \n"
 "or providing a statement to begin a debate."
 msgstr ""
+"Използвайте помощна информация за да предоставите обобщение на точките, \n"
+"обхванати в четенето или като отправна точка за по-нататъшен анализ чрез"
+" \n"
+"поставяне на въпрос или твърдение, което да предизвика дебат."
 
 #: exe/engine/idevicestore.py:612 exe/engine/idevicestore.py:621
 #: exe/engine/idevicestore.py:719 exe/engine/idevicestore.py:728
 #: exe/engine/package.py:653 exe/engine/package.py:664
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:216
 msgid "Objectives"
-msgstr ""
+msgstr "Цели"
 
 #: exe/engine/idevicestore.py:615 exe/engine/idevicestore.py:722
 msgid ""
@@ -1593,17 +1887,20 @@ msgid ""
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr ""
+"Целите описват очакваните резултати от обучението и трябва да \n"
+"определят какво ще може да правят учащите когато завършат \n"
+"задачите."
 
 #: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
 msgid "Type the learning objectives for this resource."
-msgstr ""
+msgstr "Напишете учебните цели за този ресурс."
 
 #: exe/engine/idevicestore.py:625 exe/engine/idevicestore.py:635
 #: exe/engine/idevicestore.py:732 exe/engine/idevicestore.py:742
 #: exe/engine/package.py:683 exe/engine/package.py:694
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
 msgid "Preknowledge"
-msgstr ""
+msgstr "Предварителни знания"
 
 #: exe/engine/idevicestore.py:628 exe/engine/idevicestore.py:735
 msgid ""
@@ -1615,12 +1912,20 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools "
 "</li></ul>\n"
 msgstr ""
+"Предварително необходимото знание се отнася за знанието, което \n"
+"учащите трябва да имат за да са в състояние да завършат обучението. \n"
+"Като примери могат да бъдат посочени:<ul>\n"
+"<li>        Учащите трябва да имат Английски език 4-то ниво </li>\n"
+"<li>        Учащите трябва да могат да сглобят стандартни моторни "
+"инструменти </li></ul>\n"
 
 #: exe/engine/idevicestore.py:636 exe/engine/idevicestore.py:743
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
+"Опишете предварителните знания, които учащите трябва да имат \n"
+"за да завършат успешно това обучение."
 
 #: exe/engine/idevicestore.py:643 exe/engine/idevicestore.py:750
 msgid ""
@@ -1629,10 +1934,14 @@ msgid ""
 "conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
+"Като дейност може да бъде описана задача или група от задачи, които \n"
+"учащият трябва да завърши. Осигурете ясно описание на задачата и \n"
+"вземете под внимание всякакви условия, които могат да помогнат или \n"
+"попречат при изпълнението на задачата."
 
 #: exe/engine/idevicestore.py:649 exe/engine/idevicestore.py:756
 msgid "Describe the tasks the learners should complete."
-msgstr ""
+msgstr "Опишете задачи, които трябва да завършат учащите."
 
 #: exe/engine/idevicestore.py:666
 msgid ""
@@ -1645,6 +1954,12 @@ msgid ""
 "some \n"
 "reflective guidance.</p>"
 msgstr ""
+"<p>Дейността с четене, както предполага името и \n"
+"трябва да изисква от учащия някаква форма на дейност. Тази дейност \n"
+"трябва е директно свързана с прочетения текст. \n"
+"Където е необходимо помощната информация към дейността може да даде на "
+"учащия \n"
+"насоки за разсъждение.</p>"
 
 #: exe/engine/idevicestore.py:671
 msgid ""
@@ -1660,10 +1975,21 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"<p>Когато използват това Помощно средство, учителите трябва да имат "
+"предвид следното: </p><ol><li>Помислете за броят на различните типове "
+"дейност, които ще бъдат в съдържанието. Избягвайте използването на "
+"прекалено много типове дейности, защото учащият може да се обърка. "
+"Обикновено три-четири различни типа дейност са напълно достатъчни за "
+"учебен материал.</li><li>От визуална гледна точка, избягвайте поставянето"
+" на две Помощни средства едно след друго без да имат текст помежду си. "
+"Ако това е необходимо, по-добре е да слеете двата въпроса или събития в "
+"едно Помощно средство. </li><li>Мислете за дейности, при които получената"
+" полза от работата по тях надхвърля времето и усилията, необходими за "
+"завършването им. </li></ol>"
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
-msgstr ""
+msgstr "Лупа"
 
 #: exe/engine/imagemagnifieridevice.py:43
 msgid ""
@@ -1672,10 +1998,14 @@ msgid ""
 "the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
+"Лупата е инструмент, позволяващ на учащите да \n"
+"увеличават предоставеното им изображение. \n"
+"Преместването на лупата върху изображението \n"
+"позволява да се изучат повече детайли."
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Choose an Image"
-msgstr ""
+msgstr "Изберете изображение"
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid ""
@@ -1684,6 +2014,9 @@ msgid ""
 "to be \n"
 "magnified."
 msgstr ""
+"Цъкнете\n"
+"на долното изображение или на бутона \"Добавяне на изображение\" за да "
+"изберете изображение, което да бъде увеличено."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
@@ -1691,19 +2024,23 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/tools/style-designer/langs/en.js:24
 msgid "Text"
-msgstr ""
+msgstr "Текст"
 
 #: exe/engine/imagemagnifieridevice.py:55 exe/engine/multimediaidevice.py:65
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
 msgstr ""
+"Въведете текстът, който искате \n"
+"да свържете с файла."
 
 #: exe/engine/imagemagnifieridevice.py:60
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
 msgstr ""
+"Осигурете заглавие за \n"
+"изображението, което ще се увеличи."
 
 #: exe/engine/imagemagnifieridevice.py:62
 msgid ""
@@ -1714,6 +2051,12 @@ msgid ""
 " \n"
 "image to display at its original size."
 msgstr ""
+"Изберете размерът, с който искате \n"
+"да се покаже изображението ви. Мерната единица е пиксел. Общо взето, 100"
+" \n"
+"пиксела се равняват на около 3 см. Оставете празни и двете полета ако "
+"желаете \n"
+"изображението да се показва в оригиналният си размер."
 
 #: exe/engine/imagemagnifieridevice.py:66
 #: exe/engine/imagemagnifieridevice.py:142
@@ -1721,6 +2064,8 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
+"Подравняването ви позволява да\n"
+"изберете къде на екрана да разположите изображението."
 
 #: exe/engine/imagemagnifieridevice.py:68
 #: exe/engine/imagemagnifieridevice.py:144
@@ -1728,6 +2073,9 @@ msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
+"Задайте първоначалното увеличение \n"
+"при зареждане на Помощното средство като процент от размера на "
+"изображението."
 
 #: exe/engine/imagemagnifieridevice.py:70
 #: exe/engine/imagemagnifieridevice.py:146
@@ -1735,20 +2083,24 @@ msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
+"Задайте максималната степен на увеличение \n"
+"като процент от оригиналният размер на изображението"
 
 #: exe/engine/imagemagnifieridevice.py:72
 msgid "Select the size of the magnifying glass"
-msgstr ""
+msgstr "Изберете размер на лупата"
 
 #: exe/engine/imagemagnifieridevice.py:148
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
 msgstr ""
+"Това избира началният размер \n"
+"на лупата"
 
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
-msgstr ""
+msgstr "Изображение с Текст"
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -1776,18 +2128,40 @@ msgid ""
 "visual.\n"
 "</p>"
 msgstr ""
+"<p>\n"
+"Помощното средство Изображение с текст може да бъде използвано по "
+"различни начини, както \n"
+"в емоционална, така и в познавателна задача в рамките на еХе "
+"съдържанието. \n"
+"</p><p>\n"
+"<b>Интегриране на нагледни с познавателни резюмета</b>\n"
+"</p><p>\n"
+"Познавателните психолози отбелязват, че представянето с\n"
+"изображение и кореспондиращо словесно резюме\n"
+"може да улесни запаметяването на наученото.\n"
+"Това Помощно средство може да бъде използвано за представяне на "
+"изображение (снимка, диаграма или\n"
+" графика) с кратко словесно резюме, покриващо основните точки,\n"
+"отнасящи се към изображението. Например ако преподавате функциите на "
+"четиритактовият двигател,\n"
+"може да имате по едно изображение за всяко от четирите положения на "
+"буталото, придружено от кратко текстово резюме към всяко изображение."
 
 #: exe/engine/imagewithtextidevice.py:66
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
 msgstr ""
+"Въведете текстът, който искате да \n"
+"                                                свържете с изображението."
 
 #: exe/engine/imagewithtextidevice.py:71 exe/engine/imagewithtextidevice.py:118
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
 msgstr ""
+"Осигурете заглавие за изображението, \n"
+"което вмъкнахте."
 
 #: exe/engine/listaidevice.py:66
 msgid "DropDown Activity"
@@ -1882,7 +2256,7 @@ msgstr ""
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
-msgstr ""
+msgstr "Математика"
 
 #: exe/engine/mathidevice.py:43
 msgid ""
@@ -1898,10 +2272,20 @@ msgid ""
 " \n"
 "                        this graphic."
 msgstr ""
+"Математическият език LATEX се използва \n"
+"                        за да вмъкнете математически формули \n"
+"                        във вашето съдържание. Това става чрез \n"
+"                        превръщането на LATEX в изображение, което \n"
+"                        след това се показва в eXe съдържанието. \n"
+"                        Препоръчваме да използвате Помощното средство \n"
+"                        Свободен текст за да дадете обяснителни бележки \n"
+"                        и инструкции за тази графика."
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
 msgstr ""
+"Може да използвате лентата с инструменти или да въведете latex ръчно в "
+"текстовото поле."
 
 #: exe/engine/memorymatchidevice.py:44
 msgid "Memory Match Game"
@@ -2099,25 +2483,27 @@ msgstr ""
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
-msgstr ""
+msgstr "Тест с един верен отговор"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:41
 msgid "Auckland University of Technology"
-msgstr ""
+msgstr "Auckland University of Technology"
 
 #: exe/engine/multimediaidevice.py:42
 msgid ""
 "The MP3 iDevice allows you to attach an MP3 media file to your content "
 "along with relevant textuallearning instructions."
 msgstr ""
+"Помощното средство МР3 ви позволява да прикачите МР3 файл към \n"
+"вашето съдържание, заедно с текстовите инструкции."
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr ""
+msgstr "Изберете МР3 файл"
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -2129,16 +2515,25 @@ msgid ""
 "would like the iDevice to       display e.g. 'Some emphasis' applies a "
 "border and icon to the iDevice content displayed.</li></ol>"
 msgstr ""
+"<ol>  <li>Цъкнете &lt;Изберете MP3&gt; и отидете до MP3 файла, който "
+"искате да вмъкнете</li> <li>Цъкнете на падащото меню за да изберете "
+"позицията, на която искате да се покаже файлът на екрана.</li>  "
+"<li>Въведете незадължително заглавие за файла.</li> <li>Свържете към МР3 "
+"файла отнасящ се към него текст.</li> <li>Изберете тип на стила, който "
+"искате да показва Помощното средство, напр. e.g. Леко наблягане' добавя "
+"граница и икона към показваното съдържание.</li></ol>"
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
+"Подравняването ви позволява да\n"
+"изберете къде на екрана да разположите медия плейъра."
 
 #: exe/engine/multiselectidevice.py:45
 msgid "Multi-select"
-msgstr ""
+msgstr "Тест с повече от един верен отговор"
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
@@ -2190,20 +2585,20 @@ msgstr ""
 
 #: exe/engine/package.py:327
 msgid "Topic"
-msgstr ""
+msgstr "Тема"
 
 #: exe/engine/package.py:327
 msgid "Section"
-msgstr ""
+msgstr "Секция"
 
 #: exe/engine/package.py:327
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
 msgid "Unit"
-msgstr ""
+msgstr "Единица"
 
 #: exe/engine/package.py:348
 msgid "Home"
-msgstr ""
+msgstr "Начало"
 
 #: exe/engine/package.py:503
 msgid "Metadata creation date"
@@ -2211,7 +2606,7 @@ msgstr ""
 
 #: exe/engine/package.py:1000
 msgid "?????"
-msgstr ""
+msgstr "?????"
 
 #: exe/engine/package.py:1038 exe/engine/package.py:1045
 #, python-format
@@ -2219,11 +2614,13 @@ msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
+"ЗАПАЗВАНЕТО СЕ ПРОВАЛИ!\n"
+"Последният успешен запис е %s."
 
 #: exe/engine/package.py:1449 exe/jsui/scripts/app/controller/Toolbar.js:418
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "iDevice Editor"
-msgstr ""
+msgstr "Редактор на Помощни средства"
 
 #: exe/engine/package.py:1570
 msgid "My Catalog"
@@ -2273,7 +2670,7 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr ""
+msgstr "Това е свободно текстово поле."
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
@@ -2394,16 +2791,22 @@ msgid ""
 "answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
 msgstr ""
+"Въведете вариант за отговор. Осигурете \n"
+"няколко правдоподобни (обикновено 3-4), както и верният отговор. \n"
+"Цъкнете на бутона &lt;Добавяне на друг вариант&gt; за да добавите друг "
+"отговор."
 
 #: exe/engine/quiztestidevice.py:126 exe/engine/quiztestidevice.py:202
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
+"За да укажете правилният отговор, \n"
+"цъкнете радио бутона до правилният вариант."
 
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
-msgstr ""
+msgstr "SCORM тест"
 
 #: exe/engine/quiztestidevice.py:246
 msgid ""
@@ -2415,6 +2818,11 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
+"За разлика от тестовете с един възможен отговор, SCORM тестът \n"
+"се използва за проверка на знанията върху определена тема без да \n"
+"насочва към верният отговор. Често тестът ще се даде едва след като \n"
+"учащият е имал време да учи и практикува чрез използване на \n"
+"предоставена информация или придобито  умение."
 
 #: exe/engine/recomendacionfpdidevice.py:30
 msgid "FPD - A Piece of Advice"
@@ -2450,6 +2858,11 @@ msgid ""
 "be \n"
 "effective feedback tools."
 msgstr ""
+"Разсъждението е метод на обучение, често използван за \n"
+"да се свърже теория с практика. Задачите с разсъждение често дават \n"
+"възможност за наблюдение и размисъл преди представянето им като \n"
+"теоретичен труд. Журнали, дневници, профили и портфолиа \n"
+"са полезни инструменти в събирането на данни чрез наблюдение."
 
 #: exe/engine/reflectionfpdidevice.py:57
 #: exe/engine/reflectionfpdmodifidevice.py:56
@@ -2458,6 +2871,8 @@ msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
 msgstr ""
+"Въведете въпрос, върху който \n"
+"учащите да разсъждават."
 
 #: exe/engine/reflectionfpdidevice.py:59
 msgid ""
@@ -2466,13 +2881,15 @@ msgid ""
 " \n"
 "reflective feedback.)"
 msgstr ""
+"Опишете как учащите ще оценяват какво \n"
+"са направили в упражнението."
 
 #: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:201
 msgid "Reflective question:"
-msgstr ""
+msgstr "Въпрос за разсъждение:"
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
 msgid "FPD - Think About It (without Feedback)"
@@ -2480,7 +2897,7 @@ msgstr ""
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
-msgstr ""
+msgstr "Разсъждение"
 
 #: exe/engine/reflectionidevice.py:57
 msgid ""
@@ -2498,7 +2915,7 @@ msgstr ""
 
 #: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:48
 msgid "RSS"
-msgstr ""
+msgstr "RSS Емисии"
 
 #: exe/engine/rssidevice.py:42
 msgid ""
@@ -2506,6 +2923,10 @@ msgid ""
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
+"Помощното средство RSS Емисии се използва \n"
+"за предоставяне на ново съдържание на компютрите на \n"
+"отделните потребители. Използвайки го, можете да предоставите \n"
+"връзки от емисия по избор за преглед от учащите."
 
 #: exe/engine/rssidevice.py:51
 msgid ""
@@ -2526,6 +2947,25 @@ msgid ""
 "bookmarks and add\n"
 " instructions or additional learning information."
 msgstr ""
+"Въведете адрес на емисията, която \n"
+"желаете да прикачите към съдържанието си. Емисиите често са представени \n"
+"от малка графична икона (като тази <img src=\"/images/feed-icon.png\" />)"
+" \n"
+"или от текста  \"RSS\". Цъкането върху иконката или текстовия етикет ще "
+"зареди RSS емисията \n"
+"в уеб-четецът ви. Можете да копирате и поставите адреса на емисията в "
+"това поле. \n"
+"А можете и да цъкнете с десен бутон върху връзката или графиката и да "
+"изберете \n"
+"КОПИРАНЕ АДРЕСА НА ВРЪЗКАТА. Върнете с в еХе, отворете Помощното средство"
+" RSS Емисии, \n"
+"поставете адреса в полето RSS източник и натиснете бутон Зареждане. Това "
+"ще \n"
+"извлече заглавията от вашата емисия и ще ги покаже като връзки в "
+"съдържанието. \n"
+"От тук може да редактирате отметките и да добавите указания или "
+"допълнителна \n"
+"информация."
 
 #: exe/engine/rssidevice.py:110 exe/engine/rssidevice.py:113
 #, python-format
@@ -2533,6 +2973,8 @@ msgid ""
 "Unable to load RSS feed from %s <br/>Please check the spelling and "
 "connection and try again."
 msgstr ""
+"Не може да се зареди RSS емисията от %s <br/> Моля проверете правописа и "
+"връзката, и опитайте отново."
 
 #: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid "FPD - Multi Select Activity"
@@ -2665,7 +3107,7 @@ msgstr ""
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
-msgstr ""
+msgstr "Въпрос Вярно-Невярно"
 
 #: exe/engine/truefalseidevice.py:146
 #: exe/engine/verdaderofalsofpdidevice.py:147
@@ -2677,6 +3119,9 @@ msgid ""
 "either/or \n"
 "responses."
 msgstr ""
+"Въпросите Вярно/Невярно са изложение, за което \n"
+"учащият трябва да прецени дали е вярно. Този тип въпрос работи \n"
+"добре за фактологична информация и такава, която води към отговорите."
 
 #: exe/engine/truefalseidevice.py:151
 #: exe/engine/verdaderofalsofpdidevice.py:153
@@ -2684,6 +3129,8 @@ msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
 msgstr ""
+"Подсказката може да бъде дадена за да насочи\n"
+"учащия в отговарянето на въпроса."
 
 #: exe/engine/truefalseidevice.py:154
 #: exe/engine/verdaderofalsofpdidevice.py:156
@@ -2693,6 +3140,10 @@ msgid ""
 "tend to \n"
 "be ambiguous."
 msgstr ""
+"Въведете ключовият въпрос. \n"
+"Въпросът трябва да е ясен и недвусмислен. Избягвайте отрицателни условия,"
+" \n"
+"тъй като те могат да са двусмислени."
 
 #: exe/engine/truefalseidevice.py:158
 #: exe/engine/verdaderofalsofpdidevice.py:160
@@ -2702,6 +3153,10 @@ msgid ""
 " \n"
 "default feedback will be provided."
 msgstr ""
+"Въведете помощната информация, която искате \n"
+"да дадете на учащия. Това поле може да се остави празно. \n"
+"Ако бъде оставено празно, ще бъде осигурена помощната информация \n"
+"по подразбиране."
 
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
 #: exe/engine/verdaderofalsofpdidevice.py:167
@@ -2710,6 +3165,8 @@ msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
 msgstr ""
+"Дайте указания как да бъде завършен въпросът \n"
+"Вярно/Невярно."
 
 #: exe/engine/truefalseidevice.py:372
 #: exe/engine/verdaderofalsofpdidevice.py:375
@@ -2722,6 +3179,12 @@ msgid ""
 "or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
+"Напишете помощната информация, \n"
+"която искате да получи ученика при избор на определен въпрос. Ако не \n"
+"попълните това поле, еХе автоматично ще осигури помощната информация по "
+"подразбиране: \n"
+"\"Правилен отговор\" при избор на правилният отговор или \n"
+"\"Грешен отговор\"за другите варианти."
 
 #: exe/engine/verdaderofalsofpdidevice.py:145
 msgid "FPD - True/False Activity"
@@ -2729,9 +3192,10 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:53
 msgid "Wiki Article"
-msgstr ""
+msgstr "Wiki Статия"
 
 #: exe/engine/wikipediaidevice.py:55
+#, fuzzy
 msgid ""
 "<p>The Wikipedia iDevice allows you to locate \n"
 "existing content from within Wikipedia and download this content into "
@@ -2748,22 +3212,36 @@ msgid ""
 "additionally\n"
 "by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
 msgstr ""
+"<p>Wiki статията ви позволява да намерите \n"
+"съществуващо съдържание от Wikipedia и да го свалите във вашият eXe \n"
+"ресурс. Помощното средство Wiki Статия прави моментно копие на "
+"съдържанието \n"
+"на статията. Промените в нея не се отразяват автоматично в моментното "
+"копие \n"
+"в eXe. Необходимо е да се направи ново копие. Съответно, \n"
+"промените, направени в eXe няма да осъвременят съдържанието в Wikipedia. "
+"</p> <p>Съдържанието в Wikipedia \n"
+"е под Лиценз за свободна документация на ГНУ.</p>"
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
-msgstr ""
+msgstr "Статия"
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr ""
+"Изберете подходящата езикова версия \n"
+"на Wikipedia и въведете търсения термин."
 
 #: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:363
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
 msgstr ""
+"Въведете фраза или термин, който искате да търсите \n"
+"в Wikipedia."
 
 #: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
 #, python-format
@@ -2771,10 +3249,12 @@ msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
 msgstr ""
+"Свалянето от %s е неуспешно.<br/> Моля проверете правописа и връзката, и "
+"опитайте отново."
 
 #: exe/engine/wikipediaidevice.py:315
 msgid "http://en.wikipedia.org/"
-msgstr ""
+msgstr "http://en.wikipedia.org/"
 
 #: exe/exe_do:68
 msgid ""
@@ -2946,6 +3426,8 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
+"\"%s\" съществува.\n"
+"Моля опитайте с друго име"
 
 #: exe/export/cmdlineexporter.py:92
 msgid "Export format not implemented"
@@ -2958,16 +3440,18 @@ msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
+"ЕКСПОРТИРАНЕТО СЕ ПРОВАЛИ!\n"
+"Последният успешен експорт е %s."
 
 #: exe/export/scormpage.py:177 exe/export/websitepage.py:345
 #: exe/webui/common.py:473
 msgid "Previous"
-msgstr ""
+msgstr "Предишен"
 
 #: exe/export/scormpage.py:178 exe/export/websitepage.py:351
 #: exe/webui/common.py:474
 msgid "Next"
-msgstr ""
+msgstr "Следващ"
 
 #: exe/export/singlepage.py:249
 msgid "You can close this window"
@@ -2975,7 +3459,7 @@ msgstr ""
 
 #: exe/export/textexport.py:54 exe/webui/common.py:293
 msgid "Licensed under the"
-msgstr ""
+msgstr "Лицензиран под"
 
 #: exe/export/websitepage.py:153
 msgid "Skip navigation"
@@ -2983,18 +3467,20 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr ""
+msgstr "Пример Пример"
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
 msgstr ""
+"Това е пример за потребителски създадена \n"
+"добавка тип Помощно средство."
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
 msgid "Example"
-msgstr ""
+msgstr "Пример"
 
 #: exe/importers/cmdlineimporter.py:44
 msgid "Import format not implemented"
@@ -3047,18 +3533,18 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
-msgstr ""
+msgstr "Не може да се осъществи достъп до папката"
 
 #: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:847 exe/jsui/mainpage.py:975
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
-msgstr ""
+msgstr "Моля използвайте ASCII имена."
 
 #: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
-msgstr ""
+msgstr "ЗАПАЗВАНЕТО СЕ ПРОВАЛИ!"
 
 #: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1071
 #: exe/jsui/mainpage_antes_jr_docs.py:326
@@ -3069,6 +3555,8 @@ msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
+"ЗАПАЗВАНЕТО СЕ ПРОВАЛИ!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:337 exe/jsui/mainpage.py:342 exe/jsui/mainpage.py:345
 #: exe/jsui/mainpage_antes_jr_docs.py:330
@@ -3076,19 +3564,19 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:338
 #, python-format
 msgid "Package saved to: %s"
-msgstr ""
+msgstr "Пакетът е запазен в: %s"
 
 #: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:672
 #: exe/jsui/mainpage_antes_jr_docs.py:561
 #: exe/jsui/mainpage_antes_jr_docs.py:665
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
-msgstr ""
+msgstr "Папката за преглед %s е файл, не може да се замени"
 
 #: exe/jsui/mainpage.py:587 exe/jsui/mainpage_antes_jr_docs.py:580
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr ""
+msgstr "Локалният файл %s не е намерен. Не е възможен преглед."
 
 #: exe/jsui/mainpage.py:712 exe/jsui/mainpage_antes_jr_docs.py:705
 #, python-format
@@ -3096,6 +3584,8 @@ msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
+"Компилирането на MimeTex се провали!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:750 exe/jsui/mainpage_antes_jr_docs.py:743
 msgid "Importing HTML..."
@@ -3149,7 +3639,7 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1064
 #: exe/jsui/mainpage_antes_jr_docs.py:1136
 msgid "EXPORT FAILED!"
-msgstr ""
+msgstr "ЕКСПОРТИРАНЕТО СЕ ПРОВАЛИ!"
 
 #: exe/jsui/mainpage.py:940 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
@@ -3168,11 +3658,13 @@ msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
+"ИЗВЛИЧАНЕТО СЕ ПРОВАЛИ!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1003 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
-msgstr ""
+msgstr "Пакетът е разархивиран в: %s"
 
 #: exe/jsui/mainpage.py:1015 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
@@ -3202,13 +3694,15 @@ msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
+"ЕКСПОРТИРАНЕТО СЕ ПРОВАЛИ!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1057 exe/jsui/mainpage.py:1104
 #: exe/jsui/mainpage_antes_jr_docs.py:990
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr ""
+msgstr "%s e файл. Не може да бъде заместен"
 
 #: exe/jsui/mainpage.py:1063 exe/jsui/mainpage.py:1111
 #: exe/jsui/mainpage_antes_jr_docs.py:996
@@ -3218,6 +3712,8 @@ msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr ""
+"Вече съществува папка с името %s. Моля изберете друга или изтрийте "
+"съществуващата и опитайте отново. "
 
 #: exe/jsui/mainpage.py:1077 exe/jsui/mainpage.py:1122
 #: exe/jsui/mainpage.py:1137 exe/jsui/mainpage.py:1156
@@ -3234,16 +3730,16 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1185
 #, python-format
 msgid "Exported to %s"
-msgstr ""
+msgstr "Изнесено към %s"
 
 #: exe/jsui/mainpage.py:1285 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr ""
+msgstr "Файлът %s  не съществува или не може да се прочете."
 
 #: exe/jsui/mainpage.py:1289 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr ""
+msgstr "Не може да се зареди файл. Моля изпратете email на bugs@exelearning.org"
 
 #: exe/jsui/mainpage.py:1292 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
@@ -3251,10 +3747,12 @@ msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
+"Грешен файлов формат:\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1294 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
-msgstr ""
+msgstr "Грешен файлов формат"
 
 #: exe/jsui/propertiespage.py:335
 msgid "Failed to get properties"
@@ -3274,7 +3772,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
 #: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
 msgid "Select an image"
-msgstr ""
+msgstr "Изберете изображение"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:194
 #: exe/jsui/scripts/app/controller/MainTab.js:228
@@ -3366,12 +3864,12 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
 msgid "Insert Package"
-msgstr ""
+msgstr "Вмъкване на пакет"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Extract Package"
-msgstr ""
+msgstr "Разопаковане на пакета"
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Delete \"{node}\" node and all its children?"
@@ -3447,7 +3945,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:400
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
 msgid "Preferences"
-msgstr ""
+msgstr "Настройки"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:428
 msgid ""
@@ -3479,7 +3977,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:123
 msgid "Information"
-msgstr ""
+msgstr "Информация"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 msgid "Your Style could not be saved because an unknown error occurred."
@@ -3593,7 +4091,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:136
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
-msgstr ""
+msgstr "Отказ"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:792
 msgid "Ok"
@@ -3751,7 +4249,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
-msgstr ""
+msgstr "Име"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:95
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
@@ -3783,7 +4281,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/en.js:112
 msgid "Save"
-msgstr ""
+msgstr "Запазване"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:78
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:89
@@ -3804,13 +4302,14 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:35
 msgid "Dublin Core Metadata"
-msgstr ""
+msgstr "Dublin Core Метаданни"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:45
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:171
+#, fuzzy
 msgid "The name given to the resource."
-msgstr ""
+msgstr "Напишете учебните цели за този ресурс."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:51
 msgid "Creator"
@@ -3901,8 +4400,9 @@ msgid "Format"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
+#, fuzzy
 msgid "Select a Format."
-msgstr ""
+msgstr "Изберете формат"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomSections.js:40
@@ -3940,8 +4440,9 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:182
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:189
+#, fuzzy
 msgid "Select a language."
-msgstr ""
+msgstr "Изберете език"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
@@ -3997,8 +4498,9 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
 #: exe/webui/tools/style-designer/langs/en.js:110
+#, fuzzy
 msgid "Reset"
-msgstr ""
+msgstr "Faroese"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
@@ -4317,7 +4819,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:269
 #: exe/webui/editorpane.py:387
 msgid "Purpose"
-msgstr ""
+msgstr "Цел"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:166
 msgid "Download Classification Sources"
@@ -4708,7 +5210,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:45
 msgid "Select Language"
-msgstr ""
+msgstr "Изберете език"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:151
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -4738,8 +5240,9 @@ msgid "Permissive"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
+#, fuzzy
 msgid "Strict"
-msgstr ""
+msgstr "Рестартиране"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:192
 msgid ""
@@ -4785,7 +5288,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
 msgid "Export"
-msgstr ""
+msgstr "Изнасяне"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
 msgid "Delete style: "
@@ -4864,7 +5367,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
-msgstr ""
+msgstr "План"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:85
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:88
@@ -4885,7 +5388,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:155
 msgid "iDevices"
-msgstr ""
+msgstr "Помощни средства"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "Category"
@@ -4897,21 +5400,21 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
 msgid "Authoring"
-msgstr ""
+msgstr "Създаване"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:47
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Properties"
-msgstr ""
+msgstr "Свойства"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
 msgid "Package"
-msgstr ""
+msgstr "Пакет"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:58
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
 msgid "Metadata"
-msgstr ""
+msgstr "Метаданни"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:195
@@ -4925,7 +5428,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
-msgstr ""
+msgstr "Добавяне на страница"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:239
 #: exe/webui/block.py:333 exe/webui/editorelement.py:78
@@ -4936,11 +5439,11 @@ msgstr ""
 #: exe/webui/galleryblock.py:303
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
-msgstr ""
+msgstr "Изтриване"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
-msgstr ""
+msgstr "Преименуване"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
 msgid "Promote node up in hierarchy"
@@ -4951,12 +5454,14 @@ msgid "Demote node down in hierarchy"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:45
+#, fuzzy
 msgid "Move node up"
-msgstr ""
+msgstr "Преместване нагоре"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:51
+#, fuzzy
 msgid "Move node down"
-msgstr ""
+msgstr "Преместване надолу"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 #: exe/webui/tools/style-designer/langs/en.js:133
@@ -4974,7 +5479,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
-msgstr ""
+msgstr "Изчистване на списъка с последно отваряните проекти"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
 msgid "Save As..."
@@ -5027,15 +5532,15 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:273
 msgid "Web Site"
-msgstr ""
+msgstr "Уеб сайт"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:280
 msgid "Self-contained Folder"
-msgstr ""
+msgstr "В една папка"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:286
 msgid "Zip File"
-msgstr ""
+msgstr "Zip файл"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
 msgid "Single Page"
@@ -5059,7 +5564,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:356 exe/webui/editorpage.py:269
 msgid "Quit"
-msgstr ""
+msgstr "Изход"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:363
 msgid "Tools"
@@ -5091,7 +5596,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Preview"
-msgstr ""
+msgstr "Преглед"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Refresh Display"
@@ -5148,119 +5653,119 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
-msgstr ""
+msgstr "Афарски"
 
 #: exe/jsui/scripts/langs.js:8
 msgid "Abkhazian "
-msgstr ""
+msgstr "Абхазки"
 
 #: exe/jsui/scripts/langs.js:12
 msgid "Avestan "
-msgstr ""
+msgstr "Avestan"
 
 #: exe/jsui/scripts/langs.js:16
 msgid "Afrikaans "
-msgstr ""
+msgstr "Африкаанс"
 
 #: exe/jsui/scripts/langs.js:20
 msgid "Amharic "
-msgstr ""
+msgstr "Амхарски"
 
 #: exe/jsui/scripts/langs.js:24
 msgid "Arabic "
-msgstr ""
+msgstr "Арабски"
 
 #: exe/jsui/scripts/langs.js:28
 msgid "Assamese "
-msgstr ""
+msgstr "Асамски"
 
 #: exe/jsui/scripts/langs.js:32
 msgid "Aymara "
-msgstr ""
+msgstr "Аймара"
 
 #: exe/jsui/scripts/langs.js:36
 msgid "Azerbaijani "
-msgstr ""
+msgstr "Азербайджански"
 
 #: exe/jsui/scripts/langs.js:40
 msgid "Bashkir "
-msgstr ""
+msgstr "Башкирски"
 
 #: exe/jsui/scripts/langs.js:44
 msgid "Byelorussian; Belarusian "
-msgstr ""
+msgstr "Беларуски"
 
 #: exe/jsui/scripts/langs.js:48
 msgid "Bulgarian "
-msgstr ""
+msgstr "Български"
 
 #: exe/jsui/scripts/langs.js:52
 msgid "Bihari "
-msgstr ""
+msgstr "Бихарски"
 
 #: exe/jsui/scripts/langs.js:56
 msgid "Bislama "
-msgstr ""
+msgstr "Бислама"
 
 #: exe/jsui/scripts/langs.js:60
 msgid "Bengali; Bangla "
-msgstr ""
+msgstr "Бегалски"
 
 #: exe/jsui/scripts/langs.js:64
 msgid "Tibetan "
-msgstr ""
+msgstr "Тибетски"
 
 #: exe/jsui/scripts/langs.js:68
 msgid "Breton "
-msgstr ""
+msgstr "Бретонски"
 
 #: exe/jsui/scripts/langs.js:72
 msgid "Bosnian "
-msgstr ""
+msgstr "Босненски"
 
 #: exe/jsui/scripts/langs.js:76
 msgid "Catalan "
-msgstr ""
+msgstr "Каталонски"
 
 #: exe/jsui/scripts/langs.js:80
 msgid "Chechen "
-msgstr ""
+msgstr "Чеченски"
 
 #: exe/jsui/scripts/langs.js:84
 msgid "Chamorro "
-msgstr ""
+msgstr "Chamorro"
 
 #: exe/jsui/scripts/langs.js:88
 msgid "Corsican "
-msgstr ""
+msgstr "Корсикански"
 
 #: exe/jsui/scripts/langs.js:92
 msgid "Czech "
-msgstr ""
+msgstr "Чешки"
 
 #: exe/jsui/scripts/langs.js:96
 msgid "Church Slavic "
-msgstr ""
+msgstr "Church Slavic "
 
 #: exe/jsui/scripts/langs.js:100
 msgid "Chuvash "
-msgstr ""
+msgstr "Чувашки"
 
 #: exe/jsui/scripts/langs.js:104
 msgid "Welsh "
-msgstr ""
+msgstr "Уелски"
 
 #: exe/jsui/scripts/langs.js:108
 msgid "Danish "
-msgstr ""
+msgstr "Датски"
 
 #: exe/jsui/scripts/langs.js:112
 msgid "German "
-msgstr ""
+msgstr "Германски"
 
 #: exe/jsui/scripts/langs.js:116
 msgid "Dzongkha; Bhutani "
-msgstr ""
+msgstr "Дзонгкха"
 
 #: exe/jsui/scripts/langs.js:120
 msgid "Greek "
@@ -5268,271 +5773,271 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:124
 msgid "English "
-msgstr ""
+msgstr "Английски"
 
 #: exe/jsui/scripts/langs.js:128
 msgid "Esperanto "
-msgstr ""
+msgstr "Есперанто"
 
 #: exe/jsui/scripts/langs.js:132
 msgid "Spanish "
-msgstr ""
+msgstr "Испански"
 
 #: exe/jsui/scripts/langs.js:136
 msgid "Estonian "
-msgstr ""
+msgstr "Естонски"
 
 #: exe/jsui/scripts/langs.js:140
 msgid "Basque "
-msgstr ""
+msgstr "Баски"
 
 #: exe/jsui/scripts/langs.js:144
 msgid "Persian "
-msgstr ""
+msgstr "Персийски"
 
 #: exe/jsui/scripts/langs.js:148
 msgid "Finnish "
-msgstr ""
+msgstr "Финландски"
 
 #: exe/jsui/scripts/langs.js:152
 msgid "Fijian; Fiji "
-msgstr ""
+msgstr "Фиджийски"
 
 #: exe/jsui/scripts/langs.js:156
 msgid "Faroese "
-msgstr ""
+msgstr "Faroese"
 
 #: exe/jsui/scripts/langs.js:160
 msgid "French "
-msgstr ""
+msgstr "Френски"
 
 #: exe/jsui/scripts/langs.js:164
 msgid "Frisian "
-msgstr ""
+msgstr "Фризийски"
 
 #: exe/jsui/scripts/langs.js:168
 msgid "Irish "
-msgstr ""
+msgstr "Ирландски"
 
 #: exe/jsui/scripts/langs.js:172
 msgid "Scots; Gaelic "
-msgstr ""
+msgstr "Шотландски Галски"
 
 #: exe/jsui/scripts/langs.js:176
 msgid "Gallegan; Galician "
-msgstr ""
+msgstr "Gallegan; Galician "
 
 #: exe/jsui/scripts/langs.js:180
 msgid "Guarani "
-msgstr ""
+msgstr "Гуарани"
 
 #: exe/jsui/scripts/langs.js:184
 msgid "Gujarati "
-msgstr ""
+msgstr "Гуджаратски"
 
 #: exe/jsui/scripts/langs.js:188
 msgid "Manx "
-msgstr ""
+msgstr "Мански"
 
 #: exe/jsui/scripts/langs.js:192
 msgid "Hausa (?) "
-msgstr ""
+msgstr "Хауса"
 
 #: exe/jsui/scripts/langs.js:196
 msgid "Hebrew (formerly iw) "
-msgstr ""
+msgstr "Иврит"
 
 #: exe/jsui/scripts/langs.js:200
 msgid "Hindi "
-msgstr ""
+msgstr "Хинди"
 
 #: exe/jsui/scripts/langs.js:204
 msgid "Hiri Motu "
-msgstr ""
+msgstr "Hiri Motu"
 
 #: exe/jsui/scripts/langs.js:208
 msgid "Croatian "
-msgstr ""
+msgstr "Хърватски"
 
 #: exe/jsui/scripts/langs.js:212
 msgid "Hungarian "
-msgstr ""
+msgstr "Унгарски"
 
 #: exe/jsui/scripts/langs.js:216
 msgid "Armenian "
-msgstr ""
+msgstr "Арменски"
 
 #: exe/jsui/scripts/langs.js:220
 msgid "Herero "
-msgstr ""
+msgstr "Herero"
 
 #: exe/jsui/scripts/langs.js:224
 msgid "Interlingua "
-msgstr ""
+msgstr "Интерлингуа"
 
 #: exe/jsui/scripts/langs.js:228
 msgid "Indonesian (formerly in) "
-msgstr ""
+msgstr "Индонезийски"
 
 #: exe/jsui/scripts/langs.js:232
 msgid "Interlingue "
-msgstr ""
+msgstr "Interlingue"
 
 #: exe/jsui/scripts/langs.js:236
 msgid "Inupiak "
-msgstr ""
+msgstr "Inupiak"
 
 #: exe/jsui/scripts/langs.js:240
 msgid "Ido "
-msgstr ""
+msgstr "Ido"
 
 #: exe/jsui/scripts/langs.js:244
 msgid "Icelandic "
-msgstr ""
+msgstr "Исландски"
 
 #: exe/jsui/scripts/langs.js:248
 msgid "Italian "
-msgstr ""
+msgstr "Италиански"
 
 #: exe/jsui/scripts/langs.js:252
 msgid "Inuktitut "
-msgstr ""
+msgstr "Inuktitut"
 
 #: exe/jsui/scripts/langs.js:256
 msgid "Japanese "
-msgstr ""
+msgstr "Японски"
 
 #: exe/jsui/scripts/langs.js:260
 msgid "Javanese "
-msgstr ""
+msgstr "Явански"
 
 #: exe/jsui/scripts/langs.js:264
 msgid "Georgian "
-msgstr ""
+msgstr "Грузински"
 
 #: exe/jsui/scripts/langs.js:268
 msgid "Kikuyu "
-msgstr ""
+msgstr "Kikuyu"
 
 #: exe/jsui/scripts/langs.js:272
 msgid "Kuanyama "
-msgstr ""
+msgstr "Kuanyama"
 
 #: exe/jsui/scripts/langs.js:276
 msgid "Kazakh "
-msgstr ""
+msgstr "Казахски"
 
 #: exe/jsui/scripts/langs.js:280
 msgid "Kalaallisut; Greenlandic "
-msgstr ""
+msgstr "Гренландски"
 
 #: exe/jsui/scripts/langs.js:284
 msgid "Khmer; Cambodian "
-msgstr ""
+msgstr "Кхмерски"
 
 #: exe/jsui/scripts/langs.js:288
 msgid "Kannada "
-msgstr ""
+msgstr "Kannada"
 
 #: exe/jsui/scripts/langs.js:292
 msgid "Korean "
-msgstr ""
+msgstr "Корейски"
 
 #: exe/jsui/scripts/langs.js:296
 msgid "Kashmiri "
-msgstr ""
+msgstr "Кашмирски"
 
 #: exe/jsui/scripts/langs.js:300
 msgid "Kurdish "
-msgstr ""
+msgstr "Кюрдски"
 
 #: exe/jsui/scripts/langs.js:304
 msgid "Komi "
-msgstr ""
+msgstr "Komi"
 
 #: exe/jsui/scripts/langs.js:308
 msgid "Cornish "
-msgstr ""
+msgstr "Cornish"
 
 #: exe/jsui/scripts/langs.js:312
 msgid "Kirghiz "
-msgstr ""
+msgstr "Киргизски"
 
 #: exe/jsui/scripts/langs.js:316
 msgid "Latin "
-msgstr ""
+msgstr "Латински"
 
 #: exe/jsui/scripts/langs.js:320
 msgid "Letzeburgesch "
-msgstr ""
+msgstr "Люксембургски"
 
 #: exe/jsui/scripts/langs.js:324
 msgid "Lingala "
-msgstr ""
+msgstr "Лингала"
 
 #: exe/jsui/scripts/langs.js:328
 msgid "Lao; Laotian "
-msgstr ""
+msgstr "Лаоски"
 
 #: exe/jsui/scripts/langs.js:332
 msgid "Lithuanian "
-msgstr ""
+msgstr "Литовски"
 
 #: exe/jsui/scripts/langs.js:336
 msgid "Latvian; Lettish "
-msgstr ""
+msgstr "Латвийски"
 
 #: exe/jsui/scripts/langs.js:340
 msgid "Malagasy "
-msgstr ""
+msgstr "Малгашки"
 
 #: exe/jsui/scripts/langs.js:344
 msgid "Marshall "
-msgstr ""
+msgstr "Marshall"
 
 #: exe/jsui/scripts/langs.js:348
 msgid "Maori "
-msgstr ""
+msgstr "Маорски"
 
 #: exe/jsui/scripts/langs.js:352
 msgid "Macedonian "
-msgstr ""
+msgstr "Македонски"
 
 #: exe/jsui/scripts/langs.js:356
 msgid "Malayalam "
-msgstr ""
+msgstr "Малаям"
 
 #: exe/jsui/scripts/langs.js:360
 msgid "Mongolian "
-msgstr ""
+msgstr "Монголски"
 
 #: exe/jsui/scripts/langs.js:364
 msgid "Moldavian "
-msgstr ""
+msgstr "Молдовски"
 
 #: exe/jsui/scripts/langs.js:368
 msgid "Marathi "
-msgstr ""
+msgstr "Маратхи"
 
 #: exe/jsui/scripts/langs.js:372
 msgid "Malay "
-msgstr ""
+msgstr "Малайски"
 
 #: exe/jsui/scripts/langs.js:376
 msgid "Maltese "
-msgstr ""
+msgstr "Малтийски"
 
 #: exe/jsui/scripts/langs.js:380
 msgid "Burmese "
-msgstr ""
+msgstr "Бирмански"
 
 #: exe/jsui/scripts/langs.js:384
 msgid "Nauru "
-msgstr ""
+msgstr "Науруански"
 
 #: exe/jsui/scripts/langs.js:388
 msgid "Norwegian Bokmål "
-msgstr ""
+msgstr "Норвежки Букмол"
 
 #: exe/jsui/scripts/langs.js:392
 msgid "Ndebele,North "
@@ -5540,23 +6045,23 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:396
 msgid "Nepali "
-msgstr ""
+msgstr "Непалски"
 
 #: exe/jsui/scripts/langs.js:400
 msgid "Ndonga "
-msgstr ""
+msgstr "Ndonga"
 
 #: exe/jsui/scripts/langs.js:404
 msgid "Dutch "
-msgstr ""
+msgstr "Холандски"
 
 #: exe/jsui/scripts/langs.js:408
 msgid "Norwegian Nynorsk "
-msgstr ""
+msgstr "Норвежки Нинорск"
 
 #: exe/jsui/scripts/langs.js:412
 msgid "Norwegian "
-msgstr ""
+msgstr "Норвежки"
 
 #: exe/jsui/scripts/langs.js:416
 msgid "Ndebele,South "
@@ -5564,39 +6069,39 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:420
 msgid "Navajo "
-msgstr ""
+msgstr "Навахо"
 
 #: exe/jsui/scripts/langs.js:424
 msgid "Chichewa; Nyanja "
-msgstr ""
+msgstr "Chichewa; Nyanja "
 
 #: exe/jsui/scripts/langs.js:428
 msgid "Occitan; Provençal "
-msgstr ""
+msgstr "Окситански"
 
 #: exe/jsui/scripts/langs.js:432
 msgid "(Afan) Oromo "
-msgstr ""
+msgstr "Оромо"
 
 #: exe/jsui/scripts/langs.js:436
 msgid "Oriya "
-msgstr ""
+msgstr "Ория"
 
 #: exe/jsui/scripts/langs.js:440
 msgid "Ossetian; Ossetic "
-msgstr ""
+msgstr "Ossetian; Ossetic"
 
 #: exe/jsui/scripts/langs.js:444
 msgid "Panjabi; Punjabi "
-msgstr ""
+msgstr "Panjabi; Punjabi "
 
 #: exe/jsui/scripts/langs.js:448
 msgid "Pali "
-msgstr ""
+msgstr "Pali"
 
 #: exe/jsui/scripts/langs.js:452
 msgid "Polish "
-msgstr ""
+msgstr "Полски"
 
 #: exe/jsui/scripts/langs.js:456
 msgid "Pashto,Pushto "
@@ -5604,87 +6109,87 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:460
 msgid "Portuguese "
-msgstr ""
+msgstr "Португалски"
 
 #: exe/jsui/scripts/langs.js:464
 msgid "Quechua "
-msgstr ""
+msgstr "Кечуа"
 
 #: exe/jsui/scripts/langs.js:468
 msgid "Rhaeto-Romance "
-msgstr ""
+msgstr "Реторомански"
 
 #: exe/jsui/scripts/langs.js:472
 msgid "Rundi; Kirundi "
-msgstr ""
+msgstr "Кирунди"
 
 #: exe/jsui/scripts/langs.js:476
 msgid "Romanian "
-msgstr ""
+msgstr "Румънски"
 
 #: exe/jsui/scripts/langs.js:480
 msgid "Russian "
-msgstr ""
+msgstr "Руски"
 
 #: exe/jsui/scripts/langs.js:484
 msgid "Kinyarwanda "
-msgstr ""
+msgstr "Киняруанда"
 
 #: exe/jsui/scripts/langs.js:488
 msgid "Sanskrit "
-msgstr ""
+msgstr "Санскрит"
 
 #: exe/jsui/scripts/langs.js:492
 msgid "Sardinian "
-msgstr ""
+msgstr "Сардински"
 
 #: exe/jsui/scripts/langs.js:496
 msgid "Sindhi "
-msgstr ""
+msgstr "Синдхи"
 
 #: exe/jsui/scripts/langs.js:500
 msgid "Northern Sami "
-msgstr ""
+msgstr "Northern Sami "
 
 #: exe/jsui/scripts/langs.js:504
 msgid "Sango; Sangro "
-msgstr ""
+msgstr "Санго"
 
 #: exe/jsui/scripts/langs.js:508
 msgid "Sinhalese "
-msgstr ""
+msgstr "Синхалски"
 
 #: exe/jsui/scripts/langs.js:512
 msgid "Slovak "
-msgstr ""
+msgstr "Словашки"
 
 #: exe/jsui/scripts/langs.js:516
 msgid "Slovenian "
-msgstr ""
+msgstr "Словенски"
 
 #: exe/jsui/scripts/langs.js:520
 msgid "Samoan "
-msgstr ""
+msgstr "Самоански"
 
 #: exe/jsui/scripts/langs.js:524
 msgid "Shona "
-msgstr ""
+msgstr "Шона"
 
 #: exe/jsui/scripts/langs.js:528
 msgid "Somali "
-msgstr ""
+msgstr "Сомалийски"
 
 #: exe/jsui/scripts/langs.js:532
 msgid "Albanian "
-msgstr ""
+msgstr "Албански"
 
 #: exe/jsui/scripts/langs.js:536
 msgid "Serbian "
-msgstr ""
+msgstr "Сръбски"
 
 #: exe/jsui/scripts/langs.js:540
 msgid "Swati; Siswati "
-msgstr ""
+msgstr "Swati; Siswati"
 
 #: exe/jsui/scripts/langs.js:544
 msgid "Sesotho; Sotho,Southern "
@@ -5692,87 +6197,87 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:548
 msgid "Sundanese "
-msgstr ""
+msgstr "Судански"
 
 #: exe/jsui/scripts/langs.js:552
 msgid "Swedish "
-msgstr ""
+msgstr "Шведски"
 
 #: exe/jsui/scripts/langs.js:556
 msgid "Swahili "
-msgstr ""
+msgstr "Суахили"
 
 #: exe/jsui/scripts/langs.js:560
 msgid "Tamil "
-msgstr ""
+msgstr "Тамилски"
 
 #: exe/jsui/scripts/langs.js:564
 msgid "Telugu "
-msgstr ""
+msgstr "Телугу"
 
 #: exe/jsui/scripts/langs.js:568
 msgid "Tajik "
-msgstr ""
+msgstr "Таджикски"
 
 #: exe/jsui/scripts/langs.js:572
 msgid "Thai "
-msgstr ""
+msgstr "Тайски"
 
 #: exe/jsui/scripts/langs.js:576
 msgid "Tigrinya "
-msgstr ""
+msgstr "Тигриня"
 
 #: exe/jsui/scripts/langs.js:580
 msgid "Turkmen "
-msgstr ""
+msgstr "Туркменски"
 
 #: exe/jsui/scripts/langs.js:584
 msgid "Tagalog "
-msgstr ""
+msgstr "Тагалог"
 
 #: exe/jsui/scripts/langs.js:588
 msgid "Tswana; Setswana "
-msgstr ""
+msgstr "Tswana; Setswana "
 
 #: exe/jsui/scripts/langs.js:592
 msgid "Tongan  "
-msgstr ""
+msgstr "Тонгански"
 
 #: exe/jsui/scripts/langs.js:596
 msgid "Turkish "
-msgstr ""
+msgstr "Турски"
 
 #: exe/jsui/scripts/langs.js:600
 msgid "Tsonga "
-msgstr ""
+msgstr "Цонга"
 
 #: exe/jsui/scripts/langs.js:604
 msgid "Tatar "
-msgstr ""
+msgstr "Татарски"
 
 #: exe/jsui/scripts/langs.js:608
 msgid "Twi "
-msgstr ""
+msgstr "Twi"
 
 #: exe/jsui/scripts/langs.js:612
 msgid "Tahitian "
-msgstr ""
+msgstr "Таитянски"
 
 #: exe/jsui/scripts/langs.js:616
 msgid "Uighur "
-msgstr ""
+msgstr "Уйгурски"
 
 #: exe/jsui/scripts/langs.js:620
 msgid "Ukrainian "
-msgstr ""
+msgstr "Украински "
 
 #: exe/jsui/scripts/langs.js:624
 msgid "Urdu "
-msgstr ""
+msgstr "Урду"
 
 #: exe/jsui/scripts/langs.js:628
 msgid "Uzbek "
-msgstr ""
+msgstr "Узбекски"
 
 #: exe/jsui/scripts/langs.js:632
 msgid "Valencian "
@@ -5780,43 +6285,43 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:636
 msgid "Vietnamese "
-msgstr ""
+msgstr "Виетнамски"
 
 #: exe/jsui/scripts/langs.js:640
 msgid "Volapük; Volapuk "
-msgstr ""
+msgstr "Волапюк"
 
 #: exe/jsui/scripts/langs.js:644
 msgid "Walloon "
-msgstr ""
+msgstr "Walloon"
 
 #: exe/jsui/scripts/langs.js:648
 msgid "Wolof "
-msgstr ""
+msgstr "Уолоф"
 
 #: exe/jsui/scripts/langs.js:652
 msgid "Xhosa "
-msgstr ""
+msgstr "Xhosa"
 
 #: exe/jsui/scripts/langs.js:656
 msgid "Yiddish (formerly ji) "
-msgstr ""
+msgstr "Идиш"
 
 #: exe/jsui/scripts/langs.js:660
 msgid "Yoruba "
-msgstr ""
+msgstr "Йоруба"
 
 #: exe/jsui/scripts/langs.js:664
 msgid "Zhuang "
-msgstr ""
+msgstr "Жуанг"
 
 #: exe/jsui/scripts/langs.js:668
 msgid "Chinese "
-msgstr ""
+msgstr "Китайски"
 
 #: exe/jsui/scripts/langs.js:672
 msgid "Zulu "
-msgstr ""
+msgstr "Зулу"
 
 #: exe/jsui/scripts/lomvocab.js:5 exe/jsui/scripts/lomvocab.js:664
 msgid "active"
@@ -6749,7 +7254,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:85
 msgid "Please upload a .ggb file."
-msgstr ""
+msgstr "Моля качете .ggb файл."
 
 #: exe/webui/appletblock.py:87
 msgid "Please upload a .jclic.zip file."
@@ -6777,7 +7282,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:131
 msgid "Geogebra"
-msgstr ""
+msgstr "Geogebra"
 
 #: exe/webui/appletblock.py:132
 msgid "JClic"
@@ -6789,15 +7294,15 @@ msgstr ""
 
 #: exe/webui/appletblock.py:134 exe/webui/wikipediablock.py:136
 msgid "Other"
-msgstr ""
+msgstr "Друго"
 
 #: exe/webui/appletblock.py:135
 msgid "Applet Type"
-msgstr ""
+msgstr "Тип на аплета"
 
 #: exe/webui/appletblock.py:156 exe/webui/appletblock.py:166
 msgid "Add files"
-msgstr ""
+msgstr "Добавяне на файлове"
 
 #: exe/webui/appletblock.py:162
 msgid "Accept URL"
@@ -6805,30 +7310,30 @@ msgstr ""
 
 #: exe/webui/appletblock.py:172
 msgid "Applet Code:"
-msgstr ""
+msgstr "Код на аплета:"
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
 msgid "Filename:"
-msgstr ""
+msgstr "Име на файл:"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
 #: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
 #: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
 msgid "Select a file"
-msgstr ""
+msgstr "Изберете файл"
 
 #: exe/webui/attachmentblock.py:108
 msgid "Label:"
-msgstr ""
+msgstr "Етикет:"
 
 #: exe/webui/block.py:184
 msgid "IDevice broken"
-msgstr ""
+msgstr "Развалено Помощно средство"
 
 #: exe/webui/block.py:222
 msgid "Done"
-msgstr ""
+msgstr "Завършване"
 
 #: exe/webui/block.py:226
 msgid "Exit without saving?"
@@ -6848,36 +7353,37 @@ msgstr ""
 
 #: exe/webui/block.py:246
 msgid "Move Up"
-msgstr ""
+msgstr "Преместване нагоре"
 
 #: exe/webui/block.py:253
 msgid "Move Down"
-msgstr ""
+msgstr "Преместване надолу"
 
 #: exe/webui/block.py:255
 msgid "---Move To---"
-msgstr ""
+msgstr "---Преместване към---"
 
 #: exe/webui/block.py:260 exe/webui/editorpane.py:380
 msgid "Pedagogical Help"
-msgstr ""
+msgstr "Педагогическа помощ"
 
 #: exe/webui/block.py:273 exe/webui/editorpane.py:390
 msgid "Tip:"
-msgstr ""
+msgstr "Съвет:"
 
 #: exe/webui/block.py:318
+#, fuzzy
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr ""
+msgstr "ERROR: Block.renderViewContent called directly"
 
 #: exe/webui/block.py:328 exe/webui/editorpage.py:286
 #: exe/webui/editorpane.py:270
 msgid "Edit"
-msgstr ""
+msgstr "Редактиране"
 
 #: exe/webui/casestudyblock.py:114 exe/webui/ejercicioresueltofpdblock.py:130
 msgid "Add another activity"
-msgstr ""
+msgstr "Добавяне на друга дейност"
 
 #: exe/webui/casopracticofpdblock.py:68
 msgid "Situation"
@@ -7030,25 +7536,25 @@ msgstr ""
 
 #: exe/webui/common.py:476
 msgid "Hide"
-msgstr ""
+msgstr "Скриване"
 
 #: exe/webui/common.py:477 exe/webui/common.py:715 exe/webui/element.py:1538
 #: exe/webui/element.py:2469 exe/webui/listablock.py:275
 msgid "Show Feedback"
-msgstr ""
+msgstr "Показване на Помощна информация"
 
 #: exe/webui/common.py:478
 msgid "Hide Feedback"
-msgstr ""
+msgstr "Скриване на помощната информация"
 
 #: exe/webui/common.py:479 exe/webui/common.py:494 exe/webui/element.py:2272
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
-msgstr ""
+msgstr "Правилно"
 
 #: exe/webui/common.py:480 exe/webui/element.py:2275
 msgid "Incorrect"
-msgstr ""
+msgstr "Невярно"
 
 #: exe/webui/common.py:481
 msgid "Menu"
@@ -7060,7 +7566,7 @@ msgstr ""
 
 #: exe/webui/common.py:495 exe/webui/element.py:2708 exe/webui/element.py:2726
 msgid "Wrong"
-msgstr ""
+msgstr "Грешно"
 
 #: exe/webui/common.py:496
 msgid "Right answer"
@@ -7079,8 +7585,9 @@ msgid "Words"
 msgstr ""
 
 #: exe/webui/common.py:501
+#, fuzzy
 msgid "Play"
-msgstr ""
+msgstr "Качване"
 
 #: exe/webui/common.py:503
 msgid "Results"
@@ -7091,8 +7598,9 @@ msgid "Total"
 msgstr ""
 
 #: exe/webui/common.py:505
+#, fuzzy
 msgid "Another word"
-msgstr ""
+msgstr "Добавяне на друг вариант"
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7113,11 +7621,11 @@ msgstr ""
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
-msgstr ""
+msgstr "eXe : XHTML редактор за е-обучение"
 
 #: exe/webui/common.py:839 exe/webui/common.py:842
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "Цъкнете за указания за завършването"
 
 #: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
@@ -7125,15 +7633,15 @@ msgstr ""
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:251
 msgid "Text Line"
-msgstr ""
+msgstr "Ред"
 
 #: exe/webui/editorelement.py:111 exe/webui/editorpane.py:253
 msgid "Text Box"
-msgstr ""
+msgstr "Текстово поле"
 
 #: exe/webui/editorelement.py:149 exe/webui/element.py:602
 msgid "Button Caption"
-msgstr ""
+msgstr "Заглавие на бутона"
 
 #: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
 #: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
@@ -7147,7 +7655,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:18
 msgid "Left"
-msgstr ""
+msgstr "Ляво"
 
 #: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
 #: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
@@ -7161,47 +7669,47 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:76
 msgid "Right"
-msgstr ""
+msgstr "Дясно"
 
 #: exe/webui/editorelement.py:228 exe/webui/flashmovieblock.py:87
 #: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/imagewithtextblock.py:88 exe/webui/multimediablock.py:92
 msgid "Align:"
-msgstr ""
+msgstr "Подравняване:"
 
 #: exe/webui/editorelement.py:268 exe/webui/element.py:1889
 msgid "Select Flash Object"
-msgstr ""
+msgstr "Изберете Flash обект"
 
 #: exe/webui/editorelement.py:308
 msgid "Select MP3 file"
-msgstr ""
+msgstr "Изберете МР3 файл"
 
 #: exe/webui/editorelement.py:311 exe/webui/element.py:869
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
-msgstr ""
+msgstr "Заглавие:"
 
 #: exe/webui/editorpage.py:125
 msgid "Please enter an idevice name."
-msgstr ""
+msgstr "Моля въведете име на Помощното средство."
 
 #: exe/webui/editorpage.py:188 exe/webui/editorpage.py:200
 msgid "Sorry, wrong file format."
-msgstr ""
+msgstr "Грешен файлов формат."
 
 #: exe/webui/editorpage.py:262
 msgid "Import iDevice"
-msgstr ""
+msgstr "Внасяне"
 
 #: exe/webui/editorpage.py:265
 msgid "Export iDevice"
-msgstr ""
+msgstr "Изнасяне"
 
 #: exe/webui/editorpage.py:291
 msgid "New iDevice"
-msgstr ""
+msgstr "Ново Помощно средство"
 
 #: exe/webui/editorpane.py:67
 msgid ""
@@ -7209,22 +7717,30 @@ msgid ""
 " a compulsory field and you will be prompted to enter a label if you try "
 "to submit your iDevice without one."
 msgstr ""
+"Вашето ново Помощно средство ще се появи в панела Помощни средства с това"
+" име. Това е задължително поле и ще бъдете запитани да въведете етикет "
+"ако опитате да изпратите вашето Помощно средство без такъв ."
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
-msgstr ""
+msgstr "Това е незадължително поле."
 
 #: exe/webui/editorpane.py:72
 msgid ""
 "The purpose dialogue allows you to describe your intended purpose of the "
 "iDevice to other potential users."
 msgstr ""
+"Диалоговият прозорец Цел ви позволява да опишете предназначението на "
+"Помощното средство на други потенциални потребители."
 
 #: exe/webui/editorpane.py:75
 msgid ""
 "Use this pulldown to select whether or not  the iDevice should have any "
 "formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr ""
+"Използвайте това падащо меню за да изберете дали към това Помощно "
+"средство да има приложено някакво форматиране, което да го отличава; "
+"Например очертание или икона."
 
 #: exe/webui/editorpane.py:79
 msgid ""
@@ -7232,103 +7748,117 @@ msgid ""
 "device's development. This can be useful if your iDevice is to be "
 "exported for others to use."
 msgstr ""
+"Използвайте това поле за да опишете предназначението и педагогиката, "
+"стоящи зад разработката на Помощното средство. Това може да е полезно ако"
+" то бъде изнесено и предоставено за използване от други."
 
 #: exe/webui/editorpane.py:84
 msgid ""
 "Add a single text line to an iDevice. Useful if you want the ability to "
 "place a label within the iDevice."
 msgstr ""
+"Добавяне на един ред с текст към Помощното средство. Полезно ако искате "
+"да поставяте етикет към Помощното средство."
 
 #: exe/webui/editorpane.py:87
 msgid ""
 "Add a text entry box to an iDevice. Used for entering larger amounts of "
 "textual content."
 msgstr ""
+"Добавяне на текстово поле към Помощното средство. Използва се за "
+"въвеждане на по-голям обем текстово съдържание."
 
 #: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
 msgstr ""
+"Добавяне на интерактивно поле за помощна информация към вашето Помощно "
+"средство."
 
 #: exe/webui/editorpane.py:91
 msgid "Add a flash video to your iDevice."
-msgstr ""
+msgstr "Добавяне на flash видео към вашето Помощно средство."
 
 #: exe/webui/editorpane.py:92
 msgid "Add an mp3 file to your iDevice."
-msgstr ""
+msgstr "Добавяне на mp3  файл към вашето Помощно средство."
 
 #: exe/webui/editorpane.py:93
 msgid "Add an attachment file to your iDevice."
-msgstr ""
+msgstr "Добавяне на прикачен файл към вашето Помощно средство."
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:152
 #: exe/webui/editorpane.py:160 exe/webui/editorpane.py:176
 #: exe/webui/editorpane.py:186
 msgid "Enter the label here"
-msgstr ""
+msgstr "Тук въведете етикета"
 
 #: exe/webui/editorpane.py:146
 msgid "Enter instructions for completion here"
-msgstr ""
+msgstr "Тук въведете указания за завършване"
 
 #: exe/webui/editorpane.py:153 exe/webui/editorpane.py:177
 #: exe/webui/editorpane.py:187
 msgid "Enter the instructions for completion here"
-msgstr ""
+msgstr "Тук въведете указанията за завършване"
 
 #: exe/webui/editorpane.py:161
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr ""
+"Бутонът за помощна информация няма да се появи ако \n"
+"няма въведени данни в това поле."
 
 #: exe/webui/editorpane.py:198
 msgid "Please enter<br />an idevice name."
 msgstr ""
+"Моля въведете име \n"
+"на Помощното средство."
 
 #: exe/webui/editorpane.py:250
 msgid "Add Field"
-msgstr ""
+msgstr "Добавяне на поле"
 
 #: exe/webui/editorpane.py:265
 msgid "Actions"
-msgstr ""
+msgstr "Действия"
 
 #: exe/webui/editorpane.py:332
 msgid "Pedagogical Tip"
-msgstr ""
+msgstr "Педагогически съвет"
 
 #: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:163
 msgid "Emphasis"
-msgstr ""
+msgstr "Наблягане"
 
 #: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:160
 msgid "No emphasis"
-msgstr ""
+msgstr "Без наблягане"
 
 #: exe/webui/editorpane.py:339 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:161
 msgid "Some emphasis"
-msgstr ""
+msgstr "Леко наблягане"
 
 #: exe/webui/editorpane.py:354
+#, fuzzy
 msgid "Select an icon"
-msgstr ""
+msgstr "Изберете изображение"
 
 #: exe/webui/editorpane.py:368
 msgid "Icons"
-msgstr ""
+msgstr "Икони"
 
 #: exe/webui/editorpane.py:383
 msgid "Info"
-msgstr ""
+msgstr "Информация"
 
 #: exe/webui/editorpane.py:429 exe/webui/element.py:1545
 #: exe/webui/element.py:1547 exe/webui/element.py:1803
 msgid "Submit"
-msgstr ""
+msgstr "Изпращане"
 
 #: exe/webui/ejercicioresueltofpdblock.py:122
 msgid "Translation"
@@ -7337,35 +7867,35 @@ msgstr ""
 #: exe/webui/eleccionmultiplefpdblock.py:98 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
-msgstr ""
+msgstr "Моля изберете верен отговор за всеки въпрос."
 
 #: exe/webui/eleccionmultiplefpdblock.py:124 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:119
 msgid "Add another question"
-msgstr ""
+msgstr "Добавяне на друг въпрос"
 
 #: exe/webui/element.py:72
-#, python-format
+#, fuzzy, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr ""
+msgstr "ERROR Element.process called directly with %s class"
 
 #: exe/webui/element.py:81
-#, python-format
+#, fuzzy, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
-msgstr ""
+msgstr "ERROR Element.renderEdit called directly with %s class"
 
 #: exe/webui/element.py:98
-#, python-format
+#, fuzzy, python-format
 msgid "ERROR Element.renderView called directly with %s class"
-msgstr ""
+msgstr "ERROR Element.renderView called directly with %s class"
 
 #: exe/webui/element.py:753 exe/webui/element.py:1174
 msgid "Add Image"
-msgstr ""
+msgstr "Добавяне на изображение"
 
 #: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
 msgid "Display as:"
-msgstr ""
+msgstr "Показване като:"
 
 #: exe/webui/element.py:786
 msgid "by"
@@ -7373,24 +7903,24 @@ msgstr ""
 
 #: exe/webui/element.py:793 exe/webui/element.py:1212
 msgid "blank for original size"
-msgstr ""
+msgstr "празно за оригинален размер"
 
 #: exe/webui/element.py:863
 msgid "Select an MP3"
-msgstr ""
+msgstr "Изберете МР3"
 
 #: exe/webui/element.py:1351 exe/webui/element.py:1684
 msgid "Cloze Text"
-msgstr ""
+msgstr "Текст"
 
 #: exe/webui/element.py:1359 exe/webui/element.py:1692
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
-msgstr ""
+msgstr "Скриване/Показване на Дума"
 
 #: exe/webui/element.py:1364 exe/webui/element.py:1697
 msgid "Strict Marking?"
-msgstr ""
+msgstr "Точно Отчитане?"
 
 #: exe/webui/element.py:1369
 msgid "Check Capitalization?"
@@ -7398,7 +7928,7 @@ msgstr ""
 
 #: exe/webui/element.py:1374 exe/webui/element.py:1707
 msgid "Instant Marking?"
-msgstr ""
+msgstr "Моментално маркиране?"
 
 #: exe/webui/element.py:1485 exe/webui/element.py:1742
 #: exe/webui/listablock.py:223
@@ -7407,15 +7937,15 @@ msgstr ""
 
 #: exe/webui/element.py:1535 exe/webui/element.py:1794
 msgid "Get score"
-msgstr ""
+msgstr "Получаване на резултат"
 
 #: exe/webui/element.py:1541 exe/webui/element.py:1800
 msgid "Show/Clear Answers"
-msgstr ""
+msgstr "Паказване/Изчистване на Отговори"
 
 #: exe/webui/element.py:1551 exe/webui/element.py:1807
 msgid "Show Answers"
-msgstr ""
+msgstr "Показване на Отговори"
 
 #: exe/webui/element.py:1587 exe/webui/element.py:1839
 #: exe/webui/element.py:2461 exe/webui/element.py:2921
@@ -7425,7 +7955,7 @@ msgstr ""
 
 #: exe/webui/element.py:1702
 msgid "Check Caps?"
-msgstr ""
+msgstr "Проверка на главни/малки букви?"
 
 #: exe/webui/element.py:1712
 msgid "Show Score?"
@@ -7433,48 +7963,48 @@ msgstr ""
 
 #: exe/webui/element.py:1797
 msgid "Show/Hide Feedback"
-msgstr ""
+msgstr "Показване/Скриване на Помощна информация"
 
 #: exe/webui/element.py:1955
 msgid "Please select a .flv file."
-msgstr ""
+msgstr "Моля изберете .flv  файл."
 
 #: exe/webui/element.py:1971
 msgid "Select a flash video"
-msgstr ""
+msgstr "Изберете flash  видео"
 
 #: exe/webui/element.py:2080
 msgid "text"
-msgstr ""
+msgstr "текст"
 
 #: exe/webui/element.py:2081
 msgid "newline"
-msgstr ""
+msgstr "нов ред"
 
 #: exe/webui/element.py:2084
 msgid "Select a font size: "
-msgstr ""
+msgstr "Изберете размер на шрифта:"
 
 #: exe/webui/element.py:2194 exe/webui/element.py:2581
 #: exe/webui/element.py:2706 exe/webui/element.py:2724
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
-msgstr ""
+msgstr "Правилен вариант"
 
 #: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
-msgstr ""
+msgstr "Изтриване на вариант"
 
 #: exe/webui/element.py:2361 exe/webui/element.py:2816
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
-msgstr ""
+msgstr "Изтриване на въпрос"
 
 #: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
-msgstr ""
+msgstr "Добавяне на друг вариант"
 
 #: exe/webui/element.py:2497 exe/webui/element.py:2940
 msgid "Solution"
@@ -7482,11 +8012,11 @@ msgstr ""
 
 #: exe/webui/element.py:2831
 msgid "Add another option"
-msgstr ""
+msgstr "Добавяне на друг вариант"
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: exe/webui/externalurlblock.py:72
 msgid "small"
@@ -7502,7 +8032,7 @@ msgstr ""
 
 #: exe/webui/externalurlblock.py:81
 msgid "Frame Height:"
-msgstr ""
+msgstr "Височина на рамката:"
 
 #: exe/webui/fileattachblock.py:92
 msgid "<div>\n"
@@ -7537,39 +8067,39 @@ msgstr ""
 #: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:307
 #: exe/webui/galleryblock.py:308
 msgid "Add images"
-msgstr ""
+msgstr "Добавяне на изображения"
 
 #: exe/webui/galleryblock.py:230 exe/webui/galleryblock.py:332
 msgid "No Images Loaded"
-msgstr ""
+msgstr "Няма заредени изображения"
 
 #: exe/webui/galleryblock.py:246 exe/webui/galleryblock.py:264
 msgid "Change Image"
-msgstr ""
+msgstr "Промяна на изображението"
 
 #: exe/webui/galleryblock.py:271
 msgid "Move Image Left"
-msgstr ""
+msgstr "Премесване на изображението наляво"
 
 #: exe/webui/galleryblock.py:273
 msgid "Go Back"
-msgstr ""
+msgstr "Назад"
 
 #: exe/webui/galleryblock.py:285
 msgid "Move Image Right"
-msgstr ""
+msgstr "Премесване на изображението надясно"
 
 #: exe/webui/galleryblock.py:287
 msgid "Go Forward"
-msgstr ""
+msgstr "Напред"
 
 #: exe/webui/galleryblock.py:295
 msgid "Go Forward (Not Available)"
-msgstr ""
+msgstr "Напред (не е налично)"
 
 #: exe/webui/galleryblock.py:300
 msgid "Delete Image"
-msgstr ""
+msgstr "Изтриване на изображение"
 
 #: exe/webui/galleryblock.py:301
 msgid "Delete this image?"
@@ -7619,31 +8149,31 @@ msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
-msgstr ""
+msgstr "Първоначално увеличение"
 
 #: exe/webui/imagemagnifierblock.py:153
 msgid "Maximum zoom"
-msgstr ""
+msgstr "Максимално увеличение"
 
 #: exe/webui/imagemagnifierblock.py:159
 msgid "Small"
-msgstr ""
+msgstr "Малък"
 
 #: exe/webui/imagemagnifierblock.py:160
 msgid "Medium"
-msgstr ""
+msgstr "Средно"
 
 #: exe/webui/imagemagnifierblock.py:161
 msgid "Large"
-msgstr ""
+msgstr "Голям"
 
 #: exe/webui/imagemagnifierblock.py:162
 msgid "Extra large"
-msgstr ""
+msgstr "Много голям"
 
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
-msgstr ""
+msgstr "Размер на лупата:"
 
 #: exe/webui/listablock.py:180
 msgid "Other words"
@@ -7673,7 +8203,7 @@ msgstr ""
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:100
 msgid "Add another Question"
-msgstr ""
+msgstr "Добавяне на друг въпрос"
 
 #: exe/webui/notablock.py:104
 msgid "Show/Hide"
@@ -7741,11 +8271,11 @@ msgstr ""
 
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
-msgstr ""
+msgstr "Минимален % верни отговори за преминаване"
 
 #: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:368
 msgid "SUBMIT ANSWERS"
-msgstr ""
+msgstr "ИЗПРАЩАНЕ НА ОТГОВОРИТЕ"
 
 #: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318
 #: exe/webui/quiztestblock.py:372
@@ -7763,19 +8293,21 @@ msgstr ""
 
 #: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:156
 msgid "Load"
-msgstr ""
+msgstr "Зареждане"
 
 #: exe/webui/scripts/authoring.js:69
+#, fuzzy
 msgid "Select one or more images"
-msgstr ""
+msgstr "Изберете изображение"
 
 #: exe/webui/scripts/authoring.js:94
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
+#, fuzzy
 msgid "Flash Movie (.flv)"
-msgstr ""
+msgstr "Flash видео"
 
 #: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
 msgid "Flash Object (.swf)"
@@ -7802,12 +8334,14 @@ msgid "MP3 Audio (.mp3)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:378
+#, fuzzy
 msgid "Select an mp3 file"
-msgstr ""
+msgstr "Изберете файл"
 
 #: exe/webui/scripts/authoring.js:386
+#, fuzzy
 msgid "Select a package"
-msgstr ""
+msgstr "Изберете изображение"
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
@@ -7824,8 +8358,9 @@ msgid "Do you want to overwrite the existing idevice {idevice}?"
 msgstr ""
 
 #: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
+#, fuzzy
 msgid "eXe Idevices"
-msgstr ""
+msgstr "Помощни средства"
 
 #: exe/webui/scripts/editor.js:87
 msgid "Please save the idevice first, then try to export it."
@@ -7857,7 +8392,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
-msgstr ""
+msgstr "Затваряне"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert"
@@ -8954,8 +9489,9 @@ msgid "Node"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
+#, fuzzy
 msgid "Download Information"
-msgstr ""
+msgstr "Информация"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
@@ -8999,12 +9535,14 @@ msgid "Quote"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
+#, fuzzy
 msgid "Quote Language"
-msgstr ""
+msgstr "Изберете език"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
+#, fuzzy
 msgid "Authorship"
-msgstr ""
+msgstr "Създаване"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:9
 msgid "Authorship Language"
@@ -9065,24 +9603,27 @@ msgid "Stop"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
+#, fuzzy
 msgid "Replace with:"
-msgstr ""
+msgstr "Изображение с Текст"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
+#, fuzzy
 msgid "Edit code"
-msgstr ""
+msgstr "Получаване на резултат"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:4
 msgid "Auto close tags"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:5
+#, fuzzy
 msgid "Wrap text"
-msgstr ""
+msgstr "текст"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
@@ -9090,8 +9631,9 @@ msgid "Highlight syntax"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
+#, fuzzy
 msgid "Select a theme"
-msgstr ""
+msgstr "Изберете изображение"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
 msgid "Search"
@@ -9102,8 +9644,9 @@ msgid "Find next"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
+#, fuzzy
 msgid "Find previous"
-msgstr ""
+msgstr "Предишен"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
 msgid "Replace all"
@@ -9122,8 +9665,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
+#, fuzzy
 msgid "Term"
-msgstr ""
+msgstr "Друго"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
 msgid "Term definition"
@@ -9261,8 +9805,9 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
+#, fuzzy
 msgid "Choose a type:"
-msgstr ""
+msgstr "Изберете изображение"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
 msgid "Accordion"
@@ -9281,24 +9826,27 @@ msgid "A single content area with multiple panels."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
+#, fuzzy
 msgid "Pagination"
-msgstr ""
+msgstr "Вариант"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
 msgid "Divide your content into different pages."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:26
+#, fuzzy
 msgid "Carousel"
-msgstr ""
+msgstr "Faroese"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:27
 msgid "Present a list of contents in horizontal order."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
+#, fuzzy
 msgid "Timeline"
-msgstr ""
+msgstr "нов ред"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
@@ -9341,8 +9889,9 @@ msgid "This is the message that the users with no JavaScript will see:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
+#, fuzzy
 msgid "Message:"
-msgstr ""
+msgstr "Изображение"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
 msgid "You can change it at any time."
@@ -10145,12 +10694,14 @@ msgid "Include wrapper (improves presentation)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
 msgid "Markup language"
-msgstr ""
+msgstr "Изберете език"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
+#, fuzzy
 msgid "Please select a language"
-msgstr ""
+msgstr "Изберете език"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
@@ -10162,8 +10713,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
+#, fuzzy
 msgid "Light"
-msgstr ""
+msgstr "Дясно"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
@@ -10557,12 +11109,14 @@ msgid "Behaviour"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
+#, fuzzy
 msgid "Link"
-msgstr ""
+msgstr "Подравняване:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
+#, fuzzy
 msgid "Instructions:"
-msgstr ""
+msgstr "Указания"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
@@ -10573,12 +11127,14 @@ msgid "No selection and not in link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
+#, fuzzy
 msgid "Pages"
-msgstr ""
+msgstr "Голям"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
+#, fuzzy
 msgid "Link title"
-msgstr ""
+msgstr "Wiki Статия"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
@@ -10593,8 +11149,9 @@ msgid "The tooltip will show the Link title."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
+#, fuzzy
 msgid "Definition"
-msgstr ""
+msgstr "Разсъждение"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
 msgid "The term could not be found"
@@ -10607,8 +11164,9 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
+#, fuzzy
 msgid "Definition:"
-msgstr ""
+msgstr "Описание:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
@@ -10620,8 +11178,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
+#, fuzzy
 msgid "Page"
-msgstr ""
+msgstr "Голям"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
@@ -10664,8 +11223,9 @@ msgid "The Link is required"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
+#, fuzzy
 msgid "Please select a Page"
-msgstr ""
+msgstr "Моля изберете .flv  файл."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
 msgid "The Link title is required"
@@ -11090,8 +11650,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
+#, fuzzy
 msgid "Editor"
-msgstr ""
+msgstr "Редактор на Помощни средства"
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
@@ -11231,8 +11792,9 @@ msgid "General settings"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:13
+#, fuzzy
 msgid "Page width"
-msgstr ""
+msgstr "Изображение с Текст"
 
 #: exe/webui/tools/style-designer/langs/en.js:14
 msgid "Percentage"
@@ -11263,28 +11825,32 @@ msgid "Text and Links"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:25
+#, fuzzy
 msgid "Text color"
-msgstr ""
+msgstr "Получаване на резултат"
 
 #: exe/webui/tools/style-designer/langs/en.js:27
+#, fuzzy
 msgid "Links"
-msgstr ""
+msgstr "Подравняване:"
 
 #: exe/webui/tools/style-designer/langs/en.js:28
 msgid "Links color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:30
+#, fuzzy
 msgid "Style description"
-msgstr ""
+msgstr "Описание"
 
 #: exe/webui/tools/style-designer/langs/en.js:32
 msgid "Author URL"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:33
+#, fuzzy
 msgid "Style name"
-msgstr ""
+msgstr "Име на файл:"
 
 #: exe/webui/tools/style-designer/langs/en.js:34
 msgid "Save to name the new Style."
@@ -11313,8 +11879,9 @@ msgid "Background color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:44
+#, fuzzy
 msgid "Select image"
-msgstr ""
+msgstr "Изберете изображение"
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
@@ -11395,8 +11962,9 @@ msgid "Top margin"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:78
+#, fuzzy
 msgid "Font size"
-msgstr ""
+msgstr "Изберете размер на шрифта:"
 
 #: exe/webui/tools/style-designer/langs/en.js:80
 msgid "Navigation"
@@ -11439,8 +12007,9 @@ msgid "Grey"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:94
+#, fuzzy
 msgid "With emphasis"
-msgstr ""
+msgstr "Без наблягане"
 
 #: exe/webui/tools/style-designer/langs/en.js:95
 msgid "Title color"
@@ -11493,8 +12062,9 @@ msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:111
+#, fuzzy
 msgid "Finish"
-msgstr ""
+msgstr "Финландски"
 
 #: exe/webui/tools/style-designer/langs/en.js:113
 msgid "Save as"
@@ -11509,8 +12079,9 @@ msgid "Save all changes? This cannot be undone."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:117
+#, fuzzy
 msgid "Style name:"
-msgstr ""
+msgstr "Име на файл:"
 
 #: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Your browser is not compatible with this tool."
@@ -11543,8 +12114,9 @@ msgid "Drag markers to pick a color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:134
+#, fuzzy
 msgid "Current"
-msgstr ""
+msgstr "Невярно"
 
 #: exe/webui/tools/style-designer/langs/en.js:140
 msgid "New Color - Press OK to Commit"
@@ -11626,16 +12198,16 @@ msgstr ""
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
 msgid "True"
-msgstr ""
+msgstr "Вярно"
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:218
 #: exe/webui/truefalseelement.py:264
 msgid "False"
-msgstr ""
+msgstr "Невярно"
 
 #: exe/webui/wikipediablock.py:115
 msgid "English Wikipedia Article"
-msgstr ""
+msgstr "Английска статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:116
 msgid "Basque Wikipedia Article"
@@ -11643,23 +12215,23 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:117
 msgid "Catalan Wikipedia Article"
-msgstr ""
+msgstr "Каталонска статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:118
 msgid "Chinese Wikipedia Article"
-msgstr ""
+msgstr "Китайска статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:119
 msgid "Dutch Wikipedia Article"
-msgstr ""
+msgstr "Холандска статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:120
 msgid "French Wikipedia Article"
-msgstr ""
+msgstr "Френска статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:121
 msgid "German Wikipedia Article"
-msgstr ""
+msgstr "Германска статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:122
 msgid "Galician Wikipedia Article"
@@ -11667,63 +12239,63 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Greek Wikipedia Article"
-msgstr ""
+msgstr "Гръцка статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:124
 msgid "Italian Wikipedia Article"
-msgstr ""
+msgstr "Италианска статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:125
 msgid "Japanese Wikipedia Article"
-msgstr ""
+msgstr "Японска статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:126
 msgid "Magyar Wikipedia Article"
-msgstr ""
+msgstr "Унгарска статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:127
 msgid "Polish Wikipedia Article"
-msgstr ""
+msgstr "Полска статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:128
 msgid "Portugese Wikipedia Article"
-msgstr ""
+msgstr "Португалска статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:129
 msgid "Slovenian Wikipedia Article"
-msgstr ""
+msgstr "Словашка статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:130
 msgid "Spanish Wikipedia Article"
-msgstr ""
+msgstr "Испанска статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:131
 msgid "Swedish Wikipedia Article"
-msgstr ""
+msgstr "Шведска статия в Wikipedia"
 
 #: exe/webui/wikipediablock.py:132
 msgid "Wikibooks Article"
-msgstr ""
+msgstr "Wikibooks Статия"
 
 #: exe/webui/wikipediablock.py:133
 msgid "Wikiversity"
-msgstr ""
+msgstr "Wikiversity"
 
 #: exe/webui/wikipediablock.py:134
 msgid "Wiktionary"
-msgstr ""
+msgstr "Wiktionary"
 
 #: exe/webui/wikipediablock.py:135
 msgid "Wikieducator Content"
-msgstr ""
+msgstr "Wikieducator Съдържание"
 
 #: exe/webui/wikipediablock.py:141
 msgid "Site"
-msgstr ""
+msgstr "Сайт"
 
 #: exe/webui/wikipediablock.py:151
 msgid "Own site"
-msgstr ""
+msgstr "Собствен сайт"
 
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
@@ -11736,7 +12308,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:135
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
-msgstr ""
+msgstr "Добре"
 
 #: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
 #: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
@@ -11744,6 +12316,9 @@ msgid ""
 "Package is old. Please upgrade it (using File..Open followed by "
 "File..Save As) before attempting to insert it into another package!"
 msgstr ""
+"Пакетът е стар. Моля надградете го (като използвате Файл... Отваряне, "
+"след това Файл... Запазване като) преди да се опитате да го вмъкнете в "
+"друг пакет!"
 
 #: twisted/persisted/styles.py:437
 msgid ""
@@ -11757,4 +12332,7 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
+"Или .data файлът на вашите Помощни средства или пакетът, който зареждате,"
+" са създадени с по-нова версия на еХе. Моля осъвременете еХе и опитайте "
+"отново."
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-22 13:57+0200\n"
+"POT-Creation-Date: 2016-05-22 14:14+0200\n"
 "PO-Revision-Date: 2008-10-24 00:19+1300\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language: el\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: exe/engine/appletidevice.py:70
 msgid "Java Applet"
-msgstr ""
+msgstr "Μικροεφαρμογή Java"
 
 #: exe/engine/appletidevice.py:71 exe/engine/attachmentidevice.py:45
 #: exe/engine/casestudyidevice.py:201 exe/engine/clozefpdidevice.py:51
@@ -70,7 +70,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
-msgstr ""
+msgstr "Πανεπιστήμιο του Auckland"
 
 #: exe/engine/appletidevice.py:79
 msgid ""
@@ -79,6 +79,12 @@ msgid ""
 "buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
+"Προσθέστε όλα τα αρχεία που παρέχονται για τη μικροεφαρμογή ένα κάθε "
+"φορά,\n"
+"εκτός από το αρχείο .txt, χρησιμοποιώντας τα πλήκτρα Προσθήκης και "
+"Αποφόρτωσης.\n"
+"Τα αρχεία αυτά, μόλις φορτωθούν, θα εμφανιστούν κάτω από το πεδίο κώδικα\n"
+"της μικροεφαρμογής."
 
 #: exe/engine/appletidevice.py:82
 msgid ""
@@ -87,6 +93,10 @@ msgid ""
 "applet \n"
 "code field."
 msgstr ""
+"\"Βρείτε το αρχείο .txt (στο αρχείο της μικρoεφαρμογής) \n"
+"και ανοίξτε το. Αντιγράψτε όλα τα περιεχόμενά του <ctrl A, ctrl C> στο "
+"πεδίο κώδικα\n"
+"της μικρoεφαρμογής."
 
 #: exe/engine/appletidevice.py:85
 msgid ""
@@ -97,16 +107,24 @@ msgid ""
 " \n"
 "you created in Geogebra.</p>"
 msgstr ""
+" <p>Εάν η μικροεφαρμογή που προσθέτετε δημιουργήθηκε \n"
+"με ένα από τα προγράμματα της αναπτυσσόμενης λίστας, παρακαλώ επιλέξτε το"
+"\n"
+"και προσθέστε το αρχείο της μικροεφαρμογής που δημιουργήθηκε από το "
+"πρόγραμμά σας. </p>\n"
+"<p>π.χ. Για μικροεφαρμογές Geogebra , επιλέξτε geogebra, μετά προσθέστε "
+"το αρχείο .ggb που \n"
+"δημιουργήσατε στο Geogebra.</p>"
 
 #: exe/engine/appletidevice.py:190
 #, python-format
 msgid "file %s has no parentNode"
-msgstr ""
+msgstr "το αρχείο %s δεν έχει πατρικό κόμβο"
 
 #: exe/engine/appletidevice.py:192 exe/engine/attachmentidevice.py:107
 #, python-format
 msgid "iDevice %s has no package"
-msgstr ""
+msgstr "Η ε-Μηχανή %s δεν έχει πακέτο"
 
 #: exe/engine/appletidevice.py:443
 msgid "Sorry, this URL is unreachable"
@@ -154,7 +172,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
-msgstr ""
+msgstr "Συνημμένο"
 
 #: exe/engine/attachmentidevice.py:46
 msgid ""
@@ -172,16 +190,21 @@ msgid ""
 "want to provide instructions on what you require the learner to do once "
 "the file is downloaded or how the material should be used."
 msgstr ""
+"Εισάγετε το κείμενο που θέλετε να συσχετίσετε με το ληφθέν αρχείο. Μπορεί"
+" να θέλετε να δώσετε οδηγίες για το τι πρέπει να κάνει ο μαθητής, μόλις "
+"ληφθεί το αρχείο ή πώς θα πρέπει να χρησιμοποιηθεί το υλικό."
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
-msgstr ""
+msgstr "Περιγραφή:"
 
 #: exe/engine/attachmentidevice.py:69
 msgid ""
 "Click <strong>Select a file</strong>, browse to the file you want to "
 "attach and select it."
 msgstr ""
+"Κάντε κλικ στο <strong>Επιλογή αρχείου</strong>, αναζητήστε και επιλέξτε "
+"το αρχείο που θέλετε να επισυνάψετε."
 
 #: exe/engine/attachmentidevice.py:72
 msgid ""
@@ -196,14 +219,14 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:105
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr ""
+msgstr "Το επισυναπτόμενο αρχείο %s δεν έχει γονικό κόμβο"
 
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/tools/style-designer/langs/en.js:46
 msgid "Image"
-msgstr ""
+msgstr "Εικόνα"
 
 #: exe/engine/casestudyidevice.py:65
 #: exe/engine/ejercicioresueltofpdidevice.py:65
@@ -211,12 +234,15 @@ msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
 msgstr ""
+"Προαιρετικά, επιλέξτε μια εικόνα που θα εμφανίζεται στον μαθητή όταν "
+"συμπληρώνει αυτή την ερώτηση"
 
 #: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
-msgstr ""
+msgstr "Μελέτη Περίπτωσης"
 
 #: exe/engine/casestudyidevice.py:202
+#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -239,6 +265,28 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Η Μελέτη Περίπτωσης είναι μια δραστηριότητα που παρέχει στους μαθητές \n"
+"μια προσομοίωση με εκπαιδευτικές αφετηρίες. Παίρνει μια κατάσταση, η "
+"οποία συνήθως βασίζεται \n"
+"στην πραγματικότητα και ζητάει από τους μαθητές να δείξουν ή να "
+"περιγράψουν ποια ενέργεια \n"
+"θα εκτελούσαν για να εκπληρώσουν τον στόχο ή να επιλύσουν μια "
+"προβληματική κατάσταση. \n"
+"Η Μελέτη Περίπτωσης επιτρέπει στους μαθητές να εφαρμόσουν τις γνώσεις "
+"τους και τις εμπειρίες τους \n"
+"για να εκπληρώσουν τους στόχους που έχουν καθοριστεί. Όταν σχεδιάζετε μια"
+" Μελέτη Περίπτωσης \n"
+"λάβετε υπόψη τα ακόλουθα:<ul> \n"
+"<li>\tΠοιες εκπαιδευτικές αξίες μεταβιβάζονται;</li>\n"
+"<li>\tΤι προετοιμασία χρειάζεται να κάνουν οι μαθητές για να "
+"εργαστούν;</li>\n"
+"<li>\tΠώς σχετίζεται η μελέτη με το υπόλοιπο μάθημα;</li>\n"
+"<li>\tΠώς οι μαθητές θα αλληλεπιδράσουν με το υλικό και μεταξύ τους; π.χ."
+"\n"
+"σε μια τάξη μπορούν να οριστούν ομάδες για να δουλέψουν σε διαφορετικές "
+"πλευρές της μελέτης\n"
+"και αν ναι, πώς οι ιδέες που θα αναπτυχθούν θα ανατροφοδοτήσουν την "
+"τάξη;</li></ul>"
 
 #: exe/engine/casestudyidevice.py:219
 #: exe/engine/ejercicioresueltofpdidevice.py:218
@@ -250,12 +298,18 @@ msgid ""
 "taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
+"Δημιουργήστε ένα σενάριο. Ένα καλό παράδειγμα είναι \n"
+"αυτό που περιγράφει μια διένεξη ή ορίζει τη σκηνή περιγράφοντας τους "
+"χαρακτήρες \n"
+"που εμπλέκονται στην ιστορία. Θα πρέπει επίσης να επιτρέπεται η ανάληψη "
+"δράσης, \n"
+"ώστε να βρεθεί λύση."
 
 #: exe/engine/casestudyidevice.py:223 exe/engine/casestudyidevice.py:411
 #: exe/engine/ejercicioresueltofpdidevice.py:222
 #: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
-msgstr ""
+msgstr "Σενάριο:"
 
 #: exe/engine/casestudyidevice.py:228
 #: exe/engine/ejercicioresueltofpdidevice.py:227
@@ -266,6 +320,12 @@ msgid ""
 "dilemma \n"
 "presented. "
 msgstr ""
+"Περιγράψτε τις ενέργειες που πρέπει \n"
+"να κάνει ο μαθητής, σχετικά με το σενάριο. Αυτές μπορεί να είναι υπό "
+"μορφή ερωτήσεων ή \n"
+"οδηγιών που καθοδηγούν τον μαθητή στη λήψη αποφάσεων σχετικών με το "
+"δίλημμα \n"
+"που παρουσιάζεται στο σενάριο."
 
 #: exe/engine/casestudyidevice.py:232
 #: exe/engine/ejercicioresueltofpdidevice.py:231
@@ -273,6 +333,8 @@ msgid ""
 "Provide relevant feedback on the \n"
 "situation."
 msgstr ""
+"Δώστε σχετική ανατροφοδότηση για την\n"
+"κατάσταση."
 
 #: exe/engine/casopracticofpdidevice.py:30
 msgid "FPD - Situation"
@@ -351,7 +413,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Title"
-msgstr ""
+msgstr "Τίτλος "
 
 #: exe/engine/clickinorderidevice.py:61
 msgid "Game Instructions"
@@ -565,6 +627,13 @@ msgid ""
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
 msgstr ""
+"<p>Οι ασκήσεις Συμπλήρωσης Κενών είναι κείμενα ή προτάσεις όπου οι "
+"μαθητές πρέπει να συμπληρώσουν τις λέξεις που λείπουν.  Χρησιμοποιούνται "
+"συχνά για τους ακόλουθους λόγους:</p><ol><li>έλεγχο γνώσης βασικών "
+"εννοιών των μαθημάτων (αυτό θα μπορούσε να είναι διαγνωστική, "
+"διαμορφωτική ή τελική αξιολόγηση).</li><li>Έλεγχος κατανόησης γραπτού "
+"λόγου.</li><li>Έλεγχος γνώσης λεξιλογίου.</li><li>Έλεγχος μορφολογίας "
+"λέξεων ή/και γραμματικής. </li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -590,6 +659,29 @@ msgid ""
 " idea to get a colleague to test the test/exercise to make sure there are"
 " no surprises!  </p>  </dd></dl>"
 msgstr ""
+"<dl>  <dt>Εάν στόχος σας είναι να εξετάσετε την κατανόηση βασικών εννοιών"
+" ή ενός κειμένου  </dt>  <dd>    <p>  γράψτε μια περίληψη της έννοιας ή "
+"του κειμένου. Αυτή θα πρέπει να είναι αρκετά μακροσκελής για να εξετάσει "
+"επαρκώς τη γνώση που στοχεύετε, αλλά και αρκετά μικρή ώστε να μην "
+"προκαλεί κόπωση. Λιγότερο από μια δακτυλογραφημένη σελίδα είναι πιθανόν "
+"επαρκής, αλλά μπορεί να θέλετε να γράψετε λιγότερα για τους αρχάριους "
+"μαθητές.    </p>    <p>Επιλέξτε τις λέξεις κλειδιά του κειμένου για την "
+"κατανόηση των εννοιών. Αυτές θα είναι πιθανώς ρήματα, ουσιαστικά και "
+"βασικά επιρρήματα. Επιλέξτε εναλλακτικές λύσεις με μια σαφή απάντηση.    "
+"</p>  </dd>  <dt>Αν στόχος σας είναι να εξετάσετε τη γνώση του λεξιλογίου"
+" <dt> < dd>γράψτε ένα κείμενο που χρησιμοποιεί το λεξιλόγιο που "
+"στοχεύετε. Το κείμενο αυτό πρέπει να είναι συνεπές, συνεκτικό και να έχει"
+" την κατάλληλη έκταση. Υπογραμμίστε τις λέξεις - στόχους του κειμένου. "
+"Επιλέξτε εναλλακτικές λύσεις με μια σαφή απάντηση.  </dd > < dt>Αν στόχος"
+" σας είναι να εξετάσετε τη μορφολογία ή τη γραμματική:  </dt>  <dd>  "
+"<p>γράψτε ένα κείμενο που χρησιμοποιεί τις γλωσσικές μορφές στις οποίες "
+"στοχεύετε. Το κείμενο αυτό πρέπει να είναι συνεπές, συνεκτικό και να έχει"
+" την κατάλληλη έκταση. Θυμηθείτε ότι στόχος δεν είναι η γνώση του "
+"λεξιλογίου, έτσι οι έννοιες των λέξεων κλειδιών πρέπει να είναι γνωστές "
+"στους μαθητές.  </p>  <p>Υπογραμμίστε τις λέξεις που στοχεύετε στο "
+"κείμενο. Εναλλατικά δώστε λέξεις με την ίδια ρίζα αλλά με διαφορετικά "
+"προσφύματα. Είναι καλή ιδέα να εξετάσει ένας συνάδελφος τη δραστηριότητα,"
+" ώστε να σιγουρευτείτε ότι δεν υπάρχουν εκπλήξεις!  </p>  </dd></dl>"
 
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
@@ -602,7 +694,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 msgid "Instructions"
-msgstr ""
+msgstr "Οδηγίες"
 
 #: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
 #: exe/engine/clozelangfpdidevice.py:121
@@ -611,15 +703,19 @@ msgid ""
 "completed. Default text will be entered if there are no changes to this "
 "field.\n"
 msgstr ""
+"Δώστε οδηγίες για το πώς θα συμπληρωθεί η δραστηριότητα συμπλήρωσης\n"
+"κενών. Αν δεν υπάρξουν αλλαγές σ' αυτό το πεδίο, θα εισαχθεί "
+"προεπιλεγμένο κείμενο.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
 #: exe/webui/element.py:1522 exe/webui/listablock.py:259
 msgid "Cloze"
-msgstr ""
+msgstr "Συμπλήρωση κενών"
 
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
+#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -630,6 +726,12 @@ msgid ""
 "answer can be defined enclosing them with pipes (|). I.e.: "
 "|dog|cat|bird|</p>"
 msgstr ""
+"<p>Εισάγετε το κείμενο της δραστηριότητας Συμπλήρωσης Κενών στο πεδίο\n"
+"επικολλώντας από μια άλλη πηγή ή πληκτρολογώντας απευθείας σε αυτό.\n"
+"</p><p>Για να επιλέξετε τις λέξεις που επιθυμείτε να αποκρύψετε, κάντε "
+"διπλό\n"
+"κλικ στη λέξη για να την επιλέξετε και στη συνέχεια κλικ στο πλήκτρο\n"
+"Εμφάνιση/Απόκρυψη Λέξης.</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -648,7 +750,7 @@ msgstr ""
 #: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
-msgstr ""
+msgstr "Ανατροφοδότηση"
 
 #: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
 #: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
@@ -656,43 +758,50 @@ msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
 msgstr ""
+"Εισάγετε όποια ανατροφοδότηση επιθυμείτε να παρέχετε στον μαθητή στο "
+"πεδίο ανατροφοδότησης. Το πεδίο αυτό μπορεί να μείνει κενό."
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
 msgid "Instructions For Learners"
-msgstr ""
+msgstr "Οδηγίες για τους Μαθητές"
 
 #: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
 #: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
-msgstr ""
+msgstr "Εισάγετε οδηγίες για τους μαθητές εδώ"
 
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:284
 msgid "Read the paragraph below and fill in the missing words"
 msgstr ""
+"Διαβάστε την παράγραφο που ακολουθεί και συμπληρώστε τις λέξεις που "
+"λείπουν"
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
 #: exe/engine/clozelangfpdidevice.py:296
 msgid "Allow auto completion when user filling the gaps."
-msgstr ""
+msgstr "Επιτρέψτε την αυτόματη συμπλήρωση καθώς ο μαθητής συμπληρώνει τα κενά."
 
 #: exe/engine/clozeidevice.py:49
 msgid "Cloze Activity"
-msgstr ""
+msgstr "Συμπλήρωσης Κενών"
 
 #: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
 msgstr ""
+"Διαβάστε την παράγραφο που ακολουθεί και συμπληρώστε τις λέξεις που "
+"λείπουν."
 
 #: exe/engine/clozelangfpdidevice.py:50
 msgid "FPD - Cloze Activity (Modified)"
 msgstr ""
 
 #: exe/engine/clozelangfpdidevice.py:126
+#, fuzzy
 msgid "Clozelang"
-msgstr ""
+msgstr "Συμπλήρωση κενών"
 
 #: exe/engine/config.py:70 exe/engine/config.py:71 exe/engine/config.py:75
 #: exe/engine/config.py:102
@@ -786,6 +895,28 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Η Μελέτη Περίπτωσης είναι μια δραστηριότητα που παρέχει στους μαθητές \n"
+"μια προσομοίωση με εκπαιδευτικές αφετηρίες. Παίρνει μια κατάσταση, η "
+"οποία συνήθως βασίζεται \n"
+"στην πραγματικότητα και ζητάει από τους μαθητές να δείξουν ή να "
+"περιγράψουν ποια ενέργεια \n"
+"θα εκτελούσαν για να εκπληρώσουν τον στόχο ή να επιλύσουν μια "
+"προβληματική κατάσταση. \n"
+"Η Μελέτη Περίπτωσης επιτρέπει στους μαθητές να εφαρμόσουν τις γνώσεις "
+"τους και τις εμπειρίες τους \n"
+"για να εκπληρώσουν τους στόχους που έχουν καθοριστεί. Όταν σχεδιάζετε μια"
+" Μελέτη Περίπτωσης \n"
+"λάβετε υπόψη τα ακόλουθα:<ul> \n"
+"<li>\tΠοιες εκπαιδευτικές αξίες μεταβιβάζονται;</li>\n"
+"<li>\tΤι προετοιμασία χρειάζεται να κάνουν οι μαθητές για να "
+"εργαστούν;</li>\n"
+"<li>\tΠώς σχετίζεται η μελέτη με το υπόλοιπο μάθημα;</li>\n"
+"<li>\tΠώς οι μαθητές θα αλληλεπιδράσουν με το υλικό και μεταξύ τους; π.χ."
+"\n"
+"σε μια τάξη μπορούν να οριστούν ομάδες για να δουλέψουν σε διαφορετικές "
+"πλευρές της μελέτης\n"
+"και αν ναι, πώς οι ιδέες που θα αναπτυχθούν θα ανατροφοδοτήσουν την "
+"τάξη;</li></ul>"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 msgid "FPD - Multi Choice Activity"
@@ -811,6 +942,23 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
+"Παρόλο που χρησιμοποιείται συχνά σε τυπικούς ελέγχους \n"
+"υπάρχουν περιπτώσεις όπου τα MCQ μπορούν να χρησιμοποιηθούν ως εργαλείο \n"
+"δοκιμασίας για να υποκινήσουν τη σκέψη και τη συζήτηση σε θέματα για τα "
+"οποία \n"
+"οι μαθητές είναι απρόθυμοι να απαντήσουν. \n"
+"\n"
+"Όταν σχεδιάζετε ένα τεστ MCQ λάβετε υπόψη τα ακόλουθα:\n"
+"<ul>\n"
+"<li> Ποια μαθησιακά αποτελέσματα εξετάζουν οι ερωτήσεις</li>\n"
+"<li> Ποιες διανοητικές δεξιότητες εξετάζονται</li>\n"
+"<li> Ποιες είναι οι γλωσσικές δεξιότητες του ακροατηρίου</li>\n"
+"<li> Φύλο και πολιτισμικές καταβολές</li>\n"
+"<li> Αποφύγετε να χρησιμοποιείτε γλώσσα ή μορφές ερωτήσεων που ενδέχεται"
+" \n"
+"     να παρέχουν ιδέες</li>\n"
+"</ul>\n"
+" "
 
 #: exe/engine/eleccionmultiplefpdidevice.py:76
 #: exe/engine/multichoiceidevice.py:75 exe/engine/multiselectidevice.py:60
@@ -831,6 +979,19 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
+"Όταν δημιουργείτε ένα MCQ θεωρήστε τα ακόλουθα:<ul>\n"
+"<li> Χρησιμοποιήστε φράσεις οικείες προς τους μαθητές, \n"
+"τις οποίες έχουν ξανασυναντήσει στη μελέτη τους </li>\n"
+"<li> Δώστε συνοπτικές απαντήσεις. </li>\n"
+"<li> Να υπάρχει συνέπεια μεταξύ του θέματος της ερώτησης και των "
+"απαντήσεων. </li>\n"
+"<li> Παρέχετε αρκετές επιλογές για να προκαλέσετε τους μαθητές να "
+"σκεφτούν προτού\n"
+"απαντήσουν. </li>\n"
+"<li> Σιγουρευτείτε ότι οι σωστές απαντήσεις δεν είναι πιο περιγραφικές "
+"από τις λανθασμένες </li>\n"
+"<li> Οι λάθος απαντήσεις θα πρέπει να 'ναι αληθοφανείς </li>\n"
+"</ul>\n"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:101
 #: exe/engine/multichoiceidevice.py:99
@@ -838,6 +999,8 @@ msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
+"Δώστε μια συμβουλή εδώ. \n"
+"Αν δεν θέλετε, αφήστε το πεδίο κενό."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
@@ -847,6 +1010,9 @@ msgid ""
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
+"Εισάγετε το θέμα της ερώτησης. \n"
+"Η ερώτηση θα πρέπει να είναι κατανοητή και σαφής. Αποφύγετε \n"
+"αρνητικές προτάσεις καθώς τείνουν να δημιουργούν αμφιβολίες."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:106
 #: exe/engine/multichoiceidevice.py:104
@@ -854,6 +1020,8 @@ msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
 msgstr ""
+"Τσεκάρετε τη σωστή επιλογή κάνοντας κλικ\n"
+"στο πλήκτρο επιλογής."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:108
 #: exe/engine/multichoiceidevice.py:106
@@ -863,6 +1031,11 @@ msgid ""
 " options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
+"Εισάγετε εδώ τις διαθέσιμες επιλογές. \n"
+"Μπορείτε να προσθέσετε επιλογές κάνοντας κλικ στο πλήκτρο \"Προσθήκη "
+"Άλλης Επιλογής\". \n"
+"Μπορείτε να διαγράψετε επιλογές κάνοντας κλικ στο κόκκινο \"x\" δεξιά από"
+" κάθε επιλογή."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:111
 #: exe/engine/multichoiceidevice.py:109
@@ -876,6 +1049,12 @@ msgid ""
 " answer\"\n"
 "for the other options."
 msgstr ""
+"Πληκτρολογείστε την ανατροφοδότηση που θέλετε να δει \n"
+"ο μαθητής όταν επιλέγει τη συγκεκριμένη απάντηση. Αν δεν συμπληρώσετε "
+"αυτό \n"
+"το πεδίο, το eXe θα παρέχει την εξής αυτόματη ανατροφοδότηση: \"Σωστή "
+"απάντηση\" \n"
+"ή \"Λάθος απάντηση\"."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3754
 #: exe/engine/field.py:3819 exe/engine/multichoiceidevice.py:131
@@ -885,14 +1064,14 @@ msgstr ""
 #: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
-msgstr ""
+msgstr "Ερώτηση"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:287
 #: exe/engine/multichoiceidevice.py:285
 msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
 " blank."
-msgstr ""
+msgstr "Δώστε μια συμβουλή εδώ. Αν δεν θέλετε, αφήστε το πεδίο κενό."
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
@@ -971,7 +1150,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:158
 #: exe/webui/appletblock.py:168
 msgid "Upload"
-msgstr ""
+msgstr "Αποφόρτωση"
 
 #: exe/engine/extendedfieldengine.py:298
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
@@ -980,7 +1159,7 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:185
 msgid "Delete File"
-msgstr ""
+msgstr "Διαγραφή Αρχείου"
 
 #: exe/engine/extendedfieldengine.py:306
 msgid "No File Uploaded Currently"
@@ -992,7 +1171,7 @@ msgstr ""
 #: exe/webui/multimediablock.py:87
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
-msgstr ""
+msgstr "Κανένα"
 
 #: exe/engine/extendedfieldengine.py:570
 msgid "is not a valid number - please try again<br/>"
@@ -1000,7 +1179,7 @@ msgstr ""
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
-msgstr ""
+msgstr "Εξωτερικός Διαδικτυακός Τόπος"
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -1011,12 +1190,24 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
+"Η ε-Μηχανή Εξωτερικών Διαδικτυακών Τόπων φορτώνει έναν εξωτερικό "
+"διαδικτυακό τόπο \n"
+"σε ένα ενσωματωμένο πλαίσιο του περιεχομένου του eXe, χωρίς να χρειάζεται"
+" το άνοιγμα ενός \n"
+"αναδυόμενου παραθύρου. Αυτό σημαίνει ότι οι μαθητές δεν θα είναι "
+"αναγκασμένοι \n"
+"να ασχολούνται με περιττά παράθυρα. Αυτή η ε-Μηχανή πρέπει να "
+"χρησιμοποιείται \n"
+"μόνον εάν το περιεχόμενο θα είναι σε απευθείας σύνδεση προσβάσιμο στους "
+"μαθητές."
 
 #: exe/engine/externalurlidevice.py:49 exe/engine/externalurlidevice.py:116
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
 msgstr ""
+"Εισάγετε το URL που επιθυμείτε να εμφανίζεται\n"
+"και επιλέξτε το μέγεθος της περιοχής μέσα στην οποία θα γίνει η εμφάνιση."
 
 #: exe/engine/field.py:2907 exe/engine/field.py:2954
 #: exe/engine/multimediaidevice.py:71
@@ -1024,8 +1215,11 @@ msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
+"Δώστε έναν τίτλο στο\n"
+"αρχείο MP3. Αυτό θα εμφανιστεί στη γραμμή τίτλου των αναπαραγωγέων."
 
 #: exe/engine/field.py:3090
+#, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1041,12 +1235,30 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p>Εάν δεν επιλεγεί, ένας μικρός αριθμός ορθογραφικών λαθών και "
+"πεζών-κεφαλαίων λαθών θα είναι αποδεκτός. Αν επιλεγεί, μόνο το ακριβές "
+"ταίριασμα στην ορθογραφία και στα πεζά-κεφαλαία γράμματα θα γίνει "
+"αποδεκτό.</p><p><strong>Για παράδειγμα:</strong> εάν η σωστή απάντηση "
+"είναι <code>Ελέφαντας</code> τότε και το <code>ελέφαντας</code> και το "
+"<code>Ελίφαντας</code> θα θεωρηθούν <em>\"αρκετά όμοια\"</em> από τον "
+"αλγόριθμο, δεδομένου ότι υπάρχει μόνο ένα γράμμα λανθασμένο, ακόμα κι αν "
+"ο \"Έλεγχος Κεφαλαίων - Πεζών\" είναι ενεργοποιημένος.</p><p>Αν ο έλεγχος"
+" Κεφαλαίων - Πεζών είναι απενεργοποιημένος στο ανωτέρω παράδειγμα, το "
+"πεζό γράμμα <code>ε</code> δεν θα θεωρηθεί λάθος και το "
+"<code>ελίφαντας</code> θα γίνει επίσης αποδεκτό.</p><p>Αν και τα δύο, "
+"\"Αυστηρή επισήμανση\" και \"Έλεγχος Κεφαλαίων - Πεζών\" είναι "
+"ενεργοποιημένα, η μόνη σωστή απάντηση είναι \"Ελέφαντας\". Εάν μόνο η "
+"\"Αυστηρή επισήμανση\" είναι ενεργοποιημένη και ο \"Έλεγχος Κεφαλαίων - "
+"Πεζών\" δεν είναι, τότε και το \"ελέφαντας\" θα γίνει αποδεκτό.</p >"
 
 #: exe/engine/field.py:3111 exe/engine/field.py:3345
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
 msgstr ""
+"<p>Αν τσεκάρετε αυτή την επιλογή, οι υποβληθείσες απαντήσεις με "
+"διαφορετική καταχώρηση κεφαλαίων γραμμάτων θα εκληφθούν ως "
+"λανθασμένες.</p>"
 
 #: exe/engine/field.py:3116 exe/engine/field.py:3350
 msgid ""
@@ -1054,6 +1266,9 @@ msgid ""
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
+"<p>Αν καθοριστεί αυτή η επιλογή, κάθε λέξη θα επισημαίνεται \n"
+"καθώς πληκτρολογείται από τον μαθητή, αντί να επισημαίνονται όλες οι \n"
+"λέξεις στο τέλος της δραστηριότητας.</p>"
 
 #: exe/engine/field.py:3154 exe/engine/field.py:3392
 #: exe/engine/listaidevice.py:398
@@ -1061,6 +1276,8 @@ msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
+"Επιτρέψτε την αυτόματη συμπλήρωση καθώς \n"
+"                                       ο μαθητής συμπληρώνει τα κενά."
 
 #: exe/engine/field.py:3324
 msgid ""
@@ -1078,6 +1295,21 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p>Εάν δεν επιλεγεί, ένας μικρός αριθμός ορθογραφικών λαθών και "
+"πεζών-κεφαλαίων λαθών θα είναι αποδεκτός. Αν επιλεγεί, μόνο το ακριβές "
+"ταίριασμα στην ορθογραφία και στα πεζά-κεφαλαία γράμματα θα γίνει "
+"αποδεκτό.</p><p><strong>Για παράδειγμα:</strong> εάν η σωστή απάντηση "
+"είναι <code>Ελέφαντας</code> τότε και το <code>ελέφαντας</code> και το "
+"<code>Ελίφαντας</code> θα θεωρηθούν <em>\"αρκετά όμοια\"</em> από τον "
+"αλγόριθμο, δεδομένου ότι υπάρχει μόνο ένα γράμμα λανθασμένο, ακόμα κι αν "
+"ο \"Έλεγχος Κεφαλαίων - Πεζών\" είναι ενεργοποιημένος.</p><p>Αν ο έλεγχος"
+" Κεφαλαίων - Πεζών είναι απενεργοποιημένος στο ανωτέρω παράδειγμα, το "
+"πεζό γράμμα <code>ε</code> δεν θα θεωρηθεί λάθος και το "
+"<code>ελίφαντας</code> θα γίνει επίσης αποδεκτό.</p><p>Αν και τα δύο, "
+"\"Αυστηρή επισήμανση\" και \"Έλεγχος Κεφαλαίων - Πεζών\" είναι "
+"ενεργοποιημένα, η μόνη σωστή απάντηση είναι \"Ελέφαντας\". Εάν μόνο η "
+"\"Αυστηρή επισήμανση\" είναι ενεργοποιημένη και ο \"Έλεγχος Κεφαλαίων - "
+"Πεζών\" δεν είναι, τότε και το \"ελέφαντας\" θα γίνει αποδεκτό.</p >"
 
 #: exe/engine/field.py:3355
 msgid "<p>If this option is set, the score will be shown.</p>"
@@ -1088,16 +1320,20 @@ msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
+"Επιλέξτε μόνο .swf (Αντικείμενα Flash) γι' \n"
+"αυτή την ε-Μηχανή."
 
 #: exe/engine/field.py:3498 exe/engine/field.py:3562
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
+"Επιλέξτε μόνο .flv (Αρχεία Βίντεο Flash) γι' \n"
+"αυτή την ε-Μηχανή."
 
 #: exe/engine/field.py:3574
 msgid "Type a discussion topic here."
-msgstr ""
+msgstr "Πληκτρολογήστε ένα θέμα συζήτησης εδώ."
 
 #: exe/engine/field.py:3603
 msgid ""
@@ -1105,12 +1341,19 @@ msgid ""
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
 msgstr ""
+"<p>Επιλέξτε σύμβολα από τον επεξεργαστή κειμένου παρακάτω ή εισάγετε "
+"LATEX χειροκίνητα για να δημιουργήσετε έναν μαθηματικό τύπο. Για να "
+"κάνετε προεπισκόπηση του LATEX όπως θα εμφανίζεται, χρησιμοποιήστε &το "
+"πλήκτρο;Προεπισκόπηση&gt; παρακάτω.</p>"
 
 #: exe/engine/field.py:3611
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr ""
+"Κάντε κλικ στο πλήκτρο Προεπισκόπηση \n"
+"                                       για να μετατρέψετε το latex σε "
+"εικόνα."
 
 #: exe/engine/field.py:3679 exe/engine/field.py:3728
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
@@ -1118,21 +1361,21 @@ msgstr ""
 #: exe/webui/element.py:2576 exe/webui/element.py:2668
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
-msgstr ""
+msgstr "Επιλογή"
 
 #: exe/engine/field.py:3757 exe/engine/field.py:3823
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:452
 msgid "Hint"
-msgstr ""
+msgstr "Συμβουλή"
 
 #: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2381
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
 #: exe/webui/testquestionelement.py:110
 msgid "Options"
-msgstr ""
+msgstr "Επιλογές"
 
 #: exe/engine/field.py:3905
 msgid ""
@@ -1141,6 +1384,9 @@ msgid ""
 "these \n"
 "can tend to confuse learners."
 msgstr ""
+"Εισάγετε το θέμα της ερώτησης. \n"
+"Η ερώτηση θα πρέπει να είναι κατανοητή και σαφής. Αποφύγετε \n"
+"αρνητικές προτάσεις καθώς τείνουν να είναι αμφίβολες."
 
 #: exe/engine/field.py:3908 exe/engine/field.py:3989
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
@@ -1148,7 +1394,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:47
 #: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
 msgid "Question:"
-msgstr ""
+msgstr "Ερώτηση:"
 
 #: exe/engine/field.py:3913
 msgid ""
@@ -1157,25 +1403,35 @@ msgid ""
 " options by \n"
 "clicking the red X next to the option."
 msgstr ""
+"Εισάγετε εδώ τις διαθέσιμες επιλογές. \n"
+"Μπορείτε να προσθέσετε επιλογές κάνοντας κλικ στο κουμπί \"Προσθήκη άλλης"
+" επιλογής\". \n"
+"Μπορείτε να διαγράψετε επιλογές κάνοντας κλικ στο κόκκινο \"x\" δεξιά από"
+" κάθε επιλογή."
 
 #: exe/engine/field.py:3917
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr ""
+"Επιλογή, όσο γίνεται περισσότερων \n"
+"κριτηρίων για τη σωστή απάντηση, κάνοντας κλικ στο πεδίο δίπλα σε κάθε "
+"επιλογή."
 
 #: exe/engine/field.py:3920
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr ""
+"Πληκτρολογήστε την ανατροφοδότηση \n"
+"που θέλετε να παρέχετε στους μαθητές σας."
 
 #: exe/engine/field.py:3922 exe/engine/field.py:3992
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:204
 msgid "Feedback:"
-msgstr ""
+msgstr "Ανατροφοδότηση: "
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
@@ -1220,7 +1476,7 @@ msgstr ""
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr ""
+msgstr "Ταινία Flash"
 
 #: exe/engine/flashmovieidevice.py:41
 msgid ""
@@ -1232,12 +1488,24 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
+"Αυτή η ε-Μηχανή υποστηρίζει μόνο μορφή ταινίας flash (.flv) και δεν \n"
+"δέχεται άλλες μορφές αρχείων βίντεο. Μπορείτε παρόλ' αυτά να μετατρέψετε "
+"άλλες μορφές \n"
+"αρχείων βίντεο (π.χ. mov, wmf κλπ.) στη μορφή .flv χρησιμοποιώντας "
+"μετατροπείς άλλων \n"
+"κατασκευαστών, οι οποίοι όμως δεν παρέχονται από το eXe. Οι χρήστες "
+"πρέπει επίσης να \n"
+"μεταφορτώσουν το πρόγραμμα αναπαραγωγής Flash 8 από το "
+"http://www.macromedia.com/ \n"
+"για να αναπαράγουν την ταινία."
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
 msgstr ""
+"Εισάγετε \n"
+"το κείμενο που θέλετε να συσχετίσετε με το αρχείο."
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:70
@@ -1253,17 +1521,19 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Description"
-msgstr ""
+msgstr "Περιγραφή"
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:109
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr ""
+"Δώστε μια λεζάντα για την ταινία flash \n"
+"που μόλις εισάγατε."
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
-msgstr ""
+msgstr "Ταινία Flash με Κείμενο"
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1274,18 +1544,26 @@ msgid ""
 "file \n"
 "the learners will view."
 msgstr ""
+"Η ε-ΜηχανήΤαινίας Flash με Κείμενο σας επιτρέπει να \n"
+"συσχετίσετε επιπλέον κειμενική πληροφορία με ένα αρχείο flash. \n"
+"Αυτό μπορεί να είναι χρήσιμο όταν θέλετε να δώσετε οδηγίες \n"
+"σχετικά με την ταινία flash που θα δουν οι μαθητές."
 
 #: exe/engine/flashwithtextidevice.py:53
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
 msgstr ""
+"Εισάγετε το κείμενο που θέλετε να \n"
+"                                       συσχετίσετε με την εικόνα."
 
 #: exe/engine/flashwithtextidevice.py:58 exe/engine/flashwithtextidevice.py:118
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr ""
+"Δώστε μια λεζάντα για την ταινία flash \n"
+"                                  που μόλις εισάγατε."
 
 #: exe/engine/flashwithtextidevice.py:60 exe/engine/flashwithtextidevice.py:120
 msgid ""
@@ -1294,6 +1572,9 @@ msgid ""
 "screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr ""
+"Εισάγετε τις διαστάσεις εμφάνισης του flash \n"
+"(σε εικονοστοιχεία) και καθορίστε τη στοίχιση της εικόνας στην οθόνη. \n"
+"Οι διαστάσεις πλάτους και ύψους θα αλλάζουν αναλογικά."
 
 #: exe/engine/freetextfpdidevice.py:39
 msgid "FPD - Free Text"
@@ -1308,11 +1589,17 @@ msgid ""
 "built and \n"
 "delivered."
 msgstr ""
+"Το  παιδαγωγικό υλικό στην πλειοψηφία του\n"
+"οριοθετεί  ένα εισαγωγικό κομμάτι, όπου παρέχονται οδηγίες και γενικές "
+"πληροφορίες.\n"
+"Μέσα απ' αυτή τη διαδικασία παράγεται ένα πλαίσιο όπου οικοδομούνται και "
+"διαμοιράζονται \n"
+"οι μαθησιακές δραστηριότητες."
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
 msgid "Free Text"
-msgstr ""
+msgstr "Ελεύθερο κείμενο"
 
 #: exe/engine/freetextfpdidevice.py:47 exe/engine/freetextidevice.py:46
 msgid ""
@@ -1321,30 +1608,39 @@ msgid ""
 "applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
+"Χρησιμοποιήστε αυτό το πεδίο για να εισάγετε κείμενο, αν και αυτή \n"
+"η ε-Μηχανή δεν εστιάζει σε κάτι συγκεκριμένο. Μπορείτε, ωστόσο, να "
+"εφαρμόσετε \n"
+"περιορισμένη μορφοποίηση στο κείμενο μέσω των πλήκτρων επεξεργασίας "
+"κειμένου που σχετίζονται με αυτό το πεδίο."
 
 #: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
 msgstr ""
+"Αυτό είναι ένα πεδίο ελεύθερου κειμένου, όπου μπορεί να εισαχθεί "
+"μαθησιακό περιεχόμενο γενικής φύσης."
 
 #: exe/engine/galleryidevice.py:140 exe/engine/galleryidevice.py:191
 msgid "No Thumbnail Available. Could not load original image."
-msgstr ""
+msgstr "Δεν υπάρχει διαθέσιμη μικρογραφία. Αποτυχία φόρτωσης της αρχικής εικόνας."
 
 #: exe/engine/galleryidevice.py:148 exe/engine/galleryidevice.py:198
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr ""
+"Δεν υπάρχει διαθέσιμη μικρογραφία. Αποτυχία σμίκρυνσης της αρχικής "
+"εικόνας."
 
 #: exe/engine/galleryidevice.py:221
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr ""
+msgstr "Δεν υπάρχει διαθέσιμη μικρογραφία. Αποτυχία σμίκρυνσης εικόνας."
 
 #: exe/engine/galleryidevice.py:458
 msgid "Image Gallery"
-msgstr ""
+msgstr "Γκαλερί εικόνων"
 
 #: exe/engine/galleryidevice.py:459
 msgid "eXe Project"
-msgstr ""
+msgstr "Έργο eXe"
 
 #: exe/engine/galleryidevice.py:460
 msgid ""
@@ -1353,14 +1649,17 @@ msgid ""
 "display \n"
 "these in a gallery context rather then individually.</p>"
 msgstr ""
+"<p>Όπου έχετε έναν αριθμό εικόνων που συσχετίζονται \n"
+"μεταξύ τους ή με μια συγκεκριμένη δραστηριότητα, μπορεί \n"
+"να θέλετε να τις εμφανίσετε σε μια γκαλερί και όχι καθεμιά ξεχωριστά.</p>"
 
 #: exe/engine/galleryidevice.py:463
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr ""
+msgstr "Χρησιμοποιήστε αυτή την ε-Μηχανή αν έχετε να δείξετε πολλές εικόνες."
 
 #: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
-msgstr ""
+msgstr "Εισάγετε έναν τίτλο για τη γκαλερί"
 
 #: exe/engine/galleryidevice.py:473
 msgid ""
@@ -1368,15 +1667,19 @@ msgid ""
 "appear below where you will be able to label it. It's always good "
 "practice to put the file size in the label."
 msgstr ""
+"Κάντε κλικ στο πλήκτρο Προσθήκη Εικόνων για να επιλέξετε ένα αρχείο "
+"εικόνας. Η εικόνα θα εμφανιστεί πιο κάτω και θα πρέπει να της βάλετε μια "
+"ετικέτα. Είναι πάντα μια καλή πρακτική να ορίζετε το μέγεθος αρχείου στην"
+" ετικέτα."
 
 #: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:663
 msgid "Reading Activity 0.11"
-msgstr ""
+msgstr "Δραστηριότητα Ανάγνωσης 0.11"
 
 #: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:510
 #: exe/engine/idevicestore.py:554
 msgid "Reading Activity"
-msgstr ""
+msgstr "Δραστηριότητα Ανάγνωσης"
 
 #: exe/engine/hangmanidevice.py:51 exe/webui/common.py:490
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
@@ -1459,7 +1762,7 @@ msgstr ""
 #: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
 #: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
-msgstr ""
+msgstr "Επανεκκίνηση"
 
 #: exe/engine/hangmanidevice.py:104
 msgid "Restart Level Button Style (CSS)"
@@ -1532,6 +1835,14 @@ msgid ""
 " task \n"
 "based on the reading.</p>"
 msgstr ""
+"<p>Η Δραστηριότητα Ανάγνωσης θα χρησιμοποιηθεί\n"
+"κατά πρώτο λόγο για να ελέγξει την ικανότητα του μαθητή στην κατανόηση "
+"δοθέντος κειμένου.\n"
+"Αυτό μπορεί να γίνει ζητώντας από τον μαθητή να συλλογιστεί κατά την "
+"ανάγνωση και να\n"
+"και να απαντήσει στις ερωτήσεις κατανόησης, ή εκτελώντας κάποια άλλη "
+"εργασία που να\n"
+"βασίζεται στην ανάγνωση.</p>"
 
 #: exe/engine/idevicestore.py:562
 msgid ""
@@ -1547,10 +1858,23 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"<p>Οι εκπαιδευτικοί πρέπει να λάβουν υπόψη κατά τη χρήση αυτής της "
+"ε-Μηχανής τα εξής: </p> <ol><li>Σκεφτείτε τον αριθμό των διαφορετικών "
+"τύπων δραστηριοτήτων που προγραμματίσετε για το παιδαγωγικό σας υλικό, ο "
+"οποίος θα αναπαρίσταται οπτικά στο περιεχόμενο. Αποφύγετε πάρα πολλούς "
+"διαφορετικούς τύπους ταξινόμησης των δραστηριοτήτων ειδάλλως ο μαθητής "
+"μπορεί να μπερδευτεί. Συνήθως τρεις ή τέσσερις διαφορετικοί τύποι είναι "
+"υπερβολικά επαρκείς για ένα εκπαιδευτικό υλικό.</li><li>Για λόγους "
+"οπτικής σχεδίασης, αποφύγετε να έχετε δύο ε-Μηχανές μεταξύ των οποίων δεν"
+" υπάρχει κανένα κείμενο. Εάν αυτό απαιτείται, καλύτερα ενώστε δύο "
+"ερωτήσεις ή γεγονότα σε μια ε-Μηχανή. </li><li>Σκεφτείτε δραστηριότητες "
+"όπου το αντιληπτό όφελος που προκύπτει με την ολοκλήρωση της "
+"δραστηριότητας, ξεπερνά το χρόνο και την προσπάθεια που χρειάζεται για να"
+" ολοκληρωθεί η δραστηριότητα. </li></ol>"
 
 #: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:706
 msgid "What to read"
-msgstr ""
+msgstr "Τι να διαβάσετε"
 
 #: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:707
 msgid ""
@@ -1558,19 +1882,25 @@ msgid ""
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr ""
+"Δώστε λεπτομέρειες για την ανάγνωση περιλαμβάνοντας αναφορές. Το \n"
+"στυλ της αναφοράς που θα χρησιμοποιηθεί εξαρτάται από τις προτιμήσεις \n"
+"του κλάδου ή του σχολείου σας."
 
 #: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:640
 #: exe/engine/idevicestore.py:648 exe/engine/idevicestore.py:710
 #: exe/engine/idevicestore.py:747 exe/engine/idevicestore.py:755
 #: exe/webui/questionelement.py:110
 msgid "Activity"
-msgstr ""
+msgstr "Ελεύθερη Δραστηριότητα"
 
 #: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:711
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr ""
+"Περιγράψτε τις δράσεις που πρέπει να αναλάβουν οι μαθητές και  \n"
+"σχετίζονται με την ανάγνωση. Αυτό βοηθάει στην εξωτερίκευση \n"
+"της σχετικότητας των μαθητών."
 
 #: exe/engine/idevicestore.py:606 exe/engine/idevicestore.py:715
 msgid ""
@@ -1579,13 +1909,16 @@ msgid ""
 "question \n"
 "or providing a statement to begin a debate."
 msgstr ""
+"Χρησιμοποιήστε την ανατροφοδότηση για να δώσετε μια περίληψη\n"
+"των σημείων που καλύπτονται στη μελέτη, ή ως αρχικό σημείο για περαιτέρω\n"
+"ανάλυση, κάνοντας μια ερώτηση ή μια σύσταση για να ξεκινήσει μια συζήτηση."
 
 #: exe/engine/idevicestore.py:612 exe/engine/idevicestore.py:621
 #: exe/engine/idevicestore.py:719 exe/engine/idevicestore.py:728
 #: exe/engine/package.py:653 exe/engine/package.py:664
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:216
 msgid "Objectives"
-msgstr ""
+msgstr "Στόχοι"
 
 #: exe/engine/idevicestore.py:615 exe/engine/idevicestore.py:722
 msgid ""
@@ -1593,17 +1926,20 @@ msgid ""
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr ""
+"Οι στόχοι περιγράφουν τα αναμενόμενα μαθησιακά αποτελέσματα και\n"
+"θα πρέπει να καθορίζουν τι θα είναι ικανοί να κάνουν οι μαθητές όταν \n"
+"τελειώσουν τις δραστηριότητες."
 
 #: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
 msgid "Type the learning objectives for this resource."
-msgstr ""
+msgstr "Πληκτρολογήστε τους μαθησιακούς σκοπούς γι' αυτό το παιδαγωγικό υλικό."
 
 #: exe/engine/idevicestore.py:625 exe/engine/idevicestore.py:635
 #: exe/engine/idevicestore.py:732 exe/engine/idevicestore.py:742
 #: exe/engine/package.py:683 exe/engine/package.py:694
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
 msgid "Preknowledge"
-msgstr ""
+msgstr "Προαπαιτούμενες γνώσεις"
 
 #: exe/engine/idevicestore.py:628 exe/engine/idevicestore.py:735
 msgid ""
@@ -1615,12 +1951,22 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools "
 "</li></ul>\n"
 msgstr ""
+"Η προαπαιτούμενη γνώση αναφέρεται στη γνώση που θα πρέπει να διαθέτουν "
+"ήδη\n"
+"οι μαθητές για να μπορούν να ολοκληρώσουν με επιτυχία το μάθημα.\n"
+"Παραδείγματα προαπαιτούμενης γνώσης:<ul>\n"
+"<li>         Οι μαθητές πρέπει να έχουν γνώση αγγλικής γλώσσας επιπέδου 4"
+" </li>\n"
+"<li>        Οι μαθητές πρέπει να μπορούν να συνθέσουν προκαθορισμένα "
+"εργαλεία </li></ul>\n"
 
 #: exe/engine/idevicestore.py:636 exe/engine/idevicestore.py:743
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
+"Περιγράψτε τις προαπαιτούμενες γνώσεις που θα πρέπει να έχουν οι μαθητές\n"
+"για ολοκληρώσουν με επιτυχία τη δραστηριότητα."
 
 #: exe/engine/idevicestore.py:643 exe/engine/idevicestore.py:750
 msgid ""
@@ -1629,10 +1975,15 @@ msgid ""
 "conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
+"Μια δραστηριότητα μπορεί να οριστεί ως μια εργασία ή ένα σύνολο\n"
+"εργασιών που ο μαθητής πρέπει να ολοκληρώσει. Δώστε μια ξεκάθαρη \n"
+"περιγραφή της εργασίας και υπολογίστε όσες συνθήκες\n"
+"πιστεύετε ότι θα βοηθήσουν ή θα δυσκολέψουν τον μαθητή στην εκτέλεση\n"
+"της εργασίας."
 
 #: exe/engine/idevicestore.py:649 exe/engine/idevicestore.py:756
 msgid "Describe the tasks the learners should complete."
-msgstr ""
+msgstr "Περιγράψτε τις δράσεις που θα πρέπει να ολοκληρώσουν οι μαθητές."
 
 #: exe/engine/idevicestore.py:666
 msgid ""
@@ -1645,6 +1996,14 @@ msgid ""
 "some \n"
 "reflective guidance.</p>"
 msgstr ""
+"<p>Η Δραστηριότητα Ανάγνωσης, όπως δηλώνει \n"
+"το όνομά της, ζητά από τον μαθητή να κάνει κάποιου είδους ενέργεια. Αυτή "
+"η ενέργεια \n"
+"πρέπει να σχετίζεται άμεσα με το κείμενο που ζητήθηκε από τον μαθητή να "
+"μελετήσει. \n"
+"Η ανατροφοδότηση στη δραστηριότητα, όπου είναι απαραίτητη, μπορεί να "
+"παρέχει \n"
+"στον μαθητή κάποιες χρήσιμες κατευθύνσεις.</p>"
 
 #: exe/engine/idevicestore.py:671
 msgid ""
@@ -1660,10 +2019,22 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"Οι δάσκαλοι πρέπει να λάβουν υπόψη τα εξής κατά τη χρήση αυτής της "
+"ε-Μηχανής: <ol><li>Σκεφτείτε τον αριθμό των διαφορετικών τύπων "
+"δραστηριοτήτων που προγραμματίσατε και ο οποίος θα επισημανθεί οπτικά στο"
+" περιεχόμενο. Αποφύγετε πάρα πολλούς διαφορετικούς τύπους ταξινόμησης των"
+" δραστηριοτήτων, ειδάλλως ο μαθητής μπορεί να μπερδευτεί. Συνήθως τρεις ή"
+" τέσσερις διαφορετικοί τύποι είναι περισσότερο από επαρκείς για μια "
+"διδασκαλία.</li><li>Ως προϋπόθεση θετικής οπτικής σχεδίασης, αποφύγετε να"
+" έχετε δύο ε-Μηχανές η μία κάτω από την άλλη χωρίς κείμενο ενδιάμεσα. Εάν"
+" αυτό απαιτείται, καλύτερα ενώστε δύο ερωτήσεις ή γεγονότα σε μια "
+"ε-Μηχανή. </li><li>Σκεφτείτε δραστηριότητες, όπου το αντιληπτό όφελος "
+"εκπλήρωσής τους ξεπερνά το χρόνο και την προσπάθεια που χρειάζεται για να"
+" ολοκληρωθούν. </li></ol>"
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
-msgstr ""
+msgstr "Μεγεθυντής εικόνας"
 
 #: exe/engine/imagemagnifieridevice.py:43
 msgid ""
@@ -1672,10 +2043,13 @@ msgid ""
 "the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
+"Ο μεγεθυντής εικόνας είναι ένα εργαλείο που επιτρέπει στους \n"
+"μαθητές να μεγεθύνουν μια εικόνα. Μετακινώντας τον μεγεθυντικό \n"
+"φακό πάνω από την εικόνα μπορούν να τη μελετήσουν λεπτομερώς."
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Choose an Image"
-msgstr ""
+msgstr "Επιλογή εικόνας"
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid ""
@@ -1684,6 +2058,10 @@ msgid ""
 "to be \n"
 "magnified."
 msgstr ""
+"Κάντε κλικ \n"
+"στην παρακάτω εικόνα ή στο πλήκτρο \"Προσθήκη Εικόνας\" για να επιλέξετε"
+" \n"
+"ένα αρχείο εικόνας για μεγέθυνση."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
@@ -1691,19 +2069,23 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/tools/style-designer/langs/en.js:24
 msgid "Text"
-msgstr ""
+msgstr "Κείμενο"
 
 #: exe/engine/imagemagnifieridevice.py:55 exe/engine/multimediaidevice.py:65
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
 msgstr ""
+"Εισάγετε το κείμενο που θέλετε \n"
+"να συσχετίσετε με το αρχείο."
 
 #: exe/engine/imagemagnifieridevice.py:60
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
 msgstr ""
+"Δώστε μια λεζάντα για την εικόνα \n"
+"για να μεγεθυνθεί."
 
 #: exe/engine/imagemagnifieridevice.py:62
 msgid ""
@@ -1714,6 +2096,10 @@ msgid ""
 " \n"
 "image to display at its original size."
 msgstr ""
+"Επιλέξτε το μέγεθος εμφάνισης \n"
+"της εικόνας. Η μονάδα μέτρησης είναι τα εικονοστοιχεία. Γενικά, 100 \n"
+"εικονοστοιχεία είναι περίπου 3cm. Αφήστε και τα δυο πεδία κενά αν \n"
+"θέλετε η εικόνα να εμφανιστεί με το αρχικό της μέγεθος."
 
 #: exe/engine/imagemagnifieridevice.py:66
 #: exe/engine/imagemagnifieridevice.py:142
@@ -1721,6 +2107,8 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
+"Η στοίχιση σας επιτρέπει να \n"
+"επιλέξετε σε ποια θέση στην οθόνη θα τοποθετηθεί η εικόνα."
 
 #: exe/engine/imagemagnifieridevice.py:68
 #: exe/engine/imagemagnifieridevice.py:144
@@ -1728,6 +2116,8 @@ msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
+"Ορίστε ένα αρχικό επίπεδο μεγέθυνσης \n"
+"όταν φορτώνεται η ε-Μηχανή, ως ποσοστό του αρχικού μεγέθους εικόνας"
 
 #: exe/engine/imagemagnifieridevice.py:70
 #: exe/engine/imagemagnifieridevice.py:146
@@ -1735,20 +2125,24 @@ msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
+"Ορίστε ένα μέγιστο επίπεδο μεγέθυνσης, \n"
+"ως ποσοστό του αρχικού μεγέθους εικόνας"
 
 #: exe/engine/imagemagnifieridevice.py:72
 msgid "Select the size of the magnifying glass"
-msgstr ""
+msgstr "Επιλογή μεγέθους μεγεθυντικού φακού"
 
 #: exe/engine/imagemagnifieridevice.py:148
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
 msgstr ""
+"Αυτό επιλέγει το αρχικό μέγεθος \n"
+"του μεγεθυντικού φακού"
 
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
-msgstr ""
+msgstr "Εικόνα με Κείμενο"
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -1776,18 +2170,49 @@ msgid ""
 "visual.\n"
 "</p>"
 msgstr ""
+"<p>\n"
+"Η ε-Μηχανή Εικόνας με Κείμενο μπορεί να χρησιμοποιηθεί με πολλούς τρόπους"
+"\n"
+"για να υποστηρίξει,τόσο τους συναισθηματικούς όσο και τους γνωστικούς "
+"στόχους\n"
+"του περιεχομένου του eXe \n"
+"</p><p>\n"
+"<b>Ενοποίηση οπτικών και λεκτικών περιλήψεων</b>\n"
+"</p><p>\n"
+"Οι γνωστικοί ψυχολόγοι επισημαίνουν ότι, παρουσιάζοντας στους μαθητές μια"
+"\n"
+"αντιπροσωπευτική εικόνα και μια αντίστοιχη περίληψη κειμένου (με "
+"ταυτόχρονη\n"
+"παρουσίαση), μπορεί να μειωθεί ο μαθησιακός φόρτος και να ενισχυθεί η "
+"συγκράτηση\n"
+"του γνωστικού περιεχομένου. Αυτή η ε-Μηχανή μπορεί να χρησιμοποιηθεί για\n"
+"να παρουσιαστεί μια εικόνα (φωτογραφία, διάγραμμα ή γραφικό), με μια "
+"μικρή λεκτική\n"
+"περιγραφή η οποία καλύπτει τα κύρια σημεία που σχετίζονται με την εικόνα."
+" Π.χ. αν\n"
+"διδάσκετε τις λειτουργίες μιας τετράχρονης μηχανής, θα μπορούσατε να "
+"έχετε μια εικόνα\n"
+"για καθεμιά από τις 4 φάσεις των πιστονιών μαζί με μια περίληψη κειμένου "
+"των κυριότερων\n"
+"χαρακτηριστικών κάθε  εικόνας.\n"
+"</p>"
 
 #: exe/engine/imagewithtextidevice.py:66
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
 msgstr ""
+"Εισάγετε το κείμενο που θέλετε να \n"
+"                                                             συσχετίσετε "
+"με την εικόνα."
 
 #: exe/engine/imagewithtextidevice.py:71 exe/engine/imagewithtextidevice.py:118
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
 msgstr ""
+"Δώστε μια λεζάντα για την εικόνα\n"
+"που μόλις εισάγατε."
 
 #: exe/engine/listaidevice.py:66
 msgid "DropDown Activity"
@@ -1882,7 +2307,7 @@ msgstr ""
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
-msgstr ""
+msgstr "Μαθηματικά"
 
 #: exe/engine/mathidevice.py:43
 msgid ""
@@ -1898,10 +2323,24 @@ msgid ""
 " \n"
 "                        this graphic."
 msgstr ""
+"Η μαθηματική γλώσσα LATEX έχει χρησιμοποιηθεί \n"
+"                        για να ενεργοποιηθεί η δυνατότητα εισαγωγής "
+"μαθηματικών τύπων \n"
+"                        στο περιεχόμενό σας. Αυτό γίνεται με τη μετάφραση"
+" \n"
+"                        του LATEX σε μια εικόνα που κατόπιν εμφανίζεται\n"
+"                        στο εσωτερικό του περιεχομένου του eXe. Σας "
+"προτείνουμε \n"
+"                        να χρησιμοποιήσετε τη ε-Μηχανή Ελεύθερου Κειμένου"
+" για να παρέχετε \n"
+"                        επεξηγήσεις και οδηγίες σχετικά με αυτό το "
+"γραφικό."
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
 msgstr ""
+"Μπορείτε να χρησιμοποιήσετε τη γραμμή εργαλείων ή να εισάγεται το latex "
+"χειροκίνητα στην περιοχή κειμένου."
 
 #: exe/engine/memorymatchidevice.py:44
 msgid "Memory Match Game"
@@ -2099,25 +2538,27 @@ msgstr ""
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
-msgstr ""
+msgstr "Ερώτηση πολλαπλής επιλογής"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:41
 msgid "Auckland University of Technology"
-msgstr ""
+msgstr "Τεχνολογικό Πανεπιστήμιο του Όκλαντ"
 
 #: exe/engine/multimediaidevice.py:42
 msgid ""
 "The MP3 iDevice allows you to attach an MP3 media file to your content "
 "along with relevant textuallearning instructions."
 msgstr ""
+"Η ε-Μηχανή MP3 επιτρέπει την επισύναψη ενός αρχείου MP3 στο περιεχόμενό "
+"σας, μαζί με σχετικές διδακτικές οδηγίες."
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr ""
+msgstr "Επιλέξτε ένα αρχείο MP3"
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -2129,16 +2570,27 @@ msgid ""
 "would like the iDevice to       display e.g. 'Some emphasis' applies a "
 "border and icon to the iDevice content displayed.</li></ol>"
 msgstr ""
+"<ol>  <li>Κάντε &κλικ;Επιλέξτε ένα MP3&gt; και αναζητήστε το αρχείο MP3"
+"       που επιθυμείτε να εισάγετε</li> <li>Κάντε κλικ στο αναπτυσσόμενο "
+"μενού για να επιλέξετε τη θέση        στην οποία επιθυμείτε να "
+"εμφανίζεται το αρχείο στην οθόνη σας.</li>  <li>Εισάγετε προαιρετικά έναν"
+" τίτλο για το αρχείο σας.</li> <li>Συσχετίστε οποιοδήποτε σχετικό κείμενο"
+" με το αρχείο MP3.</li> <li>Επιλέξτε το στυλ με το οποίο θέλετε να "
+"εμφανίζεται η ε-Μηχανή       στην οθόνη σας, π.χ. το στυλ 'Λίγη έμφαση' "
+"εφαρμόζει ένα περίγραμμα και ένα εικονίδιο στο εμφανιζόμενο περιεχόμενο "
+"της η-Μηχανής.</li></ol>"
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
+"Η στοίχιση σας επιτρέπει να \n"
+"επιλέξετε σε ποια θέση στην οθόνη θα τοποθετηθεί ο αναπαραγωγέας μέσων"
 
 #: exe/engine/multiselectidevice.py:45
 msgid "Multi-select"
-msgstr ""
+msgstr "Ερώτηση πολλαπλών επιλογών"
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
@@ -2190,20 +2642,20 @@ msgstr ""
 
 #: exe/engine/package.py:327
 msgid "Topic"
-msgstr ""
+msgstr "Κεφάλαιο"
 
 #: exe/engine/package.py:327
 msgid "Section"
-msgstr ""
+msgstr "Ενότητα"
 
 #: exe/engine/package.py:327
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
 msgid "Unit"
-msgstr ""
+msgstr "Παράγραφος"
 
 #: exe/engine/package.py:348
 msgid "Home"
-msgstr ""
+msgstr "Αρχή"
 
 #: exe/engine/package.py:503
 msgid "Metadata creation date"
@@ -2211,7 +2663,7 @@ msgstr ""
 
 #: exe/engine/package.py:1000
 msgid "?????"
-msgstr ""
+msgstr "?????"
 
 #: exe/engine/package.py:1038 exe/engine/package.py:1045
 #, python-format
@@ -2219,11 +2671,13 @@ msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
+"Η ΑΠΟΘΗΚΕΥΣΗ ΑΠΕΤΥΧΕ!\n"
+"Η τελευταία επιτυχημένη αποθήκευση είναι %s."
 
 #: exe/engine/package.py:1449 exe/jsui/scripts/app/controller/Toolbar.js:418
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "iDevice Editor"
-msgstr ""
+msgstr "Επεξεργαστής ε-Μηχανής"
 
 #: exe/engine/package.py:1570
 msgid "My Catalog"
@@ -2273,7 +2727,7 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr ""
+msgstr "Αυτό είναι ένα πεδίο Ελεύθερου Κειμένου"
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
@@ -2394,16 +2848,24 @@ msgid ""
 "answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
 msgstr ""
+"Εισάγετε μια επιλογή απάντησης. Δώστε \n"
+"μια σειρά αληθοφανών απαντήσεων (συνήθως 3-4), καθώς και μια σωστή "
+"απάντηση. \n"
+"Κάντε κλικ &στο πλήκτρο;Προσθήκη νέας επιλογής&gt; για να προσθέσετε μια "
+"νέα απάντηση."
 
 #: exe/engine/quiztestidevice.py:126 exe/engine/quiztestidevice.py:202
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
+"Για να επισημάνετε τη σωστή απάντηση, \n"
+"κάντε κλικ στο κουμπί επιλογής δεξιά από \n"
+"τη σωστή απάντηση. "
 
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
-msgstr ""
+msgstr "Κουίζ τύπου SCORM"
 
 #: exe/engine/quiztestidevice.py:246
 msgid ""
@@ -2415,6 +2877,13 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
+"Αντίθετα με το MCQ, το κουίζ SCORM χρησιμοποιείται για να ελέγξει\n"
+"τη γνώση του μαθητή σ' ένα θέμα χωρίς να του παρέχει ανατροφοδότηση\n"
+"για τη σωστή απάντηση. Το quiz συχνά δίνεται στον μαθητή μόλις αυτός βρει"
+" χρόνο\n"
+"να μάθει και να εξασκηθεί, κάνοντας χρήση της πληροφορίας ή της "
+"επιδεξιότητάς του.\n"
+" "
 
 #: exe/engine/recomendacionfpdidevice.py:30
 msgid "FPD - A Piece of Advice"
@@ -2450,6 +2919,17 @@ msgid ""
 "be \n"
 "effective feedback tools."
 msgstr ""
+"Ο στοχασμός είναι μια εκπαιδευτική μέθοδος που χρησιμοποιείται συχνά \n"
+"για να συνδέσει τη θεωρία με την πράξη. Ο στοχασμός συχνά προσφέρει στους"
+" μαθητές \n"
+"την ευκαιρία να παρατηρήσουν και να σκεφτούν πάνω στις παρατηρήσεις τους "
+"προτού \n"
+"τις παρουσιάσουν. Επιστημονικά περιοδικά, ημερολόγια, βιογραφικά "
+"σημειώματα και \n"
+"χαρτοφυλάκια, είναι χρήσιμα εργαλεία για συλλογή δεδομένων παρατήρησης. "
+"Οι υποδείξεις \n"
+"και οι οδηγίες μπορεί να αποδειχθούν αποτελεσματικά εργαλεία "
+"ανατροφοδότησης."
 
 #: exe/engine/reflectionfpdidevice.py:57
 #: exe/engine/reflectionfpdmodifidevice.py:56
@@ -2458,6 +2938,8 @@ msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
 msgstr ""
+"Εισάγετε μια ερώτηση για την \n"
+"οποία οι μαθητές πρέπει να σκεφτούν."
 
 #: exe/engine/reflectionfpdidevice.py:59
 msgid ""
@@ -2466,13 +2948,16 @@ msgid ""
 " \n"
 "reflective feedback.)"
 msgstr ""
+"Περιγράψτε τον τρόπο με τον οποίο οι μαθητές \n"
+"θα μάθουν πώς τα πήγαν στην άσκηση. (Οι λεζάντες είναι χρήσιμες για \n"
+"την παροχή ανατροφοδότησης)."
 
 #: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:201
 msgid "Reflective question:"
-msgstr ""
+msgstr "Ερώτηση στοχασμού:"
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
 msgid "FPD - Think About It (without Feedback)"
@@ -2480,7 +2965,7 @@ msgstr ""
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
-msgstr ""
+msgstr "Στοχασμός"
 
 #: exe/engine/reflectionidevice.py:57
 msgid ""
@@ -2495,10 +2980,12 @@ msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
 msgstr ""
+"μετονομάστε το Υλικό μιας μικροεφαρμογής ε-Μηχανής και δεν θα χρειαστεί "
+"να το ξανακάνετε!"
 
 #: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:48
 msgid "RSS"
-msgstr ""
+msgstr "RSS"
 
 #: exe/engine/rssidevice.py:42
 msgid ""
@@ -2506,6 +2993,10 @@ msgid ""
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
+"Η ε-Μηχανή RSS χρησιμοποιείται \n"
+"για να δίνει νέο περιεχόμενο στο μαθησιακό αντικείμενο κάθε χρήστη.\n"
+"Χρησιμοποιώντας αυτή τη ε-Μηχανή μπορείτε να παρέχετε υπερσυνδέσμους\n"
+"από έναν τροφοδότη, τον οποίο επιλέξατε να βλέπουν οι μαθητές σας."
 
 #: exe/engine/rssidevice.py:51
 msgid ""
@@ -2526,6 +3017,26 @@ msgid ""
 "bookmarks and add\n"
 " instructions or additional learning information."
 msgstr ""
+"Εισάγετε ένα URL για τον τροφοδότη RSS \n"
+"που θέλετε να επισυνάψετε στο περιεχόμενό σας. Οι τροφοδότες συχνά "
+"αναγνωρίζονται\n"
+"από ένα μικρό εικονίδιο (όπως αυτό <img src=\"/images/feed-icon.png\" />)"
+" ή το κείμενο \"RSS\".\n"
+"Κάνοντας κλικ στο εικονίδιο ή στην ετικέτα κειμένου θα εμφανιστεί ένας "
+"τροφοδότης RSS δεξιά\n"
+"στον φυλλομετρητή σας. Μπορείτε να αντιγράψετε και να επικολλήσετε το URL"
+" σε αυτό το πεδίο.\n"
+"Εναλλακτικά, με δεξί κλικ στον υπερσύνδεσμο ή στο γραφικό θα ανοίξει ένα "
+"μενού;\n"
+"Κάντε κλικ στο Αντιγραφή Υπερσυνδέσμου Τοποθεσίας ή Αντιγραφή "
+"Συντόμευσης. Στο eXe ανοίξτε μια ε-Μηχανή με\n"
+"σελιδοδείκτη RSS και επικολλήστε το URL στο πεδίο RSS URL και κάντε κλικ "
+"στο πλήκτρο Φόρτωση.\n"
+"Έτσι, θα εξαχθούν οι τίτλοι από τον τροφοδότη και θα εμφανιστούν ως "
+"υπερσύνδεσμοι\n"
+"στο περιεχόμενό σας. Από εκεί μπορείτε να επεξεργαστείτε τους "
+"σελιδοδείκτες και να\n"
+"προσθέσετε οδηγίες ή πρόσθετες πληροφορίες για τους μαθητές."
 
 #: exe/engine/rssidevice.py:110 exe/engine/rssidevice.py:113
 #, python-format
@@ -2533,6 +3044,8 @@ msgid ""
 "Unable to load RSS feed from %s <br/>Please check the spelling and "
 "connection and try again."
 msgstr ""
+"Αδυναμία φόρτωσης του τροφοδότη RSS από %s <br/>Παρακαλώ ελέγξτε την "
+"ορθογραφία και τη σύνδεση και ξαναπροσπαθήστε."
 
 #: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid "FPD - Multi Select Activity"
@@ -2665,7 +3178,7 @@ msgstr ""
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
-msgstr ""
+msgstr "Ερώτηση Σωστού-Λάθους"
 
 #: exe/engine/truefalseidevice.py:146
 #: exe/engine/verdaderofalsofpdidevice.py:147
@@ -2677,6 +3190,11 @@ msgid ""
 "either/or \n"
 "responses."
 msgstr ""
+"Οι ερωτήσεις Σωστού/Λάθους παρουσιάζουν μια δήλωση \n"
+"για την οποία ο μαθητής θα πρέπει να αποφασίσει αν είναι σωστή ή "
+"λανθασμένη. \n"
+"Αυτός ο τύπος ερωτήσεων ενδείκνυται για τεκμηριωμένες πληροφορίες και \n"
+"πληροφορίες που προσφέρονται σε μία μόνο από τις δυο απαντήσεις."
 
 #: exe/engine/truefalseidevice.py:151
 #: exe/engine/verdaderofalsofpdidevice.py:153
@@ -2684,6 +3202,8 @@ msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
 msgstr ""
+"Μια συμβουλή μπορεί να παρέχεται για να βοηθήσει \n"
+"τον μαθητή να απαντήσει την ερώτηση."
 
 #: exe/engine/truefalseidevice.py:154
 #: exe/engine/verdaderofalsofpdidevice.py:156
@@ -2693,6 +3213,10 @@ msgid ""
 "tend to \n"
 "be ambiguous."
 msgstr ""
+"Πληκτρολογήστε το θέμα της ερώτησης. \n"
+"Η ερώτηση θα πρέπει να είναι σαφής και κατανοητή. Αποφύγετε αρνητικές "
+"προτάσεις \n"
+"καθώς τείνουν να δημιουργούν αμφιβολίες."
 
 #: exe/engine/truefalseidevice.py:158
 #: exe/engine/verdaderofalsofpdidevice.py:160
@@ -2702,6 +3226,9 @@ msgid ""
 " \n"
 "default feedback will be provided."
 msgstr ""
+"Εισάγετε όποια ανατροφοδότηση επιθυμείτε να παρέχετε \n"
+"στον μαθητή. Το πεδίο αυτό μπορεί να μείνει κενό. Αν το πεδίο \n"
+"αφεθεί κενό, θα δοθεί προεπιλεγμένη ανατροφοδότηση."
 
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
 #: exe/engine/verdaderofalsofpdidevice.py:167
@@ -2710,6 +3237,8 @@ msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
 msgstr ""
+"Δώστε οδηγίες για το πως πρέπει να συμπληρωθεί μια ερώτηση \n"
+"Σωστού/Λάθους."
 
 #: exe/engine/truefalseidevice.py:372
 #: exe/engine/verdaderofalsofpdidevice.py:375
@@ -2722,6 +3251,12 @@ msgid ""
 "or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
+"Πληκτρολογείστε την ανατροφοδότηση που θέλετε να δει \n"
+"ο μαθητής όταν επιλέγει τη συγκεκριμένη απάντηση. Αν δεν συμπληρώσετε "
+"αυτό \n"
+"το πεδίο, το eXe θα παρέχει την εξής αυτόματη ανατροφοδότηση: \"Σωστή "
+"απάντηση\" \n"
+"ή \"Λάθος απάντηση\"."
 
 #: exe/engine/verdaderofalsofpdidevice.py:145
 msgid "FPD - True/False Activity"
@@ -2729,9 +3264,10 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:53
 msgid "Wiki Article"
-msgstr ""
+msgstr "Άρθρο Βίκι"
 
 #: exe/engine/wikipediaidevice.py:55
+#, fuzzy
 msgid ""
 "<p>The Wikipedia iDevice allows you to locate \n"
 "existing content from within Wikipedia and download this content into "
@@ -2748,22 +3284,39 @@ msgid ""
 "additionally\n"
 "by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
 msgstr ""
+"<p>Η ε-Μηχανή Βικιπαίδειας σας επιτρέπει να εντοπίσετε \n"
+"υφιστάμενο περιεχόμενο από την Βικιπαίδεια και να το συμπεριλάβετε στον "
+"εκπαιδευτικό \n"
+"πόρο του eXe. Η δραστηριότητα αυτή δημιουργεί ένα αντίγραφο του "
+"περιεχομένου του \n"
+"άρθρου. Το αντίγραφο του άρθρου στο παιδαγωγικό σας υλικό δεν "
+"ενημερώνεται όταν \n"
+"υπάρχουν αλλαγές στη Βικιπαίδεια και θα πρέπει να ξαναλάβετε ένα νέο "
+"αντίγραφο του \n"
+"άρθρου. Παρόμοια,αλλαγές που έγιναν στο eXe δεν θα ενημερώσουν τη "
+"Βικιπαίδεια. \n"
+"</p> <p>Το περιεχόμενο της  Βικιπαίδεια καλύπτεται από τη δωρεάν άδεια "
+"τεκμηρίωσης GNU.</p>"
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
-msgstr ""
+msgstr "Άρθρο"
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr ""
+"Επιλέξτε την κατάλληλη γλώσσα\n"
+"της Βικιπαίδειας, για να αναζητήσετε έναν όρο και να τον εισάγετε."
 
 #: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:363
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
 msgstr ""
+"Εισάγετε μια φράση ή έναν όρο που θέλετε \n"
+"να αναζητήσετε στην Βικιπαίδεια."
 
 #: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
 #, python-format
@@ -2771,10 +3324,12 @@ msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
 msgstr ""
+"Αδυναμία μεταφόρτωσης από %s <br/>Παρακαλώ ελέγξτε την ορθογραφία και τη "
+"σύνδεση και προσπαθήστε πάλι."
 
 #: exe/engine/wikipediaidevice.py:315
 msgid "http://en.wikipedia.org/"
-msgstr ""
+msgstr "http://el.wikipedia.org/"
 
 #: exe/exe_do:68
 msgid ""
@@ -2946,6 +3501,8 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
+"Το \"%s\" υπάρχει ήδη.\n"
+"Παρακαλώ ξαναπροσπαθήστε με διαφορετικό όνομα αρχείου"
 
 #: exe/export/cmdlineexporter.py:92
 msgid "Export format not implemented"
@@ -2958,16 +3515,18 @@ msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
+"Η ΕΞΑΓΩΓΗ ΑΠΕΤΥΧΕ!\n"
+"Η τελευταία επιτυχής εξαγωγή είναι %s."
 
 #: exe/export/scormpage.py:177 exe/export/websitepage.py:345
 #: exe/webui/common.py:473
 msgid "Previous"
-msgstr ""
+msgstr "Προηγούμενο"
 
 #: exe/export/scormpage.py:178 exe/export/websitepage.py:351
 #: exe/webui/common.py:474
 msgid "Next"
-msgstr ""
+msgstr "Επόμενο"
 
 #: exe/export/singlepage.py:249
 msgid "You can close this window"
@@ -2975,7 +3534,7 @@ msgstr ""
 
 #: exe/export/textexport.py:54 exe/webui/common.py:293
 msgid "Licensed under the"
-msgstr ""
+msgstr "Αδειοδοτημένο υπό τους όρους"
 
 #: exe/export/websitepage.py:153
 msgid "Skip navigation"
@@ -2983,18 +3542,20 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr ""
+msgstr "Παράδειγμα Παράδειγμα"
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
 msgstr ""
+"Αυτό είναι ένα παράδειγμα πρόσθετου ε-Μηχανή\n"
+"που δημιουργήθηκε από έναν χρήστη."
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
 msgid "Example"
-msgstr ""
+msgstr "Παράδειγμα"
 
 #: exe/importers/cmdlineimporter.py:44
 msgid "Import format not implemented"
@@ -3047,18 +3608,18 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
-msgstr ""
+msgstr "Αδύνατη η προσπέλαση του επώνυμου καταλόγου"
 
 #: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:847 exe/jsui/mainpage.py:975
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
-msgstr ""
+msgstr ". Παρακαλώ, χρησιμοποιήστε ονόματα ASCII."
 
 #: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
-msgstr ""
+msgstr "Η ΑΠΟΘΗΚΕΥΣΗ ΑΠΕΤΥΧΕ!"
 
 #: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1071
 #: exe/jsui/mainpage_antes_jr_docs.py:326
@@ -3069,6 +3630,8 @@ msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
+"Η ΑΠΟΘΗΚΕΥΣΗ ΑΠΕΤΥΧΕ!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:337 exe/jsui/mainpage.py:342 exe/jsui/mainpage.py:345
 #: exe/jsui/mainpage_antes_jr_docs.py:330
@@ -3076,7 +3639,7 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:338
 #, python-format
 msgid "Package saved to: %s"
-msgstr ""
+msgstr "Το πακέτο αποθηκεύθηκε στο: %s"
 
 #: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:672
 #: exe/jsui/mainpage_antes_jr_docs.py:561
@@ -3084,11 +3647,13 @@ msgstr ""
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr ""
+"Ο φάκελος προεπισκόπησης %s είναι ένα αρχείο και δεν μπορεί να "
+"αντικατασταθεί"
 
 #: exe/jsui/mainpage.py:587 exe/jsui/mainpage_antes_jr_docs.py:580
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr ""
+msgstr "Το τοπικό αρχείο %s δεν βρέθηκε και δεν μπορεί να γίνει προεπισκόπησή του."
 
 #: exe/jsui/mainpage.py:712 exe/jsui/mainpage_antes_jr_docs.py:705
 #, python-format
@@ -3096,6 +3661,8 @@ msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
+"Η μεταγλώττιση του Mime TeX απέτυχε!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:750 exe/jsui/mainpage_antes_jr_docs.py:743
 msgid "Importing HTML..."
@@ -3149,7 +3716,7 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1064
 #: exe/jsui/mainpage_antes_jr_docs.py:1136
 msgid "EXPORT FAILED!"
-msgstr ""
+msgstr "Η ΕΞΑΓΩΓΗ ΑΠΕΤΥΧΕ!"
 
 #: exe/jsui/mainpage.py:940 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
@@ -3168,11 +3735,13 @@ msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
+"Η ΕΞΑΓΩΓΗ ΑΠΕΤΥΧΕ!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1003 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
-msgstr ""
+msgstr "Το πακέτο έχει εξαχθεί στο: %s"
 
 #: exe/jsui/mainpage.py:1015 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
@@ -3202,13 +3771,15 @@ msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
+"Η ΕΞΑΓΩΓΗ ΑΠΕΤΥΧΕ!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1057 exe/jsui/mainpage.py:1104
 #: exe/jsui/mainpage_antes_jr_docs.py:990
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr ""
+msgstr "Το όνομα αρχείου %s είναι αρχείο και δεν μπορεί να αντικατασταθεί"
 
 #: exe/jsui/mainpage.py:1063 exe/jsui/mainpage.py:1111
 #: exe/jsui/mainpage_antes_jr_docs.py:996
@@ -3218,6 +3789,8 @@ msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr ""
+"Το όνομα αρχείου %s υπάρχει ήδη. Παρακαλώ επιλέξτε άλλο όνομα ή διαγράψτε"
+" το υπάρχον και ξαναπροσπαθήστε."
 
 #: exe/jsui/mainpage.py:1077 exe/jsui/mainpage.py:1122
 #: exe/jsui/mainpage.py:1137 exe/jsui/mainpage.py:1156
@@ -3234,16 +3807,18 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1185
 #, python-format
 msgid "Exported to %s"
-msgstr ""
+msgstr "Εξαγωγή στο %s"
 
 #: exe/jsui/mainpage.py:1285 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr ""
+msgstr "Το αρχείο %s δεν υπάρχει ή δεν είναι αναγνώσιμο."
 
 #: exe/jsui/mainpage.py:1289 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
+"Αδύνατη η φόρτωση του αρχείου. Παρακαλώ στείλτε το αρχείο στο "
+"bugs@exelearning.org"
 
 #: exe/jsui/mainpage.py:1292 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
@@ -3251,10 +3826,12 @@ msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
+"Συγνώμη, λανθασμένη μορφή αρχείου:\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1294 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
-msgstr ""
+msgstr "Συγνώμη, λανθασμένη μορφή αρχείου."
 
 #: exe/jsui/propertiespage.py:335
 msgid "Failed to get properties"
@@ -3274,7 +3851,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
 #: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
 msgid "Select an image"
-msgstr ""
+msgstr "Επιλογή εικόνας"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:194
 #: exe/jsui/scripts/app/controller/MainTab.js:228
@@ -3366,12 +3943,12 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
 msgid "Insert Package"
-msgstr ""
+msgstr "Εισαγωγή Πακέτου"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Extract Package"
-msgstr ""
+msgstr "Εξαγωγή Πακέτου"
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Delete \"{node}\" node and all its children?"
@@ -3447,7 +4024,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:400
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
 msgid "Preferences"
-msgstr ""
+msgstr "Προτιμήσεις"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:428
 msgid ""
@@ -3479,7 +4056,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:123
 msgid "Information"
-msgstr ""
+msgstr "Πληροφορίες"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 msgid "Your Style could not be saved because an unknown error occurred."
@@ -3593,7 +4170,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:136
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
-msgstr ""
+msgstr "Ακύρωση"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:792
 msgid "Ok"
@@ -3751,7 +4328,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
-msgstr ""
+msgstr "Όνομα"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:95
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
@@ -3783,7 +4360,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/en.js:112
 msgid "Save"
-msgstr ""
+msgstr "Αποθήκευση"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:78
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:89
@@ -3804,13 +4381,13 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:35
 msgid "Dublin Core Metadata"
-msgstr ""
+msgstr "Μεταδεδομένα Dublin Core"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:45
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:171
 msgid "The name given to the resource."
-msgstr ""
+msgstr "Όνομα που δόθηκε στο παιδαγωγικό υλικό."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:51
 msgid "Creator"
@@ -3819,6 +4396,8 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:52
 msgid "An entity primarily responsible for making the content of the resource."
 msgstr ""
+"Το πρόσωπο που είναι υπεύθυνο για τη δημιουργία περιεχομένου του "
+"εκπαιδευτικού υλικού."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:60
 msgid "Subject"
@@ -3826,7 +4405,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:62
 msgid "The topic of the content of the resource."
-msgstr ""
+msgstr "Το θέμα του περιεχομένου του εκπαιδευτικού υλικού."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:65
 msgid ""
@@ -3840,7 +4419,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:207
 msgid "An account of the content of the resource."
-msgstr ""
+msgstr "Περιγραφή του περιεχομένου του εκπαιδευτικού υλικού."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:78
 msgid "Publisher"
@@ -3849,6 +4428,8 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:79
 msgid "An entity responsible for making the resource available."
 msgstr ""
+"Το πρόσωπο που είναι υπεύθυνο για τη διανομή σε απευθείας σύνδεση του "
+"εκπαιδευτικού υλικού."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:85
 msgid "Contributors"
@@ -3859,6 +4440,8 @@ msgid ""
 "An entity responsible for making contributions to the content of the "
 "resource."
 msgstr ""
+"Το πρόσωπο που είναι υπεύθυνο για τον εμπλουτισμό του περιεχομένου του "
+"εκπαιδευτικού υλικού."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:100
 #: exe/jsui/scripts/app/view/forms/LomSections.js:67
@@ -3869,7 +4452,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:101
 msgid "A date of an event in the lifecycle of the resource."
-msgstr ""
+msgstr "Ημερομηνία ενός γεγονότος στη διάρκεια ζωής ενός εκπαιδευτικού έργου."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:104
 msgid ""
@@ -3883,6 +4466,8 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:113
 msgid "The nature or genre of the content of the resource."
 msgstr ""
+"Φύση κειμενικών ειδών που χρησιμοποιούνται στο περιεχόμενο του "
+"εκπαιδευτικού υλικού."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:116
 msgid ""
@@ -3902,7 +4487,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
 msgid "Select a Format."
-msgstr ""
+msgstr "Επιλογή μορφοποίησης."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomSections.js:40
@@ -3912,7 +4497,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:135
 msgid "An unambiguous reference to the resource within a given context."
-msgstr ""
+msgstr "Σαφής αναφορά σε ένα εκπαιδευτικό υλικό με προκαθρισμένο περιεχόμενο."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:141
 #: exe/jsui/scripts/app/view/forms/LomSections.js:175
@@ -3923,7 +4508,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:142
 msgid "A Reference to a resource from which the present resource is derived."
-msgstr ""
+msgstr "Παραπομπή στην πηγή από την οποία προέρχεται το παρών παιδαγωγικό υλικό."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:148
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:51
@@ -3941,7 +4526,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:182
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:189
 msgid "Select a language."
-msgstr ""
+msgstr "Επιλογή γλώσσας."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
@@ -3951,7 +4536,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:157
 msgid "A reference to a related resource."
-msgstr ""
+msgstr "Παραπομπή σε σχετικό παιδαγωγικό υλικό."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:163
 #: exe/jsui/scripts/app/view/forms/LomSections.js:52
@@ -3960,7 +4545,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:164
 msgid "The extent or scope of the content of the resource."
-msgstr ""
+msgstr "Η ευρύτητα ή το πλαίσιο του περιεχομένου του εκπαιδευτικού υλικού."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:172
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:222
@@ -3970,7 +4555,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:173
 msgid "Information about rights held in and over the resource."
-msgstr ""
+msgstr "Πληροφορίες για τα δικαιώματα του εκπαιδευτικού υλικού."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:177
 msgid ""
@@ -3981,6 +4566,13 @@ msgid ""
 "no assumptions can be made about the status of these and other rights "
 "with respect to the resource."
 msgstr ""
+"Τυπικά, στα Δικαιώματα περιλαμβάνεται μια δήλωση διαχείρισης δικαιωμάτων "
+"για το εκπαιδευτικό υλικό, ή αναφορά σε μια υπηρεσία που παρέχει τέτοιες "
+"πληροφορίες. Οι πληροφορίες Δικαιωμάτων συχνά περιλαμβάνουν Προστασία "
+"Πνευματικών Δικαιωμάτων, Πνευματική Ιδιοκτησία και διάφορα δικαιώματα "
+"ιδιοκτησίας. Αν η αναφορά στα Δικαιώματα απουσιάζει, δεν μπορεί να γίνει "
+"καμία υπόθεση για την κατάσταση των δικαιωμάτων που αφορούν αυτό το "
+"παιδαγωγικό υλικό."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:189
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:128
@@ -3997,8 +4589,9 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
 #: exe/webui/tools/style-designer/langs/en.js:110
+#, fuzzy
 msgid "Reset"
-msgstr ""
+msgstr "Φεροέζικα"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
@@ -4145,8 +4738,9 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:23
 #: exe/jsui/scripts/app/view/forms/LomSections.js:193
+#, fuzzy
 msgid "resources and integrated resources"
-msgstr ""
+msgstr "Παραπομπή σε σχετικό παιδαγωγικό υλικό."
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:24
 #: exe/jsui/scripts/app/view/forms/LomSections.js:194
@@ -4317,7 +4911,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:269
 #: exe/webui/editorpane.py:387
 msgid "Purpose"
-msgstr ""
+msgstr "Σκοπός"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:166
 msgid "Download Classification Sources"
@@ -4708,7 +5302,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:45
 msgid "Select Language"
-msgstr ""
+msgstr "Επιλογή γλώσσας"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:151
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -4738,8 +5332,9 @@ msgid "Permissive"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
+#, fuzzy
 msgid "Strict"
-msgstr ""
+msgstr "Επανεκκίνηση"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:192
 msgid ""
@@ -4750,19 +5345,19 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:199
 msgid "Internal Linking (for Web Site Exports only)"
-msgstr ""
+msgstr "Εσωτερικές Συνδέσεις (για Εξαγωγή Ιστοσελίδων μόνο)"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:203
 msgid "Enable All Internal Linking"
-msgstr ""
+msgstr "Ενεργοποίηση Όλων των Εσωτερικών Συνδέσεων"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:204
 msgid "Disable Auto-Top Internal Linking"
-msgstr ""
+msgstr "Απενεργοποίηση Αυτόματης Μεταφοράς στην Κορυφή των  Εσωτερικών Συνδέσεων"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:205
 msgid "Disable All Internal Linking"
-msgstr ""
+msgstr "Απενεργοποίηση Όλων των Εσωτερικών Συνδέσεων"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:215
 msgid "Default license for the new documents"
@@ -4785,7 +5380,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
 msgid "Export"
-msgstr ""
+msgstr "Εξαγωγή"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
 msgid "Delete style: "
@@ -4864,7 +5459,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
-msgstr ""
+msgstr "Περίγραμμα"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:85
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:88
@@ -4885,7 +5480,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:155
 msgid "iDevices"
-msgstr ""
+msgstr "ε-Μηχανές"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "Category"
@@ -4897,21 +5492,21 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
 msgid "Authoring"
-msgstr ""
+msgstr "Συγγραφή"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:47
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Properties"
-msgstr ""
+msgstr "Ιδιότητες"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
 msgid "Package"
-msgstr ""
+msgstr "Πακέτο"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:58
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
 msgid "Metadata"
-msgstr ""
+msgstr "Μεταδεδομένα"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:195
@@ -4925,7 +5520,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
-msgstr ""
+msgstr "Προσθήκη σελίδας"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:239
 #: exe/webui/block.py:333 exe/webui/editorelement.py:78
@@ -4936,27 +5531,27 @@ msgstr ""
 #: exe/webui/galleryblock.py:303
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
-msgstr ""
+msgstr "Διαγραφή"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
-msgstr ""
+msgstr "Μετονομασία"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
 msgid "Promote node up in hierarchy"
-msgstr ""
+msgstr "Προβιβασμός του κόμβου στην ιεραρχία"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
 msgid "Demote node down in hierarchy"
-msgstr ""
+msgstr "Υποβιβασμός του κόμβου στην ιεραρχία"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:45
 msgid "Move node up"
-msgstr ""
+msgstr "Μετακίνηση κόμβου επάνω"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:51
 msgid "Move node down"
-msgstr ""
+msgstr "Μετακίνηση κόμβου κάτω"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 #: exe/webui/tools/style-designer/langs/en.js:133
@@ -4974,7 +5569,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
-msgstr ""
+msgstr "Καθαρισμός Λίστας Πρόσφατων Έργων"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
 msgid "Save As..."
@@ -5027,15 +5622,15 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:273
 msgid "Web Site"
-msgstr ""
+msgstr "Ιστότοπος"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:280
 msgid "Self-contained Folder"
-msgstr ""
+msgstr "Ανεξάρτητος φάκελος"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:286
 msgid "Zip File"
-msgstr ""
+msgstr "Συμπιεσμένο αρχείο"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
 msgid "Single Page"
@@ -5059,7 +5654,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:356 exe/webui/editorpage.py:269
 msgid "Quit"
-msgstr ""
+msgstr "Έξοδος"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:363
 msgid "Tools"
@@ -5091,7 +5686,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Preview"
-msgstr ""
+msgstr "Προεπισκόπιση"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Refresh Display"
@@ -5148,391 +5743,391 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
-msgstr ""
+msgstr "Afar "
 
 #: exe/jsui/scripts/langs.js:8
 msgid "Abkhazian "
-msgstr ""
+msgstr "Αμπχάζικα"
 
 #: exe/jsui/scripts/langs.js:12
 msgid "Avestan "
-msgstr ""
+msgstr "Avestan "
 
 #: exe/jsui/scripts/langs.js:16
 msgid "Afrikaans "
-msgstr ""
+msgstr "Ολλανδικά της Νοτίου Αφρικής"
 
 #: exe/jsui/scripts/langs.js:20
 msgid "Amharic "
-msgstr ""
+msgstr "Αμχαρικά"
 
 #: exe/jsui/scripts/langs.js:24
 msgid "Arabic "
-msgstr ""
+msgstr "Αραβικά"
 
 #: exe/jsui/scripts/langs.js:28
 msgid "Assamese "
-msgstr ""
+msgstr "Assamese"
 
 #: exe/jsui/scripts/langs.js:32
 msgid "Aymara "
-msgstr ""
+msgstr "Aymara "
 
 #: exe/jsui/scripts/langs.js:36
 msgid "Azerbaijani "
-msgstr ""
+msgstr "Αζερμπαϊτζανικά"
 
 #: exe/jsui/scripts/langs.js:40
 msgid "Bashkir "
-msgstr ""
+msgstr "Bashkir "
 
 #: exe/jsui/scripts/langs.js:44
 msgid "Byelorussian; Belarusian "
-msgstr ""
+msgstr "Λευκορωσικά"
 
 #: exe/jsui/scripts/langs.js:48
 msgid "Bulgarian "
-msgstr ""
+msgstr "Βουλγαρικά"
 
 #: exe/jsui/scripts/langs.js:52
 msgid "Bihari "
-msgstr ""
+msgstr "Bihari "
 
 #: exe/jsui/scripts/langs.js:56
 msgid "Bislama "
-msgstr ""
+msgstr "Bislama "
 
 #: exe/jsui/scripts/langs.js:60
 msgid "Bengali; Bangla "
-msgstr ""
+msgstr "Μπεγκάλι; Μπάγκλα"
 
 #: exe/jsui/scripts/langs.js:64
 msgid "Tibetan "
-msgstr ""
+msgstr "Θιβετιανά"
 
 #: exe/jsui/scripts/langs.js:68
 msgid "Breton "
-msgstr ""
+msgstr "Βρετoνικά"
 
 #: exe/jsui/scripts/langs.js:72
 msgid "Bosnian "
-msgstr ""
+msgstr "Βοσνιακά"
 
 #: exe/jsui/scripts/langs.js:76
 msgid "Catalan "
-msgstr ""
+msgstr "Καταλανικά"
 
 #: exe/jsui/scripts/langs.js:80
 msgid "Chechen "
-msgstr ""
+msgstr "Τσετσένικα"
 
 #: exe/jsui/scripts/langs.js:84
 msgid "Chamorro "
-msgstr ""
+msgstr "Chamorro "
 
 #: exe/jsui/scripts/langs.js:88
 msgid "Corsican "
-msgstr ""
+msgstr "Κορσικανικά"
 
 #: exe/jsui/scripts/langs.js:92
 msgid "Czech "
-msgstr ""
+msgstr "Τσέχικα"
 
 #: exe/jsui/scripts/langs.js:96
 msgid "Church Slavic "
-msgstr ""
+msgstr "Παλαιοσλαβικά"
 
 #: exe/jsui/scripts/langs.js:100
 msgid "Chuvash "
-msgstr ""
+msgstr "Τουρκικά των Ουραλίων"
 
 #: exe/jsui/scripts/langs.js:104
 msgid "Welsh "
-msgstr ""
+msgstr "Ουαλικά"
 
 #: exe/jsui/scripts/langs.js:108
 msgid "Danish "
-msgstr ""
+msgstr "Δανικά"
 
 #: exe/jsui/scripts/langs.js:112
 msgid "German "
-msgstr ""
+msgstr "Γερμανικά"
 
 #: exe/jsui/scripts/langs.js:116
 msgid "Dzongkha; Bhutani "
-msgstr ""
+msgstr "Ντζόγκα; Μπουτάνι"
 
 #: exe/jsui/scripts/langs.js:120
 msgid "Greek "
-msgstr ""
+msgstr "Ελληνικά"
 
 #: exe/jsui/scripts/langs.js:124
 msgid "English "
-msgstr ""
+msgstr "Αγγλικά"
 
 #: exe/jsui/scripts/langs.js:128
 msgid "Esperanto "
-msgstr ""
+msgstr "Εσπεράντο"
 
 #: exe/jsui/scripts/langs.js:132
 msgid "Spanish "
-msgstr ""
+msgstr "Ισπανικά"
 
 #: exe/jsui/scripts/langs.js:136
 msgid "Estonian "
-msgstr ""
+msgstr "Εσθονικά"
 
 #: exe/jsui/scripts/langs.js:140
 msgid "Basque "
-msgstr ""
+msgstr "Βασκικά"
 
 #: exe/jsui/scripts/langs.js:144
 msgid "Persian "
-msgstr ""
+msgstr "Περσικά"
 
 #: exe/jsui/scripts/langs.js:148
 msgid "Finnish "
-msgstr ""
+msgstr "Φινλανδικά"
 
 #: exe/jsui/scripts/langs.js:152
 msgid "Fijian; Fiji "
-msgstr ""
+msgstr "Φίτζιαν; Φίτζι"
 
 #: exe/jsui/scripts/langs.js:156
 msgid "Faroese "
-msgstr ""
+msgstr "Φεροέζικα"
 
 #: exe/jsui/scripts/langs.js:160
 msgid "French "
-msgstr ""
+msgstr "Γαλλικά"
 
 #: exe/jsui/scripts/langs.js:164
 msgid "Frisian "
-msgstr ""
+msgstr "Frisian "
 
 #: exe/jsui/scripts/langs.js:168
 msgid "Irish "
-msgstr ""
+msgstr "Ιρλανδικά"
 
 #: exe/jsui/scripts/langs.js:172
 msgid "Scots; Gaelic "
-msgstr ""
+msgstr "Σκωτσέζικα, Γαελικά"
 
 #: exe/jsui/scripts/langs.js:176
 msgid "Gallegan; Galician "
-msgstr ""
+msgstr "Γαλικικά"
 
 #: exe/jsui/scripts/langs.js:180
 msgid "Guarani "
-msgstr ""
+msgstr "Γκουαρανί"
 
 #: exe/jsui/scripts/langs.js:184
 msgid "Gujarati "
-msgstr ""
+msgstr "Γκουτζαράτι"
 
 #: exe/jsui/scripts/langs.js:188
 msgid "Manx "
-msgstr ""
+msgstr "Manx "
 
 #: exe/jsui/scripts/langs.js:192
 msgid "Hausa (?) "
-msgstr ""
+msgstr "Hausa"
 
 #: exe/jsui/scripts/langs.js:196
 msgid "Hebrew (formerly iw) "
-msgstr ""
+msgstr "Εβραϊκά"
 
 #: exe/jsui/scripts/langs.js:200
 msgid "Hindi "
-msgstr ""
+msgstr "Χίντι"
 
 #: exe/jsui/scripts/langs.js:204
 msgid "Hiri Motu "
-msgstr ""
+msgstr "Hiri Motu "
 
 #: exe/jsui/scripts/langs.js:208
 msgid "Croatian "
-msgstr ""
+msgstr "Κροατικά"
 
 #: exe/jsui/scripts/langs.js:212
 msgid "Hungarian "
-msgstr ""
+msgstr "Ουγγρικά"
 
 #: exe/jsui/scripts/langs.js:216
 msgid "Armenian "
-msgstr ""
+msgstr "Αρμενικά"
 
 #: exe/jsui/scripts/langs.js:220
 msgid "Herero "
-msgstr ""
+msgstr "Herero "
 
 #: exe/jsui/scripts/langs.js:224
 msgid "Interlingua "
-msgstr ""
+msgstr "Ιντερλίγκουα"
 
 #: exe/jsui/scripts/langs.js:228
 msgid "Indonesian (formerly in) "
-msgstr ""
+msgstr "Ινδονησιακά"
 
 #: exe/jsui/scripts/langs.js:232
 msgid "Interlingue "
-msgstr ""
+msgstr "Ιντερλίγκουε"
 
 #: exe/jsui/scripts/langs.js:236
 msgid "Inupiak "
-msgstr ""
+msgstr "Inupiak "
 
 #: exe/jsui/scripts/langs.js:240
 msgid "Ido "
-msgstr ""
+msgstr "Ido "
 
 #: exe/jsui/scripts/langs.js:244
 msgid "Icelandic "
-msgstr ""
+msgstr "Ισλανδικά"
 
 #: exe/jsui/scripts/langs.js:248
 msgid "Italian "
-msgstr ""
+msgstr "Ιταλικά"
 
 #: exe/jsui/scripts/langs.js:252
 msgid "Inuktitut "
-msgstr ""
+msgstr "Inuktitut "
 
 #: exe/jsui/scripts/langs.js:256
 msgid "Japanese "
-msgstr ""
+msgstr "Ιαπωνικά "
 
 #: exe/jsui/scripts/langs.js:260
 msgid "Javanese "
-msgstr ""
+msgstr "Ιαβανικά "
 
 #: exe/jsui/scripts/langs.js:264
 msgid "Georgian "
-msgstr ""
+msgstr "Γεωργιανικά"
 
 #: exe/jsui/scripts/langs.js:268
 msgid "Kikuyu "
-msgstr ""
+msgstr "Kikuyu "
 
 #: exe/jsui/scripts/langs.js:272
 msgid "Kuanyama "
-msgstr ""
+msgstr "Kuanyama "
 
 #: exe/jsui/scripts/langs.js:276
 msgid "Kazakh "
-msgstr ""
+msgstr "Καζάχικα"
 
 #: exe/jsui/scripts/langs.js:280
 msgid "Kalaallisut; Greenlandic "
-msgstr ""
+msgstr "Γροιλανδικά"
 
 #: exe/jsui/scripts/langs.js:284
 msgid "Khmer; Cambodian "
-msgstr ""
+msgstr "Χμερ; Καμποτζιανά"
 
 #: exe/jsui/scripts/langs.js:288
 msgid "Kannada "
-msgstr ""
+msgstr "Καναδικά"
 
 #: exe/jsui/scripts/langs.js:292
 msgid "Korean "
-msgstr ""
+msgstr "Κορεατικά"
 
 #: exe/jsui/scripts/langs.js:296
 msgid "Kashmiri "
-msgstr ""
+msgstr "Κασμίρι"
 
 #: exe/jsui/scripts/langs.js:300
 msgid "Kurdish "
-msgstr ""
+msgstr "Κουρδικά"
 
 #: exe/jsui/scripts/langs.js:304
 msgid "Komi "
-msgstr ""
+msgstr "Διάλεκτος Κόμι"
 
 #: exe/jsui/scripts/langs.js:308
 msgid "Cornish "
-msgstr ""
+msgstr "Cornish "
 
 #: exe/jsui/scripts/langs.js:312
 msgid "Kirghiz "
-msgstr ""
+msgstr "Κιργιζικά"
 
 #: exe/jsui/scripts/langs.js:316
 msgid "Latin "
-msgstr ""
+msgstr "Λατινικά"
 
 #: exe/jsui/scripts/langs.js:320
 msgid "Letzeburgesch "
-msgstr ""
+msgstr "Λουξεμβουργιανά"
 
 #: exe/jsui/scripts/langs.js:324
 msgid "Lingala "
-msgstr ""
+msgstr "Lingala "
 
 #: exe/jsui/scripts/langs.js:328
 msgid "Lao; Laotian "
-msgstr ""
+msgstr "Lao; Laotian"
 
 #: exe/jsui/scripts/langs.js:332
 msgid "Lithuanian "
-msgstr ""
+msgstr "Λιθουανικά"
 
 #: exe/jsui/scripts/langs.js:336
 msgid "Latvian; Lettish "
-msgstr ""
+msgstr "Λετονικά"
 
 #: exe/jsui/scripts/langs.js:340
 msgid "Malagasy "
-msgstr ""
+msgstr "Μαλαγασιανά"
 
 #: exe/jsui/scripts/langs.js:344
 msgid "Marshall "
-msgstr ""
+msgstr "Marshall"
 
 #: exe/jsui/scripts/langs.js:348
 msgid "Maori "
-msgstr ""
+msgstr "Μαορί"
 
 #: exe/jsui/scripts/langs.js:352
 msgid "Macedonian "
-msgstr ""
+msgstr "Γλώσσα ΠΓΔΜ"
 
 #: exe/jsui/scripts/langs.js:356
 msgid "Malayalam "
-msgstr ""
+msgstr "Μαλαγιάλαμ"
 
 #: exe/jsui/scripts/langs.js:360
 msgid "Mongolian "
-msgstr ""
+msgstr "Μογγολικά"
 
 #: exe/jsui/scripts/langs.js:364
 msgid "Moldavian "
-msgstr ""
+msgstr "Μολδαβικά"
 
 #: exe/jsui/scripts/langs.js:368
 msgid "Marathi "
-msgstr ""
+msgstr "Marathi"
 
 #: exe/jsui/scripts/langs.js:372
 msgid "Malay "
-msgstr ""
+msgstr "Μαλαισιανά"
 
 #: exe/jsui/scripts/langs.js:376
 msgid "Maltese "
-msgstr ""
+msgstr "Μαλτεζιανά"
 
 #: exe/jsui/scripts/langs.js:380
 msgid "Burmese "
-msgstr ""
+msgstr "Burmese"
 
 #: exe/jsui/scripts/langs.js:384
 msgid "Nauru "
-msgstr ""
+msgstr "Nauru "
 
 #: exe/jsui/scripts/langs.js:388
 msgid "Norwegian Bokmål "
-msgstr ""
+msgstr "Νορβηγικά Bokmål "
 
 #: exe/jsui/scripts/langs.js:392
 msgid "Ndebele,North "
@@ -5540,23 +6135,23 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:396
 msgid "Nepali "
-msgstr ""
+msgstr "Nepali"
 
 #: exe/jsui/scripts/langs.js:400
 msgid "Ndonga "
-msgstr ""
+msgstr "Ndonga "
 
 #: exe/jsui/scripts/langs.js:404
 msgid "Dutch "
-msgstr ""
+msgstr "Ολλανδικά"
 
 #: exe/jsui/scripts/langs.js:408
 msgid "Norwegian Nynorsk "
-msgstr ""
+msgstr "Νορβηγικά Nynorsk "
 
 #: exe/jsui/scripts/langs.js:412
 msgid "Norwegian "
-msgstr ""
+msgstr "Νορβηγικά"
 
 #: exe/jsui/scripts/langs.js:416
 msgid "Ndebele,South "
@@ -5564,39 +6159,39 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:420
 msgid "Navajo "
-msgstr ""
+msgstr "Ναβάχο"
 
 #: exe/jsui/scripts/langs.js:424
 msgid "Chichewa; Nyanja "
-msgstr ""
+msgstr "Chichewa; Nyanja "
 
 #: exe/jsui/scripts/langs.js:428
 msgid "Occitan; Provençal "
-msgstr ""
+msgstr "Οξιτανικά; Provençal "
 
 #: exe/jsui/scripts/langs.js:432
 msgid "(Afan) Oromo "
-msgstr ""
+msgstr "(Afan) Oromo "
 
 #: exe/jsui/scripts/langs.js:436
 msgid "Oriya "
-msgstr ""
+msgstr "Oriya "
 
 #: exe/jsui/scripts/langs.js:440
 msgid "Ossetian; Ossetic "
-msgstr ""
+msgstr "Οσετικά"
 
 #: exe/jsui/scripts/langs.js:444
 msgid "Panjabi; Punjabi "
-msgstr ""
+msgstr "Πουντζάμπι"
 
 #: exe/jsui/scripts/langs.js:448
 msgid "Pali "
-msgstr ""
+msgstr "Διάλεκτος Pali"
 
 #: exe/jsui/scripts/langs.js:452
 msgid "Polish "
-msgstr ""
+msgstr "Πολωνικά"
 
 #: exe/jsui/scripts/langs.js:456
 msgid "Pashto,Pushto "
@@ -5604,87 +6199,87 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:460
 msgid "Portuguese "
-msgstr ""
+msgstr "Πορτογαλλικά"
 
 #: exe/jsui/scripts/langs.js:464
 msgid "Quechua "
-msgstr ""
+msgstr "Κέτσουα"
 
 #: exe/jsui/scripts/langs.js:468
 msgid "Rhaeto-Romance "
-msgstr ""
+msgstr "Rhaeto-Ρομανικά"
 
 #: exe/jsui/scripts/langs.js:472
 msgid "Rundi; Kirundi "
-msgstr ""
+msgstr "Rundi; Kirundi "
 
 #: exe/jsui/scripts/langs.js:476
 msgid "Romanian "
-msgstr ""
+msgstr "Ρουμανικά"
 
 #: exe/jsui/scripts/langs.js:480
 msgid "Russian "
-msgstr ""
+msgstr "Ρωσικά"
 
 #: exe/jsui/scripts/langs.js:484
 msgid "Kinyarwanda "
-msgstr ""
+msgstr "Κίνιαρουάντα"
 
 #: exe/jsui/scripts/langs.js:488
 msgid "Sanskrit "
-msgstr ""
+msgstr "Σανσκριτικά"
 
 #: exe/jsui/scripts/langs.js:492
 msgid "Sardinian "
-msgstr ""
+msgstr "Σαρδινικά"
 
 #: exe/jsui/scripts/langs.js:496
 msgid "Sindhi "
-msgstr ""
+msgstr "Sindhi"
 
 #: exe/jsui/scripts/langs.js:500
 msgid "Northern Sami "
-msgstr ""
+msgstr "Βόρεια Sami"
 
 #: exe/jsui/scripts/langs.js:504
 msgid "Sango; Sangro "
-msgstr ""
+msgstr "Sango; Sangro "
 
 #: exe/jsui/scripts/langs.js:508
 msgid "Sinhalese "
-msgstr ""
+msgstr "Sinhalese"
 
 #: exe/jsui/scripts/langs.js:512
 msgid "Slovak "
-msgstr ""
+msgstr "Σλοβακικά"
 
 #: exe/jsui/scripts/langs.js:516
 msgid "Slovenian "
-msgstr ""
+msgstr "Σλοβενικά"
 
 #: exe/jsui/scripts/langs.js:520
 msgid "Samoan "
-msgstr ""
+msgstr "Samoan"
 
 #: exe/jsui/scripts/langs.js:524
 msgid "Shona "
-msgstr ""
+msgstr "Διάλεκτος Shona"
 
 #: exe/jsui/scripts/langs.js:528
 msgid "Somali "
-msgstr ""
+msgstr "Σομαλικά"
 
 #: exe/jsui/scripts/langs.js:532
 msgid "Albanian "
-msgstr ""
+msgstr "Αλβανικά"
 
 #: exe/jsui/scripts/langs.js:536
 msgid "Serbian "
-msgstr ""
+msgstr "Σερβικά"
 
 #: exe/jsui/scripts/langs.js:540
 msgid "Swati; Siswati "
-msgstr ""
+msgstr "Swati; Siswati "
 
 #: exe/jsui/scripts/langs.js:544
 msgid "Sesotho; Sotho,Southern "
@@ -5692,87 +6287,87 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:548
 msgid "Sundanese "
-msgstr ""
+msgstr "Σουδανέζικα"
 
 #: exe/jsui/scripts/langs.js:552
 msgid "Swedish "
-msgstr ""
+msgstr "Σουηδικά"
 
 #: exe/jsui/scripts/langs.js:556
 msgid "Swahili "
-msgstr ""
+msgstr "Σουαχίλι"
 
 #: exe/jsui/scripts/langs.js:560
 msgid "Tamil "
-msgstr ""
+msgstr "Ταμίλ"
 
 #: exe/jsui/scripts/langs.js:564
 msgid "Telugu "
-msgstr ""
+msgstr "Telugu "
 
 #: exe/jsui/scripts/langs.js:568
 msgid "Tajik "
-msgstr ""
+msgstr "Τατζικικά"
 
 #: exe/jsui/scripts/langs.js:572
 msgid "Thai "
-msgstr ""
+msgstr "Ταϋλανδέζικα"
 
 #: exe/jsui/scripts/langs.js:576
 msgid "Tigrinya "
-msgstr ""
+msgstr "Tigrinya "
 
 #: exe/jsui/scripts/langs.js:580
 msgid "Turkmen "
-msgstr ""
+msgstr "Τουρκμενικά"
 
 #: exe/jsui/scripts/langs.js:584
 msgid "Tagalog "
-msgstr ""
+msgstr "Tagalog "
 
 #: exe/jsui/scripts/langs.js:588
 msgid "Tswana; Setswana "
-msgstr ""
+msgstr "Tswana; Setswana "
 
 #: exe/jsui/scripts/langs.js:592
 msgid "Tongan  "
-msgstr ""
+msgstr "Tongan"
 
 #: exe/jsui/scripts/langs.js:596
 msgid "Turkish "
-msgstr ""
+msgstr "Τουρκικά"
 
 #: exe/jsui/scripts/langs.js:600
 msgid "Tsonga "
-msgstr ""
+msgstr "Tsonga "
 
 #: exe/jsui/scripts/langs.js:604
 msgid "Tatar "
-msgstr ""
+msgstr "Ταταρικά"
 
 #: exe/jsui/scripts/langs.js:608
 msgid "Twi "
-msgstr ""
+msgstr "Twi "
 
 #: exe/jsui/scripts/langs.js:612
 msgid "Tahitian "
-msgstr ""
+msgstr "Ταϊτιανά"
 
 #: exe/jsui/scripts/langs.js:616
 msgid "Uighur "
-msgstr ""
+msgstr "Ουιγουρικά"
 
 #: exe/jsui/scripts/langs.js:620
 msgid "Ukrainian "
-msgstr ""
+msgstr "Ουκρανικά"
 
 #: exe/jsui/scripts/langs.js:624
 msgid "Urdu "
-msgstr ""
+msgstr "Ούρντου"
 
 #: exe/jsui/scripts/langs.js:628
 msgid "Uzbek "
-msgstr ""
+msgstr "Ουζμπεκικά"
 
 #: exe/jsui/scripts/langs.js:632
 msgid "Valencian "
@@ -5780,43 +6375,43 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:636
 msgid "Vietnamese "
-msgstr ""
+msgstr "Βιετναμέζικα"
 
 #: exe/jsui/scripts/langs.js:640
 msgid "Volapük; Volapuk "
-msgstr ""
+msgstr "Volapük; Volapuk "
 
 #: exe/jsui/scripts/langs.js:644
 msgid "Walloon "
-msgstr ""
+msgstr "Γαλλικά του Βελγίου"
 
 #: exe/jsui/scripts/langs.js:648
 msgid "Wolof "
-msgstr ""
+msgstr "Wolof "
 
 #: exe/jsui/scripts/langs.js:652
 msgid "Xhosa "
-msgstr ""
+msgstr "Xhosa "
 
 #: exe/jsui/scripts/langs.js:656
 msgid "Yiddish (formerly ji) "
-msgstr ""
+msgstr "Yiddish"
 
 #: exe/jsui/scripts/langs.js:660
 msgid "Yoruba "
-msgstr ""
+msgstr "Yoruba "
 
 #: exe/jsui/scripts/langs.js:664
 msgid "Zhuang "
-msgstr ""
+msgstr "Ζουάγκ"
 
 #: exe/jsui/scripts/langs.js:668
 msgid "Chinese "
-msgstr ""
+msgstr "Κινέζικα"
 
 #: exe/jsui/scripts/langs.js:672
 msgid "Zulu "
-msgstr ""
+msgstr "Ζουλού"
 
 #: exe/jsui/scripts/lomvocab.js:5 exe/jsui/scripts/lomvocab.js:664
 msgid "active"
@@ -6749,7 +7344,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:85
 msgid "Please upload a .ggb file."
-msgstr ""
+msgstr "Παρακαλώ αποφορτώστε ένα .ggb αρχείο."
 
 #: exe/webui/appletblock.py:87
 msgid "Please upload a .jclic.zip file."
@@ -6777,7 +7372,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:131
 msgid "Geogebra"
-msgstr ""
+msgstr "Geogebra"
 
 #: exe/webui/appletblock.py:132
 msgid "JClic"
@@ -6789,15 +7384,15 @@ msgstr ""
 
 #: exe/webui/appletblock.py:134 exe/webui/wikipediablock.py:136
 msgid "Other"
-msgstr ""
+msgstr "Άλλο"
 
 #: exe/webui/appletblock.py:135
 msgid "Applet Type"
-msgstr ""
+msgstr "Είδος μικροεφαρμογής"
 
 #: exe/webui/appletblock.py:156 exe/webui/appletblock.py:166
 msgid "Add files"
-msgstr ""
+msgstr "Προσθήκη αρχείων"
 
 #: exe/webui/appletblock.py:162
 msgid "Accept URL"
@@ -6805,30 +7400,30 @@ msgstr ""
 
 #: exe/webui/appletblock.py:172
 msgid "Applet Code:"
-msgstr ""
+msgstr "Κωδικός Μικροεφαρμογής:"
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
 msgid "Filename:"
-msgstr ""
+msgstr "Όνομα αρχείου:"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
 #: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
 #: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
 msgid "Select a file"
-msgstr ""
+msgstr "Επιλογή αρχείου"
 
 #: exe/webui/attachmentblock.py:108
 msgid "Label:"
-msgstr ""
+msgstr "Ετικέτα:"
 
 #: exe/webui/block.py:184
 msgid "IDevice broken"
-msgstr ""
+msgstr "Κατεστραμμένη ε-Μηχανή"
 
 #: exe/webui/block.py:222
 msgid "Done"
-msgstr ""
+msgstr "Ολοκληρώθηκε"
 
 #: exe/webui/block.py:226
 msgid "Exit without saving?"
@@ -6836,11 +7431,11 @@ msgstr ""
 
 #: exe/webui/block.py:229
 msgid "Undo Edits"
-msgstr ""
+msgstr "Αναίρεση ενεργειών επεξεργασίας"
 
 #: exe/webui/block.py:233
 msgid "Can NOT Undo Edits"
-msgstr ""
+msgstr "Δεν επιτρέπεται η Αναίρεση ενεργειών επεξεργασίας"
 
 #: exe/webui/block.py:236 exe/webui/block.py:330
 msgid "This will delete this iDevice. Do you really want to do this?"
@@ -6848,36 +7443,36 @@ msgstr ""
 
 #: exe/webui/block.py:246
 msgid "Move Up"
-msgstr ""
+msgstr "Μετακίνηση πάνω"
 
 #: exe/webui/block.py:253
 msgid "Move Down"
-msgstr ""
+msgstr "Μετακίνηση κάτω"
 
 #: exe/webui/block.py:255
 msgid "---Move To---"
-msgstr ""
+msgstr "---Μετακίνηση σε---"
 
 #: exe/webui/block.py:260 exe/webui/editorpane.py:380
 msgid "Pedagogical Help"
-msgstr ""
+msgstr "Παιδαγωγική βοήθεια"
 
 #: exe/webui/block.py:273 exe/webui/editorpane.py:390
 msgid "Tip:"
-msgstr ""
+msgstr "Συμβουλή:"
 
 #: exe/webui/block.py:318
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr ""
+msgstr "ΣΦΑΛΜΑ:  Άμεση κλήση του block.renderViewContent"
 
 #: exe/webui/block.py:328 exe/webui/editorpage.py:286
 #: exe/webui/editorpane.py:270
 msgid "Edit"
-msgstr ""
+msgstr "Επεξεργασία"
 
 #: exe/webui/casestudyblock.py:114 exe/webui/ejercicioresueltofpdblock.py:130
 msgid "Add another activity"
-msgstr ""
+msgstr "Προσθήκη άλλης δραστηριότητας"
 
 #: exe/webui/casopracticofpdblock.py:68
 msgid "Situation"
@@ -7030,25 +7625,25 @@ msgstr ""
 
 #: exe/webui/common.py:476
 msgid "Hide"
-msgstr ""
+msgstr "Απόκρυψη"
 
 #: exe/webui/common.py:477 exe/webui/common.py:715 exe/webui/element.py:1538
 #: exe/webui/element.py:2469 exe/webui/listablock.py:275
 msgid "Show Feedback"
-msgstr ""
+msgstr "Εμφάνιση Ανατροφοδότησης"
 
 #: exe/webui/common.py:478
 msgid "Hide Feedback"
-msgstr ""
+msgstr "Απόκρυψη Ανατροφοδότησης"
 
 #: exe/webui/common.py:479 exe/webui/common.py:494 exe/webui/element.py:2272
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
-msgstr ""
+msgstr "Σωστό"
 
 #: exe/webui/common.py:480 exe/webui/element.py:2275
 msgid "Incorrect"
-msgstr ""
+msgstr "Λάθος"
 
 #: exe/webui/common.py:481
 msgid "Menu"
@@ -7060,7 +7655,7 @@ msgstr ""
 
 #: exe/webui/common.py:495 exe/webui/element.py:2708 exe/webui/element.py:2726
 msgid "Wrong"
-msgstr ""
+msgstr "Λάθος"
 
 #: exe/webui/common.py:496
 msgid "Right answer"
@@ -7079,8 +7674,9 @@ msgid "Words"
 msgstr ""
 
 #: exe/webui/common.py:501
+#, fuzzy
 msgid "Play"
-msgstr ""
+msgstr "Αποφόρτωση"
 
 #: exe/webui/common.py:503
 msgid "Results"
@@ -7091,8 +7687,9 @@ msgid "Total"
 msgstr ""
 
 #: exe/webui/common.py:505
+#, fuzzy
 msgid "Another word"
-msgstr ""
+msgstr "Προσθήκη άλλης επιλογής"
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7113,11 +7710,11 @@ msgstr ""
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
-msgstr ""
+msgstr "eXe : συντάκτης XHTML για την εξ' αποστάσεως μάθηση"
 
 #: exe/webui/common.py:839 exe/webui/common.py:842
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "Κλικ για οδηγίες συμπλήρωσης"
 
 #: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
@@ -7125,15 +7722,15 @@ msgstr ""
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:251
 msgid "Text Line"
-msgstr ""
+msgstr "Γραμμή κειμένου"
 
 #: exe/webui/editorelement.py:111 exe/webui/editorpane.py:253
 msgid "Text Box"
-msgstr ""
+msgstr "Πλαίσιο κειμένου"
 
 #: exe/webui/editorelement.py:149 exe/webui/element.py:602
 msgid "Button Caption"
-msgstr ""
+msgstr "Ετικέτα Πλήκτρου"
 
 #: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
 #: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
@@ -7147,7 +7744,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:18
 msgid "Left"
-msgstr ""
+msgstr "Αριστερά"
 
 #: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
 #: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
@@ -7161,47 +7758,47 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:76
 msgid "Right"
-msgstr ""
+msgstr "Δεξιά"
 
 #: exe/webui/editorelement.py:228 exe/webui/flashmovieblock.py:87
 #: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/imagewithtextblock.py:88 exe/webui/multimediablock.py:92
 msgid "Align:"
-msgstr ""
+msgstr "Στοίχιση:"
 
 #: exe/webui/editorelement.py:268 exe/webui/element.py:1889
 msgid "Select Flash Object"
-msgstr ""
+msgstr "Επιλογή αντικειμένου flash "
 
 #: exe/webui/editorelement.py:308
 msgid "Select MP3 file"
-msgstr ""
+msgstr "Επιλογή αρχείου MP3"
 
 #: exe/webui/editorelement.py:311 exe/webui/element.py:869
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
-msgstr ""
+msgstr "Ετικέτα:"
 
 #: exe/webui/editorpage.py:125
 msgid "Please enter an idevice name."
-msgstr ""
+msgstr "Παρακαλώ εισάγετε ένα όνομα για την ε-Μηχανή."
 
 #: exe/webui/editorpage.py:188 exe/webui/editorpage.py:200
 msgid "Sorry, wrong file format."
-msgstr ""
+msgstr "Συγνώμη, λανθασμένη μορφή αρχείου."
 
 #: exe/webui/editorpage.py:262
 msgid "Import iDevice"
-msgstr ""
+msgstr "Εισαγωγή ε-Μηχανής"
 
 #: exe/webui/editorpage.py:265
 msgid "Export iDevice"
-msgstr ""
+msgstr "Εξαγωγή ε-Μηχανής"
 
 #: exe/webui/editorpage.py:291
 msgid "New iDevice"
-msgstr ""
+msgstr "Νέα ε-Μηχανή"
 
 #: exe/webui/editorpane.py:67
 msgid ""
@@ -7209,22 +7806,31 @@ msgid ""
 " a compulsory field and you will be prompted to enter a label if you try "
 "to submit your iDevice without one."
 msgstr ""
+"Η νέα ε-Μηχανή θα εμφανιστεί με αυτόν τον τίτλο στην πινακίδα των "
+"ε-Μηχανών. Αυτό είναι ένα υποχρεωτικό πεδίο, στο οποίο θα παρακινηθείτε "
+"να εισάγετε έναν τίτλο, σε περίπτωση που επιχειρήσετε να υποβάλλετε τη "
+"ε-Μηχανή χωρίς αυτόν."
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
-msgstr ""
+msgstr "Το πεδίο είναι προαιρετικό."
 
 #: exe/webui/editorpane.py:72
 msgid ""
 "The purpose dialogue allows you to describe your intended purpose of the "
 "iDevice to other potential users."
 msgstr ""
+"Επιδίωξη του διαλόγου είναι να περιγράψετε τον επιδιωκόμενο στόχο της "
+"ε-Μηχανής σε άλλους πιθανούς χρήστες."
 
 #: exe/webui/editorpane.py:75
 msgid ""
 "Use this pulldown to select whether or not  the iDevice should have any "
 "formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr ""
+"Χρησιμοποιήστε αυτό το πλήκτρο για να επιλέξετε αν η ε-Μηχανή θα διαθέτει"
+" μορφοποίηση που θα την κάνει να ξεχωρίζει. Π.χ., ένα περίγραμμα και ένα "
+"εικονίδιο."
 
 #: exe/webui/editorpane.py:79
 msgid ""
@@ -7232,103 +7838,114 @@ msgid ""
 "device's development. This can be useful if your iDevice is to be "
 "exported for others to use."
 msgstr ""
+"Χρησιμοποιήστε αυτό το πεδίο για να περιγράψετε την επιδιωκόμενη χρήση "
+"και τις παιδαγωγικές αρχές στις οποίες βασίζεται η ανάπτυξη της "
+"ε-Μηχανής. Αυτό θα είναι πολύ χρήσιμο εάν η ε-Μηχανή σας εξαχθεί για να "
+"χρησιμοποιηθεί και από άλλους."
 
 #: exe/webui/editorpane.py:84
 msgid ""
 "Add a single text line to an iDevice. Useful if you want the ability to "
 "place a label within the iDevice."
 msgstr ""
+"Εισάγετε μια απλή γραμμή κειμένου σε μια ε-Μηχανή. Χρήσιμο εάν θέλετε να "
+"τοποθετήσετε μια ετικέτα μέσα στη ε-Μηχανή."
 
 #: exe/webui/editorpane.py:87
 msgid ""
 "Add a text entry box to an iDevice. Used for entering larger amounts of "
 "textual content."
 msgstr ""
+"Εισάγετε ένα πλαίσιο κειμένου σε μια ε-Μηχανή. Χρησιμοποιείται για "
+"προσθήκη κειμένου μεγάλου μεγέθους."
 
 #: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
-msgstr ""
+msgstr "Προσθήκη πεδίου αλληλεπιδραστικής ανατροφοδότησης στην ε-Μηχανή."
 
 #: exe/webui/editorpane.py:91
 msgid "Add a flash video to your iDevice."
-msgstr ""
+msgstr "Προσθήκη ενός flash βίντεο στη ε-Μηχανή."
 
 #: exe/webui/editorpane.py:92
 msgid "Add an mp3 file to your iDevice."
-msgstr ""
+msgstr "Προσθή αρχείου MP3 στην ε-Μηχανή."
 
 #: exe/webui/editorpane.py:93
 msgid "Add an attachment file to your iDevice."
-msgstr ""
+msgstr "Προσθήκη συνημμένου αρχείου στη ε-Μηχανή."
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:152
 #: exe/webui/editorpane.py:160 exe/webui/editorpane.py:176
 #: exe/webui/editorpane.py:186
 msgid "Enter the label here"
-msgstr ""
+msgstr "Εισάγετε την ετικέτα εδώ"
 
 #: exe/webui/editorpane.py:146
 msgid "Enter instructions for completion here"
-msgstr ""
+msgstr "Εισάγετε οδηγίες συμπλήρωσης εδώ"
 
 #: exe/webui/editorpane.py:153 exe/webui/editorpane.py:177
 #: exe/webui/editorpane.py:187
 msgid "Enter the instructions for completion here"
-msgstr ""
+msgstr "Εισάγετε τις οδηγίες συμπλήρωσης εδώ"
 
 #: exe/webui/editorpane.py:161
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr ""
+"Το κουμπί ανατροφοδότησης δεν θα εμφανιστεί\n"
+"αν δεν εισαχθούν δεδομένα σ' αυτό το πεδίο."
 
 #: exe/webui/editorpane.py:198
 msgid "Please enter<br />an idevice name."
-msgstr ""
+msgstr "Παρακαλώ εισάγετε<br />ένα όνομα για την ε-Μηχανή."
 
 #: exe/webui/editorpane.py:250
 msgid "Add Field"
-msgstr ""
+msgstr "Προσθήκη πεδίου"
 
 #: exe/webui/editorpane.py:265
 msgid "Actions"
-msgstr ""
+msgstr "Ενέργειες"
 
 #: exe/webui/editorpane.py:332
 msgid "Pedagogical Tip"
-msgstr ""
+msgstr "Παιδαγωγική συμβουλή"
 
 #: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:163
 msgid "Emphasis"
-msgstr ""
+msgstr "Έμφαση"
 
 #: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:160
 msgid "No emphasis"
-msgstr ""
+msgstr "Χωρίς έμφαση"
 
 #: exe/webui/editorpane.py:339 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:161
 msgid "Some emphasis"
-msgstr ""
+msgstr "Μερική έμφαση"
 
 #: exe/webui/editorpane.py:354
+#, fuzzy
 msgid "Select an icon"
-msgstr ""
+msgstr "Επιλογή εικόνας"
 
 #: exe/webui/editorpane.py:368
 msgid "Icons"
-msgstr ""
+msgstr "Εικονίδια"
 
 #: exe/webui/editorpane.py:383
 msgid "Info"
-msgstr ""
+msgstr "Πληροφορίες"
 
 #: exe/webui/editorpane.py:429 exe/webui/element.py:1545
 #: exe/webui/element.py:1547 exe/webui/element.py:1803
 msgid "Submit"
-msgstr ""
+msgstr "Υποβολή"
 
 #: exe/webui/ejercicioresueltofpdblock.py:122
 msgid "Translation"
@@ -7337,35 +7954,35 @@ msgstr ""
 #: exe/webui/eleccionmultiplefpdblock.py:98 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
-msgstr ""
+msgstr "Παρακαλώ επιλέξτε μια σωστή απάντηση για κάθε ερώτηση."
 
 #: exe/webui/eleccionmultiplefpdblock.py:124 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:119
 msgid "Add another question"
-msgstr ""
+msgstr "Προσθήκη άλλης ερώτησης"
 
 #: exe/webui/element.py:72
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr ""
+msgstr "ΣΦΑΛΜΑ: Απευθείας κλήση του element.process μέσω της κλάσης %s"
 
 #: exe/webui/element.py:81
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
-msgstr ""
+msgstr "ΣΦΑΛΜΑ: Απευθείας κλήση του element.renderEdit μέσω της κλάσης %s"
 
 #: exe/webui/element.py:98
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
-msgstr ""
+msgstr "ΣΦΑΛΜΑ: Απευθείας κλήση του element.renderView μέσω της κλάσης %s"
 
 #: exe/webui/element.py:753 exe/webui/element.py:1174
 msgid "Add Image"
-msgstr ""
+msgstr "Προσθήκη εικόνας"
 
 #: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
 msgid "Display as:"
-msgstr ""
+msgstr "Εμφάνιση ως:"
 
 #: exe/webui/element.py:786
 msgid "by"
@@ -7373,24 +7990,24 @@ msgstr ""
 
 #: exe/webui/element.py:793 exe/webui/element.py:1212
 msgid "blank for original size"
-msgstr ""
+msgstr "κενό για το αρχικό μέγεθος"
 
 #: exe/webui/element.py:863
 msgid "Select an MP3"
-msgstr ""
+msgstr "Επιλογή αρχείου MP3"
 
 #: exe/webui/element.py:1351 exe/webui/element.py:1684
 msgid "Cloze Text"
-msgstr ""
+msgstr "Κείμενο Συμπλήρωσης Κενών"
 
 #: exe/webui/element.py:1359 exe/webui/element.py:1692
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
-msgstr ""
+msgstr "Απόκρυψη/Εμφάνιση Λέξης"
 
 #: exe/webui/element.py:1364 exe/webui/element.py:1697
 msgid "Strict Marking?"
-msgstr ""
+msgstr "Αυστηρή βαθμολογία;"
 
 #: exe/webui/element.py:1369
 msgid "Check Capitalization?"
@@ -7398,7 +8015,7 @@ msgstr ""
 
 #: exe/webui/element.py:1374 exe/webui/element.py:1707
 msgid "Instant Marking?"
-msgstr ""
+msgstr "Άμεση βαθμολογία;"
 
 #: exe/webui/element.py:1485 exe/webui/element.py:1742
 #: exe/webui/listablock.py:223
@@ -7407,15 +8024,15 @@ msgstr ""
 
 #: exe/webui/element.py:1535 exe/webui/element.py:1794
 msgid "Get score"
-msgstr ""
+msgstr "Λήψη βαθμολογίας"
 
 #: exe/webui/element.py:1541 exe/webui/element.py:1800
 msgid "Show/Clear Answers"
-msgstr ""
+msgstr "Εμφάνιση/Απόκρυψη Απαντήσεων"
 
 #: exe/webui/element.py:1551 exe/webui/element.py:1807
 msgid "Show Answers"
-msgstr ""
+msgstr "Εμφάνιση Απαντήσεων"
 
 #: exe/webui/element.py:1587 exe/webui/element.py:1839
 #: exe/webui/element.py:2461 exe/webui/element.py:2921
@@ -7425,7 +8042,7 @@ msgstr ""
 
 #: exe/webui/element.py:1702
 msgid "Check Caps?"
-msgstr ""
+msgstr "Έλεγχος για κεφαλαία;"
 
 #: exe/webui/element.py:1712
 msgid "Show Score?"
@@ -7433,48 +8050,48 @@ msgstr ""
 
 #: exe/webui/element.py:1797
 msgid "Show/Hide Feedback"
-msgstr ""
+msgstr "Εμφάνιση/Απόκρυψη Ανατροφοδότησης"
 
 #: exe/webui/element.py:1955
 msgid "Please select a .flv file."
-msgstr ""
+msgstr "Παρακαλώ επιλέξτε ένα αρχείο .flv."
 
 #: exe/webui/element.py:1971
 msgid "Select a flash video"
-msgstr ""
+msgstr "Επιλογή ταινίας flash "
 
 #: exe/webui/element.py:2080
 msgid "text"
-msgstr ""
+msgstr "κείμενο"
 
 #: exe/webui/element.py:2081
 msgid "newline"
-msgstr ""
+msgstr "νέα γραμμή"
 
 #: exe/webui/element.py:2084
 msgid "Select a font size: "
-msgstr ""
+msgstr "Επιλογή μεγέθους γραμματοσειράς:"
 
 #: exe/webui/element.py:2194 exe/webui/element.py:2581
 #: exe/webui/element.py:2706 exe/webui/element.py:2724
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
-msgstr ""
+msgstr "Σωστή Επιλογή"
 
 #: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
-msgstr ""
+msgstr "Διαγραφή επιλογής"
 
 #: exe/webui/element.py:2361 exe/webui/element.py:2816
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
-msgstr ""
+msgstr "Διαγραφή ερώτησης"
 
 #: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
-msgstr ""
+msgstr "Προσθήκη άλλης Eπιλογής"
 
 #: exe/webui/element.py:2497 exe/webui/element.py:2940
 msgid "Solution"
@@ -7482,11 +8099,11 @@ msgstr ""
 
 #: exe/webui/element.py:2831
 msgid "Add another option"
-msgstr ""
+msgstr "Προσθήκη άλλης επιλογής"
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: exe/webui/externalurlblock.py:72
 msgid "small"
@@ -7502,7 +8119,7 @@ msgstr ""
 
 #: exe/webui/externalurlblock.py:81
 msgid "Frame Height:"
-msgstr ""
+msgstr "Ύψος πλαισίου:"
 
 #: exe/webui/fileattachblock.py:92
 msgid "<div>\n"
@@ -7537,39 +8154,39 @@ msgstr ""
 #: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:307
 #: exe/webui/galleryblock.py:308
 msgid "Add images"
-msgstr ""
+msgstr "Προσθήκη εικόνων"
 
 #: exe/webui/galleryblock.py:230 exe/webui/galleryblock.py:332
 msgid "No Images Loaded"
-msgstr ""
+msgstr "Δεν φορτώθηκαν εικόνες"
 
 #: exe/webui/galleryblock.py:246 exe/webui/galleryblock.py:264
 msgid "Change Image"
-msgstr ""
+msgstr "Αλλαγή εικόνας"
 
 #: exe/webui/galleryblock.py:271
 msgid "Move Image Left"
-msgstr ""
+msgstr "Μετακίνηση Εικόνας αριστερά"
 
 #: exe/webui/galleryblock.py:273
 msgid "Go Back"
-msgstr ""
+msgstr "Πίσω"
 
 #: exe/webui/galleryblock.py:285
 msgid "Move Image Right"
-msgstr ""
+msgstr "Μετακίνηση Εικόνας δεξιά"
 
 #: exe/webui/galleryblock.py:287
 msgid "Go Forward"
-msgstr ""
+msgstr "Μπροστά"
 
 #: exe/webui/galleryblock.py:295
 msgid "Go Forward (Not Available)"
-msgstr ""
+msgstr "Μπροστά (Μη διαθέσιμο)"
 
 #: exe/webui/galleryblock.py:300
 msgid "Delete Image"
-msgstr ""
+msgstr "Διαγραφή Εικόνας"
 
 #: exe/webui/galleryblock.py:301
 msgid "Delete this image?"
@@ -7619,31 +8236,31 @@ msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
-msgstr ""
+msgstr "Αρχική Μεγέθυνση"
 
 #: exe/webui/imagemagnifierblock.py:153
 msgid "Maximum zoom"
-msgstr ""
+msgstr "Μέγιστη μεγέθυνση "
 
 #: exe/webui/imagemagnifierblock.py:159
 msgid "Small"
-msgstr ""
+msgstr "Μικρό"
 
 #: exe/webui/imagemagnifierblock.py:160
 msgid "Medium"
-msgstr ""
+msgstr "Μέτριο"
 
 #: exe/webui/imagemagnifierblock.py:161
 msgid "Large"
-msgstr ""
+msgstr "Μεγάλο"
 
 #: exe/webui/imagemagnifierblock.py:162
 msgid "Extra large"
-msgstr ""
+msgstr "Πολύ μεγάλο"
 
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
-msgstr ""
+msgstr "Μέγεθος μεγεθυντικού φακού:"
 
 #: exe/webui/listablock.py:180
 msgid "Other words"
@@ -7673,7 +8290,7 @@ msgstr ""
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:100
 msgid "Add another Question"
-msgstr ""
+msgstr "Προσθήκη άλλης Eρώτησης"
 
 #: exe/webui/notablock.py:104
 msgid "Show/Hide"
@@ -7741,11 +8358,11 @@ msgstr ""
 
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
-msgstr ""
+msgstr "Επιλογή βαθμολογικής βάσης:"
 
 #: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:368
 msgid "SUBMIT ANSWERS"
-msgstr ""
+msgstr "ΥΠΟΒΟΛΗ ΑΠΑΝΤΗΣΕΩΝ"
 
 #: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318
 #: exe/webui/quiztestblock.py:372
@@ -7763,19 +8380,21 @@ msgstr ""
 
 #: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:156
 msgid "Load"
-msgstr ""
+msgstr "Φόρτωση"
 
 #: exe/webui/scripts/authoring.js:69
+#, fuzzy
 msgid "Select one or more images"
-msgstr ""
+msgstr "Επιλογή εικόνας"
 
 #: exe/webui/scripts/authoring.js:94
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
+#, fuzzy
 msgid "Flash Movie (.flv)"
-msgstr ""
+msgstr "Ταινία Flash"
 
 #: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
 msgid "Flash Object (.swf)"
@@ -7802,12 +8421,14 @@ msgid "MP3 Audio (.mp3)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:378
+#, fuzzy
 msgid "Select an mp3 file"
-msgstr ""
+msgstr "Επιλογή αρχείου"
 
 #: exe/webui/scripts/authoring.js:386
+#, fuzzy
 msgid "Select a package"
-msgstr ""
+msgstr "Επιλογή εικόνας"
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
@@ -7824,8 +8445,9 @@ msgid "Do you want to overwrite the existing idevice {idevice}?"
 msgstr ""
 
 #: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
+#, fuzzy
 msgid "eXe Idevices"
-msgstr ""
+msgstr "ε-Μηχανές"
 
 #: exe/webui/scripts/editor.js:87
 msgid "Please save the idevice first, then try to export it."
@@ -7857,7 +8479,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
-msgstr ""
+msgstr "Κλείσιμο"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert"
@@ -8954,8 +9576,9 @@ msgid "Node"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
+#, fuzzy
 msgid "Download Information"
-msgstr ""
+msgstr "Πληροφορίες"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
@@ -8999,12 +9622,14 @@ msgid "Quote"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
+#, fuzzy
 msgid "Quote Language"
-msgstr ""
+msgstr "Επιλογή γλώσσας."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
+#, fuzzy
 msgid "Authorship"
-msgstr ""
+msgstr "Συγγραφή"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:9
 msgid "Authorship Language"
@@ -9065,24 +9690,27 @@ msgid "Stop"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
+#, fuzzy
 msgid "Replace with:"
-msgstr ""
+msgstr "Εικόνα με Κείμενο"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
+#, fuzzy
 msgid "Edit code"
-msgstr ""
+msgstr "Λήψη βαθμολογίας"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:4
 msgid "Auto close tags"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:5
+#, fuzzy
 msgid "Wrap text"
-msgstr ""
+msgstr "κείμενο"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
@@ -9090,8 +9718,9 @@ msgid "Highlight syntax"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
+#, fuzzy
 msgid "Select a theme"
-msgstr ""
+msgstr "Επιλογή εικόνας"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
 msgid "Search"
@@ -9102,8 +9731,9 @@ msgid "Find next"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
+#, fuzzy
 msgid "Find previous"
-msgstr ""
+msgstr "Προηγούμενο"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
 msgid "Replace all"
@@ -9122,8 +9752,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
+#, fuzzy
 msgid "Term"
-msgstr ""
+msgstr "Άλλο"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
 msgid "Term definition"
@@ -9261,8 +9892,9 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
+#, fuzzy
 msgid "Choose a type:"
-msgstr ""
+msgstr "Επιλογή εικόνας"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
 msgid "Accordion"
@@ -9281,24 +9913,27 @@ msgid "A single content area with multiple panels."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
+#, fuzzy
 msgid "Pagination"
-msgstr ""
+msgstr "Επιλογή"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
 msgid "Divide your content into different pages."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:26
+#, fuzzy
 msgid "Carousel"
-msgstr ""
+msgstr "Φεροέζικα"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:27
 msgid "Present a list of contents in horizontal order."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
+#, fuzzy
 msgid "Timeline"
-msgstr ""
+msgstr "νέα γραμμή"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
@@ -9341,8 +9976,9 @@ msgid "This is the message that the users with no JavaScript will see:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
+#, fuzzy
 msgid "Message:"
-msgstr ""
+msgstr "Εικόνα"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
 msgid "You can change it at any time."
@@ -10145,12 +10781,14 @@ msgid "Include wrapper (improves presentation)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
 msgid "Markup language"
-msgstr ""
+msgstr "Επιλογή γλώσσας."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
+#, fuzzy
 msgid "Please select a language"
-msgstr ""
+msgstr "Επιλογή γλώσσας."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
@@ -10162,8 +10800,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
+#, fuzzy
 msgid "Light"
-msgstr ""
+msgstr "Δεξιά"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
@@ -10557,12 +11196,14 @@ msgid "Behaviour"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
+#, fuzzy
 msgid "Link"
-msgstr ""
+msgstr "Στοίχιση:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
+#, fuzzy
 msgid "Instructions:"
-msgstr ""
+msgstr "Οδηγίες"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
@@ -10573,12 +11214,14 @@ msgid "No selection and not in link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
+#, fuzzy
 msgid "Pages"
-msgstr ""
+msgstr "Μεγάλο"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
+#, fuzzy
 msgid "Link title"
-msgstr ""
+msgstr "Άρθρο Βίκι"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
@@ -10593,8 +11236,9 @@ msgid "The tooltip will show the Link title."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
+#, fuzzy
 msgid "Definition"
-msgstr ""
+msgstr "Στοχασμός"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
 msgid "The term could not be found"
@@ -10607,8 +11251,9 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
+#, fuzzy
 msgid "Definition:"
-msgstr ""
+msgstr "Περιγραφή:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
@@ -10620,8 +11265,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
+#, fuzzy
 msgid "Page"
-msgstr ""
+msgstr "Μεγάλο"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
@@ -10632,8 +11278,9 @@ msgid "Define the Link: Select that page."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:34
+#, fuzzy
 msgid "The tooltip will show the content of the Free Text iDevice."
-msgstr ""
+msgstr "Το θέμα του περιεχομένου του εκπαιδευτικού υλικού."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:36
 msgid "Glossary"
@@ -10664,8 +11311,9 @@ msgid "The Link is required"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
+#, fuzzy
 msgid "Please select a Page"
-msgstr ""
+msgstr "Παρακαλώ επιλέξτε ένα αρχείο .flv."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
 msgid "The Link title is required"
@@ -11090,8 +11738,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
+#, fuzzy
 msgid "Editor"
-msgstr ""
+msgstr "Επεξεργαστής ε-Μηχανής"
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
@@ -11231,8 +11880,9 @@ msgid "General settings"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:13
+#, fuzzy
 msgid "Page width"
-msgstr ""
+msgstr "Εικόνα με Κείμενο"
 
 #: exe/webui/tools/style-designer/langs/en.js:14
 msgid "Percentage"
@@ -11263,28 +11913,32 @@ msgid "Text and Links"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:25
+#, fuzzy
 msgid "Text color"
-msgstr ""
+msgstr "Λήψη βαθμολογίας"
 
 #: exe/webui/tools/style-designer/langs/en.js:27
+#, fuzzy
 msgid "Links"
-msgstr ""
+msgstr "Στοίχιση:"
 
 #: exe/webui/tools/style-designer/langs/en.js:28
 msgid "Links color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:30
+#, fuzzy
 msgid "Style description"
-msgstr ""
+msgstr "Περιγραφή"
 
 #: exe/webui/tools/style-designer/langs/en.js:32
 msgid "Author URL"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:33
+#, fuzzy
 msgid "Style name"
-msgstr ""
+msgstr "Όνομα αρχείου:"
 
 #: exe/webui/tools/style-designer/langs/en.js:34
 msgid "Save to name the new Style."
@@ -11313,8 +11967,9 @@ msgid "Background color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:44
+#, fuzzy
 msgid "Select image"
-msgstr ""
+msgstr "Επιλογή εικόνας"
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
@@ -11395,8 +12050,9 @@ msgid "Top margin"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:78
+#, fuzzy
 msgid "Font size"
-msgstr ""
+msgstr "Επιλογή μεγέθους γραμματοσειράς:"
 
 #: exe/webui/tools/style-designer/langs/en.js:80
 msgid "Navigation"
@@ -11439,8 +12095,9 @@ msgid "Grey"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:94
+#, fuzzy
 msgid "With emphasis"
-msgstr ""
+msgstr "Χωρίς έμφαση"
 
 #: exe/webui/tools/style-designer/langs/en.js:95
 msgid "Title color"
@@ -11493,8 +12150,9 @@ msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:111
+#, fuzzy
 msgid "Finish"
-msgstr ""
+msgstr "Φινλανδικά"
 
 #: exe/webui/tools/style-designer/langs/en.js:113
 msgid "Save as"
@@ -11509,8 +12167,9 @@ msgid "Save all changes? This cannot be undone."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:117
+#, fuzzy
 msgid "Style name:"
-msgstr ""
+msgstr "Όνομα αρχείου:"
 
 #: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Your browser is not compatible with this tool."
@@ -11543,8 +12202,9 @@ msgid "Drag markers to pick a color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:134
+#, fuzzy
 msgid "Current"
-msgstr ""
+msgstr "Λάθος"
 
 #: exe/webui/tools/style-designer/langs/en.js:140
 msgid "New Color - Press OK to Commit"
@@ -11626,16 +12286,16 @@ msgstr ""
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
 msgid "True"
-msgstr ""
+msgstr "Σωστό"
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:218
 #: exe/webui/truefalseelement.py:264
 msgid "False"
-msgstr ""
+msgstr "Λάθος"
 
 #: exe/webui/wikipediablock.py:115
 msgid "English Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της αγγλικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:116
 msgid "Basque Wikipedia Article"
@@ -11643,23 +12303,23 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:117
 msgid "Catalan Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της καταλανικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:118
 msgid "Chinese Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της κινέζικης Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:119
 msgid "Dutch Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της ολλανδικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:120
 msgid "French Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της γαλλικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:121
 msgid "German Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της γερμανικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:122
 msgid "Galician Wikipedia Article"
@@ -11667,63 +12327,63 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Greek Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της ελληνικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:124
 msgid "Italian Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της ιταλικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:125
 msgid "Japanese Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της ιαπωνικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:126
 msgid "Magyar Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της ουγγρικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:127
 msgid "Polish Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της πολωνικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:128
 msgid "Portugese Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της πορτογαλλικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:129
 msgid "Slovenian Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της σλοβένικης Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:130
 msgid "Spanish Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της ισπανικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:131
 msgid "Swedish Wikipedia Article"
-msgstr ""
+msgstr "Άρθρο της σουηδικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:132
 msgid "Wikibooks Article"
-msgstr ""
+msgstr "Άρθρο ΒικιΒιβλίων"
 
 #: exe/webui/wikipediablock.py:133
 msgid "Wikiversity"
-msgstr ""
+msgstr "Βικιεπιστήμιο"
 
 #: exe/webui/wikipediablock.py:134
 msgid "Wiktionary"
-msgstr ""
+msgstr "Βικιλεξικό"
 
 #: exe/webui/wikipediablock.py:135
 msgid "Wikieducator Content"
-msgstr ""
+msgstr "Περιεχόμενο ΒικιΕκπαιδευτή"
 
 #: exe/webui/wikipediablock.py:141
 msgid "Site"
-msgstr ""
+msgstr "Τόπος"
 
 #: exe/webui/wikipediablock.py:151
 msgid "Own site"
-msgstr ""
+msgstr "Προσωπικός διαδικτυακός τόπος"
 
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
@@ -11736,7 +12396,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:135
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
-msgstr ""
+msgstr "Εντάξει"
 
 #: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
 #: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
@@ -11744,6 +12404,9 @@ msgid ""
 "Package is old. Please upgrade it (using File..Open followed by "
 "File..Save As) before attempting to insert it into another package!"
 msgstr ""
+"Το πακέτο είναι παλιό. Παρακαλώ αναβαθμίστε το (Αρχείο... Άνοιγμα... "
+"ακολουθούμενο από Αρχείο... Αποθήκευση ως...) πριν\n"
+"προσπαθήσετε να το εισάγετε σε ένα άλλο πακέτο!"
 
 #: twisted/persisted/styles.py:437
 msgid ""
@@ -11757,4 +12420,7 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
+"Είτε το αρχείο ε-Μηχανών/γενικών.στοιχείων, είτε το πακέτο που "
+"προσπαθείτε να φορτώσετε, δημιουργήθηκαν με μια νεότερη έκδοση του eXe. "
+"Παρακαλώ αναβαθμίστε το eXe και προσπαθήστε πάλι."
 

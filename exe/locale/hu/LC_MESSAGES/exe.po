@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-22 13:57+0200\n"
+"POT-Creation-Date: 2016-05-22 14:14+0200\n"
 "PO-Revision-Date: 2007-12-07 17:53+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language: hu\n"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: exe/engine/appletidevice.py:70
 msgid "Java Applet"
-msgstr ""
+msgstr "Java applet"
 
 #: exe/engine/appletidevice.py:71 exe/engine/attachmentidevice.py:45
 #: exe/engine/casestudyidevice.py:201 exe/engine/clozefpdidevice.py:51
@@ -66,7 +66,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
-msgstr ""
+msgstr "Aucklandi Egyetem"
 
 #: exe/engine/appletidevice.py:79
 msgid ""
@@ -75,6 +75,11 @@ msgid ""
 "buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
+"Töltse fel az összes állományt, amelyre az appletnek szüksége van \n"
+"kivéve a .txt állományt. Használja az \"Állomány hozzáadása\" és a "
+"\"Feltöltés\" gombokat. \n"
+"A már feltöltött állományok megjelennek az \"Applet kód\" mező alatti "
+"területen."
 
 #: exe/engine/appletidevice.py:82
 msgid ""
@@ -83,6 +88,9 @@ msgid ""
 "applet \n"
 "code field."
 msgstr ""
+"\"Keresse meg a .txt állományt (in the applet file) \n"
+"és nyissa meg. Másolja az állomány tartalmát <ctrl A, ctrl C> az applet \n"
+"kód mezőbe."
 
 #: exe/engine/appletidevice.py:85
 msgid ""
@@ -93,16 +101,21 @@ msgid ""
 " \n"
 "you created in Geogebra.</p>"
 msgstr ""
+" <p>Ha Ön egy Java appletet szeretne hozzáadni a tananyaghoz, \n"
+"válasszon ebből legördülő menüből, majd töltse fel a szükséges adat- \n"
+"és appletállományokat, amelyek a program generálásához kellenek.</p>\n"
+"<p>A GeoGebra applethez válassza a GeoGebrát, majd töltse \n"
+"fel azt .ggb állományt, amit a GeoGebrában készített.</p>"
 
 #: exe/engine/appletidevice.py:190
 #, python-format
 msgid "file %s has no parentNode"
-msgstr ""
+msgstr "Fájl %s nincs szülőcsomópont"
 
 #: exe/engine/appletidevice.py:192 exe/engine/attachmentidevice.py:107
 #, python-format
 msgid "iDevice %s has no package"
-msgstr ""
+msgstr "iDeice %s nincs csomag"
 
 #: exe/engine/appletidevice.py:443
 msgid "Sorry, this URL is unreachable"
@@ -150,7 +163,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
-msgstr ""
+msgstr "Állomány csatolása"
 
 #: exe/engine/attachmentidevice.py:46
 msgid ""
@@ -168,16 +181,21 @@ msgid ""
 "want to provide instructions on what you require the learner to do once "
 "the file is downloaded or how the material should be used."
 msgstr ""
+"Írjon egy szöveget, amely kapcsolatos a letöltendő állománnyal. Például "
+"adjon utasításokat arra vonatkozóan, hogy a tanulónak mit kell tennie az "
+"adott állománnyal, hogyyan használhatja fel a tanulásban."
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
-msgstr ""
+msgstr "Leírás:"
 
 #: exe/engine/attachmentidevice.py:69
 msgid ""
 "Click <strong>Select a file</strong>, browse to the file you want to "
 "attach and select it."
 msgstr ""
+"Kattintson a <strong>Válasszon egy állományt</strong> gombra, majd "
+"keresse meg a csatolni kívánt állományt és válassza ki."
 
 #: exe/engine/attachmentidevice.py:72
 msgid ""
@@ -192,14 +210,14 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:105
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr ""
+msgstr "A csatolt állomány %s nem szülőcsomópont"
 
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/tools/style-designer/langs/en.js:46
 msgid "Image"
-msgstr ""
+msgstr "Kép"
 
 #: exe/engine/casestudyidevice.py:65
 #: exe/engine/ejercicioresueltofpdidevice.py:65
@@ -207,12 +225,16 @@ msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
 msgstr ""
+"Tevékenységenként megjeleníthet egy képet, ami a feladat megoldását "
+"segíti. \n"
+"(Feltétlen állítsa be a megjelenítendő kép szélességét és magasságát!)"
 
 #: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
-msgstr ""
+msgstr "Esettanulmány"
 
 #: exe/engine/casestudyidevice.py:202
+#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -235,6 +257,28 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Az esettanulmány eszközt biztosít a tanuló számára egy \n"
+"oktatási alaphelyzet szimulálásához. A szituáció általában a valóságos "
+"helyzetből \n"
+"indul ki, és felkérjük a tanulót, hogy írja le, mutassa be milyen módon "
+"kívánja \n"
+"megoldani az adott helyzetet. Az esettanulmány lehetőséget biztosít a "
+"tanuló \n"
+"számára, hogy az adott feladatban alkalmazza ismereteit  és "
+"tapasztalatait.  \n"
+"Amikor esettanulmányt tervez a következő szempontokat vegye "
+"figyelembe:<ul> \n"
+"<li>\tMilyen oktatási pontokat közvetít a történet</li>\n"
+"<li>\tA tanulóknak milyen előkészületeket kell tenniük azt megelőzően, "
+"hogy dolgoznak \n"
+"az esettanulmányon.</li>\n"
+"<li>\tAz esettanulmány hogyan illeszkedik a kurzus többi részébe</li>\n"
+"<li>\tHogy a tanulók milyen kölcsönhatásba kerülnek a tananyaggal, vagy "
+"egymással. \n"
+"Például ha osztályteremben, csoportokat kialakítva dolgoznak, s az esetet"
+" különböző aspektusból \n"
+"vizsgálják, és hogy milyen gondolatok, vélemények fogalmazódhatnak meg az"
+" osztályban. </li></ul>"
 
 #: exe/engine/casestudyidevice.py:219
 #: exe/engine/ejercicioresueltofpdidevice.py:218
@@ -246,12 +290,16 @@ msgid ""
 "taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
+"Itt írja le az esettörténetet! A jó eset egy problémát, \n"
+"helyszínt, egy karaktert, egy bonyolult szituációt ír le. \n"
+"Az esetleírást azzal a céllal tesszük közzé, hogy a megfelelő \n"
+"eljárás kialakítását elősegítsük."
 
 #: exe/engine/casestudyidevice.py:223 exe/engine/casestudyidevice.py:411
 #: exe/engine/ejercicioresueltofpdidevice.py:222
 #: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
-msgstr ""
+msgstr "Történet:"
 
 #: exe/engine/casestudyidevice.py:228
 #: exe/engine/ejercicioresueltofpdidevice.py:227
@@ -262,13 +310,16 @@ msgid ""
 "dilemma \n"
 "presented. "
 msgstr ""
+"Itt írja le az esettanulmányhoz kapcsolódó \n"
+"tevékenységeket. Adja meg azoknak az utasításokat, \n"
+"amelyek rávezethetik a tanulót egy dilemma megoldására."
 
 #: exe/engine/casestudyidevice.py:232
 #: exe/engine/ejercicioresueltofpdidevice.py:231
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
-msgstr ""
+msgstr "Adjon meg egy a helyzethez illő visszajelzést!"
 
 #: exe/engine/casopracticofpdidevice.py:30
 msgid "FPD - Situation"
@@ -347,7 +398,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Title"
-msgstr ""
+msgstr "Cím"
 
 #: exe/engine/clickinorderidevice.py:61
 msgid "Game Instructions"
@@ -561,6 +612,14 @@ msgid ""
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
 msgstr ""
+"<p>A \"Szókitöltős teszt\" szövegeket vagy mondatokat tartalmaz, "
+"amelyekben a tanulóknak a hiányzó szavakat kell beírniuk. Gyakran "
+"használjuk a következő célokra:</p><ol><li>A kurzushoz tartozó "
+"alapfogalmak ismeretének ellenőrzésére (ez lehet előzetes vagy összegző "
+"ellenőrzés, valamint képzési célú ).</li><li>Az olvasó "
+"felfogóképességének ellenőrzésére</li><li>Szótári tudás "
+"ellenőrzésére.</li><li>A nyelvtani, helyesírási és/vagy toldalékolási "
+"ismeretek ellenőrzésére.</li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -586,6 +645,28 @@ msgid ""
 " idea to get a colleague to test the test/exercise to make sure there are"
 " no surprises!  </p>  </dd></dl>"
 msgstr ""
+"<dl>  <dt>Ha az a célja, hogy az alapfogalmak, az olvasottak megértését "
+"teszteli: </dt>  <dd>    <p>  Írjon az ismeretterület fogalmához egy "
+"összefoglalót, vagy egy hosszabb olvasmányt, de ne túl hosszút, hogy a "
+"tanuló ne fáradjon el. Kevesebb mint egy gépelt oldal valószínűleg "
+"megfelelő, de valószínűleg fiatalabb diákoknak vagy kezdőknek kevesebb is"
+" elég.</p>    <p>Válassza ki a kulcsfontosságú szavakat a szövegben! Ezek"
+" valószínűleg igék, főnevek, és határozószavak lesznek. Esetleg "
+"biztosítson alternatív válaszokat.   </p>  </dd>  <dt>Ha az a célja, hogy"
+" a szótári tudást ellenőrízze:  </dt>  <dd><p>Írjon szöveget, amely "
+"tartalmazza az adott szókészletet. Ennek a szövegnek összefüggőnek és "
+"egységesnek kellene lennie, valamint legyen megfelelően hosszú. "
+"Hangsúlyozza ki a célszavakat a szövegben. Esetleg biztosítson alternatív"
+" válaszokat. </p>  </dd>  <dt>Ha az a célja, hogy a nyelvtani, "
+"helyesírási ismereteket ellenőrízze:  </dt>  <dd>  <p>Írjon szöveget a "
+"használni kívánt szóalakokkal.  Ennek a szövegnek összefüggőnek és "
+"egységesnek kellene lennie, valamint legyen megfelelően hosszú. "
+"Emlékezzen arra, hogy nem a szótári tudás ellenőrzése a cél, úgyhogy az "
+"ellenőrzendő szavakat a tanulóknak jól kell ismerniük.  </p>  <p>Jelölje "
+"ki a kívánt szavakat a szövegben. Ugyanarra a szóra adjon meg több "
+"alternatívát, de más-más toldalékokkal. Jól jöhet, ha megkér egy "
+"kollégát, ellenőrízze a tesztet, hogy ne maradjanak benne hibák, "
+"meglepetések. </p>  </dd></dl>"
 
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
@@ -598,7 +679,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 msgid "Instructions"
-msgstr ""
+msgstr "Utasítás"
 
 #: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
 #: exe/engine/clozelangfpdidevice.py:121
@@ -607,15 +688,18 @@ msgid ""
 "completed. Default text will be entered if there are no changes to this "
 "field.\n"
 msgstr ""
+"Itt adja meg a teszt megoldására vonatkozó utasításait! \n"
+"Ha nem ír be saját szöveget, az alapértelmezett szöveg jelenik meg.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
 #: exe/webui/element.py:1522 exe/webui/listablock.py:259
 msgid "Cloze"
-msgstr ""
+msgstr "Bezárás"
 
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
+#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -626,6 +710,12 @@ msgid ""
 "answer can be defined enclosing them with pipes (|). I.e.: "
 "|dog|cat|bird|</p>"
 msgstr ""
+"<p>Írja be szókitöltős teszt szövegét a mezőbe! \n"
+"A szöveget más alkalmazásból is beillesztheti, vagy közvetlenül be is "
+"gépelheti. \n"
+"</p><p> Válassza ki az elrejteni kívánt szavakat, és a \"Szó "
+"elrejtése/megjelenítése\" \n"
+"gombra kattintva rejtse el azokat.</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -644,7 +734,7 @@ msgstr ""
 #: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
-msgstr ""
+msgstr "Visszajelzés"
 
 #: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
 #: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
@@ -652,43 +742,46 @@ msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
 msgstr ""
+"Írjon valamilyen visszajelzést a tanulók számára a visszajelzés mezőbe. "
+"Ezt a mezőt üresen hagyhatja."
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
 msgid "Instructions For Learners"
-msgstr ""
+msgstr "Utasítás a tanulónak"
 
 #: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
 #: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
-msgstr ""
+msgstr "Itt adja meg a tanulóknak szóló utasításokat!"
 
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:284
 msgid "Read the paragraph below and fill in the missing words"
-msgstr ""
+msgstr "Olvasse el az alábbi bekezdést, és pótolja a hiányzó szavakat!"
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
 #: exe/engine/clozelangfpdidevice.py:296
 msgid "Allow auto completion when user filling the gaps."
-msgstr ""
+msgstr "Automatikus befejezés engedélyezése, amikor a felhasználó kitölti a mezőt."
 
 #: exe/engine/clozeidevice.py:49
 msgid "Cloze Activity"
-msgstr ""
+msgstr "Szókitöltős teszt"
 
 #: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
-msgstr ""
+msgstr "Olvasse el az alábbi bekezdést, és pótolja a hiányzó szavakat."
 
 #: exe/engine/clozelangfpdidevice.py:50
 msgid "FPD - Cloze Activity (Modified)"
 msgstr ""
 
 #: exe/engine/clozelangfpdidevice.py:126
+#, fuzzy
 msgid "Clozelang"
-msgstr ""
+msgstr "Bezárás"
 
 #: exe/engine/config.py:70 exe/engine/config.py:71 exe/engine/config.py:75
 #: exe/engine/config.py:102
@@ -782,6 +875,28 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Az esettanulmány eszközt biztosít a tanuló számára egy \n"
+"oktatási alaphelyzet szimulálásához. A szituáció általában a valóságos "
+"helyzetből \n"
+"indul ki, és felkérjük a tanulót, hogy írja le, mutassa be milyen módon "
+"kívánja \n"
+"megoldani az adott helyzetet. Az esettanulmány lehetőséget biztosít a "
+"tanuló \n"
+"számára, hogy az adott feladatban alkalmazza ismereteit  és "
+"tapasztalatait.  \n"
+"Amikor esettanulmányt tervez a következő szempontokat vegye "
+"figyelembe:<ul> \n"
+"<li>\tMilyen oktatási pontokat közvetít a történet</li>\n"
+"<li>\tA tanulóknak milyen előkészületeket kell tenniük azt megelőzően, "
+"hogy dolgoznak \n"
+"az esettanulmányon.</li>\n"
+"<li>\tAz esettanulmány hogyan illeszkedik a kurzus többi részébe</li>\n"
+"<li>\tHogy a tanulók milyen kölcsönhatásba kerülnek a tananyaggal, vagy "
+"egymással. \n"
+"Például ha osztályteremben, csoportokat kialakítva dolgoznak, s az esetet"
+" különböző aspektusból \n"
+"vizsgálják, és hogy milyen gondolatok, vélemények fogalmazódhatnak meg az"
+" osztályban. </li></ul>"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 msgid "FPD - Multi Choice Activity"
@@ -807,6 +922,23 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
+"A feleletválasztós kérdést gyakran használják különböző \n"
+"szituációkban formális tesztként, ezt az eszközt használhatjuk "
+"gondolatok, \n"
+"viták ébresztésére bár a tanulók kissé tartózkodónak érezhetikmagukat a \n"
+"válaszok során. \n"
+"A feleletválasztós kérdés tervezése során a következőket vehetjük "
+"figyelembe: \n"
+"<ul>\n"
+"<li> Milyen tanulási eredményeket akarok a kérdésekkel tesztelni</li>\n"
+"<li> Milyen szellemi készséget tesztelek</li>\n"
+"<li> A hallgatóságnak milyenek a nyelvi készségei</li>\n"
+"<li> Nemi és kultúrális problémák</li>\n"
+"<li> Nyelvtenilag kerüljük azokat a kérdésszerkezeteket, amelyek "
+"tartalmazzák \n"
+"    a megoldási kulcsot.</li>\n"
+"</ul>\n"
+" "
 
 #: exe/engine/eleccionmultiplefpdidevice.py:76
 #: exe/engine/multichoiceidevice.py:75 exe/engine/multiselectidevice.py:60
@@ -827,6 +959,18 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
+"Amikor feleletválasztós kérdést készítünk, a következőkre ügyeljünk: <ul>"
+"\n"
+"<li> Olyan kifejezéseket használjunk, amelyeket a tanulók ismernek \n"
+"és tanulmányaik során találkozhattak vele </li>\n"
+"<li> A válaszok legyenek tömörek </li>\n"
+"<li> A kérdés és a válaszok között legyen összefüggés </li>\n"
+"<li> Biztosítson megfelelő számú választási lehetőséget, hogy a tanulónak"
+" gondolkodnia kelljen a válaszon\n"
+"</li>\n"
+"<li> A helyes válaszok ne legyenek részletesebbek a többi válasznál<li> A"
+" megtévezstő válaszok legyenek helytelenek, de hihetőek </li>\n"
+"</ul>\n"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:101
 #: exe/engine/multichoiceidevice.py:99
@@ -834,6 +978,8 @@ msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
+"Írjon egy útmutatót a kérdés megoldásához! \n"
+"Ha nem kíván útmutatót, figyelmeztetést írni, hagyja üresen ezt a mezőt!"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
@@ -843,6 +989,9 @@ msgid ""
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
+"Írja be a kérdést! \n"
+"Ügyeljen arra, hogy kérdése egyértelmű és világos legyen! Kerülje a "
+"kétértelmű fogylmazást!"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:106
 #: exe/engine/multichoiceidevice.py:104
@@ -850,6 +999,8 @@ msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
 msgstr ""
+"A helyes válasz kiválasztásához kattintson a \n"
+"jó válasz rádiógombjára/választónégyzetére."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:108
 #: exe/engine/multichoiceidevice.py:106
@@ -859,6 +1010,10 @@ msgid ""
 " options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
+"Adjon meg egy választási lehetőséget! \n"
+"Újabb opciókat adhat hozzá az \"Új opció hozzáadása\"gombra kattintva, és"
+" törölheti \n"
+"az piros \"X\"-re kattintva a válasz sorában."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:111
 #: exe/engine/multichoiceidevice.py:109
@@ -872,6 +1027,13 @@ msgid ""
 " answer\"\n"
 "for the other options."
 msgstr ""
+"Gépeljen be visszajelzésként azokat a szövegeket, amelyeket a \n"
+"tanuló kap, ha eg bizonyos választ választott. Ha nem tölti ki ezt a "
+"mezőt, \n"
+"az eXe automatikusan a következő visszajelzéseket fogja adni: \"Helyes \n"
+"válasz\", ha a helyes válasz lett kiválasztva; vagy \"Helytelen válasz\","
+"\n"
+"ha mást választott a tanuló."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3754
 #: exe/engine/field.py:3819 exe/engine/multichoiceidevice.py:131
@@ -881,7 +1043,7 @@ msgstr ""
 #: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
-msgstr ""
+msgstr "Kérdés"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:287
 #: exe/engine/multichoiceidevice.py:285
@@ -889,6 +1051,8 @@ msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
 " blank."
 msgstr ""
+"Írjon egy útmutatást! Ha nem kíván útmutatást adni a megoldáshoz, hagyja "
+"üresen ezt a mezőt!"
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
@@ -967,7 +1131,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:158
 #: exe/webui/appletblock.py:168
 msgid "Upload"
-msgstr ""
+msgstr "Feltöltés"
 
 #: exe/engine/extendedfieldengine.py:298
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
@@ -976,7 +1140,7 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:185
 msgid "Delete File"
-msgstr ""
+msgstr "Állomány törlése"
 
 #: exe/engine/extendedfieldengine.py:306
 msgid "No File Uploaded Currently"
@@ -988,7 +1152,7 @@ msgstr ""
 #: exe/webui/multimediablock.py:87
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
-msgstr ""
+msgstr "Egyik sem"
 
 #: exe/engine/extendedfieldengine.py:570
 msgid "is not a valid number - please try again<br/>"
@@ -996,7 +1160,7 @@ msgstr ""
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
-msgstr ""
+msgstr "Külső weboldal"
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -1007,12 +1171,19 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
+"A külső weboldal iDevice modul betölti a megadott weboldalt \n"
+"egy keretbe (frame-be) az eXe tartalomba, nem pedig felugró ablakban \n"
+"jeleníti meg azt. Ez azt jelenti, hogy tanulóknak nem kell ablakokkal "
+"bűvészkedniük. \n"
+"Ezt a modult akkor használjuk, ha online tartalmat akarunk megjeleníteni."
 
 #: exe/engine/externalurlidevice.py:49 exe/engine/externalurlidevice.py:116
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
 msgstr ""
+"Adja meg annak az oldalnak az URL-jét, amit be szertne mutatni,\n"
+"és válassza ki a megjelenítendő terület méretét!"
 
 #: exe/engine/field.py:2907 exe/engine/field.py:2954
 #: exe/engine/multimediaidevice.py:71
@@ -1020,8 +1191,11 @@ msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
+"Adjon meg egy feliratot az MP3-as állományhoz. \n"
+"Ez fog megjelenni a lejátszól címsorában."
 
 #: exe/engine/field.py:3090
+#, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1037,12 +1211,28 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p>Ha ez az opció <strong>nincs</strong> beállítva, az eXe néhány "
+"helyesírási hiba, elírás esetén is elfogadja a választ. Ha <strong>be van"
+" jelölve</strong>, csak a helyesírásilag kifogástalan és a megfelelő "
+"betűméretű (kis/nagy) alakot fogadja el.</p> <p><strong>Példa:</strong> "
+"Ha a helyes válasz a Mihály, mindkét szó a <em>Míhály</em> és a "
+"<em>Mihaly</em> is elfogadásra kerül. Az algoritmus csak egy betű "
+"eltérést enged meg, ha a nagybetűs írásmód ellenőrzése be van "
+"kapcsolva.</p> <p>Ha a nagybetűs írásmód figyelése ki van kapcsolva a kis"
+" <em>m</em>-mel írott <em>mihaly</em> szót is helyesként fogadja el az "
+"eXe. </p> <p>Ha mind a  \"Pontos értékelés\" mind a \"Nagybetűs írásmód "
+"ellenőrzése\" be van állítva, csak a helyes Mihály szó kerül elfogadásra."
+" ha csak a \"Pontos értékelés\" van beállítva, de a \"Nagybetűs írásmód "
+"ellenőrzése\" nem, a \"mihály\" szót is elfogadja.</p>"
 
 #: exe/engine/field.py:3111 exe/engine/field.py:3345
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
 msgstr ""
+"<p>Ha ez az opció be van állítva, az eXe  különbséget tesz a kis- és "
+"nagybetűs írásmód között.Az eredetitől eltérő írásmód esetén hibásnak "
+"jelöli a választ. </p>"
 
 #: exe/engine/field.py:3116 exe/engine/field.py:3350
 msgid ""
@@ -1050,6 +1240,9 @@ msgid ""
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
+"<p>Ha ez az opció be van állítva, minden szó azonnal értékelésre kerül. \n"
+"Ahogy a tanuló gépeli a szavakat, az eXe színnel jelöli, hogy helyes-e. \n"
+"Sőt, az utolsó betűket automatikusan kitölti.</p>"
 
 #: exe/engine/field.py:3154 exe/engine/field.py:3392
 #: exe/engine/listaidevice.py:398
@@ -1057,6 +1250,9 @@ msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
+"Automatikus befejezés engedélyezése, \n"
+"                                       amikor a felhasználó kitölti a "
+"mezőt."
 
 #: exe/engine/field.py:3324
 msgid ""
@@ -1074,6 +1270,19 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p>Ha ez az opció <strong>nincs</strong> beállítva, az eXe néhány "
+"helyesírási hiba, elírás esetén is elfogadja a választ. Ha <strong>be van"
+" jelölve</strong>, csak a helyesírásilag kifogástalan és a megfelelő "
+"betűméretű (kis/nagy) alakot fogadja el.</p> <p><strong>Példa:</strong> "
+"Ha a helyes válasz a Mihály, mindkét szó a <em>Míhály</em> és a "
+"<em>Mihaly</em> is elfogadásra kerül. Az algoritmus csak egy betű "
+"eltérést enged meg, ha a nagybetűs írásmód ellenőrzése be van "
+"kapcsolva.</p> <p>Ha a nagybetűs írásmód figyelése ki van kapcsolva a kis"
+" <em>m</em>-mel írott <em>mihaly</em> szót is helyesként fogadja el az "
+"eXe. </p> <p>Ha mind a  \"Pontos értékelés\" mind a \"Nagybetűs írásmód "
+"ellenőrzése\" be van állítva, csak a helyes Mihály szó kerül elfogadásra."
+" ha csak a \"Pontos értékelés\" van beállítva, de a \"Nagybetűs írásmód "
+"ellenőrzése\" nem, a \"mihály\" szót is elfogadja.</p>"
 
 #: exe/engine/field.py:3355
 msgid "<p>If this option is set, the score will be shown.</p>"
@@ -1084,16 +1293,20 @@ msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
+"Csak .swf (Flash animáció) fájlt válasszon \n"
+"ehhez az iDevice modulhoz."
 
 #: exe/engine/field.py:3498 exe/engine/field.py:3562
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
+"Csak .flv (Flash video) fájlt válasszon \n"
+"ehhez az iDevice modulhoz."
 
 #: exe/engine/field.py:3574
 msgid "Type a discussion topic here."
-msgstr ""
+msgstr "Írja be a megbeszélés témáját!"
 
 #: exe/engine/field.py:3603
 msgid ""
@@ -1101,12 +1314,17 @@ msgid ""
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
 msgstr ""
+"<p>Válasszon egy szimbólumot az alábbi szövegből vagy írja be a kézzel a "
+"matematikai formulát LATEX formátumban. A végső megjelenés "
+"megtekintéséhez kattintson az &lt;Előnézet&gt; gombra.</p>"
 
 #: exe/engine/field.py:3611
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr ""
+"Kattintson az Előnézet gombra \n"
+"                                   a megjelenítés ellenőrzéséhez."
 
 #: exe/engine/field.py:3679 exe/engine/field.py:3728
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
@@ -1114,21 +1332,21 @@ msgstr ""
 #: exe/webui/element.py:2576 exe/webui/element.py:2668
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
-msgstr ""
+msgstr "Beállítás"
 
 #: exe/engine/field.py:3757 exe/engine/field.py:3823
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:452
 msgid "Hint"
-msgstr ""
+msgstr "Útmutató"
 
 #: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2381
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
 #: exe/webui/testquestionelement.py:110
 msgid "Options"
-msgstr ""
+msgstr "Beállítások"
 
 #: exe/engine/field.py:3905
 msgid ""
@@ -1137,6 +1355,9 @@ msgid ""
 "these \n"
 "can tend to confuse learners."
 msgstr ""
+"Írja be a kérdést! \n"
+"Ügyeljen arra, hogy kérdése egyértelmű és világos legyen! Kerülje a "
+"kétértelmű fogalmazást!"
 
 #: exe/engine/field.py:3908 exe/engine/field.py:3989
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
@@ -1144,7 +1365,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:47
 #: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
 msgid "Question:"
-msgstr ""
+msgstr "Kérdés:"
 
 #: exe/engine/field.py:3913
 msgid ""
@@ -1153,25 +1374,31 @@ msgid ""
 " options by \n"
 "clicking the red X next to the option."
 msgstr ""
+"Adjon meg egy választási lehetőséget! \n"
+"Újabb opciókat adhat hozzá az \"Új opció hozzáadása\"gombra kattintva, és"
+" törölheti \n"
+"a piros \"X\"-re kattintva a válasz sorában."
 
 #: exe/engine/field.py:3917
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr ""
+"Több helyes válasz kiválasztásához kattintson a \n"
+"jó válaszik melletti választónégyzetébe."
 
 #: exe/engine/field.py:3920
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
-msgstr ""
+msgstr "Írjon a tanulók számára egy visszajelzés!"
 
 #: exe/engine/field.py:3922 exe/engine/field.py:3992
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:204
 msgid "Feedback:"
-msgstr ""
+msgstr "Visszajelzés:"
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
@@ -1216,7 +1443,7 @@ msgstr ""
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr ""
+msgstr "Flash videó"
 
 #: exe/engine/flashmovieidevice.py:41
 msgid ""
@@ -1228,12 +1455,19 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
+"Ez az iDevice modul csak a Flash Video (.FLV) formátumot támogatja és nem"
+" \n"
+"fogad el más video formátumokat.Az egyéb filmformátumokat (pl.: .mov, "
+".wmf, stb.) \n"
+"konvertálnia kell .FLV formátumuvá. Az eXe nem biztosítja a lejátszó "
+"plugint (Flash 8 player), \n"
+"azt a felhasználónak kell letöltenie a http://www.macromedia.com címről."
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
-msgstr ""
+msgstr "Írja be azt a szöveget, amely kapcsolódik az állományhoz."
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:70
@@ -1249,17 +1483,19 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Description"
-msgstr ""
+msgstr "Leírás"
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:109
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr ""
+"Adjon meg egy feliratot a \n"
+"beillesztett Flash videóhoz."
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
-msgstr ""
+msgstr "Flash animáció"
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1270,18 +1506,28 @@ msgid ""
 "file \n"
 "the learners will view."
 msgstr ""
+"A Flash animáció iDevice modul lehetőséget teremt arra, \n"
+"hogy a szöveges információkat összekapcsoljuk egy animációval. A Flash \n"
+"animációkkal hozzájárulhatunk ahhoz, hogy a tanulók összefüggéseiben \n"
+"értsék meg a tananyagot. Az animációkkal folyamatokat mutathatunk be, \n"
+"akár a tanuló is interaktív módon részt vehet azok alakításában, így az \n"
+"élményen túl, mélyebben megismeri a dolgok működését."
 
 #: exe/engine/flashwithtextidevice.py:53
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
 msgstr ""
+"Írja be azt a szöveget,  \n"
+"                                 amely kapcsolódik az animációhoz."
 
 #: exe/engine/flashwithtextidevice.py:58 exe/engine/flashwithtextidevice.py:118
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr ""
+"Adjon meg egy feliratot a \n"
+"                                  beillesztett Flash animációhoz."
 
 #: exe/engine/flashwithtextidevice.py:60 exe/engine/flashwithtextidevice.py:120
 msgid ""
@@ -1290,6 +1536,9 @@ msgid ""
 "screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr ""
+"Adja meg az animáció megjelenítéséhez szükséges méreteket \n"
+"(pixelben) és határozza meg az animáció igazítását a képernyőn. \n"
+"A szélesség és a magasság méreteit arányosan változtassa. "
 
 #: exe/engine/freetextfpdidevice.py:39
 msgid "FPD - Free Text"
@@ -1304,11 +1553,17 @@ msgid ""
 "built and \n"
 "delivered."
 msgstr ""
+"A tananyagok többsége szöveges alapú. \n"
+"A szöveg tartalmazza a szükséges információkat és az azokra vonatkozó "
+"utasításokat.\n"
+"Ezek a szövegekbiztosítják a tanulási tevékenység alapját, erre épülnek a"
+" tanulói \n"
+"tevékenységek."
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
 msgid "Free Text"
-msgstr ""
+msgstr "Szöveg"
 
 #: exe/engine/freetextfpdidevice.py:47 exe/engine/freetextidevice.py:46
 msgid ""
@@ -1317,26 +1572,29 @@ msgid ""
 "applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
+"Használja ezt a mezőt a szöveg (tananyag) bevitelére. \n"
+"Ez az iDevice modul nem kap kimelést és korlátozott formázási \n"
+"lehetőségeink vannak. "
 
 #: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
-msgstr ""
+msgstr "Ez egy szövegmező a tananyag beírásához."
 
 #: exe/engine/galleryidevice.py:140 exe/engine/galleryidevice.py:191
 msgid "No Thumbnail Available. Could not load original image."
-msgstr ""
+msgstr "A miniatür nem elérhető. Az eredeti képet nem töltötte be."
 
 #: exe/engine/galleryidevice.py:148 exe/engine/galleryidevice.py:198
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr ""
+msgstr "A miniatür nem elérhető. Az eredeti képetnem lehetett kicsinyíteni."
 
 #: exe/engine/galleryidevice.py:221
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr ""
+msgstr "A miniatür nem elérhető. Nem lehetett kicsinyíteni a képet."
 
 #: exe/engine/galleryidevice.py:458
 msgid "Image Gallery"
-msgstr ""
+msgstr "Képgaléria"
 
 #: exe/engine/galleryidevice.py:459
 msgid "eXe Project"
@@ -1349,14 +1607,17 @@ msgid ""
 "display \n"
 "these in a gallery context rather then individually.</p>"
 msgstr ""
+"<p>Ahol több egymással kapcsolatos képet kell bemutatnia \n"
+"bizonyos tanulási feladatokhoz, ott használja a \"Képgalériát\"! \n"
+"A galéria képeit aztán egyenként is meg lehet tekinteni.</p>"
 
 #: exe/engine/galleryidevice.py:463
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr ""
+msgstr "Akkor használja ezt az iDevice modult, ha több képet szeretne bemutatni."
 
 #: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
-msgstr ""
+msgstr "Írja be a galéria címét"
 
 #: exe/engine/galleryidevice.py:473
 msgid ""
@@ -1364,15 +1625,20 @@ msgid ""
 "appear below where you will be able to label it. It's always good "
 "practice to put the file size in the label."
 msgstr ""
+"Kattintson a \"Kép hozzáadása\" gombra és válasszon egy képet. A képek "
+"alatt található egy címke, amit érdemes kitölteni. A jó gyakorlat "
+"kialakítása érdekében adja meg itt a kép eredeti méretét (pl.: 450 x "
+"320). Célszerű, ha a képeket azonos méretűre méretezi át, s így tölti fel"
+" a galériába. A felhasználók hálásak lesznek."
 
 #: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:663
 msgid "Reading Activity 0.11"
-msgstr ""
+msgstr "Olvasnivaló 0.11"
 
 #: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:510
 #: exe/engine/idevicestore.py:554
 msgid "Reading Activity"
-msgstr ""
+msgstr "Olvasnivaló"
 
 #: exe/engine/hangmanidevice.py:51 exe/webui/common.py:490
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
@@ -1455,7 +1721,7 @@ msgstr ""
 #: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
 #: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
-msgstr ""
+msgstr "Újraindítás"
 
 #: exe/engine/hangmanidevice.py:104
 msgid "Restart Level Button Style (CSS)"
@@ -1528,6 +1794,14 @@ msgid ""
 " task \n"
 "based on the reading.</p>"
 msgstr ""
+"<p>Az \"Olvasnivalót\" elsődlegesen arra használjuk, \n"
+"hogy ellenőrízzük a tanulók szövegértelmezési képességét. Ezt úgy "
+"tehetjük \n"
+"meg, hogy a tanulóknak feladatokat adunk az  olvasottakkal kapcsolatosan."
+" \n"
+"Mérlegelnie kell az olvasottakat és kérdésekre kell válaszolnia, vagy "
+"esetleg néhány \n"
+" másik feladatot kell befejezni az olvasottak alapján.</p>"
 
 #: exe/engine/idevicestore.py:562
 msgid ""
@@ -1543,10 +1817,22 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"A tanároknak észben kellene tartaniuk a következőt mikor használja ezt az"
+" iDevice modult:  <ol><li>Gondoljon arra a tananyagegység "
+"tevékenységeinek tervezésekor, hogy vizuálisan is jelölje a tartalmat. "
+"Kerülje a túl sok különböző típusú vagy besorolású tevékenység "
+"használatát, mert a tanulókat megzavarhatja. Általában három négy "
+"különböző típus több, mint megfelelő egy tananyagegységen belül "
+".</li><li>A vizuális megjelenés tervezése során kerülje, hogy közvetlenül"
+" egymás után két iDevice kövesse egymást szöveges elválasztás nélkül. Ha "
+"ez mégis előfordul, fontolja meg, hogan lehet egyetlen iDevice modullal "
+"megoldani ugyanazt! </li><li>Gondolja végig, hogy a különböző esetekben "
+"melyik modul lehet hatékonyabb, melyik milyen előnyoket kínál, melyik "
+"nyújt többet. </li></ol>"
 
 #: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:706
 msgid "What to read"
-msgstr ""
+msgstr "Amit olvasnia kell"
 
 #: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:707
 msgid ""
@@ -1554,19 +1840,24 @@ msgid ""
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr ""
+"Írja le a hivatkozott iodalom részleteit. \n"
+"A hivatkozások formája függ az Ön tanszékén, karán előnyben \n"
+"részesített formától."
 
 #: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:640
 #: exe/engine/idevicestore.py:648 exe/engine/idevicestore.py:710
 #: exe/engine/idevicestore.py:747 exe/engine/idevicestore.py:755
 #: exe/webui/questionelement.py:110
 msgid "Activity"
-msgstr ""
+msgstr "Tevékenység"
 
 #: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:711
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr ""
+"Írja le a tanuló által vállalt ovasmányokhoz kapcsolódó feladatokat. \n"
+"Ez hasznos segítség a tanuló számára."
 
 #: exe/engine/idevicestore.py:606 exe/engine/idevicestore.py:715
 msgid ""
@@ -1575,13 +1866,20 @@ msgid ""
 "question \n"
 "or providing a statement to begin a debate."
 msgstr ""
+"A visszacsatolást arra használjuk, hogy összefoglaljuk azokat a pontokat,"
+" \n"
+"amelyeket az olvasmányok lefednek, vagy kérdéseket tegyünk fel ezzel "
+"biztosítva \n"
+"kiindulópontot az olvasnivaló elemzéséhez, vagy kijelentéseket "
+"fogalmazunk meg a \n"
+"vita elindításához."
 
 #: exe/engine/idevicestore.py:612 exe/engine/idevicestore.py:621
 #: exe/engine/idevicestore.py:719 exe/engine/idevicestore.py:728
 #: exe/engine/package.py:653 exe/engine/package.py:664
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:216
 msgid "Objectives"
-msgstr ""
+msgstr "Célok"
 
 #: exe/engine/idevicestore.py:615 exe/engine/idevicestore.py:722
 msgid ""
@@ -1589,17 +1887,22 @@ msgid ""
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr ""
+"Az oktatási célok írják le a tanuló számára, hogy milyen tudással fognak "
+"rendelkezni \n"
+"a tananyagegység elsajátítása után. Mire lesznek képesek, milyen "
+"készségeket fejleszt \n"
+"a tananyag"
 
 #: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
 msgid "Type the learning objectives for this resource."
-msgstr ""
+msgstr "Gépelje be a tananyagegységhez tartozó oktatási célokat!"
 
 #: exe/engine/idevicestore.py:625 exe/engine/idevicestore.py:635
 #: exe/engine/idevicestore.py:732 exe/engine/idevicestore.py:742
 #: exe/engine/package.py:683 exe/engine/package.py:694
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
 msgid "Preknowledge"
-msgstr ""
+msgstr "Előismeret"
 
 #: exe/engine/idevicestore.py:628 exe/engine/idevicestore.py:735
 msgid ""
@@ -1611,12 +1914,21 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools "
 "</li></ul>\n"
 msgstr ""
+"Az előismeret modulban sorolhatja fel azokat az előfeltételeket, és \n"
+"azokat az ismereteket, amelyekkel tanulónak a már rendelkeznie kell a \n"
+"tannyagegysék sikeres teljesítéséhez. Példák az előfeltételre: <ul>\n"
+"<li>        Az \"Európai alkotmány és parlamentarizmustörténet\" tantárgy"
+" teljesítése. </li>\n"
+"<li>        Ismerjék a klasszikus logika alapfogalmait. </li>\n"
+"<li>        A tantárgy nincs elismerethez kötve. </li></ul>\n"
 
 #: exe/engine/idevicestore.py:636 exe/engine/idevicestore.py:743
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
+"Írja le azokat a tanuló számára szükséges előismereteket, amelyek a \n"
+"soron következő tananyag hatékony elsajátításához szükségesek."
 
 #: exe/engine/idevicestore.py:643 exe/engine/idevicestore.py:750
 msgid ""
@@ -1625,10 +1937,16 @@ msgid ""
 "conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
+"Egy tevékenységet meghatározhat egy feladat, vagy a egy feladatcsoport,\n"
+"amit a tanulónak teljesíteni kell. Adjon egyértelmű utasításokat, amelyek"
+" minden\n"
+"feltételt figyelembe vesznek, amik a tanulót segíthetik, vagy "
+"akadályozhatják\n"
+"a feladat teljesítésében."
 
 #: exe/engine/idevicestore.py:649 exe/engine/idevicestore.py:756
 msgid "Describe the tasks the learners should complete."
-msgstr ""
+msgstr "Írja le azokat a feladatokat, amelyeket a tanulónak teljesíteni kell!"
 
 #: exe/engine/idevicestore.py:666
 msgid ""
@@ -1641,6 +1959,14 @@ msgid ""
 "some \n"
 "reflective guidance.</p>"
 msgstr ""
+"<p>Az \"Olvasnivaló\" - nevéből következően - néhány \n"
+"tennivaló elvégzésére szólítja fel a tanulót. Ezeknek a tevékenységeknek "
+"közvetlen \n"
+"kapcsolatban kell állniuk azokkal a szövegekkel, amit a tanulóknak el "
+"kell olvasniuk. \n"
+"Megfelő visszacsatolás lehet a tevékenység elvégzéséhez, ha a tanulónak "
+"néhány \n"
+"elgondolkodtató tanácsot ad.</p>"
 
 #: exe/engine/idevicestore.py:671
 msgid ""
@@ -1656,10 +1982,22 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"A tanároknak észben kellene tartaniuk a következőt mikor használja ezt az"
+" iDevice modult:  <ol><li>Gondoljon arra a tananyagegység "
+"tevékenységeinek tervezésekor, hogy vizuálisan is jelölje a tartalmat. "
+"Kerülje a túl sok különböző típusú vagy besorolású tevékenység "
+"használatát, mert a tanulókat megzavarhatja. Általában három négy "
+"különböző típus több, mint megfelelő egy tananyagegységen belül "
+".</li><li>A vizuális megjelenés tervezése során kerülje, hogy közvetlenül"
+" egymás után két iDevice kövesse egymást szöveges elválasztás nélkül. Ha "
+"ez mégis előfordul, fontolja meg, hogan lehet egyetlen iDevice modullal "
+"megoldani ugyanazt! </li><li>Gondolja végig, hogy a különböző esetekben "
+"melyik modul lehet hatékonyabb, melyik milyen előnyoket kínál, melyik "
+"nyújt többet. </li></ol>"
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
-msgstr ""
+msgstr "Nagyító"
 
 #: exe/engine/imagemagnifieridevice.py:43
 msgid ""
@@ -1668,10 +2006,13 @@ msgid ""
 "the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
+"A \"Nagyító\" egy nagyító eszköz, ami lehetővé teszi \n"
+"a tanulók számára, hogy nagyíthassák a kapott képet. A nagyítólencsét \n"
+"a kép fölött mozgatva megfigyelhetik annak részleteit."
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Choose an Image"
-msgstr ""
+msgstr "Válasszon egy képet"
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid ""
@@ -1680,6 +2021,9 @@ msgid ""
 "to be \n"
 "magnified."
 msgstr ""
+"Kattintson \n"
+"az alábbi képen, vagy a \"Válasszon egy képet\" gombon a bagyítandó kép \n"
+"kiválasztásához."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
@@ -1687,19 +2031,23 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/tools/style-designer/langs/en.js:24
 msgid "Text"
-msgstr ""
+msgstr "Szöveg"
 
 #: exe/engine/imagemagnifieridevice.py:55 exe/engine/multimediaidevice.py:65
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
 msgstr ""
+"Adjon meg egy szöveget, \n"
+"amely az állománnyal kapcsolatos."
 
 #: exe/engine/imagemagnifieridevice.py:60
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
 msgstr ""
+"Adjon meg egy feiratot \n"
+"a nagyítandó képhez."
 
 #: exe/engine/imagemagnifieridevice.py:62
 msgid ""
@@ -1710,6 +2058,14 @@ msgid ""
 " \n"
 "image to display at its original size."
 msgstr ""
+"Határozza meg a kép megjelenési méretét pixelben! \n"
+"100 pixel körülbelül 3 cm-nek felel meg. \n"
+"Ha azt szeretné, hogy a kép eredeti méretében jelenjen meg, \n"
+"hagyja a mezőket üresen. \n"
+"Ha az eredeti mérettől eltérő méretet kíván beállítani, \n"
+"olyan értékeket adjon meg, hogy az oldalak aránya megmaradjon, \n"
+"s a kép ne torzuljon. (Pl.: eredeti méret: 360 x 280, új méret: 180 x 140"
+" )"
 
 #: exe/engine/imagemagnifieridevice.py:66
 #: exe/engine/imagemagnifieridevice.py:142
@@ -1717,6 +2073,8 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
+"Az igazítás lehetővé teszi \n"
+"hogy meghatározzuk, hogy a kép hol helyezkedjen el a képernyőn."
 
 #: exe/engine/imagemagnifieridevice.py:68
 #: exe/engine/imagemagnifieridevice.py:144
@@ -1724,6 +2082,8 @@ msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
+"Állítsa be a nagyítás kezdeti mértékét \n"
+"az eredeti képméret százalékában megadva!"
 
 #: exe/engine/imagemagnifieridevice.py:70
 #: exe/engine/imagemagnifieridevice.py:146
@@ -1731,20 +2091,22 @@ msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
+"Állítsa be a nagyítás maximális értékét \n"
+"az eredeti képméret százalékos arányában."
 
 #: exe/engine/imagemagnifieridevice.py:72
 msgid "Select the size of the magnifying glass"
-msgstr ""
+msgstr "Válassza ki a nagyító méretét"
 
 #: exe/engine/imagemagnifieridevice.py:148
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
-msgstr ""
+msgstr "Itt választhatja meg a nagyító kezdeti méretét."
 
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
-msgstr ""
+msgstr "Kép szöveggel"
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -1772,18 +2134,45 @@ msgid ""
 "visual.\n"
 "</p>"
 msgstr ""
+"<p>\n"
+"A \"Kép szöveggel\" iDevice modult több módon lehet használni. Támogatja "
+"az \n"
+"eXe tartalomban érzelmi (affectív) és a tanulási feladathoz kötődő "
+"(kognitív) \n"
+"dimenziók kiteljesedését.\n"
+"</p><p>\n"
+"<b>Integrálja a vizuáls és a verbális összefoglalást.</b>\n"
+"</p><p>\n"
+"A kognitív pszichológia szerint ha a tanulóknak egyszerre biztosítunk egy"
+" \n"
+"jellegzetes képet és a megfelelő szóbeli összefoglalást, csökkenti a "
+"koknitív \n"
+"terhelést és erősíti az emlékezetet.\n"
+"Ezt a modult arra használhatjuk, hogy bemutassunk egy képet (fotót, "
+"diagrammot \n"
+"vagy ábrát) rövid szóbeli összefoglalóval, amely leírja a kép lényegét. \n"
+"Például: Ha ha tanítom a négyütemű belső égésű motor funkcióit, bemutatok"
+" egy \n"
+"képet, amelyen látszik a dugattyú mind a nény állása. A képet pedig "
+"kiegészítem egy \n"
+"leírással, amely minden lényeges mozzanatot, jellemzőt bemutat.\n"
+"</p>"
 
 #: exe/engine/imagewithtextidevice.py:66
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
 msgstr ""
+"Írja be azt a szöveget, \n"
+"                                                ami a képhez kapcsolódik."
 
 #: exe/engine/imagewithtextidevice.py:71 exe/engine/imagewithtextidevice.py:118
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
 msgstr ""
+"Adjon meg egy feliratot \n"
+"a beillesztett képhez."
 
 #: exe/engine/listaidevice.py:66
 msgid "DropDown Activity"
@@ -1878,7 +2267,7 @@ msgstr ""
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
-msgstr ""
+msgstr "Képletszerkesztő"
 
 #: exe/engine/mathidevice.py:43
 msgid ""
@@ -1894,10 +2283,21 @@ msgid ""
 " \n"
 "                        this graphic."
 msgstr ""
+"A LATEX egy matematikai nyel, melynek segítségével \n"
+"                        matematikai formulákat, képleteket szúrhat be \n"
+"                        a tananyagba. A LATEX lefordítja a beírt kódot \n"
+"                        és képként jeleníti meg azt az eXe tananyagban.\n"
+"                        Használja a \"Képletszerkesztőt\" a \"Szöveg\" "
+"modullal \n"
+"                        együtt és írjon a tanulók számára magyarázó \n"
+"                        megjegyzéseket, illetve tanulási instrukciókat \n"
+"                        az ábrázolt formulához."
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
 msgstr ""
+"Használhatja az eszköztárat, vagy begépeélheti kézzel a latex képletet a "
+"szövegdobozba."
 
 #: exe/engine/memorymatchidevice.py:44
 msgid "Memory Match Game"
@@ -2095,25 +2495,27 @@ msgstr ""
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
-msgstr ""
+msgstr "Feleletválasztós teszt"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:41
 msgid "Auckland University of Technology"
-msgstr ""
+msgstr "Aucklandi Műszaki Egyetem"
 
 #: exe/engine/multimediaidevice.py:42
 msgid ""
 "The MP3 iDevice allows you to attach an MP3 media file to your content "
 "along with relevant textuallearning instructions."
 msgstr ""
+"Az MP3 iDevice modul lehetőséget ad egy MP3-as állomány csatolására a "
+"hozzá kapcsolódó utasításokkal, leírásokkal együtt."
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr ""
+msgstr "Válasszon egy MP3-as állományt"
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -2125,16 +2527,25 @@ msgid ""
 "would like the iDevice to       display e.g. 'Some emphasis' applies a "
 "border and icon to the iDevice content displayed.</li></ol>"
 msgstr ""
+"<ol>  <li>Kattintson az &lt;Válasszon egy MP3-at&gt; gombra és keresse "
+"meg azt az állomámyt, amelyet be kíván szúrni</li> <li>Kattintson a "
+"legördülő menüre és válassza ki, hogy hova legyen igazítva az állomány a "
+"képernyőn.</li>  <li>Adjon egy felirtot az állományhoz.</li> <li>A "
+"\"Szöveg\" mezőbe írja be a tárgyhoz tartozó szöveget.</li> <li>Válassza "
+"ki a modul megjelenési stílusát. Ha a 'Kiemelés' opciót választja, a "
+"modul kerettel és ikonnal jelenik meg a képernyőn.</li></ol>"
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
+"Az igazítás lehetővé teszi \n"
+"hogy meghatározzuk, hogy a médialejátszó hol helyezkedjen el a képernyőn."
 
 #: exe/engine/multiselectidevice.py:45
 msgid "Multi-select"
-msgstr ""
+msgstr "Feleletválasztós teszt (több jó válasz)"
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
@@ -2186,20 +2597,20 @@ msgstr ""
 
 #: exe/engine/package.py:327
 msgid "Topic"
-msgstr ""
+msgstr "Téma"
 
 #: exe/engine/package.py:327
 msgid "Section"
-msgstr ""
+msgstr "Szakasz"
 
 #: exe/engine/package.py:327
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
 msgid "Unit"
-msgstr ""
+msgstr "Egység"
 
 #: exe/engine/package.py:348
 msgid "Home"
-msgstr ""
+msgstr "Kezdőoldal"
 
 #: exe/engine/package.py:503
 msgid "Metadata creation date"
@@ -2207,7 +2618,7 @@ msgstr ""
 
 #: exe/engine/package.py:1000
 msgid "?????"
-msgstr ""
+msgstr "Adjon címet a szintnek!"
 
 #: exe/engine/package.py:1038 exe/engine/package.py:1045
 #, python-format
@@ -2215,11 +2626,13 @@ msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
+"SIKERTELEN MENTÉS!\n"
+"Az utolsó sikeres mentés: %s."
 
 #: exe/engine/package.py:1449 exe/jsui/scripts/app/controller/Toolbar.js:418
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "iDevice Editor"
-msgstr ""
+msgstr "iDevice szerkesztő"
 
 #: exe/engine/package.py:1570
 msgid "My Catalog"
@@ -2269,7 +2682,7 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr ""
+msgstr "Ez egy szövegmező"
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
@@ -2390,16 +2803,22 @@ msgid ""
 "answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
 msgstr ""
+"Írjon be egy lehetséges választ! Adjon meg legalább 3-4 \n"
+"válaszlehetőséget, amely tartalmazza helyes és eltéítő választ is. \n"
+"Kattintson az &lt;Új válasz hozzáadása&gt; gombra az új \n"
+"válaszlehetőség megadása érdekében."
 
 #: exe/engine/quiztestidevice.py:126 exe/engine/quiztestidevice.py:202
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
+"A helyes válasz megjelöléséhez kattintson \n"
+"a rádiógombon a megfelelő válasz sorában."
 
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
-msgstr ""
+msgstr "SCORM Teszt"
 
 #: exe/engine/quiztestidevice.py:246
 msgid ""
@@ -2411,6 +2830,13 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
+"A feleletválasztós tesztektől eltérően a SCORM tesztet arra használjuk, \n"
+"hogy felmérjük a tanulók tudását egy témában anélkül, hogy visszajelzést"
+" \n"
+"biztosítanánk számukra. Az LMS rendszerek SCORM lejátszójának viszont \n"
+"a kérdések részleteit is átadja (megfelelt-e, jó vagy rossz volt-e a "
+"válasz, \n"
+"a jelölt válasz sorszáma). "
 
 #: exe/engine/recomendacionfpdidevice.py:30
 msgid "FPD - A Piece of Advice"
@@ -2446,6 +2872,16 @@ msgid ""
 "be \n"
 "effective feedback tools."
 msgstr ""
+"A reflexiót - mint tanítási módszert - gyakran használjuk az elmélet és a"
+" \n"
+"gyakorlat közötti kapcsolat megteremtéséhez. Az ilyen feladatok lehetővé"
+" \n"
+"teszik a tanulóknak, hogy figyeljenek és mérlegeljék megfigyeléseiket "
+"mielőtt \n"
+"tudományos munkaként bemutatnák azoket. A feljegyzések, naplók, profilok"
+" \n"
+"és portfóliók hasznos eszközök a megfigyelési adatok gyűjtésére. \n"
+"A magyarázatok és az útmutatók pedig hatásos visszacsatolási eszközök."
 
 #: exe/engine/reflectionfpdidevice.py:57
 #: exe/engine/reflectionfpdmodifidevice.py:56
@@ -2454,6 +2890,8 @@ msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
 msgstr ""
+"Tegyen fel egy kérdést a tanulóknak, \n"
+"amelyre reflektál."
 
 #: exe/engine/reflectionfpdidevice.py:59
 msgid ""
@@ -2462,13 +2900,16 @@ msgid ""
 " \n"
 "reflective feedback.)"
 msgstr ""
+"Írja le, hogy a tanulók hogyan mérjék fel, \n"
+"hogyan értékeljék a gyakorlatot. (A magyarázatok hasznos eszközök \n"
+"a gondolkodtató visszacsatolás biztosítására.)"
 
 #: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:201
 msgid "Reflective question:"
-msgstr ""
+msgstr "Gondolatébresztő kérdés:"
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
 msgid "FPD - Think About It (without Feedback)"
@@ -2476,7 +2917,7 @@ msgstr ""
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
-msgstr ""
+msgstr "Reflexió"
 
 #: exe/engine/reflectionidevice.py:57
 msgid ""
@@ -2494,7 +2935,7 @@ msgstr ""
 
 #: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:48
 msgid "RSS"
-msgstr ""
+msgstr "RSS"
 
 #: exe/engine/rssidevice.py:42
 msgid ""
@@ -2502,6 +2943,10 @@ msgid ""
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
+"Az RSS iDevice modult arra használjuk, hogy az egyes portálokon \n"
+" megjelenő új tartalmakról hírt kapjanak. Ezzel a modullal az általunk \n"
+"kiválasztott hírcsatornákhoz biztosíthatunk hivatkozásokat a tanulók "
+"számára."
 
 #: exe/engine/rssidevice.py:51
 msgid ""
@@ -2522,13 +2967,32 @@ msgid ""
 "bookmarks and add\n"
 " instructions or additional learning information."
 msgstr ""
+"Adja meg annak az RSS-nek az URL-jét, amelyik hírcsatornájához \n"
+"csatlakozni szeretne.A hírcsatornák kis ikonokkal azonosítják \n"
+"(Gyakran ilyennel: <img src=\"/images/feed-icon.png\" />), vagy az "
+"\"RSS\" felirattal. Kattintson \n"
+"az ikonra vagy a címkére és az RSS hírcsatorna megjelenik a "
+"böngészőjében. Másolja a címsorban \n"
+"található URL-t ebbe a mezőbe. Másként: kattintson jobb egérgommbbal az "
+"ikonon, vagy a hivatkozáson \n"
+"és amegjelenő helyi menüben válassza a \"Hivatkozás címének másolása\" "
+"menüpontot. \n"
+"Térjen vissza az eXe-be, válassza az RSS modult és illessze be az URL-t "
+"az \"RSS URL\" mezőbe,\n"
+"majd kattintson a \"Betöltés\" gombra. Ezután az alábbi ablakban "
+"hivatkozásként megjelennek \n"
+"a hírcsatorna címei. Ebben az ablakban tovább tudja szerkeszteni a "
+"huvatkozásokat, illetve \n"
+"utasításokat, magyarázatokat írhat be."
 
 #: exe/engine/rssidevice.py:110 exe/engine/rssidevice.py:113
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "Unable to load RSS feed from %s <br/>Please check the spelling and "
 "connection and try again."
 msgstr ""
+"Nnem képes letölteni a %s-t <br/>Kérem ellenőrízze, hogy helyesen írta-e,"
+" vagy rendben van-e az internetkapcsolata és próbálja újra."
 
 #: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid "FPD - Multi Select Activity"
@@ -2661,7 +3125,7 @@ msgstr ""
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
-msgstr ""
+msgstr "Igaz-Hamis kérdés"
 
 #: exe/engine/truefalseidevice.py:146
 #: exe/engine/verdaderofalsofpdidevice.py:147
@@ -2673,6 +3137,11 @@ msgid ""
 "either/or \n"
 "responses."
 msgstr ""
+"Az Igaz/Hamis kérdés megoldása során a tanulónak egy állításról kell "
+"eldöntenie, \n"
+"hogy igaz-e. Ez a kérdéstrípus jól használható tényszerű információk "
+"esetében, \n"
+"amikor a válasz vagy-vagy alapon dől el."
 
 #: exe/engine/truefalseidevice.py:151
 #: exe/engine/verdaderofalsofpdidevice.py:153
@@ -2680,6 +3149,8 @@ msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
 msgstr ""
+"Egy útmutató jó segítség lehet a tanuló \n"
+"számára a kérdés megválaszolásában."
 
 #: exe/engine/truefalseidevice.py:154
 #: exe/engine/verdaderofalsofpdidevice.py:156
@@ -2689,6 +3160,9 @@ msgid ""
 "tend to \n"
 "be ambiguous."
 msgstr ""
+"Gépelje be a kérdést! A kérdés \n"
+"legyen világos és egyértelmű. Kerülje a negatív feltételeket, \n"
+"mert kétértelműek lehetnek."
 
 #: exe/engine/truefalseidevice.py:158
 #: exe/engine/verdaderofalsofpdidevice.py:160
@@ -2698,6 +3172,9 @@ msgid ""
 " \n"
 "default feedback will be provided."
 msgstr ""
+"Írjon valamilyen visszajelzést a tanulóknak! \n"
+"Ha ezt a mezőt üresen hagyja, akkor az alapértelmezett \n"
+"visszajelzés jelenik meg."
 
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
 #: exe/engine/verdaderofalsofpdidevice.py:167
@@ -2706,6 +3183,8 @@ msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
 msgstr ""
+"Adjon meg egy utasítást, hogy hogyan lehet teljesíteni ezt az Igaz/Hamis "
+"kérdést!"
 
 #: exe/engine/truefalseidevice.py:372
 #: exe/engine/verdaderofalsofpdidevice.py:375
@@ -2718,6 +3197,13 @@ msgid ""
 "or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
+"Gépeljen be visszajelzésként azokat a szövegeket, amelyeket a \n"
+"tanuló kap, ha eg bizonyos választ választott. Ha nem tölti ki ezt a "
+"mezőt, \n"
+"az eXe automatikusan a következő visszajelzéseket fogja adni: \"Helyes \n"
+"válasz\", ha a helyes válasz lett kiválasztva; vagy \"Helytelen válasz\","
+"\n"
+"ha mást választott a tanuló."
 
 #: exe/engine/verdaderofalsofpdidevice.py:145
 msgid "FPD - True/False Activity"
@@ -2725,9 +3211,10 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:53
 msgid "Wiki Article"
-msgstr ""
+msgstr "Wiki szócikk"
 
 #: exe/engine/wikipediaidevice.py:55
+#, fuzzy
 msgid ""
 "<p>The Wikipedia iDevice allows you to locate \n"
 "existing content from within Wikipedia and download this content into "
@@ -2744,22 +3231,36 @@ msgid ""
 "additionally\n"
 "by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
 msgstr ""
+"<p>A \"Wiki szócikk\" lehetőséget ad a Wikipédiéban már létező tartalmak"
+" \n"
+"letöltésére és az eXe forrásba történő beillezstésére. \n"
+"A \"Wiki szócikk\" iDevice modul másolatot készít a keresett szócikk "
+"tartalmáról. \n"
+"A Wikipédiában végbemenő változásokat nem frissíti automatikusan az eXe-"
+"ben. \n"
+"A változás követéséhez újabb másolat készítésére van szükség. "
+"Hasonlóképpen \n"
+"az eXe-ban végrehajtott változtatások sem fognak frissülni a "
+"Wikipédiában. </p> <p>A Wikipédia tartalmak \n"
+"a GNU Szabad Dokumentáció licenc alá esnek.</p>"
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
-msgstr ""
+msgstr "Szócikk"
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr ""
+"Válassza ki a Wikipédiának azt a nyelvi változatát, \n"
+"amelyben keresni szeretne és keressen egy kifejezésre!"
 
 #: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:363
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
-msgstr ""
+msgstr "Írja be a keresett szót vagy kifejezést!"
 
 #: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
 #, python-format
@@ -2767,10 +3268,12 @@ msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
 msgstr ""
+"Nnem képes letölteni a %s-t <br/>Kérem ellenőrízze, hogy helyesen írta-e,"
+" vagy rendben van-e az internetkapcsolata és próbálja újra."
 
 #: exe/engine/wikipediaidevice.py:315
 msgid "http://en.wikipedia.org/"
-msgstr ""
+msgstr "http://en.wikipedia.org/"
 
 #: exe/exe_do:68
 msgid ""
@@ -2942,6 +3445,8 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
+"\"%s\" már létezik.\n"
+"Kérem, próbálja újra más állománynévvel"
 
 #: exe/export/cmdlineexporter.py:92
 msgid "Export format not implemented"
@@ -2954,24 +3459,27 @@ msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
+"SIKERTELEN EXPORTÁLÁS!\n"
+"Az utolsó sikeres export: %s."
 
 #: exe/export/scormpage.py:177 exe/export/websitepage.py:345
 #: exe/webui/common.py:473
 msgid "Previous"
-msgstr ""
+msgstr "Előző"
 
 #: exe/export/scormpage.py:178 exe/export/websitepage.py:351
 #: exe/webui/common.py:474
 msgid "Next"
-msgstr ""
+msgstr "Következő"
 
 #: exe/export/singlepage.py:249
 msgid "You can close this window"
 msgstr ""
 
 #: exe/export/textexport.py:54 exe/webui/common.py:293
+#, fuzzy
 msgid "Licensed under the"
-msgstr ""
+msgstr "A tananyag a követkkező licenc alá esik:"
 
 #: exe/export/websitepage.py:153
 msgid "Skip navigation"
@@ -2979,18 +3487,20 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr ""
+msgstr "Mintapélda"
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
 msgstr ""
+"Ez egy példa arra, hogy of \n"
+"iDevice modul létrehozására."
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
 msgid "Example"
-msgstr ""
+msgstr "Példa"
 
 #: exe/importers/cmdlineimporter.py:44
 msgid "Import format not implemented"
@@ -3043,18 +3553,18 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
-msgstr ""
+msgstr "Nem nevezheti át a könyvtárat"
 
 #: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:847 exe/jsui/mainpage.py:975
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
-msgstr ""
+msgstr ". Kérem használjon ASCII nevet."
 
 #: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
-msgstr ""
+msgstr "SIKERTELEN MENTÉS!"
 
 #: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1071
 #: exe/jsui/mainpage_antes_jr_docs.py:326
@@ -3065,6 +3575,8 @@ msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
+"SIKERTELEN MENTÉS!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:337 exe/jsui/mainpage.py:342 exe/jsui/mainpage.py:345
 #: exe/jsui/mainpage_antes_jr_docs.py:330
@@ -3072,19 +3584,19 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:338
 #, python-format
 msgid "Package saved to: %s"
-msgstr ""
+msgstr "A csomag el lett mentve a következő helyre: %s"
 
 #: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:672
 #: exe/jsui/mainpage_antes_jr_docs.py:561
 #: exe/jsui/mainpage_antes_jr_docs.py:665
-#, python-format
+#, fuzzy, python-format
 msgid "Preview directory %s is a file, cannot replace it"
-msgstr ""
+msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
 #: exe/jsui/mainpage.py:587 exe/jsui/mainpage_antes_jr_docs.py:580
-#, python-format
+#, fuzzy, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr ""
+msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
 #: exe/jsui/mainpage.py:712 exe/jsui/mainpage_antes_jr_docs.py:705
 #, python-format
@@ -3145,7 +3657,7 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1064
 #: exe/jsui/mainpage_antes_jr_docs.py:1136
 msgid "EXPORT FAILED!"
-msgstr ""
+msgstr "SIKERTELEN EXPORTÁLÁS!"
 
 #: exe/jsui/mainpage.py:940 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
@@ -3164,11 +3676,13 @@ msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
+"SIKERTELEN KICSOMAGOLÁS!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1003 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
-msgstr ""
+msgstr "A csomag ki lett bontva a következő helyre: %s"
 
 #: exe/jsui/mainpage.py:1015 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
@@ -3198,13 +3712,15 @@ msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
+"SIKERTELEN EXPORTÁLÁS!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1057 exe/jsui/mainpage.py:1104
 #: exe/jsui/mainpage_antes_jr_docs.py:990
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr ""
+msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
 #: exe/jsui/mainpage.py:1063 exe/jsui/mainpage.py:1111
 #: exe/jsui/mainpage_antes_jr_docs.py:996
@@ -3214,6 +3730,8 @@ msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr ""
+"A %s könyvtárnév már létezik. Kérem, válasszon más nevet, vagy törölje a "
+"létező könyvtárat, s próbálja újra!"
 
 #: exe/jsui/mainpage.py:1077 exe/jsui/mainpage.py:1122
 #: exe/jsui/mainpage.py:1137 exe/jsui/mainpage.py:1156
@@ -3230,16 +3748,18 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1185
 #, python-format
 msgid "Exported to %s"
-msgstr ""
+msgstr "Exportálva %s"
 
 #: exe/jsui/mainpage.py:1285 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr ""
+msgstr "A(z) %s állomány nem létezik vagy nem olvasható."
 
 #: exe/jsui/mainpage.py:1289 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
+"Az állományt nem lehet betölteni. Kérem, küldje el e-mail-ben az "
+"állományt a bugs@exelearning.org címre!"
 
 #: exe/jsui/mainpage.py:1292 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
@@ -3247,10 +3767,12 @@ msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
+"Sajnálom, rossz fájlformátum:\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1294 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
-msgstr ""
+msgstr "Sajnálom, rossz fájlformátum"
 
 #: exe/jsui/propertiespage.py:335
 msgid "Failed to get properties"
@@ -3270,7 +3792,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
 #: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
 msgid "Select an image"
-msgstr ""
+msgstr "Válasszon egy képet"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:194
 #: exe/jsui/scripts/app/controller/MainTab.js:228
@@ -3362,12 +3884,12 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
 msgid "Insert Package"
-msgstr ""
+msgstr "Csomag beszúrása"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Extract Package"
-msgstr ""
+msgstr "Kicsomagolás"
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Delete \"{node}\" node and all its children?"
@@ -3443,7 +3965,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:400
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
 msgid "Preferences"
-msgstr ""
+msgstr "Beállítások"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:428
 msgid ""
@@ -3475,7 +3997,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:123
 msgid "Information"
-msgstr ""
+msgstr "Információ"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 msgid "Your Style could not be saved because an unknown error occurred."
@@ -3589,7 +4111,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:136
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
-msgstr ""
+msgstr "Mégse"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:792
 msgid "Ok"
@@ -3747,7 +4269,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
-msgstr ""
+msgstr "Név"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:95
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
@@ -3779,7 +4301,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/en.js:112
 msgid "Save"
-msgstr ""
+msgstr "Mentés"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:78
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:89
@@ -3800,13 +4322,14 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:35
 msgid "Dublin Core Metadata"
-msgstr ""
+msgstr "Dublin Core metaadat"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:45
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:171
+#, fuzzy
 msgid "The name given to the resource."
-msgstr ""
+msgstr "Gépelje be a tananyagegységhez tartozó oktatási célokat!"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:51
 msgid "Creator"
@@ -3897,8 +4420,9 @@ msgid "Format"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
+#, fuzzy
 msgid "Select a Format."
-msgstr ""
+msgstr "Válasszo formátumot"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomSections.js:40
@@ -3936,8 +4460,9 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:182
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:189
+#, fuzzy
 msgid "Select a language."
-msgstr ""
+msgstr "Válasszon nyelvet"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
@@ -3977,6 +4502,11 @@ msgid ""
 "no assumptions can be made about the status of these and other rights "
 "with respect to the resource."
 msgstr ""
+"Jellemzően a \"Jogok\" elem tartalmazza a forrás jogkezelésére vonatkozó "
+"álláspontokat, vagy hivatkozik egy ide vonatkozó szolgáltatásra. A jogok "
+"gyakran tartalmazzák a szellemi tulajdonjogot,a szerzői jogot és egyéb "
+"tulajdonjogokat. Ha a \"Jogok\" elem hiányzik, nincs feltétel, amely "
+"alapján megállapítható lenne a forrás jogállása és egyéb jogok."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:189
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:128
@@ -3993,8 +4523,9 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
 #: exe/webui/tools/style-designer/langs/en.js:110
+#, fuzzy
 msgid "Reset"
-msgstr ""
+msgstr "Faroese"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
@@ -4313,7 +4844,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:269
 #: exe/webui/editorpane.py:387
 msgid "Purpose"
-msgstr ""
+msgstr "Hogyan használjuk a modult?"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:166
 msgid "Download Classification Sources"
@@ -4704,7 +5235,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:45
 msgid "Select Language"
-msgstr ""
+msgstr "Válasszon nyelvet"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:151
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -4734,8 +5265,9 @@ msgid "Permissive"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
+#, fuzzy
 msgid "Strict"
-msgstr ""
+msgstr "Újraindítás"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:192
 msgid ""
@@ -4781,7 +5313,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
 msgid "Export"
-msgstr ""
+msgstr "Exportálás"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
 msgid "Delete style: "
@@ -4860,7 +5392,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
-msgstr ""
+msgstr "Tervező nézet"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:85
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:88
@@ -4881,7 +5413,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:155
 msgid "iDevices"
-msgstr ""
+msgstr "iDevice modulok"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "Category"
@@ -4893,21 +5425,21 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
 msgid "Authoring"
-msgstr ""
+msgstr "Szerzői nézet"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:47
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Properties"
-msgstr ""
+msgstr "Tulajdonságok"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
 msgid "Package"
-msgstr ""
+msgstr "Csomag"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:58
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
 msgid "Metadata"
-msgstr ""
+msgstr "Metaadat"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:195
@@ -4921,7 +5453,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
-msgstr ""
+msgstr "Új lap"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:239
 #: exe/webui/block.py:333 exe/webui/editorelement.py:78
@@ -4932,11 +5464,11 @@ msgstr ""
 #: exe/webui/galleryblock.py:303
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
-msgstr ""
+msgstr "Törlés"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
-msgstr ""
+msgstr "Átnevezés"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
 msgid "Promote node up in hierarchy"
@@ -4947,12 +5479,14 @@ msgid "Demote node down in hierarchy"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:45
+#, fuzzy
 msgid "Move node up"
-msgstr ""
+msgstr "Fel"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:51
+#, fuzzy
 msgid "Move node down"
-msgstr ""
+msgstr "Le"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 #: exe/webui/tools/style-designer/langs/en.js:133
@@ -5023,15 +5557,15 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:273
 msgid "Web Site"
-msgstr ""
+msgstr "Weboldal"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:280
 msgid "Self-contained Folder"
-msgstr ""
+msgstr "Könyvtárba rendezve"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:286
 msgid "Zip File"
-msgstr ""
+msgstr "Zip állomány"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
 msgid "Single Page"
@@ -5054,8 +5588,9 @@ msgid "Merging"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:356 exe/webui/editorpage.py:269
+#, fuzzy
 msgid "Quit"
-msgstr ""
+msgstr "Elküld"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:363
 msgid "Tools"
@@ -5087,7 +5622,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Preview"
-msgstr ""
+msgstr "Előnézet"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Refresh Display"
@@ -5144,119 +5679,119 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
-msgstr ""
+msgstr "Afar"
 
 #: exe/jsui/scripts/langs.js:8
 msgid "Abkhazian "
-msgstr ""
+msgstr "Abház"
 
 #: exe/jsui/scripts/langs.js:12
 msgid "Avestan "
-msgstr ""
+msgstr "Avesztáni"
 
 #: exe/jsui/scripts/langs.js:16
 msgid "Afrikaans "
-msgstr ""
+msgstr "Afriakai"
 
 #: exe/jsui/scripts/langs.js:20
 msgid "Amharic "
-msgstr ""
+msgstr "Amharic"
 
 #: exe/jsui/scripts/langs.js:24
 msgid "Arabic "
-msgstr ""
+msgstr "Arab"
 
 #: exe/jsui/scripts/langs.js:28
 msgid "Assamese "
-msgstr ""
+msgstr "Assami"
 
 #: exe/jsui/scripts/langs.js:32
 msgid "Aymara "
-msgstr ""
+msgstr "Aymara"
 
 #: exe/jsui/scripts/langs.js:36
 msgid "Azerbaijani "
-msgstr ""
+msgstr "Azerbajdzsán"
 
 #: exe/jsui/scripts/langs.js:40
 msgid "Bashkir "
-msgstr ""
+msgstr "Baskír"
 
 #: exe/jsui/scripts/langs.js:44
 msgid "Byelorussian; Belarusian "
-msgstr ""
+msgstr "Belorusz"
 
 #: exe/jsui/scripts/langs.js:48
 msgid "Bulgarian "
-msgstr ""
+msgstr "Bolgár"
 
 #: exe/jsui/scripts/langs.js:52
 msgid "Bihari "
-msgstr ""
+msgstr "Bihari"
 
 #: exe/jsui/scripts/langs.js:56
 msgid "Bislama "
-msgstr ""
+msgstr "Bislama"
 
 #: exe/jsui/scripts/langs.js:60
 msgid "Bengali; Bangla "
-msgstr ""
+msgstr "Bengáli"
 
 #: exe/jsui/scripts/langs.js:64
 msgid "Tibetan "
-msgstr ""
+msgstr "Tibeti"
 
 #: exe/jsui/scripts/langs.js:68
 msgid "Breton "
-msgstr ""
+msgstr "Breton"
 
 #: exe/jsui/scripts/langs.js:72
 msgid "Bosnian "
-msgstr ""
+msgstr "Bosnyák"
 
 #: exe/jsui/scripts/langs.js:76
 msgid "Catalan "
-msgstr ""
+msgstr "Katalán"
 
 #: exe/jsui/scripts/langs.js:80
 msgid "Chechen "
-msgstr ""
+msgstr "Csecsen"
 
 #: exe/jsui/scripts/langs.js:84
 msgid "Chamorro "
-msgstr ""
+msgstr "Kamorró"
 
 #: exe/jsui/scripts/langs.js:88
 msgid "Corsican "
-msgstr ""
+msgstr "Korzikai"
 
 #: exe/jsui/scripts/langs.js:92
 msgid "Czech "
-msgstr ""
+msgstr "Cseh"
 
 #: exe/jsui/scripts/langs.js:96
 msgid "Church Slavic "
-msgstr ""
+msgstr "Egyházi szláv"
 
 #: exe/jsui/scripts/langs.js:100
 msgid "Chuvash "
-msgstr ""
+msgstr "Csuvas"
 
 #: exe/jsui/scripts/langs.js:104
 msgid "Welsh "
-msgstr ""
+msgstr "Welszi"
 
 #: exe/jsui/scripts/langs.js:108
 msgid "Danish "
-msgstr ""
+msgstr "Dán"
 
 #: exe/jsui/scripts/langs.js:112
 msgid "German "
-msgstr ""
+msgstr "Német"
 
 #: exe/jsui/scripts/langs.js:116
 msgid "Dzongkha; Bhutani "
-msgstr ""
+msgstr "Dzongkha"
 
 #: exe/jsui/scripts/langs.js:120
 msgid "Greek "
@@ -5264,271 +5799,272 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:124
 msgid "English "
-msgstr ""
+msgstr "Angol"
 
 #: exe/jsui/scripts/langs.js:128
 msgid "Esperanto "
-msgstr ""
+msgstr "Eszperantó"
 
 #: exe/jsui/scripts/langs.js:132
 msgid "Spanish "
-msgstr ""
+msgstr "Spanyol"
 
 #: exe/jsui/scripts/langs.js:136
 msgid "Estonian "
-msgstr ""
+msgstr "Észt"
 
 #: exe/jsui/scripts/langs.js:140
 msgid "Basque "
-msgstr ""
+msgstr "Baszk"
 
 #: exe/jsui/scripts/langs.js:144
 msgid "Persian "
-msgstr ""
+msgstr "Perzsa"
 
 #: exe/jsui/scripts/langs.js:148
 msgid "Finnish "
-msgstr ""
+msgstr "Finn"
 
 #: exe/jsui/scripts/langs.js:152
 msgid "Fijian; Fiji "
-msgstr ""
+msgstr "Fidzsi"
 
 #: exe/jsui/scripts/langs.js:156
 msgid "Faroese "
-msgstr ""
+msgstr "Faroese"
 
 #: exe/jsui/scripts/langs.js:160
 msgid "French "
-msgstr ""
+msgstr "Francia"
 
 #: exe/jsui/scripts/langs.js:164
 msgid "Frisian "
-msgstr ""
+msgstr "Fríz"
 
 #: exe/jsui/scripts/langs.js:168
 msgid "Irish "
-msgstr ""
+msgstr "Ír"
 
 #: exe/jsui/scripts/langs.js:172
 msgid "Scots; Gaelic "
-msgstr ""
+msgstr "Skót"
 
 #: exe/jsui/scripts/langs.js:176
 msgid "Gallegan; Galician "
-msgstr ""
+msgstr "Gallíciai"
 
 #: exe/jsui/scripts/langs.js:180
 msgid "Guarani "
-msgstr ""
+msgstr "Guarani"
 
 #: exe/jsui/scripts/langs.js:184
 msgid "Gujarati "
-msgstr ""
+msgstr "Gujarati"
 
 #: exe/jsui/scripts/langs.js:188
 msgid "Manx "
-msgstr ""
+msgstr "Manx"
 
 #: exe/jsui/scripts/langs.js:192
 msgid "Hausa (?) "
-msgstr ""
+msgstr "Hausa"
 
 #: exe/jsui/scripts/langs.js:196
 msgid "Hebrew (formerly iw) "
-msgstr ""
+msgstr "Héber"
 
 #: exe/jsui/scripts/langs.js:200
 msgid "Hindi "
-msgstr ""
+msgstr "Hindi"
 
 #: exe/jsui/scripts/langs.js:204
 msgid "Hiri Motu "
-msgstr ""
+msgstr "Hiri Motu"
 
 #: exe/jsui/scripts/langs.js:208
 msgid "Croatian "
-msgstr ""
+msgstr "Horvát"
 
 #: exe/jsui/scripts/langs.js:212
 msgid "Hungarian "
-msgstr ""
+msgstr "Magyar"
 
 #: exe/jsui/scripts/langs.js:216
 msgid "Armenian "
-msgstr ""
+msgstr "Örmény"
 
 #: exe/jsui/scripts/langs.js:220
 msgid "Herero "
-msgstr ""
+msgstr "Herero"
 
 #: exe/jsui/scripts/langs.js:224
 msgid "Interlingua "
-msgstr ""
+msgstr "Nemzetközi nyelv"
 
 #: exe/jsui/scripts/langs.js:228
 msgid "Indonesian (formerly in) "
-msgstr ""
+msgstr "Indonéz"
 
 #: exe/jsui/scripts/langs.js:232
 msgid "Interlingue "
-msgstr ""
+msgstr "Occidental nyelv"
 
 #: exe/jsui/scripts/langs.js:236
 msgid "Inupiak "
-msgstr ""
+msgstr "Inupiak"
 
 #: exe/jsui/scripts/langs.js:240
 msgid "Ido "
-msgstr ""
+msgstr "Ido"
 
 #: exe/jsui/scripts/langs.js:244
 msgid "Icelandic "
-msgstr ""
+msgstr "Izlandi"
 
 #: exe/jsui/scripts/langs.js:248
 msgid "Italian "
-msgstr ""
+msgstr "Olasz"
 
 #: exe/jsui/scripts/langs.js:252
 msgid "Inuktitut "
-msgstr ""
+msgstr "Inuktitut"
 
 #: exe/jsui/scripts/langs.js:256
 msgid "Japanese "
-msgstr ""
+msgstr "Japán"
 
 #: exe/jsui/scripts/langs.js:260
 msgid "Javanese "
-msgstr ""
+msgstr "Jávai"
 
 #: exe/jsui/scripts/langs.js:264
 msgid "Georgian "
-msgstr ""
+msgstr "Grúz"
 
 #: exe/jsui/scripts/langs.js:268
 msgid "Kikuyu "
-msgstr ""
+msgstr "Kikuyu"
 
 #: exe/jsui/scripts/langs.js:272
 msgid "Kuanyama "
-msgstr ""
+msgstr "Kuanyama"
 
 #: exe/jsui/scripts/langs.js:276
 msgid "Kazakh "
-msgstr ""
+msgstr "Kazah"
 
 #: exe/jsui/scripts/langs.js:280
 msgid "Kalaallisut; Greenlandic "
-msgstr ""
+msgstr "Kalaalisut; Gröllandi"
 
 #: exe/jsui/scripts/langs.js:284
 msgid "Khmer; Cambodian "
-msgstr ""
+msgstr "Kmer; kambodzsai"
 
 #: exe/jsui/scripts/langs.js:288
 msgid "Kannada "
-msgstr ""
+msgstr "Kanadai"
 
 #: exe/jsui/scripts/langs.js:292
 msgid "Korean "
-msgstr ""
+msgstr "Koreai"
 
 #: exe/jsui/scripts/langs.js:296
 msgid "Kashmiri "
-msgstr ""
+msgstr "Kasmíri"
 
 #: exe/jsui/scripts/langs.js:300
 msgid "Kurdish "
-msgstr ""
+msgstr "Kurd"
 
 #: exe/jsui/scripts/langs.js:304
 msgid "Komi "
-msgstr ""
+msgstr "Komi"
 
 #: exe/jsui/scripts/langs.js:308
 msgid "Cornish "
-msgstr ""
+msgstr "Cornish"
 
 #: exe/jsui/scripts/langs.js:312
 msgid "Kirghiz "
-msgstr ""
+msgstr "Kirgiz"
 
 #: exe/jsui/scripts/langs.js:316
 msgid "Latin "
-msgstr ""
+msgstr "Latin"
 
 #: exe/jsui/scripts/langs.js:320
 msgid "Letzeburgesch "
-msgstr ""
+msgstr "Letzeburgesch"
 
 #: exe/jsui/scripts/langs.js:324
 msgid "Lingala "
-msgstr ""
+msgstr "Lingala"
 
 #: exe/jsui/scripts/langs.js:328
 msgid "Lao; Laotian "
-msgstr ""
+msgstr "Lao"
 
 #: exe/jsui/scripts/langs.js:332
 msgid "Lithuanian "
-msgstr ""
+msgstr "Litván"
 
 #: exe/jsui/scripts/langs.js:336
 msgid "Latvian; Lettish "
-msgstr ""
+msgstr "Lett"
 
 #: exe/jsui/scripts/langs.js:340
 msgid "Malagasy "
-msgstr ""
+msgstr "Malagesi"
 
 #: exe/jsui/scripts/langs.js:344
 msgid "Marshall "
-msgstr ""
+msgstr "Marshall szigeteki"
 
 #: exe/jsui/scripts/langs.js:348
 msgid "Maori "
-msgstr ""
+msgstr "Maori"
 
 #: exe/jsui/scripts/langs.js:352
 msgid "Macedonian "
-msgstr ""
+msgstr "Makedón"
 
 #: exe/jsui/scripts/langs.js:356
 msgid "Malayalam "
-msgstr ""
+msgstr "Malayalam"
 
 #: exe/jsui/scripts/langs.js:360
 msgid "Mongolian "
-msgstr ""
+msgstr "Mongol"
 
 #: exe/jsui/scripts/langs.js:364
 msgid "Moldavian "
-msgstr ""
+msgstr "Moldáv"
 
 #: exe/jsui/scripts/langs.js:368
 msgid "Marathi "
-msgstr ""
+msgstr "Marathi"
 
 #: exe/jsui/scripts/langs.js:372
 msgid "Malay "
-msgstr ""
+msgstr "Maláj"
 
 #: exe/jsui/scripts/langs.js:376
 msgid "Maltese "
-msgstr ""
+msgstr "Máltai"
 
 #: exe/jsui/scripts/langs.js:380
 msgid "Burmese "
-msgstr ""
+msgstr "Burmai"
 
 #: exe/jsui/scripts/langs.js:384
 msgid "Nauru "
-msgstr ""
+msgstr "Nauru"
 
 #: exe/jsui/scripts/langs.js:388
+#, fuzzy
 msgid "Norwegian Bokmål "
-msgstr ""
+msgstr "Norvég"
 
 #: exe/jsui/scripts/langs.js:392
 msgid "Ndebele,North "
@@ -5536,23 +6072,23 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:396
 msgid "Nepali "
-msgstr ""
+msgstr "Nepáli"
 
 #: exe/jsui/scripts/langs.js:400
 msgid "Ndonga "
-msgstr ""
+msgstr "Ndonga"
 
 #: exe/jsui/scripts/langs.js:404
 msgid "Dutch "
-msgstr ""
+msgstr "Holland"
 
 #: exe/jsui/scripts/langs.js:408
 msgid "Norwegian Nynorsk "
-msgstr ""
+msgstr "Norvég"
 
 #: exe/jsui/scripts/langs.js:412
 msgid "Norwegian "
-msgstr ""
+msgstr "Norvég"
 
 #: exe/jsui/scripts/langs.js:416
 msgid "Ndebele,South "
@@ -5560,39 +6096,40 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:420
 msgid "Navajo "
-msgstr ""
+msgstr "Navaho"
 
 #: exe/jsui/scripts/langs.js:424
 msgid "Chichewa; Nyanja "
-msgstr ""
+msgstr "Csikeva"
 
 #: exe/jsui/scripts/langs.js:428
+#, fuzzy
 msgid "Occitan; Provençal "
-msgstr ""
+msgstr "Provanszál"
 
 #: exe/jsui/scripts/langs.js:432
 msgid "(Afan) Oromo "
-msgstr ""
+msgstr "Oromo"
 
 #: exe/jsui/scripts/langs.js:436
 msgid "Oriya "
-msgstr ""
+msgstr "Oriya"
 
 #: exe/jsui/scripts/langs.js:440
 msgid "Ossetian; Ossetic "
-msgstr ""
+msgstr "Oszét"
 
 #: exe/jsui/scripts/langs.js:444
 msgid "Panjabi; Punjabi "
-msgstr ""
+msgstr "Pandzsabi"
 
 #: exe/jsui/scripts/langs.js:448
 msgid "Pali "
-msgstr ""
+msgstr "Pali"
 
 #: exe/jsui/scripts/langs.js:452
 msgid "Polish "
-msgstr ""
+msgstr "Lengyel"
 
 #: exe/jsui/scripts/langs.js:456
 msgid "Pashto,Pushto "
@@ -5600,87 +6137,87 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:460
 msgid "Portuguese "
-msgstr ""
+msgstr "Portugál"
 
 #: exe/jsui/scripts/langs.js:464
 msgid "Quechua "
-msgstr ""
+msgstr "Kecsua"
 
 #: exe/jsui/scripts/langs.js:468
 msgid "Rhaeto-Romance "
-msgstr ""
+msgstr "Rhaeto-Romance"
 
 #: exe/jsui/scripts/langs.js:472
 msgid "Rundi; Kirundi "
-msgstr ""
+msgstr "Rundi"
 
 #: exe/jsui/scripts/langs.js:476
 msgid "Romanian "
-msgstr ""
+msgstr "Román"
 
 #: exe/jsui/scripts/langs.js:480
 msgid "Russian "
-msgstr ""
+msgstr "Orosz"
 
 #: exe/jsui/scripts/langs.js:484
 msgid "Kinyarwanda "
-msgstr ""
+msgstr "Kinyarwanda"
 
 #: exe/jsui/scripts/langs.js:488
 msgid "Sanskrit "
-msgstr ""
+msgstr "Szanszkrit"
 
 #: exe/jsui/scripts/langs.js:492
 msgid "Sardinian "
-msgstr ""
+msgstr "Szardíniai"
 
 #: exe/jsui/scripts/langs.js:496
 msgid "Sindhi "
-msgstr ""
+msgstr "Shindi"
 
 #: exe/jsui/scripts/langs.js:500
 msgid "Northern Sami "
-msgstr ""
+msgstr "Észak számi"
 
 #: exe/jsui/scripts/langs.js:504
 msgid "Sango; Sangro "
-msgstr ""
+msgstr "Sango"
 
 #: exe/jsui/scripts/langs.js:508
 msgid "Sinhalese "
-msgstr ""
+msgstr "Szingaléz"
 
 #: exe/jsui/scripts/langs.js:512
 msgid "Slovak "
-msgstr ""
+msgstr "Szlovák"
 
 #: exe/jsui/scripts/langs.js:516
 msgid "Slovenian "
-msgstr ""
+msgstr "Szlovén"
 
 #: exe/jsui/scripts/langs.js:520
 msgid "Samoan "
-msgstr ""
+msgstr "Szamoai"
 
 #: exe/jsui/scripts/langs.js:524
 msgid "Shona "
-msgstr ""
+msgstr "Shona"
 
 #: exe/jsui/scripts/langs.js:528
 msgid "Somali "
-msgstr ""
+msgstr "Szomáli"
 
 #: exe/jsui/scripts/langs.js:532
 msgid "Albanian "
-msgstr ""
+msgstr "Albán"
 
 #: exe/jsui/scripts/langs.js:536
 msgid "Serbian "
-msgstr ""
+msgstr "Szerb"
 
 #: exe/jsui/scripts/langs.js:540
 msgid "Swati; Siswati "
-msgstr ""
+msgstr "Swati"
 
 #: exe/jsui/scripts/langs.js:544
 msgid "Sesotho; Sotho,Southern "
@@ -5688,87 +6225,87 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:548
 msgid "Sundanese "
-msgstr ""
+msgstr "Szudáni"
 
 #: exe/jsui/scripts/langs.js:552
 msgid "Swedish "
-msgstr ""
+msgstr "Svéd"
 
 #: exe/jsui/scripts/langs.js:556
 msgid "Swahili "
-msgstr ""
+msgstr "Swahili"
 
 #: exe/jsui/scripts/langs.js:560
 msgid "Tamil "
-msgstr ""
+msgstr "Tamil"
 
 #: exe/jsui/scripts/langs.js:564
 msgid "Telugu "
-msgstr ""
+msgstr "Telugu"
 
 #: exe/jsui/scripts/langs.js:568
 msgid "Tajik "
-msgstr ""
+msgstr "Tadzsig"
 
 #: exe/jsui/scripts/langs.js:572
 msgid "Thai "
-msgstr ""
+msgstr "Thai"
 
 #: exe/jsui/scripts/langs.js:576
 msgid "Tigrinya "
-msgstr ""
+msgstr "Tigrinya"
 
 #: exe/jsui/scripts/langs.js:580
 msgid "Turkmen "
-msgstr ""
+msgstr "Türkmén"
 
 #: exe/jsui/scripts/langs.js:584
 msgid "Tagalog "
-msgstr ""
+msgstr "Tagalog"
 
 #: exe/jsui/scripts/langs.js:588
 msgid "Tswana; Setswana "
-msgstr ""
+msgstr "Tswana"
 
 #: exe/jsui/scripts/langs.js:592
 msgid "Tongan  "
-msgstr ""
+msgstr "Tongan"
 
 #: exe/jsui/scripts/langs.js:596
 msgid "Turkish "
-msgstr ""
+msgstr "Török"
 
 #: exe/jsui/scripts/langs.js:600
 msgid "Tsonga "
-msgstr ""
+msgstr "Tsonga"
 
 #: exe/jsui/scripts/langs.js:604
 msgid "Tatar "
-msgstr ""
+msgstr "Tatár"
 
 #: exe/jsui/scripts/langs.js:608
 msgid "Twi "
-msgstr ""
+msgstr "Twi"
 
 #: exe/jsui/scripts/langs.js:612
 msgid "Tahitian "
-msgstr ""
+msgstr "Tahiti"
 
 #: exe/jsui/scripts/langs.js:616
 msgid "Uighur "
-msgstr ""
+msgstr "Uighur"
 
 #: exe/jsui/scripts/langs.js:620
 msgid "Ukrainian "
-msgstr ""
+msgstr "Ukrán"
 
 #: exe/jsui/scripts/langs.js:624
 msgid "Urdu "
-msgstr ""
+msgstr "Urdu"
 
 #: exe/jsui/scripts/langs.js:628
 msgid "Uzbek "
-msgstr ""
+msgstr "Üzbég"
 
 #: exe/jsui/scripts/langs.js:632
 msgid "Valencian "
@@ -5776,43 +6313,45 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:636
 msgid "Vietnamese "
-msgstr ""
+msgstr "Vietnámi"
 
 #: exe/jsui/scripts/langs.js:640
+#, fuzzy
 msgid "Volapük; Volapuk "
-msgstr ""
+msgstr "Volapuk"
 
 #: exe/jsui/scripts/langs.js:644
 msgid "Walloon "
-msgstr ""
+msgstr "Wallon"
 
 #: exe/jsui/scripts/langs.js:648
 msgid "Wolof "
-msgstr ""
+msgstr "Wolof"
 
 #: exe/jsui/scripts/langs.js:652
 msgid "Xhosa "
-msgstr ""
+msgstr "Xhosa"
 
 #: exe/jsui/scripts/langs.js:656
 msgid "Yiddish (formerly ji) "
-msgstr ""
+msgstr "Jiddis"
 
 #: exe/jsui/scripts/langs.js:660
 msgid "Yoruba "
-msgstr ""
+msgstr "Yoroba"
 
 #: exe/jsui/scripts/langs.js:664
 msgid "Zhuang "
-msgstr ""
+msgstr "Zhuang"
 
 #: exe/jsui/scripts/langs.js:668
 msgid "Chinese "
-msgstr ""
+msgstr "Kínai"
 
 #: exe/jsui/scripts/langs.js:672
+#, fuzzy
 msgid "Zulu "
-msgstr ""
+msgstr "Zulu"
 
 #: exe/jsui/scripts/lomvocab.js:5 exe/jsui/scripts/lomvocab.js:664
 msgid "active"
@@ -6745,7 +7284,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:85
 msgid "Please upload a .ggb file."
-msgstr ""
+msgstr "Kérem, töltsön fel egy .ggb állományt!"
 
 #: exe/webui/appletblock.py:87
 msgid "Please upload a .jclic.zip file."
@@ -6773,7 +7312,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:131
 msgid "Geogebra"
-msgstr ""
+msgstr "GeoGebra"
 
 #: exe/webui/appletblock.py:132
 msgid "JClic"
@@ -6785,15 +7324,15 @@ msgstr ""
 
 #: exe/webui/appletblock.py:134 exe/webui/wikipediablock.py:136
 msgid "Other"
-msgstr ""
+msgstr "Másik"
 
 #: exe/webui/appletblock.py:135
 msgid "Applet Type"
-msgstr ""
+msgstr "Az applet típusa"
 
 #: exe/webui/appletblock.py:156 exe/webui/appletblock.py:166
 msgid "Add files"
-msgstr ""
+msgstr "Állomány hozzáadása"
 
 #: exe/webui/appletblock.py:162
 msgid "Accept URL"
@@ -6801,30 +7340,30 @@ msgstr ""
 
 #: exe/webui/appletblock.py:172
 msgid "Applet Code:"
-msgstr ""
+msgstr "Applet kód:"
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
 msgid "Filename:"
-msgstr ""
+msgstr "Állománynév:"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
 #: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
 #: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
 msgid "Select a file"
-msgstr ""
+msgstr "Válasszon egy állományt"
 
 #: exe/webui/attachmentblock.py:108
 msgid "Label:"
-msgstr ""
+msgstr "Címke:"
 
 #: exe/webui/block.py:184
 msgid "IDevice broken"
-msgstr ""
+msgstr "Az iDevice modul elromlott"
 
 #: exe/webui/block.py:222
 msgid "Done"
-msgstr ""
+msgstr "Rendben"
 
 #: exe/webui/block.py:226
 msgid "Exit without saving?"
@@ -6844,36 +7383,36 @@ msgstr ""
 
 #: exe/webui/block.py:246
 msgid "Move Up"
-msgstr ""
+msgstr "Fel"
 
 #: exe/webui/block.py:253
 msgid "Move Down"
-msgstr ""
+msgstr "Le"
 
 #: exe/webui/block.py:255
 msgid "---Move To---"
-msgstr ""
+msgstr "--Áthelyezés--"
 
 #: exe/webui/block.py:260 exe/webui/editorpane.py:380
 msgid "Pedagogical Help"
-msgstr ""
+msgstr "Pedagógiai súgó"
 
 #: exe/webui/block.py:273 exe/webui/editorpane.py:390
 msgid "Tip:"
-msgstr ""
+msgstr "Tipp:"
 
 #: exe/webui/block.py:318
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr ""
+msgstr "HIBA: Az Block.renderViewContent közvetlen hívás"
 
 #: exe/webui/block.py:328 exe/webui/editorpage.py:286
 #: exe/webui/editorpane.py:270
 msgid "Edit"
-msgstr ""
+msgstr "Szerkesztés"
 
 #: exe/webui/casestudyblock.py:114 exe/webui/ejercicioresueltofpdblock.py:130
 msgid "Add another activity"
-msgstr ""
+msgstr "Új tevékenység hozzáadása"
 
 #: exe/webui/casopracticofpdblock.py:68
 msgid "Situation"
@@ -7026,25 +7565,26 @@ msgstr ""
 
 #: exe/webui/common.py:476
 msgid "Hide"
-msgstr ""
+msgstr "Elrejtés"
 
 #: exe/webui/common.py:477 exe/webui/common.py:715 exe/webui/element.py:1538
 #: exe/webui/element.py:2469 exe/webui/listablock.py:275
 msgid "Show Feedback"
-msgstr ""
+msgstr "Mutassa a visszajelzést"
 
 #: exe/webui/common.py:478
 msgid "Hide Feedback"
-msgstr ""
+msgstr "Visszajelzés elrejtése"
 
 #: exe/webui/common.py:479 exe/webui/common.py:494 exe/webui/element.py:2272
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
-msgstr ""
+msgstr "Helyes"
 
 #: exe/webui/common.py:480 exe/webui/element.py:2275
+#, fuzzy
 msgid "Incorrect"
-msgstr ""
+msgstr "Helytelen!"
 
 #: exe/webui/common.py:481
 msgid "Menu"
@@ -7056,7 +7596,7 @@ msgstr ""
 
 #: exe/webui/common.py:495 exe/webui/element.py:2708 exe/webui/element.py:2726
 msgid "Wrong"
-msgstr ""
+msgstr "Rossz"
 
 #: exe/webui/common.py:496
 msgid "Right answer"
@@ -7075,8 +7615,9 @@ msgid "Words"
 msgstr ""
 
 #: exe/webui/common.py:501
+#, fuzzy
 msgid "Play"
-msgstr ""
+msgstr "Feltöltés"
 
 #: exe/webui/common.py:503
 msgid "Results"
@@ -7087,8 +7628,9 @@ msgid "Total"
 msgstr ""
 
 #: exe/webui/common.py:505
+#, fuzzy
 msgid "Another word"
-msgstr ""
+msgstr "Új opció hozzáadása"
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7109,11 +7651,11 @@ msgstr ""
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
-msgstr ""
+msgstr "eXe: eLearning XHTML szerkesztő"
 
 #: exe/webui/common.py:839 exe/webui/common.py:842
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "A teljes utasítás megjelenítéséhez kattintson egyet!"
 
 #: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
@@ -7121,15 +7663,15 @@ msgstr ""
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:251
 msgid "Text Line"
-msgstr ""
+msgstr "Szövegsor"
 
 #: exe/webui/editorelement.py:111 exe/webui/editorpane.py:253
 msgid "Text Box"
-msgstr ""
+msgstr "Szövegdoboz"
 
 #: exe/webui/editorelement.py:149 exe/webui/element.py:602
 msgid "Button Caption"
-msgstr ""
+msgstr "Gomb felirata"
 
 #: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
 #: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
@@ -7143,7 +7685,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:18
 msgid "Left"
-msgstr ""
+msgstr "Balra igazítás"
 
 #: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
 #: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
@@ -7157,47 +7699,50 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:76
 msgid "Right"
-msgstr ""
+msgstr "Jobbra igazítás"
 
 #: exe/webui/editorelement.py:228 exe/webui/flashmovieblock.py:87
 #: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/imagewithtextblock.py:88 exe/webui/multimediablock.py:92
 msgid "Align:"
-msgstr ""
+msgstr "Igazítás:"
 
 #: exe/webui/editorelement.py:268 exe/webui/element.py:1889
 msgid "Select Flash Object"
-msgstr ""
+msgstr "Válasszon egy Flash animációt"
 
 #: exe/webui/editorelement.py:308
 msgid "Select MP3 file"
-msgstr ""
+msgstr "Válasszon egy MP3 állományt"
 
 #: exe/webui/editorelement.py:311 exe/webui/element.py:869
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
-msgstr ""
+msgstr "Felirat:"
 
 #: exe/webui/editorpage.py:125
 msgid "Please enter an idevice name."
-msgstr ""
+msgstr "Kérem, adjon nevet az új iDevice modulnak!"
 
 #: exe/webui/editorpage.py:188 exe/webui/editorpage.py:200
+#, fuzzy
 msgid "Sorry, wrong file format."
-msgstr ""
+msgstr "Sajnálom, rossz fájlformátum"
 
 #: exe/webui/editorpage.py:262
+#, fuzzy
 msgid "Import iDevice"
-msgstr ""
+msgstr "Importálás"
 
 #: exe/webui/editorpage.py:265
+#, fuzzy
 msgid "Export iDevice"
-msgstr ""
+msgstr "Exportálás"
 
 #: exe/webui/editorpage.py:291
 msgid "New iDevice"
-msgstr ""
+msgstr "Új iDevice modul"
 
 #: exe/webui/editorpane.py:67
 msgid ""
@@ -7205,22 +7750,31 @@ msgid ""
 " a compulsory field and you will be prompted to enter a label if you try "
 "to submit your iDevice without one."
 msgstr ""
+"Az Ön új iDevice modulja ezzel a névvel fog megjelenni az iDevice "
+"panelben. Ezt a mezőt kötelezően ki kell tölteni. Adjon meg egy nevet, "
+"mert e nélkül nem hozhatja létre a modult."
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
-msgstr ""
+msgstr "Ez egy válastható mező."
 
 #: exe/webui/editorpane.py:72
 msgid ""
 "The purpose dialogue allows you to describe your intended purpose of the "
 "iDevice to other potential users."
 msgstr ""
+"A társalgás lehetőséget teret az ön számára, hogy megossza más "
+"felhasználókkal, hogy milyen céllal hozta létre a modult."
 
 #: exe/webui/editorpane.py:75
 msgid ""
 "Use this pulldown to select whether or not  the iDevice should have any "
 "formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr ""
+"Ezt a legördülő menüt használhatja arra, hogy a modul megjelenését. Ha "
+"meg szeretné különböztetni a modult a környezetéstől, válassza a "
+"\"Kiemelés\" opciót. Ilyenkor a modult ikonnal azonosítja, s keretben "
+"jelenik meg."
 
 #: exe/webui/editorpane.py:79
 msgid ""
@@ -7228,103 +7782,112 @@ msgid ""
 "device's development. This can be useful if your iDevice is to be "
 "exported for others to use."
 msgstr ""
+"Ebbena a mezőben írja le, hogy milyen pedagógiai megfontolásból és milyen"
+" felhasználási céllal hozta létre az iDevice modult. Ez a leírás hasznos "
+"lehet más felhasználóknak, ha alkalmazni szeretnék ezt az iDevice modult."
 
 #: exe/webui/editorpane.py:84
 msgid ""
 "Add a single text line to an iDevice. Useful if you want the ability to "
 "place a label within the iDevice."
 msgstr ""
+"Egysoros szövegmező hozzáadása az iDevice modulhoz. Hasznos lehet "
+"például, ha címkét akar elhelyezni az iDevice modulban."
 
 #: exe/webui/editorpane.py:87
 msgid ""
 "Add a text entry box to an iDevice. Used for entering larger amounts of "
 "textual content."
-msgstr ""
+msgstr "Szövegdoboz hozzáadása az iDevice modulhoz."
 
 #: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
-msgstr ""
+msgstr "Visszajelzés hozzáadása az iDevice modulhoz."
 
 #: exe/webui/editorpane.py:91
 msgid "Add a flash video to your iDevice."
-msgstr ""
+msgstr "Flash video hozzáadása az iDevice modulhoz."
 
 #: exe/webui/editorpane.py:92
 msgid "Add an mp3 file to your iDevice."
-msgstr ""
+msgstr "MP3 állomány hozzáadása az iDevice modulhoz."
 
 #: exe/webui/editorpane.py:93
+#, fuzzy
 msgid "Add an attachment file to your iDevice."
-msgstr ""
+msgstr "MP3 állomány hozzáadása az iDevice modulhoz."
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:152
 #: exe/webui/editorpane.py:160 exe/webui/editorpane.py:176
 #: exe/webui/editorpane.py:186
 msgid "Enter the label here"
-msgstr ""
+msgstr "Írja be a címke nevét!"
 
 #: exe/webui/editorpane.py:146
 msgid "Enter instructions for completion here"
-msgstr ""
+msgstr "Ide írja be a teljesítéshez szükséges utasításokat"
 
 #: exe/webui/editorpane.py:153 exe/webui/editorpane.py:177
 #: exe/webui/editorpane.py:187
 msgid "Enter the instructions for completion here"
-msgstr ""
+msgstr "A befejezéshez írja be ide az utasításait"
 
 #: exe/webui/editorpane.py:161
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr ""
+"A Visszajelzés gomb nem fog megójelenni, \n"
+"ha nem írnak adatokat ebbe a mezőbe."
 
 #: exe/webui/editorpane.py:198
 msgid "Please enter<br />an idevice name."
-msgstr ""
+msgstr "Kérem, adjon nevet <br />az új iDevice modulnak!"
 
 #: exe/webui/editorpane.py:250
 msgid "Add Field"
-msgstr ""
+msgstr "Mező hozzáadása"
 
 #: exe/webui/editorpane.py:265
 msgid "Actions"
-msgstr ""
+msgstr "Tevékenységek"
 
 #: exe/webui/editorpane.py:332
 msgid "Pedagogical Tip"
-msgstr ""
+msgstr "Pedagógiai tipp"
 
 #: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:163
 msgid "Emphasis"
-msgstr ""
+msgstr "Kiemelés"
 
 #: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:160
 msgid "No emphasis"
-msgstr ""
+msgstr "Nincs kiemelés"
 
 #: exe/webui/editorpane.py:339 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:161
 msgid "Some emphasis"
-msgstr ""
+msgstr "Kiemelés"
 
 #: exe/webui/editorpane.py:354
+#, fuzzy
 msgid "Select an icon"
-msgstr ""
+msgstr "Válasszon egy képet"
 
 #: exe/webui/editorpane.py:368
 msgid "Icons"
-msgstr ""
+msgstr "Ikonok"
 
 #: exe/webui/editorpane.py:383
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 #: exe/webui/editorpane.py:429 exe/webui/element.py:1545
 #: exe/webui/element.py:1547 exe/webui/element.py:1803
 msgid "Submit"
-msgstr ""
+msgstr "Elküld"
 
 #: exe/webui/ejercicioresueltofpdblock.py:122
 msgid "Translation"
@@ -7333,35 +7896,35 @@ msgstr ""
 #: exe/webui/eleccionmultiplefpdblock.py:98 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
-msgstr ""
+msgstr "Válassza ki a helyes választ mindegyik kérdésben!"
 
 #: exe/webui/eleccionmultiplefpdblock.py:124 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:119
 msgid "Add another question"
-msgstr ""
+msgstr "Új kérdés hozzáadása"
 
 #: exe/webui/element.py:72
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr ""
+msgstr "HIBA Az Element.process közvetlenül hívta a %s osztályt"
 
 #: exe/webui/element.py:81
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
-msgstr ""
+msgstr "HIBA Az Element.renderEdit közvetlenül hívta a %s osztályt"
 
 #: exe/webui/element.py:98
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
-msgstr ""
+msgstr "HIBA Az Element.renderView közvetlenül hívta a %s osztályt"
 
 #: exe/webui/element.py:753 exe/webui/element.py:1174
 msgid "Add Image"
-msgstr ""
+msgstr "Kép hozzáadása"
 
 #: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
 msgid "Display as:"
-msgstr ""
+msgstr "Megjelenítés:"
 
 #: exe/webui/element.py:786
 msgid "by"
@@ -7369,24 +7932,24 @@ msgstr ""
 
 #: exe/webui/element.py:793 exe/webui/element.py:1212
 msgid "blank for original size"
-msgstr ""
+msgstr "Hagyja üresen, ha a képet az eredeti méretben akarja megjeleníteni."
 
 #: exe/webui/element.py:863
 msgid "Select an MP3"
-msgstr ""
+msgstr "Válasszon egy MP3-at"
 
 #: exe/webui/element.py:1351 exe/webui/element.py:1684
 msgid "Cloze Text"
-msgstr ""
+msgstr "Szöveg"
 
 #: exe/webui/element.py:1359 exe/webui/element.py:1692
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
-msgstr ""
+msgstr "Szó elrejtése/megjelenítése"
 
 #: exe/webui/element.py:1364 exe/webui/element.py:1697
 msgid "Strict Marking?"
-msgstr ""
+msgstr "Pontos értékelés?"
 
 #: exe/webui/element.py:1369
 msgid "Check Capitalization?"
@@ -7394,7 +7957,7 @@ msgstr ""
 
 #: exe/webui/element.py:1374 exe/webui/element.py:1707
 msgid "Instant Marking?"
-msgstr ""
+msgstr "Azonnali értékelés?"
 
 #: exe/webui/element.py:1485 exe/webui/element.py:1742
 #: exe/webui/listablock.py:223
@@ -7403,15 +7966,15 @@ msgstr ""
 
 #: exe/webui/element.py:1535 exe/webui/element.py:1794
 msgid "Get score"
-msgstr ""
+msgstr "Pontozás"
 
 #: exe/webui/element.py:1541 exe/webui/element.py:1800
 msgid "Show/Clear Answers"
-msgstr ""
+msgstr "Mutatja/Törli a válaszolat"
 
 #: exe/webui/element.py:1551 exe/webui/element.py:1807
 msgid "Show Answers"
-msgstr ""
+msgstr "Mutassa a válaszokat"
 
 #: exe/webui/element.py:1587 exe/webui/element.py:1839
 #: exe/webui/element.py:2461 exe/webui/element.py:2921
@@ -7421,7 +7984,7 @@ msgstr ""
 
 #: exe/webui/element.py:1702
 msgid "Check Caps?"
-msgstr ""
+msgstr "Kis/nagybetűs írásmód különböző?"
 
 #: exe/webui/element.py:1712
 msgid "Show Score?"
@@ -7429,48 +7992,49 @@ msgstr ""
 
 #: exe/webui/element.py:1797
 msgid "Show/Hide Feedback"
-msgstr ""
+msgstr "Mutatja/Elrejti a visszajelzést"
 
 #: exe/webui/element.py:1955
 msgid "Please select a .flv file."
-msgstr ""
+msgstr "Kérem, válasszon egy .flv állományt!"
 
 #: exe/webui/element.py:1971
 msgid "Select a flash video"
-msgstr ""
+msgstr "Válasszon egy Flash videót"
 
 #: exe/webui/element.py:2080
 msgid "text"
-msgstr ""
+msgstr "szöveg"
 
 #: exe/webui/element.py:2081
 msgid "newline"
-msgstr ""
+msgstr "új sor"
 
 #: exe/webui/element.py:2084
 msgid "Select a font size: "
-msgstr ""
+msgstr "Válasszon egy betűméretet:"
 
 #: exe/webui/element.py:2194 exe/webui/element.py:2581
 #: exe/webui/element.py:2706 exe/webui/element.py:2724
 #: exe/webui/testoptionelement.py:111
+#, fuzzy
 msgid "Correct Option"
-msgstr ""
+msgstr "Helyes"
 
 #: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
-msgstr ""
+msgstr "Opció törlése"
 
 #: exe/webui/element.py:2361 exe/webui/element.py:2816
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
-msgstr ""
+msgstr "Kérdés törlése"
 
 #: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
-msgstr ""
+msgstr "Új válasz hozzáadása"
 
 #: exe/webui/element.py:2497 exe/webui/element.py:2940
 msgid "Solution"
@@ -7478,11 +8042,11 @@ msgstr ""
 
 #: exe/webui/element.py:2831
 msgid "Add another option"
-msgstr ""
+msgstr "Új opció hozzáadása"
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: exe/webui/externalurlblock.py:72
 msgid "small"
@@ -7498,7 +8062,7 @@ msgstr ""
 
 #: exe/webui/externalurlblock.py:81
 msgid "Frame Height:"
-msgstr ""
+msgstr "Keret (frame) magassága"
 
 #: exe/webui/fileattachblock.py:92
 msgid "<div>\n"
@@ -7533,39 +8097,39 @@ msgstr ""
 #: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:307
 #: exe/webui/galleryblock.py:308
 msgid "Add images"
-msgstr ""
+msgstr "Kép hozzáadása"
 
 #: exe/webui/galleryblock.py:230 exe/webui/galleryblock.py:332
 msgid "No Images Loaded"
-msgstr ""
+msgstr "Nincsenek feltöltött képek"
 
 #: exe/webui/galleryblock.py:246 exe/webui/galleryblock.py:264
 msgid "Change Image"
-msgstr ""
+msgstr "Kép cseréje"
 
 #: exe/webui/galleryblock.py:271
 msgid "Move Image Left"
-msgstr ""
+msgstr "Kép áthelyezése balra"
 
 #: exe/webui/galleryblock.py:273
 msgid "Go Back"
-msgstr ""
+msgstr "Vissza"
 
 #: exe/webui/galleryblock.py:285
 msgid "Move Image Right"
-msgstr ""
+msgstr "Kép áthelyezése jobbra"
 
 #: exe/webui/galleryblock.py:287
 msgid "Go Forward"
-msgstr ""
+msgstr "Előre"
 
 #: exe/webui/galleryblock.py:295
 msgid "Go Forward (Not Available)"
-msgstr ""
+msgstr "Előre (Nem elérhető)"
 
 #: exe/webui/galleryblock.py:300
 msgid "Delete Image"
-msgstr ""
+msgstr "Kép törlése"
 
 #: exe/webui/galleryblock.py:301
 msgid "Delete this image?"
@@ -7615,31 +8179,31 @@ msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
-msgstr ""
+msgstr "Kezdeti nagyítás"
 
 #: exe/webui/imagemagnifierblock.py:153
 msgid "Maximum zoom"
-msgstr ""
+msgstr "Maximális nagyítási"
 
 #: exe/webui/imagemagnifierblock.py:159
 msgid "Small"
-msgstr ""
+msgstr "Kicsi"
 
 #: exe/webui/imagemagnifierblock.py:160
 msgid "Medium"
-msgstr ""
+msgstr "Közepes"
 
 #: exe/webui/imagemagnifierblock.py:161
 msgid "Large"
-msgstr ""
+msgstr "Nagy"
 
 #: exe/webui/imagemagnifierblock.py:162
 msgid "Extra large"
-msgstr ""
+msgstr "Extra nagy"
 
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
-msgstr ""
+msgstr "A nagyító mérete:"
 
 #: exe/webui/listablock.py:180
 msgid "Other words"
@@ -7669,7 +8233,7 @@ msgstr ""
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:100
 msgid "Add another Question"
-msgstr ""
+msgstr "Új kérdés hozzáadása"
 
 #: exe/webui/notablock.py:104
 msgid "Show/Hide"
@@ -7737,11 +8301,11 @@ msgstr ""
 
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
-msgstr ""
+msgstr "Határozza meg teszt elfogadásának szintjét:"
 
 #: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:368
 msgid "SUBMIT ANSWERS"
-msgstr ""
+msgstr "VÁLASZ KÜLDÉSE"
 
 #: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318
 #: exe/webui/quiztestblock.py:372
@@ -7759,19 +8323,21 @@ msgstr ""
 
 #: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:156
 msgid "Load"
-msgstr ""
+msgstr "Betöltés"
 
 #: exe/webui/scripts/authoring.js:69
+#, fuzzy
 msgid "Select one or more images"
-msgstr ""
+msgstr "Válasszon egy képet"
 
 #: exe/webui/scripts/authoring.js:94
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
+#, fuzzy
 msgid "Flash Movie (.flv)"
-msgstr ""
+msgstr "Flash videó"
 
 #: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
 msgid "Flash Object (.swf)"
@@ -7798,12 +8364,14 @@ msgid "MP3 Audio (.mp3)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:378
+#, fuzzy
 msgid "Select an mp3 file"
-msgstr ""
+msgstr "Válasszon egy állományt"
 
 #: exe/webui/scripts/authoring.js:386
+#, fuzzy
 msgid "Select a package"
-msgstr ""
+msgstr "Válasszon egy képet"
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
@@ -7820,8 +8388,9 @@ msgid "Do you want to overwrite the existing idevice {idevice}?"
 msgstr ""
 
 #: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
+#, fuzzy
 msgid "eXe Idevices"
-msgstr ""
+msgstr "iDevice modulok"
 
 #: exe/webui/scripts/editor.js:87
 msgid "Please save the idevice first, then try to export it."
@@ -7853,7 +8422,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
-msgstr ""
+msgstr "Bezárás"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert"
@@ -8950,8 +9519,9 @@ msgid "Node"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
+#, fuzzy
 msgid "Download Information"
-msgstr ""
+msgstr "Információ"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
@@ -8995,12 +9565,14 @@ msgid "Quote"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
+#, fuzzy
 msgid "Quote Language"
-msgstr ""
+msgstr "Válasszon nyelvet"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
+#, fuzzy
 msgid "Authorship"
-msgstr ""
+msgstr "Szerzői nézet"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:9
 msgid "Authorship Language"
@@ -9061,24 +9633,27 @@ msgid "Stop"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
+#, fuzzy
 msgid "Replace with:"
-msgstr ""
+msgstr "Kép szöveggel"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
+#, fuzzy
 msgid "Edit code"
-msgstr ""
+msgstr "Pontozás"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:4
 msgid "Auto close tags"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:5
+#, fuzzy
 msgid "Wrap text"
-msgstr ""
+msgstr "szöveg"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
@@ -9086,8 +9661,9 @@ msgid "Highlight syntax"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
+#, fuzzy
 msgid "Select a theme"
-msgstr ""
+msgstr "Válasszon egy képet"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
 msgid "Search"
@@ -9098,8 +9674,9 @@ msgid "Find next"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
+#, fuzzy
 msgid "Find previous"
-msgstr ""
+msgstr "Előző"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
 msgid "Replace all"
@@ -9118,8 +9695,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
+#, fuzzy
 msgid "Term"
-msgstr ""
+msgstr "Másik"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
 msgid "Term definition"
@@ -9257,8 +9835,9 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
+#, fuzzy
 msgid "Choose a type:"
-msgstr ""
+msgstr "Válasszon egy képet"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
 msgid "Accordion"
@@ -9277,24 +9856,27 @@ msgid "A single content area with multiple panels."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
+#, fuzzy
 msgid "Pagination"
-msgstr ""
+msgstr "Beállítás"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
 msgid "Divide your content into different pages."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:26
+#, fuzzy
 msgid "Carousel"
-msgstr ""
+msgstr "Faroese"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:27
 msgid "Present a list of contents in horizontal order."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
+#, fuzzy
 msgid "Timeline"
-msgstr ""
+msgstr "új sor"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
@@ -9337,8 +9919,9 @@ msgid "This is the message that the users with no JavaScript will see:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
+#, fuzzy
 msgid "Message:"
-msgstr ""
+msgstr "Kép"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
 msgid "You can change it at any time."
@@ -10141,12 +10724,14 @@ msgid "Include wrapper (improves presentation)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
 msgid "Markup language"
-msgstr ""
+msgstr "Válasszon nyelvet"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
+#, fuzzy
 msgid "Please select a language"
-msgstr ""
+msgstr "Válasszon nyelvet"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
@@ -10158,8 +10743,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
+#, fuzzy
 msgid "Light"
-msgstr ""
+msgstr "Jobbra igazítás"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
@@ -10553,12 +11139,14 @@ msgid "Behaviour"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
+#, fuzzy
 msgid "Link"
-msgstr ""
+msgstr "Igazítás:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
+#, fuzzy
 msgid "Instructions:"
-msgstr ""
+msgstr "Utasítás"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
@@ -10569,12 +11157,14 @@ msgid "No selection and not in link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
+#, fuzzy
 msgid "Pages"
-msgstr ""
+msgstr "Nagy"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
+#, fuzzy
 msgid "Link title"
-msgstr ""
+msgstr "Wiki szócikk"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
@@ -10589,8 +11179,9 @@ msgid "The tooltip will show the Link title."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
+#, fuzzy
 msgid "Definition"
-msgstr ""
+msgstr "Reflexió"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
 msgid "The term could not be found"
@@ -10603,8 +11194,9 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
+#, fuzzy
 msgid "Definition:"
-msgstr ""
+msgstr "Leírás:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
@@ -10616,8 +11208,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
+#, fuzzy
 msgid "Page"
-msgstr ""
+msgstr "Nagy"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
@@ -10660,8 +11253,9 @@ msgid "The Link is required"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
+#, fuzzy
 msgid "Please select a Page"
-msgstr ""
+msgstr "Kérem, válasszon egy .flv állományt!"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
 msgid "The Link title is required"
@@ -11086,8 +11680,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
+#, fuzzy
 msgid "Editor"
-msgstr ""
+msgstr "iDevice szerkesztő"
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
@@ -11227,8 +11822,9 @@ msgid "General settings"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:13
+#, fuzzy
 msgid "Page width"
-msgstr ""
+msgstr "Kép szöveggel"
 
 #: exe/webui/tools/style-designer/langs/en.js:14
 msgid "Percentage"
@@ -11259,28 +11855,32 @@ msgid "Text and Links"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:25
+#, fuzzy
 msgid "Text color"
-msgstr ""
+msgstr "Pontozás"
 
 #: exe/webui/tools/style-designer/langs/en.js:27
+#, fuzzy
 msgid "Links"
-msgstr ""
+msgstr "Igazítás:"
 
 #: exe/webui/tools/style-designer/langs/en.js:28
 msgid "Links color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:30
+#, fuzzy
 msgid "Style description"
-msgstr ""
+msgstr "Leírás"
 
 #: exe/webui/tools/style-designer/langs/en.js:32
 msgid "Author URL"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:33
+#, fuzzy
 msgid "Style name"
-msgstr ""
+msgstr "Állománynév:"
 
 #: exe/webui/tools/style-designer/langs/en.js:34
 msgid "Save to name the new Style."
@@ -11309,8 +11909,9 @@ msgid "Background color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:44
+#, fuzzy
 msgid "Select image"
-msgstr ""
+msgstr "Válasszon egy képet"
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
@@ -11391,8 +11992,9 @@ msgid "Top margin"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:78
+#, fuzzy
 msgid "Font size"
-msgstr ""
+msgstr "Válasszon egy betűméretet:"
 
 #: exe/webui/tools/style-designer/langs/en.js:80
 msgid "Navigation"
@@ -11435,8 +12037,9 @@ msgid "Grey"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:94
+#, fuzzy
 msgid "With emphasis"
-msgstr ""
+msgstr "Nincs kiemelés"
 
 #: exe/webui/tools/style-designer/langs/en.js:95
 msgid "Title color"
@@ -11489,8 +12092,9 @@ msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:111
+#, fuzzy
 msgid "Finish"
-msgstr ""
+msgstr "Finn"
 
 #: exe/webui/tools/style-designer/langs/en.js:113
 msgid "Save as"
@@ -11505,8 +12109,9 @@ msgid "Save all changes? This cannot be undone."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:117
+#, fuzzy
 msgid "Style name:"
-msgstr ""
+msgstr "Állománynév:"
 
 #: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Your browser is not compatible with this tool."
@@ -11539,8 +12144,9 @@ msgid "Drag markers to pick a color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:134
+#, fuzzy
 msgid "Current"
-msgstr ""
+msgstr "Helytelen!"
 
 #: exe/webui/tools/style-designer/langs/en.js:140
 msgid "New Color - Press OK to Commit"
@@ -11622,40 +12228,41 @@ msgstr ""
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
 msgid "True"
-msgstr ""
+msgstr "Igaz"
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:218
 #: exe/webui/truefalseelement.py:264
 msgid "False"
-msgstr ""
+msgstr "Hamis"
 
 #: exe/webui/wikipediablock.py:115
 msgid "English Wikipedia Article"
-msgstr ""
+msgstr "Angol nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:116
 msgid "Basque Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:117
+#, fuzzy
 msgid "Catalan Wikipedia Article"
-msgstr ""
+msgstr "Olasz nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:118
 msgid "Chinese Wikipedia Article"
-msgstr ""
+msgstr "Kínai nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:119
 msgid "Dutch Wikipedia Article"
-msgstr ""
+msgstr "Holland nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:120
 msgid "French Wikipedia Article"
-msgstr ""
+msgstr "Francia nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:121
 msgid "German Wikipedia Article"
-msgstr ""
+msgstr "Német nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:122
 msgid "Galician Wikipedia Article"
@@ -11663,63 +12270,64 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Greek Wikipedia Article"
-msgstr ""
+msgstr "Görög nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:124
 msgid "Italian Wikipedia Article"
-msgstr ""
+msgstr "Olasz nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:125
 msgid "Japanese Wikipedia Article"
-msgstr ""
+msgstr "Japán nyelvű Wikiédia szócikk"
 
 #: exe/webui/wikipediablock.py:126
+#, fuzzy
 msgid "Magyar Wikipedia Article"
-msgstr ""
+msgstr "Olasz nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:127
 msgid "Polish Wikipedia Article"
-msgstr ""
+msgstr "Lengyel nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:128
 msgid "Portugese Wikipedia Article"
-msgstr ""
+msgstr "Portugál nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:129
 msgid "Slovenian Wikipedia Article"
-msgstr ""
+msgstr "Szlovén nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:130
 msgid "Spanish Wikipedia Article"
-msgstr ""
+msgstr "Spanyol nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:131
 msgid "Swedish Wikipedia Article"
-msgstr ""
+msgstr "Svéd nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:132
 msgid "Wikibooks Article"
-msgstr ""
+msgstr "Bikibooks szócikk"
 
 #: exe/webui/wikipediablock.py:133
 msgid "Wikiversity"
-msgstr ""
+msgstr "Wikiversity"
 
 #: exe/webui/wikipediablock.py:134
 msgid "Wiktionary"
-msgstr ""
+msgstr "Wiktionary"
 
 #: exe/webui/wikipediablock.py:135
 msgid "Wikieducator Content"
-msgstr ""
+msgstr "Wikieducator tartalom"
 
 #: exe/webui/wikipediablock.py:141
 msgid "Site"
-msgstr ""
+msgstr "Oldal"
 
 #: exe/webui/wikipediablock.py:151
 msgid "Own site"
-msgstr ""
+msgstr "Saját oldal"
 
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
@@ -11732,7 +12340,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:135
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
 #: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551

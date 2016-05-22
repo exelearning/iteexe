@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-22 13:57+0200\n"
+"POT-Creation-Date: 2016-05-22 14:14+0200\n"
 "PO-Revision-Date: 2012-03-09 07:07+0100\n"
 "Last-Translator: \n"
 "Language: vi\n"
@@ -214,9 +214,10 @@ msgstr ""
 
 #: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
-msgstr ""
+msgstr "Tình huống học tập"
 
 #: exe/engine/casestudyidevice.py:202
+#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -239,6 +240,22 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Tình huống học tập mô phỏng các sự kiện ở thực tế cuộc sống, và đòi hỏi "
+"học sinh\n"
+" phải minh họa hoặc mô tả về hành động của mình để hoàn thành nhiệm vụ "
+"hoặc để giải quyết tình huống.\n"
+"Tình huống học tập cho phép học sinh áp dụng kiến thức hoặc kinh nghiệm "
+"của mình \n"
+"để hoàn thành nhiệm vụ được giao. Khi xây dựng các tình huống học tập, "
+"cần phải cân nhắc các vấn đề sau đây:<ul> \n"
+"<li>\tCác yếu tố giáo dục nào được đưa vào trong tình huống</li>\n"
+"<li>\tHọc sinh cần chuẩn bị những gì trước khi giải quyết tình huống học "
+"tập</li>\n"
+"<li>\tTình huống học tập phù hợp với phần nào của khóa học</li>\n"
+"<li>\tHọc sinh sẽ tương tác với nhau và với tư liệu học tập như thế nào.\n"
+"Nếu diễn ra trong lớp học, học sinh có thể sẽ được phân nhóm theo các "
+"khía cạnh khác nhau của tình huống\n"
+"và nếu như vậy thì các ý kiến đưa ra sẽ được góp ý ra sao</li></ul>"
 
 #: exe/engine/casestudyidevice.py:219
 #: exe/engine/ejercicioresueltofpdidevice.py:218
@@ -250,12 +267,15 @@ msgid ""
 "taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
+"Mô tả tình huống. Tình huống hay là tình huống có sự tranh luận\n"
+" hoặc có nhiều mẩu chuyện mô tả các nhân vật liên quan đến tình huống. \n"
+"Cũng nên mô tả các hoạt động để tăng tính phức tạp cho tình huống."
 
 #: exe/engine/casestudyidevice.py:223 exe/engine/casestudyidevice.py:411
 #: exe/engine/ejercicioresueltofpdidevice.py:222
 #: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
-msgstr ""
+msgstr "Mô tả:"
 
 #: exe/engine/casestudyidevice.py:228
 #: exe/engine/ejercicioresueltofpdidevice.py:227
@@ -266,13 +286,16 @@ msgid ""
 "dilemma \n"
 "presented. "
 msgstr ""
+"Mô tả các nhiệm vụ, hoạt động có liên quan đến phần mô tả tình huống. \n"
+"Phần này nên đưa ra các câu hỏi hoặc chỉ dẫn để học sinh giải quyết các "
+"tình huống khó xử. "
 
 #: exe/engine/casestudyidevice.py:232
 #: exe/engine/ejercicioresueltofpdidevice.py:231
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
-msgstr ""
+msgstr "Cung cấp phản hồi tương ứng cho từng nhiệm vụ."
 
 #: exe/engine/casopracticofpdidevice.py:30
 msgid "FPD - Situation"
@@ -351,7 +374,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Title"
-msgstr ""
+msgstr "Tiêu đề"
 
 #: exe/engine/clickinorderidevice.py:61
 msgid "Game Instructions"
@@ -565,6 +588,12 @@ msgid ""
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
 msgstr ""
+"<p>Bài tập điền chỗ trống là các câu hoặc đoạn văn trong đó học sinh phải"
+" điền các từ còn thiếu. Thường dùng cho các mục đích sau:</p><ol><li>Kiểm"
+" tra kiến thức về các khái niệm trọng tâm của bài học (có thể là kiểm tra"
+" bài cũ, bài tập củng cố bài...).</li><li>Kiểm tra bài đọc "
+"hiểu.</li><li>Kiểm tra từ vựng.</li><li>Kiểm tra về cấu trúc hoặc văn "
+"phạm. </li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -590,6 +619,23 @@ msgid ""
 " idea to get a colleague to test the test/exercise to make sure there are"
 " no surprises!  </p>  </dd></dl>"
 msgstr ""
+"<dl>  <dt>Nếu mục đích là kiểm tra sự hiểu biết về các khái niệm chính "
+"của bài hoặc kỹ năng đọc hiểu  </dt>  <dd>    <p>  Hãy viết bài tổng kết "
+"về các khái niệm hoặc bài đọc hiểu phải đủ dài và tương đối phức tạp, bài"
+" quá ngắn sẽ không đạt mục đích. Bài viết ngắn hơn một trang đánh máy là "
+"phù hợp, với học sinh nhỏ tuổi hoặc người mới bắt đầu học thì nên ngắn "
+"hơn.    </p>    <p>Hãy chọn các từ trong đoạn văn giúp học sinh hiểu rõ "
+"về các khái niệm. Có thể là động từ, danh từ hoặc trạng từ. Chọn các từ "
+"gần nghĩa, trong đó có một từ có nghĩa chính xác, rõ ràng    </p>  </dd>"
+"  <dt>Nếu mục đích là kiểm tra từ vựng  </dt>  <dd><p>Hãy viết một đoạn "
+"văn có các từ vựng cần kiểm tra. Đoạn văn nên rõ ràng, mạch lạc và có độ "
+"dài phù hợp. Chọn các từ cần kiểm tra.  Chọn các từ gần nghĩa, trong đó "
+"có một từ có nghĩa chính xác, rõ ràng</p>  </dd>  <dt>Nếu mục tiêu là "
+"kiểm tra cấu trúc từ, văn phạm:  </dt>  <dd>  <p>Hãy viết một đoạn văn sử"
+" dụng cấu trúc cần kiểm tra. Đoạn văn nên rõ ràng, mạch lạc và có độ dài "
+"phù hợp. Vì mục tiêu không phải là từ vựng, nên sử dụng những từ học sinh"
+" đã biết.  </p>  <p>Chọn những từ cần kiểm tra. Cung cấp các từ tương tự "
+"nhưng khác cấu trúc!  </p>  </dd></dl>"
 
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
@@ -602,7 +648,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 msgid "Instructions"
-msgstr ""
+msgstr "Chỉ dẫn"
 
 #: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
 #: exe/engine/clozelangfpdidevice.py:121
@@ -611,6 +657,8 @@ msgid ""
 "completed. Default text will be entered if there are no changes to this "
 "field.\n"
 msgstr ""
+"Đưa ra hướng dẫn để thực hiện bài tập điền vào chỗ trống. Các từ mặc định"
+" sẽ được điền vào các ô giữ nguyên.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
 #: exe/webui/element.py:1522 exe/webui/listablock.py:259
@@ -620,6 +668,7 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
+#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -630,6 +679,10 @@ msgid ""
 "answer can be defined enclosing them with pipes (|). I.e.: "
 "|dog|cat|bird|</p>"
 msgstr ""
+"<p>Nhập nội dung bài tập điền vào chỗ trống \n"
+"bằng cách copy từ tài liệu khác hoặc gõ trực tiếp vào ô này.</p><p> Để "
+"tạo chỗ trống điền từ, nhắp kép vào từ cần giấu đi \n"
+"rồi nhấn vào nút \"Che/Hiện từ\" ở bên dưới.</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -648,14 +701,14 @@ msgstr ""
 #: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
-msgstr ""
+msgstr "Phản hồi"
 
 #: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
 #: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
 msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
-msgstr ""
+msgstr "Nhập phản hồi cho học sinh tại đây. Có thể để trống."
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
@@ -670,7 +723,7 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:284
 msgid "Read the paragraph below and fill in the missing words"
-msgstr ""
+msgstr "Hãy đọc đoạn văn bên dưới và điền các từ còn để trống."
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
 #: exe/engine/clozelangfpdidevice.py:296
@@ -679,12 +732,12 @@ msgstr ""
 
 #: exe/engine/clozeidevice.py:49
 msgid "Cloze Activity"
-msgstr ""
+msgstr "Bài tập điền chỗ trống"
 
 #: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
-msgstr ""
+msgstr "Hãy đọc đoạn văn bên dưới và điền các từ bị thiếu vào chỗ trống. "
 
 #: exe/engine/clozelangfpdidevice.py:50
 msgid "FPD - Cloze Activity (Modified)"
@@ -786,6 +839,22 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Tình huống học tập mô phỏng các sự kiện ở thực tế cuộc sống, và đòi hỏi "
+"học sinh\n"
+" phải minh họa hoặc mô tả về hành động của mình để hoàn thành nhiệm vụ "
+"hoặc để giải quyết tình huống.\n"
+"Tình huống học tập cho phép học sinh áp dụng kiến thức hoặc kinh nghiệm "
+"của mình \n"
+"để hoàn thành nhiệm vụ được giao. Khi xây dựng các tình huống học tập, "
+"cần phải cân nhắc các vấn đề sau đây:<ul> \n"
+"<li>\tCác yếu tố giáo dục nào được đưa vào trong tình huống</li>\n"
+"<li>\tHọc sinh cần chuẩn bị những gì trước khi giải quyết tình huống học "
+"tập</li>\n"
+"<li>\tTình huống học tập phù hợp với phần nào của khóa học</li>\n"
+"<li>\tHọc sinh sẽ tương tác với nhau và với tư liệu học tập như thế nào.\n"
+"Nếu diễn ra trong lớp học, học sinh có thể sẽ được phân nhóm theo các "
+"khía cạnh khác nhau của tình huống\n"
+"và nếu như vậy thì các ý kiến đưa ra sẽ được góp ý ra sao</li></ul>"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 msgid "FPD - Multi Choice Activity"
@@ -811,6 +880,20 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
+"Mặc dù thường được dùng cho các bài kiểm tra,\n"
+" bài tập trắc nghiệm nhiều lựa chọn còn có thể dùng để kích thích tư duy"
+"  \n"
+"hoặc thảo luận về các chủ đề mà học sinh thường ngại đề cập đến. \n"
+" \n"
+"Khi thiết kế bài tập nhiều lựa chọn, hãy cân nhắc các vấn đề sau đây:\n"
+"<ul>\n"
+"<li> Kết quả học tập mang lại từ bài kiểm tra này</li>\n"
+"<li>   Những kỹ năng tư duy nào được kiểm tra</li>\n"
+"<li> Những kỹ năng về ngôn ngữ của học sinh</li>\n"
+"<li> Các đặc điểm về giới tính và văn hóa</li>\n"
+"<li> Tránh các cấu trúc câu hỏi hoặc văn phạm có thể gợi ý cho đáp "
+"án</li>\n"
+"</ul>"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:76
 #: exe/engine/multichoiceidevice.py:75 exe/engine/multiselectidevice.py:60
@@ -831,6 +914,18 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
+"Khi soạn bài tập nhiều lựa chọn, hãy cân nhắc các yếu tố sau đây: <ul>\n"
+"<li> Dùng những cụm từ quen thuộc với học sinh, cũng như đã đề cập đến "
+"trong quá trình học tập </li>\n"
+"<li> Các lời phản hồi nên ngắn gọn, súc tích </li>\n"
+"<li> Nên có sự nhất quán giữa câu hỏi và lời phản hồi </li>\n"
+"<li> Các lựa chọn phải đủ thách thức, phức tạp để học sinh phải động não "
+"khi chọn câu trả lời \n"
+"</li>\n"
+"<li> Lựa chọn đúng không nên quá chi tiết hơn những lựa chọn khác </li>\n"
+"<li> Các lựa chọn không đúng phải có vẻ như hợp lý để học sinh phải cân "
+"nhắc cho câu trả lời của mình</li>\n"
+"</ul>\n"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:101
 #: exe/engine/multichoiceidevice.py:99
@@ -838,6 +933,8 @@ msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
+"Nhập gợi ý vào đây. \n"
+"Có thể để trống."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
@@ -847,13 +944,16 @@ msgid ""
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
+"Hãy nhập câu hỏi. \n"
+"Câu hỏi cần phải rõ ràng và không mơ hồ. Nên tránh các câu phủ định \n"
+"vì dễ gây nhầm lẫn."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:106
 #: exe/engine/multichoiceidevice.py:104
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
-msgstr ""
+msgstr "Hãy chọn câu trả lời đúng"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:108
 #: exe/engine/multichoiceidevice.py:106
@@ -863,6 +963,10 @@ msgid ""
 " options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
+"Hãy nhập các lựa chọn vào đây.  \n"
+"Bạn có thể thêm lựa chọn bằng cách nhấn nút \"Thêm lựa chọn khác\" . Xóa "
+"lựa chọn bằng cách \n"
+"nhấn chữ  \"X\" màu đỏ ở kế bên lựa chọn muốn xóa."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:111
 #: exe/engine/multichoiceidevice.py:109
@@ -876,6 +980,11 @@ msgid ""
 " answer\"\n"
 "for the other options."
 msgstr ""
+"Nhập phản hồi tương ứng với từng lựa chọn mà học sinh sẽ chọn. \n"
+"Nếu không điền ô này, phần mềm eXe sẽ tự động điền phản hồi mặc định: \n"
+" \"Correct \n"
+"answer\" cho lựa chọn đúng; hoặc \"Wrong answer\"\n"
+"cho các lựa chọn khác."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3754
 #: exe/engine/field.py:3819 exe/engine/multichoiceidevice.py:131
@@ -885,7 +994,7 @@ msgstr ""
 #: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
-msgstr ""
+msgstr "Câu hỏi"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:287
 #: exe/engine/multichoiceidevice.py:285
@@ -980,7 +1089,7 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:185
 msgid "Delete File"
-msgstr ""
+msgstr "Xóa tập tin"
 
 #: exe/engine/extendedfieldengine.py:306
 msgid "No File Uploaded Currently"
@@ -992,7 +1101,7 @@ msgstr ""
 #: exe/webui/multimediablock.py:87
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
-msgstr ""
+msgstr "Không"
 
 #: exe/engine/extendedfieldengine.py:570
 msgid "is not a valid number - please try again<br/>"
@@ -1026,6 +1135,7 @@ msgid ""
 msgstr ""
 
 #: exe/engine/field.py:3090
+#, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1041,12 +1151,27 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p> Nếu không chọn, một vài lỗi nhỏ về chính tả hoặc chữ hoa chữ thường "
+"vẫn được chấp nhận. Nếu chọn, câu trả lời đúng phải chính xác về chính tả"
+" lẫn chữ hoa chữ thường.</p><p><strong>Ví dụ:</strong> Nếu đáp án là "
+"<code>Elephant</code> thì cả hai câu trả lời <code>elephant</code> và "
+"<code>Eliphant</code> sẽ được chấp nhận là<em>\"gần như đúng\"</em> vì "
+"chỉ sai một ký tự, ngay cả nếu như tùy chọn \"Chữ hoa chữ thường\" được "
+"chọn.</p><p>Nếu trong ví dụ trên, tùy chọn  \"Chữ hoa chữ thường\" không "
+"được chọn, chữ <code>e</code> sẽ không bị xem là sai và "
+"<code>eliphant</code> cũng được xem là câu trả lời đúng.</p><p>Nếu chọn "
+"cả hai tùy chọn \"Chính xác tuyệt đối\" và \"Chữ hoa chữ thường\" , thì "
+"chỉ có một câu trả lời đúng là  \"Elephant\". Nếu chỉ chọn \"Chính xác "
+"tuyệt đối\" và không chọn \"chũ hoa chữ thường\" , \"elephant\" cũng sẽ "
+"được chấp nhận đúng.</p>"
 
 #: exe/engine/field.py:3111 exe/engine/field.py:3345
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
 msgstr ""
+"<p>Nếu chọn tùy chọn này, câu trả lời không đúng theo cách viết chữ hoa "
+"chữ thường sẽ không được cho điểm.</p>"
 
 #: exe/engine/field.py:3116 exe/engine/field.py:3350
 msgid ""
@@ -1054,6 +1179,9 @@ msgid ""
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
+"<p>Nếu chọn tùy chọn này, học sinh có thể xem điểm ngay sau khi điền xong"
+" một từ \n"
+"Không cần phải điền hết tất cả các từ thì mới xem được điểm.</p>"
 
 #: exe/engine/field.py:3154 exe/engine/field.py:3392
 #: exe/engine/listaidevice.py:398
@@ -1078,6 +1206,19 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p> Nếu không chọn, một vài lỗi nhỏ về chính tả hoặc chữ hoa chữ thường "
+"vẫn được chấp nhận. Nếu chọn, câu trả lời đúng phải chính xác về chính tả"
+" lẫn chữ hoa chữ thường.</p><p><strong>Ví dụ:</strong> Nếu đáp án là "
+"<code>Elephant</code> thì cả hai câu trả lời <code>elephant</code> và "
+"<code>Eliphant</code> sẽ được chấp nhận là<em>\"gần như đúng\"</em> vì "
+"chỉ sai một ký tự, ngay cả nếu như tùy chọn \"Chữ hoa chữ thường\" được "
+"chọn.</p><p>Nếu trong ví dụ trên, tùy chọn  \"Chữ hoa chữ thường\" không "
+"được chọn, chữ <code>e</code> sẽ không bị xem là sai và "
+"<code>eliphant</code> cũng được xem là câu trả lời đúng.</p><p>Nếu chọn "
+"cả hai tùy chọn \"Chính xác tuyệt đối\" và \"Chữ hoa chữ thường\" , thì "
+"chỉ có một câu trả lời đúng là  \"Elephant\". Nếu chỉ chọn \"Chính xác "
+"tuyệt đối\" và không chọn \"chũ hoa chữ thường\" , \"elephant\" cũng sẽ "
+"được chấp nhận đúng.</p>"
 
 #: exe/engine/field.py:3355
 msgid "<p>If this option is set, the score will be shown.</p>"
@@ -1118,21 +1259,21 @@ msgstr ""
 #: exe/webui/element.py:2576 exe/webui/element.py:2668
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
-msgstr ""
+msgstr "Lựa chọn"
 
 #: exe/engine/field.py:3757 exe/engine/field.py:3823
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:452
 msgid "Hint"
-msgstr ""
+msgstr "Gợi ý"
 
 #: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2381
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
 #: exe/webui/testquestionelement.py:110
 msgid "Options"
-msgstr ""
+msgstr "Các lựa chọn"
 
 #: exe/engine/field.py:3905
 msgid ""
@@ -1141,6 +1282,9 @@ msgid ""
 "these \n"
 "can tend to confuse learners."
 msgstr ""
+"Hãy nhập câu hỏi. \n"
+"Câu hỏi nên rõ ràng, không mơ hồ.\n"
+" Tránh sử dụng câu phủ định vì dễ gây nhầm lẫn cho học sinh."
 
 #: exe/engine/field.py:3908 exe/engine/field.py:3989
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
@@ -1148,7 +1292,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:47
 #: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
 msgid "Question:"
-msgstr ""
+msgstr "Câu hỏi"
 
 #: exe/engine/field.py:3913
 msgid ""
@@ -1157,25 +1301,29 @@ msgid ""
 " options by \n"
 "clicking the red X next to the option."
 msgstr ""
+"Nhập các lựa chọn vào đây. \n"
+" Có thể bổ sung thêm các lựa chọn bằng cách nhấn nút \"Thêm lựa chọn "
+"khác\". \n"
+"Xóa lựa chọn bằng cách nhấn chữ X màu đỏ."
 
 #: exe/engine/field.py:3917
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
-msgstr ""
+msgstr "Hãy đánh dấu chọn tất cả các câu trả lời đúng."
 
 #: exe/engine/field.py:3920
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
-msgstr ""
+msgstr "Nhập lời phản hồi cho học sinh"
 
 #: exe/engine/field.py:3922 exe/engine/field.py:3992
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:204
 msgid "Feedback:"
-msgstr ""
+msgstr "Phản hồi:"
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
@@ -1308,11 +1456,14 @@ msgid ""
 "built and \n"
 "delivered."
 msgstr ""
+"Đa số các tài nguyên học tập tạo ra các ngữ cảnh, \n"
+"mô tả các hoạt động học tập, cung cấp các chỉ dẫn\n"
+" hoặc các thông tin tổng quát. "
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
 msgid "Free Text"
-msgstr ""
+msgstr "Văn bản"
 
 #: exe/engine/freetextfpdidevice.py:47 exe/engine/freetextidevice.py:46
 msgid ""
@@ -1321,10 +1472,13 @@ msgid ""
 "applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
+"Dùng ô này để nhập văn bản. \n"
+"Có thể tạo một số định dạng cho văn bản \n"
+"bằng cách sử dụng các nút lệnh tương ứng"
 
 #: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
-msgstr ""
+msgstr "Đây là ô văn bản để nhập nội dung tổng quát về bài học."
 
 #: exe/engine/galleryidevice.py:140 exe/engine/galleryidevice.py:191
 msgid "No Thumbnail Available. Could not load original image."
@@ -1340,7 +1494,7 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:458
 msgid "Image Gallery"
-msgstr ""
+msgstr "Bộ sưu tập ảnh"
 
 #: exe/engine/galleryidevice.py:459
 msgid "eXe Project"
@@ -1353,14 +1507,17 @@ msgid ""
 "display \n"
 "these in a gallery context rather then individually.</p>"
 msgstr ""
+"<p>Nếu có nhiều bức ảnh liên quan với nhau \n"
+"hoặc sử dụng chung cho cùng một bài tập, bạn nên đưa chúng \n"
+"vào cùng bộ sưu tập hơn là hiện riêng lẻ từng hình.</p>"
 
 #: exe/engine/galleryidevice.py:463
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr ""
+msgstr "Dùng chức năng này nếu bạn có nhiều hình cần hiển thị"
 
 #: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
-msgstr ""
+msgstr "Nhập tiêu đề cho bộ sưu tập"
 
 #: exe/engine/galleryidevice.py:473
 msgid ""
@@ -1368,15 +1525,18 @@ msgid ""
 "appear below where you will be able to label it. It's always good "
 "practice to put the file size in the label."
 msgstr ""
+"Nhấn nút Thêm ảnh để chọn tập tin hình ảnh. Bức ảnh sẽ hiện ra ở bên "
+"dưới, và bạn có thể đặt tên cho nó. Bạn cũng nên cho biết kích thước bức "
+"ảnh khi đặt tên."
 
 #: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:663
 msgid "Reading Activity 0.11"
-msgstr ""
+msgstr "Hoạt động đọc hiểu 0.11"
 
 #: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:510
 #: exe/engine/idevicestore.py:554
 msgid "Reading Activity"
-msgstr ""
+msgstr "Hoạt động đọc hiểu"
 
 #: exe/engine/hangmanidevice.py:51 exe/webui/common.py:490
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
@@ -1459,7 +1619,7 @@ msgstr ""
 #: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
 #: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
-msgstr ""
+msgstr "Làm lại"
 
 #: exe/engine/hangmanidevice.py:104
 msgid "Restart Level Button Style (CSS)"
@@ -1532,6 +1692,12 @@ msgid ""
 " task \n"
 "based on the reading.</p>"
 msgstr ""
+"<p>Hoạt động đọc hiểu được sử dụng phần lớn để \n"
+"kiểm tra sự hiểu biết của học sinh về văn bản được yêu cầu đọc. Có thể "
+"thực hiện  \n"
+"bằng cách yêu cầu học sinh tự đọc và trả lời các câu hỏi hoặc thực hiện "
+"một vài nhiệm vụ \n"
+"dựa theo nội dung văn bản đã đọc.</p>"
 
 #: exe/engine/idevicestore.py:562
 msgid ""
@@ -1547,10 +1713,18 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"<p>Giáo viên nên suy nghĩ về một số điều sau đây khi sử dụng chức năng "
+"này: </p><ol><li>Tránh dùng quá nhiều hình thức hoạt động, nếu không, dễ "
+"gây bối rối cho học sinh. Thông thường, từ 3 đến 4 loại hoạt động là đã "
+"quá nhiều.</li><li>Về mặt thiết kế giao diện, không nên hiển thị 2 bài "
+"đọc hiểu kế tiếp nhau mà không có dòng chữ nào xen vào giữa. Nếu bắt buộc"
+" phải làm thì nên ghép cả 2 bài vào chung một phần. </li><li>Hãy nghĩ đến"
+" các hoạt động trong đó lợi ích mang lại đáng để bỏ ra thời gian, công "
+"sức cho hoạt động này. </li></ol>"
 
 #: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:706
 msgid "What to read"
-msgstr ""
+msgstr "Nội dung đọc"
 
 #: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:707
 msgid ""
@@ -1558,19 +1732,23 @@ msgid ""
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr ""
+"Nhập nội dung bài đọc, kể cả các tài liệu cần tham khảo. \n"
+"Tài liệu tham khảo tùy theo yêu cầu của bộ môn, khoa... "
 
 #: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:640
 #: exe/engine/idevicestore.py:648 exe/engine/idevicestore.py:710
 #: exe/engine/idevicestore.py:747 exe/engine/idevicestore.py:755
 #: exe/webui/questionelement.py:110
 msgid "Activity"
-msgstr ""
+msgstr "Hoạt động"
 
 #: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:711
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr ""
+"Mô tả các nhiệm vụ liên quan đến bài đọc mà học sinh phải thực hiện.\n"
+"Điều này giúp học sinh không bị lạc đề."
 
 #: exe/engine/idevicestore.py:606 exe/engine/idevicestore.py:715
 msgid ""
@@ -1579,6 +1757,9 @@ msgid ""
 "question \n"
 "or providing a statement to begin a debate."
 msgstr ""
+"Sử dụng phần phản hồi để tóm tắt các vấn đề cần quan tâm trong bài đọc, \n"
+"hoặc đưa ra câu hỏi mở đầu cho cuộc thảo luận nhằm phân tích sâu hơn về "
+"bài đọc. "
 
 #: exe/engine/idevicestore.py:612 exe/engine/idevicestore.py:621
 #: exe/engine/idevicestore.py:719 exe/engine/idevicestore.py:728
@@ -1629,10 +1810,13 @@ msgid ""
 "conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
+"Một hoạt động gồm nhiều nhiệm vụ mà học sinh phải hoàn thành. \n"
+"Hãy đưa ra những nhiệm vụ rõ ràng và cân nhắc đến tất cả các điều kiện \n"
+"để giúp đỡ hoặc gợi ý cho học sinh thực hiện nhiệm vụ."
 
 #: exe/engine/idevicestore.py:649 exe/engine/idevicestore.py:756
 msgid "Describe the tasks the learners should complete."
-msgstr ""
+msgstr "Mô tả các nhiệm vụ học sinh cần phải thực hiện."
 
 #: exe/engine/idevicestore.py:666
 msgid ""
@@ -1663,7 +1847,7 @@ msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
-msgstr ""
+msgstr "Ảnh phóng to"
 
 #: exe/engine/imagemagnifieridevice.py:43
 msgid ""
@@ -1672,10 +1856,13 @@ msgid ""
 "the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
+"Chức năng phóng to ảnh cho phép học sinh\n"
+"xem rõ hơn từng chi tiết của bức ảnh bằng cách di chuyển\n"
+"kính lúp trên bề mặt bức ảnh. "
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Choose an Image"
-msgstr ""
+msgstr "Chọn ảnh"
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid ""
@@ -1684,6 +1871,9 @@ msgid ""
 "to be \n"
 "magnified."
 msgstr ""
+"Nhấn \n"
+"vào bức ảnh bên dưới hoặc nút \"Chọn ảnh\" để chọn tập tin cần phóng to "
+"xem chi tiết."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
@@ -1691,19 +1881,19 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/tools/style-designer/langs/en.js:24
 msgid "Text"
-msgstr ""
+msgstr "Nội dung"
 
 #: exe/engine/imagemagnifieridevice.py:55 exe/engine/multimediaidevice.py:65
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
-msgstr ""
+msgstr "Nhập nội dung liên quan đến tập tin"
 
 #: exe/engine/imagemagnifieridevice.py:60
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
-msgstr ""
+msgstr "Nhập tiêu đề cho bức ảnh cần phóng to."
 
 #: exe/engine/imagemagnifieridevice.py:62
 msgid ""
@@ -1714,13 +1904,16 @@ msgid ""
 " \n"
 "image to display at its original size."
 msgstr ""
+"Chọn kích thước hiển thị của bức ảnh.\n"
+"Đơn vị đo tính bằng pixel. 100 pixels gần bằng 3cm.\n"
+"Hãy để trống cả 2 ô nếu bạn muốn bức ảnh hiện lên đúng kích thước thật."
 
 #: exe/engine/imagemagnifieridevice.py:66
 #: exe/engine/imagemagnifieridevice.py:142
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
-msgstr ""
+msgstr "Cho phép chọn vị trí xuất hiện ảnh trên màn hình."
 
 #: exe/engine/imagemagnifieridevice.py:68
 #: exe/engine/imagemagnifieridevice.py:144
@@ -1728,6 +1921,8 @@ msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
+"Gán mức độ phóng đại ban đầu \n"
+"(theo tỉ lệ phần trăm kích thước thật của bức ảnh)"
 
 #: exe/engine/imagemagnifieridevice.py:70
 #: exe/engine/imagemagnifieridevice.py:146
@@ -1735,10 +1930,12 @@ msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
+"Gán độ phóng đại tối đa \n"
+"(tính theo tỉ lệ phần trăm kích thước thật của bức ảnh)"
 
 #: exe/engine/imagemagnifieridevice.py:72
 msgid "Select the size of the magnifying glass"
-msgstr ""
+msgstr "Chọn kích thước của kính lúp"
 
 #: exe/engine/imagemagnifieridevice.py:148
 msgid ""
@@ -1781,7 +1978,7 @@ msgstr ""
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
-msgstr ""
+msgstr "Nhập nội dung liên quan đến bức ảnh"
 
 #: exe/engine/imagewithtextidevice.py:71 exe/engine/imagewithtextidevice.py:118
 msgid ""
@@ -2099,7 +2296,7 @@ msgstr ""
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
-msgstr ""
+msgstr "Bài tập nhiều lựa chọn"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
@@ -2138,7 +2335,7 @@ msgstr ""
 
 #: exe/engine/multiselectidevice.py:45
 msgid "Multi-select"
-msgstr ""
+msgstr "Bài tập nhiều đáp án đúng"
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
@@ -2203,7 +2400,7 @@ msgstr ""
 
 #: exe/engine/package.py:348
 msgid "Home"
-msgstr ""
+msgstr "Trang chính"
 
 #: exe/engine/package.py:503
 msgid "Metadata creation date"
@@ -2273,7 +2470,7 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr ""
+msgstr "Đây là ô nhập văn bản."
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
@@ -2665,7 +2862,7 @@ msgstr ""
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
-msgstr ""
+msgstr "Câu hỏi Đúng-Sai"
 
 #: exe/engine/truefalseidevice.py:146
 #: exe/engine/verdaderofalsofpdidevice.py:147
@@ -2677,13 +2874,16 @@ msgid ""
 "either/or \n"
 "responses."
 msgstr ""
+"Câu hỏi Đúng/Sai là một mệnh đề mà học sinh phải xác định là đúng hay "
+"sai. /nDạng câu hỏi này phù hợp với các thông tin, sự kiện có cơ sở trả "
+"lời."
 
 #: exe/engine/truefalseidevice.py:151
 #: exe/engine/verdaderofalsofpdidevice.py:153
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
-msgstr ""
+msgstr "Có thể đưa ra gợi ý giúp học sinh trả lời câu hỏi."
 
 #: exe/engine/truefalseidevice.py:154
 #: exe/engine/verdaderofalsofpdidevice.py:156
@@ -2693,6 +2893,8 @@ msgid ""
 "tend to \n"
 "be ambiguous."
 msgstr ""
+"Nhập nội dung câu hỏi. Câu hỏi nên \n"
+"rõ ràng, không mơ hồ. Không nên dùng câu phủ định vì dễ dẫn đến sự mơ hồ."
 
 #: exe/engine/truefalseidevice.py:158
 #: exe/engine/verdaderofalsofpdidevice.py:160
@@ -2702,6 +2904,9 @@ msgid ""
 " \n"
 "default feedback will be provided."
 msgstr ""
+"Nhập nội dung phản hồi cho học sinh. \n"
+"Ô này có thể để trống. Nếu để trống, lời phản hồi mặc định sẽ được sử "
+"dụng."
 
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
 #: exe/engine/verdaderofalsofpdidevice.py:167
@@ -2709,7 +2914,7 @@ msgstr ""
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
-msgstr ""
+msgstr "Đưa ra hướng dẫn cách trả lời câu hỏi Đúng/Sai"
 
 #: exe/engine/truefalseidevice.py:372
 #: exe/engine/verdaderofalsofpdidevice.py:375
@@ -2729,9 +2934,10 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:53
 msgid "Wiki Article"
-msgstr ""
+msgstr "Bài viết Wiki"
 
 #: exe/engine/wikipediaidevice.py:55
+#, fuzzy
 msgid ""
 "<p>The Wikipedia iDevice allows you to locate \n"
 "existing content from within Wikipedia and download this content into "
@@ -2748,6 +2954,13 @@ msgid ""
 "additionally\n"
 "by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
 msgstr ""
+"<p>Chức năng Bài viết Wiki cho phép tìm kiếm nội dung có trong trang "
+"Wikipedia và tải nội dung đó về phần mềm eXe của bạn. \n"
+" Các thay đổi trên trang Wikipedia sẽ không tự động cập nhật vào phần mềm"
+" eXe, do đó nên tải về nội dung mới nhất. \n"
+"Ngược lại, các thay đổi về nội dung trong eXe sẽ không cập nhật lên trang"
+" Wikipedia. </p> <p>Nội dung trên Wikipedia \n"
+"tuân theo bản quyền tài nguyên miễn phí GNU.</p>"
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
@@ -2757,7 +2970,7 @@ msgstr ""
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
-msgstr ""
+msgstr "Chọn ngôn ngữ phù hợp của trang Wikipedia để tìm và nhập từ khóa tìm kiếm"
 
 #: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:363
 msgid ""
@@ -2962,12 +3175,12 @@ msgstr ""
 #: exe/export/scormpage.py:177 exe/export/websitepage.py:345
 #: exe/webui/common.py:473
 msgid "Previous"
-msgstr ""
+msgstr "Trước"
 
 #: exe/export/scormpage.py:178 exe/export/websitepage.py:351
 #: exe/webui/common.py:474
 msgid "Next"
-msgstr ""
+msgstr "Tiếp"
 
 #: exe/export/singlepage.py:249
 msgid "You can close this window"
@@ -2994,7 +3207,7 @@ msgstr ""
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
 msgid "Example"
-msgstr ""
+msgstr "Ví dụ"
 
 #: exe/importers/cmdlineimporter.py:44
 msgid "Import format not implemented"
@@ -3274,7 +3487,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
 #: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
 msgid "Select an image"
-msgstr ""
+msgstr "Chọn một bức ảnh"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:194
 #: exe/jsui/scripts/app/controller/MainTab.js:228
@@ -3901,8 +4114,9 @@ msgid "Format"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
+#, fuzzy
 msgid "Select a Format."
-msgstr ""
+msgstr "Chọn một bức ảnh"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomSections.js:40
@@ -3940,8 +4154,9 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:182
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:189
+#, fuzzy
 msgid "Select a language."
-msgstr ""
+msgstr "Chọn một bức ảnh"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
@@ -4317,7 +4532,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:269
 #: exe/webui/editorpane.py:387
 msgid "Purpose"
-msgstr ""
+msgstr "Mục đích"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:166
 msgid "Download Classification Sources"
@@ -4738,8 +4953,9 @@ msgid "Permissive"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
+#, fuzzy
 msgid "Strict"
-msgstr ""
+msgstr "Làm lại"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:192
 msgid ""
@@ -4885,7 +5101,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:155
 msgid "iDevices"
-msgstr ""
+msgstr "Chức năng"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "Category"
@@ -4925,7 +5141,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
-msgstr ""
+msgstr "Thêm trang"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:239
 #: exe/webui/block.py:333 exe/webui/editorelement.py:78
@@ -4936,11 +5152,11 @@ msgstr ""
 #: exe/webui/galleryblock.py:303
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
-msgstr ""
+msgstr "Xóa"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
-msgstr ""
+msgstr "Đổi tên"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
 msgid "Promote node up in hierarchy"
@@ -6789,7 +7005,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:134 exe/webui/wikipediablock.py:136
 msgid "Other"
-msgstr ""
+msgstr "Khác"
 
 #: exe/webui/appletblock.py:135
 msgid "Applet Type"
@@ -6809,7 +7025,7 @@ msgstr ""
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
 msgid "Filename:"
-msgstr ""
+msgstr "Tên tập tin:"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
@@ -6828,7 +7044,7 @@ msgstr ""
 
 #: exe/webui/block.py:222
 msgid "Done"
-msgstr ""
+msgstr "Xong"
 
 #: exe/webui/block.py:226
 msgid "Exit without saving?"
@@ -6856,15 +7072,15 @@ msgstr ""
 
 #: exe/webui/block.py:255
 msgid "---Move To---"
-msgstr ""
+msgstr "---Chuyển đến---"
 
 #: exe/webui/block.py:260 exe/webui/editorpane.py:380
 msgid "Pedagogical Help"
-msgstr ""
+msgstr "Giúp đỡ về khía cạnh sư phạm"
 
 #: exe/webui/block.py:273 exe/webui/editorpane.py:390
 msgid "Tip:"
-msgstr ""
+msgstr "Gợi ý:"
 
 #: exe/webui/block.py:318
 msgid "ERROR: Block.renderViewContent called directly"
@@ -6877,7 +7093,7 @@ msgstr ""
 
 #: exe/webui/casestudyblock.py:114 exe/webui/ejercicioresueltofpdblock.py:130
 msgid "Add another activity"
-msgstr ""
+msgstr "Thêm hoạt động khác"
 
 #: exe/webui/casopracticofpdblock.py:68
 msgid "Situation"
@@ -7035,7 +7251,7 @@ msgstr ""
 #: exe/webui/common.py:477 exe/webui/common.py:715 exe/webui/element.py:1538
 #: exe/webui/element.py:2469 exe/webui/listablock.py:275
 msgid "Show Feedback"
-msgstr ""
+msgstr "Hiện lời phản hồi"
 
 #: exe/webui/common.py:478
 msgid "Hide Feedback"
@@ -7044,11 +7260,11 @@ msgstr ""
 #: exe/webui/common.py:479 exe/webui/common.py:494 exe/webui/element.py:2272
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
-msgstr ""
+msgstr "Chính xác"
 
 #: exe/webui/common.py:480 exe/webui/element.py:2275
 msgid "Incorrect"
-msgstr ""
+msgstr "Không chính xác"
 
 #: exe/webui/common.py:481
 msgid "Menu"
@@ -7060,7 +7276,7 @@ msgstr ""
 
 #: exe/webui/common.py:495 exe/webui/element.py:2708 exe/webui/element.py:2726
 msgid "Wrong"
-msgstr ""
+msgstr "Không chính xác"
 
 #: exe/webui/common.py:496
 msgid "Right answer"
@@ -7091,8 +7307,9 @@ msgid "Total"
 msgstr ""
 
 #: exe/webui/common.py:505
+#, fuzzy
 msgid "Another word"
-msgstr ""
+msgstr "Thêm lựa chọn khác"
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7117,7 +7334,7 @@ msgstr ""
 
 #: exe/webui/common.py:839 exe/webui/common.py:842
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "Nhấn vào đây để xem hướng dẫn đầy đủ"
 
 #: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
@@ -7147,7 +7364,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:18
 msgid "Left"
-msgstr ""
+msgstr "Trái"
 
 #: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
 #: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
@@ -7161,13 +7378,13 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:76
 msgid "Right"
-msgstr ""
+msgstr "Phải"
 
 #: exe/webui/editorelement.py:228 exe/webui/flashmovieblock.py:87
 #: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/imagewithtextblock.py:88 exe/webui/multimediablock.py:92
 msgid "Align:"
-msgstr ""
+msgstr "Canh lề:"
 
 #: exe/webui/editorelement.py:268 exe/webui/element.py:1889
 msgid "Select Flash Object"
@@ -7181,7 +7398,7 @@ msgstr ""
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
-msgstr ""
+msgstr "Tiêu đề:"
 
 #: exe/webui/editorpage.py:125
 msgid "Please enter an idevice name."
@@ -7201,7 +7418,7 @@ msgstr ""
 
 #: exe/webui/editorpage.py:291
 msgid "New iDevice"
-msgstr ""
+msgstr "Chức năng mới"
 
 #: exe/webui/editorpane.py:67
 msgid ""
@@ -7314,8 +7531,9 @@ msgid "Some emphasis"
 msgstr ""
 
 #: exe/webui/editorpane.py:354
+#, fuzzy
 msgid "Select an icon"
-msgstr ""
+msgstr "Chọn một bức ảnh"
 
 #: exe/webui/editorpane.py:368
 msgid "Icons"
@@ -7328,7 +7546,7 @@ msgstr ""
 #: exe/webui/editorpane.py:429 exe/webui/element.py:1545
 #: exe/webui/element.py:1547 exe/webui/element.py:1803
 msgid "Submit"
-msgstr ""
+msgstr "Nộp bài"
 
 #: exe/webui/ejercicioresueltofpdblock.py:122
 msgid "Translation"
@@ -7337,12 +7555,12 @@ msgstr ""
 #: exe/webui/eleccionmultiplefpdblock.py:98 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
-msgstr ""
+msgstr "Hãy chọn câu trả lời đúng cho từng câu hỏi"
 
 #: exe/webui/eleccionmultiplefpdblock.py:124 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:119
 msgid "Add another question"
-msgstr ""
+msgstr "Thêm câu hỏi khác"
 
 #: exe/webui/element.py:72
 #, python-format
@@ -7361,11 +7579,11 @@ msgstr ""
 
 #: exe/webui/element.py:753 exe/webui/element.py:1174
 msgid "Add Image"
-msgstr ""
+msgstr "Thêm hình"
 
 #: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
 msgid "Display as:"
-msgstr ""
+msgstr "Kích thước hiển thị:"
 
 #: exe/webui/element.py:786
 msgid "by"
@@ -7373,7 +7591,7 @@ msgstr ""
 
 #: exe/webui/element.py:793 exe/webui/element.py:1212
 msgid "blank for original size"
-msgstr ""
+msgstr "để trống nếu dùng kích thước thật"
 
 #: exe/webui/element.py:863
 msgid "Select an MP3"
@@ -7381,16 +7599,16 @@ msgstr ""
 
 #: exe/webui/element.py:1351 exe/webui/element.py:1684
 msgid "Cloze Text"
-msgstr ""
+msgstr "Nội dung"
 
 #: exe/webui/element.py:1359 exe/webui/element.py:1692
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
-msgstr ""
+msgstr "Che/Hiện từ"
 
 #: exe/webui/element.py:1364 exe/webui/element.py:1697
 msgid "Strict Marking?"
-msgstr ""
+msgstr "Chính xác tuyệt đối?"
 
 #: exe/webui/element.py:1369
 msgid "Check Capitalization?"
@@ -7398,7 +7616,7 @@ msgstr ""
 
 #: exe/webui/element.py:1374 exe/webui/element.py:1707
 msgid "Instant Marking?"
-msgstr ""
+msgstr "Chấm điểm ngay?"
 
 #: exe/webui/element.py:1485 exe/webui/element.py:1742
 #: exe/webui/listablock.py:223
@@ -7415,7 +7633,7 @@ msgstr ""
 
 #: exe/webui/element.py:1551 exe/webui/element.py:1807
 msgid "Show Answers"
-msgstr ""
+msgstr "Hiện đáp án"
 
 #: exe/webui/element.py:1587 exe/webui/element.py:1839
 #: exe/webui/element.py:2461 exe/webui/element.py:2921
@@ -7425,7 +7643,7 @@ msgstr ""
 
 #: exe/webui/element.py:1702
 msgid "Check Caps?"
-msgstr ""
+msgstr "Chữ hoa/chữ thường?"
 
 #: exe/webui/element.py:1712
 msgid "Show Score?"
@@ -7459,22 +7677,22 @@ msgstr ""
 #: exe/webui/element.py:2706 exe/webui/element.py:2724
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
-msgstr ""
+msgstr "Lựa chọn đúng"
 
 #: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
-msgstr ""
+msgstr "Xóa tùy chọn"
 
 #: exe/webui/element.py:2361 exe/webui/element.py:2816
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
-msgstr ""
+msgstr "Xóa câu hỏi"
 
 #: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
-msgstr ""
+msgstr "Thêm lựa chọn khác"
 
 #: exe/webui/element.py:2497 exe/webui/element.py:2940
 msgid "Solution"
@@ -7482,7 +7700,7 @@ msgstr ""
 
 #: exe/webui/element.py:2831
 msgid "Add another option"
-msgstr ""
+msgstr "Thêm lựa chọn khác"
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
@@ -7537,11 +7755,11 @@ msgstr ""
 #: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:307
 #: exe/webui/galleryblock.py:308
 msgid "Add images"
-msgstr ""
+msgstr "Thêm ảnh"
 
 #: exe/webui/galleryblock.py:230 exe/webui/galleryblock.py:332
 msgid "No Images Loaded"
-msgstr ""
+msgstr "Không có ảnh nào"
 
 #: exe/webui/galleryblock.py:246 exe/webui/galleryblock.py:264
 msgid "Change Image"
@@ -7569,7 +7787,7 @@ msgstr ""
 
 #: exe/webui/galleryblock.py:300
 msgid "Delete Image"
-msgstr ""
+msgstr "Xóa ảnh"
 
 #: exe/webui/galleryblock.py:301
 msgid "Delete this image?"
@@ -7619,31 +7837,31 @@ msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
-msgstr ""
+msgstr "Độ phóng đại ban đầu"
 
 #: exe/webui/imagemagnifierblock.py:153
 msgid "Maximum zoom"
-msgstr ""
+msgstr "Độ phóng đại tối đa"
 
 #: exe/webui/imagemagnifierblock.py:159
 msgid "Small"
-msgstr ""
+msgstr "Nhỏ"
 
 #: exe/webui/imagemagnifierblock.py:160
 msgid "Medium"
-msgstr ""
+msgstr "Trung bình"
 
 #: exe/webui/imagemagnifierblock.py:161
 msgid "Large"
-msgstr ""
+msgstr "Lớn"
 
 #: exe/webui/imagemagnifierblock.py:162
 msgid "Extra large"
-msgstr ""
+msgstr "Rất lớn"
 
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
-msgstr ""
+msgstr "Kích thước kính lúp:"
 
 #: exe/webui/listablock.py:180
 msgid "Other words"
@@ -7673,7 +7891,7 @@ msgstr ""
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:100
 msgid "Add another Question"
-msgstr ""
+msgstr "Thêm câu hỏi khác"
 
 #: exe/webui/notablock.py:104
 msgid "Show/Hide"
@@ -7766,8 +7984,9 @@ msgid "Load"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:69
+#, fuzzy
 msgid "Select one or more images"
-msgstr ""
+msgstr "Chọn một bức ảnh"
 
 #: exe/webui/scripts/authoring.js:94
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
@@ -7802,12 +8021,14 @@ msgid "MP3 Audio (.mp3)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:378
+#, fuzzy
 msgid "Select an mp3 file"
-msgstr ""
+msgstr "Chọn một bức ảnh"
 
 #: exe/webui/scripts/authoring.js:386
+#, fuzzy
 msgid "Select a package"
-msgstr ""
+msgstr "Chọn một bức ảnh"
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
@@ -7824,8 +8045,9 @@ msgid "Do you want to overwrite the existing idevice {idevice}?"
 msgstr ""
 
 #: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
+#, fuzzy
 msgid "eXe Idevices"
-msgstr ""
+msgstr "Chức năng"
 
 #: exe/webui/scripts/editor.js:87
 msgid "Please save the idevice first, then try to export it."
@@ -7857,7 +8079,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
-msgstr ""
+msgstr "Đóng"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert"
@@ -8999,8 +9221,9 @@ msgid "Quote"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
+#, fuzzy
 msgid "Quote Language"
-msgstr ""
+msgstr "Chọn một bức ảnh"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
 msgid "Authorship"
@@ -9090,8 +9313,9 @@ msgid "Highlight syntax"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
+#, fuzzy
 msgid "Select a theme"
-msgstr ""
+msgstr "Chọn một bức ảnh"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
 msgid "Search"
@@ -9102,8 +9326,9 @@ msgid "Find next"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
+#, fuzzy
 msgid "Find previous"
-msgstr ""
+msgstr "Trước"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
 msgid "Replace all"
@@ -9122,8 +9347,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
+#, fuzzy
 msgid "Term"
-msgstr ""
+msgstr "Khác"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
 msgid "Term definition"
@@ -9261,8 +9487,9 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
+#, fuzzy
 msgid "Choose a type:"
-msgstr ""
+msgstr "Chọn ảnh"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
 msgid "Accordion"
@@ -9281,8 +9508,9 @@ msgid "A single content area with multiple panels."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
+#, fuzzy
 msgid "Pagination"
-msgstr ""
+msgstr "Lựa chọn"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
 msgid "Divide your content into different pages."
@@ -10145,12 +10373,14 @@ msgid "Include wrapper (improves presentation)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
 msgid "Markup language"
-msgstr ""
+msgstr "Chọn một bức ảnh"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
+#, fuzzy
 msgid "Please select a language"
-msgstr ""
+msgstr "Chọn một bức ảnh"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
@@ -10162,8 +10392,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
+#, fuzzy
 msgid "Light"
-msgstr ""
+msgstr "Phải"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
@@ -10557,12 +10788,14 @@ msgid "Behaviour"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
+#, fuzzy
 msgid "Link"
-msgstr ""
+msgstr "Canh lề:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
+#, fuzzy
 msgid "Instructions:"
-msgstr ""
+msgstr "Chỉ dẫn"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
@@ -10573,12 +10806,14 @@ msgid "No selection and not in link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
+#, fuzzy
 msgid "Pages"
-msgstr ""
+msgstr "Lớn"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
+#, fuzzy
 msgid "Link title"
-msgstr ""
+msgstr "Bài viết Wiki"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
@@ -10607,8 +10842,9 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
+#, fuzzy
 msgid "Definition:"
-msgstr ""
+msgstr "Câu hỏi"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
@@ -10620,8 +10856,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
+#, fuzzy
 msgid "Page"
-msgstr ""
+msgstr "Lớn"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
@@ -10664,8 +10901,9 @@ msgid "The Link is required"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
+#, fuzzy
 msgid "Please select a Page"
-msgstr ""
+msgstr "Chọn một bức ảnh"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
 msgid "The Link title is required"
@@ -11267,8 +11505,9 @@ msgid "Text color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:27
+#, fuzzy
 msgid "Links"
-msgstr ""
+msgstr "Canh lề:"
 
 #: exe/webui/tools/style-designer/langs/en.js:28
 msgid "Links color"
@@ -11283,8 +11522,9 @@ msgid "Author URL"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:33
+#, fuzzy
 msgid "Style name"
-msgstr ""
+msgstr "Tên tập tin:"
 
 #: exe/webui/tools/style-designer/langs/en.js:34
 msgid "Save to name the new Style."
@@ -11313,8 +11553,9 @@ msgid "Background color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:44
+#, fuzzy
 msgid "Select image"
-msgstr ""
+msgstr "Chọn một bức ảnh"
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
@@ -11509,8 +11750,9 @@ msgid "Save all changes? This cannot be undone."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:117
+#, fuzzy
 msgid "Style name:"
-msgstr ""
+msgstr "Tên tập tin:"
 
 #: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Your browser is not compatible with this tool."
@@ -11543,8 +11785,9 @@ msgid "Drag markers to pick a color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:134
+#, fuzzy
 msgid "Current"
-msgstr ""
+msgstr "Không chính xác"
 
 #: exe/webui/tools/style-designer/langs/en.js:140
 msgid "New Color - Press OK to Commit"
@@ -11626,12 +11869,12 @@ msgstr ""
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
 msgid "True"
-msgstr ""
+msgstr "Đúng"
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:218
 #: exe/webui/truefalseelement.py:264
 msgid "False"
-msgstr ""
+msgstr "Sai"
 
 #: exe/webui/wikipediablock.py:115
 msgid "English Wikipedia Article"
@@ -11719,7 +11962,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:141
 msgid "Site"
-msgstr ""
+msgstr "Trang web"
 
 #: exe/webui/wikipediablock.py:151
 msgid "Own site"

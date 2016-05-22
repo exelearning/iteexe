@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-22 13:57+0200\n"
+"POT-Creation-Date: 2016-05-22 14:14+0200\n"
 "PO-Revision-Date: 2008-01-28 00:15+1300\n"
 "Last-Translator: Pekka Henttonen <pekka.henttonen@uta.fi>\n"
 "Language: fi\n"
@@ -87,6 +87,9 @@ msgid ""
 "applet \n"
 "code field."
 msgstr ""
+"\"Etsi txt-tiedosto appletissa \n"
+"ja avaa se. Kopioi tiedoston sisältö appletin (ctrl-A, ctrl-C)\n"
+"code-kenttään."
 
 #: exe/engine/appletidevice.py:85
 msgid ""
@@ -97,6 +100,12 @@ msgid ""
 " \n"
 "you created in Geogebra.</p>"
 msgstr ""
+"<p>Jos lisättävä appletti on luotu jollain\n"
+" alasvetolistassa näkyvällä ohjelmalla, valitse ensin ohjelma\n"
+" ja sen jälkeen appletin sisältävä tiedosto</p>\n"
+"<p>esim. Geogebran ollessa kyseessä, valitse ensin Geogebra ja siteen "
+"lisää  \n"
+"ggb-tiedosto, joka on luotu Geogebralla.</p>"
 
 #: exe/engine/appletidevice.py:190
 #, python-format
@@ -154,7 +163,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
-msgstr ""
+msgstr "Liite"
 
 #: exe/engine/attachmentidevice.py:46
 msgid ""
@@ -182,6 +191,8 @@ msgid ""
 "Click <strong>Select a file</strong>, browse to the file you want to "
 "attach and select it."
 msgstr ""
+"Klikkaa <strong>Valitse tiedosto</strong>, etsi liitteeksi lisättävä "
+"tiedosto ja valitse se."
 
 #: exe/engine/attachmentidevice.py:72
 msgid ""
@@ -196,7 +207,7 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:105
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr ""
+msgstr "Liitteellä %s ei ole omistajaa"
 
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
@@ -211,10 +222,12 @@ msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
 msgstr ""
+"Valitse valinnainen kuva, joka näytetään opiskelijalla hänen vastattuaan "
+"kysymykseen"
 
 #: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
-msgstr ""
+msgstr "Tapaustutkimus"
 
 #: exe/engine/casestudyidevice.py:202
 msgid ""
@@ -565,6 +578,12 @@ msgid ""
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
 msgstr ""
+"<p>Aukkotehtävät ovat tekstejä tai lauseita, joihin on lisättävä "
+"puuttuva(t) sana(t). Niitä käytetään usein:</p><ol><li>Arvioimaan "
+"tietämystä kurssin peruskäsitteistä (ennakolta, osana opetuksta tai sen "
+"jälkeen).</li><li>Tarkastamaan luetun ymmärtämistä.</li><li>Testaamaan "
+"sanavarastoa.</li><li>Testaamaan kieliopin tai taivutuksen "
+"hallintaa.</li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -615,11 +634,12 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
 #: exe/webui/element.py:1522 exe/webui/listablock.py:259
 msgid "Cloze"
-msgstr ""
+msgstr "Aukko"
 
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
+#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -630,6 +650,10 @@ msgid ""
 "answer can be defined enclosing them with pipes (|). I.e.: "
 "|dog|cat|bird|</p>"
 msgstr ""
+"<p>Lisää aukkotehtävän teksti kenttään joko kopioimalla se siihen\n"
+" leikepöydän kautta tai kirjoittamalla se siihen käsin </p><p> Valitse "
+"piilotettavat sanat kaksoisklikkaamalla sanaa ja painamalla painiketta "
+"alla.</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -675,11 +699,11 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
 #: exe/engine/clozelangfpdidevice.py:296
 msgid "Allow auto completion when user filling the gaps."
-msgstr ""
+msgstr "Salli automaattinen täydennys käyttäjän täyttäessä aukkoja."
 
 #: exe/engine/clozeidevice.py:49
 msgid "Cloze Activity"
-msgstr ""
+msgstr "Aukkotehtävä"
 
 #: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
@@ -691,8 +715,9 @@ msgid "FPD - Cloze Activity (Modified)"
 msgstr ""
 
 #: exe/engine/clozelangfpdidevice.py:126
+#, fuzzy
 msgid "Clozelang"
-msgstr ""
+msgstr "Aukko"
 
 #: exe/engine/config.py:70 exe/engine/config.py:71 exe/engine/config.py:75
 #: exe/engine/config.py:102
@@ -838,6 +863,8 @@ msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
+"Lisää vihje tähän. Jos et \n"
+"halua antaa vihjettä, jätä kenttä tyhjäksi."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
@@ -892,7 +919,7 @@ msgstr ""
 msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
 " blank."
-msgstr ""
+msgstr "Lisää vihje tähän. Jos et halua antaa vihjettä, jätä kenttä tyhjäksi."
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
@@ -980,7 +1007,7 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:185
 msgid "Delete File"
-msgstr ""
+msgstr "Poista tiedosto"
 
 #: exe/engine/extendedfieldengine.py:306
 msgid "No File Uploaded Currently"
@@ -1061,6 +1088,8 @@ msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
+"Salli automaattinen täydennys \n"
+"täydennettäessä aukkoja."
 
 #: exe/engine/field.py:3324
 msgid ""
@@ -1110,7 +1139,7 @@ msgstr ""
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
-msgstr ""
+msgstr "Klikkaa Esikatselu-painiketta muuntaaksesi laTeX-tekstin kuvauksi"
 
 #: exe/engine/field.py:3679 exe/engine/field.py:3728
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
@@ -1238,6 +1267,8 @@ msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
 msgstr ""
+"Lisää \n"
+"teksti, joka liittyy tähän tiedostoon"
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:70
@@ -1253,7 +1284,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Description"
-msgstr ""
+msgstr "Kuvaus"
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:109
 msgid ""
@@ -1360,7 +1391,7 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
-msgstr ""
+msgstr "Kirjoita gallerian nimi"
 
 #: exe/engine/galleryidevice.py:473
 msgid ""
@@ -1564,7 +1595,7 @@ msgstr ""
 #: exe/engine/idevicestore.py:747 exe/engine/idevicestore.py:755
 #: exe/webui/questionelement.py:110
 msgid "Activity"
-msgstr ""
+msgstr "Aktiviteetti"
 
 #: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:711
 msgid ""
@@ -1621,6 +1652,8 @@ msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
+"Kuva tietämystä, joka opiskelijoilla tulisi olla \n"
+"selviytyäkseen jaksosta."
 
 #: exe/engine/idevicestore.py:643 exe/engine/idevicestore.py:750
 msgid ""
@@ -1675,7 +1708,7 @@ msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Choose an Image"
-msgstr ""
+msgstr "Valitse kuva"
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid ""
@@ -1684,6 +1717,9 @@ msgid ""
 "to be \n"
 "magnified."
 msgstr ""
+"Klikkaa \n"
+"allaolevaa kuvaa tai \"Lisää kuva\" -painiketta valitaksesi \n"
+"suurennettavan kuvan."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
@@ -1714,6 +1750,11 @@ msgid ""
 " \n"
 "image to display at its original size."
 msgstr ""
+"Valitse koko \n"
+"jolla kuva näytetään. Mitat ovat pikseleinä. Yleensä 100 \n"
+"pikseliä vastaa noin kolmea senttimetriä. Jätä molemmat kentät tyhjiksi, "
+"jos haluat \n"
+"että kuva näytetään alkuperäisessä koossa."
 
 #: exe/engine/imagemagnifieridevice.py:66
 #: exe/engine/imagemagnifieridevice.py:142
@@ -1721,6 +1762,8 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
+"Tasaus määrittää \n"
+"minne kuva sijoittuu ruudulla."
 
 #: exe/engine/imagemagnifieridevice.py:68
 #: exe/engine/imagemagnifieridevice.py:144
@@ -2107,7 +2150,7 @@ msgstr ""
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:41
 msgid "Auckland University of Technology"
-msgstr ""
+msgstr "Auckland University of Technology"
 
 #: exe/engine/multimediaidevice.py:42
 msgid ""
@@ -2117,7 +2160,7 @@ msgstr ""
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr ""
+msgstr "Valitse MP3-tiedosto"
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -2135,6 +2178,8 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
+"Tasaus määrittää \n"
+"minne ruudulla mediasoitin sijoittuu."
 
 #: exe/engine/multiselectidevice.py:45
 msgid "Multi-select"
@@ -2211,7 +2256,7 @@ msgstr ""
 
 #: exe/engine/package.py:1000
 msgid "?????"
-msgstr ""
+msgstr "?????"
 
 #: exe/engine/package.py:1038 exe/engine/package.py:1045
 #, python-format
@@ -2458,6 +2503,8 @@ msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
 msgstr ""
+"Kirjoita opiskelijoille kysymys \n"
+"jota haluat heidän pohtivan."
 
 #: exe/engine/reflectionfpdidevice.py:59
 msgid ""
@@ -2466,6 +2513,8 @@ msgid ""
 " \n"
 "reflective feedback.)"
 msgstr ""
+"Kuvaa, kuinka opiskelijoiden on arvioitava onnistumistaan tehtävässä. "
+"(Ohjeet ovata hyödyllisiä reflektoivan palautteen kannalta)"
 
 #: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
@@ -2684,6 +2733,8 @@ msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
 msgstr ""
+"Vihje auttaa opiskelijaa vastaamaan \n"
+"kysymykseen,"
 
 #: exe/engine/truefalseidevice.py:154
 #: exe/engine/verdaderofalsofpdidevice.py:156
@@ -2751,7 +2802,7 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
-msgstr ""
+msgstr "Artikkeli"
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
 msgid ""
@@ -2764,6 +2815,8 @@ msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
 msgstr ""
+"Kirjoita fraasi tai termi, jota haluat \n"
+"etsiä Wikipediasta."
 
 #: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
 #, python-format
@@ -2946,6 +2999,8 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
+"\"%s\" on jo olemassa.\n"
+"Yritä uudelleen toisella tiedostonimellä."
 
 #: exe/export/cmdlineexporter.py:92
 msgid "Export format not implemented"
@@ -2958,6 +3013,8 @@ msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
+"VIENTI EPÄONNISTUI!\n"
+"Viimeinen onnistunut vienti: %s"
 
 #: exe/export/scormpage.py:177 exe/export/websitepage.py:345
 #: exe/webui/common.py:473
@@ -3047,14 +3104,14 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
-msgstr ""
+msgstr "En voi käyttää hakemistoa "
 
 #: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:847 exe/jsui/mainpage.py:975
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
-msgstr ""
+msgstr ". Käytä vain ASCII-merkkejä nimessä."
 
 #: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
@@ -3149,7 +3206,7 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1064
 #: exe/jsui/mainpage_antes_jr_docs.py:1136
 msgid "EXPORT FAILED!"
-msgstr ""
+msgstr "VIENTI EPÄONNISTUI!"
 
 #: exe/jsui/mainpage.py:940 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
@@ -3168,6 +3225,8 @@ msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
+"PURKU EPÄONNISTUI!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1003 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
@@ -3202,6 +3261,8 @@ msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
+"VIENTI EPÄONNISTUI!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1057 exe/jsui/mainpage.py:1104
 #: exe/jsui/mainpage_antes_jr_docs.py:990
@@ -3244,6 +3305,8 @@ msgstr ""
 #: exe/jsui/mainpage.py:1289 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
+"Tiedostoa ei voitu ladata, voit lähettää sen tutkittavaksi osoitteella "
+"bugs@exelearning.org"
 
 #: exe/jsui/mainpage.py:1292 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
@@ -3593,7 +3656,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:136
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
-msgstr ""
+msgstr "Peruuta"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:792
 msgid "Ok"
@@ -4936,7 +4999,7 @@ msgstr ""
 #: exe/webui/galleryblock.py:303
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
-msgstr ""
+msgstr "Poista"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
@@ -4974,7 +5037,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
-msgstr ""
+msgstr "Tyhjennä lista viimeaikaisista projekteista"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
 msgid "Save As..."
@@ -6793,11 +6856,11 @@ msgstr ""
 
 #: exe/webui/appletblock.py:135
 msgid "Applet Type"
-msgstr ""
+msgstr "Appletin tyyppi:"
 
 #: exe/webui/appletblock.py:156 exe/webui/appletblock.py:166
 msgid "Add files"
-msgstr ""
+msgstr "Lisää tiedostoja"
 
 #: exe/webui/appletblock.py:162
 msgid "Accept URL"
@@ -6805,7 +6868,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:172
 msgid "Applet Code:"
-msgstr ""
+msgstr "Appletin koodi:"
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
 msgid "Filename:"
@@ -6828,7 +6891,7 @@ msgstr ""
 
 #: exe/webui/block.py:222
 msgid "Done"
-msgstr ""
+msgstr "Valmista"
 
 #: exe/webui/block.py:226
 msgid "Exit without saving?"
@@ -6856,7 +6919,7 @@ msgstr ""
 
 #: exe/webui/block.py:255
 msgid "---Move To---"
-msgstr ""
+msgstr "-- Siirrä --"
 
 #: exe/webui/block.py:260 exe/webui/editorpane.py:380
 msgid "Pedagogical Help"
@@ -6868,16 +6931,16 @@ msgstr ""
 
 #: exe/webui/block.py:318
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr ""
+msgstr "VIRHE: Block.renderViewContent called directly"
 
 #: exe/webui/block.py:328 exe/webui/editorpage.py:286
 #: exe/webui/editorpane.py:270
 msgid "Edit"
-msgstr ""
+msgstr "Muokkaa"
 
 #: exe/webui/casestudyblock.py:114 exe/webui/ejercicioresueltofpdblock.py:130
 msgid "Add another activity"
-msgstr ""
+msgstr "Lisää uusi aktiviteetti"
 
 #: exe/webui/casopracticofpdblock.py:68
 msgid "Situation"
@@ -7044,7 +7107,7 @@ msgstr ""
 #: exe/webui/common.py:479 exe/webui/common.py:494 exe/webui/element.py:2272
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
-msgstr ""
+msgstr "Oikein"
 
 #: exe/webui/common.py:480 exe/webui/element.py:2275
 msgid "Incorrect"
@@ -7091,8 +7154,9 @@ msgid "Total"
 msgstr ""
 
 #: exe/webui/common.py:505
+#, fuzzy
 msgid "Another word"
-msgstr ""
+msgstr "Lisää uusi vaihtoehto"
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7117,7 +7181,7 @@ msgstr ""
 
 #: exe/webui/common.py:839 exe/webui/common.py:842
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "Klikkaa saadaksesi täydennysohjeita"
 
 #: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
@@ -7133,7 +7197,7 @@ msgstr ""
 
 #: exe/webui/editorelement.py:149 exe/webui/element.py:602
 msgid "Button Caption"
-msgstr ""
+msgstr "Painikkeen teksti"
 
 #: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
 #: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
@@ -7167,7 +7231,7 @@ msgstr ""
 #: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/imagewithtextblock.py:88 exe/webui/multimediablock.py:92
 msgid "Align:"
-msgstr ""
+msgstr "Tasaus:"
 
 #: exe/webui/editorelement.py:268 exe/webui/element.py:1889
 msgid "Select Flash Object"
@@ -7181,7 +7245,7 @@ msgstr ""
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
-msgstr ""
+msgstr "Otsake: "
 
 #: exe/webui/editorpage.py:125
 msgid "Please enter an idevice name."
@@ -7238,28 +7302,30 @@ msgid ""
 "Add a single text line to an iDevice. Useful if you want the ability to "
 "place a label within the iDevice."
 msgstr ""
+"Lisää tekstirivi iDevice-komponenttiin. Tämä on tarpeen, jos haluat "
+"lisätä otsikon siihen"
 
 #: exe/webui/editorpane.py:87
 msgid ""
 "Add a text entry box to an iDevice. Used for entering larger amounts of "
 "textual content."
-msgstr ""
+msgstr "Lisää laatikko suuren tekstimäärän kirjoittamista varten."
 
 #: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
-msgstr ""
+msgstr "Lisää vuorovaikutteinen palaute iDevice-komponenttiin."
 
 #: exe/webui/editorpane.py:91
 msgid "Add a flash video to your iDevice."
-msgstr ""
+msgstr "Lisää flash-video iDevice-komponenttiin"
 
 #: exe/webui/editorpane.py:92
 msgid "Add an mp3 file to your iDevice."
-msgstr ""
+msgstr "Lisää MP3-tiedosto iDevice-komponenttiin."
 
 #: exe/webui/editorpane.py:93
 msgid "Add an attachment file to your iDevice."
-msgstr ""
+msgstr "Lisää liitetiedosto iDevice-komponenttiin."
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:152
 #: exe/webui/editorpane.py:160 exe/webui/editorpane.py:176
@@ -7292,7 +7358,7 @@ msgstr ""
 
 #: exe/webui/editorpane.py:265
 msgid "Actions"
-msgstr ""
+msgstr "Toiminnot"
 
 #: exe/webui/editorpane.py:332
 msgid "Pedagogical Tip"
@@ -7301,7 +7367,7 @@ msgstr ""
 #: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:163
 msgid "Emphasis"
-msgstr ""
+msgstr "Korostus"
 
 #: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:160
@@ -7342,30 +7408,30 @@ msgstr ""
 #: exe/webui/eleccionmultiplefpdblock.py:124 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:119
 msgid "Add another question"
-msgstr ""
+msgstr "Lisää uusi kysymys"
 
 #: exe/webui/element.py:72
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr ""
+msgstr "VIRHE: Element.process called directly with %s class"
 
 #: exe/webui/element.py:81
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
-msgstr ""
+msgstr "VIRHE: Element.renderEdit called directly with %s class"
 
 #: exe/webui/element.py:98
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
-msgstr ""
+msgstr "VIRHE: Element.renderView called directly with %s class"
 
 #: exe/webui/element.py:753 exe/webui/element.py:1174
 msgid "Add Image"
-msgstr ""
+msgstr "Lisää kuva"
 
 #: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
 msgid "Display as:"
-msgstr ""
+msgstr "Näytä nimellä: "
 
 #: exe/webui/element.py:786
 msgid "by"
@@ -7381,7 +7447,7 @@ msgstr ""
 
 #: exe/webui/element.py:1351 exe/webui/element.py:1684
 msgid "Cloze Text"
-msgstr ""
+msgstr "Aukkotehtävän teksti"
 
 #: exe/webui/element.py:1359 exe/webui/element.py:1692
 #: exe/webui/listablock.py:174
@@ -7425,7 +7491,7 @@ msgstr ""
 
 #: exe/webui/element.py:1702
 msgid "Check Caps?"
-msgstr ""
+msgstr "Isot kirjaimet päällä?"
 
 #: exe/webui/element.py:1712
 msgid "Show Score?"
@@ -7459,22 +7525,22 @@ msgstr ""
 #: exe/webui/element.py:2706 exe/webui/element.py:2724
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
-msgstr ""
+msgstr "Oikea vaihtoehto"
 
 #: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
-msgstr ""
+msgstr "Poista vaihtoehto"
 
 #: exe/webui/element.py:2361 exe/webui/element.py:2816
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
-msgstr ""
+msgstr "Poista kysymys"
 
 #: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
-msgstr ""
+msgstr "Lisää uusi vaihtoehto"
 
 #: exe/webui/element.py:2497 exe/webui/element.py:2940
 msgid "Solution"
@@ -7482,7 +7548,7 @@ msgstr ""
 
 #: exe/webui/element.py:2831
 msgid "Add another option"
-msgstr ""
+msgstr "Lisää uusi vaihtoehto"
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
@@ -7537,7 +7603,7 @@ msgstr ""
 #: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:307
 #: exe/webui/galleryblock.py:308
 msgid "Add images"
-msgstr ""
+msgstr "Lisää kuvia"
 
 #: exe/webui/galleryblock.py:230 exe/webui/galleryblock.py:332
 msgid "No Images Loaded"
@@ -7545,7 +7611,7 @@ msgstr ""
 
 #: exe/webui/galleryblock.py:246 exe/webui/galleryblock.py:264
 msgid "Change Image"
-msgstr ""
+msgstr "Vaihda kuva"
 
 #: exe/webui/galleryblock.py:271
 msgid "Move Image Left"
@@ -7569,7 +7635,7 @@ msgstr ""
 
 #: exe/webui/galleryblock.py:300
 msgid "Delete Image"
-msgstr ""
+msgstr "Poista kuva"
 
 #: exe/webui/galleryblock.py:301
 msgid "Delete this image?"
@@ -7673,7 +7739,7 @@ msgstr ""
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:100
 msgid "Add another Question"
-msgstr ""
+msgstr "Lisää uusi kysymys"
 
 #: exe/webui/notablock.py:104
 msgid "Show/Hide"
@@ -7802,12 +7868,14 @@ msgid "MP3 Audio (.mp3)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:378
+#, fuzzy
 msgid "Select an mp3 file"
-msgstr ""
+msgstr "Valitse MP3-tiedosto"
 
 #: exe/webui/scripts/authoring.js:386
+#, fuzzy
 msgid "Select a package"
-msgstr ""
+msgstr "Poista kuva"
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
@@ -7857,7 +7925,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
-msgstr ""
+msgstr "Sulje"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert"
@@ -9090,8 +9158,9 @@ msgid "Highlight syntax"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
+#, fuzzy
 msgid "Select a theme"
-msgstr ""
+msgstr "Poista kuva"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
 msgid "Search"
@@ -9261,8 +9330,9 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
+#, fuzzy
 msgid "Choose a type:"
-msgstr ""
+msgstr "Valitse kuva"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
 msgid "Accordion"
@@ -10557,12 +10627,14 @@ msgid "Behaviour"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
+#, fuzzy
 msgid "Link"
-msgstr ""
+msgstr "Tasaus:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
+#, fuzzy
 msgid "Instructions:"
-msgstr ""
+msgstr "Toiminnot"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
@@ -11090,8 +11162,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
+#, fuzzy
 msgid "Editor"
-msgstr ""
+msgstr "Muokkaa"
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
@@ -11267,16 +11340,18 @@ msgid "Text color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:27
+#, fuzzy
 msgid "Links"
-msgstr ""
+msgstr "Tasaus:"
 
 #: exe/webui/tools/style-designer/langs/en.js:28
 msgid "Links color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:30
+#, fuzzy
 msgid "Style description"
-msgstr ""
+msgstr "Kuvaus"
 
 #: exe/webui/tools/style-designer/langs/en.js:32
 msgid "Author URL"
@@ -11313,8 +11388,9 @@ msgid "Background color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:44
+#, fuzzy
 msgid "Select image"
-msgstr ""
+msgstr "Poista kuva"
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
@@ -11439,8 +11515,9 @@ msgid "Grey"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:94
+#, fuzzy
 msgid "With emphasis"
-msgstr ""
+msgstr "Korostus"
 
 #: exe/webui/tools/style-designer/langs/en.js:95
 msgid "Title color"
@@ -11635,7 +11712,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:115
 msgid "English Wikipedia Article"
-msgstr ""
+msgstr "Englanninkielinen Wikipedia-artikkeli"
 
 #: exe/webui/wikipediablock.py:116
 msgid "Basque Wikipedia Article"
@@ -11643,15 +11720,15 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:117
 msgid "Catalan Wikipedia Article"
-msgstr ""
+msgstr "Katalaaninkielinen Wikipedia-artikkeli"
 
 #: exe/webui/wikipediablock.py:118
 msgid "Chinese Wikipedia Article"
-msgstr ""
+msgstr "Kiinankielinen Wikipedia-artikkeli"
 
 #: exe/webui/wikipediablock.py:119
 msgid "Dutch Wikipedia Article"
-msgstr ""
+msgstr "Hollanninkielinen Wikipedia-artikkeli"
 
 #: exe/webui/wikipediablock.py:120
 msgid "French Wikipedia Article"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-22 13:57+0200\n"
+"POT-Creation-Date: 2016-05-22 14:14+0200\n"
 "PO-Revision-Date: 2006-07-28 15:37+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language: sv\n"
@@ -70,7 +70,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
-msgstr ""
+msgstr "University of Auckland"
 
 #: exe/engine/appletidevice.py:79
 msgid ""
@@ -99,14 +99,14 @@ msgid ""
 msgstr ""
 
 #: exe/engine/appletidevice.py:190
-#, python-format
+#, fuzzy, python-format
 msgid "file %s has no parentNode"
-msgstr ""
+msgstr "Bilaga %s har ingen föräldranod"
 
 #: exe/engine/appletidevice.py:192 exe/engine/attachmentidevice.py:107
 #, python-format
 msgid "iDevice %s has no package"
-msgstr ""
+msgstr "iDevice %s har inget paket"
 
 #: exe/engine/appletidevice.py:443
 msgid "Sorry, this URL is unreachable"
@@ -154,7 +154,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
-msgstr ""
+msgstr "Bilaga"
 
 #: exe/engine/attachmentidevice.py:46
 msgid ""
@@ -175,13 +175,13 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
-msgstr ""
+msgstr "Beskrivning:"
 
 #: exe/engine/attachmentidevice.py:69
 msgid ""
 "Click <strong>Select a file</strong>, browse to the file you want to "
 "attach and select it."
-msgstr ""
+msgstr "Klicka på <strong>Välj fil</strong>, navigera till filen och välj den."
 
 #: exe/engine/attachmentidevice.py:72
 msgid ""
@@ -196,14 +196,14 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:105
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr ""
+msgstr "Bilaga %s har ingen föräldranod"
 
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/tools/style-designer/langs/en.js:46
 msgid "Image"
-msgstr ""
+msgstr "Bild"
 
 #: exe/engine/casestudyidevice.py:65
 #: exe/engine/ejercicioresueltofpdidevice.py:65
@@ -214,9 +214,10 @@ msgstr ""
 
 #: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
-msgstr ""
+msgstr "Fallstudie"
 
 #: exe/engine/casestudyidevice.py:202
+#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -239,6 +240,12 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"En case-studie är en berättelse som förmedlar ett \n"
+"pedagogisk budskap. En case-studie kan användas för att beskriva en "
+"realistisk situation \n"
+"som ger eleven möjlighet att tillämpa sin egen kunskap och erfarenhet. "
+"När \n"
+"du designar en case-studie kan det vara lämpligt att beakta följande:<ul>"
 
 #: exe/engine/casestudyidevice.py:219
 #: exe/engine/ejercicioresueltofpdidevice.py:218
@@ -255,7 +262,7 @@ msgstr ""
 #: exe/engine/ejercicioresueltofpdidevice.py:222
 #: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
-msgstr ""
+msgstr "Story:"
 
 #: exe/engine/casestudyidevice.py:228
 #: exe/engine/ejercicioresueltofpdidevice.py:227
@@ -350,8 +357,9 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+#, fuzzy
 msgid "Title"
-msgstr ""
+msgstr "titel"
 
 #: exe/engine/clickinorderidevice.py:61
 msgid "Game Instructions"
@@ -556,6 +564,7 @@ msgstr ""
 
 #: exe/engine/clozefpdidevice.py:52 exe/engine/clozeidevice.py:51
 #: exe/engine/clozelangfpdidevice.py:52
+#, fuzzy
 msgid ""
 "<p>Cloze exercises are texts or sentences where students must fill in "
 "missing words. They are often used for the following "
@@ -565,6 +574,10 @@ msgid ""
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
 msgstr ""
+"<p> Avslutningstest är tester eller övningar där ord eller fraser har "
+"uteslutits. Eleven skall avsluta texten genom att fylla i det som saknas."
+" Dessa tester kan exempelvis användas för att:</p><ol><li>Diagnostiska "
+"tester</li><li>Läsförståelse</li><li>Testa ordkunskap och gramatik</li>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -602,7 +615,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 msgid "Instructions"
-msgstr ""
+msgstr "Instruktioner"
 
 #: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
 #: exe/engine/clozelangfpdidevice.py:121
@@ -615,11 +628,12 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
 #: exe/webui/element.py:1522 exe/webui/listablock.py:259
 msgid "Cloze"
-msgstr ""
+msgstr "Stäng"
 
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
+#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -630,6 +644,9 @@ msgid ""
 "answer can be defined enclosing them with pipes (|). I.e.: "
 "|dog|cat|bird|</p>"
 msgstr ""
+"Fyll i texten till slutövningen genom att klistra in eller skriva i "
+"fältet. Markera ord som du vill dölja genom att dubbelklicka på ordet och"
+" klicka på <i>Visa/dölj ord</i> -knappen."
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -648,7 +665,7 @@ msgstr ""
 #: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
-msgstr ""
+msgstr "Återkoppling"
 
 #: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
 #: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
@@ -656,43 +673,50 @@ msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
 msgstr ""
+"Fyll i den feedback du vill ge eleven i feedbackfältet. Fältet kan även "
+"lämnas blankt."
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
 msgid "Instructions For Learners"
-msgstr ""
+msgstr "Instruktioner för elever"
 
 #: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
 #: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
-msgstr ""
+msgstr "Fyll i elevinstruktioner"
 
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:284
 msgid "Read the paragraph below and fill in the missing words"
-msgstr ""
+msgstr "Läs nedanstående stycke och fyll i de ord som saknas"
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
 #: exe/engine/clozelangfpdidevice.py:296
+#, fuzzy
 msgid "Allow auto completion when user filling the gaps."
 msgstr ""
+"Tillåt automatiska förslag (auto completion)\n"
+" när användaren fyller i."
 
 #: exe/engine/clozeidevice.py:49
 msgid "Cloze Activity"
-msgstr ""
+msgstr "Stäng aktivitet"
 
 #: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
+#, fuzzy
 msgid "Read the paragraph below and fill in the missing words."
-msgstr ""
+msgstr "Läs nedanstående stycke och fyll i de ord som saknas"
 
 #: exe/engine/clozelangfpdidevice.py:50
 msgid "FPD - Cloze Activity (Modified)"
 msgstr ""
 
 #: exe/engine/clozelangfpdidevice.py:126
+#, fuzzy
 msgid "Clozelang"
-msgstr ""
+msgstr "Stäng"
 
 #: exe/engine/config.py:70 exe/engine/config.py:71 exe/engine/config.py:75
 #: exe/engine/config.py:102
@@ -764,6 +788,7 @@ msgid "FPD - Translation"
 msgstr ""
 
 #: exe/engine/ejercicioresueltofpdidevice.py:200
+#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -786,6 +811,12 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"En case-studie är en berättelse som förmedlar ett \n"
+"pedagogisk budskap. En case-studie kan användas för att beskriva en "
+"realistisk situation \n"
+"som ger eleven möjlighet att tillämpa sin egen kunskap och erfarenhet. "
+"När \n"
+"du designar en case-studie kan det vara lämpligt att beakta följande:<ul>"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 msgid "FPD - Multi Choice Activity"
@@ -838,6 +869,8 @@ msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
+"Skriv en ledtråd här. Lämna\n"
+" fältet blankt om Du inte vill ge någon ledtråd"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
@@ -857,15 +890,23 @@ msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:108
 #: exe/engine/multichoiceidevice.py:106
+#, fuzzy
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add Another Option\" button. Delete"
 " options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
+"Skriv in varje alternativ som eleven kan välja\n"
+" från i respektive val-box. Du kan lägga till val genom att klicka\n"
+" på \"LÄGG TILL NYTT ALTERNATIV\" -knappen. Du kan ta bort alternativ "
+"genom\n"
+" att klicka på\n"
+" \"x\" intill respektive alternativ."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:111
 #: exe/engine/multichoiceidevice.py:109
+#, fuzzy
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular option. If you don't "
@@ -876,6 +917,11 @@ msgid ""
 " answer\"\n"
 "for the other options."
 msgstr ""
+"Fyll i den feedback du vill ge eleven när denne väljer en viss fråga. Om "
+"du inte fyller i\n"
+" detta fält kommer eXe automatiskt att fylla i: \n"
+"\"Rätt svar\" som indikation på val av rätt svar, respektive \n"
+"\"Fel svar\" för alla andra alternativ."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3754
 #: exe/engine/field.py:3819 exe/engine/multichoiceidevice.py:131
@@ -885,14 +931,17 @@ msgstr ""
 #: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
-msgstr ""
+msgstr "Fråga"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:287
 #: exe/engine/multichoiceidevice.py:285
+#, fuzzy
 msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
 " blank."
 msgstr ""
+"Skriv en ledtråd här. Lämna\n"
+" fältet blankt om Du inte vill ge någon ledtråd"
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
@@ -970,8 +1019,9 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:158
 #: exe/webui/appletblock.py:168
+#, fuzzy
 msgid "Upload"
-msgstr ""
+msgstr "Ladda"
 
 #: exe/engine/extendedfieldengine.py:298
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
@@ -979,8 +1029,9 @@ msgid "File"
 msgstr ""
 
 #: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:185
+#, fuzzy
 msgid "Delete File"
-msgstr ""
+msgstr "Radera"
 
 #: exe/engine/extendedfieldengine.py:306
 msgid "No File Uploaded Currently"
@@ -992,7 +1043,7 @@ msgstr ""
 #: exe/webui/multimediablock.py:87
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
-msgstr ""
+msgstr "Ingen"
 
 #: exe/engine/extendedfieldengine.py:570
 msgid "is not a valid number - please try again<br/>"
@@ -1000,7 +1051,7 @@ msgstr ""
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
-msgstr ""
+msgstr "Extern webbplats"
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -1061,6 +1112,8 @@ msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
+"Tillåt automatiska förslag (auto completion)\n"
+" när användaren fyller i."
 
 #: exe/engine/field.py:3324
 msgid ""
@@ -1096,8 +1149,9 @@ msgid ""
 msgstr ""
 
 #: exe/engine/field.py:3574
+#, fuzzy
 msgid "Type a discussion topic here."
-msgstr ""
+msgstr "Diskussionsämne:"
 
 #: exe/engine/field.py:3603
 msgid ""
@@ -1107,10 +1161,13 @@ msgid ""
 msgstr ""
 
 #: exe/engine/field.py:3611
+#, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr ""
+"Tillåt automatiska förslag (auto completion)\n"
+" när användaren fyller i."
 
 #: exe/engine/field.py:3679 exe/engine/field.py:3728
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
@@ -1118,21 +1175,22 @@ msgstr ""
 #: exe/webui/element.py:2576 exe/webui/element.py:2668
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
-msgstr ""
+msgstr "Val"
 
 #: exe/engine/field.py:3757 exe/engine/field.py:3823
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:452
 msgid "Hint"
-msgstr ""
+msgstr "Ledtråd"
 
 #: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2381
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
 #: exe/webui/testquestionelement.py:110
+#, fuzzy
 msgid "Options"
-msgstr ""
+msgstr "Val"
 
 #: exe/engine/field.py:3905
 msgid ""
@@ -1148,21 +1206,31 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:47
 #: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
 msgid "Question:"
-msgstr ""
+msgstr "Fråga:"
 
 #: exe/engine/field.py:3913
+#, fuzzy
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
 " options by \n"
 "clicking the red X next to the option."
 msgstr ""
+"Skriv in varje alternativ som eleven kan välja\n"
+" från i respektive val-box. Du kan lägga till val genom att klicka\n"
+" på \"LÄGG TILL NYTT ALTERNATIV\" -knappen. Du kan ta bort alternativ "
+"genom\n"
+" att klicka på\n"
+" \"x\" intill respektive alternativ."
 
 #: exe/engine/field.py:3917
+#, fuzzy
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr ""
+"För att ange rätt svar, klicka på \n"
+" radioknappen intill det rätta svaret"
 
 #: exe/engine/field.py:3920
 msgid ""
@@ -1174,8 +1242,9 @@ msgstr ""
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:204
+#, fuzzy
 msgid "Feedback:"
-msgstr ""
+msgstr "Återkoppling"
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
@@ -1219,8 +1288,9 @@ msgid "Intro Text"
 msgstr ""
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
+#, fuzzy
 msgid "Flash Movie"
-msgstr ""
+msgstr "Flash"
 
 #: exe/engine/flashmovieidevice.py:41
 msgid ""
@@ -1234,10 +1304,13 @@ msgid ""
 msgstr ""
 
 #: exe/engine/flashmovieidevice.py:52
+#, fuzzy
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
 msgstr ""
+"Tillåt automatiska förslag (auto completion)\n"
+" när användaren fyller i."
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:70
@@ -1253,17 +1326,20 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Description"
-msgstr ""
+msgstr "Beskrivning"
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:109
+#, fuzzy
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr ""
+"Tillåt automatiska förslag (auto completion)\n"
+" när användaren fyller i."
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
-msgstr ""
+msgstr "Flash med text"
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1276,16 +1352,22 @@ msgid ""
 msgstr ""
 
 #: exe/engine/flashwithtextidevice.py:53
+#, fuzzy
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
 msgstr ""
+"Tillåt automatiska förslag (auto completion)\n"
+" när användaren fyller i."
 
 #: exe/engine/flashwithtextidevice.py:58 exe/engine/flashwithtextidevice.py:118
+#, fuzzy
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr ""
+"Tillåt automatiska förslag (auto completion)\n"
+" när användaren fyller i."
 
 #: exe/engine/flashwithtextidevice.py:60 exe/engine/flashwithtextidevice.py:120
 msgid ""
@@ -1308,11 +1390,16 @@ msgid ""
 "built and \n"
 "delivered."
 msgstr ""
+"Huvudelen av en lärresurs kommer att användas\n"
+" för att beskriva sammanhang, ge instruktioner och tillhandahålla "
+"generell information.\n"
+" Detta utgörett ramverk inom vilket de pedagogiska\n"
+" aktiviteterna skapas. "
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
 msgid "Free Text"
-msgstr ""
+msgstr "Fritext"
 
 #: exe/engine/freetextfpdidevice.py:47 exe/engine/freetextidevice.py:46
 msgid ""
@@ -1324,23 +1411,25 @@ msgstr ""
 
 #: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
-msgstr ""
+msgstr "Detta är ett fritextfält där allmänt utbildningsinnehåll kan fyllas i."
 
 #: exe/engine/galleryidevice.py:140 exe/engine/galleryidevice.py:191
+#, fuzzy
 msgid "No Thumbnail Available. Could not load original image."
-msgstr ""
+msgstr "Ingen förhandsgranskning tillgänglig. Kan inte förminska bilden"
 
 #: exe/engine/galleryidevice.py:148 exe/engine/galleryidevice.py:198
+#, fuzzy
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr ""
+msgstr "Ingen förhandsgranskning tillgänglig. Kan inte förminska bilden"
 
 #: exe/engine/galleryidevice.py:221
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr ""
+msgstr "Ingen förhandsgranskning tillgänglig. Kan inte förminska bilden"
 
 #: exe/engine/galleryidevice.py:458
 msgid "Image Gallery"
-msgstr ""
+msgstr "Bildgalleri"
 
 #: exe/engine/galleryidevice.py:459
 msgid "eXe Project"
@@ -1356,7 +1445,7 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:463
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr ""
+msgstr "Använd denna iDevice om Du har många bilder att visa"
 
 #: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
@@ -1370,13 +1459,14 @@ msgid ""
 msgstr ""
 
 #: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:663
+#, fuzzy
 msgid "Reading Activity 0.11"
-msgstr ""
+msgstr "Läsaktivitet"
 
 #: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:510
 #: exe/engine/idevicestore.py:554
 msgid "Reading Activity"
-msgstr ""
+msgstr "Läsaktivitet"
 
 #: exe/engine/hangmanidevice.py:51 exe/webui/common.py:490
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
@@ -1550,21 +1640,25 @@ msgstr ""
 
 #: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:706
 msgid "What to read"
-msgstr ""
+msgstr "Vad skall läsas"
 
 #: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:707
+#, fuzzy
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr ""
+"Fyll i referenser till det valda inläsningsmaterialet.\n"
+" Utformningen av referenser kan göras baserad på den referensstil som "
+"används i din organisation."
 
 #: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:640
 #: exe/engine/idevicestore.py:648 exe/engine/idevicestore.py:710
 #: exe/engine/idevicestore.py:747 exe/engine/idevicestore.py:755
 #: exe/webui/questionelement.py:110
 msgid "Activity"
-msgstr ""
+msgstr "Aktivitet"
 
 #: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:711
 msgid ""
@@ -1573,19 +1667,25 @@ msgid ""
 msgstr ""
 
 #: exe/engine/idevicestore.py:606 exe/engine/idevicestore.py:715
+#, fuzzy
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a "
 "question \n"
 "or providing a statement to begin a debate."
 msgstr ""
+"Detta element kan användas flexibelt. Använd det för att ge en summering\n"
+" inläsningmaterialet eller som en utgångspunkt för fortsatt analys av\n"
+" materialet genom att presentera en frågeställning eller ett påstående "
+"som kan\n"
+" utgöra grunden för en debatt."
 
 #: exe/engine/idevicestore.py:612 exe/engine/idevicestore.py:621
 #: exe/engine/idevicestore.py:719 exe/engine/idevicestore.py:728
 #: exe/engine/package.py:653 exe/engine/package.py:664
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:216
 msgid "Objectives"
-msgstr ""
+msgstr "Mål"
 
 #: exe/engine/idevicestore.py:615 exe/engine/idevicestore.py:722
 msgid ""
@@ -1593,17 +1693,20 @@ msgid ""
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr ""
+"Målsättning beskriver det förväntade reultatet av momentet och bör\n"
+" definiera vad eleverna skall kunna när\n"
+" de avslutat momentet"
 
 #: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
 msgid "Type the learning objectives for this resource."
-msgstr ""
+msgstr "Beskriv målet för denna resurs,"
 
 #: exe/engine/idevicestore.py:625 exe/engine/idevicestore.py:635
 #: exe/engine/idevicestore.py:732 exe/engine/idevicestore.py:742
 #: exe/engine/package.py:683 exe/engine/package.py:694
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
 msgid "Preknowledge"
-msgstr ""
+msgstr "Förkunskaper"
 
 #: exe/engine/idevicestore.py:628 exe/engine/idevicestore.py:735
 msgid ""
@@ -1615,12 +1718,17 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools "
 "</li></ul>\n"
 msgstr ""
+"Förkunskaper refererar till den kunskap som eleven bör ha sedan tidigare\n"
+" för att klara av ett moment. Exempel på förkunskaper är: <ul>\n"
+"<li> Eleven måste kunna lösa en andragradsekvation </li>\n"
+"<li> Eleven skall ha känna till grundläggande fonetik </li>\n"
+"</ul>\n"
 
 #: exe/engine/idevicestore.py:636 exe/engine/idevicestore.py:743
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
-msgstr ""
+msgstr "Beskriv de förkunskaper som eleven bör ha."
 
 #: exe/engine/idevicestore.py:643 exe/engine/idevicestore.py:750
 msgid ""
@@ -1629,10 +1737,14 @@ msgid ""
 "conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
+"En aktivitet kan definieras som en uppgift eller som en serie av "
+"uppgifter som eleven måste\n"
+" göra. Beskriv uppgiften tydligt och överväg alla omständigheter\n"
+" som kan utgöra potentiella problem för eleven."
 
 #: exe/engine/idevicestore.py:649 exe/engine/idevicestore.py:756
 msgid "Describe the tasks the learners should complete."
-msgstr ""
+msgstr "Beskriv den uppgift som eleven skall göra."
 
 #: exe/engine/idevicestore.py:666
 msgid ""
@@ -1662,8 +1774,9 @@ msgid ""
 msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:41
+#, fuzzy
 msgid "Image Magnifier"
-msgstr ""
+msgstr "Bildgalleri"
 
 #: exe/engine/imagemagnifieridevice.py:43
 msgid ""
@@ -1674,8 +1787,9 @@ msgid ""
 msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:49
+#, fuzzy
 msgid "Choose an Image"
-msgstr ""
+msgstr "Välj bild"
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid ""
@@ -1691,19 +1805,25 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/tools/style-designer/langs/en.js:24
 msgid "Text"
-msgstr ""
+msgstr "Text"
 
 #: exe/engine/imagemagnifieridevice.py:55 exe/engine/multimediaidevice.py:65
+#, fuzzy
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
 msgstr ""
+"Tillåt automatiska förslag (auto completion)\n"
+" när användaren fyller i."
 
 #: exe/engine/imagemagnifieridevice.py:60
+#, fuzzy
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
 msgstr ""
+"Tillåt automatiska förslag (auto completion)\n"
+" när användaren fyller i."
 
 #: exe/engine/imagemagnifieridevice.py:62
 msgid ""
@@ -1748,7 +1868,7 @@ msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
-msgstr ""
+msgstr "Bild med text"
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -1778,16 +1898,22 @@ msgid ""
 msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:66
+#, fuzzy
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
 msgstr ""
+"Tillåt automatiska förslag (auto completion)\n"
+" när användaren fyller i."
 
 #: exe/engine/imagewithtextidevice.py:71 exe/engine/imagewithtextidevice.py:118
+#, fuzzy
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
 msgstr ""
+"Tillåt automatiska förslag (auto completion)\n"
+" när användaren fyller i."
 
 #: exe/engine/listaidevice.py:66
 msgid "DropDown Activity"
@@ -1881,8 +2007,9 @@ msgid "Documents"
 msgstr ""
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
+#, fuzzy
 msgid "Maths"
-msgstr ""
+msgstr "Artikel"
 
 #: exe/engine/mathidevice.py:43
 msgid ""
@@ -2098,8 +2225,9 @@ msgid "Match Tile2"
 msgstr ""
 
 #: exe/engine/multichoiceidevice.py:60
+#, fuzzy
 msgid "Multi-choice"
-msgstr ""
+msgstr "Fleralternativsfråga"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
@@ -2116,8 +2244,9 @@ msgid ""
 msgstr ""
 
 #: exe/engine/multimediaidevice.py:49
+#, fuzzy
 msgid "Choose an MP3 file"
-msgstr ""
+msgstr "Välj bild"
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -2190,20 +2319,20 @@ msgstr ""
 
 #: exe/engine/package.py:327
 msgid "Topic"
-msgstr ""
+msgstr "Ämne"
 
 #: exe/engine/package.py:327
 msgid "Section"
-msgstr ""
+msgstr "Sektion"
 
 #: exe/engine/package.py:327
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
 msgid "Unit"
-msgstr ""
+msgstr "Enhet"
 
 #: exe/engine/package.py:348
 msgid "Home"
-msgstr ""
+msgstr "Hem"
 
 #: exe/engine/package.py:503
 msgid "Metadata creation date"
@@ -2211,7 +2340,7 @@ msgstr ""
 
 #: exe/engine/package.py:1000
 msgid "?????"
-msgstr ""
+msgstr "?????"
 
 #: exe/engine/package.py:1038 exe/engine/package.py:1045
 #, python-format
@@ -2223,7 +2352,7 @@ msgstr ""
 #: exe/engine/package.py:1449 exe/jsui/scripts/app/controller/Toolbar.js:418
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "iDevice Editor"
-msgstr ""
+msgstr "iDevice Editor"
 
 #: exe/engine/package.py:1570
 msgid "My Catalog"
@@ -2272,8 +2401,9 @@ msgid "User has to place various objects in the correct place."
 msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
+#, fuzzy
 msgid "This is a free text field."
-msgstr ""
+msgstr "Detta är ett valfritt fält"
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
@@ -2396,14 +2526,18 @@ msgid ""
 msgstr ""
 
 #: exe/engine/quiztestidevice.py:126 exe/engine/quiztestidevice.py:202
+#, fuzzy
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
+"För att ange rätt svar, klicka på \n"
+" radioknappen intill det rätta svaret"
 
 #: exe/engine/quiztestidevice.py:244
+#, fuzzy
 msgid "SCORM Quiz"
-msgstr ""
+msgstr "SCORM-test experimentellt"
 
 #: exe/engine/quiztestidevice.py:246
 msgid ""
@@ -2450,14 +2584,25 @@ msgid ""
 "be \n"
 "effective feedback tools."
 msgstr ""
+"Reflektion är en undervisningsmetod som ofta används\n"
+" för att koppla samman teori och praktik. Reflekterande uppgifter ger "
+"eleven\n"
+" en möjlighet att reflektera över sina egna observationer innan dessa "
+"rapporteras.\n"
+" Journaler, dagböcker, profiler och portföljer är\n"
+" användbara verktyg för att samla observationsdata. Rubriker och guider "
+"kan vara effektiva verktyg för feedback."
 
 #: exe/engine/reflectionfpdidevice.py:57
 #: exe/engine/reflectionfpdmodifidevice.py:56
 #: exe/engine/reflectionidevice.py:55
+#, fuzzy
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
 msgstr ""
+"Fyll i alla detaljer om den aktivitet som eleven\n"
+" skall reflektera över."
 
 #: exe/engine/reflectionfpdidevice.py:59
 msgid ""
@@ -2466,13 +2611,16 @@ msgid ""
 " \n"
 "reflective feedback.)"
 msgstr ""
+"Beskriv hur eleverna skall få tillgång till\n"
+" sina resultat för en övning. (Rubriker är användbara för att ge\n"
+" reflektiv feedback.)"
 
 #: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:201
 msgid "Reflective question:"
-msgstr ""
+msgstr "Reflektiv fråga"
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
 msgid "FPD - Think About It (without Feedback)"
@@ -2480,7 +2628,7 @@ msgstr ""
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
-msgstr ""
+msgstr "Reflektion"
 
 #: exe/engine/reflectionidevice.py:57
 msgid ""
@@ -2665,7 +2813,7 @@ msgstr ""
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
-msgstr ""
+msgstr "Sant -eller falsktfråga"
 
 #: exe/engine/truefalseidevice.py:146
 #: exe/engine/verdaderofalsofpdidevice.py:147
@@ -2677,6 +2825,9 @@ msgid ""
 "either/or \n"
 "responses."
 msgstr ""
+"Sant/falskt-frågor presenterar ett påstående som eleven skall ta "
+"ställning till. Denna typ av frågor kan ibland lämpa sig\n"
+" för faktafrågor ellerfrågor som kan besvaras med antingen eller."
 
 #: exe/engine/truefalseidevice.py:151
 #: exe/engine/verdaderofalsofpdidevice.py:153
@@ -2696,12 +2847,15 @@ msgstr ""
 
 #: exe/engine/truefalseidevice.py:158
 #: exe/engine/verdaderofalsofpdidevice.py:160
+#, fuzzy
 msgid ""
 "Enter any feedback you wish to provide \n"
 "to the learner. This field may be left blank. if this field is left blank"
 " \n"
 "default feedback will be provided."
 msgstr ""
+"Fyll i den feedback du vill ge eleven i feedbackfältet. Fältet kan även "
+"lämnas blankt."
 
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
 #: exe/engine/verdaderofalsofpdidevice.py:167
@@ -2722,14 +2876,20 @@ msgid ""
 "or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
+"Fyll i den feedback du vill ge eleven när denne väljer en viss fråga. Om "
+"du inte fyller i\n"
+" detta fält kommer eXe automatiskt att fylla i: \n"
+"\"Rätt svar\" som indikation på val av rätt svar, respektive \n"
+"\"Fel svar\" för alla andra alternativ."
 
 #: exe/engine/verdaderofalsofpdidevice.py:145
 msgid "FPD - True/False Activity"
 msgstr ""
 
 #: exe/engine/wikipediaidevice.py:53
+#, fuzzy
 msgid "Wiki Article"
-msgstr ""
+msgstr "Wikibokartiklar"
 
 #: exe/engine/wikipediaidevice.py:55
 msgid ""
@@ -2751,7 +2911,7 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
-msgstr ""
+msgstr "Artikel"
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
 msgid ""
@@ -2774,7 +2934,7 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:315
 msgid "http://en.wikipedia.org/"
-msgstr ""
+msgstr "http://en.wikipedia.org/"
 
 #: exe/exe_do:68
 msgid ""
@@ -2961,13 +3121,15 @@ msgstr ""
 
 #: exe/export/scormpage.py:177 exe/export/websitepage.py:345
 #: exe/webui/common.py:473
+#, fuzzy
 msgid "Previous"
-msgstr ""
+msgstr "Förhandsgranska"
 
 #: exe/export/scormpage.py:178 exe/export/websitepage.py:351
 #: exe/webui/common.py:474
+#, fuzzy
 msgid "Next"
-msgstr ""
+msgstr "Text"
 
 #: exe/export/singlepage.py:249
 msgid "You can close this window"
@@ -3046,15 +3208,16 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
+#, fuzzy
 msgid "Cannot access directory named "
-msgstr ""
+msgstr "Har ej tillträde till"
 
 #: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:847 exe/jsui/mainpage.py:975
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
-msgstr ""
+msgstr ". Använd ASCII namn."
 
 #: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
@@ -3076,19 +3239,19 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:338
 #, python-format
 msgid "Package saved to: %s"
-msgstr ""
+msgstr "Paketet har sparats till: %s"
 
 #: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:672
 #: exe/jsui/mainpage_antes_jr_docs.py:561
 #: exe/jsui/mainpage_antes_jr_docs.py:665
-#, python-format
+#, fuzzy, python-format
 msgid "Preview directory %s is a file, cannot replace it"
-msgstr ""
+msgstr "Filnamn %s är en fil, kan inte ersätta den"
 
 #: exe/jsui/mainpage.py:587 exe/jsui/mainpage_antes_jr_docs.py:580
-#, python-format
+#, fuzzy, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr ""
+msgstr "Filnamn %s är en fil, kan inte ersätta den"
 
 #: exe/jsui/mainpage.py:712 exe/jsui/mainpage_antes_jr_docs.py:705
 #, python-format
@@ -3170,9 +3333,9 @@ msgid ""
 msgstr ""
 
 #: exe/jsui/mainpage.py:1003 exe/jsui/mainpage_antes_jr_docs.py:936
-#, python-format
+#, fuzzy, python-format
 msgid "Package extracted to: %s"
-msgstr ""
+msgstr "Paketet har sparats till: %s"
 
 #: exe/jsui/mainpage.py:1015 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
@@ -3208,7 +3371,7 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr ""
+msgstr "Filnamn %s är en fil, kan inte ersätta den"
 
 #: exe/jsui/mainpage.py:1063 exe/jsui/mainpage.py:1111
 #: exe/jsui/mainpage_antes_jr_docs.py:996
@@ -3234,7 +3397,7 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1185
 #, python-format
 msgid "Exported to %s"
-msgstr ""
+msgstr "Exporterad till %s"
 
 #: exe/jsui/mainpage.py:1285 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
@@ -3251,10 +3414,12 @@ msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
+"Tyvärr, fel filformat:\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1294 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
-msgstr ""
+msgstr "Tyvärr, fel filformat"
 
 #: exe/jsui/propertiespage.py:335
 msgid "Failed to get properties"
@@ -3274,7 +3439,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
 #: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
 msgid "Select an image"
-msgstr ""
+msgstr "Välj bild"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:194
 #: exe/jsui/scripts/app/controller/MainTab.js:228
@@ -3365,13 +3530,15 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
+#, fuzzy
 msgid "Insert Package"
-msgstr ""
+msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
+#, fuzzy
 msgid "Extract Package"
-msgstr ""
+msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Delete \"{node}\" node and all its children?"
@@ -3447,7 +3614,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:400
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
 msgid "Preferences"
-msgstr ""
+msgstr "Inställningar"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:428
 msgid ""
@@ -3478,8 +3645,9 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:478 exe/webui/block.py:264
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:123
+#, fuzzy
 msgid "Information"
-msgstr ""
+msgstr "Instruktioner"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 msgid "Your Style could not be saved because an unknown error occurred."
@@ -3593,7 +3761,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:136
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:792
 msgid "Ok"
@@ -3751,7 +3919,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
-msgstr ""
+msgstr "Namn"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:95
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
@@ -3783,7 +3951,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/en.js:112
 msgid "Save"
-msgstr ""
+msgstr "Spara"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:78
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:89
@@ -3809,8 +3977,9 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:45
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:171
+#, fuzzy
 msgid "The name given to the resource."
-msgstr ""
+msgstr "Beskriv målet för denna resurs,"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:51
 msgid "Creator"
@@ -3901,8 +4070,9 @@ msgid "Format"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
+#, fuzzy
 msgid "Select a Format."
-msgstr ""
+msgstr "Välj bild"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomSections.js:40
@@ -3940,8 +4110,9 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:182
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:189
+#, fuzzy
 msgid "Select a language."
-msgstr ""
+msgstr "Välj språk"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
@@ -3997,8 +4168,9 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
 #: exe/webui/tools/style-designer/langs/en.js:110
+#, fuzzy
 msgid "Reset"
-msgstr ""
+msgstr "Falskt"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
@@ -4317,7 +4489,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:269
 #: exe/webui/editorpane.py:387
 msgid "Purpose"
-msgstr ""
+msgstr "Syfte"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:166
 msgid "Download Classification Sources"
@@ -4708,7 +4880,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:45
 msgid "Select Language"
-msgstr ""
+msgstr "Välj språk"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:151
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -4784,8 +4956,9 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:101
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
+#, fuzzy
 msgid "Export"
-msgstr ""
+msgstr "Exporterad till %s"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
 msgid "Delete style: "
@@ -4864,7 +5037,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
-msgstr ""
+msgstr "Översikt"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:85
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:88
@@ -4884,8 +5057,9 @@ msgid "Save iDevices"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:155
+#, fuzzy
 msgid "iDevices"
-msgstr ""
+msgstr "iDevicePane"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "Category"
@@ -4896,17 +5070,19 @@ msgid "Visible"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
+#, fuzzy
 msgid "Authoring"
-msgstr ""
+msgstr "Författa"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:47
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Properties"
-msgstr ""
+msgstr "Egenskaper"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
+#, fuzzy
 msgid "Package"
-msgstr ""
+msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:58
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
@@ -4925,7 +5101,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
-msgstr ""
+msgstr "Lägg till sida"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:239
 #: exe/webui/block.py:333 exe/webui/editorelement.py:78
@@ -4936,11 +5112,11 @@ msgstr ""
 #: exe/webui/galleryblock.py:303
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
-msgstr ""
+msgstr "Radera"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
-msgstr ""
+msgstr "Byt namn"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
 msgid "Promote node up in hierarchy"
@@ -4951,12 +5127,14 @@ msgid "Demote node down in hierarchy"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:45
+#, fuzzy
 msgid "Move node up"
-msgstr ""
+msgstr "Flytta upp"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:51
+#, fuzzy
 msgid "Move node down"
-msgstr ""
+msgstr "Flytta ner"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 #: exe/webui/tools/style-designer/langs/en.js:133
@@ -5026,8 +5204,9 @@ msgid "IMS Content Package"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:273
+#, fuzzy
 msgid "Web Site"
-msgstr ""
+msgstr "titel"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:280
 msgid "Self-contained Folder"
@@ -5058,8 +5237,9 @@ msgid "Merging"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:356 exe/webui/editorpage.py:269
+#, fuzzy
 msgid "Quit"
-msgstr ""
+msgstr "Skicka svar"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:363
 msgid "Tools"
@@ -5091,7 +5271,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Preview"
-msgstr ""
+msgstr "Förhandsgranska"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Refresh Display"
@@ -5147,40 +5327,49 @@ msgid "Group iDevices"
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:4
+#, fuzzy
 msgid "Afar "
-msgstr ""
+msgstr "Artikel"
 
 #: exe/jsui/scripts/langs.js:8
+#, fuzzy
 msgid "Abkhazian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:12
+#, fuzzy
 msgid "Avestan "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:16
+#, fuzzy
 msgid "Afrikaans "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:20
+#, fuzzy
 msgid "Amharic "
-msgstr ""
+msgstr "Artikel"
 
 #: exe/jsui/scripts/langs.js:24
+#, fuzzy
 msgid "Arabic "
-msgstr ""
+msgstr "Artikel"
 
 #: exe/jsui/scripts/langs.js:28
+#, fuzzy
 msgid "Assamese "
-msgstr ""
+msgstr "Byt namn"
 
 #: exe/jsui/scripts/langs.js:32
+#, fuzzy
 msgid "Aymara "
-msgstr ""
+msgstr "Artikel"
 
 #: exe/jsui/scripts/langs.js:36
+#, fuzzy
 msgid "Azerbaijani "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:40
 msgid "Bashkir "
@@ -5191,12 +5380,14 @@ msgid "Byelorussian; Belarusian "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:48
+#, fuzzy
 msgid "Bulgarian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:52
+#, fuzzy
 msgid "Bihari "
-msgstr ""
+msgstr "Artikel"
 
 #: exe/jsui/scripts/langs.js:56
 msgid "Bislama "
@@ -5207,32 +5398,37 @@ msgid "Bengali; Bangla "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:64
+#, fuzzy
 msgid "Tibetan "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:68
 msgid "Breton "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:72
+#, fuzzy
 msgid "Bosnian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:76
+#, fuzzy
 msgid "Catalan "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:80
+#, fuzzy
 msgid "Chechen "
-msgstr ""
+msgstr "Byt namn"
 
 #: exe/jsui/scripts/langs.js:84
 msgid "Chamorro "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:88
+#, fuzzy
 msgid "Corsican "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:92
 msgid "Czech "
@@ -5255,8 +5451,9 @@ msgid "Danish "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:112
+#, fuzzy
 msgid "German "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:116
 msgid "Dzongkha; Bhutani "
@@ -5279,16 +5476,18 @@ msgid "Spanish "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:136
+#, fuzzy
 msgid "Estonian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:140
 msgid "Basque "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:144
+#, fuzzy
 msgid "Persian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:148
 msgid "Finnish "
@@ -5299,16 +5498,18 @@ msgid "Fijian; Fiji "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:156
+#, fuzzy
 msgid "Faroese "
-msgstr ""
+msgstr "Falskt"
 
 #: exe/jsui/scripts/langs.js:160
 msgid "French "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:164
+#, fuzzy
 msgid "Frisian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:168
 msgid "Irish "
@@ -5323,12 +5524,14 @@ msgid "Gallegan; Galician "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:180
+#, fuzzy
 msgid "Guarani "
-msgstr ""
+msgstr "Artikel"
 
 #: exe/jsui/scripts/langs.js:184
+#, fuzzy
 msgid "Gujarati "
-msgstr ""
+msgstr "Artikel"
 
 #: exe/jsui/scripts/langs.js:188
 msgid "Manx "
@@ -5343,40 +5546,46 @@ msgid "Hebrew (formerly iw) "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:200
+#, fuzzy
 msgid "Hindi "
-msgstr ""
+msgstr "Ledtråd"
 
 #: exe/jsui/scripts/langs.js:204
 msgid "Hiri Motu "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:208
+#, fuzzy
 msgid "Croatian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:212
+#, fuzzy
 msgid "Hungarian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:216
+#, fuzzy
 msgid "Armenian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:220
 msgid "Herero "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:224
+#, fuzzy
 msgid "Interlingua "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:228
 msgid "Indonesian (formerly in) "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:232
+#, fuzzy
 msgid "Interlingue "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:236
 msgid "Inupiak "
@@ -5391,8 +5600,9 @@ msgid "Icelandic "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:248
+#, fuzzy
 msgid "Italian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:252
 msgid "Inuktitut "
@@ -5407,8 +5617,9 @@ msgid "Javanese "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:264
+#, fuzzy
 msgid "Georgian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:268
 msgid "Kikuyu "
@@ -5435,8 +5646,9 @@ msgid "Kannada "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:292
+#, fuzzy
 msgid "Korean "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:296
 msgid "Kashmiri "
@@ -5447,8 +5659,9 @@ msgid "Kurdish "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:304
+#, fuzzy
 msgid "Komi "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:308
 msgid "Cornish "
@@ -5459,8 +5672,9 @@ msgid "Kirghiz "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:316
+#, fuzzy
 msgid "Latin "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:320
 msgid "Letzeburgesch "
@@ -5471,12 +5685,14 @@ msgid "Lingala "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:328
+#, fuzzy
 msgid "Lao; Laotian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:332
+#, fuzzy
 msgid "Lithuanian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:336
 msgid "Latvian; Lettish "
@@ -5491,48 +5707,56 @@ msgid "Marshall "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:348
+#, fuzzy
 msgid "Maori "
-msgstr ""
+msgstr "Artikel"
 
 #: exe/jsui/scripts/langs.js:352
+#, fuzzy
 msgid "Macedonian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:356
 msgid "Malayalam "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:360
+#, fuzzy
 msgid "Mongolian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:364
+#, fuzzy
 msgid "Moldavian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:368
+#, fuzzy
 msgid "Marathi "
-msgstr ""
+msgstr "Artikel"
 
 #: exe/jsui/scripts/langs.js:372
 msgid "Malay "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:376
+#, fuzzy
 msgid "Maltese "
-msgstr ""
+msgstr "Falskt"
 
 #: exe/jsui/scripts/langs.js:380
+#, fuzzy
 msgid "Burmese "
-msgstr ""
+msgstr "Falskt"
 
 #: exe/jsui/scripts/langs.js:384
 msgid "Nauru "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:388
+#, fuzzy
 msgid "Norwegian Bokmål "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:392
 msgid "Ndebele,North "
@@ -5543,20 +5767,23 @@ msgid "Nepali "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:400
+#, fuzzy
 msgid "Ndonga "
-msgstr ""
+msgstr "Visa"
 
 #: exe/jsui/scripts/langs.js:404
 msgid "Dutch "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:408
+#, fuzzy
 msgid "Norwegian Nynorsk "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:412
+#, fuzzy
 msgid "Norwegian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:416
 msgid "Ndebele,South "
@@ -5591,8 +5818,9 @@ msgid "Panjabi; Punjabi "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:448
+#, fuzzy
 msgid "Pali "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:452
 msgid "Polish "
@@ -5619,12 +5847,14 @@ msgid "Rundi; Kirundi "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:476
+#, fuzzy
 msgid "Romanian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:480
+#, fuzzy
 msgid "Russian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:484
 msgid "Kinyarwanda "
@@ -5635,12 +5865,14 @@ msgid "Sanskrit "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:492
+#, fuzzy
 msgid "Sardinian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:496
+#, fuzzy
 msgid "Sindhi "
-msgstr ""
+msgstr "Ledtråd"
 
 #: exe/jsui/scripts/langs.js:500
 msgid "Northern Sami "
@@ -5651,36 +5883,44 @@ msgid "Sango; Sangro "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:508
+#, fuzzy
 msgid "Sinhalese "
-msgstr ""
+msgstr "Falskt"
 
 #: exe/jsui/scripts/langs.js:512
+#, fuzzy
 msgid "Slovak "
-msgstr ""
+msgstr "Visa"
 
 #: exe/jsui/scripts/langs.js:516
+#, fuzzy
 msgid "Slovenian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:520
+#, fuzzy
 msgid "Samoan "
-msgstr ""
+msgstr "Visa"
 
 #: exe/jsui/scripts/langs.js:524
+#, fuzzy
 msgid "Shona "
-msgstr ""
+msgstr "Visa"
 
 #: exe/jsui/scripts/langs.js:528
+#, fuzzy
 msgid "Somali "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:532
+#, fuzzy
 msgid "Albanian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:536
+#, fuzzy
 msgid "Serbian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:540
 msgid "Swati; Siswati "
@@ -5691,40 +5931,46 @@ msgid "Sesotho; Sotho,Southern "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:548
+#, fuzzy
 msgid "Sundanese "
-msgstr ""
+msgstr "Falskt"
 
 #: exe/jsui/scripts/langs.js:552
 msgid "Swedish "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:556
+#, fuzzy
 msgid "Swahili "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:560
+#, fuzzy
 msgid "Tamil "
-msgstr ""
+msgstr "Artikel"
 
 #: exe/jsui/scripts/langs.js:564
 msgid "Telugu "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:568
+#, fuzzy
 msgid "Tajik "
-msgstr ""
+msgstr "Artikel"
 
 #: exe/jsui/scripts/langs.js:572
+#, fuzzy
 msgid "Thai "
-msgstr ""
+msgstr "Artikel"
 
 #: exe/jsui/scripts/langs.js:576
 msgid "Tigrinya "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:580
+#, fuzzy
 msgid "Turkmen "
-msgstr ""
+msgstr "Falskt"
 
 #: exe/jsui/scripts/langs.js:584
 msgid "Tagalog "
@@ -5735,36 +5981,42 @@ msgid "Tswana; Setswana "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:592
+#, fuzzy
 msgid "Tongan  "
-msgstr ""
+msgstr "Visa"
 
 #: exe/jsui/scripts/langs.js:596
 msgid "Turkish "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:600
+#, fuzzy
 msgid "Tsonga "
-msgstr ""
+msgstr "Visa"
 
 #: exe/jsui/scripts/langs.js:604
+#, fuzzy
 msgid "Tatar "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:608
+#, fuzzy
 msgid "Twi "
-msgstr ""
+msgstr "Artikel"
 
 #: exe/jsui/scripts/langs.js:612
+#, fuzzy
 msgid "Tahitian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:616
 msgid "Uighur "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:620
+#, fuzzy
 msgid "Ukrainian "
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/jsui/scripts/langs.js:624
 msgid "Urdu "
@@ -5779,8 +6031,9 @@ msgid "Valencian "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:636
+#, fuzzy
 msgid "Vietnamese "
-msgstr ""
+msgstr "Byt namn"
 
 #: exe/jsui/scripts/langs.js:640
 msgid "Volapük; Volapuk "
@@ -5795,8 +6048,9 @@ msgid "Wolof "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:652
+#, fuzzy
 msgid "Xhosa "
-msgstr ""
+msgstr "Visa"
 
 #: exe/jsui/scripts/langs.js:656
 msgid "Yiddish (formerly ji) "
@@ -5811,8 +6065,9 @@ msgid "Zhuang "
 msgstr ""
 
 #: exe/jsui/scripts/langs.js:668
+#, fuzzy
 msgid "Chinese "
-msgstr ""
+msgstr "Byt namn"
 
 #: exe/jsui/scripts/langs.js:672
 msgid "Zulu "
@@ -6796,8 +7051,9 @@ msgid "Applet Type"
 msgstr ""
 
 #: exe/webui/appletblock.py:156 exe/webui/appletblock.py:166
+#, fuzzy
 msgid "Add files"
-msgstr ""
+msgstr "Lägg till bilder"
 
 #: exe/webui/appletblock.py:162
 msgid "Accept URL"
@@ -6808,27 +7064,30 @@ msgid "Applet Code:"
 msgstr ""
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
+#, fuzzy
 msgid "Filename:"
-msgstr ""
+msgstr "Byt namn"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
 #: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
 #: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
 msgid "Select a file"
-msgstr ""
+msgstr "Välj fil"
 
 #: exe/webui/attachmentblock.py:108
+#, fuzzy
 msgid "Label:"
-msgstr ""
+msgstr "Etikett"
 
 #: exe/webui/block.py:184
+#, fuzzy
 msgid "IDevice broken"
-msgstr ""
+msgstr "iDevice Editor"
 
 #: exe/webui/block.py:222
 msgid "Done"
-msgstr ""
+msgstr "Klar"
 
 #: exe/webui/block.py:226
 msgid "Exit without saving?"
@@ -6848,36 +7107,37 @@ msgstr ""
 
 #: exe/webui/block.py:246
 msgid "Move Up"
-msgstr ""
+msgstr "Flytta upp"
 
 #: exe/webui/block.py:253
 msgid "Move Down"
-msgstr ""
+msgstr "Flytta ner"
 
 #: exe/webui/block.py:255
 msgid "---Move To---"
-msgstr ""
+msgstr "---Flytta till---"
 
 #: exe/webui/block.py:260 exe/webui/editorpane.py:380
 msgid "Pedagogical Help"
-msgstr ""
+msgstr "Pedagogisk hjälp"
 
 #: exe/webui/block.py:273 exe/webui/editorpane.py:390
 msgid "Tip:"
-msgstr ""
+msgstr "Tips:"
 
 #: exe/webui/block.py:318
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr ""
+msgstr "ERROR: Block.renderViewContent anropad direkt"
 
 #: exe/webui/block.py:328 exe/webui/editorpage.py:286
 #: exe/webui/editorpane.py:270
 msgid "Edit"
-msgstr ""
+msgstr "Redigera"
 
 #: exe/webui/casestudyblock.py:114 exe/webui/ejercicioresueltofpdblock.py:130
+#, fuzzy
 msgid "Add another activity"
-msgstr ""
+msgstr "Lägg till ytterligare ett val"
 
 #: exe/webui/casopracticofpdblock.py:68
 msgid "Situation"
@@ -7030,25 +7290,27 @@ msgstr ""
 
 #: exe/webui/common.py:476
 msgid "Hide"
-msgstr ""
+msgstr "Göm"
 
 #: exe/webui/common.py:477 exe/webui/common.py:715 exe/webui/element.py:1538
 #: exe/webui/element.py:2469 exe/webui/listablock.py:275
+#, fuzzy
 msgid "Show Feedback"
-msgstr ""
+msgstr "Visa/Göm återkoppling"
 
 #: exe/webui/common.py:478
+#, fuzzy
 msgid "Hide Feedback"
-msgstr ""
+msgstr "Visa/Göm återkoppling"
 
 #: exe/webui/common.py:479 exe/webui/common.py:494 exe/webui/element.py:2272
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
-msgstr ""
+msgstr "Rätt"
 
 #: exe/webui/common.py:480 exe/webui/element.py:2275
 msgid "Incorrect"
-msgstr ""
+msgstr "Fel"
 
 #: exe/webui/common.py:481
 msgid "Menu"
@@ -7079,8 +7341,9 @@ msgid "Words"
 msgstr ""
 
 #: exe/webui/common.py:501
+#, fuzzy
 msgid "Play"
-msgstr ""
+msgstr "Ladda"
 
 #: exe/webui/common.py:503
 msgid "Results"
@@ -7091,8 +7354,9 @@ msgid "Total"
 msgstr ""
 
 #: exe/webui/common.py:505
+#, fuzzy
 msgid "Another word"
-msgstr ""
+msgstr "Lägg till ytterligare ett val"
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7113,7 +7377,7 @@ msgstr ""
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
-msgstr ""
+msgstr "eXe : XHTML editor för e-lärande"
 
 #: exe/webui/common.py:839 exe/webui/common.py:842
 msgid "Click for completion instructions"
@@ -7125,15 +7389,16 @@ msgstr ""
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:251
 msgid "Text Line"
-msgstr ""
+msgstr "Textfält"
 
 #: exe/webui/editorelement.py:111 exe/webui/editorpane.py:253
 msgid "Text Box"
-msgstr ""
+msgstr "Textbox"
 
 #: exe/webui/editorelement.py:149 exe/webui/element.py:602
+#, fuzzy
 msgid "Button Caption"
-msgstr ""
+msgstr "Rubrik"
 
 #: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
 #: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
@@ -7147,7 +7412,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:18
 msgid "Left"
-msgstr ""
+msgstr "Vänster"
 
 #: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
 #: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
@@ -7161,64 +7426,73 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:76
 msgid "Right"
-msgstr ""
+msgstr "Höger"
 
 #: exe/webui/editorelement.py:228 exe/webui/flashmovieblock.py:87
 #: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/imagewithtextblock.py:88 exe/webui/multimediablock.py:92
 msgid "Align:"
-msgstr ""
+msgstr "Justera:"
 
 #: exe/webui/editorelement.py:268 exe/webui/element.py:1889
+#, fuzzy
 msgid "Select Flash Object"
-msgstr ""
+msgstr "Välj Flashfil"
 
 #: exe/webui/editorelement.py:308
+#, fuzzy
 msgid "Select MP3 file"
-msgstr ""
+msgstr "Välj fil"
 
 #: exe/webui/editorelement.py:311 exe/webui/element.py:869
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/webui/editorpage.py:125
 msgid "Please enter an idevice name."
-msgstr ""
+msgstr "Skriv in ett iDevicenamn"
 
 #: exe/webui/editorpage.py:188 exe/webui/editorpage.py:200
+#, fuzzy
 msgid "Sorry, wrong file format."
-msgstr ""
+msgstr "Tyvärr, fel filformat"
 
 #: exe/webui/editorpage.py:262
+#, fuzzy
 msgid "Import iDevice"
-msgstr ""
+msgstr "iDevicePane"
 
 #: exe/webui/editorpage.py:265
+#, fuzzy
 msgid "Export iDevice"
-msgstr ""
+msgstr "iDevicePane"
 
 #: exe/webui/editorpage.py:291
 msgid "New iDevice"
-msgstr ""
+msgstr "Ny iDevice"
 
 #: exe/webui/editorpane.py:67
+#, fuzzy
 msgid ""
 "Your new iDevice will appear in the iDevice pane with this title. This is"
 " a compulsory field and you will be prompted to enter a label if you try "
 "to submit your iDevice without one."
-msgstr ""
+msgstr "Din nya iDevice kommer att visas i iDevice-panelen med denna titel. "
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
-msgstr ""
+msgstr "Detta är ett valfritt fält"
 
 #: exe/webui/editorpane.py:72
+#, fuzzy
 msgid ""
 "The purpose dialogue allows you to describe your intended purpose of the "
 "iDevice to other potential users."
 msgstr ""
+"Syftedialogen låter dig beskriva ditt tänkta syfte med dina iDevicer för "
+"andra potentiella användare"
 
 #: exe/webui/editorpane.py:75
 msgid ""
@@ -7227,54 +7501,67 @@ msgid ""
 msgstr ""
 
 #: exe/webui/editorpane.py:79
+#, fuzzy
 msgid ""
 "Use this field to describe your intended use and the pedagogy behind the "
 "device's development. This can be useful if your iDevice is to be "
 "exported for others to use."
 msgstr ""
+"Ett pedagogiskt tips låter dig beskriva den pedagogiska intentionen och "
+"tanken bakom utvecklingen av dina iDevicer."
 
 #: exe/webui/editorpane.py:84
+#, fuzzy
 msgid ""
 "Add a single text line to an iDevice. Useful if you want the ability to "
 "place a label within the iDevice."
 msgstr ""
+"Lägg till en textrad till en iDevice. Användbart om du vill lägga till en"
+" etikett i en iDevice."
 
 #: exe/webui/editorpane.py:87
+#, fuzzy
 msgid ""
 "Add a text entry box to an iDevice. Used for entering larger amounts of "
 "textual content."
 msgstr ""
+"Lägg till ett textfält till en iDevice. Används för att fylla i "
+"beskrivande text."
 
 #: exe/webui/editorpane.py:90
+#, fuzzy
 msgid "Add an interactive feedback field to your iDevice."
-msgstr ""
+msgstr "Lägg till interaktiv feedback till din iDevice"
 
 #: exe/webui/editorpane.py:91
+#, fuzzy
 msgid "Add a flash video to your iDevice."
-msgstr ""
+msgstr "Lägg till interaktiv feedback till din iDevice"
 
 #: exe/webui/editorpane.py:92
+#, fuzzy
 msgid "Add an mp3 file to your iDevice."
-msgstr ""
+msgstr "Lägg till interaktiv feedback till din iDevice"
 
 #: exe/webui/editorpane.py:93
+#, fuzzy
 msgid "Add an attachment file to your iDevice."
-msgstr ""
+msgstr "Lägg till interaktiv feedback till din iDevice"
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:152
 #: exe/webui/editorpane.py:160 exe/webui/editorpane.py:176
 #: exe/webui/editorpane.py:186
 msgid "Enter the label here"
-msgstr ""
+msgstr "Skriv en titel här"
 
 #: exe/webui/editorpane.py:146
 msgid "Enter instructions for completion here"
-msgstr ""
+msgstr "Skriv instruktioner här"
 
 #: exe/webui/editorpane.py:153 exe/webui/editorpane.py:177
 #: exe/webui/editorpane.py:187
 msgid "Enter the instructions for completion here"
-msgstr ""
+msgstr "Skriv instruktioner här"
 
 #: exe/webui/editorpane.py:161
 msgid ""
@@ -7283,52 +7570,58 @@ msgid ""
 msgstr ""
 
 #: exe/webui/editorpane.py:198
+#, fuzzy
 msgid "Please enter<br />an idevice name."
-msgstr ""
+msgstr "Skriv in ett iDevicenamn"
 
 #: exe/webui/editorpane.py:250
+#, fuzzy
 msgid "Add Field"
-msgstr ""
+msgstr "Lägg till bilder"
 
 #: exe/webui/editorpane.py:265
 msgid "Actions"
-msgstr ""
+msgstr "Åtgärder"
 
 #: exe/webui/editorpane.py:332
 msgid "Pedagogical Tip"
-msgstr ""
+msgstr "Pedagogiska tips"
 
 #: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:163
 msgid "Emphasis"
-msgstr ""
+msgstr "Huvudfokus"
 
 #: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:160
+#, fuzzy
 msgid "No emphasis"
-msgstr ""
+msgstr "Inget huvudfokus"
 
 #: exe/webui/editorpane.py:339 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:161
 msgid "Some emphasis"
-msgstr ""
+msgstr "Delfokus"
 
 #: exe/webui/editorpane.py:354
+#, fuzzy
 msgid "Select an icon"
-msgstr ""
+msgstr "Välj bild"
 
 #: exe/webui/editorpane.py:368
 msgid "Icons"
-msgstr ""
+msgstr "Ikoner"
 
 #: exe/webui/editorpane.py:383
+#, fuzzy
 msgid "Info"
-msgstr ""
+msgstr "debugInfo"
 
 #: exe/webui/editorpane.py:429 exe/webui/element.py:1545
 #: exe/webui/element.py:1547 exe/webui/element.py:1803
+#, fuzzy
 msgid "Submit"
-msgstr ""
+msgstr "Skicka svar"
 
 #: exe/webui/ejercicioresueltofpdblock.py:122
 msgid "Translation"
@@ -7337,35 +7630,36 @@ msgstr ""
 #: exe/webui/eleccionmultiplefpdblock.py:98 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
-msgstr ""
+msgstr "Välj ett korrekt svar för varje fråga"
 
 #: exe/webui/eleccionmultiplefpdblock.py:124 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:119
 msgid "Add another question"
-msgstr ""
+msgstr "Lägg till ytterligare en fråga"
 
 #: exe/webui/element.py:72
-#, python-format
+#, fuzzy, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr ""
+msgstr "ERROR Element.process anropad direkt (%s)"
 
 #: exe/webui/element.py:81
-#, python-format
+#, fuzzy, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
-msgstr ""
+msgstr "ERROR Element.renderEdit anropad direkt (%s)"
 
 #: exe/webui/element.py:98
-#, python-format
+#, fuzzy, python-format
 msgid "ERROR Element.renderView called directly with %s class"
-msgstr ""
+msgstr "ERROR Element.renderView anropad direkt (%s)"
 
 #: exe/webui/element.py:753 exe/webui/element.py:1174
+#, fuzzy
 msgid "Add Image"
-msgstr ""
+msgstr "Lägg till bilder"
 
 #: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
 msgid "Display as:"
-msgstr ""
+msgstr "Visa som:"
 
 #: exe/webui/element.py:786
 msgid "by"
@@ -7373,20 +7667,22 @@ msgstr ""
 
 #: exe/webui/element.py:793 exe/webui/element.py:1212
 msgid "blank for original size"
-msgstr ""
+msgstr "Lämna blank för originalstorlek"
 
 #: exe/webui/element.py:863
+#, fuzzy
 msgid "Select an MP3"
-msgstr ""
+msgstr "Välj fil"
 
 #: exe/webui/element.py:1351 exe/webui/element.py:1684
+#, fuzzy
 msgid "Cloze Text"
-msgstr ""
+msgstr "Stäng"
 
 #: exe/webui/element.py:1359 exe/webui/element.py:1692
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
-msgstr ""
+msgstr "Dölj/visa ord"
 
 #: exe/webui/element.py:1364 exe/webui/element.py:1697
 msgid "Strict Marking?"
@@ -7407,15 +7703,16 @@ msgstr ""
 
 #: exe/webui/element.py:1535 exe/webui/element.py:1794
 msgid "Get score"
-msgstr ""
+msgstr "Visa resultat"
 
 #: exe/webui/element.py:1541 exe/webui/element.py:1800
 msgid "Show/Clear Answers"
-msgstr ""
+msgstr "Visa/göm svar"
 
 #: exe/webui/element.py:1551 exe/webui/element.py:1807
+#, fuzzy
 msgid "Show Answers"
-msgstr ""
+msgstr "Visa/göm svar"
 
 #: exe/webui/element.py:1587 exe/webui/element.py:1839
 #: exe/webui/element.py:2461 exe/webui/element.py:2921
@@ -7433,48 +7730,55 @@ msgstr ""
 
 #: exe/webui/element.py:1797
 msgid "Show/Hide Feedback"
-msgstr ""
+msgstr "Visa/Göm återkoppling"
 
 #: exe/webui/element.py:1955
+#, fuzzy
 msgid "Please select a .flv file."
-msgstr ""
+msgstr "Välj bild."
 
 #: exe/webui/element.py:1971
+#, fuzzy
 msgid "Select a flash video"
-msgstr ""
+msgstr "Välj Flashfil"
 
 #: exe/webui/element.py:2080
+#, fuzzy
 msgid "text"
-msgstr ""
+msgstr "Text"
 
 #: exe/webui/element.py:2081
+#, fuzzy
 msgid "newline"
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/webui/element.py:2084
+#, fuzzy
 msgid "Select a font size: "
-msgstr ""
+msgstr "Välj fil"
 
 #: exe/webui/element.py:2194 exe/webui/element.py:2581
 #: exe/webui/element.py:2706 exe/webui/element.py:2724
 #: exe/webui/testoptionelement.py:111
+#, fuzzy
 msgid "Correct Option"
-msgstr ""
+msgstr "Rätt"
 
 #: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
-msgstr ""
+msgstr "Ta bort alternativ"
 
 #: exe/webui/element.py:2361 exe/webui/element.py:2816
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
-msgstr ""
+msgstr "Ta bort fråga"
 
 #: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
+#, fuzzy
 msgid "Add another Option"
-msgstr ""
+msgstr "Lägg till ytterligare ett val"
 
 #: exe/webui/element.py:2497 exe/webui/element.py:2940
 msgid "Solution"
@@ -7482,7 +7786,7 @@ msgstr ""
 
 #: exe/webui/element.py:2831
 msgid "Add another option"
-msgstr ""
+msgstr "Lägg till ytterligare ett val"
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
@@ -7537,27 +7841,30 @@ msgstr ""
 #: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:307
 #: exe/webui/galleryblock.py:308
 msgid "Add images"
-msgstr ""
+msgstr "Lägg till bilder"
 
 #: exe/webui/galleryblock.py:230 exe/webui/galleryblock.py:332
 msgid "No Images Loaded"
-msgstr ""
+msgstr "Inga bilder har laddats"
 
 #: exe/webui/galleryblock.py:246 exe/webui/galleryblock.py:264
+#, fuzzy
 msgid "Change Image"
-msgstr ""
+msgstr "Välj bild"
 
 #: exe/webui/galleryblock.py:271
+#, fuzzy
 msgid "Move Image Left"
-msgstr ""
+msgstr "Inga bilder har laddats"
 
 #: exe/webui/galleryblock.py:273
 msgid "Go Back"
 msgstr ""
 
 #: exe/webui/galleryblock.py:285
+#, fuzzy
 msgid "Move Image Right"
-msgstr ""
+msgstr "Inga bilder har laddats"
 
 #: exe/webui/galleryblock.py:287
 msgid "Go Forward"
@@ -7568,8 +7875,9 @@ msgid "Go Forward (Not Available)"
 msgstr ""
 
 #: exe/webui/galleryblock.py:300
+#, fuzzy
 msgid "Delete Image"
-msgstr ""
+msgstr "Välj bild"
 
 #: exe/webui/galleryblock.py:301
 msgid "Delete this image?"
@@ -7626,20 +7934,23 @@ msgid "Maximum zoom"
 msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:159
+#, fuzzy
 msgid "Small"
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/webui/imagemagnifierblock.py:160
 msgid "Medium"
 msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:161
+#, fuzzy
 msgid "Large"
-msgstr ""
+msgstr "Etikett"
 
 #: exe/webui/imagemagnifierblock.py:162
+#, fuzzy
 msgid "Extra large"
-msgstr ""
+msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
@@ -7672,8 +7983,9 @@ msgstr ""
 
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:100
+#, fuzzy
 msgid "Add another Question"
-msgstr ""
+msgstr "Lägg till ytterligare en fråga"
 
 #: exe/webui/notablock.py:104
 msgid "Show/Hide"
@@ -7741,11 +8053,11 @@ msgstr ""
 
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
-msgstr ""
+msgstr "Välj nivå för godkänd"
 
 #: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:368
 msgid "SUBMIT ANSWERS"
-msgstr ""
+msgstr "SKICKA SVAR"
 
 #: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318
 #: exe/webui/quiztestblock.py:372
@@ -7763,19 +8075,21 @@ msgstr ""
 
 #: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:156
 msgid "Load"
-msgstr ""
+msgstr "Ladda"
 
 #: exe/webui/scripts/authoring.js:69
+#, fuzzy
 msgid "Select one or more images"
-msgstr ""
+msgstr "Välj bild"
 
 #: exe/webui/scripts/authoring.js:94
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
+#, fuzzy
 msgid "Flash Movie (.flv)"
-msgstr ""
+msgstr "Flash"
 
 #: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
 msgid "Flash Object (.swf)"
@@ -7802,12 +8116,14 @@ msgid "MP3 Audio (.mp3)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:378
+#, fuzzy
 msgid "Select an mp3 file"
-msgstr ""
+msgstr "Välj fil"
 
 #: exe/webui/scripts/authoring.js:386
+#, fuzzy
 msgid "Select a package"
-msgstr ""
+msgstr "Välj bild"
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
@@ -7824,8 +8140,9 @@ msgid "Do you want to overwrite the existing idevice {idevice}?"
 msgstr ""
 
 #: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
+#, fuzzy
 msgid "eXe Idevices"
-msgstr ""
+msgstr "iDevicePane"
 
 #: exe/webui/scripts/editor.js:87
 msgid "Please save the idevice first, then try to export it."
@@ -7857,7 +8174,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
-msgstr ""
+msgstr "Stäng"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert"
@@ -8954,8 +9271,9 @@ msgid "Node"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
+#, fuzzy
 msgid "Download Information"
-msgstr ""
+msgstr "Instruktioner"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
@@ -8999,12 +9317,14 @@ msgid "Quote"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
+#, fuzzy
 msgid "Quote Language"
-msgstr ""
+msgstr "Välj språk"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
+#, fuzzy
 msgid "Authorship"
-msgstr ""
+msgstr "Författa"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:9
 msgid "Authorship Language"
@@ -9065,24 +9385,27 @@ msgid "Stop"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
+#, fuzzy
 msgid "Replace with:"
-msgstr ""
+msgstr "Bild med text"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
+#, fuzzy
 msgid "Edit code"
-msgstr ""
+msgstr "Visa resultat"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:4
 msgid "Auto close tags"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:5
+#, fuzzy
 msgid "Wrap text"
-msgstr ""
+msgstr "Text"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
@@ -9090,8 +9413,9 @@ msgid "Highlight syntax"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
+#, fuzzy
 msgid "Select a theme"
-msgstr ""
+msgstr "Välj bild"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
 msgid "Search"
@@ -9102,8 +9426,9 @@ msgid "Find next"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
+#, fuzzy
 msgid "Find previous"
-msgstr ""
+msgstr "Förhandsgranska"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
 msgid "Replace all"
@@ -9261,8 +9586,9 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
+#, fuzzy
 msgid "Choose a type:"
-msgstr ""
+msgstr "Välj bild"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
 msgid "Accordion"
@@ -9281,24 +9607,27 @@ msgid "A single content area with multiple panels."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
+#, fuzzy
 msgid "Pagination"
-msgstr ""
+msgstr "Val"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
 msgid "Divide your content into different pages."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:26
+#, fuzzy
 msgid "Carousel"
-msgstr ""
+msgstr "Falskt"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:27
 msgid "Present a list of contents in horizontal order."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
+#, fuzzy
 msgid "Timeline"
-msgstr ""
+msgstr "Rubrik:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
@@ -9341,8 +9670,9 @@ msgid "This is the message that the users with no JavaScript will see:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
+#, fuzzy
 msgid "Message:"
-msgstr ""
+msgstr "Bild"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
 msgid "You can change it at any time."
@@ -10145,12 +10475,14 @@ msgid "Include wrapper (improves presentation)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
 msgid "Markup language"
-msgstr ""
+msgstr "Välj språk"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
+#, fuzzy
 msgid "Please select a language"
-msgstr ""
+msgstr "Välj språk"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
@@ -10162,8 +10494,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
+#, fuzzy
 msgid "Light"
-msgstr ""
+msgstr "Höger"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
@@ -10557,12 +10890,14 @@ msgid "Behaviour"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
+#, fuzzy
 msgid "Link"
-msgstr ""
+msgstr "Justera:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
+#, fuzzy
 msgid "Instructions:"
-msgstr ""
+msgstr "Instruktioner"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
@@ -10573,12 +10908,14 @@ msgid "No selection and not in link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
+#, fuzzy
 msgid "Pages"
-msgstr ""
+msgstr "Etikett"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
+#, fuzzy
 msgid "Link title"
-msgstr ""
+msgstr "Wikibokartiklar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
@@ -10593,8 +10930,9 @@ msgid "The tooltip will show the Link title."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
+#, fuzzy
 msgid "Definition"
-msgstr ""
+msgstr "Reflektion"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
 msgid "The term could not be found"
@@ -10607,8 +10945,9 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
+#, fuzzy
 msgid "Definition:"
-msgstr ""
+msgstr "Beskrivning:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
@@ -10620,8 +10959,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
+#, fuzzy
 msgid "Page"
-msgstr ""
+msgstr "Etikett"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
@@ -10664,8 +11004,9 @@ msgid "The Link is required"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
+#, fuzzy
 msgid "Please select a Page"
-msgstr ""
+msgstr "Välj bild."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
 msgid "The Link title is required"
@@ -11090,8 +11431,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
+#, fuzzy
 msgid "Editor"
-msgstr ""
+msgstr "iDevice Editor"
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
@@ -11231,8 +11573,9 @@ msgid "General settings"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:13
+#, fuzzy
 msgid "Page width"
-msgstr ""
+msgstr "Bild med text"
 
 #: exe/webui/tools/style-designer/langs/en.js:14
 msgid "Percentage"
@@ -11263,28 +11606,32 @@ msgid "Text and Links"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:25
+#, fuzzy
 msgid "Text color"
-msgstr ""
+msgstr "Visa resultat"
 
 #: exe/webui/tools/style-designer/langs/en.js:27
+#, fuzzy
 msgid "Links"
-msgstr ""
+msgstr "Justera:"
 
 #: exe/webui/tools/style-designer/langs/en.js:28
 msgid "Links color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:30
+#, fuzzy
 msgid "Style description"
-msgstr ""
+msgstr "Beskrivning"
 
 #: exe/webui/tools/style-designer/langs/en.js:32
 msgid "Author URL"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:33
+#, fuzzy
 msgid "Style name"
-msgstr ""
+msgstr "Byt namn"
 
 #: exe/webui/tools/style-designer/langs/en.js:34
 msgid "Save to name the new Style."
@@ -11313,8 +11660,9 @@ msgid "Background color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:44
+#, fuzzy
 msgid "Select image"
-msgstr ""
+msgstr "Välj bild"
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
@@ -11395,8 +11743,9 @@ msgid "Top margin"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:78
+#, fuzzy
 msgid "Font size"
-msgstr ""
+msgstr "Välj fil"
 
 #: exe/webui/tools/style-designer/langs/en.js:80
 msgid "Navigation"
@@ -11439,8 +11788,9 @@ msgid "Grey"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:94
+#, fuzzy
 msgid "With emphasis"
-msgstr ""
+msgstr "Inget huvudfokus"
 
 #: exe/webui/tools/style-designer/langs/en.js:95
 msgid "Title color"
@@ -11509,8 +11859,9 @@ msgid "Save all changes? This cannot be undone."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:117
+#, fuzzy
 msgid "Style name:"
-msgstr ""
+msgstr "Byt namn"
 
 #: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Your browser is not compatible with this tool."
@@ -11543,8 +11894,9 @@ msgid "Drag markers to pick a color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:134
+#, fuzzy
 msgid "Current"
-msgstr ""
+msgstr "Fel"
 
 #: exe/webui/tools/style-designer/langs/en.js:140
 msgid "New Color - Press OK to Commit"
@@ -11626,84 +11978,99 @@ msgstr ""
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
 msgid "True"
-msgstr ""
+msgstr "Sant"
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:218
 #: exe/webui/truefalseelement.py:264
 msgid "False"
-msgstr ""
+msgstr "Falskt"
 
 #: exe/webui/wikipediablock.py:115
+#, fuzzy
 msgid "English Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:116
 msgid "Basque Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:117
+#, fuzzy
 msgid "Catalan Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:118
+#, fuzzy
 msgid "Chinese Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:119
+#, fuzzy
 msgid "Dutch Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:120
+#, fuzzy
 msgid "French Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:121
+#, fuzzy
 msgid "German Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:122
 msgid "Galician Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:123
+#, fuzzy
 msgid "Greek Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:124
+#, fuzzy
 msgid "Italian Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:125
+#, fuzzy
 msgid "Japanese Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:126
+#, fuzzy
 msgid "Magyar Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:127
+#, fuzzy
 msgid "Polish Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:128
+#, fuzzy
 msgid "Portugese Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:129
+#, fuzzy
 msgid "Slovenian Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:130
+#, fuzzy
 msgid "Spanish Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:131
+#, fuzzy
 msgid "Swedish Wikipedia Article"
-msgstr ""
+msgstr "Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:132
 msgid "Wikibooks Article"
-msgstr ""
+msgstr "Wikibokartiklar"
 
 #: exe/webui/wikipediablock.py:133
 msgid "Wikiversity"
@@ -11718,8 +12085,9 @@ msgid "Wikieducator Content"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:141
+#, fuzzy
 msgid "Site"
-msgstr ""
+msgstr "titel"
 
 #: exe/webui/wikipediablock.py:151
 msgid "Own site"
@@ -11736,7 +12104,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:135
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
 #: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551

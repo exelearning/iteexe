@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-22 13:57+0200\n"
+"POT-Creation-Date: 2016-05-22 14:14+0200\n"
 "PO-Revision-Date: 2008-05-19 06:31+1200\n"
 "Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
 "Language: sk\n"
@@ -48,7 +48,7 @@ msgstr ""
 
 #: exe/engine/appletidevice.py:70
 msgid "Java Applet"
-msgstr ""
+msgstr "Java Applet"
 
 #: exe/engine/appletidevice.py:71 exe/engine/attachmentidevice.py:45
 #: exe/engine/casestudyidevice.py:201 exe/engine/clozefpdidevice.py:51
@@ -71,7 +71,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
-msgstr ""
+msgstr "University of Auckland"
 
 #: exe/engine/appletidevice.py:79
 msgid ""
@@ -80,6 +80,9 @@ msgid ""
 "buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
+"Pripojte naraz všetky súbory pripravené pre applet\n"
+" okrem .txt súboru pomocou tlačidiel pre pripojenie a načítanie. \n"
+" Až sa súbory načítajú, zobrazia sa pod poľom s kódom appletu."
 
 #: exe/engine/appletidevice.py:82
 msgid ""
@@ -88,6 +91,10 @@ msgid ""
 "applet \n"
 "code field."
 msgstr ""
+"\"Nájdite .txt súbor (v applet súbore)\n"
+"a otvorte ho. Skopírujte obsah tohto súboru <ctrl A, ctrl C> do poľa "
+"appletu\n"
+"s názvom code."
 
 #: exe/engine/appletidevice.py:85
 msgid ""
@@ -98,16 +105,22 @@ msgid ""
 " \n"
 "you created in Geogebra.</p>"
 msgstr ""
+" <p>Ak bol applet, ktorý pridávate, vygenerovaný niektorým z programov v "
+"doleuvedenom zozname, \n"
+"potom ho prosím vyberte a pripojte vytvorené dáta/applet vygenerované "
+"vaším programom.</p>\n"
+"<p>Napr. pre applety Geogebra vyberte geogebra a pripojte súbor .ggb, \n"
+"ktorý ste v programe Geogebra vytvorili. </p>"
 
 #: exe/engine/appletidevice.py:190
 #, python-format
 msgid "file %s has no parentNode"
-msgstr ""
+msgstr "súbor %s nemá „parentNode“ (rodičovský uzol)"
 
 #: exe/engine/appletidevice.py:192 exe/engine/attachmentidevice.py:107
 #, python-format
 msgid "iDevice %s has no package"
-msgstr ""
+msgstr "iDevice %s nemá balíček"
 
 #: exe/engine/appletidevice.py:443
 msgid "Sorry, this URL is unreachable"
@@ -155,7 +168,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
-msgstr ""
+msgstr "Príloha"
 
 #: exe/engine/attachmentidevice.py:46
 msgid ""
@@ -173,16 +186,21 @@ msgid ""
 "want to provide instructions on what you require the learner to do once "
 "the file is downloaded or how the material should be used."
 msgstr ""
+"Vložte text, ktorý si prajete pripojiť ku stiahnutému súboru. Môžete doň "
+"vložiť inštrukcie, ktoré budete od študenta požadovať po stiahnutí súboru"
+" alebo ako má byť materiál použitý."
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
-msgstr ""
+msgstr "Opis:"
 
 #: exe/engine/attachmentidevice.py:69
 msgid ""
 "Click <strong>Select a file</strong>, browse to the file you want to "
 "attach and select it."
 msgstr ""
+"Kliknite na <strong>Vyberte súbor</strong> a vyhľadajte a zvoľte súbor, "
+"ktorý chcete pripojiť."
 
 #: exe/engine/attachmentidevice.py:72
 msgid ""
@@ -197,14 +215,14 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:105
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr ""
+msgstr "Príloha %s nemá „parentNode“ (rodičovský uzol)"
 
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/tools/style-designer/langs/en.js:46
 msgid "Image"
-msgstr ""
+msgstr "Obrázok"
 
 #: exe/engine/casestudyidevice.py:65
 #: exe/engine/ejercicioresueltofpdidevice.py:65
@@ -212,12 +230,15 @@ msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
 msgstr ""
+"Zvolte nepovinný obrázok, ktorý bude zobrazený študentovi po dokončení "
+"otázky"
 
 #: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
-msgstr ""
+msgstr "Prípadová štúdia (rozbor)"
 
 #: exe/engine/casestudyidevice.py:202
+#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -240,6 +261,23 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Prípadová štúdia je prostriedok, ktorý so vzdelávacím zámerom simuluje "
+"reálnu situáciu. Sú nimi spravidla \n"
+"reálne situácie, u ktorých sú študenti vyzvaní k predvedeniu či popisu "
+"jednania,\n"
+" ktoré môže viesť k vyriešeniu danej situácie. Prípadová štúdia umožňuje"
+" \n"
+" študentom použiť svoje vlastné znalosti a skúsenosti na vyriešenie "
+"uvedených úloh. Ak vytvárate prípadovú štúdiu, berte na vedomie "
+"nasledujúce:<ul> \n"
+"<li> Aké vzdelávacie aspekty sú príbehom sprostredkované.</li>\n"
+"<li> Akú prípravu budú študenti potrebovať pre prácu na prípadovej "
+"štúdii.</li>\n"
+"<li> Ako prípadová štúdia zapadá do zvyšku kurzu. </li>\n"
+" <li> Ako budú študenti využívať materiály a vzájomne spolupracovať, "
+"napr.\n"
+" keď situácia v triede umožní vytvorenie týmov pracujúcich na rôznych "
+"aspektoch prípadu a akú spätnú väzbu z toho trieda získa.</li></ul>"
 
 #: exe/engine/casestudyidevice.py:219
 #: exe/engine/ejercicioresueltofpdidevice.py:218
@@ -251,12 +289,17 @@ msgid ""
 "taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
+"Vytvoriť prípadovú štúdiu.\n"
+"Dobrým príkladom je zachytenie kontroverznej situácie \n"
+"alebo scény popisom chovania zainteresovaných osôb. Mala by sa tiež vziať"
+" do úvahy \n"
+"možnosť reakcie, ktorá napomôže vyriešeniu situácie."
 
 #: exe/engine/casestudyidevice.py:223 exe/engine/casestudyidevice.py:411
 #: exe/engine/ejercicioresueltofpdidevice.py:222
 #: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
-msgstr ""
+msgstr "Príbeh: "
 
 #: exe/engine/casestudyidevice.py:228
 #: exe/engine/ejercicioresueltofpdidevice.py:227
@@ -267,6 +310,10 @@ msgid ""
 "dilemma \n"
 "presented. "
 msgstr ""
+"Popíšte úlohy vzťahujúce sa k uvedenému prípadu.\n"
+"Mali by byť položené formou otázok či \n"
+"inštrukcií pre aktivitu, ktorá by mala študentov naviesť \n"
+"k vyriešeniu prezentovanej dilemy. "
 
 #: exe/engine/casestudyidevice.py:232
 #: exe/engine/ejercicioresueltofpdidevice.py:231
@@ -274,6 +321,8 @@ msgid ""
 "Provide relevant feedback on the \n"
 "situation."
 msgstr ""
+"Vložte náležitú spätnú väzbu pre danú \n"
+"situáciu."
 
 #: exe/engine/casopracticofpdidevice.py:30
 msgid "FPD - Situation"
@@ -352,7 +401,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Title"
-msgstr ""
+msgstr "Názov"
 
 #: exe/engine/clickinorderidevice.py:61
 msgid "Game Instructions"
@@ -566,6 +615,12 @@ msgid ""
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
 msgstr ""
+"<p>Cvičenia na slovíčka sú texty alebo vety, kde musia študenti doplniť "
+"chýbajúce slová. Sú často používané na overenie týchto "
+"cieľov:</p><ol><li>Znalosť princípov (to môže byť formou skúšania, "
+"tvaroslovných cvičení alebo súhrnnou skúškou).</li><li>Porozumenie "
+"výkladu. </li><li>Znalosť slovnej zásoby.</li><li>Tvaroslovné a/alebo "
+"gramatické schopnosti.</li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -591,6 +646,26 @@ msgid ""
 " idea to get a colleague to test the test/exercise to make sure there are"
 " no surprises!  </p>  </dd></dl>"
 msgstr ""
+"<dl>  <dt>Ak je vaším cieľom otestovať porozumenie podstaty alebo "
+"pochopenie textu.</dt>  <dd>    <p>  Napíšte prehľad konceptu alebo textu"
+" dostatočne dlhý na to aby adekvátne otestoval cieľové poznatky, ale "
+"zároveň dostatočne krátky na to, aby neunavil. Adekvátny rozsah je "
+"približne do jednej strany, ale pre mladých študentov alebo začiatočníkov"
+" to môže byť výrazne málo.</p>    <p>Vyberte v texte slová, ktoré sú "
+"kľúčom na pochopenie konceptu. Pravdepodobne to budú slovesá, podstatné "
+"mená a kľúčové príslovky. Vyberte alternatívy s jednou, jasnou odpoveďou."
+"    </p>  </dd>  <dt>Ak je vaším cieľom otestovať slovnú zásobu:</dt>  "
+"<dd><p>Napíšte text používajúci cielenú slovnú zásobu. Tento text by mal "
+"byť súvislý a ucelený a mal by mať dostatočnú dĺžku. Zvýraznite v texte "
+"cieľové slová. Vyberte alternatívy s jednou, jasnou odpoveďou.</p>  </dd>"
+"  <dt>Ak je vaším cieľom otestovať tvaroslovie/gramatiku:</dt>  <dd>  "
+"<p>Napíšte text obsahujúcí požadované tvary. Tento text by mal byť "
+"súvislý a ucelený a mal by mať dostatočnú dĺžku. Myslite na to, že cieľom"
+" nie je znalosť slovíčok, takže študenti by mali poznať význam slovných "
+"základov.</p>  <p>Zvýraznite v texte cieľové slová. Uveďte iné slová s "
+"rovnakým základom,ale s rôznymi predponami a príponami.Dobrý nápad je "
+"zapojiť do vyskúšania testu/cvičenia kolegov, uistíte sa tak, že vás nič "
+"neprekvapí!  </p>  </dd></dl>"
 
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
@@ -603,7 +678,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 msgid "Instructions"
-msgstr ""
+msgstr "Pokyny"
 
 #: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
 #: exe/engine/clozelangfpdidevice.py:121
@@ -612,15 +687,18 @@ msgid ""
 "completed. Default text will be entered if there are no changes to this "
 "field.\n"
 msgstr ""
+"Zadajte pokyny, ako má byť skúšobný test dokončený. \n"
+"Ak nezadáte nič, automaticky sa vloží predvolený text.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
 #: exe/webui/element.py:1522 exe/webui/listablock.py:259
 msgid "Cloze"
-msgstr ""
+msgstr "Doplňovačka"
 
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
+#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -631,6 +709,11 @@ msgid ""
 "answer can be defined enclosing them with pipes (|). I.e.: "
 "|dog|cat|bird|</p>"
 msgstr ""
+"<p>Vložte do testového políčka text pre skúšobnú aktivitu. \n"
+"Buď ho skopírujte z iného zdroja, alebo ho do políčka priamo napíšte.</p>"
+"\n"
+"<p> Slová, ktoré chcete skryť, vyberte dvojitým kliknutím. \n"
+"Potom kliknite na tlačítko Skry/Zobraz slovo umiestnené nižšie.</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -649,7 +732,7 @@ msgstr ""
 #: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
-msgstr ""
+msgstr "Spätná väzba"
 
 #: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
 #: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
@@ -657,43 +740,46 @@ msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
 msgstr ""
+"Vložte spätnú väzbu, ktorú si želáte poskytnúť, do poľa «spätná väzba». "
+"Toto pole môže zostať prázdne."
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
 msgid "Instructions For Learners"
-msgstr ""
+msgstr "Pokyny pre študentov (žiakov)"
 
 #: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
 #: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
-msgstr ""
+msgstr "Sem vložte pokyny pre študentov (žiakov)"
 
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:284
 msgid "Read the paragraph below and fill in the missing words"
-msgstr ""
+msgstr "Prečítajte si doleuvedený odstavec a vyplňte chýbajúce slová"
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
 #: exe/engine/clozelangfpdidevice.py:296
 msgid "Allow auto completion when user filling the gaps."
-msgstr ""
+msgstr "Povoliť automatické dokončovanie počas vypĺňania medzier používateľom."
 
 #: exe/engine/clozeidevice.py:49
 msgid "Cloze Activity"
-msgstr ""
+msgstr "Aktivita „doplňovačka“"
 
 #: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
-msgstr ""
+msgstr "Prečítajte si doleuvedený odstavec a vyplňte chýbajúce slová."
 
 #: exe/engine/clozelangfpdidevice.py:50
 msgid "FPD - Cloze Activity (Modified)"
 msgstr ""
 
 #: exe/engine/clozelangfpdidevice.py:126
+#, fuzzy
 msgid "Clozelang"
-msgstr ""
+msgstr "Doplňovačka"
 
 #: exe/engine/config.py:70 exe/engine/config.py:71 exe/engine/config.py:75
 #: exe/engine/config.py:102
@@ -787,6 +873,23 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Prípadová štúdia je prostriedok, ktorý so vzdelávacím zámerom simuluje "
+"reálnu situáciu. Sú nimi spravidla \n"
+"reálne situácie, u ktorých sú študenti vyzvaní k predvedeniu či popisu "
+"jednania,\n"
+" ktoré môže viesť k vyriešeniu danej situácie. Prípadová štúdia umožňuje"
+" \n"
+" študentom použiť svoje vlastné znalosti a skúsenosti na vyriešenie "
+"uvedených úloh. Ak vytvárate prípadovú štúdiu, berte na vedomie "
+"nasledujúce:<ul> \n"
+"<li> Aké vzdelávacie aspekty sú príbehom sprostredkované.</li>\n"
+"<li> Akú prípravu budú študenti potrebovať pre prácu na prípadovej "
+"štúdii.</li>\n"
+"<li> Ako prípadová štúdia zapadá do zvyšku kurzu. </li>\n"
+" <li> Ako budú študenti využívať materiály a vzájomne spolupracovať, "
+"napr.\n"
+" keď situácia v triede umožní vytvorenie týmov pracujúcich na rôznych "
+"aspektoch prípadu a akú spätnú väzbu z toho trieda získa.</li></ul>"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 msgid "FPD - Multi Choice Activity"
@@ -812,6 +915,21 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
+"Aj keď sú otázky s viacnásobným výberom odpovedí najčastejšie používané \n"
+"vo formálnom testovaní, môžu byť použité ako testovací nástroj, \n"
+"ktorý podnieti myslenie a diskusiu na témy, na ktoré sa študenti \n"
+"zdráhajú reagovať.\n"
+"Pri zostavovaní testu s viacnásobným výberom odpovedí je potrebné "
+"zohľadňovať nasledujúce:\n"
+"<ul>\n"
+"<li> Aké výukové výstupy sú otázkami testované. </li>\n"
+"<li> Aké intelektuálne schopnosti sú testované.</li>\n"
+"<li> Aké sú jazykové schopnosti poslucháčov.</li>\n"
+"<li> Záležitosti kultúry a pohlavia.</li>\n"
+"<li> Vyvarujte sa rečníckeho jazyka a štruktúry otázok, ktoré by mohli "
+"byť navádzajúce. </li>\n"
+"</ul>\n"
+" "
 
 #: exe/engine/eleccionmultiplefpdidevice.py:76
 #: exe/engine/multichoiceidevice.py:75 exe/engine/multiselectidevice.py:60
@@ -832,6 +950,19 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
+"Pri zostavovaní otázok s viacnásobným výberom odpovedí zvažujte "
+"nasledujúce: <ul>\n"
+"<li>Používajte frázy, ktoré študenti dobre poznajú a už sa s nimi stretli"
+" pri štúdiu.</li>\n"
+"<li>Odpovede by mali byť stručné a výstižné.</li>\n"
+"<li>Mali by byť udržované konzistencie medzi otázkou a odpoveďou.</li>\n"
+"<li>Poskytnite dostatok možností, ktoré študentov donútia, aby o svojej "
+"odpovedi premýšľali.\n"
+"</li>\n"
+"<li> Presvedčte sa, že správne odpovede nie sú popísané detailnejšie než "
+"tie zavádzajúce.</li>\n"
+"<li> Zavádzajúce odpovede by mali byť nesprávne, ale uveriteľné. </li>\n"
+"</ul>\n"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:101
 #: exe/engine/multichoiceidevice.py:99
@@ -839,6 +970,8 @@ msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
+"Sem vložte tip. Ak nechcete\n"
+"tip poskytnúť, nechajte toto pole prázdne."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
@@ -848,6 +981,10 @@ msgid ""
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
+"Vložte otázku. \n"
+"Zadanie by malo byť jasné a jednoznačné. Vyvarujte sa negatívnych "
+"formulácií, \n"
+"pretože vyznievajú nejednoznačne."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:106
 #: exe/engine/multichoiceidevice.py:104
@@ -855,6 +992,8 @@ msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
 msgstr ""
+"Vyberte správnu možnosť kliknutím \n"
+"na prepínač."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:108
 #: exe/engine/multichoiceidevice.py:106
@@ -864,6 +1003,10 @@ msgid ""
 " options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
+"Vložte možné voľby. \n"
+"Tlačítkom \"Pridať ďalšiu voľbu\" vytvoríte ďalšiu voľbu. \n"
+"Zmazať položku môžete kliknutím na červené \"X\" vedľa odpovede, ktorú si"
+" želáte odstrániť."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:111
 #: exe/engine/multichoiceidevice.py:109
@@ -877,6 +1020,11 @@ msgid ""
 " answer\"\n"
 "for the other options."
 msgstr ""
+"Vpíšte do spätnej väzby, čo chcete, \n"
+" aby študent videl pri výbere určitej možnosti. Pokiaľ toto pole "
+"nevyplníte, eXe automaticky poskytne štandardnú spätnú väzbu: \n"
+"\"Správna odpoveď\" pri výbere správnej odpovede, \n"
+"alebo \"Zlá odpoveď\" pre ostatné možnosti."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3754
 #: exe/engine/field.py:3819 exe/engine/multichoiceidevice.py:131
@@ -886,14 +1034,14 @@ msgstr ""
 #: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
-msgstr ""
+msgstr "Otázka"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:287
 #: exe/engine/multichoiceidevice.py:285
 msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
 " blank."
-msgstr ""
+msgstr "Sem vložte tip. Ak nechcete tip poskytnúť, nechajte toto pole prázdne."
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
@@ -972,7 +1120,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:158
 #: exe/webui/appletblock.py:168
 msgid "Upload"
-msgstr ""
+msgstr "Upload"
 
 #: exe/engine/extendedfieldengine.py:298
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
@@ -981,7 +1129,7 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:185
 msgid "Delete File"
-msgstr ""
+msgstr "Zmazať súbor"
 
 #: exe/engine/extendedfieldengine.py:306
 msgid "No File Uploaded Currently"
@@ -993,7 +1141,7 @@ msgstr ""
 #: exe/webui/multimediablock.py:87
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
-msgstr ""
+msgstr "«nič»"
 
 #: exe/engine/extendedfieldengine.py:570
 msgid "is not a valid number - please try again<br/>"
@@ -1001,7 +1149,7 @@ msgstr ""
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
-msgstr ""
+msgstr "Externá webová stránka"
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -1012,12 +1160,20 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
+"IDevice pre externý web načíta externú webovú stránku \n"
+"do rámu vnútri vášho výukového obsahu, čo je lepšie ako načítanie do "
+"vyskakovacieho okna. \n"
+"To znamená, že študenti nie sú takýmito oknami obťažovaní.\n"
+"Toto iDevice by malo byť použité iba vtedy, keď máte istotu, \n"
+"že študenti budú pripojení na internet."
 
 #: exe/engine/externalurlidevice.py:49 exe/engine/externalurlidevice.py:116
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
 msgstr ""
+"Vložte URL, ktoré si želáte zobraziť \n"
+"a vyberte veľkosť oblasti, v ktorej má byť zobrazené."
 
 #: exe/engine/field.py:2907 exe/engine/field.py:2954
 #: exe/engine/multimediaidevice.py:71
@@ -1025,8 +1181,11 @@ msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
+"Napíšte popis k MP3 súboru. \n"
+"Bude sa zobrazovať tiež pri prehrávaní v prehrávači."
 
 #: exe/engine/field.py:3090
+#, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1042,12 +1201,28 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p>Ak zostane neoznačené, drobné preklepy a rozdiely vo veľkosti písmen "
+"budú tolerované. Pokiaľ bude označené, je očakávaná presná zhoda vo "
+"veľkosti písmen a bez preklepov.</p><p><strong>Napríklad:</strong> Ak je "
+"správna odpoveď <code>Slon</code>, potom <code>slon</code> i "
+"<code>Slom</code> budú posúdené ako <em>\"dostatočne blízke\"</em>, "
+"pretože je nesprávne len jedno písmeno, dokonca aj v prípade, že sa "
+"kontroluje veľkosť písmen.</p><p>Pokiaľ je kontrola veľkosti písmen v "
+"predošlom príklade vypnutá, tak písmeno <code>m</code> nebude považované "
+"za chybu a <code>slom</code> bude taktiež prijaté.</p><p>Ak je zapnuté "
+"\"Presné označenie\" aj \"Kontrola veľkých písmen\", jedinou správnou "
+"odpoveďou je \"Slon\". Pokiaľ je označené iba \"Presné označenie\" a "
+"\"Kontrola veľkých písmen\" nie je zapnutá, tak bude prijaté aj "
+"\"slon\".</p>"
 
 #: exe/engine/field.py:3111 exe/engine/field.py:3345
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
 msgstr ""
+"<p>Ak je označená táto možnosť, bude sa brať do úvahy veľkosť písmen a "
+"odpovede odoslané s odlišnou veľkosťou písmen, budú vyhodnotené ako "
+"nesprávne.</p>"
 
 #: exe/engine/field.py:3116 exe/engine/field.py:3350
 msgid ""
@@ -1055,6 +1230,10 @@ msgid ""
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
+"<p>Ak je vybraná táto možnosť, každé slovo bude označené ihneď, ako ho "
+"študent napíše. \n"
+"Je to lepšie, ako by mali byť všetky slová označené na konci cvičenia.\n"
+"</p>"
 
 #: exe/engine/field.py:3154 exe/engine/field.py:3392
 #: exe/engine/listaidevice.py:398
@@ -1062,6 +1241,8 @@ msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
+"Povoliť automatické dokončovanie počas \n"
+"                                       vypĺňania medzier používateľom."
 
 #: exe/engine/field.py:3324
 msgid ""
@@ -1079,6 +1260,19 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p>Ak zostane neoznačené, drobné preklepy a rozdiely vo veľkosti písmen "
+"budú tolerované. Pokiaľ bude označené, je očakávaná presná zhoda vo "
+"veľkosti písmen a bez preklepov.</p><p><strong>Napríklad:</strong> Ak je "
+"správna odpoveď <code>Slon</code>, potom <code>slon</code> i "
+"<code>Slom</code> budú posúdené ako <em>\"dostatočne blízke\"</em>, "
+"pretože je nesprávne len jedno písmeno, dokonca aj v prípade, že sa "
+"kontroluje veľkosť písmen.</p><p>Pokiaľ je kontrola veľkosti písmen v "
+"predošlom príklade vypnutá, tak písmeno <code>m</code> nebude považované "
+"za chybu a <code>slom</code> bude taktiež prijaté.</p><p>Ak je zapnuté "
+"\"Presné označenie\" aj \"Kontrola veľkých písmen\", jedinou správnou "
+"odpoveďou je \"Slon\". Pokiaľ je označené iba \"Presné označenie\" a "
+"\"Kontrola veľkých písmen\" nie je zapnutá, tak bude prijaté aj "
+"\"slon\".</p>"
 
 #: exe/engine/field.py:3355
 msgid "<p>If this option is set, the score will be shown.</p>"
@@ -1089,16 +1283,20 @@ msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
+"Pre tento prostriedok iDevice, vyberajte výhradne \n"
+"súbory .swf (objekty Flash)."
 
 #: exe/engine/field.py:3498 exe/engine/field.py:3562
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
+"Pre tento prostriedok iDevice, vyberajte výhradne\n"
+"súbory .flv (videosúbory Flash)."
 
 #: exe/engine/field.py:3574
 msgid "Type a discussion topic here."
-msgstr ""
+msgstr "Sem vložte tému diskusie."
 
 #: exe/engine/field.py:3603
 msgid ""
@@ -1106,12 +1304,18 @@ msgid ""
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
 msgstr ""
+"<p>Pokiaľ chcete vytvoriť matematickú rovnicu, vyberte symboly z "
+"textového editoru alebo vložte LATEX manuálne. Každý symbol sa zobrazí v "
+"náhľade pomocou jazyka LATEX, náhľad zobrazíte pomocí tlačítka "
+"&lt;Náhľad&gt;  nižšie.</p>"
 
 #: exe/engine/field.py:3611
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr ""
+"Kliknutím na tlačítko Náhľad pevediete \n"
+"                                  zápis v latexe na obrázok."
 
 #: exe/engine/field.py:3679 exe/engine/field.py:3728
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
@@ -1119,21 +1323,21 @@ msgstr ""
 #: exe/webui/element.py:2576 exe/webui/element.py:2668
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
-msgstr ""
+msgstr "Možnosť «opt_01»"
 
 #: exe/engine/field.py:3757 exe/engine/field.py:3823
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:452
 msgid "Hint"
-msgstr ""
+msgstr "Tip"
 
 #: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2381
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
 #: exe/webui/testquestionelement.py:110
 msgid "Options"
-msgstr ""
+msgstr "Možnosti «opt_02»"
 
 #: exe/engine/field.py:3905
 msgid ""
@@ -1142,6 +1346,10 @@ msgid ""
 "these \n"
 "can tend to confuse learners."
 msgstr ""
+"Vložte otázku. \n"
+"Zadanie by malo byť jasné a jednoznačné. Vyvarujte sa negatívnych "
+"formulácií, \n"
+"pretože môžu študentov miasť."
 
 #: exe/engine/field.py:3908 exe/engine/field.py:3989
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
@@ -1149,7 +1357,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:47
 #: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
 msgid "Question:"
-msgstr ""
+msgstr "Otázka:"
 
 #: exe/engine/field.py:3913
 msgid ""
@@ -1158,25 +1366,33 @@ msgid ""
 " options by \n"
 "clicking the red X next to the option."
 msgstr ""
+"Vložte možné voľby. \n"
+"Tlačítkom \"Pridať ďalšiu voľbu\" vytvoríte ďalšiu voľbu. \n"
+"Zmazať položku môžete kliknutím na červené \"X\" vedľa odpovede, ktorú si"
+" želáte odstrániť."
 
 #: exe/engine/field.py:3917
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr ""
+"Vyberte požadovaný počet správnych odpovedí kliknutím \n"
+"na zaškrtávacie tlačítko vedľa odpovede."
 
 #: exe/engine/field.py:3920
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr ""
+"Vložte spätnú väzbu, ktorú \n"
+"chcete študentovi poskytnúť."
 
 #: exe/engine/field.py:3922 exe/engine/field.py:3992
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:204
 msgid "Feedback:"
-msgstr ""
+msgstr "Spätná väzba:"
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
@@ -1221,7 +1437,7 @@ msgstr ""
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr ""
+msgstr "Flash animácia"
 
 #: exe/engine/flashmovieidevice.py:41
 msgid ""
@@ -1233,12 +1449,21 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
+"Toto iDevice podporuje iba súbory Flash Video (.flv), \n"
+"neakceptuje iné video formáty. Takéto video formáty (napr. mov, wmv "
+"apod.) \n"
+"môžete konvertovať do formátu flv prostredníctvom iných programov.\n"
+"Tie ale v eXe nenájdete. Užívatelia si tiež musia na prehrávanie flashu "
+"nainštalovať \n"
+"prehrávač zo stránok http://www.macromedia.com."
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
 msgstr ""
+"Vložte \n"
+"text, ktorý si želáte pridružiť k súboru."
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:70
@@ -1254,17 +1479,19 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Description"
-msgstr ""
+msgstr "Opis"
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:109
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr ""
+"Zadajte popis pre flashovú animáciu, \n"
+"ktorú ste práve vložili."
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
-msgstr ""
+msgstr "Flash s textom"
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1275,18 +1502,27 @@ msgid ""
 "file \n"
 "the learners will view."
 msgstr ""
+"IDevice flash s popisom vám umožňuje \n"
+"spojiť si s flash súborom dodatočné textové informácie. To môže byť "
+"praktické, \n"
+"pokiaľ chcete flash, ktorý študent sleduje, \n"
+"doplniť o výukové inštrukcie."
 
 #: exe/engine/flashwithtextidevice.py:53
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
 msgstr ""
+"Vložte text, ktorý chcete priradiť \n"
+"                                 k obrázku."
 
 #: exe/engine/flashwithtextidevice.py:58 exe/engine/flashwithtextidevice.py:118
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr ""
+"Zadajte popis pre flash, ktorý \n"
+"                                  ste práve vložili."
 
 #: exe/engine/flashwithtextidevice.py:60 exe/engine/flashwithtextidevice.py:120
 msgid ""
@@ -1295,6 +1531,9 @@ msgid ""
 "screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr ""
+"Vložte veľkosť flash ukážky \n"
+" (v pixeloch) a nastavte pozíciu obrázku na obrazovke.\n"
+" Šírka a výška sa zmení proporcionálne."
 
 #: exe/engine/freetextfpdidevice.py:39
 msgid "FPD - Free Text"
@@ -1309,11 +1548,15 @@ msgid ""
 "built and \n"
 "delivered."
 msgstr ""
+"Prevažná časť výukového prostriedku bude vytvárať kontext, \n"
+"poskytovať pokyny a všeobecné informácie.\n"
+"Tak vznikne štruktúra, v ktorej sú vytvárané \n"
+"a sprostredkované výukové aktivity."
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
 msgid "Free Text"
-msgstr ""
+msgstr "Prostý text"
 
 #: exe/engine/freetextfpdidevice.py:47 exe/engine/freetextidevice.py:46
 msgid ""
@@ -1322,30 +1565,34 @@ msgid ""
 "applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
+"Toto pole použite na vloženie textu.\n"
+"Tento iDevice nemá žiadne zvýraznenie, hoci sa dá text obmedzene "
+"formátovať prostredníctvom \n"
+"editačných tlačidiel pri políčku."
 
 #: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
-msgstr ""
+msgstr "Toto je pole pre zadanie prostého textu všeobecného vzdelávacieho obsahu."
 
 #: exe/engine/galleryidevice.py:140 exe/engine/galleryidevice.py:191
 msgid "No Thumbnail Available. Could not load original image."
-msgstr ""
+msgstr "Ukážka nedostupná. Nebolo možné nahrať originálny obrázok."
 
 #: exe/engine/galleryidevice.py:148 exe/engine/galleryidevice.py:198
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr ""
+msgstr "Ukážka nedostupná. Nebolo možné zmenšiť originálny obrázok."
 
 #: exe/engine/galleryidevice.py:221
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr ""
+msgstr "Ukážka nedostupná. Nebolo možné zmenšiť obrázok."
 
 #: exe/engine/galleryidevice.py:458
 msgid "Image Gallery"
-msgstr ""
+msgstr "Obrázková galéria"
 
 #: exe/engine/galleryidevice.py:459
 msgid "eXe Project"
-msgstr ""
+msgstr "Projekt eXe"
 
 #: exe/engine/galleryidevice.py:460
 msgid ""
@@ -1354,14 +1601,20 @@ msgid ""
 "display \n"
 "these in a gallery context rather then individually.</p>"
 msgstr ""
+"<p> Pokiaľ máte určité obrázky vzťahujúce sa \n"
+"k sebe navzájom alebo k nejakej časti cvičenia, \n"
+" bude ich zobrazenie v spoločnej galérii lepšie než zobrazenie "
+"samostatne.</p>"
 
 #: exe/engine/galleryidevice.py:463
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr ""
+"Tento prostriedok iDevice použite, ak máte množstvo obrázkov, ktoré je "
+"treba zobraziť naraz."
 
 #: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
-msgstr ""
+msgstr "Vložte názov galérie"
 
 #: exe/engine/galleryidevice.py:473
 msgid ""
@@ -1369,15 +1622,18 @@ msgid ""
 "appear below where you will be able to label it. It's always good "
 "practice to put the file size in the label."
 msgstr ""
+"Na vloženie obrázku kliknite na tlačítko \"Pridať obrázky\". Obrázok sa "
+"objaví dole, kde ho budete môcť doplniť popisom. Býva dobrým zvykom do "
+"popisu vpísať tiež veľkosť obrázku."
 
 #: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:663
 msgid "Reading Activity 0.11"
-msgstr ""
+msgstr "Aktivita „Čítanie“ 0.11"
 
 #: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:510
 #: exe/engine/idevicestore.py:554
 msgid "Reading Activity"
-msgstr ""
+msgstr "Aktivita „Čítanie“"
 
 #: exe/engine/hangmanidevice.py:51 exe/webui/common.py:490
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
@@ -1460,7 +1716,7 @@ msgstr ""
 #: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
 #: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
-msgstr ""
+msgstr "Reštartovať"
 
 #: exe/engine/hangmanidevice.py:104
 msgid "Restart Level Button Style (CSS)"
@@ -1533,6 +1789,12 @@ msgid ""
 " task \n"
 "based on the reading.</p>"
 msgstr ""
+"<p> Čítacie aktivity by mali byť používané v prvom rade\n"
+"na overovanie študentových schopností pochopiť daný výklad.\n"
+"Študenta možno vyzvať na prečítanie a zodpovedanie otázok ohľadom výkladu"
+" \n"
+"alebo zadaním náročnej úlohy, \n"
+"která je založená na prečítanom texte.</p>"
 
 #: exe/engine/idevicestore.py:562
 msgid ""
@@ -1548,10 +1810,20 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"<p>Učitelia by mali pri používaní iDevice myslieť na následujúce: "
+"</p><ol><li> Premýšľajte nad množstvom rôznych plánovaných aktivít, ktoré"
+" budú v obsahu vizuálne označené. Vyhnite sa príliš veľkému množstvu "
+"rôznych typov či triedení aktivít, pretože to môže zmiasť študentov. "
+"Obvykle tri až štyri rôzne typy presahujú adekvátnosť výukových "
+"zdrojov.</li><li> Z obrazového hľadiska sa vyvarujte dvom ihneď po sebe "
+"nasledujúcim iDevice bez vloženého textu medzi nimi. Pokiaľ je to možné, "
+"radšej zhrnite dve otázky či prípady do jedného iDevice.</li><li>Uvažujte"
+" nad aktivitami, u ktorých očakávaný prínos preváži nad časom a úsilím "
+"nutným pre dokončenie týchto aktivít.</li></ol>"
 
 #: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:706
 msgid "What to read"
-msgstr ""
+msgstr "Čo treba čítať"
 
 #: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:707
 msgid ""
@@ -1559,19 +1831,24 @@ msgid ""
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr ""
+"Vložte detaily k výkladu vrátane odkazov. \n"
+"Štýl odkazov závisí na zvyklostiach vašej fakulty či \n"
+" oddelenia."
 
 #: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:640
 #: exe/engine/idevicestore.py:648 exe/engine/idevicestore.py:710
 #: exe/engine/idevicestore.py:747 exe/engine/idevicestore.py:755
 #: exe/webui/questionelement.py:110
 msgid "Activity"
-msgstr ""
+msgstr "Aktivity"
 
 #: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:711
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr ""
+"Opíšte, aké úlohy budú musieť študenti (žiaci) podstúpiť. \n"
+"Má pomôcť preukázať dôležitosť pre študentov (žiakov)."
 
 #: exe/engine/idevicestore.py:606 exe/engine/idevicestore.py:715
 msgid ""
@@ -1580,13 +1857,16 @@ msgid ""
 "question \n"
 "or providing a statement to begin a debate."
 msgstr ""
+"Použite spätnú väzbu na zachytenie hlavných bodov výkladu \n"
+"alebo ako počiatočný bod pre následnú analýzu výkladu položením otázky \n"
+"alebo ako tvrdenie pre zahájenie debaty."
 
 #: exe/engine/idevicestore.py:612 exe/engine/idevicestore.py:621
 #: exe/engine/idevicestore.py:719 exe/engine/idevicestore.py:728
 #: exe/engine/package.py:653 exe/engine/package.py:664
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:216
 msgid "Objectives"
-msgstr ""
+msgstr "Ciele"
 
 #: exe/engine/idevicestore.py:615 exe/engine/idevicestore.py:722
 msgid ""
@@ -1594,17 +1874,19 @@ msgid ""
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr ""
+"Ciele popisujú očakávané výstupy výuky a mali by \n"
+"určovať, čo by mali študenti zvládnuť po dokončení úloh."
 
 #: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
 msgid "Type the learning objectives for this resource."
-msgstr ""
+msgstr "Zadajte vzdelávacie ciele pre tento zdroj."
 
 #: exe/engine/idevicestore.py:625 exe/engine/idevicestore.py:635
 #: exe/engine/idevicestore.py:732 exe/engine/idevicestore.py:742
 #: exe/engine/package.py:683 exe/engine/package.py:694
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
 msgid "Preknowledge"
-msgstr ""
+msgstr "Vstupné poznatky"
 
 #: exe/engine/idevicestore.py:628 exe/engine/idevicestore.py:735
 msgid ""
@@ -1616,12 +1898,22 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools "
 "</li></ul>\n"
 msgstr ""
+"Predchádzajúci poznatok odkazuje na poznatky, ktoré by študenti mali mať,"
+" \n"
+"aby mohli efektívne dokončiť cvičenie. \n"
+"Príklad predchádzajúceho poznatku môže byť:<ul>\n"
+"<li> Študenti musia mať Level 4 English </li>\n"
+"<li> Študenti musia byť schopní zostaviť bežné elektrické "
+"náradie.</li></ul>\n"
 
 #: exe/engine/idevicestore.py:636 exe/engine/idevicestore.py:743
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
+"Opíšte, aké vstupné poznatky majú študenti (žiaci) mať, aby mohli "
+"efektívne\n"
+"dokončiť výučbu."
 
 #: exe/engine/idevicestore.py:643 exe/engine/idevicestore.py:750
 msgid ""
@@ -1630,10 +1922,14 @@ msgid ""
 "conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
+"Aktivita môže byť definovaná ako úloha alebo súbor úloh, ktoré musí\n"
+"študent (žiak) vypracovať. Zadanie úlohy má byť jasné, treba zvážiť "
+"všetky\n"
+"vplyvy, ktoré môžu pomáhať alebo brániť študentom (žiakom) vo vypracovaní."
 
 #: exe/engine/idevicestore.py:649 exe/engine/idevicestore.py:756
 msgid "Describe the tasks the learners should complete."
-msgstr ""
+msgstr "Charakterizujte úlohy, ktoré má študent (žiak) vyplniť."
 
 #: exe/engine/idevicestore.py:666
 msgid ""
@@ -1646,6 +1942,12 @@ msgid ""
 "some \n"
 "reflective guidance.</p>"
 msgstr ""
+"<p> Čítacia aktivita by mala, ako názov napovedá, \n"
+"vyžadovať od študenta predvedenie určitej formy aktivity. Táto činnosť \n"
+"by mala mať priamu súvislosť s textom, ku ktorého prečítaniu bol študent "
+"vyzvaný.\n"
+"Spätná väzba by mala tam, kde je to vhodné,\n"
+"študentovi poskytnúť určitý návod.</p>"
 
 #: exe/engine/idevicestore.py:671
 msgid ""
@@ -1661,10 +1963,20 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"Učitelia by pri použití tohoto iDevice mali brať do úvahy: <ol><li> "
+"Premýšľajte nad množstvom rôznych zamýšľaných aktivít, ktoré budú v "
+"obsahu vizuálne označené. Vyhnite sa príliš veľkému množstvu rôznych "
+"typov či klasifikácií aktivít, pretože to môže viesť k zmäteniu "
+"študentov. Obvykle stačia tri až štyri rôzne typy na jednu výukovú "
+"jednotku.</li><li> Pre prehľadnosť sa vždy snažte vkladať medzi dve "
+"iDevice text. Pokiaľ to ale nejde, radšej zhrnite dve otázky či prípady "
+"do jedného iDevice.</li><li> Berte do úvahy aktivity, u ktorých "
+"predpokladaný efekt prevažuje nad časom a úsilím, ktoré sú nutné na ich "
+"dokončenie.</li></ol>"
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
-msgstr ""
+msgstr "Zväčšovacie sklo na obrázky"
 
 #: exe/engine/imagemagnifieridevice.py:43
 msgid ""
@@ -1673,10 +1985,13 @@ msgid ""
 "the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
+"Lupa je nástroj umožňujúci \n"
+"študentom zväčšiť si náhľad na obrázok, ktorý im bol poskytnutý. \n"
+"Pohybom lupy nad obrázkom je možné pozorovať väčšie detaily."
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Choose an Image"
-msgstr ""
+msgstr "Zvoľte obrázok"
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid ""
@@ -1685,6 +2000,10 @@ msgid ""
 "to be \n"
 "magnified."
 msgstr ""
+"Kliknite \n"
+"na obrázok nižšie alebo na tlačidlo \"Pridať obrázok\" a vyberte obrázok,"
+" ktorý má byť\n"
+"zväčšený."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
@@ -1692,19 +2011,23 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/tools/style-designer/langs/en.js:24
 msgid "Text"
-msgstr ""
+msgstr "Text"
 
 #: exe/engine/imagemagnifieridevice.py:55 exe/engine/multimediaidevice.py:65
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
 msgstr ""
+"Vložte text, ktorý chcete priradiť \n"
+"k súboru"
 
 #: exe/engine/imagemagnifieridevice.py:60
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
 msgstr ""
+"Zadajte popis obrázka, \n"
+"ktorý má byť zväčšený."
 
 #: exe/engine/imagemagnifieridevice.py:62
 msgid ""
@@ -1715,6 +2038,10 @@ msgid ""
 " \n"
 "image to display at its original size."
 msgstr ""
+"Vyberte veľkosť, v ktorej sa má obrázok zobraziť. \n"
+"Jednotky sú pixely. Na predstavu: 100 pixelov sa rovná približne 3cm. \n"
+"Pokiaľ si prajete použiť obrázok v pôvodnej veľkosti,\n"
+"nechajte políčka prázdne."
 
 #: exe/engine/imagemagnifieridevice.py:66
 #: exe/engine/imagemagnifieridevice.py:142
@@ -1722,6 +2049,8 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
+"Zarovnanie Vám umožní \n"
+"určiť, v akej polohe na obrazovke bude obrázok umiestnený."
 
 #: exe/engine/imagemagnifieridevice.py:68
 #: exe/engine/imagemagnifieridevice.py:144
@@ -1729,6 +2058,9 @@ msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
+"Nastavte prvotnú úroveň zväčšenia \n"
+"platnú po nahratí prostriedku iDevice, v percentách originálnej veľkosti "
+"obrázka"
 
 #: exe/engine/imagemagnifieridevice.py:70
 #: exe/engine/imagemagnifieridevice.py:146
@@ -1736,20 +2068,24 @@ msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
+"Nastavte maximálne možné priblíženie \n"
+"v percentách vzhľadom k originálnej veľkosti obrázku"
 
 #: exe/engine/imagemagnifieridevice.py:72
 msgid "Select the size of the magnifying glass"
-msgstr ""
+msgstr "Vyberte veľkosť zväčšovacieho skla"
 
 #: exe/engine/imagemagnifieridevice.py:148
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
 msgstr ""
+"Týmto sa volí počiatočná \n"
+"veľkosť zväčšovacieho skla"
 
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
-msgstr ""
+msgstr "Obrázok s textom"
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -1777,18 +2113,42 @@ msgid ""
 "visual.\n"
 "</p>"
 msgstr ""
+"<p>\n"
+"Obrázok s textom iDevice sa dá použiť mnohými spôsobmi na podporu\n"
+"emocionálnho (citového) a výukového (poznávacieho) rozmeru eXe\n"
+"obsahu. \n"
+"</p><p>\n"
+"<b>Prepojenie obrazového a slovného prehľadu</b>\n"
+"</p><p>\n"
+"Poznávacia psychológia poukazuje na to, že kombinácia \n"
+"obrazu a príslušného textového zhrnutia (ktoré sú prezentované súčasne) \n"
+"môže znížiť poznávaciu záťaž študentov a predĺžiť dobu uchovania takto "
+"získanej informácie.\n"
+"Tento iDevice môže byť použitý na prezentáciu obrázkov (fotografií, "
+"diagramov alebo\n"
+"grafiky) s krátkym textovým zhrnutím obsahujúcim hlavné body vzťahujúce "
+"sa\n"
+"k obrázku. Napríklad keď budete preberať princíp štvortaktného\n"
+"spaľovacieho motoru, môžete mať pripravený ilustračný obrázok každej zo "
+"štyroch polôh\n"
+"piestu s krátkym zhrnutím kľúčových aspektov z obrázku.\n"
+"</p>"
 
 #: exe/engine/imagewithtextidevice.py:66
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
 msgstr ""
+"Vložte text, ktorý chcete priradiť \n"
+"                                                k obrázku."
 
 #: exe/engine/imagewithtextidevice.py:71 exe/engine/imagewithtextidevice.py:118
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
 msgstr ""
+"Zadajte popis obrázka, ktorý \n"
+"ste práve vložili."
 
 #: exe/engine/listaidevice.py:66
 msgid "DropDown Activity"
@@ -1883,7 +2243,7 @@ msgstr ""
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
-msgstr ""
+msgstr "Matematika"
 
 #: exe/engine/mathidevice.py:43
 msgid ""
@@ -1899,10 +2259,17 @@ msgid ""
 " \n"
 "                        this graphic."
 msgstr ""
+"Matematický jazyk LaTeX je použitý, \n"
+"                        aby vám umožnil zápis matematických vzorcov \n"
+"                        v obsahu. Zápis je spracovaný a vytvorený \n"
+"                        obrázok sa vloží do vášho obsahu. \n"
+"                        Odporúčame vám, aby ste na vysvetlenie \n"
+"                        a inštrukcie použili blízko tohoto obrázku \n"
+"                        iDevice Text."
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
-msgstr ""
+msgstr "Použite panel nástrojov alebo vložte LaTeX do políčka ručne."
 
 #: exe/engine/memorymatchidevice.py:44
 msgid "Memory Match Game"
@@ -2100,25 +2467,27 @@ msgstr ""
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
-msgstr ""
+msgstr "Viacnásobná voľba"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:41
 msgid "Auckland University of Technology"
-msgstr ""
+msgstr "Auckland University of Technology"
 
 #: exe/engine/multimediaidevice.py:42
 msgid ""
 "The MP3 iDevice allows you to attach an MP3 media file to your content "
 "along with relevant textuallearning instructions."
 msgstr ""
+"MP3 iDevice umožňuje do obsahu načítať MP3 súbor a pripojiť k nemu "
+"inštrukcie."
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr ""
+msgstr "Zvoľte MP3 súbor"
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -2130,16 +2499,24 @@ msgid ""
 "would like the iDevice to       display e.g. 'Some emphasis' applies a "
 "border and icon to the iDevice content displayed.</li></ol>"
 msgstr ""
+"<ol>  <li>Kliknite &lt;Vybrať MP3&gt; a označte MP3       súbor, ktorý "
+"chcete vložiť.</li> <li>Kliknite na rozbalovacie menu a vyberte pozíciu,"
+"        kde sa má súbor zobrazovať.</li>  <li>Vložte ľubovolný popis  "
+"vášho súboru.</li> <li>Pripojte príslušný text k MP3 súboru.</li> "
+"<li>Vyberte štýl zobrazenia iDevice,       napr. 'Zdôraznenie' vytvorí "
+"ikonu a okraj okolo zobrazeného obsahu iDevice.</li></ol>"
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
+"Zarovnanie umožňuje \n"
+"zvoliť umiestnenie obrázku na obrazovke."
 
 #: exe/engine/multiselectidevice.py:45
 msgid "Multi-select"
-msgstr ""
+msgstr "Viacnásobný výber"
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
@@ -2191,20 +2568,20 @@ msgstr ""
 
 #: exe/engine/package.py:327
 msgid "Topic"
-msgstr ""
+msgstr "Téma"
 
 #: exe/engine/package.py:327
 msgid "Section"
-msgstr ""
+msgstr "Kapitola"
 
 #: exe/engine/package.py:327
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
 msgid "Unit"
-msgstr ""
+msgstr "jednotka"
 
 #: exe/engine/package.py:348
 msgid "Home"
-msgstr ""
+msgstr "Domov"
 
 #: exe/engine/package.py:503
 msgid "Metadata creation date"
@@ -2212,7 +2589,7 @@ msgstr ""
 
 #: exe/engine/package.py:1000
 msgid "?????"
-msgstr ""
+msgstr "?????"
 
 #: exe/engine/package.py:1038 exe/engine/package.py:1045
 #, python-format
@@ -2220,11 +2597,13 @@ msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
+"Uloženie zlyhalo!\n"
+"Posledné úspešné uloženie je %s."
 
 #: exe/engine/package.py:1449 exe/jsui/scripts/app/controller/Toolbar.js:418
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "iDevice Editor"
-msgstr ""
+msgstr "Editor prostriedkov iDevice"
 
 #: exe/engine/package.py:1570
 msgid "My Catalog"
@@ -2274,7 +2653,7 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr ""
+msgstr "Toto je pole pre prostý text."
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
@@ -2395,16 +2774,21 @@ msgid ""
 "answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
 msgstr ""
+"Vložte možnosť pre odpoveď. Uveďte \n"
+"niekoľko uveriteľných nezmyslov (obvykle 3-4) ako aj správnu odpoveď. \n"
+"Kliknutím na tlačidlo «Pridať ďalšiu možnosť», pridáte ďalšiu odpoveď."
 
 #: exe/engine/quiztestidevice.py:126 exe/engine/quiztestidevice.py:202
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
+"Na označenie správnej odpovede \n"
+"kliknite na prepínač vedľa danej možnosti."
 
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
-msgstr ""
+msgstr "SCORM kvíz"
 
 #: exe/engine/quiztestidevice.py:246
 msgid ""
@@ -2416,6 +2800,10 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
+"Na rozdiel od otázok s viacnásobným výberom odpovedí je SCORM kvíz \n"
+"používaný na testovanie znalostí študentov bez poskytnutí spätnej väzby \n"
+"Kvíz sa zadáva v okamžiku, keď mal študent čas\n"
+"na praktické vyskúšanie informácií či zručností."
 
 #: exe/engine/recomendacionfpdidevice.py:30
 msgid "FPD - A Piece of Advice"
@@ -2451,6 +2839,13 @@ msgid ""
 "be \n"
 "effective feedback tools."
 msgstr ""
+"Reflexia je výuková metóda často používaná na prepojenie teórie s praxou."
+"\n"
+"Reflexia dáva študentom možnosť nahliadať a reflektovať vlastnú činnosť \n"
+"skôr, než je prezentovaná ako časť akademickej práce. \n"
+"Príspevky, zápisky, profily a portfólia \n"
+"sú bežné nástroje na získavanie pozorovaných dát.\n"
+"Rubriky a sprievodca môžu byť efektívne nástroje spätnej väzby."
 
 #: exe/engine/reflectionfpdidevice.py:57
 #: exe/engine/reflectionfpdmodifidevice.py:56
@@ -2459,6 +2854,8 @@ msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
 msgstr ""
+"Zadajte otázku pre študentov (žiakov)\n"
+"nad ktorou majú pouvažovať."
 
 #: exe/engine/reflectionfpdidevice.py:59
 msgid ""
@@ -2467,13 +2864,16 @@ msgid ""
 " \n"
 "reflective feedback.)"
 msgstr ""
+"Popíšte ako budú študenti hodnotiť \n"
+" svoj výkon po ukončení daného cvičenia. \n"
+"(Táto rubrika je užitočná na poskytnutie spätnej väzby.)"
 
 #: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:201
 msgid "Reflective question:"
-msgstr ""
+msgstr "Otázka na zamyslenie:"
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
 msgid "FPD - Think About It (without Feedback)"
@@ -2481,7 +2881,7 @@ msgstr ""
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
-msgstr ""
+msgstr "Úvaha"
 
 #: exe/engine/reflectionidevice.py:57
 msgid ""
@@ -2496,10 +2896,12 @@ msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
 msgstr ""
+"premenoval sa zdroj idevice appletu a to by sa ešte nemalo urobiť do "
+"tejto miery!"
 
 #: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:48
 msgid "RSS"
-msgstr ""
+msgstr "RSS"
 
 #: exe/engine/rssidevice.py:42
 msgid ""
@@ -2507,6 +2909,8 @@ msgid ""
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
+"RSS iDevice ponúka študentovi nové informácie. \n"
+"Slúži k načítaniu obsahu RSS zdroja do pripravovaného materiálu."
 
 #: exe/engine/rssidevice.py:51
 msgid ""
@@ -2527,6 +2931,17 @@ msgid ""
 "bookmarks and add\n"
 " instructions or additional learning information."
 msgstr ""
+"Zadajte adresu RSS zdroja, ktorý si prajete vložiť do obsahu.\n"
+"RSS zdroje sú obvykle označené malou ikonou (ako napr. <img src=\"/images"
+"/feed-icon.png\" />) alebo textom \"RSS\".\n"
+"Pokiaľ na ikonu alebo text kliknete, RSS kanál sa zobrazí priamo vo vašom"
+" prehliadači.\n"
+"Kliknutím pravým tlačítkom myši na ikonu sa zobrazí ponuka, \n"
+"zvolte \"Kopírovať adresu odkazu\" a v eXe túto adresu vložte do políčka "
+"v RSS iDevice.\n"
+"Potom stlačte Načítať. Informácie z RSS kanálu sa načítajú a zobrazia sa "
+"ako odkazy.Odtiaľto môžete editovať záložky a pridávať\n"
+"inštrukcie a dodatočné informácie."
 
 #: exe/engine/rssidevice.py:110 exe/engine/rssidevice.py:113
 #, python-format
@@ -2534,6 +2949,8 @@ msgid ""
 "Unable to load RSS feed from %s <br/>Please check the spelling and "
 "connection and try again."
 msgstr ""
+"Nedá sa načítať RSS kanál %s <br/>Prekontrolujte, prosím, zadaný text a "
+"tiež pripojenie a skúste to znovu."
 
 #: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid "FPD - Multi Select Activity"
@@ -2666,7 +3083,7 @@ msgstr ""
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
-msgstr ""
+msgstr "Otázka „Pravda-Lož“"
 
 #: exe/engine/truefalseidevice.py:146
 #: exe/engine/verdaderofalsofpdidevice.py:147
@@ -2678,6 +3095,10 @@ msgid ""
 "either/or \n"
 "responses."
 msgstr ""
+"Otázky Pravda/Lož uvádzajú tvrdenie, u ktorého \n"
+"musí študent rozhodnúť, či je pravdivé. Tento druh otázok je vhodný \n"
+"pre faktické informácie a informácie, ktoré poskytujú \n"
+"reakcie buď/alebo."
 
 #: exe/engine/truefalseidevice.py:151
 #: exe/engine/verdaderofalsofpdidevice.py:153
@@ -2685,6 +3106,8 @@ msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
 msgstr ""
+"Na pomoc môže byť žiakovi poskytnutý \n"
+"tip, ako odpovedať na otázku."
 
 #: exe/engine/truefalseidevice.py:154
 #: exe/engine/verdaderofalsofpdidevice.py:156
@@ -2694,6 +3117,9 @@ msgid ""
 "tend to \n"
 "be ambiguous."
 msgstr ""
+"Vpíšte obsah otázky. Otázka by mala byť položená jasne a jednoznačne. \n"
+"Vyhnite s negatívnym tvrdeniam, pretože \n"
+"môžu študenta zmiasť."
 
 #: exe/engine/truefalseidevice.py:158
 #: exe/engine/verdaderofalsofpdidevice.py:160
@@ -2703,6 +3129,9 @@ msgid ""
 " \n"
 "default feedback will be provided."
 msgstr ""
+"Vložte ľubovoľnú spätnú väzbu, ktorú si želáte \n"
+"poskytnúť študentom (žiakom). Pole môže zostať prázdne, v tom prípade \n"
+"bude vložený predvolený text."
 
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
 #: exe/engine/verdaderofalsofpdidevice.py:167
@@ -2711,6 +3140,8 @@ msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
 msgstr ""
+"Uveďte inštrukcie, ako by mali byť zodpovedané \n"
+"otázky áno/nie."
 
 #: exe/engine/truefalseidevice.py:372
 #: exe/engine/verdaderofalsofpdidevice.py:375
@@ -2723,6 +3154,12 @@ msgid ""
 "or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
+"Vpíšte do spätnej väzby, čo chcete, \n"
+" aby študent videl pri výbere určitej otázky. Pokiaľ toto pole "
+"nevyplníte, \n"
+"eXe automaticky poskytne štandardnú spätnú väzbu: \n"
+"\"Správna odpoveď\" pri výbere správnej odpovede, \n"
+"nebo \"Zlá odpoveď\" pre ostatné alternatívy."
 
 #: exe/engine/verdaderofalsofpdidevice.py:145
 msgid "FPD - True/False Activity"
@@ -2730,9 +3167,10 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:53
 msgid "Wiki Article"
-msgstr ""
+msgstr "Článok Wiki"
 
 #: exe/engine/wikipediaidevice.py:55
+#, fuzzy
 msgid ""
 "<p>The Wikipedia iDevice allows you to locate \n"
 "existing content from within Wikipedia and download this content into "
@@ -2749,22 +3187,33 @@ msgid ""
 "additionally\n"
 "by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
 msgstr ""
+"<p>Wikipedia iDevice vám umožňuje vyhľadať \n"
+"existujúci obsah z Wikipedie a uložiť tento obsah do vašeho eXe \n"
+"souboru. IDevice Článok Wikipedie vytvorí kópiu obsahu článku.\n"
+"Zmeny vykonané vo Wikipedii sa v týchto kópiách neprejavia, \n"
+"je preto nutné vytvoriť novú kópiu článku. Taktiež \n"
+"zmeny vykonané v eXe súbore nebudú prenášené do Wikipedie. </p>\n"
+"<p>Obsah Wikipedie je licencovaný GNU Free Documentation License.</p>"
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
-msgstr ""
+msgstr "Článok"
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr ""
+"Vyberte odpovedajúcu jazykovú verziu Wikipedie \n"
+"a vložte pojem, ktorý sa má vyhľadať."
 
 #: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:363
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
 msgstr ""
+"Vložte frázu alebo termín, ktorý si želáte \n"
+"vyhľadať vo Wikipedii."
 
 #: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
 #, python-format
@@ -2772,10 +3221,12 @@ msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
 msgstr ""
+"Nedá sa stiahnuť z %s <br/>Prekontrolujte, prosím, zadaný text a tiež "
+"pripojenie a skúste to znovu."
 
 #: exe/engine/wikipediaidevice.py:315
 msgid "http://en.wikipedia.org/"
-msgstr ""
+msgstr "http://en.wikipedia.org/"
 
 #: exe/exe_do:68
 msgid ""
@@ -2947,6 +3398,8 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
+"\"%s\" už existuje.\n"
+"Prosím pokúste sa znovu s iným menom súboru."
 
 #: exe/export/cmdlineexporter.py:92
 msgid "Export format not implemented"
@@ -2959,16 +3412,18 @@ msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
+"EXPORT ZLYHAL!\n"
+"Posledný úspešný export je %s."
 
 #: exe/export/scormpage.py:177 exe/export/websitepage.py:345
 #: exe/webui/common.py:473
 msgid "Previous"
-msgstr ""
+msgstr "Predošlý"
 
 #: exe/export/scormpage.py:178 exe/export/websitepage.py:351
 #: exe/webui/common.py:474
 msgid "Next"
-msgstr ""
+msgstr "Ďalej"
 
 #: exe/export/singlepage.py:249
 msgid "You can close this window"
@@ -2976,7 +3431,7 @@ msgstr ""
 
 #: exe/export/textexport.py:54 exe/webui/common.py:293
 msgid "Licensed under the"
-msgstr ""
+msgstr "Licencované pod"
 
 #: exe/export/websitepage.py:153
 msgid "Skip navigation"
@@ -2984,18 +3439,20 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr ""
+msgstr "Príklad „príklad“"
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
 msgstr ""
+"Toto je ukážka používateľom vytvoreného\n"
+"zásuvného modulu prostriedku iDevice."
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
 msgid "Example"
-msgstr ""
+msgstr "Príklad "
 
 #: exe/importers/cmdlineimporter.py:44
 msgid "Import format not implemented"
@@ -3048,18 +3505,18 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
-msgstr ""
+msgstr "Nemôžem pristúpiť k priečinku s názvom "
 
 #: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:847 exe/jsui/mainpage.py:975
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
-msgstr ""
+msgstr ". Prosím, použite ASCII názvy."
 
 #: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
-msgstr ""
+msgstr "Uloženie zlyhalo!"
 
 #: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1071
 #: exe/jsui/mainpage_antes_jr_docs.py:326
@@ -3070,6 +3527,8 @@ msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
+"Uloženie zlyhalo!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:337 exe/jsui/mainpage.py:342 exe/jsui/mainpage.py:345
 #: exe/jsui/mainpage_antes_jr_docs.py:330
@@ -3077,19 +3536,19 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:338
 #, python-format
 msgid "Package saved to: %s"
-msgstr ""
+msgstr "Balík uložený do: %s"
 
 #: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:672
 #: exe/jsui/mainpage_antes_jr_docs.py:561
 #: exe/jsui/mainpage_antes_jr_docs.py:665
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
-msgstr ""
+msgstr "Adresár s ukážkami %s už existuje, nedá sa nahradiť"
 
 #: exe/jsui/mainpage.py:587 exe/jsui/mainpage_antes_jr_docs.py:580
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr ""
+msgstr "Lokálny súbor %s nebol nájdený, nedá sa zobraziť"
 
 #: exe/jsui/mainpage.py:712 exe/jsui/mainpage_antes_jr_docs.py:705
 #, python-format
@@ -3097,6 +3556,8 @@ msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
+"Kompilácia pomocou mimeTeX zlyhala!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:750 exe/jsui/mainpage_antes_jr_docs.py:743
 msgid "Importing HTML..."
@@ -3150,7 +3611,7 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1064
 #: exe/jsui/mainpage_antes_jr_docs.py:1136
 msgid "EXPORT FAILED!"
-msgstr ""
+msgstr "EXPORT ZLYHAL!"
 
 #: exe/jsui/mainpage.py:940 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
@@ -3169,11 +3630,13 @@ msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
+"EXTRAKT ZLYHAL!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1003 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
-msgstr ""
+msgstr "Súbory rozbalené do: %s"
 
 #: exe/jsui/mainpage.py:1015 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
@@ -3203,13 +3666,15 @@ msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
+"EXPORT ZLYHAL!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1057 exe/jsui/mainpage.py:1104
 #: exe/jsui/mainpage_antes_jr_docs.py:990
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr ""
+msgstr "Názov súboru %s je už použitý, nedá sa nahradiť"
 
 #: exe/jsui/mainpage.py:1063 exe/jsui/mainpage.py:1111
 #: exe/jsui/mainpage_antes_jr_docs.py:996
@@ -3219,6 +3684,8 @@ msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr ""
+"Adresár s názvom %s už existuje. Vyberte prosím iný alebo zmažte "
+"existujúci a skúste to znovu."
 
 #: exe/jsui/mainpage.py:1077 exe/jsui/mainpage.py:1122
 #: exe/jsui/mainpage.py:1137 exe/jsui/mainpage.py:1156
@@ -3235,16 +3702,18 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1185
 #, python-format
 msgid "Exported to %s"
-msgstr ""
+msgstr "Exportované do %s"
 
 #: exe/jsui/mainpage.py:1285 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr ""
+msgstr "Súbor %s neexistuje alebo sa nedá čítať."
 
 #: exe/jsui/mainpage.py:1289 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
+"Nepodarilo sa načítať súbor. Prosím pošlite upozornenie mailom na adresu "
+"bugs@exelearning.org"
 
 #: exe/jsui/mainpage.py:1292 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
@@ -3252,10 +3721,12 @@ msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
+"Prepáčte, nesprávny formát súboru:\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1294 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
-msgstr ""
+msgstr "Prepáčte, nesprávny formát súboru "
 
 #: exe/jsui/propertiespage.py:335
 msgid "Failed to get properties"
@@ -3275,7 +3746,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
 #: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
 msgid "Select an image"
-msgstr ""
+msgstr "Vyberte obrázok"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:194
 #: exe/jsui/scripts/app/controller/MainTab.js:228
@@ -3367,12 +3838,12 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
 msgid "Insert Package"
-msgstr ""
+msgstr "Vložiť „balíček“"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Extract Package"
-msgstr ""
+msgstr "Rozbaliť balík"
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Delete \"{node}\" node and all its children?"
@@ -3448,7 +3919,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:400
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
 msgid "Preferences"
-msgstr ""
+msgstr "Predvolby"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:428
 msgid ""
@@ -3480,7 +3951,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:123
 msgid "Information"
-msgstr ""
+msgstr "Informácie"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 msgid "Your Style could not be saved because an unknown error occurred."
@@ -3594,7 +4065,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:136
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušiť"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:792
 msgid "Ok"
@@ -3752,7 +4223,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
-msgstr ""
+msgstr "Meno"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:95
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
@@ -3784,7 +4255,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/en.js:112
 msgid "Save"
-msgstr ""
+msgstr "Uložiť"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:78
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:89
@@ -3805,13 +4276,13 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:35
 msgid "Dublin Core Metadata"
-msgstr ""
+msgstr "Metaúdaje Dublin Core"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:45
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:171
 msgid "The name given to the resource."
-msgstr ""
+msgstr "Názov zdroja"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:51
 msgid "Creator"
@@ -3819,7 +4290,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:52
 msgid "An entity primarily responsible for making the content of the resource."
-msgstr ""
+msgstr "Entita primárne zodpovedná za obsah prostriedku."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:60
 msgid "Subject"
@@ -3827,7 +4298,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:62
 msgid "The topic of the content of the resource."
-msgstr ""
+msgstr "Téma obsahu zdroja."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:65
 msgid ""
@@ -3841,7 +4312,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:207
 msgid "An account of the content of the resource."
-msgstr ""
+msgstr "Popis obsahu zdroja."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:78
 msgid "Publisher"
@@ -3849,7 +4320,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:79
 msgid "An entity responsible for making the resource available."
-msgstr ""
+msgstr "Entita zodpovedná za dostupnosť prostriedku."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:85
 msgid "Contributors"
@@ -3859,7 +4330,7 @@ msgstr ""
 msgid ""
 "An entity responsible for making contributions to the content of the "
 "resource."
-msgstr ""
+msgstr "Entita zodpovedná za vytváranie príspevkov do obsahu zdroja."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:100
 #: exe/jsui/scripts/app/view/forms/LomSections.js:67
@@ -3870,7 +4341,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:101
 msgid "A date of an event in the lifecycle of the resource."
-msgstr ""
+msgstr "Dátum udalosti v životnosti zdroja."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:104
 msgid ""
@@ -3883,7 +4354,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:113
 msgid "The nature or genre of the content of the resource."
-msgstr ""
+msgstr "Povaha alebo žáner obsahu zdroja."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:116
 msgid ""
@@ -3903,7 +4374,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
 msgid "Select a Format."
-msgstr ""
+msgstr "Vyberte formát."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomSections.js:40
@@ -3913,7 +4384,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:135
 msgid "An unambiguous reference to the resource within a given context."
-msgstr ""
+msgstr "Jednoznačný odkaz na zdroj v zadanom kontexte."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:141
 #: exe/jsui/scripts/app/view/forms/LomSections.js:175
@@ -3924,7 +4395,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:142
 msgid "A Reference to a resource from which the present resource is derived."
-msgstr ""
+msgstr "Odkaz na zdroj, z ktorého je súčasný zdroj odvodený."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:148
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:51
@@ -3942,7 +4413,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:182
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:189
 msgid "Select a language."
-msgstr ""
+msgstr "Zvoľte jazyk."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
@@ -3952,7 +4423,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:157
 msgid "A reference to a related resource."
-msgstr ""
+msgstr "Odkaz na spriaznený zdroj."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:163
 #: exe/jsui/scripts/app/view/forms/LomSections.js:52
@@ -3961,7 +4432,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:164
 msgid "The extent or scope of the content of the resource."
-msgstr ""
+msgstr "Obsahové rozmedzie zdroja."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:172
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:222
@@ -3971,7 +4442,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:173
 msgid "Information about rights held in and over the resource."
-msgstr ""
+msgstr "Informácie o právach týkajúcich sa zdroja a jeho obsahu."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:177
 msgid ""
@@ -3982,6 +4453,11 @@ msgid ""
 "no assumptions can be made about the status of these and other rights "
 "with respect to the resource."
 msgstr ""
+"Typicky bude v položke Práva obsiahnutá pasáž o oprávnení k daným zdrojom"
+" alebo odkaz na takéto informácie. Informácie o oprávnení zahrňujú často "
+"Intellectual Property Rights (IPR), copyright a iné vlastnícke práva. "
+"Pokiaľ nebude položka Práva uvedená, nemožno vytvárať predpoklady o stave"
+" akýchkoľvek práv vzťahujúcich sa k prostriedkom a zdrojom."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:189
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:128
@@ -3998,8 +4474,9 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
 #: exe/webui/tools/style-designer/langs/en.js:110
+#, fuzzy
 msgid "Reset"
-msgstr ""
+msgstr "Faersky "
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
@@ -4146,8 +4623,9 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:23
 #: exe/jsui/scripts/app/view/forms/LomSections.js:193
+#, fuzzy
 msgid "resources and integrated resources"
-msgstr ""
+msgstr "Odkaz na spriaznený zdroj."
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:24
 #: exe/jsui/scripts/app/view/forms/LomSections.js:194
@@ -4318,7 +4796,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:269
 #: exe/webui/editorpane.py:387
 msgid "Purpose"
-msgstr ""
+msgstr "Účel"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:166
 msgid "Download Classification Sources"
@@ -4709,7 +5187,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:45
 msgid "Select Language"
-msgstr ""
+msgstr "Zvoľte jazyk"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:151
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -4739,8 +5217,9 @@ msgid "Permissive"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
+#, fuzzy
 msgid "Strict"
-msgstr ""
+msgstr "Reštartovať"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:192
 msgid ""
@@ -4786,7 +5265,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
 msgid "Export"
-msgstr ""
+msgstr "Export"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
 msgid "Delete style: "
@@ -4865,7 +5344,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
-msgstr ""
+msgstr "Náčrt"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:85
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:88
@@ -4886,7 +5365,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:155
 msgid "iDevices"
-msgstr ""
+msgstr "Prostriedky iDevice"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "Category"
@@ -4898,21 +5377,21 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
 msgid "Authoring"
-msgstr ""
+msgstr "Tvorba obsahu"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:47
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Properties"
-msgstr ""
+msgstr "Vlastnosti"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
 msgid "Package"
-msgstr ""
+msgstr "Balíček"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:58
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
 msgid "Metadata"
-msgstr ""
+msgstr "Metadata"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:195
@@ -4926,7 +5405,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
-msgstr ""
+msgstr "Pridať stránku"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:239
 #: exe/webui/block.py:333 exe/webui/editorelement.py:78
@@ -4937,27 +5416,27 @@ msgstr ""
 #: exe/webui/galleryblock.py:303
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
-msgstr ""
+msgstr "Zmazať"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
-msgstr ""
+msgstr "Premenovať"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
 msgid "Promote node up in hierarchy"
-msgstr ""
+msgstr "Uzol hore v štruktúre"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
 msgid "Demote node down in hierarchy"
-msgstr ""
+msgstr "Uzol dole v štruktúre"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:45
 msgid "Move node up"
-msgstr ""
+msgstr "O uzol vyššie"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:51
 msgid "Move node down"
-msgstr ""
+msgstr "O uzol nižšie"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 #: exe/webui/tools/style-designer/langs/en.js:133
@@ -4975,7 +5454,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
-msgstr ""
+msgstr "Zmazať zoznam posledných projektov"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
 msgid "Save As..."
@@ -5028,15 +5507,15 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:273
 msgid "Web Site"
-msgstr ""
+msgstr "Webové sídlo"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:280
 msgid "Self-contained Folder"
-msgstr ""
+msgstr "Do novej zložky"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:286
 msgid "Zip File"
-msgstr ""
+msgstr "Zip archív"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
 msgid "Single Page"
@@ -5060,7 +5539,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:356 exe/webui/editorpage.py:269
 msgid "Quit"
-msgstr ""
+msgstr "Koniec"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:363
 msgid "Tools"
@@ -5092,7 +5571,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Preview"
-msgstr ""
+msgstr "Ukážka"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Refresh Display"
@@ -5149,391 +5628,391 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
-msgstr ""
+msgstr "Afarsky "
 
 #: exe/jsui/scripts/langs.js:8
 msgid "Abkhazian "
-msgstr ""
+msgstr "Abchazsky "
 
 #: exe/jsui/scripts/langs.js:12
 msgid "Avestan "
-msgstr ""
+msgstr "Avestánsky "
 
 #: exe/jsui/scripts/langs.js:16
 msgid "Afrikaans "
-msgstr ""
+msgstr "Afrikánsky "
 
 #: exe/jsui/scripts/langs.js:20
 msgid "Amharic "
-msgstr ""
+msgstr "Amharsky"
 
 #: exe/jsui/scripts/langs.js:24
 msgid "Arabic "
-msgstr ""
+msgstr "Arabsky "
 
 #: exe/jsui/scripts/langs.js:28
 msgid "Assamese "
-msgstr ""
+msgstr "Asamsky "
 
 #: exe/jsui/scripts/langs.js:32
 msgid "Aymara "
-msgstr ""
+msgstr "Ajmarsky "
 
 #: exe/jsui/scripts/langs.js:36
 msgid "Azerbaijani "
-msgstr ""
+msgstr "Azerbajdžánsky "
 
 #: exe/jsui/scripts/langs.js:40
 msgid "Bashkir "
-msgstr ""
+msgstr "Baškirsky "
 
 #: exe/jsui/scripts/langs.js:44
 msgid "Byelorussian; Belarusian "
-msgstr ""
+msgstr "Bielorusky "
 
 #: exe/jsui/scripts/langs.js:48
 msgid "Bulgarian "
-msgstr ""
+msgstr "Bulharsky "
 
 #: exe/jsui/scripts/langs.js:52
 msgid "Bihari "
-msgstr ""
+msgstr "Biharsky "
 
 #: exe/jsui/scripts/langs.js:56
 msgid "Bislama "
-msgstr ""
+msgstr "Bislamsky "
 
 #: exe/jsui/scripts/langs.js:60
 msgid "Bengali; Bangla "
-msgstr ""
+msgstr "Bengálsky "
 
 #: exe/jsui/scripts/langs.js:64
 msgid "Tibetan "
-msgstr ""
+msgstr "Tibetsky "
 
 #: exe/jsui/scripts/langs.js:68
 msgid "Breton "
-msgstr ""
+msgstr "Bretónsky "
 
 #: exe/jsui/scripts/langs.js:72
 msgid "Bosnian "
-msgstr ""
+msgstr "Bosniacky "
 
 #: exe/jsui/scripts/langs.js:76
 msgid "Catalan "
-msgstr ""
+msgstr "Katalánsky "
 
 #: exe/jsui/scripts/langs.js:80
 msgid "Chechen "
-msgstr ""
+msgstr "Čečensky "
 
 #: exe/jsui/scripts/langs.js:84
 msgid "Chamorro "
-msgstr ""
+msgstr "Šamorsky "
 
 #: exe/jsui/scripts/langs.js:88
 msgid "Corsican "
-msgstr ""
+msgstr "Korzikánsky "
 
 #: exe/jsui/scripts/langs.js:92
 msgid "Czech "
-msgstr ""
+msgstr "Česky "
 
 #: exe/jsui/scripts/langs.js:96
 msgid "Church Slavic "
-msgstr ""
+msgstr "Cirkevná Slovančina "
 
 #: exe/jsui/scripts/langs.js:100
 msgid "Chuvash "
-msgstr ""
+msgstr "Čuvačsky "
 
 #: exe/jsui/scripts/langs.js:104
 msgid "Welsh "
-msgstr ""
+msgstr "Welšsky "
 
 #: exe/jsui/scripts/langs.js:108
 msgid "Danish "
-msgstr ""
+msgstr "Dánsky "
 
 #: exe/jsui/scripts/langs.js:112
 msgid "German "
-msgstr ""
+msgstr "Nemecky "
 
 #: exe/jsui/scripts/langs.js:116
 msgid "Dzongkha; Bhutani "
-msgstr ""
+msgstr "Bhutánsky "
 
 #: exe/jsui/scripts/langs.js:120
 msgid "Greek "
-msgstr ""
+msgstr "Grécky "
 
 #: exe/jsui/scripts/langs.js:124
 msgid "English "
-msgstr ""
+msgstr "Anglicky "
 
 #: exe/jsui/scripts/langs.js:128
 msgid "Esperanto "
-msgstr ""
+msgstr "Esperanto "
 
 #: exe/jsui/scripts/langs.js:132
 msgid "Spanish "
-msgstr ""
+msgstr "Španielsky "
 
 #: exe/jsui/scripts/langs.js:136
 msgid "Estonian "
-msgstr ""
+msgstr "Estónsky "
 
 #: exe/jsui/scripts/langs.js:140
 msgid "Basque "
-msgstr ""
+msgstr "Baskicsky "
 
 #: exe/jsui/scripts/langs.js:144
 msgid "Persian "
-msgstr ""
+msgstr "Perzsky "
 
 #: exe/jsui/scripts/langs.js:148
 msgid "Finnish "
-msgstr ""
+msgstr "Fínsky "
 
 #: exe/jsui/scripts/langs.js:152
 msgid "Fijian; Fiji "
-msgstr ""
+msgstr "Fidžijisky "
 
 #: exe/jsui/scripts/langs.js:156
 msgid "Faroese "
-msgstr ""
+msgstr "Faersky "
 
 #: exe/jsui/scripts/langs.js:160
 msgid "French "
-msgstr ""
+msgstr "Francúzsky "
 
 #: exe/jsui/scripts/langs.js:164
 msgid "Frisian "
-msgstr ""
+msgstr "Frízsky "
 
 #: exe/jsui/scripts/langs.js:168
 msgid "Irish "
-msgstr ""
+msgstr "Írsky "
 
 #: exe/jsui/scripts/langs.js:172
 msgid "Scots; Gaelic "
-msgstr ""
+msgstr "Gaelsky "
 
 #: exe/jsui/scripts/langs.js:176
 msgid "Gallegan; Galician "
-msgstr ""
+msgstr "Galicijsky "
 
 #: exe/jsui/scripts/langs.js:180
 msgid "Guarani "
-msgstr ""
+msgstr "Guarani "
 
 #: exe/jsui/scripts/langs.js:184
 msgid "Gujarati "
-msgstr ""
+msgstr "Gudžarátsky "
 
 #: exe/jsui/scripts/langs.js:188
 msgid "Manx "
-msgstr ""
+msgstr "Manx "
 
 #: exe/jsui/scripts/langs.js:192
 msgid "Hausa (?) "
-msgstr ""
+msgstr "Hausa (?) "
 
 #: exe/jsui/scripts/langs.js:196
 msgid "Hebrew (formerly iw) "
-msgstr ""
+msgstr "Hebrejsky (predtým iw) "
 
 #: exe/jsui/scripts/langs.js:200
 msgid "Hindi "
-msgstr ""
+msgstr "Hindsky "
 
 #: exe/jsui/scripts/langs.js:204
 msgid "Hiri Motu "
-msgstr ""
+msgstr "Hiri Motu "
 
 #: exe/jsui/scripts/langs.js:208
 msgid "Croatian "
-msgstr ""
+msgstr "Chorvátsky "
 
 #: exe/jsui/scripts/langs.js:212
 msgid "Hungarian "
-msgstr ""
+msgstr "Maďarsky "
 
 #: exe/jsui/scripts/langs.js:216
 msgid "Armenian "
-msgstr ""
+msgstr "Arménsky "
 
 #: exe/jsui/scripts/langs.js:220
 msgid "Herero "
-msgstr ""
+msgstr "Herero "
 
 #: exe/jsui/scripts/langs.js:224
 msgid "Interlingua "
-msgstr ""
+msgstr "Interlingua "
 
 #: exe/jsui/scripts/langs.js:228
 msgid "Indonesian (formerly in) "
-msgstr ""
+msgstr "Indonézsky (predtým in) "
 
 #: exe/jsui/scripts/langs.js:232
 msgid "Interlingue "
-msgstr ""
+msgstr "Interlingue "
 
 #: exe/jsui/scripts/langs.js:236
 msgid "Inupiak "
-msgstr ""
+msgstr "Inupiak "
 
 #: exe/jsui/scripts/langs.js:240
 msgid "Ido "
-msgstr ""
+msgstr "Ido "
 
 #: exe/jsui/scripts/langs.js:244
 msgid "Icelandic "
-msgstr ""
+msgstr "Islandsky "
 
 #: exe/jsui/scripts/langs.js:248
 msgid "Italian "
-msgstr ""
+msgstr "Taliansky "
 
 #: exe/jsui/scripts/langs.js:252
 msgid "Inuktitut "
-msgstr ""
+msgstr "Inuktitut "
 
 #: exe/jsui/scripts/langs.js:256
 msgid "Japanese "
-msgstr ""
+msgstr "Japonsky "
 
 #: exe/jsui/scripts/langs.js:260
 msgid "Javanese "
-msgstr ""
+msgstr "Jávsky "
 
 #: exe/jsui/scripts/langs.js:264
 msgid "Georgian "
-msgstr ""
+msgstr "Gruzínsky "
 
 #: exe/jsui/scripts/langs.js:268
 msgid "Kikuyu "
-msgstr ""
+msgstr "Kikuyu "
 
 #: exe/jsui/scripts/langs.js:272
 msgid "Kuanyama "
-msgstr ""
+msgstr "Kuanyama "
 
 #: exe/jsui/scripts/langs.js:276
 msgid "Kazakh "
-msgstr ""
+msgstr "Kazašsky "
 
 #: exe/jsui/scripts/langs.js:280
 msgid "Kalaallisut; Greenlandic "
-msgstr ""
+msgstr "Grónsky "
 
 #: exe/jsui/scripts/langs.js:284
 msgid "Khmer; Cambodian "
-msgstr ""
+msgstr "Kambodžsky "
 
 #: exe/jsui/scripts/langs.js:288
 msgid "Kannada "
-msgstr ""
+msgstr "Kanadsky "
 
 #: exe/jsui/scripts/langs.js:292
 msgid "Korean "
-msgstr ""
+msgstr "Kórejsky "
 
 #: exe/jsui/scripts/langs.js:296
 msgid "Kashmiri "
-msgstr ""
+msgstr "Kašmírsky "
 
 #: exe/jsui/scripts/langs.js:300
 msgid "Kurdish "
-msgstr ""
+msgstr "Kurdsky "
 
 #: exe/jsui/scripts/langs.js:304
 msgid "Komi "
-msgstr ""
+msgstr "Komi "
 
 #: exe/jsui/scripts/langs.js:308
 msgid "Cornish "
-msgstr ""
+msgstr "Cornwallsky "
 
 #: exe/jsui/scripts/langs.js:312
 msgid "Kirghiz "
-msgstr ""
+msgstr "Kirgizsky "
 
 #: exe/jsui/scripts/langs.js:316
 msgid "Latin "
-msgstr ""
+msgstr "Latinsky "
 
 #: exe/jsui/scripts/langs.js:320
 msgid "Letzeburgesch "
-msgstr ""
+msgstr "Lecebursky "
 
 #: exe/jsui/scripts/langs.js:324
 msgid "Lingala "
-msgstr ""
+msgstr "Lingala "
 
 #: exe/jsui/scripts/langs.js:328
 msgid "Lao; Laotian "
-msgstr ""
+msgstr "Laotsky "
 
 #: exe/jsui/scripts/langs.js:332
 msgid "Lithuanian "
-msgstr ""
+msgstr "Litovsky "
 
 #: exe/jsui/scripts/langs.js:336
 msgid "Latvian; Lettish "
-msgstr ""
+msgstr "Lotyšsky "
 
 #: exe/jsui/scripts/langs.js:340
 msgid "Malagasy "
-msgstr ""
+msgstr "Malagašsky "
 
 #: exe/jsui/scripts/langs.js:344
 msgid "Marshall "
-msgstr ""
+msgstr "Marshall "
 
 #: exe/jsui/scripts/langs.js:348
 msgid "Maori "
-msgstr ""
+msgstr "Maorsky "
 
 #: exe/jsui/scripts/langs.js:352
 msgid "Macedonian "
-msgstr ""
+msgstr "Macedónsky "
 
 #: exe/jsui/scripts/langs.js:356
 msgid "Malayalam "
-msgstr ""
+msgstr "Malajalamsky "
 
 #: exe/jsui/scripts/langs.js:360
 msgid "Mongolian "
-msgstr ""
+msgstr "Mongolsky "
 
 #: exe/jsui/scripts/langs.js:364
 msgid "Moldavian "
-msgstr ""
+msgstr "Moldavsky "
 
 #: exe/jsui/scripts/langs.js:368
 msgid "Marathi "
-msgstr ""
+msgstr "Marathi "
 
 #: exe/jsui/scripts/langs.js:372
 msgid "Malay "
-msgstr ""
+msgstr "Malajsky "
 
 #: exe/jsui/scripts/langs.js:376
 msgid "Maltese "
-msgstr ""
+msgstr "Maltsky "
 
 #: exe/jsui/scripts/langs.js:380
 msgid "Burmese "
-msgstr ""
+msgstr "Barmsky "
 
 #: exe/jsui/scripts/langs.js:384
 msgid "Nauru "
-msgstr ""
+msgstr "Naurusky "
 
 #: exe/jsui/scripts/langs.js:388
 msgid "Norwegian Bokmål "
-msgstr ""
+msgstr "Nórsky "
 
 #: exe/jsui/scripts/langs.js:392
 msgid "Ndebele,North "
@@ -5541,23 +6020,23 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:396
 msgid "Nepali "
-msgstr ""
+msgstr "Nepálsky "
 
 #: exe/jsui/scripts/langs.js:400
 msgid "Ndonga "
-msgstr ""
+msgstr "Ndonga "
 
 #: exe/jsui/scripts/langs.js:404
 msgid "Dutch "
-msgstr ""
+msgstr "Holandsky "
 
 #: exe/jsui/scripts/langs.js:408
 msgid "Norwegian Nynorsk "
-msgstr ""
+msgstr "Nórsky "
 
 #: exe/jsui/scripts/langs.js:412
 msgid "Norwegian "
-msgstr ""
+msgstr "Nórsky "
 
 #: exe/jsui/scripts/langs.js:416
 msgid "Ndebele,South "
@@ -5565,39 +6044,39 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:420
 msgid "Navajo "
-msgstr ""
+msgstr "Navažsky "
 
 #: exe/jsui/scripts/langs.js:424
 msgid "Chichewa; Nyanja "
-msgstr ""
+msgstr "Chichewa; Nyanja "
 
 #: exe/jsui/scripts/langs.js:428
 msgid "Occitan; Provençal "
-msgstr ""
+msgstr "Provensalsky "
 
 #: exe/jsui/scripts/langs.js:432
 msgid "(Afan) Oromo "
-msgstr ""
+msgstr "Oromo "
 
 #: exe/jsui/scripts/langs.js:436
 msgid "Oriya "
-msgstr ""
+msgstr "Oriya "
 
 #: exe/jsui/scripts/langs.js:440
 msgid "Ossetian; Ossetic "
-msgstr ""
+msgstr "Osetsky "
 
 #: exe/jsui/scripts/langs.js:444
 msgid "Panjabi; Punjabi "
-msgstr ""
+msgstr "Pandžabsky "
 
 #: exe/jsui/scripts/langs.js:448
 msgid "Pali "
-msgstr ""
+msgstr "Pali "
 
 #: exe/jsui/scripts/langs.js:452
 msgid "Polish "
-msgstr ""
+msgstr "Poľsky "
 
 #: exe/jsui/scripts/langs.js:456
 msgid "Pashto,Pushto "
@@ -5605,87 +6084,87 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:460
 msgid "Portuguese "
-msgstr ""
+msgstr "Portugalsky "
 
 #: exe/jsui/scripts/langs.js:464
 msgid "Quechua "
-msgstr ""
+msgstr "Kečuánsky "
 
 #: exe/jsui/scripts/langs.js:468
 msgid "Rhaeto-Romance "
-msgstr ""
+msgstr "Rétorománsky "
 
 #: exe/jsui/scripts/langs.js:472
 msgid "Rundi; Kirundi "
-msgstr ""
+msgstr "Kirundsky "
 
 #: exe/jsui/scripts/langs.js:476
 msgid "Romanian "
-msgstr ""
+msgstr "Rumunsky "
 
 #: exe/jsui/scripts/langs.js:480
 msgid "Russian "
-msgstr ""
+msgstr "Rusky "
 
 #: exe/jsui/scripts/langs.js:484
 msgid "Kinyarwanda "
-msgstr ""
+msgstr "Rwandsky "
 
 #: exe/jsui/scripts/langs.js:488
 msgid "Sanskrit "
-msgstr ""
+msgstr "Sanskrit "
 
 #: exe/jsui/scripts/langs.js:492
 msgid "Sardinian "
-msgstr ""
+msgstr "Sardínsky "
 
 #: exe/jsui/scripts/langs.js:496
 msgid "Sindhi "
-msgstr ""
+msgstr "Sindhi "
 
 #: exe/jsui/scripts/langs.js:500
 msgid "Northern Sami "
-msgstr ""
+msgstr "Severné Sami "
 
 #: exe/jsui/scripts/langs.js:504
 msgid "Sango; Sangro "
-msgstr ""
+msgstr "Sangošsky "
 
 #: exe/jsui/scripts/langs.js:508
 msgid "Sinhalese "
-msgstr ""
+msgstr "Sinhálsky "
 
 #: exe/jsui/scripts/langs.js:512
 msgid "Slovak "
-msgstr ""
+msgstr "Slovensky "
 
 #: exe/jsui/scripts/langs.js:516
 msgid "Slovenian "
-msgstr ""
+msgstr "Slovinsky "
 
 #: exe/jsui/scripts/langs.js:520
 msgid "Samoan "
-msgstr ""
+msgstr "Samojsky "
 
 #: exe/jsui/scripts/langs.js:524
 msgid "Shona "
-msgstr ""
+msgstr "Šonsky "
 
 #: exe/jsui/scripts/langs.js:528
 msgid "Somali "
-msgstr ""
+msgstr "Somálsky "
 
 #: exe/jsui/scripts/langs.js:532
 msgid "Albanian "
-msgstr ""
+msgstr "Albánsky "
 
 #: exe/jsui/scripts/langs.js:536
 msgid "Serbian "
-msgstr ""
+msgstr "Srbsky "
 
 #: exe/jsui/scripts/langs.js:540
 msgid "Swati; Siswati "
-msgstr ""
+msgstr "Swatsky "
 
 #: exe/jsui/scripts/langs.js:544
 msgid "Sesotho; Sotho,Southern "
@@ -5693,87 +6172,87 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:548
 msgid "Sundanese "
-msgstr ""
+msgstr "Sundsky "
 
 #: exe/jsui/scripts/langs.js:552
 msgid "Swedish "
-msgstr ""
+msgstr "Švédsky "
 
 #: exe/jsui/scripts/langs.js:556
 msgid "Swahili "
-msgstr ""
+msgstr "Swahilsky "
 
 #: exe/jsui/scripts/langs.js:560
 msgid "Tamil "
-msgstr ""
+msgstr "Tamilsky "
 
 #: exe/jsui/scripts/langs.js:564
 msgid "Telugu "
-msgstr ""
+msgstr "Telugsky "
 
 #: exe/jsui/scripts/langs.js:568
 msgid "Tajik "
-msgstr ""
+msgstr "Tadžišsky "
 
 #: exe/jsui/scripts/langs.js:572
 msgid "Thai "
-msgstr ""
+msgstr "Thajsky "
 
 #: exe/jsui/scripts/langs.js:576
 msgid "Tigrinya "
-msgstr ""
+msgstr "Tigrinya "
 
 #: exe/jsui/scripts/langs.js:580
 msgid "Turkmen "
-msgstr ""
+msgstr "Turkménsky "
 
 #: exe/jsui/scripts/langs.js:584
 msgid "Tagalog "
-msgstr ""
+msgstr "Tagalsky "
 
 #: exe/jsui/scripts/langs.js:588
 msgid "Tswana; Setswana "
-msgstr ""
+msgstr "Čvansky "
 
 #: exe/jsui/scripts/langs.js:592
 msgid "Tongan  "
-msgstr ""
+msgstr "Tongan  "
 
 #: exe/jsui/scripts/langs.js:596
 msgid "Turkish "
-msgstr ""
+msgstr "Turecky "
 
 #: exe/jsui/scripts/langs.js:600
 msgid "Tsonga "
-msgstr ""
+msgstr "Tsonga "
 
 #: exe/jsui/scripts/langs.js:604
 msgid "Tatar "
-msgstr ""
+msgstr "Tatársky "
 
 #: exe/jsui/scripts/langs.js:608
 msgid "Twi "
-msgstr ""
+msgstr "Twi "
 
 #: exe/jsui/scripts/langs.js:612
 msgid "Tahitian "
-msgstr ""
+msgstr "Tahitsky "
 
 #: exe/jsui/scripts/langs.js:616
 msgid "Uighur "
-msgstr ""
+msgstr "Ujgursky "
 
 #: exe/jsui/scripts/langs.js:620
 msgid "Ukrainian "
-msgstr ""
+msgstr "Ukrajinsky "
 
 #: exe/jsui/scripts/langs.js:624
 msgid "Urdu "
-msgstr ""
+msgstr "Urdu "
 
 #: exe/jsui/scripts/langs.js:628
 msgid "Uzbek "
-msgstr ""
+msgstr "Uzbecky "
 
 #: exe/jsui/scripts/langs.js:632
 msgid "Valencian "
@@ -5781,43 +6260,43 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:636
 msgid "Vietnamese "
-msgstr ""
+msgstr "Vietnamsky "
 
 #: exe/jsui/scripts/langs.js:640
 msgid "Volapük; Volapuk "
-msgstr ""
+msgstr "Volapuk "
 
 #: exe/jsui/scripts/langs.js:644
 msgid "Walloon "
-msgstr ""
+msgstr "Walloon "
 
 #: exe/jsui/scripts/langs.js:648
 msgid "Wolof "
-msgstr ""
+msgstr "Wolof "
 
 #: exe/jsui/scripts/langs.js:652
 msgid "Xhosa "
-msgstr ""
+msgstr "Xhosa "
 
 #: exe/jsui/scripts/langs.js:656
 msgid "Yiddish (formerly ji) "
-msgstr ""
+msgstr "Jidiš (predtým ji) "
 
 #: exe/jsui/scripts/langs.js:660
 msgid "Yoruba "
-msgstr ""
+msgstr "Yoruba "
 
 #: exe/jsui/scripts/langs.js:664
 msgid "Zhuang "
-msgstr ""
+msgstr "Zhuang "
 
 #: exe/jsui/scripts/langs.js:668
 msgid "Chinese "
-msgstr ""
+msgstr "Čínsky "
 
 #: exe/jsui/scripts/langs.js:672
 msgid "Zulu "
-msgstr ""
+msgstr "Zulu "
 
 #: exe/jsui/scripts/lomvocab.js:5 exe/jsui/scripts/lomvocab.js:664
 msgid "active"
@@ -6750,7 +7229,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:85
 msgid "Please upload a .ggb file."
-msgstr ""
+msgstr "Nahrajte prosím súbor .ggb."
 
 #: exe/webui/appletblock.py:87
 msgid "Please upload a .jclic.zip file."
@@ -6778,7 +7257,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:131
 msgid "Geogebra"
-msgstr ""
+msgstr "Geogebra"
 
 #: exe/webui/appletblock.py:132
 msgid "JClic"
@@ -6790,15 +7269,15 @@ msgstr ""
 
 #: exe/webui/appletblock.py:134 exe/webui/wikipediablock.py:136
 msgid "Other"
-msgstr ""
+msgstr "Iné"
 
 #: exe/webui/appletblock.py:135
 msgid "Applet Type"
-msgstr ""
+msgstr "Typ Applet-u:"
 
 #: exe/webui/appletblock.py:156 exe/webui/appletblock.py:166
 msgid "Add files"
-msgstr ""
+msgstr "Pridať súbory"
 
 #: exe/webui/appletblock.py:162
 msgid "Accept URL"
@@ -6806,30 +7285,30 @@ msgstr ""
 
 #: exe/webui/appletblock.py:172
 msgid "Applet Code:"
-msgstr ""
+msgstr "Kód Applet-u:"
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
 msgid "Filename:"
-msgstr ""
+msgstr "Názov súboru"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
 #: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
 #: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
 msgid "Select a file"
-msgstr ""
+msgstr "Vyberte súbor"
 
 #: exe/webui/attachmentblock.py:108
 msgid "Label:"
-msgstr ""
+msgstr "Menovka:"
 
 #: exe/webui/block.py:184
 msgid "IDevice broken"
-msgstr ""
+msgstr "IDevice nefunkčné"
 
 #: exe/webui/block.py:222
 msgid "Done"
-msgstr ""
+msgstr "Hotovo"
 
 #: exe/webui/block.py:226
 msgid "Exit without saving?"
@@ -6837,11 +7316,11 @@ msgstr ""
 
 #: exe/webui/block.py:229
 msgid "Undo Edits"
-msgstr ""
+msgstr "Zrušiť editovanie"
 
 #: exe/webui/block.py:233
 msgid "Can NOT Undo Edits"
-msgstr ""
+msgstr "Nie je možné zrušiť úpravy"
 
 #: exe/webui/block.py:236 exe/webui/block.py:330
 msgid "This will delete this iDevice. Do you really want to do this?"
@@ -6849,36 +7328,36 @@ msgstr ""
 
 #: exe/webui/block.py:246
 msgid "Move Up"
-msgstr ""
+msgstr "Presunúť hore"
 
 #: exe/webui/block.py:253
 msgid "Move Down"
-msgstr ""
+msgstr "Presunúť dole"
 
 #: exe/webui/block.py:255
 msgid "---Move To---"
-msgstr ""
+msgstr "---Presunúť---"
 
 #: exe/webui/block.py:260 exe/webui/editorpane.py:380
 msgid "Pedagogical Help"
-msgstr ""
+msgstr "Pedagogický pomocník"
 
 #: exe/webui/block.py:273 exe/webui/editorpane.py:390
 msgid "Tip:"
-msgstr ""
+msgstr "Tip:"
 
 #: exe/webui/block.py:318
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr ""
+msgstr "CHYBA: „Block.renderViewContent“ bol volaný priamo"
 
 #: exe/webui/block.py:328 exe/webui/editorpage.py:286
 #: exe/webui/editorpane.py:270
 msgid "Edit"
-msgstr ""
+msgstr "Upraviť"
 
 #: exe/webui/casestudyblock.py:114 exe/webui/ejercicioresueltofpdblock.py:130
 msgid "Add another activity"
-msgstr ""
+msgstr "Pridať ďalšiu aktivitu."
 
 #: exe/webui/casopracticofpdblock.py:68
 msgid "Situation"
@@ -7031,25 +7510,25 @@ msgstr ""
 
 #: exe/webui/common.py:476
 msgid "Hide"
-msgstr ""
+msgstr "Skryť"
 
 #: exe/webui/common.py:477 exe/webui/common.py:715 exe/webui/element.py:1538
 #: exe/webui/element.py:2469 exe/webui/listablock.py:275
 msgid "Show Feedback"
-msgstr ""
+msgstr "Zobraziť spätnú väzbu"
 
 #: exe/webui/common.py:478
 msgid "Hide Feedback"
-msgstr ""
+msgstr "Skryť spätnú väzbu"
 
 #: exe/webui/common.py:479 exe/webui/common.py:494 exe/webui/element.py:2272
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
-msgstr ""
+msgstr "Správne"
 
 #: exe/webui/common.py:480 exe/webui/element.py:2275
 msgid "Incorrect"
-msgstr ""
+msgstr "Nesprávne"
 
 #: exe/webui/common.py:481
 msgid "Menu"
@@ -7061,7 +7540,7 @@ msgstr ""
 
 #: exe/webui/common.py:495 exe/webui/element.py:2708 exe/webui/element.py:2726
 msgid "Wrong"
-msgstr ""
+msgstr "Nesprávne"
 
 #: exe/webui/common.py:496
 msgid "Right answer"
@@ -7080,8 +7559,9 @@ msgid "Words"
 msgstr ""
 
 #: exe/webui/common.py:501
+#, fuzzy
 msgid "Play"
-msgstr ""
+msgstr "Upload"
 
 #: exe/webui/common.py:503
 msgid "Results"
@@ -7092,8 +7572,9 @@ msgid "Total"
 msgstr ""
 
 #: exe/webui/common.py:505
+#, fuzzy
 msgid "Another word"
-msgstr ""
+msgstr "Pridať ďalšiu možnosť"
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7114,11 +7595,11 @@ msgstr ""
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
-msgstr ""
+msgstr "eXe : elearning XHTML editor"
 
 #: exe/webui/common.py:839 exe/webui/common.py:842
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "Kliknite pre doplnenie inštrukcií"
 
 #: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
@@ -7126,15 +7607,15 @@ msgstr ""
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:251
 msgid "Text Line"
-msgstr ""
+msgstr "Riadok textu"
 
 #: exe/webui/editorelement.py:111 exe/webui/editorpane.py:253
 msgid "Text Box"
-msgstr ""
+msgstr "Textové pole"
 
 #: exe/webui/editorelement.py:149 exe/webui/element.py:602
 msgid "Button Caption"
-msgstr ""
+msgstr "Nadpis tlačidla"
 
 #: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
 #: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
@@ -7148,7 +7629,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:18
 msgid "Left"
-msgstr ""
+msgstr "Vľavo"
 
 #: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
 #: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
@@ -7162,47 +7643,47 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:76
 msgid "Right"
-msgstr ""
+msgstr "Vpravo"
 
 #: exe/webui/editorelement.py:228 exe/webui/flashmovieblock.py:87
 #: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/imagewithtextblock.py:88 exe/webui/multimediablock.py:92
 msgid "Align:"
-msgstr ""
+msgstr "Zarovnať: "
 
 #: exe/webui/editorelement.py:268 exe/webui/element.py:1889
 msgid "Select Flash Object"
-msgstr ""
+msgstr "Vyberte Flash objekt"
 
 #: exe/webui/editorelement.py:308
 msgid "Select MP3 file"
-msgstr ""
+msgstr "Zvoľte MP3 súbor"
 
 #: exe/webui/editorelement.py:311 exe/webui/element.py:869
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
-msgstr ""
+msgstr "Hlavička:"
 
 #: exe/webui/editorpage.py:125
 msgid "Please enter an idevice name."
-msgstr ""
+msgstr "Prosím, vložte názov prostriedku iDevice."
 
 #: exe/webui/editorpage.py:188 exe/webui/editorpage.py:200
 msgid "Sorry, wrong file format."
-msgstr ""
+msgstr "Prepáčte, nesprávny formát súboru."
 
 #: exe/webui/editorpage.py:262
 msgid "Import iDevice"
-msgstr ""
+msgstr "Importovať iDevice"
 
 #: exe/webui/editorpage.py:265
 msgid "Export iDevice"
-msgstr ""
+msgstr "Exportovať iDevice"
 
 #: exe/webui/editorpage.py:291
 msgid "New iDevice"
-msgstr ""
+msgstr "Nový prostriedok iDevice"
 
 #: exe/webui/editorpane.py:67
 msgid ""
@@ -7210,22 +7691,29 @@ msgid ""
 " a compulsory field and you will be prompted to enter a label if you try "
 "to submit your iDevice without one."
 msgstr ""
+"Váš nový iDevice sa bude zobrazovat na paneli iDevice pod týmto názvom. "
+"Toto pole je povinné a pokiaľ sa pokúsite uložiť iDevice bez názvu, "
+"budete vyzvaní, aby ste nejaký zadali."
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
-msgstr ""
+msgstr "Toto je voliteľné pole."
 
 #: exe/webui/editorpane.py:72
 msgid ""
 "The purpose dialogue allows you to describe your intended purpose of the "
 "iDevice to other potential users."
 msgstr ""
+"Dialóg vám umožňuje popísať cieľ vášho zámeru ostatným potenciálnym "
+"užívateľom."
 
 #: exe/webui/editorpane.py:75
 msgid ""
 "Use this pulldown to select whether or not  the iDevice should have any "
 "formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr ""
+"V tomto zozname vyberte, či má byť pre iDevice použité nejaké "
+"rozlišovacie formátovanie, napr. okraj a ikona."
 
 #: exe/webui/editorpane.py:79
 msgid ""
@@ -7233,103 +7721,113 @@ msgid ""
 "device's development. This can be useful if your iDevice is to be "
 "exported for others to use."
 msgstr ""
+"Použite toto políčko na popísanie zamýšľaného použitia a pedagogického "
+"zámeru. To je dôležité pre prípad, že chcete tento iDevice poskytnúť iným"
+" užívateľom."
 
 #: exe/webui/editorpane.py:84
 msgid ""
 "Add a single text line to an iDevice. Useful if you want the ability to "
 "place a label within the iDevice."
 msgstr ""
+"Vložiť do iDevice vstupný riadok. Užitočné, ak chcete mať možnosť "
+"umiestniť dovnútra iDevice menovku."
 
 #: exe/webui/editorpane.py:87
 msgid ""
 "Add a text entry box to an iDevice. Used for entering larger amounts of "
 "textual content."
 msgstr ""
+"Vložiť do iDevice textový box. Používá sa pre vkladanie väčšieho množstva"
+" textu."
 
 #: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
-msgstr ""
+msgstr "Pridať interaktívnu spätnú väzbu do iDevice."
 
 #: exe/webui/editorpane.py:91
 msgid "Add a flash video to your iDevice."
-msgstr ""
+msgstr "Pridať do iDevice flash video."
 
 #: exe/webui/editorpane.py:92
 msgid "Add an mp3 file to your iDevice."
-msgstr ""
+msgstr "Pridať mp3 súbor do iDevice."
 
 #: exe/webui/editorpane.py:93
 msgid "Add an attachment file to your iDevice."
-msgstr ""
+msgstr "Pridať k vášmu iDevice prílohu."
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:152
 #: exe/webui/editorpane.py:160 exe/webui/editorpane.py:176
 #: exe/webui/editorpane.py:186
 msgid "Enter the label here"
-msgstr ""
+msgstr "Sem vložte menovku "
 
 #: exe/webui/editorpane.py:146
 msgid "Enter instructions for completion here"
-msgstr ""
+msgstr "Sem vložte pokyny pre vyplnenie"
 
 #: exe/webui/editorpane.py:153 exe/webui/editorpane.py:177
 #: exe/webui/editorpane.py:187
 msgid "Enter the instructions for completion here"
-msgstr ""
+msgstr "Sem vložte pokyny pre vyplnenie "
 
 #: exe/webui/editorpane.py:161
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr ""
+"Tlačítko spätnej väzby sa neobjaví, pokiaľ \n"
+"nebudú do tohoto poľa vložené žiadne dáta."
 
 #: exe/webui/editorpane.py:198
 msgid "Please enter<br />an idevice name."
-msgstr ""
+msgstr "Prosím,vložte <br />názov iDevice."
 
 #: exe/webui/editorpane.py:250
 msgid "Add Field"
-msgstr ""
+msgstr "Pridať pole"
 
 #: exe/webui/editorpane.py:265
 msgid "Actions"
-msgstr ""
+msgstr "Akcie"
 
 #: exe/webui/editorpane.py:332
 msgid "Pedagogical Tip"
-msgstr ""
+msgstr "Pedagogický tip"
 
 #: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:163
 msgid "Emphasis"
-msgstr ""
+msgstr "Zvýraznenie"
 
 #: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:160
 msgid "No emphasis"
-msgstr ""
+msgstr "Žiadne zvýraznenie"
 
 #: exe/webui/editorpane.py:339 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:161
 msgid "Some emphasis"
-msgstr ""
+msgstr "Čiastočné zvýraznenie"
 
 #: exe/webui/editorpane.py:354
+#, fuzzy
 msgid "Select an icon"
-msgstr ""
+msgstr "Vyberte obrázok"
 
 #: exe/webui/editorpane.py:368
 msgid "Icons"
-msgstr ""
+msgstr "Ikony"
 
 #: exe/webui/editorpane.py:383
 msgid "Info"
-msgstr ""
+msgstr "Informácia"
 
 #: exe/webui/editorpane.py:429 exe/webui/element.py:1545
 #: exe/webui/element.py:1547 exe/webui/element.py:1803
 msgid "Submit"
-msgstr ""
+msgstr "Potvrdiť"
 
 #: exe/webui/ejercicioresueltofpdblock.py:122
 msgid "Translation"
@@ -7338,35 +7836,35 @@ msgstr ""
 #: exe/webui/eleccionmultiplefpdblock.py:98 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
-msgstr ""
+msgstr "Prosím označte správnu odpoveď pre každú otázku."
 
 #: exe/webui/eleccionmultiplefpdblock.py:124 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:119
 msgid "Add another question"
-msgstr ""
+msgstr "Pridať ďalšiu otázku"
 
 #: exe/webui/element.py:72
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr ""
+msgstr "CHYBA „Element.process“ bol priamo volaný triedou %s"
 
 #: exe/webui/element.py:81
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
-msgstr ""
+msgstr "CHYBA „Element.renderEdit“ bol priamo volaný triedou %s"
 
 #: exe/webui/element.py:98
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
-msgstr ""
+msgstr "CHYBA „Element.renderView“ bol priamo volaný triedou %s"
 
 #: exe/webui/element.py:753 exe/webui/element.py:1174
 msgid "Add Image"
-msgstr ""
+msgstr "Pridať obrázok"
 
 #: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
 msgid "Display as:"
-msgstr ""
+msgstr "Zobraziť ako: "
 
 #: exe/webui/element.py:786
 msgid "by"
@@ -7374,24 +7872,24 @@ msgstr ""
 
 #: exe/webui/element.py:793 exe/webui/element.py:1212
 msgid "blank for original size"
-msgstr ""
+msgstr "prázdne pre originálnu veľkosť"
 
 #: exe/webui/element.py:863
 msgid "Select an MP3"
-msgstr ""
+msgstr "Zvoľte MP3"
 
 #: exe/webui/element.py:1351 exe/webui/element.py:1684
 msgid "Cloze Text"
-msgstr ""
+msgstr "Doplňovací text"
 
 #: exe/webui/element.py:1359 exe/webui/element.py:1692
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
-msgstr ""
+msgstr "Skryť / Zobraziť slovo"
 
 #: exe/webui/element.py:1364 exe/webui/element.py:1697
 msgid "Strict Marking?"
-msgstr ""
+msgstr "Presne dodržať označenie?"
 
 #: exe/webui/element.py:1369
 msgid "Check Capitalization?"
@@ -7399,7 +7897,7 @@ msgstr ""
 
 #: exe/webui/element.py:1374 exe/webui/element.py:1707
 msgid "Instant Marking?"
-msgstr ""
+msgstr "Okamžité značkovanie?"
 
 #: exe/webui/element.py:1485 exe/webui/element.py:1742
 #: exe/webui/listablock.py:223
@@ -7408,15 +7906,15 @@ msgstr ""
 
 #: exe/webui/element.py:1535 exe/webui/element.py:1794
 msgid "Get score"
-msgstr ""
+msgstr "Zobraz bodovanie"
 
 #: exe/webui/element.py:1541 exe/webui/element.py:1800
 msgid "Show/Clear Answers"
-msgstr ""
+msgstr "Zobraziť / Vyčistiť odpovede"
 
 #: exe/webui/element.py:1551 exe/webui/element.py:1807
 msgid "Show Answers"
-msgstr ""
+msgstr "Zobraziť odpovede"
 
 #: exe/webui/element.py:1587 exe/webui/element.py:1839
 #: exe/webui/element.py:2461 exe/webui/element.py:2921
@@ -7426,7 +7924,7 @@ msgstr ""
 
 #: exe/webui/element.py:1702
 msgid "Check Caps?"
-msgstr ""
+msgstr "Overiť veľkosť písmen?"
 
 #: exe/webui/element.py:1712
 msgid "Show Score?"
@@ -7434,48 +7932,48 @@ msgstr ""
 
 #: exe/webui/element.py:1797
 msgid "Show/Hide Feedback"
-msgstr ""
+msgstr "Zobraziť / Skryť spätnú väzbu"
 
 #: exe/webui/element.py:1955
 msgid "Please select a .flv file."
-msgstr ""
+msgstr "Vyberte prosím súbor .flv (Flash Video)."
 
 #: exe/webui/element.py:1971
 msgid "Select a flash video"
-msgstr ""
+msgstr "Vyberte Flash animáciu"
 
 #: exe/webui/element.py:2080
 msgid "text"
-msgstr ""
+msgstr "text"
 
 #: exe/webui/element.py:2081
 msgid "newline"
-msgstr ""
+msgstr "nový riadok"
 
 #: exe/webui/element.py:2084
 msgid "Select a font size: "
-msgstr ""
+msgstr "Zvoľte veľkosť písma"
 
 #: exe/webui/element.py:2194 exe/webui/element.py:2581
 #: exe/webui/element.py:2706 exe/webui/element.py:2724
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
-msgstr ""
+msgstr "Správna voľba"
 
 #: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
-msgstr ""
+msgstr "Zmazať možnosť"
 
 #: exe/webui/element.py:2361 exe/webui/element.py:2816
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
-msgstr ""
+msgstr "Zmazať otázku"
 
 #: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
-msgstr ""
+msgstr "Pridať ďalšiu možnosť"
 
 #: exe/webui/element.py:2497 exe/webui/element.py:2940
 msgid "Solution"
@@ -7483,11 +7981,11 @@ msgstr ""
 
 #: exe/webui/element.py:2831
 msgid "Add another option"
-msgstr ""
+msgstr "Pridať ďalšiu možnosť"
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: exe/webui/externalurlblock.py:72
 msgid "small"
@@ -7503,7 +8001,7 @@ msgstr ""
 
 #: exe/webui/externalurlblock.py:81
 msgid "Frame Height:"
-msgstr ""
+msgstr "Výška rámu:"
 
 #: exe/webui/fileattachblock.py:92
 msgid "<div>\n"
@@ -7538,39 +8036,39 @@ msgstr ""
 #: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:307
 #: exe/webui/galleryblock.py:308
 msgid "Add images"
-msgstr ""
+msgstr "Pridať obrázky"
 
 #: exe/webui/galleryblock.py:230 exe/webui/galleryblock.py:332
 msgid "No Images Loaded"
-msgstr ""
+msgstr "Neboli nahraté žiadne obrázky"
 
 #: exe/webui/galleryblock.py:246 exe/webui/galleryblock.py:264
 msgid "Change Image"
-msgstr ""
+msgstr "Zmeniť obrázok"
 
 #: exe/webui/galleryblock.py:271
 msgid "Move Image Left"
-msgstr ""
+msgstr "Presunúť obrázok doľava"
 
 #: exe/webui/galleryblock.py:273
 msgid "Go Back"
-msgstr ""
+msgstr "Späť"
 
 #: exe/webui/galleryblock.py:285
 msgid "Move Image Right"
-msgstr ""
+msgstr "Presunúť obrázok doprava"
 
 #: exe/webui/galleryblock.py:287
 msgid "Go Forward"
-msgstr ""
+msgstr "Vpred"
 
 #: exe/webui/galleryblock.py:295
 msgid "Go Forward (Not Available)"
-msgstr ""
+msgstr "Vpred (nedostupné)"
 
 #: exe/webui/galleryblock.py:300
 msgid "Delete Image"
-msgstr ""
+msgstr "Zmazať obrázok"
 
 #: exe/webui/galleryblock.py:301
 msgid "Delete this image?"
@@ -7620,31 +8118,31 @@ msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
-msgstr ""
+msgstr "Prvotná veľkosť"
 
 #: exe/webui/imagemagnifierblock.py:153
 msgid "Maximum zoom"
-msgstr ""
+msgstr "Najväčšia veľkosť"
 
 #: exe/webui/imagemagnifierblock.py:159
 msgid "Small"
-msgstr ""
+msgstr "Malý"
 
 #: exe/webui/imagemagnifierblock.py:160
 msgid "Medium"
-msgstr ""
+msgstr "Stredné"
 
 #: exe/webui/imagemagnifierblock.py:161
 msgid "Large"
-msgstr ""
+msgstr "Veľké"
 
 #: exe/webui/imagemagnifierblock.py:162
 msgid "Extra large"
-msgstr ""
+msgstr "Extra veľké"
 
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
-msgstr ""
+msgstr "Veľkosť zväčšovacieho skla:"
 
 #: exe/webui/listablock.py:180
 msgid "Other words"
@@ -7674,7 +8172,7 @@ msgstr ""
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:100
 msgid "Add another Question"
-msgstr ""
+msgstr "Pridať ďalšiu otázku"
 
 #: exe/webui/notablock.py:104
 msgid "Show/Hide"
@@ -7742,11 +8240,11 @@ msgstr ""
 
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
-msgstr ""
+msgstr "Zvoľte hranicu úspešnosti:"
 
 #: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:368
 msgid "SUBMIT ANSWERS"
-msgstr ""
+msgstr "ODOSLAŤ ODPOVEDE"
 
 #: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318
 #: exe/webui/quiztestblock.py:372
@@ -7764,19 +8262,21 @@ msgstr ""
 
 #: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:156
 msgid "Load"
-msgstr ""
+msgstr "Nahrať"
 
 #: exe/webui/scripts/authoring.js:69
+#, fuzzy
 msgid "Select one or more images"
-msgstr ""
+msgstr "Vyberte obrázok"
 
 #: exe/webui/scripts/authoring.js:94
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
+#, fuzzy
 msgid "Flash Movie (.flv)"
-msgstr ""
+msgstr "Flash animácia"
 
 #: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
 msgid "Flash Object (.swf)"
@@ -7803,12 +8303,14 @@ msgid "MP3 Audio (.mp3)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:378
+#, fuzzy
 msgid "Select an mp3 file"
-msgstr ""
+msgstr "Vyberte súbor"
 
 #: exe/webui/scripts/authoring.js:386
+#, fuzzy
 msgid "Select a package"
-msgstr ""
+msgstr "Vyberte obrázok"
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
@@ -7825,8 +8327,9 @@ msgid "Do you want to overwrite the existing idevice {idevice}?"
 msgstr ""
 
 #: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
+#, fuzzy
 msgid "eXe Idevices"
-msgstr ""
+msgstr "Prostriedky iDevice"
 
 #: exe/webui/scripts/editor.js:87
 msgid "Please save the idevice first, then try to export it."
@@ -7858,7 +8361,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
-msgstr ""
+msgstr "Zavrieť"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert"
@@ -8955,8 +9458,9 @@ msgid "Node"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
+#, fuzzy
 msgid "Download Information"
-msgstr ""
+msgstr "Informácie"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
@@ -9000,12 +9504,14 @@ msgid "Quote"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
+#, fuzzy
 msgid "Quote Language"
-msgstr ""
+msgstr "Zvoľte jazyk."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
+#, fuzzy
 msgid "Authorship"
-msgstr ""
+msgstr "Tvorba obsahu"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:9
 msgid "Authorship Language"
@@ -9066,24 +9572,27 @@ msgid "Stop"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
+#, fuzzy
 msgid "Replace with:"
-msgstr ""
+msgstr "Obrázok s textom"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
+#, fuzzy
 msgid "Edit code"
-msgstr ""
+msgstr "Zobraz bodovanie"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:4
 msgid "Auto close tags"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:5
+#, fuzzy
 msgid "Wrap text"
-msgstr ""
+msgstr "text"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
@@ -9091,8 +9600,9 @@ msgid "Highlight syntax"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
+#, fuzzy
 msgid "Select a theme"
-msgstr ""
+msgstr "Vyberte obrázok"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
 msgid "Search"
@@ -9103,8 +9613,9 @@ msgid "Find next"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
+#, fuzzy
 msgid "Find previous"
-msgstr ""
+msgstr "Predošlý"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
 msgid "Replace all"
@@ -9123,8 +9634,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
+#, fuzzy
 msgid "Term"
-msgstr ""
+msgstr "Iné"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
 msgid "Term definition"
@@ -9262,8 +9774,9 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
+#, fuzzy
 msgid "Choose a type:"
-msgstr ""
+msgstr "Zvoľte obrázok"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
 msgid "Accordion"
@@ -9282,24 +9795,27 @@ msgid "A single content area with multiple panels."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
+#, fuzzy
 msgid "Pagination"
-msgstr ""
+msgstr "Možnosť «opt_01»"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
 msgid "Divide your content into different pages."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:26
+#, fuzzy
 msgid "Carousel"
-msgstr ""
+msgstr "Faersky "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:27
 msgid "Present a list of contents in horizontal order."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
+#, fuzzy
 msgid "Timeline"
-msgstr ""
+msgstr "nový riadok"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
@@ -9342,8 +9858,9 @@ msgid "This is the message that the users with no JavaScript will see:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
+#, fuzzy
 msgid "Message:"
-msgstr ""
+msgstr "Obrázok"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
 msgid "You can change it at any time."
@@ -10146,12 +10663,14 @@ msgid "Include wrapper (improves presentation)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
 msgid "Markup language"
-msgstr ""
+msgstr "Zvoľte jazyk."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
+#, fuzzy
 msgid "Please select a language"
-msgstr ""
+msgstr "Zvoľte jazyk."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
@@ -10163,8 +10682,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
+#, fuzzy
 msgid "Light"
-msgstr ""
+msgstr "Vpravo"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
@@ -10558,12 +11078,14 @@ msgid "Behaviour"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
+#, fuzzy
 msgid "Link"
-msgstr ""
+msgstr "Zarovnať: "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
+#, fuzzy
 msgid "Instructions:"
-msgstr ""
+msgstr "Pokyny"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
@@ -10574,12 +11096,14 @@ msgid "No selection and not in link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
+#, fuzzy
 msgid "Pages"
-msgstr ""
+msgstr "Veľké"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
+#, fuzzy
 msgid "Link title"
-msgstr ""
+msgstr "Článok Wiki"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
@@ -10594,8 +11118,9 @@ msgid "The tooltip will show the Link title."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
+#, fuzzy
 msgid "Definition"
-msgstr ""
+msgstr "Úvaha"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
 msgid "The term could not be found"
@@ -10608,8 +11133,9 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
+#, fuzzy
 msgid "Definition:"
-msgstr ""
+msgstr "Opis:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
@@ -10621,8 +11147,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
+#, fuzzy
 msgid "Page"
-msgstr ""
+msgstr "Veľké"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
@@ -10633,8 +11160,9 @@ msgid "Define the Link: Select that page."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:34
+#, fuzzy
 msgid "The tooltip will show the content of the Free Text iDevice."
-msgstr ""
+msgstr "Téma obsahu zdroja."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:36
 msgid "Glossary"
@@ -10665,8 +11193,9 @@ msgid "The Link is required"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
+#, fuzzy
 msgid "Please select a Page"
-msgstr ""
+msgstr "Vyberte prosím súbor .flv (Flash Video)."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
 msgid "The Link title is required"
@@ -11091,8 +11620,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
+#, fuzzy
 msgid "Editor"
-msgstr ""
+msgstr "Editor prostriedkov iDevice"
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
@@ -11232,8 +11762,9 @@ msgid "General settings"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:13
+#, fuzzy
 msgid "Page width"
-msgstr ""
+msgstr "Obrázok s textom"
 
 #: exe/webui/tools/style-designer/langs/en.js:14
 msgid "Percentage"
@@ -11264,28 +11795,32 @@ msgid "Text and Links"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:25
+#, fuzzy
 msgid "Text color"
-msgstr ""
+msgstr "Zobraz bodovanie"
 
 #: exe/webui/tools/style-designer/langs/en.js:27
+#, fuzzy
 msgid "Links"
-msgstr ""
+msgstr "Zarovnať: "
 
 #: exe/webui/tools/style-designer/langs/en.js:28
 msgid "Links color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:30
+#, fuzzy
 msgid "Style description"
-msgstr ""
+msgstr "Opis"
 
 #: exe/webui/tools/style-designer/langs/en.js:32
 msgid "Author URL"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:33
+#, fuzzy
 msgid "Style name"
-msgstr ""
+msgstr "Názov súboru"
 
 #: exe/webui/tools/style-designer/langs/en.js:34
 msgid "Save to name the new Style."
@@ -11314,8 +11849,9 @@ msgid "Background color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:44
+#, fuzzy
 msgid "Select image"
-msgstr ""
+msgstr "Vyberte obrázok"
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
@@ -11396,8 +11932,9 @@ msgid "Top margin"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:78
+#, fuzzy
 msgid "Font size"
-msgstr ""
+msgstr "Zvoľte veľkosť písma"
 
 #: exe/webui/tools/style-designer/langs/en.js:80
 msgid "Navigation"
@@ -11440,8 +11977,9 @@ msgid "Grey"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:94
+#, fuzzy
 msgid "With emphasis"
-msgstr ""
+msgstr "Žiadne zvýraznenie"
 
 #: exe/webui/tools/style-designer/langs/en.js:95
 msgid "Title color"
@@ -11494,8 +12032,9 @@ msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:111
+#, fuzzy
 msgid "Finish"
-msgstr ""
+msgstr "Fínsky "
 
 #: exe/webui/tools/style-designer/langs/en.js:113
 msgid "Save as"
@@ -11510,8 +12049,9 @@ msgid "Save all changes? This cannot be undone."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:117
+#, fuzzy
 msgid "Style name:"
-msgstr ""
+msgstr "Názov súboru"
 
 #: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Your browser is not compatible with this tool."
@@ -11544,8 +12084,9 @@ msgid "Drag markers to pick a color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:134
+#, fuzzy
 msgid "Current"
-msgstr ""
+msgstr "Nesprávne"
 
 #: exe/webui/tools/style-designer/langs/en.js:140
 msgid "New Color - Press OK to Commit"
@@ -11627,16 +12168,16 @@ msgstr ""
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
 msgid "True"
-msgstr ""
+msgstr "Pravda"
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:218
 #: exe/webui/truefalseelement.py:264
 msgid "False"
-msgstr ""
+msgstr "Lož"
 
 #: exe/webui/wikipediablock.py:115
 msgid "English Wikipedia Article"
-msgstr ""
+msgstr "Anglický článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:116
 msgid "Basque Wikipedia Article"
@@ -11644,23 +12185,23 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:117
 msgid "Catalan Wikipedia Article"
-msgstr ""
+msgstr "Katalánsky článok vo Wikipedii"
 
 #: exe/webui/wikipediablock.py:118
 msgid "Chinese Wikipedia Article"
-msgstr ""
+msgstr "Čínsky článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:119
 msgid "Dutch Wikipedia Article"
-msgstr ""
+msgstr "Holandský článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:120
 msgid "French Wikipedia Article"
-msgstr ""
+msgstr "Francúzsky článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:121
 msgid "German Wikipedia Article"
-msgstr ""
+msgstr "Nemecký článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:122
 msgid "Galician Wikipedia Article"
@@ -11668,63 +12209,63 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Greek Wikipedia Article"
-msgstr ""
+msgstr "Grécky článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:124
 msgid "Italian Wikipedia Article"
-msgstr ""
+msgstr "Taliansky článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:125
 msgid "Japanese Wikipedia Article"
-msgstr ""
+msgstr "Japonský článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:126
 msgid "Magyar Wikipedia Article"
-msgstr ""
+msgstr "Maďarský článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:127
 msgid "Polish Wikipedia Article"
-msgstr ""
+msgstr "Poľský článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:128
 msgid "Portugese Wikipedia Article"
-msgstr ""
+msgstr "Portugalský článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:129
 msgid "Slovenian Wikipedia Article"
-msgstr ""
+msgstr "Slovínsky článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:130
 msgid "Spanish Wikipedia Article"
-msgstr ""
+msgstr "Španielsky článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:131
 msgid "Swedish Wikipedia Article"
-msgstr ""
+msgstr "Šwédsky článok vo formáte Wikipedia"
 
 #: exe/webui/wikipediablock.py:132
 msgid "Wikibooks Article"
-msgstr ""
+msgstr "Článok Wikibooks"
 
 #: exe/webui/wikipediablock.py:133
 msgid "Wikiversity"
-msgstr ""
+msgstr "Wikiverzia"
 
 #: exe/webui/wikipediablock.py:134
 msgid "Wiktionary"
-msgstr ""
+msgstr "Wikcionár"
 
 #: exe/webui/wikipediablock.py:135
 msgid "Wikieducator Content"
-msgstr ""
+msgstr "Obsah Wikieducator"
 
 #: exe/webui/wikipediablock.py:141
 msgid "Site"
-msgstr ""
+msgstr "Stránka"
 
 #: exe/webui/wikipediablock.py:151
 msgid "Own site"
-msgstr ""
+msgstr "Vlastný web"
 
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
@@ -11737,7 +12278,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:135
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
 #: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
@@ -11745,6 +12286,8 @@ msgid ""
 "Package is old. Please upgrade it (using File..Open followed by "
 "File..Save As) before attempting to insert it into another package!"
 msgstr ""
+"Balík je zastaralý. Pomocou položky Súbor-Otvoriť a následne Uložiť "
+"ako... ho aktualizujte. Až potom ho môžete vložiť do iného balíčku!"
 
 #: twisted/persisted/styles.py:437
 msgid ""
@@ -11758,4 +12301,7 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
+"Buď váš idevice/generic.data súbor alebo balíček, ktorý načítavate, bol "
+"vytvorený novšou verziou eXe. Aktualizujte, prosím, vašu verziu eXe a "
+"skúste to znovu."
 

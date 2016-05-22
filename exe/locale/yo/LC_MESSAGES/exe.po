@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-22 13:57+0200\n"
+"POT-Creation-Date: 2016-05-22 14:14+0200\n"
 "PO-Revision-Date: 2007-02-19 10:50+1200\n"
 "Last-Translator: \n"
 "Language: yo\n"
@@ -590,6 +590,25 @@ msgid ""
 " idea to get a colleague to test the test/exercise to make sure there are"
 " no surprises!  </p>  </dd></dl>"
 msgstr ""
+"<dl>  <dt>Ti aba fe je ki o rorun lati se kika  </dt>  <dd>    <p>  Write"
+" a summary of the concept or reading long  enough to adequately test the "
+"target's knowledge, but short enough not to induce fatigue. Less than one"
+" typed page is probably adequate, but probably considerably less for "
+"young students or beginners.    </p>    <p>Select words in the text "
+"thatare key to understanding the concepts. Thesewill probably be verbs, "
+"nouns, and key adverbs.Choose alternatives with one clear answer.    </p>"
+"  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  "
+"<dd><p>Write a text using the target vocabulary. This text should be "
+"coherent and cohesive, and be of an appropriate length. Highlight the "
+"target words in the text. Choose alternatives with one clear answer.</p>"
+"  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>"
+"  <p>Write a text using the target forms. This text should be coherent "
+"and cohesive, and be of an appropriate length. Remember that the goal is "
+"not vocabulary knowledge, so the core meanings of the stem words should "
+"be well known to the students.  </p>  <p>Highlight the target words in "
+"the text. Provide alternatives with the same word stem, but different "
+"affixes. It is a good idea to get a colleague to test the test/exercise "
+"to make sure there are no surprises!  </p>  </dd></dl>"
 
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
@@ -2211,7 +2230,7 @@ msgstr ""
 
 #: exe/engine/package.py:1000
 msgid "?????"
-msgstr ""
+msgstr "?????"
 
 #: exe/engine/package.py:1038 exe/engine/package.py:1045
 #, python-format

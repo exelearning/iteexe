@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-05-22 13:57+0200\n"
+"POT-Creation-Date: 2016-05-22 14:14+0200\n"
 "PO-Revision-Date: 2014-05-13 17:47+0330\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fa\n"
@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 
 #: exe/application.py:248
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "eXeLearning, the EXtremely Easy to use eLearning authoring tool\n"
 "   Usage: %s [OPTION] [PACKAGE]\n"
@@ -45,10 +45,20 @@ msgid ""
 "or\n"
 "Users/<user name>/AppData/Roaming/exe on Windows 7"
 msgstr ""
+"استفاده شده: %s [OPTION] [PACKAGE]\n"
+"  -V, --version    اطلاعات نسخه را چاپ کرده و خارج می‌شود\n"
+"  -h, --version    فایل راهنما را نشان داده و خارج می‌شود\n"
+"  --standalone     پوشهٔ فعلی را اجرا می‌کند\n"
+"  --portable       حالت پرتابل را اجرا می کند\n"
+"تنظیمات از فایل exe.conf واقع در $HOME/.exe در لینوکس Linux/Unix/Mac OS "
+"یا\n"
+"در Documents and Settings/<user name>/Application Data/exe در Windows XP "
+"یا\n"
+"Users/<user name>/AppData/Roaming/exe در Windows 7 خوانده می‌شود"
 
 #: exe/engine/appletidevice.py:70
 msgid "Java Applet"
-msgstr ""
+msgstr "افزونه جاوا"
 
 #: exe/engine/appletidevice.py:71 exe/engine/attachmentidevice.py:45
 #: exe/engine/casestudyidevice.py:201 exe/engine/clozefpdidevice.py:51
@@ -71,7 +81,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
-msgstr ""
+msgstr "دانشگاه اوکلند"
 
 #: exe/engine/appletidevice.py:79
 msgid ""
@@ -102,7 +112,7 @@ msgstr ""
 #: exe/engine/appletidevice.py:190
 #, python-format
 msgid "file %s has no parentNode"
-msgstr ""
+msgstr "فایل %s شاخهٔ اصلی(والد) ندارد"
 
 #: exe/engine/appletidevice.py:192 exe/engine/attachmentidevice.py:107
 #, python-format
@@ -111,7 +121,7 @@ msgstr ""
 
 #: exe/engine/appletidevice.py:443
 msgid "Sorry, this URL is unreachable"
-msgstr ""
+msgstr "با عرض پوزش، این آدرس قابل دسترس نمی‌باشد"
 
 #: exe/engine/appletidevice.py:528
 msgid ""
@@ -155,7 +165,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
-msgstr ""
+msgstr "ضمیمه"
 
 #: exe/engine/attachmentidevice.py:46
 msgid ""
@@ -176,7 +186,7 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
-msgstr ""
+msgstr "توضیحات:"
 
 #: exe/engine/attachmentidevice.py:69
 msgid ""
@@ -204,7 +214,7 @@ msgstr ""
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/tools/style-designer/langs/en.js:46
 msgid "Image"
-msgstr ""
+msgstr "تصویر"
 
 #: exe/engine/casestudyidevice.py:65
 #: exe/engine/ejercicioresueltofpdidevice.py:65
@@ -308,11 +318,11 @@ msgstr ""
 #: exe/engine/casopracticofpdidevice.py:38
 #: exe/engine/casopracticofpdidevice.py:136
 msgid "Situation Text:"
-msgstr ""
+msgstr "وضعیت متن:"
 
 #: exe/engine/citasparapensarfpdidevice.py:32
 msgid "FPD - Quotation"
-msgstr ""
+msgstr "FPD - نقل قول"
 
 #: exe/engine/citasparapensarfpdidevice.py:34
 msgid ""
@@ -352,7 +362,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Title"
-msgstr ""
+msgstr "عنوان"
 
 #: exe/engine/clickinorderidevice.py:61
 msgid "Game Instructions"
@@ -404,19 +414,19 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:78
 msgid "Game Width"
-msgstr ""
+msgstr "عرض بازی"
 
 #: exe/engine/clickinorderidevice.py:78
 msgid "Width of game area (in pixels)"
-msgstr ""
+msgstr "عرض جعبهٔ بازی به پیکسل"
 
 #: exe/engine/clickinorderidevice.py:79
 msgid "Game Height"
-msgstr ""
+msgstr "ارتفاع بازی"
 
 #: exe/engine/clickinorderidevice.py:79
 msgid "Height of game area (in pixels)"
-msgstr ""
+msgstr "ارتفاع جعبهٔ بازی به پیکسل"
 
 #: exe/engine/clickinorderidevice.py:80
 msgid "Style of Element Counter"
@@ -452,24 +462,24 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:84
 msgid "Style of timer Element"
-msgstr ""
+msgstr "استایل یا CSS برای زمانسج"
 
 #: exe/engine/clickinorderidevice.py:84
 msgid "Style of timer (CSS)"
-msgstr ""
+msgstr "استایل زمان سنج (CSS)"
 
 #: exe/engine/clickinorderidevice.py:98 exe/engine/clickinorderidevice.py:100
 msgid "Dont Shuffle"
-msgstr ""
+msgstr "غیر تصادفی"
 
 #: exe/engine/clickinorderidevice.py:98 exe/engine/clickinorderidevice.py:101
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Shuffle"
-msgstr ""
+msgstr "تصادفی"
 
 #: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:104
 msgid "No Timer"
-msgstr ""
+msgstr "بدون زمان سنج"
 
 #: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:105
 msgid "Stopwatch Mode"
@@ -485,15 +495,15 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:108
 msgid "Use a Timer"
-msgstr ""
+msgstr "استفاده از زمان سنج"
 
 #: exe/engine/clickinorderidevice.py:108 exe/engine/memorymatchidevice.py:73
 msgid "Use Timer?"
-msgstr ""
+msgstr "از زمان سنج استفاده شود؟"
 
 #: exe/engine/clickinorderidevice.py:115
 msgid "Clickable Area"
-msgstr ""
+msgstr "قسمت قابل کلیک"
 
 #: exe/engine/clickinorderidevice.py:152
 msgid "Top (Y) Coord"
@@ -513,7 +523,7 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:154
 msgid "Width (px)"
-msgstr ""
+msgstr "عرض (پیکسل)"
 
 #: exe/engine/clickinorderidevice.py:154
 msgid "Width of clickable area"
@@ -649,7 +659,7 @@ msgstr ""
 #: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
-msgstr ""
+msgstr "بازخورد"
 
 #: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
 #: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
@@ -724,7 +734,7 @@ msgstr ""
 #: exe/engine/config.py:90 exe/engine/config.py:91 exe/engine/config.py:92
 #: exe/engine/config.py:93 exe/engine/config.py:94
 msgid "FPD"
-msgstr ""
+msgstr "FPD"
 
 #: exe/engine/config.py:107 exe/engine/config.py:108 exe/engine/config.py:110
 #: exe/engine/config.py:112
@@ -762,7 +772,7 @@ msgstr ""
 
 #: exe/engine/ejercicioresueltofpdidevice.py:198
 msgid "FPD - Translation"
-msgstr ""
+msgstr "FPD - ترجمه"
 
 #: exe/engine/ejercicioresueltofpdidevice.py:200
 msgid ""
@@ -942,7 +952,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:26
 msgid "Size"
-msgstr ""
+msgstr "اندازه"
 
 #: exe/engine/extendedfieldengine.py:38
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
@@ -961,23 +971,23 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/en.js:45
 msgid "Browse"
-msgstr ""
+msgstr "کاوش"
 
 #: exe/engine/extendedfieldengine.py:286
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:11
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace"
-msgstr ""
+msgstr "جایگزین"
 
 #: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:158
 #: exe/webui/appletblock.py:168
 msgid "Upload"
-msgstr ""
+msgstr "بارگذاری"
 
 #: exe/engine/extendedfieldengine.py:298
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
 msgid "File"
-msgstr ""
+msgstr "فایل"
 
 #: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:185
 msgid "Delete File"
@@ -1126,7 +1136,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:452
 msgid "Hint"
-msgstr ""
+msgstr "بازدید"
 
 #: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2381
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -1149,7 +1159,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:47
 #: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
 msgid "Question:"
-msgstr ""
+msgstr "سوال:"
 
 #: exe/engine/field.py:3913
 msgid ""
@@ -1176,7 +1186,7 @@ msgstr ""
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:204
 msgid "Feedback:"
-msgstr ""
+msgstr "بازخورد:"
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
@@ -1197,7 +1207,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:9
 #: exe/webui/tools/style-designer/langs/en.js:59
 msgid "Yes"
-msgstr ""
+msgstr "بلی"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
@@ -1205,23 +1215,23 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:10
 #: exe/webui/tools/style-designer/langs/en.js:60
 msgid "No"
-msgstr ""
+msgstr "خیر"
 
 #: exe/engine/fileattachidevice.py:46 exe/engine/fileattachidevice.py:67
 msgid "Show description and link"
-msgstr ""
+msgstr "نمایش توضیحات و لینک"
 
 #: exe/engine/fileattachidevice.py:46 exe/engine/fileattachidevice.py:67
 msgid "Show Description"
-msgstr ""
+msgstr "نمایش توضیحات"
 
 #: exe/engine/fileattachidevice.py:69
 msgid "Intro Text"
-msgstr ""
+msgstr "متن مقدمه"
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr ""
+msgstr "فیلم‌های فلش"
 
 #: exe/engine/flashmovieidevice.py:41
 msgid ""
@@ -1254,7 +1264,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Description"
-msgstr ""
+msgstr "توضیحات"
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:109
 msgid ""
@@ -1264,7 +1274,7 @@ msgstr ""
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
-msgstr ""
+msgstr "فلش با متن"
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1298,7 +1308,7 @@ msgstr ""
 
 #: exe/engine/freetextfpdidevice.py:39
 msgid "FPD - Free Text"
-msgstr ""
+msgstr "FPD - متن آزاد"
 
 #: exe/engine/freetextfpdidevice.py:41 exe/engine/freetextidevice.py:40
 msgid ""
@@ -1345,7 +1355,7 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:459
 msgid "eXe Project"
-msgstr ""
+msgstr "پروژهٔ eXe "
 
 #: exe/engine/galleryidevice.py:460
 msgid ""
@@ -1361,7 +1371,7 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
-msgstr ""
+msgstr "یک عنوان برای گالری انتخاب کنید"
 
 #: exe/engine/galleryidevice.py:473
 msgid ""
@@ -1692,7 +1702,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/tools/style-designer/langs/en.js:24
 msgid "Text"
-msgstr ""
+msgstr "متن"
 
 #: exe/engine/imagemagnifieridevice.py:55 exe/engine/multimediaidevice.py:65
 msgid ""
@@ -1866,24 +1876,24 @@ msgstr ""
 #: exe/engine/locationbuttons.py:29 exe/engine/locationbuttons.py:33
 #: exe/engine/locationbuttons.py:37
 msgid "Desktop"
-msgstr ""
+msgstr "میزکار"
 
 #: exe/engine/locationbuttons.py:30
 msgid "My Documents"
-msgstr ""
+msgstr "اسناد من"
 
 #: exe/engine/locationbuttons.py:31 exe/engine/locationbuttons.py:35
 #: exe/engine/locationbuttons.py:39
 msgid "Home Folder"
-msgstr ""
+msgstr "پوشهٔ خانه"
 
 #: exe/engine/locationbuttons.py:34 exe/engine/locationbuttons.py:38
 msgid "Documents"
-msgstr ""
+msgstr "اسناد"
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
-msgstr ""
+msgstr "ریاضیات"
 
 #: exe/engine/mathidevice.py:43
 msgid ""
@@ -1918,11 +1928,11 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:56
 msgid "Number of Rows"
-msgstr ""
+msgstr "تعداد ردیف‌ها"
 
 #: exe/engine/memorymatchidevice.py:57
 msgid "Number of Columns"
-msgstr ""
+msgstr "تعداد ستون‌ها"
 
 #: exe/engine/memorymatchidevice.py:58
 msgid "Split Question/Answer Pairs"
@@ -1954,19 +1964,19 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:63
 msgid "Width of Cells (in pixels)"
-msgstr ""
+msgstr "عرض کادر (در پیکسل)"
 
 #: exe/engine/memorymatchidevice.py:63
 msgid "Cell Width px"
-msgstr ""
+msgstr "عرض کادر به پیکسل"
 
 #: exe/engine/memorymatchidevice.py:64
 msgid "Height of Cells (in pixels)"
-msgstr ""
+msgstr "ارتفاع کادر(در پیکسل)"
 
 #: exe/engine/memorymatchidevice.py:64
 msgid "Cell Height px"
-msgstr ""
+msgstr "ارتفاع کادر به پیکسل"
 
 #: exe/engine/memorymatchidevice.py:65
 msgid "Time after which to re-hide incorrect match (ms)"
@@ -1982,7 +1992,7 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:66
 msgid "Cover Img"
-msgstr ""
+msgstr "تصویر کاور"
 
 #: exe/engine/memorymatchidevice.py:67
 msgid "Background Image for cells (shown after selected)"
@@ -2100,11 +2110,11 @@ msgstr ""
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
-msgstr ""
+msgstr "انتخاب چندتایی"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:41
 msgid "Auckland University of Technology"
@@ -2139,11 +2149,11 @@ msgstr ""
 
 #: exe/engine/multiselectidevice.py:45
 msgid "Multi-select"
-msgstr ""
+msgstr "انتخاب چندگانه"
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
-msgstr ""
+msgstr "یادداشت"
 
 #: exe/engine/notaidevice.py:45
 msgid "exelearning.net"
@@ -2151,7 +2161,7 @@ msgstr ""
 
 #: exe/engine/notaidevice.py:53
 msgid "Comment:"
-msgstr ""
+msgstr "دیدگاه:"
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:30
 msgid "FPD - Guidelines Students"
@@ -2191,28 +2201,28 @@ msgstr ""
 
 #: exe/engine/package.py:327
 msgid "Topic"
-msgstr ""
+msgstr "موضوع"
 
 #: exe/engine/package.py:327
 msgid "Section"
-msgstr ""
+msgstr "بخش"
 
 #: exe/engine/package.py:327
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
 msgid "Unit"
-msgstr ""
+msgstr "واحد"
 
 #: exe/engine/package.py:348
 msgid "Home"
-msgstr ""
+msgstr "خانه"
 
 #: exe/engine/package.py:503
 msgid "Metadata creation date"
-msgstr ""
+msgstr "تاریخ ایجاد اطلاعات متا"
 
 #: exe/engine/package.py:1000
 msgid "?????"
-msgstr ""
+msgstr "?????"
 
 #: exe/engine/package.py:1038 exe/engine/package.py:1045
 #, python-format
@@ -2236,7 +2246,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:58
 #: exe/webui/tools/style-designer/langs/en.js:73
 msgid "Default"
-msgstr ""
+msgstr "پیش فرض"
 
 #: exe/engine/parasabermasfpdidevice.py:30
 msgid "FPD - A Step Ahead"
@@ -2404,7 +2414,7 @@ msgstr ""
 
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
-msgstr ""
+msgstr "آزمون SCORM "
 
 #: exe/engine/quiztestidevice.py:246
 msgid ""
@@ -2549,7 +2559,7 @@ msgstr ""
 
 #: exe/engine/sortidevice.py:52 exe/engine/sortidevice.py:134
 msgid "Title to show"
-msgstr ""
+msgstr "عنوان برای نمایش"
 
 #: exe/engine/sortidevice.py:53
 msgid "Instructions before sortable list"
@@ -2594,7 +2604,7 @@ msgstr ""
 #: exe/engine/sortidevice.py:61 exe/webui/listablock.py:271
 #: exe/webui/listablock.py:273
 msgid "Check"
-msgstr ""
+msgstr "بررسی"
 
 #: exe/engine/sortidevice.py:62
 msgid "Check Button Style (CSS)"
@@ -2610,7 +2620,7 @@ msgstr ""
 
 #: exe/engine/sortidevice.py:63
 msgid "width"
-msgstr ""
+msgstr "عرض"
 
 #: exe/engine/sortidevice.py:64
 msgid "Height of an item in the list (px)"
@@ -2618,7 +2628,7 @@ msgstr ""
 
 #: exe/engine/sortidevice.py:64
 msgid "height"
-msgstr ""
+msgstr "ارتفاع"
 
 #: exe/engine/sortidevice.py:65
 msgid "Style (CSS) for sortable items"
@@ -2644,7 +2654,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Left to Right"
-msgstr ""
+msgstr "چپ به راست"
 
 #: exe/engine/sortidevice.py:78 exe/engine/sortidevice.py:118
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -2654,7 +2664,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Right to Left"
-msgstr ""
+msgstr "راست به چپ"
 
 #: exe/engine/sortidevice.py:92
 msgid "Sortable Item"
@@ -2752,7 +2762,7 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
-msgstr ""
+msgstr "مطلب"
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
 msgid ""
@@ -2900,7 +2910,7 @@ msgstr ""
 
 #: exe/exe_do:208 exe/export/cmdlineexporter.py:84
 msgid "Invalid input package"
-msgstr ""
+msgstr "ورودی بسته نامعتبر است"
 
 #: exe/exe_do:228
 #, python-format
@@ -2963,20 +2973,20 @@ msgstr ""
 #: exe/export/scormpage.py:177 exe/export/websitepage.py:345
 #: exe/webui/common.py:473
 msgid "Previous"
-msgstr ""
+msgstr "قبلی"
 
 #: exe/export/scormpage.py:178 exe/export/websitepage.py:351
 #: exe/webui/common.py:474
 msgid "Next"
-msgstr ""
+msgstr "بعدی"
 
 #: exe/export/singlepage.py:249
 msgid "You can close this window"
-msgstr ""
+msgstr "شما می‌توانید این پنجره را ببندید"
 
 #: exe/export/textexport.py:54 exe/webui/common.py:293
 msgid "Licensed under the"
-msgstr ""
+msgstr "مجوز تحت"
 
 #: exe/export/websitepage.py:153
 msgid "Skip navigation"
@@ -2984,7 +2994,7 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr ""
+msgstr "مثال مثال"
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
@@ -2995,7 +3005,7 @@ msgstr ""
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
 msgid "Example"
-msgstr ""
+msgstr "مثال"
 
 #: exe/importers/cmdlineimporter.py:44
 msgid "Import format not implemented"
@@ -3059,7 +3069,7 @@ msgstr ""
 
 #: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
-msgstr ""
+msgstr "ذخیره با مشکل مواجه شد!"
 
 #: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1071
 #: exe/jsui/mainpage_antes_jr_docs.py:326
@@ -3309,11 +3319,11 @@ msgstr ""
 #: exe/webui/scripts/editor.js:80 exe/webui/scripts/editor.js:107
 #: exe/webui/scripts/stylemanager.js:42 exe/webui/scripts/stylemanager.js:66
 msgid "All Files"
-msgstr ""
+msgstr "همهٔ فایل‌ها"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:239
 msgid "Settings Saved"
-msgstr ""
+msgstr "تنظیمات ذخیره شد"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:256
 #: exe/jsui/scripts/app/controller/MainTab.js:261
@@ -3337,7 +3347,7 @@ msgstr ""
 #: exe/webui/stylemanagerpage.py:471 exe/webui/stylemanagerpage.py:483
 #: exe/webui/tools/style-designer/langs/en.js:124
 msgid "Error"
-msgstr ""
+msgstr "خطا"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:261
 msgid "The form contains invalid fields. Please check back."
@@ -3394,7 +3404,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/StyleManager.js:160
 #: exe/webui/scripts/stylemanager.js:41
 msgid "ZIP Style"
-msgstr ""
+msgstr "حالت ZIP"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:188
 #: exe/webui/scripts/stylemanager.js:53
@@ -3404,12 +3414,12 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/StyleManager.js:206
 #: exe/webui/scripts/stylemanager.js:65
 msgid "ZipFile"
-msgstr ""
+msgstr "فایل ZIP"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:229
 #: exe/webui/scripts/stylemanager.js:77
 msgid "Delete style?"
-msgstr ""
+msgstr "استایل حذف شود؟"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:230
 msgid "Do you want to delete this style?"
@@ -3434,7 +3444,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "About"
-msgstr ""
+msgstr "درباره..."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:345
 msgid "Release notes"
@@ -3448,7 +3458,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:400
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
 msgid "Preferences"
-msgstr ""
+msgstr "تنظیمات"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:428
 msgid ""
@@ -3519,7 +3529,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:623
 msgid "HTML Files"
-msgstr ""
+msgstr "فایل‌های HTML"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:632
 msgid "Select LOM Metadata file to import."
@@ -3560,11 +3570,11 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:741
 msgid "Select source language"
-msgstr ""
+msgstr "زبان منبع را انتخاب کنید"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:752
 msgid "Select target language"
-msgstr ""
+msgstr "زبان هدف را مشخص کنید"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:763
 msgid "Copy source also in target"
@@ -4345,8 +4355,9 @@ msgid "Now"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:23
+#, fuzzy
 msgid "Time"
-msgstr ""
+msgstr "تاریخ/زمان"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:29
 msgid "Required"
@@ -4529,7 +4540,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:37
 msgid "License"
-msgstr ""
+msgstr "مجوز"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:261
 msgid "Select a license."
@@ -4575,7 +4586,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:396
 msgid "Classroom"
-msgstr ""
+msgstr "کلاس"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:404
 msgid "Real Environment"
@@ -4597,11 +4608,11 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:444
 msgid "Distance"
-msgstr ""
+msgstr "فاصله"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:461
 msgid "Project Properties"
-msgstr ""
+msgstr "خصوصیات پروژه"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:475
 msgid "Header Background"
@@ -4613,11 +4624,11 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:497
 msgid "Load Image"
-msgstr ""
+msgstr "بارگذاری تصویر"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:510
 msgid "Clear Image"
-msgstr ""
+msgstr "پاک کردن تصویر"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:517
 msgid "Tile background image?"
@@ -4627,7 +4638,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:69
 msgid "Footer"
-msgstr ""
+msgstr "پانویس"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:532
 msgid "Web pages footer."
@@ -4659,27 +4670,27 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:587
 msgid "Level 1"
-msgstr ""
+msgstr "سطح 1"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:588
 msgid "Default name for level 1 nodes"
-msgstr ""
+msgstr "نام پیش فرض برای سطح 1"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:594
 msgid "Level 2"
-msgstr ""
+msgstr "سطح 2"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:595
 msgid "Default name for level 2 nodes"
-msgstr ""
+msgstr "نام پیش فرض برای سطح 2"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:601
 msgid "Level 3"
-msgstr ""
+msgstr "سطح 3"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:602
 msgid "Default name for level 3 nodes"
-msgstr ""
+msgstr "نام پیش فرض برای سطح 3"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:607
 msgid "Update Tree"
@@ -4687,7 +4698,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:614
 msgid "Advanced Options"
-msgstr ""
+msgstr "تنظیمات پیشرفته"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:627
 msgid "Create package compatible with old eXe versions?"
@@ -4700,7 +4711,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:25
 msgid "Select Browser"
-msgstr ""
+msgstr "انتخاب مرورگر"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:39
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
@@ -4709,7 +4720,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:45
 msgid "Select Language"
-msgstr ""
+msgstr "انتخاب زبان"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:151
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -4786,11 +4797,11 @@ msgstr ""
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
 msgid "Export"
-msgstr ""
+msgstr "خروجی"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
 msgid "Delete style: "
-msgstr ""
+msgstr "حذف استایل:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:125
 msgid "Show properties of style: "
@@ -4803,7 +4814,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:200
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:424
 msgid "Import style"
-msgstr ""
+msgstr "وارد کردن استایل"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:206
 msgid "Styles repository"
@@ -4829,7 +4840,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:325
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:530
 msgid "Return"
-msgstr ""
+msgstr "بازگشت"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:419
 msgid "Read more"
@@ -4852,8 +4863,9 @@ msgid "URL to download the style from."
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:478
+#, fuzzy
 msgid "Import Style from URL"
-msgstr ""
+msgstr "وارد کردن استایل"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:479
 msgid "Download style from URL and import into system."
@@ -4890,7 +4902,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "Category"
-msgstr ""
+msgstr "دسته"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:178
 msgid "Visible"
@@ -4903,16 +4915,16 @@ msgstr ""
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:47
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Properties"
-msgstr ""
+msgstr "خصوصیات"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
 msgid "Package"
-msgstr ""
+msgstr "بسته"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:58
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
 msgid "Metadata"
-msgstr ""
+msgstr "اطلاعات متا"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:195
@@ -4926,7 +4938,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
-msgstr ""
+msgstr "افزودن صفحه"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:239
 #: exe/webui/block.py:333 exe/webui/editorelement.py:78
@@ -4937,11 +4949,11 @@ msgstr ""
 #: exe/webui/galleryblock.py:303
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
-msgstr ""
+msgstr "حذف"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
-msgstr ""
+msgstr "تغییرنام"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
 msgid "Promote node up in hierarchy"
@@ -5072,8 +5084,9 @@ msgid "Style Designer"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:392
+#, fuzzy
 msgid "Create new Style"
-msgstr ""
+msgstr "استایل حذف شود؟"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:397
 msgid "Edit current Style"
@@ -6934,91 +6947,92 @@ msgstr ""
 
 #: exe/webui/common.py:96
 msgid "Creative Commons Attribution License 4.0"
-msgstr ""
+msgstr "Creative Commons Attribution License 4.0"
 
 #: exe/webui/common.py:102
 msgid "Creative Commons Attribution Share Alike License 4.0"
-msgstr ""
+msgstr "Creative Commons Attribution Share Alike License 4.0"
 
 #: exe/webui/common.py:108
 msgid "Creative Commons Attribution No Derivatives License 4.0"
-msgstr ""
+msgstr "Creative Commons Attribution No Derivatives License 4.0"
 
 #: exe/webui/common.py:114
 msgid "Creative Commons Attribution Non-commercial License 4.0"
-msgstr ""
+msgstr "Creative Commons Attribution Non-commercial License 4.0"
 
 #: exe/webui/common.py:120
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
-msgstr ""
+msgstr "Creative Commons Attribution Non-commercial Share Alike License 4.0"
 
 #: exe/webui/common.py:126
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
-msgstr ""
+msgstr "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
 
 #: exe/webui/common.py:132
 msgid "GNU Free Documentation License"
-msgstr ""
+msgstr "GNU Free Documentation License"
 
 #: exe/webui/common.py:138 exe/webui/common.py:144
 msgid "GNU General Public License"
-msgstr ""
+msgstr "GNU General Public License"
 
 #: exe/webui/common.py:199
 msgid "Creative Commons Attribution License 3.0"
-msgstr ""
+msgstr "Creative Commons Attribution License 3.0"
 
 #: exe/webui/common.py:205
 msgid "Creative Commons Attribution Share Alike License 3.0"
-msgstr ""
+msgstr "Creative Commons Attribution Share Alike License 3.0"
 
 #: exe/webui/common.py:211
 msgid "Creative Commons Attribution No Derivatives License 3.0"
-msgstr ""
+msgstr "Creative Commons Attribution No Derivatives License 3.0"
 
 #: exe/webui/common.py:217
 msgid "Creative Commons Attribution Non-commercial License 3.0"
-msgstr ""
+msgstr "Creative Commons Attribution Non-commercial License 3.0"
 
 #: exe/webui/common.py:223
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
-msgstr ""
+msgstr "Creative Commons Attribution Non-commercial Share Alike License 3.0"
 
 #: exe/webui/common.py:229
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
-msgstr ""
+msgstr "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
 
 #: exe/webui/common.py:235
 msgid "Creative Commons Attribution License 2.5"
-msgstr ""
+msgstr "Creative Commons Attribution License 2.5"
 
 #: exe/webui/common.py:241
 msgid "Creative Commons Attribution Share Alike License 2.5"
-msgstr ""
+msgstr "Creative Commons Attribution Share Alike License 2.5"
 
 #: exe/webui/common.py:247
 msgid "Creative Commons Attribution No Derivatives License 2.5"
-msgstr ""
+msgstr "Creative Commons Attribution No Derivatives License 2.5"
 
 #: exe/webui/common.py:253
 msgid "Creative Commons Attribution Non-commercial License 2.5"
-msgstr ""
+msgstr "Creative Commons Attribution Non-commercial License 2.5"
 
 #: exe/webui/common.py:259
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
-msgstr ""
+msgstr "Creative Commons Attribution Non-commercial Share Alike License 2.5"
 
 #: exe/webui/common.py:265
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
-msgstr ""
+msgstr "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
 
 #: exe/webui/common.py:297
+#, fuzzy
 msgid "License:"
-msgstr ""
+msgstr "مجوز"
 
 #: exe/webui/common.py:304
 msgid "Local Version"
-msgstr ""
+msgstr "نسخهٔ محلی"
 
 #: exe/webui/common.py:337
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
@@ -7072,16 +7086,19 @@ msgid "Selected letters"
 msgstr ""
 
 #: exe/webui/common.py:499
+#, fuzzy
 msgid "Word"
-msgstr ""
+msgstr "کلمات کلیدی"
 
 #: exe/webui/common.py:500
+#, fuzzy
 msgid "Words"
-msgstr ""
+msgstr "کلمات کلیدی"
 
 #: exe/webui/common.py:501
+#, fuzzy
 msgid "Play"
-msgstr ""
+msgstr "بارگذاری"
 
 #: exe/webui/common.py:503
 msgid "Results"
@@ -7092,8 +7109,9 @@ msgid "Total"
 msgstr ""
 
 #: exe/webui/common.py:505
+#, fuzzy
 msgid "Another word"
-msgstr ""
+msgstr "از کلمه چشم پوشی کن"
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7315,8 +7333,9 @@ msgid "Some emphasis"
 msgstr ""
 
 #: exe/webui/editorpane.py:354
+#, fuzzy
 msgid "Select an icon"
-msgstr ""
+msgstr "انتخاب یک رنگ"
 
 #: exe/webui/editorpane.py:368
 msgid "Icons"
@@ -7775,8 +7794,9 @@ msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
+#, fuzzy
 msgid "Flash Movie (.flv)"
-msgstr ""
+msgstr "فیلم‌های فلش"
 
 #: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
 msgid "Flash Object (.swf)"
@@ -7803,12 +7823,14 @@ msgid "MP3 Audio (.mp3)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:378
+#, fuzzy
 msgid "Select an mp3 file"
-msgstr ""
+msgstr "انتخاب یک قالب"
 
 #: exe/webui/scripts/authoring.js:386
+#, fuzzy
 msgid "Select a package"
-msgstr ""
+msgstr "زبان هدف را مشخص کنید"
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
@@ -8088,27 +8110,27 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Ignore Word"
-msgstr ""
+msgstr "از کلمه چشم پوشی کن"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Ignore All"
-msgstr ""
+msgstr "از همه چشم پوشی کن"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Languages"
-msgstr ""
+msgstr "زبان‌ها"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Please wait..."
-msgstr ""
+msgstr "منتظر بمانید ..."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Suggestions"
-msgstr ""
+msgstr "پیشنهادات"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "No Suggestions"
-msgstr ""
+msgstr "بدون پیشنهاد"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "No misspellings found."
@@ -8224,7 +8246,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Gold"
-msgstr ""
+msgstr "طلایی"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Lime"
@@ -8432,12 +8454,12 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:57
 msgid "Yellow"
-msgstr ""
+msgstr "زرد"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:60
 msgid "Red"
-msgstr ""
+msgstr "قرمز"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:61
@@ -8790,11 +8812,11 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Target Name"
-msgstr ""
+msgstr "نام هدف"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Position (X/Y)"
-msgstr ""
+msgstr "موقعیت (X/Y)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Dependent (Mozilla/Firefox Only)"
@@ -8862,11 +8884,11 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Popup Properties"
-msgstr ""
+msgstr "تنظیمات پنجره باز شونده"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Popup"
-msgstr ""
+msgstr "پنجره باز شونده"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Relationship Target to Page"
@@ -8878,28 +8900,28 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Target Character Encoding"
-msgstr ""
+msgstr "رمزنگاری کاراکترهای هدف"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Target Language"
-msgstr ""
+msgstr "زبان هدف"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Target"
-msgstr ""
+msgstr "هدف"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Advanced Properties"
-msgstr ""
+msgstr "خصوصیات پیشرفته"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "General Properties"
-msgstr ""
+msgstr "خصوصیات عمومی"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -8910,17 +8932,17 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Link URL"
-msgstr ""
+msgstr "آدرس لینک"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Events"
-msgstr ""
+msgstr "رویدادها"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "AccessKey"
-msgstr ""
+msgstr "کلید دسترسی"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
@@ -8930,7 +8952,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Link List"
-msgstr ""
+msgstr "لیست لینک"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -8955,8 +8977,9 @@ msgid "Node"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
+#, fuzzy
 msgid "Download Information"
-msgstr ""
+msgstr "اطلاعات متا"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
@@ -8967,8 +8990,9 @@ msgid "File Type/Extension"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:9
+#, fuzzy
 msgid "Include File Information"
-msgstr ""
+msgstr "اطلاعات متا"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:10
 msgid "Remember that the text of the link should describe its purpose."
@@ -8996,12 +9020,14 @@ msgid "Attributes"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:6
+#, fuzzy
 msgid "Quote"
-msgstr ""
+msgstr "یادداشت"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
+#, fuzzy
 msgid "Quote Language"
-msgstr ""
+msgstr "زبان هدف"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
 msgid "Authorship"
@@ -9038,8 +9064,9 @@ msgid "Clear (new line or block)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:2
+#, fuzzy
 msgid "Edit source code"
-msgstr ""
+msgstr "هیچ منبع کدی یافت نشد."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:4
 msgid "Search:"
@@ -9050,24 +9077,28 @@ msgid "Search for:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:6
+#, fuzzy
 msgid "Replace:"
-msgstr ""
+msgstr "جایگزین"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:7
 msgid "(Use /re/ syntax for regexp search)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:8
+#, fuzzy
 msgid "Replace?"
-msgstr ""
+msgstr "جایگزین"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:11
+#, fuzzy
 msgid "Stop"
-msgstr ""
+msgstr "میزکار"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
+#, fuzzy
 msgid "Replace with:"
-msgstr ""
+msgstr "عرض بازی"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
@@ -9091,8 +9122,9 @@ msgid "Highlight syntax"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
+#, fuzzy
 msgid "Select a theme"
-msgstr ""
+msgstr "انتخاب یک قالب"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
 msgid "Search"
@@ -9103,12 +9135,14 @@ msgid "Find next"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
+#, fuzzy
 msgid "Find previous"
-msgstr ""
+msgstr "قبلی"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
+#, fuzzy
 msgid "Replace all"
-msgstr ""
+msgstr "جایگزین"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:3
 msgid "Definition List"
@@ -9123,8 +9157,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
+#, fuzzy
 msgid "Term"
-msgstr ""
+msgstr "پانویس"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
 msgid "Term definition"
@@ -9132,7 +9167,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
-msgstr ""
+msgstr "گریه"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cool"
@@ -9330,8 +9365,9 @@ msgid "Please enable JavaScript to play this game."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:9
+#, fuzzy
 msgid "Accessibility"
-msgstr ""
+msgstr "راهنمای دسترسی به سایت"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:10
 msgid "These games require JavaScript."
@@ -9342,8 +9378,9 @@ msgid "This is the message that the users with no JavaScript will see:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
+#, fuzzy
 msgid "Message:"
-msgstr ""
+msgstr "تصویر"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
 msgid "You can change it at any time."
@@ -9443,11 +9480,11 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:8
 msgid "Font size:"
-msgstr ""
+msgstr "اندازه خط:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:9
 msgid "Preview Math Image"
-msgstr ""
+msgstr "پیش نمایش تصویر ریاضی"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:11
 msgid "Input LaTeX source:"
@@ -9499,23 +9536,23 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:70
 msgid "No source code found."
-msgstr ""
+msgstr "هیچ منبع کدی یافت نشد."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Meta Information"
-msgstr ""
+msgstr "اطلاعات متا"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Language and Encoding"
-msgstr ""
+msgstr "زبان و رمزگذاری"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Keywords"
-msgstr ""
+msgstr "کلمات کلیدی"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Robots"
-msgstr ""
+msgstr "روبوت‌ها"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "XML Declaration"
@@ -9531,43 +9568,43 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Body Margins"
-msgstr ""
+msgstr "فاصله‌های کلی"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Link Colors"
-msgstr ""
+msgstr "رنگ‌های لینک"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Text Properties"
-msgstr ""
+msgstr "خصوصیات متن"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Left Margin"
-msgstr ""
+msgstr "فاصله از چپ"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Right Margin"
-msgstr ""
+msgstr "فاصله از راست"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Top Margin"
-msgstr ""
+msgstr "فاصله از بالا"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Bottom Margin"
-msgstr ""
+msgstr "فاصله از پایین"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Text Color"
-msgstr ""
+msgstr "رنگ متن"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Font Face"
-msgstr ""
+msgstr "Font Face"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Link Color"
-msgstr ""
+msgstr "رنگ لینک"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Hover Color"
@@ -9607,7 +9644,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Copyright"
-msgstr ""
+msgstr "کپی رایت"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Add New Element"
@@ -9715,7 +9752,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:42
 #: exe/webui/tools/style-designer/langs/en.js:88
 msgid "Color"
-msgstr ""
+msgstr "رنگ"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
@@ -9729,7 +9766,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "File/URL"
-msgstr ""
+msgstr "فایل/آدرس"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Top Left"
@@ -10073,7 +10110,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "List"
-msgstr ""
+msgstr "لیست"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
@@ -10146,12 +10183,14 @@ msgid "Include wrapper (improves presentation)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
 msgid "Markup language"
-msgstr ""
+msgstr "زبان هدف"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
+#, fuzzy
 msgid "Please select a language"
-msgstr ""
+msgstr "زبان هدف را مشخص کنید"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
@@ -10163,8 +10202,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
+#, fuzzy
 msgid "Light"
-msgstr ""
+msgstr "ارتفاع"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
@@ -10189,15 +10229,15 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Direction"
-msgstr ""
+msgstr "جهت"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Up"
-msgstr ""
+msgstr "بالا"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Down"
-msgstr ""
+msgstr "پایین"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Match Case"
@@ -10407,7 +10447,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "all"
-msgstr ""
+msgstr "همه"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "cols"
@@ -10494,11 +10534,11 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Data"
-msgstr ""
+msgstr "اطلاعات"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Summary"
-msgstr ""
+msgstr "خلاصه"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Border Color"
@@ -10510,15 +10550,15 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Rows"
-msgstr ""
+msgstr "ردیف‌ها"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Columns"
-msgstr ""
+msgstr "ستون‌ها"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Row Type"
-msgstr ""
+msgstr "نوع ردیف"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Update all cells in column"
@@ -10526,15 +10566,15 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Templates"
-msgstr ""
+msgstr "قالب‌ها"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Template"
-msgstr ""
+msgstr "قالب"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Select a Template"
-msgstr ""
+msgstr "انتخاب یک قالب"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Warning: Updating a template with a different one may cause data loss."
@@ -10558,28 +10598,33 @@ msgid "Behaviour"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
+#, fuzzy
 msgid "Link"
-msgstr ""
+msgstr "پلاگین"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
+#, fuzzy
 msgid "Instructions:"
-msgstr ""
+msgstr "جهت"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:12
+#, fuzzy
 msgid "No selection and not in link"
-msgstr ""
+msgstr "نمایش توضیحات و لینک"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
+#, fuzzy
 msgid "Pages"
-msgstr ""
+msgstr "تصویر"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
+#, fuzzy
 msgid "Link title"
-msgstr ""
+msgstr "لیست لینک"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
@@ -10608,8 +10653,9 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
+#, fuzzy
 msgid "Definition:"
-msgstr ""
+msgstr "توضیحات:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
@@ -10621,8 +10667,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
+#, fuzzy
 msgid "Page"
-msgstr ""
+msgstr "تصویر"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
@@ -10718,7 +10765,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Remove"
-msgstr ""
+msgstr "حذف"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Citation Element"
@@ -10754,7 +10801,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Date/Time"
-msgstr ""
+msgstr "تاریخ/زمان"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Cite"
@@ -10774,7 +10821,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Code"
-msgstr ""
+msgstr "کد"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Block Quote"
@@ -10806,7 +10853,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "DIV"
-msgstr ""
+msgstr "DIV"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Paragraph"
@@ -10824,15 +10871,15 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Path"
-msgstr ""
+msgstr "مسیر"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "New Document"
-msgstr ""
+msgstr "سند جدید"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Image Properties"
-msgstr ""
+msgstr "حصوصیات تصویر"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Paste (Ctrl+V)"
@@ -10920,7 +10967,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Toolbar"
-msgstr ""
+msgstr "نوارابزار"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -10950,12 +10997,12 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
 msgid "Redo (Ctrl+Y)"
-msgstr ""
+msgstr "حرکت بعدی (Ctrl+Y)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
 msgid "Undo (Ctrl+Z)"
-msgstr ""
+msgstr "حرکت قبلی (Ctrl+Z)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
@@ -10981,11 +11028,11 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Name:"
-msgstr ""
+msgstr "نام:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Color:"
-msgstr ""
+msgstr "رنگ:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Named Colors"
@@ -11005,11 +11052,11 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Picker"
-msgstr ""
+msgstr "انتخابگر"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Select a Color"
-msgstr ""
+msgstr "انتخاب یک رنگ"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Word Wrap"
@@ -11025,19 +11072,19 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Loaded Plugins"
-msgstr ""
+msgstr "پلاگین‌های بارگذاری شده"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Plugin"
-msgstr ""
+msgstr "پلاگین"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Plugins"
-msgstr ""
+msgstr "پلاگین‌ها"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "About TinyMCE"
-msgstr ""
+msgstr "درباره TinyMCE"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Please specify a valid anchor name."
@@ -11045,20 +11092,20 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Accessibility Help"
-msgstr ""
+msgstr "راهنمای دسترسی به سایت"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "General Usage"
-msgstr ""
+msgstr "استفادهٔ عمومی"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Invalid color value"
-msgstr ""
+msgstr "مقدار رنگ معتبر نیست"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:129
 msgid "Color Picker"
-msgstr ""
+msgstr "انتخابگر رنگ"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:59
@@ -11212,12 +11259,14 @@ msgid "An unexpected error has occurred"
 msgstr ""
 
 #: exe/webui/tools/style-designer/js/app.js:1246
+#, fuzzy
 msgid "Create new style"
-msgstr ""
+msgstr "استایل حذف شود؟"
 
 #: exe/webui/tools/style-designer/js/app.js:1247
+#, fuzzy
 msgid "Name the new style"
-msgstr ""
+msgstr "استایل حذف شود؟"
 
 #: exe/webui/tools/style-designer/js/app.js:1269
 msgid "Style Designer windows will be closed. "
@@ -11228,12 +11277,14 @@ msgid "Page will be reloaded. "
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:12
+#, fuzzy
 msgid "General settings"
-msgstr ""
+msgstr "خصوصیات عمومی"
 
 #: exe/webui/tools/style-designer/langs/en.js:13
+#, fuzzy
 msgid "Page width"
-msgstr ""
+msgstr "عرض بازی"
 
 #: exe/webui/tools/style-designer/langs/en.js:14
 msgid "Percentage"
@@ -11264,36 +11315,43 @@ msgid "Text and Links"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:25
+#, fuzzy
 msgid "Text color"
-msgstr ""
+msgstr "رنگ متن"
 
 #: exe/webui/tools/style-designer/langs/en.js:27
+#, fuzzy
 msgid "Links"
-msgstr ""
+msgstr "پلاگین‌ها"
 
 #: exe/webui/tools/style-designer/langs/en.js:28
+#, fuzzy
 msgid "Links color"
-msgstr ""
+msgstr "رنگ لینک"
 
 #: exe/webui/tools/style-designer/langs/en.js:30
+#, fuzzy
 msgid "Style description"
-msgstr ""
+msgstr "توضیحات"
 
 #: exe/webui/tools/style-designer/langs/en.js:32
 msgid "Author URL"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:33
+#, fuzzy
 msgid "Style name"
-msgstr ""
+msgstr "تغییرنام"
 
 #: exe/webui/tools/style-designer/langs/en.js:34
+#, fuzzy
 msgid "Save to name the new Style."
-msgstr ""
+msgstr "استایل حذف شود؟"
 
 #: exe/webui/tools/style-designer/langs/en.js:35
+#, fuzzy
 msgid "Style version"
-msgstr ""
+msgstr "نسخهٔ محلی"
 
 #: exe/webui/tools/style-designer/langs/en.js:36
 msgid ""
@@ -11314,8 +11372,9 @@ msgid "Background color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:44
+#, fuzzy
 msgid "Select image"
-msgstr ""
+msgstr "انتخاب زبان"
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
@@ -11380,8 +11439,9 @@ msgid "Header and Footer"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:71
+#, fuzzy
 msgid "Project title"
-msgstr ""
+msgstr "خصوصیات پروژه"
 
 #: exe/webui/tools/style-designer/langs/en.js:72
 msgid "Hide the title"
@@ -11392,12 +11452,14 @@ msgid "same font as the page"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:77
+#, fuzzy
 msgid "Top margin"
-msgstr ""
+msgstr "فاصله از بالا"
 
 #: exe/webui/tools/style-designer/langs/en.js:78
+#, fuzzy
 msgid "Font size"
-msgstr ""
+msgstr "اندازه خط:"
 
 #: exe/webui/tools/style-designer/langs/en.js:80
 msgid "Navigation"
@@ -11428,12 +11490,14 @@ msgid "Other navigation options"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:87
+#, fuzzy
 msgid "Use icons"
-msgstr ""
+msgstr "پیشنهادات"
 
 #: exe/webui/tools/style-designer/langs/en.js:89
+#, fuzzy
 msgid "Icons color"
-msgstr ""
+msgstr "رنگ لینک"
 
 #: exe/webui/tools/style-designer/langs/en.js:90
 msgid "Grey"
@@ -11544,8 +11608,9 @@ msgid "Drag markers to pick a color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:134
+#, fuzzy
 msgid "Current"
-msgstr ""
+msgstr "اسناد"
 
 #: exe/webui/tools/style-designer/langs/en.js:140
 msgid "New Color - Press OK to Commit"
@@ -11627,12 +11692,12 @@ msgstr ""
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
 msgid "True"
-msgstr ""
+msgstr "صحیح"
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:218
 #: exe/webui/truefalseelement.py:264
 msgid "False"
-msgstr ""
+msgstr "غلط"
 
 #: exe/webui/wikipediablock.py:115
 msgid "English Wikipedia Article"
@@ -11712,7 +11777,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:134
 msgid "Wiktionary"
-msgstr ""
+msgstr "ویکی‌واژه"
 
 #: exe/webui/wikipediablock.py:135
 msgid "Wikieducator Content"
@@ -11720,11 +11785,11 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:141
 msgid "Site"
-msgstr ""
+msgstr "سایت"
 
 #: exe/webui/wikipediablock.py:151
 msgid "Own site"
-msgstr ""
+msgstr "سایت خود"
 
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
@@ -11737,7 +11802,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:135
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
-msgstr ""
+msgstr "تأیید"
 
 #: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
 #: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-22 13:57+0200\n"
+"POT-Creation-Date: 2016-05-22 14:14+0200\n"
 "PO-Revision-Date: 2007-12-04 01:11+1300\n"
 "Last-Translator: Toha Mustofa <toha.mustofa@gmail.com>\n"
 "Language: id\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: exe/engine/appletidevice.py:70
 msgid "Java Applet"
-msgstr ""
+msgstr "Applet Java"
 
 #: exe/engine/appletidevice.py:71 exe/engine/attachmentidevice.py:45
 #: exe/engine/casestudyidevice.py:201 exe/engine/clozefpdidevice.py:51
@@ -70,7 +70,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
-msgstr ""
+msgstr "Universitas Auckland"
 
 #: exe/engine/appletidevice.py:79
 msgid ""
@@ -79,6 +79,10 @@ msgid ""
 "buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
+"Tambahkan semua berkas yang disediakan untuk \"applet\"\n"
+"kecuali berkas .txt sekaligus menggunakan tombol tambahkan berkas atau "
+"tombol \"upload\". Berkas - berkas \n"
+", setelah dimuat akan ditampilkan di bawah area kode \"Applet\"."
 
 #: exe/engine/appletidevice.py:82
 msgid ""
@@ -87,6 +91,10 @@ msgid ""
 "applet \n"
 "code field."
 msgstr ""
+"\"Cari berkas .txt (di berkas applet) \n"
+"dan buka berkas tersebut. Salin isi berkas ini <ctrl A, ctrl C> ke dalam "
+"baris kode applet \n"
+"."
 
 #: exe/engine/appletidevice.py:85
 msgid ""
@@ -97,16 +105,23 @@ msgid ""
 " \n"
 "you created in Geogebra.</p>"
 msgstr ""
+" <p>Jika \"applet\" yang anda tambahkan telah dihasilkan \n"
+" oleh salah satu program di daftar \"drop down\" ini, silahkan pilih, \n"
+" lalu tambah berkas \"data/applet\" yang dihasilkan oleh program anda. "
+"</p>\n"
+"<p>contoh. Untuk applet - applet Geogebra, pilih geogebra, lalu tambahkan"
+" berkas .ggb yang \n"
+" anda buat di Geogebra.</p>"
 
 #: exe/engine/appletidevice.py:190
 #, python-format
 msgid "file %s has no parentNode"
-msgstr ""
+msgstr "berkas %s tidak memiliki simpulInduk"
 
 #: exe/engine/appletidevice.py:192 exe/engine/attachmentidevice.py:107
 #, python-format
 msgid "iDevice %s has no package"
-msgstr ""
+msgstr "\"iDevice\" %s tidak memiliki paket"
 
 #: exe/engine/appletidevice.py:443
 msgid "Sorry, this URL is unreachable"
@@ -154,7 +169,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
-msgstr ""
+msgstr "Sisipan"
 
 #: exe/engine/attachmentidevice.py:46
 msgid ""
@@ -172,16 +187,22 @@ msgid ""
 "want to provide instructions on what you require the learner to do once "
 "the file is downloaded or how the material should be used."
 msgstr ""
+"Masukan teks yang ingin anda asosiasikan dengan berkas yang telah "
+"diunduh. Anda mungkin ingin menyediakan instruksi mengenai apa yang "
+"dibutuhkan siswa ketika berkas telah diunduh atau bagaimana materi "
+"seharusnya digunakan."
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
-msgstr ""
+msgstr "Gambaran:"
 
 #: exe/engine/attachmentidevice.py:69
 msgid ""
 "Click <strong>Select a file</strong>, browse to the file you want to "
 "attach and select it."
 msgstr ""
+"Klik <strong>Pilih sebuah berkas</strong>, Cari berkas yang ingin anda "
+"sisipkan dan pilih."
 
 #: exe/engine/attachmentidevice.py:72
 msgid ""
@@ -196,14 +217,14 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:105
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr ""
+msgstr "Sisipan %s tidak memiliki simpul induk"
 
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/tools/style-designer/langs/en.js:46
 msgid "Image"
-msgstr ""
+msgstr "Gambar"
 
 #: exe/engine/casestudyidevice.py:65
 #: exe/engine/ejercicioresueltofpdidevice.py:65
@@ -211,12 +232,15 @@ msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
 msgstr ""
+"Pilih sebuah gambar opsional untuk ditunjukan kepada siswa pada saat "
+"menyelesaikan pertanyaan ini"
 
 #: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
-msgstr ""
+msgstr "Studi Kasus"
 
 #: exe/engine/casestudyidevice.py:202
+#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -239,6 +263,29 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Studi kasus adalah perangkat yang menyediakan siswa \n"
+"sebuah simulasi yang memiliki dasar pendidikan. Situasi yang terjadi, "
+"umumnya \n"
+"berdasarkan kejadian nyata, dan meminta siswa untuk mendemonstrasikan "
+"atau menggambarkan aksi apa yang akan mereka \n"
+"ambil untuk menyelesaikan sebuah tugas atau memecahkan sebuah situasi. "
+"Studi kasus mengizinkan \n"
+"siswa untuk menerapkan pengetahuan dan pengalaman mereka untuk "
+"menyelesaikan tugas  \n"
+"yang diberikan. Ketika mendesain sebuah studi kasus pertimbangkan hal - "
+"hal berikut ini:<ul> \n"
+"<li>\tPokok - pokok pendidikan apa yang ingin disampaikan pada cerita "
+"tersebut</li>\n"
+"<li>\tPersiapan apa yang akan perlu dilakukan siswa sebelum bekerja "
+"dengan studi kasus \n"
+"tersebut</li>\n"
+"<li>\tDi bagian mana studi kasus cocok pada keseluruhan pelajaran</li>\n"
+"<li>\tBagaimana siswa akan berinteraksi dengan materi dan satu sama lain "
+"contoh.\n"
+"Jika dijalankan dalam kelas dapatkah tim dibentuk untuk bekerja pada "
+"beragam aspek\n"
+"kasus dan jika bisa bagaimana ide tersebut dapat di umpan balik kan pada "
+"kelas</li></ul>"
 
 #: exe/engine/casestudyidevice.py:219
 #: exe/engine/ejercicioresueltofpdidevice.py:218
@@ -250,12 +297,18 @@ msgid ""
 "taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
+"Buat kasus dalam bentuk cerita. Contoh kasus bagus \n"
+"adalah yang menggambarkan sebuah kontroversi atau mengatur suasana dengan"
+" cara menerangkan karakter \n"
+"yang terlibat dalam situasi tersebut. Sebaiknya juga beberapa tindakan "
+"diizinkan untuk diambil \n"
+"dalam rangka mengembangkan pemecahan situasi."
 
 #: exe/engine/casestudyidevice.py:223 exe/engine/casestudyidevice.py:411
 #: exe/engine/ejercicioresueltofpdidevice.py:222
 #: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
-msgstr ""
+msgstr "Cerita:"
 
 #: exe/engine/casestudyidevice.py:228
 #: exe/engine/ejercicioresueltofpdidevice.py:227
@@ -266,6 +319,11 @@ msgid ""
 "dilemma \n"
 "presented. "
 msgstr ""
+"Gambarkan tugas - tugas aktivitas yang relevan \n"
+"untuk kasus cerita. Hal ini dapat saja berupa pertanyaan atau \n"
+"instruksi bagi aktivitas yang dapat saja membawa siswa pada penyelesaian"
+" \n"
+"dilema."
 
 #: exe/engine/casestudyidevice.py:232
 #: exe/engine/ejercicioresueltofpdidevice.py:231
@@ -273,6 +331,8 @@ msgid ""
 "Provide relevant feedback on the \n"
 "situation."
 msgstr ""
+"Sediakan umpan balik relevan pada \n"
+"situasi."
 
 #: exe/engine/casopracticofpdidevice.py:30
 msgid "FPD - Situation"
@@ -351,7 +411,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Title"
-msgstr ""
+msgstr "Judul"
 
 #: exe/engine/clickinorderidevice.py:61
 msgid "Game Instructions"
@@ -565,6 +625,14 @@ msgid ""
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
 msgstr ""
+"<p>Latihan \"cloze\" adalah teks atau kalimat - kalimat dimana siswa "
+"harus mengisi bagian -bagian yang hilang. Hal ini seringkali digunakan "
+"untuk tujuan - tujuan sebagai berikut:</p><ol><li>Untuk menguji konsep "
+"kunci pengetahuan (Hal ini dapat saja berupa sebuah pengujian awal, "
+"latihan penyusunan, atau pengujian tambahan).</li><li>Untuk menguji "
+"pemahaman bacaan.</li><li>Untuk menguji pengetahuan perbendaharaan "
+"kata.</li><li>Untuk menguji pembentukan kata dan/atau tingkatan tata "
+"bahasa. </li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -590,6 +658,29 @@ msgid ""
 " idea to get a colleague to test the test/exercise to make sure there are"
 " no surprises!  </p>  </dd></dl>"
 msgstr ""
+"<dl>  <dt>Jika tujuan anda adalah untuk menguji pemahaman konsep pokok "
+"atau pemahaman bacaan  </dt>  <dd>    <p>  Tulis sebuah konsep ringkasan "
+"atau bacaan yang cukup panjang untuk menguji pengetahuan sasaran, tapi "
+"cukup singkat agar tidak melelahkan. Kurang dari satu halaman ketikan "
+"kemungkinan akan mencukupi, sedangkan untuk siswa - siswa muda atau "
+"pemula bahkan kurang dari itu.    </p>    <p>Pilih kata - kata di dalam "
+"teks yang merupakan kunci untuk pemahaman konsep. Hal ini dapat saja "
+"berupa kate kerja, kata benda, dan kata kunci keterangan. Pilih "
+"alternatif - alternatif dengan sebuah jawaban yang jelas.    </p>  </dd>"
+"  <dt>Jika tujuan anda adalah untuk menguji perbendaharaan pengetahuan  "
+"</dt>  <dd><p>Tulis sebuah teks menggunakan sasaran perbendaharaan kata. "
+"Kata ini sebaiknya \"coherent\" dan \"cohesive\", dan memiliki panjang "
+"yang cukup. Sorot kata - kata sasaran di dalam teks. Pilih alternatif "
+"dengan sebuah jawaban yang jelas.</p>  </dd>  <dt>Jika tujuan anda adalah"
+" untuk menguji formasi kata/\"grammar\":  </dt>  <dd>  <p>Tulis sebuah "
+"teks menggunakan bentuk sasaran. Teks ini sebaiknya \"coherent\" dan "
+"\"cohesive\", dan memiliki panjang yang cukup. Ingat bahwa tujuannya "
+"bukanlah pengetahuan perbendaharaan kate, jadi arti dari akar kata "
+"sebaiknya telah dikenal oleh siswa.  </p>  <p>Sorot kata - kata sasaran "
+"di dalam teks. Sediakan alternatif dengan akar kata yang sama tapi "
+"memiliki \"affixes\" yang berbeda. Mengajak rekan kerja anda untuk "
+"menguji ujian/latihan merupakan sebuah ide yang bagus untuk meyakinkan "
+"bahwa segalanya akan berjalan sesuai rencana!  </p>  </dd></dl>"
 
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
@@ -602,7 +693,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 msgid "Instructions"
-msgstr ""
+msgstr "Instruksi"
 
 #: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
 #: exe/engine/clozelangfpdidevice.py:121
@@ -611,15 +702,19 @@ msgid ""
 "completed. Default text will be entered if there are no changes to this "
 "field.\n"
 msgstr ""
+"Sediakan instruksi akan bagaimana aktivitas \"cloze: sebaiknya \n"
+"diselesaikan. Teks standar akan di masukan jika tidak ada perubahan pada "
+"isian ini.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
 #: exe/webui/element.py:1522 exe/webui/listablock.py:259
 msgid "Cloze"
-msgstr ""
+msgstr "\"Cloze\""
 
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
+#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -630,6 +725,12 @@ msgid ""
 "answer can be defined enclosing them with pipes (|). I.e.: "
 "|dog|cat|bird|</p>"
 msgstr ""
+"<p>Masukan teks untuk aktivitas \"cloze\" ke dalam area \"cloze\" \n"
+"dengan cara menempelkan (\"paste\") teks dari sumber lain atau dengan "
+"cara mengetik teks secara langsung ke dalam \n"
+"area.</p><p> Untuk memilih kata yang akan disembunyikan, klik dua kali "
+"kata tersebut untuk memilihnya dan \n"
+"klik tombol Sembunyikan/Tampilkan (\"Hide/Show\") di bawah ini.</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -648,7 +749,7 @@ msgstr ""
 #: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
-msgstr ""
+msgstr "Umpanbalik"
 
 #: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
 #: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
@@ -656,43 +757,46 @@ msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
 msgstr ""
+"Masukkan umpan balik yang ingin anda sediakan bagi siswa pada area umpan "
+"balik. Area in dapat saja dikosongkan."
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
 msgid "Instructions For Learners"
-msgstr ""
+msgstr "Instruksi Untuk Siswa"
 
 #: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
 #: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
-msgstr ""
+msgstr "Letakan instruksi untuk siswa di sini."
 
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:284
 msgid "Read the paragraph below and fill in the missing words"
-msgstr ""
+msgstr "Baca paragraf di bawah ini dan isi kata yang hilang."
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
 #: exe/engine/clozelangfpdidevice.py:296
 msgid "Allow auto completion when user filling the gaps."
-msgstr ""
+msgstr "Mengizinkan pelengkapan otomatis ketika pengguna mengisi celah kosong."
 
 #: exe/engine/clozeidevice.py:49
 msgid "Cloze Activity"
-msgstr ""
+msgstr "Aktivitas \"Cloze\""
 
 #: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
-msgstr ""
+msgstr "Baca paragraf di bawah ini dan isi kata yang hilang."
 
 #: exe/engine/clozelangfpdidevice.py:50
 msgid "FPD - Cloze Activity (Modified)"
 msgstr ""
 
 #: exe/engine/clozelangfpdidevice.py:126
+#, fuzzy
 msgid "Clozelang"
-msgstr ""
+msgstr "\"Cloze\""
 
 #: exe/engine/config.py:70 exe/engine/config.py:71 exe/engine/config.py:75
 #: exe/engine/config.py:102
@@ -786,6 +890,29 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Studi kasus adalah perangkat yang menyediakan siswa \n"
+"sebuah simulasi yang memiliki dasar pendidikan. Situasi yang terjadi, "
+"umumnya \n"
+"berdasarkan kejadian nyata, dan meminta siswa untuk mendemonstrasikan "
+"atau menggambarkan aksi apa yang akan mereka \n"
+"ambil untuk menyelesaikan sebuah tugas atau memecahkan sebuah situasi. "
+"Studi kasus mengizinkan \n"
+"siswa untuk menerapkan pengetahuan dan pengalaman mereka untuk "
+"menyelesaikan tugas  \n"
+"yang diberikan. Ketika mendesain sebuah studi kasus pertimbangkan hal - "
+"hal berikut ini:<ul> \n"
+"<li>\tPokok - pokok pendidikan apa yang ingin disampaikan pada cerita "
+"tersebut</li>\n"
+"<li>\tPersiapan apa yang akan perlu dilakukan siswa sebelum bekerja "
+"dengan studi kasus \n"
+"tersebut</li>\n"
+"<li>\tDi bagian mana studi kasus cocok pada keseluruhan pelajaran</li>\n"
+"<li>\tBagaimana siswa akan berinteraksi dengan materi dan satu sama lain "
+"contoh.\n"
+"Jika dijalankan dalam kelas dapatkah tim dibentuk untuk bekerja pada "
+"beragam aspek\n"
+"kasus dan jika bisa bagaimana ide tersebut dapat di umpan balik kan pada "
+"kelas</li></ul>"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 msgid "FPD - Multi Choice Activity"
@@ -811,6 +938,24 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
+"Walaupun lebih banyak digunakan dalam sebuah situasi pengujian \n"
+"formal MCQs dapat digunakan sebagai alat pengujian untuk merangsang "
+"pemikiran dan \n"
+"diskusi pada topik - topik dimana siswa merasa sedikit segan untuk "
+"menanggapi. \n"
+"\n"
+"Ketika merancang tes MCQ test pertimbangkan hal - hal berikut ini:\n"
+"<ul>\n"
+"<li> Hasil pembelajaran apa yang ditujukan dari pengujian pertanyaan</li>"
+"\n"
+"<li> Keahlian intelektual apa yang diujikan</li>\n"
+"<li> Keahlian bahasa apa yang dimiliki oleh peserta</li>\n"
+"<li> Permasalahan jenis kelamin dan kebudayaan</li>\n"
+"<li> Hindari tata bahawa dan struktur pertanyaan yang mungkin malah "
+"menyediakan \n"
+"jawaban</li>\n"
+"</ul>\n"
+" "
 
 #: exe/engine/eleccionmultiplefpdidevice.py:76
 #: exe/engine/multichoiceidevice.py:75 exe/engine/multiselectidevice.py:60
@@ -831,6 +976,19 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
+"Ketika membangun sebuah MCQ pertimbangkan hal berikut ini: <ul>\n"
+"<li> Gunakan kata yang telah akrab dengan siswa dan memiliki \n"
+"hubungan dengan pelajaran mereka </li>\n"
+"<li> Jaga agar respons tetap padat berisi </li>\n"
+"<li> Adanya konsistensi antara akar permasalahan dan respons </li>\n"
+"<li> Sediakan opsi yang cukup untuk merangsang siswa berpikir mengenai "
+"respon mereka\n"
+"</li>\n"
+"<li> Coba untuk meyakinkan bahwa respon yang benar tidak lebih rinci "
+"ketimbang \n"
+"pengalih perhatian </li>\n"
+"<li> Pengalih perhatian sebaiknya tidak benar tapi jelas </li>\n"
+"</ul>\n"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:101
 #: exe/engine/multichoiceidevice.py:99
@@ -838,6 +996,8 @@ msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
+"Masukkan sebuah petunjuk di sini. Jika anda\n"
+"tidak ingin menyediakan petunjuk, biarkan area ini kosong."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
@@ -847,6 +1007,10 @@ msgid ""
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
+"Masukan akar pertanyaan. \n"
+"Pencariannya harus jelas dan tidak bermakna ganda. Hindari dasar pikiran "
+"negatif \n"
+"karena hal ini cenderung bermakna ganda."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:106
 #: exe/engine/multichoiceidevice.py:104
@@ -854,6 +1018,8 @@ msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
 msgstr ""
+"Pilih opsi yang benar dengan cara klik \n"
+"pada tombol radio."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:108
 #: exe/engine/multichoiceidevice.py:106
@@ -863,6 +1029,10 @@ msgid ""
 " options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
+"Masukan pilihan yang tersedia di sini. \n"
+"Anda dapat menambah pilihan dengan cara klik tombol \"Tambahkan Pilihan "
+"Lainnya\". Hapus pilihan \n"
+"dengan cara klik tanda \"X\" merah di sebelah opsi."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:111
 #: exe/engine/multichoiceidevice.py:109
@@ -876,6 +1046,13 @@ msgid ""
 " answer\"\n"
 "for the other options."
 msgstr ""
+"Ketik umpan balik yang ingin anda ingin \n"
+"perlihatkan pada siswa ketika memilih pilihan tertentu. jika anda tidak "
+"menyelesaikan \n"
+"kotak ini, eXe akan otomatis menyediakan umpan balik standar sebagai "
+"berikut: \"Jawaban \n"
+"benar\" untuk pilihan jawaban yang benar; atau or \"Jawaban salah\"\n"
+"untuk pilihan yang salah."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3754
 #: exe/engine/field.py:3819 exe/engine/multichoiceidevice.py:131
@@ -885,7 +1062,7 @@ msgstr ""
 #: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
-msgstr ""
+msgstr "Pertanyaan"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:287
 #: exe/engine/multichoiceidevice.py:285
@@ -893,6 +1070,8 @@ msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
 " blank."
 msgstr ""
+"Masukkan sebuah petunjuk di sini. Jika anda tidak ingin menyediakan "
+"sebuah petunjuk, kosongkan area ini."
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
@@ -971,7 +1150,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:158
 #: exe/webui/appletblock.py:168
 msgid "Upload"
-msgstr ""
+msgstr "Kirim"
 
 #: exe/engine/extendedfieldengine.py:298
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
@@ -980,7 +1159,7 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:185
 msgid "Delete File"
-msgstr ""
+msgstr "Hapus Berkas"
 
 #: exe/engine/extendedfieldengine.py:306
 msgid "No File Uploaded Currently"
@@ -992,7 +1171,7 @@ msgstr ""
 #: exe/webui/multimediablock.py:87
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
-msgstr ""
+msgstr "Tidak Ada"
 
 #: exe/engine/extendedfieldengine.py:570
 msgid "is not a valid number - please try again<br/>"
@@ -1000,7 +1179,7 @@ msgstr ""
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
-msgstr ""
+msgstr "Situs web dari luar"
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -1011,12 +1190,20 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
+"\"iDevice\" situs web eksternal mengambil situs tersebut \n"
+"kedalam sebuah bingkai yang menyatu dalam eXe ketimbang membukanya pada "
+"sebuah kotak popup. \n"
+"Hal ini berarti siswa tidak mendapat jendela yang bertumpuk. \n"
+"\"iDevice\" ini sebaiknya hanya digunakan jika \n"
+"akan dilihat oleh siswa secara \"online\"."
 
 #: exe/engine/externalurlidevice.py:49 exe/engine/externalurlidevice.py:116
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
 msgstr ""
+"Masukan URL yang anda ingin tampilkan\n"
+"dan pilih ukuran area untuk menampilkannya."
 
 #: exe/engine/field.py:2907 exe/engine/field.py:2954
 #: exe/engine/multimediaidevice.py:71
@@ -1024,8 +1211,11 @@ msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
+"Menyediakan sebuah judul untuk berkas \n"
+"MP3. Hal ini juga akan muncul pada balok judul pada saat dimainkan."
 
 #: exe/engine/field.py:3090
+#, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1041,12 +1231,27 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p>Jika dibiarkan tak terpilih kesalahan kecil dalam hal ejaan dan "
+"kapitalisasi akan dapat diterima. Jika dalam keadaan terpilih hanya ejaan"
+" dan kapitalisasi yang benar yang dapat diterima.</p><p><strong>Sebagai "
+"contoh:</strong> Jika jawaban yang benar adalah  <code>Gajah</code> maka "
+"baik <code>gajah</code> dan <code>gajih</code> akan dinilai <em>\"hampir "
+"benar\"</em> oleh algoritma dikarenakan hanya satu kata yang salah, "
+"bahkan jika Uji Kapitalisasi (\"Check Capitilization\") dalam keadaan "
+"aktif.</p><p>Jika kapitalisasi tidak aktif dalam contoh di atas, huruf "
+"kecil <code>g</code> tidak akan dianggap sebagai kesalahan dan "
+"<code>gajih</code> juga masih dapat diterima.</p><p>If both \"Strict "
+"Marking\" and \"Check Capitalization\" are set, the only correct answer "
+"is \"Elephant\". If only \"Strict Marking\" is checked and \"Check "
+"Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 
 #: exe/engine/field.py:3111 exe/engine/field.py:3345
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
 msgstr ""
+"<p>Jika opsi ini terpilih, jawaban yang dimasukkan dengan kapitalisasi "
+"yang tidak sesuai akan dianggap tidak benar.</p>"
 
 #: exe/engine/field.py:3116 exe/engine/field.py:3350
 msgid ""
@@ -1054,6 +1259,9 @@ msgid ""
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
+"<p>Jika opsi ini dipilih, setiap kata akan ditandai sebagai \n"
+"siswa yang mengetikkan itu daripada semua kata ditandai pada akhir dari \n"
+"latihan.</p>"
 
 #: exe/engine/field.py:3154 exe/engine/field.py:3392
 #: exe/engine/listaidevice.py:398
@@ -1061,6 +1269,8 @@ msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
+"Mengizinkan pelengkapan otomatis ketika \n"
+"pengguna mengisi celah yang masih kosong."
 
 #: exe/engine/field.py:3324
 msgid ""
@@ -1078,6 +1288,19 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p>Jika dibiarkan tak terpilih kesalahan kecil dalam hal ejaan dan "
+"kapitalisasi akan dapat diterima. Jika dalam keadaan terpilih hanya ejaan"
+" dan kapitalisasi yang benar yang dapat diterima.</p><p><strong>Sebagai "
+"contoh:</strong> Jika jawaban yang benar adalah  <code>Gajah</code> maka "
+"baik <code>gajah</code> dan <code>gajih</code> akan dinilai <em>\"hampir "
+"benar\"</em> oleh algoritma dikarenakan hanya satu kata yang salah, "
+"bahkan jika Uji Kapitalisasi (\"Check Capitilization\") dalam keadaan "
+"aktif.</p><p>Jika kapitalisasi tidak aktif dalam contoh di atas, huruf "
+"kecil <code>g</code> tidak akan dianggap sebagai kesalahan dan "
+"<code>gajih</code> juga masih dapat diterima.</p><p>If both \"Strict "
+"Marking\" and \"Check Capitalization\" are set, the only correct answer "
+"is \"Elephant\". If only \"Strict Marking\" is checked and \"Check "
+"Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 
 #: exe/engine/field.py:3355
 msgid "<p>If this option is set, the score will be shown.</p>"
@@ -1088,16 +1311,20 @@ msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
+"Hanya pilih .swf (Obyek Flash) untuk \n"
+"\"iDevice\" ini."
 
 #: exe/engine/field.py:3498 exe/engine/field.py:3562
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
+"Hanya pilih .flv (Berkas Video Flash) untuk \n"
+"\"iDevice\" ini."
 
 #: exe/engine/field.py:3574
 msgid "Type a discussion topic here."
-msgstr ""
+msgstr "Ketik sebuah topik diskusi di sini."
 
 #: exe/engine/field.py:3603
 msgid ""
@@ -1105,12 +1332,18 @@ msgid ""
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
 msgstr ""
+"<p>Pilih simbol dari teks editor di bawah ini atau masukan LATEX secara "
+"manual untuk membentuk rumus matematika. Untuk melihat tampilan sementara"
+" LATEX anda dimana akan ditampilkan tombol &lt;Tampilan Sementara&gt; di "
+"bawah.</p>"
 
 #: exe/engine/field.py:3611
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr ""
+"Klik tombol Tampilan Sementara untuk mengkonversi \n"
+"latex menjadi sebuah gambar."
 
 #: exe/engine/field.py:3679 exe/engine/field.py:3728
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
@@ -1118,21 +1351,21 @@ msgstr ""
 #: exe/webui/element.py:2576 exe/webui/element.py:2668
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
-msgstr ""
+msgstr "Opsi"
 
 #: exe/engine/field.py:3757 exe/engine/field.py:3823
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:452
 msgid "Hint"
-msgstr ""
+msgstr "Petunjuk"
 
 #: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2381
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
 #: exe/webui/testquestionelement.py:110
 msgid "Options"
-msgstr ""
+msgstr "Opsi - opsi"
 
 #: exe/engine/field.py:3905
 msgid ""
@@ -1141,6 +1374,10 @@ msgid ""
 "these \n"
 "can tend to confuse learners."
 msgstr ""
+"Masukan akar pertanyaan. \n"
+"Pertanyaan sebaiknya jelas dan tidak bermakna ganda. Hindari dasar "
+"pemikiran negatif karene hal ini \n"
+"cenderung untuk membingungkan siswa."
 
 #: exe/engine/field.py:3908 exe/engine/field.py:3989
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
@@ -1148,7 +1385,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:47
 #: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
 msgid "Question:"
-msgstr ""
+msgstr "Pertanyaan:"
 
 #: exe/engine/field.py:3913
 msgid ""
@@ -1157,25 +1394,33 @@ msgid ""
 " options by \n"
 "clicking the red X next to the option."
 msgstr ""
+"Masukan pilihan yang tersedia di sini. \n"
+"Anda dapat menambah pilihan dengan cara klik  tombol \"Tambahkan pilihan "
+"lain\". Hapus pilihan dengan cara \n"
+"klik X merah di sebelah pilihan."
 
 #: exe/engine/field.py:3917
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr ""
+"Pilih sebanyak mungkin jawaban yang benar \n"
+"yang dibutuhkan dengan melakukan klik kotak cek di samping pilihan."
 
 #: exe/engine/field.py:3920
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr ""
+"Ketik pada umpan balik yang ingin anda \n"
+"sediakan bagi siswa."
 
 #: exe/engine/field.py:3922 exe/engine/field.py:3992
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:204
 msgid "Feedback:"
-msgstr ""
+msgstr "Umpanbalik:"
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
@@ -1220,7 +1465,7 @@ msgstr ""
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr ""
+msgstr "Film Flash"
 
 #: exe/engine/flashmovieidevice.py:41
 msgid ""
@@ -1232,12 +1477,23 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
+"\"iDevice\" hanya mendukung format berkas video flash (.FLV) , dan tidak "
+"akan\n"
+"menerima format video lainnya. Walaupun begitu anda dapat melakukan "
+"konversi format video yang lain\n"
+"(seperti mov, wmf etc) ke format .FLV menggunakan enkoder pihak ketiga. "
+"Hal ini tidak \n"
+"diikutsertakan dengan eXe. Pengguna juga perlu untuk mengunduh pemutar "
+"video Flash 8\n"
+"dari http://www.macromedia.com/ untuk memainkan video."
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
 msgstr ""
+"Masukkan \n"
+"teks yang anda inginkan untuk diasosiasikan dengan berkas tersebut."
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:70
@@ -1253,17 +1509,19 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Description"
-msgstr ""
+msgstr "Gambaran"
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:109
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr ""
+"Menyediakan sebuah judul untuk film flash \n"
+"yang baru saja anda sisipkan."
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
-msgstr ""
+msgstr "Flash dengan Teks"
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1274,18 +1532,27 @@ msgid ""
 "file \n"
 "the learners will view."
 msgstr ""
+"\"iDevice\" flash dengan teks mengizinkan anda untuk \n"
+"mengasosiasikan informasi teks pada berkas flash. Hal ini berguna \n"
+"ketika anda menginginkan anda untuk menyediakan instruksi edukasi "
+"mengenai berkas flash \n"
+"yang akan disaksikan oleh siswa."
 
 #: exe/engine/flashwithtextidevice.py:53
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
 msgstr ""
+"Masukan teks yang anda ingin \n"
+"asosiasikan dengan gambar."
 
 #: exe/engine/flashwithtextidevice.py:58 exe/engine/flashwithtextidevice.py:118
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr ""
+"Menyediakan sebuah judul flash \n"
+"yang baru saja disisipkan."
 
 #: exe/engine/flashwithtextidevice.py:60 exe/engine/flashwithtextidevice.py:120
 msgid ""
@@ -1294,6 +1561,9 @@ msgid ""
 "screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr ""
+"Masukan tampilhan dimensi flash \n"
+"dalam piksel dan tentukan pelurusan gambar pada layar. \n"
+"Dimensi lebar dan tinggi akan berubah secara proporsional."
 
 #: exe/engine/freetextfpdidevice.py:39
 msgid "FPD - Free Text"
@@ -1308,11 +1578,17 @@ msgid ""
 "built and \n"
 "delivered."
 msgstr ""
+"Kebanyakan dari sumber daya pelajaran akan berupa \n"
+"membentuk konteks, menyampaikan instruksi dan menyediakan informasi umum."
+"\n"
+"Hal ini menyediakan bingkai kerja dimana aktivitas pembelajaran dibangun "
+"dan \n"
+"disampaikan."
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
 msgid "Free Text"
-msgstr ""
+msgstr "Teks Bebas"
 
 #: exe/engine/freetextfpdidevice.py:47 exe/engine/freetextidevice.py:46
 msgid ""
@@ -1321,30 +1597,34 @@ msgid ""
 "applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
+"Gunakan isian ini untuk memasukan teks. \"iDevice ini \n"
+"tidak memiliki titik penekanan walaupun pembentukan terbatas dapat saja "
+"diterapkan \n"
+"pada teks melalui tombol pengubahan teks yang diasosiakan dengan isian."
 
 #: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
-msgstr ""
+msgstr "Ini adalah isian teks bebas materi pembelajaran dapat dimasukan."
 
 #: exe/engine/galleryidevice.py:140 exe/engine/galleryidevice.py:191
 msgid "No Thumbnail Available. Could not load original image."
-msgstr ""
+msgstr "Tidak ada gambar ukuran kecil. Tidak dapat memuat gambar asli."
 
 #: exe/engine/galleryidevice.py:148 exe/engine/galleryidevice.py:198
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr ""
+msgstr "Tidak ada gambar ukuran kecil. Tidak dapat mengecilkan gambar aslinya."
 
 #: exe/engine/galleryidevice.py:221
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr ""
+msgstr "Tidak ada gambar ukuran kecil. Tidak dapat mengecilkan gambar."
 
 #: exe/engine/galleryidevice.py:458
 msgid "Image Gallery"
-msgstr ""
+msgstr "Galeri Gambar"
 
 #: exe/engine/galleryidevice.py:459
 msgid "eXe Project"
-msgstr ""
+msgstr "Proyek eXe"
 
 #: exe/engine/galleryidevice.py:460
 msgid ""
@@ -1353,14 +1633,18 @@ msgid ""
 "display \n"
 "these in a gallery context rather then individually.</p>"
 msgstr ""
+"<p>Dimana anda memiliki sejumlah gambar yang berhubungan \n"
+"satu sama lain atau pada sebuah latihan yang khusus yang ingin anda "
+"tampilkan \n"
+"pada sebuah konteks galeri daripada secara satu per satu.</p>"
 
 #: exe/engine/galleryidevice.py:463
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr ""
+msgstr "Gunakan \"iDevice\" ini jika anda memiliki banyak gambar untuk ditunjukan."
 
 #: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
-msgstr ""
+msgstr "Masukkan sebuah judul untuk galeri."
 
 #: exe/engine/galleryidevice.py:473
 msgid ""
@@ -1368,15 +1652,18 @@ msgid ""
 "appear below where you will be able to label it. It's always good "
 "practice to put the file size in the label."
 msgstr ""
+"Klik tombol Tambah Gambar untuk memilih sebuah berkas gambar. Gambar akan"
+" muncul di bawah dimana anda dapat memberi label. Merupakan sebuah "
+"langkah yang baik untuk meletakkan ukuran berkas pada label."
 
 #: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:663
 msgid "Reading Activity 0.11"
-msgstr ""
+msgstr "Aktivitas Membaca 0.11"
 
 #: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:510
 #: exe/engine/idevicestore.py:554
 msgid "Reading Activity"
-msgstr ""
+msgstr "Aktivitas Membaca"
 
 #: exe/engine/hangmanidevice.py:51 exe/webui/common.py:490
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
@@ -1459,7 +1746,7 @@ msgstr ""
 #: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
 #: exe/webui/element.py:1548 exe/webui/element.py:1804
 msgid "Restart"
-msgstr ""
+msgstr "Mulai Lagi"
 
 #: exe/engine/hangmanidevice.py:104
 msgid "Restart Level Button Style (CSS)"
@@ -1532,6 +1819,14 @@ msgid ""
 " task \n"
 "based on the reading.</p>"
 msgstr ""
+"<p>Aktivitas membaca pada umumnya \n"
+"digunakan untuk menguji pemahaman siswa pada teks yang diberikan. Hal ini"
+" dapat dilakukan \n"
+"dengan menanyakan siswa untuk merefleksikanby asking the learner to "
+"reflect on the reading and respond to questions about \n"
+"the reading, or by having them complete some other possibly more physical"
+" task \n"
+"based on the reading.</p>"
 
 #: exe/engine/idevicestore.py:562
 msgid ""
@@ -1547,10 +1842,22 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"<p>Guru - guru sebaiknya tetap mengikuti langkah - langkah berikat ketika"
+" menggunakan \"iDevice\" ini: </p><ol><li>Pikirkan tentang jumlah "
+"aktivitas yang direncanakan untuk sumber daya anda yang akan ditampilkan "
+"secara visual sebagai isinya. Hindari menggunakan berbagai macam jenis "
+"atau klasifikasi dari aktivitas kalau tidak siswa akan menjadi bingung. "
+"Biasanya 3 atau 4 jenis yang berbeda sudah lebih dari cukup untuk sebuah "
+"sumber daya pengajaran.</li><li>Dari perspektiv desain visual, hindari 2 "
+"\"iDevices\" berurutan tanpa teks apapun diantaranya. Jka tidak bisa "
+"dihindari, lebih baik menggabungkan 2 pertanyaan atau kegiatan ke dalam "
+"satu \"iDevice\". </li><li>Pikirkan tentang aktivitas dimana keuntungan "
+"yang diperoleh akan lebih besar dari waktu dan usaha yang dikeluarkan "
+"untuk aktivitas tersebut. </li></ol>"
 
 #: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:706
 msgid "What to read"
-msgstr ""
+msgstr "Apa yang harus dibaca"
 
 #: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:707
 msgid ""
@@ -1558,19 +1865,26 @@ msgid ""
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr ""
+"Masukan rincian bacaan berikut rincian referensi. Bentuk \n"
+"penggunaan pereferensian akan tergantung dari pilihan fakultas anda atau"
+" \n"
+"departemen."
 
 #: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:640
 #: exe/engine/idevicestore.py:648 exe/engine/idevicestore.py:710
 #: exe/engine/idevicestore.py:747 exe/engine/idevicestore.py:755
 #: exe/webui/questionelement.py:110
 msgid "Activity"
-msgstr ""
+msgstr "Aktivitas"
 
 #: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:711
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr ""
+"Gambarkan tugas - tugas yang berhubungan dengan bacaan yang harus siswa "
+"lakukan. \n"
+"Ini akan membantu memperlihatkan relevansi bagi siswa."
 
 #: exe/engine/idevicestore.py:606 exe/engine/idevicestore.py:715
 msgid ""
@@ -1579,13 +1893,18 @@ msgid ""
 "question \n"
 "or providing a statement to begin a debate."
 msgstr ""
+"Gunakan umpan balik untuk menyediakan sebuah pokok - pokok ringkasan yang"
+" tercakup pada bacaan, \n"
+"atau sebagai sebuah titik mulai untuk analisa lanjutan bagi bacaan "
+"menyediakan pertanyaan \n"
+"atau pernyataan untuk memulai debat."
 
 #: exe/engine/idevicestore.py:612 exe/engine/idevicestore.py:621
 #: exe/engine/idevicestore.py:719 exe/engine/idevicestore.py:728
 #: exe/engine/package.py:653 exe/engine/package.py:664
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:216
 msgid "Objectives"
-msgstr ""
+msgstr "Tujuan"
 
 #: exe/engine/idevicestore.py:615 exe/engine/idevicestore.py:722
 msgid ""
@@ -1593,17 +1912,21 @@ msgid ""
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr ""
+"Tujuan menggambarkan hasil yang diharapkan dari proses pembelajaran dan "
+"sebaiknya\n"
+"Tentukan apa yang siswa akan dapat lakukan ketika mereka menyelesaikan\n"
+"tugas pelajaran."
 
 #: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
 msgid "Type the learning objectives for this resource."
-msgstr ""
+msgstr "Ketik tujuan belajar untuk sumber daya ini."
 
 #: exe/engine/idevicestore.py:625 exe/engine/idevicestore.py:635
 #: exe/engine/idevicestore.py:732 exe/engine/idevicestore.py:742
 #: exe/engine/package.py:683 exe/engine/package.py:694
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
 msgid "Preknowledge"
-msgstr ""
+msgstr "Pengetahuan Awal"
 
 #: exe/engine/idevicestore.py:628 exe/engine/idevicestore.py:735
 msgid ""
@@ -1615,12 +1938,21 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools "
 "</li></ul>\n"
 msgstr ""
+"Prasyarat pengetahuan mengacu pada pengetahuan siswa yang sebaiknya telah"
+" dikuasai\n"
+"agar dapat secara efektif menyelesaikan proses pembelajaran. Contoh\n"
+"pengetahuan awal dapat saja: <ul>\n"
+"<li> Siswa harus memiliki kemampuan bahasa Inggris tingkat 4 </li>\n"
+"<li> Siswa harus sudah dapat merakit perangkat catu standar </li></ul>\n"
 
 #: exe/engine/idevicestore.py:636 exe/engine/idevicestore.py:743
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
+"Gambarkan prasyarat pengetahuan yang sebaiknya dimiliki oleh siswa untuk "
+"secara efektiv\n"
+"menyelesaikan pelajaran ini."
 
 #: exe/engine/idevicestore.py:643 exe/engine/idevicestore.py:750
 msgid ""
@@ -1629,10 +1961,15 @@ msgid ""
 "conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
+"Sebuah aktivitas dapat didefinisikan sebagai sebuah tugas atas kumpulan "
+"tugas yang harus diselesaikan oleh\n"
+"siswa. Sediakan sebuah pernyataan yang jelas untuk tugas dan "
+"pertimbangkan kondisi\n"
+"yang boleh jadi membantu atau merintangi siswa dalam melakukan tugasnya."
 
 #: exe/engine/idevicestore.py:649 exe/engine/idevicestore.py:756
 msgid "Describe the tasks the learners should complete."
-msgstr ""
+msgstr "Gambarkan tugas - tugas yang harus siswa selesaikan."
 
 #: exe/engine/idevicestore.py:666
 msgid ""
@@ -1645,6 +1982,13 @@ msgid ""
 "some \n"
 "reflective guidance.</p>"
 msgstr ""
+"<p>Aktivitas bacaan, seperti namanya \n"
+", sebaiknya meminta siswa untuk melakukan sejumlah bentuk aktivitas. "
+"Aktivitas ini \n"
+"sebaiknya langsung berhubungan dengan teks yang sedang dibaca siswa. \n"
+"Umpan balik untuk aktivitas perlu dilakukan, dapat menyediakan siswa "
+"dengan beberapa \n"
+"petunjuk reflektif.</p>"
 
 #: exe/engine/idevicestore.py:671
 msgid ""
@@ -1660,10 +2004,22 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"Guru sebaiknya mengingat hal berikut ini ketika menggunakan \"iDevice\" "
+"ini: <ol><li>Pikirkan tentang jumlah beraneka aktivitas yang direncanakan"
+" untuk sumber anda yang akan secara visual diisyaratkan pada isi. Hindari"
+" menggunakan terlalu banyak jenis atau klasifikasi aktivitas yang akan "
+"membingungkan siswa. Biasanya 3 atau 4 jenis adalah lebih dari cukup "
+"untuk sebuah sumber daya pelajaran.</li><li>Dari sudut pandang desain "
+"visual, hindari memiliki 2 \"iDevices\" segera satu sama lain tanpa ada "
+"teks diantaranya. Jika hal ini terpaksa dilakukan, lebih baik gabungkan 2"
+" pertanyaan atau kegiatan ke dalam 1 \"iDevice\". </li><li>Pikirkan "
+"tentang aktivitas dimana keuntungan yang terlihat melakukan aktivitas "
+"tersebut setimpal dengan waktu dan usaha yang akan dikeluarkan untuk "
+"menyelesaikan aktivitas tersebut.</li></ol>"
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
-msgstr ""
+msgstr "Pembesar Gambar"
 
 #: exe/engine/imagemagnifieridevice.py:43
 msgid ""
@@ -1672,10 +2028,14 @@ msgid ""
 "the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
+"Pembesar gambar adalah alat pembesar yang memungkinkan\n"
+"siswa untuk memperbesar tampilan gambar yang diberikan. Menggerakan \n"
+"kaca pembesar di atas gambar memungkinkan untuk detail yang lebih besar "
+"dapat dipelajari."
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Choose an Image"
-msgstr ""
+msgstr "Pilih gambar"
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid ""
@@ -1684,6 +2044,10 @@ msgid ""
 "to be \n"
 "magnified."
 msgstr ""
+"Klik \n"
+"pada gambar di bawah ini atau tombol \"Tambah Gambar\" untuk memilih "
+"berkas gambar yang akan \n"
+"diperbesar."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
@@ -1691,19 +2055,23 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/tools/style-designer/langs/en.js:24
 msgid "Text"
-msgstr ""
+msgstr "Teks"
 
 #: exe/engine/imagemagnifieridevice.py:55 exe/engine/multimediaidevice.py:65
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
 msgstr ""
+"Masukan teks yang ingin anda asosiasikan \n"
+"dengan berkas."
 
 #: exe/engine/imagemagnifieridevice.py:60
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
 msgstr ""
+"Menyediakan sebuah judul gambar \n"
+"untuk diperbesar."
 
 #: exe/engine/imagemagnifieridevice.py:62
 msgid ""
@@ -1714,6 +2082,11 @@ msgid ""
 " \n"
 "image to display at its original size."
 msgstr ""
+"Pilih ukuran gambar yang ingin anda \n"
+"tampilkan. Ukurannya dalam piksel. Umumnya, 100 \n"
+"piksel sebanding kira - kira 3cm. Tinggalkan kedua area dalam keadaan "
+"kosong jika anda ingin \n"
+"gambar yang ditampilkan sesuai ukuran aslinya."
 
 #: exe/engine/imagemagnifieridevice.py:66
 #: exe/engine/imagemagnifieridevice.py:142
@@ -1721,6 +2094,8 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
+"Pelurusan memungkinkan anda untuk \n"
+"memilih untuk penempatan gambar pada layar."
 
 #: exe/engine/imagemagnifieridevice.py:68
 #: exe/engine/imagemagnifieridevice.py:144
@@ -1728,6 +2103,8 @@ msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
+"Tentukan tingkat awal pembesaran \n"
+"ketika \"IDevice\" dipanggil, sebagai persentasi ukuran gambar"
 
 #: exe/engine/imagemagnifieridevice.py:70
 #: exe/engine/imagemagnifieridevice.py:146
@@ -1735,20 +2112,24 @@ msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
+"Tentukan tingkat maksimum dari pembesaran, \n"
+"sebagai persentasi dari ukuran gambar asli"
 
 #: exe/engine/imagemagnifieridevice.py:72
 msgid "Select the size of the magnifying glass"
-msgstr ""
+msgstr "Pilih ukuran pada kaca pembesar"
 
 #: exe/engine/imagemagnifieridevice.py:148
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
 msgstr ""
+"Hal ini memilih ukuran awal dari \n"
+"kaca pembesar"
 
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
-msgstr ""
+msgstr "Gambar dengan Teks"
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -1776,18 +2157,45 @@ msgid ""
 "visual.\n"
 "</p>"
 msgstr ""
+"<p>\n"
+"Gambar pada \"iDevice\" teks dapat digunakan dengan sejumlah cara untuk "
+"mendukung baik\n"
+"sisi emosional (afektiv) dan dimensi tugas pembelajaran(kognitiv) dari "
+"isi\n"
+"eXe. \n"
+"</p><p>\n"
+"<b>Integrasi visual dengan ringkasan verbal</b>\n"
+"</p><p>\n"
+"Psikolog kognitiv mengindikasikan bahwa penyajian dengan a\n"
+"gambar yang representativ dan ringkasan verbal yang berhubungan (yang "
+"mana ditampilkan\n"
+"bersamaan) dapat mengurangi beban pembelajaran kognitiv dan meningkatkan "
+"daya tahan belajar.\n"
+"\"iDevice\" ini dapat digunakan untuk menyajikan gambar (foto, diagram, "
+"atau\n"
+"grafik) dengan sebuah ringkasan verbal yang singkat mencakup titik - "
+"titik utama yang berhubungan dengan\n"
+"gambar. Sebagai contoh, jika anda mengajarkan fungsi mesin 4 tak\n"
+"anda dapat memiliki sebuah gambar visual untuk setiap 4 posisi mesin \n"
+"piston dengan sebuah ringkasan singkat dari setiap aspek kunci dari "
+"setiap gambar.\n"
+"</p>"
 
 #: exe/engine/imagewithtextidevice.py:66
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
 msgstr ""
+"Masukan teks yang anda inginkan untuk \n"
+"diasosiasikan dengan gambar."
 
 #: exe/engine/imagewithtextidevice.py:71 exe/engine/imagewithtextidevice.py:118
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
 msgstr ""
+"Menyediakan sebuah judul gambar \n"
+"yang baru anda sisipkan."
 
 #: exe/engine/listaidevice.py:66
 msgid "DropDown Activity"
@@ -1882,7 +2290,7 @@ msgstr ""
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
-msgstr ""
+msgstr "Matematika"
 
 #: exe/engine/mathidevice.py:43
 msgid ""
@@ -1898,10 +2306,20 @@ msgid ""
 " \n"
 "                        this graphic."
 msgstr ""
+"Bahasa matematika LATEX sudah \n"
+"digunakan untuk mengaktifkan rumus matematika anda \n"
+"kedalam materi. Hal ini dilakukan dengan menerjemahkan \n"
+"LATEX pada sebuah gambar yang kemudian akan ditampilkan\n"
+"pada materi eXe anda. Kami akan menyarankan anda untuk \n"
+"menggunakan \"iDevice\" Teks Bebas untuk menyediakan \n"
+"catatan penjelasan dan instruksi pelajaran disekitar \n"
+"gambar rumus ini."
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
 msgstr ""
+"Anda dapat menggunakan balok perangkat atau memasukan latex secara manual"
+" pada area teks."
 
 #: exe/engine/memorymatchidevice.py:44
 msgid "Memory Match Game"
@@ -2099,25 +2517,27 @@ msgstr ""
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
-msgstr ""
+msgstr "Pilihan Ganda"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:41
 msgid "Auckland University of Technology"
-msgstr ""
+msgstr "Universitas Teknologi Auckland"
 
 #: exe/engine/multimediaidevice.py:42
 msgid ""
 "The MP3 iDevice allows you to attach an MP3 media file to your content "
 "along with relevant textuallearning instructions."
 msgstr ""
+"\"iDevice\" MP3 mengizinkan anda untuk menyisipkan berkas MP3 pada isi "
+"bersamaan dengan instruksi teks pelajaran yang relevan."
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr ""
+msgstr "Pilih berkas MP3"
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -2129,16 +2549,25 @@ msgid ""
 "would like the iDevice to       display e.g. 'Some emphasis' applies a "
 "border and icon to the iDevice content displayed.</li></ol>"
 msgstr ""
+"<ol>  <li>Klik &lt;Pilih &gt; dan cari berkas MP3       yang anda ingin "
+"sisipkan</li> <li>Klik pada menu \"dropdown\" untuk memilih posisi"
+"        yang anda inginkan pada layar.</li>  <li>Masukan sebuah judul "
+"opsional untuk berkas anda.</li> <li>Masukan teks yang relevan untuk "
+"berkas MP3 tersebut.</li> <li>Pilih tipe gaya yang anda inginkan bagi "
+"iDevice untuk       ditampilkan contoh. 'Beberapa Penekanan' pada batasan"
+" dan ikon tampilan isi iDevice.</li></ol>"
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
+"Pelurusan mengizinkan anda untuk \n"
+"memilih posisi mana pada layar untuk menempatkan film media player."
 
 #: exe/engine/multiselectidevice.py:45
 msgid "Multi-select"
-msgstr ""
+msgstr "Pilihan Jamak"
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
@@ -2190,20 +2619,20 @@ msgstr ""
 
 #: exe/engine/package.py:327
 msgid "Topic"
-msgstr ""
+msgstr "Topik"
 
 #: exe/engine/package.py:327
 msgid "Section"
-msgstr ""
+msgstr "Bagian"
 
 #: exe/engine/package.py:327
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
 msgid "Unit"
-msgstr ""
+msgstr "Unit"
 
 #: exe/engine/package.py:348
 msgid "Home"
-msgstr ""
+msgstr "Basis"
 
 #: exe/engine/package.py:503
 msgid "Metadata creation date"
@@ -2211,7 +2640,7 @@ msgstr ""
 
 #: exe/engine/package.py:1000
 msgid "?????"
-msgstr ""
+msgstr "?????"
 
 #: exe/engine/package.py:1038 exe/engine/package.py:1045
 #, python-format
@@ -2219,11 +2648,13 @@ msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
+"PENYIMPANAN GAGAL!\n"
+"Penyimpanan berhasil yang terakhir pada %s."
 
 #: exe/engine/package.py:1449 exe/jsui/scripts/app/controller/Toolbar.js:418
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "iDevice Editor"
-msgstr ""
+msgstr "Editor \"iDevice\""
 
 #: exe/engine/package.py:1570
 msgid "My Catalog"
@@ -2273,7 +2704,7 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr ""
+msgstr "Ini adalah sebuah isian teks bebas."
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
@@ -2394,16 +2825,21 @@ msgid ""
 "answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
 msgstr ""
+"Masukkan sebuah opsi jawaban. Sediakan \n"
+"sederet pengalih yang masuk akal (biasanya 3-4) selain jawaban benar. \n"
+"Klik pada &lt;Tambahkan opsi lain&gt; tombol untuk menambah jawaban lain."
 
 #: exe/engine/quiztestidevice.py:126 exe/engine/quiztestidevice.py:202
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
+"Untuk mengindikasikan jawaban yang benar, \n"
+"klik tombol radio di sebelah opsi yang benar."
 
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
-msgstr ""
+msgstr "Kuis SCORM"
 
 #: exe/engine/quiztestidevice.py:246
 msgid ""
@@ -2415,6 +2851,12 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
+"Tidak seperti MCQ, kuis SCORM digunakan untuk menguji \n"
+"pengetahuan siswa pada sebuah topik tanpa menyediakan umpan balik \n"
+"untuk jawaban yang benar. Kuis akan sering diberikan ketika siswa sudah "
+"memiliki waktu \n"
+"untuk belajar dan latihan menggunakan informasi atau keahlian.\n"
+" "
 
 #: exe/engine/recomendacionfpdidevice.py:30
 msgid "FPD - A Piece of Advice"
@@ -2450,6 +2892,16 @@ msgid ""
 "be \n"
 "effective feedback tools."
 msgstr ""
+"Refleksi adalah metoda pengajaran yang sering digunakan untuk \n"
+"menghubungkan teori pada praktek. Tugas refleksi seringkali menyediakan "
+"siswa dengan \n"
+"kesempatan untuk mengamati dan merefleksikan pengamatan mereka sebelum "
+"mempresentasikan \n"
+"hal ini dalam bentuk pekerjaan akademis. Jurnal, catatan pribadi, profil "
+"dan portfolio \n"
+"berguna untuk mengumpulkan data pengamatan. Rubrik dan tuntunan dapat "
+"menjadi \n"
+"alat umpan balik yang efektif."
 
 #: exe/engine/reflectionfpdidevice.py:57
 #: exe/engine/reflectionfpdmodifidevice.py:56
@@ -2458,6 +2910,8 @@ msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
 msgstr ""
+"Masukkan sebuah pertanyaan untuk siswa \n"
+"refleksikan."
 
 #: exe/engine/reflectionfpdidevice.py:59
 msgid ""
@@ -2466,13 +2920,17 @@ msgid ""
 " \n"
 "reflective feedback.)"
 msgstr ""
+"Gambarkan bagaimana siswa akan menguji akan apa yang \n"
+"mereka telah lakukan dalam latihan. (Rubrik adalah alat yang berguna "
+"untuk menyediakan \n"
+"umpanbalik reflektiv.)"
 
 #: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:201
 msgid "Reflective question:"
-msgstr ""
+msgstr "Pertanyaan Reflektif:"
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
 msgid "FPD - Think About It (without Feedback)"
@@ -2480,7 +2938,7 @@ msgstr ""
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
-msgstr ""
+msgstr "Refleksi"
 
 #: exe/engine/reflectionidevice.py:57
 msgid ""
@@ -2498,7 +2956,7 @@ msgstr ""
 
 #: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:48
 msgid "RSS"
-msgstr ""
+msgstr "RSS"
 
 #: exe/engine/rssidevice.py:42
 msgid ""
@@ -2506,6 +2964,11 @@ msgid ""
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
+"RSS \"iDevice\" digunakan \n"
+"untuk menyediakan materi baru untuk komputer pengguna. Dengan menggunakan"
+"\n"
+"\"iDevice\" anda dapat menyediakan tautan dari sebuah umpan (feed) yang "
+"anda pilihkan untuk siswa lihat."
 
 #: exe/engine/rssidevice.py:51
 msgid ""
@@ -2526,6 +2989,21 @@ msgid ""
 "bookmarks and add\n"
 " instructions or additional learning information."
 msgstr ""
+"Masukkan sebuah URL RSS untuk RSS feed yang ingin anda \n"
+"sisipkan pada isi. Feeds seringkali terlihat sebagai gambar kecil\n"
+" dalam bentuk ikon (seringkali seperti ini <img src=\"/images/feed-"
+"icon.png\" />) atau teks \"RSS\". Dengan melakukan klik pada  \n"
+" ikon atau label teks akan menampilkan sebuah RSS feed pada \"browser\" "
+"anda. Anda dapat salin dan tempel\n"
+"URL pada area ini. Atau, klik kanan pada tautan atau gambar akan membuka "
+"sebuah kotak menu;\n"
+"click on COPY LINK LOCATION or Copy Shortcut. Back in eXe open the RSS "
+"bookmark iDevice and Paste the URL \n"
+"into the RSS URL field and click the LOAD button. This will extract the "
+"titles from your feed and\n"
+"display them as links in your content. From here you can edit the "
+"bookmarks and add\n"
+" instructions or additional learning information."
 
 #: exe/engine/rssidevice.py:110 exe/engine/rssidevice.py:113
 #, python-format
@@ -2533,6 +3011,8 @@ msgid ""
 "Unable to load RSS feed from %s <br/>Please check the spelling and "
 "connection and try again."
 msgstr ""
+"Tidak dapat mengunduh umpan RSS dari %s <br/>Tolong periksa ejaan dan "
+"hubungan lalu coba lagi."
 
 #: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid "FPD - Multi Select Activity"
@@ -2665,7 +3145,7 @@ msgstr ""
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
-msgstr ""
+msgstr "Pertanyaan Benar-Salah"
 
 #: exe/engine/truefalseidevice.py:146
 #: exe/engine/verdaderofalsofpdidevice.py:147
@@ -2684,6 +3164,8 @@ msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
 msgstr ""
+"Sebuah petunjuk dapat disediakan untuk membantu \n"
+"siswa dalam menjawab pertanyaan."
 
 #: exe/engine/truefalseidevice.py:154
 #: exe/engine/verdaderofalsofpdidevice.py:156
@@ -2693,6 +3175,10 @@ msgid ""
 "tend to \n"
 "be ambiguous."
 msgstr ""
+"Ketik akar pertanyaan. Pertanyaan \n"
+"sebaiknya jelas dan tidak bermakna ganda. Hindari dasar pikiran negatif "
+"karena hal ini cenderung \n"
+"bermakna ganda."
 
 #: exe/engine/truefalseidevice.py:158
 #: exe/engine/verdaderofalsofpdidevice.py:160
@@ -2702,6 +3188,10 @@ msgid ""
 " \n"
 "default feedback will be provided."
 msgstr ""
+"Masukkan umpanbalik yang anda ingin sediakan \n"
+"pada siswa. Area ini dapat saja dibiarkan kosong. Jika area ini dibiarkan"
+" kosong \n"
+"maka umpan balik standar yang akan disediakan."
 
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
 #: exe/engine/verdaderofalsofpdidevice.py:167
@@ -2710,6 +3200,8 @@ msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
 msgstr ""
+"Sediakan instruksi akan bagaimana pertanyaan benar/salah seharusnya  \n"
+"diselesaikan."
 
 #: exe/engine/truefalseidevice.py:372
 #: exe/engine/verdaderofalsofpdidevice.py:375
@@ -2722,6 +3214,13 @@ msgid ""
 "or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
+"Ketik umpan balik yang ingin anda ingin \n"
+"perlihatkan pada siswa ketika memilih pilihan tertentu. jika anda tidak "
+"menyelesaikan \n"
+"kotak ini, eXe akan otomatis menyediakan umpan balik standar sebagai "
+"berikut: \"Jawaban \n"
+"benar\" untuk pilihan jawaban yang benar; atau or \"Jawaban salah\"\n"
+"untuk pilihan yang salah."
 
 #: exe/engine/verdaderofalsofpdidevice.py:145
 msgid "FPD - True/False Activity"
@@ -2729,9 +3228,10 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:53
 msgid "Wiki Article"
-msgstr ""
+msgstr "Artikel Wiki"
 
 #: exe/engine/wikipediaidevice.py:55
+#, fuzzy
 msgid ""
 "<p>The Wikipedia iDevice allows you to locate \n"
 "existing content from within Wikipedia and download this content into "
@@ -2748,22 +3248,35 @@ msgid ""
 "additionally\n"
 "by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
 msgstr ""
+"<p>\"iDevice\" Wikipedia mengizinkan anda untuk meletakkan \n"
+"isi yang telah ada pada Wikipedia dan mengunduh isi kepada sumber daya \n"
+"eXe anda. \"iDevice\" artikel Wikipedia mengambil tampilan dari isi  \n"
+"artikel. Perubahan pada Wikipedia tidak secara otomatis memperbaharui "
+"tampilan tersebut \n"
+"pada eXe, sebuah salinan baru dari artikel perlu dilakukan. Juga, \n"
+"perubahan pada eXe tidak akan memperbaharui isi di Wikipedia. </p> <p>Isi"
+" Wikipedia \n"
+"dilindungi oleh izin dokumentasi bebas GNU.</p>"
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
-msgstr ""
+msgstr "Artikel"
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr ""
+"Pilih versi bahasa Wikipedia yang cocok  \n"
+"untuk mencari dan memasukan kata pencarian."
 
 #: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:363
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
 msgstr ""
+"Masukkan kata atau istilah yang ingin anda cari \n"
+"dengan Wikipedia."
 
 #: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
 #, python-format
@@ -2771,10 +3284,12 @@ msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
 msgstr ""
+"Tidak dapat mengunduh dari %s <br/>Tolong periksa ejaan dan hubungan lalu"
+" coba lagi."
 
 #: exe/engine/wikipediaidevice.py:315
 msgid "http://en.wikipedia.org/"
-msgstr ""
+msgstr "http://en.wikipedia.org/"
 
 #: exe/exe_do:68
 msgid ""
@@ -2946,6 +3461,8 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
+"\"%s\" sudah ada.\n"
+"Coba lagi dengan sebuah nama yang lain"
 
 #: exe/export/cmdlineexporter.py:92
 msgid "Export format not implemented"
@@ -2962,12 +3479,12 @@ msgstr ""
 #: exe/export/scormpage.py:177 exe/export/websitepage.py:345
 #: exe/webui/common.py:473
 msgid "Previous"
-msgstr ""
+msgstr "Sebelumnya"
 
 #: exe/export/scormpage.py:178 exe/export/websitepage.py:351
 #: exe/webui/common.py:474
 msgid "Next"
-msgstr ""
+msgstr "Lanjut"
 
 #: exe/export/singlepage.py:249
 msgid "You can close this window"
@@ -2975,7 +3492,7 @@ msgstr ""
 
 #: exe/export/textexport.py:54 exe/webui/common.py:293
 msgid "Licensed under the"
-msgstr ""
+msgstr "Perizinan di bawah"
 
 #: exe/export/websitepage.py:153
 msgid "Skip navigation"
@@ -2983,18 +3500,20 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr ""
+msgstr "Contoh Contoh"
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
 msgstr ""
+"Ini adalah contoh dari plugin \"iDevice\"\n"
+"yang dibuat oleh pengguna."
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
 msgid "Example"
-msgstr ""
+msgstr "Contoh"
 
 #: exe/importers/cmdlineimporter.py:44
 msgid "Import format not implemented"
@@ -3047,18 +3566,18 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
-msgstr ""
+msgstr "Tidak dapat mengakses direktori yang bernama"
 
 #: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:847 exe/jsui/mainpage.py:975
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
-msgstr ""
+msgstr ". Tolong gunakan nama - nama ASCII."
 
 #: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
-msgstr ""
+msgstr "PENYIMPANAN GAGAL!"
 
 #: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1071
 #: exe/jsui/mainpage_antes_jr_docs.py:326
@@ -3069,6 +3588,8 @@ msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
+"PENYIMPANAN GAGAL!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:337 exe/jsui/mainpage.py:342 exe/jsui/mainpage.py:345
 #: exe/jsui/mainpage_antes_jr_docs.py:330
@@ -3076,19 +3597,19 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:338
 #, python-format
 msgid "Package saved to: %s"
-msgstr ""
+msgstr "Paket disimpan ke: %s"
 
 #: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:672
 #: exe/jsui/mainpage_antes_jr_docs.py:561
 #: exe/jsui/mainpage_antes_jr_docs.py:665
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
-msgstr ""
+msgstr "Tampilan sementara direktori %s adalah sebuah berkas, tidak dapat diganti"
 
 #: exe/jsui/mainpage.py:587 exe/jsui/mainpage_antes_jr_docs.py:580
-#, python-format
+#, fuzzy, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr ""
+msgstr "%s adalah sebuah berkas, tidak dapat ditimpa"
 
 #: exe/jsui/mainpage.py:712 exe/jsui/mainpage_antes_jr_docs.py:705
 #, python-format
@@ -3096,6 +3617,8 @@ msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
+"Kompilasi MimeTeX gagal!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:750 exe/jsui/mainpage_antes_jr_docs.py:743
 msgid "Importing HTML..."
@@ -3172,7 +3695,7 @@ msgstr ""
 #: exe/jsui/mainpage.py:1003 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
-msgstr ""
+msgstr "Paket dihasilkan ke: %s"
 
 #: exe/jsui/mainpage.py:1015 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
@@ -3208,7 +3731,7 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr ""
+msgstr "%s adalah sebuah berkas, tidak dapat ditimpa"
 
 #: exe/jsui/mainpage.py:1063 exe/jsui/mainpage.py:1111
 #: exe/jsui/mainpage_antes_jr_docs.py:996
@@ -3218,6 +3741,8 @@ msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr ""
+"Direktori %s sudah ada. Tolong pilih yang lain atau hapus yang sudah ada "
+"lalu coba lagi."
 
 #: exe/jsui/mainpage.py:1077 exe/jsui/mainpage.py:1122
 #: exe/jsui/mainpage.py:1137 exe/jsui/mainpage.py:1156
@@ -3234,16 +3759,16 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:1185
 #, python-format
 msgid "Exported to %s"
-msgstr ""
+msgstr "Diekspor ke %s"
 
 #: exe/jsui/mainpage.py:1285 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr ""
+msgstr "Berkas %s tidak ada atau tidak dapat dibaca."
 
 #: exe/jsui/mainpage.py:1289 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr ""
+msgstr "Tidak dapat mengambil berkas, tolong kirim email ke bugs@exelearning.org"
 
 #: exe/jsui/mainpage.py:1292 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
@@ -3251,10 +3776,12 @@ msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
+"Maaf, format berkas yang salah:\n"
+"%s"
 
 #: exe/jsui/mainpage.py:1294 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
-msgstr ""
+msgstr "Maaf, format berkas yang salah"
 
 #: exe/jsui/propertiespage.py:335
 msgid "Failed to get properties"
@@ -3274,7 +3801,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
 #: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
 msgid "Select an image"
-msgstr ""
+msgstr "Pilih gambar"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:194
 #: exe/jsui/scripts/app/controller/MainTab.js:228
@@ -3366,12 +3893,12 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
 msgid "Insert Package"
-msgstr ""
+msgstr "Sisipkan Paket"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Extract Package"
-msgstr ""
+msgstr "Ekstrak Paket"
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Delete \"{node}\" node and all its children?"
@@ -3479,7 +4006,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:123
 msgid "Information"
-msgstr ""
+msgstr "Informasi"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 msgid "Your Style could not be saved because an unknown error occurred."
@@ -3593,7 +4120,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:136
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
-msgstr ""
+msgstr "Batalkan"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:792
 msgid "Ok"
@@ -3751,7 +4278,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
-msgstr ""
+msgstr "Nama"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:95
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
@@ -3783,7 +4310,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/en.js:112
 msgid "Save"
-msgstr ""
+msgstr "Simpan"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:78
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:89
@@ -3804,13 +4331,14 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:35
 msgid "Dublin Core Metadata"
-msgstr ""
+msgstr "Metadata Inti Dublin"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:45
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:171
+#, fuzzy
 msgid "The name given to the resource."
-msgstr ""
+msgstr "Ketik tujuan belajar untuk sumber daya ini."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:51
 msgid "Creator"
@@ -3901,8 +4429,9 @@ msgid "Format"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
+#, fuzzy
 msgid "Select a Format."
-msgstr ""
+msgstr "Pilih gambar"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomSections.js:40
@@ -3940,8 +4469,9 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:182
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:189
+#, fuzzy
 msgid "Select a language."
-msgstr ""
+msgstr "Pilih Bahasa"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
@@ -3997,8 +4527,9 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
 #: exe/webui/tools/style-designer/langs/en.js:110
+#, fuzzy
 msgid "Reset"
-msgstr ""
+msgstr "Faro"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
@@ -4317,7 +4848,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:269
 #: exe/webui/editorpane.py:387
 msgid "Purpose"
-msgstr ""
+msgstr "Tujuan"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:166
 msgid "Download Classification Sources"
@@ -4708,7 +5239,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:45
 msgid "Select Language"
-msgstr ""
+msgstr "Pilih Bahasa"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:151
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -4738,8 +5269,9 @@ msgid "Permissive"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
+#, fuzzy
 msgid "Strict"
-msgstr ""
+msgstr "Mulai Lagi"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:192
 msgid ""
@@ -4785,7 +5317,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
 msgid "Export"
-msgstr ""
+msgstr "Ekspor"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
 msgid "Delete style: "
@@ -4864,7 +5396,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
-msgstr ""
+msgstr "Ringkasan"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:85
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:88
@@ -4897,21 +5429,21 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
 msgid "Authoring"
-msgstr ""
+msgstr "Pembuatan"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:47
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Properties"
-msgstr ""
+msgstr "Properti"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
 msgid "Package"
-msgstr ""
+msgstr "Paket"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:58
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
 msgid "Metadata"
-msgstr ""
+msgstr "Metadata"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:195
@@ -4925,7 +5457,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
-msgstr ""
+msgstr "Tambahkan Halaman"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:239
 #: exe/webui/block.py:333 exe/webui/editorelement.py:78
@@ -4936,11 +5468,11 @@ msgstr ""
 #: exe/webui/galleryblock.py:303
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
-msgstr ""
+msgstr "Hapus"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
-msgstr ""
+msgstr "Ubah Nama"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
 msgid "Promote node up in hierarchy"
@@ -4951,12 +5483,14 @@ msgid "Demote node down in hierarchy"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:45
+#, fuzzy
 msgid "Move node up"
-msgstr ""
+msgstr "Pindah Ke atas"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:51
+#, fuzzy
 msgid "Move node down"
-msgstr ""
+msgstr "Pindah Ke bawah"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 #: exe/webui/tools/style-designer/langs/en.js:133
@@ -4974,7 +5508,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
-msgstr ""
+msgstr "Bersihkan Daftar Proyek Terbaru"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
 msgid "Save As..."
@@ -5059,7 +5593,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:356 exe/webui/editorpage.py:269
 msgid "Quit"
-msgstr ""
+msgstr "Keluar"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:363
 msgid "Tools"
@@ -5091,7 +5625,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Preview"
-msgstr ""
+msgstr "Tampilan Sementara"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "Refresh Display"
@@ -5236,11 +5770,11 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:92
 msgid "Czech "
-msgstr ""
+msgstr "Ceko"
 
 #: exe/jsui/scripts/langs.js:96
 msgid "Church Slavic "
-msgstr ""
+msgstr "Gereja Slavia"
 
 #: exe/jsui/scripts/langs.js:100
 msgid "Chuvash "
@@ -5248,15 +5782,15 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:104
 msgid "Welsh "
-msgstr ""
+msgstr "Tidak memenuhi"
 
 #: exe/jsui/scripts/langs.js:108
 msgid "Danish "
-msgstr ""
+msgstr "Denmark"
 
 #: exe/jsui/scripts/langs.js:112
 msgid "German "
-msgstr ""
+msgstr "Jerman"
 
 #: exe/jsui/scripts/langs.js:116
 msgid "Dzongkha; Bhutani "
@@ -5268,7 +5802,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:124
 msgid "English "
-msgstr ""
+msgstr "Inggris"
 
 #: exe/jsui/scripts/langs.js:128
 msgid "Esperanto "
@@ -5276,11 +5810,11 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:132
 msgid "Spanish "
-msgstr ""
+msgstr "Spanyol"
 
 #: exe/jsui/scripts/langs.js:136
 msgid "Estonian "
-msgstr ""
+msgstr "Estonia"
 
 #: exe/jsui/scripts/langs.js:140
 msgid "Basque "
@@ -5288,23 +5822,23 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:144
 msgid "Persian "
-msgstr ""
+msgstr "Persia"
 
 #: exe/jsui/scripts/langs.js:148
 msgid "Finnish "
-msgstr ""
+msgstr "Finlandia"
 
 #: exe/jsui/scripts/langs.js:152
 msgid "Fijian; Fiji "
-msgstr ""
+msgstr "Fiji"
 
 #: exe/jsui/scripts/langs.js:156
 msgid "Faroese "
-msgstr ""
+msgstr "Faro"
 
 #: exe/jsui/scripts/langs.js:160
 msgid "French "
-msgstr ""
+msgstr "Prancis"
 
 #: exe/jsui/scripts/langs.js:164
 msgid "Frisian "
@@ -5312,7 +5846,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:168
 msgid "Irish "
-msgstr ""
+msgstr "Irlandia"
 
 #: exe/jsui/scripts/langs.js:172
 msgid "Scots; Gaelic "
@@ -5328,7 +5862,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:184
 msgid "Gujarati "
-msgstr ""
+msgstr "Gujarat"
 
 #: exe/jsui/scripts/langs.js:188
 msgid "Manx "
@@ -5352,7 +5886,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:208
 msgid "Croatian "
-msgstr ""
+msgstr "Kroasia"
 
 #: exe/jsui/scripts/langs.js:212
 msgid "Hungarian "
@@ -5372,7 +5906,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:228
 msgid "Indonesian (formerly in) "
-msgstr ""
+msgstr "Indonesia (sebelumnya dipakai)"
 
 #: exe/jsui/scripts/langs.js:232
 msgid "Interlingue "
@@ -5388,11 +5922,11 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:244
 msgid "Icelandic "
-msgstr ""
+msgstr "Eslandia"
 
 #: exe/jsui/scripts/langs.js:248
 msgid "Italian "
-msgstr ""
+msgstr "Italia"
 
 #: exe/jsui/scripts/langs.js:252
 msgid "Inuktitut "
@@ -5400,11 +5934,11 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:256
 msgid "Japanese "
-msgstr ""
+msgstr "Jepang"
 
 #: exe/jsui/scripts/langs.js:260
 msgid "Javanese "
-msgstr ""
+msgstr "Jawa"
 
 #: exe/jsui/scripts/langs.js:264
 msgid "Georgian "
@@ -5420,7 +5954,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:276
 msgid "Kazakh "
-msgstr ""
+msgstr "Kazakhtan"
 
 #: exe/jsui/scripts/langs.js:280
 msgid "Kalaallisut; Greenlandic "
@@ -5432,19 +5966,19 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:288
 msgid "Kannada "
-msgstr ""
+msgstr "Kanada"
 
 #: exe/jsui/scripts/langs.js:292
 msgid "Korean "
-msgstr ""
+msgstr "Korea"
 
 #: exe/jsui/scripts/langs.js:296
 msgid "Kashmiri "
-msgstr ""
+msgstr "Kasmir"
 
 #: exe/jsui/scripts/langs.js:300
 msgid "Kurdish "
-msgstr ""
+msgstr "Kurdi"
 
 #: exe/jsui/scripts/langs.js:304
 msgid "Komi "
@@ -5456,11 +5990,11 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:312
 msgid "Kirghiz "
-msgstr ""
+msgstr "Kirgiztan"
 
 #: exe/jsui/scripts/langs.js:316
 msgid "Latin "
-msgstr ""
+msgstr "Latin"
 
 #: exe/jsui/scripts/langs.js:320
 msgid "Letzeburgesch "
@@ -5472,15 +6006,15 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:328
 msgid "Lao; Laotian "
-msgstr ""
+msgstr "Laos"
 
 #: exe/jsui/scripts/langs.js:332
 msgid "Lithuanian "
-msgstr ""
+msgstr "Lithuania"
 
 #: exe/jsui/scripts/langs.js:336
 msgid "Latvian; Lettish "
-msgstr ""
+msgstr "Latvia"
 
 #: exe/jsui/scripts/langs.js:340
 msgid "Malagasy "
@@ -5496,7 +6030,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:352
 msgid "Macedonian "
-msgstr ""
+msgstr "Macedonia"
 
 #: exe/jsui/scripts/langs.js:356
 msgid "Malayalam "
@@ -5504,7 +6038,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:360
 msgid "Mongolian "
-msgstr ""
+msgstr "Mongolia"
 
 #: exe/jsui/scripts/langs.js:364
 msgid "Moldavian "
@@ -5516,7 +6050,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:372
 msgid "Malay "
-msgstr ""
+msgstr "Melayu"
 
 #: exe/jsui/scripts/langs.js:376
 msgid "Maltese "
@@ -5540,7 +6074,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:396
 msgid "Nepali "
-msgstr ""
+msgstr "Nepal"
 
 #: exe/jsui/scripts/langs.js:400
 msgid "Ndonga "
@@ -5548,7 +6082,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:404
 msgid "Dutch "
-msgstr ""
+msgstr "Belanda"
 
 #: exe/jsui/scripts/langs.js:408
 msgid "Norwegian Nynorsk "
@@ -5556,7 +6090,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:412
 msgid "Norwegian "
-msgstr ""
+msgstr "Norwegia"
 
 #: exe/jsui/scripts/langs.js:416
 msgid "Ndebele,South "
@@ -5596,7 +6130,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:452
 msgid "Polish "
-msgstr ""
+msgstr "Polandia"
 
 #: exe/jsui/scripts/langs.js:456
 msgid "Pashto,Pushto "
@@ -5604,7 +6138,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:460
 msgid "Portuguese "
-msgstr ""
+msgstr "Portugis"
 
 #: exe/jsui/scripts/langs.js:464
 msgid "Quechua "
@@ -5620,11 +6154,11 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:476
 msgid "Romanian "
-msgstr ""
+msgstr "Rumania"
 
 #: exe/jsui/scripts/langs.js:480
 msgid "Russian "
-msgstr ""
+msgstr "Rusia"
 
 #: exe/jsui/scripts/langs.js:484
 msgid "Kinyarwanda "
@@ -5632,7 +6166,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:488
 msgid "Sanskrit "
-msgstr ""
+msgstr "Sansekerta"
 
 #: exe/jsui/scripts/langs.js:492
 msgid "Sardinian "
@@ -5664,7 +6198,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:520
 msgid "Samoan "
-msgstr ""
+msgstr "Samoa"
 
 #: exe/jsui/scripts/langs.js:524
 msgid "Shona "
@@ -5680,7 +6214,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:536
 msgid "Serbian "
-msgstr ""
+msgstr "Serbia"
 
 #: exe/jsui/scripts/langs.js:540
 msgid "Swati; Siswati "
@@ -5692,11 +6226,11 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:548
 msgid "Sundanese "
-msgstr ""
+msgstr "Sunda"
 
 #: exe/jsui/scripts/langs.js:552
 msgid "Swedish "
-msgstr ""
+msgstr "Swedia"
 
 #: exe/jsui/scripts/langs.js:556
 msgid "Swahili "
@@ -5712,11 +6246,11 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:568
 msgid "Tajik "
-msgstr ""
+msgstr "Tajikistan"
 
 #: exe/jsui/scripts/langs.js:572
 msgid "Thai "
-msgstr ""
+msgstr "Thailand"
 
 #: exe/jsui/scripts/langs.js:576
 msgid "Tigrinya "
@@ -5728,7 +6262,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:584
 msgid "Tagalog "
-msgstr ""
+msgstr "Tagalog"
 
 #: exe/jsui/scripts/langs.js:588
 msgid "Tswana; Setswana "
@@ -5740,7 +6274,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:596
 msgid "Turkish "
-msgstr ""
+msgstr "Turki"
 
 #: exe/jsui/scripts/langs.js:600
 msgid "Tsonga "
@@ -5764,7 +6298,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:620
 msgid "Ukrainian "
-msgstr ""
+msgstr "Ukrania"
 
 #: exe/jsui/scripts/langs.js:624
 msgid "Urdu "
@@ -5772,7 +6306,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:628
 msgid "Uzbek "
-msgstr ""
+msgstr "Uzbekistan"
 
 #: exe/jsui/scripts/langs.js:632
 msgid "Valencian "
@@ -5780,7 +6314,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:636
 msgid "Vietnamese "
-msgstr ""
+msgstr "Vietnam"
 
 #: exe/jsui/scripts/langs.js:640
 msgid "Volapük; Volapuk "
@@ -5800,7 +6334,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:656
 msgid "Yiddish (formerly ji) "
-msgstr ""
+msgstr "Bahasa Yiddi"
 
 #: exe/jsui/scripts/langs.js:660
 msgid "Yoruba "
@@ -5812,7 +6346,7 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:668
 msgid "Chinese "
-msgstr ""
+msgstr "Cina"
 
 #: exe/jsui/scripts/langs.js:672
 msgid "Zulu "
@@ -6749,7 +7283,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:85
 msgid "Please upload a .ggb file."
-msgstr ""
+msgstr "Silahkan kirim bekas .ggb"
 
 #: exe/webui/appletblock.py:87
 msgid "Please upload a .jclic.zip file."
@@ -6777,7 +7311,7 @@ msgstr ""
 
 #: exe/webui/appletblock.py:131
 msgid "Geogebra"
-msgstr ""
+msgstr "Geogebra"
 
 #: exe/webui/appletblock.py:132
 msgid "JClic"
@@ -6789,15 +7323,15 @@ msgstr ""
 
 #: exe/webui/appletblock.py:134 exe/webui/wikipediablock.py:136
 msgid "Other"
-msgstr ""
+msgstr "Yang lain"
 
 #: exe/webui/appletblock.py:135
 msgid "Applet Type"
-msgstr ""
+msgstr "Tipe Applet"
 
 #: exe/webui/appletblock.py:156 exe/webui/appletblock.py:166
 msgid "Add files"
-msgstr ""
+msgstr "Tambahkan berkas"
 
 #: exe/webui/appletblock.py:162
 msgid "Accept URL"
@@ -6805,30 +7339,30 @@ msgstr ""
 
 #: exe/webui/appletblock.py:172
 msgid "Applet Code:"
-msgstr ""
+msgstr "Kode Applet:"
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
 msgid "Filename:"
-msgstr ""
+msgstr "Nama berkas:"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
 #: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
 #: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
 msgid "Select a file"
-msgstr ""
+msgstr "Pilih berkas"
 
 #: exe/webui/attachmentblock.py:108
 msgid "Label:"
-msgstr ""
+msgstr "Label:"
 
 #: exe/webui/block.py:184
 msgid "IDevice broken"
-msgstr ""
+msgstr "\"iDevice\" rusak"
 
 #: exe/webui/block.py:222
 msgid "Done"
-msgstr ""
+msgstr "Selesari"
 
 #: exe/webui/block.py:226
 msgid "Exit without saving?"
@@ -6848,23 +7382,23 @@ msgstr ""
 
 #: exe/webui/block.py:246
 msgid "Move Up"
-msgstr ""
+msgstr "Pindah Ke atas"
 
 #: exe/webui/block.py:253
 msgid "Move Down"
-msgstr ""
+msgstr "Pindah Ke bawah"
 
 #: exe/webui/block.py:255
 msgid "---Move To---"
-msgstr ""
+msgstr "---Pindah Ke---"
 
 #: exe/webui/block.py:260 exe/webui/editorpane.py:380
 msgid "Pedagogical Help"
-msgstr ""
+msgstr "Pertolongan Pedagogi"
 
 #: exe/webui/block.py:273 exe/webui/editorpane.py:390
 msgid "Tip:"
-msgstr ""
+msgstr "Tip:"
 
 #: exe/webui/block.py:318
 msgid "ERROR: Block.renderViewContent called directly"
@@ -6873,11 +7407,11 @@ msgstr ""
 #: exe/webui/block.py:328 exe/webui/editorpage.py:286
 #: exe/webui/editorpane.py:270
 msgid "Edit"
-msgstr ""
+msgstr "Ubah"
 
 #: exe/webui/casestudyblock.py:114 exe/webui/ejercicioresueltofpdblock.py:130
 msgid "Add another activity"
-msgstr ""
+msgstr "Tambahkan aktivitas lain"
 
 #: exe/webui/casopracticofpdblock.py:68
 msgid "Situation"
@@ -7030,25 +7564,25 @@ msgstr ""
 
 #: exe/webui/common.py:476
 msgid "Hide"
-msgstr ""
+msgstr "Sembunyikan"
 
 #: exe/webui/common.py:477 exe/webui/common.py:715 exe/webui/element.py:1538
 #: exe/webui/element.py:2469 exe/webui/listablock.py:275
 msgid "Show Feedback"
-msgstr ""
+msgstr "Tunjukan Umpan Balik"
 
 #: exe/webui/common.py:478
 msgid "Hide Feedback"
-msgstr ""
+msgstr "Sembunyikan Umpanbalik"
 
 #: exe/webui/common.py:479 exe/webui/common.py:494 exe/webui/element.py:2272
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
-msgstr ""
+msgstr "Benar"
 
 #: exe/webui/common.py:480 exe/webui/element.py:2275
 msgid "Incorrect"
-msgstr ""
+msgstr "Salah"
 
 #: exe/webui/common.py:481
 msgid "Menu"
@@ -7060,7 +7594,7 @@ msgstr ""
 
 #: exe/webui/common.py:495 exe/webui/element.py:2708 exe/webui/element.py:2726
 msgid "Wrong"
-msgstr ""
+msgstr "Salah"
 
 #: exe/webui/common.py:496
 msgid "Right answer"
@@ -7079,8 +7613,9 @@ msgid "Words"
 msgstr ""
 
 #: exe/webui/common.py:501
+#, fuzzy
 msgid "Play"
-msgstr ""
+msgstr "Kirim"
 
 #: exe/webui/common.py:503
 msgid "Results"
@@ -7091,8 +7626,9 @@ msgid "Total"
 msgstr ""
 
 #: exe/webui/common.py:505
+#, fuzzy
 msgid "Another word"
-msgstr ""
+msgstr "Tambahkan opsi yang lain"
 
 #: exe/webui/common.py:506
 msgid "Game over."
@@ -7113,11 +7649,11 @@ msgstr ""
 #: exe/webui/common.py:531 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
-msgstr ""
+msgstr "eXe : elearning XHTML editor"
 
 #: exe/webui/common.py:839 exe/webui/common.py:842
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "Klik untuk instruksi pelengkapan"
 
 #: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
@@ -7125,15 +7661,15 @@ msgstr ""
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:251
 msgid "Text Line"
-msgstr ""
+msgstr "Baris Teks"
 
 #: exe/webui/editorelement.py:111 exe/webui/editorpane.py:253
 msgid "Text Box"
-msgstr ""
+msgstr "Kotak Teks"
 
 #: exe/webui/editorelement.py:149 exe/webui/element.py:602
 msgid "Button Caption"
-msgstr ""
+msgstr "Tombol Judul Keterangan"
 
 #: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
 #: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
@@ -7147,7 +7683,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:18
 msgid "Left"
-msgstr ""
+msgstr "Kiri"
 
 #: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
 #: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
@@ -7161,47 +7697,47 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:76
 msgid "Right"
-msgstr ""
+msgstr "Benar"
 
 #: exe/webui/editorelement.py:228 exe/webui/flashmovieblock.py:87
 #: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/imagewithtextblock.py:88 exe/webui/multimediablock.py:92
 msgid "Align:"
-msgstr ""
+msgstr "Luruskan:"
 
 #: exe/webui/editorelement.py:268 exe/webui/element.py:1889
 msgid "Select Flash Object"
-msgstr ""
+msgstr "Pilih Obyek Flash"
 
 #: exe/webui/editorelement.py:308
 msgid "Select MP3 file"
-msgstr ""
+msgstr "Pilih berkas MP3"
 
 #: exe/webui/editorelement.py:311 exe/webui/element.py:869
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
-msgstr ""
+msgstr "Judul Keterangan:"
 
 #: exe/webui/editorpage.py:125
 msgid "Please enter an idevice name."
-msgstr ""
+msgstr "Silahkan masukkan nama \"iDevice\"."
 
 #: exe/webui/editorpage.py:188 exe/webui/editorpage.py:200
 msgid "Sorry, wrong file format."
-msgstr ""
+msgstr "Maaf, format berkas yang salah."
 
 #: exe/webui/editorpage.py:262
 msgid "Import iDevice"
-msgstr ""
+msgstr "Impor \"iDevice\""
 
 #: exe/webui/editorpage.py:265
 msgid "Export iDevice"
-msgstr ""
+msgstr "Ekspor \"iDevice\""
 
 #: exe/webui/editorpage.py:291
 msgid "New iDevice"
-msgstr ""
+msgstr "\"iDevice\" Baru"
 
 #: exe/webui/editorpane.py:67
 msgid ""
@@ -7209,22 +7745,30 @@ msgid ""
 " a compulsory field and you will be prompted to enter a label if you try "
 "to submit your iDevice without one."
 msgstr ""
+"\"iDevice\" baru anda akan muncul pada panel \"iDevice\" dengan nama ini."
+" Ini merupakan isian wajib dan anda harus mengisi label jika anda mencoba"
+" untuk membuat \"iDevice\" tanpa label tersebut."
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
-msgstr ""
+msgstr "Ini adalah isian yang opsional."
 
 #: exe/webui/editorpane.py:72
 msgid ""
 "The purpose dialogue allows you to describe your intended purpose of the "
 "iDevice to other potential users."
 msgstr ""
+"Dialog tujuan mengizinkan anda untuk menggambarkan maksud tujuan anda "
+"pada pengguna yang potensial."
 
 #: exe/webui/editorpane.py:75
 msgid ""
 "Use this pulldown to select whether or not  the iDevice should have any "
 "formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr ""
+"Gunakan menu tarik bawah ini untuk memilih perlu tidaknya \"iDevice\" "
+"untuk memiliki bentuk tertentu agar gampang dikenal; sebagai contoh. "
+"sebuah garis batasan dan sebuah ikon."
 
 #: exe/webui/editorpane.py:79
 msgid ""
@@ -7232,103 +7776,113 @@ msgid ""
 "device's development. This can be useful if your iDevice is to be "
 "exported for others to use."
 msgstr ""
+"Gunakan isian ini untuk menggambarkan maksud anda dan pedagogi dibelakang"
+" pengembangan perangkat. Hal ini dapat berguna jika \"iDevice\" anda akan"
+" dieksport untuk digunakan oleh yang lain."
 
 #: exe/webui/editorpane.py:84
 msgid ""
 "Add a single text line to an iDevice. Useful if you want the ability to "
 "place a label within the iDevice."
 msgstr ""
+"Tambahkan sebuah baris teks pada \"iDevice\". Hal ini berguna jika anda "
+"meninginginkan kemampuan untuk meletakkan label pada \"iDevice\"."
 
 #: exe/webui/editorpane.py:87
 msgid ""
 "Add a text entry box to an iDevice. Used for entering larger amounts of "
 "textual content."
 msgstr ""
+"Tambahkan sebuah kotak masukan untuk \"iDevice\". Digunakan untuk "
+"memasukkan isi teks dalam jumlah besar."
 
 #: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
-msgstr ""
+msgstr "Tambahkan sebuah umpan balik interaktif ke \"iDevice\" anda."
 
 #: exe/webui/editorpane.py:91
 msgid "Add a flash video to your iDevice."
-msgstr ""
+msgstr "Tambahkan sebuah video flash ke \"iDevice\" anda."
 
 #: exe/webui/editorpane.py:92
 msgid "Add an mp3 file to your iDevice."
-msgstr ""
+msgstr "Tambahkan berkas mp3 pada \"iDevice\" anda."
 
 #: exe/webui/editorpane.py:93
 msgid "Add an attachment file to your iDevice."
-msgstr ""
+msgstr "Tambahkan sebuah berkas sisipan (\"attachment\") ke \"iDevice\" anda."
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:152
 #: exe/webui/editorpane.py:160 exe/webui/editorpane.py:176
 #: exe/webui/editorpane.py:186
 msgid "Enter the label here"
-msgstr ""
+msgstr "Masukan label di sini"
 
 #: exe/webui/editorpane.py:146
 msgid "Enter instructions for completion here"
-msgstr ""
+msgstr "Masukan instruksi untuk menyelesaikan di sini."
 
 #: exe/webui/editorpane.py:153 exe/webui/editorpane.py:177
 #: exe/webui/editorpane.py:187
 msgid "Enter the instructions for completion here"
-msgstr ""
+msgstr "Masukan instruksi penyelesaian di sini"
 
 #: exe/webui/editorpane.py:161
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr ""
+"Tombol umpan balik tidak akan muncul jika tidak \n"
+"ada data yang dimasukan ke dalam area isian ini."
 
 #: exe/webui/editorpane.py:198
 msgid "Please enter<br />an idevice name."
-msgstr ""
+msgstr "Tolong masukan<br />sebuah nama \"idevice\"."
 
 #: exe/webui/editorpane.py:250
 msgid "Add Field"
-msgstr ""
+msgstr "Tambahkan Area"
 
 #: exe/webui/editorpane.py:265
 msgid "Actions"
-msgstr ""
+msgstr "Aksi"
 
 #: exe/webui/editorpane.py:332
 msgid "Pedagogical Tip"
-msgstr ""
+msgstr "Tip Pedagogi"
 
 #: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:163
 msgid "Emphasis"
-msgstr ""
+msgstr "Penekanan"
 
 #: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:160
 msgid "No emphasis"
-msgstr ""
+msgstr "Tidak ada penekanan"
 
 #: exe/webui/editorpane.py:339 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:161
 msgid "Some emphasis"
-msgstr ""
+msgstr "Beberapa penekanan"
 
 #: exe/webui/editorpane.py:354
+#, fuzzy
 msgid "Select an icon"
-msgstr ""
+msgstr "Pilih gambar"
 
 #: exe/webui/editorpane.py:368
 msgid "Icons"
-msgstr ""
+msgstr "Ikon"
 
 #: exe/webui/editorpane.py:383
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 #: exe/webui/editorpane.py:429 exe/webui/element.py:1545
 #: exe/webui/element.py:1547 exe/webui/element.py:1803
 msgid "Submit"
-msgstr ""
+msgstr "Kirim"
 
 #: exe/webui/ejercicioresueltofpdblock.py:122
 msgid "Translation"
@@ -7337,12 +7891,12 @@ msgstr ""
 #: exe/webui/eleccionmultiplefpdblock.py:98 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
-msgstr ""
+msgstr "Silahkan pilih jawaban yang benar untuk setiap pertanyaan."
 
 #: exe/webui/eleccionmultiplefpdblock.py:124 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:119
 msgid "Add another question"
-msgstr ""
+msgstr "Tambahkan pertanyaan yang lain"
 
 #: exe/webui/element.py:72
 #, python-format
@@ -7361,11 +7915,11 @@ msgstr ""
 
 #: exe/webui/element.py:753 exe/webui/element.py:1174
 msgid "Add Image"
-msgstr ""
+msgstr "Tambahkan Gambar"
 
 #: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
 msgid "Display as:"
-msgstr ""
+msgstr "Tampilkan sebagai:"
 
 #: exe/webui/element.py:786
 msgid "by"
@@ -7373,24 +7927,24 @@ msgstr ""
 
 #: exe/webui/element.py:793 exe/webui/element.py:1212
 msgid "blank for original size"
-msgstr ""
+msgstr "kosongkan untuk ukuran aslinya"
 
 #: exe/webui/element.py:863
 msgid "Select an MP3"
-msgstr ""
+msgstr "Pilih MP3"
 
 #: exe/webui/element.py:1351 exe/webui/element.py:1684
 msgid "Cloze Text"
-msgstr ""
+msgstr "Teks \"Cloze\""
 
 #: exe/webui/element.py:1359 exe/webui/element.py:1692
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
-msgstr ""
+msgstr "Sembunyika/Tampilkan Kata"
 
 #: exe/webui/element.py:1364 exe/webui/element.py:1697
 msgid "Strict Marking?"
-msgstr ""
+msgstr "Penandaan yang Ketat?"
 
 #: exe/webui/element.py:1369
 msgid "Check Capitalization?"
@@ -7398,7 +7952,7 @@ msgstr ""
 
 #: exe/webui/element.py:1374 exe/webui/element.py:1707
 msgid "Instant Marking?"
-msgstr ""
+msgstr "Penandaan Seketika?"
 
 #: exe/webui/element.py:1485 exe/webui/element.py:1742
 #: exe/webui/listablock.py:223
@@ -7407,15 +7961,15 @@ msgstr ""
 
 #: exe/webui/element.py:1535 exe/webui/element.py:1794
 msgid "Get score"
-msgstr ""
+msgstr "Ambil nilai"
 
 #: exe/webui/element.py:1541 exe/webui/element.py:1800
 msgid "Show/Clear Answers"
-msgstr ""
+msgstr "Tunjukan/Hilangkan Jawaban"
 
 #: exe/webui/element.py:1551 exe/webui/element.py:1807
 msgid "Show Answers"
-msgstr ""
+msgstr "Tunjukan Jawaban"
 
 #: exe/webui/element.py:1587 exe/webui/element.py:1839
 #: exe/webui/element.py:2461 exe/webui/element.py:2921
@@ -7425,7 +7979,7 @@ msgstr ""
 
 #: exe/webui/element.py:1702
 msgid "Check Caps?"
-msgstr ""
+msgstr "Periksa tombol Caps?"
 
 #: exe/webui/element.py:1712
 msgid "Show Score?"
@@ -7433,27 +7987,27 @@ msgstr ""
 
 #: exe/webui/element.py:1797
 msgid "Show/Hide Feedback"
-msgstr ""
+msgstr "Tunjukan/Hilangkan Umpan Balik"
 
 #: exe/webui/element.py:1955
 msgid "Please select a .flv file."
-msgstr ""
+msgstr "Pilih sebuah berkas .flv"
 
 #: exe/webui/element.py:1971
 msgid "Select a flash video"
-msgstr ""
+msgstr "Pilih video flash"
 
 #: exe/webui/element.py:2080
 msgid "text"
-msgstr ""
+msgstr "teks"
 
 #: exe/webui/element.py:2081
 msgid "newline"
-msgstr ""
+msgstr "garisbaru"
 
 #: exe/webui/element.py:2084
 msgid "Select a font size: "
-msgstr ""
+msgstr "Pilih ukuran huruf:"
 
 #: exe/webui/element.py:2194 exe/webui/element.py:2581
 #: exe/webui/element.py:2706 exe/webui/element.py:2724
@@ -7464,17 +8018,17 @@ msgstr ""
 #: exe/webui/element.py:2222 exe/webui/element.py:2609
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
-msgstr ""
+msgstr "Hapus pilihan"
 
 #: exe/webui/element.py:2361 exe/webui/element.py:2816
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
-msgstr ""
+msgstr "Hapus pertanyaan"
 
 #: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
-msgstr ""
+msgstr "Tambahkan opsi yang lain"
 
 #: exe/webui/element.py:2497 exe/webui/element.py:2940
 msgid "Solution"
@@ -7482,11 +8036,11 @@ msgstr ""
 
 #: exe/webui/element.py:2831
 msgid "Add another option"
-msgstr ""
+msgstr "Tambahkan opsi yang lain"
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: exe/webui/externalurlblock.py:72
 msgid "small"
@@ -7502,7 +8056,7 @@ msgstr ""
 
 #: exe/webui/externalurlblock.py:81
 msgid "Frame Height:"
-msgstr ""
+msgstr "Tinggi Bingkai:"
 
 #: exe/webui/fileattachblock.py:92
 msgid "<div>\n"
@@ -7537,39 +8091,39 @@ msgstr ""
 #: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:307
 #: exe/webui/galleryblock.py:308
 msgid "Add images"
-msgstr ""
+msgstr "Tambahkan gambar"
 
 #: exe/webui/galleryblock.py:230 exe/webui/galleryblock.py:332
 msgid "No Images Loaded"
-msgstr ""
+msgstr "Tidak Ada Gambar Dimuat"
 
 #: exe/webui/galleryblock.py:246 exe/webui/galleryblock.py:264
 msgid "Change Image"
-msgstr ""
+msgstr "Ubah Gambar"
 
 #: exe/webui/galleryblock.py:271
 msgid "Move Image Left"
-msgstr ""
+msgstr "Pindahkan Gambar Ke kiri"
 
 #: exe/webui/galleryblock.py:273
 msgid "Go Back"
-msgstr ""
+msgstr "Kembali"
 
 #: exe/webui/galleryblock.py:285
 msgid "Move Image Right"
-msgstr ""
+msgstr "Pindahkan Gambar Ke kanan"
 
 #: exe/webui/galleryblock.py:287
 msgid "Go Forward"
-msgstr ""
+msgstr "Maju"
 
 #: exe/webui/galleryblock.py:295
 msgid "Go Forward (Not Available)"
-msgstr ""
+msgstr "Maju (Tidak Bisa)"
 
 #: exe/webui/galleryblock.py:300
 msgid "Delete Image"
-msgstr ""
+msgstr "Hapus Gambar"
 
 #: exe/webui/galleryblock.py:301
 msgid "Delete this image?"
@@ -7619,31 +8173,31 @@ msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
-msgstr ""
+msgstr "Pembesaran awal"
 
 #: exe/webui/imagemagnifierblock.py:153
 msgid "Maximum zoom"
-msgstr ""
+msgstr "Pembesaran Maksimum"
 
 #: exe/webui/imagemagnifierblock.py:159
 msgid "Small"
-msgstr ""
+msgstr "Kecil"
 
 #: exe/webui/imagemagnifierblock.py:160
 msgid "Medium"
-msgstr ""
+msgstr "Sedang"
 
 #: exe/webui/imagemagnifierblock.py:161
 msgid "Large"
-msgstr ""
+msgstr "Besar"
 
 #: exe/webui/imagemagnifierblock.py:162
 msgid "Extra large"
-msgstr ""
+msgstr "Ekstra besar"
 
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
-msgstr ""
+msgstr "Ukuran dari kaca pembesar:"
 
 #: exe/webui/listablock.py:180
 msgid "Other words"
@@ -7673,7 +8227,7 @@ msgstr ""
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:100
 msgid "Add another Question"
-msgstr ""
+msgstr "Tambahkan pertanyaan yang lain"
 
 #: exe/webui/notablock.py:104
 msgid "Show/Hide"
@@ -7741,11 +8295,11 @@ msgstr ""
 
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
-msgstr ""
+msgstr "Pilih tingkat kelulusan"
 
 #: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:368
 msgid "SUBMIT ANSWERS"
-msgstr ""
+msgstr "KIRIM JAWABAN"
 
 #: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318
 #: exe/webui/quiztestblock.py:372
@@ -7763,19 +8317,21 @@ msgstr ""
 
 #: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:156
 msgid "Load"
-msgstr ""
+msgstr "Memuat"
 
 #: exe/webui/scripts/authoring.js:69
+#, fuzzy
 msgid "Select one or more images"
-msgstr ""
+msgstr "Pilih gambar"
 
 #: exe/webui/scripts/authoring.js:94
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
+#, fuzzy
 msgid "Flash Movie (.flv)"
-msgstr ""
+msgstr "Film Flash"
 
 #: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
 msgid "Flash Object (.swf)"
@@ -7802,12 +8358,14 @@ msgid "MP3 Audio (.mp3)"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:378
+#, fuzzy
 msgid "Select an mp3 file"
-msgstr ""
+msgstr "Pilih berkas"
 
 #: exe/webui/scripts/authoring.js:386
+#, fuzzy
 msgid "Select a package"
-msgstr ""
+msgstr "Pilih gambar"
 
 #: exe/webui/scripts/authoring.js:744
 msgid ""
@@ -7824,8 +8382,9 @@ msgid "Do you want to overwrite the existing idevice {idevice}?"
 msgstr ""
 
 #: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
+#, fuzzy
 msgid "eXe Idevices"
-msgstr ""
+msgstr "\"iDevice\" Baru"
 
 #: exe/webui/scripts/editor.js:87
 msgid "Please save the idevice first, then try to export it."
@@ -7857,7 +8416,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
-msgstr ""
+msgstr "Tutup"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert"
@@ -8954,8 +9513,9 @@ msgid "Node"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
+#, fuzzy
 msgid "Download Information"
-msgstr ""
+msgstr "Informasi"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
@@ -8999,12 +9559,14 @@ msgid "Quote"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
+#, fuzzy
 msgid "Quote Language"
-msgstr ""
+msgstr "Pilih Bahasa"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
+#, fuzzy
 msgid "Authorship"
-msgstr ""
+msgstr "Pembuatan"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:9
 msgid "Authorship Language"
@@ -9065,24 +9627,27 @@ msgid "Stop"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
+#, fuzzy
 msgid "Replace with:"
-msgstr ""
+msgstr "Gambar dengan Teks"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
+#, fuzzy
 msgid "Edit code"
-msgstr ""
+msgstr "Ambil nilai"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:4
 msgid "Auto close tags"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:5
+#, fuzzy
 msgid "Wrap text"
-msgstr ""
+msgstr "teks"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
@@ -9090,8 +9655,9 @@ msgid "Highlight syntax"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
+#, fuzzy
 msgid "Select a theme"
-msgstr ""
+msgstr "Pilih gambar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
 msgid "Search"
@@ -9102,8 +9668,9 @@ msgid "Find next"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
+#, fuzzy
 msgid "Find previous"
-msgstr ""
+msgstr "Sebelumnya"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
 msgid "Replace all"
@@ -9122,8 +9689,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
+#, fuzzy
 msgid "Term"
-msgstr ""
+msgstr "Yang lain"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
 msgid "Term definition"
@@ -9261,8 +9829,9 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
+#, fuzzy
 msgid "Choose a type:"
-msgstr ""
+msgstr "Pilih gambar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
 msgid "Accordion"
@@ -9281,24 +9850,27 @@ msgid "A single content area with multiple panels."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
+#, fuzzy
 msgid "Pagination"
-msgstr ""
+msgstr "Opsi"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
 msgid "Divide your content into different pages."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:26
+#, fuzzy
 msgid "Carousel"
-msgstr ""
+msgstr "Faro"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:27
 msgid "Present a list of contents in horizontal order."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
+#, fuzzy
 msgid "Timeline"
-msgstr ""
+msgstr "garisbaru"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
@@ -9341,8 +9913,9 @@ msgid "This is the message that the users with no JavaScript will see:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
+#, fuzzy
 msgid "Message:"
-msgstr ""
+msgstr "Gambar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
 msgid "You can change it at any time."
@@ -10145,12 +10718,14 @@ msgid "Include wrapper (improves presentation)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
+#, fuzzy
 msgid "Markup language"
-msgstr ""
+msgstr "Pilih Bahasa"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
+#, fuzzy
 msgid "Please select a language"
-msgstr ""
+msgstr "Pilih Bahasa"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
@@ -10162,8 +10737,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
+#, fuzzy
 msgid "Light"
-msgstr ""
+msgstr "Benar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
@@ -10557,12 +11133,14 @@ msgid "Behaviour"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
+#, fuzzy
 msgid "Link"
-msgstr ""
+msgstr "Luruskan:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
+#, fuzzy
 msgid "Instructions:"
-msgstr ""
+msgstr "Instruksi"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
@@ -10573,12 +11151,14 @@ msgid "No selection and not in link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
+#, fuzzy
 msgid "Pages"
-msgstr ""
+msgstr "Besar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
+#, fuzzy
 msgid "Link title"
-msgstr ""
+msgstr "Artikel Wiki"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
@@ -10593,8 +11173,9 @@ msgid "The tooltip will show the Link title."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
+#, fuzzy
 msgid "Definition"
-msgstr ""
+msgstr "Refleksi"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
 msgid "The term could not be found"
@@ -10607,8 +11188,9 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
+#, fuzzy
 msgid "Definition:"
-msgstr ""
+msgstr "Gambaran:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
@@ -10620,8 +11202,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
+#, fuzzy
 msgid "Page"
-msgstr ""
+msgstr "Besar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
@@ -10664,8 +11247,9 @@ msgid "The Link is required"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
+#, fuzzy
 msgid "Please select a Page"
-msgstr ""
+msgstr "Pilih sebuah berkas .flv"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
 msgid "The Link title is required"
@@ -11090,8 +11674,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
+#, fuzzy
 msgid "Editor"
-msgstr ""
+msgstr "Editor \"iDevice\""
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
@@ -11231,8 +11816,9 @@ msgid "General settings"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:13
+#, fuzzy
 msgid "Page width"
-msgstr ""
+msgstr "Gambar dengan Teks"
 
 #: exe/webui/tools/style-designer/langs/en.js:14
 msgid "Percentage"
@@ -11263,28 +11849,32 @@ msgid "Text and Links"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:25
+#, fuzzy
 msgid "Text color"
-msgstr ""
+msgstr "Ambil nilai"
 
 #: exe/webui/tools/style-designer/langs/en.js:27
+#, fuzzy
 msgid "Links"
-msgstr ""
+msgstr "Luruskan:"
 
 #: exe/webui/tools/style-designer/langs/en.js:28
 msgid "Links color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:30
+#, fuzzy
 msgid "Style description"
-msgstr ""
+msgstr "Gambaran"
 
 #: exe/webui/tools/style-designer/langs/en.js:32
 msgid "Author URL"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:33
+#, fuzzy
 msgid "Style name"
-msgstr ""
+msgstr "Nama berkas:"
 
 #: exe/webui/tools/style-designer/langs/en.js:34
 msgid "Save to name the new Style."
@@ -11313,8 +11903,9 @@ msgid "Background color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:44
+#, fuzzy
 msgid "Select image"
-msgstr ""
+msgstr "Pilih gambar"
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
@@ -11395,8 +11986,9 @@ msgid "Top margin"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:78
+#, fuzzy
 msgid "Font size"
-msgstr ""
+msgstr "Pilih ukuran huruf:"
 
 #: exe/webui/tools/style-designer/langs/en.js:80
 msgid "Navigation"
@@ -11439,8 +12031,9 @@ msgid "Grey"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:94
+#, fuzzy
 msgid "With emphasis"
-msgstr ""
+msgstr "Tidak ada penekanan"
 
 #: exe/webui/tools/style-designer/langs/en.js:95
 msgid "Title color"
@@ -11493,8 +12086,9 @@ msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:111
+#, fuzzy
 msgid "Finish"
-msgstr ""
+msgstr "Finlandia"
 
 #: exe/webui/tools/style-designer/langs/en.js:113
 msgid "Save as"
@@ -11509,8 +12103,9 @@ msgid "Save all changes? This cannot be undone."
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:117
+#, fuzzy
 msgid "Style name:"
-msgstr ""
+msgstr "Nama berkas:"
 
 #: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Your browser is not compatible with this tool."
@@ -11543,8 +12138,9 @@ msgid "Drag markers to pick a color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:134
+#, fuzzy
 msgid "Current"
-msgstr ""
+msgstr "Salah"
 
 #: exe/webui/tools/style-designer/langs/en.js:140
 msgid "New Color - Press OK to Commit"
@@ -11626,16 +12222,16 @@ msgstr ""
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
 msgid "True"
-msgstr ""
+msgstr "Benar"
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:218
 #: exe/webui/truefalseelement.py:264
 msgid "False"
-msgstr ""
+msgstr "Salah"
 
 #: exe/webui/wikipediablock.py:115
 msgid "English Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Inggris"
 
 #: exe/webui/wikipediablock.py:116
 msgid "Basque Wikipedia Article"
@@ -11643,23 +12239,23 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:117
 msgid "Catalan Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Katalan"
 
 #: exe/webui/wikipediablock.py:118
 msgid "Chinese Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Cina"
 
 #: exe/webui/wikipediablock.py:119
 msgid "Dutch Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Belanda"
 
 #: exe/webui/wikipediablock.py:120
 msgid "French Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Prancis"
 
 #: exe/webui/wikipediablock.py:121
 msgid "German Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Jerman"
 
 #: exe/webui/wikipediablock.py:122
 msgid "Galician Wikipedia Article"
@@ -11667,63 +12263,63 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Greek Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Yunani"
 
 #: exe/webui/wikipediablock.py:124
 msgid "Italian Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Italia"
 
 #: exe/webui/wikipediablock.py:125
 msgid "Japanese Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Jepang"
 
 #: exe/webui/wikipediablock.py:126
 msgid "Magyar Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Magyar"
 
 #: exe/webui/wikipediablock.py:127
 msgid "Polish Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Polandia"
 
 #: exe/webui/wikipediablock.py:128
 msgid "Portugese Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Portugis"
 
 #: exe/webui/wikipediablock.py:129
 msgid "Slovenian Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Slovenia"
 
 #: exe/webui/wikipediablock.py:130
 msgid "Spanish Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Spanyol"
 
 #: exe/webui/wikipediablock.py:131
 msgid "Swedish Wikipedia Article"
-msgstr ""
+msgstr "Artikel Wikipedia Swedia"
 
 #: exe/webui/wikipediablock.py:132
 msgid "Wikibooks Article"
-msgstr ""
+msgstr "Artikel Wikibooks"
 
 #: exe/webui/wikipediablock.py:133
 msgid "Wikiversity"
-msgstr ""
+msgstr "Wikiversity"
 
 #: exe/webui/wikipediablock.py:134
 msgid "Wiktionary"
-msgstr ""
+msgstr "Wikitionary"
 
 #: exe/webui/wikipediablock.py:135
 msgid "Wikieducator Content"
-msgstr ""
+msgstr "Isi Wikieducator"
 
 #: exe/webui/wikipediablock.py:141
 msgid "Site"
-msgstr ""
+msgstr "Situs"
 
 #: exe/webui/wikipediablock.py:151
 msgid "Own site"
-msgstr ""
+msgstr "Situs sendiri"
 
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
@@ -11736,7 +12332,7 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:135
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
 #: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
@@ -11744,6 +12340,9 @@ msgid ""
 "Package is old. Please upgrade it (using File..Open followed by "
 "File..Save As) before attempting to insert it into another package!"
 msgstr ""
+"Paket sudah usang. Tolong perbaharui (menggunakan Berkas..Buka diikuti "
+"oleh Berkas..Simpan Sebagai) sebelum menggabungkannya pada paket yang "
+"lain!"
 
 #: twisted/persisted/styles.py:437
 msgid ""
@@ -11757,4 +12356,7 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
+"Entah berkas \"idevices\"/\"generic.data\" anda atau paket yang anda muat"
+" dibuat oleh versi eXe yang lebih baru. Tolong perbaharus eXe dan coba "
+"lagi."
 
