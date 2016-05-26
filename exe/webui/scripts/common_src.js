@@ -421,14 +421,10 @@ var $exe = {
 		for (r = 0; r < t; r++) {
 			var u = n + r.toString();
 			var a = document.getElementById("op" + u);
-			i = "False";
 			s = $exe_i18n.incorrect;
-			o = "wrong";
-			if (a.checked == 1) i = "True";
-			if (i == a.value) {
-				s = "<strong>" + $exe_i18n.correct + "</strong>";
-				o = "right"
-			}
+			if (a.value=="True") s = "<strong>" + $exe_i18n.correct + "</strong>";
+			o = "right";
+			if ((a.checked==1 && a.value=="False") || (a.checked!=1 && a.value=="True")) o = "wrong";
 			var f = '<p class="' + o + '-option">' + s + "</p>";
 			var l = $("#feedback-" + u);
 			if (e.value == $exe_i18n.showFeedback) l.html(f).show();
