@@ -366,6 +366,8 @@ class Epub3Page(Page):
         html += u'</div>'
         html += u"</" + headerTag + ">" + lb
 
+        self.node.exportType = 'epub'
+        
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
                 e = " em_iDevice"
