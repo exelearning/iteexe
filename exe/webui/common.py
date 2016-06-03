@@ -342,11 +342,13 @@ def ideviceHeader(e, style, mode):
     #Default HTML tags:
     articleTag = "div"
     headerTag = "div"
-    titleTag = "h2"   
+    titleTag = "h2"
     if dT == "HTML5":
         articleTag = "article"
         headerTag = "header"
         titleTag = "h1"
+        if hasattr(e.idevice.parentNode, 'exportType') and e.idevice.parentNode.exportType == 'singlepage':
+            titleTag = "h2"
         
     themePath = Path(G.application.config.stylesDir/style)
     themeXMLFile = themePath.joinpath("config.xml")

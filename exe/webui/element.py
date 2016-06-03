@@ -599,9 +599,10 @@ class Feedback2Element(ElementWithResources):
         html ='<strong>'+self.field.name+'</strong>'
         if self.field.instruc:
             html += common.elementInstruc(self.field.instruc)
-        html +='<p><label for="btnCaption'+self.id+'">'+_("Button Caption")+': </label>'
-        html += common.textInput('btnCaption'+self.id, self.field.buttonCaption, 40)
-        html +='</p>'
+        if hasattr(self.field, 'buttonCaption'):
+            html +='<p><label for="btnCaption'+self.id+'">'+_("Button Caption")+': </label>'
+            html += common.textInput('btnCaption'+self.id, self.field.buttonCaption, 40)
+            html +='</p>'
         html += common.formField('richTextArea', this_package, 
                                 '','',
                                 self.id, '',
@@ -638,7 +639,10 @@ class Feedback2Element(ElementWithResources):
 
         html = ""
         if self.field.feedback != "": 
-            html += common.feedbackBlock(self.id,self.field.feedback,self.field.buttonCaption)
+            if hasattr(self.field, 'buttonCaption'):
+                html += common.feedbackBlock(self.id,self.field.feedback,self.field.buttonCaption)
+            else:
+                html += common.feedbackBlock(self.id,self.field.feedback)
         return html
 
 

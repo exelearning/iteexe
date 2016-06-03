@@ -143,7 +143,8 @@ class QuizTestBlock(Block):
                 html += element.renderView()
         html += '<div class="block iDevice_buttons">'+lb
         html += '<p><input type="submit" name="submitB" value="' + c_("SUBMIT ANSWERS")+'" /> '+common.javaScriptIsRequired()+'</p>'+lb
-        html += '</div>'+lb                
+        html += '</div>'+lb 
+        html += '<div id="quizFormScore'+self.id+'"></div>'+lb
         html += '</form>'+lb
         html += common.ideviceFooter(self, style, "view")
 
@@ -153,8 +154,8 @@ class QuizTestBlock(Block):
         """
         Return an XHTML string for generating the javascript for web export
         """
-        scriptStr  = '<script type="text/javascript">\n'
-        scriptStr += '<!-- //<![CDATA[\n'
+        scriptStr  = '<script type="text/javascript">/*<![CDATA[*/'
+        scriptStr += '\n'
         scriptStr += "var numQuestions = " 
         scriptStr += str(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n" 
@@ -217,16 +218,18 @@ class QuizTestBlock(Block):
      
             calcRawScore();
             actualScore =  Math.round(rawScore / numQuestions * 100);
-            document.getElementById("quizForm%s").submitB.disabled = true;
+            var id = "%s";
+            document.getElementById("quizForm"+id).submitB.disabled = true;
+            var s = document.getElementById("quizFormScore"+id);
             """ % self.idevice.id
         scriptStr += '            var msg_str ="' + c_("Your score is %d%%") + '";'
-        scriptStr += '            alert(msg_str.replace("%d",actualScore).replace("%%","%"));'
+        scriptStr += '            msg_str = msg_str.replace("%d",actualScore).replace("%%","%");'
+        scriptStr += '            if (s) { s.innerHTML = "<div class=\'feedback\'><p>"+msg_str+"</p></div>"; } else { alert(msg_str); }'
 
         scriptStr += """
            
         }
-//]]>    -->
-    </script>\n"""
+    /*]]>*/</script>\n"""
 
         return scriptStr
 

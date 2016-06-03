@@ -288,6 +288,8 @@ class SinglePage(Page):
         
         style = self.node.package.style
 
+        node.exportType = 'singlepage'
+        
         for idevice in node.idevices:
             if idevice.klass != 'NotaIdevice':
                 e=" em_iDevice"
