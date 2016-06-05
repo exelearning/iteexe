@@ -4,7 +4,7 @@ Building from source on Debian/Ubuntu
  $ apt-get install build-essential debhelper xsltproc docbook-xml docbook-xsl python-all
 
 2. Install a few python modules
- $ apt-get install python-feedparser python-beautifulsoup python-zope python-imaging python-oauth2client python-googleapi
+ $ apt-get install python-feedparser python-beautifulsoup python-zope python-imaging python-oauth2client python-googleapi python-suds python-requests-oauthlib python-oauthlib python-requests python-blinker python-jwt python-urllib3
 
 3. Clone the git repo
  $ git clone https://forja.cenatic.es/anonscm/git/iteexe/iteexe.git
