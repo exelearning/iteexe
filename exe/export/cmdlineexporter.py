@@ -32,6 +32,7 @@ from exe.export.websiteexport import WebsiteExport
 from exe.export.singlepageexport import SinglePageExport
 from exe.export.xliffexport import XliffExport
 from exe.export.epub3export import Epub3Export
+from exe.export.epub3subexport import Epub3SubExport
 
 LOG = logging.getLogger(__name__)
 
@@ -142,6 +143,10 @@ with a different filename') % outputf
     def export_epub3(self, pkg, outputf):
         epub3Export = Epub3Export(self.config, self.styles_dir, outputf)
         epub3Export.export(pkg)
+
+    def export_subepub3(self, pkg, outputf):
+        epub3SubExport = Epub3SubExport(self.config, self.styles_dir, outputf)
+        epub3SubExport.export(pkg)
 
     def export_report(self, pkg, outputf):
         websiteExport = WebsiteExport(self.config, self.styles_dir, outputf, report=True)
