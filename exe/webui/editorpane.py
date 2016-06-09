@@ -427,8 +427,8 @@ data is entered into this field."""))
             html += u'margin-right:10px; margin-bottom:10px" > '
             html += u'<img src="%s" \n' % filename
             html += u' alt="%s" ' % _("Submit")
-            # window[2] because we use Ext.MessageBox instead of libot_drag.js
-            html += u"onclick=\"window[2].submitLink('selectIcon','%s',1)\">\n" % icon
+            # window[1] because we use Ext.MessageBox instead of libot_drag.js
+            html += u"onclick=\"window[1].submitLink('selectIcon','%s',1)\">\n" % icon
             html += u'<br/>%s.gif</div>\n' % icon
         return html
 # ===========================================================================
