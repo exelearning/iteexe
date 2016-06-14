@@ -219,6 +219,7 @@ class AuthoringPage(RenderableResource):
         html += u"var exe_package_name='"+self.package.name+"';"
         html += 'var exe_export_format="'+common.getExportDocType()+'".toLowerCase();'
         html += 'var exe_editor_mode="'+myPreferencesPage.getEditorMode()+'";'
+        html += 'var exe_editor_version="'+myPreferencesPage.getEditorVersion()+'";'
         html += '</script>\n'        
         html += u'<script type="text/javascript" src="../jsui/native.history.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/authoring.js"></script>\n'

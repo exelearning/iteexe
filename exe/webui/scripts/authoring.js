@@ -24,7 +24,7 @@
 // action and object fields so they can be used by submitLink
 
 // An array of js strings to evaluate on document load
-var tinyMCEversion = 4; // $exeAuthoring.countBase64 and $exeAuthoring.compareBase64 will not be used
+// $exeAuthoring.countBase64 and $exeAuthoring.compareBase64 will not be used if exe_editor_version == 4
 var Ext = parent.Ext;
 var eXe = parent.eXe;
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
@@ -585,7 +585,7 @@ var eXeLearning_settings = {
     wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
 }
 
-if (tinyMCEversion==4) {
+if (exe_editor_version==4) {
 	eXeLearning_settings = {
 		wysiwyg_path : "/scripts/tinymce_4/js/tinymce/tinymce.min.js",
 		wysiwyg_settings_path : "/scripts/tinymce_4_settings.js"
@@ -669,7 +669,7 @@ var exe_tinymce = {
 
                 // PreviewImage is only available for images:
                 if (type == "image") {					
-					if (tinyMCEversion==3) {
+					if (exe_editor_version==3) {
 						if (typeof(win.ImageDialog)!='undefined') win.ImageDialog.showPreviewImage(full_previewImage_url);
 					} else {
 						formField.value = full_previewImage_url;
@@ -690,7 +690,7 @@ var exe_tinymce = {
 					}
                 }
                 else if (type == "media") {
-					if (tinyMCEversion==3) win.window.Media.preview();
+					if (exe_editor_version==3) win.window.Media.preview();
 					else formField.value = full_previewImage_url;
                 }
 
@@ -699,7 +699,7 @@ var exe_tinymce = {
                 // in tinyMCE, then this would be out of sync.
 
                 // and finally, be sure to update the tinyMCE window's image data:
-                if (tinyMCEversion==3) {
+                if (exe_editor_version==3) {
 					if (win.getImageData) {
 						win.getImageData();
 					} else {
