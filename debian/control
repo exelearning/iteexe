@@ -1,7 +1,7 @@
 Source: intef-exe
 Section: python
 Priority: optional
-Maintainer: Pedro Peña <pedro.pena@open-phoenix.com>
+Maintainer: Pedro Peña Pérez <pedro.pena@open-phoenix.com>
 Homepage: http://exeLearning.net/
 Vcs-Browser: https://forja.cenatic.es/scm/browser.php?group_id=197
 Standards-Version: 3.9.6
