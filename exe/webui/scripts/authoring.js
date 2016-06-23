@@ -109,7 +109,9 @@ function askUserForMedia(fn,win) {
         callback: function(fp) {
 			if (fp.status == parent.eXe.view.filepicker.FilePicker.returnOk) {
 				fn(fp.file.path);
-				if (typeof(win)!="undefined") win.document.forms[0].elements['href'].onchange();
+				if (typeof(win)!="undefined") {
+					if (exe_editor_version==3) win.document.forms[0].elements['href'].onchange();
+				}
 			} else {
 				fn("");
 			}
