@@ -1,4 +1,13 @@
 // To do:
+    // adv link (file information features)
+    // Check if saved when fullscreen
+    // exemath
+    // Insert template (check bubble title + i18n)
+    // i18n?
+    // advhr?
+    // Attribution (JR's ideas)
+    // Check print options
+    // Reorder the toolbar
 // Add to pybabel.conf
 	// all.js instead of en.js and en_dlg.js
 	// plugin.min.js
@@ -8,8 +17,11 @@ _ = parent._;
 
 var $exeTinyMCE = {
 	
-	plugins: "compat3x nonbreaking exegames_hangman exeeffects easyattributes exelist autolink lists link charmap print preview anchor tooltips searchreplace visualblocks codemagic fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode exeimage exealign exemedia abbr",
-	buttons1 : "bold italic | formatselect fontsizeselect fontselect | forecolor backcolor",
+	plugins: "toggletoolbars compat3x nonbreaking exegames_hangman exeeffects easyattributes exelist autolink lists link charmap print preview anchor tooltips searchreplace visualblocks codemagic fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode exeimage exealign exemedia abbr",
+	// These buttons will be visible when the others are hidden
+	buttons0 : "toggletoolbars | bold italic | formatselect | link unlink | bullist numlist | exeimage exemedia | fullscreen",
+	// When buttons0 are hidden, 1, 2 and 3 are visible
+	buttons1 : "toggletoolbars | bold italic | formatselect fontsizeselect fontselect | forecolor backcolor",
 	buttons2 : "alignleft aligncenter alignright alignjustify clearfloat addcontent | bullist numlist definitionlist | link unlink | outdent indent | blockquote blockquoteandcite",	
 	buttons3 : "undo redo | cut copy paste pastetext | pastehtml pastecode | tooltips exeeffects | exeimage exemedia | template | table | easyattributes | codemagic | fullscreen",	
 	// To add:
@@ -77,6 +89,7 @@ var $exeTinyMCE = {
 			],
 			style_formats_merge: true,
 			toolbar: [
+				this.buttons0,
 				this.buttons1,
 				this.buttons2,
 				this.buttons3
@@ -272,7 +285,6 @@ var $exeTinyMCEToggler = {
 		var t = $("IFRAME",p);
 		var i = "";
 		if (t.length==1) i = t.eq(0);
-		var blocksToToggle = $('.mce-menubar,.mce-toolbar,.mce-statusbar,.mce-toolbar-grp');
 		if (e.className=='visible-editor') {
 			// Hide toolbars
 			if (i!='') {
@@ -285,14 +297,14 @@ var $exeTinyMCEToggler = {
 				i.css("height",h+"px");
 			}
 			e.className = 'hidden-editor';
-			blocksToToggle.hide();
+			$("body").addClass("hidden-editor");
 			$(".mce-edit-area").css("border-width","0"); // So the box doesn't have a 2px border top
 		} else {
 			// Show toolbars
 			if (i!='') i.css("height",window[e.id+"-iframeHeight"]);
 			e.className = 'visible-editor';
-			blocksToToggle.show();
-			$(".mce-edit-area").css("border-width","1px 0 0");			
+			$(".mce-edit-area").css("border-width","1px 0 0");
+			$("body").removeClass("hidden-editor");
 		}
 	}
 	
