@@ -1,13 +1,8 @@
 // To do:
-    // adv link (file information features)
-    // Check if saved when fullscreen
     // exemath
     // Insert template (check bubble title + i18n)
     // i18n?
-    // advhr?
     // Attribution (JR's ideas)
-    // Check print options
-    // Reorder the toolbar
 // Add to pybabel.conf
 	// all.js instead of en.js and en_dlg.js
 	// plugin.min.js
@@ -23,7 +18,7 @@ var $exeTinyMCE = {
 	// When buttons0 are hidden, 1, 2 and 3 are visible
 	buttons1 : "toggletoolbars | bold italic | formatselect fontsizeselect fontselect | forecolor backcolor",
 	buttons2 : "alignleft aligncenter alignright alignjustify clearfloat addcontent | bullist numlist definitionlist | exelink unlink | outdent indent | blockquote blockquoteandcite",	
-	buttons3 : "undo redo | cut copy paste pastetext | pastehtml pastecode | tooltips exeeffects | exeimage exemedia | template | table | easyattributes | codemagic | fullscreen",	
+	buttons3 : "undo redo | cut copy paste pastetext | pastehtml pastecode | tooltips exeeffects | exeimage exemedia | codemagic | fullscreen",	
 	// To add:
 		// buttons2 : "exemath"
 	content_css: "/css/extra.css," + exe_style,
@@ -35,6 +30,12 @@ var $exeTinyMCE = {
 		{ title: _("3 columns"), url: "/scripts/tinymce_templates/3.html" }
 	],
 	path_to_folder: "/scripts/tinymce_4/js/tinymce/",
+	menu: {
+		edit: {title: 'Edit', items: 'undo redo | selectall searchreplace | easyattributes style'},
+		insert: {title: 'Insert', items: 'template | nonbreaking hr charmap anchor | abbr insertdatetime | exegames_hangman'},
+		format: {title: 'Format', items: 'underline strikethrough superscript subscript | formats | removeformat'},
+		table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'}
+	},	
     
 	init: function(mode,criteria,hide){
 		
@@ -59,6 +60,7 @@ var $exeTinyMCE = {
 			extended_valid_elements: this.getExtendedValidElements(),			
 			fix_list_elements: true,
 			plugins: this.plugins,
+			menu: this.menu,
 			browser_spellcheck: this.browser_spellcheck,
 			templates: this.templates,
 			// Base URL
