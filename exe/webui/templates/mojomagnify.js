@@ -2,7 +2,7 @@
  * MojoMagnify 0.1.10 - JavaScript Image Magnifier
  * Copyright (c) 2008-2010 Jacob Seidelin, cupboy@gmail.com, http://blog.nihilogic.dk/
  * Licensed under the MPL License [http://www.nihilogic.dk/licenses/mpl-license.txt]
- * Modified  by Fran Macías 2013 for exelearning.net
+ * Modified  by Fran MacÃ­as 2013 for exelearning.net
  */
 /*
  optional css:

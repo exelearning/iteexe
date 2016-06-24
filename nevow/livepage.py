@@ -297,13 +297,15 @@ class ClientHandle(object):
         self.timeoutCount += 1
         if self.timeoutCount >= self.targetTimeoutCount:
             ## This connection timed out.
-            pass
+            self.outputGone(None, self.outputConduit)
 
     def outputGone(self, failure, output):
         assert output == self.outputConduit
-        log.err(failure)
-        self.outputConduit = None
-        self._closeComplete(failure)
+        if failure:
+            log.err(failure)
+        else:
+            self.outputConduit = None
+            self._closeComplete(failure)
         return None
 
     def _closeComplete(self, failure=None):
@@ -421,7 +423,7 @@ class DefaultClientHandleFactory(object):
         handle = self.clientHandleClass(handleid,
                                         refreshInterval, targetTimeoutCount)
         self.clientHandles[handleid] = handle
-        handle.notifyOnClose().addBoth(self.deleteHandle, handleid=handleid)
+        handle.notifyOnClose().addCallback(self.deleteHandle, handleid=handleid)
         return handle
 
     def deleteHandle(self, _=None, handleid=None):

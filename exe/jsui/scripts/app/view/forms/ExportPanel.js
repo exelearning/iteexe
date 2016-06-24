@@ -71,8 +71,6 @@ Ext.define('eXe.view.forms.ExportPanel', {
                 },
                 {
                     xtype: 'fieldset',
-		    // JRF - bug no. 2009 (https://forja.cenatic.es/tracker/?func=detail&atid=883&aid=2009&group_id=197)
-                    // title: _('SCORM Options (1.2, 2004 and Agrega)'),
 		    title: _('SCORM Options (1.2 and 2004)'),
                     margin: 10,
                     items: [

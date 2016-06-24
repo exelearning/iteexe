@@ -148,14 +148,14 @@ var $app = {
 		});
 
 		$("#saveAs").click(function(){
-			$app.getPreview();
+			$app.getPreview("save");
 			var content = $("#my-content-css").val();
 			var nav = $("#my-nav-css").val();
 			$app.createStyle(content, nav, $app.getCurrentStyle());
 		});
 
 		$("#save").click(function(){
-			$app.getPreview();
+			$app.getPreview("save");
 			var content = $("#my-content-css").val();
 			var nav = $("#my-nav-css").val();
 			var currentStyle = $app.getCurrentStyle();
@@ -181,23 +181,23 @@ var $app = {
 						// Form request can success, even if the create/save operation failed
 						result = JSON.parse(response);
 						if (result.success) {
-							Ext.Msg.alert('Success', result.message);
+							Ext.Msg.alert($i18n.Information, result.message);
 							opener.window.location.reload();
 						}
 						else {
-							Ext.Msg.alert('Failed', result.message);
+							Ext.Msg.alert($i18n.Error, result.message);
 						}
 					},
 					error: function(response) {
 						$app.preloader.hide();
-						Ext.Msg.alert('Failed', response.statusText);
+						Ext.Msg.alert($i18n.Error, response.statusText);
 					}
  				});
 			}
 		});		
 
 		$("#finish").click(function(){
-			$app.getPreview();
+			$app.getPreview("save");
 			var currentStyle = $app.getCurrentStyle();
 			var content = $app.formatToSave($("#my-content-css").val());
 			var nav = $app.formatToSave($("#my-nav-css").val());
@@ -230,7 +230,7 @@ var $app = {
 									result = JSON.parse(response);
 									if (result.success) {
 										Ext.Msg.alert(
-											'Success',
+											$i18n.Information,
 											result.message,
 											function(btn, txt) {
 												opener.window.close();
@@ -239,12 +239,12 @@ var $app = {
 										);
 									}
 									else {
-										Ext.Msg.alert('Failed', result.message);
+										Ext.Msg.alert($i18n.Error, result.message);
 									}
 								},
 								error: function(response) {
 									$app.preloader.hide();
-									Ext.Msg.alert('Failed', response.statusText);
+									Ext.Msg.alert($i18n.Error, response.statusText);
 								}
 							});
 						}
@@ -309,9 +309,14 @@ var $app = {
 	updateTextFieldFromFile : function(e){
 		// opener.parent.opener.document.getElementsByTagName("IFRAME")[0].contentWindow;
 		// opener.parent.opener.window.nevow_clientToServerEvent('quit', '', '');
-		var id = e.id.replace("File","");
+		var id = e.id.replace("File",""),
+		    // Encode URL
+		    fileName = this.removeLocalPath(e.id, "save");
+
+		fileName = decodeURIComponent(fileName);
+		fileName = encodeURI(fileName);
 		// Show file name in the file input
-		$("#"+id).val($(e).val());
+		$("#"+id).val(fileName);
 		// Save temporary file URL in hidden input
 		$("#"+id+'TempURL').val(window.URL.createObjectURL(e.files[0]).toString());
 		
@@ -652,31 +657,34 @@ var $app = {
 		return str.replace(/(\r\n|\n|\r)/gm,"").replace("*/","*/\n").replace(/}/g,"}\n");
 	},
 	formatToSave : function(str){
-		var parts;
-		// Remove C:\fakepath\ (Google Chrome)
-		var path = "\\fakepath\\";
-		if (str.indexOf(path)!=-1) {
-			parts = str.split(path);
-			var start = parts[0];
-			path = start.slice((start.length-2),start.length)+path;
-			for (var i=0;i<3;i++) { // #bodyBGURL, #contentBGURL, #headerBGURL
-				str = str.replace(path, '');
-			}
-		}
 		// Minify
-		parts = str.split($app.advancedMark);
+		var parts = str.split($app.advancedMark);
 		if (parts.length==2) {
 			str = this.minify(parts[0])+$app.advancedMark+parts[1];
 		}
 		str = str.replace(/(\r\n|\n|\r)/gm,"\n");
 		return str;
 	},
-	composeCSS : function(){
+	removeLocalPath : function(id,mode) {
+		// Remove C:\fakepath\ (Google Chrome) and full local path (Internet Explorer)
+		var field = $("#"+id);
+		var path = field.val();
+		if (mode=="save") {
+			if (path.indexOf("\\")!=-1) {
+				path = path.split("\\");
+				path = path[path.length-1];
+			}
+		}
+		return path;
+	},
+	composeCSS : function(mode){
 		
 		var css = new Array();
 		var contentCSS = "";
 		var navCSS = "";
 		
+		if (!mode) mode = "";
+
 		// #content
 		var pageWidth = $("#pageWidth").val();
 		// px or %
@@ -690,7 +698,7 @@ var $app = {
 		
 		// #content (website) and body (IMS, etc.)
 		var contentBGColor = $("#contentBGColor").val();
-		var contentBGURL = $("#contentBGURL").val();
+		var contentBGURL = $app.removeLocalPath("contentBGURL",mode);
 		var contentBGPosition = $("#contentBGPosition").val();
 		var contentBGRepeat = $("#contentBGRepeat").val();
 
@@ -702,7 +710,7 @@ var $app = {
 
 		// body (website)
 		var bodyBGColor = $("#bodyBGColor").val();
-		var bodyBGURL = $("#bodyBGURL").val();
+		var bodyBGURL = $app.removeLocalPath("bodyBGURL",mode);
 		var bodyBGPosition = $("#bodyBGPosition").val();
 		var bodyBGRepeat = $("#bodyBGRepeat").val();
 
@@ -710,7 +718,7 @@ var $app = {
 		var headerHeight = $("#headerHeight").val();
 		var headerBGColor = $("#headerBGColor").val();
 		var headerBorderColor = $("#headerBorderColor").val();
-		var headerBGURL = $("#headerBGURL").val();
+		var headerBGURL = $app.removeLocalPath("headerBGURL",mode);
 		var headerBGPosition = $("#headerBGPosition").val();
 		var headerBGRepeat = $("#headerBGRepeat").val();
 		var hideProjectTitle = $("#hideProjectTitle").prop("checked");
@@ -1151,7 +1159,7 @@ var $app = {
 		return this.removeStylePath(css); // css is already formatted with formatCSS
 		
 	},
-	getPreview : function(){
+	getPreview : function(mode){
 		
 		var w = window.opener;
 		if (!w) {
@@ -1159,10 +1167,12 @@ var $app = {
 			return false;
 		}
 		
+		if (!mode) mode = "";
+
 		// content.css
 		var contentCSSTag = w.document.getElementById("my-content-css");
 		if (!contentCSSTag) return false;
-		var css = this.composeCSS();
+		var css = this.composeCSS(mode);
 		var contentCSS = css[0];
 		contentCSS = $app.baseContentCSS+$app.advancedMark+contentCSS;
 		contentCSS = $app.addStylePath(contentCSS);
@@ -1262,7 +1272,7 @@ var $app = {
 									message += _('Page will be reloaded. ');
 								}
 								Ext.Msg.alert(
-									'Success',
+									$i18n.Information,
 									message,
 									function(btn, txt) {
 										$app.loadNewStyle(result.style_dirname);
@@ -1275,7 +1285,7 @@ var $app = {
 							}
 							else {
 								Ext.Msg.alert(
-									'Failed',
+									$i18n.Error,
 									result.message,
 									function(btn, txt) {
 										createStyleWin.close();
@@ -1286,7 +1296,7 @@ var $app = {
 						error: function(response) {
 							$app.preloader.hide();
 							Ext.Msg.alert(
-								'Failed',
+								$i18n.Error,
 								function(btn, txt) {
 									createStyleWin.close();
 								}

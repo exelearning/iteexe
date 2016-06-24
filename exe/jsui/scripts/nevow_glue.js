@@ -45,6 +45,15 @@ function connect(outputNum) {
             }
         }
     }
+    xmlhttp.onabort = function() {
+        last_request = xmlhttp;
+        if (!liveevil_unload && auto_open) {
+            setTimeout(function(){
+                connect(outputNum + 1);
+            }, 4000);
+        }
+    }
+    xmlhttp.onerror = xmlhttp.onabort;
     xmlhttp.open("GET", base_url + "nevow_liveOutput?outputNum=" + outputNum + "&client-handle-id=" + nevow_clientHandleId, true)
     xmlhttp.send(null)
 }

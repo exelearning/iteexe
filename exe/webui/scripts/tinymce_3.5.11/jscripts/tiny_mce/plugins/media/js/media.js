@@ -974,10 +974,10 @@
             html += option("flash", "object");
             html += option("quicktime", "object");
             // The New eXeLearning
-            //html += option("shockwave", "object");
+            // html += option("shockwave", "object");
+            // html += option("windowsmedia", "object");
+            // html += option("realmedia", "object");
             // /The New eXeLearning
-            html += option("windowsmedia", "object");
-            html += option("realmedia", "object");
             html += option("iframe");
 
             if (editor.getParam('media_embedded_audio', false)) {

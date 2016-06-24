@@ -28,8 +28,10 @@ function init() {
 	var action = "insert";
 	var html;
 	// The New eXeLearning (JR)
+	// By José Ramón Jiménez Reyes
+	// Creative Commons Attribution 4.0 International: http://creativecommons.org/licenses/by/4.0/
 	var elmSize;
-	// /JR
+	// / JR
 
 	document.getElementById('hrefbrowsercontainer').innerHTML = getBrowserHTML('hrefbrowser','href','file','advlink');
 	document.getElementById('popupurlbrowsercontainer').innerHTML = getBrowserHTML('popupurlbrowser','popupurl','file','advlink');
@@ -548,7 +550,7 @@ function insertAction() {
 		}
 		else {
 			elmSize = elm.nextSibling;
-			if (elmSize != null)
+			if (elmSize != null && elmSize.className == "exe-link-data file-size")
 				elm.parentNode.removeChild(elmSize);
 		}
 		// /JR
