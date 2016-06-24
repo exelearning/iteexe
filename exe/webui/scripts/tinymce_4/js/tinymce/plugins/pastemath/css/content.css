@@ -1,3 +1,8 @@
+.exe-math{margin:1.5em 0}
+.position-center{margin:2em auto;text-align:center}
+.position-right{margin:2em 0 2em auto;text-align:right}
+.float-left{float:left;margin:.5em 1.5em 1em 0}
+.float-right{float:right;margin:.5em 0 1em 2em}
 .exe-math.code-only,.exe-math-img img{box-shadow:0 0 7px 0 rgba(0,0,0,0.5);padding:20px;border-radius:2px}
 .exe-math-code{display:none}
 .code-only{width:250px;height:50px;background:#FFF url(../img/pastemath_math.png) no-repeat 50% 50%}
