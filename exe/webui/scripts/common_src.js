@@ -43,6 +43,7 @@ var $exe = {
         $exe.hint.init();
         $exe.setIframesProtocol();
         $exe.hasTooltips();
+        $exe.math.init();
         if (typeof($.prettyPhoto) != 'undefined') $("a[rel^='lightbox']").prettyPhoto({
             social_tools: "",
             deeplinking: false,
@@ -198,6 +199,69 @@ var $exe = {
             $exe.loadScript(p + "exe_tooltips.js", "$exe.tooltips.init('" + p + "')")
         }
     },
+	
+    // Math options (MathJax, etc.)
+    math : {
+        // Change this from your Style or your elp using $exe.math.engine="..."
+        engine : "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML",
+        // Create links to the code and the image (different possibilities)
+        createLinks : function(math) {
+            var mathjax = false;
+            if (!math) {
+                var math = $(".exe-math");
+                mathjax = true;
+            }
+            math.each(function(){
+                var e = $(this);
+                var img = $(".exe-math-img img",e);
+                var txt = "LaTeX";
+                if (e.html().indexOf("<math")!=-1) txt = "MathML";
+                var html = '';
+                if (img.length==1) html += '<a href="'+img.attr("src")+'" target="_blank">GIF</a>';
+                if (!mathjax) {
+                    if (html!="") html += '<span> - </span>';
+                    html += '<a href="#" onclick="$exe.math.showCode(this)">'+txt+'</a>';
+                }
+                if (html!="") {
+                    html = '<p class="exe-math-links">'+html+'</p>';
+                    e.append(html);
+                }
+            });            
+        },
+        // Open a new window with the LaTeX or MathML code
+        showCode : function(e){
+            var tit = e.innerHTML;
+            var block = $(e).parent().parent();
+            var code = $(".exe-math-code",block);
+            var a = window.open(tit);
+            a.document.open("text/html");
+            var html = '<!DOCTYPE html><html><head><title>'+tit+'</title>';
+                html += '<style type="text/css">body{font:10pt/1.5 Verdana,Arial,Helvetica,sans-serif;margin:10pt;padding:0}</style>';
+                html += '</head><body><pre><code>';
+                html += code.html();
+                html += '</code></pre></body></html>';
+            a.document.write(html);
+            a.document.close();           
+        },
+        // Load MathJax or just create the links to the code and/or image
+        init : function(){
+            var math = $(".exe-math");
+            var mathjax = false;
+            if (math.length>0) {
+                math.each(function(){
+                    var e = $(this);
+                    if (e.hasClass("exe-math-engine")) {
+                        if (navigator.onLine) mathjax = true;
+                    }
+                });
+                if (mathjax && navigator.onLine) {
+                    $exe.loadScript($exe.math.engine,$exe.math.createLinks());
+                } else {
+                    $exe.math.createLinks(math);
+                }
+            }
+        }
+    },	
 	
     // Add WAI-ARIA roles
 	addRoles: function() {

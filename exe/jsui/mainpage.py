@@ -203,6 +203,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleRemoveTempDir, 'removeTempDir')
         setUpHandler(self.handleTinyMCEimageChoice, 'previewTinyMCEimage')
         setUpHandler(self.handleTinyMCEmath, 'generateTinyMCEmath')
+        setUpHandler(self.handleTinyMCEmathML, 'generateTinyMCEmathML')
         setUpHandler(self.handleTestPrintMsg, 'testPrintMessage')
         setUpHandler(self.handleReload, 'reload')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
@@ -707,6 +708,75 @@ class MainPage(RenderableLivePage):
             try:
                 use_latex_sourcefile = math_filename_str
                 tempFileName = compile(use_latex_sourcefile, math_fontsize, \
+                        latex_is_file=True)
+            except Exception, e:
+                client.alert(_('MimeTeX compile failed!\n%s') % str(e))
+                log.error("handleTinyMCEmath unable to compile LaTeX using "
+                        + "mimetex, error = " + str(e))
+                raise
+
+            # copy the file into previews
+            server_filename = previewDir.joinpath(preview_image_filename)
+            log.debug("handleTinyMCEmath copying math image from \'"\
+                    + tempFileName + "\' to \'" \
+                    + server_filename.abspath().encode('utf-8') + "\'.")
+            shutil.copyfile(tempFileName, \
+                    server_filename.abspath().encode('utf-8'))
+
+            # Delete the temp file made by compile
+            Path(tempFileName).remove()
+        return
+        
+    def handleTinyMCEmathML(self, client, tinyMCEwin, tinyMCEwin_name, \
+                             tinyMCEfield, mathml_source, math_fontsize, \
+                             preview_image_filename, preview_math_srcfile):
+        """
+        See self.handleTinyMCEmath
+        To do: This should generate an image from MathML code, not from LaTeX code.
+        """
+        
+        # Provisional (just an alert message)
+        client.alert(_('MimeTeX compile failed!\n%s') % "MathML")
+        return
+        
+        server_filename = ""
+        errors = 0
+
+        webDir = Path(G.application.tempWebDir)
+        previewDir = webDir.joinpath('previews')
+
+        if not previewDir.exists():
+            log.debug("image previews directory does not yet exist; " \
+                    + "creating as %s " % previewDir)
+            previewDir.makedirs()
+        elif not previewDir.isdir():
+            client.alert( \
+                _(u'Preview directory %s is a file, cannot replace it') \
+                % previewDir)
+            log.error("Couldn't preview tinyMCE-chosen image: " +
+                      "Preview dir %s is a file, cannot replace it" \
+                      % previewDir)
+            errors += 1
+
+        # the mimetex usage code was swiped from the Math iDevice:
+        if mathml_source != "":
+
+            # first write the mathml_source out into the preview_math_srcfile,
+            # such that it can then be passed into the compile command:
+            math_filename = previewDir.joinpath(preview_math_srcfile)
+            math_filename_str = math_filename.abspath().encode('utf-8')
+            log.info("handleTinyMCEmath: using LaTeX source: " + mathml_source)
+            log.debug("writing LaTeX source into \'" \
+                    + math_filename_str + "\'.")
+            math_file = open(math_filename, 'wb')
+            # do we need to append a \n here?:
+            math_file.write(mathml_source)
+            math_file.flush()
+            math_file.close()
+
+            try:
+                use_mathml_sourcefile = math_filename_str
+                tempFileName = compile(use_mathml_sourcefile, math_fontsize, \
                         latex_is_file=True)
             except Exception, e:
                 client.alert(_('MimeTeX compile failed!\n%s') % str(e))
