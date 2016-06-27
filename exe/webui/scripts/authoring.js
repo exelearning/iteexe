@@ -781,6 +781,19 @@ var $exeAuthoring = {
 			}
 		},500);
 	},
+    errorHandler : function(origin){
+        
+        // Could not transform LaTeX to image
+        if (origin=="handleTinyMCEmath") {
+            if (exe_editor_version == 4) PasteMathDialog.preloader.hide();
+        }
+        
+        // Could not transform MathML to image
+        else if (origin=="handleTinyMCEmathML") {
+            PasteMathDialog.preloader.hide();
+        }
+
+    },
     changeFlowPlayerPathInIE : function(){
         var objs = document.getElementsByTagName("OBJECT");
         var i = objs.length;
@@ -824,6 +837,8 @@ var $exeAuthoring = {
         }
     }
 }
+// Access from the top window so it's easier to call some methods (like errorHandler)
+top.$exeAuthoring = $exeAuthoring;
 //new functions from common.js
 function magnifierImageChanged(event) {
     var id = event.currentTarget.getAttribute('id');

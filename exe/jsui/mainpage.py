@@ -710,7 +710,7 @@ class MainPage(RenderableLivePage):
                 tempFileName = compile(use_latex_sourcefile, math_fontsize, \
                         latex_is_file=True)
             except Exception, e:
-                client.alert(_('MimeTeX compile failed!\n%s') % str(e))
+                client.alert(_('Could not create the image') + " (LaTeX)","$exeAuthoring.errorHandler('handleTinyMCEmath')")
                 log.error("handleTinyMCEmath unable to compile LaTeX using "
                         + "mimetex, error = " + str(e))
                 raise
@@ -736,7 +736,7 @@ class MainPage(RenderableLivePage):
         """
         
         # Provisional (just an alert message)
-        client.alert(_('MimeTeX compile failed!\n%s') % "MathML")
+        client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
         return
         
         server_filename = ""
@@ -779,8 +779,8 @@ class MainPage(RenderableLivePage):
                 tempFileName = compile(use_mathml_sourcefile, math_fontsize, \
                         latex_is_file=True)
             except Exception, e:
-                client.alert(_('MimeTeX compile failed!\n%s') % str(e))
-                log.error("handleTinyMCEmath unable to compile LaTeX using "
+                client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
+                log.error("handleTinyMCEmathML unable to compile MathML using "
                         + "mimetex, error = " + str(e))
                 raise
 
