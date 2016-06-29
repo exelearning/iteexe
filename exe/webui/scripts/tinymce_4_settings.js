@@ -13,7 +13,7 @@ _ = parent._;
 var $exeTinyMCE = {
 	
 	// imagetools is disabled because it generates base64 images
-	plugins: "toggletoolbars compat3x nonbreaking exegames_hangman exeeffects easyattributes exelist autolink lists exelink charmap print preview anchor tooltips searchreplace visualblocks codemagic fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode pastemath exeimage exealign exemedia abbr",
+	plugins: "toggletoolbars compat3x nonbreaking exegames_hangman exeeffects easyattributes exelist autolink lists exelink charmap print preview anchor tooltips searchreplace visualchars visualblocks code codemagic fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode pastemath exeimage exealign exemedia abbr",
 	// These buttons will be visible when the others are hidden
 	buttons0 : "toggletoolbars | bold italic | formatselect | exelink unlink | bullist numlist | exeimage exemedia | fullscreen",
 	// When buttons0 are hidden, 1, 2 and 3 are visible
@@ -32,12 +32,13 @@ var $exeTinyMCE = {
 	],
 	path_to_folder: "/scripts/tinymce_4/js/tinymce/",
 	menu: {
-		edit: {title: 'Edit', items: 'undo redo | selectall searchreplace | easyattributes style'},
+		edit: {title: 'Edit', items: 'undo redo | selectall searchreplace | cut copy paste pastetext | easyattributes style'},
 		insert: {title: 'Insert', items: 'template | nonbreaking hr charmap anchor | abbr insertdatetime | exegames_hangman'},
 		format: {title: 'Format', items: 'underline strikethrough superscript subscript | formats | removeformat'},
-		table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'}
+		table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
+		tools: {title: 'Tools', items: 'code codemagic visualchars visualblocks fullscreen'}
 	},	
-	contextmenu: "link | inserttable | cell row column deletetable",
+	contextmenu: "exelink | inserttable | cell row column deletetable",
     
 	init: function(mode,criteria,hide){
 		
