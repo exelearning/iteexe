@@ -198,7 +198,7 @@ tinymce.addI18n('all',{
 "Delete column": _("Delete Column"),
 "Center": _("Center"),
 "Merge cells": _("Merge Table Cells"),
-"Insert template": _("Insert Predefined Template Content"),
+"Insert template": _("Predefined Template Content"),
 "Templates": _("Templates"),
 "Background color": _("Background color"),
 "Custom...": _("Custom..."),
