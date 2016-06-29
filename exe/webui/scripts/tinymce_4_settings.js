@@ -39,6 +39,7 @@ var $exeTinyMCE = {
 		tools: {title: 'Tools', items: 'code codemagic visualchars visualblocks fullscreen'}
 	},	
 	contextmenu: "exelink | inserttable | cell row column deletetable",
+	language: "all", // We set all so we can use eXe's i18n mechanism in all.js
     
 	init: function(mode,criteria,hide){
 		
@@ -48,7 +49,7 @@ var $exeTinyMCE = {
 		if (typeof($exeTinyMCEToggler.documentWidth)=='undefined' || (typeof($exeTinyMCEToggler.documentWidth)!='undefined' && $exeTinyMCEToggler.documentWidth<900)) w = '';
 		
 		tinymce.init({
-			language: "all",
+			language: this.language,
 			mode: mode,
 			elements: criteria,
 			width: w,

@@ -215,5 +215,6 @@ tinymce.addI18n('all',{
 "Tools": _("Tools"),
 "View": _("View"),
 "Table": _("Table"),
-"Format": _("Format")
+"Format": _("Format"),
+"Preformatted": _("Preformatted")
 });
