@@ -12,6 +12,7 @@ _ = parent._;
 
 var $exeTinyMCE = {
 	
+	// imagetools is disabled because it generates base64 images
 	plugins: "toggletoolbars compat3x nonbreaking exegames_hangman exeeffects easyattributes exelist autolink lists exelink charmap print preview anchor tooltips searchreplace visualblocks codemagic fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode pastemath exeimage exealign exemedia abbr",
 	// These buttons will be visible when the others are hidden
 	buttons0 : "toggletoolbars | bold italic | formatselect | exelink unlink | bullist numlist | exeimage exemedia | fullscreen",
@@ -36,6 +37,7 @@ var $exeTinyMCE = {
 		format: {title: 'Format', items: 'underline strikethrough superscript subscript | formats | removeformat'},
 		table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'}
 	},	
+	contextmenu: "link | inserttable | cell row column deletetable",
     
 	init: function(mode,criteria,hide){
 		
@@ -61,6 +63,7 @@ var $exeTinyMCE = {
 			fix_list_elements: true,
 			plugins: this.plugins,
 			menu: this.menu,
+			contextmenu: this.contextmenu,
 			browser_spellcheck: this.browser_spellcheck,
 			templates: this.templates,
 			// Base URL
