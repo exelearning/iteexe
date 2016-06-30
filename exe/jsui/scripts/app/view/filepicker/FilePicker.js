@@ -45,16 +45,24 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 	show: function() {
 		eXe.app.filepicker = this;
 		if (this.remote) {
-			Ext.Ajax.request({
-				url: window.location.href + '/temp_file',
-				params: { filetype: this.filetypes.getAt(0).get('extension') },
-				success: function (response) {
-					this.status = eXe.view.filepicker.FilePicker.returnOk;
-					this.file = JSON.parse(response.responseText);
-					this.callback.call(this.scope, this);
-				},
-				scope: this
-			});
+			if (this.type === eXe.view.filepicker.FilePicker.modeOpen) {
+				var filefield = this.down('#upload_filefield');
+
+				this.callParent();
+				this.hide();
+				filefield.fileInputEl.dom.click();
+			} else {
+				Ext.Ajax.request({
+					url: window.location.href + '/temp_file',
+					params: { filetype: this.filetypes.getAt(0).get('extension') },
+					success: function (response) {
+						this.status = eXe.view.filepicker.FilePicker.returnOk;
+						this.file = JSON.parse(response.responseText);
+						this.callback.call(this.scope, this);
+					},
+					scope: this
+				});
+			}
 		} else {
 			this.callParent();
 		}
@@ -116,6 +124,10 @@ Ext.define('eXe.view.filepicker.FilePicker', {
                     padding: '0px 0px 10px 0px'
 	           }
             ;
+
+		if (eXe.app.filepicker) {
+			eXe.app.filepicker.destroy();
+		}
 
         me.files = [];
 

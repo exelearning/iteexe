@@ -389,7 +389,8 @@ Ext.define('eXe.controller.filepicker.File', {
 		}
 	},
 	onUploadFile: function(filefield, value) {
-		var form = filefield.up('form');
+		var form = filefield.up('form'),
+			fp = filefield.up('#filepicker');
 
         form.down('#upload_currentdir').setValue(this.currentDir);
         form.down('#upload_filename').setValue(value.replace(/C:\\fakepath\\/g, ''));
@@ -399,13 +400,22 @@ Ext.define('eXe.controller.filepicker.File', {
             form.submit({
                 url: "/dirtree",
                 success: function(form, action) {
-                    Ext.Msg.hide();
-                    eXe.app.getStore('filepicker.DirectoryTree').load({
-                        callback: function() {
-                            eXe.app.fireEvent("dirchange", this.currentDir);
-                        },
-                        scope: this
-                    })
+					Ext.Msg.hide();
+
+					if (fp.remote === false) {
+						eXe.app.getStore('filepicker.DirectoryTree').load({
+							callback: function() {
+								eXe.app.fireEvent("dirchange", this.currentDir);
+							},
+							scope: this
+						})
+					} else {
+						fp.status = eXe.view.filepicker.FilePicker.returnOk;
+						fp.file = JSON.parse(action.response.responseText);;
+						fp.callback.call(fp.scope, fp);
+						fp.destroy();
+						eXe.app.filepicker = null;
+					}
                 },
 				scope: this
             });

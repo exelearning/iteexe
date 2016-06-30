@@ -217,6 +217,8 @@ class DirTreePage(RenderableResource):
                 pathdir = rootdir
             filename = pathdir / Path(request.args["upload_filename"][0])
             filename.write_bytes(request.args["upload_content"][0])
+            l['path'] = filename
+            l['name'] = filename.basename()
         elif "remove" in request.args:
             for path in request.args["remove"]:
                 path = Path(path).abspath()

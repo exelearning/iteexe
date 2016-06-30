@@ -627,6 +627,7 @@ Ext.define('eXe.controller.Toolbar', {
         var fp = Ext.create("eXe.view.filepicker.FilePicker", {
             type: eXe.view.filepicker.FilePicker.modeOpen,
             title: _("Select LOM Metadata file to import."),
+            remote: true,
             modal: true,
             scope: this,
             callback: function(fp) {
@@ -684,6 +685,7 @@ Ext.define('eXe.controller.Toolbar', {
         var fp = Ext.create("eXe.view.filepicker.FilePicker", {
             type: eXe.view.filepicker.FilePicker.modeOpen,
             title: _("Select Xliff file to import"),
+            remote: true,
             modal: true,
             scope: this,
             callback: function(fp) {

@@ -59,14 +59,19 @@ function runFuncArray(handlers) {
 
 // Asks the user for an image, returns the path or an empty string
 function askUserForImage(multiple, fn, filter) {
-    var fp, mode;
-    if (multiple)
+    var fp, mode, remote;
+    if (multiple) {
         mode = parent.eXe.view.filepicker.FilePicker.modeOpenMultiple;
-    else
+        remote = false;
+    } else {
         mode = parent.eXe.view.filepicker.FilePicker.modeOpen;
+        remote = true;
+    }
+
     fp = parent.Ext.create("eXe.view.filepicker.FilePicker", {
         type: mode,
         title: multiple? parent._("Select one or more images") : parent._("Select an image"),
+        remote: remote,
         modal: true,
         scope: this,
         callback: function(fp) {
@@ -103,6 +108,7 @@ function askUserForMedia(fn,win) {
     var fp = parent.Ext.create("eXe.view.filepicker.FilePicker", {
         type: parent.eXe.view.filepicker.FilePicker.modeOpen,
         title: parent._("Select a file"),
+        remote: true,
         modal: true,
         scope: this,
         callback: function(fp) {
@@ -384,6 +390,7 @@ function addFile(blockId, title, filter) {
     var fp = parent.Ext.create("eXe.view.filepicker.FilePicker", {
         type: parent.eXe.view.filepicker.FilePicker.modeOpen,
         title: title? title : parent._("Select a package"),
+        remote: true,
         modal: true,
         scope: this,
         callback: function(fp) {
