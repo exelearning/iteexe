@@ -15,7 +15,7 @@ var $exeTinyMCE = {
 	// imagetools is disabled because it generates base64 images
 	plugins: "toggletoolbars compat3x nonbreaking exegames_hangman exeeffects easyattributes exelist autolink lists exelink charmap print preview anchor tooltips searchreplace visualchars visualblocks code codemagic fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode pastemath exeimage exealign exemedia abbr",
 	// These buttons will be visible when the others are hidden
-	buttons0 : "toggletoolbars | bold italic | formatselect | exelink unlink | bullist numlist | exeimage exemedia | fullscreen",
+	buttons0 : "toggletoolbars | undo redo | bold italic | formatselect | alignleft aligncenter alignright alignjustify | exelink unlink | bullist numlist | exeimage exemedia | fullscreen",
 	// When buttons0 are hidden, 1, 2 and 3 are visible
 	buttons1 : "toggletoolbars | bold italic | formatselect fontsizeselect fontselect | forecolor backcolor",
 	buttons2 : "alignleft aligncenter alignright alignjustify clearfloat addcontent | bullist numlist definitionlist | exelink unlink | outdent indent | blockquote blockquoteandcite",	
