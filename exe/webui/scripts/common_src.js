@@ -255,6 +255,15 @@ var $exe = {
                     }
                 });
                 if (mathjax && navigator.onLine) {
+                    $(".exe-math-code").each(function(){
+                        var code = this.innerHTML.replace(/ /g,'');
+                        if (code.indexOf("<math")==-1) {
+                            if (code.indexOf("\\[")!=0 && code.substr(code.length-2)!="\\]") {
+                                // Wrap the code: \[ ... \]
+                                this.innerHTML = "\\[ "+this.innerHTML+" \\]";
+                            }
+                        }
+                    });
                     $exe.loadScript($exe.math.engine,$exe.math.createLinks());
                 } else {
                     $exe.math.createLinks(math);
