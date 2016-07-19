@@ -382,6 +382,7 @@ def ideviceHeader(e, style, mode):
                 if e.idevice.icon==e.idevice.originalicon:
                     displayIcon = False
             '''
+            iconExists = False
             k = e.idevice.klass
             i = e.idevice.icon
             if (k=='ListaIdevice' and i=='question') or (k=='CasestudyIdevice' and i=='casestudy') or (k=='GalleryIdevice' and i=='gallery') or (k=='ClozeIdevice' and i=='question') or (k=='ReflectionIdevice' and i=='reflection') or (k=='QuizTestIdevice' and i=='question') or (k=='TrueFalseIdevice' and i=='question') or (k=='MultiSelectIdevice' and i=='question') or (k=='MultichoiceIdevice' and i=='question'):
@@ -392,9 +393,18 @@ def ideviceHeader(e, style, mode):
                 iconPath = 'icon_'+e.idevice.icon+'.gif'
             myIcon = themePath.joinpath("icon_" + e.idevice.icon + ".gif")
             if myIcon.exists():
+                iconExists = True
+            else: 
+                myIcon = themePath.joinpath("icon_" + e.idevice.icon + ".png")
+                if myIcon.exists():
+                    iconExists = True  
+                    iconPath = '/style/'+style+'/icon_'+e.idevice.icon+'.png'
+                    if mode=="view":
+                        iconPath = 'icon_'+e.idevice.icon+'.png'
+            if iconExists:
                 o += u'<img alt="" class="iDevice_icon" src="'+iconPath+'" />'
             if (e.idevice.icon+"Idevice") != e.idevice.klass:
-                if myIcon.exists() and displayIcon:
+                if iconExists and displayIcon:
                     h += ' style="background-image:url('+iconPath+')"'
         else:
             log.debug("Idevice %s at node %s has no icon" % (e.idevice._title, e.idevice.parentNode._title))

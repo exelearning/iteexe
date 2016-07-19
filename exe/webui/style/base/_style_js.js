@@ -155,14 +155,22 @@ var myTheme = {
 	reset : function() {
 		myTheme.toggleMenu();        
 		myTheme.setNavHeight();
-	}    
+	},
+	getCustomIcons : function(){
+		// Provisional solution so the user can use the iDevice Editor to choose an icon
+		$(".iDevice_header").each(function(){
+			var i = this.style.backgroundImage;
+			if (i!="") $(".iDeviceTitle",this).css("background-image",i);
+			this.style.backgroundImage = "none";
+		});
+	}
 }
-
 $(function(){
 	if (document.body.className=='exe-web-site js') {
 		myTheme.init();
 	}
 	myTheme.getIframesURL();
+	myTheme.getCustomIcons();
 });
 
 /*!
