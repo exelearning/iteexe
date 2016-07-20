@@ -156,7 +156,7 @@ class Config(object):
         # None for system default
         self.browser = None
         # docType  is the HTML export format
-        self.docType = 'XHTML'
+        self.docType = 'HTML5'
         # internalAnchors indicate which exe_tmp_anchor tags to generate for each tinyMCE field
         # available values = "enable_all", "disable_autotop", or "disable_all"
         self.internalAnchors = "enable_all"
