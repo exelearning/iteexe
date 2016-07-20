@@ -781,6 +781,8 @@ var $exeAuthoring = {
     },
     ready : function(){
         if (top.Ext) {
+            // Get the mode (to check it in the JavaScript iDevices)
+            $exeAuthoring.mode = $exeAuthoring.getMode();
             $exeAuthoring.disableSVGInMediaElement();
             $exeAuthoring.setYoutubeWmode();
             if (top.Ext.isIE) {
@@ -788,7 +790,17 @@ var $exeAuthoring = {
             }
             eXe.app.fireEvent('authoringLoaded');
         }
-    }
+    },
+    // Check if it's a certain JavaScript iDevice in edition mode
+    isEditing : function(iDeviceClass) {
+        if ($exeAuthoring.mode!="edition") return false;
+        if (!$("#activeIdevice").hasClass("Idevice"+iDeviceClass)) return false;
+        return true;        
+    },
+    getMode : function() {
+        if ($(".exe-editButtons select").length==1) return "edition";
+        return "preview";
+	}
 }
 //new functions from common.js
 function magnifierImageChanged(event) {

@@ -232,6 +232,7 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript" src="/scripts/common.js"></script>\n'
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_settings_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
+        html += common.getJavaScriptIdevicesScripts('edition')
         html += u'<title>"+_("eXe : elearning XHTML editor")+"</title>\n'
         html += u'<meta http-equiv="content-type" content="text/html; '
         html += u' charset=UTF-8" />\n'

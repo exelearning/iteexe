@@ -67,6 +67,27 @@ def docType():
     else:
         return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
 
+def getJavaScriptIdevicesScripts(mode):
+    # Provisional function (see authoringpage.py)    
+    html = ''
+    if mode == 'edition':
+        # Edition SCRIPTS:
+        scripts = [
+            'sortable-lists/export/head/sortable-lists.js',
+            'sortable-lists/edition/head/sortable-lists.js'
+        ]    
+        for script in scripts:
+            html += '<script type="text/javascript" src="/scripts/idevices/'+script+'"></script>\n'
+    else:
+        # Export SCRIPTS:   
+        scripts = [
+            'sortable-lists.js'
+        ]
+        for script in scripts:
+            html += '<script type="text/javascript" src="'+script+'"></script>\n'
+    
+    return html
+        
 def getLicenseMetadata(license):
     if license == "":
         return ""
