@@ -26,7 +26,7 @@ import logging
 from nevow                     import tags as T
 from nevow.flat                import flatten
 from exe                       import globals as G
-from exe.engine.path           import Path
+from exe.engine.path           import Path, TempDirPath
 from exe.webui.blockfactory    import g_blockFactory
 from exe.engine.error          import Error
 
@@ -67,7 +67,17 @@ def docType():
     else:
         return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
 
-def getJavaScriptIdevicesScripts(mode):
+def exportJavaScriptIdevicesScripts(scriptsDir,outputDir):
+    scripts = [
+        'sortable-lists/export/head/sortable-lists.js'
+    ]  
+    for script in scripts:
+        scriptName = script.split("/");
+        scriptName = scriptName[(len(scriptName)-1)]
+        file = (scriptsDir/'idevices/'+script)
+        file.copyfile(outputDir/scriptName)    
+        
+def printJavaScriptIdevicesScripts(mode):
     # Provisional function (see authoringpage.py)    
     html = ''
     if mode == 'edition':
@@ -79,12 +89,14 @@ def getJavaScriptIdevicesScripts(mode):
         for script in scripts:
             html += '<script type="text/javascript" src="/scripts/idevices/'+script+'"></script>\n'
     else:
-        # Export SCRIPTS:   
+        # Export SCRIPTS: 
         scripts = [
-            'sortable-lists.js'
+            'sortable-lists/export/head/sortable-lists.js'
         ]
         for script in scripts:
-            html += '<script type="text/javascript" src="'+script+'"></script>\n'
+            scriptName = script.split("/");
+            scriptName = scriptName[(len(scriptName)-1)]
+            html += '<script type="text/javascript" src="'+scriptName+'"></script>\n'
     
     return html
         

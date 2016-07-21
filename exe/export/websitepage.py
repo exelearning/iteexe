@@ -142,6 +142,7 @@ class WebsitePage(Page):
             html += common.getGamesJavaScriptStrings() + lb
             html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
+        html += common.printJavaScriptIdevicesScripts('export')
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         # Some styles might have their own JavaScript files (see their config.xml file)

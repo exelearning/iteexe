@@ -314,6 +314,8 @@ class WebsiteExport(object):
         if package.license == "license GFDL":
             # include a copy of the GNU Free Documentation Licence
             (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
+            
+        common.exportJavaScriptIdevicesScripts(self.scriptsDir,outputDir)
 
 
     def generatePages(self, node, depth):
