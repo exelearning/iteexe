@@ -179,6 +179,7 @@ class PreferencesPage(RenderableResource):
         data = {}
         try:
             data['editorMode'] = self.config.editorMode
+            data['editorVersion'] = self.config.editorVersion
             data['docType'] = self.config.docType
             data['locale'] = self.config.locale
             data['internalAnchors'] = self.config.internalAnchors
@@ -219,6 +220,10 @@ class PreferencesPage(RenderableResource):
             editormodesel = request.args['editorMode'][0]
             self.config.editorMode = editormodesel
             self.config.configParser.set('user', 'editorMode', editormodesel)
+            
+            editorveresel = request.args['editorVersion'][0]
+            self.config.editorVersion = editorveresel
+            self.config.configParser.set('user', 'editorVersion', editorveresel)
 
             doctypesel = request.args['docType'][0]
             self.config.docType = doctypesel
@@ -258,6 +263,12 @@ class PreferencesPage(RenderableResource):
 
     def getEditorMode(self):
         """
-        It would be the TinyMCE lang
+        It would be permissive or strict
         """
         return self.config.editorMode
+
+    def getEditorVersion(self):
+        """
+        It would be the TinyMCE version
+        """
+        return self.config.editorVersion

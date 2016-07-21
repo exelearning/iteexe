@@ -24,6 +24,7 @@
 // action and object fields so they can be used by submitLink
 
 // An array of js strings to evaluate on document load
+// $exeAuthoring.countBase64 and $exeAuthoring.compareBase64 will not be used if exe_editor_version == 4
 var Ext = parent.Ext;
 var eXe = parent.eXe;
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
@@ -108,7 +109,9 @@ function askUserForMedia(fn,win) {
         callback: function(fp) {
 			if (fp.status == parent.eXe.view.filepicker.FilePicker.returnOk) {
 				fn(fp.file.path);
-				if (typeof(win)!="undefined") win.document.forms[0].elements['href'].onchange();
+				if (typeof(win)!="undefined") {
+					if (exe_editor_version==3) win.document.forms[0].elements['href'].onchange();
+				}
 			} else {
 				fn("");
 			}
@@ -235,7 +238,9 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
                       preview_imageName)
     
         // first, clear out any old value in the tinyMCE image filename field:
-        win.document.forms[0].elements[field_name].value = ""; 
+        var formField = win.document.getElementById(field_name);
+        
+        formField.value = ""; 
     
         // PreviewImage is only available for images:
         if (type == "image") {
@@ -247,7 +252,7 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
     
     
         // set the tinyMCE image filename field:
-        win.document.forms[0].elements[field_name].value = full_previewImage_url;
+        formField.value = full_previewImage_url;
         // then force its onchange event:
     
         // PreviewImage is only available for images:
@@ -333,7 +338,8 @@ function makeMathImage_viaTinyMCE(field_name, src_latex, font_size, type, win) {
     win.focus();
 
     // clear out any old value in the tinyMCE image filename field:
-    win.document.forms[0].elements[field_name].value = ""; 
+    var formField = win.document.getElementById(field_name);
+    formField.value = ""; 
     // PreviewImage is only available for images:
     if (type == "image") {
        win.showPreviewImage(" ");
@@ -342,7 +348,7 @@ function makeMathImage_viaTinyMCE(field_name, src_latex, font_size, type, win) {
     // ensure that we can trigger the onchange event below:
 
     // set the tinyMCE image filename field:
-    win.document.forms[0].elements[field_name].value = full_preview_url;
+    formField.value = full_preview_url;
     // then force its onchange event:
     // PreviewImage is only available for images:
     if (type == "image") {
@@ -581,6 +587,13 @@ var eXeLearning_settings = {
     wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
 }
 
+if (exe_editor_version==4) {
+	eXeLearning_settings = {
+		wysiwyg_path : "/scripts/tinymce_4/js/tinymce/tinymce.min.js",
+		wysiwyg_settings_path : "/scripts/tinymce_4_settings.js"
+	}
+}
+
 // browse the specified URL in system browser
 function browseURL(e) {
     /* Links with rel="lightbox" */
@@ -648,20 +661,39 @@ var exe_tinymce = {
 
             var previewTinyMCEImageDone = function() {
                 // first, clear out any old value in the tinyMCE image filename field:
-                win.document.forms[0].elements[field_name].value = "";
+                var formField = win.document.getElementById(field_name);
+                formField.value = "";
 
                 // set the tinyMCE image filename field:
-                var formField = win.document.forms[0].elements[field_name];
                 formField.value = full_previewImage_url;
                 // then force its onchange event:
                 $(formField).trigger("change");
 
                 // PreviewImage is only available for images:
-                if (type == "image") {
-					if (typeof(win.ImageDialog)!='undefined') win.ImageDialog.showPreviewImage(full_previewImage_url);
+                if (type == "image") {					
+					if (exe_editor_version==3) {
+						if (typeof(win.ImageDialog)!='undefined') win.ImageDialog.showPreviewImage(full_previewImage_url);
+					} else {
+						formField.value = full_previewImage_url;
+						// Set the image dimensions
+						var img = new Image() ;
+						img.src = full_previewImage_url;
+						img.onload = function() {
+							// We know field_name, but not the IDs of the fields to set the dimensions 
+							var fieldOrder = field_name;
+							fieldOrder = fieldOrder.split("-")[0];
+							fieldOrder = fieldOrder.split("_");
+							if (fieldOrder.length==2) {
+								fieldOrder = Number(fieldOrder[1]);
+								$("#mceu_"+(fieldOrder+3)).val(img.width);
+								$("#mceu_"+(fieldOrder+5)).val(img.height);
+							}
+						}
+					}
                 }
                 else if (type == "media") {
-                    win.window.Media.preview();
+					if (exe_editor_version==3) win.window.Media.preview();
+					else formField.value = full_previewImage_url;
                 }
 
                 // this onchange works, but it's dirty because it is hardcoding the
@@ -669,12 +701,14 @@ var exe_tinymce = {
                 // in tinyMCE, then this would be out of sync.
 
                 // and finally, be sure to update the tinyMCE window's image data:
-                if (win.getImageData) {
-                    win.getImageData();
-                } else {
-                    if (window.tinyMCE.getImageData) {
-                        window.tinyMCE.getImageData();
-                    }
+                if (exe_editor_version==3) {
+					if (win.getImageData) {
+						win.getImageData();
+					} else {
+						if (window.tinyMCE.getImageData) {
+							window.tinyMCE.getImageData();
+						}
+					}
                 }
 
                 eXe.app.un('previewTinyMCEImageDone', previewTinyMCEImageDone);
@@ -747,6 +781,19 @@ var $exeAuthoring = {
 			}
 		},500);
 	},
+    errorHandler : function(origin){
+        
+        // Could not transform LaTeX to image
+        if (origin=="handleTinyMCEmath") {
+            if (exe_editor_version == 4) PasteMathDialog.preloader.hide();
+        }
+        
+        // Could not transform MathML to image
+        else if (origin=="handleTinyMCEmathML") {
+            PasteMathDialog.preloader.hide();
+        }
+
+    },
     changeFlowPlayerPathInIE : function(){
         var objs = document.getElementsByTagName("OBJECT");
         var i = objs.length;
@@ -802,6 +849,8 @@ var $exeAuthoring = {
         return "preview";
 	}
 }
+// Access from the top window so it's easier to call some methods (like errorHandler)
+top.$exeAuthoring = $exeAuthoring;
 //new functions from common.js
 function magnifierImageChanged(event) {
     var id = event.currentTarget.getAttribute('id');

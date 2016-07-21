@@ -49,6 +49,14 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .exe-dl-toggler a{margin-left:0;font-weight:bold}
 .js .exe-dl dd{display:none;padding-left:0;margin:1em 1em 1em 37px}
 
+/* Math */
+.exe-math{margin:2em 0}
+.exe-math,.MathJax_Display{text-align:left!important}
+.exe-math.position-center,.position-center .MathJax_Display{text-align:center!important}
+.exe-math.position-right,.position-right .MathJax_Display{text-align:right!important}
+.js .show-image .exe-math-code,.js .show-code .exe-math-img{display:none}
+.exe-math-links{font-size:.85em}
+
 /* TinyMCE: Images and media */
 .exe-figure{margin:2em 0;max-width:100%}
 .position-center{margin:2em auto}

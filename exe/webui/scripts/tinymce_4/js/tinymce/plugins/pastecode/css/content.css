@@ -1,0 +1,6 @@
+.pre-code,.highlighted-code{background:#112C4A;font-family:Monaco,Courier,monospace;border-radius:9px;margin:2em 1em;overflow:auto;padding:20px}
+.pre-code code,.highlighted-code code{color:#E7ECF1;font-size:12px}
+.highlighted-code{background:#F5F2F0}
+.highlighted-code code{color:#000}
+.code-style-2{background:#333029}
+.code-style-2 code{color:#FFF}

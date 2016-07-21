@@ -1,0 +1,7 @@
+.scr-av{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+#common-options{margin-bottom:1.5em}
+#type-desc{margin-bottom:1em;color:#666;font-size:.95em}
+#common-options input,#common-options select,
+#type1-options input,#type1-options select{width:280px}
+#appearance_panel p{overflow:auto}
+#appearance_panel span{width:12em;display:block;float:left}
