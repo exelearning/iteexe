@@ -182,6 +182,10 @@ Ext.application({
         nevow_closeLive('window.top.location = "' + location + '";');
     },
     
+    alert: function(msg){
+        Ext.Msg.alert(_("Warning"), msg);
+    },
+    
     showLoadError: function() {
     	if (eXe.app.config.loadErrors.length > 0) {
     		Ext.Msg.alert(_('Load Error'), eXe.app.config.loadErrors.pop(), eXe.app.showLoadError);

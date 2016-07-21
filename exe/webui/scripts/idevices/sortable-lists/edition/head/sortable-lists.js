@@ -1,4 +1,12 @@
-var iDevice_sortableList = {
+var $exeDevice = {
+    i18n : {
+        es : {
+            "Intructions:" : "Instrucciones:",
+            "Write the elements in the right order:" : "Añade los elementos de la lista (ordenados):",
+            "Please write the instructions." : "Debes escribir las instrucciones.",
+            "Add at least 3 elements." : "Añade al menos 3 elementos."
+        }
+    },
     init : function(){
         /* *************************
         ***** PROVISIONAL CODE *****
@@ -6,13 +14,12 @@ var iDevice_sortableList = {
         // this.createForm();
         window.onload = function(){
             tinymce.activeEditor.remove();
-            iDevice_sortableList.createForm();
+            $exeDevice.createForm();
         }
         /* *************************
         ***** PROVISIONAL CODE *****
         ************************* */
     },
-	debugging : true,
 	createForm : function(){
         var field = $("textarea.mceEditor").eq(0);
 		var style = '\
@@ -25,7 +32,7 @@ var iDevice_sortableList = {
 		$("HEAD").append(style)
 		var html = '\
 			<div id="sortableListForm">\
-				<p><label for="sortableListFormInstructions">Instrucciones: </label><input type="text" name="sortableListFormInstructions" id="sortableListFormInstructions" /></p>\
+				<p><label for="sortableListFormInstructions">'+_i("Intructions:")+' </label><input type="text" name="sortableListFormInstructions" id="sortableListFormInstructions" /></p>\
 				'+this.getListsFields()+'\
 			</div>\
 		';
@@ -44,7 +51,7 @@ var iDevice_sortableList = {
 	},
 	getListsFields : function(){
 		var html = '<div id="sortableListFormList">';
-		html += '<p><strong>Añade los elementos de la lista (ordenados):</strong></p>';
+		html += '<p><strong>'+_i("Write the elements in the right order:")+'</strong></p>';
 		html += '<ol>';
 		for (var i=0;i<9;i++) {
 			html += '<li><label for="sortableListFormList'+i+'" class="sr-av">'+i+'</label><input type="text" name="sortableListFormList'+i+'" id="sortableListFormList'+i+'" /></p>'
@@ -60,7 +67,7 @@ var iDevice_sortableList = {
 			var html = "";
 			var instructions = $("#sortableListFormInstructions").val();
 			if (instructions=="") {
-				Ext.Msg.alert('Error', 'Debes rellenar las instrucciones.');
+				eXe.app.alert(_i("Please write the instructions."));
 				return false;
 			}
 			html += '<p>'+instructions+'</p>';
@@ -75,25 +82,18 @@ var iDevice_sortableList = {
 				}
 			}
 			if (counter<3) {
-				Ext.Msg.alert('Error', 'Debes rellenar al menos tres elementos de la lista.');
+				eXe.app.alert(_i("Add at least 3 elements."));
 				return false;
 			}
 			html += '<ul class="exe-sortableList">';
 			html += options;
 			html += '</ul>';
-			if (iDevice_sortableList.debugging) {
-				Ext.Msg.alert('Paso 3', 'Ahora guardamos en el TEXTAREA todos los datos introducidos. Luego enviamos el formulario como se ha hecho siempre.',function(){
-					$("textarea.mceEditor").val(html);
-					eval(onclick);
-				});
-			} else {
-				$("textarea.mceEditor").val(html);
-				eval(onclick);
-			}
+            $("textarea.mceEditor").val(html);
+            eval(onclick);
 		}
 		
 	}
 }
 $(function(){
-    if ($exeAuthoring.isEditing("SortableLists")) iDevice_sortableList.init();
+    if ($exeAuthoring.isEditing("SortableLists")) $exeDevice.init();
 });
