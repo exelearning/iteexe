@@ -41,7 +41,7 @@ var $exe = {
             }
         }
         $exe.hint.init();
-        $exe.setIframesProtocol();
+        $exe.setIframesProperties();
         $exe.hasTooltips();
         $exe.math.init();
         if (typeof($.prettyPhoto) != 'undefined') $("a[rel^='lightbox']").prettyPhoto({
@@ -425,15 +425,23 @@ var $exe = {
         }
     },
 	
-    // Add "http" to the IFRAMES without protocol in local pages
-	setIframesProtocol: function() {
-        var e = window.location.protocol;
-        var t = false;
-        if (e != "http" && e != "https") t = true;
-        $("IFRAME").each(function() {
-            var e = $(this).attr("src");
-            if (t && e.indexOf("//") == 0) $(this).attr("src", "http:" + e)
-        })
+    // Add "http" to the IFRAMES without protocol in local pages and create a hidden link for the print version
+	setIframesProperties: function() {
+		// setTimeout is provisional. We use it because some Styles were already adding the "external-iframe" class.
+		setTimeout(function(){
+			var p = window.location.protocol;
+			var t = false;
+			if (p != "http" && p != "https") t = true;
+			$("IFRAME").each(function() {
+				var i = $(this);
+				var s = i.attr("src");
+				if (t && s.indexOf("//") == 0) $(this).attr("src", "http:" + s);
+				s = i.attr("src");
+				if (!i.hasClass("external-iframe") && s.indexOf("http")==0) {
+					i.addClass("external-iframe").before("<span class='external-iframe-src' style='display:none'><a href='"+s+"'>"+s+"</a></span>");
+				}
+			});			
+		}, 1000);
     },
 	
     // Load a JavaScript or CSS file (in HEAD)

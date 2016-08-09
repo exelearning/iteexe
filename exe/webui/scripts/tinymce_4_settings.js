@@ -1,13 +1,3 @@
-// To do:
-    // exemath
-    // Insert template (check bubble title + i18n)
-    // i18n?
-    // Attribution (JR's ideas)
-// Add to pybabel.conf
-	// all.js instead of en.js and en_dlg.js
-	// plugin.min.js
-	// tinymce_4_settings.js (notice that the files in \exe\webui\scripts\tinymce_templates\lang\ are no longer used)
-
 _ = parent._;
 
 var $exeTinyMCE = {

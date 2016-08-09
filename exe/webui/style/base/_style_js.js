@@ -29,15 +29,6 @@ var myTheme = {
 			myTheme.setNavHeight();
 		});
 	},
-	getIframesURL : function(){
-		$("IFRAME").each(function(){
-			var s = this.src;
-			var d = window.location.protocol+"://"
-			if (s.indexOf(d)!=0) {
-				$(this).addClass("external-iframe").before("<span class='external-iframe-src' style='display:none'><a href='"+this.src+"'>"+this.src+"</a></span>");
-			}
-		});
-	},
 	isMobile : function(){
 		try {
 			document.createEvent("TouchEvent");
@@ -169,7 +160,6 @@ $(function(){
 	if (document.body.className=='exe-web-site js') {
 		myTheme.init();
 	}
-	myTheme.getIframesURL();
 	myTheme.getCustomIcons();
 });
 
