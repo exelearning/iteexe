@@ -29,10 +29,65 @@ var $exeSortableLists = {
 			<style type="text/css">\
 				.exe-sortableList-options{margin:0;padding:0;list-style:none}\
 				.exe-sortableList-options li{background:#FFF;color:#333;padding:.5em 65px .5em 10px;margin:0 0 .5em 0!important;border:1px solid #CCC;border-radius:4px;;list-style-image:none!important}\
+				.exe-sortableList .first .up,.exe-sortableList-options .last .down{visibility:hidden}\
+				.exe-sortableList li{position:relative}\
+				.exe-sortableList li a{display:block;width:21px;height:21px;background:url('+$exeSortableLists.getPath()+'sortable-lists.png) no-repeat 0 0;position:absolute;right:33px;top:6px}\
+				.exe-sortableList li a:hover,.exe-sortableList li a:focus{background-position:0 -21px}\
+				.exe-sortableList li .down{background-position:-21px 0;right:6px}\
+				.exe-sortableList li .down:hover{background-position:-21px -21px}\
 			</style>\
 			';
 			$("HEAD").append(style)
 		}
+	},
+	getPath : function(){
+		var path = "";
+		if (typeof($exeAuthoring)!= 'undefined') path = '/scripts/idevices/sortable-lists/export/files/';
+		return path;
+	},
+	getLinksHTML : function(i,listOrder){
+		return '<span> <a href="#" class="up" onclick="$exeSortableLists.sortList(this,'+i+','+(i-1)+',\''+listOrder+'\');return false" title="Subir ('+(i+1)+' &rarr; '+i+')"><span class="sr-av">Subir</span></a> <a href="#" class="down" onclick="$exeSortableLists.sortList(this,'+i+','+(i+1)+',\''+listOrder+'\');return false" title="Bajar ('+(i+1)+' &rarr; '+(i+2)+')"><span class="sr-av">Bajar</span></a></span>';
+	},
+	getListLinks : function(listOrder) {
+		var ul = $("#exe-sortableList-"+listOrder);
+		var lis = $("li",ul);
+		$("SPAN",ul).remove();
+		lis.each(function(i){
+			this.className = "";
+			if (i==0) this.className = "first";
+			if ((i+1)==lis.length) this.className = "last";
+			this.innerHTML += $exeSortableLists.getLinksHTML(i,listOrder);
+		});
+	},
+	sortList : function(e,a,b,listOrder){ // LI - FROM - TO
+		var list = $("#exe-sortableList-"+listOrder);
+		list.sortable("destroy");
+		var lis = $("LI",list);
+		if (b<0 || b>(lis.length-1)) return false;
+		var newList = [];
+		var li, prev, current, next;
+		for (var i=0;i<lis.length;i++) {
+			li = lis[i].innerHTML.split("<span>")[0].split("<SPAN>")[0];
+			newList.push(li);
+			if (i==(a-1)) prev = li;
+			else if (i==a) current = li;
+			else if (i==(a+1)) next = li;
+		}
+		newList[b] = current;
+		if (b<a) { // Up
+			newList[a] = prev;
+		} else { // Down
+			newList[a] = next;
+		}
+		list.html($exeSortableLists.getULhtml(newList,listOrder)).sortable();
+	},	
+	getULhtml : function(lis,listOrder){
+		html = '';
+		for (var i=0;i<lis.length;i++) {
+			html += '<li>'+lis[i]+'</li>';
+		}
+		$("#exe-sortableList-"+listOrder).html(html).sortable();
+		$exeSortableLists.getListLinks(listOrder);
 	},
 	getListHTML : function(activity,lis,list,listOrder) {
 		var html = '<ul class="exe-sortableList-options" id="exe-sortableList-'+listOrder+'">';
@@ -42,9 +97,12 @@ var $exeSortableLists = {
 		html += "</ul>";
 		html += '<p><input type="button" class="feedbackbutton" value="'+$("P",activity).eq(1).text()+'" onclick="$exeSortableLists.check(this,'+listOrder+')" /></p>';
 		html += '<div id="exe-sortableList-'+listOrder+'-feedback"></div>';
-		html = $(html);
+		// html = $(html);
 		$(list).hide().attr("id","exe-sortableListResults-"+listOrder).before(html);
-		html.sortable();
+		$("#exe-sortableList-"+listOrder).sortable().bind('sortupdate', function(e, ui) {
+			$exeSortableLists.getListLinks(listOrder);
+		});			
+		$exeSortableLists.getListLinks(listOrder);
 	},
 	check : function(e,listOrder){
 		var activity = $(e).parents(".exe-sortableList");
@@ -53,7 +111,8 @@ var $exeSortableLists = {
 		var rightAnswers = $("#exe-sortableListResults-"+listOrder);
 		var rightAnswersLis = $("li",rightAnswers);
 		$("LI",userList).each(function(i){
-			if ($(this).html() != rightAnswersLis.eq(i).html()) right = false;
+			var currentText = $(this).html().split("<span>")[0].split("<SPAN>")[0];
+			if (currentText != rightAnswersLis.eq(i).html()) right = false;
 		});
 		var feedback = $('#exe-sortableList-'+listOrder+'-feedback');
 		if (right) feedback.html("<p>"+$(".exe-sortableList-rightText",activity).text()+"</p>");
