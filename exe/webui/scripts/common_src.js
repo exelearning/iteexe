@@ -437,7 +437,7 @@ var $exe = {
 				var s = i.attr("src");
 				if (t && s.indexOf("//") == 0) $(this).attr("src", "http:" + s);
 				s = i.attr("src");
-				if (!i.hasClass("external-iframe")) {
+				if (!i.hasClass("external-iframe") && s.indexOf("http")==0) {
 					i.addClass("external-iframe").before("<span class='external-iframe-src' style='display:none'><a href='"+s+"'>"+s+"</a></span>");
 				}
 			});			
