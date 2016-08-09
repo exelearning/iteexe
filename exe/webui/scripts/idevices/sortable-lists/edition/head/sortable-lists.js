@@ -86,6 +86,11 @@ var $exeDevice = {
 		html += '</div>';
 		return html;
 	},
+	removeTags : function(str) {
+		var wrapper = $("<div></div>");
+		wrapper.html(str);
+		return wrapper.text();
+	},
 	setSavingOptions : function(){
 		var myLink = $("IMG.submit").eq(0).parent();
 		var onclick = myLink.attr("onclick");
@@ -99,7 +104,7 @@ var $exeDevice = {
 					eXe.app.alert(_i("Please write the instructions."));
 					return false;
 				}
-				html += '<p class="exe-sortableList-instructions">'+instructions+'</p>';
+				html += '<p class="exe-sortableList-instructions">'+$exeDevice.removeTags(instructions)+'</p>';
 				
 				// Get the elements to sort
 				var options = "";
@@ -120,7 +125,7 @@ var $exeDevice = {
 				html += options;
 				html += '</ul>';
 				
-				html += '<div class="display:none">';
+				html += '<div style="display:none">';
 				
 					// Button text
 					var buttonText = $("#sortableListButtonText").val();
@@ -128,7 +133,7 @@ var $exeDevice = {
 						eXe.app.alert(_i("Please write the button text."));
 						return false;
 					}					
-					html += '<p class="exe-sortableList-buttonText">'+buttonText+'</p>';
+					html += '<p class="exe-sortableList-buttonText">'+$exeDevice.removeTags(buttonText)+'</p>';
 					
 					// Text when right
 					var rightText = $("#sortableListRightText").val();
@@ -136,7 +141,7 @@ var $exeDevice = {
 						eXe.app.alert(_i("Please write the text to show when right."));
 						return false;
 					}					
-					html += '<p class="exe-sortableList-rightText">'+rightText+'</p>';
+					html += '<p class="exe-sortableList-rightText">'+$exeDevice.removeTags(rightText)+'</p>';
 
 					// Text when wrong
 					var wrongText = $("#sortableListWrongText").val();
@@ -144,7 +149,7 @@ var $exeDevice = {
 						eXe.app.alert(_i("Please write the text to show when wrong."));
 						return false;
 					}					
-					html += '<p class="exe-sortableList-wrongText">'+wrongText+'</p>';					
+					html += '<p class="exe-sortableList-wrongText">'+$exeDevice.removeTags(wrongText)+'</p>';					
 				
 				html += '</div>';
 			
