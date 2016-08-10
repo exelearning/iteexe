@@ -25,28 +25,10 @@ var $exeSortableLists = {
 					$exeSortableLists.getListHTML(activity,lis,this,i);
 				}
 			);
-			var style = '\
-			<style type="text/css">\
-				.exe-sortableList-options{margin:0;padding:0;list-style:none}\
-				.exe-sortableList-options li{background:#FFF;color:#333;padding:.5em 65px .5em 10px;margin:0 0 .5em 0!important;border:1px solid #CCC;border-radius:4px;;list-style-image:none!important}\
-				.exe-sortableList .first .up,.exe-sortableList-options .last .down{visibility:hidden}\
-				.exe-sortableList li{position:relative}\
-				.exe-sortableList li a{display:block;width:21px;height:21px;background:url('+$exeSortableLists.getPath()+'sortable-lists.png) no-repeat 0 0;position:absolute;right:33px;top:6px}\
-				.exe-sortableList li a:hover,.exe-sortableList li a:focus{background-position:0 -21px}\
-				.exe-sortableList li .down{background-position:-21px 0;right:6px}\
-				.exe-sortableList li .down:hover{background-position:-21px -21px}\
-			</style>\
-			';
-			$("HEAD").append(style)
 		}
 	},
-	getPath : function(){
-		var path = "";
-		if (typeof($exeAuthoring)!= 'undefined') path = '/scripts/idevices/sortable-lists/export/files/';
-		return path;
-	},
 	getLinksHTML : function(i,listOrder){
-		return '<span> <a href="#" class="up" onclick="$exeSortableLists.sortList(this,'+i+','+(i-1)+',\''+listOrder+'\');return false" title="Subir ('+(i+1)+' &rarr; '+i+')"><span class="sr-av">Subir</span></a> <a href="#" class="down" onclick="$exeSortableLists.sortList(this,'+i+','+(i+1)+',\''+listOrder+'\');return false" title="Bajar ('+(i+1)+' &rarr; '+(i+2)+')"><span class="sr-av">Bajar</span></a></span>';
+		return '<span> <a href="#" class="up" onclick="$exeSortableLists.sortList(this,'+i+','+(i-1)+',\''+listOrder+'\');return false" title="'+(i+1)+' &rarr; '+i+'"><span class="sr-av">'+(i+1)+' &rarr; '+i+'</span></a> <a href="#" class="down" onclick="$exeSortableLists.sortList(this,'+i+','+(i+1)+',\''+listOrder+'\');return false" title="'+(i+1)+' &rarr; '+(i+2)+'"><span class="sr-av">'+(i+1)+' &rarr; '+(i+2)+'</span></a></span>';
 	},
 	getListLinks : function(listOrder) {
 		var ul = $("#exe-sortableList-"+listOrder);
@@ -115,8 +97,8 @@ var $exeSortableLists = {
 			if (currentText != rightAnswersLis.eq(i).html()) right = false;
 		});
 		var feedback = $('#exe-sortableList-'+listOrder+'-feedback');
-		if (right) feedback.html("<p>"+$(".exe-sortableList-rightText",activity).text()+"</p>");
-		else feedback.html("<p>"+$(".exe-sortableList-wrongText",activity).text()+"</p><ul>"+rightAnswers.html()+"</ul>");
+		if (right) feedback.html("<p>"+$(".exe-sortableList-rightText",activity).text()+"</p>").hide().attr("class","feedback feedback-right").fadeIn();
+		else feedback.html("<p>"+$(".exe-sortableList-wrongText",activity).text()+"</p><ul>"+rightAnswers.html()+"</ul>").hide().attr("class","feedback feedback-wrong").fadeIn();
 	},
 	randomizeArray : function(o){
 		var original = [];

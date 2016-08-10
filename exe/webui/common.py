@@ -67,15 +67,11 @@ def docType():
     else:
         return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
 
-def exportJavaScriptIdevicesScripts(scriptsDir,outputDir):
-    scripts = [
-        'sortable-lists/export/head/sortable-lists.js'
-    ]  
-    for script in scripts:
-        scriptName = script.split("/");
-        scriptName = scriptName[(len(scriptName)-1)]
-        file = (scriptsDir/'idevices/'+script)
-        file.copyfile(outputDir/scriptName)    
+def exportJavaScriptIdevicesFiles(scriptsDir,outputDir):
+    iDeviceScripts = (scriptsDir/'idevices/sortable-lists/export/head')
+    iDeviceScripts.copyfiles(outputDir)
+    iDeviceFiles = (scriptsDir/'idevices/sortable-lists/export/files')
+    iDeviceFiles.copyfiles(outputDir)
         
 def printJavaScriptIdevicesScripts(mode):
     # Provisional function (see authoringpage.py)    
@@ -84,19 +80,28 @@ def printJavaScriptIdevicesScripts(mode):
         # Edition SCRIPTS:
         scripts = [
             'sortable-lists/export/head/sortable-lists.js',
-            'sortable-lists/edition/head/sortable-lists.js'
+            'sortable-lists/export/head/sortable-lists.css',
+            'sortable-lists/edition/head/sortable-lists.js',
+            'sortable-lists/edition/head/sortable-lists.css'
         ]    
         for script in scripts:
-            html += '<script type="text/javascript" src="/scripts/idevices/'+script+'"></script>\n'
+            if script.endswith('.js'):
+                html += '<script type="text/javascript" src="/scripts/idevices/'+script+'"></script>\n'
+            if script.endswith('.css'):
+                html += '<link rel="stylesheet" type="text/css" href="/scripts/idevices/'+script+'" />\n'
     else:
         # Export SCRIPTS: 
         scripts = [
-            'sortable-lists/export/head/sortable-lists.js'
+            'sortable-lists/export/head/sortable-lists.js',
+            'sortable-lists/export/head/sortable-lists.css'
         ]
         for script in scripts:
             scriptName = script.split("/");
             scriptName = scriptName[(len(scriptName)-1)]
-            html += '<script type="text/javascript" src="'+scriptName+'"></script>\n'
+            if scriptName.endswith('.js'):
+                html += '<script type="text/javascript" src="'+scriptName+'"></script>\n'
+            if scriptName.endswith('.css'):
+                html += '<link rel="stylesheet" type="text/css" href="'+scriptName+'" />\n'
     
     return html
         
