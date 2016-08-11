@@ -34,14 +34,13 @@ var $exeTinyMCE = {
 	init: function(mode,criteria,hide){
 		
 		var h = 300;
-		if (mode=="exact") h = 50;
+		if (mode=="multiple") h = 50;
 		var w = 882;
 		if (typeof($exeTinyMCEToggler.documentWidth)=='undefined' || (typeof($exeTinyMCEToggler.documentWidth)!='undefined' && $exeTinyMCEToggler.documentWidth<900)) w = '';
 		
 		tinymce.init({
 			language: this.language,
-			mode: mode,
-			elements: criteria,
+			selector: criteria,
 			width: w,
 			height: h,
 			convert_urls: false,
@@ -117,7 +116,7 @@ var $exeTinyMCE = {
 				this.buttons3
 			],			
 			init_instance_callback: function(ed) {
-				if (mode=="exact") {
+				if (mode=="multiple") {
 					$exeTinyMCEToggler.init(ed.id,hide);
 				}
 			},
@@ -281,7 +280,7 @@ var $exeTinyMCEToggler = {
 	startEditor: function(id,hide){
 		$("#"+id+"-viewer").remove();
 		$("#"+id).show();
-		$exeTinyMCE.init("exact",id,hide);
+		$exeTinyMCE.init("multiple","#"+id,hide);
 	},
 	
 	addLinkAndToggle: function(id,lab,l,hide) {
@@ -333,18 +332,10 @@ var $exeTinyMCEToggler = {
 }
 
 $(function(){
-	var eds = $("textarea.mceEditor");
-	if (eds.length==0) return false;
-	if (eds.length==1) {
-		$exeTinyMCE.init("specific_textareas","mceEditor");
-		// Use the following code to add the Hide/Show link even when there's just one editor
-		/*
-		var ed = eds.eq(0);
-		var id = ed.attr("name");
-		ed.attr("id",id);
-		// Start the editor with the Hide/Show link, but don't hide it (false)
-		$exeTinyMCEToggler.startEditor(id,false);
-		*/
+	var selector = ".mceEditor";
+	var eds = $("textarea"+selector);
+	if (eds.length>0) {
+		if (eds.length==1) $exeTinyMCE.init("single",selector);
+		else $exeTinyMCEToggler.setup(eds);
 	}
-	else $exeTinyMCEToggler.setup(eds);
 });
