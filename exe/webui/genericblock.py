@@ -71,6 +71,12 @@ class GenericBlock(Block):
         html += u"</div>\n"
         # PROVISIONAL CODE
         if "IdeviceSortableLists" in self.idevice.klass:
+            scripts = [
+                'sortable-lists/edition/sortable-lists.js'
+            ]    
+            for script in scripts:
+                if script.endswith('.js'):
+                    html += '<script type="text/javascript" src="/scripts/idevices/'+script+'"></script>\n'       
             html += '<script type="text/javascript">$exeAuthoring.iDevice.init()</script>\n'
         # / PROVISIONAL CODE
         return html

@@ -68,21 +68,18 @@ def docType():
         return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
 
 def exportJavaScriptIdevicesFiles(scriptsDir,outputDir):
-    iDeviceScripts = (scriptsDir/'idevices/sortable-lists/export/head')
-    iDeviceScripts.copyfiles(outputDir)
-    iDeviceFiles = (scriptsDir/'idevices/sortable-lists/export/files')
+    iDeviceFiles = (scriptsDir/'idevices/sortable-lists/export')
     iDeviceFiles.copyfiles(outputDir)
         
 def printJavaScriptIdevicesScripts(mode):
-    # Provisional function (see authoringpage.py)    
+    # PROVISIONAL CODE
     html = ''
     if mode == 'edition':
         # Edition SCRIPTS:
         scripts = [
-            'sortable-lists/export/head/sortable-lists.js',
-            'sortable-lists/export/head/sortable-lists.css',
-            'sortable-lists/edition/head/sortable-lists.js',
-            'sortable-lists/edition/head/sortable-lists.css'
+            'sortable-lists/export/sortable-lists.js',
+            'sortable-lists/export/sortable-lists.css',
+            'sortable-lists/edition/sortable-lists.css'
         ]    
         for script in scripts:
             if script.endswith('.js'):
@@ -92,8 +89,8 @@ def printJavaScriptIdevicesScripts(mode):
     else:
         # Export SCRIPTS: 
         scripts = [
-            'sortable-lists/export/head/sortable-lists.js',
-            'sortable-lists/export/head/sortable-lists.css'
+            'sortable-lists/export/sortable-lists.js',
+            'sortable-lists/export/sortable-lists.css'
         ]
         for script in scripts:
             scriptName = script.split("/");
@@ -104,6 +101,7 @@ def printJavaScriptIdevicesScripts(mode):
                 html += '<link rel="stylesheet" type="text/css" href="'+scriptName+'" />\n'
     
     return html
+    # PROVISIONAL CODE
         
 def getLicenseMetadata(license):
     if license == "":
