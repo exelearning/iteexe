@@ -8,9 +8,6 @@
  */
 var $exeDevice = {
 	
-	// iDevice className (unique)
-	cssClass : "SortableLists",
-	
 	// i18n
 	i18n : {
 		
@@ -199,11 +196,3 @@ var $exeDevice = {
 	}
 
 }
-
-// Init the editor
-$exeAuthoring.iDevice.init("SortableLists");
-$(function() {
-	if ($exeAuthoring.isEditing("SortableLists")) {
-		$exeDevice.init();
-	}
-});

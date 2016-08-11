@@ -66,9 +66,13 @@ class GenericBlock(Block):
         html += common.textInput("title"+self.id, self.idevice.title) 
         html += u"</div>\n"
         for element in self.elements:
-            html += element.renderEdit() + "<br/>"
+            html += element.renderEdit() + "<br />"
         html += self.renderEditButtons()
         html += u"</div>\n"
+        # PROVISIONAL CODE
+        if "IdeviceSortableLists" in self.idevice.klass:
+            html += '<script type="text/javascript">$exeAuthoring.iDevice.init()</script>\n'
+        # / PROVISIONAL CODE
         return html
 
 
