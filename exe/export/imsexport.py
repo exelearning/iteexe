@@ -39,9 +39,10 @@ from exe.engine.version            import release
 from exe.export.pages              import Page, uniquifyNames
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
 from exe                      	   import globals as G
-from exe.engine.persist import encodeObject
-from exe.engine.persistxml import encodeObjectToXML
-from exe.engine.lom import lomsubs
+from exe.engine.persist            import encodeObject
+from exe.engine.persistxml         import encodeObjectToXML
+from exe.engine.lom                import lomsubs
+from slimit                        import minify
 
 log = logging.getLogger(__name__)
 
@@ -501,8 +502,10 @@ class IMSExport(object):
             jsFile = (self.scriptsDir/'exe_jquery.js')
             jsFile.copyfile(outputDir/'exe_jquery.js')                
         
-        jsFile = (self.scriptsDir/'common.js')
-        jsFile.copyfile(outputDir/'common.js')
+        commonFile = open(self.scriptsDir/'common_src.js', 'r')
+        commonOutputFile = open(outputDir/'common.js', 'w')
+        commonOutputFile.write(minify(commonFile.read(), mangle=True, mangle_toplevel=True))
+        
         dT = common.getExportDocType()
         if dT == "HTML5":
             jsFile = (self.scriptsDir/'exe_html5.js')

@@ -871,8 +871,11 @@ Ext.define('eXe.controller.Toolbar', {
 		            modal: true,
 		            scope: this,
 		            callback: function(fp) {
-		                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+		                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
+		                	// Show exporting message
+		                	Ext.Msg.wait(_('Exporting package...'));
 		                    nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+		                }
 		            }
 		        });
 	            fp.show();
@@ -888,8 +891,11 @@ Ext.define('eXe.controller.Toolbar', {
                     modal: true,
                     scope: this,
                     callback: function(fp) {
-                        if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+                        if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
+                        	// Show exporting message
+		                	Ext.Msg.wait(_('Exporting package...'));
                             nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+                        }
                     }
                 });
 		        fp.appendFilters([
@@ -905,8 +911,11 @@ Ext.define('eXe.controller.Toolbar', {
                 modal: true,
                 scope: this,
                 callback: function(fp) {
-                    if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+                    if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
+                    	// Show exporting message
+	                	Ext.Msg.wait(_('Exporting package...'));
                         nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+                    }
                 }
             });
 	        fp.appendFilters([
@@ -922,8 +931,11 @@ Ext.define('eXe.controller.Toolbar', {
                     modal: true,
                     scope: this,
                     callback: function(fp) {
-                        if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
-                            nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+                        if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
+                        	// Show exporting message
+    	                	Ext.Msg.wait(_('Exporting package...'));
+    	                	nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+                        }
                     }
                 });
                 fp.appendFilters([
@@ -951,8 +963,11 @@ Ext.define('eXe.controller.Toolbar', {
 	            modal: true,
 	            scope: this,
 	            callback: function(fp) {
-	                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
-	                    nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+	                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
+	                	// Show exporting message
+	                	Ext.Msg.wait(_('Exporting package...'));
+	                	nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+	                }
 	            }
 	        });
 	        fp.appendFilters([

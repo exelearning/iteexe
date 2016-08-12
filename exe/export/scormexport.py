@@ -28,6 +28,7 @@ import copy
 import re
 import time
 import os
+import imp
 import StringIO
 from cgi                           import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED
@@ -42,7 +43,7 @@ from exe.engine.persistxml         import encodeObjectToXML
 from exe                           import globals as G
 from exe.export.scormpage          import ScormPage
 from exe.engine.lom                import lomsubs
-import imp
+from slimit                        import minify
 
 log = logging.getLogger(__name__)
 
@@ -528,14 +529,16 @@ class ScormExport(object):
             jsFile = (self.scriptsDir/'exe_jquery.js')
             jsFile.copyfile(outputDir/'exe_jquery.js')
             
-        if self.scormType == "commoncartridge":
-            jsFile = (self.scriptsDir/'common.js')
-            jsFile.copyfile(outputDir/'common.js')
+        if self.scormType == "commoncartridge" or self.scormType == "scorm2004" or self.scormType == "scorm1.2":
+            commonFile = open(self.scriptsDir/'common_src.js', 'r')
+            commonOutputFile = open(outputDir/'common.js', 'w')
+            commonOutputFile.write(minify(commonFile.read(), mangle=True, mangle_toplevel=True))
+            commonOutputFile.close()
 
         if self.scormType == "scorm2004" or self.scormType == "scorm1.2":
             self.scriptsDir.copylist(('SCORM_API_wrapper.js',
-                                      'SCOFunctions.js', 
-                                      'common.js'), outputDir)     
+                                      'SCOFunctions.js'), outputDir)
+            
         # about SCHEMAS:
         schemasDir = ""
         if self.scormType == "scorm1.2":

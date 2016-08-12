@@ -35,6 +35,7 @@ from exe.export.pages              import Page, uniquifyNames
 from exe                      	   import globals as G
 from BeautifulSoup                 import BeautifulSoup
 from htmlentitydefs                import name2codepoint
+from slimit                        import minify
 
 log = logging.getLogger(__name__)
 
@@ -529,7 +530,9 @@ class Epub3Export(object):
         package.resourceDir.copyfiles(contentPages)
 
         self.styleDir.copylist(styleFiles, contentPages)
-        self.scriptsDir.copylist(('common.js',), contentPages)
+        commonFile = open(self.scriptsDir/'common_src.js', 'r')
+        commonOutputFile = open(contentPages/'common.js', 'w')
+        commonOutputFile.write(minify(commonFile.read(), mangle=True, mangle_toplevel=True))
 
         # copy players for media idevices.
         hasFlowplayer = False

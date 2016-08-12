@@ -21,13 +21,14 @@
 SinglePageExport will export a package as a website of HTML pages
 """
 
+import os
 from exe.engine.path          import Path
 from exe.export.singlepage    import SinglePage
 from exe.webui                import common
 from exe                      import globals as G
-import os
-from exe.engine.persist import encodeObject
-from exe.engine.persistxml import encodeObjectToXML
+from exe.engine.persist       import encodeObject
+from exe.engine.persistxml    import encodeObjectToXML
+from slimit                   import minify
 
 import logging
 log = logging.getLogger(__name__)
@@ -117,9 +118,12 @@ class SinglePageExport(object):
         else:
             jsFile = (self.scriptsDir/'exe_jquery.js')
             jsFile.copyfile(self.outputDir/'exe_jquery.js')
-            
-        jsFile = (self.scriptsDir/'common.js')
-        jsFile.copyfile(self.outputDir/'common.js')
+        
+        # Minify common.js file
+        commonFile = open(self.scriptsDir/'common_src.js', 'r')
+        commonOutputFile = open(self.outputDir/'common.js', 'w')
+        commonOutputFile.write(minify(commonFile.read(), mangle=True, mangle_toplevel=True))
+        
         dT = common.getExportDocType()
         if dT == "HTML5":
             jsFile = (self.scriptsDir/'exe_html5.js')

@@ -25,6 +25,7 @@ WebsiteExport will export a package as a website of HTML pages
 import logging
 import re
 import imp
+import os
 from shutil                   import rmtree
 from exe.engine.path          import Path, TempDirPath
 from exe.export.pages         import uniquifyNames
@@ -32,9 +33,9 @@ from exe.export.websitepage   import WebsitePage
 from zipfile                  import ZipFile, ZIP_DEFLATED
 from exe.webui                import common
 from exe                      import globals as G
-import os
-from exe.engine.persist import encodeObject
-from exe.engine.persistxml import encodeObjectToXML
+from exe.engine.persist       import encodeObject
+from exe.engine.persistxml    import encodeObjectToXML
+from slimit                   import minify
 
 log = logging.getLogger(__name__)
 
@@ -202,8 +203,11 @@ class WebsiteExport(object):
             jsFile = (self.scriptsDir/'exe_jquery.js')
             jsFile.copyfile(outputDir/'exe_jquery.js')
             
-        jsFile = (self.scriptsDir/'common.js')
-        jsFile.copyfile(outputDir/'common.js')
+        # Minify common.js file
+        commonFile = open(self.scriptsDir/'common_src.js', 'r')
+        commonOutputFile = open(outputDir/'common.js', 'w')
+        commonOutputFile.write(minify(commonFile.read(), mangle=True, mangle_toplevel=True))
+        
         #dT = common.getExportDocType()
         dT=common.getExportDocType();
         if dT == "HTML5":
