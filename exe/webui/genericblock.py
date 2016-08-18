@@ -70,7 +70,7 @@ class GenericBlock(Block):
         html += self.renderEditButtons()
         html += u"</div>\n"
         # PROVISIONAL CODE
-        if "IdeviceScrambledList" in self.idevice.klass:
+        if "ScrambledList" in self.idevice.klass:
             scripts = [
                 'scrambled-list/edition/scrambled-list.js'
             ]    

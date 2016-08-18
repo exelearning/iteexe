@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <idevice>
     <name>Scrambled List</name>
+    <css-class>ScrambledList</css-class>
     <!--
     <version>1.0</version>
     <author>Ignacio Gros for eXeLearning.net</author>

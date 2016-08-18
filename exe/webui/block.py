@@ -221,9 +221,11 @@ class Block(Renderable):
         
         html = '<span class="exe-editButtons">'
         
+        html += '<span id="exe-submitButton">'
         html += common.submitImage(u"done", self.id, 
                                    u"/images/stock-apply.png", 
                                    _(u"Done"),1)
+        html += '</span>'
 
         if undo:
             html += common.confirmThenSubmitImage(

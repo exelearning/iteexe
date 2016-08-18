@@ -812,9 +812,9 @@ var $exeAuthoring = {
             }
             
             // Check if the submit image exists (it will unless renderEditButtons changes)
-            var myLink = $("IMG.submit").eq(0).parent();
+            var myLink = $("#exe-submitButton a").eq(0);
             if (myLink.length!=1) {
-                eXe.app.alert(_("Report an Issue")+": $exeAuthoring.iDevice.init (IMG)");
+                eXe.app.alert(_("Report an Issue")+": $exeAuthoring.iDevice.init (#exe-submitButton)");
                 return;
             }
 
