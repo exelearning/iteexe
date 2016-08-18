@@ -794,6 +794,11 @@ var $exeAuthoring = {
         }
 
     },
+    // Some iDevices (like Cloze Activity) have a button to select (underline) words
+    toggleWordInEditor : function(id){
+        if (exe_editor_version==3) tinyMCE.execInstanceCommand(id, 'Underline', false);
+        else tinyMCE.activeEditor.getDoc().execCommand('Underline', false, false);
+    },
     changeFlowPlayerPathInIE : function(){
         var objs = document.getElementsByTagName("OBJECT");
         var i = objs.length;

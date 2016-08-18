@@ -172,8 +172,8 @@ class ListaElement(ElementWithResources):
             # Render our toolbar
             
             u'  <input type="button" value="%s" ' % _("Hide/Show Word"),
-            u' onclick="tinyMCE.execInstanceCommand(\'%s\',\'Underline\', false);" />' % self.editorId,
-            u'</br></br>',
+            u' onclick="$exeAuthoring.toggleWordInEditor(\'%s\');" />' % self.editorId,
+            u'<br /><br />',
           
             common.formField('textInput',
                             '',
