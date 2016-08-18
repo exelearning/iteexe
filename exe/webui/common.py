@@ -68,7 +68,7 @@ def docType():
         return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
 
 def exportJavaScriptIdevicesFiles(scriptsDir,outputDir):
-    iDeviceFiles = (scriptsDir/'idevices/sortable-lists/export')
+    iDeviceFiles = (scriptsDir/'idevices/scrambled-list/export')
     iDeviceFiles.copyfiles(outputDir)
         
 def printJavaScriptIdevicesScripts(mode):
@@ -77,9 +77,9 @@ def printJavaScriptIdevicesScripts(mode):
     if mode == 'edition':
         # Edition SCRIPTS:
         scripts = [
-            'sortable-lists/export/sortable-lists.js',
-            'sortable-lists/export/sortable-lists.css',
-            'sortable-lists/edition/sortable-lists.css'
+            'scrambled-list/export/scrambled-list.js',
+            'scrambled-list/export/scrambled-list.css',
+            'scrambled-list/edition/scrambled-list.css'
         ]    
         for script in scripts:
             if script.endswith('.js'):
@@ -89,8 +89,8 @@ def printJavaScriptIdevicesScripts(mode):
     else:
         # Export SCRIPTS: 
         scripts = [
-            'sortable-lists/export/sortable-lists.js',
-            'sortable-lists/export/sortable-lists.css'
+            'scrambled-list/export/scrambled-list.js',
+            'scrambled-list/export/scrambled-list.css'
         ]
         for script in scripts:
             scriptName = script.split("/");
