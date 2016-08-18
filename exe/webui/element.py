@@ -1361,7 +1361,7 @@ class ClozeElement(ElementWithResources):
             u'<tr>',
             u'<td>',
             u'  <input type="button" value="%s" ' % _("Hide/Show Word"),
-            u' onclick="tinyMCE.execInstanceCommand(\'%s\',\'Underline\', false);" />' % self.editorId,
+            u' onclick="$exeAuthoring.toggleWordInEditor(\'%s\');" />' % self.editorId,
             u'</td><td>',
             common.checkbox('strictMarking%s' % self.id,
                             self.field.strictMarking,
