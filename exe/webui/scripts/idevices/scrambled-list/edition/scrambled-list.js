@@ -54,10 +54,10 @@ var $exeDevice = {
 			<div id="sortableListForm">\
 				<p><label for="sortableListFormInstructions">'+_("Intructions:")+' </label><input type="text" class="sortableListTextOption" name="sortableListFormInstructions" id="sortableListFormInstructions" /></p>\
 				'+this.getListsFields()+'\
-				<p><label for="sortableListButtonText">'+_("Button text:")+' </label><input type="text" class="sortableListTextOption" name="sortableListButtonText" id="sortableListButtonText" /></p>\
-				<p><label for="sortableListRightText">'+_("Text to show if right answered:")+' </label><input type="text" class="sortableListTextOption" name="sortableListRightText" id="sortableListRightText" /></p>\
+				<p><label for="sortableListButtonText">'+_("Button text:")+' </label><input type="text" class="sortableListTextOption" name="sortableListButtonText" id="sortableListButtonText" onfocus="this.select()" /></p>\
+				<p><label for="sortableListRightText">'+_("Text to show if right answered:")+' </label><input type="text" class="sortableListTextOption" name="sortableListRightText" id="sortableListRightText" onfocus="this.select()" /></p>\
 				<p>\
-                <label for="sortableListWrongText">'+_("Text to show if wrongly answered:")+' </label><input type="text" class="sortableListTextOption" name="sortableListWrongText" id="sortableListWrongText" />\
+                <label for="sortableListWrongText">'+_("Text to show if wrongly answered:")+' </label><input type="text" class="sortableListTextOption" name="sortableListWrongText" id="sortableListWrongText" onfocus="this.select()" />\
                 <span id="sortableListWrongTextTip">'+_("The right answer will be shown after this text.")+'</span>\
                 </p>\
 			</div>\
@@ -72,32 +72,36 @@ var $exeDevice = {
 	// Load the saved values in the form fields
 	loadPreviousValues : function(field){
 		
-		var originalHTML = field.val();
-		if (originalHTML == '') return;
-		
-		field.after('<div id="sortableListValuesContainer">'+originalHTML+'</div>');
-		var container = $("#sortableListValuesContainer");
-		var paragraphs = $("P",container);
-		
 		// Default values
 		var instructions = "";
 		var buttonText = _("Check");
 		var rightText = _("Right!");
-		var wrongText = _("Sorry... The right answer is:");
+		var wrongText = _("Sorry... The right answer is:");		
 		
-		// Save values
-		if (paragraphs.length==4) {
-			instructions = paragraphs.eq(0).text();
-			buttonText = paragraphs.eq(1).text();
-			rightText = paragraphs.eq(2).text();
-			wrongText = paragraphs.eq(3).text();
+		var originalHTML = field.val();
+		if (originalHTML != '') {
+		
+			field.after('<div id="sortableListValuesContainer">'+originalHTML+'</div>');
+			var container = $("#sortableListValuesContainer");
+			var paragraphs = $("P",container);
+			
+			// Save values
+			if (paragraphs.length==4) {
+				instructions = paragraphs.eq(0).text();
+				buttonText = paragraphs.eq(1).text();
+				rightText = paragraphs.eq(2).text();
+				wrongText = paragraphs.eq(3).text();
+			}
+			
+			// Load the values
+			$("#sortableListFormInstructions").val(instructions);
+			$("LI",container).each(function(i){
+				$("#sortableListFormList"+i).val(this.innerHTML);
+			});
+			
 		}
 		
-		// Load the values
-		$("#sortableListFormInstructions").val(instructions);
-		$("LI",container).each(function(i){
-			$("#sortableListFormList"+i).val(this.innerHTML);
-		});
+		// These fields will have a default value (maybe not in the right language, but...)
 		$("#sortableListButtonText").val(buttonText);
 		$("#sortableListRightText").val(rightText);
 		$("#sortableListWrongText").val(wrongText);
