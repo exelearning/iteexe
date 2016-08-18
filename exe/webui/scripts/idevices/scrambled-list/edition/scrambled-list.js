@@ -40,7 +40,6 @@ var $exeDevice = {
 		window.onload = function(){
 			tinymce.activeEditor.remove();
 			$exeDevice.createForm();
-			alert(_("Yes"))
 		}
 		/* *************************
 		***** PROVISIONAL CODE *****
