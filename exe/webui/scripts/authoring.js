@@ -27,15 +27,6 @@
 // $exeAuthoring.countBase64 and $exeAuthoring.compareBase64 will not be used if exe_editor_version == 4
 var Ext = parent.Ext;
 var eXe = parent.eXe;
-function _i(str) {
-    if (typeof($exeDevice)!="undefined" && typeof($exeDevice.i18n)!="undefined") {
-        var lang = $("HTML").attr("lang");
-        if (typeof($exeDevice.i18n[lang])!="undefined") {
-            if ($exeDevice.i18n[lang][str]) return $exeDevice.i18n[lang][str];
-        }
-    }
-    return _(str);
-}
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
 	enableAnchors, httpsInNewWindow, gotoAnchor, preventEscKey, preventHistoryBack,
     loadKeymap, hideObjectTags];
@@ -838,7 +829,18 @@ var $exeAuthoring = {
                 }                
             }         
             
-            // Enable the iDevice
+            // Replace the _ function
+			_ = function(str){
+				if (typeof($exeDevice.i18n)!="undefined") {
+					var lang = $("HTML").attr("lang");
+					if (typeof($exeDevice.i18n[lang])!="undefined") {
+						if ($exeDevice.i18n[lang][str]) return $exeDevice.i18n[lang][str];
+					}
+				}
+				return top.translations[str] || str;
+			}
+			
+			// Enable the iDevice
             $exeDevice.init();
             
         }

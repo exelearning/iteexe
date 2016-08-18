@@ -40,6 +40,7 @@ var $exeDevice = {
 		window.onload = function(){
 			tinymce.activeEditor.remove();
 			$exeDevice.createForm();
+			alert(_("Yes"))
 		}
 		/* *************************
 		***** PROVISIONAL CODE *****
@@ -52,13 +53,13 @@ var $exeDevice = {
 		
 		var html = '\
 			<div id="sortableListForm">\
-				<p><label for="sortableListFormInstructions">'+_i("Intructions:")+' </label><input type="text" class="sortableListTextOption" name="sortableListFormInstructions" id="sortableListFormInstructions" /></p>\
+				<p><label for="sortableListFormInstructions">'+_("Intructions:")+' </label><input type="text" class="sortableListTextOption" name="sortableListFormInstructions" id="sortableListFormInstructions" /></p>\
 				'+this.getListsFields()+'\
-				<p><label for="sortableListButtonText">'+_i("Button text:")+' </label><input type="text" class="sortableListTextOption" name="sortableListButtonText" id="sortableListButtonText" /></p>\
-				<p><label for="sortableListRightText">'+_i("Text to show if right answered:")+' </label><input type="text" class="sortableListTextOption" name="sortableListRightText" id="sortableListRightText" /></p>\
+				<p><label for="sortableListButtonText">'+_("Button text:")+' </label><input type="text" class="sortableListTextOption" name="sortableListButtonText" id="sortableListButtonText" /></p>\
+				<p><label for="sortableListRightText">'+_("Text to show if right answered:")+' </label><input type="text" class="sortableListTextOption" name="sortableListRightText" id="sortableListRightText" /></p>\
 				<p>\
-                <label for="sortableListWrongText">'+_i("Text to show if wrongly answered:")+' </label><input type="text" class="sortableListTextOption" name="sortableListWrongText" id="sortableListWrongText" />\
-                <span id="sortableListWrongTextTip">'+_i("The right answer will be shown after this text.")+'</span>\
+                <label for="sortableListWrongText">'+_("Text to show if wrongly answered:")+' </label><input type="text" class="sortableListTextOption" name="sortableListWrongText" id="sortableListWrongText" />\
+                <span id="sortableListWrongTextTip">'+_("The right answer will be shown after this text.")+'</span>\
                 </p>\
 			</div>\
 		';
@@ -81,9 +82,9 @@ var $exeDevice = {
 		
 		// Default values
 		var instructions = "";
-		var buttonText = _i("Check");
-		var rightText = _i("Right!");
-		var wrongText = _i("Sorry... The right answer is:");
+		var buttonText = _("Check");
+		var rightText = _("Right!");
+		var wrongText = _("Sorry... The right answer is:");
 		
 		// Save values
 		if (paragraphs.length==4) {
@@ -108,7 +109,7 @@ var $exeDevice = {
 	getListsFields : function(){
 		
 		var html = '<div id="sortableListFormList">';
-		html += '<p><strong>'+_i("Write the elements in the right order:")+'</strong></p>';
+		html += '<p><strong>'+_("Write the elements in the right order:")+'</strong></p>';
 		html += '<ol>';
 		for (var i=0;i<9;i++) {
 			html += '<li><label for="sortableListFormList'+i+'" class="sr-av">'+i+'</label><input type="text" name="sortableListFormList'+i+'" id="sortableListFormList'+i+'" /></p>'
@@ -136,7 +137,7 @@ var $exeDevice = {
 			// Get the instructions
 			var instructions = $("#sortableListFormInstructions").val();
 			if (instructions=="") {
-				eXe.app.alert(_i("Please write the instructions."));
+				eXe.app.alert(_("Please write the instructions."));
 				return false;
 			}
 			html += '<p class="exe-sortableList-instructions">'+$exeDevice.removeTags(instructions)+'</p>';
@@ -153,7 +154,7 @@ var $exeDevice = {
 				}
 			}
 			if (counter<3) {
-				eXe.app.alert(_i("Add at least 3 elements."));
+				eXe.app.alert(_("Add at least 3 elements."));
 				return false;
 			}
 			html += '<ul class="exe-sortableList-list">';
@@ -165,7 +166,7 @@ var $exeDevice = {
 				// Button text
 				var buttonText = $("#sortableListButtonText").val();
 				if (buttonText=="") {
-					eXe.app.alert(_i("Please write the button text."));
+					eXe.app.alert(_("Please write the button text."));
 					return false;
 				}					
 				html += '<p class="exe-sortableList-buttonText">'+$exeDevice.removeTags(buttonText)+'</p>';
@@ -173,7 +174,7 @@ var $exeDevice = {
 				// Text when right
 				var rightText = $("#sortableListRightText").val();
 				if (rightText=="") {
-					eXe.app.alert(_i("Please write the text to show when right."));
+					eXe.app.alert(_("Please write the text to show when right."));
 					return false;
 				}					
 				html += '<p class="exe-sortableList-rightText">'+$exeDevice.removeTags(rightText)+'</p>';
@@ -181,7 +182,7 @@ var $exeDevice = {
 				// Text when wrong
 				var wrongText = $("#sortableListWrongText").val();
 				if (wrongText=="") {
-					eXe.app.alert(_i("Please write the text to show when wrong."));
+					eXe.app.alert(_("Please write the text to show when wrong."));
 					return false;
 				}					
 				html += '<p class="exe-sortableList-wrongText">'+$exeDevice.removeTags(wrongText)+'</p>';					
