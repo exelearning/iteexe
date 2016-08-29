@@ -69,16 +69,6 @@ class GenericBlock(Block):
             html += element.renderEdit() + "<br />"
         html += self.renderEditButtons()
         html += u"</div>\n"
-        # PROVISIONAL CODE
-        if "ScrambledList" in self.idevice.klass:
-            scripts = [
-                'scrambled-list/edition/scrambled-list.js'
-            ]    
-            for script in scripts:
-                if script.endswith('.js'):
-                    html += '<script type="text/javascript" src="/scripts/idevices/'+script+'"></script>\n'       
-            html += '<script type="text/javascript">$exeAuthoring.iDevice.init()</script>\n'
-        # / PROVISIONAL CODE
         return html
 
 

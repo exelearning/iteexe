@@ -71,21 +71,35 @@ def exportJavaScriptIdevicesFiles(scriptsDir,outputDir):
     iDeviceFiles = (scriptsDir/'idevices/scrambled-list/export')
     iDeviceFiles.copyfiles(outputDir)
         
-def printJavaScriptIdevicesScripts(mode):
+def printJavaScriptIdevicesScripts(mode,page):
     # PROVISIONAL CODE
     html = ''
     if mode == 'edition':
-        # Edition SCRIPTS:
+        # Required SCRIPTS (Export SCRIPTS)
         scripts = [
-            'scrambled-list/export/scrambled-list.js',
             'scrambled-list/export/scrambled-list.css',
-            'scrambled-list/edition/scrambled-list.css'
+            'scrambled-list/export/scrambled-list.js'
         ]    
         for script in scripts:
             if script.endswith('.js'):
                 html += '<script type="text/javascript" src="/scripts/idevices/'+script+'"></script>\n'
             if script.endswith('.css'):
                 html += '<link rel="stylesheet" type="text/css" href="/scripts/idevices/'+script+'" />\n'
+        # Edition SCRIPTS: 
+        for block in page.blocks:
+            if block.mode == 0:
+                if "ScrambledList" in block.idevice.klass:
+                    scripts = [
+                        'scrambled-list/edition/scrambled-list.css',
+                        'scrambled-list/edition/scrambled-list.js'
+                    ]    
+                    for script in scripts:
+                        if script.endswith('.css'):
+                            html += '<link rel="stylesheet" type="text/css" href="/scripts/idevices/'+script+'" />\n'                
+                        if script.endswith('.js'):
+                            html += '<script type="text/javascript" src="/scripts/idevices/'+script+'"></script>\n'
+                    html += '<script type="text/javascript">jQuery(function(){$exeAuthoring.iDevice.init()})</script>\n'
+                
     else:
         # Export SCRIPTS: 
         scripts = [
