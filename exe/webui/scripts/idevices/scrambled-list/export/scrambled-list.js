@@ -1,3 +1,13 @@
+/**
+ * Scrambled List iDevice
+ *
+ * Released under Attribution-ShareAlike 4.0 International License.
+ * Author: Ignacio Gros (http://gros.es/) for http://exelearning.net/
+ *
+ * License: http://creativecommons.org/licenses/by-sa/4.0/
+ *
+ * It includes the HTML5 Sortable jQuery Plugin, released under the MIT license (details below)
+ */
 var $exeScrambledList = {
     
 	init : function(){

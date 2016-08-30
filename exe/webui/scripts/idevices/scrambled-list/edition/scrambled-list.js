@@ -1,5 +1,5 @@
 /**
- * Sortable Lists iDevice (edition code)
+ * Scrambled List iDevice (edition code)
  *
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Ignacio Gros (http://gros.es/) for http://exelearning.net/
