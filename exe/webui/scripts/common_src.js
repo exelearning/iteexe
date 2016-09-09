@@ -59,6 +59,8 @@ var $exe = {
 			 }
 		});
 		$exe.sfHover();
+		// Disable autocomplete
+		$("INPUT.autocomplete-off").attr("autocomplete", "off");
     },
 	
 	// Apply the 'sfhover' class to li elements when they are 'moused over'
@@ -342,7 +344,6 @@ var $exe = {
                     } else e.before(n)
                 }
             });
-            $("INPUT.autocomplete-off").attr("autocomplete", "off")
         },
         toggle: function(e, t, n) {
             var r = $exe_i18n.hide;
