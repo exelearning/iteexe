@@ -834,7 +834,7 @@ var $exeAuthoring = {
 				if (typeof($exeDevice.i18n)!="undefined") {
 					var lang = $("HTML").attr("lang");
 					if (typeof($exeDevice.i18n[lang])!="undefined") {
-						if ($exeDevice.i18n[lang][str]) return $exeDevice.i18n[lang][str];
+						return top.translations[str] || $exeDevice.i18n[lang][str] || str;
 					}
 				}
 				return top.translations[str] || str;
