@@ -36,6 +36,7 @@ from exe                      	   import globals as G
 from BeautifulSoup                 import BeautifulSoup
 from htmlentitydefs                import name2codepoint
 from slimit                        import minify
+from helper                        import exportMinFileJS
 
 log = logging.getLogger(__name__)
 
@@ -530,10 +531,13 @@ class Epub3Export(object):
         package.resourceDir.copyfiles(contentPages)
 
         self.styleDir.copylist(styleFiles, contentPages)
-        commonFile = open(self.scriptsDir/'common_src.js', 'r')
-        commonOutputFile = open(contentPages/'common.js', 'w')
-        commonOutputFile.write(minify(commonFile.read(), mangle=True, mangle_toplevel=True))
-
+        
+        listFiles=[]
+        listOutFiles=[]
+        
+        listFiles+=[self.scriptsDir/'common.js']
+        listOutFiles+=[outputDir/'common.js']
+        
         # copy players for media idevices.
         hasFlowplayer = False
         hasMagnifier = False
@@ -616,11 +620,13 @@ class Epub3Export(object):
         my_style = G.application.config.styleStore.getStyle(package.style)
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
-                jsFile = (self.scriptsDir / 'exe_jquery.js')
-                jsFile.copyfile(contentPages / 'exe_jquery.js')
+                listFiles+=[self.scriptsDir/'exe_jquery.js']
+                listOutFiles+=[contentPages/'exe_jquery.js']
         else:
-            jsFile = (self.scriptsDir / 'exe_jquery.js')
-            jsFile.copyfile(contentPages / 'exe_jquery.js')
+            listFiles+=[self.scriptsDir/'exe_jquery.js']
+            listOutFiles+=[contentPages/'exe_jquery.js']
+            
+        exportMinFileJS(listFiles, listOutFiles)
 
 #         if hasattr(package, 'exportSource') and package.exportSource:
 #             (G.application.config.webDir / 'templates' / 'content.xsd').copyfile(outputDir / 'content.xsd')

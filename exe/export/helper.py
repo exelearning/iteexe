@@ -1,6 +1,6 @@
 import re
 from exe.webui          import common
-
+from slimit             import minify
 # Line breaks
 lineBreak = u'\n'
 
@@ -103,3 +103,18 @@ def processInternalLinks(package, html):
     exported into the same file.
     """
     return common.renderInternalLinkNodeAnchor(package, html)
+
+def exportMinFileJS(listFiles, listOutPutFiles):
+    
+    for i in range(len(listFiles)):
+        files = open( listFiles[i], 'r')
+        outPutFiles = open( listOutPutFiles[i], 'w')
+        for linea in files.readlines():
+            if not(linea.find('//')):
+                outPutFiles.write(linea)
+            else:
+                files.seek(0)
+                break
+        
+        outPutFiles.write(minify(files.read(), mangle=False, mangle_toplevel=False))
+        outPutFiles.close()

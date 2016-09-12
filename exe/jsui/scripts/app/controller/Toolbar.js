@@ -873,7 +873,7 @@ Ext.define('eXe.controller.Toolbar', {
 		            callback: function(fp) {
 		                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
 		                	// Show exporting message
-		                	Ext.Msg.wait(_('Exporting package...'));
+		                	Ext.Msg.wait(_('Please wait...'));
 		                    nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
 		                }
 		            }
@@ -893,7 +893,7 @@ Ext.define('eXe.controller.Toolbar', {
                     callback: function(fp) {
                         if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
                         	// Show exporting message
-		                	Ext.Msg.wait(_('Exporting package...'));
+		                	Ext.Msg.wait(_('Please wait...'));
                             nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
                         }
                     }
@@ -913,7 +913,7 @@ Ext.define('eXe.controller.Toolbar', {
                 callback: function(fp) {
                     if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
                     	// Show exporting message
-	                	Ext.Msg.wait(_('Exporting package...'));
+	                	Ext.Msg.wait(_('Please wait...'));
                         nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
                     }
                 }
@@ -933,7 +933,7 @@ Ext.define('eXe.controller.Toolbar', {
                     callback: function(fp) {
                         if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
                         	// Show exporting message
-    	                	Ext.Msg.wait(_('Exporting package...'));
+    	                	Ext.Msg.wait(_('Please wait...'));
     	                	nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
                         }
                     }
@@ -965,7 +965,7 @@ Ext.define('eXe.controller.Toolbar', {
 	            callback: function(fp) {
 	                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
 	                	// Show exporting message
-	                	Ext.Msg.wait(_('Exporting package...'));
+	                	Ext.Msg.wait(_('Please wait...'));
 	                	nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
 	                }
 	            }

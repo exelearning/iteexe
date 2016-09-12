@@ -29,7 +29,7 @@ from exe                      import globals as G
 from exe.engine.persist       import encodeObject
 from exe.engine.persistxml    import encodeObjectToXML
 from slimit                   import minify
-
+from helper                   import exportMinFileJS
 import logging
 log = logging.getLogger(__name__)
 
@@ -111,23 +111,26 @@ class SinglePageExport(object):
         my_style = G.application.config.styleStore.getStyle(package.style)
         
         # jQuery
+        listFiles=[]
+        listOutFiles=[]
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
-                jsFile = (self.scriptsDir/'exe_jquery.js')
-                jsFile.copyfile(self.outputDir/'exe_jquery.js')
+                listFiles+=[self.scriptsDir/'exe_jquery.js']
+                listOutFiles+=[self.outputDir/'exe_jquery.js']
         else:
-            jsFile = (self.scriptsDir/'exe_jquery.js')
-            jsFile.copyfile(self.outputDir/'exe_jquery.js')
+            listFiles+=[self.scriptsDir/'exe_jquery.js']
+            listOutFiles+=[self.outputDir/'exe_jquery.js']
         
         # Minify common.js file
-        commonFile = open(self.scriptsDir/'common_src.js', 'r')
-        commonOutputFile = open(self.outputDir/'common.js', 'w')
-        commonOutputFile.write(minify(commonFile.read(), mangle=True, mangle_toplevel=True))
+        listFiles+=[self.scriptsDir/'common.js']
+        listOutFiles+=[self.outputDir/'common.js']
         
         dT = common.getExportDocType()
         if dT == "HTML5":
-            jsFile = (self.scriptsDir/'exe_html5.js')
-            jsFile.copyfile(self.outputDir/'exe_html5.js')
+            listFiles+=[self.scriptsDir/'exe_html5.js']
+            listOutFiles+=[self.outputDir/'exe_html5.js']
+        
+        exportMinFileJS(listFiles, listOutFiles)
             
         # Incluide eXe's icon if the Style doesn't have one
         themePath = Path(G.application.config.stylesDir/package.style)

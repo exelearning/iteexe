@@ -20,6 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+from mx.Log import ListFile
 """
 Exports an eXe package as an IMS Content Package
 """
@@ -43,7 +44,7 @@ from exe.engine.persist            import encodeObject
 from exe.engine.persistxml         import encodeObjectToXML
 from exe.engine.lom                import lomsubs
 from slimit                        import minify
-
+from helper                        import exportMinFileJS 
 log = logging.getLogger(__name__)
 
 
@@ -493,23 +494,27 @@ class IMSExport(object):
         # Copy the scripts
         
         # jQuery
+        listFiles=[]
+        listOutFiles=[]
         my_style = G.application.config.styleStore.getStyle(page.node.package.style)
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
-                jsFile = (self.scriptsDir/'exe_jquery.js')
-                jsFile.copyfile(outputDir/'exe_jquery.js')
+                listFiles+=[ self.scriptsDir/'exe_jquery.js']
+                listOutFiles+=[outputDir/'exe_jquery.js']
+                
         else:
-            jsFile = (self.scriptsDir/'exe_jquery.js')
-            jsFile.copyfile(outputDir/'exe_jquery.js')                
-        
-        commonFile = open(self.scriptsDir/'common_src.js', 'r')
-        commonOutputFile = open(outputDir/'common.js', 'w')
-        commonOutputFile.write(minify(commonFile.read(), mangle=True, mangle_toplevel=True))
+            listFiles+=[self.scriptsDir/'exe_jquery.js']
+            listOutFiles+=[outputDir/'exe_jquery.js']
+                
+        listFiles+=[self.scriptsDir/'common.js']
+        listOutFiles+=[outputDir/'common.js']
         
         dT = common.getExportDocType()
         if dT == "HTML5":
-            jsFile = (self.scriptsDir/'exe_html5.js')
-            jsFile.copyfile(outputDir/'exe_html5.js')
+            listFiles+=[self.scriptsDir/'exe_html5.js']
+            listOutFiles+=[outputDir/'exe_html5.js']
+        
+        exportMinFileJS(listFiles, listOutFiles)
         
         self.schemasDir.copylist(('imscp_v1p1.xsd',
                                   'imsmd_v1p2p2.xsd',

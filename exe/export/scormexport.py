@@ -44,7 +44,8 @@ from exe                           import globals as G
 from exe.export.scormpage          import ScormPage
 from exe.engine.lom                import lomsubs
 from slimit                        import minify
-
+from helper                        import exportMinFileJS
+ 
 log = logging.getLogger(__name__)
 
 
@@ -514,27 +515,30 @@ class ScormExport(object):
         self.styleDir.copylist(styleFiles, outputDir)
         
         # Copy the scripts
+        listFiles=[]
+        listOutFiles=[]
+        
         dT = common.getExportDocType()
         if dT == "HTML5":
-            jsFile = (self.scriptsDir/'exe_html5.js')
-            jsFile.copyfile(outputDir/'exe_html5.js')
+            listFiles+=[self.scriptsDir/'exe_html5.js']
+            listOutFiles+=[outputDir/'exe_html5.js']
             
         # jQuery
         my_style = G.application.config.styleStore.getStyle(page.node.package.style)
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
-                jsFile = (self.scriptsDir/'exe_jquery.js')
-                jsFile.copyfile(outputDir/'exe_jquery.js')
+                listFiles+=[self.scriptsDir/'exe_jquery.js']
+                listOutFiles+=[outputDir/'exe_jquery.js']
         else:
-            jsFile = (self.scriptsDir/'exe_jquery.js')
-            jsFile.copyfile(outputDir/'exe_jquery.js')
+            listFiles+=[self.scriptsDir/'exe_jquery.js']
+            listOutFiles+=[outputDir/'exe_jquery.js']
             
         if self.scormType == "commoncartridge" or self.scormType == "scorm2004" or self.scormType == "scorm1.2":
-            commonFile = open(self.scriptsDir/'common_src.js', 'r')
-            commonOutputFile = open(outputDir/'common.js', 'w')
-            commonOutputFile.write(minify(commonFile.read(), mangle=True, mangle_toplevel=True))
-            commonOutputFile.close()
-
+            listFiles+=[self.scriptsDir/'common.js']
+            listOutFiles+=[outputDir/'common.js']
+            
+        exportMinFileJS(listFiles, listOutFiles)
+        
         if self.scormType == "scorm2004" or self.scormType == "scorm1.2":
             self.scriptsDir.copylist(('SCORM_API_wrapper.js',
                                       'SCOFunctions.js'), outputDir)
