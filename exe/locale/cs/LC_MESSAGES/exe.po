@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-11 12:51+0200\n"
+"POT-Creation-Date: 2016-09-12 16:29+0200\n"
 "PO-Revision-Date: 2008-07-17 19:59+0200\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language: cs\n"
@@ -11609,18 +11609,9 @@ msgid "Editor"
 msgstr "Editor iDevice"
 
 #: exe/webui/scripts/tinymce_4_settings.js:18
-#, python-format
-msgid "2 columns 50% 50%"
-msgstr ""
-
 #: exe/webui/scripts/tinymce_4_settings.js:19
-#, python-format
-msgid "2 columns 30% 70%"
-msgstr ""
-
 #: exe/webui/scripts/tinymce_4_settings.js:20
-#, python-format
-msgid "2 columns 70% 30%"
+msgid "2 columns"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4_settings.js:21

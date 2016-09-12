@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2016-09-11 12:51+0200\n"
-"PO-Revision-Date: 2016-09-11 13:27+0200\n"
+"POT-Creation-Date: 2016-09-12 16:29+0200\n"
+"PO-Revision-Date: 2016-09-12 16:33+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -5547,7 +5547,9 @@ msgstr "recomendado"
 msgid ""
 "We recommend you to use the latest available version. An old one could be"
 " useful to edit some old contents."
-msgstr "Le recomendamos que use la última versión disponible. Una versión anticuada podría servir para editar contenidos anticuados."
+msgstr ""
+"Le recomendamos que use la última versión disponible. Una versión "
+"anticuada podría servir para editar contenidos anticuados."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:219
 msgid "Internal Linking (for Web Site Exports only)"
@@ -12013,19 +12015,10 @@ msgid "Editor"
 msgstr "Editor"
 
 #: exe/webui/scripts/tinymce_4_settings.js:18
-#, python-format
-msgid "2 columns 50% 50%"
-msgstr "2 columnas 50% 50%"
-
 #: exe/webui/scripts/tinymce_4_settings.js:19
-#, python-format
-msgid "2 columns 30% 70%"
-msgstr "2 columnas 30% 70%"
-
 #: exe/webui/scripts/tinymce_4_settings.js:20
-#, python-format
-msgid "2 columns 70% 30%"
-msgstr "2 columnas 70% 30%"
+msgid "2 columns"
+msgstr "2 columnas"
 
 #: exe/webui/scripts/tinymce_4_settings.js:21
 msgid "3 columns"
