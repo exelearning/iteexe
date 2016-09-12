@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2016-05-22 14:14+0200\n"
+"POT-Creation-Date: 2016-09-11 12:51+0200\n"
 "PO-Revision-Date: 2014-05-15 18:08+0200\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language: zh_Hant_TW\n"
@@ -626,7 +626,7 @@ msgstr ""
 #: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
 #: exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:833
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:845
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 msgid "Instructions"
@@ -641,7 +641,7 @@ msgid ""
 msgstr "提供怎樣完成克漏字填空的說明。若是不變更此欄位，則會提供預設的文字。\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
-#: exe/webui/element.py:1522 exe/webui/listablock.py:259
+#: exe/webui/element.py:1526 exe/webui/listablock.py:259
 msgid "Cloze"
 msgstr "克漏字"
 
@@ -670,10 +670,10 @@ msgstr "<p>輸入克漏字測驗的文字。您可以從別處剪貼文字過來
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:182
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
-#: exe/webui/common.py:740 exe/webui/common.py:750
+#: exe/webui/common.py:752 exe/webui/common.py:762
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
-#: exe/webui/element.py:2477 exe/webui/element.py:2612
-#: exe/webui/element.py:2727 exe/webui/element.py:2928
+#: exe/webui/element.py:2481 exe/webui/element.py:2616
+#: exe/webui/element.py:2731 exe/webui/element.py:2932
 #: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
@@ -939,9 +939,9 @@ msgstr "輸入學生選擇特定選項時要看到的回饋意見。如果您未
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3754
 #: exe/engine/field.py:3819 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:82
-#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2452
-#: exe/webui/element.py:2456 exe/webui/element.py:2905
-#: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
+#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2456
+#: exe/webui/element.py:2460 exe/webui/element.py:2909
+#: exe/webui/element.py:2913 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
 msgstr "問題"
@@ -1176,8 +1176,8 @@ msgstr "點擊「預覽」鍵將 latex 轉換成影像。"
 
 #: exe/engine/field.py:3679 exe/engine/field.py:3728
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/webui/element.py:2189 exe/webui/element.py:2244
-#: exe/webui/element.py:2576 exe/webui/element.py:2668
+#: exe/webui/element.py:2193 exe/webui/element.py:2248
+#: exe/webui/element.py:2580 exe/webui/element.py:2672
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
 msgstr "選項"
@@ -1185,11 +1185,11 @@ msgstr "選項"
 #: exe/engine/field.py:3757 exe/engine/field.py:3823
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
-#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:452
+#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:464
 msgid "Hint"
 msgstr "提示"
 
-#: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2381
+#: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2385
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
 #: exe/webui/testquestionelement.py:110
@@ -1210,7 +1210,7 @@ msgstr ""
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
-#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
+#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2360
 msgid "Question:"
 msgstr "問題："
 
@@ -1258,7 +1258,7 @@ msgstr "檔案附件 idevice。"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#: exe/webui/common.py:492
+#: exe/webui/common.py:504
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:9
 #: exe/webui/tools/style-designer/langs/en.js:59
 msgid "Yes"
@@ -1266,7 +1266,7 @@ msgstr "是"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#: exe/webui/common.py:493
+#: exe/webui/common.py:505
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:10
 #: exe/webui/tools/style-designer/langs/en.js:60
 msgid "No"
@@ -1455,7 +1455,7 @@ msgstr "閱讀活動 0.11"
 msgid "Reading Activity"
 msgstr "閱讀活動"
 
-#: exe/engine/hangmanidevice.py:51 exe/webui/common.py:490
+#: exe/engine/hangmanidevice.py:51 exe/webui/common.py:502
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
 msgid "Hangman Game"
 msgstr "劊子手（hangman）遊戲"
@@ -1481,7 +1481,7 @@ msgstr "顯示玩家的字母"
 msgid "Alphabet to Select From"
 msgstr "選取區的字母"
 
-#: exe/engine/hangmanidevice.py:77 exe/webui/common.py:510
+#: exe/engine/hangmanidevice.py:77 exe/webui/common.py:522
 msgid "abcdefghijklmnopqrstuvwxyz"
 msgstr "abcdefghijklmnopqrstuvwxyz"
 
@@ -1533,8 +1533,8 @@ msgstr "重新開始關卡按鍵文字"
 msgid "Text for reset button"
 msgstr "重置按鍵文字"
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
-#: exe/webui/element.py:1548 exe/webui/element.py:1804
+#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:514
+#: exe/webui/element.py:1552 exe/webui/element.py:1808
 msgid "Restart"
 msgstr "重新開始"
 
@@ -3065,10 +3065,10 @@ msgstr ""
 "exe_do：錯誤：無法匯入 '%s'。\n"
 "錯誤為："
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:302
-#: exe/jsui/mainpage.py:983 exe/jsui/mainpage.py:1147 exe/jsui/mainpage.py:1187
-#: exe/jsui/mainpage.py:1222 exe/jsui/mainpage.py:1243
-#: exe/jsui/mainpage_antes_jr_docs.py:295
+#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:303
+#: exe/jsui/mainpage.py:1053 exe/jsui/mainpage.py:1217
+#: exe/jsui/mainpage.py:1257 exe/jsui/mainpage.py:1292
+#: exe/jsui/mainpage.py:1313 exe/jsui/mainpage_antes_jr_docs.py:295
 #: exe/jsui/mainpage_antes_jr_docs.py:916
 #: exe/jsui/mainpage_antes_jr_docs.py:1080
 #: exe/jsui/mainpage_antes_jr_docs.py:1120
@@ -3086,7 +3086,7 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "匯出格式未實作"
 
-#: exe/export/epub3export.py:642 exe/export/imsexport.py:612
+#: exe/export/epub3export.py:644 exe/export/imsexport.py:614
 #: exe/export/scormexport.py:701 exe/export/websiteexport.py:98
 #, python-format
 msgid ""
@@ -3096,13 +3096,13 @@ msgstr ""
 "匯出失敗。\n"
 "上次的成功匯出為 %s。"
 
-#: exe/export/scormpage.py:177 exe/export/websitepage.py:345
-#: exe/webui/common.py:473
+#: exe/export/scormpage.py:179 exe/export/websitepage.py:347
+#: exe/webui/common.py:485
 msgid "Previous"
 msgstr "前一頁"
 
-#: exe/export/scormpage.py:178 exe/export/websitepage.py:351
-#: exe/webui/common.py:474
+#: exe/export/scormpage.py:180 exe/export/websitepage.py:353
+#: exe/webui/common.py:486
 msgid "Next"
 msgstr "下一頁"
 
@@ -3179,25 +3179,25 @@ msgstr "插入 %s 中"
 msgid "My iDevices"
 msgstr "我的 iDevice"
 
-#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:845 exe/jsui/mainpage.py:975
+#: exe/jsui/mainpage.py:321 exe/jsui/mainpage.py:915 exe/jsui/mainpage.py:1045
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
 msgstr "不能識別路徑名稱"
 
-#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:847 exe/jsui/mainpage.py:975
+#: exe/jsui/mainpage.py:321 exe/jsui/mainpage.py:917 exe/jsui/mainpage.py:1045
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
 msgstr "。名稱請使用 ASCII 碼。"
 
-#: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
+#: exe/jsui/mainpage.py:330 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
 msgstr "儲存失敗。"
 
-#: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1071
+#: exe/jsui/mainpage.py:334 exe/jsui/mainpage.py:646 exe/jsui/mainpage.py:1141
 #: exe/jsui/mainpage_antes_jr_docs.py:326
 #: exe/jsui/mainpage_antes_jr_docs.py:638
 #: exe/jsui/mainpage_antes_jr_docs.py:1004
@@ -3209,7 +3209,7 @@ msgstr ""
 "儲存失敗。\n"
 "%s"
 
-#: exe/jsui/mainpage.py:337 exe/jsui/mainpage.py:342 exe/jsui/mainpage.py:345
+#: exe/jsui/mainpage.py:338 exe/jsui/mainpage.py:343 exe/jsui/mainpage.py:346
 #: exe/jsui/mainpage_antes_jr_docs.py:330
 #: exe/jsui/mainpage_antes_jr_docs.py:335
 #: exe/jsui/mainpage_antes_jr_docs.py:338
@@ -3217,32 +3217,27 @@ msgstr ""
 msgid "Package saved to: %s"
 msgstr "套件已儲存至：%s"
 
-#: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:672
+#: exe/jsui/mainpage.py:569 exe/jsui/mainpage.py:673 exe/jsui/mainpage.py:754
 #: exe/jsui/mainpage_antes_jr_docs.py:561
 #: exe/jsui/mainpage_antes_jr_docs.py:665
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "預覽目錄 %s 是個檔案，無法取代"
 
-#: exe/jsui/mainpage.py:587 exe/jsui/mainpage_antes_jr_docs.py:580
+#: exe/jsui/mainpage.py:588 exe/jsui/mainpage_antes_jr_docs.py:580
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "找不到本地端檔案 %s，無法預覽"
 
-#: exe/jsui/mainpage.py:712 exe/jsui/mainpage_antes_jr_docs.py:705
-#, python-format
-msgid ""
-"MimeTeX compile failed!\n"
-"%s"
+#: exe/jsui/mainpage.py:713 exe/jsui/mainpage.py:739 exe/jsui/mainpage.py:782
+msgid "Could not create the image"
 msgstr ""
-"MimeTex 編譯失敗。\n"
-"%s"
 
-#: exe/jsui/mainpage.py:750 exe/jsui/mainpage_antes_jr_docs.py:743
+#: exe/jsui/mainpage.py:820 exe/jsui/mainpage_antes_jr_docs.py:743
 msgid "Importing HTML..."
 msgstr "匯入 HTML 中..."
 
-#: exe/jsui/mainpage.py:756 exe/jsui/mainpage_antes_jr_docs.py:749
+#: exe/jsui/mainpage.py:826 exe/jsui/mainpage_antes_jr_docs.py:749
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3251,38 +3246,38 @@ msgstr ""
 "LOM 中繼資料匯入失敗。\n"
 "%s"
 
-#: exe/jsui/mainpage.py:759 exe/jsui/mainpage_antes_jr_docs.py:752
+#: exe/jsui/mainpage.py:829 exe/jsui/mainpage_antes_jr_docs.py:752
 msgid "Error importing HTML:\n"
 msgstr "匯入 HTML 時發生錯誤：\n"
 
-#: exe/jsui/mainpage.py:786
+#: exe/jsui/mainpage.py:856
 msgid "Publishing document to Procomún"
 msgstr ""
 
-#: exe/jsui/mainpage.py:789
+#: exe/jsui/mainpage.py:859
 #, fuzzy
 msgid "Exporting package as SCORM"
 msgstr "將 IMS 套件匯出為"
 
-#: exe/jsui/mainpage.py:810
+#: exe/jsui/mainpage.py:880
 msgid "Starting authorized connection to Procomún API"
 msgstr ""
 
-#: exe/jsui/mainpage.py:823
+#: exe/jsui/mainpage.py:893
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
 "visit exported site\">%s</a>"
 msgstr ""
 
-#: exe/jsui/mainpage.py:826
+#: exe/jsui/mainpage.py:896
 #, python-format
 msgid "Error exporting package %s to Procomún: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:868 exe/jsui/mainpage.py:873 exe/jsui/mainpage.py:876
-#: exe/jsui/mainpage.py:879 exe/jsui/mainpage.py:882 exe/jsui/mainpage.py:885
-#: exe/jsui/mainpage.py:890 exe/jsui/mainpage.py:1131 exe/jsui/mainpage.py:1203
+#: exe/jsui/mainpage.py:938 exe/jsui/mainpage.py:943 exe/jsui/mainpage.py:946
+#: exe/jsui/mainpage.py:949 exe/jsui/mainpage.py:952 exe/jsui/mainpage.py:955
+#: exe/jsui/mainpage.py:960 exe/jsui/mainpage.py:1201 exe/jsui/mainpage.py:1273
 #: exe/jsui/mainpage_antes_jr_docs.py:801
 #: exe/jsui/mainpage_antes_jr_docs.py:806
 #: exe/jsui/mainpage_antes_jr_docs.py:809
@@ -3295,16 +3290,16 @@ msgstr ""
 msgid "EXPORT FAILED!"
 msgstr "匯出失敗。"
 
-#: exe/jsui/mainpage.py:940 exe/jsui/mainpage_antes_jr_docs.py:873
+#: exe/jsui/mainpage.py:1010 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
 msgstr "正確的 XLIFF 匯入"
 
-#: exe/jsui/mainpage.py:943 exe/jsui/mainpage_antes_jr_docs.py:876
+#: exe/jsui/mainpage.py:1013 exe/jsui/mainpage_antes_jr_docs.py:876
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "匯入 XLIFF 時發生錯誤：%s"
 
-#: exe/jsui/mainpage.py:984 exe/jsui/mainpage.py:1001
+#: exe/jsui/mainpage.py:1054 exe/jsui/mainpage.py:1071
 #: exe/jsui/mainpage_antes_jr_docs.py:917
 #: exe/jsui/mainpage_antes_jr_docs.py:934
 #, python-format
@@ -3315,22 +3310,22 @@ msgstr ""
 "展開失敗。\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1003 exe/jsui/mainpage_antes_jr_docs.py:936
+#: exe/jsui/mainpage.py:1073 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "套件展開到：%s"
 
-#: exe/jsui/mainpage.py:1015 exe/jsui/mainpage_antes_jr_docs.py:948
+#: exe/jsui/mainpage.py:1085 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
 msgstr "目錄已存在"
 
-#: exe/jsui/mainpage.py:1029 exe/jsui/mainpage.py:1119
-#: exe/jsui/mainpage.py:1135 exe/jsui/mainpage.py:1148
-#: exe/jsui/mainpage.py:1154 exe/jsui/mainpage.py:1172
-#: exe/jsui/mainpage.py:1188 exe/jsui/mainpage.py:1194
-#: exe/jsui/mainpage.py:1208 exe/jsui/mainpage.py:1223
-#: exe/jsui/mainpage.py:1229 exe/jsui/mainpage.py:1244
-#: exe/jsui/mainpage.py:1250 exe/jsui/mainpage_antes_jr_docs.py:962
+#: exe/jsui/mainpage.py:1099 exe/jsui/mainpage.py:1189
+#: exe/jsui/mainpage.py:1205 exe/jsui/mainpage.py:1218
+#: exe/jsui/mainpage.py:1224 exe/jsui/mainpage.py:1242
+#: exe/jsui/mainpage.py:1258 exe/jsui/mainpage.py:1264
+#: exe/jsui/mainpage.py:1278 exe/jsui/mainpage.py:1293
+#: exe/jsui/mainpage.py:1299 exe/jsui/mainpage.py:1314
+#: exe/jsui/mainpage.py:1320 exe/jsui/mainpage_antes_jr_docs.py:962
 #: exe/jsui/mainpage_antes_jr_docs.py:1052
 #: exe/jsui/mainpage_antes_jr_docs.py:1068
 #: exe/jsui/mainpage_antes_jr_docs.py:1081
@@ -3351,14 +3346,14 @@ msgstr ""
 "匯出失敗。\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1057 exe/jsui/mainpage.py:1104
+#: exe/jsui/mainpage.py:1127 exe/jsui/mainpage.py:1174
 #: exe/jsui/mainpage_antes_jr_docs.py:990
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "檔案 %s 已存在，無法取代它"
 
-#: exe/jsui/mainpage.py:1063 exe/jsui/mainpage.py:1111
+#: exe/jsui/mainpage.py:1133 exe/jsui/mainpage.py:1181
 #: exe/jsui/mainpage_antes_jr_docs.py:996
 #: exe/jsui/mainpage_antes_jr_docs.py:1044
 #, python-format
@@ -3367,11 +3362,11 @@ msgid ""
 "existing one then try again."
 msgstr "資料夾 %s 已存在。請選擇其他資料夾，或是將現有的刪除然後再試一次。"
 
-#: exe/jsui/mainpage.py:1077 exe/jsui/mainpage.py:1122
-#: exe/jsui/mainpage.py:1137 exe/jsui/mainpage.py:1156
-#: exe/jsui/mainpage.py:1174 exe/jsui/mainpage.py:1196
-#: exe/jsui/mainpage.py:1210 exe/jsui/mainpage.py:1231
-#: exe/jsui/mainpage.py:1252 exe/jsui/mainpage_antes_jr_docs.py:1010
+#: exe/jsui/mainpage.py:1147 exe/jsui/mainpage.py:1192
+#: exe/jsui/mainpage.py:1207 exe/jsui/mainpage.py:1226
+#: exe/jsui/mainpage.py:1244 exe/jsui/mainpage.py:1266
+#: exe/jsui/mainpage.py:1280 exe/jsui/mainpage.py:1301
+#: exe/jsui/mainpage.py:1322 exe/jsui/mainpage_antes_jr_docs.py:1010
 #: exe/jsui/mainpage_antes_jr_docs.py:1055
 #: exe/jsui/mainpage_antes_jr_docs.py:1070
 #: exe/jsui/mainpage_antes_jr_docs.py:1089
@@ -3384,16 +3379,16 @@ msgstr "資料夾 %s 已存在。請選擇其他資料夾，或是將現有的�
 msgid "Exported to %s"
 msgstr "匯出至 %s"
 
-#: exe/jsui/mainpage.py:1285 exe/jsui/mainpage_antes_jr_docs.py:1218
+#: exe/jsui/mainpage.py:1355 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "檔案 %s 不存在，或是無法讀取。"
 
-#: exe/jsui/mainpage.py:1289 exe/jsui/mainpage_antes_jr_docs.py:1222
+#: exe/jsui/mainpage.py:1359 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "無法載入檔案，請將檔案寄到 bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1292 exe/jsui/mainpage_antes_jr_docs.py:1225
+#: exe/jsui/mainpage.py:1362 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3402,9 +3397,18 @@ msgstr ""
 "對不起，檔案格式錯誤:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1294 exe/jsui/mainpage_antes_jr_docs.py:1227
+#: exe/jsui/mainpage.py:1364 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
 msgstr "對不起，檔案格式錯誤"
+
+#: exe/jsui/mainpage_antes_jr_docs.py:705
+#, python-format
+msgid ""
+"MimeTeX compile failed!\n"
+"%s"
+msgstr ""
+"MimeTex 編譯失敗。\n"
+"%s"
 
 #: exe/jsui/propertiespage.py:335
 msgid "Failed to get properties"
@@ -3421,8 +3425,8 @@ msgstr "儲存屬性失敗"
 msgid "Show Image"
 msgstr "顯示影像"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
-#: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
+#: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:780
+#: exe/webui/element.py:1194 exe/webui/scripts/authoring.js:70
 msgid "Select an image"
 msgstr "選擇影像"
 
@@ -3452,9 +3456,9 @@ msgstr "影像檔"
 #: exe/jsui/scripts/app/controller/Toolbar.js:1096
 #: exe/jsui/scripts/app/controller/Toolbar.js:1193
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
-#: exe/webui/scripts/authoring.js:95 exe/webui/scripts/authoring.js:118
-#: exe/webui/scripts/authoring.js:359 exe/webui/scripts/authoring.js:368
-#: exe/webui/scripts/authoring.js:376 exe/webui/scripts/authoring.js:397
+#: exe/webui/scripts/authoring.js:96 exe/webui/scripts/authoring.js:121
+#: exe/webui/scripts/authoring.js:365 exe/webui/scripts/authoring.js:374
+#: exe/webui/scripts/authoring.js:382 exe/webui/scripts/authoring.js:403
 #: exe/webui/scripts/editor.js:80 exe/webui/scripts/editor.js:107
 #: exe/webui/scripts/stylemanager.js:42 exe/webui/scripts/stylemanager.js:66
 msgid "All Files"
@@ -3477,7 +3481,7 @@ msgstr "設定已儲存"
 #: exe/jsui/scripts/app/controller/Toolbar.js:475
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:258
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:278
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:336
 #: exe/webui/stylemanagerpage.py:155 exe/webui/stylemanagerpage.py:267
 #: exe/webui/stylemanagerpage.py:319 exe/webui/stylemanagerpage.py:362
@@ -3906,7 +3910,7 @@ msgstr "檔案已存在。您要取代它嗎？"
 #: exe/jsui/scripts/app/view/forms/LomSections.js:87
 #: exe/jsui/scripts/app/view/forms/LomSections.js:103
 #: exe/jsui/scripts/app/view/forms/LomSections.js:153
-#: exe/webui/editorpane.py:326
+#: exe/webui/editorpane.py:335
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
@@ -3937,7 +3941,7 @@ msgstr "開啟"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:228
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:640
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:249
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:269
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:260
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/en.js:112
@@ -4361,7 +4365,7 @@ msgstr "集合等級"
 msgid "Version"
 msgstr "版本"
 
-#: exe/jsui/scripts/app/view/forms/LomSections.js:58 exe/webui/common.py:497
+#: exe/jsui/scripts/app/view/forms/LomSections.js:58 exe/webui/common.py:509
 msgid "Status"
 msgstr "狀態"
 
@@ -4483,7 +4487,7 @@ msgid "Entity"
 msgstr "實體"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:269
-#: exe/webui/editorpane.py:387
+#: exe/webui/editorpane.py:401
 msgid "Purpose"
 msgstr "用途"
 
@@ -4922,31 +4926,45 @@ msgid ""
 "and AUDIO) when using XHTML format."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:199
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:202
+msgid "Editor version"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:205
+msgid "recommended"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:212
+msgid ""
+"We recommend you to use the latest available version. An old one could be"
+" useful to edit some old contents."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:219
 msgid "Internal Linking (for Web Site Exports only)"
 msgstr "內部連結（只用於網站匯出）"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:203
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:223
 msgid "Enable All Internal Linking"
 msgstr "開啟所有內部連結"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:204
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:224
 msgid "Disable Auto-Top Internal Linking"
 msgstr "關閉自動置頂內部連結"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:205
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:225
 msgid "Disable All Internal Linking"
 msgstr "關閉所有內部連結"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:215
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:235
 msgid "Default license for the new documents"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:235
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:255
 msgid "The current document license can be modified in the Properties tab."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:274
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:294
 msgid "Show this window on eXe start"
 msgstr "eXe 啟動時顯示此視窗"
 
@@ -5157,7 +5175,7 @@ msgstr "清除最近使用的專案清單"
 msgid "Save As..."
 msgstr "另存為..."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157 exe/webui/common.py:482
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157 exe/webui/common.py:494
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Print"
 msgstr "列印"
@@ -5263,7 +5281,7 @@ msgid "Resources Report"
 msgstr "資源報告"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:419 exe/webui/editorpane.py:268
-#: exe/webui/element.py:2098
+#: exe/webui/element.py:2102
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:10
@@ -6987,13 +7005,13 @@ msgstr "接受網址"
 msgid "Applet Code:"
 msgstr "小程式源碼："
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:1069
 msgid "Filename:"
 msgstr "檔案名稱："
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
-#: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
-#: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
+#: exe/webui/element.py:1079 exe/webui/scripts/authoring.js:106
+#: exe/webui/scripts/authoring.js:367 exe/webui/scripts/authoring.js:376
 #: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
 msgid "Select a file"
 msgstr "選擇檔案"
@@ -7038,11 +7056,11 @@ msgstr "下移"
 msgid "---Move To---"
 msgstr "---移至---"
 
-#: exe/webui/block.py:260 exe/webui/editorpane.py:380
+#: exe/webui/block.py:260 exe/webui/editorpane.py:394
 msgid "Pedagogical Help"
 msgstr "教學輔助"
 
-#: exe/webui/block.py:273 exe/webui/editorpane.py:390
+#: exe/webui/block.py:273 exe/webui/editorpane.py:404
 msgid "Tip:"
 msgstr "提示："
 
@@ -7205,107 +7223,107 @@ msgstr "本地端版本"
 msgid "Enable JavaScript"
 msgstr "啟用 JavaScript"
 
-#: exe/webui/common.py:475
+#: exe/webui/common.py:487
 msgid "Show"
 msgstr "顯示"
 
-#: exe/webui/common.py:476
+#: exe/webui/common.py:488
 msgid "Hide"
 msgstr "隱藏"
 
-#: exe/webui/common.py:477 exe/webui/common.py:715 exe/webui/element.py:1538
-#: exe/webui/element.py:2469 exe/webui/listablock.py:275
+#: exe/webui/common.py:489 exe/webui/common.py:727 exe/webui/element.py:1542
+#: exe/webui/element.py:2473 exe/webui/listablock.py:275
 msgid "Show Feedback"
 msgstr "顯示意見回饋"
 
-#: exe/webui/common.py:478
+#: exe/webui/common.py:490
 msgid "Hide Feedback"
 msgstr "隱藏意見回饋"
 
-#: exe/webui/common.py:479 exe/webui/common.py:494 exe/webui/element.py:2272
+#: exe/webui/common.py:491 exe/webui/common.py:506 exe/webui/element.py:2276
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
 msgstr "正確"
 
-#: exe/webui/common.py:480 exe/webui/element.py:2275
+#: exe/webui/common.py:492 exe/webui/element.py:2279
 msgid "Incorrect"
 msgstr "不正確"
 
-#: exe/webui/common.py:481
+#: exe/webui/common.py:493
 msgid "Menu"
 msgstr "選單"
 
-#: exe/webui/common.py:491
+#: exe/webui/common.py:503
 #, fuzzy
 msgid "Accept"
 msgstr "接受網址"
 
-#: exe/webui/common.py:495 exe/webui/element.py:2708 exe/webui/element.py:2726
+#: exe/webui/common.py:507 exe/webui/element.py:2712 exe/webui/element.py:2730
 msgid "Wrong"
 msgstr "錯誤"
 
-#: exe/webui/common.py:496
+#: exe/webui/common.py:508
 #, fuzzy
 msgid "Right answer"
 msgstr "置中"
 
-#: exe/webui/common.py:498
+#: exe/webui/common.py:510
 #, fuzzy
 msgid "Selected letters"
 msgstr "已選取檔案"
 
-#: exe/webui/common.py:499
+#: exe/webui/common.py:511
 #, fuzzy
 msgid "Word"
 msgstr "關鍵字"
 
-#: exe/webui/common.py:500
+#: exe/webui/common.py:512
 #, fuzzy
 msgid "Words"
 msgstr "關鍵字"
 
-#: exe/webui/common.py:501
+#: exe/webui/common.py:513
 #, fuzzy
 msgid "Play"
 msgstr "計畫"
 
-#: exe/webui/common.py:503
+#: exe/webui/common.py:515
 msgid "Results"
 msgstr ""
 
-#: exe/webui/common.py:504
+#: exe/webui/common.py:516
 #, fuzzy
 msgid "Total"
 msgstr "教學"
 
-#: exe/webui/common.py:505
+#: exe/webui/common.py:517
 #, fuzzy
 msgid "Another word"
 msgstr "其他單字"
 
-#: exe/webui/common.py:506
+#: exe/webui/common.py:518
 msgid "Game over."
 msgstr ""
 
-#: exe/webui/common.py:507
+#: exe/webui/common.py:519
 msgid "Reload the game?"
 msgstr ""
 
-#: exe/webui/common.py:508
+#: exe/webui/common.py:520
 #, fuzzy
 msgid "Click on \"Play\" to start a new game."
 msgstr "使用者會點擊此處開始遊戲"
 
-#: exe/webui/common.py:509
+#: exe/webui/common.py:521
 msgid "Click on \"Another word\" to continue."
 msgstr ""
 
-#: exe/webui/common.py:531 exe/webui/editorpage.py:235
+#: exe/webui/common.py:543 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe:  elearning XHTML 編輯器"
 
-#: exe/webui/common.py:839 exe/webui/common.py:842
+#: exe/webui/common.py:851 exe/webui/common.py:854
 msgid "Click for completion instructions"
 msgstr "點擊看完成說明。"
 
@@ -7321,7 +7339,7 @@ msgstr "文字行"
 msgid "Text Box"
 msgstr "文字盒"
 
-#: exe/webui/editorelement.py:149 exe/webui/element.py:602
+#: exe/webui/editorelement.py:149 exe/webui/element.py:603
 msgid "Button Caption"
 msgstr "按鈕標籤"
 
@@ -7359,7 +7377,7 @@ msgstr "右"
 msgid "Align:"
 msgstr "對齊："
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1889
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1893
 msgid "Select Flash Object"
 msgstr "選擇 Flash 物件"
 
@@ -7367,7 +7385,7 @@ msgstr "選擇 Flash 物件"
 msgid "Select MP3 file"
 msgstr "選擇 MP3 檔案"
 
-#: exe/webui/editorelement.py:311 exe/webui/element.py:869
+#: exe/webui/editorelement.py:311 exe/webui/element.py:873
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
@@ -7484,42 +7502,37 @@ msgstr "新增欄位"
 msgid "Actions"
 msgstr "動作"
 
-#: exe/webui/editorpane.py:332
+#: exe/webui/editorpane.py:341
 msgid "Pedagogical Tip"
 msgstr "教學提示"
 
-#: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:103
+#: exe/webui/editorpane.py:344 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:163
 msgid "Emphasis"
 msgstr "強調"
 
-#: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
+#: exe/webui/editorpane.py:347 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:160
 msgid "No emphasis"
 msgstr "不強調"
 
-#: exe/webui/editorpane.py:339 exe/webui/multimediablock.py:101
+#: exe/webui/editorpane.py:348 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:161
 msgid "Some emphasis"
 msgstr "有些強調"
 
-#: exe/webui/editorpane.py:354
+#: exe/webui/editorpane.py:363
 #, fuzzy
 msgid "Select an icon"
 msgstr "選擇授權方式。"
 
-#: exe/webui/editorpane.py:368
+#: exe/webui/editorpane.py:381
 msgid "Icons"
 msgstr "圖示"
 
-#: exe/webui/editorpane.py:383
+#: exe/webui/editorpane.py:397
 msgid "Info"
 msgstr "資訊"
-
-#: exe/webui/editorpane.py:429 exe/webui/element.py:1545
-#: exe/webui/element.py:1547 exe/webui/element.py:1803
-msgid "Submit"
-msgstr "提交"
 
 #: exe/webui/ejercicioresueltofpdblock.py:122
 msgid "Translation"
@@ -7550,128 +7563,133 @@ msgstr "%s 類別錯誤地直接呼叫了 Element.renderEdit"
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "%s 類別錯誤地直接呼叫了 Element.renderView"
 
-#: exe/webui/element.py:753 exe/webui/element.py:1174
+#: exe/webui/element.py:757 exe/webui/element.py:1178
 msgid "Add Image"
 msgstr "新增影像"
 
-#: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
+#: exe/webui/element.py:783 exe/webui/element.py:1200 exe/webui/element.py:1897
 msgid "Display as:"
 msgstr "顯示為："
 
-#: exe/webui/element.py:786
+#: exe/webui/element.py:790
 msgid "by"
 msgstr "由"
 
-#: exe/webui/element.py:793 exe/webui/element.py:1212
+#: exe/webui/element.py:797 exe/webui/element.py:1216
 msgid "blank for original size"
 msgstr "原來大小的空白"
 
-#: exe/webui/element.py:863
+#: exe/webui/element.py:867
 msgid "Select an MP3"
 msgstr "選擇 MP3 檔案"
 
-#: exe/webui/element.py:1351 exe/webui/element.py:1684
+#: exe/webui/element.py:1355 exe/webui/element.py:1688
 msgid "Cloze Text"
 msgstr "克漏字填空文字"
 
-#: exe/webui/element.py:1359 exe/webui/element.py:1692
+#: exe/webui/element.py:1363 exe/webui/element.py:1696
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
 msgstr "隱藏/顯示單字"
 
-#: exe/webui/element.py:1364 exe/webui/element.py:1697
+#: exe/webui/element.py:1368 exe/webui/element.py:1701
 msgid "Strict Marking?"
 msgstr "要嚴格評分嗎？"
 
-#: exe/webui/element.py:1369
+#: exe/webui/element.py:1373
 msgid "Check Capitalization?"
 msgstr ""
 
-#: exe/webui/element.py:1374 exe/webui/element.py:1707
+#: exe/webui/element.py:1378 exe/webui/element.py:1711
 msgid "Instant Marking?"
 msgstr "要快速評分嗎？"
 
-#: exe/webui/element.py:1485 exe/webui/element.py:1742
+#: exe/webui/element.py:1489 exe/webui/element.py:1746
 #: exe/webui/listablock.py:223
 msgid "Your score is "
 msgstr "您的分數是"
 
-#: exe/webui/element.py:1535 exe/webui/element.py:1794
+#: exe/webui/element.py:1539 exe/webui/element.py:1798
 msgid "Get score"
 msgstr "取得分數"
 
-#: exe/webui/element.py:1541 exe/webui/element.py:1800
+#: exe/webui/element.py:1545 exe/webui/element.py:1804
 msgid "Show/Clear Answers"
 msgstr "顯示/清除答案"
 
-#: exe/webui/element.py:1551 exe/webui/element.py:1807
+#: exe/webui/element.py:1549 exe/webui/element.py:1551
+#: exe/webui/element.py:1807
+msgid "Submit"
+msgstr "提交"
+
+#: exe/webui/element.py:1555 exe/webui/element.py:1811
 msgid "Show Answers"
 msgstr "顯示答案"
 
-#: exe/webui/element.py:1587 exe/webui/element.py:1839
-#: exe/webui/element.py:2461 exe/webui/element.py:2921
+#: exe/webui/element.py:1591 exe/webui/element.py:1843
+#: exe/webui/element.py:2465 exe/webui/element.py:2925
 #: exe/webui/listablock.py:313 exe/webui/testquestionelement.py:158
 msgid "Answers"
 msgstr "答案"
 
-#: exe/webui/element.py:1702
+#: exe/webui/element.py:1706
 msgid "Check Caps?"
 msgstr "要檢查大小寫嗎？"
 
-#: exe/webui/element.py:1712
+#: exe/webui/element.py:1716
 msgid "Show Score?"
 msgstr "要顯示分數嗎？"
 
-#: exe/webui/element.py:1797
+#: exe/webui/element.py:1801
 msgid "Show/Hide Feedback"
 msgstr "顯示/隱藏意見回饋"
 
-#: exe/webui/element.py:1955
+#: exe/webui/element.py:1959
 msgid "Please select a .flv file."
 msgstr "請選擇一個 .flv 檔。"
 
-#: exe/webui/element.py:1971
+#: exe/webui/element.py:1975
 msgid "Select a flash video"
 msgstr "請選擇一 flash 影片"
 
-#: exe/webui/element.py:2080
+#: exe/webui/element.py:2084
 msgid "text"
 msgstr "文字"
 
-#: exe/webui/element.py:2081
+#: exe/webui/element.py:2085
 msgid "newline"
 msgstr "新行"
 
-#: exe/webui/element.py:2084
+#: exe/webui/element.py:2088
 msgid "Select a font size: "
 msgstr "選擇字型大小："
 
-#: exe/webui/element.py:2194 exe/webui/element.py:2581
-#: exe/webui/element.py:2706 exe/webui/element.py:2724
+#: exe/webui/element.py:2198 exe/webui/element.py:2585
+#: exe/webui/element.py:2710 exe/webui/element.py:2728
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "正確選項"
 
-#: exe/webui/element.py:2222 exe/webui/element.py:2609
+#: exe/webui/element.py:2226 exe/webui/element.py:2613
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "刪除選項"
 
-#: exe/webui/element.py:2361 exe/webui/element.py:2816
+#: exe/webui/element.py:2365 exe/webui/element.py:2820
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "刪除問題"
 
-#: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2400 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "新增其他選項"
 
-#: exe/webui/element.py:2497 exe/webui/element.py:2940
+#: exe/webui/element.py:2501 exe/webui/element.py:2944
 msgid "Solution"
 msgstr "答案"
 
-#: exe/webui/element.py:2831
+#: exe/webui/element.py:2835
 msgid "Add another option"
 msgstr "新增其他選項"
 
@@ -7910,11 +7928,11 @@ msgstr "新增可擺放物件"
 msgid "Default browser in your system"
 msgstr "您系統中的預設瀏覽器"
 
-#: exe/webui/preferencespage.py:200
+#: exe/webui/preferencespage.py:201
 msgid "Failed to get preferences"
 msgstr "取得喜好設定失敗"
 
-#: exe/webui/preferencespage.py:250
+#: exe/webui/preferencespage.py:255
 msgid "Failed to save preferences"
 msgstr "儲存喜好設定失敗"
 
@@ -7934,12 +7952,12 @@ msgstr "您可以安全地關閉。"
 msgid "Select pass rate: "
 msgstr "選擇及格線："
 
-#: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:368
+#: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:371
 msgid "SUBMIT ANSWERS"
 msgstr "提交答案"
 
-#: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318
-#: exe/webui/quiztestblock.py:372
+#: exe/webui/quiztestblock.py:225 exe/webui/quiztestblock.py:321
+#: exe/webui/quiztestblock.py:375
 #, fuzzy, python-format
 msgid "Your score is %d%%"
 msgstr "您的分數是"
@@ -7956,62 +7974,62 @@ msgstr "想一想"
 msgid "Load"
 msgstr "載入"
 
-#: exe/webui/scripts/authoring.js:69
+#: exe/webui/scripts/authoring.js:70
 #, fuzzy
 msgid "Select one or more images"
 msgstr "選擇影像"
 
-#: exe/webui/scripts/authoring.js:94
+#: exe/webui/scripts/authoring.js:95
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
 msgstr ""
 
-#: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
+#: exe/webui/scripts/authoring.js:122 exe/webui/scripts/authoring.js:364
 #, fuzzy
 msgid "Flash Movie (.flv)"
 msgstr "Flash 電影"
 
-#: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
+#: exe/webui/scripts/authoring.js:123 exe/webui/scripts/authoring.js:373
 msgid "Flash Object (.swf)"
 msgstr ""
 
-#: exe/webui/scripts/authoring.js:121
+#: exe/webui/scripts/authoring.js:124
 #, fuzzy
 msgid "Quicktime Files (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
 msgstr "QuickTime (mov, mp4, mpeg)"
 
-#: exe/webui/scripts/authoring.js:122
+#: exe/webui/scripts/authoring.js:125
 msgid "Windows Media Player Files (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
 msgstr ""
 
-#: exe/webui/scripts/authoring.js:123
+#: exe/webui/scripts/authoring.js:126
 msgid "RealMedia Audio Files (.rm, .ra, .ram, .mp3)"
 msgstr ""
 
-#: exe/webui/scripts/authoring.js:175
+#: exe/webui/scripts/authoring.js:178
 msgid "JPEG Files (.jpg, .jpeg)"
 msgstr ""
 
-#: exe/webui/scripts/authoring.js:375
+#: exe/webui/scripts/authoring.js:381
 msgid "MP3 Audio (.mp3)"
 msgstr ""
 
-#: exe/webui/scripts/authoring.js:378
+#: exe/webui/scripts/authoring.js:384
 #, fuzzy
 msgid "Select an mp3 file"
 msgstr "選擇檔案"
 
-#: exe/webui/scripts/authoring.js:386
+#: exe/webui/scripts/authoring.js:392
 #, fuzzy
 msgid "Select a package"
 msgstr "選擇影像"
 
-#: exe/webui/scripts/authoring.js:744
+#: exe/webui/scripts/authoring.js:778
 msgid ""
 "Embed images shouldn't be pasted directly into the editor. Please use "
 "Insert/Edit Image."
 msgstr ""
 
-#: exe/webui/scripts/authoring.js:744
+#: exe/webui/scripts/authoring.js:778
 msgid "This change will be undone."
 msgstr ""
 
@@ -8145,14 +8163,6 @@ msgstr "未偵測到 ieSpell 。您要現在安裝嗎？"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Check Spelling"
 msgstr "拼字檢查"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Insertion"
-msgstr "插入"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Deletion"
-msgstr "刪除"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Acronym"
@@ -10368,6 +10378,10 @@ msgstr "使用自動播放"
 msgid "Use Controls"
 msgstr "使用控制"
 
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:26
+msgid "QuickTime (mov, mpeg)"
+msgstr ""
+
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:3
 msgid "Insert HTML code as text"
 msgstr "將 HTML 程式碼貼成文字"
@@ -10577,10 +10591,6 @@ msgid "Case"
 msgstr "大小寫"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-msgid "Underline"
-msgstr "底線"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Overline"
 msgstr "上線"
 
@@ -10592,12 +10602,6 @@ msgstr "裝飾"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Vertical Alignment"
 msgstr "垂直對齊"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
-msgid "Strikethrough"
-msgstr "刪除線"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:23
@@ -11019,10 +11023,6 @@ msgstr "文字方向"
 msgid "Date/Time"
 msgstr "日期/時間"
 
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-msgid "Cite"
-msgstr "引用"
-
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Definition Description"
 msgstr "定義描述"
@@ -11034,10 +11034,6 @@ msgstr "定義名詞 "
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Code Sample"
 msgstr "代碼範例"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-msgid "Code"
-msgstr "代碼"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Block Quote"
@@ -11132,14 +11128,6 @@ msgstr "在此輸入您自訂的描述"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Remove Formatting"
 msgstr "移除格式"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-msgid "Superscript"
-msgstr "上標"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-msgid "Subscript"
-msgstr "下標"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Edit HTML Source"
@@ -11354,9 +11342,84 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
+#: exe/webui/scripts/tinymce_4_settings.js:272
+#: exe/webui/scripts/tinymce_4_settings.js:297
 #, fuzzy
 msgid "Editor"
 msgstr "編輯者"
+
+#: exe/webui/scripts/tinymce_4_settings.js:18
+#, python-format
+msgid "2 columns 50% 50%"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:19
+#, python-format
+msgid "2 columns 30% 70%"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:20
+#, python-format
+msgid "2 columns 70% 30%"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:21
+msgid "3 columns"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:82
+msgid "Inline"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:83
+msgid "Bold"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:84
+msgid "Italic"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:85
+msgid "Underline"
+msgstr "底線"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:86
+msgid "Strikethrough"
+msgstr "刪除線"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:87
+msgid "Superscript"
+msgstr "上標"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:88
+msgid "Subscript"
+msgstr "下標"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:89
+msgid "Code"
+msgstr "代碼"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:91
+msgid "Deletion"
+msgstr "刪除"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:92
+msgid "Insertion"
+msgstr "插入"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:93
+msgid "Cite"
+msgstr "引用"
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
@@ -11384,17 +11447,17 @@ msgstr "檔案 '%s' 已成功匯入到 '%s'。"
 msgid "Style %s successfully saved!"
 msgstr "檔案 '%s' 已成功匯入到 '%s'。"
 
-#: exe/webui/styledesigner.py:198
+#: exe/webui/styledesigner.py:204
 #, fuzzy, python-format
 msgid "Style directory %s already exists"
 msgstr "樣式名稱已存在：%s"
 
-#: exe/webui/styledesigner.py:258
+#: exe/webui/styledesigner.py:266
 #, fuzzy
 msgid "The style name already exists"
 msgstr "樣式名稱已存在：%s"
 
-#: exe/webui/styledesigner.py:275
+#: exe/webui/styledesigner.py:283
 msgid "Error saving style, style directory does not exist"
 msgstr ""
 

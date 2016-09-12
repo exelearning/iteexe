@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-22 14:14+0200\n"
+"POT-Creation-Date: 2016-09-11 12:51+0200\n"
 "PO-Revision-Date: 2016-04-16 17:47+0200\n"
 "Last-Translator: k.werschkull <k.werschkull@hccnet.nl>\n"
 "Language: nl\n"
@@ -722,7 +722,7 @@ msgstr ""
 #: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
 #: exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:833
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:845
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 msgid "Instructions"
@@ -739,7 +739,7 @@ msgstr ""
 "Als u dit veld niet verandert, wordt een standaardtekst getoond.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
-#: exe/webui/element.py:1522 exe/webui/listablock.py:259
+#: exe/webui/element.py:1526 exe/webui/listablock.py:259
 msgid "Cloze"
 msgstr "Invullen"
 
@@ -773,10 +773,10 @@ msgstr ""
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:182
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
-#: exe/webui/common.py:740 exe/webui/common.py:750
+#: exe/webui/common.py:752 exe/webui/common.py:762
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
-#: exe/webui/element.py:2477 exe/webui/element.py:2612
-#: exe/webui/element.py:2727 exe/webui/element.py:2928
+#: exe/webui/element.py:2481 exe/webui/element.py:2616
+#: exe/webui/element.py:2731 exe/webui/element.py:2932
 #: exe/webui/listablock.py:462 exe/webui/questionelement.py:114
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
@@ -1078,9 +1078,9 @@ msgstr ""
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3754
 #: exe/engine/field.py:3819 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:82
-#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2452
-#: exe/webui/element.py:2456 exe/webui/element.py:2905
-#: exe/webui/element.py:2909 exe/webui/testquestionelement.py:151
+#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2456
+#: exe/webui/element.py:2460 exe/webui/element.py:2909
+#: exe/webui/element.py:2913 exe/webui/testquestionelement.py:151
 #: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
 msgid "Question"
 msgstr "Vraag:"
@@ -1364,8 +1364,8 @@ msgstr ""
 
 #: exe/engine/field.py:3679 exe/engine/field.py:3728
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/webui/element.py:2189 exe/webui/element.py:2244
-#: exe/webui/element.py:2576 exe/webui/element.py:2668
+#: exe/webui/element.py:2193 exe/webui/element.py:2248
+#: exe/webui/element.py:2580 exe/webui/element.py:2672
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
 msgstr "Alternatief"
@@ -1373,11 +1373,11 @@ msgstr "Alternatief"
 #: exe/engine/field.py:3757 exe/engine/field.py:3823
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
-#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:452
+#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:464
 msgid "Hint"
 msgstr "Hint"
 
-#: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2381
+#: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2385
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
 #: exe/webui/testquestionelement.py:110
@@ -1400,7 +1400,7 @@ msgstr ""
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
-#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2356
+#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2360
 msgid "Question:"
 msgstr "Vraag:"
 
@@ -1456,7 +1456,7 @@ msgstr "Bijlagen iDevice"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#: exe/webui/common.py:492
+#: exe/webui/common.py:504
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:9
 #: exe/webui/tools/style-designer/langs/en.js:59
 msgid "Yes"
@@ -1464,7 +1464,7 @@ msgstr "Ja"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#: exe/webui/common.py:493
+#: exe/webui/common.py:505
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:10
 #: exe/webui/tools/style-designer/langs/en.js:60
 msgid "No"
@@ -1677,7 +1677,7 @@ msgstr "Leesactiviteit 0.11"
 msgid "Reading Activity"
 msgstr "Leesactiviteit"
 
-#: exe/engine/hangmanidevice.py:51 exe/webui/common.py:490
+#: exe/engine/hangmanidevice.py:51 exe/webui/common.py:502
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
 msgid "Hangman Game"
 msgstr "Galgje"
@@ -1703,7 +1703,7 @@ msgstr "Alfabet dat aan spelers getoond wordt"
 msgid "Alphabet to Select From"
 msgstr "Alfabet waaruit een kjeuze gemaakt moet worden"
 
-#: exe/engine/hangmanidevice.py:77 exe/webui/common.py:510
+#: exe/engine/hangmanidevice.py:77 exe/webui/common.py:522
 msgid "abcdefghijklmnopqrstuvwxyz"
 msgstr "abcdefghijklmnopqrstuvwxyz"
 
@@ -1755,8 +1755,8 @@ msgstr "Tekst van de \"Restart level\" knop"
 msgid "Text for reset button"
 msgstr "Tekst van de Reset-knop"
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:502
-#: exe/webui/element.py:1548 exe/webui/element.py:1804
+#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:514
+#: exe/webui/element.py:1552 exe/webui/element.py:1808
 msgid "Restart"
 msgstr "Herstarten"
 
@@ -3536,10 +3536,10 @@ msgstr ""
 "exe_do: fout: Kan  '%s' niet importeren.\n"
 "De fout was:"
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:302
-#: exe/jsui/mainpage.py:983 exe/jsui/mainpage.py:1147 exe/jsui/mainpage.py:1187
-#: exe/jsui/mainpage.py:1222 exe/jsui/mainpage.py:1243
-#: exe/jsui/mainpage_antes_jr_docs.py:295
+#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:303
+#: exe/jsui/mainpage.py:1053 exe/jsui/mainpage.py:1217
+#: exe/jsui/mainpage.py:1257 exe/jsui/mainpage.py:1292
+#: exe/jsui/mainpage.py:1313 exe/jsui/mainpage_antes_jr_docs.py:295
 #: exe/jsui/mainpage_antes_jr_docs.py:916
 #: exe/jsui/mainpage_antes_jr_docs.py:1080
 #: exe/jsui/mainpage_antes_jr_docs.py:1120
@@ -3557,7 +3557,7 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "Export bestandsindeling niet geďmplementeerd\t"
 
-#: exe/export/epub3export.py:642 exe/export/imsexport.py:612
+#: exe/export/epub3export.py:644 exe/export/imsexport.py:614
 #: exe/export/scormexport.py:701 exe/export/websiteexport.py:98
 #, python-format
 msgid ""
@@ -3567,13 +3567,13 @@ msgstr ""
 "UITVOER MISLUKT!\n"
 "Laatst geslaagde uitvoer is %s."
 
-#: exe/export/scormpage.py:177 exe/export/websitepage.py:345
-#: exe/webui/common.py:473
+#: exe/export/scormpage.py:179 exe/export/websitepage.py:347
+#: exe/webui/common.py:485
 msgid "Previous"
 msgstr "Vorige"
 
-#: exe/export/scormpage.py:178 exe/export/websitepage.py:351
-#: exe/webui/common.py:474
+#: exe/export/scormpage.py:180 exe/export/websitepage.py:353
+#: exe/webui/common.py:486
 msgid "Next"
 msgstr "Volgende"
 
@@ -3652,25 +3652,25 @@ msgstr "%s invoegen"
 msgid "My iDevices"
 msgstr "Mijn iDevices"
 
-#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:845 exe/jsui/mainpage.py:975
+#: exe/jsui/mainpage.py:321 exe/jsui/mainpage.py:915 exe/jsui/mainpage.py:1045
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
 msgstr "Geen toegang tot de map"
 
-#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:847 exe/jsui/mainpage.py:975
+#: exe/jsui/mainpage.py:321 exe/jsui/mainpage.py:917 exe/jsui/mainpage.py:1045
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
 msgstr ". Gebruik alleen ASCII-tekens."
 
-#: exe/jsui/mainpage.py:329 exe/jsui/mainpage_antes_jr_docs.py:322
+#: exe/jsui/mainpage.py:330 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
 msgstr "OPSLAAN MISLUKT!"
 
-#: exe/jsui/mainpage.py:333 exe/jsui/mainpage.py:645 exe/jsui/mainpage.py:1071
+#: exe/jsui/mainpage.py:334 exe/jsui/mainpage.py:646 exe/jsui/mainpage.py:1141
 #: exe/jsui/mainpage_antes_jr_docs.py:326
 #: exe/jsui/mainpage_antes_jr_docs.py:638
 #: exe/jsui/mainpage_antes_jr_docs.py:1004
@@ -3682,7 +3682,7 @@ msgstr ""
 "OPSLAAN MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:337 exe/jsui/mainpage.py:342 exe/jsui/mainpage.py:345
+#: exe/jsui/mainpage.py:338 exe/jsui/mainpage.py:343 exe/jsui/mainpage.py:346
 #: exe/jsui/mainpage_antes_jr_docs.py:330
 #: exe/jsui/mainpage_antes_jr_docs.py:335
 #: exe/jsui/mainpage_antes_jr_docs.py:338
@@ -3690,32 +3690,27 @@ msgstr ""
 msgid "Package saved to: %s"
 msgstr "Bestand opgeslagen naar: %s"
 
-#: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:672
+#: exe/jsui/mainpage.py:569 exe/jsui/mainpage.py:673 exe/jsui/mainpage.py:754
 #: exe/jsui/mainpage_antes_jr_docs.py:561
 #: exe/jsui/mainpage_antes_jr_docs.py:665
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Bestand directory %s bestaat al, kan niet vervangen"
 
-#: exe/jsui/mainpage.py:587 exe/jsui/mainpage_antes_jr_docs.py:580
+#: exe/jsui/mainpage.py:588 exe/jsui/mainpage_antes_jr_docs.py:580
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Bestandsnaam %s niet gevonden, kan niet voorvertonen"
 
-#: exe/jsui/mainpage.py:712 exe/jsui/mainpage_antes_jr_docs.py:705
-#, python-format
-msgid ""
-"MimeTeX compile failed!\n"
-"%s"
+#: exe/jsui/mainpage.py:713 exe/jsui/mainpage.py:739 exe/jsui/mainpage.py:782
+msgid "Could not create the image"
 msgstr ""
-"Compileren MimeTeX mislukt!\n"
-"%s"
 
-#: exe/jsui/mainpage.py:750 exe/jsui/mainpage_antes_jr_docs.py:743
+#: exe/jsui/mainpage.py:820 exe/jsui/mainpage_antes_jr_docs.py:743
 msgid "Importing HTML..."
 msgstr "HTML-import is bezig"
 
-#: exe/jsui/mainpage.py:756 exe/jsui/mainpage_antes_jr_docs.py:749
+#: exe/jsui/mainpage.py:826 exe/jsui/mainpage_antes_jr_docs.py:749
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3724,23 +3719,23 @@ msgstr ""
 "De import van LOM Metadata is MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:759 exe/jsui/mainpage_antes_jr_docs.py:752
+#: exe/jsui/mainpage.py:829 exe/jsui/mainpage_antes_jr_docs.py:752
 msgid "Error importing HTML:\n"
 msgstr "HTLM-imort mislukt:\n"
 
-#: exe/jsui/mainpage.py:786
+#: exe/jsui/mainpage.py:856
 msgid "Publishing document to Procomún"
 msgstr "Publiceer algemeen document"
 
-#: exe/jsui/mainpage.py:789
+#: exe/jsui/mainpage.py:859
 msgid "Exporting package as SCORM"
 msgstr "Exporteer het pakket als SCORM"
 
-#: exe/jsui/mainpage.py:810
+#: exe/jsui/mainpage.py:880
 msgid "Starting authorized connection to Procomún API"
 msgstr "Beveiligde verbinding met algemene API begint."
 
-#: exe/jsui/mainpage.py:823
+#: exe/jsui/mainpage.py:893
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
@@ -3749,14 +3744,14 @@ msgstr ""
 "Pakket geexporteerd naar  <a href=\"%s\" target=\"_blank\" title=\"Klik "
 "om de geëxporteerde website te tonen\">%s</a>"
 
-#: exe/jsui/mainpage.py:826
+#: exe/jsui/mainpage.py:896
 #, python-format
 msgid "Error exporting package %s to Procomún: %s"
 msgstr "Fout bij het exporteren van pakket %s naar algemeen: %s"
 
-#: exe/jsui/mainpage.py:868 exe/jsui/mainpage.py:873 exe/jsui/mainpage.py:876
-#: exe/jsui/mainpage.py:879 exe/jsui/mainpage.py:882 exe/jsui/mainpage.py:885
-#: exe/jsui/mainpage.py:890 exe/jsui/mainpage.py:1131 exe/jsui/mainpage.py:1203
+#: exe/jsui/mainpage.py:938 exe/jsui/mainpage.py:943 exe/jsui/mainpage.py:946
+#: exe/jsui/mainpage.py:949 exe/jsui/mainpage.py:952 exe/jsui/mainpage.py:955
+#: exe/jsui/mainpage.py:960 exe/jsui/mainpage.py:1201 exe/jsui/mainpage.py:1273
 #: exe/jsui/mainpage_antes_jr_docs.py:801
 #: exe/jsui/mainpage_antes_jr_docs.py:806
 #: exe/jsui/mainpage_antes_jr_docs.py:809
@@ -3769,16 +3764,16 @@ msgstr "Fout bij het exporteren van pakket %s naar algemeen: %s"
 msgid "EXPORT FAILED!"
 msgstr "UITVOER MISLUKT!"
 
-#: exe/jsui/mainpage.py:940 exe/jsui/mainpage_antes_jr_docs.py:873
+#: exe/jsui/mainpage.py:1010 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
 msgstr "Juiste XLIFF import"
 
-#: exe/jsui/mainpage.py:943 exe/jsui/mainpage_antes_jr_docs.py:876
+#: exe/jsui/mainpage.py:1013 exe/jsui/mainpage_antes_jr_docs.py:876
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Fout bij import XLIFF: %s"
 
-#: exe/jsui/mainpage.py:984 exe/jsui/mainpage.py:1001
+#: exe/jsui/mainpage.py:1054 exe/jsui/mainpage.py:1071
 #: exe/jsui/mainpage_antes_jr_docs.py:917
 #: exe/jsui/mainpage_antes_jr_docs.py:934
 #, python-format
@@ -3789,22 +3784,22 @@ msgstr ""
 "UITPAKKEN MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1003 exe/jsui/mainpage_antes_jr_docs.py:936
+#: exe/jsui/mainpage.py:1073 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Besatand uitgepakt naar: %s"
 
-#: exe/jsui/mainpage.py:1015 exe/jsui/mainpage_antes_jr_docs.py:948
+#: exe/jsui/mainpage.py:1085 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
 msgstr "Mapnaam bestaat al"
 
-#: exe/jsui/mainpage.py:1029 exe/jsui/mainpage.py:1119
-#: exe/jsui/mainpage.py:1135 exe/jsui/mainpage.py:1148
-#: exe/jsui/mainpage.py:1154 exe/jsui/mainpage.py:1172
-#: exe/jsui/mainpage.py:1188 exe/jsui/mainpage.py:1194
-#: exe/jsui/mainpage.py:1208 exe/jsui/mainpage.py:1223
-#: exe/jsui/mainpage.py:1229 exe/jsui/mainpage.py:1244
-#: exe/jsui/mainpage.py:1250 exe/jsui/mainpage_antes_jr_docs.py:962
+#: exe/jsui/mainpage.py:1099 exe/jsui/mainpage.py:1189
+#: exe/jsui/mainpage.py:1205 exe/jsui/mainpage.py:1218
+#: exe/jsui/mainpage.py:1224 exe/jsui/mainpage.py:1242
+#: exe/jsui/mainpage.py:1258 exe/jsui/mainpage.py:1264
+#: exe/jsui/mainpage.py:1278 exe/jsui/mainpage.py:1293
+#: exe/jsui/mainpage.py:1299 exe/jsui/mainpage.py:1314
+#: exe/jsui/mainpage.py:1320 exe/jsui/mainpage_antes_jr_docs.py:962
 #: exe/jsui/mainpage_antes_jr_docs.py:1052
 #: exe/jsui/mainpage_antes_jr_docs.py:1068
 #: exe/jsui/mainpage_antes_jr_docs.py:1081
@@ -3825,14 +3820,14 @@ msgstr ""
 "UITVOER MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1057 exe/jsui/mainpage.py:1104
+#: exe/jsui/mainpage.py:1127 exe/jsui/mainpage.py:1174
 #: exe/jsui/mainpage_antes_jr_docs.py:990
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Bestandsnaam %s bestaat al, kan niet vervangen"
 
-#: exe/jsui/mainpage.py:1063 exe/jsui/mainpage.py:1111
+#: exe/jsui/mainpage.py:1133 exe/jsui/mainpage.py:1181
 #: exe/jsui/mainpage_antes_jr_docs.py:996
 #: exe/jsui/mainpage_antes_jr_docs.py:1044
 #, python-format
@@ -3843,11 +3838,11 @@ msgstr ""
 "De map %s bestaat al. Kies een andere naam of verwijder de bestaande map "
 "en probeer opnieuw."
 
-#: exe/jsui/mainpage.py:1077 exe/jsui/mainpage.py:1122
-#: exe/jsui/mainpage.py:1137 exe/jsui/mainpage.py:1156
-#: exe/jsui/mainpage.py:1174 exe/jsui/mainpage.py:1196
-#: exe/jsui/mainpage.py:1210 exe/jsui/mainpage.py:1231
-#: exe/jsui/mainpage.py:1252 exe/jsui/mainpage_antes_jr_docs.py:1010
+#: exe/jsui/mainpage.py:1147 exe/jsui/mainpage.py:1192
+#: exe/jsui/mainpage.py:1207 exe/jsui/mainpage.py:1226
+#: exe/jsui/mainpage.py:1244 exe/jsui/mainpage.py:1266
+#: exe/jsui/mainpage.py:1280 exe/jsui/mainpage.py:1301
+#: exe/jsui/mainpage.py:1322 exe/jsui/mainpage_antes_jr_docs.py:1010
 #: exe/jsui/mainpage_antes_jr_docs.py:1055
 #: exe/jsui/mainpage_antes_jr_docs.py:1070
 #: exe/jsui/mainpage_antes_jr_docs.py:1089
@@ -3860,16 +3855,16 @@ msgstr ""
 msgid "Exported to %s"
 msgstr "Geëxporteerd naar %s"
 
-#: exe/jsui/mainpage.py:1285 exe/jsui/mainpage_antes_jr_docs.py:1218
+#: exe/jsui/mainpage.py:1355 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Bestand %s bestaat niet of is niet leesbaar."
 
-#: exe/jsui/mainpage.py:1289 exe/jsui/mainpage_antes_jr_docs.py:1222
+#: exe/jsui/mainpage.py:1359 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Kan het bestand niet laden, email bestand naar bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1292 exe/jsui/mainpage_antes_jr_docs.py:1225
+#: exe/jsui/mainpage.py:1362 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3878,9 +3873,18 @@ msgstr ""
 "Sorry, fout bestandsformaat:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1294 exe/jsui/mainpage_antes_jr_docs.py:1227
+#: exe/jsui/mainpage.py:1364 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
 msgstr "Sorry, fout bestandsformaat"
+
+#: exe/jsui/mainpage_antes_jr_docs.py:705
+#, python-format
+msgid ""
+"MimeTeX compile failed!\n"
+"%s"
+msgstr ""
+"Compileren MimeTeX mislukt!\n"
+"%s"
 
 #: exe/jsui/propertiespage.py:335
 msgid "Failed to get properties"
@@ -3897,8 +3901,8 @@ msgstr "Opslaan instellingen niet gelukt"
 msgid "Show Image"
 msgstr "Toon afbeelding"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:776
-#: exe/webui/element.py:1190 exe/webui/scripts/authoring.js:69
+#: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:780
+#: exe/webui/element.py:1194 exe/webui/scripts/authoring.js:70
 msgid "Select an image"
 msgstr "Kies een afbeelding"
 
@@ -3928,9 +3932,9 @@ msgstr "Afbeeldingsbestanden"
 #: exe/jsui/scripts/app/controller/Toolbar.js:1096
 #: exe/jsui/scripts/app/controller/Toolbar.js:1193
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
-#: exe/webui/scripts/authoring.js:95 exe/webui/scripts/authoring.js:118
-#: exe/webui/scripts/authoring.js:359 exe/webui/scripts/authoring.js:368
-#: exe/webui/scripts/authoring.js:376 exe/webui/scripts/authoring.js:397
+#: exe/webui/scripts/authoring.js:96 exe/webui/scripts/authoring.js:121
+#: exe/webui/scripts/authoring.js:365 exe/webui/scripts/authoring.js:374
+#: exe/webui/scripts/authoring.js:382 exe/webui/scripts/authoring.js:403
 #: exe/webui/scripts/editor.js:80 exe/webui/scripts/editor.js:107
 #: exe/webui/scripts/stylemanager.js:42 exe/webui/scripts/stylemanager.js:66
 msgid "All Files"
@@ -3953,7 +3957,7 @@ msgstr "Instellingen opgeslagen"
 #: exe/jsui/scripts/app/controller/Toolbar.js:475
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:258
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:278
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:336
 #: exe/webui/stylemanagerpage.py:155 exe/webui/stylemanagerpage.py:267
 #: exe/webui/stylemanagerpage.py:319 exe/webui/stylemanagerpage.py:362
@@ -4389,7 +4393,7 @@ msgstr "Het bestand bestaat al. Wilt U het vervangen?"
 #: exe/jsui/scripts/app/view/forms/LomSections.js:87
 #: exe/jsui/scripts/app/view/forms/LomSections.js:103
 #: exe/jsui/scripts/app/view/forms/LomSections.js:153
-#: exe/webui/editorpane.py:326
+#: exe/webui/editorpane.py:335
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
@@ -4420,7 +4424,7 @@ msgstr "Open"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:228
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:640
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:249
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:269
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:260
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/en.js:112
@@ -4873,7 +4877,7 @@ msgstr "Aggregatie niveau"
 msgid "Version"
 msgstr "Versie"
 
-#: exe/jsui/scripts/app/view/forms/LomSections.js:58 exe/webui/common.py:497
+#: exe/jsui/scripts/app/view/forms/LomSections.js:58 exe/webui/common.py:509
 msgid "Status"
 msgstr "Status"
 
@@ -4995,7 +4999,7 @@ msgid "Entity"
 msgstr "Entiteit"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:269
-#: exe/webui/editorpane.py:387
+#: exe/webui/editorpane.py:401
 msgid "Purpose"
 msgstr "Doelstelling"
 
@@ -5439,33 +5443,47 @@ msgstr ""
 "opmaak. Ongeldige code zal worden verwijderd, zelfs HTML5 tags (behalve "
 "VIDEO en AUDIO) bij gebruik van XHTML format."
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:199
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:202
+msgid "Editor version"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:205
+msgid "recommended"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:212
+msgid ""
+"We recommend you to use the latest available version. An old one could be"
+" useful to edit some old contents."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:219
 msgid "Internal Linking (for Web Site Exports only)"
 msgstr "Interne hyperlinks (alleen voor exporteren naar website)"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:203
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:223
 msgid "Enable All Internal Linking"
 msgstr "Alle interne hyperlinks inschakelen"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:204
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:224
 msgid "Disable Auto-Top Internal Linking"
 msgstr "Interne Auto-Top Linking uitschakelen"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:205
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:225
 msgid "Disable All Internal Linking"
 msgstr "Interne hyperlinks volledig uitschakelen"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:215
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:235
 msgid "Default license for the new documents"
 msgstr "Standaard licentie voor de nieuwe documenten"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:235
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:255
 msgid "The current document license can be modified in the Properties tab."
 msgstr ""
 "De huidige document-licentie kan worden aangepast op het tabblad "
 "Eigenschappen."
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:274
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:294
 msgid "Show this window on eXe start"
 msgstr "Toon dit venster als eXe opstart"
 
@@ -5673,7 +5691,7 @@ msgstr "Wis de onlangs geopende projecten"
 msgid "Save As..."
 msgstr "Opslaan als..."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157 exe/webui/common.py:482
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157 exe/webui/common.py:494
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Print"
 msgstr "Afdrukken"
@@ -5776,7 +5794,7 @@ msgid "Resources Report"
 msgstr "Hulpmiddelenrapport"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:419 exe/webui/editorpane.py:268
-#: exe/webui/element.py:2098
+#: exe/webui/element.py:2102
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:10
@@ -7510,13 +7528,13 @@ msgstr "Accepteer URL"
 msgid "Applet Code:"
 msgstr "Appletcode:"
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:1065
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:1069
 msgid "Filename:"
 msgstr "Bestandsnaam:"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
-#: exe/webui/element.py:1075 exe/webui/scripts/authoring.js:105
-#: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
+#: exe/webui/element.py:1079 exe/webui/scripts/authoring.js:106
+#: exe/webui/scripts/authoring.js:367 exe/webui/scripts/authoring.js:376
 #: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
 msgid "Select a file"
 msgstr "Kies een bestand"
@@ -7561,11 +7579,11 @@ msgstr "Omlaag"
 msgid "---Move To---"
 msgstr "---Verplaats naar---"
 
-#: exe/webui/block.py:260 exe/webui/editorpane.py:380
+#: exe/webui/block.py:260 exe/webui/editorpane.py:394
 msgid "Pedagogical Help"
 msgstr "Pedagogische hulp"
 
-#: exe/webui/block.py:273 exe/webui/editorpane.py:390
+#: exe/webui/block.py:273 exe/webui/editorpane.py:404
 msgid "Tip:"
 msgstr "Tip:"
 
@@ -7751,98 +7769,98 @@ msgstr "Locale versie"
 msgid "Enable JavaScript"
 msgstr "JavaScript Inschakelen"
 
-#: exe/webui/common.py:475
+#: exe/webui/common.py:487
 msgid "Show"
 msgstr "Tonen"
 
-#: exe/webui/common.py:476
+#: exe/webui/common.py:488
 msgid "Hide"
 msgstr "Verbergen"
 
-#: exe/webui/common.py:477 exe/webui/common.py:715 exe/webui/element.py:1538
-#: exe/webui/element.py:2469 exe/webui/listablock.py:275
+#: exe/webui/common.py:489 exe/webui/common.py:727 exe/webui/element.py:1542
+#: exe/webui/element.py:2473 exe/webui/listablock.py:275
 msgid "Show Feedback"
 msgstr "Toon feedback"
 
-#: exe/webui/common.py:478
+#: exe/webui/common.py:490
 msgid "Hide Feedback"
 msgstr "Verberg feedback"
 
-#: exe/webui/common.py:479 exe/webui/common.py:494 exe/webui/element.py:2272
+#: exe/webui/common.py:491 exe/webui/common.py:506 exe/webui/element.py:2276
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
 msgstr "Juist"
 
-#: exe/webui/common.py:480 exe/webui/element.py:2275
+#: exe/webui/common.py:492 exe/webui/element.py:2279
 msgid "Incorrect"
 msgstr "Verkeerd!"
 
-#: exe/webui/common.py:481
+#: exe/webui/common.py:493
 msgid "Menu"
 msgstr "Menu"
 
-#: exe/webui/common.py:491
+#: exe/webui/common.py:503
 msgid "Accept"
 msgstr "Accepteren"
 
-#: exe/webui/common.py:495 exe/webui/element.py:2708 exe/webui/element.py:2726
+#: exe/webui/common.py:507 exe/webui/element.py:2712 exe/webui/element.py:2730
 msgid "Wrong"
 msgstr "Fout"
 
-#: exe/webui/common.py:496
+#: exe/webui/common.py:508
 msgid "Right answer"
 msgstr "Juiste antwoord"
 
-#: exe/webui/common.py:498
+#: exe/webui/common.py:510
 msgid "Selected letters"
 msgstr "Gekozen letters"
 
-#: exe/webui/common.py:499
+#: exe/webui/common.py:511
 msgid "Word"
 msgstr "Woord"
 
-#: exe/webui/common.py:500
+#: exe/webui/common.py:512
 msgid "Words"
 msgstr "Woorden"
 
-#: exe/webui/common.py:501
+#: exe/webui/common.py:513
 msgid "Play"
 msgstr "Spelen"
 
-#: exe/webui/common.py:503
+#: exe/webui/common.py:515
 msgid "Results"
 msgstr "Resultaten"
 
-#: exe/webui/common.py:504
+#: exe/webui/common.py:516
 msgid "Total"
 msgstr "Totaal"
 
-#: exe/webui/common.py:505
+#: exe/webui/common.py:517
 msgid "Another word"
 msgstr "Het volgende woord"
 
-#: exe/webui/common.py:506
+#: exe/webui/common.py:518
 msgid "Game over."
 msgstr "Game over."
 
-#: exe/webui/common.py:507
+#: exe/webui/common.py:519
 msgid "Reload the game?"
 msgstr "Spel opnieuw beginnen?"
 
-#: exe/webui/common.py:508
+#: exe/webui/common.py:520
 msgid "Click on \"Play\" to start a new game."
 msgstr "Klik op \"Spelen\" om een nieuw spel te beginnen"
 
-#: exe/webui/common.py:509
+#: exe/webui/common.py:521
 msgid "Click on \"Another word\" to continue."
 msgstr "Klik op \"Nieuw woord\" om door te gaan."
 
-#: exe/webui/common.py:531 exe/webui/editorpage.py:235
+#: exe/webui/common.py:543 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : elearning XHTML-editor"
 
-#: exe/webui/common.py:839 exe/webui/common.py:842
+#: exe/webui/common.py:851 exe/webui/common.py:854
 msgid "Click for completion instructions"
 msgstr "Klik voor aanwijzingen"
 
@@ -7858,7 +7876,7 @@ msgstr "Tekstregel"
 msgid "Text Box"
 msgstr "Tekstveld"
 
-#: exe/webui/editorelement.py:149 exe/webui/element.py:602
+#: exe/webui/editorelement.py:149 exe/webui/element.py:603
 msgid "Button Caption"
 msgstr "Opschrift/titel knop"
 
@@ -7896,7 +7914,7 @@ msgstr "Rechts"
 msgid "Align:"
 msgstr "Uitlijnen:"
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1889
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1893
 msgid "Select Flash Object"
 msgstr "Kies een Flash-bestand"
 
@@ -7904,7 +7922,7 @@ msgstr "Kies een Flash-bestand"
 msgid "Select MP3 file"
 msgstr "Kies een MP3-bestand"
 
-#: exe/webui/editorelement.py:311 exe/webui/element.py:869
+#: exe/webui/editorelement.py:311 exe/webui/element.py:873
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
@@ -8036,41 +8054,36 @@ msgstr "Veld toevoegen"
 msgid "Actions"
 msgstr "Acties"
 
-#: exe/webui/editorpane.py:332
+#: exe/webui/editorpane.py:341
 msgid "Pedagogical Tip"
 msgstr "Pedagogische tip"
 
-#: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:103
+#: exe/webui/editorpane.py:344 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:163
 msgid "Emphasis"
 msgstr "Nadruk"
 
-#: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
+#: exe/webui/editorpane.py:347 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:160
 msgid "No emphasis"
 msgstr "Geen nadruk"
 
-#: exe/webui/editorpane.py:339 exe/webui/multimediablock.py:101
+#: exe/webui/editorpane.py:348 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:161
 msgid "Some emphasis"
 msgstr "Lichte nadruk"
 
-#: exe/webui/editorpane.py:354
+#: exe/webui/editorpane.py:363
 msgid "Select an icon"
 msgstr "Kies een icoon"
 
-#: exe/webui/editorpane.py:368
+#: exe/webui/editorpane.py:381
 msgid "Icons"
 msgstr "Pictogrammen"
 
-#: exe/webui/editorpane.py:383
+#: exe/webui/editorpane.py:397
 msgid "Info"
 msgstr "Info"
-
-#: exe/webui/editorpane.py:429 exe/webui/element.py:1545
-#: exe/webui/element.py:1547 exe/webui/element.py:1803
-msgid "Submit"
-msgstr "Verzenden"
 
 #: exe/webui/ejercicioresueltofpdblock.py:122
 msgid "Translation"
@@ -8101,128 +8114,133 @@ msgstr "FOUT Element.renderEdit rechtstreeks aangeroepen met klasse %s"
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "FOUT Element.renderView rechtstreeks aangeroepen met klasse %s"
 
-#: exe/webui/element.py:753 exe/webui/element.py:1174
+#: exe/webui/element.py:757 exe/webui/element.py:1178
 msgid "Add Image"
 msgstr "Afbeelding toevoegen"
 
-#: exe/webui/element.py:779 exe/webui/element.py:1196 exe/webui/element.py:1893
+#: exe/webui/element.py:783 exe/webui/element.py:1200 exe/webui/element.py:1897
 msgid "Display as:"
 msgstr "Toon als:"
 
-#: exe/webui/element.py:786
+#: exe/webui/element.py:790
 msgid "by"
 msgstr "door"
 
-#: exe/webui/element.py:793 exe/webui/element.py:1212
+#: exe/webui/element.py:797 exe/webui/element.py:1216
 msgid "blank for original size"
 msgstr "leeg voor originele afmetingen"
 
-#: exe/webui/element.py:863
+#: exe/webui/element.py:867
 msgid "Select an MP3"
 msgstr "Kies een MP3-bestand"
 
-#: exe/webui/element.py:1351 exe/webui/element.py:1684
+#: exe/webui/element.py:1355 exe/webui/element.py:1688
 msgid "Cloze Text"
 msgstr "Invultekst"
 
-#: exe/webui/element.py:1359 exe/webui/element.py:1692
+#: exe/webui/element.py:1363 exe/webui/element.py:1696
 #: exe/webui/listablock.py:174
 msgid "Hide/Show Word"
 msgstr "Toon/verberg woord"
 
-#: exe/webui/element.py:1364 exe/webui/element.py:1697
+#: exe/webui/element.py:1368 exe/webui/element.py:1701
 msgid "Strict Marking?"
 msgstr "Streng verbeteren?"
 
-#: exe/webui/element.py:1369
+#: exe/webui/element.py:1373
 msgid "Check Capitalization?"
 msgstr "Hoofdletters controleren?"
 
-#: exe/webui/element.py:1374 exe/webui/element.py:1707
+#: exe/webui/element.py:1378 exe/webui/element.py:1711
 msgid "Instant Marking?"
 msgstr "Onmiddellijk verbeteren?"
 
-#: exe/webui/element.py:1485 exe/webui/element.py:1742
+#: exe/webui/element.py:1489 exe/webui/element.py:1746
 #: exe/webui/listablock.py:223
 msgid "Your score is "
 msgstr "Je score is"
 
-#: exe/webui/element.py:1535 exe/webui/element.py:1794
+#: exe/webui/element.py:1539 exe/webui/element.py:1798
 msgid "Get score"
 msgstr "Bekijk de score"
 
-#: exe/webui/element.py:1541 exe/webui/element.py:1800
+#: exe/webui/element.py:1545 exe/webui/element.py:1804
 msgid "Show/Clear Answers"
 msgstr "Toon/wis antwoorden"
 
-#: exe/webui/element.py:1551 exe/webui/element.py:1807
+#: exe/webui/element.py:1549 exe/webui/element.py:1551
+#: exe/webui/element.py:1807
+msgid "Submit"
+msgstr "Verzenden"
+
+#: exe/webui/element.py:1555 exe/webui/element.py:1811
 msgid "Show Answers"
 msgstr "Toon antwoorden"
 
-#: exe/webui/element.py:1587 exe/webui/element.py:1839
-#: exe/webui/element.py:2461 exe/webui/element.py:2921
+#: exe/webui/element.py:1591 exe/webui/element.py:1843
+#: exe/webui/element.py:2465 exe/webui/element.py:2925
 #: exe/webui/listablock.py:313 exe/webui/testquestionelement.py:158
 msgid "Answers"
 msgstr "AAntwoorden"
 
-#: exe/webui/element.py:1702
+#: exe/webui/element.py:1706
 msgid "Check Caps?"
 msgstr "Hoofdlettergevoelig?"
 
-#: exe/webui/element.py:1712
+#: exe/webui/element.py:1716
 msgid "Show Score?"
 msgstr "Score tonen?"
 
-#: exe/webui/element.py:1797
+#: exe/webui/element.py:1801
 msgid "Show/Hide Feedback"
 msgstr "Toon/verberg feedback"
 
-#: exe/webui/element.py:1955
+#: exe/webui/element.py:1959
 msgid "Please select a .flv file."
 msgstr "Selecteer een .flv-bestand."
 
-#: exe/webui/element.py:1971
+#: exe/webui/element.py:1975
 msgid "Select a flash video"
 msgstr "Kies een Flash-film"
 
-#: exe/webui/element.py:2080
+#: exe/webui/element.py:2084
 msgid "text"
 msgstr "tekst"
 
-#: exe/webui/element.py:2081
+#: exe/webui/element.py:2085
 msgid "newline"
 msgstr "nieuwe regel"
 
-#: exe/webui/element.py:2084
+#: exe/webui/element.py:2088
 msgid "Select a font size: "
 msgstr "Kies lettergrootte:"
 
-#: exe/webui/element.py:2194 exe/webui/element.py:2581
-#: exe/webui/element.py:2706 exe/webui/element.py:2724
+#: exe/webui/element.py:2198 exe/webui/element.py:2585
+#: exe/webui/element.py:2710 exe/webui/element.py:2728
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "Juiste keuze"
 
-#: exe/webui/element.py:2222 exe/webui/element.py:2609
+#: exe/webui/element.py:2226 exe/webui/element.py:2613
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "Alternatief verwijderen"
 
-#: exe/webui/element.py:2361 exe/webui/element.py:2816
+#: exe/webui/element.py:2365 exe/webui/element.py:2820
 #: exe/webui/questionelement.py:121 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "Vraag verwijderen"
 
-#: exe/webui/element.py:2396 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2400 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "Nieuw alternatief toevoegen"
 
-#: exe/webui/element.py:2497 exe/webui/element.py:2940
+#: exe/webui/element.py:2501 exe/webui/element.py:2944
 msgid "Solution"
 msgstr "Oplossing"
 
-#: exe/webui/element.py:2831
+#: exe/webui/element.py:2835
 msgid "Add another option"
 msgstr "Nieuw alternatief toevoegen"
 
@@ -8471,11 +8489,11 @@ msgstr "Voeg een te plaatsen object toe"
 msgid "Default browser in your system"
 msgstr "Standaard browser op uw computer"
 
-#: exe/webui/preferencespage.py:200
+#: exe/webui/preferencespage.py:201
 msgid "Failed to get preferences"
 msgstr "Ophalen voorkeuren niet gelukt"
 
-#: exe/webui/preferencespage.py:250
+#: exe/webui/preferencespage.py:255
 msgid "Failed to save preferences"
 msgstr "Opslaan voorkeuren niet gelukt"
 
@@ -8495,12 +8513,12 @@ msgstr "U kunt het nu veilig sluiten"
 msgid "Select pass rate: "
 msgstr "Kies slaagpercentage:"
 
-#: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:368
+#: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:371
 msgid "SUBMIT ANSWERS"
 msgstr "VERZEND ANTWOORDEN"
 
-#: exe/webui/quiztestblock.py:222 exe/webui/quiztestblock.py:318
-#: exe/webui/quiztestblock.py:372
+#: exe/webui/quiztestblock.py:225 exe/webui/quiztestblock.py:321
+#: exe/webui/quiztestblock.py:375
 #, python-format
 msgid "Your score is %d%%"
 msgstr "Je score is %d%%"
@@ -8517,51 +8535,51 @@ msgstr "Denk na!"
 msgid "Load"
 msgstr "Laden"
 
-#: exe/webui/scripts/authoring.js:69
+#: exe/webui/scripts/authoring.js:70
 msgid "Select one or more images"
 msgstr "Kies een of meer afbeeldingen"
 
-#: exe/webui/scripts/authoring.js:94
+#: exe/webui/scripts/authoring.js:95
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
 msgstr "Afbeeldingsbestanden (.jpg, .jpeg, .png, .gif, .svg)"
 
-#: exe/webui/scripts/authoring.js:119 exe/webui/scripts/authoring.js:358
+#: exe/webui/scripts/authoring.js:122 exe/webui/scripts/authoring.js:364
 msgid "Flash Movie (.flv)"
 msgstr "Flash-film (.flv)"
 
-#: exe/webui/scripts/authoring.js:120 exe/webui/scripts/authoring.js:367
+#: exe/webui/scripts/authoring.js:123 exe/webui/scripts/authoring.js:373
 msgid "Flash Object (.swf)"
 msgstr "Flash Object (.swf)"
 
-#: exe/webui/scripts/authoring.js:121
+#: exe/webui/scripts/authoring.js:124
 msgid "Quicktime Files (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
 msgstr "QuickTime bestanden  (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
 
-#: exe/webui/scripts/authoring.js:122
+#: exe/webui/scripts/authoring.js:125
 msgid "Windows Media Player Files (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
 msgstr "Windows Media Player bestanden (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
 
-#: exe/webui/scripts/authoring.js:123
+#: exe/webui/scripts/authoring.js:126
 msgid "RealMedia Audio Files (.rm, .ra, .ram, .mp3)"
 msgstr "RealMedia geluidsbestanden (.rm, .ra, .ram, .mp3)"
 
-#: exe/webui/scripts/authoring.js:175
+#: exe/webui/scripts/authoring.js:178
 msgid "JPEG Files (.jpg, .jpeg)"
 msgstr "JPEG bestanden (.jpg, .jpeg)"
 
-#: exe/webui/scripts/authoring.js:375
+#: exe/webui/scripts/authoring.js:381
 msgid "MP3 Audio (.mp3)"
 msgstr "MP3 geluidsbestand (.mp3)"
 
-#: exe/webui/scripts/authoring.js:378
+#: exe/webui/scripts/authoring.js:384
 msgid "Select an mp3 file"
 msgstr "Kies eenmp3 bestand"
 
-#: exe/webui/scripts/authoring.js:386
+#: exe/webui/scripts/authoring.js:392
 msgid "Select a package"
 msgstr "Kies een pakket"
 
-#: exe/webui/scripts/authoring.js:744
+#: exe/webui/scripts/authoring.js:778
 msgid ""
 "Embed images shouldn't be pasted directly into the editor. Please use "
 "Insert/Edit Image."
@@ -8569,7 +8587,7 @@ msgstr ""
 "Ingesloten afbeeldingen moeten niet rechtstreeks in de editor geplakt "
 "worden. Gebruik afbeelding invoegen/bewerken."
 
-#: exe/webui/scripts/authoring.js:744
+#: exe/webui/scripts/authoring.js:778
 msgid "This change will be undone."
 msgstr "Deze wijziging zal ongedaan worden gemaakt."
 
@@ -8705,14 +8723,6 @@ msgstr "ieSpell niet gevonden. Wilt u deze nu installeren?"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Check Spelling"
 msgstr "Spellingcontrole"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Insertion"
-msgstr "Ingevoegd"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Deletion"
-msgstr "Verwijderd"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Acronym"
@@ -10940,6 +10950,10 @@ msgstr "Automatisch afspelen"
 msgid "Use Controls"
 msgstr "Gebruik bediening"
 
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:26
+msgid "QuickTime (mov, mpeg)"
+msgstr ""
+
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:3
 msgid "Insert HTML code as text"
 msgstr "Voer de HTML-code in als tekst"
@@ -11144,10 +11158,6 @@ msgid "Case"
 msgstr "Hoofdlettergebruik"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-msgid "Underline"
-msgstr "Onderstrepen"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Overline"
 msgstr "Overhalen"
 
@@ -11159,12 +11169,6 @@ msgstr "Decoratie"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Vertical Alignment"
 msgstr "Verticale uitlijning"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
-msgid "Strikethrough"
-msgstr "Doorhalen"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:23
@@ -11581,10 +11585,6 @@ msgstr "Tekstrichting"
 msgid "Date/Time"
 msgstr "Datum/Tijd"
 
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-msgid "Cite"
-msgstr "Citaat"
-
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Definition Description"
 msgstr "Definitiebeschrijving"
@@ -11596,10 +11596,6 @@ msgstr "Definitieterm"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Code Sample"
 msgstr "Codevoorbeeld"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-msgid "Code"
-msgstr "Code"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Block Quote"
@@ -11696,14 +11692,6 @@ msgstr "Uw eigen beschrijving hier"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Remove Formatting"
 msgstr "Opmaak verwijderen"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-msgid "Superscript"
-msgstr "Superscript"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-msgid "Subscript"
-msgstr "Subscript"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Edit HTML Source"
@@ -11918,8 +11906,83 @@ msgstr "Automatische nummering"
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
+#: exe/webui/scripts/tinymce_4_settings.js:272
+#: exe/webui/scripts/tinymce_4_settings.js:297
 msgid "Editor"
 msgstr "Editor"
+
+#: exe/webui/scripts/tinymce_4_settings.js:18
+#, python-format
+msgid "2 columns 50% 50%"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:19
+#, python-format
+msgid "2 columns 30% 70%"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:20
+#, python-format
+msgid "2 columns 70% 30%"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:21
+msgid "3 columns"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:82
+msgid "Inline"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:83
+msgid "Bold"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:84
+msgid "Italic"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:85
+msgid "Underline"
+msgstr "Onderstrepen"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:86
+msgid "Strikethrough"
+msgstr "Doorhalen"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:87
+msgid "Superscript"
+msgstr "Superscript"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:88
+msgid "Subscript"
+msgstr "Subscript"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:89
+msgid "Code"
+msgstr "Code"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:91
+msgid "Deletion"
+msgstr "Verwijderd"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:92
+msgid "Insertion"
+msgstr "Ingevoegd"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_4_settings.js:93
+msgid "Cite"
+msgstr "Citaat"
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
@@ -11947,16 +12010,16 @@ msgstr "Stijl %s met succes aangemaakt!"
 msgid "Style %s successfully saved!"
 msgstr "Stijl %s met succes opgeslagen"
 
-#: exe/webui/styledesigner.py:198
+#: exe/webui/styledesigner.py:204
 #, python-format
 msgid "Style directory %s already exists"
 msgstr "Stijlmap %s bestaat al"
 
-#: exe/webui/styledesigner.py:258
+#: exe/webui/styledesigner.py:266
 msgid "The style name already exists"
 msgstr "De stijlnaam bestaat al"
 
-#: exe/webui/styledesigner.py:275
+#: exe/webui/styledesigner.py:283
 msgid "Error saving style, style directory does not exist"
 msgstr "Fout bij het opslaan van de stijl, de stijlmap bestaat niet"
 
