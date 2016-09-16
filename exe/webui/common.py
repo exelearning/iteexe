@@ -29,10 +29,9 @@ from exe                       import globals as G
 from exe.engine.path           import Path, TempDirPath
 from exe.webui.blockfactory    import g_blockFactory
 from exe.engine.error          import Error
-
 import re
 
-htmlDocType=''
+htmlDocType = ''
 lastId = 0
 
 def newId():
@@ -67,52 +66,67 @@ def docType():
     else:
         return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
 
-def exportJavaScriptIdevicesFiles(scriptsDir,outputDir):
-    iDeviceFiles = (scriptsDir/'idevices/scrambled-list/export')
-    iDeviceFiles.copyfiles(outputDir)
+def exportJavaScriptIdevicesFiles(iDevices, outputDir):
+    """ Copy all the JS iDevices export files in outputDir """
+    # TODO: Find a way to not copy already copied files
+    for idevice in iDevices:
+        if hasattr(idevice, "_iDeviceDir"):
+            iDeviceFiles = (Path(idevice._iDeviceDir)/'export')
+            iDeviceFiles.copyfiles(outputDir)
         
-def printJavaScriptIdevicesScripts(mode,page):
-    # PROVISIONAL CODE
+def printJavaScriptIdevicesScripts(mode, page):
+    """ Prints the required scripts for the JS iDevices of the page """
     html = ''
-    if mode == 'edition':
-        # Required SCRIPTS (Export SCRIPTS)
-        scripts = [
-            'scrambled-list/export/scrambled-list.css',
-            'scrambled-list/export/scrambled-list.js'
-        ]    
-        for script in scripts:
-            if script.endswith('.js'):
-                html += '<script type="text/javascript" src="/scripts/idevices/'+script+'"></script>\n'
-            if script.endswith('.css'):
-                html += '<link rel="stylesheet" type="text/css" href="/scripts/idevices/'+script+'" />\n'
-        # Edition SCRIPTS: 
-        for block in page.blocks:
-            if block.mode == 0:
-                if "ScrambledList" in block.idevice.klass:
-                    scripts = [
-                        'scrambled-list/edition/scrambled-list.css',
-                        'scrambled-list/edition/scrambled-list.js'
-                    ]    
-                    for script in scripts:
-                        if script.endswith('.css'):
-                            html += '<link rel="stylesheet" type="text/css" href="/scripts/idevices/'+script+'" />\n'                
-                        if script.endswith('.js'):
-                            html += '<script type="text/javascript" src="/scripts/idevices/'+script+'"></script>\n'
-                    html += '<script type="text/javascript">jQuery(function(){$exeAuthoring.iDevice.init()})</script>\n'
-                
+    
+    # If the page doesn't have blocks, it means we are exporting
+    if not hasattr(page, 'blocks'):
+        # Edition SCRIPTS:
+        for idevice in page.node.idevices:
+             # We only want to add the scripts if the iDevice is a JavaScript iDevice
+             # TODO: Find a better way to do this
+            if(hasattr(idevice, '_iDeviceDir')):
+                # We go through all the resources
+                for res in idevice.getResourcesList(appendPath = False):
+                    # Add a link if it is a CSS file
+                    if res.endswith('.css'):
+                        html += '<link rel="stylesheet" type="text/css" href="' + res + '" />\n'
+                    # Add a script tag if it is a JavaScript file                
+                    elif res.endswith('.js'):
+                        html += '<script type="text/javascript" src="' + res + '"></script>\n'
     else:
-        # Export SCRIPTS: 
-        scripts = [
-            'scrambled-list/export/scrambled-list.js',
-            'scrambled-list/export/scrambled-list.css'
-        ]
-        for script in scripts:
-            scriptName = script.split("/");
-            scriptName = scriptName[(len(scriptName)-1)]
-            if scriptName.endswith('.js'):
-                html += '<script type="text/javascript" src="'+scriptName+'"></script>\n'
-            if scriptName.endswith('.css'):
-                html += '<link rel="stylesheet" type="text/css" href="'+scriptName+'" />\n'
+        if mode == 'edition':
+            # Edition SCRIPTS:
+            for block in page.blocks:
+                 # We only want to add the scripts if the iDevice is a JavaScript iDevice
+                 # TODO: Find a better way to do this
+                if(hasattr(block.idevice, '_iDeviceDir')):
+                    # We go through all the resources
+                    for res in block.idevice.getResourcesList(block.mode == 0):
+                        # Add a link if it is a CSS file
+                        if res.endswith('.css'):
+                            html += '<link rel="stylesheet" type="text/css" href="/scripts/idevices/' + res + '" />\n'
+                        # Add a script tag if it is a JavaScript file                
+                        elif res.endswith('.js'):
+                            html += '<script type="text/javascript" src="/scripts/idevices/' + res + '"></script>\n'
+                            
+                    if block.mode == 0:
+                        # Init iDevice
+                        html += '<script type="text/javascript">jQuery(function(){$exeAuthoring.iDevice.init()})</script>\n'
+                        
+        else:
+            # Edition SCRIPTS:
+            for block in page.blocks:
+                 # We only want to add the scripts if the iDevice is a JavaScript iDevice
+                 # TODO: Find a better way to do this
+                if(hasattr(block.idevice, '_iDeviceDir')):
+                    # We go through all the resources
+                    for res in block.idevice.getResourcesList(appendPath = False):
+                        # Add a link if it is a CSS file
+                        if res.endswith('.css'):
+                            html += '<link rel="stylesheet" type="text/css" href="' + res + '" />\n'
+                        # Add a script tag if it is a JavaScript file                
+                        elif res.endswith('.js'):
+                            html += '<script type="text/javascript" src="' + res + '"></script>\n'
     
     return html
     # PROVISIONAL CODE

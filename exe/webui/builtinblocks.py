@@ -23,6 +23,7 @@ plugins) to eXe
 
 from exe.webui.freetextblock          import FreeTextBlock
 from exe.webui.genericblock           import GenericBlock
+from exe.webui.jsblock                import JsBlock
 from exe.webui.multichoiceblock       import MultichoiceBlock
 from exe.webui.reflectionblock        import ReflectionBlock
 from exe.webui.casestudyblock         import CasestudyBlock

@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <idevice>
-    <name>Scrambled List</name>
+    <title>Scrambled List</title>
     <css-class>ScrambledList</css-class>
+	<icon>key_points</icon>
     <!--
     <version>1.0</version>
     <author>Ignacio Gros for eXeLearning.net</author>
