@@ -24,10 +24,11 @@ An JavaScript iDevice definition
 
 from exe.engine.idevice import Idevice
 # For backward compatibility Jelly expects to find a Field class
-from exe.engine.field   import Field, TextField, TextAreaField, FeedbackField 
-from exe.engine.field   import ImageField, AttachmentField
-from exe.engine.path    import Path
-from xml.dom            import minidom
+from exe.engine.field                               import Field, TextField, TextAreaField, FeedbackField 
+from exe.engine.field                               import ImageField, AttachmentField
+from exe.engine.path                                import Path
+from exe.engine.exceptions.invalidconfigjsidevice   import InvalidConfigJsIdevice
+from xml.dom                                        import minidom
 import re
 import logging
 import os
@@ -39,9 +40,6 @@ log = logging.getLogger(__name__)
 class JsIdevice(Idevice):
     """
     A JavaScript Idevice definition
-    
-    TODO: We need a method of stoping a IDevice from being added to the Store
-            if its config.xml file cannot be loaded
     """
     persistenceVersion = 1
     
@@ -114,11 +112,16 @@ class JsIdevice(Idevice):
                             # Add the tag name and value to the result dictionary
                             result.update({tag.tagName: tag.firstChild.nodeValue})
                     
-                    return result
-                    
-        except IOError:
+                    if 'name' in result and 'css-class' in result:
+                        return result
+                    else:
+                        raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), 'Mandatory fields not found.')
+            else:
+                raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), 'config.xml file doesn\'t exist.')
+        except IOError as ioerror:
             # If we can't load an iDevice, we simply continue with the rest (and log it)
-            log.debug("iDevice " + idevice + " doesn't appear to have a valid \"config.xml\" file")
+            log.debug("iDevice " + Path(self._iDeviceDir).basename() + " doesn't appear to have a valid \"config.xml\" file")
+            raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), ioerror.message)
       
 
     def clone(self):
