@@ -112,7 +112,7 @@ class JsIdevice(Idevice):
                             # Add the tag name and value to the result dictionary
                             result.update({tag.tagName: tag.firstChild.nodeValue})
                     
-                    if 'name' in result and 'css-class' in result:
+                    if 'title' in result and 'css-class' in result:
                         return result
                     else:
                         raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), 'Mandatory fields not found.')
