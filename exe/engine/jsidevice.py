@@ -61,6 +61,9 @@ class JsIdevice(Idevice):
         # CSS class
         self.class_ = xmlValues['css-class']
         
+        if 'category' in xmlValues:
+            self.ideviceCategory = xmlValues['category']
+        
         # Initialize resources list
         self._editionResources = []
         self._exportResources = []
