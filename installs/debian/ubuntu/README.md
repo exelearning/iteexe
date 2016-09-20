@@ -26,12 +26,15 @@ $ pip install requests_oauthlib
 Once you have all the requirements set up, you have to download the source code. There is two methods to this:
 
 1. Using **GIT** (You must have *git* installed in your system):
-		First you have to navigate to the folder you want the source code to download into. And then you have to execute this command:
-```console
-$ git clone https://github.com/exelearning/iteexe.git
-```
+
+	First you have to navigate to the folder you want the source code to download into. And then you have to execute this command:
+	```console
+	$ git clone https://github.com/exelearning/iteexe.git
+	```
+	
 2. Downloading a **ZIP file** with the source code:
-		You can do this by going to the [GitHub homepage of this project](https://github.com/exelearning/iteexe), pressing on *Clone or download* and then on *Download ZIP*. Unzip the file in your desired folder.
+
+	You can do this by going to the [GitHub homepage of this project](https://github.com/exelearning/iteexe), pressing on *Clone or download* and then on *Download ZIP*. Unzip the file in your desired folder.
 
 #### Important note! (Ubuntu versions below 14.04)
 To be able to install the generated package you need to remove `python-requests-oauthlib` from its depedencies. This can be acomplished by editing the file "debian/control" and changing this line:
