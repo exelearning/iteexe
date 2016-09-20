@@ -27,11 +27,9 @@ Once you have all the requirements set up, you have to download the source code.
 
 1. Using **GIT** (You must have *git* installed in your system):
 		First you have to navigate to the folder you want the source code to download into. And then you have to execute this command:
-        
 ```console
 $ git clone https://github.com/exelearning/iteexe.git
 ```
-    
 2. Downloading a **ZIP file** with the source code:
 		You can do this by going to the [GitHub homepage of this project](https://github.com/exelearning/iteexe), pressing on *Clone or download* and then on *Download ZIP*. Unzip the file in your desired folder.
 
