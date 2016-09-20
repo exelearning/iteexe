@@ -24,6 +24,7 @@ $ pip install requests_oauthlib
 
 ## Code download
 Once you have all the requirements set up, you have to download the source code. There is two methods to this:
+
 1. Using **GIT** (You must have *git* installed in your system):
 		First you have to navigate to the folder you want the source code to download into. And then you have to execute this command:
         
