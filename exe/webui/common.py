@@ -17,6 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+from oauthlib.oauth2.rfc6749.grant_types import resource_owner_password_credentials
 
 """
 This module is for the common HTML used in all webpages.
@@ -160,8 +161,13 @@ def getJavascriptIdevicesResources(page, xmlOutput = False):
     if(xmlOutput):
         result = ""
         
+        resourcesAux = []
+        
         for resource in resources:
-            result += "    <file href=\"" + escape(resource) + "\"/>\n"
+            if resource not in resourcesAux:
+                resourcesAux.append(resource)
+                
+                result += "    <file href=\"" + escape(resource) + "\"/>\n"
             
         return result
     else:
