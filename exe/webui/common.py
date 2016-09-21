@@ -23,6 +23,7 @@ This module is for the common HTML used in all webpages.
 """
 
 import logging
+from cgi                       import escape
 from nevow                     import tags as T
 from nevow.flat                import flatten
 from exe                       import globals as G
@@ -129,7 +130,27 @@ def printJavaScriptIdevicesScripts(mode, page):
                             html += '<script type="text/javascript" src="' + res + '"></script>\n'
     
     return html
-    # PROVISIONAL CODE
+
+def getJavascriptIdevicesResources(page, xmlOutput = False):
+    """ Get the resources list for the page's JS iDevices """
+    resources = []
+    
+    for idevice in page.node.idevices:
+         # We only want to add the scripts if the iDevice is a JavaScript iDevice
+         # TODO: Find a better way to do this
+        if(hasattr(idevice, '_iDeviceDir')):
+            resources = resources + idevice.getResourcesList(appendPath = False)
+    
+    
+    if(xmlOutput):
+        result = ""
+        
+        for resource in resources:
+            result += "    <file href=\"" + escape(resource) + "\"/>\n"
+            
+        return result
+    else:
+        return resources
         
 def getLicenseMetadata(license):
     if license == "":
