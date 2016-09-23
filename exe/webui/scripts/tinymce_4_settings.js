@@ -15,9 +15,9 @@ var $exeTinyMCE = {
 	content_css: "/css/extra.css," + exe_style,
 	browser_spellcheck: true,
 	templates: [
-		{ title: _("2 columns 50% 50%"), url: "/scripts/tinymce_templates/2-50-50.html" },
-		{ title: _("2 columns 30% 70%"), url: "/scripts/tinymce_templates/2-30-70.html" },
-		{ title: _("2 columns 70% 30%"), url: "/scripts/tinymce_templates/2-70-30.html" },
+		{ title: _("2 columns") + " 50% 50%", url: "/scripts/tinymce_templates/2-50-50.html" },
+		{ title: _("2 columns") + " 30% 70%", url: "/scripts/tinymce_templates/2-30-70.html" },
+		{ title: _("2 columns") + " 70% 30%", url: "/scripts/tinymce_templates/2-70-30.html" },
 		{ title: _("3 columns"), url: "/scripts/tinymce_templates/3.html" }
 	],
 	path_to_folder: "/scripts/tinymce_4/js/tinymce/",
