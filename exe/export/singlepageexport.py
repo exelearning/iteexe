@@ -30,6 +30,7 @@ from exe.engine.persist       import encodeObject
 from exe.engine.persistxml    import encodeObjectToXML
 from slimit                   import minify
 from helper                   import exportMinFileJS
+from helper                   import exportMinFileCSS
 import logging
 log = logging.getLogger(__name__)
 
@@ -87,8 +88,7 @@ class SinglePageExport(object):
         # But not nav.css
         if os.path.isdir(self.stylesDir):
             # Copy the style sheet files to the output dir
-            styleFiles  = [self.stylesDir/'..'/'base.css']
-            styleFiles += [self.stylesDir/'..'/'popup_bg.gif']
+            styleFiles = [self.stylesDir/'..'/'popup_bg.gif']
             styleFiles += self.stylesDir.files("*.css")
             if "nav.css" in styleFiles:
                 styleFiles.remove("nav.css")
@@ -107,6 +107,14 @@ class SinglePageExport(object):
         # copy the package's resource files
         package.resourceDir.copyfiles(self.outputDir)
 
+        listCSSFiles=[]
+        lisCSStOutFiles=[]
+        
+        listCSSFiles+=[self.stylesDir/'..'/'base.css']
+        lisCSStOutFiles+=[self.outputDir/'base.css']
+        
+        exportMinFileCSS(listCSSFiles, lisCSStOutFiles)
+
         # copy script files.
         my_style = G.application.config.styleStore.getStyle(package.style)
         
@@ -115,11 +123,11 @@ class SinglePageExport(object):
         listOutFiles=[]
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
-                listFiles+=[self.scriptsDir/'exe_jquery.js']
-                listOutFiles+=[self.outputDir/'exe_jquery.js']
+                jsFile = (self.scriptsDir/'exe_jquery.js')
+                jsFile.copyfile(self.outputDir/'exe_jquery.js')
         else:
-            listFiles+=[self.scriptsDir/'exe_jquery.js']
-            listOutFiles+=[self.outputDir/'exe_jquery.js']
+            jsFile = (self.scriptsDir/'exe_jquery.js')
+            jsFile.copyfile(self.outputDir/'exe_jquery.js')
         
         # Minify common.js file
         listFiles+=[self.scriptsDir/'common.js']
@@ -127,8 +135,8 @@ class SinglePageExport(object):
         
         dT = common.getExportDocType()
         if dT == "HTML5":
-            listFiles+=[self.scriptsDir/'exe_html5.js']
-            listOutFiles+=[self.outputDir/'exe_html5.js']
+            jsFile = (self.scriptsDir/'exe_html5.js')
+            jsFile.copyfile(self.outputDir/'exe_html5.js')
         
         exportMinFileJS(listFiles, listOutFiles)
             

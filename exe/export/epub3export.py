@@ -37,6 +37,7 @@ from BeautifulSoup                 import BeautifulSoup
 from htmlentitydefs                import name2codepoint
 from slimit                        import minify
 from helper                        import exportMinFileJS
+from helper                        import exportMinFileCSS
 
 log = logging.getLogger(__name__)
 
@@ -512,8 +513,7 @@ class Epub3Export(object):
 
         # Copy the style sheet files to the output dir
         # But not nav.css
-        styleFiles = [self.styleDir / '..' / 'base.css']
-        styleFiles += [self.styleDir / '..' / 'popup_bg.gif']
+        styleFiles = [self.styleDir /'..'/ 'popup_bg.gif']
         styleFiles += [f for f in self.styleDir.files("*.css") if f.basename() != "nav.css"]
         styleFiles += self.styleDir.files("*.jpg")
         styleFiles += self.styleDir.files("*.gif")
@@ -531,6 +531,14 @@ class Epub3Export(object):
         package.resourceDir.copyfiles(contentPages)
 
         self.styleDir.copylist(styleFiles, contentPages)
+        
+        listCSSFiles=[]
+        lisCSStOutFiles=[]
+        
+        listCSSFiles+=[self.styleDir/'..'/'base.css']
+        lisCSStOutFiles+=[outputDir/'base.css']
+        
+        exportMinFileCSS(listCSSFiles, lisCSStOutFiles)
         
         listFiles=[]
         listOutFiles=[]
@@ -620,11 +628,11 @@ class Epub3Export(object):
         my_style = G.application.config.styleStore.getStyle(package.style)
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
-                listFiles+=[self.scriptsDir/'exe_jquery.js']
-                listOutFiles+=[contentPages/'exe_jquery.js']
+                jsFile = (self.scriptsDir / 'exe_jquery.js')
+                jsFile.copyfile(contentPages / 'exe_jquery.js')
         else:
-            listFiles+=[self.scriptsDir/'exe_jquery.js']
-            listOutFiles+=[contentPages/'exe_jquery.js']
+            jsFile = (self.scriptsDir / 'exe_jquery.js')
+            jsFile.copyfile(contentPages / 'exe_jquery.js')
             
         exportMinFileJS(listFiles, listOutFiles)
 

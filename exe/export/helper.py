@@ -1,6 +1,7 @@
 import re
 from exe.webui          import common
 from slimit             import minify
+import cssmin
 # Line breaks
 lineBreak = u'\n'
 
@@ -117,4 +118,20 @@ def exportMinFileJS(listFiles, listOutPutFiles):
                 break
         
         outPutFiles.write(minify(files.read(), mangle=False, mangle_toplevel=False))
+        outPutFiles.close()
+        
+def exportMinFileCSS(listFiles, listOutPutFiles):
+    
+    for i in range(len(listFiles)):
+        files = open( listFiles[i], 'r')
+        outPutFiles = open( listOutPutFiles[i], 'w')
+        for linea in files.readlines():
+            comment_end = linea.find("*/")
+            if comment_end < 0:
+                outPutFiles.write(linea)
+            else:
+                outPutFiles.write(linea)
+                files.seek(0)
+                break
+        outPutFiles.write(cssmin.cssmin(files.read()))
         outPutFiles.close()

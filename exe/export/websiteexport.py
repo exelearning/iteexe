@@ -37,6 +37,7 @@ from exe.engine.persist       import encodeObject
 from exe.engine.persistxml    import encodeObjectToXML
 from slimit                   import minify
 from helper                   import exportMinFileJS
+from helper                        import exportMinFileCSS
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -174,8 +175,7 @@ class WebsiteExport(object):
        
         if os.path.isdir(self.stylesDir):
             # Copy the style sheet files to the output dir
-            styleFiles  = [self.stylesDir/'..'/'base.css']
-            styleFiles += [self.stylesDir/'..'/'popup_bg.gif']
+            styleFiles = [self.stylesDir/'..'/'popup_bg.gif']
             styleFiles += self.stylesDir.files("*.css")
             styleFiles += self.stylesDir.files("*.jpg")
             styleFiles += self.stylesDir.files("*.gif")
@@ -192,6 +192,14 @@ class WebsiteExport(object):
         # copy the package's resource files
         package.resourceDir.copyfiles(outputDir)
             
+        listCSSFiles=[]
+        lisCSStOutFiles=[]
+        
+        listCSSFiles+=[self.stylesDir/'..'/'base.css']
+        lisCSStOutFiles+=[outputDir/'base.css']
+        
+        exportMinFileCSS(listCSSFiles, lisCSStOutFiles)    
+            
         # copy script files.
         my_style = G.application.config.styleStore.getStyle(package.style)
         # jQuery
@@ -199,8 +207,8 @@ class WebsiteExport(object):
         listOutFiles=[]
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
-                listFiles+=[self.scriptsDir/'exe_jquery.js']
-                listOutFiles+=[outputDir/'exe_jquery.js']
+                jsFile = (self.scriptsDir/'exe_jquery.js')
+                jsFile.copyfile(outputDir/'exe_jquery.js')
         else:
             listFiles+=[self.scriptsDir/'exe_jquery.js']
             listOutFiles+=[outputDir/'exe_jquery.js']
@@ -212,9 +220,8 @@ class WebsiteExport(object):
         #dT = common.getExportDocType()
         dT=common.getExportDocType();
         if dT == "HTML5":
-            listFiles+=[self.scriptsDir/'exe_html5.js']
-            listOutFiles+=[outputDir/'exe_html5.js']
-        
+            jsFile = (self.scriptsDir/'exe_html5.js')
+            jsFile.copyfile(outputDir/'exe_html5.js')        
         exportMinFileJS(listFiles, listOutFiles)
 
         # Incluide eXe's icon if the Style doesn't have one
