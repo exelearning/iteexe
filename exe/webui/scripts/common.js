@@ -17,7 +17,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 // ===========================================================================
-//
+
 // ClozelangElement's functions by José Ramón Jiménez Reyes
 // More than one right answer in the Cloze iDevice by José Miguel Andonegi
 // 2015. Refactored and completed by Ignacio Gros (http://www.gros.es) for http://exelearning.net/
@@ -41,7 +41,7 @@ var $exe = {
             }
         }
         $exe.hint.init();
-        $exe.setIframesProtocol();
+        $exe.setIframesProperties();
         $exe.hasTooltips();
         $exe.math.init();
         if (typeof($.prettyPhoto) != 'undefined') $("a[rel^='lightbox']").prettyPhoto({
@@ -59,6 +59,8 @@ var $exe = {
 			 }
 		});
 		$exe.sfHover();
+		// Disable autocomplete
+		$("INPUT.autocomplete-off").attr("autocomplete", "off");
     },
 	
 	// Apply the 'sfhover' class to li elements when they are 'moused over'
@@ -342,7 +344,6 @@ var $exe = {
                     } else e.before(n)
                 }
             });
-            $("INPUT.autocomplete-off").attr("autocomplete", "off")
         },
         toggle: function(e, t, n) {
             var r = $exe_i18n.hide;
@@ -425,15 +426,23 @@ var $exe = {
         }
     },
 	
-    // Add "http" to the IFRAMES without protocol in local pages
-	setIframesProtocol: function() {
-        var e = window.location.protocol;
-        var t = false;
-        if (e != "http" && e != "https") t = true;
-        $("IFRAME").each(function() {
-            var e = $(this).attr("src");
-            if (t && e.indexOf("//") == 0) $(this).attr("src", "http:" + e)
-        })
+    // Add "http" to the IFRAMES without protocol in local pages and create a hidden link for the print version
+	setIframesProperties: function() {
+		// setTimeout is provisional. We use it because some Styles were already adding the "external-iframe" class.
+		setTimeout(function(){
+			var p = window.location.protocol;
+			var t = false;
+			if (p != "http" && p != "https") t = true;
+			$("IFRAME").each(function() {
+				var i = $(this);
+				var s = i.attr("src");
+				if (t && s.indexOf("//") == 0) $(this).attr("src", "http:" + s);
+				s = i.attr("src");
+				if (!i.hasClass("external-iframe") && s.indexOf("http")==0) {
+					i.addClass("external-iframe").before("<span class='external-iframe-src' style='display:none'><a href='"+s+"'>"+s+"</a></span>");
+				}
+			});			
+		}, 1000);
     },
 	
     // Load a JavaScript or CSS file (in HEAD)
