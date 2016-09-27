@@ -119,6 +119,10 @@ class ScormPage(Page):
             html += common.getGamesJavaScriptStrings() + lb
             html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
+        
+        # Add JS iDevices' files
+        html += common.printJavaScriptIdevicesScripts('export', self)
+        
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         if self.scormType == 'commoncartridge':
