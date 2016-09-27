@@ -64,6 +64,7 @@ var $appVars = [
 	['navAColor',6,7],
 	['navAHoverColor',6,7],
 	['navBorderColor',6,14],
+	['navFontSize',3,10,'number'],	
 	// fieldset #2
 	['useNavigationIcons','checkbox'],
 	['nav2BGColor',6,18],
@@ -815,6 +816,7 @@ var $app = {
 		var navAColor = $("#navAColor").val();
 		var navAHoverColor = $("#navAHoverColor").val();
 		var navBorderColor = $("#navBorderColor").val();
+		var navFontSize = $("#navFontSize").val();
 
 		if (contentBGColor!="" || contentBGURL!="" || pageWidth!="" || contentBorderColor!="" || contentBorderWidth!="" || pageAlign=="left" || wrapperShadowColor!=""){
 			navCSS+="#content{";
@@ -971,6 +973,11 @@ var $app = {
 				navCSS+="#main,.no-nav #main{padding-top:20px;}";	
 			navCSS+="}";
 		} else {
+			if (navFontSize!="" && navFontSize!="100") {
+				navCSS+="#siteNav{";
+					navCSS+="/*navFontSize*/font-size:"+navFontSize+"%;";
+				navCSS+="}";
+			}
 			if (navBGColor!="" || navAColor!="" || navBorderColor!="") {
 				navCSS+="#siteNav,#siteNav a{";
 					if (navBGColor!="") navCSS+="/*navBGColor*/background-color:#"+navBGColor+";";
