@@ -1123,13 +1123,13 @@ var $app = {
 		if (navBorderColor!="") hNavBorderColor = navBorderColor;
 		
 		var hideNavigation = $("#hideNavigation").prop("checked");
-		var padding = "0 20px";
+		var padding = "10px 20px 0 20px";
 		if (hideNavigation) padding = "20px 20px 0 20px";
 		
 		var css = '\
 /*horizontalNavigation*/\
 @media screen and (min-width:701px){\
-#main,.no-nav #main{padding:'+padding+'}\
+#main,.no-nav #main{padding:'+padding+';overflow:auto}\
 #siteNav{display:table;margin-bottom:40px}\
 #siteNav li:hover,#siteNav li.sfhover{background:#'+hNavHoverBGColor+'}\
 #siteNav .other-section{display:block}\
