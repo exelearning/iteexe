@@ -81,6 +81,8 @@ var $i18n = {
 	Main_menu : _("Main menu"),
 	Hide_the_menu : _("Hide the menu"),
 	Horizontal_navigation : _("Horizontal navigation"),
+	Text : _("Text"),
+	Width : _("Width"),
 	Active_background : _("Active background"),
 	Active_link_color : _("Active link color"),
 	Other_navigation_options : _("Other navigation options"),

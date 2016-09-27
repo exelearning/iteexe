@@ -65,6 +65,7 @@ var $appVars = [
 	['navAHoverColor',6,7],
 	['navBorderColor',6,14],
 	['navFontSize',3,10,'number'],	
+	['navWidth',4,6,'number'],
 	// fieldset #2
 	['useNavigationIcons','checkbox'],
 	['nav2BGColor',6,18],
@@ -1045,12 +1046,23 @@ var $app = {
 			contentCSS += "}";
 		}
 		
+		var navWidth = $("#navWidth").val();
+		var horizontalNavigation = $("#horizontalNavigation").prop("checked");
+		
+		if (!hideNavigation && !horizontalNavigation && navWidth!="") {	
+			navCSS+="#siteNav{/*navWidth*/width:"+navWidth+"px;}";
+			navCSS+="#main{padding-left:"+(parseFloat(navWidth)+40)+"px;*padding-left:0;}";
+			navCSS+="@media all and (max-width: 700px) {";
+				navCSS+="#siteNav{width:100%;padding:0;}";
+				navCSS+="#main,.no-nav #main{padding-left:20px;}";
+			navCSS+="}";
+			navCSS+="* html #siteNav{width:280px;}";
+		}	
+		
 		contentCSS = this.formatCSS(contentCSS);
 		navCSS = this.formatCSS(navCSS);
 		
-		var horizontalNavigation = $("#horizontalNavigation").prop("checked");
 		if (horizontalNavigation) {
-			var hideNavigation = $("#hideNavigation").prop("checked");
 			if (!hideNavigation) navCSS += this.getHorizontalNavigationCSS();
 		}		
 		if (typeof(opener.myTheme.setNavHeight)!='undefined') opener.myTheme.setNavHeight();
