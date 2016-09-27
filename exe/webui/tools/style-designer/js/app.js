@@ -54,6 +54,7 @@ var $appVars = [
 	['footerTextAlign',6,11],
 	['footerBGColor',6,18],
 	['footerAColor',6,7],
+	['footerFontSize',3,10,'number'],
 	
 	// Navigation tag
 	// fieldset #1
@@ -975,7 +976,7 @@ var $app = {
 			navCSS+="}";
 		} else {
 			if (navFontSize!="" && navFontSize!="100") {
-				navCSS+="#siteNav{";
+				navCSS+="#siteNav,.pagination a,#skipNav,#nav-toggler{";
 					navCSS+="/*navFontSize*/font-size:"+navFontSize+"%;";
 				navCSS+="}";
 			}
@@ -1019,8 +1020,9 @@ var $app = {
 		var footerTextAlign = $("#footerTextAlign").val();
 		var footerBGColor = $("#footerBGColor").val();
 		var footerAColor = $("#footerAColor").val();
+		var footerFontSize = $("#footerFontSize").val();
 		
-		if (footerBorderColor!="" || footerColor!="" || footerTextAlign!="" || footerBGColor!='') {
+		if (footerBorderColor!="" || footerColor!="" || footerTextAlign!="" || footerBGColor!='' || footerFontSize!='') {
 			contentCSS += "#siteFooter{";
 				if (footerBorderColor!="") {
 					contentCSS += "border:1px solid /*footerBorderColor*/#"+footerBorderColor+";"
@@ -1031,6 +1033,7 @@ var $app = {
 				if (footerColor!="") contentCSS += "/*footerColor*/color:#"+footerColor+";"
 				if (footerTextAlign!="") contentCSS+="/*footerTextAlign*/text-align:"+footerTextAlign+";";
 				if (footerBGColor!='') contentCSS+="/*footerBGColor*/background-color:#"+footerBGColor+";";
+				if (footerFontSize!="") contentCSS += "/*footerFontSize*/font-size:"+footerFontSize+"%;"
 			contentCSS += "}";
 		}
 		
