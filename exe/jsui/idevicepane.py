@@ -22,11 +22,12 @@ IdevicePane is responsible for creating the XHTML for iDevice links
 """
 
 import logging
+import locale
+import json
 from exe.webui.renderable import Renderable
 from twisted.web.resource import Resource
 from exe.webui.livepage import allSessionClients
-import locale
-import json
+from exe.engine.jsidevice import JsIdevice;
 
 log = logging.getLogger(__name__)
 
@@ -122,14 +123,23 @@ class IdevicePane(Renderable, Resource):
 
         prototypesToRender = []
         for prototype in prototypes:
-            lower_title = prototype._title.lower()
-            visible = lower_title not in self.config.hiddeniDevices
-            if lower_title not in self.config.deprecatediDevices:
-                if lower_title in self.config.idevicesCategories:
-                    for category in self.config.idevicesCategories[lower_title]:
-                        prototypesToRender.append((prototype, category, visible))
+            if not isinstance(prototype, JsIdevice):
+                lower_title = prototype._title.lower()
+                visible = lower_title not in self.config.hiddeniDevices
+                if lower_title not in self.config.deprecatediDevices:
+                    if lower_title in self.config.idevicesCategories:
+                        for category in self.config.idevicesCategories[lower_title]:
+                            prototypesToRender.append((prototype, category, visible))
+                    else:
+                        prototypesToRender.append((prototype, _('My iDevices'), visible))
+            else:
+                lower_title = prototype._title.lower()
+                visible = lower_title not in self.config.hiddeniDevices
+                
+                if hasattr(prototype, 'ideviceCategory'):
+                    prototypesToRender.append((prototype, _(prototype.ideviceCategory), visible))
                 else:
-                    prototypesToRender.append((prototype, _('My iDevices'), visible))
+                    prototypesToRender.append((prototype, _('JS iDevices'), visible))
 
         def sortfunc(t1, t2):
             return locale.strcoll(t1[0].rawTitle, t2[0].rawTitle)

@@ -29,9 +29,9 @@ log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class GenericBlock(Block):
+class JsBlock(Block):
     """
-    GenericBlock can render and process GenericIdevices as XHTML
+    JsBlockIdevice can render and process JsIdevices as XHTML
     """
     def __init__(self, parent, idevice):
         Block.__init__(self, parent, idevice)
@@ -102,8 +102,8 @@ class GenericBlock(Block):
         html += common.ideviceFooter(self, style, "view")
         return html
 
-from exe.engine.genericidevice import GenericIdevice
+from exe.engine.jsidevice import JsIdevice
 from exe.webui.blockfactory    import g_blockFactory
-g_blockFactory.registerBlockType(GenericBlock, GenericIdevice)    
+g_blockFactory.registerBlockType(JsBlock, JsIdevice)    
 
 # ===========================================================================

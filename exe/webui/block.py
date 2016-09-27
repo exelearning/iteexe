@@ -185,8 +185,10 @@ class Block(Renderable):
         try:
             if self.mode == Block.Edit:
                 self.idevice.lastIdevice = True
+                html += '<div class="'+self.idevice.klass+'" id="activeIdevice">'
                 html += u'<a name="currentBlock"></a>\n'
                 html += self.renderEdit(style)
+                html += '</div>'
             elif self.mode == Block.View:
                 html += self.renderView(style)
             elif self.mode == Block.Preview:
@@ -217,9 +219,13 @@ class Block(Renderable):
         Returns an XHTML string for the edit buttons
         """
         
-        html  = common.submitImage(u"done", self.id, 
+        html = '<span class="exe-editButtons">'
+        
+        html += '<span id="exe-submitButton">'
+        html += common.submitImage(u"done", self.id, 
                                    u"/images/stock-apply.png", 
                                    _(u"Done"),1)
+        html += '</span>'
 
         if undo:
             html += common.confirmThenSubmitImage(
@@ -274,6 +280,8 @@ class Block(Renderable):
                 html += u'<div id="'+self.id+'content">'+self.tip+'</div>'
                 
             html += u'</div>\n'    
+        
+        html += '</span>' # /exe-editButtons
         
         return html
 
