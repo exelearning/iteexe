@@ -238,6 +238,9 @@ class SinglePage(Page):
             html += common.getGamesJavaScriptStrings() + lb
             html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
+        
+        html += common.printJavaScriptIdevicesScripts('export', self)
+        
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         if for_print:
@@ -261,6 +264,7 @@ class SinglePage(Page):
             html += u'     interval = setInterval(checkClose, 300);' + lb
             html += u'}' + lb
             html += u'</script>' + lb
+            
         if style.hasValidConfig:
             html += style.get_extra_head()
         html += u"</head>"+lb

@@ -23,11 +23,12 @@
 The collection of iDevices available
 """
 
-from exe.engine           import persist
-from exe.engine.idevice   import Idevice
-from exe.engine.jsidevice import JsIdevice
-from exe.engine.field     import TextAreaField, FeedbackField,Feedback2Field
-from nevow.flat           import flatten
+from exe.engine                                     import persist
+from exe.engine.idevice                             import Idevice
+from exe.engine.jsidevice                           import JsIdevice
+from exe.engine.exceptions.invalidconfigjsidevice   import InvalidConfigJsIdevice
+from exe.engine.field                               import TextAreaField, FeedbackField,Feedback2Field
+from nevow.flat                                     import flatten
 
 import imp
 import sys
@@ -568,8 +569,11 @@ class IdeviceStore:
             # We get the list of all subfolders
             for ideviceDir in os.listdir(iDevicesDir):
                 if os.path.isdir(iDevicesDir/ideviceDir):
-                    idevice = JsIdevice(iDevicesDir/ideviceDir)
-                    self.jsIdevices.append(idevice)
+                    try:
+                        idevice = JsIdevice(iDevicesDir/ideviceDir)
+                        self.jsIdevices.append(idevice)
+                    except InvalidConfigJsIdevice as invalidconfigexception:
+                        log.warn("The load of the JsIdevice " + invalidconfigexception.name + " has failed with this message: " + invalidconfigexception.message)
                     
             self.factoryiDevices = self.factoryiDevices + self.jsIdevices
         
