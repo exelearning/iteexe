@@ -38,6 +38,8 @@ from htmlentitydefs                import name2codepoint
 from slimit                        import minify
 from helper                        import exportMinFileJS
 from helper                        import exportMinFileCSS
+from exe.webui.common              import getFilesCSSToMinify
+from exe.webui.common              import getFilesJSToMinify
 
 log = logging.getLogger(__name__)
 
@@ -532,13 +534,8 @@ class Epub3Export(object):
 
         self.styleDir.copylist(styleFiles, contentPages)
         
-        listCSSFiles=[]
-        lisCSStOutFiles=[]
-        
-        listCSSFiles+=[self.styleDir/'..'/'base.css']
-        lisCSStOutFiles+=[outputDir/'base.css']
-        
-        exportMinFileCSS(listCSSFiles, lisCSStOutFiles)
+        listCSSFiles=getFilesCSSToMinify('epub3', self.styleDir)
+        exportMinFileCSS(listCSSFiles, outputDir)
         
         listFiles=[]
         listOutFiles=[]
@@ -633,8 +630,9 @@ class Epub3Export(object):
         else:
             jsFile = (self.scriptsDir / 'exe_jquery.js')
             jsFile.copyfile(contentPages / 'exe_jquery.js')
-            
-        exportMinFileJS(listFiles, listOutFiles)
+        
+        listFiles=getFilesJSToMinify('epub3', self.scriptsDir)        
+        exportMinFileJS(listFiles, outputDir)
 
 #         if hasattr(package, 'exportSource') and package.exportSource:
 #             (G.application.config.webDir / 'templates' / 'content.xsd').copyfile(outputDir / 'content.xsd')

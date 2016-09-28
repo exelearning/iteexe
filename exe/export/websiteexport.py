@@ -37,7 +37,11 @@ from exe.engine.persist       import encodeObject
 from exe.engine.persistxml    import encodeObjectToXML
 from slimit                   import minify
 from helper                   import exportMinFileJS
-from helper                        import exportMinFileCSS
+from helper                   import exportMinFileCSS
+from exe.webui.common         import getFilesCSSToMinify
+from exe.webui.common         import getFilesJSToMinify
+
+
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -192,13 +196,8 @@ class WebsiteExport(object):
         # copy the package's resource files
         package.resourceDir.copyfiles(outputDir)
             
-        listCSSFiles=[]
-        lisCSStOutFiles=[]
-        
-        listCSSFiles+=[self.stylesDir/'..'/'base.css']
-        lisCSStOutFiles+=[outputDir/'base.css']
-        
-        exportMinFileCSS(listCSSFiles, lisCSStOutFiles)    
+        listCSSFiles=getFilesCSSToMinify('website', self.stylesDir)
+        exportMinFileCSS(listCSSFiles, outputDir)          
             
         # copy script files.
         my_style = G.application.config.styleStore.getStyle(package.style)
@@ -214,15 +213,13 @@ class WebsiteExport(object):
             listOutFiles+=[outputDir/'exe_jquery.js']
             
         # Minify common.js file
-        listFiles+=[self.scriptsDir/'common.js']
-        listOutFiles+=[outputDir/'common.js']
-        
+        listFiles=getFilesJSToMinify('website', self.scriptsDir)        
+        exportMinFileJS(listFiles, outputDir)
         #dT = common.getExportDocType()
         dT=common.getExportDocType();
         if dT == "HTML5":
             jsFile = (self.scriptsDir/'exe_html5.js')
-            jsFile.copyfile(outputDir/'exe_html5.js')        
-        exportMinFileJS(listFiles, listOutFiles)
+            jsFile.copyfile(outputDir/'exe_html5.js')   
 
         # Incluide eXe's icon if the Style doesn't have one
         themePath = Path(G.application.config.stylesDir/package.style)

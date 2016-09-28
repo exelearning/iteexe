@@ -105,11 +105,11 @@ def processInternalLinks(package, html):
     """
     return common.renderInternalLinkNodeAnchor(package, html)
 
-def exportMinFileJS(listFiles, listOutPutFiles):
+def exportMinFileJS(listFiles, outputDir):
     
     for i in range(len(listFiles)):
-        files = open( listFiles[i], 'r')
-        outPutFiles = open( listOutPutFiles[i], 'w')
+        files = open( listFiles[i]['path'], 'r')
+        outPutFiles = open(outputDir/listFiles[i]['basename'], 'w')
         for linea in files.readlines():
             if not(linea.find('//')):
                 outPutFiles.write(linea)
@@ -120,11 +120,11 @@ def exportMinFileJS(listFiles, listOutPutFiles):
         outPutFiles.write(minify(files.read(), mangle=False, mangle_toplevel=False))
         outPutFiles.close()
         
-def exportMinFileCSS(listFiles, listOutPutFiles):
+def exportMinFileCSS(listFiles, outputDir):
     
     for i in range(len(listFiles)):
-        files = open( listFiles[i], 'r')
-        outPutFiles = open( listOutPutFiles[i], 'w')
+        files = open( listFiles[i]['path'], 'r')
+        outPutFiles = open(outputDir/listFiles[i]['basename'], 'w')
         for linea in files.readlines():
             comment_end = linea.find("*/")
             if comment_end < 0:

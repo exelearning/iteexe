@@ -31,6 +31,9 @@ from exe.engine.persistxml    import encodeObjectToXML
 from slimit                   import minify
 from helper                   import exportMinFileJS
 from helper                   import exportMinFileCSS
+from exe.webui.common         import getFilesCSSToMinify
+from exe.webui.common         import getFilesJSToMinify
+
 import logging
 log = logging.getLogger(__name__)
 
@@ -107,20 +110,13 @@ class SinglePageExport(object):
         # copy the package's resource files
         package.resourceDir.copyfiles(self.outputDir)
 
-        listCSSFiles=[]
-        lisCSStOutFiles=[]
-        
-        listCSSFiles+=[self.stylesDir/'..'/'base.css']
-        lisCSStOutFiles+=[self.outputDir/'base.css']
-        
-        exportMinFileCSS(listCSSFiles, lisCSStOutFiles)
+        listCSSFiles=getFilesCSSToMinify('singlepage', self.stylesDir)
+        exportMinFileCSS(listCSSFiles, self.outputDir)
 
         # copy script files.
         my_style = G.application.config.styleStore.getStyle(package.style)
         
         # jQuery
-        listFiles=[]
-        listOutFiles=[]
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
                 jsFile = (self.scriptsDir/'exe_jquery.js')
@@ -129,16 +125,14 @@ class SinglePageExport(object):
             jsFile = (self.scriptsDir/'exe_jquery.js')
             jsFile.copyfile(self.outputDir/'exe_jquery.js')
         
-        # Minify common.js file
-        listFiles+=[self.scriptsDir/'common.js']
-        listOutFiles+=[self.outputDir/'common.js']
-        
         dT = common.getExportDocType()
         if dT == "HTML5":
             jsFile = (self.scriptsDir/'exe_html5.js')
             jsFile.copyfile(self.outputDir/'exe_html5.js')
         
-        exportMinFileJS(listFiles, listOutFiles)
+        # Minify common.js file        
+        listFiles=getFilesJSToMinify('singlepage', self.scriptsDir)        
+        exportMinFileJS(listFiles, self.outputDir)
             
         # Incluide eXe's icon if the Style doesn't have one
         themePath = Path(G.application.config.stylesDir/package.style)
