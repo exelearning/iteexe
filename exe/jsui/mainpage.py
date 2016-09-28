@@ -65,6 +65,8 @@ from exe.export.xmlexport        import XMLExport
 from requests_oauthlib           import OAuth2Session
 from exe.webui.oauthpage         import ProcomunOauth
 from suds.client                 import Client
+from airscore                    import process_mathml_data 
+from sympy                       import latex
 
 from exe.engine.lom import lomsubs
 from exe.engine.lom.lomclassification import Classification
@@ -735,66 +737,70 @@ class MainPage(RenderableLivePage):
         To do: This should generate an image from MathML code, not from LaTeX code.
         """
         
-        # Provisional (just an alert message)
-        client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
-        return
+        try:        
+            mathml_expression_list= process_mathml_data(mathml_source)
         
-        server_filename = ""
-        errors = 0
-
-        webDir = Path(G.application.tempWebDir)
-        previewDir = webDir.joinpath('previews')
-
-        if not previewDir.exists():
-            log.debug("image previews directory does not yet exist; " \
-                    + "creating as %s " % previewDir)
-            previewDir.makedirs()
-        elif not previewDir.isdir():
-            client.alert( \
-                _(u'Preview directory %s is a file, cannot replace it') \
-                % previewDir)
-            log.error("Couldn't preview tinyMCE-chosen image: " +
-                      "Preview dir %s is a file, cannot replace it" \
-                      % previewDir)
-            errors += 1
-
-        # the mimetex usage code was swiped from the Math iDevice:
-        if mathml_source != "":
-
-            # first write the mathml_source out into the preview_math_srcfile,
-            # such that it can then be passed into the compile command:
-            math_filename = previewDir.joinpath(preview_math_srcfile)
-            math_filename_str = math_filename.abspath().encode('utf-8')
-            log.info("handleTinyMCEmath: using LaTeX source: " + mathml_source)
-            log.debug("writing LaTeX source into \'" \
-                    + math_filename_str + "\'.")
-            math_file = open(math_filename, 'wb')
-            # do we need to append a \n here?:
-            math_file.write(mathml_source)
-            math_file.flush()
-            math_file.close()
-
-            try:
-                use_mathml_sourcefile = math_filename_str
-                tempFileName = compile(use_mathml_sourcefile, math_fontsize, \
-                        latex_is_file=True)
-            except Exception, e:
-                client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
-                log.error("handleTinyMCEmathML unable to compile MathML using "
-                        + "mimetex, error = " + str(e))
-                raise
-
-            # copy the file into previews
-            server_filename = previewDir.joinpath(preview_image_filename)
-            log.debug("handleTinyMCEmath copying math image from \'"\
-                    + tempFileName + "\' to \'" \
-                    + server_filename.abspath().encode('utf-8') + "\'.")
-            shutil.copyfile(tempFileName, \
-                    server_filename.abspath().encode('utf-8'))
-
-            # Delete the temp file made by compile
-            Path(tempFileName).remove()
-        return
+            mathml_source= latex(mathml_expression_list)
+            mathml_source= mathml_source.replace(' ', '')  
+            server_filename = ""
+            errors = 0
+    
+            webDir = Path(G.application.tempWebDir)
+            previewDir = webDir.joinpath('previews')
+    
+            if not previewDir.exists():
+                log.debug("image previews directory does not yet exist; " \
+                        + "creating as %s " % previewDir)
+                previewDir.makedirs()
+            elif not previewDir.isdir():
+                client.alert( \
+                    _(u'Preview directory %s is a file, cannot replace it') \
+                    % previewDir)
+                log.error("Couldn't preview tinyMCE-chosen image: " +
+                          "Preview dir %s is a file, cannot replace it" \
+                          % previewDir)
+                errors += 1
+    
+            # the mimetex usage code was swiped from the Math iDevice:
+            if mathml_source != "":
+    
+                # first write the mathml_source out into the preview_math_srcfile,
+                # such that it can then be passed into the compile command:
+                math_filename = previewDir.joinpath(preview_math_srcfile)
+                math_filename_str = math_filename.abspath().encode('utf-8')
+                log.info("handleTinyMCEmath: using LaTeX source: " + mathml_source)
+                log.debug("writing LaTeX source into \'" \
+                        + math_filename_str + "\'.")
+                math_file = open(math_filename, 'wb')
+                # do we need to append a \n here?:
+                math_file.write(mathml_source)
+                math_file.flush()
+                math_file.close()
+    
+                try:
+                    use_mathml_sourcefile = math_filename_str
+                    tempFileName = compile(use_mathml_sourcefile, math_fontsize, \
+                            latex_is_file=True)
+                except Exception, e:
+                    client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
+                    log.error("handleTinyMCEmathML unable to compile MathML using "
+                            + "mimetex, error = " + str(e))
+                    raise
+    
+                # copy the file into previews
+                server_filename = previewDir.joinpath(preview_image_filename)
+                log.debug("handleTinyMCEmath copying math image from \'"\
+                        + tempFileName + "\' to \'" \
+                        + server_filename.abspath().encode('utf-8') + "\'.")
+                shutil.copyfile(tempFileName, \
+                        server_filename.abspath().encode('utf-8'))
+    
+                # Delete the temp file made by compile
+                Path(tempFileName).remove()
+            return
+        except Exception, e:
+            client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
+            return 
 
     def getResources(self, dirname, html, client):
         Resources.cancel = False
