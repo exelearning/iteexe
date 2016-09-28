@@ -213,8 +213,8 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
            return;
         }
     
-        // UNescape, to remove the %20's for spaces, etc.:
-        var unescaped_local_imagePath = unescape(local_imagePath);
+        // decodeURIComponent, to remove the %20's for spaces, etc.:
+        var unescaped_local_imagePath = decodeURIComponent(local_imagePath);
         var oldImageStr = new String(unescaped_local_imagePath);
     
         // and replace path delimiters (':', '\', or '/') or '%', ' ', or '&' 
@@ -532,7 +532,7 @@ function enableAnchors() {
                 node_anchor = this.href.split("#"),
                 path = node_anchor[0].replace(/exe-node/, ':Root'),
                 selected;
-            outline_tree.selectPath(unescape(path), 'text', ':');
+            outline_tree.selectPath(decodeURIComponent(path), 'text', ':');
             selected = outline_tree.getSelectionModel().getSelection()[0];
             outline.onNodeClick(null, selected);
             if (node_anchor[1] != "auto_top")
@@ -630,8 +630,8 @@ var exe_tinymce = {
                 return;
             }
 
-            // UNescape, to remove the %20's for spaces, etc.:
-            var unescaped_local_imagePath = unescape(local_imagePath);
+            // decodeURIComponent, to remove the %20's for spaces, etc.:
+            var unescaped_local_imagePath = decodeURIComponent(local_imagePath);
             var oldImageStr = new String(unescaped_local_imagePath);
 
             /* HTML 5 */
