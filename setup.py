@@ -104,6 +104,6 @@ any Learning Management System.
       scripts=["exe/exe", "exe/exe_do"],
       packages=["exe", "exe.webui", "exe.jsui",
                 "exe.engine", "exe.export",
-                "exe.importers", "exe.engine.lom"],
+                "exe.importers", "exe.engine.lom", "exe.engine.exceptions"],
       data_files=g_files.items()
       )
