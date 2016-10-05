@@ -471,15 +471,11 @@ class Config(object):
             # ignore the error we get if the log file is logged
             hdlr = logging.FileHandler(self.configDir/'exe.log')
 
-        ch = logging.StreamHandler()
-        ch.setLevel(logging.DEBUG)
 
         format = "%(asctime)s %(name)s %(levelname)s %(message)s"
         log    = logging.getLogger()
         hdlr.setFormatter(logging.Formatter(format))
-        ch.setFormatter(logging.Formatter(format))
         log.addHandler(hdlr)
-        log.addHandler(ch)
 
         loggingLevels = {"DEBUG"    : logging.DEBUG,
                          "INFO"     : logging.INFO,
