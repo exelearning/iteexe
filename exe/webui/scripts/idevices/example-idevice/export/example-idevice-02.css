@@ -1,0 +1,5 @@
+/* Example iDevice (second CSS file) */
+.exe-exampleIdevice:before{
+	content: "example-idevice-02.css";
+	color: gray;
+}

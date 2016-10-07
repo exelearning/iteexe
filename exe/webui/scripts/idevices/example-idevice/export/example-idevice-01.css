@@ -1,0 +1,7 @@
+/* Example iDevice */
+.exe-exampleIdevice{
+	color: red;
+	height: 190px;
+	padding-left: 150px;
+	background: url(example-idevice.png) no-repeat 0 0;
+}
