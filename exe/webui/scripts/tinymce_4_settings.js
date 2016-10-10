@@ -64,6 +64,24 @@ var $exeTinyMCE = {
 			file_browser_callback: function(field_name, url, type, win){
 				exe_tinymce.chooseImage(field_name, url, type, win);
 			},
+			//Drag and Drop
+			paste_data_images: true,
+			images_upload_handler : function(blobInfo, success, failure) {
+				var blobType= blobInfo.blob().type;
+				if(blobInfo.blob().name === undefined){
+					if(blobType.includes('image/')){
+						blobName='img.'+blobType.substr(6);
+					}else{
+						blobName='img.png';
+					}
+				}else{
+					blobName=blobInfo.blob().name;
+				}
+				success(exe_tinymce.dragDropImage(
+						'previewTinyMCEimageDragDrop', this, '', this,
+						this.name, blobName, blobInfo
+								.base64()));
+					},
 			// Media
 			media_alt_source: false,
 			media_poster: false,

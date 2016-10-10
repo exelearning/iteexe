@@ -619,6 +619,31 @@ function getTinyMCELang(lang){
 //TinyMCE file_browser_callback
 var exe_tinymce = {
 	
+	dragDropImage : function(theTarget, node, evalAfterDone, win, win_name,
+				blobName, blobBase64) {
+			var local_imagePath = 'data:image/jpeg;base64,' + blobBase64;
+
+			var unescaped_local_imagePath = decodeURIComponent(local_imagePath);
+			var oldImageStr = new String(blobName);
+
+			exe_tinymce.uploaded_file_1_name = "";
+
+			var RegExp1 = /[\ \\\/\:\%\&]/g;
+			var ReplaceStr1 = new String("_");
+			var newImageStr = oldImageStr.replace(RegExp1, ReplaceStr1);
+
+			var early_preview_imageName = encodeURIComponent(newImageStr);
+			var preview_imageName = early_preview_imageName.replace(RegExp1,
+					ReplaceStr1);
+			var full_previewImage_url = "/previews/" + preview_imageName;
+
+			window.parent.nevow_clientToServerEventPOST(theTarget, node,
+					evalAfterDone, win, win_name, unescaped_local_imagePath,
+					preview_imageName);
+
+			return (full_previewImage_url);
+		},
+		
 	chooseImage : function(field_name, url, type, win) {
 		
 		var fn = function(local_imagePath) {
