@@ -638,7 +638,7 @@ var exe_tinymce = {
 			var full_previewImage_url = "/previews/" + preview_imageName;
 
 			window.parent.nevow_clientToServerEventPOST(theTarget, node,
-					evalAfterDone, win, win_name, unescaped_local_imagePath,
+					evalAfterDone, false, win, win_name, unescaped_local_imagePath,
 					preview_imageName);
 
 			return (full_previewImage_url);

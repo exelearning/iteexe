@@ -108,7 +108,7 @@ function nevow_clientToServerEvent(theTarget, node, evalAfterDone) {
 }
 
 
-function nevow_clientToServerEventPOST(theTarget, node, evalAfterDone) {
+function nevow_clientToServerEventPOST(theTarget, node, evalAfterDone, async) {
 	if (theTarget != 'close' && liveevil_unload) {
 		// Server had previously closed the output; let's open it again.
 		if (auto_open) {
@@ -117,7 +117,7 @@ function nevow_clientToServerEventPOST(theTarget, node, evalAfterDone) {
 		connect(0)
 	}
 	var additionalArguments = ''
-	for (i = 3; i < arguments.length; i++) {
+	for (i = 4; i < arguments.length; i++) {
 		additionalArguments += '&arguments='
 		additionalArguments += encodeURIComponent(arguments[i])
 	}
@@ -130,7 +130,7 @@ function nevow_clientToServerEventPOST(theTarget, node, evalAfterDone) {
 	}
 	input.open("POST", base_url + "nevow_liveInput?target="
 			+ encodeURIComponent(theTarget) + '&client-handle-id='
-			+ nevow_clientHandleId)
+			+ nevow_clientHandleId, async)
 	input.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	input.send(additionalArguments)
 }
