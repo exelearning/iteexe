@@ -620,29 +620,57 @@ function getTinyMCELang(lang){
 var exe_tinymce = {
 	
 	dragDropImage : function(theTarget, node, evalAfterDone, win, win_name,
-				blobName, blobBase64) {
-			var local_imagePath = 'data:image/jpeg;base64,' + blobBase64;
+			blobName, blobBase64) {
+		var local_imagePath = 'data:image/jpeg;base64,' + blobBase64;
 
-			var unescaped_local_imagePath = decodeURIComponent(local_imagePath);
-			var oldImageStr = new String(blobName);
+		var unescaped_local_imagePath = decodeURIComponent(local_imagePath);
+		var oldImageStr = new String(blobName);
 
-			exe_tinymce.uploaded_file_1_name = "";
+		exe_tinymce.uploaded_file_1_name = "";
 
-			var RegExp1 = /[\ \\\/\:\%\&]/g;
-			var ReplaceStr1 = new String("_");
-			var newImageStr = oldImageStr.replace(RegExp1, ReplaceStr1);
+		var RegExp1 = /[\ \\\/\:\%\&]/g;
+		var ReplaceStr1 = new String("_");
+		var newImageStr = oldImageStr.replace(RegExp1, ReplaceStr1);
 
-			var early_preview_imageName = encodeURIComponent(newImageStr);
-			var preview_imageName = early_preview_imageName.replace(RegExp1,
-					ReplaceStr1);
-			var full_previewImage_url = "/previews/" + preview_imageName;
+		var early_preview_imageName = encodeURIComponent(newImageStr);
+		var preview_imageName = early_preview_imageName.replace(RegExp1,
+				ReplaceStr1);
+		var full_previewImage_url = "/previews/" + preview_imageName;
 
-			window.parent.nevow_clientToServerEventPOST(theTarget, node,
-					evalAfterDone, false, win, win_name, unescaped_local_imagePath,
-					preview_imageName);
+		var previewTinyMCEDragDropImageDone = function() {
 
-			return (full_previewImage_url);
-		},
+			var alternativeText = function(button, input_alt_value) {
+
+				var editor = tinyMCE.activeEditor.getBody();
+				var imgs = editor.getElementsByTagName("IMG");
+
+				var n = imgs.length - 1;
+
+				var img = imgs[n];
+				img.setAttribute('width', img.width);
+				img.setAttribute('height', img.height);
+
+				if (button === 'ok') {
+					img.setAttribute('alt', input_alt_value);
+				} else {
+					img.setAttribute('alt', '');
+				}
+			}
+
+			Ext.Msg.prompt(_('Image description'), _('Please provide an image description (alternative text):'), alternativeText);
+
+			eXe.app.un('previewTinyMCEDragDropImageDone',
+					previewTinyMCEDragDropImageDone);
+		}
+		eXe.app.on('previewTinyMCEDragDropImageDone',
+				previewTinyMCEDragDropImageDone);
+
+		window.parent.nevow_clientToServerEventPOST(theTarget, node,
+				evalAfterDone, false, win, win_name, unescaped_local_imagePath,
+				preview_imageName);
+
+		return (full_previewImage_url);
+	},
 		
 	chooseImage : function(field_name, url, type, win) {
 		

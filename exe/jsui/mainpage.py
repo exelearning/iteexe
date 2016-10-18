@@ -689,7 +689,7 @@ class MainPage(RenderableLivePage):
             server_filename = previewDir.joinpath(preview_filename)
 
             descrip_file_path = Path(server_filename + ".exe_info")
-            log.debug("handleTinyMCEimageChoice creating preview " \
+            log.debug("handleTinyMCEimageDragDrop creating preview " \
                     + "description file \'" \
                     + descrip_file_path.abspath() + "\'.")
             descrip_file = open(server_filename, 'wb')
@@ -698,10 +698,12 @@ class MainPage(RenderableLivePage):
             descrip_file.write(base64.b64decode(local_filename))
             descrip_file.flush()
             descrip_file.close()
+            
+            client.sendScript('eXe.app.fireEvent("previewTinyMCEDragDropImageDone")')
 
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
-            log.error("handleTinyMCEimageChoice unable to copy local image "
+            log.error("handleTinyMCEimageDragDrop unable to copy local image "
                     + "file to server prevew, error = " + str(e))
             raise
 

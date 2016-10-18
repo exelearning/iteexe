@@ -67,12 +67,17 @@ var $exeTinyMCE = {
 			//Drag and Drop
 			paste_data_images: true,
 			images_upload_handler : function(blobInfo, success, failure) {
+				var editor = tinyMCE.activeEditor.getBody();
+				var imgs = editor.getElementsByTagName("IMG");
+
+				var n = imgs.length - 1;
+
 				var blobType= blobInfo.blob().type;
 				if(blobInfo.blob().name === undefined){
 					if(blobType.includes('image/')){
-						blobName='img.'+blobType.substr(6);
+						blobName='img'+n+'.'+blobType.substr(6);
 					}else{
-						blobName='img.png';
+						blobName='img'+n+'.png';
 					}
 				}else{
 					blobName=blobInfo.blob().name;
