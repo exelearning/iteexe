@@ -79,6 +79,8 @@ var $exeTinyMCE = {
 					}else{
 						blobName='img'+n+'.png';
 					}
+				}else if(blobInfo.blob().name == 'image.png'){
+					blobName='img'+n+'.png';
 				}else{
 					blobName=blobInfo.blob().name;
 				}
