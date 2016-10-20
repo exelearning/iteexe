@@ -587,6 +587,8 @@ var eXeLearning_settings = {
     wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
 }
 
+if (typeof(exe_editor_version)=='undefined') exe_editor_version=3;
+
 if (exe_editor_version==4) {
 	eXeLearning_settings = {
 		wysiwyg_path : "/scripts/tinymce_4/js/tinymce/tinymce.min.js",

@@ -234,8 +234,10 @@ Ext.define('eXe.controller.MainTab', {
 	    var formpanel = button.up('form'),
             form = formpanel.getForm();
 	    if (form.isValid()) {
+	        Ext.Msg.wait(_('Please wait...'));       
 	        form.submit({ 
                 success: function(form, action) {
+                    Ext.MessageBox.hide();
                     Ext.MessageBox.alert("", _('Settings Saved'));
                     if (formpanel.itemId == 'package_properties') {
                         var formclear = function(formpanel) {
@@ -253,7 +255,8 @@ Ext.define('eXe.controller.MainTab', {
                     }
                 },
 	            failure: function(form, action) {
-	                Ext.Msg.alert(_('Error'), action.result.errorMessage);
+	                Ext.MessageBox.hide();
+                    Ext.Msg.alert(_('Error'), action.result.errorMessage);
 	            }
 	        });
 	    }

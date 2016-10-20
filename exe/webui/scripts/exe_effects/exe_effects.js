@@ -78,6 +78,10 @@ $exeFX = {
 		}
 		return n;
 	},
+	noFX : function(e) {
+		// Wrong HTML (no H2, etc.): No effects or special presentation
+		e.attr("class","").css("padding","1em");
+	},
 	accordion : {
 		closeBlock : function(aID){
 			var k = $exeFX.baseClass;
@@ -172,6 +176,7 @@ $exeFX = {
 			var e = $(x);
 			var a = $("h2",e);
 			if (a.length>0) $exeFX.accordion.rft(e,i);
+			else $exeFX.noFX(e);
 		}
 	},
 	timeline : {
@@ -268,6 +273,7 @@ $exeFX = {
 			var h2 = $("H2",e);
 			var h3 = $("H3",e);
 			if (h2.length>0 && h3.length>0) $exeFX.timeline.rft(e,i);
+			else $exeFX.noFX(e);
 		}
 	},
 	tabs : {
@@ -344,6 +350,7 @@ $exeFX = {
 			var e = $(x);
 			var a = $("h2",e);
 			if (a.length>0) $exeFX.tabs.rft(e,i);
+			else $exeFX.noFX(e);
 		}
 	},
 	paginated : {
@@ -398,6 +405,7 @@ $exeFX = {
 			var e = $(x);
 			var a = $("h2",e);
 			if (a.length>0) $exeFX.paginated.rft(e,i);
+			else $exeFX.noFX(e);
 		},
 		rft : function(e,i){
 			var html = "";
@@ -502,6 +510,7 @@ $exeFX = {
 			var e = $(x);
 			var a = $("h2",e);
 			if (a.length>0) $exeFX.carousel.rft(e,i);
+			else $exeFX.noFX(e);
 		},
 		rft : function(e,i){
 			var html = "";
