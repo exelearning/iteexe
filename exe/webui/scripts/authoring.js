@@ -650,14 +650,38 @@ var exe_tinymce = {
 				img.setAttribute('width', img.width);
 				img.setAttribute('height', img.height);
 
-				if (button === 'ok') {
-					img.setAttribute('alt', input_alt_value);
+				if (input_alt_value.length == 0) {
+
+					parent.Ext.Msg
+							.confirm(
+									"",
+									_("Are you sure you want to continue without including an Image Description? Without it the image may not be accessible to some users with disabilities, or to those using a text browser, or browsing the Web with images turned off."),
+									function(button) {
+										if (button == "yes") {
+											img.setAttribute('alt', '');
+										} else {
+											Ext.Msg
+													.prompt(
+															_('Image description'),
+															_('Please provide an image description (alternative text):'),
+															alternativeText);
+										}
+									});
 				} else {
-					img.setAttribute('alt', '');
+
+					if (button === 'ok') {
+						img.setAttribute('alt', input_alt_value);
+					} else {
+						img.setAttribute('alt', '');
+					}
 				}
 			}
 
-			Ext.Msg.prompt(_('Image description'), _('Please provide an image description (alternative text):'), alternativeText);
+			Ext.Msg
+					.prompt(
+							_('Image description'),
+							_('Please provide an image description (alternative text):'),
+							alternativeText);
 
 			eXe.app.un('previewTinyMCEDragDropImageDone',
 					previewTinyMCEDragDropImageDone);
