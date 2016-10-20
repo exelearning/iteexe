@@ -1,6 +1,0 @@
-/* Example iDevice (second CSS) */
-#exampleIdeviceForm:after{
-	content: "example-idevice-02.css";
-	display: block;
-	color: gray;
-}
