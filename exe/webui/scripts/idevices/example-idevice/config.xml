@@ -1,5 +1,15 @@
 <?xml version="1.0"?>
 <idevice>
-    <title>Example iDevice</title>
-    <css-class>Example</css-class>
+	<title>Example iDevice</title>
+	<css-class>Example</css-class>
+	<!-- Optional:
+	<icon>example<icon> - Your Style shoud have this file: icon_example.gif
+	<type>type<type> - interactive, non-interactive, non-textual-info or textual-info (otherwise it will be placed in 'My iDevices')
+	<compatibility>2.2+</compatibility>
+	<author>...</author>
+	<author-url>...</author-url>
+	<license>Creative Commons by</license>
+	<license-url>http://creativecommons.org/licenses/by/3.0/</license-url>
+	<description>...</description>	
+	-->
 </idevice>
