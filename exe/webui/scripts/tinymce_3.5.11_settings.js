@@ -295,10 +295,10 @@ var $exeTinyMCEToggler = {
 }
 
 $(function(){
-	var eds = $("textarea.mceEditor");
+	var eds = $("textarea.jsIdeviceContent");
 	if (eds.length==0) return false;
 	if (eds.length==1) {
-		$exeTinyMCE.init("specific_textareas","mceEditor");
+		$exeTinyMCE.init("specific_textareas","jsIdeviceContent");
 		// Use the following code to add the Hide/Show link even when there's just one editor
 		/*
 		var ed = eds.eq(0);
