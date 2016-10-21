@@ -12,7 +12,7 @@ var $exeExampleIdevice = {
     
 	init : function(){
         $(".exe-exampleIdevice").each(function(instance){
-			$(this).append("<p style='color:blue'><strong>example-idevice-01.js</strong> (instance "+instance+")</p>");
+			$(this).append("<p style='color:blue'><strong>example-idevice.js</strong> (instance "+instance+")</p>");
         });
 	}
     
