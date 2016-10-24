@@ -13,8 +13,12 @@ var $exeDevice = {
 		
 		// Spanish
 		es : {
-			"Write something:" : "Escribe algo:",
-			"You should write something." : "Debes escribir algo."
+			"The user will see your name when clicking on the button." : "El usuario verá tu nombre cuando haga clic en el botón.",
+			"The text of the button should be in the right language, that's why it's a required field." : "El texto del botón debe estar en el idioma adecuado, por eso es un campo requerido.",
+			"Write your name:" : "Escribe tu nombre:",
+			"Button text:" : "Texto del botón:",
+			"You should write your name." : "Debes escribir tu nombre.",
+			"You should write the button text." : "Debes escribir el texto del botón."
 		}
 		
 	},
@@ -40,7 +44,10 @@ var $exeDevice = {
 		
 		var html = '\
 			<div id="exampleIdeviceForm">\
-				<p><label for="fieldA">'+_("Write something:")+' </label><input type="text" name="fieldA" id="fieldA" /></p>\
+				<p>'+_("The user will see your name when clicking on the button.")+'</p>\
+				<p style="margin-bottom:2em">'+_("The text of the button should be in the right language, that's why it's a required field.")+'</p>\
+				<p><label for="fieldA">'+_("Write your name:")+' </label><input type="text" name="fieldA" id="fieldA" /></p>\
+				<p><label for="fieldB">'+_("Button text:")+' </label><input type="text" name="fieldB" id="fieldB" /></p>\
 			</div>\
 		';
 		
@@ -55,10 +62,24 @@ var $exeDevice = {
 
 		var originalHTML = field.val();
 		if (originalHTML != '') {
-			// Remove HTML tags
+			
 			var wrapper = $("<div></div>");
 			wrapper.html(originalHTML);
-			$("#fieldA").val(wrapper.text());
+			
+			// Button text
+			var dt = $("dt",wrapper).text();
+			
+			// Your name
+			var dd = $("dd",wrapper).text();
+			
+			// Load the previous values
+			if (dt!="" && dd!="") {
+				
+				$("#fieldA").val(dd);
+				$("#fieldB").val(dt);
+				
+			}
+			
 		}		
 		
 	},
@@ -68,18 +89,32 @@ var $exeDevice = {
 		var html = '<div class="exe-exampleIdevice">';
 		
 			// Get the content
-			var content = $("#fieldA").val();
-			if (content=="") {
-				eXe.app.alert(_("You should write something."));
+			// Your name
+			var yourName = $("#fieldA").val();
+			if (yourName=="") {
+				eXe.app.alert(_("You should write your name."));
+				return false;
+			}
+			// Button text
+			var buttonText = $("#fieldB").val();
+			if (buttonText=="") {
+				eXe.app.alert(_("You should write the button text."));
 				return false;
 			}
 			
-			// Remove HTML tags
+			// Remove HTML tags (just in case)
 			var wrapper = $("<div></div>");
-			wrapper.html(content);
-			content = wrapper.text();
+			// Your name
+			wrapper.html(yourName);
+			yourName = wrapper.text();
+			// Button text
+			wrapper.html(buttonText);
+			buttonText = wrapper.text();			
 			
-			html += '<p>'+content+'</p>';
+			html += '<dl>';
+				html += '<dt>'+buttonText+'</dt>';
+				html += '<dd>'+yourName+'</dd>';
+			html += '</dl>';
 		
 		html += '</div>';
 		
