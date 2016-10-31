@@ -1,5 +1,5 @@
 /* Scrambled List iDevice */
-.exe-sortableList-options{margin:0 0 1.2em 0;padding:0;list-style:none}
+.exe-sortableList-options{margin:1.2em 0 1.5em 0;padding:0;list-style:none}
 .exe-sortableList-options li{background:#FFF;color:#333;padding:.5em 65px .5em 1em;margin:0 0 .5em 0!important;border:1px solid #EEE;border-radius:4px;;list-style-image:none!important;box-shadow:0 0 5px 0 rgba(204,204,204,1)}
 .exe-sortableList .first .up,.exe-sortableList-options .last .down{visibility:hidden}
 .exe-sortableList li{position:relative}

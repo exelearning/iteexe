@@ -87,7 +87,7 @@ var $exeScrambledList = {
 			html += '<li>'+lis[i]+'</li>';
 		}
 		html += "</ul>";
-		html += '<p><input type="button" class="feedbackbutton" value="'+$("P",activity).eq(1).text()+'" onclick="$exeScrambledList.check(this,'+listOrder+')" /></p>';
+		html += '<p id="exe-sortableListButton-'+listOrder+'"><input type="button" class="feedbackbutton" value="'+$("P",activity).eq(1).text()+'" onclick="$exeScrambledList.check(this,'+listOrder+')" /></p>';
 		html += '<div id="exe-sortableList-'+listOrder+'-feedback"></div>';
 		$(list).hide().attr("id","exe-sortableListResults-"+listOrder).before(html);
 		$("#exe-sortableList-"+listOrder).sortable().bind('sortupdate', function(e, ui) {
@@ -97,6 +97,12 @@ var $exeScrambledList = {
 	},
     
 	check : function(e,listOrder){
+		// No more sorting 
+		$("#exe-sortableListButton-"+listOrder).hide();
+		var list = $("#exe-sortableList-"+listOrder);
+		$("a",list).hide();
+		list.sortable("destroy");
+		// Check the answers
 		var activity = $(e).parents(".exe-sortableList");
         var right = true;
 		var userList = $("#exe-sortableList-"+listOrder);
@@ -107,6 +113,7 @@ var $exeScrambledList = {
 			if (currentText != rightAnswersLis.eq(i).html()) right = false;
 		});
         var feedback = $('#exe-sortableList-'+listOrder+'-feedback');
+		// Show the feedback
 		if (right) feedback.html("<p>"+$(".exe-sortableList-rightText",activity).text()+"</p>").hide().attr("class","feedback feedback-right").fadeIn();
 		else feedback.html("<p>"+$(".exe-sortableList-wrongText",activity).text()+"</p><ul>"+rightAnswers.html()+"</ul>").hide().attr("class","feedback feedback-wrong").fadeIn();
 	},
