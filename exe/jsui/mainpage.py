@@ -202,6 +202,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleClearAndMakeTempPrintDir, 'makeTempPrintDir')
         setUpHandler(self.handleRemoveTempDir, 'removeTempDir')
         setUpHandler(self.handleTinyMCEimageChoice, 'previewTinyMCEimage')
+        setUpHandler(self.handleTinyMCEimageDragDrop, 'previewTinyMCEimageDragDrop')
         setUpHandler(self.handleTinyMCEmath, 'generateTinyMCEmath')
         setUpHandler(self.handleTinyMCEmathML, 'generateTinyMCEmathML')
         setUpHandler(self.handleTestPrintMsg, 'testPrintMessage')
@@ -645,6 +646,64 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             log.error("handleTinyMCEimageChoice unable to copy local image "
+                    + "file to server prevew, error = " + str(e))
+            raise
+
+    def handleTinyMCEimageDragDrop(self, client, tinyMCEwin, tinyMCEwin_name, \
+                              local_filename, preview_filename):
+        server_filename = ""
+        errors = 0
+
+        log.debug('handleTinyMCEimageChoice: image local = ' + local_filename
+                + ', base=' + os.path.basename(local_filename))
+
+        webDir = Path(G.application.tempWebDir)
+        previewDir = webDir.joinpath('previews')
+
+        if not previewDir.exists():
+            log.debug("image previews directory does not yet exist; " \
+                    + "creating as %s " % previewDir)
+            previewDir.makedirs()
+        elif not previewDir.isdir():
+            client.alert(\
+                _(u'Preview directory %s is a file, cannot replace it') \
+                % previewDir)
+            log.error("Couldn't preview tinyMCE-chosen image: " + 
+                      "Preview dir %s is a file, cannot replace it" \
+                      % previewDir)
+            errors += 1
+
+        if errors == 0:
+            log.debug('handleTinyMCEimageChoice: originally, local_filename='
+                    + local_filename)
+            log.debug('handleTinyMCEimageChoice: in unicode, local_filename='
+                    + local_filename)
+
+            localImagePath = Path(local_filename)
+            log.debug('handleTinyMCEimageChoice: after Path, localImagePath= '
+                    + localImagePath)
+
+        try:
+            log.debug('URIencoded preview filename=' + preview_filename)
+
+            server_filename = previewDir.joinpath(preview_filename)
+
+            descrip_file_path = Path(server_filename + ".exe_info")
+            log.debug("handleTinyMCEimageDragDrop creating preview " \
+                    + "description file \'" \
+                    + descrip_file_path.abspath() + "\'.")
+            descrip_file = open(server_filename, 'wb')
+
+            local_filename = local_filename.replace('data:image/jpeg;base64,', '')
+            descrip_file.write(base64.b64decode(local_filename))
+            descrip_file.flush()
+            descrip_file.close()
+            
+            client.sendScript('eXe.app.fireEvent("previewTinyMCEDragDropImageDone")')
+
+        except Exception, e:
+            client.alert(_('SAVE FAILED!\n%s') % str(e))
+            log.error("handleTinyMCEimageDragDrop unable to copy local image "
                     + "file to server prevew, error = " + str(e))
             raise
 

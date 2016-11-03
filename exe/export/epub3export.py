@@ -35,6 +35,11 @@ from exe.export.pages              import Page, uniquifyNames
 from exe                      	   import globals as G
 from BeautifulSoup                 import BeautifulSoup
 from htmlentitydefs                import name2codepoint
+from slimit                        import minify
+from helper                        import exportMinFileJS
+from helper                        import exportMinFileCSS
+from exe.webui.common              import getFilesCSSToMinify
+from exe.webui.common              import getFilesJSToMinify
 
 log = logging.getLogger(__name__)
 
@@ -510,8 +515,7 @@ class Epub3Export(object):
 
         # Copy the style sheet files to the output dir
         # But not nav.css
-        styleFiles = [self.styleDir / '..' / 'base.css']
-        styleFiles += [self.styleDir / '..' / 'popup_bg.gif']
+        styleFiles = [self.styleDir /'..'/ 'popup_bg.gif']
         styleFiles += [f for f in self.styleDir.files("*.css") if f.basename() != "nav.css"]
         styleFiles += self.styleDir.files("*.jpg")
         styleFiles += self.styleDir.files("*.gif")
@@ -529,8 +533,16 @@ class Epub3Export(object):
         package.resourceDir.copyfiles(contentPages)
 
         self.styleDir.copylist(styleFiles, contentPages)
-        self.scriptsDir.copylist(('common.js',), contentPages)
-
+        
+        listCSSFiles=getFilesCSSToMinify('epub3', self.styleDir)
+        exportMinFileCSS(listCSSFiles, outputDir)
+        
+        listFiles=[]
+        listOutFiles=[]
+        
+        listFiles+=[self.scriptsDir/'common.js']
+        listOutFiles+=[outputDir/'common.js']
+        
         # copy players for media idevices.
         hasFlowplayer = False
         hasMagnifier = False
@@ -618,6 +630,9 @@ class Epub3Export(object):
         else:
             jsFile = (self.scriptsDir / 'exe_jquery.js')
             jsFile.copyfile(contentPages / 'exe_jquery.js')
+        
+        listFiles=getFilesJSToMinify('epub3', self.scriptsDir)        
+        exportMinFileJS(listFiles, outputDir)
 
 #         if hasattr(package, 'exportSource') and package.exportSource:
 #             (G.application.config.webDir / 'templates' / 'content.xsd').copyfile(outputDir / 'content.xsd')
