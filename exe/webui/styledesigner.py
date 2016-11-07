@@ -189,6 +189,8 @@ class StyleDesigner(Renderable, Resource):
         configxml_file = open(styleDir / 'config.xml', 'w')
         configxml_file.write(configxml_pretty)
         configxml_file.close()
+        
+        return styleDir
 
     def createStyle(self, style_dirname, style_data):
         """
@@ -356,8 +358,14 @@ class StyleDesigner(Renderable, Resource):
                     'extra-body': extra_body,
                     'edition-extra-head': edition_extra_head
                 }
-                self.updateStyle(styleDir, contentcss, navcss, configxml)
-                return style
+                
+                newStyleDir= self.updateStyle(styleDir, contentcss, navcss, configxml)
+                
+                newStyle = Style(newStyleDir)
+                self.config.styleStore.delStyle(style)
+                self.config.styleStore.addStyle(newStyle)
+                
+                return newStyle
 
             except Exception, e:
                 raise StyleDesignerError(e.message)

@@ -236,6 +236,13 @@ var $app = {
 											$i18n.Information,
 											result.message,
 											function(btn, txt) {
+										        var authoring = opener.opener.Ext.ComponentQuery.query('#authoring')[0].getWin();
+										        if (authoring && authoring.submitLink) {
+										        	var outlineTreePanel = opener.opener.eXe.app.getController("Outline").getOutlineTreePanel(),
+										            	selected = outlineTreePanel.getSelectionModel().getSelection();
+											        authoring.submitLink("changeNode", selected !== 0? selected[0].data.id : '0');
+										        }
+										    
 												opener.window.close();
 												window.close();
 											}
