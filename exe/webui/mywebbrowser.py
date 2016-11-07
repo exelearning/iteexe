@@ -554,13 +554,34 @@ if sys.platform[:3] == "win":
     _tryorder = []
     _browsers = {}
 
+
+    class MicrosoftEdge(BaseBrowser):
+
+        def open(self, url, new=0, autoraise=True):
+            try:
+                os.startfile('microsoft-edge:' + url)
+            except WindowsError:
+                return False
+            else:
+                return True
+
     # First try to use the default Windows browser
     register("windows-default", WindowsDefault)
 
     # Detect some common Windows browsers
-    from _winreg import OpenKey, QueryValue, EnumKey, HKEY_LOCAL_MACHINE
+    from _winreg import OpenKey, QueryValue, QueryValueEx, EnumKey, HKEY_LOCAL_MACHINE
     key = None
     try:
+        
+        winKey = r"SOFTWARE\Microsoft\Windows NT\CurrentVersion"
+        val = r"ProductName"
+        winKey = OpenKey( HKEY_LOCAL_MACHINE , winKey)
+        windows_version = QueryValueEx(winKey,val)[0]
+        #Solo funciona si es Windows 10
+        if 'Windows 10' in windows_version:
+            register('microsoft-edge', None, MicrosoftEdge())
+        winKey.Close()
+        
         key = OpenKey(HKEY_LOCAL_MACHINE, r'SOFTWARE\Clients\StartMenuInternet')
         i = 0
         while True:
