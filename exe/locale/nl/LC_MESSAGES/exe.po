@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-12 16:29+0200\n"
+"POT-Creation-Date: 2016-11-11 20:21+0100\n"
 "PO-Revision-Date: 2016-04-16 17:47+0200\n"
 "Last-Translator: k.werschkull <k.werschkull@hccnet.nl>\n"
 "Language: nl\n"
@@ -3536,10 +3536,10 @@ msgstr ""
 "exe_do: fout: Kan  '%s' niet importeren.\n"
 "De fout was:"
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:303
-#: exe/jsui/mainpage.py:1053 exe/jsui/mainpage.py:1217
-#: exe/jsui/mainpage.py:1257 exe/jsui/mainpage.py:1292
-#: exe/jsui/mainpage.py:1313 exe/jsui/mainpage_antes_jr_docs.py:295
+#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:304
+#: exe/jsui/mainpage.py:1112 exe/jsui/mainpage.py:1276
+#: exe/jsui/mainpage.py:1316 exe/jsui/mainpage.py:1351
+#: exe/jsui/mainpage.py:1372 exe/jsui/mainpage_antes_jr_docs.py:295
 #: exe/jsui/mainpage_antes_jr_docs.py:916
 #: exe/jsui/mainpage_antes_jr_docs.py:1080
 #: exe/jsui/mainpage_antes_jr_docs.py:1120
@@ -3557,8 +3557,8 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "Export bestandsindeling niet geďmplementeerd\t"
 
-#: exe/export/epub3export.py:644 exe/export/imsexport.py:614
-#: exe/export/scormexport.py:701 exe/export/websiteexport.py:98
+#: exe/export/epub3export.py:659 exe/export/imsexport.py:623
+#: exe/export/scormexport.py:717 exe/export/websiteexport.py:104
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3652,26 +3652,26 @@ msgstr "%s invoegen"
 msgid "My iDevices"
 msgstr "Mijn iDevices"
 
-#: exe/jsui/mainpage.py:321 exe/jsui/mainpage.py:915 exe/jsui/mainpage.py:1045
+#: exe/jsui/mainpage.py:322 exe/jsui/mainpage.py:974 exe/jsui/mainpage.py:1104
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
 msgstr "Geen toegang tot de map"
 
-#: exe/jsui/mainpage.py:321 exe/jsui/mainpage.py:917 exe/jsui/mainpage.py:1045
+#: exe/jsui/mainpage.py:322 exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:1104
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
 msgstr ". Gebruik alleen ASCII-tekens."
 
-#: exe/jsui/mainpage.py:330 exe/jsui/mainpage_antes_jr_docs.py:322
+#: exe/jsui/mainpage.py:331 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
 msgstr "OPSLAAN MISLUKT!"
 
-#: exe/jsui/mainpage.py:334 exe/jsui/mainpage.py:646 exe/jsui/mainpage.py:1141
-#: exe/jsui/mainpage_antes_jr_docs.py:326
+#: exe/jsui/mainpage.py:335 exe/jsui/mainpage.py:647 exe/jsui/mainpage.py:705
+#: exe/jsui/mainpage.py:1200 exe/jsui/mainpage_antes_jr_docs.py:326
 #: exe/jsui/mainpage_antes_jr_docs.py:638
 #: exe/jsui/mainpage_antes_jr_docs.py:1004
 #, python-format
@@ -3682,7 +3682,7 @@ msgstr ""
 "OPSLAAN MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:338 exe/jsui/mainpage.py:343 exe/jsui/mainpage.py:346
+#: exe/jsui/mainpage.py:339 exe/jsui/mainpage.py:344 exe/jsui/mainpage.py:347
 #: exe/jsui/mainpage_antes_jr_docs.py:330
 #: exe/jsui/mainpage_antes_jr_docs.py:335
 #: exe/jsui/mainpage_antes_jr_docs.py:338
@@ -3690,27 +3690,27 @@ msgstr ""
 msgid "Package saved to: %s"
 msgstr "Bestand opgeslagen naar: %s"
 
-#: exe/jsui/mainpage.py:569 exe/jsui/mainpage.py:673 exe/jsui/mainpage.py:754
-#: exe/jsui/mainpage_antes_jr_docs.py:561
+#: exe/jsui/mainpage.py:570 exe/jsui/mainpage.py:669 exe/jsui/mainpage.py:732
+#: exe/jsui/mainpage.py:813 exe/jsui/mainpage_antes_jr_docs.py:561
 #: exe/jsui/mainpage_antes_jr_docs.py:665
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Bestand directory %s bestaat al, kan niet vervangen"
 
-#: exe/jsui/mainpage.py:588 exe/jsui/mainpage_antes_jr_docs.py:580
+#: exe/jsui/mainpage.py:589 exe/jsui/mainpage_antes_jr_docs.py:580
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Bestandsnaam %s niet gevonden, kan niet voorvertonen"
 
-#: exe/jsui/mainpage.py:713 exe/jsui/mainpage.py:739 exe/jsui/mainpage.py:782
+#: exe/jsui/mainpage.py:772 exe/jsui/mainpage.py:798 exe/jsui/mainpage.py:841
 msgid "Could not create the image"
 msgstr ""
 
-#: exe/jsui/mainpage.py:820 exe/jsui/mainpage_antes_jr_docs.py:743
+#: exe/jsui/mainpage.py:879 exe/jsui/mainpage_antes_jr_docs.py:743
 msgid "Importing HTML..."
 msgstr "HTML-import is bezig"
 
-#: exe/jsui/mainpage.py:826 exe/jsui/mainpage_antes_jr_docs.py:749
+#: exe/jsui/mainpage.py:885 exe/jsui/mainpage_antes_jr_docs.py:749
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3719,23 +3719,23 @@ msgstr ""
 "De import van LOM Metadata is MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:829 exe/jsui/mainpage_antes_jr_docs.py:752
+#: exe/jsui/mainpage.py:888 exe/jsui/mainpage_antes_jr_docs.py:752
 msgid "Error importing HTML:\n"
 msgstr "HTLM-imort mislukt:\n"
 
-#: exe/jsui/mainpage.py:856
+#: exe/jsui/mainpage.py:915
 msgid "Publishing document to Procomún"
 msgstr "Publiceer algemeen document"
 
-#: exe/jsui/mainpage.py:859
+#: exe/jsui/mainpage.py:918
 msgid "Exporting package as SCORM"
 msgstr "Exporteer het pakket als SCORM"
 
-#: exe/jsui/mainpage.py:880
+#: exe/jsui/mainpage.py:939
 msgid "Starting authorized connection to Procomún API"
 msgstr "Beveiligde verbinding met algemene API begint."
 
-#: exe/jsui/mainpage.py:893
+#: exe/jsui/mainpage.py:952
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
@@ -3744,14 +3744,15 @@ msgstr ""
 "Pakket geexporteerd naar  <a href=\"%s\" target=\"_blank\" title=\"Klik "
 "om de geëxporteerde website te tonen\">%s</a>"
 
-#: exe/jsui/mainpage.py:896
+#: exe/jsui/mainpage.py:955
 #, python-format
 msgid "Error exporting package %s to Procomún: %s"
 msgstr "Fout bij het exporteren van pakket %s naar algemeen: %s"
 
-#: exe/jsui/mainpage.py:938 exe/jsui/mainpage.py:943 exe/jsui/mainpage.py:946
-#: exe/jsui/mainpage.py:949 exe/jsui/mainpage.py:952 exe/jsui/mainpage.py:955
-#: exe/jsui/mainpage.py:960 exe/jsui/mainpage.py:1201 exe/jsui/mainpage.py:1273
+#: exe/jsui/mainpage.py:997 exe/jsui/mainpage.py:1002 exe/jsui/mainpage.py:1005
+#: exe/jsui/mainpage.py:1008 exe/jsui/mainpage.py:1011
+#: exe/jsui/mainpage.py:1014 exe/jsui/mainpage.py:1019
+#: exe/jsui/mainpage.py:1260 exe/jsui/mainpage.py:1332
 #: exe/jsui/mainpage_antes_jr_docs.py:801
 #: exe/jsui/mainpage_antes_jr_docs.py:806
 #: exe/jsui/mainpage_antes_jr_docs.py:809
@@ -3764,16 +3765,16 @@ msgstr "Fout bij het exporteren van pakket %s naar algemeen: %s"
 msgid "EXPORT FAILED!"
 msgstr "UITVOER MISLUKT!"
 
-#: exe/jsui/mainpage.py:1010 exe/jsui/mainpage_antes_jr_docs.py:873
+#: exe/jsui/mainpage.py:1069 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
 msgstr "Juiste XLIFF import"
 
-#: exe/jsui/mainpage.py:1013 exe/jsui/mainpage_antes_jr_docs.py:876
+#: exe/jsui/mainpage.py:1072 exe/jsui/mainpage_antes_jr_docs.py:876
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Fout bij import XLIFF: %s"
 
-#: exe/jsui/mainpage.py:1054 exe/jsui/mainpage.py:1071
+#: exe/jsui/mainpage.py:1113 exe/jsui/mainpage.py:1130
 #: exe/jsui/mainpage_antes_jr_docs.py:917
 #: exe/jsui/mainpage_antes_jr_docs.py:934
 #, python-format
@@ -3784,22 +3785,22 @@ msgstr ""
 "UITPAKKEN MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1073 exe/jsui/mainpage_antes_jr_docs.py:936
+#: exe/jsui/mainpage.py:1132 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Besatand uitgepakt naar: %s"
 
-#: exe/jsui/mainpage.py:1085 exe/jsui/mainpage_antes_jr_docs.py:948
+#: exe/jsui/mainpage.py:1144 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
 msgstr "Mapnaam bestaat al"
 
-#: exe/jsui/mainpage.py:1099 exe/jsui/mainpage.py:1189
-#: exe/jsui/mainpage.py:1205 exe/jsui/mainpage.py:1218
-#: exe/jsui/mainpage.py:1224 exe/jsui/mainpage.py:1242
-#: exe/jsui/mainpage.py:1258 exe/jsui/mainpage.py:1264
-#: exe/jsui/mainpage.py:1278 exe/jsui/mainpage.py:1293
-#: exe/jsui/mainpage.py:1299 exe/jsui/mainpage.py:1314
-#: exe/jsui/mainpage.py:1320 exe/jsui/mainpage_antes_jr_docs.py:962
+#: exe/jsui/mainpage.py:1158 exe/jsui/mainpage.py:1248
+#: exe/jsui/mainpage.py:1264 exe/jsui/mainpage.py:1277
+#: exe/jsui/mainpage.py:1283 exe/jsui/mainpage.py:1301
+#: exe/jsui/mainpage.py:1317 exe/jsui/mainpage.py:1323
+#: exe/jsui/mainpage.py:1337 exe/jsui/mainpage.py:1352
+#: exe/jsui/mainpage.py:1358 exe/jsui/mainpage.py:1373
+#: exe/jsui/mainpage.py:1379 exe/jsui/mainpage_antes_jr_docs.py:962
 #: exe/jsui/mainpage_antes_jr_docs.py:1052
 #: exe/jsui/mainpage_antes_jr_docs.py:1068
 #: exe/jsui/mainpage_antes_jr_docs.py:1081
@@ -3820,14 +3821,14 @@ msgstr ""
 "UITVOER MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1127 exe/jsui/mainpage.py:1174
+#: exe/jsui/mainpage.py:1186 exe/jsui/mainpage.py:1233
 #: exe/jsui/mainpage_antes_jr_docs.py:990
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Bestandsnaam %s bestaat al, kan niet vervangen"
 
-#: exe/jsui/mainpage.py:1133 exe/jsui/mainpage.py:1181
+#: exe/jsui/mainpage.py:1192 exe/jsui/mainpage.py:1240
 #: exe/jsui/mainpage_antes_jr_docs.py:996
 #: exe/jsui/mainpage_antes_jr_docs.py:1044
 #, python-format
@@ -3838,11 +3839,11 @@ msgstr ""
 "De map %s bestaat al. Kies een andere naam of verwijder de bestaande map "
 "en probeer opnieuw."
 
-#: exe/jsui/mainpage.py:1147 exe/jsui/mainpage.py:1192
-#: exe/jsui/mainpage.py:1207 exe/jsui/mainpage.py:1226
-#: exe/jsui/mainpage.py:1244 exe/jsui/mainpage.py:1266
-#: exe/jsui/mainpage.py:1280 exe/jsui/mainpage.py:1301
-#: exe/jsui/mainpage.py:1322 exe/jsui/mainpage_antes_jr_docs.py:1010
+#: exe/jsui/mainpage.py:1206 exe/jsui/mainpage.py:1251
+#: exe/jsui/mainpage.py:1266 exe/jsui/mainpage.py:1285
+#: exe/jsui/mainpage.py:1303 exe/jsui/mainpage.py:1325
+#: exe/jsui/mainpage.py:1339 exe/jsui/mainpage.py:1360
+#: exe/jsui/mainpage.py:1381 exe/jsui/mainpage_antes_jr_docs.py:1010
 #: exe/jsui/mainpage_antes_jr_docs.py:1055
 #: exe/jsui/mainpage_antes_jr_docs.py:1070
 #: exe/jsui/mainpage_antes_jr_docs.py:1089
@@ -3855,16 +3856,16 @@ msgstr ""
 msgid "Exported to %s"
 msgstr "Geëxporteerd naar %s"
 
-#: exe/jsui/mainpage.py:1355 exe/jsui/mainpage_antes_jr_docs.py:1218
+#: exe/jsui/mainpage.py:1414 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Bestand %s bestaat niet of is niet leesbaar."
 
-#: exe/jsui/mainpage.py:1359 exe/jsui/mainpage_antes_jr_docs.py:1222
+#: exe/jsui/mainpage.py:1418 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Kan het bestand niet laden, email bestand naar bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1362 exe/jsui/mainpage_antes_jr_docs.py:1225
+#: exe/jsui/mainpage.py:1421 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3873,7 +3874,7 @@ msgstr ""
 "Sorry, fout bestandsformaat:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1364 exe/jsui/mainpage_antes_jr_docs.py:1227
+#: exe/jsui/mainpage.py:1423 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
 msgstr "Sorry, fout bestandsformaat"
 
@@ -3896,7 +3897,7 @@ msgstr "Opslaan instellingen niet gelukt"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:166
 #: exe/jsui/scripts/app/controller/MainTab.js:224
-#: exe/jsui/scripts/app/controller/MainTab.js:308
+#: exe/jsui/scripts/app/controller/MainTab.js:311
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:504
 msgid "Show Image"
 msgstr "Toon afbeelding"
@@ -3908,7 +3909,7 @@ msgstr "Kies een afbeelding"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:194
 #: exe/jsui/scripts/app/controller/MainTab.js:228
-#: exe/jsui/scripts/app/controller/MainTab.js:355
+#: exe/jsui/scripts/app/controller/MainTab.js:358
 msgid "Hide Image"
 msgstr "Verberg afbeelding"
 
@@ -3925,12 +3926,12 @@ msgstr "Afbeeldingsbestanden"
 #: exe/jsui/scripts/app/controller/Toolbar.js:643
 #: exe/jsui/scripts/app/controller/Toolbar.js:712
 #: exe/jsui/scripts/app/controller/Toolbar.js:823
-#: exe/jsui/scripts/app/controller/Toolbar.js:897
-#: exe/jsui/scripts/app/controller/Toolbar.js:914
-#: exe/jsui/scripts/app/controller/Toolbar.js:931
-#: exe/jsui/scripts/app/controller/Toolbar.js:960
-#: exe/jsui/scripts/app/controller/Toolbar.js:1096
-#: exe/jsui/scripts/app/controller/Toolbar.js:1193
+#: exe/jsui/scripts/app/controller/Toolbar.js:903
+#: exe/jsui/scripts/app/controller/Toolbar.js:923
+#: exe/jsui/scripts/app/controller/Toolbar.js:943
+#: exe/jsui/scripts/app/controller/Toolbar.js:975
+#: exe/jsui/scripts/app/controller/Toolbar.js:1111
+#: exe/jsui/scripts/app/controller/Toolbar.js:1208
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 #: exe/webui/scripts/authoring.js:96 exe/webui/scripts/authoring.js:121
 #: exe/webui/scripts/authoring.js:365 exe/webui/scripts/authoring.js:374
@@ -3940,14 +3941,24 @@ msgstr "Afbeeldingsbestanden"
 msgid "All Files"
 msgstr "Alle bestanden"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:239
+#: exe/jsui/scripts/app/controller/MainTab.js:237
+#: exe/jsui/scripts/app/controller/Toolbar.js:876
+#: exe/jsui/scripts/app/controller/Toolbar.js:896
+#: exe/jsui/scripts/app/controller/Toolbar.js:916
+#: exe/jsui/scripts/app/controller/Toolbar.js:936
+#: exe/jsui/scripts/app/controller/Toolbar.js:968
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Please wait..."
+msgstr "Een ogenblik geduld…"
+
+#: exe/jsui/scripts/app/controller/MainTab.js:241
 msgid "Settings Saved"
 msgstr "Instellingen opgeslagen"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:256
-#: exe/jsui/scripts/app/controller/MainTab.js:261
-#: exe/jsui/scripts/app/controller/MainTab.js:315
-#: exe/jsui/scripts/app/controller/MainTab.js:369
+#: exe/jsui/scripts/app/controller/MainTab.js:259
+#: exe/jsui/scripts/app/controller/MainTab.js:264
+#: exe/jsui/scripts/app/controller/MainTab.js:318
+#: exe/jsui/scripts/app/controller/MainTab.js:372
 #: exe/jsui/scripts/app/controller/StyleManager.js:96
 #: exe/jsui/scripts/app/controller/StyleManager.js:123
 #: exe/jsui/scripts/app/controller/StyleManager.js:151
@@ -3964,32 +3975,32 @@ msgstr "Instellingen opgeslagen"
 #: exe/webui/stylemanagerpage.py:373 exe/webui/stylemanagerpage.py:384
 #: exe/webui/stylemanagerpage.py:421 exe/webui/stylemanagerpage.py:428
 #: exe/webui/stylemanagerpage.py:471 exe/webui/stylemanagerpage.py:483
-#: exe/webui/tools/style-designer/langs/en.js:124
+#: exe/webui/tools/style-designer/langs/en.js:125
 msgid "Error"
 msgstr "Fout"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:261
+#: exe/jsui/scripts/app/controller/MainTab.js:264
 msgid "The form contains invalid fields. Please check back."
 msgstr "Het formulier bevat onjuiste velden. Controleer svp."
 
-#: exe/jsui/scripts/app/controller/MainTab.js:273
-#: exe/jsui/scripts/app/controller/MainTab.js:326
+#: exe/jsui/scripts/app/controller/MainTab.js:276
+#: exe/jsui/scripts/app/controller/MainTab.js:329
 #: exe/jsui/scripts/app/controller/Outline.js:204
 #: exe/jsui/scripts/app/controller/Toolbar.js:427
 #: exe/webui/scripts/editor.js:37
-#: exe/webui/tools/style-designer/langs/en.js:114
+#: exe/webui/tools/style-designer/langs/en.js:115
 msgid "Confirm"
 msgstr "Stem in"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:274
+#: exe/jsui/scripts/app/controller/MainTab.js:277
 msgid "Are you sure you want clear all form fields?"
 msgstr "Weet u zeker dat u alle velden van het formulier wilt wissen?"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:327
+#: exe/jsui/scripts/app/controller/MainTab.js:330
 msgid "Are you sure you want reset all form fields?"
 msgstr "Weet u zeker dat u alle velden van het formulier opnieuw wilt instellen?"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:414
+#: exe/jsui/scripts/app/controller/MainTab.js:417
 msgid "LOM Metadata import success!"
 msgstr "LOM metadata succesvol geimporteerd!"
 
@@ -4111,7 +4122,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:478 exe/webui/block.py:264
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:123
+#: exe/webui/tools/style-designer/langs/en.js:124
 msgid "Information"
 msgstr "Aanwijzingen"
 
@@ -4129,8 +4140,8 @@ msgstr "Bestand invoegen {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:567
 #: exe/jsui/scripts/app/controller/Toolbar.js:588
-#: exe/jsui/scripts/app/controller/Toolbar.js:1095
-#: exe/jsui/scripts/app/controller/Toolbar.js:1192
+#: exe/jsui/scripts/app/controller/Toolbar.js:1110
+#: exe/jsui/scripts/app/controller/Toolbar.js:1207
 msgid "eXe Package Files"
 msgstr "eXe Package Files"
 
@@ -4231,8 +4242,8 @@ msgstr ""
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/webui/editorpane.py:273
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:127
-#: exe/webui/tools/style-designer/langs/en.js:136
+#: exe/webui/tools/style-designer/langs/en.js:128
+#: exe/webui/tools/style-designer/langs/en.js:137
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
 msgstr "Annuleren"
@@ -4265,72 +4276,72 @@ msgstr "Algemene authorisatie"
 msgid "Select the parent folder for export."
 msgstr "Kies de hoofdmap voor export"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:887
+#: exe/jsui/scripts/app/controller/Toolbar.js:890
 msgid "Export text package as"
 msgstr "Exporteer tekstbestand als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:896
+#: exe/jsui/scripts/app/controller/Toolbar.js:902
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Text File"
 msgstr "Tekstbestand"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:904
+#: exe/jsui/scripts/app/controller/Toolbar.js:910
 msgid "Save package resources report as"
 msgstr "Sla het bronnenreport op als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:913
+#: exe/jsui/scripts/app/controller/Toolbar.js:922
 msgid "CSV File"
 msgstr "CSV bestand"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:921
+#: exe/jsui/scripts/app/controller/Toolbar.js:930
 msgid "Export EPUB3 package as"
 msgstr "Exporteer EPUB3 bestand als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:930
+#: exe/jsui/scripts/app/controller/Toolbar.js:942
 msgid "EPUB3 File"
 msgstr "EPUB3 bestand"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:938
+#: exe/jsui/scripts/app/controller/Toolbar.js:950
 msgid "Export SCORM package as"
 msgstr "Exporteer SCORM bestand als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:940
+#: exe/jsui/scripts/app/controller/Toolbar.js:952
 msgid "Export IMS package as"
 msgstr "Exporteer het IMS bestabnd als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:942
+#: exe/jsui/scripts/app/controller/Toolbar.js:954
 msgid "Export Website package as"
 msgstr "Exporteer het Website bestand als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:944
+#: exe/jsui/scripts/app/controller/Toolbar.js:956
 msgid "Export Common Cartridge as"
 msgstr "Exporteer Common Cartridge als"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:946
+#: exe/jsui/scripts/app/controller/Toolbar.js:958
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "VERKEERDE WAARDE MEEGEGEVEN aan exportbestand"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:959
+#: exe/jsui/scripts/app/controller/Toolbar.js:974
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/ZipFile"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1068
+#: exe/jsui/scripts/app/controller/Toolbar.js:1083
 msgid "Loading package..."
 msgstr "Bestand laden..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1084
+#: exe/jsui/scripts/app/controller/Toolbar.js:1099
 msgid "Open File"
 msgstr "Open Bestand"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1089
+#: exe/jsui/scripts/app/controller/Toolbar.js:1104
 msgid "Loading package: {filename}"
 msgstr "Bestand laden...(Bestandsnaam)"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1108
+#: exe/jsui/scripts/app/controller/Toolbar.js:1123
 msgid "Save Package first?"
 msgstr "Bestand eerst opslaan?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1109
+#: exe/jsui/scripts/app/controller/Toolbar.js:1124
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
@@ -4338,15 +4349,15 @@ msgstr ""
 "Het huidige bestand is gewijzigd en nog niet opgeslagen. Wilt U het eerst"
 " opslaan?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1156
+#: exe/jsui/scripts/app/controller/Toolbar.js:1171
 msgid "Saving package to: {filename}"
 msgstr "Bestand opslaan als: (Bestandsnaam)"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1172
+#: exe/jsui/scripts/app/controller/Toolbar.js:1187
 msgid "Save file"
 msgstr "Sla bestand op"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1178
+#: exe/jsui/scripts/app/controller/Toolbar.js:1193
 msgid "Saving package..."
 msgstr "Bestand opslaan"
 
@@ -4427,7 +4438,7 @@ msgstr "Open"
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:269
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:260
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:112
+#: exe/webui/tools/style-designer/langs/en.js:113
 msgid "Save"
 msgstr "Opslaan"
 
@@ -4664,7 +4675,7 @@ msgstr "Vrijhouden"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
-#: exe/webui/tools/style-designer/langs/en.js:110
+#: exe/webui/tools/style-designer/langs/en.js:111
 msgid "Reset"
 msgstr "Opnieuw instellen"
 
@@ -5409,7 +5420,7 @@ msgstr "Kies de taal"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:101
+#: exe/webui/tools/style-designer/langs/en.js:102
 msgid "Advanced"
 msgstr "Geavanceerd"
 
@@ -5670,7 +5681,7 @@ msgid "Move node down"
 msgstr "Verplaats naar beneden"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
-#: exe/webui/tools/style-designer/langs/en.js:133
+#: exe/webui/tools/style-designer/langs/en.js:134
 msgid "New"
 msgstr "Nieuw"
 
@@ -8485,15 +8496,15 @@ msgstr "Timer in het spel tonen inschakelen"
 msgid "Add Placable Object"
 msgstr "Voeg een te plaatsen object toe"
 
-#: exe/webui/preferencespage.py:158
+#: exe/webui/preferencespage.py:159
 msgid "Default browser in your system"
 msgstr "Standaard browser op uw computer"
 
-#: exe/webui/preferencespage.py:201
+#: exe/webui/preferencespage.py:202
 msgid "Failed to get preferences"
 msgstr "Ophalen voorkeuren niet gelukt"
 
-#: exe/webui/preferencespage.py:255
+#: exe/webui/preferencespage.py:256
 msgid "Failed to save preferences"
 msgstr "Opslaan voorkeuren niet gelukt"
 
@@ -8579,7 +8590,29 @@ msgstr "Kies eenmp3 bestand"
 msgid "Select a package"
 msgstr "Kies een pakket"
 
-#: exe/webui/scripts/authoring.js:778
+#: exe/webui/scripts/authoring.js:660
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:45
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:71
+msgid ""
+"Are you sure you want to continue without including an Image Description?"
+" Without it the image may not be accessible to some users with "
+"disabilities, or to those using a text browser, or browsing the Web with "
+"images turned off."
+msgstr ""
+"Wilt u de afbeelding zonder beschrijving invoegen? De afbeelding wordt "
+"dan mogelijk niet opgemerkt door mensen met een visuele handicap, of "
+"mensen die zonder afbeeldingen browsen."
+
+#: exe/webui/scripts/authoring.js:667 exe/webui/scripts/authoring.js:684
+msgid "Image description"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:668 exe/webui/scripts/authoring.js:685
+msgid "Please provide an image description (alternative text):"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:857
 msgid ""
 "Embed images shouldn't be pasted directly into the editor. Please use "
 "Insert/Edit Image."
@@ -8587,7 +8620,7 @@ msgstr ""
 "Ingesloten afbeeldingen moeten niet rechtstreeks in de editor geplakt "
 "worden. Gebruik afbeelding invoegen/bewerken."
 
-#: exe/webui/scripts/authoring.js:778
+#: exe/webui/scripts/authoring.js:857
 msgid "This change will be undone."
 msgstr "Deze wijziging zal ongedaan worden gemaakt."
 
@@ -8869,10 +8902,6 @@ msgstr "Alles negeren"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Languages"
 msgstr "Talen"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Please wait..."
-msgstr "Een ogenblik geduld…"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Suggestions"
@@ -9255,12 +9284,12 @@ msgid "Rich Text Area"
 msgstr "Tekst met opmaak"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:91
+#: exe/webui/tools/style-designer/langs/en.js:92
 msgid "White"
 msgstr "Wit"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:92
+#: exe/webui/tools/style-designer/langs/en.js:93
 msgid "Black"
 msgstr "Zwart"
 
@@ -9298,6 +9327,7 @@ msgstr "Eenheden"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:68
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/tools/style-designer/langs/en.js:84
 msgid "Width"
 msgstr "Breedte"
 
@@ -9440,19 +9470,6 @@ msgstr "Beschrijving"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Image URL"
 msgstr "Bestand/URL"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:45
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:71
-msgid ""
-"Are you sure you want to continue without including an Image Description?"
-" Without it the image may not be accessible to some users with "
-"disabilities, or to those using a text browser, or browsing the Web with "
-"images turned off."
-msgstr ""
-"Wilt u de afbeelding zonder beschrijving invoegen? De afbeelding wordt "
-"dan mogelijk niet opgemerkt door mensen met een visuele handicap, of "
-"mensen die zonder afbeeldingen browsen."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:46
@@ -10527,7 +10544,7 @@ msgstr "Achtergrondafbeelding"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:42
-#: exe/webui/tools/style-designer/langs/en.js:88
+#: exe/webui/tools/style-designer/langs/en.js:89
 msgid "Color"
 msgstr "Kleur"
 
@@ -11871,7 +11888,7 @@ msgid "Invalid color value"
 msgstr "Ongeldige kleur code"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:129
+#: exe/webui/tools/style-designer/langs/en.js:130
 msgid "Color Picker"
 msgstr "Alle kleuren"
 
@@ -11906,8 +11923,8 @@ msgstr "Automatische nummering"
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
-#: exe/webui/scripts/tinymce_4_settings.js:272
 #: exe/webui/scripts/tinymce_4_settings.js:297
+#: exe/webui/scripts/tinymce_4_settings.js:322
 msgid "Editor"
 msgstr "Editor"
 
@@ -11921,57 +11938,57 @@ msgstr ""
 msgid "3 columns"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4_settings.js:82
+#: exe/webui/scripts/tinymce_4_settings.js:107
 msgid "Inline"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4_settings.js:83
+#: exe/webui/scripts/tinymce_4_settings.js:108
 msgid "Bold"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4_settings.js:84
+#: exe/webui/scripts/tinymce_4_settings.js:109
 msgid "Italic"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:85
+#: exe/webui/scripts/tinymce_4_settings.js:110
 msgid "Underline"
 msgstr "Onderstrepen"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:86
+#: exe/webui/scripts/tinymce_4_settings.js:111
 msgid "Strikethrough"
 msgstr "Doorhalen"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:87
+#: exe/webui/scripts/tinymce_4_settings.js:112
 msgid "Superscript"
 msgstr "Superscript"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:88
+#: exe/webui/scripts/tinymce_4_settings.js:113
 msgid "Subscript"
 msgstr "Subscript"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:89
+#: exe/webui/scripts/tinymce_4_settings.js:114
 msgid "Code"
 msgstr "Code"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:91
+#: exe/webui/scripts/tinymce_4_settings.js:116
 msgid "Deletion"
 msgstr "Verwijderd"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:92
+#: exe/webui/scripts/tinymce_4_settings.js:117
 msgid "Insertion"
 msgstr "Ingevoegd"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:93
+#: exe/webui/scripts/tinymce_4_settings.js:118
 msgid "Cite"
 msgstr "Citaat"
 
@@ -12001,16 +12018,16 @@ msgstr "Stijl %s met succes aangemaakt!"
 msgid "Style %s successfully saved!"
 msgstr "Stijl %s met succes opgeslagen"
 
-#: exe/webui/styledesigner.py:204
+#: exe/webui/styledesigner.py:206
 #, python-format
 msgid "Style directory %s already exists"
 msgstr "Stijlmap %s bestaat al"
 
-#: exe/webui/styledesigner.py:266
+#: exe/webui/styledesigner.py:268
 msgid "The style name already exists"
 msgstr "De stijlnaam bestaat al"
 
-#: exe/webui/styledesigner.py:283
+#: exe/webui/styledesigner.py:285
 msgid "Error saving style, style directory does not exist"
 msgstr "Fout bij het opslaan van de stijl, de stijlmap bestaat niet"
 
@@ -12096,19 +12113,19 @@ msgstr "De stijl is juist verwijderd"
 msgid "An unexpected error has occurred"
 msgstr "Er is een onverwachte fout opgetreden"
 
-#: exe/webui/tools/style-designer/js/app.js:1246
+#: exe/webui/tools/style-designer/js/app.js:1275
 msgid "Create new style"
 msgstr "Ontwerp een nieuwe stijl"
 
-#: exe/webui/tools/style-designer/js/app.js:1247
+#: exe/webui/tools/style-designer/js/app.js:1276
 msgid "Name the new style"
 msgstr "Stijl opslaan onder een nieuwe naam."
 
-#: exe/webui/tools/style-designer/js/app.js:1269
+#: exe/webui/tools/style-designer/js/app.js:1298
 msgid "Style Designer windows will be closed. "
 msgstr "Het venster van de Style Designer wordt gesloten."
 
-#: exe/webui/tools/style-designer/js/app.js:1272
+#: exe/webui/tools/style-designer/js/app.js:1301
 msgid "Page will be reloaded. "
 msgstr "Pagina wordt opnieuw geladen."
 
@@ -12304,67 +12321,67 @@ msgstr "Verbewrg het menu"
 msgid "Horizontal navigation"
 msgstr "Horizontale navigatie"
 
-#: exe/webui/tools/style-designer/langs/en.js:84
+#: exe/webui/tools/style-designer/langs/en.js:85
 msgid "Active background"
 msgstr "Active achtergrond"
 
-#: exe/webui/tools/style-designer/langs/en.js:85
+#: exe/webui/tools/style-designer/langs/en.js:86
 msgid "Active link color"
 msgstr "Kleur van de actieve link"
 
-#: exe/webui/tools/style-designer/langs/en.js:86
+#: exe/webui/tools/style-designer/langs/en.js:87
 msgid "Other navigation options"
 msgstr "Andere navigatie opties"
 
-#: exe/webui/tools/style-designer/langs/en.js:87
+#: exe/webui/tools/style-designer/langs/en.js:88
 msgid "Use icons"
 msgstr "Gebruik iconen"
 
-#: exe/webui/tools/style-designer/langs/en.js:89
+#: exe/webui/tools/style-designer/langs/en.js:90
 msgid "Icons color"
 msgstr "Icon kleur"
 
-#: exe/webui/tools/style-designer/langs/en.js:90
+#: exe/webui/tools/style-designer/langs/en.js:91
 msgid "Grey"
 msgstr "Grijs"
 
-#: exe/webui/tools/style-designer/langs/en.js:94
+#: exe/webui/tools/style-designer/langs/en.js:95
 msgid "With emphasis"
 msgstr "Met nadruk"
 
-#: exe/webui/tools/style-designer/langs/en.js:95
+#: exe/webui/tools/style-designer/langs/en.js:96
 msgid "Title color"
 msgstr "Titel kleur"
 
-#: exe/webui/tools/style-designer/langs/en.js:96
+#: exe/webui/tools/style-designer/langs/en.js:97
 msgid "Title background"
 msgstr "Titel van de achtergrond afbeelding"
 
-#: exe/webui/tools/style-designer/langs/en.js:97
+#: exe/webui/tools/style-designer/langs/en.js:98
 msgid "No emphasis (Free Text...)"
 msgstr "Geen nadruk (Vrije tekst...)"
 
-#: exe/webui/tools/style-designer/langs/en.js:98
+#: exe/webui/tools/style-designer/langs/en.js:99
 msgid "Show box"
 msgstr "Toon venster"
 
-#: exe/webui/tools/style-designer/langs/en.js:99
+#: exe/webui/tools/style-designer/langs/en.js:100
 msgid "Icon to hide/show the iDevice"
 msgstr "Icon om het iDivice te verbergen/toten"
 
-#: exe/webui/tools/style-designer/langs/en.js:102
+#: exe/webui/tools/style-designer/langs/en.js:103
 msgid "This code will be included at the end of content.css"
 msgstr "Deze code zal worden toegevoegd aan het einde van content.css"
 
-#: exe/webui/tools/style-designer/langs/en.js:103
+#: exe/webui/tools/style-designer/langs/en.js:104
 msgid "content.css is included any time you export, and always after base.css."
 msgstr "content.css wordt steeds na elke export opgenomen, en altijd na base.css "
 
-#: exe/webui/tools/style-designer/langs/en.js:104
+#: exe/webui/tools/style-designer/langs/en.js:105
 msgid "This code will be included at the end of nav.css"
 msgstr "Deze code zal worden toegevoegd aan het einde van nav.css"
 
-#: exe/webui/tools/style-designer/langs/en.js:105
+#: exe/webui/tools/style-designer/langs/en.js:106
 msgid ""
 "nav.css is only included when you export as Web Site, and always after "
 "content.css."
@@ -12372,49 +12389,49 @@ msgstr ""
 "nav.css wordt alleen toegevoegd als je exporteert als website, en altijd "
 "na content.css."
 
-#: exe/webui/tools/style-designer/langs/en.js:106
+#: exe/webui/tools/style-designer/langs/en.js:107
 msgid "content.css content"
 msgstr "inhoud van content.css"
 
-#: exe/webui/tools/style-designer/langs/en.js:107
+#: exe/webui/tools/style-designer/langs/en.js:108
 msgid "nav.css content"
 msgstr "inhoud van nav.css"
 
-#: exe/webui/tools/style-designer/langs/en.js:108
+#: exe/webui/tools/style-designer/langs/en.js:109
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
 "Schaduwen werken niet in browsers die SSS3 niet ondersteunen (IE6, "
 "IE7...)."
 
-#: exe/webui/tools/style-designer/langs/en.js:111
+#: exe/webui/tools/style-designer/langs/en.js:112
 msgid "Finish"
 msgstr "Beeindigen"
 
-#: exe/webui/tools/style-designer/langs/en.js:113
+#: exe/webui/tools/style-designer/langs/en.js:114
 msgid "Save as"
 msgstr "Opslaan als"
 
-#: exe/webui/tools/style-designer/langs/en.js:115
+#: exe/webui/tools/style-designer/langs/en.js:116
 msgid "Save the current design and close the Style Designer?"
 msgstr "Het huidige ontwerp opslaan en de style Designer sluiten?"
 
-#: exe/webui/tools/style-designer/langs/en.js:116
+#: exe/webui/tools/style-designer/langs/en.js:117
 msgid "Save all changes? This cannot be undone."
 msgstr "Alle wijzigingen opslaan? Dit kan niet ongedaan gemaakt worden."
 
-#: exe/webui/tools/style-designer/langs/en.js:117
+#: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Style name:"
 msgstr "Naam van de stijl"
 
-#: exe/webui/tools/style-designer/langs/en.js:118
+#: exe/webui/tools/style-designer/langs/en.js:119
 msgid "Your browser is not compatible with this tool."
 msgstr "Uw browser is niet compatibel met deze tool."
 
-#: exe/webui/tools/style-designer/langs/en.js:119
+#: exe/webui/tools/style-designer/langs/en.js:120
 msgid "The Hide/Show menu option is disabled in the Style Designer"
 msgstr "De Verbergen/Tonen menu optie is uitgeschakeld in de Style Designer "
 
-#: exe/webui/tools/style-designer/langs/en.js:120
+#: exe/webui/tools/style-designer/langs/en.js:121
 msgid ""
 "Please, make your browser bigger. The Style Designer requires at least a "
 "1024x768 screen resolution"
@@ -12422,102 +12439,102 @@ msgstr ""
 "Vergroot het venster van je browser. De Style Designer is ontworpen voor "
 "een schermresolutie van minstens 1024x768"
 
-#: exe/webui/tools/style-designer/langs/en.js:121
+#: exe/webui/tools/style-designer/langs/en.js:122
 msgid "The Style Designer window is not open."
 msgstr "Het venster van de Style Designer is niet open."
 
-#: exe/webui/tools/style-designer/langs/en.js:122
+#: exe/webui/tools/style-designer/langs/en.js:123
 msgid "This window will be closed. Please restart the tool."
 msgstr "Het venster wordt gesloten. Start het tool a.u.b. opnieuw."
 
-#: exe/webui/tools/style-designer/langs/en.js:125
+#: exe/webui/tools/style-designer/langs/en.js:126
 msgid "Undo changes since last time you saved? This cannot be undone. "
 msgstr ""
 "Maak veranderingen sinds vorige keer opslaan ongedaan? Dit kan niet meer "
 "ongedaan worden gemaakt.  "
 
-#: exe/webui/tools/style-designer/langs/en.js:132
+#: exe/webui/tools/style-designer/langs/en.js:133
 msgid "Drag markers to pick a color"
 msgstr "Sleep markers om een kleur te kiezen"
 
-#: exe/webui/tools/style-designer/langs/en.js:134
+#: exe/webui/tools/style-designer/langs/en.js:135
 msgid "Current"
 msgstr "Huidige"
 
-#: exe/webui/tools/style-designer/langs/en.js:140
+#: exe/webui/tools/style-designer/langs/en.js:141
 msgid "New Color - Press OK to Commit"
 msgstr "Nieuwe kleur - Klik op OK om te bevestigen"
 
-#: exe/webui/tools/style-designer/langs/en.js:141
+#: exe/webui/tools/style-designer/langs/en.js:142
 msgid "Click to revert to original color"
 msgstr "Klik om terug te gaan naar de originele kleur"
 
-#: exe/webui/tools/style-designer/langs/en.js:144
+#: exe/webui/tools/style-designer/langs/en.js:145
 msgid "Commit to this color selection"
 msgstr "Bevestig deze kleurselectie"
 
-#: exe/webui/tools/style-designer/langs/en.js:145
+#: exe/webui/tools/style-designer/langs/en.js:146
 msgid "Cancel and revert to original color"
 msgstr "Annuleer en ga terug naar de originele kleur"
 
-#: exe/webui/tools/style-designer/langs/en.js:148
+#: exe/webui/tools/style-designer/langs/en.js:149
 msgid "Set to Hue color mode"
 msgstr "Ingesteld op Tint kleurenmodus"
 
-#: exe/webui/tools/style-designer/langs/en.js:149
+#: exe/webui/tools/style-designer/langs/en.js:150
 msgid "Enter a Hue value (0-360º)"
 msgstr "Geef een Tintwaarde (0-360º)"
 
-#: exe/webui/tools/style-designer/langs/en.js:152
+#: exe/webui/tools/style-designer/langs/en.js:153
 msgid "Set to Saturation color mode"
 msgstr "Ingesteld op Verzadiging kleurenmodus"
 
-#: exe/webui/tools/style-designer/langs/en.js:153
+#: exe/webui/tools/style-designer/langs/en.js:154
 msgid "Enter a Saturation value (0-100%)"
 msgstr "Geef een waarde voor de Verzadiging (0-100%)"
 
-#: exe/webui/tools/style-designer/langs/en.js:156
+#: exe/webui/tools/style-designer/langs/en.js:157
 msgid "Set to Value color mode"
 msgstr "Ingesteld op Waarde kleurenmodus"
 
-#: exe/webui/tools/style-designer/langs/en.js:157
+#: exe/webui/tools/style-designer/langs/en.js:158
 msgid "Enter a Value (0-100%)"
 msgstr "Geef een waarde (0-255)"
 
-#: exe/webui/tools/style-designer/langs/en.js:160
+#: exe/webui/tools/style-designer/langs/en.js:161
 msgid "Set to Red color mode"
 msgstr "Ingesteld op Rode kleurenmodus"
 
-#: exe/webui/tools/style-designer/langs/en.js:161
+#: exe/webui/tools/style-designer/langs/en.js:162
 msgid "Enter a Red value (0-255)"
 msgstr "Kies een waarde voor Rood (0-255)"
 
-#: exe/webui/tools/style-designer/langs/en.js:164
+#: exe/webui/tools/style-designer/langs/en.js:165
 msgid "Set to Green color mode"
 msgstr "Ingesteld op Groene kleurenmodus"
 
-#: exe/webui/tools/style-designer/langs/en.js:165
+#: exe/webui/tools/style-designer/langs/en.js:166
 msgid "Enter a Green value (0-255)"
 msgstr "Kies een waarde voor Groen (0-255)"
 
-#: exe/webui/tools/style-designer/langs/en.js:168
+#: exe/webui/tools/style-designer/langs/en.js:169
 msgid "Set to Blue color mode"
 msgstr "Ingesteld op Blauwe kleurenmodus"
 
-#: exe/webui/tools/style-designer/langs/en.js:169
+#: exe/webui/tools/style-designer/langs/en.js:170
 msgid "Enter a Blue value (0-255)"
 msgstr "Kies een waarde voor Blauw (0-255)"
 
-#: exe/webui/tools/style-designer/langs/en.js:172
+#: exe/webui/tools/style-designer/langs/en.js:173
 msgid "Set to Alpha color mode"
 msgstr "Ingesteld op Alpha kleurenmodus"
 
-#: exe/webui/tools/style-designer/langs/en.js:173
-#: exe/webui/tools/style-designer/langs/en.js:177
+#: exe/webui/tools/style-designer/langs/en.js:174
+#: exe/webui/tools/style-designer/langs/en.js:178
 msgid "Enter an Alpha value (0-100)"
 msgstr "Geef een Apha waarde (0-100)"
 
-#: exe/webui/tools/style-designer/langs/en.js:176
+#: exe/webui/tools/style-designer/langs/en.js:177
 msgid "Enter an Hex color value (#000000-#ffffff)"
 msgstr "Geef een Hexadecimale kleurwaarde (#000000-#ffffff)"
 
@@ -12632,8 +12649,8 @@ msgstr ""
 " gebruiken in plaats van de doelcode."
 
 #: exe/webui/tools/style-designer/langs/en.js:58
-#: exe/webui/tools/style-designer/langs/en.js:126
-#: exe/webui/tools/style-designer/langs/en.js:135
+#: exe/webui/tools/style-designer/langs/en.js:127
+#: exe/webui/tools/style-designer/langs/en.js:136
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
 msgstr "Ok"

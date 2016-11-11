@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2016-09-12 16:29+0200\n"
+"POT-Creation-Date: 2016-11-11 20:21+0100\n"
 "PO-Revision-Date: 2016-04-17 20:35+0100\n"
 "Last-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\n"
 "Language: gl\n"
@@ -3565,10 +3565,10 @@ msgstr ""
 "exe_do: error: Non foi posible importar '%s'.\n"
 "O erro foi:"
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:303
-#: exe/jsui/mainpage.py:1053 exe/jsui/mainpage.py:1217
-#: exe/jsui/mainpage.py:1257 exe/jsui/mainpage.py:1292
-#: exe/jsui/mainpage.py:1313 exe/jsui/mainpage_antes_jr_docs.py:295
+#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:304
+#: exe/jsui/mainpage.py:1112 exe/jsui/mainpage.py:1276
+#: exe/jsui/mainpage.py:1316 exe/jsui/mainpage.py:1351
+#: exe/jsui/mainpage.py:1372 exe/jsui/mainpage_antes_jr_docs.py:295
 #: exe/jsui/mainpage_antes_jr_docs.py:916
 #: exe/jsui/mainpage_antes_jr_docs.py:1080
 #: exe/jsui/mainpage_antes_jr_docs.py:1120
@@ -3586,8 +3586,8 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "Formato de exportación non implementado"
 
-#: exe/export/epub3export.py:644 exe/export/imsexport.py:614
-#: exe/export/scormexport.py:701 exe/export/websiteexport.py:98
+#: exe/export/epub3export.py:659 exe/export/imsexport.py:623
+#: exe/export/scormexport.py:717 exe/export/websiteexport.py:104
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3681,26 +3681,26 @@ msgstr "Insertando %s"
 msgid "My iDevices"
 msgstr "Os meus iDevices"
 
-#: exe/jsui/mainpage.py:321 exe/jsui/mainpage.py:915 exe/jsui/mainpage.py:1045
+#: exe/jsui/mainpage.py:322 exe/jsui/mainpage.py:974 exe/jsui/mainpage.py:1104
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid "Cannot access directory named "
 msgstr "Non se pode acceder ao directorio nomeado "
 
-#: exe/jsui/mainpage.py:321 exe/jsui/mainpage.py:917 exe/jsui/mainpage.py:1045
+#: exe/jsui/mainpage.py:322 exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:1104
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:780
 #: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
 msgstr ". Por favor, utilice nomes ASCII."
 
-#: exe/jsui/mainpage.py:330 exe/jsui/mainpage_antes_jr_docs.py:322
+#: exe/jsui/mainpage.py:331 exe/jsui/mainpage_antes_jr_docs.py:322
 msgid "SAVE FAILED!"
 msgstr "FALLOU AO GARDAR!"
 
-#: exe/jsui/mainpage.py:334 exe/jsui/mainpage.py:646 exe/jsui/mainpage.py:1141
-#: exe/jsui/mainpage_antes_jr_docs.py:326
+#: exe/jsui/mainpage.py:335 exe/jsui/mainpage.py:647 exe/jsui/mainpage.py:705
+#: exe/jsui/mainpage.py:1200 exe/jsui/mainpage_antes_jr_docs.py:326
 #: exe/jsui/mainpage_antes_jr_docs.py:638
 #: exe/jsui/mainpage_antes_jr_docs.py:1004
 #, python-format
@@ -3711,7 +3711,7 @@ msgstr ""
 "FALLOU AO GARDAR!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:338 exe/jsui/mainpage.py:343 exe/jsui/mainpage.py:346
+#: exe/jsui/mainpage.py:339 exe/jsui/mainpage.py:344 exe/jsui/mainpage.py:347
 #: exe/jsui/mainpage_antes_jr_docs.py:330
 #: exe/jsui/mainpage_antes_jr_docs.py:335
 #: exe/jsui/mainpage_antes_jr_docs.py:338
@@ -3719,27 +3719,27 @@ msgstr ""
 msgid "Package saved to: %s"
 msgstr "Paquete gardado en: %s"
 
-#: exe/jsui/mainpage.py:569 exe/jsui/mainpage.py:673 exe/jsui/mainpage.py:754
-#: exe/jsui/mainpage_antes_jr_docs.py:561
+#: exe/jsui/mainpage.py:570 exe/jsui/mainpage.py:669 exe/jsui/mainpage.py:732
+#: exe/jsui/mainpage.py:813 exe/jsui/mainpage_antes_jr_docs.py:561
 #: exe/jsui/mainpage_antes_jr_docs.py:665
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "O directorio de previsualización %s é un  ficheiro, non se pode substituír"
 
-#: exe/jsui/mainpage.py:588 exe/jsui/mainpage_antes_jr_docs.py:580
+#: exe/jsui/mainpage.py:589 exe/jsui/mainpage_antes_jr_docs.py:580
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Non se encontrou o ficheiro local %s, non se pode previsualizar"
 
-#: exe/jsui/mainpage.py:713 exe/jsui/mainpage.py:739 exe/jsui/mainpage.py:782
+#: exe/jsui/mainpage.py:772 exe/jsui/mainpage.py:798 exe/jsui/mainpage.py:841
 msgid "Could not create the image"
 msgstr ""
 
-#: exe/jsui/mainpage.py:820 exe/jsui/mainpage_antes_jr_docs.py:743
+#: exe/jsui/mainpage.py:879 exe/jsui/mainpage_antes_jr_docs.py:743
 msgid "Importing HTML..."
 msgstr "Importando HTML..."
 
-#: exe/jsui/mainpage.py:826 exe/jsui/mainpage_antes_jr_docs.py:749
+#: exe/jsui/mainpage.py:885 exe/jsui/mainpage_antes_jr_docs.py:749
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3748,23 +3748,23 @@ msgstr ""
 "Importación de metadatos LOM ERRADA!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:829 exe/jsui/mainpage_antes_jr_docs.py:752
+#: exe/jsui/mainpage.py:888 exe/jsui/mainpage_antes_jr_docs.py:752
 msgid "Error importing HTML:\n"
 msgstr "Erro na importación HTML:\n"
 
-#: exe/jsui/mainpage.py:856
+#: exe/jsui/mainpage.py:915
 msgid "Publishing document to Procomún"
 msgstr "Publicando documento en Procomún"
 
-#: exe/jsui/mainpage.py:859
+#: exe/jsui/mainpage.py:918
 msgid "Exporting package as SCORM"
 msgstr "Exportar paquete como SCORM"
 
-#: exe/jsui/mainpage.py:880
+#: exe/jsui/mainpage.py:939
 msgid "Starting authorized connection to Procomún API"
 msgstr "Iniciando conexión con autorización á API de Procomún"
 
-#: exe/jsui/mainpage.py:893
+#: exe/jsui/mainpage.py:952
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
@@ -3773,14 +3773,15 @@ msgstr ""
 "Paquete exportado a <a href=\"%s\" target=\"_blank\" title=\"Prema para "
 "visitar o sitio exportado\">%s</a>"
 
-#: exe/jsui/mainpage.py:896
+#: exe/jsui/mainpage.py:955
 #, python-format
 msgid "Error exporting package %s to Procomún: %s"
 msgstr "Erro ao exportar o paquete %s a Procomún: %s"
 
-#: exe/jsui/mainpage.py:938 exe/jsui/mainpage.py:943 exe/jsui/mainpage.py:946
-#: exe/jsui/mainpage.py:949 exe/jsui/mainpage.py:952 exe/jsui/mainpage.py:955
-#: exe/jsui/mainpage.py:960 exe/jsui/mainpage.py:1201 exe/jsui/mainpage.py:1273
+#: exe/jsui/mainpage.py:997 exe/jsui/mainpage.py:1002 exe/jsui/mainpage.py:1005
+#: exe/jsui/mainpage.py:1008 exe/jsui/mainpage.py:1011
+#: exe/jsui/mainpage.py:1014 exe/jsui/mainpage.py:1019
+#: exe/jsui/mainpage.py:1260 exe/jsui/mainpage.py:1332
 #: exe/jsui/mainpage_antes_jr_docs.py:801
 #: exe/jsui/mainpage_antes_jr_docs.py:806
 #: exe/jsui/mainpage_antes_jr_docs.py:809
@@ -3793,16 +3794,16 @@ msgstr "Erro ao exportar o paquete %s a Procomún: %s"
 msgid "EXPORT FAILED!"
 msgstr "FALLOU A EXPORTACIÓN!"
 
-#: exe/jsui/mainpage.py:1010 exe/jsui/mainpage_antes_jr_docs.py:873
+#: exe/jsui/mainpage.py:1069 exe/jsui/mainpage_antes_jr_docs.py:873
 msgid "Correct XLIFF import"
 msgstr "Importación XLIFF correcta"
 
-#: exe/jsui/mainpage.py:1013 exe/jsui/mainpage_antes_jr_docs.py:876
+#: exe/jsui/mainpage.py:1072 exe/jsui/mainpage_antes_jr_docs.py:876
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Erro na importación XLIFF: %s"
 
-#: exe/jsui/mainpage.py:1054 exe/jsui/mainpage.py:1071
+#: exe/jsui/mainpage.py:1113 exe/jsui/mainpage.py:1130
 #: exe/jsui/mainpage_antes_jr_docs.py:917
 #: exe/jsui/mainpage_antes_jr_docs.py:934
 #, python-format
@@ -3813,22 +3814,22 @@ msgstr ""
 "FALLOU A EXTRACCIÓN!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1073 exe/jsui/mainpage_antes_jr_docs.py:936
+#: exe/jsui/mainpage.py:1132 exe/jsui/mainpage_antes_jr_docs.py:936
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "O paquete foi extraído en: %s"
 
-#: exe/jsui/mainpage.py:1085 exe/jsui/mainpage_antes_jr_docs.py:948
+#: exe/jsui/mainpage.py:1144 exe/jsui/mainpage_antes_jr_docs.py:948
 msgid "Directory exists"
 msgstr "Existe o directorio"
 
-#: exe/jsui/mainpage.py:1099 exe/jsui/mainpage.py:1189
-#: exe/jsui/mainpage.py:1205 exe/jsui/mainpage.py:1218
-#: exe/jsui/mainpage.py:1224 exe/jsui/mainpage.py:1242
-#: exe/jsui/mainpage.py:1258 exe/jsui/mainpage.py:1264
-#: exe/jsui/mainpage.py:1278 exe/jsui/mainpage.py:1293
-#: exe/jsui/mainpage.py:1299 exe/jsui/mainpage.py:1314
-#: exe/jsui/mainpage.py:1320 exe/jsui/mainpage_antes_jr_docs.py:962
+#: exe/jsui/mainpage.py:1158 exe/jsui/mainpage.py:1248
+#: exe/jsui/mainpage.py:1264 exe/jsui/mainpage.py:1277
+#: exe/jsui/mainpage.py:1283 exe/jsui/mainpage.py:1301
+#: exe/jsui/mainpage.py:1317 exe/jsui/mainpage.py:1323
+#: exe/jsui/mainpage.py:1337 exe/jsui/mainpage.py:1352
+#: exe/jsui/mainpage.py:1358 exe/jsui/mainpage.py:1373
+#: exe/jsui/mainpage.py:1379 exe/jsui/mainpage_antes_jr_docs.py:962
 #: exe/jsui/mainpage_antes_jr_docs.py:1052
 #: exe/jsui/mainpage_antes_jr_docs.py:1068
 #: exe/jsui/mainpage_antes_jr_docs.py:1081
@@ -3849,14 +3850,14 @@ msgstr ""
 "FALLOU A EXPORTACIÓN!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1127 exe/jsui/mainpage.py:1174
+#: exe/jsui/mainpage.py:1186 exe/jsui/mainpage.py:1233
 #: exe/jsui/mainpage_antes_jr_docs.py:990
 #: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "O nome do ficheiro %s é un ficheiro, non se pode substituír"
 
-#: exe/jsui/mainpage.py:1133 exe/jsui/mainpage.py:1181
+#: exe/jsui/mainpage.py:1192 exe/jsui/mainpage.py:1240
 #: exe/jsui/mainpage_antes_jr_docs.py:996
 #: exe/jsui/mainpage_antes_jr_docs.py:1044
 #, python-format
@@ -3867,11 +3868,11 @@ msgstr ""
 "O nome do cartafol %s xa existe. Por favor múdeo por outro ou elimine o "
 "existente e ténteo de novo."
 
-#: exe/jsui/mainpage.py:1147 exe/jsui/mainpage.py:1192
-#: exe/jsui/mainpage.py:1207 exe/jsui/mainpage.py:1226
-#: exe/jsui/mainpage.py:1244 exe/jsui/mainpage.py:1266
-#: exe/jsui/mainpage.py:1280 exe/jsui/mainpage.py:1301
-#: exe/jsui/mainpage.py:1322 exe/jsui/mainpage_antes_jr_docs.py:1010
+#: exe/jsui/mainpage.py:1206 exe/jsui/mainpage.py:1251
+#: exe/jsui/mainpage.py:1266 exe/jsui/mainpage.py:1285
+#: exe/jsui/mainpage.py:1303 exe/jsui/mainpage.py:1325
+#: exe/jsui/mainpage.py:1339 exe/jsui/mainpage.py:1360
+#: exe/jsui/mainpage.py:1381 exe/jsui/mainpage_antes_jr_docs.py:1010
 #: exe/jsui/mainpage_antes_jr_docs.py:1055
 #: exe/jsui/mainpage_antes_jr_docs.py:1070
 #: exe/jsui/mainpage_antes_jr_docs.py:1089
@@ -3884,18 +3885,18 @@ msgstr ""
 msgid "Exported to %s"
 msgstr "Exportado a %s"
 
-#: exe/jsui/mainpage.py:1355 exe/jsui/mainpage_antes_jr_docs.py:1218
+#: exe/jsui/mainpage.py:1414 exe/jsui/mainpage_antes_jr_docs.py:1218
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "O ficheiro %s non existe ou non é lexíbel."
 
-#: exe/jsui/mainpage.py:1359 exe/jsui/mainpage_antes_jr_docs.py:1222
+#: exe/jsui/mainpage.py:1418 exe/jsui/mainpage_antes_jr_docs.py:1222
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Non se puido cargar o ficheiro, envíe un correo electrónico a "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1362 exe/jsui/mainpage_antes_jr_docs.py:1225
+#: exe/jsui/mainpage.py:1421 exe/jsui/mainpage_antes_jr_docs.py:1225
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3904,7 +3905,7 @@ msgstr ""
 "O formato de ficheiro non é correcto:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1364 exe/jsui/mainpage_antes_jr_docs.py:1227
+#: exe/jsui/mainpage.py:1423 exe/jsui/mainpage_antes_jr_docs.py:1227
 msgid "Sorry, wrong file format"
 msgstr "O formato de ficheiro non é correcto"
 
@@ -3927,7 +3928,7 @@ msgstr "Erro ao gardar as propiedades"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:166
 #: exe/jsui/scripts/app/controller/MainTab.js:224
-#: exe/jsui/scripts/app/controller/MainTab.js:308
+#: exe/jsui/scripts/app/controller/MainTab.js:311
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:504
 msgid "Show Image"
 msgstr "Amosar imaxe"
@@ -3939,7 +3940,7 @@ msgstr "Seleccionar unha imaxe"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:194
 #: exe/jsui/scripts/app/controller/MainTab.js:228
-#: exe/jsui/scripts/app/controller/MainTab.js:355
+#: exe/jsui/scripts/app/controller/MainTab.js:358
 msgid "Hide Image"
 msgstr "Ocultar imaxe"
 
@@ -3956,12 +3957,12 @@ msgstr "Arquivos de imaxe"
 #: exe/jsui/scripts/app/controller/Toolbar.js:643
 #: exe/jsui/scripts/app/controller/Toolbar.js:712
 #: exe/jsui/scripts/app/controller/Toolbar.js:823
-#: exe/jsui/scripts/app/controller/Toolbar.js:897
-#: exe/jsui/scripts/app/controller/Toolbar.js:914
-#: exe/jsui/scripts/app/controller/Toolbar.js:931
-#: exe/jsui/scripts/app/controller/Toolbar.js:960
-#: exe/jsui/scripts/app/controller/Toolbar.js:1096
-#: exe/jsui/scripts/app/controller/Toolbar.js:1193
+#: exe/jsui/scripts/app/controller/Toolbar.js:903
+#: exe/jsui/scripts/app/controller/Toolbar.js:923
+#: exe/jsui/scripts/app/controller/Toolbar.js:943
+#: exe/jsui/scripts/app/controller/Toolbar.js:975
+#: exe/jsui/scripts/app/controller/Toolbar.js:1111
+#: exe/jsui/scripts/app/controller/Toolbar.js:1208
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 #: exe/webui/scripts/authoring.js:96 exe/webui/scripts/authoring.js:121
 #: exe/webui/scripts/authoring.js:365 exe/webui/scripts/authoring.js:374
@@ -3971,14 +3972,24 @@ msgstr "Arquivos de imaxe"
 msgid "All Files"
 msgstr "Todos os arquivos"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:239
+#: exe/jsui/scripts/app/controller/MainTab.js:237
+#: exe/jsui/scripts/app/controller/Toolbar.js:876
+#: exe/jsui/scripts/app/controller/Toolbar.js:896
+#: exe/jsui/scripts/app/controller/Toolbar.js:916
+#: exe/jsui/scripts/app/controller/Toolbar.js:936
+#: exe/jsui/scripts/app/controller/Toolbar.js:968
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Please wait..."
+msgstr "Agarde..."
+
+#: exe/jsui/scripts/app/controller/MainTab.js:241
 msgid "Settings Saved"
 msgstr "Configuración gardada"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:256
-#: exe/jsui/scripts/app/controller/MainTab.js:261
-#: exe/jsui/scripts/app/controller/MainTab.js:315
-#: exe/jsui/scripts/app/controller/MainTab.js:369
+#: exe/jsui/scripts/app/controller/MainTab.js:259
+#: exe/jsui/scripts/app/controller/MainTab.js:264
+#: exe/jsui/scripts/app/controller/MainTab.js:318
+#: exe/jsui/scripts/app/controller/MainTab.js:372
 #: exe/jsui/scripts/app/controller/StyleManager.js:96
 #: exe/jsui/scripts/app/controller/StyleManager.js:123
 #: exe/jsui/scripts/app/controller/StyleManager.js:151
@@ -3995,32 +4006,32 @@ msgstr "Configuración gardada"
 #: exe/webui/stylemanagerpage.py:373 exe/webui/stylemanagerpage.py:384
 #: exe/webui/stylemanagerpage.py:421 exe/webui/stylemanagerpage.py:428
 #: exe/webui/stylemanagerpage.py:471 exe/webui/stylemanagerpage.py:483
-#: exe/webui/tools/style-designer/langs/en.js:124
+#: exe/webui/tools/style-designer/langs/en.js:125
 msgid "Error"
 msgstr "Erro"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:261
+#: exe/jsui/scripts/app/controller/MainTab.js:264
 msgid "The form contains invalid fields. Please check back."
 msgstr "O formulario contén campos inválidos. Por favor, revíseo."
 
-#: exe/jsui/scripts/app/controller/MainTab.js:273
-#: exe/jsui/scripts/app/controller/MainTab.js:326
+#: exe/jsui/scripts/app/controller/MainTab.js:276
+#: exe/jsui/scripts/app/controller/MainTab.js:329
 #: exe/jsui/scripts/app/controller/Outline.js:204
 #: exe/jsui/scripts/app/controller/Toolbar.js:427
 #: exe/webui/scripts/editor.js:37
-#: exe/webui/tools/style-designer/langs/en.js:114
+#: exe/webui/tools/style-designer/langs/en.js:115
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:274
+#: exe/jsui/scripts/app/controller/MainTab.js:277
 msgid "Are you sure you want clear all form fields?"
 msgstr "Seguro que desexa limar tódolos campos?"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:327
+#: exe/jsui/scripts/app/controller/MainTab.js:330
 msgid "Are you sure you want reset all form fields?"
 msgstr "Seguro que desexa reiniciar tódolos campos?"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:414
+#: exe/jsui/scripts/app/controller/MainTab.js:417
 msgid "LOM Metadata import success!"
 msgstr "Importación de Metadatos LOM correcta!"
 
@@ -4143,7 +4154,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:478 exe/webui/block.py:264
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:123
+#: exe/webui/tools/style-designer/langs/en.js:124
 msgid "Information"
 msgstr "Información"
 
@@ -4161,8 +4172,8 @@ msgstr "Inserindo paquete: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:567
 #: exe/jsui/scripts/app/controller/Toolbar.js:588
-#: exe/jsui/scripts/app/controller/Toolbar.js:1095
-#: exe/jsui/scripts/app/controller/Toolbar.js:1192
+#: exe/jsui/scripts/app/controller/Toolbar.js:1110
+#: exe/jsui/scripts/app/controller/Toolbar.js:1207
 msgid "eXe Package Files"
 msgstr "Paquetes eXe"
 
@@ -4264,8 +4275,8 @@ msgstr ""
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/webui/editorpane.py:273
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:127
-#: exe/webui/tools/style-designer/langs/en.js:136
+#: exe/webui/tools/style-designer/langs/en.js:128
+#: exe/webui/tools/style-designer/langs/en.js:137
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
 msgstr "Cancelar"
@@ -4296,72 +4307,72 @@ msgstr "Procomún OAuth"
 msgid "Select the parent folder for export."
 msgstr "Seleccione o directorio principal para a exportación."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:887
+#: exe/jsui/scripts/app/controller/Toolbar.js:890
 msgid "Export text package as"
 msgstr "Exportar paquete de texto como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:896
+#: exe/jsui/scripts/app/controller/Toolbar.js:902
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Text File"
 msgstr "Arquivo de texto"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:904
+#: exe/jsui/scripts/app/controller/Toolbar.js:910
 msgid "Save package resources report as"
 msgstr "Gardar paquete extraído como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:913
+#: exe/jsui/scripts/app/controller/Toolbar.js:922
 msgid "CSV File"
 msgstr "Arquivo CSV"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:921
+#: exe/jsui/scripts/app/controller/Toolbar.js:930
 msgid "Export EPUB3 package as"
 msgstr "Exportar paquete EPUB3 como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:930
+#: exe/jsui/scripts/app/controller/Toolbar.js:942
 msgid "EPUB3 File"
 msgstr "Arquivo EPUB3"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:938
+#: exe/jsui/scripts/app/controller/Toolbar.js:950
 msgid "Export SCORM package as"
 msgstr "Exportar paquete SCORM como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:940
+#: exe/jsui/scripts/app/controller/Toolbar.js:952
 msgid "Export IMS package as"
 msgstr "Exportar paquete IMS como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:942
+#: exe/jsui/scripts/app/controller/Toolbar.js:954
 msgid "Export Website package as"
 msgstr "Exportar Sitio Web como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:944
+#: exe/jsui/scripts/app/controller/Toolbar.js:956
 msgid "Export Common Cartridge as"
 msgstr "Exportar Common Cartridge como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:946
+#: exe/jsui/scripts/app/controller/Toolbar.js:958
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "Valor transferido a paquete exportado NON VÁLIDO"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:959
+#: exe/jsui/scripts/app/controller/Toolbar.js:974
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/ArquivoZIP"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1068
+#: exe/jsui/scripts/app/controller/Toolbar.js:1083
 msgid "Loading package..."
 msgstr "Cargando paquete..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1084
+#: exe/jsui/scripts/app/controller/Toolbar.js:1099
 msgid "Open File"
 msgstr "Abrir arquivo"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1089
+#: exe/jsui/scripts/app/controller/Toolbar.js:1104
 msgid "Loading package: {filename}"
 msgstr "Cargando paquete: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1108
+#: exe/jsui/scripts/app/controller/Toolbar.js:1123
 msgid "Save Package first?"
 msgstr "Gardar o paquete primeiro?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1109
+#: exe/jsui/scripts/app/controller/Toolbar.js:1124
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
@@ -4369,15 +4380,15 @@ msgstr ""
 "O paquete actual foi modificado pero anon se gardou aínda. Gustaríalle "
 "gardalo?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1156
+#: exe/jsui/scripts/app/controller/Toolbar.js:1171
 msgid "Saving package to: {filename}"
 msgstr "Gardando paquete como: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1172
+#: exe/jsui/scripts/app/controller/Toolbar.js:1187
 msgid "Save file"
 msgstr "Gardar arquivo"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1178
+#: exe/jsui/scripts/app/controller/Toolbar.js:1193
 msgid "Saving package..."
 msgstr "Gardando paquete..."
 
@@ -4458,7 +4469,7 @@ msgstr "Abrir"
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:269
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:260
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:112
+#: exe/webui/tools/style-designer/langs/en.js:113
 msgid "Save"
 msgstr "Gardar"
 
@@ -4697,7 +4708,7 @@ msgstr "Limpar"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
-#: exe/webui/tools/style-designer/langs/en.js:110
+#: exe/webui/tools/style-designer/langs/en.js:111
 msgid "Reset"
 msgstr "Reiniciar"
 
@@ -5439,7 +5450,7 @@ msgstr "Seleccionar lingua"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:101
+#: exe/webui/tools/style-designer/langs/en.js:102
 msgid "Advanced"
 msgstr "Avanzado"
 
@@ -5702,7 +5713,7 @@ msgid "Move node down"
 msgstr "Mover o nodo abaixo"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
-#: exe/webui/tools/style-designer/langs/en.js:133
+#: exe/webui/tools/style-designer/langs/en.js:134
 msgid "New"
 msgstr "Novo"
 
@@ -8515,15 +8526,15 @@ msgstr "Mostrar o cronómetro no xogo"
 msgid "Add Placable Object"
 msgstr "Engadir un obxecto que situar"
 
-#: exe/webui/preferencespage.py:158
+#: exe/webui/preferencespage.py:159
 msgid "Default browser in your system"
 msgstr "Navegador predeterminado no seu sistema"
 
-#: exe/webui/preferencespage.py:201
+#: exe/webui/preferencespage.py:202
 msgid "Failed to get preferences"
 msgstr "Erro ao obter as preferencias"
 
-#: exe/webui/preferencespage.py:255
+#: exe/webui/preferencespage.py:256
 msgid "Failed to save preferences"
 msgstr "Erro ao gardar as preferencias"
 
@@ -8611,7 +8622,30 @@ msgstr "Seleccione un ficheiro MP3"
 msgid "Select a package"
 msgstr "Seleccione un paquete"
 
-#: exe/webui/scripts/authoring.js:778
+#: exe/webui/scripts/authoring.js:660
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:45
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:71
+msgid ""
+"Are you sure you want to continue without including an Image Description?"
+" Without it the image may not be accessible to some users with "
+"disabilities, or to those using a text browser, or browsing the Web with "
+"images turned off."
+msgstr ""
+"Seguro que quere continuar sen engadir unha descrición á imaxe? Sen ela "
+"pode non ser accesible para usuarios con discapacidades, ou para aqueles "
+"que utilicen navegadores en modo texto, ou teñan deshabilitadas as imaxes"
+" da páxina."
+
+#: exe/webui/scripts/authoring.js:667 exe/webui/scripts/authoring.js:684
+msgid "Image description"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:668 exe/webui/scripts/authoring.js:685
+msgid "Please provide an image description (alternative text):"
+msgstr ""
+
+#: exe/webui/scripts/authoring.js:857
 msgid ""
 "Embed images shouldn't be pasted directly into the editor. Please use "
 "Insert/Edit Image."
@@ -8619,7 +8653,7 @@ msgstr ""
 "As imaxes insertadas non deben ser pegadas directamente no editor. Por "
 "favor utilice Insertar/Editar imaxe."
 
-#: exe/webui/scripts/authoring.js:778
+#: exe/webui/scripts/authoring.js:857
 msgid "This change will be undone."
 msgstr "Este cambio non se poderá desfacer."
 
@@ -8901,10 +8935,6 @@ msgstr "Ignorar todo"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Languages"
 msgstr "Idiomas"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Please wait..."
-msgstr "Agarde..."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Suggestions"
@@ -9287,12 +9317,12 @@ msgid "Rich Text Area"
 msgstr "Area de texto enriquecido"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:91
+#: exe/webui/tools/style-designer/langs/en.js:92
 msgid "White"
 msgstr "Branco"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:92
+#: exe/webui/tools/style-designer/langs/en.js:93
 msgid "Black"
 msgstr "Negro"
 
@@ -9330,6 +9360,7 @@ msgstr "Unidades"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:68
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/tools/style-designer/langs/en.js:84
 msgid "Width"
 msgstr "Ancho"
 
@@ -9472,20 +9503,6 @@ msgstr "Descripción da imaxe"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Image URL"
 msgstr "URL da imaxe"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:45
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:71
-msgid ""
-"Are you sure you want to continue without including an Image Description?"
-" Without it the image may not be accessible to some users with "
-"disabilities, or to those using a text browser, or browsing the Web with "
-"images turned off."
-msgstr ""
-"Seguro que quere continuar sen engadir unha descrición á imaxe? Sen ela "
-"pode non ser accesible para usuarios con discapacidades, ou para aqueles "
-"que utilicen navegadores en modo texto, ou teñan deshabilitadas as imaxes"
-" da páxina."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:46
@@ -10552,7 +10569,7 @@ msgstr "Imaxe de fondo"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:42
-#: exe/webui/tools/style-designer/langs/en.js:88
+#: exe/webui/tools/style-designer/langs/en.js:89
 msgid "Color"
 msgstr "Cor"
 
@@ -11892,7 +11909,7 @@ msgid "Invalid color value"
 msgstr "Valor de cor inválida"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:129
+#: exe/webui/tools/style-designer/langs/en.js:130
 msgid "Color Picker"
 msgstr "Selector de cores"
 
@@ -11927,8 +11944,8 @@ msgstr "Numeración automática"
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
-#: exe/webui/scripts/tinymce_4_settings.js:272
 #: exe/webui/scripts/tinymce_4_settings.js:297
+#: exe/webui/scripts/tinymce_4_settings.js:322
 msgid "Editor"
 msgstr "editor"
 
@@ -11942,57 +11959,57 @@ msgstr ""
 msgid "3 columns"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4_settings.js:82
+#: exe/webui/scripts/tinymce_4_settings.js:107
 msgid "Inline"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4_settings.js:83
+#: exe/webui/scripts/tinymce_4_settings.js:108
 msgid "Bold"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4_settings.js:84
+#: exe/webui/scripts/tinymce_4_settings.js:109
 msgid "Italic"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:85
+#: exe/webui/scripts/tinymce_4_settings.js:110
 msgid "Underline"
 msgstr "Suliñado"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:86
+#: exe/webui/scripts/tinymce_4_settings.js:111
 msgid "Strikethrough"
 msgstr "Tachado"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:87
+#: exe/webui/scripts/tinymce_4_settings.js:112
 msgid "Superscript"
 msgstr "Superíndice"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:88
+#: exe/webui/scripts/tinymce_4_settings.js:113
 msgid "Subscript"
 msgstr "Subíndice"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:89
+#: exe/webui/scripts/tinymce_4_settings.js:114
 msgid "Code"
 msgstr "Código"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:91
+#: exe/webui/scripts/tinymce_4_settings.js:116
 msgid "Deletion"
 msgstr "Borrado"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:92
+#: exe/webui/scripts/tinymce_4_settings.js:117
 msgid "Insertion"
 msgstr "Inserción"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:93
+#: exe/webui/scripts/tinymce_4_settings.js:118
 msgid "Cite"
 msgstr "Cita"
 
@@ -12022,16 +12039,16 @@ msgstr "O estilo %s foi creado con éxito!"
 msgid "Style %s successfully saved!"
 msgstr "O estilo %s foi gardado con éxito!"
 
-#: exe/webui/styledesigner.py:204
+#: exe/webui/styledesigner.py:206
 #, python-format
 msgid "Style directory %s already exists"
 msgstr "O directorio de estilo %s xa existe"
 
-#: exe/webui/styledesigner.py:266
+#: exe/webui/styledesigner.py:268
 msgid "The style name already exists"
 msgstr "O nome de estilo xa existe"
 
-#: exe/webui/styledesigner.py:283
+#: exe/webui/styledesigner.py:285
 msgid "Error saving style, style directory does not exist"
 msgstr "Erro gardando o estilo, o cartafol de estilos non existe"
 
@@ -12115,19 +12132,19 @@ msgstr "Estilo eliminado correctamente"
 msgid "An unexpected error has occurred"
 msgstr "Ocorreu un erro inesperado"
 
-#: exe/webui/tools/style-designer/js/app.js:1246
+#: exe/webui/tools/style-designer/js/app.js:1275
 msgid "Create new style"
 msgstr "Crear novo estilo"
 
-#: exe/webui/tools/style-designer/js/app.js:1247
+#: exe/webui/tools/style-designer/js/app.js:1276
 msgid "Name the new style"
 msgstr "Garde o nome do novo estilo."
 
-#: exe/webui/tools/style-designer/js/app.js:1269
+#: exe/webui/tools/style-designer/js/app.js:1298
 msgid "Style Designer windows will be closed. "
 msgstr "A ventá do deseñador de estilos pecharase."
 
-#: exe/webui/tools/style-designer/js/app.js:1272
+#: exe/webui/tools/style-designer/js/app.js:1301
 msgid "Page will be reloaded. "
 msgstr "A páxina será cargada de novo."
 
@@ -12323,67 +12340,67 @@ msgstr "Ocultar o menú"
 msgid "Horizontal navigation"
 msgstr "Navegación horizontal"
 
-#: exe/webui/tools/style-designer/langs/en.js:84
+#: exe/webui/tools/style-designer/langs/en.js:85
 msgid "Active background"
 msgstr "Fondo activo"
 
-#: exe/webui/tools/style-designer/langs/en.js:85
+#: exe/webui/tools/style-designer/langs/en.js:86
 msgid "Active link color"
 msgstr "Cor da ligazón activa"
 
-#: exe/webui/tools/style-designer/langs/en.js:86
+#: exe/webui/tools/style-designer/langs/en.js:87
 msgid "Other navigation options"
 msgstr "Outras opcións de navegación"
 
-#: exe/webui/tools/style-designer/langs/en.js:87
+#: exe/webui/tools/style-designer/langs/en.js:88
 msgid "Use icons"
 msgstr "Utilizar iconas"
 
-#: exe/webui/tools/style-designer/langs/en.js:89
+#: exe/webui/tools/style-designer/langs/en.js:90
 msgid "Icons color"
 msgstr "Colores das iconas"
 
-#: exe/webui/tools/style-designer/langs/en.js:90
+#: exe/webui/tools/style-designer/langs/en.js:91
 msgid "Grey"
 msgstr "Gris"
 
-#: exe/webui/tools/style-designer/langs/en.js:94
+#: exe/webui/tools/style-designer/langs/en.js:95
 msgid "With emphasis"
 msgstr "Resaltado"
 
-#: exe/webui/tools/style-designer/langs/en.js:95
+#: exe/webui/tools/style-designer/langs/en.js:96
 msgid "Title color"
 msgstr "Color do título"
 
-#: exe/webui/tools/style-designer/langs/en.js:96
+#: exe/webui/tools/style-designer/langs/en.js:97
 msgid "Title background"
 msgstr "Título do fondo"
 
-#: exe/webui/tools/style-designer/langs/en.js:97
+#: exe/webui/tools/style-designer/langs/en.js:98
 msgid "No emphasis (Free Text...)"
 msgstr "Sen resaltar (Texto Libre...)"
 
-#: exe/webui/tools/style-designer/langs/en.js:98
+#: exe/webui/tools/style-designer/langs/en.js:99
 msgid "Show box"
 msgstr "Amosar caixa"
 
-#: exe/webui/tools/style-designer/langs/en.js:99
+#: exe/webui/tools/style-designer/langs/en.js:100
 msgid "Icon to hide/show the iDevice"
 msgstr "Icona para ocultar/amosar o iDevice"
 
-#: exe/webui/tools/style-designer/langs/en.js:102
+#: exe/webui/tools/style-designer/langs/en.js:103
 msgid "This code will be included at the end of content.css"
 msgstr "Este código será incluido ao final do content.css"
 
-#: exe/webui/tools/style-designer/langs/en.js:103
+#: exe/webui/tools/style-designer/langs/en.js:104
 msgid "content.css is included any time you export, and always after base.css."
 msgstr "content.css cárgase nas súas exportacións, sempre despois de base.css."
 
-#: exe/webui/tools/style-designer/langs/en.js:104
+#: exe/webui/tools/style-designer/langs/en.js:105
 msgid "This code will be included at the end of nav.css"
 msgstr "Este código será incluida ao final do arquivo nav.css"
 
-#: exe/webui/tools/style-designer/langs/en.js:105
+#: exe/webui/tools/style-designer/langs/en.js:106
 msgid ""
 "nav.css is only included when you export as Web Site, and always after "
 "content.css."
@@ -12391,49 +12408,49 @@ msgstr ""
 "nav.css só se inclúe cando se exporta como sitio web, e sempre despois de"
 " content.css."
 
-#: exe/webui/tools/style-designer/langs/en.js:106
+#: exe/webui/tools/style-designer/langs/en.js:107
 msgid "content.css content"
 msgstr "content.css contido"
 
-#: exe/webui/tools/style-designer/langs/en.js:107
+#: exe/webui/tools/style-designer/langs/en.js:108
 msgid "nav.css content"
 msgstr "nav.css contido"
 
-#: exe/webui/tools/style-designer/langs/en.js:108
+#: exe/webui/tools/style-designer/langs/en.js:109
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
 "As sombras non traballan en navegadores que non soporte CSS3 (IE6, "
 "IE7...)."
 
-#: exe/webui/tools/style-designer/langs/en.js:111
+#: exe/webui/tools/style-designer/langs/en.js:112
 msgid "Finish"
 msgstr "Final"
 
-#: exe/webui/tools/style-designer/langs/en.js:113
+#: exe/webui/tools/style-designer/langs/en.js:114
 msgid "Save as"
 msgstr "Gardar como"
 
-#: exe/webui/tools/style-designer/langs/en.js:115
+#: exe/webui/tools/style-designer/langs/en.js:116
 msgid "Save the current design and close the Style Designer?"
 msgstr "Gardar o deseño actual e pechar o Deseñador de Estilos?"
 
-#: exe/webui/tools/style-designer/langs/en.js:116
+#: exe/webui/tools/style-designer/langs/en.js:117
 msgid "Save all changes? This cannot be undone."
 msgstr "Gardar os cambios? Isto non se pode desfacer"
 
-#: exe/webui/tools/style-designer/langs/en.js:117
+#: exe/webui/tools/style-designer/langs/en.js:118
 msgid "Style name:"
 msgstr "Nome do estilo:"
 
-#: exe/webui/tools/style-designer/langs/en.js:118
+#: exe/webui/tools/style-designer/langs/en.js:119
 msgid "Your browser is not compatible with this tool."
 msgstr "O seu navegador non é compatible con esta ferramenta."
 
-#: exe/webui/tools/style-designer/langs/en.js:119
+#: exe/webui/tools/style-designer/langs/en.js:120
 msgid "The Hide/Show menu option is disabled in the Style Designer"
 msgstr "A opción do menú ocultar/amosar está deshabilitada no Deseñador de Estilos"
 
-#: exe/webui/tools/style-designer/langs/en.js:120
+#: exe/webui/tools/style-designer/langs/en.js:121
 msgid ""
 "Please, make your browser bigger. The Style Designer requires at least a "
 "1024x768 screen resolution"
@@ -12442,102 +12459,102 @@ msgstr ""
 "menos 1024x768 píxeles. O Deseñador de Estilos require unha resolución de"
 " pantalla mínima de 1024x768"
 
-#: exe/webui/tools/style-designer/langs/en.js:121
+#: exe/webui/tools/style-designer/langs/en.js:122
 msgid "The Style Designer window is not open."
 msgstr "O deseñador de estilos non está aberto."
 
-#: exe/webui/tools/style-designer/langs/en.js:122
+#: exe/webui/tools/style-designer/langs/en.js:123
 msgid "This window will be closed. Please restart the tool."
 msgstr "Esta ventá será pechada Por favor reinicie a ferramenta"
 
-#: exe/webui/tools/style-designer/langs/en.js:125
+#: exe/webui/tools/style-designer/langs/en.js:126
 msgid "Undo changes since last time you saved? This cannot be undone. "
 msgstr ""
 "Desfacer os cambios dende a última vez que foi gardado? Isto non se pode "
 "desfacer "
 
-#: exe/webui/tools/style-designer/langs/en.js:132
+#: exe/webui/tools/style-designer/langs/en.js:133
 msgid "Drag markers to pick a color"
 msgstr "Arraster os marcadores para selecionar unha cor"
 
-#: exe/webui/tools/style-designer/langs/en.js:134
+#: exe/webui/tools/style-designer/langs/en.js:135
 msgid "Current"
 msgstr "Actual"
 
-#: exe/webui/tools/style-designer/langs/en.js:140
+#: exe/webui/tools/style-designer/langs/en.js:141
 msgid "New Color - Press OK to Commit"
 msgstr "Nova cor - Prema OK para enviar"
 
-#: exe/webui/tools/style-designer/langs/en.js:141
+#: exe/webui/tools/style-designer/langs/en.js:142
 msgid "Click to revert to original color"
 msgstr "Preme para volver á cor orixinal"
 
-#: exe/webui/tools/style-designer/langs/en.js:144
+#: exe/webui/tools/style-designer/langs/en.js:145
 msgid "Commit to this color selection"
 msgstr "Enviar esta selección de cor"
 
-#: exe/webui/tools/style-designer/langs/en.js:145
+#: exe/webui/tools/style-designer/langs/en.js:146
 msgid "Cancel and revert to original color"
 msgstr "Cancelar e volver á cor orixinal"
 
-#: exe/webui/tools/style-designer/langs/en.js:148
+#: exe/webui/tools/style-designer/langs/en.js:149
 msgid "Set to Hue color mode"
 msgstr "Modificar o modo de ton de cor"
 
-#: exe/webui/tools/style-designer/langs/en.js:149
+#: exe/webui/tools/style-designer/langs/en.js:150
 msgid "Enter a Hue value (0-360º)"
 msgstr "Introducir un valor de ton (0-360º)"
 
-#: exe/webui/tools/style-designer/langs/en.js:152
+#: exe/webui/tools/style-designer/langs/en.js:153
 msgid "Set to Saturation color mode"
 msgstr "Cambiar ao modo saturación"
 
-#: exe/webui/tools/style-designer/langs/en.js:153
+#: exe/webui/tools/style-designer/langs/en.js:154
 msgid "Enter a Saturation value (0-100%)"
 msgstr "Introducir un valor de Saturación (0-100%)"
 
-#: exe/webui/tools/style-designer/langs/en.js:156
+#: exe/webui/tools/style-designer/langs/en.js:157
 msgid "Set to Value color mode"
 msgstr "cambiar ao modo Valor"
 
-#: exe/webui/tools/style-designer/langs/en.js:157
+#: exe/webui/tools/style-designer/langs/en.js:158
 msgid "Enter a Value (0-100%)"
 msgstr "Introducir un valor (0-100%)"
 
-#: exe/webui/tools/style-designer/langs/en.js:160
+#: exe/webui/tools/style-designer/langs/en.js:161
 msgid "Set to Red color mode"
 msgstr "Cambiar a Modo de cor Vermello"
 
-#: exe/webui/tools/style-designer/langs/en.js:161
+#: exe/webui/tools/style-designer/langs/en.js:162
 msgid "Enter a Red value (0-255)"
 msgstr "Introducir un valor de Vermello (0-255)"
 
-#: exe/webui/tools/style-designer/langs/en.js:164
+#: exe/webui/tools/style-designer/langs/en.js:165
 msgid "Set to Green color mode"
 msgstr "Cambiar a Modo de cor Verde"
 
-#: exe/webui/tools/style-designer/langs/en.js:165
+#: exe/webui/tools/style-designer/langs/en.js:166
 msgid "Enter a Green value (0-255)"
 msgstr "Introducir un valor de cor Verde"
 
-#: exe/webui/tools/style-designer/langs/en.js:168
+#: exe/webui/tools/style-designer/langs/en.js:169
 msgid "Set to Blue color mode"
 msgstr "Cambiar a Modo de cor Azul"
 
-#: exe/webui/tools/style-designer/langs/en.js:169
+#: exe/webui/tools/style-designer/langs/en.js:170
 msgid "Enter a Blue value (0-255)"
 msgstr "Introducir un valor de cor Azul"
 
-#: exe/webui/tools/style-designer/langs/en.js:172
+#: exe/webui/tools/style-designer/langs/en.js:173
 msgid "Set to Alpha color mode"
 msgstr "Cambiar a Modo de cor Alpha"
 
-#: exe/webui/tools/style-designer/langs/en.js:173
-#: exe/webui/tools/style-designer/langs/en.js:177
+#: exe/webui/tools/style-designer/langs/en.js:174
+#: exe/webui/tools/style-designer/langs/en.js:178
 msgid "Enter an Alpha value (0-100)"
 msgstr "Introducir un valor de cor Alpha (0-100)"
 
-#: exe/webui/tools/style-designer/langs/en.js:176
+#: exe/webui/tools/style-designer/langs/en.js:177
 msgid "Enter an Hex color value (#000000-#ffffff)"
 msgstr "Introduza un valor de cor hexadecimal (#000000-#ffffff)"
 
@@ -12652,8 +12669,8 @@ msgstr ""
 " de orixe en vez da lingua de saída."
 
 #: exe/webui/tools/style-designer/langs/en.js:58
-#: exe/webui/tools/style-designer/langs/en.js:126
-#: exe/webui/tools/style-designer/langs/en.js:135
+#: exe/webui/tools/style-designer/langs/en.js:127
+#: exe/webui/tools/style-designer/langs/en.js:136
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
 msgstr "Aceptar"
