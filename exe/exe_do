@@ -69,7 +69,12 @@ def prepareParser():
 Usage: %prog [options] input_file [output_file]\n\nTo show \
 help:\n%prog -h").encode(sys.stdout.encoding)
     parser = CustomOptionParser(usage=usage, formatter=CustomHelpFormatter())
-
+   
+    parser.add_option("-a", "--append",
+                      action="store_true",dest='a',
+                      help=_(u"Append  <input_file> elp package to <output_file> elp package").encode(sys.stdout.encoding))
+    
+ 
     parser.add_option("-s", "--set",
                       action="store", type='string', dest='set_options', metavar='field=value,<field=value>...',
                       help=_(u"Set ELP field values. Example: -s style=Default,root.title='Root Node'").encode(sys.stdout.encoding))
@@ -98,7 +103,7 @@ from <input_file> elp package").encode(sys.stdout.encoding))
                   action="store", dest="x", metavar="format",
                   choices=['xml', 'scorm12', 'scorm2004',
                            'ims', 'website', 'webzip', 'singlepage',
-                           'xliff', 'epub3'],
+                           'xliff', 'epub3','text'],
                   help=_(u"Export <input_file> elp package to optional \
 <output_file> on one of the given formats: xml, scorm12, scorm2004, ims, \
 website, webzip, singlepage, xliff or epub3.").encode(sys.stdout.encoding))
@@ -174,89 +179,112 @@ if __name__ == "__main__":
     if options.x and options.i:
         parser.error(_(u'Options --export and --import are mutually \
 exclusive.').encode(sys.stdout.encoding))
-    if not options.x and not options.i and not options.set_options and not options.report:
-        parser.error(_(u'No --export, --import, --set or --report option supplied.')\
+    if options.x and options.a:
+        parser.error(_(u'Options --export and --append are mutually \
+exclusive.').encode(sys.stdout.encoding))
+    if options.i and options.a:
+        parser.error(_(u'Options --import and --append are mutually \
+exclusive.').encode(sys.stdout.encoding))
+        
+    if not options.a and not options.x and not options.i and not options.set_options and not options.report:
+        parser.error(_(u'No --append --export, --import, --set or --report option supplied.')\
 .encode(sys.stdout.encoding))
 
     if not args:
         parser.error(_(u'No file input supplied.').encode(sys.stdout.encoding))
 
-    inputf = args[0]
-    try:
-        outputf = args[1]
-    except IndexError:
-        outputf = None
-
-    if len(args) > 2:
-        parser.error(_(u'Bad number of arguments supplied').encode(sys.stdout.encoding))
-
-    if options.checker_logfile:
-        logfile = Path(options.checker_logfile)
-        if logfile.abspath().dirname().exists():
-            handler = logging.FileHandler(logfile.abspath(), 'a+')
-            handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s %(message)s'))
-            logging.getLogger('exe.engine.checker').addHandler(handler)
-
-    tempdir = TempDirPath()
-    if options.set_options:
+    if options.a:          
+            if len(args) != 2:
+                parser.error(_(u'Bad number of arguments supplied').encode(sys.stdout.encoding))
+                    
+            try:                
+                pkg1 = Package.load(args[1],True,None,None)
+                pkg2 = Package.load(args[0],False,pkg1,None)
+                pkg2.root.copyToPackage(pkg1,pkg1.root)             
+                pkg1.save()
+                print _(u"Successfully appended '%s' to '%s'.") % (args[0],args[1])                       
+            except:
+                print _(u"exe_do: error: Unable to append elp")
+                print sys.exc_value
+                exit()                
+    else:
+    
+        inputf = args[0]
         try:
-            path = Path(inputf)
-            path.copy(tempdir)
-            inputf = tempdir / path.basename()
-            pkg = Package.load(inputf)
-            if not pkg:
-                error = _(u"Invalid input package")
-                raise Exception(error.encode(sys.stdout.encoding))
-            set_options = options.set_options.split(',')
-            for set_option in set_options:
-                name, value = set_option.split('=')
-                names = name.split('.')
-                obj = pkg
-                try:
-                    value = json.loads(value)
-                except:
-                    pass
-                for name in names[:-1]:
-                    obj = getattr(obj, name)
-                name = names[-1]
-                setattr(obj, name, value)
-            pkg.save()
-            if options.set_options_write:
-                inputf.move(path)
-                inputf = path
-        except:
-            print _(u"exe_do: error: Unable to set values from '%s'.\nThe \
-error was:") % (path)
-            print sys.exc_value
-            exit()
-
-    if options.report:
-        options.x = 'report'
-
-    if options.x:
-        x = CmdlineExporter(application.config, {"export": options.x,
-                                                 "overwrite": options.f,
-                                                 "copy-source": options.copy,
-                                                 "wrap-cdata": options.wrap,
-                                                 "single-page": options.single,
-                                                 "website": options.website,
-                                                 "editable": options.editable})
-        try:
-            outputf = x.do_export(inputf, outputf)
-            print _(u"Successfully exported '%s' from '%s'.") % (outputf, \
-inputf)
-        except:
-            print _(u"exe_do: error: Unable to export from '%s'.\nThe \
-error was:") % (inputf)
-            print sys.exc_value
-    if options.i:
-        i = CmdlineImporter(application.config, {"import": options.i,
-                                                 "from-source": options.from_source})
-        try:
-            outputf = i.do_import(inputf, outputf)
-            print _(u"File '%s' successfully imported to '%s'.") % (inputf, \
-outputf)
-        except:
-            print _(u"exe_do: error: Unable to import '%s'.\nThe \
-error was:") % (inputf)
-            print unicode(sys.exc_value)
+            outputf = args[1]
+        except IndexError:
+            outputf = None
+    
+        if len(args) > 2:
+            parser.error(_(u'Bad number of arguments supplied').encode(sys.stdout.encoding))
+    
+        if options.checker_logfile:
+            logfile = Path(options.checker_logfile)
+            if logfile.abspath().dirname().exists():
+                handler = logging.FileHandler(logfile.abspath(), 'a+')
+                handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s %(message)s'))
+                logging.getLogger('exe.engine.checker').addHandler(handler)
+    
+        tempdir = TempDirPath()
+        if options.set_options:
+            try:
+                path = Path(inputf)
+                path.copy(tempdir)
+                inputf = tempdir / path.basename()
+                pkg = Package.load(inputf)
+                if not pkg:
+                    error = _(u"Invalid input package")
+                    raise Exception(error.encode(sys.stdout.encoding))
+                set_options = options.set_options.split(',')
+                for set_option in set_options:
+                    name, value = set_option.split('=')
+                    names = name.split('.')
+                    obj = pkg
+                    try:
+                        value = json.loads(value)
+                    except:
+                        pass
+                    for name in names[:-1]:
+                        obj = getattr(obj, name)
+                    name = names[-1]
+                    setattr(obj, name, value)
+                pkg.save()
+                if options.set_options_write:
+                    inputf.move(path)
+                    inputf = path
+            except:
+                print _(u"exe_do: error: Unable to set values from '%s'.\nThe \
+    error was:") % (path)
+                print sys.exc_value
+                exit()
+    
+        if options.report:
+            options.x = 'report'
+    
+        if options.x:
+            x = CmdlineExporter(application.config, {"export": options.x,
+                                                     "overwrite": options.f,
+                                                     "copy-source": options.copy,
+                                                     "wrap-cdata": options.wrap,
+                                                     "single-page": options.single,
+                                                     "website": options.website,
+                                                     "editable": options.editable})
+            try:
+                outputf = x.do_export(inputf, outputf)
+                print _(u"Successfully exported '%s' from '%s'.") % (outputf, \
+    inputf)
+            except:
+                print _(u"exe_do: error: Unable to export from '%s'.\nThe \
+    error was:") % (inputf)
+                print sys.exc_value
+        if options.i:
+            i = CmdlineImporter(application.config, {"import": options.i,
+                                                     "from-source": options.from_source})
+            try:
+                outputf = i.do_import(inputf, outputf)
+                print _(u"File '%s' successfully imported to '%s'.") % (inputf, \
+    outputf)
+            except:
+                print _(u"exe_do: error: Unable to import '%s'.\nThe \
+    error was:") % (inputf)
+                print unicode(sys.exc_value)
