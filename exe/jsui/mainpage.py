@@ -933,7 +933,7 @@ class MainPage(RenderableLivePage):
 
             ode = procomun.factory.create('xsd:anyType')
 
-            ode.file = base64.b64encode(open(filename).read())
+            ode.file = base64.b64encode(open(filename, 'rb').read())
             ode.file_name = self.package.name
 
             client.notifyStatus(statusTitle, _(u'Starting authorized connection to Procomún API'))
