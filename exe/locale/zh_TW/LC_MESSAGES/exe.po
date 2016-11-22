@@ -4,13 +4,14 @@
 #
 # Jenny Lin <jenny.lin@auckland.ac.nz>, 2006.
 # Wei-Lun Chao <william.chao@ossii.com.tw>, 2006, 2013.
-# Franklin Weng <franklin at goodhorse dot idv dot tw>, 2013-2014.
+# Franklin Weng <franklin at goodhorse dot idv dot tw>, 2013-2016.
+
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
 "POT-Creation-Date: 2016-11-11 20:21+0100\n"
-"PO-Revision-Date: 2014-05-15 18:08+0200\n"
+"PO-Revision-Date: 2016-11-22 16:52+0100\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language: zh_Hant_TW\n"
 "Language-Team: Chinese Traditional <zh-l10n@linux.org.tw>\n"
@@ -23,17 +24,17 @@ msgstr ""
 #: exe/application.py:191
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
-msgstr ""
+msgstr "載入設定檔時發生錯誤。備份已儲存到 %s"
 
 #: exe/application.py:209
 #, python-format
 msgid ""
 "An error has occurred when loading your Idevice Store. A backup is saved "
 "at %s"
-msgstr ""
+msgstr "載入您的 Idevice 商店時發生錯誤。備份已儲存到 %s"
 
 #: exe/application.py:248
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "eXeLearning, the EXtremely Easy to use eLearning authoring tool\n"
 "   Usage: %s [OPTION] [PACKAGE]\n"
@@ -46,6 +47,7 @@ msgid ""
 "or\n"
 "Users/<user name>/AppData/Roaming/exe on Windows 7"
 msgstr ""
+"eXeLearning, 簡單易用的線上課程編輯工具\n"
 "用法：%s [選項] [套件]\n"
 "  -V, --version    印出版本資訊並離開\n"
 "  -h, --help    顯示此說明頁面並離開\n"
@@ -234,7 +236,6 @@ msgid "Case Study"
 msgstr "案例分析"
 
 #: exe/engine/casestudyidevice.py:202
-#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -257,13 +258,12 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
-"案例分析提供學生們一個有教育意義的模擬情境。通常它會基於一個真實的情境，要求學生來展示實作，或是描述他們可能會怎麼完成一份工作來解決該情境的問題。案例分析允許學生使用他們自己的知識與經驗來解決指定的工作。當設計案例分析時您可考慮以下的因素："
-"\n"
+"案例分析提供學生們一個有教育意義的模擬情境。通常它會基於一個真實的情境，要求學生來展示實作，或是描述他們可能會怎麼做，以便解決該情境的問題。案例分析允許學生使用他們自己的知識與經驗來解決指定的工作。當設計案例分析時您可考慮以下的因素："
 "<ul> \n"
-"<li>\t在這個故事情境中您所要傳達的教學要點</li>\n"
-"<li>\t學生需要做什麼準備工作以便進行這個案例分析</li>\n"
-"<li>\t這個案例是否適用此課程的其他部份</li>\n"
-"<li>\t學生對此案例的各種可能反應。例如：在教室的情境中，如何設立團隊解決案例中不同角度的問題，以及想法如何回饋到班上</li>\n"
+"<li>    在這個故事情境中您所要傳達的教學要點</li>\n"
+"<li>    學生需要做什麼準備工作以便進行這個案例分析</li>\n"
+"<li>    這個案例是否適用此課程的其他部份</li>\n"
+"<li>    學生對此案例的各種可能反應。例如：\n在教室的情境中，如何設立團隊解決案例中不同角度的問題，以及想法如何回饋到班上</li>"
 "</ul>"
 
 #: exe/engine/casestudyidevice.py:219
@@ -592,7 +592,7 @@ msgid ""
 " </li></ol>"
 msgstr ""
 "<p>克漏字 (Cloze) "
-"練習是給一段文字或句子，學生們要填上缺少的單字。它們通常有幾個目的：</p><ol><li>確認主要課程觀念的知識（也許是預先確認，單字成份練習，或是摘要確認）。</li><li>確認閱讀理解力。</li><li>確認字彙知識。</li><li>確認單字的組成與文法的完成度。</li></ol>"
+"克漏字是給一段文字或句子，學生們要填上缺少的單字。它們通常有幾個目的：</p><ol><li>確認主要課程觀念的知識（也許是預先確認，單字成份練習，或是摘要確認）。</li><li>確認閱讀理解力。</li><li>確認字彙知識。</li><li>確認單字的組成與文法的完成度。</li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -648,7 +648,6 @@ msgstr "克漏字"
 #: exe/engine/clozefpdidevice.py:127 exe/engine/clozefpdidevice.py:308
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:315
 #: exe/engine/clozelangfpdidevice.py:127 exe/engine/clozelangfpdidevice.py:313
-#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -658,7 +657,7 @@ msgid ""
 "click on the Hide/Show Word button below.</p><p>More than one possible "
 "answer can be defined enclosing them with pipes (|). I.e.: "
 "|dog|cat|bird|</p>"
-msgstr "<p>輸入克漏字測驗的文字。您可以從別處剪貼文字過來，或是直接在此輸入。</p><p>要選擇打算隱藏起來的單字，在該單字上雙擊選擇，並按下底下的「隱藏/顯示單字」按鍵。</p>"
+msgstr "<p>輸入克漏字測驗的文字。您可以從別處剪貼文字過來，或是直接在此輸入。</p><p>要選擇打算隱藏起來的單字，在該單字上雙擊選擇，並按下底下的「隱藏/顯示單字」按鍵。</p><p>超過一個以上的答案，可以用 | 符號隔開。例如：|dog|cat|bird|</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
@@ -756,9 +755,8 @@ msgstr "FPD"
 
 #: exe/engine/config.py:107 exe/engine/config.py:108 exe/engine/config.py:110
 #: exe/engine/config.py:112
-#, fuzzy
 msgid "Experimental"
-msgstr "實驗"
+msgstr "實驗性"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - You Should Know"
@@ -903,7 +901,7 @@ msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
-msgstr "輸入問題。問題的陳述要清晰而不含糊。避免負面的假設，因為可能會造成混淆。"
+msgstr "輸入問題。問題的陳述要清晰而不含糊。避免否定式的假設，因為可能會造成混淆。"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:106
 #: exe/engine/multichoiceidevice.py:104
@@ -1204,7 +1202,7 @@ msgid ""
 "can tend to confuse learners."
 msgstr ""
 "輸入問題。\n"
-"問題的陳述要清晰而不含糊。避免負面的假設，因為可能會造成學生混淆。"
+"問題的陳述要清晰而不含糊。避免否定式的假設，因為可能會造成學生混淆。"
 
 #: exe/engine/field.py:3908 exe/engine/field.py:3989
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
@@ -2807,7 +2805,7 @@ msgid ""
 "be ambiguous."
 msgstr ""
 "輸入問題。問題的陳述要清晰而不含糊。\n"
-"避免負面的假設，因為可能會造成混淆。"
+"避免否定式的假設，因為可能會造成混淆。"
 
 #: exe/engine/truefalseidevice.py:158
 #: exe/engine/verdaderofalsofpdidevice.py:160
@@ -2896,7 +2894,6 @@ msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
 #: exe/exe_do:68
-#, fuzzy
 msgid ""
 "%prog, the commandline version of eXe.\n"
 "Usage: %prog [options] input_file [output_file]\n"
@@ -2934,7 +2931,6 @@ msgid ""
 msgstr "從 <輸入檔> elp 套件產生資源資訊報告到 <輸出檔>"
 
 #: exe/exe_do:102
-#, fuzzy
 msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
 "given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage,"
@@ -3026,7 +3022,7 @@ msgstr "提供的參數數量不正確"
 
 #: exe/exe_do:208 exe/export/cmdlineexporter.py:84
 msgid "Invalid input package"
-msgstr "不合法的輸入套件"
+msgstr "無效的輸入套件"
 
 #: exe/exe_do:228
 #, python-format
@@ -3255,9 +3251,8 @@ msgid "Publishing document to Procomún"
 msgstr ""
 
 #: exe/jsui/mainpage.py:918
-#, fuzzy
 msgid "Exporting package as SCORM"
-msgstr "將 IMS 套件匯出為"
+msgstr "將套件匯出為 SCORM"
 
 #: exe/jsui/mainpage.py:939
 msgid "Starting authorized connection to Procomún API"
@@ -3517,14 +3512,12 @@ msgid "Confirm"
 msgstr "確認"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:277
-#, fuzzy
 msgid "Are you sure you want clear all form fields?"
-msgstr "您確定要清除所有內容嗎？"
+msgstr "您確定要清除所有表單內容嗎？"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:330
-#, fuzzy
 msgid "Are you sure you want reset all form fields?"
-msgstr "您確定要清除所有內容嗎？"
+msgstr "您確定要重新設定所有表單內容嗎？"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:417
 msgid "LOM Metadata import success!"
@@ -3583,22 +3576,19 @@ msgstr "您要刪除此樣式嗎？"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:177
 msgid "http://exelearning.net/html_manual/exe20_en/"
-msgstr ""
+msgstr "http://exelearning.net/html_manual/exe20_en/"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:187
-#, fuzzy
 msgid "http://exelearning.net/?lang=en"
-msgstr "exelearning.net"
+msgstr "http://exelearning.net/?lang=en"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:193
-#, fuzzy
 msgid "http://exelearning.net/forums/"
-msgstr "exelearning.net"
+msgstr "http://exelearning.net/forums/"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:196
-#, fuzzy
 msgid "http://exelearning.net/downloads/"
-msgstr "exelearning.net"
+msgstr "http://exelearning.net/downloads/"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -3606,15 +3596,13 @@ msgid "About"
 msgstr "關於"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:345
-#, fuzzy
 msgid "Release notes"
 msgstr "釋出宣告"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:363
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:476
-#, fuzzy
 msgid "Legal Notes"
-msgstr "釋出宣告"
+msgstr "版權宣告"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:400
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:407
@@ -3637,7 +3625,6 @@ msgid "The current Style is not compatible with the Style Designer"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:475
-#, fuzzy
 msgid "An unknown error occurred."
 msgstr "發生未知的錯誤"
 
@@ -3780,16 +3767,15 @@ msgstr "XLIFF 匯出喜好設定"
 msgid ""
 "You must authorize eXe Learning to publish content into your Procomún "
 "account"
-msgstr ""
+msgstr "您必須先授權，eXe Learning 才能將內容發布到您的 Procomún 帳號。"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:841
-#, fuzzy
 msgid "Are you sure you want to start authorization process?"
-msgstr "您確定要清除所有內容嗎？"
+msgstr "您確定要開始授權嗎？"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:852
 msgid "Procomún OAuth"
-msgstr ""
+msgstr "Procomún OAuth"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:870
 msgid "Select the parent folder for export."
@@ -4173,9 +4159,8 @@ msgstr "清除"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
 #: exe/webui/tools/style-designer/langs/en.js:111
-#, fuzzy
 msgid "Reset"
-msgstr "表達"
+msgstr "重置"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
@@ -4523,14 +4508,12 @@ msgid "Access Type"
 msgstr "存取型態"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:22
-#, fuzzy
 msgid "Now"
-msgstr "否"
+msgstr "現在"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:23
-#, fuzzy
 msgid "Time"
-msgstr "萊姆色"
+msgstr "時間"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:29
 msgid "Required"
@@ -4824,13 +4807,12 @@ msgid "Doctype"
 msgstr "Doctype"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:565
-#, fuzzy
 msgid "Warning"
-msgstr "警告！"
+msgstr "警告"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:565
 msgid "Save the changes of your iDevice before changing the DOCTYPE"
-msgstr ""
+msgstr "改變 DOCTYPE 前，請先儲存您的 iDevice"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:572
 msgid ""
@@ -4916,19 +4898,16 @@ msgid "The current document format can be modified in the Properties tab"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:182
-#, fuzzy
 msgid "Editor mode"
-msgstr "編輯者"
+msgstr "編輯者模式"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:184
-#, fuzzy
 msgid "Permissive"
-msgstr "先修"
+msgstr "允許"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
-#, fuzzy
 msgid "Strict"
-msgstr "重新開始"
+msgstr "嚴格"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:192
 msgid ""
@@ -5034,39 +5013,36 @@ msgid "Return"
 msgstr "返回"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:419
-#, fuzzy
 msgid "Read more"
-msgstr "建立者"
+msgstr "閱讀更多"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:425
 msgid "Download style from repository and import into system."
-msgstr ""
+msgstr "從主目錄下載樣式並匯入系統。"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:457
 msgid "Import style from custom URL"
-msgstr ""
+msgstr "從自訂連結網址匯入樣式"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:472
-#, fuzzy
 msgid "URL"
-msgstr "紫色"
+msgstr "網址"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:473
 msgid "URL to download the style from."
-msgstr ""
+msgstr "下載樣式的網址"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:478
-#, fuzzy
 msgid "Import Style from URL"
-msgstr "匯入樣式"
+msgstr "從網址匯入樣式"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:479
 msgid "Download style from URL and import into system."
-msgstr ""
+msgstr "由連結下載樣式並匯入系統"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:507
 msgid "Check and install styles in the repository"
-msgstr ""
+msgstr "確認並安裝樣式到儲存庫"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
@@ -5204,13 +5180,12 @@ msgid "XLIFF File"
 msgstr "XLIFF 檔"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
-#, fuzzy
 msgid "Publish"
-msgstr "發布者"
+msgstr "發布"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:223
 msgid "Procomún"
-msgstr ""
+msgstr "Procomún"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:239
 msgid "Educational Standard"
@@ -5274,18 +5249,16 @@ msgstr "工具"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:384
 #: exe/webui/tools/style-designer/langs/en.js:9
-#, fuzzy
 msgid "Style Designer"
-msgstr "說明設計者"
+msgstr "樣式設計者"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:392
-#, fuzzy
 msgid "Create new Style"
-msgstr "要刪除樣式嗎？"
+msgstr "建立新的樣式"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:397
 msgid "Edit current Style"
-msgstr ""
+msgstr "編輯現在這個樣式"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:413
 msgid "Resources Report"
@@ -5343,7 +5316,7 @@ msgstr "關於 eXe"
 
 #: exe/jsui/scripts/exe.js:213
 msgid "Load Error"
-msgstr ""
+msgstr "載入錯誤"
 
 #: exe/jsui/scripts/exe.js:238
 msgid ""
@@ -7221,9 +7194,8 @@ msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
 msgstr "CC 授權 -- 非商業性禁止改作條款 2.5 版"
 
 #: exe/webui/common.py:297
-#, fuzzy
 msgid "License:"
-msgstr "授權條款"
+msgstr "授權條款："
 
 #: exe/webui/common.py:304
 msgid "Local Version"
@@ -7265,50 +7237,42 @@ msgid "Menu"
 msgstr "選單"
 
 #: exe/webui/common.py:503
-#, fuzzy
 msgid "Accept"
-msgstr "接受網址"
+msgstr "接受"
 
 #: exe/webui/common.py:507 exe/webui/element.py:2712 exe/webui/element.py:2730
 msgid "Wrong"
 msgstr "錯誤"
 
 #: exe/webui/common.py:508
-#, fuzzy
 msgid "Right answer"
-msgstr "置中"
+msgstr "正確答案"
 
 #: exe/webui/common.py:510
-#, fuzzy
 msgid "Selected letters"
-msgstr "已選取檔案"
+msgstr "已選取字母"
 
 #: exe/webui/common.py:511
-#, fuzzy
 msgid "Word"
-msgstr "關鍵字"
+msgstr "單字"
 
 #: exe/webui/common.py:512
-#, fuzzy
 msgid "Words"
-msgstr "關鍵字"
+msgstr "單字"
 
 #: exe/webui/common.py:513
-#, fuzzy
 msgid "Play"
-msgstr "計畫"
+msgstr "遊玩"
 
 #: exe/webui/common.py:515
 msgid "Results"
-msgstr ""
+msgstr "結果"
 
 #: exe/webui/common.py:516
-#, fuzzy
 msgid "Total"
-msgstr "教學"
+msgstr "總計"
 
 #: exe/webui/common.py:517
-#, fuzzy
 msgid "Another word"
 msgstr "其他單字"
 
@@ -7321,13 +7285,12 @@ msgid "Reload the game?"
 msgstr ""
 
 #: exe/webui/common.py:520
-#, fuzzy
 msgid "Click on \"Play\" to start a new game."
-msgstr "使用者會點擊此處開始遊戲"
+msgstr "點擊遊玩以開始遊戲"
 
 #: exe/webui/common.py:521
 msgid "Click on \"Another word\" to continue."
-msgstr ""
+msgstr "點擊其他單字以繼續"
 
 #: exe/webui/common.py:543 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
@@ -7533,9 +7496,8 @@ msgid "Some emphasis"
 msgstr "有些強調"
 
 #: exe/webui/editorpane.py:363
-#, fuzzy
 msgid "Select an icon"
-msgstr "選擇授權方式。"
+msgstr "選擇一個圖示"
 
 #: exe/webui/editorpane.py:381
 msgid "Icons"
@@ -7969,9 +7931,9 @@ msgstr "提交答案"
 
 #: exe/webui/quiztestblock.py:225 exe/webui/quiztestblock.py:321
 #: exe/webui/quiztestblock.py:375
-#, fuzzy, python-format
+#, python-format
 msgid "Your score is %d%%"
-msgstr "您的分數是"
+msgstr "您的分數是 %d%%"
 
 #: exe/webui/recomendacionfpdblock.py:68
 msgid "A Piece of Advice"
@@ -7986,53 +7948,48 @@ msgid "Load"
 msgstr "載入"
 
 #: exe/webui/scripts/authoring.js:70
-#, fuzzy
 msgid "Select one or more images"
-msgstr "選擇影像"
+msgstr "選擇一個或多個圖片"
 
 #: exe/webui/scripts/authoring.js:95
 msgid "Image Files (.jpg, .jpeg, .png, .gif, .svg)"
-msgstr ""
+msgstr "圖片檔（.jpg, .jpeg, .png, .gif, .svg）"
 
 #: exe/webui/scripts/authoring.js:122 exe/webui/scripts/authoring.js:364
-#, fuzzy
 msgid "Flash Movie (.flv)"
-msgstr "Flash 電影"
+msgstr "Flash 電影 (.flv)"
 
 #: exe/webui/scripts/authoring.js:123 exe/webui/scripts/authoring.js:373
 msgid "Flash Object (.swf)"
-msgstr ""
+msgstr "Flash 物件 (.swf)"
 
 #: exe/webui/scripts/authoring.js:124
-#, fuzzy
 msgid "Quicktime Files (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
-msgstr "QuickTime (mov, mp4, mpeg)"
+msgstr "QuickTime 檔案 (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
 
 #: exe/webui/scripts/authoring.js:125
 msgid "Windows Media Player Files (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
-msgstr ""
+msgstr "Windows Media Player 檔案 (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
 
 #: exe/webui/scripts/authoring.js:126
 msgid "RealMedia Audio Files (.rm, .ra, .ram, .mp3)"
-msgstr ""
+msgstr "RealMedia 音樂檔 (.rm, .ra, .ram, .mp3)"
 
 #: exe/webui/scripts/authoring.js:178
 msgid "JPEG Files (.jpg, .jpeg)"
-msgstr ""
+msgstr "JPEG 圖檔 (.jpg, .jpeg)"
 
 #: exe/webui/scripts/authoring.js:381
 msgid "MP3 Audio (.mp3)"
-msgstr ""
+msgstr "MP3 音樂檔 (.mp3)"
 
 #: exe/webui/scripts/authoring.js:384
-#, fuzzy
 msgid "Select an mp3 file"
-msgstr "選擇檔案"
+msgstr "選擇 mp3 檔案"
 
 #: exe/webui/scripts/authoring.js:392
-#, fuzzy
 msgid "Select a package"
-msgstr "選擇影像"
+msgstr "選擇套件"
 
 #: exe/webui/scripts/authoring.js:660
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -8043,48 +8000,46 @@ msgid ""
 " Without it the image may not be accessible to some users with "
 "disabilities, or to those using a text browser, or browsing the Web with "
 "images turned off."
-msgstr ""
+msgstr "您確定不要增加圖片描述嗎? 若沒有圖片描述，圖檔可能無法被身障人士、或是使用文字瀏覽器（關閉圖片功能）的使用者存取。"
 
 #: exe/webui/scripts/authoring.js:667 exe/webui/scripts/authoring.js:684
 msgid "Image description"
-msgstr ""
+msgstr "圖片描述"
 
 #: exe/webui/scripts/authoring.js:668 exe/webui/scripts/authoring.js:685
 msgid "Please provide an image description (alternative text):"
-msgstr ""
+msgstr "請提供圖片描述（替代文字）："
 
 #: exe/webui/scripts/authoring.js:857
 msgid ""
 "Embed images shouldn't be pasted directly into the editor. Please use "
 "Insert/Edit Image."
-msgstr ""
+msgstr "嵌入式圖片不行直接在編輯器內貼上。請使用「插入/編輯影像功能」。"
 
 #: exe/webui/scripts/authoring.js:857
 msgid "This change will be undone."
-msgstr ""
+msgstr "這項改變將會被還原。"
 
 #: exe/webui/scripts/editor.js:35
 msgid "Do you want to overwrite the existing idevice {idevice}?"
-msgstr ""
+msgstr "您要覆寫已經存在的idevice {idevice}嗎？"
 
 #: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
-#, fuzzy
 msgid "eXe Idevices"
-msgstr "儲存 iDevice"
+msgstr "eXe iDevice"
 
 #: exe/webui/scripts/editor.js:87
 msgid "Please save the idevice first, then try to export it."
-msgstr ""
+msgstr "請先儲存idevice，再試著輸出。"
 
 #: exe/webui/scripts/exe_tooltips/exe_tooltips.js:79
 #: exe/webui/scripts/exe_tooltips/exe_tooltips.js:145
 msgid "Go to Tools - Preview to see the tooltip content"
-msgstr ""
+msgstr "到工具－預覽 觀看工具提示內容。"
 
 #: exe/webui/scripts/stylemanager.js:78
-#, fuzzy
 msgid "Do you want to delete the selected style?"
-msgstr "您要刪除此樣式嗎？"
+msgstr "您要刪除此選擇的樣式嗎？"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Error: Invalid values entered, these are marked in red."
@@ -9183,34 +9138,32 @@ msgid "Node"
 msgstr "節點"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
-#, fuzzy
 msgid "Download Information"
-msgstr "中繼資訊"
+msgstr "下載資訊"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
-msgstr ""
+msgstr "檔案大小"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:7
 msgid "File Type/Extension"
-msgstr ""
+msgstr "檔案格式／副檔名"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:9
-#, fuzzy
 msgid "Include File Information"
-msgstr "文字資訊"
+msgstr "包含檔案資訊"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:10
 msgid "Remember that the text of the link should describe its purpose."
-msgstr ""
+msgstr "記住！您應該詳細描述該文字或連結之功能。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:11
 msgid "Specify the file size"
-msgstr ""
+msgstr "指定檔案大小"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:12
 msgid "Specify the file type"
-msgstr ""
+msgstr "指定檔案類型"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/autosave/langs/en.js:2
 msgid "Restore auto-saved content"
@@ -9218,7 +9171,7 @@ msgstr "回復自動儲存的內容"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:3
 msgid "Quote With Authorship"
-msgstr ""
+msgstr "引用著作者"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
@@ -9226,142 +9179,123 @@ msgid "Attributes"
 msgstr "屬性"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:6
-#, fuzzy
 msgid "Quote"
-msgstr "備註"
+msgstr "引言"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
-#, fuzzy
 msgid "Quote Language"
-msgstr "語言"
+msgstr "引言語言"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
-#, fuzzy
 msgid "Authorship"
-msgstr "作者"
+msgstr "作者身份"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:9
 msgid "Authorship Language"
-msgstr ""
+msgstr "作者身份語言"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:11
 msgid "Please write a quote"
-msgstr ""
+msgstr "請寫一段引言"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:12
 msgid "The \"Authorship\" field is empty"
-msgstr ""
+msgstr "「作者身份」欄位是空的"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:13
 msgid ""
 "Specify the languages only if they are different from the rest of the "
 "content."
-msgstr ""
+msgstr "您只需要在使用的語言跟內容不同時才需要額外指定語言。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:14
 msgid "Use a two-letter ISO 639-1 code like \"en\", \"es\", \"fr\" or \"de\"."
-msgstr ""
+msgstr "請使用 ISO 639-1 的代碼，如 \"en\", \"es\", \"fr\" 或 \"de\"。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:15
-#, fuzzy
 msgid "Include Styles (improves presentation)"
-msgstr "包含包裝（改善呈現方式）"
+msgstr "包含樣式（改善呈現方式）"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/clearfloat/langs/en.js:3
 msgid "Clear (new line or block)"
 msgstr "清除（新行或區塊）"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:2
-#, fuzzy
 msgid "Edit source code"
-msgstr "編輯者"
+msgstr "編輯原始碼"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:4
-#, fuzzy
 msgid "Search:"
-msgstr "蜜桃色"
+msgstr "搜尋："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:5
 msgid "Search for:"
-msgstr ""
+msgstr "搜尋："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:6
-#, fuzzy
 msgid "Replace:"
-msgstr "取代"
+msgstr "取代："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:7
 msgid "(Use /re/ syntax for regexp search)"
-msgstr ""
+msgstr "正規表示式搜尋請使用 /re/ 語法"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:8
-#, fuzzy
 msgid "Replace?"
-msgstr "取代"
+msgstr "要取代嗎？"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:11
-#, fuzzy
 msgid "Stop"
-msgstr "桌面"
+msgstr "停止"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
-#, fuzzy
 msgid "Replace with:"
-msgstr "取代為"
+msgstr "取代為："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
-msgstr ""
+msgstr "CodeMagic - 語法突顯與縮排"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
-#, fuzzy
 msgid "Edit code"
-msgstr "編輯者"
+msgstr "編輯程式碼"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:4
 msgid "Auto close tags"
-msgstr ""
+msgstr "自動產生關閉標籤"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:5
-#, fuzzy
 msgid "Wrap text"
-msgstr "逐字"
+msgstr "文字折行"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
-#, fuzzy
 msgid "Highlight syntax"
-msgstr "突顯"
+msgstr "語法突顯"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
-#, fuzzy
 msgid "Select a theme"
-msgstr "選擇樣本"
+msgstr "選擇主題"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
-#, fuzzy
 msgid "Search"
-msgstr "蜜桃色"
+msgstr "搜尋"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:9
-#, fuzzy
 msgid "Find next"
 msgstr "尋找下一個"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
-#, fuzzy
 msgid "Find previous"
-msgstr "前一頁"
+msgstr "尋找上一個"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
-#, fuzzy
 msgid "Replace all"
 msgstr "全部取代"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:3
-#, fuzzy
 msgid "Definition List"
-msgstr "定義描述"
+msgstr "定義清單"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:4
 msgid ""
@@ -9369,17 +9303,17 @@ msgid ""
 "To add a new term, just place the cursor at the end of a definition and "
 "click again the Definition List button.\n"
 msgstr ""
+"會建立新的定義清單。\n"
+"要增加新的名詞，只要將游標放在某個定義的尾巴，並再次點擊「定義清單」按鍵。\n"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
-#, fuzzy
 msgid "Term"
-msgstr "其他"
+msgstr "名詞"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
-#, fuzzy
 msgid "Term definition"
-msgstr "終結者"
+msgstr "名詞定義"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
@@ -9478,93 +9412,87 @@ msgstr "標頭 3"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:7
 msgid "Write your content..."
-msgstr ""
+msgstr "在這裡寫您的內容..."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:8
 msgid "Choose an effect (you can change it later)."
-msgstr ""
+msgstr "請選擇一個效果（稍後您可以更改）。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:9
 msgid ""
 "To add a new tab, block, page... just add a second level title (Heading "
 "2) followed by its content."
-msgstr ""
+msgstr "要新增一個分頁、區塊、頁面等，只要加一個第二層的標題（標頭 2）然後加入內容。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:10
 msgid "All blocks must start with a second level title (Heading 2)."
-msgstr ""
+msgstr "所有的區塊都必須以第二層標題（標頭 2）開始。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:11
 msgid "Please do not overuse these effects."
-msgstr ""
+msgstr "請不要過度使用這些效果。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:12
 msgid ""
 "Change the text of the tabs adding a title to each Heading 2 with the "
 "\"Insert/Edit Attributes\" option:"
-msgstr ""
+msgstr "利用「插入」－「編輯屬性」來更改這些標頭標籤的文字："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:13
 msgid ""
 "Timelines require a third level title (Heading 3) right after each "
 "Heading 2."
-msgstr ""
+msgstr "在每個標頭2之後，時間軸需要第三個標題（標頭3）"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
-#, fuzzy
 msgid "Choose a type:"
-msgstr "選擇影像"
+msgstr "請選擇類型："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
-#, fuzzy
 msgid "Accordion"
-msgstr "裝飾"
+msgstr "手風琴"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:18
 msgid "Collapsible content panels for presenting information in a limited space."
-msgstr ""
+msgstr "利用可折疊的控制區在有限的空間中，表現足夠的資訊。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:20
-#, fuzzy
 msgid "Tabs"
-msgstr "表格"
+msgstr "分區"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:21
 msgid "A single content area with multiple panels."
-msgstr ""
+msgstr "在單一內容區塊擁有多重區塊功能。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
-#, fuzzy
 msgid "Pagination"
-msgstr "動畫"
+msgstr "分頁"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
 msgid "Divide your content into different pages."
-msgstr ""
+msgstr "將您的內容分割至不同頁面。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:26
-#, fuzzy
 msgid "Carousel"
-msgstr "法羅語"
+msgstr "旋轉木馬"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:27
 msgid "Present a list of contents in horizontal order."
-msgstr ""
+msgstr "用水平排序的方式，將內容列出。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
-#, fuzzy
 msgid "Timeline"
-msgstr "新行"
+msgstr "時間軸"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
 msgid "Simple, interactive timeline able to handle nearly any form of content."
-msgstr ""
+msgstr "簡單、互動式的時間軸允許使用者處裡各種種類的媒體文件。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:31
 msgid "Make a timeline?"
-msgstr ""
+msgstr "新增時間軸？"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:33
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:36
@@ -9575,120 +9503,112 @@ msgstr "外掛程式 \"inlinkepopups\" 必須開啟"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:34
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:37
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:43
-#, fuzzy
 msgid "jQuery is required"
-msgstr "被需要"
+msgstr "jQuery是必要的。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:2
 msgid "Games (hangman...)"
-msgstr ""
+msgstr "遊戲（劊子手 hangman...）"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:8
 msgid "Please enable JavaScript to play this game."
-msgstr ""
+msgstr "請啟用JaveScript來進行遊戲。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:9
-#, fuzzy
 msgid "Accessibility"
-msgstr "無障礙說明"
+msgstr "無障礙功能"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:10
 msgid "These games require JavaScript."
-msgstr ""
+msgstr "這些遊戲需要JavaScript。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:11
 msgid "This is the message that the users with no JavaScript will see:"
-msgstr ""
+msgstr "這是沒有啟用JavaScript的使用者，會看到的訊息。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
-#, fuzzy
 msgid "Message:"
-msgstr "用法"
+msgstr "訊息："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
 msgid "You can change it at any time."
-msgstr ""
+msgstr "您可以隨時改變它。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:14
 msgid "Provide a warning to users who have JavaScript disabled (Accessibility)."
-msgstr ""
+msgstr "當使用者禁用JavaScript時，給予使用者一個警告。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:17
 msgid "Guess letters to complete each word."
-msgstr ""
+msgstr "猜字母來完成每個單字。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:19
 msgid "Automatically include capital letters"
-msgstr ""
+msgstr "自動包含大寫字母。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:20
 msgid "Case sensitive"
-msgstr ""
+msgstr "區分大小寫"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:21
-#, fuzzy
 msgid "abcdefghijklmnñopqrstuvwxyz"
-msgstr "abcdefghijklmnopqrstuvwxyz"
+msgstr "abcdefghijklmnñopqrstuvwxyz"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:22
-#, fuzzy
 msgid "Words to guess"
 msgstr "要猜的單字"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:23
-#, fuzzy
 msgid "Word to guess"
 msgstr "要猜的單字"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:24
-#, fuzzy
 msgid "Hint or definition"
-msgstr "終結者"
+msgstr "提示或是定義"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:25
-#, fuzzy
 msgid "Please write the Alphabet to Select From"
-msgstr "選取區的字母"
+msgstr "請寫出要選擇的字母"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:26
 msgid "A word to guess is missing"
-msgstr ""
+msgstr "要猜的單字未找到"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:27
 msgid "A hint or definition is missing"
-msgstr ""
+msgstr "提示或定義未找到"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:28
 msgid "Please add at least one word to guess"
-msgstr ""
+msgstr "請至少添加一個字詞以供猜測。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:29
 msgid "Write the list of letters and/or numbers to choose from."
-msgstr ""
+msgstr "寫下字母（或）數字以供選擇。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:30
 msgid "You may include capital letters or they can be automatically included."
-msgstr ""
+msgstr "您可以手動包含大小寫字母，或是可以利用程式自動處理。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:31
 msgid "Choose if you want the game to be case sensitive."
-msgstr ""
+msgstr "您的遊戲需要區分大小寫嗎？"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:32
 msgid "Add at least one word to guess (question or definition + word)."
-msgstr ""
+msgstr "請至少添加一個字詞以供猜測（問題或是定義+單字）。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:33
 msgid "You may delete the game from the editor itself."
-msgstr ""
+msgstr "您可以在編輯器中刪除遊戲。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:34
 msgid "Don't forget to check the Accessibility tab."
-msgstr ""
+msgstr "別忘了檢查無障礙設定的分頁。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:38
 msgid "Error recovering data"
-msgstr ""
+msgstr "回復資料時發生錯誤。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:4
 msgid "LaTeX to Math for eXe"
@@ -10371,13 +10291,13 @@ msgstr "無法產生預覽"
 msgid ""
 "For Web browsers that do not support this video, a link to the video file"
 " will be displayed."
-msgstr ""
+msgstr "不支援這個影片的瀏覽器，會收到並顯示一個指向此影片檔的連結。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:9
 msgid ""
 "For Web browsers that do not support this audio, a link to the audio file"
 " will be displayed."
-msgstr ""
+msgstr "不支援這個聲音的瀏覽器，會收到並顯示一個指向此聲音檔的連結。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:10
 msgid "Use JavaScript player"
@@ -10397,7 +10317,7 @@ msgstr "使用控制"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:26
 msgid "QuickTime (mov, mpeg)"
-msgstr ""
+msgstr "QuickTime 影片檔 (mov, mpeg)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:3
 msgid "Insert HTML code as text"
@@ -10417,47 +10337,42 @@ msgid "Include wrapper (improves presentation)"
 msgstr "包含包裝（改善呈現方式）"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#, fuzzy
 msgid "Markup language"
-msgstr "目標語言"
+msgstr "標記語言"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
-#, fuzzy
 msgid "Please select a language"
-msgstr "選擇語言。"
+msgstr "選請選擇一個語言："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
 msgid "Markup (HTML, etc.)"
-msgstr ""
+msgstr "標記語言（如 HTML 等）"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:14
-#, fuzzy
 msgid "C type"
-msgstr "Doctype"
+msgstr "C type"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
-#, fuzzy
 msgid "Light"
-msgstr "右"
+msgstr "淺"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
 msgid "Dark"
-msgstr ""
+msgstr "深"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:18
 msgid "Line numbers"
-msgstr ""
+msgstr "行數"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:19
-#, fuzzy
 msgid "Line highlight"
-msgstr "突顯"
+msgstr "行突顯"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Find What"
-msgstr "尋找什麼"
+msgstr "尋找"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace with"
@@ -10813,188 +10728,170 @@ msgstr "%Y-%m-%d %H:%M:%S"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:3
 msgid "Tooltip"
-msgstr ""
+msgstr "小工具提示"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:4
 msgid "Display the link title, a term definition or content from another page."
-msgstr ""
+msgstr "顯示連結標題（從另一頁面取得專有名詞解釋、內容）"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:6
 msgid "Behaviour"
-msgstr ""
+msgstr "行為"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
-#, fuzzy
 msgid "Link"
-msgstr "閃爍"
+msgstr "連結"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
-#, fuzzy
 msgid "Instructions:"
-msgstr "說明"
+msgstr "指示："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
 msgid "Create a Page with a Free Text iDevice."
-msgstr ""
+msgstr "利用一個Free Text iDevice來新建頁面。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:12
-#, fuzzy
 msgid "No selection and not in link"
-msgstr "顯示描述與連結"
+msgstr "沒有選擇且無連結。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
-#, fuzzy
 msgid "Pages"
-msgstr "大"
+msgstr "頁面"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
-#, fuzzy
 msgid "Link title"
-msgstr "Wiki 文章"
+msgstr "連結標題"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
 msgid "Tooltip title"
-msgstr ""
+msgstr "工具提示標題"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:20
 msgid "Plain text. You can add a title."
-msgstr ""
+msgstr "純文字。您可以新增一個標題。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:21
 msgid "The tooltip will show the Link title."
-msgstr ""
+msgstr "這個工具提示會顯示連結標題。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
-#, fuzzy
 msgid "Definition"
-msgstr "終結者"
+msgstr "定義"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
 msgid "The term could not be found"
-msgstr ""
+msgstr "找不到此關鍵字。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:26
 msgid ""
 "Write the term and its definition. You may use HTML and edit it in the "
 "editor."
-msgstr ""
+msgstr "寫下字詞與其定義。您可以使用HTML並在編輯器中編輯。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
-#, fuzzy
 msgid "Definition:"
-msgstr "終結者"
+msgstr "定義："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
 msgid "The tooltip will show the term and its definition."
-msgstr ""
+msgstr "這個工具提示會顯示專有名詞以及其定義。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:29
-#, fuzzy
 msgid "See definition"
-msgstr "終結者"
+msgstr "觀看定義"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/tools/style-designer/langs/en.js:40
-#, fuzzy
 msgid "Page"
-msgstr "大"
+msgstr "頁面"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
 msgid "Show the content of the first Free Text iDevice in the specified page."
-msgstr ""
+msgstr "在指定的頁面中，顯示第一個Free Text iDevice的內容。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:33
 msgid "Define the Link: Select that page."
-msgstr ""
+msgstr "定義連結：選擇該頁面。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:34
-#, fuzzy
 msgid "The tooltip will show the content of the Free Text iDevice."
-msgstr "此資源的內容的主題。"
+msgstr "此工具提示會顯示Free Text iDevice的內容。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:36
 msgid "Glossary"
-msgstr ""
+msgstr "詞彙表"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:37
 msgid "Choose a page. Add a Free Text iDevice with a Definition List in it."
-msgstr ""
+msgstr "選擇一個頁面。利用定義列表中的定義新增一個Free Text iDevice。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:38
-#, fuzzy
 msgid "Definition List button"
-msgstr "定義描述"
+msgstr "定義列表按鈕"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:39
 msgid "Use the \"Definition List\" button to add terms and definitions:"
-msgstr ""
+msgstr "使用\"定義列表\"來新增名詞與定義："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:40
 msgid "Define the Link: Select the page where the definitions are."
-msgstr ""
+msgstr "定義連結：選擇定義所在的頁面。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:41
 msgid "The tooltip will show the term definition."
-msgstr ""
+msgstr "工具提示會顯示該名詞的定義。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:44
-#, fuzzy
 msgid "The Link is required"
-msgstr "被需要"
+msgstr "需要指定的連結"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
-#, fuzzy
 msgid "Please select a Page"
-msgstr "請選擇一個 .flv 檔。"
+msgstr "請選擇一個頁面"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
 msgid "The Link title is required"
-msgstr ""
+msgstr "需要指定連結標題。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:47
-#, fuzzy
 msgid "Please write the Definition"
-msgstr "終結者"
+msgstr "請寫下定義"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:49
 msgid "Close behaviour:"
-msgstr ""
+msgstr "結束行為："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:50
 msgid "Automatically close the tooltip when moving the mouse out of the link"
-msgstr ""
+msgstr "當滑鼠移開連結時，自動關閉工具提示。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:51
 msgid "Close button: It will close the tooltip when clicked"
-msgstr ""
+msgstr "關閉按鈕：點擊後，會關閉工具提示。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:52
 msgid "Link behaviour:"
-msgstr ""
+msgstr "連結行為："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:53
-#, fuzzy
 msgid "Open in the same window"
-msgstr "在同一個視窗裡開啟連結"
+msgstr "在同一個視窗裡開啟"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:54
-#, fuzzy
 msgid "Open in a new window"
 msgstr "在新視窗開啟"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:56
 msgid "Change the styling:"
-msgstr ""
+msgstr "改變樣式："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:63
-#, fuzzy
 msgid "Rounded"
-msgstr "音效"
+msgstr "弧邊"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:64
-#, fuzzy
 msgid "Shadow"
-msgstr "無陰影"
+msgstr "陰影"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Insert Current Date/Time"
@@ -11361,7 +11258,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
 #: exe/webui/scripts/tinymce_4_settings.js:297
 #: exe/webui/scripts/tinymce_4_settings.js:322
-#, fuzzy
 msgid "Editor"
 msgstr "編輯者"
 
@@ -11369,11 +11265,11 @@ msgstr "編輯者"
 #: exe/webui/scripts/tinymce_4_settings.js:19
 #: exe/webui/scripts/tinymce_4_settings.js:20
 msgid "2 columns"
-msgstr ""
+msgstr "2行"
 
 #: exe/webui/scripts/tinymce_4_settings.js:21
 msgid "3 columns"
-msgstr ""
+msgstr "3行"
 
 #: exe/webui/scripts/tinymce_4_settings.js:107
 msgid "Inline"
@@ -11381,11 +11277,11 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4_settings.js:108
 msgid "Bold"
-msgstr ""
+msgstr "粗體"
 
 #: exe/webui/scripts/tinymce_4_settings.js:109
 msgid "Italic"
-msgstr ""
+msgstr "斜體"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4_settings.js:110
@@ -11435,102 +11331,95 @@ msgstr "新增另一個要排序的項目"
 
 #: exe/webui/styledesigner.py:54
 msgid "Error saving style. "
-msgstr ""
+msgstr "儲存樣式時發生錯誤。"
 
 #: exe/webui/styledesigner.py:62
 msgid "Error creating style. "
-msgstr ""
+msgstr "建立樣式時發生錯誤。"
 
 #: exe/webui/styledesigner.py:71
 msgid "Error creating style, local style already exists. "
-msgstr ""
+msgstr "建立樣式時發生錯誤，本地樣式已經存在。"
 
 #: exe/webui/styledesigner.py:126
-#, fuzzy, python-format
 msgid "Style %s successfully created!"
-msgstr "檔案 '%s' 已成功匯入到 '%s'。"
+msgstr "樣式 %s 已成功建立！"
 
 #: exe/webui/styledesigner.py:134
-#, fuzzy, python-format
 msgid "Style %s successfully saved!"
-msgstr "檔案 '%s' 已成功匯入到 '%s'。"
+msgstr "樣式 %s 已成功儲存！"
 
 #: exe/webui/styledesigner.py:206
-#, fuzzy, python-format
 msgid "Style directory %s already exists"
-msgstr "樣式名稱已存在：%s"
+msgstr "樣式資料夾 %s 已存在"
 
 #: exe/webui/styledesigner.py:268
-#, fuzzy
 msgid "The style name already exists"
-msgstr "樣式名稱已存在：%s"
+msgstr "樣式名稱已存在"
 
 #: exe/webui/styledesigner.py:285
 msgid "Error saving style, style directory does not exist"
-msgstr ""
+msgstr "儲存樣式時發生錯誤，樣式文件夾不存在。"
 
 #: exe/webui/stylemanagerpage.py:151 exe/webui/stylemanagerpage.py:308
 msgid "Success"
 msgstr "成功"
 
 #: exe/webui/stylemanagerpage.py:152
-#, fuzzy
 msgid "Successfully imported style"
-msgstr "成功匯入樣式：%s"
+msgstr "成功匯入樣式"
 
 #: exe/webui/stylemanagerpage.py:156
 #, python-format
 msgid "Error while installing style: %s"
-msgstr ""
+msgstr "安裝樣式 %s 時發生錯誤。"
 
 #: exe/webui/stylemanagerpage.py:268
 msgid "Error while getting styles list from the repository"
-msgstr ""
+msgstr "從樣式庫取得樣式列表時發生錯誤。"
 
 #: exe/webui/stylemanagerpage.py:309
 msgid "Style successfully downloaded and installed"
-msgstr ""
+msgstr "成功下載、安裝樣式。"
 
 #: exe/webui/stylemanagerpage.py:319
 msgid "Error while installing style"
-msgstr ""
+msgstr "安裝樣式時發生錯誤。"
 
 #: exe/webui/stylemanagerpage.py:337
 msgid "Overwrite local version of this style?"
-msgstr ""
+msgstr "覆寫本地版本之樣式？"
 
 #: exe/webui/stylemanagerpage.py:339
-#, fuzzy
 msgid "Style already exists. "
-msgstr "樣式名稱已存在：%s"
+msgstr "樣式名稱已存在。"
 
 #: exe/webui/stylemanagerpage.py:340
 msgid ""
 "Importing this style will overwrite local style, this action cannot be "
 "undone. "
-msgstr ""
+msgstr "匯入此樣式會覆寫本機存在的樣式。此動作無法復原。"
 
 #: exe/webui/stylemanagerpage.py:341
-#, fuzzy
 msgid "Are you sure you want to install remote style?. "
-msgstr "您確定要清除所有內容嗎？"
+msgstr "您確定要安裝遠端樣式嗎？"
 
 #: exe/webui/stylemanagerpage.py:363
 msgid "Error when downloading style from repository"
-msgstr ""
+msgstr "從樣式庫下載樣式時發上錯誤。"
 
 #: exe/webui/stylemanagerpage.py:373 exe/webui/stylemanagerpage.py:384
 msgid "URL not valid. "
-msgstr ""
+msgstr "URL連結錯誤。"
 
 #: exe/webui/stylemanagerpage.py:421
 msgid "Style download URL not found"
-msgstr ""
+msgstr "無法找到樣式下載連結。"
 
 #: exe/webui/stylemanagerpage.py:430
 #, python-format
 msgid "Error when getting style URL from repository styles list: %s"
-msgstr ""
+msgstr "從樣式庫取得樣式 %s 之下載連結時發生錯誤。"
 
 #: exe/webui/stylemanagerpage.py:468
 #, python-format
@@ -11544,295 +11433,255 @@ msgstr "無法匯出樣式：%s"
 
 #: exe/webui/stylemanagerpage.py:480
 msgid "Style deleted correctly"
-msgstr "樣式已正確刪除"
+msgstr "樣式已刪除"
 
 #: exe/webui/stylemanagerpage.py:483
 msgid "An unexpected error has occurred"
 msgstr "發生未知的錯誤"
 
 #: exe/webui/tools/style-designer/js/app.js:1275
-#, fuzzy
 msgid "Create new style"
-msgstr "要刪除樣式嗎？"
+msgstr "建立新的樣式"
 
 #: exe/webui/tools/style-designer/js/app.js:1276
-#, fuzzy
 msgid "Name the new style"
-msgstr "要刪除樣式嗎？"
+msgstr "為新的樣式命名"
 
 #: exe/webui/tools/style-designer/js/app.js:1298
 msgid "Style Designer windows will be closed. "
-msgstr ""
+msgstr "樣式設計視窗會被關閉。"
 
 #: exe/webui/tools/style-designer/js/app.js:1301
 msgid "Page will be reloaded. "
-msgstr ""
+msgstr "頁面將重新整理。"
 
 #: exe/webui/tools/style-designer/langs/en.js:12
-#, fuzzy
 msgid "General settings"
 msgstr "一般設定"
 
 #: exe/webui/tools/style-designer/langs/en.js:13
-#, fuzzy
 msgid "Page width"
-msgstr "取代為"
+msgstr "頁面寬度"
 
 #: exe/webui/tools/style-designer/langs/en.js:14
-#, fuzzy
 msgid "Percentage"
-msgstr "實驗"
+msgstr "百分比"
 
 #: exe/webui/tools/style-designer/langs/en.js:15
-#, fuzzy
 msgid "Pixels"
-msgstr "寬度 (像素)"
+msgstr "像素"
 
 #: exe/webui/tools/style-designer/langs/en.js:16
-#, fuzzy
 msgid "Page position"
-msgstr "位置"
+msgstr "頁面位置"
 
 #: exe/webui/tools/style-designer/langs/en.js:19
-#, fuzzy
 msgid "Shadow color"
-msgstr "要顯示分數嗎？"
+msgstr "陰影顏色"
 
 #: exe/webui/tools/style-designer/langs/en.js:20
-#, fuzzy
 msgid "Border width"
-msgstr "邊界"
+msgstr "邊界寬度"
 
 #: exe/webui/tools/style-designer/langs/en.js:21
-#, fuzzy
 msgid "Border color"
-msgstr "邊框顏色"
+msgstr "邊界顏色"
 
 #: exe/webui/tools/style-designer/langs/en.js:22
-#, fuzzy
 msgid "Text and Links"
-msgstr "建索引，並且跟隨連結"
+msgstr "文字與連結"
 
 #: exe/webui/tools/style-designer/langs/en.js:25
-#, fuzzy
 msgid "Text color"
 msgstr "文字顏色"
 
 #: exe/webui/tools/style-designer/langs/en.js:27
-#, fuzzy
 msgid "Links"
-msgstr "閃爍"
+msgstr "連結"
 
 #: exe/webui/tools/style-designer/langs/en.js:28
-#, fuzzy
 msgid "Links color"
 msgstr "連結顏色"
 
 #: exe/webui/tools/style-designer/langs/en.js:30
-#, fuzzy
 msgid "Style description"
-msgstr "描述"
+msgstr "樣式描述"
 
 #: exe/webui/tools/style-designer/langs/en.js:32
-#, fuzzy
 msgid "Author URL"
-msgstr "作者"
+msgstr "作者網址"
 
 #: exe/webui/tools/style-designer/langs/en.js:33
-#, fuzzy
 msgid "Style name"
-msgstr "檔案名稱："
+msgstr "樣式名稱"
 
 #: exe/webui/tools/style-designer/langs/en.js:34
-#, fuzzy
 msgid "Save to name the new Style."
-msgstr "要刪除樣式嗎？"
+msgstr "儲存以命名新的樣式。"
 
 #: exe/webui/tools/style-designer/langs/en.js:35
-#, fuzzy
 msgid "Style version"
-msgstr "有版本"
+msgstr "樣式版本"
 
 #: exe/webui/tools/style-designer/langs/en.js:36
 msgid ""
 "Style version number is automatically increased when you save, use this "
 "selector to reset it."
-msgstr ""
+msgstr "樣式版本號已經在您儲存時自動增加，利用此選擇器來重置設定。"
 
 #: exe/webui/tools/style-designer/langs/en.js:38
 msgid "(license of the original Style)"
-msgstr ""
+msgstr "(原始樣式的授權)"
 
 #: exe/webui/tools/style-designer/langs/en.js:41
 msgid "Page background (only Web Site)"
-msgstr ""
+msgstr "頁面背景（只適用於網頁）"
 
 #: exe/webui/tools/style-designer/langs/en.js:43
-#, fuzzy
 msgid "Background color"
 msgstr "背景顏色"
 
 #: exe/webui/tools/style-designer/langs/en.js:44
-#, fuzzy
 msgid "Select image"
 msgstr "選擇影像"
 
 #: exe/webui/tools/style-designer/langs/en.js:48
 msgid "Left - Top"
-msgstr ""
+msgstr "左－上"
 
 #: exe/webui/tools/style-designer/langs/en.js:49
-#, fuzzy
 msgid "Left - Center"
-msgstr "選擇授權方式。"
+msgstr "左－中"
 
 #: exe/webui/tools/style-designer/langs/en.js:50
-#, fuzzy
 msgid "Left - Bottom"
-msgstr "文字底端"
+msgstr "左－下"
 
 #: exe/webui/tools/style-designer/langs/en.js:51
 msgid "Center - Center"
-msgstr ""
+msgstr "中－中"
 
 #: exe/webui/tools/style-designer/langs/en.js:52
 msgid "Center - Top"
-msgstr ""
+msgstr "中－上"
 
 #: exe/webui/tools/style-designer/langs/en.js:53
-#, fuzzy
 msgid "Center - Bottom"
-msgstr "文字底端"
+msgstr "中－下"
 
 #: exe/webui/tools/style-designer/langs/en.js:54
 msgid "Right - Top"
-msgstr ""
+msgstr "右－上"
 
 #: exe/webui/tools/style-designer/langs/en.js:55
-#, fuzzy
 msgid "Right - Center"
-msgstr "置中"
+msgstr "右－中"
 
 #: exe/webui/tools/style-designer/langs/en.js:56
 msgid "Right - Bottom"
-msgstr ""
+msgstr "右－下"
 
 #: exe/webui/tools/style-designer/langs/en.js:61
 msgid "Only vertical"
-msgstr ""
+msgstr "只有鉛直方向"
 
 #: exe/webui/tools/style-designer/langs/en.js:62
 msgid "Only horizontal"
-msgstr ""
+msgstr "只有水平方向"
 
 #: exe/webui/tools/style-designer/langs/en.js:63
 msgid "Contents area background"
-msgstr ""
+msgstr "內容區域背景"
 
 #: exe/webui/tools/style-designer/langs/en.js:64
 msgid "The \"Page background\" will only be used when exporting as Web Site."
-msgstr ""
+msgstr "\"頁面背景\"只會在輸出成網頁時被利用。"
 
 #: exe/webui/tools/style-designer/langs/en.js:65
 msgid ""
 "The \"Contents area background\" will also be used when exporting as IMS,"
 " SCORM or ePub3."
-msgstr ""
+msgstr "\"內容背景\"也會在輸出成IMS、SCORM、ePub3類型時被使用。"
 
 #: exe/webui/tools/style-designer/langs/en.js:67
-#, fuzzy
 msgid "Header and Footer"
-msgstr "閱讀並完成"
+msgstr "頁首及頁尾"
 
 #: exe/webui/tools/style-designer/langs/en.js:71
-#, fuzzy
 msgid "Project title"
-msgstr "專案屬性"
+msgstr "專案標題"
 
 #: exe/webui/tools/style-designer/langs/en.js:72
 msgid "Hide the title"
-msgstr ""
+msgstr "隱藏標題"
 
 #: exe/webui/tools/style-designer/langs/en.js:74
 msgid "same font as the page"
-msgstr ""
+msgstr "與頁面使用相同字型"
 
 #: exe/webui/tools/style-designer/langs/en.js:77
-#, fuzzy
 msgid "Top margin"
 msgstr "上邊界"
 
 #: exe/webui/tools/style-designer/langs/en.js:78
-#, fuzzy
 msgid "Font size"
 msgstr "字型大小："
 
 #: exe/webui/tools/style-designer/langs/en.js:80
-#, fuzzy
 msgid "Navigation"
-msgstr "導覽圖"
+msgstr "導覽"
 
 #: exe/webui/tools/style-designer/langs/en.js:81
 msgid "Main menu"
-msgstr ""
+msgstr "主要工具選單"
 
 #: exe/webui/tools/style-designer/langs/en.js:82
 msgid "Hide the menu"
-msgstr ""
+msgstr "隱藏工具選單"
 
 #: exe/webui/tools/style-designer/langs/en.js:83
-#, fuzzy
 msgid "Horizontal navigation"
-msgstr "水平位置"
+msgstr "水平導覽"
 
 #: exe/webui/tools/style-designer/langs/en.js:85
-#, fuzzy
 msgid "Active background"
-msgstr "要鋪排背景影像嗎？"
+msgstr "啟用背景"
 
 #: exe/webui/tools/style-designer/langs/en.js:86
-#, fuzzy
 msgid "Active link color"
-msgstr "作用中顏色"
+msgstr "啟用連結顏色"
 
 #: exe/webui/tools/style-designer/langs/en.js:87
-#, fuzzy
 msgid "Other navigation options"
-msgstr "導覽圖"
+msgstr "其他導覽選項"
 
 #: exe/webui/tools/style-designer/langs/en.js:88
-#, fuzzy
 msgid "Use icons"
-msgstr "秒"
+msgstr "使用圖示"
 
 #: exe/webui/tools/style-designer/langs/en.js:90
-#, fuzzy
 msgid "Icons color"
-msgstr "連結顏色"
+msgstr "圖示顏色"
 
 #: exe/webui/tools/style-designer/langs/en.js:91
-#, fuzzy
 msgid "Grey"
-msgstr "圖片"
+msgstr "灰色"
 
 #: exe/webui/tools/style-designer/langs/en.js:95
-#, fuzzy
 msgid "With emphasis"
-msgstr "不強調"
+msgstr "強調"
 
 #: exe/webui/tools/style-designer/langs/en.js:96
-#, fuzzy
 msgid "Title color"
-msgstr "作用中顏色"
+msgstr "標題顏色"
 
 #: exe/webui/tools/style-designer/langs/en.js:97
-#, fuzzy
 msgid "Title background"
-msgstr "要鋪排背景影像嗎？"
+msgstr "標題背景"
 
 #: exe/webui/tools/style-designer/langs/en.js:98
 msgid "No emphasis (Free Text...)"
-msgstr ""
+msgstr "無強調（純文字）"
 
 #: exe/webui/tools/style-designer/langs/en.js:99
 msgid "Show box"
@@ -11840,182 +11689,178 @@ msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:100
 msgid "Icon to hide/show the iDevice"
-msgstr ""
+msgstr "顯示/隱藏iDevice之圖示"
 
 #: exe/webui/tools/style-designer/langs/en.js:103
 msgid "This code will be included at the end of content.css"
-msgstr ""
+msgstr "此原始碼會被包含在content.css的結尾。"
 
 #: exe/webui/tools/style-designer/langs/en.js:104
 msgid "content.css is included any time you export, and always after base.css."
-msgstr ""
+msgstr "content.css會在您輸出時，被包含在base.css之後。"
 
 #: exe/webui/tools/style-designer/langs/en.js:105
 msgid "This code will be included at the end of nav.css"
-msgstr ""
+msgstr "此原始碼會被包含在nav.css的結尾。"
 
 #: exe/webui/tools/style-designer/langs/en.js:106
 msgid ""
 "nav.css is only included when you export as Web Site, and always after "
 "content.css."
-msgstr ""
+msgstr "nav.css 只會在您輸出成網頁時被包含在content.css之後。"
 
 #: exe/webui/tools/style-designer/langs/en.js:107
 msgid "content.css content"
-msgstr ""
+msgstr "content.css內容"
 
 #: exe/webui/tools/style-designer/langs/en.js:108
 msgid "nav.css content"
-msgstr ""
+msgstr "nav.css內容"
 
 #: exe/webui/tools/style-designer/langs/en.js:109
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
-msgstr ""
+msgstr "在不支援CSS3的瀏覽器中（如IE6,IE7)，陰影特效不會啟用"
 
 #: exe/webui/tools/style-designer/langs/en.js:112
-#, fuzzy
 msgid "Finish"
-msgstr "芬蘭語"
+msgstr "完成"
 
 #: exe/webui/tools/style-designer/langs/en.js:114
-#, fuzzy
 msgid "Save as"
-msgstr "非常簡單"
+msgstr "儲存為"
 
 #: exe/webui/tools/style-designer/langs/en.js:116
 msgid "Save the current design and close the Style Designer?"
-msgstr ""
+msgstr "儲存目前的設計並關閉樣式設計師？"
 
 #: exe/webui/tools/style-designer/langs/en.js:117
 msgid "Save all changes? This cannot be undone."
-msgstr ""
+msgstr "儲存所有變更？此步驟無法復原。"
 
 #: exe/webui/tools/style-designer/langs/en.js:118
-#, fuzzy
 msgid "Style name:"
-msgstr "檔案名稱："
+msgstr "樣式名稱："
 
 #: exe/webui/tools/style-designer/langs/en.js:119
 msgid "Your browser is not compatible with this tool."
-msgstr ""
+msgstr "您的瀏覽器與此工具不相容。"
 
 #: exe/webui/tools/style-designer/langs/en.js:120
 msgid "The Hide/Show menu option is disabled in the Style Designer"
-msgstr ""
+msgstr "顯示/隱藏選單選項已經在樣式設計師中被禁用。"
 
 #: exe/webui/tools/style-designer/langs/en.js:121
 msgid ""
 "Please, make your browser bigger. The Style Designer requires at least a "
 "1024x768 screen resolution"
-msgstr ""
+msgstr "請將瀏覽器視窗放大。此設計師需要至少1024x768的螢幕解析度。"
 
 #: exe/webui/tools/style-designer/langs/en.js:122
 msgid "The Style Designer window is not open."
-msgstr ""
+msgstr "樣式設計師的視窗未被打開。"
 
 #: exe/webui/tools/style-designer/langs/en.js:123
 msgid "This window will be closed. Please restart the tool."
-msgstr ""
+msgstr "此視窗將被關閉。請重新開啟工具。"
 
 #: exe/webui/tools/style-designer/langs/en.js:126
 msgid "Undo changes since last time you saved? This cannot be undone. "
-msgstr ""
+msgstr "復原改變至您上次存檔的狀態？此步驟無法復原。"
 
 #: exe/webui/tools/style-designer/langs/en.js:133
 msgid "Drag markers to pick a color"
-msgstr ""
+msgstr "拖曳游標選擇顏色"
 
 #: exe/webui/tools/style-designer/langs/en.js:135
-#, fuzzy
 msgid "Current"
-msgstr "表達"
+msgstr "目前"
 
 #: exe/webui/tools/style-designer/langs/en.js:141
 msgid "New Color - Press OK to Commit"
-msgstr ""
+msgstr "新增顏色－點選OK以確認"
 
 #: exe/webui/tools/style-designer/langs/en.js:142
 msgid "Click to revert to original color"
-msgstr ""
+msgstr "點選以還原至原始顏色"
 
 #: exe/webui/tools/style-designer/langs/en.js:145
 msgid "Commit to this color selection"
-msgstr ""
+msgstr "確認選擇此顏色"
 
 #: exe/webui/tools/style-designer/langs/en.js:146
 msgid "Cancel and revert to original color"
-msgstr ""
+msgstr "取消且還原至原始顏色"
 
 #: exe/webui/tools/style-designer/langs/en.js:149
 msgid "Set to Hue color mode"
-msgstr ""
+msgstr "設為色相模式"
 
 #: exe/webui/tools/style-designer/langs/en.js:150
 msgid "Enter a Hue value (0-360º)"
-msgstr ""
+msgstr "輸入色相值（0-360º）"
 
 #: exe/webui/tools/style-designer/langs/en.js:153
 msgid "Set to Saturation color mode"
-msgstr ""
+msgstr "設為飽和度顏色模式"
 
 #: exe/webui/tools/style-designer/langs/en.js:154
 msgid "Enter a Saturation value (0-100%)"
-msgstr ""
+msgstr "輸入飽和度(0-100%)："
 
 #: exe/webui/tools/style-designer/langs/en.js:157
 msgid "Set to Value color mode"
-msgstr ""
+msgstr "設定為顏色設置模式"
 
 #: exe/webui/tools/style-designer/langs/en.js:158
 msgid "Enter a Value (0-100%)"
-msgstr ""
+msgstr "輸入值(0-100%)："
 
 #: exe/webui/tools/style-designer/langs/en.js:161
 msgid "Set to Red color mode"
-msgstr ""
+msgstr "設定為紅色模式"
 
 #: exe/webui/tools/style-designer/langs/en.js:162
 msgid "Enter a Red value (0-255)"
-msgstr ""
+msgstr "輸入紅色值(0-255)："
 
 #: exe/webui/tools/style-designer/langs/en.js:165
 msgid "Set to Green color mode"
-msgstr ""
+msgstr "設定為綠色模式"
 
 #: exe/webui/tools/style-designer/langs/en.js:166
 msgid "Enter a Green value (0-255)"
-msgstr ""
+msgstr "輸入綠色值(0-255)："
 
 #: exe/webui/tools/style-designer/langs/en.js:169
 msgid "Set to Blue color mode"
-msgstr ""
+msgstr "設定為藍色模式"
 
 #: exe/webui/tools/style-designer/langs/en.js:170
 msgid "Enter a Blue value (0-255)"
-msgstr ""
+msgstr "輸入藍色值(0-255)："
 
 #: exe/webui/tools/style-designer/langs/en.js:173
 msgid "Set to Alpha color mode"
-msgstr ""
+msgstr "設置為Alpha顏色模式："
 
 #: exe/webui/tools/style-designer/langs/en.js:174
 #: exe/webui/tools/style-designer/langs/en.js:178
 msgid "Enter an Alpha value (0-100)"
-msgstr ""
+msgstr "輸入Alpha值(0-100)："
 
 #: exe/webui/tools/style-designer/langs/en.js:177
 msgid "Enter an Hex color value (#000000-#ffffff)"
-msgstr ""
+msgstr "輸入16進制顏色值(#000000-#ffffff)："
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
 msgid "True"
-msgstr "真"
+msgstr "正確"
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:218
 #: exe/webui/truefalseelement.py:264
 msgid "False"
-msgstr "假"
+msgstr "錯誤"
 
 #: exe/webui/wikipediablock.py:115
 msgid "English Wikipedia Article"
@@ -12113,7 +11958,7 @@ msgstr "自己的站台"
 msgid ""
 "If you choose this option, the import process will take the texts from "
 "source language instead of target language."
-msgstr ""
+msgstr "若您選擇此選項，匯入過程會使用原始語言而不是目標語言。"
 
 #: exe/webui/tools/style-designer/langs/en.js:58
 #: exe/webui/tools/style-designer/langs/en.js:127
@@ -12127,18 +11972,17 @@ msgstr "確定"
 msgid ""
 "Package is old. Please upgrade it (using File..Open followed by "
 "File..Save As) before attempting to insert it into another package!"
-msgstr ""
+msgstr "套件版本過舊。請在插入至其他包裝時更新！"
 
 #: twisted/persisted/styles.py:437
 msgid ""
 "Unable to merge: duplicate Java Applet resource names exist (including: "
 "\"\"). Please see the log file for the names of ALL such problem "
 "resources."
-msgstr ""
+msgstr "無法合併：重複Java Applet 資源名稱（包含\"\"）。請看紀錄檔以檢查所有產生問題的資源。"
 
 #: twisted/persisted/styles.py:541
 msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
-msgstr ""
-
+msgstr "您的iDevices或是generic.data檔案是由更新版的eXe所建立。請更新eXe並再試一次。"
