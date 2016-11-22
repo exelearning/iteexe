@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2016-11-22 18:34+0100\n"
-"PO-Revision-Date: 2016-11-11 20:26+0100\n"
+"PO-Revision-Date: 2016-11-22 18:51+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -3446,7 +3446,7 @@ msgstr ""
 
 #: exe/exe_do:75
 msgid "Append  <input_file> elp package to <output_file> elp package"
-msgstr ""
+msgstr "Añadir el paquete .elp <fichero de entrada> al final del paquete .elp <fichero de salida>"
 
 #: exe/exe_do:80
 msgid "Set ELP field values. Example: -s style=Default,root.title='Root Node'"
@@ -3574,15 +3574,15 @@ msgstr "Las opciones --import y --export son mutuamente excluyentes."
 
 #: exe/exe_do:183
 msgid "Options --export and --append are mutually exclusive."
-msgstr ""
+msgstr "Las opciones --export y --append son mutuamente exclusivas."
 
 #: exe/exe_do:186
 msgid "Options --import and --append are mutually exclusive."
-msgstr ""
+msgstr "Las opciones --import y --append son mutuamente exclusivas."
 
 #: exe/exe_do:190
 msgid "No --append --export, --import, --set or --report option supplied."
-msgstr ""
+msgstr "No se ha especificado una opción --append, --export, --import, --set o --report."
 
 #: exe/exe_do:194
 msgid "No file input supplied."
@@ -3595,15 +3595,15 @@ msgstr "El número de argumentos proporcionado es incorrecto"
 #: exe/exe_do:205
 #, python-format
 msgid "Successfully appended '%s' to '%s'."
-msgstr ""
+msgstr "Se ha añadido con éxito '%s' a '%s'."
 
 #: exe/exe_do:207
 msgid "exe_do: error: Unable to append elp"
-msgstr ""
+msgstr "exe-do: error, no se ha podido añadir el elp"
 
 #: exe/exe_do:236 exe/export/cmdlineexporter.py:87
 msgid "Invalid input package"
-msgstr "Archivo de entrada no válido"
+msgstr "Paquete de entrada no válido"
 
 #: exe/exe_do:256
 #, python-format
@@ -3611,6 +3611,8 @@ msgid ""
 "exe_do: error: Unable to set values from '%s'.\n"
 "The     error was:"
 msgstr ""
+"exe_do: error - no se han podido fijar los valores tomados de '%s'.\n"
+"El error fue:"
 
 #: exe/exe_do:274
 #, python-format
@@ -3623,11 +3625,13 @@ msgid ""
 "exe_do: error: Unable to export from '%s'.\n"
 "The     error was:"
 msgstr ""
+"exe_do: error - no se ha podido exportar desde '%s'.\n"
+"El error fue:"
 
 #: exe/exe_do:285
 #, python-format
 msgid "File '%s' successfully imported to '%s'."
-msgstr "El archivo '%s' se ha exportado correctamente a '%s'."
+msgstr "El archivo '%s' se ha importado correctamente a '%s'."
 
 #: exe/exe_do:288
 #, python-format
@@ -3635,6 +3639,8 @@ msgid ""
 "exe_do: error: Unable to import '%s'.\n"
 "The     error was:"
 msgstr ""
+"exe_do: error - no se ha podido importar '%s'.\n"
+"El error fue:"
 
 #: exe/export/cmdlineexporter.py:73 exe/jsui/mainpage.py:304
 #: exe/jsui/mainpage.py:1112 exe/jsui/mainpage.py:1276
@@ -12805,4 +12811,3 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
-
