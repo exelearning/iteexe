@@ -10,24 +10,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2016-11-11 20:21+0100\n"
+"POT-Creation-Date: 2016-11-22 18:34+0100\n"
 "PO-Revision-Date: 2016-11-14 09:32+0200\n"
 "Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
+"Language: ca_ES\n"
 "Language-Team: LliureX\n"
-"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
 "Generated-By: Babel 2.3.4\n"
 
 #: exe/application.py:191
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
 msgstr ""
-"S'ha produït un error mentre es carregava el fitxer de configuració. S'ha "
-"guardat una còpia de seguretat en %s"
+"S'ha produït un error mentre es carregava el fitxer de configuració. S'ha"
+" guardat una còpia de seguretat en %s"
 
 #: exe/application.py:209
 #, python-format
@@ -52,8 +51,8 @@ msgid ""
 "or\n"
 "Users/<user name>/AppData/Roaming/exe on Windows 7"
 msgstr ""
-"eXeLearning, l'eina d'autoria d'aprenentatge electrònic EXtremadament fàcil "
-"d'utilitzar\n"
+"eXeLearning, l'eina d'autoria d'aprenentatge electrònic EXtremadament "
+"fàcil d'utilitzar\n"
 "Ús: %s [OPCION] [PACKAGE]\n"
 "  -V, --version    mostra la informació de la versió i ix\n"
 "  -h, --help       mostra l'ajuda i ix\n"
@@ -212,10 +211,10 @@ msgid ""
 " the file is. Learners can click on the attachment link and can download "
 "the attachment."
 msgstr ""
-"L'iDevice Adjunt s'utilitza per a adjuntar fitxers al contingut .elp. Per "
-"exemple, si teniu un fitxer PDF o un fitxer de presentació PPT (ODP) que "
-"voleu que l'alumnat mire, aquest fitxer es pot adjuntar i etiquetar per a "
-"indicar què és i la mida que té. L'alumnat pot fer clic en l'enllaç de "
+"L'iDevice Adjunt s'utilitza per a adjuntar fitxers al contingut .elp. Per"
+" exemple, si teniu un fitxer PDF o un fitxer de presentació PPT (ODP) que"
+" voleu que l'alumnat mire, aquest fitxer es pot adjuntar i etiquetar per "
+"a indicar què és i la mida que té. L'alumnat pot fer clic en l'enllaç de "
 "l'adjunt i baixar-lo."
 
 #: exe/engine/attachmentidevice.py:58
@@ -224,9 +223,10 @@ msgid ""
 "want to provide instructions on what you require the learner to do once "
 "the file is downloaded or how the material should be used."
 msgstr ""
-"Escriviu el text que voleu associar amb la baixada del fitxer. Podeu donar \n"
-"instruccions sobre què ha de fer l'alumnat amb el fitxer  baixat o com s'ha "
-"d'utilitzar el material."
+"Escriviu el text que voleu associar amb la baixada del fitxer. Podeu "
+"donar \n"
+"instruccions sobre què ha de fer l'alumnat amb el fitxer  baixat o com "
+"s'ha d'utilitzar el material."
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
@@ -249,11 +249,11 @@ msgid ""
 "attachment.</p><p>For example: <code>Sales Forecast.doc "
 "(500kb)</code></p>"
 msgstr ""
-"<p>Assigneu una etiqueta a cada fitxer adjunt. És útil incloure el tipus de "
-"fitxer; per exemple, pdf, doc (odt), ppt (odp), etc.</p> <p> També és molt "
-"recomanable incloure'n la mida per tal que quan s'exporte el fitxer a un "
-"lloc web, es tinga una idea del temps que tardarà en baixar el fitxer "
-"adjunt.</p> <p> Per exemple: <code>Vendes.odt (500 kb)</code> </p>"
+"<p>Assigneu una etiqueta a cada fitxer adjunt. És útil incloure el tipus "
+"de fitxer; per exemple, pdf, doc (odt), ppt (odp), etc.</p> <p> També és "
+"molt recomanable incloure'n la mida per tal que quan s'exporte el fitxer "
+"a un lloc web, es tinga una idea del temps que tardarà en baixar el "
+"fitxer adjunt.</p> <p> Per exemple: <code>Vendes.odt (500 kb)</code> </p>"
 
 #: exe/engine/attachmentidevice.py:105
 #, python-format
@@ -304,19 +304,22 @@ msgid ""
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
 "Un cas d'estudi és un iDevice que proveeix l'alumnat \n"
-"d'una simulació d'un concepte bàsic. A partir de situacions, generalment, \n"
-"basades en la realitat, l'alumnat ha de demostrar o descriure les accions "
-"que faria \n"
+"d'una simulació d'un concepte bàsic. A partir de situacions, generalment,"
+" \n"
+"basades en la realitat, l'alumnat ha de demostrar o descriure les accions"
+" que faria \n"
 "per a completar la tasca o resoldre la situació. El cas d'estudi \n"
-"permet a l'alumnat aplicar els seus coneixements i la seua experiència per a "
-"completar les tasques \n"
-"assignades. En dissenyar el cas d'estudi tingueu en compte el següent:<ul> \n"
+"permet a l'alumnat aplicar els seus coneixements i la seua experiència "
+"per a completar les tasques \n"
+"assignades. En dissenyar el cas d'estudi tingueu en compte el "
+"següent:<ul> \n"
 "<li>\t Quins elements d'aprenentatge es tracten en la història</li>\n"
 "<li>\t Quina preparació prèvia li cal a l'alumnat per a resoldre el cas "
 "d'estudi. </li>\n"
 "<li>\t On s'ha de col·locar el cas d'estudi en la resta del curs.</li>\n"
 "<li>\t Com interacciona l'alumnat entre si i amb els materials. \n"
-"P. ex: A l'aula, com poden els equips treballar diferents aspectes del cas, \n"
+"P. ex: A l'aula, com poden els equips treballar diferents aspectes del "
+"cas, \n"
 "i com es fa la posada en comú a la resta de la classe</li></ul> "
 
 #: exe/engine/casestudyidevice.py:219
@@ -330,7 +333,8 @@ msgid ""
 "in order to gain resolution of the situation."
 msgstr ""
 "Crea la història del cas. Un bon cas és aquell \n"
-"que descriu una controvèrsia o mostra una escena descrivint els caràcters \n"
+"que descriu una controvèrsia o mostra una escena descrivint els caràcters"
+" \n"
 "involucrats en la situació. També ha de permetre les accions \n"
 "encaminades a resoldre el conflicte de la situació."
 
@@ -660,12 +664,13 @@ msgid ""
 " </li></ol>"
 msgstr ""
 "<p> Els exercicis de compleció són texts o frases en què l'alumnat ha "
-"d'omplir un text amb les paraules que hi falten. S'utilitzen sovint per als "
-"propòsits següents:</p><ol><li> Per a avaluar els coneixements dels "
-"conceptes principals (així es pot fer un preexamen, un exercici formatiu o "
-"una avaluació sumatòria).</li><li>Per a avaluar la comprensió "
-"lectora.</li><li> Per a avaluar el coneixement del vocabulari.</li><li> Per "
-"a avaluar la formació de mots i/o la competència gramatical.></li></ol>"
+"d'omplir un text amb les paraules que hi falten. S'utilitzen sovint per "
+"als propòsits següents:</p><ol><li> Per a avaluar els coneixements dels "
+"conceptes principals (així es pot fer un preexamen, un exercici formatiu "
+"o una avaluació sumatòria).</li><li>Per a avaluar la comprensió "
+"lectora.</li><li> Per a avaluar el coneixement del vocabulari.</li><li> "
+"Per a avaluar la formació de mots i/o la competència "
+"gramatical.></li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -691,27 +696,27 @@ msgid ""
 " idea to get a colleague to test the test/exercise to make sure there are"
 " no surprises!  </p>  </dd></dl>"
 msgstr ""
-"<dl>  <dt>Si l'objectiu és avaluar la comprensió dels conceptes principals o "
-"la comprensió lectora  </dt>  <dd> <p> Escriviu un resum del concepte o de "
-"la lectura prou llargs per a avaluar-ne adequadament el coneixement, però "
-"suficientment curt per a no avorrir. Menys d'una pàgina escrita és "
-"probablement adequat, però probablement bastant menys per a joves estudiants "
-"o principiants. </p>   <p> Seleccioneu al text paraules clau per a entendre "
-"els conceptes. Aquestes paraules són verbs, noms i adverbis, probablement. "
-"Trieu alternatives amb una resposta clara.  </p>  </dd>  <dt> Si l'objectiu "
-"és avaluar el coneixement de vocabulari  </dt>  <dd><p>Escriviu un text "
-"utilitzant el vocabulari fixat com a objectiu. El text ha de ser coherent i "
-"cohesionat, i tindre una longitud apropiada. Marqueu les paraules objectiu "
-"al text. Trieu alternatives amb una resposta clara.</p> </dd>  <dt>Si "
-"l'objectiu és avaluar la formació de mots/gramàtica:  </dt>  <dd>  "
-"<p>Escriviu un text utilitzant les formes que voleu avaluar. Aquest text ha "
-"de ser coherent, cohesionat, i tindre una longitud apropiada. Recordeu que "
-"l'objectiu no és el coneixement del vocabulari, per tant, el significat "
-"principal de l'arrel de les paraules ha de ser ben conegut pels "
-"estudiants.</p>  <p>Marqueu les paraules objectiu al text. Proporcioneu "
-"alternatives amb la mateixa arrel, però amb afixos diferents. És una bona "
-"idea tindre un company per a provar que ho heu fet bé i així no tindre "
-"sorpreses. </p>  </dd></dl> "
+"<dl>  <dt>Si l'objectiu és avaluar la comprensió dels conceptes "
+"principals o la comprensió lectora  </dt>  <dd> <p> Escriviu un resum del"
+" concepte o de la lectura prou llargs per a avaluar-ne adequadament el "
+"coneixement, però suficientment curt per a no avorrir. Menys d'una pàgina"
+" escrita és probablement adequat, però probablement bastant menys per a "
+"joves estudiants o principiants. </p>   <p> Seleccioneu al text paraules "
+"clau per a entendre els conceptes. Aquestes paraules són verbs, noms i "
+"adverbis, probablement. Trieu alternatives amb una resposta clara.  </p>"
+"  </dd>  <dt> Si l'objectiu és avaluar el coneixement de vocabulari  "
+"</dt>  <dd><p>Escriviu un text utilitzant el vocabulari fixat com a "
+"objectiu. El text ha de ser coherent i cohesionat, i tindre una longitud "
+"apropiada. Marqueu les paraules objectiu al text. Trieu alternatives amb "
+"una resposta clara.</p> </dd>  <dt>Si l'objectiu és avaluar la formació "
+"de mots/gramàtica:  </dt>  <dd>  <p>Escriviu un text utilitzant les "
+"formes que voleu avaluar. Aquest text ha de ser coherent, cohesionat, i "
+"tindre una longitud apropiada. Recordeu que l'objectiu no és el "
+"coneixement del vocabulari, per tant, el significat principal de l'arrel "
+"de les paraules ha de ser ben conegut pels estudiants.</p>  <p>Marqueu "
+"les paraules objectiu al text. Proporcioneu alternatives amb la mateixa "
+"arrel, però amb afixos diferents. És una bona idea tindre un company per "
+"a provar que ho heu fet bé i així no tindre sorpreses. </p>  </dd></dl> "
 
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
@@ -788,8 +793,8 @@ msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
 msgstr ""
-"Escriviu qualsevol retroacció que vulgueu proporcionar a l'alumnat dins del "
-"camp retroacció. Podeu deixar aquest camp buit."
+"Escriviu qualsevol retroacció que vulgueu proporcionar a l'alumnat dins "
+"del camp retroacció. Podeu deixar aquest camp buit."
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
@@ -877,8 +882,8 @@ msgid ""
 "You Should Know is an iDevice that helps the student widen her knowledge "
 "with core contents."
 msgstr ""
-"Cal que conegues és un iDevice que permet a l'alumnat ampliar coneixements, "
-"que són obligatoris per al seu aprenentatge."
+"Cal que conegues és un iDevice que permet a l'alumnat ampliar "
+"coneixements, que són obligatoris per al seu aprenentatge."
 
 #: exe/engine/debesconocerfpdidevice.py:37
 #: exe/engine/debesconocerfpdidevice.py:136
@@ -931,18 +936,19 @@ msgstr ""
 "Un cas d'estudi és un iDevice que proveeix l'alumnat \n"
 "d'una simulació que s'usa com a base de l'aprenentatge. A partir de "
 "situacions, generalment, \n"
-"basades en la realitat, l'alumnat ha de demostrar o descriure les accions "
-"que faria \n"
+"basades en la realitat, l'alumnat ha de demostrar o descriure les accions"
+" que faria \n"
 "per a completar la tasca o resoldre la situació. El cas d'estudi \n"
-"permet a l'alumnat aplicar els seus coneixements i la seua experiència per a "
-"completar les tasques \n"
+"permet a l'alumnat aplicar els seus coneixements i la seua experiència "
+"per a completar les tasques \n"
 "assignades. Quan dissenyeu el cas d'estudi tingueu en compte:<ul> \n"
 "<li>\t Quins elements d'aprenentatge es tracten en la història</li>\n"
 "<li>\t Quina preparació prèvia li cal a l'alumnat per a resoldre el cas "
 "d'estudi. </li>\n"
 "<li>\t On s'ha de col·locar el cas d'estudi en la resta del curs.</li>\n"
 "<li>\t Com interacciona l'alumnat entre si i amb el material proposat. \n"
-"P. ex: A l'aula, com poden els equips treballar diferents aspectes del cas, \n"
+"P. ex: A l'aula, com poden els equips treballar diferents aspectes del "
+"cas, \n"
 "i com es fa la posada en comú a la resta de la classe</li></ul> "
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
@@ -1255,18 +1261,19 @@ msgid ""
 "will also be accepted.</p>"
 msgstr ""
 "<p>Si no marqueu aquesta opció, s'acceptarà un nombre xicotet d'errors "
-"d'ortografia i d'ús de les majúscules. Si la marqueu només s'acceptarà una "
-"coincidència exacta en l'ortografia i en les majúscules.</p><p><strong>Per "
-"exemple,</strong> si la resposta correcta és <code>Elefant</code> llavors "
-"les dos <code>elefant</code> i <code>Elifant</code> es consideraran com a "
-"<em>«prou pròximes»</em> per l'algoritme, ja que sols tenen una lletra "
-"incorrecta, encara que \"Correcció de majúscules\" estiga "
-"seleccionada.</p><p>Si en l'exemple d'abans la casella \"Correcció de "
-"majúscules\" no està marcada, la lletra minúscula <code>e</code> no es "
-"considerarà un error i <code>elifant</code> també s'acceptarà.</p><p> Si "
-"seleccioneu \"Correcció estricta\" i \"Correcció de majúscules\" al mateix "
-"temps, l'única paraula correcta serà \"Elefant\". Si sols seleccioneu "
-"\"Correcció estricta\" i \"Correcció de majúscules\" no ho està, \"elefant\" també "
+"d'ortografia i d'ús de les majúscules. Si la marqueu només s'acceptarà "
+"una coincidència exacta en l'ortografia i en les "
+"majúscules.</p><p><strong>Per exemple,</strong> si la resposta correcta "
+"és <code>Elefant</code> llavors les dos <code>elefant</code> i "
+"<code>Elifant</code> es consideraran com a <em>«prou pròximes»</em> per "
+"l'algoritme, ja que sols tenen una lletra incorrecta, encara que "
+"\"Correcció de majúscules\" estiga seleccionada.</p><p>Si en l'exemple "
+"d'abans la casella \"Correcció de majúscules\" no està marcada, la lletra"
+" minúscula <code>e</code> no es considerarà un error i "
+"<code>elifant</code> també s'acceptarà.</p><p> Si seleccioneu \"Correcció"
+" estricta\" i \"Correcció de majúscules\" al mateix temps, l'única "
+"paraula correcta serà \"Elefant\". Si sols seleccioneu \"Correcció "
+"estricta\" i \"Correcció de majúscules\" no ho està, \"elefant\" també "
 "s'acceptarà.</p>"
 
 #: exe/engine/field.py:3111 exe/engine/field.py:3345
@@ -1314,18 +1321,19 @@ msgid ""
 "will also be accepted.</p>"
 msgstr ""
 "<p>Si no marqueu aquesta opció, s'acceptarà un nombre xicotet d'errors "
-"d'ortografia i d'ús de les majúscules. Si la marqueu només s'acceptarà una "
-"coincidència exacta en l'ortografia i en les majúscules.</p><p><strong>Per "
-"exemple,</strong> si la resposta correcta és <code>Elefant</code> llavors "
-"les dos <code>elefant</code> i <code>Elifant</code> seran considerades com a "
-"<em>«prou pròximes»</em> per l'algoritme, ja que sols tenen una lletra "
-"incorrecta, encara que \"Correcció de majúscules\" estiga "
-"seleccionada.</p><p>Si en l'exemple d'abans la casella \"Correcció de "
-"majúscules\" no està marcada, la lletra minúscula <code>e</code> no es "
-"considerarà un error i <code>elifant</code> també s'acceptarà.</p><p> Si "
-"seleccioneu \"Correcció estricta\" i \"Correcció de majúscules\" al mateix "
-"temps, l'única paraula correcta serà \"Elefant\". Si sols seleccioneu "
-"\"Correcció estricta\" i \"Correcció de majúscules\" no ho està, \"elefant\" també "
+"d'ortografia i d'ús de les majúscules. Si la marqueu només s'acceptarà "
+"una coincidència exacta en l'ortografia i en les "
+"majúscules.</p><p><strong>Per exemple,</strong> si la resposta correcta "
+"és <code>Elefant</code> llavors les dos <code>elefant</code> i "
+"<code>Elifant</code> seran considerades com a <em>«prou pròximes»</em> "
+"per l'algoritme, ja que sols tenen una lletra incorrecta, encara que "
+"\"Correcció de majúscules\" estiga seleccionada.</p><p>Si en l'exemple "
+"d'abans la casella \"Correcció de majúscules\" no està marcada, la lletra"
+" minúscula <code>e</code> no es considerarà un error i "
+"<code>elifant</code> també s'acceptarà.</p><p> Si seleccioneu \"Correcció"
+" estricta\" i \"Correcció de majúscules\" al mateix temps, l'única "
+"paraula correcta serà \"Elefant\". Si sols seleccioneu \"Correcció "
+"estricta\" i \"Correcció de majúscules\" no ho està, \"elefant\" també "
 "s'acceptarà.</p>"
 
 #: exe/engine/field.py:3355
@@ -1502,9 +1510,10 @@ msgid ""
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
 "Aquest iDevice sols admet vídeos en format Flash (.FLV), i no accepta\n"
-" altres formats de vídeo. No obstant això, podeu convertir altres formats de "
-"vídeo\n"
-" (p. ex. mov, wmf, etc.) al format .FLV utilitzant codificadors de vídeo de\n"
+" altres formats de vídeo. No obstant això, podeu convertir altres formats"
+" de vídeo\n"
+" (p. ex. mov, wmf, etc.) al format .FLV utilitzant codificadors de vídeo "
+"de\n"
 " tercers (p. ex. en Linux: ffmpeg, winff). Aquests codificadors no se "
 "subministren amb l'eXe.\n"
 " Els usuaris també han de baixar el reproductor de Flash 8 des "
@@ -1556,8 +1565,8 @@ msgid ""
 "the learners will view."
 msgstr ""
 "L'iDevice Flash amb text us permet \n"
-"associar informació escrita addicional a un fitxer en Flash. Això pot ser "
-"útil \n"
+"associar informació escrita addicional a un fitxer en Flash. Això pot ser"
+" útil \n"
 "per a proporcionar instruccions a l'alumnat a l'hora de visualitzar un "
 "fitxer en Flash."
 
@@ -1602,8 +1611,8 @@ msgid ""
 "delivered."
 msgstr ""
 "L'aspecte essencial d'un recurs d'aprenentatge \n"
-"consisteix en l'elaboració d'un context, la definició de les instruccions i "
-"la informació general. \n"
+"consisteix en l'elaboració d'un context, la definició de les instruccions"
+" i la informació general. \n"
 "Això proporciona el marc en el qual les activitats d'aprenentatge es "
 "construeixen i es lliuren."
 
@@ -1675,9 +1684,9 @@ msgid ""
 "appear below where you will be able to label it. It's always good "
 "practice to put the file size in the label."
 msgstr ""
-"Premeu el botó Afig imatges per a seleccionar un fitxer d'imatge. La imatge "
-"apareixerà davall on podreu etiquetar-la. Sempre és una bona idea posar la "
-"mida de la imatge en l'etiqueta."
+"Premeu el botó Afig imatges per a seleccionar un fitxer d'imatge. La "
+"imatge apareixerà davall on podreu etiquetar-la. Sempre és una bona idea "
+"posar la mida de la imatge en l'etiqueta."
 
 #: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:663
 msgid "Reading Activity 0.11"
@@ -1863,16 +1872,17 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
-"<p>És recomanable que el professorat tinga present el següent quan utilitze "
-"aquest iDevice:</p><ol><li>Penseu en diferents tipus d'activitats que facen "
-"el contingut visualment atractiu. Utilitzar massa tipus diferents "
-"d'activitats pot confondre l'alumnat; normalment tres o quatre tipus "
-"diferents són suficients per a un recurs d'aprenentatge.</li><li> Des d'una "
-"perspectiva de disseny visual, eviteu tindre dos iDevices l'un a continuació "
-"de l'altre sense cap text que els separe. Si calen dos iDevices ajunteu dos "
-"qüestions dins el mateix iDevice. </li><li>Penseu en activitats que siguen "
-"percebudes com a atractives i beneficioses, de manera que pague la pena "
-"invertir temps i esforç a completar-les.</li></ol>"
+"<p>És recomanable que el professorat tinga present el següent quan "
+"utilitze aquest iDevice:</p><ol><li>Penseu en diferents tipus "
+"d'activitats que facen el contingut visualment atractiu. Utilitzar massa "
+"tipus diferents d'activitats pot confondre l'alumnat; normalment tres o "
+"quatre tipus diferents són suficients per a un recurs "
+"d'aprenentatge.</li><li> Des d'una perspectiva de disseny visual, eviteu "
+"tindre dos iDevices l'un a continuació de l'altre sense cap text que els "
+"separe. Si calen dos iDevices ajunteu dos qüestions dins el mateix "
+"iDevice. </li><li>Penseu en activitats que siguen percebudes com a "
+"atractives i beneficioses, de manera que pague la pena invertir temps i "
+"esforç a completar-les.</li></ol>"
 
 #: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:706
 msgid "What to read"
@@ -1958,8 +1968,8 @@ msgid ""
 msgstr ""
 "El requisit de coneixements previs es refereix \n"
 "als coneixements que l'alumnat ha de tindre per a poder completar \n"
-" l'aprenentatge de manera efectiva. Exemples de coneixements previs poden "
-"ser: <ul>\n"
+" l'aprenentatge de manera efectiva. Exemples de coneixements previs poden"
+" ser: <ul>\n"
 "<li>    L'alumnat ha de tindre un nivell 4 d'anglés</li>\n"
 "<li>    L'alumnat ha de saber muntar eines electròniques</li></ul>\n"
 
@@ -1968,7 +1978,8 @@ msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
-"Descriu els coneixements previs que l'alumnat ha de tindre per a completar \n"
+"Descriu els coneixements previs que l'alumnat ha de tindre per a "
+"completar \n"
 "aquest aprenentatge de manera efectiva. "
 
 #: exe/engine/idevicestore.py:643 exe/engine/idevicestore.py:750
@@ -1999,11 +2010,11 @@ msgid ""
 "reflective guidance.</p>"
 msgstr ""
 "<p>L'activitat de lectura, com el seu nom \n"
-"suggereix, sol demanar a l'alumnat un esforç per a fer l'activitat. Aquesta "
-"activitat \n"
+"suggereix, sol demanar a l'alumnat un esforç per a fer l'activitat. "
+"Aquesta activitat \n"
 "ha d'estar relacionada directament amb el contingut del text llegit. \n"
-"La retroacció de l'activitat és molt apropiada ja que proporciona una guia "
-"per a reflexionar.</p>"
+"La retroacció de l'activitat és molt apropiada ja que proporciona una "
+"guia per a reflexionar.</p>"
 
 #: exe/engine/idevicestore.py:671
 msgid ""
@@ -2020,15 +2031,16 @@ msgid ""
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
 "És recomanable que el professorat tinga present el següent quan utilitze "
-"aquest iDevice: <ol><li>Penseu en diferents tipus d'activitats que facen el "
-"contingut visualment atractiu. Utilitzar massa tipus diferents d'activitats "
-"pot confondre l'alumnat; normalment tres o quatre tipus diferents són "
-"suficients per a un recurs d'aprenentatge. </li><li> Des d'una perspectiva "
-"de disseny visual, eviteu tindre dos iDevices un a continuació de l'altre "
-"sense cap text que els separe. Si calen dos iDevices ajunteu dos qüestions "
-"dins el mateix iDevice. </li><li>Penseu en activitats que siguen percebudes "
-"com a atractives i beneficioses, de manera que pague la pena invertir temps "
-"i esforç a completar-les.</li></ol>"
+"aquest iDevice: <ol><li>Penseu en diferents tipus d'activitats que facen "
+"el contingut visualment atractiu. Utilitzar massa tipus diferents "
+"d'activitats pot confondre l'alumnat; normalment tres o quatre tipus "
+"diferents són suficients per a un recurs d'aprenentatge. </li><li> Des "
+"d'una perspectiva de disseny visual, eviteu tindre dos iDevices un a "
+"continuació de l'altre sense cap text que els separe. Si calen dos "
+"iDevices ajunteu dos qüestions dins el mateix iDevice. </li><li>Penseu en"
+" activitats que siguen percebudes com a atractives i beneficioses, de "
+"manera que pague la pena invertir temps i esforç a completar-"
+"les.</li></ol>"
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
@@ -2228,13 +2240,14 @@ msgid ""
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
 msgstr ""
-"<p> Els exercicis de menú desplegable són texts o frases en què l'alumnat ha "
-"de seleccionat la paraula correcta. S'utilitzen sovint per als propòsits "
-"següents:</p><ol><li> Per a avaluar els coneixements dels conceptes "
-"principals (així es pot fer un preexamen, un exercici formatiu o una "
-"avaluació sumatòria).</li><li>Per a avaluar la comprensió lectora.</li><li> "
-"Per a avaluar el coneixement del vocabulari.</li><li> Per a avaluar la "
-"formació de mots i/o la competència gramatical.></li></ol>"
+"<p> Els exercicis de menú desplegable són texts o frases en què l'alumnat"
+" ha de seleccionat la paraula correcta. S'utilitzen sovint per als "
+"propòsits següents:</p><ol><li> Per a avaluar els coneixements dels "
+"conceptes principals (així es pot fer un preexamen, un exercici formatiu "
+"o una avaluació sumatòria).</li><li>Per a avaluar la comprensió "
+"lectora.</li><li> Per a avaluar el coneixement del vocabulari.</li><li> "
+"Per a avaluar la formació de mots i/o la competència "
+"gramatical.></li></ol>"
 
 #: exe/engine/listaidevice.py:80
 msgid ""
@@ -2256,27 +2269,27 @@ msgid ""
 "colleague to test the test/exercise to make sure there are no surprises!"
 "  </p>  </dd></dl>"
 msgstr ""
-"<dl>  <dt>Si l'objectiu és avaluar la comprensió dels conceptes principals o "
-"la comprensió lectora  </dt>  <dd> <p> Escriviu un resum del concepte o de "
-"la lectura prou llargs per a avaluar-ne adequadament el coneixement, però "
-"suficientment curt per a no avorrir. Menys d'una pàgina escrita és "
-"probablement adequat, però probablement bastant menys per a joves estudiants "
-"o principiants. </p>   <p> Seleccioneu al text paraules clau per a entendre "
-"els conceptes. Aquestes paraules són verbs, noms i adverbis, probablement. "
-"Trieu alternatives amb una resposta clara.  </p>  </dd>  <dt> Si l'objectiu "
-"és avaluar el coneixement de vocabulari  </dt>  <dd><p>Escriviu un text "
-"utilitzant el vocabulari fixat com a objectiu. El text ha de ser coherent i "
-"cohesionat, i tindre una longitud apropiada. Marqueu les paraules objectiu "
-"al text. Trieu alternatives amb una resposta clara.</p> </dd>  <dt>Si "
-"l'objectiu és avaluar la formació de mots/gramàtica:  </dt>  <dd>  "
-"<p>Escriviu un text utilitzant les formes que voleu avaluar. Aquest text ha "
-"de ser coherent, cohesionat, i tindre una longitud apropiada. Recordeu que "
-"l'objectiu no és el coneixement del vocabulari, per tant, el significat "
-"principal de l'arrel de les paraules ha de ser ben conegut pels "
-"estudiants.</p>  <p>Marqueu les paraules objectiu al text. Proporcioneu "
-"alternatives amb la mateixa arrel, però amb afixos diferents. És una bona "
-"idea tindre un company per a provar que ho heu fet bé i així no tindre "
-"sorpreses. </p>  </dd></dl>"
+"<dl>  <dt>Si l'objectiu és avaluar la comprensió dels conceptes "
+"principals o la comprensió lectora  </dt>  <dd> <p> Escriviu un resum del"
+" concepte o de la lectura prou llargs per a avaluar-ne adequadament el "
+"coneixement, però suficientment curt per a no avorrir. Menys d'una pàgina"
+" escrita és probablement adequat, però probablement bastant menys per a "
+"joves estudiants o principiants. </p>   <p> Seleccioneu al text paraules "
+"clau per a entendre els conceptes. Aquestes paraules són verbs, noms i "
+"adverbis, probablement. Trieu alternatives amb una resposta clara.  </p>"
+"  </dd>  <dt> Si l'objectiu és avaluar el coneixement de vocabulari  "
+"</dt>  <dd><p>Escriviu un text utilitzant el vocabulari fixat com a "
+"objectiu. El text ha de ser coherent i cohesionat, i tindre una longitud "
+"apropiada. Marqueu les paraules objectiu al text. Trieu alternatives amb "
+"una resposta clara.</p> </dd>  <dt>Si l'objectiu és avaluar la formació "
+"de mots/gramàtica:  </dt>  <dd>  <p>Escriviu un text utilitzant les "
+"formes que voleu avaluar. Aquest text ha de ser coherent, cohesionat, i "
+"tindre una longitud apropiada. Recordeu que l'objectiu no és el "
+"coneixement del vocabulari, per tant, el significat principal de l'arrel "
+"de les paraules ha de ser ben conegut pels estudiants.</p>  <p>Marqueu "
+"les paraules objectiu al text. Proporcioneu alternatives amb la mateixa "
+"arrel, però amb afixos diferents. És una bona idea tindre un company per "
+"a provar que ho heu fet bé i així no tindre sorpreses. </p>  </dd></dl>"
 
 #: exe/engine/listaidevice.py:130
 msgid "Provide instruction on how the dropdown activity should be completed."
@@ -2319,8 +2332,8 @@ msgid ""
 " | (vertical bar ) to separate words.</br>This field can be left blank. "
 "</p>"
 msgstr ""
-"<p>Opcional: Escriviu altres paraules per a completar l'activitat de menú "
-"desplegable.</br>Utilitzeu «|» (barra vertical) per a separar les "
+"<p>Opcional: Escriviu altres paraules per a completar l'activitat de menú"
+" desplegable.</br>Utilitzeu «|» (barra vertical) per a separar les "
 "paraules.</br>Aquest camp es pot deixar en blanc. </p>"
 
 #: exe/engine/locationbuttons.py:29 exe/engine/locationbuttons.py:33
@@ -2604,13 +2617,13 @@ msgid ""
 "would like the iDevice to       display e.g. 'Some emphasis' applies a "
 "border and icon to the iDevice content displayed.</li></ol>"
 msgstr ""
-"<ol>  <li>Premeu &lt;Trieu un fitxer MP3&gt; i navegueu fins al fitxer MP3 "
-"que voleu inserir</li>  <li>Feu clic en el menú desplegable per a "
+"<ol>  <li>Premeu &lt;Trieu un fitxer MP3&gt; i navegueu fins al fitxer "
+"MP3 que voleu inserir</li>  <li>Feu clic en el menú desplegable per a "
 "seleccionar la posició en què voleu que es mostre el fitxer en la "
 "pantalla.</li>  <li>Introduïu un títol opcional per al fitxer.</li>  "
-"<li>Associeu al fitxer MP3 qualsevol text rellevant.</li><li>Trieu el tipus "
-"d'estil que voleu mostrar en l'iDevice. P. ex. «Amb èmfasi» aplica una vora "
-"i una icona al contingut de l'iDevice mostrat. </li></ol>"
+"<li>Associeu al fitxer MP3 qualsevol text rellevant.</li><li>Trieu el "
+"tipus d'estil que voleu mostrar en l'iDevice. P. ex. «Amb èmfasi» aplica "
+"una vora i una icona al contingut de l'iDevice mostrat. </li></ol>"
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
@@ -2645,8 +2658,8 @@ msgid ""
 "Guidelines Students is an iDevice that permits students know the "
 "objectives of their learning."
 msgstr ""
-"Orientacions per a l'alumnat és un iDevice que permet a l'alumnat conéixer "
-"els objectius del seu aprenentatge."
+"Orientacions per a l'alumnat és un iDevice que permet a l'alumnat "
+"conéixer els objectius del seu aprenentatge."
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:38
 msgid "Guidelines Students Text"
@@ -2665,8 +2678,8 @@ msgid ""
 "Guidelines Teacher is an iDevice that lets the teacher know the learning "
 "objectives of the students."
 msgstr ""
-"Orientacions per a la tutoria és un iDevice que permet al professorat donar "
-"a conéixer els objectius d'aprenentatge de l'alumnat."
+"Orientacions per a la tutoria és un iDevice que permet al professorat "
+"donar a conéixer els objectius d'aprenentatge de l'alumnat."
 
 #: exe/engine/orientacionestutoriafpdidevice.py:38
 msgid "Guidelines Teacher Text"
@@ -2920,9 +2933,10 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
-"A diferència del qüestionari d'elecció múltiple (MCQ), el qüestionari SCORM \n"
-"s'utilitza per a avaluar els coneixements de l'alumnat sobre un tema sense "
-"donar cap \n"
+"A diferència del qüestionari d'elecció múltiple (MCQ), el qüestionari "
+"SCORM \n"
+"s'utilitza per a avaluar els coneixements de l'alumnat sobre un tema "
+"sense donar cap \n"
 "retroacció a la resposta correcta. El qüestionari SCORM \n"
 "se sol passar quan l'alumnat ja ha tingut temps d'aprendre i practicar "
 "utilitzant la informació o destresa.\n"
@@ -3327,17 +3341,17 @@ msgid ""
 "additionally\n"
 "by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
 msgstr ""
-"<p> L'iDevice Viquipèdia us permet localitzar un article que estiga en la "
-"Viquipèdia i \n"
-"baixar-lo al recurs de l'eXe. L'iDevice Viquipèdia fa una còpia instantània "
-"del contingut de l'article. \n"
-"Els canvis en la Viquipèdia no s'actualitzen automàticament en la còpia que "
-"teniu a l'eXe: si la voleu actualitzar caldrà que torneu a baixar una còpia "
-"de l'article. \n"
-"Així mateix, els canvis fets a l'article en l'eXe no s'actualitzaran en la "
-"Viquipèdia. \n"
-"</p><p> El contingut de la Viquipèdia és sota la llicència de documentació "
-"lliure GNU (GFDL).</p> "
+"<p> L'iDevice Viquipèdia us permet localitzar un article que estiga en la"
+" Viquipèdia i \n"
+"baixar-lo al recurs de l'eXe. L'iDevice Viquipèdia fa una còpia "
+"instantània del contingut de l'article. \n"
+"Els canvis en la Viquipèdia no s'actualitzen automàticament en la còpia "
+"que teniu a l'eXe: si la voleu actualitzar caldrà que torneu a baixar una"
+" còpia de l'article. \n"
+"Així mateix, els canvis fets a l'article en l'eXe no s'actualitzaran en "
+"la Viquipèdia. \n"
+"</p><p> El contingut de la Viquipèdia és sota la llicència de "
+"documentació lliure GNU (GFDL).</p> "
 
 #: exe/engine/wikipediaidevice.py:66
 msgid "Article"
@@ -3365,8 +3379,8 @@ msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
 msgstr ""
-"No es pot baixar des de %s <br/>Reviseu l'ortografia i la connexió i torneu-"
-"ho a provar."
+"No es pot baixar des de %s <br/>Reviseu l'ortografia i la connexió i "
+"torneu-ho a provar."
 
 #: exe/engine/wikipediaidevice.py:315
 msgid "http://en.wikipedia.org/"
@@ -3386,16 +3400,20 @@ msgstr ""
 "%prog -h"
 
 #: exe/exe_do:75
+msgid "Append  <input_file> elp package to <output_file> elp package"
+msgstr ""
+
+#: exe/exe_do:80
 msgid "Set ELP field values. Example: -s style=Default,root.title='Root Node'"
 msgstr ""
 "Establiu els valors del camp ELP. Per exemple: -s "
 "style=Default,root.title='Root Node'"
 
-#: exe/exe_do:78
+#: exe/exe_do:83
 msgid "Set ELP field values options"
 msgstr "Establiu les opcions dels valors del camp ELP"
 
-#: exe/exe_do:79
+#: exe/exe_do:84
 msgid ""
 "Once you have chosen Set ELP field values option using '-s <values>' or"
 "     '--set <values>', it's possible to configure the following options:"
@@ -3403,11 +3421,11 @@ msgstr ""
 "Quan heu triat l'opció dels valors del camp ELP utilitzant '-s <values>' "
 "o     '--set <values>', podeu configurar les opcions següents:"
 
-#: exe/exe_do:84
+#: exe/exe_do:89
 msgid "Write field values to ELP"
 msgstr "Escriviu els valors del camp ELP"
 
-#: exe/exe_do:90
+#: exe/exe_do:95
 msgid ""
 "Generates resource info report to text <output_file> from <input_file> "
 "elp package"
@@ -3415,7 +3433,7 @@ msgstr ""
 "Genera un informe d'informació del recurs al text <output_file> des del "
 "paquet elp <input_file>."
 
-#: exe/exe_do:102
+#: exe/exe_do:107
 msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
 "given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage,"
@@ -3425,7 +3443,7 @@ msgstr ""
 "algun dels formats donats: xml, scorm12, scorm2004, ims, website, webzip,"
 " singlepage, xliff o epub3."
 
-#: exe/exe_do:108
+#: exe/exe_do:113
 msgid ""
 "Import to <output_file> elp package, <input_file> in one of the given "
 "formats: xml or xliff."
@@ -3433,21 +3451,21 @@ msgstr ""
 "Importa al  <output_file> el paquet elp, <input_file>, en algun dels "
 "formats donats: xml o xliff."
 
-#: exe/exe_do:113
+#: exe/exe_do:118
 msgid "Force overwrite of <output_file>"
 msgstr "Imposa la sobreescriptura del fitxer <output_file>"
 
-#: exe/exe_do:117
+#: exe/exe_do:122
 msgid "Add the required files to generate a export editable by eXeLearning"
 msgstr ""
 "Afig els fitxers requerits per a generar una exportació editable per "
 "l'eXeLearning."
 
-#: exe/exe_do:122
+#: exe/exe_do:127
 msgid "XLIFF export options"
 msgstr "Opcions d'exportació en XLIFF"
 
-#: exe/exe_do:123
+#: exe/exe_do:128
 msgid ""
 "Once you have chosen XLIFF export option using '-x xliff' or '--export "
 "xliff', it's possible to configure the following export options:"
@@ -3456,19 +3474,19 @@ msgstr ""
 "«--export xliff», és possible configurar les opcions d'exportació "
 "següents:"
 
-#: exe/exe_do:128
+#: exe/exe_do:133
 msgid "Don't copy source in target"
 msgstr "No copieu l'origen en la destinació"
 
-#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:775
+#: exe/exe_do:138 exe/jsui/scripts/app/controller/Toolbar.js:775
 msgid "Wrap fields in CDATA"
 msgstr "Empaqueta camps en CDATA"
 
-#: exe/exe_do:138
+#: exe/exe_do:143
 msgid "XLIFF import options"
 msgstr "Opcions d'importació en XLIFF"
 
-#: exe/exe_do:139
+#: exe/exe_do:144
 msgid ""
 "Once you have chosen XLIFF import option using  '-i xliff' or '--import "
 "xliff', it's possible to configure the following import options:"
@@ -3477,15 +3495,15 @@ msgstr ""
 "«--export xliff», és possible configurar les opcions d'importació "
 "següents:"
 
-#: exe/exe_do:144 exe/webui/xliffimportpreferencespage.py:79
+#: exe/exe_do:149 exe/webui/xliffimportpreferencespage.py:79
 msgid "Import from source language"
 msgstr "Importa des de l'idioma d'origen"
 
-#: exe/exe_do:149
+#: exe/exe_do:154
 msgid "SCORM export options"
 msgstr "Opcions d'exportació en SCORM"
 
-#: exe/exe_do:150
+#: exe/exe_do:155
 msgid ""
 "Once you have chosen one SCORM export option using '-x scorm12' or '-x "
 "scorm2004' or 'x agrega', it's possible to configure the following export"
@@ -3495,72 +3513,83 @@ msgstr ""
 "«-x scorm2004» o «x agrega» , és possible configurar les opcions "
 "d'exportació següents:"
 
-#: exe/exe_do:155
+#: exe/exe_do:160
 msgid "Include Single Page export file"
 msgstr "Inclou el fitxer d'exportació «singlepage»"
 
-#: exe/exe_do:160
+#: exe/exe_do:165
 msgid "Include Web Site export files"
 msgstr "Inclou el fitxer d'exportació «website»"
 
-#: exe/exe_do:175
+#: exe/exe_do:180
 msgid "Options --export and --import are mutually exclusive."
 msgstr "Les opcions --import i --export són mútuament excloents."
 
-#: exe/exe_do:178
-msgid "No --export, --import, --set or --report option supplied."
-msgstr "No s'han proporcionat les opcions --export, --import, --set ni --report."
+#: exe/exe_do:183
+msgid "Options --export and --append are mutually exclusive."
+msgstr ""
 
-#: exe/exe_do:182
+#: exe/exe_do:186
+msgid "Options --import and --append are mutually exclusive."
+msgstr ""
+
+#: exe/exe_do:190
+msgid "No --append --export, --import, --set or --report option supplied."
+msgstr ""
+
+#: exe/exe_do:194
 msgid "No file input supplied."
 msgstr "No s'ha proporcionat el fitxer d'entrada."
 
-#: exe/exe_do:191
+#: exe/exe_do:198 exe/exe_do:219
 msgid "Bad number of arguments supplied"
 msgstr "El nombre d'arguments proporcionats és incorrecte."
 
-#: exe/exe_do:208 exe/export/cmdlineexporter.py:84
+#: exe/exe_do:205
+#, python-format
+msgid "Successfully appended '%s' to '%s'."
+msgstr ""
+
+#: exe/exe_do:207
+msgid "exe_do: error: Unable to append elp"
+msgstr ""
+
+#: exe/exe_do:236 exe/export/cmdlineexporter.py:87
 msgid "Invalid input package"
 msgstr "El paquet d'entrada no es vàlid."
 
-#: exe/exe_do:228
+#: exe/exe_do:256
 #, python-format
 msgid ""
 "exe_do: error: Unable to set values from '%s'.\n"
-"The error was:"
+"The     error was:"
 msgstr ""
-"exe_do: error: no s'han pogut establir valors des de «%s».\n"
-"L'error ha estat:"
 
-#: exe/exe_do:246
+#: exe/exe_do:274
 #, python-format
 msgid "Successfully exported '%s' from '%s'."
 msgstr "S'ha exportat correctament «%s» des de «%s»."
 
-#: exe/exe_do:249
+#: exe/exe_do:277
 #, python-format
 msgid ""
 "exe_do: error: Unable to export from '%s'.\n"
-"The error was:"
+"The     error was:"
 msgstr ""
-"exe_do: error: no s'ha pogut exportar des de «%s».\n"
-"L'error ha estat:"
 
-#: exe/exe_do:257
+#: exe/exe_do:285
 #, python-format
 msgid "File '%s' successfully imported to '%s'."
 msgstr "El fitxer «%s» s'ha importat correctament a «%s»."
 
-#: exe/exe_do:260
+#: exe/exe_do:288
 #, python-format
 msgid ""
 "exe_do: error: Unable to import '%s'.\n"
-"The error was:"
+"The     error was:"
 msgstr ""
-"exe_do: error: no s'ha pogut importar «%s».\n"
-"L'error ha estat:"
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:304
+#: exe/export/cmdlineexporter.py:73 exe/jsui/mainpage.py:304
 #: exe/jsui/mainpage.py:1112 exe/jsui/mainpage.py:1276
 #: exe/jsui/mainpage.py:1316 exe/jsui/mainpage.py:1351
 #: exe/jsui/mainpage.py:1372 exe/jsui/mainpage_antes_jr_docs.py:295
@@ -3577,12 +3606,13 @@ msgstr ""
 "\"%s\" ja existeix.\n"
 "Intenteu-ho una altra vegada amb un nom diferent"
 
-#: exe/export/cmdlineexporter.py:92
+#: exe/export/cmdlineexporter.py:95
 msgid "Export format not implemented"
 msgstr "El format d'exportació no està implementat "
 
-#: exe/export/epub3export.py:659 exe/export/imsexport.py:623
-#: exe/export/scormexport.py:717 exe/export/websiteexport.py:104
+#: exe/export/epub3export.py:659 exe/export/epub3subexport.py:664
+#: exe/export/imsexport.py:623 exe/export/scormexport.py:717
+#: exe/export/websiteexport.py:104
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3952,12 +3982,12 @@ msgstr "Fitxers d'imatge"
 #: exe/jsui/scripts/app/controller/Toolbar.js:643
 #: exe/jsui/scripts/app/controller/Toolbar.js:712
 #: exe/jsui/scripts/app/controller/Toolbar.js:823
-#: exe/jsui/scripts/app/controller/Toolbar.js:903
-#: exe/jsui/scripts/app/controller/Toolbar.js:923
-#: exe/jsui/scripts/app/controller/Toolbar.js:943
-#: exe/jsui/scripts/app/controller/Toolbar.js:975
-#: exe/jsui/scripts/app/controller/Toolbar.js:1111
-#: exe/jsui/scripts/app/controller/Toolbar.js:1208
+#: exe/jsui/scripts/app/controller/Toolbar.js:906
+#: exe/jsui/scripts/app/controller/Toolbar.js:926
+#: exe/jsui/scripts/app/controller/Toolbar.js:946
+#: exe/jsui/scripts/app/controller/Toolbar.js:978
+#: exe/jsui/scripts/app/controller/Toolbar.js:1114
+#: exe/jsui/scripts/app/controller/Toolbar.js:1211
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 #: exe/webui/scripts/authoring.js:96 exe/webui/scripts/authoring.js:121
 #: exe/webui/scripts/authoring.js:365 exe/webui/scripts/authoring.js:374
@@ -3968,11 +3998,11 @@ msgid "All Files"
 msgstr "Tots els fitxers"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:237
-#: exe/jsui/scripts/app/controller/Toolbar.js:876
-#: exe/jsui/scripts/app/controller/Toolbar.js:896
-#: exe/jsui/scripts/app/controller/Toolbar.js:916
-#: exe/jsui/scripts/app/controller/Toolbar.js:936
-#: exe/jsui/scripts/app/controller/Toolbar.js:968
+#: exe/jsui/scripts/app/controller/Toolbar.js:878
+#: exe/jsui/scripts/app/controller/Toolbar.js:899
+#: exe/jsui/scripts/app/controller/Toolbar.js:919
+#: exe/jsui/scripts/app/controller/Toolbar.js:939
+#: exe/jsui/scripts/app/controller/Toolbar.js:971
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Please wait..."
 msgstr "Espereu..."
@@ -4121,8 +4151,8 @@ msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
 msgstr ""
-"Si heu fet canvis i no els heu guardat, es perdran. Esteu segur que voleu "
-"eixir?"
+"Si heu fet canvis i no els heu guardat, es perdran. Esteu segur que voleu"
+" eixir?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:454
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
@@ -4167,8 +4197,8 @@ msgstr "S'està inserint el paquet: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:567
 #: exe/jsui/scripts/app/controller/Toolbar.js:588
-#: exe/jsui/scripts/app/controller/Toolbar.js:1110
-#: exe/jsui/scripts/app/controller/Toolbar.js:1207
+#: exe/jsui/scripts/app/controller/Toolbar.js:1113
+#: exe/jsui/scripts/app/controller/Toolbar.js:1210
 msgid "eXe Package Files"
 msgstr "Fitxers de paquets de l'eXe"
 
@@ -4250,8 +4280,8 @@ msgid ""
 msgstr ""
 "Si no trieu aquesta opció, el camp destinació estarà buit. Algunes eines "
 "d'ajuda a la traducció (p.e. l'OmegaT) només tradueixen el contingut del "
-"camp destinació. Si utilitzeu eines d'aquest tipus us caldrà omplir el camp "
-"destinació amb una còpia del camp origen."
+"camp destinació. Si utilitzeu eines d'aquest tipus us caldrà omplir el "
+"camp destinació amb una còpia del camp origen."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:777
 msgid ""
@@ -4304,72 +4334,72 @@ msgstr "Procomún OAuth"
 msgid "Select the parent folder for export."
 msgstr "Seleccioneu la carpeta pare per a la exportació."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:890
+#: exe/jsui/scripts/app/controller/Toolbar.js:893
 msgid "Export text package as"
 msgstr "Anomena i exporta el paquet de text"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:902
+#: exe/jsui/scripts/app/controller/Toolbar.js:905
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Text File"
 msgstr "Fitxer de text"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:910
+#: exe/jsui/scripts/app/controller/Toolbar.js:913
 msgid "Save package resources report as"
 msgstr "Anomena i guarda l'informe de recursos del paquet"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:922
+#: exe/jsui/scripts/app/controller/Toolbar.js:925
 msgid "CSV File"
 msgstr "Fitxer CSV"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:930
+#: exe/jsui/scripts/app/controller/Toolbar.js:933
 msgid "Export EPUB3 package as"
 msgstr "Anomena i exporta el paquet EPUB3"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:942
+#: exe/jsui/scripts/app/controller/Toolbar.js:945
 msgid "EPUB3 File"
 msgstr "Fitxer EPUB3"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:950
+#: exe/jsui/scripts/app/controller/Toolbar.js:953
 msgid "Export SCORM package as"
 msgstr "Anomena i exporta el paquet SCORM"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:952
+#: exe/jsui/scripts/app/controller/Toolbar.js:955
 msgid "Export IMS package as"
 msgstr "Anomena i exporta el paquet IMS"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:954
+#: exe/jsui/scripts/app/controller/Toolbar.js:957
 msgid "Export Website package as"
 msgstr "Anomena i exporta el paquet Website"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:956
+#: exe/jsui/scripts/app/controller/Toolbar.js:959
 msgid "Export Common Cartridge as"
 msgstr "Anomena i exporta el cartutx comú"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:958
+#: exe/jsui/scripts/app/controller/Toolbar.js:961
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "S'ha passat un valor invàlid a exportPackage"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:974
+#: exe/jsui/scripts/app/controller/Toolbar.js:977
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/ZipFile"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1083
+#: exe/jsui/scripts/app/controller/Toolbar.js:1086
 msgid "Loading package..."
 msgstr "S'està carregant el paquet..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1099
+#: exe/jsui/scripts/app/controller/Toolbar.js:1102
 msgid "Open File"
 msgstr "Obri un fitxer"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1104
+#: exe/jsui/scripts/app/controller/Toolbar.js:1107
 msgid "Loading package: {filename}"
 msgstr "S'està carregant el paquet: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1123
+#: exe/jsui/scripts/app/controller/Toolbar.js:1126
 msgid "Save Package first?"
 msgstr "Voleu guardar primer el paquet?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1124
+#: exe/jsui/scripts/app/controller/Toolbar.js:1127
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
@@ -4377,15 +4407,15 @@ msgstr ""
 "El paquet actual s'ha modificat i encara no s'ha guardat. Voleu guardar-"
 "lo?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1171
+#: exe/jsui/scripts/app/controller/Toolbar.js:1174
 msgid "Saving package to: {filename}"
 msgstr "S'està guardant el paquet en: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1187
+#: exe/jsui/scripts/app/controller/Toolbar.js:1190
 msgid "Save file"
 msgstr "Guarda el fitxer"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1193
+#: exe/jsui/scripts/app/controller/Toolbar.js:1196
 msgid "Saving package..."
 msgstr "S'està guardant el paquet..."
 
@@ -4766,9 +4796,10 @@ msgid ""
 "individual pages within your SCO.  This requires a non-standard extension"
 " to SCORM 1.2 and is only known to work with some versions of Moodle."
 msgstr ""
-"Si marqueu aquesta casella l'eXe afegirà els enllaços anterior i següent a "
-"pàgines individuals dins dels SCO. Això requereix una extensió no estàndard "
-"a l'SCORM 1.2 i se sap que sols funciona en algunes versions del Moodle."
+"Si marqueu aquesta casella l'eXe afegirà els enllaços anterior i següent "
+"a pàgines individuals dins dels SCO. Això requereix una extensió no "
+"estàndard a l'SCORM 1.2 i se sap que sols funciona en algunes versions "
+"del Moodle."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:95
 msgid "Include Single Page export file?"
@@ -4797,8 +4828,9 @@ msgid ""
 "\"website_\" prefix to differentiate them from their SCORM equivalent."
 msgstr ""
 "Si marqueu aquesta opció, el fitxer SCORM exportat inclourà el resultat "
-"d'exportar aquest paquet eXe com a lloc web. Tots els fitxers HTML tindran "
-"el prefix «website_» per a diferenciar-los dels seus equivalents SCORM."
+"d'exportar aquest paquet eXe com a lloc web. Tots els fitxers HTML "
+"tindran el prefix «website_» per a diferenciar-los dels seus equivalents "
+"SCORM."
 
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:53
 msgid "Language of the field"
@@ -5156,8 +5188,8 @@ msgstr "llicència creative commons 4.0 reconeixement - sense obres derivades"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:71
 msgid "creative commons: attribution - non derived work - non commercial 4.0"
 msgstr ""
-"llicència creative commons 4.0 reconeixement - sense obres derivades - no "
-"comercial"
+"llicència creative commons 4.0 reconeixement - sense obres derivades - no"
+" comercial"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:75
 msgid "creative commons: attribution - non commercial 4.0"
@@ -5184,8 +5216,8 @@ msgstr "llicència creative commons 3.0 reconeixement - sense obres derivades"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:95
 msgid "creative commons: attribution - non derived work - non commercial 3.0"
 msgstr ""
-"llicència creative commons 3.0 reconeixement - sense obres derivades - no "
-"comercial"
+"llicència creative commons 3.0 reconeixement - sense obres derivades - no"
+" comercial"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:99
 msgid "creative commons: attribution - non commercial 3.0"
@@ -5210,8 +5242,8 @@ msgstr "llicència creative commons 2.5 reconeixement - sense obres derivades"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
 msgid "creative commons: attribution - non derived work - non commercial 2.5"
 msgstr ""
-"llicència creative commons 2.5 reconeixement - sense obres derivades - no "
-"comercial"
+"llicència creative commons 2.5 reconeixement - sense obres derivades - no"
+" comercial"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
 msgid "creative commons: attribution - non commercial 2.5"
@@ -5383,8 +5415,8 @@ msgid ""
 "This overrides for this Package the \"Default format for the new "
 "documents\" set in Tools - Preferences"
 msgstr ""
-"Açò substitueix per a aquest paquet el \"Format per defecte per als documents "
-"nous\" definit a Eines - Preferències"
+"Açò substitueix per a aquest paquet el \"Format per defecte per als "
+"documents nous\" definit a Eines - Preferències"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:578
 msgid "Taxonomy"
@@ -5484,8 +5516,8 @@ msgid ""
 "and AUDIO) when using XHTML format."
 msgstr ""
 "\"Permissiu\" permet qualsevol etiquetatge. \"Estricte\" permet només "
-"etiquetatge vàlid: suprimeix qualsevol codi invàlid, fins i tot etiquetes "
-"HTML5 (excepte VÍDEO i ÀUDIO) quan s'utilitza el format XHTML."
+"etiquetatge vàlid: suprimeix qualsevol codi invàlid, fins i tot etiquetes"
+" HTML5 (excepte VÍDEO i ÀUDIO) quan s'utilitza el format XHTML."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:202
 msgid "Editor version"
@@ -5898,8 +5930,8 @@ msgid ""
 "If you leave this page eXe application continues to run. Please use the "
 "menu File->Quit if you really want to exit the application."
 msgstr ""
-"Si abandoneu aquesta pàgina l'aplicació eXe continua executant-se. Utilitzeu "
-"el menú Fitxer->Ix si voleu eixir de l'aplicació."
+"Si abandoneu aquesta pàgina l'aplicació eXe continua executant-se. "
+"Utilitzeu el menú Fitxer->Ix si voleu eixir de l'aplicació."
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:90 exe/jsui/scripts/exe.js:269
 msgid "Group iDevices"
@@ -7436,7 +7468,8 @@ msgstr "creative commons: Reconeixement - SenseObraDerivada (by-nd)"
 #: exe/jsui/scripts/lomvocab.js:1314
 msgid "creative commons: attribution - non derived work - non commercial"
 msgstr ""
-"creative commons: Reconeixement - SenseObreDerivada - NoComercial (by-nd-nc)"
+"creative commons: Reconeixement - SenseObreDerivada - NoComercial (by-nd-"
+"nc)"
 
 #: exe/jsui/scripts/lomvocab.js:1318
 msgid "creative commons: attribution - non commercial"
@@ -7444,8 +7477,7 @@ msgstr "creative commons: Reconeixement - NoComercial (by-nc)"
 
 #: exe/jsui/scripts/lomvocab.js:1322
 msgid "creative commons: attribution - non commercial - share alike"
-msgstr ""
-"creative commons: Reconeixement - No comercial - CompartirIgual (by-nc-sa)"
+msgstr "creative commons: Reconeixement - No comercial - CompartirIgual (by-nc-sa)"
 
 #: exe/jsui/scripts/lomvocab.js:1326
 msgid "creative commons: attribution - share alike"
@@ -7677,10 +7709,10 @@ msgstr ""
 "\n"
 "        <h2>Feu clic als elements en el joc d'ordenar</h2>\n"
 "        <p>\n"
-"                Açò contrueix un joc en Javascript en què l'usuari ha de fer "
-"clic en un lloc concret a l'àrea principal segons la pista.  \n"
-"                Quan clica l'àrea correcta apareix una retroacció positiva i "
-"el joc avança. En canvi, si ho fa en l'àrea incorrecta\n"
+"                Açò contrueix un joc en Javascript en què l'usuari ha de "
+"fer clic en un lloc concret a l'àrea principal segons la pista.  \n"
+"                Quan clica l'àrea correcta apareix una retroacció "
+"positiva i el joc avança. En canvi, si ho fa en l'àrea incorrecta\n"
 "                apareix una retroacció negativa. Quan clica en l'àrea "
 "correcta es mostra un element allí. Es pot establir\n"
 "                un retard per a fer que desaparega l'element després del "
@@ -7733,8 +7765,7 @@ msgstr "Llicència Creative Commons 4.0 Reconeixement-No comercial."
 
 #: exe/webui/common.py:120
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
-msgstr ""
-"Llicència Creative Commons 4.0 Reconeixement-No comercial-Compartir Igual"
+msgstr "Llicència Creative Commons 4.0 Reconeixement-No comercial-Compartir Igual"
 
 #: exe/webui/common.py:126
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
@@ -7768,8 +7799,7 @@ msgstr "Llicència Creative Commons 3.0 Reconeixement-No comercial."
 
 #: exe/webui/common.py:223
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
-msgstr ""
-"Llicència Creative Commons 3.0 Reconeixement-No comercial-Compartir Igual"
+msgstr "Llicència Creative Commons 3.0 Reconeixement-No comercial-Compartir Igual"
 
 #: exe/webui/common.py:229
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
@@ -7795,8 +7825,7 @@ msgstr "Llicència Creative Commons 2.5 Reconeixement-No comercial."
 
 #: exe/webui/common.py:259
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
-msgstr ""
-"Llicència Creative Commons 2.5 Reconeixement-No comercial-Compartir Igual"
+msgstr "Llicència Creative Commons 2.5 Reconeixement-No comercial-Compartir Igual"
 
 #: exe/webui/common.py:265
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
@@ -8003,8 +8032,8 @@ msgid ""
 "to submit your iDevice without one."
 msgstr ""
 "El vostre iDevice nou apareixerà en la subfinestra d'iDevices amb aquest "
-"títol. Aquest és un camp obligatori i apareixerà una finestra per a escriure "
-"una etiqueta si proveu d'enviar l'iDevide sense omplir-lo."
+"títol. Aquest és un camp obligatori i apareixerà una finestra per a "
+"escriure una etiqueta si proveu d'enviar l'iDevide sense omplir-lo."
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
@@ -8023,8 +8052,8 @@ msgid ""
 "Use this pulldown to select whether or not  the iDevice should have any "
 "formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr ""
-"Utilitzeu el menú desplegable per a seleccionar si l'iDevice ha de tindre o "
-"un format aplicat per a distingir-lo; p. ex.: una vora i una icona."
+"Utilitzeu el menú desplegable per a seleccionar si l'iDevice ha de tindre"
+" o un format aplicat per a distingir-lo; p. ex.: una vora i una icona."
 
 #: exe/webui/editorpane.py:79
 msgid ""
@@ -8032,9 +8061,9 @@ msgid ""
 "device's development. This can be useful if your iDevice is to be "
 "exported for others to use."
 msgstr ""
-"Utilitzeu aquest camp per a descriure l'ús i la pedagogia que hi ha darrere "
-"de l'elaboració de l'iDevice. Això pot ser molt útil si penseu exportar el "
-"contingut perquè l'utilitzen altres."
+"Utilitzeu aquest camp per a descriure l'ús i la pedagogia que hi ha "
+"darrere de l'elaboració de l'iDevice. Això pot ser molt útil si penseu "
+"exportar el contingut perquè l'utilitzen altres."
 
 #: exe/webui/editorpane.py:84
 msgid ""
@@ -8395,8 +8424,8 @@ msgid ""
 "One or more words or hints are blank.  Please do not have any blank hints"
 " or words - you can delete unused ones."
 msgstr ""
-"Una o més paraules o pistes estan en blanc. No les deixeu en blanc; podeu "
-"eliminar les que no s'utilitzen."
+"Una o més paraules o pistes estan en blanc. No les deixeu en blanc; podeu"
+" eliminar les que no s'utilitzen."
 
 #: exe/webui/hangmanblock.py:350
 msgid "Remove This Life"
@@ -8485,7 +8514,8 @@ msgid ""
 "                trim in case you reduced the number of rows / columns</p>"
 "\n"
 msgstr ""
-"<p>Feu clic en el botó de davall per a crear els parells que concorden o \n"
+"<p>Feu clic en el botó de davall per a crear els parells que concorden o"
+" \n"
 "                per a retallar en cas d'haver reduït el nombre de "
 "files/columnes</p>\n"
 
@@ -8642,10 +8672,10 @@ msgid ""
 "disabilities, or to those using a text browser, or browsing the Web with "
 "images turned off."
 msgstr ""
-"Esteu segur que voleu continuar sense incloure una descripció de la imatge? "
-"Si ho feu així, és possible que la imatge no siga accessible per a usuaris "
-"amb discapacitats o que utilitzen un navegador de text o naveguen amb les "
-"imatges desactivades."
+"Esteu segur que voleu continuar sense incloure una descripció de la "
+"imatge? Si ho feu així, és possible que la imatge no siga accessible per "
+"a usuaris amb discapacitats o que utilitzen un navegador de text o "
+"naveguen amb les imatges desactivades."
 
 #: exe/webui/scripts/authoring.js:667 exe/webui/scripts/authoring.js:684
 msgid "Image description"
@@ -8660,8 +8690,8 @@ msgid ""
 "Embed images shouldn't be pasted directly into the editor. Please use "
 "Insert/Edit Image."
 msgstr ""
-"Les imatges incrustades no s'han d'apegar directament en l'editor. Utilitzeu "
-"Insereix/Edita la imatge."
+"Les imatges incrustades no s'han d'apegar directament en l'editor. "
+"Utilitzeu Insereix/Edita la imatge."
 
 #: exe/webui/scripts/authoring.js:857
 msgid "This change will be undone."
@@ -8700,10 +8730,10 @@ msgid ""
 "that provides application functionality. You will need to disable popup "
 "blocking on this site in order to fully utilize this tool."
 msgstr ""
-"Ens hem adonat que el bloquejador de finestres emergents ha inhabilitat una "
-"finestra que proporciona algunes funcions de l'aplicació. Heu d'inhabilitar "
-"el bloqueig de finestres emergents en aquest lloc per a poder utilitzar "
-"completament aquesta eina."
+"Ens hem adonat que el bloquejador de finestres emergents ha inhabilitat "
+"una finestra que proporciona algunes funcions de l'aplicació. Heu "
+"d'inhabilitar el bloqueig de finestres emergents en aquest lloc per a "
+"poder utilitzar completament aquesta eina."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Currently not supported by your browser, use keyboard shortcuts instead."
@@ -9792,8 +9822,8 @@ msgid ""
 "The URL you entered seems to be an external link. Do you want to add the "
 "required http:// prefix?"
 msgstr ""
-"L'URL que heu introduït sembla un enllaç extern. Voleu afegir-hi el prefix "
-"requerit http://?"
+"L'URL que heu introduït sembla un enllaç extern. Voleu afegir-hi el "
+"prefix requerit http://?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -9801,8 +9831,8 @@ msgid ""
 "The URL you entered seems to be an email address. Do you want to add the "
 "required mailto: prefix?"
 msgstr ""
-"L'URL que heu introduït sembla una adreça electrònica. Voleu afegir-hi el "
-"prefix requerit mailto:?"
+"L'URL que heu introduït sembla una adreça electrònica. Voleu afegir-hi el"
+" prefix requerit mailto:?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:3
 msgid "Anchors and nodes"
@@ -10119,16 +10149,16 @@ msgid ""
 "Change the text of the tabs adding a title to each Heading 2 with the "
 "\"Insert/Edit Attributes\" option:"
 msgstr ""
-"Canvia el text de les pestanyes per a afegir un títol a cada encapçalament 2 "
-"amb l'opció «Insereix/Edita atributs»:"
+"Canvia el text de les pestanyes per a afegir un títol a cada "
+"encapçalament 2 amb l'opció «Insereix/Edita atributs»:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:13
 msgid ""
 "Timelines require a third level title (Heading 3) right after each "
 "Heading 2."
 msgstr ""
-"La línia de temps requereix un títol de tercer nivell (Encapçalament 3) just "
-"després de cada Encapçalament 2."
+"La línia de temps requereix un títol de tercer nivell (Encapçalament 3) "
+"just després de cada Encapçalament 2."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
@@ -11312,10 +11342,10 @@ msgid ""
 "table header cell. Without it, it may be difficult for some users with "
 "disabilities to understand the content or data displayed of the table."
 msgstr ""
-"Esteu segur que voleu continuar sense especificar l'abast de la cel·la de "
-"capçalera de la taula? Si ho feu així, és possible que usuaris amb "
-"discapacitats tinguen dificultat per a entendre el contingut o les dades de "
-"la taula."
+"Esteu segur que voleu continuar sense especificar l'abast de la cel·la de"
+" capçalera de la taula? Si ho feu així, és possible que usuaris amb "
+"discapacitats tinguen dificultat per a entendre el contingut o les dades "
+"de la taula."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "You've exceeded the maximum number of cells of {$cells}."
@@ -12079,7 +12109,8 @@ msgstr "El nom de l'estil ja existeix."
 #: exe/webui/styledesigner.py:285
 msgid "Error saving style, style directory does not exist"
 msgstr ""
-"S'ha produït un error en guardar l'estil, el directori d'estil no existeix."
+"S'ha produït un error en guardar l'estil, el directori d'estil no "
+"existeix."
 
 #: exe/webui/stylemanagerpage.py:151 exe/webui/stylemanagerpage.py:308
 msgid "Success"
@@ -12732,3 +12763,4 @@ msgstr ""
 "El fitxer d'iDevices/generic.data o el paquet que proveu de carregar s'ha"
 " creat amb una versió més nova de l'eXe. Actualitzeu l'eXe i torneu-ho a "
 "provar."
+

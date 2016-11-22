@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-11 20:21+0100\n"
+"POT-Creation-Date: 2016-11-22 18:34+0100\n"
 "PO-Revision-Date: 2008-05-19 06:31+1200\n"
 "Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
 "Language: sk\n"
@@ -3238,153 +3238,174 @@ msgid ""
 msgstr ""
 
 #: exe/exe_do:75
+msgid "Append  <input_file> elp package to <output_file> elp package"
+msgstr ""
+
+#: exe/exe_do:80
 msgid "Set ELP field values. Example: -s style=Default,root.title='Root Node'"
 msgstr ""
 
-#: exe/exe_do:78
+#: exe/exe_do:83
 msgid "Set ELP field values options"
 msgstr ""
 
-#: exe/exe_do:79
+#: exe/exe_do:84
 msgid ""
 "Once you have chosen Set ELP field values option using '-s <values>' or"
 "     '--set <values>', it's possible to configure the following options:"
 msgstr ""
 
-#: exe/exe_do:84
+#: exe/exe_do:89
 msgid "Write field values to ELP"
 msgstr ""
 
-#: exe/exe_do:90
+#: exe/exe_do:95
 msgid ""
 "Generates resource info report to text <output_file> from <input_file> "
 "elp package"
 msgstr ""
 
-#: exe/exe_do:102
+#: exe/exe_do:107
 msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
 "given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage,"
 " xliff or epub3."
 msgstr ""
 
-#: exe/exe_do:108
+#: exe/exe_do:113
 msgid ""
 "Import to <output_file> elp package, <input_file> in one of the given "
 "formats: xml or xliff."
 msgstr ""
 
-#: exe/exe_do:113
+#: exe/exe_do:118
 msgid "Force overwrite of <output_file>"
 msgstr ""
 
-#: exe/exe_do:117
+#: exe/exe_do:122
 msgid "Add the required files to generate a export editable by eXeLearning"
 msgstr ""
 
-#: exe/exe_do:122
+#: exe/exe_do:127
 msgid "XLIFF export options"
 msgstr ""
 
-#: exe/exe_do:123
+#: exe/exe_do:128
 msgid ""
 "Once you have chosen XLIFF export option using '-x xliff' or '--export "
 "xliff', it's possible to configure the following export options:"
 msgstr ""
 
-#: exe/exe_do:128
+#: exe/exe_do:133
 msgid "Don't copy source in target"
 msgstr ""
 
-#: exe/exe_do:133 exe/jsui/scripts/app/controller/Toolbar.js:775
+#: exe/exe_do:138 exe/jsui/scripts/app/controller/Toolbar.js:775
 msgid "Wrap fields in CDATA"
 msgstr ""
 
-#: exe/exe_do:138
+#: exe/exe_do:143
 msgid "XLIFF import options"
 msgstr ""
 
-#: exe/exe_do:139
+#: exe/exe_do:144
 msgid ""
 "Once you have chosen XLIFF import option using  '-i xliff' or '--import "
 "xliff', it's possible to configure the following import options:"
 msgstr ""
 
-#: exe/exe_do:144 exe/webui/xliffimportpreferencespage.py:79
+#: exe/exe_do:149 exe/webui/xliffimportpreferencespage.py:79
 msgid "Import from source language"
 msgstr ""
 
-#: exe/exe_do:149
+#: exe/exe_do:154
 msgid "SCORM export options"
 msgstr ""
 
-#: exe/exe_do:150
+#: exe/exe_do:155
 msgid ""
 "Once you have chosen one SCORM export option using '-x scorm12' or '-x "
 "scorm2004' or 'x agrega', it's possible to configure the following export"
 " options:"
 msgstr ""
 
-#: exe/exe_do:155
+#: exe/exe_do:160
 msgid "Include Single Page export file"
 msgstr ""
 
-#: exe/exe_do:160
+#: exe/exe_do:165
 msgid "Include Web Site export files"
 msgstr ""
 
-#: exe/exe_do:175
+#: exe/exe_do:180
 msgid "Options --export and --import are mutually exclusive."
 msgstr ""
 
-#: exe/exe_do:178
-msgid "No --export, --import, --set or --report option supplied."
+#: exe/exe_do:183
+msgid "Options --export and --append are mutually exclusive."
 msgstr ""
 
-#: exe/exe_do:182
+#: exe/exe_do:186
+msgid "Options --import and --append are mutually exclusive."
+msgstr ""
+
+#: exe/exe_do:190
+msgid "No --append --export, --import, --set or --report option supplied."
+msgstr ""
+
+#: exe/exe_do:194
 msgid "No file input supplied."
 msgstr ""
 
-#: exe/exe_do:191
+#: exe/exe_do:198 exe/exe_do:219
 msgid "Bad number of arguments supplied"
 msgstr ""
 
-#: exe/exe_do:208 exe/export/cmdlineexporter.py:84
+#: exe/exe_do:205
+#, python-format
+msgid "Successfully appended '%s' to '%s'."
+msgstr ""
+
+#: exe/exe_do:207
+msgid "exe_do: error: Unable to append elp"
+msgstr ""
+
+#: exe/exe_do:236 exe/export/cmdlineexporter.py:87
 msgid "Invalid input package"
 msgstr ""
 
-#: exe/exe_do:228
+#: exe/exe_do:256
 #, python-format
 msgid ""
 "exe_do: error: Unable to set values from '%s'.\n"
-"The error was:"
+"The     error was:"
 msgstr ""
 
-#: exe/exe_do:246
+#: exe/exe_do:274
 #, python-format
 msgid "Successfully exported '%s' from '%s'."
 msgstr ""
 
-#: exe/exe_do:249
+#: exe/exe_do:277
 #, python-format
 msgid ""
 "exe_do: error: Unable to export from '%s'.\n"
-"The error was:"
+"The     error was:"
 msgstr ""
 
-#: exe/exe_do:257
+#: exe/exe_do:285
 #, python-format
 msgid "File '%s' successfully imported to '%s'."
 msgstr ""
 
-#: exe/exe_do:260
+#: exe/exe_do:288
 #, python-format
 msgid ""
 "exe_do: error: Unable to import '%s'.\n"
-"The error was:"
+"The     error was:"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:304
+#: exe/export/cmdlineexporter.py:73 exe/jsui/mainpage.py:304
 #: exe/jsui/mainpage.py:1112 exe/jsui/mainpage.py:1276
 #: exe/jsui/mainpage.py:1316 exe/jsui/mainpage.py:1351
 #: exe/jsui/mainpage.py:1372 exe/jsui/mainpage_antes_jr_docs.py:295
@@ -3401,12 +3422,13 @@ msgstr ""
 "\"%s\" už existuje.\n"
 "Prosím pokúste sa znovu s iným menom súboru."
 
-#: exe/export/cmdlineexporter.py:92
+#: exe/export/cmdlineexporter.py:95
 msgid "Export format not implemented"
 msgstr ""
 
-#: exe/export/epub3export.py:659 exe/export/imsexport.py:623
-#: exe/export/scormexport.py:717 exe/export/websiteexport.py:104
+#: exe/export/epub3export.py:659 exe/export/epub3subexport.py:664
+#: exe/export/imsexport.py:623 exe/export/scormexport.py:717
+#: exe/export/websiteexport.py:104
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3772,12 +3794,12 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:643
 #: exe/jsui/scripts/app/controller/Toolbar.js:712
 #: exe/jsui/scripts/app/controller/Toolbar.js:823
-#: exe/jsui/scripts/app/controller/Toolbar.js:903
-#: exe/jsui/scripts/app/controller/Toolbar.js:923
-#: exe/jsui/scripts/app/controller/Toolbar.js:943
-#: exe/jsui/scripts/app/controller/Toolbar.js:975
-#: exe/jsui/scripts/app/controller/Toolbar.js:1111
-#: exe/jsui/scripts/app/controller/Toolbar.js:1208
+#: exe/jsui/scripts/app/controller/Toolbar.js:906
+#: exe/jsui/scripts/app/controller/Toolbar.js:926
+#: exe/jsui/scripts/app/controller/Toolbar.js:946
+#: exe/jsui/scripts/app/controller/Toolbar.js:978
+#: exe/jsui/scripts/app/controller/Toolbar.js:1114
+#: exe/jsui/scripts/app/controller/Toolbar.js:1211
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 #: exe/webui/scripts/authoring.js:96 exe/webui/scripts/authoring.js:121
 #: exe/webui/scripts/authoring.js:365 exe/webui/scripts/authoring.js:374
@@ -3788,11 +3810,11 @@ msgid "All Files"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/MainTab.js:237
-#: exe/jsui/scripts/app/controller/Toolbar.js:876
-#: exe/jsui/scripts/app/controller/Toolbar.js:896
-#: exe/jsui/scripts/app/controller/Toolbar.js:916
-#: exe/jsui/scripts/app/controller/Toolbar.js:936
-#: exe/jsui/scripts/app/controller/Toolbar.js:968
+#: exe/jsui/scripts/app/controller/Toolbar.js:878
+#: exe/jsui/scripts/app/controller/Toolbar.js:899
+#: exe/jsui/scripts/app/controller/Toolbar.js:919
+#: exe/jsui/scripts/app/controller/Toolbar.js:939
+#: exe/jsui/scripts/app/controller/Toolbar.js:971
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Please wait..."
 msgstr ""
@@ -3982,8 +4004,8 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:567
 #: exe/jsui/scripts/app/controller/Toolbar.js:588
-#: exe/jsui/scripts/app/controller/Toolbar.js:1110
-#: exe/jsui/scripts/app/controller/Toolbar.js:1207
+#: exe/jsui/scripts/app/controller/Toolbar.js:1113
+#: exe/jsui/scripts/app/controller/Toolbar.js:1210
 msgid "eXe Package Files"
 msgstr ""
 
@@ -4108,86 +4130,86 @@ msgstr ""
 msgid "Select the parent folder for export."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:890
+#: exe/jsui/scripts/app/controller/Toolbar.js:893
 msgid "Export text package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:902
+#: exe/jsui/scripts/app/controller/Toolbar.js:905
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Text File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:910
+#: exe/jsui/scripts/app/controller/Toolbar.js:913
 msgid "Save package resources report as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:922
+#: exe/jsui/scripts/app/controller/Toolbar.js:925
 msgid "CSV File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:930
+#: exe/jsui/scripts/app/controller/Toolbar.js:933
 msgid "Export EPUB3 package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:942
+#: exe/jsui/scripts/app/controller/Toolbar.js:945
 msgid "EPUB3 File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:950
+#: exe/jsui/scripts/app/controller/Toolbar.js:953
 msgid "Export SCORM package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:952
+#: exe/jsui/scripts/app/controller/Toolbar.js:955
 msgid "Export IMS package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:954
+#: exe/jsui/scripts/app/controller/Toolbar.js:957
 msgid "Export Website package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:956
+#: exe/jsui/scripts/app/controller/Toolbar.js:959
 msgid "Export Common Cartridge as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:958
+#: exe/jsui/scripts/app/controller/Toolbar.js:961
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:974
+#: exe/jsui/scripts/app/controller/Toolbar.js:977
 msgid "SCORM/IMS/ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1083
+#: exe/jsui/scripts/app/controller/Toolbar.js:1086
 msgid "Loading package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1099
+#: exe/jsui/scripts/app/controller/Toolbar.js:1102
 msgid "Open File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1104
+#: exe/jsui/scripts/app/controller/Toolbar.js:1107
 msgid "Loading package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1123
+#: exe/jsui/scripts/app/controller/Toolbar.js:1126
 msgid "Save Package first?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1124
+#: exe/jsui/scripts/app/controller/Toolbar.js:1127
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1171
+#: exe/jsui/scripts/app/controller/Toolbar.js:1174
 msgid "Saving package to: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1187
+#: exe/jsui/scripts/app/controller/Toolbar.js:1190
 msgid "Save file"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1193
+#: exe/jsui/scripts/app/controller/Toolbar.js:1196
 msgid "Saving package..."
 msgstr ""
 
