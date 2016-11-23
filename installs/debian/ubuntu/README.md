@@ -14,7 +14,7 @@ $ apt-get install python-feedparser python-beautifulsoup python-zope python-imag
 #### Important note! (Ubuntu versions below 14.04)
 The python package `python-requests-oauthlib` is not available on the official Ubuntu repositories for any Ubuntu version below 14.04. For this case, you must remove this package from the commando like so:
 ```console
-$ apt-get install python-feedparser python-beautifulsoup python-zope python-imaging python-suds python-dateutil python-lxml mimetex python-egenix-mxtools cssmin python-cssmin slimit
+$ apt-get install python-feedparser python-beautifulsoup python-zope python-imaging python-suds python-dateutil python-lxml mimetex cssmin python-cssmin slimit
 ```
 Then you must install a Python Package Manager like [pip](https://pip.pypa.io/) and install the package from there:
 ```console
