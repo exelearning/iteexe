@@ -19,7 +19,7 @@ Prefix: %{_prefix}
 ExclusiveArch: i686
 BuildRequires: python-devel
 BuildRequires: python >= %{pyver}
-Requires: python >= %{pyver}, python-setuptools, python-imaging, python-zope-interface, python-chardet, python-lxml, python-feedparser, mimetex, python-BeautifulSoup, python-suds, python-requests-oauthlib, python-dateutil
+Requires: python >= %{pyver}, python-setuptools, python-imaging, python-zope-interface, python-chardet, python-lxml, python-feedparser, mimetex, python-BeautifulSoup, python-suds, python-requests-oauthlib, python-dateutil, python-cssmin
 Obsoletes: exe-twisted, exe
 
 %description
@@ -50,6 +50,9 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 cp exe.desktop $RPM_BUILD_ROOT%{_datadir}/applications/
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/mime/packages/
 cp exe.xml $RPM_BUILD_ROOT%{_datadir}/mime/packages/
+ln -s %{_datadir}/locale $RPM_BUILD_ROOT%{_datadir}/exe/locale
+ln -s %{_datadir}/doc/intef-exe $RPM_BUILD_ROOT%{_datadir}/exe/docs
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,6 +65,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/python%{pyver}/site-packages/exe-%{version}*-py%{pyver}.egg-info
 %{_datadir}/exe
 %{_datadir}/icons/hicolor/48x48/apps/exe.png
+%{_datadir}/doc/intef-exe/README
+%{_datadir}/pixmaps/exe.xpm
+%{_datadir}/locale/*/LC_MESSAGES/exe.mo
 %config %{_datadir}/mime/packages/exe.xml
 %config %{_datadir}/applications/exe.desktop
 %doc COPYING NEWS README
@@ -94,4 +100,3 @@ rm -rf $RPM_BUILD_ROOT
 
 * Wed May 09 2007 Jim Tittsler <jim@exelearning.org>
 - bring up to date, including our custom twisted/nevow
-
