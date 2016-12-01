@@ -268,6 +268,11 @@ var $app = {
 		// Enable the Color Pickers after loading the current values
 		
 	},
+	toggleNavWidth : function(hide) {
+		var n = $("#navWidth-wrapper");
+		if (hide) n.hide();
+		else n.show();
+	},
 	preloader : {
 		show : function(){
 			$(document.body).addClass("sending-form");
@@ -523,6 +528,7 @@ var $app = {
 					}
 					else if (currentValue[0]=="horizontalNavigation") {
 						$("#horizontalNavigation").prop('checked', true);
+						$app.toggleNavWidth(true);
 					}
 					else if (currentValue[0]=="noEmShowBox") {
 						$("#noEmShowBox").prop('checked', true);
