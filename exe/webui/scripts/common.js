@@ -776,7 +776,7 @@ $exe.cloze = {
 		var i = document.getElementById("clozeAnswer" + n + "." + r);
 		var s = i.innerHTML;
 		s = $exe.cloze.decode64(s);
-		s = decodeURIComponent(s);
+		s = unescape(s);
 		// XOR "Decrypt"
 		result = "";
 		var o = "X".charCodeAt(0);
@@ -1159,7 +1159,7 @@ $exe.cloze = {
 			var i = document.getElementById("clozelangAnswer" + n + "." + r);
 			var s = i.innerHTML;
 			s = $exe.cloze.decode64(s);
-			s = decodeURIComponent(s);
+			s = unescape(s);
 			// XOR "Decrypt"
 			result = "";
 			var o = "X".charCodeAt(0);
