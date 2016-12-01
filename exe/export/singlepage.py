@@ -293,7 +293,7 @@ class SinglePage(Page):
         # Node header container
         html += u'<%s class="nodeDecoration">%s' % (headerTag, lineBreak)
         # Node title
-        html += u'<h%d id="%s" class="nodeTitle">%s</h1>%s' % (headerLevel, node.GetAnchorName(), escape(node.titleLong), lineBreak)
+        html += u'<h1 id="%s" class="nodeTitle">%s</h1>%s' % (node.GetAnchorName(), escape(node.titleLong), lineBreak)
         # Close Node header container
         html += u'</%s>%s' % (headerTag, lineBreak)
         
