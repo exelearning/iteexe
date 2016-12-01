@@ -236,7 +236,7 @@ div.ppt{display:none!important}
 body .exe-hidden{display:inherit;filter:alpha(opacity=40);opacity:0.4;margin:0.5em;padding-left:25px;background:url(../images/exe_hidden.png) no-repeat 0 0}
 body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:auto;filter:alpha(opacity=40);opacity:0.4;margin:0.5em;padding-left:25px;background:url(../images/exe_hidden_accessible.png) no-repeat 0 0}
 /* See $exeTinyMCEToggler.toggle in tinymce_4_settings.js */
-body.hidden-editor .mce-menubar,
-body.hidden-editor .mce-toolbar,
-body.hidden-editor .mce-statusbar,
-body.hidden-editor .mce-toolbar-grp{display:none}
+.hidden-editor .mce-menubar,
+.hidden-editor .mce-toolbar,
+.hidden-editor .mce-statusbar,
+.hidden-editor .mce-toolbar-grp{display:none}

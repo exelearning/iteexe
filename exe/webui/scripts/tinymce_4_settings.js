@@ -343,14 +343,14 @@ var $exeTinyMCEToggler = {
 				i.css("height",h+"px");
 			}
 			e.className = 'hidden-editor';
-			$("body").addClass("hidden-editor");
+			p.addClass("hidden-editor");
 			$(".mce-edit-area").css("border-width","0"); // So the box doesn't have a 2px border top
 		} else {
 			// Show toolbars
 			if (i!='') i.css("height",window[e.id+"-iframeHeight"]);
 			e.className = 'visible-editor';
 			$(".mce-edit-area").css("border-width","1px 0 0");
-			$("body").removeClass("hidden-editor");
+			p.removeClass("hidden-editor");
 		}
 	}
 	
