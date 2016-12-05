@@ -213,8 +213,8 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
            return;
         }
     
-        // decodeURIComponent, to remove the %20's for spaces, etc.:
-        var unescaped_local_imagePath = decodeURIComponent(local_imagePath);
+        // unescape, to remove the %20's for spaces, etc.:
+        var unescaped_local_imagePath = unescape(local_imagePath);
         var oldImageStr = new String(unescaped_local_imagePath);
     
         // and replace path delimiters (':', '\', or '/') or '%', ' ', or '&' 
@@ -625,7 +625,7 @@ var exe_tinymce = {
 			blobName, blobBase64) {
 		var local_imagePath = 'data:image/jpeg;base64,' + blobBase64;
 
-		var unescaped_local_imagePath = decodeURIComponent(local_imagePath);
+		var unescaped_local_imagePath = unescape(local_imagePath);
 		var oldImageStr = new String(blobName);
 
 		exe_tinymce.uploaded_file_1_name = "";
@@ -709,8 +709,8 @@ var exe_tinymce = {
                 return;
             }
 
-            // decodeURIComponent, to remove the %20's for spaces, etc.:
-            var unescaped_local_imagePath = decodeURIComponent(local_imagePath);
+            // unescape, to remove the %20's for spaces, etc.:
+            var unescaped_local_imagePath = unescape(local_imagePath);
             var oldImageStr = new String(unescaped_local_imagePath);
 
             /* HTML 5 */
