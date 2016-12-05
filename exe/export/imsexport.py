@@ -42,7 +42,6 @@ from exe                      	   import globals as G
 from exe.engine.persist            import encodeObject
 from exe.engine.persistxml         import encodeObjectToXML
 from exe.engine.lom                import lomsubs
-from slimit                        import minify
 from helper                        import exportMinFileJS 
 from helper                        import exportMinFileCSS
 from exe.webui.common              import getFilesCSSToMinify

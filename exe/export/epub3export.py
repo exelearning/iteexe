@@ -35,7 +35,6 @@ from exe.export.pages              import Page, uniquifyNames
 from exe                      	   import globals as G
 from BeautifulSoup                 import BeautifulSoup
 from htmlentitydefs                import name2codepoint
-from slimit                        import minify
 from helper                        import exportMinFileJS
 from helper                        import exportMinFileCSS
 from exe.webui.common              import getFilesCSSToMinify
