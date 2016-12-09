@@ -1,6 +1,6 @@
 import re
-from exe.webui          import common
-from slimit             import minify
+from exe.webui                  import common
+from webassets.filter.rjsmin    import RJSMin
 import cssmin
 # Line breaks
 lineBreak = u'\n'
@@ -106,22 +106,59 @@ def processInternalLinks(package, html):
     return common.renderInternalLinkNodeAnchor(package, html)
 
 def exportMinFileJS(listFiles, outputDir):
+    """
+    Minify JS file for exporting
     
-    for i in range(len(listFiles)):
-        files = open( listFiles[i]['path'], 'r')
-        outPutFiles = open(outputDir/listFiles[i]['basename'], 'w')
-        for linea in files.readlines():
-            if not(linea.find('//')):
-                outPutFiles.write(linea)
-            else:
-                files.seek(0)
-                break
+    This function will only keep the first comment if it has the following format:
+        * It starts with /*!
+        * It ends with */
         
-        outPutFiles.write(minify(files.read(), mangle=False, mangle_toplevel=False))
-        outPutFiles.close()
+    If the comment doesn't follow this rules or if it isn't in the 
+    first line (blank lines doesn't count), it will be erased
+    """
+    
+    minifier = RJSMin();
+    
+    # Go over all the files in the list
+    for inputFile in listFiles:
+        # Open current file in "read" mode
+        inputFileStream = open( inputFile['path'], 'r')
+        # Open output file in "write" mode
+        outputFile = open(outputDir / inputFile['basename'], 'w')
+        
+        licenseComment = ''
+        
+        # Get the first line of the file
+        line = inputFileStream.readline()
+        # If the first line is empty, get the next one until one with content pops up
+        while line.strip(' ') == '\n':
+            line = inputFileStream.readline()
+        
+        # If the line starts with /*! it means is the license comment
+        if line.startswith('/*!'):
+            # Add this line to the comment
+            licenseComment = licenseComment + line
+            
+            # Add all the lines until the end of the comment
+            while not line.endswith('*/\n'):
+                line = inputFileStream.readline() 
+                licenseComment = licenseComment + line
+        
+        # If there is a license comment, write it to the ouput file
+        if licenseComment != '':
+            outputFile.write(licenseComment)
+        
+        # Write the minified code to the ouput file
+        minifier.output(inputFileStream, outputFile)
+        
+        # Close the files
+        inputFileStream.close() 
+        outputFile.close()
         
 def exportMinFileCSS(listFiles, outputDir):
-    
+    """
+    Minify CSS file for exporting
+    """
     for i in range(len(listFiles)):
         files = open( listFiles[i]['path'], 'r')
         outPutFiles = open(outputDir/listFiles[i]['basename'], 'w')
