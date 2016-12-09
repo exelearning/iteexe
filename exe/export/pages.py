@@ -28,6 +28,13 @@ from exe.webui import common
 
 log = logging.getLogger(__name__)
 
+# List of filenames that can't be used
+# Most of this names correspond to Windows reserved names and cannot be used to name folders or files
+forbiddenPageNames = ['CON', 'PRN', 'AUX', 'CLOCK$', 'NUL', 
+                        'COM1', 'COM2', 'COM3', 'COM4', 'COM5', 
+                        'COM6', 'COM7', 'COM8', 'COM9', 'LPT1', 
+                        'LPT2', 'LPT3', 'LPT4', 'LPT5', 'LPT6', 
+                        'LPT7', 'LPT8', 'LPT9']
 
 # ===========================================================================
 class Page(object):
@@ -77,6 +84,12 @@ def uniquifyNames(pages):
             pageNames[page.name] = uniquifier + 1
             if uniquifier > 1:
                 page.name += unicode(uniquifier)
+                
+        # If the page name is in the forbidden list,
+        # simply append an underscore at the end of it
+        if page.name.upper() in forbiddenPageNames:
+            page.name += '_'
+        
         # for export, temporarily set this unique name on the node itself,
         # such that any links to it can use the proper target; also
         # including the quote() & ".html", as per WebsitePage's:
