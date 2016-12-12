@@ -1361,6 +1361,7 @@ def getQuizTestPassRate(node):
     return False
 
 def getFilesJSToMinify(type, scriptsDir):
+    # Read about these files format (comments) in exportMinFileJS (helper.py)
     listJSFiles=[]
     if(type =='ims'):
         listJSFiles+=[{'path':scriptsDir/'common.js','basename':'common.js'}]
