@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-22 17:22+0100\n"
+"POT-Creation-Date: 2016-11-22 18:34+0100\n"
 "PO-Revision-Date: 2008-10-24 00:19+1300\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language: el\n"
@@ -171,8 +171,6 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:44 exe/engine/extendedfieldengine.py:336
 #: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
 msgstr "Συνημμένο"
 
@@ -226,7 +224,6 @@ msgstr "Το επισυναπτόμενο αρχείο %s δεν έχει γον
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:573
 #: exe/webui/tools/style-designer/langs/en.js:46
 msgid "Image"
 msgstr "Εικόνα"
@@ -415,8 +412,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:78
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:138
 msgid "Title"
 msgstr "Τίτλος "
 
@@ -698,8 +693,6 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:845
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:93
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:145
 msgid "Instructions"
 msgstr "Οδηγίες"
 
@@ -1125,8 +1118,6 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomSections.js:96
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:26
 msgid "Size"
 msgstr ""
@@ -1153,8 +1144,6 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:286
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:11
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:141
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:28
 msgid "Replace"
 msgstr ""
 
@@ -1165,7 +1154,6 @@ msgstr "Αποφόρτωση"
 
 #: exe/engine/extendedfieldengine.py:298
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:212
 msgid "File"
 msgstr ""
 
@@ -1182,9 +1170,6 @@ msgstr ""
 #: exe/webui/imagemagnifierblock.py:109 exe/webui/imagewithtextblock.py:83
 #: exe/webui/multimediablock.py:87
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:123
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "None"
 msgstr "Κανένα"
 
@@ -1535,7 +1520,6 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:193
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:81
 msgid "Description"
 msgstr "Περιγραφή"
 
@@ -1699,11 +1683,6 @@ msgstr "Δραστηριότητα Ανάγνωσης"
 
 #: exe/engine/hangmanidevice.py:51 exe/webui/common.py:502
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:168
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:434
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:441
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:453
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:460
 msgid "Hangman Game"
 msgstr ""
 
@@ -1725,7 +1704,6 @@ msgstr ""
 
 #: exe/engine/hangmanidevice.py:76
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:18
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:73
 msgid "Alphabet to Select From"
 msgstr ""
 
@@ -2089,9 +2067,6 @@ msgstr ""
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:588
 #: exe/webui/tools/style-designer/langs/en.js:24
 msgid "Text"
 msgstr "Κείμενο"
@@ -2505,7 +2480,6 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:78
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:165
 msgid "Cell Padding"
 msgstr ""
 
@@ -2515,7 +2489,6 @@ msgstr ""
 
 #: exe/engine/memorymatchidevice.py:79
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:166
 msgid "Cell Spacing"
 msgstr ""
 
@@ -2714,9 +2687,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:58
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:56
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:156
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelist/plugin.min.js:37
 #: exe/webui/tools/style-designer/langs/en.js:73
 msgid "Default"
 msgstr ""
@@ -3185,8 +3155,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:74
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:157
 msgid "Left to Right"
 msgstr ""
 
@@ -3197,8 +3165,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:73
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:158
 msgid "Right to Left"
 msgstr ""
 
@@ -3563,9 +3529,9 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr ""
 
-#: exe/export/epub3export.py:658 exe/export/epub3subexport.py:664
-#: exe/export/imsexport.py:621 exe/export/scormexport.py:716
-#: exe/export/websiteexport.py:103
+#: exe/export/epub3export.py:659 exe/export/epub3subexport.py:664
+#: exe/export/imsexport.py:623 exe/export/scormexport.py:717
+#: exe/export/websiteexport.py:104
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3576,13 +3542,11 @@ msgstr ""
 
 #: exe/export/scormpage.py:179 exe/export/websitepage.py:347
 #: exe/webui/common.py:485
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:149
 msgid "Previous"
 msgstr "Προηγούμενο"
 
 #: exe/export/scormpage.py:180 exe/export/websitepage.py:353
 #: exe/webui/common.py:486
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:142
 msgid "Next"
 msgstr "Επόμενο"
 
@@ -3612,7 +3576,6 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:386
 msgid "Example"
 msgstr "Παράδειγμα"
 
@@ -3666,7 +3629,6 @@ msgstr ""
 #: exe/jsui/mainpage_antes_jr_docs.py:313
 #: exe/jsui/mainpage_antes_jr_docs.py:778
 #: exe/jsui/mainpage_antes_jr_docs.py:908
-#: exe/jsui/scripts/app/controller/StyleManager.js:72
 msgid "Cannot access directory named "
 msgstr "Αδύνατη η προσπέλαση του επώνυμου καταλόγου"
 
@@ -3929,8 +3891,8 @@ msgid "Image Files"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/MainTab.js:204
-#: exe/jsui/scripts/app/controller/StyleManager.js:174
-#: exe/jsui/scripts/app/controller/StyleManager.js:220
+#: exe/jsui/scripts/app/controller/StyleManager.js:161
+#: exe/jsui/scripts/app/controller/StyleManager.js:207
 #: exe/jsui/scripts/app/controller/Toolbar.js:568
 #: exe/jsui/scripts/app/controller/Toolbar.js:589
 #: exe/jsui/scripts/app/controller/Toolbar.js:624
@@ -3970,13 +3932,12 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:264
 #: exe/jsui/scripts/app/controller/MainTab.js:318
 #: exe/jsui/scripts/app/controller/MainTab.js:372
-#: exe/jsui/scripts/app/controller/StyleManager.js:72
-#: exe/jsui/scripts/app/controller/StyleManager.js:109
-#: exe/jsui/scripts/app/controller/StyleManager.js:136
-#: exe/jsui/scripts/app/controller/StyleManager.js:164
-#: exe/jsui/scripts/app/controller/StyleManager.js:213
-#: exe/jsui/scripts/app/controller/StyleManager.js:254
-#: exe/jsui/scripts/app/controller/StyleManager.js:282
+#: exe/jsui/scripts/app/controller/StyleManager.js:96
+#: exe/jsui/scripts/app/controller/StyleManager.js:123
+#: exe/jsui/scripts/app/controller/StyleManager.js:151
+#: exe/jsui/scripts/app/controller/StyleManager.js:200
+#: exe/jsui/scripts/app/controller/StyleManager.js:241
+#: exe/jsui/scripts/app/controller/StyleManager.js:269
 #: exe/jsui/scripts/app/controller/Toolbar.js:475
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
@@ -4038,32 +3999,32 @@ msgstr ""
 msgid "Enter the new name:"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/StyleManager.js:153
+#: exe/jsui/scripts/app/controller/StyleManager.js:140
 #: exe/webui/scripts/stylemanager.js:28
 msgid "Select ZIP Style file to import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/StyleManager.js:173
+#: exe/jsui/scripts/app/controller/StyleManager.js:160
 #: exe/webui/scripts/stylemanager.js:41
 msgid "ZIP Style"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/StyleManager.js:201
+#: exe/jsui/scripts/app/controller/StyleManager.js:188
 #: exe/webui/scripts/stylemanager.js:53
 msgid "Export to ZIP Style as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/StyleManager.js:219
+#: exe/jsui/scripts/app/controller/StyleManager.js:206
 #: exe/webui/scripts/stylemanager.js:65
 msgid "ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/StyleManager.js:242
+#: exe/jsui/scripts/app/controller/StyleManager.js:229
 #: exe/webui/scripts/stylemanager.js:77
 msgid "Delete style?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/StyleManager.js:243
+#: exe/jsui/scripts/app/controller/StyleManager.js:230
 msgid "Do you want to delete this style?"
 msgstr ""
 
@@ -4242,8 +4203,6 @@ msgstr ""
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/webui/editorpane.py:273
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:48
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:29
 #: exe/webui/tools/style-designer/langs/en.js:128
 #: exe/webui/tools/style-designer/langs/en.js:137
 #: exe/webui/xliffimportpreferencespage.py:94
@@ -4251,7 +4210,6 @@ msgid "Cancel"
 msgstr "Ακύρωση"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:792
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:36
 msgid "Ok"
 msgstr ""
 
@@ -4406,8 +4364,6 @@ msgstr ""
 #: exe/webui/editorpane.py:335
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:63
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:187
 msgid "Name"
 msgstr "Όνομα"
 
@@ -4418,8 +4374,6 @@ msgstr "Όνομα"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Type"
 msgstr ""
 
@@ -4441,7 +4395,6 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:269
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:260
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:139
 #: exe/webui/tools/style-designer/langs/en.js:113
 msgid "Save"
 msgstr "Αποθήκευση"
@@ -4566,7 +4519,6 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomSections.js:95
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:540
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:218
 msgid "Format"
 msgstr ""
 
@@ -4588,7 +4540,6 @@ msgstr "Σαφής αναφορά σε ένα εκπαιδευτικό υλικ�
 #: exe/jsui/scripts/app/view/forms/LomSections.js:175
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:89
 msgid "Source"
 msgstr ""
 
@@ -4605,7 +4556,6 @@ msgstr "Παραπομπή στην πηγή από την οποία προέρ
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:161
 msgid "Language"
 msgstr ""
 
@@ -4667,8 +4617,6 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:273
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:646
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Clear"
 msgstr ""
 
@@ -4791,11 +4739,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:87
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:48
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:65
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:560
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:572
 #: exe/webui/tools/style-designer/langs/en.js:11
 msgid "General"
 msgstr ""
@@ -5200,7 +5143,6 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:391
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:82
 #: exe/webui/tools/style-designer/langs/en.js:31
 msgid "Author"
 msgstr ""
@@ -5215,13 +5157,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:18
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:319
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:763
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:909
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:929
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:777
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:900
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:920
 #: exe/webui/tools/style-designer/langs/en.js:37
 msgid "License"
 msgstr ""
@@ -5320,7 +5255,6 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:531
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:171
 #: exe/webui/tools/style-designer/langs/en.js:69
 msgid "Footer"
 msgstr ""
@@ -5414,7 +5348,6 @@ msgstr "Επιλογή γλώσσας"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:88
 #: exe/webui/tools/style-designer/langs/en.js:102
 msgid "Advanced"
 msgstr ""
@@ -5452,7 +5385,6 @@ msgid "Editor version"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:205
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:572
 msgid "recommended"
 msgstr ""
 
@@ -5557,7 +5489,6 @@ msgid "Import style from custom URL"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:472
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:118
 msgid "URL"
 msgstr ""
 
@@ -5680,7 +5611,6 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:105
 #: exe/webui/fileattachblock.py:158
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:122
 msgid "New Window"
 msgstr ""
 
@@ -5698,7 +5628,6 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157 exe/webui/common.py:494
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:138
 msgid "Print"
 msgstr ""
 
@@ -5779,7 +5708,6 @@ msgid "Quit"
 msgstr "Έξοδος"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:363
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:215
 msgid "Tools"
 msgstr ""
 
@@ -5808,7 +5736,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:62
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:137
 msgid "Preview"
 msgstr "Προεπισκόπιση"
 
@@ -5824,7 +5751,6 @@ msgstr ""
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:446
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:625
 msgid "Help"
 msgstr ""
 
@@ -7592,7 +7518,6 @@ msgstr "ΣΦΑΛΜΑ:  Άμεση κλήση του block.renderViewContent"
 
 #: exe/webui/block.py:328 exe/webui/editorpage.py:286
 #: exe/webui/editorpane.py:270
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:213
 msgid "Edit"
 msgstr "Επεξεργασία"
 
@@ -7792,7 +7717,6 @@ msgid "Selected letters"
 msgstr ""
 
 #: exe/webui/common.py:511
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:36
 msgid "Word"
 msgstr ""
 
@@ -7869,9 +7793,6 @@ msgstr "Ετικέτα Πλήκτρου"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:196
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:18
 msgid "Left"
 msgstr "Αριστερά"
@@ -7886,9 +7807,6 @@ msgstr "Αριστερά"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:190
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:76
 msgid "Right"
 msgstr "Δεξιά"
@@ -8567,7 +8485,6 @@ msgstr "Επιλογή εικόνας"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:45
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:71
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:849
 msgid ""
 "Are you sure you want to continue without including an Image Description?"
 " Without it the image may not be accessible to some users with "
@@ -8627,6 +8544,18 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Currently not supported by your browser, use keyboard shortcuts instead."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Close"
+msgstr "Κλείσιμο"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Do you want to use the WYSIWYG mode for this textarea?"
 msgstr ""
 
@@ -8644,6 +8573,10 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "(value)"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Full"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -8712,6 +8645,10 @@ msgid "Acronym"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Abbreviation"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Citation"
 msgstr ""
 
@@ -8722,7 +8659,38 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid ""
+"Paste is now in plain text mode. Click again to toggle back to regular "
+"paste mode. After you paste something you will be returned to regular "
+"paste mode."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Select All"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Paste from Word"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Paste as Plain Text"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Cell"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Column"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Row"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Delete Table"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -8730,7 +8698,19 @@ msgid "Copy Table Row"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Cut Table Row"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Paste Table Row After"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Paste Table Row Before"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Table Properties"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -8738,7 +8718,35 @@ msgid "Split Merged Table Cells"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Delete Column"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert Column After"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert Column Before"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Delete Row"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert Row After"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert Row Before"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Restore auto-saved content."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "The changes you made will be lost if you navigate away from this page."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -8750,11 +8758,23 @@ msgid "Edit Embedded Media"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Show/Hide Visual Control Characters"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Toggle Spell Checker"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Spell Checker Settings"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Ignore Word"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Ignore All"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -8783,6 +8803,18 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Types"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Circle"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Disc"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Square"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -8934,7 +8966,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:36
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:159
 #: exe/webui/tools/style-designer/langs/en.js:75
 msgid "Alignment"
 msgstr ""
@@ -8944,7 +8975,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:86
 msgid "Insert/Edit Image"
 msgstr ""
 
@@ -8952,8 +8982,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:121
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:127
 msgid "Insert/Edit Link"
 msgstr ""
 
@@ -8974,20 +9002,22 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:15
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:6
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:30
 msgid "Update"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:77
 msgid "Document Properties"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Insert/Edit Embedded Media"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:199
 #: exe/webui/tools/style-designer/langs/en.js:17
 msgid "Center"
 msgstr ""
@@ -8996,14 +9026,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Class"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:128
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1753
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1760
-msgid "Insert/Edit Embedded Media"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -9018,7 +9040,6 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:12
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:319
 msgid "-- Not Set --"
 msgstr ""
 
@@ -9029,47 +9050,37 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:146
 msgid "Find"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:106
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Apply"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/editor_plugin_src.js:62
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Edit CSS Style"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-msgid "Insert/Edit Table"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:185
-msgid "Table Row Properties"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:195
 msgid "Table Cell Properties"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:200
+msgid "Table Row Properties"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Merge Table Cells"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Insert/Edit Table"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -9099,33 +9110,26 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:57
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:761
 msgid "Yellow"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:60
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:764
 msgid "Red"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:61
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:765
 msgid "Blue"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:62
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:766
 msgid "Green"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:229
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:270
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:275
 msgid "Insert/Edit Attributes"
 msgstr ""
 
@@ -9152,149 +9156,6 @@ msgid "Rich Text Area"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:5
-msgid "Currently not supported by your browser, use keyboard shortcuts instead."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:10
-msgid "Close"
-msgstr "Κλείσιμο"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:22
-msgid "Select All"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:46
-msgid ""
-"Paste is now in plain text mode. Click again to toggle back to regular "
-"paste mode. After you paste something you will be returned to regular "
-"paste mode."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:49
-msgid "Full"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:53
-msgid "Show/Hide Visual Control Characters"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:55
-msgid "Square"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:58
-msgid "Circle"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:59
-msgid "Disc"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:65
-msgid "The changes you made will be lost if you navigate away from this page."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:136
-msgid "Paste as Plain Text"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:152
-msgid "Ignore All"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:153
-msgid "Ignore Word"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:155
-msgid "Insert Row Before"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:162
-msgid "Row"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:163
-msgid "Insert Column Before"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:172
-msgid "Delete Row"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:173
-msgid "Paste Table Row Before"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:175
-msgid "Delete Table"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:179
-msgid "Column"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:181
-msgid "Cell"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:186
-msgid "Table Properties"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:191
-msgid "Insert Column After"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:193
-msgid "Insert Row After"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:197
-msgid "Cut Table Row"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:198
-msgid "Delete Column"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:211
-msgid "Insert"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:30
-msgid "Abbreviation"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/en.js:92
 msgid "White"
 msgstr ""
@@ -9305,8 +9166,6 @@ msgid "Black"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/addcontent/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/addcontent/plugin.min.js:17
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/addcontent/plugin.min.js:25
 msgid "Add a paragraph at the end"
 msgstr ""
 
@@ -9338,9 +9197,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:68
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:194
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:84
 msgid "Width"
 msgstr ""
@@ -9351,9 +9207,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:69
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:157
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:70
 msgid "Height"
 msgstr ""
@@ -9366,10 +9219,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:94
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:150
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Style"
 msgstr ""
 
@@ -9379,7 +9228,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:139
 msgid "ID"
 msgstr ""
 
@@ -9430,16 +9278,12 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:187
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Bottom"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:33
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:182
 msgid "Middle"
 msgstr ""
 
@@ -9449,9 +9293,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:177
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Top"
 msgstr ""
 
@@ -9464,14 +9305,12 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:37
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:85
 msgid "Horizontal Space"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:38
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:92
 msgid "Vertical Space"
 msgstr ""
 
@@ -9479,7 +9318,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:39
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:95
 msgid "Dimensions"
 msgstr ""
 
@@ -9488,16 +9326,12 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:90
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Border"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:42
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:93
 msgid "Image Description"
 msgstr ""
 
@@ -9558,8 +9392,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:15
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:7
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:343
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:743
 msgid "Appearance"
 msgstr ""
 
@@ -9570,67 +9402,47 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:12
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:835
 msgid "Title and Attribution"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:13
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:18
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:189
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:730
 #: exe/webui/tools/style-designer/langs/en.js:68
 msgid "Header"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:6
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:736
 msgid "Image Title"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:7
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:15
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:742
 msgid "Title Link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:8
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:16
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:748
 msgid "Source/Author"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:9
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:17
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:754
 msgid "Source/Author Link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:11
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:19
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:765
 msgid "Choose a license..."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:12
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:20
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:303
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:766
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:768
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:925
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:761
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:916
 msgid "Public Domain"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:13
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:21
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:309
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:775
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:929
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:767
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:920
 msgid "All Rights Reserved"
 msgstr ""
 
@@ -9715,6 +9527,10 @@ msgid "Open in This Window/Frame"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Anchors"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Popup Properties"
 msgstr ""
 
@@ -9742,7 +9558,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:125
 msgid "Target"
 msgstr ""
 
@@ -9764,26 +9579,22 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:607
 msgid "Link URL"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:162
-msgid "TabIndex"
+msgid "Events"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:163
 msgid "AccessKey"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:221
-msgid "Events"
+msgid "TabIndex"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -9793,7 +9604,6 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:124
 msgid ""
 "The URL you entered seems to be an external link. Do you want to add the "
 "required http:// prefix?"
@@ -9801,30 +9611,23 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:126
 msgid ""
 "The URL you entered seems to be an email address. Do you want to add the "
 "required mailto: prefix?"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:120
-msgid "Anchors"
-msgstr ""
-
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:3
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:287
 msgid "Anchors and nodes"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:4
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:123
 msgid "Node"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
+#, fuzzy
 msgid "Download Information"
-msgstr ""
+msgstr "Πληροφορίες"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:6
 msgid "File Size"
@@ -9855,42 +9658,33 @@ msgid "Restore auto-saved content"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:3
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:24
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:212
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:226
 msgid "Quote With Authorship"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:215
 msgid "Attributes"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:6
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:37
 msgid "Quote"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:7
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:53
 #, fuzzy
 msgid "Quote Language"
 msgstr "Επιλογή γλώσσας."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:8
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:60
 #, fuzzy
 msgid "Authorship"
 msgstr "Συγγραφή"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:9
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:67
 msgid "Authorship Language"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:11
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:158
 msgid "Please write a quote"
 msgstr ""
 
@@ -9899,34 +9693,24 @@ msgid "The \"Authorship\" field is empty"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:13
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:71
 msgid ""
 "Specify the languages only if they are different from the rest of the "
 "content."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:14
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:75
 msgid "Use a two-letter ISO 639-1 code like \"en\", \"es\", \"fr\" or \"de\"."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:15
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:33
 msgid "Include Styles (improves presentation)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/clearfloat/langs/en.js:3
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/clearfloat/plugin.min.js:16
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/clearfloat/plugin.min.js:26
 msgid "Clear (new line or block)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:2
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:68
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:20
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:37
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:43
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:50
 msgid "Edit source code"
 msgstr ""
 
@@ -9955,41 +9739,39 @@ msgid "Stop"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:12
+#, fuzzy
 msgid "Replace with:"
-msgstr ""
+msgstr "Εικόνα με Κείμενο"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:2
 msgid "CodeMagic - syntax coloring and intendation"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:3
+#, fuzzy
 msgid "Edit code"
-msgstr ""
+msgstr "Λήψη βαθμολογίας"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:4
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:22
 msgid "Auto close tags"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:5
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:21
 #, fuzzy
 msgid "Wrap text"
 msgstr "κείμενο"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:23
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:283
 msgid "Highlight syntax"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:7
+#, fuzzy
 msgid "Select a theme"
-msgstr ""
+msgstr "Επιλογή εικόνας"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:27
 msgid "Search"
 msgstr ""
 
@@ -9998,22 +9780,19 @@ msgid "Find next"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:10
+#, fuzzy
 msgid "Find previous"
-msgstr ""
+msgstr "Προηγούμενο"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:12
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:147
 msgid "Replace all"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:3
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/definitionlist/plugin.min.js:53
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/definitionlist/plugin.min.js:61
 msgid "Definition List"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:4
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/definitionlist/plugin.min.js:26
 msgid ""
 "A new Definition List will be created.\n"
 "To add a new term, just place the cursor at the end of a definition and "
@@ -10022,15 +9801,11 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/definitionlist/plugin.min.js:20
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/definitionlist/plugin.min.js:45
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:500
 #, fuzzy
 msgid "Term"
 msgstr "Άλλο"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/definitionlist/langs/en.js:6
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/definitionlist/plugin.min.js:20
 msgid "Term definition"
 msgstr ""
 
@@ -10116,72 +9891,48 @@ msgid "This is just a example title"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:2
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:240
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:246
 msgid "Effects (accordion, tabs, pagination...)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:4
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:8
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:214
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:217
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:221
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:223
 msgid "Heading 2"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:23
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:43
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:215
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:218
 msgid "Heading 3"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:7
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:216
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:219
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:222
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:224
 msgid "Write your content..."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:8
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:106
 msgid "Choose an effect (you can change it later)."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:9
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:107
 msgid ""
 "To add a new tab, block, page... just add a second level title (Heading "
 "2) followed by its content."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:10
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:108
 msgid "All blocks must start with a second level title (Heading 2)."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:11
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:54
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:99
 msgid "Please do not overuse these effects."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:12
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:111
 msgid ""
 "Change the text of the tabs adding a title to each Heading 2 with the "
 "\"Insert/Edit Attributes\" option:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:13
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:109
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:148
 msgid ""
 "Timelines require a third level title (Heading 3) right after each "
 "Heading 2."
@@ -10190,73 +9941,54 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:63
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:586
 #, fuzzy
 msgid "Choose a type:"
 msgstr "Επιλογή εικόνας"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:65
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:265
 msgid "Accordion"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:18
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:30
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:85
 msgid "Collapsible content panels for presenting information in a limited space."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:20
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:66
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:266
 msgid "Tabs"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:21
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:31
 msgid "A single content area with multiple panels."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:67
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:267
 #, fuzzy
 msgid "Pagination"
 msgstr "Επιλογή"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:24
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:32
 msgid "Divide your content into different pages."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:26
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:68
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:268
 #, fuzzy
 msgid "Carousel"
 msgstr "Φεροέζικα"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:27
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:33
 msgid "Present a list of contents in horizontal order."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:69
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:269
 #, fuzzy
 msgid "Timeline"
 msgstr "νέα γραμμή"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:30
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:34
 msgid "Simple, interactive timeline able to handle nearly any form of content."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:31
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:148
 msgid "Make a timeline?"
 msgstr ""
 
@@ -10269,9 +10001,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:34
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:37
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:43
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:258
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:453
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:847
 msgid "jQuery is required"
 msgstr ""
 
@@ -10280,36 +10009,31 @@ msgid "Games (hangman...)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:8
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:134
 msgid "Please enable JavaScript to play this game."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:9
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:115
 msgid "Accessibility"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:10
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:121
 msgid "These games require JavaScript."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:11
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:127
 msgid "This is the message that the users with no JavaScript will see:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
+#, fuzzy
 msgid "Message:"
-msgstr ""
+msgstr "Εικόνα"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:13
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:138
 msgid "You can change it at any time."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:14
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:261
 msgid "Provide a warning to users who have JavaScript disabled (Accessibility)."
 msgstr ""
 
@@ -10318,17 +10042,14 @@ msgid "Guess letters to complete each word."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:19
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:93
 msgid "Automatically include capital letters"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:20
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:100
 msgid "Case sensitive"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:21
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:75
 msgid "abcdefghijklmnñopqrstuvwxyz"
 msgstr ""
 
@@ -10337,71 +10058,54 @@ msgid "Words to guess"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:23
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:37
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:106
 msgid "Word to guess"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:24
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:39
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:106
 msgid "Hint or definition"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:25
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:270
 msgid "Please write the Alphabet to Select From"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:26
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:280
 msgid "A word to guess is missing"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:27
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:286
 msgid "A hint or definition is missing"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:28
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:298
 msgid "Please add at least one word to guess"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:29
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:153
 msgid "Write the list of letters and/or numbers to choose from."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:30
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:154
 msgid "You may include capital letters or they can be automatically included."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:31
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:155
 msgid "Choose if you want the game to be case sensitive."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:32
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:156
 msgid "Add at least one word to guess (question or definition + word)."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:33
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:157
 msgid "You may delete the game from the editor itself."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:34
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:159
 msgid "Don't forget to check the Accessibility tab."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:38
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:205
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:219
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:241
 msgid "Error recovering data"
 msgstr ""
 
@@ -10466,7 +10170,6 @@ msgid "And, add your own LaTeX directly into the following:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:21
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:91
 msgid "Constrain proportions"
 msgstr ""
 
@@ -10479,7 +10182,6 @@ msgid "Create the image by clicking \"Preview\" before saving"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:70
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:129
 msgid "No source code found."
 msgstr ""
 
@@ -10492,7 +10194,19 @@ msgid "Language and Encoding"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Keywords"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Robots"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "XML Declaration"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Character Encoding"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
@@ -10644,6 +10358,10 @@ msgid "Media"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Value"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Content"
 msgstr ""
 
@@ -10667,24 +10385,17 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Background Color"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Background Image"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:72
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:42
 #: exe/webui/tools/style-designer/langs/en.js:89
 msgid "Color"
@@ -10692,34 +10403,12 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:11
-msgid "Font Family"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:31
 msgid "Font Size"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:76
-msgid "Robots"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:79
-msgid "Keywords"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:80
-msgid "Character Encoding"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:188
-msgid "Value"
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Font Family"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
@@ -10819,6 +10508,10 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Invoke URLs"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Full Screen"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
@@ -11002,6 +10695,10 @@ msgid "Preload"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Poster"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Audio Options"
 msgstr ""
 
@@ -11059,26 +10756,12 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "List"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Background"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:83
-msgid "Full Screen"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:129
-msgid "Poster"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:3
@@ -11134,81 +10817,65 @@ msgid "QuickTime (mov, mpeg)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:3
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:256
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:468
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:486
 msgid "Insert HTML code as text"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:6
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:131
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:394
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:444
 msgid "Use CTRL+V on your keyboard to paste the code into the window."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:5
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:438
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:480
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:493
 msgid "Paste HTML fragment (embed code)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:7
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:273
 msgid "Include wrapper (improves presentation)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:310
 #, fuzzy
 msgid "Markup language"
 msgstr "Επιλογή γλώσσας."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:117
 #, fuzzy
 msgid "Please select a language"
 msgstr "Επιλογή γλώσσας."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:320
 msgid "Markup (HTML, etc.)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:14
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:322
 msgid "C type"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:352
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:762
 #, fuzzy
 msgid "Light"
 msgstr "Δεξιά"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:353
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:763
 msgid "Dark"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:18
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:371
 msgid "Line numbers"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:19
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:375
 msgid "Line highlight"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Find What"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Replace with"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
@@ -11221,6 +10888,10 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Down"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Match Case"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
@@ -11243,217 +10914,138 @@ msgstr ""
 msgid "Replace All"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:145
-msgid "Replace with"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:148
-msgid "Match Case"
-msgstr ""
-
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:188
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-msgid "Vertical Alignment"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:24
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-msgid "Block"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:176
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-msgid "Horizontal Position"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Line Height"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Variant"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Weight"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Positioning"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Box"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
+msgid "Block"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Insert span at selection"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Clip"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Placement"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Overflow"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Z-index"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Visibility"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Bullet Image"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Margin"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Same for All"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Padding"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Float"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Display"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Whitespace"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Text Indent"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Text Align"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Letter Spacing"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Word Spacing"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Vertical Position"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
+msgid "Horizontal Position"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Blink"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Case"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Overline"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Decoration"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Vertical Alignment"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:23
 msgid "Font"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:47
 msgid "Position"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:57
 msgid "Repeat"
 msgstr ""
@@ -11515,6 +11107,10 @@ msgid "Frame"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Table Caption"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid ""
 "Are you sure you want to continue without specifying a scope for this "
 "table header cell. Without it, it may be difficult for some users with "
@@ -11531,6 +11127,22 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "You've exceeded the maximum number of columns of {$cols}."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Col Group"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Row Group"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Scope"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Body"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -11574,52 +11186,27 @@ msgid "Border Color"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-msgid "Update all cells in column"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:156
-msgid "Rows"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:161
-msgid "Col Group"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:167
-msgid "Row Type"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:169
-msgid "Body"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:170
-msgid "Table Caption"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:174
-msgid "Scope"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:180
-msgid "Row Group"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:183
 msgid "Cell Type"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:192
+msgid "Rows"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Columns"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Row Type"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Update all cells in column"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
+msgid "Templates"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
@@ -11639,20 +11226,7 @@ msgstr ""
 msgid "%Y-%m-%d %H:%M:%S"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:202
-msgid "Templates"
-msgstr ""
-
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:3
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:456
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:567
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:824
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:835
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:847
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:855
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:861
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:864
 msgid "Tooltip"
 msgstr ""
 
@@ -11661,92 +11235,70 @@ msgid "Display the link title, a term definition or content from another page."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:6
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:705
 msgid "Behaviour"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:8
+#, fuzzy
 msgid "Link"
-msgstr ""
+msgstr "Στοίχιση:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:60
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:697
 #, fuzzy
 msgid "Instructions:"
 msgstr "Οδηγίες"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:11
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:62
 msgid "Create a Page with a Free Text iDevice."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:12
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:562
 msgid "No selection and not in link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:618
 #, fuzzy
 msgid "Pages"
 msgstr "Μεγάλο"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:628
 #, fuzzy
 msgid "Link title"
 msgstr "Άρθρο Βίκι"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:499
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:634
 msgid "Tooltip title"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:20
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:483
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:601
 msgid "Plain text. You can add a title."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:21
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:648
 msgid "The tooltip will show the Link title."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:38
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:456
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:589
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:676
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:855
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:864
 #, fuzzy
 msgid "Definition"
 msgstr "Στοχασμός"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:140
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:861
 msgid "The term could not be found"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:26
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:484
 msgid ""
 "Write the term and its definition. You may use HTML and edit it in the "
 "editor."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:668
 #, fuzzy
 msgid "Definition:"
 msgstr "Περιγραφή:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:663
 msgid "The tooltip will show the term and its definition."
 msgstr ""
 
@@ -11755,24 +11307,20 @@ msgid "See definition"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:590
 #: exe/webui/tools/style-designer/langs/en.js:40
 #, fuzzy
 msgid "Page"
 msgstr "Μεγάλο"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:485
 msgid "Show the content of the first Free Text iDevice in the specified page."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:33
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:63
 msgid "Define the Link: Select that page."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:34
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:64
 #, fuzzy
 msgid "The tooltip will show the content of the Free Text iDevice."
 msgstr "Το θέμα του περιεχομένου του εκπαιδευτικού υλικού."
@@ -11802,68 +11350,55 @@ msgid "The tooltip will show the term definition."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:44
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:222
 msgid "The Link is required"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:45
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:221
 #, fuzzy
 msgid "Please select a Page"
 msgstr "Παρακαλώ επιλέξτε ένα αρχείο .flv."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:46
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:224
 msgid "The Link title is required"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:47
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:225
 msgid "Please write the Definition"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:49
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:711
 msgid "Close behaviour:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:50
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:720
 msgid "Automatically close the tooltip when moving the mouse out of the link"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:51
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:721
 msgid "Close button: It will close the tooltip when clicked"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:52
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:726
 msgid "Link behaviour:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:53
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:735
 msgid "Open in the same window"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:54
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:736
 msgid "Open in a new window"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:56
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:759
 msgid "Change the styling:"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:63
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:780
 msgid "Rounded"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:64
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:789
 msgid "Shadow"
 msgstr ""
 
@@ -11904,13 +11439,11 @@ msgid "Element Attributes"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:116
-msgid "Date/Time"
+msgid "Text Direction"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:154
-msgid "Text Direction"
+msgid "Date/Time"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
@@ -11926,11 +11459,39 @@ msgid "Code Sample"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Block Quote"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Heading 6"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Heading 5"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Heading 4"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Heading 1"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Preformatted"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Address"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "DIV"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Paragraph"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
@@ -11945,6 +11506,10 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Path"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "New Document"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
@@ -11984,11 +11549,39 @@ msgid "Your Custom Description Here"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Remove Formatting"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Edit HTML Source"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Unlink"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Increase Indent"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Decrease Indent"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Align Full"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Align Right"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Align Center"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Align Left"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
@@ -12040,93 +11633,12 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:16
 msgid "Insert/Remove Numbered List"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:27
 msgid "Insert/Remove Bulleted List"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:3
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:41
-msgid "Heading 5"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:6
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:45
-msgid "Heading 4"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:13
-msgid "Align Right"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:14
-msgid "New Document"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:15
-msgid "Block Quote"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:17
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:28
-msgid "Heading 1"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:19
-msgid "Increase Indent"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:30
-msgid "Remove Formatting"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:33
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:42
-msgid "Heading 6"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:35
-msgid "Paragraph"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:40
-msgid "Align Center"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:44
-msgid "Decrease Indent"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:52
-msgid "Align Left"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:117
-msgid "Unlink"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:219
-msgid "Preformatted"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -12224,41 +11736,30 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:59
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:57
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelist/plugin.min.js:38
 msgid "Lower Alpha"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:60
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:54
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelist/plugin.min.js:39
 msgid "Lower Greek"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:61
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:62
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelist/plugin.min.js:40
 msgid "Lower Roman"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:62
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:60
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelist/plugin.min.js:41
 msgid "Upper Alpha"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:63
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:61
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelist/plugin.min.js:42
 msgid "Upper Roman"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:64
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelist/plugin.min.js:43
 msgid "Automatic Numbering"
 msgstr ""
 
@@ -12270,407 +11771,6 @@ msgstr ""
 msgid "Editor"
 msgstr "Επεξεργαστής ε-Μηχανής"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:2
-msgid "Cut"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:9
-msgid "Paste"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:20
-msgid "Formats"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:21
-msgid "Headers"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:25
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:24
-msgid "Undo"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:34
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:25
-msgid "Redo"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:51
-msgid "Copy"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:64
-msgid "Anchor"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:66
-msgid "Restore last draft"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:67
-msgid "Special character"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:75
-msgid "Emoticons"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:84
-msgid "Horizontal Line"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:105
-msgid "Image Options"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:119
-msgid "Text to display"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:130
-msgid "Alternative source"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:134
-msgid "Non-Breaking Space"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:135
-msgid "Page Break"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:143
-msgid "Whole Words"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:144
-msgid "Find and Replace"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:151
-#: exe/webui/tools/style-designer/langs/en.js:112
-#, fuzzy
-msgid "Finish"
-msgstr "Φινλανδικά"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:158
-msgid "Paste Row After"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:160
-#: exe/webui/tools/style-designer/langs/en.js:21
-msgid "Border color"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:164
-msgid "Split Cell"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:168
-msgid "Insert Table"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:178
-msgid "Header Cell"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:184
-msgid "Copy Row"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:201
-msgid "Predefined Template Content"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:203
-#: exe/webui/tools/style-designer/langs/en.js:43
-msgid "Background color"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:204
-msgid "Custom..."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:205
-msgid "Custom color"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:206
-msgid "No color"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:207
-#: exe/webui/tools/style-designer/langs/en.js:25
-#, fuzzy
-msgid "Text color"
-msgstr "Λήψη βαθμολογίας"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:208
-msgid "Show blocks"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:209
-msgid "Show invisible characters"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:210
-msgid "Words: {0}"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:214
-msgid ""
-"Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press "
-"ALT-0 for help"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:216
-msgid "View"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:217
-msgid "Table"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:24
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:108
-msgid "Acronym or abbreviation"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:37
-msgid "Meaning"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:48
-msgid "Please write the abbreviation and its meaning."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:61
-msgid ""
-"The <acronym> tag is not supported in HTML5.\n"
-"\n"
-"Use the <abbr> tag instead?"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:26
-msgid "Search and Replace"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:31
-msgid "Reformat"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:32
-msgid "Format HTML Code"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:37
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:43
-msgid "advanced editor"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:87
-msgid "Class added to the \"CSS class\" field."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:140
-msgid "CSS class"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:144
-msgid "Add CSS class"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:181
-msgid "New attribute"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:120
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:258
-msgid "Effects"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:119
-msgid "Please select the image to edit it"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:776
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:786
-msgid "Custom license"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:934
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:925
-msgid "Please check the \"License\" field"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:953
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1010
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1077
-msgid "You are using and old code. Update it (required to edit)?"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:989
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1041
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1105
-msgid "Could not retrieve data (Core error)"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1065
-msgid ""
-"You are using QuickTime.\n"
-"We recommend you to use any of these formats:\n"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:92
-msgid "That image was created using the old formula editor."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:92
-msgid "Make it compatible with the new editor?"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:124
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:128
-msgid "Done! You can now edit your image."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:202
-msgid "You should save a copy of the code before continuing."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:204
-msgid "Click on the Editor's Save button when you finish editing."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:213
-msgid "Equation Editor"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:337
-msgid "Error (missing function):"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:405
-msgid "The image could not be created. Insert the code without alternative image?"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:451
-msgid "Please write the code"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:471
-msgid ""
-"Continue without a title? Some users might see an image instead of the "
-"rendered code. Without the title the image may not be accessible to them."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:556
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:705
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:717
-msgid "Paste mathematical markup"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:570
-msgid "Choose what to use:"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:584
-msgid "Use MathJax from mathjax.org (online only) or your own copy"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:591
-msgid "Include alternative image (recommended)"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:600
-msgid "Image title (alternative text):"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:610
-msgid ""
-"Paste (CTRL+V) the code (LaTeX...) from your favorite editor or use "
-"eXeMathEditor"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:634
-msgid "Paste your code (LaTeX...)."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:635
-msgid "Choose if you want to show the code or an image."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:636
-msgid "If you show the code (recommended):"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:638
-msgid ""
-"You can use MathJax to display the mathematical properly in web browsers "
-"(that will work online only)."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:639
-msgid ""
-"You can include an alternative image. In that case you'll have to provide"
-" a descriptive text for it."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:640
-msgid ""
-"With no image and no MathJax some users might not be able to see the "
-"formula."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:643
-msgid ""
-"If you prefer to show the image, the code will be there, but it won't be "
-"visible."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:644
-msgid ""
-"If JavaScript is enabled links to the code and the image will be "
-"automatically created."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:645
-msgid "If JavaScript is disabled, both (code and image) will be visible."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:647
-msgid "Remember that..."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:649
-msgid ""
-"You can use your favorite formula editor or use the one included in eXe "
-"(eXeMathEditor)."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:650
-msgid ""
-"You can replace the generated image with another one using the "
-"\"Insert/Edit Image\" option."
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/toggletoolbars/plugin.min.js:83
-msgid "Toolbar Toggle"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:536
-msgid "---"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/tinymce.min.js:8
-msgid "blockquote"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/tinymce.min.js:8
-msgid "p"
-msgstr ""
-
 #: exe/webui/scripts/tinymce_4_settings.js:18
 #: exe/webui/scripts/tinymce_4_settings.js:19
 #: exe/webui/scripts/tinymce_4_settings.js:20
@@ -12681,25 +11781,19 @@ msgstr ""
 msgid "3 columns"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:50
 #: exe/webui/scripts/tinymce_4_settings.js:107
 msgid "Inline"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:37
 #: exe/webui/scripts/tinymce_4_settings.js:108
 msgid "Bold"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:39
 #: exe/webui/scripts/tinymce_4_settings.js:109
 msgid "Italic"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:47
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4_settings.js:110
 msgid "Underline"
 msgstr ""
@@ -12707,28 +11801,21 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/simple/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:26
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4_settings.js:111
 msgid "Strikethrough"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:29
 #: exe/webui/scripts/tinymce_4_settings.js:112
 msgid "Superscript"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:32
 #: exe/webui/scripts/tinymce_4_settings.js:113
 msgid "Subscript"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:38
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:572
 #: exe/webui/scripts/tinymce_4_settings.js:114
 msgid "Code"
 msgstr ""
@@ -12865,19 +11952,19 @@ msgstr ""
 msgid "An unexpected error has occurred"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1281
+#: exe/webui/tools/style-designer/js/app.js:1275
 msgid "Create new style"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1282
+#: exe/webui/tools/style-designer/js/app.js:1276
 msgid "Name the new style"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1304
+#: exe/webui/tools/style-designer/js/app.js:1298
 msgid "Style Designer windows will be closed. "
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1307
+#: exe/webui/tools/style-designer/js/app.js:1301
 msgid "Page will be reloaded. "
 msgstr ""
 
@@ -12910,9 +11997,18 @@ msgstr ""
 msgid "Border width"
 msgstr ""
 
+#: exe/webui/tools/style-designer/langs/en.js:21
+msgid "Border color"
+msgstr ""
+
 #: exe/webui/tools/style-designer/langs/en.js:22
 msgid "Text and Links"
 msgstr ""
+
+#: exe/webui/tools/style-designer/langs/en.js:25
+#, fuzzy
+msgid "Text color"
+msgstr "Λήψη βαθμολογίας"
 
 #: exe/webui/tools/style-designer/langs/en.js:27
 #, fuzzy
@@ -12957,6 +12053,10 @@ msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:41
 msgid "Page background (only Web Site)"
+msgstr ""
+
+#: exe/webui/tools/style-designer/langs/en.js:43
+msgid "Background color"
 msgstr ""
 
 #: exe/webui/tools/style-designer/langs/en.js:44
@@ -13141,6 +12241,11 @@ msgstr ""
 #: exe/webui/tools/style-designer/langs/en.js:109
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
+
+#: exe/webui/tools/style-designer/langs/en.js:112
+#, fuzzy
+msgid "Finish"
+msgstr "Φινλανδικά"
 
 #: exe/webui/tools/style-designer/langs/en.js:114
 msgid "Save as"
