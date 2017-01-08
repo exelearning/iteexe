@@ -1,17 +1,17 @@
 # eXeLearning Spanish PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2016 eXeLearning.net
+# Copyright (C) 2011-2017 eXeLearning.net
 # This file is distributed under the same license as the eXeLearning
 # package.
 # eXeLearning.net Project <admin@exelearning.net>
 # Asociacion Cultural Reggae <acreggae@acreggae.com>, 2009.
-# Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2016.
+# Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2017-01-08 17:55+0100\n"
-"PO-Revision-Date: 2016-11-22 18:51+0100\n"
+"PO-Revision-Date: 2017-01-08 19:12+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -12565,81 +12565,81 @@ msgstr "Editor"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:2
 msgid "Cut"
-msgstr ""
+msgstr "Cortar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:9
 msgid "Paste"
-msgstr ""
+msgstr "Pegar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:20
 msgid "Formats"
-msgstr ""
+msgstr "Formatos"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:21
 msgid "Headers"
-msgstr ""
+msgstr "Encabezados"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:25
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:24
 msgid "Undo"
-msgstr ""
+msgstr "Deshacer"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:34
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:25
 msgid "Redo"
-msgstr ""
+msgstr "Rehacer"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:51
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:64
 msgid "Anchor"
-msgstr ""
+msgstr "Ancla"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:66
 msgid "Restore last draft"
-msgstr ""
+msgstr "Restaurar el último borrador"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:67
 msgid "Special character"
-msgstr ""
+msgstr "Carácter especial"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:75
 msgid "Emoticons"
-msgstr ""
+msgstr "Emoticonos"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:84
 msgid "Horizontal Line"
-msgstr ""
+msgstr "Línea horizontal"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:105
 msgid "Image Options"
-msgstr ""
+msgstr "Opciones de imagen"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:119
 msgid "Text to display"
-msgstr ""
+msgstr "Qué texto mostrar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:130
 msgid "Alternative source"
-msgstr ""
+msgstr "Enlace alternativo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:134
 msgid "Non-Breaking Space"
-msgstr ""
+msgstr "Espacio fijo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:135
 msgid "Page Break"
-msgstr ""
+msgstr "Salto de página"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:143
 msgid "Whole Words"
-msgstr ""
+msgstr "Palabras completas"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:144
 msgid "Find and Replace"
-msgstr ""
+msgstr "Buscar y reemplazar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:151
 #: exe/webui/tools/style-designer/langs/en.js:112
@@ -12648,7 +12648,7 @@ msgstr "Finalizar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:158
 msgid "Paste Row After"
-msgstr ""
+msgstr "Pegar la fila después"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:160
 #: exe/webui/tools/style-designer/langs/en.js:21
@@ -12657,23 +12657,23 @@ msgstr "Color borde"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:164
 msgid "Split Cell"
-msgstr ""
+msgstr "Dividir celdas"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:168
 msgid "Insert Table"
-msgstr ""
+msgstr "Insertar tabla"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:178
 msgid "Header Cell"
-msgstr ""
+msgstr "Celda de la cabecera"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:184
 msgid "Copy Row"
-msgstr ""
+msgstr "Copiar fila"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:201
 msgid "Predefined Template Content"
-msgstr ""
+msgstr "Contenido de plantilla predefinido"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:203
 #: exe/webui/tools/style-designer/langs/en.js:43
@@ -12682,15 +12682,15 @@ msgstr "Color fondo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:204
 msgid "Custom..."
-msgstr ""
+msgstr "Personalizar..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:205
 msgid "Custom color"
-msgstr ""
+msgstr "Color personalizado"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:206
 msgid "No color"
-msgstr ""
+msgstr "Sin color"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:207
 #: exe/webui/tools/style-designer/langs/en.js:25
@@ -12699,42 +12699,42 @@ msgstr "Color texto"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:208
 msgid "Show blocks"
-msgstr ""
+msgstr "Mostrar bloques"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:209
 msgid "Show invisible characters"
-msgstr ""
+msgstr "Mostrar caracteres invisibles"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:210
 msgid "Words: {0}"
-msgstr ""
+msgstr "Palabras: {0}"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:214
 msgid ""
 "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press "
 "ALT-0 for help"
-msgstr ""
+msgstr "Área de texto enriquecido. Teclee ALT-F9 para activar el menú. ALT-F10 para la barra de herramientas. ALT-0 para recibir ayuda"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:216
 msgid "View"
-msgstr ""
+msgstr "Ver"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:217
 msgid "Table"
-msgstr ""
+msgstr "Tabla"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:24
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:108
 msgid "Acronym or abbreviation"
-msgstr ""
+msgstr "Acrónimo o abreviatura"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:37
 msgid "Meaning"
-msgstr ""
+msgstr "Significado"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:48
 msgid "Please write the abbreviation and its meaning."
-msgstr ""
+msgstr "Por favor escriba la abreviatura y su significado."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:61
 msgid ""
@@ -12742,225 +12742,230 @@ msgid ""
 "\n"
 "Use the <abbr> tag instead?"
 msgstr ""
+"La etiqueta <acronym> no es válida en HTML5.\n"
+"\n"
+"¿Sustituirla por la etiqueta <abbr>?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:26
 msgid "Search and Replace"
-msgstr ""
+msgstr "Buscar y reemplazar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:31
 msgid "Reformat"
-msgstr ""
+msgstr "Reformatear"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:32
 msgid "Format HTML Code"
-msgstr ""
+msgstr "Formatear código HTML"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:37
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:43
 msgid "advanced editor"
-msgstr ""
+msgstr "editor avanzado"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:87
 msgid "Class added to the \"CSS class\" field."
-msgstr ""
+msgstr "Añadida la clase al campo \"CSS class\"."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:140
 msgid "CSS class"
-msgstr ""
+msgstr "Clase CSS"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:144
 msgid "Add CSS class"
-msgstr ""
+msgstr "Añadir clase CSS"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:181
 msgid "New attribute"
-msgstr ""
+msgstr "Nuevo atributo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:120
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:258
 msgid "Effects"
-msgstr ""
+msgstr "Efectos"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:119
 msgid "Please select the image to edit it"
-msgstr ""
+msgstr "Por favor seleccione la imagen para editarla"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:776
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:786
 msgid "Custom license"
-msgstr ""
+msgstr "Licencia personalizada"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:934
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:925
 msgid "Please check the \"License\" field"
-msgstr ""
+msgstr "Por favor revise el campo \"Licencia\""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:953
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1010
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1077
 msgid "You are using and old code. Update it (required to edit)?"
-msgstr ""
+msgstr "Está usando código obsoleto. ¿Desea actualizarlo (necesario para la edición)?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:989
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1041
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1105
 msgid "Could not retrieve data (Core error)"
-msgstr ""
+msgstr "No se pudieron recuperar datos (error interno)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1065
 msgid ""
 "You are using QuickTime.\n"
 "We recommend you to use any of these formats:\n"
 msgstr ""
+"Está usted usando QuickTime.\n"
+"Le recomendamos la utilización de alguno de estos formatos:\n"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:92
 msgid "That image was created using the old formula editor."
-msgstr ""
+msgstr "Esa imagen fue creada usando el antiguo editor de fórmulas."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:92
 msgid "Make it compatible with the new editor?"
-msgstr ""
+msgstr "¿Desea hacerla compatible con el nuevo editor?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:124
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:128
 msgid "Done! You can now edit your image."
-msgstr ""
+msgstr "¡Hecho! Ya puede editar su imagen."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:202
 msgid "You should save a copy of the code before continuing."
-msgstr ""
+msgstr "Le recomendamos que haga una copia de seguridad de su código antes de continuar."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:204
 msgid "Click on the Editor's Save button when you finish editing."
-msgstr ""
+msgstr "Pulse en el botón de Guardar del editor cuando haya terminado el trabajo de edición."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:213
 msgid "Equation Editor"
-msgstr ""
+msgstr "Editor de ecuaciones"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:337
 msgid "Error (missing function):"
-msgstr ""
+msgstr "Error (falta una función):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:405
 msgid "The image could not be created. Insert the code without alternative image?"
-msgstr ""
+msgstr "No se pudo crear la imagen. ¿Insertar el código sin una imagen alternativa?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:451
 msgid "Please write the code"
-msgstr ""
+msgstr "Por favor escriba el código"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:471
 msgid ""
 "Continue without a title? Some users might see an image instead of the "
 "rendered code. Without the title the image may not be accessible to them."
-msgstr ""
+msgstr "¿Continuar sin ponerle título? Algunos usuarios podrían ver una imagen en lugar del código procesado. Sin un título, la imagen no será accesible para ellos."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:556
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:705
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:717
 msgid "Paste mathematical markup"
-msgstr ""
+msgstr "Pegar marcado matemático"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:570
 msgid "Choose what to use:"
-msgstr ""
+msgstr "Elegir cuál usar:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:584
 msgid "Use MathJax from mathjax.org (online only) or your own copy"
-msgstr ""
+msgstr "Usar MathJax de mathjax.org (necesaria conexión a internet) o copia local"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:591
 msgid "Include alternative image (recommended)"
-msgstr ""
+msgstr "Incluir imagen alternativa (recomendado)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:600
 msgid "Image title (alternative text):"
-msgstr ""
+msgstr "Título de la imagen (texto alternativo):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:610
 msgid ""
 "Paste (CTRL+V) the code (LaTeX...) from your favorite editor or use "
 "eXeMathEditor"
-msgstr ""
+msgstr "Pegar (CTRL+V) el código (LaTeX) de su editor favorito o usar eXeMathEditor"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:634
 msgid "Paste your code (LaTeX...)."
-msgstr ""
+msgstr "Pegar su código (LaTeX...)."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:635
 msgid "Choose if you want to show the code or an image."
-msgstr ""
+msgstr "Elegir si desea mostrar el código o una imagen."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:636
 msgid "If you show the code (recommended):"
-msgstr ""
+msgstr "Si muestra el código (recomendado):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:638
 msgid ""
 "You can use MathJax to display the mathematical properly in web browsers "
 "(that will work online only)."
-msgstr ""
+msgstr "Puede usar MathJax para mostrar adecuadamente las matemáticas en los navegadores (necesitará una conexión a internet)."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:639
 msgid ""
 "You can include an alternative image. In that case you'll have to provide"
 " a descriptive text for it."
-msgstr ""
+msgstr "Puede incluir una imagen alternativa. En tal caso deberá proporcionar un texto descriptivo de la imagen."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:640
 msgid ""
 "With no image and no MathJax some users might not be able to see the "
 "formula."
-msgstr ""
+msgstr "Sin imagen ni código MathJax algunos usuarios no podrán ver la fórmula."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:643
 msgid ""
 "If you prefer to show the image, the code will be there, but it won't be "
 "visible."
-msgstr ""
+msgstr "Si prefiere mostrar la imagen, el código estará presente pero no será visible."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:644
 msgid ""
 "If JavaScript is enabled links to the code and the image will be "
 "automatically created."
-msgstr ""
+msgstr "Si JavaScript está habilitado se crearán automáticamente enlaces al código y a la imagen."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:645
 msgid "If JavaScript is disabled, both (code and image) will be visible."
-msgstr ""
+msgstr "Si JavaScript está desactivado, serán visibles los dos (el código y la imagen)."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:647
 msgid "Remember that..."
-msgstr ""
+msgstr "Recuerde que..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:649
 msgid ""
 "You can use your favorite formula editor or use the one included in eXe "
 "(eXeMathEditor)."
-msgstr ""
+msgstr "Puede usar su editor favorito de fórmulas o utilizar el incluido en eXe (eXeMathEditor)."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:650
 msgid ""
 "You can replace the generated image with another one using the "
 "\"Insert/Edit Image\" option."
-msgstr ""
+msgstr "Puede sustituir la imagen generada por otra usando la opción \"Insertar/Editar imagen\"."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/toggletoolbars/plugin.min.js:83
 msgid "Toolbar Toggle"
-msgstr ""
+msgstr "Activar/desactivar barra de herramientas"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:536
 msgid "---"
-msgstr ""
+msgstr "---"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/tinymce.min.js:8
 msgid "blockquote"
-msgstr ""
+msgstr "blockquote"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/tinymce.min.js:8
 msgid "p"
-msgstr ""
+msgstr "p"
 
 #: exe/webui/scripts/tinymce_4_settings.js:18
 #: exe/webui/scripts/tinymce_4_settings.js:19
@@ -13717,4 +13722,3 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
-
