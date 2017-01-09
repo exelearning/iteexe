@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2017-01-08 17:55+0100\n"
-"PO-Revision-Date: 2017-01-08 19:12+0100\n"
+"PO-Revision-Date: 2017-01-09 19:36+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -898,14 +898,12 @@ msgstr "FPD - Debes conocer"
 msgid ""
 "You Should Know is an iDevice that helps the student widen her knowledge "
 "with core contents."
-msgstr ""
-"Debes conocer es un iDevice que permite al alumnado ampliar "
-"conocimientos, siendo estos obligatorios para su aprendizaje."
+msgstr "Debes conocer es un iDevice que permite al alumnado ampliar conocimientos, siendo estos obligatorios para su aprendizaje."
 
 #: exe/engine/debesconocerfpdidevice.py:37
 #: exe/engine/debesconocerfpdidevice.py:136
 msgid "You Should Know Text:"
-msgstr "Texto Debes conocer:"
+msgstr "Texto de Debes conocer:"
 
 #: exe/engine/destacadofpdidevice.py:29
 msgid "FPD - Highlighted"
@@ -12802,13 +12800,13 @@ msgstr "Por favor revise el campo \"Licencia\""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1010
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1077
 msgid "You are using and old code. Update it (required to edit)?"
-msgstr "Está usando código obsoleto. ¿Desea actualizarlo (necesario para la edición)?"
+msgstr "Está usando código antiguo. ¿Desea actualizarlo? (si no no podrá editarlo)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:989
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1041
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1105
 msgid "Could not retrieve data (Core error)"
-msgstr "No se pudieron recuperar datos (error interno)"
+msgstr "Error al recuperar los datos"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1065
 msgid ""
@@ -12905,7 +12903,7 @@ msgstr "Si muestra el código (recomendado):"
 msgid ""
 "You can use MathJax to display the mathematical properly in web browsers "
 "(that will work online only)."
-msgstr "Puede usar MathJax para mostrar adecuadamente las matemáticas en los navegadores (necesitará una conexión a internet)."
+msgstr "Puede usar MathJax para mostrar adecuadamente las fórmulas matemáticas en los navegadores (necesitará una conexión a internet)."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:639
 msgid ""
