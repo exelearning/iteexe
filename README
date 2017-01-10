@@ -65,7 +65,7 @@ directory that generates an os specific installer.
 WINDOWS
 =======
 If you download the sources, installs/windows/README
-will five you the information you need to buid an executive package.
+will give you the information you need to buid an executive package.
 Or you can download the package from http://exelearning.net/descargas/
 
 
@@ -91,7 +91,7 @@ save your content before exiting.
 MAC OSX
 =======
 If you download the sources, installs/osx/README
-will five you the information you need to buid an executive package.
+will give you the information you need to buid an executive package.
 Or you can download the package from http://exelearning.net/descargas/
 
 To install eXe, simply open the .dmg and drag the app to your 
@@ -101,6 +101,7 @@ Applications folder.
 FEDORA LINUX 
 =============
 The eXe Fedora Linux install consists of a single RPM. 
+Download it from http://exelearning.net/descargas/
 
 There are HowTos on http://exelearning.net/ explaining how you can use
 these RPMs on some other RPM-based Linux distributions.
@@ -112,7 +113,7 @@ window manager, you should find an eXe entry in your Accessories menu.
 DEBIAN/UBUNTU LINUX 
 ===================
 If you download the sources, installs/debian/ubuntu/README
-will five you the information you need to buid an executive package.
+will give you the information you need to buid an executive package.
 Or you can download the package from http://exelearning.net/descargas/
 
 Install the .deb the file and you will find eXe in your program menu.
