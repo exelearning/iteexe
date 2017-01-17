@@ -1,10 +1,10 @@
 # Traditional Chinese Messages for exe.
-# Copyright (C) 2006 Free Software Foundation, Inc.
+# Copyright (C) 2006-2017 Free Software Foundation, Inc.
 # This file is distributed under the same license as the exe package.
 #
 # Jenny Lin <jenny.lin@auckland.ac.nz>, 2006.
 # Wei-Lun Chao <william.chao@ossii.com.tw>, 2006, 2013.
-# Franklin Weng <franklin at goodhorse dot idv dot tw>, 2013-2014.
+# Franklin Weng <franklin at goodhorse dot idv dot tw>, 2013-2017.
 # Meng-Hsun Lo <menghsun1203.eed04@nctu.edu.tw>, 2016.
 # Ji-Jim Lin <ajim159951@gmail.com>, 2016.
 # Ping-Feng Zo <kevinwx12392@gmail.com>, 2016.
@@ -13,15 +13,14 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
 "POT-Creation-Date: 2017-01-08 17:55+0100\n"
-"PO-Revision-Date: 2016-11-23 20:30+0200\n"
-"Last-Translator: Meng-Hsun Lo <menghsun1203.eed04@nctu.edu.tw>\n"
+"PO-Revision-Date: 2017-01-17 17:16+0100\n"
+"Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language: zh_Hant_TW\n"
 "Language-Team: Chinese Traditional <zh-l10n@linux.org.tw>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
 
 #: exe/application.py:191
 #, python-format
@@ -3051,17 +3050,14 @@ msgid "Options --export and --import are mutually exclusive."
 msgstr "不能同時指定 --export 與 --import 選項。"
 
 #: exe/exe_do:183
-#, fuzzy
 msgid "Options --export and --append are mutually exclusive."
-msgstr "不能同時指定 --export 與 --import 選項。"
+msgstr "不能同時指定 --export 與 --append 選項。"
 
 #: exe/exe_do:186
-#, fuzzy
 msgid "Options --import and --append are mutually exclusive."
-msgstr "不能同時指定 --export 與 --import 選項。"
+msgstr "不能同時指定 --append 與 --import 選項。"
 
 #: exe/exe_do:190
-#, fuzzy
 msgid "No --append --export, --import, --set or --report option supplied."
 msgstr "未提供 --export, --import, --set 或 --report 選項。"
 
@@ -3074,23 +3070,21 @@ msgid "Bad number of arguments supplied"
 msgstr "提供的參數數量不正確"
 
 #: exe/exe_do:205
-#, fuzzy, python-format
+#, python-format
 msgid "Successfully appended '%s' to '%s'."
-msgstr "成功匯出 '%s'（從 '%s'）"
+msgstr "成功將 '%s' 附加到 '%s'。"
 
 #: exe/exe_do:207
-#, fuzzy
 msgid "exe_do: error: Unable to append elp"
 msgstr ""
-"exe_do：錯誤：無法匯入 '%s'。\n"
-"錯誤為："
+"exe_do：錯誤：無法附加 elp"
 
 #: exe/exe_do:236 exe/export/cmdlineexporter.py:87
 msgid "Invalid input package"
 msgstr "無效的輸入套件"
 
 #: exe/exe_do:256
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "exe_do: error: Unable to set values from '%s'.\n"
 "The     error was:"
@@ -3101,10 +3095,10 @@ msgstr ""
 #: exe/exe_do:274
 #, python-format
 msgid "Successfully exported '%s' from '%s'."
-msgstr "成功匯出 '%s'（從 '%s'）"
+msgstr "成功從 '%s' 匯出 '%s'。"
 
 #: exe/exe_do:277
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "exe_do: error: Unable to export from '%s'.\n"
 "The     error was:"
@@ -3118,7 +3112,7 @@ msgid "File '%s' successfully imported to '%s'."
 msgstr "檔案 '%s' 已成功匯入到 '%s'。"
 
 #: exe/exe_do:288
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "exe_do: error: Unable to import '%s'.\n"
 "The     error was:"
@@ -3326,7 +3320,7 @@ msgstr "將套件匯出為 SCORM"
 
 #: exe/jsui/mainpage.py:939
 msgid "Starting authorized connection to Procomún API"
-msgstr ""
+msgstr "正在啟動到 Procomún API 的授權連線"
 
 #: exe/jsui/mainpage.py:952
 #, python-format
@@ -3334,11 +3328,13 @@ msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
 "visit exported site\">%s</a>"
 msgstr ""
+"套件已匯出到 <a href=\"%s\" target=\"_blank\" title=\"點擊前往匯出的網站\">"
+"%s</a>"
 
 #: exe/jsui/mainpage.py:955
 #, python-format
 msgid "Error exporting package %s to Procomún: %s"
-msgstr ""
+msgstr "匯出套件 %s 到 Procomún 時發生錯誤：%s"
 
 #: exe/jsui/mainpage.py:997 exe/jsui/mainpage.py:1002 exe/jsui/mainpage.py:1005
 #: exe/jsui/mainpage.py:1008 exe/jsui/mainpage.py:1011
@@ -3693,7 +3689,7 @@ msgstr "樣式管理員"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:472
 msgid "The current Style is not compatible with the Style Designer"
-msgstr ""
+msgstr "目前的樣式與樣式管理員不相容"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:475
 msgid "An unknown error occurred."
@@ -3705,6 +3701,9 @@ msgid ""
 "\n"
 "Please choose a different Style or create a new one."
 msgstr ""
+"這是 eXe 預設樣式之一，無法編輯。\n"
+"\n"
+"請選擇其他樣式，或新增一個樣式。"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:478 exe/webui/block.py:264
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
@@ -3714,7 +3713,7 @@ msgstr "資訊"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 msgid "Your Style could not be saved because an unknown error occurred."
-msgstr ""
+msgstr "因為發生未知的錯誤，因此無法儲存您的樣式。"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:556
 msgid "Select package to insert"
@@ -4990,11 +4989,11 @@ msgstr "進階"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:162
 msgid "Default format for the new documents"
-msgstr ""
+msgstr "新文件的預設格式"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:172
 msgid "The current document format can be modified in the Properties tab"
-msgstr ""
+msgstr "目前文件的格式可以在屬性分頁中變更"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:182
 msgid "Editor mode"
@@ -7174,7 +7173,7 @@ msgstr "情境"
 
 #: exe/webui/citasparapensarfpdblock.py:67
 msgid "Quotation"
-msgstr ""
+msgstr "引言"
 
 #: exe/webui/clickinorderblock.py:297
 msgid ""
@@ -11801,81 +11800,81 @@ msgstr "編輯者"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:2
 msgid "Cut"
-msgstr ""
+msgstr "剪下"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:9
 msgid "Paste"
-msgstr ""
+msgstr "貼上"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:20
 msgid "Formats"
-msgstr ""
+msgstr "格式"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:21
 msgid "Headers"
-msgstr ""
+msgstr "標頭"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:25
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:24
 msgid "Undo"
-msgstr ""
+msgstr "復原"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:34
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:25
 msgid "Redo"
-msgstr ""
+msgstr "重做"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:51
 msgid "Copy"
-msgstr ""
+msgstr "複製"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:64
 msgid "Anchor"
-msgstr ""
+msgstr "定錨點"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:66
 msgid "Restore last draft"
-msgstr ""
+msgstr "回復上次的草稿"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:67
 msgid "Special character"
-msgstr ""
+msgstr "特殊字元"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:75
 msgid "Emoticons"
-msgstr ""
+msgstr "表情圖示"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:84
 msgid "Horizontal Line"
-msgstr ""
+msgstr "水平線"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:105
 msgid "Image Options"
-msgstr ""
+msgstr "影像選項"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:119
 msgid "Text to display"
-msgstr ""
+msgstr "要顯示的文字"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:130
 msgid "Alternative source"
-msgstr ""
+msgstr "替代來源"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:134
 msgid "Non-Breaking Space"
-msgstr ""
+msgstr "不可分割空間"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:135
 msgid "Page Break"
-msgstr ""
+msgstr "頁面斷隔"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:143
 msgid "Whole Words"
-msgstr ""
+msgstr "整個單字"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:144
 msgid "Find and Replace"
-msgstr ""
+msgstr "尋找與取代"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:151
 #: exe/webui/tools/style-designer/langs/en.js:112
@@ -11884,7 +11883,7 @@ msgstr "完成"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:158
 msgid "Paste Row After"
-msgstr ""
+msgstr "將整列貼於後："
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:160
 #: exe/webui/tools/style-designer/langs/en.js:21
@@ -11893,23 +11892,23 @@ msgstr "邊界顏色"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:164
 msgid "Split Cell"
-msgstr ""
+msgstr "分割儲存格"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:168
 msgid "Insert Table"
-msgstr ""
+msgstr "插入表格"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:178
 msgid "Header Cell"
-msgstr ""
+msgstr "標題儲存格"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:184
 msgid "Copy Row"
-msgstr ""
+msgstr "複製列"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:201
 msgid "Predefined Template Content"
-msgstr ""
+msgstr "預定義樣本內容"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:203
 #: exe/webui/tools/style-designer/langs/en.js:43
@@ -11918,15 +11917,15 @@ msgstr "背景顏色"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:204
 msgid "Custom..."
-msgstr ""
+msgstr "自訂..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:205
 msgid "Custom color"
-msgstr ""
+msgstr "自訂顏色"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:206
 msgid "No color"
-msgstr ""
+msgstr "沒有顏色"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:207
 #: exe/webui/tools/style-designer/langs/en.js:25
@@ -11935,42 +11934,43 @@ msgstr "文字顏色"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:208
 msgid "Show blocks"
-msgstr ""
+msgstr "顯示區塊"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:209
 msgid "Show invisible characters"
-msgstr ""
+msgstr "顯示不可見的字元"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:210
 msgid "Words: {0}"
-msgstr ""
+msgstr "字數：{0}"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:214
 msgid ""
 "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press "
 "ALT-0 for help"
-msgstr ""
+msgstr "RichText 區域。按 Alt-F9 出現選單。按 Alt-F10 出現工具列。"
+"按 Alt-0 出現說明"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:216
 msgid "View"
-msgstr ""
+msgstr "檢視"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:217
 msgid "Table"
-msgstr ""
+msgstr "表格"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:24
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:108
 msgid "Acronym or abbreviation"
-msgstr ""
+msgstr "同義詞或縮寫"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:37
 msgid "Meaning"
-msgstr ""
+msgstr "含義"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:48
 msgid "Please write the abbreviation and its meaning."
-msgstr ""
+msgstr "請寫上縮寫與它的意思。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:61
 msgid ""
@@ -11978,225 +11978,236 @@ msgid ""
 "\n"
 "Use the <abbr> tag instead?"
 msgstr ""
+"HTML5 不支援 <acronym> 標籤。\n"
+"\n"
+"要改用 <abbr> 標籤嗎？"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:26
 msgid "Search and Replace"
-msgstr ""
+msgstr "搜尋與取代"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:31
 msgid "Reformat"
-msgstr ""
+msgstr "重新格式化"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:32
 msgid "Format HTML Code"
-msgstr ""
+msgstr "格式化 HTML 程式碼"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:37
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:43
 msgid "advanced editor"
-msgstr ""
+msgstr "進階編輯器"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:87
 msgid "Class added to the \"CSS class\" field."
-msgstr ""
+msgstr "要加入的「CSS 類別」欄位的類別。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:140
 msgid "CSS class"
-msgstr ""
+msgstr "CSS 類別"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:144
 msgid "Add CSS class"
-msgstr ""
+msgstr "新增 CSS 類別"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:181
 msgid "New attribute"
-msgstr ""
+msgstr "新增屬性"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:120
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:258
 msgid "Effects"
-msgstr ""
+msgstr "效果"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:119
 msgid "Please select the image to edit it"
-msgstr ""
+msgstr "請選擇要編輯的影像"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:776
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:786
 msgid "Custom license"
-msgstr ""
+msgstr "自訂授權"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:934
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:925
 msgid "Please check the \"License\" field"
-msgstr ""
+msgstr "請勾選「授權」欄位"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:953
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1010
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1077
 msgid "You are using and old code. Update it (required to edit)?"
-msgstr ""
+msgstr "您正在使用舊的程式碼。需要更新才能編輯。要更新嗎？"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:989
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1041
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1105
 msgid "Could not retrieve data (Core error)"
-msgstr ""
+msgstr "無法取得資料（核心錯誤）"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1065
 msgid ""
 "You are using QuickTime.\n"
 "We recommend you to use any of these formats:\n"
 msgstr ""
+"您使用的是 QuickTime。\n"
+"我們建議您使用以下格式之一：\n"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:92
 msgid "That image was created using the old formula editor."
-msgstr ""
+msgstr "影像是用舊的公式編輯器產生的。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:92
 msgid "Make it compatible with the new editor?"
-msgstr ""
+msgstr "要讓它與新的編輯器相容嗎？"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:124
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:128
 msgid "Done! You can now edit your image."
-msgstr ""
+msgstr "完成！您現在可以編輯您的影像了。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:202
 msgid "You should save a copy of the code before continuing."
-msgstr ""
+msgstr "您在繼續前請記得先儲存程式碼。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:204
 msgid "Click on the Editor's Save button when you finish editing."
-msgstr ""
+msgstr "編輯完成後請點擊編輯器的儲存按鍵。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:213
 msgid "Equation Editor"
-msgstr ""
+msgstr "等式編輯器"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:337
 msgid "Error (missing function):"
-msgstr ""
+msgstr "錯誤（函式遺失）："
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:405
 msgid "The image could not be created. Insert the code without alternative image?"
-msgstr ""
+msgstr "無法建立影像。要加入程式碼而不加入替代影像嗎？"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:451
 msgid "Please write the code"
-msgstr ""
+msgstr "請寫入程式碼"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:471
 msgid ""
 "Continue without a title? Some users might see an image instead of the "
 "rendered code. Without the title the image may not be accessible to them."
 msgstr ""
+"確定不寫標題就繼續嗎？有些使用者可能看到影像而不是程式碼。如果沒有標題，"
+"他們可能無法存取影像。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:556
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:705
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:717
 msgid "Paste mathematical markup"
-msgstr ""
+msgstr "貼上數學的記號"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:570
 msgid "Choose what to use:"
-msgstr ""
+msgstr "請選擇要使用哪個："
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:584
 msgid "Use MathJax from mathjax.org (online only) or your own copy"
-msgstr ""
+msgstr "用 mathjax.org 上的 MathJax 或您自己的複本"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:591
 msgid "Include alternative image (recommended)"
-msgstr ""
+msgstr "加入替代影像（推薦選項）"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:600
 msgid "Image title (alternative text):"
-msgstr ""
+msgstr "影像標題（無障礙使用）："
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:610
 msgid ""
 "Paste (CTRL+V) the code (LaTeX...) from your favorite editor or use "
 "eXeMathEditor"
 msgstr ""
+"請從您自己的編輯器或是 eXeMathEditor 貼上（Ctrl+V）程式碼（LaTeX...）"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:634
 msgid "Paste your code (LaTeX...)."
-msgstr ""
+msgstr "請貼上您的程式碼（LaTeX...）。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:635
 msgid "Choose if you want to show the code or an image."
-msgstr ""
+msgstr "請選擇您要顯示程式碼還是影像。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:636
 msgid "If you show the code (recommended):"
-msgstr ""
+msgstr "是否要顯示程式碼（推薦選項）："
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:638
 msgid ""
 "You can use MathJax to display the mathematical properly in web browsers "
 "(that will work online only)."
 msgstr ""
+"您可以使用 MathJax 以便在瀏覽器上正確顯示數學的元件（但是只有在線上時才能使用）。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:639
 msgid ""
 "You can include an alternative image. In that case you'll have to provide"
 " a descriptive text for it."
-msgstr ""
+msgstr "您可以引入另一張影像。這種情況下您需要提供影像的文字描述。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:640
 msgid ""
 "With no image and no MathJax some users might not be able to see the "
 "formula."
-msgstr ""
+msgstr "如果沒有影像與 MathJax，有些使用者可能無法看到公式。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:643
 msgid ""
 "If you prefer to show the image, the code will be there, but it won't be "
 "visible."
-msgstr ""
+msgstr "如果您希望顯示影像，那麼程式碼就不會顯示出來。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:644
 msgid ""
 "If JavaScript is enabled links to the code and the image will be "
 "automatically created."
-msgstr ""
+msgstr "若是開啟 JavaScript，程式碼與影像的連結都會自動產生。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:645
 msgid "If JavaScript is disabled, both (code and image) will be visible."
-msgstr ""
+msgstr "若是關閉 JavaScript，程式碼與影像都會變得可見。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:647
 msgid "Remember that..."
-msgstr ""
+msgstr "記住選擇..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:649
 msgid ""
 "You can use your favorite formula editor or use the one included in eXe "
 "(eXeMathEditor)."
 msgstr ""
+"您可以用您常用的公式編輯器，或是使用 eXe 內建的（eXeMathEditor）編輯器。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:650
 msgid ""
 "You can replace the generated image with another one using the "
 "\"Insert/Edit Image\" option."
 msgstr ""
+"您可以用「插入/編輯影像」選項來用另一張影像取代產生的影像。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/toggletoolbars/plugin.min.js:83
 msgid "Toolbar Toggle"
-msgstr ""
+msgstr "切換工具列"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:536
 msgid "---"
-msgstr ""
+msgstr "---"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/tinymce.min.js:8
 msgid "blockquote"
-msgstr ""
+msgstr "blockquote"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/tinymce.min.js:8
 msgid "p"
-msgstr ""
+msgstr "p"
 
 #: exe/webui/scripts/tinymce_4_settings.js:18
 #: exe/webui/scripts/tinymce_4_settings.js:19
@@ -12626,7 +12637,7 @@ msgstr "無強調（純文字）"
 
 #: exe/webui/tools/style-designer/langs/en.js:99
 msgid "Show box"
-msgstr ""
+msgstr "顯示對話盒"
 
 #: exe/webui/tools/style-designer/langs/en.js:100
 msgid "Icon to hide/show the iDevice"
@@ -12923,4 +12934,3 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "您的iDevices或是generic.data檔案是由更新版的eXe所建立。請更新eXe並再試一次。"
-
