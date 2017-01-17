@@ -200,8 +200,8 @@ intef-exe (3:2.1) lucid; urgency=medium
     metadata form.
     Fixes [#2793] Bug metadatos lom-es
   * Fix wrong file format error opening elp without idevices
-  * Allow to set empty value for license: "(void)"
-    Don't show license footer when no license setted (for example with old
+  * Allow setting empty value for license: "(void)"
+    Don't show license footer when no license set (for example with old
     package versions)
     Fixes [#2758]: License problem and [#2655]: The package license can't be
     deleted
