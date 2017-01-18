@@ -669,19 +669,38 @@ if sys.platform == 'darwin':
             rc = osapipe.close()
             return not rc
 
-    def _isinstalled(browser):
+    def _isinstalled(browser_id):
+        """Returns True or False depending on whether the browser
+        with ID "browser_id" is installed in the system or not
+        """
+
+        # This AppleScript will return 0 if the application is not installed
+        # or 1 if it is, but without asking the user where it is
         script = '''
-               get version of application "%s"
-               ''' % browser
-        f = __builtin__.open(os.devnull, 'w')
-        rc = subprocess.call("osascript -e '%s'" % script, shell=True, stdout=f, stderr=f)
-        return not rc
+                tell application "Finder"
+                    application file id "%s"
+                end tell
+               ''' % browser_id
+
+        # Open a stream to NULL
+        null_stream = __builtin__.open(os.devnull, 'w')
+        # Execute the AppleScript
+        # Any output produced by the script will be send to null_stream
+        is_installed = not subprocess.call("osascript -e '%s'" % script, shell=True,
+                                           stdout=null_stream, stderr=null_stream)
+        return is_installed
 
     # Don't clear _tryorder or _browsers since OS X can use above Unix support
-    # (but we prefer using the OS X specific stuff)
-    for browser in ['Google Chrome', 'Firefox', 'Safari', 'Opera']:
-        if _isinstalled(browser):
-            register(browser, None, MacOSXOSAScript(browser))
+    # (but we prefer using the OS X specific stuff).
+    # We need Application ID to check if the browser is installed and Application Name
+    # to be able to open it (And to show the correct name on the select).
+    for browser in [{'id': 'com.google.Chrome', 'name': 'Google Chrome'},
+                    {'id': 'org.mozilla.firefox', 'name': 'Firefox'},
+                    {'id': 'com.apple.Safari', 'name': 'Safari'},
+                    {'id': 'com.operasoftware.Opera', 'name': 'Opera'}]:
+        if _isinstalled(browser['id']):
+            register(browser['name'], None, MacOSXOSAScript(browser['name']))
+    # Register default browser
     register("MacOSX", None, MacOSXOSAScript('default'), -1)
 
 
