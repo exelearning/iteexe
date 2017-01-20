@@ -240,3 +240,5 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 .hidden-editor .mce-toolbar,
 .hidden-editor .mce-statusbar,
 .hidden-editor .mce-toolbar-grp{display:none}
+/* TinyMCE Float Panel (to review - see #132) */
+.mce-floatpanel{max-height:100%;overflow:auto}
