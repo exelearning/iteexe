@@ -910,10 +910,28 @@ var $exeAuthoring = {
     disableSVGInMediaElement : function(){
         $(document.body).addClass("no-svg");
     },
+    IE11hacks : function(){
+        var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+        if (isIE11) {
+            $("object").each(function(){
+                var i = this.innerHTML;
+                if (i.indexOf("<param")!=-1 && i.indexOf("exe_flv")!=-1 && i.indexOf("wmode")==-1) {
+                    // Add wmode transparent and reload the HTML
+                    var par = $(this).parent();
+                    if (par.length==1) {
+                        this.innerHTML += '<param name="wmode" value="transparent">';
+                        par.html(par.html());
+                    }
+                }
+            });				
+        }
+    },
     ready : function(){
         if (top.Ext) {
             $exeAuthoring.disableSVGInMediaElement();
             $exeAuthoring.setYoutubeWmode();
+            // To review (see https://github.com/exelearning/iteexe/issues/127)
+            $exeAuthoring.IE11hacks();
             if (top.Ext.isIE) {
                 $exeAuthoring.changeFlowPlayerPathInIE();
             }
