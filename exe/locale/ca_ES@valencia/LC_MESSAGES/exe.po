@@ -1,32 +1,33 @@
 # eXeLearning Catalan (Valencia) PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2001-2016 eXeLearning.net
+# Copyright (C) 2001-2017 eXeLearning.net
 # This file is distributed under the same license as the EXE package.
 # eXeLearning.net Project <admin@exelearning.net>
 # Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012.
 # Angel Berlanas Vicente <angel.berlanas@gmail.com>, 2013-2014.
-# Pilar Embid Giner <embid_mar@gva.es>, 2012, 2013, 2014, 2016.
+# Pilar Embid Giner <embid_mar@gva.es>, 2012-2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2017-01-08 17:55+0100\n"
-"PO-Revision-Date: 2016-11-14 09:32+0200\n"
+"PO-Revision-Date: 2017-01-24 11:25+0200\n"
 "Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
-"Language: ca_ES\n"
 "Language-Team: LliureX\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "Generated-By: Babel 2.3.4\n"
 
 #: exe/application.py:191
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
 msgstr ""
-"S'ha produït un error mentre es carregava el fitxer de configuració. S'ha"
-" guardat una còpia de seguretat en %s"
+"S'ha produït un error mentre es carregava el fitxer de configuració. S'ha "
+"guardat una còpia de seguretat en %s"
 
 #: exe/application.py:209
 #, python-format
@@ -3435,7 +3436,7 @@ msgstr ""
 
 #: exe/exe_do:75
 msgid "Append  <input_file> elp package to <output_file> elp package"
-msgstr ""
+msgstr "Afig el  <input_file> paquet elp al <output_file> paquet elp"
 
 #: exe/exe_do:80
 msgid "Set ELP field values. Example: -s style=Default,root.title='Root Node'"
@@ -3561,15 +3562,17 @@ msgstr "Les opcions --import i --export són mútuament excloents."
 
 #: exe/exe_do:183
 msgid "Options --export and --append are mutually exclusive."
-msgstr ""
+msgstr "Les opcions --export i --append són mútuament excloents."
 
 #: exe/exe_do:186
 msgid "Options --import and --append are mutually exclusive."
-msgstr ""
+msgstr "Les opcions --import i --append són mútuament excloents."
 
 #: exe/exe_do:190
 msgid "No --append --export, --import, --set or --report option supplied."
 msgstr ""
+"No s'han proporcionat les opcions --append --export, --import, --set ni "
+"--report."
 
 #: exe/exe_do:194
 msgid "No file input supplied."
@@ -3582,11 +3585,11 @@ msgstr "El nombre d'arguments proporcionats és incorrecte."
 #: exe/exe_do:205
 #, python-format
 msgid "Successfully appended '%s' to '%s'."
-msgstr ""
+msgstr "S'ha afegit correctament «%s» a «%s»."
 
 #: exe/exe_do:207
 msgid "exe_do: error: Unable to append elp"
-msgstr ""
+msgstr "exe_do: error: no s'ha pogut afegir elp"
 
 #: exe/exe_do:236 exe/export/cmdlineexporter.py:87
 msgid "Invalid input package"
@@ -3598,6 +3601,8 @@ msgid ""
 "exe_do: error: Unable to set values from '%s'.\n"
 "The     error was:"
 msgstr ""
+"exe_do: error: no s'han pogut establir valors des de «%s».\n"
+"L'error ha estat:"
 
 #: exe/exe_do:274
 #, python-format
@@ -3610,6 +3615,8 @@ msgid ""
 "exe_do: error: Unable to export from '%s'.\n"
 "The     error was:"
 msgstr ""
+"exe_do: error: no s'ha pogut exportar des de «%s».\n"
+"L'error ha estat:"
 
 #: exe/exe_do:285
 #, python-format
@@ -3622,6 +3629,8 @@ msgid ""
 "exe_do: error: Unable to import '%s'.\n"
 "The     error was:"
 msgstr ""
+"exe_do: error: no s'ha pogut importar des de «%s».\n"
+"L'error ha estat:"
 
 #: exe/export/cmdlineexporter.py:73 exe/jsui/mainpage.py:304
 #: exe/jsui/mainpage.py:1112 exe/jsui/mainpage.py:1276
@@ -12515,81 +12524,81 @@ msgstr "Redactor/a"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:2
 msgid "Cut"
-msgstr ""
+msgstr "Retalla"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:9
 msgid "Paste"
-msgstr ""
+msgstr "Apega"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:20
 msgid "Formats"
-msgstr ""
+msgstr "Formats"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:21
 msgid "Headers"
-msgstr ""
+msgstr "Capçaleres"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:25
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:24
 msgid "Undo"
-msgstr ""
+msgstr "Desfés"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:34
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:25
 msgid "Redo"
-msgstr ""
+msgstr "Refés"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:51
 msgid "Copy"
-msgstr ""
+msgstr "Copia"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:64
 msgid "Anchor"
-msgstr ""
+msgstr "Ancora"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:66
 msgid "Restore last draft"
-msgstr ""
+msgstr "Restaura l'últim esborrany"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:67
 msgid "Special character"
-msgstr ""
+msgstr "Caràcters especials"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:75
 msgid "Emoticons"
-msgstr ""
+msgstr "Emoticones"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:84
 msgid "Horizontal Line"
-msgstr ""
+msgstr "Línia horitzontal"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:105
 msgid "Image Options"
-msgstr ""
+msgstr "Opcions d'imatge"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:119
 msgid "Text to display"
-msgstr ""
+msgstr "Text que s'ha de mostrar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:130
 msgid "Alternative source"
-msgstr ""
+msgstr "Font alternativa"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:134
 msgid "Non-Breaking Space"
-msgstr ""
+msgstr "Espai no separable"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:135
 msgid "Page Break"
-msgstr ""
+msgstr "Salt de pàgina"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:143
 msgid "Whole Words"
-msgstr ""
+msgstr "Paraules completes"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:144
 msgid "Find and Replace"
-msgstr ""
+msgstr "Cerca i reemplaça"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:151
 #: exe/webui/tools/style-designer/langs/en.js:112
@@ -12598,7 +12607,7 @@ msgstr "Finalitza"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:158
 msgid "Paste Row After"
-msgstr ""
+msgstr "Apega la fila després de"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:160
 #: exe/webui/tools/style-designer/langs/en.js:21
@@ -12607,23 +12616,23 @@ msgstr "Color de la vora"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:164
 msgid "Split Cell"
-msgstr ""
+msgstr "Divideix la cel·la"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:168
 msgid "Insert Table"
-msgstr ""
+msgstr "Insereix una taula"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:178
 msgid "Header Cell"
-msgstr ""
+msgstr "Cel·la de capçalera"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:184
 msgid "Copy Row"
-msgstr ""
+msgstr "Copia la fila"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:201
 msgid "Predefined Template Content"
-msgstr ""
+msgstr "Contingut de la plantilla predefinida"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:203
 #: exe/webui/tools/style-designer/langs/en.js:43
@@ -12632,15 +12641,15 @@ msgstr "Color de fons"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:204
 msgid "Custom..."
-msgstr ""
+msgstr "Personalitzat…"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:205
 msgid "Custom color"
-msgstr ""
+msgstr "Color personalitzat"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:206
 msgid "No color"
-msgstr ""
+msgstr "Sense color"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:207
 #: exe/webui/tools/style-designer/langs/en.js:25
@@ -12649,42 +12658,44 @@ msgstr "Color del text"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:208
 msgid "Show blocks"
-msgstr ""
+msgstr "Mostra els blocs"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:209
 msgid "Show invisible characters"
-msgstr ""
+msgstr "Mostra els caràcters invisibles"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:210
 msgid "Words: {0}"
-msgstr ""
+msgstr "Paraules: {0}"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:214
 msgid ""
 "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press "
 "ALT-0 for help"
 msgstr ""
+"Àrea de text enriquit. Premeu ALT-F9 per al menú. Premeu ALT-F10 per a la "
+"barra d'eines. Premeu ALT-0 per a l'ajuda."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:216
 msgid "View"
-msgstr ""
+msgstr "Visualitza"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:217
 msgid "Table"
-msgstr ""
+msgstr "Taula"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:24
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:108
 msgid "Acronym or abbreviation"
-msgstr ""
+msgstr "Acrònim o abreviació"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:37
 msgid "Meaning"
-msgstr ""
+msgstr "Significat"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:48
 msgid "Please write the abbreviation and its meaning."
-msgstr ""
+msgstr "Escriviu l'abreviació i el seu significat"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:61
 msgid ""
@@ -12692,225 +12703,254 @@ msgid ""
 "\n"
 "Use the <abbr> tag instead?"
 msgstr ""
+"L'etiqueta <acronym> no s'admet en HTML5.\n"
+"\n"
+"Voleu utilitzar l'etiqueta <abbr> al seu lloc?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:26
 msgid "Search and Replace"
-msgstr ""
+msgstr "Cerca i selecciona"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:31
 msgid "Reformat"
-msgstr ""
+msgstr "Torna a formatar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:32
 msgid "Format HTML Code"
-msgstr ""
+msgstr "Codi de format HTML"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:37
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:43
 msgid "advanced editor"
-msgstr ""
+msgstr "editor avançat"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:87
 msgid "Class added to the \"CSS class\" field."
-msgstr ""
+msgstr "S'ha afegit una classe al camp «classe de CSS»."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:140
 msgid "CSS class"
-msgstr ""
+msgstr "classe de CSS"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:144
 msgid "Add CSS class"
-msgstr ""
+msgstr "Afig una classe de CSS"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:181
 msgid "New attribute"
-msgstr ""
+msgstr "Atribut nou"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:120
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:258
 msgid "Effects"
-msgstr ""
+msgstr "Efectes"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:119
 msgid "Please select the image to edit it"
-msgstr ""
+msgstr "Seleccioneu la imatge per a editar-la"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:776
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:786
 msgid "Custom license"
-msgstr ""
+msgstr "Llicència personalitzada"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:934
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:925
 msgid "Please check the \"License\" field"
-msgstr ""
+msgstr "Comproveu el camp «Llicència»"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:953
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1010
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1077
 msgid "You are using and old code. Update it (required to edit)?"
 msgstr ""
+"Esteu utilitzant un codi antic. Voleu actualitzar-lo (es requereix per a "
+"editar)?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:989
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1041
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1105
 msgid "Could not retrieve data (Core error)"
-msgstr ""
+msgstr "No s'han pogut recuperar les dades (error del nucli)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1065
 msgid ""
 "You are using QuickTime.\n"
 "We recommend you to use any of these formats:\n"
 msgstr ""
+"Esteu utilitzant el QuickTime.\n"
+"Us recomanem que utilitzeu qualsevol d'aquests formats:\n"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:92
 msgid "That image was created using the old formula editor."
-msgstr ""
+msgstr "La imatge s'ha creat utilitzant l'editor de fórmules antic."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:92
 msgid "Make it compatible with the new editor?"
-msgstr ""
+msgstr "Voleu fer-lo compatible amb l'editor nou?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:124
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:128
 msgid "Done! You can now edit your image."
-msgstr ""
+msgstr "Fet! Ara ja podeu editar la imatge."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:202
 msgid "You should save a copy of the code before continuing."
-msgstr ""
+msgstr "És convenient que guardeu una còpia del codi abans de continuar."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:204
 msgid "Click on the Editor's Save button when you finish editing."
-msgstr ""
+msgstr "Feu clic en el botó «Guarda» de l'editor quan acabeu l'edició "
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:213
 msgid "Equation Editor"
-msgstr ""
+msgstr "Editor d'equacions"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:337
 msgid "Error (missing function):"
-msgstr ""
+msgstr "Error (falta la funció):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:405
 msgid "The image could not be created. Insert the code without alternative image?"
 msgstr ""
+"No s'ha pogut crear la imatge. Voleu inserir el codi sense imatge "
+"alternativa? "
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:451
 msgid "Please write the code"
-msgstr ""
+msgstr "Escriviu el codi"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:471
 msgid ""
 "Continue without a title? Some users might see an image instead of the "
 "rendered code. Without the title the image may not be accessible to them."
 msgstr ""
+"Voleu continuar sense un títol? Alguns usuaris poden veure una imatge en "
+"comptes del codi renderitzat. Sense el títol pot ser que els usuaris no "
+"puguen accedir a la imatge."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:556
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:705
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:717
 msgid "Paste mathematical markup"
-msgstr ""
+msgstr "Apega etiquetatge matemàtic"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:570
 msgid "Choose what to use:"
-msgstr ""
+msgstr "Trieu quin s'ha d'utilitzar:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:584
 msgid "Use MathJax from mathjax.org (online only) or your own copy"
-msgstr ""
+msgstr "Utilitzeu MathJax des de mathjax.org (només en línia) o la vostra còpia"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:591
 msgid "Include alternative image (recommended)"
-msgstr ""
+msgstr "Inclou una imatge alternativa (recomanat)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:600
 msgid "Image title (alternative text):"
-msgstr ""
+msgstr "Títol de la imatge (text alternatiu):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:610
 msgid ""
 "Paste (CTRL+V) the code (LaTeX...) from your favorite editor or use "
 "eXeMathEditor"
 msgstr ""
+"Apegueu (CTRL+V) el codi (LaTeX...) des del vostre editor preferit o "
+"utilitzeu eXeMathEditor"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:634
 msgid "Paste your code (LaTeX...)."
-msgstr ""
+msgstr "Apegueu el vostre codi (LaTeX...)."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:635
 msgid "Choose if you want to show the code or an image."
-msgstr ""
+msgstr "Trieu si voleu que es mostre el codi o una imatge."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:636
 msgid "If you show the code (recommended):"
-msgstr ""
+msgstr "Si mostreu el codi (recomanat):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:638
 msgid ""
 "You can use MathJax to display the mathematical properly in web browsers "
 "(that will work online only)."
 msgstr ""
+"Podeu utilitzar MathJax per a mostrar l'etiquetatge matemàtic correctament "
+"en els navegadors web (només funcionarà en línia)."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:639
 msgid ""
 "You can include an alternative image. In that case you'll have to provide"
 " a descriptive text for it."
 msgstr ""
+"Podeu incloure una imatge alternativa. En aquest cas heu de proporcionar-hi "
+"un text descriptiu."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:640
 msgid ""
 "With no image and no MathJax some users might not be able to see the "
 "formula."
 msgstr ""
+"Sense cap imatge i sense MathJax alguns usuaris potser no podran veure la "
+"fórmula."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:643
 msgid ""
 "If you prefer to show the image, the code will be there, but it won't be "
 "visible."
 msgstr ""
+"Si preferiu mostrar una imatge, el codi estarà allí, però no serà visible."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:644
 msgid ""
 "If JavaScript is enabled links to the code and the image will be "
 "automatically created."
 msgstr ""
+"Si el JavaScript està habilitat, els enllaços al codi i a la imatge es "
+"crearan automàticament."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:645
 msgid "If JavaScript is disabled, both (code and image) will be visible."
 msgstr ""
+"Si el JavaScript està inhabilitat, tant el codi com la imatge seran "
+"visibles."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:647
 msgid "Remember that..."
-msgstr ""
+msgstr "Recordeu que..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:649
 msgid ""
 "You can use your favorite formula editor or use the one included in eXe "
 "(eXeMathEditor)."
 msgstr ""
+"Podeu utilitzar el vostre editor de fórmules preferit o utilitzar el que hi "
+"ha inclòs al l'eXe (eXeMathEditor)."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:650
 msgid ""
 "You can replace the generated image with another one using the "
 "\"Insert/Edit Image\" option."
 msgstr ""
+"Podeu reemplaçar la imatge generada per una altra utilitzant l'opció "
+"«Insereix/Edita la imatge»."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/toggletoolbars/plugin.min.js:83
 msgid "Toolbar Toggle"
-msgstr ""
+msgstr "Commuta la barra d'eines"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:536
 msgid "---"
-msgstr ""
+msgstr "---"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/tinymce.min.js:8
 msgid "blockquote"
-msgstr ""
+msgstr "bloc de citació"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/tinymce.min.js:8
 msgid "p"
-msgstr ""
+msgstr "p"
 
 #: exe/webui/scripts/tinymce_4_settings.js:18
 #: exe/webui/scripts/tinymce_4_settings.js:19
@@ -13665,4 +13705,3 @@ msgstr ""
 "El fitxer d'iDevices/generic.data o el paquet que proveu de carregar s'ha"
 " creat amb una versió més nova de l'eXe. Actualitzeu l'eXe i torneu-ho a "
 "provar."
-
