@@ -30,3 +30,8 @@ app:
   working_dir: /home/app
   entrypoint: images/exe/run.sh
   privileged: true
+  environment:
+    - PYTHONPATH
+    - DEBUG_ENABLE
+    - DEBUG_SERVER_HOST
+    - DEBUG_SERVER_PORT

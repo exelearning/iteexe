@@ -10,4 +10,8 @@ RUN cd /usr/share/simplesamlphp/modules && svn export https://github.com/sylvain
 
 RUN touch /usr/share/simplesamlphp/modules/openid/enable
 
-ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+ADD run.sh /run.sh
+
+RUN chmod 755 /*.sh
+
+CMD /run.sh

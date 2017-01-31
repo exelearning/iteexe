@@ -8,4 +8,8 @@ RUN a2enmod ssl
 
 RUN a2enmod headers
 
-ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+ADD run.sh /run.sh
+
+RUN chmod 755 /*.sh
+
+CMD /run.sh
