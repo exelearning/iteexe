@@ -16,4 +16,6 @@ RUN apt-get update && apt-get -yq install python-suds python-requests-oauthlib p
 
 RUN pip install dm.xmlsec.binding==1.3.2
 
+RUN apt-get update && apt-get -yq install cssmin python-webassets
+
 RUN mkdir /var/run/exe

@@ -28,6 +28,15 @@ import sys
 
 sys.setrecursionlimit(2000)
 
+if os.environ.get('DEBUG_ENABLE') == 'true':
+    try:
+        import pydevd
+
+        pydevd.settrace(os.environ['DEBUG_SERVER_HOST'], port=int(os.environ['DEBUG_SERVER_PORT']),
+                        stdoutToServer=True, stderrToServer=True, suspend=False)
+    except (ImportError, KeyError):
+        pass
+
 if '--portable' in sys.argv:
     exePath = os.path.abspath(sys.argv[0])
     exeDir  = os.path.dirname(exePath)
