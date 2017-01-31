@@ -29,15 +29,6 @@ var myTheme = {
 			myTheme.setNavHeight();
 		});
 	},
-	getIframesURL : function(){
-		$("IFRAME").each(function(){
-			var s = this.src;
-			var d = window.location.protocol+"://"
-			if (s.indexOf(d)!=0) {
-				$(this).addClass("external-iframe").before("<span class='external-iframe-src' style='display:none'><a href='"+this.src+"'>"+this.src+"</a></span>");
-			}
-		});
-	},
 	isMobile : function(){
 		try {
 			document.createEvent("TouchEvent");
@@ -155,14 +146,21 @@ var myTheme = {
 	reset : function() {
 		myTheme.toggleMenu();        
 		myTheme.setNavHeight();
-	}    
+	},
+	getCustomIcons : function(){
+		// Provisional solution so the user can use the iDevice Editor to choose an icon
+		$(".iDevice_header").each(function(){
+			var i = this.style.backgroundImage;
+			if (i!="") $(".iDeviceTitle",this).css("background-image",i);
+			this.style.backgroundImage = "none";
+		});
+	}
 }
-
 $(function(){
 	if (document.body.className=='exe-web-site js') {
 		myTheme.init();
 	}
-	myTheme.getIframesURL();
+	myTheme.getCustomIcons();
 });
 
 /*!

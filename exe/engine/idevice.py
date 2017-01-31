@@ -23,6 +23,7 @@ The base class for all iDevices
 
 import copy
 import logging
+import re
 from copy                 import deepcopy
 from exe.engine.persist   import Persistable
 from exe.engine.translate import lateTranslate
@@ -97,7 +98,21 @@ class Idevice(Persistable):
     def get_klass(self):
         if hasattr(self, 'class_'):
             if self.class_ == '':
-                return u'customIdevice'
+                # return u'customIdevice'
+                # We add 3 classes to the custom iDevice
+                # 1. customIdevice (common)
+                customIdeviceClass = 'customIdevice '
+                # 2. Title (with no spaces, etc.)
+                if self._title == '':
+                    customIdeviceClass += 'untitledIdevice'
+                else:
+                    customIdeviceClass += 'Idevice'+re.sub( '\W+', '', self._title )
+                # 3. Icon
+                if self.icon:
+                    customIdeviceClass += ' icon' + self.icon
+                else:
+                    customIdeviceClass += ' noIcon'
+                return customIdeviceClass
             else:
                 return self.class_ + u'Idevice'
         else:

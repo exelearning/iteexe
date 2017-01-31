@@ -1,0 +1,2 @@
+.exe-tooltip-text{margin:1.5em 0;background:#FFFFA3 url(../img/tooltip_bg.gif) no-repeat 10px 10px;color:#555;font-size:.95em;border:1px solid #F1D031;padding:26px 10px 10px 10px;border-radius:5px;border-top-left-radius:0;position:relative}
+.exe-tooltip-text:before{color:#666;font-size:.9em;font-style:italic;position:absolute;top:6px;right:10px}

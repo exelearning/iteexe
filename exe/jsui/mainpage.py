@@ -220,7 +220,9 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.outlinePane.handleSetTreeSelection, 'setTreeSelection')
         setUpHandler(self.handleRemoveTempDir, 'removeTempDir')
         setUpHandler(self.handleTinyMCEimageChoice, 'previewTinyMCEimage')
+        setUpHandler(self.handleTinyMCEimageDragDrop, 'previewTinyMCEimageDragDrop')
         setUpHandler(self.handleTinyMCEmath, 'generateTinyMCEmath')
+        setUpHandler(self.handleTinyMCEmathML, 'generateTinyMCEmathML')
         setUpHandler(self.handleTestPrintMsg, 'testPrintMessage')
         setUpHandler(self.handleReload, 'reload')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
@@ -563,6 +565,64 @@ class MainPage(RenderableLivePage):
                     + "file to server prevew, error = " + str(e))
             raise
 
+    def handleTinyMCEimageDragDrop(self, client, tinyMCEwin, tinyMCEwin_name, \
+                              local_filename, preview_filename):
+        server_filename = ""
+        errors = 0
+
+        log.debug('handleTinyMCEimageChoice: image local = ' + local_filename
+                + ', base=' + os.path.basename(local_filename))
+
+        webDir = Path(G.application.tempWebDir)
+        previewDir = webDir.joinpath('previews')
+
+        if not previewDir.exists():
+            log.debug("image previews directory does not yet exist; " \
+                    + "creating as %s " % previewDir)
+            previewDir.makedirs()
+        elif not previewDir.isdir():
+            client.alert(\
+                _(u'Preview directory %s is a file, cannot replace it') \
+                % previewDir)
+            log.error("Couldn't preview tinyMCE-chosen image: " + 
+                      "Preview dir %s is a file, cannot replace it" \
+                      % previewDir)
+            errors += 1
+
+        if errors == 0:
+            log.debug('handleTinyMCEimageChoice: originally, local_filename='
+                    + local_filename)
+            log.debug('handleTinyMCEimageChoice: in unicode, local_filename='
+                    + local_filename)
+
+            localImagePath = Path(local_filename)
+            log.debug('handleTinyMCEimageChoice: after Path, localImagePath= '
+                    + localImagePath)
+
+        try:
+            log.debug('URIencoded preview filename=' + preview_filename)
+
+            server_filename = previewDir.joinpath(preview_filename)
+
+            descrip_file_path = Path(server_filename + ".exe_info")
+            log.debug("handleTinyMCEimageDragDrop creating preview " \
+                    + "description file \'" \
+                    + descrip_file_path.abspath() + "\'.")
+            descrip_file = open(server_filename, 'wb')
+
+            local_filename = local_filename.replace('data:image/jpeg;base64,', '')
+            descrip_file.write(base64.b64decode(local_filename))
+            descrip_file.flush()
+            descrip_file.close()
+            
+            client.sendScript('eXe.app.fireEvent("previewTinyMCEDragDropImageDone")')
+
+        except Exception, e:
+            client.alert(_('SAVE FAILED!\n%s') % str(e))
+            log.error("handleTinyMCEimageDragDrop unable to copy local image "
+                    + "file to server prevew, error = " + str(e))
+            raise
+
     def handleTinyMCEmath(self, client, tinyMCEwin, tinyMCEwin_name, \
                              tinyMCEfield, latex_source, math_fontsize, \
                              preview_image_filename, preview_math_srcfile):
@@ -625,8 +685,77 @@ class MainPage(RenderableLivePage):
                 tempFileName = compile(use_latex_sourcefile, math_fontsize, \
                         latex_is_file=True)
             except Exception, e:
-                client.alert(_('MimeTeX compile failed!\n%s') % str(e))
+                client.alert(_('Could not create the image') + " (LaTeX)","$exeAuthoring.errorHandler('handleTinyMCEmath')")
                 log.error("handleTinyMCEmath unable to compile LaTeX using "
+                        + "mimetex, error = " + str(e))
+                raise
+
+            # copy the file into previews
+            server_filename = previewDir.joinpath(preview_image_filename)
+            log.debug("handleTinyMCEmath copying math image from \'"\
+                    + tempFileName + "\' to \'" \
+                    + server_filename.abspath().encode('utf-8') + "\'.")
+            shutil.copyfile(tempFileName, \
+                    server_filename.abspath().encode('utf-8'))
+
+            # Delete the temp file made by compile
+            Path(tempFileName).remove()
+        return
+        
+    def handleTinyMCEmathML(self, client, tinyMCEwin, tinyMCEwin_name, \
+                             tinyMCEfield, mathml_source, math_fontsize, \
+                             preview_image_filename, preview_math_srcfile):
+        """
+        See self.handleTinyMCEmath
+        To do: This should generate an image from MathML code, not from LaTeX code.
+        """
+        
+        # Provisional (just an alert message)
+        client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
+        return
+        
+        server_filename = ""
+        errors = 0
+
+        webDir = Path(G.application.tempWebDir)
+        previewDir = webDir.joinpath('previews')
+
+        if not previewDir.exists():
+            log.debug("image previews directory does not yet exist; " \
+                    + "creating as %s " % previewDir)
+            previewDir.makedirs()
+        elif not previewDir.isdir():
+            client.alert( \
+                _(u'Preview directory %s is a file, cannot replace it') \
+                % previewDir)
+            log.error("Couldn't preview tinyMCE-chosen image: " +
+                      "Preview dir %s is a file, cannot replace it" \
+                      % previewDir)
+            errors += 1
+
+        # the mimetex usage code was swiped from the Math iDevice:
+        if mathml_source != "":
+
+            # first write the mathml_source out into the preview_math_srcfile,
+            # such that it can then be passed into the compile command:
+            math_filename = previewDir.joinpath(preview_math_srcfile)
+            math_filename_str = math_filename.abspath().encode('utf-8')
+            log.info("handleTinyMCEmath: using LaTeX source: " + mathml_source)
+            log.debug("writing LaTeX source into \'" \
+                    + math_filename_str + "\'.")
+            math_file = open(math_filename, 'wb')
+            # do we need to append a \n here?:
+            math_file.write(mathml_source)
+            math_file.flush()
+            math_file.close()
+
+            try:
+                use_mathml_sourcefile = math_filename_str
+                tempFileName = compile(use_mathml_sourcefile, math_fontsize, \
+                        latex_is_file=True)
+            except Exception, e:
+                client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
+                log.error("handleTinyMCEmathML unable to compile MathML using "
                         + "mimetex, error = " + str(e))
                 raise
 
@@ -720,7 +849,7 @@ class MainPage(RenderableLivePage):
 
             ode = procomun.factory.create('xsd:anyType')
 
-            ode.file = base64.b64encode(open(filename).read())
+            ode.file = base64.b64encode(open(filename, 'rb').read())
             ode.file_name = self.package.name
 
             client.notifyStatus(statusTitle, _(u'Starting authorized connection to Procomún API'))

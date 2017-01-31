@@ -54,6 +54,7 @@ var $appVars = [
 	['footerTextAlign',6,11],
 	['footerBGColor',6,18],
 	['footerAColor',6,7],
+	['footerFontSize',3,10,'number'],
 	
 	// Navigation tag
 	// fieldset #1
@@ -64,6 +65,8 @@ var $appVars = [
 	['navAColor',6,7],
 	['navAHoverColor',6,7],
 	['navBorderColor',6,14],
+	['navFontSize',3,10,'number'],	
+	['navWidth',4,6,'number'],
 	// fieldset #2
 	['useNavigationIcons','checkbox'],
 	['nav2BGColor',6,18],
@@ -233,6 +236,13 @@ var $app = {
 											$i18n.Information,
 											result.message,
 											function(btn, txt) {
+										        var authoring = opener.opener.Ext.ComponentQuery.query('#authoring')[0].getWin();
+										        if (authoring && authoring.submitLink) {
+										        	var outlineTreePanel = opener.opener.eXe.app.getController("Outline").getOutlineTreePanel(),
+										            	selected = outlineTreePanel.getSelectionModel().getSelection();
+											        authoring.submitLink("changeNode", selected !== 0? selected[0].data.id : '0');
+										        }
+										    
 												opener.window.close();
 												window.close();
 											}
@@ -257,6 +267,11 @@ var $app = {
 		this.getCurrentCSS();
 		// Enable the Color Pickers after loading the current values
 		
+	},
+	toggleNavWidth : function(hide) {
+		var n = $("#navWidth-wrapper");
+		if (hide) n.hide();
+		else n.show();
 	},
 	preloader : {
 		show : function(){
@@ -513,6 +528,7 @@ var $app = {
 					}
 					else if (currentValue[0]=="horizontalNavigation") {
 						$("#horizontalNavigation").prop('checked', true);
+						$app.toggleNavWidth(true);
 					}
 					else if (currentValue[0]=="noEmShowBox") {
 						$("#noEmShowBox").prop('checked', true);
@@ -815,6 +831,7 @@ var $app = {
 		var navAColor = $("#navAColor").val();
 		var navAHoverColor = $("#navAHoverColor").val();
 		var navBorderColor = $("#navBorderColor").val();
+		var navFontSize = $("#navFontSize").val();
 
 		if (contentBGColor!="" || contentBGURL!="" || pageWidth!="" || contentBorderColor!="" || contentBorderWidth!="" || pageAlign=="left" || wrapperShadowColor!=""){
 			navCSS+="#content{";
@@ -971,6 +988,11 @@ var $app = {
 				navCSS+="#main,.no-nav #main{padding-top:20px;}";	
 			navCSS+="}";
 		} else {
+			if (navFontSize!="" && navFontSize!="100") {
+				navCSS+="#siteNav,.pagination a,#skipNav,#nav-toggler{";
+					navCSS+="/*navFontSize*/font-size:"+navFontSize+"%;";
+				navCSS+="}";
+			}
 			if (navBGColor!="" || navAColor!="" || navBorderColor!="") {
 				navCSS+="#siteNav,#siteNav a{";
 					if (navBGColor!="") navCSS+="/*navBGColor*/background-color:#"+navBGColor+";";
@@ -1011,8 +1033,9 @@ var $app = {
 		var footerTextAlign = $("#footerTextAlign").val();
 		var footerBGColor = $("#footerBGColor").val();
 		var footerAColor = $("#footerAColor").val();
+		var footerFontSize = $("#footerFontSize").val();
 		
-		if (footerBorderColor!="" || footerColor!="" || footerTextAlign!="" || footerBGColor!='') {
+		if (footerBorderColor!="" || footerColor!="" || footerTextAlign!="" || footerBGColor!='' || footerFontSize!='') {
 			contentCSS += "#siteFooter{";
 				if (footerBorderColor!="") {
 					contentCSS += "border:1px solid /*footerBorderColor*/#"+footerBorderColor+";"
@@ -1023,6 +1046,7 @@ var $app = {
 				if (footerColor!="") contentCSS += "/*footerColor*/color:#"+footerColor+";"
 				if (footerTextAlign!="") contentCSS+="/*footerTextAlign*/text-align:"+footerTextAlign+";";
 				if (footerBGColor!='') contentCSS+="/*footerBGColor*/background-color:#"+footerBGColor+";";
+				if (footerFontSize!="") contentCSS += "/*footerFontSize*/font-size:"+footerFontSize+"%;"
 			contentCSS += "}";
 		}
 		
@@ -1038,12 +1062,23 @@ var $app = {
 			contentCSS += "}";
 		}
 		
+		var navWidth = $("#navWidth").val();
+		var horizontalNavigation = $("#horizontalNavigation").prop("checked");
+		
+		if (!hideNavigation && !horizontalNavigation && navWidth!="") {	
+			navCSS+="#siteNav{/*navWidth*/width:"+navWidth+"px;}";
+			navCSS+="#main{padding-left:"+(parseFloat(navWidth)+40)+"px;*padding-left:0;}";
+			navCSS+="@media all and (max-width: 700px) {";
+				navCSS+="#siteNav{width:100%;padding:0;}";
+				navCSS+="#main,.no-nav #main{padding-left:20px;}";
+			navCSS+="}";
+			navCSS+="* html #siteNav{width:280px;}";
+		}	
+		
 		contentCSS = this.formatCSS(contentCSS);
 		navCSS = this.formatCSS(navCSS);
 		
-		var horizontalNavigation = $("#horizontalNavigation").prop("checked");
 		if (horizontalNavigation) {
-			var hideNavigation = $("#hideNavigation").prop("checked");
 			if (!hideNavigation) navCSS += this.getHorizontalNavigationCSS();
 		}		
 		if (typeof(opener.myTheme.setNavHeight)!='undefined') opener.myTheme.setNavHeight();
@@ -1104,13 +1139,13 @@ var $app = {
 		if (navBorderColor!="") hNavBorderColor = navBorderColor;
 		
 		var hideNavigation = $("#hideNavigation").prop("checked");
-		var padding = "0 20px";
+		var padding = "10px 20px 0 20px";
 		if (hideNavigation) padding = "20px 20px 0 20px";
 		
 		var css = '\
 /*horizontalNavigation*/\
 @media screen and (min-width:701px){\
-#main,.no-nav #main{padding:'+padding+'}\
+#main,.no-nav #main{padding:'+padding+';overflow:auto}\
 #siteNav{display:table;margin-bottom:40px}\
 #siteNav li:hover,#siteNav li.sfhover{background:#'+hNavHoverBGColor+'}\
 #siteNav .other-section{display:block}\

@@ -78,6 +78,10 @@ $exeFX = {
 		}
 		return n;
 	},
+	noFX : function(e) {
+		// Wrong HTML (no H2, etc.): No effects or special presentation
+		e.attr("class","").css("padding","1em");
+	},
 	accordion : {
 		closeBlock : function(aID){
 			var k = $exeFX.baseClass;
@@ -172,6 +176,7 @@ $exeFX = {
 			var e = $(x);
 			var a = $("h2",e);
 			if (a.length>0) $exeFX.accordion.rft(e,i);
+			else $exeFX.noFX(e);
 		}
 	},
 	timeline : {
@@ -268,6 +273,7 @@ $exeFX = {
 			var h2 = $("H2",e);
 			var h3 = $("H3",e);
 			if (h2.length>0 && h3.length>0) $exeFX.timeline.rft(e,i);
+			else $exeFX.noFX(e);
 		}
 	},
 	tabs : {
@@ -344,6 +350,7 @@ $exeFX = {
 			var e = $(x);
 			var a = $("h2",e);
 			if (a.length>0) $exeFX.tabs.rft(e,i);
+			else $exeFX.noFX(e);
 		}
 	},
 	paginated : {
@@ -398,6 +405,7 @@ $exeFX = {
 			var e = $(x);
 			var a = $("h2",e);
 			if (a.length>0) $exeFX.paginated.rft(e,i);
+			else $exeFX.noFX(e);
 		},
 		rft : function(e,i){
 			var html = "";
@@ -426,7 +434,7 @@ $exeFX = {
 			var counter = 0;
 			var hasNext = false;
 			var ul = '<ul class="fx-pagination">\n';
-			ul += '<li id="'+k+'-paginated-'+i+'-prev" class="fx-prev-next fx-prev fx-disabled"><a href="#" id="'+k+'-paginated-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'" onclick="return false"><span>&#9668;</span></a></li>';
+			ul += '<li id="'+k+'-paginated-'+i+'-prev" class="fx-prev-next fx-prev fx-disabled"><a href="#" id="'+k+'-paginated-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'" onclick="return false"><span>&#9668;</span><span class="sr-av"> '+$exe_i18n.previous+'</span></a></li>';
 			$(".fx-page-content",e).each(function(y){
 				var t = $("H2",this).eq(0).text();
 				t = t.replace(/\"/g, '&quot;');
@@ -445,7 +453,7 @@ $exeFX = {
 			if (!hasNext) ul += ' fx-disabled';
 			ul +='"><a href="#" id="'+k+'-paginated-'+i+'-next-lnk" title="'+$exe_i18n.next+'"';
 			if (hasNext) ul += ' onclick="$exeFX.paginated.show(\''+gID+'\',\''+gID+'-1\',1);return false"'
-			ul += '><span>&#9658;</span></a></li>';
+			ul += '><span>&#9658;</span><span class="sr-av"> '+$exe_i18n.next+'</span></a></li>';
 			ul += '</ul>';
 			e.prepend(ul);
 		}
@@ -502,6 +510,7 @@ $exeFX = {
 			var e = $(x);
 			var a = $("h2",e);
 			if (a.length>0) $exeFX.carousel.rft(e,i);
+			else $exeFX.noFX(e);
 		},
 		rft : function(e,i){
 			var html = "";
@@ -530,7 +539,7 @@ $exeFX = {
 			var counter = 0;
 			var hasNext = false;
 			var ul = '<ul class="fx-pagination fx-carousel-pagination">\n';
-			ul += '<li id="'+k+'-carousel-'+i+'-prev" class="fx-carousel-prev-next fx-carousel-prev fx-disabled fx-C2"><a href="#" id="exe-carousel-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'" onclick="return false"><span>&#9668;</span></a></li>';
+			ul += '<li id="'+k+'-carousel-'+i+'-prev" class="fx-carousel-prev-next fx-carousel-prev fx-disabled fx-C2"><a href="#" id="exe-carousel-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'" onclick="return false"><span>&#9668;</span><span class="sr-av"> '+$exe_i18n.previous+'</span></a></li>';
 			$(".fx-carousel-content",e).each(function(y){
 				var t = $("H2",this).eq(0).text();
 				t = t.replace(/\"/g, '&quot;');
@@ -549,7 +558,7 @@ $exeFX = {
 			if (!hasNext) ul += ' fx-disabled';
 			ul +='"><a href="#" id="'+k+'-carousel-'+i+'-next-lnk" title="'+$exe_i18n.next+'"';
 			if (hasNext) ul += ' onclick="$exeFX.carousel.show(\''+gID+'\',\''+gID+'-1\',1);return false"'
-			ul += '><span>&#9658;</span></a></li>';
+			ul += '><span>&#9658;</span><span class="sr-av"> '+$exe_i18n.next+'</span></a></li>';
 			ul += '</ul>';
 			e.append(ul);
 		}

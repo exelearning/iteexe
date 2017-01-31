@@ -29,15 +29,20 @@ var myTheme = {
     },
 	setIcons : function(k){
 		$(".iDevice_wrapper").each(function(i){
-            if (this.className.indexOf("em_iDevice")!=-1) {
-                var e = $(this);
-                var t = $(".iDeviceTitle",e);
-                var c = t.css("background-image");
-                if (c!="") {
-                    t.css("background-image","none");
-                    e.prepend("<div class='icon_wrapper' style='background-image:"+c+"'></div>");	
-                    if (i==0 && k=='exe-web-site js') e.css("margin-top","-30px");
-                }
+			if (this.className.indexOf("em_iDevice")!=-1) {
+				var e = $(this);
+				// Provisional solution so the user can use the iDevice Editor to choose an icon
+				$(".iDevice_header",e).each(function(){
+					var i = this.style.backgroundImage;
+					if (i!="") $(".iDeviceTitle",this).css("background-image",i);
+					this.style.backgroundImage = "none";
+				});
+				var t = $(".iDeviceTitle",e);
+				var c = t.css("background-image");
+				if (c!="") {
+					t.css("background-image","none");
+					e.prepend("<div class='icon_wrapper' style='background-image:"+c+"'></div>");
+				}
 			}
 		});		
 	},

@@ -29,6 +29,8 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
     /*.feedbackbutton,.feedback-button{display:none!important}*/
     #main{margin-left:10px}
     div.node{page-break-after:always}
+    .external-iframe{display:none}
+    .external-iframe-src{display:block!important;margin:2em 0;font-size:.95em;text-align:center}	
 }
 /* The New eXeLearning */
 /* Include these styles in the old themes */
@@ -48,6 +50,14 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .exe-dl-toggler{height:20px;margin:1.5em}
 .exe-dl-toggler a{margin-left:0;font-weight:bold}
 .js .exe-dl dd{display:none;padding-left:0;margin:1em 1em 1em 37px}
+
+/* Math */
+.exe-math{margin:2em 0}
+.exe-math,.MathJax_Display{text-align:left!important}
+.exe-math.position-center,.position-center .MathJax_Display{text-align:center!important}
+.exe-math.position-right,.position-right .MathJax_Display{text-align:right!important}
+.js .show-image .exe-math-code,.js .show-code .exe-math-img{display:none}
+.exe-math-links{font-size:.85em}
 
 /* TinyMCE: Images and media */
 .exe-figure{margin:2em 0;max-width:100%}

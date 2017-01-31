@@ -192,6 +192,26 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 								margin: 10,
 								help: _('"Permissive" will allow any markup. "Strict" will allow only valid markup: It will remove any invalid code, even HTML5 tags (except VIDEO and AUDIO) when using XHTML format.')
 							},
+							// TinyMCE version
+							{
+								xtype: 'helpcontainer',
+								item: {
+									xtype: 'combobox',
+									inputId: 'editorVersion',
+									dirtyCls: 'property-form-dirty',
+									labelWidth: 250,
+									fieldLabel: _('Editor version'),
+									store: [
+										["3", "TinyMCE 3" ],
+										["4", "TinyMCE 4 (" + _("recommended") + ")" ]
+									],
+									style: {
+										//marginBottom: '10px'
+									}
+								},
+								margin: 10,
+								help: _('We recommend you to use the latest available version. An old one could be useful to edit some old contents.')
+							},
 							// Internal anchors
 							{
 								xtype: 'combobox',

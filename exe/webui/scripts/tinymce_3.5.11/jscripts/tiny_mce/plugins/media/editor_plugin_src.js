@@ -20,7 +20,7 @@ function parse_media_html_attributes(c) {
 
 	var new_c = '';
 	
-	if (c.indexOf("<object ")!=-1) {
+	if (c.indexOf("<object ")!=-1 || c.indexOf("<iframe ")!=-1) {
 		
 		var c_parts = c.split("<object ");
 		
@@ -181,7 +181,7 @@ function parse_media_html_attributes(c) {
 	*/
 	
 	// iframes: Replace all frameborder="0" with style="border:0" in HTML5
-	if (typeof(exe_export_format)!='undefined' && exe_export_format=="html5" && x.indexOf("<iframe ")!=-1) {
+	if (typeof(exe_export_format)!='undefined' && exe_export_format=="html5" && new_c.indexOf("<iframe ")!=-1) {
 		var c2 = '';
 		var c_parts = new_c.split("<iframe ");
 		for (i=0;i<c_parts.length;i++) {

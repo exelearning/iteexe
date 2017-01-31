@@ -284,6 +284,15 @@ data is entered into this field."""))
         html += "<script type=\"text/javascript\">\n"
         html += "<!--\n"
         html += """
+            function selectStyleIcon(icon,e) {
+                var div = document.getElementById("styleIcons");
+                var imgs = div.getElementsByTagName("IMG");
+                for (var i=0;i<imgs.length;i++) {
+                    imgs[i].style.border = "1px solid #E8E8E8";
+                }
+                e.style.border = "1px solid #333333";            
+                submitLink("selectIcon",icon,1);
+            }        
             function submitLink(action, object, changed) 
             {
                 var form = document.getElementById("contentForm")
@@ -355,14 +364,18 @@ data is entered into this field."""))
                 icon = self.idevice.icon
                 if icon != "":
                 
+                    iconExists = False
                     myIcon = Path(G.application.config.stylesDir/self.style.get_dirname()/"icon_" + self.idevice.icon + ".gif")
-                    #myIcon = themePath.joinpath("icon_" + self.idevice.icon + ".gif")
-                    #if not myIcon.exists():
-                        #myIcon = Path(G.application.config.stylesDir/self.style.get_dirname()/"icon_" + self.idevice.icon + ".png")
                     if myIcon.exists():
-                        html += '<img align="middle" '
+                        iconExists = True
+                    else:
+                        myIcon = Path(G.application.config.stylesDir/self.style.get_dirname()/"icon_" + self.idevice.icon + ".png")
+                        if myIcon.exists():
+                            iconExists = True
+                    if iconExists:
+                        html += '<img style="vertical-align:middle;max-width:60px;height:auto" '
                         html += 'src="/style/%s/icon_%s' % (self.style.get_dirname(), icon)
-                        html += '%s"/><br/>' % myIcon.ext
+                        html += '%s"/><br />' % myIcon.ext
                         
                 html += u'<div style="display:none;z-index:99;">'
                 html += u'<div id="iconpaneltitle">'+_("Icons")+'</div>'
@@ -370,6 +383,7 @@ data is entered into this field."""))
                 html += self.__renderIcons()
                 html += u'</div>'
                 html += u'</div>\n'
+                html += u'<br style="clear:both;margin-bottom:10px" />'
             for element in self.elements:
                 html += element.renderEdit()       
         else:
@@ -400,15 +414,38 @@ data is entered into this field."""))
         """
         Return xhtml string for rendering styles select
         """
-        html  = '<select onchange="submitStyle();" name="styleSelect">\n'
+        html  = '<select onchange="submitStyle();" style="display:none" name="styleSelect" id="styleSelect">\n'
         idx = 0
+        isSelected = False
         for style in self.styles:
             html += "<option value='%d' " % idx
             if self.style.get_name() == style.get_name():
                 html += "selected "
-            html += ">" + style.get_name() + "</option>\n"
+                isSelected = True
+            html += ">" + style.get_name() + "~" + style.get_dirname() + "</option>\n"
             idx = idx + 1
         html += "</select> \n"
+        # Auto-select the current style
+        # This should be done with Python, not JavaScript
+        # It's just a provisional solution so the user does not have to choose the right Style
+        html += "<script type='text/javascript'>\
+            function autoSelectStyle(){\
+                var autoSelectStyle = document.getElementById('styleSelect');\
+                if (autoSelectStyle.options[autoSelectStyle.value].innerHTML.split('~')[1]==top.exe_style_dirname) return false;\
+                var currentStyleFolder;\
+                for (var i=0; i<autoSelectStyle.options.length; i++) {\
+                    currentStyleFolder = autoSelectStyle.options[i].innerHTML.split('~')[1];\
+                    if (top.exe_style_dirname==currentStyleFolder) {\
+                        autoSelectStyle.value=i;\
+                        submitStyle();\
+                    }\
+                }\
+            }\
+            if (typeof(top.exe_style_dirname)!='undefined') {\
+                autoSelectStyle();\
+            }\
+            \
+        </script>";
         
         return html
     
@@ -418,17 +455,35 @@ data is entered into this field."""))
         """
         iconpath  = self.style.get_style_dir()
         iconfiles = iconpath.files("icon_*")
-        html = ""
+        html = '<div id="styleIcons">'
+        
         for iconfile in iconfiles:
             iconname = iconfile.namebase
             icon     = iconname.split("_", 1)[1]
-            filename = "/style/%s/%s.gif" % (self.style.get_dirname(), iconname)
-            html += u'<div style="float:left; text-align:center; width:80px;\n'
-            html += u'margin-right:10px; margin-bottom:10px" > '
-            html += u'<img src="%s" \n' % filename
-            html += u' alt="%s" ' % _("Submit")
-            # window[1] because we use Ext.MessageBox instead of libot_drag.js
-            html += u"onclick=\"window[1].submitLink('selectIcon','%s',1)\">\n" % icon
-            html += u'<br/>%s.gif</div>\n' % icon
+            
+            iconExists = False
+            iconExtension = "gif"
+            myIcon = Path(G.application.config.stylesDir/self.style.get_dirname()/iconname + ".gif")
+            if myIcon.exists():
+                iconExists = True
+            else:
+                myIcon = Path(G.application.config.stylesDir/self.style.get_dirname()/iconname + ".png")
+                if myIcon.exists():
+                    iconExists = True 
+                    iconExtension = "png"
+            
+            if iconExists:
+                filename = "/style/%s/%s.%s" % (self.style.get_dirname(), iconname, iconExtension)
+                html += u'<div style="float:left; text-align:center; width:80px;\n'
+                html += u'margin-right:10px; margin-bottom:15px" > '
+                html += u'<img src="%s" \n' % filename
+                # html += u' alt="%s" ' % _("Submit")
+                # window[1] because we use Ext.MessageBox instead of libot_drag.js
+                html += u"style=\"border:1px solid #E8E8E8;padding:5px;cursor:pointer;max-width:60px;height:auto\" onclick=\"window[1].selectStyleIcon('%s',this)\">\n" % icon
+                # html += u"style=\"cursor:pointer\" onclick=\"window[1].submitLink('selectIcon','%s',1)\">\n" % icon
+                html += u'<br />%s.%s</div>\n' % (icon, iconExtension)
+        
+        html += '</div>'
+        
         return html
 # ===========================================================================

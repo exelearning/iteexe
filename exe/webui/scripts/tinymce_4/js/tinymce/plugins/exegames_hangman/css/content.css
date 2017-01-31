@@ -1,0 +1,3 @@
+.exe-game{margin:1.5em 0;background:#FFFFA3 url(../img/exegames_hangman.png) no-repeat 50% 10px;color:#666;font-size:.95em;border:1px solid #F1D031;height:40px;border-radius:5px;position:relative}
+.exe-game:before{font-size:.9em;font-style:italic;position:absolute;top:6px;right:10px}
+.exe-game-content,.exe-game-warning{display:none}

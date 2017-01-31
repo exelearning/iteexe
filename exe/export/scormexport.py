@@ -28,6 +28,7 @@ import copy
 import re
 import time
 import os
+import imp
 import StringIO
 from cgi                           import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED
@@ -42,8 +43,11 @@ from exe.engine.persistxml         import encodeObjectToXML
 from exe                           import globals as G
 from exe.export.scormpage          import ScormPage
 from exe.engine.lom                import lomsubs
-import imp
-
+from helper                        import exportMinFileJS
+from helper                        import exportMinFileCSS
+from exe.webui.common              import getFilesCSSToMinify
+from exe.webui.common              import getFilesJSToMinify
+  
 log = logging.getLogger(__name__)
 
 
@@ -502,8 +506,8 @@ class ScormExport(object):
             manifest.save("discussionforum.xml")
         
         # Copy the style sheet files to the output dir
-        styleFiles  = [self.styleDir/'..'/'base.css']
-        styleFiles += [self.styleDir/'..'/'popup_bg.gif']
+        
+        styleFiles = [self.styleDir/'..'/'popup_bg.gif']
         # And with all the files of the style we avoid problems:
         styleFiles += self.styleDir.files("*.*")
         if self.scormType == "commoncartridge":
@@ -512,9 +516,15 @@ class ScormExport(object):
                     styleFiles.remove(sf)
         self.styleDir.copylist(styleFiles, outputDir)
         
+        listCSSFiles=getFilesCSSToMinify('scorm', self.styleDir)
+        exportMinFileCSS(listCSSFiles, outputDir)
+        
         # Copy the scripts
+        
         dT = common.getExportDocType()
         if dT == "HTML5":
+            #listFiles+=[self.scriptsDir/'exe_html5.js']
+            #listOutFiles+=[outputDir/'exe_html5.js']
             jsFile = (self.scriptsDir/'exe_html5.js')
             jsFile.copyfile(outputDir/'exe_html5.js')
             
@@ -522,20 +532,25 @@ class ScormExport(object):
         my_style = G.application.config.styleStore.getStyle(page.node.package.style)
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
+                #listFiles+=[self.scriptsDir/'exe_jquery.js']
+                #listOutFiles+=[outputDir/'exe_jquery.js']
                 jsFile = (self.scriptsDir/'exe_jquery.js')
                 jsFile.copyfile(outputDir/'exe_jquery.js')
         else:
+            #listFiles+=[self.scriptsDir/'exe_jquery.js']
+            #listOutFiles+=[outputDir/'exe_jquery.js']
             jsFile = (self.scriptsDir/'exe_jquery.js')
             jsFile.copyfile(outputDir/'exe_jquery.js')
             
-        if self.scormType == "commoncartridge":
-            jsFile = (self.scriptsDir/'common.js')
-            jsFile.copyfile(outputDir/'common.js')
+        if self.scormType == "commoncartridge" or self.scormType == "scorm2004" or self.scormType == "scorm1.2":
+            listFiles=getFilesJSToMinify('scorm', self.scriptsDir)
 
+        exportMinFileJS(listFiles, outputDir)            
+        
         if self.scormType == "scorm2004" or self.scormType == "scorm1.2":
             self.scriptsDir.copylist(('SCORM_API_wrapper.js',
-                                      'SCOFunctions.js', 
-                                      'common.js'), outputDir)     
+                                      'SCOFunctions.js'), outputDir)
+            
         # about SCHEMAS:
         schemasDir = ""
         if self.scormType == "scorm1.2":

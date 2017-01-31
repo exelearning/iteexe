@@ -1,0 +1,9 @@
+@font-face {
+    	font-family: 'trado';
+    	font-style:normal;
+      	
+	src: url('trado.eot');
+  	src: local('?'),
+         url('trado.woff') format('woff'), url('trado.ttf') format('truetype'), url('trado.svg') format('svg'); 
+}
+

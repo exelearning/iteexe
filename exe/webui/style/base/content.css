@@ -19,6 +19,7 @@ p{margin:1em 0}
 /* iDevices */
 .iDevice{margin:20px 0 30px 0}
 .iDevice_header{letter-spacing:.5px;padding:.5em 40px .5em 0;height:auto!important;height:1.7em;min-height:1.7em;position:relative}
+.iDevice_header[style]{background-image:none!important}
 .iDeviceTitle{font-size:1.3em;vertical-align:bottom;top:auto;display:inline-block;font-weight:300;
 padding:0 10px 0 35px;background-repeat:no-repeat;background-position:0 50%;margin:0}
 .iDeviceTitle{*display:inline;*line-height:2em}/* IE6, IE7 */
@@ -108,8 +109,6 @@ background:#ededed;
 	a{font-weight:bolder;text-decoration:none!important}
 	a[href^=http]:after{content:" <" attr(href) "> "}
 	*/
-	.external-iframe{display:none}
-	.external-iframe-src{display:block!important;margin:2em 0;font-size:.95em;text-align:center}
 	#main .iDeviceTitle{background:none;padding-left:0}
 	body #header,body #emptyHeader,body #nodeDecoration{height:auto!important;min-height:0;border:none;padding:0}
 }

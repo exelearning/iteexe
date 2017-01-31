@@ -29,14 +29,14 @@ from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.engine.version       import release
+from exe.export               import helper
+from exe.export.helper        import lineBreak
 from exe.export.pages         import Page, uniquifyNames
 from exe.webui                import common
 from exe                      import globals as G
 
 log = logging.getLogger(__name__)
 
-
-# ===========================================================================
 class SinglePage(Page):
     """
     This class transforms an eXe node into a page on a single page website
@@ -48,196 +48,195 @@ class SinglePage(Page):
         'outputDir' is the directory where the filenames will be saved
         (a 'path' instance)
         """
-        outfile = open(filename, "wb")
-        outfile.write(self.render(self.node.package,for_print).encode('utf8'))
+        outfile = open(filename, 'wb')
+        outfile.write(self.render(self.node.package, for_print).encode('utf8'))
         outfile.close()
         
-    def render(self, package, for_print=0):
+    def render(self, package, for_print = 0):
         """
         Returns an XHTML string rendering this page.
         """
-        dT = common.getExportDocType()
-        lb = "\n" #Line breaks
-        sectionTag = "div"
-        headerTag = "div"
-        if dT == "HTML5":
-            sectionTag = "section"
-            headerTag = "header"
+
+        # Get the DocType
+        docType = common.getExportDocType()
+
+        # Get section and header tags
+        sectionTag = u'div'
+        headerTag = u'div'
+        if docType == u'HTML5':
+            sectionTag = u'section'
+            headerTag = u'header'
             
-        if package.title!='':
+        # Get package title
+        if package.title != '':
             title = escape(package.title)
         else:
             title = escape(package.root.titleLong)
-        html  = self.renderHeader(title, for_print)
+
+        # Render HTML header
+        html  = self.renderHeader(title, docType, for_print)
+
         if for_print:
-            # include extra onload bit:
+            # Include extra onload bit:
             html += u'<body class="exe-single-page" onload="print_page()">'
         else:
             html += u'<body class="exe-single-page">'
-        html += u'<script type="text/javascript">document.body.className+=" js"</script>'+lb
-        html += u"<div id=\"content\">"+lb
-        html += u"<"+headerTag+" id=\"header\">"
-        html += u"<div id=\"headerContent\">"
-        html += "<h1>"+escape(package.title)+"</h1>"
-        html += u"</div>"
-        html += u"</"+headerTag+">"+lb
-        html += u"<"+sectionTag+" id=\"main\">"+lb
-        html += self.renderNode(package.root, 1)
-        html += u"</"+sectionTag+">"+lb
-        html += self.renderLicense()+lb
-        html += self.renderFooter()+lb
-        html += u"</div>"+lb # Close content
+
+        # Script to check if JS is enabled
+        html += u'<script type="text/javascript">document.body.className+=" js"</script>' + lineBreak
+
+        # Main content block
+        html += u'<div id="content">' + lineBreak
+
+        # Header
+        html += u'<%s id="header">%s' % (headerTag, lineBreak)
+        # Header content block
+        html += u'<div id="headerContent">' + lineBreak
+        # Package title
+        html += u'<h1>%s</h1>%s' % (escape(title), lineBreak)
+        # Close header content block
+        html += u'</div>' + lineBreak
+        # Close header
+        html += u'</%s>%s' % (headerTag, lineBreak)
+
+        # Main section
+        html += u'<%s id="main">%s' % (sectionTag, lineBreak)
+
+        # Render node contents
+        html += self.renderNode(package.root, docType, 1)
+
+        # Close main section
+        html += u'</%s>%s' % (sectionTag, lineBreak)
+
+        # Render the license
+        html += self.renderLicense() + lineBreak
+
+        # Render the footer
+        html += self.renderFooter() + lineBreak
+
+        # Close main content block
+        html += u'</div>' + lineBreak
+
         # Some styles might have their own JavaScript files (see their config.xml file)
         style = G.application.config.styleStore.getStyle(self.node.package.style)
         if style.hasValidConfig:
-            html += style.get_extra_body()        
-        html += u'</body></html>'
+            html += style.get_extra_body()
+
+        # Close body and HTML tags
+        html += u'</body>' + lineBreak
+        html += u'</html>'
         
-        # JR: Eliminamos los atributos de las ecuaciones
-        aux = re.compile("exe_math_latex=\"[^\"]*\"")
-        html = aux.sub("", html)
-        aux = re.compile("exe_math_size=\"[^\"]*\"")
-        html = aux.sub("", html)
-        #JR: Cambio la ruta de los enlaces del glosario y el &
-        html = html.replace("../../../../../mod/glossary", "../../../../mod/glossary")
-        html = html.replace("&concept", "&amp;concept")
+        # Remove ecuation attributes
+        html = helper.removeEcuationAttr(html)
+        # Change glosary path
+        html = helper.changeGlossaryPath(html)
+        # Escape &
+        html = helper.escapeAmp(html)
         # Remove "resources/" from data="resources/ and the url param
-        html = html.replace("video/quicktime\" data=\"resources/", "video/quicktime\" data=\"")
-        html = html.replace("application/x-mplayer2\" data=\"resources/", "application/x-mplayer2\" data=\"")
-        html = html.replace("audio/x-pn-realaudio-plugin\" data=\"resources/", "audio/x-pn-realaudio-plugin\" data=\"")
-        html = html.replace("<param name=\"url\" value=\"resources/", "<param name=\"url\" value=\"")
+        html = helper.removeResources(html)
 
         return html
 
-
-    def renderHeader(self, name, for_print=0):
+    def renderHeader(self, title, docType, for_print = 0):
         """
         Returns an XHTML string for the header of this page.
         """
-        lb = "\n" #Line breaks
-        def hasGalleryIdevice(node):
-            hasGallery = common.hasGalleryIdevice(node)
-            if not hasGallery:
-                for child in node.children:
-                    if hasGalleryIdevice(child):
-                        return True
-            return hasGallery
 
-        hasGallery = hasGalleryIdevice(self.node)
-        
-        def hasFX(node):
-            hasEffects = common.hasFX(node)
-            if not hasEffects:
-                for child in node.children:
-                    if hasFX(child):
-                        return True
-            return hasEffects
-        
-        hasEffects = hasFX(self.node)
-        
-        def hasSH(node):
-            hasHighlighter = common.hasSH(node)
-            if not hasHighlighter:
-                for child in node.children:
-                    if hasSH(child):
-                        return True
-            return hasHighlighter
-        
-        hasHighlighter = hasSH(self.node)
-        
-        def hasGames(node):
-            hasJSGames = common.hasGames(node)
-            if not hasJSGames:
-                for child in node.children:
-                    if hasGames(child):
-                        return True
-            return hasJSGames
-        
-        hasJSGames = hasGames(self.node)
-        
-        def hasWikipediaIdevice(node):
-            hasWikipedia = common.hasWikipediaIdevice(node)
-            if not hasWikipedia:
-                for child in node.children:
-                    if hasWikipediaIdevice(child):
-                        return True
-            return hasWikipedia
+        # Check what iDevices and special features the node has
+        hasGallery = helper.hasGalleryIdevice(self.node)
+        hasEffects = helper.hasFX(self.node)
+        hasHighlighter = helper.hasSH(self.node)
+        hasJSGames = helper.hasGames(self.node)
+        hasWikipedia = helper.hasWikipediaIdevice(self.node)
+        hasMediaelement = helper.nodeHasMediaelement(self.node)
 
-        hasWikipedia = hasWikipediaIdevice(self.node)
-
-        def nodeHasMediaelement(node):
-            hasMediaelement = common.nodeHasMediaelement(node)
-            if not hasMediaelement:
-                for child in node.children:
-                    if nodeHasMediaelement(child):
-                        return True
-            return hasMediaelement
-
-        self.hasMediaelement = nodeHasMediaelement(self.node)
-
-        lenguaje = G.application.config.locale
-        if self.node.package.dublinCore.language!="":
-            lenguaje = self.node.package.dublinCore.language
-        dT = common.getExportDocType()
-        if dT == "HTML5":
-            html = '<!doctype html>'+lb
-            html += '<html lang="'+lenguaje+'">'+lb
+        # Get package language
+        lang = G.application.config.locale
+        if self.node.package.dublinCore.language != '':
+            lang = self.node.package.dublinCore.language
+        
+        # Write page DocType and HTML start tag
+        if docType == 'HTML5':
+            html = u'<!DOCTYPE html>' + lineBreak
+            html += u'<html lang="%s">%s' % (lang, lineBreak)
         else:
-            html = u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb
-            html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
-        html += u"<head>"+lb
-        html += u"<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />"+lb
-        html += u"<title>"
-        html += name
-        html += "</title>"+lb
-        html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"+lb
-        if dT != "HTML5" and self.node.package.dublinCore.language!="":
-            html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'+lb
-        if self.node.package.author!="":
-            html += '<meta name="author" content="'+self.node.package.author+'" />'+lb
+            html = u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' + lineBreak
+            html += u'<html lang="%s" xml:lang="%s" xmlns="http://www.w3.org/1999/xhtml">%s' % (lang, lang, lineBreak)
+
+        # HTML head start tag
+        html += u'<head>' + lineBreak
+
+        # Page charset
+        html += u'<meta http-equiv="content-type" content="text/html; charset=utf-8" />' + lineBreak
+
+        # Page title
+        html += u'<title>%s</title>%s' % (title, lineBreak)
+
+        # Favicon
+        html += u'<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />' + lineBreak
+
+        # If the page is not in HTML5, we need to specify the language here
+        if docType != 'HTML5' and self.node.package.dublinCore.language != '':
+            html += u'<meta http-equiv="content-language" content="%s" />%s' % (lang, lineBreak)
+
+        # Render the author META tag
+        if self.node.package.author != "":
+            html += u'<meta name="author" content="%s" />%s' % (self.node.package.author, lineBreak)
+
+        # Render the license META tag(s)
         html += common.getLicenseMetadata(self.node.package.license)
-        html += '<meta name="generator" content="eXeLearning '+release+' - exelearning.net" />'+lb
-        if self.node.package.description!="":
+
+        # Render the generator META tag
+        html += u'<meta name="generator" content="eXeLearning %s - exelearning.net" />%s' % (release, lineBreak)
+
+        # Render the description META tag
+        if self.node.package.description != "":
             desc = self.node.package.description
-            desc = desc.replace('"', '&quot;')        
-            html += '<meta name="description" content="'+desc+'" />'+lb
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
+            # If the description has any double quotes, we have to escape them
+            desc = desc.replace('"', '&quot;')
+            html += u'<meta name="description" content="%s" />%s' % (desc, lineBreak)
+
+        # Add CSS files
+        html += u'<link rel="stylesheet" type="text/css" href="base.css" />' + lineBreak
         if hasWikipedia:
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
+            html += u'<link rel="stylesheet" type="text/css" href="exe_wikipedia.css" />' + lineBreak
         if hasGallery:
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+            html += u'<link rel="stylesheet" type="text/css" href="exe_lightbox.css" />' + lineBreak
         if hasEffects:
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
+            html += u'<link rel="stylesheet" type="text/css" href="exe_effects.css" />' + lineBreak
         if hasHighlighter:
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_highlighter.css\" />"+lb
+            html += u'<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />' + lineBreak
         if hasJSGames:
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />"+lb
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
-        if dT == "HTML5" or self.hasMediaelement:
-            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
+            html += u'<link rel="stylesheet" type="text/css" href="exe_games.css" />' + lineBreak
+        html += u'<link rel="stylesheet" type="text/css" href="content.css" />' + lineBreak
+
+        # Add HTML compatibility script to IE 9
+        if docType == "HTML5" or hasMediaelement:
+            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->' + lineBreak
+
+        # Get the style
         style = G.application.config.styleStore.getStyle(self.node.package.style)
 
-        # jQuery
+        # Add JS files
         if style.hasValidConfig:
             if style.get_jquery() == True:
-                html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
+                html += u'<script type="text/javascript" src="exe_jquery.js"></script>' + lineBreak
             else:
-                html += u'<script type="text/javascript" src="'+style.get_jquery()+'"></script>'+lb
+                html += u'<script type="text/javascript" src="%s"></script>%s' % (style.get_jquery(), lineBreak)
         else:
-            html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
-
+            html += u'<script type="text/javascript" src="exe_jquery.js"></script>' + lineBreak
         if hasGallery:
-            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
+            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>' + lineBreak
         if hasEffects:
-            html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
+            html += u'<script type="text/javascript" src="exe_effects.js"></script>' + lineBreak
         if hasHighlighter:
-            html += u'<script type="text/javascript" src="exe_highlighter.js"></script>'+lb
-        html += common.getJavaScriptStrings()+lb
+            html += u'<script type="text/javascript" src="exe_highlighter.js"></script>' + lineBreak
+        html += common.getJavaScriptStrings() + lineBreak
         if hasJSGames:
             # The games require additional strings
-            html += common.getGamesJavaScriptStrings() + lb
-            html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
-        html += u'<script type="text/javascript" src="common.js"></script>'+lb
+            html += common.getGamesJavaScriptStrings() + lineBreak
+            html += u'<script type="text/javascript" src="exe_games.js"></script>' + lineBreak
+        html += u'<script type="text/javascript" src="common.js"></script>' + lineBreak
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         if for_print:
@@ -258,69 +257,77 @@ function print_page() {
 '''
         if style.hasValidConfig:
             html += style.get_extra_head()
-        html += u"</head>"+lb
+
+        # Close head tag
+        html += u'</head>' + lineBreak
+
         return html
     
-    #JR: modifico esta funcion para que ponga hX en cada nodo
-    def renderNode(self, node, nivel):
+    def renderNode(self, node, docType, level):
         """
         Returns an XHTML string for this node and recurse for the children
         """
-        dT = common.getExportDocType()
-        lb = "\n" #Line breaks
-        headerTag = "div"
-        articleTag = "div"
-        if dT == "HTML5":
-            headerTag = "header"
-            articleTag = "article"
         
-        html = ""
-        html += '<'+articleTag+' class="node level-'+str(nivel)+'-node">'+lb
-        html += '<'+headerTag+' class=\"nodeDecoration\">'
-        html += u'<h1 id=\"' + node.GetAnchorName() + '\" class=\"nodeTitle\">'
-        html += escape(node.titleLong)
-        html += '</h1></'+headerTag+'>'+lb
+        # Get section and header tags
+        headerTag = u'div'
+        articleTag = u'div'
+        if docType == 'HTML5':
+            headerTag = u'header'
+            articleTag = u'article'
         
+        headerLevel = level
+        if(level > 6):
+            headerLevel = 6
+
+        html = u''
+        # Main node container
+        html += u'<%s class="node level-%d-node">%s' % (articleTag, level, lineBreak)
+
+        # Node header container
+        html += u'<%s class="nodeDecoration">%s' % (headerTag, lineBreak)
+        # Node title
+        html += u'<h1 id="%s" class="nodeTitle">%s</h1>%s' % (node.GetAnchorName(), escape(node.titleLong), lineBreak)
+        # Close Node header container
+        html += u'</%s>%s' % (headerTag, lineBreak)
+
+        # Get the node Style
         style = self.node.package.style
 
+        # Set node export type
         node.exportType = 'singlepage'
         
+        # Render node iDevices
         for idevice in node.idevices:
             if idevice.klass != 'NotaIdevice':
-                e=" em_iDevice"
-                if unicode(idevice.emphasis)=='0':
-                    e=""            
-                html += u'<'+articleTag+' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, (idevice.id+"-"+node.id), lb)
+                e = " em_iDevice"
+                if unicode(idevice.emphasis) == '0':
+                    e = ""
+                # iDevice container
+                html += u'<%s class="iDevice_wrapper %s%s" id="id%s">%s' % (articleTag, idevice.klass, e, (idevice.id + '-' + node.id), lineBreak)
+
+                # Try to render the iDevice
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
-                    log.critical("Unable to render iDevice.")
-                    raise Error("Unable to render iDevice.")
+                    log.critical('Unable to render iDevice %s.' % (idevice.klass))
+                    raise Error('Unable to render iDevice.')
+
                 if hasattr(idevice, "isQuiz"):
                     html += block.renderJavascriptForWeb()
-                html += self.processInternalLinks(self.node.package,block.renderView(style))
-                html = html.replace('href="#auto_top"', 'href="#"')
-                html += u'</'+articleTag+'>'+lb # iDevice div
 
-        html += '</'+articleTag+'>'+lb # node div
+                # Process iDevice internal links
+                html += helper.processInternalLinks(self.node.package, block.renderView(style))
 
+                # Replace top links with "empty" links
+                html = helper.replaceTopLinks(html)
+
+                # Close iDevice container
+                html += u'</%s>%s' % (articleTag, lineBreak)
+
+        # Close main node container
+        html += u'</%s>%s' % (articleTag, lineBreak)
+
+        # Render all child nodes
         for child in node.children:
-            html += self.renderNode(child, nivel+1)
+            html += self.renderNode(child, docType, level + 1)
 
         return html
-
-
-
-    def processInternalLinks(self, package, html):
-        """
-        take care of any internal links which are in the form of::
-           
-           href="exe-node:Home:Topic:etc#Anchor"
-
-        For this SinglePage Export, go ahead and keep the #Anchor portion,
-        but remove the 'exe-node:Home:Topic:etc', since it is all 
-        exported into the same file.
-        """
-        return common.renderInternalLinkNodeAnchor(package, html)
-        
-        
-

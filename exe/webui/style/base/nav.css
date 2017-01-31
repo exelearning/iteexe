@@ -74,7 +74,7 @@ body{padding:0;text-align:center}
 
 @media print{
 	#siteNav,#nav-toggler,.noprt,.toggle-idevice{display:none}
-	#main{padding:20px 0}
+	body #main,body.no-nav #main{padding:20px 0}
 	body #content{background:#FFF}
 	#headerContent{white-space:normal;text-overflow:normal;font-weight:bold}
 }
