@@ -45,6 +45,7 @@ from exe.webui.dirtree import DirTreePage
 from exe.webui.session import eXeSite
 from exe.webui.saml import SAMLPage
 from exe.webui.oauthpage import OauthPage
+from exe.webui.openpackagepage import OpenPackagePage
 from exe import globals as G
 
 
@@ -79,6 +80,7 @@ class WebServer:
         self.quit = QuitPage(self.root, self.config.configDir)
         self.iecmwaring = IECMWarningPage(self.root)
         self.oauth = OauthPage(self.root)
+        self.openpackage = OpenPackagePage(self.root)
         self.monitoring = False
 
     def find_port(self):

@@ -118,7 +118,7 @@ class SAMLPage(rend.Page):
         req = prepare_nevow_request(request)
         auth = init_saml_auth(req, self.configDir)
         if auth:
-            start_url = auth.login('%s://%s' % (req['scheme'], req['http_host']))
+            start_url = auth.login('%s://%s%s' % (req['scheme'], req['http_host'], req['script_name']))
             return url.URL.fromString(start_url)
         else:
             return 'SAML authentication needs a saml configuration directory at %s. See an example ' \

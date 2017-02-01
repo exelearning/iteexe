@@ -76,7 +76,7 @@ class eXeClientHandle(ClientHandle):
         self._exec(what, 'Ext.Msg.alert', onDone, filter_func)
 
     def filePickerAlert(self, what, onDone=None, filter_func=False):
-        self._exec(what, 'eXe.app.filepicker.alert', onDone, filter_func)
+        self._exec(what, 'eXe.app.alert', onDone, filter_func)
 
     def notifyStatus(self, title, msg):
         self.sendScript("eXe.controller.eXeViewport.prototype.eXeNotificationStatus('%s', '%s');" % (jquote(title), jquote(msg)), filter_func=allSessionClients)

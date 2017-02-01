@@ -228,7 +228,15 @@ browser restrictions, you must click in the url: {0}'),
     	else
     		eXe.app.afterShowLoadErrors();
     },
-    
+
+    alert: function(title, message, func) {
+        if (eXe.app.filepicker) {
+            return eXe.app.filepicker.alert(title, message, func);
+        }
+
+        Ext.Msg.alert(title, message, func);
+    },
+
     launch: function() {
         Ext.QuickTips.init();
 

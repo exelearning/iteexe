@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:nevow="http://nevow.com/ns/nevow/0.1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Open URL | eXe Learning</title>
+    <link rel="shortcut icon" type="image/" href="images/eXe_icon.ico" />
+    <link rel="stylesheet" type="text/css" href="../jsui/exe.css"/>
+    <link rel="stylesheet" type="text/css" href="../jsui/extjs/resources/css/ext-all-gray.css"/>
+</head>
+<body>
+	<div id="loading">
+        <div class="loading-indicator"></div>
+        <p nevow:render="i18n">eXe Learning Authoring</p>
+        <nevow:invisible nevow:render="version"/>
+        <br/>
+        <br/>
+        <form action="" method="get">
+            Open Package at URL: <input type="text" name="url"/>
+            <input type="submit" value="Load"/>
+        </form>
+        <nevow:invisible nevow:render="openresult"/>
+    </div>
+</body>
+</html>

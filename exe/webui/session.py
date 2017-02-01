@@ -98,6 +98,9 @@ class eXeSession(server.Session):
     def setUser(self, name, picture=None):
         self.user = G.application.userStore.getUser(name)
         self.user.picture = picture
+        if self.packageStore:
+            for package in self.packageStore.loaded.values():
+                self.user.packageStore.addPackage(package)
         self.packageStore = self.user.packageStore
 
 
