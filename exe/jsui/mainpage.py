@@ -1052,10 +1052,8 @@ class MainPage(RenderableLivePage):
         """
         url = url.replace('%s', self.config.webDir)
         log.debug(u'browseURL: ' + url)
-        if hasattr(os, 'startfile'):
-            os.startfile(url)
-        else:
-            G.application.config.browser.open(url, new=True)
+        
+        G.application.config.browser.open(url, new=True)
 
     def handleMergeXliffPackage(self, client, filename, from_source):
         """
