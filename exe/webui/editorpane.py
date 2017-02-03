@@ -455,7 +455,7 @@ data is entered into this field."""))
         """
         iconpath  = self.style.get_style_dir()
         iconfiles = iconpath.files("icon_*")
-        html = '<div id="styleIcons">'
+        html = '<div id="styleIcons"><div style="height:300px;overflow:auto">'
         
         for iconfile in iconfiles:
             iconname = iconfile.namebase
@@ -483,7 +483,7 @@ data is entered into this field."""))
                 # html += u"style=\"cursor:pointer\" onclick=\"window[1].submitLink('selectIcon','%s',1)\">\n" % icon
                 html += u'<br />%s.%s</div>\n' % (icon, iconExtension)
         
-        html += '</div>'
+        html += '</div></div>'
         
         return html
 # ===========================================================================
