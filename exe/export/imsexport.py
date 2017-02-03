@@ -96,7 +96,11 @@ class Manifest(object):
                 if not opr:
                     opr = lomsubs.otherPlatformRequirementsSub()
                     technical.set_otherPlatformRequirements(opr)
-                opr.add_string(lomsubs.LangStringSub(self.package.lang.encode('utf-8'), 'editor: eXe Learning'))
+                for platform in opr.get_string():
+                    if platform.get_valueOf_() == self.package.lomESPlatformMark:
+                        found = True
+                if not found:
+                    opr.add_string(lomsubs.LangStringSub(self.package.lang.encode('utf-8'), self.package.lomESPlatformMark))
             metadata.export(output, 0, namespace_=namespace, pretty_print=False)
             xml = output.getvalue()
         if self.metadataType == 'LOM':
