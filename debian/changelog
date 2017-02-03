@@ -1,6 +1,7 @@
 intef-exe (3:2.1.1) lucid; urgency=medium
 
 [ SDWeb ]
+
 	* Completely rewrite Ubuntu installation from source instructions
 	* Minify JS and CSS files when exporting
 	* Fixed #60: Version notes not working on Internet Explorer
@@ -22,7 +23,7 @@ intef-exe (3:2.1.1) lucid; urgency=medium
 
 [ Francisco Javier Pulido Cuadrado ]
 
-	* Kids Style: New icon
+	* Kids Style: Write and listen icons
 
 [ Ignacio Gros ]
 
@@ -74,6 +75,7 @@ intef-exe (3:2.1.1) lucid; urgency=medium
 	* Styles - Print version: Print a link to the IFRAME src instead of the IFRAME itself
 
 	* HTML, JavaScript and CSS bug fix:
+	
 		* CSS - Horizontal navigation (title position)
 		* JavaScript - Effects (error handling)
 		* JavaScript - Cloze iDevice: Autocomplete in input should be off (#81)
@@ -81,6 +83,9 @@ intef-exe (3:2.1.1) lucid; urgency=medium
 		* JavaScript - Hangman game base64 encoding problem
 		* JavaScript - The tooltips were not working in blocks with effects
 		* JavaScript - Effects in Readium for Chrome
+		* JavaScript - Effects: Pagination accessibility problem with sreenreader (#121)
+		* JavaScript - HTML5 video with media player size problem in IE-11 (#134)
+		* JavaScript - Flash movie over an eXe dialog in IE-11 (#127)
 		* TinyMCE - Image and media plugin: An exe-figure containing an IFRAME could not be aligned
 		* TinyMCE - Image and media plugin: Get the right width so the wrapper (exe-figure) has the same size as the content
 		* TinyMCE - Image and media plugin: Remove nested figures
@@ -94,95 +99,38 @@ intef-exe (3:2.1.1) lucid; urgency=medium
 		* Edition - iDevice Editor: Cannot select an icon (#65)
 		* Edition - Avoid this error: 'TextAreaField' object has no attribute 'buttonCaption' (#61)
 		* Edition - BMP Windows 32 encoding (#38)
+		* Edition - The current Style could be deleted and that caused an error (#114)
 		* ePub - Multi-select feedback error (#56)
 		* ePub - SCORM Quiz was not working in some ePub readers (#56)
 		* References to forja.cenatic.es removed
 		* Authorship and license revision
-
-	* New listening icon by Francisco Javier Pulido Cuadrado.
-	* Fix #135 (TinyMCE 4: Definition tooltips with no title).
-	* Fix #124: Some dialogs are not closed in IE 11.
-	* Fix #125: TinyMCE 4: Do not allow nested effects (IE 11).
-	* Fix #134 (IEII: HTML5 video with media player size problem).
-	* Fix #127: Flash movie over an eXe dialog in IE 11.
-	* Fix #133 (TinyMCE: CodeMagic plugin problems).
-	* Fix #132: Dialog with hidden submit button.
-	* Fix #121: Pagination accessibility problem with sreenreader.
-	* Recognition: TinyMCE 4, by Ephox Corp., LGPL-2.1.
-	* Fedora installation instructions (link to the download page).
-	* TinyMCE should not be ignored. There should be 85 untranslated strings now.
-	* Back to this revision: 5dc52785736d19ad32145f10d887facfb589c10e
-	* Just a help comment.
-	* Heading level mismatch (<hX></h1>). We use H1 for the node titles. See #62.
-	* Fix #114: You could delete the current Style, and that caused an error.
-	* Hide the navWidth field when "Horizontal navigation" is checked.
-
-[ Juan Rafael Fernández ]
-
-	* The Spanish translation is complete again.
-	* New Spanish translation, new tinymce-4 library
-	* Fix information about the new dependances of eXe (see bu
-	* Recovered translations
-	* Fixed some tiny bugs in mki18n.sh and run it.
+		* Fedora installation instructions (link to the download page)
+		* Heading level mismatch (<hX></h1>) solved. We use H1 for the node titles. (see #62)
+		
+Juan Rafael Fernández:
+	* Fixes in debian/ and the debian packaging, making lintian a bit happier.
+	* Fixed some tiny bugs in mki18n.sh.
+	* Fixed information about the new dependencies.
+	* Fixed mistakes in some English messages.
+	* Wikipedia iDevice license revision.
+	* i18n tools revision.
 	* Updated python-babel to version 2.3.4
-	* Fixed lintian warning command-in-menu-file-and-desktop-
-	* Fixed lintian warnings intef-exe: debian-changelog-line
-	* New full Catalan translation, by Carles Ferrando García
-	* New full Galician translation, by Pablo Nimo Liboreiro
-	* New full Dutch translation, by Karel Werschkull
-	* New full Portuguese translation, by Dionisio Martínez So
-	* New full French translation, by Jesús Miguel Domínguez
-	* New full Italian translation, by Andrea Primiani
-	* New full Valencian translaton, by Pilar Embid Giner
-	* New full Basque translation, by Joxemi Andonegi
-	* New full Russian translation, by Alexey Loginov
-	* Had forgotten to add js.js
-	* Merge branch 'perhenrik90-new_norwegian'
-	* Merge branch 'new_norwegian' of https://github.com/perhe
-	* Last minute fixes to the Spanish translation.
-	* Hopefully the last search for new strings bofore the new
-	* Applied some improvements to the Spanish translation, as
-	* The Spanish translation is complete again.
-	* Commit 25d5aec may have introduced new strings. Regenera
-	* Improvements to the Spanish translation suggested by Pab
-	* As spotted by Pablo Nimo, Wikipedia has a CC -by-sa lice
-	* New Galician translation, by Pablo Nimo
-	* New full Portuguese translation, by Dionisio Martínez So
-	* New full French translation, by Jesús Miguel Domínguez
-	* New full Valencian translation, by Pilar Embid
-	* New full Basque translation, by Joxemi Andonegi
-	* New Catalan translation, by Carles Ferrando García
-	* New full Dutch translation, by Karel Werschkull
-	* Merge branch 'master' of git+ssh://forja.cenatic.es//var
-	* New Dutch translation, by Karel Werschkull
-	* New full translation into Russian, by Elexey Loginov.
-	* Merge branch 'master' of git+ssh://forja.cenatic.es//var
-	* New complete Italian translation, by Andrea Primiani
 	* eXe is ready for Hebrew now.
-	* The Spanish translation is complete again.
-	* Spotted some tiny mistakes in the English messages.
-	* Getting ready for a new version. New Spanish translation
-	* New full Valencian translation, by Pilar Embid.
-	* New full Galician translation, by Pablo Nimo.
-	* New full Basque translation, by Joxemi Andonegi.
-	* New full Catalan translation, by Carles Ferrando.
-	* Removed unnecessary file.
-	* Fixed some typos detected by lintian.
-	* New Traditional Chinese translation, by Franklin Weng.
-	* New full Italian translation, by Andrea Primiani.
-	* New full French translation, by Jesús Miguel Domínguez.
-	* New full Russian translation, by Alexey Loginov.
-	* Some fixes to the Spanish translation (thanks, Ignacio Gros)
-	* New Spanish translation (85 new strings)
-	* Preparing for the translation of tinymce_4
-	* Regenerating the PO files (85 new strings)
-	* Cleaning tools/
-	* Revert "Vuelta atrás"
-	* Merge branch 'master' of https://github.com/exelearning/iteexe
-	* Revert "An attempt to fix the problem of tinymce_4 strings not being translated."
-	* Vuelta atrás
-	* An attempt to fix the problem of tinymce_4 strings not being translated.
-	* New Galician translation.
+
+	[Translation Teams]
+	
+	* New full Russian translation, by Alexey Loginov
+	* New full Basque translation, by Joxemi Andonegi
+	* New full Valencian translaton, by Pilar Embid Giner
+	* New full Italian translation, by Andrea Primiani
+	* New full French translation, by Jesús Miguel Domínguez
+	* New full Portuguese translation, by Dionisio Martínez Soler
+	* New full Dutch translation, by Karel Werschkull
+	* New full Galician translation, by Pablo Nimo Liboreiro
+	* New full Catalan translation, by Carles Ferrando García
+	* New Norwegian translation, by Henrik Kvalnes	
+	* New Spanish translation, by Juan Rafael Fernández
+	* New Tradicional Chinese translation, by Franklin Weng		
 
 [ Pedro Peña Pérez ]
 
