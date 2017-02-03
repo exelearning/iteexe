@@ -125,10 +125,20 @@ class Manifest(object):
             if not title.get_string():
                 title.add_string(lomsubs.LangStringSub(self.package.lang.encode('utf-8'), self.package.name))
                 metadata.get_general().set_title(title)
-
             if self.scormType == "scorm1.2":
                 modifiedMetaData = self._validateMetaData(metadata)
-                
+
+            if self.package.exportSource:
+                technical = metadata.get_technical()
+                if not technical:
+                    technical = lomsubs.technicalSub('technical')
+                    metadata.set_technical(technical)
+                opr = technical.get_otherPlatformRequirements()
+                if not opr:
+                    opr = lomsubs.otherPlatformRequirementsSub()
+                    technical.set_otherPlatformRequirements(opr)
+                opr.add_string(lomsubs.LangStringSub(self.package.lang.encode('utf-8'), 'editor: eXe Learning'))
+
             metadata.export(output, 0, namespacedef_=namespace, pretty_print=False)
             xml += output.getvalue()
         if self.metadataType == 'LOM':
