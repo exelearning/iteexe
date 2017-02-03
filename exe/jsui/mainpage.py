@@ -815,7 +815,7 @@ class MainPage(RenderableLivePage):
 
     def handleExportProcomun(self, client):
         if not client.session.oauthToken.get('procomun'):
-            verify = True
+            verify = False
             if hasattr(sys, 'frozen'):
                 verify = 'cacerts.txt'
             oauth2Session = OAuth2Session(ProcomunOauth.CLIENT_ID, redirect_uri=ProcomunOauth.REDIRECT_URI)
