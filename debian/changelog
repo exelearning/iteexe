@@ -107,7 +107,8 @@ intef-exe (3:2.1.1) lucid; urgency=medium
 		* Fedora installation instructions (link to the download page)
 		* Heading level mismatch (<hX></h1>) solved. We use H1 for the node titles. (see #62)
 		
-Juan Rafael Fernández:
+[ Juan Rafael Fernández ]
+
 	* Fixes in debian/ and the debian packaging, making lintian a bit happier.
 	* Fixed some tiny bugs in mki18n.sh.
 	* Fixed information about the new dependencies.
@@ -117,7 +118,7 @@ Juan Rafael Fernández:
 	* Updated python-babel to version 2.3.4
 	* eXe is ready for Hebrew now.
 
-	[Translation Teams]
+	[ Translation Teams ]
 	
 	* New full Russian translation, by Alexey Loginov
 	* New full Basque translation, by Joxemi Andonegi
