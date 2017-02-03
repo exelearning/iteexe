@@ -246,6 +246,7 @@ de la jerarquía de contenidos que crearemos con eXe */
 .GalleryIdevice .iDevice_header{
     background:url(icon_gallery.gif) no-repeat 0 0;
     color:#2C8384;
+    padding:15px 25px 35px 100px;
 }
 .GalleryIdevice .iDevice{
     background:url(sup_der_gallery.gif) no-repeat right 0;
