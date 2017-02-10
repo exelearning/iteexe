@@ -19,7 +19,7 @@ body, html  {
 	line-height:120%;
 	height:100%;
 }
-* {font-family:Verdana,Arial, Helvetica, sans-serif !important}
+body,.feedback {font-family:Verdana,Arial, Helvetica, sans-serif}
 p {
 	margin:.7em 0;
 }
