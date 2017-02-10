@@ -27,7 +27,10 @@ function insertTable() {
 	align = getSelectValue(formObj, "align");
 	frame = getSelectValue(formObj, "tframe");
 	rules = getSelectValue(formObj, "rules");
-	width = formObj.elements['width'].value;
+	// The New eXeLearning
+	// width = formObj.elements['width'].value;
+	width = formObj.elements['width'].value != "" ? formObj.elements['width'].value : "100%";
+	// The New eXeLearning
 	height = formObj.elements['height'].value;
 	bordercolor = formObj.elements['bordercolor'].value;
 	bgcolor = formObj.elements['bgcolor'].value;
