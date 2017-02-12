@@ -168,24 +168,9 @@ intef-exe (3:2.1.1) lucid; urgency=medium
 	* Fix windows binary build
 	* Add new dependencies to deb and rpm packages
 
-[ Per-Henrik Kvalnes ]
-
-	* added norwegian translation
-	* added new Norwegian translations
-
 [ Antonio Monje ]
 
-	* Merge branch 'master' of ssh://amonje@forja.cenatic.es//var/lib/
-	* Merge branch 'master' of ssh://amonje@forja.cenatic.es//var/lib/
-	* Merge branch 'master' of ssh://amonje@forja.cenatic.es//var/lib/
-	* Merge branch 'master' of ssh://amonje@forja.cenatic.es//var/lib/
-	* Merge branch 'master' of ssh://amonje@forja.cenatic.es//var/lib/
-	* Merge branch 'master' of ssh://amonje@forja.cenatic.es//var/lib/
-	* Merge branch 'master' of ssh://amonje@forja.cenatic.es//var/lib/
-	* Merge branch 'master' of ssh://amonje@forja.cenatic.es//var/lib/
-	* Merge branch 'master' of ssh://amonje@forja.cenatic.es//var/lib/
-	* Merge branch 'master' of ssh://amonje@forja.cenatic.es//var/lib/
-	* Merge branch 'master' of ssh://amonje@forja.cenatic.es//var/lib/
+	* Branch merging and revision
 
 [ Mercedes Cotelo Lois ]
 
