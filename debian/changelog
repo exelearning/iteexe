@@ -109,14 +109,15 @@ intef-exe (3:2.1.1) lucid; urgency=medium
 		
 [ Juan Rafael Fernández ]
 
-	* Fixes in debian/ and the debian packaging, making lintian a bit happier.
-	* Fixed some tiny bugs in mki18n.sh.
-	* Fixed information about the new dependencies.
-	* Fixed mistakes in some English messages.
-	* Wikipedia iDevice license revision.
+	* Fixes in debian/ and the debian packaging, making lintian a bit
+          happier.
+	* (Debian packaging) Fixed information about the new dependencies.
 	* i18n tools revision.
+	* Fixed some tiny bugs in mki18n.sh.
 	* Updated python-babel to version 2.3.4
+	* Fixed mistakes in some English messages.
 	* eXe is ready for Hebrew now.
+	* Wikipedia iDevice license revision.
 
 	[ Translation Teams ]
 	
@@ -126,11 +127,11 @@ intef-exe (3:2.1.1) lucid; urgency=medium
 	* New full Italian translation, by Andrea Primiani
 	* New full French translation, by Jesús Miguel Domínguez
 	* New full Portuguese translation, by Dionisio Martínez Soler
-	* New full Dutch translation, by Karel Werschkull
+	* New full Spanish translation, by Juan Rafael Fernández
 	* New full Galician translation, by Pablo Nimo Liboreiro
 	* New full Catalan translation, by Carles Ferrando García
 	* New Norwegian translation, by Henrik Kvalnes	
-	* New Spanish translation, by Juan Rafael Fernández
+	* New Dutch translation, by Karel Werschkull
 	* New Tradicional Chinese translation, by Franklin Weng		
 
 [ Pedro Peña Pérez ]
