@@ -175,9 +175,7 @@ intef-exe (3:2.1.1) lucid; urgency=medium
 
 [ Mercedes Cotelo Lois ]
 
-	* Adding missing file from master
-	* Manually merge some differences from master
-	* Merge branch 'master' into revert-FR2292-export-gdrive
+	* Developments in the publishing capacities of eXe
 	
 intef-exe (3:2.1) lucid; urgency=medium
 
@@ -297,21 +295,11 @@ intef-exe (3:2.1) lucid; urgency=medium
   * Update image in windows installer
 
   [ Mercedes Cotelo Lois ]
-  * Fixed [iteexe-Bugs][2487] Contradictory licenses for CARM style
-  * Fixed [#2284] Outdated Release Notes on Help > Release Notes menu
-  * [#2493] No funciona repositorio estilos en Windows.
-    Explicitly set the downloaded ZIP file to be saved in temporary directory
-  * [#2493] No funciona repositorio estilos en Windows.
-    Escape Windows path backslashes in Javascript strings
+  * Style Designer - Back-end development.
+  * Fixed #2487 Contradictory licenses for CARM style
+  * Fixed #2284 Outdated Release Notes on Help > Release Notes menu
+  * Fixed #2493 The Style Manager was not working in Windows
   * Implement Google Drive publication (disabled)
-  * Fix bug of false 'Style directory already exist' errors on creating style, caused by the absence of the 'style_name' field value
-  * Fix text of error message when style directory already exists
-  * Dialog box with style name input field must be a modal window
-  * Discard unused function 'styleDesigner.saveStyle'
-  * Easier modal window to prompt for style name when saving a new style
-  * Add 'extra-head' and 'extra-body' attributes to style config.xml file.
-  * On Windows, uploaded image files were corrupt.
-  * File '/tools' must be available with the other data files, as styles, or user config.
 
   [ José Miguel Andonegi Martínez ]
   * SCORM message text is changed to allow % character order change in Basque translation
