@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
 
 # setup.py
 # Only used for Debian packaging
@@ -9,101 +8,155 @@ import glob
 from setuptools import setup
 from exe.engine import version
 
-g_files = {'/usr/share/exe': ["ChangeLog"],             # Although this is a copy of debian/changelog.gz
-                              # "COPYING",              # Removed, this is the GPL - to copyright
-                              # "NEWS",			# No longer used, after bug 2284 was fixed
-           '/usr/share/doc/intef-exe': ["README"],
-                                        # "exe/webui/mr_x.gif",
-           '/usr/share/applications': ["exe.desktop"],
-           '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
-           '/usr/share/pixmaps': ["exe.xpm"]
-           }
-
-g_oldBase = "exe/webui"
-g_newBase = "/usr/share/exe"
-
+# Files that are going to be copied (We add these ones manually)
+g_files = {
+    '/usr/share/exe': [
+        # Although this is a copy of debian/changelog.gz
+        "ChangeLog"
+        # Removed, this is the GPL - to copyright
+        # "COPYING",
+        # No longer used, after bug 2284 was fixed
+        # "NEWS",
+    ],
+    # ReadMe file
+    '/usr/share/doc/intef-exe': ["README"],
+    # "exe/webui/mr_x.gif",
+    # Menu link to eXe
+    '/usr/share/applications': ["exe.desktop"],
+    # eXe main icon
+    '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
+    # eXe XPM icon
+    '/usr/share/pixmaps': ["exe.xpm"]
+}
 
 def dataFiles(dirs, excludes=[]):
     """
     Recursively get all the files in these 'dirs' directories
     except those listed in 'excludes'
     """
+    # Get global variables
     global dataFiles, g_oldBase, g_newBase, g_files
+
+    # Go throught all files
     for file in dirs:
-        if not os.path.basename(file[0]).startswith("."):
-            if os.path.isfile(file) and file not in excludes:
+        # This will prevent it from copying hidden or excluded files
+        if not os.path.basename(file[0]).startswith(".") and file not in excludes:
+            #  If it is a file
+            if os.path.isfile(file):
+                # If there is source dir
                 if len(g_oldBase) >= 1:
+                    # We get only the part after that from the file path
                     path = file[len(g_oldBase) + 1:]
+                # If there isn't
                 else:
+                    # We get all of the path
                     path = file
-                dir = g_newBase + "/" + os.path.dirname(path)
+                
+                # Get the full new path
+                dir = os.path.join(g_newBase, os.path.dirname(path))
+
+                # If the path is already in the array
                 if dir in g_files:
+                    # Append the file
                     g_files[dir].append(file)
+                # If it is not
                 else:
+                    # Create a new array with the file
                     g_files[dir] = [file]
-            elif os.path.isdir(file) and file not in excludes:
+            # If is is a directory
+            elif os.path.isdir(file):
+                # Call this function with the subdirectory
                 dataFiles(glob.glob(file + "/*"), excludes)
 
-# jrf - task 1080, the manual is no longer included
-dataFiles(["exe/webui/style",
-           "exe/webui/css",
-           # "exe/webui/docs",
-           "exe/webui/images",
-           "exe/webui/schemas",
-           "exe/webui/scripts",
-           "exe/webui/templates",
-           "exe/webui/tools"],
-          excludes=["exe/webui/templates/mimetex-darwin.cgi",
-                    "exe/webui/templates/mimetex.exe",
-                    "exe/webui/docs/credits.xhtml"])
+# Source dir
+g_oldBase = "exe/webui"
+# Destination dir
+g_newBase = "/usr/share/exe"
 
+# Process WebUI files
+dataFiles(
+    [
+        "exe/webui/style",
+        "exe/webui/css",
+        # jrf - task 1080, the manual is no longer included
+        # "exe/webui/docs",
+        "exe/webui/images",
+        "exe/webui/schemas",
+        "exe/webui/scripts",
+        "exe/webui/templates",
+        "exe/webui/tools"
+    ],
+    # We exlude mimetext executables for other OS
+    excludes=[
+        "exe/webui/templates/mimetex-darwin.cgi",
+        "exe/webui/templates/mimetex.exe",
+        "exe/webui/docs/credits.xhtml"
+    ]
+)
+
+# Process Mobile Profiles
 g_oldBase = "exe"
 g_newBase = "/usr/share/exe"
 dataFiles(["exe/mediaprofiles"])
 
+# Process locales folder
 # jrf - bug 2402, to comply with the FHS
-# locales
-# g_oldBase = "exe"
-# g_newBase = "/usr/share/exe"
 g_oldBase = "exe/locale"
 g_newBase = "/usr/share/locale"
-exc = []
-exc = glob.glob(g_oldBase + "/*/LC_MESSAGES/*.po")
-exc.append(g_oldBase + "/ja/exe_jp.xlf")
-exc.append(g_oldBase + "/ja/exe_ja.xlf")
-exc.append(g_oldBase + "/messages.pot")
-exc.sort()
 
-dataFiles(["exe/locale"],
-          excludes=exc)
+#  We exclude PO files, the POT file and japanese XLF files
+excludes = glob.glob(g_oldBase + "/*/LC_MESSAGES/*.po")
+excludes.append(g_oldBase + "/ja/exe_jp.xlf")
+excludes.append(g_oldBase + "/ja/exe_ja.xlf")
+excludes.append(g_oldBase + "/messages.pot")
+excludes.sort()
+dataFiles(["exe/locale"], excludes=excludes)
 
 # Python libraries (we should be using the installed versions)
 g_oldBase = ""
 g_newBase = "/usr/share/exe"
 dataFiles(["twisted", "nevow", "formless"])
 
-# Javascript section
+# Process JSUI files
 g_oldBase = "exe/jsui"
 g_newBase = "/usr/share/exe"
-dataFiles(["exe/jsui/scripts",
-           "exe/jsui/templates"])
+dataFiles(["exe/jsui/scripts", "exe/jsui/templates"])
 
-setup(name=version.project,
-      version=version.version,
-      description="The EXtremely Easy to use eLearning authoring tool",
-      long_description="""\
+# Run the setup
+setup(
+    # Project name
+    name=version.project,
+    # Project version
+    version=version.version,
+    # Project description
+    description="The EXtremely Easy to use eLearning authoring tool",
+    # Project long description
+    long_description="""\
 The eXe project is an authoring environment to enable teachers
 to publish web content without the need to become proficient in
 HTML or XML markup.  Content generated using eXe can be used by
 any Learning Management System.
 """,
-      url="http://exelearning.net",
-      author="INTEF-eXe Project",
-      author_email="admin@exelearning.net",
-      license="GPL",
-      scripts=["exe/exe", "exe/exe_do"],
-      packages=["exe", "exe.webui", "exe.jsui",
-                "exe.engine", "exe.export",
-                "exe.importers", "exe.engine.lom"],
-      data_files=g_files.items()
-      )
+    # Project homepage
+    url="http://exelearning.net",
+    # Project author
+    author="INTEF-eXe Project",
+    # Author email
+    author_email="admin@exelearning.net",
+    # Project license
+    license="GPL",
+    # Executable files
+    scripts=["exe/exe", "exe/exe_do"],
+    # Project packages
+    packages=[
+        "exe",
+        "exe.webui",
+        "exe.jsui",
+        "exe.engine",
+        "exe.export",
+        "exe.importers",
+        "exe.engine.lom"
+    ],
+    # Files list
+    data_files=g_files.items()
+)
