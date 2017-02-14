@@ -20,6 +20,7 @@ intef-exe (3:2.1.1) lucid; urgency=medium
 	* Changed JS minifier library from Slimit to Webassets
 	* Remove "slimit" imports where they weren't used
 	* Revised #80 to use decodeURIComponent only when needed
+	* Package generation refactoring for all platforms
 
 [ Francisco Javier Pulido Cuadrado ]
 
