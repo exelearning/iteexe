@@ -11,10 +11,10 @@
    
 /*Reseteo generico de estilos */
 
-* {
+body,.feedback{
 	padding: 0;
         margin: 5; 
-	font-family: Verdana,Arial, Helvetica, sans-serif !important;
+	font-family: Verdana,Arial, Helvetica, sans-serif;
 }
 
 /* Estilo general del cuerpo de los contenidos */

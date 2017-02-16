@@ -30,6 +30,9 @@ var $exeTinyMCE = {
 	},	
 	contextmenu: "exelink | inserttable | cell row column deletetable",
 	language: "all", // We set all so we can use eXe's i18n mechanism in all.js
+	table_default_styles: {
+		width: '100%'
+	},
     
 	init: function(mode,criteria,hide){
 		
@@ -57,6 +60,7 @@ var $exeTinyMCE = {
 			contextmenu: this.contextmenu,
 			browser_spellcheck: this.browser_spellcheck,
 			templates: this.templates,
+			table_default_styles: this.table_default_styles,
 			// Base URL
 			path_to_folder: this.path_to_folder,
 			// Images
