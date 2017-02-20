@@ -122,5 +122,5 @@ class SAMLPage(rend.Page):
             return url.URL.fromString(start_url)
         else:
             return 'SAML authentication needs a saml configuration directory at %s. See an example ' \
-                   '<a href="https://forja.cenatic.es/plugins/scmgit/cgi-bin/gitweb.cgi?p=iteexe/iteexe.git;a=tree;f=saml_template;hb=ws">' \
-                   'here</a>' % (G.application.config.configDir/'saml').encode('utf-8')
+                   '<a href="https://github.com/exelearning/iteexe/tree/ws/saml_template">' \
+                   'here</a>' % (G.application.defaultConfig/'saml').encode('utf-8')

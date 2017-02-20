@@ -53,8 +53,7 @@ class eXeRequest(appserver.NevowRequest):
 
                     htpasswd = Path(G.application.defaultConfig.configDir) / 'htpasswd'
                     password = request.getPassword()
-                    htpasswd.bytes()
-                    ht = HtpasswdFile(htpasswd)
+                    ht = HtpasswdFile(htpasswd.abspath())
                     if ht.verify(user, password):
                         session.setUser(user)
                 except Exception as e:

@@ -27,6 +27,7 @@ app:
   build: images/exe
   volumes:
     - .:/home/app
+    - ./images/apache2/htpasswd:/home/app/exe/config/htpasswd
   working_dir: /home/app
   entrypoint: images/exe/run.sh
   privileged: true
