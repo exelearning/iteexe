@@ -32,6 +32,8 @@ from exe.export.websiteexport import WebsiteExport
 from exe.export.singlepageexport import SinglePageExport
 from exe.export.xliffexport import XliffExport
 from exe.export.epub3export import Epub3Export
+from exe.export.textexport import TextExport
+from exe.export.epub3subexport import Epub3SubExport
 
 LOG = logging.getLogger(__name__)
 
@@ -47,7 +49,8 @@ class CmdlineExporter(object):
                   'singlepage': '',
                   'xliff': '.xlf',
                   'epub3': '.epub',
-                  'report': '.csv'
+                  'report': '.csv',
+                  'text': '.txt'
                   }
 
     def __init__(self, config, options):
@@ -143,6 +146,16 @@ with a different filename') % outputf
         epub3Export = Epub3Export(self.config, self.styles_dir, outputf)
         epub3Export.export(pkg)
 
+    def export_subepub3(self, pkg, outputf):
+        epub3SubExport = Epub3SubExport(self.config, self.styles_dir, outputf)
+        epub3SubExport.export(pkg)
+
     def export_report(self, pkg, outputf):
         websiteExport = WebsiteExport(self.config, self.styles_dir, outputf, report=True)
         websiteExport.export(pkg)
+
+    def export_text(self, pkg, outputf):
+        textExport =TextExport(outputf)
+        textExport.export(pkg)
+        textExport.save(outputf)
+

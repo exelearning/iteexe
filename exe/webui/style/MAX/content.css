@@ -34,6 +34,7 @@ h2{font-size:1.4em;color:#9A042F}
 .iDevice_inner{padding: 10px 20px;border:1px solid #f0f0f0;background:#f9f9f9;color:#444;border-radius:5px}
 #siteFooter{color:#666666;font-size:.95em;border-top:5px solid #B50536;padding:15px 0}
 #siteFooter a{color:#000}
+#packageLicense p{margin:2em 0}
 input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 #lbOverlay{background-color:#f3f3f3}
 #lbOuterContainer{border-color:#ddd}

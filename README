@@ -12,7 +12,7 @@ used by any Learning Management System, as epub3 files and on mobile devices.
 ===========================================================================
 
 Current Version:
-Copyright 2008-2015 eXeLearning.net project contributors.  For details see
+Copyright 2008-2016 eXeLearning.net project contributors.  For details see
 information contained within source files.
 
 Previous Version:
@@ -40,23 +40,23 @@ SUPPORT
 =======
 If you have any problems or have any feedback please report them at
 http://exelearning.net/forums/?lang=en if you are a user, or
-http://forja.cenatic.es/tracker/?atid=1107&group_id=197&func=browse
+https://github.com/exelearning/iteexe/issues
 if you are a developer. Suggestions and patches are welcome.
 
 
 SOURCE
 ======
 The source is available at our git repository
-http://forja.cenatic.es/scm/?group_id=197
+https://github.com/exelearning/iteexe
 
 It includes tools and instructions to build packages for the most
 common operating systems.
 
 BUILDING FROM SOURCE
 -------------------
-Please see the wiki page for building from source for any given os:
+Please see the documentation for building from source for any given O.S.:
  
-https://forja.cenatic.es/plugins/mediawiki/wiki/iteexe/index.php/
+https://github.com/exelearning/iteexe/tree/master/installs/
   
 Each operating system supported by exe has a folder in the installs 
 directory that generates an os specific installer.
@@ -65,8 +65,9 @@ directory that generates an os specific installer.
 WINDOWS
 =======
 If you download the sources, installs/windows/README
-will five you the information you need to buid an executive package.
-Or you can download the package from http://forja.cenatic.es/frs/?group_id=197
+will give you the information you need to buid an executive package.
+Or you can download the package from http://exelearning.net/descargas/
+
 
 INSTALLATION
 ------------
@@ -90,8 +91,8 @@ save your content before exiting.
 MAC OSX
 =======
 If you download the sources, installs/osx/README
-will five you the information you need to buid an executive package.
-Or you can download the package from http://forja.cenatic.es/frs/?group_id=197
+will give you the information you need to buid an executive package.
+Or you can download the package from http://exelearning.net/descargas/
 
 To install eXe, simply open the .dmg and drag the app to your 
 Applications folder.
@@ -100,6 +101,7 @@ Applications folder.
 FEDORA LINUX 
 =============
 The eXe Fedora Linux install consists of a single RPM. 
+Download it from http://exelearning.net/descargas/
 
 There are HowTos on http://exelearning.net/ explaining how you can use
 these RPMs on some other RPM-based Linux distributions.
@@ -111,8 +113,8 @@ window manager, you should find an eXe entry in your Accessories menu.
 DEBIAN/UBUNTU LINUX 
 ===================
 If you download the sources, installs/debian/ubuntu/README
-will five you the information you need to buid an executive package.
-Or you can download the package from http://forja.cenatic.es/frs/?group_id=197
+will give you the information you need to buid an executive package.
+Or you can download the package from http://exelearning.net/descargas/
 
 Install the .deb the file and you will find eXe in your program menu.
 From the command line type exe to start.
@@ -130,7 +132,7 @@ interested in keeping.
 
 KNOWN BUGS
 ==========
-See https://forja.cenatic.es/tracker/?atid=883&group_id=197&func=browse 
+See https://github.com/exelearning/iteexe/issues
 for the eXe issue list.
 
 

@@ -39,7 +39,7 @@ def replaceLinks(matchobj, package_name):
     # only modify links to external targets
     if do \
     and do.group(1).find('http://') >=0 \
-    and not do.group(1).find('http://127.0.0.1') >= 0:
+    and not do.group(1).find(G.application.exeAppUri) >= 0:
         return re.sub(r'(?i)href\s*=\s*"?([^>"]+)"?',
                 r'''href="\1" onclick="browseURL(this); return false"''',
                 anchor)
@@ -47,7 +47,7 @@ def replaceLinks(matchobj, package_name):
     and do.group(1).startswith('resources/'):
         clean_url = urllib.quote(package_name.encode('utf-8'))
         return re.sub(r'(?i)href\s*=\s*"?([^>"]+)"?',
-                r'''href="\1" onclick="browseURL('http://127.0.0.1:%d/%s/\1'); return false"''' % (G.application.config.port, clean_url),
+                r'''href="\1" onclick="browseURL('%s/%s/\1'); return false"''' % (G.application.exeAppUri, clean_url),
                 anchor)
     else:
         return anchor
@@ -599,9 +599,10 @@ class Feedback2Element(ElementWithResources):
         html ='<strong>'+self.field.name+'</strong>'
         if self.field.instruc:
             html += common.elementInstruc(self.field.instruc)
-        html +='<p><label for="btnCaption'+self.id+'">'+_("Button Caption")+': </label>'
-        html += common.textInput('btnCaption'+self.id, self.field.buttonCaption, 40)
-        html +='</p>'
+        if hasattr(self.field, 'buttonCaption'):
+            html +='<p><label for="btnCaption'+self.id+'">'+_("Button Caption")+': </label>'
+            html += common.textInput('btnCaption'+self.id, self.field.buttonCaption, 40)
+            html +='</p>'
         html += common.formField('richTextArea', this_package, 
                                 '','',
                                 self.id, '',
@@ -638,7 +639,10 @@ class Feedback2Element(ElementWithResources):
 
         html = ""
         if self.field.feedback != "": 
-            html += common.feedbackBlock(self.id,self.field.feedback,self.field.buttonCaption)
+            if hasattr(self.field, 'buttonCaption'):
+                html += common.feedbackBlock(self.id,self.field.feedback,self.field.buttonCaption)
+            else:
+                html += common.feedbackBlock(self.id,self.field.feedback)
         return html
 
 
@@ -1357,7 +1361,7 @@ class ClozeElement(ElementWithResources):
             u'<tr>',
             u'<td>',
             u'  <input type="button" value="%s" ' % _("Hide/Show Word"),
-            u' onclick="tinyMCE.execInstanceCommand(\'%s\',\'Underline\', false);" />' % self.editorId,
+            u' onclick="$exeAuthoring.toggleWordInEditor(\'%s\');" />' % self.editorId,
             u'</td><td>',
             common.checkbox('strictMarking%s' % self.id,
                             self.field.strictMarking,

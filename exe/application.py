@@ -73,15 +73,16 @@ class Application:
         """
         Initialize
         """
-        self.config       = None
+        self.config = None
         self.ideviceStore = None
-        self.packagePath  = None
-        self.webServer    = None
-        self.standalone   = False # Used for the ready to run exe
-        self.portable   = False # FM: portable mode
+        self.packagePath = None
+        self.webServer = None
+        self.exeAppUri = None
+        self.standalone = False  # Used for the ready to run exe
+        self.portable = False  # FM: portable mode
         self.persistNonPersistants = False  
-        self.tempWebDir   = mkdtemp('.eXe')
-        self.resourceDir=None
+        self.tempWebDir = mkdtemp('.eXe')
+        self.resourceDir = None
         self.afterUpgradeHandlers = []
         self.preferencesShowed = False
         self.loadErrors = []
@@ -97,6 +98,7 @@ class Application:
         installSafeTranslate()
         self.preLaunch()
         # preLaunch() has called find_port() to set config.port (the IP port #)
+        self.exeAppUri = 'http://localhost:%d' % self.config.port
         self.upgrade()
         if self.config.port >= 0:
             reactor.callWhenRunning(self.launch)
@@ -188,7 +190,6 @@ class Application:
             self.loadErrors.append(
                _(u'An error has occurred when loading your config. A backup is saved at %s') % backup)
         log.debug("logging set up")
-        G.application.exeAppUri = 'http://localhost:%d' % (self.config.port)
 
     def preLaunch(self):
         """

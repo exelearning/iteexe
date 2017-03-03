@@ -32,7 +32,7 @@ import shutil
 import tempfile
 import base64
 from exe.engine.version          import release, revision
-from twisted.internet            import threads, reactor
+from twisted.internet            import threads, reactor, defer
 from exe.webui.livepage          import RenderableLivePage,\
     otherSessionPackageClients, allSessionClients, allSessionPackageClients
 from nevow                       import loaders, inevow, tags
@@ -65,13 +65,12 @@ from exe.export.xmlexport        import XMLExport
 from requests_oauthlib           import OAuth2Session
 from exe.webui.oauthpage         import ProcomunOauth
 from suds.client                 import Client
-from exe.engine.sslcontext       import create_ssl_context, HTTPSTransport
 
 from exe.engine.lom import lomsubs
 from exe.engine.lom.lomclassification import Classification
 import zipfile
 log = logging.getLogger(__name__)
-PROCOMUN_WSDL = 'https://agrega2-front-pre.emergya.es/oauth_services?wsdl'
+PROCOMUN_WSDL = ProcomunOauth.BASE_URL + '/oauth_services?wsdl'
 
 
 
@@ -203,7 +202,9 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleClearAndMakeTempPrintDir, 'makeTempPrintDir')
         setUpHandler(self.handleRemoveTempDir, 'removeTempDir')
         setUpHandler(self.handleTinyMCEimageChoice, 'previewTinyMCEimage')
+        setUpHandler(self.handleTinyMCEimageDragDrop, 'previewTinyMCEimageDragDrop')
         setUpHandler(self.handleTinyMCEmath, 'generateTinyMCEmath')
+        setUpHandler(self.handleTinyMCEmathML, 'generateTinyMCEmathML')
         setUpHandler(self.handleTestPrintMsg, 'testPrintMessage')
         setUpHandler(self.handleReload, 'reload')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
@@ -255,7 +256,7 @@ class MainPage(RenderableLivePage):
     def render_version(self, ctx, data):
         return [tags.p()["Version: %s" % release],
                 tags.p()["Revision: ",
-                         tags.a(href='%s;a=shortlog;h=%s' % (self.config.baseGitWebURL, revision),
+                         tags.a(href='%s/commits/%s' % (self.config.baseGitWebURL, revision),
                                 target='_blank')[revision]
                         ]
                ]
@@ -374,7 +375,7 @@ class MainPage(RenderableLivePage):
         """
         Download taxon sources from url and deploy in $HOME/.exe/classification_sources
         """
-        url = 'http://forja.cenatic.es/frs/download.php/file/1624/classification_sources.zip'
+        url = 'https://github.com/exelearning/classification_sources/raw/master/classification_sources.zip'
         client.sendScript('Ext.MessageBox.progress("Sources Download", "Connecting to classification sources repository...")')
         d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
 
@@ -648,6 +649,64 @@ class MainPage(RenderableLivePage):
                     + "file to server prevew, error = " + str(e))
             raise
 
+    def handleTinyMCEimageDragDrop(self, client, tinyMCEwin, tinyMCEwin_name, \
+                              local_filename, preview_filename):
+        server_filename = ""
+        errors = 0
+
+        log.debug('handleTinyMCEimageChoice: image local = ' + local_filename
+                + ', base=' + os.path.basename(local_filename))
+
+        webDir = Path(G.application.tempWebDir)
+        previewDir = webDir.joinpath('previews')
+
+        if not previewDir.exists():
+            log.debug("image previews directory does not yet exist; " \
+                    + "creating as %s " % previewDir)
+            previewDir.makedirs()
+        elif not previewDir.isdir():
+            client.alert(\
+                _(u'Preview directory %s is a file, cannot replace it') \
+                % previewDir)
+            log.error("Couldn't preview tinyMCE-chosen image: " + 
+                      "Preview dir %s is a file, cannot replace it" \
+                      % previewDir)
+            errors += 1
+
+        if errors == 0:
+            log.debug('handleTinyMCEimageChoice: originally, local_filename='
+                    + local_filename)
+            log.debug('handleTinyMCEimageChoice: in unicode, local_filename='
+                    + local_filename)
+
+            localImagePath = Path(local_filename)
+            log.debug('handleTinyMCEimageChoice: after Path, localImagePath= '
+                    + localImagePath)
+
+        try:
+            log.debug('URIencoded preview filename=' + preview_filename)
+
+            server_filename = previewDir.joinpath(preview_filename)
+
+            descrip_file_path = Path(server_filename + ".exe_info")
+            log.debug("handleTinyMCEimageDragDrop creating preview " \
+                    + "description file \'" \
+                    + descrip_file_path.abspath() + "\'.")
+            descrip_file = open(server_filename, 'wb')
+
+            local_filename = local_filename.replace('data:image/jpeg;base64,', '')
+            descrip_file.write(base64.b64decode(local_filename))
+            descrip_file.flush()
+            descrip_file.close()
+            
+            client.sendScript('eXe.app.fireEvent("previewTinyMCEDragDropImageDone")')
+
+        except Exception, e:
+            client.alert(_('SAVE FAILED!\n%s') % str(e))
+            log.error("handleTinyMCEimageDragDrop unable to copy local image "
+                    + "file to server prevew, error = " + str(e))
+            raise
+
     def handleTinyMCEmath(self, client, tinyMCEwin, tinyMCEwin_name, \
                              tinyMCEfield, latex_source, math_fontsize, \
                              preview_image_filename, preview_math_srcfile):
@@ -710,8 +769,77 @@ class MainPage(RenderableLivePage):
                 tempFileName = compile(use_latex_sourcefile, math_fontsize, \
                         latex_is_file=True)
             except Exception, e:
-                client.alert(_('MimeTeX compile failed!\n%s') % str(e))
+                client.alert(_('Could not create the image') + " (LaTeX)","$exeAuthoring.errorHandler('handleTinyMCEmath')")
                 log.error("handleTinyMCEmath unable to compile LaTeX using "
+                        + "mimetex, error = " + str(e))
+                raise
+
+            # copy the file into previews
+            server_filename = previewDir.joinpath(preview_image_filename)
+            log.debug("handleTinyMCEmath copying math image from \'"\
+                    + tempFileName + "\' to \'" \
+                    + server_filename.abspath().encode('utf-8') + "\'.")
+            shutil.copyfile(tempFileName, \
+                    server_filename.abspath().encode('utf-8'))
+
+            # Delete the temp file made by compile
+            Path(tempFileName).remove()
+        return
+        
+    def handleTinyMCEmathML(self, client, tinyMCEwin, tinyMCEwin_name, \
+                             tinyMCEfield, mathml_source, math_fontsize, \
+                             preview_image_filename, preview_math_srcfile):
+        """
+        See self.handleTinyMCEmath
+        To do: This should generate an image from MathML code, not from LaTeX code.
+        """
+        
+        # Provisional (just an alert message)
+        client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
+        return
+        
+        server_filename = ""
+        errors = 0
+
+        webDir = Path(G.application.tempWebDir)
+        previewDir = webDir.joinpath('previews')
+
+        if not previewDir.exists():
+            log.debug("image previews directory does not yet exist; " \
+                    + "creating as %s " % previewDir)
+            previewDir.makedirs()
+        elif not previewDir.isdir():
+            client.alert( \
+                _(u'Preview directory %s is a file, cannot replace it') \
+                % previewDir)
+            log.error("Couldn't preview tinyMCE-chosen image: " +
+                      "Preview dir %s is a file, cannot replace it" \
+                      % previewDir)
+            errors += 1
+
+        # the mimetex usage code was swiped from the Math iDevice:
+        if mathml_source != "":
+
+            # first write the mathml_source out into the preview_math_srcfile,
+            # such that it can then be passed into the compile command:
+            math_filename = previewDir.joinpath(preview_math_srcfile)
+            math_filename_str = math_filename.abspath().encode('utf-8')
+            log.info("handleTinyMCEmath: using LaTeX source: " + mathml_source)
+            log.debug("writing LaTeX source into \'" \
+                    + math_filename_str + "\'.")
+            math_file = open(math_filename, 'wb')
+            # do we need to append a \n here?:
+            math_file.write(mathml_source)
+            math_file.flush()
+            math_file.close()
+
+            try:
+                use_mathml_sourcefile = math_filename_str
+                tempFileName = compile(use_mathml_sourcefile, math_fontsize, \
+                        latex_is_file=True)
+            except Exception, e:
+                client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
+                log.error("handleTinyMCEmathML unable to compile MathML using "
                         + "mimetex, error = " + str(e))
                 raise
 
@@ -771,8 +899,11 @@ class MainPage(RenderableLivePage):
 
     def handleExportProcomun(self, client):
         if not client.session.oauthToken.get('procomun'):
+            verify = True
+            if hasattr(sys, 'frozen'):
+                verify = 'cacerts.txt'
             oauth2Session = OAuth2Session(ProcomunOauth.CLIENT_ID, redirect_uri=ProcomunOauth.REDIRECT_URI)
-            oauth2Session.verify = False
+            oauth2Session.verify = verify
             authorization_url, state = oauth2Session.authorization_url(ProcomunOauth.AUTHORIZATION_BASE_URL)
             self.webServer.oauth.procomun.saveState(state, oauth2Session, client)
 
@@ -782,47 +913,49 @@ class MainPage(RenderableLivePage):
 
         title = 'Procomún'
         statusTitle = _(u'Publishing document to Procomún')
-        client.notifyStatus(statusTitle, _(u'Exporting package as SCORM'))
-        token = client.session.oauthToken['procomun']
-        stylesDir = self.config.stylesDir / self.package.style
-        fd, filename = mkstemp('.zip')
-        scorm = ScormExport(self.config, stylesDir, filename, 'scorm1.2')
-        scorm.export(self.package)
 
-        sslverify = False
-        cafile = None
-        capath = None
+        def exportScorm():
+            client.notifyStatus(statusTitle, _(u'Exporting package as SCORM'))
+            stylesDir = self.config.stylesDir / self.package.style
+            fd, filename = mkstemp('.zip')
+            os.close(fd)
+            scorm = ScormExport(self.config, stylesDir, filename, 'scorm1.2')
+            scorm.export(self.package)
 
-        kwargs = {}
-        sslContext = create_ssl_context(sslverify, cafile, capath)
-        headers = {'Authorization': 'Bearer %s' % str(token['access_token']),
-                   'Connection': 'close'}
-        kwargs['transport'] = HTTPSTransport(sslContext, headers=headers)
+            return filename
 
-        procomun = Client(PROCOMUN_WSDL, **kwargs)
+        def publish(filename):
+            token = client.session.oauthToken['procomun']
+            headers = {'Authorization': 'Bearer %s' % str(token['access_token']),
+                       'Connection': 'close'}
 
-        ode = procomun.factory.create('xsd:anyType')
+            procomun = Client(PROCOMUN_WSDL, headers=headers)
 
-        ode.file = base64.b64encode(open(filename).read())
-        ode.file_name = self.package.name
+            ode = procomun.factory.create('xsd:anyType')
 
-        client.notifyStatus(statusTitle, _(u'Starting authorized connection to Procomún API'))
-        result = procomun.service.odes_soap_create(ode)
+            ode.file = base64.b64encode(open(filename, 'rb').read())
+            ode.file_name = self.package.name
 
-        parsedResult = {}
-        for item in result.item:
-            parsedResult[item.key] = item.value
-            if str(item.key) == 'data':
-                parsedResult[item.key] = {}
-                if item.value:
-                    parsedResult[item.key][item.value.item.key] = item.value.item.value
+            client.notifyStatus(statusTitle, _(u'Starting authorized connection to Procomún API'))
+            result = procomun.service.odes_soap_create(ode)
 
-        if parsedResult['status'] == 'true':
-            link_url = 'https://agrega2-front-pre.emergya.es/ode/view/%s' % parsedResult['data']['documentId']
-            client.notifyStatus(statusTitle, _(u'Package exported to <a href="%s" target="_blank" title="Click to visit exported site">%s</a>') % (link_url, self.package.title))
-        else:
-            client.hideStatus()
-            client.notifyNotice(title, _(u'Error exporting package %s to Procomún: %s') % (self.package.name, parsedResult['message']), 'error')
+            parsedResult = {}
+            for item in result.item:
+                parsedResult[item.key] = item.value
+                if str(item.key) == 'data':
+                    parsedResult[item.key] = {}
+                    if item.value:
+                        parsedResult[item.key][item.value.item.key] = item.value.item.value
+
+            if parsedResult['status'] == 'true':
+                link_url = ProcomunOauth.BASE_URL + '/ode/view/%s' % parsedResult['data']['documentId']
+                client.notifyStatus(statusTitle, _(u'Package exported to <a href="%s" target="_blank" title="Click to visit exported site">%s</a>') % (link_url, self.package.title))
+            else:
+                client.hideStatus()
+                client.notifyNotice(title, _(u'Error exporting package %s to Procomún: %s') % (self.package.name, parsedResult['message']), 'error')
+
+        d = threads.deferToThread(exportScorm)
+        d.addCallback(lambda filename: threads.deferToThread(publish, filename))
 
     def handleExport(self, client, exportType, filename):
         """

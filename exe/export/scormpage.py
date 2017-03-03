@@ -125,7 +125,7 @@ class ScormPage(Page):
             if style.hasValidConfig:
                 html += style.get_extra_head()        
             html += u"</head>"+lb
-            html += u"<body class=\"exe-scorm\">"
+            html += u"<body class=\"exe-scorm\" "
         else:
             html += u"<script type=\"text/javascript\" src=\"SCORM_API_wrapper.js\"></script>"+lb
             html += u"<script type=\"text/javascript\" src=\"SCOFunctions.js\"></script>"+lb
@@ -148,6 +148,8 @@ class ScormPage(Page):
         html += u'</div>'
         html += u'</'+headerTag+'>'+lb
 
+        self.node.exportType = 'scorm'
+        
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
                 e=" em_iDevice"

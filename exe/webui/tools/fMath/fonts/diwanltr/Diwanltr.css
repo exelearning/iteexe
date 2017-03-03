@@ -1,0 +1,9 @@
+@font-face {
+    	font-family: 'Diwani Letter';
+    	font-style:normal;
+      	
+	src: url('Diwanltr.eot');
+  	src: local('?'),
+         url('Diwanltr.woff') format('woff'), url('Diwanltr.ttf') format('truetype'), url('Diwanltr.svg') format('svg'); 
+}
+

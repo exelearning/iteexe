@@ -22,7 +22,7 @@ import logging
 from exe.webui.renderable import _RenderablePage
 import nevow
 from nevow.livepage import LivePage, DefaultClientHandleFactory, _js,\
-    ClientHandle, IClientHandle
+    ClientHandle, IClientHandle, jquote
 from nevow import inevow, tags
 
 log = logging.getLogger(__name__)
@@ -73,13 +73,13 @@ class eXeClientHandle(ClientHandle):
         self.sendScript(script)
 
     def notifyStatus(self, title, msg):
-        self.sendScript("eXe.controller.eXeViewport.prototype.eXeNotificationStatus('%s', '%s');" % (title, msg), filter_func=allSessionClients)
+        self.sendScript("eXe.controller.eXeViewport.prototype.eXeNotificationStatus('%s', '%s');" % (jquote(title), jquote(msg)), filter_func=allSessionClients)
 
     def hideStatus(self):
         self.sendScript('Ext.ComponentQuery.query("#eXeNotification")[0].hide();', filter_func=allSessionClients)
 
     def notifyNotice(self, title, msg, type):
-        self.sendScript("eXe.controller.eXeViewport.prototype.eXeNotificationNotice('%s','%s', '%s');" % (title, msg, type), filter_func=allSessionClients)
+        self.sendScript("eXe.controller.eXeViewport.prototype.eXeNotificationNotice('%s','%s', '%s');" % (jquote(title), jquote(msg), jquote(type)), filter_func=allSessionClients)
 
 
 class eXeClientHandleFactory(DefaultClientHandleFactory):

@@ -50,11 +50,11 @@
 					<legend>%Information%</legend>
 					<div class="fields" id="currentStyleInfo">
 						<div class="autoclear">
-							<div class="col">
+							<div class="col" style="width:60%">
 								<label for="styleName">%Style_Name%: </label>
 								<input type="text" size="30" id="styleName" value="" />
 							</div>
-							<div class="col">
+							<div class="col" style="width:40%">
 								<label for="styleVersion">%Style_Version%: </label>
 								<select id="styleVersion">
 									<option value="1.0">1.0</option>
@@ -408,6 +408,10 @@
 								<label for="footerAColor">%Links_color%: </label>
 								<input type="text" maxlength="6" size="6" id="footerAColor" class="color" />
 							</div>
+							<div class="field">
+								<label for="footerFontSize">%Font_size%: </label>
+								<input type="text" size="6" id="footerFontSize" maxlength="3" /> %
+							</div>
 						</div>
 					</div>
 				</fieldset>
@@ -422,10 +426,14 @@
 					</p>
 					<div id="navigationOptions">
 						<p class="checkbox">
-							<label for="horizontalNavigation"><input type="checkbox" id="horizontalNavigation" class="checkbox" /> %Horizontal_navigation%</label>
+							<label for="horizontalNavigation"><input type="checkbox" id="horizontalNavigation" class="checkbox" onclick="$app.toggleNavWidth(this.checked)" /> %Horizontal_navigation%</label>
 						</p>
 						<div class="col">
 							<div class="fields">
+								<div class="field" id="navWidth-wrapper">
+									<label for="navWidth">%Width%: </label>
+									<input type="text" size="6" id="navWidth" maxlength="3" /> px
+								</div>
 								<div class="field">
 									<label for="navBGColor">%Background_color_FULL%: </label>
 									<input type="text" maxlength="6" size="6" id="navBGColor" class="color" />
@@ -433,11 +441,19 @@
 								<div class="field">
 									<label for="navHoverBGColor">%Active_background%: </label>
 									<input type="text" maxlength="6" size="6" id="navHoverBGColor" class="color" />
-								</div>							                            
+								</div>	
+								<div class="field">
+									<label for="navBorderColor">%Border_color%: </label>
+									<input type="text" maxlength="6" size="6" id="navBorderColor" class="color" />
+								</div>
 							</div>
 						</div>
 						<div class="col">
 							<div class="fields">
+								<div class="field">
+									<label for="navFontSize">%Font_size%: </label>
+									<input type="text" size="6" id="navFontSize" maxlength="3" /> %
+								</div>							
 								<div class="field">
 									<label for="navAColor">%Links_color%: </label>
 									<input type="text" maxlength="6" size="6" id="navAColor" class="color" />
@@ -445,15 +461,12 @@
 								<div class="field">
 									<label for="navAHoverColor">%Active_link_color%: </label>
 									<input type="text" maxlength="6" size="6" id="navAHoverColor" class="color" />
-								</div>                           						
+								</div>							
 							</div>
 						</div>
 						<div class="col">
 							<div class="fields">
-								<div class="field">
-									<label for="navBorderColor">%Border_color%: </label>
-									<input type="text" maxlength="6" size="6" id="navBorderColor" class="color" />
-								</div>
+
 							</div>
 						</div>						
 					</div>

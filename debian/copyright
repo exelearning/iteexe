@@ -83,6 +83,10 @@ File: /usr/share/exe/webui/scripts/exe_html5.js (HTML5 Shiv)
 Copyright: Alexander Farkas
 License: MIT | GPL-2
 
+Files: exe/webui/tools/fMath/*
+Copyright: Ionel Alexandru
+License: Apache License 2.0
+
 File: exe/webui/tools/style-designer/js/jpicker-1.1.6.min.js
 Copyright: Christopher T. Tillman
 License: MIT
@@ -135,6 +139,10 @@ License: MIT
  A template for the MIT license can be found at the OSI's site
  http://opensource.org/licenses/mit-license.php
 
+License: Apache License 2.0
+ The legal terms of the license can be read or downloaded from
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
 License: Revised BSD
  The text of the Revised (3-clause) BSD license can be found at
  https://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22Revised_BSD_License.22.2C_.22New_BSD_License.22.2C_or_.22Modified_BSD_License.22.29

@@ -193,6 +193,8 @@ class WebsitePage(Page):
         html += '</h1>'
         html += '</'+headerTag+'>'+lb
 
+        self.node.exportType = 'website'
+        
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
                 e=" em_iDevice"

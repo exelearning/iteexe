@@ -33,3 +33,5 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 /* Quote With Authorship */
 .styled-qc{font-family:Georgia,serif;font-style:italic;width:80%;margin:1.5em auto;padding:0.25em 40px;position:relative}
 .styled-qc:before{display:block;content:"\201C";font-size:5em;position:absolute;left:0;top:-20px}
+/* To review */
+abbr[title],acronym[title]{text-decoration:none;border-bottom:1px dotted}

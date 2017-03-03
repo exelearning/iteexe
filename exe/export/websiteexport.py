@@ -25,6 +25,7 @@ WebsiteExport will export a package as a website of HTML pages
 import logging
 import re
 import imp
+import os
 from shutil                   import rmtree
 from exe.engine.path          import Path, TempDirPath
 from exe.export.pages         import uniquifyNames
@@ -32,9 +33,13 @@ from exe.export.websitepage   import WebsitePage
 from zipfile                  import ZipFile, ZIP_DEFLATED
 from exe.webui                import common
 from exe                      import globals as G
-import os
-from exe.engine.persist import encodeObject
-from exe.engine.persistxml import encodeObjectToXML
+from exe.engine.persist       import encodeObject
+from exe.engine.persistxml    import encodeObjectToXML
+from helper                   import exportMinFileJS
+from helper                   import exportMinFileCSS
+from exe.webui.common         import getFilesCSSToMinify
+from exe.webui.common         import getFilesJSToMinify
+
 
 log = logging.getLogger(__name__)
 
@@ -173,8 +178,7 @@ class WebsiteExport(object):
        
         if os.path.isdir(self.stylesDir):
             # Copy the style sheet files to the output dir
-            styleFiles  = [self.stylesDir/'..'/'base.css']
-            styleFiles += [self.stylesDir/'..'/'popup_bg.gif']
+            styleFiles = [self.stylesDir/'..'/'popup_bg.gif']
             styleFiles += self.stylesDir.files("*.css")
             styleFiles += self.stylesDir.files("*.jpg")
             styleFiles += self.stylesDir.files("*.gif")
@@ -191,24 +195,30 @@ class WebsiteExport(object):
         # copy the package's resource files
         package.resourceDir.copyfiles(outputDir)
             
+        listCSSFiles=getFilesCSSToMinify('website', self.stylesDir)
+        exportMinFileCSS(listCSSFiles, outputDir)          
+            
         # copy script files.
         my_style = G.application.config.styleStore.getStyle(package.style)
         # jQuery
+        listFiles=[]
+        listOutFiles=[]
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
                 jsFile = (self.scriptsDir/'exe_jquery.js')
                 jsFile.copyfile(outputDir/'exe_jquery.js')
         else:
-            jsFile = (self.scriptsDir/'exe_jquery.js')
-            jsFile.copyfile(outputDir/'exe_jquery.js')
+            listFiles+=[self.scriptsDir/'exe_jquery.js']
+            listOutFiles+=[outputDir/'exe_jquery.js']
             
-        jsFile = (self.scriptsDir/'common.js')
-        jsFile.copyfile(outputDir/'common.js')
+        # Minify common.js file
+        listFiles=getFilesJSToMinify('website', self.scriptsDir)        
+        exportMinFileJS(listFiles, outputDir)
         #dT = common.getExportDocType()
         dT=common.getExportDocType();
         if dT == "HTML5":
             jsFile = (self.scriptsDir/'exe_html5.js')
-            jsFile.copyfile(outputDir/'exe_html5.js')
+            jsFile.copyfile(outputDir/'exe_html5.js')   
 
         # Incluide eXe's icon if the Style doesn't have one
         themePath = Path(G.application.config.stylesDir/package.style)

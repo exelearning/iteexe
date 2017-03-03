@@ -19,7 +19,7 @@ body, html  {
 	line-height:120%;
 	height:100%;
 }
-* {font-family:Verdana,Arial, Helvetica, sans-serif !important}
+body,.feedback {font-family:Verdana,Arial, Helvetica, sans-serif}
 p {
 	margin:.7em 0;
 }
@@ -137,6 +137,8 @@ span.iDeviceTitle{height:48px;display:block}
 .emphasis1 .iDevice_content_wrapper{
     padding:0 25px 10px 40px;
 }
+
+.iDevice_content{overflow:auto}
 
 /* Actividad */
 .activityIdevice .iDevice_header{

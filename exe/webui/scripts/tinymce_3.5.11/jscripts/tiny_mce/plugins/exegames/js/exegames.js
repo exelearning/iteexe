@@ -38,6 +38,7 @@ var eXeGames = {
 		
 		eXeGames.mode = "edit";
         var inside = false;
+		var isElement = false;
         
 		var vals = this.values;
 		var parents;
@@ -47,6 +48,14 @@ var eXeGames = {
 			if (parents.length>0) {
 				inside = true;	
 				classToSelect = "exe-"+vals[i];
+			} else {
+				// IE gets the whole block instead of a part of it
+				if (e.hasClass("exe-game") && e.hasClass("exe-"+vals[i])) {
+					inside = true;	
+					isElement = true;
+					parents = e;
+					classToSelect = "exe-"+vals[i];
+				}				
 			}
 		}  
 
@@ -55,7 +64,7 @@ var eXeGames = {
         
         // Edition
         if (inside) {
-            if (parents.length!=1) {
+            if (parents.length!=1 && !isElement) {
                 tinyMCEPopup.alert(tinyMCEPopup.getLang('exegames.error_recovering_data'));
                 return false;
             }

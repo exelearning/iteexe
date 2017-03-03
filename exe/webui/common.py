@@ -342,11 +342,13 @@ def ideviceHeader(e, style, mode):
     #Default HTML tags:
     articleTag = "div"
     headerTag = "div"
-    titleTag = "h2"   
+    titleTag = "h2"
     if dT == "HTML5":
         articleTag = "article"
         headerTag = "header"
         titleTag = "h1"
+        if hasattr(e.idevice.parentNode, 'exportType') and e.idevice.parentNode.exportType == 'singlepage':
+            titleTag = "h2"
         
     themePath = Path(G.application.config.stylesDir/style)
     themeXMLFile = themePath.joinpath("config.xml")
@@ -380,6 +382,7 @@ def ideviceHeader(e, style, mode):
                 if e.idevice.icon==e.idevice.originalicon:
                     displayIcon = False
             '''
+            iconExists = False
             k = e.idevice.klass
             i = e.idevice.icon
             if (k=='ListaIdevice' and i=='question') or (k=='CasestudyIdevice' and i=='casestudy') or (k=='GalleryIdevice' and i=='gallery') or (k=='ClozeIdevice' and i=='question') or (k=='ReflectionIdevice' and i=='reflection') or (k=='QuizTestIdevice' and i=='question') or (k=='TrueFalseIdevice' and i=='question') or (k=='MultiSelectIdevice' and i=='question') or (k=='MultichoiceIdevice' and i=='question'):
@@ -390,9 +393,18 @@ def ideviceHeader(e, style, mode):
                 iconPath = 'icon_'+e.idevice.icon+'.gif'
             myIcon = themePath.joinpath("icon_" + e.idevice.icon + ".gif")
             if myIcon.exists():
+                iconExists = True
+            else: 
+                myIcon = themePath.joinpath("icon_" + e.idevice.icon + ".png")
+                if myIcon.exists():
+                    iconExists = True  
+                    iconPath = '/style/'+style+'/icon_'+e.idevice.icon+'.png'
+                    if mode=="view":
+                        iconPath = 'icon_'+e.idevice.icon+'.png'
+            if iconExists:
                 o += u'<img alt="" class="iDevice_icon" src="'+iconPath+'" />'
             if (e.idevice.icon+"Idevice") != e.idevice.klass:
-                if myIcon.exists() and displayIcon:
+                if iconExists and displayIcon:
                     h += ' style="background-image:url('+iconPath+')"'
         else:
             log.debug("Idevice %s at node %s has no icon" % (e.idevice._title, e.idevice.parentNode._title))
@@ -1347,3 +1359,36 @@ def getQuizTestPassRate(node):
             if idevice.isQuiz == True:
                 return idevice.passRate
     return False
+
+def getFilesJSToMinify(type, scriptsDir):
+    # Read about these files format (comments) in exportMinFileJS (helper.py)
+    listJSFiles=[]
+    if(type =='ims'):
+        listJSFiles+=[{'path':scriptsDir/'common.js','basename':'common.js'}]
+    elif(type=='epub3'):
+        listJSFiles+=[{'path':scriptsDir/'common.js','basename':'common.js'}]
+    elif(type=='scorm'):
+        listJSFiles+=[{'path':scriptsDir/'common.js','basename':'common.js'}]
+    elif(type=='singlepage'):
+        listJSFiles+=[{'path':scriptsDir/'common.js','basename':'common.js'}]     
+    elif(type=='website'):
+        listJSFiles+=[{'path':scriptsDir/'common.js','basename':'common.js'}]
+    
+    return listJSFiles
+
+
+def getFilesCSSToMinify(type, styleDir):
+    listCSSFiles=[]
+    if(type =='ims'):
+        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}]
+    elif(type=='epub3'):
+        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}] 
+    elif(type=='scorm'):
+        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}] 
+    elif(type=='singlepage'):
+        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}]
+    elif(type=='website'):
+        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}]
+    
+    
+    return listCSSFiles

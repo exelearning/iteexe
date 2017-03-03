@@ -557,13 +557,6 @@
             } else {
                 get('use_mediaelement').style.display = 'none';
             }
-            if (data.type == 'iframe') {
-                get('filebrowser_link').style.display = 'none';
-                get('src').style.width = '250px';
-            } else {
-                get('filebrowser_link').style.display = '';
-                get('src').style.width = '230px';
-            }
             // /The New eXeLearning         
 
             setOptions('flash', 'play,loop,menu,swliveconnect,quality,scale,salign,wmode,base,flashvars');
@@ -974,10 +967,10 @@
             html += option("flash", "object");
             html += option("quicktime", "object");
             // The New eXeLearning
-            //html += option("shockwave", "object");
+            // html += option("shockwave", "object");
+            // html += option("windowsmedia", "object");
+            // html += option("realmedia", "object");
             // /The New eXeLearning
-            html += option("windowsmedia", "object");
-            html += option("realmedia", "object");
             html += option("iframe");
 
             if (editor.getParam('media_embedded_audio', false)) {

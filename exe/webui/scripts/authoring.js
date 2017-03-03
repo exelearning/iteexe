@@ -24,6 +24,7 @@
 // action and object fields so they can be used by submitLink
 
 // An array of js strings to evaluate on document load
+// $exeAuthoring.countBase64 and $exeAuthoring.compareBase64 will not be used if exe_editor_version == 4
 var Ext = parent.Ext;
 var eXe = parent.eXe;
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
@@ -108,7 +109,9 @@ function askUserForMedia(fn,win) {
         callback: function(fp) {
 			if (fp.status == parent.eXe.view.filepicker.FilePicker.returnOk) {
 				fn(fp.file.path);
-				if (typeof(win)!="undefined") win.document.forms[0].elements['href'].onchange();
+				if (typeof(win)!="undefined") {
+					if (exe_editor_version==3) win.document.forms[0].elements['href'].onchange();
+				}
 			} else {
 				fn("");
 			}
@@ -210,7 +213,7 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
            return;
         }
     
-        // UNescape, to remove the %20's for spaces, etc.:
+        // unescape, to remove the %20's for spaces, etc.:
         var unescaped_local_imagePath = unescape(local_imagePath);
         var oldImageStr = new String(unescaped_local_imagePath);
     
@@ -235,7 +238,9 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
                       preview_imageName)
     
         // first, clear out any old value in the tinyMCE image filename field:
-        win.document.forms[0].elements[field_name].value = ""; 
+        var formField = win.document.getElementById(field_name);
+        
+        formField.value = ""; 
     
         // PreviewImage is only available for images:
         if (type == "image") {
@@ -247,7 +252,7 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
     
     
         // set the tinyMCE image filename field:
-        win.document.forms[0].elements[field_name].value = full_previewImage_url;
+        formField.value = full_previewImage_url;
         // then force its onchange event:
     
         // PreviewImage is only available for images:
@@ -333,7 +338,8 @@ function makeMathImage_viaTinyMCE(field_name, src_latex, font_size, type, win) {
     win.focus();
 
     // clear out any old value in the tinyMCE image filename field:
-    win.document.forms[0].elements[field_name].value = ""; 
+    var formField = win.document.getElementById(field_name);
+    formField.value = ""; 
     // PreviewImage is only available for images:
     if (type == "image") {
        win.showPreviewImage(" ");
@@ -342,7 +348,7 @@ function makeMathImage_viaTinyMCE(field_name, src_latex, font_size, type, win) {
     // ensure that we can trigger the onchange event below:
 
     // set the tinyMCE image filename field:
-    win.document.forms[0].elements[field_name].value = full_preview_url;
+    formField.value = full_preview_url;
     // then force its onchange event:
     // PreviewImage is only available for images:
     if (type == "image") {
@@ -526,7 +532,7 @@ function enableAnchors() {
                 node_anchor = this.href.split("#"),
                 path = node_anchor[0].replace(/exe-node/, ':Root'),
                 selected;
-            outline_tree.selectPath(unescape(path), 'text', ':');
+            outline_tree.selectPath(decodeURIComponent(path), 'text', ':');
             selected = outline_tree.getSelectionModel().getSelection()[0];
             outline.onNodeClick(null, selected);
             if (node_anchor[1] != "auto_top")
@@ -576,40 +582,17 @@ function loadKeymap() {
 /* ********************************* */
 
 // Common settings
-function wysiwyg_extras(){
-    // document.write(unescape("%3Cscript src=\'/scripts/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML\' type=\'text/javascript\'%3E%3C/script%3E"));
-    document.write(unescape("%3Cscript src=\'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\' type=\'text/javascript\'%3E%3C/script%3E"));
-    document.write(unescape("%3Cscript src=\'http://code.jquery.com/ui/1.10.3/jquery-ui.js' type=\'text/javascript\'%3E%3C/script%3E"));
-    document.write(unescape("%3Cscript src=\'/scripts/writemaths/rangy-core.js\' type=\'text/javascript\'%3E%3C/script%3E"));
-    document.write(unescape("%3Cscript src=\'/scripts/writemaths/textinputs_jquery.js\' type=\'text/javascript\'%3E%3C/script%3E"));
-    document.write(unescape("%3Cscript src=\'/scripts/writemaths/writemaths.js\' type=\'text/javascript\'%3E%3C/script%3E"));
-    $(function(){
-        $("IMG.exe-latex").each(function(){
-            var img = $(this);
-            img.css("visibility","hidden");
-            $.ajax(img.attr("exe_math_latex"))
-            .done(function(res) {
-                img.before(res).remove();
-                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-            });
-        });
-    });
-}
-var tinyMCEversion = 4;
 var eXeLearning_settings = {
     wysiwyg_path : "/scripts/tinymce_3.5.11/jscripts/tiny_mce/tiny_mce.js",
-    wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js",
-    wysiwyg_extras : function(){
-        wysiwyg_extras();
-    }
+    wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
 }
-if (tinyMCEversion==4) {
+
+if (typeof(exe_editor_version)=='undefined') exe_editor_version=3;
+
+if (exe_editor_version==4) {
 	eXeLearning_settings = {
-		wysiwyg_path : "/scripts/tinymce_4.2.7/js/tinymce/tinymce.min.js",
-		wysiwyg_settings_path : "/scripts/tinymce_4.2.7_settings.js",
-        wysiwyg_extras : function(){
-            wysiwyg_extras();
-        }
+		wysiwyg_path : "/scripts/tinymce_4/js/tinymce/tinymce.min.js",
+		wysiwyg_settings_path : "/scripts/tinymce_4_settings.js"
 	}
 }
 
@@ -638,6 +621,83 @@ function getTinyMCELang(lang){
 //TinyMCE file_browser_callback
 var exe_tinymce = {
 	
+	dragDropImage : function(theTarget, node, evalAfterDone, win, win_name,
+			blobName, blobBase64) {
+		var local_imagePath = 'data:image/jpeg;base64,' + blobBase64;
+
+		var unescaped_local_imagePath = unescape(local_imagePath);
+		var oldImageStr = new String(blobName);
+
+		exe_tinymce.uploaded_file_1_name = "";
+
+		var RegExp1 = /[\ \\\/\:\%\&]/g;
+		var ReplaceStr1 = new String("_");
+		var newImageStr = oldImageStr.replace(RegExp1, ReplaceStr1);
+
+		var early_preview_imageName = encodeURIComponent(newImageStr);
+		var preview_imageName = early_preview_imageName.replace(RegExp1,
+				ReplaceStr1);
+		var full_previewImage_url = "/previews/" + preview_imageName;
+
+		var previewTinyMCEDragDropImageDone = function() {
+
+			var alternativeText = function(button, input_alt_value) {
+
+				var editor = tinyMCE.activeEditor.getBody();
+				var imgs = editor.getElementsByTagName("IMG");
+
+				var n = imgs.length - 1;
+
+				var img = imgs[n];
+				img.setAttribute('width', img.width);
+				img.setAttribute('height', img.height);
+
+				if (input_alt_value.length == 0) {
+
+					parent.Ext.Msg
+							.confirm(
+									"",
+									_("Are you sure you want to continue without including an Image Description? Without it the image may not be accessible to some users with disabilities, or to those using a text browser, or browsing the Web with images turned off."),
+									function(button) {
+										if (button == "yes") {
+											img.setAttribute('alt', '');
+										} else {
+											Ext.Msg
+													.prompt(
+															_('Image description'),
+															_('Please provide an image description (alternative text):'),
+															alternativeText);
+										}
+									});
+				} else {
+
+					if (button === 'ok') {
+						img.setAttribute('alt', input_alt_value);
+					} else {
+						img.setAttribute('alt', '');
+					}
+				}
+			}
+
+			Ext.Msg
+					.prompt(
+							_('Image description'),
+							_('Please provide an image description (alternative text):'),
+							alternativeText);
+
+			eXe.app.un('previewTinyMCEDragDropImageDone',
+					previewTinyMCEDragDropImageDone);
+		}
+		eXe.app.on('previewTinyMCEDragDropImageDone',
+				previewTinyMCEDragDropImageDone);
+
+		window.parent.nevow_clientToServerEventPOST(theTarget, node,
+				evalAfterDone, false, win, win_name, unescaped_local_imagePath,
+				preview_imageName);
+
+		return (full_previewImage_url);
+	},
+		
 	chooseImage : function(field_name, url, type, win) {
 		
 		var fn = function(local_imagePath) {
@@ -649,7 +709,7 @@ var exe_tinymce = {
                 return;
             }
 
-            // UNescape, to remove the %20's for spaces, etc.:
+            // unescape, to remove the %20's for spaces, etc.:
             var unescaped_local_imagePath = unescape(local_imagePath);
             var oldImageStr = new String(unescaped_local_imagePath);
 
@@ -680,8 +740,8 @@ var exe_tinymce = {
 
             var previewTinyMCEImageDone = function() {
                 // first, clear out any old value in the tinyMCE image filename field:
-				var formField = win.document.getElementById(field_name);
-				formField.value = "";
+                var formField = win.document.getElementById(field_name);
+                formField.value = "";
 
                 // set the tinyMCE image filename field:
                 formField.value = full_previewImage_url;
@@ -689,9 +749,10 @@ var exe_tinymce = {
                 $(formField).trigger("change");
 
                 // PreviewImage is only available for images:
-                if (type == "image") {
-					if (tinyMCEversion==3) win.ImageDialog.showPreviewImage(full_previewImage_url);
-					else {
+                if (type == "image") {					
+					if (exe_editor_version==3) {
+						if (typeof(win.ImageDialog)!='undefined') win.ImageDialog.showPreviewImage(full_previewImage_url);
+					} else {
 						formField.value = full_previewImage_url;
 						// Set the image dimensions
 						var img = new Image() ;
@@ -710,7 +771,7 @@ var exe_tinymce = {
 					}
                 }
                 else if (type == "media") {
-                    if (tinyMCEversion==3) win.window.Media.preview();
+					if (exe_editor_version==3) win.window.Media.preview();
 					else formField.value = full_previewImage_url;
                 }
 
@@ -719,7 +780,7 @@ var exe_tinymce = {
                 // in tinyMCE, then this would be out of sync.
 
                 // and finally, be sure to update the tinyMCE window's image data:
-                if (tinyMCEversion==3) {
+                if (exe_editor_version==3) {
 					if (win.getImageData) {
 						win.getImageData();
 					} else {
@@ -727,7 +788,7 @@ var exe_tinymce = {
 							window.tinyMCE.getImageData();
 						}
 					}
-				}
+                }
 
                 eXe.app.un('previewTinyMCEImageDone', previewTinyMCEImageDone);
             };
@@ -799,6 +860,24 @@ var $exeAuthoring = {
 			}
 		},500);
 	},
+    errorHandler : function(origin){
+        
+        // Could not transform LaTeX to image
+        if (origin=="handleTinyMCEmath") {
+            if (exe_editor_version == 4) PasteMathDialog.preloader.hide();
+        }
+        
+        // Could not transform MathML to image
+        else if (origin=="handleTinyMCEmathML") {
+            PasteMathDialog.preloader.hide();
+        }
+
+    },
+    // Some iDevices (like Cloze Activity) have a button to select (underline) words
+    toggleWordInEditor : function(id){
+        if (exe_editor_version==3) tinyMCE.execInstanceCommand(id, 'Underline', false);
+        else tinyMCE.activeEditor.getDoc().execCommand('Underline', false, false);
+    },
     changeFlowPlayerPathInIE : function(){
         var objs = document.getElementsByTagName("OBJECT");
         var i = objs.length;
@@ -831,10 +910,28 @@ var $exeAuthoring = {
     disableSVGInMediaElement : function(){
         $(document.body).addClass("no-svg");
     },
+    IE11hacks : function(){
+        var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+        if (isIE11) {
+            $("object").each(function(){
+                var i = this.innerHTML;
+                if (i.indexOf("<param")!=-1 && i.indexOf("exe_flv")!=-1 && i.indexOf("wmode")==-1) {
+                    // Add wmode transparent and reload the HTML
+                    var par = $(this).parent();
+                    if (par.length==1) {
+                        this.innerHTML += '<param name="wmode" value="transparent">';
+                        par.html(par.html());
+                    }
+                }
+            });				
+        }
+    },
     ready : function(){
         if (top.Ext) {
             $exeAuthoring.disableSVGInMediaElement();
             $exeAuthoring.setYoutubeWmode();
+            // To review (see https://github.com/exelearning/iteexe/issues/127)
+            $exeAuthoring.IE11hacks();
             if (top.Ext.isIE) {
                 $exeAuthoring.changeFlowPlayerPathInIE();
             }
@@ -842,6 +939,8 @@ var $exeAuthoring = {
         }
     }
 }
+// Access from the top window so it's easier to call some methods (like errorHandler)
+top.$exeAuthoring = $exeAuthoring;
 //new functions from common.js
 function magnifierImageChanged(event) {
     var id = event.currentTarget.getAttribute('id');

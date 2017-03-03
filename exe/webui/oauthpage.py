@@ -22,9 +22,9 @@ from nevow import rend, inevow
 
 
 class ProcomunOauth(Renderable, rend.Page):
-    CLIENT_ID = 'H5hAmUY6TpszVrKVDrsHdzOF8TDCEkwM'
-    CLIENT_SECRET = '2CztfIIaAD4C7iZdIUgfJRivFfOFNQaGekuYHdnGrMdnLhC6'
-    BASE_URL = 'https://agrega2-front-pre.emergya.es'
+    CLIENT_ID = '1Zl5ATaKchp8hecNGGhpfvQnUZaRTxkS'
+    CLIENT_SECRET = '5ESrTI1QXb971YdZk22t5XOWCRWOuzHRV1L1Ho8aOl7NuTFN'
+    BASE_URL = 'https://procomun.educalab.es'
     REDIRECT_URI = 'http://localhost:51235/oauth/procomun/callback'
     AUTHORIZATION_BASE_URL = BASE_URL + '/oauth2/authorize'
     TOKEN_URL = BASE_URL + '/oauth2/token'
@@ -53,7 +53,6 @@ class ProcomunOauth(Renderable, rend.Page):
             oauth2Session, client = state
             client.session.oauthToken['procomun'] = oauth2Session.fetch_token(self.TOKEN_URL, client_secret=self.CLIENT_SECRET, code=code)
             script = ('''
-                top.eXe.controller.eXeViewport.prototype.eXeNotificationStatus(top._('Publishing document to Procomún'), top._('Exporting package as SCORM'));
                 top.nevow_clientToServerEvent('exportProcomun', this, '');
                 top.Ext.getCmp('oauthprocomun').close()
             ''')

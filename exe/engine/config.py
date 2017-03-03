@@ -50,7 +50,7 @@ class Config(object):
     """
 
     # To build link to git revision
-    baseGitWebURL = 'https://forja.cenatic.es/plugins/scmgit/cgi-bin/gitweb.cgi?p=iteexe/iteexe.git'
+    baseGitWebURL = 'https://github.com/exelearning/iteexe'
 
     # Class attributes
     optionNames = {
@@ -63,7 +63,7 @@ class Config(object):
                    'audioMediaConverter_au', 'audioMediaConverter_mp3',
                    'audioMediaConverter_wav', 'ffmpegPath'),
         'user': ('locale', 'lastDir', 'showPreferencesOnStart',
-                 'defaultStyle', 'showIdevicesGrouped', 'docType', 'editorMode','defaultLicense'),
+                 'defaultStyle', 'showIdevicesGrouped', 'docType', 'editorMode', 'editorVersion', 'defaultLicense'),
     }
 
     idevicesCategories = {
@@ -132,6 +132,7 @@ class Config(object):
         # webDir is the parent directory for styles,scripts and templates
         self.webDir      = self.exePath.dirname()
         self.jsDir       = self.exePath.dirname()
+        self.locales     = {}
         # localeDir is the base directory where all the locales are stored
         self.localeDir   = self.exePath.dirname()/"locale"
         # port is the port the exe webserver will listen on
@@ -155,7 +156,7 @@ class Config(object):
         # None for system default
         self.browser = None
         # docType  is the HTML export format
-        self.docType = 'XHTML'
+        self.docType = 'HTML5'
         # internalAnchors indicate which exe_tmp_anchor tags to generate for each tinyMCE field
         # available values = "enable_all", "disable_autotop", or "disable_all"
         self.internalAnchors = "enable_all"
@@ -164,6 +165,7 @@ class Config(object):
         self.showIdevicesGrouped = "1"
         # tinymce option
         self.editorMode = 'permissive'
+        self.editorVersion = '4'
         # styleSecureMode : if this [user] key is = 0  , exelearning can run python files in styles
         # as websitepage.py , ... ( deactivate secure mode )
         self.styleSecureMode = "1"
@@ -423,6 +425,8 @@ class Config(object):
         if self.configParser.has_section('user'):
             if self.configParser.user.has_option('editorMode'):
                 self.editorMode = self.configParser.user.editorMode
+            if self.configParser.user.has_option('editorVersion'):
+                self.editorVersion = self.configParser.user.editorVersion
             if self.configParser.user.has_option('docType'):
                 self.docType = self.configParser.user.docType
                 common.setExportDocType(self.configParser.user.docType)
@@ -540,17 +544,16 @@ class Config(object):
         log = logging.getLogger()
         log.debug("loadLocales")
         gettext.install('exe', self.localeDir, True)
-        self.locales = {}
         for subDir in self.localeDir.dirs():
             if (subDir/'LC_MESSAGES'/'exe.mo').exists():
                 self.locales[subDir.basename()] = \
                     gettext.translation('exe',
                                         self.localeDir,
                                         languages=[str(subDir.basename())])
-                if subDir.basename() == self.locale:
-                    locale = subDir.basename()
-                    log.debug(" loading locale %s" % locale)
-                    self.locales[locale].install(unicode=True)
-                    __builtins__['c_'] = lambda s: self.locales[locale].ugettext(s) if s else s
+        if self.locale not in self.locales:
+            self.locale = 'en'
+        log.debug("loading locale %s" % self.locale)
+        self.locales[self.locale].install(unicode=True)
+        __builtins__['c_'] = lambda s: self.locales[self.locale].ugettext(s) if s else s
 
 # ===========================================================================

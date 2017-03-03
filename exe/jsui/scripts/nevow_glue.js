@@ -45,6 +45,15 @@ function connect(outputNum) {
             }
         }
     }
+    xmlhttp.onabort = function() {
+        last_request = xmlhttp;
+        if (!liveevil_unload && auto_open) {
+            setTimeout(function(){
+                connect(outputNum + 1);
+            }, 4000);
+        }
+    }
+    xmlhttp.onerror = xmlhttp.onabort;
     xmlhttp.open("GET", base_url + "nevow_liveOutput?outputNum=" + outputNum + "&client-handle-id=" + nevow_clientHandleId, true)
     xmlhttp.send(null)
 }
@@ -96,6 +105,34 @@ function nevow_clientToServerEvent(theTarget, node, evalAfterDone) {
       additionalArguments)
 
     input.send(null)
+}
+
+
+function nevow_clientToServerEventPOST(theTarget, node, evalAfterDone, async) {
+	if (theTarget != 'close' && liveevil_unload) {
+		// Server had previously closed the output; let's open it again.
+		if (auto_open) {
+			liveevil_unload = false
+		}
+		connect(0)
+	}
+	var additionalArguments = ''
+	for (i = 4; i < arguments.length; i++) {
+		additionalArguments += '&arguments='
+		additionalArguments += encodeURIComponent(arguments[i])
+	}
+
+	input = createRequest()
+	input.onreadystatechange = function() {
+		if (input.readyState == 4 && evalAfterDone) {
+			eval(evalAfterDone)
+		}
+	}
+	input.open("POST", base_url + "nevow_liveInput?target="
+			+ encodeURIComponent(theTarget) + '&client-handle-id='
+			+ nevow_clientHandleId, async)
+	input.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	input.send(additionalArguments)
 }
 
 function nevow_setNode(node, to) {

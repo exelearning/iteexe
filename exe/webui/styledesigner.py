@@ -24,6 +24,7 @@ StyleDesigner provides the functions to create and save the Styles edited with t
 import logging
 import re
 import os
+import sys
 import shutil
 import json
 import unicodedata
@@ -96,9 +97,9 @@ class StyleDesigner(Renderable, Resource):
         Replaces ' ', '\t', '\f', '\r' with '_', accented with non accented characters,
         cleans non alphanumeric chars and converts to lower case
         """
-        style_id = str(style_name)
+        style_id = style_name.decode(sys.getdefaultencoding(), 'ignore')
         style_id = style_id.lower()
-        style_id = unicodedata.normalize('NFKD', unicode(style_id))
+        style_id = unicodedata.normalize('NFKD', style_id)
         style_id = style_id.encode('ascii', 'ignore')
 
         clean_non_alphanum = re.compile('\W+')
@@ -161,10 +162,11 @@ class StyleDesigner(Renderable, Resource):
         ET.SubElement(theme, 'license-url').text = style_config['license-url']
         ET.SubElement(theme, 'description').text = style_config['description']
 
-        # 'extra-head' and 'extra-body' can contain scripts and headers, they
+        # 'extra-head', 'edition-extra-head' and 'extra-body' can contain scripts and headers, they
         # must be enclosed on <![CDATA[ ]]> tags and HTML entities should not
         # be escaped
         # ET.SubElement(theme, 'extra-head').text = '<![CDATA[' + style_config['extra-head'] + ']]>'
+        # ET.SubElement(theme, 'edition-extra-head').text = '<![CDATA[' + style_config['edition-extra-head'] + ']]>'
         # ET.SubElement(theme, 'extra-body').text = '<![CDATA[' + style_config['extra-body'] + ']]>'
 
         configxml = ET.tostring(theme, 'utf-8')
@@ -174,14 +176,21 @@ class StyleDesigner(Renderable, Resource):
         # UGLY HACK (mclois): 'extra-head' and 'extra-body' can contain HTML headers and scripts,
         # they must be wrapped on <![CDATA[ ]] tags, and HTML entities should not be escaped
         # ElementTree escapes HTML entities, so I add those attributes here
-        extra = '<extra-head><![CDATA[' + style_config['extra-head'] + ']]></extra-head>'
-        extra = extra + '<extra-body><![CDATA[' + style_config['extra-body'] + ']]></extra-body>'
+        extra = '    <extra-head><![CDATA[' + style_config['extra-head'] + ']]></extra-head>\n'
+        extra = extra + '    <extra-body><![CDATA[' + style_config['extra-body'] + ']]></extra-body>\n'
+        try:
+            extra = extra + '    <edition-extra-head><![CDATA[' + style_config['edition-extra-head'] + ']]></edition-extra-head>\n'
+        except:
+            # The Style has no edition-extra-head
+            extra = extra
         extra = extra + '</theme>'
         configxml_pretty = configxml_pretty.replace('</theme>', extra)
 
         configxml_file = open(styleDir / 'config.xml', 'w')
         configxml_file.write(configxml_pretty)
         configxml_file.close()
+        
+        return styleDir
 
     def createStyle(self, style_dirname, style_data):
         """
@@ -235,6 +244,7 @@ class StyleDesigner(Renderable, Resource):
                 config_base = ET.parse(baseStyleDir / 'config.xml')
                 extra_head = config_base.find('extra-head').text
                 extra_body = config_base.find('extra-body').text
+                edition_extra_head = config_base.find('edition-extra-head').text
                 configxml = {
                     'name': style_data['style_name'][-1],
                     'version': '1.0',
@@ -242,10 +252,11 @@ class StyleDesigner(Renderable, Resource):
                     'author': author,
                     'author-url': author_url,
                     'license': 'Creative Commons by-sa',
-                    'license-url': 'http://creativecommons.org/licenses/by-sa/3.0/',
+                    'license-url': 'http://creativecommons.org/licenses/by-sa/4.0/',
                     'description': description,
                     'extra-head': extra_head,
                     'extra-body': extra_body,
+                    'edition-extra-head': edition_extra_head
                 }
                 self.updateStyle(styleDir, contentcss, navcss, configxml)
 
@@ -316,6 +327,24 @@ class StyleDesigner(Renderable, Resource):
                 config_org = ET.parse(styleDir / 'config.xml')
                 extra_head = config_org.find('extra-head').text
                 extra_body = config_org.find('extra-body').text
+                if config_org.find('edition-extra-head'):
+                    edition_extra_head = config_org.find('edition-extra-head').text
+                else:
+                    # To review
+                    # edition-extra-head was not in the previous version of StyleDesigner
+                    # edition_extra_head was not found in the Style
+                    copy_from = 'base'
+                    baseStyleDir = self.config.stylesDir / copy_from                
+                    config_base = ET.parse(baseStyleDir / 'config.xml')
+                    config_extra_head = config_base.find('extra-head').text
+                    if config_extra_head == extra_head:
+                        # The user did not change the original 'extra-head', so _style_js.js exists
+                        # We just use Base's 'edition-extra-head'
+                        edition_extra_head = config_base.find('edition-extra-head').text
+                    else:
+                        # The user changed the original 'extra-head', so _style_js.js might not exist
+                        # edition_extra_head
+                        edition_extra_head = ''
                 configxml = {
                     'name': style_data['style_name'][-1],
                     'version': next_version,
@@ -323,13 +352,20 @@ class StyleDesigner(Renderable, Resource):
                     'author': author,
                     'author-url': author_url,
                     'license': 'Creative Commons by-sa',
-                    'license-url': 'http://creativecommons.org/licenses/by-sa/3.0/',
+                    'license-url': 'http://creativecommons.org/licenses/by-sa/4.0/',
                     'description': description,
                     'extra-head': extra_head,
                     'extra-body': extra_body,
+                    'edition-extra-head': edition_extra_head
                 }
-                self.updateStyle(styleDir, contentcss, navcss, configxml)
-                return style
+                
+                newStyleDir= self.updateStyle(styleDir, contentcss, navcss, configxml)
+                
+                newStyle = Style(newStyleDir)
+                self.config.styleStore.delStyle(style)
+                self.config.styleStore.addStyle(newStyle)
+                
+                return newStyle
 
             except Exception, e:
                 raise StyleDesignerError(e.message)
