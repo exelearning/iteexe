@@ -215,7 +215,7 @@ class AuthoringPage(RenderableResource):
         # The games require additional strings
         html += common.getGamesJavaScriptStrings()
         html += u"<script type=\"text/javascript\">"
-        html += u"var exe_style = '%s';" % estilo
+        html += u"var exe_style = '%s';top.exe_style = exe_style;" % estilo
         # editorpane.py uses exe_style_dirname to auto-select the current style (just a provisional solution)
         html += u"var exe_style_dirname = '%s'; top.exe_style_dirname = exe_style_dirname;" % self.package.style
         html += u"var exe_package_name='"+self.package.name+"';"

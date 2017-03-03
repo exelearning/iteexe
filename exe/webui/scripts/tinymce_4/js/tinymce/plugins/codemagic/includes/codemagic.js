@@ -139,11 +139,23 @@ jQuery(document).ready(function($) {
 	});
 	
 	// Toggle Line Wrapping
-	$("#wraptext").click( function() {
+	// The New eXeLearning
+	// $("#wraptext").click( function() {
+	var wraptext_checkbox = $("#wraptext");
+	wraptext_checkbox.click( function() {
+	// / The New eXeLearning
 		
 		if ($(this).is(':checked')){ myCodeMirror.setOption('lineWrapping', true); }
 		else { myCodeMirror.setOption('lineWrapping', false); }
 	});
+	
+	// The New eXeLearning
+	// Fix https://github.com/exelearning/iteexe/issues/133
+	wraptext_checkbox.trigger("click");
+	setTimeout(function(){
+		wraptext_checkbox.trigger("click");	
+	},200);
+	// / The New eXeLearning
 	
 	// Toggle Auto Completion
 	$("#autocompletion").click( function() {

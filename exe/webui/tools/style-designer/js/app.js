@@ -236,6 +236,13 @@ var $app = {
 											$i18n.Information,
 											result.message,
 											function(btn, txt) {
+										        var authoring = opener.opener.Ext.ComponentQuery.query('#authoring')[0].getWin();
+										        if (authoring && authoring.submitLink) {
+										        	var outlineTreePanel = opener.opener.eXe.app.getController("Outline").getOutlineTreePanel(),
+										            	selected = outlineTreePanel.getSelectionModel().getSelection();
+											        authoring.submitLink("changeNode", selected !== 0? selected[0].data.id : '0');
+										        }
+										    
 												opener.window.close();
 												window.close();
 											}
@@ -260,6 +267,11 @@ var $app = {
 		this.getCurrentCSS();
 		// Enable the Color Pickers after loading the current values
 		
+	},
+	toggleNavWidth : function(hide) {
+		var n = $("#navWidth-wrapper");
+		if (hide) n.hide();
+		else n.show();
 	},
 	preloader : {
 		show : function(){
@@ -516,6 +528,7 @@ var $app = {
 					}
 					else if (currentValue[0]=="horizontalNavigation") {
 						$("#horizontalNavigation").prop('checked', true);
+						$app.toggleNavWidth(true);
 					}
 					else if (currentValue[0]=="noEmShowBox") {
 						$("#noEmShowBox").prop('checked', true);

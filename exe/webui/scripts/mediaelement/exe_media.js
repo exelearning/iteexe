@@ -102,6 +102,13 @@ f(window).height()}if(c!=0&&d!=0){
 // this.container.width(d).height(c);
 // Do not change the size
 this.container.width(this.width).height(this.height);
+// To review (IE11 needs this. See https://github.com/exelearning/iteexe/issues/134)
+if (mejs.$("embed",this.container).length == 1) {
+    mejs.$(".me-plugin",this.container).css({
+        "width" : this.width+"px",
+        "height" : this.height+"px"
+    });
+}
 // / The New eXeLearning
 this.$media.add(this.container.find(".mejs-shim")).width("100%").height("100%");this.isVideo&&this.media.setVideoSize&&this.media.setVideoSize(d,c);this.layers.children(".mejs-layer").width("100%").height("100%")}}else{this.container.width(this.width).height(this.height);this.layers.children(".mejs-layer").width(this.width).height(this.height)}d=this.layers.find(".mejs-overlay-play");c=d.find(".mejs-overlay-button");d.height(this.container.height()-
 this.controls.height());c.css("margin-top","-"+(c.height()/2-this.controls.height()/2).toString()+"px")},setControlsSize:function(){var a=0,b=0,c=this.controls.find(".mejs-time-rail"),e=this.controls.find(".mejs-time-total");this.controls.find(".mejs-time-current");this.controls.find(".mejs-time-loaded");var d=c.siblings();if(this.options&&!this.options.autosizeProgress)b=parseInt(c.css("width"));if(b===0||!b){d.each(function(){var g=f(this);if(g.css("position")!="absolute"&&g.is(":visible"))a+=f(this).outerWidth(true)});

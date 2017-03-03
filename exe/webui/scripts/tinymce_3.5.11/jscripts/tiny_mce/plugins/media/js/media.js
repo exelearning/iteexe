@@ -557,13 +557,6 @@
             } else {
                 get('use_mediaelement').style.display = 'none';
             }
-            if (data.type == 'iframe') {
-                get('filebrowser_link').style.display = 'none';
-                get('src').style.width = '250px';
-            } else {
-                get('filebrowser_link').style.display = '';
-                get('src').style.width = '230px';
-            }
             // /The New eXeLearning         
 
             setOptions('flash', 'play,loop,menu,swliveconnect,quality,scale,salign,wmode,base,flashvars');

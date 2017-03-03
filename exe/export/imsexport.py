@@ -39,10 +39,13 @@ from exe.engine.version            import release
 from exe.export.pages              import Page, uniquifyNames
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
 from exe                      	   import globals as G
-from exe.engine.persist import encodeObject
-from exe.engine.persistxml import encodeObjectToXML
-from exe.engine.lom import lomsubs
-
+from exe.engine.persist            import encodeObject
+from exe.engine.persistxml         import encodeObjectToXML
+from exe.engine.lom                import lomsubs
+from helper                        import exportMinFileJS 
+from helper                        import exportMinFileCSS
+from exe.webui.common              import getFilesCSSToMinify
+from exe.webui.common              import getFilesJSToMinify
 log = logging.getLogger(__name__)
 
 
@@ -464,8 +467,7 @@ class IMSExport(object):
 
         # Copy the style sheet files to the output dir
         # But not nav.css
-        styleFiles  = [self.styleDir/'..'/'base.css']
-        styleFiles += [self.styleDir/'..'/'popup_bg.gif']
+        styleFiles = [self.styleDir/'..'/'popup_bg.gif']
         styleFiles += self.styleDir.files("*.css")
         if "nav.css" in styleFiles:
             styleFiles.remove("nav.css")
@@ -482,6 +484,9 @@ class IMSExport(object):
 
         # copy the package's resource files
         package.resourceDir.copyfiles(outputDir)
+        
+        listCSSFiles=getFilesCSSToMinify('ims', self.styleDir)
+        exportMinFileCSS(listCSSFiles, outputDir)
             
         # Export the package content
         self.pages = [ IMSPage("index", 1, package.root,
@@ -505,16 +510,18 @@ class IMSExport(object):
             if my_style.get_jquery() == True:
                 jsFile = (self.scriptsDir/'exe_jquery.js')
                 jsFile.copyfile(outputDir/'exe_jquery.js')
+                
         else:
             jsFile = (self.scriptsDir/'exe_jquery.js')
-            jsFile.copyfile(outputDir/'exe_jquery.js')                
-        
-        jsFile = (self.scriptsDir/'common.js')
-        jsFile.copyfile(outputDir/'common.js')
+            jsFile.copyfile(outputDir/'exe_jquery.js')   
+                
         dT = common.getExportDocType()
         if dT == "HTML5":
             jsFile = (self.scriptsDir/'exe_html5.js')
             jsFile.copyfile(outputDir/'exe_html5.js')
+
+        listFiles=getFilesJSToMinify('ims', self.scriptsDir)        
+        exportMinFileJS(listFiles, outputDir)
         
         self.schemasDir.copylist(('imscp_v1p1.xsd',
                                   'imsmd_v1p2p2.xsd',

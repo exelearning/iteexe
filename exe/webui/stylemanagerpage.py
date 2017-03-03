@@ -58,7 +58,7 @@ class ImportStyleExistsError(ImportStyleError):
             self.message = message
 
     def __str__(self):
-        return repr(self.message)
+        return self.message
 
     pass
 
@@ -174,7 +174,7 @@ class StyleManagerPage(RenderableResource):
                                filter_func=allSessionClients)
 
     def alert(self, title, mesg):
-        self.client.sendScript("Ext.Msg.alert('%s','%s')" % (title, mesg),
+        self.client.sendScript('Ext.Msg.alert("%s","%s")' % (title, mesg),
                                filter_func=allSessionClients)
 
     def renderListStyles(self):

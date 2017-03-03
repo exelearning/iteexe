@@ -21,13 +21,17 @@
 SinglePageExport will export a package as a website of HTML pages
 """
 
+import os
 from exe.engine.path          import Path
 from exe.export.singlepage    import SinglePage
 from exe.webui                import common
 from exe                      import globals as G
-import os
-from exe.engine.persist import encodeObject
-from exe.engine.persistxml import encodeObjectToXML
+from exe.engine.persist       import encodeObject
+from exe.engine.persistxml    import encodeObjectToXML
+from helper                   import exportMinFileJS
+from helper                   import exportMinFileCSS
+from exe.webui.common         import getFilesCSSToMinify
+from exe.webui.common         import getFilesJSToMinify
 
 import logging
 log = logging.getLogger(__name__)
@@ -86,8 +90,7 @@ class SinglePageExport(object):
         # But not nav.css
         if os.path.isdir(self.stylesDir):
             # Copy the style sheet files to the output dir
-            styleFiles  = [self.stylesDir/'..'/'base.css']
-            styleFiles += [self.stylesDir/'..'/'popup_bg.gif']
+            styleFiles = [self.stylesDir/'..'/'popup_bg.gif']
             styleFiles += self.stylesDir.files("*.css")
             if "nav.css" in styleFiles:
                 styleFiles.remove("nav.css")
@@ -106,6 +109,9 @@ class SinglePageExport(object):
         # copy the package's resource files
         package.resourceDir.copyfiles(self.outputDir)
 
+        listCSSFiles=getFilesCSSToMinify('singlepage', self.stylesDir)
+        exportMinFileCSS(listCSSFiles, self.outputDir)
+
         # copy script files.
         my_style = G.application.config.styleStore.getStyle(package.style)
         
@@ -117,13 +123,15 @@ class SinglePageExport(object):
         else:
             jsFile = (self.scriptsDir/'exe_jquery.js')
             jsFile.copyfile(self.outputDir/'exe_jquery.js')
-            
-        jsFile = (self.scriptsDir/'common.js')
-        jsFile.copyfile(self.outputDir/'common.js')
+        
         dT = common.getExportDocType()
         if dT == "HTML5":
             jsFile = (self.scriptsDir/'exe_html5.js')
             jsFile.copyfile(self.outputDir/'exe_html5.js')
+        
+        # Minify common.js file        
+        listFiles=getFilesJSToMinify('singlepage', self.scriptsDir)        
+        exportMinFileJS(listFiles, self.outputDir)
             
         # Incluide eXe's icon if the Style doesn't have one
         themePath = Path(G.application.config.stylesDir/package.style)

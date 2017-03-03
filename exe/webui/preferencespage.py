@@ -123,6 +123,7 @@ browserNames = {
                 "mozilla": "Mozilla",
                 "netscape": "Netscape",
                 "midori": "Midori",
+                "microsoft-edge": "Microsoft Edge",
                 "None": "default"
         }
 

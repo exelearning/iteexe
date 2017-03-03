@@ -1,3 +1,183 @@
+intef-exe (3:2.1.1) lucid; urgency=medium
+
+[ SDWeb ]
+
+	* Completely rewrite Ubuntu installation from source instructions
+	* Minify JS and CSS files when exporting
+	* Fixed #60: Version notes not working on Internet Explorer
+	* Fixed #80: Nodes links not working when the node has special characters on its title
+	* FR #29: Paste images in TinyMCE and include them in the package
+		* Synchronized image upload to the server
+		* Added width, height and alt to image (eXe ask for alt with a Prompt)
+		* Added compatibility to Copy/Paste images with Microsoft Edge
+		* Ask for confirmation if alt is left empty
+	* FR #36: Style Designer. Reload the Styles' list after saving a Style
+	* Fixed #90: Microsoft Edge doesn't appear on the list of available browsers
+	* Fixed #91: Error when executing on RedHat, CentOS, Fedora... 
+	* Fix #131: Change browser check to prevent the SO to ask the user the location of a non-installed browser
+	* Update Debian packages to remove slimit and add webassets
+	* Solve #98. Add "_" to the file name if it is forbidden.
+	* Changed JS minifier library from Slimit to Webassets
+	* Remove "slimit" imports where they weren't used
+	* Revised #80 to use decodeURIComponent only when needed
+	* Package generation refactoring for all platforms
+
+[ Francisco Javier Pulido Cuadrado ]
+
+	* Kids Style: Write and listen icons
+
+[ Ignacio Gros ]
+
+	* TinyMCE 4 - Update from 3.5.11 to 4.3.13 (3.5.11 is still available)
+		* Recoded plugin: ABBR and ACRONYM
+		* Recoded plugin: Add a paragraph at the end
+		* Recoded plugin: Quote With Authorship
+		* Recoded plugin: Clear (new line or block)
+		* Recoded plugin: Definition List
+		* Recoded plugin: Align and justify (to align figures, etc.)
+		* Recoded plugin: Effects
+		* Recoded plugin: Hangman game
+		* Recoded plugin: Images with Title and Attribution
+		* Recoded plugin: Link to anchors and nodes
+		* Recoded plugin: Lists with automatic numbering
+		* Recoded plugin: Media with Title and Attribution (it transforms old Flash code to HTML5 code)
+		* Recoded plugin: Insert HTML code as text (Syntax highlighting options to be used with Prism, by Lea Verou) and Paste HTML fragment (embed code)
+		* Recoded plugin: Tooltip (to be used with http://qtip2.com)
+		* New plugin: Insert/Edit Attributes
+		* New plugin: Paste mathematical markup (Mathjax options to be used with https://www.mathjax.org/)
+		* New plugin: Toolbar Toggle
+		* Other features:
+			* Code Magic: Replacement source code editor plugin by Josh Lobe
+			* fMath, by Ionel Alexandru (to use with the Paste mathematical markup plugin)
+			* Custom style formats
+			* Configurable attributes: Language, context menu, toolbar, templates...
+			* Toggle editor option (enable TinyMCE on demand when there's more than one TEXTAREA)
+
+	* TinyMCE 3.5.11 - Windows Media (wmv, wma) and Real Media (ram) disabled
+	* TinyMCE 3.5.11 - Tooltip plugin: Add a title to each definition so it's easier to identify them
+
+	* Edition - New advanced preference (Editor version)
+	* Edition - HTML5 is the default DOCTYPE
+	* Edition - FR #87: 'Please wait' message when saving
+	* Edition - FR #74: Make the Kids Style compatible with the iDevice Editor
+	* Edition - FR #72: iDevice Editor: Auto-select the Style and allow PNG icons
+	* Edition - nevow_clientToServerEvent error handling
+
+	* Style Designer - Custom font size (footer, menu...)
+	* Style Designer - Custom menu width
+	* Style Designer - FR #73: Make the New Styles compatible with the iDevice editor
+	* Style Designer - i18n revision: Hard-coded strings replaced
+	* Style Designer - Favicon
+
+	* HTML - FR #62: HTML5 Single page export: iDevice titles level (h2 instead of h1)
+	* HTML - FR #75: iDevice Editor: Add a different class to each custom iDevice
+
+	* Styles - Responsive design (image, video and iframe max-width in all cases)
+	* Styles - Print version: Print a link to the IFRAME src instead of the IFRAME itself
+
+	* HTML, JavaScript and CSS bug fix:
+	
+		* CSS - Horizontal navigation (title position)
+		* JavaScript - Effects (error handling)
+		* JavaScript - Cloze iDevice: Autocomplete in input should be off (#81)
+		* JavaScript - Video dimensions where changed in some browsers (#68)
+		* JavaScript - Hangman game base64 encoding problem
+		* JavaScript - The tooltips were not working in blocks with effects
+		* JavaScript - Effects in Readium for Chrome
+		* JavaScript - Effects: Pagination accessibility problem with sreenreader (#121)
+		* JavaScript - HTML5 video with media player size problem in IE-11 (#134)
+		* JavaScript - Flash movie over an eXe dialog in IE-11 (#127)
+		* TinyMCE - Image and media plugin: An exe-figure containing an IFRAME could not be aligned
+		* TinyMCE - Image and media plugin: Get the right width so the wrapper (exe-figure) has the same size as the content
+		* TinyMCE - Image and media plugin: Remove nested figures
+		* TinyMCE - Image and media plugin: Avoid empty width error
+		* TinyMCE - Text deleted when updating a link (#42)
+		* TinyMCE - Hangman game edition in IE was not loading data (#37)
+		* TinyMCE - Remove 'fakepath' in Google Chrome
+		* TinyMCE - No definition tooltips could be created
+		* Style Designer - config.xml values were not loaded in IE (#35)
+		* Style Designer - Wrong image path in IE (#34)
+		* Edition - iDevice Editor: Cannot select an icon (#65)
+		* Edition - Avoid this error: 'TextAreaField' object has no attribute 'buttonCaption' (#61)
+		* Edition - BMP Windows 32 encoding (#38)
+		* Edition - The current Style could be deleted and that caused an error (#114)
+		* ePub - Multi-select feedback error (#56)
+		* ePub - SCORM Quiz was not working in some ePub readers (#56)
+		* References to forja.cenatic.es removed
+		* Authorship and license revision
+		* Fedora installation instructions (link to the download page)
+		* Heading level mismatch (<hX></h1>) solved. We use H1 for the node titles. (see #62)
+		
+[ Juan Rafael Fernández ]
+
+	* Fixes in debian/ and the debian packaging, making lintian a bit
+          happier.
+	* (Debian packaging) Fixed information about the new dependencies.
+	* i18n tools revision.
+	* Fixed some tiny bugs in mki18n.sh.
+	* Updated python-babel to version 2.3.4
+	* Fixed mistakes in some English messages.
+	* eXe is ready for Hebrew now.
+	* Wikipedia iDevice license revision.
+
+	[ Translation Teams ]
+	
+	* New full Russian translation, by Alexey Loginov
+	* New full Basque translation, by Joxemi Andonegi
+	* New full Valencian translaton, by Pilar Embid Giner
+	* New full Italian translation, by Andrea Primiani
+	* New full French translation, by Jesús Miguel Domínguez
+	* New full Portuguese translation, by Dionisio Martínez Soler
+	* New full Spanish translation, by Juan Rafael Fernández
+	* New full Galician translation, by Pablo Nimo Liboreiro
+	* New full Catalan translation, by Carles Ferrando García
+	* New Norwegian translation, by Henrik Kvalnes	
+	* New Dutch translation, by Karel Werschkull
+	* New Tradicional Chinese translation, by Franklin Weng		
+
+[ Pedro Peña Pérez ]
+
+	* Updated changelog for version 2.1
+	* Encode file name urls of files added to a style
+	* More reliable styleIdFromName
+	* Try to reconnect client after 4 seconds onerror too
+	* Wait 4 seconds to reconnect after client connection lost
+	* Export scorm and publish to Procomún in threads
+	* Don't close and clear client handle on connection failure
+	* Move LOM.es classification sources file to github
+	* Don't try to autodetect encoding of config.xml of a style unt
+	* Add exe/tools to Mac OS X package
+	* Calculate exeAppUri after server initialization (found free p
+	* Configure pybabel to catch more strings to translate
+	* Close temporal file descriptor to prevent windows errors when
+	* Safe check of backupName
+	* Prevent decode error when logging message
+	* Trying to fix Procomún publication from windows and mac binar
+	* Fallback to english locale if not locale autodetected
+	* Update Procomún WSDL and OAuth base url to point to productio
+	* Replace some 127.0.0.1 references with exeAppUri
+	* Replace some forja.cenatic.es links
+	* Preserve first html filename when uniquifying html file names
+	* Prevent stopping client timeout timer twice
+	* Escape xml entities when exporting LOM and LOM-ES metadata
+	* Trying to fix duplicated when saving a style
+	* Fix epub3 table of contents nesting
+	* Fix style creation in some browsers
+	* Fix Procomún publication (LOM-ES metadata needed)
+	* Disable SSL verification when publishing to Procomún in OAuth
+	* Allow to set empty value for license: (void)
+	* Fix wrong file format error opening elp without idevices
+	* Fix windows binary build
+	* Add new dependencies to deb and rpm packages
+
+[ Antonio Monje ]
+
+	* Branch merging and revision
+
+[ Mercedes Cotelo Lois ]
+
+	* Developments in the publishing capacities of eXe
+	
 intef-exe (3:2.1) lucid; urgency=medium
 
   [ Ignacio Gros ]
@@ -116,21 +296,11 @@ intef-exe (3:2.1) lucid; urgency=medium
   * Update image in windows installer
 
   [ Mercedes Cotelo Lois ]
-  * Fixed [iteexe-Bugs][2487] Contradictory licenses for CARM style
-  * Fixed [#2284] Outdated Release Notes on Help > Release Notes menu
-  * [#2493] No funciona repositorio estilos en Windows.
-    Explicitly set the downloaded ZIP file to be saved in temporary directory
-  * [#2493] No funciona repositorio estilos en Windows.
-    Escape Windows path backslashes in Javascript strings
+  * Style Designer - Back-end development.
+  * Fixed #2487 Contradictory licenses for CARM style
+  * Fixed #2284 Outdated Release Notes on Help > Release Notes menu
+  * Fixed #2493 The Style Manager was not working in Windows
   * Implement Google Drive publication (disabled)
-  * Fix bug of false 'Style directory already exist' errors on creating style, caused by the absence of the 'style_name' field value
-  * Fix text of error message when style directory already exists
-  * Dialog box with style name input field must be a modal window
-  * Discard unused function 'styleDesigner.saveStyle'
-  * Easier modal window to prompt for style name when saving a new style
-  * Add 'extra-head' and 'extra-body' attributes to style config.xml file.
-  * On Windows, uploaded image files were corrupt.
-  * File '/tools' must be available with the other data files, as styles, or user config.
 
   [ José Miguel Andonegi Martínez ]
   * SCORM message text is changed to allow % character order change in Basque translation
@@ -1797,4 +1967,3 @@ python-exe (0.1-0.1ubuntu1) unstable; urgency=low
     * initial release
 
  -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
-

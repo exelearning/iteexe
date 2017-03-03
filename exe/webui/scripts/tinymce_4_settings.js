@@ -30,6 +30,9 @@ var $exeTinyMCE = {
 	},	
 	contextmenu: "exelink | inserttable | cell row column deletetable",
 	language: "all", // We set all so we can use eXe's i18n mechanism in all.js
+	table_default_styles: {
+		width: '100%'
+	},
     
 	init: function(mode,criteria,hide){
 		
@@ -57,6 +60,7 @@ var $exeTinyMCE = {
 			contextmenu: this.contextmenu,
 			browser_spellcheck: this.browser_spellcheck,
 			templates: this.templates,
+			table_default_styles: this.table_default_styles,
 			// Base URL
 			path_to_folder: this.path_to_folder,
 			// Images
@@ -64,6 +68,31 @@ var $exeTinyMCE = {
 			file_browser_callback: function(field_name, url, type, win){
 				exe_tinymce.chooseImage(field_name, url, type, win);
 			},
+			//Drag and Drop
+			paste_data_images: true,
+			images_upload_handler : function(blobInfo, success, failure) {
+				var editor = tinyMCE.activeEditor.getBody();
+				var imgs = editor.getElementsByTagName("IMG");
+
+				var n = imgs.length - 1;
+
+				var blobType= blobInfo.blob().type;
+				if(blobInfo.blob().name === undefined){
+					if(blobType.includes('image/')){
+						blobName='img'+n+'.'+blobType.substr(6);
+					}else{
+						blobName='img'+n+'.png';
+					}
+				}else if(blobInfo.blob().name == 'image.png'){
+					blobName='img'+n+'.png';
+				}else{
+					blobName=blobInfo.blob().name;
+				}
+				success(exe_tinymce.dragDropImage(
+						'previewTinyMCEimageDragDrop', this, '', this,
+						this.name, blobName, blobInfo
+								.base64()));
+					},
 			// Media
 			media_alt_source: false,
 			media_poster: false,
@@ -318,14 +347,14 @@ var $exeTinyMCEToggler = {
 				i.css("height",h+"px");
 			}
 			e.className = 'hidden-editor';
-			$("body").addClass("hidden-editor");
+			p.addClass("hidden-editor");
 			$(".mce-edit-area").css("border-width","0"); // So the box doesn't have a 2px border top
 		} else {
 			// Show toolbars
 			if (i!='') i.css("height",window[e.id+"-iframeHeight"]);
 			e.className = 'visible-editor';
 			$(".mce-edit-area").css("border-width","1px 0 0");
-			$("body").removeClass("hidden-editor");
+			p.removeClass("hidden-editor");
 		}
 	}
 	

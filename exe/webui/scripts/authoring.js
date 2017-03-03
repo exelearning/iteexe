@@ -213,7 +213,7 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
            return;
         }
     
-        // UNescape, to remove the %20's for spaces, etc.:
+        // unescape, to remove the %20's for spaces, etc.:
         var unescaped_local_imagePath = unescape(local_imagePath);
         var oldImageStr = new String(unescaped_local_imagePath);
     
@@ -532,7 +532,7 @@ function enableAnchors() {
                 node_anchor = this.href.split("#"),
                 path = node_anchor[0].replace(/exe-node/, ':Root'),
                 selected;
-            outline_tree.selectPath(unescape(path), 'text', ':');
+            outline_tree.selectPath(decodeURIComponent(path), 'text', ':');
             selected = outline_tree.getSelectionModel().getSelection()[0];
             outline.onNodeClick(null, selected);
             if (node_anchor[1] != "auto_top")
@@ -621,6 +621,83 @@ function getTinyMCELang(lang){
 //TinyMCE file_browser_callback
 var exe_tinymce = {
 	
+	dragDropImage : function(theTarget, node, evalAfterDone, win, win_name,
+			blobName, blobBase64) {
+		var local_imagePath = 'data:image/jpeg;base64,' + blobBase64;
+
+		var unescaped_local_imagePath = unescape(local_imagePath);
+		var oldImageStr = new String(blobName);
+
+		exe_tinymce.uploaded_file_1_name = "";
+
+		var RegExp1 = /[\ \\\/\:\%\&]/g;
+		var ReplaceStr1 = new String("_");
+		var newImageStr = oldImageStr.replace(RegExp1, ReplaceStr1);
+
+		var early_preview_imageName = encodeURIComponent(newImageStr);
+		var preview_imageName = early_preview_imageName.replace(RegExp1,
+				ReplaceStr1);
+		var full_previewImage_url = "/previews/" + preview_imageName;
+
+		var previewTinyMCEDragDropImageDone = function() {
+
+			var alternativeText = function(button, input_alt_value) {
+
+				var editor = tinyMCE.activeEditor.getBody();
+				var imgs = editor.getElementsByTagName("IMG");
+
+				var n = imgs.length - 1;
+
+				var img = imgs[n];
+				img.setAttribute('width', img.width);
+				img.setAttribute('height', img.height);
+
+				if (input_alt_value.length == 0) {
+
+					parent.Ext.Msg
+							.confirm(
+									"",
+									_("Are you sure you want to continue without including an Image Description? Without it the image may not be accessible to some users with disabilities, or to those using a text browser, or browsing the Web with images turned off."),
+									function(button) {
+										if (button == "yes") {
+											img.setAttribute('alt', '');
+										} else {
+											Ext.Msg
+													.prompt(
+															_('Image description'),
+															_('Please provide an image description (alternative text):'),
+															alternativeText);
+										}
+									});
+				} else {
+
+					if (button === 'ok') {
+						img.setAttribute('alt', input_alt_value);
+					} else {
+						img.setAttribute('alt', '');
+					}
+				}
+			}
+
+			Ext.Msg
+					.prompt(
+							_('Image description'),
+							_('Please provide an image description (alternative text):'),
+							alternativeText);
+
+			eXe.app.un('previewTinyMCEDragDropImageDone',
+					previewTinyMCEDragDropImageDone);
+		}
+		eXe.app.on('previewTinyMCEDragDropImageDone',
+				previewTinyMCEDragDropImageDone);
+
+		window.parent.nevow_clientToServerEventPOST(theTarget, node,
+				evalAfterDone, false, win, win_name, unescaped_local_imagePath,
+				preview_imageName);
+
+		return (full_previewImage_url);
+	},
+		
 	chooseImage : function(field_name, url, type, win) {
 		
 		var fn = function(local_imagePath) {
@@ -632,7 +709,7 @@ var exe_tinymce = {
                 return;
             }
 
-            // UNescape, to remove the %20's for spaces, etc.:
+            // unescape, to remove the %20's for spaces, etc.:
             var unescaped_local_imagePath = unescape(local_imagePath);
             var oldImageStr = new String(unescaped_local_imagePath);
 
@@ -884,10 +961,28 @@ var $exeAuthoring = {
     disableSVGInMediaElement : function(){
         $(document.body).addClass("no-svg");
     },
+    IE11hacks : function(){
+        var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+        if (isIE11) {
+            $("object").each(function(){
+                var i = this.innerHTML;
+                if (i.indexOf("<param")!=-1 && i.indexOf("exe_flv")!=-1 && i.indexOf("wmode")==-1) {
+                    // Add wmode transparent and reload the HTML
+                    var par = $(this).parent();
+                    if (par.length==1) {
+                        this.innerHTML += '<param name="wmode" value="transparent">';
+                        par.html(par.html());
+                    }
+                }
+            });				
+        }
+    },
     ready : function(){
         if (top.Ext) {
             $exeAuthoring.disableSVGInMediaElement();
             $exeAuthoring.setYoutubeWmode();
+            // To review (see https://github.com/exelearning/iteexe/issues/127)
+            $exeAuthoring.IE11hacks();
             if (top.Ext.isIE) {
                 $exeAuthoring.changeFlowPlayerPathInIE();
             }

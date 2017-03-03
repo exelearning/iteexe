@@ -455,7 +455,7 @@ data is entered into this field."""))
         """
         iconpath  = self.style.get_style_dir()
         iconfiles = iconpath.files("icon_*")
-        html = '<div id="styleIcons">'
+        html = '<div id="styleIcons"><div style="height:300px;overflow:auto">'
         
         for iconfile in iconfiles:
             iconname = iconfile.namebase
@@ -474,16 +474,16 @@ data is entered into this field."""))
             
             if iconExists:
                 filename = "/style/%s/%s.%s" % (self.style.get_dirname(), iconname, iconExtension)
-                html += u'<div style="float:left; text-align:center; width:80px;\n'
+                html += u'<div style="float:left; text-align:center; width:105px;\n'
                 html += u'margin-right:10px; margin-bottom:15px" > '
                 html += u'<img src="%s" \n' % filename
                 # html += u' alt="%s" ' % _("Submit")
                 # window[1] because we use Ext.MessageBox instead of libot_drag.js
-                html += u"style=\"border:1px solid #E8E8E8;padding:5px;cursor:pointer;max-width:60px;height:auto\" onclick=\"window[1].selectStyleIcon('%s',this)\">\n" % icon
+                html += u"style=\"border:1px solid #E8E8E8;padding:5px;cursor:pointer;max-width:60px;height:auto\" onclick=\"window[1].selectStyleIcon('%s',this)\" title=\"%s.%s\">\n" % (icon, icon, iconExtension)
                 # html += u"style=\"cursor:pointer\" onclick=\"window[1].submitLink('selectIcon','%s',1)\">\n" % icon
-                html += u'<br />%s.%s</div>\n' % (icon, iconExtension)
+                html += u'<br /><span style="display:inline-block;width:100px;overflow:hidden;text-overflow:ellipsis">%s.%s</span></div>\n' % (icon, iconExtension)
         
-        html += '</div>'
+        html += '</div></div>'
         
         return html
 # ===========================================================================

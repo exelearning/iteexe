@@ -1465,3 +1465,36 @@ def getQuizTestPassRate(node):
             if idevice.isQuiz == True:
                 return idevice.passRate
     return False
+
+def getFilesJSToMinify(type, scriptsDir):
+    # Read about these files format (comments) in exportMinFileJS (helper.py)
+    listJSFiles=[]
+    if(type =='ims'):
+        listJSFiles+=[{'path':scriptsDir/'common.js','basename':'common.js'}]
+    elif(type=='epub3'):
+        listJSFiles+=[{'path':scriptsDir/'common.js','basename':'common.js'}]
+    elif(type=='scorm'):
+        listJSFiles+=[{'path':scriptsDir/'common.js','basename':'common.js'}]
+    elif(type=='singlepage'):
+        listJSFiles+=[{'path':scriptsDir/'common.js','basename':'common.js'}]     
+    elif(type=='website'):
+        listJSFiles+=[{'path':scriptsDir/'common.js','basename':'common.js'}]
+    
+    return listJSFiles
+
+
+def getFilesCSSToMinify(type, styleDir):
+    listCSSFiles=[]
+    if(type =='ims'):
+        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}]
+    elif(type=='epub3'):
+        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}] 
+    elif(type=='scorm'):
+        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}] 
+    elif(type=='singlepage'):
+        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}]
+    elif(type=='website'):
+        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}]
+    
+    
+    return listCSSFiles
