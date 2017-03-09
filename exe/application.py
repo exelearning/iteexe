@@ -26,6 +26,10 @@ Main application class, pulls together everything and runs it.
 import os
 import sys
 import shutil
+import apscheduler
+from apscheduler.schedulers.background import BackgroundScheduler
+
+
 
 from tempfile import mkdtemp
 # Make it so we can import our own nevow and twisted etc.
@@ -41,6 +45,7 @@ from exe.engine              import version
 from exe                     import globals as G
 import logging
 from twisted.internet import reactor
+
 
 log = logging.getLogger(__name__)
 
@@ -224,6 +229,15 @@ class Application:
         log.info("eXe running...")
         self.webServer.run()
 
+
+    def tick(self):
+
+	pkg1 = self.webServer.root.package
+	bkup=Package('backup')
+	pkg1.root.copyToPackage(bkup,bkup.root)             
+	bkup.save('backup.elp')
+
+
     def launch(self):
         """
         launches the webbrowser
@@ -233,12 +247,23 @@ class Application:
             try:
                 package = Package.load(self.packagePath)
                 self.webServer.root.package = package
-                launchBrowser(self.config, package.name)
-            except:
+
+		scheduler = BackgroundScheduler()
+		scheduler.add_job(self.tick, 'interval', seconds=30)
+		scheduler.start()
+
+		launchBrowser(self.config, package.name)
+
+            except Exception as e:
                 self.webServer.root.packagePath = None
+		scheduler = BackgroundScheduler()
+		scheduler.add_job(self.tick, 'interval', seconds=30)
+		scheduler.start()
                 launchBrowser(self.config, "")
         else:
             launchBrowser(self.config, "")
+
+
 
     def usage(self):
         """
@@ -255,4 +280,3 @@ Settings are read from exe.conf in $HOME/.exe on Linux/Unix/Mac OS or
 in Documents and Settings/<user name>/Application Data/exe on Windows XP or
 Users/<user name>/AppData/Roaming/exe on Windows 7""") % os.path.basename(sys.argv[0])
 
-# ===========================================================================
