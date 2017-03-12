@@ -38,7 +38,7 @@ from exe.engine.idevicestore import IdeviceStore
 from exe.engine.translate    import installSafeTranslate
 from exe.engine.package      import Package
 from exe.engine              import version
-from exe                     import globals
+from exe                     import globals as G
 import logging
 from twisted.internet import reactor
 
@@ -60,31 +60,34 @@ if sys.platform[:3] == "win" and not (sys.argv[0].endswith("exe_do") or \
 del Windows_Log
 
 # Global application variable
-globals.application = None
+G.application = None
 
 class Application:
     """
     Main application class, pulls together everything and runs it.
     """
 
+    version = 1
+
     def __init__(self):
         """
         Initialize
         """
-        self.config       = None
+        self.config = None
         self.ideviceStore = None
-        self.packagePath  = None
-        self.webServer    = None
-        self.standalone   = False # Used for the ready to run exe
-        self.portable   = False # FM: portable mode
+        self.packagePath = None
+        self.webServer = None
+        self.exeAppUri = None
+        self.standalone = False  # Used for the ready to run exe
+        self.portable = False  # FM: portable mode
         self.persistNonPersistants = False  
-        self.tempWebDir   = mkdtemp('.eXe')
-        self.resourceDir=None
+        self.tempWebDir = mkdtemp('.eXe')
+        self.resourceDir = None
         self.afterUpgradeHandlers = []
         self.preferencesShowed = False
         self.loadErrors = []
-        assert globals.application is None, "You tried to instantiate two Application objects"
-        globals.application = self
+        assert G.application is None, "You tried to instantiate two Application objects"
+        G.application = self
 
     def main(self):
         """
@@ -95,16 +98,38 @@ class Application:
         installSafeTranslate()
         self.preLaunch()
         # preLaunch() has called find_port() to set config.port (the IP port #)
+        self.exeAppUri = 'http://localhost:%d' % self.config.port
+        self.upgrade()
         if self.config.port >= 0:
             reactor.callWhenRunning(self.launch)
             log.info('serving')
             self.serve()
             log.info('done serving')
         else:
-            #self.xulMessage(_('eXe appears to already be running'))
             log.error('eXe appears to already be running')
             log.error('looks like the eXe server was not able to find a valid port; terminating...')
         shutil.rmtree(self.tempWebDir, True)
+
+    def upgrade(self):
+        """Execute all upgraToVersionX functions from stored version to actual version"""
+        version_file = self.config.configDir / 'version'
+        storedVersion = 0
+        if version_file.exists():
+            storedVersion = int(version_file.bytes())
+        for v in xrange(storedVersion + 1, self.version + 1):
+            method = getattr(Application, 'upgradeToVersion%d' % v, None)
+            if method:
+                method(self)
+        version_file.write_text(str(self.version))
+
+    def upgradeToVersion1(self):
+        """Hide experimental idevices"""
+        log.info('Upgrading to version 1')
+        for idevice in self.ideviceStore.getIdevices():
+            lower_title = idevice._title.lower()
+            if self.config.idevicesCategories.get(lower_title, '') == ['Experimental']:
+                self.config.hiddeniDevices.append(lower_title)
+                self.config.configParser.set('idevices', lower_title, '0')
 
     def processArgs(self):
         """
@@ -231,3 +256,4 @@ in Documents and Settings/<user name>/Application Data/exe on Windows XP or
 Users/<user name>/AppData/Roaming/exe on Windows 7""") % os.path.basename(sys.argv[0])
 
 # ===========================================================================
+
