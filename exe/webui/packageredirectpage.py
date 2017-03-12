@@ -40,9 +40,7 @@ class PackageRedirectPage(RenderableResource):
     package.
     """
     
-    name = '/'
-    last_package = None
-    
+    name = '/'    
 
     def __init__(self, webServer, packagePath=None):
         """
@@ -112,7 +110,7 @@ class PackageRedirectPage(RenderableResource):
             session_mainpages[package.name] = MainPage(None, package, session, self.webServer)
         else:
             self.mainpages[session.uid] = {package.name: MainPage(None, package, session, self.webServer)}
-#       log.debug("Mainpages: %s" % self.mainpages)
+        log.debug("Mainpages: %s" % self.mainpages)
 
 	self.backup(package)
 
