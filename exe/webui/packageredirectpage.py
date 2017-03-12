@@ -95,7 +95,6 @@ class PackageRedirectPage(RenderableResource):
 
 
     def backup(self,package):
-	print('bakupde '+package.name)
 	scheduler = BackgroundScheduler()
 	scheduler.add_job(self.tick2, 'interval',args=[package], seconds=30)
 	scheduler.start()
