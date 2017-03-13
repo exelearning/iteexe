@@ -533,15 +533,6 @@ class Epub3Export(object):
 
         self.styleDir.copylist(styleFiles, contentPages)
         
-        listCSSFiles=getFilesCSSToMinify('epub3', self.styleDir)
-        exportMinFileCSS(listCSSFiles, outputDir)
-        
-        listFiles=[]
-        listOutFiles=[]
-        
-        listFiles+=[self.scriptsDir/'common.js']
-        listOutFiles+=[outputDir/'common.js']
-        
         # copy players for media idevices.
         hasFlowplayer = False
         hasMagnifier = False
@@ -630,8 +621,14 @@ class Epub3Export(object):
             jsFile = (self.scriptsDir / 'exe_jquery.js')
             jsFile.copyfile(contentPages / 'exe_jquery.js')
         
-        listFiles=getFilesJSToMinify('epub3', self.scriptsDir)        
-        exportMinFileJS(listFiles, outputDir)
+        
+        # Copy and minify CSS files
+        css_files = getFilesCSSToMinify('epub3', self.styleDir)
+        exportMinFileCSS(css_files, contentPages)
+        
+        # Copy and minify JS files
+        js_files = getFilesJSToMinify('epub3', self.scriptsDir)
+        exportMinFileJS(js_files, contentPages)
 
 #         if hasattr(package, 'exportSource') and package.exportSource:
 #             (G.application.config.webDir / 'templates' / 'content.xsd').copyfile(outputDir / 'content.xsd')
