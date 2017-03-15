@@ -459,10 +459,10 @@ Ext.define('eXe.controller.Toolbar', {
 	// Style designer
 	styleDesigner : {
 		open : function(btn, text){
-			var lang = "en"; // Default language
-			var l = document.documentElement.lang;
-			if (l && l!="") lang = l;				
-			styleDesignerWindow = window.open("/tools/style-designer/previews/website/?lang="+lang);
+			var lang = "en", // Default language
+			    l = document.documentElement.lang;
+			if (l && l!="") lang = l;
+			eXe.app.browseURL("/tools/style-designer/previews/website/?lang="+lang, _('Style Designer'), 'style_designer_tab');
 		},
 		notCompatible : function(){
 			Ext.Msg.alert("", _("The current Style is not compatible with the Style Designer"));
@@ -504,10 +504,14 @@ Ext.define('eXe.controller.Toolbar', {
 									this.styleDesigner.notCompatible();
 								} else {
 									// If it's compatible, we open the Style designer
-									var lang = "en"; // Default language
-									var l = document.documentElement.lang;
-									if (l && l!="") lang = l;
-									styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId()+"&lang="+lang);		
+									var lang = "en", // Default language
+									    l = document.documentElement.lang,
+                                        url;
+									if (l && l!="")
+                                        lang = l;
+
+									url = "/tools/style-designer/previews/website/?style=" + this.styleDesigner.getCurrentStyleId() + "&lang=" + lang;
+									eXe.app.browseURL(url, _('Style Designer'), 'style_designer_tab');
 								}
 							},
 							error: function(){

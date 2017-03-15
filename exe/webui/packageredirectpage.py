@@ -59,7 +59,7 @@ class PackageRedirectPage(RenderableResource):
         This is probably because the url is in unicode
         """
         session = request.getSession()
-        if not session.user and not request.getUser():
+        if self.webServer.application.server and not session.user and not request.getUser():
             return self.webServer.saml
         if name == '':
             return self
@@ -104,12 +104,12 @@ class PackageRedirectPage(RenderableResource):
         log.debug("render_GET" + repr(request.args))
         # Create new package
         session = request.getSession()
-        if not session.user:
+        if self.webServer.application.server and not session.user:
             request.setResponseCode(http.FORBIDDEN)
             return ''
         package = session.packageStore.createPackage()
         self.bindNewPackage(package, session)
-        log.info("Created a new package name="+ package.name)
+        log.info("Created a new package name=" + package.name)
         # Tell the web browser to show it
         request.redirect(package.name.encode('utf8'))
         return ''

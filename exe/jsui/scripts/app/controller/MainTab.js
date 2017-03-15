@@ -175,7 +175,7 @@ Ext.define('eXe.controller.MainTab', {
         var fp = Ext.create("eXe.view.filepicker.FilePicker", {
             type: eXe.view.filepicker.FilePicker.modeOpen,
             title: _("Select an image"),
-            remote: true,
+            remote: eXe.app.config.server,
             modal: true,
             scope: this,
             callback: function(fp) {

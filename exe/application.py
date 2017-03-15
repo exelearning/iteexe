@@ -41,6 +41,8 @@ from exe import globals
 from tempfile import mkdtemp
 from twisted.internet import reactor
 from twisted.scripts.twistd import daemonize, checkPID
+from exe.engine.idevicestore import IdeviceStore
+
 
 log = logging.getLogger(__name__)
 PID_FILE = '/var/run/exe/exe.pid'
@@ -221,12 +223,31 @@ class Application:
         self.userStore = UserStore(self.config.configDir)
         log.debug("logging set up")
 
+    def createIdeviceStore(self):
+        self.ideviceStore = IdeviceStore(self.config)
+        try:
+            self.ideviceStore.load()
+        except:
+            backup = self.config.configDir / 'idevices.backup'
+            if backup.exists():
+                backup.rmtree()
+            (self.config.configDir / 'idevices').move(backup)
+            self.loadErrors.append(
+               _(u'An error has occurred when loading your Idevice Store. A backup is saved at %s') % backup)
+            self.ideviceStore.load()
+        # Make it so jelly can load objects from ~/.exe/idevices
+        sys.path.append(self.config.configDir/'idevices')
+
     def preLaunch(self):
         """
-        Sets ourself up for running 
+        Sets ourself up for running
         Needed for unit tests
         """
         log.debug("preLaunch")
+
+        if not self.server:
+            self.createIdeviceStore()
+
         self.webServer = WebServer(self, self.packagePath)
         # and determine the web server's port before launching the client, so it can use the same port#:
         self.webServer.find_port()

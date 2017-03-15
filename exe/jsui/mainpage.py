@@ -261,10 +261,12 @@ class MainPage(RenderableLivePage):
             ),
             'pathSep': os.path.sep,
             'server': G.application.server,
-            'user': session.user.name,
-            'user_picture': session.user.picture,
-            'user_root': session.user.root
+            'user_root': '/'
         }
+        if session.user:
+            config['user'] = session.user.name
+            config['user_picture'] = session.user.picture
+            config['user_root'] = session.user.root
         G.application.preferencesShowed = True
         G.application.loadErrors = []
         return tags.script(type="text/javascript")["var config = %s" % json.dumps(config)]
@@ -584,7 +586,7 @@ class MainPage(RenderableLivePage):
             client.alert(\
                 _(u'Preview directory %s is a file, cannot replace it') \
                 % previewDir)
-            log.error("Couldn't preview tinyMCE-chosen image: " + 
+            log.error("Couldn't preview tinyMCE-chosen image: " +
                       "Preview dir %s is a file, cannot replace it" \
                       % previewDir)
             errors += 1
@@ -614,7 +616,7 @@ class MainPage(RenderableLivePage):
             descrip_file.write(base64.b64decode(local_filename))
             descrip_file.flush()
             descrip_file.close()
-            
+
             client.sendScript('eXe.app.fireEvent("previewTinyMCEDragDropImageDone")')
 
         except Exception, e:
@@ -701,7 +703,7 @@ class MainPage(RenderableLivePage):
             # Delete the temp file made by compile
             Path(tempFileName).remove()
         return
-        
+
     def handleTinyMCEmathML(self, client, tinyMCEwin, tinyMCEwin_name, \
                              tinyMCEfield, mathml_source, math_fontsize, \
                              preview_image_filename, preview_math_srcfile):
@@ -709,11 +711,11 @@ class MainPage(RenderableLivePage):
         See self.handleTinyMCEmath
         To do: This should generate an image from MathML code, not from LaTeX code.
         """
-        
+
         # Provisional (just an alert message)
         client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
         return
-        
+
         server_filename = ""
         errors = 0
 
@@ -936,14 +938,6 @@ class MainPage(RenderableLivePage):
         # self.webServer.root.mainpages[self.session.uid].pop(self.package.name)
 
         if not self.webServer.application.server:
-            # first, go ahead and clear out any temp job files still in
-            # the temporary print directory:
-            log_dir_warnings = 0
-            # don't warn of any issues with the directories at quit,
-            # since already warned at initial directory creation
-            (parent_temp_print_dir, dir_warnings) = \
-                    self.ClearParentTempPrintDirs(client, log_dir_warnings)
-
             if len(self.clientHandleFactory.clientHandles) <= 1:
                 self.webServer.monitoring = False
                 G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)

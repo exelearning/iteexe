@@ -66,7 +66,7 @@ function askUserForImage(multiple, fn, filter) {
         remote = false;
     } else {
         mode = parent.eXe.view.filepicker.FilePicker.modeOpen;
-        remote = true;
+        remote = eXe.app.config.server;
     }
 
     fp = parent.Ext.create("eXe.view.filepicker.FilePicker", {
@@ -109,7 +109,7 @@ function askUserForMedia(fn,win) {
     var fp = parent.Ext.create("eXe.view.filepicker.FilePicker", {
         type: parent.eXe.view.filepicker.FilePicker.modeOpen,
         title: parent._("Select a file"),
-        remote: true,
+        remote: eXe.app.config.server,
         modal: true,
         scope: this,
         callback: function(fp) {
@@ -396,7 +396,7 @@ function addFile(blockId, title, filter) {
     var fp = parent.Ext.create("eXe.view.filepicker.FilePicker", {
         type: parent.eXe.view.filepicker.FilePicker.modeOpen,
         title: title? title : parent._("Select a package"),
-        remote: true,
+        remote: eXe.app.config.server,
         modal: true,
         scope: this,
         callback: function(fp) {

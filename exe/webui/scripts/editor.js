@@ -62,7 +62,7 @@ function importPackage(blockId) {
     var fp = Ext.create("eXe.view.filepicker.FilePicker", {
         type: eXe.view.filepicker.FilePicker.modeOpen,
         title: _("Select a file"),
-		remote: true,
+		remote: eXe.app.config.server,
         modal: true,
         scope: this,
         callback: function(fp) {

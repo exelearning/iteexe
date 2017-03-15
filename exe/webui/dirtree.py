@@ -103,7 +103,7 @@ class DirTreePage(RenderableResource):
     def render(self, request):
         l = {'success': True}
         session = request.getSession()
-        rootdir = session.user.root
+        rootdir = session.user.root if session.user else Path('/')
         if "sendWhat" in request.args:
             if request.args['sendWhat'][0] == 'dirs':
                 pathdir = Path(unquote(request.args['node'][0].decode('utf-8')))
