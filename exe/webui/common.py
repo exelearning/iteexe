@@ -68,6 +68,111 @@ def docType():
     else:
         return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
 
+def exportJavaScriptIdevicesFiles(iDevices, outputDir):
+    """ Copy all the JS iDevices export files in outputDir """
+    # TODO: Find a way to not copy already existing files
+    for idevice in iDevices:
+        # We only want to copy JS iDevices resources
+        # TODO: Find a better way to do this
+        if hasattr(idevice, "_iDeviceDir"):
+            iDeviceFiles = (Path(idevice._iDeviceDir)/'export')
+            iDeviceFiles.copyfiles(outputDir)
+        
+def printJavaScriptIdevicesScripts(mode, page):
+    """ Prints the required scripts for the JS iDevices of the page """
+    html = ''
+    
+    resources = []
+    
+    # If the page doesn't have blocks, it means we are exporting
+    if not hasattr(page, 'blocks'):
+        # Edition SCRIPTS:
+        for idevice in page.node.idevices:
+             # We only want to add the scripts if the iDevice is a JavaScript iDevice
+             # TODO: Find a better way to do this
+            if(hasattr(idevice, '_iDeviceDir')):
+                # We go through all the resources
+                for res in idevice.getResourcesList(appendPath = False):
+                    if res not in resources:
+                        resources.append(res)
+                        
+                        # Add a link if it is a CSS file
+                        if res.endswith('.css'):
+                            html += '<link rel="stylesheet" type="text/css" href="' + res + '" />\n'
+                        # Add a script tag if it is a JavaScript file                
+                        elif res.endswith('.js'):
+                            html += '<script type="text/javascript" src="' + res + '"></script>\n'
+    else:
+        if mode == 'edition':
+            # Edition SCRIPTS:
+            for block in page.blocks:
+                 # We only want to add the scripts if the iDevice is a JavaScript iDevice
+                 # TODO: Find a better way to do this
+                if(hasattr(block.idevice, '_iDeviceDir')):
+                    # We go through all the resources
+                    for res in block.idevice.getResourcesList(block.mode == 0):
+                        if res not in resources:
+                            resources.append(res)
+                            
+                            # Add a link if it is a CSS file
+                            if res.endswith('.css'):
+                                html += '<link rel="stylesheet" type="text/css" href="/scripts/idevices/' + res + '" />\n'
+                            # Add a script tag if it is a JavaScript file                
+                            elif res.endswith('.js'):
+                                html += '<script type="text/javascript" src="/scripts/idevices/' + res + '"></script>\n'
+                    
+                    if block.mode == 0 and "iDevice_init" not in resources:
+                        resources.append("iDevice_init")
+                        
+                        # Init iDevice
+                        html += '<script type="text/javascript">jQuery(function(){$exeAuthoring.iDevice.init()})</script>\n'
+                        
+        else:
+            # Edition SCRIPTS:
+            for block in page.blocks:
+                 # We only want to add the scripts if the iDevice is a JavaScript iDevice
+                 # TODO: Find a better way to do this
+                if(hasattr(block.idevice, '_iDeviceDir')):
+                    # We go through all the resources
+                    for res in block.idevice.getResourcesList(appendPath = False):
+                        if res not in resources:
+                            resources.append(res)
+                            
+                            # Add a link if it is a CSS file
+                            if res.endswith('.css'):
+                                html += '<link rel="stylesheet" type="text/css" href="' + res + '" />\n'
+                            # Add a script tag if it is a JavaScript file                
+                            elif res.endswith('.js'):
+                                html += '<script type="text/javascript" src="' + res + '"></script>\n'
+    
+    return html
+
+def getJavascriptIdevicesResources(page, xmlOutput = False):
+    """ Get the resources list for the page's JS iDevices """
+    resources = []
+    
+    for idevice in page.node.idevices:
+         # We only want to add the scripts if the iDevice is a JavaScript iDevice
+         # TODO: Find a better way to do this
+        if(hasattr(idevice, '_iDeviceDir')):
+            resources = resources + idevice.getResourcesList(appendPath = False)
+    
+    
+    if(xmlOutput):
+        result = ""
+        
+        resourcesAux = []
+        
+        for resource in resources:
+            if resource not in resourcesAux:
+                resourcesAux.append(resource)
+                
+                result += "    <file href=\"" + escape(resource) + "\"/>\n"
+            
+        return result
+    else:
+        return resources
+        
 def getLicenseMetadata(license):
     if license == "":
         return ""

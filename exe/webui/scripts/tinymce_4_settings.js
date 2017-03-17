@@ -361,7 +361,7 @@ var $exeTinyMCEToggler = {
 }
 
 $(function(){
-	var selector = ".jsIdeviceContent";
+	var selector = ".mceEditor";
 	var eds = $("textarea"+selector);
 	if (eds.length>0) {
 		if (eds.length==1) $exeTinyMCE.init("single",selector);

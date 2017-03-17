@@ -902,7 +902,7 @@ var $exeAuthoring = {
             myLink[0].onclick = function(){
                 var html = $exeDevice.save();
                 if (html) {
-                    $("textarea.jsIdeviceContent").val(html);
+                    $("textarea.mceEditor").val(html);
                     // Execute the IMG default behavior if everything is OK
                     eval(onclick);
                 }                

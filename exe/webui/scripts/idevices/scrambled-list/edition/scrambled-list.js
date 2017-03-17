@@ -63,7 +63,7 @@ var $exeDevice = {
 			</div>\
 		';
 		
-		var field = $("textarea.jsIdeviceContent").eq(0);
+		var field = $("textarea.mceEditor").eq(0);
 		field.hide().before(html);
 		this.loadPreviousValues(field);
 		
