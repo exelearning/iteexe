@@ -1,14 +1,14 @@
 tinymce.addI18n('all', {
-	'ABC Music Notation': 'Notación musical (ABC)',
-	'Animation': 'Animación',
-	'Animate': 'Animar',
-	'Paste or type a valid ABC code:': 'Pega o escribe código ABC válido',
-	'Preview': 'Previsualizar',
-	'Visit eXeABC for help, tunes, ABC software...': 'Visita eXeABC para encontrar ayuda, canciones, software...',
-	'jQuery is required': 'No se encuentra jQuery',
-	'ABC Music': 'Música ABC',
-	'Download': 'Descargar',
-	'No valid ABC code found.': 'No se ha encontrado código ABC válido.',
-	'Play': 'Reproducir',
-	'Stop': 'Detener'
+	'ABC Music Notation': _('ABC Music Notation'),
+	'Animation': ('Animation'),
+	'Animate': _('Animate'),
+	'Paste or type a valid ABC code:': _('Paste or type a valid ABC code:'),
+	'Preview': _('Preview'),
+	'Visit eXeABC for help, tunes, ABC software...': _('Visit eXeABC for help, tunes, ABC software...'),
+	'jQuery is required': _('jQuery is required'),
+	'ABC Music': _('ABC Music'),
+	'Download': _('Download'),
+	'No valid ABC code found.': _('No valid ABC code found.'),
+	'Play': _('Play'),
+	'Stop': _('Stop')
 });

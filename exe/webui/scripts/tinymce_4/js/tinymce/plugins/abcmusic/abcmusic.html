@@ -1,9 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es">
+<!DOCTYPE html>
+<html>
 	<head>
 		<title>ABC Music Notation</title>
 		<meta charset="UTF-8">
-		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
 		<script>
 			if (
 				!window.opener ||
@@ -26,20 +25,12 @@
 		</script>
 		<style>
 			body{font:.85em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#333;background:#ffffff;margin:0;padding:20px}
-			.abc-music-viewer-wrapper{width:770px;margin:0 auto}
-			.abc-music-viewer,.abc-music-viewer-text{display:none;margin-top:.3em;font-family:"Courier New", Courier, monospace;font-size:1em}
-			.abc-music-viewer-paper{background:#FCF9BB;margin-top:.3em}
-			.abc-music-viewer{background:#FCF9BB;padding:1em}
-			.abc-music-viewer-midi-player{margin:.5em 0}
-			.abc-music-viewer-midi-player .download-midi{margin-top:.3em}
-			.abc-music-viewer-paper .cursor{background:rgba(196,196,196,.5)}			
-			.abc-music-viewer-wrapper a{text-decoration:none;margin-right:.3em;color:#333}
-			textarea{width:766px;border:1px solid #DDD}
-			.abc-music-viewer-midi-link div{display:inline}
 		</style>
+	</head>
+	<body>
+		<pre id="abc-music-viewer"></pre>
 		<script>
-			$exe = {}
-			$exe.abcMusic = {
+			$exeABCmusicPreviewer = {
 				init : function(){
 					document.title = window.opener.tinymce.translate('ABC Music Notation');
 					var openerWindow = window.opener.win;
@@ -57,102 +48,14 @@
 					var html = _("No valid ABC code found.");
 					if (htmlSource!="") html = htmlSource;
 					
-					var css = "abc-music-viewer"
-					if (animation.checked()) css += " abc-music-viewer-animated";
-					if (midi.checked()) css += " abc-music-viewer-midi";
+					var css = "abc-music"
+					if (animation.checked()) css += " abc-music-animated";
+					if (midi.checked()) css += " abc-music-midi";
 					
-					$("#abc-music-viewer").html(html).attr("class",css);
-					
-					$(".abc-music-viewer").each(function(i){
-						var musicCode = this.innerHTML.replace(/<br>/g, '\n').replace(/<br \/>/g, '\n');
-						var player = '<div class="abc-music-viewer-player">';
-							player += '<a href="#" onclick="$exe.abcMusic.toggleCode(this,'+i+');return false" title="'+_("Show")+'"><span>ABC</span></a> ';
-						if ($(this).hasClass("abc-music-viewer-midi")) player += '<span id="abc-music-viewer-midi-link'+i+'" class="abc-music-viewer-midi-link"><a href="#" onclick="$exe.abcMusic.downloadMidi('+i+');return false" title="MIDI"><span>MIDI</span></a></span> ';
-						if ($(this).hasClass("abc-music-viewer-animated")) {	
-							var bpm = 300;
-							// Speed (defined by the user):
-							// I:speed 300
-							var c = musicCode;
-							if (c.indexOf("I:speed")!=-1) {
-								c = c.split("I:speed");
-								if (c.length>1) {
-									c = parseFloat(c[1].split("\n")[0]);
-									if (!isNaN(c)) bpm = c;
-								}
-							}
-							// player += '<a href="#" onclick="$exe.abcMusic.stop('+i+');return false" title="'+_("Stop")+'"><span>&#9635;</span></a> ';
-							player += '<a href="#" onclick="$exe.abcMusic.animate('+i+','+bpm+',this);return false" title="'+_("Play")+'/'+_("Stop")+'"><span>'+_("Animate")+'</span></a>';
-						}	
-						player += '</div>';						
-						$(this).after('\
-							<div id="abc-music-viewer-warnings'+i+'" class="abc-music-viewer-warnings"></div>\
-							<div id="abc-music-viewer-wrapper'+i+'" class="abc-music-viewer-wrapper">\
-								'+player+'\
-								<div id="abc-music-viewer-midi-player'+i+'" class="abc-music-viewer-midi-player"></div>\
-								<textarea readonly class="abc-music-viewer-text" name="abc-music-viewer-t'+i+'" id="abc-music-viewer-t'+i+'" cols="80" rows="8" onfocus="this.select()" >'+musicCode+'</textarea>\
-								<div id="abc-music-viewer-paper'+i+'" class="abc-music-viewer-paper"></div>\
-							</div>\
-						');
-						window['abc_editor'+i] = new window.ABCJS.Editor("abc-music-viewer-t"+i, { paper_id: "abc-music-viewer-paper"+i, warnings_id:"abc-music-viewer-warnings"+i, parser_options: {}, render_options: { add_classes: true } });
-						var warnings = $("#abc-music-viewer-warnings"+i).html();
-						var wrapper = $("#abc-music-viewer-wrapper"+i);
-						if (warnings!="") {
-							wrapper.remove();
-							$(this).show();
-						} else {
-							wrapper.css("width",$("#abc-music-viewer-paper"+i).css("width"));
-							$(this).remove();
-						}
-					});					
-				},
-				downloadMidi : function(i){
-					window.ABCJS.midi.soundfontUrl = window.opener.ABCmusicDialog.soundFontPath;
-					ABCJS.renderMidi(
-						'abc-music-viewer-midi-player'+i, 
-						$("#abc-music-viewer-t"+i).val(), 
-						{}, { 
-							downloadLabel : _("Download"),
-							generateInline : true,
-							// animate : true,
-							generateDownload : true
-						}, 
-						{}
-					);
-				},				
-				toggleCode : function(e,instance){
-					if (e.title==_("Show")) {
-						e.title = _("Hide");
-						$("#abc-music-viewer-t"+instance).fadeIn().trigger("focus");
-					} else {
-						e.title = _("Show");
-						$("#abc-music-viewer-t"+instance).fadeOut();
-					}
-				},
-				animate : function(i,bpm,e) {
-					var playing = true;
-					if ($("#abc-music-viewer-paper"+i+" .cursor").length==0) playing = false;
-					if (playing) {
-						window.ABCJS.stopAnimation($("#abc-music-viewer-paper"+i)[0]);                    
-					} else {
-						var params = { 
-							"hideFinishedMeasures": false, 
-							"showCursor": true, 
-							"bpm": bpm
-						}
-						var paper = $("#abc-music-viewer-paper"+i)[0];
-						window.ABCJS.startAnimation(paper, window['abc_editor'+i].tunes[0], params);                    
-					}
-				},
-				stop : function(i) {
-					window.ABCJS.stopAnimation($("#abc-music-viewer-paper"+i)[0]);
+					$("#abc-music-viewer").html(html).attr("class",css);				
 				}
-			}		
-			$(function(){
-				$exe.abcMusic.init();			
-			});
+			}			
+			$exeABCmusicPreviewer.init();
 		</script>		
-	</head>
-	<body>
-		<pre id="abc-music-viewer"></pre>
 	</body>
 </html>

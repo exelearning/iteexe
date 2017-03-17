@@ -28,11 +28,8 @@ $exeABCmusic = {
 		hide : _("Hide"),
 		animate : _("Animate")
 	},
-	baseURL : '',
+	baseURL : (opener.tinymce!="undefined") ? '/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/' : './',
 	init : function(){
-		loadScript($exeABCmusic.baseURL+"exe_abcmusic.css","$exeABCmusic.enable()");
-	},
-	enable : function(){
 		jQuery("pre.abc-music").each(function(i){
 			var musicCode = this.innerHTML.replace(/<br>/g, '\n').replace(/<br \/>/g, '\n');
 			var player = '<div class="abc-music-player">';
@@ -117,3 +114,6 @@ $exeABCmusic = {
 		window.ABCJS.stopAnimation(jQuery("#abc-music-paper"+i)[0]);
 	}
 }
+$(function(){
+	$exeABCmusic.init();
+});
