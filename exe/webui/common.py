@@ -23,6 +23,7 @@ This module is for the common HTML used in all webpages.
 """
 
 import logging
+import os
 from nevow                     import tags as T
 from nevow.flat                import flatten
 from exe                       import globals as G
@@ -1378,17 +1379,18 @@ def getFilesJSToMinify(type, scriptsDir):
 
 
 def getFilesCSSToMinify(type, styleDir):
-    listCSSFiles=[]
-    if(type =='ims'):
-        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}]
-    elif(type=='epub3'):
-        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}] 
-    elif(type=='scorm'):
-        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}] 
-    elif(type=='singlepage'):
-        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}]
-    elif(type=='website'):
-        listCSSFiles+=[{'path':styleDir/'..'/'base.css','basename':'base.css'}]
+    '''
+    Returns a list of CSS files that should by minified
+    depending on the export type
+    '''
+    list_css_files = []
     
+    # Whatever the type is, we always include base.css
+    # But if the style has a base.css file, we should always
+    # include that one 
+    if os.path.isfile(styleDir/'base.css'):
+        list_css_files += [{ 'path': styleDir/'base.css', 'basename': 'base.css' }]
+    else:
+        list_css_files += [{ 'path': styleDir/'..'/'base.css', 'basename': 'base.css' }]
     
-    return listCSSFiles
+    return list_css_files
