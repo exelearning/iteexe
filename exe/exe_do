@@ -106,7 +106,7 @@ from <input_file> elp package").encode(sys.stdout.encoding))
                            'xliff', 'epub3','text'],
                   help=_(u"Export <input_file> elp package to optional \
 <output_file> on one of the given formats: xml, scorm12, scorm2004, ims, \
-website, webzip, singlepage, xliff or epub3.").encode(sys.stdout.encoding))
+website, webzip, singlepage, xliff, text or epub3.").encode(sys.stdout.encoding))
     parser.add_option("-i", "--import",
                   action="store", dest="i", metavar="format",
                   choices=['xml', 'xliff'],
