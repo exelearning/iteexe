@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.1.1\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2017-01-08 17:55+0100\nPO-Revision-Date: 2016-04-12 17:22+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.3.4\n", 
+ "": "Project-Id-Version: eXeLearning 2.1.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2017-03-18 16:55+0100\nPO-Revision-Date: 2016-04-12 17:22+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.3.4\n", 
  "Web pages footer.": "Nettsidens undertekst.", 
  "Title": "Tittel", 
  "Save file": "Lagre fil", 
@@ -753,7 +753,6 @@ translations = {
  "Settings Saved": "Innstillinger lagret", 
  "Multi-choice": "Flervalg - ett svar", 
  "Armenian ": "Armensk", 
- "MimeTeX compile failed!\n%s": "MimeTex-kompileringen mislykktes!\n%s", 
  "No Thumbnail Available. Could not shrink original image.": "Miniatyrbilde er ikke tilgjengelig. Kunne ikke krympe det opprinnelige bildet.", 
  "Select an image": "Velg et bilde", 
  "Site": "Side", 
