@@ -1,0 +1,38 @@
+front:
+  build: images/apache2
+  ports:
+    - "80:80"
+    - "443:443"
+  links:
+    - app
+  volumes:
+    - ./images/apache2/sites:/etc/apache2/sites-enabled
+    - ./images/apache2/htpasswd:/etc/apache2/htpasswd
+    - ./images/apache2/log:/var/log/apache2
+
+idp:
+  build: images/idp
+  ports:
+    - "8180:80"
+  volumes:
+    - ./images/idp/log:/var/log/apache2
+    - ./images/idp/authsources.php:/etc/simplesamlphp/authsources.php
+    - ./images/idp/config.php:/etc/simplesamlphp/config.php
+    - ./images/idp/metadata:/etc/simplesamlphp/metadata
+    - ./images/idp/Google.php:/usr/share/simplesamlphp/modules/authgoogle/lib/Auth/Source/Google.php
+    - ./images/idp/certs/example.org.crt:/etc/ssl/certs/example.org.crt
+    - ./images/idp/certs/example.org.pem:/etc/ssl/certs/example.org.pem
+
+app:
+  build: images/exe
+  volumes:
+    - .:/home/app
+    - ./images/apache2/htpasswd:/home/app/exe/config/htpasswd
+  working_dir: /home/app
+  entrypoint: images/exe/run.sh
+  privileged: true
+  environment:
+    - PYTHONPATH
+    - DEBUG_ENABLE
+    - DEBUG_SERVER_HOST
+    - DEBUG_SERVER_PORT

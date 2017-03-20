@@ -101,6 +101,9 @@ class DirTreePage(RenderableResource):
         return Resource.getChild(self, path, request)
 
     def render(self, request):
+        l = {'success': True}
+        session = request.getSession()
+        rootdir = session.user.root if session.user else Path('/')
         if "sendWhat" in request.args:
             if request.args['sendWhat'][0] == 'dirs':
                 pathdir = Path(unquote(request.args['node'][0].decode('utf-8')))
@@ -116,6 +119,8 @@ class DirTreePage(RenderableResource):
                         except:
                             pass
                 else:
+                    if not pathdir.startswith(rootdir):
+                        pathdir = rootdir
                     for d in pathdir.dirs():
                         try:
                             if not d.name.startswith('.') or sys.platform[:3] == "win":
@@ -137,9 +142,11 @@ class DirTreePage(RenderableResource):
                                       "is_readable": is_readable(d),
                                       "is_writable": is_writable(d)})
                 else:
+                    if not pathdir.startswith(rootdir):
+                        pathdir = rootdir
                     parent = pathdir.parent
-                    if (parent == pathdir):
-                        realname = '/'
+                    if parent == rootdir.parent:
+                        realname = rootdir.abspath()
                     else:
                         realname = parent.abspath()
                     items.append({"name": '.', "realname": pathdir.abspath(), "size": pathdir.size, "type": "directory", "modified": int(pathdir.mtime),
@@ -165,15 +172,14 @@ class DirTreePage(RenderableResource):
                                         else:
                                             pathtype = "None"
                                         items.append({"name": getname(d), "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
-                                          "is_readable": is_readable(d),
-                                          "is_writable": is_writable(d)})
+                                                      "is_readable": is_readable(d),
+                                                      "is_writable": is_writable(d)})
                             except:
                                 pass
                         G.application.config.lastDir = pathdir
                     except:
                         pass
                 l = {"totalCount": len(items), 'results': len(items), 'items': items}
-            return json.dumps(l).encode('utf-8')
         elif "query" in request.args:
             query = request.args['query'][0]
             pathdir = Path(unquote(request.args['dir'][0].decode('utf-8')))
@@ -182,11 +188,8 @@ class DirTreePage(RenderableResource):
                 for d in get_drives():
                     items.append({"name": d, "realname": d + '\\', "size": 0, "type": 'directory', "modified": 0})
             else:
-                parent = pathdir.parent
-                if (parent == pathdir):
-                    realname = '/'
-                else:
-                    realname = parent.abspath()
+                if not pathdir.startswith(rootdir):
+                    pathdir = rootdir
                 for d in pathdir.listdir():
                     try:
                         if d.isdir():
@@ -208,5 +211,21 @@ class DirTreePage(RenderableResource):
                         pass
 
             l = {"totalCount": len(items), 'results': len(items), 'items': items}
-            return json.dumps(l).encode('utf-8')
-        return ""
+        elif "upload_filename" in request.args:
+            pathdir = Path(request.args["upload_currentdir"][0]).abspath()
+            if not pathdir.startswith(rootdir):
+                pathdir = rootdir
+            filename = pathdir / Path(request.args["upload_filename"][0])
+            filename.write_bytes(request.args["upload_content"][0])
+            l['path'] = filename
+            l['name'] = filename.basename()
+        elif "remove" in request.args:
+            for path in request.args["remove"]:
+                path = Path(path).abspath()
+                if path.startswith(rootdir):
+                    if path.exists():
+                        if path.isdir():
+                            path.rmtree()
+                        if path.isfile():
+                            path.remove()
+        return json.dumps(l).encode('utf-8')

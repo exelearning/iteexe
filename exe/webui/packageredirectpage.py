@@ -23,11 +23,9 @@ anything it just redirects the user to a new package.
 """
 
 import logging
-import os
-from exe                      import globals as G
-from exe.webui.renderable     import RenderableResource
+from exe.webui.renderable import RenderableResource
 from exe.jsui.mainpage import MainPage
-from twisted.web import error
+from twisted.web import error, http
 
 log = logging.getLogger(__name__)
 
@@ -60,6 +58,9 @@ class PackageRedirectPage(RenderableResource):
         This is called if our ancestors can't find our child.
         This is probably because the url is in unicode
         """
+        session = request.getSession()
+        if self.webServer.application.server and not session.user and not request.getUser():
+            return self.webServer.saml
         if name == '':
             return self
         else:
@@ -68,7 +69,6 @@ class PackageRedirectPage(RenderableResource):
             if result is not None:
                 return result
             else:
-                session = request.getSession()
                 if self.packagePath:
                     session.packageStore.addPackage(self.package)
                     self.bindNewPackage(self.package, session)
@@ -104,9 +104,12 @@ class PackageRedirectPage(RenderableResource):
         log.debug("render_GET" + repr(request.args))
         # Create new package
         session = request.getSession()
+        if self.webServer.application.server and not session.user:
+            request.setResponseCode(http.FORBIDDEN)
+            return ''
         package = session.packageStore.createPackage()
         self.bindNewPackage(package, session)
-        log.info("Created a new package name="+ package.name)
+        log.info("Created a new package name=" + package.name)
         # Tell the web browser to show it
         request.redirect(package.name.encode('utf8'))
         return ''

@@ -175,13 +175,52 @@ Ext.application({
         }
     },
 
+    browseURL: function(url, title, id) {
+        if (Ext.isSecure && url.substr(0, 7) === 'http://') {
+            Ext.Msg.alert(
+                title,
+                Ext.String.format(
+                    _('The requested url is not secure but eXe is hosted in a secure site. To prevent \
+browser restrictions, you must click in the url: {0}'),
+                    '<a href="' + url + '" target="_blank" onclick="eXe.app.closeMessages()">' + url + '</a>')
+            );
+        } else {
+            var tab_panel = Ext.ComponentQuery.query('#main_tab')[0],
+                tab = tab_panel.down('#' + id);
+
+            if (tab && (tab.itemId === 'print_tab' || tab.itemId === 'download_tab')) {
+                tab_panel.remove(tab);
+                tab = null;
+            }
+
+            if (!tab) {
+                tab_panel.add({
+                    xtype: 'uxiframe',
+                    itemId: id,
+                    closable: true,
+                    src: url,
+                    title: title
+                });
+            }
+
+            tab_panel.setActiveTab(id);
+        }
+    },
+
     gotoUrl: function(location) {
         eXe.app.quitWarningEnabled = false;
         if (location == undefined)
             location = window.top.location.pathname;
         nevow_closeLive('window.top.location = "' + location + '";');
     },
-    
+
+    closeMessages: function() {
+        var messages = Ext.ComponentQuery.query("messagebox");
+
+        for(var i in messages)
+            messages[i].close();
+    },
+
     showLoadError: function() {
     	if (eXe.app.config.loadErrors.length > 0) {
     		Ext.Msg.alert(_('Load Error'), eXe.app.config.loadErrors.pop(), eXe.app.showLoadError);
@@ -189,7 +228,15 @@ Ext.application({
     	else
     		eXe.app.afterShowLoadErrors();
     },
-    
+
+    alert: function(title, message, func) {
+        if (eXe.app.filepicker) {
+            return eXe.app.filepicker.alert(title, message, func);
+        }
+
+        Ext.Msg.alert(title, message, func);
+    },
+
     launch: function() {
         Ext.QuickTips.init();
 
@@ -233,7 +280,7 @@ Ext.application({
         setTimeout(function(){
 		    Ext.get('loading').hide();
 		    Ext.get('loading-mask').fadeOut();
-		  }, 250);
+		  }, 50);
         
         if (!eXe.app.config.showIdevicesGrouped) {
         	var panel = Ext.ComponentQuery.query('#idevice_panel')[0],

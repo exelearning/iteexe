@@ -30,6 +30,7 @@ import logging
 import traceback
 import shutil
 import tempfile
+import uuid
 import base64
 from exe.engine.version          import release, revision
 from twisted.internet            import threads, reactor, defer
@@ -44,7 +45,7 @@ from exe.jsui.stylemenu          import StyleMenu
 from exe.jsui.propertiespage     import PropertiesPage
 from exe.webui.authoringpage     import AuthoringPage
 from exe.webui.stylemanagerpage  import StyleManagerPage
-from exe.webui.renderable        import File
+from exe.webui.renderable        import File, Download
 from exe.export.websiteexport    import WebsiteExport
 from exe.export.textexport       import TextExport
 from exe.export.singlepageexport import SinglePageExport
@@ -56,7 +57,7 @@ from exe.importers.scanresources import Resources
 from exe.engine.path             import Path, toUnicode, TempDirPath
 from exe.engine.package          import Package
 from exe                         import globals as G
-from tempfile                    import mkdtemp, mkstemp
+from tempfile                    import mkstemp
 from exe.engine.mimetex          import compile
 from urllib                      import unquote, urlretrieve
 from exe.engine.locationbuttons  import LocationButtons
@@ -71,7 +72,6 @@ from exe.engine.lom.lomclassification import Classification
 import zipfile
 log = logging.getLogger(__name__)
 PROCOMUN_WSDL = ProcomunOauth.BASE_URL + '/oauth_services?wsdl'
-
 
 
 class MainPage(RenderableLivePage):
@@ -91,6 +91,8 @@ class MainPage(RenderableLivePage):
         self.session = session
         RenderableLivePage.__init__(self, parent, package, config)
         self.putChild("resources", File(package.resourceDir))
+        self.tempDir = TempDirPath()
+        self.putChild("temp", Download(self.tempDir, 'application/octet-stream', ('*')))
         # styles directory
         # self.putChild("stylecss", File(self.config.stylesDir)
 
@@ -106,13 +108,17 @@ class MainPage(RenderableLivePage):
         # And in the main section
         self.propertiesPage = PropertiesPage(self)
         self.authoringPage = None
-        self.previewDir = None
+        self.previewPage = None
+        self.printPage = None
         self.authoringPages = {}
         self.classificationSources = {}
 
         G.application.resourceDir = Path(package.resourceDir)
 
         self.location_buttons = LocationButtons()
+
+    def __repr__(self):
+        return super(MainPage, self).__repr__() + repr(self.authoringPages)
 
     def child_authoring(self, ctx):
         """
@@ -136,6 +142,14 @@ class MainPage(RenderableLivePage):
             self.exportWebSite(None, self.package.previewDir, stylesDir)
             self.previewPage = File(self.package.previewDir / self.package.name)
         return self.previewPage
+
+    def child_print(self, ctx):
+        if not self.package.printDir:
+            stylesDir = self.config.stylesDir / self.package.style
+            self.package.printDir = TempDirPath()
+            self.exportSinglePage(None, self.package.printDir, self.config.webDir, stylesDir, True)
+            self.printPage = File(self.package.printDir / self.package.name)
+        return self.printPage
 
     def child_taxon(self, ctx):
         """
@@ -168,6 +182,12 @@ class MainPage(RenderableLivePage):
 
         return json.dumps({'success': True, 'data': data})
 
+    def child_temp_file(self, ctx):
+        request = inevow.IRequest(ctx)
+        filetype = request.args.get('filetype', [''])[0]
+        path = self.tempDir / uuid.uuid4() + filetype[1:]
+        return json.dumps({'success': True, 'path': path, 'name': path.basename()})
+
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
         # inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
@@ -194,12 +214,10 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleExportProcomun, 'exportProcomun')
         setUpHandler(self.handleXliffExport, 'exportXliffPackage')
         setUpHandler(self.handleQuit, 'quit')
-        setUpHandler(self.handleBrowseURL, 'browseURL')
         setUpHandler(self.handleMergeXliffPackage, 'mergeXliffPackage')
         setUpHandler(self.handleInsertPackage, 'insertPackage')
         setUpHandler(self.handleExtractPackage, 'extractPackage')
         setUpHandler(self.outlinePane.handleSetTreeSelection, 'setTreeSelection')
-        setUpHandler(self.handleClearAndMakeTempPrintDir, 'makeTempPrintDir')
         setUpHandler(self.handleRemoveTempDir, 'removeTempDir')
         setUpHandler(self.handleTinyMCEimageChoice, 'previewTinyMCEimage')
         setUpHandler(self.handleTinyMCEimageDragDrop, 'previewTinyMCEimageDragDrop')
@@ -229,15 +247,26 @@ class MainPage(RenderableLivePage):
             self.webServer.monitor()
 
     def render_config(self, ctx, data):
-        config = {'lastDir': G.application.config.lastDir,
-                  'locationButtons': self.location_buttons.buttons,
-                  'lang': G.application.config.locale.split('_')[0],
-                  'showPreferences': G.application.config.showPreferencesOnStart == '1' and not G.application.preferencesShowed,
-                  'loadErrors': G.application.loadErrors,
-                  'showIdevicesGrouped': G.application.config.showIdevicesGrouped == '1',
-                  'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (self.package.name, IClientHandle(ctx).handleId),
-                  'pathSep': os.path.sep
-                 }
+        request = inevow.IRequest(ctx)
+        session = request.getSession()
+        config = {
+            'lastDir': G.application.config.lastDir,
+            'locationButtons': self.location_buttons.buttons,
+            'lang': G.application.config.locale.split('_')[0],
+            'showPreferences': G.application.config.showPreferencesOnStart == '1' and not G.application.preferencesShowed,
+            'loadErrors': G.application.loadErrors,
+            'showIdevicesGrouped': G.application.config.showIdevicesGrouped == '1',
+            'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (
+                self.package.name, IClientHandle(ctx).handleId
+            ),
+            'pathSep': os.path.sep,
+            'server': G.application.server,
+            'user_root': '/'
+        }
+        if session.user:
+            config['user'] = session.user.name
+            config['user_picture'] = session.user.picture
+            config['user_root'] = session.user.root
         G.application.preferencesShowed = True
         G.application.loadErrors = []
         return tags.script(type="text/javascript")["var config = %s" % json.dumps(config)]
@@ -336,15 +365,15 @@ class MainPage(RenderableLivePage):
             raise
         # Tell the user and continue
         if onDone:
-            client.alert(_(u'Package saved to: %s') % filename, onDone)
+            client.filePickerAlert(_(u'Package saved to: %s') % filename, onDone)
         elif self.package.name != oldName:
             # Redirect the client if the package name has changed
             self.webServer.root.putChild(self.package.name, self)
             log.info('Package saved, redirecting client to /%s' % self.package.name)
-            client.alert(_(u'Package saved to: %s') % filename, 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'), \
+            client.filePickerAlert(_(u'Package saved to: %s') % filename, 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'), \
                          filter_func=otherSessionPackageClients)
         else:
-            client.alert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
+            client.filePickerAlert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
 
     def handleLoadPackage(self, client, filename, filter_func=None):
         """Load the package named 'filename'"""
@@ -429,117 +458,6 @@ class MainPage(RenderableLivePage):
         # and finally, go ahead and remove the top-level tempdir itself:
         if int(rm_top_dir) != 0:
             os.rmdir(tempdir)
-
-    def get_printdir_relative2web(self, exported_dir):
-        """
-        related to the following ClearParentTempPrintDirs(), return a
-        local URL corresponding to the exported_dir
-        """
-        rel_name = exported_dir[len(G.application.tempWebDir):]
-        if sys.platform[:3] == "win":
-            rel_name = rel_name.replace('\\', '/')
-        if rel_name.startswith('/'):
-            rel_name = rel_name[1:]
-        http_relative_pathname = '%s/%s'%(G.application.exeAppUri, rel_name)
-        log.debug('printdir http_relative_pathname=%s'%(http_relative_pathname))
-        return http_relative_pathname
-
-    def ClearParentTempPrintDirs(self, client, log_dir_warnings):
-        """
-        Determine the parent temporary printing directory, and clear them
-        if safe to do so (i.e., if not the config dir itself, for example)
-        Makes (if necessary), and clears out (if applicable) the parent
-        temporary directory.
-        The calling handleClearAndMakeTempPrintDir() shall then make a
-        specific print-job subdirectory.
-        """
-        #
-        # Create the parent temp print dir as hardcoded under the webdir, as:
-        #           http://temp_print_dirs
-        # (eventually may want to allow this information to be configured by
-        #  the user, stored in globals, etc.)
-        web_dirname = G.application.tempWebDir
-        under_dirname = os.path.join(web_dirname, "temp_print_dirs")
-        clear_tempdir = 0
-        dir_warnings = ""
-
-        # but first need to ensure that under_dirname itself is available;
-        # if not, create it:
-        if cmp(under_dirname, "") != 0:
-            if os.path.exists(under_dirname):
-                if os.path.isdir(under_dirname):
-                    # Yes, this directory already exists.
-                    # pre-clean it, keeping the clutter down:
-                    clear_tempdir = 1
-                else:
-                    dir_warnings = "WARNING: The desired Temporary Print " \
-                            + "Directory, \"" + under_dirname \
-                            + "\", already exists, but as a file!\n"
-                    if log_dir_warnings:
-                        log.warn("ClearParentTempPrintDirs(): The desired " \
-                                + "Temporary Print Directory, \"%s\", " \
-                                + "already exists, but as a file!", \
-                                under_dirname)
-                    under_dirname = web_dirname
-                    # but, we can't just put the tempdirs directly underneath
-                    # the webDir, since no server object exists for it.
-                    # So, as a quick and dirty solution, go ahead and put
-                    # them in the images folder:
-                    under_dirname = os.path.join(under_dirname, "images")
-
-                    dir_warnings += "    RECOMMENDATION: please " \
-                            + "remove/rename this file to allow eXe easier "\
-                            + "management of its temporary print files.\n"
-                    dir_warnings += "     eXe will create the temporary " \
-                           + "printing directory directly under \"" \
-                           + under_dirname + "\" instead, but this might "\
-                           + "leave some files around after eXe terminates..."
-                    if log_dir_warnings:
-                        log.warn("    RECOMMENDATION: please remove/rename "\
-                            + "this file to allow eXe easier management of "\
-                            + "its temporary print files.")
-                        log.warn("     eXe will create the temporary " \
-                            + "printing directory directly under \"%s\" " \
-                            + "instead, but this might leave some files " \
-                            + "around after eXe terminates...", \
-                            under_dirname)
-                    # and note that we do NOT want to clear_tempdir
-                    # on the config dir itself!!!!!
-            else:
-                os.makedirs(under_dirname)
-                # and while we could clear_tempdir on it, there's no need to.
-        if clear_tempdir:
-            # before making this particular print job's temporary print
-            # directory underneath the now-existing temp_print_dirs,
-            # go ahead and clear out temp_print_dirs such that we have
-            # AT MOST one old temporary set of print job files still existing
-            # once eXe terminates:
-            rm_topdir = "0"
-            # note: rm_topdir is passed in as a STRING since
-            # handleRemoveTempDir expects as such from nevow's
-            # clientToServerEvent() call:
-            self.handleRemoveTempDir(client, under_dirname, rm_topdir)
-
-        return under_dirname, dir_warnings
-
-    def handleClearAndMakeTempPrintDir(self, client, suffix, prefix, \
-                                        callback):
-        """
-        Makes a temporary printing directory, and yup, that's pretty much it!
-        """
-
-        # First get the name of the parent temp directory, after making it
-        # (if necessary) and clearing (if applicable):
-        log_dir_warnings = 1
-        (under_dirname, dir_warnings) = self.ClearParentTempPrintDirs( \
-                                             client, log_dir_warnings)
-
-        # Next, go ahead and create this particular print job's temporary
-        # directory under the parent temp directory:
-        temp_dir = mkdtemp(suffix, prefix, under_dirname)
-
-        # Finally, pass the created temp_dir back to the expecting callback:
-        client.call(callback, temp_dir, dir_warnings)
 
     def handleTinyMCEimageChoice(self, client, tinyMCEwin, tinyMCEwin_name, \
                              tinyMCEfield, local_filename, preview_filename):
@@ -668,7 +586,7 @@ class MainPage(RenderableLivePage):
             client.alert(\
                 _(u'Preview directory %s is a file, cannot replace it') \
                 % previewDir)
-            log.error("Couldn't preview tinyMCE-chosen image: " + 
+            log.error("Couldn't preview tinyMCE-chosen image: " +
                       "Preview dir %s is a file, cannot replace it" \
                       % previewDir)
             errors += 1
@@ -698,7 +616,7 @@ class MainPage(RenderableLivePage):
             descrip_file.write(base64.b64decode(local_filename))
             descrip_file.flush()
             descrip_file.close()
-            
+
             client.sendScript('eXe.app.fireEvent("previewTinyMCEDragDropImageDone")')
 
         except Exception, e:
@@ -785,7 +703,7 @@ class MainPage(RenderableLivePage):
             # Delete the temp file made by compile
             Path(tempFileName).remove()
         return
-        
+
     def handleTinyMCEmathML(self, client, tinyMCEwin, tinyMCEwin_name, \
                              tinyMCEfield, mathml_source, math_fontsize, \
                              preview_image_filename, preview_math_srcfile):
@@ -793,11 +711,11 @@ class MainPage(RenderableLivePage):
         See self.handleTinyMCEmath
         To do: This should generate an image from MathML code, not from LaTeX code.
         """
-        
+
         # Provisional (just an alert message)
         client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
         return
-        
+
         server_filename = ""
         errors = 0
 
@@ -899,7 +817,7 @@ class MainPage(RenderableLivePage):
 
     def handleExportProcomun(self, client):
         if not client.session.oauthToken.get('procomun'):
-            verify = True
+            verify = False
             if hasattr(sys, 'frozen'):
                 verify = 'cacerts.txt'
             oauth2Session = OAuth2Session(ProcomunOauth.CLIENT_ID, redirect_uri=ProcomunOauth.REDIRECT_URI)
@@ -979,16 +897,8 @@ class MainPage(RenderableLivePage):
         """
         adding the print feature in using the same export functionality:
         """
-        if exportType == 'singlePage' or exportType == 'printSinglePage':
-            printit = 0
-            if exportType == 'printSinglePage':
-                printit = 1
-            exported_dir = self.exportSinglePage(client, filename, webDir, \
-                                                 stylesDir, printit)
-            if printit == 1 and exported_dir is not None:
-                web_printdir = self.get_printdir_relative2web(exported_dir)
-                G.application.config.browser.open(web_printdir)
-
+        if exportType == 'singlePage':
+            self.exportSinglePage(client, filename, webDir, stylesDir, False)
         elif exportType == 'webSite':
             self.exportWebSite(client, filename, stylesDir)
         elif exportType == 'csvReport':
@@ -1021,41 +931,24 @@ class MainPage(RenderableLivePage):
 
     def handleQuit(self, client):
         """
-        Stops the server
+        Close client session and stops the server if necessary
         """
-        # first, go ahead and clear out any temp job files still in
-        # the temporary print directory:
-        log_dir_warnings = 0
-        # don't warn of any issues with the directories at quit,
-        # since already warned at initial directory creation
-        (parent_temp_print_dir, dir_warnings) = \
-                self.ClearParentTempPrintDirs(client, log_dir_warnings)
-
         client.close("window.location = \"quit\";")
+        # self.authoringPages.pop(client.handleId)
+        # self.webServer.root.mainpages[self.session.uid].pop(self.package.name)
 
-        if len(self.clientHandleFactory.clientHandles) <= 1:
-            self.webServer.monitoring = False
-            G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
-            try:
-                shutil.rmtree(G.application.tempWebDir, True)
-                shutil.rmtree(G.application.resourceDir, True)
-            except:
-                log.debug('Don\'t delete temp directorys. ')
-            reactor.callLater(2, reactor.stop)
-        else:
-            log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))
-
-    def handleBrowseURL(self, client, url):
-        """
-        visit the specified URL using the system browser
-        if the URL contains %s, substitute the local webDir
-        """
-        url = url.replace('%s', self.config.webDir)
-        log.debug(u'browseURL: ' + url)
-        if hasattr(os, 'startfile'):
-            os.startfile(url)
-        else:
-            G.application.config.browser.open(url, new=True)
+        if not self.webServer.application.server:
+            if len(self.clientHandleFactory.clientHandles) <= 1:
+                self.webServer.monitoring = False
+                G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
+                try:
+                    shutil.rmtree(G.application.tempWebDir, True)
+                    shutil.rmtree(G.application.resourceDir, True)
+                except:
+                    log.debug('Don\'t delete temp directorys. ')
+                reactor.callLater(2, reactor.stop)
+            else:
+                log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))
 
     def handleMergeXliffPackage(self, client, filename, from_source):
         """
@@ -1129,7 +1022,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXTRACT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Package extracted to: %s') % filename)
+        client.filePickerAlert(_(u'Package extracted to: %s') % filename)
 
     def handleCreateDir(self, client, currentDir, newDir):
         try:
@@ -1183,21 +1076,24 @@ class MainPage(RenderableLivePage):
             if not filename.exists():
                 filename.makedirs()
             elif not filename.isdir():
-                client.alert(_(u'Filename %s is a file, cannot replace it') %
+                if client:
+                    client.alert(_(u'Filename %s is a file, cannot replace it') %
                              filename)
                 log.error("Couldn't export web page: " +
                           "Filename %s is a file, cannot replace it" % filename)
                 return
             else:
-                client.alert(_(u'Folder name %s already exists. '
-                                'Please choose another one or delete existing one then try again.') % filename)
-                return
+                if client:
+                    client.alert(_(u'Folder name %s already exists. '
+                                'Please choose another one or delete existing one then try again.') % filename)           
+                return 
             # Now do the export
             singlePageExport = SinglePageExport(stylesDir, filename, \
                                          imagesDir, scriptsDir, cssDir, templatesDir)
             singlePageExport.export(self.package, printFlag)
         except Exception, e:
-            client.alert(_('SAVE FAILED!\n%s') % str(e))
+            if client:
+                client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
         # Show the newly exported web site in a new window
         if not printFlag:
@@ -1263,7 +1159,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.filePickerAlert(_(u'Exported to %s') % filename)
 
     def exportText(self, client, filename):
         try:
@@ -1282,7 +1178,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.filePickerAlert(_(u'Exported to %s') % filename)
 
     def handleXliffExport(self, client, filename, source, target, copy, cdata):
         """
@@ -1300,7 +1196,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.filePickerAlert(_(u'Exported to %s') % filename)
 
     def exportScorm(self, client, filename, stylesDir, scormType):
         """
@@ -1322,7 +1218,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.filePickerAlert(_(u'Exported to %s') % filename)
 
     def exportEpub3(self, client, filename, stylesDir):
         try:
@@ -1336,7 +1232,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s' % str(e)))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.filePickerAlert(_(u'Exported to %s') % filename)
 
     def exportReport(self, client, filename, stylesDir):
         """
@@ -1357,7 +1253,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s' % str(e)))
             raise
-        client.alert(_(u'Exported to %s' % filename))
+        client.filePickerAlert(_(u'Exported to %s' % filename))
 
     def exportIMS(self, client, filename, stylesDir):
         """
@@ -1378,21 +1274,22 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.filePickerAlert(_(u'Exported to %s') % filename)
 
     # Utility methods
     def _startFile(self, filename):
         """
         Launches an exported web site or page
         """
-        if hasattr(os, 'startfile'):
-            try:
-                os.startfile(filename)
-            except UnicodeEncodeError:
-                os.startfile(filename.encode(Path.fileSystemEncoding))
-        else:
-            filename /= 'index.html'
-            G.application.config.browser.open('file://' + filename)
+        if not G.application.server:
+            if hasattr(os, 'startfile'):
+                try:
+                    os.startfile(filename)
+                except UnicodeEncodeError:
+                    os.startfile(filename.encode(Path.fileSystemEncoding))
+            else:
+                filename /= 'index.html'
+                G.application.config.browser.open('file://'+filename)
 
     def _loadPackage(self, client, filename, newLoad=True,
                      destinationPackage=None):

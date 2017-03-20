@@ -24,7 +24,8 @@ Ext.define('eXe.controller.filepicker.File', {
 	requires: [
 		'eXe.view.filepicker.FileList',
 		'eXe.view.filepicker.DirectoryTree',
-		'eXe.view.filepicker.FilePicker'
+		'eXe.view.filepicker.FilePicker',
+        'Ext.menu.Menu'
 	],
 	refs: [{
         ref: 'filesList',
@@ -51,6 +52,9 @@ Ext.define('eXe.controller.filepicker.File', {
 				itemclick: { fn: this.onHandleRowClick 	},
 				itemdblclick: { fn: this.onHandleRowDblClick }
 			},
+            'filelist dataview': {
+                itemcontextmenu: { fn: this.onContextMenu, scope: this }
+            },
 			'#filepicker': {
 				show: { fn: this.onFilePickerShow, scope: this }
 			},
@@ -74,8 +78,21 @@ Ext.define('eXe.controller.filepicker.File', {
 			},
             '#file_place_field': {
                 specialkey: { fn: this.onSpecialKey, scope: this }
-            }
+            },
+			'#upload_filefield' : {
+				change: { fn: this.onUploadFile }
+			}
 		});
+
+        this.contextMenu = Ext.create('Ext.menu.Menu', {
+        items: [
+            Ext.create('Ext.Action', {
+                text: 'Remove',
+                handler: this.onRemoveAction,
+                scope: this
+            })
+        ]
+        });
 
 		this.application.on({
 			dirchange: this.onLoadFileList,
@@ -83,6 +100,38 @@ Ext.define('eXe.controller.filepicker.File', {
 			scope: this
 		});
 	},
+    onContextMenu: function(view, rec, node, index, e) {
+        e.stopEvent();
+        this.contextMenu.showAt(e.getXY());
+        return false;
+    },
+    onRemoveAction: function() {
+        var records = this.getFilesList().getSelectionModel().getSelection(),
+            paths = [],
+            name;
+
+        for (var record in records) {
+            name = records[record].get('name');
+            if (name !== '.' && name !== '..') {
+                paths.push(records[record].get('realname'));
+            }
+        }
+
+        Ext.Ajax.request({
+            url: '/dirtree',
+            params: {remove: paths},
+            success: function (form, action) {
+                Ext.Msg.hide();
+                eXe.app.getStore('filepicker.DirectoryTree').load({
+                    callback: function () {
+                        eXe.app.fireEvent("dirchange", this.currentDir);
+                    },
+                    scope: this
+                })
+            },
+            scope: this
+        });
+    },
     onSpecialKey: function(field, e) {
         if (e.getKey() == e.ENTER) {
             if (this.getFilePicker().type == eXe.view.filepicker.FilePicker.modeSave)
@@ -338,6 +387,39 @@ Ext.define('eXe.controller.filepicker.File', {
                 }
             }
 		}
+	},
+	onUploadFile: function(filefield, value) {
+		var form = filefield.up('form'),
+			fp = filefield.up('#filepicker');
+
+        form.down('#upload_currentdir').setValue(this.currentDir);
+        form.down('#upload_filename').setValue(value.replace(/C:\\fakepath\\/g, ''));
+
+		Ext.Msg.wait(_('Uploading File...'));
+        if (form.getForm().isValid()) {
+            form.submit({
+                url: "/dirtree",
+                success: function(form, action) {
+					Ext.Msg.hide();
+
+					if (fp.remote === false) {
+						eXe.app.getStore('filepicker.DirectoryTree').load({
+							callback: function() {
+								eXe.app.fireEvent("dirchange", this.currentDir);
+							},
+							scope: this
+						})
+					} else {
+						fp.status = eXe.view.filepicker.FilePicker.returnOk;
+						fp.file = JSON.parse(action.response.responseText);;
+						fp.callback.call(fp.scope, fp);
+						fp.destroy();
+						eXe.app.filepicker = null;
+					}
+                },
+				scope: this
+            });
+        }
 	},
 	onCreateDir: function() {
         var store = this.getFilepickerFileStore(),

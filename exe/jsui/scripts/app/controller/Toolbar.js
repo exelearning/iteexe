@@ -161,7 +161,7 @@ Ext.define('eXe.controller.Toolbar', {
             	click: { fn: this.processExportEvent, exportType: "csvReport" }
             },
             '#tools_preview': {
-                click: { fn: this.processBrowseEvent, url: location.href + '/preview' }
+                click: { fn: this.processBrowseEvent, url: location.href + '/preview/', title: _('Preview'), id: 'preview_tab' }
             },
             '#tools_refresh': {
                 click: this.toolsRefresh
@@ -174,7 +174,7 @@ Ext.define('eXe.controller.Toolbar', {
             //    click: { fn: this.processBrowseEvent, url: 'file://%s/docs/manual/Online_manual.html' }
             // },
             '#help_tutorial': {
-                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/html_manual/exe20_en/') }
+                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/html_manual/exe20_en/'), title: _('eXe Manual'), id: 'manual_tab' }
             },
             '#help_notes': {
                 click: { fn: this.releaseNotesPage }
@@ -184,16 +184,16 @@ Ext.define('eXe.controller.Toolbar', {
                 click: this.legalPage
             },
             '#help_website': {
-                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/?lang=en') }
+                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/?lang=en', title: _('eXe Website'), id: 'website_tab' }
             },
             '#help_issue': {
-                click: { fn: this.processBrowseEvent, url: 'https://github.com/exelearning/iteexe/issues' }
+                click: { fn: this.processBrowseEvent, url: 'https://github.com/exelearning/iteexe/issues', title: _('Report an Issue'), id: 'issue_tab' }
             },
             '#help_forums': {
-                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/forums/') }
+                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/forums/', title: _('eXe Forums'), id: 'forums_tab' }
             },
             '#help_last': {
-                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/downloads/') }
+                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/downloads/'), title: _('Downloads'), id: 'downloads_tab' }
             },
             '#help_about': {
                 click: this.aboutPage
@@ -333,7 +333,7 @@ Ext.define('eXe.controller.Toolbar', {
           }
         });
         about.show();
-    },
+	},
 
     releaseNotesPage: function() {
         var about = new Ext.Window ({
@@ -370,12 +370,8 @@ Ext.define('eXe.controller.Toolbar', {
         legalnotes.show();
     },
 
-    browseURL: function(url) {
-        nevow_clientToServerEvent('browseURL', this, '', url);
-    },
-    
     processBrowseEvent: function(menu, item, e, eOpts) {
-        this.browseURL(e.url)
+        eXe.app.browseURL(e.url, e.title, e.id)
     },
 
     // Not used - Task 1080, jrf
@@ -463,10 +459,10 @@ Ext.define('eXe.controller.Toolbar', {
 	// Style designer
 	styleDesigner : {
 		open : function(btn, text){
-			var lang = "en"; // Default language
-			var l = document.documentElement.lang;
-			if (l && l!="") lang = l;				
-			styleDesignerWindow = window.open("/tools/style-designer/previews/website/?lang="+lang);
+			var lang = "en", // Default language
+			    l = document.documentElement.lang;
+			if (l && l!="") lang = l;
+			eXe.app.browseURL("/tools/style-designer/previews/website/?lang="+lang, _('Style Designer'), 'style_designer_tab');
 		},
 		notCompatible : function(){
 			Ext.Msg.alert("", _("The current Style is not compatible with the Style Designer"));
@@ -508,10 +504,14 @@ Ext.define('eXe.controller.Toolbar', {
 									this.styleDesigner.notCompatible();
 								} else {
 									// If it's compatible, we open the Style designer
-									var lang = "en"; // Default language
-									var l = document.documentElement.lang;
-									if (l && l!="") lang = l;
-									styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId()+"&lang="+lang);		
+									var lang = "en", // Default language
+									    l = document.documentElement.lang,
+                                        url;
+									if (l && l!="")
+                                        lang = l;
+
+									url = "/tools/style-designer/previews/website/?style=" + this.styleDesigner.getCurrentStyleId() + "&lang=" + lang;
+									eXe.app.browseURL(url, _('Style Designer'), 'style_designer_tab');
 								}
 							},
 							error: function(){
@@ -575,6 +575,7 @@ Ext.define('eXe.controller.Toolbar', {
         var f = Ext.create("eXe.view.filepicker.FilePicker", {
             type: eXe.view.filepicker.FilePicker.modeSave,
             title: _("Save extracted package as"),
+            remote: true,
             modal: true,
             scope: this,
             callback: function(fp) {
@@ -630,6 +631,7 @@ Ext.define('eXe.controller.Toolbar', {
         var fp = Ext.create("eXe.view.filepicker.FilePicker", {
             type: eXe.view.filepicker.FilePicker.modeOpen,
             title: _("Select LOM Metadata file to import."),
+            remote: true,
             modal: true,
             scope: this,
             callback: function(fp) {
@@ -687,6 +689,7 @@ Ext.define('eXe.controller.Toolbar', {
         var fp = Ext.create("eXe.view.filepicker.FilePicker", {
             type: eXe.view.filepicker.FilePicker.modeOpen,
             title: _("Select Xliff file to import"),
+            remote: true,
             modal: true,
             scope: this,
             callback: function(fp) {
@@ -719,6 +722,7 @@ Ext.define('eXe.controller.Toolbar', {
         var fp = Ext.create("eXe.view.filepicker.FilePicker", {
             type: eXe.view.filepicker.FilePicker.modeSave,
             title: _("Export to Xliff as"),
+            remote: true,
             modal: true,
             scope: this,
             callback: function(fp) {
@@ -863,7 +867,7 @@ Ext.define('eXe.controller.Toolbar', {
     },
 
 	exportPackage: function(exportType, exportDir) {
-	    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage' || exportType == 'ipod' || exportType == 'mxml' ) {
+	    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'ipod' || exportType == 'mxml' ) {
 	        if (exportDir == '') {
                 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
 		            type: eXe.view.filepicker.FilePicker.modeGetFolder,
@@ -891,6 +895,7 @@ Ext.define('eXe.controller.Toolbar', {
                 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
                     type: eXe.view.filepicker.FilePicker.modeSave,
                     title: _("Export text package as"),
+                    remote: true,
                     modal: true,
                     scope: this,
                     callback: function(fp) {
@@ -911,6 +916,7 @@ Ext.define('eXe.controller.Toolbar', {
             var fp = Ext.create("eXe.view.filepicker.FilePicker", {
                 type: eXe.view.filepicker.FilePicker.modeSave,
                 title: _("Save package resources report as"),
+                remote: true,
                 modal: true,
                 scope: this,
                 callback: function(fp) {
@@ -931,6 +937,7 @@ Ext.define('eXe.controller.Toolbar', {
                 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
                     type: eXe.view.filepicker.FilePicker.modeSave,
                     title: _("Export EPUB3 package as"),
+                    remote: true,
                     modal: true,
                     scope: this,
                     callback: function(fp) {
@@ -963,6 +970,7 @@ Ext.define('eXe.controller.Toolbar', {
             var fp = Ext.create("eXe.view.filepicker.FilePicker", {
 	            type: eXe.view.filepicker.FilePicker.modeSave,
 	            title: title,
+                remote: true,
 	            modal: true,
 	            scope: this,
 	            callback: function(fp) {
@@ -974,7 +982,7 @@ Ext.define('eXe.controller.Toolbar', {
 	            }
 	        });
 	        fp.appendFilters([
-	            { "typename": _("SCORM/IMS/ZipFile"), "extension": "*.txt", "regex": /.*\.zip$/ },
+	            { "typename": _("SCORM/IMS/ZipFile"), "extension": "*.zip", "regex": /.*\.zip$/ },
 	            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
 	            ]
 	        );
@@ -983,22 +991,8 @@ Ext.define('eXe.controller.Toolbar', {
 	},// exportPackage()
     
     filePrint: function() {
-	   // filePrint step#1: create a temporary print directory, 
-	   // and return that to filePrint2, which will then call exportPackage():
-	   var tmpdir_suffix = ""
-	   var tmpdir_prefix = "eXeTempPrintDir_"
-	   nevow_clientToServerEvent('makeTempPrintDir', this, '', tmpdir_suffix, 
-	                              tmpdir_prefix, "eXe.app.getController('Toolbar').filePrint2")
-	   // note: as discussed below, at the end of filePrint3_openPrintWin(), 
-	   // the above makeTempPrintDir also removes any previous print jobs
-	},
-	
-	filePrint2: function(tempPrintDir, printDir_warnings) {
-	   if (printDir_warnings.length > 0) {
-	      Ext.Msg.alert("", printDir_warnings)
-	   }
-	   this.exportPackage('printSinglePage', tempPrintDir);
-	},
+        eXe.app.browseURL(location.href + '/print/', _('Print'), 'print_tab');
+    },
 	
     recentRender: function() {
     	Ext.Ajax.request({

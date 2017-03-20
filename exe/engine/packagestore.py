@@ -57,7 +57,7 @@ class PackageStore:
         """
         Get package using the name
         """
-        return self.loaded[name]
+        return self.loaded.get(name)
     
 
     def addPackage(self, package):

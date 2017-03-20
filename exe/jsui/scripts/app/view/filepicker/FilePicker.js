@@ -40,6 +40,61 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 
 	file: {},
 
+	remote: false,
+
+	show: function() {
+		eXe.app.filepicker = this;
+		if (this.remote) {
+			if (this.type === eXe.view.filepicker.FilePicker.modeOpen) {
+				var filefield = this.down('#upload_filefield');
+
+				this.callParent();
+				this.hide();
+				filefield.fileInputEl.dom.click();
+			} else {
+				Ext.Ajax.request({
+					url: window.location.href + '/temp_file',
+					params: { filetype: this.filetypes.getAt(0).get('extension') },
+					success: function (response) {
+						this.status = eXe.view.filepicker.FilePicker.returnOk;
+						this.file = JSON.parse(response.responseText);
+						this.callback.call(this.scope, this);
+					},
+					scope: this
+				});
+			}
+		} else {
+			this.callParent();
+		}
+	},
+
+	alert: function(title, message, func) {
+		if (this.remote) {
+			eXe.app.browseURL(window.location.href + '/temp/' + this.file.name, _('Download'), 'download_tab');
+			if (func) {
+				func();
+			} else {
+				try {
+					Ext.Msg.close();
+				} catch (err) {
+
+				}
+
+				setTimeout(function(){
+					var tab_panel = Ext.ComponentQuery.query('#main_tab')[0],
+                		tab = tab_panel.down('#download_tab');
+
+					if (tab) {
+						tab_panel.remove(tab);
+						tab = null;
+					}
+				}, 3000);
+			}
+		} else {
+			Ext.Msg.alert(title, message, func);
+		}
+	},
+
     initComponent: function() {
         var me = this,
             ft = Ext.create("Ext.data.Store",{ fields: ['typename', 'extension', 'regex'] }),
@@ -70,6 +125,10 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 	           }
             ;
 
+		if (eXe.app.filepicker) {
+			eXe.app.filepicker.destroy();
+		}
+
         me.files = [];
 
         switch (me.type) {
@@ -88,6 +147,39 @@ Ext.define('eXe.view.filepicker.FilePicker', {
                 buttons[2] = { xtype: 'button', text: _('Select Folder'), itemId: 'filepicker_open' };
                 top_buttons[eXe.app.config.locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
         		break;
+        	case eXe.view.filepicker.FilePicker.modeOpen:
+        		if(eXe.app.config.server) {
+					top_buttons[eXe.app.config.locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
+        			top_buttons[eXe.app.config.locationButtons.length + 2] =
+        			{
+    					xtype: "form",
+    					layout: {
+    						type: "hbox"
+    					},
+                        border: false,
+    					items: [
+                            {
+                                xtype: 'filefield',
+                                name: 'upload_content',
+                                itemId: "upload_filefield",
+                                buttonOnly: true,
+                                hideLabel: true,
+                                buttonText: _('Upload File')
+                            },
+                            {
+                                xtype: "hidden",
+                                name: "upload_filename",
+                                itemId: "upload_filename"
+                            },
+                            {
+                                xtype: "hidden",
+                                name: "upload_currentdir",
+                                itemId: "upload_currentdir"
+                            }
+                        ]
+        			};
+        		}
+                break;
         }
         
         Ext.applyIf(me, {

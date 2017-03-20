@@ -26,6 +26,7 @@ function importStyle(){
 	var fp = Ext.create("eXe.view.filepicker.FilePicker", {
         type: eXe.view.filepicker.FilePicker.modeOpen,
         title: _("Select ZIP Style file to import."),
+		remote: eXe.app.config.server,
         modal: true,
         scope: this,
         callback: function(fp) {

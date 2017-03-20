@@ -49,7 +49,7 @@ class EditorPage(RenderableResource):
         Initialize
         """
         RenderableResource.__init__(self, parent)
-        self.editorPane   = EditorPane(self.webServer, self)
+        self.editorPane   = None
         self.url          = ""
         self.elements     = []
         self.isNewIdevice = True
@@ -72,7 +72,9 @@ class EditorPage(RenderableResource):
         Process current package 
         """
         log.debug("process " + repr(request.args))
-        
+
+        if not self.editorPane:
+            self.editorPane = EditorPane(self.webServer, self)
         self.editorPane.process(request,"old")
 
         if "action" in request.args:

@@ -26,18 +26,9 @@
 WebServer module
 """
 
-# Redirect std err for importing twisted and nevow
-import sys
-from cStringIO import StringIO
-sys.stderr, oldStdErr = StringIO(), sys.stderr
-sys.stdout, oldStdOut = StringIO(), sys.stdout
-try:
-    from twisted.internet              import reactor
-    from twisted.internet.error        import CannotListenError
-    from exe.webui.packageredirectpage import PackageRedirectPage
-finally:
-    sys.stderr = oldStdErr
-    sys.stdout = oldStdOut
+from twisted.internet              import reactor
+from twisted.internet.error        import CannotListenError
+from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage          import EditorPage
 from exe.webui.stylemanagerpage    import StyleManagerPage
 from exe.webui.preferencespage     import PreferencesPage
@@ -52,7 +43,9 @@ from exe.webui.renderable          import File
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
 from exe.webui.dirtree import DirTreePage
 from exe.webui.session import eXeSite
+from exe.webui.saml import SAMLPage
 from exe.webui.oauthpage import OauthPage
+from exe.webui.openpackagepage import OpenPackagePage
 from exe import globals as G
 
 
@@ -73,6 +66,7 @@ class WebServer:
         self.config = application.config
         self.tempWebDir = application.tempWebDir
         self.root = PackageRedirectPage(self, packagePath)
+        self.saml = SAMLPage(self.root, self.config.configDir)
         self.editor = EditorPage(self.root)
         self.stylemanager = StyleManagerPage(self.root)
         self.preferences = PreferencesPage(self.root)
@@ -83,9 +77,10 @@ class WebServer:
         self.styledesigner = StyleDesigner(self.root)
         # jrf - legal notes
         self.legal = LegalPage(self.root)
-        self.quit = QuitPage(self.root)
+        self.quit = QuitPage(self.root, self.config.configDir)
         self.iecmwaring = IECMWarningPage(self.root)
         self.oauth = OauthPage(self.root)
+        self.openpackage = OpenPackagePage(self.root)
         self.monitoring = False
 
     def find_port(self):
@@ -106,18 +101,22 @@ class WebServer:
         found_other_eXe = 0
         test_port_num = self.config.port
         test_port_count = 0
+        interface = "127.0.0.1"
 
         # could set a maximum range within the users's config file,
         # but for now, just hardcode a max:
         max_port_tests = 5000
+        if self.application.server:
+            max_port_tests = 1
+            interface = self.application.interface or "0.0.0.0"
         while not port_test_done:
             test_port_num = self.config.port + test_port_count
             try:
                 log.debug("find_port(): trying to listenTCP on port# %d",
                         test_port_num)
                 reactor.listenTCP(test_port_num, 
-                                  eXeSite(self.root),
-                                  interface="127.0.0.1")
+                                  eXeSite(self.root, server=self),
+                                  interface=interface)
                 log.debug("find_port(): still here without exception " \
                            "after listenTCP on port# %d", test_port_num)
                 found_port = 1
@@ -159,8 +158,6 @@ class WebServer:
         self.root.putChild("scripts", File(webDir + "/scripts"))
         self.root.putChild("style", File(self.config.stylesDir))
         self.root.putChild("docs", File(webDir + "/docs"))
-        self.root.putChild("temp_print_dirs",
-                              File(self.tempWebDir + "/temp_print_dirs"))
         self.root.putChild("previews",
                               File(self.tempWebDir + "/previews"))
         self.root.putChild("templates", File(webDir + "/templates"))
@@ -180,11 +177,11 @@ class WebServer:
                     + "was not available.")
 
     def monitor(self):
-        if self.monitoring:
+        if self.monitoring and not self.application.server:
             for mainpage in self.root.mainpages.values():
                 for mainpage in mainpage.values():
                     if mainpage.clientHandleFactory.clientHandles:
                         reactor.callLater(10, self.monitor)
                         return
-            G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
+            self.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
             reactor.stop()

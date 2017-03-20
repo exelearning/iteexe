@@ -5,12 +5,13 @@ Maintainer: Pedro Peña <pedro.pena@open-phoenix.com>
 Homepage: http://exeLearning.net/
 Vcs-Browser: https://forja.cenatic.es/scm/browser.php?group_id=197
 Standards-Version: 3.9.6
-Build-Depends: debhelper (>= 9), python-all (>= 2.7), dh-python, python-setuptools, docbook-xsl, docbook-xml, xsltproc
+Build-Depends: debhelper (>= 9), python-all (>= 2.7), dh-python, python-setuptools, docbook-xsl, docbook-xml, xsltproc, python-pip, python-dev, libxml2-dev, libxmlsec1-dev, swig
 X-Python-Version: >=2.7
 
 Package: intef-exe
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}, python-setuptools, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging, python-chardet, python-lxml, iceweasel | www-browser, python-feedparser, mimetex, python-beautifulsoup, python-suds, python-requests-oauthlib, python-dateutil, python-cssmin | cssmin, python-webassets
+Depends: ${python:Depends}, ${misc:Depends}, python-setuptools, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging, python-chardet, python-lxml, iceweasel | www-browser, python-feedparser, mimetex, python-beautifulsoup, python-httplib2, python-m2crypto, libxml2, libxmlsec1, libxmlsec1-openssl, python-passlib, python-suds, python-requests-oauthlib, python-dateutil, python-cssmin | cssmin, python-webassets
+Recommends: python-oauth2client, python-googleapi, fuseext2
 Conflicts: python2.3-exe, python2.4-exe, python2.5-exe, python-exe, python-intef-exe
 Replaces: python2.3-exe, python2.4-exe, python2.5-exe, python-exe, python-intef-exe
 Description: eLearning XHTML & HTML5 editor

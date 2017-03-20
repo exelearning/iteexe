@@ -30,7 +30,7 @@ from exe.engine.path import Path
 from exe.engine.locales import chooseDefaultLocale
 from exe.engine import version
 import logging
-from logging.handlers import RotatingFileHandler
+from logging.handlers import RotatingFileHandler, SysLogHandler
 import sys
 import os
 import gettext
@@ -40,6 +40,7 @@ import shutil
 from exe import globals as G
 from exe.engine.stylestore  import StyleStore
 from exe.webui import common
+from twisted.python.log import PythonLoggingObserver, startLoggingWithObserver
 
 x_ = lambda s: s
 
@@ -358,6 +359,8 @@ class Config(object):
                 value = system.assumeMediaPlugins.strip().lower()
                 if value == "1" or value == "yes" or value == "true" or value == "on":
                     self.assumeMediaPlugins = True
+            if G.application.server:
+                self.quota = int(system.quota)
 
         # If the dataDir points to some other dir, fix it
         if not self.dataDir.isdir():
@@ -463,15 +466,23 @@ class Config(object):
         """
         setup logging file
         """
-        try:
-            hdlr = RotatingFileHandler(self.configDir/'exe.log', 'a',
-                                       500000, 10)
-            hdlr.doRollover()
-        except OSError:
-            # ignore the error we get if the log file is logged
-            hdlr = logging.FileHandler(self.configDir/'exe.log')
+        if G.application.server:
+            startLoggingWithObserver(PythonLoggingObserver().emit)
 
-        format = "%(asctime)s %(name)s %(levelname)s %(message)s"
+        if G.application.server and not G.application.standalone and sys.platform[:5] == "linux":
+            hdlr = SysLogHandler(address="/dev/log", facility=SysLogHandler.LOG_DAEMON)
+            format = "exe: %(name)s %(levelname)s %(message)s"
+        else:
+            try:
+                hdlr = RotatingFileHandler(self.configDir/'exe.log', 'a',
+                                           500000, 10)
+                hdlr.doRollover()
+            except OSError:
+                # ignore the error we get if the log file is logged
+                hdlr = logging.FileHandler(self.configDir/'exe.log')
+
+            format = "%(asctime)s %(name)s %(levelname)s %(message)s"
+
         log    = logging.getLogger()
         hdlr.setFormatter(logging.Formatter(format))
         log.addHandler(hdlr)

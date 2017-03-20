@@ -17,67 +17,67 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
-
+from exe.engine.path import Path
 from twisted.web import server, resource
-from twisted.internet import reactor, defer
 from nevow import compy, appserver, inevow
 from nevow.i18n import languagesFactory
-from exe.engine.packagestore import PackageStore
 from exe import globals as G
+from exe.engine.packagestore import PackageStore
 import logging
 
 log = logging.getLogger(__name__)
 
 
-def setLocaleFromRequest(request):
+def getLocaleFromRequest(request):
+    locale = None
     acceptedLocales = languagesFactory(request)
     for locale in acceptedLocales:
-        try:
-            G.application.config.locales[locale].install(unicode=True)
+        if locale in G.application.config.locales:
             break
-        except KeyError:
-            pass
 
-    G.application.config.locale = locale
-    return locale
-
-    def renderHTTP(self, ctx):
-        request = inevow.IRequest(ctx)
-        if self.real_prepath_len is not None:
-            path = request.postpath = request.prepath[self.real_prepath_len:]
-            del request.prepath[self.real_prepath_len:]
-        result = defer.maybeDeferred(self.renderLocalized, request).addCallback(
-            self._handle_NOT_DONE_YET, request)
-        return result
-
-class eXeResourceAdapter(appserver.OldResourceAdapter):
-    def renderLocalized(self, request):
-#        setLocaleFromRequest(request)
-        return self.original.render(request)
-
-    def renderHTTP(self, ctx):
-        request = inevow.IRequest(ctx)
-        if self.real_prepath_len is not None:
-            path = request.postpath = request.prepath[self.real_prepath_len:]
-            del request.prepath[self.real_prepath_len:]
-        result = defer.maybeDeferred(self.renderLocalized, request).addCallback(
-            self._handle_NOT_DONE_YET, request)
-        return result
-
-compy.registerAdapter(eXeResourceAdapter, resource.IResource, inevow.IResource)
+    return locale or 'en'
 
 
-compy.registerAdapter(eXeResourceAdapter, resource.IResource, inevow.IResource)
+compy.registerAdapter(appserver.OldResourceAdapter, resource.IResource, inevow.IResource)
 
 
 class eXeRequest(appserver.NevowRequest):
-    def __init__(self, *args, **kw):
-        appserver.NevowRequest.__init__(self, *args, **kw)
-        self.locale = None
 
     def gotPageContext(self, pageContext):
-#         request = inevow.IRequest(pageContext)
-#        self.locale = setLocaleFromRequest(request)
+        request = inevow.IRequest(pageContext)
+        session = request.getSession()
+        package = session.packageStore.getPackage(request.prepath[0]) if session.packageStore else None
+        if G.application.server:
+            if not session.user:
+                user = request.getUser()
+                if user:
+                    try:
+                        from passlib.apache import HtpasswdFile
+
+                        htpasswd = Path(G.application.defaultConfig.configDir) / 'htpasswd'
+                        password = request.getPassword()
+                        ht = HtpasswdFile(htpasswd.abspath())
+                        if ht.verify(user, password):
+                            session.setUser(user)
+                    except Exception as e:
+                        log.exception(e.message)
+                        pass
+            if session.user:
+                if session.user.initialConfig:
+                    locale = getLocaleFromRequest(request)
+                    session.user.config.locale = locale
+                    session.user.config.configParser.set('user', 'locale', locale)
+                    session.user.initialConfig = False
+                if session.user.config:
+                    G.application.config = session.user.config
+                    session.site.server.application.config = session.user.config
+                    session.site.server.preferences.config = session.user.config
+                    session.user.config.locales[session.user.config.locale].install(unicode=True)
+                if session.user.ideviceStore:
+                    G.application.ideviceStore = session.user.ideviceStore
+                package = session.user.packageStore.getPackage(request.prepath[0])
+        if package:
+            __builtins__['c_'] = lambda s: G.application.config.locales[package.lang].ugettext(s) if s else s
         appserver.NevowRequest.gotPageContext(self, pageContext)
 
     def getSession(self, sessionInterface = None):
@@ -87,15 +87,31 @@ class eXeRequest(appserver.NevowRequest):
         log.debug("Out Cookie's: %s" % self.cookies)
         return session
 
+
 class eXeSession(server.Session):
     def __init__(self, *args, **kwargs):
         server.Session.__init__(self, *args, **kwargs)
-        self.packageStore = PackageStore()
+        self.user = None
+        self.packageStore = PackageStore() if not G.application.server else None
+        self.samlNameId = None
+        self.samlSessionIndex = None
         self.oauthToken = {}
+
+    def setUser(self, name, picture=None):
+        self.user = G.application.userStore.getUser(name)
+        self.user.picture = picture
+        if self.packageStore:
+            for package in self.packageStore.loaded.values():
+                self.user.packageStore.addPackage(package)
+        self.packageStore = self.user.packageStore
 
 
 class eXeSite(appserver.NevowSite):
     requestFactory = eXeRequest
+
+    def __init__(self, *args, **kwargs):
+        self.server = kwargs.pop('server')
+        appserver.NevowSite.__init__(self, *args, **kwargs)
 
     def makeSession(self):
         """Generate a new Session instance, and store it for future reference.
