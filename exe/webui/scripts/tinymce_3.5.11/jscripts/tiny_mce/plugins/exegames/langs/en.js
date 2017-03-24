@@ -18,7 +18,7 @@ tinyMCE.addI18n('en.exegames',{
     hangman_letters : _("Alphabet to Select From"),
     include_capital_letters : _("Automatically include capital letters"),
     case_sensitive : _("Case sensitive"),
-    hangman_az : _("abcdefghijklmnñopqrstuvwxyz"),
+    hangman_az : _("abcdefghijklmnopqrstuvwxyz"),
     words_to_guess : _("Words to guess"),
     dd : _("Word to guess"),
     dt : _("Hint or definition"),
