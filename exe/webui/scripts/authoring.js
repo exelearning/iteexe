@@ -766,6 +766,7 @@ var exe_tinymce = {
 								fieldOrder = Number(fieldOrder[1]);
 								$("#mceu_"+(fieldOrder+3)).val(img.width);
 								$("#mceu_"+(fieldOrder+5)).val(img.height);
+								exe_tinymce.current_image_size = [ img.width, img.height ];
 							}
 						}
 					}
