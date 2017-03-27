@@ -23,11 +23,14 @@ anything it just redirects the user to a new package.
 """
 
 import logging
-import os
+import os		
 from exe                      import globals as G
 from exe.webui.renderable     import RenderableResource
 from exe.jsui.mainpage import MainPage
 from twisted.web import error
+
+from exe.engine.package      import Package
+from apscheduler.schedulers.background import BackgroundScheduler
 
 log = logging.getLogger(__name__)
 
@@ -38,8 +41,8 @@ class PackageRedirectPage(RenderableResource):
     anything it just redirects the user to a new package or loads an existing 
     package.
     """
-    
-    name = '/'
+   
+    name = '/'    
 
     def __init__(self, webServer, packagePath=None):
         """
@@ -83,6 +86,20 @@ class PackageRedirectPage(RenderableResource):
                                         "resource": name.encode('utf-8'),
                                         "link": "<a href='%s'>%s</a>" % ('/', 'eXe')})
 
+
+    def tick2(self,package):
+	bkup = Package(package.name)
+	bkup = Package('bakcup')
+	package.root.copyToPackage(bkup)
+	bkup.save(package.name+'.bk')
+
+
+
+    def backup(self,package):
+	scheduler = BackgroundScheduler()
+	scheduler.add_job(self.tick2, 'interval',args=[package], seconds=30)
+	scheduler.start()
+
     def bindNewPackage(self, package, session):
         """
         Binds 'package' to the appropriate url
@@ -90,12 +107,18 @@ class PackageRedirectPage(RenderableResource):
         and a directory for the resource files
         """
         log.debug("Mainpages: %s" % self.mainpages)
+
         session_mainpages = self.mainpages.get(session.uid)
         if session_mainpages:
             session_mainpages[package.name] = MainPage(None, package, session, self.webServer)
         else:
             self.mainpages[session.uid] = {package.name: MainPage(None, package, session, self.webServer)}
         log.debug("Mainpages: %s" % self.mainpages)
+
+	self.backup(package)
+
+
+
 
     def render_GET(self, request):
         """
@@ -110,4 +133,5 @@ class PackageRedirectPage(RenderableResource):
         # Tell the web browser to show it
         request.redirect(package.name.encode('utf8'))
         return ''
+
 
