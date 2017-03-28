@@ -1,3 +1,26 @@
+intef-exe (3:2.1.2) lucid; urgency=medium
+
+[ Ignacio Gros ]
+	* Fix #154 - TinyMCE 4 (fullscreen mode): iDevice icons (save, etc.) should be hidden
+	* You can now add attributes to an image
+	* About page update
+	* Fix #157 - TinyMCE: Image plugin (Constrain proportions).
+	* Hangman game available letters (#140). This string should not be used: abcdefghijklmnñopqrstuvwxyz
+	*  Fix #169 - Error in element.py for PlainTextAreaElement. 
+	
+[ SDWeb ]
+	* Fix #156: Use base.css from style if one is available
+	* Solve #158 - Copy minified CSS and JS to its correct location on ePub export
+	* Solve #162: Version file in config folder
+	
+[ Juan Rafael Fernández ]
+	* Fixed exe_do help (added text export)
+	* Removed 'ñ' from default hangman letters
+	* Clarified english text on "exemedia" and "pastemath" plugins
+	* Preparing mki18n.sh for 2.1.2 release
+	* New spanish translation 
+	
+
 intef-exe (3:2.1.1) lucid; urgency=medium
 
 [ SDWeb ]
