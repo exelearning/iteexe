@@ -16,9 +16,9 @@ intef-exe (3:2.1.2) lucid; urgency=medium
 [ Juan Rafael Fernández ]
 	* Fixed exe_do help (added text export)
 	* Removed 'ñ' from default hangman letters
-	* Clarified english text on "exemedia" and "pastemath" plugins
+	* Clarified English text on "exemedia" and "pastemath" plugins
 	* Preparing mki18n.sh for 2.1.2 release
-	* New spanish translation 
+	* New Spanish translation 
 	
 
 intef-exe (3:2.1.1) lucid; urgency=medium
