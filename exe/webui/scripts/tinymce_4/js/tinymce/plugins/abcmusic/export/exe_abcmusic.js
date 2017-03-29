@@ -21,14 +21,25 @@ inlineMidiHtml+=window.ABCJS.midi.generateMidiControls(this.tunes[i],this.midiPa
 /* eXeLearning */
 $exeABCmusic = {
 	lang : {
+		// #93 (to do)
+		/*
 		show : _("Show"),
 		play : _("Play"),
 		stop : _("Stop"),
 		download : _("Download"),
 		hide : _("Hide"),
-		animate : _("Animate")
+		animate : _("Animate"),
+		warning : _("Go to Tools - Preview to see this working")
+		*/
+		show : "Show",
+		play : "Play",
+		stop : "Stop",
+		download : "Download",
+		hide : "Hide",
+		animate : "Animate",
+		warning : "Go to Tools - Preview to see this working"
 	},
-	baseURL : (opener.tinymce!="undefined") ? '/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/' : './',
+	baseURL : (top.Ext!="undefined") ? '/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/' : './',
 	init : function(){
 		jQuery("pre.abc-music").each(function(i){
 			var musicCode = this.innerHTML.replace(/<br>/g, '\n').replace(/<br \/>/g, '\n');
@@ -72,6 +83,10 @@ $exeABCmusic = {
 		});					
 	},
 	downloadMidi : function(i){
+		if (typeof($exeAuthoring)!="undefined") {
+			alert($exeABCmusic.lang.warning);
+			return false;
+		}
 		window.ABCJS.midi.soundfontUrl = $exeABCmusic.baseURL;
 		ABCJS.renderMidi(
 			'abc-music-midi-player'+i, 
