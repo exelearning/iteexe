@@ -8,10 +8,10 @@
 # Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2017.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.1.1\n"
+"Project-Id-Version: eXeLearning 2.1.2\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2017-01-08 17:55+0100\n"
-"PO-Revision-Date: 2017-01-09 19:36+0100\n"
+"POT-Creation-Date: 2017-03-18 16:55+0100\n"
+"PO-Revision-Date: 2017-03-18 17:06+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -742,7 +742,7 @@ msgstr ""
 #: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
 #: exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:845
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:846
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:93
@@ -799,7 +799,7 @@ msgstr ""
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:182
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
-#: exe/webui/common.py:752 exe/webui/common.py:762
+#: exe/webui/common.py:753 exe/webui/common.py:763
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
 #: exe/webui/element.py:2481 exe/webui/element.py:2616
 #: exe/webui/element.py:2731 exe/webui/element.py:2932
@@ -898,7 +898,9 @@ msgstr "FPD - Debes conocer"
 msgid ""
 "You Should Know is an iDevice that helps the student widen her knowledge "
 "with core contents."
-msgstr "Debes conocer es un iDevice que permite al alumnado ampliar conocimientos, siendo estos obligatorios para su aprendizaje."
+msgstr ""
+"Debes conocer es un iDevice que permite al alumnado ampliar "
+"conocimientos, siendo estos obligatorios para su aprendizaje."
 
 #: exe/engine/debesconocerfpdidevice.py:37
 #: exe/engine/debesconocerfpdidevice.py:136
@@ -1429,7 +1431,7 @@ msgstr "Opción"
 #: exe/engine/field.py:3757 exe/engine/field.py:3823
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
-#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:464
+#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:465
 msgid "Hint"
 msgstr "Sugerencia"
 
@@ -1510,7 +1512,7 @@ msgstr "iDevice Ficheros adjuntos."
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#: exe/webui/common.py:504
+#: exe/webui/common.py:505
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:9
 #: exe/webui/tools/style-designer/langs/en.js:59
 msgid "Yes"
@@ -1518,7 +1520,7 @@ msgstr "Sí"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#: exe/webui/common.py:505
+#: exe/webui/common.py:506
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:10
 #: exe/webui/tools/style-designer/langs/en.js:60
 msgid "No"
@@ -1743,7 +1745,7 @@ msgstr "Actividad de lectura 0.11"
 msgid "Reading Activity"
 msgstr "Actividad de lectura"
 
-#: exe/engine/hangmanidevice.py:51 exe/webui/common.py:502
+#: exe/engine/hangmanidevice.py:51 exe/webui/common.py:503
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:168
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:434
@@ -1775,7 +1777,8 @@ msgstr "Alfabeto que mostrar a los jugadores"
 msgid "Alphabet to Select From"
 msgstr "Alfabeto del que hacer la selección"
 
-#: exe/engine/hangmanidevice.py:77 exe/webui/common.py:522
+#: exe/engine/hangmanidevice.py:77 exe/webui/common.py:523
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:75
 msgid "abcdefghijklmnopqrstuvwxyz"
 msgstr "abcdefghijklmnñopqrstuvwxyz"
 
@@ -1827,7 +1830,7 @@ msgstr "Texto del botón de reiniciar nivel"
 msgid "Text for reset button"
 msgstr "Texto del botón de reiniciar"
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:514
+#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:515
 #: exe/webui/element.py:1552 exe/webui/element.py:1808
 msgid "Restart"
 msgstr "Reiniciar"
@@ -2137,7 +2140,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:588
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:598
 #: exe/webui/tools/style-designer/langs/en.js:24
 msgid "Text"
 msgstr "Texto"
@@ -3517,12 +3520,8 @@ msgstr ""
 msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
 "given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage,"
-" xliff or epub3."
-msgstr ""
-"Exportar el paquete ELP <fichero_de_entrada> al <fichero_de_salida> "
-"(opcional) en uno de los siguientes formatos: xml, scorm12, scorm2004, "
-"ims, website (sitio web), webzip (paquete autocontenido), singlepage "
-"(página única), xliff o epub3."
+" xliff, text or epub3."
+msgstr "Exportar el paquete .elp <fichero_de_entrada> al fichero (opcional) <fichero_de_salida> en uno de los siguientes formatos: xml, scorm12, scorm2004, ims, sitio web, web comprimida (zip), página única, xliff, texto o epub3."
 
 #: exe/exe_do:113
 msgid ""
@@ -3681,12 +3680,7 @@ msgstr ""
 #: exe/export/cmdlineexporter.py:73 exe/jsui/mainpage.py:304
 #: exe/jsui/mainpage.py:1112 exe/jsui/mainpage.py:1276
 #: exe/jsui/mainpage.py:1316 exe/jsui/mainpage.py:1351
-#: exe/jsui/mainpage.py:1372 exe/jsui/mainpage_antes_jr_docs.py:295
-#: exe/jsui/mainpage_antes_jr_docs.py:916
-#: exe/jsui/mainpage_antes_jr_docs.py:1080
-#: exe/jsui/mainpage_antes_jr_docs.py:1120
-#: exe/jsui/mainpage_antes_jr_docs.py:1155
-#: exe/jsui/mainpage_antes_jr_docs.py:1176
+#: exe/jsui/mainpage.py:1372
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3699,7 +3693,7 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "Formato de exportación no implementado"
 
-#: exe/export/epub3export.py:658 exe/export/epub3subexport.py:664
+#: exe/export/epub3export.py:655 exe/export/epub3subexport.py:664
 #: exe/export/imsexport.py:621 exe/export/scormexport.py:716
 #: exe/export/websiteexport.py:103
 #, python-format
@@ -3711,13 +3705,13 @@ msgstr ""
 "La última exportación correcta fue %s."
 
 #: exe/export/scormpage.py:179 exe/export/websitepage.py:347
-#: exe/webui/common.py:485
+#: exe/webui/common.py:486
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:149
 msgid "Previous"
 msgstr "Anterior"
 
 #: exe/export/scormpage.py:180 exe/export/websitepage.py:353
-#: exe/webui/common.py:486
+#: exe/webui/common.py:487
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:142
 msgid "Next"
 msgstr "Siguiente"
@@ -3726,7 +3720,7 @@ msgstr "Siguiente"
 msgid "You can close this window"
 msgstr "Puede cerrar esta ventana"
 
-#: exe/export/textexport.py:54 exe/webui/common.py:293
+#: exe/export/textexport.py:54 exe/webui/common.py:294
 msgid "Licensed under the"
 msgstr "Obra publicada con"
 
@@ -3799,28 +3793,20 @@ msgid "My iDevices"
 msgstr "Mis iDevices"
 
 #: exe/jsui/mainpage.py:322 exe/jsui/mainpage.py:974 exe/jsui/mainpage.py:1104
-#: exe/jsui/mainpage_antes_jr_docs.py:313
-#: exe/jsui/mainpage_antes_jr_docs.py:778
-#: exe/jsui/mainpage_antes_jr_docs.py:908
 #: exe/jsui/scripts/app/controller/StyleManager.js:72
 msgid "Cannot access directory named "
 msgstr "No se puede acceder al directorio "
 
 #: exe/jsui/mainpage.py:322 exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:1104
-#: exe/jsui/mainpage_antes_jr_docs.py:313
-#: exe/jsui/mainpage_antes_jr_docs.py:780
-#: exe/jsui/mainpage_antes_jr_docs.py:908
 msgid ". Please use ASCII names."
 msgstr ". Por favor use nombres en ASCII."
 
-#: exe/jsui/mainpage.py:331 exe/jsui/mainpage_antes_jr_docs.py:322
+#: exe/jsui/mainpage.py:331
 msgid "SAVE FAILED!"
 msgstr "ERROR AL GUARDAR"
 
 #: exe/jsui/mainpage.py:335 exe/jsui/mainpage.py:647 exe/jsui/mainpage.py:705
-#: exe/jsui/mainpage.py:1200 exe/jsui/mainpage_antes_jr_docs.py:326
-#: exe/jsui/mainpage_antes_jr_docs.py:638
-#: exe/jsui/mainpage_antes_jr_docs.py:1004
+#: exe/jsui/mainpage.py:1200
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3830,21 +3816,17 @@ msgstr ""
 "%s"
 
 #: exe/jsui/mainpage.py:339 exe/jsui/mainpage.py:344 exe/jsui/mainpage.py:347
-#: exe/jsui/mainpage_antes_jr_docs.py:330
-#: exe/jsui/mainpage_antes_jr_docs.py:335
-#: exe/jsui/mainpage_antes_jr_docs.py:338
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Paquete guardado en: %s"
 
 #: exe/jsui/mainpage.py:570 exe/jsui/mainpage.py:669 exe/jsui/mainpage.py:732
-#: exe/jsui/mainpage.py:813 exe/jsui/mainpage_antes_jr_docs.py:561
-#: exe/jsui/mainpage_antes_jr_docs.py:665
+#: exe/jsui/mainpage.py:813
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "El directorio %s de vistas previas es un archivo, no se puede reemplazar"
 
-#: exe/jsui/mainpage.py:589 exe/jsui/mainpage_antes_jr_docs.py:580
+#: exe/jsui/mainpage.py:589
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "El fichero local %s no existe, no se puede previsualizar"
@@ -3853,11 +3835,11 @@ msgstr "El fichero local %s no existe, no se puede previsualizar"
 msgid "Could not create the image"
 msgstr "No se pudo crear la imagen"
 
-#: exe/jsui/mainpage.py:879 exe/jsui/mainpage_antes_jr_docs.py:743
+#: exe/jsui/mainpage.py:879
 msgid "Importing HTML..."
 msgstr "Importando HTML..."
 
-#: exe/jsui/mainpage.py:885 exe/jsui/mainpage_antes_jr_docs.py:749
+#: exe/jsui/mainpage.py:885
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3866,7 +3848,7 @@ msgstr ""
 "¡FALLO en la importación de los metadatos LOM!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:888 exe/jsui/mainpage_antes_jr_docs.py:752
+#: exe/jsui/mainpage.py:888
 msgid "Error importing HTML:\n"
 msgstr "Error al importar HTML:\n"
 
@@ -3900,30 +3882,19 @@ msgstr "Error en la exportación del paquete %s a Procomún: %s"
 #: exe/jsui/mainpage.py:1008 exe/jsui/mainpage.py:1011
 #: exe/jsui/mainpage.py:1014 exe/jsui/mainpage.py:1019
 #: exe/jsui/mainpage.py:1260 exe/jsui/mainpage.py:1332
-#: exe/jsui/mainpage_antes_jr_docs.py:801
-#: exe/jsui/mainpage_antes_jr_docs.py:806
-#: exe/jsui/mainpage_antes_jr_docs.py:809
-#: exe/jsui/mainpage_antes_jr_docs.py:812
-#: exe/jsui/mainpage_antes_jr_docs.py:815
-#: exe/jsui/mainpage_antes_jr_docs.py:818
-#: exe/jsui/mainpage_antes_jr_docs.py:823
-#: exe/jsui/mainpage_antes_jr_docs.py:1064
-#: exe/jsui/mainpage_antes_jr_docs.py:1136
 msgid "EXPORT FAILED!"
 msgstr "ERROR EN LA EXPORTACIÓN"
 
-#: exe/jsui/mainpage.py:1069 exe/jsui/mainpage_antes_jr_docs.py:873
+#: exe/jsui/mainpage.py:1069
 msgid "Correct XLIFF import"
 msgstr "Importación XLIFF correcta"
 
-#: exe/jsui/mainpage.py:1072 exe/jsui/mainpage_antes_jr_docs.py:876
+#: exe/jsui/mainpage.py:1072
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Error al importar XLIFF: %s"
 
 #: exe/jsui/mainpage.py:1113 exe/jsui/mainpage.py:1130
-#: exe/jsui/mainpage_antes_jr_docs.py:917
-#: exe/jsui/mainpage_antes_jr_docs.py:934
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -3932,12 +3903,12 @@ msgstr ""
 "ERROR EN LA EXTRACCIÓN\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1132 exe/jsui/mainpage_antes_jr_docs.py:936
+#: exe/jsui/mainpage.py:1132
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Paquete extraído en: %s"
 
-#: exe/jsui/mainpage.py:1144 exe/jsui/mainpage_antes_jr_docs.py:948
+#: exe/jsui/mainpage.py:1144
 msgid "Directory exists"
 msgstr "El directorio ya existe"
 
@@ -3947,19 +3918,7 @@ msgstr "El directorio ya existe"
 #: exe/jsui/mainpage.py:1317 exe/jsui/mainpage.py:1323
 #: exe/jsui/mainpage.py:1337 exe/jsui/mainpage.py:1352
 #: exe/jsui/mainpage.py:1358 exe/jsui/mainpage.py:1373
-#: exe/jsui/mainpage.py:1379 exe/jsui/mainpage_antes_jr_docs.py:962
-#: exe/jsui/mainpage_antes_jr_docs.py:1052
-#: exe/jsui/mainpage_antes_jr_docs.py:1068
-#: exe/jsui/mainpage_antes_jr_docs.py:1081
-#: exe/jsui/mainpage_antes_jr_docs.py:1087
-#: exe/jsui/mainpage_antes_jr_docs.py:1105
-#: exe/jsui/mainpage_antes_jr_docs.py:1121
-#: exe/jsui/mainpage_antes_jr_docs.py:1127
-#: exe/jsui/mainpage_antes_jr_docs.py:1141
-#: exe/jsui/mainpage_antes_jr_docs.py:1156
-#: exe/jsui/mainpage_antes_jr_docs.py:1162
-#: exe/jsui/mainpage_antes_jr_docs.py:1177
-#: exe/jsui/mainpage_antes_jr_docs.py:1183
+#: exe/jsui/mainpage.py:1379
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3969,15 +3928,11 @@ msgstr ""
 "%s"
 
 #: exe/jsui/mainpage.py:1186 exe/jsui/mainpage.py:1233
-#: exe/jsui/mainpage_antes_jr_docs.py:990
-#: exe/jsui/mainpage_antes_jr_docs.py:1037
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "El nombre de archivo %s ya existe, no se pudo reemplazar"
 
 #: exe/jsui/mainpage.py:1192 exe/jsui/mainpage.py:1240
-#: exe/jsui/mainpage_antes_jr_docs.py:996
-#: exe/jsui/mainpage_antes_jr_docs.py:1044
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -3990,31 +3945,23 @@ msgstr ""
 #: exe/jsui/mainpage.py:1266 exe/jsui/mainpage.py:1285
 #: exe/jsui/mainpage.py:1303 exe/jsui/mainpage.py:1325
 #: exe/jsui/mainpage.py:1339 exe/jsui/mainpage.py:1360
-#: exe/jsui/mainpage.py:1381 exe/jsui/mainpage_antes_jr_docs.py:1010
-#: exe/jsui/mainpage_antes_jr_docs.py:1055
-#: exe/jsui/mainpage_antes_jr_docs.py:1070
-#: exe/jsui/mainpage_antes_jr_docs.py:1089
-#: exe/jsui/mainpage_antes_jr_docs.py:1107
-#: exe/jsui/mainpage_antes_jr_docs.py:1129
-#: exe/jsui/mainpage_antes_jr_docs.py:1143
-#: exe/jsui/mainpage_antes_jr_docs.py:1164
-#: exe/jsui/mainpage_antes_jr_docs.py:1185
+#: exe/jsui/mainpage.py:1381
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportado a %s"
 
-#: exe/jsui/mainpage.py:1414 exe/jsui/mainpage_antes_jr_docs.py:1218
+#: exe/jsui/mainpage.py:1414
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "El archivo %s no existe o no es accesible."
 
-#: exe/jsui/mainpage.py:1418 exe/jsui/mainpage_antes_jr_docs.py:1222
+#: exe/jsui/mainpage.py:1418
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "No se puede cargar el archivo, por favor envíe el archivo a "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1421 exe/jsui/mainpage_antes_jr_docs.py:1225
+#: exe/jsui/mainpage.py:1421
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -4023,24 +3970,16 @@ msgstr ""
 "Formato de archivo incorrecto:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1423 exe/jsui/mainpage_antes_jr_docs.py:1227
+#: exe/jsui/mainpage.py:1423
 msgid "Sorry, wrong file format"
 msgstr "Formato de archivo incorrecto"
-
-#: exe/jsui/mainpage_antes_jr_docs.py:705
-#, python-format
-msgid ""
-"MimeTeX compile failed!\n"
-"%s"
-msgstr ""
-"¡Falló la compilación de MimeTeX!\n"
-"%s"
 
 #: exe/jsui/propertiespage.py:335
 msgid "Failed to get properties"
 msgstr "Error en la carga de las propiedades"
 
 #: exe/jsui/propertiespage.py:385
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:73
 msgid "Failed to save properties"
 msgstr "Error al guardar las propiedades"
 
@@ -4974,7 +4913,7 @@ msgstr "Taxón"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:48
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:65
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:560
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:572
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:582
 #: exe/webui/tools/style-designer/langs/en.js:11
 msgid "General"
 msgstr "General"
@@ -5059,7 +4998,7 @@ msgstr "Nivel de agregación"
 msgid "Version"
 msgstr "Versión"
 
-#: exe/jsui/scripts/app/view/forms/LomSections.js:58 exe/webui/common.py:509
+#: exe/jsui/scripts/app/view/forms/LomSections.js:58 exe/webui/common.py:510
 msgid "Status"
 msgstr "Estatus"
 
@@ -5890,7 +5829,7 @@ msgstr "Eliminar la lista de proyectos recientes"
 msgid "Save As..."
 msgstr "Guardar como..."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157 exe/webui/common.py:494
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157 exe/webui/common.py:495
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:138
 msgid "Print"
@@ -7543,42 +7482,42 @@ msgid "distance"
 msgstr "a distancia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:31
-#: exe/jsui/scripts/lomvocab.js:1274 exe/webui/common.py:180
+#: exe/jsui/scripts/lomvocab.js:1274 exe/webui/common.py:181
 msgid "propietary license"
 msgstr "licencia propietaria"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:35
-#: exe/jsui/scripts/lomvocab.js:1278 exe/webui/common.py:156
+#: exe/jsui/scripts/lomvocab.js:1278 exe/webui/common.py:157
 msgid "free software license EUPL"
 msgstr "licencia de software libre EUPL"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
-#: exe/jsui/scripts/lomvocab.js:1282 exe/webui/common.py:162
+#: exe/jsui/scripts/lomvocab.js:1282 exe/webui/common.py:163
 msgid "free software license GPL"
 msgstr "licencia de software libre GPL"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:43
-#: exe/jsui/scripts/lomvocab.js:1286 exe/webui/common.py:168
+#: exe/jsui/scripts/lomvocab.js:1286 exe/webui/common.py:169
 msgid "dual free content license GPL and EUPL"
 msgstr "licencia libre dual GPL y EUPL"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:47
-#: exe/jsui/scripts/lomvocab.js:1290 exe/webui/common.py:174
+#: exe/jsui/scripts/lomvocab.js:1290 exe/webui/common.py:175
 msgid "other free software licenses"
 msgstr "otras licencias de software libres"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:51
-#: exe/jsui/scripts/lomvocab.js:1294 exe/webui/common.py:150
+#: exe/jsui/scripts/lomvocab.js:1294 exe/webui/common.py:151
 msgid "public domain"
 msgstr "dominio público"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:55
-#: exe/jsui/scripts/lomvocab.js:1298 exe/webui/common.py:192
+#: exe/jsui/scripts/lomvocab.js:1298 exe/webui/common.py:193
 msgid "not appropriate"
 msgstr "no corresponde"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:59
-#: exe/jsui/scripts/lomvocab.js:1302 exe/webui/common.py:186
+#: exe/jsui/scripts/lomvocab.js:1302 exe/webui/common.py:187
 msgid "intellectual property license"
 msgstr "licencia propietaria intelectual"
 
@@ -7871,198 +7810,198 @@ msgstr "Autoevaluación"
 msgid "Now It's Your Turn"
 msgstr "Autoevaluación"
 
-#: exe/webui/common.py:96
+#: exe/webui/common.py:97
 msgid "Creative Commons Attribution License 4.0"
 msgstr "Licencia Creative Commons Reconocimiento 4.0"
 
-#: exe/webui/common.py:102
+#: exe/webui/common.py:103
 msgid "Creative Commons Attribution Share Alike License 4.0"
 msgstr "Licencia Creative Commons Reconocimiento Compartir igual 4.0"
 
-#: exe/webui/common.py:108
+#: exe/webui/common.py:109
 msgid "Creative Commons Attribution No Derivatives License 4.0"
 msgstr "Licencia Creative Commons Reconocimiento Sin obra derivada 4.0"
 
-#: exe/webui/common.py:114
+#: exe/webui/common.py:115
 msgid "Creative Commons Attribution Non-commercial License 4.0"
 msgstr "Licencia Creative Commons Reconocimiento No comercial 4.0"
 
-#: exe/webui/common.py:120
+#: exe/webui/common.py:121
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
 msgstr "Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0"
 
-#: exe/webui/common.py:126
+#: exe/webui/common.py:127
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
 msgstr ""
 "Licencia Creative Commons Reconocimiento No comercial Sin obra derivada "
 "4.0"
 
-#: exe/webui/common.py:132
+#: exe/webui/common.py:133
 msgid "GNU Free Documentation License"
 msgstr "Licencia de Documentación Libre de GNU (GNU Free Documentation License)"
 
-#: exe/webui/common.py:138 exe/webui/common.py:144
+#: exe/webui/common.py:139 exe/webui/common.py:145
 msgid "GNU General Public License"
 msgstr "Licencia Pública General GNU (GNU General Public License, GPL) "
 
-#: exe/webui/common.py:199
+#: exe/webui/common.py:200
 msgid "Creative Commons Attribution License 3.0"
 msgstr "Licencia Creative Commons Reconocimiento 3.0"
 
-#: exe/webui/common.py:205
+#: exe/webui/common.py:206
 msgid "Creative Commons Attribution Share Alike License 3.0"
 msgstr "Licencia Creative Commons Reconocimiento Compartir igual 3.0"
 
-#: exe/webui/common.py:211
+#: exe/webui/common.py:212
 msgid "Creative Commons Attribution No Derivatives License 3.0"
 msgstr "Licencia Creative Commons Reconocimiento Sin obra derivada 3.0"
 
-#: exe/webui/common.py:217
+#: exe/webui/common.py:218
 msgid "Creative Commons Attribution Non-commercial License 3.0"
 msgstr "Licencia Creative Commons Reconocimiento No comercial 3.0"
 
-#: exe/webui/common.py:223
+#: exe/webui/common.py:224
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
 msgstr "Licencia Creative Commons Reconocimiento No comercial Compartir igual 3.0"
 
-#: exe/webui/common.py:229
+#: exe/webui/common.py:230
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
 msgstr ""
 "Licencia Creative Commons Reconocimiento No comercial Sin obra derivada "
 "3.0"
 
-#: exe/webui/common.py:235
+#: exe/webui/common.py:236
 msgid "Creative Commons Attribution License 2.5"
 msgstr "Licencia Creative Commons Reconocimiento 2.5"
 
-#: exe/webui/common.py:241
+#: exe/webui/common.py:242
 msgid "Creative Commons Attribution Share Alike License 2.5"
 msgstr "Licencia Creative Commons Reconocimiento Compartir igual 2.5"
 
-#: exe/webui/common.py:247
+#: exe/webui/common.py:248
 msgid "Creative Commons Attribution No Derivatives License 2.5"
 msgstr "Licencia Creative Commons Reconocimiento Sin obra derivada 2.5"
 
-#: exe/webui/common.py:253
+#: exe/webui/common.py:254
 msgid "Creative Commons Attribution Non-commercial License 2.5"
 msgstr "Licencia Creative Commons Reconocimiento No comercial 2.5"
 
-#: exe/webui/common.py:259
+#: exe/webui/common.py:260
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
 msgstr "Licencia Creative Commons Reconocimiento No comercial Compartir igual 2.5"
 
-#: exe/webui/common.py:265
+#: exe/webui/common.py:266
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
 msgstr ""
 "Licencia Creative Commons Reconocimiento No comercial Sin obra derivada "
 "2.5"
 
-#: exe/webui/common.py:297
+#: exe/webui/common.py:298
 msgid "License:"
 msgstr "Licencia:"
 
-#: exe/webui/common.py:304
+#: exe/webui/common.py:305
 msgid "Local Version"
 msgstr "Versión local"
 
-#: exe/webui/common.py:337
+#: exe/webui/common.py:338
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Enable JavaScript"
 msgstr "Habilitar JavaScript"
 
-#: exe/webui/common.py:487
+#: exe/webui/common.py:488
 msgid "Show"
 msgstr "Mostrar"
 
-#: exe/webui/common.py:488
+#: exe/webui/common.py:489
 msgid "Hide"
 msgstr "Ocultar"
 
-#: exe/webui/common.py:489 exe/webui/common.py:727 exe/webui/element.py:1542
+#: exe/webui/common.py:490 exe/webui/common.py:728 exe/webui/element.py:1542
 #: exe/webui/element.py:2473 exe/webui/listablock.py:275
 msgid "Show Feedback"
 msgstr "Mostrar retroalimentación"
 
-#: exe/webui/common.py:490
+#: exe/webui/common.py:491
 msgid "Hide Feedback"
 msgstr "Ocultar retroalimentación"
 
-#: exe/webui/common.py:491 exe/webui/common.py:506 exe/webui/element.py:2276
+#: exe/webui/common.py:492 exe/webui/common.py:507 exe/webui/element.py:2276
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
 msgstr "Correcto"
 
-#: exe/webui/common.py:492 exe/webui/element.py:2279
+#: exe/webui/common.py:493 exe/webui/element.py:2279
 msgid "Incorrect"
 msgstr "Incorrecto"
 
-#: exe/webui/common.py:493
+#: exe/webui/common.py:494
 msgid "Menu"
 msgstr "Menú"
 
-#: exe/webui/common.py:503
+#: exe/webui/common.py:504
 msgid "Accept"
 msgstr "Aceptar"
 
-#: exe/webui/common.py:507 exe/webui/element.py:2712 exe/webui/element.py:2730
+#: exe/webui/common.py:508 exe/webui/element.py:2712 exe/webui/element.py:2730
 msgid "Wrong"
 msgstr "Incorrecto"
 
-#: exe/webui/common.py:508
+#: exe/webui/common.py:509
 msgid "Right answer"
 msgstr "Respuesta correcta"
 
-#: exe/webui/common.py:510
+#: exe/webui/common.py:511
 msgid "Selected letters"
 msgstr "Letras seleccionadas"
 
-#: exe/webui/common.py:511
+#: exe/webui/common.py:512
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:36
 msgid "Word"
 msgstr "Palabra"
 
-#: exe/webui/common.py:512
+#: exe/webui/common.py:513
 msgid "Words"
 msgstr "Palabras"
 
-#: exe/webui/common.py:513
+#: exe/webui/common.py:514
 msgid "Play"
 msgstr "Jugar"
 
-#: exe/webui/common.py:515
+#: exe/webui/common.py:516
 msgid "Results"
 msgstr "Resultados"
 
-#: exe/webui/common.py:516
+#: exe/webui/common.py:517
 msgid "Total"
 msgstr "Total"
 
-#: exe/webui/common.py:517
+#: exe/webui/common.py:518
 msgid "Another word"
 msgstr "Otra palabra"
 
-#: exe/webui/common.py:518
+#: exe/webui/common.py:519
 msgid "Game over."
 msgstr "Juego terminado."
 
-#: exe/webui/common.py:519
+#: exe/webui/common.py:520
 msgid "Reload the game?"
 msgstr "¿Recargar el juego?"
 
-#: exe/webui/common.py:520
+#: exe/webui/common.py:521
 msgid "Click on \"Play\" to start a new game."
 msgstr "Pulse en \"Jugar\" para iniciar una nueva partida o juego."
 
-#: exe/webui/common.py:521
+#: exe/webui/common.py:522
 msgid "Click on \"Another word\" to continue."
 msgstr "Pulse en \"Otra palabra\" para continuar."
 
-#: exe/webui/common.py:543 exe/webui/editorpage.py:235
+#: exe/webui/common.py:544 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: editor XHTML para eLearning"
 
-#: exe/webui/common.py:851 exe/webui/common.py:854
+#: exe/webui/common.py:852 exe/webui/common.py:855
 msgid "Click for completion instructions"
 msgstr "Pulse para recibir instrucciones sobre cómo completar la actividad"
 
@@ -9347,33 +9286,33 @@ msgstr "Insertar contenido de plantilla predefinida"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:57
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:761
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:771
 msgid "Yellow"
 msgstr "Amarillo"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:60
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:764
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:774
 msgid "Red"
 msgstr "Rojo"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:61
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:765
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:775
 msgid "Blue"
 msgstr "Azul"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:62
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:766
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:776
 msgid "Green"
 msgstr "Verde"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:229
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:270
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:275
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:274
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:279
 msgid "Insert/Edit Attributes"
 msgstr "Insertar/Editar atributos"
 
@@ -9815,7 +9754,7 @@ msgstr "Bloquear relación de aspecto"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:15
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:7
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:343
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:743
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:753
 msgid "Appearance"
 msgstr "Apariencia"
 
@@ -10022,7 +9961,7 @@ msgstr "Tipo MIME del destino"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:607
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:617
 msgid "Link URL"
 msgstr "Dirección del hipervínculo"
 
@@ -10290,7 +10229,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:25
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/definitionlist/plugin.min.js:20
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/definitionlist/plugin.min.js:45
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:500
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:510
 msgid "Term"
 msgstr "Término"
 
@@ -10381,8 +10320,8 @@ msgid "This is just a example title"
 msgstr "Este es sólo un título de ejemplo"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:2
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:240
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:246
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:252
 msgid "Effects (accordion, tabs, pagination...)"
 msgstr "Efectos (acordeón, pestañas, paginación...)"
 
@@ -10390,10 +10329,10 @@ msgstr "Efectos (acordeón, pestañas, paginación...)"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:4
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:8
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:214
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:217
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:221
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:220
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:223
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:227
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:229
 msgid "Heading 2"
 msgstr "Encabezado 2"
 
@@ -10401,16 +10340,16 @@ msgstr "Encabezado 2"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:23
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:43
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:215
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:218
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:221
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:224
 msgid "Heading 3"
 msgstr "Encabezado 3"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:7
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:216
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:219
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:222
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:224
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:225
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:228
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:230
 msgid "Write your content..."
 msgstr "Escriba su contenido..."
 
@@ -10464,13 +10403,13 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:9
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:63
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:586
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:596
 msgid "Choose a type:"
 msgstr "Elija un tipo:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:17
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:65
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:265
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:271
 msgid "Accordion"
 msgstr "Acordeón"
 
@@ -10484,7 +10423,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:20
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:66
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:266
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:272
 msgid "Tabs"
 msgstr "Pestañas"
 
@@ -10495,7 +10434,7 @@ msgstr "Una área de contenido única con múltiples paneles."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:23
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:67
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:267
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:273
 msgid "Pagination"
 msgstr "Paginación"
 
@@ -10506,7 +10445,7 @@ msgstr "Divide el contenido entre diferentes páginas."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:26
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:68
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:268
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:274
 msgid "Carousel"
 msgstr "Carrusel"
 
@@ -10517,7 +10456,7 @@ msgstr "Presenta una lista de contenidos en orden horizontal."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:29
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:69
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:269
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:275
 msgid "Timeline"
 msgstr "Línea de tiempo"
 
@@ -10542,9 +10481,9 @@ msgstr "El plugin \"inlinepopups\" debe estar activado"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:34
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:37
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:43
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:258
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:264
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:453
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:847
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:857
 msgid "jQuery is required"
 msgstr "Es necesario jQuery"
 
@@ -10603,7 +10542,6 @@ msgid "Case sensitive"
 msgstr "Distingue mayúsculas/minúsculas"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:21
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:75
 msgid "abcdefghijklmnñopqrstuvwxyz"
 msgstr "abcdefghijklmnñopqrstuvwxyz"
 
@@ -11467,14 +11405,14 @@ msgstr "Tipo C"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:352
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:762
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:772
 msgid "Light"
 msgstr "Claro"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:353
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:763
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:773
 msgid "Dark"
 msgstr "Oscuro"
 
@@ -11932,13 +11870,13 @@ msgstr "Plantillas"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:3
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:456
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:567
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:824
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:835
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:847
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:855
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:861
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:864
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:577
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:834
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:845
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:857
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:865
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:871
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:874
 msgid "Tooltip"
 msgstr "Bocadillo (tooltip)"
 
@@ -11949,7 +11887,7 @@ msgstr ""
 "de otra página."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:6
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:705
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:715
 msgid "Behaviour"
 msgstr "Comportamiento"
 
@@ -11959,7 +11897,7 @@ msgstr "Enlace"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:10
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:60
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:697
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:707
 msgid "Instructions:"
 msgstr "Instrucciones:"
 
@@ -11969,55 +11907,55 @@ msgid "Create a Page with a Free Text iDevice."
 msgstr "Crea una página con un iDevice de Texto libre."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:12
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:562
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:572
 msgid "No selection and not in link"
 msgstr "No ha seleccionado nada y no es un enlace"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:15
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:618
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:628
 msgid "Pages"
 msgstr "Páginas"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:16
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:628
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:638
 msgid "Link title"
 msgstr "Título del enlace"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:17
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:499
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:634
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:509
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:644
 msgid "Tooltip title"
 msgstr "Título del bocadillo"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:20
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:483
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:601
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:493
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:611
 msgid "Plain text. You can add a title."
 msgstr "Texto plano. Puede añadir un título."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:21
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:648
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:658
 msgid "The tooltip will show the Link title."
 msgstr "El bocadillo mostrará el título del enlace."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:23
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:38
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:456
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:589
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:676
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:855
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:864
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:599
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:686
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:865
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:874
 msgid "Definition"
 msgstr "Definición"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:24
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:140
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:861
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:871
 msgid "The term could not be found"
 msgstr "Término no encontrado"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:26
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:484
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:494
 msgid ""
 "Write the term and its definition. You may use HTML and edit it in the "
 "editor."
@@ -12026,12 +11964,12 @@ msgstr ""
 "editor."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:27
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:668
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:678
 msgid "Definition:"
 msgstr "Definición:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:28
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:663
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:673
 msgid "The tooltip will show the term and its definition."
 msgstr "El bocadillo mostrará el término y su definición."
 
@@ -12040,13 +11978,13 @@ msgid "See definition"
 msgstr "Ver la definición"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:590
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:600
 #: exe/webui/tools/style-designer/langs/en.js:40
 msgid "Page"
 msgstr "Página"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:32
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:485
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:495
 msgid "Show the content of the first Free Text iDevice in the specified page."
 msgstr ""
 "Muestra el contenido del primer iDevice de Texto libre de la página "
@@ -12111,47 +12049,47 @@ msgid "Please write the Definition"
 msgstr "Por favor escriba la definición"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:49
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:711
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:721
 msgid "Close behaviour:"
 msgstr "Cierre:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:50
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:720
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:730
 msgid "Automatically close the tooltip when moving the mouse out of the link"
 msgstr "Se cierra automáticamente cuando el ratón deja de estar sobre el enlace"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:51
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:721
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:731
 msgid "Close button: It will close the tooltip when clicked"
 msgstr "Botón de cierre (el diálogo se cierra al hacer clic en él)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:52
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:726
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:736
 msgid "Link behaviour:"
 msgstr "Comportamiento del enlace:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:53
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:735
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:745
 msgid "Open in the same window"
 msgstr "Se abre en la misma ventana"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:54
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:736
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:746
 msgid "Open in a new window"
 msgstr "Se abre en una ventana nueva"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:56
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:759
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:769
 msgid "Change the styling:"
 msgstr "Cambia la presentación:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:63
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:780
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:790
 msgid "Rounded"
 msgstr "Redondeado"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:64
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:789
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:799
 msgid "Shadow"
 msgstr "Sombra"
 
@@ -12556,8 +12494,8 @@ msgstr "Numeración automática"
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
-#: exe/webui/scripts/tinymce_4_settings.js:297
-#: exe/webui/scripts/tinymce_4_settings.js:322
+#: exe/webui/scripts/tinymce_4_settings.js:301
+#: exe/webui/scripts/tinymce_4_settings.js:326
 msgid "Editor"
 msgstr "Editor"
 
@@ -12711,7 +12649,9 @@ msgstr "Palabras: {0}"
 msgid ""
 "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press "
 "ALT-0 for help"
-msgstr "Área de texto enriquecido. Teclee ALT-F9 para activar el menú. ALT-F10 para la barra de herramientas. ALT-0 para recibir ayuda"
+msgstr ""
+"Área de texto enriquecido. Teclee ALT-F9 para activar el menú. ALT-F10 "
+"para la barra de herramientas. ALT-0 para recibir ayuda"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:216
 msgid "View"
@@ -12722,7 +12662,7 @@ msgid "Table"
 msgstr "Tabla"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:24
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:108
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:113
 msgid "Acronym or abbreviation"
 msgstr "Acrónimo o abreviatura"
 
@@ -12778,7 +12718,7 @@ msgid "New attribute"
 msgstr "Nuevo atributo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:120
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:258
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:264
 msgid "Effects"
 msgstr "Efectos"
 
@@ -12797,16 +12737,21 @@ msgid "Please check the \"License\" field"
 msgstr "Por favor revise el campo \"Licencia\""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:953
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1010
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1077
-msgid "You are using and old code. Update it (required to edit)?"
-msgstr "Está usando código antiguo. ¿Desea actualizarlo? (si no no podrá editarlo)"
+msgid ""
+"This fragment uses old code. Would you like to update it? (necessary to "
+"be able to edit the parameters)"
+msgstr "Este fragmento usa código antiguo. ¿Desea actualizarlo? (si no no podrá editarlo)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:989
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1041
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1105
 msgid "Could not retrieve data (Core error)"
 msgstr "Error al recuperar los datos"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1010
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1077
+msgid "You are using and old code. Update it (required to edit)?"
+msgstr "Está usando código antiguo. ¿Desea actualizarlo? (si no no podrá editarlo)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1065
 msgid ""
@@ -12831,11 +12776,15 @@ msgstr "¡Hecho! Ya puede editar su imagen."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:202
 msgid "You should save a copy of the code before continuing."
-msgstr "Le recomendamos que haga una copia de seguridad de su código antes de continuar."
+msgstr ""
+"Le recomendamos que haga una copia de seguridad de su código antes de "
+"continuar."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:204
 msgid "Click on the Editor's Save button when you finish editing."
-msgstr "Pulse en el botón de Guardar del editor cuando haya terminado el trabajo de edición."
+msgstr ""
+"Pulse en el botón de Guardar del editor cuando haya terminado el trabajo "
+"de edición."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:213
 msgid "Equation Editor"
@@ -12847,7 +12796,9 @@ msgstr "Error (falta una función):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:405
 msgid "The image could not be created. Insert the code without alternative image?"
-msgstr "No se pudo crear la imagen. ¿Insertar el código sin una imagen alternativa?"
+msgstr ""
+"No se pudo crear la imagen. ¿Insertar el código sin una imagen "
+"alternativa?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:451
 msgid "Please write the code"
@@ -12857,7 +12808,10 @@ msgstr "Por favor escriba el código"
 msgid ""
 "Continue without a title? Some users might see an image instead of the "
 "rendered code. Without the title the image may not be accessible to them."
-msgstr "¿Continuar sin ponerle título? Algunos usuarios podrían ver una imagen en lugar del código procesado. Sin un título, la imagen no será accesible para ellos."
+msgstr ""
+"¿Continuar sin ponerle título? Algunos usuarios podrían ver una imagen en"
+" lugar del código procesado. Sin un título, la imagen no será accesible "
+"para ellos."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:556
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:705
@@ -12885,7 +12839,9 @@ msgstr "Título de la imagen (texto alternativo):"
 msgid ""
 "Paste (CTRL+V) the code (LaTeX...) from your favorite editor or use "
 "eXeMathEditor"
-msgstr "Pegar (CTRL+V) el código (LaTeX) de su editor favorito o usar eXeMathEditor"
+msgstr ""
+"Pegar (CTRL+V) el código (LaTeX) de su editor favorito o usar "
+"eXeMathEditor"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:634
 msgid "Paste your code (LaTeX...)."
@@ -12901,15 +12857,17 @@ msgstr "Si muestra el código (recomendado):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:638
 msgid ""
-"You can use MathJax to display the mathematical properly in web browsers "
-"(that will work online only)."
-msgstr "Puede usar MathJax para mostrar adecuadamente las fórmulas matemáticas en los navegadores (necesitará una conexión a internet)."
+"You can use MathJax for high-quality display of mathematical symbols in "
+"web browsers (it will work online only)."
+msgstr "<Puede usar MathJax para mostrar adecuadamente las fórmulas matemáticas en los navegadores (necesitará una conexión a internet)."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:639
 msgid ""
 "You can include an alternative image. In that case you'll have to provide"
 " a descriptive text for it."
-msgstr "Puede incluir una imagen alternativa. En tal caso deberá proporcionar un texto descriptivo de la imagen."
+msgstr ""
+"Puede incluir una imagen alternativa. En tal caso deberá proporcionar un "
+"texto descriptivo de la imagen."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:640
 msgid ""
@@ -12921,17 +12879,23 @@ msgstr "Sin imagen ni código MathJax algunos usuarios no podrán ver la fórmul
 msgid ""
 "If you prefer to show the image, the code will be there, but it won't be "
 "visible."
-msgstr "Si prefiere mostrar la imagen, el código estará presente pero no será visible."
+msgstr ""
+"Si prefiere mostrar la imagen, el código estará presente pero no será "
+"visible."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:644
 msgid ""
 "If JavaScript is enabled links to the code and the image will be "
 "automatically created."
-msgstr "Si JavaScript está habilitado se crearán automáticamente enlaces al código y a la imagen."
+msgstr ""
+"Si JavaScript está habilitado se crearán automáticamente enlaces al "
+"código y a la imagen."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:645
 msgid "If JavaScript is disabled, both (code and image) will be visible."
-msgstr "Si JavaScript está desactivado, serán visibles los dos (el código y la imagen)."
+msgstr ""
+"Si JavaScript está desactivado, serán visibles los dos (el código y la "
+"imagen)."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:647
 msgid "Remember that..."
@@ -12941,19 +12905,23 @@ msgstr "Recuerde que..."
 msgid ""
 "You can use your favorite formula editor or use the one included in eXe "
 "(eXeMathEditor)."
-msgstr "Puede usar su editor favorito de fórmulas o utilizar el incluido en eXe (eXeMathEditor)."
+msgstr ""
+"Puede usar su editor favorito de fórmulas o utilizar el incluido en eXe "
+"(eXeMathEditor)."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:650
 msgid ""
 "You can replace the generated image with another one using the "
 "\"Insert/Edit Image\" option."
-msgstr "Puede sustituir la imagen generada por otra usando la opción \"Insertar/Editar imagen\"."
+msgstr ""
+"Puede sustituir la imagen generada por otra usando la opción "
+"\"Insertar/Editar imagen\"."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/toggletoolbars/plugin.min.js:83
 msgid "Toolbar Toggle"
 msgstr "Activar/desactivar barra de herramientas"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:536
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:546
 msgid "---"
 msgstr "---"
 
@@ -12976,17 +12944,17 @@ msgid "3 columns"
 msgstr "3 columnas"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:50
-#: exe/webui/scripts/tinymce_4_settings.js:107
+#: exe/webui/scripts/tinymce_4_settings.js:111
 msgid "Inline"
 msgstr "En línea"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:37
-#: exe/webui/scripts/tinymce_4_settings.js:108
+#: exe/webui/scripts/tinymce_4_settings.js:112
 msgid "Bold"
 msgstr "Negrita"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:39
-#: exe/webui/scripts/tinymce_4_settings.js:109
+#: exe/webui/scripts/tinymce_4_settings.js:113
 msgid "Italic"
 msgstr "Cursiva"
 
@@ -12994,7 +12962,7 @@ msgstr "Cursiva"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:47
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:110
+#: exe/webui/scripts/tinymce_4_settings.js:114
 msgid "Underline"
 msgstr "Subrayado"
 
@@ -13004,41 +12972,41 @@ msgstr "Subrayado"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:26
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:111
+#: exe/webui/scripts/tinymce_4_settings.js:115
 msgid "Strikethrough"
 msgstr "Tachado"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:29
-#: exe/webui/scripts/tinymce_4_settings.js:112
+#: exe/webui/scripts/tinymce_4_settings.js:116
 msgid "Superscript"
 msgstr "Superíndice"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:32
-#: exe/webui/scripts/tinymce_4_settings.js:113
+#: exe/webui/scripts/tinymce_4_settings.js:117
 msgid "Subscript"
 msgstr "Subíndice"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:38
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:572
-#: exe/webui/scripts/tinymce_4_settings.js:114
+#: exe/webui/scripts/tinymce_4_settings.js:118
 msgid "Code"
 msgstr "Código"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:116
+#: exe/webui/scripts/tinymce_4_settings.js:120
 msgid "Deletion"
 msgstr "Borrado"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:117
+#: exe/webui/scripts/tinymce_4_settings.js:121
 msgid "Insertion"
 msgstr "Inserción"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:118
+#: exe/webui/scripts/tinymce_4_settings.js:122
 msgid "Cite"
 msgstr "Cita"
 
@@ -13720,3 +13688,4 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
+

@@ -673,8 +673,7 @@ class PlainTextAreaElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        log.debug("renderEdit content="+self.field.content+
-                  ", height="+unicode(self.height))
+        log.debug("renderEdit content="+self.field.content)
         # package not needed for PlainTextArea, only for rich-text fields:
         this_package = None
         html = common.formField('textArea', this_package, self.field.name,'',

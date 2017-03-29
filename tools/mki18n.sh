@@ -55,12 +55,15 @@
 #    * Preparing version 2.1.1 (JRF)
 #    * Babel v.2.3.4 (the 'Language' header bug has been fixed and our fork is no longer necessary)
 #
+# 2017-03-18
+#    * Preparing version 2.1.2 (JRF)
+#
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.1.1"
+version="2.1.2"
 
 # 1.- pyBabel - Extraction of strings from *.py and *.js into new POT
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.1.1\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2017-01-08 17:55+0100\nPO-Revision-Date: 2016-11-29 15:33+0100\nLast-Translator: k.werschkull <k.werschkull@hccnet.nl>\nLanguage: nl\nLanguage-Team: Dutch <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.3.4\n", 
+ "": "Project-Id-Version: eXeLearning 2.1.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2017-03-18 16:55+0100\nPO-Revision-Date: 2016-11-29 15:33+0100\nLast-Translator: k.werschkull <k.werschkull@hccnet.nl>\nLanguage: nl\nLanguage-Team: Dutch <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.3.4\n", 
  "DropDown Activity": "Selectielijst activiteit", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Omschrijf het geval. Een goede gevalstudie\nbevat een controverse of beschrijft de situatie en de personen die erbij\nbetrokken zijn. Er moet ook ruimte zijn voor beslissingen of acties die\nwaardoor iemand de situatie kan controleren.", 
  "Telugu ": "Telugu", 
@@ -1315,7 +1315,6 @@ translations = {
  "Copy\/Cut\/Paste is not available in Mozilla and Firefox.\nDo you want more information about this issue?": "Kopi\u00ebren\/knippen\/plakken is niet beschikbaar in Mozilla en Firefox.\nWilt u meer informatie over deze beperking?", 
  "%s\n%s unchanged": "%s\n%s onveranderd", 
  "Please write the Alphabet to Select From": "Alfabet waaruit een keuze gemaakt moet worden", 
- "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage, xliff or epub3.": "Exporteer <input_file> elp pakket naar  optionele <output_file> in een van de volgende formaten: xml, scorm12, scorm2004, ims, website, website, webzip,enkele webpagina, xliff of epub3.", 
  "2 columns": "2 kolommen", 
  "If you restore the saved content, you will lose all the content that is currently in the editor.\n\nAre you sure you want to restore the saved content?": "Als u de opgeslagen inhoud laadt, verliest u de inhoud die zich momenteel in de editor bevindt.\n\nWeet u zeker dat u de opgeslagen inhoud wilt laden?", 
  "discussion activity": "discussieer activiteit", 
@@ -2503,7 +2502,6 @@ translations = {
  "Picker": "Alle kleuren", 
  "Choose a page. Add a Free Text iDevice with a Definition List in it.": "Kies een pagina. Maak een vrije tekst iDevice aan die een Definitie Lijst bevat.", 
  "Meta-Metadata": "Meta-Metadata", 
- "MimeTeX compile failed!\n%s": "Compileren MimeTeX mislukt!\n%s", 
  "Copy (Ctrl+C)": "Kopi\u00ebren", 
  "Site": "Site", 
  "Time after which to re-hide incorrect match (ms)": "Tijd waarna een onjuiste combinatie opnieuw verborgen wordt", 
