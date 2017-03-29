@@ -1,6 +1,0 @@
-{
-  "moodle-tinymce_mathslate-textool" : {
-      "requires" : [ "dd-drag", "dd-proxy", "dd-drop", "event", "json" ]
-  }
-}
-

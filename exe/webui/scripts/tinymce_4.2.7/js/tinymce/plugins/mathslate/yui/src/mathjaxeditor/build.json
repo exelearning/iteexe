@@ -1,8 +1,0 @@
-{
-  "name" : "moodle-tinymce_mathslate-mathjaxeditor" ,
-  "builds" : {
-      "moodle-tinymce_mathslate-mathjaxeditor": { 
-          "jsfiles" : [ "mathjaxeditor.js" ]
-       }
-  }
-}

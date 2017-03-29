@@ -1,9 +1,0 @@
-body{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;padding:0;margin:0;font-size:.85em;color:#333}
-input,textarea{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:1em}
-textarea{width:100%;border:1px solid #C5C5C5;font-size:.85em;height:180px;margin-top:5px}
-.dialogContent{padding:10px}
-.actionButtons{border-top:1px solid #C5C5C5;text-align:right}
-.actionButtons input{cursor:pointer;background:#f0f0f0;border:none;padding:4px 9px 5px 9px;margin:10px 10px 0 0;border:1px solid #f0f0f0}
-.actionButtons input:hover,.actionButtons input:focus{background:#E3E3E3;border-color:#CCC}
-#insert{background:#2D8AC7;border-color:#2D8AC7;color:#FFF}
-#insert:hover,#insert:focus{background:#257CB6;border-color:#257CB6}
