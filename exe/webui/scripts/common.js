@@ -851,6 +851,14 @@ $exe.cloze = {
 		// Read the flags for checking answers
 		var strictMarking = eval(document.getElementById("clozeFlag" + ident + ".strictMarking").value);
 		var checkCaps = eval(document.getElementById("clozeFlag" + ident + ".checkCaps").value);
+		
+		// The Dropdown Activity has no strictMarking or checkCaps options (see #171)
+		var $form = $(ele).closest('.iDevice_wrapper');
+		if ($form.length==1 && $form.hasClass("ListaIdevice")) {
+			strictMarking = true;
+			checkCaps = true;
+		}
+		
 		if (!checkCaps) {
 			guess = guess.toLowerCase();
 			answer = answer.toLowerCase()
