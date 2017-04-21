@@ -32,7 +32,7 @@ var myTheme = {
         document.onkeydown = myTheme.checkKey;
         // License icon
         var l = $("#packageLicense");
-        if (l.attr("class").indexOf("cc ")==0) {
+        if (l.length==1 && l.attr("class").indexOf("cc ")==0) {
             l.css("cursor","pointer").click(function(){
                 window.open($("A",this).attr("href"));
             });
