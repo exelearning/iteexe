@@ -46,6 +46,7 @@ Ext.define('eXe.view.ui.MainTabPanel', {
                     xtype: 'tabpanel',
                     title: _('Properties'),
                     itemId: 'properties_tab',
+                    id: 'eXePropertiesTab',
                     activeTab: 0,
                     items: [
                         {

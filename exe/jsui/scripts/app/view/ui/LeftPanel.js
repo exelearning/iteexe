@@ -81,7 +81,8 @@ Ext.define('eXe.view.ui.LeftPanel', {
                     }],
              	    tbar: [
              	        {
-             	        	xtype: 'button',
+             	        	cls: 'exe-advanced',
+							xtype: 'button',
              	        	text: _('Ungroup iDevices'),
              	        	handler: function(button) {
              	        		var panel = button.up("#idevice_panel");
@@ -96,7 +97,8 @@ Ext.define('eXe.view.ui.LeftPanel', {
              	        	}
              	        },
              	        {
-             	        	xtype: 'button',
+             	        	cls: 'exe-advanced',
+							xtype: 'button',
              	        	text: _('Edit iDevices'),
              	        	handler: function(button) {
              	        		var panel = button.up("#idevice_panel"),

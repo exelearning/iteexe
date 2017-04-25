@@ -199,7 +199,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
 			                            xtype: 'textarea',
 			                            inputId: 'pp_description',
                                         dirtyCls: 'property-form-dirty',
-			                            fieldLabel: _('General'),
+			                            fieldLabel: _('General description'),
 			                            tooltip: _('An account of the content of the resource.'),
 			                            height: 60,
 			                            anchor: '100%'
@@ -207,6 +207,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                     help: _('An account of the content of the resource.')
                                 },
                                 {
+                                    cls: 'exe-advanced',
                                     xtype: 'helpcontainer',
                                     margin: '0 0 10 0',
                                     item: {
@@ -221,6 +222,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                     help: _('Objectives.')
                                 },
                                 {
+                                    cls: 'exe-advanced',
                                     xtype: 'helpcontainer',
                                     margin: '0 0 10 0',
                                     item: {
@@ -268,6 +270,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             help: _('Select a license or write your own one.')
                         },
                         {
+                            cls: 'exe-advanced',
                             xtype: 'helpcontainer',
                             margin: '0 0 10 0',
                             item: {
@@ -286,6 +289,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             help: _('Learning Resource Type')
                         },
                         {
+                            cls: 'exe-advanced',
                             xtype: 'fieldset',
                             title: _('Usage'),
                             items: [
@@ -457,6 +461,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                     ]
                 },
                 {
+                    cls: 'exe-advanced',
                     xtype: 'fieldset',
                     title: _('Project Properties'),
                     margin: 10,
@@ -536,6 +541,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                     ]
                 },				
                 {
+                    cls: 'exe-advanced',
                     xtype: 'fieldset',
 					title: _('Format'),
                     margin: 10,
@@ -574,6 +580,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
 					]
                 },				
                 {
+                    cls: 'exe-advanced',
                     xtype: 'fieldset',
                     title: _('Taxonomy'),
                     margin: 10,
@@ -610,6 +617,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                     ]
                 },
                 {
+					cls: 'exe-advanced',
 					xtype: 'preservescrollfieldset',
 					title: _('Advanced Options'),
 					margin: 10,

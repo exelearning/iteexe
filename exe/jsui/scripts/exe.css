@@ -99,3 +99,24 @@ fieldset.collapsed-with-data > legend > div, fieldset.collapsed-with-data > lege
 #stylemanagerwin .import-style-url .x-panel-body .x-btn {
 	margin-left: 1em;
 }
+.x-toolbar .x-form-item{
+	font-size:11px;
+	margin-top:1px;
+}
+/* Advanced or simplified view */
+body.exe-simplified .exe-advanced,
+body.exe-advanced .exe-simplified,
+.exe-simplified #eXePropertiesTab .x-tab-bar-body-horizontal,
+.exe-simplified #eXePropertiesTab .x-tab-bar-strip,
+.exe-simplified #eXePropertiesTab-body legend{
+	display:none!important;
+}
+.exe-simplified #eXePropertiesTab-body{
+	border-top:0
+}
+.exe-simplified #eXePropertiesTab-body fieldset{
+	border-color:#FFF
+}
+.exe-simplified #eXePropertiesTab-body fieldset fieldset{
+	padding:0
+}

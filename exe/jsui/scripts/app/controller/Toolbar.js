@@ -93,6 +93,17 @@ Ext.define('eXe.controller.Toolbar', {
             '#file_export_website': {
                 click: { fn: this.processExportEvent, exportType: "webSite" }
             },
+            // Advanced user
+            '#file_export_scorm': {
+                click: { fn: this.processExportEvent, exportType: "scorm2004" }
+            },
+            '#file_export_website_b': {
+                click: { fn: this.processExportEvent, exportType: "webSite" }
+            },
+            '#file_export_singlepage_b': {
+                click: { fn: this.processExportEvent, exportType: "singlePage" }
+            },			
+            // / Advanced user			
             '#file_export_procomun': {
                 click: { fn: this.exportProcomun }
             },

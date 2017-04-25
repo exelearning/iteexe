@@ -101,6 +101,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 itemId: 'file_new'
                             },
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 text: _('New Window'),
                                 accesskey: 'w',
@@ -150,9 +151,11 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 itemId: 'file_save_as'
                             },
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'menuseparator'
                             },
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 text: _('Print'),
                                 accesskey: 'p',
@@ -160,9 +163,11 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 itemId: 'file_print'
                             },
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'menuseparator'
                             },
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 text: _('Import'),
                                 accesskey: 'i',
@@ -210,6 +215,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 xtype: 'menuseparator'
                             },
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 text: _('Publish'),
                                 itemId: 'publish',
@@ -236,6 +242,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     items: [
                                         {
                                 	    xtype: 'accesskey_menuitem',
+                                            cls: 'exe-advanced',
                                             text: _('Educational Standard'),
                                             accesskey: 'e',
                                             menu: {
@@ -269,6 +276,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             }
                                         },
                                         {
+                                            cls: 'exe-advanced',
                                             xtype: 'accesskey_menuitem',
                                             text: _('Web Site'),
                                             accesskey: 'w',
@@ -297,33 +305,58 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             }
                                         },
                                         {
+                                            cls: 'exe-advanced',
                                             xtype: 'accesskey_menuitem',
                                             text: _('Text File'),
                                             accesskey: 't',
                                             itemId: 'file_export_text'
                                         },
                                         {
+                                            cls: 'exe-advanced',
                                             xtype: 'accesskey_menuitem',
                                             text: _('Ustad Mobile'),
                                             accesskey: 'x',
                                             itemId: 'file_export_mxml'
                                         },
                                         {
+                                            cls: 'exe-advanced',
                                             xtype: 'accesskey_menuitem',
                                             text: _('XLIFF'),
                                             accesskey: 'x',
                                             itemId: 'file_export_xliff'
                                         },
                                         {
+                                            cls: 'exe-simplified',
+                                            xtype: 'accesskey_menuitem',
+                                            text: _('Web Site'),
+                                            accesskey: 't',
+                                            itemId: 'file_export_website_b'
+                                        },
+                                        {
+                                            cls: 'exe-simplified',
+                                            xtype: 'accesskey_menuitem',
+                                            text: _('Single Page'),
+                                            accesskey: 't',
+                                            itemId: 'file_export_singlepage_b'
+                                        },										
+                                        {
                                             xtype: 'accesskey_menuitem',
                                             text: _('EPUB3'),
                                             accesskey: '3',
                                             itemId: 'file_export_epub3'
-                                        }
+                                        },
+                                        {
+                                            cls: 'exe-simplified',
+                                            xtype: 'accesskey_menuitem',
+                                            text: _('SCORM'),
+                                            accesskey: 't',
+                                            itemId: 'file_export_scorm'
+                                        }										
                                     ]
                                 }
                             },
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 text: _('Merging'),
                                 accesskey: 'm',
@@ -367,12 +400,14 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                         xtype: 'menu',
                         items: [
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_idevice',
                                 accesskey: 'i',
                                 text: _('iDevice Editor')
                             },
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_stylemanager',
                                 accesskey: 's',
@@ -380,6 +415,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             // Style designer
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 text: _('Style Designer'),
                                 menu: {
@@ -407,6 +443,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 text: _('Preferences')
                             },
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_resourcesreport',
                                 accesskey: 'r',
@@ -419,6 +456,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 text: _('Preview')
                             },
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'menuseparator'
                             },
                             {
@@ -507,10 +545,80 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             }
                         ]
                     }
-                }
+                },
+                // Advanced user
+                {
+                    xtype: 'fieldcontainer',
+					defaultType: 'checkboxfield',
+					margin: '0 0 0 30',
+					items: [
+                        {
+                            boxLabel: _('Advanced user'),
+                            name: 'advanced_toggler',
+                            inputValue: '1',
+                            id: 'advanced_toggler',
+                            // checked: true,
+							listeners : {
+                                change: function(e, newValue) {
+									
+									var descriptionLabel = Ext.DomQuery.select("label[for=pp_description]");
+                                    
+									if (newValue==true) {
+										if (!Ext.util.Cookies.get('eXeUIversion')) {
+											Ext.Msg.alert(
+												_('Info'), 
+												_('Checking this option will show more elements in the menus (File, Tools...) and the Properties tab.')
+											);
+										}
+										Ext.util.Cookies.set('eXeUIversion', 'advanced');
+										Ext.select("BODY").removeCls('exe-simplified');
+										Ext.select("BODY").addCls('exe-advanced');	
+										// Change some strings:
+										if (descriptionLabel && descriptionLabel.length==1) descriptionLabel[0].innerHTML = _("General") + ":";
+                                    } else {
+										Ext.util.Cookies.set('eXeUIversion', 'simplified');
+                                        Ext.select("BODY").removeCls('exe-advanced');
+										Ext.select("BODY").addCls('exe-simplified');
+										// Change some strings:
+										if (descriptionLabel && descriptionLabel.length==1) descriptionLabel[0].innerHTML = _("General description") + ":";										
+										// Show Properties - Package
+										var e1 = document.getElementById("eXePropertiesTab");
+										if (e1) {
+											var e2 = e1.getElementsByTagName("button");
+											for (var i=0;i<e2.length;i++){
+												if (e2[i].className=="x-tab-center") {
+													var span = e2[i].getElementsByTagName("span");
+													if (span.length==2 && span[0].innerHTML==_("Package")) e2[i].click();
+												}
+											}
+										}
+                                    }
+									// Refresh some components
+									try {
+										Ext.getCmp("leftpanelwrapper").doLayout();
+										Ext.getCmp("maintabpanelwrapper").doLayout();
+									} catch(e) {}
+                                }
+                            }
+                        }
+                    ]
+                }                
+                // / Advanced user                
             ]
         });
 
         me.callParent(arguments);
+		
+		// Advanced user
+		// Get the cookie or set the default value (simplified)
+		var eXeUIversion = Ext.util.Cookies.get('eXeUIversion');
+		if (!eXeUIversion) eXeUIversion = 'simplified';
+		// Check the Advanced option or add the simplified class to the BODY tag
+		if (eXeUIversion=='advanced') {
+			Ext.getCmp("advanced_toggler").setValue(true);
+		} else {
+			Ext.select("BODY").addCls('exe-simplified');
+		}
+		// / Advanced user
     }
 });
