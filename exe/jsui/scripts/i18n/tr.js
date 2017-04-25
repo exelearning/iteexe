@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.1.1\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2017-01-08 17:55+0100\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage: tr\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.3.4\n", 
+ "": "Project-Id-Version: eXeLearning 2.1.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2017-03-18 16:55+0100\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage: tr\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.3.4\n", 
  "Title": "Ba\u015fl\u0131k", 
  "Text Line": "Yaz\u0131 Sat\u0131r\u0131", 
  "Quit": "\u00c7\u0131k", 
@@ -359,7 +359,6 @@ translations = {
  "Type in the feedback that you want the \nstudent to see when selecting the particular option. If you don't complete this \nbox, eXe will automatically provide default feedback as follows: \"Correct \nanswer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\nfor the other options.": "Buraya, \u00f6\u011frenci bu se\u00e7ene\u011fi se\u00e7ti\u011finde g\u00f6rmesini \nistedi\u011finiz geribildirimi girin. E\u011fer bu alan\u0131 bo\u015f b\u0131rak\u0131rsan\u0131z, eXe otomatik olarak \n\u015fu \u015fekilde \u00f6ntan\u0131ml\u0131 \u00e7\u0131kt\u0131lar g\u00f6sterecektir: Do\u011fru se\u00e7im i\u00e7in \"Do\u011fru\" \n; ya da di\u011fer se\u00e7eneklerden birisi se\u00e7ilmesi halinde \n\"Yanl\u0131\u015f\".", 
  "Multi-choice": "\u00c7oktan se\u00e7meli", 
  "Armenian ": "Ermenice", 
- "MimeTeX compile failed!\n%s": "MimeTeX derlemesi hatal\u0131!\n%s", 
  "No Thumbnail Available. Could not shrink original image.": "\u00d6nizleme Yok. Orijinal resim boyutland\u0131r\u0131lamad\u0131.", 
  "Select an image": "Bir resim se\u00e7in", 
  "Site": "Site", 

@@ -111,20 +111,30 @@ class Application:
         shutil.rmtree(self.tempWebDir, True)
 
     def upgrade(self):
-        """Execute all upgraToVersionX functions from stored version to actual version"""
+        """Execute all upgrade_to_version_X functions from stored version to actual version"""
         version_file = self.config.configDir / 'version'
-        storedVersion = 0
+        stored_version = 0
+        
         if version_file.exists():
-            storedVersion = int(version_file.bytes())
-        for v in xrange(storedVersion + 1, self.version + 1):
-            method = getattr(Application, 'upgradeToVersion%d' % v, None)
+            # Try to read version from file, if that fails assume 0
+            try:
+                stored_version = int(version_file.bytes())
+            except: 
+                stored_version = 0
+
+        # Execute upgrade_to_version_x (if they exist) until we reach current version
+        for v in xrange(stored_version + 1, self.version + 1):
+            method = getattr(Application, 'upgrade_to_version_%d' % v, None)
             if method:
                 method(self)
+                
         version_file.write_text(str(self.version))
 
-    def upgradeToVersion1(self):
+    def upgrade_to_version_1(self):
         """Hide experimental idevices"""
         log.info('Upgrading to version 1')
+        
+        # Go through all iDevices and hide them if the category is Experimental
         for idevice in self.ideviceStore.getIdevices():
             lower_title = idevice._title.lower()
             if self.config.idevicesCategories.get(lower_title, '') == ['Experimental']:
