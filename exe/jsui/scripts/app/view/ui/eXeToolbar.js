@@ -591,12 +591,13 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 													if (span.length==2 && span[0].innerHTML==_("Package")) e2[i].click();
 												}
 											}
-										}
+										}										
                                     }
 									// Refresh some components
 									try {
 										Ext.getCmp("leftpanelwrapper").doLayout();
 										Ext.getCmp("maintabpanelwrapper").doLayout();
+										Ext.getCmp("preferenceswin").doLayout();
 									} catch(e) {}
                                 }
                             }

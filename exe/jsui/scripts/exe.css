@@ -106,6 +106,8 @@ fieldset.collapsed-with-data > legend > div, fieldset.collapsed-with-data > lege
 /* Advanced or simplified view */
 body.exe-simplified .exe-advanced,
 body.exe-advanced .exe-simplified,
+.exe-simplified #preferenceswin-body .x-tab-bar-body-horizontal,
+.exe-simplified #preferenceswin-body .x-tab-bar-strip,
 .exe-simplified #eXePropertiesTab .x-tab-bar-body-horizontal,
 .exe-simplified #eXePropertiesTab .x-tab-bar-strip,
 .exe-simplified #eXePropertiesTab-body legend{
@@ -114,7 +116,8 @@ body.exe-advanced .exe-simplified,
 .exe-simplified #eXePropertiesTab-body{
 	border-top:0
 }
-.exe-simplified #eXePropertiesTab-body fieldset{
+.exe-simplified #eXePropertiesTab-body fieldset,
+.exe-simplified #preferenceswin-body .x-panel-body{
 	border-color:#FFF
 }
 .exe-simplified #eXePropertiesTab-body fieldset fieldset{

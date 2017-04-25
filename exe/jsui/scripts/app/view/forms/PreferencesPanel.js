@@ -148,6 +148,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 					// /Tab0
 					//Tab1
 					{
+						cls: 'exe-advanced',
 						title: _('Advanced'),
 						bodyPadding: 10,
 						items: [
