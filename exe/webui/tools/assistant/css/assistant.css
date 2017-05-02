@@ -1,0 +1,33 @@
+#tabs,#tabs li,body,html{margin:0;padding:0}
+body,html{font:12px/1.5 Tahoma,Arial,Verdana,Helvetica,sans-serif;color:#555;background:url(../img/side_bg.png) repeat-y #fff;height:100%}
+#tabs .current,h2,h3{font-weight:700}
+.maximized,.maximized body{background:#fff}
+p{margin:1em 0}
+.img{text-align:center}
+a{text-decoration:none;color:#B00}
+.next{background:#F6F6F6;color:#000;border:1px solid #BBB;border-radius:4px;display:inline-block;margin:.6em 0;padding:3px 6px}
+.next:hover{background:#FFF;text-decoration:none}
+a:active,a:hover{text-decoration:underline}
+h1 span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+h1{width:100%;height:30px;margin:0;background:#ddd}
+#tabs-toggler{position:absolute;top:0;left:10px;line-height:30px;margin:0;background:url(../img/menu_icon.png) no-repeat 0 50%}
+#tabs-toggler a{color:#000;padding-left:21px;outline:none}
+#tabs{width:180px;background:#666;float:left}
+#tabs .current,#tabs a:focus,#tabs a:hover{background:#000}
+.maximized #tabs{display:none}
+#tabs li{list-style:none;border-bottom:1px solid #999}
+#tabs a{line-height:30px;padding:0 10px;color:#FFF;display:block}
+.tab{padding:10px 20px 20px 200px;display:none}
+#tab0,.support span{display:block}
+.maximized .tab{padding-left:20px}
+.tab li{color:#666;margin-top:.5em;margin-bottom:.2em}
+.tab li img{margin-left:.3em;vertical-align:middle}
+.tab ul li{list-style-type:square;color:#666;margin-top:.5em;margin-bottom:.2em}
+.tab ol ul {margin:.7em auto}
+.tab li li{margin-top:0;margin-bottom:0}
+#main-desc{margin-bottom:1.5em}
+h2,h3{color:#555;font-size:1.2em}
+h2{color:#5D7E1A;letter-spacing:.5px}
+.support strong{font-size:1.1em;color:#555}
+.support span{margin:5px 0 0 2em}
+.site{display:inline-block;margin-top:5px}

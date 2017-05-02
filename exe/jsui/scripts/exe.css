@@ -123,3 +123,6 @@ body.exe-advanced .exe-simplified,
 .exe-simplified #eXePropertiesTab-body fieldset fieldset{
 	padding:0
 }
+/* Minified dialogs (Assistant) */
+.exe-window-minified #assistantwin-body {display:none}
+.exe-window-minified #assistantwin{height:26px!important}

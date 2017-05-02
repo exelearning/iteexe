@@ -480,6 +480,14 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                     }
                 },
                 {
+                    cls: 'exe-simplified',
+                    xtype: 'accesskey_button',
+                    text: _('Help'),
+                    accesskey: 'h',
+                    itemId: 'help_assistant_simplified'
+                },
+                {
+                    cls: 'exe-advanced',
                     xtype: 'accesskey_button',
                     text: _('Help'),
                     itemId: 'help',
@@ -489,7 +497,17 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                         items: [
                             {
                                 xtype: 'accesskey_menuitem',
+                                itemId: 'help_assistant',
+                                accesskey: 'a',
+                                text: _('Assistant')
+                            },                        
+                            {
+                                xtype: 'menuseparator'
+                            },                        
+                            {
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'help_tutorial',
+                                id: 'help_tutorial_link',
                                 accesskey: 't',
                                 text: _('eXe Tutorial')
                             },
@@ -503,6 +521,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'help_notes',
+                                id: 'help_notes_link',
                                 accesskey: 'n',
                                 text: _('Release Notes')
                             },
@@ -510,6 +529,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'help_legal',
+                                id: 'help_legal_link',
                                 accesskey: 'l',
                                 text: _('Legal Notes')
                             },
@@ -519,18 +539,21 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'help_website',
+                                id: 'help_website_link',
                                 accesskey: 'w',
                                 text: _('eXe Web Site')
                             },
                             {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'help_issue',
+                                id: 'help_issue_link',
                                 accesskey: 'r',
                                 text: _('Report an Issue')
                             },
                             {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'help_forums',
+                                id: 'help_forums_link',
                                 accesskey: 'f',
                                 text: _('eXe Forums')
                             },
@@ -540,6 +563,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'help_about',
+                                id: 'help_about_link',
                                 accesskey: 'a',
                                 text: _('About eXe')
                             }
@@ -595,9 +619,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     }
 									// Refresh some components
 									try {
-										Ext.getCmp("leftpanelwrapper").doLayout();
-										Ext.getCmp("maintabpanelwrapper").doLayout();
-										Ext.getCmp("preferenceswin").doLayout();
+										Ext.getCmp("exe-viewport").doLayout();
 									} catch(e) {}
                                 }
                             }

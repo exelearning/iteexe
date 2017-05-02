@@ -42,12 +42,10 @@ Ext.define('eXe.view.ui.eXeViewport', {
                 },
                 {
                     xtype: 'maintabpanel',
-                    id: 'maintabpanelwrapper',
                     region: 'center'
                 },
                 {
                     xtype: 'leftpanel',
-                    id: 'leftpanelwrapper',
                     region: 'west',
                     split: true,
                     width: 250

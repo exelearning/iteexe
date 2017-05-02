@@ -187,6 +187,12 @@ Ext.define('eXe.controller.Toolbar', {
             '#help_tutorial': {
                 click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/html_manual/exe20_en/') }
             },
+            '#help_assistant': {
+                click: this.assistantPage
+            },
+            '#help_assistant_simplified': {
+                click: this.assistantPage
+            },             
             '#help_notes': {
                 click: { fn: this.releaseNotesPage }
             },
@@ -328,6 +334,34 @@ Ext.define('eXe.controller.Toolbar', {
     fileNewWindow: function() {
         window.open(location.href);
     },
+    
+    assistantPage: function() {
+        var assistant = new Ext.Window ({
+            height: eXe.app.getMaxHeight(700),
+            width: 650,
+            height: 450,
+            modal: false,
+            maximizable: true,
+            minimizable: true,
+            id: 'assistantwin',
+            title: _("Assistant"),
+            items: {
+                xtype: 'uxiframe',
+                src: '/tools/assistant',
+                height: '100%'
+            },
+            listeners: {
+                minimize: function(win,obj) {
+                    var cls = document.body.className;
+                    var elm = Ext.select("BODY");
+                    if (cls.indexOf("exe-window-minified")==-1) elm.addCls('exe-window-minified');
+                    else elm.removeCls('exe-window-minified');
+                    Ext.getCmp("assistantwin").doLayout();
+                }
+            }          
+        });
+        assistant.show();
+    }, 
 
     aboutPage: function() {
         var about = new Ext.Window ({
