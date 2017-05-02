@@ -1,4 +1,5 @@
 var eXeAssistant = {
+    currentPos : 0,
     init : function(){
         this.i18n();
         this.setupLinks();
@@ -60,12 +61,36 @@ var eXeAssistant = {
             eXeAssistant.displayTab(h);
             return false;
         });
+        $("#prev").attr("title",_('Previous')).click(function(){
+            $("#tabs a").eq(eXeAssistant.currentPos-1).trigger("click");
+        });
+        $("#next").attr("title",_('Next')).click(function(){
+            $("#tabs a").eq(eXeAssistant.currentPos+1).trigger("click");
+        });      
     },
     displayTab : function(id,e) {
-        $(".tab").hide();
+        var pos = parseInt(id.replace("tab",""));
+        var tabs = $(".tab");
+        tabs.hide();
         $("#"+id).show();
         $("#tabs a").attr("class","");
-        if (!e) var e = $("#tabs a").eq(parseInt(id.replace("tab","")))[0];
+        
+        eXeAssistant.currentPos = pos;
+        $("#current").text(pos+1);
+        
+        // Hide/Show pagination
+        if (pos==0) {
+            $("#prev").css("visibility","hidden");
+        } else {
+            $("#prev").css("visibility","visible");
+        }
+        if (pos>=(tabs.length-1)) {
+            $("#next").css("visibility","hidden");
+        } else {
+            $("#next").css("visibility","visible");
+        }
+        
+        if (!e) var e = $("#tabs a").eq(pos)[0];
         e.className = "current";
     }
 }

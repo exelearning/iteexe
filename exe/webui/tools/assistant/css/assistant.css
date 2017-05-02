@@ -8,11 +8,15 @@ a{text-decoration:none;color:#B00}
 .next{background:#F6F6F6;color:#000;border:1px solid #BBB;border-radius:4px;display:inline-block;margin:.6em 0;padding:3px 6px}
 .next:hover{background:#FFF;text-decoration:none}
 a:active,a:hover{text-decoration:underline}
-h1 span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
-h1{width:100%;height:30px;margin:0;background:#ddd}
+h1 span,#pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+h1{width:100%;height:30px;margin:0;background:#ddd;border-bottom:1px solid #BCB1B0}
 #tabs-toggler{position:absolute;top:0;left:10px;line-height:30px;margin:0;background:url(../img/menu_icon.png) no-repeat 0 50%}
 #tabs-toggler a{color:#000;padding-left:21px;outline:none}
-#tabs{width:180px;background:#666;float:left}
+#pagination{position:absolute;top:0;right:5px;display:inline;margin:0;line-height:30px}
+#pagination .sep{margin:0 .15em}
+#pagination a{background:#DDD url(../img/prev_next.png) no-repeat 0 0;width:8px;height:12px;display:inline-block;margin:0 5px}
+#pagination #next{background-position:-8px 0}
+#tabs{width:180px;background:#666;float:left;margin-top:-1px}
 #tabs .current,#tabs a:focus,#tabs a:hover{background:#000}
 .maximized #tabs{display:none}
 #tabs li{list-style:none;border-bottom:1px solid #999}

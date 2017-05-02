@@ -339,9 +339,8 @@ Ext.define('eXe.controller.Toolbar', {
         var assistant = new Ext.Window ({
             height: eXe.app.getMaxHeight(700),
             width: 650,
-            height: 450,
+            height: 500,
             modal: false,
-            maximizable: true,
             minimizable: true,
             id: 'assistantwin',
             title: _("Assistant"),
