@@ -1079,3 +1079,31 @@ function showMessageBox(id) {
         modal: false
 	});
 }
+
+function selectStyleIcon(icon, e, iconSrc, idiDevice) {
+	var div = document.getElementById("styleIcons");
+	var imgs = div.getElementsByTagName("IMG");
+	for (var i = 0; i < imgs.length; i++) {
+		imgs[i].style.border = "1px solid #E8E8E8";
+	}
+	e.style.border = "1px solid #333333";
+
+	var fieldIcon = '#iconiDevice' + idiDevice;
+
+	$("#activeIdevice #iconiDevice").attr("src", iconSrc);
+	$(fieldIcon).val(icon);
+
+	var deleteIcon = '#deleteIcon' + idiDevice;
+	$(deleteIcon).show();
+
+}
+
+
+function deleteIcon(idiDevice) {
+    var fieldIcon = '#iconiDevice'+idiDevice;
+    $("#activeIdevice #iconiDevice").attr("src", '/images/empty.gif');
+    $(fieldIcon).val('');
+    
+    var deleteIcon = '#deleteIcon'+idiDevice;
+    $(deleteIcon).hide();
+}

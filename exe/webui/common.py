@@ -465,7 +465,8 @@ def ideviceHeader(e, style, mode):
     h = '' # New HTML
     w2 = ''
     eEm = ''
-    if e.idevice.emphasis > 0:
+#     if e.idevice.emphasis > 0
+    if e.idevice.title != "" or e.idevice.icon != "":
         w2 = '<div class="iDevice_inner">'+lb
         w2 += '<div class="iDevice_content_wrapper">'+lb
         eEm = ' em_iDevice'
@@ -479,8 +480,9 @@ def ideviceHeader(e, style, mode):
     w += ">"+lb
     
     if e.idevice.emphasis > 0:
-        h += '<'+headerTag+' class="iDevice_header"'
+
         if e.idevice.icon:
+            h += '<'+headerTag+' class="iDevice_header"'
             displayIcon = True
             # The following lines should be replaced by something like:
             '''
@@ -513,6 +515,8 @@ def ideviceHeader(e, style, mode):
                 if iconExists and displayIcon:
                     h += ' style="background-image:url('+iconPath+')"'
         else:
+            h += '<'+headerTag+' class="iDevice_header_noIcon"'
+#             h += ' style="background-image:none"'
             log.debug("Idevice %s at node %s has no icon" % (e.idevice._title, e.idevice.parentNode._title))
         t = e.idevice.title
         fullT = u'<'+titleTag+' class="iDeviceTitle">'+t+'</'+titleTag+'>'
@@ -540,7 +544,8 @@ def ideviceFooter(e, style, mode):
         articleTag = "article"
     themeHasXML = themeHasConfigXML(style)
     h = ''
-    if e.idevice.emphasis > 0:
+#     if e.idevice.emphasis > 0:
+    if e.idevice.emphasis > 0 or e.idevice.title > 0 or e.idevice.icon > 0:
         h = "</div>"+lb # Close iDevice_content_wrapper
         h += "</div>"+lb # Close iDevice_inner
     if mode=="preview":

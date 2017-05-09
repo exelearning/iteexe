@@ -40,6 +40,7 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .iDevice_content{position:relative;max-width:100%}
 .exe-epub3 .iDevice_content{position:static}
 .iDevice_header{background-position:0 50%;background-repeat:no-repeat}
+.iDevice_header_noIcon{background-image: none}
 
 .exe-dl{margin-bottom:2em;margin-left:1.5em}
 .exe-dl dt{font-weight:bold}
