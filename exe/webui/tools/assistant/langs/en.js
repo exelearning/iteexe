@@ -5,6 +5,7 @@ if (typeof(_)=='undefined') {
     }
 }
 var $i18n = {
+    Assistant : _("Assistant"),
     Menu : _("Menu"),
     Previous : _("Previous"),
     Next : _("Next")

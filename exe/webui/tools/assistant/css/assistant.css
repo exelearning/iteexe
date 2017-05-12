@@ -1,5 +1,6 @@
 #tabs,#tabs li,body,html{margin:0;padding:0}
 body,html{font:12px/1.5 Tahoma,Arial,Verdana,Helvetica,sans-serif;color:#555;background:url(../img/side_bg.png) repeat-y #fff;height:100%}
+.em{color:#222}
 #tabs .current,h2,h3{font-weight:700}
 .maximized,.maximized body{background:#fff}
 p{margin:1em 0}
