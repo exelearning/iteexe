@@ -21,6 +21,18 @@ span[size='7']{font-size:xx-large}
 .exe-layout-3-cols .exe-col{float:left;width:32%}
 .exe-layout-3-cols .exe-col-1,.exe-layout-3-cols .exe-col-2{padding-right:2%}
 
+/* Blocks */
+.exe-block-warning{background:#FCF8E3;color:#796034;border:1px solid #FAEBCC;padding:0 1em;border-radius:4px}
+p.exe-block-warning{padding:1em}
+.exe-block-alert{background:#ffc;color:#855000;border:1px solid #FFF099;padding:0 1em;border-radius:4px}
+p.exe-block-alert{padding:1em}
+.exe-block-danger{background:#FEF0EF;color:#973C3B;border:1px solid #F3DADD;padding:0 1em;border-radius:4px}
+p.exe-block-danger{padding:1em}
+.exe-block-info{background:#E1F1F9;color:#2B627D;border:1px solid #C9EDF4;padding:0 1em;border-radius:4px}
+p.exe-block-info{padding:1em}
+.exe-block-success{background:#E5F3E0;color:#336634;border:1px solid #DEEDD1;padding:0 1em;border-radius:4px}
+p.exe-block-success{padding:1em}
+
 .exe-clear {overflow:auto}
 /* Structured lists */
 ol.auto-numbered{counter-reset:item}
