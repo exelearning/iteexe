@@ -78,6 +78,17 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .exe-layout-2-70-30 .exe-col-1{width:69%}
 .exe-layout-3-cols .exe-col{float:left;width:32%}
 .exe-layout-3-cols .exe-col-1,.exe-layout-3-cols .exe-col-2{padding-right:2%}
+/* Blocks */
+.exe-block-warning{background:#FCF8E3;color:#796034;border:1px solid #FAEBCC;padding:0 1em;border-radius:4px}
+p.exe-block-warning{padding:1em}
+.exe-block-alert{background:#ffc;color:#855000;border:1px solid #FFF099;padding:0 1em;border-radius:4px}
+p.exe-block-alert{padding:1em}
+.exe-block-danger{background:#FEF0EF;color:#973C3B;border:1px solid #F3DADD;padding:0 1em;border-radius:4px}
+p.exe-block-danger{padding:1em}
+.exe-block-info{background:#E1F1F9;color:#2B627D;border:1px solid #C9EDF4;padding:0 1em;border-radius:4px}
+p.exe-block-info{padding:1em}
+.exe-block-success{background:#E5F3E0;color:#336634;border:1px solid #DEEDD1;padding:0 1em;border-radius:4px}
+p.exe-block-success{padding:1em}
 /* Enlarge icon */
 .js a.exe-enlarge{position:relative;display:block}
 .exe-enlarge-icon{display:none;width:30px;height:30px;position:absolute;top:50%;left:50%;margin:-15px 0 0 -15px;border-radius:15px;background:#333;z-index:10;box-shadow:0 0 7px 0 #DDD}
