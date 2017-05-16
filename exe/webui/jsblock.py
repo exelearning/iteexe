@@ -17,6 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 from webassets.utils import common_path_prefix
+from exe.engine.idevice import Idevice
 """
 GenericBlock can render and process GenericIdevices as XHTML
 """
@@ -66,6 +67,11 @@ class JsBlock(Block):
         and not is_cancel:
             self.idevice.icon = request.args["iconiDevice"+self.id][0]
             
+        if not is_cancel:
+            if self.idevice.title !='' or self.idevice.icon !='':
+                self.idevice.emphasis = Idevice.SomeEmphasis
+            else:
+                self.idevice.emphasis = Idevice.NoEmphasis
             
     def renderEdit(self, style):
         """
