@@ -60,12 +60,16 @@ tinymce.addI18n('all',{
 "Upper Alpha": _("Upper Alpha"),
 "Upper Roman": _("Upper Roman"),
 "Lower Roman": _("Lower Roman"),
+"Id should start with a letter, followed only by letters, numbers, dashes, dots, colons or underscores.": _("Id should start with a letter, followed only by letters, numbers, dashes, dots, colons or underscores."),
 "Name": _("Name"),
 "Anchor": _("Anchor"),
+"Id": "ID",
 "You have unsaved changes are you sure you want to navigate away?": _("The changes you made will be lost if you navigate away from this page."),
 "Restore last draft": _("Restore last draft"),
 "Special character": _("Special character"),
 "Source code": _("Edit source code"),
+
+
 "B": "B",
 "R": "R",
 "G": "G",
@@ -113,22 +117,27 @@ tinymce.addI18n('all',{
 
 
 
+"Date/time": _("Date/Time"),
 "Insert date/time": _("Date/Time"),
 "Remove link": _("Unlink"),
 "Url": _("URL"),
 "Text to display": _("Text to display"),
 "Anchors": _("Anchors"),
 "Insert link": _("Insert/Edit Link"),
+"Link": _("Link"),
 "New window": _("New Window"),
 "None": _("None"),
 "The URL you entered seems to be an external link. Do you want to add the required http:// prefix?": _("The URL you entered seems to be an external link. Do you want to add the required http:// prefix?"),
+
 "Target": _("Target"),
 "The URL you entered seems to be an email address. Do you want to add the required mailto: prefix?": _("The URL you entered seems to be an email address. Do you want to add the required mailto: prefix?"),
 "Insert/edit link": _("Insert/Edit Link"),
 "Insert/edit video": _("Insert/Edit Embedded Media"),
-"Poster": _("Poster"),
+
 "Alternative source": _("Alternative source"),
 "Paste your embed code below:": _("Use CTRL+V on your keyboard to paste the code into the window."),
+
+"Poster": _("Poster"),
 
 
 "Nonbreaking space": _("Non-Breaking Space"),
@@ -205,6 +214,7 @@ tinymce.addI18n('all',{
 "Custom color": _("Custom color"),
 "No color": _("No color"),
 "Text color": _("Text color"),
+
 "Show blocks": _("Show blocks"),
 "Show invisible characters": _("Show invisible characters"),
 "Words: {0}": _("Words: {0}"),
