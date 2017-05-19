@@ -79,7 +79,7 @@ $exeGames = {
 var hangMan = {
 	man : new Array("___\n", "   |\n", "   O\n", "  /", "|", "\\\n", "  /", " \\\n", "___"),
 	create : function(id,letters,tips,words,addCapitalLetters,isCaseSensitive){
-        if (!letters || letters=="") letters = "abcdefghijklmnñopqrstuvwxyz";
+        if (!letters || letters=="") letters = "abcdefghijklmnopqrstuvwxyz";
 		var c = '<div class="exe-game-js-content">';
         c += '<div class="wording" id="question-'+id+'">';
 			c += "<ol>";
