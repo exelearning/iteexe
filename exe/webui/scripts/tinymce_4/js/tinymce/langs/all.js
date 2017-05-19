@@ -95,6 +95,7 @@ tinymce.addI18n('all',{
 "Constrain proportions": _("Constrain proportions"),
 "Vertical space": _("Vertical Space"),
 "Image description": _("Image Description"),
+"Image Title": _("Image Title"),
 "Style": _("Style"),
 "Dimensions": _("Dimensions"),
 

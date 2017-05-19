@@ -46,6 +46,7 @@ var $exeTinyMCE = {
 		{title: 'nofollow', value: 'nofollow'},
 		{title: 'prev', value: 'prev'}
 	],
+	image_title: true,
     
 	init: function(mode,criteria,hide){
 		
@@ -79,6 +80,7 @@ var $exeTinyMCE = {
 			path_to_folder: this.path_to_folder,
 			// Images
 			image_advtab: true,
+			image_title: this.image_title,
 			file_browser_callback: function(field_name, url, type, win){
 				exe_tinymce.chooseImage(field_name, url, type, win);
 			},
