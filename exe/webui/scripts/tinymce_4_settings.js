@@ -33,6 +33,19 @@ var $exeTinyMCE = {
 	table_default_styles: {
 		width: '100%'
 	},
+	rel_list: [
+		{title: '---', value: ''},
+		{title: 'alternate', value: 'alternate'},
+		{title: 'author', value: 'author'},
+		{title: 'bookmark', value: 'bookmark'},
+		{title: 'external', value: 'external'},
+		{title: 'help', value: 'help'},
+		{title: 'license', value: 'license'},
+		{title: 'lightbox', value: 'lightbox'},
+		{title: 'next', value: 'next'},
+		{title: 'nofollow', value: 'nofollow'},
+		{title: 'prev', value: 'prev'}
+	],
     
 	init: function(mode,criteria,hide){
 		
@@ -61,6 +74,7 @@ var $exeTinyMCE = {
 			browser_spellcheck: this.browser_spellcheck,
 			templates: this.templates,
 			table_default_styles: this.table_default_styles,
+			rel_list: this.rel_list,
 			// Base URL
 			path_to_folder: this.path_to_folder,
 			// Images
