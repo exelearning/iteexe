@@ -33,18 +33,7 @@ var $exeDevice = {
 	
 	init : function(){
 		
-		// this.createForm();
-		/* *************************
-		***** PROVISIONAL CODE *****
-		************************* */        
-		window.onload = function(){
-			tinymce.activeEditor.remove();
-			$exeDevice.createForm();
-		}
-		/* *************************
-		***** PROVISIONAL CODE *****
-		************************* */
-		
+		 this.createForm();
 	},
 	
 	// Create the form to insert HTML in the TEXTAREA
@@ -63,7 +52,7 @@ var $exeDevice = {
 			</div>\
 		';
 		
-		var field = $("textarea.mceEditor").eq(0);
+		var field = $("textarea.jsContentEditor").eq(0);
 		field.hide().before(html);
 		this.loadPreviousValues(field);
 		
