@@ -206,7 +206,7 @@ var $exe = {
     // Math options (MathJax, etc.)
     math : {
         // Change this from your Style or your elp using $exe.math.engine="..."
-        engine : "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML",
+        engine : "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML",
         // Create links to the code and the image (different possibilities)
         createLinks : function(math) {
             var mathjax = false;
