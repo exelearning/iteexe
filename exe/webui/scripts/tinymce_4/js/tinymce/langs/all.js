@@ -227,5 +227,20 @@ tinymce.addI18n('all',{
 "View": _("View"),
 "Table": _("Table"),
 "Format": _("Format"),
-"Preformatted": _("Preformatted")
+"Preformatted": _("Preformatted"),
+// JavaScript Popup
+"Popup URL": _("Popup URL"),
+"JavaScript Popup": _("JavaScript Popup"),
+"Window Name": _("Window Name"),
+"Size": _("Size"),
+"Position (X/Y)": _("Position (X/Y)"),
+"Options": _("Options"),
+"Show Location Bar": _("Show Location Bar"),
+"Show Scrollbars": _("Show Scrollbars"),
+"Show Menu Bar": _("Show Menu Bar"),
+"Make Window Resizable": _("Make Window Resizable"),
+"Show Toolbars": _("Show Toolbars"),
+"Show Status Bar": _("Show Status Bar"),
+"Insert 'return false'": _("Insert 'return false'"),
+"Events": _("Events")
 });
