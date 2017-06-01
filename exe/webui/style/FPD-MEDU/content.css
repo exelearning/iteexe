@@ -873,3 +873,4 @@ ol.lista_esquema { counter-reset: item }
 
 .exe-fx .fx-accordion-content{padding-top:1em}
 .exe-fx .fx-tab-content{padding-top:1.5em}
+div.exe-block-warning,div.exe-block-alert,div.exe-block-danger,div.exe-block-info,div.exe-block-success{padding:1em;margin:1em 0}

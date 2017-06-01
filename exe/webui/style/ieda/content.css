@@ -1436,3 +1436,6 @@ img
 .emphasis1 .fx-pagination a{
 	background:#ededed;
 }
+
+/* Other TinyMCE available styles */
+div.exe-block-warning,div.exe-block-alert,div.exe-block-danger,div.exe-block-info,div.exe-block-success{padding:1em;margin:1em 0}
