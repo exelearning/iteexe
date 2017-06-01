@@ -43,86 +43,108 @@ class JsIdevice(Idevice):
     """
     persistenceVersion = 1
     
-    def __init__(self, iDeviceDir = None):
+    def __init__(self, iDeviceDir=None):
         """
         Initialize JS IDevice
         """
+        self._pathiDeviceDir = iDeviceDir
         self._iDeviceDir = str(iDeviceDir)
-        # Get XML values from the config file
-        xmlValues = self.__loadIdevice()
-        # Add the values not present on the XML
-        xmlValues = self.__fillIdeviceDefaultValues(xmlValues)
+        self._dirname = iDeviceDir.basename()
         
-        # Initialize the IDevice instance
-        Idevice.__init__(self, xmlValues['title'], xmlValues['author'], xmlValues['purpose'], xmlValues['tip'], xmlValues['icon'])
+        self._valid         = False
+        self._checkValid()
         
-        # CSS class
-        self.class_ = xmlValues['css-class']
+        if self._valid:
         
-        if 'category' in xmlValues:
-            self.ideviceCategory = xmlValues['category']
-        
-        # Initialize resources list
-        self._editionResources = []
-        self._exportResources = []
-        
-        # Initialize field arrays
-        self.fields  = []
-        self.nextFieldId = 0
-        
-        # Set IDevice emphasis
-        self.emphasis = Idevice.SomeEmphasis
-
-        # Add default JS Idevice fields
-        self.__addDefaultFields()
-        self.__getFolderResources()
+            # Get XML values from the config file
+            xmlValues = self.__loadIdevice()
+            # Add the values not present on the XML
+            xmlValues = self.__fillIdeviceDefaultValues(xmlValues)
+            
+            self._attributes = xmlValues
+            
+            # Initialize the IDevice instance
+            Idevice.__init__(self, xmlValues['title'], xmlValues['author'], xmlValues['purpose'], xmlValues['tip'], xmlValues['icon'])
+            
+            # CSS class
+            self.class_ = xmlValues['css-class']
+            
+            if 'category' in xmlValues:
+                self.ideviceCategory = xmlValues['category']
+            
+            # Initialize resources list
+            self._editionResources = []
+            self._exportResources = []
+            
+            # Initialize field arrays
+            self.fields  = []
+            self.nextFieldId = 0
+            
+            # Set IDevice emphasis
+            self.emphasis = Idevice.SomeEmphasis
+    
+            # Add default JS Idevice fields
+            self.__addDefaultFields()
+            self.__getFolderResources()
 
     def __loadIdevice(self):
         """
         Load IDevice configuration from its config.xml file
         """
         try:
-            # Check if the folder has a config.xml file
-            configFile = Path(self._iDeviceDir + '/config.xml')
-            if configFile.exists():
-                # Get config data
-                configData = open(configFile).read()
-                try:
-                    newConfigData = configData.decode()
-                except UnicodeDecodeError:
-                    configCharset = chardet.detect(configData)
-                    newConfigData = configData.decode(configCharset['encoding'], 'replace')
-                
-                # Parse the XML file
-                xmlConfig = minidom.parseString(newConfigData)
-                
-                # Get main element
-                xmlIdevice = xmlConfig.getElementsByTagName('idevice')
-                
-                # Initialize results variable
-                result = dict()
-                
-                # If there is a main element tag
-                if (len(xmlIdevice) > 0):
-                    # Go over all the child nodes
-                    for tag in xmlIdevice[0].childNodes:
-                        # Only process the node if it is an Element
-                        # This means only tags get processed
-                        if(isinstance(tag, minidom.Element)):
-                            # Add the tag name and value to the result dictionary
-                            result.update({tag.tagName: tag.firstChild.nodeValue})
+            if self._valid:
+                # Check if the folder has a config.xml file
+                configFile = Path(self._iDeviceDir + '/config.xml')
+                if configFile.exists():
+                    # Get config data
+                    configData = open(configFile).read()
+                    try:
+                        newConfigData = configData.decode()
+                    except UnicodeDecodeError:
+                        configCharset = chardet.detect(configData)
+                        newConfigData = configData.decode(configCharset['encoding'], 'replace')
                     
-                    if 'title' in result and 'css-class' in result:
-                        return result
-                    else:
-                        raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), 'Mandatory fields not found.')
-            else:
-                raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), 'config.xml file doesn\'t exist.')
+                    # Parse the XML file
+                    xmlConfig = minidom.parseString(newConfigData)
+                    
+                    # Get main element
+                    xmlIdevice = xmlConfig.getElementsByTagName('idevice')
+                    
+                    # Initialize results variable
+                    result = dict()
+                    
+                    # If there is a main element tag
+                    if (len(xmlIdevice) > 0):
+                        # Go over all the child nodes
+                        for tag in xmlIdevice[0].childNodes:
+                            # Only process the node if it is an Element
+                            # This means only tags get processed
+                            if(isinstance(tag, minidom.Element)):
+                                # Add the tag name and value to the result dictionary
+                                result.update({tag.tagName: tag.firstChild.nodeValue})
+                        
+                        if 'title' in result and 'css-class' in result:
+                            return result
+                        else:
+                            raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), 'Mandatory fields not found.')
+                else:
+                    raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), 'config.xml file doesn\'t exist.')
         except IOError as ioerror:
             # If we can't load an iDevice, we simply continue with the rest (and log it)
             log.debug("iDevice " + Path(self._iDeviceDir).basename() + " doesn't appear to have a valid \"config.xml\" file")
             raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), ioerror.message)
-      
+    
+    def _checkValid(self):
+        config = self._pathiDeviceDir/'config.xml'
+        edition = self._pathiDeviceDir/'edition' 
+        export = self._pathiDeviceDir/'export'
+        if config.exists() and edition.exists() and export.exists():
+            self._valid = True
+        else:
+            self._valid = False
+
+    def isValid(self):
+        return self._valid
 
     def clone(self):
         """
@@ -333,4 +355,17 @@ class JsIdevice(Idevice):
             resources.sort(key = lambda x: x.split('/')[-1])
             
         return resources
+    
+    def get_dirname(self):
+        return self._dirname
+
+    def get_jsidevice_dir(self):
+            return self._pathiDeviceDir
+    
+    def renderProperties(self):
+        properties = []     
+        for attribute in self._attributes:
+                value = self._attributes[attribute]
+                properties.append({'name': attribute, 'value': value})
+        return properties 
 # ===========================================================================

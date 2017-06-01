@@ -40,6 +40,7 @@ finally:
     sys.stdout = oldStdOut
 from exe.webui.editorpage          import EditorPage
 from exe.webui.stylemanagerpage    import StyleManagerPage
+from exe.webui.jsidevicemanagerpage import JsIdeviceManagerPage
 from exe.webui.preferencespage     import PreferencesPage
 from exe.webui.aboutpage           import AboutPage
 from exe.webui.releasenotespage    import ReleaseNotesPage
@@ -75,6 +76,7 @@ class WebServer:
         self.root = PackageRedirectPage(self, packagePath)
         self.editor = EditorPage(self.root)
         self.stylemanager = StyleManagerPage(self.root)
+        self.jsidevicemanager = JsIdeviceManagerPage(self.root)
         self.preferences = PreferencesPage(self.root)
         self.xliffimportpreferences = XliffImportPreferencesPage(self.root)
         self.dirtree = DirTreePage(self.root)

@@ -374,6 +374,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'accesskey_menuitem',
+                                itemId: 'tools_jsidevicemanager',
+                                accesskey: 'j',
+                                text: _('JsIdevice Manager')
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'tools_stylemanager',
                                 accesskey: 's',
                                 text: _('Style Manager')

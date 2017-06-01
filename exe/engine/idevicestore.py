@@ -51,6 +51,7 @@ class IdeviceStore:
         self.config         = config
         self.extended       = []
         self.generic        = []
+        self.jsIdevices     = []
         self.listeners      = []
         # JRJ: Añado una lista que contendrá todos los iDevices disponibles
         # (addition of a list that will contain all the idevices available)
@@ -232,15 +233,16 @@ class IdeviceStore:
                 for listener in self.listeners:
                     listener.addIdevice(idevice)
         elif self.isJs(idevice):
-            exist = False
-            for i in self.jsIdevices:
-                if i.title == idevice.title:
-                    exist = True
-            if not exist:
+#             Compare the id of the idevice with the magic method
+            if (idevice not in self.jsIdevices):
                 self.jsIdevices.append(idevice)
                 idevice.edit = True
                 for listener in self.listeners:
                     listener.addIdevice(idevice)
+                return True
+            else:
+                return False
+                
         else:
             exist = False
             for i in self.extended:
@@ -561,9 +563,7 @@ class IdeviceStore:
         iDevicesDir = self.config.webDir/'scripts'/'idevices'
         
         log.debug("Load JS iDevices from " + iDevicesDir)
-        
-        self.jsIdevices = []
-        
+
         # If the iDevices' folder exists 
         if iDevicesDir.exists():
             # We get the list of all subfolders
