@@ -37,7 +37,7 @@ var $exe = {
         // No MediaElement in ePub3
 		if (e.indexOf("exe-epub3") != 0) {
             var n = document.body.innerHTML;
-            if (n.indexOf(' class="mediaelement"') != -1 || n.indexOf(" class='mediaelement") != -1) {
+            if ($(".mediaelement").length>0) {
                 $exe.loadMediaPlayer.getPlayer()
             }
         }
