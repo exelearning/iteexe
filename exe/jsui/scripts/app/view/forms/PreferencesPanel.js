@@ -30,7 +30,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
             bodyPadding: 4,
             items: [{
                 xtype: 'tabpanel',
-                height: 250,
+                height: 270,
                 activeTab: 0,
                 plain: true,
                 items: [
@@ -225,6 +225,23 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									["disable_all", _("Disable All Internal Linking")]
 								],
 								margin: 10
+							},
+							// Force editable exports
+							{
+								xtype: 'helpcontainer',
+								item: {
+									xtype: 'combobox',
+									inputId: 'forceEditableExport',
+									dirtyCls: 'property-form-dirty',
+									labelWidth: 250,
+									fieldLabel: _('Always force editable exports on package load'),
+									store: [
+										["0", "Disable" ],
+										["1", "Enable" ]
+									]
+								},
+								margin: 10,
+								help: _('This will ignore the package "Create editable export?" setting every time it\'s loaded. You will be able to disable it before exporting, but it will be reset every time you open the package.')
 							},
 							{
 								xtype: 'helpcontainer',

@@ -159,8 +159,7 @@ class PreferencesPage(RenderableResource):
         self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
         for browser in self.browsersAvalaibles:
             self.browsers.append({'browser': browser[1], 'text': browser[0]})
-        a=common.getPackageLicenses()
-        for licenses in a:
+        for licenses in common.getPackageLicenses():
             self.licensesNames.append({'licenseName': licenses,'text':_(licenses)})
 
 
@@ -197,6 +196,7 @@ class PreferencesPage(RenderableResource):
                     browserSelected = self.config.browser.name
             data['browser'] = browserSelected
             data['showPreferencesOnStart'] = self.config.showPreferencesOnStart
+            data['forceEditableExport'] = self.config.forceEditableExport
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to get preferences")})
@@ -233,6 +233,10 @@ class PreferencesPage(RenderableResource):
             defaultLicense = request.args['defaultLicense'][0]
             self.config.defaultLicense = defaultLicense
             self.config.configParser.set('user', 'defaultLicense', defaultLicense)
+            
+            forceEditableExport = request.args['forceEditableExport'][0]
+            self.config.forceEditableExport = forceEditableExport
+            self.config.configParser.set('user', 'forceEditableExport', forceEditableExport)
             
             browser = request.args['browser'][0]
             if browser == "None":
