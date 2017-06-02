@@ -33,6 +33,48 @@ var $exeTinyMCE = {
 	table_default_styles: {
 		width: '100%'
 	},
+	// Get classes from base.css and content.css
+	getAvailableClasses: function() {
+		
+		var sheets = document.styleSheets;
+		var sheet, rule, rules, item, name, tmp;
+		var classes = [];
+		var names = [];
+		
+		for (var i=0, iLen=sheets.length; i<iLen; i++) {
+			sheet = sheets[i];
+			if (sheet.href.indexOf("/base.css")!=-1 || sheet.href.indexOf("/content.css")!=-1) {
+				rules = sheet.rules || sheet.cssRules;
+
+				for (var j=0, jLen=rules.length; j<jLen; j++) {
+					rule = rules[j];
+					tmp = rule.cssText.match(/\.\w+/g);
+					if (tmp) {
+						classes.push.apply(classes, tmp);
+					}
+				}
+			}
+		}
+		classes.sort();
+		
+		// Add some classes (exe-hidden, etc.)
+		var rightClasses = [
+			{text: '-- Not Set --', value: ''},
+			{text: 'exe-hidden', value: 'exe-hidden'},
+			{text: 'exe-hidden-accessible', value: 'exe-hidden-accessible'}
+		];
+		
+		for (var z=0;z<classes.length;z++) {
+			name = classes[z].replace('.','');
+			if (isNaN(classes[z].charAt(1)) && names.indexOf(name)==-1 && name.indexOf("iDevice")==-1 && name.indexOf("Idevice")==-1 && name!="js") {
+				rightClasses.push({text: name, value: name});
+				names.push(name);
+			}
+		}
+		
+		return rightClasses;				
+		
+	},	
 	rel_list: [
 		{title: '---', value: ''},
 		{title: 'alternate', value: 'alternate'},
@@ -75,6 +117,7 @@ var $exeTinyMCE = {
 			browser_spellcheck: this.browser_spellcheck,
 			templates: this.templates,
 			table_default_styles: this.table_default_styles,
+			table_class_list: this.getAvailableClasses(),
 			rel_list: this.rel_list,
 			// Base URL
 			path_to_folder: this.path_to_folder,
