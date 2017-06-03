@@ -30,7 +30,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
             bodyPadding: 4,
             items: [{
                 xtype: 'tabpanel',
-                height: 250,
+                height: 270,
                 activeTab: 0,
                 plain: true,
                 items: [
@@ -159,7 +159,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									xtype: 'combobox',
 									inputId: 'docType',
 									dirtyCls: 'property-form-dirty',
-									labelWidth: 250,
+									labelWidth: 325,
 									fieldLabel: _('Default format for the new documents'),
 									store: [
 										["XHTML", ("XHTML")],
@@ -179,7 +179,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									xtype: 'combobox',
 									inputId: 'editorMode',
 									dirtyCls: 'property-form-dirty',
-									labelWidth: 250,
+									labelWidth: 325,
 									fieldLabel: _('Editor mode'),
 									store: [
 										["permissive", _("Permissive")],
@@ -199,7 +199,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									xtype: 'combobox',
 									inputId: 'editorVersion',
 									dirtyCls: 'property-form-dirty',
-									labelWidth: 250,
+									labelWidth: 325,
 									fieldLabel: _('Editor version'),
 									store: [
 										["3", "TinyMCE 3" ],
@@ -218,7 +218,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 								inputId: 'internalAnchors',
 								dirtyCls: 'property-form-dirty',
 								fieldLabel: _("Internal Linking (for Web Site Exports only)"),
-								labelWidth: 250,
+								labelWidth: 325,
 								width:465,
 								store: [
 									["enable_all", _("Enable All Internal Linking")],
@@ -226,6 +226,23 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									["disable_all", _("Disable All Internal Linking")]
 								],
 								margin: 10
+							},
+							// Force editable exports
+							{
+								xtype: 'helpcontainer',
+								item: {
+									xtype: 'combobox',
+									inputId: 'forceEditableExport',
+									dirtyCls: 'property-form-dirty',
+									labelWidth: 325,
+									fieldLabel: _('Always force editable exports on package load'),
+									store: [
+										["0", "Disable" ],
+										["1", "Enable" ]
+									]
+								},
+								margin: 10,
+								help: _('This will ignore the package "Create editable export?" setting every time it\'s loaded. You will be able to disable it before exporting, but it will be reset every time you open the package.')
 							},
 							{
 								xtype: 'helpcontainer',

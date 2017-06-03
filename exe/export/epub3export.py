@@ -127,6 +127,9 @@ class PublicationEpub3(object):
                 if epubFile.namebase != 'cover':
                     properties = u'properties="scripted"'
                 name = epubFile.namebase
+                # We need to ensure that XHTML files have the correct mime type
+                if mimetype == u'application/octet-stream':
+                    mimetype = u'application/xhtml+xml'
 
             if epubFile.basename() == self.cover:
                 properties = u'properties="cover-image"'
@@ -150,7 +153,10 @@ class PublicationEpub3(object):
                     self.package.dublinCore.identifier = value = str(uuid.uuid4())
             if value:
                 xml += u'<dc:%s%s>%s</dc:%s>\n' % (key, pub_id, escape(value), key)
-        xml += u'<meta property="dcterms:modified">%s</meta>' % datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
+        # Add title (required property)
+        # http://www.idpf.org/epub/30/spec/epub30-publications.html#sec-metadata-elem
+        xml += u'<dc:title>%s</dc:title>\n' % self.package.title
+        xml += u'<meta property="dcterms:modified">%s</meta>\n' % datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
         xml += u'</metadata>\n'
         return xml
 

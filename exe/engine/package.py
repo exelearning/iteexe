@@ -1298,6 +1298,10 @@ class Package(Persistable):
             # or saved to
             newPackage.filename = Path(filename)
 
+        # If eXe is configured to force editable exports we have to set it here
+        if G.application.config.forceEditableExport == "1":
+            newPackage.exportSource = True
+
         checker = Checker(newPackage)
         inconsistencies = checker.check()
         for inconsistency in inconsistencies:
