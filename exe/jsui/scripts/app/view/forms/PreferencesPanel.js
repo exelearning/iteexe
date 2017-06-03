@@ -158,7 +158,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									xtype: 'combobox',
 									inputId: 'docType',
 									dirtyCls: 'property-form-dirty',
-									labelWidth: 250,
+									labelWidth: 325,
 									fieldLabel: _('Default format for the new documents'),
 									store: [
 										["XHTML", ("XHTML")],
@@ -178,7 +178,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									xtype: 'combobox',
 									inputId: 'editorMode',
 									dirtyCls: 'property-form-dirty',
-									labelWidth: 250,
+									labelWidth: 325,
 									fieldLabel: _('Editor mode'),
 									store: [
 										["permissive", _("Permissive")],
@@ -198,7 +198,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									xtype: 'combobox',
 									inputId: 'editorVersion',
 									dirtyCls: 'property-form-dirty',
-									labelWidth: 250,
+									labelWidth: 325,
 									fieldLabel: _('Editor version'),
 									store: [
 										["3", "TinyMCE 3" ],
@@ -217,7 +217,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 								inputId: 'internalAnchors',
 								dirtyCls: 'property-form-dirty',
 								fieldLabel: _("Internal Linking (for Web Site Exports only)"),
-								labelWidth: 250,
+								labelWidth: 325,
 								width:465,
 								store: [
 									["enable_all", _("Enable All Internal Linking")],
@@ -233,7 +233,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									xtype: 'combobox',
 									inputId: 'forceEditableExport',
 									dirtyCls: 'property-form-dirty',
-									labelWidth: 250,
+									labelWidth: 325,
 									fieldLabel: _('Always force editable exports on package load'),
 									store: [
 										["0", "Disable" ],
