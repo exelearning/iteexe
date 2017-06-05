@@ -32,6 +32,7 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
     .external-iframe{display:none}
     .external-iframe-src{display:block!important;margin:2em 0;font-size:.95em;text-align:center}	
 }
+.external-iframe{border:0;}
 /* The New eXeLearning */
 /* Include these styles in the old themes */
 .iDevice a,#siteFooter a,#packageLicense a,.toggle-idevice a{text-decoration:underline}
