@@ -79,6 +79,7 @@ class WebsitePage(Page):
             html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
         html += u"<head>"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"hacks.css\" />"+lb
         if common.hasWikipediaIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb    
         if common.hasGalleryIdevice(self.node):
