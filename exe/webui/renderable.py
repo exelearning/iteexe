@@ -208,8 +208,15 @@ class RenderableResource(_RenderablePage, Resource):
 
 class File(static.File):
     def render(self, request):
-        "Disable cache of static files"
+        """
+        Disable cache of static files and add missing content MimeTypes
+        """
         request.setHeader('Expires', 'Fri, 25 Nov 1966 08:22:00 EST')
         request.setHeader("Cache-Control", "no-store, no-cache, must-revalidate")
         request.setHeader("Pragma", "no-cache")
+        
+        # SVG files must have MimeType "image/svg+xml",
+        # otherwise the browser will show nothing
+        self.contentTypes['.svg'] = 'image/svg+xml'
+        
         return static.File.render(self, request)
