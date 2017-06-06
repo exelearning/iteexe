@@ -90,8 +90,7 @@ class PublicationEpub3(object):
                 # Find iframes
                 src_list = re.findall(r'<iframe[^>]*\ssrc="(.*?)"', div);
                 if src_list:
-                    for src in src_list:
-                        self.specialResources['external'].append(page.name)
+                    self.specialResources['external'].append(page.name)
                 
                 # Find links
                 src_list = re.findall(r'<a[^>]*\shref="(.*?)"', div);
@@ -573,7 +572,7 @@ class Epub3Export(object):
         # Copy the style sheet files to the output dir
         # But not nav.css
         styleFiles = [self.styleDir /'..'/ 'popup_bg.gif']
-        styleFiles += [f for f in self.styleDir.files("*.css") if f.basename() != "nav.css"]
+        styleFiles += [f for f in self.styleDir.files("*.css") if f.basename() not in ['nav.css', 'hacks.css']]
         styleFiles += self.styleDir.files("*.jpg")
         styleFiles += self.styleDir.files("*.gif")
         styleFiles += self.styleDir.files("*.png")
