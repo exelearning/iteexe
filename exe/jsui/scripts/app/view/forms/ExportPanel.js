@@ -116,6 +116,41 @@ Ext.define('eXe.view.forms.ExportPanel', {
                         }
                     ]
                 },
+                {
+                	xtype: 'fieldset',
+                	title: _('ePub3 Options'),
+                    margin: 10,
+                    items: [
+                    	 {
+ 	                        xtype: 'helpcontainer',
+ 	                        item: {
+ 	                            xtype: 'checkboxfield',
+ 	                            inputId: 'pp_epubCoverCss',
+ 	                            boxLabel: _('Include theme CSS on cover?'),
+ 	                            inputValue: true,
+ 	                            uncheckedValue: false,
+ 	                            dirtyCls: 'property-form-dirty',
+ 	                            tooltip: _('Checking this option will allow eXe to include the style CSS files on the cover page.')
+ 	                        },
+ 	                        flex: 0,
+ 	                        help: _('Checking this option will allow eXe to include the style CSS files on the cover page.')
+                        },
+                        {
+                            xtype: 'helpcontainer',                            
+                            item: {
+                                xtype: 'textarea',
+	                            height: 360,
+	                            anchor: '100%',
+                                inputId: 'pp_epubCover',
+                                fieldLabel: _('Cover page'),
+                                fieldCls: 'mceEditor',
+                                dirtyCls: 'property-form-dirty'
+                            },
+                            flex: 1,
+                            help: _('Cover page.')
+                        }
+                    ]
+                },
              
                 {
                     xtype: 'button',
@@ -137,7 +172,7 @@ Ext.define('eXe.view.forms.ExportPanel', {
                 }
             ]
         });
-
+        
         me.callParent(arguments);
     }
 

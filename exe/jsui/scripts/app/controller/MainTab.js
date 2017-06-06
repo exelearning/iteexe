@@ -378,11 +378,6 @@ Ext.define('eXe.controller.MainTab', {
     beforeAction: function(form, action, eOpts) {
         form.url = location.pathname + "/properties";
     },
-    
-    beforeAction: function(form, action, eOpts) {
-//    	console.log('beforeaction');
-        form.url = location.pathname + "/properties";
-    },
 
     updateAuthoring: function(action, object, isChanged, currentNode, destNode) {
         if (action && (action == "done" || action == "move" || action == "delete" || action == "movePrev" || action == "moveNext" || action == "ChangeStyle")) {

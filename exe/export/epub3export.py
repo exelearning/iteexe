@@ -208,7 +208,8 @@ class PublicationEpub3(object):
         Returning xml string for items and resources
         """
         xml_str = u'<spine>\n'
-        xml_str += u'<itemref idref="cover"/>\n'
+        xml_str += u'<itemref idref="cover" linear="no"/>\n'
+        xml_str += u'<itemref idref="nav" linear="no"/>\n'
         for page in self.pages:
             if page.name == 'cover':
                 continue
@@ -216,7 +217,7 @@ class PublicationEpub3(object):
         
         # We need to add an itemref tag for each linked element included in the package (images, external HTMLs...) 
         for linked_resource in self.specialResources['linked_resources']:
-            xml_str += u'<itemref idref="%s" />\n' % linked_resource.translate({ord(u'.'): u'_', ord(u'('): u'', ord(u')'): u''})
+            xml_str += u'<itemref idref="%s" linear="no" />\n' % linked_resource.translate({ord(u'.'): u'_', ord(u'('): u'', ord(u')'): u''})
             
         xml_str += u'</spine>\n'
         return xml_str
@@ -225,7 +226,7 @@ class PublicationEpub3(object):
         """
         Generate itemref tags for the page and any linked files
         """
-        return u'<itemref idref="%s" />\n' % page.name.replace('.', '-')
+        return u'<itemref idref="%s" linear="yes" />\n' % page.name.replace('.', '-')
 
 # ===========================================================================
 
@@ -482,27 +483,43 @@ class Epub3Page(Page):
 
 class Epub3Cover(Epub3Page):
     def render(self):
-        html = '''<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-   <head>
-      <meta charset="utf-8" />
-   </head>
-   <body style="text-align: center;">
-      <img id="img-cover" src="%s" alt="%s" />
-   </body>
-</html>'''
-        src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D'
-        for idevice in self.node.idevices:
-            block = g_blockFactory.createBlock(None, idevice)
-            div = block.renderView(self.node.package.style)
-            srcs = re.findall(r'<img[^>]*\ssrc="(.*?)"', div)
-            if srcs:
-                src = srcs[0]
-                self.cover = src
-                break
-        return html % (src, escape(self.node.package.title, True))
+        html = u'<?xml version="1.0" encoding="UTF-8"?>\n'
+        html += u'<!DOCTYPE html>'
+        html += u'<html xmlns="http://www.w3.org/1999/xhtml">\n'
+        
+        html += u'<head>\n'
+        html += u'<meta charset="utf-8" />\n'
+        
+        # Add CSS stylesheets (if the user selected it)
+        if self.node.package.epubCoverCss:
+            html += u'<link rel="stylesheet" type="text/css" href="base.css" />\n'
+            html += u'<link rel="stylesheet" type="text/css" href="content.css" />\n'
+            
+        html += u'</head>\n'
+        
+        html += u'<body>\n'
 
+        if self.node.package.epubCover:
+            html += self.node.package.epubCover
+        else:
+            # If the user didn't write a cover for the ePub,
+            # we try to compose one with the first image of the package
+            src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D'
+            for idevice in self.node.idevices:
+                block = g_blockFactory.createBlock(None, idevice)
+                div = block.renderView(self.node.package.style)
+                srcs = re.findall(r'<img[^>]*\ssrc="(.*?)"', div)
+                if srcs:
+                    src = srcs[0]
+                    self.cover = src
+                    break
+            html += u'<div style="text-align: center;"><img id="img-cover" src="%s" alt="%s" /></div>' % (src, escape(self.node.package.title, True))
+        
+        html += u'\n</body>\n'
+        
+        html += u'</html>'
+        
+        return html
 
 class Epub3Export(object):
     """

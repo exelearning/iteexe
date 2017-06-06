@@ -312,7 +312,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 13
+    persistenceVersion = 14
     nonpersistant      = ['resourceDir', 'filename', 'previewDir']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
@@ -362,6 +362,8 @@ class Package(Persistable):
         self.scowwebsite   = False
         self.exportSource    = True
         self.exportMetadataType = "LOMES"
+        self.epubCover = None
+        self.epubCoverCss = False
         self.license       = G.application.config.defaultLicense
         self.footer        = ""
         self._objectives = u''
@@ -1669,6 +1671,12 @@ class Package(Persistable):
     def upgradeToVersion13(self):
         if not hasattr(self, '_docType'):
             self._docType = G.application.config.docType
+            
+    def upgradeToVersion14(self):
+        if not hasattr(self, 'epubCover'):
+            self.epubCover = None
+        if not hasattr(self, 'epubCoverCss'):
+            self.epubCoverCss = False
             
     def downgradeToVersion9(self):
         for attr in ['lomEs', 'lom', 'scowsinglepage', 'scowwebsite',
