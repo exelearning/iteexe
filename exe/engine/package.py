@@ -389,6 +389,8 @@ class Package(Persistable):
         self.resourceDir = TempDirPath()
         self.resources = {} # Checksum-[_Resource(),..]
         self._docType    = G.application.config.docType
+        
+        self.isLoading = False
 
     def setLomDefaults(self):
         self.lom = lomsubs.lomSub.factory()
@@ -1216,6 +1218,9 @@ class Package(Persistable):
             except:
                 pass
             G.application.afterUpgradeHandlers = []
+            
+            newPackage.isLoading = True
+            
             newPackage.resourceDir = resourceDir
             G.application.afterUpgradeZombies2Delete = []
             if not validxml and (xml or fromxml or "content.xml" in zippedFile.namelist()):
@@ -1378,6 +1383,9 @@ class Package(Persistable):
         if not nstyle.isdir():
             newPackage.style=G.application.config.defaultStyle       
         newPackage.lang = newPackage._lang
+        
+        newPackage.isLoading = False
+        
         return newPackage
 
     def getUserResourcesFiles(self, node):
