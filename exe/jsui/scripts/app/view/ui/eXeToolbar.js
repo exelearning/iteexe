@@ -116,6 +116,15 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'accesskey_menuitem',
+                                text: _('New from content-template'),
+                                itemId: 'templates_button',
+                                menu: {
+                                    xtype: 'menu',
+            	                    itemId: 'templates_menu'
+                                }
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
                                 text: _('Recent Projects...'),
                                 accesskey: 'r',
                                 menu: {
@@ -148,6 +157,11 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 text: _('Save As...'),
                                 accesskey: 'a',
                                 itemId: 'file_save_as'
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
+                                text: _('Save as content-template'),
+                                itemId: 'template_save'
                             },
                             {
                                 xtype: 'menuseparator'
@@ -371,6 +385,11 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 itemId: 'tools_idevice',
                                 accesskey: 'i',
                                 text: _('iDevice Editor')
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
+                                itemId: 'tools_templatemanager',
+                                text: _('Content-Template Manager')
                             },
                             {
                                 xtype: 'accesskey_menuitem',

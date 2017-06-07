@@ -1,0 +1,96 @@
+# ===========================================================================
+# eXe 
+# Copyright 2017, CeDeC
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# ===========================================================================
+"""
+TemplateStore is responsible for managing the Packages which the eXe server
+has loaded, (and loading and saving them?)
+"""
+
+from exe.engine.template      import Template
+from multiprocessing.sharedctypes import template
+import logging
+log = logging.getLogger(__name__)
+
+# ===========================================================================
+class TemplateStore:
+    """
+    TemplateStore is responsible for managing the Templates which the eXe server
+    has loaded, and loading and saving them
+    """
+
+    def __init__(self, config):
+        self._config = config
+        self._templates = []
+        self._listeners = []
+
+    def getTemplates(self):
+        """
+        (returns the list of templates)
+        """
+        return self._templates
+    
+    def getTemplate(self, name):
+        """
+        (returns a template given its name)
+        """
+        for template in self._templates:
+            if template.name == name:
+                return template
+        return None
+
+    def delTemplate(self, template):
+        """
+        (deletes a template)
+        """
+        if (template in self._templates):
+            self._templates.remove(template)
+            
+            for listener in self._listeners:
+                listener.delTemplate(template)
+    
+    def addTemplate(self, template):
+        """
+        (adds a template)
+        """
+        if (template not in self._templates):
+            self._templates.append(template)
+            
+            for listener in self._listeners:
+                listener.addTemplate(template) 
+            return True
+        else:
+            return False 
+    
+    
+    def register(self, listener):
+        """
+        (registers a listener interested in being informed of the changes in TemplateStore)
+        """
+        self._listeners.append(listener)
+
+
+    def load(self):
+        templateDir = self._config.webDir / 'content_template'
+
+        log.debug("loadTemplates from %s" % templateDir)
+        for templatePath in templateDir.files():
+            template = Template(templatePath)
+            if template.isValid():
+                self.addTemplate(template)
+
+# ===========================================================================

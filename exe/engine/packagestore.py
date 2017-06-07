@@ -84,4 +84,26 @@ class PackageStore:
         return package
 
 
+    def createPackageFromTemplate(self, templateBase):
+        """
+        Creates a new package from Template
+        """
+        log.debug(u"createPackageFromTemplate")
+        package = Package.load(templateBase)
+        
+        # Make up an initial unique name
+        i = 1
+        name = u"newPackage"
+        while name in self.loaded:
+            name = u"newPackage" + unicode(i)
+            i += 1            
+        
+        package.name = name
+        package.filename = None
+        self.loaded[package.name] = package
+
+        return package
+
+
+
 # ===========================================================================
