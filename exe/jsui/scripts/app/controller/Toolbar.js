@@ -22,6 +22,7 @@ Ext.define('eXe.controller.Toolbar', {
     requires: [
         'eXe.view.forms.PreferencesPanel',
         'eXe.view.forms.StyleManagerPanel',
+        'eXe.view.forms.TemplateManagerPanel'
     ],
 	refs: [{
         ref: 'recentMenu',
@@ -29,6 +30,9 @@ Ext.define('eXe.controller.Toolbar', {
     },{
     	ref: 'stylesMenu',
     	selector: '#styles_menu'
+    },{
+    	ref: 'templatesMenu',
+    	selector: '#templates_menu'
     }
     ],    
     init: function() {
@@ -40,6 +44,9 @@ Ext.define('eXe.controller.Toolbar', {
                 click: this.focusMenu
             },
             '#styles_button': {
+                click: this.focusMenu
+            },
+            '#templates_button': {
                 click: this.focusMenu
             },
             '#help': {
@@ -60,17 +67,26 @@ Ext.define('eXe.controller.Toolbar', {
         	'#styles_button': {
         		beforerender: this.stylesRender
         	},
+        	'#templates_button': {
+        		beforerender: this.templatesRender
+        	},
         	'#file_recent_menu > menuitem': {
         		click: this.recentClick
         	},
         	'#styles_menu > menuitem': {
         		click: this.stylesClick
         	},
+        	'#templates_menu > menuitem': {
+        		click: this.templatesClick
+        	},
         	'#file_save': {
         		click: this.fileSave
         	},
         	'#file_save_as': {
         		click: this.fileSaveAs
+        	},
+        	'#template_save': {
+        		click: this.templateSave
         	},
             '#file_print': {
                 click: this.filePrint
@@ -151,6 +167,9 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#tools_stylemanager': {
                 click: this.toolsStyleManager
+            },
+            '#tools_templatemanager': {
+                click: this.toolsTemplateManager
             },
             // Style designer
             // To do:
@@ -503,7 +522,24 @@ Ext.define('eXe.controller.Toolbar', {
         });
         stylemanager.show();        
 	},
-    
+	// Launch the Template Manager
+	toolsTemplateManager: function() {
+        var templatemanager = new Ext.Window ({
+          maxHeight: eXe.app.getMaxHeight(800), 
+          width: 500, 
+          modal: true,
+          autoShow: true,
+          autoScroll: true,
+          id: 'templatemanagerwin',
+          title: _("Template Manager"),
+          layout: 'fit',
+          items: {
+              xtype: 'templatemanager'
+          }
+        });
+        templatemanager.show();        
+	},
+	
 	// Style designer
 	styleDesigner : {
 		open : function(btn, text){
@@ -1085,6 +1121,25 @@ Ext.define('eXe.controller.Toolbar', {
     	return true;
     },
 
+    templatesRender: function() {
+    	Ext.Ajax.request({
+    		url: location.pathname + '/templateMenu',
+    		scope: this,
+    		success: function(response) {
+				var templates = Ext.JSON.decode(response.responseText),
+					menu = this.getTemplatesMenu(), i, item;
+					menu.removeAll();
+				
+    			for (i = templates.length-1; i >= 0; i--) {
+                    item = Ext.create('Ext.menu.Item', { text: templates[i].label, path: templates[i].template });
+    				menu.insert(0, item);
+    			}
+    		}
+    	})
+    	return true;
+    },
+
+    
     recentClick: function(item) {
     	if (item.itemId == "file_clear_recent") {
     		nevow_clientToServerEvent('clearRecent', this, '');
@@ -1124,6 +1179,21 @@ Ext.define('eXe.controller.Toolbar', {
                 eXe.controller.Toolbar.prototype.executeStylesClick(item);
             },500);
         } else this.executeStylesClick(item);
+    },
+    
+    
+    executeTemplatesClick: function(item) {
+    	nevow_clientToServerEvent('loadTemplate', this, '', item.path)
+    },
+    
+    templatesClick: function(item) {
+        var ed = this.getTinyMCEFullScreen();
+        if(ed!="") {
+            ed.execCommand('mceFullScreen');
+            setTimeout(function(){
+                eXe.controller.Toolbar.prototype.executeTemplatesClick(item);
+            },500);
+        } else this.executeTemplatesClick(item);
     },
     
 	fileOpenRecent2: function(number) {
@@ -1227,6 +1297,38 @@ Ext.define('eXe.controller.Toolbar', {
 	        this.fileSaveAs(onDone)
 	    }
 	},
+	
+	templateSave: function(onProceed) {
+        var ed = this.getTinyMCEFullScreen();
+        if(ed!="") {
+            ed.execCommand('mceFullScreen');
+            setTimeout(function(){
+                eXe.controller.Toolbar.prototype.executeTemplateSave(onProceed);
+            },500);
+        } else this.executeTemplateSave(onProceed);
+	},
+
+    executeTemplateSave: function(onProceed) {
+		Ext.Msg.show({
+			prompt: true,
+			title: _('Title for template:'),
+			msg: _('Enter the new name for template:'),
+			buttons: Ext.Msg.OKCANCEL,
+			multiline: false,
+			scope: this,
+			fn: function(button, text) {
+				if (button == "ok")	{
+					if (text) {
+						if (!onProceed || (onProceed && typeof(onProceed) != "string"))
+					        var onProceed = '';
+						nevow_clientToServerEvent('saveTemplate', this, '', text, onProceed);
+					}
+		    	}
+			}
+		});
+    
+    },
+	
 	// Called by the user when they want to save their package
 	executeFileSaveAs: function(onDone) {
 		var f = Ext.create("eXe.view.filepicker.FilePicker", {

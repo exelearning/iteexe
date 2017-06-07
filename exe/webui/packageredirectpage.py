@@ -104,7 +104,13 @@ class PackageRedirectPage(RenderableResource):
         log.debug("render_GET" + repr(request.args))
         # Create new package
         session = request.getSession()
-        package = session.packageStore.createPackage()
+        templateBase = self.config.webDir / 'content_template' / 'BASE.elt'
+        
+        if os.path.exists(templateBase):
+            package = session.packageStore.createPackageFromTemplate(templateBase)
+        else:
+            package = session.packageStore.createPackage()
+            
         self.bindNewPackage(package, session)
         log.info("Created a new package name="+ package.name)
         # Tell the web browser to show it

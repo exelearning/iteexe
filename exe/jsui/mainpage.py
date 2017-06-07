@@ -42,6 +42,7 @@ from exe.jsui.outlinepane        import OutlinePane
 from exe.jsui.recentmenu         import RecentMenu
 from exe.jsui.stylemenu          import StyleMenu
 from exe.jsui.propertiespage     import PropertiesPage
+from exe.jsui.templatemenu       import TemplateMenu
 from exe.webui.authoringpage     import AuthoringPage
 from exe.webui.stylemanagerpage  import StyleManagerPage
 from exe.webui.renderable        import File
@@ -55,6 +56,7 @@ from exe.importers.xliffimport   import XliffImport
 from exe.importers.scanresources import Resources
 from exe.engine.path             import Path, toUnicode, TempDirPath
 from exe.engine.package          import Package
+from exe.engine.template         import Template
 from exe                         import globals as G
 from tempfile                    import mkdtemp, mkstemp
 from exe.engine.mimetex          import compile
@@ -102,6 +104,7 @@ class MainPage(RenderableLivePage):
         self.idevicePane = IdevicePane(self)
         self.styleMenu = StyleMenu(self)
         self.recentMenu = RecentMenu(self)
+        self.templateMenu = TemplateMenu(self)
 
         # And in the main section
         self.propertiesPage = PropertiesPage(self)
@@ -220,9 +223,14 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleCreateDir, 'CreateDir')
         setUpHandler(self.handleOverwriteLocalStyle, 'overwriteLocalStyle')
 
+        setUpHandler(self.handleSaveTemplate, 'saveTemplate')
+        setUpHandler(self.handleLoadTemplate, 'loadTemplate')
+
         self.idevicePane.client = client
         self.styleMenu.client = client
+        self.templateMenu.client = client
         self.webServer.stylemanager.client = client
+        self.webServer.templatemanager.client = client
 
         if not self.webServer.monitoring:
             self.webServer.monitoring = True
@@ -346,6 +354,36 @@ class MainPage(RenderableLivePage):
         else:
             client.alert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
 
+    def handleSaveTemplate(self, client, templatename=None, onDone=None):
+        '''Save template'''    
+        filename = Path(self.config.webDir/'content_template'/templatename, 'utf-8')
+        filename = self.b4save(client, filename, '.elt', _(u'SAVE FAILED!'))
+        
+        try:
+            
+            configxmlData = '<?xml version="1.0"?>\n'
+            configxmlData += '<template>\n'
+            configxmlData += '<name>'+templatename+'</name>\n'
+            configxmlData += '</template>'
+            
+            tempDirPath = self.package.resourceDir 
+            
+            configxml = open(tempDirPath/"config.xml", "w")
+            configxml.write(configxmlData)
+            configxml.close()
+            
+            # Save the template
+            self.package.save(filename) 
+    
+        except Exception, e:
+            client.alert(_('SAVE FAILED!\n%s') % str(e))
+            raise
+        
+        template= Template(filename)
+        G.application.templateStore.addTemplate(template)
+    
+        client.alert(_(u'Templat saved: %s') % templatename, onDone)
+
     def handleLoadPackage(self, client, filename, filter_func=None):
         """Load the package named 'filename'"""
         package = self._loadPackage(client, filename, newLoad=True)
@@ -353,6 +391,13 @@ class MainPage(RenderableLivePage):
         self.webServer.root.bindNewPackage(package, self.session)
         client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
                           package.name).encode('utf8'), filter_func=filter_func)
+
+    def handleLoadTemplate(self, client, filename):
+        """Load the template named 'filename'"""
+        template = self._loadPackage(client, filename, newLoad=True, isTemplate=True)
+        self.webServer.root.bindNewPackage(template, self.session)
+        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
+                          template.name).encode('utf8'), filter_func=allSessionPackageClients)
 
     # No longer used - Task 1080, jrf
     # def handleLoadTutorial(self, client):
@@ -1395,7 +1440,7 @@ class MainPage(RenderableLivePage):
             G.application.config.browser.open('file://' + filename)
 
     def _loadPackage(self, client, filename, newLoad=True,
-                     destinationPackage=None):
+                     destinationPackage=None, isTemplate=False):
         """Load the package named 'filename'"""
         try:
             encoding = sys.getfilesystemencoding()
@@ -1413,7 +1458,10 @@ class MainPage(RenderableLivePage):
                 except IOError:
                     client.alert(_(u'File %s does not exist or is not readable.') % filename2)
                     return None
-            package = Package.load(filename2, newLoad, destinationPackage)
+            if isTemplate == False:
+                package = Package.load(filename2, newLoad, destinationPackage)
+            else:
+                package = self.session.packageStore.createPackageFromTemplate(filename)
             if package is None:
                 raise Exception(_("Couldn't load file, please email file to bugs@exelearning.org"))
         except Exception, exc:

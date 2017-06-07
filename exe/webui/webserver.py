@@ -55,6 +55,7 @@ from exe.webui.session import eXeSite
 from exe.webui.oauthpage import OauthPage
 from exe import globals as G
 
+from exe.webui.templatemanagerpage import TemplateManagerPage
 
 import logging
 log = logging.getLogger(__name__)
@@ -87,7 +88,9 @@ class WebServer:
         self.iecmwaring = IECMWarningPage(self.root)
         self.oauth = OauthPage(self.root)
         self.monitoring = False
-
+        
+        self.templatemanager = TemplateManagerPage(self.root)       
+    
     def find_port(self):
         """
         Previously part of the run() method, this will find the port for this
