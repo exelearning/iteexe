@@ -79,6 +79,7 @@ class WebsitePage(Page):
             html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
         html += u"<head>"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"hacks.css\" />"+lb
         if common.hasWikipediaIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb    
         if common.hasGalleryIdevice(self.node):
@@ -173,7 +174,7 @@ class WebsitePage(Page):
             html += '</div>'
             html += u"</"+headerTag+">"+lb
         else:
-            html += "<"+sectionTag+" id=\"emptyHeader\"></"+sectionTag+">"+lb			
+            html += "<"+sectionTag+" id=\"emptyHeader\"></"+sectionTag+">"+lb            
         
         # add left navigation html
         html += u"<"+navTag+" id=\"siteNav\">"+lb
@@ -238,16 +239,16 @@ class WebsitePage(Page):
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
         aux = re.compile("exe_math_latex=\"[^\"]*\"")
-	html = aux.sub("", html)
-	aux = re.compile("exe_math_size=\"[^\"]*\"")
-	html = aux.sub("", html)
-	#JR: Cambio el & en los enlaces del glosario
-	html = html.replace("&concept", "&amp;concept")
-    # Remove "resources/" from data="resources/ and the url param
-	html = html.replace("video/quicktime\" data=\"resources/", "video/quicktime\" data=\"")
-	html = html.replace("application/x-mplayer2\" data=\"resources/", "application/x-mplayer2\" data=\"")
-	html = html.replace("audio/x-pn-realaudio-plugin\" data=\"resources/", "audio/x-pn-realaudio-plugin\" data=\"")
-	html = html.replace("<param name=\"url\" value=\"resources/", "<param name=\"url\" value=\"")
+        html = aux.sub("", html)
+        aux = re.compile("exe_math_size=\"[^\"]*\"")
+        html = aux.sub("", html)
+        #JR: Cambio el & en los enlaces del glosario
+        html = html.replace("&concept", "&amp;concept")
+        # Remove "resources/" from data="resources/ and the url param
+        html = html.replace("video/quicktime\" data=\"resources/", "video/quicktime\" data=\"")
+        html = html.replace("application/x-mplayer2\" data=\"resources/", "application/x-mplayer2\" data=\"")
+        html = html.replace("audio/x-pn-realaudio-plugin\" data=\"resources/", "audio/x-pn-realaudio-plugin\" data=\"")
+        html = html.replace("<param name=\"url\" value=\"resources/", "<param name=\"url\" value=\"")
         return html
 
     def indent(self,level):

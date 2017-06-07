@@ -63,7 +63,7 @@ class Config(object):
                    'audioMediaConverter_au', 'audioMediaConverter_mp3',
                    'audioMediaConverter_wav', 'ffmpegPath'),
         'user': ('locale', 'lastDir', 'showPreferencesOnStart',
-                 'defaultStyle', 'showIdevicesGrouped', 'docType', 'editorMode', 'editorVersion', 'defaultLicense'),
+                 'defaultStyle', 'showIdevicesGrouped', 'docType', 'editorMode', 'editorVersion', 'defaultLicense', 'forceEditableExport'),
     }
 
     idevicesCategories = {
@@ -198,6 +198,11 @@ class Config(object):
         self.defaultLicense='creative commons: attribution - share alike 4.0'
 
         self.assumeMediaPlugins = False
+        
+        # Force the editable export when load an existing
+        # package with it disabled (defaults to disabled)
+        self.forceEditableExport = "0"
+        
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
@@ -446,6 +451,8 @@ class Config(object):
                 self.locale = self.configParser.user.locale
             if self.configParser.user.has_option('defaultLicense'):
                 self.defaultLicense = self.configParser.user.defaultLicense
+            if self.configParser.user.has_option('forceEditableExport'):
+                self.forceEditableExport = self.configParser.user.forceEditableExport
 
     def onWrite(self, configParser):
         """

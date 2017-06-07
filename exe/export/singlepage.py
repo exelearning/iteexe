@@ -198,6 +198,8 @@ class SinglePage(Page):
             
         # Add CSS files
         html += u'<link rel="stylesheet" type="text/css" href="base.css" />' + lineBreak
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"hacks.css\" />" + lineBreak
+        
         if hasWikipedia:
             html += u'<link rel="stylesheet" type="text/css" href="exe_wikipedia.css" />' + lineBreak
         if hasGallery:

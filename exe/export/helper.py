@@ -1,7 +1,14 @@
 import re
 from exe.webui                  import common
 from webassets.filter.rjsmin    import RJSMin
+
+# This is used in case cssmin is bundled with eXe (as in portable versions)
+# and it's included inside a module itself (which makes the function be in cssmin.cssmin.cssmin()).
+# If that is the case, simply import the module cssmin inside this main module.
 import cssmin
+if not hasattr(cssmin, 'cssmin'):
+    from cssmin import cssmin
+
 # Line breaks
 lineBreak = u'\n'
 
@@ -155,20 +162,42 @@ def exportMinFileJS(listFiles, outputDir):
         inputFileStream.close() 
         outputFile.close()
         
-def exportMinFileCSS(listFiles, outputDir):
+def exportMinFileCSS(list_files, output_dir):
     """
-    Minify CSS file for exporting
+    Minify CSS files in list_files for exporting and copy them to output_dir
     """
-    for i in range(len(listFiles)):
-        files = open( listFiles[i]['path'], 'r')
-        outPutFiles = open(outputDir/listFiles[i]['basename'], 'w')
-        for linea in files.readlines():
-            comment_end = linea.find("*/")
-            if comment_end < 0:
-                outPutFiles.write(linea)
-            else:
-                outPutFiles.write(linea)
-                files.seek(0)
+    for file in list_files:
+        # Open input (read only mode) and ouput (write mode) file streams
+        input_stream = open(file['path'], 'r')
+        output_stream = open(output_dir/file['basename'], 'w')
+        
+        # This flag is used to prevent us from leaving the loop while reading a multiline comment
+        inside_comment = False
+        for line in input_stream.readlines():
+            # We only want to keep the comment if it's in the first written line of the file
+            if not inside_comment and line.strip() != '' and not line.startswith('/*'):
                 break
-        outPutFiles.write(cssmin.cssmin(files.read()))
-        outPutFiles.close()
+            
+            # Don't write blank lines at the start of the file
+            if line.strip() == '':
+                continue
+            
+            # Find the end of the license comment
+            comment_end = line.find("*/")
+            
+            # If the comment doesn't end here just write the line to the output file
+            if comment_end < 0:
+                inside_comment = True
+                output_stream.write(line)
+            # Otherwise, we write the file and leave the loop 
+            else:
+                output_stream.write(line)
+                break
+        
+        # Put the cursor at the start of the input file since cssmin
+        # doesn't do it automatically and we have already read the entire file
+        input_stream.seek(0)
+
+        # Write the minified CSS to the output file and close it
+        output_stream.write(cssmin.cssmin(input_stream.read()))
+        output_stream.close()
