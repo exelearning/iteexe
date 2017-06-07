@@ -46,7 +46,7 @@ def get(using=None):
         else:
             # User gave us a browser name or path.
             try:
-                command = _browsers[browser.lower()]
+                command = _browsers[browser.lower().replace(' ', '-')]
             except KeyError:
                 command = _synthesize(browser)
             if command[1] is not None:
