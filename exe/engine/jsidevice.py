@@ -32,6 +32,7 @@ from xml.dom                                        import minidom
 import re
 import logging
 import os
+from ordereddict                                    import OrderedDict
 
 # Initialize logger
 log = logging.getLogger(__name__)
@@ -61,6 +62,15 @@ class JsIdevice(Idevice):
             
             self._attributes = xmlValues
             
+            # xml node : [ label , 0=textfield 1=textarea , order into form]
+            _attributespre ={
+                   'title': ['Title',0,0],
+                   'category': ['Category',0,1],
+                   'css-class': ['CSS class',0,2],
+                   'icon': ['Icon',0,3]
+                   }
+            self._attributes= OrderedDict(sorted(_attributespre.items(), key=lambda t: t[1][2]))
+            
             # Initialize the IDevice instance
             Idevice.__init__(self, xmlValues['title'], xmlValues['author'], xmlValues['purpose'], xmlValues['tip'], xmlValues['icon'])
             
@@ -68,7 +78,10 @@ class JsIdevice(Idevice):
             self.class_ = xmlValues['css-class']
             
             if 'category' in xmlValues:
-                self.ideviceCategory = xmlValues['category']
+                self.category = xmlValues['category']
+            
+            if 'icon' in xmlValues:
+                self.icon = xmlValues['icon']
             
             # Initialize resources list
             self._editionResources = []
@@ -361,9 +374,14 @@ class JsIdevice(Idevice):
         return Path(self._iDeviceDir)
     
     def renderProperties(self):
-        properties = []     
-        for attribute in self._attributes:
-                value = self._attributes[attribute]
-                properties.append({'name': attribute, 'value': value})
+        properties = []
+        for attribute in self._attributes.keys():
+            if attribute == 'css-class':
+                value = self.class_
+            else:
+                value = getattr(self, attribute)
+            name = self._attributes[attribute][0]
+            properties.append({'name': _(name), 'value': value})
+
         return properties 
 # ===========================================================================
