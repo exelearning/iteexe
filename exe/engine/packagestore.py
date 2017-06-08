@@ -89,7 +89,7 @@ class PackageStore:
         Creates a new package from Template
         """
         log.debug(u"createPackageFromTemplate")
-        package = Package.load(templateBase)
+        package = Package.load(templateBase, isTemplate=True)
         
         # Make up an initial unique name
         i = 1

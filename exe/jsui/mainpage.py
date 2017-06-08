@@ -376,7 +376,7 @@ class MainPage(RenderableLivePage):
             self.package.currentNode = self.package.root
             
             # Save the template
-            self.package.save(filename) 
+            self.package.save(filename, isTemplate=True) 
     
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))

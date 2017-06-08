@@ -1002,7 +1002,7 @@ class Package(Persistable):
             return _(u"?????")
         
 
-    def save(self, filename=None, tempFile=False):
+    def save(self, filename=None, tempFile=False, isTemplate=False):
         """
         Save package to disk
         pass an optional filename
@@ -1046,7 +1046,8 @@ class Package(Persistable):
             self.filename = filename
             filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'))
             self.isChanged = False
-            self.updateRecentDocuments(filename)
+            if isTemplate == False:
+                self.updateRecentDocuments(filename)
 
     def updateRecentDocuments(self, filename):
         """
@@ -1145,7 +1146,7 @@ class Package(Persistable):
         return newPackage
 
     @staticmethod
-    def load(filename, newLoad=True, destinationPackage=None, fromxml=None):
+    def load(filename, newLoad=True, destinationPackage=None, fromxml=None, isTemplate=False):
         """
         Load package from disk, returns a package.
         """
@@ -1376,8 +1377,10 @@ class Package(Persistable):
         #JR: Borramos recursos que no estan siendo utilizados
         newPackage.cleanUpResources(userResourcesFiles)
         G.application.afterUpgradeZombies2Delete = []
-
-        newPackage.updateRecentDocuments(newPackage.filename)
+        
+        if isTemplate == False:
+            newPackage.updateRecentDocuments(newPackage.filename)
+            
         newPackage.isChanged = False
         nstyle=Path(G.application.config.stylesDir/newPackage.style)
         if not nstyle.isdir():
