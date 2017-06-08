@@ -96,7 +96,10 @@ class PackageStore:
         name = u"newPackage"
         while name in self.loaded:
             name = u"newPackage" + unicode(i)
-            i += 1            
+            i += 1
+        
+        # Prevent the package from opening on the last node edited
+        package.currentNode = package.root
         
         package.name = name
         package.filename = None

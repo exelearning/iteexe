@@ -372,6 +372,9 @@ class MainPage(RenderableLivePage):
             configxml.write(configxmlData)
             configxml.close()
             
+            # Make the root node the current one
+            self.package.currentNode = self.package.root
+            
             # Save the template
             self.package.save(filename) 
     
@@ -379,7 +382,7 @@ class MainPage(RenderableLivePage):
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
         
-        template= Template(filename)
+        template = Template(filename)
         G.application.templateStore.addTemplate(template)
     
         client.alert(_(u'Templat saved: %s') % templatename, onDone)
