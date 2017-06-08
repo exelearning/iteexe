@@ -383,7 +383,7 @@ class MainPage(RenderableLivePage):
             raise
         
         template = Template(filename)
-        G.application.templateStore.addTemplate(template)
+        self.config.templateStore.addTemplate(template)
     
         client.alert(_(u'Templat saved: %s') % templatename, onDone)
 

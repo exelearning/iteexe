@@ -151,7 +151,7 @@ class TemplateManagerPage(RenderableResource):
         and its related buttons
         """
         templates = []
-        templateStores = self.templateStore.getTemplates()
+        templateStores = self.config.templateStore.getTemplates()
 
         for template in templateStores:
                 export = True
@@ -194,7 +194,7 @@ class TemplateManagerPage(RenderableResource):
             
             if template.isValid():
                 
-                    if not self.templateStore.addTemplate(template):
+                    if not self.config.templateStore.addTemplate(template):
                         
                         absoluteTargetDir.remove()
                         raise ImportTemplateExistsError(template, absoluteTargetDir, u'The template name already exists')
@@ -243,7 +243,7 @@ class TemplateManagerPage(RenderableResource):
         log.debug("delete template")
         templatePath = template.path
         templatePath.remove()
-        self.templateStore.delTemplate(template)
+        self.config.templateStore.delTemplate(template)
 
     def doPropertiesTemplate(self, template):
         templateProperties = Template(self.config.templatesDir / template)

@@ -39,6 +39,7 @@ import twisted
 import shutil
 from exe import globals as G
 from exe.engine.stylestore  import StyleStore
+from exe.engine.templatestore  import TemplateStore
 from exe.webui import common
 
 x_ = lambda s: s
@@ -233,6 +234,7 @@ class Config(object):
         self.setupLogging()
         self.loadLocales()
         self.loadStyles()
+        self.loadTemplates()
 
     def _overrideDefaultVals(self):
         """
@@ -543,6 +545,13 @@ class Config(object):
         for style in listStyles:
             self.styles.append(style)
             # print style
+            
+    def loadTemplates(self):
+        """
+        Scans the eXe templates directory and builds a list of templates
+        """
+        self.templateStore = TemplateStore(self)
+        self.templateStore.load()
 
     def copyStyles(self):
         bkstyle = self.webDir/'style'

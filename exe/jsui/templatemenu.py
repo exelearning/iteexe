@@ -49,7 +49,7 @@ class TemplateMenu(Renderable, Resource):
             self.parent.putChild(self.name, self)
         Resource.__init__(self)
         self.client = None
-        self.templateStore.register(self)
+        self.config.templateStore.register(self)
           
     def render(self, request=None):
         """
@@ -58,7 +58,7 @@ class TemplateMenu(Renderable, Resource):
         log.debug("render")
 
         l = []       
-        printableTemplates = [(x.filename, x.path) for x in self.templateStore.getTemplates()]
+        printableTemplates = [(x.filename, x.path) for x in self.config.templateStore.getTemplates()]
 
         def sortfunc(s1, s2):
             return locale.strcoll(s1[0], s2[0])

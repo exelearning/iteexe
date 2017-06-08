@@ -41,7 +41,6 @@ from exe.engine              import version
 from exe                     import globals as G
 import logging
 from twisted.internet import reactor
-from exe.engine.templatestore  import TemplateStore
 
 log = logging.getLogger(__name__)
 
@@ -87,7 +86,6 @@ class Application:
         self.afterUpgradeHandlers = []
         self.preferencesShowed = False
         self.loadErrors = []
-        self.templateStore = None
         assert G.application is None, "You tried to instantiate two Application objects"
         G.application = self
 
@@ -225,10 +223,6 @@ class Application:
         self.webServer = WebServer(self, self.packagePath)
         # and determine the web server's port before launching the client, so it can use the same port#:
         self.webServer.find_port()
-
-        self.templateStore = TemplateStore(self.config)
-        self.templateStore.load()
-        
 
     def serve(self):
         """
