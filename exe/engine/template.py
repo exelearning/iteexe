@@ -22,6 +22,8 @@ import logging
 from xml.dom              import minidom
 from zipfile              import ZipFile
 
+from ordereddict          import OrderedDict
+
 log = logging.getLogger(__name__)
 
 class Template():
@@ -48,6 +50,14 @@ class Template():
             
             self._attributes = xml_values
             self.name = xml_values['name']
+            
+            # xml node : [ label , 0=textfield 1=textarea , order into form]
+            _attributespre ={
+                   'name': ['Name',0,0]
+                   }
+    
+            self._attributes= OrderedDict(sorted(_attributespre.items(), key=lambda t: t[1][2]))
+            
 
     def _loadTemplate(self):
         """
@@ -110,9 +120,9 @@ class Template():
         Returns a list of all the template properties
         """
         properties = []
-        for attribute in self._attributes:
-            value = self._attributes[attribute]
-            properties.append({'name': attribute, 'value': value})
+        for attribute in self._attributes.keys():
+            value = getattr(self, attribute)
+            properties.append({'name': _(self._attributes[attribute][0]), 'value': value})
 
         return properties 
         

@@ -58,7 +58,7 @@ class TemplateMenu(Renderable, Resource):
         log.debug("render")
 
         l = []       
-        printableTemplates = [(x.filename, x.path) for x in self.config.templateStore.getTemplates()]
+        printableTemplates = [(x.name, x.path) for x in self.config.templateStore.getTemplates()]
 
         def sortfunc(s1, s2):
             return locale.strcoll(s1[0], s2[0])
