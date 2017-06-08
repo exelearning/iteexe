@@ -1043,11 +1043,13 @@ class Package(Persistable):
                 self.filename = oldFilename
         else:
             # Update our new filename for future saves
-            self.filename = filename
+            
             filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'))
             self.isChanged = False
+            
             if isTemplate == False:
                 self.updateRecentDocuments(filename)
+                self.filename = filename
 
     def updateRecentDocuments(self, filename):
         """
