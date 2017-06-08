@@ -1375,7 +1375,6 @@ Ext.define('eXe.controller.Toolbar', {
 	},
 	
     askDirty: function(nextStep) {
-    	console.log(nextStep);
     	this.checkDirty(nextStep, 'eXe.app.getController("Toolbar").askSave("'+nextStep+'")');
     }
 });
