@@ -48,7 +48,7 @@ def dataFiles(baseSourceDir, baseDestDir, sourceDirs, excludes=[]):
 # Add all the webui dirs
 dataFiles('exe/webui', '../Resources/exe',
           [
-              'style', 'css', 'images', 'docs',
+              'style', 'content_template', 'css', 'images', 'docs',
               'scripts', 'schemas', 'templates',
               'tools'
           ],
