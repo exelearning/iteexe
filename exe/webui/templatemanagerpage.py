@@ -188,7 +188,7 @@ class TemplateManagerPage(RenderableResource):
         if os.path.exists(absoluteTargetDir):
             
             template = Template(absoluteTargetDir)
-            raise ImportTemplateExistsError(template, absoluteTargetDir, u'template already exists')
+            raise ImportTemplateExistsError(template, absoluteTargetDir, u'Template already exists')
         else:
             
             filename.copyfile(absoluteTargetDir)
@@ -224,7 +224,7 @@ class TemplateManagerPage(RenderableResource):
             dirTemplateName.path.copyfile(filename)
             
             self.alert(_(u'Correct'),
-                       _(u'template exported correctly: %s') % sfile)
+                       _(u'Template exported correctly: %s') % sfile)
         except IOError:
             self.alert(_(u'Error'),
                        _(u'Could not export template : %s') % filename.basename())
