@@ -167,7 +167,7 @@ def getJavascriptIdevicesResources(page, xmlOutput = False):
             if resource not in resourcesAux:
                 resourcesAux.append(resource)
                 
-                result += "    <file href=\"" + escape(resource) + "\"/>\n"
+                result += "    <file href=\"" + re.escape(resource) + "\"/>\n"
             
         return result
     else:
