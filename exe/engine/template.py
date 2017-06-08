@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
-# Copyright 2004-2006, University of Auckland
-# Copyright 2006-2008 eXe Project, http://eXeLearning.org/
+# Copyright 2017, CeDeC
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,66 +13,71 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# ===========================================================================
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# ===========================================================================
 
 import chardet
 import logging
 from xml.dom              import minidom
-from zipfile                   import ZipFile
-
+from zipfile              import ZipFile
 
 log = logging.getLogger(__name__)
 
 class Template():
-
-    def __init__(self, templatePath):
-        
+    """
+    Base class for all content templates
+    """
+    def __init__(self, template_path):
         """
-        Initialize 
+        Initialize
         """
-        log.debug(u"init " + repr(templatePath.basename()))
+        log.debug(u"init " + repr(template_path.basename()))
 
-        self.file = templatePath.basename()
+        # Initialize base properties
+        self.file = template_path.basename()
         self.filename = self.file.stripext()
-        self.path = templatePath
+        self.path = template_path
         self._validConfig = False
         self._valid = False
         self._checkValid()
 
         if self._valid:
             # Get XML values from the config file
-            xmlValues = self._loadTemplate()
+            xml_values = self._loadTemplate()
             
-            self._attributes = xmlValues
-            self.name = xmlValues['name']
+            self._attributes = xml_values
+            self.name = xml_values['name']
 
     def _loadTemplate(self):
-        
+        """
+        Load template information from its XML config file
+        """
         try:
+            # Only try to load it if it's a valid template
             if self._valid:
-                sourceZip = ZipFile(self.path, 'r')
-                configxml = sourceZip.read('config.xml')
+                source_zip = ZipFile(self.path, 'r')
+                configxml = source_zip.read('config.xml')
                 
                 try:
                     newconfigdata = configxml.decode()
                 except UnicodeDecodeError:
                     configcharset = chardet.detect(configxml)
                     newconfigdata = configxml.decode(configcharset['encoding'], 'replace')
-            
-                xmlConfig = minidom.parseString(newconfigdata)
-                
-                template = xmlConfig.getElementsByTagName('template')
-                                    
+
+                xml_config = minidom.parseString(newconfigdata)
+
                 # Initialize results variable
                 result = dict()
+
+                # Get main <template> tag
+                template_tag = xml_config.getElementsByTagName('template')
                 
                 # If there is a main element tag
-                if (len(template) > 0):
+                if len(template_tag) > 0:
                     # Go over all the child nodes
-                    for tag in template[0].childNodes:
-                        if(isinstance(tag, minidom.Element)):
+                    for tag in template_tag[0].childNodes:
+                        if isinstance(tag, minidom.Element):
                             result.update({tag.tagName: tag.firstChild.nodeValue})
                     
                     if 'name' in result:
@@ -82,29 +85,39 @@ class Template():
         except:
             self._valid = False
     
-    
     def _checkValid(self):
+        """
+        Perform basic checks to ensure the template is valid 
+        """
+        source_zip = ZipFile(self.path, 'r')
+        namelist = source_zip.namelist()
         
-        sourceZip = ZipFile(self.path, 'r')
-        namelist = sourceZip.namelist()
-        
+        # To be valid it must have a config.xml and a contentv3.xml
+        # Further checks regarding config.xml will be done when trying to load it
         if 'config.xml' in namelist and 'contentv3.xml' in namelist:
             self._valid = True
         else:
             self._valid = False
 
     def isValid(self):
-        
+        """
+        Returns True if the template is valid, False otherwise
+        """
         return self._valid
 
     def _renderProperties(self):
-        
-        properties = []     
+        """
+        Returns a list of all the template properties
+        """
+        properties = []
         for attribute in self._attributes:
-                value = self._attributes[attribute]
-                properties.append({'name': attribute, 'value': value})
+            value = self._attributes[attribute]
+            properties.append({'name': attribute, 'value': value})
+
         return properties 
         
     def __cmp__(self, other):
+        """
+        Compare two templates with each other
+        """
         return cmp(self.name, other.name)    
-# ===========================================================================

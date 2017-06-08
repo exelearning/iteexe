@@ -199,9 +199,12 @@ class Config(object):
 
         self.assumeMediaPlugins = False
         
-        # Force the editable export when load an existing
+        # Force the editable export when loading an existing
         # package with it disabled (defaults to disabled)
         self.forceEditableExport = "0"
+        
+        # Default template that will be used to all new content
+        self.defaultContentTemplate = "Base"
         
         # Let our children override our defaults depending
         # on the OS that we're running on

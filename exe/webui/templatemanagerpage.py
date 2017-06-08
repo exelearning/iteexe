@@ -157,7 +157,7 @@ class TemplateManagerPage(RenderableResource):
                 export = True
                 delete = False
                 properties = True
-                if template.name != 'BASE' :
+                if template.name != 'Base' and template.name != self.config.defaultContentTemplate :
                     delete = True
                 templates.append({'template': template.file,
                                'name': template.filename,
