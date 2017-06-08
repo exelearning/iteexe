@@ -69,7 +69,8 @@ class JsIdevice(Idevice):
                    'css-class': ['CSS class',0,2],
                    'icon': ['Icon',0,3]
                    }
-            self._attributes= OrderedDict(sorted(_attributespre.items(), key=lambda t: t[1][2]))
+            
+            self._attributes= sorted(_attributespre.items(), key=lambda t: t[1][2])
             
             # Initialize the IDevice instance
             Idevice.__init__(self, xmlValues['title'], xmlValues['author'], xmlValues['purpose'], xmlValues['tip'], xmlValues['icon'])
@@ -78,7 +79,7 @@ class JsIdevice(Idevice):
             self.class_ = xmlValues['css-class']
             
             if 'category' in xmlValues:
-                self.category = xmlValues['category']
+                self.ideviceCategory = xmlValues['category']
             
             if 'icon' in xmlValues:
                 self.icon = xmlValues['icon']
@@ -375,12 +376,15 @@ class JsIdevice(Idevice):
     
     def renderProperties(self):
         properties = []
-        for attribute in self._attributes.keys():
-            if attribute == 'css-class':
+        for attribute in self._attributes:
+
+            if attribute[0] == 'css-class':
                 value = self.class_
+            elif attribute[0] == 'category':
+                value = self.ideviceCategory
             else:
-                value = getattr(self, attribute)
-            name = self._attributes[attribute][0]
+                value = getattr(self, attribute[0])
+            name = attribute[1][0]
             properties.append({'name': _(name), 'value': value})
 
         return properties 
