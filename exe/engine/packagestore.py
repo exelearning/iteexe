@@ -102,7 +102,7 @@ class PackageStore:
         package.currentNode = package.root
         
         package.name = name
-        package.filename = None
+        package.filename = ""
         self.loaded[package.name] = package
 
         return package
