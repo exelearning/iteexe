@@ -46,7 +46,7 @@ def get(using=None):
         else:
             # User gave us a browser name or path.
             try:
-                command = _browsers[browser.lower()]
+                command = _browsers[browser.lower().replace(' ', '-')]
             except KeyError:
                 command = _synthesize(browser)
             if command[1] is not None:
@@ -626,7 +626,15 @@ if sys.platform == 'darwin':
             new = int(bool(new))
             if self.name == "default":
                 # User called open, open_new or get without a browser parameter
-                script = 'open location "%s"' % url.replace('"', '%22') # opens in default browser
+                # We must do it twice in order to prevent a bug on MacOS X 10.12.5
+                # http://bugs.python.org/issue30392
+                script = '''
+                try
+                    open location "%s"'
+                on error
+                    open location "%s"'
+                end try
+                ''' % (url.replace('"', '%22'), url.replace('"', '%22'))
             else:
                 # User called get and chose a browser
                 if self.name == "OmniWeb":
@@ -652,7 +660,17 @@ if sys.platform == 'darwin':
     class MacOSXOSAScript(BaseBrowser):
         def open(self, url, new=0, autoraise=True):
             if self.name == 'default':
-                script = 'open location "%s"' % url.replace('"', '%22') # opens in default browser
+                # Opens in default browser
+                # We must do it twice in order to prevent a bug on MacOS X 10.12.5
+                # http://bugs.python.org/issue30392
+                script = '''
+                try
+                    open location "%s"'
+                on error
+                    open location "%s"'
+                end try
+                ''' % (url.replace('"', '%22'), url.replace('"', '%22'))
+                
             else:
                 script = '''
                    tell application "%s"

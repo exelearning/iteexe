@@ -35,10 +35,8 @@ from exe.export.pages              import Page, uniquifyNames
 from exe                      	   import globals as G
 from BeautifulSoup                 import BeautifulSoup
 from htmlentitydefs                import name2codepoint
-from helper                        import exportMinFileJS
-from helper                        import exportMinFileCSS
-from exe.webui.common              import getFilesCSSToMinify
-from exe.webui.common              import getFilesJSToMinify
+from helper                        import exportMinFileJS, exportMinFileCSS
+from exe.webui.common              import getFilesCSSToMinify, getFilesJSToMinify
 
 log = logging.getLogger(__name__)
 
@@ -73,6 +71,35 @@ class PublicationEpub3(object):
         self.package = package
         self.pages = pages
         self.cover = cover
+        self.specialResources = {'linked_resources': [], 'external': []}
+        
+        self._parseSpecialResources()
+        
+    def _parseSpecialResources(self):
+        """
+        Parse every page and search for special resources like:
+            - Linked images
+            - Iframes' sources
+        """
+        # We have to get the rendered view of all idevices across all pages
+        for page in self.pages: 
+            for idevice in page.node.idevices:
+                block = g_blockFactory.createBlock(None, idevice)
+                div = block.renderView(self.package.style)
+                
+                # Find iframes
+                src_list = re.findall(r'<iframe[^>]*\ssrc="(.*?)"', div);
+                if src_list:
+                    self.specialResources['external'].append(page.name)
+                
+                # Find links
+                src_list = re.findall(r'<a[^>]*\shref="(.*?)"', div);
+                if src_list:
+                    for src in src_list:
+                        # Only include it if is a internal link
+                        if Path(self.outputDir/src).exists():
+                            self.specialResources['linked_resources'].append(src)
+                        
 
     def save(self, filename):
         """
@@ -86,27 +113,26 @@ class PublicationEpub3(object):
         """
         returning XLM string for publication.opf file
         """
-        xmlStr = """<?xml version="1.0" encoding="UTF-8"?>
-        <package version="3.0" xmlns="http://www.idpf.org/2007/opf" unique-identifier="pub-id">
-        """
+        xmlStr = u'<?xml version="1.0" encoding="UTF-8"?>\n'
+        xmlStr += u'<package version="3.0" xmlns="http://www.idpf.org/2007/opf" unique-identifier="pub-id">\n'
+
         xmlStr += self.createMetadata()
         xmlStr += self.createManifest()
         xmlStr += self.createSpine()
 
-        xmlStr += "</package>"
+        xmlStr += u'</package>'
         return xmlStr
 
     def createManifest(self):
         import mimetypes
 
-        xmlStr = u"<manifest>\n"
+        xmlStr = u'<manifest>\n'
 
         xmlStr += u'<item id="nav" href="nav.xhtml" properties="nav" media-type="application/xhtml+xml" />\n'
+        xmlStr += u'<item id="fallback" href="fallback.xhtml" media-type="application/xhtml+xml" />\n'
 
         for epubFile in self.outputDir.walk():
-            if epubFile.basename() == u'package.opf':
-                continue
-            if epubFile.basename() == u'nav.xhtml':
+            if epubFile.basename() in ['package.opf', 'nav.xhtml', 'fallback.xhtml']:
                 continue
 
             ext = epubFile.ext
@@ -121,22 +147,39 @@ class PublicationEpub3(object):
                 else:
                     mimetype = u'application/octet-stream'
 
-            properties = ''
+            property_list = []
 
             if ext == '.xhtml':
                 if epubFile.namebase != 'cover':
-                    properties = u'properties="scripted"'
+                    property_list.append(u'scripted')
                 name = epubFile.namebase
                 # We need to ensure that XHTML files have the correct mime type
                 if mimetype == u'application/octet-stream':
                     mimetype = u'application/xhtml+xml'
 
             if epubFile.basename() == self.cover:
-                properties = u'properties="cover-image"'
-            xmlStr += u'<item id="%s" href="%s" media-type="%s" %s/>\n' % (name,
+                property_list.append(u'cover-image')
+                
+            if name in self.specialResources['external']:
+                property_list.append(u'remote-resources')    
+            
+            properties = u''
+            if len(property_list) > 0:
+                properties = u' properties="' + u' '.join(property_list) + u'"'
+            
+            # According to the spec, every resource referenced in the spine and is not an EPUB Content Document
+            # must have a fallback element. In this case we have a general "fallback.xhtml" file.
+            # We add it to all resources as we still don't know which of them will be added to the spine (if any).
+            # http://www.idpf.org/epub/30/spec/epub30-publications.html#sec-fallback-processing-flow    
+            fallback = '';
+            if mimetype not in ['application/xhtml+xml', 'image/svg+xml']:
+                fallback = u' fallback="fallback"'
+            
+            xmlStr += u'<item id="%s" href="%s" media-type="%s"%s%s />\n' % (name,
                                                                        self.outputDir.relpathto(epubFile),
                                                                        mimetype,
-                                                                       properties)
+                                                                       properties,
+                                                                       fallback)
 
         xmlStr += u"</manifest>\n"
 
@@ -164,17 +207,25 @@ class PublicationEpub3(object):
         """
         Returning xml string for items and resources
         """
-        xmlStr = u'<spine>\n'
-        xmlStr += u'<itemref idref="cover"/>\n'
+        xml_str = u'<spine>\n'
+        xml_str += u'<itemref idref="cover"/>\n'
         for page in self.pages:
             if page.name == 'cover':
                 continue
-            xmlStr += self.genItemResStr(page)
-        xmlStr += u'</spine>\n'
-        return xmlStr
+            xml_str += self.genItemResStr(page)
+        
+        # We need to add an itemref tag for each linked element included in the package (images, external HTMLs...) 
+        for linked_resource in self.specialResources['linked_resources']:
+            xml_str += u'<itemref idref="%s" />\n' % linked_resource.translate({ord(u'.'): u'_', ord(u'('): u'', ord(u')'): u''})
+            
+        xml_str += u'</spine>\n'
+        return xml_str
 
     def genItemResStr(self, page):
-        return u'<itemref idref="%s"/>\n' % page.name.replace('.', '-')
+        """
+        Generate itemref tags for the page and any linked files
+        """
+        return u'<itemref idref="%s" />\n' % page.name.replace('.', '-')
 
 # ===========================================================================
 
@@ -521,7 +572,7 @@ class Epub3Export(object):
         # Copy the style sheet files to the output dir
         # But not nav.css
         styleFiles = [self.styleDir /'..'/ 'popup_bg.gif']
-        styleFiles += [f for f in self.styleDir.files("*.css") if f.basename() != "nav.css"]
+        styleFiles += [f for f in self.styleDir.files("*.css") if f.basename() not in ['nav.css', 'hacks.css']]
         styleFiles += self.styleDir.files("*.jpg")
         styleFiles += self.styleDir.files("*.gif")
         styleFiles += self.styleDir.files("*.png")
@@ -534,6 +585,12 @@ class Epub3Export(object):
         # FIXME for now, only copy files referenced in Common Cartridge
         # this really should apply to all exports, but without a manifest
         # of the files needed by an included stylesheet it is too restrictive
+
+        # Add fallback document for possible image links
+        if Path(self.styleDir/'fallback.xhtml').exists():
+            styleFiles += [self.styleDir /'fallback.xhtml']
+        else:
+            styleFiles += [self.styleDir/'..'/'fallback.xhtml']
 
         package.resourceDir.copyfiles(contentPages)
 

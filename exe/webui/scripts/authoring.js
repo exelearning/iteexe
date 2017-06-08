@@ -789,6 +789,15 @@ var exe_tinymce = {
 							window.tinyMCE.getImageData();
 						}
 					}
+                } else {
+                    // See exeimage/plugin.min.js
+                    if (type == "image" && typeof(exeImageDialog)!="undefined") {
+                        try {
+                            exeImageDialog.updateImageDimensions(full_previewImage_url);
+                        } catch(e) {
+                            
+                        }
+                    }
                 }
 
                 eXe.app.un('previewTinyMCEImageDone', previewTinyMCEImageDone);
