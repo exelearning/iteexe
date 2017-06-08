@@ -1181,19 +1181,12 @@ Ext.define('eXe.controller.Toolbar', {
         } else this.executeStylesClick(item);
     },
     
-    
-    executeTemplatesClick: function(item) {
-    	nevow_clientToServerEvent('loadTemplate', this, '', item.path)
+    executeTemplatesClick: function(path) {
+    	nevow_clientToServerEvent('loadTemplate', this, '', path)
     },
     
     templatesClick: function(item) {
-        var ed = this.getTinyMCEFullScreen();
-        if(ed!="") {
-            ed.execCommand('mceFullScreen');
-            setTimeout(function(){
-                eXe.controller.Toolbar.prototype.executeTemplatesClick(item);
-            },500);
-        } else this.executeTemplatesClick(item);
+    	this.askDirty("eXe.app.getController('Toolbar').executeTemplatesClick('" + item.path + "');")
     },
     
 	fileOpenRecent2: function(number) {
