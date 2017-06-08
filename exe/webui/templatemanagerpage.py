@@ -172,13 +172,11 @@ class TemplateManagerPage(RenderableResource):
         Checks that it is a valid template file,
         that the directory does not exist (prevent overwriting)
         """
-        
-        templateDir = self.config.webDir / 'content_template'
         log.debug("Import template from %s" % filename)
         
         filename = Path(filename)
         baseFile = filename.basename()
-        absoluteTargetDir = templateDir / baseFile
+        absoluteTargetDir = self.config.templatesDir / baseFile
         
         try:
             ZipFile(filename, 'r')
@@ -210,8 +208,7 @@ class TemplateManagerPage(RenderableResource):
     def doExportTemplate(self, template, filename):
 
         if filename != '':
-            templateDir = self.config.webDir / 'content_template'
-            templateExport = Template(templateDir / template)
+            templateExport = Template(self.config.templatesDir / template)
             self.__exportTemplate(templateExport, unicode(filename))
 
     def __exportTemplate(self, dirTemplateName, filename):
@@ -233,8 +230,7 @@ class TemplateManagerPage(RenderableResource):
     def doDeleteTemplate(self, template):
 
         try:
-            templateDir = self.config.webDir / 'content_template'
-            templateDelete = Template(templateDir / template)
+            templateDelete = Template(self.config.templatesDir / template)
             self.__deleteTemplate(templateDelete)
             self.alert(_(u'Correct'), _(u'Template deleted correctly'))
             self.reloadPanel('doList')
@@ -250,17 +246,13 @@ class TemplateManagerPage(RenderableResource):
         self.templateStore.delTemplate(template)
 
     def doPropertiesTemplate(self, template):
-        
-        templateDir = self.config.webDir / 'content_template'
-        templateProperties = Template(templateDir / template)
+        templateProperties = Template(self.config.templatesDir / template)
         self.properties = templateProperties._renderProperties()
         self.action = 'Properties'
         self.template = templateProperties.name
         
     def doPreExportTemplate(self, template):
-        
-        templateDir = self.config.webDir / 'content_template'
-        templateExport = Template(templateDir / template)
+        templateExport = Template(self.config.templatesDir / template)
         self.properties = templateExport._renderProperties()
         self.action = 'PreExport'
         self.template = template

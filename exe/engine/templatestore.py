@@ -85,10 +85,8 @@ class TemplateStore:
 
 
     def load(self):
-        templateDir = self._config.webDir / 'content_template'
-
-        log.debug("loadTemplates from %s" % templateDir)
-        for templatePath in templateDir.files():
+        log.debug("loadTemplates from %s" % self._config.templatesDir)
+        for templatePath in self._config.templatesDir.files():
             template = Template(templatePath)
             if template.isValid():
                 self.addTemplate(template)

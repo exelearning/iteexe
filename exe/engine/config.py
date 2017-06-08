@@ -203,6 +203,8 @@ class Config(object):
         # package with it disabled (defaults to disabled)
         self.forceEditableExport = "0"
         
+        # Content templates directory
+        self.templatesDir = Path(self.configDir/'content_template').abspath()
         # Default template that will be used to all new content
         self.defaultContentTemplate = "Base"
         
@@ -306,9 +308,11 @@ class Config(object):
                 # Older config files had configDir stored as appDataDir
                 self.configDir = Path(system.appDataDir)
                 self.stylesDir = Path(self.configDir)/'style'
+                self.templatesDir = Path(self.configDir)/'content_template'
                 # We'll just upgrade their config file for them for now...
                 system.configDir = self.configDir
                 system.stylesDir = Path(self.configDir)/'style'
+                system.templatesDir = Path(self.configDir)/'content_template'
                 del system.appDataDir
 
                 self.audioMediaConverter_au = system.audioMediaConverter_au
@@ -357,9 +361,11 @@ class Config(object):
                 self.configDir      = Path(system.configDir)
                 self.webDir         = Path(system.webDir)
                 self.stylesDir      = Path(self.configDir)/'style'
+                self.templatesDir   = Path(self.configDir)/'content_template'
                 self.jsDir          = Path(system.jsDir)
             else:
                 self.stylesDir      = Path(self.webDir/'style').abspath()
+                self.templatesDir      = Path(self.webDir/'content_template').abspath()
 
             self.assumeMediaPlugins = False
             if self.configParser.has_option('system', 'assumeMediaPlugins'):
@@ -383,16 +389,29 @@ class Config(object):
                 self.copyStyles()
             else:
                 self.updateStyles()
+                
+            # Copy templates
+            if not os.path.exists(self.templatesDir) or not os.listdir(self.templatesDir):
+                self.copyTemplates()
+            else:
+                self.updateTemplates()
         else:
             if G.application.portable:
                 if os.name == 'posix':
                     self.stylesDir = Path(self.webDir/'..'/'..'/'..'/'style')
+                    self.templatesDir = Path(self.webDir/'..'/'..'/'..'/'content_template')
                 else:
                     self.stylesDir = Path(self.webDir/'..'/'style')
+                    self.templatesDir = Path(self.webDir/'..'/'content_template')
+                
                 if not os.path.exists(self.stylesDir) or not os.listdir(self.stylesDir):
                     self.copyStyles()
+                    
+                if not os.path.exists(self.templatesDir) or not os.listdir(self.templatesDir):
+                    self.copyTemplates()
             else:
                 self.stylesDir = Path(self.webDir/'style').abspath()
+                self.templatesDir = Path(self.webDir/'content_template').abspath()
 
         # Get the list of recently opened projects
         self.recentProjects = []
@@ -546,6 +565,28 @@ class Config(object):
                     shutil.copytree(bksdirstyle, dstdirstyle)
                 else:
                     shutil.copy(bksdirstyle, dstdirstyle)
+
+    def copyTemplates(self):
+        template_backup = self.webDir/'content_template'
+        dest_template = self.templatesDir
+        if os.path.exists(template_backup):
+            if os.path.exists(dest_template) and not os.listdir(self.dest_template):
+                shutil.rmtree(dest_template)
+            shutil.copytree(template_backup, dest_template)
+
+    def updateTemplates(self):
+        template_backup = self.webDir/'content_template'
+        dest_template = self.templatesDir
+        if os.stat(template_backup).st_mtime - os.stat(dest_template).st_mtime > 1:
+            for name in os.listdir(template_backup):
+                template_backup = os.path.join(template_backup, name)
+                dest_template = os.path.join(dest_template, name)
+                if os.path.isdir(template_backup):
+                    if os.path.exists(dest_template):
+                        shutil.rmtree(dest_template)
+                    shutil.copytree(template_backup, dest_template)
+                else:
+                    shutil.copy(template_backup, dest_template)
 
     def loadLocales(self):
         """

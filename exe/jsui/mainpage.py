@@ -356,7 +356,7 @@ class MainPage(RenderableLivePage):
 
     def handleSaveTemplate(self, client, templatename=None, onDone=None):
         '''Save template'''    
-        filename = Path(self.config.webDir/'content_template'/templatename, 'utf-8')
+        filename = Path(self.config.templatesDir/templatename, 'utf-8')
         filename = self.b4save(client, filename, '.elt', _(u'SAVE FAILED!'))
         
         try:
