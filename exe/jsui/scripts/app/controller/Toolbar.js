@@ -1186,7 +1186,7 @@ Ext.define('eXe.controller.Toolbar', {
     },
     
     templatesClick: function(item) {
-    	this.askDirty("eXe.app.getController('Toolbar').executeTemplatesClick('" + item.path + "');")
+    	this.askDirty("eXe.app.getController('Toolbar').executeTemplatesClick('" + item.path.replace(new RegExp(/\\/, 'g'), '\\\\') + "');")
     },
     
 	fileOpenRecent2: function(number) {
@@ -1375,6 +1375,7 @@ Ext.define('eXe.controller.Toolbar', {
 	},
 	
     askDirty: function(nextStep) {
+    	console.log(nextStep);
     	this.checkDirty(nextStep, 'eXe.app.getController("Toolbar").askSave("'+nextStep+'")');
     }
 });
