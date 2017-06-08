@@ -630,9 +630,9 @@ if sys.platform == 'darwin':
                 # http://bugs.python.org/issue30392
                 script = '''
                 try
-                    open location "%s"'
+                    open location "%s"
                 on error
-                    open location "%s"'
+                    open location "%s"
                 end try
                 ''' % (url.replace('"', '%22'), url.replace('"', '%22'))
             else:
@@ -665,9 +665,9 @@ if sys.platform == 'darwin':
                 # http://bugs.python.org/issue30392
                 script = '''
                 try
-                    open location "%s"'
+                    open location "%s"
                 on error
-                    open location "%s"'
+                    open location "%s"
                 end try
                 ''' % (url.replace('"', '%22'), url.replace('"', '%22'))
                 
