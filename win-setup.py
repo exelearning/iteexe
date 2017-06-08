@@ -99,6 +99,7 @@ g_newBase = "."
 dataFiles(
     [
         "exe/webui/style",
+        "exe/webui/content_template",
         "exe/webui/css",
         "exe/webui/images",
         # jrf - task 1080, the manual is no longer included

@@ -77,6 +77,7 @@ g_newBase = "/usr/share/exe"
 dataFiles(
     [
         "exe/webui/style",
+        "exe/webui/content_template",
         "exe/webui/css",
         # jrf - task 1080, the manual is no longer included
         # "exe/webui/docs",
