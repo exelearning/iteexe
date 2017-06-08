@@ -46,6 +46,7 @@ class StandaloneConfig(Config):
         self.configDir     = exePath/'config'
         self.localeDir     = exePath/'locale'
         self.stylesDir     = Path(exePath/'style').abspath()
+        self.templatesDir  = Path(exePath/'content_template').abspath()
         self.styles        = []
         self.lastDir       = exePath
 

@@ -53,10 +53,11 @@ class LinuxConfig(Config):
 
             self.mediaProfilePath = Path("/usr/share/exe/mediaprofiles")
 
-        self.dataDir     = Path(os.environ['HOME'])
-        self.configDir   = Path(self.dataDir)/'.exe'
-        self.stylesDir   = Path(self.configDir)/'style'
-        self.lastDir     = Path(os.environ['HOME'])
+        self.dataDir      = Path(os.environ['HOME'])
+        self.configDir    = Path(self.dataDir)/'.exe'
+        self.stylesDir    = Path(self.configDir)/'style'
+        self.templatesDir = Path(self.configDir)/'content_template'
+        self.lastDir      = Path(os.environ['HOME'])
 
         # Media converters - defaults for now
         self.videoMediaConverter_ogv = ""

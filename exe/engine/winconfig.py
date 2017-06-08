@@ -47,10 +47,11 @@ class WinConfig(Config):
         if not self.exePath.exists():
             self.exePath = Path(self.exePath + ".exe")
         exeDir = self.exePath.dirname()
-        self.dataDir   = Path(self.__getWinFolder(MYDOCUMENTS))
-        self.lastDir   = Path(self.__getWinFolder(MYDOCUMENTS))
-        self.configDir = Path(self.__getWinFolder(APPDATA))/'exe'
-        self.stylesDir     = Path(self.configDir)/'style'
+        self.dataDir      = Path(self.__getWinFolder(MYDOCUMENTS))
+        self.lastDir      = Path(self.__getWinFolder(MYDOCUMENTS))
+        self.configDir    = Path(self.__getWinFolder(APPDATA))/'exe'
+        self.stylesDir    = Path(self.configDir)/'style'
+        self.templatesDir = Path(self.configDir)/'content_template'
         
         self.videoMediaConverter_ogv = ""
         self.videoMediaConverter_3gp = 'ffmpeg -i %(infile)s -s qcif -vcodec h263 -acodec libvo_aacenc -ac 1 -ar 8000 -r 25 -ab 32 -y %(outfile)s'
