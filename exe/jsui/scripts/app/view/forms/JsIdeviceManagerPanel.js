@@ -101,7 +101,7 @@ function createPanelJsIdeviceJsIdevices(jsidevices) {
         if (i % 2 == 0) {
             estilo = 'padding-top:5px; background-color: #FFF;';
         } else {
-            estilo = 'padding-top:5px; background-color: #FAFAFA; border-top-color: #B5B8C8; border-bottom-color: #B5B8C8; border-top-jsidevice:solid; border-bottom-jsidevice: solid; border-top-width:1px; border-bottom-width: 1px;';
+            estilo = 'padding-top:5px; background-color: #FAFAFA; border-top-color: #B5B8C8; border-bottom-color: #B5B8C8; border-top-style:solid; border-bottom-style: solid; border-top-width:1px; border-bottom-width: 1px;';
         }
 
         var item = {

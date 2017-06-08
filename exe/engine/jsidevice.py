@@ -47,9 +47,7 @@ class JsIdevice(Idevice):
         """
         Initialize JS IDevice
         """
-        self._pathiDeviceDir = iDeviceDir
         self._iDeviceDir = str(iDeviceDir)
-        self._dirname = iDeviceDir.basename()
         
         self._valid         = False
         self._checkValid()
@@ -135,9 +133,9 @@ class JsIdevice(Idevice):
             raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), ioerror.message)
     
     def _checkValid(self):
-        config = self._pathiDeviceDir/'config.xml'
-        edition = self._pathiDeviceDir/'edition' 
-        export = self._pathiDeviceDir/'export'
+        config = Path(self._iDeviceDir)/'config.xml'
+        edition = Path(self._iDeviceDir)/'edition' 
+        export = Path(self._iDeviceDir)/'export'
         if config.exists() and edition.exists() and export.exists():
             self._valid = True
         else:
@@ -357,10 +355,10 @@ class JsIdevice(Idevice):
         return resources
     
     def get_dirname(self):
-        return self._dirname
+        return Path(self._iDeviceDir).basename()
 
     def get_jsidevice_dir(self):
-            return self._pathiDeviceDir
+        return Path(self._iDeviceDir)
     
     def renderProperties(self):
         properties = []     
