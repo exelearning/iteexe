@@ -236,7 +236,7 @@ class TemplateManagerPage(RenderableResource):
             templateDir = self.config.webDir / 'content_template'
             templateDelete = Template(templateDir / template)
             self.__deleteTemplate(templateDelete)
-            self.alert(_(u'Correct'), _(u'template deleted correctly'))
+            self.alert(_(u'Correct'), _(u'Template deleted correctly'))
             self.reloadPanel('doList')
         except:
             self.alert(_(u'Error'), _(u'An unexpected error has occurred'))
