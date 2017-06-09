@@ -1002,7 +1002,7 @@ class Package(Persistable):
             return _(u"?????")
         
 
-    def save(self, filename=None, tempFile=False, isTemplate=False):
+    def save(self, filename=None, tempFile=False, isTemplate=False, configxml=None):
         """
         Save package to disk
         pass an optional filename
@@ -1037,14 +1037,14 @@ class Package(Persistable):
             self.nonpersistant.remove('filename')
             oldFilename, self.filename = self.filename, unicode(self.filename)
             try:
-                filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'))
+                filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'), configxml)
             finally:
                 self.nonpersistant.append('filename')
                 self.filename = oldFilename
         else:
             # Update our new filename for future saves
             
-            filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'))
+            filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'), configxml)
             self.isChanged = False
             
             if isTemplate == False:
@@ -1071,7 +1071,7 @@ class Package(Persistable):
         del recentProjects[5:] # Delete any older names from the list
         G.application.config.configParser.write() # Save the settings
 
-    def doSave(self, fileObj):
+    def doSave(self, fileObj, configxml=None):
         """
         Actually performs the save to 'fileObj'.
         """
@@ -1095,6 +1095,14 @@ class Package(Persistable):
             zinfo2.external_attr = 0100644<<16L
             zinfo2.compress_type = zipfile.ZIP_DEFLATED
             zippedFile.writestr(zinfo2, encodeObjectToXML(self))
+            
+            if configxml is not None:
+                zinfo3 = zipfile.ZipInfo(filename='config.xml',
+                        date_time=time.localtime()[0:6])
+                zinfo3.external_attr = 0100644<<16L
+                zinfo3.compress_type = zipfile.ZIP_DEFLATED
+                zippedFile.writestr(zinfo3, configxml)
+            
 
             zippedFile.write(G.application.config.webDir/'templates'/'content.xsd', 'content.xsd', zipfile.ZIP_DEFLATED)
         finally:

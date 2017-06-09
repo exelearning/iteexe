@@ -366,17 +366,11 @@ class MainPage(RenderableLivePage):
             configxmlData += '<name>'+templatename+'</name>\n'
             configxmlData += '</template>'
             
-            tempDirPath = self.package.resourceDir 
-            
-            configxml = open(tempDirPath/"config.xml", "w")
-            configxml.write(configxmlData)
-            configxml.close()
-            
             # Make the root node the current one
             self.package.currentNode = self.package.root
             
             # Save the template
-            self.package.save(filename, isTemplate=True) 
+            self.package.save(filename, isTemplate=True, configxml=configxmlData) 
     
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
@@ -385,7 +379,7 @@ class MainPage(RenderableLivePage):
         template = Template(filename)
         self.config.templateStore.addTemplate(template)
     
-        client.alert(_(u'Templat saved: %s') % templatename, onDone)
+        client.alert(_(u'Template saved: %s') % templatename, onDone)
 
     def handleLoadPackage(self, client, filename, filter_func=None):
         """Load the package named 'filename'"""
