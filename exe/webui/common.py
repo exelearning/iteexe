@@ -470,6 +470,8 @@ def ideviceHeader(e, style, mode):
         w2 = '<div class="iDevice_inner">'+lb
         w2 += '<div class="iDevice_content_wrapper">'+lb
         eEm = ' em_iDevice'
+        if e.idevice.icon != "":
+            eEm += ' em_iDevice_'+e.idevice.icon
     
     if mode=="preview" and themeHasXML:
         w += '<'+articleTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'" id="id'+e.id+'">'+lb
