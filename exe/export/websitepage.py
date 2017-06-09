@@ -144,6 +144,8 @@ class WebsitePage(Page):
             # The games require additional strings
             html += common.getGamesJavaScriptStrings() + lb
             html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
+        if 1==1: #93 (to do)
+            html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>'+lb            
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
