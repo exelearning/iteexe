@@ -20,56 +20,83 @@
 
 
 import logging
+from BeautifulSoup import BeautifulSoup
+
 log = logging.getLogger(__name__)
 
-NS = 'urn:oasis:names:tc:xliff:document:1.2'
+# XML namespace, currently not used, see "Just in case we need XML parser..." below
+#NS = 'urn:oasis:names:tc:xliff:document:1.2'
 CDATA_BEGIN = u"<![CDATA["
 CDATA_END = u"]]>"
 
-
 class XliffImport(object):
+    """
+    Control the import process for a XLIFF file 
+    """
+    
     def __init__(self, package, filename):
+        """
+        Class initialization
+        """
         self.package = package
         self.filename = filename
 
     def parseAndImport(self, import_from_source=False):
-
-        from BeautifulSoup import BeautifulSoup
-        fp = open(self.filename)
-        bs = BeautifulSoup(fp.read().replace(CDATA_BEGIN, "").replace(CDATA_END, ""))
-        fp.close()
+        """
+        Parse XLIFF file and import it into the current document
+        """
+        # Open the file, read it and then close the stream
+        file_obj = open(self.filename)
+        xml_tree = BeautifulSoup(file_obj.read().replace(CDATA_BEGIN, "").replace(CDATA_END, ""))
+        file_obj.close()
         
-        for transunit in bs.findAll('trans-unit'):
+        # We go through all trans-units in the tree
+        for transunit in xml_tree.findAll('trans-unit'):
+            # Get the ID
             item_id = transunit.get('id', None)
+            
+            # If we don't find an ID, we can't do anything
             if item_id is None:
                 log.info('Item id not found: %s' % item_id)
                 continue
 
+            # Try to get the field
             field = self.getFieldFromPackage(self.package, item_id)
+            
+            # If no field is found, we can't do anything
             if field is None:
                 log.info('Field not found: %s' % item_id)
                 continue
 
+            # Get content either from source or from target
+            unit_content = None; 
             if import_from_source:
-                tar = transunit.find('source')
+                unit_content = transunit.find('source')
             else:
-                tar = transunit.find('target')
+                unit_content = transunit.find('target')
 
+            # Check the unit type
             if item_id.endswith('title'):
                 # It's a idevice, set the title
-                field.set_title(u' '.join([unicode(u) for u in tar.contents]))
+                field.set_title(u' '.join([unicode(u) for u in unit_content.contents]))
                 log.debug('Title set for: %s' % item_id)
             elif item_id.endswith('nodename'):
                 # It's a node, set the title
-                field.setTitle(u' '.join([unicode(u) for u in tar.contents]))
+                field.setTitle(u' '.join([unicode(u) for u in unit_content.contents]))
                 log.debug('Title set for: %s' % item_id)
             else:
                 # It's a field
-                field.content_w_resourcePaths = u' '.join([unicode(u) for u in tar.contents])
+                field.content_w_resourcePaths = u' '.join([unicode(u) for u in unit_content.contents])
+                # We need to re-replace everything back to normal
+                # It's important to do it in opposite order than when exporting as otherwise we could replace
+                # things put there by the user
+                field.content_w_resourcePaths = field.content_w_resourcePaths.replace(u'&quot;', u'"').replace(u'&gt;', u'>').replace(u'&lt;', u'<').replace(u'&amp;', u'&')
                 field.TwistedRePersist()
                 log.debug('Content set for: %s' % item_id)
 
+            # Mark the package as changed in order to refresh it later
             self.package.isChanged = True
+            
             ## Just in case we need XML parser...
             ##
             ## from lxml import etree
@@ -87,9 +114,6 @@ class XliffImport(object):
             ##     content = transunit.xpath('n:target', namespaces={'n': NS})[0].text
             ##     field.content_w_resourcePaths = content
             ##     field.TwistedRePersist()
-
-
-
 
     def getNodeFrom(self, somewhere, raw_id):
         # raw_id == 'node5'

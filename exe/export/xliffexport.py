@@ -62,8 +62,9 @@ def safe_unicode(text):
 
 class ContentEscaper(BeautifulSoup):
     def handle_data(self, data):
-        data_end = data.replace('&', '&amp;')
-        data_end = data_end.replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;')
+        # Repace special chars with their HTML codes
+        # Note: The order is important, if this is updated, xliffimport.py should be aswell
+        data_end = data.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;')
         self.currentData.append(data_end)
 
 def escape_content(content):

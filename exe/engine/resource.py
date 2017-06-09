@@ -221,7 +221,13 @@ class _Resource(Persistable):
                     + "; possibly an old/corrupt resource or package")
             return
 
-        siblings = self._package.resources.setdefault(self.checksum, [])
+        siblings = []
+        # We want to prevent eXe from removing images while loading a package as
+        # it won't update the references to that resource
+        if not self._package.isLoading:
+            # Check if there are any resources exactly like this
+            siblings = self._package.resources.setdefault(self.checksum, [])
+            
         if siblings:
             # If we're in the resource dir, and already have a filename that's different to our siblings, delete the original file
             # It probably means we're upgrading from pre-single-file-resources or someone has created the file to be imported inside the resource dir

@@ -37,7 +37,7 @@ var $exe = {
         // No MediaElement in ePub3
 		if (e.indexOf("exe-epub3") != 0) {
             var n = document.body.innerHTML;
-            if (n.indexOf(' class="mediaelement"') != -1 || n.indexOf(" class='mediaelement") != -1) {
+            if ($(".mediaelement").length>0) {
                 $exe.loadMediaPlayer.getPlayer()
             }
         }
@@ -206,7 +206,7 @@ var $exe = {
     // Math options (MathJax, etc.)
     math : {
         // Change this from your Style or your elp using $exe.math.engine="..."
-        engine : "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML",
+        engine : "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML",
         // Create links to the code and the image (different possibilities)
         createLinks : function(math) {
             var mathjax = false;
@@ -504,10 +504,14 @@ var $exe = {
 		for (r = 0; r < t; r++) {
 			var u = n + r.toString();
 			var a = document.getElementById("op" + u);
+			i = "False";
 			s = $exe_i18n.incorrect;
-			if (a.value=="True") s = "<strong>" + $exe_i18n.correct + "</strong>";
-			o = "right";
-			if ((a.checked==1 && a.value=="False") || (a.checked!=1 && a.value=="True")) o = "wrong";
+			o = "wrong";
+			if (a.checked == 1) i = "True";
+			if (i == a.value) {
+				s = "<strong>" + $exe_i18n.correct + "</strong>";
+				o = "right"
+			}
 			var f = '<p class="' + o + '-option">' + s + "</p>";
 			var l = $("#feedback-" + u);
 			if (e.value == $exe_i18n.showFeedback) l.html(f).show();
@@ -851,6 +855,14 @@ $exe.cloze = {
 		// Read the flags for checking answers
 		var strictMarking = eval(document.getElementById("clozeFlag" + ident + ".strictMarking").value);
 		var checkCaps = eval(document.getElementById("clozeFlag" + ident + ".checkCaps").value);
+		
+		// The Dropdown Activity has no strictMarking or checkCaps options (see #171)
+		var $form = $(ele).closest('.iDevice_wrapper');
+		if ($form.length==1 && $form.hasClass("ListaIdevice")) {
+			strictMarking = true;
+			checkCaps = true;
+		}
+		
 		if (!checkCaps) {
 			guess = guess.toLowerCase();
 			answer = answer.toLowerCase()

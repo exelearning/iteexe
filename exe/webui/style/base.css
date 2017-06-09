@@ -32,6 +32,7 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
     .external-iframe{display:none}
     .external-iframe-src{display:block!important;margin:2em 0;font-size:.95em;text-align:center}	
 }
+.external-iframe{border:0;}
 /* The New eXeLearning */
 /* Include these styles in the old themes */
 .iDevice a,#siteFooter a,#packageLicense a,.toggle-idevice a{text-decoration:underline}
@@ -78,13 +79,24 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .exe-layout-2-70-30 .exe-col-1{width:69%}
 .exe-layout-3-cols .exe-col{float:left;width:32%}
 .exe-layout-3-cols .exe-col-1,.exe-layout-3-cols .exe-col-2{padding-right:2%}
+/* Blocks */
+.exe-block-warning{background:#FCF8E3;color:#796034;border:1px solid #FAEBCC;padding:0 1em;border-radius:4px}
+p.exe-block-warning{padding:1em}
+.exe-block-alert{background:#ffc;color:#855000;border:1px solid #FFF099;padding:0 1em;border-radius:4px}
+p.exe-block-alert{padding:1em}
+.exe-block-danger{background:#FEF0EF;color:#973C3B;border:1px solid #F3DADD;padding:0 1em;border-radius:4px}
+p.exe-block-danger{padding:1em}
+.exe-block-info{background:#E1F1F9;color:#2B627D;border:1px solid #C9EDF4;padding:0 1em;border-radius:4px}
+p.exe-block-info{padding:1em}
+.exe-block-success{background:#E5F3E0;color:#336634;border:1px solid #DEEDD1;padding:0 1em;border-radius:4px}
+p.exe-block-success{padding:1em}
 /* Enlarge icon */
 .js a.exe-enlarge{position:relative;display:block}
 .exe-enlarge-icon{display:none;width:30px;height:30px;position:absolute;top:50%;left:50%;margin:-15px 0 0 -15px;border-radius:15px;background:#333;z-index:10;box-shadow:0 0 7px 0 #DDD}
 .exe-enlarge-icon b{width:30px;height:30px;line-height:30px;text-align:center;display:block;font-size:1.3em;color:#FFF}
 .exe-enlarge-icon b:before{content:"+"}
 .js a.exe-enlarge:hover img,.js a.exe-enlarge:focus img{opacity:0.7;filter:alpha(opacity=70)}
-a.exe-enlarge:hover .exe-enlarge-icon,a.exe-enlarge:focus .exe-enlarge-icon{display:block;*display:none}/* IE6, IE7 */
+a.exe-enlarge:hover .exe-enlarge-icon,a.exe-enlarge:focus .exe-enlarge-icon{display:block;}
 /* Autoclear */
 .exe-clear{overflow:auto}
 /* JavaScript on/offf */
@@ -93,13 +105,13 @@ a.exe-enlarge:hover .exe-enlarge-icon,a.exe-enlarge:focus .exe-enlarge-icon{disp
 /* License */
 #packageLicense{text-align:center}
 /* Hints */
-.js #main .iDevice_hint_title{font-size:1em;margin-top:0;font-weight:normal;*margin-top:1em}/* IE6, IE7 */
+.js #main .iDevice_hint_title{font-size:1em;margin-top:0;font-weight:normal;}
 .iDevice_hint{margin-bottom:1.5em}
 .iDevice_hint_title a{background-repeat:no-repeat;background-position:0 50%;padding-left:23px;text-decoration:none}
 .iDevice_hint_content{padding:0 23px}
 /* Questions/Answers */
 .iDevice_answers{margin-top:.5em}
-.iDevice_answer{overflow:hidden;*margin:1.5em 0}/* IE6, IE7 */
+.iDevice_answer{overflow:hidden;}
 .iDevice_answer p{margin-top:0}
 .iDevice_answer-field{width:2.5em;float:left}
 .js .iDevice_answer-content,.js .iDevice_answer-feedback{padding-left:2.5em}
