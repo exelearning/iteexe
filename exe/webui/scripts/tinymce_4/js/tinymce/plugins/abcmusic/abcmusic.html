@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ABC Music Notation</title>
+		<meta charset="UTF-8">
+		<script>
+			if (
+				!window.opener ||
+				!window.opener.ABCmusicDialog || 
+				!window.opener.ABCmusicDialog.abcjsPath || 
+				!window.opener.ABCmusicDialog.abccssPath || 
+				!window.opener.ABCmusicDialog.jQueryPath || 
+				!window.opener.ABCmusicDialog.soundFontPath || 
+				!window.opener.tinymce || 
+				!window.opener.tinymce.translate || 
+				!window.opener.win
+			) {
+				window.close();
+			}
+			document.write('<script type="text/javascript" src="'+window.opener.ABCmusicDialog.jQueryPath+'"><\/script>');
+			document.write('<script type="text/javascript" src="'+window.opener.ABCmusicDialog.abcjsLangPath+'"><\/script>');
+			document.write('<script type="text/javascript" src="'+window.opener.ABCmusicDialog.abcjsPath+'"><\/script>');
+			document.write('<link href="'+window.opener.ABCmusicDialog.abccssPath+'" media="all" rel="stylesheet" type="text/css" \/>');
+			_ = window.opener.tinymce.translate;
+		</script>
+		<style>
+			body{font:.85em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#333;background:#ffffff;margin:0;padding:20px}
+		</style>
+	</head>
+	<body>
+		<pre id="abc-music-viewer"></pre>
+		<script>
+			$exeABCmusicPreviewer = {
+				init : function(){
+					document.title = window.opener.tinymce.translate('ABC Music Notation');
+					var openerWindow = window.opener.win;
+					
+					var animation = openerWindow.find("#animation");
+					if (animation.length==0) window.close();
+					
+					var midi = openerWindow.find("#midi");
+					if (midi.length==0) window.close();					
+					
+					var htmlSource = openerWindow.find("#htmlSource");
+					if (htmlSource.length==0) window.close();
+					htmlSource = htmlSource.value();
+					
+					var html = _("No valid ABC code found.");
+					if (htmlSource!="") html = htmlSource;
+					
+					var css = "abc-music"
+					if (animation.checked()) css += " abc-music-animated";
+					if (midi.checked()) css += " abc-music-midi";
+					
+					$("#abc-music-viewer").html(html).attr("class",css);				
+				}
+			}			
+			$exeABCmusicPreviewer.init();
+		</script>		
+	</body>
+</html>
