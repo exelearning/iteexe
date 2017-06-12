@@ -32,7 +32,6 @@ from xml.dom                                        import minidom
 import re
 import logging
 import os
-from ordereddict                                    import OrderedDict
 
 # Initialize logger
 log = logging.getLogger(__name__)
