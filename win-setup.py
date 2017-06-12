@@ -152,7 +152,9 @@ opts = {
             "feedparser",
             "BeautifulSoup",
             "BaseHTTPServer",
-            "oauthlib"
+            "oauthlib",
+            "webassets",
+            "cssmin"
         ],
         "includes": [
             "PngImagePlugin",
