@@ -1343,6 +1343,23 @@ def nodeHasTooltips(node):
     return False
 
 
+def hasABCMusic(node):
+    for idevice in node.idevices:
+        if ideviceHasABCMusic(idevice):
+            return True
+    return False
+
+def ideviceHasABCMusic(idevice):
+    block = g_blockFactory.createBlock(None, idevice)
+    if not block:
+        log.critical("Unable to render iDevice.")
+        raise Error("Unable to render iDevice.")
+    content = block.renderView('default')
+    
+    if re.search(' class=[\'"]abc-music', content):
+        return True
+    return False
+
 ## Added for [#2501] Add masteryscore to manifest in evaluable nodes
 ## Maybe we should reorder all this common code and move it to an Objecto Oriented logic
 def hasQuizTest(node):
