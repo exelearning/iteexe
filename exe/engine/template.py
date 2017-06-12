@@ -22,7 +22,12 @@ import logging
 from xml.dom              import minidom
 from zipfile              import ZipFile
 
-from ordereddict          import OrderedDict
+import collections
+if hasattr(collections, 'OrderedDict'):
+    OrderedDict = collections.OrderedDict
+else:
+    import ordereddict
+    OrderedDict = ordereddict.OrderedDict
 
 log = logging.getLogger(__name__)
 
