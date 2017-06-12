@@ -155,7 +155,8 @@ any Learning Management System.
         "exe.engine",
         "exe.export",
         "exe.importers",
-        "exe.engine.lom"
+        "exe.engine.lom",
+        "exe.engine.exceptions"
     ],
     # Files list
     data_files=g_files.items()
