@@ -28,6 +28,7 @@ import urllib
 from exe.webui       import common
 from exe.engine.path import Path
 from exe             import globals as G
+from exe.engine.jsidevice import JsIdevice
 from urllib import quote
 
 log = logging.getLogger(__name__)
@@ -245,11 +246,17 @@ class TextAreaElement(ElementWithResources):
         if self.field_idevice is not None \
         and self.field_idevice.parentNode is not None:
             this_package = self.field_idevice.parentNode.package
+
+        # Check if is jsidevice
+        cssClass = 'mceEditor'
+        if isinstance(self.field_idevice, JsIdevice):
+            cssClass = 'jsContentEditor'
+            
         html = common.formField('richTextArea', this_package, 
                                 self.field.name,'',
                                 self.id, self.field.instruc,
                                 self.field.content,
-                                str(self.width), str(self.height))
+                                str(self.width), str(self.height), cssClass)
         return html
 
     def renderPreview(self, visible=True, class_="block"):

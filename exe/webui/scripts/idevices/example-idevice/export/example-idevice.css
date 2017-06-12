@@ -1,0 +1,11 @@
+/* Example iDevice */
+.exe-exampleIdevice{
+	height:auto!important;
+	height:190px;
+	min-height:190px;
+	padding-left: 150px;
+	background: url(example-idevice.png) no-repeat 0 0;
+}
+.js .exe-exampleIdevice dl{
+	display:none;
+}

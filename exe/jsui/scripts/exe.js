@@ -149,6 +149,7 @@ Ext.application({
         'Toolbar',
         'StyleManager',
         'TemplateManager',
+        'JsIdeviceManager',
     	'filepicker.Directory',
     	'filepicker.File'
     ],
@@ -181,6 +182,10 @@ Ext.application({
         if (location == undefined)
             location = window.top.location.pathname;
         nevow_closeLive('window.top.location = "' + location + '";');
+    },
+    
+    alert: function(msg){
+        Ext.Msg.alert(_("Warning"), msg);
     },
     
     showLoadError: function() {

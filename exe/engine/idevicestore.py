@@ -23,15 +23,18 @@
 The collection of iDevices available
 """
 
-from exe.engine         import persist
-from exe.engine.idevice import Idevice
-from exe.engine.field   import TextAreaField, FeedbackField,Feedback2Field
-from nevow.flat         import flatten
+from exe.engine                                     import persist
+from exe.engine.idevice                             import Idevice
+from exe.engine.jsidevice                           import JsIdevice
+from exe.engine.exceptions.invalidconfigjsidevice   import InvalidConfigJsIdevice
+from exe.engine.field                               import TextAreaField, FeedbackField,Feedback2Field
+from nevow.flat                                     import flatten
 
 import imp
 import sys
 import logging
 import copy
+import os
 
 log = logging.getLogger(__name__)
 
@@ -48,6 +51,7 @@ class IdeviceStore:
         self.config         = config
         self.extended       = []
         self.generic        = []
+        self.jsIdevices     = []
         self.listeners      = []
         # JRJ: Añado una lista que contendrá todos los iDevices disponibles
         # (addition of a list that will contain all the idevices available)
@@ -64,11 +68,20 @@ class IdeviceStore:
 
     def isGeneric(self, idevice):
         """
-        Devuelve True si el iDevice es de la clase GenericIdevie
-        (Returns True if the iDEvice is of class GenericIdevie)
+        Devuelve True si el iDevice es de la clase GenericIdevice
+        (Returns True if the iDevice is of class GenericIdevice)
         """
         from exe.engine.genericidevice import GenericIdevice
         if isinstance(idevice, GenericIdevice):
+            return True
+        else:
+            return False
+
+    def isJs(self, idevice):
+        """
+        Returns True if the iDevice is an instance of JsIdevice
+        """
+        if isinstance(idevice, JsIdevice):
             return True
         else:
             return False
@@ -80,7 +93,7 @@ class IdeviceStore:
         In future the idevices which are returned will depend
         upon the pedagogical template we are using
         """
-        return self.extended + self.generic
+        return self.extended + self.generic + self.jsIdevices
     
     def getFactoryIdevices(self):
         """
@@ -126,23 +139,31 @@ class IdeviceStore:
             # (we tell the listeners that this iDevice is no longer available)
             for listener in self.listeners:
                 listener.delIdevice(idevice_remove)
+        
+    def __delJsIdevice(self, idevice):
+        """
+        Delete a JavaScript idevice from idevicestore.
+        """
+        idevice_remove = None
+        exist = False
+        for i in self.jsIdevices:
+            if idevice.title == i.title:
+                idevice_remove = i
+                exist = True
+                break
+        if exist:
+            self.jsIdevices.remove(idevice_remove)
+            # JRJ: Comunicamos a los listeners que este iDevice ya no está disponible
+            # (we tell the listeners that this iDevice is no longer available)
+            for listener in self.listeners:
+                listener.delIdevice(idevice_remove)
             
     def delIdevice(self, idevice):
         """
         JRJ: Borra un idevice
         (Deletes an iDevice)
         """
-        if not self.isGeneric(idevice):
-            idevice_remove = None
-            exist = False
-            for i in self.extended:
-                if i.title == idevice.title:
-                    idevice_remove = i
-                    exist = True
-                    break
-            if exist:
-                self.__delExtendedIdevice(idevice_remove)
-        else:
+        if self.isGeneric(idevice):
             idevice_remove = None
             exist = False
             for i in self.generic:
@@ -152,6 +173,27 @@ class IdeviceStore:
                     break
             if exist:
                 self.__delGenericIdevice(idevice_remove)
+        elif self.isJs(idevice):
+            idevice_remove = None
+            exist = False
+            for i in self.jsIdevices:
+                if i.title == idevice.title:
+                    idevice_remove = i
+                    exist = True
+                    break
+            if exist:
+                self.__delJsIdevice(idevice_remove)
+        else:
+            idevice_remove = None
+            exist = False
+            for i in self.extended:
+                if i.title == idevice.title:
+                    idevice_remove = i
+                    exist = True
+                    break
+            if exist:
+                self.__delExtendedIdevice(idevice_remove)
+        
     
     def register(self, listener):
         """
@@ -178,18 +220,9 @@ class IdeviceStore:
                 idevice.id = i.id
                 break
         if not exist:
-            self.factoryiDevices.append(idevice)  
-        if not self.isGeneric(idevice):
-            exist = False
-            for i in self.extended:
-                if i.title == idevice.title:
-                    exist = True
-            if not exist:
-                self.extended.append(idevice)
-                idevice.edit = True
-                for listener in self.listeners:
-                    listener.addIdevice(idevice)
-        else:
+            self.factoryiDevices.append(idevice)
+            
+        if self.isGeneric(idevice):
             exist = False
             for i in self.generic:
                 if i.title == idevice.title:
@@ -199,10 +232,31 @@ class IdeviceStore:
                 idevice.edit = True
                 for listener in self.listeners:
                     listener.addIdevice(idevice)
+        elif self.isJs(idevice):
+#             Compare the id of the idevice with the magic method
+            if (idevice not in self.jsIdevices):
+                self.jsIdevices.append(idevice)
+                idevice.edit = True
+                for listener in self.listeners:
+                    listener.addIdevice(idevice)
+                return True
+            else:
+                return False
+                
+        else:
+            exist = False
+            for i in self.extended:
+                if i.title == idevice.title:
+                    exist = True
+            if not exist:
+                self.extended.append(idevice)
+                idevice.edit = True
+                for listener in self.listeners:
+                    listener.addIdevice(idevice)
 
     def load(self):
         """
-        Load iDevices from the generic iDevices and the extended ones
+        Load iDevices from the generic iDevices, the extended ones and the JavaScript ones
         """
         log.debug("load iDevices")
         idevicesDir = self.config.configDir / 'idevices'
@@ -210,6 +264,7 @@ class IdeviceStore:
             idevicesDir.mkdir()
         self.__loadExtended()
         self.__loadGeneric()
+        self.__loadJs()
         for idevice in self.getFactoryIdevices():
             idevice.id = self.getNewIdeviceId()
 
@@ -220,6 +275,12 @@ class IdeviceStore:
                     break
 
         for idevice in self.generic:
+            for factoryiDevice in self.factoryiDevices:
+                if factoryiDevice._title == idevice._title:
+                    idevice.id = factoryiDevice.id
+                    break
+                
+        for idevice in self.jsIdevices:
             for factoryiDevice in self.factoryiDevices:
                 if factoryiDevice._title == idevice._title:
                     idevice.id = factoryiDevice.id
@@ -494,7 +555,29 @@ class IdeviceStore:
             self.factoryiDevices = self.factoryiDevices + self.generic
             from exe.engine.listaidevice import ListaIdevice
             self.addIdevice(ListaIdevice())
+            
+    def __loadJs(self):
+        """
+        Load the JavaScript iDevices from its own directory
+        """
+        iDevicesDir = self.config.webDir/'scripts'/'idevices'
+        
+        log.debug("Load JS iDevices from " + iDevicesDir)
 
+        # If the iDevices' folder exists 
+        if iDevicesDir.exists():
+            # We get the list of all subfolders
+            for ideviceDir in os.listdir(iDevicesDir):
+                if os.path.isdir(iDevicesDir/ideviceDir):
+                    try:
+                        idevice = JsIdevice(iDevicesDir/ideviceDir)
+                        self.jsIdevices.append(idevice)
+                    except InvalidConfigJsIdevice as invalidconfigexception:
+                        log.warn("The load of the JsIdevice " + invalidconfigexception.name + " has failed with this message: " + invalidconfigexception.message)
+                    
+            self.factoryiDevices = self.factoryiDevices + self.jsIdevices
+        
+                        
     def __upgradeGeneric(self):
         """
         Upgrades/removes obsolete generic idevices from before
@@ -782,5 +865,4 @@ _(u"""Describe the tasks the learners should complete.""")))
         # (we also save the extended iDevices)
         fileOut = open(idevicesDir/'extended.data', 'wb')
         fileOut.write(persist.encodeObject(self.extended))
-
 # ===========================================================================

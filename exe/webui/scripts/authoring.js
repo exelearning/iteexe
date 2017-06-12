@@ -883,11 +883,62 @@ var $exeAuthoring = {
         }
 
     },
+    iDevice : {
+        init : function() {
+            
+            var errorMsg = "";
+            
+            // Check if the object and the required methods are defined
+            if (typeof($exeDevice)=='undefined') errorMsg += "$exeDevice";
+            else if (typeof($exeDevice.init)=='undefined') errorMsg += "$exeDevice.init";
+            else if (typeof($exeDevice.save)=='undefined') errorMsg += "$exeDevice.save";
+            
+            // Show a message if they are not defined
+            if (errorMsg!="") {
+                errorMsg = _("IDevice broken") + ": " + errorMsg + " is not defined.";
+                eXe.app.alert(errorMsg);
+                return;
+            }
+            
+            // Check if the submit image exists (it will unless renderEditButtons changes)
+            var myLink = $("#exe-submitButton a").eq(0);
+            if (myLink.length!=1) {
+                eXe.app.alert(_("Report an Issue")+": $exeAuthoring.iDevice.init (#exe-submitButton)");
+                return;
+            }
+
+            // Execute $exeDevice.save onclick (to validate)
+            var onclick = myLink.attr("onclick");
+            myLink[0].onclick = function(){
+                var html = $exeDevice.save();
+                if (html) {
+                    $("textarea.mceEditor, textarea.jsContentEditor").val(html);
+                    // Execute the IMG default behavior if everything is OK
+                    eval(onclick);
+                }                
+            }         
+            
+            // Replace the _ function
+			_ = function(str){
+				if (typeof($exeDevice.i18n)!="undefined") {
+					var lang = $("HTML").attr("lang");
+					if (typeof($exeDevice.i18n[lang])!="undefined") {
+						return top.translations[str] || $exeDevice.i18n[lang][str] || str;
+					}
+				}
+				return top.translations[str] || str;
+			}
+			
+			// Enable the iDevice
+            $exeDevice.init();
+            
+        }
+    },
     // Some iDevices (like Cloze Activity) have a button to select (underline) words
     toggleWordInEditor : function(id){
         if (exe_editor_version==3) tinyMCE.execInstanceCommand(id, 'Underline', false);
         else tinyMCE.activeEditor.getDoc().execCommand('Underline', false, false);
-    },
+    },    
     changeFlowPlayerPathInIE : function(){
         var objs = document.getElementsByTagName("OBJECT");
         var i = objs.length;
@@ -1036,4 +1087,32 @@ function showMessageBox(id) {
 		icon: 'info',
         modal: false
 	});
+}
+
+function selectStyleIcon(icon, e, iconSrc, idiDevice) {
+	var div = document.getElementById("styleIcons");
+	var imgs = div.getElementsByTagName("IMG");
+	for (var i = 0; i < imgs.length; i++) {
+		imgs[i].style.border = "1px solid #E8E8E8";
+	}
+	e.style.border = "1px solid #333333";
+
+	var fieldIcon = '#iconiDevice' + idiDevice;
+
+	$("#activeIdevice #iconiDevice").attr("src", iconSrc);
+	$(fieldIcon).val(icon);
+
+	var deleteIcon = '#deleteIcon' + idiDevice;
+	$(deleteIcon).show();
+
+}
+
+
+function deleteIcon(idiDevice) {
+    var fieldIcon = '#iconiDevice'+idiDevice;
+    $("#activeIdevice #iconiDevice").attr("src", '/images/empty.gif');
+    $(fieldIcon).val('');
+    
+    var deleteIcon = '#deleteIcon'+idiDevice;
+    $(deleteIcon).hide();
 }

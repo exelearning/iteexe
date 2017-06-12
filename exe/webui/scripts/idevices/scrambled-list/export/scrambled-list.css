@@ -1,0 +1,9 @@
+/* Scrambled List iDevice */
+.exe-sortableList-options{margin:1.2em 0 1.5em 0;padding:0;list-style:none}
+.exe-sortableList-options li{background:#FFF;color:#333;padding:.5em 65px .5em 1em;margin:0 0 .5em 0!important;border:1px solid #EEE;border-radius:4px;;list-style-image:none!important;box-shadow:0 0 5px 0 rgba(204,204,204,1)}
+.exe-sortableList .first .up,.exe-sortableList-options .last .down{visibility:hidden}
+.exe-sortableList li{position:relative}
+.exe-sortableList li a{display:block;width:21px;height:21px;background:url(scrambled-list.png) no-repeat 0 0;position:absolute;right:40px;top:50%;margin-top:-10px}
+.exe-sortableList li a:hover,.exe-sortableList li a:focus{background-position:0 -21px}
+.exe-sortableList li .down{background-position:-21px 0;right:13px}
+.exe-sortableList li .down:hover,.exe-sortableList li .down:focus{background-position:-21px -21px}

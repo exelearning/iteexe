@@ -66,7 +66,7 @@ class GenericBlock(Block):
         html += common.textInput("title"+self.id, self.idevice.title) 
         html += u"</div>\n"
         for element in self.elements:
-            html += element.renderEdit() + "<br/>"
+            html += element.renderEdit() + "<br />"
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html
