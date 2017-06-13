@@ -90,6 +90,14 @@ Ext
                                     .triggerDeleteTemplate(element);
                             }
                         },
+                        
+                        'button[button_class=edit_template]': {
+                            click: function(element, record, item,
+                                index, e, eOpts) {
+                                this
+                                    .triggerEditTemplate(element);
+                            }
+                        },
 
                     });
             },
@@ -334,6 +342,30 @@ Ext
                             }
                         }
                     });
+            },
+            
+            triggerEditTemplate: function(button) {
+            	
+                var formpanel = button.up('form'),
+                    form = formpanel.getForm(),
+                    action = form.findField('action'),
+                    filename = form.findField('filename'),
+                    template = form.findField('template'),
+                    namefilexport = button.value;
+
+                action.setValue('doEdit');
+                template.setValue(button.value);
+                
+                form.submit({
+                    success: function() {
+                        // formpanel.reload();
+                    },
+                    failure: function(form, action) {
+                        Ext.Msg.alert(_('Error'),
+                            action.result.errorMessage);
+                    },
+                });
+
             },
 
         });

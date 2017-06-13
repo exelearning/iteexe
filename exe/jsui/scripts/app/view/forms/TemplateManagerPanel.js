@@ -67,10 +67,26 @@ function createButtonPropertiesTemplate(name, template) {
         itemId: 'properties_template' + template,
         name: 'properties_template' + template,
         button_class: 'properties_template',
+        style: "margin-right:4px;",
         value: template,
     };
     return buttonProperties;
 }
+
+function createButtonEditTemplate(name, template) {
+    var buttonEdit = {
+        xtype: 'button',
+        tooltip: _('Edit template: ') + name,
+        icon: '/images/stock-edit.png',
+        itemId: 'edit_template' + template,
+        name: 'edit_template' + template,
+        button_class: 'edit_template',
+        style: "margin-right:4px;",
+        value: template,
+    };
+    return buttonEdit;
+}
+
 
 function createPanelTemplateTemplates(templates) {
     var i;
@@ -97,6 +113,11 @@ function createPanelTemplateTemplates(templates) {
             template.push(createButtonPropertiesTemplate(templates[i].name,
                 templates[i].template));
         }
+        if (templates[i].editButton) {
+            template.push(createButtonEditTemplate(templates[i].name,
+                templates[i].template));
+        }
+        
         var estilo = "";
         if (i % 2 == 0) {
             estilo = 'padding-top:5px; background-color: #FFF;';

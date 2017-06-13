@@ -309,11 +309,11 @@ class MainPage(RenderableLivePage):
         """
         if not inputFilename.lower().endswith(ext):
             inputFilename += ext
-            if Path(inputFilename).exists():
-                explanation = _(u'"%s" already exists.\nPlease try again with a different filename') % inputFilename
-                msg = u'%s\n%s' % (msg, explanation)
-                client.alert(msg)
-                raise Exception(msg)
+        if Path(inputFilename).exists():
+            explanation = _(u'"%s" already exists.\nPlease try again with a different filename') % inputFilename
+            msg = u'%s\n%s' % (msg, explanation)
+            client.alert(msg)
+            raise Exception(msg)
         return inputFilename
 
     def handleSavePackage(self, client, filename=None, onDone=None):
@@ -336,6 +336,10 @@ class MainPage(RenderableLivePage):
         if not filename:
             filename = self.package.filename
             assert filename, 'Somehow save was called without a filename on a package that has no default filename.'
+
+        extension= filename.splitext()[1]
+        if extension == '.elt':
+            return self.handleSaveTemplate(client, oldName, onDone, edit=True)
         # Add the extension if its not already there and give message if not saved
         filename = self.b4save(client, filename, '.elp', _(u'SAVE FAILED!'))
         try:
@@ -355,10 +359,15 @@ class MainPage(RenderableLivePage):
         else:
             client.alert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
 
-    def handleSaveTemplate(self, client, templatename=None, onDone=None):
+    def handleSaveTemplate(self, client, templatename=None, onDone=None, edit=False):
         '''Save template'''    
-        filename = Path(self.config.templatesDir/templatename, 'utf-8')
-        filename = self.b4save(client, filename, '.elt', _(u'SAVE FAILED!'))
+        if not templatename.endswith(".elt"):
+            filename = Path(self.config.templatesDir/templatename +'.elt', 'utf-8')
+        else:
+            filename = Path(self.config.templatesDir/templatename, 'utf-8')
+        
+        if edit == False:
+            filename = self.b4save(client, filename, '.elt', _(u'SAVE FAILED!'))
         
         try:
             

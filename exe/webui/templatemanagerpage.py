@@ -32,6 +32,8 @@ from exe.engine.path import Path
 from exe.engine.template      import Template
 from exe.webui.livepage        import allSessionClients
 from exe.webui.renderable      import RenderableResource
+from exe                         import globals as G
+from exe.engine.package import Package
 
 
 log = logging.getLogger(__name__)
@@ -130,6 +132,8 @@ class TemplateManagerPage(RenderableResource):
             self.doPropertiesTemplate(request.args['template'][0])
         elif request.args['action'][0] == 'doPreExport':
             self.doPreExportTemplate(request.args['template'][0])
+        elif request.args['action'][0] == 'doEdit':
+            self.doEditTemplate(request.args['template'][0])
         elif request.args['action'][0] == 'doList':
             self.doList()
 
@@ -157,13 +161,15 @@ class TemplateManagerPage(RenderableResource):
                 export = True
                 delete = False
                 properties = True
+                edit = template.isEditable()
                 if template.name != 'Base' and template.name != self.config.defaultContentTemplate :
                     delete = True
                 templates.append({'template': template.file,
                                'name': template.name,
                                'exportButton': export,
                                'deleteButton': delete,
-                               'propertiesButton': properties})
+                               'propertiesButton': properties,
+                               'editButton': edit})
         return templates
 
     def doImportTemplate(self, filename):
@@ -261,4 +267,14 @@ class TemplateManagerPage(RenderableResource):
         
         self.action = 'List'
         self.template = ''
+        
+    def doEditTemplate(self, template):
+        try:
+            templateEdit = Package.load(Template(self.config.templatesDir / template).path, isTemplate=True)
+            self.webServer.root.bindNewPackage(templateEdit, self.client.session)
+            self.client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
+                          templateEdit.name).encode('utf8'))
+        except:
+            self.alert(_(u'Error'), _(u'An unexpected error has occurred'))
+        
         
