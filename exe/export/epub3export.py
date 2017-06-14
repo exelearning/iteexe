@@ -572,7 +572,7 @@ class Epub3Export(object):
         # Copy the style sheet files to the output dir
         # But not nav.css
         styleFiles = [self.styleDir /'..'/ 'popup_bg.gif']
-        styleFiles += [f for f in self.styleDir.files("*.css") if f.basename() not in ['nav.css', 'hacks.css']]
+        styleFiles += [f for f in self.styleDir.files("*.css") if f.basename() not in ['nav.css']]
         styleFiles += self.styleDir.files("*.jpg")
         styleFiles += self.styleDir.files("*.gif")
         styleFiles += self.styleDir.files("*.png")
