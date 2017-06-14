@@ -97,7 +97,7 @@ p.exe-block-success{padding:1em}
 .exe-enlarge-icon b{width:30px;height:30px;line-height:30px;text-align:center;display:block;font-size:1.3em;color:#FFF}
 .exe-enlarge-icon b:before{content:"+"}
 .js a.exe-enlarge:hover img,.js a.exe-enlarge:focus img{opacity:0.7;filter:alpha(opacity=70)}
-a.exe-enlarge:hover .exe-enlarge-icon,a.exe-enlarge:focus .exe-enlarge-icon{display:block;}
+a.exe-enlarge:hover .exe-enlarge-icon,a.exe-enlarge:focus .exe-enlarge-icon{display:block;*display:none}/* IE6, IE7 */	
 /* Autoclear */
 .exe-clear{overflow:auto}
 /* JavaScript on/offf */
@@ -106,12 +106,12 @@ a.exe-enlarge:hover .exe-enlarge-icon,a.exe-enlarge:focus .exe-enlarge-icon{disp
 /* License */
 #packageLicense{text-align:center}
 /* Hints */
-.js #main .iDevice_hint_title{font-size:1em;margin-top:0;font-weight:normal;}
+.js #main .iDevice_hint_title{font-size:1em;margin-top:0;font-weight:normal;*margin-top:1em}/* IE6, IE7 */
 .iDevice_hint{margin-bottom:1.5em}
 .iDevice_hint_title a{background-repeat:no-repeat;background-position:0 50%;padding-left:23px;text-decoration:none}
 .iDevice_hint_content{padding:0 23px}
 /* Questions/Answers */
-.iDevice_answers{margin-top:.5em}
+.iDevice_answer{overflow:hidden;*margin:1.5em 0}/* IE6, IE7 */
 .iDevice_answer{overflow:hidden;}
 .iDevice_answer p{margin-top:0}
 .iDevice_answer-field{width:2.5em;float:left}

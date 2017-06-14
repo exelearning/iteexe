@@ -1511,7 +1511,7 @@ def getFilesJSToMinify(type, scriptsDir):
     return listJSFiles
 
 
-def getFilesCSSToMinify(export_type, styleDir):
+def getFilesCSSToMinify(type, styleDir):
     '''
     Returns a list of CSS files that should by minified
     depending on the export type
@@ -1526,11 +1526,4 @@ def getFilesCSSToMinify(export_type, styleDir):
     else:
         list_css_files += [{ 'path': styleDir/'..'/'base.css', 'basename': 'base.css' }]
         
-    # Don't include hacks.css if it's a ePub
-    if export_type != 'epub3':
-        if os.path.isfile(styleDir/'hacks.css'):
-            list_css_files += [{ 'path': styleDir/'hacks.css', 'basename': 'hacks.css' }]
-        else:
-            list_css_files += [{ 'path': styleDir/'..'/'hacks.css', 'basename': 'hacks.css' }]
-    
     return list_css_files

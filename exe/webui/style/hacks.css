@@ -1,7 +1,0 @@
-/*
-eXeLearning
-Stylesheet for CSS hacks that are not valid CSS
-*/
-a.exe-enlarge:hover .exe-enlarge-icon,a.exe-enlarge:focus .exe-enlarge-icon{*display:none}/* IE6, IE7 */
-.js #main .iDevice_hint_title{*margin-top:1em}/* IE6, IE7 */
-.iDevice_answer{*margin:1.5em 0}/* IE6, IE7 */
