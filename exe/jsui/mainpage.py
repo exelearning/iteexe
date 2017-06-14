@@ -386,6 +386,8 @@ class MainPage(RenderableLivePage):
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
         
+        self.webServer.root.putChild(self.package.name, self)
+        
         template = Template(filename)
         self.config.templateStore.addTemplate(template)
     
