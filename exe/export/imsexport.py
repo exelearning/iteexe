@@ -217,7 +217,6 @@ class Manifest(object):
         self.resStr += """\
     <file href="%s"/>
     <file href="base.css"/>
-    <file href="hacks.css"/>
     <file href="content.css"/>""" % filename
         self.resStr += "\n"
         fileStr = ""
@@ -320,7 +319,6 @@ class IMSPage(Page):
                 desc = desc.replace('"', '&quot;')            
                 html += '<meta name="description" content="'+desc+'" />'+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"hacks.css\" />"+lb
         if common.hasWikipediaIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb    
         if common.hasGalleryIdevice(self.node):

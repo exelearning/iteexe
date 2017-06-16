@@ -299,9 +299,8 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             my_style = G.application.config.styleStore.getStyle(page.node.package.style)
             for x in my_style.get_style_dir().files('*.*'):
                 xmlStr += """    <file href="%s"/>\n""" % x.basename()
-            # we do want base.css, hacks.css and (for short time), popup_bg.gif, also:    
+            # we do want base.css and (for short time), popup_bg.gif, also:    
             xmlStr += """    <file href="base.css"/>\n"""
-            xmlStr += """    <file href="hacks.css"/>\n"""
             xmlStr += """    <file href="popup_bg.gif"/>\n"""
             # now the javascript files:
             xmlStr += """    <file href="SCORM_API_wrapper.js"/>\n"""
@@ -357,7 +356,6 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             self.resStr += """href="%s">
     <file href="%s"/>
     <file href="base.css"/>
-    <file href="hacks.css"/>
     <file href="content.css"/>
     <file href="popup_bg.gif"/>
     <file href="exe_jquery.js"/>
@@ -371,7 +369,6 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
                 self.resStr += '\n    <file href="%s"/>' % \
                         page.node.package.backgroundImg.basename()
             self.dependencies["base.css"] = True
-            self.dependencies["hacks.css"] = True
             self.dependencies["content.css"] = True
             self.dependencies["popup_bg.gif"] = True
         else:
