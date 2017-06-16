@@ -15,6 +15,9 @@ var eXeAssistant = {
         document.title = _("Assistant");
         var e = document.getElementById("assistant");
         e.innerHTML=this.template(e,$i18n);
+		// Replace some strings
+		var i = document.getElementById("iDevices");
+		if (i) i.innerHTML = i.innerHTML.replace(" iDevices"," <strong>iDevices</strong>")
     },
     toggler : {
         init : function(){
