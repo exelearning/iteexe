@@ -48,6 +48,7 @@ class Template():
         self._validConfig = False
         self._valid = False
         self._checkValid()
+        self.isExe = False
 
         if self._valid:
             # Get XML values from the config file
@@ -55,6 +56,9 @@ class Template():
             
             self._attributes = xml_values
             self.name = xml_values['name']
+    
+            if 'isExe' in xml_values:
+                self.isExe = bool(xml_values['isExe'])
             
             # xml node : [ label , 0=textfield 1=textarea , order into form]
             _attributespre ={
@@ -135,4 +139,15 @@ class Template():
         """
         Compare two templates with each other
         """
-        return cmp(self.name, other.name)    
+        return cmp(self.name, other.name)
+    
+    def isEditable(self):
+        """
+        Returns True if the template is Editable
+        """
+        editable = True
+        
+        if self.isExe == True:
+            editable = False 
+        
+        return editable  

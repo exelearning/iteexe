@@ -203,7 +203,8 @@ any Learning Management System.
         "exe.export",
         "exe.importers",
         "exe.jsui",
-        "exe.engine.lom"
+        "exe.engine.lom",
+        "exe.engine.exceptions"
     ],
     # Files list
     data_files=g_files.items(),

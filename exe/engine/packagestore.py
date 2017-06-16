@@ -103,6 +103,11 @@ class PackageStore:
         
         package.name = name
         package.filename = ""
+        package.root.title = _(package.root.title)
+        
+        for children in package.root.walkDescendants():
+            children.title = _(children.title)
+     
         self.loaded[package.name] = package
 
         return package

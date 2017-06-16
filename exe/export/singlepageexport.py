@@ -239,6 +239,8 @@ class SinglePageExport(object):
 
         for child in node.children:
             self.compruebaReproductores(child)
+            
+        common.exportJavaScriptIdevicesFiles(node.idevices, self.outputDir)
 
 
 # ===========================================================================

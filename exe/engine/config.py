@@ -502,6 +502,7 @@ class Config(object):
             # ignore the error we get if the log file is logged
             hdlr = logging.FileHandler(self.configDir/'exe.log')
 
+
         format = "%(asctime)s %(name)s %(levelname)s %(message)s"
         log    = logging.getLogger()
         hdlr.setFormatter(logging.Formatter(format))

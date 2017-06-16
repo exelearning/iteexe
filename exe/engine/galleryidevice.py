@@ -38,7 +38,7 @@ from exe.engine.persist   import Persistable
 from exe.engine.resource  import Resource
 from exe.engine.translate import lateTranslate
 from exe.webui.common     import docType
-from exe    import globals as G
+from exe                  import globals as G
 import os
 import codecs
 

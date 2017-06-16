@@ -310,6 +310,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
                     xmlStr += """    <file href="exe_jquery.js"/>\n"""
             else:
                 xmlStr += """    <file href="exe_jquery.js"/>\n"""
+                
             xmlStr += "  </resource>\n"
        
         # no more resources:
@@ -416,6 +417,8 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             self.dependencies[resource] = True
 
         self.resStr += fileStr
+        
+        self.resStr += common.getJavascriptIdevicesResources(page, xmlOutput = True)
 
         # adding the dependency with the common files collected:
         if self.scormType != "commoncartridge":
@@ -711,6 +714,9 @@ class ScormExport(object):
             (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
             (outputDir/'content.data').write_bytes(encodeObject(package))
             (outputDir/'contentv3.xml').write_bytes(encodeObjectToXML(package))
+
+        # Copy JS iDevices' resources
+        common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir)
 
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)

@@ -239,6 +239,7 @@ class Manifest(object):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_highlighter').files()]
         if common.hasGames(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_games').files()]
+            
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
                 self.resStr += '    <file href="exe_jquery.js"/>\n'
@@ -247,6 +248,9 @@ class Manifest(object):
 
         for resource in resources:
             fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
+        
+        # Get all JS iDevices resources
+        fileStr += common.getJavascriptIdevicesResources(page, xmlOutput = True)
 
         self.resStr += fileStr
         self.resStr += "</resource>\n"
@@ -355,6 +359,10 @@ class IMSPage(Page):
             html += common.getGamesJavaScriptStrings() + lb
             html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
+        
+        # Add JS iDevices  Scripts
+        html += common.printJavaScriptIdevicesScripts('export', self)
+        
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         # Some styles might have their own JavaScript files (see their config.xml file)
@@ -617,6 +625,10 @@ class IMSExport(object):
         if package.license == "license GFDL":
             # include a copy of the GNU Free Documentation Licence
             (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
+            
+        # Copy JS iDevices files
+        common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir)
+    
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
         # Clean up the temporary dir

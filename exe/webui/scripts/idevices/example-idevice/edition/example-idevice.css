@@ -1,0 +1,16 @@
+/* Example iDevice (edition CSS) */
+#exampleIdeviceForm {
+	background: #ffc;
+	padding: 20px;
+	border: 1px solid #000;
+}
+
+#exampleIdeviceForm  label{
+	display: block;
+	font-weight: bold;
+	margin-bottom: .3em;
+}
+
+#exampleIdeviceForm  input{
+	width: 300px;
+}

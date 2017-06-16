@@ -100,7 +100,7 @@ Content generated using eXe can be used by any Learning Management System.
       author_email="admin@exelearning.net",
       license="GPL",
       packages=["exe", "exe.webui", "exe.jsui",
-                "exe.engine", "exe.export", "exe.importers", "exe.engine.lom"],
+                "exe.engine", "exe.export", "exe.importers", "exe.engine.lom", "exe.engine.exceptions"],
       data_files=files.items(),
       app=["exe/main.py"],
       options={'py2app': py2appParams},
