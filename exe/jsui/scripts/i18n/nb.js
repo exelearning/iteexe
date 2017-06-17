@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.1.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2017-03-18 16:55+0100\nPO-Revision-Date: 2016-04-12 17:22+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.3.4\n", 
+ "": "Project-Id-Version: eXeLearning 2.1.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2017-06-17 20:14+0200\nPO-Revision-Date: 2016-04-12 17:22+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.3.4\n", 
  "Web pages footer.": "Nettsidens undertekst.", 
  "Title": "Tittel", 
  "Save file": "Lagre fil", 
@@ -137,7 +137,6 @@ translations = {
  "Albanian ": "Albansk", 
  "Interactive Activities": "Interaktive aktiviteter", 
  "Select the size of the magnifying glass": "Velg st\u00f8rrelse p\u00e5 forst\u00f8rrelsesglasset.", 
- "The current Style is not compatible with the Style Designer": "Denne stilen er ikke kompatibel med stildesigneren", 
  "Select an mp3 file": "Velg en mp3 fil", 
  "eXe has finished running in this window.": "eXe har sluttet \u00e5 kj\u00f8re i dette vinduet.", 
  "Extracting package: {filename}": "Ekstraherer pakke: {filename}", 
