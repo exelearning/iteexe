@@ -1318,11 +1318,14 @@ class MainPage(RenderableLivePage):
                     return
             # Do the export
             scormExport = ScormExport(self.config, stylesDir, filename, scormType)
-            scormExport.export(self.package)
+            modifiedMetaData = scormExport.export(self.package)
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        if modifiedMetaData != False and modifiedMetaData['modifiedMetaData']:  
+            client.alert(_(u'The following fields have been cut to meet the SCORM 1.2 standard: %s') % ', '.join(modifiedMetaData['fieldsModified']))
+        else:
+            client.alert(_(u'Exported to %s') % filename)
 
     def exportEpub3(self, client, filename, stylesDir):
         try:

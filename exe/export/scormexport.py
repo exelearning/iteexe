@@ -73,6 +73,36 @@ class Manifest(object):
         self.metadataType = metadataType
         self.dependencies = {}
 
+    def _validateMetaData(self, metadata):
+    
+        modifiedMetaData = False
+        fieldsModified = []
+    
+        if metadata.get_general().get_description():
+            for description in metadata.get_general().get_description():
+                strings = description.get_string()
+                for string in strings:
+                    value = string.get_valueOf_()
+#                     general description: The field must be 1000 characters maximum, standard SCORM 2.1
+                    if len(value) > 1000:
+                        string.set_valueOf_(value[:1000])
+                        modifiedMetaData = True
+                        fieldsModified.append(_('general description')) 
+                        
+        if metadata.get_educational():
+            for educational in metadata.get_educational():
+                if educational.get_description():
+                    for description in educational.get_description():
+                        strings = description.get_string()
+                        for string in strings:
+                            value = string.get_valueOf_()
+#                     educational description: The field must be 1000 characters maximum, standard SCORM 2.1
+                            if len(value) > 1000:
+                                string.set_valueOf_(value[:1000])
+                                modifiedMetaData = True
+                                fieldsModified.append(_('educational description'))
+        
+        return {'modifiedMetaData': modifiedMetaData, 'fieldsModified': fieldsModified}
 
     def createMetaData(self, template):
         """
@@ -83,6 +113,9 @@ class Manifest(object):
         """
         xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
         namespace = 'xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM lomCustom.xsd"'          
+        
+        modifiedMetaData = False
+        
         # depending on (user desired) the metadata type:
         if self.metadataType == 'LOMES':
             output = StringIO.StringIO()
@@ -91,6 +124,10 @@ class Manifest(object):
             if not title.get_string():
                 title.add_string(lomsubs.LangStringSub(self.package.lang.encode('utf-8'), self.package.name))
                 metadata.get_general().set_title(title)
+
+            if self.scormType == "scorm1.2":
+                modifiedMetaData = self._validateMetaData(metadata)
+                
             metadata.export(output, 0, namespacedef_=namespace, pretty_print=False)
             xml += output.getvalue()
         if self.metadataType == 'LOM':
@@ -100,6 +137,10 @@ class Manifest(object):
             if not title.get_string():
                 title.add_string(lomsubs.LangStringSub(self.package.lang.encode('utf-8'), self.package.name))
                 metadata.get_general().set_title(title)
+                
+            if self.scormType == "scorm1.2":  
+                modifiedMetaData = self._validateMetaData(metadata)
+                
             metadata.export(output, 0, namespacedef_=namespace, pretty_print=False)
             xml += output.getvalue()
         if self.metadataType == 'DC':
@@ -122,13 +163,16 @@ class Manifest(object):
                 if re.match('.*[:;]', lrm[f]) == None:
                     lrm[f] = u'FN:' + lrm[f]
             xml = template % lrm
-        return xml
+            
+        return {'xml': xml, 'modifiedMetaData' : modifiedMetaData}
 
     def save(self, filename):
         """
         Save a imsmanifest file to self.outputDir
         Two works: createXML and createMetaData
         """
+        modifiedMetaData = False
+        
         out = open(self.outputDir/filename, "w")
         if filename == "imsmanifest.xml":
             out.write(self.createXML().encode('utf8'))
@@ -146,11 +190,14 @@ class Manifest(object):
                 template = None
             # Now the file with metadatas. 
             # Notice that its name is independent of metadataType:  
-            xml = self.createMetaData(template)
+            metaData = self.createMetaData(template)
+            xml = metaData['xml']
+            modifiedMetaData = metaData['modifiedMetaData']
             out = open(self.outputDir/'imslrm.xml', 'wb')
             out.write(xml.encode('utf8'))
             out.close()
          
+        return modifiedMetaData
     
     def createXML(self):
         """
@@ -216,7 +263,8 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd">\n''' % manifestId
             templateFilename = self.config.webDir/'templates'/'cc.xml'
             template = open(templateFilename, 'rb').read()
-            xmlStr += self.createMetaData(template)
+            metaData = self.createMetaData(template)
+            xmlStr += metaData['xml']
         
         # ORGANIZATION
 
@@ -501,7 +549,7 @@ class ScormExport(object):
 
         # Create the manifest file
         manifest = Manifest(self.config, outputDir, package, self.pages, self.scormType, self.metadataType)
-        manifest.save("imsmanifest.xml")
+        modifiedMetaData = manifest.save("imsmanifest.xml")
         if self.hasForum:
             manifest.save("discussionforum.xml")
         
@@ -716,6 +764,9 @@ class ScormExport(object):
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
         # Clean up the temporary dir
         outputDir.rmtree()
+        
+        
+        return modifiedMetaData
 
     def doZip(self, fileObj, outputDir):
         """
