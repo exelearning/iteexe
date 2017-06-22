@@ -87,6 +87,7 @@ class WebServer:
         self.iecmwaring = IECMWarningPage(self.root)
         self.oauth = OauthPage(self.root)
         self.monitoring = False
+        self.invalidPackageName = []
 
     def find_port(self):
         """
@@ -155,20 +156,30 @@ class WebServer:
         # web resources
         webDir = self.config.webDir
         self.root.putChild("images", File(webDir + "/images"))
+        self.invalidPackageName.append("images")
         self.root.putChild("css", File(webDir + "/css"))
+        self.invalidPackageName.append("css")
         self.root.putChild("scripts", File(webDir + "/scripts"))
+        self.invalidPackageName.append("scripts")
         self.root.putChild("style", File(self.config.stylesDir))
+        self.invalidPackageName.append("style")
         self.root.putChild("docs", File(webDir + "/docs"))
+        self.invalidPackageName.append("docs")
         self.root.putChild("temp_print_dirs",
                               File(self.tempWebDir + "/temp_print_dirs"))
+        self.invalidPackageName.append("temp_print_dirs")
         self.root.putChild("previews",
                               File(self.tempWebDir + "/previews"))
+        self.invalidPackageName.append("previews")
         self.root.putChild("templates", File(webDir + "/templates"))
+        self.invalidPackageName.append("templates")
         self.root.putChild("tools", File(webDir + "/tools"))
+        self.invalidPackageName.append("tools")
 
         # new ExtJS 4.0 Interface
         jsDir = self.config.jsDir
         self.root.putChild("jsui", File(jsDir + "/scripts"))
+        self.invalidPackageName.append("jsui")
 
         # A port for this server was looked for earlier by find_port.
         # Ensure that it is valid (>= 0):
