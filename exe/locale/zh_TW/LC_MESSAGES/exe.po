@@ -10,9 +10,9 @@
 # Ping-Feng Zo <kevinwx12392@gmail.com>, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.1.2\n"
+"Project-Id-Version: eXeLearning 2.1.3\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2017-06-17 20:14+0200\n"
+"POT-Creation-Date: 2017-06-24 20:38+0200\n"
 "PO-Revision-Date: 2017-01-17 17:16+0100\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language: zh_Hant_TW\n"
@@ -21,7 +21,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Generated-By: Babel 2.4.0\n"
 
 #: exe/application.py:201
 #, python-format
@@ -383,6 +383,7 @@ msgstr "按照地圖上的提示依序點擊"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:82
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:143
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:392
 msgid "Title"
 msgstr "標題"
 
@@ -1212,6 +1213,7 @@ msgstr "提示"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:237
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:509
 #: exe/webui/testquestionelement.py:110
 msgid "Options"
 msgstr "選項"
@@ -2347,16 +2349,16 @@ msgstr ""
 "儲存失敗。\n"
 "上次成功儲存於 %s。"
 
-#: exe/engine/package.py:1461 exe/jsui/scripts/app/controller/Toolbar.js:418
+#: exe/engine/package.py:1463 exe/jsui/scripts/app/controller/Toolbar.js:418
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "iDevice Editor"
 msgstr "iDevice 編輯器"
 
-#: exe/engine/package.py:1582
+#: exe/engine/package.py:1584
 msgid "My Catalog"
 msgstr "我的目錄"
 
-#: exe/engine/package.py:1589
+#: exe/engine/package.py:1591
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:58
@@ -2632,7 +2634,7 @@ msgstr ""
 "描述學生應怎樣評估和完成練習。\n"
 "（大標題有助於提供反應回饋。）"
 
-#: exe/engine/resource.py:603
+#: exe/engine/resource.py:605
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
@@ -3125,8 +3127,8 @@ msgstr ""
 
 #: exe/export/cmdlineexporter.py:73 exe/jsui/mainpage.py:304
 #: exe/jsui/mainpage.py:1112 exe/jsui/mainpage.py:1276
-#: exe/jsui/mainpage.py:1316 exe/jsui/mainpage.py:1351
-#: exe/jsui/mainpage.py:1372
+#: exe/jsui/mainpage.py:1316 exe/jsui/mainpage.py:1354
+#: exe/jsui/mainpage.py:1375
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3140,7 +3142,7 @@ msgid "Export format not implemented"
 msgstr "匯出格式未實作"
 
 #: exe/export/epub3export.py:718 exe/export/epub3subexport.py:664
-#: exe/export/imsexport.py:621 exe/export/scormexport.py:716
+#: exe/export/imsexport.py:621 exe/export/scormexport.py:764
 #: exe/export/websiteexport.py:103
 #, python-format
 msgid ""
@@ -3149,6 +3151,14 @@ msgid ""
 msgstr ""
 "匯出失敗。\n"
 "上次的成功匯出為 %s。"
+
+#: exe/export/scormexport.py:90
+msgid "general description"
+msgstr ""
+
+#: exe/export/scormexport.py:103
+msgid "educational description"
+msgstr ""
 
 #: exe/export/scormpage.py:179 exe/export/websitepage.py:347
 #: exe/webui/common.py:486
@@ -3186,7 +3196,6 @@ msgstr "這是使用者自創教學元件外掛程式的例子。"
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:386
 msgid "Example"
 msgstr "例子"
 
@@ -3323,7 +3332,7 @@ msgstr "匯出套件 %s 到 Procomún 時發生錯誤：%s"
 #: exe/jsui/mainpage.py:997 exe/jsui/mainpage.py:1002 exe/jsui/mainpage.py:1005
 #: exe/jsui/mainpage.py:1008 exe/jsui/mainpage.py:1011
 #: exe/jsui/mainpage.py:1014 exe/jsui/mainpage.py:1019
-#: exe/jsui/mainpage.py:1260 exe/jsui/mainpage.py:1332
+#: exe/jsui/mainpage.py:1260 exe/jsui/mainpage.py:1335
 msgid "EXPORT FAILED!"
 msgstr "匯出失敗。"
 
@@ -3358,9 +3367,9 @@ msgstr "目錄已存在"
 #: exe/jsui/mainpage.py:1264 exe/jsui/mainpage.py:1277
 #: exe/jsui/mainpage.py:1283 exe/jsui/mainpage.py:1301
 #: exe/jsui/mainpage.py:1317 exe/jsui/mainpage.py:1323
-#: exe/jsui/mainpage.py:1337 exe/jsui/mainpage.py:1352
-#: exe/jsui/mainpage.py:1358 exe/jsui/mainpage.py:1373
-#: exe/jsui/mainpage.py:1379
+#: exe/jsui/mainpage.py:1340 exe/jsui/mainpage.py:1355
+#: exe/jsui/mainpage.py:1361 exe/jsui/mainpage.py:1376
+#: exe/jsui/mainpage.py:1382
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3383,23 +3392,28 @@ msgstr "資料夾 %s 已存在。請選擇其他資料夾，或是將現有的�
 
 #: exe/jsui/mainpage.py:1206 exe/jsui/mainpage.py:1251
 #: exe/jsui/mainpage.py:1266 exe/jsui/mainpage.py:1285
-#: exe/jsui/mainpage.py:1303 exe/jsui/mainpage.py:1325
-#: exe/jsui/mainpage.py:1339 exe/jsui/mainpage.py:1360
-#: exe/jsui/mainpage.py:1381
+#: exe/jsui/mainpage.py:1303 exe/jsui/mainpage.py:1328
+#: exe/jsui/mainpage.py:1342 exe/jsui/mainpage.py:1363
+#: exe/jsui/mainpage.py:1384
 #, python-format
 msgid "Exported to %s"
 msgstr "匯出至 %s"
 
-#: exe/jsui/mainpage.py:1414
+#: exe/jsui/mainpage.py:1326
+#, python-format
+msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
+msgstr ""
+
+#: exe/jsui/mainpage.py:1417
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "檔案 %s 不存在，或是無法讀取。"
 
-#: exe/jsui/mainpage.py:1418
+#: exe/jsui/mainpage.py:1421
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "無法載入檔案，請將檔案寄到 bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1421
+#: exe/jsui/mainpage.py:1424
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3408,7 +3422,7 @@ msgstr ""
 "對不起，檔案格式錯誤:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1423
+#: exe/jsui/mainpage.py:1426
 msgid "Sorry, wrong file format"
 msgstr "對不起，檔案格式錯誤"
 
@@ -3421,29 +3435,29 @@ msgstr "取得屬性失敗"
 msgid "Failed to save properties"
 msgstr "儲存屬性失敗"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:166
-#: exe/jsui/scripts/app/controller/MainTab.js:224
-#: exe/jsui/scripts/app/controller/MainTab.js:311
+#: exe/jsui/scripts/app/controller/MainTab.js:186
+#: exe/jsui/scripts/app/controller/MainTab.js:244
+#: exe/jsui/scripts/app/controller/MainTab.js:320
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:504
 msgid "Show Image"
 msgstr "顯示影像"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:779
+#: exe/jsui/scripts/app/controller/MainTab.js:197 exe/webui/element.py:779
 #: exe/webui/element.py:1193 exe/webui/scripts/authoring.js:70
 msgid "Select an image"
 msgstr "選擇影像"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:194
-#: exe/jsui/scripts/app/controller/MainTab.js:228
-#: exe/jsui/scripts/app/controller/MainTab.js:358
+#: exe/jsui/scripts/app/controller/MainTab.js:214
+#: exe/jsui/scripts/app/controller/MainTab.js:248
+#: exe/jsui/scripts/app/controller/MainTab.js:367
 msgid "Hide Image"
 msgstr "隱藏影像"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:203
+#: exe/jsui/scripts/app/controller/MainTab.js:223
 msgid "Image Files"
 msgstr "影像檔"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:204
+#: exe/jsui/scripts/app/controller/MainTab.js:224
 #: exe/jsui/scripts/app/controller/StyleManager.js:174
 #: exe/jsui/scripts/app/controller/StyleManager.js:220
 #: exe/jsui/scripts/app/controller/Toolbar.js:568
@@ -3467,24 +3481,10 @@ msgstr "影像檔"
 msgid "All Files"
 msgstr "所有檔案"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:237
-#: exe/jsui/scripts/app/controller/Toolbar.js:878
-#: exe/jsui/scripts/app/controller/Toolbar.js:899
-#: exe/jsui/scripts/app/controller/Toolbar.js:919
-#: exe/jsui/scripts/app/controller/Toolbar.js:939
-#: exe/jsui/scripts/app/controller/Toolbar.js:971
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Please wait..."
-msgstr "請稍候..."
-
-#: exe/jsui/scripts/app/controller/MainTab.js:241
-msgid "Settings Saved"
-msgstr "設定已儲存"
-
-#: exe/jsui/scripts/app/controller/MainTab.js:259
-#: exe/jsui/scripts/app/controller/MainTab.js:264
-#: exe/jsui/scripts/app/controller/MainTab.js:318
-#: exe/jsui/scripts/app/controller/MainTab.js:372
+#: exe/jsui/scripts/app/controller/MainTab.js:277
+#: exe/jsui/scripts/app/controller/MainTab.js:327
+#: exe/jsui/scripts/app/controller/MainTab.js:381
+#: exe/jsui/scripts/app/controller/MainTab.js:532
 #: exe/jsui/scripts/app/controller/StyleManager.js:72
 #: exe/jsui/scripts/app/controller/StyleManager.js:109
 #: exe/jsui/scripts/app/controller/StyleManager.js:136
@@ -3496,7 +3496,6 @@ msgstr "設定已儲存"
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:295
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:336
 #: exe/webui/stylemanagerpage.py:155 exe/webui/stylemanagerpage.py:267
 #: exe/webui/stylemanagerpage.py:319 exe/webui/stylemanagerpage.py:362
 #: exe/webui/stylemanagerpage.py:373 exe/webui/stylemanagerpage.py:384
@@ -3506,12 +3505,8 @@ msgstr "設定已儲存"
 msgid "Error"
 msgstr "錯誤"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:264
-msgid "The form contains invalid fields. Please check back."
-msgstr "此表單中包含不合法的欄位。請檢查。"
-
-#: exe/jsui/scripts/app/controller/MainTab.js:276
-#: exe/jsui/scripts/app/controller/MainTab.js:329
+#: exe/jsui/scripts/app/controller/MainTab.js:285
+#: exe/jsui/scripts/app/controller/MainTab.js:338
 #: exe/jsui/scripts/app/controller/Outline.js:204
 #: exe/jsui/scripts/app/controller/Toolbar.js:427
 #: exe/webui/scripts/editor.js:37
@@ -3519,15 +3514,19 @@ msgstr "此表單中包含不合法的欄位。請檢查。"
 msgid "Confirm"
 msgstr "確認"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:277
+#: exe/jsui/scripts/app/controller/MainTab.js:286
 msgid "Are you sure you want clear all form fields?"
 msgstr "您確定要清除所有表單內容嗎？"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:330
+#: exe/jsui/scripts/app/controller/MainTab.js:339
 msgid "Are you sure you want reset all form fields?"
 msgstr "您確定要重新設定所有表單內容嗎？"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:417
+#: exe/jsui/scripts/app/controller/MainTab.js:532
+msgid "The form contains invalid fields. Please check back."
+msgstr "此表單中包含不合法的欄位。請檢查。"
+
+#: exe/jsui/scripts/app/controller/MainTab.js:545
 msgid "LOM Metadata import success!"
 msgstr "LOM 中繼資料匯入成功。"
 
@@ -3794,6 +3793,15 @@ msgstr "Procomún OAuth"
 msgid "Select the parent folder for export."
 msgstr "選擇要匯出的父資料夾。"
 
+#: exe/jsui/scripts/app/controller/Toolbar.js:878
+#: exe/jsui/scripts/app/controller/Toolbar.js:899
+#: exe/jsui/scripts/app/controller/Toolbar.js:919
+#: exe/jsui/scripts/app/controller/Toolbar.js:939
+#: exe/jsui/scripts/app/controller/Toolbar.js:971
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Please wait..."
+msgstr "請稍候..."
+
 #: exe/jsui/scripts/app/controller/Toolbar.js:893
 msgid "Export text package as"
 msgstr "將文字套件匯出為"
@@ -3935,6 +3943,7 @@ msgstr "名稱"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:469
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Type"
@@ -3950,11 +3959,6 @@ msgid "Open"
 msgstr "開啟"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:77
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:183
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:122
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:228
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:640
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:286
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:260
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -4100,6 +4104,7 @@ msgstr "資源的唯一參考識別。"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:93
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:487
 msgid "Source"
 msgstr "來源"
 
@@ -4128,7 +4133,7 @@ msgstr "選擇語言。"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:263
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:258
 msgid "Relation"
 msgstr "關係"
 
@@ -4147,7 +4152,7 @@ msgstr "資源內容的範圍。"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:172
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:222
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:262
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:257
 msgid "Rights"
 msgstr "權利"
 
@@ -4165,22 +4170,22 @@ msgid ""
 "with respect to the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:189
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:128
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:233
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:273
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:646
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:183
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:122
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:228
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:263
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:640
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Clear"
 msgstr "清除"
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:195
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:134
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:189
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:128
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:233
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:646
 #: exe/webui/tools/style-designer/langs/en.js:111
 msgid "Reset"
 msgstr "重置"
@@ -4286,7 +4291,7 @@ msgid "Taxon"
 msgstr "Taxon"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:257
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:252
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:202
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -4304,6 +4309,7 @@ msgstr "Taxon"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:48
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:65
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:403
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:457
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:560
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:582
 #: exe/webui/tools/style-designer/langs/en.js:11
@@ -4311,32 +4317,32 @@ msgid "General"
 msgstr "一般"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:218
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:258
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:253
 msgid "Life Cycle"
 msgstr "生命循環"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:219
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:259
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:254
 msgid "Meta-Metadata"
 msgstr "中繼資料"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:220
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:260
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:255
 msgid "Technical"
 msgstr "技術"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:221
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:261
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:256
 msgid "Educational"
 msgstr "教育"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:224
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:264
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:259
 msgid "Annotation"
 msgstr "註記"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:225
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:265
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:260
 msgid "Classification"
 msgstr "分類"
 
@@ -4705,8 +4711,6 @@ msgid "Preknowledge."
 msgstr "預備知識"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:246
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:387
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:391
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:86
@@ -4720,7 +4724,6 @@ msgid "Primary author of the resource."
 msgstr "資源的主要作者。"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:259
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:396
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:18
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -4728,6 +4731,7 @@ msgstr "資源的主要作者。"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:841
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1019
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1039
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:419
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:863
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:990
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1010
@@ -5009,93 +5013,6 @@ msgstr "目前文件的授權方式可以在「屬性」視窗中修改"
 msgid "Show this window on eXe start"
 msgstr "eXe 啟動時顯示此視窗"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:81
-msgid "Export style: "
-msgstr "匯出樣式："
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:95
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:101
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
-msgid "Export"
-msgstr "匯出"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
-msgid "Delete style: "
-msgstr "刪除樣式："
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:125
-msgid "Show properties of style: "
-msgstr "顯示樣式屬性："
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:196
-msgid "Import style to the system "
-msgstr "將樣式匯入系統"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:200
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:424
-msgid "Import style"
-msgstr "匯入樣式"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:206
-msgid "Styles repository"
-msgstr "樣式主目錄"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
-msgid "Search and download new styles from the styles repository"
-msgstr "從樣式主目錄中搜尋與下載新樣式"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:216
-msgid "List of styles in your system"
-msgstr "您系統中的樣式列表"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:230
-msgid "Properties of style: "
-msgstr "樣式屬性："
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:318
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:531
-msgid "Return to style manager"
-msgstr "回到樣式管理員"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:325
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:530
-msgid "Return"
-msgstr "返回"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:419
-msgid "Read more"
-msgstr "閱讀更多"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:425
-msgid "Download style from repository and import into system."
-msgstr "從主目錄下載樣式並匯入系統。"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:457
-msgid "Import style from custom URL"
-msgstr "從自訂連結網址匯入樣式"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:472
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:124
-msgid "URL"
-msgstr "網址"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:473
-msgid "URL to download the style from."
-msgstr "下載樣式的網址"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:478
-msgid "Import Style from URL"
-msgstr "從網址匯入樣式"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:479
-msgid "Download style from URL and import into system."
-msgstr "由連結下載樣式並匯入系統"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:507
-msgid "Check and install styles in the repository"
-msgstr "確認並安裝樣式到儲存庫"
-
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
 msgstr "概述"
@@ -5156,6 +5073,11 @@ msgstr "LOM"
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:201
 msgid "LOM-ES"
 msgstr "LOM-ES"
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
+msgid "Export"
+msgstr "匯出"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
@@ -8498,6 +8420,7 @@ msgstr "類別"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:136
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:452
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1843
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1850
 msgid "Insert/Edit Embedded Media"
@@ -8516,7 +8439,6 @@ msgstr "保留斷行"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:12
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:899
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:319
 msgid "-- Not Set --"
 msgstr "-- 未設定 --"
 
@@ -8869,6 +8791,7 @@ msgstr "高度"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:99
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:155
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:569
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Style"
@@ -8881,6 +8804,7 @@ msgstr "樣式"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:144
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:555
 msgid "ID"
 msgstr "代碼"
 
@@ -8987,6 +8911,7 @@ msgstr "垂直間隔"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:100
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:496
 msgid "Dimensions"
 msgstr "尺寸"
 
@@ -9065,7 +8990,6 @@ msgstr "維持比例"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:15
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:7
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:343
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:753
 msgid "Appearance"
 msgstr "外觀"
@@ -9078,6 +9002,7 @@ msgstr "標頭與標題"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:12
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:934
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:544
 msgid "Title and Attribution"
 msgstr "標題與屬性"
 
@@ -9087,6 +9012,7 @@ msgstr "標題與屬性"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:18
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:199
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:803
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:381
 #: exe/webui/tools/style-designer/langs/en.js:68
 msgid "Header"
 msgstr "標頭"
@@ -9100,24 +9026,28 @@ msgstr "影像標題"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:7
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:15
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:820
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:398
 msgid "Title Link"
 msgstr "標題連結"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:8
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:16
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:826
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:404
 msgid "Source/Author"
 msgstr "來源/作者"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:9
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:17
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:832
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:410
 msgid "Source/Author Link"
 msgstr "來源/作者連結"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:11
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:19
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:843
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:421
 msgid "Choose a license..."
 msgstr "選擇授權條款..."
 
@@ -9127,6 +9057,8 @@ msgstr "選擇授權條款..."
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:844
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:846
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1035
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:422
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:424
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:847
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1006
 msgid "Public Domain"
@@ -9137,6 +9069,7 @@ msgstr "公共領域"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:352
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:853
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1039
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:431
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:853
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1010
 msgid "All Rights Reserved"
@@ -9385,6 +9318,7 @@ msgstr "引用著作者"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:235
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:551
 msgid "Attributes"
 msgstr "屬性"
 
@@ -9498,7 +9432,6 @@ msgstr "文字折行"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:23
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:283
 msgid "Highlight syntax"
 msgstr "語法突顯"
 
@@ -10627,6 +10560,7 @@ msgid ""
 msgstr "不支援這個聲音的瀏覽器，會收到並顯示一個指向此聲音檔的連結。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:10
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:514
 msgid "Use JavaScript player"
 msgstr "用 JavaScript 播放器"
 
@@ -10635,10 +10569,12 @@ msgid "Media Title"
 msgstr "媒體標題"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:24
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:516
 msgid "Use Autoplay"
 msgstr "使用自動播放"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:25
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:515
 msgid "Use Controls"
 msgstr "使用控制"
 
@@ -10647,73 +10583,56 @@ msgid "QuickTime (mov, mpeg)"
 msgstr "QuickTime 影片檔 (mov, mpeg)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:3
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:256
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:468
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:486
 msgid "Insert HTML code as text"
 msgstr "將 HTML 程式碼貼成文字"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:6
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:139
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:394
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:444
 msgid "Use CTRL+V on your keyboard to paste the code into the window."
 msgstr "用 Ctrl+V 來將程式碼貼上視窗。"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:5
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:438
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:480
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:493
 msgid "Paste HTML fragment (embed code)"
 msgstr "貼上 HTML 片段（嵌入碼）"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:7
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:273
 msgid "Include wrapper (improves presentation)"
 msgstr "包含包裝（改善呈現方式）"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:310
 msgid "Markup language"
 msgstr "標記語言"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:117
 msgid "Please select a language"
 msgstr "選請選擇一個語言："
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:320
 msgid "Markup (HTML, etc.)"
 msgstr "標記語言（如 HTML 等）"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:14
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:322
 msgid "C type"
 msgstr "C type"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:352
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:772
 msgid "Light"
 msgstr "淺"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:353
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:773
 msgid "Dark"
 msgstr "深"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:18
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:371
 msgid "Line numbers"
 msgstr "行數"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:19
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:375
 msgid "Line highlight"
 msgstr "行突顯"
 
@@ -11833,6 +11752,10 @@ msgstr "水平線"
 msgid "Image Options"
 msgstr "影像選項"
 
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:124
+msgid "URL"
+msgstr "網址"
+
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:125
 msgid "Text to display"
 msgstr "要顯示的文字"
@@ -11985,6 +11908,7 @@ msgid "Class added to the \"CSS class\" field."
 msgstr "要加入的「CSS 類別」欄位的類別。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:145
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:568
 msgid "CSS class"
 msgstr "CSS 類別"
 
@@ -12006,11 +11930,14 @@ msgid "Please select the image to edit it"
 msgstr "請選擇要編輯的影像"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:810
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:388
 msgid "Footer caption"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:854
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:864
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:432
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:442
 msgid "Custom license"
 msgstr "自訂授權"
 
@@ -12018,6 +11945,59 @@ msgstr "自訂授權"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1015
 msgid "Please check the \"License\" field"
 msgstr "請勾選「授權」欄位"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:303
+msgid "Please select the media file to edit it"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:471
+msgid "Detect automatically"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:472
+msgid "Video"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:473
+msgid "Audio"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:474
+msgid "iframe"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:536
+msgid "Paste your embed code below:"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:580
+msgid "Please select the Source"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:722
+msgid "This format (%) is valid for audio and video."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:723
+msgid "Cannot detect automatically. Please choose the right type."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:738
+msgid "Successfully updated, but please convert the video to another format:"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:745
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:756
+msgid "Selected format: "
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:746
+msgid "Please use any of these formats or provide a link to the file itself: "
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:757
+msgid "Please use any of these formats or provide a link to the file itself:"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1043
 msgid ""
@@ -12242,6 +12222,7 @@ msgstr "下標"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:38
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:523
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:572
 #: exe/webui/scripts/tinymce_4_settings.js:177
 msgid "Code"
@@ -12378,6 +12359,10 @@ msgstr "樣式已刪除"
 #: exe/webui/stylemanagerpage.py:483
 msgid "An unexpected error has occurred"
 msgstr "發生未知的錯誤"
+
+#: exe/webui/tools/fMath/js/jquery-ui/jquery-ui.min.js:8
+msgid "'"
+msgstr ""
 
 #: exe/webui/tools/style-designer/js/app.js:1281
 msgid "Create new style"

@@ -8,9 +8,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.1.2\n"
+"Project-Id-Version: eXeLearning 2.1.3\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2017-06-17 20:14+0200\n"
+"POT-Creation-Date: 2017-06-24 20:38+0200\n"
 "PO-Revision-Date: 2017-01-17 17:02+0100\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
 "Language: ru\n"
@@ -20,7 +20,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Generated-By: Babel 2.4.0\n"
 
 #: exe/application.py:201
 #, python-format
@@ -454,6 +454,7 @@ msgstr "Щёлкните в соответствии с подсказкой н�
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:82
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:143
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:392
 msgid "Title"
 msgstr "Заголовок"
 
@@ -1422,6 +1423,7 @@ msgstr "Хинт"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:237
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:509
 #: exe/webui/testquestionelement.py:110
 msgid "Options"
 msgstr "Опции"
@@ -2767,16 +2769,16 @@ msgstr ""
 "ОШИБКА СОХРАНЕНИЯ!\n"
 "Последнее успешное сохранение %s."
 
-#: exe/engine/package.py:1461 exe/jsui/scripts/app/controller/Toolbar.js:418
+#: exe/engine/package.py:1463 exe/jsui/scripts/app/controller/Toolbar.js:418
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "iDevice Editor"
 msgstr "Редактор iDevice"
 
-#: exe/engine/package.py:1582
+#: exe/engine/package.py:1584
 msgid "My Catalog"
 msgstr "Мой каталог"
 
-#: exe/engine/package.py:1589
+#: exe/engine/package.py:1591
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:58
@@ -3076,7 +3078,7 @@ msgstr ""
 "они сделали упражнение (Рубрики полезных устройств для обеспечения \n"
 "отражающей обратной связи.)"
 
-#: exe/engine/resource.py:603
+#: exe/engine/resource.py:605
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
@@ -3640,8 +3642,8 @@ msgstr ""
 
 #: exe/export/cmdlineexporter.py:73 exe/jsui/mainpage.py:304
 #: exe/jsui/mainpage.py:1112 exe/jsui/mainpage.py:1276
-#: exe/jsui/mainpage.py:1316 exe/jsui/mainpage.py:1351
-#: exe/jsui/mainpage.py:1372
+#: exe/jsui/mainpage.py:1316 exe/jsui/mainpage.py:1354
+#: exe/jsui/mainpage.py:1375
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3655,7 +3657,7 @@ msgid "Export format not implemented"
 msgstr "Формат экспорта не реализован"
 
 #: exe/export/epub3export.py:718 exe/export/epub3subexport.py:664
-#: exe/export/imsexport.py:621 exe/export/scormexport.py:716
+#: exe/export/imsexport.py:621 exe/export/scormexport.py:764
 #: exe/export/websiteexport.py:103
 #, python-format
 msgid ""
@@ -3664,6 +3666,14 @@ msgid ""
 msgstr ""
 "ОШИБКА ЭКСПОРТА!\n"
 "Последний успешный экспорт %s."
+
+#: exe/export/scormexport.py:90
+msgid "general description"
+msgstr ""
+
+#: exe/export/scormexport.py:103
+msgid "educational description"
+msgstr ""
 
 #: exe/export/scormpage.py:179 exe/export/websitepage.py:347
 #: exe/webui/common.py:486
@@ -3703,7 +3713,6 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:386
 msgid "Example"
 msgstr "Пример"
 
@@ -3844,7 +3853,7 @@ msgstr "Ошибка экспорта пакета %s на Procomún: %s"
 #: exe/jsui/mainpage.py:997 exe/jsui/mainpage.py:1002 exe/jsui/mainpage.py:1005
 #: exe/jsui/mainpage.py:1008 exe/jsui/mainpage.py:1011
 #: exe/jsui/mainpage.py:1014 exe/jsui/mainpage.py:1019
-#: exe/jsui/mainpage.py:1260 exe/jsui/mainpage.py:1332
+#: exe/jsui/mainpage.py:1260 exe/jsui/mainpage.py:1335
 msgid "EXPORT FAILED!"
 msgstr "ОШИБКА ЭКСПОРТА!"
 
@@ -3879,9 +3888,9 @@ msgstr "Директория существует"
 #: exe/jsui/mainpage.py:1264 exe/jsui/mainpage.py:1277
 #: exe/jsui/mainpage.py:1283 exe/jsui/mainpage.py:1301
 #: exe/jsui/mainpage.py:1317 exe/jsui/mainpage.py:1323
-#: exe/jsui/mainpage.py:1337 exe/jsui/mainpage.py:1352
-#: exe/jsui/mainpage.py:1358 exe/jsui/mainpage.py:1373
-#: exe/jsui/mainpage.py:1379
+#: exe/jsui/mainpage.py:1340 exe/jsui/mainpage.py:1355
+#: exe/jsui/mainpage.py:1361 exe/jsui/mainpage.py:1376
+#: exe/jsui/mainpage.py:1382
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3906,25 +3915,30 @@ msgstr ""
 
 #: exe/jsui/mainpage.py:1206 exe/jsui/mainpage.py:1251
 #: exe/jsui/mainpage.py:1266 exe/jsui/mainpage.py:1285
-#: exe/jsui/mainpage.py:1303 exe/jsui/mainpage.py:1325
-#: exe/jsui/mainpage.py:1339 exe/jsui/mainpage.py:1360
-#: exe/jsui/mainpage.py:1381
+#: exe/jsui/mainpage.py:1303 exe/jsui/mainpage.py:1328
+#: exe/jsui/mainpage.py:1342 exe/jsui/mainpage.py:1363
+#: exe/jsui/mainpage.py:1384
 #, python-format
 msgid "Exported to %s"
 msgstr "Экспорт в %s"
 
-#: exe/jsui/mainpage.py:1414
+#: exe/jsui/mainpage.py:1326
+#, python-format
+msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
+msgstr ""
+
+#: exe/jsui/mainpage.py:1417
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Файл %s не существует или недоступен для чтения."
 
-#: exe/jsui/mainpage.py:1418
+#: exe/jsui/mainpage.py:1421
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Невозможно загрузить файл, пожалуйста сообщите об ошибке по электронный "
 "почте (bugs@exelearning.org)"
 
-#: exe/jsui/mainpage.py:1421
+#: exe/jsui/mainpage.py:1424
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3933,7 +3947,7 @@ msgstr ""
 "Извините, неправильный формат файла:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1423
+#: exe/jsui/mainpage.py:1426
 msgid "Sorry, wrong file format"
 msgstr "Извините, неправильный формат файла"
 
@@ -3946,29 +3960,29 @@ msgstr "Ошибка получения свойств"
 msgid "Failed to save properties"
 msgstr "Ошибка сохранения свойств"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:166
-#: exe/jsui/scripts/app/controller/MainTab.js:224
-#: exe/jsui/scripts/app/controller/MainTab.js:311
+#: exe/jsui/scripts/app/controller/MainTab.js:186
+#: exe/jsui/scripts/app/controller/MainTab.js:244
+#: exe/jsui/scripts/app/controller/MainTab.js:320
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:504
 msgid "Show Image"
 msgstr "Показать изображение"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:177 exe/webui/element.py:779
+#: exe/jsui/scripts/app/controller/MainTab.js:197 exe/webui/element.py:779
 #: exe/webui/element.py:1193 exe/webui/scripts/authoring.js:70
 msgid "Select an image"
 msgstr "Выбрать изображение"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:194
-#: exe/jsui/scripts/app/controller/MainTab.js:228
-#: exe/jsui/scripts/app/controller/MainTab.js:358
+#: exe/jsui/scripts/app/controller/MainTab.js:214
+#: exe/jsui/scripts/app/controller/MainTab.js:248
+#: exe/jsui/scripts/app/controller/MainTab.js:367
 msgid "Hide Image"
 msgstr "Скрыть изображение"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:203
+#: exe/jsui/scripts/app/controller/MainTab.js:223
 msgid "Image Files"
 msgstr "Галерея изображений"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:204
+#: exe/jsui/scripts/app/controller/MainTab.js:224
 #: exe/jsui/scripts/app/controller/StyleManager.js:174
 #: exe/jsui/scripts/app/controller/StyleManager.js:220
 #: exe/jsui/scripts/app/controller/Toolbar.js:568
@@ -3992,24 +4006,10 @@ msgstr "Галерея изображений"
 msgid "All Files"
 msgstr "Все файлы"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:237
-#: exe/jsui/scripts/app/controller/Toolbar.js:878
-#: exe/jsui/scripts/app/controller/Toolbar.js:899
-#: exe/jsui/scripts/app/controller/Toolbar.js:919
-#: exe/jsui/scripts/app/controller/Toolbar.js:939
-#: exe/jsui/scripts/app/controller/Toolbar.js:971
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-msgid "Please wait..."
-msgstr "Пожалуйста, подождите..."
-
-#: exe/jsui/scripts/app/controller/MainTab.js:241
-msgid "Settings Saved"
-msgstr "Настройки сохранены"
-
-#: exe/jsui/scripts/app/controller/MainTab.js:259
-#: exe/jsui/scripts/app/controller/MainTab.js:264
-#: exe/jsui/scripts/app/controller/MainTab.js:318
-#: exe/jsui/scripts/app/controller/MainTab.js:372
+#: exe/jsui/scripts/app/controller/MainTab.js:277
+#: exe/jsui/scripts/app/controller/MainTab.js:327
+#: exe/jsui/scripts/app/controller/MainTab.js:381
+#: exe/jsui/scripts/app/controller/MainTab.js:532
 #: exe/jsui/scripts/app/controller/StyleManager.js:72
 #: exe/jsui/scripts/app/controller/StyleManager.js:109
 #: exe/jsui/scripts/app/controller/StyleManager.js:136
@@ -4021,7 +4021,6 @@ msgstr "Настройки сохранены"
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:295
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:336
 #: exe/webui/stylemanagerpage.py:155 exe/webui/stylemanagerpage.py:267
 #: exe/webui/stylemanagerpage.py:319 exe/webui/stylemanagerpage.py:362
 #: exe/webui/stylemanagerpage.py:373 exe/webui/stylemanagerpage.py:384
@@ -4031,12 +4030,8 @@ msgstr "Настройки сохранены"
 msgid "Error"
 msgstr "Ошибка"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:264
-msgid "The form contains invalid fields. Please check back."
-msgstr "Форма содержит некорректные поля. Пожалуйста, проверьте ещё раз."
-
-#: exe/jsui/scripts/app/controller/MainTab.js:276
-#: exe/jsui/scripts/app/controller/MainTab.js:329
+#: exe/jsui/scripts/app/controller/MainTab.js:285
+#: exe/jsui/scripts/app/controller/MainTab.js:338
 #: exe/jsui/scripts/app/controller/Outline.js:204
 #: exe/jsui/scripts/app/controller/Toolbar.js:427
 #: exe/webui/scripts/editor.js:37
@@ -4044,15 +4039,19 @@ msgstr "Форма содержит некорректные поля. Пожа�
 msgid "Confirm"
 msgstr "Подтверждение"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:277
+#: exe/jsui/scripts/app/controller/MainTab.js:286
 msgid "Are you sure you want clear all form fields?"
 msgstr "Вы уверены, что хотите очистить все поля формы?"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:330
+#: exe/jsui/scripts/app/controller/MainTab.js:339
 msgid "Are you sure you want reset all form fields?"
 msgstr "Вы уверены, что хотите сбросить все поля формы?"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:417
+#: exe/jsui/scripts/app/controller/MainTab.js:532
+msgid "The form contains invalid fields. Please check back."
+msgstr "Форма содержит некорректные поля. Пожалуйста, проверьте ещё раз."
+
+#: exe/jsui/scripts/app/controller/MainTab.js:545
 msgid "LOM Metadata import success!"
 msgstr "Успешный импорт метаданных LOM!"
 
@@ -4333,6 +4332,15 @@ msgstr "Procomún OAuth"
 msgid "Select the parent folder for export."
 msgstr "Выберите родительскую папку для экспорта."
 
+#: exe/jsui/scripts/app/controller/Toolbar.js:878
+#: exe/jsui/scripts/app/controller/Toolbar.js:899
+#: exe/jsui/scripts/app/controller/Toolbar.js:919
+#: exe/jsui/scripts/app/controller/Toolbar.js:939
+#: exe/jsui/scripts/app/controller/Toolbar.js:971
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+msgid "Please wait..."
+msgstr "Пожалуйста, подождите..."
+
 #: exe/jsui/scripts/app/controller/Toolbar.js:893
 msgid "Export text package as"
 msgstr "Экспортировать текстовый пакет как"
@@ -4474,6 +4482,7 @@ msgstr "Имя"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:469
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Type"
@@ -4489,11 +4498,6 @@ msgid "Open"
 msgstr "Открыть"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:77
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:183
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:122
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:228
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:640
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:286
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:260
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -4651,6 +4655,7 @@ msgstr "Конкретная ссылка на ресурс в пределах 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:93
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:487
 msgid "Source"
 msgstr "Источник"
 
@@ -4679,7 +4684,7 @@ msgstr "Выбрать язык."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:263
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:258
 msgid "Relation"
 msgstr "Отношения"
 
@@ -4698,7 +4703,7 @@ msgstr "Степень или объем содержимого ресурса."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:172
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:222
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:262
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:257
 msgid "Rights"
 msgstr "Права"
 
@@ -4722,22 +4727,22 @@ msgstr ""
 "элемент отсутствует, никаких предположений можно сделать о состоянии этих"
 " и других прав в отношении ресурса."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:189
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:128
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:233
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:273
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:646
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:183
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:122
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:228
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:263
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:640
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Clear"
 msgstr "Явный"
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:195
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:134
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:189
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:128
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:233
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:646
 #: exe/webui/tools/style-designer/langs/en.js:111
 msgid "Reset"
 msgstr "Сброс"
@@ -4853,7 +4858,7 @@ msgid "Taxon"
 msgstr "Таксон"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:257
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:252
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:202
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -4871,6 +4876,7 @@ msgstr "Таксон"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:48
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:65
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:403
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:457
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:560
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:582
 #: exe/webui/tools/style-designer/langs/en.js:11
@@ -4878,32 +4884,32 @@ msgid "General"
 msgstr "Общий"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:218
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:258
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:253
 msgid "Life Cycle"
 msgstr "Жизненный цикл"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:219
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:259
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:254
 msgid "Meta-Metadata"
 msgstr "Метаданные"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:220
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:260
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:255
 msgid "Technical"
 msgstr "Технический"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:221
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:261
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:256
 msgid "Educational"
 msgstr "Образовательный"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:224
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:264
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:259
 msgid "Annotation"
 msgstr "Аннотация"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:225
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:265
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:260
 msgid "Classification"
 msgstr "Классификация"
 
@@ -5276,8 +5282,6 @@ msgid "Preknowledge."
 msgstr "Предзнание."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:246
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:387
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:391
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:86
@@ -5291,7 +5295,6 @@ msgid "Primary author of the resource."
 msgstr "Главный автор ресурса."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:259
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:396
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:18
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -5299,6 +5302,7 @@ msgstr "Главный автор ресурса."
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:841
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1019
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1039
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:419
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:863
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:990
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1010
@@ -5591,93 +5595,6 @@ msgstr "Текущая лицензия документа может быть �
 msgid "Show this window on eXe start"
 msgstr "Показывать это окно при старте eXe"
 
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:81
-msgid "Export style: "
-msgstr "Экспортировать стиль: "
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:95
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:101
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
-msgid "Export"
-msgstr "Экспорт"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
-msgid "Delete style: "
-msgstr "Удалить стиль: "
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:125
-msgid "Show properties of style: "
-msgstr "Показать свойства стиля: "
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:196
-msgid "Import style to the system "
-msgstr "Импортировать стиль в систему "
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:200
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:424
-msgid "Import style"
-msgstr "Импортировать стиль"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:206
-msgid "Styles repository"
-msgstr "Репозиторий стилей"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
-msgid "Search and download new styles from the styles repository"
-msgstr "Найти и загрузить новые стили из репозитория стилей"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:216
-msgid "List of styles in your system"
-msgstr "Список стилей в вашей системе"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:230
-msgid "Properties of style: "
-msgstr "Свойства стиля: "
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:318
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:531
-msgid "Return to style manager"
-msgstr "Возвратиться к менеджеру стилей"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:325
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:530
-msgid "Return"
-msgstr "Возврат"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:419
-msgid "Read more"
-msgstr "Читать больше"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:425
-msgid "Download style from repository and import into system."
-msgstr "Загрузить стиль из репозитория и импортировать в систему."
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:457
-msgid "Import style from custom URL"
-msgstr "Импортировать стиль из URL пользователя"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:472
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:124
-msgid "URL"
-msgstr "URL"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:473
-msgid "URL to download the style from."
-msgstr "URL для загрузки с него стиля."
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:478
-msgid "Import Style from URL"
-msgstr "Импортировать стиль из URL"
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:479
-msgid "Download style from URL and import into system."
-msgstr "Загрузить стиль из URL и импортировать в ситему."
-
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:507
-msgid "Check and install styles in the repository"
-msgstr "Проверить и установить стили в репозиторий"
-
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
 msgstr "Очертание"
@@ -5738,6 +5655,11 @@ msgstr "LOM"
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:201
 msgid "LOM-ES"
 msgstr "LOM-ES"
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
+msgid "Export"
+msgstr "Экспорт"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
@@ -9153,6 +9075,7 @@ msgstr "Класс"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:136
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:452
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1843
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1850
 msgid "Insert/Edit Embedded Media"
@@ -9171,7 +9094,6 @@ msgstr "Сохранить переносы строк"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:12
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:899
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:319
 msgid "-- Not Set --"
 msgstr "- Не установлено -"
 
@@ -9530,6 +9452,7 @@ msgstr "Высота"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:99
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:155
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:569
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Style"
@@ -9542,6 +9465,7 @@ msgstr "Стиль"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:144
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:555
 msgid "ID"
 msgstr "Имя"
 
@@ -9648,6 +9572,7 @@ msgstr "Верт. отступ"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:100
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:496
 msgid "Dimensions"
 msgstr "Размер"
 
@@ -9726,7 +9651,6 @@ msgstr "Сохранить пропорции"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:15
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:7
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:343
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:753
 msgid "Appearance"
 msgstr "Вид"
@@ -9739,6 +9663,7 @@ msgstr "Заголовок и подпись"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:12
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:934
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:544
 msgid "Title and Attribution"
 msgstr "Название и атрибуты"
 
@@ -9748,6 +9673,7 @@ msgstr "Название и атрибуты"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:18
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:199
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:803
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:381
 #: exe/webui/tools/style-designer/langs/en.js:68
 msgid "Header"
 msgstr "Заголовок"
@@ -9761,24 +9687,28 @@ msgstr "Название изображения"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:7
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:15
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:820
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:398
 msgid "Title Link"
 msgstr "Название ссылки"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:8
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:16
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:826
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:404
 msgid "Source/Author"
 msgstr "Исходник/Автор"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:9
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:17
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:832
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:410
 msgid "Source/Author Link"
 msgstr "Исходник/Авторская ссылка"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:11
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:19
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:843
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:421
 msgid "Choose a license..."
 msgstr "Выберите лицензию..."
 
@@ -9788,6 +9718,8 @@ msgstr "Выберите лицензию..."
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:844
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:846
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1035
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:422
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:424
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:847
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1006
 msgid "Public Domain"
@@ -9798,6 +9730,7 @@ msgstr "Публичный домен"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:352
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:853
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1039
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:431
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:853
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1010
 msgid "All Rights Reserved"
@@ -10051,6 +9984,7 @@ msgstr "Цитировать с авторством"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:235
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:551
 msgid "Attributes"
 msgstr "Атрибуты"
 
@@ -10166,7 +10100,6 @@ msgstr "Переносить текст"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:8
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:23
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:283
 msgid "Highlight syntax"
 msgstr "Подсветка синтаксиса"
 
@@ -11318,6 +11251,7 @@ msgstr ""
 "файл будет отображаться."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:10
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:514
 msgid "Use JavaScript player"
 msgstr "Использовать плеер JavaScript"
 
@@ -11326,10 +11260,12 @@ msgid "Media Title"
 msgstr "Заголовок мультимедиа"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:24
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:516
 msgid "Use Autoplay"
 msgstr "Использовать автоигру"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:25
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:515
 msgid "Use Controls"
 msgstr "Использовать управление"
 
@@ -11338,73 +11274,56 @@ msgid "QuickTime (mov, mpeg)"
 msgstr "QuickTime (mov, mpeg)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:3
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:256
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:468
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:486
 msgid "Insert HTML code as text"
 msgstr "Вставьте HTML код как текст"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:6
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:139
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:394
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:444
 msgid "Use CTRL+V on your keyboard to paste the code into the window."
 msgstr "Используйте CTRL+V на Вашей клавиатуре для вставки кода в окно."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:5
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:438
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:480
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:493
 msgid "Paste HTML fragment (embed code)"
 msgstr "Вставьте HTML фрагмент (код для вставки)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:7
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:273
 msgid "Include wrapper (improves presentation)"
 msgstr "Включите обёртки (улучшает презентацию)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:10
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:310
 msgid "Markup language"
 msgstr "Язык разметки"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:11
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:117
 msgid "Please select a language"
 msgstr "Пожалуйста, выберите язык"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:13
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:320
 msgid "Markup (HTML, etc.)"
 msgstr "Разметка (HTML и т.д.)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:14
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:322
 msgid "C type"
 msgstr "Тип C"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:16
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:58
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:352
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:772
 msgid "Light"
 msgstr "Освещение"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:17
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:59
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:353
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:773
 msgid "Dark"
 msgstr "Тёмное"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:18
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:371
 msgid "Line numbers"
 msgstr "Номера строк"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:19
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:375
 msgid "Line highlight"
 msgstr "Подсветка строки"
 
@@ -12538,6 +12457,10 @@ msgstr "Горизонтальная линия"
 msgid "Image Options"
 msgstr "Опции изображения"
 
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:124
+msgid "URL"
+msgstr "URL"
+
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:125
 msgid "Text to display"
 msgstr "Текст для отображения"
@@ -12692,6 +12615,7 @@ msgid "Class added to the \"CSS class\" field."
 msgstr "Класс добавлен в поле \"класс CSS\"."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:145
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:568
 msgid "CSS class"
 msgstr "Класс CSS"
 
@@ -12713,11 +12637,14 @@ msgid "Please select the image to edit it"
 msgstr "Пожалуйста, выберите изображение для редактирования"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:810
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:388
 msgid "Footer caption"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:854
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:864
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:432
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:442
 msgid "Custom license"
 msgstr "Пользовательская лицензия"
 
@@ -12725,6 +12652,59 @@ msgstr "Пользовательская лицензия"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1015
 msgid "Please check the \"License\" field"
 msgstr "Пожалуйста, проверьте поле \"Лицензия\""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:303
+msgid "Please select the media file to edit it"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:471
+msgid "Detect automatically"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:472
+msgid "Video"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:473
+msgid "Audio"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:474
+msgid "iframe"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:536
+msgid "Paste your embed code below:"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:580
+msgid "Please select the Source"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:722
+msgid "This format (%) is valid for audio and video."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:723
+msgid "Cannot detect automatically. Please choose the right type."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:738
+msgid "Successfully updated, but please convert the video to another format:"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:745
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:756
+msgid "Selected format: "
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:746
+msgid "Please use any of these formats or provide a link to the file itself: "
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:757
+msgid "Please use any of these formats or provide a link to the file itself:"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1043
 msgid ""
@@ -12970,6 +12950,7 @@ msgstr "Подстрочный"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:38
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:523
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:572
 #: exe/webui/scripts/tinymce_4_settings.js:177
 msgid "Code"
@@ -13108,6 +13089,10 @@ msgstr "Стиль удалён корректно"
 #: exe/webui/stylemanagerpage.py:483
 msgid "An unexpected error has occurred"
 msgstr "Произошла непредвиденная ошибка"
+
+#: exe/webui/tools/fMath/js/jquery-ui/jquery-ui.min.js:8
+msgid "'"
+msgstr ""
 
 #: exe/webui/tools/style-designer/js/app.js:1281
 msgid "Create new style"
