@@ -58,15 +58,16 @@
 # 2017-03-18
 #    * Preparing version 2.1.2 (JRF)
 #
-# 2017-06-17
+# 2017-06-24
 #    * Preparing version 2.1.3 (JRF)
+#    * Babel 2.4.0
 #
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.1.2"
+version="2.1.3"
 
 # 1.- pyBabel - Extraction of strings from *.py and *.js into new POT
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
