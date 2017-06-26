@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file will be used when https://github.com/exelearning/iteexe/issues/83 is finished -->
+<plugin>
+    <name>ABC Music Notation</name>
+    <author>Ignacio Gros</author>
+    <author-url>http://www.gros.es/</author-url>
+    <license>Creative Commons by-sa</license>
+    <license-url>http://creativecommons.org/licenses/by-sa/4.0/</license-url>
+    <description>Insert ABC Music Notation Plugin for TinyMCE. See the "export" folder and the licenses of its files.</description>
+    <string-to-search><![CDATA[<pre class="abc-music]]></string-to-search>
+    <head-files>
+        <file>exe_abcmusic.css</file>
+        <file>exe_abcmusic.js</file>
+    </head-files>
+</plugin>

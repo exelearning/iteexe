@@ -165,9 +165,10 @@ class SinglePageExport(object):
         hasInstructions   = False
         hasMediaelement   = False
         hasTooltips       = False
+        hasABCMusic       = False
 
     	for idevice in node.idevices:
-    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
+    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips and hasABCMusic):
     	    	break
     	    if not hasFlowplayer:
     	    	if 'flowPlayer.swf' in idevice.systemResources:
@@ -196,6 +197,8 @@ class SinglePageExport(object):
                     hasMediaelement = common.ideviceHasMediaelement(idevice)
             if not hasTooltips:
                 hasTooltips = common.ideviceHasTooltips(idevice)
+            if not hasABCMusic:
+                hasABCMusic = common.ideviceHasABCMusic(idevice)
                             
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -236,6 +239,9 @@ class SinglePageExport(object):
         if hasTooltips:
             exe_tooltips = (self.scriptsDir/'exe_tooltips')
             exe_tooltips.copyfiles(self.outputDir)
+        if hasABCMusic:
+            pluginScripts = (self.scriptsDir/'tinymce_4/js/tinymce/plugins/abcmusic/export')
+            pluginScripts.copyfiles(self.outputDir)
 
         for child in node.children:
             self.compruebaReproductores(child)

@@ -94,6 +94,8 @@ class ScormPage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_highlighter.css\" />"+lb
         if common.hasGames(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />"+lb
+        if common.hasABCMusic(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_abcmusic.css\" />"+lb            
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
@@ -118,6 +120,8 @@ class ScormPage(Page):
             # The games require additional strings
             html += common.getGamesJavaScriptStrings() + lb
             html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
+        if common.hasABCMusic(self.node):
+            html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
@@ -132,12 +136,12 @@ class ScormPage(Page):
             if style.hasValidConfig:
                 html += style.get_extra_head()
             html += u"</head>"+lb            
-            html += u'<body class=\"exe-scorm\" onload="loadPage()" '
+            html += u'<body class=\"exe-scorm\" '
         if common.hasQuizTest(self.node):
             html += u'onunload="unloadPage(true)">'
         else:
             html += u'onunload="unloadPage()">'
-        html += u'<script type="text/javascript">document.body.className+=" js"</script>'+lb
+        html += u'<script type="text/javascript">document.body.className+=" js";jQuery(function(){loadPage()})</script>'+lb
         html += u"<div id=\"outer\">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
         html += u"<"+headerTag+" id=\"nodeDecoration\">"

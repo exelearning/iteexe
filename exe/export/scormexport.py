@@ -458,6 +458,9 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             
         if common.hasGames(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_games').files()]
+            
+        if common.hasABCMusic(page.node):
+            resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'tinymce_4'/'js'/'tinymce'/'plugins'/'abcmusic'/'export').files()]
 
         for resource in resources:            
             fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
@@ -657,12 +660,13 @@ class ScormExport(object):
         hasInstructions   = False
         hasMediaelement   = False
         hasTooltips       = False
+        hasABCMusic       = False
 
         for page in self.pages:
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips and hasABCMusic):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -692,6 +696,8 @@ class ScormExport(object):
                     hasMediaelement = common.ideviceHasMediaelement(idevice)
                 if not hasTooltips:
                     hasTooltips = common.ideviceHasTooltips(idevice)
+                if not hasABCMusic:
+                    hasABCMusic = common.ideviceHasABCMusic(idevice)
 
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -730,6 +736,9 @@ class ScormExport(object):
         if hasTooltips:
             exe_tooltips = (self.scriptsDir/'exe_tooltips')
             exe_tooltips.copyfiles(outputDir)
+        if hasABCMusic:
+            pluginScripts = (self.scriptsDir/'tinymce_4/js/tinymce/plugins/abcmusic/export')
+            pluginScripts.copyfiles(outputDir)
 
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004":
             if package.license == "license GFDL":

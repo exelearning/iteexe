@@ -149,6 +149,7 @@ class SinglePage(Page):
         hasJSGames = helper.hasGames(self.node)
         hasWikipedia = helper.hasWikipediaIdevice(self.node)
         hasMediaelement = helper.nodeHasMediaelement(self.node)
+        hasABCMusic = helper.nodeHasABCMusic(self.node)
 
         # Get package language
         lang = G.application.config.locale
@@ -208,6 +209,8 @@ class SinglePage(Page):
             html += u'<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />' + lineBreak
         if hasJSGames:
             html += u'<link rel="stylesheet" type="text/css" href="exe_games.css" />' + lineBreak
+        if hasABCMusic:
+            html += u'<link rel="stylesheet" type="text/css" href="exe_abcmusic.css" />' + lineBreak           
         html += u'<link rel="stylesheet" type="text/css" href="content.css" />' + lineBreak
         
         # Add HTML compatibility script to IE 9
@@ -236,6 +239,8 @@ class SinglePage(Page):
             # The games require additional strings
             html += common.getGamesJavaScriptStrings() + lineBreak
             html += u'<script type="text/javascript" src="exe_games.js"></script>' + lineBreak
+        if hasABCMusic:
+            html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>' + lineBreak            
         html += u'<script type="text/javascript" src="common.js"></script>' + lineBreak
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>' + lineBreak
