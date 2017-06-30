@@ -35,19 +35,42 @@ Ext.define('eXe.controller.MainTab', {
         {
             selector: '#outline_treepanel',
             ref: 'outlineTreePanel'
-        }
+        }, 
+        {
+            selector: '#file',
+            ref: 'file'
+        },
+        {
+            selector: '#tools',
+            ref: 'tools'
+        },
+        {
+            selector: '#main_tab',
+            ref: 'maintab'
+        },
+        
     ],
-
+     
     init: function() {
         this.control({
-            '#main_tab': {
-                tabchange: this.onTabChange
+        	
+        	'#file': {
+        		click: this.onTabBlur
+    		},
+    		'#tools': {
+        		click: this.onTabBlur
+    		},
+        	'#authoring': {
+        		beforetabchange: this.onBeforeTabChange
+    		},
+    		'#main_tab': {
+    			beforetabchange: this.onBeforeTabChange
             },
             '#metadata_tab': {
-                tabchange: this.onTabChange
+            	beforetabchange: this.onBeforeTabChange
             },
             '#properties_tab': {
-                tabchange: this.onTabChange
+            	beforetabchange: this.onBeforeTabChange
             },
             '#package_properties': {
                 beforeaction: this.beforeAction,
@@ -69,9 +92,6 @@ Ext.define('eXe.controller.MainTab', {
             '#lomesdata_properties': {
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
-            },
-            '#save_properties': {
-                click: this.onClickSave
             },
             '#clear_properties': {
                 click: this.onClickClear
@@ -230,15 +250,13 @@ Ext.define('eXe.controller.MainTab', {
         }
     },
     
-    onClickSave: function(button) {
-	    var formpanel = button.up('form'),
-            form = formpanel.getForm();
+    saveForm: function(formpanel) {
+	    
+    	var form = formpanel.getForm();
+    	
 	    if (form.isValid()) {
-	        Ext.Msg.wait(_('Please wait...'));       
 	        form.submit({ 
                 success: function(form, action) {
-                    Ext.MessageBox.hide();
-                    Ext.MessageBox.alert("", _('Settings Saved'));
                     if (formpanel.itemId == 'package_properties') {
                         var formclear = function(formpanel) {
                             formpanel.clear();
@@ -260,15 +278,6 @@ Ext.define('eXe.controller.MainTab', {
 	            }
 	        });
 	    }
-        else {
-        	Ext.Msg.alert(_('Error'), _('The form contains invalid fields. Please check back.'));
-        	if (formpanel.expandParents) {
-        		form.getFields().each(function(field){
-        			if (!field.validate())
-        				formpanel.expandParents(field, true);
-        		});
-        	}
-        }
     },
     
     onClickClear: function(cbutton) {
@@ -378,11 +387,6 @@ Ext.define('eXe.controller.MainTab', {
     beforeAction: function(form, action, eOpts) {
         form.url = location.pathname + "/properties";
     },
-    
-    beforeAction: function(form, action, eOpts) {
-//    	console.log('beforeaction');
-        form.url = location.pathname + "/properties";
-    },
 
     updateAuthoring: function(action, object, isChanged, currentNode, destNode) {
         if (action && (action == "done" || action == "move" || action == "delete" || action == "movePrev" || action == "moveNext" || action == "ChangeStyle")) {
@@ -400,18 +404,142 @@ Ext.define('eXe.controller.MainTab', {
         nevow_clientToServerEvent('sourcesDownload', this, '');
     },
 
-    onTabChange: function(tabPanel, newCard, oldCard, eOpts) {
-        var newformpanel = null;
+    onBeforeTabChange: function(tabPanel, newCard, oldCard, eOpts) {
+    	
+	    var newformpanel = null;
+	
+	    while (newCard.getActiveTab)
+	        newCard = newCard.getActiveTab();
+	
+	    
+	    if (newCard.getForm) {
+	        newformpanel = newCard;
+	
+	    } else {
+	    	
+	        if ((typeof(oldCard) !== "undefined") &&
+	            (typeof(oldCard.items) !== "undefined") &&
+	            (oldCard.items.items.length > 0)) {
+	
+	            for (i = 0; i < oldCard.items.items.length; i++) {
 
-        while (newCard.getActiveTab)
-            newCard = newCard.getActiveTab();
-        if (newCard.getForm)
-            newformpanel = newCard;
-
-        if (newformpanel) {
-            this.loadForm(newformpanel);
+	            	if(oldCard.items.items[i].itemId == 'metadata_tab'){
+	            		
+	            		for (t = 0; t < oldCard.items.items[i].items.items.length; t++) {
+	            			
+	    	                if (oldCard.items.items[i].items.items[t].getForm) {
+			                	
+			                    fields = oldCard.items.items[i].items.items[t].managedListeners;
+			                    
+			                    if(this.checkFormChanges(fields)){
+			                    	if(!this.validateForm(oldCard.items.items[i].items.items[t])){
+			                    		return false;
+			                    	}
+			                    }
+			                    
+			                }
+	            		}
+	            		
+	            	}else{
+	            		
+	                	if (oldCard.items.items[i].getForm) {
+	
+		                    fields = oldCard.items.items[i].managedListeners;
+		
+		                    if(this.checkFormChanges(fields)){
+		                    	if(!this.validateForm(oldCard.items.items[i])){
+		                    		return false;
+		                    	}
+		                    }
+	                	}
+	            	}
+	            	
+	            }//for
+	        } 
+	    }
+	
+	    if (newformpanel && 
+	        oldCard.getForm) {
+	
+	        fields = oldCard.managedListeners;
+	
+	        if(this.checkFormChanges(fields)){
+	        	if(!this.validateForm(oldCard)){
+	        		return false;
+	        	}
+	        }
+	
+	    } else {
+	
+	        if ((typeof(oldCard) !== "undefined") &&
+	            (typeof(oldCard.items) !== "undefined") &&
+	            (oldCard.items.items.length > 0)) {
+	
+	            for (i = 0; i < oldCard.items.items.length; i++) {
+	
+	                if (oldCard.items.items[i].getForm) {
+	
+	                    fields = oldCard.items.items[i].managedListeners;
+	
+	                    if(this.checkFormChanges(fields)){
+	                    	if(!this.validateForm(oldCard.items.items[i])){
+	                    		return false;
+	                    	}
+	                    }
+	                }
+	            }
+	        }
+	    }
+	    
+	    
+	    if (newformpanel){
+        	this.loadForm(newformpanel);
         }
-    },
+	    
+	},
+	
+	checkFormChanges: function(fields){
+		
+        for (x = 0; x < fields.length; x++) {
+			
+            if (document.getElementById(fields[x].item.id) != null) {
+
+                classField = document.getElementById(fields[x].item.id).className;
+
+                if (classField.search('property-form-dirty') > 0) {
+
+                	return true;
+                    break;
+                }
+            }
+
+        } // for
+        
+        return false;
+	},
+	
+	
+	validateForm: function(formpanel){
+
+		var form = formpanel.getForm();
+	    
+	    if (form.isValid()) {
+	    
+	    	this.saveForm(formpanel);
+	    	return true;
+	    }
+        else {
+        	Ext.Msg.alert(_('Error'), _('The form contains invalid fields. Please check back.'));
+        	if (formpanel.expandParents) {
+        		form.getFields().each(function(field){
+        			if (!field.validate())
+        				formpanel.expandParents(field, true);
+        		});
+        	}
+        	
+        	return false;
+        }
+	},
 
     lomImportSuccess: function(prefix) {
             Ext.Msg.alert('', _('LOM Metadata import success!'));
@@ -423,8 +551,15 @@ Ext.define('eXe.controller.MainTab', {
                     formpanel[i].clear();
                     if (formpanel[i].getVisibilityEl())
                         this.loadForm(formpanel[i]);
-                }
             }
         }
+    },
+    
+    onTabBlur: function() {
+    	
+    	if(this.getMaintab().getActiveTab().itemId == 'properties_tab'){
+    		this.onBeforeTabChange(this.getMaintab(), '', this.getMaintab().getActiveTab());
+    	}
+	}
 
 });

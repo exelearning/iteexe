@@ -1253,6 +1253,8 @@ class Package(Persistable):
                 #JR: Si por casualidad quedase vacio le damos un nombre por defecto
                 if newPackage._name == "":
                     newPackage._name = "invalidpackagename"
+                elif newPackage._name in G.application.webServer.invalidPackageName:
+                    newPackage._name = newPackage._name+'_1'
                 log.debug("load() about to doUpgrade newPackage \"" 
                         + newPackage._name + "\" " + repr(newPackage) )
                 if hasattr(newPackage, 'resourceDir'):

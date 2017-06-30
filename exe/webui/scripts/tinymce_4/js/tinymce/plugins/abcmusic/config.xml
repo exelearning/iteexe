@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- This file will be used when https://github.com/exelearning/iteexe/issues/83 is finished -->
 <plugin>
     <name>ABC Music Notation</name>
     <author>Ignacio Gros</author>

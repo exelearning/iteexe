@@ -22,24 +22,15 @@ inlineMidiHtml+=window.ABCJS.midi.generateMidiControls(this.tunes[i],this.midiPa
 $exeABCmusic = {
 	lang : {
 		// #93 (to do)
-		/*
-		show : _("Show"),
-		play : _("Play"),
-		stop : _("Stop"),
-		download : _("Download"),
-		hide : _("Hide"),
-		animate : _("Animate"),
-		warning : _("Go to Tools - Preview to see this working")
-		*/
-		show : "Show",
-		play : "Play",
-		stop : "Stop",
-		download : "Download",
-		hide : "Hide",
-		animate : "Animate",
-		warning : "Go to Tools - Preview to see this working"
+		// This strings should be translated when exporting
+		show : $exe_i18n.show,
+		download : $exe_i18n.download,
+		hide : $exe_i18n.hide
+		// To do (Animate is hidden): play : "Play",
+		// To do (Animate is hidden): stop : "Stop",		
+		// To do (Animate is hidden): animate : "Animate"
 	},
-	baseURL : (top.Ext!="undefined") ? '/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/' : './',
+	baseURL : (typeof(top.Ext)!="undefined") ? '/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/' : './',
 	init : function(){
 		jQuery("pre.abc-music").each(function(i){
 			var musicCode = this.innerHTML.replace(/<br>/g, '\n').replace(/<br \/>/g, '\n');
@@ -58,7 +49,7 @@ $exeABCmusic = {
 						if (!isNaN(c)) bpm = c;
 					}
 				}
-				player += '<a href="#" onclick="$exeABCmusic.animate('+i+','+bpm+',this);return false" title="'+$exeABCmusic.lang.play+'/'+$exeABCmusic.lang.stop+'"><span>'+$exeABCmusic.lang.animate+'</span></a>';
+				// To do: player += '<a href="#" onclick="$exeABCmusic.animate('+i+','+bpm+',this);return false" title="'+$exeABCmusic.lang.play+'/'+$exeABCmusic.lang.stop+'"><span>'+$exeABCmusic.lang.animate+'</span></a>';
 			}	
 			player += '</div>';						
 			jQuery(this).after('\
@@ -66,7 +57,7 @@ $exeABCmusic = {
 				<div id="abc-music-wrapper'+i+'" class="abc-music-wrapper">\
 					'+player+'\
 					<div id="abc-music-midi-player'+i+'" class="abc-music-midi-player"></div>\
-					<textarea readonly class="abc-music-text" name="abc-music-t'+i+'" id="abc-music-t'+i+'" cols="80" rows="8" style="display:none" onfocus="this.select()" >'+musicCode+'</textarea>\
+					<textarea readonly="readonly" class="abc-music-text" name="abc-music-t'+i+'" id="abc-music-t'+i+'" cols="80" rows="8" style="display:none" onfocus="this.select()">'+musicCode+'</textarea>\
 					<div id="abc-music-paper'+i+'" class="abc-music-paper"></div>\
 				</div>\
 			');
@@ -84,7 +75,7 @@ $exeABCmusic = {
 	},
 	downloadMidi : function(i){
 		if (typeof($exeAuthoring)!="undefined") {
-			alert($exeABCmusic.lang.warning);
+			alert(_("Go to Tools - Preview to see this working"));
 			return false;
 		}
 		window.ABCJS.midi.soundfontUrl = $exeABCmusic.baseURL;

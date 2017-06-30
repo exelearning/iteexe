@@ -149,7 +149,7 @@ class WebsitePage(Page):
         html += common.printJavaScriptIdevicesScripts('export', self)
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
-        # Some styles might have their own JavaScript files (see their config.xml fi	le)
+        # Some styles might have their own JavaScript files (see their config.xml file)
         if style.hasValidConfig:
             html += style.get_extra_head()
         html += u"</head>"+lb

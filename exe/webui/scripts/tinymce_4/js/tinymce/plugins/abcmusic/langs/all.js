@@ -10,5 +10,7 @@ tinymce.addI18n('all', {
 	'Download': _('Download'),
 	'No valid ABC code found.': _('No valid ABC code found.'),
 	'Play': _('Play'),
-	'Stop': _('Stop')
+	'Stop': _('Stop'),
+	'Go to Tools - Preview to see this working': _('Go to Tools - Preview to see this working'),
+	'ePub export warning: This might not work in some ePub readers.': _('ePub export warning: This might not work in some ePub readers.')
 });

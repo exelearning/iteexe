@@ -96,6 +96,14 @@ def nodeHasMediaelement(node):
             if nodeHasMediaelement(child):
                 return True
     return hasMediaelement
+    
+def nodeHasABCMusic(node):
+    hasABCMusic = common.hasABCMusic(node)
+    if not hasABCMusic:
+        for child in node.children:
+            if nodeHasABCMusic(child):
+                return True
+    return hasABCMusic
 
 def replaceTopLinks(html):
     return html.replace('href="#auto_top"', 'href="#"')

@@ -1,6 +1,7 @@
 /* Scribe */
 .abc-music-wrapper{width:770px;margin:0 auto}
-.abc-music,.abc-music-text{display:none;margin-top:.3em;font-family:"Courier New", Courier, monospace;font-size:1em}
+.js .abc-music,.abc-music-text{display:none;margin-top:.3em;font-family:"Courier New", Courier, monospace;font-size:1em}
+.exe-epub3 .abc-music{display:block}
 .abc-music-paper{background:#FCF9BB;margin-top:.3em}
 .abc-music{background:#FCF9BB;padding:1em}
 .abc-music-midi-player{margin:.5em 0}
