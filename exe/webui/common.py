@@ -608,6 +608,7 @@ def getJavaScriptStrings():
     s += 'correct:"'+c_("Correct")+'",'
     s += 'incorrect:"'+c_("Incorrect")+'",'
     s += 'menu:"'+c_("Menu")+'",'
+    s += 'download:"'+c_("Download")+'",'
     s += 'print:"'+c_("Print")+'"'	
     s += '}</script>'
     
