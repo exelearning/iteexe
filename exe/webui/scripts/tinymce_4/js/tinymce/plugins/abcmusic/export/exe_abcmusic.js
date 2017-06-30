@@ -30,7 +30,7 @@ $exeABCmusic = {
 		// To do (Animate is hidden): stop : "Stop",		
 		// To do (Animate is hidden): animate : "Animate"
 	},
-	baseURL : (typeof(top.Ext)!="undefined") ? '/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/' : './',
+	baseURL : (typeof(top.Ext)!="undefined" || typeof(opener.Ext)!="undefined") ? '/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/' : './',
 	init : function(){
 		jQuery("pre.abc-music").each(function(i){
 			var musicCode = this.innerHTML.replace(/<br>/g, '\n').replace(/<br \/>/g, '\n');
