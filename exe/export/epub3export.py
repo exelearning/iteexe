@@ -130,9 +130,10 @@ class PublicationEpub3(object):
 
         xmlStr += u'<item id="nav" href="nav.xhtml" properties="nav" media-type="application/xhtml+xml" />\n'
         xmlStr += u'<item id="fallback" href="fallback.xhtml" media-type="application/xhtml+xml" />\n'
+        xmlStr += u'<item id="cover" href="cover.xhtml" media-type="application/xhtml+xml" properties="cover-image"/>\n'
 
         for epubFile in self.outputDir.walk():
-            if epubFile.basename() in ['package.opf', 'nav.xhtml', 'fallback.xhtml']:
+            if epubFile.basename() in ['package.opf', 'nav.xhtml', 'fallback.xhtml', 'cover.xhtml']:
                 continue
 
             ext = epubFile.ext
@@ -150,15 +151,11 @@ class PublicationEpub3(object):
             property_list = []
 
             if ext == '.xhtml':
-                if epubFile.namebase != 'cover':
-                    property_list.append(u'scripted')
+                property_list.append(u'scripted')
                 name = epubFile.namebase
                 # We need to ensure that XHTML files have the correct mime type
                 if mimetype == u'application/octet-stream':
                     mimetype = u'application/xhtml+xml'
-
-            if epubFile.basename() == self.cover:
-                property_list.append(u'cover-image')
                 
             if name in self.specialResources['external']:
                 property_list.append(u'remote-resources')    
@@ -211,8 +208,6 @@ class PublicationEpub3(object):
         xml_str += u'<itemref idref="cover" linear="no"/>\n'
         xml_str += u'<itemref idref="nav" linear="no"/>\n'
         for page in self.pages:
-            if page.name == 'cover':
-                continue
             xml_str += self.genItemResStr(page)
         
         # We need to add an itemref tag for each linked element included in the package (images, external HTMLs...) 
@@ -500,7 +495,7 @@ class Epub3Cover(Epub3Page):
         html += u'<body>\n'
 
         if self.node.package.epubCover:
-            html += self.node.package.epubCover
+            html += u'<div style="text-align: center;"><img id="img-cover" src=\"' + self.node.package.epubCover + '\" /></div>\n'
         else:
             # If the user didn't write a cover for the ePub,
             # we try to compose one with the first image of the package
@@ -570,16 +565,14 @@ class Epub3Export(object):
         # print outputDir.abspath()
 
         # Export the package content
-        self.pages = [Epub3Cover("cover", 1, package.root)]
+        cover = Epub3Cover("cover", 1, package.root)
+        cover.save(contentPages)
 
         self.generatePages(package.root, 2)
         uniquifyNames(self.pages)
 
-        cover = None
         for page in self.pages:
             page.save(contentPages)
-            if hasattr(page, 'cover'):
-                cover = page.cover
 
         # Create mimetype file
         mimetypeFile = open(outputDir.abspath() + '/mimetype', "w")

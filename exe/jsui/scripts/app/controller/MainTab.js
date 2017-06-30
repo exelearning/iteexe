@@ -35,6 +35,18 @@ Ext.define('eXe.controller.MainTab', {
         {
             selector: '#outline_treepanel',
             ref: 'outlineTreePanel'
+        },
+        {
+            selector: '#epubCover_img',
+            ref: 'epubCoverImg'
+        },
+        {
+            selector: '#export_properties',
+            ref: 'exportPropertiesPanel'
+        },
+        {
+            selector: '#epubCover_show',
+            ref: 'epubCoverShowButton'
         }
     ],
 
@@ -93,6 +105,22 @@ Ext.define('eXe.controller.MainTab', {
             },
             '#header_background_img': {
                 beforerender: this.beforeRenderImg,
+                scope: this
+            },
+            '#epubCover_show': {
+                click: this.showEpubCover,
+                scope: this
+            },
+            '#epubCover_load': {
+                click: this.loadEpubCover,
+                scope: this
+            },
+            '#epubCover_clear': {
+                click: this.clearEpubCover,
+                scope: this
+            },
+            '#epubCover_img': {
+                beforerender: this.beforeRenderEpubCoverImg,
                 scope: this
             },
             '#update_tree': {
@@ -171,6 +199,27 @@ Ext.define('eXe.controller.MainTab', {
         }
     },
     
+    clearEpubCover: function() {
+        var formpanel = this.getExportPropertiesPanel(),
+        form, field;
+	    form = formpanel.getForm();
+	    field = form.findField('pp_epubCover');
+	    if (field) {
+	    	field.setValue(null);
+	    	form.submit({
+	    		success: function(f, action) {
+	    			var img = this.getEpubCoverImg(),
+	    				showbutton = this.getEpubCoverShowButton();
+	    			img.setSrc(null);
+	    			img.hide();
+	    			showbutton.setText(_('Show Image'));
+	    			showbutton.hide();
+	    		},
+	    		scope: this
+	    	});
+	    }
+	},
+    
     loadHeaderBackground: function() {
         var fp = Ext.create("eXe.view.filepicker.FilePicker", {
             type: eXe.view.filepicker.FilePicker.modeOpen,
@@ -206,12 +255,59 @@ Ext.define('eXe.controller.MainTab', {
         fp.show();        
     },
     
+    loadEpubCover: function() {
+        var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+            type: eXe.view.filepicker.FilePicker.modeOpen,
+            title: _("Select an image"),
+            modal: true,
+            scope: this,
+            callback: function(fp) {
+                if (fp.status == eXe.view.filepicker.FilePicker.returnOk) {
+                    var formpanel = this.getExportPropertiesPanel(),
+                        form, field;
+                    form = formpanel.getForm();
+                    field = form.findField('pp_epubCover');
+                    field.setValue(fp.file.path);
+                    form.submit({
+                        success: function(f, action) {
+                            var img = this.getEpubCoverImg(), json,
+                                showbutton = this.getEpubCoverShowButton();
+                            json = Ext.JSON.decode(action.response.responseText);
+		                    img.setSrc(location.pathname + '/resources/' + json.data.pp_epubCover);
+		                    img.show();
+                            showbutton.setText(_('Hide Image'));
+                            showbutton.show();
+                        },
+                        scope: this
+                    });
+                }
+            }
+        });
+        fp.appendFilters([
+            { "typename": _("Image Files"), "extension": "*.png", "regex": /.*\.(jpg|jpeg|png|gif)$/i },
+            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
+        ]);
+        fp.show();        
+    },
+    
+    
     beforeRenderImg: function(img) {
         img.on({
             load: function() {
                 this.getPackagePropertiesPanel().doLayout();
             },
             click: this.loadHeaderBackground,
+            scope: this,
+            element: 'el'
+        });
+    },
+    
+    beforeRenderEpubCoverImg: function(img) {
+        img.on({
+            load: function() {
+                this.getExportPropertiesPanel().doLayout();
+            },
+            click: this.loadEpubCover,
             scope: this,
             element: 'el'
         });
@@ -230,10 +326,26 @@ Ext.define('eXe.controller.MainTab', {
         }
     },
     
+    showEpubCover: function(button) {
+        var img = this.getEpubCoverImg();
+        
+        if (img.isVisible()) {
+            button.setText(_('Show Image'));
+            img.hide();
+        }
+        else {
+            button.setText(_('Hide Image'));
+            img.show();
+        }
+    },
+    
     onClickSave: function(button) {
 	    var formpanel = button.up('form'),
             form = formpanel.getForm();
 	    if (form.isValid()) {
+//	    	if(formpanel.itemId == 'export_properties'){
+//	    		tinyMCE.triggerSave();
+//	    	}
 	        Ext.Msg.wait(_('Please wait...'));       
 	        form.submit({ 
                 success: function(form, action) {
@@ -350,14 +462,23 @@ Ext.define('eXe.controller.MainTab', {
             formpanel: formpanel,
             success: function(form, action) {
                 var imgfield = form.findField('pp_backgroundImg'),
-                    showbutton = this.getHeaderBackgroundShowButton();                
+                    showbutton = this.getHeaderBackgroundShowButton();
+                var imgfieldEpubCover = form.findField('pp_epubCover'),
+                	showbuttonEpubCover = this.getEpubCoverShowButton();
                 if (imgfield && imgfield.value) {
                     var img = this.getHeaderBackgroundImg();
                     img.setSrc(location.pathname + '/resources/' + imgfield.value);
                     img.show();
                     showbutton.setText(_('Hide Image'));
                     showbutton.show();
-                }          
+                }    
+                else if(imgfieldEpubCover && imgfieldEpubCover.value){
+                        var img = this.getEpubCoverImg();
+                        img.setSrc(location.pathname + '/resources/' + imgfieldEpubCover.value);
+                        img.show();
+                        showbuttonEpubCover.setText(_('Hide Image'));
+                        showbuttonEpubCover.show();
+                }
                 else{
                     if (formpanel.xtype == 'lomdata'){
                     	//this.on('afterrender', this.extendForm, this, [form, action]);                    	
@@ -365,6 +486,7 @@ Ext.define('eXe.controller.MainTab', {
                     	//console.log('ExtendForm end');
                     }
                 	showbutton.hide();
+                	showbuttonEpubCover.hide();
                 }                    
             },
             failure: function(form, action) {

@@ -322,6 +322,7 @@ class Package(Persistable):
     _author            = ''
     _description       = ''
     _backgroundImg     = ''
+    _epubCover         = ''
     #styledefault=u"INTEF"
     # This is like a constant
     defaultLevelNames  = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
@@ -362,7 +363,7 @@ class Package(Persistable):
         self.scowwebsite   = False
         self.exportSource    = True
         self.exportMetadataType = "LOMES"
-        self.epubCover = None
+        self.epubCover = u''
         self.epubCoverCss = False
         self.license       = G.application.config.defaultLicense
         self.footer        = ""
@@ -609,6 +610,13 @@ class Package(Persistable):
         else:
             return ""
 
+    def get_epubCover(self):
+        """Get the epubCover image for this package"""
+        if self._epubCover:
+            return "file://" + self._epubCover.path
+        else:
+            return ""
+        
     def set_backgroundImg(self, value):
         """Set the background image for this package"""
         if self._backgroundImg:
@@ -623,6 +631,20 @@ class Package(Persistable):
         else:
             self._backgroundImg = u''
 
+    def set_epubCover(self, value):
+        """Set the epubCover for this package"""
+        if self._epubCover:
+            self._epubCover.delete()
+
+        if value:
+            if value.startswith("file://"):
+                value = value[7:]
+
+            imgFile = Path(value)
+            self._epubCover = Resource(self, Path(imgFile))
+        else:
+            self._epubCover = u''
+            
     def get_level1(self):
         return self.levelName(0)
 
@@ -965,6 +987,8 @@ class Package(Persistable):
     docType       = property(lambda self:self._docType, set_docType)
 
     backgroundImg = property(get_backgroundImg, set_backgroundImg)
+    
+    epubCover     = property(get_epubCover, set_epubCover)
 
     level1 = property(get_level1, set_level1)
     level2 = property(get_level2, set_level2)

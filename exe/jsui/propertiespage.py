@@ -252,7 +252,7 @@ class PropertiesPage(Renderable, Resource):
     booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile', 'pp_scowsinglepage', 'pp_scowwebsite', 'pp_exportSource',
                          'pp_intendedEndUserRoleGroup', 'pp_intendedEndUserRoleTutor', 'pp_compatibleWithVersion9')
 
-    imgFieldNames = ('pp_backgroundImg')
+    imgFieldNames = ('pp_backgroundImg', 'pp_epubCover')
 
     def __init__(self, parent):
         """
