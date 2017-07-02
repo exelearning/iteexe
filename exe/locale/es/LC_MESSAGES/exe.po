@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.1.3\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2017-07-02 20:36+0200\n"
-"PO-Revision-Date: 2017-06-24 20:56+0200\n"
+"PO-Revision-Date: 2017-07-02 20:45+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -7893,7 +7893,7 @@ msgstr "Menú"
 #: exe/webui/common.py:495
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:10
 msgid "Download"
-msgstr ""
+msgstr "Descargar"
 
 #: exe/webui/common.py:505
 msgid "Accept"
@@ -12679,35 +12679,35 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:2
 msgid "ABC Music Notation"
-msgstr ""
+msgstr "Notación musical ABC"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:4
 msgid "Animate"
-msgstr ""
+msgstr "Animar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:5
 msgid "Paste or type a valid ABC code:"
-msgstr ""
+msgstr "Pegue o teclee un código ABC válido:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:7
 msgid "Visit eXeABC for help, tunes, ABC software..."
-msgstr ""
+msgstr "Visite eXeABC para encontrar ayuda, sintonías, software ABC..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:9
 msgid "ABC Music"
-msgstr ""
+msgstr "Música ABC"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:11
 msgid "No valid ABC code found."
-msgstr ""
+msgstr "No se ha encontrado código ABC válido."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:14
 msgid "Go to Tools - Preview to see this working"
-msgstr ""
+msgstr "Vaya a Utilidades - Visualización previa para ver esto funcionando"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:15
 msgid "ePub export warning: This might not work in some ePub readers."
-msgstr ""
+msgstr "Advertencia sobre la exportación a ePub: esto podría no funcionar en algunos lectores de ePub."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:26
 msgid "Search and Replace"
@@ -13779,4 +13779,3 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
-
