@@ -221,21 +221,22 @@ class _Resource(Persistable):
                     + "; possibly an old/corrupt resource or package")
             return
 
-        siblings = []
         # We want to prevent eXe from removing images while loading a package as
         # it won't update the references to that resource
-        if not self._package.isLoading:
-            # Check if there are any resources exactly like this
-            siblings = self._package.resources.setdefault(self.checksum, [])
+        # Check if there are any resources exactly like this
+        siblings = self._package.resources.setdefault(self.checksum, [])
             
         if siblings:
             # If we're in the resource dir, and already have a filename that's different to our siblings, delete the original file
             # It probably means we're upgrading from pre-single-file-resources or someone has created the file to be imported inside the resource dir
             # We are assuming that it's not a file used by other resources...
-            newName = siblings[0]._storageName
-            if oldPath.dirname() == self._package.resourceDir and self._storageName != newName:
-                oldPath.remove()
-            self._storageName = newName
+            
+            if not self._package.isLoading:    
+            
+                newName = siblings[0]._storageName
+                if oldPath.dirname() == self._package.resourceDir and self._storageName != newName:
+                    oldPath.remove()
+                self._storageName = newName
         else:
             if Path(oldPath).dirname() == self._package.resourceDir:
                 log.debug(u"StorageName=%s was already in self._package resources" % self._storageName)
@@ -245,7 +246,7 @@ class _Resource(Persistable):
                 storageName = (self._package.resourceDir/storageName).unique()
                 self._storageName = str(storageName.basename())
                 oldPath.copyfile(self.path)
-        if self not in siblings:
+        if not self._package.resources.get(self.checksum, []) or self._package.isLoading:
             # prevent doubling-up (as might occur when cleaning corrupt files)
             siblings.append(self)
 
