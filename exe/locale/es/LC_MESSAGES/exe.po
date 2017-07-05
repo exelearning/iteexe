@@ -12952,7 +12952,7 @@ msgid ""
 "You can use MathJax for high-quality display of mathematical symbols in "
 "web browsers (it will work online only)."
 msgstr ""
-"<Puede usar MathJax para mostrar adecuadamente las fórmulas matemáticas "
+"Puede usar MathJax para mostrar adecuadamente las fórmulas matemáticas "
 "en los navegadores (necesitará una conexión a internet)."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:639

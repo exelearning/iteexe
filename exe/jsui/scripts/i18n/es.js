@@ -2131,7 +2131,7 @@ translations = {
  "webquest": "webquest", 
  "Apply": "Aplicar", 
  "iDevices": "iDevices", 
- "You can use MathJax for high-quality display of mathematical symbols in web browsers (it will work online only).": "<Puede usar MathJax para mostrar adecuadamente las f\u00f3rmulas matem\u00e1ticas en los navegadores (necesitar\u00e1 una conexi\u00f3n a internet).", 
+ "You can use MathJax for high-quality display of mathematical symbols in web browsers (it will work online only).": "Puede usar MathJax para mostrar adecuadamente las f\u00f3rmulas matem\u00e1ticas en los navegadores (necesitar\u00e1 una conexi\u00f3n a internet).", 
  "This will when clicked start the game": "Cuando se haga clic sobre \u00e9ste, se iniciar\u00e1 el juego", 
  "<p>If this option is set, the score will be shown.<\/p>": "<p>Si est\u00e1 marcada esta opci\u00f3n, se mostrar\u00e1 la puntuaci\u00f3n<\/p>", 
  "Kannada ": "Kannada ", 
