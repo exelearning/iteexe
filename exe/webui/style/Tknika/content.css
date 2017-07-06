@@ -313,6 +313,20 @@ table{
 	text-align: center;
 	text-transform: capitalize;	
 	}
+	
+.exe-table th,.exe-table-minimalist th{
+	background:#ddd;
+	color:#000
+}
+.exe-table-minimalist th{
+	background:#FFF;
+	color:#000;
+	border:0
+}
+.exe-table tbody th,.exe-table tbody td,.exe-table-minimalist tbody th,.exe-table-minimalist tbody td{
+	color:#000;
+	background:#FFF
+}
 
 @media (max-width: 700px) {
 	#main .iDeviceTitle{

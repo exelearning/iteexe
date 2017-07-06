@@ -112,6 +112,14 @@ td
 	padding: 3px;
 }
 
+.exe-table-minimalist{
+	border: 0;
+}
+
+.exe-table-minimalist td{
+	border-width: 0 0 1px 0
+}
+
 /* PARA QUE AL EXPORTAR SE QUITEN LOS BORDES DE LAS PREGUNTAS */
 .question table
 {
