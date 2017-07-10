@@ -155,6 +155,19 @@ jQuery(document).ready(function($) {
 	setTimeout(function(){
 		wraptext_checkbox.trigger("click");	
 	},200);
+	// Toggle Full Screen mode
+	if (parent && parent.codemagicDialog && typeof(parent.codemagicDialog.fullscreen)=="function") {
+		$("#maximizeEditorWrapper").show();
+		$("#maximizeEditor").click( function() {
+			if ($(this).is(':checked')){ 
+				parent.codemagicDialog.fullscreen(true);
+				$("#codemagic_insert").css("margin-bottom","20px");
+			} else { 
+				parent.codemagicDialog.fullscreen(false);
+				$("#codemagic_insert").css("margin-bottom","0");
+			}
+		});       
+	}  
 	// / The New eXeLearning
 	
 	// Toggle Auto Completion
