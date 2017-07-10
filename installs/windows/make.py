@@ -14,9 +14,12 @@ except:
     import ImageDraw
 
 # Get program files location
-# In 32 bit systems both variables have the same value
-PROGRAM_FILES = os.environ["ProgramFiles"]
-PROGRAM_FILES_32 = os.environ["ProgramFiles(x86)"]
+PROGRAM_FILES = os.environ['ProgramFiles']
+# In 32 bit systems this variable doesn't exist
+# so it should be like the previous one
+PROGRAM_FILES_32 = PROGRAM_FILES
+if os.environ.has_key('ProgramFiles(x86)'):
+    PROGRAM_FILES_32 = os.environ['ProgramFiles(x86)']
 
 # Name used for temporary file that contains branded splash screen
 BRANDED_JPG = 'splashb.jpg'
@@ -65,11 +68,11 @@ font = None
 fontcolor = '#808080'
 candrawfont = False
 try:
-	font = ImageFont.truetype("arial.ttf", 12)
-	(font_width, font_height) = font.getsize("Version:")
-	candrawfont = True
+    font = ImageFont.truetype("arial.ttf", 12)
+    (font_width, font_height) = font.getsize("Version:")
+    candrawfont = True
 except ImportError:
-	print "Could not add version number to image", sys.exc_info()[0]
+    print "Could not add version number to image", sys.exc_info()[0]
 
 # Open the image
 im = Image.open(os.path.join(CUR_DIR, "splash1.jpg"))
@@ -77,8 +80,8 @@ draw = ImageDraw.Draw(im)
 
 # Brand the splash screen (if we can)
 if candrawfont:
-	draw.text((150, 102), "Version: " + version.release, font=font, fill=fontcolor)
-	draw.text((150, 105 + font_height), "Revision: " + version.revision, font=font, fill=fontcolor)
+    draw.text((150, 102), "Version: " + version.release, font=font, fill=fontcolor)
+    draw.text((150, 105 + font_height), "Revision: " + version.revision, font=font, fill=fontcolor)
 
 # Remove the image from memory
 del draw
