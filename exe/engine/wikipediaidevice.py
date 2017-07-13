@@ -24,6 +24,7 @@ A Wikipedia Idevice is one built from a Wikipedia article.
 """
 
 import re
+import mimetypes
 from BeautifulSoup            import BeautifulSoup, Comment
 from exe.engine.idevice       import Idevice
 from exe.engine.field         import TextAreaField
@@ -84,13 +85,19 @@ within Wikipedia.""")
         Load the article from Wikipedia
         """
         self.articleName = name
-        url = ""
+        url = ''
         name = urllib.quote(name.replace(" ", "_").encode('utf-8'))
+        
+        # Get the full URL of the site
+        url = self.site or self.ownUrl
+        if not url.endswith('/') and name != '':
+            url += '/'
+        if '://' not in url:
+            url = 'http://' + url
+        url += name
+        
+        # Get the site content
         try:
-            url  = (self.site or self.ownUrl)
-            if not url.endswith('/') and name <> '': url += '/'
-            if '://' not in url: url = 'http://' + url
-            url += name
             net  = urllib.urlopen(url)
             page = net.read()
             net.close()
@@ -110,20 +117,18 @@ within Wikipedia.""")
         # BeautifulSoup is faster this way too.
         soup = BeautifulSoup(page, False)
         content = soup.first('div', {'id': "content"})
-        #Fix bug #1359: El estilo ITE no respeta ancho de página al exportar
-        #a páginas web si se usa iDevice wikipedia
+        # Fix bug #1359: El estilo ITE no respeta ancho de página al exportar
+        # a páginas web si se usa iDevice wikipedia
         content['id'] = "wikipedia-content"
 
         # remove the wiktionary, wikimedia commons, and categories boxes
-        #  and the protected icon and the needs citations box
+        # and the protected icon and the needs citations box
         if content:
-            infoboxes = content.findAll('div',
-                    {'class' : 'infobox sisterproject'})
+            infoboxes = content.findAll('div', {'class' : 'infobox sisterproject'})
             [infobox.extract() for infobox in infoboxes]
             catboxes = content.findAll('div', {'id' : 'catlinks'})
             [catbox.extract() for catbox in catboxes]
-            amboxes = content.findAll('table',
-                    {'class' : re.compile(r'.*\bambox\b.*')})
+            amboxes = content.findAll('table', {'class' : re.compile(r'.*\bambox\b.*')})
             [ambox.extract() for ambox in amboxes]
             protecteds = content.findAll('div', {'id' : 'protected-icon'})
             [protected.extract() for protected in protecteds]
@@ -133,25 +138,29 @@ within Wikipedia.""")
         else:
             content = soup.first('body')
 
+        # If we still don't have content it means there is a problem with the article
         if not content:
-            log.error("no content")
+            log.error(u"No content on Wikipedia article: %s" % url)
             self.article.content = _(u"Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
-            # set the other elements as well
+            # Set the other elements as well
             self.article.content_w_resourcePaths = self.article.content
             self.article.content_wo_resourcePaths = self.article.content
             return
 
-        # clear out any old images
+        # Clear out any old images
         while self.userResources:
             self.userResources[0].delete()
-        self.images        = {}
+        self.images = {}
 
         # Download the images
         bits = url.split('/')
         netloc = '%s//%s' % (bits[0], bits[2])
         path = '/'.join(bits[3:-1])
         tmpDir = TempDirPath()
+        
+        # Fetch all images from content
         for imageTag in content.fetch('img'):
+            # Get src and image filename
             imageSrc  = unicode(imageTag['src'])
             imageName = imageSrc.split('/')[-1]
             imageName = imageName.replace('&gt;', '>')
@@ -163,31 +172,48 @@ within Wikipedia.""")
             imageName = imageName.replace('%28', '(')
             imageName = imageName.replace('%29', ')')
             imageName = imageName.replace('%C3%A5', 'å')
-            #JRJ: decodificamos el nombre de la imagen
-            # (we decode the name of the image)
+            # Decode image name
             imageName = urllib.unquote(imageName)
             # Search if we've already got this image
             if imageName not in self.images:
-                if not imageSrc.startswith("http://"):
+                if not re.match("^http(s)?:\/\/", imageSrc):
                     if imageSrc.startswith("/"):
-                        # imageSrc = netloc + imageSrc
                         imageSrc = bits[0] + imageSrc
                     else:
                         imageSrc = '%s/%s/%s' % (netloc, path, imageSrc)               
                 try:
-                # download with its original name... in ASCII:
-                ## er... just because some repositories do not undestand no ascii names of files:
+                    # download with its original name... in ASCII:
+                    ## er... just because some repositories do not undestand no ascii names of files:
                     imageName = imageName.encode('ascii', 'ignore')
+                    
+                    # If the image file doesn't have an extension try to guess it
+                    if not re.match('^.*\.(.){1,}', imageName):
+                        # Open a conecction with the image and get the headers
+                        online_resource = urllib.urlopen(imageSrc)
+                        image_info = online_resource.info()
+                        online_resource.close()
+                        
+                        # Try to guess extension from mimetype
+                        extension = mimetypes.guess_extension(image_info['content-type'])
+                        # Wikimedia uses mainly SVG images so we can safely say that
+                        # this image is in svg (if it wasn't if wouldn't be shown anyway)
+                        extension = extenion or '.png'
+                        imageName = imageName + extension
+                    
+                    # Download image
                     urllib.urlretrieve(imageSrc, tmpDir/imageName)
+                    # Add the new resource
                     new_resource = Resource(self, tmpDir/imageName)
                 except:
-                    print 'Unable to download file'                                         
+                    log.error(u'Unable to download file: %s' % imageSrc)
+                    # If there is an exception try to get the next one
+                    continue
                 if new_resource._storageName != imageName:
                     # looks like it was changed due to a possible conflict,
                     # so reset the imageName accordingly for the content:
                     imageName = new_resource._storageName
                 self.images[imageName] = True
-            imageTag['src'] = (u"resources/" + imageName)
+            imageTag['src'] = u"resources/" + imageName
         self.article.content = self.reformatArticle(netloc, unicode(content))
         # now that these are supporting images, any direct manipulation
         # of the content field must also store this updated information
