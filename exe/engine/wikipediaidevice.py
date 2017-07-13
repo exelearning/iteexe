@@ -197,7 +197,7 @@ within Wikipedia.""")
                         extension = mimetypes.guess_extension(image_info['content-type'])
                         # Wikimedia uses mainly SVG images so we can safely say that
                         # this image is in svg (if it wasn't if wouldn't be shown anyway)
-                        extension = extenion or '.png'
+                        extension = extenion or '.svg'
                         imageName = imageName + extension
                     
                     # Download image
