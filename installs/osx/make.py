@@ -21,6 +21,7 @@ try:
 except getopt.GetoptError:
     print "make {-p|--package}"
     sys.exit(2)
+do_make_image = False
 for o, a in opts:
     if o in ("-p", "--package"):
         do_make_image = True

@@ -124,6 +124,18 @@ abbr[title],acronym[title]{text-decoration:none;border-bottom:1px dotted} /* Unt
 .sr-av,.js .js-sr-av,#skipNav a,.exe-hidden-accessible{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0} /* sr-av: Avaible for Screen Readers. (0 0 0 0) is for IE6 & 7 */
 #skipNav a{background:#333;color:#fff;padding:.4em .85em}
 #skipNav a:active,#skipNav a:focus{position:static;overflow:visible;clip:auto;height:auto}
+/* Tables */
+.exe-table{background:#fff;margin:2em auto;max-width:100%;border:1px solid #CCC;border-collapse:collapse;border-spacing:0}
+.exe-table caption{padding:.5em 0;text-align:center;font-style:italic}
+.exe-table td,.exe-table th{border:1px solid #CCC;margin:0;padding:0.5em 1em}
+.exe-table thead{background:#ddd;color:#000;text-align:left}
+.exe-table tr:nth-child(2n-1) td,.exe-table tbody tr:nth-child(2n-1) th{background:#F4F4F4}
+.exe-table-minimalist{background:#fff;margin:2em auto;border-collapse:collapse}
+.exe-table-minimalist thead th{color:#000;padding:.6em 1.5em .6em .8em;border-bottom:2px solid #CCC;text-align:left}
+.exe-table-minimalist td,.exe-table-minimalist tbody th{border-bottom:1px solid #ccc;color:#555;padding:.5em 1.5em .5em .8em}
+.exe-table-minimalist tbody tr:hover td,.exe-table-minimalist tbody tr:hover th{color:#222}
+.exe-table-minimalist tr:nth-child(2n-1) td,.exe-table-minimalist tbody tr:nth-child(2n-1) th{background:#F9F9F9}
+.exe-table-minimalist caption{text-align:center;font-style:italic;border-bottom:2px solid #CCC;padding:.6em 0}
 /* Tooltips */
 body .qtip {font-size:.85em;line-height:1.5em}
 .js .exe-tooltip-text{display:none}

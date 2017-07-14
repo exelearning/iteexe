@@ -61,7 +61,9 @@ var $exeTinyMCE = {
 		var rightClasses = [
 			{text: '-- Not Set --', value: ''},
 			{text: 'exe-hidden', value: 'exe-hidden'},
-			{text: 'exe-hidden-accessible', value: 'exe-hidden-accessible'}
+			{text: 'exe-hidden-accessible', value: 'exe-hidden-accessible'},
+			{text: 'exe-table', value: 'exe-table'},
+			{text: 'exe-table-minimalist', value: 'exe-table-minimalist'}
 		];
 		
 		for (var z=0;z<classes.length;z++) {

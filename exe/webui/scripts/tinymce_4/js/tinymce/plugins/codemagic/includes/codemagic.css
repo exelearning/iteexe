@@ -116,8 +116,12 @@
 	display:block;
     text-align:center;
 }
-#autocompletion, #highlighting {
+#autocompletion, #highlighting, #maximizeEditor {
 	margin-left:30px;
+}
+
+#maximizeEditorWrapper{
+    display:none;
 }
 
 #search_panel {

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-24 20:38+0200\n"
+"POT-Creation-Date: 2017-07-02 20:36+0200\n"
 "PO-Revision-Date: 2007-12-07 17:53+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language: hu\n"
@@ -681,7 +681,7 @@ msgstr ""
 #: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
 #: exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:846
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:847
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:228
@@ -736,7 +736,7 @@ msgstr ""
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:182
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
-#: exe/webui/common.py:753 exe/webui/common.py:763
+#: exe/webui/common.py:754 exe/webui/common.py:764
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
 #: exe/webui/element.py:2480 exe/webui/element.py:2615
 #: exe/webui/element.py:2730 exe/webui/element.py:2931
@@ -1435,7 +1435,7 @@ msgstr ""
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#: exe/webui/common.py:505
+#: exe/webui/common.py:506
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:9
 #: exe/webui/tools/style-designer/langs/en.js:59
 msgid "Yes"
@@ -1443,7 +1443,7 @@ msgstr ""
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#: exe/webui/common.py:506
+#: exe/webui/common.py:507
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:10
 #: exe/webui/tools/style-designer/langs/en.js:60
 msgid "No"
@@ -1661,7 +1661,7 @@ msgstr "Olvasnivaló 0.11"
 msgid "Reading Activity"
 msgstr "Olvasnivaló"
 
-#: exe/engine/hangmanidevice.py:51 exe/webui/common.py:503
+#: exe/engine/hangmanidevice.py:51 exe/webui/common.py:504
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:16
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:168
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:434
@@ -1693,7 +1693,7 @@ msgstr ""
 msgid "Alphabet to Select From"
 msgstr ""
 
-#: exe/engine/hangmanidevice.py:77 exe/webui/common.py:523
+#: exe/engine/hangmanidevice.py:77 exe/webui/common.py:524
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:21
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:75
 msgid "abcdefghijklmnopqrstuvwxyz"
@@ -1747,7 +1747,7 @@ msgstr ""
 msgid "Text for reset button"
 msgstr ""
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:515
+#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:516
 #: exe/webui/element.py:1551 exe/webui/element.py:1807
 msgid "Restart"
 msgstr "Újraindítás"
@@ -3509,8 +3509,8 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr ""
 
-#: exe/export/epub3export.py:718 exe/export/epub3subexport.py:664
-#: exe/export/imsexport.py:621 exe/export/scormexport.py:764
+#: exe/export/epub3export.py:728 exe/export/epub3subexport.py:675
+#: exe/export/imsexport.py:633 exe/export/scormexport.py:773
 #: exe/export/websiteexport.py:103
 #, python-format
 msgid ""
@@ -3528,19 +3528,19 @@ msgstr ""
 msgid "educational description"
 msgstr ""
 
-#: exe/export/scormpage.py:179 exe/export/websitepage.py:347
+#: exe/export/scormpage.py:183 exe/export/websitepage.py:351
 #: exe/webui/common.py:486
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:159
 msgid "Previous"
 msgstr "Előző"
 
-#: exe/export/scormpage.py:180 exe/export/websitepage.py:353
+#: exe/export/scormpage.py:184 exe/export/websitepage.py:357
 #: exe/webui/common.py:487
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:152
 msgid "Next"
 msgstr "Következő"
 
-#: exe/export/singlepage.py:249
+#: exe/export/singlepage.py:254
 msgid "You can close this window"
 msgstr ""
 
@@ -3549,7 +3549,7 @@ msgstr ""
 msgid "Licensed under the"
 msgstr "A tananyag a követkkező licenc alá esik:"
 
-#: exe/export/websitepage.py:153
+#: exe/export/websitepage.py:157
 msgid "Skip navigation"
 msgstr ""
 
@@ -4770,7 +4770,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomSections.js:58 exe/webui/common.py:510
+#: exe/jsui/scripts/app/view/forms/LomSections.js:58 exe/webui/common.py:511
 msgid "Status"
 msgstr ""
 
@@ -5514,7 +5514,7 @@ msgstr ""
 msgid "Save As..."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157 exe/webui/common.py:495
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157 exe/webui/common.py:496
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:148
 msgid "Print"
@@ -5628,6 +5628,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:147
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:6
 msgid "Preview"
 msgstr "Előnézet"
 
@@ -7576,7 +7577,7 @@ msgstr ""
 msgid "Hide"
 msgstr "Elrejtés"
 
-#: exe/webui/common.py:490 exe/webui/common.py:728 exe/webui/element.py:1541
+#: exe/webui/common.py:490 exe/webui/common.py:729 exe/webui/element.py:1541
 #: exe/webui/element.py:2472 exe/webui/listablock.py:275
 msgid "Show Feedback"
 msgstr "Mutassa a visszajelzést"
@@ -7585,7 +7586,7 @@ msgstr "Mutassa a visszajelzést"
 msgid "Hide Feedback"
 msgstr "Visszajelzés elrejtése"
 
-#: exe/webui/common.py:492 exe/webui/common.py:507 exe/webui/element.py:2275
+#: exe/webui/common.py:492 exe/webui/common.py:508 exe/webui/element.py:2275
 #: exe/webui/stylemanagerpage.py:467 exe/webui/stylemanagerpage.py:480
 msgid "Correct"
 msgstr "Helyes"
@@ -7599,71 +7600,77 @@ msgstr "Helytelen!"
 msgid "Menu"
 msgstr ""
 
-#: exe/webui/common.py:504
+#: exe/webui/common.py:495
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:10
+msgid "Download"
+msgstr ""
+
+#: exe/webui/common.py:505
 msgid "Accept"
 msgstr ""
 
-#: exe/webui/common.py:508 exe/webui/element.py:2711 exe/webui/element.py:2729
+#: exe/webui/common.py:509 exe/webui/element.py:2711 exe/webui/element.py:2729
 msgid "Wrong"
 msgstr "Rossz"
 
-#: exe/webui/common.py:509
+#: exe/webui/common.py:510
 msgid "Right answer"
 msgstr ""
 
-#: exe/webui/common.py:511
+#: exe/webui/common.py:512
 msgid "Selected letters"
 msgstr ""
 
-#: exe/webui/common.py:512
+#: exe/webui/common.py:513
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:36
 msgid "Word"
 msgstr ""
 
-#: exe/webui/common.py:513
+#: exe/webui/common.py:514
 msgid "Words"
 msgstr ""
 
-#: exe/webui/common.py:514
+#: exe/webui/common.py:515
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:12
 #, fuzzy
 msgid "Play"
 msgstr "Feltöltés"
 
-#: exe/webui/common.py:516
+#: exe/webui/common.py:517
 msgid "Results"
 msgstr ""
 
-#: exe/webui/common.py:517
+#: exe/webui/common.py:518
 msgid "Total"
 msgstr ""
 
-#: exe/webui/common.py:518
+#: exe/webui/common.py:519
 #, fuzzy
 msgid "Another word"
 msgstr "Új opció hozzáadása"
 
-#: exe/webui/common.py:519
+#: exe/webui/common.py:520
 msgid "Game over."
 msgstr ""
 
-#: exe/webui/common.py:520
+#: exe/webui/common.py:521
 msgid "Reload the game?"
 msgstr ""
 
-#: exe/webui/common.py:521
+#: exe/webui/common.py:522
 msgid "Click on \"Play\" to start a new game."
 msgstr ""
 
-#: exe/webui/common.py:522
+#: exe/webui/common.py:523
 msgid "Click on \"Another word\" to continue."
 msgstr ""
 
-#: exe/webui/common.py:544 exe/webui/editorpage.py:235
+#: exe/webui/common.py:545 exe/webui/editorpage.py:235
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: eLearning XHTML szerkesztő"
 
-#: exe/webui/common.py:852 exe/webui/common.py:855
+#: exe/webui/common.py:853 exe/webui/common.py:856
 msgid "Click for completion instructions"
 msgstr "A teljes utasítás megjelenítéséhez kattintson egyet!"
 
@@ -9815,6 +9822,7 @@ msgid "Replace?"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:11
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:13
 msgid "Stop"
 msgstr ""
 
@@ -10136,6 +10144,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:34
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:37
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:43
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:8
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:264
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:453
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:857
@@ -12313,6 +12322,38 @@ msgid ""
 "The <acronym> tag is not supported in HTML5.\n"
 "\n"
 "Use the <abbr> tag instead?"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:2
+msgid "ABC Music Notation"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:4
+msgid "Animate"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:5
+msgid "Paste or type a valid ABC code:"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:7
+msgid "Visit eXeABC for help, tunes, ABC software..."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:9
+msgid "ABC Music"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:11
+msgid "No valid ABC code found."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:14
+msgid "Go to Tools - Preview to see this working"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:15
+msgid "ePub export warning: This might not work in some ePub readers."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:26
