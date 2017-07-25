@@ -1,5 +1,5 @@
 /**
- * Simple Text iDevice (edition code)
+ * Information - Just a simple Text iDevice (edition code)
  *
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Ignacio Gros (http://gros.es/) for http://exelearning.net/
