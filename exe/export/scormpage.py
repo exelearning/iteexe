@@ -129,14 +129,14 @@ class ScormPage(Page):
             if style.hasValidConfig:
                 html += style.get_extra_head()        
             html += u"</head>"+lb
-            html += u"<body class=\"exe-scorm\" "
+            html += u"<body id=\""+self.node.id+"\" class=\"exe-scorm\" "
         else:
             html += u"<script type=\"text/javascript\" src=\"SCORM_API_wrapper.js\"></script>"+lb
             html += u"<script type=\"text/javascript\" src=\"SCOFunctions.js\"></script>"+lb
             if style.hasValidConfig:
                 html += style.get_extra_head()
             html += u"</head>"+lb            
-            html += u'<body class=\"exe-scorm\" '
+            html += u'<body id="exe-node-'+self.node.id+'" class=\"exe-scorm\" '
         if common.hasQuizTest(self.node):
             html += u'onunload="unloadPage(true)">'
         else:

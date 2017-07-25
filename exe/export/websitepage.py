@@ -152,7 +152,7 @@ class WebsitePage(Page):
         if style.hasValidConfig:
             html += style.get_extra_head()
         html += u"</head>"+lb
-        html += u'<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>'+lb
+        html += u'<body class="exe-web-site" id="exe-node-'+self.node.id+'"><script type="text/javascript">document.body.className+=" js"</script>'+lb
         html += u"<div id=\"content\">"+lb
         html += '<p id="skipNav"><a href="#main" class="sr-av">' + c_('Skip navigation')+'</a></p>'+lb
 

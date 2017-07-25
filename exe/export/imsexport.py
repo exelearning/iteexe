@@ -367,7 +367,7 @@ class IMSPage(Page):
         if style.hasValidConfig:
             html += style.get_extra_head()
         html += u"</head>"+lb
-        html += u'<body class="exe-ims"><script type="text/javascript">document.body.className+=" js"</script>'+lb
+        html += u'<body class="exe-ims" id="exe-node-'+self.node.id+'"><script type="text/javascript">document.body.className+=" js"</script>'+lb
         html += u"<div id=\"outer\">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
         html += u"<"+headerTag+" id=\"nodeDecoration\">"
