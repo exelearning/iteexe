@@ -463,21 +463,12 @@ class IMSExport(object):
         self.metadataType = package.exportMetadataType
 
 
-        # Copy the style sheet files to the output dir
+        # Copy the style files to the output dir
         # But not nav.css
         styleFiles = [self.styleDir/'..'/'popup_bg.gif']
-        styleFiles += self.styleDir.files("*.css")
+        styleFiles += self.styleDir.files("*.*")
         if "nav.css" in styleFiles:
             styleFiles.remove("nav.css")
-        styleFiles += self.styleDir.files("*.jpg")
-        styleFiles += self.styleDir.files("*.gif")
-        styleFiles += self.styleDir.files("*.png")
-        styleFiles += self.styleDir.files("*.js")
-        styleFiles += self.styleDir.files("*.html")
-        styleFiles += self.styleDir.files("*.ttf")
-        styleFiles += self.styleDir.files("*.eot")
-        styleFiles += self.styleDir.files("*.otf")
-        styleFiles += self.styleDir.files("*.woff")
         self.styleDir.copylist(styleFiles, outputDir)
 
         # copy the package's resource files

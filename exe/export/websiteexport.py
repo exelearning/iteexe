@@ -177,19 +177,9 @@ class WebsiteExport(object):
         """
        
         if os.path.isdir(self.stylesDir):
-            # Copy the style sheet files to the output dir
+            # Copy the style files to the output dir
             styleFiles = [self.stylesDir/'..'/'popup_bg.gif']
-            styleFiles += self.stylesDir.files("*.css")
-            styleFiles += self.stylesDir.files("*.jpg")
-            styleFiles += self.stylesDir.files("*.gif")
-            styleFiles += self.stylesDir.files("*.png")
-            styleFiles += self.stylesDir.files("*.js")
-            styleFiles += self.stylesDir.files("*.html")
-            styleFiles += self.stylesDir.files("*.ico")
-            styleFiles += self.stylesDir.files("*.ttf")
-            styleFiles += self.stylesDir.files("*.eot")
-            styleFiles += self.stylesDir.files("*.otf")
-            styleFiles += self.stylesDir.files("*.woff")
+            styleFiles += self.stylesDir.files("*.*")
             self.stylesDir.copylist(styleFiles, outputDir)
 
         # copy the package's resource files

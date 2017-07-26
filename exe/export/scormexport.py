@@ -556,7 +556,7 @@ class ScormExport(object):
         if self.hasForum:
             manifest.save("discussionforum.xml")
         
-        # Copy the style sheet files to the output dir
+        # Copy the style files to the output dir
         
         styleFiles = [self.styleDir/'..'/'popup_bg.gif']
         # And with all the files of the style we avoid problems:
