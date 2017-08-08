@@ -155,7 +155,7 @@ class AuthoringPage(RenderableResource):
         html += u'<!-- start authoring page -->\n'
         html += u'<div id="nodeDecoration">\n'
         html += u'<div id="headerContent">\n'
-        html += u'<h1 id="nodeTitle">\n'
+        html += u'<h1 id="nodeTitle">'
         html += escape(topNode.titleLong)
         html += u'</h1>\n'
         html += u'</div>\n'
