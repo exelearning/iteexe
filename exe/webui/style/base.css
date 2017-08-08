@@ -28,7 +28,7 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
     .iDevice_solution li span{display:none}    
     /*.feedbackbutton,.feedback-button{display:none!important}*/
     #main{margin-left:10px}
-    div.node{page-break-after:always}
+    div.node,article.node{page-break-after:always}
     .external-iframe{display:none}
     .external-iframe-src{display:block!important;margin:2em 0;font-size:.95em;text-align:center}	
 }
