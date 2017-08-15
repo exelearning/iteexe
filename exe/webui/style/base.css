@@ -90,6 +90,11 @@ p.exe-block-danger{padding:1em}
 p.exe-block-info{padding:1em}
 .exe-block-success{background:#E5F3E0;color:#336634;border:1px solid #DEEDD1;padding:0 1em;border-radius:4px}
 p.exe-block-success{padding:1em}
+.exe-block-warning a{color:#4F360A}
+.exe-block-alert a{color:#5B2600}
+.exe-block-danger a{color:#6D1211}
+.exe-block-info a{color:#063853}
+.exe-block-success a{color:#093C0A}
 /* Enlarge icon */
 .js a.exe-enlarge{position:relative;display:block}
 .exe-enlarge-icon{display:none;width:30px;height:30px;position:absolute;top:50%;left:50%;margin:-15px 0 0 -15px;border-radius:15px;background:#333;z-index:10;box-shadow:0 0 7px 0 #DDD}
