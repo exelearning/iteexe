@@ -47,7 +47,10 @@ class WebsitePage(Page):
         file.  'outputDir' is the directory where the filenames will be saved
         (a 'path' instance)
         """
-        outfile = open(outputDir / self.name+".html", "wb")
+        ext = 'html'
+        if G.application.config.cutFileName == '1':
+            ext = 'htm'
+        outfile = open(outputDir / self.name + '.' + ext, "wb")
         outfile.write(self.render(prevPage, nextPage, pages))
         outfile.close()
         
@@ -286,10 +289,13 @@ class WebsitePage(Page):
             while depth > page.depth and page.depth > 0:
                 html += lb+self.indent(depth-1)+"</ul>"+lb+self.indent(depth-1)+"</li>"
                 depth -= 1
-            
+            # If checked ISO 9660 change the file extension 
+            ext = 'html'
+            if G.application.config.cutFileName == '1':
+                ext = 'htm'
             # The active node must have a special style
             if page.node == self.node:
-                html += lb+self.indent(depth)+"<li id=\"active\"><a href=\""+quote(page.name)+".html\" "
+                html += lb + self.indent(depth) + "<li id=\"active\"><a href=\"" + quote(page.name) + '.' + ext + "\""
 
                 if page.node.children:
                     html += "class=\"active daddy"
@@ -298,13 +304,13 @@ class WebsitePage(Page):
 
             # A node in the path of the active node (but not the main one) 
             elif page.node in nodePath and page.node.parent != None:
-                html += lb+self.indent(depth)+"<li class=\"current-page-parent\"><a href=\""+quote(page.name)+".html\" "
+                html += lb + self.indent(depth) + "<li class=\"current-page-parent\"><a href=\"" + quote(page.name) + '.' + ext + "\""
 
                 if page.node.children:
                     html += "class=\"current-page-parent daddy"
 
             else:
-                html += lb+self.indent(depth)+"<li><a href=\""+quote(page.name)+".html\" class=\""
+                html += lb + self.indent(depth) + "<li><a href=\"" + quote(page.name) + '.' + ext + "\" class=\""
                 if page.node.children:
                     html += "daddy"
                 else:
@@ -345,18 +351,21 @@ class WebsitePage(Page):
         if dT == "HTML5":
             navTag = "nav"
         html = "<"+navTag+" class=\"pagination noprt\">"+lb
-
+        ext = 'html'
+        if G.application.config.cutFileName == '1':
+            ext = 'htm'
+            
         if prevPage:
-            html += "<a href=\""+quote(prevPage.name)+".html\" class=\"prev\"><span>"
+            html += "<a href=\"" + quote(prevPage.name) + '.' + ext + "\" class=\"prev\"><span>"
             html += "<span>&laquo; </span>%s</span></a>" % c_('Previous')
 
         if nextPage:
             if prevPage:
                 html += ' <span class="sep">| </span>'
-            html += "<a href=\""+quote(nextPage.name)+".html\" class=\"next\"><span>"
+            html += "<a href=\"" + quote(nextPage.name) + '.' + ext + "\" class=\"next\"><span>"
             html += "%s<span> &raquo;</span></span></a>" % c_('Next')
             
-        html += lb+"</"+navTag+">"+lb
+        html += lb + "</" + navTag + ">" + lb
         return html
 
 

@@ -114,14 +114,17 @@ class WebsiteExport(object):
         zipped.close()
 
     def appendPageReport(self, page, package):
-        if not page.node.idevices:self.report += u'"%s","%s",%d,"%s",,,,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.html')
+        ext = 'html'
+        if G.application.config.cutFileName == "1":
+            ext = 'htm'
+        if not page.node.idevices:self.report += u'"%s","%s",%d,"%s",,,,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext)
         for idevice in page.node.idevices:
-            if not idevice.userResources:self.report += u'"%s","%s",%d,"%s","%s","%s",,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.html', idevice.klass, idevice.title)
+            if not idevice.userResources:self.report += u'"%s","%s",%d,"%s","%s","%s",,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title)
             for resource in idevice.userResources:
                 if type(resource) == Resource:
-                    self.report += u'"%s","%s",%d,"%s","%s","%s","%s","%s","%s","%s"\n' % (package.filename,page.node.title, page.depth, page.name + '.html', idevice.klass, idevice.title, resource.storageName, resource.userName, resource.path, resource.checksum)
+                    self.report += u'"%s","%s",%d,"%s","%s","%s","%s","%s","%s","%s"\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource.storageName, resource.userName, resource.path, resource.checksum)
                 else:
-                    self.report += u'"%s",%d,"%s","%s","%s","%s",,,\n' % (package.filename,page.node.title, page.depth, page.name + '.html', idevice.klass, idevice.title, resource)
+                    self.report += u'"%s",%d,"%s","%s","%s","%s",,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource)
 
     def export(self, package):
         """ 
@@ -317,10 +320,12 @@ class WebsiteExport(object):
             (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
             (outputDir/'content.data').write_bytes(encodeObject(package))
             (outputDir/'contentv3.xml').write_bytes(encodeObjectToXML(package))
-
+        ext = 'html'
+        if G.application.config.cutFileName == "1":
+            ext = 'htm'
         if package.license == "license GFDL":
             # include a copy of the GNU Free Documentation Licence
-            (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
+            (self.templatesDir/'fdl' + '.' + ext).copyfile(outputDir/'fdl' + '.' + ext)
 
 
     def generatePages(self, node, depth):

@@ -72,8 +72,11 @@ class SinglePageExport(object):
         self.style = package.style
 
         self.page = SinglePage("index", 1, package.root)
+        ext = 'html'
+        if G.application.config.cutFileName == "1":
+            ext = 'htm'
 
-        self.page.save(self.outputDir/"index.html", for_print)
+        self.page.save(self.outputDir/"index" + '.' + ext, for_print)
         if hasattr(package, 'exportSource') and package.exportSource and not for_print:
             (G.application.config.webDir/'templates'/'content.xsd').copyfile(self.outputDir/'content.xsd')
             (self.outputDir/'content.data').write_bytes(encodeObject(package))
@@ -135,7 +138,10 @@ class SinglePageExport(object):
 
         if package.license == "license GFDL":
             # include a copy of the GNU Free Documentation Licence
-            (self.templatesDir/'fdl.html').copyfile(self.outputDir/'fdl.html')
+            ext = 'html'
+            if G.application.config.cutFileName == "1":
+                ext = 'htm'
+            (self.templatesDir/'fdl' + '.' + ext).copyfile(self.outputDir/'fdl' + '.' + ext)
 
     def compruebaReproductores(self, node):
         """

@@ -197,6 +197,7 @@ class PreferencesPage(RenderableResource):
             data['browser'] = browserSelected
             data['showPreferencesOnStart'] = self.config.showPreferencesOnStart
             data['forceEditableExport'] = self.config.forceEditableExport
+            data['cutFileName'] = self.config.cutFileName
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to get preferences")})
@@ -237,6 +238,10 @@ class PreferencesPage(RenderableResource):
             forceEditableExport = request.args['forceEditableExport'][0]
             self.config.forceEditableExport = forceEditableExport
             self.config.configParser.set('user', 'forceEditableExport', forceEditableExport)
+            
+            cutFileName = request.args['cutFileName'][0]
+            self.config.cutFileName = cutFileName
+            self.config.configParser.set('user', 'cutFileName', cutFileName)
             
             browser = request.args['browser'][0]
             if browser == "None":

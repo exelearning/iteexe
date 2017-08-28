@@ -24,6 +24,7 @@ Export Pages functions
 import logging
 from urllib import quote
 from exe.webui import common
+from exe import globals as G
 
 
 log = logging.getLogger(__name__)
@@ -66,31 +67,58 @@ class Page(object):
 # ===========================================================================
 def uniquifyNames(pages):
     """
-    Make sure all the page names are unique
+    Make sure all the page names are unique.
+    If the config option for compatibility with ISO 9660 is enabled,
+    cut the page names accordingly.
     """
-    pageNames = {}
+    page_names = []
 
-    # First identify the duplicate names
-    for page in pages:
-        if page.name in pageNames:
-            pageNames[page.name] = 1
-        else:
-            pageNames[page.name] = 0
+    # Extension
+    extension = 'html'
+    if G.application.config.cutFileName == '1':
+        extension = 'htm'
 
-    # Then uniquify them
+    # Go through all the pages finding duplicates (and cutting names)
     for page in pages:
-        uniquifier = pageNames[page.name]
-        if uniquifier:
-            pageNames[page.name] = uniquifier + 1
-            if uniquifier > 1:
-                page.name += unicode(uniquifier)
-                
+        page_name = page.name
+
+        # If ISO9660 compatibility is enabled, cut file name to
+        # 8 chars
+        if G.application.config.cutFileName == '1':
+            page_name = page_name[:8]
+
         # If the page name is in the forbidden list,
         # simply append an underscore at the end of it
         if page.name.upper() in forbiddenPageNames:
-            page.name += '_'
-        
-        # for export, temporarily set this unique name on the node itself,
+            page_name += '_'
+
+        # Try to find a page name that doesn't exist
+        duplicates = 0
+        while page_name in page_names:
+            # The first time add the number, the following replace the previous one
+            if duplicates == 0:
+                # Add number at the end or replace the last char if ISO9660 compatibility
+                # is enabled and the name is 8 chars long
+                if G.application.config.cutFileName == '1' and len(page_name) == 8:
+                    page_name = page_name[:-1] + unicode(duplicates)
+                else:
+                    page_name += unicode(duplicates)
+            else:
+                # Replace previous number (if ISO9660 is enabled and we already
+                # filled the 8 chars, ensure we keep it in 8 chars)
+                if G.application.config.cutFileName == '1' and len(page_name) == 8:
+                    page_name = page_name[:-len(str(duplicates))] + unicode(duplicates)
+                else:
+                    page_name = page_name[:-len(str(duplicates - 1))] + unicode(duplicates)
+
+            duplicates += 1
+
+        # We have a unique page name, save it so we can use it in the following ones
+        page_names.append(page_name)
+
+        # Save page name on page info
+        page.name = page_name
+        # For export, temporarily set this unique name on the node itself,
         # such that any links to it can use the proper target; also
         # including the quote() & ".html", as per WebsitePage's:
-        page.node.tmp_export_filename = quote(page.name) + ".html"
+        page.node.tmp_export_filename = quote(page_name) + '.' +  extension

@@ -1394,7 +1394,10 @@ class MainPage(RenderableLivePage):
             except UnicodeEncodeError:
                 os.startfile(filename.encode(Path.fileSystemEncoding))
         else:
-            filename /= 'index.html'
+            if (filename / 'index.html').exists():
+                filename /= 'index.html'
+            else:
+                filename /= 'index.htm'
             G.application.config.browser.open('file://' + filename)
 
     def _loadPackage(self, client, filename, newLoad=True,

@@ -201,7 +201,12 @@ class Manifest(object):
         """
         itemId   = "ITEM-"+unicode(self.idGenerator.generate())
         resId    = "RES-"+unicode(self.idGenerator.generate())
-        filename = page.name+".html"
+        # If ISO9660 compatible mode is active, we want '.htm' as the extension 
+        ext = 'html'
+        if G.application.config.cutFileName == '1':
+            ext = 'htm'
+
+        filename = page.name + '.' + ext
             
         
         self.itemStr += "<item identifier=\""+itemId+"\" isvisible=\"true\" "
@@ -272,7 +277,10 @@ class IMSPage(Page):
         the filename will be the 'self.node.id'.html or 'index.html' if
         self.node is the root node. 'outputDir' must be a 'Path' instance
         """
-        out = open(outputDir/self.name+".html", "wb")
+        ext = 'html'
+        if G.application.config.cutFileName == '1':
+            ext = 'htm'
+        out = open(outputDir/self.name + '.' + ext, "wb")
         out.write(self.render())
         out.close()
         
@@ -644,6 +652,8 @@ class IMSExport(object):
         for child in node.children:
             pageName = child.titleShort.lower().replace(" ", "_")
             pageName = re.sub(r"\W", "", pageName)
+            if G.application.config.cutFileName == "1":
+                pageName = pageName[0:8]
             if not pageName:
                 pageName = "__"
 
