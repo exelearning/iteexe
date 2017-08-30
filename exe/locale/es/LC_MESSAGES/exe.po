@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.3\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2017-08-30 12:47+0200\n"
-"PO-Revision-Date: 2017-07-02 20:45+0200\n"
+"POT-Creation-Date: 2017-08-30 12:54+0200\n"
+"PO-Revision-Date: 2017-08-30 13:11+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -3112,8 +3112,8 @@ msgstr ""
 
 #: exe/engine/resource.py:392
 #, python-format
-msgid "Unknow extension %s of file %s%s can't be transformed to ISO 9660."
-msgstr ""
+msgid "Unknown extension %s of file %s%s can't be transformed to ISO 9660."
+msgstr "Error al intentar convertir a ISO 9660 la extensión desconocida %s del fichero %s%s."
 
 #: exe/engine/resource.py:664
 msgid ""
@@ -5658,14 +5658,14 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:282
 msgid "Naming standard for exported content"
-msgstr ""
+msgstr "Estándar de nombrado para el contenido exportado"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:289
 msgid ""
 "If \"ISO 9660\" is selected, file names will be cut to 8.3 format to be "
 "compliant with ISO 9660. Note: This option only works with SCORM and Web "
 "Page export types."
-msgstr ""
+msgstr "Si se selecciona \"ISO 9660\", los nombres de los ficheros se reducirán al formato 8.3 para cumplir el estándar ISO 9660. Nota: esta opción sólo funciona con los tipos de exportación SCORM y Página web."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:328
 msgid "Show this window on eXe start"
@@ -7656,7 +7656,7 @@ msgstr "Etiqueta:"
 #: exe/webui/authoringpage.py:177
 #, python-format
 msgid "Warning: %s"
-msgstr ""
+msgstr "Aviso: %s"
 
 #: exe/webui/block.py:184
 msgid "IDevice broken"
@@ -13804,4 +13804,3 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
-

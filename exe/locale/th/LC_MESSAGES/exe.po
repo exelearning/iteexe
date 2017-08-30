@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-30 12:47+0200\n"
+"POT-Creation-Date: 2017-08-30 12:54+0200\n"
 "PO-Revision-Date: 2007-09-12 06:29+1200\n"
 "Last-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\n"
 "Language: th\n"
@@ -2545,7 +2545,7 @@ msgstr ""
 
 #: exe/engine/resource.py:392
 #, python-format
-msgid "Unknow extension %s of file %s%s can't be transformed to ISO 9660."
+msgid "Unknown extension %s of file %s%s can't be transformed to ISO 9660."
 msgstr ""
 
 #: exe/engine/resource.py:664
