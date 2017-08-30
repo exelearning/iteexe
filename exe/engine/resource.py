@@ -389,7 +389,7 @@ class _Resource(Persistable):
             elif ext == '.svgz':
                 return '.svg'
             else:
-                self.warningMsg = (_(u'Unknow extension %s of file %s%s can\'t be transformed to ISO 9660.') % (ext, nameBase, ext))
+                self.warningMsg = (_(u'Unknown extension %s of file %s%s can\'t be transformed to ISO 9660.') % (ext, nameBase, ext))
                 return ext
         else:
             return ext
