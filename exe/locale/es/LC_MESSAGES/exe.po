@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.3\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2017-08-30 12:54+0200\n"
-"PO-Revision-Date: 2017-08-30 13:11+0200\n"
+"POT-Creation-Date: 2017-08-31 12:00+0200\n"
+"PO-Revision-Date: 2017-08-31 12:09+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -3113,7 +3113,9 @@ msgstr ""
 #: exe/engine/resource.py:392
 #, python-format
 msgid "Unknown extension %s of file %s%s can't be transformed to ISO 9660."
-msgstr "Error al intentar convertir a ISO 9660 la extensión desconocida %s del fichero %s%s."
+msgstr ""
+"Error al intentar convertir a ISO 9660 la extensión desconocida %s del "
+"fichero %s%s."
 
 #: exe/engine/resource.py:664
 msgid ""
@@ -5664,8 +5666,8 @@ msgstr "Estándar de nombrado para el contenido exportado"
 msgid ""
 "If \"ISO 9660\" is selected, file names will be cut to 8.3 format to be "
 "compliant with ISO 9660. Note: This option only works with SCORM and Web "
-"Page export types."
-msgstr "Si se selecciona \"ISO 9660\", los nombres de los ficheros se reducirán al formato 8.3 para cumplir el estándar ISO 9660. Nota: esta opción sólo funciona con los tipos de exportación SCORM y Página web."
+"Site export types."
+msgstr "Si selecciona \"ISO 9660\", la longitud del nombre de los ficheros se cortará al formato 8.3 para cumplir con el estándar ISO 9660. Nota: esta opción sólo funciona con los tipos de exportación SCORM y Sitio Web."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:328
 msgid "Show this window on eXe start"
@@ -9752,7 +9754,7 @@ msgstr "Apariencia"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:3
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:11
 msgid "Header and Caption"
-msgstr "Encabezado y pie de foto"
+msgstr "Encabezado y pie"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:12
@@ -9833,7 +9835,7 @@ msgstr "Todos los derechos reservados"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:22
 msgid "You will not be able to edit the header or the caption from this dialog."
-msgstr "El encabezado y el pie de foto no serán editables desde este diálogo."
+msgstr "El encabezado y el pie no serán editables desde este diálogo."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:23
@@ -9841,7 +9843,7 @@ msgid ""
 "The header and the caption can't be edited from this dialog. You can "
 "change or remove them editing the text itself."
 msgstr ""
-"El encabezado y el pie de foto no se pueden editar desde este diálogo. "
+"El encabezado y el pie no se pueden editar desde este diálogo. "
 "Puede modificarlos o borrarlos editando su texto."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -12180,19 +12182,19 @@ msgstr "Ruta"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Image Properties"
-msgstr "Propiedades de imagen"
+msgstr "Propiedades de la imagen"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Paste (Ctrl+V)"
-msgstr "Pegar"
+msgstr "Pegar (Ctrl+V)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Copy (Ctrl+C)"
-msgstr "Copiar"
+msgstr "Copiar (Ctrl+C)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Cut (Ctrl+X)"
-msgstr "Cortar"
+msgstr "Cortar (Ctrl+X)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "show/Hide Guidelines/Invisible Elements"
@@ -12780,7 +12782,7 @@ msgstr "Por favor seleccione la imagen para editarla"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:810
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:388
 msgid "Footer caption"
-msgstr "Pie de la imagen"
+msgstr "Pie"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:854
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:864
