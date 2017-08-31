@@ -286,7 +286,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									]
 								},
 								margin: 10,
-								help: _('If "ISO 9660" is selected, file names will be cut to 8.3 format to be compliant with ISO 9660. Note: This option only works with SCORM and Web Page export types.')
+								help: _('If "ISO 9660" is selected, file names will be cut to 8.3 format to be compliant with ISO 9660. Note: This option only works with SCORM and Web Site export types.')
 							}
 						]
 					},
