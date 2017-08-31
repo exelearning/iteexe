@@ -236,8 +236,8 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									labelWidth: 325,
 									fieldLabel: _('Always force editable exports on package load'),
 									store: [
-										["0", "Disable" ],
-										["1", "Enable" ]
+										["0", _("No") ],
+										["1", _("Yes") ]
 									]
 								},
 								margin: 10,
