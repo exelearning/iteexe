@@ -31,12 +31,22 @@ $exeABCmusic = {
 		// To do (Animate is hidden): animate : "Animate"
 	},
 	baseURL : (typeof(top.Ext)!="undefined" || (opener && typeof(opener.Ext)!="undefined")) ? '/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/' : './',
+	canPlay : function(){
+		var can = true;
+		var ua = navigator.userAgent.toLowerCase();
+		var ie = ua.indexOf("msie") != -1 ? parseInt(ua.split("msie")[1]) : false; // IE
+		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode; // IE11
+		var match = ua.match(/android\s([0-9\.]*)/); // Android
+		var android = match ? match[1] : false;
+		if ((ie && ie<11) || isIE11 || ua.indexOf('opera mini')>-1 || (android && parseInt(android,10)<5)) can = false;
+		return can;
+	},	
 	init : function(){
 		jQuery("pre.abc-music").each(function(i){
 			var musicCode = this.innerHTML.replace(/<br>/g, '\n').replace(/<br \/>/g, '\n');
 			var player = '<div class="abc-music-player">';
 				player += '<a href="#" onclick="$exeABCmusic.toggleCode(this,'+i+');return false" title="'+$exeABCmusic.lang.show+'"><span>ABC</span></a> ';
-			if (jQuery(this).hasClass("abc-music-midi")) player += '<span id="abc-music-midi-link'+i+'" class="abc-music-midi-link"><a href="#" onclick="$exeABCmusic.downloadMidi('+i+');return false" title="MIDI"><span>MIDI</span></a></span> ';
+			if ($exeABCmusic.canPlay() && jQuery(this).hasClass("abc-music-midi")) player += '<span id="abc-music-midi-link'+i+'" class="abc-music-midi-link"><a href="#" onclick="$exeABCmusic.downloadMidi('+i+');return false" title="MIDI"><span>MIDI</span></a></span> ';
 			if (jQuery(this).hasClass("abc-music-animated")) {	
 				var bpm = 300;
 				// Speed (defined by the user):
