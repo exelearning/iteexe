@@ -43,9 +43,8 @@ var $exeTinyMCE = {
 		
 		for (var i=0, iLen=sheets.length; i<iLen; i++) {
 			sheet = sheets[i];
-			if (sheet.href.indexOf("/base.css")!=-1 || sheet.href.indexOf("/content.css")!=-1) {
+			if (sheet.href && (sheet.href.indexOf("/base.css")!=-1 || sheet.href.indexOf("/content.css")!=-1)) {
 				rules = sheet.rules || sheet.cssRules;
-
 				for (var j=0, jLen=rules.length; j<jLen; j++) {
 					rule = rules[j];
 					tmp = rule.cssText.match(/\.\w+/g);
