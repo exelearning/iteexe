@@ -33,7 +33,7 @@
 					width : 480 + parseInt(ed.getLang('style.delta_width', 0)),
 					// The New eXeLearning
 					// height : 340 + parseInt(ed.getLang('style.delta_height', 0)),
-					height: 350,
+					height: 385,
 					// / The New eXeLearning
 					inline : 1
 				}, {
