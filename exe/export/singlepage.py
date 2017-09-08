@@ -293,7 +293,7 @@ class SinglePage(Page):
         
         html = u''
         # Main node container
-        html += u'<%s class="node level-%d-node">%s' % (articleTag, level, lineBreak)
+        html += u'<%s class="node level-%d-node" id="exe-node-%s">%s' % (articleTag, level, node.id, lineBreak)
         
         # Node header container
         html += u'<%s class="nodeDecoration">%s' % (headerTag, lineBreak)

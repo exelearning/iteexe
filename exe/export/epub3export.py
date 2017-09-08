@@ -423,7 +423,7 @@ class Epub3Page(Page):
         if style.hasValidConfig:
             html += style.get_extra_head()
         html += u"</head>" + lb
-        html += u'<body class="exe-epub3"><script type="text/javascript">document.body.className+=" js"</script>' + lb
+        html += u'<body class="exe-epub3" id="exe-node-'+self.node.id+'"><script type="text/javascript">document.body.className+=" js"</script>' + lb
         html += u"<div id=\"outer\">" + lb
         html += u"<" + sectionTag + " id=\"main\">" + lb
         html += u"<" + headerTag + " id=\"nodeDecoration\">"
@@ -576,19 +576,11 @@ class Epub3Export(object):
         mimetypeFile.write('application/epub+zip')
         mimetypeFile.close()
 
-        # Copy the style sheet files to the output dir
+        # Copy the style files to the output dir
         # But not nav.css
         styleFiles = [self.styleDir /'..'/ 'popup_bg.gif']
-        styleFiles += [f for f in self.styleDir.files("*.css") if f.basename() not in ['nav.css']]
-        styleFiles += self.styleDir.files("*.jpg")
-        styleFiles += self.styleDir.files("*.gif")
-        styleFiles += self.styleDir.files("*.png")
-        styleFiles += self.styleDir.files("*.js")
-        styleFiles += self.styleDir.files("*.html")
-        styleFiles += self.styleDir.files("*.ttf")
-        styleFiles += self.styleDir.files("*.eot")
-        styleFiles += self.styleDir.files("*.otf")
-        styleFiles += self.styleDir.files("*.woff")
+        styleFiles += [f for f in self.styleDir.files("*.*") if f.basename() not in ['nav.css']]
+        
         # FIXME for now, only copy files referenced in Common Cartridge
         # this really should apply to all exports, but without a manifest
         # of the files needed by an included stylesheet it is too restrictive

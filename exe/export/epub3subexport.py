@@ -360,7 +360,7 @@ class Epub3Page(Page):
         if style.hasValidConfig:
             html += style.get_extra_head()
         html += u"</head>" + lb
-        html += u'<body class="exe-epub3"><script type="text/javascript">document.body.className+=" js"</script>' + lb
+        html += u'<body class="exe-epub3" id="exe-node-'+self.node.id+'"><script type="text/javascript">document.body.className+=" js"</script>' + lb
         html += u"<div id=\"outer\">" + lb
         html += u"<" + sectionTag + " id=\"main\">" + lb
         html += u"<" + headerTag + " id=\"nodeDecoration\">"
@@ -525,32 +525,19 @@ class Epub3SubExport(object):
         mimetypeFile.write('application/epub+zip')
         mimetypeFile.close()
 
-        # Copy the style sheet files to the output dir
+        # Copy the style files to the output dir
         # But not nav.css
-        cssStyleFiles = [self.styleDir / '..' / 'base.css']
-        cssStyleFiles += [f for f in self.styleDir.files("*.css") if f.basename() != "nav.css"]
+        filesStyleFiles = [self.styleDir / '..' / 'base.css']
+        filesStyleFiles += [f for f in self.styleDir.files("*.*") if f.basename() != "nav.css"]
 
-        imgStyleFiles = [self.styleDir / '..' / 'popup_bg.gif']
-        imgStyleFiles += self.styleDir.files("*.jpg")
-        imgStyleFiles += self.styleDir.files("*.gif")
-        imgStyleFiles += self.styleDir.files("*.png")
-
-        scriptStyleFiles = self.styleDir.files("*.js")
-
-        filesStyleFiles = self.styleDir.files("*.html")
-        filesStyleFiles += self.styleDir.files("*.ttf")
-        filesStyleFiles += self.styleDir.files("*.eot")
-        filesStyleFiles += self.styleDir.files("*.otf")
-        filesStyleFiles += self.styleDir.files("*.woff")
+        filesStyleFiles += [self.styleDir / '..' / 'popup_bg.gif']
+        
         # FIXME for now, only copy files referenced in Common Cartridge
         # this really should apply to all exports, but without a manifest
         # of the files needed by an included stylesheet it is too restrictive
 
         package.resourceDir.copyfiles(contentPages)
 
-        self.styleDir.copylist(cssStyleFiles, quizCssPages)
-        self.styleDir.copylist(imgStyleFiles, quizImagesPages)
-        self.styleDir.copylist(scriptStyleFiles, quizScriptsPages)
         self.styleDir.copylist(filesStyleFiles, quizFilesPages)
 
 

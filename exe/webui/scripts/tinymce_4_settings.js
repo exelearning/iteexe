@@ -3,7 +3,7 @@ _ = parent._;
 var $exeTinyMCE = {
 	
 	// imagetools is disabled because it generates base64 images
-	plugins: "toggletoolbars compat3x nonbreaking exegames_hangman exeeffects easyattributes exelist autolink exelink charmap print preview anchor tooltips searchreplace visualchars visualblocks code codemagic fullscreen insertdatetime table contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode pastemath exeimage exealign exemedia abcmusic abbr",
+	plugins: "toggletoolbars compat3x nonbreaking exegames_hangman exeeffects easyattributes exelist autolink exelink charmap print preview anchor tooltips searchreplace visualchars visualblocks code codemagic fullscreen insertdatetime table colorpicker contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode pastemath exeimage exealign exemedia abcmusic abbr",
 	// These buttons will be visible when the others are hidden
 	buttons0 : "toggletoolbars | undo redo | bold italic | formatselect | alignleft aligncenter alignright alignjustify | exelink unlink | bullist numlist | exeimage exemedia | fullscreen",
 	// When buttons0 are hidden, 1, 2 and 3 are visible
@@ -43,9 +43,8 @@ var $exeTinyMCE = {
 		
 		for (var i=0, iLen=sheets.length; i<iLen; i++) {
 			sheet = sheets[i];
-			if (sheet.href.indexOf("/base.css")!=-1 || sheet.href.indexOf("/content.css")!=-1) {
+			if (sheet.href && (sheet.href.indexOf("/base.css")!=-1 || sheet.href.indexOf("/content.css")!=-1)) {
 				rules = sheet.rules || sheet.cssRules;
-
 				for (var j=0, jLen=rules.length; j<jLen; j++) {
 					rule = rules[j];
 					tmp = rule.cssText.match(/\.\w+/g);

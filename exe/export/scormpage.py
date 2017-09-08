@@ -34,7 +34,10 @@ class ScormPage(Page):
         the filename will be the 'self.node.id'.html or 'index.html' if
         self.node is the root node. 'outputDir' must be a 'Path' instance
         """
-        out = open(outputDir/self.name+".html", "wb")
+        ext = 'html'
+        if G.application.config.cutFileName == "1":
+            ext = 'htm'
+        out = open(outputDir/self.name + '.' + ext, "wb")
         out.write(self.render())
         out.close()
 
@@ -133,14 +136,14 @@ class ScormPage(Page):
             if style.hasValidConfig:
                 html += style.get_extra_head()        
             html += u"</head>"+lb
-            html += u"<body class=\"exe-scorm\" "
+            html += u"<body id=\""+self.node.id+"\" class=\"exe-scorm\" "
         else:
             html += u"<script type=\"text/javascript\" src=\"SCORM_API_wrapper.js\"></script>"+lb
             html += u"<script type=\"text/javascript\" src=\"SCOFunctions.js\"></script>"+lb
             if style.hasValidConfig:
                 html += style.get_extra_head()
             html += u"</head>"+lb            
-            html += u'<body class=\"exe-scorm\" '
+            html += u'<body id="exe-node-'+self.node.id+'" class=\"exe-scorm\" '
         if common.hasQuizTest(self.node):
             html += u'onunload="unloadPage(true)">'
         else:

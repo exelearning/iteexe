@@ -3,22 +3,23 @@
 # Copyright (C) 2011-2017 EXELearning.net
 # This file is distributed under the same license as the EXE package.
 # eXeLearning.net Project <admin@exelearning.net>
-# Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012-2017.
 #
+# Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012-2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.3\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2017-07-02 20:36+0200\n"
-"PO-Revision-Date: 2017-01-22 17:05+0100\n"
+"POT-Creation-Date: 2017-08-31 12:00+0200\n"
+"PO-Revision-Date: 2017-08-31 16:51+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language: ca\n"
-"Language-Team: català; valencià <info@softcatala.org>\n"
+"Language-Team: Catalan <info@softcatala.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Generator: Lokalize 2.0\n"
 
 #: exe/application.py:201
 #, python-format
@@ -83,7 +84,7 @@ msgstr "Aplicació de Java"
 #: exe/engine/reflectionidevice.py:47
 #: exe/engine/seleccionmultiplefpdidevice.py:47
 #: exe/engine/truefalseidevice.py:145
-#: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
+#: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:55
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "Universitat d'Auckland"
@@ -259,7 +260,7 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:105
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr "Adjunció %s no té node pare."
+msgstr "Adjunció %s no té node pare"
 
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
@@ -267,7 +268,7 @@ msgstr "Adjunció %s no té node pare."
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:573
 #: exe/webui/tools/style-designer/langs/en.js:46
 msgid "Image"
-msgstr "Imatge "
+msgstr "Imatge"
 
 #: exe/engine/casestudyidevice.py:65
 #: exe/engine/ejercicioresueltofpdidevice.py:65
@@ -322,7 +323,7 @@ msgstr ""
 " Ex: Quan estudia l'aula  una situació poden els equips començar a "
 "treballar diferents aspectes del cas, \n"
 " i si ho fan així com es realimenten les idees de la resta de la "
-"classe</li></ul> "
+"classe</li></ul>"
 
 #: exe/engine/casestudyidevice.py:219
 #: exe/engine/ejercicioresueltofpdidevice.py:218
@@ -370,7 +371,7 @@ msgstr ""
 
 #: exe/engine/casopracticofpdidevice.py:30
 msgid "FPD - Situation"
-msgstr "FPD - Situació "
+msgstr "FPD - Situació"
 
 #: exe/engine/casopracticofpdidevice.py:31
 #: exe/engine/citasparapensarfpdidevice.py:33
@@ -388,7 +389,7 @@ msgid ""
 "guide her along the learning process."
 msgstr ""
 "Situació és un iDevice que proporciona a l'estudiant una història que el "
-"guia durant el procés d'aprenentatge. "
+"guia durant el procés d'aprenentatge."
 
 #: exe/engine/casopracticofpdidevice.py:35
 #: exe/engine/citasparapensarfpdidevice.py:37
@@ -413,7 +414,8 @@ msgstr "FPD - Cita"
 msgid ""
 "Quotation is an iDevice that provides the students with quotations to "
 "reflect upon."
-msgstr "Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
+msgstr ""
+"Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
 
 #: exe/engine/citasparapensarfpdidevice.py:40
 #: exe/engine/citasparapensarfpdidevice.py:139
@@ -447,7 +449,7 @@ msgstr "Premeu consecutivament seguint les instruccions del mapa."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:82
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:143
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:145
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:392
 msgid "Title"
 msgstr "Títol "
@@ -731,7 +733,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:847
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:228
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:230
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:93
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:145
 msgid "Instructions"
@@ -840,39 +842,39 @@ msgstr "FPD - Activitat de buits (modificada)"
 msgid "Clozelang"
 msgstr "Idioma dels buits"
 
-#: exe/engine/config.py:70 exe/engine/config.py:71 exe/engine/config.py:75
-#: exe/engine/config.py:102
+#: exe/engine/config.py:93 exe/engine/config.py:94 exe/engine/config.py:98
+#: exe/engine/config.py:125
 msgid "Non-Interactive Activities"
 msgstr "Activitats no interactives"
 
-#: exe/engine/config.py:72 exe/engine/config.py:77 exe/engine/config.py:99
-#: exe/engine/config.py:100 exe/engine/config.py:101 exe/engine/config.py:103
-#: exe/engine/config.py:109
+#: exe/engine/config.py:95 exe/engine/config.py:100 exe/engine/config.py:122
+#: exe/engine/config.py:123 exe/engine/config.py:124 exe/engine/config.py:126
+#: exe/engine/config.py:132
 msgid "Interactive Activities"
 msgstr "Activitats interactives "
 
-#: exe/engine/config.py:73 exe/engine/config.py:74 exe/engine/config.py:95
-#: exe/engine/config.py:96 exe/engine/config.py:104 exe/engine/config.py:105
-#: exe/engine/config.py:111
+#: exe/engine/config.py:96 exe/engine/config.py:97 exe/engine/config.py:118
+#: exe/engine/config.py:119 exe/engine/config.py:127 exe/engine/config.py:128
+#: exe/engine/config.py:134
 msgid "Non-Textual Information"
 msgstr "Informació no textual"
 
-#: exe/engine/config.py:76 exe/engine/config.py:97 exe/engine/config.py:98
-#: exe/engine/config.py:106
+#: exe/engine/config.py:99 exe/engine/config.py:120 exe/engine/config.py:121
+#: exe/engine/config.py:129
 msgid "Textual Information"
 msgstr "Informació textual"
 
-#: exe/engine/config.py:78 exe/engine/config.py:79 exe/engine/config.py:80
-#: exe/engine/config.py:81 exe/engine/config.py:82 exe/engine/config.py:83
-#: exe/engine/config.py:84 exe/engine/config.py:85 exe/engine/config.py:86
-#: exe/engine/config.py:87 exe/engine/config.py:88 exe/engine/config.py:89
-#: exe/engine/config.py:90 exe/engine/config.py:91 exe/engine/config.py:92
-#: exe/engine/config.py:93 exe/engine/config.py:94
+#: exe/engine/config.py:101 exe/engine/config.py:102 exe/engine/config.py:103
+#: exe/engine/config.py:104 exe/engine/config.py:105 exe/engine/config.py:106
+#: exe/engine/config.py:107 exe/engine/config.py:108 exe/engine/config.py:109
+#: exe/engine/config.py:110 exe/engine/config.py:111 exe/engine/config.py:112
+#: exe/engine/config.py:113 exe/engine/config.py:114 exe/engine/config.py:115
+#: exe/engine/config.py:116 exe/engine/config.py:117
 msgid "FPD"
 msgstr "Formació professional a distancia (FPD)"
 
-#: exe/engine/config.py:107 exe/engine/config.py:108 exe/engine/config.py:110
-#: exe/engine/config.py:112
+#: exe/engine/config.py:130 exe/engine/config.py:131 exe/engine/config.py:133
+#: exe/engine/config.py:135
 msgid "Experimental"
 msgstr "Experimental"
 
@@ -1723,7 +1725,8 @@ msgstr "Mike Dawson, Toughra Technologies FZ LLC"
 
 #: exe/engine/hangmanidevice.py:53
 msgid "Hangman style word game with customizable images."
-msgstr "Joc de paraules semblant al joc del penjat amb imatges personalitzables "
+msgstr ""
+"Joc de paraules semblant al joc del penjat amb imatges personalitzables "
 
 #: exe/engine/hangmanidevice.py:61
 msgid "Instructions for Game."
@@ -1828,7 +1831,8 @@ msgstr "Missatge de nivell superat"
 
 #: exe/engine/hangmanidevice.py:115 exe/engine/hangmanidevice.py:163
 msgid "Player will see this message when they guess the word correctly"
-msgstr "El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
+msgstr ""
+"El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
 
 #: exe/engine/hangmanidevice.py:117 exe/engine/hangmanidevice.py:166
 msgid "Game Won Message"
@@ -2750,7 +2754,7 @@ msgstr "El meu catàleg "
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:58
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:56
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:161
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:163
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelist/plugin.min.js:37
 #: exe/webui/tools/style-designer/langs/en.js:73
 msgid "Default"
@@ -3056,7 +3060,14 @@ msgstr ""
 "\n"
 "realimentació reflexiva)."
 
-#: exe/engine/resource.py:605
+#: exe/engine/resource.py:392
+#, python-format
+msgid "Unknown extension %s of file %s%s can't be transformed to ISO 9660."
+msgstr ""
+"L'extensió desconeguda %s del fitxer %s%s no es pot transformar a la"
+" codificació ISO 9660."
+
+#: exe/engine/resource.py:664
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
@@ -3236,7 +3247,7 @@ msgstr "De dalt a baix"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:78
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:162
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:164
 msgid "Left to Right"
 msgstr "D'esquerra a dreta"
 
@@ -3248,7 +3259,7 @@ msgstr "D'esquerra a dreta"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:77
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:163
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:165
 msgid "Right to Left"
 msgstr "De dreta a esquerra"
 
@@ -3344,11 +3355,11 @@ msgstr ""
 msgid "FPD - True/False Activity"
 msgstr "FPD - Activitat veritat/mentida "
 
-#: exe/engine/wikipediaidevice.py:53
+#: exe/engine/wikipediaidevice.py:54
 msgid "Wiki Article"
 msgstr "Article Wiki"
 
-#: exe/engine/wikipediaidevice.py:55
+#: exe/engine/wikipediaidevice.py:56
 msgid ""
 "<p>The Wikipedia iDevice allows you to locate \n"
 "existing content from within Wikipedia and download this content into "
@@ -3380,11 +3391,11 @@ msgstr ""
 "des de 2009 de forma addicional per la Creative Commons Atribució "
 "Compartir Igual 3.0 Llicència no portada</p> "
 
-#: exe/engine/wikipediaidevice.py:66
+#: exe/engine/wikipediaidevice.py:67
 msgid "Article"
 msgstr "Article"
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:361
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:387
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -3392,7 +3403,7 @@ msgstr ""
 "Selecciona la llengua apropiada de la Viquipèdia \n"
 " per cercar i comenceu a cercar termes."
 
-#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:363
+#: exe/engine/wikipediaidevice.py:74 exe/engine/wikipediaidevice.py:389
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -3400,7 +3411,7 @@ msgstr ""
 "Escriu una frase o paraula que voleu cercar \n"
 " a la Viquipèdia."
 
-#: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
+#: exe/engine/wikipediaidevice.py:106 exe/engine/wikipediaidevice.py:144
 #, python-format
 msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
@@ -3409,7 +3420,7 @@ msgstr ""
 "No es pot baixar des de %s <br/> comproveu que ho heu escrit bé , mireu "
 "la connexió i torneu a provar."
 
-#: exe/engine/wikipediaidevice.py:315
+#: exe/engine/wikipediaidevice.py:341
 msgid "http://en.wikipedia.org/"
 msgstr "http://ca.wikipedia.org/"
 
@@ -3468,6 +3479,9 @@ msgid ""
 "given formats: xml, scorm12, scorm2004, ims, website, webzip, singlepage,"
 " xliff, text or epub3."
 msgstr ""
+"Exporta el paquet elp <input_file> al opcional <output_file> en un dels "
+"formats següents: xml, scorm12, scorm2004, ims, llocweb, webzip, "
+"pàginasenzilla, xliff, text o epub3."
 
 #: exe/exe_do:113
 msgid ""
@@ -3638,8 +3652,8 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "Format d'exportació no implementat "
 
-#: exe/export/epub3export.py:728 exe/export/epub3subexport.py:675
-#: exe/export/imsexport.py:633 exe/export/scormexport.py:773
+#: exe/export/epub3export.py:720 exe/export/epub3subexport.py:662
+#: exe/export/imsexport.py:632 exe/export/scormexport.py:780
 #: exe/export/websiteexport.py:103
 #, python-format
 msgid ""
@@ -3651,19 +3665,19 @@ msgstr ""
 
 #: exe/export/scormexport.py:90
 msgid "general description"
-msgstr ""
+msgstr "Descripció general"
 
 #: exe/export/scormexport.py:103
 msgid "educational description"
-msgstr ""
+msgstr "Descripció educativa"
 
-#: exe/export/scormpage.py:183 exe/export/websitepage.py:351
+#: exe/export/scormpage.py:186 exe/export/websitepage.py:360
 #: exe/webui/common.py:486
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:159
 msgid "Previous"
 msgstr "Anterior"
 
-#: exe/export/scormpage.py:184 exe/export/websitepage.py:357
+#: exe/export/scormpage.py:187 exe/export/websitepage.py:366
 #: exe/webui/common.py:487
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:152
 msgid "Next"
@@ -3677,7 +3691,7 @@ msgstr "Podeu tancar aquesta finestra"
 msgid "Licensed under the"
 msgstr "Llicenciat sota la "
 
-#: exe/export/websitepage.py:157
+#: exe/export/websitepage.py:160
 msgid "Skip navigation"
 msgstr "Omet navegació"
 
@@ -3906,19 +3920,20 @@ msgstr "Exportat a %s"
 #, python-format
 msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
 msgstr ""
+"Els camps següents s'han tallat per complir amb l'estàndard SCORM 1.2: %s"
 
-#: exe/jsui/mainpage.py:1417
+#: exe/jsui/mainpage.py:1420
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "El fitxer %s no existeix o no es pot llegir."
 
-#: exe/jsui/mainpage.py:1421
+#: exe/jsui/mainpage.py:1424
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "No es pot carregar el fitxer, si us plau envieu un correu a "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1424
+#: exe/jsui/mainpage.py:1427
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3927,7 +3942,7 @@ msgstr ""
 "Disculpeu, format de fitxer dolent: \n"
 "%s"
 
-#: exe/jsui/mainpage.py:1426
+#: exe/jsui/mainpage.py:1429
 msgid "Sorry, wrong file format"
 msgstr "Disculpeu, format de fitxer dolent"
 
@@ -4000,7 +4015,7 @@ msgstr "Tots els fitxers"
 #: exe/jsui/scripts/app/controller/Toolbar.js:475
 #: exe/jsui/scripts/app/controller/Toolbar.js:481
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:295
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:312
 #: exe/webui/stylemanagerpage.py:155 exe/webui/stylemanagerpage.py:267
 #: exe/webui/stylemanagerpage.py:319 exe/webui/stylemanagerpage.py:362
 #: exe/webui/stylemanagerpage.py:373 exe/webui/stylemanagerpage.py:384
@@ -4139,6 +4154,8 @@ msgid ""
 "Sorry, only styles created with the Editor can be edited. eXe's Styles "
 "are not editable"
 msgstr ""
+"Disculpeu, sols els estils creats amb l'Editor poden ser editats. Els "
+"estils d'eXe no són editables."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:475
 msgid "An unknown error occurred."
@@ -4150,6 +4167,9 @@ msgid ""
 "\n"
 "Please choose a different style or create a new one."
 msgstr ""
+"Aquest és un dels estils per defecte d'eXe, i no és pot editar.\n"
+"\n"
+"Escull un estil diferent o crean un de nou."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:478 exe/webui/block.py:264
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
@@ -4174,7 +4194,7 @@ msgstr "S'està inserint el paquet  {filename}"
 #: exe/jsui/scripts/app/controller/Toolbar.js:1113
 #: exe/jsui/scripts/app/controller/Toolbar.js:1210
 msgid "eXe Package Files"
-msgstr "Fitxers de paquet d'eXe"
+msgstr "Fitxers del paquet eXe"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:577
 msgid "Save extracted package as"
@@ -4296,7 +4316,7 @@ msgid ""
 "account"
 msgstr ""
 "Cal que autoritzeu a eXe Learning a publicar contingut amb el vostre "
-"compte Procomún "
+"compte Procomún"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:841
 msgid "Are you sure you want to start authorization process?"
@@ -4451,7 +4471,7 @@ msgstr "El fitxer ja existeix. Voleu reemplaçar-lo ?"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:64
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:192
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:194
 msgid "Name"
 msgstr "Nom"
 
@@ -4478,7 +4498,7 @@ msgid "Open"
 msgstr "Obre"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:77
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:286
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:303
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:260
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:149
@@ -4650,7 +4670,7 @@ msgstr "Una referència al recurs del qual l'actual és derivat."
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:180
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:166
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:168
 msgid "Language"
 msgstr "Idioma"
 
@@ -5365,7 +5385,8 @@ msgstr "Fons de la capçalera"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:479
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr "Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
+msgstr ""
+"Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:497
 msgid "Load Image"
@@ -5456,8 +5477,10 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:631
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:634
-msgid "Checking this option, the saved package may be opened with eXe >= 0.20.4"
-msgstr "Si marqueu aquesta opció el paquet desat es podrà obrir amb eXe >= 0.20.4"
+msgid ""
+"Checking this option, the saved package may be opened with eXe >= 0.20.4"
+msgstr ""
+"Si marqueu aquesta opció el paquet desat es podrà obrir amb eXe >= 0.20.4"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:25
 msgid "Select Browser"
@@ -5490,7 +5513,8 @@ msgstr "Format per defecte als documents nous"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:172
 msgid "The current document format can be modified in the Properties tab"
-msgstr "El format actual del document es pot modificar a la pestanya «Propietats»"
+msgstr ""
+"El format actual del document es pot modificar a la pestanya «Propietats»"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:182
 msgid "Editor mode"
@@ -5549,7 +5573,7 @@ msgstr "Inhabilita tots els enllaços interns"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:237
 msgid "Always force editable exports on package load"
-msgstr ""
+msgstr "Força sempre exportacions editables en la càrrega del paquet"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:244
 msgid ""
@@ -5557,6 +5581,9 @@ msgid ""
 "time it's loaded. You will be able to disable it before exporting, but it"
 " will be reset every time you open the package."
 msgstr ""
+"Aquest paràmetre «Creeu eportació editable ? » ignorarà el paquet cada "
+"vegada que es carregui. Podeu deshabilitar-ho abans de l'exportació, però"
+" es reinicialitzarà cada vegada que obriu el paquet."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:252
 msgid "Default license for the new documents"
@@ -5568,7 +5595,21 @@ msgstr ""
 "La llicència actual del document es pot modificar a la pestanya "
 "«Propietats»"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:311
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:282
+msgid "Naming standard for exported content"
+msgstr "Anomenat estàndard per al contingut exportat"
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:289
+msgid ""
+"If \"ISO 9660\" is selected, file names will be cut to 8.3 format to be "
+"compliant with ISO 9660. Note: This option only works with SCORM and Web "
+"Site export types."
+msgstr ""
+"Si es selecciona la codificació «ISO 9660», els noms dels fitxers es tallaran"
+" al format 8.3 per complir amb la ISO 9660. Nota: Aquesta opció sols funciona"
+" amb les exportacions del tipus SCORM i Lloc web."
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:328
 msgid "Show this window on eXe start"
 msgstr "Mostra aquesta finestra a l'inici d'eXe"
 
@@ -7252,7 +7293,8 @@ msgid "process/procedure supporting service"
 msgstr "servei d'ajuda al procediment / procés "
 
 #: exe/jsui/scripts/lomvocab.js:830
-msgid "individual/cooperative/collaborative learning/working management service"
+msgid ""
+"individual/cooperative/collaborative learning/working management service"
 msgstr ""
 "serveis de gestió del treball / individual / cooperatiu / aprenentatge "
 "col·laboratiu "
@@ -7554,6 +7596,11 @@ msgstr "Selecciona un fitxer"
 msgid "Label:"
 msgstr "Etiqueta:"
 
+#: exe/webui/authoringpage.py:177
+#, python-format
+msgid "Warning: %s"
+msgstr "Avís: %s"
+
 #: exe/webui/block.py:184
 msgid "IDevice broken"
 msgstr "iDevice trencat"
@@ -7696,11 +7743,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 4.0"
 
 #: exe/webui/common.py:121
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
 
 #: exe/webui/common.py:127
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
 
 #: exe/webui/common.py:133
 msgid "GNU Free Documentation License"
@@ -7728,11 +7777,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 3.0"
 
 #: exe/webui/common.py:224
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
 
 #: exe/webui/common.py:230
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
 
 #: exe/webui/common.py:236
 msgid "Creative Commons Attribution License 2.5"
@@ -7752,11 +7803,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 2.5"
 
 #: exe/webui/common.py:260
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
 
 #: exe/webui/common.py:266
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
 
 #: exe/webui/common.py:298
 msgid "License:"
@@ -7804,7 +7857,7 @@ msgstr "Menú"
 #: exe/webui/common.py:495
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:10
 msgid "Download"
-msgstr ""
+msgstr "Descarrega"
 
 #: exe/webui/common.py:505
 msgid "Accept"
@@ -8391,7 +8444,8 @@ msgid "eXe problem"
 msgstr "problema d'eXe"
 
 #: exe/webui/iecmwarning.py:46
-msgid "The Compatibility View of your browser (Internet Explorer) is turned on."
+msgid ""
+"The Compatibility View of your browser (Internet Explorer) is turned on."
 msgstr ""
 "La visualització de compatibilitat del vostre navegador (Internet "
 "explorer) està habilitada."
@@ -8514,11 +8568,11 @@ msgstr "Afegeix un objecte que es pugui posar "
 msgid "Default browser in your system"
 msgstr "Navegador per defecte al vostre sistema operatiu "
 
-#: exe/webui/preferencespage.py:202
+#: exe/webui/preferencespage.py:203
 msgid "Failed to get preferences"
 msgstr "Error al obtenir les preferències"
 
-#: exe/webui/preferencespage.py:260
+#: exe/webui/preferencespage.py:265
 msgid "Failed to save preferences"
 msgstr "Error en desar les preferències"
 
@@ -9151,7 +9205,9 @@ msgstr "gen.,febr.,març,abr.,maig,juny,jul.,ag.,set.,oct.,nov.,des."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
-msgid "January,February,March,April,May,June,July,August,September,October,November,December"
+msgid ""
+"January,February,March,April,May,June,July,August,September,October,November,D"
+"ecember"
 msgstr ""
 "gener, febrer, març, abril, maig, juny, juliol, agost, setembre, octubre,"
 " novembre, desembre"
@@ -9187,9 +9243,9 @@ msgstr "Verd"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:249
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:294
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:299
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:251
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:296
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:301
 msgid "Insert/Edit Attributes"
 msgstr "Insereix/edita atributs"
 
@@ -9219,7 +9275,8 @@ msgstr "Àrea de Text Enriquit"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:5
-msgid "Currently not supported by your browser, use keyboard shortcuts instead."
+msgid ""
+"Currently not supported by your browser, use keyboard shortcuts instead."
 msgstr ""
 "El vostre navegador actualment no ho admet, utilitzeu les dreceres de "
 "teclat."
@@ -9332,7 +9389,7 @@ msgstr "Cel·la"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:196
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:228
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:230
 msgid "Table Properties"
 msgstr "Propietats de la taula"
 
@@ -9441,7 +9498,7 @@ msgstr "Alçada"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:99
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:155
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:157
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:569
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
@@ -9454,7 +9511,7 @@ msgstr "Estil"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:144
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:146
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:555
 msgid "ID"
 msgstr "Id"
@@ -9728,7 +9785,8 @@ msgstr "Tots els drets reservats"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:22
-msgid "You will not be able to edit the header or the caption from this dialog."
+msgid ""
+"You will not be able to edit the header or the caption from this dialog."
 msgstr "L'encapçalament i títol no seran editables des d'aquest diàleg."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
@@ -9817,19 +9875,19 @@ msgstr "URL de l'enllaç"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:245
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:241
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:243
 msgid "Events"
 msgstr "Esdeveniments"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:167
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:169
 msgid "TabIndex"
 msgstr "Index de tabulació"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:168
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:170
 msgid "AccessKey"
 msgstr "Tecla de drecera"
 
@@ -9946,6 +10004,7 @@ msgid "File Type/Extension"
 msgstr "Extensió/ tipus de fitxer"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:9
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:436
 msgid "Include File Information"
 msgstr "Inclou informació del fitxer"
 
@@ -9974,7 +10033,7 @@ msgstr "Cita amb autoria"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:5
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:235
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:237
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:551
 msgid "Attributes"
 msgstr "Atributs"
@@ -10036,9 +10095,9 @@ msgstr "Suprimeix (línia nova o bloc)"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:2
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:70
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:20
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:37
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:43
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:50
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:38
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:44
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:51
 msgid "Edit source code"
 msgstr "Edita el codi font"
 
@@ -10279,7 +10338,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:10
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:108
 msgid "All blocks must start with a second level title (Heading 2)."
-msgstr "Tots els blocs han de començar amb títol de segon nivell (encapçalament 2)"
+msgstr ""
+"Tots els blocs han de començar amb títol de segon nivell (encapçalament 2)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:11
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:54
@@ -10323,7 +10383,8 @@ msgstr "Acordió"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:18
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:30
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:85
-msgid "Collapsible content panels for presenting information in a limited space."
+msgid ""
+"Collapsible content panels for presenting information in a limited space."
 msgstr ""
 "Panels de contingut col·lapsable per presentar informació en un espai "
 "limitat."
@@ -10417,7 +10478,8 @@ msgstr "Aquestos jocs requereixen javaScript."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:11
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:127
 msgid "This is the message that the users with no JavaScript will see:"
-msgstr "Aquest és el missatge que els usuaris que no tenen  JavaScript veuran: "
+msgstr ""
+"Aquest és el missatge que els usuaris que no tenen  JavaScript veuran: "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
 msgid "Message:"
@@ -10430,7 +10492,8 @@ msgstr "Podeu canviar-lo en qualsevol moment."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:14
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:261
-msgid "Provide a warning to users who have JavaScript disabled (Accessibility)."
+msgid ""
+"Provide a warning to users who have JavaScript disabled (Accessibility)."
 msgstr ""
 "Proporciona un avís als usuaris amb  JavaScript deshabilitat "
 "(accessibilitat)."
@@ -10493,7 +10556,8 @@ msgstr "Escriu la llista de lletres i/o números per triar."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:30
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:154
 msgid "You may include capital letters or they can be automatically included."
-msgstr "Podeu incloure majúscules o aquestes seran incloses de forma automàtica."
+msgstr ""
+"Podeu incloure majúscules o aquestes seran incloses de forma automàtica."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:31
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:155
@@ -10516,7 +10580,7 @@ msgid "Don't forget to check the Accessibility tab."
 msgstr "No oblideu comprovar la pestanya accessibilitat."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:38
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:223
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:225
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:205
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:219
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:241
@@ -10836,7 +10900,7 @@ msgid "Character Encoding"
 msgstr "Codificació dels caràcters"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:193
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:195
 msgid "Value"
 msgstr "Valor"
 
@@ -11194,6 +11258,7 @@ msgstr "Fons"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:87
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:33
 msgid "Full Screen"
 msgstr "Pantalla completa"
 
@@ -11904,7 +11969,8 @@ msgstr "Botó llista de definicions"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:39
 msgid "Use the \"Definition List\" button to add terms and definitions:"
-msgstr "Usa el botó  \"Llista de definicions\" per afegir termes i definicions:"
+msgstr ""
+"Usa el botó  \"Llista de definicions\" per afegir termes i definicions:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:40
 msgid "Define the Link: Select the page where the definitions are."
@@ -12024,7 +12090,7 @@ msgid "Date/Time"
 msgstr "Data/Hora"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:159
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:161
 msgid "Text Direction"
 msgstr "Direcció del text"
 
@@ -12381,8 +12447,8 @@ msgstr "Numeració automàtica"
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
-#: exe/webui/scripts/tinymce_4_settings.js:360
-#: exe/webui/scripts/tinymce_4_settings.js:385
+#: exe/webui/scripts/tinymce_4_settings.js:362
+#: exe/webui/scripts/tinymce_4_settings.js:387
 msgid "Editor"
 msgstr "Editor"
 
@@ -12421,6 +12487,8 @@ msgid ""
 "Id should start with a letter, followed only by letters, numbers, dashes,"
 " dots, colons or underscores."
 msgstr ""
+"Id hauria de començar amb una lletra, seguit sols per lletres, nombres, "
+"guions, punts, dos punts, o subratllats."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:65
 msgid "Anchor"
@@ -12555,7 +12623,7 @@ msgid "View"
 msgstr "Mostra"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:228
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:228
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:230
 msgid "Table"
 msgstr "Taula"
 
@@ -12584,35 +12652,37 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:2
 msgid "ABC Music Notation"
-msgstr ""
+msgstr "Notació de música ABC"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:4
 msgid "Animate"
-msgstr ""
+msgstr "Anima"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:5
 msgid "Paste or type a valid ABC code:"
-msgstr ""
+msgstr "Enganxa o escriu notació músical ABC vàlida:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:7
 msgid "Visit eXeABC for help, tunes, ABC software..."
-msgstr ""
+msgstr "Visita eXeABC per trobar ajuda, cançons, programari ABC..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:9
 msgid "ABC Music"
-msgstr ""
+msgstr "Música ABC"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:11
 msgid "No valid ABC code found."
-msgstr ""
+msgstr "No s'ha trobat notació músical ABC vàlida."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:14
 msgid "Go to Tools - Preview to see this working"
-msgstr ""
+msgstr "Ves a Eines - Visualitza per veure-ho funcionant"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:15
 msgid "ePub export warning: This might not work in some ePub readers."
 msgstr ""
+"Avís d'exportació ePub: Això tal vegada no funcioni en alguns lectors "
+"ePub."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:26
 msgid "Search and Replace"
@@ -12626,25 +12696,25 @@ msgstr "Reformata"
 msgid "Format HTML Code"
 msgstr "Formata codi HTML"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:37
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:43
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:38
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:44
 msgid "advanced editor"
 msgstr "Editor avançat"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:92
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:94
 msgid "Class added to the \"CSS class\" field."
 msgstr "Classe afegida al camp «Classe CSS»"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:145
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:147
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:568
 msgid "CSS class"
 msgstr "Classe CSS"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:149
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:151
 msgid "Add CSS class"
 msgstr "Afegeix classe CSS"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:186
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:188
 msgid "New attribute"
 msgstr "Atribut nou"
 
@@ -12660,7 +12730,7 @@ msgstr "Selecciona la imatge a editar"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:810
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:388
 msgid "Footer caption"
-msgstr ""
+msgstr "Llegenda de peu de pàgina"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:854
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:864
@@ -12676,62 +12746,65 @@ msgstr "Comprova el camp «Llicència»"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:303
 msgid "Please select the media file to edit it"
-msgstr ""
+msgstr "Seleccioneu el fitxer fitxer multimèdia per editar-lo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:471
 msgid "Detect automatically"
-msgstr ""
+msgstr "Detectat de forma automàtica"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:472
 msgid "Video"
-msgstr ""
+msgstr "Vídeo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:473
 msgid "Audio"
-msgstr ""
+msgstr "Àudio"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:474
 msgid "iframe"
-msgstr ""
+msgstr "iframe"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:536
 msgid "Paste your embed code below:"
-msgstr ""
+msgstr "Enganxa el  codi incrustat a sota:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:580
 msgid "Please select the Source"
-msgstr ""
+msgstr "Selecciona la font"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:722
 msgid "This format (%) is valid for audio and video."
-msgstr ""
+msgstr "El format (%) no és vàlid per àudio i vídeo."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:723
 msgid "Cannot detect automatically. Please choose the right type."
-msgstr ""
+msgstr "No es pot detectar de forma automàtica. Tria el tipus correcte."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:738
 msgid "Successfully updated, but please convert the video to another format:"
 msgstr ""
+"S'ha actualitzat amb èxit, però conconvertiu el vídeo a un altre format:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:745
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:756
 msgid "Selected format: "
-msgstr ""
+msgstr "Format seleccionat:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:746
 msgid "Please use any of these formats or provide a link to the file itself: "
-msgstr ""
+msgstr "Useu qualsevol d'aquests formats o proporcioneu un enllaç al fitxer:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:757
 msgid "Please use any of these formats or provide a link to the file itself:"
-msgstr ""
+msgstr "Useu qualsevol d'aquests formats o proporcioneu un enllaç al fitxer:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1043
 msgid ""
 "This fragment uses old code. Would you like to update it? (necessary to "
 "be able to edit the parameters)"
 msgstr ""
+"Aquest fragment utilitza codi antic. Voleu actualitzar-lo? (necessari per"
+" poder editar els paràmetres)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1079
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1131
@@ -12742,7 +12815,8 @@ msgstr "No s'han pogut recuperar dades (Error al nucli)"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1100
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1167
 msgid "You are using and old code. Update it (required to edit)?"
-msgstr "Esteu utilitzant codi antic. Voleu actualitzar-lo (requerit per edició)?"
+msgstr ""
+"Esteu utilitzant codi antic. Voleu actualitzar-lo (requerit per edició)?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1155
 msgid ""
@@ -12782,7 +12856,8 @@ msgid "Error (missing function):"
 msgstr "Error (funció perduda):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:405
-msgid "The image could not be created. Insert the code without alternative image?"
+msgid ""
+"The image could not be created. Insert the code without alternative image?"
 msgstr ""
 "La imatge no s'ha pogut crear. Voleu inserir el codi sense una imatge "
 "alternativa?"
@@ -12847,6 +12922,8 @@ msgid ""
 "You can use MathJax for high-quality display of mathematical symbols in "
 "web browsers (it will work online only)."
 msgstr ""
+"Podeu usar MathJax per mostrar amb alta qualitat símbols matemàtics als "
+"navegador ( sols funciona en línia)."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:639
 msgid ""
@@ -12860,7 +12937,8 @@ msgstr ""
 msgid ""
 "With no image and no MathJax some users might not be able to see the "
 "formula."
-msgstr "Sense imatge i sense MathJax alguns usuaris no podran veure la formula."
+msgstr ""
+"Sense imatge i sense MathJax alguns usuaris no podran veure la formula."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:643
 msgid ""
@@ -12880,7 +12958,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:645
 msgid "If JavaScript is disabled, both (code and image) will be visible."
-msgstr "Si JavaScript està deshabilitat, ambdós (codi i imatge) seran visibles."
+msgstr ""
+"Si JavaScript està deshabilitat, ambdós (codi i imatge) seran visibles."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:647
 msgid "Remember that..."
@@ -12921,17 +13000,17 @@ msgid "3 columns"
 msgstr "3 columnes"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:50
-#: exe/webui/scripts/tinymce_4_settings.js:170
+#: exe/webui/scripts/tinymce_4_settings.js:172
 msgid "Inline"
 msgstr "inserit"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:37
-#: exe/webui/scripts/tinymce_4_settings.js:171
+#: exe/webui/scripts/tinymce_4_settings.js:173
 msgid "Bold"
 msgstr "Negreta"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:39
-#: exe/webui/scripts/tinymce_4_settings.js:172
+#: exe/webui/scripts/tinymce_4_settings.js:174
 msgid "Italic"
 msgstr "Cursiva"
 
@@ -12939,7 +13018,7 @@ msgstr "Cursiva"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:47
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:173
+#: exe/webui/scripts/tinymce_4_settings.js:175
 msgid "Underline"
 msgstr "subratllat"
 
@@ -12949,19 +13028,19 @@ msgstr "subratllat"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:26
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:174
+#: exe/webui/scripts/tinymce_4_settings.js:176
 msgid "Strikethrough"
 msgstr "Barrat"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:29
-#: exe/webui/scripts/tinymce_4_settings.js:175
+#: exe/webui/scripts/tinymce_4_settings.js:177
 msgid "Superscript"
 msgstr "Superíndex"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:32
-#: exe/webui/scripts/tinymce_4_settings.js:176
+#: exe/webui/scripts/tinymce_4_settings.js:178
 msgid "Subscript"
 msgstr "Subíndex"
 
@@ -12969,22 +13048,22 @@ msgstr "Subíndex"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:38
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:523
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:572
-#: exe/webui/scripts/tinymce_4_settings.js:177
+#: exe/webui/scripts/tinymce_4_settings.js:179
 msgid "Code"
 msgstr "Codi"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:179
+#: exe/webui/scripts/tinymce_4_settings.js:181
 msgid "Deletion"
 msgstr "Eliminació"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:180
+#: exe/webui/scripts/tinymce_4_settings.js:182
 msgid "Insertion"
 msgstr "Inserció"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:181
+#: exe/webui/scripts/tinymce_4_settings.js:183
 msgid "Cite"
 msgstr "Cita"
 
@@ -13111,7 +13190,7 @@ msgstr "Ha succeït un error inesperat "
 
 #: exe/webui/tools/fMath/js/jquery-ui/jquery-ui.min.js:8
 msgid "'"
-msgstr ""
+msgstr "'"
 
 #: exe/webui/tools/style-designer/js/app.js:1281
 msgid "Create new style"
@@ -13363,7 +13442,8 @@ msgstr "Aquest codi es mostrarà al final de content.css"
 
 #: exe/webui/tools/style-designer/langs/en.js:104
 msgid "content.css is included any time you export, and always after base.css."
-msgstr "content.css està inclòs sempre que exporteu, i sempre després de base.css"
+msgstr ""
+"content.css està inclòs sempre que exporteu, i sempre després de base.css"
 
 #: exe/webui/tools/style-designer/langs/en.js:105
 msgid "This code will be included at the end of nav.css"
@@ -13387,7 +13467,8 @@ msgstr "Contingut de nav.css"
 
 #: exe/webui/tools/style-designer/langs/en.js:109
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
-msgstr "Les ombres no funcionaran en navegadors sense suport CSS3  (IE6, IE7...)."
+msgstr ""
+"Les ombres no funcionaran en navegadors sense suport CSS3  (IE6, IE7...)."
 
 #: exe/webui/tools/style-designer/langs/en.js:114
 msgid "Save as"
@@ -13411,7 +13492,8 @@ msgstr "El vostre navegador no és compatible amb aquesta eina."
 
 #: exe/webui/tools/style-designer/langs/en.js:120
 msgid "The Hide/Show menu option is disabled in the Style Designer"
-msgstr "L'opció del menú Mostra/Amaga està deshabilitada al dissenyador d'estils."
+msgstr ""
+"L'opció del menú Mostra/Amaga està deshabilitada al dissenyador d'estils."
 
 #: exe/webui/tools/style-designer/langs/en.js:121
 msgid ""
@@ -13665,4 +13747,3 @@ msgstr ""
 "Els  idevices del vostre fitxer generic.data o paquet que esteu carregant"
 " han estat creats amb un versió més nova de eXe. Si-us-plau actualitzeu "
 "eXe i torneu-ho a provar."
-

@@ -26,8 +26,7 @@ from copy                 import deepcopy
 from string               import Template
 from exe.engine.persist   import Persistable
 from exe.engine.path      import Path, toUnicode 
-from exe                       import globals as G
-
+from exe                  import globals as G
 
 log = logging.getLogger(__name__)
 
@@ -58,6 +57,9 @@ class _Resource(Persistable):
         'resourceFile' is the path to the file
         """
         log.debug(u"init resourceFile=%s" % resourceFile)
+        # Warnign that will be shown to the user if they try
+        # to cut an unknown extension
+        self.warningMsg = ''
         # _storageName may be changed when the package is set
         self._storageName = self._fn2ascii(resourceFile)
         # self._userName is the basename name originally given by the user
@@ -243,12 +245,39 @@ class _Resource(Persistable):
             else:
                 filename = (self._package.resourceDir/oldPath.basename())
                 storageName = self._fn2ascii(filename)
-                storageName = (self._package.resourceDir/storageName).unique()
-                self._storageName = str(storageName.basename())
+                if G.application.config.cutFileName:
+                    original = (self._package.resourceDir/storageName)
+                    storageName = self.uniquePath(original, 0)
+                else:
+                    storageName = (self._package.resourceDir/storageName).unique()
+                    
+                self._storageName = str(Path(storageName).basename())
+
                 oldPath.copyfile(self.path)
         if not self._package.resources.get(self.checksum, []) or self._package.isLoading:
             # prevent doubling-up (as might occur when cleaning corrupt files)
             siblings.append(self)
+            
+    #Create unique path for the images     
+    def uniquePath(self,original, unique):
+        if original.exists() and original.isfile():
+            unique += 1  
+            # Get the position of the last '.' which is equivalent of the extension
+            position = original.rindex('.')
+            outExtension = original[0:position]
+            # Get size of uniquifield more the point
+            length = len(str(unique)) + 1
+            unifique = outExtension[:-length]
+            #Adding the uniquifield
+            unifique += '.' + str(unique)
+            # Replace the changes
+            finalPath = original.replace(outExtension, unifique)
+            if Path(finalPath).exists():
+                return self.uniquePath(Path(finalPath), unique)
+            else:
+                return finalPath
+        else:
+            return original
 
     # Public methods
 
@@ -300,13 +329,17 @@ class _Resource(Persistable):
     def _fn2ascii(self, filename):
         """
         Changes any filename to pure ascii, returns only the basename
-        """     
+        """
         nameBase, ext = Path(Path(filename).basename()).splitext()
         #nameBase = Path(filename).basename()
         # Check if the filename is ascii so that twisted can serve it
         #JR: Convertimos el nombre del fichero a algunos caracteres ascii validos
         import unicodedata
         import string
+        #if the variable is actived format name of images and extension
+        if G.application.config.cutFileName:
+            nameBase = nameBase[0:8]
+            ext = self.cutExtension(ext, nameBase)
         validFilenameChars = "~,()[]-_. %s%s" % (string.ascii_letters, string.digits)
         if type(nameBase) == str:
             nameBase = unicode(nameBase)
@@ -335,6 +368,31 @@ class _Resource(Persistable):
         #    ext = ext.encode('utf8').encode('hex')
         #return str(nameBase + ext)
         return str(nameBase + ext)
+
+    def cutExtension(self,ext,nameBase):
+        """
+        Cut the extension to a maximum of 3 chars.
+        If the extension is bigger than that and we don't know it,
+        show a warning to the user.
+        """
+        if len(ext) > 4:
+            if ext == '.jpeg':
+                return '.jpg'
+            elif ext == '.jpg2':
+                return '.jp2'
+            elif ext == '.ilbm':
+                return '.iff'
+            elif ext == '.tpic':
+                return '.tga'
+            elif ext == '.tiff':
+                return '.tif'
+            elif ext == '.svgz':
+                return '.svg'
+            else:
+                self.warningMsg = (_(u'Unknown extension %s of file %s%s can\'t be transformed to ISO 9660.') % (ext, nameBase, ext))
+                return ext
+        else:
+            return ext
 
 
 class Resource(_Resource):

@@ -10882,7 +10882,7 @@ Ext.EventManager = new function() {
             if (dom.attachEvent) {
                 dom.attachEvent('on' + bind.eventName, wrap);
             } else {
-                dom.addEventListener(bind.eventName, wrap, options.capture || false);
+                if (dom.addEventListener) dom.addEventListener(bind.eventName, wrap, options.capture || false);
             }
 
             if (dom == doc && eventName == 'mousedown') {

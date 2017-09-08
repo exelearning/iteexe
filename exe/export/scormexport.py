@@ -373,7 +373,11 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
         """
         itemId   = "ITEM-"+unicode(self.idGenerator.generate())
         resId    = "RES-"+unicode(self.idGenerator.generate())
-        filename = page.name+".html"
+        ext = 'html'
+        if G.application.config.cutFileName == "1":
+                ext = 'htm'
+                
+        filename = page.name + '.' + ext
             
         
         self.itemStr += '<item identifier="'+itemId+'" '
@@ -559,7 +563,7 @@ class ScormExport(object):
         if self.hasForum:
             manifest.save("discussionforum.xml")
         
-        # Copy the style sheet files to the output dir
+        # Copy the style files to the output dir
         
         styleFiles = [self.styleDir/'..'/'popup_bg.gif']
         # And with all the files of the style we avoid problems:
@@ -742,15 +746,18 @@ class ScormExport(object):
         if hasABCMusic:
             pluginScripts = (self.scriptsDir/'tinymce_4/js/tinymce/plugins/abcmusic/export')
             pluginScripts.copyfiles(outputDir)
+        ext = ".html"
+        if G.application.config.cutFileName == "1":
+            ext = ".htm"
 
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004":
             if package.license == "license GFDL":
                 # include a copy of the GNU Free Documentation Licence
-                (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
+                (self.templatesDir/'fdl' + ext).copyfile(outputDir/'fdl' + ext)
         
         if hasattr(package, 'scowsinglepage') and package.scowsinglepage:
             page = SinglePage("singlepage_index", 1, package.root)
-            page.save(outputDir/"singlepage_index.html")
+            page.save(outputDir/"singlepage_index" + ext)
             # Incluide eXe's icon if the Style doesn't have one
             themePath = Path(G.application.config.stylesDir/package.style)
             themeFavicon = themePath.joinpath("favicon.ico")

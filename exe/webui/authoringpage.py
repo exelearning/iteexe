@@ -35,6 +35,7 @@ from exe.engine.error        import Error
 from exe.webui.renderable    import RenderableResource
 from exe.engine.path         import Path
 from exe                     import globals as G
+import re
 
 log = logging.getLogger(__name__)
 
@@ -114,10 +115,10 @@ class AuthoringPage(RenderableResource):
             topNode = self._process(request)
 
         #Update other authoring pages that observes the current package
+        activeClient = None
         if "action" in request.args:
             if request.args['clientHandleId'][0] == "":
                 raise(Exception("Not clientHandleId defined"))
-            activeClient = None
             for client in self.parent.clientHandleFactory.clientHandles.values():
                 if request.args['clientHandleId'][0] != client.handleId:
                     if client.handleId in self.parent.authoringPages:
@@ -155,13 +156,29 @@ class AuthoringPage(RenderableResource):
         html += u'<!-- start authoring page -->\n'
         html += u'<div id="nodeDecoration">\n'
         html += u'<div id="headerContent">\n'
-        html += u'<h1 id="nodeTitle">\n'
+        html += u'<h1 id="nodeTitle">'
         html += escape(topNode.titleLong)
         html += u'</h1>\n'
         html += u'</div>\n'
         html += u'</div>\n'
-
+        counter = 0
+        msg = ''
         for block in self.blocks:
+            # If we don't have a client, try to get it from request
+            if activeClient is None:
+                for client in self.parent.clientHandleFactory.clientHandles.values():
+                    if request.args['clientHandleId'][0] == client.handleId:
+                        activeClient = client
+                        
+            if not activeClient is None:
+                for resources in block.idevice.userResources:
+                    if resources.warningMsg != u'':
+                        counter +=1
+                        msg += (_('Warning: %s') % resources.warningMsg)
+                        # Remove warning message
+                        resources.warningMsg = ''
+            if counter > 0:
+                activeClient.alert(msg)
             html += block.render(self.package.style)
 
         html += u'</div>'

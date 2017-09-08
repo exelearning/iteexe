@@ -240,7 +240,7 @@ Ext.define('eXe.controller.StyleManager', {
         style.setValue(button.value);
         Ext.Msg.show({
             title: _("Delete style?"),
-            msg: _("Do you want to delete this style?"),
+            msg: _("Do you want to delete this style?") + " - " + button.value,
             scope: this,
             modal: true,
             buttons: Ext.Msg.YESNOCANCEL,

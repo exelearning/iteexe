@@ -72,8 +72,11 @@ class SinglePageExport(object):
         self.style = package.style
 
         self.page = SinglePage("index", 1, package.root)
+        ext = 'html'
+        if G.application.config.cutFileName == "1":
+            ext = 'htm'
 
-        self.page.save(self.outputDir/"index.html", for_print)
+        self.page.save(self.outputDir/"index" + '.' + ext, for_print)
         if hasattr(package, 'exportSource') and package.exportSource and not for_print:
             (G.application.config.webDir/'templates'/'content.xsd').copyfile(self.outputDir/'content.xsd')
             (self.outputDir/'content.data').write_bytes(encodeObject(package))
@@ -86,24 +89,13 @@ class SinglePageExport(object):
         """
         Copy all the files used by the website.
         """
-        # Copy the style sheet files to the output dir
+        # Copy the style files to the output dir
         # But not nav.css
         if os.path.isdir(self.stylesDir):
-            # Copy the style sheet files to the output dir
             styleFiles = [self.stylesDir/'..'/'popup_bg.gif']
-            styleFiles += self.stylesDir.files("*.css")
+            styleFiles += self.stylesDir.files("*.*")
             if "nav.css" in styleFiles:
                 styleFiles.remove("nav.css")
-            styleFiles += self.stylesDir.files("*.jpg")
-            styleFiles += self.stylesDir.files("*.gif")
-            styleFiles += self.stylesDir.files("*.png")
-            styleFiles += self.stylesDir.files("*.js")
-            styleFiles += self.stylesDir.files("*.html")
-            styleFiles += self.stylesDir.files("*.ico")
-            styleFiles += self.stylesDir.files("*.ttf")
-            styleFiles += self.stylesDir.files("*.eot")
-            styleFiles += self.stylesDir.files("*.otf")
-            styleFiles += self.stylesDir.files("*.woff")
             self.stylesDir.copylist(styleFiles, self.outputDir)
             
         # copy the package's resource files
@@ -146,7 +138,10 @@ class SinglePageExport(object):
 
         if package.license == "license GFDL":
             # include a copy of the GNU Free Documentation Licence
-            (self.templatesDir/'fdl.html').copyfile(self.outputDir/'fdl.html')
+            ext = 'html'
+            if G.application.config.cutFileName == "1":
+                ext = 'htm'
+            (self.templatesDir/'fdl' + '.' + ext).copyfile(self.outputDir/'fdl' + '.' + ext)
 
     def compruebaReproductores(self, node):
         """

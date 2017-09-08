@@ -30,7 +30,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
             bodyPadding: 4,
             items: [{
                 xtype: 'tabpanel',
-                height: 270,
+                height: 310,
                 activeTab: 0,
                 plain: true,
                 items: [
@@ -237,8 +237,8 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									labelWidth: 325,
 									fieldLabel: _('Always force editable exports on package load'),
 									store: [
-										["0", "Disable" ],
-										["1", "Enable" ]
+										["0", _("No") ],
+										["1", _("Yes") ]
 									]
 								},
 								margin: 10,
@@ -271,6 +271,23 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 								},
 								margin: 10,
 								help: _('The current document license can be modified in the Properties tab.')								
+							},
+							// Compatibility with ISO 9660
+							{
+								xtype: 'helpcontainer',
+								item: {
+									xtype: 'combobox',
+									inputId: 'cutFileName',
+									dirtyCls: 'property-form-dirty',
+									labelWidth: 325,
+									fieldLabel: _('Naming standard for exported content'),
+									store: [
+										["0", "Default" ],
+										["1", "ISO 9660" ]
+									]
+								},
+								margin: 10,
+								help: _('If "ISO 9660" is selected, file names will be cut to 8.3 format to be compliant with ISO 9660. Note: This option only works with SCORM and Web Site export types.')
 							}
 						]
 					},
@@ -312,8 +329,6 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                     boxLabel: _('Show this window on eXe start')
                 }]
             }]
-
-
         });
 
         me.callParent(arguments);

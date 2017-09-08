@@ -201,7 +201,12 @@ class Manifest(object):
         """
         itemId   = "ITEM-"+unicode(self.idGenerator.generate())
         resId    = "RES-"+unicode(self.idGenerator.generate())
-        filename = page.name+".html"
+        # If ISO9660 compatible mode is active, we want '.htm' as the extension 
+        ext = 'html'
+        if G.application.config.cutFileName == '1':
+            ext = 'htm'
+
+        filename = page.name + '.' + ext
             
         
         self.itemStr += "<item identifier=\""+itemId+"\" isvisible=\"true\" "
@@ -275,7 +280,10 @@ class IMSPage(Page):
         the filename will be the 'self.node.id'.html or 'index.html' if
         self.node is the root node. 'outputDir' must be a 'Path' instance
         """
-        out = open(outputDir/self.name+".html", "wb")
+        ext = 'html'
+        if G.application.config.cutFileName == '1':
+            ext = 'htm'
+        out = open(outputDir/self.name + '.' + ext, "wb")
         out.write(self.render())
         out.close()
         
@@ -374,7 +382,7 @@ class IMSPage(Page):
         if style.hasValidConfig:
             html += style.get_extra_head()
         html += u"</head>"+lb
-        html += u'<body class="exe-ims"><script type="text/javascript">document.body.className+=" js"</script>'+lb
+        html += u'<body class="exe-ims" id="exe-node-'+self.node.id+'"><script type="text/javascript">document.body.className+=" js"</script>'+lb
         html += u"<div id=\"outer\">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
         html += u"<"+headerTag+" id=\"nodeDecoration\">"
@@ -470,21 +478,12 @@ class IMSExport(object):
         self.metadataType = package.exportMetadataType
 
 
-        # Copy the style sheet files to the output dir
+        # Copy the style files to the output dir
         # But not nav.css
         styleFiles = [self.styleDir/'..'/'popup_bg.gif']
-        styleFiles += self.styleDir.files("*.css")
+        styleFiles += self.styleDir.files("*.*")
         if "nav.css" in styleFiles:
             styleFiles.remove("nav.css")
-        styleFiles += self.styleDir.files("*.jpg")
-        styleFiles += self.styleDir.files("*.gif")
-        styleFiles += self.styleDir.files("*.png")
-        styleFiles += self.styleDir.files("*.js")
-        styleFiles += self.styleDir.files("*.html")
-        styleFiles += self.styleDir.files("*.ttf")
-        styleFiles += self.styleDir.files("*.eot")
-        styleFiles += self.styleDir.files("*.otf")
-        styleFiles += self.styleDir.files("*.woff")
         self.styleDir.copylist(styleFiles, outputDir)
 
         # copy the package's resource files
@@ -664,6 +663,8 @@ class IMSExport(object):
         for child in node.children:
             pageName = child.titleShort.lower().replace(" ", "_")
             pageName = re.sub(r"\W", "", pageName)
+            if G.application.config.cutFileName == "1":
+                pageName = pageName[0:8]
             if not pageName:
                 pageName = "__"
 
