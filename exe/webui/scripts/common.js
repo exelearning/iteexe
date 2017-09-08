@@ -34,22 +34,19 @@ var $exe = {
                 if (t > 7) $exe.iDeviceToggler.init()
             } else $exe.iDeviceToggler.init()
         }
-        // No MediaElement in ePub3
+		this.hasMultimediaGalleries = false;
+		this.setMultimediaGalleries();
+		// No MediaElement in ePub3
 		if (e.indexOf("exe-epub3") != 0) {
             var n = document.body.innerHTML;
-            if ($(".mediaelement").length>0) {
-                $exe.loadMediaPlayer.getPlayer()
+            if (this.hasMultimediaGalleries || $(".mediaelement").length>0) {
+                $exe.loadMediaPlayer.getPlayer();
             }
         }
         $exe.hint.init();
         $exe.setIframesProperties();
         $exe.hasTooltips();
         $exe.math.init();
-        if (typeof($.prettyPhoto) != 'undefined') $("a[rel^='lightbox']").prettyPhoto({
-            social_tools: "",
-            deeplinking: false,
-            opacity: 0.85
-        });
         $exe.dl.init();
 		// Add a zoom icon to the images using CSS 
 		$("a.exe-enlarge").each(function(i){
@@ -63,6 +60,51 @@ var $exe = {
 		// Disable autocomplete
 		$("INPUT.autocomplete-off").attr("autocomplete", "off");
     },
+	
+    // Transform links to audios or videos (with rel^='lightbox') in links to inline content (see prettyPhoto documentation)
+    setMultimediaGalleries : function(){
+		if (typeof($.prettyPhoto) != 'undefined') {
+			var lightboxLinks = $("a[rel^='lightbox']");
+			lightboxLinks.each(function(i){
+				var ref = this.href;
+				var _ref = ref.toLowerCase();
+				var isAudio = _ref.indexOf(".mp3")!=-1;
+				var isVideo = _ref.indexOf(".mp4")!=-1 || _ref.indexOf(".flv")!=-1 || _ref.indexOf(".ogg")!=-1 || _ref.indexOf(".ogv")!=-1;
+				if (isAudio || isVideo) {
+					var id = "media-box-"+i;
+					$(this).attr("href","#"+id);
+					var hiddenPlayer = $('<div class="exe-media-box js-hidden" id="'+id+'"></div>');
+						if (isAudio) hiddenPlayer.html('<div class="exe-media-audio-box"><audio controls="controls" src="'+ref+'" class="exe-media-box-element exe-media-box-audio"><a href="'+ref+'">audio/mpeg</a></audio></div>');
+						else hiddenPlayer.html('<div class="exe-media-video-box"><video width="480" height="385" controls="controls" class="exe-media-box-element"><source src="'+ref+'" /></video></div>');
+					$("body").append(hiddenPlayer);
+					$exe.hasMultimediaGalleries = true;
+				}
+			});
+			lightboxLinks.prettyPhoto({
+				social_tools: "",
+				deeplinking: false,
+				opacity: 0.85,
+				changepicturecallback: function() {
+					var media = $("#pp_full_res .exe-media-box-element");
+					if ($exe.loadMediaPlayer.isReady) {
+						if (media.length==1) media.mediaelementplayer();
+						$exe.loadMediaPlayer.isCalledInBox = true;
+					}
+					// Add a download link and a CSS class to pp_content_container (see exe_lightbox.css)
+					var cont = $(".pp_content_container");
+					cont.attr("class","pp_content_container");
+					if (media.length==1 && media[0].hasAttribute('src')) {
+						if (media.hasClass("exe-media-box-audio")) cont.attr("class","pp_content_container with-audio");
+						var src = media.attr('src');
+						var ext = src.split("/");
+						ext = ext[ext.length-1];
+						ext = ext.split(".")[1];
+						$(".pp_details .pp_description").append(' <span class="exe-media-download"><a href="'+src+'" title="'+$exe_i18n.download+'" download>'+ext+'</a></span>');
+					}
+				}
+			});
+		}
+	},
 	
 	// Apply the 'sfhover' class to li elements when they are 'moused over'
 	// Old browsers need this because they don't support li:hover
@@ -386,6 +428,8 @@ var $exe = {
 	
     // Load MediaElement if required
 	loadMediaPlayer: {
+        isCalledInBox: false, // Box = prettyPhoto with video or audio
+        isReady: false,
         getPlayer: function() {
             $exe.mediaelements = $(".mediaelement");
             $exe.mediaelements.each(function() {
@@ -417,13 +461,16 @@ var $exe = {
         },
         // Start MediaElement
 		init: function() {
-            if (typeof eXe != "undefined") {
+			if (typeof eXe != "undefined") {
                 mejs.MediaElementDefaults.flashName = "../scripts/mediaelement/" + mejs.MediaElementDefaults.flashName;
                 mejs.MediaElementDefaults.silverlightName = "../scripts/mediaelement/" + mejs.MediaElementDefaults.silverlightName
             }
             $exe.mediaelements.mediaelementplayer().show().each(function() {
                 $exe.alignMediaElement(this)
-            })
+            });
+			// Multimedia galleries
+			$exe.loadMediaPlayer.isReady = true;
+			if (!$exe.loadMediaPlayer.isCalledInBox) $("#pp_full_res .exe-media-box-element").mediaelementplayer();
         }
     },
 	

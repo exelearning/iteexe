@@ -1433,6 +1433,10 @@ def ideviceHasMediaelement(idevice):
     content = block.renderView('default')
     if re.search('<(video|audio) .*class=[\'"]mediaelement', content):
         return True
+    # Multimedia galleries (mp3, mp4, flv, ogg, ogv)
+    cont = content.lower()
+    if re.search('href=".*.mp3" rel="lightbox', cont) or re.search('href=".*.mp4" rel="lightbox', cont) or re.search('href=".*.flv" rel="lightbox', cont) or re.search('href=".*.ogg" rel="lightbox', cont) or re.search('href=".*.ogv" rel="lightbox', cont):
+        return True
     return False
 
 
