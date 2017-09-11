@@ -1,0 +1,2 @@
+.exe-dialog-text{margin:1.5em 0;background:#f9f9f9 url(../img/modalwindow_bg.png) no-repeat 10px 10px;color:#555;font-size:.95em;border:1px solid #ddd;padding:26px 10px 10px 10px;border-radius:5px;border-top-left-radius:0;position:relative}
+.exe-dialog-text:before{color:#666;font-size:.9em;font-style:italic;position:absolute;top:6px;right:10px}

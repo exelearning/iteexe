@@ -231,6 +231,9 @@ div.pp_overlay{background:#fff}
 div.pp_default .pp_nav .currentTextHolder,
 div.pp_default .pp_description{font-size:1em}
 div.ppt{display:none!important}
+#pp_full_res .pp_inline{line-height:1.5em;padding:0 10px}
+#pp_full_res .pp_inline p{margin:0;padding:1em 0}
+#pp_full_res .pp_title{color:#000;margin:0;padding:1em 0 .25em 0}
 /* Multimedia galleries */
 div.with-audio .pp_gallery ul li a{border:1px solid #fff}
 div.with-audio .pp_gallery ul li a:hover,div.with-audio .pp_gallery ul li.selected a,.pp_gallery ul a:hover,div.with-audio .pp_gallery li.selected a{border-color:#aaa}
