@@ -270,6 +270,8 @@ class SinglePage(Page):
         if style.hasValidConfig:
             html += style.get_extra_head()
             
+        html += common.getExtraHeadContent(self.node.package)
+        
         # Close head tag
         html += u'</head>' + lineBreak
         

@@ -322,6 +322,7 @@ class Package(Persistable):
     _author            = ''
     _description       = ''
     _backgroundImg     = ''
+    _extraHeadContent  = ''
     #styledefault=u"INTEF"
     # This is like a constant
     defaultLevelNames  = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
@@ -372,6 +373,7 @@ class Package(Persistable):
         self._intendedEndUserRoleTutor = False
         self._contextPlace = u''
         self._contextMode = u''
+        self._extraHeadContent = u''
         self.compatibleWithVersion9 = False
         
         #for export to Sugar (e.g. OLPC)
@@ -945,6 +947,12 @@ class Package(Persistable):
     def set_contextMode(self, value):
         self.set_context(value, self._contextMode)
         self._contextMode = toUnicode(value)
+        
+    def set_extraHeadContent(self, value):
+        if value:
+            self._extraHeadContent = value;
+        else:
+            self._extraHeadContent = u''        
 
     def set_changed(self, changed):
         self._isChanged = changed
@@ -978,6 +986,7 @@ class Package(Persistable):
     intendedEndUserRoleTutor = property(lambda self: self._intendedEndUserRoleTutor, set_intendedEndUserRoleTutor)
     contextPlace = property(lambda self: self._contextPlace, set_contextPlace)
     contextMode = property(lambda self: self._contextMode, set_contextMode)
+    extraHeadContent = property(lambda self: self._extraHeadContent, set_extraHeadContent)
 
     def findNode(self, nodeId):
         """
@@ -1659,6 +1668,8 @@ class Package(Persistable):
             self._contextPlace = u''
         if not hasattr(self, 'contextMode'):
             self._contextMode = u''
+        if not hasattr(self, 'extraHeadContent'):
+            self._extraHeadContent = u''
         if hasattr(self, 'scowsource'):
             del self.scowsource
         try:
@@ -1699,7 +1710,7 @@ class Package(Persistable):
                      '_objectives', '_preknowledge', '_learningResourceType',
                      '_intendedEndUserRoleType', '_intendedEndUserRoleGroup',
                      '_intendedEndUserRoleTutor', '_contextPlace',
-                     '_contextMode', 'scowsource', 'mxmlprofilelist',
+                     '_contextMode', '_extraHeadContent', 'scowsource', 'mxmlprofilelist',
                      'mxmlforcemediaonly', 'mxmlheight', 'mxmlwidth']:
             if hasattr(self, attr):
                 delattr(self, attr)

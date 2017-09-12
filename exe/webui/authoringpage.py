@@ -259,6 +259,7 @@ class AuthoringPage(RenderableResource):
         style = G.application.config.styleStore.getStyle(self.package.style)
         if style.hasValidConfig:
             html += style.get_edition_extra_head()        
+        html += common.getExtraHeadContent(self.package)
         html += u'</head>\n'
         return html
 

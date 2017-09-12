@@ -468,7 +468,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                     defaults: {
                         dirtyCls: 'property-form-dirty'
                     },
-                    items: [
+                    items: [                    
                         {
                             xtype: 'container',
                             layout: 'hbox',
@@ -639,8 +639,17 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                 tooltip: _('Checking this option, the saved package may be opened with eXe >= 0.20.4')
                             },
                             flex: 0,
+                            margin: 10,
                             help: _('Checking this option, the saved package may be opened with eXe >= 0.20.4')
-                        }
+                        },
+                        {
+                            xtype: 'textarea',
+                            inputId: 'pp_extraHeadContent',
+                            fieldLabel: _('Custom HEAD'),
+                            tooltip: _('Any code you enter here (STYLE, META, SCRIPT...) will be added in the HEAD section to every page.').replace(" HEAD "," &lt;HEAD&gt; "),
+                            height: 80,
+                            anchor: '100%'
+                        }                        
                     ]
                 },
                 {

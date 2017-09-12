@@ -68,6 +68,13 @@ def docType():
     else:
         return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
 
+def getExtraHeadContent(package):
+    # Custom HEAD (see PackagePanel.js)
+    if hasattr(package, '_extraHeadContent'):
+        return package._extraHeadContent
+    else:
+        return ''
+        
 def exportJavaScriptIdevicesFiles(iDevices, outputDir):
     """ Copy all the JS iDevices export files in outputDir """
     # TODO: Find a way to not copy already existing files

@@ -155,6 +155,7 @@ class WebsitePage(Page):
         # Some styles might have their own JavaScript files (see their config.xml file)
         if style.hasValidConfig:
             html += style.get_extra_head()
+        html += common.getExtraHeadContent(self.node.package)
         html += u"</head>"+lb
         html += u'<body class="exe-web-site" id="exe-node-'+self.node.id+'"><script type="text/javascript">document.body.className+=" js"</script>'+lb
         html += u"<div id=\"content\">"+lb

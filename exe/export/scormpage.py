@@ -135,6 +135,7 @@ class ScormPage(Page):
         if self.scormType == 'commoncartridge':
             if style.hasValidConfig:
                 html += style.get_extra_head()        
+            html += common.getExtraHeadContent(self.node.package)
             html += u"</head>"+lb
             html += u"<body id=\""+self.node.id+"\" class=\"exe-scorm\" "
         else:
@@ -142,6 +143,7 @@ class ScormPage(Page):
             html += u"<script type=\"text/javascript\" src=\"SCOFunctions.js\"></script>"+lb
             if style.hasValidConfig:
                 html += style.get_extra_head()
+            html += common.getExtraHeadContent(self.node.package)
             html += u"</head>"+lb            
             html += u'<body id="exe-node-'+self.node.id+'" class=\"exe-scorm\" '
         if common.hasQuizTest(self.node):
