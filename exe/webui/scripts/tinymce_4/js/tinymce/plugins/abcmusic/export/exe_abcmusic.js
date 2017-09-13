@@ -30,7 +30,14 @@ $exeABCmusic = {
 		// To do (Animate is hidden): stop : "Stop",		
 		// To do (Animate is hidden): animate : "Animate"
 	},
-	baseURL : (typeof(top.Ext)!="undefined" || (opener && typeof(opener.Ext)!="undefined")) ? '/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/' : './',
+	getBaseURL : function(){
+		try {
+			return (typeof(top.Ext)!="undefined" || (opener && typeof(opener.Ext)!="undefined")) ? '/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/' : './';
+		} catch(e) {
+			// SecurityError: Can't access property on cross-origin object (#231)
+			return './';
+		}
+	},
 	canPlay : function(){
 		var can = true;
 		var ua = navigator.userAgent.toLowerCase();
@@ -88,7 +95,7 @@ $exeABCmusic = {
 			alert(_("Go to Tools - Preview to see this working"));
 			return false;
 		}
-		window.ABCJS.midi.soundfontUrl = $exeABCmusic.baseURL;
+		window.ABCJS.midi.soundfontUrl = $exeABCmusic.getBaseURL();
 		ABCJS.renderMidi(
 			'abc-music-midi-player'+i, 
 			jQuery("#abc-music-t"+i).val(), 
