@@ -298,16 +298,16 @@ class WebsitePage(Page):
                 html += lb + self.indent(depth) + "<li id=\"active\"><a href=\"" + quote(page.name) + '.' + ext + "\""
 
                 if page.node.children:
-                    html += "class=\"active daddy"
+                    html += " class=\"active daddy"
                 else:
-                    html += "class=\"active no-ch"
+                    html += " class=\"active no-ch"
 
             # A node in the path of the active node (but not the main one) 
             elif page.node in nodePath and page.node.parent != None:
                 html += lb + self.indent(depth) + "<li class=\"current-page-parent\"><a href=\"" + quote(page.name) + '.' + ext + "\""
 
                 if page.node.children:
-                    html += "class=\"current-page-parent daddy"
+                    html += " class=\"current-page-parent daddy"
 
             else:
                 html += lb + self.indent(depth) + "<li><a href=\"" + quote(page.name) + '.' + ext + "\" class=\""
