@@ -597,13 +597,13 @@ if (exe_editor_version==4) {
 }
 
 // browse the specified URL in system browser
-function browseURL(e) {
+function browseURL(e,elm) {
     /* Links with rel="lightbox" */
-    if (typeof(e)=='object') {
-        if (typeof(e.rel)=='string' && e.rel.indexOf('lightbox')==0) {
-            return false;
-        }
-        e = e.href;
+    if (
+        (typeof(e)=='object' && typeof(e.rel)=='string' && e.rel.indexOf('lightbox')==0) || 
+        (elm && typeof(elm.rel)=='string' && elm.rel.indexOf('lightbox')==0)
+    ) {
+        return false;
     }
     window.parent.nevow_clientToServerEvent('browseURL', this, '', e);
 }
