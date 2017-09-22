@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <idevice>
-	<title>Example iDevice</title>
+	<title>Example iDevice</title><!-- If you change this title the iDevice will be available -->
 	<css-class>Example</css-class>
 	<category>Experimental</category>	
 	<!-- Optional:

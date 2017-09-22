@@ -571,7 +571,8 @@ class IdeviceStore:
                 if os.path.isdir(iDevicesDir/ideviceDir):
                     try:
                         idevice = JsIdevice(iDevicesDir/ideviceDir)
-                        self.jsIdevices.append(idevice)
+                        if (idevice.title!='Example iDevice'):
+                            self.jsIdevices.append(idevice)
                     except InvalidConfigJsIdevice as invalidconfigexception:
                         log.warn("The load of the JsIdevice " + invalidconfigexception.name + " has failed with this message: " + invalidconfigexception.message)
                     
