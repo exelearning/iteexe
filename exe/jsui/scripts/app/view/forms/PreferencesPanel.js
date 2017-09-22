@@ -244,34 +244,6 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 								margin: 10,
 								help: _('This will ignore the package "Create editable export?" setting every time it\'s loaded. You will be able to disable it before exporting, but it will be reset every time you open the package.')
 							},
-							{
-								xtype: 'helpcontainer',
-								item: {
-									xtype: 'combobox',
-									inputId: 'defaultLicense',
-									dirtyCls: 'property-form-dirty',
-									fieldLabel: _("Default license for the new documents"),
-									labelWidth: 350,
-									labelAlign:'top',
-									queryModel: 'local',
-									displayField: 'text',
-									valueField: 'licenseName',
-									store: {
-										fields: ['licenseName','text'],
-										proxy: {
-											type: 'ajax',
-											url: 'preferences',
-											reader: {
-												type: 'json',
-												root: 'licensesNames'
-											}
-										},
-										autoLoad: true
-									},
-								},
-								margin: 10,
-								help: _('The current document license can be modified in the Properties tab.')								
-							},
 							// Compatibility with ISO 9660
 							{
 								xtype: 'helpcontainer',
@@ -288,6 +260,38 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 								},
 								margin: 10,
 								help: _('If "ISO 9660" is selected, file names will be cut to 8.3 format to be compliant with ISO 9660. Note: This option only works with SCORM and Web Site export types.')
+							},
+							{
+								xtype: 'label',
+								forId: 'defaultLicense',
+								text:  _("Default license for the new documents"),
+								margin: '0 0 0 10'
+							}, 							
+							{
+								xtype: 'helpcontainer',
+								item: {
+									xtype: 'combobox',
+									inputId: 'defaultLicense',
+									dirtyCls: 'property-form-dirty',
+									labelAlign:'top',
+									queryModel: 'local',
+									displayField: 'text',
+									valueField: 'licenseName',
+									store: {
+										fields: ['licenseName','text'],
+										proxy: {
+											type: 'ajax',
+											url: 'preferences',
+											reader: {
+												type: 'json',
+												root: 'licensesNames'
+											}
+										},
+										autoLoad: true
+									}
+								},
+								margin: '5 10 10 10',
+								help: _('The current document license can be modified in the Properties tab.')								
 							}
 						]
 					},
@@ -320,12 +324,12 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                     flex: 1
                 }, {
                     xtype: 'checkboxfield',
-                    //margin: 10,
+                    // margin: 10,
                     inputId: 'showPreferencesOnStart',
                     inputValue: '1',
                     uncheckedValue: '0',
                     dirtyCls: 'property-form-dirty',
-                    boxLabelAlign: 'before',
+                    // boxLabelAlign: 'before',
                     boxLabel: _('Show this window on eXe start')
                 }]
             }]

@@ -48,7 +48,7 @@ def replaceLinks(matchobj, package_name):
     and do.group(1).startswith('resources/'):
         clean_url = urllib.quote(package_name.encode('utf-8'))
         return re.sub(r'(?i)href\s*=\s*"?([^>"]+)"?',
-                r'''href="\1" onclick="browseURL('%s/%s/\1'); return false"''' % (G.application.exeAppUri, clean_url),
+                r'''href="\1" onclick="browseURL('%s/%s/\1',this); return false"''' % (G.application.exeAppUri, clean_url),
                 anchor)
     else:
         return anchor

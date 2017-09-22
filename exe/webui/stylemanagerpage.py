@@ -53,7 +53,7 @@ class ImportStyleExistsError(ImportStyleError):
         self.local_style = local_style
         self.absolute_style_dir = absolute_style_dir
         if message == '':
-            self.message = u'Error importing style, local style already exists. '
+            self.message = _('Style already exists. ')
         else:
             self.message = message
 
@@ -222,10 +222,11 @@ class StyleManagerPage(RenderableResource):
         try:
             sourceZip = ZipFile(filename, 'r')
         except IOError:
-            raise ImportStyleError('Can not create dom object')
+            # Can not create DOM object
+            raise ImportStyleError(_('Could not retrieve data (Core error)'))
         if os.path.isdir(absoluteTargetDir):
             style = Style(absoluteTargetDir)
-            raise ImportStyleExistsError(style, absoluteTargetDir, u'Style directory already exists')
+            raise ImportStyleExistsError(style, absoluteTargetDir, _('Directory exists'))
         else:
             os.mkdir(absoluteTargetDir)
             for name in sourceZip.namelist():
@@ -235,10 +236,11 @@ class StyleManagerPage(RenderableResource):
             if style.isValid():
                 if not self.config.styleStore.addStyle(style):
                     absoluteTargetDir.rmtree()
-                    raise ImportStyleExistsError(style, absoluteTargetDir, u'The style name already exists')
+                    raise ImportStyleExistsError(style, absoluteTargetDir, _('The style name already exists'))
             else:
                 absoluteTargetDir.rmtree()
-                raise ImportStyleError(u'Incorrect style format (does not include content.css')
+                # content.css is missing
+                raise ImportStyleError(_('File %s does not exist or is not readable.') % 'content.css')
 
         # If not error was thrown, style was successfully imported
         # Let the calling function inform the user as appropriate
