@@ -245,9 +245,12 @@ class _Resource(Persistable):
             else:
                 filename = (self._package.resourceDir/oldPath.basename())
                 storageName = self._fn2ascii(filename)
-                if G.application.config.cutFileName:
-                    original = (self._package.resourceDir/storageName)
-                    storageName = self.uniquePath(original, 0)
+                if G.application.config.cutFileName == "1" and self._package != None:
+                    if self._package.isChanged:
+                        original = (self._package.resourceDir/storageName)
+                        storageName = self.uniquePath(original, 0)
+                    else:
+                        storageName = (self._package.resourceDir/storageName).unique()
                 else:
                     storageName = (self._package.resourceDir/storageName).unique()
                     
@@ -336,10 +339,11 @@ class _Resource(Persistable):
         #JR: Convertimos el nombre del fichero a algunos caracteres ascii validos
         import unicodedata
         import string
-        #if the variable is actived format name of images and extension
-        if G.application.config.cutFileName:
-            nameBase = nameBase[0:8]
-            ext = self.cutExtension(ext, nameBase)
+        #if the variable is actived and package is set and change, format name of images and extension
+        if G.application.config.cutFileName == "1" and self._package != None:
+            if self._package.isChanged:
+                nameBase = nameBase[0:8]
+                ext = self.cutExtension(ext, nameBase)
         validFilenameChars = "~,()[]-_. %s%s" % (string.ascii_letters, string.digits)
         if type(nameBase) == str:
             nameBase = unicode(nameBase)
