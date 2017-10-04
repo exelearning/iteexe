@@ -668,6 +668,14 @@ langsStore = [
         _("Chinese ")
     ],
     [
+	    "zh_CN",
+	    _("Simplified Chinese")
+	],
+	[
+	    "zh_TW",
+	    _("Traditional Chinese")
+	],
+    [
         "zu",
         _("Zulu ")
     ]
