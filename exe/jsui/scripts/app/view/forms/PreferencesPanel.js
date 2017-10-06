@@ -253,7 +253,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									labelWidth: 325,
 									fieldLabel: _('Naming standard for exported content'),
 									store: [
-										["0", "Default" ],
+										["0", _("Default") ],
 										["1", "ISO 9660" ]
 									]
 								},
