@@ -93,6 +93,9 @@ Ext.define('eXe.controller.MainTab', {
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
+            '#save_properties': {
+            	click: this.onClickSave
+            },
             '#clear_properties': {
                 click: this.onClickClear
             },
@@ -249,14 +252,30 @@ Ext.define('eXe.controller.MainTab', {
             img.show();
         }
     },
+
+    onClickSave: function(button) {
+    	var formpanel = button.up('form');
+    	this.saveForm(formpanel, true);
+    },
     
-    saveForm: function(formpanel) {
+    saveForm: function(formpanel, show_wait) {
 	    
-    	var form = formpanel.getForm();
+    	if (typeof show_wait === 'undefined') {
+    		show_wait = false;
+    	}
     	
+    	var form = formpanel.getForm();
+
 	    if (form.isValid()) {
-	        form.submit({ 
+	    	if (show_wait) {
+	    		Ext.Msg.wait(_('Please wait...'));
+	    	}
+	        form.submit({
                 success: function(form, action) {
+                	if (show_wait) {
+                		Ext.MessageBox.hide();
+                		Ext.MessageBox.alert("", _('Settings Saved'));
+                	}
                     if (formpanel.itemId == 'package_properties') {
                         var formclear = function(formpanel) {
                             formpanel.clear();
