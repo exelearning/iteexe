@@ -1,0 +1,6 @@
+#pblTaskInfo,#pblTaskFeedback{display:none}
+#pblTaskInfo,#pblTaskFeedback{padding:0 20px 5px 20px;border:1px solid #C0C0C0;margin-top:1.5em}
+#pblTaskInfo legend,#pblTaskFeedback legend{font-weight:bold;padding:0 10px}
+label[for=pblTaskDescription],label[for=pblTaskFeedbackContent]{font-weight:bold}
+#pblTaskInfo label{display:inline-block;width:12em;text-align:right;padding-right:.5em}
+label[for=pblTaskFeedbackButtonText]{padding-right:.5em}
