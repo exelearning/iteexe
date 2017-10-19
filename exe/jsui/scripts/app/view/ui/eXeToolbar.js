@@ -421,11 +421,13 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 text: _('iDevice Editor')
                             },
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_templatemanager',
                                 text: _('Content-Template Manager')
                             },
 							{
+                                cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_jsidevicemanager',
                                 accesskey: 'j',
