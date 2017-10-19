@@ -246,6 +246,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
 	                            inputId: 'pp_author',
                                 dirtyCls: 'property-form-dirty',
 	                            fieldLabel: _('Author'),
+	                            labelWidth: '180px',
 	                            tooltip: _('Primary author of the resource.'),
 	                            anchor: '100%'
                             },
@@ -259,6 +260,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                 inputId: 'pp_newlicense',
                                 dirtyCls: 'property-form-dirty',
                                 fieldLabel: _('License'),
+                                labelWidth: '180px',
                                 store: eXe.view.forms.PackagePanel.eXeLicenses,
                                 tooltip: _('Select a license.'),
                                 anchor: '100%',
@@ -278,6 +280,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                 inputId: 'pp_learningResourceType',
                                 dirtyCls: 'property-form-dirty',
                                 fieldLabel: _('Learning Resource Type'),
+                                labelWidth: '180px',
                                 store: lomesVocab.learningResourceTypeValues.slice(39),
                                 tooltip: _('Learning Resource Type'),
                                 anchor: '100%',
@@ -302,8 +305,9 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             {
 					                            xtype: 'radiogroup',
 					                            fieldLabel: _('Intended End User'),
+					                            labelWidth: '250px',
 					                            tooltip: _('Intended End User'),
-		                                        columns: [150, 150, 150],
+		                                        columns: [150, 225, 225],
 					                            items: [
 					                                {
 						                                xtype: 'radio',
@@ -339,6 +343,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                     item: {
                                         xtype: 'fieldcontainer',
                                         fieldLabel: _('For Group Work'),
+                                        labelWidth: '250px',
                                         tooltip: _('For Group Work'),
                                         items: [
                                             {
@@ -364,6 +369,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                     item: {
                                         xtype: 'fieldcontainer',
                                         fieldLabel: _('For Individual Tuition'),
+                                        labelWidth: '250px',
                                         tooltip: _('For Individual Tuition'),
                                         items: [
                                             {
@@ -392,8 +398,9 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             {
 		                                        xtype: 'radiogroup',
 		                                        fieldLabel: _('Context'),
+		                                        labelWidth: '250px',
 		                                        tooltip: _('Context'),
-		                                        columns: [150, 150, 150],
+		                                        columns: [150, 225, 225],
 		                                        items: [
 		                                            {
 		                                                xtype: 'radio',
@@ -425,8 +432,9 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             {
 		                                        xtype: 'radiogroup',
 		                                        fieldLabel: _('Modality'),
-		                                        tooltip: _('Modality'),
-		                                        columns: [150, 150, 150],
+                                                labelWidth: '250px',
+                                                tooltip: _('Modality'),
+		                                        columns: [150, 225, 225],
 		                                        items: [
 		                                            {
 		                                                xtype: 'radio',
@@ -651,6 +659,12 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             anchor: '100%'
                         }                        
                     ]
+                },
+                {
+                	xtype: 'button',
+                	text: _('Save'),
+                	itemId: 'save_properties',
+                	margin: 10
                 },
                 {
                     xtype: 'button',

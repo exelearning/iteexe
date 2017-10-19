@@ -1,3 +1,46 @@
+intef-exe (3:2.1.3~beta2) lucid; urgency=medium
+  * Ignacio Gros
+    - TinyMCE: Media plugin inserted DIV instead of figure (#216).
+    - TinyMCE: Activate the FX button in blocks with effects.
+    - The Preferences window was too small (#217).
+    - IFRAME was deleted after changing its footer caption (#214).
+    - Untranslated strings in the Preferences panel (#219).
+    - ABC Music Notation Plugin: Remove an unnecessary attribute and check if the browser is compatible before creating the MIDI link.
+    - iDevice with no TinyMCE editors (#226).
+    - Higher window so the buttons are not hidden.
+    - Align figure with image (#228).
+    - Remove the 'data-mce-fragment' attribute from audios and videos.
+    - Unhandled exception (SecurityError: Permission denied to access property "Ext" on cross-origin object).
+    - Untranslated strings in the Style Manager (#232).
+    - Invalid HTML: No space between attributes (#221).
+    - Lightbox link open in a new window (#227).
+    - Preferences window. Some texts were cut (#220).
+    - Package panel: Some labels were in 2 lines.
+    - TinyMCE 4. Untranslated string ('Template') (#236).
+    - Preferences panel. Untranslated string: 'Default' (#237).
+    - A government organization's name has changed.
+
+  * Juan Rafael Fernández
+    - Fix typo on new ISO 9660 preference.
+    - Fixed a misspelling in the English text.
+    - New full Russian translation, by Alexey Loginov.
+    - New full Catalan translation, by Carles Ferrando García.
+    - New full Italian translation, by Andrea Primiani.
+    - New full Basque translation, by Joxemi Andonegi.
+    - New full French translation, by Jesús Miguel Domínguez.
+    - New full Valencian translation, by Pilar Embid.
+    - New full Galician translation, by Pablo Nimo.
+    - New full Portuguese translation, by Dionisio Martínez Soler.
+    - Improved French translation.
+
+  * SDWeb
+    - Missing images in 2.1.3 (#224).
+    - 2.1.3 does not work in Fedora (#223).
+    - Wrong language selection (when choosing Chinese) (#205).
+    - Properties tab: No "Save" option (#240).
+
+ -- eXeLearning <admin@exelearning.net>  Mon, 16 Aug 2017 09:16:39 +0200
+
 intef-exe (3:2.1.3~beta1) lucid; urgency=medium
   * Ignacio Gros
     - About page contents updated.
@@ -71,7 +114,7 @@ intef-exe (3:2.1.3~beta1) lucid; urgency=medium
     - Added option to force editable exports even if the package has it disabled when loading it.
     - Replace imported HTML entities to its previous form (#163).
     - Change MathJax CDN (#191).
-    - Problem with Wiki idevice on pages with a lot of images (#202). 
+    - Problem with Wiki idevice on pages with a lot of images (#202).
     - Update Mac OS package generation instructions (#198).
     - Added compatibility with ISO 9660 by cutting names to 8.3 format (#208).
 
@@ -84,19 +127,19 @@ intef-exe (3:2.1.2) lucid; urgency=medium
     - About page update
     - Fix #157 - TinyMCE: Image plugin (Constrain proportions).
     - Hangman game available letters (#140). This string should not be used: abcdefghijklmnñopqrstuvwxyz
-    - Fix #169 - Error in element.py for PlainTextAreaElement. 
-	
+    - Fix #169 - Error in element.py for PlainTextAreaElement.
+
   * SDWeb
     - Fix #156: Use base.css from style if one is available
     - Solve #158 - Copy minified CSS and JS to its correct location on ePub export
     - Solve #162: Version file in config folder
-	
+
   * Juan Rafael Fernández
     - Fixed exe_do help (added text export)
     - Removed 'ñ' from default hangman letters
     - Clarified English text on "exemedia" and "pastemath" plugins
     - Preparing mki18n.sh for 2.1.2 release
-    - New Spanish translation 
+    - New Spanish translation
 
 intef-exe (3:2.1.1) lucid; urgency=medium
 
@@ -112,7 +155,7 @@ intef-exe (3:2.1.1) lucid; urgency=medium
       - Ask for confirmation if alt is left empty
     - FR #36: Style Designer. Reload the Styles' list after saving a Style
     - Fixed #90: Microsoft Edge doesn't appear on the list of available browsers
-    - Fixed #91: Error when executing on RedHat, CentOS, Fedora... 
+    - Fixed #91: Error when executing on RedHat, CentOS, Fedora...
     - Fix #131: Change browser check to prevent the SO to ask the user the location of a non-installed browser
     - Update Debian packages to remove slimit and add webassets
     - Solve #98. Add "_" to the file name if it is forbidden.
@@ -166,7 +209,7 @@ intef-exe (3:2.1.1) lucid; urgency=medium
     - HTML - FR #75: iDevice Editor: Add a different class to each custom iDevice
     - Styles - Responsive design (image, video and iframe max-width in all cases)
     - Styles - Print version: Print a link to the IFRAME src instead of the IFRAME itself
-    - HTML, JavaScript and CSS bug fix:	
+    - HTML, JavaScript and CSS bug fix:
       - CSS - Horizontal navigation (title position)
       - JavaScript - Effects (error handling)
       - JavaScript - Cloze iDevice: Autocomplete in input should be off (#81)
@@ -197,7 +240,7 @@ intef-exe (3:2.1.1) lucid; urgency=medium
       - Authorship and license revision
       - Fedora installation instructions (link to the download page)
       - Heading level mismatch (<hX></h1>) solved. We use H1 for the node titles. (see #62)
-		
+
   * Juan Rafael Fernández
     - Fixes in debian/ and the debian packaging, making lintian a bit happier.
     - (Debian packaging) Fixed information about the new dependencies.
@@ -218,9 +261,9 @@ intef-exe (3:2.1.1) lucid; urgency=medium
     - New full Spanish translation, by Juan Rafael Fernández
     - New full Galician translation, by Pablo Nimo Liboreiro
     - New full Catalan translation, by Carles Ferrando García
-    - New Norwegian translation, by Henrik Kvalnes	
+    - New Norwegian translation, by Henrik Kvalnes
     - New Dutch translation, by Karel Werschkull
-    - New Tradicional Chinese translation, by Franklin Weng		
+    - New Tradicional Chinese translation, by Franklin Weng
 
   * Pedro Peña Pérez
     - Updated changelog for version 2.1
@@ -522,12 +565,12 @@ python-intef-exe (3:2.0.1) lucid; urgency=low
     - Fix bug #2261: "Submit icons were not visible (Ubuntu / FF 32.0.4)"
     - Single Page Export: Add a new class to each node with its level ("level-1-node", etc.)
     - Fix bug #2273: "Some contents disappeared when the was an horizontal menu"
-  
+
   * Juan Rafael Fernández
     - Debian package conformance review
     - Fix bug #2250: "Is XUL necessary to display the manual?"
     - License specified in the About page
-  
+
   * Mercedes Cotelo
     - Fix bug #2211: "Cambio de nombre de plantilla carm a CARM"
     - Fix bug #2263: "Modificación estilo CARM y CeDeC Derivados"
@@ -536,11 +579,11 @@ python-intef-exe (3:2.0.1) lucid; urgency=low
     - Fix bug #2245: "Backwards compatibility may not work"
     - Fix bug #2258: "No call to update-mime-database"
     - Fix bug #2262: "Doble clic sobre archivo elp"
-    - New experimental category for Idevices 
+    - New experimental category for Idevices
 
   * Translation Teams
     - Updated translations of Spanish, Russian, Italian, French, Dutch, Valencian, Basque, Portuguese and Gallician.
-  
+
  -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 29 Oct 2014 13:38:26 +0100
 
 python-intef-exe (3:2.0) lucid; urgency=low

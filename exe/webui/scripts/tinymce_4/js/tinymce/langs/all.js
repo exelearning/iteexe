@@ -210,6 +210,7 @@ tinymce.addI18n('all',{
 "Merge cells": _("Merge Table Cells"),
 "Insert template": _("Predefined Template Content"),
 "Templates": _("Templates"),
+"Template": _("Template"),
 "Background color": _("Background color"),
 "Custom...": _("Custom..."),
 "Custom color": _("Custom color"),
