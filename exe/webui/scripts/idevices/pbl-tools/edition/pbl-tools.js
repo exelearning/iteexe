@@ -17,7 +17,7 @@ var $exeDevice = {
 	init : function(){
 		// Add some instructions
 		var html = "\
-			<fieldset>\
+			<fieldset id='pblTypes'>\
 				<legend>"+_('Options')+"</legend>\
 				<p>"+_("Write the title, select an icon and choose a type...")+"</p>\
 				<p>\
