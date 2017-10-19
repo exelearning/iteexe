@@ -1,5 +1,5 @@
 #pblTaskInfo,#pblTaskFeedback{display:none}
-#pblTypes input{margin-left:1em}
+#pblTypes input{margin-left:2em;vertical-align:top}
 #pblTypes,#pblTaskInfo,#pblTaskFeedback{padding:0 20px 5px 20px;border:1px solid #C0C0C0;margin:1.5em 0}
 #pblTypes legend,#pblTaskInfo legend,#pblTaskFeedback legend{font-weight:bold;padding:0 10px}
 label[for=pblTaskDescription],label[for=pblTaskFeedbackContent]{font-weight:bold}
