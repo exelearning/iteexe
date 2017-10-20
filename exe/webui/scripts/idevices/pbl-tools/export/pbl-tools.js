@@ -10,7 +10,7 @@ var $exePBLtask = {
     
 	init : function(){
 		
-		$(".pbl-taskIdevice").each(function(i){
+		$(".pblIdevice").each(function(i){
 			
 			// Fade in each DL
 			$(".pbl-task-info").delay(1500).css({
