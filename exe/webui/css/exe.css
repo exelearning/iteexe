@@ -243,3 +243,21 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 /* TinyMCE Float Panel (to review - see #132) */
 .mce-floatpanel{max-height:100%;overflow:auto}
 .mce-fullscreen .idevice-edition-buttons{display:none}
+
+/* iDevice icon selection styles */
+.js-show-icon-panel-button {
+	margin-right: 0.5em;
+}
+.js-idevide-icon-preview {
+	vertical-align: middle;
+	max-width: 60px;
+	height: auto;
+}
+.js-delete-icon {
+	vertical-align: middle;
+	margin-left: 5px;
+}
+.js-icon-panel-container {
+	display:none;
+	z-index:99;
+}

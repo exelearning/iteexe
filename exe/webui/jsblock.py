@@ -19,7 +19,7 @@
 from webassets.utils import common_path_prefix
 from exe.engine.idevice import Idevice
 """
-GenericBlock can render and process GenericIdevices as XHTML
+JsBlock can render and process JsIdevices as XHTML
 """
 
 import logging
@@ -77,65 +77,56 @@ class JsBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u'<div><div class="block">\n'
-        html += common.textInput("title"+self.id, self.idevice.title)
-        html += common.hiddenField("iconiDevice"+self.id, self.idevice.icon)
-        html += u'<a style="margin-right:.5em" href="javascript:void(0)" '
-        html += u'onclick="showMessageBox(\'iconpanel\');">'
-        html += u'%s</a>' % _('Select an icon')
+        html = u'<div><div class="block">'
+        html += common.textInput("title" + self.id, self.idevice.title)
+        html += common.hiddenField("iconiDevice" + self.id, self.idevice.icon)
+        html += u'<a class="js-show-icon-panel-button" href="javascript:showMessageBox(\'iconpanel\');">%s</a>' % _('Select an icon')
+
+        # Get icon source (if it exists)
         icon = self.idevice.icon
-        
-        if icon != "":
-        
-            iconExists = False
-            myIcon = Path(G.application.config.stylesDir/style/"icon_" + self.idevice.icon + ".gif")
-            if myIcon.exists():
-                iconExists = True
+        icon_exists = False
+        if icon != '':
+            idevice_icon = Path(G.application.config.stylesDir / style / 'icon_' + self.idevice.icon + '.gif')
+            if idevice_icon.exists():
+                icon_exists = True
             else:
-                myIcon = Path(G.application.config.stylesDir/style/"icon_" + self.idevice.icon + ".png")
-                if myIcon.exists():
-                    iconExists = True
-            if iconExists:
-                html += '<img style="vertical-align:middle;max-width:60px;height:auto" '
-                name = 'iconiDevice' + self.id
-                html += u"name=\"%s\" " % name
-                html += u"id=\"%s\" " % 'iconiDevice'
-                html += 'src="/style/%s/icon_%s' % (style, icon)
-                html += '%s"/>' % myIcon.ext 
-                html += u'<a onclick="deleteIcon(%s)" ' % (self.id)
-                html += u"id=\"deleteIcon%s\" " % self.id
-                html += 'class="deleteIcon"'
-                html += 'title="delete">'
-                html += u'<img alt="%s" style="vertical-align:middle; margin-left:5px" src="%s"/>' % ('delete', '/images/stock-delete.png')
-                html += '</a><br />\n' 
+                idevice_icon = Path(G.application.config.stylesDir/style/"icon_" + self.idevice.icon + ".png")
+                if idevice_icon.exists():
+                    icon_exists = True
+
+        # Icon HTML element
+        html += u'<img class="js-idevide-icon-preview" name="iconiDevice%s" id="iconiDevice"' % (self.id)
+        if icon_exists:
+            html += u' src="/style/%s/icon_%s%s"' % (style, icon, idevice_icon.ext)
         else:
-            html += '<img style="vertical-align:middle;max-width:60px;height:auto" '
-            name = 'iconiDevice' + self.id
-            html += u"name=\"%s\" " % name
-            html += u"id=\"%s\" " % 'iconiDevice'
-            html += 'src=%s' % ('/images/empty.gif')
-            html += '>'
-            html += u'<a onclick="deleteIcon(%s)" ' % (self.id)
-            html += u"id=\"deleteIcon%s\" " % self.id
-            html += 'class="deleteIcon"'
-            html += 'style="display: none"'
-            html += 'title="delete">'
-            html += u'<img alt="%s" style="vertical-align:middle; margin-left:5px" src="%s"/>' % ('delete', '/images/stock-delete.png')
-            html += '</a><br />\n' 
-        html += u'<div style="display:none;z-index:99;">'
-        html += u'<div id="iconpaneltitle">'+_("Icons")+'</div>'
+            html += u' src="/images/empty.gif"'
+        html += u'/>'
+
+        # Delete button
+        html += u'<a href="javascript:deleteIcon(%s);" id="deleteIcon%s" class="deleteIcon" title="%s"' % (self.id, self.id, _('Delete'))
+        # If the icon doesn't exists
+        if not icon_exists:
+            html += u' style="display: none;"'
+        html += u'>'
+        html += u'<img class="js-delete-icon" alt="%s" src="%s"/>' % (_('Delete'), '/images/stock-delete.png')
+        html += u'</a>'
+
+        html += u'<div class="js-icon-panel-container">'
+        html += u'<div id="iconpaneltitle">%s</div>' % _("Icons")
         html += u'<div id="iconpanelcontent">'
         html += self.__renderIcons(style)
         html += u'</div>'
-        html += u'</div>\n'
+        html += u'</div>'
+        html += u"</div>"
 
-        html += u"</div>\n"
         for element in self.elements:
-            html += element.renderEdit() + "<br />"
+            html += element.renderEdit() + u'<br />'
+
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += u"</div>"
+
         return html
-    
+
     def __renderIcons(self, style):
         """
         Return xhtml string for dispay all icons
