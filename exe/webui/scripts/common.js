@@ -434,7 +434,7 @@ var $exe = {
 			var p = window.location.protocol;
 			var t = false;
 			if (p != "http" && p != "https") t = true;
-			$("IFRAME").each(function() {
+			$("iframe").each(function() {
 				var i = $(this);
 				var s = i.attr("src");
 				if (t && s.indexOf("//") == 0) $(this).attr("src", "http:" + s);
