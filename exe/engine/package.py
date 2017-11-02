@@ -355,7 +355,12 @@ class Package(Persistable):
         self.previewDir    = None
         self.idevices      = []
         self.dublinCore    = DublinCore()
-        self._lang = G.application.config.locale.split('_')[0]
+        # When working with chinese, we need to add the full language string
+        # TODO: We should test if we really need to split the locale
+        if G.application.config.locale.split('_')[0] != 'zh':
+            self._lang = G.application.config.locale.split('_')[0]
+        else:
+            self._lang = G.application.config.locale
         self.setLomDefaults()
         self.setLomEsDefaults()
         self.scolinks      = False
@@ -997,7 +1002,7 @@ class Package(Persistable):
         node = self._nodeIdDict.get(nodeId)
         if node and node.package is self:
             return node
-        else: 
+        else:
             return None
 
 
@@ -1636,7 +1641,12 @@ class Package(Persistable):
         """
 
         if not hasattr(self, 'lang'):
-            self._lang = G.application.config.locale.split('_')[0]
+            # When working with chinese, we need to add the full language string
+            # TODO: We should test if we really need to split the locale
+            if G.application.config.locale.split('_')[0] != 'zh':
+                self._lang = G.application.config.locale.split('_')[0]
+            else:
+                self._lang = G.application.config.locale
         entry = str(uuid.uuid4())
         if not hasattr(self, 'lomEs') or not isinstance(self.lomEs, lomsubs.lomSub):
             self.lomEs = lomsubs.lomSub.factory()
