@@ -35,6 +35,7 @@ from zipfile                       import ZipFile, ZIP_DEFLATED
 from exe.webui                     import common
 from exe.engine.path               import Path, TempDirPath
 from exe.export.pages              import uniquifyNames
+from exe.engine.resource           import Resource
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
 from exe.export.singlepage         import SinglePage
 from exe.export.websiteexport      import WebsiteExport
@@ -820,5 +821,15 @@ class ScormExport(object):
 
             self.pages.append(page)
             self.generatePages(child, depth + 1)
-    
+
+    def hasUncutResources(self):
+        """
+        Check if any of the resources in the exported package has an uncut filename
+        """
+        for page in self.pages:
+            for idevice in page.node.idevices:
+                for resource in idevice.userResources:
+                    if type(resource) == Resource and len(resource.storageName) > 12:
+                        return True
+        return False
 # ===========================================================================
