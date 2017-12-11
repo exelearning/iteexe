@@ -587,9 +587,20 @@ class Epub3Export(object):
             styleFiles += [self.styleDir /'fallback.xhtml']
         else:
             styleFiles += [self.styleDir/'..'/'fallback.xhtml']
-
-        package.resourceDir.copyfiles(contentPages)
-
+            
+        # copy the package's resource files
+        for resourceFile in package.resourceDir.walkfiles():
+            fn = package.resourceDir.relpathto(resourceFile)
+            
+            if ("/" in fn):
+                Dir = Path(contentPages/fn[:fn.rindex("/")])
+                if not Dir.exists():
+                    Dir.makedirs()
+            
+                resourceFile.copy(contentPages/Dir)
+            else:
+                resourceFile.copy(contentPages)
+                
         self.styleDir.copylist(styleFiles, contentPages)
         
         # copy players for media idevices.

@@ -481,7 +481,17 @@ class IMSExport(object):
         self.styleDir.copylist(styleFiles, outputDir)
 
         # copy the package's resource files
-        package.resourceDir.copyfiles(outputDir)
+        for resourceFile in package.resourceDir.walkfiles():
+            file = package.resourceDir.relpathto(resourceFile)
+            
+            if ("/" in file):
+                Dir = Path(outputDir/file[:file.rindex("/")])
+                if not Dir.exists():
+                    Dir.makedirs()
+            
+                resourceFile.copy(outputDir/Dir)
+            else:
+                resourceFile.copy(outputDir)
         
         listCSSFiles=getFilesCSSToMinify('ims', self.styleDir)
         exportMinFileCSS(listCSSFiles, outputDir)
@@ -639,9 +649,9 @@ class IMSExport(object):
         Actually does the zipping of the file. Called by 'Path.safeSave'
         """
         zipped = ZipFile(fileObj, "w")
-        for scormFile in outputDir.files():
+        for scormFile in outputDir.walkfiles():
             zipped.write(scormFile,
-                    scormFile.basename().encode('utf8'), ZIP_DEFLATED)
+                    outputDir.relpathto(scormFile), ZIP_DEFLATED)
         zipped.close()
 
     def generatePages(self, node, depth):

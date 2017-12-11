@@ -109,8 +109,8 @@ class WebsiteExport(object):
         Actually saves the zip data. Called by 'Path.safeSave'
         """
         zipped = ZipFile(fileObj, "w")
-        for scormFile in outputDir.files():
-            zipped.write(scormFile, scormFile.basename().encode('utf8'), ZIP_DEFLATED)
+        for scormFile in outputDir.walkfiles():
+            zipped.write(scormFile,  outputDir.relpathto(scormFile), ZIP_DEFLATED)
         zipped.close()
 
     def appendPageReport(self, page, package):
@@ -186,8 +186,19 @@ class WebsiteExport(object):
             self.stylesDir.copylist(styleFiles, outputDir)
 
         # copy the package's resource files
-        package.resourceDir.copyfiles(outputDir)
+        for resourceFile in package.resourceDir.walkfiles():
+            file = package.resourceDir.relpathto(resourceFile)
             
+            if ("/" in file):
+                Dir = Path(outputDir/file[:file.rindex("/")])
+
+                if not Dir.exists():
+                    Dir.makedirs()
+        
+                resourceFile.copy(outputDir/Dir)
+            else:
+                resourceFile.copy(outputDir)
+                   
         listCSSFiles=getFilesCSSToMinify('website', self.stylesDir)
         exportMinFileCSS(listCSSFiles, outputDir)          
             

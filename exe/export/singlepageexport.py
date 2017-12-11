@@ -100,7 +100,18 @@ class SinglePageExport(object):
             self.stylesDir.copylist(styleFiles, self.outputDir)
             
         # copy the package's resource files
-        package.resourceDir.copyfiles(self.outputDir)
+        for resourceFile in package.resourceDir.walkfiles():
+            file = package.resourceDir.relpathto(resourceFile)
+            
+            if ("/" in file):
+                Dir = Path(self.outputDir/file[:file.rindex("/")])
+
+                if not Dir.exists():
+                    Dir.makedirs()
+        
+                resourceFile.copy(self.outputDir/Dir)
+            else:
+                resourceFile.copy(self.outputDir)
 
         listCSSFiles=getFilesCSSToMinify('singlepage', self.stylesDir)
         exportMinFileCSS(listCSSFiles, self.outputDir)

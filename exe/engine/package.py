@@ -1082,9 +1082,9 @@ class Package(Persistable):
             self.downgradeToVersion9()
         zippedFile = zipfile.ZipFile(fileObj, "w", zipfile.ZIP_DEFLATED)
         try:
-            for resourceFile in self.resourceDir.files():
+            for resourceFile in self.resourceDir.walkfiles():
                 zippedFile.write(unicode(resourceFile.normpath()),
-                        resourceFile.name.encode('utf8'), zipfile.ZIP_DEFLATED)
+                        self.resourceDir.relpathto(resourceFile), zipfile.ZIP_DEFLATED)
 
             zinfo = zipfile.ZipInfo(filename='content.data',
                     date_time=time.localtime()[0:6])
@@ -1181,16 +1181,19 @@ class Package(Persistable):
             
         # Need to add a TempDirPath because it is a nonpersistant member
         resourceDir = TempDirPath()
-
+        
+        excludeDir = ["common", "extend","unique","vocab"]
         # Extract resource files from package to temporary directory
         for fn in zippedFile.namelist():
             if unicode(fn, 'utf8') not in [u"content.data", u"content.xml", u"contentv2.xml", u"contentv3.xml", u"content.xsd" ]:
                 #JR: Hacemos las comprobaciones necesarias por si hay directorios
                 if ("/" in fn):
-                    dir = fn[:fn.index("/")]
+                    dir = fn[:fn.rindex("/")]
+                    if dir in excludeDir:
+                        continue
                     Dir = Path(resourceDir/dir)
                     if not Dir.exists():
-                        Dir.mkdir()
+                        Dir.makedirs()
                 Fn = Path(resourceDir/fn)
                 if not Fn.isdir():
                     outFile = open(resourceDir/fn, "wb")

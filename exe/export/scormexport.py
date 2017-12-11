@@ -517,7 +517,18 @@ class ScormExport(object):
         self.metadataType = package.exportMetadataType
 
         # copy the package's resource files
-        package.resourceDir.copyfiles(outputDir)
+        for resourceFile in package.resourceDir.walkfiles():
+            file = package.resourceDir.relpathto(resourceFile)
+            
+            if ("/" in file):
+                Dir = Path(outputDir/file[:file.rindex("/")])
+
+                if not Dir.exists():
+                    Dir.makedirs()
+        
+                resourceFile.copy(outputDir/Dir)
+            else:
+                resourceFile.copy(outputDir)
 
         # copy the package's resource files, only non existant in outputDir
 #        outputDirFiles = outputDir.files()
