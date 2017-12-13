@@ -558,7 +558,7 @@ class ScormExport(object):
         uniquifyNames(self.pages)
 
         for page in self.pages:
-            page.save(outputDir)
+            page.save(outputDir, self.pages)
             if not self.hasForum:
                 for idevice in page.node.idevices:
                     if hasattr(idevice, "isForum"):

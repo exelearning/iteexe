@@ -66,6 +66,19 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             },
                             flex: 0,
                             help: _('Checking this option, the exported component will be editable with eXeLearning.')
+                        },{
+                            xtype: 'helpcontainer',
+                            item: {
+                                xtype: 'checkboxfield',
+                                inputId: 'pp_addPagination',
+                                boxLabel: _('Add page counters the footer and header of the export?'),
+                                inputValue: true,
+                                uncheckedValue: false,
+                                dirtyCls: 'property-form-dirty',
+                                tooltip: _('Checking this option, a "Page X of Y." text will be added to every page of the exported content (except ePub\'s frontpage). This doesn\'t affect Single Page and Text File export files.')
+                            },
+                            flex: 0,
+                            help: _('Checking this option, a "Page X of Y." text will be added to every page of the exported content (except ePub\'s frontpage). This doesn\'t affect Single Page and Text File export files.')
                         }
                     ]
                 },

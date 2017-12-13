@@ -270,7 +270,7 @@ class IMSPage(Page):
         super(IMSPage, self).__init__(name, depth, node)
 
 
-    def save(self, outputDir):
+    def save(self, outputDir, pages):
         """
         This is the main function.  It will render the page and save it to a
         file.  
@@ -282,11 +282,11 @@ class IMSPage(Page):
         if G.application.config.cutFileName == '1':
             ext = 'htm'
         out = open(outputDir/self.name + '.' + ext, "wb")
-        out.write(self.render())
+        out.write(self.render(pages))
         out.close()
         
 
-    def render(self):
+    def render(self,pages):
         """
         Returns an XHTML string rendering this page.
         """
@@ -406,6 +406,9 @@ class IMSPage(Page):
                         block.renderView(self.node.package.style))
             html += u'</'+articleTag+'>'+lb # iDevice div
 
+        if self.node.package.get_addPagination():
+            html += "<div class = 'pagination' align='right'>" + c_('Page %i of %i') % (pages.index(self) + 1,len(pages))+ "</div>"+lb 
+            
         html += u"</"+sectionTag+">"+lb # /#main
         html += self.renderLicense()
         html += self.renderFooter()
@@ -504,7 +507,7 @@ class IMSExport(object):
         uniquifyNames(self.pages)
 
         for page in self.pages:
-            page.save(outputDir)
+            page.save(outputDir, self.pages)
 
         # Create the manifest file
         manifest = Manifest(self.config, outputDir, package, self.pages, self.metadataType)

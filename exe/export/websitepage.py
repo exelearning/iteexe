@@ -186,7 +186,7 @@ class WebsitePage(Page):
         html += self.leftNavigationBar(pages)
         html += u"</"+navTag+">"+lb
         html += "<div id='topPagination'>"+lb
-        html += self.getNavigationLink(prevPage, nextPage)
+        html += self.getNavigationLink(prevPage, nextPage, pages)
         html += "</div>"+lb
         html += u"<div id=\"main-wrapper\">"+lb
         html += u"<"+sectionTag+" id=\"main\">"
@@ -221,7 +221,7 @@ class WebsitePage(Page):
 
         if not themeHasXML:
             html += "<div id='bottomPagination'>"+lb
-            html += self.getNavigationLink(prevPage, nextPage)
+            html += self.getNavigationLink(prevPage, nextPage, pages)
             html += "</div>"+lb
         # writes the footer for each page 
         html += self.renderLicense()
@@ -233,7 +233,7 @@ class WebsitePage(Page):
         if themeHasXML:
         #if style.hasValidConfig:
             html += "<div id='bottomPagination'>"+lb
-            html += self.getNavigationLink(prevPage, nextPage)
+            html += self.getNavigationLink(prevPage, nextPage, pages)
             html += "</div>"+lb        
             html += self.renderFooter()
         html += u"</div>"+lb # /content
@@ -341,7 +341,7 @@ class WebsitePage(Page):
 
         return html
         
-    def getNavigationLink(self, prevPage, nextPage):
+    def getNavigationLink(self, prevPage, nextPage, pages):
         """
         return the next link url of this page
         """
@@ -359,6 +359,9 @@ class WebsitePage(Page):
             html += "<a href=\"" + quote(prevPage.name) + '.' + ext + "\" class=\"prev\"><span>"
             html += "<span>&laquo; </span>%s</span></a>" % c_('Previous')
 
+        if self.node.package.get_addPagination():      
+            html += "<span> " + c_('Page %i of %i') % (pages.index(self) + 1,len(pages))+ "</span>"
+        
         if nextPage:
             if prevPage:
                 html += ' <span class="sep">| </span>'

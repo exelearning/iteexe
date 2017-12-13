@@ -312,7 +312,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 13
+    persistenceVersion = 14
     nonpersistant      = ['resourceDir', 'filename', 'previewDir']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
@@ -389,6 +389,8 @@ class Package(Persistable):
         self.mxmlwidth = ""
         self.mxmlforcemediaonly = False
         
+        #Flag to add page counters
+        self._addPagination = False
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
@@ -714,7 +716,26 @@ class Package(Persistable):
                     educational = [lomsubs.educationalSub(description=[description])]
                     metadata.set_educational(educational)        
         self._preknowledge = toUnicode(value)
-
+        
+    def set_addPagination(self, addPagination):
+        """
+        Set _addPagination flag.
+    
+        :type addPagination: boolean
+        :param addPagination: New value for the _addPagination flag.
+        """
+        self._addPagination = addPagination
+    
+    def get_addPagination(self):
+        """
+        Returns _addPagination flag value.
+    
+        :rtype: boolean
+        :return: Flag indicating wheter we should add pagination counters or not.
+        """
+        return self._addPagination
+    
+        
     def license_map(self, source, value):
         '''From document "ANEXO XIII ANÁLISIS DE MAPEABILIDAD LOM/LOM-ES V1.0"'''
         if source == 'LOM-ESv1.0':
@@ -983,6 +1004,7 @@ class Package(Persistable):
     intendedEndUserRoleTutor = property(lambda self: self._intendedEndUserRoleTutor, set_intendedEndUserRoleTutor)
     contextPlace = property(lambda self: self._contextPlace, set_contextPlace)
     contextMode = property(lambda self: self._contextMode, set_contextMode)
+    addPagination = property(get_addPagination, set_addPagination)
 
     def findNode(self, nodeId):
         """
@@ -1748,4 +1770,8 @@ class Package(Persistable):
                 idevice.delete()            
         for child in node.children:
             self.delNotes(child)
+    
+    def upgradeToVersion14(self):
+        if not hasattr(self, '_addPagination'):
+            self._addPagination = False
 # ===========================================================================
