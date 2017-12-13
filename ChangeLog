@@ -1,3 +1,15 @@
+intef-exe (3:2.1.3) lucid; urgency=medium
+  * Ignacio Gros
+    - The 'Use Autoplay' works now with Youtube, Vimeo and Dailymotion (#245).
+    - The dir attribute had a wrong value (rlt instead of rtl) and the node attribute value was not loaded when opening the plugin.
+    - Lowercase jQuery selector.
+    - Untranslated strings (button tooltip or title) (#249).
+  * SDWeb
+    - Wrong language selected on package properties page when using Traditional Chinese (#205).
+    - Add a warning when exporting packages with resources with long names and ISO9660 compatibility is enabled (english only).
+
+ -- eXeLearning <admin@exelearning.net>  Thu, 02 Nov 2017 09:40:36 +0200
+
 intef-exe (3:2.1.3~beta2) lucid; urgency=medium
   * Ignacio Gros
     - TinyMCE: Media plugin inserted DIV instead of figure (#216).
@@ -39,7 +51,7 @@ intef-exe (3:2.1.3~beta2) lucid; urgency=medium
     - Wrong language selection (when choosing Chinese) (#205).
     - Properties tab: No "Save" option (#240).
 
- -- eXeLearning <admin@exelearning.net>  Mon, 16 Aug 2017 09:16:39 +0200
+ -- eXeLearning <admin@exelearning.net>  Mon, 16 Oct 2017 09:16:39 +0200
 
 intef-exe (3:2.1.3~beta1) lucid; urgency=medium
   * Ignacio Gros

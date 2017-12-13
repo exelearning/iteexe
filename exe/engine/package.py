@@ -312,7 +312,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 13
+    persistenceVersion = 14
     nonpersistant      = ['resourceDir', 'filename', 'previewDir']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
@@ -355,7 +355,12 @@ class Package(Persistable):
         self.previewDir    = None
         self.idevices      = []
         self.dublinCore    = DublinCore()
-        self._lang = G.application.config.locale.split('_')[0]
+        # When working with chinese, we need to add the full language string
+        # TODO: We should test if we really need to split the locale
+        if G.application.config.locale.split('_')[0] != 'zh':
+            self._lang = G.application.config.locale.split('_')[0]
+        else:
+            self._lang = G.application.config.locale
         self.setLomDefaults()
         self.setLomEsDefaults()
         self.scolinks      = False
@@ -386,6 +391,8 @@ class Package(Persistable):
         self.mxmlwidth = ""
         self.mxmlforcemediaonly = False
         
+        #Flag to add page counters
+        self._addPagination = False
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
@@ -440,6 +447,10 @@ class Package(Persistable):
         if self.dublinCore.language in [self._lang, '']:
             self.dublinCore.language = value
         value_str = value.encode('utf-8')
+        if self.lom.get_general() is None:
+            self.setLomDefaults()
+        if self.lomEs.get_general() is None:
+            self.setLomEsDefaults()
         for metadata in [self.lom, self.lomEs]:
             language = metadata.get_general().get_language()
             if language:
@@ -711,7 +722,26 @@ class Package(Persistable):
                     educational = [lomsubs.educationalSub(description=[description])]
                     metadata.set_educational(educational)        
         self._preknowledge = toUnicode(value)
-
+        
+    def set_addPagination(self, addPagination):
+        """
+        Set _addPagination flag.
+    
+        :type addPagination: boolean
+        :param addPagination: New value for the _addPagination flag.
+        """
+        self._addPagination = addPagination
+    
+    def get_addPagination(self):
+        """
+        Returns _addPagination flag value.
+    
+        :rtype: boolean
+        :return: Flag indicating wheter we should add pagination counters or not.
+        """
+        return self._addPagination
+    
+        
     def license_map(self, source, value):
         '''From document "ANEXO XIII ANÁLISIS DE MAPEABILIDAD LOM/LOM-ES V1.0"'''
         if source == 'LOM-ESv1.0':
@@ -987,6 +1017,7 @@ class Package(Persistable):
     contextPlace = property(lambda self: self._contextPlace, set_contextPlace)
     contextMode = property(lambda self: self._contextMode, set_contextMode)
     extraHeadContent = property(lambda self: self._extraHeadContent, set_extraHeadContent)
+    addPagination = property(get_addPagination, set_addPagination)
 
     def findNode(self, nodeId):
         """
@@ -1089,9 +1120,9 @@ class Package(Persistable):
             self.downgradeToVersion9()
         zippedFile = zipfile.ZipFile(fileObj, "w", zipfile.ZIP_DEFLATED)
         try:
-            for resourceFile in self.resourceDir.files():
+            for resourceFile in self.resourceDir.walkfiles():
                 zippedFile.write(unicode(resourceFile.normpath()),
-                        resourceFile.name.encode('utf8'), zipfile.ZIP_DEFLATED)
+                        self.resourceDir.relpathto(resourceFile), zipfile.ZIP_DEFLATED)
 
             zinfo = zipfile.ZipInfo(filename='content.data',
                     date_time=time.localtime()[0:6])
@@ -1196,16 +1227,19 @@ class Package(Persistable):
             
         # Need to add a TempDirPath because it is a nonpersistant member
         resourceDir = TempDirPath()
-
+        
+        excludeDir = ["common", "extend","unique","vocab"]
         # Extract resource files from package to temporary directory
         for fn in zippedFile.namelist():
             if unicode(fn, 'utf8') not in [u"content.data", u"content.xml", u"contentv2.xml", u"contentv3.xml", u"content.xsd" ]:
                 #JR: Hacemos las comprobaciones necesarias por si hay directorios
                 if ("/" in fn):
-                    dir = fn[:fn.index("/")]
+                    dir = fn[:fn.rindex("/")]
+                    if dir in excludeDir:
+                        continue
                     Dir = Path(resourceDir/dir)
                     if not Dir.exists():
-                        Dir.mkdir()
+                        Dir.makedirs()
                 Fn = Path(resourceDir/fn)
                 if not Fn.isdir():
                     outFile = open(resourceDir/fn, "wb")
@@ -1636,7 +1670,12 @@ class Package(Persistable):
         """
 
         if not hasattr(self, 'lang'):
-            self._lang = G.application.config.locale.split('_')[0]
+            # When working with chinese, we need to add the full language string
+            # TODO: We should test if we really need to split the locale
+            if G.application.config.locale.split('_')[0] != 'zh':
+                self._lang = G.application.config.locale.split('_')[0]
+            else:
+                self._lang = G.application.config.locale
         entry = str(uuid.uuid4())
         if not hasattr(self, 'lomEs') or not isinstance(self.lomEs, lomsubs.lomSub):
             self.lomEs = lomsubs.lomSub.factory()
@@ -1759,4 +1798,8 @@ class Package(Persistable):
                 idevice.delete()            
         for child in node.children:
             self.delNotes(child)
+    
+    def upgradeToVersion14(self):
+        if not hasattr(self, '_addPagination'):
+            self._addPagination = False
 # ===========================================================================

@@ -17,7 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
-from exe.engine.resource import Resource
 """
 WebsiteExport will export a package as a website of HTML pages
 """
@@ -28,6 +27,7 @@ import imp
 import os
 from shutil                   import rmtree
 from exe.engine.path          import Path, TempDirPath
+from exe.engine.resource      import Resource
 from exe.export.pages         import uniquifyNames
 from exe.export.websitepage   import WebsitePage
 from zipfile                  import ZipFile, ZIP_DEFLATED
@@ -109,8 +109,8 @@ class WebsiteExport(object):
         Actually saves the zip data. Called by 'Path.safeSave'
         """
         zipped = ZipFile(fileObj, "w")
-        for scormFile in outputDir.files():
-            zipped.write(scormFile, scormFile.basename().encode('utf8'), ZIP_DEFLATED)
+        for scormFile in outputDir.walkfiles():
+            zipped.write(scormFile,  outputDir.relpathto(scormFile), ZIP_DEFLATED)
         zipped.close()
 
     def appendPageReport(self, page, package):
@@ -186,8 +186,19 @@ class WebsiteExport(object):
             self.stylesDir.copylist(styleFiles, outputDir)
 
         # copy the package's resource files
-        package.resourceDir.copyfiles(outputDir)
+        for resourceFile in package.resourceDir.walkfiles():
+            file = package.resourceDir.relpathto(resourceFile)
             
+            if ("/" in file):
+                Dir = Path(outputDir/file[:file.rindex("/")])
+
+                if not Dir.exists():
+                    Dir.makedirs()
+        
+                resourceFile.copy(outputDir/Dir)
+            else:
+                resourceFile.copy(outputDir)
+                   
         listCSSFiles=getFilesCSSToMinify('website', self.stylesDir)
         exportMinFileCSS(listCSSFiles, outputDir)          
             
@@ -345,3 +356,13 @@ class WebsiteExport(object):
             self.pages.append(WebsitePage(self.prefix + pageName, depth, child))
             self.generatePages(child, depth + 1)
 
+    def hasUncutResources(self):
+        """
+        Check if any of the resources in the exported package has an uncut filename
+        """
+        for page in self.pages:
+            for idevice in page.node.idevices:
+                for resource in idevice.userResources:
+                    if type(resource) == Resource and len(resource.storageName) > 12:
+                        return True
+        return False

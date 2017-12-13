@@ -26,7 +26,7 @@ class ScormPage(Page):
         self.metadataType = metadataType
         super(ScormPage, self).__init__(name, depth, node)
 
-    def save(self, outputDir):
+    def save(self, outputDir, pages):
         """
         This is the main function.  It will render the page and save it to a
         file.  
@@ -38,11 +38,11 @@ class ScormPage(Page):
         if G.application.config.cutFileName == "1":
             ext = 'htm'
         out = open(outputDir/self.name + '.' + ext, "wb")
-        out.write(self.render())
+        out.write(self.render(pages))
         out.close()
 
 
-    def render(self):
+    def render(self, pages):
         """
         Returns an XHTML string rendering this page.
         """
@@ -181,6 +181,8 @@ class ScormPage(Page):
 
         html += u"</"+sectionTag+">"+lb # /#main
         themeHasXML = common.themeHasConfigXML(self.node.package.style)
+        if self.node.package.get_addPagination():
+            html += "<div class = 'pagination' align='right'>" + c_('Page %i of %i') % (pages.index(self) + 1,len(pages))+ "</div>"+lb 
         if themeHasXML:
         #if style.hasValidConfig:
             html += self.renderLicense()

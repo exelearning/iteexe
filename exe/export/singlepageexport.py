@@ -28,6 +28,7 @@ from exe.webui                import common
 from exe                      import globals as G
 from exe.engine.persist       import encodeObject
 from exe.engine.persistxml    import encodeObjectToXML
+from exe.engine.resource      import Resource
 from helper                   import exportMinFileJS
 from helper                   import exportMinFileCSS
 from exe.webui.common         import getFilesCSSToMinify
@@ -99,7 +100,18 @@ class SinglePageExport(object):
             self.stylesDir.copylist(styleFiles, self.outputDir)
             
         # copy the package's resource files
-        package.resourceDir.copyfiles(self.outputDir)
+        for resourceFile in package.resourceDir.walkfiles():
+            file = package.resourceDir.relpathto(resourceFile)
+            
+            if ("/" in file):
+                Dir = Path(self.outputDir/file[:file.rindex("/")])
+
+                if not Dir.exists():
+                    Dir.makedirs()
+        
+                resourceFile.copy(self.outputDir/Dir)
+            else:
+                resourceFile.copy(self.outputDir)
 
         listCSSFiles=getFilesCSSToMinify('singlepage', self.stylesDir)
         exportMinFileCSS(listCSSFiles, self.outputDir)
@@ -243,5 +255,13 @@ class SinglePageExport(object):
             
         common.exportJavaScriptIdevicesFiles(node.idevices, self.outputDir)
 
-
+    def hasUncutResources(self):
+        """
+        Check if any of the resources in the exported package has an uncut filename
+        """
+        for idevice in self.page.node.idevices:
+            for resource in idevice.userResources:
+                if type(resource) == Resource and len(resource.storageName) > 12:
+                    return True
+        return False
 # ===========================================================================
