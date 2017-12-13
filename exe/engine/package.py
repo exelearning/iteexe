@@ -445,6 +445,10 @@ class Package(Persistable):
         if self.dublinCore.language in [self._lang, '']:
             self.dublinCore.language = value
         value_str = value.encode('utf-8')
+        if self.lom.get_general() is None:
+            self.setLomDefaults()
+        if self.lomEs.get_general() is None:
+            self.setLomEsDefaults()
         for metadata in [self.lom, self.lomEs]:
             language = metadata.get_general().get_language()
             if language:
