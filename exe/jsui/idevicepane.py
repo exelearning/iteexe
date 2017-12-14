@@ -137,7 +137,7 @@ class IdevicePane(Renderable, Resource):
                 visible = lower_title not in self.config.hiddeniDevices
                 
                 if hasattr(prototype, 'ideviceCategory'):
-                    prototypesToRender.append((prototype, _(prototype.ideviceCategory), visible))
+                    prototypesToRender.append((prototype, prototype.ideviceCategory, visible))
                 else:
                     prototypesToRender.append((prototype, _('JS iDevices'), visible))
 
