@@ -318,7 +318,7 @@ class Epub3Page(Page):
     def __init__(self, name, depth, node):
         super(Epub3Page, self).__init__(name, depth, node)
 
-    def save(self, outputDirPage):
+    def save(self, outputDirPage, pages):
         """
         This is the main function.  It will render the page and save it to a
         file.
@@ -327,10 +327,10 @@ class Epub3Page(Page):
         self.node is the root node. 'outputDirPage' must be a 'Path' instance
         """
         out = open(outputDirPage / self.name + ".xhtml", "wb")
-        out.write(self.render())
+        out.write(self.render(pages))
         out.close()
 
-    def render(self):
+    def render(self, pages):
         """
         Returns an XHTML string rendering this page.
         """
@@ -455,6 +455,10 @@ class Epub3Page(Page):
                 html += u'</' + articleTag + '>' + lb  # iDevice div
 
         html += u"</" + sectionTag + ">" + lb  # /#main
+
+        if self.node.package.get_addPagination():
+            html += "<div class = 'pagination'> " + c_('Page %i of %i') % (pages.index(self),len(pages) -1)+ "</div>"+lb 
+            
         html += self.renderLicense()
         html += unicode(BeautifulSoup(self.renderFooter(), convertEntities=BeautifulSoup.XHTML_ENTITIES))
         html += u"</div>" + lb  # /#outer
@@ -489,7 +493,7 @@ class Epub3Page(Page):
 
 
 class Epub3Cover(Epub3Page):
-    def render(self):
+    def render(self, pages):
         html = '''<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -568,7 +572,7 @@ class Epub3Export(object):
 
         cover = None
         for page in self.pages:
-            page.save(contentPages)
+            page.save(contentPages, self.pages)
             if hasattr(page, 'cover'):
                 cover = page.cover
 
@@ -591,9 +595,20 @@ class Epub3Export(object):
             styleFiles += [self.styleDir /'fallback.xhtml']
         else:
             styleFiles += [self.styleDir/'..'/'fallback.xhtml']
-
-        package.resourceDir.copyfiles(contentPages)
-
+            
+        # copy the package's resource files
+        for resourceFile in package.resourceDir.walkfiles():
+            fn = package.resourceDir.relpathto(resourceFile)
+            
+            if ("/" in fn):
+                Dir = Path(contentPages/fn[:fn.rindex("/")])
+                if not Dir.exists():
+                    Dir.makedirs()
+            
+                resourceFile.copy(contentPages/Dir)
+            else:
+                resourceFile.copy(contentPages)
+                
         self.styleDir.copylist(styleFiles, contentPages)
         
         # copy players for media idevices.

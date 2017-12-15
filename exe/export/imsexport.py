@@ -35,6 +35,7 @@ from exe.webui                     import common
 from exe.webui.blockfactory        import g_blockFactory
 from exe.engine.error              import Error
 from exe.engine.path               import Path, TempDirPath
+from exe.engine.resource           import Resource
 from exe.engine.version            import release
 from exe.export.pages              import Page, uniquifyNames
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
@@ -272,7 +273,7 @@ class IMSPage(Page):
         super(IMSPage, self).__init__(name, depth, node)
 
 
-    def save(self, outputDir):
+    def save(self, outputDir, pages):
         """
         This is the main function.  It will render the page and save it to a
         file.  
@@ -284,11 +285,11 @@ class IMSPage(Page):
         if G.application.config.cutFileName == '1':
             ext = 'htm'
         out = open(outputDir/self.name + '.' + ext, "wb")
-        out.write(self.render())
+        out.write(self.render(pages))
         out.close()
         
 
-    def render(self):
+    def render(self,pages):
         """
         Returns an XHTML string rendering this page.
         """
@@ -413,6 +414,9 @@ class IMSPage(Page):
                         block.renderView(self.node.package.style))
             html += u'</'+articleTag+'>'+lb # iDevice div
 
+        if self.node.package.get_addPagination():
+            html += "<div class = 'pagination' align='right'>" + c_('Page %i of %i') % (pages.index(self) + 1,len(pages))+ "</div>"+lb 
+            
         html += u"</"+sectionTag+">"+lb # /#main
         html += self.renderLicense()
         html += self.renderFooter()
@@ -488,7 +492,17 @@ class IMSExport(object):
         self.styleDir.copylist(styleFiles, outputDir)
 
         # copy the package's resource files
-        package.resourceDir.copyfiles(outputDir)
+        for resourceFile in package.resourceDir.walkfiles():
+            file = package.resourceDir.relpathto(resourceFile)
+            
+            if ("/" in file):
+                Dir = Path(outputDir/file[:file.rindex("/")])
+                if not Dir.exists():
+                    Dir.makedirs()
+            
+                resourceFile.copy(outputDir/Dir)
+            else:
+                resourceFile.copy(outputDir)
         
         listCSSFiles=getFilesCSSToMinify('ims', self.styleDir)
         exportMinFileCSS(listCSSFiles, outputDir)
@@ -501,7 +515,7 @@ class IMSExport(object):
         uniquifyNames(self.pages)
 
         for page in self.pages:
-            page.save(outputDir)
+            page.save(outputDir, self.pages)
 
         # Create the manifest file
         manifest = Manifest(self.config, outputDir, package, self.pages, self.metadataType)
@@ -650,9 +664,9 @@ class IMSExport(object):
         Actually does the zipping of the file. Called by 'Path.safeSave'
         """
         zipped = ZipFile(fileObj, "w")
-        for scormFile in outputDir.files():
+        for scormFile in outputDir.walkfiles():
             zipped.write(scormFile,
-                    scormFile.basename().encode('utf8'), ZIP_DEFLATED)
+                    outputDir.relpathto(scormFile), ZIP_DEFLATED)
         zipped.close()
 
     def generatePages(self, node, depth):
@@ -673,5 +687,16 @@ class IMSExport(object):
 
             self.pages.append(page)
             self.generatePages(child, depth + 1)
-    
+
+    def hasUncutResources(self):
+        """
+        Check if any of the resources in the exported package has an uncut filename
+        """
+        for page in self.pages:
+            for idevice in page.node.idevices:
+                for resource in idevice.userResources:
+                    if type(resource) == Resource and len(resource.storageName) > 12:
+                        return True
+        return False
+
 # ===========================================================================

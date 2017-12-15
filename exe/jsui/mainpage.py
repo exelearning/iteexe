@@ -1257,6 +1257,10 @@ class MainPage(RenderableLivePage):
             singlePageExport = SinglePageExport(stylesDir, filename, \
                                          imagesDir, scriptsDir, cssDir, templatesDir)
             singlePageExport.export(self.package, printFlag)
+
+            has_uncut_resources = False
+            if G.application.config.cutFileName == "1":
+                has_uncut_resources = singlePageExport.hasUncutResources()
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
@@ -1264,7 +1268,10 @@ class MainPage(RenderableLivePage):
         if not printFlag:
             self._startFile(filename)
             if client:
-                client.alert(_(u'Exported to %s') % filename)
+                if not has_uncut_resources:
+                    client.alert(_(u'Exported to %s') % filename)
+                else:
+                    client.alert(_(u'Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
 
         # and return a string of the actual directory name,
         # in case the package name was added, etc.:
@@ -1304,12 +1311,19 @@ class MainPage(RenderableLivePage):
             # Now do the export
             websiteExport = WebsiteExport(self.config, stylesDir, filename)
             websiteExport.export(self.package)
+
+            has_uncut_resources = False
+            if G.application.config.cutFileName == "1":
+                has_uncut_resources = websiteExport.hasUncutResources()
         except Exception, e:
             if client:
                 client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
         if client:
-            client.alert(_(u'Exported to %s') % filename)
+            if not has_uncut_resources:
+                client.alert(_(u'Exported to %s') % filename)
+            else:
+                client.alert(_(u'Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
             # Show the newly exported web site in a new window
             self._startFile(filename)
 
@@ -1321,10 +1335,19 @@ class MainPage(RenderableLivePage):
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             websiteExport = WebsiteExport(self.config, stylesDir, filename)
             websiteExport.exportZip(self.package)
+
+            has_uncut_resources = False
+            if G.application.config.cutFileName == "1":
+                has_uncut_resources = websiteExport.hasUncutResources()
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+
+        if not has_uncut_resources:
+            client.alert(_(u'Exported to %s') % filename)
+        else:
+            client.alert(_(u'Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
+
 
     def exportText(self, client, filename):
         try:
@@ -1380,13 +1403,20 @@ class MainPage(RenderableLivePage):
             # Do the export
             scormExport = ScormExport(self.config, stylesDir, filename, scormType)
             modifiedMetaData = scormExport.export(self.package)
+
+            has_uncut_resources = False
+            if G.application.config.cutFileName == "1":
+                has_uncut_resources = scormExport.hasUncutResources()
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
         if modifiedMetaData != False and modifiedMetaData['modifiedMetaData']:  
             client.alert(_(u'The following fields have been cut to meet the SCORM 1.2 standard: %s') % ', '.join(modifiedMetaData['fieldsModified']))
         else:
-            client.alert(_(u'Exported to %s') % filename)
+            if not has_uncut_resources:
+                client.alert(_(u'Exported to %s') % filename)
+            else:
+                client.alert(_(u'Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
 
     def exportEpub3(self, client, filename, stylesDir):
         try:
@@ -1439,10 +1469,18 @@ class MainPage(RenderableLivePage):
             # Do the export
             imsExport = IMSExport(self.config, stylesDir, filename)
             imsExport.export(self.package)
+
+            has_uncut_resources = False
+            if G.application.config.cutFileName == "1":
+                has_uncut_resources = imsExport.hasUncutResources()
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+
+        if not has_uncut_resources:
+            client.alert(_(u'Exported to %s') % filename)
+        else:
+            client.alert(_(u'Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
 
     # Utility methods
     def _startFile(self, filename):
