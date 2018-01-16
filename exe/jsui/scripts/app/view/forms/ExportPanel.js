@@ -71,7 +71,7 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             item: {
                                 xtype: 'checkboxfield',
                                 inputId: 'pp_addPagination',
-                                boxLabel: _('Add page counters the footer and header of the export?'),
+                                boxLabel: _('Add page counters in the footer and header of the export?'),
                                 inputValue: true,
                                 uncheckedValue: false,
                                 dirtyCls: 'property-form-dirty',

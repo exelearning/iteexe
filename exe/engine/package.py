@@ -326,6 +326,7 @@ class Package(Persistable):
     #styledefault=u"INTEF"
     # This is like a constant
     defaultLevelNames  = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
+    lomESPlatformMark  = 'editor: eXe Learning'
 
     def __init__(self, name):
         """
