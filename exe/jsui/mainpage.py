@@ -410,10 +410,10 @@ class MainPage(RenderableLivePage):
 
     def handleLoadTemplate(self, client, filename):
         """Load the template named 'filename'"""
-        template = self._loadPackage(client, filename, newLoad=True, isTemplate=True)
+        # By transforming it into a Path, we ensure that it is using the correct directory separator
+        template = self._loadPackage(client, Path(filename), newLoad=True, isTemplate=True)
         self.webServer.root.bindNewPackage(template, self.session)
-        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
-                          template.name).encode('utf8'), filter_func=allSessionPackageClients)
+        client.sendScript((u'eXe.app.gotoUrl("/%s")' % template.name).encode('utf8'), filter_func=allSessionPackageClients)
 
     # No longer used - Task 1080, jrf
     # def handleLoadTutorial(self, client):
