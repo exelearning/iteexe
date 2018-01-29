@@ -1206,7 +1206,10 @@ Ext.define('eXe.controller.Toolbar', {
     },
     
     templatesClick: function(item) {
-    	this.askDirty("eXe.app.getController('Toolbar').executeTemplatesClick('" + item.path.replace(new RegExp(/\\/, 'g'), '\\\\') + "');")
+    	// Sometimes it gets parsed twice, sometimes three times
+    	// This makes it impossible for us tu use "\"
+    	// It will be transformed later according to the users OS
+    	this.askDirty("eXe.app.getController('Toolbar').executeTemplatesClick('" + item.path.replace(new RegExp(/\\/, 'g'), '/') + "');")
     },
     
 	fileOpenRecent2: function(number) {

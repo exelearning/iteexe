@@ -23,6 +23,8 @@
 	2015. Refactored and completed by Ignacio Gros (http://www.gros.es) for http://exelearning.net/
 */
 
+if (typeof($exe_i18n)=='undefined') $exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",download:"Download",print:"Print"}
+
 var $exe = {
 	
     init: function() {
@@ -42,7 +44,10 @@ var $exe = {
             if (this.hasMultimediaGalleries || $(".mediaelement").length>0) {
                 $exe.loadMediaPlayer.getPlayer();
             }
-        }
+        } else {
+			// No inline SCRIPT tags in ePub (due to Chrome app Content Security Policy)
+			document.body.className += ' js';
+		}
         $exe.hint.init();
         $exe.setIframesProperties();
         $exe.hasTooltips();
@@ -59,6 +64,11 @@ var $exe = {
 		$exe.sfHover();
 		// Disable autocomplete
 		$("INPUT.autocomplete-off").attr("autocomplete", "off");
+		// Enable feedback buttons
+		$('.feedbackbutton.feedback-toggler').click(function(){
+			$exe.toggleFeedback(this,false);
+			return false;
+		});
     },
 	
     // Transform links to audios or videos (with rel^='lightbox') in links to inline content (see prettyPhoto documentation)
@@ -232,10 +242,20 @@ var $exe = {
                 $("dt", e).each(function() {
                     t = this;
                     h = $(t).html();
-                    $(t).html("<a href='#' onclick='$exe.dl.toggle(this);return false' class='exe-dl-" + i + "-a'><span class='icon'" + s + ">» </span>" + h + "</a>")
+                    $(t).html("<a href='#' class='exe-dd-toggler exe-dl-" + i + "-a'><span class='icon'" + s + ">» </span>" + h + "</a>")
                 });
-                $(e).before("<p class='exe-dl-toggler'><a href='#" + id + "' onclick='$exe.dl.toggle(\"show\",\"" + id + "\");return false;' title='" + $exe_i18n.show + "'" + s + ">+</a> <a href='#" + id + "' onclick='$exe.dl.toggle(\"hide\",\"" + id + "\");return false;' title='" + $exe_i18n.hide + "'" + s + ">-</a></p>")
-            })
+                $(e).before("<p class='exe-dl-toggler'><a href='#" + id + "' title='" + $exe_i18n.show + "'" + s + ">+</a> <a href='#" + id + "' title='" + $exe_i18n.hide + "'" + s + ">-</a></p>")
+            });
+            $('a.exe-dd-toggler').click(function(){
+                $exe.dl.toggle(this);
+                return false;
+            });
+            $('.exe-dl-toggler a').click(function(){
+                var id = $(this).attr('href').replace("#","");
+                var action = 'show';
+                if ($(this).attr('title')==$exe_i18n.hide) action = 'hide';
+                $exe.dl.toggle(action,id);
+            });
         },
         toggle: function(e, a) {
             if (e == "show") $("#" + a + " dd").show();
@@ -273,12 +293,16 @@ var $exe = {
                 if (img.length==1) html += '<a href="'+img.attr("src")+'" target="_blank">GIF</a>';
                 if (!mathjax) {
                     if (html!="") html += '<span> - </span>';
-                    html += '<a href="#" onclick="$exe.math.showCode(this)">'+txt+'</a>';
+                    html += '<a href="#" class="exe-math-code-lnk">'+txt+'</a>';
                 }
                 if (html!="") {
                     html = '<p class="exe-math-links">'+html+'</p>';
                     e.append(html);
                 }
+                $(".exe-math-code-lnk").click(function(){
+                    $exe.math.showCode(this);
+                    return false;
+                });
             });            
         },
         // Open a new window with the LaTeX or MathML code
@@ -359,9 +383,13 @@ var $exe = {
                     r.eq(0).attr("id", n);
                     var s = i.eq(0);
                     var o = s.html();
-                    s.html('<a href="#' + n + '" title="' + $exe_i18n.show + '" class="hint-toggler show-hint" id="toggle-' + n + '" onclick="$exe.hint.toggle(this);return false" style="background-image:url(' + $exe.hint.imgs[0] + ')">' + o + "</a>")
+                    s.html('<a href="#' + n + '" title="' + $exe_i18n.show + '" class="hint-toggler show-hint" id="toggle-' + n + '" style="background-image:url(' + $exe.hint.imgs[0] + ')">' + o + "</a>")
                 }
-            })
+                $('.hint-toggler',this).click(function(){
+                    $exe.hint.toggle(this);
+                    return false;
+                });
+            });
         },
         toggle: function(e) {
             var t = e.id.replace("toggle-", "");
@@ -388,13 +416,19 @@ var $exe = {
                 var t = $exe_i18n.hide;
                 e = $(this), c = e.hasClass("iDevice_header") ? "em1" : "em0", eP = e.parents(".iDevice_wrapper");
                 if (eP.length) {
-                    var n = '<p class="toggle-idevice toggle-' + c + '"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\'' + eP.attr("id") + "','" + c + '\');return false" title="' + t + '"><span>' + t + "</span></a></p>";
+                    var n = '<p class="toggle-idevice toggle-' + c + '"><a href="#" id="toggle-idevice-'+eP.attr("id")+'-'+c+'" title="' + t + '"><span>' + t + "</span></a></p>";
                     if (c == "em1") {
                         var r = e.html();
                         e.html(r + n)
                     } else e.before(n)
                 }
             });
+			$(".toggle-idevice a").click(function(){
+				var id = this.id.replace("toggle-idevice-","");
+					id = id.split("-");
+				$exe.iDeviceToggler.toggle(this,id[0],id[1]);
+				return false;
+			});
         },
         toggle: function(e, t, n) {
             var r = $exe_i18n.hide;

@@ -316,11 +316,23 @@ class MainPage(RenderableLivePage):
         """
         if not inputFilename.lower().endswith(ext):
             inputFilename += ext
-        if Path(inputFilename).exists():
+            # If after adding the extension there is a file
+            # with the same name, fail and show an error
+            if Path(inputFilename).exists():
+                explanation = _(u'"%s" already exists.\nPlease try again with a different filename') % inputFilename
+                msg = u'%s\n%s' % (msg, explanation)
+                client.alert(msg)
+                raise Exception(msg)
+        
+        # When saving a template, we don't check for the filename
+        # before this state, so we have to check for duplicates
+        # here
+        if ext.lower() == '.elt' and Path(inputFilename).exists():
             explanation = _(u'"%s" already exists.\nPlease try again with a different filename') % inputFilename
             msg = u'%s\n%s' % (msg, explanation)
             client.alert(msg)
             raise Exception(msg)
+        
         return inputFilename
 
     def handleSavePackage(self, client, filename=None, onDone=None):
@@ -410,10 +422,10 @@ class MainPage(RenderableLivePage):
 
     def handleLoadTemplate(self, client, filename):
         """Load the template named 'filename'"""
-        template = self._loadPackage(client, filename, newLoad=True, isTemplate=True)
+        # By transforming it into a Path, we ensure that it is using the correct directory separator
+        template = self._loadPackage(client, Path(filename), newLoad=True, isTemplate=True)
         self.webServer.root.bindNewPackage(template, self.session)
-        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
-                          template.name).encode('utf8'), filter_func=allSessionPackageClients)
+        client.sendScript((u'eXe.app.gotoUrl("/%s")' % template.name).encode('utf8'), filter_func=allSessionPackageClients)
 
     # No longer used - Task 1080, jrf
     # def handleLoadTutorial(self, client):

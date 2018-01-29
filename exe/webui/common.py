@@ -870,7 +870,7 @@ def feedbackBlock(id,feedback,buttonCaption=""):
     html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
     html += '<p>'
     html += '<script type="text/javascript">var feedback'+id+'text = "'+buttonTextAll+'";</script>'
-    html += '<input type="button" name="toggle-feedback-'+id+'" value="'+ buttonText+'" class="feedbackbutton" onclick="$exe.toggleFeedback(this,'+changeText+');return false" />'
+    html += '<input type="button" name="toggle-feedback-'+id+'" value="'+ buttonText+'" class="feedbackbutton feedback-toggler" />'
     html += '</p>'+lb
     html += '</div>'+lb
     html += '<'+sectionTag+' id="feedback-'+id+'" class="feedback js-feedback js-hidden">'+lb
