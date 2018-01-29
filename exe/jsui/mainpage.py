@@ -316,11 +316,23 @@ class MainPage(RenderableLivePage):
         """
         if not inputFilename.lower().endswith(ext):
             inputFilename += ext
-        if Path(inputFilename).exists():
+            # If after adding the extension there is a file
+            # with the same name, fail and show an error
+            if Path(inputFilename).exists():
+                explanation = _(u'"%s" already exists.\nPlease try again with a different filename') % inputFilename
+                msg = u'%s\n%s' % (msg, explanation)
+                client.alert(msg)
+                raise Exception(msg)
+        
+        # When saving a template, we don't check for the filename
+        # before this state, so we have to check for duplicates
+        # here
+        if ext.lower() == '.elt' and Path(inputFilename).exists():
             explanation = _(u'"%s" already exists.\nPlease try again with a different filename') % inputFilename
             msg = u'%s\n%s' % (msg, explanation)
             client.alert(msg)
             raise Exception(msg)
+        
         return inputFilename
 
     def handleSavePackage(self, client, filename=None, onDone=None):
