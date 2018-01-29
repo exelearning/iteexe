@@ -21,6 +21,7 @@ import chardet
 import logging
 from xml.dom              import minidom
 from zipfile              import ZipFile
+from exe.engine.path           import Path, TempDirPath, toUnicode
 
 import collections
 if hasattr(collections, 'OrderedDict'):
@@ -35,6 +36,10 @@ class Template():
     """
     Base class for all content templates
     """
+    persistenceVersion = 1
+    _author = ''
+    _authorURL = ''
+     
     def __init__(self, template_path):
         """
         Initialize
@@ -56,13 +61,19 @@ class Template():
             
             self._attributes = xml_values
             self.name = xml_values['name']
+            if 'author' in xml_values:
+                self._author = xml_values['author']
+            if 'authorURL' in xml_values:
+                self._authorURL = xml_values['authorURL']
     
             if 'isExe' in xml_values:
                 self.isExe = bool(xml_values['isExe'])
             
             # xml node : [ label , 0=textfield 1=textarea , order into form]
             _attributespre ={
-                   'name': ['Name',0,0]
+                   'name': ['Name',0,0],
+                   '_author': ['Author',0,1],
+                   '_authorURL': ['URL Author',0,2]
                    }
     
             self._attributes= OrderedDict(sorted(_attributespre.items(), key=lambda t: t[1][2]))
@@ -151,3 +162,11 @@ class Template():
             editable = False 
         
         return editable  
+    
+    def upgradeToVersion1(self):
+        """
+        Add author and author's URL
+        """
+        self._author = ''
+        self._authorURL = ''
+        
