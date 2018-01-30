@@ -162,7 +162,7 @@ class TemplateManagerPage(RenderableResource):
                 delete = False
                 properties = True
                 edit = template.isEditable()
-                if template.name != 'Base' and template.name != self.config.defaultContentTemplate :
+                if template.name != 'Base' and template.name != self.config.defaultContentTemplate and edit:
                     delete = True
                 templates.append({'template': template.file,
                                'name': template.name,
