@@ -115,6 +115,16 @@ var $exe = {
 			if (c.length!=4) return;
 			$exe.getFeedback(c[0],c[1],c[2],c[3]);
 		});
+		// Multi-select iDevice
+		$('form.multi-select-form').submit(function(){
+			return false;
+		});
+		$('.multi-select-feedback-toggler').click(function(){
+			var i = this.id.replace("multi-select-feedback-toggler-","");
+			i = i.split("-");
+			if (i.length!=2) return;
+			$exe.showFeedback(this,i[0],i[1]);
+		});        
     },
 	
     // Transform links to audios or videos (with rel^='lightbox') in links to inline content (see prettyPhoto documentation)

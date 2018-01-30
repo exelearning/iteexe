@@ -2460,7 +2460,7 @@ class SelectquestionElement(Element):
             html += '<'+titleTag1+' class="js-sr-av">' + c_("Question")+'</'+titleTag1+'>'+lb
             html += self.questionElement.renderPreview()
         else:
-            html += '<form name="multi-select-form-'+self.id+'" action="#" onsubmit="return false" class="activity-form">'+lb
+            html += '<form name="multi-select-form-'+self.id+'" action="#" class="activity-form multi-select-form">'+lb
             html += '<'+titleTag1+' class="js-sr-av">' + c_("Question")+'</'+titleTag1+'>'+lb           
             html += self.questionElement.renderView()        
             
@@ -2474,7 +2474,7 @@ class SelectquestionElement(Element):
         # Feedback button
         html += '<div class="block iDevice_buttons feedback-button js-required">'+lb
         html += '<p>'+lb
-        html += '<input type="button" name="submitSelect" class="feedbackbutton" value="%s" onclick="$exe.showFeedback(this,%d,\'%s\')"/> ' %( c_("Show Feedback"),len(self.field.options),self.field.id)   
+        html += '<input type="button" name="submitSelect" class="feedbackbutton multi-select-feedback-toggler" value="%s" id="multi-select-feedback-toggler-%d-%s" /> ' %( c_("Show Feedback"),len(self.field.options),self.field.id)   
         html += lb
         html += '</p>'+lb
         html += '</div>'+lb
