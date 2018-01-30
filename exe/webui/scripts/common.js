@@ -23,7 +23,7 @@
 	2015. Refactored and completed by Ignacio Gros (http://www.gros.es) for http://exelearning.net/
 */
 
-if (typeof($exe_i18n)=='undefined') $exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",download:"Download",print:"Print"}
+if (typeof($exe_i18n)=='undefined') $exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",download:"Download",yourScoreIs:"Your score is ",dataError:"Error recovering data",epubJSerror:"This will not work in this ePub reader.",print:"Print"}
 
 var $exe = {
 	
@@ -65,10 +65,34 @@ var $exe = {
 		// Disable autocomplete
 		$("INPUT.autocomplete-off").attr("autocomplete", "off");
 		// Enable feedback buttons
+		// Common feedback
 		$('.feedbackbutton.feedback-toggler').click(function(){
 			$exe.toggleFeedback(this,false);
-			return false;
 		});
+		// Cloze iDevice
+		$('.cloze-feedback-toggler').click(function(){
+			var e = $(this);
+			var id = e.attr('name').replace('feedback','');
+			$exe.cloze.toggleFeedback(id,this);
+		});
+		$('.cloze-score-toggler').click(function(){
+			var e = $(this);
+			var id = e.attr('name').replace('getScore','');
+			$exe.cloze.showScore(id,1);
+		});
+		$('form.cloze-form').submit(function(){
+			var e = $(this);
+			var id = e.attr('name').replace('cloze-form-','');
+			try {
+				$exe.cloze.showScore(id,1);
+			} catch(e) {
+				// Due to G. Chrome's Content Security Policy ('unsafe-eval' is not allowed)
+				var txt = $exe_i18n.dataError;
+				if ($('body').hasClass('exe-epub3')) txt += '<br /><br />'+$exe_i18n.epubJSerror;
+				$("#clozeScore" + id).html(txt);
+			}
+			return false;            
+		});        
     },
 	
     // Transform links to audios or videos (with rel^='lightbox') in links to inline content (see prettyPhoto documentation)
@@ -1039,7 +1063,7 @@ $exe.cloze = {
 		}
 		// Show it in a nice paragraph
 		var a = document.getElementById("clozeScore" + e);
-		a.innerHTML = YOUR_SCORE_IS + n + "/" + i.length + "."
+		a.innerHTML = $exe_i18n.yourScoreIs + n + "/" + i.length + "."
 	},
 	
 	// Returns an array of input elements that are associated with a certain idevice
@@ -1376,7 +1400,7 @@ $exe.cloze = {
 				}
 				// Show it in a nice paragraph
 				var scorePara = document.getElementById("clozelangScore" + ident);
-				scorePara.innerHTML = YOUR_SCORE_IS + score + "/" + inputs.length + "."
+				scorePara.innerHTML = $exe_i18n.yourScoreIs + score + "/" + inputs.length + "."
 			}
 		},
 			

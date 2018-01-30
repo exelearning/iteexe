@@ -1492,7 +1492,6 @@ class ClozeElement(ElementWithResources):
 
         html += ['<div id="cloze%s">' % self.id]
 
-        html.append('<script type="text/javascript">var YOUR_SCORE_IS="%s"</script>' % c_('Your score is '))
         # Store our args in some hidden fields
         def storeValue(name):
             value = str(bool(getattr(self.field, name))).lower()
@@ -1749,7 +1748,6 @@ class ClozelangElement(ElementWithResources):
             self.field.encodedContent = self.field.content_wo_resourcePaths
 
         html = ['<div id="clozelang%s">' % self.id]
-        html.append('<script type="text/javascript">var YOUR_SCORE_IS = "%s"</script>' % c_('Your score is '))
         # Store our args in some hidden fields
         def storeValue(name):
             value = str(bool(getattr(self.field, name))).lower()
