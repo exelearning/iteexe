@@ -1488,7 +1488,7 @@ class ClozeElement(ElementWithResources):
         else:
             # to render, use the flattened content, withOUT resource paths: 
             self.field.encodedContent = self.field.content_wo_resourcePaths
-            html += ['<form name="cloze-form-'+self.id+'" action="#" onsubmit="$exe.cloze.submit(\''+self.id+'\');return false" class="activity-form">']
+            html += ['<form name="cloze-form-'+self.id+'" action="#" class="activity-form cloze-activity-form">']
 
         html += ['<div id="cloze%s">' % self.id]
 

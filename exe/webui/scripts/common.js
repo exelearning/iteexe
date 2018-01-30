@@ -124,7 +124,24 @@ var $exe = {
 			i = i.split("-");
 			if (i.length!=2) return;
 			$exe.showFeedback(this,i[0],i[1]);
-		});        
+		});
+		// Cloze Activity iDevice
+		$('form.cloze-activity-form').submit(function(){
+			try {
+				var e = $(this);
+				var id = e.attr('name').replace('cloze-form-','');				
+				$exe.cloze.submit(id);
+			} catch(e) {
+				// Due to G. Chrome's Content Security Policy ('unsafe-eval' is not allowed)
+				var txt = $exe_i18n.dataError;
+				if ($('body').hasClass('exe-epub3')) txt += '<br /><br />'+$exe_i18n.epubJSerror;
+				if ($exe.cloze.hasBeenTested==false) {
+					$exe.cloze.hasBeenTested = true;
+					$('form.cloze-activity-form input[type=submit]').hide().before(txt);
+				}
+			}
+			return false;
+		});
     },
 	
     // Transform links to audios or videos (with rel^='lightbox') in links to inline content (see prettyPhoto documentation)
@@ -732,6 +749,9 @@ $exe.cloze = {
 	NOT_ATTEMPTED : 0,
 	WRONG : 1,
 	CORRECT : 2,
+	
+	// Compatible reader
+	hasBeenTested : false,
 	
 	// Functions
 	
