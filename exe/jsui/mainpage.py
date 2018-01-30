@@ -231,7 +231,6 @@ class MainPage(RenderableLivePage):
         self.templateMenu.client = client
         self.webServer.stylemanager.client = client
         self.webServer.templatemanager.client = client
-        self.webServer.jsidevicemanager.client = client
 
         if not self.webServer.monitoring:
             self.webServer.monitoring = True

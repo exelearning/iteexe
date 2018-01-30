@@ -426,13 +426,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 itemId: 'tools_templatemanager',
                                 text: _('Content-Template Manager')
                             },
-							{
-                                cls: 'exe-advanced',
-                                xtype: 'accesskey_menuitem',
-                                itemId: 'tools_jsidevicemanager',
-                                accesskey: 'j',
-                                text: _('JsIdevice Manager')
-                            },
                             {
                             	cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
