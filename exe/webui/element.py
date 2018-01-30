@@ -2676,7 +2676,7 @@ class QuizOptionElement(Element):
         html += '<label for="i'+self.id+'" class="sr-av"><a href="#answer-'+self.id+'">' + c_("Option")+' '+str(self.index+1)+'</a></label>'
         html += '<input type="radio" name="option%s" ' % self.field.question.id
         html += 'id="i%s" ' % self.id
-        html += 'onclick="$exe.getFeedback(%d,%d,\'%s\',\'multi\')"/>' % (self.index, length, self.field.question.id)
+        html += 'class="exe-radio-option exe-radio-option-%d-%d-%s-multi"/>' % (self.index, length, self.field.question.id)
         html += lb
         html += '</p>'+lb
         

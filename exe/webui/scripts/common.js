@@ -104,7 +104,17 @@ var $exe = {
 				$('form.quiz-test-form input[type=submit]').hide().before(txt);
 			}
 			return false;
-		});		
+		});	
+		// Multi-choice iDevice and True-False Question
+		$('.exe-radio-option').click(function(){
+			var c = this.className.split(" ");
+			if (c.length!=2) return;
+			c = c[1];
+			c = c.replace("exe-radio-option-","");
+			c = c.split("-");
+			if (c.length!=4) return;
+			$exe.getFeedback(c[0],c[1],c[2],c[3]);
+		});
     },
 	
     // Transform links to audios or videos (with rel^='lightbox') in links to inline content (see prettyPhoto documentation)
@@ -411,6 +421,10 @@ var $exe = {
 	hint: {
         init: function() {
             $(".iDevice_hint").each(function(e) {
+				// To review (this should be in base.css)
+				if (typeof($exe.hint.imgs)=='undefined') {
+					$exe.hint.imgs = [ 'panel-amusements.png', 'stock-stop.png' ];
+				}
                 var t = e + 1;
                 var n = "hint-" + t;
                 var r = $(".iDevice_hint_content", this);

@@ -570,6 +570,7 @@ def ideviceFooter(e, style, mode):
     
 def ideviceHint(content, mode, level='h3'):
     if content!="":
+        html = ''
         lb = "\n" #Line breaks
         dT = getExportDocType()
         sectionTag = "div"
@@ -577,13 +578,11 @@ def ideviceHint(content, mode, level='h3'):
             sectionTag = "section"
             level = "h1"
         #  Image paths
-        p = ''
         if mode=="preview":
-            p = '/images/'
-        img1 = p+"panel-amusements.png"
-        img2 = p+"stock-stop.png"
+            img1 = "/images/panel-amusements.png"
+            img2 = "/images/stock-stop.png"
+            html += '<script type="text/javascript">$exe.hint.imgs=["'+img1+'","'+img2+'"]</script>'+lb
         # Hint content
-        html = '<script type="text/javascript">$exe.hint.imgs=["'+img1+'","'+img2+'"]</script>'+lb
         html += '<'+sectionTag+' class="iDevice_hint">'+lb
         html += '<'+level+' class="iDevice_hint_title">' + c_("Hint")+'</'+level+'>'+lb
         html += '<div class="iDevice_hint_content js-hidden">'+lb
