@@ -92,7 +92,19 @@ var $exe = {
 				$("#clozeScore" + id).html(txt);
 			}
 			return false;            
-		});        
+		}); 
+		// SCORM Quiz iDevice
+		$('form.quiz-test-form').submit(function(){
+			try {
+				calcScore2();
+			} catch(e) {
+				// Due to G. Chrome's Content Security Policy ('unsafe-eval' is not allowed)
+				var txt = $exe_i18n.dataError;
+				if ($('body').hasClass('exe-epub3')) txt += '<br /><br />'+$exe_i18n.epubJSerror;
+				$('form.quiz-test-form input[type=submit]').hide().before(txt);
+			}
+			return false;
+		});		
     },
 	
     // Transform links to audios or videos (with rel^='lightbox') in links to inline content (see prettyPhoto documentation)

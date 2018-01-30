@@ -133,7 +133,7 @@ class QuizTestBlock(Block):
         """
         lb = "\n" #Line breaks
         html = common.ideviceHeader(self, style, "view")
-        html += '<form name="quizForm%s" id="quizForm%s" action="javascript:calcScore2();">' % (self.idevice.id, self.idevice.id)
+        html += '<form name="quizForm%s" id="quizForm%s" action="#" class="quiz-test-form">' % (self.idevice.id, self.idevice.id)
         html += lb
         html += u'<input type="hidden" name="passrate" id="passrate-'+self.idevice.id+'" value="'+self.idevice.passRate+'" />'+lb
         for element in self.questionElements:
