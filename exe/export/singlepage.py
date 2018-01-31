@@ -242,6 +242,7 @@ class SinglePage(Page):
         if hasABCMusic:
             html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>' + lineBreak            
         html += u'<script type="text/javascript" src="common.js"></script>' + lineBreak
+        html += common.printJavaScriptIdevicesScripts('export', self)
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>' + lineBreak
             

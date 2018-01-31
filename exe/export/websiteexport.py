@@ -245,6 +245,7 @@ class WebsiteExport(object):
         hasMediaelement   = False
         hasTooltips       = False
         hasABCMusic       = False
+        listIdevicesFiles = []
         
         for page in self.pages:
             if isBreak:
@@ -282,6 +283,8 @@ class WebsiteExport(object):
                     hasTooltips = common.ideviceHasTooltips(idevice)
                 if not hasABCMusic:
                     hasABCMusic = common.ideviceHasABCMusic(idevice)
+                if hasattr(idevice, "_iDeviceDir"):
+                    listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
 
 
         if hasFlowplayer:
@@ -338,7 +341,8 @@ class WebsiteExport(object):
             # include a copy of the GNU Free Documentation Licence
             (self.templatesDir/'fdl' + '.' + ext).copyfile(outputDir/'fdl' + '.' + ext)
             
-        common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir)
+        for iDeviceFiles in set(listIdevicesFiles):
+            iDeviceFiles.copyfiles(outputDir)
 
 
     def generatePages(self, node, depth):

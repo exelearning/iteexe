@@ -697,6 +697,7 @@ class ScormExport(object):
         hasMediaelement   = False
         hasTooltips       = False
         hasABCMusic       = False
+        listIdevicesFiles = []
 
         for page in self.pages:
             if isBreak:
@@ -734,7 +735,9 @@ class ScormExport(object):
                     hasTooltips = common.ideviceHasTooltips(idevice)
                 if not hasABCMusic:
                     hasABCMusic = common.ideviceHasABCMusic(idevice)
-
+                if hasattr(idevice, "_iDeviceDir"):
+                    listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
+        
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(outputDir/'flowPlayer.swf')
@@ -809,7 +812,8 @@ class ScormExport(object):
             (outputDir/'contentv3.xml').write_bytes(encodeObjectToXML(package))
 
         # Copy JS iDevices' resources
-        common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir)
+        for iDeviceFiles in set(listIdevicesFiles):
+            iDeviceFiles.copyfiles(outputDir)
 
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
