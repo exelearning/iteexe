@@ -34,7 +34,7 @@ var $exeScrambledList = {
     },
     
 	getLinksHTML : function(i,listOrder){
-		return '<span> <a href="#" class="up" onclick="$exeScrambledList.sortList(this,'+i+','+(i-1)+',\''+listOrder+'\');return false" title="'+(i+1)+' &rarr; '+i+'"><span class="sr-av">'+(i+1)+' &rarr; '+i+'</span></a> <a href="#" class="down" onclick="$exeScrambledList.sortList(this,'+i+','+(i+1)+',\''+listOrder+'\');return false" title="'+(i+1)+' &rarr; '+(i+2)+'"><span class="sr-av">'+(i+1)+' &rarr; '+(i+2)+'</span></a></span>';
+		return '<span> <a href="#" class="up exe-sortableList-sorter exe-sortableList-sort-'+i+'_'+(i-1)+'_'+listOrder+'" title="'+(i+1)+' &rarr; '+i+'"><span class="sr-av">'+(i+1)+' &rarr; '+i+'</span></a> <a href="#" class="down exe-sortableList-sorter exe-sortableList-sort-'+i+'_'+(i+1)+'_'+listOrder+'" title="'+(i+1)+' &rarr; '+(i+2)+'"><span class="sr-av">'+(i+1)+' &rarr; '+(i+2)+'</span></a></span>';
 	},
     
 	getListLinks : function(listOrder) {
@@ -47,6 +47,20 @@ var $exeScrambledList = {
 			if ((i+1)==lis.length) this.className = "last";
 			this.innerHTML += $exeScrambledList.getLinksHTML(i,listOrder);
 		});
+		// No inline JavaScript (onclick, etc.)
+		$('a.exe-sortableList-sorter',ul).each(function(){
+			var c = this.className;
+				c = c.split("exe-sortableList-sort-");
+				if (c.length==2) {
+					c = c[1].split('_');
+					if (c.length==3) {
+						this.onclick = function(){
+							$exeScrambledList.sortList(this,parseInt(c[0]),parseInt(c[1]),parseInt(c[2]));
+							return false;
+						}
+					}
+				}
+		});		
 	},
     
 	sortList : function(e,a,b,listOrder){ // LI - FROM - TO
@@ -87,13 +101,18 @@ var $exeScrambledList = {
 			html += '<li>'+lis[i]+'</li>';
 		}
 		html += "</ul>";
-		html += '<p id="exe-sortableListButton-'+listOrder+'"><input type="button" class="feedbackbutton" value="'+$("P",activity).eq(1).text()+'" onclick="$exeScrambledList.check(this,'+listOrder+')" /></p>';
+		html += '<p id="exe-sortableListButton-'+listOrder+'"><input type="button" class="feedbackbutton exe-sortableList-check-'+listOrder+'" value="'+$("P",activity).eq(1).text()+'" /></p>';
 		html += '<div id="exe-sortableList-'+listOrder+'-feedback"></div>';
 		$(list).hide().attr("id","exe-sortableListResults-"+listOrder).before(html);
 		$("#exe-sortableList-"+listOrder).sortable().bind('sortupdate', function(e, ui) {
 			$exeScrambledList.getListLinks(listOrder);
 		});			
 		$exeScrambledList.getListLinks(listOrder);
+		// Event handlers
+		$("#exe-sortableListButton-"+listOrder).click(function(){
+			$exeScrambledList.check(this,listOrder);
+		});
+		// / Event handlers		
 	},
     
 	check : function(e,listOrder){
@@ -133,7 +152,22 @@ var $exeScrambledList = {
 }
 
 $(function(){
-	$exeScrambledList.init();
+	try {
+		$exeScrambledList.init();
+	} catch (e) {
+		// Due to G. Chrome's Content Security Policy
+		// See issue #258
+		$(".exe-sortableList").each(function(){
+			if ($('.feedbackbutton',this).length==0) {
+				var txt = $exe_i18n.dataError;
+				if ($('body').hasClass('exe-epub3')) txt += '<br /><br />'+$exe_i18n.epubJSerror;
+				$(this).before("<p>"+txt+"<br /><br /><strong>"+$exe_i18n.solution+"</strong>:</p>");
+				$("ul",this).each(function(){
+					if (this.style.visibility=='hidden') this.style.visibility = "visible";
+				});
+			}
+		});
+	}
 });
 
 /*
