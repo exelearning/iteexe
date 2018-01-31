@@ -149,7 +149,6 @@ Ext.application({
         'Toolbar',
         'StyleManager',
         'TemplateManager',
-        'JsIdeviceManager',
     	'filepicker.Directory',
     	'filepicker.File'
     ],

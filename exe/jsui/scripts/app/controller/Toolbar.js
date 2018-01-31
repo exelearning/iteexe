@@ -165,9 +165,6 @@ Ext.define('eXe.controller.Toolbar', {
             '#tools_idevice': {
                 click: this.toolsIdeviceEditor
             },
-            '#tools_jsidevicemanager': {
-                click: this.toolsJsIdeviceManager
-            },
             '#tools_stylemanager': {
                 click: this.toolsStyleManager
             },
@@ -506,23 +503,6 @@ Ext.define('eXe.controller.Toolbar', {
           }
         });
         editor.show();        
-	},
-	
-	toolsJsIdeviceManager: function() {
-        var jsidevicemanager = new Ext.Window ({
-          maxHeight: eXe.app.getMaxHeight(800), 
-          width: 500, 
-          modal: true,
-          autoShow: true,
-          autoScroll: true,
-          id: 'jsidevicemanagerwin',
-          title: _("JsIdevice Manager"),
-          layout: 'fit',
-          items: {
-              xtype: 'jsidevicemanager'
-          }
-        });
-        jsidevicemanager.show();        
 	},
     
 	// JRJ: Launch the Style Manager Window

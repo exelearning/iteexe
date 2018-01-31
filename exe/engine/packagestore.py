@@ -108,6 +108,8 @@ class PackageStore:
         for children in package.root.walkDescendants():
             children.title = _(children.title)
      
+        package.isChanged = False
+        
         self.loaded[package.name] = package
 
         return package
