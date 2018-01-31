@@ -617,7 +617,7 @@ def getJavaScriptStrings():
     s += 'download:"'+c_("Download")+'",'
     s += 'yourScoreIs:"'+c_("Your score is ")+'",'
     s += 'dataError:"'+c_("Error recovering data")+'",'
-    s += 'epubJSerror:"'+c_("This will not work in this ePub reader.")+'",'
+    s += 'epubJSerror:"'+c_("This does not work in this ePub reader.")+'",'
     s += 'print:"'+c_("Print")+'"'	
     s += '}</script>'
     
