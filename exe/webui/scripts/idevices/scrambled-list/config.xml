@@ -1,16 +1,15 @@
 <?xml version="1.0"?>
 <idevice>
-    <title>Scrambled List</title>
-    <css-class>ScrambledList</css-class>
+	<title>Scrambled List</title>
+	<css-class>ScrambledList</css-class>
 	<icon>key_points</icon>
 	<category>Experimental</category>
-    <!--
-    <category>Interactive Activities</category>
-    <version>1.0</version>
-    <author>Ignacio Gros for eXeLearning.net</author>
-    <author-url>http://www.gros.es/</author-url>
-    <license>Creative Commons by-sa</license>
-    <license-url>http://creativecommons.org/licenses/by-sa/4.0/</license-url>
-    <description>Scrambled sentence activity.</description>
-    -->
+	<!--
+	<version>1.0</version>
+	<author>Ignacio Gros for eXeLearning.net</author>
+	<author-url>http://www.gros.es/</author-url>
+	<license>Creative Commons by-sa</license>
+	<license-url>http://creativecommons.org/licenses/by-sa/4.0/</license-url>
+	<description>Scrambled sentence activity.</description>
+	-->
 </idevice>

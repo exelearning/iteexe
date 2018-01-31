@@ -23,7 +23,7 @@
 	2015. Refactored and completed by Ignacio Gros (http://www.gros.es) for http://exelearning.net/
 */
 
-if (typeof($exe_i18n)=='undefined') $exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",download:"Download",yourScoreIs:"Your score is ",dataError:"Error recovering data",epubJSerror:"This will not work in this ePub reader.",print:"Print"}
+if (typeof($exe_i18n)=='undefined') $exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",download:"Download",yourScoreIs:"Your score is ",dataError:"Error recovering data",epubJSerror:"This might not work in this ePub reader.",solution:"Solution",epubDisabled:"This activity does not work in ePub.",print:"Print"}
 
 var $exe = {
 	
@@ -64,7 +64,8 @@ var $exe = {
 		$exe.sfHover();
 		// Disable autocomplete
 		$("INPUT.autocomplete-off").attr("autocomplete", "off");
-		// Enable feedback buttons
+		
+		// No inline JavaScript (see issue #258)
 		// Common feedback
 		$('.feedbackbutton.feedback-toggler').click(function(){
 			$exe.toggleFeedback(this,false);
@@ -132,7 +133,7 @@ var $exe = {
 				var id = e.attr('name').replace('cloze-form-','');				
 				$exe.cloze.submit(id);
 			} catch(e) {
-				// Due to G. Chrome's Content Security Policy ('unsafe-eval' is not allowed)
+				// Due to G. Chrome's Content Security Policy
 				var txt = $exe_i18n.dataError;
 				if ($('body').hasClass('exe-epub3')) txt += '<br /><br />'+$exe_i18n.epubJSerror;
 				if ($exe.cloze.hasBeenTested==false) {
@@ -142,6 +143,7 @@ var $exe = {
 			}
 			return false;
 		});
+		
     },
 	
     // Transform links to audios or videos (with rel^='lightbox') in links to inline content (see prettyPhoto documentation)
@@ -194,6 +196,28 @@ var $exe = {
                     }
 				}
 			});
+			// If there are galleries, but lightboxLinks.length==0, there's an error
+			// No links with the rel attribute were selected
+			// This might happen in some ePub readers
+			// See issue #258
+			var eXeGalleries = $('.GalleryIdevice');
+			if (lightboxLinks.length==0 && eXeGalleries.length>0) {
+				$('.exeImageGallery a').each(function(){
+					this.title += " ~ ["+this.href+"]";
+					this.href = "#";
+					this.onclick = function(){
+						var ul = $(this).parent().parent();
+						if (ul.length==1 && ul.attr('id')!="") {
+							if ($("#"+ul.attr('id')+"-warning").length==0) {
+								// Due to G. Chrome's Content Security Policy
+								var txt = $exe_i18n.dataError;
+								if ($('body').hasClass('exe-epub3')) txt += '<br /><br />'+$exe_i18n.epubJSerror;								
+								ul.prepend('<div id="'+ul.attr('id')+'-warning">'+txt+'</div>');
+							}
+						}
+					}
+				});
+			}
 		}
 	},
 	
