@@ -97,6 +97,7 @@ class Manifest(object):
                 if not opr:
                     opr = lomsubs.otherPlatformRequirementsSub()
                     technical.set_otherPlatformRequirements(opr)
+                found = False
                 for platform in opr.get_string():
                     if platform.get_valueOf_() == self.package.lomESPlatformMark:
                         found = True
