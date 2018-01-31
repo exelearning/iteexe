@@ -64,7 +64,8 @@ var $exe = {
 		$exe.sfHover();
 		// Disable autocomplete
 		$("INPUT.autocomplete-off").attr("autocomplete", "off");
-		// Enable feedback buttons
+		
+		// No inline JavaScript (see issue #258)
 		// Common feedback
 		$('.feedbackbutton.feedback-toggler').click(function(){
 			$exe.toggleFeedback(this,false);
@@ -142,6 +143,7 @@ var $exe = {
 			}
 			return false;
 		});
+		
     },
 	
     // Transform links to audios or videos (with rel^='lightbox') in links to inline content (see prettyPhoto documentation)
@@ -194,6 +196,10 @@ var $exe = {
                     }
 				}
 			});
+			// If there are galleries, but lightboxLinks.length==0, there's an error
+			// No links with the rel attribute were selected
+			// This might happen in some ePub readers
+			// See issue #258
 			var eXeGalleries = $('.GalleryIdevice');
 			if (lightboxLinks.length==0 && eXeGalleries.length>0) {
 				$('.exeImageGallery a').each(function(){
