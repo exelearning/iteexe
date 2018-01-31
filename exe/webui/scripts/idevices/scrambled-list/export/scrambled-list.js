@@ -12,7 +12,11 @@ var $exeScrambledList = {
     
 	init : function(){
         $(".exe-sortableList").each(function(instance){
-            $exeScrambledList.enableList(this,instance);
+			if ($('body').hasClass("exe-epub3")) {
+				$(this).prepend('<p>'+$exe_i18n.epubDisabled+'</p><p><strong>'+$exe_i18n.solution+':</strong></p>')
+            } else {
+				$exeScrambledList.enableList(this,instance);
+			}
         });
 	},
     
@@ -152,22 +156,7 @@ var $exeScrambledList = {
 }
 
 $(function(){
-	try {
-		$exeScrambledList.init();
-	} catch (e) {
-		// Due to G. Chrome's Content Security Policy
-		// See issue #258
-		$(".exe-sortableList").each(function(){
-			if ($('.feedbackbutton',this).length==0) {
-				var txt = $exe_i18n.dataError;
-				if ($('body').hasClass('exe-epub3')) txt += '<br /><br />'+$exe_i18n.epubJSerror;
-				$(this).before("<p>"+txt+"<br /><br /><strong>"+$exe_i18n.solution+"</strong>:</p>");
-				$("ul",this).each(function(){
-					if (this.style.visibility=='hidden') this.style.visibility = "visible";
-				});
-			}
-		});
-	}
+	$exeScrambledList.init();
 });
 
 /*
