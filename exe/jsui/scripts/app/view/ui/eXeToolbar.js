@@ -1,4 +1,5 @@
 // ===========================================================================
+// ===========================================================================
 // eXe
 // Copyright 2012, Pedro Peña Pérez, Open Phoenix IT
 //
@@ -97,16 +98,36 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 xtype: 'accesskey_menuitem',
                                 text: _('New'),
                                 accesskey: 'n',
-                                tooltip: 'Ctrl+Alt+N',
-                                itemId: 'file_new'
-                            },
-                            {
-                                cls: 'exe-advanced',
-                                xtype: 'accesskey_menuitem',
-                                text: _('New Window'),
-                                accesskey: 'w',
-                                tooltip: 'Ctrl+Alt+W',
-                                itemId: 'file_new_window'
+                                menu: {
+                                    xtype: 'menu',
+	                                itemId: 'file_new_menu',
+                                    items: [
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            text: _('Project'),
+                                            accesskey: 'd',
+                                            tooltip: 'Ctrl+Alt+D',
+                                            itemId: 'file_new'
+                                        },
+                                        {
+                                            cls: 'exe-advanced',
+                                            xtype: 'accesskey_menuitem',
+                                            text: _('Window'),
+                                            accesskey: 'w',
+                                            tooltip: 'Ctrl+Alt+W',
+                                            itemId: 'file_new_window'
+                                        },
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            text: _('Templates'),
+                                            itemId: 'templates_button',
+                                            menu: {
+                                                xtype: 'menu',
+                                                itemId: 'templates_menu'
+                                            }
+                                        }                                        
+                                    ]
+                                }
                             },
                             {
                                 xtype: 'accesskey_menuitem',
@@ -114,15 +135,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 accesskey: 'o',
                                 tooltip: 'Ctrl+O',
                                 itemId: 'file_open'
-                            },
-                            {
-                                xtype: 'accesskey_menuitem',
-                                text: _('New from content-template'),
-                                itemId: 'templates_button',
-                                menu: {
-                                    xtype: 'menu',
-            	                    itemId: 'templates_menu'
-                                }
                             },
                             {
                                 xtype: 'accesskey_menuitem',
@@ -160,92 +172,30 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 itemId: 'file_save_as'
                             },
                             {
+								xtype: 'menuseparator'
+                            },
+                            {
                                 xtype: 'accesskey_menuitem',
-                                text: _('Save as content-template'),
-                                itemId: 'template_save'
-                            },
-                            {
-								cls: 'exe-advanced',
-                                xtype: 'menuseparator'
-                            },
-                            {
-                                cls: 'exe-advanced',
-                                xtype: 'accesskey_menuitem',
-                                text: _('Print'),
-                                accesskey: 'p',
-                                tooltip: 'Ctrl+P',
-                                itemId: 'file_print'
-                            },
-                            {
-                                cls: 'exe-advanced',
-                                xtype: 'menuseparator'
-                            },
-                            {
-                                cls: 'exe-advanced',
-                                xtype: 'accesskey_menuitem',
-                                text: _('Import'),
-                                accesskey: 'i',
+                                text: _('Templates'),
                                 menu: {
                                     xtype: 'menu',
+	                                itemId: 'templates_options_menu',
                                     items: [
                                         {
                                             xtype: 'accesskey_menuitem',
-                                            itemId: 'file_import_html',
-                                            accesskey: 'h',
-                                            text: _('HTML Course')
+                                            text: _('Save as template'),
+                                            itemId: 'template_save'
                                         },
                                         {
                                             xtype: 'accesskey_menuitem',
-                                            itemId: 'file_import_xliff',
-                                            accesskey: 'x',
-                                            text: _('XLIFF File')
-                                        },
-                                        {
-                                            xtype: 'accesskey_menuitem',
-			                                text: _('Metadata'),
-			                                accesskey: 'm',
-                                            menu: {
-                                                xtype: 'menu',
-                                                items: [
-			                                        {
-			                                            xtype: 'accesskey_menuitem',
-			                                            itemId: 'file_import_lom',
-			                                            accesskey: 'l',
-			                                            text: _('LOM')
-			                                        },
-                                                    {
-                                                        xtype: 'accesskey_menuitem',
-                                                        itemId: 'file_import_lomes',
-                                                        accesskey: 'e',
-                                                        text: _('LOM-ES')
-                                                    }
-                                                ]
-                                            }
-                                        }
+                                            itemId: 'tools_templatemanager',
+                                            text: _('Manage')
+                                        }                                        
                                     ]
                                 }
                             },
                             {
-                                xtype: 'menuseparator'
-                            },
-                            {
-                                cls: 'exe-advanced',
-                                xtype: 'accesskey_menuitem',
-                                text: _('Publish'),
-                                itemId: 'publish',
-                                accesskey: 'l',
-                                menu: {
-                                    xtype: 'menu',
-                                    items: 
-                                    [
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            text: _('Procomún'),
-                                            accesskey: 'P',
-                                            itemId: 'file_export_procomun'
-                                        },
-                                    ]
-                                },
+								xtype: 'menuseparator'
                             },
                             {
                                 xtype: 'accesskey_menuitem',
@@ -285,7 +235,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                                         text: _('IMS Content Package'),
                                                         accesskey: 'i',
                                                         itemId: 'file_export_ims'
-                                                    },
+                                                    }
                                                 ]
                                             }
                                         },
@@ -314,7 +264,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                                 		text: _('Single Page'),
                                                 		accesskey: 'p',
                                                 		itemId: 'file_export_singlepage'
-                                            	    },
+                                            	    }
                                                 ]
                                             }
                                         },
@@ -365,7 +315,82 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             text: _('SCORM'),
                                             accesskey: 't',
                                             itemId: 'file_export_scorm'
+                                        },
+                                        {
+                                            cls: 'exe-simplified',
+                                            xtype: 'accesskey_menuitem',
+                                            text: _('IMS'),
+                                            accesskey: 'i',
+                                            itemId: 'file_export_ims'
                                         }										
+                                    ]
+                                }
+                            },
+                            {
+                                cls: 'exe-advanced',
+                                xtype: 'accesskey_menuitem',
+                                text: _('Publish'),
+                                itemId: 'publish',
+                                accesskey: 'l',
+                                menu: {
+                                    xtype: 'menu',
+                                    items: 
+                                    [
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            text: _('Procomún'),
+                                            accesskey: 'P',
+                                            itemId: 'file_export_procomun'
+                                        },
+                                    ]
+                                },
+                            },                            
+                            {
+                                cls: 'exe-advanced',
+                                xtype: 'menuseparator'
+                            },                            
+                            {
+                                cls: 'exe-advanced',
+                                xtype: 'accesskey_menuitem',
+                                text: _('Import'),
+                                accesskey: 'i',
+                                menu: {
+                                    xtype: 'menu',
+                                    items: [
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            itemId: 'file_import_html',
+                                            accesskey: 'h',
+                                            text: _('HTML Course')
+                                        },
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            itemId: 'file_import_xliff',
+                                            accesskey: 'x',
+                                            text: _('XLIFF File')
+                                        },
+                                        {
+                                            xtype: 'accesskey_menuitem',
+			                                text: _('Metadata'),
+			                                accesskey: 'm',
+                                            menu: {
+                                                xtype: 'menu',
+                                                items: [
+			                                        {
+			                                            xtype: 'accesskey_menuitem',
+			                                            itemId: 'file_import_lom',
+			                                            accesskey: 'l',
+			                                            text: _('LOM')
+			                                        },
+                                                    {
+                                                        xtype: 'accesskey_menuitem',
+                                                        itemId: 'file_import_lomes',
+                                                        accesskey: 'e',
+                                                        text: _('LOM-ES')
+                                                    }
+                                                ]
+                                            }
+                                        }
                                     ]
                                 }
                             },
@@ -391,7 +416,17 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         }
                                     ]
                                 }
-                            },
+                            },                            
+                            {
+                                xtype: 'menuseparator'
+                            },                            
+                            {
+                                xtype: 'accesskey_menuitem',
+                                text: _('Print'),
+                                accesskey: 'p',
+                                tooltip: 'Ctrl+P',
+                                itemId: 'file_print'
+                            },                            
                             {
                                 xtype: 'menuseparator'
                             },
@@ -412,20 +447,23 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                     accesskey: 't',
                     menu: {
                         xtype: 'menu',
-                        items: [
+                        items: [						
                             {
-                                cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
-                                itemId: 'tools_idevice',
-                                accesskey: 'i',
-                                text: _('iDevice Editor')
+                                itemId: 'tools_preferences',
+                                accesskey: 'p',
+                                text: _('Preferences')
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
+                                itemId: 'tools_preview',
+                                accesskey: 'v',
+                                text: _('Preview')
                             },
                             {
                                 cls: 'exe-advanced',
-                                xtype: 'accesskey_menuitem',
-                                itemId: 'tools_templatemanager',
-                                text: _('Content-Template Manager')
-                            },
+                                xtype: 'menuseparator'
+                            },                            
                             {
                             	cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
@@ -455,37 +493,31 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     ]
                                 }
                             },
-                            // / Style designer							
+                            // / Style designer	
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
-                                itemId: 'tools_preferences',
-                                accesskey: 'p',
-                                text: _('Preferences')
-                            },
+                                itemId: 'tools_idevice',
+                                accesskey: 'i',
+                                text: _('iDevice Editor')
+                            },                            
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_resourcesreport',
                                 accesskey: 'r',
                                 text: _('Resources Report')
-                            },
-                            {
-                                xtype: 'accesskey_menuitem',
-                                itemId: 'tools_preview',
-                                accesskey: 'v',
-                                text: _('Preview')
-                            },
+                            },                            
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'menuseparator'
-                            },
+                            },                            
                             {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_refresh',
                                 accesskey: 'r',
                                 text: _('Refresh Display')
                             }
-							
                         ]
                     }
                 },
