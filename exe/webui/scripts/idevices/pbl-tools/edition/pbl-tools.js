@@ -8,10 +8,14 @@
  */
 var $exeDevice = {
 	
-	instructions : {
-		information : _('Provide information of the project or this part of the project.'),
-		task : _('Describe the tasks that the learners should complete:'),
-		diary : _("The Learning Diary is focused on the student's reflection and reasoning to construct their own learning. Please write some instructions.")
+	// We use eXe's _ function
+	i18n : {
+		name : _('PBL Tasks'),
+		instructions : {
+			information : _('Provide information of the project or this part of the project.'),
+			task : _('Describe the tasks that the learners should complete:'),
+			diary : _("The Learning Diary is focused on the student's reflection and reasoning to construct their own learning. Please write some instructions.")
+		}	
 	},
 	
 	init : function(){
@@ -37,9 +41,9 @@ var $exeDevice = {
 				</p>\
 				<p>\
 					<label for='pblTaskParticipants'>"+_("Participants:")+"</label>\
-					<input type='text' id='pblTaskParticipants' placeholder='Number of participants in each group' />\
+					<input type='text' id='pblTaskParticipants' placeholder='"+_('Number or description')+"' />\
 					<label for='pblTaskParticipantsText'>"+_("Text to display:")+"</label>\
-					<input type='text' id='pblTaskParticipantsText' value='"+_("Participants:")+"' />\
+					<input type='text' id='pblTaskParticipantsText' value='"+_("Grouping:")+"' />\
 				</p>\
 			</fieldset>\
 			<p><label for='pblTaskDescription'>"+_('Provide information of the project or this part of the project.')+"</label></p>\
@@ -210,7 +214,7 @@ var $exeDevice = {
 	
 	toggleType : function(type) {
 		
-		$("label[for=pblTaskDescription]").text(this.instructions[type]);
+		$("label[for=pblTaskDescription]").text(this.i18n.instructions[type]);
 		
 		if (type == 'task') $("#pblTaskInfo,#pblTaskFeedback").fadeIn();
 		else $("#pblTaskInfo,#pblTaskFeedback").hide();
