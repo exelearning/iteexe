@@ -18,8 +18,9 @@ var $exePBLtask = {
 				"visibility" : "visible"
 			}).fadeTo("slow",1).each(function(){
 				var dts = $("dt",this);
-				// Set the DT width so the text can be right aligned
-				if ($(this).css("text-align")=="right") {
+				// Set the DT width so the text can be properly aligned
+				var tA = $(this).css("text-align");
+				if (tA=="right") {
 					var width = 0;
 					dts.css("width","auto").each(function(){
 						var w = $(this).width();
@@ -29,6 +30,11 @@ var $exePBLtask = {
 						dts.css("width",width+"px");
 						$("dd",this).css("margin-left",width+"px");
 					}
+				} else if (tA=="left") {
+					var width = 0;
+					dts.css("width","auto").each(function(){
+						$(this).next("dd").css("margin-left",$(this).width()+"px");
+					});
 				}
 				// Add a title (just in case the Style displays an icon instead of the text)
 				dts.each(function(){
