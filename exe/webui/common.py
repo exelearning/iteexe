@@ -603,8 +603,11 @@ def fieldShowEditMessageEle(element):
         return ""
 
 # Required until a better i18n solution works        
-def getJavaScriptStrings():
-    s = '<script type="text/javascript">$exe_i18n={'
+def getJavaScriptStrings(addTag = True):
+    s = ''
+    if addTag:
+        s += '<script type="text/javascript">'
+    s += '$exe_i18n={'
     s += 'previous:"'+c_("Previous")+'",'
     s += 'next:"'+c_("Next")+'",'
     s += 'show:"'+c_("Show")+'",'
@@ -621,13 +624,18 @@ def getJavaScriptStrings():
     s += 'epubDisabled:"'+c_("This activity does not work in ePub.")+'",'
     s += 'solution:"'+c_("Solution")+'",'
     s += 'print:"'+c_("Print")+'"'	
-    s += '}</script>'
+    s += '}'
+    if addTag:
+        s += '</script>'
     
     return s
     
 # Required until a better i18n solution works
-def getGamesJavaScriptStrings():
-    s = '<script type="text/javascript">$exe_i18n.exeGames={'
+def getGamesJavaScriptStrings(addTag = True):
+    s = ''
+    if addTag:
+        s += '<script type="text/javascript">'
+    s += '$exe_i18n.exeGames={'
     s += 'hangManGame:"'+c_('Hangman Game')+'",'
     s += 'accept:"'+c_("Accept")+'",'
     s += 'yes:"'+c_("Yes")+'",'
@@ -649,7 +657,9 @@ def getGamesJavaScriptStrings():
     s += 'clickOnPlay:\''+c_('Click on "Play" to start a new game.')+'\','
     s += 'clickOnOtherWord:\''+c_('Click on "Another word" to continue.')+'\','
     s += 'az:"'+c_("abcdefghijklmnopqrstuvwxyz")+'"'
-    s += '}</script>'
+    s += '}'
+    if addTag:
+        s += '</script>'
     
     return s    
 

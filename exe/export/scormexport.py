@@ -589,6 +589,12 @@ class ScormExport(object):
         # Create the manifest file
         manifest = Manifest(self.config, outputDir, package, self.pages, self.scormType, self.metadataType)
         modifiedMetaData = manifest.save("imsmanifest.xml")
+        
+        # Create lang file
+        langFile = open(outputDir + '/lang.js', "w")
+        langFile.write(common.getJavaScriptStrings(False))
+        langFile.close()
+        
         if self.hasForum:
             manifest.save("discussionforum.xml")
         
@@ -761,6 +767,10 @@ class ScormExport(object):
         if hasGames:
             exeGames = (self.scriptsDir/'exe_games')
             exeGames.copyfiles(outputDir)
+            # Create langGame file
+            langGameFile = open(outputDir + '/gameslang.js', "w")
+            langGameFile.write(common.getGamesJavaScriptStrings(False))
+            langGameFile.close()
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(outputDir/'exe_wikipedia.css')

@@ -218,6 +218,11 @@ class WebsiteExport(object):
         # Minify common.js file
         listFiles=getFilesJSToMinify('website', self.scriptsDir)        
         exportMinFileJS(listFiles, outputDir)
+        
+        # Create lang file
+        langFile = open(outputDir + '/lang.js', "w")
+        langFile.write(common.getJavaScriptStrings(False))
+        langFile.close()
         #dT = common.getExportDocType()
         dT=common.getExportDocType();
         if dT == "HTML5":
@@ -310,6 +315,10 @@ class WebsiteExport(object):
         if hasGames:
             exeGames = (self.scriptsDir/'exe_games')
             exeGames.copyfiles(outputDir)
+            # Create langGame file
+            langGameFile = open(outputDir + '/gameslang.js', "w")
+            langGameFile.write(common.getGamesJavaScriptStrings(False))
+            langGameFile.close()
         if hasABCMusic:
             pluginScripts = (self.scriptsDir/'tinymce_4/js/tinymce/plugins/abcmusic/export')
             pluginScripts.copyfiles(outputDir)

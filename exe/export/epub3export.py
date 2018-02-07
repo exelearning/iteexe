@@ -406,10 +406,10 @@ class Epub3Page(Page):
             html += u'<script type="text/javascript" src="exe_effects.js"></script>' + lb
         if common.hasSH(self.node):
             html += u'<script type="text/javascript" src="exe_highlighter.js"></script>' + lb
-        html += common.getJavaScriptStrings() + lb
+        html += u'<script type="text/javascript" src="lang.js"></script>' + lb
         if common.hasGames(self.node):
-            # The games require additional strings
-            html += common.getGamesJavaScriptStrings() + lb
+            # The games require additional js
+            html += u'<script type="text/javascript" src="gameslang.js"></script>' + lb
             html += u'<script type="text/javascript" src="exe_games.js"></script>' + lb
         if common.hasABCMusic(self.node):
             html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>' + lb
@@ -580,6 +580,11 @@ class Epub3Export(object):
         mimetypeFile = open(outputDir.abspath() + '/mimetype', "w")
         mimetypeFile.write('application/epub+zip')
         mimetypeFile.close()
+        
+        # Create lang file
+        langFile = open(contentPages + '/lang.js', "w")
+        langFile.write(common.getJavaScriptStrings(False))
+        langFile.close()
 
         # Copy the style files to the output dir
         # But not nav.css
@@ -685,6 +690,10 @@ class Epub3Export(object):
         if hasGames:
             exeGames = (self.scriptsDir / 'exe_games')
             exeGames.copyfiles(contentPages)
+            # Create langGame file
+            langGameFile = open(contentPages + '/gameslang.js', "w")
+            langGameFile.write(common.getGamesJavaScriptStrings(False))
+            langGameFile.close()
         if hasWikipedia:
             wikipediaCSS = (self.cssDir / 'exe_wikipedia.css')
             wikipediaCSS.copyfile(contentPages / 'exe_wikipedia.css')

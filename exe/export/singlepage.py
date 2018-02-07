@@ -234,10 +234,10 @@ class SinglePage(Page):
             html += u'<script type="text/javascript" src="exe_effects.js"></script>' + lineBreak
         if hasHighlighter:
             html += u'<script type="text/javascript" src="exe_highlighter.js"></script>' + lineBreak
-        html += common.getJavaScriptStrings() + lineBreak
+        html += u'<script type="text/javascript" src="lang.js"></script>' + lineBreak
         if hasJSGames:
-            # The games require additional strings
-            html += common.getGamesJavaScriptStrings() + lineBreak
+            # The games require additional js
+            html += u'<script type="text/javascript" src="gameslang.js"></script>' + lineBreak
             html += u'<script type="text/javascript" src="exe_games.js"></script>' + lineBreak
         if hasABCMusic:
             html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>' + lineBreak            

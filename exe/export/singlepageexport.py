@@ -136,6 +136,11 @@ class SinglePageExport(object):
         # Minify common.js file        
         listFiles=getFilesJSToMinify('singlepage', self.scriptsDir)        
         exportMinFileJS(listFiles, self.outputDir)
+        
+        # Create lang file
+        langFile = open(self.outputDir + '/lang.js', "w")
+        langFile.write(common.getJavaScriptStrings(False))
+        langFile.close()
             
         # Incluide eXe's icon if the Style doesn't have one
         themePath = Path(G.application.config.stylesDir/package.style)
@@ -230,6 +235,10 @@ class SinglePageExport(object):
         if hasGames:
             exeGames = (self.scriptsDir/'exe_games')
             exeGames.copyfiles(self.outputDir)
+            # Create langGame file
+            langGameFile = open(self.outputDir + '/gameslang.js', "w")
+            langGameFile.write(common.getGamesJavaScriptStrings(False))
+            langGameFile.close()
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(self.outputDir/'exe_wikipedia.css')

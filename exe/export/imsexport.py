@@ -380,10 +380,10 @@ class IMSPage(Page):
             html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
         if common.hasSH(self.node):
             html += u'<script type="text/javascript" src="exe_highlighter.js"></script>'+lb
-        html += common.getJavaScriptStrings()+lb
+        html += u'<script type="text/javascript" src="lang.js"></script>' + lb
         if common.hasGames(self.node):
-            # The games require additional strings
-            html += common.getGamesJavaScriptStrings() + lb
+            # The games require additional js
+            html += u'<script type="text/javascript" src="gameslang.js"></script>' + lb
             html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
         if common.hasABCMusic(self.node):
             html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>'+lb
@@ -536,7 +536,10 @@ class IMSExport(object):
         manifest = Manifest(self.config, outputDir, package, self.pages, self.metadataType)
         manifest.save("imsmanifest.xml")
         
-        # Copy the scripts
+         # Create lang file
+        langGameFile = open(outputDir + '/lang.js', "w")
+        langGameFile.write(common.getJavaScriptStrings(False))
+        langGameFile.close()
         
         # jQuery
         my_style = G.application.config.styleStore.getStyle(page.node.package.style)
@@ -638,6 +641,10 @@ class IMSExport(object):
         if hasGames:
             exeGames = (self.scriptsDir/'exe_games')
             exeGames.copyfiles(outputDir)
+             # Create langGame file
+            langGameFile = open(outputDir + '/gameslang.js', "w")
+            langGameFile.write(common.getGamesJavaScriptStrings(False))
+            langGameFile.close()
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(outputDir/'exe_wikipedia.css')
