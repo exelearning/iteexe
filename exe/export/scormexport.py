@@ -591,7 +591,7 @@ class ScormExport(object):
         modifiedMetaData = manifest.save("imsmanifest.xml")
         
         # Create lang file
-        langFile = open(outputDir + '/lang.js', "w")
+        langFile = open(outputDir + '/common_i18n.js', "w")
         langFile.write(common.getJavaScriptStrings(False))
         langFile.close()
         
@@ -767,8 +767,8 @@ class ScormExport(object):
         if hasGames:
             exeGames = (self.scriptsDir/'exe_games')
             exeGames.copyfiles(outputDir)
-            # Create langGame file
-            langGameFile = open(outputDir + '/gameslang.js', "w")
+            # Add game js string to common_i18n
+            langGameFile = open(outputDir + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
         if hasWikipedia:

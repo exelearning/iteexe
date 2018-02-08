@@ -220,7 +220,7 @@ class WebsiteExport(object):
         exportMinFileJS(listFiles, outputDir)
         
         # Create lang file
-        langFile = open(outputDir + '/lang.js', "w")
+        langFile = open(outputDir + '/common_i18n.js', "w")
         langFile.write(common.getJavaScriptStrings(False))
         langFile.close()
         #dT = common.getExportDocType()
@@ -315,8 +315,8 @@ class WebsiteExport(object):
         if hasGames:
             exeGames = (self.scriptsDir/'exe_games')
             exeGames.copyfiles(outputDir)
-            # Create langGame file
-            langGameFile = open(outputDir + '/gameslang.js', "w")
+            # Add game js string to common_i18n
+            langGameFile = open(outputDir + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
         if hasABCMusic:

@@ -345,10 +345,8 @@ class Epub3Page(Page):
             html += u'<script type="text/javascript" src="exe_effects.js"></script>' + lb
         if common.hasSH(self.node):
             html += u'<script type="text/javascript" src="exe_highlighter.js"></script>' + lb
-        html += u'<script type="text/javascript" src="lang.js"></script>' + lb
+        html += u'<script type="text/javascript" src="common_i18n"></script>' + lb
         if common.hasGames(self.node):
-            # The games require additional js
-            html += u'<script type="text/javascript" src="gameslang.js"></script>' + lb
             html += u'<script type="text/javascript" src="exe_games.js"></script>' + lb
         html += u'<script type="text/javascript" src="common.js"></script>' + lb
         if common.hasABCMusic(self.node):
@@ -527,7 +525,7 @@ class Epub3SubExport(object):
         mimetypeFile.close()
         
         # Create lang file
-        langFile = open(contentPages + '/lang.js', "w")
+        langFile = open(contentPages + '/common_i18n.js', "w")
         langFile.write(common.getJavaScriptStrings(False))
         langFile.close()
 
@@ -621,8 +619,8 @@ class Epub3SubExport(object):
         if hasGames:
             exeGames = (self.scriptsDir / 'exe_games')
             exeGames.copyfiles(contentPages)
-            # Create langGame file
-            langGameFile = open(contentPages + '/gameslang.js', "w")
+            # Add game js string to common_i18n
+            langGameFile = open(contentPages + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
         if hasWikipedia:

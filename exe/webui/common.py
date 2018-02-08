@@ -629,10 +629,11 @@ def getJavaScriptStrings(addTag = True):
     s += 'epubDisabled:"'+c_("This activity does not work in ePub.")+'",'
     s += 'solution:"'+c_("Solution")+'",'
     s += 'print:"'+c_("Print")+'"'	
-    s += '}'
+    s += '};'
     if addTag:
         s += '</script>'
-    
+    else:
+        s += '\n'
     return s
     
 # Required until a better i18n solution works
@@ -662,10 +663,11 @@ def getGamesJavaScriptStrings(addTag = True):
     s += 'clickOnPlay:\''+c_('Click on "Play" to start a new game.')+'\','
     s += 'clickOnOtherWord:\''+c_('Click on "Another word" to continue.')+'\','
     s += 'az:"'+c_("abcdefghijklmnopqrstuvwxyz")+'"'
-    s += '}'
+    s += '};'
     if addTag:
         s += '</script>'
-    
+    else:
+        s += '\n'
     return s    
 
 def header(style=u'default'):

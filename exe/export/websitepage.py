@@ -141,10 +141,8 @@ class WebsitePage(Page):
             html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
         if common.hasSH(self.node):
             html += u'<script type="text/javascript" src="exe_highlighter.js"></script>'+lb
-        html += u'<script type="text/javascript" src="lang.js"></script>' + lb
+        html += u'<script type="text/javascript" src="common_i18n.js"></script>' + lb
         if common.hasGames(self.node):
-            # The games require additional js
-            html += u'<script type="text/javascript" src="gameslang.js"></script>' + lb
             html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
         if common.hasABCMusic(self.node):
             html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>'+lb            

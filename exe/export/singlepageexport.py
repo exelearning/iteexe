@@ -138,7 +138,7 @@ class SinglePageExport(object):
         exportMinFileJS(listFiles, self.outputDir)
         
         # Create lang file
-        langFile = open(self.outputDir + '/lang.js', "w")
+        langFile = open(self.outputDir + '/common_i18n.js', "w")
         langFile.write(common.getJavaScriptStrings(False))
         langFile.close()
             
@@ -238,8 +238,8 @@ class SinglePageExport(object):
         if hasGames:
             exeGames = (self.scriptsDir/'exe_games')
             exeGames.copyfiles(self.outputDir)
-            # Create langGame file
-            langGameFile = open(self.outputDir + '/gameslang.js', "w")
+            # Add game js string to common_i18n
+            langGameFile = open(self.outputDir + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
         if hasWikipedia:
