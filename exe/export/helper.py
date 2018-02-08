@@ -105,6 +105,17 @@ def nodeHasABCMusic(node):
                 return True
     return hasABCMusic
 
+def addListIdevicesFiles(node):
+    listIdevicesFiles = []
+    listIdevicesFiles.append(common.printJavaScriptIdevicesScripts('export',node))
+    for child in node.children:
+        if len(child.children) >0:
+            listIdevicesFilesChild = addListIdevicesFiles(child)
+            listIdevicesFiles.extend(listIdevicesFilesChild)
+        else:
+            listIdevicesFiles.append(common.printJavaScriptIdevicesScripts('export',child))
+    return listIdevicesFiles
+
 def replaceTopLinks(html):
     return html.replace('href="#auto_top"', 'href="#"')
 

@@ -150,6 +150,7 @@ class SinglePage(Page):
         hasWikipedia = helper.hasWikipediaIdevice(self.node)
         hasMediaelement = helper.nodeHasMediaelement(self.node)
         hasABCMusic = helper.nodeHasABCMusic(self.node)
+        listIdevicesFiles = helper.addListIdevicesFiles(self.node)
 
         # Get package language
         lang = G.application.config.locale
@@ -242,7 +243,8 @@ class SinglePage(Page):
         if hasABCMusic:
             html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>' + lineBreak            
         html += u'<script type="text/javascript" src="common.js"></script>' + lineBreak
-        html += common.printJavaScriptIdevicesScripts('export', self)
+        for ideviceFile in set(listIdevicesFiles):
+            html += ideviceFile
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>' + lineBreak
             

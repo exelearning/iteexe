@@ -87,14 +87,19 @@ def exportJavaScriptIdevicesFiles(iDevices, outputDir):
         
 def printJavaScriptIdevicesScripts(mode, page):
     """ Prints the required scripts for the JS iDevices of the page """
+    from exe.engine.node import Node
     html = ''
     
     resources = []
     
     # If the page doesn't have blocks, it means we are exporting
     if not hasattr(page, 'blocks'):
+        if type(page) is Node:
+            idevices = page.idevices
+        else:
+            idevices = page.node.idevices
         # Edition SCRIPTS:
-        for idevice in page.node.idevices:
+        for idevice in idevices:
              # We only want to add the scripts if the iDevice is a JavaScript iDevice
              # TODO: Find a better way to do this
             if(hasattr(idevice, '_iDeviceDir')):

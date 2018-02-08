@@ -178,6 +178,7 @@ class SinglePageExport(object):
         hasMediaelement   = False
         hasTooltips       = False
         hasABCMusic       = False
+        listIdevicesFiles = []
 
     	for idevice in node.idevices:
     	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips and hasABCMusic):
@@ -211,6 +212,8 @@ class SinglePageExport(object):
                 hasTooltips = common.ideviceHasTooltips(idevice)
             if not hasABCMusic:
                 hasABCMusic = common.ideviceHasABCMusic(idevice)
+            if hasattr(idevice, "_iDeviceDir"):
+                listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
                             
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -261,6 +264,9 @@ class SinglePageExport(object):
 
         for child in node.children:
             self.compruebaReproductores(child)
+            
+        for iDeviceFiles in set(listIdevicesFiles):
+            iDeviceFiles.copyfiles(self.outputDir)
             
         common.exportJavaScriptIdevicesFiles(node.idevices, self.outputDir)
 
