@@ -97,7 +97,7 @@ var hangMan = {
 						<textarea name="displayLetters-'+id+'" id="displayLetters-'+id+'" cols="30" rows="10" readonly="readonly"></textarea>\
 					</div>\
 					<div class="block man">\
-						<label for="displayMan-'+id+'">'+$exe_i18n.exeGames.status+':</label>\
+						<label for="displayMan-'+id+'">'+$exe_i18n.exeGames.stat+':</label>\
 						<textarea name="displayMan-'+id+'" id="displayMan-'+id+'" cols="30" rows="10" readonly="readonly"></textarea>\
 					</div>\
 				</div>\
