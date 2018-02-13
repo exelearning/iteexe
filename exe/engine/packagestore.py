@@ -23,6 +23,7 @@ has loaded, (and loading and saving them?)
 
 import logging
 from exe.engine.package      import Package
+from exe                     import globals as G
 log = logging.getLogger(__name__)
 
 
@@ -108,6 +109,12 @@ class PackageStore:
         for children in package.root.walkDescendants():
             children.title = _(children.title)
      
+        if G.application.config.locale.split('_')[0] != 'zh':
+            package._lang = G.application.config.locale.split('_')[0]
+        else:
+            package._lang = G.application.config.locale
+            
+        package.lang = package._lang
         package.isChanged = False
         
         self.loaded[package.name] = package
