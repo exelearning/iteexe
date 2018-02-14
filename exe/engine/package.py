@@ -401,6 +401,7 @@ class Package(Persistable):
         self._docType    = G.application.config.docType
         
         self.isLoading = False
+        self._isTemplate = False
 
     def setLomDefaults(self):
         self.lom = lomsubs.lomSub.factory()
@@ -742,6 +743,11 @@ class Package(Persistable):
         """
         return self._addPagination
     
+    def set_isTemplate(self, isTemplate):
+        self._isTemplate = isTemplate
+        
+    def get_isTemplate(self):
+        return self._isTemplate
         
     def license_map(self, source, value):
         '''From document "ANEXO XIII ANÁLISIS DE MAPEABILIDAD LOM/LOM-ES V1.0"'''
@@ -1019,6 +1025,7 @@ class Package(Persistable):
     contextMode = property(lambda self: self._contextMode, set_contextMode)
     extraHeadContent = property(lambda self: self._extraHeadContent, set_extraHeadContent)
     addPagination = property(get_addPagination, set_addPagination)
+    isTemplate = property(get_isTemplate, set_isTemplate)
 
     def findNode(self, nodeId):
         """
@@ -1049,6 +1056,7 @@ class Package(Persistable):
         pass an optional filename
         """
         self.tempFile = tempFile
+        self.set_isTemplate(isTemplate)
         # Get the filename
         if filename:
             filename = Path(filename)
@@ -1436,7 +1444,8 @@ class Package(Persistable):
         
         if isTemplate == False:
             newPackage.updateRecentDocuments(newPackage.filename)
-            
+        
+        newPackage.set_isTemplate(isTemplate)    
         newPackage.isChanged = False
         nstyle=Path(G.application.config.stylesDir/newPackage.style)
         if not nstyle.isdir():
@@ -1803,4 +1812,8 @@ class Package(Persistable):
     def upgradeToVersion14(self):
         if not hasattr(self, '_addPagination'):
             self._addPagination = False
+            
+    def upgradeToVersion15(self):
+        if not hasattr(self, '_isTemplate'):
+            self._isTemplate = False
 # ===========================================================================
