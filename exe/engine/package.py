@@ -1305,9 +1305,11 @@ class Package(Persistable):
                 #JR: Si por casualidad quedase vacio le damos un nombre por defecto
                 if newPackage._name == "":
                     newPackage._name = "invalidpackagename"
-                elif newPackage._name in G.application.webServer.invalidPackageName:
+                # Check that the package doesn't have any of the names forbidden by the WebServer
+                # We have to take into account that with "exe_do" we dont have a WebServer at all
+                elif G.application.webServer is not None and newPackage._name in G.application.webServer.invalidPackageName:
                     newPackage._name = newPackage._name+'_1'
-                log.debug("load() about to doUpgrade newPackage \"" 
+                log.debug("load() about to doUpgrade newPackage \""
                         + newPackage._name + "\" " + repr(newPackage) )
                 if hasattr(newPackage, 'resourceDir'):
                     log.debug("newPackage resourceDir = "
