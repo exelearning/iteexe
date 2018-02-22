@@ -402,6 +402,7 @@ class Package(Persistable):
         
         self.isLoading = False
         self._isTemplate = False
+        self._templateFile = ""
 
     def setLomDefaults(self):
         self.lom = lomsubs.lomSub.factory()
@@ -744,10 +745,40 @@ class Package(Persistable):
         return self._addPagination
     
     def set_isTemplate(self, isTemplate):
+        """
+        Set _isTemplate flag.
+    
+        :type addPagination: boolean
+        :param addPagination: New value for the _isTemplate flag.
+        """
         self._isTemplate = isTemplate
         
     def get_isTemplate(self):
+        """
+        Returns _isTemplate flag value.
+    
+        :rtype: boolean
+        :return: Flag indicating if the package is template.
+        """
         return self._isTemplate
+    
+    def set_templateFile(self, templateFile):
+        """
+        Set _templateFile.
+    
+        :type templateFile: unicode
+        :param templateFile: New value for the _templateFile.
+        """
+        self._templateFile = templateFile
+        
+    def get_templateFile(self):
+        """
+        Returns templateFile value.
+    
+        :rtype: unicode
+        :return: Template's file name.
+        """
+        return self._templateFile
         
     def license_map(self, source, value):
         '''From document "ANEXO XIII ANÁLISIS DE MAPEABILIDAD LOM/LOM-ES V1.0"'''
@@ -1026,6 +1057,7 @@ class Package(Persistable):
     extraHeadContent = property(lambda self: self._extraHeadContent, set_extraHeadContent)
     addPagination = property(get_addPagination, set_addPagination)
     isTemplate = property(get_isTemplate, set_isTemplate)
+    templateFile = property(get_templateFile, set_templateFile)
 
     def findNode(self, nodeId):
         """
@@ -1818,4 +1850,6 @@ class Package(Persistable):
     def upgradeToVersion15(self):
         if not hasattr(self, '_isTemplate'):
             self._isTemplate = False
+        if not hasattr(self, '_templateFile'):
+            self._templateFile = ""
 # ===========================================================================

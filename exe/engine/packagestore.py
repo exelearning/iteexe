@@ -91,7 +91,7 @@ class PackageStore:
         """
         log.debug(u"createPackageFromTemplate")
         package = Package.load(templateBase, isTemplate=True)
-        
+        package.set_templateFile(str(templateBase.basename().splitext()[0]))
         # Make up an initial unique name
         i = 1
         name = u"newPackage"
