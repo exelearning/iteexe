@@ -104,23 +104,17 @@ class PackageStore:
         
         package.name = name
         package.filename = ""
-        package.root.title = _(package.root.title)
         
-        for children in package.root.walkDescendants():
-            children.title = _(children.title)
-     
         if G.application.config.locale.split('_')[0] != 'zh':
             package._lang = G.application.config.locale.split('_')[0]
         else:
             package._lang = G.application.config.locale
             
         package.lang = package._lang
+        package.translatePackage()
         package.isChanged = False
         
         self.loaded[package.name] = package
 
         return package
-
-
-
 # ===========================================================================

@@ -494,6 +494,37 @@ class Package(Persistable):
         if value in G.application.config.locales:
             __builtins__['c_'] = lambda s: G.application.config.locales[value].ugettext(s) if s else s
 
+    def translatePackage(self, node = None):
+        """
+        Translate a nodo from the package. If not node is provided
+
+        """
+        # The first time this function is called, we simply have to
+        # pick the root node
+        if node is None:
+            node = self.root
+
+            # Translate level names
+            self.set_level1(c_(self.defaultLevelNames[0]))
+            self.set_level2(c_(self.defaultLevelNames[1]))
+            self.set_level3(c_(self.defaultLevelNames[2]))
+                
+            # Translate some properties
+            self.set_title(c_(self.title))
+            self.set_description(c_(self.description))
+            self.footer = c_(self.footer)
+
+        node.title = c_(node.title)
+        for idevice in node.idevices:
+            idevice.title = c_(idevice.title)
+            for field in idevice.getRichTextFields():
+                field.content = c_(field.content)
+                field.content_w_resourcePaths = c_(field.content_w_resourcePaths)
+                field.content_wo_resourcePaths = c_(field.content_wo_resourcePaths)
+
+        for nodeChild in node.walkDescendants():
+            self.translatePackage(nodeChild)
+
     def set_author(self, value):
         if self.dublinCore.creator == self._author:
             self.dublinCore.creator = value

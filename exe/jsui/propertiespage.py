@@ -338,12 +338,17 @@ class PropertiesPage(Renderable, Resource):
     def render_POST(self, request=None):
         log.debug("render_POST")
 
+        lang_only = False
+
         data = {}
         try:
             clear = False
             if 'clear' in request.args:
                 clear = True
                 request.args.pop('clear')
+            if 'lang_only' in request.args:
+                lang_only = True
+                request.args.pop('lang_only')
             if 'lom_general_title_string1' in request.args:
                 if clear:
                     self.package.setLomDefaults()
@@ -383,7 +388,10 @@ class PropertiesPage(Renderable, Resource):
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to save properties")})
-        self.package.isChanged = True
+
+        if not self.package.isTemplate or not lang_only:
+            self.package.isChanged = True
+
         return json.dumps({'success': True, 'data': data})
 
 # ===========================================================================
