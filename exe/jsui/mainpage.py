@@ -118,6 +118,44 @@ class MainPage(RenderableLivePage):
 
         self.location_buttons = LocationButtons()
 
+    def renderHTTP(self, ctx):
+        """
+        Called when rendering the MainPage.
+        """
+        # If we are realoading a template, try to translate it in
+        # case its language has changed
+        if self.package.isTemplate and not self.package.isChanged:
+            # We have to reload the template in case it has been already translated before
+            template = Package.load(self.config.templatesDir / self.package.get_templateFile() + '.elt')
+            template.set_lang(self.package.lang)
+            # TODO: This should be done properly
+            self.package._levelNames = copy.copy(template._levelNames)
+            self.package.description = copy.copy(template.description)
+            self.package.title = copy.copy(template.title)
+            self.package.footer = copy.copy(template.footer)
+            self.package.idevices = copy.copy(template.idevices)
+
+            # Copy the nodes and update the root and current ones
+            # Be carefull not to use copy.copy when assigning root and currentNode as this will create entirely new nodes
+            self.package._nodeIdDict = copy.copy(template._nodeIdDict)
+            self.package.root = self.package._nodeIdDict['0']
+            self.package.currentNode = self.package._nodeIdDict['0']
+
+            # Delete the template as we don't need it in memory anymore 
+            del template
+
+            # We have to go through all nodes to add the correct reference
+            # to the current package
+            for node in self.package._nodeIdDict.itervalues():
+                node._package = self.package
+
+            self.package.translatePackage()
+
+            self.package.isChanged = False
+
+        # Call parent's renderHTTP method
+        return super(MainPage, self).renderHTTP(ctx) 
+
     def child_authoring(self, ctx):
         """
         Returns the authoring page that corresponds to
@@ -129,37 +167,6 @@ class MainPage(RenderableLivePage):
             if clientid not in self.authoringPages:
                 self.authoringPages[clientid] = AuthoringPage(self)
                 self.children.pop('authoring')
-
-            # If we are realoading a template, try to translate it in
-            # case its language has changed
-            if self.authoringPages[clientid].package.isTemplate and not self.authoringPages[clientid].package.isChanged:
-                # We have to reload the template in case it was already translated before
-                template = Package.load(self.config.templatesDir / self.authoringPages[clientid].package.get_templateFile() + '.elt')
-                template.set_lang(self.authoringPages[clientid].package.lang)
-                # TODO: This should be done properly
-                self.authoringPages[clientid].package._levelNames = copy.copy(template._levelNames)
-                self.authoringPages[clientid].package.description = copy.copy(template.description)
-                self.authoringPages[clientid].package.title = copy.copy(template.title)
-                self.authoringPages[clientid].package.footer = copy.copy(template.footer)
-                self.authoringPages[clientid].package.idevices = copy.copy(template.idevices)
-                
-                # Copy the nodes and update the root and current ones
-                # Be carefull not to use copy.copy when assigning root and currentNode as this will create entirely new nodes
-                self.authoringPages[clientid].package._nodeIdDict = copy.copy(template._nodeIdDict)
-                self.authoringPages[clientid].package.root = self.authoringPages[clientid].package._nodeIdDict['0']
-                self.authoringPages[clientid].package.currentNode = self.authoringPages[clientid].package._nodeIdDict['0']
-                
-                # Delete the template as we don't need it in memory anymore 
-                del template
-                
-                # We have to go through all nodes to add the correct reference
-                # to the current package
-                for node in self.authoringPages[clientid].package._nodeIdDict.itervalues():
-                    node._package = self.authoringPages[clientid].package
-                
-                self.authoringPages[clientid].package.translatePackage()
-                
-                self.authoringPages[clientid].package.isChanged = False
 
             return self.authoringPages[clientid]
         else:
