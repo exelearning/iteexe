@@ -593,10 +593,9 @@ Ext.define('eXe.controller.MainTab', {
     	// If the current file is not a template, don't do anything
     	this.checkIsTemplate('eXe.app.getController("MainTab").doLangChange("#' + element.itemId + '");', '');
     },
-    
-    doLangChange(itemId) {
+
+    doLangChange: function(itemId) {
     	// Submit the form
-    	
     	var element = Ext.ComponentQuery.query(itemId);
 		var formpanel = element[0].up('form');
 		var form = formpanel.getForm();
