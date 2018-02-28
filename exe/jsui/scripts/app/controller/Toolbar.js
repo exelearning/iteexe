@@ -1184,14 +1184,14 @@ Ext.define('eXe.controller.Toolbar', {
     executeTemplatesClick: function(path) {
     	nevow_clientToServerEvent('loadTemplate', this, '', path)
     },
-    
+
     templatesClick: function(item) {
     	// Sometimes it gets parsed twice, sometimes three times
-    	// This makes it impossible for us tu use "\"
+    	// This makes it impossible for us to use "\"
     	// It will be transformed later according to the users OS
-    	this.askDirty("eXe.app.getController('Toolbar').executeTemplatesClick('" + item.path.replace(new RegExp(/\\/, 'g'), '/') + "');")
+    	this.askDirty("eXe.app.getController('Toolbar').executeTemplatesClick('" + item.path.replace(/\\/g, '/') + "');")
     },
-    
+
 	fileOpenRecent2: function(number) {
         Ext.Msg.wait(_('Loading package...'));
 	    nevow_clientToServerEvent('loadRecent', this, '', number)

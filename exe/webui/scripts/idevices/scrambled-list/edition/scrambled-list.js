@@ -11,6 +11,9 @@ var $exeDevice = {
 	// i18n
 	i18n : {
 		
+		// We use eXe's _ function
+		name : _('Scrambled List'),
+		
 		// Spanish
 		es : {
 			"Intructions:" : "Instrucciones:",

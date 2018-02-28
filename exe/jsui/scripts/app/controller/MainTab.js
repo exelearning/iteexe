@@ -124,6 +124,10 @@ Ext.define('eXe.controller.MainTab', {
             },
             '#sources_download': {
                 click: this.sourcesDownload
+            },
+            '#pp_lang': {
+            	select: this.langChanged,
+            	scope: this
             }
         });
     },
@@ -579,6 +583,35 @@ Ext.define('eXe.controller.MainTab', {
     	if(this.getMaintab().getActiveTab().itemId == 'properties_tab'){
     		this.onBeforeTabChange(this.getMaintab(), '', this.getMaintab().getActiveTab());
     	}
-	}
+	},
+	
+	checkIsTemplate: function(ifTemplate, ifNotTemplate) {
+    	nevow_clientToServerEvent('isPackageTemplate', this, '', ifTemplate, ifNotTemplate)
+	},
 
+    langChanged: function(element, records, eOpts) {
+    	// If the current file is not a template, don't do anything
+    	this.checkIsTemplate('eXe.app.getController("MainTab").doLangChange("#' + element.itemId + '");', '');
+    },
+
+    doLangChange: function(itemId) {
+    	// Submit the form
+    	var element = Ext.ComponentQuery.query(itemId);
+		var formpanel = element[0].up('form');
+		var form = formpanel.getForm();
+
+		// We add the lang_only parameter to prevent the package from getting
+		// marked as changed, which would prevent it from getting translated
+		form.submit({
+			params: {
+				'lang_only': 1
+			},
+            success: function(form, action) {
+            	eXe.app.reload();
+            },
+            failure: function(form, action) {
+                Ext.Msg.alert(_('Error'), action.result.errorMessage);
+            }
+        });
+    }
 });

@@ -176,6 +176,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             item: {
                                 xtype: 'combobox',
                                 inputId: 'pp_lang',
+                                itemId: 'pp_lang',
                                 dirtyCls: 'property-form-dirty',
                                 fieldLabel: _('Language'),
                                 store: langsStore,

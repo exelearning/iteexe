@@ -23,6 +23,7 @@
 This is the main Javascript page.
 """
 
+import copy
 import os
 import json
 import sys
@@ -117,6 +118,47 @@ class MainPage(RenderableLivePage):
 
         self.location_buttons = LocationButtons()
 
+    def renderHTTP(self, ctx):
+        """
+        Called when rendering the MainPage.
+        """
+        # If we are realoading a template, try to translate it in
+        # case its language has changed
+        if self.package.isTemplate and not self.package.isChanged:
+            # We have to reload the template in case it has been already translated before
+            template = Package.load(self.config.templatesDir / self.package.get_templateFile() + '.elt')
+            template.set_lang(self.package.lang)
+
+            # Copy level names and iDevices
+            self.package._levelNames = copy.copy(template._levelNames)
+            self.package.idevices = copy.copy(template.idevices)
+
+            # TODO: This should be done properly 
+            self.package.description = copy.copy(template.description)
+            self.package.title = copy.copy(template.title)
+            self.package.footer = copy.copy(template.footer)
+
+            # Copy the nodes and update the root and current ones
+            # Be carefull not to use copy.copy when assigning root and currentNode as this will create entirely new nodes
+            self.package._nodeIdDict = copy.copy(template._nodeIdDict)
+            self.package.root = self.package._nodeIdDict['0']
+            self.package.currentNode = self.package._nodeIdDict['0']
+
+            # Delete the template as we don't need it in memory anymore 
+            del template
+
+            # We have to go through all nodes to add the correct reference
+            # to the current package
+            for node in self.package._nodeIdDict.itervalues():
+                node._package = self.package
+
+            self.package.translatePackage()
+
+            self.package.isChanged = False
+
+        # Call parent's renderHTTP method
+        return super(MainPage, self).renderHTTP(ctx) 
+
     def child_authoring(self, ctx):
         """
         Returns the authoring page that corresponds to
@@ -128,6 +170,7 @@ class MainPage(RenderableLivePage):
             if clientid not in self.authoringPages:
                 self.authoringPages[clientid] = AuthoringPage(self)
                 self.children.pop('authoring')
+
             return self.authoringPages[clientid]
         else:
             raise Exception('No clientHandleId in request')
@@ -184,6 +227,7 @@ class MainPage(RenderableLivePage):
             hndlr = handler(func, *args, **kwargs)
             hndlr(ctx, client)     # Stores it
         setUpHandler(self.handleIsPackageDirty, 'isPackageDirty')
+        setUpHandler(self.handleIsPackageTemplate, 'isPackageTemplate')
         setUpHandler(self.handlePackageFileName, 'getPackageFileName')
         setUpHandler(self.handleSavePackage, 'savePackage')
         setUpHandler(self.handleLoadPackage, 'loadPackage')
@@ -294,6 +338,16 @@ class MainPage(RenderableLivePage):
             client.sendScript(ifDirty)
         else:
             client.sendScript(ifClean)
+            
+    def handleIsPackageTemplate(self, client, ifTemplate, ifNotTemplate):
+        """
+        Called by js to know if the package is a template or not.
+        It also checks if the package has already been modified.
+        """
+        if self.package.isTemplate and not self.package.isChanged:
+            client.sendScript(ifTemplate)
+        else:
+            client.sendScript(ifNotTemplate)
 
     def handlePackageFileName(self, client, onDone, onDoneParam):
         """
