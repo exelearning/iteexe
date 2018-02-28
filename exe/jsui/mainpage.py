@@ -128,12 +128,15 @@ class MainPage(RenderableLivePage):
             # We have to reload the template in case it has been already translated before
             template = Package.load(self.config.templatesDir / self.package.get_templateFile() + '.elt')
             template.set_lang(self.package.lang)
-            # TODO: This should be done properly
+
+            # Copy level names and iDevices
             self.package._levelNames = copy.copy(template._levelNames)
+            self.package.idevices = copy.copy(template.idevices)
+
+            # TODO: This should be done properly 
             self.package.description = copy.copy(template.description)
             self.package.title = copy.copy(template.title)
             self.package.footer = copy.copy(template.footer)
-            self.package.idevices = copy.copy(template.idevices)
 
             # Copy the nodes and update the root and current ones
             # Be carefull not to use copy.copy when assigning root and currentNode as this will create entirely new nodes
