@@ -30,7 +30,7 @@ from exe                       import globals as G
 from exe.engine.path           import Path
 from exe.webui.blockfactory    import g_blockFactory
 from exe.engine.error          import Error
-
+from cgi                       import escape
 import re
 
 htmlDocType=''
@@ -179,7 +179,7 @@ def getJavascriptIdevicesResources(page, xmlOutput = False):
             if resource not in resourcesAux:
                 resourcesAux.append(resource)
                 
-                result += "    <file href=\"" + re.escape(resource) + "\"/>\n"
+                result += "    <file href=\"" + escape(resource) + "\"/>\n"
             
         return result
     else:
