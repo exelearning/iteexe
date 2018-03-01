@@ -68,6 +68,7 @@ from exe.export.xmlexport        import XMLExport
 from requests_oauthlib           import OAuth2Session
 from exe.webui.oauthpage         import ProcomunOauth
 from suds.client                 import Client
+from exe.export.pages            import forbiddenPageNames
 
 from exe.engine.lom import lomsubs
 from exe.engine.lom.lomclassification import Classification
@@ -414,6 +415,12 @@ class MainPage(RenderableLivePage):
             return self.handleSaveTemplate(client, oldName, onDone, edit=True)
         # Add the extension if its not already there and give message if not saved
         filename = self.b4save(client, filename, '.elp', _(u'SAVE FAILED!'))
+        
+        name = str(filename.basename().splitext()[0])
+        if name.upper() in forbiddenPageNames:
+            client.alert(_('SAVE FAILED!\n"%s" is not a valid name for a package') % str(name))
+            return
+        
         try:
             self.package.save(filename)  # This can change the package name
         except Exception, e:
@@ -445,7 +452,12 @@ class MainPage(RenderableLivePage):
         
         if edit == False:
             filename = self.b4save(client, filename, '.elt', _(u'SAVE FAILED!'))
-
+        
+        name = str(filename.basename().splitext()[0])
+        if name.upper() in forbiddenPageNames:
+            client.alert(_('SAVE FAILED!\n"%s" is not a valid name for a template') % str(templatename))
+            return
+        
         try:
             configxmlData = '<?xml version="1.0"?>\n'
             configxmlData += '<template>\n'
