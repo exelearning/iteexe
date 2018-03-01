@@ -1507,9 +1507,11 @@ class Package(Persistable):
         newPackage.cleanUpResources(userResourcesFiles)
         G.application.afterUpgradeZombies2Delete = []
         
-        if isTemplate == False:
+        if isTemplate:
+            newPackage.set_templateFile(str(filename.basename().splitext()[0]))
+        else:
             newPackage.updateRecentDocuments(newPackage.filename)
-        
+
         newPackage.set_isTemplate(isTemplate)    
         newPackage.isChanged = False
         nstyle=Path(G.application.config.stylesDir/newPackage.style)
