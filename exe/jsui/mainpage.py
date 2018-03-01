@@ -419,6 +419,11 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
+
+        # Take into account that some names are not allowed, so we have to take care of that before reloading
+        if G.application.webServer is not None and self.package.name in G.application.webServer.invalidPackageName:
+            self.package._name = self.package._name + '_1'
+
         # Tell the user and continue
         if onDone:
             client.alert(_(u'Package saved to: %s') % filename, onDone)
