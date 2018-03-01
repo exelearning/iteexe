@@ -180,7 +180,7 @@ class ScormPage(Page):
         html += u"</"+sectionTag+">"+lb # /#main
         themeHasXML = common.themeHasConfigXML(self.node.package.style)
         if self.node.package.get_addPagination():
-            html += "<div class = 'pagination' align='right'>" + c_('Page %i of %i') % (pages.index(self) + 1,len(pages))+ "</div>"+lb 
+            html += "<p class='pagination page-counter'>" + c_('Page %s of %s') % ('<strong>'+str(pages.index(self) + 1)+'</strong>','<strong>'+str(len(pages))+'</strong>')+ "</p>"+lb 
         if themeHasXML:
         #if style.hasValidConfig:
             html += self.renderLicense()

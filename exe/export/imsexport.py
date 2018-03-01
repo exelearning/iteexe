@@ -428,7 +428,7 @@ class IMSPage(Page):
             html += u'</'+articleTag+'>'+lb # iDevice div
 
         if self.node.package.get_addPagination():
-            html += "<div class = 'pagination' align='right'>" + c_('Page %i of %i') % (pages.index(self) + 1,len(pages))+ "</div>"+lb 
+            html += "<p class='pagination page-counter'>" + c_('Page %s of %s') % ('<strong>'+str(pages.index(self) + 1)+'</strong>','<strong>'+str(len(pages))+'</strong>')+ "</p>"+lb 
             
         html += u"</"+sectionTag+">"+lb # /#main
         html += self.renderLicense()

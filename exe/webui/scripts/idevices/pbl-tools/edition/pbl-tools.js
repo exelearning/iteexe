@@ -15,7 +15,7 @@ var $exeDevice = {
 			information : _('Provide information of the project or this part of the project.'),
 			task : _('Describe the tasks that the learners should complete:'),
 			diary : _("The Learning Diary is focused on the student's reflection and reasoning to construct their own learning. Please write some instructions.")
-		}	
+		}
 	},
 	
 	init : function(){
@@ -25,7 +25,7 @@ var $exeDevice = {
 				<legend>"+_('Options')+"</legend>\
 				<p>"+_("Write the title, select an icon and choose a type...")+"</p>\
 				<p>\
-					<strong>"+_("Type:")+"</strong> \
+					<strong>"+_("Type")+":</strong> \
 					<label for='pblToolsType-information'><input type='radio' name='pblToolsType' id='pblToolsType-information' value='information' checked='checked' /> "+_("Information")+"</label> \
 					<label for='pblToolsType-task'><input type='radio' name='pblToolsType' id='pblToolsType-task' value='task' /> "+_("Task")+"</label> \
 					<label for='pblToolsType-diary'><input type='radio' name='pblToolsType' id='pblToolsType-diary' value='diary' /> "+_("Learning Diary")+"</label> \
@@ -34,27 +34,27 @@ var $exeDevice = {
 			<fieldset id='pblTaskInfo'>\
 				<legend>"+_('Task information')+"</legend>\
 				<p>\
-					<label for='pblTaskDuration'>"+_("Estimated duration:")+"</label>\
+					<label for='pblTaskDuration'>"+_("Estimated duration")+":</label>\
 					<input type='text' id='pblTaskDuration' placeholder='00:00' />\
-					<label for='pblTaskDurationText'>"+_("Text to display:")+"</label>\
-					<input type='text' id='pblTaskDurationText' value='"+_("Duration:")+"' />\
+					<label for='pblTaskDurationText'>"+_("Text to display")+":</label>\
+					<input type='text' id='pblTaskDurationText' value='"+_("Duration")+":' />\
 				</p>\
 				<p>\
-					<label for='pblTaskParticipants'>"+_("Participants:")+"</label>\
+					<label for='pblTaskParticipants'>"+_("Participants")+":</label>\
 					<input type='text' id='pblTaskParticipants' placeholder='"+_('Number or description')+"' />\
-					<label for='pblTaskParticipantsText'>"+_("Text to display:")+"</label>\
-					<input type='text' id='pblTaskParticipantsText' value='"+_("Grouping:")+"' />\
+					<label for='pblTaskParticipantsText'>"+_("Text to display")+":</label>\
+					<input type='text' id='pblTaskParticipantsText' value='"+_("Grouping")+":' />\
 				</p>\
 			</fieldset>\
 			<p><label for='pblTaskDescription'>"+_('Provide information of the project or this part of the project.')+"</label></p>\
 			<p><textarea id='pblTaskDescription' class='pblTaskEditor'\></textarea></p>\
 			<fieldset id='pblTaskFeedback'>\
-				<legend>"+_('Feedback (optional)')+"</legend>\
+				<legend>"+_('Feedback')+" ("+_('Optional').toLowerCase()+")</legend>\
 				<p>\
-					<label for='pblTaskFeedbackButtonText'>"+_("Feedback button text:")+"</label>\
+					<label for='pblTaskFeedbackButtonText'>"+_("Feedback button text")+":</label>\
 					<input type='text' id='pblTaskFeedbackButtonText' value='"+_("Show Feedback")+"' />\
 				</p>\
-				<p><label for='pblTaskFeedbackContent'>"+_('Feedback:')+"</label></p>\
+				<p><label for='pblTaskFeedbackContent'>"+_('Feedback')+":</label></p>\
 				<p><textarea id='pblTaskFeedbackContent' class='pblTaskEditor'\></textarea></p>\
 			</fieldset>\
 			";
@@ -148,11 +148,13 @@ var $exeDevice = {
 			var duration = $("#pblTaskDuration").val();
 			var participants = $("#pblTaskParticipants").val();
 			if (duration!="" || participants!="") {
+				var msg = _("Please write the text to display in '%s'.");
 				html += '<dl class="pbl-task-info">';
 					if (duration!="") {
 						var durationText = $("#pblTaskDurationText").val();
 						if (durationText=="") {
-							eXe.app.alert(_("Please write the text to display in 'Duration'."));
+							msg = msg.replace('%s',_('Duration'));
+							eXe.app.alert(msg);
 							return false;
 						}
 						html += '<dt class="pbl-task-duration"><span>'+durationText+'</span></dt><dd class="pbl-task-duration">'+duration+'</dd>';
@@ -160,7 +162,8 @@ var $exeDevice = {
 					if (participants!="") {
 						var participantsText = $("#pblTaskParticipantsText").val();
 						if (participantsText=="") {
-							eXe.app.alert(_("Please write the text to display in 'Participants'."));
+							msg = msg.replace('%s',_('Participants'));
+							eXe.app.alert(msg);
 							return false;
 						}
 						html += '<dt class="pbl-task-participants"><span>'+participantsText+'</span></dt><dd class="pbl-task-participants">'+participants+'</dd>';
@@ -196,7 +199,9 @@ var $exeDevice = {
 			if (taskFeedback!="") {
 				var taskFeedbackButtonText = $("#pblTaskFeedbackButtonText").val();
 				if (taskFeedbackButtonText=="") {
-					eXe.app.alert(_("Please write the feedback button text."));
+					var error = _("Please fill in this field: '%s'.");
+						error = error.replace('%s',_("Feedback button text"));
+					eXe.app.alert(error);
 					return false;				
 				}
 				html += '<div class="iDevice_buttons feedback-button js-required">';

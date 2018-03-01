@@ -455,7 +455,7 @@ class Epub3Page(Page):
         html += u"</" + sectionTag + ">" + lb  # /#main
 
         if self.node.package.get_addPagination():
-            html += "<div class = 'pagination'> " + c_('Page %i of %i') % (pages.index(self),len(pages) -1)+ "</div>"+lb 
+            html += "<p class='pagination page-counter'>" + c_('Page %s of %s') % ('<strong>'+str(pages.index(self))+'</strong>','<strong>'+str((len(pages) -1))+'</strong>')+ "</p>"+lb 
             
         html += self.renderLicense()
         html += unicode(BeautifulSoup(self.renderFooter(), convertEntities=BeautifulSoup.XHTML_ENTITIES))
