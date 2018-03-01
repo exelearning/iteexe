@@ -199,7 +199,9 @@ var $exeDevice = {
 			if (taskFeedback!="") {
 				var taskFeedbackButtonText = $("#pblTaskFeedbackButtonText").val();
 				if (taskFeedbackButtonText=="") {
-					eXe.app.alert(_("Please write the feedback button text."));
+					var error = _("Please fill in this field: '%s'.");
+						error = error.replace('%s',_("Feedback button text"));
+					eXe.app.alert(error);
 					return false;				
 				}
 				html += '<div class="iDevice_buttons feedback-button js-required">';
