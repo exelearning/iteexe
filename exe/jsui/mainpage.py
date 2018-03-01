@@ -445,26 +445,22 @@ class MainPage(RenderableLivePage):
         
         if edit == False:
             filename = self.b4save(client, filename, '.elt', _(u'SAVE FAILED!'))
-        
+
         try:
-            
             configxmlData = '<?xml version="1.0"?>\n'
             configxmlData += '<template>\n'
             configxmlData += '<name>'+templatename+'</name>\n'
             configxmlData += '</template>'
-            
+
             # Make the root node the current one
             self.package.currentNode = self.package.root
-            
+
             # Save the template
             self.package.save(filename, isTemplate=True, configxml=configxmlData) 
-    
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
-        
-        self.webServer.root.putChild(self.package.name, self)
-        
+
         template = Template(filename)
         self.config.templateStore.addTemplate(template)
     
