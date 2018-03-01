@@ -9,33 +9,10 @@
 var $exeDevice = {
 	
 	// i18n
-	i18n : {
-		
-		// We use eXe's _ function
-		name : _('Scrambled List'),
-		
-		// Spanish
-		es : {
-			"Intructions:" : "Instrucciones:",
-			"Write the elements in the right order:" : "Añade los elementos de la lista (ordenados):",
-			"Please write the instructions." : "Debes escribir las instrucciones.",
-			"Add at least 3 elements." : "Añade al menos 3 elementos.",
-			"Button text:" : "Texto del botón:",
-			"Text to show if right answered:" : "Texto a mostrar si contesta correctamente:",
-			"Text to show if wrongly answered:" : "Texto a mostrar si no responde correctamente:",
-			"Check" : "Comprobar",
-			"Please write the button text." : "Debes escribir el texto del botón.",
-			"Please write the text to show when right." : "Debes escribir el texto a mostrar si se contesta correctamente.",
-			"Please write the text to show when wrong." : "Debes escribir el texto a mostrar si no responde correctamente.",
-			"The right answer will be shown after this text." : "La respuesta correcta se mostrará después de este texto.",
-			"Right!" : "¡Correcto!",
-			"Sorry... The right answer is:" : "No es correcto... Respuesta correcta:"
-		}
-		
-	},
+	// We use eXe's _ function
+	name : _('Scrambled List'),	
 	
 	init : function(){
-		
 		 this.createForm();
 	},
 	
@@ -44,12 +21,12 @@ var $exeDevice = {
 		
 		var html = '\
 			<div id="sortableListForm">\
-				<p><label for="sortableListFormInstructions">'+_("Intructions:")+' </label><input type="text" class="sortableListTextOption" name="sortableListFormInstructions" id="sortableListFormInstructions" /></p>\
+				<p><label for="sortableListFormInstructions">'+_("Instructions")+': </label><input type="text" class="sortableListTextOption" name="sortableListFormInstructions" id="sortableListFormInstructions" /></p>\
 				'+this.getListsFields()+'\
-				<p><label for="sortableListButtonText">'+_("Button text:")+' </label><input type="text" class="sortableListTextOption" name="sortableListButtonText" id="sortableListButtonText" onfocus="this.select()" /></p>\
-				<p><label for="sortableListRightText">'+_("Text to show if right answered:")+' </label><input type="text" class="sortableListTextOption" name="sortableListRightText" id="sortableListRightText" onfocus="this.select()" /></p>\
+				<p><label for="sortableListButtonText">'+_("Button text")+': </label><input type="text" class="sortableListTextOption" name="sortableListButtonText" id="sortableListButtonText" onfocus="this.select()" /></p>\
+				<p><label for="sortableListRightText">'+_("Correct Answer Feedback Overlay")+': </label><input type="text" class="sortableListTextOption" name="sortableListRightText" id="sortableListRightText" onfocus="this.select()" /></p>\
 				<p>\
-                <label for="sortableListWrongText">'+_("Text to show if wrongly answered:")+' </label><input type="text" class="sortableListTextOption" name="sortableListWrongText" id="sortableListWrongText" onfocus="this.select()" />\
+                <label for="sortableListWrongText">'+_("Wrong Answer Feedback Overlay")+': </label><input type="text" class="sortableListTextOption" name="sortableListWrongText" id="sortableListWrongText" onfocus="this.select()" />\
                 <span id="sortableListWrongTextTip">'+_("The right answer will be shown after this text.")+'</span>\
                 </p>\
 			</div>\
@@ -132,7 +109,7 @@ var $exeDevice = {
 			// Get the instructions
 			var instructions = $("#sortableListFormInstructions").val();
 			if (instructions=="") {
-				eXe.app.alert(_("Please write the instructions."));
+				eXe.app.alert(_("Please write some instructions."));
 				return false;
 			}
 			html += '<p class="exe-sortableList-instructions">'+$exeDevice.removeTags(instructions)+'</p>';
