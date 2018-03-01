@@ -428,7 +428,7 @@ class IMSPage(Page):
             html += u'</'+articleTag+'>'+lb # iDevice div
 
         if self.node.package.get_addPagination():
-            html += "<div class = 'pagination' align='right'>" + c_('Page %i of %i') % (pages.index(self) + 1,len(pages))+ "</div>"+lb 
+            html += "<p class='pagination page-counter'>" + c_('Page %s of %s') % ('<strong>'+str(pages.index(self) + 1)+'</strong>','<strong>'+str(len(pages))+'</strong>')+ "</p>"+lb 
             
         html += u"</"+sectionTag+">"+lb # /#main
         html += self.renderLicense()
@@ -578,6 +578,7 @@ class IMSExport(object):
         hasMediaelement   = False
         hasTooltips       = False
         hasABCMusic       = False
+        listIdevicesFiles = []
         
         for page in self.pages:
             if isBreak:
@@ -615,6 +616,8 @@ class IMSExport(object):
                     hasTooltips = common.ideviceHasTooltips(idevice)
                 if not hasABCMusic:
                     hasABCMusic = common.ideviceHasABCMusic(idevice)
+                if hasattr(idevice, "_iDeviceDir"):
+                    listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
 
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -672,7 +675,8 @@ class IMSExport(object):
             (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
             
         # Copy JS iDevices files
-        common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir)
+        for iDeviceFiles in set(listIdevicesFiles):
+            iDeviceFiles.copyfiles(outputDir)
             
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)

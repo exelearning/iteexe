@@ -359,11 +359,13 @@ class WebsitePage(Page):
             html += "<a href=\"" + quote(prevPage.name) + '.' + ext + "\" class=\"prev\"><span>"
             html += "<span>&laquo; </span>%s</span></a>" % c_('Previous')
             
-        if self.node.package.get_addPagination():      
-            html += "<span> " + c_('Page %i of %i') % (pages.index(self) + 1,len(pages))+ "</span>"
+        if self.node.package.get_addPagination(): 
+            if prevPage:
+                html += ' <span class="sep">| </span>'        
+            html += "<span class=\"page-counter\">" + c_('Page %s of %s') % ('<strong>'+str(pages.index(self) + 1)+'</strong>','<strong>'+str(len(pages))+'</strong>')+ "</span>"
 
         if nextPage:
-            if prevPage:
+            if self.node.package.get_addPagination() or prevPage:
                 html += ' <span class="sep">| </span>'
             html += "<a href=\"" + quote(nextPage.name) + '.' + ext + "\" class=\"next\"><span>"
             html += "%s<span> &raquo;</span></span></a>" % c_('Next')

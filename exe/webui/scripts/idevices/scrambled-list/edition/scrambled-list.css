@@ -3,5 +3,5 @@
 #sortableListForm input[type=text]{width:430px}
 #sortableListForm input.sortableListTextOption{width:500px}
 #sortableListValuesContainer{display:none}
-#sortableListWrongTextTip{display:block;font-size:.9em;margin-top:.2em}
+#sortableListWrongTextTip{display:block;font-size:.9em;margin-top:.4em}
 .exe-sortableList li a{background-image:url(/scripts/idevices/scrambled-list/export/scrambled-list.png)}
