@@ -413,9 +413,9 @@ class MainPage(RenderableLivePage):
             filename = self.package.filename
             assert filename, 'Somehow save was called without a filename on a package that has no default filename.'
 
-        extension= filename.splitext()[1]
+        extension = filename.splitext()[1]
         if extension == '.elt':
-            return self.handleSaveTemplate(client, oldName, onDone, edit=True)
+            return self.handleSaveTemplate(client, filename.basename(), onDone, edit=True)
         # Add the extension if its not already there and give message if not saved
         filename = self.b4save(client, filename, '.elp', _(u'SAVE FAILED!'))
         
@@ -452,6 +452,7 @@ class MainPage(RenderableLivePage):
             filename = Path(self.config.templatesDir/templatename +'.elt', 'utf-8')
         else:
             filename = Path(self.config.templatesDir/templatename, 'utf-8')
+            templatename = str(filename.basename().splitext()[0])
         
         if edit == False:
             filename = self.b4save(client, filename, '.elt', _(u'SAVE FAILED!'))
