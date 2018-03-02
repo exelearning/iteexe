@@ -138,6 +138,9 @@ class MainPage(RenderableLivePage):
             self.package.description = copy.copy(template.description)
             self.package.title = copy.copy(template.title)
             self.package.footer = copy.copy(template.footer)
+            self.package.objectives = copy.copy(template.objectives)
+            self.package.preknowledge = copy.copy(template.preknowledge)
+            self.package.author = copy.copy(template.author)
 
             # Copy the nodes and update the root and current ones
             # Be carefull not to use copy.copy when assigning root and currentNode as this will create entirely new nodes

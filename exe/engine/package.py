@@ -496,8 +496,8 @@ class Package(Persistable):
 
     def translatePackage(self, node = None):
         """
-        Translate a nodo from the package. If not node is provided
-
+        Translate a node.
+        If not node is provided, get package's root node.
         """
         # The first time this function is called, we simply have to
         # pick the root node
@@ -513,6 +513,9 @@ class Package(Persistable):
             self.set_title(c_(self.title))
             self.set_description(c_(self.description))
             self.footer = c_(self.footer)
+            self.objectives = c_(self.objectives)
+            self.preknowledge = c_(self.preknowledge)
+            self.author = c_(self.author)
 
         node.title = c_(node.title)
         for idevice in node.idevices:
