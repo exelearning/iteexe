@@ -243,7 +243,17 @@ class TemplateManagerPage(RenderableResource):
 
     def doDeleteTemplate(self, template):
 
+        # Get the current authoring page
+        
+        for mainpages in self.parent.mainpages.values():
+            for mainpage in mainpages.values():
+                if self.client.handleId in mainpage.authoringPages:
+                    authoringPage = mainpage.authoringPages[self.client.handleId]
+                    
         try:
+            if authoringPage.package.filename == (self.config.templatesDir / template):
+                self.alert(_('Error'), _(u'It is not possible to delete an opened template.'))
+                return
             templateDelete = Template(self.config.templatesDir / template)
             self.__deleteTemplate(templateDelete)
             self.alert(_(u'Correct'), _(u'Template deleted correctly'))
