@@ -1118,6 +1118,11 @@ class MainPage(RenderableLivePage):
                          unicode(exportDir) +
                          _(u'. Please use ASCII names.'))
             return
+        
+        name = str(filename.basename().splitext()[0])
+        if name.upper() in forbiddenPageNames:
+            client.alert(_('SAVE FAILED!\n"%s" is not a valid name for the file') % str(name))
+            return
 
         """
         adding the print feature in using the same export functionality:
@@ -1461,6 +1466,12 @@ class MainPage(RenderableLivePage):
             log.debug(u"exportXliff, filename=%s" % filename)
             if not filename.lower().endswith('.xlf'):
                 filename += '.xlf'
+                
+            name = str(filename.basename().splitext()[0])
+            if name.upper() in forbiddenPageNames:
+                client.alert(_('SAVE FAILED!\n"%s" is not a valid name for the file') % str(name))
+                return
+        
             xliffExport = XliffExport(self.config, filename, source, target, copy, cdata)
             xliffExport.export(self.package)
         except Exception, e:
