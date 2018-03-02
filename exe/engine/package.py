@@ -1304,9 +1304,20 @@ class Package(Persistable):
         resourceDir = TempDirPath()
         
         excludeDir = ["common", "extend","unique","vocab"]
+
+        # These files are not resources, so we shouldn't copy them
+        excluded_files = [
+            u'content.data',
+            u'content.xml',
+            u'contentv2.xml',
+            u'contentv3.xml',
+            u'content.xsd',
+            u'config.xml'
+        ]
+
         # Extract resource files from package to temporary directory
         for fn in zippedFile.namelist():
-            if unicode(fn, 'utf8') not in [u"content.data", u"content.xml", u"contentv2.xml", u"contentv3.xml", u"content.xsd" ]:
+            if unicode(fn, 'utf8') not in excluded_files:
                 #JR: Hacemos las comprobaciones necesarias por si hay directorios
                 if ("/" in fn):
                     dir = fn[:fn.rindex("/")]
