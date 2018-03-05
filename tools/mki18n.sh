@@ -84,7 +84,9 @@ sed -i "s/^#, fuzzy\$//" exe/locale/messages.pot
 # 2.- pyBabel - Updating the PO files of the different languages
 echo -e "\n\n\n *** Updating *.po files ***\n"
 # JRF's question: is --ignore-obsolete necessary?
-pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/ --ignore-obsolete
+# 2018-03-05: parameter removed, let's check the consequences
+# pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/ --ignore-obsolete
+pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/
 # Set correct Project-Id-Version
 find exe -name exe.po | xargs sed -i 's/Project-Id-Version:.*/Project-Id-Version: '"$project $version"'\\n"/' 
 
