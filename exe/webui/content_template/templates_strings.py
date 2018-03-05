@@ -7,18 +7,6 @@
 Base_elt__levelNames_1 = _(u'Topic')
 Base_elt__levelNames_2 = _(u'Section')
 Base_elt__levelNames_3 = _(u'Unit')
-# _title
-Base_elt__title = _(u'')
-# _description
-Base_elt__description = _(u'')
-# footer
-Base_elt_footer = _(u'')
-# _objectives
-Base_elt__objectives = _(u'')
-# _preknowledge
-Base_elt__preknowledge = _(u'')
-# _author
-Base_elt__author = _(u'')
 
 # Nodes
 # _title
