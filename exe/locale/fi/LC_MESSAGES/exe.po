@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-05 19:00+0100\n"
+"POT-Creation-Date: 2018-03-05 20:38+0100\n"
 "PO-Revision-Date: 2008-01-28 00:15+1300\n"
 "Last-Translator: Pekka Henttonen <pekka.henttonen@uta.fi>\n"
 "Language: fi\n"
@@ -1372,9 +1372,9 @@ msgstr ""
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
-#: exe/webui/content_template/templates_strings.py:61
-#: exe/webui/content_template/templates_strings.py:71
-#: exe/webui/content_template/templates_strings.py:169
+#: exe/webui/content_template/templates_strings.py:49
+#: exe/webui/content_template/templates_strings.py:59
+#: exe/webui/content_template/templates_strings.py:157
 msgid "Free Text"
 msgstr ""
 
@@ -2291,22 +2291,22 @@ msgid "Guidelines Teacher Text:"
 msgstr ""
 
 #: exe/engine/package.py:328 exe/webui/content_template/templates_strings.py:7
-#: exe/webui/content_template/templates_strings.py:30
+#: exe/webui/content_template/templates_strings.py:18
 msgid "Topic"
 msgstr ""
 
 #: exe/engine/package.py:328 exe/webui/content_template/templates_strings.py:8
-#: exe/webui/content_template/templates_strings.py:31
+#: exe/webui/content_template/templates_strings.py:19
 msgid "Section"
 msgstr ""
 
 #: exe/engine/package.py:328 exe/webui/content_template/templates_strings.py:9
-#: exe/webui/content_template/templates_strings.py:32
+#: exe/webui/content_template/templates_strings.py:20
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
 msgid "Unit"
 msgstr ""
 
-#: exe/engine/package.py:350 exe/webui/content_template/templates_strings.py:25
+#: exe/engine/package.py:350 exe/webui/content_template/templates_strings.py:13
 msgid "Home"
 msgstr ""
 
@@ -7529,15 +7529,15 @@ msgstr ""
 msgid "Click for completion instructions"
 msgstr "Klikkaa saadaksesi täydennysohjeita"
 
-#: exe/webui/content_template/templates_strings.py:34
+#: exe/webui/content_template/templates_strings.py:22
 msgid "Project's name"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:36
+#: exe/webui/content_template/templates_strings.py:24
 msgid "Project's final goal."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:38
+#: exe/webui/content_template/templates_strings.py:26
 msgid ""
 "&lt;script&gt;\n"
 "  "
@@ -7557,26 +7557,26 @@ msgid ""
 "&lt;/script&gt;"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:49
+#: exe/webui/content_template/templates_strings.py:37
 msgid "Point out what students are about to learn."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:51
+#: exe/webui/content_template/templates_strings.py:39
 msgid ""
 "Students need no preknowledge to complete all these tasks because there "
 "are materials enough to be independent in their accomplishment. Students "
 "also have the help and orientation from their teacher."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:53
+#: exe/webui/content_template/templates_strings.py:41
 msgid "Author's name"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:57
+#: exe/webui/content_template/templates_strings.py:45
 msgid "Front page"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:64
+#: exe/webui/content_template/templates_strings.py:52
 msgid ""
 "&lt;p&gt;Motivating inspiration.&lt;/p&gt;\n"
 "&lt;p&gt;Project / Final Challenge&lt;/p&gt;\n"
@@ -7587,7 +7587,7 @@ msgid ""
 "&lt;p&gt;Motivation for the project development.&lt;/p&gt;"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:74
+#: exe/webui/content_template/templates_strings.py:62
 msgid ""
 "<p style=\"text-align: center;\"><a rel=\"license\" "
 "href=\"http://creativecommons.org/licenses/by-sa/4.0/\"><img "
@@ -7601,15 +7601,15 @@ msgid ""
 "target=\"_blank\">CeDeC</a>.</p> <p></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:77
+#: exe/webui/content_template/templates_strings.py:65
 msgid "Breaking the ice"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:80
+#: exe/webui/content_template/templates_strings.py:68
 msgid "Your project: general information"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:83
+#: exe/webui/content_template/templates_strings.py:71
 msgid ""
 "&lt;p&gt;Explanation of the final challenge.&lt;/p&gt;\n"
 "&lt;p&gt;Overview of suggested tasks.&lt;/p&gt;\n"
@@ -7636,11 +7636,11 @@ msgid ""
 "height: 19.2px;&quot;&gt;&lt;/span&gt;&lt;/p&gt;"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:97
+#: exe/webui/content_template/templates_strings.py:85
 msgid "Starting Activity"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:100
+#: exe/webui/content_template/templates_strings.py:88
 msgid ""
 "<p>Introductory Activity to the project involving:</p> <ul> <li>Team "
 "work</li> <li>Reflection and motivation</li> <li>Expression of "
@@ -7650,19 +7650,19 @@ msgid ""
 "style=\"color: #ff0000;\"><br /></span></strong></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:103
-#: exe/webui/content_template/templates_strings.py:125
+#: exe/webui/content_template/templates_strings.py:91
+#: exe/webui/content_template/templates_strings.py:113
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:31
 msgid "Learning Diary"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:106
+#: exe/webui/content_template/templates_strings.py:94
 msgid ""
 "<p>First activity. Creation of the learning diary in the suggested "
 "format.</p> <p>Creation of the first post heading.</p> <p></p> <p></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:107
+#: exe/webui/content_template/templates_strings.py:95
 msgid ""
 "<div class=\"block\"> <div id=\"3_93-viewer\"> <p>Script for writing the "
 "post. It must lead the student to think about and reflect:</p> <ul> "
@@ -7671,15 +7671,15 @@ msgid ""
 "</ul> </div> </div>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:111
+#: exe/webui/content_template/templates_strings.py:99
 msgid "Mission 1"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:113
+#: exe/webui/content_template/templates_strings.py:101
 msgid "Introduction"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:116
+#: exe/webui/content_template/templates_strings.py:104
 msgid ""
 "<p>What the final mission will be.</p> <p>What sudents will learn "
 "about.</p> <p style=\"text-align: center;\"><img "
@@ -7688,11 +7688,11 @@ msgid ""
 "activity</p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:119
+#: exe/webui/content_template/templates_strings.py:107
 msgid "Task (Mission)"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:122
+#: exe/webui/content_template/templates_strings.py:110
 msgid ""
 "<p>General introduction</p> <p>What the \"final mission\" will be and "
 "link to the assessment rubric.</p> <p style=\"text-align: center;\"><img "
@@ -7702,11 +7702,11 @@ msgid ""
 "mission</strong></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:128
+#: exe/webui/content_template/templates_strings.py:116
 msgid "<p>Guidelines to open a new post.</p> <p></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:130
+#: exe/webui/content_template/templates_strings.py:118
 msgid ""
 "<div id=\"8_93-viewer\"> <div class=\"block\"> <div id=\"3_93-viewer\"> "
 "<div class=\"block\"> <div id=\"3_93-viewer\"> <div id=\"8_93-viewer\"> "
@@ -7719,15 +7719,15 @@ msgid ""
 "</div> </div> </div> </div> </div> </div> </div>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:134
+#: exe/webui/content_template/templates_strings.py:122
 msgid "Didactic guidelines"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:137
+#: exe/webui/content_template/templates_strings.py:125
 msgid "Fact sheet"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:140
+#: exe/webui/content_template/templates_strings.py:128
 msgid ""
 "<table style=\"margin-left: auto; margin-right: auto; width: 624.333px; "
 "border-color: #000000;\" cellspacing=\"4\" "
@@ -7764,18 +7764,18 @@ msgid ""
 "</tbody> </table> <p></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:142
+#: exe/webui/content_template/templates_strings.py:130
 msgid ""
 "<p><span>Resource structure<br /></span></p> <p><span>Types of tasks and "
 "activities</span></p> <p>Methodological approach</p> <p>Use of the "
 "learning diary</p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:145
+#: exe/webui/content_template/templates_strings.py:133
 msgid "Learning Pathway and timing"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:148
+#: exe/webui/content_template/templates_strings.py:136
 msgid ""
 "<p></p> <table style=\"width: 95.5125%;\" cellspacing=\"0\" "
 "cellpadding=\"4\"><colgroup><col width=\"64*\" /> <col width=\"96*\" /> "
@@ -7842,11 +7842,11 @@ msgid ""
 "<p>Recommendations to involve other subjects</p> <p></p> <p></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:151
+#: exe/webui/content_template/templates_strings.py:139
 msgid "Assessment and curricular references"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:154
+#: exe/webui/content_template/templates_strings.py:142
 msgid ""
 "<p><span>Link to the final rubric of the project.</span></p> "
 "<p>Assessment recommendations / resources of each task.</p> <p>Assessment"
@@ -7854,23 +7854,23 @@ msgid ""
 "standards and key competences.</p> <p></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:157
+#: exe/webui/content_template/templates_strings.py:145
 msgid "Need any help?"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:160
+#: exe/webui/content_template/templates_strings.py:148
 msgid "<h3>ICT resources/apps/tools</h3>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:163
+#: exe/webui/content_template/templates_strings.py:151
 msgid "Rubrics and other documents"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:166
+#: exe/webui/content_template/templates_strings.py:154
 msgid "<p>You can download all the documents to print, share, reuse...</p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:172
+#: exe/webui/content_template/templates_strings.py:160
 msgid ""
 "<p style=\"text-align: center;\"><a rel=\"license\" "
 "href=\"http://creativecommons.org/licenses/by-sa/4.0/\"><img "
