@@ -1,17 +1,17 @@
 # eXeLearning Spanish PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2017 eXeLearning.net
+# Copyright (C) 2011-2018 eXeLearning.net
 # This file is distributed under the same license as the eXeLearning
 # package.
 # eXeLearning.net Project <admin@exelearning.net>
 # Asociacion Cultural Reggae <acreggae@acreggae.com>, 2009.
-# Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2017.
+# Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.4\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2018-03-05 20:38+0100\n"
-"PO-Revision-Date: 2017-08-31 12:09+0200\n"
+"PO-Revision-Date: 2018-03-06 00:10+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -2307,7 +2307,7 @@ msgstr ""
 msgid ""
 "The title and the icon are not required. If you leave them empty the "
 "iDevice will have no emphasis."
-msgstr ""
+msgstr "No son necesarios ni el título ni el icono. Si los deja en blanco el iDevice no tendrá resalte."
 
 #: exe/engine/jsidevice.py:172
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
@@ -3742,7 +3742,7 @@ msgstr "Formato de exportación no implementado"
 #: exe/export/scormpage.py:183 exe/export/websitepage.py:365
 #, python-format
 msgid "Page %s of %s"
-msgstr ""
+msgstr "Página %s de %s"
 
 #: exe/export/epub3export.py:748 exe/export/epub3subexport.py:670
 #: exe/export/imsexport.py:682 exe/export/scormexport.py:829
@@ -3856,7 +3856,7 @@ msgstr "Mis iDevices"
 
 #: exe/jsui/idevicepane.py:142
 msgid "JS iDevices"
-msgstr ""
+msgstr "iDevices JS"
 
 #: exe/jsui/mainpage.py:407 exe/jsui/mainpage.py:1117 exe/jsui/mainpage.py:1252
 #: exe/jsui/scripts/app/controller/StyleManager.js:72
@@ -3870,7 +3870,7 @@ msgstr ". Por favor use nombres en ASCII."
 
 #: exe/jsui/mainpage.py:420 exe/jsui/mainpage.py:458
 msgid "SAVE FAILED!"
-msgstr "ERROR AL GUARDAR"
+msgstr "¡ERROR AL GUARDAR!"
 
 #: exe/jsui/mainpage.py:424
 #, python-format
@@ -3878,6 +3878,8 @@ msgid ""
 "SAVE FAILED!\n"
 "\"%s\" is not a valid name for a package"
 msgstr ""
+"¡ERROR AL GUARDAR!\n"
+"\"%s\" no es un nombre válido para un paquete"
 
 #: exe/jsui/mainpage.py:430 exe/jsui/mainpage.py:477 exe/jsui/mainpage.py:790
 #: exe/jsui/mainpage.py:848 exe/jsui/mainpage.py:1352
@@ -3886,7 +3888,7 @@ msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
-"ERROR AL GUARDAR\n"
+"¡ERROR AL GUARDAR!\n"
 "%s"
 
 #: exe/jsui/mainpage.py:439 exe/jsui/mainpage.py:444 exe/jsui/mainpage.py:447
@@ -3900,11 +3902,13 @@ msgid ""
 "SAVE FAILED!\n"
 "\"%s\" is not a valid name for a template"
 msgstr ""
+"¡ERROR AL GUARDAR!\n"
+"\"%s\" no es un nombre válido para una plantilla"
 
 #: exe/jsui/mainpage.py:483
 #, python-format
 msgid "Template saved: %s"
-msgstr ""
+msgstr "Plantilla guardada: %s"
 
 #: exe/jsui/mainpage.py:713 exe/jsui/mainpage.py:812 exe/jsui/mainpage.py:875
 #: exe/jsui/mainpage.py:956
@@ -3970,6 +3974,8 @@ msgid ""
 "SAVE FAILED!\n"
 "\"%s\" is not a valid name for the file"
 msgstr ""
+"¡ERROR AL GUARDAR!\n"
+"\"%s\" no es un nombre válido para un fichero"
 
 #: exe/jsui/mainpage.py:1145 exe/jsui/mainpage.py:1150
 #: exe/jsui/mainpage.py:1153 exe/jsui/mainpage.py:1156
@@ -4053,6 +4059,8 @@ msgid ""
 "There were some resources that couldn't be renamed to be compatible with "
 "ISO9660."
 msgstr ""
+"Exportado a %s.\n"
+"Varios recursos no pudieron ser renombrados para respetar la compatibilidad con ISO9660."
 
 #: exe/jsui/mainpage.py:1507
 #, python-format
@@ -4154,7 +4162,7 @@ msgstr "Espere, por favor..."
 
 #: exe/jsui/scripts/app/controller/MainTab.js:281
 msgid "Settings Saved"
-msgstr ""
+msgstr "Guardada la configuración"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:300
 #: exe/jsui/scripts/app/controller/MainTab.js:350
@@ -4270,24 +4278,24 @@ msgstr "¿Desea borrar este estilo?"
 
 #: exe/jsui/scripts/app/controller/TemplateManager.js:190
 msgid "Select ELT template file to import."
-msgstr ""
+msgstr "Seleccione el fichero ELT de plantilla que desee importar."
 
 #: exe/jsui/scripts/app/controller/TemplateManager.js:217
 #: exe/jsui/scripts/app/controller/TemplateManager.js:286
 msgid "ELT template"
-msgstr ""
+msgstr "Plantilla ELT"
 
 #: exe/jsui/scripts/app/controller/TemplateManager.js:260
 msgid "Export to ZIP template as"
-msgstr ""
+msgstr "Exportar como plantilla comprimida en ZIP de nombre"
 
 #: exe/jsui/scripts/app/controller/TemplateManager.js:322
 msgid "Delete template?"
-msgstr ""
+msgstr "¿Borrar la plantilla?"
 
 #: exe/jsui/scripts/app/controller/TemplateManager.js:323
 msgid "Do you want to delete this template?"
-msgstr ""
+msgstr "¿Desea borrar esta plantilla?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:207
 msgid "http://exelearning.net/html_manual/exe20_en/"
@@ -4310,7 +4318,7 @@ msgstr "http://exelearning.net/downloads/"
 #: exe/webui/tools/assistant/js/assistant.js:15
 #: exe/webui/tools/assistant/langs/en.js:8
 msgid "Assistant"
-msgstr ""
+msgstr "Asistente"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:391
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -4347,7 +4355,7 @@ msgstr "Gestor de estilos"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:534
 msgid "Template Manager"
-msgstr ""
+msgstr "Gestor de plantillas"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:552
 msgid ""
@@ -4613,11 +4621,11 @@ msgstr "Guardando el paquete como: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1310
 msgid "Title for template:"
-msgstr ""
+msgstr "Título de la plantilla:"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1311
 msgid "Enter the new name for template:"
-msgstr ""
+msgstr "Introduzca el nuevo nombre de la plantilla:"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1332
 msgid "Save file"
@@ -4996,7 +5004,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:74
 msgid "Add page counters in the footer and header of the export?"
-msgstr ""
+msgstr "¿Añadir contadores de página en el pie y cabecera de la exportación?"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:78
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:81
@@ -5004,7 +5012,7 @@ msgid ""
 "Checking this option, a \"Page X of Y.\" text will be added to every page"
 " of the exported content (except ePub's frontpage). This doesn't affect "
 "Single Page and Text File export files."
-msgstr ""
+msgstr "Marcando esta opción, se añadirá un texto \"Página X de Y.\"  a cada página del contenido exportado (excepto la portada de un ePub). No afecta a ficheros exportados como Página html única ni como Ficheros de texto plano."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:87
 msgid "SCORM Options (1.2 and 2004)"
@@ -5499,7 +5507,7 @@ msgstr "Catalogación"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:659
 msgid "General description"
-msgstr ""
+msgstr "Descripción general"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:219
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:223
@@ -5712,13 +5720,13 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:657
 msgid "Custom HEAD"
-msgstr ""
+msgstr "Personalizar la sección HEAD"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:658
 msgid ""
 "Any code you enter here (STYLE, META, SCRIPT...) will be added in the "
 "HEAD section to every page."
-msgstr ""
+msgstr "El código que introduzca aquí (STYLE, META, SCRIPT...) será añadido a la sección HEAD de todas las páginas."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:25
 msgid "Select Browser"
@@ -5854,7 +5862,7 @@ msgstr "Mostrar esta ventana cuando se inicia eXe"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:22
 msgid "Export template: "
-msgstr ""
+msgstr "Exportar la plantilla: "
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:36
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:42
@@ -5865,39 +5873,39 @@ msgstr "Exportar"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:51
 msgid "Delete template: "
-msgstr ""
+msgstr "Borrar la plantilla: "
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:65
 msgid "Show properties of template: "
-msgstr ""
+msgstr "Mostrar las propiedades de la plantilla: "
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:79
 msgid "Edit template: "
-msgstr ""
+msgstr "Editar la plantilla: "
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:153
 msgid "Import template to the system "
-msgstr ""
+msgstr "Importar la plantilla al sistema "
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:157
 msgid "Import template"
-msgstr ""
+msgstr "Importar la plantilla"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:162
 msgid "List of templates in your system"
-msgstr ""
+msgstr "Lista de plantillas de su sistema"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:174
 msgid "Properties of template: "
-msgstr ""
+msgstr "Propiedades de la plantilla: "
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:244
 msgid "Return to template manager"
-msgstr ""
+msgstr "Volver al gestor de plantillas"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:250
 msgid "Return"
-msgstr ""
+msgstr "Volver"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
@@ -6004,11 +6012,11 @@ msgstr "Nuevo"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:107
 msgid "Project"
-msgstr ""
+msgstr "Proyecto"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:115
 msgid "Window"
-msgstr ""
+msgstr "Ventana"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:122
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:179
@@ -6031,11 +6039,11 @@ msgstr "Guardar como..."
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
 msgid "Save as template"
-msgstr ""
+msgstr "Guardar como plantilla"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
 msgid "Manage"
-msgstr ""
+msgstr "Gestionar"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:210
 msgid "Educational Standard"
@@ -6089,11 +6097,11 @@ msgstr "EPUB3"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:315
 msgid "SCORM"
-msgstr ""
+msgstr "SCORM"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:322
 msgid "IMS"
-msgstr ""
+msgstr "IMS"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:332
 msgid "Publish"
@@ -6213,7 +6221,7 @@ msgstr "Acerca de eXe"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:632
 msgid "Advanced user"
-msgstr ""
+msgstr "Usuario avanzado"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:645 exe/webui/editorpane.py:397
 msgid "Info"
@@ -6223,7 +6231,7 @@ msgstr "Información"
 msgid ""
 "Checking this option will show more elements in the menus (File, "
 "Tools...) and the Properties tab."
-msgstr ""
+msgstr "Marcar esta opción hará que se muestren más elementos del menú (Archivo, Utilidades...) y la pestaña Propiedades."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:580
 #: exe/jsui/scripts/exe.js:213
@@ -6916,11 +6924,11 @@ msgstr "Chino "
 
 #: exe/jsui/scripts/langs.js:672
 msgid "Simplified Chinese"
-msgstr ""
+msgstr "Chino simplificado"
 
 #: exe/jsui/scripts/langs.js:676
 msgid "Traditional Chinese"
-msgstr ""
+msgstr "Chino tradicional"
 
 #: exe/jsui/scripts/langs.js:680
 msgid "Zulu "
@@ -8219,11 +8227,11 @@ msgstr "Error al recuperar los datos"
 
 #: exe/webui/common.py:628
 msgid "This might not work in this ePub reader."
-msgstr ""
+msgstr "Esto podría no funcionar en este lector de ePubs."
 
 #: exe/webui/common.py:629
 msgid "This activity does not work in ePub."
-msgstr ""
+msgstr "Esta actividad no funciona en formato ePub."
 
 #: exe/webui/common.py:630 exe/webui/element.py:2505 exe/webui/element.py:2948
 msgid "Solution"
@@ -8298,11 +8306,11 @@ msgstr "Pulse para recibir instrucciones sobre cómo completar la actividad"
 
 #: exe/webui/content_template/templates_strings.py:22
 msgid "Project's name"
-msgstr ""
+msgstr "Nombre del proyecto"
 
 #: exe/webui/content_template/templates_strings.py:24
 msgid "Project's final goal."
-msgstr ""
+msgstr "Objetivo final del proyecto."
 
 #: exe/webui/content_template/templates_strings.py:26
 msgid ""
@@ -8326,22 +8334,22 @@ msgstr ""
 
 #: exe/webui/content_template/templates_strings.py:37
 msgid "Point out what students are about to learn."
-msgstr ""
+msgstr "Indicar qué van a aprender los estudiantes."
 
 #: exe/webui/content_template/templates_strings.py:39
 msgid ""
 "Students need no preknowledge to complete all these tasks because there "
 "are materials enough to be independent in their accomplishment. Students "
 "also have the help and orientation from their teacher."
-msgstr ""
+msgstr "Los estudiantes no necesitan ningún conocimiento previo para completar estas tareas porque hay suficientes materiales para que sean independientes en su realización. Los estudiantes disponen también de la ayuda y la orientación de su profesor."
 
 #: exe/webui/content_template/templates_strings.py:41
 msgid "Author's name"
-msgstr ""
+msgstr "Nombre del autor"
 
 #: exe/webui/content_template/templates_strings.py:45
 msgid "Front page"
-msgstr ""
+msgstr "Portada"
 
 #: exe/webui/content_template/templates_strings.py:52
 msgid ""
@@ -8370,11 +8378,11 @@ msgstr ""
 
 #: exe/webui/content_template/templates_strings.py:65
 msgid "Breaking the ice"
-msgstr ""
+msgstr "Rompiendo el hielo"
 
 #: exe/webui/content_template/templates_strings.py:68
 msgid "Your project: general information"
-msgstr ""
+msgstr "Su proyecto: información general"
 
 #: exe/webui/content_template/templates_strings.py:71
 msgid ""
@@ -8405,7 +8413,7 @@ msgstr ""
 
 #: exe/webui/content_template/templates_strings.py:85
 msgid "Starting Activity"
-msgstr ""
+msgstr "Actividad introductoria"
 
 #: exe/webui/content_template/templates_strings.py:88
 msgid ""
@@ -8421,13 +8429,13 @@ msgstr ""
 #: exe/webui/content_template/templates_strings.py:113
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:31
 msgid "Learning Diary"
-msgstr ""
+msgstr "Diario de aprendizaje"
 
 #: exe/webui/content_template/templates_strings.py:94
 msgid ""
 "<p>First activity. Creation of the learning diary in the suggested "
 "format.</p> <p>Creation of the first post heading.</p> <p></p> <p></p>"
-msgstr ""
+msgstr "<p>Primera actividad. Creación del diario de aprendizaje en el formato sugerido.</p> <p>Creación de la primera cabecera de una entrada..</p> <p></p> <p></p>"
 
 #: exe/webui/content_template/templates_strings.py:95
 msgid ""
@@ -8440,11 +8448,11 @@ msgstr ""
 
 #: exe/webui/content_template/templates_strings.py:99
 msgid "Mission 1"
-msgstr ""
+msgstr "Misión 1"
 
 #: exe/webui/content_template/templates_strings.py:101
 msgid "Introduction"
-msgstr ""
+msgstr "Introducción"
 
 #: exe/webui/content_template/templates_strings.py:104
 msgid ""
@@ -8457,7 +8465,7 @@ msgstr ""
 
 #: exe/webui/content_template/templates_strings.py:107
 msgid "Task (Mission)"
-msgstr ""
+msgstr "Tarea (Misión)"
 
 #: exe/webui/content_template/templates_strings.py:110
 msgid ""
@@ -8471,7 +8479,7 @@ msgstr ""
 
 #: exe/webui/content_template/templates_strings.py:116
 msgid "<p>Guidelines to open a new post.</p> <p></p>"
-msgstr ""
+msgstr "<p>Guías para abrir una nueva entrada.</p> <p></p>"
 
 #: exe/webui/content_template/templates_strings.py:118
 msgid ""
@@ -8488,7 +8496,7 @@ msgstr ""
 
 #: exe/webui/content_template/templates_strings.py:122
 msgid "Didactic guidelines"
-msgstr ""
+msgstr "Guías didácticas"
 
 #: exe/webui/content_template/templates_strings.py:125
 msgid "Fact sheet"
@@ -8536,11 +8544,11 @@ msgid ""
 "<p><span>Resource structure<br /></span></p> <p><span>Types of tasks and "
 "activities</span></p> <p>Methodological approach</p> <p>Use of the "
 "learning diary</p>"
-msgstr ""
+msgstr "<p><span>Estructura del recurso<br /></span></p> <p><span>Tipos de tareas y actividades</span></p> <p>Enfoque metodológico</p> <p>Uso del diario de aprendizaje</p>"
 
 #: exe/webui/content_template/templates_strings.py:133
 msgid "Learning Pathway and timing"
-msgstr ""
+msgstr "Itinerario de aprendizaje y temporalización"
 
 #: exe/webui/content_template/templates_strings.py:136
 msgid ""
@@ -8611,7 +8619,7 @@ msgstr ""
 
 #: exe/webui/content_template/templates_strings.py:139
 msgid "Assessment and curricular references"
-msgstr ""
+msgstr "Evaluación y referencias curriculares"
 
 #: exe/webui/content_template/templates_strings.py:142
 msgid ""
@@ -8619,11 +8627,11 @@ msgid ""
 "<p>Assessment recommendations / resources of each task.</p> <p>Assessment"
 " criteria and guidance on how to assess.</p> <p>Contents / learning "
 "standards and key competences.</p> <p></p>"
-msgstr ""
+msgstr "<p><span>Enlace a la rúbrica final del proyecto.</span></p> <p>Recomendaciones para la evaluación / recursos de cada tarea.</p> <p>Criterios de evaluación y guías sobre cómo evaluar.</p> <p>Contenidos / estándares de aprendizaje y competencias clave.</p> <p></p>"
 
 #: exe/webui/content_template/templates_strings.py:145
 msgid "Need any help?"
-msgstr ""
+msgstr "¿Necesita ayuda?"
 
 #: exe/webui/content_template/templates_strings.py:148
 msgid "<h3>ICT resources/apps/tools</h3>"
@@ -8631,11 +8639,11 @@ msgstr ""
 
 #: exe/webui/content_template/templates_strings.py:151
 msgid "Rubrics and other documents"
-msgstr ""
+msgstr "Rúbricas y otros documentos"
 
 #: exe/webui/content_template/templates_strings.py:154
 msgid "<p>You can download all the documents to print, share, reuse...</p>"
-msgstr ""
+msgstr "<p>Puede descargar todos los documentos para imprimirlos, compartirlos, reutilizarlos...</p>"
 
 #: exe/webui/content_template/templates_strings.py:160
 msgid ""
@@ -9430,64 +9438,64 @@ msgstr "Ir a Utilidades - Visualización previa para ver el contenido del bocadi
 
 #: exe/webui/scripts/idevices/example-idevice/edition/example-idevice.js:36
 msgid "The user will see your name when clicking on the button."
-msgstr ""
+msgstr "El usuario verá su nombre cuando pulse en el botón."
 
 #: exe/webui/scripts/idevices/example-idevice/edition/example-idevice.js:37
 msgid ""
 "The text of the button should be in the right language, that's why it's a"
 " required field."
-msgstr ""
+msgstr "El texto del botón deberá estar en el idioma adecuado, esta es la causa de que sea un campo obligatorio."
 
 #: exe/webui/scripts/idevices/example-idevice/edition/example-idevice.js:38
 msgid "Write your name:"
-msgstr ""
+msgstr "Escriba su nombre:"
 
 #: exe/webui/scripts/idevices/example-idevice/edition/example-idevice.js:39
 msgid "Button text:"
-msgstr ""
+msgstr "Texto del botón:"
 
 #: exe/webui/scripts/idevices/example-idevice/edition/example-idevice.js:84
 msgid "You should write your name."
-msgstr ""
+msgstr "Deberá escribir su nombre."
 
 #: exe/webui/scripts/idevices/example-idevice/edition/example-idevice.js:90
 msgid "You should write the button text."
-msgstr ""
+msgstr "Deberá escribir el texto del botón."
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:13
 msgid "PBL Tasks"
-msgstr ""
+msgstr "Tareas ABP"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:15
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:49
 msgid "Provide information of the project or this part of the project."
-msgstr ""
+msgstr "Proporciona información sobre el proyecto o esta parte del proyecto."
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:16
 msgid "Describe the tasks that the learners should complete:"
-msgstr ""
+msgstr "Describe las tareas que el alumnado debe completar:"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:17
 msgid ""
 "The Learning Diary is focused on the student's reflection and reasoning "
 "to construct their own learning. Please write some instructions."
-msgstr ""
+msgstr "El Diario de aprendizaje se centra en las reflexiones del alumno para construir su propio aprendizaje. Por favor escriba las instrucciones."
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:26
 msgid "Write the title, select an icon and choose a type..."
-msgstr ""
+msgstr "Escriba el título, seleccione un icono y elija un tipo..."
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:30
 msgid "Task"
-msgstr ""
+msgstr "Tarea"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:35
 msgid "Task information"
-msgstr ""
+msgstr "Información de la tarea"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:37
 msgid "Estimated duration"
-msgstr ""
+msgstr "Duración estimada"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:39
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:45
@@ -9498,83 +9506,83 @@ msgstr "Qué texto mostrar"
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:43
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:165
 msgid "Participants"
-msgstr ""
+msgstr "Participantes"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:44
 msgid "Number or description"
-msgstr ""
+msgstr "Número o descripción"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:46
 msgid "Grouping"
-msgstr ""
+msgstr "Agrupamiento"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:54
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:203
 msgid "Feedback button text"
-msgstr ""
+msgstr "Texto del botón de retroalimentación"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:151
 #, python-format
 msgid "Please write the text to display in '%s'."
-msgstr ""
+msgstr "Escriba qué texto mostrar en '%s'."
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:180
 msgid "Please write some information."
-msgstr ""
+msgstr "Por favor, incluya la información necesaria."
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:181
 msgid "Please write the task description."
-msgstr ""
+msgstr "Escriba la descripción de la tarea."
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:182
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:112
 msgid "Please write some instructions."
-msgstr ""
+msgstr "Por favor, escriba las instrucciones."
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:202
 #, python-format
 msgid "Please fill in this field: '%s'."
-msgstr ""
+msgstr "Debe rellenar el campo '%s'."
 
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:13
 msgid "Scrambled List"
-msgstr ""
+msgstr "Lista desordenada"
 
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:26
 msgid "Button text"
-msgstr ""
+msgstr "Texto del botón"
 
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:30
 msgid "The right answer will be shown after this text."
-msgstr ""
+msgstr "La respuesta correcta se mostrará después de este texto."
 
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:47
 msgid "Right!"
-msgstr ""
+msgstr "¡Correcto!"
 
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:48
 msgid "Sorry... The right answer is:"
-msgstr ""
+msgstr "No es correcto... Respuesta correcta:"
 
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:84
 msgid "Write the elements in the right order:"
-msgstr ""
+msgstr "Añada los elementos de la lista (ordenados):"
 
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:129
 msgid "Add at least 3 elements."
-msgstr ""
+msgstr "Añada al menos 3 elementos."
 
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:141
 msgid "Please write the button text."
-msgstr ""
+msgstr "Debe escribir el texto del botón."
 
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:149
 msgid "Please write the text to show when right."
-msgstr ""
+msgstr "Debe escribir el texto que se mostrará si se contesta correctamente."
 
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:157
 msgid "Please write the text to show when wrong."
-msgstr ""
+msgstr "Debe escribir el texto que se mostrará si no se contesta correctamente."
 
 #: exe/webui/scripts/stylemanager.js:78
 msgid "Do you want to delete the selected style?"
@@ -13663,23 +13671,23 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:84
 msgid "Please write the Content"
-msgstr ""
+msgstr "Por favor escriba el contenido"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:166
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:219
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:231
 msgid "Modal Dialog Window"
-msgstr ""
+msgstr "Ventana modal de diálogo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:170
 msgid "Dialog title (the title of the link)"
-msgstr ""
+msgstr "Título del diálogo (el título del enlace)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:186
 msgid ""
 "Write the content of the dialog. You may use HTML and edit it in the "
 "editor."
-msgstr ""
+msgstr "Escriba el contenido del diálogo. Puede usar HTML y editarlo desde el mismo editor."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:92
 msgid "That image was created using the old formula editor."
@@ -14057,283 +14065,283 @@ msgstr "Se ha producido un error inesperado"
 
 #: exe/webui/templatemanagerpage.py:127
 msgid "Successfully imported template"
-msgstr ""
+msgstr "Se ha importado con éxito la plantilla"
 
 #: exe/webui/templatemanagerpage.py:131
 #, python-format
 msgid "Error while installing template: %s"
-msgstr ""
+msgstr "Error al instalar la plantilla: %s"
 
 #: exe/webui/templatemanagerpage.py:229
 #, python-format
 msgid "SAVE FAILED! '%s' is not a valid name for a template"
-msgstr ""
+msgstr "¡ERROR AL GUARDAR! '%s' no es un nombre válido para una plantilla"
 
 #: exe/webui/templatemanagerpage.py:238
 #, python-format
 msgid "Template exported correctly: %s"
-msgstr ""
+msgstr "Plantilla exportada correctamente: %s"
 
 #: exe/webui/templatemanagerpage.py:241
 #, python-format
 msgid "Could not export template : %s"
-msgstr ""
+msgstr "No se pudo exportar la plantilla: %s"
 
 #: exe/webui/templatemanagerpage.py:255
 msgid "It is not possible to delete an opened template."
-msgstr ""
+msgstr "No es posible borrar una plantilla abierta."
 
 #: exe/webui/templatemanagerpage.py:259
 msgid "Template deleted correctly"
-msgstr ""
+msgstr "Plantilla borrada con éxito"
 
 #: exe/webui/tools/assistant/langs/en.js:13
 msgid "What is eXeLearning"
-msgstr ""
+msgstr "Qué es eXeLearning"
 
 #: exe/webui/tools/assistant/langs/en.js:14
 msgid "eXeLearning Is an open source program to create educational contents."
-msgstr ""
+msgstr "eXeLearning es un programa de código abierto para crear contenidos educativos."
 
 #: exe/webui/tools/assistant/langs/en.js:15
 msgid "With eXeLearning you can:"
-msgstr ""
+msgstr "Con eXeLearning usted podrá:"
 
 #: exe/webui/tools/assistant/langs/en.js:16
 msgid ""
 "Create educational resources with different contents: texts, multimedia "
 "materials, interactive activities, internet links..."
-msgstr ""
+msgstr "Crear recursos educativos con diferentes contenidos: textos, materiales multimedia y tradicionales, actividades interactivas, enlaces de Internet..."
 
 #: exe/webui/tools/assistant/langs/en.js:17
 msgid "Choose and customise the design of the resource"
-msgstr ""
+msgstr "Elegir y personalizar el diseño de los recursos"
 
 #: exe/webui/tools/assistant/langs/en.js:18
 msgid ""
 "Export them into different formats: website, ePub, SCORM (for Moodle and "
 "other LMS)..."
-msgstr ""
+msgstr "Exportarlos en diferentes formatos: sitio web, ePub, SCORM (para Moodle y otros LMS)..."
 
 #: exe/webui/tools/assistant/langs/en.js:19
 msgid "In this short guide we will explain how to use eXeLearning."
-msgstr ""
+msgstr "En esta mini guía le explicaremos cómo usar eXeLearning."
 
 #: exe/webui/tools/assistant/langs/en.js:20
 msgid "The first step is to create a new project."
-msgstr ""
+msgstr "El primer paso es crear un nuevo proyecto."
 
 #: exe/webui/tools/assistant/langs/en.js:21
 msgid "How to create a project"
-msgstr ""
+msgstr "Cómo crear un proyecto"
 
 #: exe/webui/tools/assistant/langs/en.js:22
 msgid "Create a project"
-msgstr ""
+msgstr "Crear un proyecto"
 
 #: exe/webui/tools/assistant/langs/en.js:23
 msgid "Switch to the \"Properties\" tab."
-msgstr ""
+msgstr "Vaya a la pestaña \"Propiedades\"."
 
 #: exe/webui/tools/assistant/langs/en.js:24
 msgid "Fill in the following fields:"
-msgstr ""
+msgstr "Rellene los siguientes campos:"
 
 #: exe/webui/tools/assistant/langs/en.js:27
 msgid "General description (about 150 characters)"
-msgstr ""
+msgstr "Descripción general (unos 150 caracteres)"
 
 #: exe/webui/tools/assistant/langs/en.js:30
 msgid "Click \"Save\"."
-msgstr ""
+msgstr "Pulse en \"Guardar\"."
 
 #: exe/webui/tools/assistant/langs/en.js:31
 msgid "Switch back to the \"Authoring\" tab."
-msgstr ""
+msgstr "Vuelva a la pestaña \"Autoría\"."
 
 #: exe/webui/tools/assistant/langs/en.js:32
 msgid "Remember to save your project whenever you change something."
-msgstr ""
+msgstr "Recuerde guardar su proyecto cada vez que haga algún cambio."
 
 #: exe/webui/tools/assistant/langs/en.js:33
 msgid "Now you can start adding pages to your project!"
-msgstr ""
+msgstr "Ya puede empezar a añadir páginas a su proyecto!"
 
 #: exe/webui/tools/assistant/langs/en.js:34
 msgid "How to add pages"
-msgstr ""
+msgstr "Cómo añadir páginas"
 
 #: exe/webui/tools/assistant/langs/en.js:35
 msgid "Adding Pages"
-msgstr ""
+msgstr "Añadir páginas"
 
 #: exe/webui/tools/assistant/langs/en.js:36
 msgid ""
 "The buttons to manage the pages are on the left part of the screen, just "
 "over the block \"Outline\"."
-msgstr ""
+msgstr "Los botones para gestionar las páginas están en la parte izquierda de la pantalla, justo encima del bloque \"Estructura\"."
 
 #: exe/webui/tools/assistant/langs/en.js:37
 msgid "Click on \"Add Page\"."
-msgstr ""
+msgstr "Pulse en \"Añadir página\"."
 
 #: exe/webui/tools/assistant/langs/en.js:38
 msgid ""
 "Click on \"Rename\" or doubleclick on the page you had just created to "
 "change its name."
-msgstr ""
+msgstr "Pulse en \"Renombrar\" o haga doble clic en la página recién creada para cambiar su nombre."
 
 #: exe/webui/tools/assistant/langs/en.js:39
 msgid "You can delete it using \"Delete\"."
-msgstr ""
+msgstr "Puede eliminarla usando \"Borrar\"."
 
 #: exe/webui/tools/assistant/langs/en.js:40
 msgid ""
 "Create as many pages as you need and organise them to your liking by "
 "using the arrows that appear on the bottom of the block \"Outline\":"
-msgstr ""
+msgstr "Cree tantas páginas como necesite y organícelas como quiera usando las flechas que aparecen en la parte inferior del bloque \"Estructura\":"
 
 #: exe/webui/tools/assistant/langs/en.js:41
 msgid "Once the page is created you can add content."
-msgstr ""
+msgstr "Una vez creada la página ya puede añadirle contenido."
 
 #: exe/webui/tools/assistant/langs/en.js:42
 msgid "How to add content"
-msgstr ""
+msgstr "Cómo añadir contenido"
 
 #: exe/webui/tools/assistant/langs/en.js:43
 msgid "Adding content"
-msgstr ""
+msgstr "Añadir contenido"
 
 #: exe/webui/tools/assistant/langs/en.js:44
 msgid "On the bottom left of the screen there is an area iDevices."
-msgstr ""
+msgstr "En la parte inferior izquierda de la pantalla hay un espacio con el título iDevices."
 
 #: exe/webui/tools/assistant/langs/en.js:45
 msgid "IDevices are blocks that you can add to your pages."
-msgstr ""
+msgstr "Los iDevices son bloques que puede añadir a sus páginas."
 
 #: exe/webui/tools/assistant/langs/en.js:46
 msgid ""
 "They are organized by categories: interactive, non-interactive "
 "activities..."
-msgstr ""
+msgstr "Están organizados por categorías: actividades interactivas, no interactivas..."
 
 #: exe/webui/tools/assistant/langs/en.js:47
 msgid "A simple test:"
-msgstr ""
+msgstr "Una prueba sencilla:"
 
 #: exe/webui/tools/assistant/langs/en.js:48
 msgid ""
 "Add a Free Text iDevice by clicking on its name (it's under Textual "
 "Information)."
-msgstr ""
+msgstr "Añada un iDevice de Texto libre pulsando en su nombre (está en Información textual)."
 
 #: exe/webui/tools/assistant/langs/en.js:49
 msgid "Write something."
-msgstr ""
+msgstr "Escriba algo."
 
 #: exe/webui/tools/assistant/langs/en.js:50
 msgid "Save it clicking on the button below the editor: "
-msgstr ""
+msgstr "Guárdelo pulsando en el botón que hay debajo del editor: "
 
 #: exe/webui/tools/assistant/langs/en.js:51
 msgid ""
 "That's all! If you add another iDevice you will see that you can also use"
 " the buttons to choose the position that each iDevice fills:"
-msgstr ""
+msgstr "¡Ya está! Si añade otro iDevice verá que también puede usar los botones para elegir la posición que ocupa cada uno:"
 
 #: exe/webui/tools/assistant/langs/en.js:52
 msgid "Test the different iDevices: Interactive Activities, Image Gallery..."
-msgstr ""
+msgstr "Pruebe los diferentes iDevices: actividades interactivas, galería de imágenes..."
 
 #: exe/webui/tools/assistant/langs/en.js:53
 msgid "It's so easy to create contents."
-msgstr ""
+msgstr "Crear contenidos es muy fácil."
 
 #: exe/webui/tools/assistant/langs/en.js:54
 msgid ""
 "The only thing left is to export the project so you can view it in web "
 "format, include it in your LMS or allow other people to see and use it."
-msgstr ""
+msgstr "Sólo le falta exportar el proyecto para poder verlo en formato web, incluirlo en su plataforma educativa LMS o permitir que otras personas lo vean y lo usen."
 
 #: exe/webui/tools/assistant/langs/en.js:55
 msgid "How to export your project"
-msgstr ""
+msgstr "Cómo exportar su proyecto"
 
 #: exe/webui/tools/assistant/langs/en.js:56
 msgid "Exporting a project"
-msgstr ""
+msgstr "Exportar un proyecto"
 
 #: exe/webui/tools/assistant/langs/en.js:57
 msgid "Switch to \"File\" - \"Export\" and choose the format that suits you:"
-msgstr ""
+msgstr "Vaya a \"Archivo\" - \"Exportar\" y elija el formato que más le convenga:"
 
 #: exe/webui/tools/assistant/langs/en.js:58
 msgid ""
 "Web Site (browsable web pages). It is the same content that you can see  "
 "from Tools - Preview."
-msgstr ""
+msgstr "Sitio web (páginas web navegables). Es lo mismo que se ve desde Utilidades - Visualización previa."
 
 #: exe/webui/tools/assistant/langs/en.js:59
 msgid ""
 "Single (HTML) Page (this combines all your pages into one so you can "
 "print your content)."
-msgstr ""
+msgstr "Página HTML única (combina todas sus páginas en una sola para poder imprimir su contenido)."
 
 #: exe/webui/tools/assistant/langs/en.js:60
 msgid "ePub3 (e-book)."
-msgstr ""
+msgstr "ePub3 (libro electrónico)."
 
 #: exe/webui/tools/assistant/langs/en.js:61
 msgid "SCORM (to be used in Moodle and other LMS platforms)."
-msgstr ""
+msgstr "SCORM (para usarlo en Moodle y otras plataformas LMS)."
 
 #: exe/webui/tools/assistant/langs/en.js:62
 msgid "Name the folder or file exported and choose \"Save\"."
-msgstr ""
+msgstr "Dé un nombre a la carpeta o archivo exportado y elija \"Guardar\"."
 
 #: exe/webui/tools/assistant/langs/en.js:63
 msgid ""
 "That's all! In such a simple way you have already created an educational "
 "resource."
-msgstr ""
+msgstr "Ya está. De esta manera tan simple habrá creado un recurso educativo."
 
 #: exe/webui/tools/assistant/langs/en.js:64
 msgid ""
 "Remember that whenever you want to edit or modify the project you will "
 "only have to open your elp file with eXe and work with it. At the end you"
 " will only have to export it again."
-msgstr ""
+msgstr "Recuerde que cada vez que quiera editar o modificar este proyecto sólo tendrá que abrir su archivo elp con eXe y trabajar con él. Al final sólo tendrá que exportarlo de nuevo."
 
 #: exe/webui/tools/assistant/langs/en.js:65
 msgid ""
 "These are the most common options, but there are more. In the next "
 "section we will explain where to find them."
-msgstr ""
+msgstr "Esas son las opciones más habituales, pero aún hay más. En el próximo apartado le explicamos dónde encontrarlas."
 
 #: exe/webui/tools/assistant/langs/en.js:66
 msgid "More Options"
-msgstr ""
+msgstr "Otras opciones"
 
 #: exe/webui/tools/assistant/langs/en.js:67
 msgid ""
 "On the top of the screen you will find an option \"Advanced user\". If "
 "you enable it, more export options, new elements in the Properties tab "
 "and more tools will be shown."
-msgstr ""
+msgstr "En la parte superior de la pantalla encontrará una opción llamada \"Usuario avanzado\". Si la marca, se mostrarán más opciones de exportación, nuevos elementos en la pestaña Propiedades y más utilidades."
 
 #: exe/webui/tools/assistant/langs/en.js:68
 msgid "Further help options:"
-msgstr ""
+msgstr "Otras opciones de ayuda:"
 
 #: exe/webui/tools/assistant/langs/en.js:71
 msgid "(resolve your doubts)"
-msgstr ""
+msgstr "(resuelva sus dudas)"
 
 #: exe/webui/tools/assistant/langs/en.js:73
 msgid "Further information:"
-msgstr ""
+msgstr "Más información:"
 
 #: exe/webui/tools/fMath/js/jquery-ui/jquery-ui.min.js:8
 msgid "'"
@@ -14896,4 +14904,3 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
-
