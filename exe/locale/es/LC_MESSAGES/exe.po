@@ -14165,7 +14165,7 @@ msgstr "Recuerde guardar su proyecto cada vez que haga algún cambio."
 
 #: exe/webui/tools/assistant/langs/en.js:33
 msgid "Now you can start adding pages to your project!"
-msgstr "Ya puede empezar a añadir páginas a su proyecto!"
+msgstr "¡Ya puede empezar a añadir páginas a su proyecto!"
 
 #: exe/webui/tools/assistant/langs/en.js:34
 msgid "How to add pages"
