@@ -34,6 +34,7 @@ from exe.webui.livepage        import allSessionClients
 from exe.webui.renderable      import RenderableResource
 from exe                         import globals as G
 from exe.engine.package import Package
+from exe.export.pages            import forbiddenPageNames
 
 
 log = logging.getLogger(__name__)
@@ -221,6 +222,13 @@ class TemplateManagerPage(RenderableResource):
         """ Exports template """
         if not filename.lower().endswith('.elt'):
             filename += '.elt'
+            
+        name = str(Path(filename).basename().splitext()[0])
+        if name.upper() in forbiddenPageNames:
+            self.alert(_('Error'),
+                       _("SAVE FAILED! '%s' is not a valid name for a template") % str(name))
+            return
+        
         sfile = os.path.basename(filename)
         log.debug("Export template %s" % dirTemplateName)
         try:
@@ -235,7 +243,17 @@ class TemplateManagerPage(RenderableResource):
 
     def doDeleteTemplate(self, template):
 
+        # Get the current authoring page
+        
+        for mainpages in self.parent.mainpages.values():
+            for mainpage in mainpages.values():
+                if self.client.handleId in mainpage.authoringPages:
+                    authoringPage = mainpage.authoringPages[self.client.handleId]
+                    
         try:
+            if authoringPage.package.filename == (self.config.templatesDir / template):
+                self.alert(_('Error'), _(u'It is not possible to delete an opened template.'))
+                return
             templateDelete = Template(self.config.templatesDir / template)
             self.__deleteTemplate(templateDelete)
             self.alert(_(u'Correct'), _(u'Template deleted correctly'))

@@ -496,8 +496,8 @@ class Package(Persistable):
 
     def translatePackage(self, node = None):
         """
-        Translate a nodo from the package. If not node is provided
-
+        Translate a node.
+        If not node is provided, get package's root node.
         """
         # The first time this function is called, we simply have to
         # pick the root node
@@ -513,6 +513,9 @@ class Package(Persistable):
             self.set_title(c_(self.title))
             self.set_description(c_(self.description))
             self.footer = c_(self.footer)
+            self.objectives = c_(self.objectives)
+            self.preknowledge = c_(self.preknowledge)
+            self.author = c_(self.author)
 
         node.title = c_(node.title)
         for idevice in node.idevices:
@@ -1301,9 +1304,20 @@ class Package(Persistable):
         resourceDir = TempDirPath()
         
         excludeDir = ["common", "extend","unique","vocab"]
+
+        # These files are not resources, so we shouldn't copy them
+        excluded_files = [
+            u'content.data',
+            u'content.xml',
+            u'contentv2.xml',
+            u'contentv3.xml',
+            u'content.xsd',
+            u'config.xml'
+        ]
+
         # Extract resource files from package to temporary directory
         for fn in zippedFile.namelist():
-            if unicode(fn, 'utf8') not in [u"content.data", u"content.xml", u"contentv2.xml", u"contentv3.xml", u"content.xsd" ]:
+            if unicode(fn, 'utf8') not in excluded_files:
                 #JR: Hacemos las comprobaciones necesarias por si hay directorios
                 if ("/" in fn):
                     dir = fn[:fn.rindex("/")]
@@ -1507,9 +1521,11 @@ class Package(Persistable):
         newPackage.cleanUpResources(userResourcesFiles)
         G.application.afterUpgradeZombies2Delete = []
         
-        if isTemplate == False:
+        if isTemplate:
+            newPackage.set_templateFile(str(filename.basename().splitext()[0]))
+        else:
             newPackage.updateRecentDocuments(newPackage.filename)
-        
+
         newPackage.set_isTemplate(isTemplate)    
         newPackage.isChanged = False
         nstyle=Path(G.application.config.stylesDir/newPackage.style)

@@ -20,7 +20,7 @@
 #
 # Help
 #-----
-# Pybabel doc http://babel.pocoo.org/docs/cmdline/
+# Pybabel doc http://babel.pocoo.org/en/latest/cmdline.html
 # Pybabel source https://github.com/python-babel/babel
 # Transecma (py2json.py) https://github.com/nandoflorestan/bag/tree/master/bag/web
 #
@@ -62,12 +62,15 @@
 #    * Preparing version 2.1.3 (JRF)
 #    * Babel 2.4.0
 #
+# 2018-03-04
+#    * Preparing version 2.1.4 (JRF)
+#
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.1.3"
+version="2.1.4"
 
 # 1.- pyBabel - Extraction of strings from *.py and *.js into new POT
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
@@ -80,7 +83,10 @@ sed -i "s/^#, fuzzy\$//" exe/locale/messages.pot
 
 # 2.- pyBabel - Updating the PO files of the different languages
 echo -e "\n\n\n *** Updating *.po files ***\n"
-pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/ --ignore-obsolete
+# JRF's question: is --ignore-obsolete necessary?
+# 2018-03-05: parameter removed, let's check the consequences
+# pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/ --ignore-obsolete
+pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/
 # Set correct Project-Id-Version
 find exe -name exe.po | xargs sed -i 's/Project-Id-Version:.*/Project-Id-Version: '"$project $version"'\\n"/' 
 

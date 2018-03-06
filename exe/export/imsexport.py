@@ -578,6 +578,7 @@ class IMSExport(object):
         hasMediaelement   = False
         hasTooltips       = False
         hasABCMusic       = False
+        listIdevicesFiles = []
         
         for page in self.pages:
             if isBreak:
@@ -615,6 +616,8 @@ class IMSExport(object):
                     hasTooltips = common.ideviceHasTooltips(idevice)
                 if not hasABCMusic:
                     hasABCMusic = common.ideviceHasABCMusic(idevice)
+                if hasattr(idevice, "_iDeviceDir"):
+                    listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
 
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -672,7 +675,8 @@ class IMSExport(object):
             (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
             
         # Copy JS iDevices files
-        common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir)
+        for iDeviceFiles in set(listIdevicesFiles):
+            iDeviceFiles.copyfiles(outputDir)
             
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)

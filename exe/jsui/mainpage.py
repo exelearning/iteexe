@@ -68,6 +68,7 @@ from exe.export.xmlexport        import XMLExport
 from requests_oauthlib           import OAuth2Session
 from exe.webui.oauthpage         import ProcomunOauth
 from suds.client                 import Client
+from exe.export.pages            import forbiddenPageNames
 
 from exe.engine.lom import lomsubs
 from exe.engine.lom.lomclassification import Classification
@@ -137,6 +138,9 @@ class MainPage(RenderableLivePage):
             self.package.description = copy.copy(template.description)
             self.package.title = copy.copy(template.title)
             self.package.footer = copy.copy(template.footer)
+            self.package.objectives = copy.copy(template.objectives)
+            self.package.preknowledge = copy.copy(template.preknowledge)
+            self.package.author = copy.copy(template.author)
 
             # Copy the nodes and update the root and current ones
             # Be carefull not to use copy.copy when assigning root and currentNode as this will create entirely new nodes
@@ -409,16 +413,27 @@ class MainPage(RenderableLivePage):
             filename = self.package.filename
             assert filename, 'Somehow save was called without a filename on a package that has no default filename.'
 
-        extension= filename.splitext()[1]
+        extension = filename.splitext()[1]
         if extension == '.elt':
-            return self.handleSaveTemplate(client, oldName, onDone, edit=True)
+            return self.handleSaveTemplate(client, filename.basename(), onDone, edit=True)
         # Add the extension if its not already there and give message if not saved
         filename = self.b4save(client, filename, '.elp', _(u'SAVE FAILED!'))
+        
+        name = str(filename.basename().splitext()[0])
+        if name.upper() in forbiddenPageNames:
+            client.alert(_('SAVE FAILED!\n"%s" is not a valid name for a package') % str(name))
+            return
+        
         try:
             self.package.save(filename)  # This can change the package name
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
+
+        # Take into account that some names are not allowed, so we have to take care of that before reloading
+        if G.application.webServer is not None and self.package.name in G.application.webServer.invalidPackageName:
+            self.package._name = self.package._name + '_1'
+
         # Tell the user and continue
         if onDone:
             client.alert(_(u'Package saved to: %s') % filename, onDone)
@@ -437,29 +452,31 @@ class MainPage(RenderableLivePage):
             filename = Path(self.config.templatesDir/templatename +'.elt', 'utf-8')
         else:
             filename = Path(self.config.templatesDir/templatename, 'utf-8')
+            templatename = str(filename.basename().splitext()[0])
         
         if edit == False:
             filename = self.b4save(client, filename, '.elt', _(u'SAVE FAILED!'))
         
+        name = str(filename.basename().splitext()[0])
+        if name.upper() in forbiddenPageNames:
+            client.alert(_('SAVE FAILED!\n"%s" is not a valid name for a template') % str(templatename))
+            return
+        
         try:
-            
             configxmlData = '<?xml version="1.0"?>\n'
             configxmlData += '<template>\n'
             configxmlData += '<name>'+templatename+'</name>\n'
             configxmlData += '</template>'
-            
+
             # Make the root node the current one
             self.package.currentNode = self.package.root
-            
+
             # Save the template
             self.package.save(filename, isTemplate=True, configxml=configxmlData) 
-    
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
-        
-        self.webServer.root.putChild(self.package.name, self)
-        
+
         template = Template(filename)
         self.config.templateStore.addTemplate(template)
     
@@ -1101,6 +1118,11 @@ class MainPage(RenderableLivePage):
                          unicode(exportDir) +
                          _(u'. Please use ASCII names.'))
             return
+        
+        name = str(filename.basename().splitext()[0])
+        if name.upper() in forbiddenPageNames:
+            client.alert(_('SAVE FAILED!\n"%s" is not a valid name for the file') % str(name))
+            return
 
         """
         adding the print feature in using the same export functionality:
@@ -1444,6 +1466,12 @@ class MainPage(RenderableLivePage):
             log.debug(u"exportXliff, filename=%s" % filename)
             if not filename.lower().endswith('.xlf'):
                 filename += '.xlf'
+                
+            name = str(filename.basename().splitext()[0])
+            if name.upper() in forbiddenPageNames:
+                client.alert(_('SAVE FAILED!\n"%s" is not a valid name for the file') % str(name))
+                return
+        
             xliffExport = XliffExport(self.config, filename, source, target, copy, cdata)
             xliffExport.export(self.package)
         except Exception, e:

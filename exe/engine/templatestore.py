@@ -87,8 +87,10 @@ class TemplateStore:
     def load(self):
         log.debug("loadTemplates from %s" % self._config.templatesDir)
         for templatePath in self._config.templatesDir.files():
-            template = Template(templatePath)
-            if template.isValid():
-                self.addTemplate(template)
+            # Only load .elt files
+            if templatePath.basename().splitext()[1] == '.elt':
+                template = Template(templatePath)
+                if template.isValid():
+                    self.addTemplate(template)
 
 # ===========================================================================

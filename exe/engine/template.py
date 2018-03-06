@@ -37,14 +37,12 @@ class Template():
     Base class for all content templates
     """
     persistenceVersion = 1
-    _author = ''
-    _authorURL = ''
-     
+
     def __init__(self, template_path):
         """
         Initialize
         """
-        log.debug(u"init " + repr(template_path.basename()))
+        log.debug(u'Template init: ' + repr(template_path.basename()))
 
         # Initialize base properties
         self.file = template_path.basename()
@@ -52,32 +50,79 @@ class Template():
         self.path = template_path
         self._validConfig = False
         self._valid = False
-        self._checkValid()
-        self.isExe = False
 
+        self._name = ''
+        self._is_base_template = False
+        self._author = ''
+        self._author_url = ''
+
+        self._checkValid()
+
+        xml_values = None
         if self._valid:
             # Get XML values from the config file
             xml_values = self._loadTemplate()
-            
+
+        if self._valid and self._validConfig and xml_values is not None:
             self._attributes = xml_values
-            self.name = xml_values['name']
-            if 'author' in xml_values:
-                self._author = xml_values['author']
-            if 'authorURL' in xml_values:
-                self._authorURL = xml_values['authorURL']
-    
-            if 'isExe' in xml_values:
-                self.isExe = bool(xml_values['isExe'])
-            
+
             # xml node : [ label , 0=textfield 1=textarea , order into form]
-            _attributespre ={
-                   'name': ['Name',0,0],
-                   '_author': ['Author',0,1],
-                   '_authorURL': ['URL Author',0,2]
-                   }
+            _attributespre = {
+                '_name': ['Name', 0, 0],
+                '_author': ['Author', 0, 1],
+                '_author_url': ['Author URL', 0, 2]
+            }
+
+            for attr in xml_values.keys():
+                internal_attribute = '_' + attr.replace('-', '_')
+                setattr(self, internal_attribute, xml_values[attr])
+
+            # _is_base_template should be always a boolean
+            if not type(self._is_base_template) is bool:
+                self._is_base_template = bool(self._is_base_template)
+
+            self._attributes = OrderedDict(sorted(_attributespre.items(), key=lambda t: t[1][2]))
+
+    def get_name(self):
+        """
+        Get name property.
+        """
+        return _(self._name)
     
-            self._attributes= OrderedDict(sorted(_attributespre.items(), key=lambda t: t[1][2]))
-            
+    def set_name(self, name):
+        """
+        Set new value for name property.
+        """
+        self._name = name
+
+    def get_author(self):
+        """
+        Get author property.
+        """
+        return self._author
+    
+    def set_author(self, author):
+        """
+        Set new value for author property.
+        """
+        self._author = author
+
+    def get_author_url(self):
+        """
+        Get author URL property.
+        """
+        return self._author_url
+    
+    def set_author_url(self, author_url):
+        """
+        Set new value for author URL property.
+        """
+        self._author_url = author_url
+    
+    # Template public properties
+    name = property(get_name, set_name)
+    author = property(get_author, set_author)
+    author_url = property(get_author_url, set_author_url)
 
     def _loadTemplate(self):
         """
@@ -111,10 +156,11 @@ class Template():
                             result.update({tag.tagName: tag.firstChild.nodeValue})
                     
                     if 'name' in result:
+                        self._validConfig = True
                         return result
         except:
             self._valid = False
-    
+
     def _checkValid(self):
         """
         Perform basic checks to ensure the template is valid 
@@ -145,28 +191,22 @@ class Template():
             properties.append({'name': _(self._attributes[attribute][0]), 'value': value})
 
         return properties 
-        
+
     def __cmp__(self, other):
         """
         Compare two templates with each other
         """
         return cmp(self.name, other.name)
-    
+
     def isEditable(self):
         """
         Returns True if the template is Editable
         """
-        editable = True
-        
-        if self.isExe == True:
-            editable = False 
-        
-        return editable  
-    
+        return not self._is_base_template
+
     def upgradeToVersion1(self):
         """
         Add author and author's URL
         """
         self._author = ''
-        self._authorURL = ''
-        
+        self._author_url = ''
