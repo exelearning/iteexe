@@ -355,7 +355,11 @@ Ext.define('eXe.controller.Toolbar', {
     },
     
     assistantPage: function() {
-        var assistant = new Ext.Window ({
+        if (typeof(eXeAssistantPageIsOpen)!='undefined' && eXeAssistantPageIsOpen==true) {
+            eXeAssistantPage.close(true);
+            return;
+        }
+        eXeAssistantPage = new Ext.Window ({
             height: eXe.app.getMaxHeight(700),
             width: 650,
             height: 500,
@@ -375,10 +379,14 @@ Ext.define('eXe.controller.Toolbar', {
                     if (cls.indexOf("exe-window-minified")==-1) elm.addCls('exe-window-minified');
                     else elm.removeCls('exe-window-minified');
                     Ext.getCmp("assistantwin").doLayout();
+                },
+                'close': function(){
+                    eXeAssistantPageIsOpen = false;
                 }
             }          
         });
-        assistant.show();
+        eXeAssistantPageIsOpen = true;
+        eXeAssistantPage.show();
     }, 
 
     aboutPage: function() {
