@@ -37,8 +37,17 @@ var myTheme = {
                 window.open($("A",this).attr("href"));
             });
         }
+		// Steps
+		var stepLists = $(".presentation-slide");
+		if (stepLists.length>0) {
+			stepLists.eq(0).before('<span id="steps-instructions"><strong>+</strong> = <a href="#">'+$exe_i18n.show+'</a></span>');
+		}
+		$("#steps-instructions a").click(function(){
+			$("#steps-instructions").hide();
+			$(".presentation-slide").show();
+		});
     },
-	isLightboxOpen : function(){
+    isLightboxOpen : function(){
 		if (typeof($.prettyPhoto)!='undefined' && $(".pp_pic_holder").css("display")=="block") return true;
 		return false;
 	},
@@ -80,8 +89,18 @@ var myTheme = {
 			// m
 			if (k=="show-nav") myTheme.toggleMenu();
 			else myTheme.hideMenu();
+		} else if (x.keyCode=='107') {
+			// Steps: +
+			$(".presentation-slide").not(":visible").eq(0).fadeIn();
+			$("#steps-instructions").hide();
+		} else if (x.keyCode=='109') {
+			// Steps: -
+			var visibleSteps = $(".presentation-slide").not(":hidden");
+			if (visibleSteps.length>0) {
+				if (visibleSteps.length==1) $("#steps-instructions").show();
+				$(".presentation-slide").eq(visibleSteps.length-1).hide();
+			}
 		}
-		
 	},
     hideMenu : function(){
         $("#siteNav").hide();

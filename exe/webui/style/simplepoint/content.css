@@ -89,3 +89,9 @@ li{list-style-position:outside}
 #packageLicense{text-align:left;margin:0;background:#000;color:#fff;line-height:25px;font-size:.75em;padding:0 20px}
 #packageLicense p{margin:0}
 #packageLicense a{color:#fff}
+/* Steps (use arrows) */
+#steps-instructions{color:#BBB;font-size:.75em}
+#steps-instructions strong{margin-right:.5em}
+#steps-instructions a{color:#BBB;text-decoration:underline;margin-left:.5em}
+#steps-instructions a:hover,#steps-instructions a:focus{text-decoration:none}
+.exe-web-site.js .presentation-slide{display:none}
