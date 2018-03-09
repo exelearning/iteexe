@@ -521,9 +521,9 @@ class Package(Persistable):
         for idevice in node.idevices:
             idevice.title = c_(idevice.title)
             for field in idevice.getRichTextFields():
-                field.content = c_(field.content)
                 field.content_w_resourcePaths = c_(field.content_w_resourcePaths)
-                field.content_wo_resourcePaths = c_(field.content_wo_resourcePaths)
+                field.content = field.content_w_resourcePaths
+                field.content_wo_resourcePaths = field.MassageContentForRenderView(field.content_w_resourcePaths)
 
         for nodeChild in node.walkDescendants():
             self.translatePackage(nodeChild)

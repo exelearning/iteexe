@@ -69,6 +69,17 @@ class FileAttachIdeviceInc(Idevice):
         self.introHTML = TextAreaField(x_("Intro Text"))
         self.icon = "assignment"
 
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'introHTML'):
+            fields_list.append(self.introHTML)
+        return fields_list
+
 # ===========================================================================
 def register(ideviceStore):
     """Register with the ideviceStore"""
