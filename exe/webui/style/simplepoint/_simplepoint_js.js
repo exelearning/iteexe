@@ -46,6 +46,13 @@ var myTheme = {
 			$("#steps-instructions").hide();
 			$(".presentation-slide").show();
 		});
+		// Pagination (Hide 'Page')
+		var pageCounter = $("#bottomPagination .page-counter");
+		if (pageCounter.length==1) {
+			var html = pageCounter.html();
+				html = html.split("<strong>");
+				if (html.length==3) pageCounter.html(pageCounter.html().replace(html[0],'<span class="page-counter-label">'+html[0]+' </span>'))
+		}
     },
     isLightboxOpen : function(){
 		if (typeof($.prettyPhoto)!='undefined' && $(".pp_pic_holder").css("display")=="block") return true;

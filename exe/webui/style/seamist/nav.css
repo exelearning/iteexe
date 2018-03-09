@@ -30,14 +30,15 @@ body{padding:15px 20px 20px 20px}
 #siteNav .other-section{display:none}
 #siteNav ul ul ul a{padding-left:45px}
 /* Pagination */
-.pagination{border-top:1px solid #fff;padding-top:20px;text-align:right;color:#EDEFF0}
+.pagination{border-top:1px solid #fff;padding-top:20px;text-align:right}
 .pagination .sep{display:none}
 .pagination a{padding:0;margin-left:20px}
 .pagination a:hover,.pagination a:focus{color:#8B7B73}
 #topPagination{position:absolute;top:-2px;width:100%;right:0}
 #topPagination .prev{margin-left:20px}
-#topPagination .pagination{border:none;color:#fff}
+#topPagination .pagination{border:none}
 #bottomPagination{padding:0 20px 0 260px}
+#bottomPagination .page-counter{margin-left:20px;margin-right:0}
 /* Autoclear */
 #content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
 #content{display:inline-block}
@@ -72,8 +73,9 @@ html[xmlns] #content{display:block}
 	.pagination a{margin:0}
 	#topPagination{position:relative;top:auto;width:100%;right:auto;padding:0}
 	#topPagination .pagination{padding:0;text-align:center;background:#96852C;border-bottom:1px solid #D3D8DA}
-	#topPagination .prev,#topPagination .next{display:none}
+	#topPagination .prev,#topPagination .next,#topPagination .page-counter{display:none}
 	#bottomPagination,.no-nav #bottomPagination{margin:0 15px;padding:0;position:relative}
 	#bottomPagination .prev{position:absolute;left:0}
+	#bottomPagination .page-counter{position:absolute;width:50%;left:25%;text-align:center;margin:0;font-weight:normal}
 	#nav-toggler a,#nav-toggler a:focus{display:inline-block;padding:4px;width:80%;color:#fff;letter-spacing:1px;outline:none;text-decoration:none}
 }

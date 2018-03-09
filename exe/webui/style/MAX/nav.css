@@ -33,6 +33,7 @@ body{padding:0;text-align:center;background:#fff url(_max_fondo_pagina.gif)}
 #topPagination{position:absolute;top:0;width:100%;right:20px}
 #topPagination .pagination{border:none;background:none}
 #bottomPagination{padding:0 20px 0 250px}
+#bottomPagination .page-counter{margin-left:20px;margin-right:0}
 .no-nav #bottomPagination{padding-left:20px}
 /* Autoclear */
 #content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
@@ -92,6 +93,7 @@ html[xmlns] #content{display:block}
 	#content .exe-col{float:none;width:100%;padding:0}
 	#topPagination{display:none}
 	#bottomPagination,.no-nav #bottomPagination{padding:0 10px}
+	#bottomPagination .page-counter{padding-top:5px;display:inline-block}
 	.pagination{text-align:center;height:35px;position:relative}
 	.pagination .prev{position:absolute;left:0;margin:0}
 	.pagination .next{position:absolute;right:0}

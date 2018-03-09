@@ -29,6 +29,8 @@ Centre for Flexible and Distance Learning
 	z-index:99
 }
 #topPagination .pagination{border:none}
+.pagination.noprt .page-counter{margin:0 5px}
+#topPagination .page-counter{margin:0 5px}
 #main-wrapper{padding:10px 0 0 238px}
 #main{width:100%}
 
@@ -122,9 +124,10 @@ Centre for Flexible and Distance Learning
 	.pagination .sep{display:none}
 	#topPagination{position:relative;top:auto;width:100%;right:auto;padding:0}
 	#topPagination .pagination{padding:0 10px;text-align:center}
-	#topPagination .prev,#topPagination .next{display:none}
+	#topPagination .prev,#topPagination .next,#topPagination .page-counter{display:none}
 	#bottomPagination,.no-nav #bottomPagination{position:relative;padding:0 10px 10px 10px}
 	#bottomPagination a{display:inline-block}
+	#bottomPagination .page-counter{position:absolute;width:50%;left:25%;text-align:center;margin:3px 0;font-weight:normal}
 	#bottomPagination .prev{position:absolute;left:10px}
 	#nav-toggler a,#nav-toggler a:focus{display:block;background:#BD4949;padding:7px 0;width:100%;color:#fff;outline:none;text-decoration:none}
 }

@@ -10,7 +10,6 @@ body{
 }
 
 .noprt{
-	color:#fff; /* Color de texto del bloque Anterior/Siguiente: igual que el color de fondo de la página */
 	border-color:#627796; /* Color de borde del bloque: borde superior */
 }
 
@@ -73,7 +72,9 @@ h1#nodeTitle {padding-left:5px}
 
 /* Pagination */
 .pagination,.noprt{border-style:dashed;border-width:1px 0 0 0;padding-top:10px;text-align:right}
-.pagination a,.noprt a{padding:3px}
+.pagination a,.noprt a{padding:3px;margin:0 10px}
+.noprt .next{margin-right:0}
+.pagination.noprt .page-counter{margin:0 0 0 5px}
 .pagination a:hover,.noprt a:hover{text-decoration:none}
 #topPagination{display:none}
 #topPagination .pagination{display:none}
@@ -119,6 +120,7 @@ html[xmlns] #content{display:block}
 	#nav-toggler a{width:100%;font-weight:bold;letter-spacing:1px;font-size:1.1em}
 	#bottomPagination,#siteFooter{padding-left:15px;padding-right:15px}
 	#bottomPagination{position:relative;margin-bottom:15px}
-	#bottomPagination .prev{position:absolute;left:15px}
+	#bottomPagination .prev{position:absolute;left:15px;margin-left:0}
 	#bottomPagination .next{position:absolute;right:15px}
+	#bottomPagination .page-counter{position:absolute;width:50%;left:25%;text-align:center;margin:0;padding-top:5px;font-weight:normal}
 }

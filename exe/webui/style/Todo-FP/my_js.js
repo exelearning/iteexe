@@ -8,7 +8,7 @@ var myTheme = {
             });
         },1000);
         var l = $('<span id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this)" class="hide-nav" id="toggle-nav" title="'+$exe_i18n.hide+'"><span>'+$exe_i18n.menu+'</span></a><span class="sep"> |</span> </span>');
-        $("#topPagination a").eq(0).before(l);
+        $("#topPagination .pagination").prepend(l);
         var url = window.location.href;
         url = url.split("?");
         if (url.length>1){

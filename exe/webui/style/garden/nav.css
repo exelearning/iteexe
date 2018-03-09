@@ -36,6 +36,7 @@ See Help - eXe Tutorial for more info on how to modify this style for your needs
 #topPagination{position:absolute;top:-2px;width:100%;right:0}
 #topPagination .pagination{border:none}
 #bottomPagination{padding-left:250px}
+#bottomPagination .page-counter{margin-left:20px;margin-right:0}
 /* Autoclear */
 #content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
 #content{display:inline-block}
@@ -68,8 +69,9 @@ html[xmlns] #content{display:block}
 	.pagination a{margin:0}
 	#topPagination{position:relative;top:auto;width:100%;right:auto;padding:0}
 	#topPagination .pagination{padding:0;text-align:center;background:#889F65;border-bottom:2px solid #ACBF60}
-	#topPagination .prev,#topPagination .next{display:none}
+	#topPagination .prev,#topPagination .next,#topPagination .page-counter{display:none}
 	#bottomPagination{position:relative;padding:0 0 15px 0}
+	#bottomPagination .page-counter{position:absolute;width:50%;left:25%;text-align:center;margin:0;font-weight:normal}
 	#bottomPagination .prev{position:absolute;left:0}
 	#nav-toggler a,#nav-toggler a:focus{display:inline-block;padding:4px;width:80%;color:#fff;font-variant:small-caps;letter-spacing:1px;outline:none;text-decoration:none}
 }

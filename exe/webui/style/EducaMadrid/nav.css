@@ -34,8 +34,9 @@ body{padding:0;text-align:center;background:#fafafa url(_em_fondo_pagina.gif)}
 #topPagination{position:absolute;top:7px;width:100%;right:20px}
 #topPagination a{background:#fff;box-shadow:0 0 3px 0 #ddd}
 #topPagination .prev{margin-left:20px}
-#topPagination .pagination{border:none;color:#f3f3f3} /* Hidden */
+#topPagination .pagination{border:none}
 #bottomPagination{padding:0 20px 0 250px}
+#bottomPagination .page-counter{margin-left:20px;margin-right:0}
 .no-nav #bottomPagination{padding-left:20px}
 /* Autoclear */
 #content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 

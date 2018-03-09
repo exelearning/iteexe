@@ -49,13 +49,13 @@ h1#nodeTitle{font-weight:700;color:#1B4D3B}
 /* Pagination */
 .pagination{padding:20px 0}
 .pagination .sep{display:none}
-.pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+.pagination a span,#topPagination .page-counter{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 .pagination a{display:block;float:left;width:71px;height:71px;padding:0;background:url(_style_icons.png) no-repeat 0 0;margin-right:40px}
 .pagination a:hover,.pagination a:focus{background-position:0 -100px}
 .pagination .next{background-position:-100px 0}
 .pagination .next:hover,.pagination .next:focus{background-position:-100px -100px}
 #topPagination{position:absolute;top:0;right:0}
-#bottomPagination{height:71px;position:relative;overflow:hidden;margin:20px 0;clear:both}
+#bottomPagination{height:71px;position:relative;overflow:hidden;margin:20px 0;clear:both;text-align:center}
 #bottomPagination a{position:absolute;top:0;left:40px;margin:0}
 #bottomPagination .next{left:auto;right:40px}
 

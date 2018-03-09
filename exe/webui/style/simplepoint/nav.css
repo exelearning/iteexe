@@ -9,6 +9,8 @@ html,body{margin:0;padding:0;text-align:center;background:#FFF}
 #nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.1em 0 .6em 0;border-bottom:1px solid #f3f3f3}
 #siteFooter{position:fixed;bottom:0;width:100%}
+.page-counter{position:fixed;color:#FFF;z-index:999;bottom:15px;right:60px;font-size:.9em;display:inline-block;margin:0 auto}
+.page-counter-label{display:none}
 /*.no-nav #siteFooter{padding-left:20px}*/
 @media all and (min-width: 700px) {
     #packageLicense{position:fixed;bottom:50px;right:0;width:100%;padding:0;text-indent:20px}
@@ -83,7 +85,9 @@ html[xmlns] #content{display:block}
 	#siteNav{float:none;width:100%;padding:0}
 	#main-wrapper,.no-nav #main-wrapper{padding:0 10px;min-height:100px}
 	#nodeTitle{margin-top:.5em}
-	#siteFooter,.no-nav #siteFooter{position:static;bottom:auto;width:auto;padding-top:50px;text-align:center}
+	#siteFooter,.no-nav #siteFooter{position:static;bottom:auto;width:auto;padding:25px 50px;height:auto;line-height:1.5em;min-height:50px;text-align:center}
+	.page-counter{position:static;bottom:auto;color:#000;text-align:center;display:block;margin-bottom:1.5em}
+	.page-counter-label{display:inline}
     #packageLicense,#packageLicense a{background:none;padding:0;text-align:center;color:#444}
 	#content .exe-col{float:none;width:100%;padding:0}
 	#info-toggler{right:17px}

@@ -124,6 +124,11 @@ a.exe-enlarge:hover .exe-enlarge-icon,a.exe-enlarge:focus .exe-enlarge-icon{disp
 /* To review */
 .hidden-idevice .image_text{display:none} /* iDevice Toggler : Required for Magnifier */
 abbr[title],acronym[title]{text-decoration:none;border-bottom:1px dotted} /* Until text-decoration:dotted underline works in most browsers */
+/* Pagination */
+.pagination.page-counter{text-align:center} /* IMS, etc. */
+.pagination.noprt .sep{display:none}
+.pagination.noprt .page-counter{margin-right:20px}
+#topPagination .page-counter{margin-left:20px;margin-right:0}
 /* Accessibility */
 #skipNav{margin:0;position:absolute;width:100%}
 .sr-av,.js .js-sr-av,#skipNav a,.exe-hidden-accessible{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0} /* sr-av: Avaible for Screen Readers. (0 0 0 0) is for IE6 & 7 */

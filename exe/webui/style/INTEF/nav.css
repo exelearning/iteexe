@@ -63,10 +63,13 @@ body{padding:0 0 15px 0;text-align:center}
 .pagination{border-style:dotted;border-width:1px 0 0 0;padding-top:12px;text-align:right}
 .pagination .sep{display:none}
 .pagination a{padding:4px 7px;border-radius:5px;margin-left:10px}
+.pagination.noprt .page-counter{margin-right:10px}
+#topPagination .page-counter{margin-left:10px}
 .pagination a:hover,.pagination a:focus{text-decoration:none}
 #topPagination{position:absolute;top:0;right:20px}
 #topPagination .pagination{border:none}
 #bottomPagination{padding:0 20px 2px 20px;clear:both}
+#bottomPagination .page-counter{margin-left:10px;margin-right:0}
 /* Pie de página e iDevices */
 .iDeviceTitle{vertical-align:top}
 /* Autoclear */
@@ -131,6 +134,7 @@ html[xmlns] #content{display:block}
 	#siteFooter{padding:10px 10px 0 10px;text-align:center}
 	#bottomPagination{padding:0 10px}
 	#content .exe-col{float:none;width:100%;padding:0}
+	#bottomPagination .page-counter{display:inline-block;padding-top:4px}
 	.pagination{text-align:center;height:35px;position:relative}
 	.pagination .prev{position:absolute;left:0;margin-left:0}
 	.pagination .next{position:absolute;right:0}

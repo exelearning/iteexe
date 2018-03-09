@@ -240,6 +240,10 @@ position:absolute;
 	text-align:right;
 }
 
+#bottomPagination .page-counter{
+	margin-left:20px;
+}
+
 /* Invisible content (visible for screen reader users) */
 #topPagination{
 	position:absolute;

@@ -128,7 +128,10 @@
 
 #bottomPagination{
     padding:0 20px 20px 0;
-    color:#fff;
+}
+
+#bottomPagination .page-counter{
+    margin-left:20px;
 }
 
 /* Hide/Show/Skip navigation */

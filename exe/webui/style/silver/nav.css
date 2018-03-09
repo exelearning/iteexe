@@ -39,6 +39,7 @@ body{background:#DBDAD2}
 #topPagination{position:absolute;top:-2px;width:100%;right:20px}
 #topPagination .pagination{border:none}
 #bottomPagination{padding:0 20px 0 250px}
+#bottomPagination .page-counter{margin-left:20px;margin-right:0}
 /* Autoclear */
 #content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
 #content{display:inline-block}
@@ -72,10 +73,11 @@ html[xmlns] #content{display:block}
 	#siteFooter,.no-nav #siteFooter{padding:0 10px;text-align:center}
 	#topPagination{position:relative;top:auto;width:100%;right:auto;padding:0}
 	#topPagination .pagination{padding:0;text-align:center;background:#706F61;border-bottom:2px solid #E5E4E0}
-	#topPagination .prev,#topPagination .next{display:none}
+	#topPagination .prev,#topPagination .next,#topPagination .page-counter{display:none}
 	#bottomPagination,.no-nav #bottomPagination{position:relative;padding:0 10px;height:4.5em}
 	#bottomPagination a{position:absolute;text-decoration:none;color:#374990;background:#fff;box-shadow:0 0 3px 0 #ccc;margin-left:0;top:15px}
 	#bottomPagination .prev{left:10px}
 	#bottomPagination .next{right:10px}
+	#bottomPagination .page-counter{position:absolute;width:50%;left:25%;text-align:center;margin:0;font-weight:normal;margin-top:-4px}
 	#nav-toggler a,#nav-toggler a:hover,#nav-toggler a:focus{box-shadow:none;background:#706F61;display:inline-block;padding:4px;width:80%;color:#fff;font-variant:small-caps;letter-spacing:1px;outline:none;text-decoration:none}
 }
