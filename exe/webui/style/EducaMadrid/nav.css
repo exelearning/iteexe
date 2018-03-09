@@ -97,6 +97,7 @@ html[xmlns] #content{display:block}
 	.pagination a{padding:3px 6px}
 	.pagination .prev{position:absolute;left:0;margin:0}
 	.pagination .next{position:absolute;right:0}
+	#bottomPagination .page-counter{margin:0;padding-top:3px;display:inline-block}
 	#nav-toggler span{position:static;overflow:visible;clip:auto;height:auto} /* Reset */
 	#nav-toggler{position:relative;top:0;left:0;margin:0;text-align:center}
 	#nav-toggler a{width:100%;height:auto;background:none;background:#F9F9F9;color:#333;border-bottom:1px solid #e3e3e3;line-height:2.3em;font-weight:bold;letter-spacing:1px}

@@ -93,7 +93,7 @@ html[xmlns] #content{display:block}
 	#content .exe-col{float:none;width:100%;padding:0}
 	#topPagination{display:none}
 	#bottomPagination,.no-nav #bottomPagination{padding:0 10px}
-	#bottomPagination .page-counter{padding-top:5px;display:inline-block}
+	#bottomPagination .page-counter{padding-top:5px;display:inline-block;margin:0}
 	.pagination{text-align:center;height:35px;position:relative}
 	.pagination .prev{position:absolute;left:0;margin:0}
 	.pagination .next{position:absolute;right:0}
