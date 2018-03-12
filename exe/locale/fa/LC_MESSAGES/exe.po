@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.1.4\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-03-05 20:38+0100\n"
+"POT-Creation-Date: 2018-03-12 17:59+0100\n"
 "PO-Revision-Date: 2014-05-13 17:47+0330\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fa\n"
@@ -1352,9 +1352,9 @@ msgstr ""
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
-#: exe/webui/content_template/templates_strings.py:49
-#: exe/webui/content_template/templates_strings.py:59
-#: exe/webui/content_template/templates_strings.py:157
+#: exe/webui/content_template/templates_strings.py:40
+#: exe/webui/content_template/templates_strings.py:46
+#: exe/webui/content_template/templates_strings.py:132
 msgid "Free Text"
 msgstr ""
 
@@ -2256,23 +2256,23 @@ msgstr ""
 msgid "Guidelines Teacher Text:"
 msgstr ""
 
-#: exe/engine/package.py:328 exe/webui/content_template/templates_strings.py:7
-#: exe/webui/content_template/templates_strings.py:18
+#: exe/engine/package.py:328 exe/webui/content_template/templates_strings.py:8
+#: exe/webui/content_template/templates_strings.py:20
 msgid "Topic"
 msgstr "موضوع"
 
-#: exe/engine/package.py:328 exe/webui/content_template/templates_strings.py:8
-#: exe/webui/content_template/templates_strings.py:19
+#: exe/engine/package.py:328 exe/webui/content_template/templates_strings.py:9
+#: exe/webui/content_template/templates_strings.py:21
 msgid "Section"
 msgstr "بخش"
 
-#: exe/engine/package.py:328 exe/webui/content_template/templates_strings.py:9
-#: exe/webui/content_template/templates_strings.py:20
+#: exe/engine/package.py:328 exe/webui/content_template/templates_strings.py:10
+#: exe/webui/content_template/templates_strings.py:22
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
 msgid "Unit"
 msgstr "واحد"
 
-#: exe/engine/package.py:350 exe/webui/content_template/templates_strings.py:13
+#: exe/engine/package.py:350 exe/webui/content_template/templates_strings.py:14
 msgid "Home"
 msgstr "خانه"
 
@@ -2291,7 +2291,7 @@ msgid ""
 "Last succesful save is %s."
 msgstr ""
 
-#: exe/engine/package.py:1610 exe/jsui/scripts/app/controller/Toolbar.js:481
+#: exe/engine/package.py:1610 exe/jsui/scripts/app/controller/Toolbar.js:489
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:502
 msgid "iDevice Editor"
 msgstr ""
@@ -2933,7 +2933,7 @@ msgstr ""
 msgid "Don't copy source in target"
 msgstr ""
 
-#: exe/exe_do:138 exe/jsui/scripts/app/controller/Toolbar.js:855
+#: exe/exe_do:138 exe/jsui/scripts/app/controller/Toolbar.js:863
 msgid "Wrap fields in CDATA"
 msgstr ""
 
@@ -3413,18 +3413,18 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/StyleManager.js:220
 #: exe/jsui/scripts/app/controller/TemplateManager.js:221
 #: exe/jsui/scripts/app/controller/TemplateManager.js:290
-#: exe/jsui/scripts/app/controller/Toolbar.js:648
-#: exe/jsui/scripts/app/controller/Toolbar.js:669
-#: exe/jsui/scripts/app/controller/Toolbar.js:704
-#: exe/jsui/scripts/app/controller/Toolbar.js:723
-#: exe/jsui/scripts/app/controller/Toolbar.js:792
-#: exe/jsui/scripts/app/controller/Toolbar.js:903
-#: exe/jsui/scripts/app/controller/Toolbar.js:986
-#: exe/jsui/scripts/app/controller/Toolbar.js:1006
-#: exe/jsui/scripts/app/controller/Toolbar.js:1026
-#: exe/jsui/scripts/app/controller/Toolbar.js:1058
-#: exe/jsui/scripts/app/controller/Toolbar.js:1224
-#: exe/jsui/scripts/app/controller/Toolbar.js:1353
+#: exe/jsui/scripts/app/controller/Toolbar.js:656
+#: exe/jsui/scripts/app/controller/Toolbar.js:677
+#: exe/jsui/scripts/app/controller/Toolbar.js:712
+#: exe/jsui/scripts/app/controller/Toolbar.js:731
+#: exe/jsui/scripts/app/controller/Toolbar.js:800
+#: exe/jsui/scripts/app/controller/Toolbar.js:911
+#: exe/jsui/scripts/app/controller/Toolbar.js:994
+#: exe/jsui/scripts/app/controller/Toolbar.js:1014
+#: exe/jsui/scripts/app/controller/Toolbar.js:1034
+#: exe/jsui/scripts/app/controller/Toolbar.js:1066
+#: exe/jsui/scripts/app/controller/Toolbar.js:1232
+#: exe/jsui/scripts/app/controller/Toolbar.js:1361
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 #: exe/webui/scripts/authoring.js:96 exe/webui/scripts/authoring.js:121
 #: exe/webui/scripts/authoring.js:365 exe/webui/scripts/authoring.js:374
@@ -3435,11 +3435,11 @@ msgid "All Files"
 msgstr "همهٔ فایل‌ها"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:275
-#: exe/jsui/scripts/app/controller/Toolbar.js:958
-#: exe/jsui/scripts/app/controller/Toolbar.js:979
-#: exe/jsui/scripts/app/controller/Toolbar.js:999
-#: exe/jsui/scripts/app/controller/Toolbar.js:1019
-#: exe/jsui/scripts/app/controller/Toolbar.js:1051
+#: exe/jsui/scripts/app/controller/Toolbar.js:966
+#: exe/jsui/scripts/app/controller/Toolbar.js:987
+#: exe/jsui/scripts/app/controller/Toolbar.js:1007
+#: exe/jsui/scripts/app/controller/Toolbar.js:1027
+#: exe/jsui/scripts/app/controller/Toolbar.js:1059
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Please wait..."
 msgstr "منتظر بمانید ..."
@@ -3467,8 +3467,8 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/TemplateManager.js:279
 #: exe/jsui/scripts/app/controller/TemplateManager.js:338
 #: exe/jsui/scripts/app/controller/TemplateManager.js:364
-#: exe/jsui/scripts/app/controller/Toolbar.js:555
-#: exe/jsui/scripts/app/controller/Toolbar.js:561
+#: exe/jsui/scripts/app/controller/Toolbar.js:563
+#: exe/jsui/scripts/app/controller/Toolbar.js:569
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:317
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:261
@@ -3487,7 +3487,7 @@ msgstr "خطا"
 #: exe/jsui/scripts/app/controller/MainTab.js:308
 #: exe/jsui/scripts/app/controller/MainTab.js:361
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:490
+#: exe/jsui/scripts/app/controller/Toolbar.js:498
 #: exe/webui/scripts/editor.js:37
 #: exe/webui/tools/style-designer/langs/en.js:115
 msgid "Confirm"
@@ -3597,161 +3597,161 @@ msgstr ""
 msgid "http://exelearning.net/downloads/"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:365
+#: exe/jsui/scripts/app/controller/Toolbar.js:369
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:554
 #: exe/webui/tools/assistant/js/assistant.js:15
 #: exe/webui/tools/assistant/langs/en.js:8
 msgid "Assistant"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:391
+#: exe/jsui/scripts/app/controller/Toolbar.js:399
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "About"
 msgstr "درباره..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:408
+#: exe/jsui/scripts/app/controller/Toolbar.js:416
 msgid "Release notes"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:426
+#: exe/jsui/scripts/app/controller/Toolbar.js:434
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:586
 #: exe/webui/tools/assistant/langs/en.js:76
 msgid "Legal Notes"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:463
+#: exe/jsui/scripts/app/controller/Toolbar.js:471
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:455
 msgid "Preferences"
 msgstr "تنظیمات"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:491
+#: exe/jsui/scripts/app/controller/Toolbar.js:499
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:517
+#: exe/jsui/scripts/app/controller/Toolbar.js:525
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:472
 msgid "Style Manager"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:534
+#: exe/jsui/scripts/app/controller/Toolbar.js:542
 msgid "Template Manager"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:552
+#: exe/jsui/scripts/app/controller/Toolbar.js:560
 msgid ""
 "Sorry, only styles created with the Editor can be edited. eXe's Styles "
 "are not editable"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:555
+#: exe/jsui/scripts/app/controller/Toolbar.js:563
 msgid "An unknown error occurred."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:558
+#: exe/jsui/scripts/app/controller/Toolbar.js:566
 msgid ""
 "That's one of eXe's default Styles, and it cannot be edited.\n"
 "\n"
 "Please choose a different style or create a new one."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:558 exe/webui/block.py:270
+#: exe/jsui/scripts/app/controller/Toolbar.js:566 exe/webui/block.py:270
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:29
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:124
 msgid "Information"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:561
+#: exe/jsui/scripts/app/controller/Toolbar.js:569
 msgid "Your Style could not be saved because an unknown error occurred."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:636
+#: exe/jsui/scripts/app/controller/Toolbar.js:644
 msgid "Select package to insert"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:641
+#: exe/jsui/scripts/app/controller/Toolbar.js:649
 msgid "Inserting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:647
-#: exe/jsui/scripts/app/controller/Toolbar.js:668
-#: exe/jsui/scripts/app/controller/Toolbar.js:1223
-#: exe/jsui/scripts/app/controller/Toolbar.js:1352
+#: exe/jsui/scripts/app/controller/Toolbar.js:655
+#: exe/jsui/scripts/app/controller/Toolbar.js:676
+#: exe/jsui/scripts/app/controller/Toolbar.js:1231
+#: exe/jsui/scripts/app/controller/Toolbar.js:1360
 msgid "eXe Package Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:657
+#: exe/jsui/scripts/app/controller/Toolbar.js:665
 msgid "Save extracted package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:662
+#: exe/jsui/scripts/app/controller/Toolbar.js:670
 msgid "Extracting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:678
+#: exe/jsui/scripts/app/controller/Toolbar.js:686
 msgid "Select the parent folder for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:693
+#: exe/jsui/scripts/app/controller/Toolbar.js:701
 msgid "Select the entry point for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:703
+#: exe/jsui/scripts/app/controller/Toolbar.js:711
 msgid "HTML Files"
 msgstr "فایل‌های HTML"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:712
+#: exe/jsui/scripts/app/controller/Toolbar.js:720
 msgid "Select LOM Metadata file to import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:722
+#: exe/jsui/scripts/app/controller/Toolbar.js:730
 msgid "XML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:737
+#: exe/jsui/scripts/app/controller/Toolbar.js:745
 msgid "Waiting progress..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:745
+#: exe/jsui/scripts/app/controller/Toolbar.js:753
 msgid "Cancel Import?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:746
+#: exe/jsui/scripts/app/controller/Toolbar.js:754
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:769
+#: exe/jsui/scripts/app/controller/Toolbar.js:777
 msgid "Select Xliff file to import"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:779
+#: exe/jsui/scripts/app/controller/Toolbar.js:787
 msgid "XLIFF Import Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:791
-#: exe/jsui/scripts/app/controller/Toolbar.js:902
+#: exe/jsui/scripts/app/controller/Toolbar.js:799
+#: exe/jsui/scripts/app/controller/Toolbar.js:910
 msgid "XLIFF Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:801
+#: exe/jsui/scripts/app/controller/Toolbar.js:809
 msgid "Export to Xliff as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:821
+#: exe/jsui/scripts/app/controller/Toolbar.js:829
 msgid "Select source language"
 msgstr "زبان منبع را انتخاب کنید"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:832
+#: exe/jsui/scripts/app/controller/Toolbar.js:840
 msgid "Select target language"
 msgstr "زبان هدف را مشخص کنید"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:843
+#: exe/jsui/scripts/app/controller/Toolbar.js:851
 msgid "Copy source also in target"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:846
+#: exe/jsui/scripts/app/controller/Toolbar.js:854
 msgid ""
 "If you don't choose this option, target field will be empty. Some "
 "Computer Aided Translation tools (e.g. OmegaT) just translate the content"
@@ -3759,7 +3759,7 @@ msgid ""
 "to pre-fill the target field with a copy of the source field."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:857
+#: exe/jsui/scripts/app/controller/Toolbar.js:865
 msgid ""
 "This option will wrap all the exported fields in CDATA sections. This "
 "kind of sections are not recommended by XLIFF standard but it could be a "
@@ -3767,7 +3767,7 @@ msgid ""
 "using the Computer Aided Translation software."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:866
+#: exe/jsui/scripts/app/controller/Toolbar.js:874
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/webui/editorpane.py:273
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -3779,121 +3779,121 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:872
+#: exe/jsui/scripts/app/controller/Toolbar.js:880
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:36
 msgid "Ok"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:895
+#: exe/jsui/scripts/app/controller/Toolbar.js:903
 msgid "XLIFF Export Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:920
+#: exe/jsui/scripts/app/controller/Toolbar.js:928
 msgid ""
 "You must authorize eXe Learning to publish content into your Procomún "
 "account"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:921
+#: exe/jsui/scripts/app/controller/Toolbar.js:929
 msgid "Are you sure you want to start authorization process?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:932
+#: exe/jsui/scripts/app/controller/Toolbar.js:940
 msgid "Procomún OAuth"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:950
+#: exe/jsui/scripts/app/controller/Toolbar.js:958
 msgid "Select the parent folder for export."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:973
+#: exe/jsui/scripts/app/controller/Toolbar.js:981
 msgid "Export text package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:985
+#: exe/jsui/scripts/app/controller/Toolbar.js:993
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:274
 msgid "Text File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:993
+#: exe/jsui/scripts/app/controller/Toolbar.js:1001
 msgid "Save package resources report as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1005
+#: exe/jsui/scripts/app/controller/Toolbar.js:1013
 msgid "CSV File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1013
+#: exe/jsui/scripts/app/controller/Toolbar.js:1021
 msgid "Export EPUB3 package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1025
+#: exe/jsui/scripts/app/controller/Toolbar.js:1033
 msgid "EPUB3 File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1033
+#: exe/jsui/scripts/app/controller/Toolbar.js:1041
 msgid "Export SCORM package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1035
+#: exe/jsui/scripts/app/controller/Toolbar.js:1043
 msgid "Export IMS package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1037
+#: exe/jsui/scripts/app/controller/Toolbar.js:1045
 msgid "Export Website package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1039
+#: exe/jsui/scripts/app/controller/Toolbar.js:1047
 msgid "Export Common Cartridge as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1041
+#: exe/jsui/scripts/app/controller/Toolbar.js:1049
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1057
+#: exe/jsui/scripts/app/controller/Toolbar.js:1065
 msgid "SCORM/IMS/ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1196
+#: exe/jsui/scripts/app/controller/Toolbar.js:1204
 msgid "Loading package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1212
+#: exe/jsui/scripts/app/controller/Toolbar.js:1220
 msgid "Open File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1217
+#: exe/jsui/scripts/app/controller/Toolbar.js:1225
 msgid "Loading package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1236
+#: exe/jsui/scripts/app/controller/Toolbar.js:1244
 msgid "Save Package first?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1237
+#: exe/jsui/scripts/app/controller/Toolbar.js:1245
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1284
+#: exe/jsui/scripts/app/controller/Toolbar.js:1292
 msgid "Saving package to: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1310
+#: exe/jsui/scripts/app/controller/Toolbar.js:1318
 msgid "Title for template:"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1311
+#: exe/jsui/scripts/app/controller/Toolbar.js:1319
 msgid "Enter the new name for template:"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1332
+#: exe/jsui/scripts/app/controller/Toolbar.js:1340
 msgid "Save file"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1338
+#: exe/jsui/scripts/app/controller/Toolbar.js:1346
 msgid "Saving package..."
 msgstr ""
 
@@ -7483,65 +7483,54 @@ msgstr ""
 msgid "Click for completion instructions"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:22
-msgid "Project's name"
+#: exe/webui/content_template/templates_strings.py:6
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Base"
+msgstr ""
+
+#: exe/webui/content_template/templates_strings.py:18
+msgid "EDIA Project - PBL"
 msgstr ""
 
 #: exe/webui/content_template/templates_strings.py:24
-msgid "Project's final goal."
+msgid "Project's name"
 msgstr ""
 
 #: exe/webui/content_template/templates_strings.py:26
-msgid ""
-"&lt;script&gt;\n"
-"  "
-"(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){"
-"\n"
-"  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new "
-"Date();a=s.createElement(o),\n"
-"  "
-"m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)"
-"\n"
-"  })(window,document,'script','//www.google-"
-"analytics.com/analytics.js','ga');\n"
-"\n"
-"  ga('create', 'UA-59443119-1', 'auto');\n"
-"  ga('send', 'pageview');\n"
-"\n"
-"&lt;/script&gt;"
+msgid "Project's final goal."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:37
+#: exe/webui/content_template/templates_strings.py:28
 msgid "Point out what students are about to learn."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:39
+#: exe/webui/content_template/templates_strings.py:30
 msgid ""
 "Students need no preknowledge to complete all these tasks because there "
 "are materials enough to be independent in their accomplishment. Students "
 "also have the help and orientation from their teacher."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:41
+#: exe/webui/content_template/templates_strings.py:32
 msgid "Author's name"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:45
+#: exe/webui/content_template/templates_strings.py:36
 msgid "Front page"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:52
+#: exe/webui/content_template/templates_strings.py:43
 msgid ""
-"&lt;p&gt;Motivating inspiration.&lt;/p&gt;\n"
-"&lt;p&gt;Project / Final Challenge&lt;/p&gt;\n"
-"&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img "
-"src=&quot;resources/images_pbl_english.png&quot; alt=&quot;&quot; "
-"width=&quot;560&quot; height=&quot;315&quot; /&gt;&lt;/p&gt;\n"
-"&lt;p&gt;What to learn and how to learn.&lt;/p&gt;\n"
-"&lt;p&gt;Motivation for the project development.&lt;/p&gt;"
+"<p>Motivating inspiration.</p>\r\n"
+"<p>Project / Final Challenge</p>\r\n"
+"<p style=\"text-align: center;\"><img "
+"src=\"resources/images_pbl_english.png\" alt=\"\" width=\"560\" "
+"height=\"315\" /></p>\r\n"
+"<p>What to learn and how to learn.</p>\r\n"
+"<p>Motivation for the project development.</p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:62
+#: exe/webui/content_template/templates_strings.py:49
 msgid ""
 "<p style=\"text-align: center;\"><a rel=\"license\" "
 "href=\"http://creativecommons.org/licenses/by-sa/4.0/\"><img "
@@ -7552,279 +7541,410 @@ msgid ""
 "Project: English PBL</span> by <a "
 "xmlns:cc=\"http://creativecommons.org/ns#\" "
 "href=\"http://cedec.educalab.es/\" property=\"cc:attributionName\" "
-"target=\"_blank\">CeDeC</a>.</p> <p></p>"
+"target=\"_blank\">CeDeC</a>.</p>\r\n"
+"<p></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:65
+#: exe/webui/content_template/templates_strings.py:51
 msgid "Breaking the ice"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:68
+#: exe/webui/content_template/templates_strings.py:54
 msgid "Your project: general information"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:71
+#: exe/webui/content_template/templates_strings.py:57
 msgid ""
-"&lt;p&gt;Explanation of the final challenge.&lt;/p&gt;\n"
-"&lt;p&gt;Overview of suggested tasks.&lt;/p&gt;\n"
-"&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img "
-"src=&quot;resources/images_pbl_english.png&quot; alt=&quot;&quot; "
-"width=&quot;560&quot; height=&quot;315&quot; /&gt;&lt;/p&gt;\n"
-"&lt;p&gt;&lt;/p&gt;\n"
-"&lt;p&gt;&lt;span style=&quot;font-size: 1em; line-height: "
-"19.2px;&quot;&gt;General information about:&lt;/span&gt;&lt;span "
-"style=&quot;font-size: 1em; line-height: "
-"19.2px;&quot;&gt;&lt;/span&gt;&lt;/p&gt;\n"
-"&lt;ul&gt;\n"
-"&lt;li&gt;Assessment&lt;/li&gt;\n"
-"&lt;li&gt;&lt;span style=&quot;font-size: 1em; line-height: "
-"19.2px;&quot;&gt;Class team management&lt;/span&gt;&lt;/li&gt;\n"
-"&lt;li&gt;&lt;span style=&quot;font-size: 1em; line-height: "
-"19.2px;&quot;&gt;Learning diary and personal "
-"site.&lt;/span&gt;&lt;/li&gt;\n"
-"&lt;li&gt;&lt;span style=&quot;font-size: 1em; line-height: "
-"19.2px;&quot;&gt;Dissemination of project "
-"activities.&lt;/span&gt;&lt;/li&gt;\n"
-"&lt;/ul&gt;\n"
-"&lt;p&gt;Starting motivation&lt;span style=&quot;font-size: 1em; line-"
-"height: 19.2px;&quot;&gt;&lt;/span&gt;&lt;/p&gt;"
+"<p>Explanation of the final challenge.</p>\r\n"
+"<p>Overview of suggested tasks.</p>\r\n"
+"<p style=\"text-align: center;\"><img "
+"src=\"resources/images_pbl_english.png\" alt=\"\" width=\"560\" "
+"height=\"315\" /></p>\r\n"
+"<p></p>\r\n"
+"<p><span style=\"font-size: 1em; line-height: 19.2px;\">General "
+"information about:</span><span style=\"font-size: 1em; line-height: "
+"19.2px;\"></span></p>\r\n"
+"<ul>\r\n"
+"<li>Assessment</li>\r\n"
+"<li><span style=\"font-size: 1em; line-height: 19.2px;\">Class team "
+"management</span></li>\r\n"
+"<li><span style=\"font-size: 1em; line-height: 19.2px;\">Learning diary "
+"and personal site.</span></li>\r\n"
+"<li><span style=\"font-size: 1em; line-height: 19.2px;\">Dissemination of"
+" project activities.</span></li>\r\n"
+"</ul>\r\n"
+"<p>Starting motivation<span style=\"font-size: 1em; line-height: "
+"19.2px;\"></span></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:85
+#: exe/webui/content_template/templates_strings.py:60
 msgid "Starting Activity"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:88
+#: exe/webui/content_template/templates_strings.py:63
 msgid ""
-"<p>Introductory Activity to the project involving:</p> <ul> <li>Team "
-"work</li> <li>Reflection and motivation</li> <li>Expression of "
-"feelings.</li> </ul> <p style=\"text-align: center;\"><img "
+"<p>Introductory Activity to the project involving:</p>\r\n"
+"<ul>\r\n"
+"<li>Team work</li>\r\n"
+"<li>Reflection and motivation</li>\r\n"
+"<li>Expression of feelings.</li>\r\n"
+"</ul>\r\n"
+"<p style=\"text-align: center;\"><img "
 "src=\"resources/images_pbl_english.png\" alt=\"\" width=\"560\" "
-"height=\"315\" /></p> <p><strong>Steps for the suggested activity<span "
-"style=\"color: #ff0000;\"><br /></span></strong></p>"
+"height=\"315\" /></p>\r\n"
+"<p><strong>Steps for the suggested activity<span style=\"color: "
+"#ff0000;\"><br /></span></strong></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:91
-#: exe/webui/content_template/templates_strings.py:113
+#: exe/webui/content_template/templates_strings.py:67
+#: exe/webui/content_template/templates_strings.py:89
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:31
 msgid "Learning Diary"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:94
+#: exe/webui/content_template/templates_strings.py:70
 msgid ""
 "<p>First activity. Creation of the learning diary in the suggested "
-"format.</p> <p>Creation of the first post heading.</p> <p></p> <p></p>"
+"format.</p>\r\n"
+"<p>Creation of the first post heading.</p>\r\n"
+"<p></p>\r\n"
+"<p></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:95
+#: exe/webui/content_template/templates_strings.py:71
 msgid ""
-"<div class=\"block\"> <div id=\"3_93-viewer\"> <p>Script for writing the "
-"post. It must lead the student to think about and reflect:</p> <ul> "
-"<li>What the final challenge is</li> <li>What the assessment will be "
-"like</li> <li>What they will learn</li> <li>How class groups work</li> "
-"</ul> </div> </div>"
+"<div class=\"block\">\r\n"
+"<div id=\"3_93-viewer\">\r\n"
+"<p>Script for writing the post. It must lead the student to think about "
+"and reflect:</p>\r\n"
+"<ul>\r\n"
+"<li>What the final challenge is</li>\r\n"
+"<li>What the assessment will be like</li>\r\n"
+"<li>What they will learn</li>\r\n"
+"<li>How class groups work</li>\r\n"
+"</ul>\r\n"
+"</div>\r\n"
+"</div>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:99
+#: exe/webui/content_template/templates_strings.py:75
 msgid "Mission 1"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:101
+#: exe/webui/content_template/templates_strings.py:77
 msgid "Introduction"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:104
+#: exe/webui/content_template/templates_strings.py:80
 msgid ""
-"<p>What the final mission will be.</p> <p>What sudents will learn "
-"about.</p> <p style=\"text-align: center;\"><img "
+"<p>What the final mission will be.</p>\r\n"
+"<p>What sudents will learn about.</p>\r\n"
+"<p style=\"text-align: center;\"><img "
 "src=\"resources/images_pbl_english.png\" alt=\"\" width=\"560\" "
-"height=\"315\" /></p> <p style=\"text-align: center;\"></p> <p>Starting "
-"activity</p>"
+"height=\"315\" /></p>\r\n"
+"<p style=\"text-align: center;\"></p>\r\n"
+"<p>Starting activity</p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:107
+#: exe/webui/content_template/templates_strings.py:83
 msgid "Task (Mission)"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:110
+#: exe/webui/content_template/templates_strings.py:86
 msgid ""
-"<p>General introduction</p> <p>What the \"final mission\" will be and "
-"link to the assessment rubric.</p> <p style=\"text-align: center;\"><img "
+"<p>General introduction</p>\r\n"
+"<p>What the \"final mission\" will be and link to the assessment "
+"rubric.</p>\r\n"
+"<p style=\"text-align: center;\"><img "
 "src=\"resources/images_pbl_english.png\" alt=\"\" width=\"560\" "
-"height=\"315\" /></p> <p>What learning objective this mission helps to "
-"achieve.</p> <p></p> <p></p> <p><strong>Steps for your "
-"mission</strong></p>"
+"height=\"315\" /></p>\r\n"
+"<p>What learning objective this mission helps to achieve.</p>\r\n"
+"<p></p>\r\n"
+"<p></p>\r\n"
+"<p><strong>Steps for your mission</strong></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:116
-msgid "<p>Guidelines to open a new post.</p> <p></p>"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:118
+#: exe/webui/content_template/templates_strings.py:92
 msgid ""
-"<div id=\"8_93-viewer\"> <div class=\"block\"> <div id=\"3_93-viewer\"> "
-"<div class=\"block\"> <div id=\"3_93-viewer\"> <div id=\"8_93-viewer\"> "
-"<div class=\"block\"> <div id=\"3_93-viewer\"> <div class=\"block\"> <div"
-" id=\"3_93-viewer\"> <p>Questions or guidelines for students to revise "
-"and reflect:</p> <ul> <li>The task they have done</li> <li>The resources"
-"  they have checked</li> <li>Materials they have created</li> <li>What "
-"they have learnt</li> <li>Difficulties found.</li> <li>Remaining "
-"doubts</li> <li>Class team functioning</li> </ul> </div> </div> </div> "
-"</div> </div> </div> </div> </div> </div> </div>"
+"<p>Guidelines to open a new post.</p>\r\n"
+"<p></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:122
+#: exe/webui/content_template/templates_strings.py:94
+msgid ""
+"<div id=\"8_93-viewer\">\r\n"
+"<div class=\"block\">\r\n"
+"<div id=\"3_93-viewer\">\r\n"
+"<div class=\"block\">\r\n"
+"<div id=\"3_93-viewer\">\r\n"
+"<div id=\"8_93-viewer\">\r\n"
+"<div class=\"block\">\r\n"
+"<div id=\"3_93-viewer\">\r\n"
+"<div class=\"block\">\r\n"
+"<div id=\"3_93-viewer\">\r\n"
+"<p>Questions or guidelines for students to revise and reflect:</p>\r\n"
+"<ul>\r\n"
+"<li>The task they have done</li>\r\n"
+"<li>The resources they have checked</li>\r\n"
+"<li>Materials they have created</li>\r\n"
+"<li>What they have learnt</li>\r\n"
+"<li>Difficulties found.</li>\r\n"
+"<li>Remaining doubts</li>\r\n"
+"<li>Class team functioning</li>\r\n"
+"</ul>\r\n"
+"</div>\r\n"
+"</div>\r\n"
+"</div>\r\n"
+"</div>\r\n"
+"</div>\r\n"
+"</div>\r\n"
+"</div>\r\n"
+"</div>\r\n"
+"</div>\r\n"
+"</div>"
+msgstr ""
+
+#: exe/webui/content_template/templates_strings.py:96
 msgid "Didactic guidelines"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:125
+#: exe/webui/content_template/templates_strings.py:99
 msgid "Fact sheet"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:128
+#: exe/webui/content_template/templates_strings.py:102
 msgid ""
 "<table style=\"margin-left: auto; margin-right: auto; width: 624.333px; "
 "border-color: #000000;\" cellspacing=\"4\" "
 "cellpadding=\"4\"><colgroup><col width=\"116\" /><col width=\"509\" "
-"/></colgroup> <tbody> <tr style=\"height: 35px;\" valign=\"top\"> <td "
-"style=\"height: 35px; border-color: #000000; width: 248px; text-align: "
-"left;\"> <p><strong>Títle</strong></p> </td> <td style=\"height: 35px; "
-"border-color: #000000; width: 248px; text-align: left;\"> <p>...</p> "
-"</td> </tr> <tr style=\"height: 35.375px;\" valign=\"top\"> <td "
-"style=\"height: 35px; border-color: #000000; width: 248px; text-align: "
-"left;\"> <p><strong>Subject</strong></p> </td> <td style=\"height: 35px; "
-"border-color: #000000; width: 248px; text-align: left;\"> <p>...</p> "
-"</td> </tr> <tr style=\"height: 35px;\" valign=\"top\"> <td "
-"style=\"height: 35px; border-color: #000000; width: 248px; text-align: "
-"left;\"> <p><strong>Level / course<br /></strong></p> </td> <td "
-"style=\"height: 35px; border-color: #000000; width: 248px; text-align: "
-"left;\"> <p>...</p> </td> </tr> <tr style=\"height: 35px;\" "
-"valign=\"top\"> <td style=\"height: 35px; border-color: #000000; width: "
-"248px; text-align: left;\"> <p><strong>Final project<br /></strong></p> "
-"</td> <td style=\"height: 35px; border-color: #000000; width: 248px; "
-"text-align: left;\"> <p><span color=\"#000000\"><span face=\"Liberation "
-"Serif, serif\"><span size=\"3\">...<br /></span></span></span></p> </td> "
-"</tr> <tr style=\"height: 35px;\" valign=\"top\"> <td style=\"height: "
-"35px; border-color: #000000; width: 248px; text-align: left;\"> "
-"<p><strong>Contents</strong></p> </td> <td style=\"height: 35px; border-"
-"color: #000000; width: 248px; text-align: left;\"> <p><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">..</span></span></span></p> </td> </tr> <tr style=\"height: "
-"35px;\" valign=\"top\"> <td style=\"height: 35px; border-color: #000000; "
-"width: 248px; text-align: left;\"> <p><strong>Timing</strong></p> </td> "
+"/></colgroup>\r\n"
+"<tbody>\r\n"
+"<tr style=\"height: 35px;\" valign=\"top\">\r\n"
 "<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
-"align: left;\"> <p><span color=\"#000000\"><span face=\"Liberation Serif,"
-" serif\"><span size=\"3\">...</span></span></span></p> </td> </tr> "
-"</tbody> </table> <p></p>"
+"align: left;\">\r\n"
+"<p><strong>Title</strong></p>\r\n"
+"</td>\r\n"
+"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
+"align: left;\">\r\n"
+"<p>...</p>\r\n"
+"</td>\r\n"
+"</tr>\r\n"
+"<tr style=\"height: 35.375px;\" valign=\"top\">\r\n"
+"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
+"align: left;\">\r\n"
+"<p><strong>Subject</strong></p>\r\n"
+"</td>\r\n"
+"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
+"align: left;\">\r\n"
+"<p>...</p>\r\n"
+"</td>\r\n"
+"</tr>\r\n"
+"<tr style=\"height: 35px;\" valign=\"top\">\r\n"
+"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
+"align: left;\">\r\n"
+"<p><strong>Level / course<br /></strong></p>\r\n"
+"</td>\r\n"
+"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
+"align: left;\">\r\n"
+"<p>...</p>\r\n"
+"</td>\r\n"
+"</tr>\r\n"
+"<tr style=\"height: 35px;\" valign=\"top\">\r\n"
+"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
+"align: left;\">\r\n"
+"<p><strong>Final project<br /></strong></p>\r\n"
+"</td>\r\n"
+"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
+"align: left;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">...<br /></span></span></span></p>\r\n"
+"</td>\r\n"
+"</tr>\r\n"
+"<tr style=\"height: 35px;\" valign=\"top\">\r\n"
+"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
+"align: left;\">\r\n"
+"<p><strong>Contents</strong></p>\r\n"
+"</td>\r\n"
+"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
+"align: left;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">..</span></span></span></p>\r\n"
+"</td>\r\n"
+"</tr>\r\n"
+"<tr style=\"height: 35px;\" valign=\"top\">\r\n"
+"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
+"align: left;\">\r\n"
+"<p><strong>Timing</strong></p>\r\n"
+"</td>\r\n"
+"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
+"align: left;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">...</span></span></span></p>\r\n"
+"</td>\r\n"
+"</tr>\r\n"
+"</tbody>\r\n"
+"</table>\r\n"
+"<p></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:130
+#: exe/webui/content_template/templates_strings.py:105
 msgid ""
-"<p><span>Resource structure<br /></span></p> <p><span>Types of tasks and "
-"activities</span></p> <p>Methodological approach</p> <p>Use of the "
-"learning diary</p>"
+"<p><span>Resource structure<br /></span></p>\r\n"
+"<p><span>Types of tasks and activities</span></p>\r\n"
+"<p>Methodological approach</p>\r\n"
+"<p>Use of the learning diary</p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:133
+#: exe/webui/content_template/templates_strings.py:108
 msgid "Learning Pathway and timing"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:136
+#: exe/webui/content_template/templates_strings.py:111
 msgid ""
-"<p></p> <table style=\"width: 95.5125%;\" cellspacing=\"0\" "
+"<p></p>\r\n"
+"<table style=\"width: 95.5125%;\" cellspacing=\"0\" "
 "cellpadding=\"4\"><colgroup><col width=\"64*\" /> <col width=\"96*\" /> "
-"<col width=\"96*\" /></colgroup> <tbody> <tr valign=\"top\"> <td "
-"style=\"width: 35%; text-align: left;\"> <h3 style=\"text-align: left;\" "
-"align=\"center\"><strong><span color=\"#000000\"><span face=\"Liberation "
-"Serif, serif\"><span size=\"3\">Steps</span></span></span></strong></h3> "
-"</td> <td style=\"width: 47%; text-align: left;\"> <h3 style=\"text-"
-"align: left;\" align=\"center\"><strong><span color=\"#000000\"><span "
-"face=\"Liberation Serif, serif\"><span size=\"3\">Main "
-"aim</span></span></span></strong></h3> </td> <td style=\"width: "
-"36.5786%;\"> <h3 align=\"center\"><strong><span color=\"#000000\"><span "
+"<col width=\"96*\" /></colgroup>\r\n"
+"<tbody>\r\n"
+"<tr valign=\"top\">\r\n"
+"<td style=\"width: 35%; text-align: left;\">\r\n"
+"<h3 style=\"text-align: left;\" align=\"center\"><strong><span "
+"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">Steps</span></span></span></strong></h3>\r\n"
+"</td>\r\n"
+"<td style=\"width: 47%; text-align: left;\">\r\n"
+"<h3 style=\"text-align: left;\" align=\"center\"><strong><span "
+"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">Main aim</span></span></span></strong></h3>\r\n"
+"</td>\r\n"
+"<td style=\"width: 36.5786%;\">\r\n"
+"<h3 align=\"center\"><strong><span color=\"#000000\"><span "
 "face=\"Liberation Serif, serif\"><span "
-"size=\"3\">Timing</span></span></span></strong></h3> </td> </tr> <tr "
-"valign=\"top\"> <td style=\"width: 35%;\"> <p><span "
+"size=\"3\">Timing</span></span></span></strong></h3>\r\n"
+"</td>\r\n"
+"</tr>\r\n"
+"<tr valign=\"top\">\r\n"
+"<td style=\"width: 35%;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">Before you start</span></span></span></p>\r\n"
+"</td>\r\n"
+"<td style=\"width: 47%;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">...</span></span></span></p>\r\n"
+"</td>\r\n"
+"<td style=\"width: 36.5786%; text-align: center;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">...sessions</span></span></span></p>\r\n"
+"</td>\r\n"
+"</tr>\r\n"
+"<tr valign=\"top\">\r\n"
+"<td style=\"width: 35%;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">Breaking the ice<br /></span></span></span></p>\r\n"
+"</td>\r\n"
+"<td style=\"width: 47%;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">...</span></span></span></p>\r\n"
+"</td>\r\n"
+"<td style=\"width: 36.5786%; text-align: center;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">...sessions</span></span></span></p>\r\n"
+"</td>\r\n"
+"</tr>\r\n"
+"<tr valign=\"top\">\r\n"
+"<td style=\"width: 35%;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">(Mission 1)<br /></span></span></span></p>\r\n"
+"</td>\r\n"
+"<td style=\"width: 47%;\">\r\n"
+"<p><span size=\"2\" style=\"font-size: small;\">...</span></p>\r\n"
+"</td>\r\n"
+"<td style=\"width: 36.5786%; text-align: center;\"><span "
 "color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">Before you start</span></span></span></p> </td> <td "
-"style=\"width: 47%;\"> <p><span color=\"#000000\"><span face=\"Liberation"
-" Serif, serif\"><span size=\"3\">...</span></span></span></p> </td> <td "
-"style=\"width: 36.5786%; text-align: center;\"> <p><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...sessions</span></span></span></p> </td> </tr> <tr "
-"valign=\"top\"> <td style=\"width: 35%;\"> <p><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">Breaking the ice<br /></span></span></span></p> </td> <td "
-"style=\"width: 47%;\"> <p><span color=\"#000000\"><span face=\"Liberation"
-" Serif, serif\"><span size=\"3\">...</span></span></span></p> </td> <td "
-"style=\"width: 36.5786%; text-align: center;\"> <p><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...sessions</span></span></span></p> </td> </tr> <tr "
-"valign=\"top\"> <td style=\"width: 35%;\"> <p><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">(Mission 1)<br /></span></span></span></p> </td> <td "
-"style=\"width: 47%;\"> <p><span size=\"2\" style=\"font-size: "
-"small;\">...</span></p> </td> <td style=\"width: 36.5786%; text-align: "
-"center;\"><span color=\"#000000\"><span face=\"Liberation Serif, "
-"serif\"><span size=\"3\">...sessions</span></span></span></td> </tr> <tr "
-"valign=\"top\"> <td style=\"width: 35%;\"> <p><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">(Mission 2)</span></span></span></p> </td> <td style=\"width: "
-"47%;\"> <p><span color=\"#000000\"><span face=\"Liberation Serif, "
-"serif\"><span size=\"3\">...</span></span></span></p> </td> <td "
-"style=\"width: 36.5786%; text-align: center;\"> <p><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...sessions</span></span></span></p> </td> </tr> <tr "
-"valign=\"top\"> <td style=\"width: 35%;\"> <p><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">(Mission 3)</span></span></span></p> </td> <td style=\"width: "
-"47%;\"> <p><span color=\"#000000\"><span face=\"Liberation Serif, "
-"serif\"><span size=\"3\">...</span></span></span></p> </td> <td "
-"style=\"width: 36.5786%; text-align: center;\"> <p><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...sessions</span></span></span></p> </td> </tr> <tr "
-"valign=\"top\"> <td style=\"width: 35%;\"> <p><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">(Final Challenge)<br /></span></span></span></p> </td> <td "
-"style=\"width: 47%;\"> <p><span color=\"#000000\"><span face=\"Liberation"
-" Serif, serif\"><span size=\"3\">...</span></span></span></p> </td> <td "
-"style=\"width: 36.5786%; text-align: center;\"> <p><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">3 sessions</span></span></span></p> </td> </tr> </tbody> "
-"</table> <p></p> <h3><span style=\"color: "
-"#008080;\"><span>Interdisciplinary nature</span></span></h3> "
-"<p>Recommendations to involve other subjects</p> <p></p> <p></p>"
+"size=\"3\">...sessions</span></span></span></td>\r\n"
+"</tr>\r\n"
+"<tr valign=\"top\">\r\n"
+"<td style=\"width: 35%;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">(Mission 2)</span></span></span></p>\r\n"
+"</td>\r\n"
+"<td style=\"width: 47%;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">...</span></span></span></p>\r\n"
+"</td>\r\n"
+"<td style=\"width: 36.5786%; text-align: center;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">...sessions</span></span></span></p>\r\n"
+"</td>\r\n"
+"</tr>\r\n"
+"<tr valign=\"top\">\r\n"
+"<td style=\"width: 35%;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">(Mission 3)</span></span></span></p>\r\n"
+"</td>\r\n"
+"<td style=\"width: 47%;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">...</span></span></span></p>\r\n"
+"</td>\r\n"
+"<td style=\"width: 36.5786%; text-align: center;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">...sessions</span></span></span></p>\r\n"
+"</td>\r\n"
+"</tr>\r\n"
+"<tr valign=\"top\">\r\n"
+"<td style=\"width: 35%;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">(Final Challenge)<br /></span></span></span></p>\r\n"
+"</td>\r\n"
+"<td style=\"width: 47%;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">...</span></span></span></p>\r\n"
+"</td>\r\n"
+"<td style=\"width: 36.5786%; text-align: center;\">\r\n"
+"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
+"size=\"3\">3 sessions</span></span></span></p>\r\n"
+"</td>\r\n"
+"</tr>\r\n"
+"</tbody>\r\n"
+"</table>\r\n"
+"<p></p>\r\n"
+"<h3><span style=\"color: #008080;\"><span>Interdisciplinary "
+"nature</span></span></h3>\r\n"
+"<p>Recommendations to involve other subjects</p>\r\n"
+"<p></p>\r\n"
+"<p></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:139
+#: exe/webui/content_template/templates_strings.py:114
 msgid "Assessment and curricular references"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:142
+#: exe/webui/content_template/templates_strings.py:117
 msgid ""
-"<p><span>Link to the final rubric of the project.</span></p> "
-"<p>Assessment recommendations / resources of each task.</p> <p>Assessment"
-" criteria and guidance on how to assess.</p> <p>Contents / learning "
-"standards and key competences.</p> <p></p>"
+"<p><span>Link to the final rubric of the project.</span></p>\r\n"
+"<p>Assessment recommendations / resources of each task.</p>\r\n"
+"<p>Assessment criteria and guidance on how to assess.</p>\r\n"
+"<p>Contents / learning standards and key competences.</p>\r\n"
+"<p></p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:145
+#: exe/webui/content_template/templates_strings.py:120
 msgid "Need any help?"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:148
+#: exe/webui/content_template/templates_strings.py:123
 msgid "<h3>ICT resources/apps/tools</h3>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:151
+#: exe/webui/content_template/templates_strings.py:126
 msgid "Rubrics and other documents"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:154
+#: exe/webui/content_template/templates_strings.py:129
 msgid "<p>You can download all the documents to print, share, reuse...</p>"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:160
+#: exe/webui/content_template/templates_strings.py:135
 msgid ""
 "<p style=\"text-align: center;\"><a rel=\"license\" "
 "href=\"http://creativecommons.org/licenses/by-sa/4.0/\"><img "
@@ -7836,6 +7956,15 @@ msgid ""
 "xmlns:cc=\"http://creativecommons.org/ns#\" "
 "href=\"http://cedec.educalab.es/\" property=\"cc:attributionName\" "
 "target=\"_blank\">CeDeC</a>.</p>"
+msgstr ""
+
+#: exe/webui/content_template/templates_strings.py:138
+msgid "Writing the diary"
+msgstr ""
+
+#: exe/webui/content_template/templates_strings.py:139
+#: exe/webui/content_template/templates_strings.py:140
+msgid "General guidelines for teachers"
 msgstr ""
 
 #: exe/webui/debesconocerfpdblock.py:68
@@ -11058,10 +11187,6 @@ msgid "Flash Vars"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-msgid "Base"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "WMode"
 msgstr ""
 
@@ -13945,4 +14070,324 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
+
+#~ msgid ""
+#~ "&lt;script&gt;\n"
+#~ "  "
+#~ "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){"
+#~ "\n"
+#~ "  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new "
+#~ "Date();a=s.createElement(o),\n"
+#~ "  "
+#~ "m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)"
+#~ "\n"
+#~ "  })(window,document,'script','//www.google-"
+#~ "analytics.com/analytics.js','ga');\n"
+#~ "\n"
+#~ "  ga('create', 'UA-59443119-1', 'auto');\n"
+#~ "  ga('send', 'pageview');\n"
+#~ "\n"
+#~ "&lt;/script&gt;"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "&lt;p&gt;Motivating inspiration.&lt;/p&gt;\n"
+#~ "&lt;p&gt;Project / Final Challenge&lt;/p&gt;\n"
+#~ "&lt;p style=&quot;text-align: "
+#~ "center;&quot;&gt;&lt;img "
+#~ "src=&quot;resources/images_pbl_english.png&quot; "
+#~ "alt=&quot;&quot; width=&quot;560&quot; "
+#~ "height=&quot;315&quot; /&gt;&lt;/p&gt;\n"
+#~ "&lt;p&gt;What to learn and how to learn.&lt;/p&gt;\n"
+#~ "&lt;p&gt;Motivation for the project development.&lt;/p&gt;"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p style=\"text-align: center;\"><a "
+#~ "rel=\"license\" href=\"http://creativecommons.org/licenses"
+#~ "/by-sa/4.0/\"><img alt=\"Licencia de Creative "
+#~ "Commons\" style=\"border-width: 0px; display:"
+#~ " block; margin-left: auto; margin-"
+#~ "right: auto;\" src=\"resources/88x31.png\" "
+#~ "width=\"88\" height=\"31\" /></a><br /><span "
+#~ "xmlns:dct=\"http://purl.org/dc/terms/\" "
+#~ "property=\"dct:title\">EDIA Project: English "
+#~ "PBL</span> by <a "
+#~ "xmlns:cc=\"http://creativecommons.org/ns#\" "
+#~ "href=\"http://cedec.educalab.es/\" "
+#~ "property=\"cc:attributionName\" target=\"_blank\">CeDeC</a>.</p>"
+#~ " <p></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "&lt;p&gt;Explanation of the final challenge.&lt;/p&gt;\n"
+#~ "&lt;p&gt;Overview of suggested tasks.&lt;/p&gt;\n"
+#~ "&lt;p style=&quot;text-align: "
+#~ "center;&quot;&gt;&lt;img "
+#~ "src=&quot;resources/images_pbl_english.png&quot; "
+#~ "alt=&quot;&quot; width=&quot;560&quot; "
+#~ "height=&quot;315&quot; /&gt;&lt;/p&gt;\n"
+#~ "&lt;p&gt;&lt;/p&gt;\n"
+#~ "&lt;p&gt;&lt;span style=&quot;font-size: 1em; "
+#~ "line-height: 19.2px;&quot;&gt;General information "
+#~ "about:&lt;/span&gt;&lt;span style=&quot;font-size: "
+#~ "1em; line-height: "
+#~ "19.2px;&quot;&gt;&lt;/span&gt;&lt;/p&gt;\n"
+#~ "&lt;ul&gt;\n"
+#~ "&lt;li&gt;Assessment&lt;/li&gt;\n"
+#~ "&lt;li&gt;&lt;span style=&quot;font-size: 1em; "
+#~ "line-height: 19.2px;&quot;&gt;Class team "
+#~ "management&lt;/span&gt;&lt;/li&gt;\n"
+#~ "&lt;li&gt;&lt;span style=&quot;font-size: 1em; "
+#~ "line-height: 19.2px;&quot;&gt;Learning diary "
+#~ "and personal site.&lt;/span&gt;&lt;/li&gt;\n"
+#~ "&lt;li&gt;&lt;span style=&quot;font-size: 1em; "
+#~ "line-height: 19.2px;&quot;&gt;Dissemination of "
+#~ "project activities.&lt;/span&gt;&lt;/li&gt;\n"
+#~ "&lt;/ul&gt;\n"
+#~ "&lt;p&gt;Starting motivation&lt;span style=&quot;font-"
+#~ "size: 1em; line-height: "
+#~ "19.2px;&quot;&gt;&lt;/span&gt;&lt;/p&gt;"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>Introductory Activity to the project "
+#~ "involving:</p> <ul> <li>Team work</li> "
+#~ "<li>Reflection and motivation</li> <li>Expression"
+#~ " of feelings.</li> </ul> <p style"
+#~ "=\"text-align: center;\"><img "
+#~ "src=\"resources/images_pbl_english.png\" alt=\"\" "
+#~ "width=\"560\" height=\"315\" /></p> <p><strong>Steps"
+#~ " for the suggested activity<span "
+#~ "style=\"color: #ff0000;\"><br /></span></strong></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>First activity. Creation of the "
+#~ "learning diary in the suggested "
+#~ "format.</p> <p>Creation of the first "
+#~ "post heading.</p> <p></p> <p></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<div class=\"block\"> <div id=\"3_93-viewer\"> "
+#~ "<p>Script for writing the post. It "
+#~ "must lead the student to think "
+#~ "about and reflect:</p> <ul> <li>What the"
+#~ " final challenge is</li> <li>What the "
+#~ "assessment will be like</li> <li>What "
+#~ "they will learn</li> <li>How class "
+#~ "groups work</li> </ul> </div> </div>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>What the final mission will be.</p>"
+#~ " <p>What sudents will learn about.</p> "
+#~ "<p style=\"text-align: center;\"><img "
+#~ "src=\"resources/images_pbl_english.png\" alt=\"\" "
+#~ "width=\"560\" height=\"315\" /></p> <p style"
+#~ "=\"text-align: center;\"></p> <p>Starting "
+#~ "activity</p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>General introduction</p> <p>What the "
+#~ "\"final mission\" will be and link "
+#~ "to the assessment rubric.</p> <p style"
+#~ "=\"text-align: center;\"><img "
+#~ "src=\"resources/images_pbl_english.png\" alt=\"\" "
+#~ "width=\"560\" height=\"315\" /></p> <p>What "
+#~ "learning objective this mission helps to"
+#~ " achieve.</p> <p></p> <p></p> <p><strong>Steps"
+#~ " for your mission</strong></p>"
+#~ msgstr ""
+
+#~ msgid "<p>Guidelines to open a new post.</p> <p></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<div id=\"8_93-viewer\"> <div class=\"block\"> "
+#~ "<div id=\"3_93-viewer\"> <div class=\"block\"> "
+#~ "<div id=\"3_93-viewer\"> <div id=\"8_93-viewer\">"
+#~ " <div class=\"block\"> <div id=\"3_93-viewer\">"
+#~ " <div class=\"block\"> <div id=\"3_93-viewer\">"
+#~ " <p>Questions or guidelines for students"
+#~ " to revise and reflect:</p> <ul> "
+#~ "<li>The task they have done</li> <li>The"
+#~ " resources  they have checked</li> "
+#~ "<li>Materials they have created</li> <li>What"
+#~ " they have learnt</li> <li>Difficulties "
+#~ "found.</li> <li>Remaining doubts</li> <li>Class "
+#~ "team functioning</li> </ul> </div> </div> "
+#~ "</div> </div> </div> </div> </div> "
+#~ "</div> </div> </div>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<table style=\"margin-left: auto; margin-"
+#~ "right: auto; width: 624.333px; border-"
+#~ "color: #000000;\" cellspacing=\"4\" "
+#~ "cellpadding=\"4\"><colgroup><col width=\"116\" /><col "
+#~ "width=\"509\" /></colgroup> <tbody> <tr "
+#~ "style=\"height: 35px;\" valign=\"top\"> <td "
+#~ "style=\"height: 35px; border-color: #000000;"
+#~ " width: 248px; text-align: left;\"> "
+#~ "<p><strong>Títle</strong></p> </td> <td "
+#~ "style=\"height: 35px; border-color: #000000;"
+#~ " width: 248px; text-align: left;\"> "
+#~ "<p>...</p> </td> </tr> <tr style=\"height: "
+#~ "35.375px;\" valign=\"top\"> <td style=\"height: "
+#~ "35px; border-color: #000000; width: "
+#~ "248px; text-align: left;\"> "
+#~ "<p><strong>Subject</strong></p> </td> <td "
+#~ "style=\"height: 35px; border-color: #000000;"
+#~ " width: 248px; text-align: left;\"> "
+#~ "<p>...</p> </td> </tr> <tr style=\"height: "
+#~ "35px;\" valign=\"top\"> <td style=\"height: "
+#~ "35px; border-color: #000000; width: "
+#~ "248px; text-align: left;\"> <p><strong>Level"
+#~ " / course<br /></strong></p> </td> <td "
+#~ "style=\"height: 35px; border-color: #000000;"
+#~ " width: 248px; text-align: left;\"> "
+#~ "<p>...</p> </td> </tr> <tr style=\"height: "
+#~ "35px;\" valign=\"top\"> <td style=\"height: "
+#~ "35px; border-color: #000000; width: "
+#~ "248px; text-align: left;\"> <p><strong>Final"
+#~ " project<br /></strong></p> </td> <td "
+#~ "style=\"height: 35px; border-color: #000000;"
+#~ " width: 248px; text-align: left;\"> "
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span size=\"3\">...<br "
+#~ "/></span></span></span></p> </td> </tr> <tr "
+#~ "style=\"height: 35px;\" valign=\"top\"> <td "
+#~ "style=\"height: 35px; border-color: #000000;"
+#~ " width: 248px; text-align: left;\"> "
+#~ "<p><strong>Contents</strong></p> </td> <td "
+#~ "style=\"height: 35px; border-color: #000000;"
+#~ " width: 248px; text-align: left;\"> "
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span "
+#~ "size=\"3\">..</span></span></span></p> </td> </tr> "
+#~ "<tr style=\"height: 35px;\" valign=\"top\"> "
+#~ "<td style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\"> <p><strong>Timing</strong></p> </td> <td"
+#~ " style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\"> <p><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">...</span></span></span></p> </td> </tr> "
+#~ "</tbody> </table> <p></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p><span>Resource structure<br /></span></p> "
+#~ "<p><span>Types of tasks and "
+#~ "activities</span></p> <p>Methodological approach</p> "
+#~ "<p>Use of the learning diary</p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p></p> <table style=\"width: 95.5125%;\" "
+#~ "cellspacing=\"0\" cellpadding=\"4\"><colgroup><col "
+#~ "width=\"64*\" /> <col width=\"96*\" /> "
+#~ "<col width=\"96*\" /></colgroup> <tbody> <tr"
+#~ " valign=\"top\"> <td style=\"width: 35%; "
+#~ "text-align: left;\"> <h3 style=\"text-"
+#~ "align: left;\" align=\"center\"><strong><span "
+#~ "color=\"#000000\"><span face=\"Liberation Serif, "
+#~ "serif\"><span "
+#~ "size=\"3\">Steps</span></span></span></strong></h3> </td> "
+#~ "<td style=\"width: 47%; text-align: "
+#~ "left;\"> <h3 style=\"text-align: left;\" "
+#~ "align=\"center\"><strong><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">Main aim</span></span></span></strong></h3> "
+#~ "</td> <td style=\"width: 36.5786%;\"> <h3 "
+#~ "align=\"center\"><strong><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">Timing</span></span></span></strong></h3> </td> "
+#~ "</tr> <tr valign=\"top\"> <td style=\"width:"
+#~ " 35%;\"> <p><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">Before you start</span></span></span></p> "
+#~ "</td> <td style=\"width: 47%;\"> <p><span "
+#~ "color=\"#000000\"><span face=\"Liberation Serif, "
+#~ "serif\"><span size=\"3\">...</span></span></span></p> "
+#~ "</td> <td style=\"width: 36.5786%; text-"
+#~ "align: center;\"> <p><span color=\"#000000\"><span"
+#~ " face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">...sessions</span></span></span></p> </td> "
+#~ "</tr> <tr valign=\"top\"> <td style=\"width:"
+#~ " 35%;\"> <p><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">Breaking the ice<br "
+#~ "/></span></span></span></p> </td> <td style=\"width:"
+#~ " 47%;\"> <p><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">...</span></span></span></p> </td> <td "
+#~ "style=\"width: 36.5786%; text-align: "
+#~ "center;\"> <p><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">...sessions</span></span></span></p> </td> "
+#~ "</tr> <tr valign=\"top\"> <td style=\"width:"
+#~ " 35%;\"> <p><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">(Mission 1)<br /></span></span></span></p> "
+#~ "</td> <td style=\"width: 47%;\"> <p><span "
+#~ "size=\"2\" style=\"font-size: "
+#~ "small;\">...</span></p> </td> <td style=\"width: "
+#~ "36.5786%; text-align: center;\"><span "
+#~ "color=\"#000000\"><span face=\"Liberation Serif, "
+#~ "serif\"><span size=\"3\">...sessions</span></span></span></td>"
+#~ " </tr> <tr valign=\"top\"> <td "
+#~ "style=\"width: 35%;\"> <p><span "
+#~ "color=\"#000000\"><span face=\"Liberation Serif, "
+#~ "serif\"><span size=\"3\">(Mission "
+#~ "2)</span></span></span></p> </td> <td style=\"width:"
+#~ " 47%;\"> <p><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">...</span></span></span></p> </td> <td "
+#~ "style=\"width: 36.5786%; text-align: "
+#~ "center;\"> <p><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">...sessions</span></span></span></p> </td> "
+#~ "</tr> <tr valign=\"top\"> <td style=\"width:"
+#~ " 35%;\"> <p><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">(Mission 3)</span></span></span></p> </td> "
+#~ "<td style=\"width: 47%;\"> <p><span "
+#~ "color=\"#000000\"><span face=\"Liberation Serif, "
+#~ "serif\"><span size=\"3\">...</span></span></span></p> "
+#~ "</td> <td style=\"width: 36.5786%; text-"
+#~ "align: center;\"> <p><span color=\"#000000\"><span"
+#~ " face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">...sessions</span></span></span></p> </td> "
+#~ "</tr> <tr valign=\"top\"> <td style=\"width:"
+#~ " 35%;\"> <p><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">(Final Challenge)<br "
+#~ "/></span></span></span></p> </td> <td style=\"width:"
+#~ " 47%;\"> <p><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">...</span></span></span></p> </td> <td "
+#~ "style=\"width: 36.5786%; text-align: "
+#~ "center;\"> <p><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span size=\"3\">3"
+#~ " sessions</span></span></span></p> </td> </tr> "
+#~ "</tbody> </table> <p></p> <h3><span "
+#~ "style=\"color: #008080;\"><span>Interdisciplinary "
+#~ "nature</span></span></h3> <p>Recommendations to "
+#~ "involve other subjects</p> <p></p> <p></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p><span>Link to the final rubric of "
+#~ "the project.</span></p> <p>Assessment "
+#~ "recommendations / resources of each "
+#~ "task.</p> <p>Assessment criteria and guidance"
+#~ " on how to assess.</p> <p>Contents /"
+#~ " learning standards and key "
+#~ "competences.</p> <p></p>"
+#~ msgstr ""
 

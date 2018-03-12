@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.1.4\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2018-03-05 20:38+0100\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage: tr\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.1.4\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2018-03-12 17:59+0100\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage: tr\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "Title": "Ba\u015fl\u0131k", 
  "Text Line": "Yaz\u0131 Sat\u0131r\u0131", 
  "Quit": "\u00c7\u0131k", 
