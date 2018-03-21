@@ -40,6 +40,7 @@ Ext.define('eXe.view.forms.HelpContainer', {
                     {
                         xtype: 'image',
                         src: '/images/info.png',
+                        alt: _('Information'),
                         margin: '2 0 0 2',
                         height: 20,
                         width: 20,
