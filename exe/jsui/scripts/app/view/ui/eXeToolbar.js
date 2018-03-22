@@ -83,6 +83,11 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 
     initComponent: function() {
         var me = this;
+        
+        function getSRhelp(str){
+            return '<span class="exe-sr-only"> ('+str+')</span>'
+        }
+
         Ext.applyIf(me, {
             items: [
                 {
@@ -198,7 +203,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'accesskey_menuitem',
-                                text: _('Export'),
+                                text: _('Export') + getSRhelp(_("use the right arrow key")),
                                 accesskey: 'e',
                                 menu: {
                                     xtype: 'menu',
