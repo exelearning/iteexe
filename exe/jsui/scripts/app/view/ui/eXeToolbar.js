@@ -705,9 +705,10 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 
 
 // Save reminder (#287)
-var eXeSaveReminder = {
+Ext.define('eXeSaveReminder', {
+    singleton: true,
 	delay: eXe.app.config.autosaveTime, // Minutes
-	isOpen: false,
+    isOpen: false,
 	init: function() {
         Ext.util.Cookies.clear('eXeSaveReminderPreference');
         if (eXeSaveReminder.delay == 0) {
@@ -717,13 +718,20 @@ var eXeSaveReminder = {
 		if (eXeSaveReminderCookie && eXeSaveReminderCookie=='doNotWarn') return;
 
 		if (!eXeSaveReminderCookie) Ext.util.Cookies.set('eXeSaveReminderPreference', 'warn');
+        eXeSaveReminder.checkDirty();
+    },
+    checkDirty: function (dirty){
+        setTimeout(function(){
+            eXe.app.getController('Toolbar').checkDirty('eXeSaveReminder.checkDirty()', 'eXeSaveReminder.showWarnWindow()');
+        }, 5000);
 
-		if (typeof(eXeSaveReminderInterval)!='undefined') clearInterval(eXeSaveReminderInterval);
-		eXeSaveReminderInterval = setInterval(eXeSaveReminder.warn, (eXeSaveReminder.delay*60*1000));
-	},
+    },
+    showWarnWindow: function () {
+        setTimeout(function() {eXeSaveReminder.warn()}, (eXeSaveReminder.delay * 60 * 1000));
+    },
 	warn: function() {
 
-		if (eXeSaveReminder.isOpen == true) return;
+        if (eXeSaveReminder.isOpen == true) return;
 
 		var eXeSaveReminderCookie = Ext.util.Cookies.get('eXeSaveReminderPreference');
 		if (eXeSaveReminderCookie && eXeSaveReminderCookie=='doNotWarn') return;
@@ -742,9 +750,10 @@ var eXeSaveReminder = {
 					// Save
 					eXe.app.getController('Toolbar').fileSave();
 				}
-				eXeSaveReminder.isOpen = false;
+                eXeSaveReminder.isOpen = false;
+                eXeSaveReminder.checkDirty();
 			}
 		});
 	}
-}
-Ext.onReady(eXeSaveReminder.init, eXeSaveReminder)
+});
+Ext.onReady(eXeSaveReminder.init, eXeSaveReminder);
