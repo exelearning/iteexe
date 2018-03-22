@@ -30,7 +30,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
             bodyPadding: 4,
             items: [{
                 xtype: 'tabpanel',
-                height: 310,
+                height: 340,
                 activeTab: 0,
                 plain: true,
                 items: [
@@ -144,7 +144,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 
 							]
 						}]
-					}, 
+					},
 					// /Tab0
 					//Tab1
 					{
@@ -167,7 +167,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									],
 									style: {
 										//marginBottom: '10px'
-									}								
+									}
 								},
 								margin: 10,
 								help: _('The current document format can be modified in the Properties tab')
@@ -261,12 +261,33 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 								margin: 10,
 								help: _('If "ISO 9660" is selected, file names will be cut to 8.3 format to be compliant with ISO 9660. Note: This option only works with SCORM and Web Site export types.')
 							},
+							//Time to autosave window
+							{
+								xtype: 'helpcontainer',
+								item: {
+									xtype: 'combobox',
+									inputId: 'autosaveTime',
+									dirtyCls: 'property-form-dirty',
+									labelWidth: 325,
+									fieldLabel: _('Time to remind the user about saving (in minutes)'),
+									store: [
+										["0", _("Never") ],
+										["5", "5" ],
+										["10", "10" ],
+										["15", "15" ],
+										["20", "20" ],
+										["30", "30" ]
+									]
+								},
+								margin: 10,
+								help: _('By enabling this, a confirmation dialog will be shown after the selected amount of time to remind the user that he/she should save his/her work.')
+							},
 							{
 								xtype: 'label',
 								forId: 'defaultLicense',
 								text:  _("Default license for the new documents"),
 								margin: '0 0 0 10'
-							}, 							
+							},
 							{
 								xtype: 'helpcontainer',
 								item: {
@@ -291,7 +312,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 									}
 								},
 								margin: '5 10 10 10',
-								help: _('The current document license can be modified in the Properties tab.')								
+								help: _('The current document license can be modified in the Properties tab.')
 							}
 						]
 					},
@@ -302,7 +323,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                 layout: 'hbox',
                 style: {
 					marginTop: '10px'
-				},			
+				},
                 items: [{
                     xtype: 'button',
                     text: _('Save'),

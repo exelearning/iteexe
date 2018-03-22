@@ -83,7 +83,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 
     initComponent: function() {
         var me = this;
-        
+
         function getSRhelp(str){
             if (!str) var str = _("use the right arrow key");
             return '<span class="exe-sr-only"> ('+str+')</span>'
@@ -130,7 +130,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                                 xtype: 'menu',
                                                 itemId: 'templates_menu'
                                             }
-                                        }                                        
+                                        }
                                     ]
                                 }
                             },
@@ -195,7 +195,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             xtype: 'accesskey_menuitem',
                                             itemId: 'tools_templatemanager',
                                             text: _('Manage')
-                                        }                                        
+                                        }
                                     ]
                                 }
                             },
@@ -216,7 +216,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             accesskey: 'e',
                                             menu: {
                                                 xtype: 'menu',
-                                                items: [ 
+                                                items: [
                                                     {
                                                         xtype: 'accesskey_menuitem',
                                                         text: _('Common Cartridge'),
@@ -307,7 +307,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             text: _('Single Page'),
                                             accesskey: 't',
                                             itemId: 'file_export_singlepage_b'
-                                        },										
+                                        },
                                         {
                                             xtype: 'accesskey_menuitem',
                                             text: _('EPUB3'),
@@ -327,7 +327,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             text: _('IMS'),
                                             accesskey: 'i',
                                             itemId: 'file_export_ims'
-                                        }										
+                                        }
                                     ]
                                 }
                             },
@@ -339,7 +339,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 accesskey: 'l',
                                 menu: {
                                     xtype: 'menu',
-                                    items: 
+                                    items:
                                     [
                                         {
                                             xtype: 'accesskey_menuitem',
@@ -349,11 +349,11 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         },
                                     ]
                                 },
-                            },                            
+                            },
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'menuseparator'
-                            },                            
+                            },
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
@@ -421,17 +421,17 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         }
                                     ]
                                 }
-                            },                            
+                            },
                             {
                                 xtype: 'menuseparator'
-                            },                            
+                            },
                             {
                                 xtype: 'accesskey_menuitem',
                                 text: _('Print'),
                                 accesskey: 'p',
                                 tooltip: 'Ctrl+P',
                                 itemId: 'file_print'
-                            },                            
+                            },
                             {
                                 xtype: 'menuseparator'
                             },
@@ -452,7 +452,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                     accesskey: 't',
                     menu: {
                         xtype: 'menu',
-                        items: [						
+                        items: [
                             {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_preferences',
@@ -468,7 +468,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'menuseparator'
-                            },                            
+                            },
                             {
                             	cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
@@ -498,25 +498,25 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     ]
                                 }
                             },
-                            // / Style designer	
+                            // / Style designer
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_idevice',
                                 accesskey: 'i',
                                 text: _('iDevice Editor')
-                            },                            
+                            },
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_resourcesreport',
                                 accesskey: 'r',
                                 text: _('Resources Report')
-                            },                            
+                            },
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'menuseparator'
-                            },                            
+                            },
                             {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_refresh',
@@ -557,10 +557,10 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 itemId: 'help_assistant',
                                 accesskey: 'a',
                                 text: _('Assistant')
-                            },                        
+                            },
                             {
                                 xtype: 'menuseparator'
-                            },                        
+                            },
                             {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'help_tutorial',
@@ -641,19 +641,19 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             // checked: true,
 							listeners : {
                                 change: function(e, newValue) {
-									
+
 									var descriptionLabel = Ext.DomQuery.select("label[for=pp_description]");
-                                    
+
 									if (newValue==true) {
 										if (!Ext.util.Cookies.get('eXeUIversion')) {
 											Ext.Msg.alert(
-												_('Info'), 
+												_('Info'),
 												_('Checking this option will show more elements in the menus (File, Tools...) and the Properties tab.')
 											);
 										}
 										Ext.util.Cookies.set('eXeUIversion', 'advanced');
 										Ext.select("BODY").removeCls('exe-simplified');
-										Ext.select("BODY").addCls('exe-advanced');	
+										Ext.select("BODY").addCls('exe-advanced');
 										// Change some strings:
 										if (descriptionLabel && descriptionLabel.length==1) descriptionLabel[0].innerHTML = _("General") + ":";
                                     } else {
@@ -661,7 +661,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         Ext.select("BODY").removeCls('exe-advanced');
 										Ext.select("BODY").addCls('exe-simplified');
 										// Change some strings:
-										if (descriptionLabel && descriptionLabel.length==1) descriptionLabel[0].innerHTML = _("General description") + ":";										
+										if (descriptionLabel && descriptionLabel.length==1) descriptionLabel[0].innerHTML = _("General description") + ":";
 										// Show Properties - Package
 										var e1 = document.getElementById("eXePropertiesTab");
 										if (e1) {
@@ -672,7 +672,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 													if (span.length==2 && span[0].innerHTML==_("Package")) e2[i].click();
 												}
 											}
-										}										
+										}
                                     }
 									// Refresh some components
 									try {
@@ -682,13 +682,13 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             }
                         }
                     ]
-                }                
-                // / Advanced user                
+                }
+                // / Advanced user
             ]
         });
 
         me.callParent(arguments);
-		
+
 		// Advanced user
 		// Get the cookie or set the default value (simplified)
 		var eXeUIversion = Ext.util.Cookies.get('eXeUIversion');
@@ -706,42 +706,45 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 
 // Save reminder (#287)
 var eXeSaveReminder = {
-	delay: 10, // Minutes
+	delay: eXe.app.config.autosaveTime, // Minutes
 	isOpen: false,
 	init: function() {
-		
-		var eXeSaveReminderCookie = Ext.util.Cookies.get('eXeSaveReminderPreference');
+        Ext.util.Cookies.clear('eXeSaveReminderPreference');
+        if (eXeSaveReminder.delay == 0) {
+            Ext.util.Cookies.set('eXeSaveReminderPreference', 'doNotWarn');
+        }
+        var eXeSaveReminderCookie = Ext.util.Cookies.get('eXeSaveReminderPreference');
 		if (eXeSaveReminderCookie && eXeSaveReminderCookie=='doNotWarn') return;
-		
-		if (!eXeSaveReminderCookie) Ext.util.Cookies.set('eXeSaveReminderPreference', 'warn');	
-		
+
+		if (!eXeSaveReminderCookie) Ext.util.Cookies.set('eXeSaveReminderPreference', 'warn');
+
 		if (typeof(eXeSaveReminderInterval)!='undefined') clearInterval(eXeSaveReminderInterval);
 		eXeSaveReminderInterval = setInterval(eXeSaveReminder.warn, (eXeSaveReminder.delay*60*1000));
 	},
 	warn: function() {
-		
+
 		if (eXeSaveReminder.isOpen == true) return;
-		
+
 		var eXeSaveReminderCookie = Ext.util.Cookies.get('eXeSaveReminderPreference');
-		if (eXeSaveReminderCookie && eXeSaveReminderCookie=='doNotWarn') return;			
-		
+		if (eXeSaveReminderCookie && eXeSaveReminderCookie=='doNotWarn') return;
+
 		eXeSaveReminder.isOpen = true;
-		
+
 		Ext.MessageBox.show({
-			title: _("Warning!"), 
+			title: _("Warning!"),
 			msg: _("You've been working for a long time without saving.") + '<br /><br />' + _("Do you want to save now?") + '<br /><br /><label for="hide_eXeSaveReminder"><input type="checkbox" id="hide_eXeSaveReminder" /> '+_("Hide until the application is closed")+'</label>',
 			buttons: Ext.MessageBox.OKCANCEL,
 			fn: function(btn) {
 				if( btn == 'ok') {
 					if (document.getElementById("hide_eXeSaveReminder").checked){
-						Ext.util.Cookies.set('eXeSaveReminderPreference', 'doNotWarn');	
+						Ext.util.Cookies.set('eXeSaveReminderPreference', 'doNotWarn');
 					}
 					// Save
 					eXe.app.getController('Toolbar').fileSave();
 				}
 				eXeSaveReminder.isOpen = false;
 			}
-		});			
-	}	
+		});
+	}
 }
 Ext.onReady(eXeSaveReminder.init, eXeSaveReminder)

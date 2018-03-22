@@ -34,7 +34,7 @@ Ext.define('eXe.controller.Toolbar', {
     	ref: 'templatesMenu',
     	selector: '#templates_menu'
     }
-    ],    
+    ],
     init: function() {
         this.control({
             '#file': {
@@ -118,8 +118,8 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#file_export_singlepage_b': {
                 click: { fn: this.processExportEvent, exportType: "singlePage" }
-            },			
-            // / Advanced user			
+            },
+            // / Advanced user
             '#file_export_procomun': {
                 click: { fn: this.exportProcomun }
             },
@@ -173,7 +173,7 @@ Ext.define('eXe.controller.Toolbar', {
             },
             // Style designer
             // To do:
-            /* 
+            /*
                 nav.css:
                 overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:200px should be applied to #headerContent
             */
@@ -183,7 +183,7 @@ Ext.define('eXe.controller.Toolbar', {
             '#style_designer_edit_style': {
                 click: this.styleDesigner.editStyle
             },
-            // / Style designer            
+            // / Style designer
             '#tools_preferences': {
                 click: this.toolsPreferences
             },
@@ -211,7 +211,7 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#help_assistant_simplified': {
                 click: this.assistantPage
-            },             
+            },
             '#help_notes': {
                 click: { fn: this.releaseNotesPage }
             },
@@ -235,7 +235,7 @@ Ext.define('eXe.controller.Toolbar', {
                 click: this.aboutPage
             }
         });
-        
+
         this.keymap_config = [
 			{
 				key: Ext.EventObject.N,
@@ -353,7 +353,7 @@ Ext.define('eXe.controller.Toolbar', {
     fileNewWindow: function() {
         window.open(location.href);
     },
-    
+
     assistantPage: function() {
         if (typeof(eXeAssistantPageIsOpen)!='undefined' && eXeAssistantPageIsOpen==true) {
             eXeAssistantPage.close(true);
@@ -383,11 +383,11 @@ Ext.define('eXe.controller.Toolbar', {
                 'close': function(){
                     eXeAssistantPageIsOpen = false;
                 }
-            }          
+            }
         });
         eXeAssistantPageIsOpen = true;
         eXeAssistantPage.show();
-    }, 
+    },
 
     aboutPage: function() {
         var about = new Ext.Window ({
@@ -444,7 +444,7 @@ Ext.define('eXe.controller.Toolbar', {
     browseURL: function(url) {
         nevow_clientToServerEvent('browseURL', this, '', url);
     },
-    
+
     processBrowseEvent: function(menu, item, e, eOpts) {
         this.browseURL(e.url)
     },
@@ -453,19 +453,19 @@ Ext.define('eXe.controller.Toolbar', {
     // fileOpenTutorial: function() {
     //    this.askDirty("eXe.app.getController('Toolbar').fileOpenTutorial2()");
     // },
-    
+
     // fileOpenTutorial2: function() {
     //     nevow_clientToServerEvent('loadTutorial', this, '');
     // },
-    
+
     toolsRefresh: function() {
         eXe.app.reload();
     },
 
     toolsPreferences: function() {
         var preferences = new Ext.Window ({
-	          height: 390, 
-	          width: 650, 
+	          height: 420,
+	          width: 650,
 	          modal: true,
 	          id: 'preferenceswin',
 	          title: _("Preferences"),
@@ -476,17 +476,17 @@ Ext.define('eXe.controller.Toolbar', {
 	        }),
             formpanel = preferences.down('form');
         formpanel.load({url: 'preferences', method: 'GET'});
-        preferences.show();        
+        preferences.show();
 	},
-	
+
     // Launch the iDevice Editor Window
 	toolsIdeviceEditor: function() {
         var editor = new Ext.Window ({
-          height: eXe.app.getMaxHeight(700), 
-          width: 800, 
+          height: eXe.app.getMaxHeight(700),
+          width: 800,
           modal: true,
           id: 'ideviceeditorwin',
-          title: _("iDevice Editor"), 
+          title: _("iDevice Editor"),
           items: {
               xtype: 'uxiframe',
               src: '/editor',
@@ -506,18 +506,18 @@ Ext.define('eXe.controller.Toolbar', {
                         }
                     }
                 });
-                return false;                
+                return false;
             }
           }
         });
-        editor.show();        
+        editor.show();
 	},
-    
+
 	// JRJ: Launch the Style Manager Window
 	toolsStyleManager: function() {
         var stylemanager = new Ext.Window ({
-          maxHeight: eXe.app.getMaxHeight(800), 
-          width: 500, 
+          maxHeight: eXe.app.getMaxHeight(800),
+          width: 500,
           modal: true,
           autoShow: true,
           autoScroll: true,
@@ -528,13 +528,13 @@ Ext.define('eXe.controller.Toolbar', {
               xtype: 'stylemanager'
           }
         });
-        stylemanager.show();        
+        stylemanager.show();
 	},
 	// Launch the Template Manager
 	toolsTemplateManager: function() {
         var templatemanager = new Ext.Window ({
-          maxHeight: eXe.app.getMaxHeight(800), 
-          width: 500, 
+          maxHeight: eXe.app.getMaxHeight(800),
+          width: 500,
           modal: true,
           autoShow: true,
           autoScroll: true,
@@ -545,15 +545,15 @@ Ext.define('eXe.controller.Toolbar', {
               xtype: 'templatemanager'
           }
         });
-        templatemanager.show();        
+        templatemanager.show();
 	},
-	
+
 	// Style designer
 	styleDesigner : {
 		open : function(btn, text){
 			var lang = "en"; // Default language
 			var l = document.documentElement.lang;
-			if (l && l!="") lang = l;				
+			if (l && l!="") lang = l;
 			styleDesignerWindow = window.open("/tools/style-designer/previews/website/?lang="+lang);
 		},
 		notCompatible : function(){
@@ -561,7 +561,7 @@ Ext.define('eXe.controller.Toolbar', {
 		},
 		error : function(){
 			Ext.Msg.alert(_('Error'), _("An unknown error occurred."));
-		},	
+		},
 		createNewStyleInstead : function(){
 			Ext.Msg.alert(_('Information'), _("That's one of eXe's default Styles, and it cannot be edited.\n\nPlease choose a different style or create a new one."));
 		},
@@ -570,7 +570,7 @@ Ext.define('eXe.controller.Toolbar', {
 		},
 		editStyle : function(){
 			var stylePath = this.styleDesigner.getCurrentStyleFilePath();
-			
+
 			// We check if the Style is in the list exelearning-default-styles.txt
 			// In that case, you cannot edit it
 			var styleName = stylePath.replace("/style/","").split("/")[0];
@@ -599,7 +599,7 @@ Ext.define('eXe.controller.Toolbar', {
 									var lang = "en"; // Default language
 									var l = document.documentElement.lang;
 									if (l && l!="") lang = l;
-									styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId()+"&lang="+lang);		
+									styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId()+"&lang="+lang);
 								}
 							},
 							error: function(){
@@ -612,7 +612,7 @@ Ext.define('eXe.controller.Toolbar', {
 					this.styleDesigner.error();
 				}
 			});
-			
+
 		},
 		getCurrentStyleId : function(){
 			var id = this.getCurrentStyleFilePath();
@@ -624,8 +624,8 @@ Ext.define('eXe.controller.Toolbar', {
 			return document.getElementsByTagName("IFRAME")[0].contentWindow.exe_style;
 		}
 	},
-	// / Style designer    
-    
+	// / Style designer
+
     fileQuit: function() {
 	    this.saveWorkInProgress();
 	    this.askDirty("eXe.app.getController('Toolbar').doQuit()", "quit");
@@ -657,7 +657,7 @@ Ext.define('eXe.controller.Toolbar', {
             { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
             ]
         );
-        f.show();        
+        f.show();
 	},
 
 	extractPackage: function() {
@@ -678,7 +678,7 @@ Ext.define('eXe.controller.Toolbar', {
             { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
             ]
         );
-        f.show();        
+        f.show();
 	},
 
     importHtml: function(){
@@ -733,12 +733,12 @@ Ext.define('eXe.controller.Toolbar', {
         ]);
         fp.show();
     },
-    
+
     updateImportProgressWindow: function(msg) {
         if (!this.importProgressDisabled)
             this.importProgress.updateText(msg);
     },
-    
+
     initImportProgressWindow: function(title) {
         this.importProgressDisabled = false;
         this.importProgress = Ext.Msg.show( {
@@ -765,9 +765,9 @@ Ext.define('eXe.controller.Toolbar', {
                     });
                 }
             }
-        });        
+        });
     },
-    
+
     closeImportProgressWindow: function() {
         this.importProgress.destroy();
     },
@@ -781,8 +781,8 @@ Ext.define('eXe.controller.Toolbar', {
             callback: function(fp) {
                 if (fp.status == eXe.view.filepicker.FilePicker.returnOk) {
                     var preferences = new Ext.Window ({
-                      height: 220, 
-                      width: 650, 
+                      height: 220,
+                      width: 650,
                       modal: true,
                       id: 'xliffimportwin',
                       title: _("XLIFF Import Preferences"),
@@ -911,14 +911,14 @@ Ext.define('eXe.controller.Toolbar', {
             { "typename": _("XLIFF Files"), "extension": "*.xlf", "regex": /.*\.xlf$/ },
             { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
         ]);
-        fp.show();            
+        fp.show();
     },
 
     processExportEvent: function(menu, item, e, eOpts) {
         this.saveWorkInProgress();
         this.exportPackage(e.exportType, "");
     },
-    
+
     exportProcomun: function() {
         this.saveWorkInProgress();
         nevow_clientToServerEvent('exportProcomun', this, '');
@@ -1067,28 +1067,28 @@ Ext.define('eXe.controller.Toolbar', {
 	            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
 	            ]
 	        );
-	        fp.show();            
+	        fp.show();
 	    }
 	},// exportPackage()
-    
+
     filePrint: function() {
-	   // filePrint step#1: create a temporary print directory, 
+	   // filePrint step#1: create a temporary print directory,
 	   // and return that to filePrint2, which will then call exportPackage():
 	   var tmpdir_suffix = ""
 	   var tmpdir_prefix = "eXeTempPrintDir_"
-	   nevow_clientToServerEvent('makeTempPrintDir', this, '', tmpdir_suffix, 
+	   nevow_clientToServerEvent('makeTempPrintDir', this, '', tmpdir_suffix,
 	                              tmpdir_prefix, "eXe.app.getController('Toolbar').filePrint2")
-	   // note: as discussed below, at the end of filePrint3_openPrintWin(), 
+	   // note: as discussed below, at the end of filePrint3_openPrintWin(),
 	   // the above makeTempPrintDir also removes any previous print jobs
 	},
-	
+
 	filePrint2: function(tempPrintDir, printDir_warnings) {
 	   if (printDir_warnings.length > 0) {
 	      Ext.Msg.alert("", printDir_warnings)
 	   }
 	   this.exportPackage('printSinglePage', tempPrintDir);
 	},
-	
+
     recentRender: function() {
     	Ext.Ajax.request({
     		url: location.pathname + '/recentMenu',
@@ -1111,7 +1111,7 @@ Ext.define('eXe.controller.Toolbar', {
     	})
     	return true;
     },
-    
+
     stylesRender: function() {
     	Ext.Ajax.request({
     		url: location.pathname + '/styleMenu',
@@ -1138,7 +1138,7 @@ Ext.define('eXe.controller.Toolbar', {
 				var templates = Ext.JSON.decode(response.responseText),
 					menu = this.getTemplatesMenu(), i, item;
 					menu.removeAll();
-				
+
     			for (i = templates.length-1; i >= 0; i--) {
                     item = Ext.create('Ext.menu.Item', { text: templates[i].label, path: templates[i].template });
     				menu.insert(0, item);
@@ -1148,7 +1148,7 @@ Ext.define('eXe.controller.Toolbar', {
     	return true;
     },
 
-    
+
     recentClick: function(item) {
     	if (item.itemId == "file_clear_recent") {
     		nevow_clientToServerEvent('clearRecent', this, '');
@@ -1156,14 +1156,14 @@ Ext.define('eXe.controller.Toolbar', {
     			items = menu.items.items.slice(),
     			i = 0,
     			len = items.length;
-    		for (; i < len; i++) 
+    		for (; i < len; i++)
     			if (items[i].text[1] == ".")
     				menu.remove(items[i], true);
     	}
     	else
     		this.askDirty("eXe.app.getController('Toolbar').fileOpenRecent2('" + item.text[0] + "');")
     },
-	
+
     executeStylesClick: function(item) {
 		for (var i = item.parentMenu.items.length-1; i >= 0; i--) {
 			if (item.parentMenu.items.getAt(i) != item)
@@ -1179,7 +1179,7 @@ Ext.define('eXe.controller.Toolbar', {
         if (authoring)
             authoring.submitLink("ChangeStyle", item.itemId, 1);
     },
-    
+
     stylesClick: function(item) {
         var ed = this.getTinyMCEFullScreen();
         if(ed!="") {
@@ -1189,7 +1189,7 @@ Ext.define('eXe.controller.Toolbar', {
             },500);
         } else this.executeStylesClick(item);
     },
-    
+
     executeTemplatesClick: function(path) {
     	nevow_clientToServerEvent('loadTemplate', this, '', path)
     },
@@ -1205,16 +1205,16 @@ Ext.define('eXe.controller.Toolbar', {
         Ext.Msg.wait(_('Loading package...'));
 	    nevow_clientToServerEvent('loadRecent', this, '', number)
 	},
-	
+
     fileNew: function() {
     	// Ask the server if the current package is dirty
     	this.askDirty("eXe.app.gotoUrl('/')");
 	},
-	
+
     fileOpen: function() {
     	this.askDirty("eXe.app.getController('Toolbar').fileOpen2()");
     },
-    
+
     fileOpen2: function() {
 		var f = Ext.create("eXe.view.filepicker.FilePicker", {
 			type: eXe.view.filepicker.FilePicker.modeOpen,
@@ -1235,11 +1235,11 @@ Ext.define('eXe.controller.Toolbar', {
 		);
 		f.show();
     },
-    
+
     checkDirty: function(ifClean, ifDirty) {
     	nevow_clientToServerEvent('isPackageDirty', this, '', ifClean, ifDirty)
 	},
-	
+
 	askSave: function(onProceed) {
 		Ext.Msg.show({
 			title: _("Save Package first?"),
@@ -1255,7 +1255,7 @@ Ext.define('eXe.controller.Toolbar', {
 			}
 		});
 	},
-    
+
     getTinyMCEFullScreen: function(){
         var ifs = document.getElementsByTagName("IFRAME");
         if (ifs.length==1) {
@@ -1268,13 +1268,13 @@ Ext.define('eXe.controller.Toolbar', {
         }
         return "";
     },
-    
+
     executeFileSave: function(onProceed) {
 	    if (!onProceed || (onProceed && typeof(onProceed) != "string"))
 	        var onProceed = '';
 	    nevow_clientToServerEvent('getPackageFileName', this, '', 'eXe.app.getController("Toolbar").fileSave2', onProceed);
     },
-	
+
 	fileSave: function(onProceed) {
         var ed = this.getTinyMCEFullScreen();
         if(ed!="") {
@@ -1284,7 +1284,7 @@ Ext.define('eXe.controller.Toolbar', {
             },500);
         } else this.executeFileSave(onProceed);
 	},
-	
+
 	fileSave2: function(filename, onDone) {
 	    if (filename) {
 	        this.saveWorkInProgress();
@@ -1302,7 +1302,7 @@ Ext.define('eXe.controller.Toolbar', {
 	        this.fileSaveAs(onDone)
 	    }
 	},
-	
+
 	templateSave: function(onProceed) {
         var ed = this.getTinyMCEFullScreen();
         if(ed!="") {
@@ -1331,9 +1331,9 @@ Ext.define('eXe.controller.Toolbar', {
 		    	}
 			}
 		});
-    
+
     },
-	
+
 	// Called by the user when they want to save their package
 	executeFileSaveAs: function(onDone) {
 		var f = Ext.create("eXe.view.filepicker.FilePicker", {
@@ -1364,7 +1364,7 @@ Ext.define('eXe.controller.Toolbar', {
 		);
 		f.show();
 	},
-    
+
     fileSaveAs: function(onDone) {
         var ed = this.getTinyMCEFullScreen();
         if(ed!="") {
@@ -1374,7 +1374,7 @@ Ext.define('eXe.controller.Toolbar', {
             },500);
         } else this.executeFileSaveAs(onDone);
     },
-	
+
 	// Submit any open iDevices
 	saveWorkInProgress: function() {
 	    // Do a submit so any editing is saved to the server
@@ -1385,7 +1385,7 @@ Ext.define('eXe.controller.Toolbar', {
 		        theForm.submit();
         }
 	},
-	
+
     askDirty: function(nextStep) {
     	this.checkDirty(nextStep, 'eXe.app.getController("Toolbar").askSave("'+nextStep+'")');
     }
