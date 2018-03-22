@@ -632,6 +632,7 @@ Ext.define('eXe.controller.Toolbar', {
 	},
 
     doQuit: function() {
+        Ext.util.Cookies.clear('eXeSaveReminderPreference');
         eXe.app.quitWarningEnabled = false;
         nevow_clientToServerEvent('quit', this, '');
         Ext.get('loading-mask').fadeIn();

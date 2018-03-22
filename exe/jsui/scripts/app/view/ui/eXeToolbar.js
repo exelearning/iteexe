@@ -83,7 +83,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 
     initComponent: function() {
         var me = this;
-
         Ext.applyIf(me, {
             items: [
                 {
@@ -697,3 +696,46 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 		// / Advanced user
     }
 });
+
+
+// Save reminder (#287)
+var eXeSaveReminder = {
+	delay: 10, // Minutes
+	isOpen: false,
+	init: function() {
+		
+		var eXeSaveReminderCookie = Ext.util.Cookies.get('eXeSaveReminderPreference');
+		if (eXeSaveReminderCookie && eXeSaveReminderCookie=='doNotWarn') return;
+		
+		if (!eXeSaveReminderCookie) Ext.util.Cookies.set('eXeSaveReminderPreference', 'warn');	
+		
+		if (typeof(eXeSaveReminderInterval)!='undefined') clearInterval(eXeSaveReminderInterval);
+		eXeSaveReminderInterval = setInterval(eXeSaveReminder.warn, (eXeSaveReminder.delay*60*1000));
+	},
+	warn: function() {
+		
+		if (eXeSaveReminder.isOpen == true) return;
+		
+		var eXeSaveReminderCookie = Ext.util.Cookies.get('eXeSaveReminderPreference');
+		if (eXeSaveReminderCookie && eXeSaveReminderCookie=='doNotWarn') return;			
+		
+		eXeSaveReminder.isOpen = true;
+		
+		Ext.MessageBox.show({
+			title: _("Warning!"), 
+			msg: _("You've been working for a long time without saving.") + '<br /><br />' + _("Do you want to save now?") + '<br /><br /><label for="hide_eXeSaveReminder"><input type="checkbox" id="hide_eXeSaveReminder" /> '+_("Hide until the application is closed")+'</label>',
+			buttons: Ext.MessageBox.OKCANCEL,
+			fn: function(btn) {
+				if( btn == 'ok') {
+					if (document.getElementById("hide_eXeSaveReminder").checked){
+						Ext.util.Cookies.set('eXeSaveReminderPreference', 'doNotWarn');	
+					}
+					// Save
+					eXe.app.getController('Toolbar').fileSave();
+				}
+				eXeSaveReminder.isOpen = false;
+			}
+		});			
+	}	
+}
+Ext.onReady(eXeSaveReminder.init, eXeSaveReminder)
