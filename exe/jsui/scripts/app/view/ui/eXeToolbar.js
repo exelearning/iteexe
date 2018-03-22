@@ -85,6 +85,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
         var me = this;
         
         function getSRhelp(str){
+            if (!str) var str = _("use the right arrow key");
             return '<span class="exe-sr-only"> ('+str+')</span>'
         }
 
@@ -100,7 +101,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                         items: [
                             {
                                 xtype: 'accesskey_menuitem',
-                                text: _('New'),
+                                text: _('New') + getSRhelp(),
                                 accesskey: 'n',
                                 menu: {
                                     xtype: 'menu',
@@ -123,7 +124,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         },
                                         {
                                             xtype: 'accesskey_menuitem',
-                                            text: _('Templates'),
+                                            text: _('Templates') + getSRhelp(),
                                             itemId: 'templates_button',
                                             menu: {
                                                 xtype: 'menu',
@@ -142,7 +143,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'accesskey_menuitem',
-                                text: _('Recent Projects...'),
+                                text: _('Recent Projects...') + getSRhelp(),
                                 accesskey: 'r',
                                 menu: {
                                     xtype: 'menu',
@@ -180,7 +181,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'accesskey_menuitem',
-                                text: _('Templates'),
+                                text: _('Templates') + getSRhelp(),
                                 menu: {
                                     xtype: 'menu',
 	                                itemId: 'templates_options_menu',
@@ -203,7 +204,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'accesskey_menuitem',
-                                text: _('Export') + getSRhelp(_("use the right arrow key")),
+                                text: _('Export') + getSRhelp(),
                                 accesskey: 'e',
                                 menu: {
                                     xtype: 'menu',
@@ -211,7 +212,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         {
                                 	    xtype: 'accesskey_menuitem',
                                             cls: 'exe-advanced',
-                                            text: _('Educational Standard'),
+                                            text: _('Educational Standard') + getSRhelp(),
                                             accesskey: 'e',
                                             menu: {
                                                 xtype: 'menu',
@@ -246,7 +247,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         {
                                             cls: 'exe-advanced',
                                             xtype: 'accesskey_menuitem',
-                                            text: _('Web Site'),
+                                            text: _('Web Site') + getSRhelp(),
                                             accesskey: 'w',
                                             menu: {
                                                 xtype: 'menu',
@@ -333,7 +334,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
-                                text: _('Publish'),
+                                text: _('Publish') + getSRhelp(),
                                 itemId: 'publish',
                                 accesskey: 'l',
                                 menu: {
@@ -356,7 +357,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
-                                text: _('Import'),
+                                text: _('Import') + getSRhelp(),
                                 accesskey: 'i',
                                 menu: {
                                     xtype: 'menu',
@@ -375,7 +376,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         },
                                         {
                                             xtype: 'accesskey_menuitem',
-			                                text: _('Metadata'),
+			                                text: _('Metadata') + getSRhelp(),
 			                                accesskey: 'm',
                                             menu: {
                                                 xtype: 'menu',
@@ -401,7 +402,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
-                                text: _('Merging'),
+                                text: _('Merging') + getSRhelp(),
                                 accesskey: 'm',
                                 menu: {
                                     xtype: 'menu',
@@ -479,7 +480,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
-                                text: _('Style Designer'),
+                                text: _('Style Designer') + getSRhelp(),
                                 menu: {
                                     xtype: 'menu',
                                     items: [
