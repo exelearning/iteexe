@@ -76,7 +76,7 @@ Ext.define('eXe.view.ui.LeftPanel', {
                     features: [{
                        ftype: 'grouping',
                 	   startCollapsed: true,
-                	   groupHeaderTpl: '{name}',
+                	   groupHeaderTpl: '{name}' + '<span class="exe-sr-only"> ('+_("Show")+'/'+_("Hide")+')</span>'
                 	   
                     }],
              	    tbar: [
