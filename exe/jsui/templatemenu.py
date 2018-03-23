@@ -1,6 +1,6 @@
 # -- coding: utf-8 --
 # ===========================================================================
-# eXe 
+# eXe
 # Copyright 2017, CeDeC
 #
 # This program is free software; you can redistribute it and/or modify
@@ -41,23 +41,23 @@ class TemplateMenu(Renderable, Resource):
     name = 'templateMenu'
 
     def __init__(self, parent):
-        """ 
+        """
         Initialize
-        """ 
+        """
         Renderable.__init__(self, parent)
         if parent:
             self.parent.putChild(self.name, self)
         Resource.__init__(self)
         self.client = None
         self.config.templateStore.register(self)
-          
+
     def render(self, request=None):
         """
         Returns a JSON string with the templates
         """
         log.debug("render")
 
-        l = []       
+        l = []
         printableTemplates = [(x.name, x.path) for x in self.config.templateStore.getTemplates()]
 
         def sortfunc(s1, s2):
@@ -65,19 +65,20 @@ class TemplateMenu(Renderable, Resource):
         locale.setlocale(locale.LC_ALL, "")
         printableTemplates.sort(sortfunc)
         for printableTemplate, template in printableTemplates:
-            l.append({ "label": printableTemplate, "template": template})
-        return json.dumps(l).encode('utf-8')     
-    
+            if printableTemplate != self.config.defaultContentTemplate:
+                l.append({ "label": printableTemplate, "template": template})
+        return json.dumps(l).encode('utf-8')
+
     def addTemplate(self, template):
         """
         Adds an Template to the list
         """
         self.client.sendScript('eXe.app.getController("Toolbar").templatesRender()', filter_func=allSessionClients)
-    
+
     def delTemplate(self, template):
         """
         Delete an Template to the list
         """
         self.client.sendScript('eXe.app.getController("Toolbar").templatesRender()', filter_func=allSessionClients)
-    
+
 # ===========================================================================

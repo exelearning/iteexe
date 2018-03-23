@@ -86,7 +86,8 @@ class Config(object):
             'editorVersion',
             'defaultLicense',
             'forceEditableExport',
-            'cutFileName'
+            'cutFileName',
+            'autosaveTime'
         ),
     }
 
@@ -241,6 +242,8 @@ class Config(object):
         
         # Format the files and images to standard ISO 9660
         self.cutFileName = "0"
+        
+        self.autosaveTime = "0"
         
         # Try to make the defaults a little intelligent
         # Under devel trees, webui is the default webdir
@@ -506,6 +509,8 @@ class Config(object):
                 self.forceEditableExport = self.configParser.user.forceEditableExport
             if self.configParser.user.has_option('cutFileName'):
                 self.cutFileName = self.configParser.user.cutFileName
+            if self.configParser.user.has_option('autosaveTime'):
+                self.autosaveTime = self.configParser.user.autosaveTime
 
     def onWrite(self, configParser):
         """

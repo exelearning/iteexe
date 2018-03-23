@@ -134,7 +134,7 @@ class MainPage(RenderableLivePage):
             self.package._levelNames = copy.copy(template._levelNames)
             self.package.idevices = copy.copy(template.idevices)
 
-            # TODO: This should be done properly 
+            # TODO: This should be done properly
             self.package.description = copy.copy(template.description)
             self.package.title = copy.copy(template.title)
             self.package.footer = copy.copy(template.footer)
@@ -148,7 +148,7 @@ class MainPage(RenderableLivePage):
             self.package.root = self.package._nodeIdDict['0']
             self.package.currentNode = self.package._nodeIdDict['0']
 
-            # Delete the template as we don't need it in memory anymore 
+            # Delete the template as we don't need it in memory anymore
             del template
 
             # We have to go through all nodes to add the correct reference
@@ -161,7 +161,7 @@ class MainPage(RenderableLivePage):
             self.package.isChanged = False
 
         # Call parent's renderHTTP method
-        return super(MainPage, self).renderHTTP(ctx) 
+        return super(MainPage, self).renderHTTP(ctx)
 
     def child_authoring(self, ctx):
         """
@@ -293,7 +293,8 @@ class MainPage(RenderableLivePage):
             'loadErrors': G.application.loadErrors,
             'showIdevicesGrouped': G.application.config.showIdevicesGrouped == '1',
             'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (self.package.name, IClientHandle(ctx).handleId),
-            'pathSep': os.path.sep
+            'pathSep': os.path.sep,
+            'autosaveTime': float(G.application.config.autosaveTime)
         }
 
         # When working with chinese, we need to add the full language string
@@ -342,7 +343,7 @@ class MainPage(RenderableLivePage):
             client.sendScript(ifDirty)
         else:
             client.sendScript(ifClean)
-            
+
     def handleIsPackageTemplate(self, client, ifTemplate, ifNotTemplate):
         """
         Called by js to know if the package is a template or not.
@@ -380,7 +381,7 @@ class MainPage(RenderableLivePage):
                 msg = u'%s\n%s' % (msg, explanation)
                 client.alert(msg)
                 raise Exception(msg)
-        
+
         # When saving a template, we don't check for the filename
         # before this state, so we have to check for duplicates
         # here
@@ -389,7 +390,7 @@ class MainPage(RenderableLivePage):
             msg = u'%s\n%s' % (msg, explanation)
             client.alert(msg)
             raise Exception(msg)
-        
+
         return inputFilename
 
     def handleSavePackage(self, client, filename=None, onDone=None):
@@ -418,12 +419,12 @@ class MainPage(RenderableLivePage):
             return self.handleSaveTemplate(client, filename.basename(), onDone, edit=True)
         # Add the extension if its not already there and give message if not saved
         filename = self.b4save(client, filename, '.elp', _(u'SAVE FAILED!'))
-        
+
         name = str(filename.basename().splitext()[0])
         if name.upper() in forbiddenPageNames:
             client.alert(_('SAVE FAILED!\n"%s" is not a valid name for a package') % str(name))
             return
-        
+
         try:
             self.package.save(filename)  # This can change the package name
         except Exception, e:
@@ -447,21 +448,21 @@ class MainPage(RenderableLivePage):
             client.alert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
 
     def handleSaveTemplate(self, client, templatename=None, onDone=None, edit=False):
-        '''Save template'''    
+        '''Save template'''
         if not templatename.endswith(".elt"):
             filename = Path(self.config.templatesDir/templatename +'.elt', 'utf-8')
         else:
             filename = Path(self.config.templatesDir/templatename, 'utf-8')
             templatename = str(filename.basename().splitext()[0])
-        
+
         if edit == False:
             filename = self.b4save(client, filename, '.elt', _(u'SAVE FAILED!'))
-        
+
         name = str(filename.basename().splitext()[0])
         if name.upper() in forbiddenPageNames:
             client.alert(_('SAVE FAILED!\n"%s" is not a valid name for a template') % str(templatename))
             return
-        
+
         try:
             configxmlData = '<?xml version="1.0"?>\n'
             configxmlData += '<template>\n'
@@ -472,14 +473,14 @@ class MainPage(RenderableLivePage):
             self.package.currentNode = self.package.root
 
             # Save the template
-            self.package.save(filename, isTemplate=True, configxml=configxmlData) 
+            self.package.save(filename, isTemplate=True, configxml=configxmlData)
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
 
         template = Template(filename)
         self.config.templateStore.addTemplate(template)
-    
+
         client.alert(_(u'Template saved: %s') % templatename, onDone)
 
     def handleLoadPackage(self, client, filename, filter_func=None):
@@ -811,7 +812,7 @@ class MainPage(RenderableLivePage):
             client.alert(\
                 _(u'Preview directory %s is a file, cannot replace it') \
                 % previewDir)
-            log.error("Couldn't preview tinyMCE-chosen image: " + 
+            log.error("Couldn't preview tinyMCE-chosen image: " +
                       "Preview dir %s is a file, cannot replace it" \
                       % previewDir)
             errors += 1
@@ -841,7 +842,7 @@ class MainPage(RenderableLivePage):
             descrip_file.write(base64.b64decode(local_filename))
             descrip_file.flush()
             descrip_file.close()
-            
+
             client.sendScript('eXe.app.fireEvent("previewTinyMCEDragDropImageDone")')
 
         except Exception, e:
@@ -928,7 +929,7 @@ class MainPage(RenderableLivePage):
             # Delete the temp file made by compile
             Path(tempFileName).remove()
         return
-        
+
     def handleTinyMCEmathML(self, client, tinyMCEwin, tinyMCEwin_name, \
                              tinyMCEfield, mathml_source, math_fontsize, \
                              preview_image_filename, preview_math_srcfile):
@@ -936,11 +937,11 @@ class MainPage(RenderableLivePage):
         See self.handleTinyMCEmath
         To do: This should generate an image from MathML code, not from LaTeX code.
         """
-        
+
         # Provisional (just an alert message)
         client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
         return
-        
+
         server_filename = ""
         errors = 0
 
@@ -1118,7 +1119,7 @@ class MainPage(RenderableLivePage):
                          unicode(exportDir) +
                          _(u'. Please use ASCII names.'))
             return
-        
+
         name = str(filename.basename().splitext()[0])
         if name.upper() in forbiddenPageNames:
             client.alert(_('SAVE FAILED!\n"%s" is not a valid name for the file') % str(name))
@@ -1466,12 +1467,12 @@ class MainPage(RenderableLivePage):
             log.debug(u"exportXliff, filename=%s" % filename)
             if not filename.lower().endswith('.xlf'):
                 filename += '.xlf'
-                
+
             name = str(filename.basename().splitext()[0])
             if name.upper() in forbiddenPageNames:
                 client.alert(_('SAVE FAILED!\n"%s" is not a valid name for the file') % str(name))
                 return
-        
+
             xliffExport = XliffExport(self.config, filename, source, target, copy, cdata)
             xliffExport.export(self.package)
         except Exception, e:
@@ -1503,7 +1504,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        if modifiedMetaData != False and modifiedMetaData['modifiedMetaData']:  
+        if modifiedMetaData != False and modifiedMetaData['modifiedMetaData']:
             client.alert(_(u'The following fields have been cut to meet the SCORM 1.2 standard: %s') % ', '.join(modifiedMetaData['fieldsModified']))
         else:
             if not has_uncut_resources:
