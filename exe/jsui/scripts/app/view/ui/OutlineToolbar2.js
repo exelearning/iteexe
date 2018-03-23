@@ -24,30 +24,42 @@ Ext.define('eXe.view.ui.OutlineToolbar2', {
 
     initComponent: function() {
         var me = this;
+        
+        function getSRhelp(str){
+            return '<span class="exe-sr-only">'+str+'</span>'
+        }        
 
         Ext.applyIf(me, {
             items: [
                 {
                     xtype: 'button',
+                    width: 22,
                     icon: '/images/stock-goto-first.png',
+                    text: getSRhelp(_('Promote node up in hierarchy') + '. Ctrl+↑'),
                     tooltip: _('Promote node up in hierarchy') + '. Ctrl+↑',
                     itemId: 'outline_promote_node'
                 },
                 {
                     xtype: 'button',
+                    width: 22,
                     icon: '/images/stock-goto-last.png',
+                    text: getSRhelp(_('Demote node down in hierarchy') + '. Ctrl+↓'),
                     tooltip: _('Demote node down in hierarchy') + '. Ctrl+↓',
                     itemId: 'outline_demote_node'
                 },
                 {
                     xtype: 'button',
+                    width: 22,
                     icon: '/images/stock-go-up.png',
+                    text: getSRhelp(_('Move node up') + '. Ctrl+U'),
                     tooltip: _('Move node up') + '. Ctrl+U',
                     itemId: 'outline_up_node'
                 },
                 {
                     xtype: 'button',
+                    width: 22,
                     icon: '/images/stock-go-down.png',
+                    text: getSRhelp(_('Move node down') + '. Ctrl+D'),
                     tooltip: _('Move node down') + '. Ctrl+D',
                     itemId: 'outline_down_node'
                 }
