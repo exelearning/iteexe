@@ -18,6 +18,23 @@ function quitDialog() {
     Ext.getCmp("ideviceeditorwin").close();
 }
 
+function deleteIdevice() {
+    Ext.Msg.show( {
+        title: _('Delete'),
+        msg: _("Confirm?"),
+        scope: this,
+        modal: true,
+        buttons: Ext.Msg.YESNO,
+        fn: function(button) {
+            if (button == "yes")    {
+                var theForm = document.getElementById('contentForm');
+                theForm.action.value = "deleteIdevice";
+                theForm.submit();
+            }
+        }
+    });
+}
+
 function saveIdevice(title) {
     var title1;
     //JR: Anadimos la comprobacion de que no sea null y ya sabemos que estamos hablando de saveSH

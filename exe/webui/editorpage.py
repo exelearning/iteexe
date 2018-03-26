@@ -104,7 +104,7 @@ class EditorPage(RenderableResource):
             self.__createNewIdevice(request)
             
 
-        if "delete" in request.args:
+        if ("action" in request.args and request.args["action"][0] == "deleteIdevice"):
             self.ideviceStore.delIdevice(self.editorPane.idevice)
             #Lo borramos tambien de la lista factoryiDevices
             idevice = self.editorPane.idevice
@@ -255,7 +255,7 @@ class EditorPage(RenderableResource):
             html += "<br/>" + common.submitButton("delete", _("Delete"), 
                                                         False)
         else:
-            html += "<br/>" + common.submitButton("delete", _("Delete"))
+            html += '<br /><input type="button" class="button" onclick="deleteIdevice()" value="'+_("Delete")+'" />'
         html += '<br/><input class="button" type="button" name="save" '
         title = "none"
         if self.editorPane.idevice.edit == False:
