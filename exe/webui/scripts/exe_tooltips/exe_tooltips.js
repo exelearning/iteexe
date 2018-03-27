@@ -198,9 +198,10 @@ $exe.tooltips = {
 				});
 				
 			} else if (c.indexOf("definition")==0) {
-				
+				// Add role
+				$("#"+this.id).attr("role","tooltip");
 				var id = this.id.replace("link","t");
-				$(this).qtip({
+				$(this).attr("aria-describedby",this.id).qtip({
 					position : {
 						viewport : $exe.tooltips.viewport
 					},				
