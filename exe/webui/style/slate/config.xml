@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <theme>
 	<name>Slate</name>
-	<version>2.0</version>
-	<compatibility>2.0+</compatibility>
+	<version>2.1</version>
+	<compatibility>2.1+</compatibility>
 	<author>eXeLearning.org</author>
 	<author-url>http://www.exelearning.org</author-url>
 	<description>See content.css and nav.css for details.</description>
