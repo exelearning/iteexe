@@ -44,3 +44,6 @@ exe/webui/scripts/tinymce_4/js/tinymce/plugins/media/plugin.js
 exe/webui/scripts/tinymce_4/js/tinymce/plugins/save/plugin.js
 exe/webui/scripts/tinymce_4/js/tinymce/tinymce.js
 .metadata/.lock
+
+# Template translation
+exe/webui/content_template/strings.py

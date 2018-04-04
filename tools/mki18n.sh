@@ -29,7 +29,7 @@
 # -------
 # 2013-10:
 #     * Usage of Babel1.3 (Pedro Peña)
-#         Uses python Babel 1.3 patched to include 'Language' header 
+#         Uses python Babel 1.3 patched to include 'Language' header
 #        (https://dl.dropboxusercontent.com/s/k1i7ph2m2g4s7kx/Babel-1.3.tar.gz)
 #        as discussed here:
 #        https://forja.cenatic.es/tracker/index.php?func=detail&aid=1905&group_id=197&atid=883
@@ -65,15 +65,23 @@
 # 2018-03-04
 #    * Preparing version 2.1.4 (JRF)
 #
+# 2018-04-04
+#    * Add template string extraction (Sdweb)
+#
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
 version="2.1.4"
+tmp=$(mktemp -d)
 
-# 1.- pyBabel - Extraction of strings from *.py and *.js into new POT
-echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
+# 1.- eXe - Extract content templates' files to a .py dummy file
+echo -e " *** Extracting messages from content templates ***\n"
+python exe/get_template_strings.py --standalone
+
+# 2.- pyBabel - Extraction of strings from *.py and *.js into new POT
+echo -e "\n\n\n *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
 # pybabel extract --keyword=x_ --keyword=c_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
 pybabel extract --keyword=x_ --keyword=c_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . --output="exe/locale/messages.pot"
 # tools/nevow-xmlgettext exe/jsui/templates/mainpage.html exe/webui/templates/about.html | msgcat exe/locale/messages.pot.tmp - -o exe/locale/messages.pot
@@ -81,23 +89,35 @@ pybabel extract --keyword=x_ --keyword=c_ --project "$project" --version "$versi
 # Removal of fuzzy comments from the POT file
 sed -i "s/^#, fuzzy\$//" exe/locale/messages.pot
 
-# 2.- pyBabel - Updating the PO files of the different languages
+# 3.- pyBabel - Updating the PO files of the different languages
 echo -e "\n\n\n *** Updating *.po files ***\n"
 # JRF's question: is --ignore-obsolete necessary?
 # 2018-03-05: parameter removed, let's check the consequences
 # pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/ --ignore-obsolete
 pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/
 # Set correct Project-Id-Version
-find exe -name exe.po | xargs sed -i 's/Project-Id-Version:.*/Project-Id-Version: '"$project $version"'\\n"/' 
+find exe -name exe.po | xargs sed -i 's/Project-Id-Version:.*/Project-Id-Version: '"$project $version"'\\n"/'
 
-# 3.- pyBabel - Compiling the MO files
+# 4 .- eXe - Update temp locale files with templates translations
+echo -e "\n\n\n *** Adding template strings to generated *.po files ***\n"
+cp -r exe/locale $tmp
+python exe/put_template_strings.py --standalone $tmp/locale
+
+# 5.- pyBabel - Compiling the MO files
 echo -e "\n\n\n *** Compiling *.mo files ***\n"
-pybabel compile -D exe -d exe/locale/ --statistics
+pybabel compile -D exe -d $tmp/locale --statistics
+find exe/locale -name exe.mo -delete
+cp -r $tmp/locale exe -n -v
+
 # pybabel bugs fixing
 find exe -name exe.po | xargs sed -i 'N;N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
+find $tmp -name exe.po | xargs sed -i 'N;N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
 find exe -name exe.po | xargs sed -i '1!N;1!N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
+find $tmp -name exe.po | xargs sed -i '1!N;1!N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
 
-# 4.- Transecma - Generating the translated JS files for the different languages
+# 6.- Transecma - Generating the translated JS files for the different languages
 echo -e "\n\n\n *** Compiling javascript for jsui files ***\n"
 python tools/po2json.py --domain exe --directory exe/locale --output-dir exe/jsui/scripts/i18n
 
+# Remove temp dir
+rm -r $tmp
