@@ -521,7 +521,9 @@ class Package(Persistable):
         for idevice in node.idevices:
             idevice.title = c_(idevice.title)
             for field in idevice.getRichTextFields():
-                field.content_w_resourcePaths = c_(field.content_w_resourcePaths)
+                # If the template was created on Windows, the new line separator
+                # would be \r\n instead of \n (used by Babel on Ubuntu)
+                field.content_w_resourcePaths = c_("\n".join(field.content_w_resourcePaths.splitlines()))
                 field.content = field.content_w_resourcePaths
                 field.content_wo_resourcePaths = field.MassageContentForRenderView(field.content_w_resourcePaths)
 
