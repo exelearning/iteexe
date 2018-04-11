@@ -68,12 +68,15 @@
 # 2018-04-04
 #    * Add template string extraction (Sdweb)
 #
+# 2018-04-11
+#    * Preparing version 2.2 (Sdweb)
+#
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.1.4"
+version="2.2"
 tmp=$(mktemp -d)
 
 # 1.- eXe - Extract content templates' files to a .py dummy file
