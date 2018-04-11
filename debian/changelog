@@ -1,3 +1,58 @@
+intef-exe (3:2.2~beta1) lucid; urgency=medium
+  * Ignacio Gros
+    - Advanced/Simplified view.
+    - New navigation menu structure (simple and advanced).
+    - Easy to read help system.
+    - JavaScript iDevices (easy system to create new iDevices).
+    - JavaScript iDevice example.
+    - New 'PBL Tasks' iDevice.
+    - New 'Scrambled List' iDevice.
+    - New mode for TinyMCE: multiple-visible. More than one TinyMCE, but no Hide/Show editor links.
+    - 'Modal Dialog Window' Plugin for TinyMCE 4.
+    - Multimedia galleries: Allow local videos and audios in prettyPhoto.
+    - Custom HEAD content (Properties - Package - Advanced Options).
+    - SimplePoint Style: Show/Hide parts of the page using the + and - keys (use the presentation-slide CSS class).
+    - Styles compatible with the page counter.
+    - Save reminder message (until the autosave works).
+    - Ask for confirmation before deleting an iDevice.
+    - Information messages after saving or deleting an iDevice.
+    - Accessibility issues and feature requests made by the CENTAC.
+    - JavaScript revision to prevent errors on Readium (Content Security Policy).
+    - Styles revision to fit the new options.
+    - JavaScript bug fixes.
+
+  * Miguel Ángel Pereira and Cristina Valdera
+    - Help texts revision.
+
+  * SDWeb
+    - Content templates (and SCRIPT to extract their string so they can be translated).
+    - JavaScript iDevices (easy system to create new iDevices).
+    - Pagination: Page counter.
+    - Allow users to change the iDevice icon in some iDevices.
+    - Prevent error when exporting content by exporting all the package contents.
+    - Add default values to metadata when the package ones are missing.
+    - Change i18n JS on ePubs to prevent errors on Readium (now in a separate file).
+    - Initialize variable for IMS Export to prevent an exception when exporting.
+    - Save reminder message (until the autosave works).
+    - exe_do bug fixes.
+
+  * Juan Rafael Fernández
+    - New full Spanish translation and transtation coordination.
+    - New full Russian translation, by Alexey Loginov.
+    - New full Catalan translation, by Carles Ferrando García.
+    - New full Italian translation, by Andrea Primiani.
+    - New full Basque translation, by Joxemi Andonegi.
+    - New full French translation, by Jesús Miguel Domínguez.
+    - New full Valencian translation, by Pilar Embid.
+    - New full Galician translation, by Pablo Nimo.
+    - New full Portuguese translation, by Dionisio Martínez Soler.
+
+  * José-Carlos Sánchez
+    - Youtube and Vimeo: https instead of http in Lightbox.
+
+  * Pedro Peña
+    - Mark exported SCORMS and IMS resources in LOM-es metadata as editable by eXe.
+
 intef-exe (3:2.1.3) lucid; urgency=medium
   * Ignacio Gros
     - The 'Use Autoplay' works now with Youtube, Vimeo and Dailymotion (#245).
