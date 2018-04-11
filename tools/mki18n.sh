@@ -103,17 +103,17 @@ echo -e "\n\n\n *** Adding template strings to generated *.po files ***\n"
 cp -r exe/locale $tmp
 python exe/put_template_strings.py --standalone $tmp/locale
 
-# 5.- pyBabel - Compiling the MO files
-echo -e "\n\n\n *** Compiling *.mo files ***\n"
-pybabel compile -D exe -d $tmp/locale --statistics
-find exe/locale -name exe.mo -delete
-cp -r $tmp/locale exe -n -v
-
 # pybabel bugs fixing
 find exe -name exe.po | xargs sed -i 'N;N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
 find $tmp -name exe.po | xargs sed -i 'N;N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
 find exe -name exe.po | xargs sed -i '1!N;1!N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
 find $tmp -name exe.po | xargs sed -i '1!N;1!N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
+
+# 5.- pyBabel - Compiling the MO files
+echo -e "\n\n\n *** Compiling *.mo files ***\n"
+pybabel compile -D exe -d $tmp/locale --statistics
+find exe/locale -name exe.mo -delete
+cp -r $tmp/locale exe -n -v
 
 # 6.- Transecma - Generating the translated JS files for the different languages
 echo -e "\n\n\n *** Compiling javascript for jsui files ***\n"
