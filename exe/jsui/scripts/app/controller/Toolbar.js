@@ -446,7 +446,8 @@ Ext.define('eXe.controller.Toolbar', {
     },
 
     processBrowseEvent: function(menu, item, e, eOpts) {
-        this.browseURL(e.url)
+        // this.browseURL(e.url)
+        window.open(e.url)
     },
 
     // Not used - Task 1080, jrf

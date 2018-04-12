@@ -605,7 +605,8 @@ function browseURL(e,elm) {
     ) {
         return false;
     }
-    window.parent.nevow_clientToServerEvent('browseURL', this, '', e);
+    // window.parent.nevow_clientToServerEvent('browseURL', this, '', e);
+    window.open(e);
 }
 
 //TinyMCE
