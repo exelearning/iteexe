@@ -937,7 +937,7 @@ var $exeAuthoring = {
             if (tinymce.majorVersion==4) $exeTinyMCE.init("multiple-visible",".exe-html-editor");
             else if (tinymce.majorVersion==3) $exeTinyMCE.init("specific_textareas","exe-html-editor");
 
-            // Enable color pickers
+            // Enable color pickers (provisional solution)
             $exeAuthoring.iDevice.colorPicker.init();
             
         },
@@ -961,10 +961,6 @@ var $exeAuthoring = {
                     {
                         window:{
                             title: $i18n.Color_Picker,
-                            position:{
-                                x: 'top',
-                                y: 'left'
-                            },
                             effects:{
                                 type:'show',
                                 speed:{
