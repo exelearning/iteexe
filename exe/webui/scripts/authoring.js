@@ -956,7 +956,6 @@ var $exeAuthoring = {
                 $exe.loadScript("/tools/style-designer/langs/en.js","$exeAuthoring.iDevice.colorPicker.enable()");
             },
             enable : function(){
-                $i18n = $exeDevice.i18n;
                 $.fn.jPicker.defaults.images.clientPath='/tools/style-designer/images/jpicker/';	
                 $exeAuthoring.iDevice.colorPicker.fields.jPicker(
                     {
