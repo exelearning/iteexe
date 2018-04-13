@@ -932,11 +932,55 @@ var $exeAuthoring = {
 			
 			// Enable the iDevice
             $exeDevice.init();
-			
-			// Enable TinyMCE
-			if (tinymce.majorVersion==4) $exeTinyMCE.init("multiple-visible",".exe-html-editor");
-			else if (tinymce.majorVersion==3) $exeTinyMCE.init("specific_textareas","exe-html-editor");			
             
+            // Enable TinyMCE
+            if (tinymce.majorVersion==4) $exeTinyMCE.init("multiple-visible",".exe-html-editor");
+            else if (tinymce.majorVersion==3) $exeTinyMCE.init("specific_textareas","exe-html-editor");
+
+            // Enable color pickers
+            $exeAuthoring.iDevice.colorPicker.init();
+            
+        },
+        colorPicker : {
+            init : function(){
+                var colorFields = $(".exe-color-picker");
+                if (colorFields.length>0) {
+                    $exeAuthoring.iDevice.colorPicker.fields = colorFields;
+                    $exe.loadScript("/tools/style-designer/js/jpicker-1.1.6.min.js","$exeAuthoring.iDevice.colorPicker.getCSS()");
+                }
+            },
+            getCSS : function(){
+                $exe.loadScript("/tools/style-designer/css/jpicker.css","$exeAuthoring.iDevice.colorPicker.getStrings()");
+            },
+            getStrings : function(){
+                $exe.loadScript("/tools/style-designer/langs/en.js","$exeAuthoring.iDevice.colorPicker.enable()");
+            },
+            enable : function(){
+                $i18n = $exeDevice.i18n;
+                $.fn.jPicker.defaults.images.clientPath='/tools/style-designer/images/jpicker/';	
+                $exeAuthoring.iDevice.colorPicker.fields.jPicker(
+                    {
+                        window:{
+                            title: $i18n.Color_Picker,
+                            position:{
+                                x: 'top',
+                                y: 'left'
+                            },
+                            effects:{
+                                type:'show',
+                                speed:{
+                                    show : 0,
+                                    hide : 0
+                                }
+                            }
+                        },
+                        localization : $i18n.Color_Picker_Strings
+                    },
+                    function(color, context){
+                        $("div.jPicker").hide();
+                    }
+                );
+            }
         }
     },
     // Some iDevices (like Cloze Activity) have a button to select (underline) words
