@@ -932,6 +932,10 @@ var $exeAuthoring = {
 			
 			// Enable the iDevice
             $exeDevice.init();
+			
+			// Enable TinyMCE
+			if (tinymce.majorVersion==4) $exeTinyMCE.init("multiple-visible",".exe-html-editor");
+			else if (tinymce.majorVersion==3) $exeTinyMCE.init("specific_textareas","exe-html-editor");			
             
         }
     },

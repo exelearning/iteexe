@@ -47,7 +47,7 @@ var $exeDevice = {
 				</p>\
 			</fieldset>\
 			<p><label for='pblTaskDescription'>"+_('Provide information of the project or this part of the project.')+"</label></p>\
-			<p><textarea id='pblTaskDescription' class='pblTaskEditor'\></textarea></p>\
+			<p><textarea id='pblTaskDescription' class='exe-html-editor'\></textarea></p>\
 			<fieldset id='pblTaskFeedback'>\
 				<legend>"+_('Feedback')+" ("+_('Optional').toLowerCase()+")</legend>\
 				<p>\
@@ -55,21 +55,17 @@ var $exeDevice = {
 					<input type='text' id='pblTaskFeedbackButtonText' value='"+_("Show Feedback")+"' />\
 				</p>\
 				<p><label for='pblTaskFeedbackContent'>"+_('Feedback')+":</label></p>\
-				<p><textarea id='pblTaskFeedbackContent' class='pblTaskEditor'\></textarea></p>\
+				<p><textarea id='pblTaskFeedbackContent' class='exe-html-editor'\></textarea></p>\
 			</fieldset>\
 			";
 		
-		$("TEXTAREA").hide().before(html);
+		$("TEXTAREA").before(html);
 		
 		$("input[name=pblToolsType]").change(function(){
 			$exeDevice.toggleType(this.value);
 		});
 		
 		this.getPreviousValues();
-		
-		// Enable TinyMCE
-		if (tinymce.majorVersion==4) $exeTinyMCE.init("multiple-visible",".pblTaskEditor");
-		else if (tinymce.majorVersion==3) $exeTinyMCE.init("specific_textareas","pblTaskEditor");
 		
 	},
 	

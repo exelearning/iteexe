@@ -253,6 +253,9 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 .mce-floatpanel{max-height:100%;overflow:auto}
 .mce-fullscreen .idevice-edition-buttons{display:none}
 
+/* JavaScript iDevices */
+textarea.jsContentEditor{display:none}
+
 /* iDevice icon selection styles */
 .js-show-icon-panel-button {
 	margin-right: 0.5em;

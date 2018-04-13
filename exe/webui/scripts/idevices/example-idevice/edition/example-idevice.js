@@ -41,7 +41,7 @@ var $exeDevice = {
 		';
 		
 		var field = $("textarea.jsContentEditor").eq(0);
-		field.hide().before(html);
+		field.before(html);
 		this.loadPreviousValues(field);
 		
 	},
