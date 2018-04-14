@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.1.4\n"
+"Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-12 17:59+0100\n"
+"POT-Creation-Date: 2018-04-14 16:59+0200\n"
 "PO-Revision-Date: 2008-09-15 16:08+0100\n"
 "Last-Translator: Dino Brun Pedersen <dbp@sensus.dk>\n"
 "Language: da\n"
@@ -398,7 +398,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
 #: exe/jsui/scripts/app/view/forms/LomSections.js:48
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
-#: exe/webui/galleryblock.py:216
+#: exe/webui/content_template/strings.py:469 exe/webui/galleryblock.py:216
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:63
@@ -804,39 +804,39 @@ msgstr ""
 msgid "Clozelang"
 msgstr "Udfyldningsopgave"
 
-#: exe/engine/config.py:94 exe/engine/config.py:95 exe/engine/config.py:99
-#: exe/engine/config.py:126
+#: exe/engine/config.py:95 exe/engine/config.py:96 exe/engine/config.py:100
+#: exe/engine/config.py:127
 msgid "Non-Interactive Activities"
 msgstr ""
 
-#: exe/engine/config.py:96 exe/engine/config.py:101 exe/engine/config.py:123
-#: exe/engine/config.py:124 exe/engine/config.py:125 exe/engine/config.py:127
-#: exe/engine/config.py:133
+#: exe/engine/config.py:97 exe/engine/config.py:102 exe/engine/config.py:124
+#: exe/engine/config.py:125 exe/engine/config.py:126 exe/engine/config.py:128
+#: exe/engine/config.py:134
 msgid "Interactive Activities"
 msgstr ""
 
-#: exe/engine/config.py:97 exe/engine/config.py:98 exe/engine/config.py:119
-#: exe/engine/config.py:120 exe/engine/config.py:128 exe/engine/config.py:129
-#: exe/engine/config.py:135
+#: exe/engine/config.py:98 exe/engine/config.py:99 exe/engine/config.py:120
+#: exe/engine/config.py:121 exe/engine/config.py:129 exe/engine/config.py:130
+#: exe/engine/config.py:136
 msgid "Non-Textual Information"
 msgstr ""
 
-#: exe/engine/config.py:100 exe/engine/config.py:121 exe/engine/config.py:122
-#: exe/engine/config.py:130
+#: exe/engine/config.py:101 exe/engine/config.py:122 exe/engine/config.py:123
+#: exe/engine/config.py:131
 msgid "Textual Information"
 msgstr ""
 
-#: exe/engine/config.py:102 exe/engine/config.py:103 exe/engine/config.py:104
-#: exe/engine/config.py:105 exe/engine/config.py:106 exe/engine/config.py:107
-#: exe/engine/config.py:108 exe/engine/config.py:109 exe/engine/config.py:110
-#: exe/engine/config.py:111 exe/engine/config.py:112 exe/engine/config.py:113
-#: exe/engine/config.py:114 exe/engine/config.py:115 exe/engine/config.py:116
-#: exe/engine/config.py:117 exe/engine/config.py:118
+#: exe/engine/config.py:103 exe/engine/config.py:104 exe/engine/config.py:105
+#: exe/engine/config.py:106 exe/engine/config.py:107 exe/engine/config.py:108
+#: exe/engine/config.py:109 exe/engine/config.py:110 exe/engine/config.py:111
+#: exe/engine/config.py:112 exe/engine/config.py:113 exe/engine/config.py:114
+#: exe/engine/config.py:115 exe/engine/config.py:116 exe/engine/config.py:117
+#: exe/engine/config.py:118 exe/engine/config.py:119
 msgid "FPD"
 msgstr ""
 
-#: exe/engine/config.py:131 exe/engine/config.py:132 exe/engine/config.py:134
-#: exe/engine/config.py:136
+#: exe/engine/config.py:132 exe/engine/config.py:133 exe/engine/config.py:135
+#: exe/engine/config.py:137
 msgid "Experimental"
 msgstr ""
 
@@ -1154,7 +1154,7 @@ msgid "Upload"
 msgstr "Overførsel"
 
 #: exe/engine/extendedfieldengine.py:298
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:91
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:96
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:224
 msgid "File"
 msgstr ""
@@ -1597,10 +1597,9 @@ msgstr ""
 "og leveres."
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
-#: exe/engine/freetextidevice.py:45
-#: exe/webui/content_template/templates_strings.py:40
-#: exe/webui/content_template/templates_strings.py:46
-#: exe/webui/content_template/templates_strings.py:132
+#: exe/engine/freetextidevice.py:45 exe/webui/content_template/strings.py:20
+#: exe/webui/content_template/strings.py:34
+#: exe/webui/content_template/strings.py:484
 msgid "Free Text"
 msgstr "Fri tekst"
 
@@ -1921,7 +1920,7 @@ msgstr ""
 
 #: exe/engine/idevicestore.py:696 exe/engine/idevicestore.py:705
 #: exe/engine/idevicestore.py:803 exe/engine/idevicestore.py:812
-#: exe/engine/package.py:705 exe/engine/package.py:716
+#: exe/engine/package.py:707 exe/engine/package.py:718
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:218
 msgid "Objectives"
 msgstr "Mål"
@@ -1942,7 +1941,7 @@ msgstr "Skriv læringsmålene for denne resurse. "
 
 #: exe/engine/idevicestore.py:709 exe/engine/idevicestore.py:719
 #: exe/engine/idevicestore.py:816 exe/engine/idevicestore.py:826
-#: exe/engine/package.py:735 exe/engine/package.py:746
+#: exe/engine/package.py:737 exe/engine/package.py:748
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:233
 msgid "Preknowledge"
 msgstr "Forkundskaber"
@@ -2653,35 +2652,39 @@ msgstr ""
 msgid "Guidelines Teacher Text:"
 msgstr ""
 
-#: exe/engine/package.py:328 exe/webui/content_template/templates_strings.py:8
-#: exe/webui/content_template/templates_strings.py:20
+#: exe/engine/package.py:328 exe/webui/content_template/strings.py:7
+#: exe/webui/content_template/strings.py:516
 msgid "Topic"
 msgstr "Emne"
 
-#: exe/engine/package.py:328 exe/webui/content_template/templates_strings.py:9
-#: exe/webui/content_template/templates_strings.py:21
+#: exe/engine/package.py:328 exe/webui/content_template/strings.py:8
+#: exe/webui/content_template/strings.py:517
 msgid "Section"
 msgstr "Sektion"
 
-#: exe/engine/package.py:328 exe/webui/content_template/templates_strings.py:10
-#: exe/webui/content_template/templates_strings.py:22
+#: exe/engine/package.py:328 exe/webui/content_template/strings.py:9
+#: exe/webui/content_template/strings.py:518
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
 msgid "Unit"
 msgstr "Enhed"
 
-#: exe/engine/package.py:350 exe/webui/content_template/templates_strings.py:14
+#: exe/engine/package.py:350 exe/webui/content_template/strings.py:521
 msgid "Home"
 msgstr "Hjem"
 
-#: exe/engine/package.py:555
+#: exe/engine/package.py:526
+msgid "\n"
+msgstr ""
+
+#: exe/engine/package.py:557
 msgid "Metadata creation date"
 msgstr ""
 
-#: exe/engine/package.py:1116
+#: exe/engine/package.py:1118
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:1155 exe/engine/package.py:1162
+#: exe/engine/package.py:1157 exe/engine/package.py:1164
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2690,16 +2693,16 @@ msgstr ""
 "GEM MISLYKKEDES!\n"
 "Sidste vellykkede lagring er  %s."
 
-#: exe/engine/package.py:1610 exe/jsui/scripts/app/controller/Toolbar.js:489
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:502
+#: exe/engine/package.py:1612 exe/jsui/scripts/app/controller/Toolbar.js:490
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:507
 msgid "iDevice Editor"
 msgstr "iDevice Editor"
 
-#: exe/engine/package.py:1731
+#: exe/engine/package.py:1733
 msgid "My Catalog"
 msgstr ""
 
-#: exe/engine/package.py:1738
+#: exe/engine/package.py:1740
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:257
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -3420,7 +3423,7 @@ msgstr ""
 msgid "Don't copy source in target"
 msgstr ""
 
-#: exe/exe_do:138 exe/jsui/scripts/app/controller/Toolbar.js:863
+#: exe/exe_do:138 exe/jsui/scripts/app/controller/Toolbar.js:865
 msgid "Wrap fields in CDATA"
 msgstr ""
 
@@ -3525,10 +3528,10 @@ msgid ""
 "The     error was:"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:73 exe/jsui/mainpage.py:379
-#: exe/jsui/mainpage.py:388 exe/jsui/mainpage.py:1260 exe/jsui/mainpage.py:1447
-#: exe/jsui/mainpage.py:1493 exe/jsui/mainpage.py:1538
-#: exe/jsui/mainpage.py:1559
+#: exe/export/cmdlineexporter.py:73 exe/jsui/mainpage.py:380
+#: exe/jsui/mainpage.py:389 exe/jsui/mainpage.py:1261 exe/jsui/mainpage.py:1448
+#: exe/jsui/mainpage.py:1494 exe/jsui/mainpage.py:1539
+#: exe/jsui/mainpage.py:1560
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3661,29 +3664,29 @@ msgstr ""
 msgid "JS iDevices"
 msgstr ""
 
-#: exe/jsui/mainpage.py:407 exe/jsui/mainpage.py:1117 exe/jsui/mainpage.py:1252
+#: exe/jsui/mainpage.py:408 exe/jsui/mainpage.py:1118 exe/jsui/mainpage.py:1253
 #: exe/jsui/scripts/app/controller/StyleManager.js:72
 #: exe/jsui/scripts/app/controller/TemplateManager.js:83
 msgid "Cannot access directory named "
 msgstr "Kan ikke åbne mappen, der hedder"
 
-#: exe/jsui/mainpage.py:407 exe/jsui/mainpage.py:1119 exe/jsui/mainpage.py:1252
+#: exe/jsui/mainpage.py:408 exe/jsui/mainpage.py:1120 exe/jsui/mainpage.py:1253
 msgid ". Please use ASCII names."
 msgstr ". Venligst anvend ASCII navne."
 
-#: exe/jsui/mainpage.py:420 exe/jsui/mainpage.py:458
+#: exe/jsui/mainpage.py:421 exe/jsui/mainpage.py:459
 msgid "SAVE FAILED!"
 msgstr "GEM MISLYKKEDES!"
 
-#: exe/jsui/mainpage.py:424
+#: exe/jsui/mainpage.py:425
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
 "\"%s\" is not a valid name for a package"
 msgstr ""
 
-#: exe/jsui/mainpage.py:430 exe/jsui/mainpage.py:477 exe/jsui/mainpage.py:790
-#: exe/jsui/mainpage.py:848 exe/jsui/mainpage.py:1352
+#: exe/jsui/mainpage.py:431 exe/jsui/mainpage.py:478 exe/jsui/mainpage.py:791
+#: exe/jsui/mainpage.py:849 exe/jsui/mainpage.py:1353
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3692,102 +3695,102 @@ msgstr ""
 "GEM MISLYKKEDES!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:439 exe/jsui/mainpage.py:444 exe/jsui/mainpage.py:447
+#: exe/jsui/mainpage.py:440 exe/jsui/mainpage.py:445 exe/jsui/mainpage.py:448
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Pakken gemt: %s"
 
-#: exe/jsui/mainpage.py:462
+#: exe/jsui/mainpage.py:463
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
 "\"%s\" is not a valid name for a template"
 msgstr ""
 
-#: exe/jsui/mainpage.py:483
+#: exe/jsui/mainpage.py:484
 #, python-format
 msgid "Template saved: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:713 exe/jsui/mainpage.py:812 exe/jsui/mainpage.py:875
-#: exe/jsui/mainpage.py:956
+#: exe/jsui/mainpage.py:714 exe/jsui/mainpage.py:813 exe/jsui/mainpage.py:876
+#: exe/jsui/mainpage.py:957
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Den forhåndsviste mappe %s er en fil, kan ikke erstatte den"
 
-#: exe/jsui/mainpage.py:732
+#: exe/jsui/mainpage.py:733
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Den lokale fil %s blev ikke fundet, kan ikke forhåndsvise den"
 
-#: exe/jsui/mainpage.py:915 exe/jsui/mainpage.py:941 exe/jsui/mainpage.py:984
+#: exe/jsui/mainpage.py:916 exe/jsui/mainpage.py:942 exe/jsui/mainpage.py:985
 msgid "Could not create the image"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1022
+#: exe/jsui/mainpage.py:1023
 msgid "Importing HTML..."
 msgstr ""
 
-#: exe/jsui/mainpage.py:1028
+#: exe/jsui/mainpage.py:1029
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1031
+#: exe/jsui/mainpage.py:1032
 msgid "Error importing HTML:\n"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1058
+#: exe/jsui/mainpage.py:1059
 msgid "Publishing document to Procomún"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1061
+#: exe/jsui/mainpage.py:1062
 msgid "Exporting package as SCORM"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1082
+#: exe/jsui/mainpage.py:1083
 msgid "Starting authorized connection to Procomún API"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1095
+#: exe/jsui/mainpage.py:1096
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
 "visit exported site\">%s</a>"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1098
+#: exe/jsui/mainpage.py:1099
 #, python-format
 msgid "Error exporting package %s to Procomún: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1124 exe/jsui/mainpage.py:1472
+#: exe/jsui/mainpage.py:1125 exe/jsui/mainpage.py:1473
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
 "\"%s\" is not a valid name for the file"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1145 exe/jsui/mainpage.py:1150
-#: exe/jsui/mainpage.py:1153 exe/jsui/mainpage.py:1156
-#: exe/jsui/mainpage.py:1159 exe/jsui/mainpage.py:1162
-#: exe/jsui/mainpage.py:1167 exe/jsui/mainpage.py:1422
-#: exe/jsui/mainpage.py:1519
+#: exe/jsui/mainpage.py:1146 exe/jsui/mainpage.py:1151
+#: exe/jsui/mainpage.py:1154 exe/jsui/mainpage.py:1157
+#: exe/jsui/mainpage.py:1160 exe/jsui/mainpage.py:1163
+#: exe/jsui/mainpage.py:1168 exe/jsui/mainpage.py:1423
+#: exe/jsui/mainpage.py:1520
 msgid "EXPORT FAILED!"
 msgstr "EKSPORTEN FEJLEDE!"
 
-#: exe/jsui/mainpage.py:1217
+#: exe/jsui/mainpage.py:1218
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1220
+#: exe/jsui/mainpage.py:1221
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1261 exe/jsui/mainpage.py:1278
+#: exe/jsui/mainpage.py:1262 exe/jsui/mainpage.py:1279
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -3796,22 +3799,22 @@ msgstr ""
 "UDPAKNING FEJLEDE!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1280
+#: exe/jsui/mainpage.py:1281
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Pakken udpakket: %s"
 
-#: exe/jsui/mainpage.py:1292 exe/webui/stylemanagerpage.py:229
+#: exe/jsui/mainpage.py:1293 exe/webui/stylemanagerpage.py:229
 msgid "Directory exists"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1306 exe/jsui/mainpage.py:1407
-#: exe/jsui/mainpage.py:1430 exe/jsui/mainpage.py:1448
-#: exe/jsui/mainpage.py:1454 exe/jsui/mainpage.py:1478
-#: exe/jsui/mainpage.py:1494 exe/jsui/mainpage.py:1504
-#: exe/jsui/mainpage.py:1524 exe/jsui/mainpage.py:1539
-#: exe/jsui/mainpage.py:1545 exe/jsui/mainpage.py:1560
-#: exe/jsui/mainpage.py:1570
+#: exe/jsui/mainpage.py:1307 exe/jsui/mainpage.py:1408
+#: exe/jsui/mainpage.py:1431 exe/jsui/mainpage.py:1449
+#: exe/jsui/mainpage.py:1455 exe/jsui/mainpage.py:1479
+#: exe/jsui/mainpage.py:1495 exe/jsui/mainpage.py:1505
+#: exe/jsui/mainpage.py:1525 exe/jsui/mainpage.py:1540
+#: exe/jsui/mainpage.py:1546 exe/jsui/mainpage.py:1561
+#: exe/jsui/mainpage.py:1571
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3820,12 +3823,12 @@ msgstr ""
 "EKSPORTEN FEJLEDE!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1334 exe/jsui/mainpage.py:1388
+#: exe/jsui/mainpage.py:1335 exe/jsui/mainpage.py:1389
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Filnavn %s er en fil, kan ikke erstatte den"
 
-#: exe/jsui/mainpage.py:1340 exe/jsui/mainpage.py:1395
+#: exe/jsui/mainpage.py:1341 exe/jsui/mainpage.py:1396
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -3834,18 +3837,18 @@ msgstr ""
 "Mappen %s eksisterer allerede. Vælg en anden eller slet den eksisterende "
 "og prøv igen."
 
-#: exe/jsui/mainpage.py:1359 exe/jsui/mainpage.py:1411
-#: exe/jsui/mainpage.py:1434 exe/jsui/mainpage.py:1456
-#: exe/jsui/mainpage.py:1480 exe/jsui/mainpage.py:1510
-#: exe/jsui/mainpage.py:1526 exe/jsui/mainpage.py:1547
-#: exe/jsui/mainpage.py:1574
+#: exe/jsui/mainpage.py:1360 exe/jsui/mainpage.py:1412
+#: exe/jsui/mainpage.py:1435 exe/jsui/mainpage.py:1457
+#: exe/jsui/mainpage.py:1481 exe/jsui/mainpage.py:1511
+#: exe/jsui/mainpage.py:1527 exe/jsui/mainpage.py:1548
+#: exe/jsui/mainpage.py:1575
 #, python-format
 msgid "Exported to %s"
 msgstr "Eksporteret til %s"
 
-#: exe/jsui/mainpage.py:1361 exe/jsui/mainpage.py:1413
-#: exe/jsui/mainpage.py:1436 exe/jsui/mainpage.py:1512
-#: exe/jsui/mainpage.py:1576
+#: exe/jsui/mainpage.py:1362 exe/jsui/mainpage.py:1414
+#: exe/jsui/mainpage.py:1437 exe/jsui/mainpage.py:1513
+#: exe/jsui/mainpage.py:1577
 #, python-format
 msgid ""
 "Exported to %s.\n"
@@ -3853,21 +3856,21 @@ msgid ""
 "ISO9660."
 msgstr ""
 
-#: exe/jsui/mainpage.py:1507
+#: exe/jsui/mainpage.py:1508
 #, python-format
 msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1612 exe/webui/stylemanagerpage.py:243
+#: exe/jsui/mainpage.py:1613 exe/webui/stylemanagerpage.py:243
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Filen %s eksisterer ikke eller er ikke læsbar."
 
-#: exe/jsui/mainpage.py:1619
+#: exe/jsui/mainpage.py:1620
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Kunne ikke indlæse filen. Email filen til bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1622
+#: exe/jsui/mainpage.py:1623
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3876,7 +3879,7 @@ msgstr ""
 "Forkert filformat:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1624
+#: exe/jsui/mainpage.py:1625
 msgid "Sorry, wrong file format"
 msgstr "Forkert filformat"
 
@@ -3916,38 +3919,39 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/StyleManager.js:220
 #: exe/jsui/scripts/app/controller/TemplateManager.js:221
 #: exe/jsui/scripts/app/controller/TemplateManager.js:290
-#: exe/jsui/scripts/app/controller/Toolbar.js:656
-#: exe/jsui/scripts/app/controller/Toolbar.js:677
-#: exe/jsui/scripts/app/controller/Toolbar.js:712
-#: exe/jsui/scripts/app/controller/Toolbar.js:731
-#: exe/jsui/scripts/app/controller/Toolbar.js:800
-#: exe/jsui/scripts/app/controller/Toolbar.js:911
-#: exe/jsui/scripts/app/controller/Toolbar.js:994
-#: exe/jsui/scripts/app/controller/Toolbar.js:1014
-#: exe/jsui/scripts/app/controller/Toolbar.js:1034
-#: exe/jsui/scripts/app/controller/Toolbar.js:1066
-#: exe/jsui/scripts/app/controller/Toolbar.js:1232
-#: exe/jsui/scripts/app/controller/Toolbar.js:1361
+#: exe/jsui/scripts/app/controller/Toolbar.js:658
+#: exe/jsui/scripts/app/controller/Toolbar.js:679
+#: exe/jsui/scripts/app/controller/Toolbar.js:714
+#: exe/jsui/scripts/app/controller/Toolbar.js:733
+#: exe/jsui/scripts/app/controller/Toolbar.js:802
+#: exe/jsui/scripts/app/controller/Toolbar.js:913
+#: exe/jsui/scripts/app/controller/Toolbar.js:996
+#: exe/jsui/scripts/app/controller/Toolbar.js:1016
+#: exe/jsui/scripts/app/controller/Toolbar.js:1036
+#: exe/jsui/scripts/app/controller/Toolbar.js:1068
+#: exe/jsui/scripts/app/controller/Toolbar.js:1234
+#: exe/jsui/scripts/app/controller/Toolbar.js:1363
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 #: exe/webui/scripts/authoring.js:96 exe/webui/scripts/authoring.js:121
 #: exe/webui/scripts/authoring.js:365 exe/webui/scripts/authoring.js:374
 #: exe/webui/scripts/authoring.js:382 exe/webui/scripts/authoring.js:403
-#: exe/webui/scripts/editor.js:80 exe/webui/scripts/editor.js:107
+#: exe/webui/scripts/editor.js:97 exe/webui/scripts/editor.js:124
 #: exe/webui/scripts/stylemanager.js:42 exe/webui/scripts/stylemanager.js:66
 msgid "All Files"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/MainTab.js:275
-#: exe/jsui/scripts/app/controller/Toolbar.js:966
-#: exe/jsui/scripts/app/controller/Toolbar.js:987
-#: exe/jsui/scripts/app/controller/Toolbar.js:1007
-#: exe/jsui/scripts/app/controller/Toolbar.js:1027
-#: exe/jsui/scripts/app/controller/Toolbar.js:1059
+#: exe/jsui/scripts/app/controller/Toolbar.js:968
+#: exe/jsui/scripts/app/controller/Toolbar.js:989
+#: exe/jsui/scripts/app/controller/Toolbar.js:1009
+#: exe/jsui/scripts/app/controller/Toolbar.js:1029
+#: exe/jsui/scripts/app/controller/Toolbar.js:1061
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Please wait..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:281
+#: exe/jsui/scripts/app/controller/MainTab.js:281 exe/webui/editorpage.py:134
+#: exe/webui/editorpage.py:146
 msgid "Settings Saved"
 msgstr ""
 
@@ -3970,19 +3974,19 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/TemplateManager.js:279
 #: exe/jsui/scripts/app/controller/TemplateManager.js:338
 #: exe/jsui/scripts/app/controller/TemplateManager.js:364
-#: exe/jsui/scripts/app/controller/Toolbar.js:563
-#: exe/jsui/scripts/app/controller/Toolbar.js:569
+#: exe/jsui/scripts/app/controller/Toolbar.js:564
+#: exe/jsui/scripts/app/controller/Toolbar.js:570
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:317
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:338
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:261
 #: exe/webui/stylemanagerpage.py:155 exe/webui/stylemanagerpage.py:269
 #: exe/webui/stylemanagerpage.py:321 exe/webui/stylemanagerpage.py:364
 #: exe/webui/stylemanagerpage.py:375 exe/webui/stylemanagerpage.py:386
 #: exe/webui/stylemanagerpage.py:423 exe/webui/stylemanagerpage.py:430
 #: exe/webui/stylemanagerpage.py:473 exe/webui/stylemanagerpage.py:485
-#: exe/webui/templatemanagerpage.py:130 exe/webui/templatemanagerpage.py:228
-#: exe/webui/templatemanagerpage.py:240 exe/webui/templatemanagerpage.py:255
-#: exe/webui/templatemanagerpage.py:262 exe/webui/templatemanagerpage.py:296
+#: exe/webui/templatemanagerpage.py:130 exe/webui/templatemanagerpage.py:229
+#: exe/webui/templatemanagerpage.py:241 exe/webui/templatemanagerpage.py:256
+#: exe/webui/templatemanagerpage.py:263 exe/webui/templatemanagerpage.py:297
 #: exe/webui/tools/style-designer/langs/en.js:125
 msgid "Error"
 msgstr ""
@@ -3990,8 +3994,8 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:308
 #: exe/jsui/scripts/app/controller/MainTab.js:361
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:498
-#: exe/webui/scripts/editor.js:37
+#: exe/jsui/scripts/app/controller/Toolbar.js:499
+#: exe/webui/scripts/editor.js:54
 #: exe/webui/tools/style-designer/langs/en.js:115
 msgid "Confirm"
 msgstr ""
@@ -4013,12 +4017,12 @@ msgid "LOM Metadata import success!"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:409
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:414
 msgid "Insert Package"
 msgstr "Indsæt pakke"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:415
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:420
 msgid "Extract Package"
 msgstr "Udtræk pakke"
 
@@ -4101,7 +4105,7 @@ msgid "http://exelearning.net/downloads/"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:369
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:554
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:559
 #: exe/webui/tools/assistant/js/assistant.js:15
 #: exe/webui/tools/assistant/langs/en.js:8
 msgid "Assistant"
@@ -4117,144 +4121,145 @@ msgid "Release notes"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:434
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:586
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:591
 #: exe/webui/tools/assistant/langs/en.js:76
 msgid "Legal Notes"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:471
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:455
+#: exe/jsui/scripts/app/controller/Toolbar.js:472
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:460
 msgid "Preferences"
 msgstr "Indstillinger"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:499
+#: exe/jsui/scripts/app/controller/Toolbar.js:500
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:525
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:472
+#: exe/jsui/scripts/app/controller/Toolbar.js:526
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:477
 msgid "Style Manager"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:542
+#: exe/jsui/scripts/app/controller/Toolbar.js:543
 msgid "Template Manager"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:560
+#: exe/jsui/scripts/app/controller/Toolbar.js:561
 msgid ""
 "Sorry, only styles created with the Editor can be edited. eXe's Styles "
 "are not editable"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:563
+#: exe/jsui/scripts/app/controller/Toolbar.js:564
 msgid "An unknown error occurred."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:566
+#: exe/jsui/scripts/app/controller/Toolbar.js:567
 msgid ""
 "That's one of eXe's default Styles, and it cannot be edited.\n"
 "\n"
 "Please choose a different style or create a new one."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:566 exe/webui/block.py:270
+#: exe/jsui/scripts/app/controller/Toolbar.js:567
+#: exe/jsui/scripts/app/view/forms/HelpContainer.js:43 exe/webui/block.py:270
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:29
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/en.js:124
 msgid "Information"
 msgstr "Information"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:569
+#: exe/jsui/scripts/app/controller/Toolbar.js:570
 msgid "Your Style could not be saved because an unknown error occurred."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:644
+#: exe/jsui/scripts/app/controller/Toolbar.js:646
 msgid "Select package to insert"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:649
+#: exe/jsui/scripts/app/controller/Toolbar.js:651
 msgid "Inserting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:655
-#: exe/jsui/scripts/app/controller/Toolbar.js:676
-#: exe/jsui/scripts/app/controller/Toolbar.js:1231
-#: exe/jsui/scripts/app/controller/Toolbar.js:1360
+#: exe/jsui/scripts/app/controller/Toolbar.js:657
+#: exe/jsui/scripts/app/controller/Toolbar.js:678
+#: exe/jsui/scripts/app/controller/Toolbar.js:1233
+#: exe/jsui/scripts/app/controller/Toolbar.js:1362
 msgid "eXe Package Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:665
+#: exe/jsui/scripts/app/controller/Toolbar.js:667
 msgid "Save extracted package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:670
+#: exe/jsui/scripts/app/controller/Toolbar.js:672
 msgid "Extracting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:686
+#: exe/jsui/scripts/app/controller/Toolbar.js:688
 msgid "Select the parent folder for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:701
+#: exe/jsui/scripts/app/controller/Toolbar.js:703
 msgid "Select the entry point for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:711
+#: exe/jsui/scripts/app/controller/Toolbar.js:713
 msgid "HTML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:720
+#: exe/jsui/scripts/app/controller/Toolbar.js:722
 msgid "Select LOM Metadata file to import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:730
+#: exe/jsui/scripts/app/controller/Toolbar.js:732
 msgid "XML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:745
+#: exe/jsui/scripts/app/controller/Toolbar.js:747
 msgid "Waiting progress..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:753
+#: exe/jsui/scripts/app/controller/Toolbar.js:755
 msgid "Cancel Import?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:754
+#: exe/jsui/scripts/app/controller/Toolbar.js:756
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:777
+#: exe/jsui/scripts/app/controller/Toolbar.js:779
 msgid "Select Xliff file to import"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:787
+#: exe/jsui/scripts/app/controller/Toolbar.js:789
 msgid "XLIFF Import Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:799
-#: exe/jsui/scripts/app/controller/Toolbar.js:910
+#: exe/jsui/scripts/app/controller/Toolbar.js:801
+#: exe/jsui/scripts/app/controller/Toolbar.js:912
 msgid "XLIFF Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:809
+#: exe/jsui/scripts/app/controller/Toolbar.js:811
 msgid "Export to Xliff as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:829
+#: exe/jsui/scripts/app/controller/Toolbar.js:831
 msgid "Select source language"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:840
+#: exe/jsui/scripts/app/controller/Toolbar.js:842
 msgid "Select target language"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:851
+#: exe/jsui/scripts/app/controller/Toolbar.js:853
 msgid "Copy source also in target"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:854
+#: exe/jsui/scripts/app/controller/Toolbar.js:856
 msgid ""
 "If you don't choose this option, target field will be empty. Some "
 "Computer Aided Translation tools (e.g. OmegaT) just translate the content"
@@ -4262,7 +4267,7 @@ msgid ""
 "to pre-fill the target field with a copy of the source field."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:865
+#: exe/jsui/scripts/app/controller/Toolbar.js:867
 msgid ""
 "This option will wrap all the exported fields in CDATA sections. This "
 "kind of sections are not recommended by XLIFF standard but it could be a "
@@ -4270,7 +4275,7 @@ msgid ""
 "using the Computer Aided Translation software."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:874
+#: exe/jsui/scripts/app/controller/Toolbar.js:876
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/webui/editorpane.py:273
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -4282,121 +4287,121 @@ msgstr ""
 msgid "Cancel"
 msgstr "Annuller"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:880
+#: exe/jsui/scripts/app/controller/Toolbar.js:882
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:36
 msgid "Ok"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:903
+#: exe/jsui/scripts/app/controller/Toolbar.js:905
 msgid "XLIFF Export Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:928
+#: exe/jsui/scripts/app/controller/Toolbar.js:930
 msgid ""
 "You must authorize eXe Learning to publish content into your Procomún "
 "account"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:929
+#: exe/jsui/scripts/app/controller/Toolbar.js:931
 msgid "Are you sure you want to start authorization process?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:940
+#: exe/jsui/scripts/app/controller/Toolbar.js:942
 msgid "Procomún OAuth"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:958
+#: exe/jsui/scripts/app/controller/Toolbar.js:960
 msgid "Select the parent folder for export."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:981
+#: exe/jsui/scripts/app/controller/Toolbar.js:983
 msgid "Export text package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:993
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:274
+#: exe/jsui/scripts/app/controller/Toolbar.js:995
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:279
 msgid "Text File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1001
+#: exe/jsui/scripts/app/controller/Toolbar.js:1003
 msgid "Save package resources report as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1013
+#: exe/jsui/scripts/app/controller/Toolbar.js:1015
 msgid "CSV File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1021
+#: exe/jsui/scripts/app/controller/Toolbar.js:1023
 msgid "Export EPUB3 package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1033
+#: exe/jsui/scripts/app/controller/Toolbar.js:1035
 msgid "EPUB3 File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1041
+#: exe/jsui/scripts/app/controller/Toolbar.js:1043
 msgid "Export SCORM package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1043
+#: exe/jsui/scripts/app/controller/Toolbar.js:1045
 msgid "Export IMS package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1045
+#: exe/jsui/scripts/app/controller/Toolbar.js:1047
 msgid "Export Website package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1047
+#: exe/jsui/scripts/app/controller/Toolbar.js:1049
 msgid "Export Common Cartridge as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1049
+#: exe/jsui/scripts/app/controller/Toolbar.js:1051
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1065
+#: exe/jsui/scripts/app/controller/Toolbar.js:1067
 msgid "SCORM/IMS/ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1204
+#: exe/jsui/scripts/app/controller/Toolbar.js:1206
 msgid "Loading package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1220
+#: exe/jsui/scripts/app/controller/Toolbar.js:1222
 msgid "Open File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1225
+#: exe/jsui/scripts/app/controller/Toolbar.js:1227
 msgid "Loading package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1244
+#: exe/jsui/scripts/app/controller/Toolbar.js:1246
 msgid "Save Package first?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1245
+#: exe/jsui/scripts/app/controller/Toolbar.js:1247
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1292
+#: exe/jsui/scripts/app/controller/Toolbar.js:1294
 msgid "Saving package to: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1318
+#: exe/jsui/scripts/app/controller/Toolbar.js:1320
 msgid "Title for template:"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1319
+#: exe/jsui/scripts/app/controller/Toolbar.js:1321
 msgid "Enter the new name for template:"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1340
+#: exe/jsui/scripts/app/controller/Toolbar.js:1342
 msgid "Save file"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1346
+#: exe/jsui/scripts/app/controller/Toolbar.js:1348
 msgid "Saving package..."
 msgstr ""
 
@@ -4430,6 +4435,7 @@ msgid "You do not have the permissions to create a folder in folder"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:369
+#: exe/webui/scripts/editor.js:24
 msgid "Confirm?"
 msgstr ""
 
@@ -4470,7 +4476,7 @@ msgid "Modified"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:52
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:134
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:139
 msgid "Open"
 msgstr ""
 
@@ -4480,8 +4486,8 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:228
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:666
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:308
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:163 exe/webui/editorpage.py:260
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:329
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:168 exe/webui/editorpage.py:264
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:149
 #: exe/webui/tools/style-designer/langs/en.js:113
@@ -4524,6 +4530,7 @@ msgid "An entity primarily responsible for making the content of the resource."
 msgstr "En enhed primært ansvarlig for at producere indholdet af denne resurse."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:60
+#: exe/webui/content_template/strings.py:470
 msgid "Subject"
 msgstr ""
 
@@ -4825,7 +4832,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:257
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:653
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:658
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:4
@@ -4986,7 +4993,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:110
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:40
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:156
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:152
 msgid "Duration"
 msgstr ""
 
@@ -5097,6 +5104,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:150
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:181
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:742
 msgid "Warning!"
 msgstr ""
 
@@ -5238,7 +5246,7 @@ msgid "Cataloguing"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:659
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:664
 msgid "General description"
 msgstr ""
 
@@ -5563,15 +5571,29 @@ msgid ""
 "Site export types."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:267
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:272
+msgid "Time to remind the user about saving (in minutes)"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:274
+msgid "Never"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:283
+msgid ""
+"By enabling this, a confirmation dialog will be shown after the selected "
+"amount of time to remind the user that he/she should save his/her work."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:288
 msgid "Default license for the new documents"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:294
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:315
 msgid "The current document license can be modified in the Properties tab."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:333
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:354
 msgid "Show this window on eXe start"
 msgstr ""
 
@@ -5582,7 +5604,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:36
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:42
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:84
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:202
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:207
 msgid "Export"
 msgstr "Eksport"
 
@@ -5626,6 +5648,14 @@ msgstr ""
 msgid "Outline"
 msgstr "Disposition"
 
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:79 exe/webui/common.py:618
+msgid "Show"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:79 exe/webui/common.py:619
+msgid "Hide"
+msgstr "Skjul"
+
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:86
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:89
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:95
@@ -5665,22 +5695,22 @@ msgid "Properties"
 msgstr "Egenskaber"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:55
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:667
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:672
 msgid "Package"
 msgstr "Pakke"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:59
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:374
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
 msgid "Metadata"
 msgstr "Metadata"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:71
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:383
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:388
 msgid "LOM"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:77
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:389
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:394
 msgid "LOM-ES"
 msgstr ""
 
@@ -5693,9 +5723,9 @@ msgstr "Tilføj side"
 #: exe/webui/editorelement.py:115 exe/webui/editorelement.py:156
 #: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
 #: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
-#: exe/webui/editorpage.py:251 exe/webui/editorpage.py:254
+#: exe/webui/editorpage.py:255 exe/webui/editorpage.py:258
 #: exe/webui/galleryblock.py:303 exe/webui/jsblock.py:106
-#: exe/webui/jsblock.py:111
+#: exe/webui/jsblock.py:111 exe/webui/scripts/editor.js:23
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
 msgstr "Slet"
@@ -5704,160 +5734,168 @@ msgstr "Slet"
 msgid "Rename"
 msgstr "Omdøb"
 
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:38
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
 msgid "Promote node up in hierarchy"
 msgstr "Flyt knuden op i hirakiet"
 
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:46
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:47
 msgid "Demote node down in hierarchy"
 msgstr "Flyt knuden ned i hirakiet"
 
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:45
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:54
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:55
 msgid "Move node up"
 msgstr "Flyt knuden op"
 
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:51
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:62
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:63
 msgid "Move node down"
 msgstr "Flyt knuden ned"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:99
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:88
+msgid "use the right arrow key"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:104
 #: exe/webui/tools/style-designer/langs/en.js:134
 msgid "New"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:107
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:112
 msgid "Project"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:115
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:120
 msgid "Window"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:122
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:179
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:127
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:184
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:212
 msgid "Templates"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:146
 msgid "Recent Projects..."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:153
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:158
 msgid "Clear Recent Projects List"
 msgstr "Ryd seneste Projekt Liste"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:170
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:175
 msgid "Save As..."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:191
 msgid "Save as template"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:197
 msgid "Manage"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:210
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:215
 msgid "Educational Standard"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:222
 msgid "Common Cartridge"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:223
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:228
 msgid "SCORM1.2"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:229
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:234
 msgid "SCORM2004"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:235
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:240
 msgid "IMS Content Package"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:250
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:300
 msgid "Web Site"
 msgstr "Hjemmeside"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:252
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:257
 msgid "Self-contained Folder"
 msgstr "En selvstændig mappe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:258
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:263
 msgid "Zip File"
 msgstr "Zip Fil"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:264
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:302
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:269
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:307
 msgid "Single Page"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:281
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:286
 msgid "Ustad Mobile"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:288
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:293
 msgid "XLIFF"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:308
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:313
 msgid "EPUB3"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:315
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:320
 msgid "SCORM"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:322
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:327
 msgid "IMS"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:332
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
 msgid "Publish"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:341
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:346
 msgid "Procomún"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:360
 msgid "Import"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:364
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:369
 msgid "HTML Course"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:370
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:375
 msgid "XLIFF File"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:400
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:405
 msgid "Merging"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:425 exe/webui/common.py:631
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:430 exe/webui/common.py:631
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:148
 msgid "Print"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:438 exe/webui/editorpage.py:269
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:443 exe/webui/editorpage.py:273
 msgid "Quit"
 msgstr "Afslut"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:445
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:450
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:227
 msgid "Tools"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:461 exe/webui/editorpane.py:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:466 exe/webui/editorpane.py:268
 #: exe/webui/element.py:2106
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -5870,82 +5908,95 @@ msgstr ""
 msgid "Preview"
 msgstr "Forhåndsvisning"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:478
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:483
 #: exe/webui/tools/style-designer/langs/en.js:9
 msgid "Style Designer"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:486
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:491
 msgid "Create new Style"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:491
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:496
 msgid "Edit current Style"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:509
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:514
 msgid "Resources Report"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:519
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:524
 msgid "Refresh Display"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:526
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:531
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Styles"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:537
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:544
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:542
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:549
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:625
 msgid "Help"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:564
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:569
 #: exe/webui/tools/assistant/langs/en.js:69
 msgid "eXe Tutorial"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:578
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:583
 #: exe/webui/tools/assistant/langs/en.js:75
 msgid "Release Notes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:596
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:601
 #: exe/webui/tools/assistant/langs/en.js:77
 msgid "eXe Web Site"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:603
-#: exe/webui/scripts/authoring.js:906 exe/webui/tools/assistant/langs/en.js:72
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:608
+#: exe/webui/scripts/authoring.js:907 exe/webui/tools/assistant/langs/en.js:72
 msgid "Report an Issue"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:610
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:615
 #: exe/webui/tools/assistant/langs/en.js:70
 msgid "eXe Forums"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:620
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:625
 #: exe/webui/tools/assistant/langs/en.js:74
 msgid "About eXe"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:632
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:637
 msgid "Advanced user"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:645 exe/webui/editorpane.py:397
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:650 exe/webui/editorpage.py:250
+#: exe/webui/editorpane.py:397
 msgid "Info"
 msgstr "Info"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:646
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:651
 msgid ""
 "Checking this option will show more elements in the menus (File, "
 "Tools...) and the Properties tab."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:743
+msgid "You've been working for a long time without saving."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:743
+msgid "Do you want to save now?"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:743
+msgid "Hide until the application is closed"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:580
@@ -7643,7 +7694,7 @@ msgstr "Filnavn:"
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1085 exe/webui/scripts/authoring.js:106
 #: exe/webui/scripts/authoring.js:367 exe/webui/scripts/authoring.js:376
-#: exe/webui/scripts/editor.js:64 exe/webui/scripts/editor.js:91
+#: exe/webui/scripts/editor.js:81 exe/webui/scripts/editor.js:108
 msgid "Select a file"
 msgstr "Vælg en fil"
 
@@ -7656,11 +7707,11 @@ msgstr "Mærkat:"
 msgid "Warning: %s"
 msgstr ""
 
-#: exe/webui/block.py:184 exe/webui/scripts/authoring.js:898
+#: exe/webui/block.py:184 exe/webui/scripts/authoring.js:899
 msgid "IDevice broken"
 msgstr "IDevice ugyldig"
 
-#: exe/webui/block.py:227
+#: exe/webui/block.py:227 exe/webui/editorpage.py:120
 msgid "Done"
 msgstr "Udført"
 
@@ -7704,7 +7755,7 @@ msgstr "Tip:"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "FEJL: Block.renderViewContent kaldt direkte"
 
-#: exe/webui/block.py:336 exe/webui/editorpage.py:286
+#: exe/webui/block.py:336 exe/webui/editorpage.py:290
 #: exe/webui/editorpane.py:270
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:225
 msgid "Edit"
@@ -7859,14 +7910,6 @@ msgstr ""
 msgid "Enable JavaScript"
 msgstr ""
 
-#: exe/webui/common.py:618
-msgid "Show"
-msgstr ""
-
-#: exe/webui/common.py:619
-msgid "Hide"
-msgstr "Skjul"
-
 #: exe/webui/common.py:620 exe/webui/common.py:873 exe/webui/element.py:1547
 #: exe/webui/element.py:2477 exe/webui/listablock.py:274
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:55
@@ -7879,7 +7922,7 @@ msgstr "Skjul feedback"
 
 #: exe/webui/common.py:622 exe/webui/common.py:649 exe/webui/element.py:2280
 #: exe/webui/stylemanagerpage.py:469 exe/webui/stylemanagerpage.py:482
-#: exe/webui/templatemanagerpage.py:237 exe/webui/templatemanagerpage.py:259
+#: exe/webui/templatemanagerpage.py:238 exe/webui/templatemanagerpage.py:260
 msgid "Correct"
 msgstr "Rigtigt"
 
@@ -7981,7 +8024,7 @@ msgstr ""
 msgid "Click on \"Another word\" to continue."
 msgstr ""
 
-#: exe/webui/common.py:689 exe/webui/editorpage.py:235
+#: exe/webui/common.py:689 exe/webui/editorpage.py:238
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : elearning XHTML editor"
@@ -7990,488 +8033,374 @@ msgstr "eXe : elearning XHTML editor"
 msgid "Click for completion instructions"
 msgstr "Klik for at få instruktioner til færdiggørelse"
 
-#: exe/webui/content_template/templates_strings.py:6
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-msgid "Base"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:18
+#: exe/webui/content_template/strings.py:6
 msgid "EDIA Project - PBL"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:24
+#: exe/webui/content_template/strings.py:10
 msgid "Project's name"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:26
+#: exe/webui/content_template/strings.py:11
 msgid "Project's final goal."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:28
+#: exe/webui/content_template/strings.py:12
 msgid "Point out what students are about to learn."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:30
+#: exe/webui/content_template/strings.py:13
 msgid ""
 "Students need no preknowledge to complete all these tasks because there "
 "are materials enough to be independent in their accomplishment. Students "
 "also have the help and orientation from their teacher."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:32
+#: exe/webui/content_template/strings.py:14
 msgid "Author's name"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:36
+#: exe/webui/content_template/strings.py:17
 msgid "Front page"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:43
-msgid ""
-"<p>Motivating inspiration.</p>\r\n"
-"<p>Project / Final Challenge</p>\r\n"
-"<p style=\"text-align: center;\"><img "
-"src=\"resources/images_pbl_english.png\" alt=\"\" width=\"560\" "
-"height=\"315\" /></p>\r\n"
-"<p>What to learn and how to learn.</p>\r\n"
-"<p>Motivation for the project development.</p>"
+#: exe/webui/content_template/strings.py:26
+#: exe/webui/content_template/strings.py:490
+msgid "EDIA Project: English PBL"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:49
-msgid ""
-"<p style=\"text-align: center;\"><a rel=\"license\" "
-"href=\"http://creativecommons.org/licenses/by-sa/4.0/\"><img "
-"alt=\"Licencia de Creative Commons\" style=\"border-width: 0px; display: "
-"block; margin-left: auto; margin-right: auto;\" "
-"src=\"resources/88x31.png\" width=\"88\" height=\"31\" /></a><br /><span "
-"xmlns:dct=\"http://purl.org/dc/terms/\" property=\"dct:title\">EDIA "
-"Project: English PBL</span> by <a "
-"xmlns:cc=\"http://creativecommons.org/ns#\" "
-"href=\"http://cedec.educalab.es/\" property=\"cc:attributionName\" "
-"target=\"_blank\">CeDeC</a>.</p>\r\n"
-"<p></p>"
+#: exe/webui/content_template/strings.py:27
+#: exe/webui/content_template/strings.py:491
+msgid " by "
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:51
+#: exe/webui/content_template/strings.py:28
+#: exe/webui/content_template/strings.py:492
+msgid "CeDeC"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:48
+msgid "Motivating inspiration."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:49
+msgid "Project / Final Challenge"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:50
+msgid "What to learn and how to learn."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:51
+msgid "Motivation for the project development."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:59
+#: exe/webui/content_template/strings.py:384
 msgid "Breaking the ice"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:54
-msgid "Your project: general information"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:57
-msgid ""
-"<p>Explanation of the final challenge.</p>\r\n"
-"<p>Overview of suggested tasks.</p>\r\n"
-"<p style=\"text-align: center;\"><img "
-"src=\"resources/images_pbl_english.png\" alt=\"\" width=\"560\" "
-"height=\"315\" /></p>\r\n"
-"<p></p>\r\n"
-"<p><span style=\"font-size: 1em; line-height: 19.2px;\">General "
-"information about:</span><span style=\"font-size: 1em; line-height: "
-"19.2px;\"></span></p>\r\n"
-"<ul>\r\n"
-"<li>Assessment</li>\r\n"
-"<li><span style=\"font-size: 1em; line-height: 19.2px;\">Class team "
-"management</span></li>\r\n"
-"<li><span style=\"font-size: 1em; line-height: 19.2px;\">Learning diary "
-"and personal site.</span></li>\r\n"
-"<li><span style=\"font-size: 1em; line-height: 19.2px;\">Dissemination of"
-" project activities.</span></li>\r\n"
-"</ul>\r\n"
-"<p>Starting motivation<span style=\"font-size: 1em; line-height: "
-"19.2px;\"></span></p>"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:60
-msgid "Starting Activity"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:63
-msgid ""
-"<p>Introductory Activity to the project involving:</p>\r\n"
-"<ul>\r\n"
-"<li>Team work</li>\r\n"
-"<li>Reflection and motivation</li>\r\n"
-"<li>Expression of feelings.</li>\r\n"
-"</ul>\r\n"
-"<p style=\"text-align: center;\"><img "
-"src=\"resources/images_pbl_english.png\" alt=\"\" width=\"560\" "
-"height=\"315\" /></p>\r\n"
-"<p><strong>Steps for the suggested activity<span style=\"color: "
-"#ff0000;\"><br /></span></strong></p>"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:67
-#: exe/webui/content_template/templates_strings.py:89
+#: exe/webui/content_template/strings.py:62
+#: exe/webui/content_template/strings.py:168
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:31
 msgid "Learning Diary"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:70
-msgid ""
-"<p>First activity. Creation of the learning diary in the suggested "
-"format.</p>\r\n"
-"<p>Creation of the first post heading.</p>\r\n"
-"<p></p>\r\n"
-"<p></p>"
+#: exe/webui/content_template/strings.py:82
+msgid "First activity. Creation of the learning diary in the suggested format."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:71
-msgid ""
-"<div class=\"block\">\r\n"
-"<div id=\"3_93-viewer\">\r\n"
-"<p>Script for writing the post. It must lead the student to think about "
-"and reflect:</p>\r\n"
-"<ul>\r\n"
-"<li>What the final challenge is</li>\r\n"
-"<li>What the assessment will be like</li>\r\n"
-"<li>What they will learn</li>\r\n"
-"<li>How class groups work</li>\r\n"
-"</ul>\r\n"
-"</div>\r\n"
-"</div>"
+#: exe/webui/content_template/strings.py:83
+msgid "Creation of the first post heading."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:75
+#: exe/webui/content_template/strings.py:84
+msgid ""
+"Script for writing the post. It must lead the student to think about and "
+"reflect:"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:85
+msgid "What the final challenge is"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:86
+msgid "What the assessment will be like"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:87
+msgid "What they will learn"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:88
+msgid "How class groups work"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:94
+msgid "Starting Activity"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:114
+msgid "Introductory Activity to the project involving:"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:115
+msgid "Team work"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:116
+msgid "Reflection and motivation"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:117
+msgid "Expression of feelings."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:118
+msgid "Steps for the suggested activity"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:124
+msgid "Your project: General information"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:150
+msgid "Explanation of the final challenge."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:151
+msgid "Overview of suggested tasks."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:152
+msgid "General information about:"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:153
+msgid "Assessment"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:154
+msgid "Class team management"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:155
+msgid "Learning diary and personal site."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:156
+msgid "Dissemination of project activities."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:157
+msgid "Starting motivation"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:165
 msgid "Mission 1"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:77
-msgid "Introduction"
+#: exe/webui/content_template/strings.py:192
+msgid "Guidelines to open a new post."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:80
-msgid ""
-"<p>What the final mission will be.</p>\r\n"
-"<p>What sudents will learn about.</p>\r\n"
-"<p style=\"text-align: center;\"><img "
-"src=\"resources/images_pbl_english.png\" alt=\"\" width=\"560\" "
-"height=\"315\" /></p>\r\n"
-"<p style=\"text-align: center;\"></p>\r\n"
-"<p>Starting activity</p>"
+#: exe/webui/content_template/strings.py:193
+msgid "Questions or guidelines for students to revise and reflect:"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:83
+#: exe/webui/content_template/strings.py:194
+msgid "The task they have done"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:195
+msgid "The resources they have checked"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:196
+msgid "Materials they have created"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:197
+msgid "What they have learnt"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:198
+msgid "Difficulties found."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:199
+msgid "Remaining doubts"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:200
+msgid "Class team functioning"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:206
 msgid "Task (Mission)"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:86
-msgid ""
-"<p>General introduction</p>\r\n"
-"<p>What the \"final mission\" will be and link to the assessment "
-"rubric.</p>\r\n"
-"<p style=\"text-align: center;\"><img "
-"src=\"resources/images_pbl_english.png\" alt=\"\" width=\"560\" "
-"height=\"315\" /></p>\r\n"
-"<p>What learning objective this mission helps to achieve.</p>\r\n"
-"<p></p>\r\n"
-"<p></p>\r\n"
-"<p><strong>Steps for your mission</strong></p>"
+#: exe/webui/content_template/strings.py:220
+msgid "General introduction"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:92
-msgid ""
-"<p>Guidelines to open a new post.</p>\r\n"
-"<p></p>"
+#: exe/webui/content_template/strings.py:221
+msgid "What the \"final mission\" will be and link to the assessment rubric."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:94
-msgid ""
-"<div id=\"8_93-viewer\">\r\n"
-"<div class=\"block\">\r\n"
-"<div id=\"3_93-viewer\">\r\n"
-"<div class=\"block\">\r\n"
-"<div id=\"3_93-viewer\">\r\n"
-"<div id=\"8_93-viewer\">\r\n"
-"<div class=\"block\">\r\n"
-"<div id=\"3_93-viewer\">\r\n"
-"<div class=\"block\">\r\n"
-"<div id=\"3_93-viewer\">\r\n"
-"<p>Questions or guidelines for students to revise and reflect:</p>\r\n"
-"<ul>\r\n"
-"<li>The task they have done</li>\r\n"
-"<li>The resources they have checked</li>\r\n"
-"<li>Materials they have created</li>\r\n"
-"<li>What they have learnt</li>\r\n"
-"<li>Difficulties found.</li>\r\n"
-"<li>Remaining doubts</li>\r\n"
-"<li>Class team functioning</li>\r\n"
-"</ul>\r\n"
-"</div>\r\n"
-"</div>\r\n"
-"</div>\r\n"
-"</div>\r\n"
-"</div>\r\n"
-"</div>\r\n"
-"</div>\r\n"
-"</div>\r\n"
-"</div>\r\n"
-"</div>"
+#: exe/webui/content_template/strings.py:222
+msgid "What learning objective this mission helps to achieve."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:96
+#: exe/webui/content_template/strings.py:223
+msgid "Steps for your mission"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:229
+msgid "Introduction"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:241
+msgid "What the final mission will be."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:242
+msgid "What sudents will learn about."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:243
+msgid "Starting activity"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:251
 msgid "Didactic guidelines"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:99
-msgid "Fact sheet"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:102
-msgid ""
-"<table style=\"margin-left: auto; margin-right: auto; width: 624.333px; "
-"border-color: #000000;\" cellspacing=\"4\" "
-"cellpadding=\"4\"><colgroup><col width=\"116\" /><col width=\"509\" "
-"/></colgroup>\r\n"
-"<tbody>\r\n"
-"<tr style=\"height: 35px;\" valign=\"top\">\r\n"
-"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
-"align: left;\">\r\n"
-"<p><strong>Title</strong></p>\r\n"
-"</td>\r\n"
-"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
-"align: left;\">\r\n"
-"<p>...</p>\r\n"
-"</td>\r\n"
-"</tr>\r\n"
-"<tr style=\"height: 35.375px;\" valign=\"top\">\r\n"
-"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
-"align: left;\">\r\n"
-"<p><strong>Subject</strong></p>\r\n"
-"</td>\r\n"
-"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
-"align: left;\">\r\n"
-"<p>...</p>\r\n"
-"</td>\r\n"
-"</tr>\r\n"
-"<tr style=\"height: 35px;\" valign=\"top\">\r\n"
-"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
-"align: left;\">\r\n"
-"<p><strong>Level / course<br /></strong></p>\r\n"
-"</td>\r\n"
-"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
-"align: left;\">\r\n"
-"<p>...</p>\r\n"
-"</td>\r\n"
-"</tr>\r\n"
-"<tr style=\"height: 35px;\" valign=\"top\">\r\n"
-"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
-"align: left;\">\r\n"
-"<p><strong>Final project<br /></strong></p>\r\n"
-"</td>\r\n"
-"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
-"align: left;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...<br /></span></span></span></p>\r\n"
-"</td>\r\n"
-"</tr>\r\n"
-"<tr style=\"height: 35px;\" valign=\"top\">\r\n"
-"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
-"align: left;\">\r\n"
-"<p><strong>Contents</strong></p>\r\n"
-"</td>\r\n"
-"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
-"align: left;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">..</span></span></span></p>\r\n"
-"</td>\r\n"
-"</tr>\r\n"
-"<tr style=\"height: 35px;\" valign=\"top\">\r\n"
-"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
-"align: left;\">\r\n"
-"<p><strong>Timing</strong></p>\r\n"
-"</td>\r\n"
-"<td style=\"height: 35px; border-color: #000000; width: 248px; text-"
-"align: left;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...</span></span></span></p>\r\n"
-"</td>\r\n"
-"</tr>\r\n"
-"</tbody>\r\n"
-"</table>\r\n"
-"<p></p>"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:105
-msgid ""
-"<p><span>Resource structure<br /></span></p>\r\n"
-"<p><span>Types of tasks and activities</span></p>\r\n"
-"<p>Methodological approach</p>\r\n"
-"<p>Use of the learning diary</p>"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:108
-msgid "Learning Pathway and timing"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:111
-msgid ""
-"<p></p>\r\n"
-"<table style=\"width: 95.5125%;\" cellspacing=\"0\" "
-"cellpadding=\"4\"><colgroup><col width=\"64*\" /> <col width=\"96*\" /> "
-"<col width=\"96*\" /></colgroup>\r\n"
-"<tbody>\r\n"
-"<tr valign=\"top\">\r\n"
-"<td style=\"width: 35%; text-align: left;\">\r\n"
-"<h3 style=\"text-align: left;\" align=\"center\"><strong><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">Steps</span></span></span></strong></h3>\r\n"
-"</td>\r\n"
-"<td style=\"width: 47%; text-align: left;\">\r\n"
-"<h3 style=\"text-align: left;\" align=\"center\"><strong><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">Main aim</span></span></span></strong></h3>\r\n"
-"</td>\r\n"
-"<td style=\"width: 36.5786%;\">\r\n"
-"<h3 align=\"center\"><strong><span color=\"#000000\"><span "
-"face=\"Liberation Serif, serif\"><span "
-"size=\"3\">Timing</span></span></span></strong></h3>\r\n"
-"</td>\r\n"
-"</tr>\r\n"
-"<tr valign=\"top\">\r\n"
-"<td style=\"width: 35%;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">Before you start</span></span></span></p>\r\n"
-"</td>\r\n"
-"<td style=\"width: 47%;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...</span></span></span></p>\r\n"
-"</td>\r\n"
-"<td style=\"width: 36.5786%; text-align: center;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...sessions</span></span></span></p>\r\n"
-"</td>\r\n"
-"</tr>\r\n"
-"<tr valign=\"top\">\r\n"
-"<td style=\"width: 35%;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">Breaking the ice<br /></span></span></span></p>\r\n"
-"</td>\r\n"
-"<td style=\"width: 47%;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...</span></span></span></p>\r\n"
-"</td>\r\n"
-"<td style=\"width: 36.5786%; text-align: center;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...sessions</span></span></span></p>\r\n"
-"</td>\r\n"
-"</tr>\r\n"
-"<tr valign=\"top\">\r\n"
-"<td style=\"width: 35%;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">(Mission 1)<br /></span></span></span></p>\r\n"
-"</td>\r\n"
-"<td style=\"width: 47%;\">\r\n"
-"<p><span size=\"2\" style=\"font-size: small;\">...</span></p>\r\n"
-"</td>\r\n"
-"<td style=\"width: 36.5786%; text-align: center;\"><span "
-"color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...sessions</span></span></span></td>\r\n"
-"</tr>\r\n"
-"<tr valign=\"top\">\r\n"
-"<td style=\"width: 35%;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">(Mission 2)</span></span></span></p>\r\n"
-"</td>\r\n"
-"<td style=\"width: 47%;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...</span></span></span></p>\r\n"
-"</td>\r\n"
-"<td style=\"width: 36.5786%; text-align: center;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...sessions</span></span></span></p>\r\n"
-"</td>\r\n"
-"</tr>\r\n"
-"<tr valign=\"top\">\r\n"
-"<td style=\"width: 35%;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">(Mission 3)</span></span></span></p>\r\n"
-"</td>\r\n"
-"<td style=\"width: 47%;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...</span></span></span></p>\r\n"
-"</td>\r\n"
-"<td style=\"width: 36.5786%; text-align: center;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...sessions</span></span></span></p>\r\n"
-"</td>\r\n"
-"</tr>\r\n"
-"<tr valign=\"top\">\r\n"
-"<td style=\"width: 35%;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">(Final Challenge)<br /></span></span></span></p>\r\n"
-"</td>\r\n"
-"<td style=\"width: 47%;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">...</span></span></span></p>\r\n"
-"</td>\r\n"
-"<td style=\"width: 36.5786%; text-align: center;\">\r\n"
-"<p><span color=\"#000000\"><span face=\"Liberation Serif, serif\"><span "
-"size=\"3\">3 sessions</span></span></span></p>\r\n"
-"</td>\r\n"
-"</tr>\r\n"
-"</tbody>\r\n"
-"</table>\r\n"
-"<p></p>\r\n"
-"<h3><span style=\"color: #008080;\"><span>Interdisciplinary "
-"nature</span></span></h3>\r\n"
-"<p>Recommendations to involve other subjects</p>\r\n"
-"<p></p>\r\n"
-"<p></p>"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:114
-msgid "Assessment and curricular references"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:117
-msgid ""
-"<p><span>Link to the final rubric of the project.</span></p>\r\n"
-"<p>Assessment recommendations / resources of each task.</p>\r\n"
-"<p>Assessment criteria and guidance on how to assess.</p>\r\n"
-"<p>Contents / learning standards and key competences.</p>\r\n"
-"<p></p>"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:120
+#: exe/webui/content_template/strings.py:254
 msgid "Need any help?"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:123
-msgid "<h3>ICT resources/apps/tools</h3>"
+#: exe/webui/content_template/strings.py:260
+msgid "ICT resources/apps/tools"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:126
+#: exe/webui/content_template/strings.py:266
+msgid "Assessment and curricular references"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:278
+msgid "Link to the final rubric of the project."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:279
+msgid "Assessment recommendations / resources of each task."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:280
+msgid "Assessment criteria and guidance on how to assess."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:281
+msgid "Contents / learning standards and key competences."
+msgstr ""
+
+#: exe/webui/content_template/strings.py:287
+msgid "Learning Pathway and timing"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:379
+msgid "Steps"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:380
+msgid "Main aim"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:381
+#: exe/webui/content_template/strings.py:474
+msgid "Timing"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:382
+msgid "Before you start"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:383
+#: exe/webui/content_template/strings.py:385
+#: exe/webui/content_template/strings.py:387
+#: exe/webui/content_template/strings.py:389
+#: exe/webui/content_template/strings.py:391
+#: exe/webui/content_template/strings.py:393
+msgid "... sessions"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:386
+msgid "(Mission 1)"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:388
+msgid "(Mission 2)"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:390
+msgid "(Mission 3)"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:392
+msgid "(Final Challenge)"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:394
+msgid "Interdisciplinary nature"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:395
+msgid "Recommendations to involve other subjects"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:401
+msgid "Fact sheet"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:471
+msgid "Level / course"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:472
+msgid "Final project"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:473
+msgid "Contents"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:475
+msgid "Resource structure"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:476
+msgid "Types of tasks and activities"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:477
+msgid "Methodological approach"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:478
+msgid "Use of the learning diary"
+msgstr ""
+
+#: exe/webui/content_template/strings.py:498
 msgid "Rubrics and other documents"
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:129
-msgid "<p>You can download all the documents to print, share, reuse...</p>"
+#: exe/webui/content_template/strings.py:504
+msgid "You can download all the documents to print, share, reuse..."
 msgstr ""
 
-#: exe/webui/content_template/templates_strings.py:135
-msgid ""
-"<p style=\"text-align: center;\"><a rel=\"license\" "
-"href=\"http://creativecommons.org/licenses/by-sa/4.0/\"><img "
-"alt=\"Licencia de Creative Commons\" style=\"border-width: 0px; display: "
-"block; margin-left: auto; margin-right: auto;\" "
-"src=\"resources/88x31.png\" width=\"88\" height=\"31\" /></a><br /><span "
-"xmlns:dct=\"http://purl.org/dc/terms/\" property=\"dct:title\">EDIA "
-"Project: English PBL</span> by <a "
-"xmlns:cc=\"http://creativecommons.org/ns#\" "
-"href=\"http://cedec.educalab.es/\" property=\"cc:attributionName\" "
-"target=\"_blank\">CeDeC</a>.</p>"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:138
-msgid "Writing the diary"
-msgstr ""
-
-#: exe/webui/content_template/templates_strings.py:139
-#: exe/webui/content_template/templates_strings.py:140
-msgid "General guidelines for teachers"
+#: exe/webui/content_template/strings.py:515
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Base"
 msgstr ""
 
 #: exe/webui/debesconocerfpdblock.py:68
@@ -8546,23 +8475,23 @@ msgstr "Vælg MP3 fil"
 msgid "Caption:"
 msgstr "Billedtekst"
 
-#: exe/webui/editorpage.py:125
+#: exe/webui/editorpage.py:126
 msgid "Please enter an idevice name."
 msgstr "Indtast et iDevice navn."
 
-#: exe/webui/editorpage.py:188 exe/webui/editorpage.py:200
+#: exe/webui/editorpage.py:191 exe/webui/editorpage.py:203
 msgid "Sorry, wrong file format."
 msgstr "Forkert filformat"
 
-#: exe/webui/editorpage.py:262
+#: exe/webui/editorpage.py:266
 msgid "Import iDevice"
 msgstr "Importer iDevice"
 
-#: exe/webui/editorpage.py:265
+#: exe/webui/editorpage.py:269
 msgid "Export iDevice"
 msgstr "EksporteriDevice"
 
-#: exe/webui/editorpage.py:291
+#: exe/webui/editorpage.py:295
 msgid "New iDevice"
 msgstr "Ny iDevice"
 
@@ -9092,11 +9021,11 @@ msgstr ""
 msgid "Default browser in your system"
 msgstr ""
 
-#: exe/webui/preferencespage.py:203
+#: exe/webui/preferencespage.py:204
 msgid "Failed to get preferences"
 msgstr ""
 
-#: exe/webui/preferencespage.py:265
+#: exe/webui/preferencespage.py:274
 msgid "Failed to save preferences"
 msgstr ""
 
@@ -9186,7 +9115,7 @@ msgstr "Vælg en fil"
 msgid "Select a package"
 msgstr "Vælg et billede"
 
-#: exe/webui/scripts/authoring.js:660
+#: exe/webui/scripts/authoring.js:661
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:45
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:71
@@ -9198,34 +9127,34 @@ msgid ""
 "images turned off."
 msgstr ""
 
-#: exe/webui/scripts/authoring.js:667 exe/webui/scripts/authoring.js:684
+#: exe/webui/scripts/authoring.js:668 exe/webui/scripts/authoring.js:685
 msgid "Image description"
 msgstr ""
 
-#: exe/webui/scripts/authoring.js:668 exe/webui/scripts/authoring.js:685
+#: exe/webui/scripts/authoring.js:669 exe/webui/scripts/authoring.js:686
 msgid "Please provide an image description (alternative text):"
 msgstr ""
 
-#: exe/webui/scripts/authoring.js:867
+#: exe/webui/scripts/authoring.js:868
 msgid ""
 "Embed images shouldn't be pasted directly into the editor. Please use "
 "Insert/Edit Image."
 msgstr ""
 
-#: exe/webui/scripts/authoring.js:867
+#: exe/webui/scripts/authoring.js:868
 msgid "This change will be undone."
 msgstr ""
 
-#: exe/webui/scripts/editor.js:35
+#: exe/webui/scripts/editor.js:52
 msgid "Do you want to overwrite the existing idevice {idevice}?"
 msgstr ""
 
-#: exe/webui/scripts/editor.js:79 exe/webui/scripts/editor.js:106
+#: exe/webui/scripts/editor.js:96 exe/webui/scripts/editor.js:123
 #, fuzzy
 msgid "eXe Idevices"
 msgstr "iDevicer"
 
-#: exe/webui/scripts/editor.js:87
+#: exe/webui/scripts/editor.js:104
 msgid "Please save the idevice first, then try to export it."
 msgstr ""
 
@@ -9302,7 +9231,7 @@ msgid "Text to display"
 msgstr ""
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:43
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:165
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:161
 msgid "Participants"
 msgstr ""
 
@@ -9315,29 +9244,29 @@ msgid "Grouping"
 msgstr ""
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:54
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:203
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:199
 msgid "Feedback button text"
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:151
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:147
 #, python-format
 msgid "Please write the text to display in '%s'."
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:180
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:176
 msgid "Please write some information."
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:181
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:177
 msgid "Please write the task description."
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:182
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:178
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:112
 msgid "Please write some instructions."
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:202
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:198
 #, python-format
 msgid "Please fill in this field: '%s'."
 msgstr ""
@@ -13762,8 +13691,8 @@ msgstr ""
 msgid "Style deleted correctly"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:485 exe/webui/templatemanagerpage.py:262
-#: exe/webui/templatemanagerpage.py:296
+#: exe/webui/stylemanagerpage.py:485 exe/webui/templatemanagerpage.py:263
+#: exe/webui/templatemanagerpage.py:297
 msgid "An unexpected error has occurred"
 msgstr ""
 
@@ -13776,26 +13705,26 @@ msgstr ""
 msgid "Error while installing template: %s"
 msgstr ""
 
-#: exe/webui/templatemanagerpage.py:229
+#: exe/webui/templatemanagerpage.py:230
 #, python-format
 msgid "SAVE FAILED! '%s' is not a valid name for a template"
 msgstr ""
 
-#: exe/webui/templatemanagerpage.py:238
+#: exe/webui/templatemanagerpage.py:239
 #, python-format
 msgid "Template exported correctly: %s"
 msgstr ""
 
-#: exe/webui/templatemanagerpage.py:241
+#: exe/webui/templatemanagerpage.py:242
 #, python-format
 msgid "Could not export template : %s"
 msgstr ""
 
-#: exe/webui/templatemanagerpage.py:255
+#: exe/webui/templatemanagerpage.py:256
 msgid "It is not possible to delete an opened template."
 msgstr ""
 
-#: exe/webui/templatemanagerpage.py:259
+#: exe/webui/templatemanagerpage.py:260
 msgid "Template deleted correctly"
 msgstr ""
 
@@ -14914,5 +14843,434 @@ msgstr ""
 #~ " on how to assess.</p> <p>Contents /"
 #~ " learning standards and key "
 #~ "competences.</p> <p></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>Motivating inspiration.</p>\r\n"
+#~ "<p>Project / Final Challenge</p>\r\n"
+#~ "<p style=\"text-align: center;\"><img "
+#~ "src=\"resources/images_pbl_english.png\" alt=\"\" "
+#~ "width=\"560\" height=\"315\" /></p>\r\n"
+#~ "<p>What to learn and how to learn.</p>\r\n"
+#~ "<p>Motivation for the project development.</p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p style=\"text-align: center;\"><a "
+#~ "rel=\"license\" href=\"http://creativecommons.org/licenses"
+#~ "/by-sa/4.0/\"><img alt=\"Licencia de Creative "
+#~ "Commons\" style=\"border-width: 0px; display:"
+#~ " block; margin-left: auto; margin-"
+#~ "right: auto;\" src=\"resources/88x31.png\" "
+#~ "width=\"88\" height=\"31\" /></a><br /><span "
+#~ "xmlns:dct=\"http://purl.org/dc/terms/\" "
+#~ "property=\"dct:title\">EDIA Project: English "
+#~ "PBL</span> by <a "
+#~ "xmlns:cc=\"http://creativecommons.org/ns#\" "
+#~ "href=\"http://cedec.educalab.es/\" "
+#~ "property=\"cc:attributionName\" target=\"_blank\">CeDeC</a>.</p>"
+#~ "\r\n"
+#~ "<p></p>"
+#~ msgstr ""
+
+#~ msgid "Your project: general information"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>Explanation of the final challenge.</p>\r\n"
+#~ "<p>Overview of suggested tasks.</p>\r\n"
+#~ "<p style=\"text-align: center;\"><img "
+#~ "src=\"resources/images_pbl_english.png\" alt=\"\" "
+#~ "width=\"560\" height=\"315\" /></p>\r\n"
+#~ "<p></p>\r\n"
+#~ "<p><span style=\"font-size: 1em; line-"
+#~ "height: 19.2px;\">General information "
+#~ "about:</span><span style=\"font-size: 1em; "
+#~ "line-height: 19.2px;\"></span></p>\r\n"
+#~ "<ul>\r\n"
+#~ "<li>Assessment</li>\r\n"
+#~ "<li><span style=\"font-size: 1em; line-"
+#~ "height: 19.2px;\">Class team management</span></li>"
+#~ "\r\n"
+#~ "<li><span style=\"font-size: 1em; line-"
+#~ "height: 19.2px;\">Learning diary and personal"
+#~ " site.</span></li>\r\n"
+#~ "<li><span style=\"font-size: 1em; line-"
+#~ "height: 19.2px;\">Dissemination of project "
+#~ "activities.</span></li>\r\n"
+#~ "</ul>\r\n"
+#~ "<p>Starting motivation<span style=\"font-size: "
+#~ "1em; line-height: 19.2px;\"></span></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>Introductory Activity to the project involving:</p>\r\n"
+#~ "<ul>\r\n"
+#~ "<li>Team work</li>\r\n"
+#~ "<li>Reflection and motivation</li>\r\n"
+#~ "<li>Expression of feelings.</li>\r\n"
+#~ "</ul>\r\n"
+#~ "<p style=\"text-align: center;\"><img "
+#~ "src=\"resources/images_pbl_english.png\" alt=\"\" "
+#~ "width=\"560\" height=\"315\" /></p>\r\n"
+#~ "<p><strong>Steps for the suggested "
+#~ "activity<span style=\"color: #ff0000;\"><br "
+#~ "/></span></strong></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>First activity. Creation of the "
+#~ "learning diary in the suggested "
+#~ "format.</p>\r\n"
+#~ "<p>Creation of the first post heading.</p>\r\n"
+#~ "<p></p>\r\n"
+#~ "<p></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<div class=\"block\">\r\n"
+#~ "<div id=\"3_93-viewer\">\r\n"
+#~ "<p>Script for writing the post. It "
+#~ "must lead the student to think "
+#~ "about and reflect:</p>\r\n"
+#~ "<ul>\r\n"
+#~ "<li>What the final challenge is</li>\r\n"
+#~ "<li>What the assessment will be like</li>\r\n"
+#~ "<li>What they will learn</li>\r\n"
+#~ "<li>How class groups work</li>\r\n"
+#~ "</ul>\r\n"
+#~ "</div>\r\n"
+#~ "</div>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>What the final mission will be.</p>\r\n"
+#~ "<p>What sudents will learn about.</p>\r\n"
+#~ "<p style=\"text-align: center;\"><img "
+#~ "src=\"resources/images_pbl_english.png\" alt=\"\" "
+#~ "width=\"560\" height=\"315\" /></p>\r\n"
+#~ "<p style=\"text-align: center;\"></p>\r\n"
+#~ "<p>Starting activity</p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>General introduction</p>\r\n"
+#~ "<p>What the \"final mission\" will be"
+#~ " and link to the assessment "
+#~ "rubric.</p>\r\n"
+#~ "<p style=\"text-align: center;\"><img "
+#~ "src=\"resources/images_pbl_english.png\" alt=\"\" "
+#~ "width=\"560\" height=\"315\" /></p>\r\n"
+#~ "<p>What learning objective this mission helps to achieve.</p>\r\n"
+#~ "<p></p>\r\n"
+#~ "<p></p>\r\n"
+#~ "<p><strong>Steps for your mission</strong></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>Guidelines to open a new post.</p>\r\n"
+#~ "<p></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<div id=\"8_93-viewer\">\r\n"
+#~ "<div class=\"block\">\r\n"
+#~ "<div id=\"3_93-viewer\">\r\n"
+#~ "<div class=\"block\">\r\n"
+#~ "<div id=\"3_93-viewer\">\r\n"
+#~ "<div id=\"8_93-viewer\">\r\n"
+#~ "<div class=\"block\">\r\n"
+#~ "<div id=\"3_93-viewer\">\r\n"
+#~ "<div class=\"block\">\r\n"
+#~ "<div id=\"3_93-viewer\">\r\n"
+#~ "<p>Questions or guidelines for students to revise and reflect:</p>\r\n"
+#~ "<ul>\r\n"
+#~ "<li>The task they have done</li>\r\n"
+#~ "<li>The resources they have checked</li>\r\n"
+#~ "<li>Materials they have created</li>\r\n"
+#~ "<li>What they have learnt</li>\r\n"
+#~ "<li>Difficulties found.</li>\r\n"
+#~ "<li>Remaining doubts</li>\r\n"
+#~ "<li>Class team functioning</li>\r\n"
+#~ "</ul>\r\n"
+#~ "</div>\r\n"
+#~ "</div>\r\n"
+#~ "</div>\r\n"
+#~ "</div>\r\n"
+#~ "</div>\r\n"
+#~ "</div>\r\n"
+#~ "</div>\r\n"
+#~ "</div>\r\n"
+#~ "</div>\r\n"
+#~ "</div>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<table style=\"margin-left: auto; margin-"
+#~ "right: auto; width: 624.333px; border-"
+#~ "color: #000000;\" cellspacing=\"4\" "
+#~ "cellpadding=\"4\"><colgroup><col width=\"116\" /><col "
+#~ "width=\"509\" /></colgroup>\r\n"
+#~ "<tbody>\r\n"
+#~ "<tr style=\"height: 35px;\" valign=\"top\">\r\n"
+#~ "<td style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\">\r\n"
+#~ "<p><strong>Title</strong></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\">\r\n"
+#~ "<p>...</p>\r\n"
+#~ "</td>\r\n"
+#~ "</tr>\r\n"
+#~ "<tr style=\"height: 35.375px;\" valign=\"top\">\r\n"
+#~ "<td style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\">\r\n"
+#~ "<p><strong>Subject</strong></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\">\r\n"
+#~ "<p>...</p>\r\n"
+#~ "</td>\r\n"
+#~ "</tr>\r\n"
+#~ "<tr style=\"height: 35px;\" valign=\"top\">\r\n"
+#~ "<td style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\">\r\n"
+#~ "<p><strong>Level / course<br /></strong></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\">\r\n"
+#~ "<p>...</p>\r\n"
+#~ "</td>\r\n"
+#~ "</tr>\r\n"
+#~ "<tr style=\"height: 35px;\" valign=\"top\">\r\n"
+#~ "<td style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\">\r\n"
+#~ "<p><strong>Final project<br /></strong></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span size=\"3\">...<br "
+#~ "/></span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "</tr>\r\n"
+#~ "<tr style=\"height: 35px;\" valign=\"top\">\r\n"
+#~ "<td style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\">\r\n"
+#~ "<p><strong>Contents</strong></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span "
+#~ "size=\"3\">..</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "</tr>\r\n"
+#~ "<tr style=\"height: 35px;\" valign=\"top\">\r\n"
+#~ "<td style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\">\r\n"
+#~ "<p><strong>Timing</strong></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"height: 35px; border-color: "
+#~ "#000000; width: 248px; text-align: "
+#~ "left;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span "
+#~ "size=\"3\">...</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "</tr>\r\n"
+#~ "</tbody>\r\n"
+#~ "</table>\r\n"
+#~ "<p></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p><span>Resource structure<br /></span></p>\r\n"
+#~ "<p><span>Types of tasks and activities</span></p>\r\n"
+#~ "<p>Methodological approach</p>\r\n"
+#~ "<p>Use of the learning diary</p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p></p>\r\n"
+#~ "<table style=\"width: 95.5125%;\" cellspacing=\"0\""
+#~ " cellpadding=\"4\"><colgroup><col width=\"64*\" /> "
+#~ "<col width=\"96*\" /> <col width=\"96*\" "
+#~ "/></colgroup>\r\n"
+#~ "<tbody>\r\n"
+#~ "<tr valign=\"top\">\r\n"
+#~ "<td style=\"width: 35%; text-align: left;\">\r\n"
+#~ "<h3 style=\"text-align: left;\" "
+#~ "align=\"center\"><strong><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">Steps</span></span></span></strong></h3>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 47%; text-align: left;\">\r\n"
+#~ "<h3 style=\"text-align: left;\" "
+#~ "align=\"center\"><strong><span color=\"#000000\"><span "
+#~ "face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">Main aim</span></span></span></strong></h3>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 36.5786%;\">\r\n"
+#~ "<h3 align=\"center\"><strong><span color=\"#000000\"><span"
+#~ " face=\"Liberation Serif, serif\"><span "
+#~ "size=\"3\">Timing</span></span></span></strong></h3>\r\n"
+#~ "</td>\r\n"
+#~ "</tr>\r\n"
+#~ "<tr valign=\"top\">\r\n"
+#~ "<td style=\"width: 35%;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span size=\"3\">Before you "
+#~ "start</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 47%;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span "
+#~ "size=\"3\">...</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 36.5786%; text-align: center;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span "
+#~ "size=\"3\">...sessions</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "</tr>\r\n"
+#~ "<tr valign=\"top\">\r\n"
+#~ "<td style=\"width: 35%;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span size=\"3\">Breaking the "
+#~ "ice<br /></span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 47%;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span "
+#~ "size=\"3\">...</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 36.5786%; text-align: center;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span "
+#~ "size=\"3\">...sessions</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "</tr>\r\n"
+#~ "<tr valign=\"top\">\r\n"
+#~ "<td style=\"width: 35%;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span size=\"3\">(Mission 1)<br "
+#~ "/></span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 47%;\">\r\n"
+#~ "<p><span size=\"2\" style=\"font-size: small;\">...</span></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 36.5786%; text-align: "
+#~ "center;\"><span color=\"#000000\"><span face=\"Liberation"
+#~ " Serif, serif\"><span "
+#~ "size=\"3\">...sessions</span></span></span></td>\r\n"
+#~ "</tr>\r\n"
+#~ "<tr valign=\"top\">\r\n"
+#~ "<td style=\"width: 35%;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span size=\"3\">(Mission "
+#~ "2)</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 47%;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span "
+#~ "size=\"3\">...</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 36.5786%; text-align: center;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span "
+#~ "size=\"3\">...sessions</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "</tr>\r\n"
+#~ "<tr valign=\"top\">\r\n"
+#~ "<td style=\"width: 35%;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span size=\"3\">(Mission "
+#~ "3)</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 47%;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span "
+#~ "size=\"3\">...</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 36.5786%; text-align: center;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span "
+#~ "size=\"3\">...sessions</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "</tr>\r\n"
+#~ "<tr valign=\"top\">\r\n"
+#~ "<td style=\"width: 35%;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span size=\"3\">(Final Challenge)<br"
+#~ " /></span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 47%;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span "
+#~ "size=\"3\">...</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "<td style=\"width: 36.5786%; text-align: center;\">\r\n"
+#~ "<p><span color=\"#000000\"><span face=\"Liberation "
+#~ "Serif, serif\"><span size=\"3\">3 "
+#~ "sessions</span></span></span></p>\r\n"
+#~ "</td>\r\n"
+#~ "</tr>\r\n"
+#~ "</tbody>\r\n"
+#~ "</table>\r\n"
+#~ "<p></p>\r\n"
+#~ "<h3><span style=\"color: "
+#~ "#008080;\"><span>Interdisciplinary nature</span></span></h3>"
+#~ "\r\n"
+#~ "<p>Recommendations to involve other subjects</p>\r\n"
+#~ "<p></p>\r\n"
+#~ "<p></p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p><span>Link to the final rubric of the project.</span></p>\r\n"
+#~ "<p>Assessment recommendations / resources of each task.</p>\r\n"
+#~ "<p>Assessment criteria and guidance on how to assess.</p>\r\n"
+#~ "<p>Contents / learning standards and key competences.</p>\r\n"
+#~ "<p></p>"
+#~ msgstr ""
+
+#~ msgid "<h3>ICT resources/apps/tools</h3>"
+#~ msgstr ""
+
+#~ msgid "<p>You can download all the documents to print, share, reuse...</p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p style=\"text-align: center;\"><a "
+#~ "rel=\"license\" href=\"http://creativecommons.org/licenses"
+#~ "/by-sa/4.0/\"><img alt=\"Licencia de Creative "
+#~ "Commons\" style=\"border-width: 0px; display:"
+#~ " block; margin-left: auto; margin-"
+#~ "right: auto;\" src=\"resources/88x31.png\" "
+#~ "width=\"88\" height=\"31\" /></a><br /><span "
+#~ "xmlns:dct=\"http://purl.org/dc/terms/\" "
+#~ "property=\"dct:title\">EDIA Project: English "
+#~ "PBL</span> by <a "
+#~ "xmlns:cc=\"http://creativecommons.org/ns#\" "
+#~ "href=\"http://cedec.educalab.es/\" "
+#~ "property=\"cc:attributionName\" target=\"_blank\">CeDeC</a>.</p>"
+#~ msgstr ""
+
+#~ msgid "Writing the diary"
+#~ msgstr ""
+
+#~ msgid "General guidelines for teachers"
 #~ msgstr ""
 
