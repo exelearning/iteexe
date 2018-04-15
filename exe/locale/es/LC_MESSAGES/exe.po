@@ -8360,7 +8360,7 @@ msgstr "Pulse para recibir instrucciones sobre cómo completar la actividad"
 
 #: exe/webui/content_template/strings.py:6
 msgid "EDIA Project - PBL"
-msgstr "Proyecto EDIA - PBL (Aprendizaje por Proyectos)"
+msgstr "Proyecto EDIA - ABP (Aprendizaje Basado en Proyectos)"
 
 #: exe/webui/content_template/strings.py:10
 msgid "Project's name"
@@ -9544,11 +9544,11 @@ msgstr "Tareas ABP"
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:15
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:49
 msgid "Provide information of the project or this part of the project."
-msgstr "Proporciona información sobre el proyecto o esta parte del proyecto."
+msgstr "Proporcione información sobre el proyecto o esta parte del mismo."
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:16
 msgid "Describe the tasks that the learners should complete:"
-msgstr "Describe las tareas que el alumnado debe completar:"
+msgstr "Describa las tareas que el alumnado debe completar:"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:17
 msgid ""
