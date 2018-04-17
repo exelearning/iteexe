@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2018-04-14 16:59+0200\n"
+"POT-Creation-Date: 2018-04-17 17:21+0200\n"
 "PO-Revision-Date: 2018-04-14 17:59+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -5865,7 +5865,9 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:272
 msgid "Time to remind the user about saving (in minutes)"
-msgstr "Cuándo recordar al usuario que es prudente guardar los cambios (en minutos)"
+msgstr ""
+"Cuándo recordar al usuario que es prudente guardar los cambios (en "
+"minutos)"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:274
 msgid "Never"
@@ -5875,7 +5877,10 @@ msgstr "Nunca"
 msgid ""
 "By enabling this, a confirmation dialog will be shown after the selected "
 "amount of time to remind the user that he/she should save his/her work."
-msgstr "Si activa esto, tras el periodo de tiempo señalado se mostrará un diálogo de confirmación para recordar al usuario que sería conveniente que guarde su trabajo."
+msgstr ""
+"Si activa esto, tras el periodo de tiempo señalado se mostrará un diálogo"
+" de confirmación para recordar al usuario que sería conveniente que "
+"guarde su trabajo."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:288
 msgid "Default license for the new documents"
@@ -8437,7 +8442,9 @@ msgstr "Diario de aprendizaje"
 
 #: exe/webui/content_template/strings.py:82
 msgid "First activity. Creation of the learning diary in the suggested format."
-msgstr "Primera actividad. Creación del diario de aprendizaje en el formato sugerido."
+msgstr ""
+"Primera actividad. Creación del diario de aprendizaje en el formato "
+"sugerido."
 
 #: exe/webui/content_template/strings.py:83
 msgid "Creation of the first post heading."
@@ -8447,7 +8454,9 @@ msgstr "Creación del encabezamiento de la primera entrada del blog."
 msgid ""
 "Script for writing the post. It must lead the student to think about and "
 "reflect:"
-msgstr "Guión para escribir la entrada. Debe guiar al estudiante a pensar y reflexionar sobre:"
+msgstr ""
+"Guión para escribir la entrada. Debe guiar al estudiante a pensar y "
+"reflexionar sobre:"
 
 #: exe/webui/content_template/strings.py:85
 msgid "What the final challenge is"
@@ -8535,7 +8544,9 @@ msgstr "Guías para iniciar una nueva entrada del blog."
 
 #: exe/webui/content_template/strings.py:193
 msgid "Questions or guidelines for students to revise and reflect:"
-msgstr "Preguntas y guías que deberán revisar los estudiantes y sobre las que reflexionar:"
+msgstr ""
+"Preguntas y guías que deberán revisar los estudiantes y sobre las que "
+"reflexionar:"
 
 #: exe/webui/content_template/strings.py:194
 msgid "The task they have done"
@@ -8725,7 +8736,9 @@ msgstr "Rúbricas y otros documentos"
 
 #: exe/webui/content_template/strings.py:504
 msgid "You can download all the documents to print, share, reuse..."
-msgstr "Puede descargar todos los documentos para imprimirlos, compartirlos, reutilizarlos..."
+msgstr ""
+"Puede descargar todos los documentos para imprimirlos, compartirlos, "
+"reutilizarlos..."
 
 #: exe/webui/content_template/strings.py:515
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
@@ -15017,3 +15030,4 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
+
