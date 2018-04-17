@@ -131,7 +131,7 @@ abbr[title],acronym[title]{text-decoration:none;border-bottom:1px dotted} /* Unt
 #topPagination .page-counter{margin-left:20px;margin-right:0}
 /* Accessibility */
 #skipNav{margin:0;position:absolute;width:100%}
-.sr-av,.js .js-sr-av,#skipNav a,.exe-hidden-accessible{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0} /* sr-av: Avaible for Screen Readers. (0 0 0 0) is for IE6 & 7 */
+.sr-av,.js .js-sr-av,#skipNav a,.exe-hidden-accessible,.js .exe-tooltip-text{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0} /* sr-av: Avaible for Screen Readers. (0 0 0 0) is for IE6 & 7 */
 #skipNav a{background:#333;color:#fff;padding:.4em .85em}
 #skipNav a:active,#skipNav a:focus{position:static;overflow:visible;clip:auto;height:auto}
 /* Tables */
@@ -148,7 +148,7 @@ abbr[title],acronym[title]{text-decoration:none;border-bottom:1px dotted} /* Unt
 .exe-table-minimalist caption{text-align:center;font-style:italic;border-bottom:2px solid #CCC;padding:.6em 0}
 /* Tooltips */
 body .qtip {font-size:.85em;line-height:1.5em}
-.js .exe-tooltip-text{display:none}
+.qtip .exe-tooltip-text{position:relative;overflow:auto;clip:auto;height:auto}
 /* Structured lists */
 ol.auto-numbered{counter-reset:item}
 .auto-numbered ol{counter-reset:item}
