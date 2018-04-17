@@ -793,7 +793,7 @@ translations = {
  "Text color": "Color texto", 
  "closed exercise or problem": "ejercicio o problema cerrado", 
  "Please upload a .ggb file.": "Por favor suba un archivo .ggb.", 
- "PBL Tasks": "Tareas ABP", 
+ "PBL Tasks": "Tarea ABP", 
  "Restart": "Reiniciar", 
  "Add Image": "A\u00f1adir imagen", 
  "Mike Dawson \/ PAIWASTOON Networking Services Ltd.": "Mike Dawson \/ PAIWASTOON Networking Services Ltd.", 

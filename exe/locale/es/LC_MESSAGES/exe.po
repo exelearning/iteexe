@@ -9539,7 +9539,7 @@ msgstr "Deberá escribir el texto del botón."
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:13
 msgid "PBL Tasks"
-msgstr "Tareas ABP"
+msgstr "Tarea ABP"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:15
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:49
