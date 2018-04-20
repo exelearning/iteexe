@@ -139,3 +139,4 @@ padding-bottom:2px;
 /* To review */
 #info .info{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #info .col-b{width:60%}
+.jPicker .Grid span.QuickColor{height:19px!important;width:19px!important}
