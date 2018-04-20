@@ -1,5 +1,5 @@
 /* Reset ext-all-gray.css */
-#cssWizard,.jPicker{font-size: 11px;line-height:1.5em;font-family: Verdana, Arial, Helvetica, sans-serif}
+#cssWizard{font-size:11px;line-height:1.5em;font-family:Verdana,Arial,Helvetica,sans-serif}
 #cssWizard .panel{height:440px}
 #cssWizard fieldset{padding:4px 9px}
 #content-css fieldset,#nav-css fieldset{padding-bottom:1em}

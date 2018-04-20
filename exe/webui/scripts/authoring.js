@@ -953,7 +953,7 @@ var $exeAuthoring = {
                 $exe.loadScript("/tools/style-designer/css/jpicker.css","$exeAuthoring.iDevice.colorPicker.getStrings()");
             },
             getStrings : function(){
-                $exe.loadScript("/tools/style-designer/langs/en.js","$exeAuthoring.iDevice.colorPicker.enable()");
+                $exe.loadScript("/tools/style-designer/langs/all.js","$exeAuthoring.iDevice.colorPicker.enable()");
             },
             enable : function(){
                 $.fn.jPicker.defaults.images.clientPath='/tools/style-designer/images/jpicker/';	
