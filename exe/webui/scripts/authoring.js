@@ -946,21 +946,21 @@ var $exeAuthoring = {
                 var colorFields = $(".exe-color-picker");
                 if (colorFields.length>0) {
                     $exeAuthoring.iDevice.colorPicker.fields = colorFields;
-                    $exe.loadScript("/tools/style-designer/js/jpicker-1.1.6.min.js","$exeAuthoring.iDevice.colorPicker.getCSS()");
+                    $exe.loadScript("/tools/color-picker/js/jpicker-1.1.6.min.js","$exeAuthoring.iDevice.colorPicker.getCSS()");
                 }
             },
             getCSS : function(){
-                $exe.loadScript("/tools/style-designer/css/jpicker.css","$exeAuthoring.iDevice.colorPicker.getStrings()");
+                $exe.loadScript("/tools/color-picker/css/jpicker.css","$exeAuthoring.iDevice.colorPicker.getStrings()");
             },
             getStrings : function(){
-                $exe.loadScript("/tools/style-designer/langs/all.js","$exeAuthoring.iDevice.colorPicker.enable()");
+                $exe.loadScript("/tools/color-picker/langs/all.js","$exeAuthoring.iDevice.colorPicker.enable()");
             },
             enable : function(){
-                $.fn.jPicker.defaults.images.clientPath='/tools/style-designer/images/jpicker/';	
+                $.fn.jPicker.defaults.images.clientPath='/tools/color-picker/images/';	
                 $exeAuthoring.iDevice.colorPicker.fields.jPicker(
                     {
                         window:{
-                            title: $i18n.Color_Picker,
+                            title: $Color_Picker_i18n.Color_Picker,
                             effects:{
                                 type:'show',
                                 speed:{
@@ -969,7 +969,7 @@ var $exeAuthoring = {
                                 }
                             }
                         },
-                        localization : $i18n.Color_Picker_Strings
+                        localization : $Color_Picker_i18n.Color_Picker_Strings
                     },
                     function(color, context){
                         $("div.jPicker").hide();

@@ -1095,11 +1095,11 @@ var $app = {
 		return css;
 	},
 	enableColorPickers : function(){
-		$.fn.jPicker.defaults.images.clientPath='images/jpicker/';	
+		$.fn.jPicker.defaults.images.clientPath='../color-picker/images/';	
 		$('.color').jPicker(
 			{
 				window:{
-					title: $i18n.Color_Picker,
+					title: $Color_Picker_i18n.Color_Picker,
 					position:{
 						x: 'top',
 						y: 'left'
@@ -1112,7 +1112,7 @@ var $app = {
 						}
 					}
 				},
-				localization : $i18n.Color_Picker_Strings
+				localization : $Color_Picker_i18n.Color_Picker_Strings
 			},
 			function(color, context){
 				$("div.jPicker").hide();
