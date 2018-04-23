@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2018-04-19 19:44+0200\n"
+"POT-Creation-Date: 2018-04-23 22:58+0200\n"
 "PO-Revision-Date: 2017-09-01 12:14+0200\n"
 "Last-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\n"
 "Language: eu\n"
@@ -271,7 +271,7 @@ msgstr "%s atxikitako fitxategiak ez du nodo-gurasorik"
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:573
-#: exe/webui/tools/style-designer/langs/en.js:46
+#: exe/webui/tools/style-designer/langs/all.js:46
 msgid "Image"
 msgstr "Irudia"
 
@@ -1162,7 +1162,7 @@ msgstr "Labaindu"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:236
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:26
+#: exe/webui/tools/style-designer/langs/all.js:26
 msgid "Size"
 msgstr "Tamaina"
 
@@ -1181,7 +1181,7 @@ msgstr "Erakutsi aukera aurreratuak"
 
 #: exe/engine/extendedfieldengine.py:284
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:45
+#: exe/webui/tools/style-designer/langs/all.js:45
 msgid "Browse"
 msgstr "Arakatu"
 
@@ -1488,7 +1488,7 @@ msgstr "Atxikitutako fitxategiak Idevicea."
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:240
 #: exe/webui/common.py:648
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:10
-#: exe/webui/tools/style-designer/langs/en.js:60
+#: exe/webui/tools/style-designer/langs/all.js:60
 msgid "No"
 msgstr "Ez"
 
@@ -1497,7 +1497,7 @@ msgstr "Ez"
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:241
 #: exe/webui/common.py:647
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:9
-#: exe/webui/tools/style-designer/langs/en.js:59
+#: exe/webui/tools/style-designer/langs/all.js:59
 msgid "Yes"
 msgstr "Bai"
 
@@ -2090,7 +2090,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:598
-#: exe/webui/tools/style-designer/langs/en.js:24
+#: exe/webui/tools/style-designer/langs/all.js:24
 msgid "Text"
 msgstr "Testua"
 
@@ -2751,7 +2751,7 @@ msgstr "Nire katalogoa"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:56
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:163
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelist/plugin.min.js:37
-#: exe/webui/tools/style-designer/langs/en.js:73
+#: exe/webui/tools/style-designer/langs/all.js:73
 msgid "Default"
 msgstr "Lehenetsiak"
 
@@ -4071,7 +4071,7 @@ msgstr ""
 #: exe/webui/templatemanagerpage.py:130 exe/webui/templatemanagerpage.py:229
 #: exe/webui/templatemanagerpage.py:241 exe/webui/templatemanagerpage.py:256
 #: exe/webui/templatemanagerpage.py:263 exe/webui/templatemanagerpage.py:297
-#: exe/webui/tools/style-designer/langs/en.js:125
+#: exe/webui/tools/style-designer/langs/all.js:125
 msgid "Error"
 msgstr "Errorea"
 
@@ -4080,7 +4080,7 @@ msgstr "Errorea"
 #: exe/jsui/scripts/app/controller/Outline.js:204
 #: exe/jsui/scripts/app/controller/Toolbar.js:499
 #: exe/webui/scripts/editor.js:54
-#: exe/webui/tools/style-designer/langs/en.js:115
+#: exe/webui/tools/style-designer/langs/all.js:115
 msgid "Confirm"
 msgstr "Baieztatu"
 
@@ -4258,7 +4258,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/HelpContainer.js:43 exe/webui/block.py:270
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:29
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:124
+#: exe/webui/tools/style-designer/langs/all.js:124
 msgid "Information"
 msgstr "Informazioa"
 
@@ -4380,8 +4380,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:48
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:29
-#: exe/webui/tools/style-designer/langs/en.js:128
-#: exe/webui/tools/style-designer/langs/en.js:137
+#: exe/webui/tools/color-picker/langs/all.js:9
+#: exe/webui/tools/style-designer/langs/all.js:128
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
 msgstr "Ezeztatu"
@@ -4591,7 +4591,7 @@ msgstr "Ireki"
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:168 exe/webui/editorpage.py:264
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:149
-#: exe/webui/tools/style-designer/langs/en.js:113
+#: exe/webui/tools/style-designer/langs/all.js:113
 msgid "Save"
 msgstr "Gorde"
 
@@ -4833,7 +4833,7 @@ msgstr "Garbitu"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:678
-#: exe/webui/tools/style-designer/langs/en.js:111
+#: exe/webui/tools/style-designer/langs/all.js:111
 msgid "Reset"
 msgstr "Berrezarri"
 
@@ -4980,7 +4980,7 @@ msgstr "Taxona"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:469
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:560
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:582
-#: exe/webui/tools/style-designer/langs/en.js:11
+#: exe/webui/tools/style-designer/langs/all.js:11
 msgid "General"
 msgstr "Orokorra"
 
@@ -5396,7 +5396,7 @@ msgstr "Aurretiazko ezagutza."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:86
 #: exe/webui/tools/assistant/langs/en.js:28
-#: exe/webui/tools/style-designer/langs/en.js:31
+#: exe/webui/tools/style-designer/langs/all.js:31
 msgid "Author"
 msgstr "Autor"
 
@@ -5418,7 +5418,7 @@ msgstr "Baliabidearen egile nagusia."
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1014
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1034
 #: exe/webui/tools/assistant/langs/en.js:29
-#: exe/webui/tools/style-designer/langs/en.js:37
+#: exe/webui/tools/style-designer/langs/all.js:37
 msgid "License"
 msgstr "Lizentzia"
 
@@ -5519,7 +5519,7 @@ msgstr "Atzekaldeko irudia zehaztu?"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:545
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:181
-#: exe/webui/tools/style-designer/langs/en.js:69
+#: exe/webui/tools/style-designer/langs/all.js:69
 msgid "Footer"
 msgstr "Orri-oina"
 
@@ -5624,7 +5624,7 @@ msgstr "Aukeratu hizkuntza"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:92
-#: exe/webui/tools/style-designer/langs/en.js:102
+#: exe/webui/tools/style-designer/langs/all.js:102
 msgid "Advanced"
 msgstr "Gehigarriak"
 
@@ -5908,7 +5908,7 @@ msgid "use the right arrow key"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:104
-#: exe/webui/tools/style-designer/langs/en.js:134
+#: exe/webui/tools/color-picker/langs/all.js:6
 msgid "New"
 msgstr "Berria"
 
@@ -6058,7 +6058,7 @@ msgid "Preview"
 msgstr "Aurrebista"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:483
-#: exe/webui/tools/style-designer/langs/en.js:9
+#: exe/webui/tools/style-designer/langs/all.js:9
 msgid "Style Designer"
 msgstr "Estiloen diseinu-tresna"
 
@@ -8601,7 +8601,7 @@ msgstr "Epigrafe botoia"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:906
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:18
+#: exe/webui/tools/style-designer/langs/all.js:18
 msgid "Left"
 msgstr "Ezkerra"
 
@@ -8619,7 +8619,7 @@ msgstr "Ezkerra"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:907
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:76
+#: exe/webui/tools/style-designer/langs/all.js:76
 msgid "Right"
 msgstr "Eskuina"
 
@@ -9820,7 +9820,7 @@ msgstr "Bloke elementuak Erakutsi/Ezkutatu"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:169
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:897
-#: exe/webui/tools/style-designer/langs/en.js:75
+#: exe/webui/tools/style-designer/langs/all.js:75
 msgid "Alignment"
 msgstr "Alineazioa"
 
@@ -9877,7 +9877,7 @@ msgstr "Dokumentuaren ezaugarriak"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:209
-#: exe/webui/tools/style-designer/langs/en.js:17
+#: exe/webui/tools/style-designer/langs/all.js:17
 msgid "Center"
 msgstr "Zentratuta"
 
@@ -10192,12 +10192,12 @@ msgid "Abbreviation"
 msgstr "Laburdura"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:92
+#: exe/webui/tools/style-designer/langs/all.js:92
 msgid "White"
 msgstr "Zuria"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:93
+#: exe/webui/tools/style-designer/langs/all.js:93
 msgid "Black"
 msgstr "Beltza"
 
@@ -10240,7 +10240,7 @@ msgstr "Unitateak"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:204
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:84
+#: exe/webui/tools/style-designer/langs/all.js:84
 msgid "Width"
 msgstr "Zabalera"
 
@@ -10253,7 +10253,7 @@ msgstr "Zabalera"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:167
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:70
+#: exe/webui/tools/style-designer/langs/all.js:70
 msgid "Height"
 msgstr "Altuera"
 
@@ -10489,7 +10489,7 @@ msgstr "Izenburua eta egiletza"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:199
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:803
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:393
-#: exe/webui/tools/style-designer/langs/en.js:68
+#: exe/webui/tools/style-designer/langs/all.js:68
 msgid "Header"
 msgstr "Goiburua"
 
@@ -11619,8 +11619,8 @@ msgstr "Atzeko irudia"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:76
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:42
-#: exe/webui/tools/style-designer/langs/en.js:89
+#: exe/webui/tools/style-designer/langs/all.js:42
+#: exe/webui/tools/style-designer/langs/all.js:89
 msgid "Color"
 msgstr "Kolorea"
 
@@ -12361,21 +12361,21 @@ msgstr "Apaingarriak"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:23
+#: exe/webui/tools/style-designer/langs/all.js:23
 msgid "Font"
 msgstr "Letra-tipoa"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:47
+#: exe/webui/tools/style-designer/langs/all.js:47
 msgid "Position"
 msgstr "Kokapena"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:57
+#: exe/webui/tools/style-designer/langs/all.js:57
 msgid "Repeat"
 msgstr "Errepikatu"
 
@@ -12677,7 +12677,7 @@ msgstr "Ikusi definizioa"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:600
-#: exe/webui/tools/style-designer/langs/en.js:40
+#: exe/webui/tools/style-designer/langs/all.js:40
 msgid "Page"
 msgstr "Orria"
 
@@ -13143,7 +13143,7 @@ msgid "Invalid color value"
 msgstr "Kolore balio ez onargarria"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:130
+#: exe/webui/tools/color-picker/langs/all.js:2
 msgid "Color Picker"
 msgstr "Kolore aukeratzailea"
 
@@ -13281,7 +13281,7 @@ msgid "Find and Replace"
 msgstr "Bilatu eta ordeztu"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:161
-#: exe/webui/tools/style-designer/langs/en.js:112
+#: exe/webui/tools/style-designer/langs/all.js:112
 msgid "Finish"
 msgstr "Amaitu"
 
@@ -13290,7 +13290,7 @@ msgid "Paste Row After"
 msgstr "Itsatsi errenkada ostean"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:170
-#: exe/webui/tools/style-designer/langs/en.js:21
+#: exe/webui/tools/style-designer/langs/all.js:21
 msgid "Border color"
 msgstr "Ertz-kolorea"
 
@@ -13315,7 +13315,7 @@ msgid "Predefined Template Content"
 msgstr "Aurredefinitutako txantiloiaren edukia"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:214
-#: exe/webui/tools/style-designer/langs/en.js:43
+#: exe/webui/tools/style-designer/langs/all.js:43
 msgid "Background color"
 msgstr "Atzeko kolorea"
 
@@ -13332,7 +13332,7 @@ msgid "No color"
 msgstr "Kolorerik gabe"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:218
-#: exe/webui/tools/style-designer/langs/en.js:25
+#: exe/webui/tools/style-designer/langs/all.js:25
 msgid "Text color"
 msgstr "Testu-kolorea"
 
@@ -14224,6 +14224,91 @@ msgstr ""
 msgid "Further information:"
 msgstr ""
 
+#: exe/webui/tools/color-picker/langs/all.js:5
+msgid "Drag markers to pick a color"
+msgstr "Arrastatu markatzaileak kolore bat hartzeko"
+
+#: exe/webui/tools/color-picker/langs/all.js:7
+msgid "Current"
+msgstr "Oraingoa"
+
+#: exe/webui/tools/color-picker/langs/all.js:13
+msgid "New Color - Press OK to Commit"
+msgstr "Kolore berria - sakatu  OK aukeratzeko"
+
+#: exe/webui/tools/color-picker/langs/all.js:14
+msgid "Click to revert to original color"
+msgstr "Klik egin aurreko kolorera itzultzeko"
+
+#: exe/webui/tools/color-picker/langs/all.js:17
+msgid "Commit to this color selection"
+msgstr "Kolore hau aukeratu"
+
+#: exe/webui/tools/color-picker/langs/all.js:18
+msgid "Cancel and revert to original color"
+msgstr "Deuseztatu eta aurreko kolorera itzuli"
+
+#: exe/webui/tools/color-picker/langs/all.js:21
+msgid "Set to Hue color mode"
+msgstr "Ñabardura-modura aldatu"
+
+#: exe/webui/tools/color-picker/langs/all.js:22
+msgid "Enter a Hue value (0-360º)"
+msgstr "Ñabardura-balio bat sartu (0-360º)"
+
+#: exe/webui/tools/color-picker/langs/all.js:25
+msgid "Set to Saturation color mode"
+msgstr "Saturazio-modura aldatu"
+
+#: exe/webui/tools/color-picker/langs/all.js:26
+msgid "Enter a Saturation value (0-100%)"
+msgstr "Saturazio balio bat sartu (0-%100)"
+
+#: exe/webui/tools/color-picker/langs/all.js:29
+msgid "Set to Value color mode"
+msgstr "Balio-modura aldatu"
+
+#: exe/webui/tools/color-picker/langs/all.js:30
+msgid "Enter a Value (0-100%)"
+msgstr "Balio bat sartu (0-%100)"
+
+#: exe/webui/tools/color-picker/langs/all.js:33
+msgid "Set to Red color mode"
+msgstr "Kolore gorriko modura aldatu"
+
+#: exe/webui/tools/color-picker/langs/all.js:34
+msgid "Enter a Red value (0-255)"
+msgstr "Sartu gorrirako balio bat (0-255)"
+
+#: exe/webui/tools/color-picker/langs/all.js:37
+msgid "Set to Green color mode"
+msgstr "Kolore berdeko modura aldatu"
+
+#: exe/webui/tools/color-picker/langs/all.js:38
+msgid "Enter a Green value (0-255)"
+msgstr "Sartu berderako balio bat (0-255)"
+
+#: exe/webui/tools/color-picker/langs/all.js:41
+msgid "Set to Blue color mode"
+msgstr "Kolore urdineko modura aldatu"
+
+#: exe/webui/tools/color-picker/langs/all.js:42
+msgid "Enter a Blue value (0-255)"
+msgstr "Sartu urdinerako balio bat (0-255)"
+
+#: exe/webui/tools/color-picker/langs/all.js:45
+msgid "Set to Alpha color mode"
+msgstr "Kolore garden modura aldatu"
+
+#: exe/webui/tools/color-picker/langs/all.js:46
+#: exe/webui/tools/color-picker/langs/all.js:50
+msgid "Enter an Alpha value (0-100)"
+msgstr "Sartu gardentasunerako balio bat (0-100)"
+
+#: exe/webui/tools/color-picker/langs/all.js:49
+msgid "Enter an Hex color value (#000000-#ffffff)"
+msgstr "Sartu kolore hexadecimal bat (#000000-#ffffff)"
+
 #: exe/webui/tools/fMath/js/jquery-ui/jquery-ui.min.js:8
 msgid "'"
 msgstr "'"
@@ -14244,67 +14329,67 @@ msgstr "Estiloen diseinu-tresnaren leihoa itxiko da. "
 msgid "Page will be reloaded. "
 msgstr "Orria berriro kargatuko da. "
 
-#: exe/webui/tools/style-designer/langs/en.js:12
+#: exe/webui/tools/style-designer/langs/all.js:12
 msgid "General settings"
 msgstr "Aukera orokorrak"
 
-#: exe/webui/tools/style-designer/langs/en.js:13
+#: exe/webui/tools/style-designer/langs/all.js:13
 msgid "Page width"
 msgstr "Orriaren zabalera"
 
-#: exe/webui/tools/style-designer/langs/en.js:14
+#: exe/webui/tools/style-designer/langs/all.js:14
 msgid "Percentage"
 msgstr "Ehunekoa"
 
-#: exe/webui/tools/style-designer/langs/en.js:15
+#: exe/webui/tools/style-designer/langs/all.js:15
 msgid "Pixels"
 msgstr "Pixelak"
 
-#: exe/webui/tools/style-designer/langs/en.js:16
+#: exe/webui/tools/style-designer/langs/all.js:16
 msgid "Page position"
 msgstr "Orri-kokapena"
 
-#: exe/webui/tools/style-designer/langs/en.js:19
+#: exe/webui/tools/style-designer/langs/all.js:19
 msgid "Shadow color"
 msgstr "Itzal-kolorea"
 
-#: exe/webui/tools/style-designer/langs/en.js:20
+#: exe/webui/tools/style-designer/langs/all.js:20
 msgid "Border width"
 msgstr "Ertz-zabalera"
 
-#: exe/webui/tools/style-designer/langs/en.js:22
+#: exe/webui/tools/style-designer/langs/all.js:22
 msgid "Text and Links"
 msgstr "Testuak eta estekak"
 
-#: exe/webui/tools/style-designer/langs/en.js:27
+#: exe/webui/tools/style-designer/langs/all.js:27
 msgid "Links"
 msgstr "Estekak"
 
-#: exe/webui/tools/style-designer/langs/en.js:28
+#: exe/webui/tools/style-designer/langs/all.js:28
 msgid "Links color"
 msgstr "Loturen kolorea"
 
-#: exe/webui/tools/style-designer/langs/en.js:30
+#: exe/webui/tools/style-designer/langs/all.js:30
 msgid "Style description"
 msgstr "Estiloaren deskripzioa"
 
-#: exe/webui/tools/style-designer/langs/en.js:32
+#: exe/webui/tools/style-designer/langs/all.js:32
 msgid "Author URL"
 msgstr "Egilearen URLa"
 
-#: exe/webui/tools/style-designer/langs/en.js:33
+#: exe/webui/tools/style-designer/langs/all.js:33
 msgid "Style name"
 msgstr "Estiloaren izena"
 
-#: exe/webui/tools/style-designer/langs/en.js:34
+#: exe/webui/tools/style-designer/langs/all.js:34
 msgid "Save to name the new Style."
 msgstr "Gorde, estilo berria izendatzeko."
 
-#: exe/webui/tools/style-designer/langs/en.js:35
+#: exe/webui/tools/style-designer/langs/all.js:35
 msgid "Style version"
 msgstr "Estilo-bertsioa"
 
-#: exe/webui/tools/style-designer/langs/en.js:36
+#: exe/webui/tools/style-designer/langs/all.js:36
 msgid ""
 "Style version number is automatically increased when you save, use this "
 "selector to reset it."
@@ -14312,73 +14397,73 @@ msgstr ""
 "Estilo-bertsioa automatikoki handitzen da gordetzerakoan, erabili "
 "hautagailu hau bertsioa berrezartzeko."
 
-#: exe/webui/tools/style-designer/langs/en.js:38
+#: exe/webui/tools/style-designer/langs/all.js:38
 msgid "(license of the original Style)"
 msgstr "(jatorrizko estiloaren lizentzia)"
 
-#: exe/webui/tools/style-designer/langs/en.js:41
+#: exe/webui/tools/style-designer/langs/all.js:41
 msgid "Page background (only Web Site)"
 msgstr "Orriaren atzealdea (bakarrik webguneetan)"
 
-#: exe/webui/tools/style-designer/langs/en.js:44
+#: exe/webui/tools/style-designer/langs/all.js:44
 msgid "Select image"
 msgstr "Aukeratu irudia"
 
-#: exe/webui/tools/style-designer/langs/en.js:48
+#: exe/webui/tools/style-designer/langs/all.js:48
 msgid "Left - Top"
 msgstr "Ezkerrean-Goian"
 
-#: exe/webui/tools/style-designer/langs/en.js:49
+#: exe/webui/tools/style-designer/langs/all.js:49
 msgid "Left - Center"
 msgstr "Ezkerrean-Erdian"
 
-#: exe/webui/tools/style-designer/langs/en.js:50
+#: exe/webui/tools/style-designer/langs/all.js:50
 msgid "Left - Bottom"
 msgstr "Ezkerrean-Behian"
 
-#: exe/webui/tools/style-designer/langs/en.js:51
+#: exe/webui/tools/style-designer/langs/all.js:51
 msgid "Center - Center"
 msgstr "Erdian - Erdian"
 
-#: exe/webui/tools/style-designer/langs/en.js:52
+#: exe/webui/tools/style-designer/langs/all.js:52
 msgid "Center - Top"
 msgstr "Erdian - Goian"
 
-#: exe/webui/tools/style-designer/langs/en.js:53
+#: exe/webui/tools/style-designer/langs/all.js:53
 msgid "Center - Bottom"
 msgstr "Erdian - Behean"
 
-#: exe/webui/tools/style-designer/langs/en.js:54
+#: exe/webui/tools/style-designer/langs/all.js:54
 msgid "Right - Top"
 msgstr "Eskuinean-Goian"
 
-#: exe/webui/tools/style-designer/langs/en.js:55
+#: exe/webui/tools/style-designer/langs/all.js:55
 msgid "Right - Center"
 msgstr "Eskuinean-Goian"
 
-#: exe/webui/tools/style-designer/langs/en.js:56
+#: exe/webui/tools/style-designer/langs/all.js:56
 msgid "Right - Bottom"
 msgstr "Eskuinean-Behian"
 
-#: exe/webui/tools/style-designer/langs/en.js:61
+#: exe/webui/tools/style-designer/langs/all.js:61
 msgid "Only vertical"
 msgstr "Bakarrik bertikalean"
 
-#: exe/webui/tools/style-designer/langs/en.js:62
+#: exe/webui/tools/style-designer/langs/all.js:62
 msgid "Only horizontal"
 msgstr "Bakarrik horizontalean"
 
-#: exe/webui/tools/style-designer/langs/en.js:63
+#: exe/webui/tools/style-designer/langs/all.js:63
 msgid "Contents area background"
 msgstr "Eduki-gunearen atzealdea"
 
-#: exe/webui/tools/style-designer/langs/en.js:64
+#: exe/webui/tools/style-designer/langs/all.js:64
 msgid "The \"Page background\" will only be used when exporting as Web Site."
 msgstr ""
 "\"Orriaren atzealdea\" bakarrik webgune formatuko esportazioan erabiliko "
 "da."
 
-#: exe/webui/tools/style-designer/langs/en.js:65
+#: exe/webui/tools/style-designer/langs/all.js:65
 msgid ""
 "The \"Contents area background\" will also be used when exporting as IMS,"
 " SCORM or ePub3."
@@ -14386,109 +14471,109 @@ msgstr ""
 "\"Eduki-gunearen atzealdea\" erabiliko da ere IMS, SCORM edo ePub3 "
 "esportazioetan."
 
-#: exe/webui/tools/style-designer/langs/en.js:67
+#: exe/webui/tools/style-designer/langs/all.js:67
 msgid "Header and Footer"
 msgstr "Goiburua eta oina"
 
-#: exe/webui/tools/style-designer/langs/en.js:71
+#: exe/webui/tools/style-designer/langs/all.js:71
 msgid "Project title"
 msgstr "Proiektuaren izenburua"
 
-#: exe/webui/tools/style-designer/langs/en.js:72
+#: exe/webui/tools/style-designer/langs/all.js:72
 msgid "Hide the title"
 msgstr "Izenburua ezkutatu"
 
-#: exe/webui/tools/style-designer/langs/en.js:74
+#: exe/webui/tools/style-designer/langs/all.js:74
 msgid "same font as the page"
 msgstr "orriaren letra-tipoaren iturri berdina"
 
-#: exe/webui/tools/style-designer/langs/en.js:77
+#: exe/webui/tools/style-designer/langs/all.js:77
 msgid "Top margin"
 msgstr "Goiko margina"
 
-#: exe/webui/tools/style-designer/langs/en.js:78
+#: exe/webui/tools/style-designer/langs/all.js:78
 msgid "Font size"
 msgstr "Letra-tipoaren tamaina"
 
-#: exe/webui/tools/style-designer/langs/en.js:80
+#: exe/webui/tools/style-designer/langs/all.js:80
 msgid "Navigation"
 msgstr "Nabigazioa"
 
-#: exe/webui/tools/style-designer/langs/en.js:81
+#: exe/webui/tools/style-designer/langs/all.js:81
 msgid "Main menu"
 msgstr "Menu nagusia"
 
-#: exe/webui/tools/style-designer/langs/en.js:82
+#: exe/webui/tools/style-designer/langs/all.js:82
 msgid "Hide the menu"
 msgstr "Menua ezkutatu"
 
-#: exe/webui/tools/style-designer/langs/en.js:83
+#: exe/webui/tools/style-designer/langs/all.js:83
 msgid "Horizontal navigation"
 msgstr "Nabigazio horizontala"
 
-#: exe/webui/tools/style-designer/langs/en.js:85
+#: exe/webui/tools/style-designer/langs/all.js:85
 msgid "Active background"
 msgstr "Gaitutakoaren atzealdea"
 
-#: exe/webui/tools/style-designer/langs/en.js:86
+#: exe/webui/tools/style-designer/langs/all.js:86
 msgid "Active link color"
 msgstr "Lotura aktiboaren kolorea"
 
-#: exe/webui/tools/style-designer/langs/en.js:87
+#: exe/webui/tools/style-designer/langs/all.js:87
 msgid "Other navigation options"
 msgstr "Nabigazioarako beste aukerak"
 
-#: exe/webui/tools/style-designer/langs/en.js:88
+#: exe/webui/tools/style-designer/langs/all.js:88
 msgid "Use icons"
 msgstr "Ikonoak erabili"
 
-#: exe/webui/tools/style-designer/langs/en.js:90
+#: exe/webui/tools/style-designer/langs/all.js:90
 msgid "Icons color"
 msgstr "Ikonoen kolorea"
 
-#: exe/webui/tools/style-designer/langs/en.js:91
+#: exe/webui/tools/style-designer/langs/all.js:91
 msgid "Grey"
 msgstr "Grisa"
 
-#: exe/webui/tools/style-designer/langs/en.js:95
+#: exe/webui/tools/style-designer/langs/all.js:95
 msgid "With emphasis"
 msgstr "Enfasia jarri"
 
-#: exe/webui/tools/style-designer/langs/en.js:96
+#: exe/webui/tools/style-designer/langs/all.js:96
 msgid "Title color"
 msgstr "Izenburuaren kolorea"
 
-#: exe/webui/tools/style-designer/langs/en.js:97
+#: exe/webui/tools/style-designer/langs/all.js:97
 msgid "Title background"
 msgstr "Izenburuaen atzealdea"
 
-#: exe/webui/tools/style-designer/langs/en.js:98
+#: exe/webui/tools/style-designer/langs/all.js:98
 msgid "No emphasis (Free Text...)"
 msgstr "Enfasirik Gabe (Testu librea, ...)"
 
-#: exe/webui/tools/style-designer/langs/en.js:99
+#: exe/webui/tools/style-designer/langs/all.js:99
 msgid "Show box"
 msgstr "Koadroa erakutsi"
 
-#: exe/webui/tools/style-designer/langs/en.js:100
+#: exe/webui/tools/style-designer/langs/all.js:100
 msgid "Icon to hide/show the iDevice"
 msgstr "iDevice-a erakutsi/ezkutatzeko ikonoa"
 
-#: exe/webui/tools/style-designer/langs/en.js:103
+#: exe/webui/tools/style-designer/langs/all.js:103
 msgid "This code will be included at the end of content.css"
 msgstr "Kode hau content.css-ren amaieran erantsiko da"
 
-#: exe/webui/tools/style-designer/langs/en.js:104
+#: exe/webui/tools/style-designer/langs/all.js:104
 msgid "content.css is included any time you export, and always after base.css."
 msgstr ""
 "content.css esportazio guztietan eransten da eta beti doa base.css "
 "ondoren."
 
-#: exe/webui/tools/style-designer/langs/en.js:105
+#: exe/webui/tools/style-designer/langs/all.js:105
 msgid "This code will be included at the end of nav.css"
 msgstr "Kode hau nav.css-ren amaieran erantsiko da"
 
-#: exe/webui/tools/style-designer/langs/en.js:106
+#: exe/webui/tools/style-designer/langs/all.js:106
 msgid ""
 "nav.css is only included when you export as Web Site, and always after "
 "content.css."
@@ -14496,45 +14581,45 @@ msgstr ""
 "Webgune esportazioan nav.css bakarrik erantsiko da eta beti content.css "
 "ondoren."
 
-#: exe/webui/tools/style-designer/langs/en.js:107
+#: exe/webui/tools/style-designer/langs/all.js:107
 msgid "content.css content"
 msgstr "conten.css-ren edukia"
 
-#: exe/webui/tools/style-designer/langs/en.js:108
+#: exe/webui/tools/style-designer/langs/all.js:108
 msgid "nav.css content"
 msgstr "nav.css-ren edukia"
 
-#: exe/webui/tools/style-designer/langs/en.js:109
+#: exe/webui/tools/style-designer/langs/all.js:109
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
 "Itzalek ez dute funtzionatuko CSS3 onartzen ez duten nabigatzaileetan "
 "(IE6, IE7 ...)."
 
-#: exe/webui/tools/style-designer/langs/en.js:114
+#: exe/webui/tools/style-designer/langs/all.js:114
 msgid "Save as"
 msgstr "Gorde honela"
 
-#: exe/webui/tools/style-designer/langs/en.js:116
+#: exe/webui/tools/style-designer/langs/all.js:116
 msgid "Save the current design and close the Style Designer?"
 msgstr "Oraingo diseinua gorde eta Estiloen diseinu-tresna itxi nahi duzu?"
 
-#: exe/webui/tools/style-designer/langs/en.js:117
+#: exe/webui/tools/style-designer/langs/all.js:117
 msgid "Save all changes? This cannot be undone."
 msgstr "Aldaketak gorde nahi dituzu? Ekintza hau ezin da desegin."
 
-#: exe/webui/tools/style-designer/langs/en.js:118
+#: exe/webui/tools/style-designer/langs/all.js:118
 msgid "Style name:"
 msgstr "Estilo-izena:"
 
-#: exe/webui/tools/style-designer/langs/en.js:119
+#: exe/webui/tools/style-designer/langs/all.js:119
 msgid "Your browser is not compatible with this tool."
 msgstr "Zure nabigatzailea ez da bateragarria tresna honekin."
 
-#: exe/webui/tools/style-designer/langs/en.js:120
+#: exe/webui/tools/style-designer/langs/all.js:120
 msgid "The Hide/Show menu option is disabled in the Style Designer"
 msgstr "Menua ezkutatu/erakutsi aukera ezgaituta dago Estiloen diseinu-tresnan"
 
-#: exe/webui/tools/style-designer/langs/en.js:121
+#: exe/webui/tools/style-designer/langs/all.js:121
 msgid ""
 "Please, make your browser bigger. The Style Designer requires at least a "
 "1024x768 screen resolution"
@@ -14542,104 +14627,19 @@ msgstr ""
 "Mesedez, nabigatzailea handitu. Estiloen diseinu-tresnak gutxienez "
 "1024x768 pantaila-bereizmena behar du"
 
-#: exe/webui/tools/style-designer/langs/en.js:122
+#: exe/webui/tools/style-designer/langs/all.js:122
 msgid "The Style Designer window is not open."
 msgstr "Estiloen diseinu-tresnaren leihoa ez dago itxita."
 
-#: exe/webui/tools/style-designer/langs/en.js:123
+#: exe/webui/tools/style-designer/langs/all.js:123
 msgid "This window will be closed. Please restart the tool."
 msgstr "Leiho hau itxiko da. Mesedez, tresna berrabiarazi."
 
-#: exe/webui/tools/style-designer/langs/en.js:126
+#: exe/webui/tools/style-designer/langs/all.js:126
 msgid "Undo changes since last time you saved? This cannot be undone. "
 msgstr ""
 "Azken gordeketatik egindako aldaketak desegin nahi dituzu? Ekintza hau "
 "ezin da desegin. "
-
-#: exe/webui/tools/style-designer/langs/en.js:133
-msgid "Drag markers to pick a color"
-msgstr "Arrastatu markatzaileak kolore bat hartzeko"
-
-#: exe/webui/tools/style-designer/langs/en.js:135
-msgid "Current"
-msgstr "Oraingoa"
-
-#: exe/webui/tools/style-designer/langs/en.js:141
-msgid "New Color - Press OK to Commit"
-msgstr "Kolore berria - sakatu  OK aukeratzeko"
-
-#: exe/webui/tools/style-designer/langs/en.js:142
-msgid "Click to revert to original color"
-msgstr "Klik egin aurreko kolorera itzultzeko"
-
-#: exe/webui/tools/style-designer/langs/en.js:145
-msgid "Commit to this color selection"
-msgstr "Kolore hau aukeratu"
-
-#: exe/webui/tools/style-designer/langs/en.js:146
-msgid "Cancel and revert to original color"
-msgstr "Deuseztatu eta aurreko kolorera itzuli"
-
-#: exe/webui/tools/style-designer/langs/en.js:149
-msgid "Set to Hue color mode"
-msgstr "Ñabardura-modura aldatu"
-
-#: exe/webui/tools/style-designer/langs/en.js:150
-msgid "Enter a Hue value (0-360º)"
-msgstr "Ñabardura-balio bat sartu (0-360º)"
-
-#: exe/webui/tools/style-designer/langs/en.js:153
-msgid "Set to Saturation color mode"
-msgstr "Saturazio-modura aldatu"
-
-#: exe/webui/tools/style-designer/langs/en.js:154
-msgid "Enter a Saturation value (0-100%)"
-msgstr "Saturazio balio bat sartu (0-%100)"
-
-#: exe/webui/tools/style-designer/langs/en.js:157
-msgid "Set to Value color mode"
-msgstr "Balio-modura aldatu"
-
-#: exe/webui/tools/style-designer/langs/en.js:158
-msgid "Enter a Value (0-100%)"
-msgstr "Balio bat sartu (0-%100)"
-
-#: exe/webui/tools/style-designer/langs/en.js:161
-msgid "Set to Red color mode"
-msgstr "Kolore gorriko modura aldatu"
-
-#: exe/webui/tools/style-designer/langs/en.js:162
-msgid "Enter a Red value (0-255)"
-msgstr "Sartu gorrirako balio bat (0-255)"
-
-#: exe/webui/tools/style-designer/langs/en.js:165
-msgid "Set to Green color mode"
-msgstr "Kolore berdeko modura aldatu"
-
-#: exe/webui/tools/style-designer/langs/en.js:166
-msgid "Enter a Green value (0-255)"
-msgstr "Sartu berderako balio bat (0-255)"
-
-#: exe/webui/tools/style-designer/langs/en.js:169
-msgid "Set to Blue color mode"
-msgstr "Kolore urdineko modura aldatu"
-
-#: exe/webui/tools/style-designer/langs/en.js:170
-msgid "Enter a Blue value (0-255)"
-msgstr "Sartu urdinerako balio bat (0-255)"
-
-#: exe/webui/tools/style-designer/langs/en.js:173
-msgid "Set to Alpha color mode"
-msgstr "Kolore garden modura aldatu"
-
-#: exe/webui/tools/style-designer/langs/en.js:174
-#: exe/webui/tools/style-designer/langs/en.js:178
-msgid "Enter an Alpha value (0-100)"
-msgstr "Sartu gardentasunerako balio bat (0-100)"
-
-#: exe/webui/tools/style-designer/langs/en.js:177
-msgid "Enter an Hex color value (#000000-#ffffff)"
-msgstr "Sartu kolore hexadecimal bat (#000000-#ffffff)"
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
@@ -14751,9 +14751,9 @@ msgstr ""
 "Aukera hau klikatzen baduzu, inportazio prozesuak jatorrizko hizkuntzatik"
 " hartuko ditu testuak helburu hizkuntzatik hartu ordez."
 
-#: exe/webui/tools/style-designer/langs/en.js:58
-#: exe/webui/tools/style-designer/langs/en.js:127
-#: exe/webui/tools/style-designer/langs/en.js:136
+#: exe/webui/tools/color-picker/langs/all.js:8
+#: exe/webui/tools/style-designer/langs/all.js:58
+#: exe/webui/tools/style-designer/langs/all.js:127
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
 msgstr "Ados"

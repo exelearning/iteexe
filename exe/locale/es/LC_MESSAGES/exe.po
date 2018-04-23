@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2018-04-19 19:44+0200\n"
+"POT-Creation-Date: 2018-04-23 22:58+0200\n"
 "PO-Revision-Date: 2018-04-14 17:59+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -270,7 +270,7 @@ msgstr "EL fichero adjunto %s no tiene nodo padre"
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:573
-#: exe/webui/tools/style-designer/langs/en.js:46
+#: exe/webui/tools/style-designer/langs/all.js:46
 msgid "Image"
 msgstr "Imagen"
 
@@ -1189,7 +1189,7 @@ msgstr "Deslizamiento"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:236
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:26
+#: exe/webui/tools/style-designer/langs/all.js:26
 msgid "Size"
 msgstr "Tamaño"
 
@@ -1208,7 +1208,7 @@ msgstr "Mostrar opciones avanzadas"
 
 #: exe/engine/extendedfieldengine.py:284
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:45
+#: exe/webui/tools/style-designer/langs/all.js:45
 msgid "Browse"
 msgstr "Examinar"
 
@@ -1527,7 +1527,7 @@ msgstr "iDevice Ficheros adjuntos."
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:240
 #: exe/webui/common.py:648
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:10
-#: exe/webui/tools/style-designer/langs/en.js:60
+#: exe/webui/tools/style-designer/langs/all.js:60
 msgid "No"
 msgstr "No"
 
@@ -1536,7 +1536,7 @@ msgstr "No"
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:241
 #: exe/webui/common.py:647
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en.js:9
-#: exe/webui/tools/style-designer/langs/en.js:59
+#: exe/webui/tools/style-designer/langs/all.js:59
 msgid "Yes"
 msgstr "Sí"
 
@@ -2158,7 +2158,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:598
-#: exe/webui/tools/style-designer/langs/en.js:24
+#: exe/webui/tools/style-designer/langs/all.js:24
 msgid "Text"
 msgstr "Texto"
 
@@ -2842,7 +2842,7 @@ msgstr "Mi catálogo"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:56
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:163
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelist/plugin.min.js:37
-#: exe/webui/tools/style-designer/langs/en.js:73
+#: exe/webui/tools/style-designer/langs/all.js:73
 msgid "Default"
 msgstr "Preestablecido"
 
@@ -4203,7 +4203,7 @@ msgstr "Guardada la configuración"
 #: exe/webui/templatemanagerpage.py:130 exe/webui/templatemanagerpage.py:229
 #: exe/webui/templatemanagerpage.py:241 exe/webui/templatemanagerpage.py:256
 #: exe/webui/templatemanagerpage.py:263 exe/webui/templatemanagerpage.py:297
-#: exe/webui/tools/style-designer/langs/en.js:125
+#: exe/webui/tools/style-designer/langs/all.js:125
 msgid "Error"
 msgstr "Error"
 
@@ -4212,7 +4212,7 @@ msgstr "Error"
 #: exe/jsui/scripts/app/controller/Outline.js:204
 #: exe/jsui/scripts/app/controller/Toolbar.js:499
 #: exe/webui/scripts/editor.js:54
-#: exe/webui/tools/style-designer/langs/en.js:115
+#: exe/webui/tools/style-designer/langs/all.js:115
 msgid "Confirm"
 msgstr "Confirmar"
 
@@ -4390,7 +4390,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/HelpContainer.js:43 exe/webui/block.py:270
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:29
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:124
+#: exe/webui/tools/style-designer/langs/all.js:124
 msgid "Information"
 msgstr "Información"
 
@@ -4515,8 +4515,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:48
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:29
-#: exe/webui/tools/style-designer/langs/en.js:128
-#: exe/webui/tools/style-designer/langs/en.js:137
+#: exe/webui/tools/color-picker/langs/all.js:9
+#: exe/webui/tools/style-designer/langs/all.js:128
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
 msgstr "Cancelar"
@@ -4728,7 +4728,7 @@ msgstr "Abrir"
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:168 exe/webui/editorpage.py:264
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:149
-#: exe/webui/tools/style-designer/langs/en.js:113
+#: exe/webui/tools/style-designer/langs/all.js:113
 msgid "Save"
 msgstr "Guardar"
 
@@ -4972,7 +4972,7 @@ msgstr "Borrar todo"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:678
-#: exe/webui/tools/style-designer/langs/en.js:111
+#: exe/webui/tools/style-designer/langs/all.js:111
 msgid "Reset"
 msgstr "Reiniciar"
 
@@ -5123,7 +5123,7 @@ msgstr "Taxón"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:469
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:560
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:582
-#: exe/webui/tools/style-designer/langs/en.js:11
+#: exe/webui/tools/style-designer/langs/all.js:11
 msgid "General"
 msgstr "General"
 
@@ -5539,7 +5539,7 @@ msgstr "Conocimiento previo."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:86
 #: exe/webui/tools/assistant/langs/en.js:28
-#: exe/webui/tools/style-designer/langs/en.js:31
+#: exe/webui/tools/style-designer/langs/all.js:31
 msgid "Author"
 msgstr "Autor"
 
@@ -5561,7 +5561,7 @@ msgstr "Autor principal del recurso."
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1014
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1034
 #: exe/webui/tools/assistant/langs/en.js:29
-#: exe/webui/tools/style-designer/langs/en.js:37
+#: exe/webui/tools/style-designer/langs/all.js:37
 msgid "License"
 msgstr "Licencia"
 
@@ -5660,7 +5660,7 @@ msgstr "¿Ajustar imagen de fondo?"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:545
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:181
-#: exe/webui/tools/style-designer/langs/en.js:69
+#: exe/webui/tools/style-designer/langs/all.js:69
 msgid "Footer"
 msgstr "Pie de página"
 
@@ -5766,7 +5766,7 @@ msgstr "Seleccionar idioma"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:92
-#: exe/webui/tools/style-designer/langs/en.js:102
+#: exe/webui/tools/style-designer/langs/all.js:102
 msgid "Advanced"
 msgstr "Avanzado"
 
@@ -6058,7 +6058,7 @@ msgid "use the right arrow key"
 msgstr "usar la tecla de flecha hacia la derecha"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:104
-#: exe/webui/tools/style-designer/langs/en.js:134
+#: exe/webui/tools/color-picker/langs/all.js:6
 msgid "New"
 msgstr "Nuevo"
 
@@ -6208,7 +6208,7 @@ msgid "Preview"
 msgstr "Visualización previa"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:483
-#: exe/webui/tools/style-designer/langs/en.js:9
+#: exe/webui/tools/style-designer/langs/all.js:9
 msgid "Style Designer"
 msgstr "Diseñador de estilos"
 
@@ -8775,7 +8775,7 @@ msgstr "Título del botón"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:906
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:18
+#: exe/webui/tools/style-designer/langs/all.js:18
 msgid "Left"
 msgstr "Izquierda"
 
@@ -8793,7 +8793,7 @@ msgstr "Izquierda"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:907
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:76
+#: exe/webui/tools/style-designer/langs/all.js:76
 msgid "Right"
 msgstr "Derecha"
 
@@ -10005,7 +10005,7 @@ msgstr "Mostrar/ocultar los elementos de bloque"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:169
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:897
-#: exe/webui/tools/style-designer/langs/en.js:75
+#: exe/webui/tools/style-designer/langs/all.js:75
 msgid "Alignment"
 msgstr "Alineación"
 
@@ -10062,7 +10062,7 @@ msgstr "Propiedades del documento"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:209
-#: exe/webui/tools/style-designer/langs/en.js:17
+#: exe/webui/tools/style-designer/langs/all.js:17
 msgid "Center"
 msgstr "Centrado"
 
@@ -10377,12 +10377,12 @@ msgid "Abbreviation"
 msgstr "Abreviatura"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:92
+#: exe/webui/tools/style-designer/langs/all.js:92
 msgid "White"
 msgstr "Blanco"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/tools/style-designer/langs/en.js:93
+#: exe/webui/tools/style-designer/langs/all.js:93
 msgid "Black"
 msgstr "Negro"
 
@@ -10425,7 +10425,7 @@ msgstr "Unidades"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:204
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:84
+#: exe/webui/tools/style-designer/langs/all.js:84
 msgid "Width"
 msgstr "Ancho"
 
@@ -10438,7 +10438,7 @@ msgstr "Ancho"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:167
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:70
+#: exe/webui/tools/style-designer/langs/all.js:70
 msgid "Height"
 msgstr "Alto"
 
@@ -10674,7 +10674,7 @@ msgstr "Título y reconocimiento"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:199
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:803
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:393
-#: exe/webui/tools/style-designer/langs/en.js:68
+#: exe/webui/tools/style-designer/langs/all.js:68
 msgid "Header"
 msgstr "Encabezado"
 
@@ -11808,8 +11808,8 @@ msgstr "Imagen de fondo"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:76
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:42
-#: exe/webui/tools/style-designer/langs/en.js:89
+#: exe/webui/tools/style-designer/langs/all.js:42
+#: exe/webui/tools/style-designer/langs/all.js:89
 msgid "Color"
 msgstr "Color"
 
@@ -12550,21 +12550,21 @@ msgstr "Decorativos"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:23
+#: exe/webui/tools/style-designer/langs/all.js:23
 msgid "Font"
 msgstr "Tipo letra"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:47
+#: exe/webui/tools/style-designer/langs/all.js:47
 msgid "Position"
 msgstr "Posición"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:57
+#: exe/webui/tools/style-designer/langs/all.js:57
 msgid "Repeat"
 msgstr "Repetición"
 
@@ -12868,7 +12868,7 @@ msgstr "Ver la definición"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:31
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:600
-#: exe/webui/tools/style-designer/langs/en.js:40
+#: exe/webui/tools/style-designer/langs/all.js:40
 msgid "Page"
 msgstr "Página"
 
@@ -13338,7 +13338,7 @@ msgid "Invalid color value"
 msgstr "Valor inválido de color"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/en.js:130
+#: exe/webui/tools/color-picker/langs/all.js:2
 msgid "Color Picker"
 msgstr "Selector de color"
 
@@ -13476,7 +13476,7 @@ msgid "Find and Replace"
 msgstr "Buscar y reemplazar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:161
-#: exe/webui/tools/style-designer/langs/en.js:112
+#: exe/webui/tools/style-designer/langs/all.js:112
 msgid "Finish"
 msgstr "Finalizar"
 
@@ -13485,7 +13485,7 @@ msgid "Paste Row After"
 msgstr "Pegar la fila después"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:170
-#: exe/webui/tools/style-designer/langs/en.js:21
+#: exe/webui/tools/style-designer/langs/all.js:21
 msgid "Border color"
 msgstr "Color borde"
 
@@ -13510,7 +13510,7 @@ msgid "Predefined Template Content"
 msgstr "Contenido de plantilla predefinido"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:214
-#: exe/webui/tools/style-designer/langs/en.js:43
+#: exe/webui/tools/style-designer/langs/all.js:43
 msgid "Background color"
 msgstr "Color fondo"
 
@@ -13527,7 +13527,7 @@ msgid "No color"
 msgstr "Sin color"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:218
-#: exe/webui/tools/style-designer/langs/en.js:25
+#: exe/webui/tools/style-designer/langs/all.js:25
 msgid "Text color"
 msgstr "Color texto"
 
@@ -14469,6 +14469,91 @@ msgstr "(resuelva sus dudas)"
 msgid "Further information:"
 msgstr "Más información:"
 
+#: exe/webui/tools/color-picker/langs/all.js:5
+msgid "Drag markers to pick a color"
+msgstr "Arrastre los marcadores para seleccionar un color"
+
+#: exe/webui/tools/color-picker/langs/all.js:7
+msgid "Current"
+msgstr "Actual"
+
+#: exe/webui/tools/color-picker/langs/all.js:13
+msgid "New Color - Press OK to Commit"
+msgstr "Nuevo color - Pulse en \"Aceptar\" para enviar"
+
+#: exe/webui/tools/color-picker/langs/all.js:14
+msgid "Click to revert to original color"
+msgstr "Pulse para volver al color original"
+
+#: exe/webui/tools/color-picker/langs/all.js:17
+msgid "Commit to this color selection"
+msgstr "Enviar esta selección"
+
+#: exe/webui/tools/color-picker/langs/all.js:18
+msgid "Cancel and revert to original color"
+msgstr "Cancelar y volver al color original"
+
+#: exe/webui/tools/color-picker/langs/all.js:21
+msgid "Set to Hue color mode"
+msgstr "Cambiar al modo Matiz"
+
+#: exe/webui/tools/color-picker/langs/all.js:22
+msgid "Enter a Hue value (0-360º)"
+msgstr "Introduzca un valor (0-360º)"
+
+#: exe/webui/tools/color-picker/langs/all.js:25
+msgid "Set to Saturation color mode"
+msgstr "Cambiar al modo Saturación"
+
+#: exe/webui/tools/color-picker/langs/all.js:26
+msgid "Enter a Saturation value (0-100%)"
+msgstr "Introduzca un valor (0-100%)"
+
+#: exe/webui/tools/color-picker/langs/all.js:29
+msgid "Set to Value color mode"
+msgstr "Cambiar al modo Valor"
+
+#: exe/webui/tools/color-picker/langs/all.js:30
+msgid "Enter a Value (0-100%)"
+msgstr "Introduzca un valor (0-100%)"
+
+#: exe/webui/tools/color-picker/langs/all.js:33
+msgid "Set to Red color mode"
+msgstr "Cambiar al modo de color Rojo"
+
+#: exe/webui/tools/color-picker/langs/all.js:34
+msgid "Enter a Red value (0-255)"
+msgstr "Introduzca un valor (0-255)"
+
+#: exe/webui/tools/color-picker/langs/all.js:37
+msgid "Set to Green color mode"
+msgstr "Cambiar al modo de color Verde"
+
+#: exe/webui/tools/color-picker/langs/all.js:38
+msgid "Enter a Green value (0-255)"
+msgstr "Introduzca un valor (0-255)"
+
+#: exe/webui/tools/color-picker/langs/all.js:41
+msgid "Set to Blue color mode"
+msgstr "Cambiar al modo de color Azul"
+
+#: exe/webui/tools/color-picker/langs/all.js:42
+msgid "Enter a Blue value (0-255)"
+msgstr "Introduzca un valor (0-255)"
+
+#: exe/webui/tools/color-picker/langs/all.js:45
+msgid "Set to Alpha color mode"
+msgstr "Cambiar al modo Transparencia"
+
+#: exe/webui/tools/color-picker/langs/all.js:46
+#: exe/webui/tools/color-picker/langs/all.js:50
+msgid "Enter an Alpha value (0-100)"
+msgstr "Introduzca un valor (0-100)"
+
+#: exe/webui/tools/color-picker/langs/all.js:49
+msgid "Enter an Hex color value (#000000-#ffffff)"
+msgstr "Introduzca un código hexadecimal (#000000-#ffffff)"
+
 #: exe/webui/tools/fMath/js/jquery-ui/jquery-ui.min.js:8
 msgid "'"
 msgstr "'"
@@ -14489,67 +14574,67 @@ msgstr "Se va a proceder a cerrar las ventanas del diseñador de estilos."
 msgid "Page will be reloaded. "
 msgstr "Se va a proceder a recargar la página."
 
-#: exe/webui/tools/style-designer/langs/en.js:12
+#: exe/webui/tools/style-designer/langs/all.js:12
 msgid "General settings"
 msgstr "Opciones generales"
 
-#: exe/webui/tools/style-designer/langs/en.js:13
+#: exe/webui/tools/style-designer/langs/all.js:13
 msgid "Page width"
 msgstr "Ancho página"
 
-#: exe/webui/tools/style-designer/langs/en.js:14
+#: exe/webui/tools/style-designer/langs/all.js:14
 msgid "Percentage"
 msgstr "Porcentaje"
 
-#: exe/webui/tools/style-designer/langs/en.js:15
+#: exe/webui/tools/style-designer/langs/all.js:15
 msgid "Pixels"
 msgstr "Ancho fijo"
 
-#: exe/webui/tools/style-designer/langs/en.js:16
+#: exe/webui/tools/style-designer/langs/all.js:16
 msgid "Page position"
 msgstr "Posición página"
 
-#: exe/webui/tools/style-designer/langs/en.js:19
+#: exe/webui/tools/style-designer/langs/all.js:19
 msgid "Shadow color"
 msgstr "Color sombra"
 
-#: exe/webui/tools/style-designer/langs/en.js:20
+#: exe/webui/tools/style-designer/langs/all.js:20
 msgid "Border width"
 msgstr "Ancho borde"
 
-#: exe/webui/tools/style-designer/langs/en.js:22
+#: exe/webui/tools/style-designer/langs/all.js:22
 msgid "Text and Links"
 msgstr "Texto y enlaces"
 
-#: exe/webui/tools/style-designer/langs/en.js:27
+#: exe/webui/tools/style-designer/langs/all.js:27
 msgid "Links"
 msgstr "Enlaces"
 
-#: exe/webui/tools/style-designer/langs/en.js:28
+#: exe/webui/tools/style-designer/langs/all.js:28
 msgid "Links color"
 msgstr "Color enlaces"
 
-#: exe/webui/tools/style-designer/langs/en.js:30
+#: exe/webui/tools/style-designer/langs/all.js:30
 msgid "Style description"
 msgstr "Descripción del estilo"
 
-#: exe/webui/tools/style-designer/langs/en.js:32
+#: exe/webui/tools/style-designer/langs/all.js:32
 msgid "Author URL"
 msgstr "Dirección (URL) del Autor"
 
-#: exe/webui/tools/style-designer/langs/en.js:33
+#: exe/webui/tools/style-designer/langs/all.js:33
 msgid "Style name"
 msgstr "Nombre del estilo"
 
-#: exe/webui/tools/style-designer/langs/en.js:34
+#: exe/webui/tools/style-designer/langs/all.js:34
 msgid "Save to name the new Style."
 msgstr "Guardar para darle nombre al nuevo estilo."
 
-#: exe/webui/tools/style-designer/langs/en.js:35
+#: exe/webui/tools/style-designer/langs/all.js:35
 msgid "Style version"
 msgstr "Versión del estilo"
 
-#: exe/webui/tools/style-designer/langs/en.js:36
+#: exe/webui/tools/style-designer/langs/all.js:36
 msgid ""
 "Style version number is automatically increased when you save, use this "
 "selector to reset it."
@@ -14557,71 +14642,71 @@ msgstr ""
 "El número de versión del estilo se incrementa automáticamente cuando lo "
 "guarda, use este selector para modificarlo."
 
-#: exe/webui/tools/style-designer/langs/en.js:38
+#: exe/webui/tools/style-designer/langs/all.js:38
 msgid "(license of the original Style)"
 msgstr "(licencia del estilo original)"
 
-#: exe/webui/tools/style-designer/langs/en.js:41
+#: exe/webui/tools/style-designer/langs/all.js:41
 msgid "Page background (only Web Site)"
 msgstr "Fondo de página (sólo sitio web)"
 
-#: exe/webui/tools/style-designer/langs/en.js:44
+#: exe/webui/tools/style-designer/langs/all.js:44
 msgid "Select image"
 msgstr "Seleccionar imagen"
 
-#: exe/webui/tools/style-designer/langs/en.js:48
+#: exe/webui/tools/style-designer/langs/all.js:48
 msgid "Left - Top"
 msgstr "Izquierda / Arriba"
 
-#: exe/webui/tools/style-designer/langs/en.js:49
+#: exe/webui/tools/style-designer/langs/all.js:49
 msgid "Left - Center"
 msgstr "Izquierda / Centro"
 
-#: exe/webui/tools/style-designer/langs/en.js:50
+#: exe/webui/tools/style-designer/langs/all.js:50
 msgid "Left - Bottom"
 msgstr "Izquierda / Abajo"
 
-#: exe/webui/tools/style-designer/langs/en.js:51
+#: exe/webui/tools/style-designer/langs/all.js:51
 msgid "Center - Center"
 msgstr "Centro / Centro"
 
-#: exe/webui/tools/style-designer/langs/en.js:52
+#: exe/webui/tools/style-designer/langs/all.js:52
 msgid "Center - Top"
 msgstr "Centro / Arriba"
 
-#: exe/webui/tools/style-designer/langs/en.js:53
+#: exe/webui/tools/style-designer/langs/all.js:53
 msgid "Center - Bottom"
 msgstr "Centro / Abajo"
 
-#: exe/webui/tools/style-designer/langs/en.js:54
+#: exe/webui/tools/style-designer/langs/all.js:54
 msgid "Right - Top"
 msgstr "Derecha / Arriba"
 
-#: exe/webui/tools/style-designer/langs/en.js:55
+#: exe/webui/tools/style-designer/langs/all.js:55
 msgid "Right - Center"
 msgstr "Derecha / Centro"
 
-#: exe/webui/tools/style-designer/langs/en.js:56
+#: exe/webui/tools/style-designer/langs/all.js:56
 msgid "Right - Bottom"
 msgstr "Derecha / Abajo"
 
-#: exe/webui/tools/style-designer/langs/en.js:61
+#: exe/webui/tools/style-designer/langs/all.js:61
 msgid "Only vertical"
 msgstr "Sólo verticalmente"
 
-#: exe/webui/tools/style-designer/langs/en.js:62
+#: exe/webui/tools/style-designer/langs/all.js:62
 msgid "Only horizontal"
 msgstr "Sólo horizontalmente"
 
-#: exe/webui/tools/style-designer/langs/en.js:63
+#: exe/webui/tools/style-designer/langs/all.js:63
 msgid "Contents area background"
 msgstr "Fondo de la zona de los contenidos"
 
-#: exe/webui/tools/style-designer/langs/en.js:64
+#: exe/webui/tools/style-designer/langs/all.js:64
 msgid "The \"Page background\" will only be used when exporting as Web Site."
 msgstr "El fondo de página sólo afecta a la exportación como sitio web."
 
-#: exe/webui/tools/style-designer/langs/en.js:65
+#: exe/webui/tools/style-designer/langs/all.js:65
 msgid ""
 "The \"Contents area background\" will also be used when exporting as IMS,"
 " SCORM or ePub3."
@@ -14629,109 +14714,109 @@ msgstr ""
 "El apartado \"Fondo de la zona de los contenidos\" también afecta a la "
 "exportación como página sola, IMS, SCORM o ePub3."
 
-#: exe/webui/tools/style-designer/langs/en.js:67
+#: exe/webui/tools/style-designer/langs/all.js:67
 msgid "Header and Footer"
 msgstr "Cabecera y pie"
 
-#: exe/webui/tools/style-designer/langs/en.js:71
+#: exe/webui/tools/style-designer/langs/all.js:71
 msgid "Project title"
 msgstr "Título del proyecto"
 
-#: exe/webui/tools/style-designer/langs/en.js:72
+#: exe/webui/tools/style-designer/langs/all.js:72
 msgid "Hide the title"
 msgstr "Ocultar el título"
 
-#: exe/webui/tools/style-designer/langs/en.js:74
+#: exe/webui/tools/style-designer/langs/all.js:74
 msgid "same font as the page"
 msgstr "la misma que la página"
 
-#: exe/webui/tools/style-designer/langs/en.js:77
+#: exe/webui/tools/style-designer/langs/all.js:77
 msgid "Top margin"
 msgstr "Margen superior"
 
-#: exe/webui/tools/style-designer/langs/en.js:78
+#: exe/webui/tools/style-designer/langs/all.js:78
 msgid "Font size"
 msgstr "Tamaño letra"
 
-#: exe/webui/tools/style-designer/langs/en.js:80
+#: exe/webui/tools/style-designer/langs/all.js:80
 msgid "Navigation"
 msgstr "Navegación"
 
-#: exe/webui/tools/style-designer/langs/en.js:81
+#: exe/webui/tools/style-designer/langs/all.js:81
 msgid "Main menu"
 msgstr "Menú principal"
 
-#: exe/webui/tools/style-designer/langs/en.js:82
+#: exe/webui/tools/style-designer/langs/all.js:82
 msgid "Hide the menu"
 msgstr "Ocultar el menú"
 
-#: exe/webui/tools/style-designer/langs/en.js:83
+#: exe/webui/tools/style-designer/langs/all.js:83
 msgid "Horizontal navigation"
 msgstr "Navegación horizontal"
 
-#: exe/webui/tools/style-designer/langs/en.js:85
+#: exe/webui/tools/style-designer/langs/all.js:85
 msgid "Active background"
 msgstr "Fondo activo"
 
-#: exe/webui/tools/style-designer/langs/en.js:86
+#: exe/webui/tools/style-designer/langs/all.js:86
 msgid "Active link color"
 msgstr "Color de enlace activo"
 
-#: exe/webui/tools/style-designer/langs/en.js:87
+#: exe/webui/tools/style-designer/langs/all.js:87
 msgid "Other navigation options"
 msgstr "Otras opciones de navegación"
 
-#: exe/webui/tools/style-designer/langs/en.js:88
+#: exe/webui/tools/style-designer/langs/all.js:88
 msgid "Use icons"
 msgstr "Usar iconos"
 
-#: exe/webui/tools/style-designer/langs/en.js:90
+#: exe/webui/tools/style-designer/langs/all.js:90
 msgid "Icons color"
 msgstr "Color de los iconos"
 
-#: exe/webui/tools/style-designer/langs/en.js:91
+#: exe/webui/tools/style-designer/langs/all.js:91
 msgid "Grey"
 msgstr "Gris"
 
-#: exe/webui/tools/style-designer/langs/en.js:95
+#: exe/webui/tools/style-designer/langs/all.js:95
 msgid "With emphasis"
 msgstr "Destacado"
 
-#: exe/webui/tools/style-designer/langs/en.js:96
+#: exe/webui/tools/style-designer/langs/all.js:96
 msgid "Title color"
 msgstr "Color título"
 
-#: exe/webui/tools/style-designer/langs/en.js:97
+#: exe/webui/tools/style-designer/langs/all.js:97
 msgid "Title background"
 msgstr "Fondo título"
 
-#: exe/webui/tools/style-designer/langs/en.js:98
+#: exe/webui/tools/style-designer/langs/all.js:98
 msgid "No emphasis (Free Text...)"
 msgstr "Sin destacar (texto libre...)"
 
-#: exe/webui/tools/style-designer/langs/en.js:99
+#: exe/webui/tools/style-designer/langs/all.js:99
 msgid "Show box"
 msgstr "Mostrar caja"
 
-#: exe/webui/tools/style-designer/langs/en.js:100
+#: exe/webui/tools/style-designer/langs/all.js:100
 msgid "Icon to hide/show the iDevice"
 msgstr "Icono para mostrar/ocultar iDevice"
 
-#: exe/webui/tools/style-designer/langs/en.js:103
+#: exe/webui/tools/style-designer/langs/all.js:103
 msgid "This code will be included at the end of content.css"
 msgstr "Este código se incluirá al final de content.css"
 
-#: exe/webui/tools/style-designer/langs/en.js:104
+#: exe/webui/tools/style-designer/langs/all.js:104
 msgid "content.css is included any time you export, and always after base.css."
 msgstr ""
 "content.css se carga en todas las exportaciones, y siempre después de "
 "base.css"
 
-#: exe/webui/tools/style-designer/langs/en.js:105
+#: exe/webui/tools/style-designer/langs/all.js:105
 msgid "This code will be included at the end of nav.css"
 msgstr "Este código se incluirá al final de nav.css"
 
-#: exe/webui/tools/style-designer/langs/en.js:106
+#: exe/webui/tools/style-designer/langs/all.js:106
 msgid ""
 "nav.css is only included when you export as Web Site, and always after "
 "content.css."
@@ -14739,45 +14824,45 @@ msgstr ""
 "nav.css se incluye sólo al exportar como sitio web, y siempre después de "
 "content.css"
 
-#: exe/webui/tools/style-designer/langs/en.js:107
+#: exe/webui/tools/style-designer/langs/all.js:107
 msgid "content.css content"
 msgstr "Contenido del archivo content.css"
 
-#: exe/webui/tools/style-designer/langs/en.js:108
+#: exe/webui/tools/style-designer/langs/all.js:108
 msgid "nav.css content"
 msgstr "Contenido del archivo nav.css"
 
-#: exe/webui/tools/style-designer/langs/en.js:109
+#: exe/webui/tools/style-designer/langs/all.js:109
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
 msgstr ""
 "Las sombras no se verán en IE6, IE7, IE8 y otros navegadores antiguos en "
 "los que no funciona CSS3."
 
-#: exe/webui/tools/style-designer/langs/en.js:114
+#: exe/webui/tools/style-designer/langs/all.js:114
 msgid "Save as"
 msgstr "Guardar como"
 
-#: exe/webui/tools/style-designer/langs/en.js:116
+#: exe/webui/tools/style-designer/langs/all.js:116
 msgid "Save the current design and close the Style Designer?"
 msgstr "¿Guardar el diseño actual y cerrar el diseñador de estilos?"
 
-#: exe/webui/tools/style-designer/langs/en.js:117
+#: exe/webui/tools/style-designer/langs/all.js:117
 msgid "Save all changes? This cannot be undone."
 msgstr "¿Guardar cambios? No se puede deshacer."
 
-#: exe/webui/tools/style-designer/langs/en.js:118
+#: exe/webui/tools/style-designer/langs/all.js:118
 msgid "Style name:"
 msgstr "Nombre del estilo:"
 
-#: exe/webui/tools/style-designer/langs/en.js:119
+#: exe/webui/tools/style-designer/langs/all.js:119
 msgid "Your browser is not compatible with this tool."
 msgstr "Su navegador no es compatible con esta herramienta."
 
-#: exe/webui/tools/style-designer/langs/en.js:120
+#: exe/webui/tools/style-designer/langs/all.js:120
 msgid "The Hide/Show menu option is disabled in the Style Designer"
 msgstr "Ocultar/mostrar el menú no está disponible en el diseñador de estilos"
 
-#: exe/webui/tools/style-designer/langs/en.js:121
+#: exe/webui/tools/style-designer/langs/all.js:121
 msgid ""
 "Please, make your browser bigger. The Style Designer requires at least a "
 "1024x768 screen resolution"
@@ -14785,106 +14870,21 @@ msgstr ""
 "Por favor, agrande su navegador. El diseñador de estilos necesita al "
 "menos 1024x768 píxeles."
 
-#: exe/webui/tools/style-designer/langs/en.js:122
+#: exe/webui/tools/style-designer/langs/all.js:122
 msgid "The Style Designer window is not open."
 msgstr "El diseñador de estilos no está abierto."
 
-#: exe/webui/tools/style-designer/langs/en.js:123
+#: exe/webui/tools/style-designer/langs/all.js:123
 msgid "This window will be closed. Please restart the tool."
 msgstr ""
 "Esta ventana se va a cerrar. Por favor, vuelva a abrir el diseñador de "
 "estilos."
 
-#: exe/webui/tools/style-designer/langs/en.js:126
+#: exe/webui/tools/style-designer/langs/all.js:126
 msgid "Undo changes since last time you saved? This cannot be undone. "
 msgstr ""
 "¿Desechar los cambios realizados desde que guardó por última vez? Esta "
 "acción no se puede deshacer."
-
-#: exe/webui/tools/style-designer/langs/en.js:133
-msgid "Drag markers to pick a color"
-msgstr "Arrastre los marcadores para seleccionar un color"
-
-#: exe/webui/tools/style-designer/langs/en.js:135
-msgid "Current"
-msgstr "Actual"
-
-#: exe/webui/tools/style-designer/langs/en.js:141
-msgid "New Color - Press OK to Commit"
-msgstr "Nuevo color - Pulse en \"Aceptar\" para enviar"
-
-#: exe/webui/tools/style-designer/langs/en.js:142
-msgid "Click to revert to original color"
-msgstr "Pulse para volver al color original"
-
-#: exe/webui/tools/style-designer/langs/en.js:145
-msgid "Commit to this color selection"
-msgstr "Enviar esta selección"
-
-#: exe/webui/tools/style-designer/langs/en.js:146
-msgid "Cancel and revert to original color"
-msgstr "Cancelar y volver al color original"
-
-#: exe/webui/tools/style-designer/langs/en.js:149
-msgid "Set to Hue color mode"
-msgstr "Cambiar al modo Matiz"
-
-#: exe/webui/tools/style-designer/langs/en.js:150
-msgid "Enter a Hue value (0-360º)"
-msgstr "Introduzca un valor (0-360º)"
-
-#: exe/webui/tools/style-designer/langs/en.js:153
-msgid "Set to Saturation color mode"
-msgstr "Cambiar al modo Saturación"
-
-#: exe/webui/tools/style-designer/langs/en.js:154
-msgid "Enter a Saturation value (0-100%)"
-msgstr "Introduzca un valor (0-100%)"
-
-#: exe/webui/tools/style-designer/langs/en.js:157
-msgid "Set to Value color mode"
-msgstr "Cambiar al modo Valor"
-
-#: exe/webui/tools/style-designer/langs/en.js:158
-msgid "Enter a Value (0-100%)"
-msgstr "Introduzca un valor (0-100%)"
-
-#: exe/webui/tools/style-designer/langs/en.js:161
-msgid "Set to Red color mode"
-msgstr "Cambiar al modo de color Rojo"
-
-#: exe/webui/tools/style-designer/langs/en.js:162
-msgid "Enter a Red value (0-255)"
-msgstr "Introduzca un valor (0-255)"
-
-#: exe/webui/tools/style-designer/langs/en.js:165
-msgid "Set to Green color mode"
-msgstr "Cambiar al modo de color Verde"
-
-#: exe/webui/tools/style-designer/langs/en.js:166
-msgid "Enter a Green value (0-255)"
-msgstr "Introduzca un valor (0-255)"
-
-#: exe/webui/tools/style-designer/langs/en.js:169
-msgid "Set to Blue color mode"
-msgstr "Cambiar al modo de color Azul"
-
-#: exe/webui/tools/style-designer/langs/en.js:170
-msgid "Enter a Blue value (0-255)"
-msgstr "Introduzca un valor (0-255)"
-
-#: exe/webui/tools/style-designer/langs/en.js:173
-msgid "Set to Alpha color mode"
-msgstr "Cambiar al modo Transparencia"
-
-#: exe/webui/tools/style-designer/langs/en.js:174
-#: exe/webui/tools/style-designer/langs/en.js:178
-msgid "Enter an Alpha value (0-100)"
-msgstr "Introduzca un valor (0-100)"
-
-#: exe/webui/tools/style-designer/langs/en.js:177
-msgid "Enter an Hex color value (#000000-#ffffff)"
-msgstr "Introduzca un código hexadecimal (#000000-#ffffff)"
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
@@ -14996,9 +14996,9 @@ msgstr ""
 "Si elige esta opción, el proceso de importación tomará os textos del "
 "idioma origen en vez del idioma destino."
 
-#: exe/webui/tools/style-designer/langs/en.js:58
-#: exe/webui/tools/style-designer/langs/en.js:127
-#: exe/webui/tools/style-designer/langs/en.js:136
+#: exe/webui/tools/color-picker/langs/all.js:8
+#: exe/webui/tools/style-designer/langs/all.js:58
+#: exe/webui/tools/style-designer/langs/all.js:127
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
 msgstr "Aceptar"
