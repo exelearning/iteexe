@@ -51,7 +51,7 @@ var $exeDevice = {
 			<div id="eXeAutoGeogebraForm">\
 				<p>'+_("Insert a GeoGebra activity from www.geogebra.org. It requires an Internet connection.")+'</p>\
 				<p>\
-					<label for="geogebraActivityInstructions">'+_("Instructions")+': </label><input type="text" name="geogebraActivityInstructions" id="geogebraActivityInstructions" /> \
+					<label for="geogebraActivityInstructions">'+_("Instructions")+': </label><input type="text" name="geogebraActivityInstructions" id="geogebraActivityInstructions" /> '+_("Only text, no HTML.")+'\
 				</p>\
 				<fieldset>\
 					<legend>'+_("General Settings")+'</legend>\
