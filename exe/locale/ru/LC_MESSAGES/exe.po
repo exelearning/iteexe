@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2018-04-23 23:11+0200\n"
+"POT-Creation-Date: 2018-04-24 19:26+0200\n"
 "PO-Revision-Date: 2017-08-31 13:32+0200\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
 "Language: ru\n"
@@ -5492,8 +5492,8 @@ msgstr "Главный автор ресурса."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:362
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:841
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1019
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1039
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1021
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1041
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:431
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:875
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1014
@@ -9382,7 +9382,7 @@ msgstr "Выбрать пакет"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:45
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:71
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:948
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:950
 msgid ""
 "Are you sure you want to continue without including an Image Description?"
 " Without it the image may not be accessible to some users with "
@@ -10567,7 +10567,7 @@ msgstr "Заголовок и подпись"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:12
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:934
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:936
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:556
 msgid "Title and Attribution"
 msgstr "Название и атрибуты"
@@ -10622,7 +10622,7 @@ msgstr "Выберите лицензию..."
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:346
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:844
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:846
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1035
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1037
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:434
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:436
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:859
@@ -10634,7 +10634,7 @@ msgstr "Публичный домен"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:21
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:352
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:853
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1039
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1041
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:443
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:865
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1034
@@ -13282,8 +13282,8 @@ msgstr "Автоматическая нумерация"
 
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
-#: exe/webui/scripts/tinymce_4_settings.js:363
-#: exe/webui/scripts/tinymce_4_settings.js:388
+#: exe/webui/scripts/tinymce_4_settings.js:378
+#: exe/webui/scripts/tinymce_4_settings.js:403
 msgid "Editor"
 msgstr "Редактор"
 
@@ -13572,7 +13572,7 @@ msgstr "Нижний колонтитул"
 msgid "Custom license"
 msgstr "Пользовательская лицензия"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1044
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1046
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1039
 msgid "Please check the \"License\" field"
 msgstr "Пожалуйста, проверьте поле \"Лицензия\""
@@ -13851,17 +13851,17 @@ msgid "3 columns"
 msgstr "3 колонки"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:50
-#: exe/webui/scripts/tinymce_4_settings.js:173
+#: exe/webui/scripts/tinymce_4_settings.js:187
 msgid "Inline"
 msgstr "Встроенный"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:37
-#: exe/webui/scripts/tinymce_4_settings.js:174
+#: exe/webui/scripts/tinymce_4_settings.js:188
 msgid "Bold"
 msgstr "Жирный"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:39
-#: exe/webui/scripts/tinymce_4_settings.js:175
+#: exe/webui/scripts/tinymce_4_settings.js:189
 msgid "Italic"
 msgstr "Курсив"
 
@@ -13869,7 +13869,7 @@ msgstr "Курсив"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:47
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:176
+#: exe/webui/scripts/tinymce_4_settings.js:190
 msgid "Underline"
 msgstr "Подчеркнутый"
 
@@ -13879,19 +13879,19 @@ msgstr "Подчеркнутый"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:26
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:177
+#: exe/webui/scripts/tinymce_4_settings.js:191
 msgid "Strikethrough"
 msgstr "Зачеркнутый"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:29
-#: exe/webui/scripts/tinymce_4_settings.js:178
+#: exe/webui/scripts/tinymce_4_settings.js:192
 msgid "Superscript"
 msgstr "Надстрочный"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:32
-#: exe/webui/scripts/tinymce_4_settings.js:179
+#: exe/webui/scripts/tinymce_4_settings.js:193
 msgid "Subscript"
 msgstr "Подстрочный"
 
@@ -13899,22 +13899,22 @@ msgstr "Подстрочный"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:38
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:535
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:572
-#: exe/webui/scripts/tinymce_4_settings.js:180
+#: exe/webui/scripts/tinymce_4_settings.js:194
 msgid "Code"
 msgstr "Код"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:182
+#: exe/webui/scripts/tinymce_4_settings.js:196
 msgid "Deletion"
 msgstr "Удаление"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:183
+#: exe/webui/scripts/tinymce_4_settings.js:197
 msgid "Insertion"
 msgstr "Замена"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:184
+#: exe/webui/scripts/tinymce_4_settings.js:198
 msgid "Cite"
 msgstr "Цитата"
 
