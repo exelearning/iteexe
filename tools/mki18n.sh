@@ -101,7 +101,12 @@ pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/
 # Set correct Project-Id-Version
 find exe -name exe.po | xargs sed -i 's/Project-Id-Version:.*/Project-Id-Version: '"$project $version"'\\n"/'
 
-# 4 .- eXe - Update temp locale files with templates translations
+
+# 4.- pyBabel - Compiling the MO files before re-adding HTML
+echo -e "\n\n\n *** Compiling *.mo files before re-adding HTML ***\n"
+pybabel compile -D exe -d exe/locale --statistics
+
+# 5.- eXe - Update temp locale files with templates translations
 echo -e "\n\n\n *** Adding template strings to generated *.po files ***\n"
 cp -r exe/locale $tmp
 python exe/put_template_strings.py --standalone $tmp/locale
@@ -112,13 +117,13 @@ find $tmp -name exe.po | xargs sed -i 'N;N;/#~ msgid ""\n#~ msgstr ""/d' # Clean
 find exe -name exe.po | xargs sed -i '1!N;1!N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
 find $tmp -name exe.po | xargs sed -i '1!N;1!N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
 
-# 5.- pyBabel - Compiling the MO files
+# 6.- pyBabel - Compiling the MO files
 echo -e "\n\n\n *** Compiling *.mo files ***\n"
 pybabel compile -D exe -d $tmp/locale --statistics
 find exe/locale -name exe.mo -delete
 cp -r $tmp/locale exe -n -v
 
-# 6.- Transecma - Generating the translated JS files for the different languages
+# 7.- Transecma - Generating the translated JS files for the different languages
 echo -e "\n\n\n *** Compiling javascript for jsui files ***\n"
 python tools/po2json.py --domain exe --directory exe/locale --output-dir exe/jsui/scripts/i18n
 
