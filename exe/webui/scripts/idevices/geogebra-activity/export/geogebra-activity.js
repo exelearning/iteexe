@@ -59,7 +59,12 @@ var $eXeAutoGeogebra = {
 					window['$eXeAutoGeogebraButtonText'+i] = txt;
 				}
 				var size = $eXeAutoGeogebra.indicator.getSize(this);
-				$(this).wrap('<div class="auto-geogebra-wrapper"></div>').addClass("auto-geogebra-loading").css({
+				var intro = "";
+				var instructions = $(".auto-geogebra-instructions",this);
+				if (instructions.length==1 && instructions.text()!="") {
+					intro = '<p class="auto-geogebra-instructions">'+instructions.text()+'</p>';
+				}
+				$(this).before(intro).wrap('<div class="auto-geogebra-wrapper"></div>').addClass("auto-geogebra-loading").css({
 					"width":size[0]+"px",
 					"height":size[1]+"px"
 				}).html("");

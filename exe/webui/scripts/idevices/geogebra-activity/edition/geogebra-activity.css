@@ -1,5 +1,7 @@
 /* GeoGebra Activity iDevice (edition CSS) */
 #geogebraActivitySCORMoptions{visibility:hidden;margin-left:1.5em}
+label[for=geogebraActivityInstructions]{font-weight:bold}
+#geogebraActivityInstructions{width:500px}
 #geogebraActivityURL,#geogebraActivityURLexample{width:250px;margin-right:1.5em}
 #geogebraActivityWidth,#geogebraActivityHeight,#geogebraActivityLang,#geogebraActivityBorderColor{width:70px}
 #geogebraActivityURLexample{background:#F0F0F0;color:#6d6d6d}

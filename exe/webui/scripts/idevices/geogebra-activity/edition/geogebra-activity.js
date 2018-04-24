@@ -50,6 +50,9 @@ var $exeDevice = {
 		var html = '\
 			<div id="eXeAutoGeogebraForm">\
 				<p>'+_("Insert a GeoGebra activity from www.geogebra.org. It requires an Internet connection.")+'</p>\
+				<p>\
+					<label for="geogebraActivityInstructions">'+_("Instructions")+': </label><input type="text" name="geogebraActivityInstructions" id="geogebraActivityInstructions" /> \
+				</p>\
 				<fieldset>\
 					<legend>'+_("General Settings")+'</legend>\
 					<p>\
@@ -204,8 +207,17 @@ var $exeDevice = {
 				}
             }
 			
+			// Instructions
+			var instructions = $(".auto-geogebra-instructions",wrapper);
+			if (instructions.length==1) $("#geogebraActivityInstructions").val(instructions.text());
 		}		
 		
+	},
+	
+	removeTags : function(txt){
+		var tmp = document.createElement("DIV");
+		tmp.innerHTML = txt;
+		return tmp.textContent || tmp.innerText || "";		
 	},
 	
 	save : function(){
@@ -230,7 +242,13 @@ var $exeDevice = {
         }        
         url = url[0];
 		
-		var divContent = '<a href="'+urlBase+url+'" target="_blank">'+urlBase+url+' ('+_("New Window")+')</a>';
+		var divContent = "";
+		
+		// Instructions
+		var instructions = this.removeTags($("#geogebraActivityInstructions").val());
+		if (instructions!="") divContent = '<p class="auto-geogebra-instructions">'+instructions+'</p>';
+		
+		divContent += '<p><a href="'+urlBase+url+'" target="_blank">'+urlBase+url+' ('+_("New Window")+')</a></p>';
         
         var css = 'auto-geogebra auto-geogebra-'+url;
         
