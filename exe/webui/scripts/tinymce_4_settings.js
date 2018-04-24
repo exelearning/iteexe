@@ -100,6 +100,20 @@ var $exeTinyMCE = {
 		var w = 882;
 		if (typeof($exeTinyMCEToggler.documentWidth)=='undefined' || (typeof($exeTinyMCEToggler.documentWidth)!='undefined' && $exeTinyMCEToggler.documentWidth<900)) w = '';
 		
+		// FR 303
+		var divExists = false;
+		if (mode=='multiple') {
+			var div = $(criteria).parent();
+			if (div.length==1 && div.attr("class")=="block" && !div[0].hasAttribute("style")) {
+				divExists = true;
+				div.css({
+					"width": w+"px",
+					"height": (h+50)+"px",
+					"border" : "1px solid #C0C0C0"
+				}).addClass("hidden-editor");
+			}
+		}
+		
 		tinymce.init({
 			language: this.language,
 			selector: criteria,
@@ -208,6 +222,7 @@ var $exeTinyMCE = {
 			],			
 			init_instance_callback: function(ed) {
 				if (mode=="multiple") {
+					if (divExists) div.removeAttr("style"); // FR 303
 					$exeTinyMCEToggler.init(ed.id,hide);
 				}
 			},
