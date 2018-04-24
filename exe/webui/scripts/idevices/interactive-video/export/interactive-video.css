@@ -1,0 +1,95 @@
+/**
+ * Interactive Video iDevice
+ *
+ * Released under Attribution-ShareAlike 4.0 International License.
+ * Author: Ignacio Gros (http://gros.es/) for http://exelearning.net/
+ *
+ * License: http://creativecommons.org/licenses/by-sa/4.0/
+ */
+/* To review */
+ .msg{background:#F4FDEF;padding:10px 20px;border-radius:2px;border:1px solid #ACDFA7;color:#384F34;margin:25px 0 1.5em 0}
+#slide .msg p{margin:0}
+.alert-msg{background:#ffc;border:1px solid #fc0;color:#c30}
+.error-msg{background:#fdd;border:1px solid #f00;color:#c30}
+.info-msg{background:#DFF4FF;border:1px solid #A7CEDF;color:#34404F}
+/* / To review */
+
+.exe-interactive-video{margin:2em auto;width:898px}
+
+.cover-on #player,.cover-on #activity-results,.cover-on #slide,.cover-on #activity-results-toggler{display:none!important}
+.cover-on #activity{width:50%!important}
+#activity-cover{background:#fff;width:408px;padding:20px 20px 20px 20px;
+width:90%;padding-right:5%;padding-left:5%;
+height:316px;margin:0 auto;overflow:auto;display:none}
+.cover-on #activity-cover{display:block}
+#activity-cover-logo{height:82px;background:url(../images/educamadrid.png) no-repeat 50% 0}
+#start-activity{text-align:center;margin:2.5em 0}
+#start-activity a{padding:8px 20px;background:#369;color:#fff;font-weight:bold;border-radius:4px;display:inline-block;margin:0 .5em;text-decoration:none}
+#start-activity a.restart{background:#666}
+#start-activity a:hover{text-decoration:underline}
+
+#activity{overflow:auto;border:1px solid #000;width:448px;background:#FFF;margin:20px auto 0 auto}
+.active #activity{width:898px}
+@media screen and (min-width:100px) {
+	#activity{border:none;box-shadow:0 0 15px 0 #cccccc}
+}
+#slide{display:none;background:#fff;width:408px;padding:20px;height:316px;float:right;overflow:auto;position:relative}
+#slide.image{padding:0;width:448px;height:356px;background:#fff url(../images/loading.gif) no-repeat 50% 50%}
+#slide.image img{display:none;margin:0 auto}
+#slide.image .square{max-width:356px;max-height:356px}
+#slide.image .horizontal{max-width:448px;height:auto}
+#slide.image .vertical{max-height:356px;width:auto}
+#slide.image a{position:absolute;top:10px;right:10px;background:#3E3E40;color:#fff;padding:2px 10px;text-decoration:none;font-size:.95em;border-radius:4px}
+#slide.image a:hover{background:#000;text-decoration:underline}
+#slide.matchElements select{width:45%}
+#slide.matchElements .random-a{color:#333}
+#slide p{margin:20px 0}
+#slide p:first-child{margin-top:0}
+#activity #player{margin:0 auto;max-width:100%}
+.active #player{float:left}
+.active #slide{display:block}
+.active #activity #player{margin-left:0}
+#slide .question{font-weight:bold}
+#slide .answers p{margin:0 0 10px 0}
+#slide .actions{margin-top:2em}
+#slide .disabled .actions,#slide .disabled .sortable a,#slide .disabled p.instructions{display:none}
+#slide .actions input{font-size:1em;border:none;padding:8px 20px;background:#369;color:#fff;font-weight:bold;border-radius:4px}
+
+#slide .sortable{margin:0;padding:0;list-style:none}
+#slide .sortable li{background:#f3f3f3;padding:.5em 65px .5em 10px;margin:0 0 .5em 0;border:1px solid #ddd;border-radius:4px}
+#slide .sortable .first .up,#slide .sortable .last .down{visibility:hidden}
+#slide .sortable li{position:relative}
+#slide .sortable li a{display:block;width:21px;height:21px;background:url(../images/sort_list_arrows.png) no-repeat 0 0;position:absolute;right:33px;top:6px}
+#slide .sortable li a:hover,#slide .sortable li a:focus{background-position:0 -21px}
+#slide .sortable li .down{background-position:-21px 0;right:6px}
+#slide .sortable li .down:hover,#slide .sortable li .down:focus{background-position:-21px -21px}
+#slide.sortableList p.instructions{color:#666;font-size:.9em;margin-bottom:-1em}
+
+#activity-results-toggler a{border-radius:4px;color:#333;text-decoration:none;background:#f7f7f7 url(../images/down.gif) no-repeat right 50%;display:block;border:1px solid #e7e7e7;padding:.5em 1em;letter-spacing:.5px}
+#activity-results-toggler .hide{background-image:url(../images/up.gif)}
+#activity-results-toggler{font-size:1.1em;font-weight:normal;margin:20px 0 0}
+
+#activity-results table{font-size:12px;background:#fff;margin:10px 0 25px 0;width:100%;border-collapse:collapse;text-align:left}
+#activity-results th,#activity-results #resultsSummary{font-size:14px;font-weight:400;color:#039;padding:10px 0;border-bottom:2px solid #6678b1}
+#activity-results #resultsSummaryTH{font-weight:bold}
+#activity-results #resultsSummaryTH em{font-style:normal;font-weight:normal;color:#669;margin-left:.2em;font-size:12px}
+.activity-completed #resultsSummaryTH em{display:none}
+#activity-results td{border-bottom:1px solid #e7e7e7;color:#669;padding:6px 0}
+tr.even td{background:#f7f7f7}
+#activity-results .title,#activity-results .order span,#activity-results tr a{display:block}
+#activity-results tr a,#activity-results tr span{text-indent:8px}
+#activity-results tr span span{text-indent:0}
+#activity-results tbody tr:hover td{color:#009}
+
+.is-mobile #activity-cover{height:auto;min-height:316px}
+.is-mobile #slide{height:auto;min-height:316px}
+
+@media screen and (max-width:900px) {
+.full-version{display:none}
+#all{width:100%}
+#slide{width:46%;padding-right:2%;padding-left:2%}
+#slide.image{width:50%}
+#slide.image img{max-width:100%!important}
+#activity #player{max-width:100%}
+.active #activity #player{max-width:50%}
+}
