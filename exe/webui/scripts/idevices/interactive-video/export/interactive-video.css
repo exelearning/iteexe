@@ -12,6 +12,7 @@
 .alert-msg{background:#ffc;border:1px solid #fc0;color:#c30}
 .error-msg{background:#fdd;border:1px solid #f00;color:#c30}
 .info-msg{background:#DFF4FF;border:1px solid #A7CEDF;color:#34404F}
+#slide .disabled .field-with-error{color:#c30}
 /* / To review */
 
 .exe-interactive-video{margin:2em auto;width:898px}
@@ -22,19 +23,19 @@
 width:90%;padding-right:5%;padding-left:5%;
 height:316px;margin:0 auto;overflow:auto;display:none}
 .cover-on #activity-cover{display:block}
-#activity-cover-logo{height:82px;background:url(../images/educamadrid.png) no-repeat 50% 0}
+#activity-cover-logo{display:none} /* Use this to add a logo to all the activities */
 #start-activity{text-align:center;margin:2.5em 0}
 #start-activity a{padding:8px 20px;background:#369;color:#fff;font-weight:bold;border-radius:4px;display:inline-block;margin:0 .5em;text-decoration:none}
 #start-activity a.restart{background:#666}
 #start-activity a:hover{text-decoration:underline}
 
-#activity{overflow:auto;border:1px solid #000;width:448px;background:#FFF;margin:20px auto 0 auto}
+#activity{overflow:auto;border:1px solid #000;width:448px;max-height:356px;background:#FFF;margin:20px auto 0 auto;overflow:hidden}
 .active #activity{width:898px}
 @media screen and (min-width:100px) {
 	#activity{border:none;box-shadow:0 0 15px 0 #cccccc}
 }
 #slide{display:none;background:#fff;width:408px;padding:20px;height:316px;float:right;overflow:auto;position:relative}
-#slide.image{padding:0;width:448px;height:356px;background:#fff url(../images/loading.gif) no-repeat 50% 50%}
+#slide.image{padding:0;width:448px;height:356px;background:#fff url(interactive-video-loading.gif) no-repeat 50% 50%}
 #slide.image img{display:none;margin:0 auto}
 #slide.image .square{max-width:356px;max-height:356px}
 #slide.image .horizontal{max-width:448px;height:auto}
@@ -56,17 +57,17 @@ height:316px;margin:0 auto;overflow:auto;display:none}
 #slide .actions input{font-size:1em;border:none;padding:8px 20px;background:#369;color:#fff;font-weight:bold;border-radius:4px}
 
 #slide .sortable{margin:0;padding:0;list-style:none}
-#slide .sortable li{background:#f3f3f3;padding:.5em 65px .5em 10px;margin:0 0 .5em 0;border:1px solid #ddd;border-radius:4px}
+#slide .sortable li{background:#f3f3f3;padding:.5em 65px .5em 10px;margin:0 0 .5em 0;border:1px solid #ddd;border-radius:4px;list-style-image:none}
 #slide .sortable .first .up,#slide .sortable .last .down{visibility:hidden}
 #slide .sortable li{position:relative}
-#slide .sortable li a{display:block;width:21px;height:21px;background:url(../images/sort_list_arrows.png) no-repeat 0 0;position:absolute;right:33px;top:6px}
+#slide .sortable li a{display:block;width:21px;height:21px;background:url(interactive-video-sorter.png) no-repeat 0 0;position:absolute;right:33px;top:6px}
 #slide .sortable li a:hover,#slide .sortable li a:focus{background-position:0 -21px}
 #slide .sortable li .down{background-position:-21px 0;right:6px}
 #slide .sortable li .down:hover,#slide .sortable li .down:focus{background-position:-21px -21px}
 #slide.sortableList p.instructions{color:#666;font-size:.9em;margin-bottom:-1em}
 
-#activity-results-toggler a{border-radius:4px;color:#333;text-decoration:none;background:#f7f7f7 url(../images/down.gif) no-repeat right 50%;display:block;border:1px solid #e7e7e7;padding:.5em 1em;letter-spacing:.5px}
-#activity-results-toggler .hide{background-image:url(../images/up.gif)}
+#activity-results-toggler a{border-radius:4px;color:#333;text-decoration:none;background:#f7f7f7 url(interactive-video-more.gif) no-repeat right 50%;display:block;border:1px solid #e7e7e7;padding:.5em 1em;letter-spacing:.5px}
+#activity-results-toggler .hide{background-image:url(interactive-video-less.gif)}
 #activity-results-toggler{font-size:1.1em;font-weight:normal;margin:20px 0 0}
 
 #activity-results table{font-size:12px;background:#fff;margin:10px 0 25px 0;width:100%;border-collapse:collapse;text-align:left}
