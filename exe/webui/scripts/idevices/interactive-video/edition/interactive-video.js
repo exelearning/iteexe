@@ -9,7 +9,7 @@
  
 // Provisional:
 var myVideo = "https://mediateca.educa.madrid.org/video/l7l76swf6hggd2hu";
-	// myVideo = "https://youtu.be/EW72hU1Rp7g";
+	myVideo = "https://youtu.be/EW72hU1Rp7g";
  
 var $exeDevice = {
 	
