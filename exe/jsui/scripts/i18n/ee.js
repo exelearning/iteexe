@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2018-04-23 23:11+0200\nPO-Revision-Date: 2006-08-13 00:29+1200\nLast-Translator: \nLanguage: ee\nLanguage-Team: GOUNH KPODO <Dicta5@yahoo.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2018-04-24 19:26+0200\nPO-Revision-Date: 2006-08-13 00:29+1200\nLast-Translator: \nLanguage: ee\nLanguage-Team: GOUNH KPODO <Dicta5@yahoo.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "Frame Height:": "Ada\u014budede  \u0192e \u0256o\u0192e", 
  "Reflective question:": "\u014bugblede biabiawo ", 
  "Text Line": "Nu\u014b\u0254\u014bl\u0254m\u0254nu", 

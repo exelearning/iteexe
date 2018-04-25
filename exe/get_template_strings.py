@@ -21,7 +21,7 @@
 import os
 import sys
 
-from datetime import datetime
+from datetime   import datetime
 from HTMLParser import HTMLParser
 
 # Make it so we can import our own nevow and twisted etc.
@@ -43,8 +43,8 @@ except ImportError, error:
         traceback.print_exc()
         sys.exit(1)
 
-from exe.engine.path import Path
-from exe.engine.package import Package
+from exe.engine.package  import Package
+from exe.engine.path     import Path
 from exe.engine.template import Template
 
 def normalize_text(text):
@@ -95,26 +95,47 @@ def get_node_strings(node):
     # Convert the strings object into a list
     strings = [node_strings]
 
-    # Add this nodes decendants' strings
+    # Add this node decendants' strings
     for child in node.walkDescendants():
         strings.extend(get_node_strings(child))
 
     return strings
 
 class FieldHtmlParser(HTMLParser):
+    """
+    This class will be used to extract the string from the HTML.
+
+    :see: HTMLParser
+    """
     def __init__(self):
+        """
+        Object initialization.
+        """
         # initialize the base class
         HTMLParser.__init__(self)
 
+        # Reset the properties
         self.reset()
-        self.NEWTAGS = []
-        self.NEWATTRS = []
+
+        # Declare our own properties
         self.HTMLDATA = []
-    def handle_starttag(self, tag, attrs):
-        self.NEWTAGS.append(tag)
-        self.NEWATTRS.append(attrs)
     def handle_data(self, data):
-        self.HTMLDATA.append(data)
+        """
+        This function will be called when the parser finds a
+        fragment of translatable text.
+
+        :type data: str
+        :param data: The translatable test found.
+        """
+        # Add the translatable test, its line number and the offset
+        # to the data list
+        datadict = {
+            'data': data,
+            'line': self.lineno,
+            'offset': self.offset
+        }
+
+        self.HTMLDATA.append(datadict)
 
 if __name__ == "__main__":
     # Load eXe configuration
@@ -127,23 +148,30 @@ if __name__ == "__main__":
     application.config.locale = 'en'
     application.config.loadLocales()
 
+    # List of strings that shouldn't make it to the .po files
+    excluded_strings = [
+        u'',
+        u'.',
+        u'...',
+        u'\n'
+    ]
+
     # Open output file and write generation date
     file_w = open(application.config.templatesDir / u'strings.py', 'w');
     file_w.write(u'# Generated on %s\n' % str(datetime.now()))
 
     file_w.write(u'\ntemplates = {\n')
-    file_r = open(application.config.templatesDir / '..' / 'aboutpage.py', 'r')
-    # Go through all templates
+
+    # Go through all templates (only take into account .elt files)
     package_index = 0
     for file_name in [f for f in os.listdir(application.config.templatesDir) if os.path.splitext(f)[1] == '.elt']:
-        print(u'extracting messages from %s' % (application.config.templatesDir / file_name))
+        print(u'Extracting messages from %s...' % (application.config.templatesDir / file_name))
 
-        # Load the template
-        template = Template(application.config.templatesDir / file_name)
         # Load the template as a package
+        template = Template(application.config.templatesDir / file_name)
         package = Package.load(application.config.templatesDir / file_name, newLoad=True);
 
-        # Write template header and definition start
+        # Write template header comment and definition start
         file_w.write(u'\t# Template: %s\n\t\'template_%i\': {\n' % (file_name, package_index))
 
         # Template name
@@ -182,54 +210,107 @@ if __name__ == "__main__":
         # Get node strings
         node_strings = get_node_strings(package.root)
 
+        # Go through all nodes
         file_w.write(u'\t\t\'nodes\': [\n')
         for node in node_strings:
+            # Node title
             file_w.write(u'\t\t\t{\n')
             file_w.write(u'\t\t\t\t\'title\': _(u\'%s\'),\n' % normalize_text(node['title']))
 
+            # Node idevices
             file_w.write(u'\t\t\t\t\'idevices\': [\n')
             for idevice in node['idevices'].itervalues():
+                # Idevice title
                 file_w.write(u'\t\t\t\t\t{\n')
                 file_w.write(u'\t\t\t\t\t\t\'title\': _(u\'%s\'),\n' % normalize_text(idevice['title']))
 
+                # Idevice fields
                 file_w.write(u'\t\t\t\t\t\t\'fields\': [\n')
-
                 for field in idevice['fields'].itervalues():
                     file_w.write(u'\t\t\t\t\t\t\t{\n')
 
+                    # Write the raw value (just as a reference)
                     file_w.write(u'\t\t\t\t\t\t\t\t\'raw_value\': u\'\'\'%s\'\'\',\n' % normalize_text(field['content_w_resourcePaths']))
 
+                    # Parse the HTML inside the field
                     parser = FieldHtmlParser()
                     parser.feed(field['content_w_resourcePaths'])
-                    translatablehtml = parser.HTMLDATA
-                    trabslatabletext = u''
-                    template = field['content_w_resourcePaths'].replace(u'%', u'%%')
-                    # Go through all the strings filtering out the ones that should not be translated
-                    for translatablestring in [f for f in translatablehtml if f.strip() != u'' and f != u'.' and f != u'...']:
-                        template = template.replace(translatablestring, '%s', 1)
-                        trabslatabletext += u'\t\t\t\t\t\t\t\t\t_(u\'%s\'),\n' % normalize_text(translatablestring)
 
+                    # Get the HTML translatable text
+                    translatablehtml = parser.HTMLDATA
+                    translatabletext = u''
+
+                    # Get the template (we need to replace % ocurrences to prevent Python from replacing them
+                    # when we get the HTML back in the translations)
+                    template = field['content_w_resourcePaths'].replace(u'%', u'%%')
+
+                    # Init the dict that will hold the diferrences in the offset for each line
+                    offset_diff = {}
+
+                    # Go through all the strings filtering out the ones that should not be translated
+                    for translatablestring in [f for f in translatablehtml if f['data'].strip() not in excluded_strings]:
+                        # Get the offset
+                        offset = translatablestring['offset']
+
+                        # For any line different from the first one, we have to take into account
+                        # the length of all the other lines that came before (including the line breaks)
+                        if translatablestring['line'] > 1:
+                            lines = template.split(u'\n')
+
+                            for i in range(0, translatablestring['line'] - 1):
+                                offset += len(lines[i])
+
+                            # This will add the line breaks (split removes them)
+                            offset += translatablestring['line'] - 1
+
+                        # We also have to take into account that if we already replaced some text
+                        # in this line this text won't be at the correct offset
+                        if translatablestring['line'] in offset_diff:
+                            offset -= offset_diff[translatablestring['line']]
+                        else:
+                            offset_diff[translatablestring['line']] = 0
+
+                        # Save the offset difference adding the length of the text replaces minus 2 (%s)
+                        offset_diff[translatablestring['line']] += len(translatablestring['data']) - 2
+
+                        # Replace the text in the template with %s
+                        template = template[:offset] + u'%s' + template[offset + len(translatablestring['data']):]
+                        # And add the text to the list
+                        translatabletext += u'\t\t\t\t\t\t\t\t\t_(u\'%s\'),\n' % normalize_text(translatablestring['data'])
+
+                    # Write the template to the strings file
                     file_w.write(u'\t\t\t\t\t\t\t\t\'template\': u\'\'\'%s\'\'\',\n' % normalize_text(template))
+
+                    # And also the translatable strings found in it
                     file_w.write(u'\t\t\t\t\t\t\t\t\'translatable_text\': [\n')
-                    file_w.write(trabslatabletext)
+                    file_w.write(translatabletext)
                     file_w.write(u'\t\t\t\t\t\t\t\t]\n')
 
+                    # Close field definition
                     file_w.write(u'\t\t\t\t\t\t\t},\n')
 
+                # Close field list
                 file_w.write(u'\t\t\t\t\t\t]\n')
 
+                # Close idevice definition
                 file_w.write(u'\t\t\t\t\t},\n')
 
+            # Close idevice list
             file_w.write(u'\t\t\t\t]\n')
+            # Close node definition
             file_w.write(u'\t\t\t},\n')
 
+        # Close node list
         file_w.write(u'\t\t]\n')
 
         # Close template definition
         file_w.write(u'\t},\n')
 
+        # Remove the package so the temp folder doesn't stay
+        del package
         package_index += 1
-
+    # Close file definition
     file_w.write(u'}\n')
 
+    # Close the file
     file_w.close()

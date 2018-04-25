@@ -21,7 +21,7 @@
 import os
 import sys
 
-from babel._compat import StringIO
+from babel._compat         import StringIO
 from babel.messages.pofile import read_po, write_po
 # Make it so we can import our own nevow and twisted etc.
 if os.name == 'posix':
@@ -42,8 +42,8 @@ except ImportError, error:
         traceback.print_exc()
         sys.exit(1)
 
-from exe.engine.path import Path
-from exe.engine.package import Package
+from exe.engine.package  import Package
+from exe.engine.path     import Path
 from exe.engine.template import Template
 
 if __name__ == "__main__":
@@ -70,43 +70,48 @@ if __name__ == "__main__":
 
             locale_catalogs[name] = current_locale
 
+        # Load the catalogs from the temp directory
         for sub_dir in locale_path.dirs():
-            if (sub_dir / 'LC_MESSAGES' / 'exe.po').exists():
+            if (sub_dir / 'LC_MESSAGES' / 'exe.po').exists() and os.path.basename(sub_dir) in locale_catalogs:
                 catalog_stream = open(sub_dir / 'LC_MESSAGES' / 'exe.po', 'r')
                 catalog_string = catalog_stream.read()
                 catalog_stream.close()
 
-                if os.path.basename(sub_dir) in locale_catalogs:
-                    locale_catalogs[os.path.basename(sub_dir)]['catalog'] = read_po(StringIO(catalog_string))
-                    locale_catalogs[os.path.basename(sub_dir)]['path'] = sub_dir / 'LC_MESSAGES' / 'exe.po'
+                locale_catalogs[os.path.basename(sub_dir)]['catalog'] = read_po(StringIO(catalog_string))
+                locale_catalogs[os.path.basename(sub_dir)]['path'] = sub_dir / 'LC_MESSAGES' / 'exe.po'
 
+        # Go through all the templates, nodes, idevices and fields
         for path, template in templates.iteritems():
             for node in template['nodes']:
                 for idevice in node['idevices']:
                     for field in idevice['fields']:
+                        # For each locale
                         for name, locale in locale_catalogs.iteritems():
+                            # If there is no catalog, just go to the next locale
                             if 'catalog' not in locale:
                                 continue
 
+                            # Get the translated test and insert it into the template
                             translated_text = []
-
                             for text in field['translatable_text']:
                                 translated_text.append(locale['locale'].ugettext(text))
-
                             translated_string = field['template'] % tuple(translated_text)
 
+                            # Add the new translation to the catalog
                             locale['catalog'].add(field['raw_value'], translated_string)
 
         # Write every catalog with the new values
         for name, locale in locale_catalogs.iteritems():
+            # Again, if there is not catalog, simply go to the next one
             if 'catalog' not in locale:
                 continue
 
+            # Write the catalog to a string
             buf = StringIO()
             write_po(buf, locale['catalog'])
 
+            # And the string to the file
             po_stream = open(locale['path'], 'w')
-            #po_stream.write(buf.getvalue().decode('utf-8'))
             po_stream.write(buf.getvalue())
             po_stream.close()
 
