@@ -71,13 +71,15 @@
 # 2018-04-11
 #    * Preparing version 2.2 (Sdweb)
 #
+# 2018-04-26
+#    * Split this functionality in two separate files (Sdweb)
+#
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
 version="2.2"
-tmp=$(mktemp -d)
 
 # 1.- eXe - Extract content templates' files to a .py dummy file
 echo -e " *** Extracting messages from content templates ***\n"
@@ -100,32 +102,3 @@ echo -e "\n\n\n *** Updating *.po files ***\n"
 pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/
 # Set correct Project-Id-Version
 find exe -name exe.po | xargs sed -i 's/Project-Id-Version:.*/Project-Id-Version: '"$project $version"'\\n"/'
-
-
-# 4.- pyBabel - Compiling the MO files before re-adding HTML
-echo -e "\n\n\n *** Compiling *.mo files before re-adding HTML ***\n"
-pybabel compile -D exe -d exe/locale --statistics
-
-# 5.- eXe - Update temp locale files with templates translations
-echo -e "\n\n\n *** Adding template strings to generated *.po files ***\n"
-cp -r exe/locale $tmp
-python exe/put_template_strings.py --standalone $tmp/locale
-
-# pybabel bugs fixing
-find exe -name exe.po | xargs sed -i 'N;N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
-find $tmp -name exe.po | xargs sed -i 'N;N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
-find exe -name exe.po | xargs sed -i '1!N;1!N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
-find $tmp -name exe.po | xargs sed -i '1!N;1!N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
-
-# 6.- pyBabel - Compiling the MO files
-echo -e "\n\n\n *** Compiling *.mo files ***\n"
-pybabel compile -D exe -d $tmp/locale --statistics
-find exe/locale -name exe.mo -delete
-cp -r $tmp/locale exe -n -v
-
-# 7.- Transecma - Generating the translated JS files for the different languages
-echo -e "\n\n\n *** Compiling javascript for jsui files ***\n"
-python tools/po2json.py --domain exe --directory exe/locale --output-dir exe/jsui/scripts/i18n
-
-# Remove temp dir
-rm -r $tmp
