@@ -11,6 +11,19 @@
 var myVideo = "https://mediateca.educa.madrid.org/video/l7l76swf6hggd2hu";
 	myVideo = "https://youtu.be/EW72hU1Rp7g";
  
+function fieldHasChangedTest(e){
+    $("#interactiveVideoFile").fadeIn();
+}
+
+function uploadToServerTest(){
+    $("#interactiveVideoFile").hide();
+	try {
+        exe_tinymce.chooseImage("interactiveVideoFile", "", "media", window);
+    } catch(e) {
+        alert(e);
+    }
+} 
+ 
 var $exeDevice = {
 	
 	init : function(){
@@ -23,8 +36,13 @@ var $exeDevice = {
 	createForm : function(){
 		
 		var html = '\
-			<div id="exampleIdeviceForm">\
+			<div id="interactiveVideoIdeviceForm">\
 				<p>'+_("Soon...")+'</p>\
+				<p>\
+					<label for="interactiveVideoFile">'+_("File")+':</label> \
+					<input type="text" name="interactiveVideoFile" id="interactiveVideoFile" onchange="fieldHasChangedTest(this)" />\
+					<input type="button" value="'+_("Select a file")+'" onclick="uploadToServerTest()" />\
+				</p>\
 			</div>\
 		';
 		
@@ -354,6 +372,12 @@ var $exeDevice = {
 		*/
 		
 		// Return the HTML to save
+		var videoFile = $("#interactiveVideoFile").val();
+		if (videoFile!="") {
+			var videoFileName = videoFile.split("/");
+				videoFileName = videoFileName[videoFileName.length-1];			
+			html += '<video width="320" height="240" controls="controls" class="mediaelement"><source src="'+videoFile+'" /></video>';
+		}
 		return html;
 		
 	}
