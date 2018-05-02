@@ -51,6 +51,10 @@ if __name__ == "__main__":
     application = Application()
     application.processArgs()
     application.loadConfiguration()
+
+    # We have to make sure eXe has english configured as its language to prevent it
+    # from pre-translating the templates
+    application.config.locale = 'en'
     application.config.loadLocales()
 
     # The locale path must always be the last parameter
