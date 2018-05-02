@@ -20,12 +20,16 @@ intef-exe (3:2.2~beta1) lucid; urgency=medium
     - JavaScript revision to prevent errors on Readium (Content Security Policy).
     - Styles revision to fit the new options.
     - JavaScript bug fixes.
+    - Fix inconsitencies in link behavior.
+    - Separate color picket to its own folder.
+    - Hide the "Powered by TinyMCE" message when the editor is hidden.
+    - Fix strange effect when loading TinyMCE.
 
   * Miguel Ángel Pereira and Cristina Valdera
     - Help texts revision.
 
   * SDWeb
-    - Content templates (and SCRIPT to extract their string so they can be translated).
+    - Content templates (and SCRIPTs to extract their string so they can be translated).
     - JavaScript iDevices (easy system to create new iDevices).
     - Pagination: Page counter.
     - Allow users to change the iDevice icon in some iDevices.
@@ -137,7 +141,7 @@ intef-exe (3:2.1.3~beta1) lucid; urgency=medium
     - Improve tables with CSS. 2 different table designs: default and minimalist.
     - CodeMagic Plugin: Full Screen mode.
     - License revision.
-        - Trado and Diwanltr fonts had to be removed from eXe.
+    	- Trado and Diwanltr fonts had to be removed from eXe.
     - Colorpicker plugin (use it to select a table background color, etc.).
     - Allow and export any file format in the Styles (#207).
     - Add id or class to each BODY tag (#161).

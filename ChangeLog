@@ -20,12 +20,16 @@ intef-exe (3:2.2~beta1) lucid; urgency=medium
     - JavaScript revision to prevent errors on Readium (Content Security Policy).
     - Styles revision to fit the new options.
     - JavaScript bug fixes.
+    - Fix inconsitencies in link behavior.
+    - Separate color picket to its own folder.
+    - Hide the "Powered by TinyMCE" message when the editor is hidden.
+    - Fix strange effect when loading TinyMCE.
 
   * Miguel Ángel Pereira and Cristina Valdera
     - Help texts revision.
 
   * SDWeb
-    - Content templates (and SCRIPT to extract their string so they can be translated).
+    - Content templates (and SCRIPTs to extract their string so they can be translated).
     - JavaScript iDevices (easy system to create new iDevices).
     - Pagination: Page counter.
     - Allow users to change the iDevice icon in some iDevices.
@@ -571,7 +575,7 @@ intef-exe (3:2.0.2) lucid; urgency=low
     - Prevent class change in media elements
     - Additional change in atributes.js: if media related classes are being used, the combo is disabled to prevent user from changing it
     - onclick event added to image preview so that user can refresh manually the image.
-    - <meta content="text/html; charset=utf-8" http-equiv="Content-Type">	added to all html in TinyMCE
+    - <meta content="text/html; charset=utf-8" http-equiv="Contcent-Type">   added to all html in TinyMCE
 
   * Juan Rafael Fernández ]
     - Contributes to updating Debian packaging to dh7, fixed naming, permissions, adding dependencies etc.
