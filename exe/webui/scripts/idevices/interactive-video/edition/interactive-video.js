@@ -40,8 +40,7 @@ var $exeDevice = {
 				<p>'+_("Soon...")+'</p>\
 				<p>\
 					<label for="interactiveVideoFile">'+_("File")+':</label> \
-					<input type="text" name="interactiveVideoFile" id="interactiveVideoFile" onchange="fieldHasChangedTest(this)" />\
-					<input type="button" value="'+_("Select a file")+'" onclick="uploadToServerTest()" />\
+					<input type="text" id="interactiveVideoFile" class="exe-file-picker" />\
 				</p>\
 			</div>\
 		';

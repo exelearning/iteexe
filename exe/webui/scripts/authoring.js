@@ -939,7 +939,33 @@ var $exeAuthoring = {
 
             // Enable color pickers (provisional solution)
             $exeAuthoring.iDevice.colorPicker.init();
+			
+            // Enable file uploaders
+            $exeAuthoring.iDevice.filePicker.init();
             
+        },
+        filePicker : {
+            init : function(){
+                $(".exe-file-picker,.exe-image-picker").each(
+                    function(){
+                        var id = this.id;
+                        var css = 'exe-pick-any-file';
+                        var e = $(this);
+                        if (e.hasClass("exe-image-picker")) css = 'exe-pick-image';
+                        e.after(' <input type="button" class="'+css+'" value="'+_("Select a file")+'" id="_browseFor'+id+'" onclick="$exeAuthoring.iDevice.filePicker.openFilePicker(this)" />');
+                    }
+                );
+            },
+            openFilePicker : function(e){
+                var id = e.id.replace("_browseFor","");
+                var type = 'media';
+                if ($(e).hasClass("exe-pick-image")) type = 'image';
+                try {
+                    exe_tinymce.chooseImage(id, "", type, window);
+                } catch(e) {
+                    eXe.app.alert(e);
+                }
+            }
         },
         colorPicker : {
             init : function(){
