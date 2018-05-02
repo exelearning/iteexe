@@ -11,19 +11,6 @@
 var myVideo = "https://mediateca.educa.madrid.org/video/l7l76swf6hggd2hu";
 	myVideo = "https://youtu.be/EW72hU1Rp7g";
  
-function fieldHasChangedTest(e){
-    $("#interactiveVideoFile").fadeIn();
-}
-
-function uploadToServerTest(){
-    $("#interactiveVideoFile").hide();
-	try {
-        exe_tinymce.chooseImage("interactiveVideoFile", "", "media", window);
-    } catch(e) {
-        alert(e);
-    }
-} 
- 
 var $exeDevice = {
 	
 	init : function(){
