@@ -283,13 +283,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         {
                                             cls: 'exe-advanced',
                                             xtype: 'accesskey_menuitem',
-                                            text: _('Ustad Mobile'),
-                                            accesskey: 'x',
-                                            itemId: 'file_export_mxml'
-                                        },
-                                        {
-                                            cls: 'exe-advanced',
-                                            xtype: 'accesskey_menuitem',
                                             text: _('XLIFF'),
                                             accesskey: 'x',
                                             itemId: 'file_export_xliff'
