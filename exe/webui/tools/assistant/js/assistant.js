@@ -55,7 +55,7 @@ var eXeAssistant = {
         $(".trigger").click(function(){
             var h = this.href;
             h = h.split("#")[1];
-            $(top.document.getElementById(h)).trigger("click");
+            $(window.top.document.getElementById(h)).trigger("click");
             return false;
         });
         $(".next").click(function(i){
