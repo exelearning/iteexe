@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2018-04-26 19:33+0200\n"
-"PO-Revision-Date: 2018-04-14 17:59+0200\n"
+"PO-Revision-Date: 2018-05-03 17:49+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -15033,4 +15033,3 @@ msgstr ""
 
 #~ msgid "CeDeC"
 #~ msgstr "CeDeC"
-
