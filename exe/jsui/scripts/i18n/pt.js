@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2018-04-26 19:33+0200\nPO-Revision-Date: 2018-04-25 20:40+0200\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage: pt\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2018-04-26 19:33+0200\nPO-Revision-Date: 2018-05-03 18:47+0200\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage: pt\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "Toggle Full Screen Mode": "Tela Inteira", 
  "DropDown Activity": "Atividade drop-down", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Criar a hist\u00f3ria do caso. Um bom caso \u00e9 aquele \nque descreve uma controv\u00e9rsia ou apresenta uma cena descrevendo as personagens \nenvolvidas e a situa\u00e7\u00e3o. Deve permitir decidir a\u00e7\u00f5es \nque levem \u00e0 resolu\u00e7\u00e3o da situa\u00e7\u00e3o.", 
@@ -1376,7 +1376,7 @@ translations = {
  "creative commons: attribution - non derived work - non commercial 4.0": "Creative Commons: Atribui\u00e7\u00e3o - Sem Deriva\u00e7\u00f5es - N\u00e3o Comercial 4.0", 
  "Tsonga ": "Tsonga ", 
  "not appropriate": "n\u00e3o apropriado", 
- "Templates": "Templates", 
+ "Templates": "Modelos", 
  "Number of Columns in part bin": "N\u00famero de colunas", 
  "Replace all": "Substituir todos", 
  "Yoruba ": "Iorub\u00e1 ", 
