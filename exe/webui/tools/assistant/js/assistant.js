@@ -46,8 +46,8 @@ var eXeAssistant = {
         }
     },
     openDialog : function(id,tit,url,w,h){
-        var helpDialog = new top.Ext.Window ({
-          height: top.eXe.app.getMaxHeight(w),
+        var helpDialog = new window.top.Ext.Window ({
+          height: window.top.eXe.app.getMaxHeight(w),
           width: h,
           modal: true,
           resizable: false,
