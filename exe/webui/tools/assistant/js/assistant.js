@@ -45,6 +45,22 @@ var eXeAssistant = {
             }
         }
     },
+    openDialog : function(id,tit,url,w,h){
+        var helpDialog = new window.top.Ext.Window ({
+          height: window.top.eXe.app.getMaxHeight(w),
+          width: h,
+          modal: true,
+          resizable: false,
+          id: id,
+          title: tit,
+          items: {
+              xtype: 'uxiframe',
+              src: url,
+              height: '100%'
+          }
+        });
+        helpDialog.show();      
+    },
     setupLinks : function() {
         $("#tabs a").click(function(){
             var h = this.href;
@@ -53,9 +69,25 @@ var eXeAssistant = {
             return false;
         }); 
         $(".trigger").click(function(){
-            var h = this.href;
-            h = h.split("#")[1];
-            $(top.document.getElementById(h)).trigger("click");
+            var e = $(this);
+            var url = e.attr("href");
+            var id = url.replace("-","");
+            var tit = e.text();
+            var w = 700;
+            var h = 420;            
+            var c = this.className;
+                c = c.split(" ");
+            if (c.length==2) {
+                c = c[1];
+                c = c.split("-");
+                if(c.length==3) {
+                    var _w = parseInt(c[1]);
+                    if (!isNaN(_w) && _w>w) w = _w;
+                    var _h = parseInt(c[2]);
+                    if (!isNaN(_h) && _h>h) h = _h;                    
+                }
+            }
+            eXeAssistant.openDialog(id,tit,url,w,h);
             return false;
         });
         $(".next").click(function(i){

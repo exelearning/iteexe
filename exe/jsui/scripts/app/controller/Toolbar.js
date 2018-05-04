@@ -132,9 +132,6 @@ Ext.define('eXe.controller.Toolbar', {
             '#file_export_text': {
                 click: { fn: this.processExportEvent, exportType: "textFile" }
             },
-            '#file_export_mxml': {
-                click: { fn: this.processExportEvent, exportType: "mxml" }
-             },
             '#file_export_epub3': {
                 click: { fn: this.processExportEvent, exportType: "epub3" }
             },
@@ -953,7 +950,7 @@ Ext.define('eXe.controller.Toolbar', {
     },
 
 	exportPackage: function(exportType, exportDir) {
-	    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage' || exportType == 'ipod' || exportType == 'mxml' ) {
+	    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage' || exportType == 'ipod' ) {
 	        if (exportDir == '') {
                 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
 		            type: eXe.view.filepicker.FilePicker.modeGetFolder,
@@ -963,11 +960,8 @@ Ext.define('eXe.controller.Toolbar', {
 		            callback: function(fp) {
 		                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
 		                	// Show exporting message
-		                	// If export is Ustad Mobile don't show the message because don't disappear
-		                	if(exportType != 'mxml'){
-		                		Ext.Msg.wait(_('Please wait...'));
-		                	}
-		                    nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+		                	Ext.Msg.wait(_('Please wait...'));
+		                	nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
 		                }
 		            }
 		        });

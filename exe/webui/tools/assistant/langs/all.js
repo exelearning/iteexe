@@ -38,6 +38,7 @@ var $i18n = {
     Edit_name_instructions : _('Click on "Rename" or doubleclick on the page you had just created to change its name.'),
     Delete_page_instructions : _('You can delete it using "Delete".'),
     Move_pages_instructions : _('Create as many pages as you need and organise them to your liking by using the arrows that appear on the bottom of the block "Outline":'),
+    Move_pages_image : _('Outline'),
     Now_you_can_add_content : _('Once the page is created you can add content.'),
     How_to_add_content : _('How to add content'),
     Adding_content : _('Adding content'),
@@ -48,6 +49,7 @@ var $i18n = {
     Add_a_Free_Text_iDevice : _("Add a Free Text iDevice by clicking on its name (it's under Textual Information)."),
     Write : _('Write something.'),
     Save_what_you_wrote : _('Save it clicking on the button below the editor: '),
+    Save_image : _('Save'),
     That_is_all : _("That's all! If you add another iDevice you will see that you can also use the buttons to choose the position that each iDevice fills:"),
     Try_other_iDevices : _('Test the different iDevices: Interactive Activities, Image Gallery...'),
     Creating_contents_is_easy : _("It's so easy to create contents."),
@@ -74,5 +76,9 @@ var $i18n = {
     About_eXe : _('About eXe'),
     Release_Notes : _('Release Notes'),	
     Legal_Notes : _('Legal Notes'),
-    eXe_Web_Site : _('eXe Web Site') 
+    eXe_Web_Site : _('eXe Web Site'),
+    eXe_Tutorial_lnk : _('http://exelearning.net/html_manual/exe20_en/'),
+    eXe_Forums_lnk : _('http://exelearning.net/forums/'),
+    eXe_Web_Site_lnk : _('http://exelearning.net/?lang=en'),
+    New_window : _('Open Link in a New Window')
 }
