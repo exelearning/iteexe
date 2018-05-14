@@ -47,14 +47,20 @@ Ext.define('eXe.view.ui.menuitem', {
     accesskey: null,
 
     beforeRender: function() {
-        var me = this, pat, rep, key, keymap;
+        var me = this, pat, rep, key, keymap, html, parts, txt, instructions;
+		
+		html = me.text;
+		parts = html.split('<span ');
+		txt = parts[0];
+		instructions = "";
+		if (parts.length==2) instructions = '<span '+parts[1];
 
         if (me.accesskey) {
             pat = new RegExp(me.accesskey,'i');
-            key = pat.exec(me.text);
+            key = pat.exec(txt);
             if (key) {
 	            rep = "<u>" + key + "</u>";
-	            me.text = me.text.replace(pat, rep);
+	            me.text = txt.replace(pat, rep) + instructions;
             }
 	        keymap = new Ext.util.KeyMap({
 	            target: me.up().el,
