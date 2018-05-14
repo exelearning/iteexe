@@ -22,6 +22,7 @@ p{margin:1em 0}
 .iDevice_header[style]{background-image:none!important}
 .iDeviceTitle{font-size:1.3em;vertical-align:bottom;top:auto;display:inline-block;font-weight:300;
 padding:0 10px 0 35px;background-repeat:no-repeat;background-position:0 50%;margin:0}
+.iDevice_header_noIcon .iDeviceTitle{background-image:none;padding-left:20px}
 .iDeviceTitle{*display:inline;*line-height:2em}/* IE6, IE7 */
 .iDevice_inner{padding:10px 20px;border-width:1px;border-style:solid;border-radius:5px}
 
