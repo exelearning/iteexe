@@ -363,6 +363,20 @@ var $app = {
 		var contentCSS = opener.$designer.contentCSS.split($app.mark);
 		// To review: $app.baseContentCSS = contentCSS[0].replace(/\s+$/, ''); // Remove the last space
 		$app.baseContentCSS = contentCSS[0];
+		
+		// Get Base's content.css content:
+		jQuery.ajax({
+			url: '/style/base/content.css',
+			type: 'POST',
+			success: function(response) {
+				var contentCSS = response.split($app.mark);
+				$app.baseContentCSS = contentCSS[0];
+			},
+			error: function(response) {
+				Ext.Msg.alert($i18n.Error, response.statusText);
+			}
+		});
+		
 		var myContentCSS = "";
 		if (contentCSS.length==2) {
 			myContentCSS = contentCSS[1];
@@ -376,6 +390,20 @@ var $app = {
 		var navCSS = opener.$designer.navCSS.split($app.mark);
 		// To review: $app.baseNavCSS = navCSS[0].replace(/\s+$/, ''); // Remove the last space
 		$app.baseNavCSS = navCSS[0];
+		
+		// Get Base's nav.css content:
+		jQuery.ajax({
+			url: '/style/base/nav.css',
+			type: 'POST',
+			success: function(response) {
+				var navCSS = response.split($app.mark);
+				$app.baseNavCSS = navCSS[0];
+			},
+			error: function(response) {
+				Ext.Msg.alert($i18n.Error, response.statusText);
+			}
+		});
+		
 		var myNavCSS = "";
 		if (navCSS.length==2) {
 			myNavCSS = navCSS[1];
