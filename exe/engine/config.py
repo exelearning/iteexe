@@ -243,7 +243,7 @@ class Config(object):
         # Format the files and images to standard ISO 9660
         self.cutFileName = "0"
         
-        self.autosaveTime = "0"
+        self.autosaveTime = "10"
         
         # Try to make the defaults a little intelligent
         # Under devel trees, webui is the default webdir
