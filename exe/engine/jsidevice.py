@@ -367,6 +367,9 @@ class JsIdevice(Idevice):
             
         return resources
     
+    def get_export_folder(self):
+        return self._exportFolder
+    
     def get_dirname(self):
         return Path(self._iDeviceDir).basename()
 

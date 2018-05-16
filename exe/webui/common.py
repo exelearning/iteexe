@@ -77,12 +77,12 @@ def getExtraHeadContent(package):
         
 def exportJavaScriptIdevicesFiles(iDevices, outputDir):
     """ Copy all the JS iDevices export files in outputDir """
+    from exe.engine.jsidevice import JsIdevice
     # TODO: Find a way to not copy already existing files
     for idevice in iDevices:
         # We only want to copy JS iDevices resources
-        # TODO: Find a better way to do this
-        if hasattr(idevice, "_iDeviceDir"):
-            iDeviceFiles = (Path(idevice._iDeviceDir)/'export')
+        if type(idevice) is JsIdevice:
+            iDeviceFiles = G.application.config.jsIdevicesDir/idevice.get_export_folder()
             iDeviceFiles.copyfiles(outputDir)
         
 def printJavaScriptIdevicesScripts(mode, page):

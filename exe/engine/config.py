@@ -233,6 +233,9 @@ class Config(object):
         # Default template that will be used to all new content
         self.defaultContentTemplate = "Base"
         
+        # JS Idevices directory
+        self.jsIdevicesDir = Path(self.configDir/'scripts'/'idevices').abspath()
+        
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
@@ -341,10 +344,12 @@ class Config(object):
                 self.configDir = Path(system.appDataDir)
                 self.stylesDir = Path(self.configDir)/'style'
                 self.templatesDir = Path(self.configDir)/'content_template'
+                self.jsIdevicesDir = Path(self.configDir)/'scripts'/'idevices'
                 # We'll just upgrade their config file for them for now...
                 system.configDir = self.configDir
                 system.stylesDir = Path(self.configDir)/'style'
                 system.templatesDir = Path(self.configDir)/'content_template'
+                system.jsIdevicesDir = Path(self.configDir)/'scripts'/'idevices'
                 del system.appDataDir
 
                 self.audioMediaConverter_au = system.audioMediaConverter_au
@@ -394,10 +399,12 @@ class Config(object):
                 self.webDir         = Path(system.webDir)
                 self.stylesDir      = Path(self.configDir)/'style'
                 self.templatesDir   = Path(self.configDir)/'content_template'
+                self.jsIdevicesDir  = Path(self.configDir)/'scripts'/'idevices'
                 self.jsDir          = Path(system.jsDir)
             else:
                 self.stylesDir      = Path(self.webDir/'style').abspath()
-                self.templatesDir      = Path(self.webDir/'content_template').abspath()
+                self.templatesDir   = Path(self.webDir/'content_template').abspath()
+                self.jsIdevicesDir  = Path(self.webDir/'scripts'/'idevices').abspath()
 
             self.assumeMediaPlugins = False
             if self.configParser.has_option('system', 'assumeMediaPlugins'):
@@ -432,9 +439,12 @@ class Config(object):
                 if os.name == 'posix':
                     self.stylesDir = Path(self.webDir/'..'/'..'/'..'/'style')
                     self.templatesDir = Path(self.webDir/'..'/'..'/'..'/'content_template')
+                    self.jsIdevicesDir = Path(self.webDir/'..'/'..'/'..'/'scripts'/'idevices')
+                    
                 else:
                     self.stylesDir = Path(self.webDir/'..'/'style')
                     self.templatesDir = Path(self.webDir/'..'/'content_template')
+                    self.jsIdevicesDir = Path(self.webDir/'..'/'scripts'/'idevices')
                 
                 if not os.path.exists(self.stylesDir) or not os.listdir(self.stylesDir):
                     self.copyStyles()
@@ -444,6 +454,7 @@ class Config(object):
             else:
                 self.stylesDir = Path(self.webDir/'style').abspath()
                 self.templatesDir = Path(self.webDir/'content_template').abspath()
+                self.jsIdevicesDir  = Path(self.webDir/'scripts'/'idevices').abspath()
 
         # Get the list of recently opened projects
         self.recentProjects = []
