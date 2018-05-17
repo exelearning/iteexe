@@ -201,7 +201,8 @@ var $exe = {
 			// This might happen in some ePub readers
 			// See issue #258
 			var eXeGalleries = $('.GalleryIdevice');
-			if (lightboxLinks.length==0 && eXeGalleries.length>0) {
+			if (lightboxLinks.length==0 && eXeGalleries.length>0 && typeof(exe_editor_mode)=="undefined") {
+				// We execute this code only outside eXe or the Image Gallary edition will fail (see issue #317)
 				$('.exeImageGallery a').each(function(){
 					this.title += " ~ ["+this.href+"]";
 					this.href = "#";
