@@ -161,6 +161,12 @@ $exeFX = {
 				html = html.replace('</div>\n<h2','<h2')
 				html = html.replace(/<\/h2>/g, '</h2>\n<div class="fx-accordion-content">');
 			}
+			
+			// Something went wrong (see #318)
+			if (html=="") {
+				$exeFX.noFX(e);
+				return;
+			}			
 
 			html = html + '</div>';
 			e.html('<div id="'+k+'-accordion-'+i+'">\n<div class="fx-accordion-section">\n'+html+'\n</div>\n</div>\n');
@@ -305,6 +311,13 @@ $exeFX = {
 				html = html.replace('</div>\n<h2','<h2');
 				html = html.replace(/<h2/g, '<div class="fx-tab-content fx-C2">\n<h2 class="sr-av"');
 			}
+			
+			// Something went wrong (see #318)
+			if (html=="") {
+				$exeFX.noFX(e);
+				return;
+			}		
+			
 			html = html + '</div>';
 			e.attr("id",gID).html(html);
 			
@@ -428,6 +441,13 @@ $exeFX = {
 				html = html.replace('</div>\n<h2','<h2');
 				html = html.replace(/<h2/g, '<div class="fx-page-content fx-C2">\n<h2');
 			}
+			
+			// Something went wrong (see #318)
+			if (html=="") {
+				$exeFX.noFX(e);
+				return;
+			}			
+			
 			html = html + '</div>';
 			e.attr("id",gID).html(html);
 			
@@ -533,6 +553,13 @@ $exeFX = {
 				html = html.replace('</div>\n<h2','<h2');
 				html = html.replace(/<h2/g, '<div class="fx-carousel-content fx-C2">\n<h2');
 			}
+			
+			// Something went wrong (see #318)
+			if (html=="") {
+				$exeFX.noFX(e);
+				return;
+			}			
+			
 			html = html + '</div>';
 			e.attr("id",gID).html(html);
 			
