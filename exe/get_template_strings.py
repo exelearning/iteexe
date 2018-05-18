@@ -19,6 +19,7 @@
 # ===========================================================================
 
 import os
+import re
 import sys
 
 from datetime   import datetime
@@ -127,15 +128,55 @@ class FieldHtmlParser(HTMLParser):
         :type data: str
         :param data: The translatable test found.
         """
-        # Add the translatable test, its line number and the offset
+        # Add the translatable text, its line number and the offset
         # to the data list
         datadict = {
             'data': data,
             'line': self.lineno,
-            'offset': self.offset
+            'offset': self.offset,
+            'type': 'data'
         }
 
         self.HTMLDATA.append(datadict)
+
+    def handle_starttag(self, tag, attrs):
+        """
+        This function will be called when the parser finds a
+        fragment of translatable text.
+
+        :type tag: str
+        :param tag: Name of the found tag.
+        :type attrs: list
+        :param attrs: Attributes declared for the tag.
+        """
+        # Convert the attributes list to a dictionary to make it more easily searchable
+        attrs_dict = dict(attrs)
+
+        # This list contains every property of any tag that can be translated
+        translatable_attributes = [
+            # Input form elements' value
+            u'value',
+            # Alternative text for images
+            u'alt',
+            # Title for links
+            u'title'
+        ]
+
+        for attr_name in translatable_attributes:
+            if attr_name in attrs_dict:
+                # Add the translatable text, its line number and the offset
+                # to the data list
+                datadict = {
+                    'data': attrs_dict[attr_name],
+                    'fulldata': self._HTMLParser__starttag_text,
+                    'line': self.lineno,
+                    'offset': self.offset,
+                    'tag': tag,
+                    'attr': attr_name,
+                    'type': 'tag'
+                }
+
+                self.HTMLDATA.append(datadict);
 
 if __name__ == "__main__":
     # Load eXe configuration
@@ -251,6 +292,10 @@ if __name__ == "__main__":
                     for translatablestring in [f for f in translatablehtml if f['data'].strip() not in excluded_strings]:
                         # Get the offset
                         offset = translatablestring['offset']
+
+                        if translatablestring['type'] == 'tag':
+                            offset += re.search(r"\b" + translatablestring['attr'] + "=", translatablestring['fulldata']).start()
+                            offset += len(translatablestring['attr']) + 2
 
                         # For any line different from the first one, we have to take into account
                         # the length of all the other lines that came before (including the line breaks)
