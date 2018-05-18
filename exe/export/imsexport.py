@@ -618,6 +618,8 @@ class IMSExport(object):
                     hasABCMusic = common.ideviceHasABCMusic(idevice)
                 if hasattr(idevice, "_iDeviceDir"):
                     listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
+                    
+            common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir);
 
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -673,10 +675,6 @@ class IMSExport(object):
         if package.license == "license GFDL":
             # include a copy of the GNU Free Documentation Licence
             (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
-            
-        # Copy JS iDevices files
-        for iDeviceFiles in set(listIdevicesFiles):
-            iDeviceFiles.copyfiles(outputDir)
             
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
