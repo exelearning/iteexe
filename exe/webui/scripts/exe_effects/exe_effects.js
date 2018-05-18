@@ -353,11 +353,27 @@ $exeFX = {
 					c += ' class="fx-current fx-C2"';
 					this.className += " fx-current fx-default-panel";
 				}
-				ul += '<li'+c+' id="'+id+'-link"><a href="#'+id+'" onclick="$exeFX.tabs.show(\''+gID+'\',\''+id+'\');return false">'+t+'</a></li>\n';
+				ul += '<li'+c+' id="'+id+'-link"><a href="#'+id+'" class="exeFXTabLink'+gID+'_'+id+'">'+t+'</a></li>\n';
 				this.id = id;
 			});
 			ul += '</ul>';
 			e.prepend(ul);
+			// onclick
+			$(".fx-tabs a",e).click(
+				function(){
+					var c = this.className;
+					c = c.split(" ");
+					for (var i=0;i<c.length;i++) {
+						if (c[i].indexOf("exeFXTabLink")==0) c = c[i];
+					}
+					c = c.replace("exeFXTabLink","");
+					c = c.split("_");
+					if (c.length==2) {
+						$exeFX.tabs.show(c[0],c[1]);
+					}
+					return false;
+				}
+			);
 		},	
 		init : function(x,i){
 			var e = $(x);
@@ -368,6 +384,7 @@ $exeFX = {
 	},
 	paginated : {
 		show : function(gID,id,n){
+			n = parseInt(n);
 			var g = $("#"+gID);
 			var lis = $(".fx-pagination li",g);
 			
@@ -382,30 +399,21 @@ $exeFX = {
 			if (n==0) {
 				// Prev
 				prevLi.addClass("fx-disabled");
-				prevA.onclick = function(){ return false }
+				prevA.className = "fx-disabled-link";
 				// Next
 				nextLi.removeClass("fx-disabled");
-				nextA.onclick = function(){
-					$exeFX.paginated.show(gID,gID+"-1",1);
-					return false;
-				}
+				nextA.className = "exeFXPageLink"+gID+"_"+gID+"-1_1";
 			} else {
 				// Prev
 				prevLi.removeClass("fx-disabled");
-				prevA.onclick = function(){
-					$exeFX.paginated.show(gID,gID+"-"+(n-1),(n-1));
-					return false;
-				}	
+				prevA.className = "exeFXPageLink"+gID+"_"+gID+"-"+(n-1)+"_"+(n-1);
 				// Next
 				if ((n+2)>l) {
 					nextLi.addClass("fx-disabled");
-					nextA.onclick = function(){ return false }
+					nextA.className = "fx-disabled-link";
 				} else {
 					nextLi.removeClass("fx-disabled");
-					nextA.onclick = function(){
-						$exeFX.paginated.show(gID,gID+"-"+(n+1),(n+1));
-						return false;					
-					}
+					nextA.className = "exeFXPageLink"+gID+"_"+gID+"-"+(n+1)+"_"+(n+1);
 				}
 			}
 			
@@ -454,7 +462,7 @@ $exeFX = {
 			var counter = 0;
 			var hasNext = false;
 			var ul = '<ul class="fx-pagination">\n';
-			ul += '<li id="'+k+'-paginated-'+i+'-prev" class="fx-prev-next fx-prev fx-disabled"><a href="#" id="'+k+'-paginated-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'" onclick="return false"><span>&#9668;</span><span class="sr-av"> '+$exe_i18n.previous+'</span></a></li>';
+			ul += '<li id="'+k+'-paginated-'+i+'-prev" class="fx-prev-next fx-prev fx-disabled"><a href="#" id="'+k+'-paginated-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'" class="fx-disabled-link"><span>&#9668;</span><span class="sr-av"> '+$exe_i18n.previous+'</span></a></li>';
 			$(".fx-page-content",e).each(function(y){
 				var t = $("H2",this).eq(0).text();
 				t = t.replace(/\"/g, '&quot;');
@@ -464,22 +472,48 @@ $exeFX = {
 					c += ' class="fx-current fx-C1"';
 					this.className += " fx-current";
 				}
-				ul += '<li'+c+' id="'+id+'-link"><a href="#'+id+'" onclick="$exeFX.paginated.show(\''+gID+'\',\''+id+'\','+y+');return false" title="'+t+'">'+(y+1)+'</a></li>\n';
+				ul += '<li'+c+' id="'+id+'-link"><a href="#'+id+'" class="exeFXPageLink'+gID+'_'+id+'_'+y+'" title="'+t+'">'+(y+1)+'</a></li>\n';
 				this.id = id;
 				counter ++;
 			});
 			if (counter>1) hasNext = true;
 			ul += '<li id="'+k+'-paginated-'+i+'-next" class="fx-prev-next fx-next';
-			if (!hasNext) ul += ' fx-disabled';
-			ul +='"><a href="#" id="'+k+'-paginated-'+i+'-next-lnk" title="'+$exe_i18n.next+'"';
-			if (hasNext) ul += ' onclick="$exeFX.paginated.show(\''+gID+'\',\''+gID+'-1\',1);return false"'
-			ul += '><span>&#9658;</span><span class="sr-av"> '+$exe_i18n.next+'</span></a></li>';
+			var css = 'exeFXPageLink'+gID+'_'+gID+'-1_1';
+			if (!hasNext) {
+				ul += ' fx-disabled';
+				css = 'fx-disabled-link';
+			}
+			ul +='"><a href="#" id="'+k+'-paginated-'+i+'-next-lnk" title="'+$exe_i18n.next+'" class="'+css+'"><span>&#9658;</span><span class="sr-av"> '+$exe_i18n.next+'</span></a></li>';
 			ul += '</ul>';
 			e.prepend(ul);
+			// onclick
+			$(".fx-pagination a",e).click(
+				function(){
+					var a = $(this);
+					if (a.hasClass("fx-disabled-link")) {
+						return false;
+					}
+					var c = a.attr("class");
+					c = c.split(" ");
+					for (var i=0;i<c.length;i++) {
+						if (c[i].indexOf("exeFXPageLink")==0) c = c[i];
+					}
+					c = c.replace("exeFXPageLink","");
+					c = c.split("_");
+					if (c.length==3) {
+						$exeFX.paginated.show(c[0],c[1],c[2]);
+					}
+					return false;
+				}
+			);			
 		}
 	},
 	carousel : {
+		isWorking : false,
 		show : function(gID,id,n){
+			if ($exeFX.carousel.isWorking) return false;
+			$exeFX.carousel.isWorking = true;
+			n = parseInt(n);
 			var g = $("#"+gID);
 			var lis = $(".fx-carousel-pagination li",g);
 			
@@ -494,7 +528,7 @@ $exeFX = {
 			if (n==0) {
 				// Prev
 				prevLi.addClass("fx-disabled");
-				prevA.onclick = function(){ return false }
+				prevA.className = "fx-disabled-link";
 				// Next
 				nextLi.removeClass("fx-disabled");
 				nextA.onclick = function(){
@@ -504,27 +538,23 @@ $exeFX = {
 			} else {
 				// Prev
 				prevLi.removeClass("fx-disabled");
-				prevA.onclick = function(){
-					$exeFX.carousel.show(gID,gID+"-"+(n-1),(n-1));
-					return false;
-				}	
+				prevA.className = "exeFXSlideLink"+gID+"_"+gID+"-"+(n-1)+"_"+(n-1);
 				// Next
 				if ((n+2)>l) {
 					nextLi.addClass("fx-disabled");
-					nextA.onclick = function(){ return false }
+					nextA.className = "fx-disabled-link";
 				} else {
 					nextLi.removeClass("fx-disabled");
-					nextA.onclick = function(){
-						$exeFX.carousel.show(gID,gID+"-"+(n+1),(n+1));
-						return false;					
-					}
+					nextA.className = "exeFXSlideLink"+gID+"_"+gID+"-"+(n+1)+"_"+(n+1);
 				}
 			}
 			
 			lis.removeClass("fx-current").removeClass("fx-C1");
 			$("#"+id+"-link").addClass("fx-current fx-C1");
 			$(".fx-carousel-content",g).hide();
-			$("#"+id).fadeIn("slow");
+			$("#"+id).fadeIn("slow",function(){
+				$exeFX.carousel.isWorking = false;
+			});
 		},	
 		init : function(x,i){
 			var e = $(x);
@@ -566,7 +596,7 @@ $exeFX = {
 			var counter = 0;
 			var hasNext = false;
 			var ul = '<ul class="fx-pagination fx-carousel-pagination">\n';
-			ul += '<li id="'+k+'-carousel-'+i+'-prev" class="fx-carousel-prev-next fx-carousel-prev fx-disabled fx-C2"><a href="#" id="exe-carousel-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'" onclick="return false"><span>&#9668;</span><span class="sr-av"> '+$exe_i18n.previous+'</span></a></li>';
+			ul += '<li id="'+k+'-carousel-'+i+'-prev" class="fx-carousel-prev-next fx-carousel-prev fx-disabled fx-C2"><a href="#" id="exe-carousel-'+i+'-prev-lnk" title="'+$exe_i18n.previous+'" class="fx-disabled-link"><span>&#9668;</span><span class="sr-av"> '+$exe_i18n.previous+'</span></a></li>';
 			$(".fx-carousel-content",e).each(function(y){
 				var t = $("H2",this).eq(0).text();
 				t = t.replace(/\"/g, '&quot;');
@@ -576,7 +606,7 @@ $exeFX = {
 					c += ' class="fx-current fx-C1"';
 					this.className += " fx-current";
 				}
-				ul += '<li'+c+' id="'+id+'-link"><a href="#'+id+'" onclick="$exeFX.carousel.show(\''+gID+'\',\''+id+'\','+y+');return false" title="'+t+'">'+(y+1)+'</a></li>\n';
+				ul += '<li'+c+' id="'+id+'-link"><a href="#'+id+'" class="exeFXSlideLink'+gID+'_'+id+'_'+y+'" title="'+t+'">'+(y+1)+'</a></li>\n';
 				this.id = id;
 				counter ++;
 			});
@@ -584,10 +614,30 @@ $exeFX = {
 			ul += '<li id="'+k+'-carousel-'+i+'-next" class="fx-carousel-prev-next fx-carousel-next fx-C2';
 			if (!hasNext) ul += ' fx-disabled';
 			ul +='"><a href="#" id="'+k+'-carousel-'+i+'-next-lnk" title="'+$exe_i18n.next+'"';
-			if (hasNext) ul += ' onclick="$exeFX.carousel.show(\''+gID+'\',\''+gID+'-1\',1);return false"'
+			if (hasNext) ul += ' class="exeFXSlideLink'+gID+'_'+gID+'-1_1"'
 			ul += '><span>&#9658;</span><span class="sr-av"> '+$exe_i18n.next+'</span></a></li>';
 			ul += '</ul>';
 			e.append(ul);
+			// onclick
+			$(".fx-carousel-pagination a",e).click(
+				function(){
+					var a = $(this);
+					if (a.hasClass("fx-disabled-link")) {
+						return false;
+					}
+					var c = a.attr("class");
+					c = c.split(" ");
+					for (var i=0;i<c.length;i++) {
+						if (c[i].indexOf("exeFXSlideLink")==0) c = c[i];
+					}
+					c = c.replace("exeFXSlideLink","");
+					c = c.split("_");
+					if (c.length==3) {
+						$exeFX.carousel.show(c[0],c[1],c[2]);
+					}
+					return false;
+				}
+			);			
 		}
 	},
 	checkIE : function(){
