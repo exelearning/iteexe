@@ -524,15 +524,11 @@ class Package(Persistable):
             self.preknowledge = c_(self.preknowledge)
             self.author = c_(self.author)
 
+        # Translate node title
         node.title = c_(node.title)
+        # Translate each idevice from the node
         for idevice in node.idevices:
-            idevice.title = c_(idevice.title)
-            for field in idevice.getRichTextFields():
-                # If the template was created on Windows, the new line separator
-                # would be \r\n instead of \n (used by Babel on Ubuntu)
-                field.content_w_resourcePaths = c_("\n".join(field.content_w_resourcePaths.splitlines()))
-                field.content = field.content_w_resourcePaths
-                field.content_wo_resourcePaths = field.MassageContentForRenderView(field.content_w_resourcePaths)
+            idevice.translate()
 
         for nodeChild in node.walkDescendants():
             self.translatePackage(nodeChild)
