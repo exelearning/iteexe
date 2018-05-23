@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2018-05-23 20:09+0200\n"
-"PO-Revision-Date: 2018-05-03 17:49+0200\n"
+"PO-Revision-Date: 2018-05-23 20:19+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -3917,21 +3917,21 @@ msgstr "Plantilla guardada: %s"
 
 #: exe/jsui/mainpage.py:517
 msgid "Downloading..."
-msgstr ""
+msgstr "Descargando..."
 
 #: exe/jsui/mainpage.py:525
 msgid "Connecting to classification sources repository..."
-msgstr ""
+msgstr "Conectando con el repositorio de fuentes de clasificación..."
 
 #: exe/jsui/mainpage.py:525 exe/jsui/mainpage.py:531
 msgid "Sources Download"
-msgstr ""
+msgstr "Descarga de las fuentes"
 
 #: exe/jsui/mainpage.py:531
 msgid ""
 "There has been an error while trying to download classification sources. "
 "Please try again later."
-msgstr ""
+msgstr "Se ha producido un error durante la descarga de las fuentes de clasificación. Por favor vuelva a intentarlo maś tarde."
 
 #: exe/jsui/mainpage.py:717 exe/jsui/mainpage.py:816 exe/jsui/mainpage.py:879
 #: exe/jsui/mainpage.py:960
@@ -4622,7 +4622,7 @@ msgstr "Fichero Zip SCORM/IMS"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1137
 msgid "No templates available"
-msgstr ""
+msgstr "No se encuentra plantillas"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1204
 msgid "Loading package..."
@@ -8394,7 +8394,7 @@ msgstr "Proyecto EDIA - ABP (Aprendizaje Basado en Proyectos)"
 msgid ""
 "National Centre for the Development of the Educational Curriculum on Non-"
 "Proprietary Systems (CEDEC)"
-msgstr ""
+msgstr "Centro nacional para el desarrollo del currículum en sistemas no-propietarios (CEDEC)"
 
 #: exe/webui/content_template/strings.py:11
 #: exe/webui/content_template/strings.py:29
@@ -8434,7 +8434,7 @@ msgstr "Portada"
 #: exe/webui/content_template/strings.py:28
 #: exe/webui/content_template/strings.py:520
 msgid "Creative Commons BY-SA"
-msgstr ""
+msgstr "Creative Commons BY-SA"
 
 #: exe/webui/content_template/strings.py:53
 msgid "Motivating inspiration."
@@ -8476,7 +8476,7 @@ msgstr "Creación del encabezamiento de la primera entrada del blog."
 #: exe/webui/content_template/strings.py:91
 #: exe/webui/content_template/strings.py:207
 msgid "Writing the diary"
-msgstr ""
+msgstr "Escribiendo el diario"
 
 #: exe/webui/content_template/strings.py:92
 msgid ""
@@ -8744,7 +8744,7 @@ msgstr "Contenidos"
 
 #: exe/webui/content_template/strings.py:502
 msgid "General guidelines for teachers"
-msgstr ""
+msgstr "Guías generales para el profesorado"
 
 #: exe/webui/content_template/strings.py:503
 msgid "Resource structure"
@@ -8774,7 +8774,7 @@ msgstr ""
 
 #: exe/webui/content_template/strings.py:546
 msgid "Example image"
-msgstr ""
+msgstr "Imagen ejemplo"
 
 #: exe/webui/content_template/strings.py:558
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
@@ -15068,19 +15068,3 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
-
-#~ msgid "EDIA Project: English PBL"
-#~ msgstr "Proyecto EDIA: ABP Inglés"
-
-#~ msgid " by "
-#~ msgstr " por "
-
-#~ msgid "CeDeC"
-#~ msgstr "CeDeC"
-
-#~ msgid "Ustad Mobile"
-#~ msgstr "Ustad Mobile"
-
-#~ msgid "Centro Nacional de Desarrollo Curricular en Sistemas no Propietarios"
-#~ msgstr ""
-
