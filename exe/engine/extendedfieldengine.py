@@ -236,7 +236,26 @@ class FileField(Field):
         if self.fileResource is not None:
             self.fileResource.delete()
             self.fileResource = None
-    
+
+    def get_translatable_properties(self):
+        """
+        Get a list of translatable property names that can be translated.
+
+        :rtype: list
+        :return: List of translatable properties of the field.
+        """
+        # The only translatable fields in this Idevice is the description (which
+        # is a field in itself)
+        return self.fileDescription.get_translatable_properties()
+
+    def translate(self):
+        """
+        Do the actual translation.
+        """
+        # We only have a translatable property, as it is also a field, just call
+        # translate() on it
+        self.fileDescription.translate()
+
     def upgradeToVersion4(self):
         self.fileDescription = TextField("Description")
 

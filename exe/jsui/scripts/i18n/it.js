@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2018-04-26 19:33+0200\nPO-Revision-Date: 2018-04-18 14:45+0200\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage: it\nLanguage-Team: Andrea Primiani <primiani@dag.it>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2018-05-23 20:09+0200\nPO-Revision-Date: 2018-04-18 14:45+0200\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage: it\nLanguage-Team: Andrea Primiani <primiani@dag.it>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "Toggle Full Screen Mode": "Attiva\/disattiva modalit\u00e0 a tutto schermo", 
  "DropDown Activity": "Attivit\u00e0 Lista a discesa", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Creare uno studio di un caso. Un buon caso \u00e8 quello \nche descrive una controversia o un insieme di situazioni mediante la descrizione \ndelle caratteristiche implicate. Si dovrebbe anche permettere di intraprendere \nuna qualche azione per la risoluzione della situazione.", 
@@ -407,7 +407,7 @@ translations = {
  "Add another Option": "Aggiungi un'altra opzione", 
  "Effect for showing wrong overlay": "Effetto sovrapposizione sbagliata", 
  "(license of the original Style)": "(licenza dello stile originale)", 
- "Ustad Mobile": "Ustad Mobile", 
+ "use the right arrow key": "usare tasto freccia destra", 
  "Publishing document to Procom\u00fan": "Pubblicazione documento in Procom\u00fan", 
  "Ukrainian ": "Ukrainian ", 
  "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used.": "Inserire il testo che si desidera associare con il file scaricato. \u00c8 necessario fornire le istruzioni su quello che si richiede allo studente di fare con il file scaricato, o come il materiale dovrebbe essere utilizzato.", 
@@ -2577,7 +2577,6 @@ translations = {
  "LOM Metadata import FAILED!\n%s": "Importazione metadati LOM fallita!\n%s", 
  "Contents": "Contenuti", 
  "Your score is ": "Il punteggio \u00e8 ", 
- "use the right arrow key": "usare tasto freccia destra", 
  "Are you sure you want reset all form fields?": "Azzerare tutti i campi del modulo?", 
  "Select the correct option by clicking \non the radio button.": "Selezionare l'opzione corretta attivando \nil pulsante corrispondente.", 
  "Add Field": "Aggiungi campo", 

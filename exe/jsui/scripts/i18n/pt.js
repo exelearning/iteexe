@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2018-04-26 19:33+0200\nPO-Revision-Date: 2018-05-03 18:47+0200\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage: pt\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2018-05-23 20:09+0200\nPO-Revision-Date: 2018-05-03 18:47+0200\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage: pt\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "Toggle Full Screen Mode": "Tela Inteira", 
  "DropDown Activity": "Atividade drop-down", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Criar a hist\u00f3ria do caso. Um bom caso \u00e9 aquele \nque descreve uma controv\u00e9rsia ou apresenta uma cena descrevendo as personagens \nenvolvidas e a situa\u00e7\u00e3o. Deve permitir decidir a\u00e7\u00f5es \nque levem \u00e0 resolu\u00e7\u00e3o da situa\u00e7\u00e3o.", 
@@ -407,7 +407,7 @@ translations = {
  "Add another Option": "Adicionar outra op\u00e7\u00e3o", 
  "Effect for showing wrong overlay": "Efeito para a imagem que indica resposta errada", 
  "(license of the original Style)": "(licen\u00e7a do Estilo original)", 
- "Ustad Mobile": "Ustad Mobile", 
+ "use the right arrow key": "use a seta direita", 
  "Publishing document to Procom\u00fan": "A publicar o documento em \"Procom\u00fan\"", 
  "Ukrainian ": "Ucraniano ", 
  "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used.": "Digite o texto que pretende associar com o ficheiro descarregado. Pode fornecer instru\u00e7\u00f5es sobre o que pede aos estudantes para fazerem depois de descarregar o ficheiro ou sobre como deve ser utilizado este material.", 
@@ -2577,7 +2577,6 @@ translations = {
  "LOM Metadata import FAILED!\n%s": "A importa\u00e7\u00e3o de metadados LOM falhou!\n%s", 
  "Contents": "Conte\u00fados", 
  "Your score is ": "A sua pontua\u00e7\u00e3o \u00e9 ", 
- "use the right arrow key": "use a seta direita", 
  "Are you sure you want reset all form fields?": "Tem a certeza que deseja reiniciar todos os campos do formul\u00e1rio?", 
  "Select the correct option by clicking \non the radio button.": "Selecionar a op\u00e7\u00e3o correta clicando \nno bot\u00e3o de op\u00e7\u00e3o.", 
  "Add Field": "Adicionar campo", 

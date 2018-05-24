@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2018-04-26 19:33+0200\nPO-Revision-Date: 2018-04-19 09:17+0200\nLast-Translator: Pilar Embid Giner <embid_mar@gva.es>\nLanguage: ca\nLanguage-Team: LliureX\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2018-05-23 20:09+0200\nPO-Revision-Date: 2018-04-19 09:17+0200\nLast-Translator: Pilar Embid Giner <embid_mar@gva.es>\nLanguage: ca\nLanguage-Team: LliureX\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "Toggle Full Screen Mode": "Activa\/desactiva el mode pantalla completa", 
  "DropDown Activity": "Activitat de men\u00fa desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Crea la hist\u00f2ria del cas. Un bon cas \u00e9s aquell \nque descriu una controv\u00e8rsia o mostra una escena descrivint els car\u00e0cters \ninvolucrats en la situaci\u00f3. Tamb\u00e9 ha de permetre les accions \nencaminades a resoldre el conflicte de la situaci\u00f3.", 
@@ -407,7 +407,7 @@ translations = {
  "Add another Option": "Afig una altra opci\u00f3.", 
  "Effect for showing wrong overlay": "Efecte mentre es mostra la superposici\u00f3 de resposta incorrecta", 
  "(license of the original Style)": "(llic\u00e8ncia de l'estil original)", 
- "Ustad Mobile": "Ustad Mobile", 
+ "use the right arrow key": "utilitza la tecla de fletxa dreta", 
  "Publishing document to Procom\u00fan": "S'est\u00e0 publicant el document en Procom\u00fan", 
  "Ukrainian ": "Ucra\u00efn\u00e9s ", 
  "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used.": "Escriviu el text que voleu associar amb la baixada del fitxer. Podeu donar \ninstruccions sobre qu\u00e8 ha de fer l'alumnat amb el fitxer  baixat o com s'ha d'utilitzar el material.", 
@@ -2577,7 +2577,6 @@ translations = {
  "LOM Metadata import FAILED!\n%s": "Ha fallat la importaci\u00f3 de metadades LOM.\n%s", 
  "Contents": "Contingut", 
  "Your score is ": "La vostra puntuaci\u00f3 \u00e9s ", 
- "use the right arrow key": "utilitza la tecla de fletxa dreta", 
  "Are you sure you want reset all form fields?": "Esteu segur que voleu restaurar tots els camps de formulari?", 
  "Select the correct option by clicking \non the radio button.": "Seleccioneu l'opci\u00f3 correcta \nfent clic en el bot\u00f3 d'opci\u00f3.", 
  "Add Field": "Afig un camp", 

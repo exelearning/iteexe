@@ -80,6 +80,29 @@ class FileAttachIdeviceInc(Idevice):
             fields_list.append(self.introHTML)
         return fields_list
 
+    def get_translatable_fields(self):
+        """
+        This function returns the Idevice's translatable fields.
+
+        :rtype: list
+        :return: A list of translatable fields that will be used for template translation.
+        """
+        translatable_fields = self.getRichTextFields()
+        translatable_fields.extend(self.fileAttachmentFields)
+
+        return translatable_fields
+
+    def translate(self):
+        """
+        Perform the Idevice translation using the package's language.
+        """
+        # First of all, translate the title
+        self.title = c_(self.title)
+
+        # Then, go through all translatable fields translating them
+        for field in self.get_translatable_fields():
+            field.translate()
+
 # ===========================================================================
 def register(ideviceStore):
     """Register with the ideviceStore"""

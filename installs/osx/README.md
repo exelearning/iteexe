@@ -40,12 +40,21 @@ This should be done only once. For future builds of eXe you should only have to 
 $ pyenv shell 2.7.13
 ```
 
+## libjpeg installation
+Before installing Pillow you must make sure to have "libjpeg" installed. Otherwise eXe won't be able to generate image thumbnails for JPEG images.
+You can install it with HomeBrew using:
+
+```console
+$ brew install libjpeg
+```
+
 ## Python modules installation
 Once you have the new Python environment setup, you must install all the required packages:
 
+
 ```console
 $ pip install py2app
-$ pip install --trusted-host www.pythonware.com --find-links http://www.pythonware.com/products/pil/ Imaging
+$ pip install Pillow
 $ pip install zope.interface
 $ pip install libxml2
 $ pip install chardet
@@ -84,14 +93,14 @@ Once you have all the requirements set up, you have to download the source code.
 
 1. Using **GIT** (You must have *git* installed in your system):
 
-	First you have to navigate to the folder you want the source code to download into. And then you have to execute this command:
-	```console
-	$ git clone https://github.com/exelearning/iteexe.git
-	```
+  First you have to navigate to the folder you want the source code to download into. And then you have to execute this command:
+  ```console
+  $ git clone https://github.com/exelearning/iteexe.git
+  ```
 
 2. Downloading a **ZIP file** with the source code:
 
-	You can do this by going to the [GitHub homepage of this project](https://github.com/exelearning/iteexe), pressing on *Clone or download* and then on *Download ZIP*. Unzip the file in your desired folder.
+  You can do this by going to the [GitHub homepage of this project](https://github.com/exelearning/iteexe), pressing on *Clone or download* and then on *Download ZIP*. Unzip the file in your desired folder.
 
 ## Package generation
 With everything ready, the only thing left to do is to generate the package. For this you simply have to execute the following commands:

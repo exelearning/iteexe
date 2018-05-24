@@ -68,6 +68,27 @@ class Field(Persistable):
     name    = lateTranslate('name')
     instruc = lateTranslate('instruc')
 
+    def get_translatable_properties(self):
+        """
+        Get a list of translatable property names that can be translated. 
+
+        This function should be overriden for each field that has translatable
+        properties.
+
+        :rtype: list
+        :return: List of translatable properties of the field.
+        """
+        return []
+
+    def translate(self):
+        """
+        Do the actual translation.
+
+        This function should be overriden for each field that has translatable
+        properties.
+        """
+        return
+
     def getId(self):
         """
         Returns our id which is a combination of our iDevice's id
@@ -163,6 +184,20 @@ class TextField(Field):
         Field.__init__(self, name, instruc)
         self.content = content
 
+    def get_translatable_properties(self):
+        """
+        Get a list of translatable property names that can be translated. 
+
+        :rtype: list
+        :return: List of translatable properties of the field.
+        """
+        return [self.content]
+
+    def translate(self):
+        """
+        Do the actual translation.
+        """
+        self.content = c_(self.content)
 
 # ===========================================================================
 class FieldWithResources(Field):
@@ -2609,6 +2644,16 @@ class TextAreaField(FieldWithResources):
         Initialize 
         """
         FieldWithResources.__init__(self, name, instruc, content)
+        
+    def get_translatable_properties(self):
+        return [self.content_w_resourcePaths]
+    
+    def translate(self):
+        # If the template was created on Windows, the new line separator
+        # would be \r\n instead of \n (used by Babel on Ubuntu)
+        self.content_w_resourcePaths = c_("\n".join(self.content_w_resourcePaths.splitlines()))
+        self.content = self.content_w_resourcePaths
+        self.content_wo_resourcePaths = self.MassageContentForRenderView(self.content_w_resourcePaths)
 
     def upgradeToVersion1(self):
         """
