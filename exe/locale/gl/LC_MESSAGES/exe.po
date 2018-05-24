@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2018-05-23 20:09+0200\n"
+"POT-Creation-Date: 2018-05-24 18:58+0200\n"
 "PO-Revision-Date: 2018-05-01 20:35+0200\n"
 "Last-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\n"
 "Language: gl\n"
@@ -3686,13 +3686,13 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "Formato de exportación non implementado"
 
-#: exe/export/epub3export.py:465 exe/export/imsexport.py:431
+#: exe/export/epub3export.py:467 exe/export/imsexport.py:431
 #: exe/export/scormpage.py:183 exe/export/websitepage.py:365
 #, python-format
 msgid "Page %s of %s"
 msgstr "Páxina %s de %s"
 
-#: exe/export/epub3export.py:755 exe/export/epub3subexport.py:670
+#: exe/export/epub3export.py:757 exe/export/epub3subexport.py:670
 #: exe/export/imsexport.py:680 exe/export/scormexport.py:827
 #: exe/export/websiteexport.py:103
 #, python-format
@@ -13722,8 +13722,8 @@ msgstr "Escriba o contido"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:166
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:219
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:231
-msgid "Modal Dialog Window"
-msgstr "Ventá modal de diálogo"
+msgid "Dialog Window"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:170
 msgid "Dialog title (the title of the link)"
@@ -14989,4 +14989,7 @@ msgstr ""
 
 #~ msgid "CeDeC"
 #~ msgstr "CeDeC"
+
+#~ msgid "Modal Dialog Window"
+#~ msgstr "Ventá modal de diálogo"
 

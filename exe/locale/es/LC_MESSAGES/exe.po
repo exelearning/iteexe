@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2018-05-23 20:09+0200\n"
+"POT-Creation-Date: 2018-05-24 18:58+0200\n"
 "PO-Revision-Date: 2018-05-23 20:19+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -3743,13 +3743,13 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "Formato de exportación no implementado"
 
-#: exe/export/epub3export.py:465 exe/export/imsexport.py:431
+#: exe/export/epub3export.py:467 exe/export/imsexport.py:431
 #: exe/export/scormpage.py:183 exe/export/websitepage.py:365
 #, python-format
 msgid "Page %s of %s"
 msgstr "Página %s de %s"
 
-#: exe/export/epub3export.py:755 exe/export/epub3subexport.py:670
+#: exe/export/epub3export.py:757 exe/export/epub3subexport.py:670
 #: exe/export/imsexport.py:680 exe/export/scormexport.py:827
 #: exe/export/websiteexport.py:103
 #, python-format
@@ -3931,7 +3931,9 @@ msgstr "Descarga de las fuentes"
 msgid ""
 "There has been an error while trying to download classification sources. "
 "Please try again later."
-msgstr "Se ha producido un error durante la descarga de las fuentes de clasificación. Por favor vuelva a intentarlo maś tarde."
+msgstr ""
+"Se ha producido un error durante la descarga de las fuentes de "
+"clasificación. Por favor vuelva a intentarlo maś tarde."
 
 #: exe/jsui/mainpage.py:717 exe/jsui/mainpage.py:816 exe/jsui/mainpage.py:879
 #: exe/jsui/mainpage.py:960
@@ -8394,7 +8396,9 @@ msgstr "Proyecto EDIA - ABP (Aprendizaje Basado en Proyectos)"
 msgid ""
 "National Centre for the Development of the Educational Curriculum on Non-"
 "Proprietary Systems (CEDEC)"
-msgstr "Centro nacional para el desarrollo del currículum en sistemas no-propietarios (CEDEC)"
+msgstr ""
+"Centro nacional para el desarrollo del currículum en sistemas no-"
+"propietarios (CEDEC)"
 
 #: exe/webui/content_template/strings.py:11
 #: exe/webui/content_template/strings.py:29
@@ -13800,8 +13804,8 @@ msgstr "Por favor escriba el contenido"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:166
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:219
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:231
-msgid "Modal Dialog Window"
-msgstr "Ventana modal de diálogo"
+msgid "Dialog Window"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:170
 msgid "Dialog title (the title of the link)"
@@ -15068,3 +15072,7 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
+
+#~ msgid "Modal Dialog Window"
+#~ msgstr "Ventana modal de diálogo"
+
