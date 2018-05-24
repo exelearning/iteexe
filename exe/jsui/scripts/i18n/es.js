@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2018-05-24 18:58+0200\nPO-Revision-Date: 2018-05-23 20:19+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage: es\nLanguage-Team: Spanish <jrfern@telefonica.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2018-05-24 18:58+0200\nPO-Revision-Date: 2018-05-24 19:02+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage: es\nLanguage-Team: Spanish <jrfern@telefonica.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "Toggle Full Screen Mode": "Cambiar a modo Pantalla Completa", 
  "DropDown Activity": "Actividad desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cree el caso pr\u00e1ctico. Un buen caso es aquel \nque describe una controversia o propone una escena describiendo los personajes \ninvolucrados y la situaci\u00f3n. Tambi\u00e9n debe permitir que se realicen acciones \npara obtener la resoluci\u00f3n de la situaci\u00f3n.", 
@@ -677,7 +677,7 @@ translations = {
  "Shockwave": "shockwave", 
  "Click below to insert LaTeX for any of the following symbols:": "Pinche para insertar el c\u00f3digo LaTeX de cualquiera de los siguientes s\u00edmbolos:", 
  "Color": "Color", 
- "Select an image": "Seleccionar una imagen", 
+ "Dialog Window": "Ventana de di\u00e1logo", 
  "Effect showing correct overlay": "Efecto visual para mostrar mensaje de acierto", 
  "<p>Where you have a number of images that relate \nto each other or to a particular learning exercise you may wish to display \nthese in a gallery context rather then individually.<\/p>": "<p>Si usted tiene varias im\u00e1genes que se relacionan \nentre ellas o con un ejercicio particular, puede desear mostrarlas  \nen un contexto de galer\u00eda y no individualmente.<\/p>", 
  "Package saved to: %s": "Paquete guardado en: %s", 
@@ -1365,6 +1365,7 @@ translations = {
  "You must authorize eXe Learning to publish content into your Procom\u00fan account": "Debe autorizar a eXeLearning a publicar contenidos en su cuenta de Procom\u00fan", 
  "<h2>Words to Guess<\/h2>": "<h2>Palabras que adivinar<\/h2>", 
  "Image Gallery": "Galer\u00eda de im\u00e1genes", 
+ "Select an image": "Seleccionar una imagen", 
  "Close": "Cerrar", 
  "Are you sure you want to continue without including an Image Description? Without it the image may not be accessible to some users with disabilities, or to those using a text browser, or browsing the Web with images turned off.": " \u00bfEsta seguro de continuar sin introducir una descripci\u00f3n a la imagen? Sin ella puede no ser accesible para usuarios con discapacidades, o para aquellos que usen navegadores de modo texto, o tengan deshabilitadas las im\u00e1genes de la p\u00e1gina.", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Introduzca aqu\u00ed una pista.\nSi no quiere proporcionar una deje el campo en blanco.", 

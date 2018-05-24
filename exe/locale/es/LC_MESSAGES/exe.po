@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2018-05-24 18:58+0200\n"
-"PO-Revision-Date: 2018-05-23 20:19+0200\n"
+"PO-Revision-Date: 2018-05-24 19:02+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -13805,7 +13805,7 @@ msgstr "Por favor escriba el contenido"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:219
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:231
 msgid "Dialog Window"
-msgstr ""
+msgstr "Ventana de diálogo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:170
 msgid "Dialog title (the title of the link)"
@@ -15075,4 +15075,3 @@ msgstr ""
 
 #~ msgid "Modal Dialog Window"
 #~ msgstr "Ventana modal de diálogo"
-
