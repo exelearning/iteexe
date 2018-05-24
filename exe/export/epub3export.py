@@ -459,6 +459,8 @@ class Epub3Page(Page):
                         block.renderView(self.node.package.style)))
                 html += u'</' + articleTag + '>' + lb  # iDevice div
 
+            html = re.sub("(<iframe[^>]*)(src=\"//)", "\g<1>src=\"https://", html)
+
         html += u"</" + sectionTag + ">" + lb  # /#main
 
         if self.node.package.get_addPagination():
