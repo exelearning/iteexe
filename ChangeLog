@@ -17,13 +17,12 @@ intef-exe (3:2.2~beta1) lucid; urgency=medium
     - Ask for confirmation before deleting an iDevice.
     - Information messages after saving or deleting an iDevice.
     - Accessibility issues and feature requests made by the CENTAC.
-    - JavaScript revision to prevent errors on Readium (Content Security Policy).
+    - JavaScript revision to prevent errors on some ePub readers like Readium (Content Security Policy).
     - Styles revision to fit the new options.
-    - JavaScript bug fixes.
-    - Fix inconsitencies in link behavior.
-    - Separate color picket to its own folder.
-    - Hide the "Powered by TinyMCE" message when the editor is hidden.
-    - Fix strange effect when loading TinyMCE.
+    - Preview in any browser and consistent link behavior.
+    - Common color picker (moved to its own folder).
+    - TinyMCE: Load on demand revision.
+    - JavaScript bug fixes.	
 
   * Miguel Ángel Pereira and Cristina Valdera
     - Help texts revision.
