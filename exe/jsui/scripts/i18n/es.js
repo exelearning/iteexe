@@ -2224,7 +2224,7 @@ translations = {
  "Category": "Categor\u00eda", 
  "Import from source language": "Importar desde idioma origen", 
  "No Images Loaded": "No hay im\u00e1genes cargadas", 
- "There has been an error while trying to download classification sources. Please try again later.": "Se ha producido un error durante la descarga de las fuentes de clasificaci\u00f3n. Por favor vuelva a intentarlo ma\u015b tarde.", 
+ "There has been an error while trying to download classification sources. Please try again later.": "Se ha producido un error durante la descarga de las fuentes de clasificaci\u00f3n. Por favor vuelva a intentarlo m\u00e1s tarde.", 
  "Expression of feelings.": "Expresi\u00f3n de emociones.", 
  "Intended End User": "Tipo de alumnado", 
  "(Afan) Oromo ": "(Afan) Oromo ", 
