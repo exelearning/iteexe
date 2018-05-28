@@ -707,7 +707,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 Ext.define('eXeSaveReminder', {
     singleton: true,
 	delay: eXe.app.config.autosaveTime, // Minutes
-    isOpen: false,
+    isOpen: false,    
 	init: function() {
         Ext.util.Cookies.clear('eXeSaveReminderPreference');
         if (eXeSaveReminder.delay == 0) {
@@ -728,31 +728,50 @@ Ext.define('eXeSaveReminder', {
     showWarnWindow: function () {
         setTimeout(function() {eXeSaveReminder.warn()}, (eXeSaveReminder.delay * 60 * 1000));
     },
-	warn: function() {
+	warn: function() {     
+		
+		if (eXeSaveReminder.isOpen == true) return;
+		
+		var hasWindow = false;
+		var allWindows = Ext.ComponentQuery.query('window');	    	
 
-        if (eXeSaveReminder.isOpen == true) return;
+	    Ext.each(allWindows, function(win) {
+	    	if (win.isVisible() && !win.collapsed) {
+	    		hasWindow = true;
+	    		return false;
+	    	}
+	    });
+	    
+	    if(!hasWindow){			
+                
+	    	var eXeSaveReminderCookie = Ext.util.Cookies.get('eXeSaveReminderPreference');
+	    	if (eXeSaveReminderCookie && eXeSaveReminderCookie=='doNotWarn') return;
 
-		var eXeSaveReminderCookie = Ext.util.Cookies.get('eXeSaveReminderPreference');
-		if (eXeSaveReminderCookie && eXeSaveReminderCookie=='doNotWarn') return;
+	    	eXeSaveReminder.isOpen = true;
 
-		eXeSaveReminder.isOpen = true;
-
-		Ext.MessageBox.show({
-			title: _("Warning!"),
-			msg: _("You've been working for a long time without saving.") + '<br /><br />' + _("Do you want to save now?") + '<br /><br /><label for="hide_eXeSaveReminder"><input type="checkbox" id="hide_eXeSaveReminder" /> '+_("Hide until the application is closed")+'</label>',
-			buttons: Ext.MessageBox.OKCANCEL,
-			fn: function(btn) {
-				if( btn == 'ok') {
-					if (document.getElementById("hide_eXeSaveReminder").checked){
-						Ext.util.Cookies.set('eXeSaveReminderPreference', 'doNotWarn');
-					}
-					// Save
-					eXe.app.getController('Toolbar').fileSave();
-				}
-                eXeSaveReminder.isOpen = false;
-                eXeSaveReminder.checkDirty();
-			}
-		});
+	    	Ext.MessageBox.show({
+	    		title: _("Warning!"),
+	    		msg: _("You've been working for a long time without saving.") + '<br /><br />' + _("Do you want to save now?") + '<br /><br /><label for="hide_eXeSaveReminder"><input type="checkbox" id="hide_eXeSaveReminder" /> '+_("Hide until the application is closed")+'</label>',
+	    		buttons: Ext.MessageBox.OKCANCEL,
+	    		fn: function(btn) {
+	    			if( btn == 'ok') {
+	    				if (document.getElementById("hide_eXeSaveReminder").checked){
+	    					Ext.util.Cookies.set('eXeSaveReminderPreference', 'doNotWarn');
+	    				}
+	    				// Save
+	    				eXe.app.getController('Toolbar').fileSave();
+	    			}
+	    			eXeSaveReminder.isOpen = false;
+	    			eXeSaveReminder.checkDirty();
+	    		}
+	    	});
+	    }
+	    else{
+	    	
+	    	eXeSaveReminder.isOpen = false;
+			eXeSaveReminder.checkDirty();	    
+	    }
+	    	
 	}
 });
 Ext.onReady(eXeSaveReminder.init, eXeSaveReminder);
