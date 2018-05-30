@@ -306,8 +306,29 @@ class Idevice(Persistable):
                 + "implementation available for this particular iDevice "
                 + "class: " + repr(self) )
         return []
-        
-        
+
+    def get_translatable_fields(self):
+        """
+        This function will return the Idevice's translatable fields.
+        This allows us to define this behavior for each Idevice and have a fallback
+        in case is not defined (by default it returns a list of all Rich Text Fields).
+
+        :rtype: list
+        :return: A list of translatable fields.
+        """
+        return self.getRichTextFields()
+
+    def translate(self):
+        """
+        Perform the Idevice translation using the package's language.
+        """
+        # First of all, translate the title
+        self.title = c_(self.title)
+
+        # Then, go through all translatable fields translatting them
+        for field in self.get_translatable_fields():
+            field.translate()
+
     # Protected Methods
 
     def _upgradeIdeviceToVersion1(self):

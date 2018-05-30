@@ -291,7 +291,8 @@ class WebsiteExport(object):
                 if hasattr(idevice, "_iDeviceDir"):
                     listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
 
-
+            common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir);
+        
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(outputDir/'flowPlayer.swf')
@@ -349,10 +350,6 @@ class WebsiteExport(object):
         if package.license == "license GFDL":
             # include a copy of the GNU Free Documentation Licence
             (self.templatesDir/'fdl' + '.' + ext).copyfile(outputDir/'fdl' + '.' + ext)
-            
-        for iDeviceFiles in set(listIdevicesFiles):
-            iDeviceFiles.copyfiles(outputDir)
-
 
     def generatePages(self, node, depth):
         """

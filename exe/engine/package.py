@@ -411,6 +411,13 @@ class Package(Persistable):
     def setLomEsDefaults(self):
         self.lomEs = lomsubs.lomSub.factory()
         self.lomEs.addChilds(self.lomDefaults(self.dublinCore.identifier, 'LOM-ESv1.0', True))
+        
+    def set_dublin_core_defaults(self):
+        self.dublinCore = DublinCore()
+        self.dublinCore.title = self.title
+        self.dublinCore.creator = self.author
+        self.dublinCore.description = self.description
+        self.dublinCore.rights = self.license
 
     # Property Handlers
     def set_docType(self,value):
@@ -450,9 +457,9 @@ class Package(Persistable):
         if self.dublinCore.language in [self._lang, '']:
             self.dublinCore.language = value
         value_str = value.encode('utf-8')
-        if self.lom.get_general() is None:
+        if self.lom is None or self.lom.get_general() is None:
             self.setLomDefaults()
-        if self.lomEs.get_general() is None:
+        if self.lomEs is None or self.lomEs.get_general() is None:
             self.setLomEsDefaults()
         for metadata in [self.lom, self.lomEs]:
             language = metadata.get_general().get_language()
@@ -517,15 +524,11 @@ class Package(Persistable):
             self.preknowledge = c_(self.preknowledge)
             self.author = c_(self.author)
 
+        # Translate node title
         node.title = c_(node.title)
+        # Translate each idevice from the node
         for idevice in node.idevices:
-            idevice.title = c_(idevice.title)
-            for field in idevice.getRichTextFields():
-                # If the template was created on Windows, the new line separator
-                # would be \r\n instead of \n (used by Babel on Ubuntu)
-                field.content_w_resourcePaths = c_("\n".join(field.content_w_resourcePaths.splitlines()))
-                field.content = field.content_w_resourcePaths
-                field.content_wo_resourcePaths = field.MassageContentForRenderView(field.content_w_resourcePaths)
+            idevice.translate()
 
         for nodeChild in node.walkDescendants():
             self.translatePackage(nodeChild)
@@ -1363,6 +1366,9 @@ class Package(Persistable):
             
             newPackage.isLoading = True
             
+            if newPackage.dublinCore is None:
+                newPackage.set_dublin_core_defaults()
+                
             newPackage.resourceDir = resourceDir
             G.application.afterUpgradeZombies2Delete = []
             if not validxml and (xml or fromxml or "content.xml" in zippedFile.namelist()):

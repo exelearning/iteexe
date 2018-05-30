@@ -743,6 +743,8 @@ class ScormExport(object):
                     hasABCMusic = common.ideviceHasABCMusic(idevice)
                 if hasattr(idevice, "_iDeviceDir"):
                     listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
+                    
+            common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir);
         
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -820,10 +822,6 @@ class ScormExport(object):
             (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
             (outputDir/'content.data').write_bytes(encodeObject(package))
             (outputDir/'contentv3.xml').write_bytes(encodeObjectToXML(package))
-
-        # Copy JS iDevices' resources
-        for iDeviceFiles in set(listIdevicesFiles):
-            iDeviceFiles.copyfiles(outputDir)
 
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)

@@ -225,6 +225,18 @@ body{
 	z-index: 99;
 }
 
+#bottomPagination .page-counter{
+	position:absolute;
+	padding:5px 0 5px 10px;
+	border-radius:2px;
+	border-top-right-radius:0;
+	border-bottom-right-radius:0;
+	background:#FFF;
+	top:-39px;
+	right:0;
+	font-size:.95em
+}
+
 #bottomPagination .pagination a{
 	display: none;	
 }

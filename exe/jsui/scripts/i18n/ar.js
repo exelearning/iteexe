@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: eXeLearning.net Translation Team <translations@exelearning.net>\nPOT-Creation-Date: 2018-04-26 19:33+0200\nPO-Revision-Date: 2015-05-01 01:24+0200\nLast-Translator: eXeLearning.net Translation Team <translations@exelearning.net>\nLanguage: ar\nLanguage-Team: ar <translations@exelearning.net>\nPlural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: eXeLearning.net Translation Team <translations@exelearning.net>\nPOT-Creation-Date: 2018-05-24 18:58+0200\nPO-Revision-Date: 2015-05-01 01:24+0200\nLast-Translator: eXeLearning.net Translation Team <translations@exelearning.net>\nLanguage: ar\nLanguage-Team: ar <translations@exelearning.net>\nPlural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "represent": "\u062a\u0633\u0645\u064a\u0629 \u0627\u0644\u062a\u0639\u064a\u064a\u0646 \u0627\u0644\u0645\u0633\u0628\u0642 ", 
  "Web pages footer.": "\u062a\u0630\u064a\u064a\u0644 \u0635\u0641\u062d\u0627\u062a \u0627\u0644\u0648\u064a\u0628", 
  "DropDown Activity": "\u0646\u0634\u0627\u0637 \u0645\u0646\u0633\u062f\u0644", 
@@ -702,7 +702,6 @@ translations = {
  "What to read": "\u0644\u0644\u0642\u0631\u0627\u0621\u0629", 
  "New Window": "\u0646\u0627\u0641\u0630\u0629 \u062c\u062f\u064a\u062f\u0629", 
  "Enter the label here": "\u0623\u062f\u062e\u0644 \u0627\u0644\u062a\u0633\u0645\u064a\u0629 \u0627\u0644\u062a\u0648\u0636\u064a\u062d\u064a\u0629 \u0647\u0646\u0627", 
- "Ustad Mobile": "Ustad Mobile", 
  "Image Title": "\u0645\u0644\u0641\u0627\u062a \u0627\u0644\u0635\u0648\u0631", 
  "height": "\u0627\u0644\u0627\u0631\u062a\u0641\u0627\u0639", 
  "Dutch ": "\u0627\u0644\u0639\u0631\u0636", 

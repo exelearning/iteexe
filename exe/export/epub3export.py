@@ -136,9 +136,7 @@ class PublicationEpub3(object):
                 continue
 
             ext = epubFile.ext
-            name = epubFile.basename().translate({ord(u'.'): u'_', ord(u'('): u'', ord(u')'): u''})
-            if name[0] in [unicode(i) for i in range(0, 10)]:
-                name = u'_' + name
+            name = self.generate_item_id(epubFile.basename())
 
             mimetype, _ = mimetypes.guess_type(epubFile.abspath())
             if not mimetype:
@@ -216,7 +214,8 @@ class PublicationEpub3(object):
         
         # We need to add an itemref tag for each linked element included in the package (images, external HTMLs...) 
         for linked_resource in self.specialResources['linked_resources']:
-            xml_str += u'<itemref idref="%s" />\n' % linked_resource.translate({ord(u'.'): u'_', ord(u'('): u'', ord(u')'): u''})
+            name = self.generate_item_id(linked_resource)
+            xml_str += u'<itemref idref="%s" />\n' % name
             
         xml_str += u'</spine>\n'
         return xml_str
@@ -226,7 +225,15 @@ class PublicationEpub3(object):
         Generate itemref tags for the page and any linked files
         """
         return u'<itemref idref="%s" />\n' % page.name.replace('.', '-')
-
+    
+    def generate_item_id(self, item_name):
+        """
+        Generate id and idref from package.orf
+        """
+        name = item_name.translate({ord(u'.'): u'_', ord(u'('): u'', ord(u')'): u''})
+        if name[0] in [unicode(i) for i in range(0, 10)]:
+            name = u'_' + name
+        return name
 # ===========================================================================
 
 
@@ -451,6 +458,8 @@ class Epub3Page(Page):
                     html += htmlentitydecode(self.processInternalLinks(
                         block.renderView(self.node.package.style)))
                 html += u'</' + articleTag + '>' + lb  # iDevice div
+
+            html = re.sub("(<iframe[^>]*)(src=\"//)", "\g<1>src=\"https://", html)
 
         html += u"</" + sectionTag + ">" + lb  # /#main
 

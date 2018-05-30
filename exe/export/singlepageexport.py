@@ -265,9 +265,6 @@ class SinglePageExport(object):
         for child in node.children:
             self.compruebaReproductores(child)
             
-        for iDeviceFiles in set(listIdevicesFiles):
-            iDeviceFiles.copyfiles(self.outputDir)
-            
         common.exportJavaScriptIdevicesFiles(node.idevices, self.outputDir)
 
     def hasUncutResources(self):
