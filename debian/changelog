@@ -1,3 +1,50 @@
+intef-exe (3:2.2~beta2) lucid; urgency=medium
+  * Ignacio Gros
+    - Fix help links not working (#304).
+    - Add alternative text to some assistant images.
+    - Change assistant to include all.js instead of en.js (as in other parts of eXe).
+    - Fix Scrambled List behavior in IE (hide arrows when in IE) (#305).
+    - Hide Ustad Mobile export (#120).
+    - Fixed HTML showing in the toolbar when using eXe in basque (#313).
+    - Fixed an issue where it was not possible to add an icon to some Idevices (#312).
+    - Updated pagination styles for the Tknika Style.
+    - Fix buttons not working on Image Gallery (#317).
+    - Fix FX not working on Adobe D. Editions (effects are disabled if the HTML can't be properly refactored) (#318).
+    - Fix some effects not working on Readium (#319).
+    - Improve edition presentation of effects.
+    - Change Modal Dialog Window's name to Dialog Window.
+
+  * Juan Rafael Fernández
+    - New full Spanish translation, by Juan Rafael Fernández.
+    - New full Basque translation, by Joxemi Andonegi.
+    - New full Catalan translation, by Carles Ferrando Garcia.
+    - New full Galician translation, by Pablo Nimo.
+    - New full Italian translation, by Andrea Primiani.
+    - New full Valencian translation, by Pilar Embid.
+    - New full French translation, by Jesús Miguel Domínguez.
+    - New full Portuguese translation, by Dionisio Martínez Soler.
+    - Cleanup of Brazilian Portuguese translation.
+
+  * SDWeb
+    - Show never instead of 0 when autosave warning is disabled.
+    - Set save warning enabled by default.
+    - Fix JavaScript Idevices using wrong path when exporting.
+    - Fix ID generation for ePub spine.
+    - Add message for templates menu when there is no templates.
+    - Fix metadata initialization when creating from template (prevent it from getting template's values).
+    - Remove wrong metadata from PBL template (#307).
+    - Add HTML tags' attributes to template translation.
+    - Fix export with JavaScript Idevices for some types of export (#311).
+    - Fix error message when downloading classification sources.
+    - Update MacOS package generation instructions (#301).
+    - Change templates translation mechanism to allow the translation of any field.
+    - Translate CeDeC's name to english in PBL template (#307).
+    - Fix JavaScript error with some ePub readers when inserting a YouTube video (#273).
+    - Fix error when saving "Add pagination" export option.
+    - Don't show save message warning if another modal window is open.
+
+ -- eXeLearning <admin@exelearning.net>  Mon, 04 Jun 2018 06:38:05 +0200
+
 intef-exe (3:2.2~beta1) lucid; urgency=medium
   * Ignacio Gros
     - Advanced/Simplified view.
@@ -22,7 +69,7 @@ intef-exe (3:2.2~beta1) lucid; urgency=medium
     - Preview in any browser and consistent link behavior.
     - Common color picker (moved to its own folder).
     - TinyMCE: Load on demand revision.
-    - JavaScript bug fixes.	
+    - JavaScript bug fixes.
 
   * Miguel Ángel Pereira and Cristina Valdera
     - Help texts revision.
@@ -55,6 +102,8 @@ intef-exe (3:2.2~beta1) lucid; urgency=medium
 
   * Pedro Peña
     - Mark exported SCORMS and IMS resources in LOM-es metadata as editable by eXe.
+
+ -- eXeLearning <admin@exelearning.net>  Wed, 02 May 2018 15:06:45 +0200
 
 intef-exe (3:2.1.3) lucid; urgency=medium
   * Ignacio Gros
@@ -140,7 +189,7 @@ intef-exe (3:2.1.3~beta1) lucid; urgency=medium
     - Improve tables with CSS. 2 different table designs: default and minimalist.
     - CodeMagic Plugin: Full Screen mode.
     - License revision.
-    	- Trado and Diwanltr fonts had to be removed from eXe.
+      - Trado and Diwanltr fonts had to be removed from eXe.
     - Colorpicker plugin (use it to select a table background color, etc.).
     - Allow and export any file format in the Styles (#207).
     - Add id or class to each BODY tag (#161).
