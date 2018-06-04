@@ -2,17 +2,14 @@ intef-exe (3:2.2~beta2) lucid; urgency=medium
   * Ignacio Gros
     - Fix help links not working (#304).
     - Add alternative text to some assistant images.
-    - Change assistant to include all.js instead of en.js (as in other parts of eXe).
-    - Fix Scrambled List behavior in IE (hide arrows when in IE) (#305).
+    - Scrambled List behavior in IE: Hidden arrows (#305).
     - Hide Ustad Mobile export (#120).
-    - Fixed HTML showing in the toolbar when using eXe in basque (#313).
-    - Fixed an issue where it was not possible to add an icon to some Idevices (#312).
-    - Updated pagination styles for the Tknika Style.
-    - Fix buttons not working on Image Gallery (#317).
-    - Fix FX not working on Adobe D. Editions (effects are disabled if the HTML can't be properly refactored) (#318).
+    - iDevices with no icon presentation revision (#312).
+    - Tknika Style: Pagination Styles.
+    - Effects (FX): ePub readers behavior revision (Readium and Adobe D. Editions) (#318 and #319).
     - Fix some effects not working on Readium (#319).
-    - Improve edition presentation of effects.
-    - Change Modal Dialog Window's name to Dialog Window.
+    - Effects (FX) in TinyMCE: Presentation revision.
+    - JavaScript bug fixes.
 
   * Juan Rafael Fernández
     - New full Spanish translation, by Juan Rafael Fernández.
