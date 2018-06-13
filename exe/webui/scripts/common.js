@@ -38,6 +38,7 @@ var $exe = {
         }
 		this.hasMultimediaGalleries = false;
 		this.setMultimediaGalleries();
+		this.setModalWindowContentSize(); // To review
 		// No MediaElement in ePub3
 		if (e.indexOf("exe-epub3") != 0) {
             var n = document.body.innerHTML;
@@ -146,6 +147,27 @@ var $exe = {
 		
     },
 	
+	// Modal Window: Height problem in some browsers #328
+	setModalWindowContentSize : function(){
+		if (window.chrome) {
+			$(".exe-dialog-text img").each(
+				function(){
+					var e = $(this);
+					var h = e.attr("height");
+					var w = e.attr("width");
+					if (e.height()==0 && e.css("height")=="0px" && h && w) {
+						if (!isNaN(h) && h>0 && !isNaN(w) && w>0) {
+							var maxW = 480;
+							if (w<maxW) maxW = w;
+							h = Math.round(maxW*h/w);
+							e.css("height",h+"px");
+						}
+					}
+				}
+			);
+		}
+	},
+	
     // Transform links to audios or videos (with rel^='lightbox') in links to inline content (see prettyPhoto documentation)
     setMultimediaGalleries : function(){
 		if (typeof($.prettyPhoto) != 'undefined') {
@@ -172,7 +194,7 @@ var $exe = {
 				social_tools: "",
 				deeplinking: false,
 				opacity: 0.85,
-				changepicturecallback: function() {
+                changepicturecallback: function() {
 					var block = $("#pp_full_res")
 					var media = $(".exe-media-box-element",block);
 					if ($exe.loadMediaPlayer.isReady) {
