@@ -10,16 +10,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2018-05-24 18:58+0200\n"
+"POT-Creation-Date: 2018-06-17 20:26+0200\n"
 "PO-Revision-Date: 2018-05-28 20:09+0200\n"
 "Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
-"Language-Team: LliureX\n"
 "Language: ca\n"
+"Language-Team: LliureX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
 "Generated-By: Babel 2.4.0\n"
 
 #: exe/application.py:201
@@ -214,10 +213,10 @@ msgid ""
 " the file is. Learners can click on the attachment link and can download "
 "the attachment."
 msgstr ""
-"L'iDevice Adjunt s'utilitza per a adjuntar fitxers al contingut .elp. Per "
-"exemple, si teniu un fitxer PDF o un fitxer de presentació PPT (ODP) que "
-"voleu que l'alumnat mire, aquest fitxer es pot adjuntar i etiquetar per a "
-"indicar què és i la mida que té. L'alumnat pot fer clic en l'enllaç de "
+"L'iDevice Adjunt s'utilitza per a adjuntar fitxers al contingut .elp. Per"
+" exemple, si teniu un fitxer PDF o un fitxer de presentació PPT (ODP) que"
+" voleu que l'alumnat mire, aquest fitxer es pot adjuntar i etiquetar per "
+"a indicar què és i la mida que té. L'alumnat pot fer clic en l'enllaç de "
 "l'adjunt i baixar-lo."
 
 #: exe/engine/attachmentidevice.py:58
@@ -226,9 +225,10 @@ msgid ""
 "want to provide instructions on what you require the learner to do once "
 "the file is downloaded or how the material should be used."
 msgstr ""
-"Escriviu el text que voleu associar amb la baixada del fitxer. Podeu donar \n"
-"instruccions sobre què ha de fer l'alumnat amb el fitxer  baixat o com s'ha "
-"d'utilitzar el material."
+"Escriviu el text que voleu associar amb la baixada del fitxer. Podeu "
+"donar \n"
+"instruccions sobre què ha de fer l'alumnat amb el fitxer  baixat o com "
+"s'ha d'utilitzar el material."
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
@@ -251,11 +251,11 @@ msgid ""
 "attachment.</p><p>For example: <code>Sales Forecast.doc "
 "(500kb)</code></p>"
 msgstr ""
-"<p>Assigneu una etiqueta a cada fitxer adjunt. És útil incloure el tipus de "
-"fitxer; per exemple, pdf, doc (odt), ppt (odp), etc.</p> <p> També és molt "
-"recomanable incloure'n la mida per tal que quan s'exporte el fitxer a un "
-"lloc web, es tinga una idea del temps que tardarà en baixar el fitxer "
-"adjunt.</p> <p> Per exemple: <code>Vendes.odt (500 kb)</code> </p>"
+"<p>Assigneu una etiqueta a cada fitxer adjunt. És útil incloure el tipus "
+"de fitxer; per exemple, pdf, doc (odt), ppt (odp), etc.</p> <p> També és "
+"molt recomanable incloure'n la mida per tal que quan s'exporte el fitxer "
+"a un lloc web, es tinga una idea del temps que tardarà en baixar el "
+"fitxer adjunt.</p> <p> Per exemple: <code>Vendes.odt (500 kb)</code> </p>"
 
 #: exe/engine/attachmentidevice.py:105
 #, python-format
@@ -1543,9 +1543,10 @@ msgid ""
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
 "Aquest iDevice sols admet vídeos en format Flash (.FLV), i no accepta\n"
-" altres formats de vídeo. No obstant això, podeu convertir altres formats de "
-"vídeo\n"
-" (p. ex. mov, wmf, etc.) al format .FLV utilitzant codificadors de vídeo de\n"
+" altres formats de vídeo. No obstant això, podeu convertir altres formats"
+" de vídeo\n"
+" (p. ex. mov, wmf, etc.) al format .FLV utilitzant codificadors de vídeo "
+"de\n"
 " tercers (p. ex. en Linux: ffmpeg, winff). Aquests codificadors no se "
 "subministren amb l'eXe.\n"
 " Els usuaris també han de baixar el reproductor de Flash 8 des "
@@ -3419,17 +3420,17 @@ msgid ""
 "additionally\n"
 "by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
 msgstr ""
-"<p> L'iDevice Viquipèdia us permet localitzar un article que estiga en la "
-"Viquipèdia i \n"
-"baixar-lo al recurs de l'eXe. L'iDevice Viquipèdia fa una còpia instantània "
-"del contingut de l'article. \n"
-"Els canvis en la Viquipèdia no s'actualitzen automàticament en la còpia que "
-"teniu a l'eXe: si la voleu actualitzar caldrà que torneu a baixar una còpia "
-"de l'article. \n"
-"Així mateix, els canvis fets a l'article en l'eXe no s'actualitzaran en la "
-"Viquipèdia. \n"
-"</p><p> El contingut de la Viquipèdia és sota la llicència de documentació "
-"lliure GNU (GFDL).</p> "
+"<p> L'iDevice Viquipèdia us permet localitzar un article que estiga en la"
+" Viquipèdia i \n"
+"baixar-lo al recurs de l'eXe. L'iDevice Viquipèdia fa una còpia "
+"instantània del contingut de l'article. \n"
+"Els canvis en la Viquipèdia no s'actualitzen automàticament en la còpia "
+"que teniu a l'eXe: si la voleu actualitzar caldrà que torneu a baixar una"
+" còpia de l'article. \n"
+"Així mateix, els canvis fets a l'article en l'eXe no s'actualitzaran en "
+"la Viquipèdia. \n"
+"</p><p> El contingut de la Viquipèdia és sota la llicència de "
+"documentació lliure GNU (GFDL).</p> "
 
 #: exe/engine/wikipediaidevice.py:67
 msgid "Article"
@@ -3457,8 +3458,8 @@ msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
 msgstr ""
-"No es pot baixar des de %s <br/>Reviseu l'ortografia i la connexió i torneu-"
-"ho a provar."
+"No es pot baixar des de %s <br/>Reviseu l'ortografia i la connexió i "
+"torneu-ho a provar."
 
 #: exe/engine/wikipediaidevice.py:341
 msgid "http://en.wikipedia.org/"
@@ -3880,8 +3881,8 @@ msgid ""
 "There has been an error while trying to download classification sources. "
 "Please try again later."
 msgstr ""
-"S'ha produït un error mentre s'intentava baixar les fonts de classificació. "
-"Torneu-ho a provar més tard."
+"S'ha produït un error mentre s'intentava baixar les fonts de "
+"classificació. Torneu-ho a provar més tard."
 
 #: exe/jsui/mainpage.py:717 exe/jsui/mainpage.py:816 exe/jsui/mainpage.py:879
 #: exe/jsui/mainpage.py:960
@@ -5079,7 +5080,7 @@ msgstr "Tàxon"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:257
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:657
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:658
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:4
@@ -5350,7 +5351,7 @@ msgstr "Opcional"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:150
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:181
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:741
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:754
 msgid "Warning!"
 msgstr "Atenció!"
 
@@ -5504,7 +5505,7 @@ msgid "Cataloguing"
 msgstr "Catalogació"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:663
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:664
 msgid "General description"
 msgstr "Descripció general"
 
@@ -5975,7 +5976,7 @@ msgid "Properties"
 msgstr "Propietats"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:55
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:671
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:672
 msgid "Package"
 msgstr "Paquet"
 
@@ -6252,12 +6253,8 @@ msgstr "Quant a l'eXe"
 msgid "Advanced user"
 msgstr "Usuari avançat"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:649 exe/webui/editorpage.py:250
-#: exe/webui/editorpane.py:397
-msgid "Info"
-msgstr "Informació"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:650
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:637
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:651
 msgid ""
 "Checking this option will show more elements in the menus (File, "
 "Tools...) and the Properties tab."
@@ -6265,15 +6262,20 @@ msgstr ""
 "Si es marca aquesta opció es mostraran més elements als menús (Fitxer, "
 "Eines...) i la pestanya Propietats."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:742
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:650 exe/webui/editorpage.py:250
+#: exe/webui/editorpane.py:397
+msgid "Info"
+msgstr "Informació"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "You've been working for a long time without saving."
 msgstr "Heu estat treballant durant molt de temps sense guardar."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:742
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "Do you want to save now?"
 msgstr "Voleu guardar-ho ara?"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:742
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "Hide until the application is closed"
 msgstr "Amaga fins que es tanque l'aplicació"
 
@@ -8351,8 +8353,8 @@ msgid ""
 "National Centre for the Development of the Educational Curriculum on Non-"
 "Proprietary Systems (CEDEC)"
 msgstr ""
-"Centre Nacional per al Desenvolupament Curricular en Sistemes No-propietaris "
-"(CEDEC)"
+"Centre Nacional per al Desenvolupament Curricular en Sistemes No-"
+"propietaris (CEDEC)"
 
 #: exe/webui/content_template/strings.py:11
 #: exe/webui/content_template/strings.py:29
@@ -8423,8 +8425,7 @@ msgstr "Diari d'aprenentatge"
 
 #: exe/webui/content_template/strings.py:89
 msgid "First activity. Creation of the learning diary in the suggested format."
-msgstr ""
-"Primera activitat. Creació del diari d'aprenentatge en el format suggerit."
+msgstr "Primera activitat. Creació del diari d'aprenentatge en el format suggerit."
 
 #: exe/webui/content_template/strings.py:90
 msgid "Creation of the first post heading."
@@ -8847,8 +8848,8 @@ msgid ""
 "The purpose dialogue allows you to describe your intended purpose of the "
 "iDevice to other potential users."
 msgstr ""
-"El diàleg de Propòsit us permet descriure la finalitat de l'iDevice per a "
-"altres usuaris potencials."
+"El diàleg de Propòsit us permet descriure la finalitat de l'iDevice per a"
+" altres usuaris potencials."
 
 #: exe/webui/editorpane.py:75
 msgid ""
@@ -9559,8 +9560,9 @@ msgid ""
 "The Learning Diary is focused on the student's reflection and reasoning "
 "to construct their own learning. Please write some instructions."
 msgstr ""
-"El diari d'aprenentatge se centra en la reflexió i raonament de l'alumnat "
-"per a construir el seu propi aprenentatge. Escriviu algunes instruccions."
+"El diari d'aprenentatge se centra en la reflexió i raonament de l'alumnat"
+" per a construir el seu propi aprenentatge. Escriviu algunes "
+"instruccions."
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:26
 msgid "Write the title, select an icon and choose a type..."
@@ -14550,19 +14552,19 @@ msgstr "Introduïu un valor de color «Hex» (#000000-#ffffff)"
 msgid "'"
 msgstr "'"
 
-#: exe/webui/tools/style-designer/js/app.js:1309
+#: exe/webui/tools/style-designer/js/app.js:1316
 msgid "Create new style"
 msgstr "Crea un estil nou"
 
-#: exe/webui/tools/style-designer/js/app.js:1310
+#: exe/webui/tools/style-designer/js/app.js:1317
 msgid "Name the new style"
 msgstr "Anomeneu l'estil nou"
 
-#: exe/webui/tools/style-designer/js/app.js:1332
+#: exe/webui/tools/style-designer/js/app.js:1339
 msgid "Style Designer windows will be closed. "
 msgstr "Les finestres del Dissenyador d'estils es tancaran."
 
-#: exe/webui/tools/style-designer/js/app.js:1335
+#: exe/webui/tools/style-designer/js/app.js:1342
 msgid "Page will be reloaded. "
 msgstr "La pàgina es tornarà a carregar."
 
@@ -15016,3 +15018,4 @@ msgstr ""
 "El fitxer d'iDevices/generic.data o el paquet que proveu de carregar s'ha"
 " creat amb una versió més nova de l'eXe. Actualitzeu l'eXe i torneu-ho a "
 "provar."
+

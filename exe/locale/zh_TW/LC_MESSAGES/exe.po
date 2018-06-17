@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2018-05-24 18:58+0200\n"
+"POT-Creation-Date: 2018-06-17 20:26+0200\n"
 "PO-Revision-Date: 2017-07-23 17:03+0200\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language: zh_Hant_TW\n"
@@ -4490,7 +4490,7 @@ msgstr "Taxon"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:257
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:657
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:658
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:4
@@ -4761,7 +4761,7 @@ msgstr "選擇性的"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:150
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:181
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:741
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:754
 msgid "Warning!"
 msgstr "警告！"
 
@@ -4903,7 +4903,7 @@ msgid "Cataloguing"
 msgstr "目錄"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:663
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:664
 msgid "General description"
 msgstr ""
 
@@ -5352,7 +5352,7 @@ msgid "Properties"
 msgstr "屬性"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:55
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:671
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:672
 msgid "Package"
 msgstr "教材"
 
@@ -5629,26 +5629,27 @@ msgstr "關於 eXe"
 msgid "Advanced user"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:649 exe/webui/editorpage.py:250
-#: exe/webui/editorpane.py:397
-msgid "Info"
-msgstr "資訊"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:650
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:637
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:651
 msgid ""
 "Checking this option will show more elements in the menus (File, "
 "Tools...) and the Properties tab."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:742
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:650 exe/webui/editorpage.py:250
+#: exe/webui/editorpane.py:397
+msgid "Info"
+msgstr "資訊"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "You've been working for a long time without saving."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:742
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "Do you want to save now?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:742
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "Hide until the application is closed"
 msgstr ""
 
@@ -13692,19 +13693,19 @@ msgstr "輸入16進制顏色值(#000000-#ffffff)："
 msgid "'"
 msgstr "'"
 
-#: exe/webui/tools/style-designer/js/app.js:1309
+#: exe/webui/tools/style-designer/js/app.js:1316
 msgid "Create new style"
 msgstr "建立新的樣式"
 
-#: exe/webui/tools/style-designer/js/app.js:1310
+#: exe/webui/tools/style-designer/js/app.js:1317
 msgid "Name the new style"
 msgstr "為新的樣式命名"
 
-#: exe/webui/tools/style-designer/js/app.js:1332
+#: exe/webui/tools/style-designer/js/app.js:1339
 msgid "Style Designer windows will be closed. "
 msgstr "樣式設計視窗會被關閉。"
 
-#: exe/webui/tools/style-designer/js/app.js:1335
+#: exe/webui/tools/style-designer/js/app.js:1342
 msgid "Page will be reloaded. "
 msgstr "頁面將重新整理。"
 

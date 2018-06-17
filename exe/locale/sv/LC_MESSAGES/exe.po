@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-24 18:58+0200\n"
+"POT-Creation-Date: 2018-06-17 20:26+0200\n"
 "PO-Revision-Date: 2006-07-28 15:37+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language: sv\n"
@@ -4509,7 +4509,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:257
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:657
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:658
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:4
@@ -4780,7 +4780,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:150
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:181
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:741
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:754
 msgid "Warning!"
 msgstr ""
 
@@ -4922,7 +4922,7 @@ msgid "Cataloguing"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:663
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:664
 msgid "General description"
 msgstr ""
 
@@ -5374,7 +5374,7 @@ msgid "Properties"
 msgstr "Egenskaper"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:55
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:671
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:672
 #, fuzzy
 msgid "Package"
 msgstr "label=\"IMS Content Package\" accesskey=\"i\""
@@ -5656,27 +5656,28 @@ msgstr ""
 msgid "Advanced user"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:649 exe/webui/editorpage.py:250
-#: exe/webui/editorpane.py:397
-#, fuzzy
-msgid "Info"
-msgstr "debugInfo"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:650
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:637
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:651
 msgid ""
 "Checking this option will show more elements in the menus (File, "
 "Tools...) and the Properties tab."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:742
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:650 exe/webui/editorpage.py:250
+#: exe/webui/editorpane.py:397
+#, fuzzy
+msgid "Info"
+msgstr "debugInfo"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "You've been working for a long time without saving."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:742
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "Do you want to save now?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:742
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "Hide until the application is closed"
 msgstr ""
 
@@ -13870,19 +13871,19 @@ msgstr ""
 msgid "'"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1309
+#: exe/webui/tools/style-designer/js/app.js:1316
 msgid "Create new style"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1310
+#: exe/webui/tools/style-designer/js/app.js:1317
 msgid "Name the new style"
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1332
+#: exe/webui/tools/style-designer/js/app.js:1339
 msgid "Style Designer windows will be closed. "
 msgstr ""
 
-#: exe/webui/tools/style-designer/js/app.js:1335
+#: exe/webui/tools/style-designer/js/app.js:1342
 msgid "Page will be reloaded. "
 msgstr ""
 
