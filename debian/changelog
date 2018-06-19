@@ -1,3 +1,17 @@
+intef-exe (3:2.2) lucid; urgency=medium
+  * Ignacio Gros
+    - Fix problems with page counter positions (#325).
+    - Add information tooltip for the "Advanced user" option.
+    - Modal Window: Height problem in Chrome (#328).
+
+  * Juan Rafael Fernández
+    - Fix translation error in Basque translation, detected by Gaizka Bilbao.
+
+  * SDWeb
+    - Fix error preventing JavaScript Idevices from being copied when installing eXe (#324).
+
+ -- eXeLearning <admin@exelearning.net>  Tue, 19 Jun 2018 07:55:32 +0200
+
 intef-exe (3:2.2~beta2) lucid; urgency=medium
   * Ignacio Gros
     - Fix help links not working (#304).
