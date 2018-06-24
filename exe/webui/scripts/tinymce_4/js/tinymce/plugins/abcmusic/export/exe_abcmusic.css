@@ -1,4 +1,4 @@
-/* Scribe */
+/* eXeLearning */
 .abc-music-wrapper{width:770px;margin:0 auto}
 .js .abc-music,.abc-music-text{display:none;margin-top:.3em;font-family:"Courier New", Courier, monospace;font-size:1em}
 .exe-epub3 .abc-music{display:block}
@@ -10,23 +10,24 @@
 .abc-music-wrapper a{text-decoration:none;margin-right:.3em;color:#333}
 .abc-music-wrapper textarea{width:757px;padding:5px;border:1px solid #DDD}
 .abc-music-midi-link div{display:inline}
-/* /Scribe */
+/* / eXeLearning */
 /* Some basic CSS to make the MIDI controls in abcjs presentable. */
 /* We use simple icons instead of Font Awesome, the iconic font and CSS toolkit to make things lighter */
-.abcjs-inline-midi{height:26px;padding:2px 5px;border-radius:3px;color:#f4f4f4;background-color:#424242;display:flex}
-.abcjs-inline-midi .abcjs-btn{width:28px;height:26px;display:inline-block;margin-right:2px;float:left;background:none;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#f4f4f4;border:1px solid transparent}
-.abcjs-inline-midi .abcjs-btn:hover{color:#cccccc}
+.abcjs-inline-midi{height:26px;padding:0 5px;border-radius:3px;color:#f4f4f4;background-color:#424242;display:flex;align-items:center;box-sizing:border-box}
+.abcjs-inline-midi .abcjs-btn{width:28px;height:26px;display:inline-block;margin-right:2px;float:left;padding:0;background:0 0;font:normal normal normal 14px/1 FontAwesome;font-size:14px;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#f4f4f4;border:1px solid transparent;box-sizing:border-box}
+.abcjs-inline-midi .abcjs-midi-loop.abcjs-pushed,.abcjs-inline-midi .abcjs-midi-reset.abcjs-pushed,.abcjs-inline-midi .abcjs-midi-selection.abcjs-pushed{border:1px solid #ccc;background-color:#666;box-sizing:border-box}
+.fa5 .abcjs-inline-midi .abcjs-btn{/*font-family:"Font Awesome 5 Free";*/font-weight:900}
+.abcjs-inline-midi .abcjs-btn:hover{color:#ccc}
 .abcjs-inline-midi .abcjs-midi-selection:before{content:"AA"}
-.abcjs-inline-midi .abcjs-midi-selection.abcjs-pushed{border:1px solid #cccccc;background-color:#666666}
 .abcjs-inline-midi .abcjs-midi-loop:before{content:"-"}
-.abcjs-inline-midi .abcjs-midi-loop.abcjs-pushed{border:1px solid #cccccc;background-color:#666666}
-.abcjs-inline-midi .abcjs-midi-reset:before{content:"\25FC";display:block}
-.abcjs-inline-midi .abcjs-midi-reset.abcjs-pushed{border:1px solid #cccccc;background-color:#666666}
+.abcjs-inline-midi .abcjs-midi-reset:before{content:"\25FC"}
 .abcjs-inline-midi .abcjs-midi-start:before{content:"\25BA"}
-.abcjs-inline-midi .abcjs-midi-start.abcjs-pushed:before{content:"\2590\A0\258C";font-size:65%;display:block}
-.abcjs-inline-midi .abcjs-midi-progress-background{background-color:#424242;height:10px;border-radius:5px;border:2px solid #cccccc;margin:8px 0 0 15px;position:relative;flex:1}
-.abcjs-inline-midi .abcjs-midi-progress-indicator{width:20px;margin-left:-10px;/* half of the width */ height:14px;background-color:#f4f4f4;position:absolute;display:inline-block;border-radius:6px;top:-4px;left:0}
-.abcjs-inline-midi .abcjs-midi-clock,.abcjs-inline-midi .abcjs-midi-post{margin-left:4px;margin-top:4px;display:inline-block;font-family:sans-serif;font-size:16px}
-.abcjs-inline-midi .abcjs-midi-pre{margin-top:4px;display:inline-block}
-.abcjs-inline-midi .abcjs-tempo-wrapper{float:right;font-size:10px;display:inline-block;color:#f4f4f4;margin-top:4px}
-.abcjs-inline-midi .abcjs-midi-tempo{border-radius:2px;border:none;margin:1px 2px 0 4px;width:30px;padding-left:2px}
+.abcjs-inline-midi .abcjs-midi-start.abcjs-pushed:before{content:"\2590\A0\258C";font-size:70%;display:block}
+.abcjs-inline-midi .abcjs-midi-start.abcjs-pushed.abcjs-loading{outline:0;animation:a 1s infinite steps(8)}
+.abcjs-inline-midi .abcjs-midi-start.abcjs-pushed.abcjs-loading:before{content:"..."}
+.abcjs-inline-midi .abcjs-midi-progress-background{background-color:#424242;height:10px;border-radius:5px;border:2px solid #ccc;margin:0 8px 0 15px;position:relative;flex:1;padding:0;box-sizing:border-box}
+.abcjs-inline-midi .abcjs-midi-progress-indicator{width:20px;margin-left:-10px;height:14px;background-color:#f4f4f4;position:absolute;display:inline-block;border-radius:6px;top:-4px;left:0;box-sizing:border-box}
+.abcjs-inline-midi .abcjs-midi-clock,.abcjs-inline-midi .abcjs-midi-post{margin-left:4px;margin-top:0;display:inline-block;font-family:sans-serif;font-size:14px;box-sizing:border-box}
+.abcjs-inline-midi .abcjs-midi-pre{display:inline-block;box-sizing:border-box}
+.abcjs-inline-midi .abcjs-tempo-wrapper{float:right;font-size:10px;display:inline-block;color:#f4f4f4;box-sizing:border-box}
+.abcjs-inline-midi .abcjs-midi-tempo{border-radius:2px;border:none;margin:1px 2px 0 4px;width:32px;padding-left:2px;box-sizing:border-box}
