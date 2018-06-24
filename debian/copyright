@@ -28,6 +28,20 @@ Files: /usr/share/exe/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/s
 These files are part of Moodle - http://moodle.org/
 License: GPL-3+
 
+Files: exe/scripts/tinymce_4/*
+Copyright: Ephox Corp. (old style plugin by Moxiecode Systems AB)
+License: LGPL-2.1
+
+File: exe/scripts/tinymce_4/plugins/abcmusic/export/acoustic_grand_piano-ogg.js
+Copyright: Roberto Gordo Saez
+License: CC-BY-3.0
+
+File: exe/scripts/tinymce_4/plugins/abcmusic/export/exe_abcmusic.js
+Copyright and license:
+    abcjs.js, by Paul Rosen and Gregory Dyke (GPL-3)
+    midi.js, by Michael Deal (MIT)
+    $exeABCmusic, by Ignacio Gros (CC-BY-SA-3.0)
+	
 Files: /usr/share/exe/webui/scripts/mediaelement/*
 Copyright: 2013-2015 John Dyer
 License: MIT
