@@ -97,12 +97,13 @@ if __name__ == "__main__":
 
                             # Get the translated test and insert it into the template
                             translated_text = []
-                            for text in field['translatable_text']:
-                                translated_text.append(locale['locale'].ugettext(text))
-                            translated_string = field['template'] % tuple(translated_text)
+                            for prop in field:
+                                for text in prop['translatable_text']:
+                                    translated_text.append(locale['locale'].ugettext(text))
+                                translated_string = prop['template'] % tuple(translated_text)
 
-                            # Add the new translation to the catalog
-                            locale['catalog'].add(field['raw_value'], translated_string)
+                                # Add the new translation to the catalog
+                                locale['catalog'].add(prop['raw_value'], translated_string)
 
         # Write every catalog with the new values
         for name, locale in locale_catalogs.iteritems():

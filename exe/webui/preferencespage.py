@@ -246,9 +246,9 @@ class PreferencesPage(RenderableResource):
             
             autosaveTime = request.args['autosaveTime'][0]
             try: 
-                autosaveTime = float(autosaveTime)
+                float(autosaveTime)
             except Exception:
-                autosaveTime = 0
+                autosaveTime = '0'
             self.config.autosaveTime = autosaveTime
             self.config.configParser.set('user', 'autosaveTime', autosaveTime)
             

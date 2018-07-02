@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: eXeLearning.net Translation Team <translations@exelearning.net>\nPOT-Creation-Date: 2018-04-26 19:33+0200\nPO-Revision-Date: 2015-05-01 01:24+0200\nLast-Translator: eXeLearning.net Translation Team <translations@exelearning.net>\nLanguage: am\nLanguage-Team: am <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: eXeLearning.net Translation Team <translations@exelearning.net>\nPOT-Creation-Date: 2018-06-17 20:26+0200\nPO-Revision-Date: 2015-05-01 01:24+0200\nLast-Translator: eXeLearning.net Translation Team <translations@exelearning.net>\nLanguage: am\nLanguage-Team: am <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "represent": "\u12e8\u1235\u121d \u1245\u12f5\u1218 \u1245\u1295\u1265\u122d", 
  "Web pages footer.": "\u12e8\u12f5\u122d \u1308\u133e\u127d \u130d\u122d\u130c\u1362", 
  "DropDown Activity": "\u12e8\u1270\u1238\u1246\u120d\u124b\u12ed \u12a5\u1295\u1245\u1235\u1243\u1234", 
@@ -701,7 +701,6 @@ translations = {
  "What to read": "\u12e8\u121a\u1290\u1260\u1260\u12cd \u1290\u1308\u122d", 
  "New Window": "\u12a0\u12f2\u1235 \u1218\u1235\u12ae\u1275", 
  "Enter the label here": "\u1218\u1208\u12eb\u12cd\u1295 \u12a5\u12da\u1205 \u130b\u122d \u12a0\u1235\u1308\u1263", 
- "Ustad Mobile": "Ustad \u121e\u1263\u12ed\u120d ", 
  "Image Title": "\u12e8\u121d\u1235\u120d \u134b\u12ed\u120e\u127d", 
  "height": "\u1241\u1218\u1275", 
  "Dutch ": "\u1235\u134b\u1275", 

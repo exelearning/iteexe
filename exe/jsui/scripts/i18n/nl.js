@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2018-04-26 19:33+0200\nPO-Revision-Date: 2016-11-29 15:33+0100\nLast-Translator: k.werschkull <k.werschkull@hccnet.nl>\nLanguage: nl\nLanguage-Team: Dutch <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2018-06-17 20:26+0200\nPO-Revision-Date: 2016-11-29 15:33+0100\nLast-Translator: k.werschkull <k.werschkull@hccnet.nl>\nLanguage: nl\nLanguage-Team: Dutch <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "DropDown Activity": "Selectielijst activiteit", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Omschrijf het geval. Een goede gevalstudie\nbevat een controverse of beschrijft de situatie en de personen die erbij\nbetrokken zijn. Er moet ook ruimte zijn voor beslissingen of acties die\nwaardoor iemand de situatie kan controleren.", 
  "Telugu ": "Telugu", 
@@ -359,7 +359,6 @@ translations = {
  "Add another Option": "Nieuw alternatief toevoegen", 
  "Effect for showing wrong overlay": "Effect voor het tonen van de verkeerde overlay", 
  "(license of the original Style)": "(licentie van de originele stijl)", 
- "Ustad Mobile": "Ustad Mobile", 
  "Publishing document to Procom\u00fan": "Publiceer algemeen document", 
  "Ukrainian ": "Oekraiens", 
  "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used.": "Geef de tekst die bij het gedownloade bestand hoort. Het is een goed idee hier te vermelden wat met het materiaal moet worden gedaan na het downloaden.", 

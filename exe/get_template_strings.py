@@ -19,6 +19,7 @@
 # ===========================================================================
 
 import os
+import re
 import sys
 
 from datetime   import datetime
@@ -59,6 +60,18 @@ def normalize_text(text):
     """
     return text.replace(u'\'', u'\\\'')
 
+def put_tabs(amount=1):
+    """
+    Returns the number of tabs that will be put into each line.
+
+    :type amount: int
+    :param amount: Amount of tabs that will be included.
+
+    :rtype: string
+    :return: A string containing the defined number of tabs.
+    """
+    return u'\t' * amount
+
 def get_node_strings(node):
     """
     Returns a list of dictionaries containing all the strings of the node (and its descendants).
@@ -84,13 +97,18 @@ def get_node_strings(node):
         }
 
         # For each field
-        for field_index, field in enumerate(idevice.getRichTextFields()):
-            # Get content (only content with resource paths)
+        for field_index, field in enumerate(idevice.get_translatable_fields()):
             node_strings['idevices']['idevice_' + str(index)]['fields']['field_' + str(field_index)] = {
-                # If the template was created on Windows, the new line separator
-                # would be \r\n instead of \n (used by Babel on Ubuntu)
-                'content_w_resourcePaths': "\n".join(field.content_w_resourcePaths.splitlines())
+                'properties': {}
             }
+
+            # Get translatable content
+            for prop_index, prop in enumerate(field.get_translatable_properties()):
+                node_strings['idevices']['idevice_' + str(index)]['fields']['field_' + str(field_index)]['properties']['property_' + str(prop_index)] = {
+                    # If the template was created on Windows, the new line separator
+                    # would be \r\n instead of \n (used by Babel on Ubuntu)
+                    'translatable_content': "\n".join(prop.splitlines())
+                }
 
     # Convert the strings object into a list
     strings = [node_strings]
@@ -127,15 +145,55 @@ class FieldHtmlParser(HTMLParser):
         :type data: str
         :param data: The translatable test found.
         """
-        # Add the translatable test, its line number and the offset
+        # Add the translatable text, its line number and the offset
         # to the data list
         datadict = {
             'data': data,
             'line': self.lineno,
-            'offset': self.offset
+            'offset': self.offset,
+            'type': 'data'
         }
 
         self.HTMLDATA.append(datadict)
+
+    def handle_starttag(self, tag, attrs):
+        """
+        This function will be called when the parser finds a
+        fragment of translatable text.
+
+        :type tag: str
+        :param tag: Name of the found tag.
+        :type attrs: list
+        :param attrs: Attributes declared for the tag.
+        """
+        # Convert the attributes list to a dictionary to make it more easily searchable
+        attrs_dict = dict(attrs)
+
+        # This list contains every property of any tag that can be translated
+        translatable_attributes = [
+            # Input form elements' value
+            u'value',
+            # Alternative text for images
+            u'alt',
+            # Title for links
+            u'title'
+        ]
+
+        for attr_name in translatable_attributes:
+            if attr_name in attrs_dict:
+                # Add the translatable text, its line number and the offset
+                # to the data list
+                datadict = {
+                    'data': attrs_dict[attr_name],
+                    'fulldata': self._HTMLParser__starttag_text,
+                    'line': self.lineno,
+                    'offset': self.offset,
+                    'tag': tag,
+                    'attr': attr_name,
+                    'type': 'tag'
+                }
+
+                self.HTMLDATA.append(datadict);
 
 if __name__ == "__main__":
     # Load eXe configuration
@@ -172,139 +230,183 @@ if __name__ == "__main__":
         package = Package.load(application.config.templatesDir / file_name, newLoad=True);
 
         # Write template header comment and definition start
-        file_w.write(u'\t# Template: %s\n\t\'template_%i\': {\n' % (file_name, package_index))
+        file_w.write(put_tabs(1))
+        file_w.write(u'# Template: %s\n' % file_name)
+        file_w.write(put_tabs(1))
+        file_w.write(u'\'template_%i\': {\n' % package_index)
 
         # Template name
-        file_w.write(u'\t\t\'template_name\': _(u\'%s\'),\n' % normalize_text(template.name))
+        file_w.write(put_tabs(2))
+        file_w.write(u'\'template_name\': _(u\'%s\'),\n' % normalize_text(template.name))
         # Template author
         if template.author != u'':
-            file_w.write(u'\t\t\'template_author\': _(u\'%s\'),\n' % normalize_text(template.author))
+            file_w.write(put_tabs(2))
+            file_w.write(u'\'template_author\': _(u\'%s\'),\n' % normalize_text(template.author))
 
         # Level names
         if package.get_level1() != u'':
-            file_w.write(u'\t\t\'level1\': _(u\'%s\'),\n' % normalize_text(package.get_level1()))
+            file_w.write(put_tabs(2))
+            file_w.write(u'\'level1\': _(u\'%s\'),\n' % normalize_text(package.get_level1()))
         if package.get_level2() != u'':
-            file_w.write(u'\t\t\'level2\': _(u\'%s\'),\n' % normalize_text(package.get_level2()))
+            file_w.write(put_tabs(2))
+            file_w.write(u'\'level2\': _(u\'%s\'),\n' % normalize_text(package.get_level2()))
         if package.get_level3() != u'':
-            file_w.write(u'\t\t\'level3\': _(u\'%s\'),\n' % normalize_text(package.get_level3()))
+            file_w.write(put_tabs(2))
+            file_w.write(u'\'level3\': _(u\'%s\'),\n' % normalize_text(package.get_level3()))
 
         # Title
         if package.title != u'':
-            file_w.write(u'\t\t\'title\': _(u\'%s\'),\n' % normalize_text(package.title))
+            file_w.write(put_tabs(2))
+            file_w.write(u'\'title\': _(u\'%s\'),\n' % normalize_text(package.title))
 
         # Description
         if package.description != u'':
-            file_w.write(u'\t\t\'description\': _(u\'%s\'),\n' % normalize_text(package.description))
+            file_w.write(put_tabs(2))
+            file_w.write(u'\'description\': _(u\'%s\'),\n' % normalize_text(package.description))
 
         # Objectives
         if package.objectives != u'':
-            file_w.write(u'\t\t\'objectives\': _(u\'%s\'),\n' % normalize_text(package.objectives))
+            file_w.write(put_tabs(2))
+            file_w.write(u'\'objectives\': _(u\'%s\'),\n' % normalize_text(package.objectives))
 
         # Preknowledge
         if package.preknowledge != u'':
-            file_w.write(u'\t\t\'preknowledge\': _(u\'%s\'),\n' % normalize_text(package.preknowledge))
+            file_w.write(put_tabs(2))
+            file_w.write(u'\'preknowledge\': _(u\'%s\'),\n' % normalize_text(package.preknowledge))
 
         if package.author != u'':
-            file_w.write(u'\t\t\'author\': _(u\'%s\'),\n' % normalize_text(package.author))
+            file_w.write(put_tabs(2))
+            file_w.write(u'\'author\': _(u\'%s\'),\n' % normalize_text(package.author))
 
         # Get node strings
         node_strings = get_node_strings(package.root)
 
         # Go through all nodes
-        file_w.write(u'\t\t\'nodes\': [\n')
+        file_w.write(put_tabs(2))
+        file_w.write(u'\'nodes\': [\n')
         for node in node_strings:
             # Node title
-            file_w.write(u'\t\t\t{\n')
-            file_w.write(u'\t\t\t\t\'title\': _(u\'%s\'),\n' % normalize_text(node['title']))
+            file_w.write(put_tabs(3))
+            file_w.write(u'{\n')
+            file_w.write(put_tabs(4))
+            file_w.write(u'\'title\': _(u\'%s\'),\n' % normalize_text(node['title']))
 
             # Node idevices
-            file_w.write(u'\t\t\t\t\'idevices\': [\n')
+            file_w.write(put_tabs(4))
+            file_w.write(u'\'idevices\': [\n')
             for idevice in node['idevices'].itervalues():
                 # Idevice title
-                file_w.write(u'\t\t\t\t\t{\n')
-                file_w.write(u'\t\t\t\t\t\t\'title\': _(u\'%s\'),\n' % normalize_text(idevice['title']))
+                file_w.write(put_tabs(5))
+                file_w.write(u'{\n')
+                file_w.write(put_tabs(6))
+                file_w.write(u'\'title\': _(u\'%s\'),\n' % normalize_text(idevice['title']))
 
                 # Idevice fields
-                file_w.write(u'\t\t\t\t\t\t\'fields\': [\n')
+                file_w.write(put_tabs(6))
+                file_w.write(u'\'fields\': [\n')
                 for field in idevice['fields'].itervalues():
-                    file_w.write(u'\t\t\t\t\t\t\t{\n')
+                    file_w.write(put_tabs(7))
+                    file_w.write(u'[\n')
 
-                    # Write the raw value (just as a reference)
-                    file_w.write(u'\t\t\t\t\t\t\t\t\'raw_value\': u\'\'\'%s\'\'\',\n' % normalize_text(field['content_w_resourcePaths']))
+                    for prop in field['properties'].itervalues():
+                        file_w.write(put_tabs(8))
+                        file_w.write(u'{\n')
 
-                    # Parse the HTML inside the field
-                    parser = FieldHtmlParser()
-                    parser.feed(field['content_w_resourcePaths'])
+                        # Write the raw value (just as a reference)
+                        file_w.write(put_tabs(9))
+                        file_w.write(u'\'raw_value\': u\'\'\'%s\'\'\',\n' % normalize_text(prop['translatable_content']))
 
-                    # Get the HTML translatable text
-                    translatablehtml = parser.HTMLDATA
-                    translatabletext = u''
+                        # Parse the HTML inside the field
+                        parser = FieldHtmlParser()
+                        parser.feed(prop['translatable_content'])
 
-                    # Get the template (we need to replace % ocurrences to prevent Python from replacing them
-                    # when we get the HTML back in the translations)
-                    template = field['content_w_resourcePaths'].replace(u'%', u'%%')
+                        # Get the HTML translatable text
+                        translatablehtml = parser.HTMLDATA
+                        translatabletext = u''
 
-                    # Init the dict that will hold the diferrences in the offset for each line
-                    offset_diff = {}
+                        # Get the template (we need to replace % ocurrences to prevent Python from replacing them
+                        # when we get the HTML back in the translations)
+                        template = prop['translatable_content'].replace(u'%', u'%%')
 
-                    # Go through all the strings filtering out the ones that should not be translated
-                    for translatablestring in [f for f in translatablehtml if f['data'].strip() not in excluded_strings]:
-                        # Get the offset
-                        offset = translatablestring['offset']
+                        # Init the dict that will hold the diferrences in the offset for each line
+                        offset_diff = {}
 
-                        # For any line different from the first one, we have to take into account
-                        # the length of all the other lines that came before (including the line breaks)
-                        if translatablestring['line'] > 1:
-                            lines = template.split(u'\n')
+                        # Go through all the strings filtering out the ones that should not be translated
+                        for translatablestring in [f for f in translatablehtml if f['data'].strip() not in excluded_strings]:
+                            # Get the offset
+                            offset = translatablestring['offset']
 
-                            for i in range(0, translatablestring['line'] - 1):
-                                offset += len(lines[i])
+                            if translatablestring['type'] == 'tag':
+                                offset += re.search(r"\b" + translatablestring['attr'] + "=", translatablestring['fulldata']).start()
+                                offset += len(translatablestring['attr']) + 2
 
-                            # This will add the line breaks (split removes them)
-                            offset += translatablestring['line'] - 1
+                            # For any line different from the first one, we have to take into account
+                            # the length of all the other lines that came before (including the line breaks)
+                            if translatablestring['line'] > 1:
+                                lines = template.split(u'\n')
 
-                        # We also have to take into account that if we already replaced some text
-                        # in this line this text won't be at the correct offset
-                        if translatablestring['line'] in offset_diff:
-                            offset -= offset_diff[translatablestring['line']]
-                        else:
-                            offset_diff[translatablestring['line']] = 0
+                                for i in range(0, translatablestring['line'] - 1):
+                                    offset += len(lines[i])
 
-                        # Save the offset difference adding the length of the text replaces minus 2 (%s)
-                        offset_diff[translatablestring['line']] += len(translatablestring['data']) - 2
+                                # This will add the line breaks (split removes them)
+                                offset += translatablestring['line'] - 1
 
-                        # Replace the text in the template with %s
-                        template = template[:offset] + u'%s' + template[offset + len(translatablestring['data']):]
-                        # And add the text to the list
-                        translatabletext += u'\t\t\t\t\t\t\t\t\t_(u\'%s\'),\n' % normalize_text(translatablestring['data'])
+                            # We also have to take into account that if we already replaced some text
+                            # in this line this text won't be at the correct offset
+                            if translatablestring['line'] in offset_diff:
+                                offset -= offset_diff[translatablestring['line']]
+                            else:
+                                offset_diff[translatablestring['line']] = 0
 
-                    # Write the template to the strings file
-                    file_w.write(u'\t\t\t\t\t\t\t\t\'template\': u\'\'\'%s\'\'\',\n' % normalize_text(template))
+                            # Save the offset difference adding the length of the text replaces minus 2 (%s)
+                            offset_diff[translatablestring['line']] += len(translatablestring['data']) - 2
 
-                    # And also the translatable strings found in it
-                    file_w.write(u'\t\t\t\t\t\t\t\t\'translatable_text\': [\n')
-                    file_w.write(translatabletext)
-                    file_w.write(u'\t\t\t\t\t\t\t\t]\n')
+                            # Replace the text in the template with %s
+                            template = template[:offset] + u'%s' + template[offset + len(translatablestring['data']):]
+                            # And add the text to the list
+                            file_w.write(put_tabs(10))
+                            translatabletext += u'_(u\'%s\'),\n' % normalize_text(translatablestring['data'])
+
+                        # Write the template to the strings file
+                        file_w.write(put_tabs(9))
+                        file_w.write(u'\'template\': u\'\'\'%s\'\'\',\n' % normalize_text(template))
+
+                        # And also the translatable strings found in it
+                        file_w.write(put_tabs(9))
+                        file_w.write(u'\'translatable_text\': [\n')
+                        file_w.write(translatabletext)
+                        file_w.write(put_tabs(9))
+                        file_w.write(u']\n')
+
+                        file_w.write(put_tabs(8))
+                        file_w.write(u'},\n')
 
                     # Close field definition
-                    file_w.write(u'\t\t\t\t\t\t\t},\n')
+                    file_w.write(put_tabs(7))
+                    file_w.write(u'],\n')
 
                 # Close field list
-                file_w.write(u'\t\t\t\t\t\t]\n')
+                file_w.write(put_tabs(6))
+                file_w.write(u']\n')
 
                 # Close idevice definition
-                file_w.write(u'\t\t\t\t\t},\n')
+                file_w.write(put_tabs(5))
+                file_w.write(u'},\n')
 
             # Close idevice list
-            file_w.write(u'\t\t\t\t]\n')
+            file_w.write(put_tabs(4))
+            file_w.write(u']\n')
             # Close node definition
-            file_w.write(u'\t\t\t},\n')
+            file_w.write(put_tabs(3))
+            file_w.write(u'},\n')
 
         # Close node list
-        file_w.write(u'\t\t]\n')
+        file_w.write(put_tabs(2))
+        file_w.write(u']\n')
 
         # Close template definition
-        file_w.write(u'\t},\n')
+        file_w.write(put_tabs(1))
+        file_w.write(u'},\n')
 
         # Remove the package so the temp folder doesn't stay
         del package

@@ -363,6 +363,20 @@ var $app = {
 		var contentCSS = opener.$designer.contentCSS.split($app.mark);
 		// To review: $app.baseContentCSS = contentCSS[0].replace(/\s+$/, ''); // Remove the last space
 		$app.baseContentCSS = contentCSS[0];
+		
+		// Get Base's content.css content:
+		jQuery.ajax({
+			url: '/style/base/content.css',
+			type: 'POST',
+			success: function(response) {
+				var contentCSS = response.split($app.mark);
+				$app.baseContentCSS = contentCSS[0];
+			},
+			error: function(response) {
+				Ext.Msg.alert($i18n.Error, response.statusText);
+			}
+		});
+		
 		var myContentCSS = "";
 		if (contentCSS.length==2) {
 			myContentCSS = contentCSS[1];
@@ -376,6 +390,20 @@ var $app = {
 		var navCSS = opener.$designer.navCSS.split($app.mark);
 		// To review: $app.baseNavCSS = navCSS[0].replace(/\s+$/, ''); // Remove the last space
 		$app.baseNavCSS = navCSS[0];
+		
+		// Get Base's nav.css content:
+		jQuery.ajax({
+			url: '/style/base/nav.css',
+			type: 'POST',
+			success: function(response) {
+				var navCSS = response.split($app.mark);
+				$app.baseNavCSS = navCSS[0];
+			},
+			error: function(response) {
+				Ext.Msg.alert($i18n.Error, response.statusText);
+			}
+		});
+		
 		var myNavCSS = "";
 		if (navCSS.length==2) {
 			myNavCSS = navCSS[1];
@@ -878,11 +906,12 @@ var $app = {
 			}
 			var icon = $app.stylePath+'_style_icons'+iconsColor+'.png';
 			navCSS += '/*useNavigationIcons*/'+iconColorComment+'.pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0;}\
-.pagination a,.pagination a:hover,.pagination a:focus{display:block;float:left;width:32px;height:32px;padding:0;background:url('+icon+') no-repeat 0 0;}\
-.pagination .next,.pagination .next:hover,.pagination .next:focus{background-position:-50px 0;}\
-.pagination .print-page,.pagination .print-page:hover,.pagination .print-page:focus{background-position:-200px 0;}\
+.pagination a,.pagination a:hover,.pagination a:focus{display:block;position:absolute;right:52px;width:32px;height:32px;padding:0;background:url('+icon+') no-repeat 0 0;}\
+.pagination .next,.pagination .next:hover,.pagination .next:focus{right:0;background-position:-50px 0;}\
+.pagination .print-page,.pagination .print-page:hover,.pagination .print-page:focus{right:104px;background-position:-200px 0;}\
+#topPagination{width:50%;min-width:400px;}\
 #bottomPagination{height:72px;position:relative;overflow:hidden}\
-#bottomPagination a{position:absolute;top:20px;right:74px;margin:0;}\
+#bottomPagination a{top:20px;right:72px;margin:0;}\
 #bottomPagination .next{right:20px;}\
 #nav-toggler a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0;}\
 #nav-toggler a{display:block;width:32px;height:32px;padding:0;background:url('+icon+') no-repeat -100px 0;}\
@@ -891,10 +920,16 @@ var $app = {
 #nav-toggler .show-nav:hover{background-position:-150px 0;}\
 .pagination a,#nav-toggler a{filter:alpha(opacity=70);opacity:.7;}\
 .pagination a:hover,.pagination a:focus,#nav-toggler a:hover{filter:alpha(opacity=100);opacity:1;}\
+.pagination .page-counter{position:absolute;line-height:32px;padding:0;right:156px;}\
+#bottomPagination .page-counter{right:104px;}\
 @media all and (max-width: 700px){\
 #nav-toggler{height:32px;position:relative;}\
 #nav-toggler a{padding:0;width:32px;position:absolute;left:50%;margin-left:-16px;}\
 #siteNav{border-top:1px solid #ddd;}\
+.pagination .page-counter{width:300px;left:50%;right:auto;margin-left:-150px}\
+}\
+@media all and (max-width: 400px){\
+.pagination .page-counter{overflow:hidden;clip:rect(0,0,0,0);height:0;}\
 }';
 		} else {
 			if (nav2BGColor!="" || nav2AColor!="") {

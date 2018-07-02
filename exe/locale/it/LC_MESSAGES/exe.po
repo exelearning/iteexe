@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-26 19:33+0200\n"
-"PO-Revision-Date: 2018-04-18 14:45+0200\n"
+"POT-Creation-Date: 2018-06-17 20:26+0200\n"
+"PO-Revision-Date: 2018-05-26 19:54+0200\n"
 "Last-Translator: Andrea Primiani <primiani@dag.it>\n"
 "Language: it\n"
 "Language-Team: Andrea Primiani <primiani@dag.it>\n"
@@ -196,8 +196,8 @@ msgstr ""
 "da uno dei programmi di questa lista, selezionarlo\n"
 "e poi aggiungere il file dati/applet generato dal programma."
 
-#: exe/engine/attachmentidevice.py:44 exe/engine/extendedfieldengine.py:336
-#: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:328
+#: exe/engine/attachmentidevice.py:44 exe/engine/extendedfieldengine.py:355
+#: exe/engine/extendedfieldengine.py:357 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
@@ -448,7 +448,7 @@ msgstr "Cliccare in ordine seguendo i suggerimenti della mappa."
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
 #: exe/jsui/scripts/app/view/forms/LomSections.js:48
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
-#: exe/webui/content_template/strings.py:470 exe/webui/galleryblock.py:216
+#: exe/webui/content_template/strings.py:496 exe/webui/galleryblock.py:216
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:63
@@ -458,7 +458,7 @@ msgstr "Cliccare in ordine seguendo i suggerimenti della mappa."
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:82
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:145
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:404
-#: exe/webui/tools/assistant/langs/en.js:25
+#: exe/webui/tools/assistant/langs/all.js:25
 msgid "Title"
 msgstr "Titolo"
 
@@ -797,7 +797,7 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
 #: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
-#: exe/engine/field.py:3683 exe/engine/field.py:3731
+#: exe/engine/field.py:3728 exe/engine/field.py:3776
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:689
 #: exe/engine/idevicestore.py:798 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
@@ -1117,8 +1117,8 @@ msgstr ""
 "corretta; oppure \n"
 "\"Risposta sbagliata\" per le altre opzioni."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3754
-#: exe/engine/field.py:3819 exe/engine/multichoiceidevice.py:131
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3799
+#: exe/engine/field.py:3864 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:82
 #: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2460
 #: exe/webui/element.py:2464 exe/webui/element.py:2913
@@ -1201,13 +1201,13 @@ msgstr "Trasferisci"
 msgid "Show Advanced Options"
 msgstr "Mostra opzioni avanzate"
 
-#: exe/engine/extendedfieldengine.py:284
+#: exe/engine/extendedfieldengine.py:303
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/tools/style-designer/langs/all.js:45
 msgid "Browse"
 msgstr "Sfoglia"
 
-#: exe/engine/extendedfieldengine.py:286
+#: exe/engine/extendedfieldengine.py:305
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:11
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:151
@@ -1215,26 +1215,26 @@ msgstr "Sfoglia"
 msgid "Replace"
 msgstr "Sostituisci"
 
-#: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:158
+#: exe/engine/extendedfieldengine.py:307 exe/webui/appletblock.py:158
 #: exe/webui/appletblock.py:168
 msgid "Upload"
 msgstr "Carica"
 
-#: exe/engine/extendedfieldengine.py:298
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:96
+#: exe/engine/extendedfieldengine.py:317
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:102
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:224
 msgid "File"
 msgstr "File"
 
-#: exe/engine/extendedfieldengine.py:303 exe/webui/appletblock.py:185
+#: exe/engine/extendedfieldengine.py:322 exe/webui/appletblock.py:185
 msgid "Delete File"
 msgstr "Elimina file"
 
-#: exe/engine/extendedfieldengine.py:306
+#: exe/engine/extendedfieldengine.py:325
 msgid "No File Uploaded Currently"
 msgstr "Nessun file ancora inviato"
 
-#: exe/engine/extendedfieldengine.py:338 exe/webui/editorelement.py:225
+#: exe/engine/extendedfieldengine.py:357 exe/webui/editorelement.py:225
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
 #: exe/webui/imagemagnifierblock.py:109 exe/webui/imagewithtextblock.py:83
 #: exe/webui/multimediablock.py:87
@@ -1245,7 +1245,7 @@ msgstr "Nessun file ancora inviato"
 msgid "None"
 msgstr "Nessuno"
 
-#: exe/engine/extendedfieldengine.py:570
+#: exe/engine/extendedfieldengine.py:589
 msgid "is not a valid number - please try again<br/>"
 msgstr "non è un numero valido - riprova<br />"
 
@@ -1277,7 +1277,11 @@ msgstr ""
 "Inserire la URL che si desidera visualizzare\n"
 "e selezionare la dimensione dell'area di visualizzazione."
 
-#: exe/engine/field.py:2907 exe/engine/field.py:2954
+#: exe/engine/field.py:2654
+msgid "\n"
+msgstr "\n"
+
+#: exe/engine/field.py:2952 exe/engine/field.py:2999
 #: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
@@ -1286,7 +1290,7 @@ msgstr ""
 "Fornire un'intestazione per il \n"
 "file MP3. Questa apparirà anche nella barra del titolo dei player."
 
-#: exe/engine/field.py:3090
+#: exe/engine/field.py:3135
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1318,7 +1322,7 @@ msgstr ""
 "stringente\" è abilitata e \"Verifica Maiuscolo/Minuscolo\" non lo è, "
 "\"elefante\" sarà anche essa accettata.</p>"
 
-#: exe/engine/field.py:3111 exe/engine/field.py:3345
+#: exe/engine/field.py:3156 exe/engine/field.py:3390
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
@@ -1326,7 +1330,7 @@ msgstr ""
 "<p>Se questa opzione è abilitata, le risposte scritte con diversi formati"
 " maiuscolo/minuscolo sono identificate come sbagliate.</p>"
 
-#: exe/engine/field.py:3116 exe/engine/field.py:3350
+#: exe/engine/field.py:3161 exe/engine/field.py:3395
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -1336,7 +1340,7 @@ msgstr ""
 "lo studente la inserisce invece di evidenziare tutte le parole alla fine\n"
 "dell'esercizio.</p>"
 
-#: exe/engine/field.py:3154 exe/engine/field.py:3392
+#: exe/engine/field.py:3199 exe/engine/field.py:3437
 #: exe/engine/listaidevice.py:398
 msgid ""
 "Allow auto completion when \n"
@@ -1345,7 +1349,7 @@ msgstr ""
 "Permette il completamento automatico quando \n"
 "                                       l'utente riempie gli spazi vuoti."
 
-#: exe/engine/field.py:3324
+#: exe/engine/field.py:3369
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1377,11 +1381,11 @@ msgstr ""
 "stringente\" è abilitata e \"Verifica Maiuscolo/Minuscolo\" non lo è, "
 "\"elefante\" sarà anch'essa accettata.</p>"
 
-#: exe/engine/field.py:3355
+#: exe/engine/field.py:3400
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr "<p>Con questa opzione verrà visualizzato il punteggio.</p>"
 
-#: exe/engine/field.py:3434 exe/engine/field.py:3478
+#: exe/engine/field.py:3479 exe/engine/field.py:3523
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1389,7 +1393,7 @@ msgstr ""
 "Selezionare solamente file .swf (Flash Objects) per \n"
 "questo iDevice."
 
-#: exe/engine/field.py:3498 exe/engine/field.py:3562
+#: exe/engine/field.py:3543 exe/engine/field.py:3607
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1397,11 +1401,11 @@ msgstr ""
 "Selezionare solamente file .flv (Flash Video Files) per \n"
 "questo iDevice."
 
-#: exe/engine/field.py:3574
+#: exe/engine/field.py:3619
 msgid "Type a discussion topic here."
 msgstr "Scrivere qui un argomento di discussione."
 
-#: exe/engine/field.py:3603
+#: exe/engine/field.py:3648
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
@@ -1412,7 +1416,7 @@ msgstr ""
 "linguaggio matematico LaTeX la cui anteprima può essere vista usando il "
 "bottone  &lt;Anteprima&gt;.</p>"
 
-#: exe/engine/field.py:3611
+#: exe/engine/field.py:3656
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -1420,7 +1424,7 @@ msgstr ""
 "Premere il pulsante Anteprima per convertire \n"
 "                                  il codice LaTex in un'immagine."
 
-#: exe/engine/field.py:3679 exe/engine/field.py:3728
+#: exe/engine/field.py:3724 exe/engine/field.py:3773
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/webui/element.py:2197 exe/webui/element.py:2252
 #: exe/webui/element.py:2584 exe/webui/element.py:2676
@@ -1428,14 +1432,14 @@ msgstr ""
 msgid "Option"
 msgstr "Opzione"
 
-#: exe/engine/field.py:3757 exe/engine/field.py:3823
+#: exe/engine/field.py:3802 exe/engine/field.py:3868
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:592
 msgid "Hint"
 msgstr "Suggerimento"
 
-#: exe/engine/field.py:3845 exe/engine/field.py:3882 exe/webui/element.py:2389
+#: exe/engine/field.py:3890 exe/engine/field.py:3927 exe/webui/element.py:2389
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:25
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
@@ -1445,7 +1449,7 @@ msgstr "Suggerimento"
 msgid "Options"
 msgstr "Opzioni"
 
-#: exe/engine/field.py:3905
+#: exe/engine/field.py:3950
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -1456,7 +1460,7 @@ msgstr ""
 "La domanda dovrebbe essere chiara ed inequivocabile. Evitare premesse \n"
 "in forma negativa che tendono ad essere ambigue."
 
-#: exe/engine/field.py:3908 exe/engine/field.py:3989
+#: exe/engine/field.py:3953 exe/engine/field.py:4034
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
@@ -1464,7 +1468,7 @@ msgstr ""
 msgid "Question:"
 msgstr "Domanda:"
 
-#: exe/engine/field.py:3913
+#: exe/engine/field.py:3958
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -1476,7 +1480,7 @@ msgstr ""
 " opzione\". \n"
 "Per cancellare le opzioni premere sulla \"X\" rossa vicino alle opzioni."
 
-#: exe/engine/field.py:3917
+#: exe/engine/field.py:3962
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1484,7 +1488,7 @@ msgstr ""
 "Selezionare tutte le risposte corrette \n"
 "cliccando la casella vicino all'opzione."
 
-#: exe/engine/field.py:3920
+#: exe/engine/field.py:3965
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -1492,7 +1496,7 @@ msgstr ""
 "Inserire la valutazione che si vuole\n"
 "fornire allo studente."
 
-#: exe/engine/field.py:3922 exe/engine/field.py:3992
+#: exe/engine/field.py:3967 exe/engine/field.py:4037
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:204
@@ -1668,8 +1672,8 @@ msgstr ""
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45 exe/webui/content_template/strings.py:21
-#: exe/webui/content_template/strings.py:35
-#: exe/webui/content_template/strings.py:485
+#: exe/webui/content_template/strings.py:38
+#: exe/webui/content_template/strings.py:513
 msgid "Free Text"
 msgstr "Testo libero"
 
@@ -1996,7 +2000,7 @@ msgstr ""
 
 #: exe/engine/idevicestore.py:696 exe/engine/idevicestore.py:705
 #: exe/engine/idevicestore.py:803 exe/engine/idevicestore.py:812
-#: exe/engine/package.py:707 exe/engine/package.py:718
+#: exe/engine/package.py:710 exe/engine/package.py:721
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:218
 msgid "Objectives"
 msgstr "Obiettivi"
@@ -2018,7 +2022,7 @@ msgstr "Scrivere gli obiettivi di apprendimento per questa risorsa."
 
 #: exe/engine/idevicestore.py:709 exe/engine/idevicestore.py:719
 #: exe/engine/idevicestore.py:816 exe/engine/idevicestore.py:826
-#: exe/engine/package.py:737 exe/engine/package.py:748
+#: exe/engine/package.py:740 exe/engine/package.py:751
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:233
 msgid "Preknowledge"
 msgstr "Prerequisiti"
@@ -2774,38 +2778,34 @@ msgid "Guidelines Teacher Text:"
 msgstr "Testo Linee guida docente:"
 
 #: exe/engine/package.py:328 exe/webui/content_template/strings.py:8
-#: exe/webui/content_template/strings.py:517
+#: exe/webui/content_template/strings.py:559
 msgid "Topic"
 msgstr "Argomento"
 
 #: exe/engine/package.py:328 exe/webui/content_template/strings.py:9
-#: exe/webui/content_template/strings.py:518
+#: exe/webui/content_template/strings.py:560
 msgid "Section"
 msgstr "Sezione"
 
 #: exe/engine/package.py:328 exe/webui/content_template/strings.py:10
-#: exe/webui/content_template/strings.py:519
+#: exe/webui/content_template/strings.py:561
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:8
 msgid "Unit"
 msgstr "Unità"
 
-#: exe/engine/package.py:350 exe/webui/content_template/strings.py:522
+#: exe/engine/package.py:350 exe/webui/content_template/strings.py:564
 msgid "Home"
 msgstr "Inizio"
 
-#: exe/engine/package.py:526
-msgid "\n"
-msgstr "\n"
-
-#: exe/engine/package.py:557
+#: exe/engine/package.py:560
 msgid "Metadata creation date"
 msgstr "Data creazione meta-dati"
 
-#: exe/engine/package.py:1118
+#: exe/engine/package.py:1121
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:1157 exe/engine/package.py:1164
+#: exe/engine/package.py:1160 exe/engine/package.py:1167
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2814,16 +2814,16 @@ msgstr ""
 "NON SALVATO\n"
 "L'ultimo salvataggio corretto è %s."
 
-#: exe/engine/package.py:1612 exe/jsui/scripts/app/controller/Toolbar.js:490
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:507
+#: exe/engine/package.py:1618 exe/jsui/scripts/app/controller/Toolbar.js:487
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:506
 msgid "iDevice Editor"
 msgstr "Editor iDevice"
 
-#: exe/engine/package.py:1733
+#: exe/engine/package.py:1739
 msgid "My Catalog"
 msgstr "Il mio catalogo"
 
-#: exe/engine/package.py:1740
+#: exe/engine/package.py:1746
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:257
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -3580,7 +3580,7 @@ msgstr ""
 msgid "Don't copy source in target"
 msgstr "Non copiare la sorgente nella destinazione"
 
-#: exe/exe_do:138 exe/jsui/scripts/app/controller/Toolbar.js:865
+#: exe/exe_do:138 exe/jsui/scripts/app/controller/Toolbar.js:862
 msgid "Wrap fields in CDATA"
 msgstr "Ingloba i campi in CDATA"
 
@@ -3698,9 +3698,9 @@ msgstr ""
 "Errore segnalato:"
 
 #: exe/export/cmdlineexporter.py:73 exe/jsui/mainpage.py:380
-#: exe/jsui/mainpage.py:389 exe/jsui/mainpage.py:1261 exe/jsui/mainpage.py:1448
-#: exe/jsui/mainpage.py:1494 exe/jsui/mainpage.py:1539
-#: exe/jsui/mainpage.py:1560
+#: exe/jsui/mainpage.py:389 exe/jsui/mainpage.py:1264 exe/jsui/mainpage.py:1451
+#: exe/jsui/mainpage.py:1497 exe/jsui/mainpage.py:1542
+#: exe/jsui/mainpage.py:1563
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3713,14 +3713,14 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "Formato di esportazione non riconosciuto"
 
-#: exe/export/epub3export.py:458 exe/export/imsexport.py:431
+#: exe/export/epub3export.py:467 exe/export/imsexport.py:431
 #: exe/export/scormpage.py:183 exe/export/websitepage.py:365
 #, python-format
 msgid "Page %s of %s"
 msgstr "Pagina %s di %s"
 
-#: exe/export/epub3export.py:748 exe/export/epub3subexport.py:670
-#: exe/export/imsexport.py:682 exe/export/scormexport.py:829
+#: exe/export/epub3export.py:757 exe/export/epub3subexport.py:670
+#: exe/export/imsexport.py:680 exe/export/scormexport.py:827
 #: exe/export/websiteexport.py:103
 #, python-format
 msgid ""
@@ -3741,16 +3741,16 @@ msgstr "descrizione educativa"
 #: exe/export/scormpage.py:192 exe/export/websitepage.py:360
 #: exe/webui/common.py:616
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:159
-#: exe/webui/tools/assistant/js/assistant.js:67
-#: exe/webui/tools/assistant/langs/en.js:10
+#: exe/webui/tools/assistant/js/assistant.js:99
+#: exe/webui/tools/assistant/langs/all.js:10
 msgid "Previous"
 msgstr "Precedente"
 
 #: exe/export/scormpage.py:193 exe/export/websitepage.py:371
 #: exe/webui/common.py:617
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:152
-#: exe/webui/tools/assistant/js/assistant.js:70
-#: exe/webui/tools/assistant/langs/en.js:11
+#: exe/webui/tools/assistant/js/assistant.js:102
+#: exe/webui/tools/assistant/langs/all.js:11
 msgid "Next"
 msgstr "Seguente"
 
@@ -3833,13 +3833,13 @@ msgstr "I miei iDevice"
 msgid "JS iDevices"
 msgstr "iDevice JS"
 
-#: exe/jsui/mainpage.py:408 exe/jsui/mainpage.py:1118 exe/jsui/mainpage.py:1253
+#: exe/jsui/mainpage.py:408 exe/jsui/mainpage.py:1121 exe/jsui/mainpage.py:1256
 #: exe/jsui/scripts/app/controller/StyleManager.js:72
 #: exe/jsui/scripts/app/controller/TemplateManager.js:83
 msgid "Cannot access directory named "
 msgstr "Impossibile accedere alla cartella "
 
-#: exe/jsui/mainpage.py:408 exe/jsui/mainpage.py:1120 exe/jsui/mainpage.py:1253
+#: exe/jsui/mainpage.py:408 exe/jsui/mainpage.py:1123 exe/jsui/mainpage.py:1256
 msgid ". Please use ASCII names."
 msgstr ". Usare nomi in formato ASCII."
 
@@ -3856,8 +3856,8 @@ msgstr ""
 "NON SALVATO\n"
 "\"%s\" non è uno nome valido per un package"
 
-#: exe/jsui/mainpage.py:431 exe/jsui/mainpage.py:478 exe/jsui/mainpage.py:791
-#: exe/jsui/mainpage.py:849 exe/jsui/mainpage.py:1353
+#: exe/jsui/mainpage.py:431 exe/jsui/mainpage.py:478 exe/jsui/mainpage.py:794
+#: exe/jsui/mainpage.py:852 exe/jsui/mainpage.py:1356
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3885,26 +3885,46 @@ msgstr ""
 msgid "Template saved: %s"
 msgstr "Modello salvato: %s"
 
-#: exe/jsui/mainpage.py:714 exe/jsui/mainpage.py:813 exe/jsui/mainpage.py:876
-#: exe/jsui/mainpage.py:957
+#: exe/jsui/mainpage.py:517
+msgid "Downloading..."
+msgstr "Scaricamento in corso..."
+
+#: exe/jsui/mainpage.py:525
+msgid "Connecting to classification sources repository..."
+msgstr "Connessione al deposito delle fonti di classificazione..."
+
+#: exe/jsui/mainpage.py:525 exe/jsui/mainpage.py:531
+msgid "Sources Download"
+msgstr "Scaricamento fonti"
+
+#: exe/jsui/mainpage.py:531
+msgid ""
+"There has been an error while trying to download classification sources. "
+"Please try again later."
+msgstr ""
+"Si è verificato un errore durante lo scaricamento delle fonti di "
+"classificazione. Riprovare più tardi."
+
+#: exe/jsui/mainpage.py:717 exe/jsui/mainpage.py:816 exe/jsui/mainpage.py:879
+#: exe/jsui/mainpage.py:960
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "La cartella anteprima %s è un file, non si può sostituire"
 
-#: exe/jsui/mainpage.py:733
+#: exe/jsui/mainpage.py:736
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "File %s non trovato, impossibile fare anteprima"
 
-#: exe/jsui/mainpage.py:916 exe/jsui/mainpage.py:942 exe/jsui/mainpage.py:985
+#: exe/jsui/mainpage.py:919 exe/jsui/mainpage.py:945 exe/jsui/mainpage.py:988
 msgid "Could not create the image"
 msgstr "Impossibile creare l'immagine"
 
-#: exe/jsui/mainpage.py:1023
+#: exe/jsui/mainpage.py:1026
 msgid "Importing HTML..."
 msgstr "Importazione HTML..."
 
-#: exe/jsui/mainpage.py:1029
+#: exe/jsui/mainpage.py:1032
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3913,23 +3933,23 @@ msgstr ""
 "Importazione metadati LOM fallita!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1032
+#: exe/jsui/mainpage.py:1035
 msgid "Error importing HTML:\n"
 msgstr "Errore di importazione HTML:\n"
 
-#: exe/jsui/mainpage.py:1059
+#: exe/jsui/mainpage.py:1062
 msgid "Publishing document to Procomún"
 msgstr "Pubblicazione documento in Procomún"
 
-#: exe/jsui/mainpage.py:1062
+#: exe/jsui/mainpage.py:1065
 msgid "Exporting package as SCORM"
 msgstr "Esporta pacchetto SCORM con nome"
 
-#: exe/jsui/mainpage.py:1083
+#: exe/jsui/mainpage.py:1086
 msgid "Starting authorized connection to Procomún API"
 msgstr "Avvio di connessione autorizzata alla API di Procomún"
 
-#: exe/jsui/mainpage.py:1096
+#: exe/jsui/mainpage.py:1099
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
@@ -3938,12 +3958,12 @@ msgstr ""
 "Pacchetto esportato in <a href=\"%s\" target=\"_blank\" title=\"Clic per "
 "visitare il sito esportato\">%s</a>"
 
-#: exe/jsui/mainpage.py:1099
+#: exe/jsui/mainpage.py:1102
 #, python-format
 msgid "Error exporting package %s to Procomún: %s"
 msgstr "Errore durante l'esportazione del pacchetto %s a  Procomún: %s"
 
-#: exe/jsui/mainpage.py:1125 exe/jsui/mainpage.py:1473
+#: exe/jsui/mainpage.py:1128 exe/jsui/mainpage.py:1476
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3952,24 +3972,24 @@ msgstr ""
 "NON SALVATO\n"
 "\"%s\" non è uno nome valido per il file"
 
-#: exe/jsui/mainpage.py:1146 exe/jsui/mainpage.py:1151
-#: exe/jsui/mainpage.py:1154 exe/jsui/mainpage.py:1157
-#: exe/jsui/mainpage.py:1160 exe/jsui/mainpage.py:1163
-#: exe/jsui/mainpage.py:1168 exe/jsui/mainpage.py:1423
-#: exe/jsui/mainpage.py:1520
+#: exe/jsui/mainpage.py:1149 exe/jsui/mainpage.py:1154
+#: exe/jsui/mainpage.py:1157 exe/jsui/mainpage.py:1160
+#: exe/jsui/mainpage.py:1163 exe/jsui/mainpage.py:1166
+#: exe/jsui/mainpage.py:1171 exe/jsui/mainpage.py:1426
+#: exe/jsui/mainpage.py:1523
 msgid "EXPORT FAILED!"
 msgstr "ESPORTAZIONE FALLITA!"
 
-#: exe/jsui/mainpage.py:1218
+#: exe/jsui/mainpage.py:1221
 msgid "Correct XLIFF import"
 msgstr "Importazione XLIFF corretta"
 
-#: exe/jsui/mainpage.py:1221
+#: exe/jsui/mainpage.py:1224
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Errore di importazione XLIFF: %s"
 
-#: exe/jsui/mainpage.py:1262 exe/jsui/mainpage.py:1279
+#: exe/jsui/mainpage.py:1265 exe/jsui/mainpage.py:1282
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -3978,22 +3998,22 @@ msgstr ""
 "ESTRAZIONE FALLITA!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1281
+#: exe/jsui/mainpage.py:1284
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Pacchetto estratto in: %s"
 
-#: exe/jsui/mainpage.py:1293 exe/webui/stylemanagerpage.py:229
+#: exe/jsui/mainpage.py:1296 exe/webui/stylemanagerpage.py:229
 msgid "Directory exists"
 msgstr "La cartella esiste già"
 
-#: exe/jsui/mainpage.py:1307 exe/jsui/mainpage.py:1408
-#: exe/jsui/mainpage.py:1431 exe/jsui/mainpage.py:1449
-#: exe/jsui/mainpage.py:1455 exe/jsui/mainpage.py:1479
-#: exe/jsui/mainpage.py:1495 exe/jsui/mainpage.py:1505
-#: exe/jsui/mainpage.py:1525 exe/jsui/mainpage.py:1540
-#: exe/jsui/mainpage.py:1546 exe/jsui/mainpage.py:1561
-#: exe/jsui/mainpage.py:1571
+#: exe/jsui/mainpage.py:1310 exe/jsui/mainpage.py:1411
+#: exe/jsui/mainpage.py:1434 exe/jsui/mainpage.py:1452
+#: exe/jsui/mainpage.py:1458 exe/jsui/mainpage.py:1482
+#: exe/jsui/mainpage.py:1498 exe/jsui/mainpage.py:1508
+#: exe/jsui/mainpage.py:1528 exe/jsui/mainpage.py:1543
+#: exe/jsui/mainpage.py:1549 exe/jsui/mainpage.py:1564
+#: exe/jsui/mainpage.py:1574
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -4002,12 +4022,12 @@ msgstr ""
 "ESPORTAZIONE FALLITA!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1335 exe/jsui/mainpage.py:1389
+#: exe/jsui/mainpage.py:1338 exe/jsui/mainpage.py:1392
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Il nome %s esiste, non si può sostituire"
 
-#: exe/jsui/mainpage.py:1341 exe/jsui/mainpage.py:1396
+#: exe/jsui/mainpage.py:1344 exe/jsui/mainpage.py:1399
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -4016,18 +4036,18 @@ msgstr ""
 "La cartella %s esiste già. Sceglierne un'altra o cancellare quella "
 "esistente prima di riprovare."
 
-#: exe/jsui/mainpage.py:1360 exe/jsui/mainpage.py:1412
-#: exe/jsui/mainpage.py:1435 exe/jsui/mainpage.py:1457
-#: exe/jsui/mainpage.py:1481 exe/jsui/mainpage.py:1511
-#: exe/jsui/mainpage.py:1527 exe/jsui/mainpage.py:1548
-#: exe/jsui/mainpage.py:1575
+#: exe/jsui/mainpage.py:1363 exe/jsui/mainpage.py:1415
+#: exe/jsui/mainpage.py:1438 exe/jsui/mainpage.py:1460
+#: exe/jsui/mainpage.py:1484 exe/jsui/mainpage.py:1514
+#: exe/jsui/mainpage.py:1530 exe/jsui/mainpage.py:1551
+#: exe/jsui/mainpage.py:1578
 #, python-format
 msgid "Exported to %s"
 msgstr "Esportato a %s"
 
-#: exe/jsui/mainpage.py:1362 exe/jsui/mainpage.py:1414
-#: exe/jsui/mainpage.py:1437 exe/jsui/mainpage.py:1513
-#: exe/jsui/mainpage.py:1577
+#: exe/jsui/mainpage.py:1365 exe/jsui/mainpage.py:1417
+#: exe/jsui/mainpage.py:1440 exe/jsui/mainpage.py:1516
+#: exe/jsui/mainpage.py:1580
 #, python-format
 msgid ""
 "Exported to %s.\n"
@@ -4037,23 +4057,23 @@ msgstr ""
 "Esportato in %s.\n"
 "Alcune risorse non sono state rinominate per compatibilità con ISO9660."
 
-#: exe/jsui/mainpage.py:1508
+#: exe/jsui/mainpage.py:1511
 #, python-format
 msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
 msgstr ""
 "I campi seguenti sono stati tagliati per soddisfare lo standard SCORM "
 "1.2: %s"
 
-#: exe/jsui/mainpage.py:1613 exe/webui/stylemanagerpage.py:243
+#: exe/jsui/mainpage.py:1616 exe/webui/stylemanagerpage.py:243
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Il file %s non esiste o non è leggibile."
 
-#: exe/jsui/mainpage.py:1620
+#: exe/jsui/mainpage.py:1623
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Impossibile caricare un file, spedirlo a bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1623
+#: exe/jsui/mainpage.py:1626
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -4062,7 +4082,7 @@ msgstr ""
 "Formato del file errato:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1625
+#: exe/jsui/mainpage.py:1628
 msgid "Sorry, wrong file format"
 msgstr "Formato errato del file"
 
@@ -4102,18 +4122,18 @@ msgstr "File immagine"
 #: exe/jsui/scripts/app/controller/StyleManager.js:220
 #: exe/jsui/scripts/app/controller/TemplateManager.js:221
 #: exe/jsui/scripts/app/controller/TemplateManager.js:290
-#: exe/jsui/scripts/app/controller/Toolbar.js:658
-#: exe/jsui/scripts/app/controller/Toolbar.js:679
-#: exe/jsui/scripts/app/controller/Toolbar.js:714
-#: exe/jsui/scripts/app/controller/Toolbar.js:733
-#: exe/jsui/scripts/app/controller/Toolbar.js:802
-#: exe/jsui/scripts/app/controller/Toolbar.js:913
-#: exe/jsui/scripts/app/controller/Toolbar.js:996
-#: exe/jsui/scripts/app/controller/Toolbar.js:1016
-#: exe/jsui/scripts/app/controller/Toolbar.js:1036
-#: exe/jsui/scripts/app/controller/Toolbar.js:1068
-#: exe/jsui/scripts/app/controller/Toolbar.js:1234
-#: exe/jsui/scripts/app/controller/Toolbar.js:1363
+#: exe/jsui/scripts/app/controller/Toolbar.js:655
+#: exe/jsui/scripts/app/controller/Toolbar.js:676
+#: exe/jsui/scripts/app/controller/Toolbar.js:711
+#: exe/jsui/scripts/app/controller/Toolbar.js:730
+#: exe/jsui/scripts/app/controller/Toolbar.js:799
+#: exe/jsui/scripts/app/controller/Toolbar.js:910
+#: exe/jsui/scripts/app/controller/Toolbar.js:990
+#: exe/jsui/scripts/app/controller/Toolbar.js:1010
+#: exe/jsui/scripts/app/controller/Toolbar.js:1030
+#: exe/jsui/scripts/app/controller/Toolbar.js:1062
+#: exe/jsui/scripts/app/controller/Toolbar.js:1232
+#: exe/jsui/scripts/app/controller/Toolbar.js:1361
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 #: exe/webui/scripts/authoring.js:96 exe/webui/scripts/authoring.js:121
 #: exe/webui/scripts/authoring.js:365 exe/webui/scripts/authoring.js:374
@@ -4124,11 +4144,11 @@ msgid "All Files"
 msgstr "Tutti i file"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:275
-#: exe/jsui/scripts/app/controller/Toolbar.js:968
-#: exe/jsui/scripts/app/controller/Toolbar.js:989
-#: exe/jsui/scripts/app/controller/Toolbar.js:1009
-#: exe/jsui/scripts/app/controller/Toolbar.js:1029
-#: exe/jsui/scripts/app/controller/Toolbar.js:1061
+#: exe/jsui/scripts/app/controller/Toolbar.js:963
+#: exe/jsui/scripts/app/controller/Toolbar.js:983
+#: exe/jsui/scripts/app/controller/Toolbar.js:1003
+#: exe/jsui/scripts/app/controller/Toolbar.js:1023
+#: exe/jsui/scripts/app/controller/Toolbar.js:1055
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Please wait..."
 msgstr "Attendere prego..."
@@ -4157,8 +4177,8 @@ msgstr "Impostazioni salvate"
 #: exe/jsui/scripts/app/controller/TemplateManager.js:279
 #: exe/jsui/scripts/app/controller/TemplateManager.js:338
 #: exe/jsui/scripts/app/controller/TemplateManager.js:364
-#: exe/jsui/scripts/app/controller/Toolbar.js:564
-#: exe/jsui/scripts/app/controller/Toolbar.js:570
+#: exe/jsui/scripts/app/controller/Toolbar.js:561
+#: exe/jsui/scripts/app/controller/Toolbar.js:567
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:338
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:261
@@ -4177,7 +4197,7 @@ msgstr "Errore"
 #: exe/jsui/scripts/app/controller/MainTab.js:308
 #: exe/jsui/scripts/app/controller/MainTab.js:361
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:499
+#: exe/jsui/scripts/app/controller/Toolbar.js:496
 #: exe/webui/scripts/editor.js:54
 #: exe/webui/tools/style-designer/langs/all.js:115
 msgid "Confirm"
@@ -4200,12 +4220,12 @@ msgid "LOM Metadata import success!"
 msgstr "Importazione metadati LOM terminata!"
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:414
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:413
 msgid "Insert Package"
 msgstr "Inserisci pacchetto"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:420
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:419
 msgid "Extract Package"
 msgstr "Estrai pacchetto"
 
@@ -4271,50 +4291,53 @@ msgstr "Cancellare modello?"
 msgid "Do you want to delete this template?"
 msgstr "Confermare la cancellazione del modello"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:207
+#: exe/jsui/scripts/app/controller/Toolbar.js:204
+#: exe/webui/tools/assistant/langs/all.js:80
 msgid "http://exelearning.net/html_manual/exe20_en/"
 msgstr "http://exelearning.net/html_manual/exe20_en/"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:223
+#: exe/jsui/scripts/app/controller/Toolbar.js:220
+#: exe/webui/tools/assistant/langs/all.js:82
 msgid "http://exelearning.net/?lang=en"
 msgstr "http://exelearning.net/?lang=it"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:229
+#: exe/jsui/scripts/app/controller/Toolbar.js:226
+#: exe/webui/tools/assistant/langs/all.js:81
 msgid "http://exelearning.net/forums/"
 msgstr "http://exelearning.net/forums/"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:232
+#: exe/jsui/scripts/app/controller/Toolbar.js:229
 msgid "http://exelearning.net/downloads/"
 msgstr "http://exelearning.net/downloads/"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:369
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:559
+#: exe/jsui/scripts/app/controller/Toolbar.js:366
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:558
 #: exe/webui/tools/assistant/js/assistant.js:15
-#: exe/webui/tools/assistant/langs/en.js:8
+#: exe/webui/tools/assistant/langs/all.js:8
 msgid "Assistant"
 msgstr "Assistente"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:399
+#: exe/jsui/scripts/app/controller/Toolbar.js:396
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "About"
 msgstr "A proposito di"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:416
+#: exe/jsui/scripts/app/controller/Toolbar.js:413
 msgid "Release notes"
 msgstr "Note di rilascio"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:434
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:591
-#: exe/webui/tools/assistant/langs/en.js:76
+#: exe/jsui/scripts/app/controller/Toolbar.js:431
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:590
+#: exe/webui/tools/assistant/langs/all.js:78
 msgid "Legal Notes"
 msgstr "Note legali"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:472
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:460
+#: exe/jsui/scripts/app/controller/Toolbar.js:469
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:459
 msgid "Preferences"
 msgstr "Preferenze"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:500
+#: exe/jsui/scripts/app/controller/Toolbar.js:497
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
@@ -4322,16 +4345,16 @@ msgstr ""
 "Se sono stati fatti cambiamenti e non sono salvati, verranno persi. "
 "Uscire?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:526
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:477
+#: exe/jsui/scripts/app/controller/Toolbar.js:523
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:476
 msgid "Style Manager"
 msgstr "Gestione stili"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:543
+#: exe/jsui/scripts/app/controller/Toolbar.js:540
 msgid "Template Manager"
 msgstr "Gestione modelli"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:561
+#: exe/jsui/scripts/app/controller/Toolbar.js:558
 msgid ""
 "Sorry, only styles created with the Editor can be edited. eXe's Styles "
 "are not editable"
@@ -4339,11 +4362,11 @@ msgstr ""
 "Possono essere modificati solo gli stili creati con l'Editor. Gli stili "
 "di eXe non sono modificabili"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:564
+#: exe/jsui/scripts/app/controller/Toolbar.js:561
 msgid "An unknown error occurred."
 msgstr "Errore sconosciuto."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:567
+#: exe/jsui/scripts/app/controller/Toolbar.js:564
 msgid ""
 "That's one of eXe's default Styles, and it cannot be edited.\n"
 "\n"
@@ -4353,7 +4376,7 @@ msgstr ""
 "\n"
 "Scegliere un altro stile o crearne uno nuovo."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:567
+#: exe/jsui/scripts/app/controller/Toolbar.js:564
 #: exe/jsui/scripts/app/view/forms/HelpContainer.js:43 exe/webui/block.py:270
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:29
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
@@ -4361,95 +4384,95 @@ msgstr ""
 msgid "Information"
 msgstr "Informazione"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:570
+#: exe/jsui/scripts/app/controller/Toolbar.js:567
 msgid "Your Style could not be saved because an unknown error occurred."
 msgstr "Lo stile non può essere salvato per un errore sconosciuto."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:646
+#: exe/jsui/scripts/app/controller/Toolbar.js:643
 msgid "Select package to insert"
 msgstr "Scegliere pacchetto da inserire"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:651
+#: exe/jsui/scripts/app/controller/Toolbar.js:648
 msgid "Inserting package: {filename}"
 msgstr "Inserimento pacchetto: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:657
-#: exe/jsui/scripts/app/controller/Toolbar.js:678
-#: exe/jsui/scripts/app/controller/Toolbar.js:1233
-#: exe/jsui/scripts/app/controller/Toolbar.js:1362
+#: exe/jsui/scripts/app/controller/Toolbar.js:654
+#: exe/jsui/scripts/app/controller/Toolbar.js:675
+#: exe/jsui/scripts/app/controller/Toolbar.js:1231
+#: exe/jsui/scripts/app/controller/Toolbar.js:1360
 msgid "eXe Package Files"
 msgstr "File pacchetto eXe"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:667
+#: exe/jsui/scripts/app/controller/Toolbar.js:664
 msgid "Save extracted package as"
 msgstr "Salva il pacchetto estratto come"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:672
+#: exe/jsui/scripts/app/controller/Toolbar.js:669
 msgid "Extracting package: {filename}"
 msgstr "Estrazione pacchetto: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:688
+#: exe/jsui/scripts/app/controller/Toolbar.js:685
 msgid "Select the parent folder for import."
 msgstr "Scegliere la cartella contenitore per l'importazione."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:703
+#: exe/jsui/scripts/app/controller/Toolbar.js:700
 msgid "Select the entry point for import."
 msgstr "Scegliere il punto di inserimento per l'importazione."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:713
+#: exe/jsui/scripts/app/controller/Toolbar.js:710
 msgid "HTML Files"
 msgstr "File HTML"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:722
+#: exe/jsui/scripts/app/controller/Toolbar.js:719
 msgid "Select LOM Metadata file to import."
 msgstr "Scegliere file metadati LOM da importare."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:732
+#: exe/jsui/scripts/app/controller/Toolbar.js:729
 msgid "XML Files"
 msgstr "File XML"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:747
+#: exe/jsui/scripts/app/controller/Toolbar.js:744
 msgid "Waiting progress..."
 msgstr "Attendere..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:755
+#: exe/jsui/scripts/app/controller/Toolbar.js:752
 msgid "Cancel Import?"
 msgstr "Annullare l'importazione?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:756
+#: exe/jsui/scripts/app/controller/Toolbar.js:753
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr "È in corso un'importazione. Annullarla?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:779
+#: exe/jsui/scripts/app/controller/Toolbar.js:776
 msgid "Select Xliff file to import"
 msgstr "Scegliere il file XLIFF da importare"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:789
+#: exe/jsui/scripts/app/controller/Toolbar.js:786
 msgid "XLIFF Import Preferences"
 msgstr "Preferenze importazione XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:801
-#: exe/jsui/scripts/app/controller/Toolbar.js:912
+#: exe/jsui/scripts/app/controller/Toolbar.js:798
+#: exe/jsui/scripts/app/controller/Toolbar.js:909
 msgid "XLIFF Files"
 msgstr "File XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:811
+#: exe/jsui/scripts/app/controller/Toolbar.js:808
 msgid "Export to Xliff as"
 msgstr "Esporta XLIFF con nome"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:831
+#: exe/jsui/scripts/app/controller/Toolbar.js:828
 msgid "Select source language"
 msgstr "Scegliere lingua della fonte"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:842
+#: exe/jsui/scripts/app/controller/Toolbar.js:839
 msgid "Select target language"
 msgstr "Scegliere lingua destinazione"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:853
+#: exe/jsui/scripts/app/controller/Toolbar.js:850
 msgid "Copy source also in target"
 msgstr "Copia la sorgente anche nella destinazione"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:856
+#: exe/jsui/scripts/app/controller/Toolbar.js:853
 msgid ""
 "If you don't choose this option, target field will be empty. Some "
 "Computer Aided Translation tools (e.g. OmegaT) just translate the content"
@@ -4462,7 +4485,7 @@ msgstr ""
 " sarà necessario riempire preventivamente il campo destinazione con una "
 "copia del campo origine."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:867
+#: exe/jsui/scripts/app/controller/Toolbar.js:864
 msgid ""
 "This option will wrap all the exported fields in CDATA sections. This "
 "kind of sections are not recommended by XLIFF standard but it could be a "
@@ -4474,7 +4497,7 @@ msgstr ""
 "essere utile se si vuole usare uno strumento di pre-elaborazione (es. "
 "Rainbow) prima di usare il programma di Computer Aided Translation."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:876
+#: exe/jsui/scripts/app/controller/Toolbar.js:873
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/webui/editorpane.py:273
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
@@ -4486,16 +4509,16 @@ msgstr ""
 msgid "Cancel"
 msgstr "Annulla"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:882
+#: exe/jsui/scripts/app/controller/Toolbar.js:879
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:36
 msgid "Ok"
 msgstr "OK"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:905
+#: exe/jsui/scripts/app/controller/Toolbar.js:902
 msgid "XLIFF Export Preferences"
 msgstr "Preferenze esportazione XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:930
+#: exe/jsui/scripts/app/controller/Toolbar.js:927
 msgid ""
 "You must authorize eXe Learning to publish content into your Procomún "
 "account"
@@ -4503,84 +4526,88 @@ msgstr ""
 "Si deve autorizzare eXeLearning a pubblicare contenuti nel proprio "
 "account di Procomún"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:931
+#: exe/jsui/scripts/app/controller/Toolbar.js:928
 msgid "Are you sure you want to start authorization process?"
 msgstr "Avviare il processo di autorizzazione?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:942
+#: exe/jsui/scripts/app/controller/Toolbar.js:939
 msgid "Procomún OAuth"
 msgstr "Procomún OAuth"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:960
+#: exe/jsui/scripts/app/controller/Toolbar.js:957
 msgid "Select the parent folder for export."
 msgstr "Scegliere la cartella contenitore per l'esportazione."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:983
+#: exe/jsui/scripts/app/controller/Toolbar.js:977
 msgid "Export text package as"
 msgstr "Esporta pacchetto di solo testo con nome"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:995
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:279
+#: exe/jsui/scripts/app/controller/Toolbar.js:989
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:285
 msgid "Text File"
 msgstr "File di testo"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1003
+#: exe/jsui/scripts/app/controller/Toolbar.js:997
 msgid "Save package resources report as"
 msgstr "Salva rapporto del pacchetto di risorse con il nome"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1015
+#: exe/jsui/scripts/app/controller/Toolbar.js:1009
 msgid "CSV File"
 msgstr "File CSV"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1023
+#: exe/jsui/scripts/app/controller/Toolbar.js:1017
 msgid "Export EPUB3 package as"
 msgstr "Esporta pacchetto EPUB3 con il nome"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1035
+#: exe/jsui/scripts/app/controller/Toolbar.js:1029
 msgid "EPUB3 File"
 msgstr "File EPUB3"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1043
+#: exe/jsui/scripts/app/controller/Toolbar.js:1037
 msgid "Export SCORM package as"
 msgstr "Esporta pacchetto SCORM con nome"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1045
+#: exe/jsui/scripts/app/controller/Toolbar.js:1039
 msgid "Export IMS package as"
 msgstr "Esporta pacchetto IMS con nome"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1047
+#: exe/jsui/scripts/app/controller/Toolbar.js:1041
 msgid "Export Website package as"
 msgstr "Esporta pacchetto Sito web con nome"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1049
+#: exe/jsui/scripts/app/controller/Toolbar.js:1043
 msgid "Export Common Cartridge as"
 msgstr "Esporta Common Cartridge con nome"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1051
+#: exe/jsui/scripts/app/controller/Toolbar.js:1045
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "VALORE NON VALIDO passato a exportPackage"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1067
+#: exe/jsui/scripts/app/controller/Toolbar.js:1061
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/ZipFile"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1206
+#: exe/jsui/scripts/app/controller/Toolbar.js:1137
+msgid "No templates available"
+msgstr "Nessun modello disponibile"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:1204
 msgid "Loading package..."
 msgstr "Caricamento pacchetto..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1222
+#: exe/jsui/scripts/app/controller/Toolbar.js:1220
 msgid "Open File"
 msgstr "Apri file"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1227
+#: exe/jsui/scripts/app/controller/Toolbar.js:1225
 msgid "Loading package: {filename}"
 msgstr "Caricamento pacchetto: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1246
+#: exe/jsui/scripts/app/controller/Toolbar.js:1244
 msgid "Save Package first?"
 msgstr "Salvare il pacchetto prima di proseguire?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1247
+#: exe/jsui/scripts/app/controller/Toolbar.js:1245
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
@@ -4588,23 +4615,23 @@ msgstr ""
 "Il pacchetto corrente è stato modificato ma non ancora salvato. Salvare "
 "ora?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1294
+#: exe/jsui/scripts/app/controller/Toolbar.js:1292
 msgid "Saving package to: {filename}"
 msgstr "Salvataggio pacchetto in: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1320
+#: exe/jsui/scripts/app/controller/Toolbar.js:1318
 msgid "Title for template:"
 msgstr "Titolo del modello:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1321
+#: exe/jsui/scripts/app/controller/Toolbar.js:1319
 msgid "Enter the new name for template:"
 msgstr "Inserire il nome del modello:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1342
+#: exe/jsui/scripts/app/controller/Toolbar.js:1340
 msgid "Save file"
 msgstr "Salva file"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1348
+#: exe/jsui/scripts/app/controller/Toolbar.js:1346
 msgid "Saving package..."
 msgstr "Salvataggio pacchetto..."
 
@@ -4679,7 +4706,7 @@ msgid "Modified"
 msgstr "Modificato"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:52
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:139
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:145
 msgid "Open"
 msgstr "Apri"
 
@@ -4690,9 +4717,10 @@ msgstr "Apri"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:666
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:329
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:168 exe/webui/editorpage.py:264
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:174 exe/webui/editorpage.py:264
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:149
+#: exe/webui/tools/assistant/langs/all.js:52
 #: exe/webui/tools/style-designer/langs/all.js:113
 msgid "Save"
 msgstr "Salva"
@@ -4733,7 +4761,7 @@ msgid "An entity primarily responsible for making the content of the resource."
 msgstr "Una entità principalmente responsabile del contenuto della risorsa."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:60
-#: exe/webui/content_template/strings.py:471
+#: exe/webui/content_template/strings.py:497
 msgid "Subject"
 msgstr "Argomento"
 
@@ -4865,7 +4893,7 @@ msgstr "Riferimento ad una risorsa da cui questa risorsa deriva."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:169
-#: exe/webui/tools/assistant/langs/en.js:26
+#: exe/webui/tools/assistant/langs/all.js:26
 msgid "Language"
 msgstr "Lingua"
 
@@ -5337,7 +5365,7 @@ msgstr "Opzionale"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:150
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:181
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:742
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:754
 msgid "Warning!"
 msgstr "Attenzione!"
 
@@ -5501,7 +5529,7 @@ msgstr "Prerequisiti."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:86
-#: exe/webui/tools/assistant/langs/en.js:28
+#: exe/webui/tools/assistant/langs/all.js:28
 #: exe/webui/tools/style-designer/langs/all.js:31
 msgid "Author"
 msgstr "Autore"
@@ -5523,7 +5551,7 @@ msgstr "Autore principale della risorsa."
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:875
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1014
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1034
-#: exe/webui/tools/assistant/langs/en.js:29
+#: exe/webui/tools/assistant/langs/all.js:29
 #: exe/webui/tools/style-designer/langs/all.js:37
 msgid "License"
 msgstr "Licenza"
@@ -5869,7 +5897,7 @@ msgstr "Esporta modello: "
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:36
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:42
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:84
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:207
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:213
 msgid "Export"
 msgstr "Esporta"
 
@@ -5910,6 +5938,7 @@ msgid "Return"
 msgstr "Indietro"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
+#: exe/webui/tools/assistant/langs/all.js:41
 msgid "Outline"
 msgstr "Profilo"
 
@@ -5965,17 +5994,17 @@ msgid "Package"
 msgstr "Pacchetto"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:59
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:378
 msgid "Metadata"
 msgstr "Metadata"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:71
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:388
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:387
 msgid "LOM"
 msgstr "LOM"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:77
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:394
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:393
 msgid "LOM-ES"
 msgstr "LOM-ES"
 
@@ -6019,148 +6048,144 @@ msgstr "Muovi nodo su"
 msgid "Move node down"
 msgstr "Muovi nodo giù"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:88
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:94
 msgid "use the right arrow key"
 msgstr "usare tasto freccia destra"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:104
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:110
 #: exe/webui/tools/color-picker/langs/all.js:6
 msgid "New"
 msgstr "Nuovo"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:112
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:118
 msgid "Project"
 msgstr "Progetto"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:120
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:126
 msgid "Window"
 msgstr "Finestra"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:127
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:184
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:133
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:190
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:212
 msgid "Templates"
 msgstr "Modelli"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:146
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:152
 msgid "Recent Projects..."
 msgstr "Progetti recenti..."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:158
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:164
 msgid "Clear Recent Projects List"
 msgstr "Cancella lista progetti recenti"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:175
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:181
 msgid "Save As..."
 msgstr "Salva con nome..."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:191
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:197
 msgid "Save as template"
 msgstr "Salva come modello"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:197
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:203
 msgid "Manage"
 msgstr "Gestisci"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:215
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:221
 msgid "Educational Standard"
 msgstr "Standard educativo"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:222
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:228
 msgid "Common Cartridge"
 msgstr "Common Cartridge"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:228
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:234
 msgid "SCORM1.2"
 msgstr "SCORM 1.2"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:234
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:240
 msgid "SCORM2004"
 msgstr "SCORM2004"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:240
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:246
 msgid "IMS Content Package"
 msgstr "Pacchetto contenuti IMS"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:250
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:300
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:256
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:299
 msgid "Web Site"
 msgstr "Sito Web"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:257
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:263
 msgid "Self-contained Folder"
 msgstr "Tutto in una cartella"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:263
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:269
 msgid "Zip File"
 msgstr "File ZIP"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:269
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:307
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:306
 msgid "Single Page"
 msgstr "Pagina singola"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:286
-msgid "Ustad Mobile"
-msgstr "Ustad Mobile"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:293
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
 msgid "XLIFF"
 msgstr "XLIFF"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:313
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:312
 msgid "EPUB3"
 msgstr "EPUB3"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:320
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:319
 msgid "SCORM"
 msgstr "SCORM"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:327
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:326
 msgid "IMS"
 msgstr "IMS"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:336
 msgid "Publish"
 msgstr "Pubblica"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:346
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:345
 msgid "Procomún"
 msgstr "Procomún"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:360
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:359
 msgid "Import"
 msgstr "Importa"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:369
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:368
 msgid "HTML Course"
 msgstr "Corso HTML"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:375
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:374
 msgid "XLIFF File"
 msgstr "File XLIFF"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:405
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:404
 msgid "Merging"
 msgstr "Fusione"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:430 exe/webui/common.py:631
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:429 exe/webui/common.py:631
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:148
 msgid "Print"
 msgstr "Stampa"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:443 exe/webui/editorpage.py:273
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:442 exe/webui/editorpage.py:273
 msgid "Quit"
 msgstr "Esci"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:450
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:449
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:227
 msgid "Tools"
 msgstr "Strumenti"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:466 exe/webui/editorpane.py:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:465 exe/webui/editorpane.py:268
 #: exe/webui/element.py:2106
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -6173,79 +6198,75 @@ msgstr "Strumenti"
 msgid "Preview"
 msgstr "Anteprima"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:483
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:482
 #: exe/webui/tools/style-designer/langs/all.js:9
 msgid "Style Designer"
 msgstr "Creazione stile"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:491
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:490
 msgid "Create new Style"
 msgstr "Crea nuovo stile"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:496
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:495
 msgid "Edit current Style"
 msgstr "Modifica stile attuale"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:514
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:513
 msgid "Resources Report"
 msgstr "Rapporto sulle risorse"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:524
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:523
 msgid "Refresh Display"
 msgstr "Ridisegna schermata"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:531
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:530
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Styles"
 msgstr "Stili"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:542
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:549
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:541
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:548
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:625
 msgid "Help"
 msgstr "Aiuto"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:569
-#: exe/webui/tools/assistant/langs/en.js:69
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:568
+#: exe/webui/tools/assistant/langs/all.js:71
 msgid "eXe Tutorial"
 msgstr "Tutoriale eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:583
-#: exe/webui/tools/assistant/langs/en.js:75
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:582
+#: exe/webui/tools/assistant/langs/all.js:77
 msgid "Release Notes"
 msgstr "Note di rilascio"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:601
-#: exe/webui/tools/assistant/langs/en.js:77
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:600
+#: exe/webui/tools/assistant/langs/all.js:79
 msgid "eXe Web Site"
 msgstr "Sito web eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:608
-#: exe/webui/scripts/authoring.js:907 exe/webui/tools/assistant/langs/en.js:72
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:607
+#: exe/webui/scripts/authoring.js:907 exe/webui/tools/assistant/langs/all.js:74
 msgid "Report an Issue"
 msgstr "Invia una segnalazione"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:615
-#: exe/webui/tools/assistant/langs/en.js:70
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:614
+#: exe/webui/tools/assistant/langs/all.js:72
 msgid "eXe Forums"
 msgstr "Forum eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:625
-#: exe/webui/tools/assistant/langs/en.js:74
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:624
+#: exe/webui/tools/assistant/langs/all.js:76
 msgid "About eXe"
 msgstr "A proposito di eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:637
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:636
 msgid "Advanced user"
 msgstr "Utente esperto"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:650 exe/webui/editorpage.py:250
-#: exe/webui/editorpane.py:397
-msgid "Info"
-msgstr "Info"
-
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:637
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:651
 msgid ""
 "Checking this option will show more elements in the menus (File, "
@@ -6254,15 +6275,20 @@ msgstr ""
 "Questa opzione renderà visibili più voci nei menu (File, Strumenti...) e "
 "la linguetta Proprietà."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:743
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:650 exe/webui/editorpage.py:250
+#: exe/webui/editorpane.py:397
+msgid "Info"
+msgstr "Info"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "You've been working for a long time without saving."
 msgstr "Si sta lavorando da lungo tempo senza aver salvato."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:743
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "Do you want to save now?"
 msgstr "Salvare adesso?"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:743
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "Hide until the application is closed"
 msgstr "Nascondere fino alla chiusura del programma"
 
@@ -8220,7 +8246,7 @@ msgstr "Corretto"
 msgid "Incorrect"
 msgstr "Sbagliato"
 
-#: exe/webui/common.py:624 exe/webui/tools/assistant/langs/en.js:9
+#: exe/webui/common.py:624 exe/webui/tools/assistant/langs/all.js:9
 msgid "Menu"
 msgstr "Menù"
 
@@ -8326,12 +8352,16 @@ msgid "EDIA Project - PBL"
 msgstr "Progetto EDIA - PBL"
 
 #: exe/webui/content_template/strings.py:7
-msgid "Centro Nacional de Desarrollo Curricular en Sistemas no Propietarios"
+msgid ""
+"National Centre for the Development of the Educational Curriculum on Non-"
+"Proprietary Systems (CEDEC)"
 msgstr ""
+"Centro Nazionale per lo Sviluppo del Curricolo Educativo su Sistemi Non-"
+"Proprietari (CEDEC)"
 
 #: exe/webui/content_template/strings.py:11
-#: exe/webui/content_template/strings.py:27
-#: exe/webui/content_template/strings.py:491
+#: exe/webui/content_template/strings.py:29
+#: exe/webui/content_template/strings.py:521
 msgid "Project's name"
 msgstr "Nome del progetto"
 
@@ -8354,8 +8384,8 @@ msgstr ""
 "allievi hanno anche l'aiuto e l'orientamento dei docenti."
 
 #: exe/webui/content_template/strings.py:15
-#: exe/webui/content_template/strings.py:29
-#: exe/webui/content_template/strings.py:493
+#: exe/webui/content_template/strings.py:31
+#: exe/webui/content_template/strings.py:523
 msgid "Author's name"
 msgstr "Nome dell'autore"
 
@@ -8363,328 +8393,346 @@ msgstr "Nome dell'autore"
 msgid "Front page"
 msgstr "Copertina"
 
-#: exe/webui/content_template/strings.py:49
+#: exe/webui/content_template/strings.py:28
+#: exe/webui/content_template/strings.py:520
+msgid "Creative Commons BY-SA"
+msgstr "Creative Commons BY-SA"
+
+#: exe/webui/content_template/strings.py:53
 msgid "Motivating inspiration."
 msgstr "Ispirazione motivante."
 
-#: exe/webui/content_template/strings.py:50
+#: exe/webui/content_template/strings.py:54
 msgid "Project / Final Challenge"
 msgstr "Progetto / obiettivo finale"
 
-#: exe/webui/content_template/strings.py:51
+#: exe/webui/content_template/strings.py:55
 msgid "What to learn and how to learn."
 msgstr "Cosa imparare e come farlo."
 
-#: exe/webui/content_template/strings.py:52
+#: exe/webui/content_template/strings.py:56
 msgid "Motivation for the project development."
 msgstr "Motivazioni allo sviluppo del progetto."
 
-#: exe/webui/content_template/strings.py:60
-#: exe/webui/content_template/strings.py:385
+#: exe/webui/content_template/strings.py:65
+#: exe/webui/content_template/strings.py:409
 msgid "Breaking the ice"
 msgstr "Rompere il ghiaccio"
 
-#: exe/webui/content_template/strings.py:63
-#: exe/webui/content_template/strings.py:169
+#: exe/webui/content_template/strings.py:68
+#: exe/webui/content_template/strings.py:181
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:31
 msgid "Learning Diary"
 msgstr "Diario di apprendimento"
 
-#: exe/webui/content_template/strings.py:83
+#: exe/webui/content_template/strings.py:89
 msgid "First activity. Creation of the learning diary in the suggested format."
 msgstr "Prima attività. Creazione del diario nel formato suggerito."
 
-#: exe/webui/content_template/strings.py:84
+#: exe/webui/content_template/strings.py:90
 msgid "Creation of the first post heading."
 msgstr "Creazione della prima intestazione di messaggio."
 
-#: exe/webui/content_template/strings.py:85
+#: exe/webui/content_template/strings.py:91
+#: exe/webui/content_template/strings.py:207
+msgid "Writing the diary"
+msgstr "Scrittura del diario"
+
+#: exe/webui/content_template/strings.py:92
 msgid ""
 "Script for writing the post. It must lead the student to think about and "
 "reflect:"
 msgstr "Traccia per il messaggio. Dovrebbe guidare lo studente a riflettere:"
 
-#: exe/webui/content_template/strings.py:86
+#: exe/webui/content_template/strings.py:93
 msgid "What the final challenge is"
 msgstr "Qual è l'obiettivo finale"
 
-#: exe/webui/content_template/strings.py:87
+#: exe/webui/content_template/strings.py:94
 msgid "What the assessment will be like"
 msgstr "Come saranno le valutazioni"
 
-#: exe/webui/content_template/strings.py:88
+#: exe/webui/content_template/strings.py:95
 msgid "What they will learn"
 msgstr "Cosa verrà imparato"
 
-#: exe/webui/content_template/strings.py:89
+#: exe/webui/content_template/strings.py:96
 msgid "How class groups work"
 msgstr "Come funzionerà la classe"
 
-#: exe/webui/content_template/strings.py:95
+#: exe/webui/content_template/strings.py:103
 msgid "Starting Activity"
 msgstr "Attività iniziale"
 
-#: exe/webui/content_template/strings.py:115
+#: exe/webui/content_template/strings.py:124
 msgid "Introductory Activity to the project involving:"
 msgstr "Attività introduttiva al progetto che comprende:"
 
-#: exe/webui/content_template/strings.py:116
+#: exe/webui/content_template/strings.py:125
 msgid "Team work"
 msgstr "Lavoro di gruppo"
 
-#: exe/webui/content_template/strings.py:117
+#: exe/webui/content_template/strings.py:126
 msgid "Reflection and motivation"
 msgstr "Riflessione e motivazione"
 
-#: exe/webui/content_template/strings.py:118
+#: exe/webui/content_template/strings.py:127
 msgid "Expression of feelings."
 msgstr "Espressione di sentimenti."
 
-#: exe/webui/content_template/strings.py:119
+#: exe/webui/content_template/strings.py:128
 msgid "Steps for the suggested activity"
 msgstr "Passi per l'attività suggerita"
 
-#: exe/webui/content_template/strings.py:125
+#: exe/webui/content_template/strings.py:135
 msgid "Your project: General information"
 msgstr "Il tuo progetto: info generali"
 
-#: exe/webui/content_template/strings.py:151
+#: exe/webui/content_template/strings.py:162
 msgid "Explanation of the final challenge."
 msgstr "Spiegazione dell'obiettivo finale."
 
-#: exe/webui/content_template/strings.py:152
+#: exe/webui/content_template/strings.py:163
 msgid "Overview of suggested tasks."
 msgstr "Panoramica dei compiti suggeriti."
 
-#: exe/webui/content_template/strings.py:153
+#: exe/webui/content_template/strings.py:164
 msgid "General information about:"
 msgstr "Info generali:"
 
-#: exe/webui/content_template/strings.py:154
+#: exe/webui/content_template/strings.py:165
 msgid "Assessment"
 msgstr "Valutazione"
 
-#: exe/webui/content_template/strings.py:155
+#: exe/webui/content_template/strings.py:166
 msgid "Class team management"
 msgstr "Gestione del gruppo classe"
 
-#: exe/webui/content_template/strings.py:156
+#: exe/webui/content_template/strings.py:167
 msgid "Learning diary and personal site."
 msgstr "Diario di apprendimento e sito personale."
 
-#: exe/webui/content_template/strings.py:157
+#: exe/webui/content_template/strings.py:168
 msgid "Dissemination of project activities."
 msgstr "Disseminazione delle attività di progetto."
 
-#: exe/webui/content_template/strings.py:158
+#: exe/webui/content_template/strings.py:169
 msgid "Starting motivation"
 msgstr "Motivazione iniziale"
 
-#: exe/webui/content_template/strings.py:166
+#: exe/webui/content_template/strings.py:178
 msgid "Mission 1"
 msgstr "Missione 1"
 
-#: exe/webui/content_template/strings.py:193
+#: exe/webui/content_template/strings.py:206
 msgid "Guidelines to open a new post."
 msgstr "Linee guida per un nuovo messaggio."
 
-#: exe/webui/content_template/strings.py:194
+#: exe/webui/content_template/strings.py:208
 msgid "Questions or guidelines for students to revise and reflect:"
 msgstr "Domande o linee guida per gli studenti per rivedere e riflettere:"
 
-#: exe/webui/content_template/strings.py:195
+#: exe/webui/content_template/strings.py:209
 msgid "The task they have done"
 msgstr "I compiti svolti"
 
-#: exe/webui/content_template/strings.py:196
+#: exe/webui/content_template/strings.py:210
 msgid "The resources they have checked"
 msgstr "Le risorse esaminate"
 
-#: exe/webui/content_template/strings.py:197
+#: exe/webui/content_template/strings.py:211
 msgid "Materials they have created"
 msgstr "I materiali prodotti"
 
-#: exe/webui/content_template/strings.py:198
+#: exe/webui/content_template/strings.py:212
 msgid "What they have learnt"
 msgstr "Cosa hanno imparato"
 
-#: exe/webui/content_template/strings.py:199
+#: exe/webui/content_template/strings.py:213
 msgid "Difficulties found."
 msgstr "Difficoltà incontrate."
 
-#: exe/webui/content_template/strings.py:200
+#: exe/webui/content_template/strings.py:214
 msgid "Remaining doubts"
 msgstr "Dubbi rimanenti"
 
-#: exe/webui/content_template/strings.py:201
+#: exe/webui/content_template/strings.py:215
 msgid "Class team functioning"
 msgstr "Funzionamento del gruppo classe"
 
-#: exe/webui/content_template/strings.py:207
+#: exe/webui/content_template/strings.py:222
 msgid "Task (Mission)"
 msgstr "Compito (missione)"
 
-#: exe/webui/content_template/strings.py:221
+#: exe/webui/content_template/strings.py:237
 msgid "General introduction"
 msgstr "Introduzione generale"
 
-#: exe/webui/content_template/strings.py:222
+#: exe/webui/content_template/strings.py:238
 msgid "What the \"final mission\" will be and link to the assessment rubric."
 msgstr "Quale sarà la \"missione finale\" e un link alla lista di valutazione."
 
-#: exe/webui/content_template/strings.py:223
+#: exe/webui/content_template/strings.py:239
 msgid "What learning objective this mission helps to achieve."
 msgstr "Quale obiettivo di apprendimento viene facilitato da questa missione."
 
-#: exe/webui/content_template/strings.py:224
+#: exe/webui/content_template/strings.py:240
 msgid "Steps for your mission"
 msgstr "Passi per la missione"
 
-#: exe/webui/content_template/strings.py:230
+#: exe/webui/content_template/strings.py:247
 msgid "Introduction"
 msgstr "Introduzione"
 
-#: exe/webui/content_template/strings.py:242
+#: exe/webui/content_template/strings.py:260
 msgid "What the final mission will be."
 msgstr "Quale sarà la missione finale."
 
-#: exe/webui/content_template/strings.py:243
+#: exe/webui/content_template/strings.py:261
 msgid "What sudents will learn about."
 msgstr "Argomento dell'apprendimento."
 
-#: exe/webui/content_template/strings.py:244
+#: exe/webui/content_template/strings.py:262
 msgid "Starting activity"
 msgstr "Attività iniziale"
 
-#: exe/webui/content_template/strings.py:252
+#: exe/webui/content_template/strings.py:271
 msgid "Didactic guidelines"
 msgstr "Linee guida didattiche"
 
-#: exe/webui/content_template/strings.py:255
+#: exe/webui/content_template/strings.py:274
 msgid "Need any help?"
 msgstr "C'è bisogno d'aiuto?"
 
-#: exe/webui/content_template/strings.py:261
+#: exe/webui/content_template/strings.py:281
 msgid "ICT resources/apps/tools"
 msgstr "Risorse/app/strumenti TIC"
 
-#: exe/webui/content_template/strings.py:267
+#: exe/webui/content_template/strings.py:288
 msgid "Assessment and curricular references"
 msgstr "Valutazione e riferimenti al curricolo"
 
-#: exe/webui/content_template/strings.py:279
+#: exe/webui/content_template/strings.py:301
 msgid "Link to the final rubric of the project."
 msgstr "Link alla rubrica di valutazione del progetto."
 
-#: exe/webui/content_template/strings.py:280
+#: exe/webui/content_template/strings.py:302
 msgid "Assessment recommendations / resources of each task."
 msgstr "Raccomandazioni di valutazione / risorse per ogni compito."
 
-#: exe/webui/content_template/strings.py:281
+#: exe/webui/content_template/strings.py:303
 msgid "Assessment criteria and guidance on how to assess."
 msgstr "Criteri e modalità di valutazione."
 
-#: exe/webui/content_template/strings.py:282
+#: exe/webui/content_template/strings.py:304
 msgid "Contents / learning standards and key competences."
 msgstr "Contenuti, livelli standard di apprendimento e competenze chiave."
 
-#: exe/webui/content_template/strings.py:288
+#: exe/webui/content_template/strings.py:311
 msgid "Learning Pathway and timing"
 msgstr "Percorsi d'apprendimento e tempi"
 
-#: exe/webui/content_template/strings.py:380
+#: exe/webui/content_template/strings.py:404
 msgid "Steps"
 msgstr "Passi"
 
-#: exe/webui/content_template/strings.py:381
+#: exe/webui/content_template/strings.py:405
 msgid "Main aim"
 msgstr "Obiettivo principale"
 
-#: exe/webui/content_template/strings.py:382
-#: exe/webui/content_template/strings.py:475
+#: exe/webui/content_template/strings.py:406
+#: exe/webui/content_template/strings.py:501
 msgid "Timing"
 msgstr "Tempi"
 
-#: exe/webui/content_template/strings.py:383
+#: exe/webui/content_template/strings.py:407
 msgid "Before you start"
 msgstr "Prima di iniziare"
 
-#: exe/webui/content_template/strings.py:384
-#: exe/webui/content_template/strings.py:386
-#: exe/webui/content_template/strings.py:388
-#: exe/webui/content_template/strings.py:390
-#: exe/webui/content_template/strings.py:392
-#: exe/webui/content_template/strings.py:394
+#: exe/webui/content_template/strings.py:408
+#: exe/webui/content_template/strings.py:410
+#: exe/webui/content_template/strings.py:412
+#: exe/webui/content_template/strings.py:414
+#: exe/webui/content_template/strings.py:416
+#: exe/webui/content_template/strings.py:418
 msgid "... sessions"
 msgstr "... sessioni"
 
-#: exe/webui/content_template/strings.py:387
+#: exe/webui/content_template/strings.py:411
 msgid "(Mission 1)"
 msgstr "(Missione 1)"
 
-#: exe/webui/content_template/strings.py:389
+#: exe/webui/content_template/strings.py:413
 msgid "(Mission 2)"
 msgstr "(Missione 2)"
 
-#: exe/webui/content_template/strings.py:391
+#: exe/webui/content_template/strings.py:415
 msgid "(Mission 3)"
 msgstr "(Missione 3)"
 
-#: exe/webui/content_template/strings.py:393
+#: exe/webui/content_template/strings.py:417
 msgid "(Final Challenge)"
 msgstr "(Obiettivo finale)"
 
-#: exe/webui/content_template/strings.py:395
+#: exe/webui/content_template/strings.py:419
 msgid "Interdisciplinary nature"
 msgstr "Natura interdisciplinare"
 
-#: exe/webui/content_template/strings.py:396
+#: exe/webui/content_template/strings.py:420
 msgid "Recommendations to involve other subjects"
 msgstr "Indicazioni per il raccordo con altre discipline"
 
-#: exe/webui/content_template/strings.py:402
+#: exe/webui/content_template/strings.py:427
 msgid "Fact sheet"
 msgstr "Documento informativo"
 
-#: exe/webui/content_template/strings.py:472
+#: exe/webui/content_template/strings.py:498
 msgid "Level / course"
 msgstr "Livello / corso"
 
-#: exe/webui/content_template/strings.py:473
+#: exe/webui/content_template/strings.py:499
 msgid "Final project"
 msgstr "Progetto finale"
 
-#: exe/webui/content_template/strings.py:474
+#: exe/webui/content_template/strings.py:500
 msgid "Contents"
 msgstr "Contenuti"
 
-#: exe/webui/content_template/strings.py:476
+#: exe/webui/content_template/strings.py:502
+msgid "General guidelines for teachers"
+msgstr "Linee guida generali per insegnanti"
+
+#: exe/webui/content_template/strings.py:503
 msgid "Resource structure"
 msgstr "Struttura della risorsa"
 
-#: exe/webui/content_template/strings.py:477
+#: exe/webui/content_template/strings.py:504
 msgid "Types of tasks and activities"
 msgstr "Tipo di compiti ed attività"
 
-#: exe/webui/content_template/strings.py:478
+#: exe/webui/content_template/strings.py:505
 msgid "Methodological approach"
 msgstr "Approccio metodologico"
 
-#: exe/webui/content_template/strings.py:479
+#: exe/webui/content_template/strings.py:506
 msgid "Use of the learning diary"
 msgstr "Uso del diario di apprendimento"
 
-#: exe/webui/content_template/strings.py:499
+#: exe/webui/content_template/strings.py:530
 msgid "Rubrics and other documents"
 msgstr "Rubriche di valutazione ed altri documenti"
 
-#: exe/webui/content_template/strings.py:505
+#: exe/webui/content_template/strings.py:537
 msgid "You can download all the documents to print, share, reuse..."
 msgstr ""
 "E' possibile scaricare tutti i documenti per la stampa, la condivisione, "
 "il riuso ecc."
 
-#: exe/webui/content_template/strings.py:516
+#: exe/webui/content_template/strings.py:546
+msgid "Example image"
+msgstr "Immagine di esempio"
+
+#: exe/webui/content_template/strings.py:558
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Base"
 msgstr "Base"
@@ -8952,8 +9000,8 @@ msgstr "Aggiungi immagine"
 msgid "Display as:"
 msgstr "Visualizza come:"
 
-#: exe/webui/content_template/strings.py:28
-#: exe/webui/content_template/strings.py:492 exe/webui/element.py:796
+#: exe/webui/content_template/strings.py:30
+#: exe/webui/content_template/strings.py:522 exe/webui/element.py:796
 msgid "by"
 msgstr "di"
 
@@ -13181,10 +13229,6 @@ msgid "Preformatted"
 msgstr "Preformattato"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-msgid "Open Link in a New Window"
-msgstr "Apri link in una nuova finestra"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Open Link in the Same Window"
 msgstr "Apri link nella stessa finestra"
 
@@ -13267,6 +13311,11 @@ msgstr "Uso generale"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Invalid color value"
 msgstr "Colore non valido"
+
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+#: exe/webui/tools/assistant/langs/all.js:83
+msgid "Open Link in a New Window"
+msgstr "Apri link in una nuova finestra"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/tools/color-picker/langs/all.js:2
@@ -13689,8 +13738,8 @@ msgstr "Inserire il contenuto"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:166
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:219
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:231
-msgid "Modal Dialog Window"
-msgstr "Finestra di dialogo modale"
+msgid "Dialog Window"
+msgstr "Finestra di dialogo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:170
 msgid "Dialog title (the title of the link)"
@@ -14108,19 +14157,19 @@ msgstr "Non è possibile cancellare un modello aperto."
 msgid "Template deleted correctly"
 msgstr "Modello cancellato"
 
-#: exe/webui/tools/assistant/langs/en.js:13
+#: exe/webui/tools/assistant/langs/all.js:13
 msgid "What is eXeLearning"
 msgstr "Cosa è eXeLearning"
 
-#: exe/webui/tools/assistant/langs/en.js:14
+#: exe/webui/tools/assistant/langs/all.js:14
 msgid "eXeLearning Is an open source program to create educational contents."
 msgstr "eXeLearning è un programma Open Source per creare contenuti educativi."
 
-#: exe/webui/tools/assistant/langs/en.js:15
+#: exe/webui/tools/assistant/langs/all.js:15
 msgid "With eXeLearning you can:"
 msgstr "Con eXeLearning si può:"
 
-#: exe/webui/tools/assistant/langs/en.js:16
+#: exe/webui/tools/assistant/langs/all.js:16
 msgid ""
 "Create educational resources with different contents: texts, multimedia "
 "materials, interactive activities, internet links..."
@@ -14128,11 +14177,11 @@ msgstr ""
 "Creare risorse educative con diversi contenuti: testi, media, attività "
 "interattive, link alla Rete..."
 
-#: exe/webui/tools/assistant/langs/en.js:17
+#: exe/webui/tools/assistant/langs/all.js:17
 msgid "Choose and customise the design of the resource"
 msgstr "Scegliere e personalizzare il progetto della risorsa"
 
-#: exe/webui/tools/assistant/langs/en.js:18
+#: exe/webui/tools/assistant/langs/all.js:18
 msgid ""
 "Export them into different formats: website, ePub, SCORM (for Moodle and "
 "other LMS)..."
@@ -14140,59 +14189,59 @@ msgstr ""
 "Esportare in diversi formati: sito Web, ePub, SCORM (per Moodle ed altri "
 "LMS) eccetera."
 
-#: exe/webui/tools/assistant/langs/en.js:19
+#: exe/webui/tools/assistant/langs/all.js:19
 msgid "In this short guide we will explain how to use eXeLearning."
 msgstr "In questa breve guida verrà spiegato come usare eXeLearning."
 
-#: exe/webui/tools/assistant/langs/en.js:20
+#: exe/webui/tools/assistant/langs/all.js:20
 msgid "The first step is to create a new project."
 msgstr "Il primo passo è creare un progetto."
 
-#: exe/webui/tools/assistant/langs/en.js:21
+#: exe/webui/tools/assistant/langs/all.js:21
 msgid "How to create a project"
 msgstr "Come si crea un progetto"
 
-#: exe/webui/tools/assistant/langs/en.js:22
+#: exe/webui/tools/assistant/langs/all.js:22
 msgid "Create a project"
 msgstr "Creare un progetto"
 
-#: exe/webui/tools/assistant/langs/en.js:23
+#: exe/webui/tools/assistant/langs/all.js:23
 msgid "Switch to the \"Properties\" tab."
 msgstr "Passare alla linguetta \"Proprietà\"."
 
-#: exe/webui/tools/assistant/langs/en.js:24
+#: exe/webui/tools/assistant/langs/all.js:24
 msgid "Fill in the following fields:"
 msgstr "Completare questi campi:"
 
-#: exe/webui/tools/assistant/langs/en.js:27
+#: exe/webui/tools/assistant/langs/all.js:27
 msgid "General description (about 150 characters)"
 msgstr "Descrizione generale (circa 150 caratteri)"
 
-#: exe/webui/tools/assistant/langs/en.js:30
+#: exe/webui/tools/assistant/langs/all.js:30
 msgid "Click \"Save\"."
 msgstr "Clic su \"Salva\"."
 
-#: exe/webui/tools/assistant/langs/en.js:31
+#: exe/webui/tools/assistant/langs/all.js:31
 msgid "Switch back to the \"Authoring\" tab."
 msgstr "Tornare alla linguetta \"Creazione\"."
 
-#: exe/webui/tools/assistant/langs/en.js:32
+#: exe/webui/tools/assistant/langs/all.js:32
 msgid "Remember to save your project whenever you change something."
 msgstr "Ricordare di salvare il progetto quando lo si modifica."
 
-#: exe/webui/tools/assistant/langs/en.js:33
+#: exe/webui/tools/assistant/langs/all.js:33
 msgid "Now you can start adding pages to your project!"
 msgstr "Ora è possibile iniziare ad aggiungere pagine al progetto."
 
-#: exe/webui/tools/assistant/langs/en.js:34
+#: exe/webui/tools/assistant/langs/all.js:34
 msgid "How to add pages"
 msgstr "Come si aggiungono pagine"
 
-#: exe/webui/tools/assistant/langs/en.js:35
+#: exe/webui/tools/assistant/langs/all.js:35
 msgid "Adding Pages"
 msgstr "Aggiungere pagine"
 
-#: exe/webui/tools/assistant/langs/en.js:36
+#: exe/webui/tools/assistant/langs/all.js:36
 msgid ""
 "The buttons to manage the pages are on the left part of the screen, just "
 "over the block \"Outline\"."
@@ -14200,11 +14249,11 @@ msgstr ""
 "I bottoni per la gestione delle pagine sono sulla sinistra, sopra al "
 "blocco \"Profilo\"."
 
-#: exe/webui/tools/assistant/langs/en.js:37
+#: exe/webui/tools/assistant/langs/all.js:37
 msgid "Click on \"Add Page\"."
 msgstr "Clic su \"Aggiungi pagina\"."
 
-#: exe/webui/tools/assistant/langs/en.js:38
+#: exe/webui/tools/assistant/langs/all.js:38
 msgid ""
 "Click on \"Rename\" or doubleclick on the page you had just created to "
 "change its name."
@@ -14212,11 +14261,11 @@ msgstr ""
 "Clic su \"Rinomina\" o doppio clic sulla pagina appena creata per "
 "cambiare il suo nome."
 
-#: exe/webui/tools/assistant/langs/en.js:39
+#: exe/webui/tools/assistant/langs/all.js:39
 msgid "You can delete it using \"Delete\"."
 msgstr "Può essere cancellata usando \"Cancella\"."
 
-#: exe/webui/tools/assistant/langs/en.js:40
+#: exe/webui/tools/assistant/langs/all.js:40
 msgid ""
 "Create as many pages as you need and organise them to your liking by "
 "using the arrows that appear on the bottom of the block \"Outline\":"
@@ -14224,37 +14273,37 @@ msgstr ""
 "Creare tutte le pagine necessarie ed organizzarle a piacere usando le "
 "frecce che compaiono al fondo del blocco \"Profilo\":"
 
-#: exe/webui/tools/assistant/langs/en.js:41
+#: exe/webui/tools/assistant/langs/all.js:42
 msgid "Once the page is created you can add content."
 msgstr "Una volta creata la pagina può essere inserito il contenuto."
 
-#: exe/webui/tools/assistant/langs/en.js:42
+#: exe/webui/tools/assistant/langs/all.js:43
 msgid "How to add content"
 msgstr "Come aggiungere contenuti"
 
-#: exe/webui/tools/assistant/langs/en.js:43
+#: exe/webui/tools/assistant/langs/all.js:44
 msgid "Adding content"
 msgstr "Aggiungere contenuti"
 
-#: exe/webui/tools/assistant/langs/en.js:44
+#: exe/webui/tools/assistant/langs/all.js:45
 msgid "On the bottom left of the screen there is an area iDevices."
 msgstr "Sulla sinistra al fondo c'è l'area degli iDevices."
 
-#: exe/webui/tools/assistant/langs/en.js:45
+#: exe/webui/tools/assistant/langs/all.js:46
 msgid "IDevices are blocks that you can add to your pages."
 msgstr "Gli iDevices sono blocchi che possono essere inseriti nella pagina."
 
-#: exe/webui/tools/assistant/langs/en.js:46
+#: exe/webui/tools/assistant/langs/all.js:47
 msgid ""
 "They are organized by categories: interactive, non-interactive "
 "activities..."
 msgstr "Sono organizzati per categorie: attività interattive, non interattive ecc."
 
-#: exe/webui/tools/assistant/langs/en.js:47
+#: exe/webui/tools/assistant/langs/all.js:48
 msgid "A simple test:"
 msgstr "Una semplice prova:"
 
-#: exe/webui/tools/assistant/langs/en.js:48
+#: exe/webui/tools/assistant/langs/all.js:49
 msgid ""
 "Add a Free Text iDevice by clicking on its name (it's under Textual "
 "Information)."
@@ -14262,15 +14311,15 @@ msgstr ""
 "Aggiungere un iDevice Testo libero cliccando sul suo nome (sotto "
 "Informazioni di testo)"
 
-#: exe/webui/tools/assistant/langs/en.js:49
+#: exe/webui/tools/assistant/langs/all.js:50
 msgid "Write something."
 msgstr "Scrivere qualcosa."
 
-#: exe/webui/tools/assistant/langs/en.js:50
+#: exe/webui/tools/assistant/langs/all.js:51
 msgid "Save it clicking on the button below the editor: "
 msgstr "Salvare cliccando sul bottone sotto all'editor: "
 
-#: exe/webui/tools/assistant/langs/en.js:51
+#: exe/webui/tools/assistant/langs/all.js:53
 msgid ""
 "That's all! If you add another iDevice you will see that you can also use"
 " the buttons to choose the position that each iDevice fills:"
@@ -14278,15 +14327,15 @@ msgstr ""
 "Ecco fatto! Aggiungendo un altro iDevice si vedranno anche i bottoni per "
 "indicare la posizione occupata da ogni iDevice:"
 
-#: exe/webui/tools/assistant/langs/en.js:52
+#: exe/webui/tools/assistant/langs/all.js:54
 msgid "Test the different iDevices: Interactive Activities, Image Gallery..."
 msgstr "Provare i diversi iDevice: Attività interattive, Galleria d'immagini ecc."
 
-#: exe/webui/tools/assistant/langs/en.js:53
+#: exe/webui/tools/assistant/langs/all.js:55
 msgid "It's so easy to create contents."
 msgstr "E' facile creare contenuti."
 
-#: exe/webui/tools/assistant/langs/en.js:54
+#: exe/webui/tools/assistant/langs/all.js:56
 msgid ""
 "The only thing left is to export the project so you can view it in web "
 "format, include it in your LMS or allow other people to see and use it."
@@ -14294,19 +14343,19 @@ msgstr ""
 "Rimane soltanto da esportare il progetto: per vederlo in formato Web, "
 "oppure per includerlo in un LMS da far vedere ed usare da altri."
 
-#: exe/webui/tools/assistant/langs/en.js:55
+#: exe/webui/tools/assistant/langs/all.js:57
 msgid "How to export your project"
 msgstr "Come si esporta un progetto"
 
-#: exe/webui/tools/assistant/langs/en.js:56
+#: exe/webui/tools/assistant/langs/all.js:58
 msgid "Exporting a project"
 msgstr "Esportazione di un progetto"
 
-#: exe/webui/tools/assistant/langs/en.js:57
+#: exe/webui/tools/assistant/langs/all.js:59
 msgid "Switch to \"File\" - \"Export\" and choose the format that suits you:"
 msgstr "Aprire \"File - Esporta\" e scegliere un formato adatto:"
 
-#: exe/webui/tools/assistant/langs/en.js:58
+#: exe/webui/tools/assistant/langs/all.js:60
 msgid ""
 "Web Site (browsable web pages). It is the same content that you can see  "
 "from Tools - Preview."
@@ -14314,7 +14363,7 @@ msgstr ""
 "Sito Web (pagine Web sfogliabili). E' lo stesso formato che si può vedere"
 " con Strumenti - Anteprima."
 
-#: exe/webui/tools/assistant/langs/en.js:59
+#: exe/webui/tools/assistant/langs/all.js:61
 msgid ""
 "Single (HTML) Page (this combines all your pages into one so you can "
 "print your content)."
@@ -14322,19 +14371,19 @@ msgstr ""
 "Singola pagina (HTML). Combina tutte le pagine in una, per poterla "
 "stampare."
 
-#: exe/webui/tools/assistant/langs/en.js:60
+#: exe/webui/tools/assistant/langs/all.js:62
 msgid "ePub3 (e-book)."
 msgstr "ePub3 (e-book)."
 
-#: exe/webui/tools/assistant/langs/en.js:61
+#: exe/webui/tools/assistant/langs/all.js:63
 msgid "SCORM (to be used in Moodle and other LMS platforms)."
 msgstr "SCORM (da usare con Moodle o altre piattaforme LMS)."
 
-#: exe/webui/tools/assistant/langs/en.js:62
+#: exe/webui/tools/assistant/langs/all.js:64
 msgid "Name the folder or file exported and choose \"Save\"."
 msgstr "Dare un nome alla cartella o al file e scegliere \"Salva\"."
 
-#: exe/webui/tools/assistant/langs/en.js:63
+#: exe/webui/tools/assistant/langs/all.js:65
 msgid ""
 "That's all! In such a simple way you have already created an educational "
 "resource."
@@ -14342,7 +14391,7 @@ msgstr ""
 "Tutto qua! Con questi semplici passi e' già stata creata una risorsa "
 "educativa."
 
-#: exe/webui/tools/assistant/langs/en.js:64
+#: exe/webui/tools/assistant/langs/all.js:66
 msgid ""
 "Remember that whenever you want to edit or modify the project you will "
 "only have to open your elp file with eXe and work with it. At the end you"
@@ -14351,7 +14400,7 @@ msgstr ""
 "Ricordare che per modificare il progetto è sufficiente aprire il file ELP"
 " con eXe ed elaborarlo. Al termine andrà nuovamente esportato."
 
-#: exe/webui/tools/assistant/langs/en.js:65
+#: exe/webui/tools/assistant/langs/all.js:67
 msgid ""
 "These are the most common options, but there are more. In the next "
 "section we will explain where to find them."
@@ -14359,11 +14408,11 @@ msgstr ""
 "Queste sono le opzioni più comuni, ma ce ne sono molte altre. Nella "
 "prossima sezione verrà indicato dove trovarle."
 
-#: exe/webui/tools/assistant/langs/en.js:66
+#: exe/webui/tools/assistant/langs/all.js:68
 msgid "More Options"
 msgstr "Altre opzioni"
 
-#: exe/webui/tools/assistant/langs/en.js:67
+#: exe/webui/tools/assistant/langs/all.js:69
 msgid ""
 "On the top of the screen you will find an option \"Advanced user\". If "
 "you enable it, more export options, new elements in the Properties tab "
@@ -14373,15 +14422,15 @@ msgstr ""
 "abilitata verranno mostrate più opzioni di esportazione, più strumenti ed"
 " altri elementi nella linguetta Proprietà."
 
-#: exe/webui/tools/assistant/langs/en.js:68
+#: exe/webui/tools/assistant/langs/all.js:70
 msgid "Further help options:"
 msgstr "Altre opzioni di aiuto:"
 
-#: exe/webui/tools/assistant/langs/en.js:71
+#: exe/webui/tools/assistant/langs/all.js:73
 msgid "(resolve your doubts)"
 msgstr "(risolvere i dubbi)"
 
-#: exe/webui/tools/assistant/langs/en.js:73
+#: exe/webui/tools/assistant/langs/all.js:75
 msgid "Further information:"
 msgstr "Altre informazioni:"
 
@@ -14474,19 +14523,19 @@ msgstr "Inserire un valore di colore Hex (#000000-#ffffff)"
 msgid "'"
 msgstr "'"
 
-#: exe/webui/tools/style-designer/js/app.js:1281
+#: exe/webui/tools/style-designer/js/app.js:1316
 msgid "Create new style"
 msgstr "Crea nuovo stile"
 
-#: exe/webui/tools/style-designer/js/app.js:1282
+#: exe/webui/tools/style-designer/js/app.js:1317
 msgid "Name the new style"
 msgstr "Dare il nome al nuovo stile"
 
-#: exe/webui/tools/style-designer/js/app.js:1304
+#: exe/webui/tools/style-designer/js/app.js:1339
 msgid "Style Designer windows will be closed. "
 msgstr "La finestra di modifica dello stile verrà chiusa. "
 
-#: exe/webui/tools/style-designer/js/app.js:1307
+#: exe/webui/tools/style-designer/js/app.js:1342
 msgid "Page will be reloaded. "
 msgstr "La pagina verrà ricaricata. "
 
@@ -14942,13 +14991,4 @@ msgstr ""
 "Il file idevices/generic.data oppure il pacchetto che si sta caricando è "
 "stato creato con una versione più recente di eXe. Aggiornare eXe e "
 "riprovare."
-
-#~ msgid "EDIA Project: English PBL"
-#~ msgstr "Progetto EDIA: PBL inglese"
-
-#~ msgid " by "
-#~ msgstr " di "
-
-#~ msgid "CeDeC"
-#~ msgstr "CeDeC"
 

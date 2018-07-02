@@ -1133,11 +1133,15 @@ Ext.define('eXe.controller.Toolbar', {
 				var templates = Ext.JSON.decode(response.responseText),
 					menu = this.getTemplatesMenu(), i, item;
 					menu.removeAll();
-
-    			for (i = templates.length-1; i >= 0; i--) {
-                    item = Ext.create('Ext.menu.Item', { text: templates[i].label, path: templates[i].template });
-    				menu.insert(0, item);
-    			}
+				if (templates.length == 0) {
+					item = Ext.create('Ext.menu.Item', {text: _("No templates available"), disabled: true});
+					menu.insert(0, item);
+				} else {
+	    			for (i = templates.length-1; i >= 0; i--) {
+	    				item = Ext.create('Ext.menu.Item', { text: templates[i].label, path: templates[i].template });
+	    				menu.insert(0, item);
+	    			}
+				}
     		}
     	})
     	return true;

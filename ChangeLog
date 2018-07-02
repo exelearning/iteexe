@@ -1,3 +1,61 @@
+intef-exe (3:2.2) lucid; urgency=medium
+  * Ignacio Gros
+    - Fix problems with page counter positions (#325).
+    - Add information tooltip for the "Advanced user" option.
+    - Modal Window: Height problem in Chrome (#328).
+
+  * Juan Rafael Fernández
+    - Fix translation error in Basque translation, detected by Gaizka Bilbao.
+
+  * SDWeb
+    - Fix error preventing JavaScript Idevices from being copied when installing eXe (#324).
+
+ -- eXeLearning <admin@exelearning.net>  Tue, 19 Jun 2018 07:55:32 +0200
+
+intef-exe (3:2.2~beta2) lucid; urgency=medium
+  * Ignacio Gros
+    - Fix help links not working (#304).
+    - Add alternative text to some assistant images.
+    - Scrambled List behavior in IE: Hidden arrows (#305).
+    - Hide Ustad Mobile export (#120).
+    - iDevices with no icon presentation revision (#312).
+    - Tknika Style: Pagination Styles.
+    - Effects (FX): ePub readers behavior revision (Readium and Adobe D. Editions) (#318 and #319).
+    - Fix some effects not working on Readium (#319).
+    - Effects (FX) in TinyMCE: Presentation revision.
+    - JavaScript bug fixes.
+
+  * Juan Rafael Fernández
+    - New full Spanish translation, by Juan Rafael Fernández.
+    - New full Basque translation, by Joxemi Andonegi.
+    - New full Catalan translation, by Carles Ferrando Garcia.
+    - New full Galician translation, by Pablo Nimo.
+    - New full Italian translation, by Andrea Primiani.
+    - New full Valencian translation, by Pilar Embid.
+    - New full French translation, by Jesús Miguel Domínguez.
+    - New full Portuguese translation, by Dionisio Martínez Soler.
+    - Cleanup of Brazilian Portuguese translation.
+
+  * SDWeb
+    - Show never instead of 0 when autosave warning is disabled.
+    - Set save warning enabled by default.
+    - Fix JavaScript Idevices using wrong path when exporting.
+    - Fix ID generation for ePub spine.
+    - Add message for templates menu when there is no templates.
+    - Fix metadata initialization when creating from template (prevent it from getting template's values).
+    - Remove wrong metadata from PBL template (#307).
+    - Add HTML tags' attributes to template translation.
+    - Fix export with JavaScript Idevices for some types of export (#311).
+    - Fix error message when downloading classification sources.
+    - Update MacOS package generation instructions (#301).
+    - Change templates translation mechanism to allow the translation of any field.
+    - Translate CeDeC's name to english in PBL template (#307).
+    - Fix JavaScript error with some ePub readers when inserting a YouTube video (#273).
+    - Fix error when saving "Add pagination" export option.
+    - Don't show save message warning if another modal window is open.
+
+ -- eXeLearning <admin@exelearning.net>  Mon, 04 Jun 2018 06:38:05 +0200
+
 intef-exe (3:2.2~beta1) lucid; urgency=medium
   * Ignacio Gros
     - Advanced/Simplified view.
@@ -17,13 +75,12 @@ intef-exe (3:2.2~beta1) lucid; urgency=medium
     - Ask for confirmation before deleting an iDevice.
     - Information messages after saving or deleting an iDevice.
     - Accessibility issues and feature requests made by the CENTAC.
-    - JavaScript revision to prevent errors on Readium (Content Security Policy).
+    - JavaScript revision to prevent errors on some ePub readers like Readium (Content Security Policy).
     - Styles revision to fit the new options.
+    - Preview in any browser and consistent link behavior.
+    - Common color picker (moved to its own folder).
+    - TinyMCE: Load on demand revision.
     - JavaScript bug fixes.
-    - Fix inconsitencies in link behavior.
-    - Separate color picket to its own folder.
-    - Hide the "Powered by TinyMCE" message when the editor is hidden.
-    - Fix strange effect when loading TinyMCE.
 
   * Miguel Ángel Pereira and Cristina Valdera
     - Help texts revision.
@@ -56,6 +113,8 @@ intef-exe (3:2.2~beta1) lucid; urgency=medium
 
   * Pedro Peña
     - Mark exported SCORMS and IMS resources in LOM-es metadata as editable by eXe.
+
+ -- eXeLearning <admin@exelearning.net>  Wed, 02 May 2018 15:06:45 +0200
 
 intef-exe (3:2.1.3) lucid; urgency=medium
   * Ignacio Gros
@@ -141,7 +200,7 @@ intef-exe (3:2.1.3~beta1) lucid; urgency=medium
     - Improve tables with CSS. 2 different table designs: default and minimalist.
     - CodeMagic Plugin: Full Screen mode.
     - License revision.
-    	- Trado and Diwanltr fonts had to be removed from eXe.
+      - Trado and Diwanltr fonts had to be removed from eXe.
     - Colorpicker plugin (use it to select a table background color, etc.).
     - Allow and export any file format in the Styles (#207).
     - Add id or class to each BODY tag (#161).
@@ -575,7 +634,7 @@ intef-exe (3:2.0.2) lucid; urgency=low
     - Prevent class change in media elements
     - Additional change in atributes.js: if media related classes are being used, the combo is disabled to prevent user from changing it
     - onclick event added to image preview so that user can refresh manually the image.
-    - <meta content="text/html; charset=utf-8" http-equiv="Contcent-Type">   added to all html in TinyMCE
+    - <meta content="text/html; charset=utf-8" http-equiv="Content-Type">   added to all html in TinyMCE
 
   * Juan Rafael Fernández ]
     - Contributes to updating Debian packaging to dh7, fixed naming, permissions, adding dependencies etc.

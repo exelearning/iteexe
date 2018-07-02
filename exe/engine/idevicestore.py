@@ -560,7 +560,7 @@ class IdeviceStore:
         """
         Load the JavaScript iDevices from its own directory
         """
-        iDevicesDir = self.config.webDir/'scripts'/'idevices'
+        iDevicesDir = self.config.jsIdevicesDir
         
         log.debug("Load JS iDevices from " + iDevicesDir)
 

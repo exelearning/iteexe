@@ -106,11 +106,10 @@ class PackageStore:
         package.filename = ""
         
         if G.application.config.locale.split('_')[0] != 'zh':
-            package._lang = G.application.config.locale.split('_')[0]
+            package.lang = G.application.config.locale.split('_')[0]
         else:
-            package._lang = G.application.config.locale
+            package.lang = G.application.config.locale
             
-        package.lang = package._lang
         package.translatePackage()
         package.isChanged = False
         

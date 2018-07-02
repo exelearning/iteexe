@@ -233,6 +233,9 @@ class Config(object):
         # Default template that will be used to all new content
         self.defaultContentTemplate = "Base"
         
+        # JS Idevices directory
+        self.jsIdevicesDir = Path(self.configDir/'scripts'/'idevices').abspath()
+        
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
@@ -243,7 +246,7 @@ class Config(object):
         # Format the files and images to standard ISO 9660
         self.cutFileName = "0"
         
-        self.autosaveTime = "0"
+        self.autosaveTime = "10"
         
         # Try to make the defaults a little intelligent
         # Under devel trees, webui is the default webdir
@@ -341,10 +344,12 @@ class Config(object):
                 self.configDir = Path(system.appDataDir)
                 self.stylesDir = Path(self.configDir)/'style'
                 self.templatesDir = Path(self.configDir)/'content_template'
+                self.jsIdevicesDir = Path(self.configDir)/'scripts'/'idevices'
                 # We'll just upgrade their config file for them for now...
                 system.configDir = self.configDir
                 system.stylesDir = Path(self.configDir)/'style'
                 system.templatesDir = Path(self.configDir)/'content_template'
+                system.jsIdevicesDir = Path(self.configDir)/'scripts'/'idevices'
                 del system.appDataDir
 
                 self.audioMediaConverter_au = system.audioMediaConverter_au
@@ -394,10 +399,12 @@ class Config(object):
                 self.webDir         = Path(system.webDir)
                 self.stylesDir      = Path(self.configDir)/'style'
                 self.templatesDir   = Path(self.configDir)/'content_template'
+                self.jsIdevicesDir  = Path(self.configDir)/'scripts'/'idevices'
                 self.jsDir          = Path(system.jsDir)
             else:
                 self.stylesDir      = Path(self.webDir/'style').abspath()
-                self.templatesDir      = Path(self.webDir/'content_template').abspath()
+                self.templatesDir   = Path(self.webDir/'content_template').abspath()
+                self.jsIdevicesDir  = Path(self.webDir/'scripts'/'idevices').abspath()
 
             self.assumeMediaPlugins = False
             if self.configParser.has_option('system', 'assumeMediaPlugins'):
@@ -427,23 +434,36 @@ class Config(object):
                 self.copyTemplates()
             else:
                 self.updateTemplates()
+
+            # Copy JavaScript Idevices
+            if not os.path.exists(self.jsIdevicesDir) or not os.listdir(self.jsIdevicesDir):
+                self.copy_js_idevices()
+            else:
+                self.update_js_idevices()
         else:
             if G.application.portable:
                 if os.name == 'posix':
                     self.stylesDir = Path(self.webDir/'..'/'..'/'..'/'style')
                     self.templatesDir = Path(self.webDir/'..'/'..'/'..'/'content_template')
+                    self.jsIdevicesDir = Path(self.webDir/'..'/'..'/'..'/'scripts'/'idevices')
+                    
                 else:
                     self.stylesDir = Path(self.webDir/'..'/'style')
                     self.templatesDir = Path(self.webDir/'..'/'content_template')
+                    self.jsIdevicesDir = Path(self.webDir/'..'/'scripts'/'idevices')
                 
                 if not os.path.exists(self.stylesDir) or not os.listdir(self.stylesDir):
                     self.copyStyles()
                     
                 if not os.path.exists(self.templatesDir) or not os.listdir(self.templatesDir):
                     self.copyTemplates()
+
+                if not os.path.exists(self.jsIdevicesDir) or not os.listdir(self.jsIdevicesDir):
+                    self.copy_js_idevices()
             else:
                 self.stylesDir = Path(self.webDir/'style').abspath()
                 self.templatesDir = Path(self.webDir/'content_template').abspath()
+                self.jsIdevicesDir  = Path(self.webDir/'scripts'/'idevices').abspath()
 
         # Get the list of recently opened projects
         self.recentProjects = []
@@ -629,6 +649,55 @@ class Config(object):
                     if os.path.exists(current_dest_template):
                         shutil.rmtree(current_dest_template)
                     shutil.copytree(current_template, current_dest_template)
+                else:
+                    shutil.copy(current_template, current_dest_template)
+
+    def copy_js_idevices(self):
+        """
+        Copies the default JS Idevices to the configuration folder.
+        It's usually only executed the first time eXe is installed or the
+        moment the user updates to the first version that used them.
+
+        :rtype: void
+        """
+        # Get the path where the JsIdevices are
+        jsidevices_backup = self.webDir / 'scripts' / 'idevices'
+
+        # Check if the path exists (if it doesn't there is nothing to be done)
+        if os.path.exists(jsidevices_backup):
+            # Remove the user's JsIdevices directory in case it exists
+            if os.path.exists(self.jsIdevicesDir) and not os.listdir(self.jsIdevicesDir):
+                shutil.rmtree(self.jsIdevicesDir)
+
+            # Copy the JsIdevices
+            shutil.copytree(jsidevices_backup, self.jsIdevicesDir)
+
+    def update_js_idevices(self):
+        """
+        Update JS Idevices from the ones that come with eXe.
+        This will be done everytime eXe is started, so in case
+        any JsIdevice is updated it will automatically update the first
+        time the user opens eXe.
+
+        :rtype: void
+        """
+        # Get the path where the JsIdevices are
+        jsidevices_backup = self.webDir / 'scripts' / 'idevices'
+
+        # Compare the directories' modification time to see if the update is necessary
+        if os.stat(jsidevices_backup).st_mtime - os.stat(self.jsIdevicesDir).st_mtime > 1:
+            # Go through all JsIdevices
+            for name in os.listdir(jsidevices_backup):
+                # Copy the Idevice
+                current_idevice = os.path.join(jsidevices_backup, name)
+                current_dest_idevice = os.path.join(self.jsIdevicesDir, name)
+
+                # This shouldn't really be necessary, but we keep it as
+                # it would copy the exact structure of the 'idevices' folder.
+                if os.path.isdir(current_idevice):
+                    if os.path.exists(current_dest_idevice):
+                        shutil.rmtree(current_dest_idevice)
+                    shutil.copytree(current_idevice, current_dest_idevice)
                 else:
                     shutil.copy(current_template, current_dest_template)
 

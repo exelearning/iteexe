@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: translations@exelearning.net\nPOT-Creation-Date: 2018-04-26 19:33+0200\nPO-Revision-Date: 2017-07-23 17:03+0200\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage: zh_Hant_TW\nLanguage-Team: Chinese Traditional <zh-l10n@linux.org.tw>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.2\nReport-Msgid-Bugs-To: translations@exelearning.net\nPOT-Creation-Date: 2018-06-17 20:26+0200\nPO-Revision-Date: 2017-07-23 17:03+0200\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage: zh_Hant_TW\nLanguage-Team: Chinese Traditional <zh-l10n@linux.org.tw>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "\u5efa\u7acb\u6848\u4f8b\u6545\u4e8b\u3002\u4e00\u500b\u597d\u7684\u6848\u4f8b\u63cf\u8ff0\u4e00\u9805\u722d\u8b70\uff0c\u6216\u63cf\u8ff0\u5728\u67d0\u500b\u60c5\u5883\u4e0b\u7684\u67d0\u500b\u4eba\u7269\u3002\u5b83\u4e5f\u61c9\u8a72\u5141\u8a31\u5927\u5bb6\u63a1\u53d6\u67d0\u4e9b\u884c\u52d5\u4ee5\u4fbf\u89e3\u6c7a\u9019\u500b\u60c5\u5883\u3002", 
  "Telugu ": "\u6cf0\u76e7\u56fa\u8a9e", 
  "Choose an effect (you can change it later).": "\u8acb\u9078\u64c7\u4e00\u500b\u6548\u679c\uff08\u7a0d\u5f8c\u60a8\u53ef\u4ee5\u66f4\u6539\uff09\u3002", 
@@ -361,7 +361,6 @@ translations = {
  "Add another Option": "\u65b0\u589e\u5176\u4ed6\u9078\u9805", 
  "Effect for showing wrong overlay": "\u7b54\u932f\u6642\u7684\u986f\u793a\u6548\u679c", 
  "(license of the original Style)": "(\u539f\u59cb\u6a23\u5f0f\u7684\u6388\u6b0a)", 
- "Ustad Mobile": "Ustad Mobile", 
  "Publishing document to Procom\u00fan": "\u5c07\u6587\u4ef6\u767c\u5e03\u5230 Procom\u00fan", 
  "Ukrainian ": "\u70cf\u514b\u862d\u8a9e", 
  "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used.": "\u8f38\u5165\u60a8\u8981\u8207\u4e0b\u8f09\u6a94\u6848\u95dc\u806f\u7684\u6587\u5b57\u3002\u4f8b\u5982\u63d0\u4f9b\u60a8\u8981\u5b78\u751f\u5011\u5728\u6a94\u6848\u4e0b\u8f09\u5f8c\u505a\u4ec0\u9ebc\uff0c\u6216\u662f\u5982\u4f55\u4f7f\u7528\u6b64\u6a94\u6848\u3002", 

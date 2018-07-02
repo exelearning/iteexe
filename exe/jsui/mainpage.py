@@ -510,9 +510,11 @@ class MainPage(RenderableLivePage):
     def progressDownload(self, numblocks, blocksize, filesize, client):
         try:
             percent = min((numblocks * blocksize * 100) / filesize, 100)
+            if percent < 0:
+                percent = 0
         except:
             percent = 100
-        client.sendScript('Ext.MessageBox.updateProgress(%f, "%d%%", "Downloading...")' % (float(percent) / 100, percent))
+        client.sendScript('Ext.MessageBox.updateProgress(%f, "%d%%", "%s")' % (float(percent) / 100, percent, _("Downloading...")))
         log.info('%3d' % (percent))
 
     def handleSourcesDownload(self, client):
@@ -520,18 +522,19 @@ class MainPage(RenderableLivePage):
         Download taxon sources from url and deploy in $HOME/.exe/classification_sources
         """
         url = 'https://github.com/exelearning/classification_sources/raw/master/classification_sources.zip'
-        client.sendScript('Ext.MessageBox.progress("Sources Download", "Connecting to classification sources repository...")')
+        client.sendScript('Ext.MessageBox.progress("%s", "%s")' %(_("Sources Download"), _("Connecting to classification sources repository...")))
         d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
 
         def successDownload(result):
             filename = result[0]
             if not zipfile.is_zipfile(filename):
+                client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("There has been an error while trying to download classification sources. Please try again later.")))
                 return None
 
             zipFile = zipfile.ZipFile(filename, "r")
             try:
                 zipFile.extractall(G.application.config.configDir)
-                client.sendScript('Ext.MessageBox.updateProgress(1, "100%", "Success!")')
+                client.sendScript('Ext.MessageBox.hide()')
             finally:
                 Path(filename).remove()
 
