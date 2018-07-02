@@ -938,7 +938,10 @@ var $exeAuthoring = {
             else if (tinymce.majorVersion==3) $exeTinyMCE.init("specific_textareas","exe-html-editor");
 
             // Enable color pickers (provisional solution)
-            $exeAuthoring.iDevice.colorPicker.init();
+            // To review: 100 ms delay because the color picker won't work when combined with $exeTinyMCE.init
+            setTimeout(function(){
+                $exeAuthoring.iDevice.colorPicker.init();
+            },100);
 			
             // Enable file uploaders
             $exeAuthoring.iDevice.filePicker.init();
