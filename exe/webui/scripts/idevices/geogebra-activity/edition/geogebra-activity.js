@@ -51,7 +51,7 @@ var $exeDevice = {
 			<div id="eXeAutoGeogebraForm">\
 				<p>'+_("Insert a GeoGebra activity from www.geogebra.org. It requires an Internet connection.")+'</p>\
 				<p>\
-					<label for="geogebraActivityInstructions">'+_("Instructions")+': </label><input type="text" name="geogebraActivityInstructions" id="geogebraActivityInstructions" /> '+_("Only text, no HTML.")+'\
+					<label for="geogebraActivityInstructions">'+_("Instructions")+': </label><textarea id="geogebraActivityInstructions" class="exe-html-editor"\></textarea>\
 				</p>\
 				<fieldset>\
 					<legend>'+_("General Settings")+'</legend>\
@@ -82,6 +82,7 @@ var $exeDevice = {
 						<ul>\
 							<li>'+_("The button will only be displayed when exporting as SCORM and while editing in eXeLearning.")+'</li>\
 							<li>'+_('Include only one GeoGebra activity with a "Save score" button in the page.')+'</li>\
+							<li>'+_("The activity with button has to be the last GeoGebra activity on the page (or it won't work).")+'</li>\
 							<li>'+_('Do not include a "SCORM Quiz" iDevice in the same page.')+'</li>\
 						</ul>\
 					</div>\
@@ -160,7 +161,9 @@ var $exeDevice = {
 			
 			var div = $("div",wrapper);
             
-            if (div.length!=1) return;
+            if (div.length==0) return;
+			div = div.eq(0);
+			if (!div.hasClass("auto-geogebra")) return;			
 			
 			var css = div.attr("class");
             
@@ -181,6 +184,7 @@ var $exeDevice = {
 					$("#geogebraActivitySCORMbuttonText").val(btn);
 				}
 				$("#geogebraActivitySCORMoptions").css("visibility","visible");
+				$("#geogebraActivitySCORMinstructions").show();
 			}
 			var parts = css.split(" ");
 			for (var i=0;i<parts.length;i++) {
@@ -209,15 +213,9 @@ var $exeDevice = {
 			
 			// Instructions
 			var instructions = $(".auto-geogebra-instructions",wrapper);
-			if (instructions.length==1) $("#geogebraActivityInstructions").val(instructions.text());
+			if (instructions.length==1) $("#geogebraActivityInstructions").val(instructions.html());
 		}		
 		
-	},
-	
-	removeTags : function(txt){
-		var tmp = document.createElement("DIV");
-		tmp.innerHTML = txt;
-		return tmp.textContent || tmp.innerText || "";		
 	},
 	
 	save : function(){
@@ -245,8 +243,8 @@ var $exeDevice = {
 		var divContent = "";
 		
 		// Instructions
-		var instructions = this.removeTags($("#geogebraActivityInstructions").val());
-		if (instructions!="") divContent = '<p class="auto-geogebra-instructions">'+instructions+'</p>';
+		var instructions = tinymce.editors[0].getContent();
+		if (instructions!="") divContent = '<div class="auto-geogebra-instructions">'+instructions+'</div>';
 		
 		divContent += '<p><a href="'+urlBase+url+'" target="_blank">'+urlBase+url+' ('+_("New Window")+')</a></p>';
         

@@ -15,6 +15,7 @@ var $eXeAutoGeogebra = {
         height : 363
     },
 	hasSCORMbutton : false,
+	isInExe : false,
     getBase : function(){
         if (typeof($exeAuthoring)!='undefined') return "/scripts/idevices/geogebra-activity/export/";
         return "";
@@ -33,6 +34,7 @@ var $eXeAutoGeogebra = {
         }
 		if ($(".QuizTestIdevice .iDevice").length>0) this.hasSCORMbutton = true;
         this.indicator.start();
+		if (typeof($exeAuthoring)!='undefined') this.isInExe = true;
 		if ($("body").hasClass("exe-scorm")) this.loadSCORM_API_wrapper();
 		else this.loadGeogebraScript();
     },
@@ -62,7 +64,7 @@ var $eXeAutoGeogebra = {
 				var intro = "";
 				var instructions = $(".auto-geogebra-instructions",this);
 				if (instructions.length==1 && instructions.text()!="") {
-					intro = '<p class="auto-geogebra-instructions">'+instructions.text()+'</p>';
+					intro = '<div class="auto-geogebra-instructions">'+instructions.html()+'</div>';
 				}
 				$(this).before(intro).wrap('<div class="auto-geogebra-wrapper"></div>').addClass("auto-geogebra-loading").css({
 					"width":size[0]+"px",
@@ -163,7 +165,12 @@ var $eXeAutoGeogebra = {
 			if (buttonText!="") {
 				if (this.hasSCORMbutton==false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
 					this.hasSCORMbutton=true;
-					$(e).after('<p class="auto-geogebra-get-score"><a href="#" id="auto-geogebra-sendScore-'+sfx+'">'+buttonText+'</a></p>');
+					var fB = '<div class="auto-geogebra-get-score iDevice_buttons feedback-button js-required">';
+							if (!this.isInExe) fB += '<form action="#" onsubmit="return false">';
+								fB += '<p><input type="button" id="auto-geogebra-sendScore-'+sfx+'" value="'+buttonText+'" class="feedbackbutton" /></p>';
+							if (!this.isInExe) fB += '</form>';
+						fB += '</div>';
+					$(e).after(fB);
 					$("#auto-geogebra-sendScore-"+sfx).click(function(){
 						var id = this.id.replace("auto-geogebra-sendScore-","");
 						$eXeAutoGeogebra.sendScore(id);
