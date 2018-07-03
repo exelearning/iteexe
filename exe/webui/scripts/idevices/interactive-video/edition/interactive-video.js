@@ -153,6 +153,15 @@ var $exeDevice = {
 				//]]></script>\
 			</div>';
 			
+		var isLocalVideo = false;
+		var videoFile = $("#interactiveVideoFile").val();
+		if (videoFile!="") {
+			var videoFileName = videoFile.split("/");
+				videoFileName = videoFileName[videoFileName.length-1];			
+				isLocalVideo = true;
+				myVideo = videoFile;
+		}			
+			
 		var html = '\
 			<div class="exe-interactive-video">\
 				<p id="exe-interactive-video-file" class="js-hidden">\
@@ -358,11 +367,8 @@ var $exeDevice = {
 		*/
 		
 		// Return the HTML to save
-		var videoFile = $("#interactiveVideoFile").val();
-		if (videoFile!="") {
-			var videoFileName = videoFile.split("/");
-				videoFileName = videoFileName[videoFileName.length-1];			
-			html += '<video width="320" height="240" controls="controls" class="mediaelement"><source src="'+videoFile+'" /></video>';
+		if (isLocalVideo) {
+			html += '<div class="sr-av"><video width="320" height="240" controls="controls" class="mediaelement"><source src="'+videoFile+'" /></video></div>';
 		}
 		return html;
 		

@@ -9,13 +9,17 @@
  * Loading icon generated with http://www.ajaxload.info/
  */
  
+// To do:
+// Do not allow Flash
+ 
 var interaction = {
 	debug : true,
 	encrypt : false,
 	isPreview : false,
-    isSeek : false,
+	isSeek : false,
 	baseId : "interaction",
 	isInExe : false,
+	mediaElementReady : false,
 	typeNames : {
 		text : "Texto",
 		image : "Imagen",
@@ -117,25 +121,45 @@ var interaction = {
 				if (typeof(jwplayer)=='undefined') return;
 				jwplayer().play();
 			}
-			else if (interaction.type=="youtube") interaction.player.playVideo();
+			else if (interaction.type=="youtube") {
+				interaction.player.playVideo();
+			}
+			else if (interaction.type=="local") {
+				if (interaction.mediaElementReady==false) {
+					interaction.mediaElementVideo = $("#player video");
+					interaction.mediaElementVideo.mediaelementplayer();
+					interaction.mediaElementReady = true;
+					setTimeout(function(){
+						interaction.mediaElementVideo[0].play();
+						interaction.ready();
+						interaction.hasPlayed = true;
+					},500);
+				} else {
+					interaction.mediaElementVideo[0].play();
+				}
+			}
 		},
-        stop : function(){
-            if (interaction.type=="mediateca") jwplayer().stop();
-            else if (interaction.type=="youtube") interaction.player.pauseVideo();
-        },
-        pause : function(){
-            if (interaction.type=="mediateca") jwplayer().pause(true);
-            else if (interaction.type=="youtube") interaction.player.pauseVideo();
-        },
-        seek : function(sec){
+		stop : function(){
+			if (interaction.type=="mediateca") jwplayer().stop();
+			else if (interaction.type=="youtube") interaction.player.pauseVideo();
+			else if (interaction.type=="local") interaction.mediaElementVideo[0].pause();
+		},
+		pause : function(){
+			if (interaction.type=="mediateca") jwplayer().pause(true);
+			else if (interaction.type=="youtube") interaction.player.pauseVideo();
+			else if (interaction.type=="local") interaction.mediaElementVideo[0].pause();
+		},
+		seek : function(sec){
 			if (interaction.type=="mediateca") {
 				jwplayer().seek(sec);
 			} else if (interaction.type=="youtube") {
-                interaction.player.seekTo(sec);
-                interaction.player.pauseVideo();
-                interaction.track(sec);
-            }
-        }
+				interaction.player.seekTo(sec);
+				interaction.player.pauseVideo();
+				interaction.track(sec);
+			} else if (interaction.type=="local") {
+				interaction.mediaElementVideo[0].setCurrentTime(sec);
+			}
+		}
 	},
 	restart : function(){
 		if (confirm("\u00BFBorrar tus resultados y empezar de nuevo?")) {
@@ -157,11 +181,11 @@ var interaction = {
 		
 		if (as.length==1) {
 			var ref = as.eq(0).attr("href");
-            // Mediateca (EducaMadrid)
+			// Mediateca (EducaMadrid)
 			if (ref.indexOf("https://mediateca.educa.madrid.org/video/")==0) {
 				this.type = 'mediateca';
 				this.id = ref.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
-                return;
+				return;
 			}
 			// Youtube
 			else if (ref.indexOf("//youtu.be/")>-1 || ref.indexOf("//www.youtube.com")>-1) {
@@ -182,6 +206,12 @@ var interaction = {
 				}
 				this.id = id;
 				this.type = 'youtube';
+				return;
+			}
+			// Local
+			else if (ref.indexOf("resources/")==0 || (ref.indexOf("http")!=0 && ref.indexOf("//")!=0)) {
+				this.file = ref;
+				this.type = 'local';
 				return;
 			}
 			alert("Error (código imcompatible con el proveedor)");
@@ -297,62 +327,68 @@ var interaction = {
 			
 		}
 		
+		else if (this.type=='local') {
+			
+			$("#player").html('<video width="448" height="356" controls="controls"><source src="'+this.file+'" /></video>');
+			
+		}
+		
 		// interaction.ready();
 		
 	},
-    enableJWPlayer : function(id, h, w){
-        // if (inIframe()) h = checkVideoPlayerHeight(h);
-        // var video = "mtdrp7s34zmc88je";
-        jwplayer.key = 'XnH21IkIBjAQp06byW5kPeU1Eq1vLpjEllpVdA==';
-        var img = 'http://mediateca.educa.madrid.org/imagen.php?id='+id+'&type=1&m=0';
-        jwplayer("player").setup({
-            sources: [{
-                file: "http://mediateca.educa.madrid.org/streaming.php?id="+id,
-                label: "480p",
-                type: "mp4",
-                provider: "http",
-                startparam: "start"
-            }],
-            image: img,
-            logo: {
-                file: "http://mediateca.educa.madrid.org/images/player/educamadrid.png",
-                link: "http://mediateca.educa.madrid.org/video/"+id,
-                hide: true
-            },
-            abouttext: "Mediateca",
-            aboutlink: "http://mediateca.educa.madrid.org/ayuda.php",
-            // controls: false,
-            height: h,
-            width: w,
-            sharing: {
-                heading: "Comparte este v\u00EDdeo",
-                code: encodeURI('<iframe src="http://mediateca.educa.madrid.org/video/'+id+'/fs" width="420" height="315" frameborder="0" scrolling="no" allowfullscreen></iframe>'),
-                link: 'http://mediateca.educa.madrid.org/video/'+id
-            }
-        });
-    },
-    checkSlides : function(){
+	enableJWPlayer : function(id, h, w){
+		// if (inIframe()) h = checkVideoPlayerHeight(h);
+		// var video = "mtdrp7s34zmc88je";
+		jwplayer.key = 'XnH21IkIBjAQp06byW5kPeU1Eq1vLpjEllpVdA==';
+		var img = 'http://mediateca.educa.madrid.org/imagen.php?id='+id+'&type=1&m=0';
+		jwplayer("player").setup({
+			sources: [{
+				file: "http://mediateca.educa.madrid.org/streaming.php?id="+id,
+				label: "480p",
+				type: "mp4",
+				provider: "http",
+				startparam: "start"
+			}],
+			image: img,
+			logo: {
+				file: "http://mediateca.educa.madrid.org/images/player/educamadrid.png",
+				link: "http://mediateca.educa.madrid.org/video/"+id,
+				hide: true
+			},
+			abouttext: "Mediateca",
+			aboutlink: "http://mediateca.educa.madrid.org/ayuda.php",
+			// controls: false,
+			height: h,
+			width: w,
+			sharing: {
+				heading: "Comparte este v\u00EDdeo",
+				code: encodeURI('<iframe src="http://mediateca.educa.madrid.org/video/'+id+'/fs" width="420" height="315" frameborder="0" scrolling="no" allowfullscreen></iframe>'),
+				link: 'http://mediateca.educa.madrid.org/video/'+id
+			}
+		});
+	},
+	checkSlides : function(){
 		if (interaction.isSeek) {
-            if ($("BODY").hasClass("active")) {
-                // Check if it has endTime
-                var slide = $("#slide");
-                var c = slide.attr("class");
-                if (c=="image" || c=="text") { 
-                    if(!InteractiveVideo.slides[interaction.visibleSlide].endTime) {
-                        interaction.slide.hide('case 1');
-                    }
-                } else {
-                    // setTimeout(function(){
-                        // interaction.slide.hide('case 2');
-                    // },100);
-                }
-            }
-        }
-        interaction.isSeek = false;
-    },
+			if ($("BODY").hasClass("active")) {
+				// Check if it has endTime
+				var slide = $("#slide");
+				var c = slide.attr("class");
+				if (c=="image" || c=="text") { 
+					if(!InteractiveVideo.slides[interaction.visibleSlide].endTime) {
+						interaction.slide.hide('case 1');
+					}
+				} else {
+					// setTimeout(function(){
+						// interaction.slide.hide('case 2');
+					// },100);
+				}
+			}
+		}
+		interaction.isSeek = false;
+	},
 	ready : function() {
-        
-        interaction.orderSlides();
+		
+		interaction.orderSlides();
 		
 		if (this.type=="mediateca") {
 		
@@ -362,41 +398,54 @@ var interaction = {
 			jwplayer().onTime(function(e){
 				interaction.track(e.position);
 			});
-            
+			
 			// If the video is playing, the slides should be hidden
 			jwplayer().onPlay(function(){
 				interaction.hasPlayed = true;
-                interaction.checkSlides();
+				interaction.checkSlides();
 			});
-            
-            interaction.complete();
+			
+			interaction.complete();
 		
 		}
 		
 		else if (interaction.type=="youtube") {
 			
-            interaction.player = new YT.Player('player', {
+			interaction.player = new YT.Player('player', {
 				height: '356',
 				width: '448',
 				videoId: interaction.id,
 				events: {
 					'onReady': function(){
-                        interaction.complete();
-                    },
+						interaction.complete();
+					},
 					'onStateChange': function(e){
-                        interaction.hasPlayed = true;
-                        interaction.youtubeCounter = setInterval(function(){
-                            interaction.track(interaction.player.getCurrentTime());
-                        },500);
-                        interaction.checkSlides();
-                    }
+						interaction.hasPlayed = true;
+						interaction.youtubeCounter = setInterval(function(){
+							interaction.track(interaction.player.getCurrentTime());
+						},500);
+						interaction.checkSlides();
+					}
 				}
 			});		
 			
 		}
 		
+		else if (interaction.type=="local") {
+			
+			interaction.complete();
+			
+			interaction.mediaElementVideo[0].addEventListener('playing', function (e) {
+				interaction.youtubeCounter = setInterval(function(){
+					interaction.track(interaction.mediaElementVideo[0].currentTime);
+				},500);
+				interaction.checkSlides();
+			});			
+			
+		}
+		
 	},
-    complete : function(){
+	complete : function(){
 		// Create the results viewer
 		interaction.resultsViewer.create();
 		// Set the max-width
@@ -404,8 +453,8 @@ var interaction = {
 			interaction.setMaxWidth();
 		}).resize(function(){
 			interaction.setMaxWidth();
-		});        
-    },
+		});		
+	},
 	setMaxWidth : function(){
 		var w = $("#activity-wrapper").width();
 		$("#player").css("max-width",(w/2)+"px");
@@ -544,11 +593,11 @@ var interaction = {
 			interaction.controls.seek(InteractiveVideo.slides[order].startTime);
 		}
 	},
-    isFullScreen : function(){
-        if (this.type=='mediateca' && jwplayer().getFullscreen()) return true;
-        else if (this.type=='youtube' && $("iframe").width()==$(window).width()) return true;
-        return false;
-    },    
+	isFullScreen : function(){
+		if (this.type=='mediateca' && jwplayer().getFullscreen()) return true;
+		else if (this.type=='youtube' && $("iframe").width()==$(window).width()) return true;
+		return false;
+	},	
 	slide : {
 		enable : function(slide,e,order) {
 
@@ -640,7 +689,7 @@ var interaction = {
 		},
 		hide : function(trigger){
 			interaction.visibleSlide = "";
-            $("#activity").css("width","50%");
+			$("#activity").css("width","50%");
 			$("BODY").removeClass("active");
 		}
 	},
@@ -1384,8 +1433,8 @@ var interaction = {
 	},	
 	track : function(position){
 		// To review now
-        var position = Math.round(position).toString();
-        var slides = InteractiveVideo.slides;
+		var position = Math.round(position).toString();
+		var slides = InteractiveVideo.slides;
 		var i = slides.length;
 		var e;
 		while (i--) {
@@ -1394,8 +1443,8 @@ var interaction = {
 				if (e.current==false) {
 					this.slide.show(e,i);
 				} else {
-                    
-                }
+					
+				}
 			} else if (e.endTime && e.endTime.toString()==position) {
 				this.slide.hide('case 3');
 			} else {
