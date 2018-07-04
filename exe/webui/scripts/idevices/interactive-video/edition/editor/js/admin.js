@@ -1118,6 +1118,7 @@ var iAdmin = {
 				delete slides[i].results;
 			}
 			alert(JSON.stringify(InteractiveVideo));
+			top.interactiveVideoEditor.activityToSave = InteractiveVideo;
 		},	
 		exit : function(){
 			top.interactiveVideoEditor.win.close();
