@@ -15,7 +15,7 @@ body{font:100%/1.6 'Open Sans',Arial,Verdana,Helvetica,sans-serif;padding:0;marg
 body.js{background:#fff;color:#444}
 a{text-decoration:none;color:#2668A5}
 a:hover,a:focus{text-decoration:underline}
-#header{background:#369;color:#fff;letter-spacing:.5px}
+#header{background:#626262;color:#fff;letter-spacing:.5px}
 #header h1{margin:0 20px;line-height:88px;font-size:1em}
 #header a{color:#fff}
 #site{font-size:.9em}
@@ -53,8 +53,8 @@ p{margin:1em 0}
 
 #actions{position:absolute;top:20px;right:0}
 #actions,#actions li{margin:0;padding:0;list-style:none;display:inline}
-#actions a{display:block;float:left;background:#021A34 url(../images/icons.png) 0 -192px;width:48px;height:48px;border-radius:24px;margin-right:30px}
-#actions a:hover,#actions a:focus{background-color:#75A3D1}
+#actions a{display:block;float:left;background:#000 url(../images/icons.png) 0 -192px;width:48px;height:48px;border-radius:24px;margin-right:30px}
+#actions a:hover,#actions a:focus{background-color:#9E9E9E}
 #actions .save a{background-position:0 -624px}
 #actions .exit a{background-position:0 -672px}
 #actions .delete a{background-position:0 -720px}
@@ -148,12 +148,12 @@ border-radius:4px;border-top-left-radius:0
 #from a{display:inline-block;background:url(../images/timer.png) no-repeat 50% 50%;width:28px;height:28px;vertical-align:middle;margin-top:-.2em}
 #to{display:none}
 
-#edit-block table{border-collapse:collapse;border:1px solid #F39C0F;margin-top:2em;width:80%;font-size:.95em}
-#edit-block th,#edit-block td{border:1px solid #F39C0F;text-align:left;padding:4px 10px}
-#edit-block th{background:#F9BA55;color:#fff;text-shadow:1px 1px 1px #444}
-#edit-block td{background:#FCDDAA}
-#edit-block .even td{background:#FCE2B7}
-#edit-block tbody tr:hover{background:#FDEBCC}
+#edit-block table{border-collapse:collapse;border:1px solid #A0A0A0;margin-top:2em;width:80%;font-size:.95em}
+#edit-block th,#edit-block td{border:1px solid #A0A0A0;text-align:left;padding:4px 10px}
+#edit-block th{background:#bbb;color:#fff;text-shadow:1px 1px 1px #444;letter-spacing:.5px}
+#edit-block td{background:#eee}
+#edit-block .even td{background:#f5f5f5}
+#edit-block tbody tr:hover{background:#fff}
 #edit-block tr:hover td,#edit-block tr:hover .even td{background:none}
 #edit-block a{color:#666}
 #edit-block ul,#edit-block li{margin:0;padding:0;list-style:none;display:inline}
