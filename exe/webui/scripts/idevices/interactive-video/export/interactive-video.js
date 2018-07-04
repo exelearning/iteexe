@@ -9,9 +9,6 @@
  * Loading icon generated with http://www.ajaxload.info/
  */
  
-// To do:
-// Do not allow Flash
- 
 var interaction = {
 	debug : true,
 	encrypt : false,
@@ -311,7 +308,7 @@ var interaction = {
 		
 		if (this.type=='mediateca') {
 			
-			$exe.loadScript("http://mediateca.educa.madrid.org/includes/player/latest/jwplayer.js","interaction.ready()");
+			$exe.loadScript("http://mediateca.educa.madrid.org/includes/player/7.6.1/jwplayer.js","interaction.ready()");
 			return;
 			
 		}

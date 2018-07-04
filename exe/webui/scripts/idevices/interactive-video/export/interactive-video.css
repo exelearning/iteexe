@@ -86,11 +86,11 @@ tr.even td{background:#f7f7f7}
 .is-mobile #slide{height:auto;min-height:316px}
 
 @media screen and (max-width:900px) {
-.full-version{display:none}
-#all{width:100%}
-#slide{width:46%;padding-right:2%;padding-left:2%}
-#slide.image{width:50%}
-#slide.image img{max-width:100%!important}
-#activity #player{max-width:100%}
-.active #activity #player{max-width:50%}
+	.full-version{display:none}
+	#all{width:100%}
+	#slide{width:46%;padding-right:2%;padding-left:2%}
+	#slide.image{width:50%}
+	#slide.image img{max-width:100%!important}
+	#activity #player{max-width:100%}
+	.active #activity #player{max-width:50%}
 }
