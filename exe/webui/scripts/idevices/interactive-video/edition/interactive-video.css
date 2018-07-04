@@ -6,3 +6,11 @@
  *
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  */
+
+#interactiveVideoIdeviceForm{margin-top:2.5em}
+#interactiveVideoEditorOpener,#interactiveVideo-youtube,#interactiveVideo-mediateca{display:none}
+input[name=interactiveVideoType]{margin-left:2em;vertical-align:top}
+.interactiveVideoType{margin:1.5em 0}
+.interactiveVideoType input[type=text]{width:350px}
+.interactiveVideoType .info{display:block;margin-top:.7em;color:#666}
+.interactiveVideoType a{color:#666}

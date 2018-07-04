@@ -27,19 +27,80 @@ var $exeDevice = {
 		
 		var html = '\
 			<div id="interactiveVideoIdeviceForm">\
-				<p>'+_("Soon...")+'</p>\
 				<p>\
+					<strong>'+_('Type')+':</strong> \
+					<label for="interactiveVideoType-local"><input type="radio" name="interactiveVideoType" id="interactiveVideoType-local" value="local" checked="checked" /> '+_('Local file')+'</label> \
+					<label for="interactiveVideoType-youtube"><input type="radio" name="interactiveVideoType" id="interactiveVideoType-youtube" value="youtube" /> '+_('Youtube')+'</label> \
+					<label for="interactiveVideoType-mediateca"><input type="radio" name="interactiveVideoType" id="interactiveVideoType-mediateca" value="mediateca" /> '+_('Mediateca')+'</label> \
+				</p>\
+				<p id="interactiveVideo-local" class="interactiveVideoType">\
 					<label for="interactiveVideoFile">'+_("File")+':</label> \
 					<input type="text" id="interactiveVideoFile" class="exe-file-picker" />\
+					<span class="info"><strong>'+_("Supported formats")+':</strong> OGV/OGG, webm, mp4</span>\
+				</p>\
+				<p id="interactiveVideo-youtube" class="interactiveVideoType">\
+					<label for="interactiveVideoYoutubeURL">'+_("URL")+':</label> \
+					<input type="text" id="interactiveVideoYoutubeURL" />\
+					<span class="info"><strong>'+_("Example")+':</strong> <a href="https://www.youtube.com/watch?v=v_rGjOBtvhI" target="_blank">https://www.youtube.com/watch?v=v_rGjOBtvhI</a></span>\
+				</p>\
+				<p id="interactiveVideo-mediateca" class="interactiveVideoType">\
+					<label for="interactiveVideoMediatecaURL">'+_("URL")+':</label> \
+					<input type="text" id="interactiveVideoMediatecaURL" />\
+					<span class="info"><strong>'+_("Example")+':</strong> <a href="https://mediateca.educa.madrid.org/video/3vmgyeluy8c35xzj" target="_blank">https://mediateca.educa.madrid.org/video/3vmgyeluy8c35xzj</a></span>\
 				</p>\
 			</div>\
-			<div id="interactiveVideoIdeviceForm">\
-				<p><input type="button" id="interactiveVideoOpenEditor" onclick="$exeDevice.editor.start()" value="'+_("Open editor")+'" /></p>\
+			<div id="interactiveVideoEditorOpener">\
+				<p class="exe-block-success">'+_("Open the editor and start adding interaction...")+' <input type="button" id="interactiveVideoOpenEditor" onclick="$exeDevice.editor.start()" value="'+_("Editor")+'" /></p>\
 			</div>\
 		';
 		
 		var field = $("textarea.jsContentEditor").eq(0);
 		field.before(html);
+		
+		$("input[name=interactiveVideoType]").change(function(){
+			$exeDevice.toggleType(this.value);
+		});	
+
+		$("#interactiveVideoFile").change(function(){
+			if (this.value.indexOf("/previews/")==0) {
+				var e = $("#interactiveVideoEditorOpener");
+				$exeDevice.interactiveVideoEditorOpenerHTML = e.html();
+				e.html('<p class="exe-block-info">'+_("Please save your iDevice now and edit it to add interaction.")+'</p>').fadeIn();
+			}
+		});
+		
+		$("#interactiveVideoYoutubeURL").change(function(){
+			var e = $("#interactiveVideoEditorOpener");
+			if (this.value.indexOf("https://www.youtube.com/watch?v=")==0) {
+				e.fadeIn();
+			} else {
+				e.hide();
+			}
+		}).keyup(function(){
+			var e = $("#interactiveVideoEditorOpener");
+			if (this.value.indexOf("https://www.youtube.com/watch?v=")==0) {
+				e.fadeIn();
+			} else {
+				e.hide();
+			}
+		});
+		
+		$("#interactiveVideoMediatecaURL").change(function(){
+			var e = $("#interactiveVideoEditorOpener");
+			if (this.value.indexOf("https://mediateca.educa.madrid.org/video/")==0) {
+				e.fadeIn();
+			} else {
+				e.hide();
+			}
+		}).keyup(function(){
+			var e = $("#interactiveVideoEditorOpener");
+			if (this.value.indexOf("https://mediateca.educa.madrid.org/video/")==0) {
+				e.fadeIn();
+			} else {
+				e.hide();
+			}
+		});	
+		
 		this.loadPreviousValues(field);
 		
 	},
@@ -53,6 +114,20 @@ var $exeDevice = {
 			// To do
 			
 		}	
+		
+	},
+	
+	toggleType : function(v) {
+		
+		var btn = $("#interactiveVideoEditorOpener");
+		btn.hide();
+		$(".interactiveVideoType").hide();
+		$("#interactiveVideo-"+v).fadeIn();
+		// Hide the "Please save your iDevice now and edit it to add interaction." message.
+		if (typeof($exeDevice.interactiveVideoEditorOpenerHTML)!='undefined') {
+			btn.html($exeDevice.interactiveVideoEditorOpenerHTML);
+		}
+		$("#interactiveVideoFile,#interactiveVideoYoutubeURL,#interactiveVideoMediatecaURL").val("");
 		
 	},
 	
@@ -106,15 +181,45 @@ var $exeDevice = {
 	},
 	
 	save : function(){
+		
+		var myVideo = "";
+		
+		var type = $('input[name=interactiveVideoType]:checked').val();
+		
+		if (type=='local') {
 			
-		var isLocalVideo = false;
-		var videoFile = $("#interactiveVideoFile").val();
-		if (videoFile!="") {
-			var videoFileName = videoFile.split("/");
-				videoFileName = videoFileName[videoFileName.length-1];			
-				isLocalVideo = true;
-				myVideo = videoFile;
-		}			
+			myVideo = $("#interactiveVideoFile").val();
+			if (myVideo=="") {
+				eXe.app.alert(_("Required")+": "+_("File"));
+				return false;
+			}
+			var extension = myVideo.split('.').pop().toLowerCase();
+			if (extension!="ogg" && extension!="ogv" && extension!="mp4" && extension!="webm") {
+				eXe.app.alert(_("Supported formats")+": OGV/OGG, webm, mp4");
+				return false;
+			}
+			
+		}
+		
+		else if (type=='youtube') {
+			
+			myVideo = $("#interactiveVideoYoutubeURL").val();
+			if (myVideo.indexOf("https://www.youtube.com/watch?v=")!=0) {
+				eXe.app.alert(_("Wrong URL. Expected format:")+" https://www.youtube.com/watch?v=v_rGjOBtvhI");
+				return false;
+			}
+			
+		}
+		
+		else if (type=='mediateca') {
+			
+			myVideo = $("#interactiveVideoMediatecaURL").val();
+			if (myVideo.indexOf("https://mediateca.educa.madrid.org/video/")!=0) {
+				eXe.app.alert(_("Wrong URL. Expected format:")+" https://mediateca.educa.madrid.org/video/3vmgyeluy8c35xzj");
+				return false;
+			}
+			
+		}		
 			
 		var html = '\
 			<div class="exe-interactive-video">\
@@ -218,8 +323,8 @@ var $exeDevice = {
 			</div>';
 		
 		// Return the HTML to save
-		if (isLocalVideo) {
-			html += '<div class="sr-av"><video width="320" height="240" controls="controls" class="mediaelement"><source src="'+videoFile+'" /></video></div>';
+		if (type=="local") {
+			html += '<div class="sr-av"><video width="320" height="240" controls="controls" class="mediaelement"><source src="'+myVideo+'" /></video></div>';
 		}
 		return html;
 		
