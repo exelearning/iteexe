@@ -66,7 +66,7 @@ input,select{font-size:1em;font-family:inherit}
 .TrueFalseIdevice .activity-form{margin-top:1.5em}
 .TrueFalseIdevice .activity-form:first-child{margin-top:0}
 .TrueFalseIdevice label{margin:0 1em}
-.MultichoiceIdevice input,.MultiSelectIdevice input[type=checkbox],.QuizTestIdevice input[type=radio]{width:16px;height:16px;margin:5px 0 0 12px}
+.MultichoiceIdevice input[type=radio],.MultiSelectIdevice input[type=checkbox],.QuizTestIdevice input[type=radio]{width:16px;height:16px;margin:5px 0 0 12px}
 .custom-inputs .iDevice_answer-field{width:40px}
 .custom-inputs  .iDevice_answer-content,.custom-inputs  .iDevice_answer-feedback{padding-left:55px}
 .custom-inputs  .iDevice_answer-content{padding-top:4px}
