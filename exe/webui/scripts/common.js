@@ -108,7 +108,7 @@ var $exe = {
 			return false;
 		});	
 		// Multi-choice iDevice and True-False Question
-		$('.exe-radio-option').click(function(){
+		$('.exe-radio-option').change(function(){
 			var c = this.className.split(" ");
 			if (c.length!=2) return;
 			c = c[1];
