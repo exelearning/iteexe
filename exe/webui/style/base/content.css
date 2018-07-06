@@ -78,6 +78,7 @@ input,select{font-size:1em;font-family:inherit}
 .readingIdevice .feedbackbutton,
 .CasestudyIdevice .feedbackbutton,
 .ReflectionIdevice .feedbackbutton{margin:.5em 0 1em 0}
+.TrueFalseIdevice .exe-radio-option.styledRadio{display:inline-block;vertical-align:middle;margin:-2px 5px 0 0}
 
 /* Licenses */
 #packageLicense{margin:2.5em 0 1.5em 0;text-align:left;line-height:1.2em;font-size:.9em}
