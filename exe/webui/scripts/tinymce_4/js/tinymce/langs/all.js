@@ -243,5 +243,65 @@ tinymce.addI18n('all',{
 "Show Toolbars": _("Show Toolbars"),
 "Show Status Bar": _("Show Status Bar"),
 "Insert 'return false'": _("Insert 'return false'"),
-"Events": _("Events")
+"Events": _("Events"),
+// TinyMCE 4.8.2
+	// Unused strings are commented (location: string)
+	// help: Action
+	// spellchecker: Add to Dictionary
+	// help: Address
+	// themes: Align
+	// imagetools: "Back": _("Back"),
+	"Block": _("Block"),
+	// imagetools: Brightness
+	// image: "Browse for an image": _("Browse"),
+	"Class": _("Class"),
+	// codesample: Code sample
+	// imagetools: Color levels
+	// imagetools: Contrast
+	// imagetools: Crop
+	// image: "Drop an image here": _(""),
+	// imagetools: Edit image
+	// media: Embed
+	// help: Find (if searchreplace plugin activated)
+	// imagetools: Flip horizontally
+	// imagetools: Flip vertically
+	// help: Focus to contextual toolbar
+	// help: Focus to element path
+	// help: Focus to menubar
+	// help: Focus to toolbar
+	// charmap: Gamma
+	// help: Handy Shortcuts
+	// Help
+	// image: Image
+	// image: Image list
+	// themes: Insert image
+	// help: Insert link (if link plugin activated)
+	// Insert video
+	// codesample: Insert/Edit code sample
+	// media: Insert/edit media
+	// imagetools: Invert
+	// codesample & spellchecker: Language
+	// help: Learn more...
+	// link: Link list
+	// media: "Media": _("Media"),
+	// image: "OR": _("OR"),
+	// imagetools: Orientation
+	// themes: Paste or type a link
+	// help: Plugins
+	// help: Plugins installed ({0}):
+	// hidden: "Powered by {0}": _("Powered by {0}"),
+	// help: Premium plugins:
+	// themes: "Resize": _("Resize"),
+	// imagetools: Rotate clockwise
+	// imagetools: Rotate counterclockwise
+	// help: Save (if save plugin activated)
+	// imagetools: Sharpen
+	// help: "Shortcut": _("Shortcut"),
+	// spellchecker: Spellcheck
+	// help and toc: Table of Contents
+	// image: "Upload": _("")
+	// help: You are using {0}
+	// imagetools: Zoom in
+	// imagetools: Zoom out
+	// wordcount: {0} words
 });
