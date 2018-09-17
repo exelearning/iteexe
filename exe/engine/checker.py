@@ -127,6 +127,7 @@ class Checker:
                     log.error('Parent node of idevice %s in node %s not match! Fixing...' % (idevice.klass, node.title))
                     idevice.parentNode = node
                 fields = idevice.getRichTextFields()
+                 # idevice with rich text fields and not ImageMagnifierIdevice class
                 if fields and idevice.klass != 'ImageMagnifierIdevice':
                     for field in fields:
                         if hasattr(field, 'parentNode'):
@@ -146,7 +147,8 @@ class Checker:
                                     self.idevices[path].append(field)
                                 else:
                                     self.idevices[path] = [field]
-                else:
+                # idevice without rich text fields, ImageMagnifierIdevice class or with Resources
+                if not fields or idevice.klass == 'ImageMagnifierIdevice' or hasattr(idevice, 'userResources'):
                     for resource in idevice.userResources:
                         path = self.package.resourceDir / resource.storageName
                         if not path.exists():
@@ -189,7 +191,7 @@ class Checker:
                         except:
                             msg = "%s referenced in idevice %s of node %s not exists" % (path, idevice.idevice.klass, idevice.parentNode.title)
                             log.error('New inconsistency of type packageResourceNonExistant: %s' % (msg))
-                            continue                        
+                            continue
                         if isinstance(idevice, FieldWithResources):
                             galleryimage = GalleryImage(idevice, '', None, mkThumbnail=False)
                             galleryimage._imageResource = resource
