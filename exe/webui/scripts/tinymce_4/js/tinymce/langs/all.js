@@ -243,5 +243,8 @@ tinymce.addI18n('all',{
 "Show Toolbars": _("Show Toolbars"),
 "Show Status Bar": _("Show Status Bar"),
 "Insert 'return false'": _("Insert 'return false'"),
-"Events": _("Events")
+"Events": _("Events"),
+// TinyMCE 4.8.2
+"Block": _("Block"),
+"Class": _("Class")
 });

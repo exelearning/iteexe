@@ -24,7 +24,7 @@ Centre for Flexible and Distance Learning
 .pagination a:hover{text-decoration:none}
 #topPagination{
 	position:absolute;
-	right:20px;
+	right:95px;
 	top:7px;
 	z-index:99
 }

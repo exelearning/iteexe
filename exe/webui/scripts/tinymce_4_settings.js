@@ -123,6 +123,7 @@ var $exeTinyMCE = {
 			schema: this.getSchema(),
 			content_css: this.content_css,			
 			resize: "both",
+			branding: false,
 			entity_encoding: "raw",
 			valid_children: this.getValidChildren(),
 			valid_elements: this.getValidElements(),

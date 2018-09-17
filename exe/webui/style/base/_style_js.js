@@ -39,7 +39,7 @@ var myTheme = {
 	},	
 	bigInputs : function(){
 		if (this.isMobile()) {
-			$(".MultiSelectIdevice,.MultichoiceIdevice,.QuizTestIdevice").each(function(){
+			$(".MultiSelectIdevice,.MultichoiceIdevice,.QuizTestIdevice,.TrueFalseIdevice").each(function(){
 				$('input:radio',this).screwDefaultButtons({
 					image: 'url("_style_input_radio.png")',
 					width: 30,

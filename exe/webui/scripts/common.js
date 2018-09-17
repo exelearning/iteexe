@@ -108,7 +108,7 @@ var $exe = {
 			return false;
 		});	
 		// Multi-choice iDevice and True-False Question
-		$('.exe-radio-option').click(function(){
+		$('.exe-radio-option').change(function(){
 			var c = this.className.split(" ");
 			if (c.length!=2) return;
 			c = c[1];
@@ -650,10 +650,12 @@ var $exe = {
 			$("iframe").each(function() {
 				var i = $(this);
 				var s = i.attr("src");
-				if (t && s.indexOf("//") == 0) $(this).attr("src", "http:" + s);
-				s = i.attr("src");
-				if (!i.hasClass("external-iframe") && s.indexOf("http")==0) {
-					i.addClass("external-iframe").before("<span class='external-iframe-src' style='display:none'><a href='"+s+"'>"+s+"</a></span>");
+				if (typeof(s)=="string") {
+					if (t && s.indexOf("//") == 0) $(this).attr("src", "http:" + s);
+					s = i.attr("src");
+					if (!i.hasClass("external-iframe") && s.indexOf("http")==0) {
+						i.addClass("external-iframe").before("<span class='external-iframe-src' style='display:none'><a href='"+s+"'>"+s+"</a></span>");
+					}
 				}
 			});			
 		}, 1000);
