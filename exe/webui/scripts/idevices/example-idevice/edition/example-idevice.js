@@ -40,6 +40,11 @@ var $exeDevice = {
 			</div>\
 		';
 		
+		// To add a file picker: '<input type="text" id="uploadFileExample" class="exe-file-picker" />'
+		// To add an image picker: '<input type="text" id="uploadImageExample" class="exe-image-picker" />'
+		// To add a TinyMCE editor: '<textarea id="tinyMCEexample" class="exe-html-editor"\></textarea>'
+		// To add a color picker: '<input type="text" id="colorPickerExample" class="exe-color-picker" />'
+		
 		var field = $("textarea.jsContentEditor").eq(0);
 		field.before(html);
 		this.loadPreviousValues(field);
