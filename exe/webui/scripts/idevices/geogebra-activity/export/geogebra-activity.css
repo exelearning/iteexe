@@ -1,0 +1,6 @@
+/* GeoGebra Activity iDevice */
+.auto-geogebra-instructions{margin-bottom:.5em}
+.auto-geogebra-wrapper{padding:1em 0}
+.auto-geogebra-loading{background:#FFF url(geogegra-activity-loading.gif) no-repeat 50% 50%;position:relative;overflow:hidden;width:565px;height:363px}
+.auto-geogebra-get-score{text-align:center;padding-top:.5em}
+.auto-geogebra .scorm-button-text{display:none}
