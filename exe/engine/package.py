@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # ===========================================================================
-# eXe 
+# eXe
 # Copyright 2004-2006, University of Auckland
 # Copyright 2006-2008 eXe Project, http://eXeLearning.org/
 #
@@ -82,23 +82,23 @@ log = logging.getLogger(__name__)
 def clonePrototypeIdevice(title):
     idevice = None
 
-    for prototype in G.application.ideviceStore.getIdevices(): 
+    for prototype in G.application.ideviceStore.getIdevices():
         if prototype.get_title() == title:
-            log.debug('have prototype of:' + prototype.get_title()) 
-            idevice = prototype.clone() 
+            log.debug('have prototype of:' + prototype.get_title())
+            idevice = prototype.clone()
             idevice.edit = False
-            break 
+            break
 
     return idevice
 
-def burstIdevice(idev_type, i, node): 
+def burstIdevice(idev_type, i, node):
     # given the iDevice type and the BeautifulSoup fragment i, burst it:
     idevice = clonePrototypeIdevice(idev_type)
     if idevice is None:
         log.warn("unable to clone " + idev_type + " idevice")
         freetext_idevice = clonePrototypeIdevice('Free Text')
         if freetext_idevice is None:
-            log.error("unable to clone Free Text for " + idev_type 
+            log.error("unable to clone Free Text for " + idev_type
                     + " idevice")
             return
         idevice = freetext_idevice
@@ -115,10 +115,10 @@ def loadNodesIdevices(node, s):
     body = soup.find('body')
 
     if body:
-        idevices = body.findAll(name='div', 
+        idevices = body.findAll(name='div',
                 attrs={'class' : re.compile('Idevice$') })
         if len(idevices) > 0:
-            for i in idevices: 
+            for i in idevices:
                 # WARNING: none of the idevices yet re-attach their media,
                 # but they do attempt to re-attach images and other links.
 
@@ -167,7 +167,7 @@ def loadNodesIdevices(node, s):
                 else:
                     # NOTE: no custom idevices burst yet,
                     # nor any deprecated idevices. Just burst into a FreeText:
-                    log.warn("unburstable idevice " + i.attrMap['class'] + 
+                    log.warn("unburstable idevice " + i.attrMap['class'] +
                             "; bursting into Free Text")
                     idevice = burstIdevice('Free Text', i, node)
 
@@ -231,9 +231,9 @@ def loadNode(pass_num, resourceDir, zippedFile, node, doc, item, level):
                                 zipinfo = zippedFile.getinfo(filename)
                                 log.debug('unzipping resource file: '
                                         + resourceDir/filename )
-                                outFile = open(resourceDir/filename, "wb") 
-                                outFile.write(zippedFile.read(filename)) 
-                                outFile.flush() 
+                                outFile = open(resourceDir/filename, "wb")
+                                outFile.write(zippedFile.read(filename))
+                                outFile.flush()
                                 outFile.close()
                             except:
                                 log.warn('error unzipping resource file: '
@@ -249,7 +249,7 @@ def loadNode(pass_num, resourceDir, zippedFile, node, doc, item, level):
 
     # process this node's children
     for subitem in item.childNodes:
-        if subitem.nodeName == 'item': 
+        if subitem.nodeName == 'item':
             # for the first pass, of unzipping only, do not
             # create any child nodes, just cruise on with this one:
             next_node = node
@@ -264,7 +264,7 @@ def loadCC(zippedFile, filename):
     Load an IMS Common Cartridge or Content Package from filename
     """
     package = Package(Path(filename).namebase)
-    xmldoc = minidom.parseString( zippedFile.read('imsmanifest.xml')) 
+    xmldoc = minidom.parseString( zippedFile.read('imsmanifest.xml'))
 
     organizations_list = xmldoc.getElementsByTagName('organizations')
     level = 0
@@ -276,7 +276,7 @@ def loadCC(zippedFile, filename):
             for organization in organization_list:
                 for item in organization.childNodes:
                     if item.nodeName == 'item':
-                        loadNode(pass_num, package.resourceDir, zippedFile, 
+                        loadNode(pass_num, package.resourceDir, zippedFile,
                                 package.root, xmldoc, item, level)
     return package
 
@@ -306,7 +306,7 @@ class DublinCore(Jellyable, Unjellyable):
     def __setattr__(self, name, value):
         self.__dict__[name] = toUnicode(value)
 
-         
+
 class Package(Persistable):
     """
     Package represents the collection of resources the user is editing
@@ -315,14 +315,13 @@ class Package(Persistable):
     persistenceVersion = 15
     nonpersistant      = ['resourceDir', 'filename', 'previewDir']
     # Name is used in filenames and urls (saving and navigating)
-    _name              = '' 
+    _name              = ''
     tempFile           = False # This is set when the package is saved as a temp copy file
     # Title is rendered in exports
-    _title             = '' 
+    _title             = ''
     _author            = ''
     _description       = ''
     _backgroundImg     = ''
-    _extraHeadContent  = ''
     #styledefault=u"INTEF"
     # This is like a constant
     defaultLevelNames  = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
@@ -330,13 +329,13 @@ class Package(Persistable):
 
     def __init__(self, name):
         """
-        Initialize 
+        Initialize
         """
         log.debug(u"init " + repr(name))
         self._nextIdeviceId = 0
         self._nextNodeId    = 0
         # For looking up nodes by ids
-        self._nodeIdDict    = {} 
+        self._nodeIdDict    = {}
 
         self._levelNames    = self.defaultLevelNames[:]
         self.name           = name
@@ -349,7 +348,7 @@ class Package(Persistable):
 
         self.root          = Node(self, None, _(u"Home"))
         self.currentNode   = self.root
-#        self.style         = u"default" 
+#        self.style         = u"default"
         #self.styledefault=u"INTEF"
         self.style         = G.application.config.defaultStyle
         self._isChanged    = False
@@ -381,17 +380,17 @@ class Package(Persistable):
         self._contextMode = u''
         self._extraHeadContent = u''
         self.compatibleWithVersion9 = False
-        
+
         #for export to Sugar (e.g. OLPC)
         self.sugaractivityname = ""
         self.sugarservicename = ""
-        
+
         #for export to Ustad Mobile
         self.mxmlprofilelist = ""
         self.mxmlheight = ""
         self.mxmlwidth = ""
         self.mxmlforcemediaonly = False
-        
+
         #Flag to add page counters
         self._addPagination = False
 
@@ -399,7 +398,7 @@ class Package(Persistable):
         self.resourceDir = TempDirPath()
         self.resources = {} # Checksum-[_Resource(),..]
         self._docType    = G.application.config.docType
-        
+
         self.isLoading = False
         self._isTemplate = False
         self._templateFile = ""
@@ -411,7 +410,7 @@ class Package(Persistable):
     def setLomEsDefaults(self):
         self.lomEs = lomsubs.lomSub.factory()
         self.lomEs.addChilds(self.lomDefaults(self.dublinCore.identifier, 'LOM-ESv1.0', True))
-        
+
     def set_dublin_core_defaults(self):
         self.dublinCore = DublinCore()
         self.dublinCore.title = self.title
@@ -515,7 +514,7 @@ class Package(Persistable):
             self.set_level1(c_(self.defaultLevelNames[0]))
             self.set_level2(c_(self.defaultLevelNames[1]))
             self.set_level3(c_(self.defaultLevelNames[2]))
-                
+
             # Translate some properties
             self.set_title(c_(self.title))
             self.set_description(c_(self.description))
@@ -762,63 +761,63 @@ class Package(Persistable):
             else:
                 if value:
                     educational = [lomsubs.educationalSub(description=[description])]
-                    metadata.set_educational(educational)        
+                    metadata.set_educational(educational)
         self._preknowledge = toUnicode(value)
-        
+
     def set_addPagination(self, addPagination):
         """
         Set _addPagination flag.
-    
+
         :type addPagination: boolean
         :param addPagination: New value for the _addPagination flag.
         """
         self._addPagination = addPagination
-    
+
     def get_addPagination(self):
         """
         Returns _addPagination flag value.
-    
+
         :rtype: boolean
         :return: Flag indicating wheter we should add pagination counters or not.
         """
         return self._addPagination
-    
+
     def set_isTemplate(self, isTemplate):
         """
         Set _isTemplate flag.
-    
+
         :type addPagination: boolean
         :param addPagination: New value for the _isTemplate flag.
         """
         self._isTemplate = isTemplate
-        
+
     def get_isTemplate(self):
         """
         Returns _isTemplate flag value.
-    
+
         :rtype: boolean
         :return: Flag indicating if the package is template.
         """
         return self._isTemplate
-    
+
     def set_templateFile(self, templateFile):
         """
         Set _templateFile.
-    
+
         :type templateFile: unicode
         :param templateFile: New value for the _templateFile.
         """
         self._templateFile = templateFile
-        
+
     def get_templateFile(self):
         """
         Returns templateFile value.
-    
+
         :rtype: unicode
         :return: Template's file name.
         """
         return self._templateFile
-        
+
     def license_map(self, source, value):
         '''From document "ANEXO XIII ANÁLISIS DE MAPEABILIDAD LOM/LOM-ES V1.0"'''
         if source == 'LOM-ESv1.0':
@@ -1054,12 +1053,12 @@ class Package(Persistable):
     def set_contextMode(self, value):
         self.set_context(value, self._contextMode)
         self._contextMode = toUnicode(value)
-        
+
     def set_extraHeadContent(self, value):
         if value:
             self._extraHeadContent = value;
         else:
-            self._extraHeadContent = u''        
+            self._extraHeadContent = u''
 
     def set_changed(self, changed):
         self._isChanged = changed
@@ -1107,7 +1106,7 @@ class Package(Persistable):
         node = self._nodeIdDict.get(nodeId)
         if node and node.package is self:
             return node
-        else: 
+        else:
             return None
 
 
@@ -1119,7 +1118,7 @@ class Package(Persistable):
             return _(self._levelNames[level])
         else:
             return _(u"?????")
-        
+
 
     def save(self, filename=None, tempFile=False, isTemplate=False, configxml=None):
         """
@@ -1163,10 +1162,10 @@ class Package(Persistable):
                 self.filename = oldFilename
         else:
             # Update our new filename for future saves
-            
+
             filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'), configxml)
             self.isChanged = False
-            
+
             if isTemplate == False:
                 self.updateRecentDocuments(filename)
                 self.filename = filename
@@ -1195,7 +1194,7 @@ class Package(Persistable):
         """
         Actually performs the save to 'fileObj'.
         """
-        
+
         if self.compatibleWithVersion9:
             self.downgradeToVersion9()
         zippedFile = zipfile.ZipFile(fileObj, "w", zipfile.ZIP_DEFLATED)
@@ -1215,14 +1214,14 @@ class Package(Persistable):
             zinfo2.external_attr = 0100644<<16L
             zinfo2.compress_type = zipfile.ZIP_DEFLATED
             zippedFile.writestr(zinfo2, encodeObjectToXML(self))
-            
+
             if configxml is not None:
                 zinfo3 = zipfile.ZipInfo(filename='config.xml',
                         date_time=time.localtime()[0:6])
                 zinfo3.external_attr = 0100644<<16L
                 zinfo3.compress_type = zipfile.ZIP_DEFLATED
                 zippedFile.writestr(zinfo3, configxml)
-            
+
 
             zippedFile.write(G.application.config.webDir/'templates'/'content.xsd', 'content.xsd', zipfile.ZIP_DEFLATED)
         finally:
@@ -1286,12 +1285,12 @@ class Package(Persistable):
         zippedFile = zipfile.ZipFile(filename, "r")
 
         xml = None
-        
+
         try:
             xml = zippedFile.read(u"contentv3.xml")
         except:
             pass
-        
+
         if not xml:
             try:
                 # Get the jellied package data
@@ -1302,12 +1301,12 @@ class Package(Persistable):
                 newPackage.tempFile = False
                 newPackage.isChanged = False
                 newPackage.filename = Path(filename)
-    
+
                 return newPackage
-            
+
         # Need to add a TempDirPath because it is a nonpersistant member
         resourceDir = TempDirPath()
-        
+
         excludeDir = ["common", "extend","unique","vocab"]
 
         # These files are not resources, so we shouldn't copy them
@@ -1363,12 +1362,12 @@ class Package(Persistable):
             except:
                 pass
             G.application.afterUpgradeHandlers = []
-            
+
             newPackage.isLoading = True
-            
+
             if newPackage.dublinCore is None:
                 newPackage.set_dublin_core_defaults()
-                
+
             newPackage.resourceDir = resourceDir
             G.application.afterUpgradeZombies2Delete = []
             if not validxml and (xml or fromxml or "content.xml" in zippedFile.namelist()):
@@ -1379,7 +1378,7 @@ class Package(Persistable):
                         if (hasattr(res[0], 'testForAndDeleteZombieResources')):
                             res[0].testForAndDeleteZombieResources()
 
-            if newLoad: 
+            if newLoad:
                 # provide newPackage to doUpgrade's versionUpgrade() to
                 # correct old corrupt extracted packages by setting the
                 # any corrupt package references to the new package:
@@ -1413,29 +1412,29 @@ class Package(Persistable):
                 else:
                     newPackage.set_docType(toUnicode('XHTML'))
 
-            else: 
+            else:
                 # and when merging, automatically set package references to
                 # the destinationPackage, into which this is being merged:
 
-                log.debug("load() about to merge doUpgrade newPackage \"" 
+                log.debug("load() about to merge doUpgrade newPackage \""
                         + newPackage._name + "\" " + repr(newPackage)
-                        + " INTO destinationPackage \"" 
-                        + destinationPackage._name + "\" " 
+                        + " INTO destinationPackage \""
+                        + destinationPackage._name + "\" "
                         + repr(destinationPackage))
-                
+
                 log.debug("using their resourceDirs:")
                 if hasattr(newPackage, 'resourceDir'):
-                    log.debug("   newPackage resourceDir = " 
+                    log.debug("   newPackage resourceDir = "
                             + newPackage.resourceDir)
                 else:
                     log.error("newPackage has NO resourceDir!")
                 if hasattr(destinationPackage, 'resourceDir'):
-                    log.debug("   destinationPackage resourceDir = " 
+                    log.debug("   destinationPackage resourceDir = "
                             + destinationPackage.resourceDir)
                 else:
                     log.error("destinationPackage has NO resourceDir!")
 
-                doUpgrade(destinationPackage, 
+                doUpgrade(destinationPackage,
                         isMerge=True, preMergePackage=newPackage)
 
                 # after doUpgrade, compare the largest found field ID:
@@ -1480,7 +1479,7 @@ class Package(Persistable):
             elif handler_priority == 1 and \
             repr(handler.im_class)=="<class 'exe.engine.package.Package'>":
                 # level-1 handlers: Package (requires resources first)
-                if handler.im_self == newPackage: 
+                if handler.im_self == newPackage:
                     handler()
                 else:
                     log.warn("Extra package object found, " \
@@ -1495,7 +1494,7 @@ class Package(Persistable):
                 handler()
 
         G.application.afterUpgradeHandlers = []
-        
+
         num_zombies = len(G.application.afterUpgradeZombies2Delete)
         for i in range(num_zombies-1, -1, -1):
             zombie = G.application.afterUpgradeZombies2Delete[i]
@@ -1505,8 +1504,8 @@ class Package(Persistable):
             if isinstance(zombie, Node):
                 zombie_is_node = True
 
-            if zombie_is_node: 
-                zombie.delete(pruningZombies=True) 
+            if zombie_is_node:
+                zombie.delete(pruningZombies=True)
             else:
                 #JR: Eliminamos el recurso del idevice
                 if hasattr(zombie._idevice, 'userResources'):
@@ -1528,21 +1527,21 @@ class Package(Persistable):
         #JR: Borramos recursos que no estan siendo utilizados
         newPackage.cleanUpResources(userResourcesFiles)
         G.application.afterUpgradeZombies2Delete = []
-        
+
         if isTemplate:
             newPackage.set_templateFile(str(filename.basename().splitext()[0]))
         else:
             newPackage.updateRecentDocuments(newPackage.filename)
 
-        newPackage.set_isTemplate(isTemplate)    
+        newPackage.set_isTemplate(isTemplate)
         newPackage.isChanged = False
         nstyle=Path(G.application.config.stylesDir/newPackage.style)
         if not nstyle.isdir():
-            newPackage.style=G.application.config.defaultStyle       
+            newPackage.style=G.application.config.defaultStyle
         newPackage.lang = newPackage._lang
-        
+
         newPackage.isLoading = False
-        
+
         return newPackage
 
     def getUserResourcesFiles(self, node):
@@ -1565,7 +1564,7 @@ class Package(Persistable):
         # but upgrading of resources and package happens in no particular order
         # and must be done after all resources have been upgraded
 
-        # some earlier .elp files appear to have been corrupted with 
+        # some earlier .elp files appear to have been corrupted with
         # two packages loaded, *possibly* from some strange extract/merge
         # functionality in earlier eXe versions?
         # Regardless, only the real package will have a resourceDir,
@@ -1589,7 +1588,7 @@ class Package(Persistable):
     def findResourceByName(self, queryName):
         """
         Support for merging, and anywhere else that unique names might be
-        checked before actually comparing against the files (as will be 
+        checked before actually comparing against the files (as will be
         done by the resource class itself in its _addOurselvesToPackage() )
         """
         foundResource = None
@@ -1635,7 +1634,7 @@ class Package(Persistable):
 
     def _regNewNode(self, node):
         """
-        Called only by nodes, 
+        Called only by nodes,
         stores the node in our id lookup dict
         returns a new unique id
         """
@@ -1697,7 +1696,7 @@ class Package(Persistable):
         """
         self._levelNames = self.levelNames
         del self.levelNames
-    
+
     def upgradeToVersion6(self):
         """
         For version 0.14
@@ -1716,7 +1715,7 @@ class Package(Persistable):
         """
         self._backgroundImg = ''
         self.backgroundImgTile = False
-        
+
     def upgradeToVersion8(self):
         """
         For version 0.20, alpha, for nightlies r2469
@@ -1831,9 +1830,9 @@ class Package(Persistable):
 
     def upgradeToVersion11(self):
         pass
-    
+
     def upgradeToVersion12(self):
-        
+
         #because actually version 11 was exe-next-gen
         self.upgradeToVersion9()
         self.upgradeToVersion10()
@@ -1841,7 +1840,7 @@ class Package(Persistable):
     def upgradeToVersion13(self):
         if not hasattr(self, '_docType'):
             self._docType = G.application.config.docType
-            
+
     def downgradeToVersion9(self):
         for attr in ['lomEs', 'lom', 'scowsinglepage', 'scowwebsite',
                      'exportSource', 'exportMetadataType', '_lang',
@@ -1851,7 +1850,7 @@ class Package(Persistable):
                      '_contextMode', '_extraHeadContent', 'scowsource', 'mxmlprofilelist',
                      'mxmlforcemediaonly', 'mxmlheight', 'mxmlwidth']:
             if hasattr(self, attr):
-                delattr(self, attr)
+                    delattr(self, attr)
         self.license = u''
         CasestudyIdevice.persistenceVersion = 8
         CasopracticofpdIdevice.persistenceVersion = 7
@@ -1884,24 +1883,24 @@ class Package(Persistable):
         VerdaderofalsofpdIdevice.persistenceVersion = 9
         WikipediaIdevice.persistenceVersion = 8
         Package.persistenceVersion = 9
-    
+
     def getExportDocType(self):
         return self._docType
-    
+
     def delNotes(self, node):
         """
         Delete all notes
         """
         for idevice in node.idevices:
             if idevice.klass == 'NotaIdevice':
-                idevice.delete()            
+                idevice.delete()
         for child in node.children:
             self.delNotes(child)
-    
+
     def upgradeToVersion14(self):
         if not hasattr(self, '_addPagination'):
             self._addPagination = False
-            
+
     def upgradeToVersion15(self):
         if not hasattr(self, '_isTemplate'):
             self._isTemplate = False
