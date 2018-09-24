@@ -312,7 +312,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 15
+    persistenceVersion = 16
     nonpersistant      = ['resourceDir', 'filename', 'previewDir']
     # Name is used in filenames and urls (saving and navigating)
     _name              = ''
@@ -1056,7 +1056,7 @@ class Package(Persistable):
 
     def set_extraHeadContent(self, value):
         if value:
-            self._extraHeadContent = value;
+            self._extraHeadContent = value
         else:
             self._extraHeadContent = u''
 
@@ -1906,4 +1906,8 @@ class Package(Persistable):
             self._isTemplate = False
         if not hasattr(self, '_templateFile'):
             self._templateFile = ""
+            
+    def upgradeToVersion16(self):
+        if not hasattr(self, '_extraHeadContent'):
+            self._extraHeadContent = u''
 # ===========================================================================
