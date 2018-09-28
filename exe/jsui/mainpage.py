@@ -274,6 +274,8 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleSaveTemplate, 'saveTemplate')
         setUpHandler(self.handleLoadTemplate, 'loadTemplate')
 
+        setUpHandler(self.handlePackagePropertiesValidation, 'validatePackageProperties')
+
         self.idevicePane.client = client
         self.styleMenu.client = client
         self.templateMenu.client = client
@@ -497,6 +499,13 @@ class MainPage(RenderableLivePage):
         template = self._loadPackage(client, Path(filename), newLoad=True, isTemplate=True)
         self.webServer.root.bindNewPackage(template, self.session)
         client.sendScript((u'eXe.app.gotoUrl("/%s")' % template.name).encode('utf8'), filter_func=allSessionPackageClients)
+
+    def handlePackagePropertiesValidation(self, client, export_type):
+        invalid_properties = self.package.valid_properties(export_type)
+        if len(invalid_properties) == 0:
+            client.call(u'eXe.app.getController("Toolbar").exportPackage', export_type, '')
+        else:
+            client.call(u'eXe.app.getController("Toolbar").packagePropertiesCompletion', export_type, str(self.package.filename), ','.join(invalid_properties))
 
     # No longer used - Task 1080, jrf
     # def handleLoadTutorial(self, client):

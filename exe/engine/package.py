@@ -26,7 +26,9 @@ i.e. the "package".
 
 import datetime
 import shutil
+import json
 import logging
+import os
 import time
 import zipfile
 import uuid
@@ -326,6 +328,8 @@ class Package(Persistable):
     # This is like a constant
     defaultLevelNames  = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
     lomESPlatformMark  = 'editor: eXe Learning'
+
+    _fieldValidationInfo = None
 
     def __init__(self, name):
         """
@@ -1887,6 +1891,43 @@ class Package(Persistable):
     def getExportDocType(self):
         return self._docType
 
+    def valid_properties(self, export_type):
+        """
+        Checks if all the properties of the package are valid for the
+        received export_type.
+
+        :type export_type: string
+        :param export_type: Export type.
+
+        :rtype: bool
+        :return: Bandera indicando si las propiedades del paquete son válidas.
+        """
+        if self._fieldValidationInfo is None:
+            self._loadFieldValidationInfo()
+
+        invalid_fields = []
+
+        # Check for the constraints that every export should follow
+        if u'all' in self._fieldValidationInfo and u'mandatory_fields' in self._fieldValidationInfo[u'all']:
+            for field in self._fieldValidationInfo[u'all'][u'mandatory_fields']:
+                part, name = field.split('_', 1)
+                # Get the object
+                if part == 'pp' and getattr(self, name) == '' or part == 'dc' and getattr(self.dublinCore, name) == '' or part == 'eo' and getattr(self.exportOptions, name) == '':
+                    invalid_fields.append(field)
+
+        return invalid_fields
+
+    def _loadFieldValidationInfo(self):
+        """
+        Loads the constraints that should be applied to the properties.
+        """
+        try:
+            jsonfile = open(os.path.dirname(__file__) + '/exportvalidation.json')
+
+            self._fieldValidationInfo = json.loads(jsonfile.read())
+        except:
+            self._fieldValidationInfo = {}
+
     def delNotes(self, node):
         """
         Delete all notes
@@ -1906,7 +1947,7 @@ class Package(Persistable):
             self._isTemplate = False
         if not hasattr(self, '_templateFile'):
             self._templateFile = ""
-            
+
     def upgradeToVersion16(self):
         if not hasattr(self, '_extraHeadContent'):
             self._extraHeadContent = u''

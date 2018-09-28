@@ -1,0 +1,11 @@
+{
+    "all": {
+        "mandatory_fields": [
+            "pp_title",
+            "pp_lang",
+            "pp_description",
+            "pp_author",
+            "pp_license"
+        ]
+    }
+}

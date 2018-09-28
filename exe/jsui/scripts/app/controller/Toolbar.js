@@ -22,7 +22,8 @@ Ext.define('eXe.controller.Toolbar', {
     requires: [
         'eXe.view.forms.PreferencesPanel',
         'eXe.view.forms.StyleManagerPanel',
-        'eXe.view.forms.TemplateManagerPanel'
+        'eXe.view.forms.TemplateManagerPanel',
+        'eXe.view.forms.ValidatePanel'
     ],
 	refs: [{
         ref: 'recentMenu',
@@ -121,7 +122,7 @@ Ext.define('eXe.controller.Toolbar', {
             },
             // / Advanced user
             '#file_export_procomun': {
-                click: { fn: this.exportProcomun }
+                click: { fn: this.processExportEvent, exportType: "procomun" }
             },
             '#file_export_zip': {
                 click: { fn: this.processExportEvent, exportType: "zipFile" }
@@ -476,6 +477,35 @@ Ext.define('eXe.controller.Toolbar', {
         formpanel.load({url: 'preferences', method: 'GET'});
         preferences.show();
 	},
+
+    packagePropertiesCompletion: function(export_type, filename, properties) {
+        // Create the window to ask for the values
+        var validate = new Ext.Window({
+            width: 650,
+            modal: true,
+            id: 'validatewin',
+            title: _("Export"),
+            layout: 'fit',
+            items: [{
+                xtype: 'validate',
+                exportType: export_type,
+                fileIsSaved: (filename != ''),
+                shownProperties: properties.split(',')
+            }]
+        });
+
+        // Get the form panel
+        var formpanel = validate.down('form');
+
+        // Preload the values for the form (in case a property has actually been established
+        // but the value is not valid for the selected export type)
+        formpanel.load({
+            url: location.pathname + "/properties",
+            params: formpanel.getForm().getFieldValues(),
+            method: 'GET'
+        });
+        validate.show();
+    },
 
     // Launch the iDevice Editor Window
 	toolsIdeviceEditor: function() {
@@ -914,7 +944,7 @@ Ext.define('eXe.controller.Toolbar', {
 
     processExportEvent: function(menu, item, e, eOpts) {
         this.saveWorkInProgress();
-        this.exportPackage(e.exportType, "");
+        nevow_clientToServerEvent('validatePackageProperties', this, '', e.exportType)
     },
 
     exportProcomun: function() {
@@ -1040,6 +1070,8 @@ Ext.define('eXe.controller.Toolbar', {
                     ]
                 );
                 fp.show();
+        } else if(exportType == 'procomun') {
+            this.exportProcomun();
 	    } else {
             var title;
 	        if (exportType == "scorm1.2" || exportType == 'scorm2004'|| exportType == 'agrega')
