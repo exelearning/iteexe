@@ -37,7 +37,7 @@ from twisted.internet            import threads, reactor, defer
 from exe.webui.livepage          import RenderableLivePage,\
     otherSessionPackageClients, allSessionClients, allSessionPackageClients
 from nevow                       import loaders, inevow, tags
-from nevow.livepage              import handler, IClientHandle
+from nevow.livepage              import handler, IClientHandle, js
 from exe.jsui.idevicepane        import IdevicePane
 from exe.jsui.outlinepane        import OutlinePane
 from exe.jsui.recentmenu         import RecentMenu
@@ -1045,47 +1045,76 @@ class MainPage(RenderableLivePage):
         Resources.cancelImport()
 
     def handleExportProcomun(self, client):
+        # If the user hasn't done the OAuth authentication yet, start this process
         if not client.session.oauthToken.get('procomun'):
             verify = True
             if hasattr(sys, 'frozen'):
                 verify = 'cacerts.txt'
             oauth2Session = OAuth2Session(ProcomunOauth.CLIENT_ID, redirect_uri=ProcomunOauth.REDIRECT_URI)
             oauth2Session.verify = verify
+
             authorization_url, state = oauth2Session.authorization_url(ProcomunOauth.AUTHORIZATION_BASE_URL)
             self.webServer.oauth.procomun.saveState(state, oauth2Session, client)
 
+            # Call the script to start the Procomún authentication process
             client.call('eXe.app.getController("Toolbar").getProcomunAuthToken', authorization_url)
 
             return
 
-        title = 'Procomún'
-        statusTitle = _(u'Publishing document to Procomún')
-
         def exportScorm():
-            client.notifyStatus(statusTitle, _(u'Exporting package as SCORM'))
+            """
+            Exports the package we are about to upload to Procomún to SCORM 1.2.
+
+            :returns: Full path to the exported ZIP.
+            """
+            # Update progress for the user
+            client.call('Ext.MessageBox.updateProgress', 0.3, '30%', _(u'Exporting package as SCORM 1.2...'))
+
             stylesDir = self.config.stylesDir / self.package.style
+
             fd, filename = mkstemp('.zip')
             os.close(fd)
+
             scorm = ScormExport(self.config, stylesDir, filename, 'scorm1.2')
             scorm.export(self.package)
 
             return filename
 
         def publish(filename):
-            token = client.session.oauthToken['procomun']
-            headers = {'Authorization': 'Bearer %s' % str(token['access_token']),
-                       'Connection': 'close'}
+            """
+            Upload the exported package to Procomún.
 
+            :param filename: Full path to the exported ZIP.
+            """
+            # Update progress for the user
+            client.call('Ext.MessageBox.updateProgress', 0.7, '70%', _(u'Uploading package to Procomún...'))
+
+            # Get OAuth Acess Token and add it to the request headers
+            token = client.session.oauthToken['procomun']
+            headers = {
+                'Authorization': 'Bearer %s' % str(token['access_token']),
+                'Connection': 'close'
+            }
+
+            # Create the WSDL client
             procomun = Client(PROCOMUN_WSDL, headers=headers)
 
+            # Create and configure the ODE object
             ode = procomun.factory.create('xsd:anyType')
-
             ode.file = base64.b64encode(open(filename, 'rb').read())
             ode.file_name = self.package.name
 
-            client.notifyStatus(statusTitle, _(u'Starting authorized connection to Procomún API'))
-            result = procomun.service.odes_soap_create(ode)
+            # Try to upload the ODE to Procomún
+            try:
+                result = procomun.service.odes_soap_create(ode)
+            except Exception as e:
+                # If there is an exception, log it and show a generic error message to the user
+                log.error('An error has ocurred while trying to publish a package to Procomún. The error message is: %s', str(e))
+                client.call('Ext.MessageBox.hide')
+                client.alert(_(u'Unknown error when trying to upload package to Procomún.'), title=_('Publishing document to Procomún'))
+                return
 
+            # Parse the result received from Procomún
             parsedResult = {}
             for item in result.item:
                 parsedResult[item.key] = item.value
@@ -1094,12 +1123,39 @@ class MainPage(RenderableLivePage):
                     if item.value:
                         parsedResult[item.key][item.value.item.key] = item.value.item.value
 
+            # Show a message to the user based on the result
+            client.call('Ext.MessageBox.hide')
             if parsedResult['status'] == 'true':
                 link_url = ProcomunOauth.BASE_URL + '/ode/view/%s' % parsedResult['data']['documentId']
-                client.notifyStatus(statusTitle, _(u'Package exported to <a href="%s" target="_blank" title="Click to visit exported site">%s</a>') % (link_url, self.package.title))
+                client.alert(
+                    js(
+                        '\''
+                        + _(u'Package exported to <a href="%s" target="_blank" title="Click to view the exported package">%s</a>.') % (link_url, self.package.title)
+                        + u'<br />'
+                        + _(u'<small>You can view and manage the uploaded package using <a href="%s" target="_blank" title="Procomún Home">Procomún</a>\\\'s web page.</small>') % ProcomunOauth.BASE_URL
+                        + '\''
+                    ),
+                    title=_('Publishing document to Procomún')
+                )
             else:
-                client.hideStatus()
-                client.notifyNotice(title, _(u'Error exporting package %s to Procomún: %s') % (self.package.name, parsedResult['message']), 'error')
+                client.alert(
+                    js(
+                        '\'<h3>'
+                        + _(u'Error exporting package "%s" to Procomún.') % self.package.name
+                        + u'</h3><br />'
+                        + _(u'The most common reasons for this are:')
+                        + u'<br />'
+                        + _(u'1. Package metadata is not properly filled.')
+                        + u'<br />'
+                        + _(u'2. There is a problem with you connection (or with Procomún servers), so you should just try again later.')
+                        + u'<br /><br />'
+                        + _(u'If you have problems publishing you can close this dialogue, export as SCORM 2004 and upload the generated zip file manually to Procomún.')
+                        + u'<br /><br />'
+                        + _(u'The reported error we got from Procomún was: <pre>%s</pre>') % parsedResult['message']
+                        + '\''
+                    ),
+                    title=_('Publishing document to Procomún')
+                )
 
         d = threads.deferToThread(exportScorm)
         d.addCallback(lambda filename: threads.deferToThread(publish, filename))

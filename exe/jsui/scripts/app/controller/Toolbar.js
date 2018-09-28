@@ -919,6 +919,15 @@ Ext.define('eXe.controller.Toolbar', {
 
     exportProcomun: function() {
         this.saveWorkInProgress();
+        Ext.Msg.show({
+            title: _('Publishing document to Procomún'),
+            msg: _('Initializing Procomún export process...'),
+            width: 300,
+            progress: true,
+            progressText: '0%',
+            closable: false,
+            draggable: false
+        });
         nevow_clientToServerEvent('exportProcomun', this, '');
     },
 

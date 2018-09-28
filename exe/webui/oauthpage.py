@@ -53,8 +53,9 @@ class ProcomunOauth(Renderable, rend.Page):
             oauth2Session, client = state
             client.session.oauthToken['procomun'] = oauth2Session.fetch_token(self.TOKEN_URL, client_secret=self.CLIENT_SECRET, code=code)
             script = ('''
-                top.nevow_clientToServerEvent('exportProcomun', this, '');
-                top.Ext.getCmp('oauthprocomun').close()
+                top.Ext.getCmp('oauthprocomun').hide();
+                top.eXe.app.getController("Toolbar").exportProcomun();
+                top.Ext.getCmp('oauthprocomun').close();
             ''')
         return ctx.tag()[script]
 
