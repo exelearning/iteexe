@@ -43,13 +43,13 @@ Ext.define('eXe.view.forms.ValidatePanel', {
             items:[{
                 xtype: 'label',
                 text:  _('Some important information is missing in the \"Properties\" tab. You can complete it now.'),
-                anchor: '100%'
+                anchor: '100%',
+                style: 'padding:0 0 10px 0;display:block'
             }],
             bbar: {
                 layout: 'auto',
                 items:{
                     xtype: 'container',
-                    autoEl: 'center',
                     defaultType: 'button',
                     items: [{
                         xtype: 'button',
@@ -75,7 +75,8 @@ Ext.define('eXe.view.forms.ValidatePanel', {
                             });
                         },
                         itemId: 'save_properties',
-                        margin: 10
+                        margin: 10,
+                        style: 'float:right'
                     },
                     {
                         xtype: 'button',
@@ -112,7 +113,8 @@ Ext.define('eXe.view.forms.ValidatePanel', {
         this.items.push({
             xtype: 'label',
             text:  _('If you have problems publishing or you want to complete your cataloguing later, close this dialogue, export as SCORM 2004 and upload the generated zip file to Procomún.'),
-            anchor: '100%'
+            anchor: '100%',
+            style: 'padding:5px 0 0;display:block'			
         });
 
         me.callParent(arguments);
