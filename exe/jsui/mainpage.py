@@ -505,7 +505,17 @@ class MainPage(RenderableLivePage):
         if len(invalid_properties) == 0:
             client.call(u'eXe.app.getController("Toolbar").exportPackage', export_type, '')
         else:
-            client.call(u'eXe.app.getController("Toolbar").packagePropertiesCompletion', export_type, str(self.package.filename), ','.join(invalid_properties))
+            invalid_properties_str = u''
+            for prop in invalid_properties:
+                invalid_properties_str += prop.get('name') + '|' + prop.get('reason')
+
+                if 'allowed_values' in prop:
+                    invalid_properties_str += '|' + prop.get('allowed_values')
+
+                invalid_properties_str +=  ','
+            invalid_properties_str = invalid_properties_str[:-1]
+
+            client.call(u'eXe.app.getController("Toolbar").packagePropertiesCompletion', export_type, str(self.package.filename), invalid_properties_str)
 
     # No longer used - Task 1080, jrf
     # def handleLoadTutorial(self, client):

@@ -1905,15 +1905,44 @@ class Package(Persistable):
         if self._fieldValidationInfo is None:
             self._loadFieldValidationInfo()
 
-        invalid_fields = []
+        mandatory_checks = []
+        from_list_checks = {}
 
         # Check for the constraints that every export should follow
-        if u'all' in self._fieldValidationInfo and u'mandatory_fields' in self._fieldValidationInfo[u'all']:
-            for field in self._fieldValidationInfo[u'all'][u'mandatory_fields']:
-                part, name = field.split('_', 1)
-                # Get the object
-                if part == 'pp' and getattr(self, name) == '' or part == 'dc' and getattr(self.dublinCore, name) == '' or part == 'eo' and getattr(self.exportOptions, name) == '':
-                    invalid_fields.append(field)
+        if u'all' in self._fieldValidationInfo:
+            # Mandatory fields
+            if u'mandatory_fields' in self._fieldValidationInfo[u'all']:
+                mandatory_checks = mandatory_checks + self._fieldValidationInfo[u'all'][u'mandatory_fields']
+
+        # Check the constraints that the current export should follow
+        if export_type in self._fieldValidationInfo:
+            # Mandatory fields
+            if u'mandatory_fields' in self._fieldValidationInfo[export_type]:
+                mandatory_checks = mandatory_checks + self._fieldValidationInfo[export_type][u'mandatory_fields']
+
+            if u'values_from_list' in self._fieldValidationInfo[export_type]:
+                from_list_checks.update(self._fieldValidationInfo[export_type][u'values_from_list'])
+
+        invalid_fields = []
+
+        # Check mandatory fields
+        for field in mandatory_checks:
+            part, name = field.split('_', 1)
+
+            # Check the attribute
+            if (part == 'pp' and getattr(self, name) == '') \
+            or (part == 'dc' and getattr(self.dublinCore, name) == '') \
+            or (part == 'eo' and getattr(self.exportOptions, name) == ''):
+                invalid_fields.append({'name': field, 'reason': 'empty'})
+
+        for field, values in from_list_checks.iteritems():
+            part, name = field.split('_', 1)
+
+            # Check the attribute
+            if (part == 'pp' and not getattr(self, name) == '' and not getattr(self, name) in values) \
+            or (part == 'dc' and not getattr(self.dublinCore, name) == '' and not getattr(self.dublinCore, name) in values) \
+            or (part == 'eo' and not getattr(self.exportOptions, name) == '' and not getattr(self.exportOptions, name) in values):
+                invalid_fields.append({'name': field, 'reason': 'value', 'allowed_values': ';'.join(values)})
 
         return invalid_fields
 

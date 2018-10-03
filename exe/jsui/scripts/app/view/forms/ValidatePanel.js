@@ -99,11 +99,33 @@ Ext.define('eXe.view.forms.ValidatePanel', {
 
         // Include the same items added for the Package panel
         var panel = Ext.ComponentQuery.query('panel#package_properties')[0];
+
         for (var i = 0; i < this.shownProperties.length; i++) {
             var prop = this.shownProperties[i];
+            prop = prop.split('|');
 
-            var field = panel.getForm().findField(prop);
+            var field = panel.getForm().findField(prop[0]);
             var clonedField = field.cloneConfig();
+
+            // If the problem is the value of the field, explain to the user that they should select another
+            if (prop[1] == 'value') {
+                this.items.push({
+                    xtype: 'label',
+                    text:  _('The value selected for this field is not accepted by Procomún. Please select one of the values below:'),
+                    anchor: '100%'
+                });
+
+                if (clonedField.xtype == 'combobox') {
+                    var allowed_values = prop[2].split(';');
+
+                    clonedField.store.each(function(record) {
+                        if (typeof(record) !== 'undefined' && Ext.Array.indexOf(allowed_values, record.get('field1')) == -1) {
+                            record.store.remove(record);
+                        }
+                    });
+                }
+            }
+
             // We need to change the inputId in order to get the right value when submitting the form
             clonedField.inputId = clonedField.inputId + '-validate';
             this.items.push(clonedField);
@@ -111,12 +133,12 @@ Ext.define('eXe.view.forms.ValidatePanel', {
 
         // For Procomún, we need an additional sentence to help people experimenting problems
         if (this.exportType == 'procomun'){
-        this.items.push({
-            xtype: 'label',
-            text:  _('If you have problems publishing or you want to complete your cataloguing later, close this dialogue, export as SCORM 2004 and upload the generated zip file to Procomún.'),
-            anchor: '100%',
-            style: 'padding:5px 0 0;display:block'			
-        });
+            this.items.push({
+                xtype: 'label',
+                text:  _('If you have problems publishing or you want to complete your cataloguing later, close this dialogue, export as SCORM 2004 and upload the generated zip file to Procomún.'),
+                anchor: '100%',
+                style: 'padding:5px 0 0;display:block'
+            });
         }
 
         me.callParent(arguments);

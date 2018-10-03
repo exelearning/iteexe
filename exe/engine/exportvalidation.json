@@ -7,5 +7,21 @@
             "pp_author",
             "pp_license"
         ]
+    },
+    "procomun":{
+        "mandatory_fields": [
+            "pp_learningResourceType"
+        ],
+        "values_from_list": {
+            "pp_learningResourceType": [
+                "lecture",
+                "exercise",
+                "simulation",
+                "problem statement",
+                "simulation",
+                "questionnaire",
+                "diagram"
+            ]
+        }
     }
 }
