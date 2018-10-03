@@ -734,10 +734,6 @@ lomesVocab = {
             _("graph")
         ], 
         [
-            "conceptual map", 
-            _("conceptual map")
-        ], 
-        [
             "navigation map", 
             _("navigation map")
         ], 
@@ -833,6 +829,11 @@ lomesVocab = {
             "guided reading", 
             _("guided reading")
         ], 
+
+        [
+            "conceptual map",
+            _("conceptual map")
+        ],
         [
             "master class", 
             _("master class")

@@ -282,7 +282,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                 dirtyCls: 'property-form-dirty',
                                 fieldLabel: _('Learning Resource Type'),
                                 labelWidth: '180px',
-                                store: lomesVocab.learningResourceTypeValues.slice(39),
+                                store: lomesVocab.learningResourceTypeValues.slice(38),
                                 tooltip: _('Learning Resource Type'),
                                 anchor: '100%',
                                 forceSelection: true,
