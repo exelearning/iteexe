@@ -74,12 +74,15 @@
 # 2018-04-26
 #    * Split this functionality in two separate files (Sdweb)
 #
+# 2018-10-05
+#    * Preparing version 2.2.1 (JRF)
+#
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.2"
+version="2.2.1"
 
 # 1.- eXe - Extract content templates' files to a .py dummy file
 echo -e " *** Extracting messages from content templates ***\n"
