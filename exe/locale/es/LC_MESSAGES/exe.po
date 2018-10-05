@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.2.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2018-10-05 16:35+0200\n"
-"PO-Revision-Date: 2018-10-05 16:38+0200\n"
+"PO-Revision-Date: 2018-10-05 22:08+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "An error has occurred when loading your config. A backup is saved at %s"
 msgstr ""
 "Se ha producido un error al cargar su configuración. Guardada copia de "
-"seguridad en %s "
+"seguridad en %s"
 
 #: exe/application.py:222
 #, python-format
@@ -61,9 +61,8 @@ msgstr ""
 "La configuración se lee del exe.conf presente en $HOME/.exe en GNU "
 "Linux/Unix/Mac,\n"
 "en Documents and Settings/<user name>/Application Data/exe en Windows XP"
-" \n"
 "o en\n"
-"Users/<user name>/AppData/Roaming/exe en Windows 7"
+"Usuarios/<user name>/AppData/Roaming/exe en Windows 7"
 
 #: exe/engine/appletidevice.py:70
 msgid "Java Applet"
@@ -255,7 +254,7 @@ msgid ""
 "attachment.</p><p>For example: <code>Sales Forecast.doc "
 "(500kb)</code></p>"
 msgstr ""
-"<p>Asigne una atiqueta al adjunto. Es útil incluir el tipo de fichero, p."
+"<p>Asigne una etiqueta al adjunto. Es útil incluir el tipo de fichero, p."
 " ej.  pdf, ppt, odp, etc.</p><p>También se recomienda incluir el tamaño "
 "para que, cuando exporte su paquete a un sitio web, la gente pueda "
 "hacerse una idea de lo que tardaría descargar este adjunto.</p><p>Por "
@@ -513,7 +512,7 @@ msgstr "Área mostrada antes del inicio del juego"
 
 #: exe/engine/clickinorderidevice.py:66
 msgid "User will click on this to start the game"
-msgstr "El usuario hara clic sobre esto para iniciar el juego"
+msgstr "El usuario pulsará sobre esto para iniciar el juego"
 
 #: exe/engine/clickinorderidevice.py:78
 msgid "Game Width"
@@ -1933,7 +1932,7 @@ msgstr ""
 "Esto puede ser hecho \n"
 "pidiéndole al estudiante que reflexione sobre el texto y responda a "
 "preguntas \n"
-" sobre lo leído, o haciendoles completar otra actividad, quizás de "
+" sobre lo leído, o haciéndoles completar otra actividad, quizás de "
 "carácter más físico, \n"
 "basada en la lectura.</p>"
 
@@ -3140,7 +3139,6 @@ msgstr ""
 "Describe el modo en que los estudiantes evaluarán su rendimiento \n"
 "en el ejercicio (las rúbricas son herramientas muy útiles para "
 "proporcionar\n"
-"\n"
 "retroalimentación reflexiva)."
 
 #: exe/engine/resource.py:396
@@ -3470,7 +3468,7 @@ msgstr ""
 "contenido del \n"
 " artículo; los cambios posteriores que se produzcan en la Wikipedia no se"
 " reflejarán automáticamente en la copia \n"
-" del artículo en eXe, será necesario realizar una nueva copia. Asímismo,"
+" del artículo en eXe, será necesario realizar una nueva copia. Así mismo,"
 " \n"
 "los cambios realizados en eXe no producirán efectos en los artículos de "
 "la Wikipedia. </p> <p>El Contenido de la Wikipedia \n"
@@ -4287,11 +4285,11 @@ msgstr "Confirmar"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:309
 msgid "Are you sure you want clear all form fields?"
-msgstr " ¿Seguro que desea borrar todos los campos del formulario?"
+msgstr "¿Seguro que desea borrar todos los campos del formulario?"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:362
 msgid "Are you sure you want reset all form fields?"
-msgstr " ¿Seguro que desea deshacer los cambios a todos los campos del formulario?"
+msgstr "¿Seguro que desea deshacer los cambios a todos los campos del formulario?"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:555
 msgid "The form contains invalid fields. Please check back."
@@ -4625,7 +4623,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:967
 msgid "Are you sure you want to start authorization process?"
-msgstr " ¿Confirma que desea iniciar el proceso de autorización?"
+msgstr "¿Confirma que desea iniciar el proceso de autorización?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:978
 msgid "Procomún OAuth"
@@ -8226,15 +8224,11 @@ msgstr ""
 "\n"
 "<h2>Juego Haz clic en los elementos por orden</h2>\n"
 "<p>\n"
-"Este iDevice construye un juego en javascript en el que el jugador tiene "
-"que hacer clic en un sitio determinado del área principal según la ayuda."
-"\n"
-"Cuando se hace clic correctamente aparecerá una retroalimentación "
-"positiva y se avanzará en el juego. Cuando se hace clic en el área "
-"equivocada, se mostrará retroalimentación negativa. Cuando se pulsa en el"
-" área correcta podrá descubrirse un objeto. Puede fijarse un retraso\n"
+"Este iDevice construye un juego en javascript en el que el jugador tiene que hacer clic en un sitio determinado del área principal según la ayuda. \n"
+"Cuando se hace clic correctamente aparecerá una retroalimentación positiva y se avanzará en el juego. Cuando se hace clic en el área\n"
+"equivocada, se mostrará retroalimentación negativa. Cuando se pulsa en el área correcta podrá descubrirse un objeto. Puede fijarse un retraso\n"
 "que haga que si así se desea el objeto desaparezca tras ese retraso.\n"
-"</p>\n"
+" </p>\n"
 "\n"
 "          "
 
@@ -8296,7 +8290,7 @@ msgstr "Licencia de Documentación Libre de GNU (GNU Free Documentation License)
 
 #: exe/webui/common.py:256 exe/webui/common.py:262
 msgid "GNU General Public License"
-msgstr "Licencia Pública General GNU (GNU General Public License, GPL) "
+msgstr "Licencia Pública General GNU (GNU General Public License, GPL)"
 
 #: exe/webui/common.py:317
 msgid "Creative Commons Attribution License 3.0"
@@ -8583,7 +8577,7 @@ msgid ""
 "Script for writing the post. It must lead the student to think about and "
 "reflect:"
 msgstr ""
-"Guión para escribir la entrada. Debe guiar al estudiante a pensar y "
+"Guion para escribir la entrada. Debe guiar al estudiante a pensar y "
 "reflexionar sobre:"
 
 #: exe/webui/content_template/strings.py:93
@@ -9585,7 +9579,7 @@ msgstr "Ficheros QuickTime (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
 
 #: exe/webui/scripts/authoring.js:125
 msgid "Windows Media Player Files (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
-msgstr "Ficheros Windows Media Player (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx) "
+msgstr "Ficheros Windows Media Player (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
 
 #: exe/webui/scripts/authoring.js:126
 msgid "RealMedia Audio Files (.rm, .ra, .ram, .mp3)"
@@ -9618,7 +9612,7 @@ msgid ""
 "disabilities, or to those using a text browser, or browsing the Web with "
 "images turned off."
 msgstr ""
-" ¿Esta seguro de continuar sin introducir una descripción a la imagen? "
+"¿Está seguro de continuar sin introducir una descripción a la imagen? "
 "Sin ella puede no ser accesible para usuarios con discapacidades, o para "
 "aquellos que usen navegadores de modo texto, o tengan deshabilitadas las "
 "imágenes de la página."
@@ -9645,7 +9639,7 @@ msgstr "Se va a deshacer este cambio."
 
 #: exe/webui/scripts/editor.js:52
 msgid "Do you want to overwrite the existing idevice {idevice}?"
-msgstr "¿Desea sobreescribir el iDevice ya existente {idevice}?"
+msgstr "¿Desea sobrescribir el iDevice ya existente {idevice}?"
 
 #: exe/webui/scripts/editor.js:96 exe/webui/scripts/editor.js:123
 msgid "eXe Idevices"
@@ -9978,7 +9972,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Do you want to use the WYSIWYG mode for this textarea?"
-msgstr " ¿Desea utilizar el modo WYSIWYG para esta caja de texto?"
+msgstr "¿Desea utilizar el modo WYSIWYG para esta caja de texto?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "{#field} must be a number"
@@ -10047,7 +10041,7 @@ msgstr "Cancelar todos los cambios"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Non-Breaking Space Character"
-msgstr "Insertar caracter de espacio 'non-breaking'"
+msgstr "Insertar carácter de espacio no divisible"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "ieSpell not detected. Do you want to install it now?"
@@ -10091,7 +10085,7 @@ msgstr "Dividir celdas"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Restore auto-saved content."
-msgstr "Reestablecer contenido guardado automáticamente."
+msgstr "Restablecer contenido guardado automáticamente."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Toggle Full Screen Mode"
@@ -10318,10 +10312,10 @@ msgid ""
 "\n"
 "Are you sure you want to restore the saved content?"
 msgstr ""
-"Se reestablece en contenido guardado, perderá todo el contenido que está "
+"Se restablece en contenido guardado, perderá todo el contenido que está "
 "actualmente en el editor.\n"
 "\n"
-"Está seguro de que quiere reestablecer el contenido guardado."
+"¿Está seguro de que quiere restablecer el contenido guardado?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
@@ -11093,7 +11087,7 @@ msgstr "Eventos"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:170
 msgid "TabIndex"
-msgstr "Indice de tabulación"
+msgstr "Índice de tabulación"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
@@ -11123,7 +11117,7 @@ msgid ""
 "The URL you entered seems to be an email address. Do you want to add the "
 "required mailto: prefix?"
 msgstr ""
-"La URL que ha introducido parece ser una direción de correo,  ¿desea "
+"La URL que ha introducido parece ser una dirección de correo,  ¿desea "
 "agregar el prefijo mailto: necesario?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -12231,7 +12225,7 @@ msgstr "Inicio"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "No Correction"
-msgstr "Sin correción"
+msgstr "Sin corrección"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Target Cache"
@@ -12243,7 +12237,7 @@ msgstr "Reproducir todos los fotogramas"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Kiosk Mode"
-msgstr "Modo Kiosko"
+msgstr "Modo Kiosco"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Controller"
@@ -12327,7 +12321,7 @@ msgstr "Mantener aspecto"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Image Status"
-msgstr "Estado de imagen"
+msgstr "Estado de la imagen"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Auto Goto URL"
@@ -12889,7 +12883,7 @@ msgid ""
 "table header cell. Without it, it may be difficult for some users with "
 "disabilities to understand the content or data displayed of the table."
 msgstr ""
-" ¿Está seguro que desea continuar sin especificar el alcance del "
+"¿Está seguro que desea continuar sin especificar el alcance del "
 "encabezado de celda? Sin él podría ser dificultoso para algunos usuarios "
 "entender el contenido o los datos mostrados en la tabla."
 
@@ -13294,7 +13288,7 @@ msgstr "Descripción de definición"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Definition Term "
-msgstr "Término de definición"
+msgstr "Término de definición "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Code Sample"
@@ -13318,7 +13312,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Are you sure you want clear all contents?"
-msgstr " ¿Seguro que desea borrar todo el contenido?"
+msgstr "¿Seguro que desea borrar todo el contenido?"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Path"
@@ -13514,7 +13508,7 @@ msgstr "Abrir vínculo en la misma ventana"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Select Special Character"
-msgstr "Elegir caracter personalizado"
+msgstr "Elegir carácter personalizado"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Name:"
@@ -14314,7 +14308,7 @@ msgstr "Error al guardar el estilo, el directorio de estilos no existe"
 
 #: exe/webui/stylemanagerpage.py:56 exe/webui/stylemanagerpage.py:341
 msgid "Style already exists. "
-msgstr "El estilo ya existe."
+msgstr "El estilo ya existe. "
 
 #: exe/webui/stylemanagerpage.py:151 exe/webui/stylemanagerpage.py:310
 #: exe/webui/templatemanagerpage.py:126
@@ -14351,19 +14345,19 @@ msgstr "Error al instalar el estilo"
 
 #: exe/webui/stylemanagerpage.py:339
 msgid "Overwrite local version of this style?"
-msgstr "¿Desea sobreescribir la versión local del estilo?"
+msgstr "¿Desea sobrescribir la versión local del estilo?"
 
 #: exe/webui/stylemanagerpage.py:342
 msgid ""
 "Importing this style will overwrite local style, this action cannot be "
 "undone. "
 msgstr ""
-"Si importa el estilo sobreescribirá la versión local - esta acción no "
-"tiene vuelta atrás."
+"Si importa el estilo sobrescribirá la versión local - esta acción no "
+"tiene vuelta atrás. "
 
 #: exe/webui/stylemanagerpage.py:343
 msgid "Are you sure you want to install remote style?. "
-msgstr " ¿Confirma que desea instalar el estilo remoto? "
+msgstr "¿Confirma que desea instalar el estilo remoto? "
 
 #: exe/webui/stylemanagerpage.py:365
 msgid "Error when downloading style from repository"
@@ -14820,11 +14814,11 @@ msgstr "Darle nombre al estilo nuevo"
 
 #: exe/webui/tools/style-designer/js/app.js:1339
 msgid "Style Designer windows will be closed. "
-msgstr "Se va a proceder a cerrar las ventanas del diseñador de estilos."
+msgstr "Se va a proceder a cerrar las ventanas del diseñador de estilos. "
 
 #: exe/webui/tools/style-designer/js/app.js:1342
 msgid "Page will be reloaded. "
-msgstr "Se va a proceder a recargar la página."
+msgstr "Se va a proceder a recargar la página. "
 
 #: exe/webui/tools/style-designer/langs/all.js:12
 msgid "General settings"
@@ -15136,7 +15130,7 @@ msgstr ""
 msgid "Undo changes since last time you saved? This cannot be undone. "
 msgstr ""
 "¿Desechar los cambios realizados desde que guardó por última vez? Esta "
-"acción no se puede deshacer."
+"acción no se puede deshacer. "
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:214
 #: exe/webui/truefalseelement.py:262
@@ -15279,8 +15273,8 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
-"O su fichero de iDevices/generic.data o el paquete que está intentando "
-"cargar fue creado con una versión más nueva de eXeLearning. Por favor "
+"O su fichero idevices/generic.data o el paquete que está intentando "
+"cargar fueron creados con una versión más reciente de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
 
 #~ msgid "Allow albebra input"
