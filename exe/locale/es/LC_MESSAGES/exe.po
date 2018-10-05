@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.2.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2018-10-05 16:35+0200\n"
-"PO-Revision-Date: 2018-10-05 16:26+0200\n"
+"PO-Revision-Date: 2018-10-05 16:38+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -9699,7 +9699,7 @@ msgstr "Mostrar la barra de menú"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:28
 msgid "Allow algebra input"
-msgstr ""
+msgstr "Permitir introducir formato algebra"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:29
 msgid "Show toolbar"
@@ -15285,4 +15285,3 @@ msgstr ""
 
 #~ msgid "Allow albebra input"
 #~ msgstr ""
-
