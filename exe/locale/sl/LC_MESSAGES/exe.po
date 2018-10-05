@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-05 13:37+0200\n"
+"POT-Creation-Date: 2018-10-05 16:35+0200\n"
 "PO-Revision-Date: 2008-05-15 11:54+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language: sl\n"
@@ -9265,7 +9265,7 @@ msgid "Show menu bar"
 msgstr ""
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:28
-msgid "Allow albebra input"
+msgid "Allow algebra input"
 msgstr ""
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:29
@@ -15478,5 +15478,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Error exporting package %s to Procomún: %s"
+#~ msgstr ""
+
+#~ msgid "Allow albebra input"
 #~ msgstr ""
 

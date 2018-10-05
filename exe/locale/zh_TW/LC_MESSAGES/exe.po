@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2.1\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2018-10-05 13:37+0200\n"
+"POT-Creation-Date: 2018-10-05 16:35+0200\n"
 "PO-Revision-Date: 2017-07-23 17:03+0200\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language: zh_Hant_TW\n"
@@ -8923,7 +8923,7 @@ msgid "Show menu bar"
 msgstr ""
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:28
-msgid "Allow albebra input"
+msgid "Allow algebra input"
 msgstr ""
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:29
@@ -15107,4 +15107,7 @@ msgstr "您的iDevices或是generic.data檔案是由更新版的eXe所建立。�
 
 #~ msgid "Error exporting package %s to Procomún: %s"
 #~ msgstr "匯出套件 %s 到 Procomún 時發生錯誤：%s"
+
+#~ msgid "Allow albebra input"
+#~ msgstr ""
 

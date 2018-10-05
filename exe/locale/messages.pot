@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-05 13:37+0200\n"
+"POT-Creation-Date: 2018-10-05 16:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -8770,7 +8770,7 @@ msgid "Show menu bar"
 msgstr ""
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:28
-msgid "Allow albebra input"
+msgid "Allow algebra input"
 msgstr ""
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:29

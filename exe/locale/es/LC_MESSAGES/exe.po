@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2018-10-05 13:37+0200\n"
+"POT-Creation-Date: 2018-10-05 16:35+0200\n"
 "PO-Revision-Date: 2018-10-05 16:26+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -3991,7 +3991,9 @@ msgstr "Publicando el documento en Procomún"
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
 "view the exported package\">%s</a>."
-msgstr "Paquete exportado a  <a href=\"%s\" target=\"_blank\" title=\"Pulse para ver el paquete exportado\">%s</a>."
+msgstr ""
+"Paquete exportado a  <a href=\"%s\" target=\"_blank\" title=\"Pulse para "
+"ver el paquete exportado\">%s</a>."
 
 #: exe/jsui/mainpage.py:1154
 #, python-format
@@ -3999,7 +4001,10 @@ msgid ""
 "<small>You can view and manage the uploaded package using <a href=\"%s\" "
 "target=\"_blank\" title=\"Procomún Home\">Procomún</a>\\'s web "
 "page.</small>"
-msgstr "<small>Puede ver y gestionar el paquete subido usando la página web de  <a href=\"%s\" target=\"_blank\" title=\"sitio web de Procomún\">Procomún</a>.</small>"
+msgstr ""
+"<small>Puede ver y gestionar el paquete subido usando la página web de  "
+"<a href=\"%s\" target=\"_blank\" title=\"sitio web de "
+"Procomún\">Procomún</a>.</small>"
 
 #: exe/jsui/mainpage.py:1163
 #, python-format
@@ -4018,13 +4023,18 @@ msgstr "1. Los metadata del paquete no se han completado adecuadamente."
 msgid ""
 "2. There is a problem with you connection (or with Procomún servers), so "
 "you should just try again later."
-msgstr "2. Hay un problema con su conexión (o con los servidores de Procomún), inténtelo de nuevo dentro de unos minutos."
+msgstr ""
+"2. Hay un problema con su conexión (o con los servidores de Procomún), "
+"inténtelo de nuevo dentro de unos minutos."
 
 #: exe/jsui/mainpage.py:1171
 msgid ""
 "If you have problems publishing you can close this dialogue, export as "
 "SCORM 2004 and upload the generated zip file manually to Procomún."
-msgstr "Si tiene problemas al hacer la publicación puede cerrar este diálogo, exportar como SCORM 2000 y subir el fichero zip generado manualmente a Procomún."
+msgstr ""
+"Si tiene problemas al hacer la publicación puede cerrar este diálogo, "
+"exportar como SCORM 2000 y subir el fichero zip generado manualmente a "
+"Procomún."
 
 #: exe/jsui/mainpage.py:1173
 #, python-format
@@ -6026,7 +6036,9 @@ msgstr "Volver"
 msgid ""
 "Some important information is missing in the \"Properties\" tab. You can "
 "complete it now."
-msgstr "Falta información importante en la pestaña \"Propiedades\". Puede completarla ahora."
+msgstr ""
+"Falta información importante en la pestaña \"Propiedades\". Puede "
+"completarla ahora."
 
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:56
 msgid "Save and export"
@@ -6040,14 +6052,19 @@ msgstr "Exportar sin cambios"
 msgid ""
 "The value selected for this field is not accepted by Procomún. Please "
 "select one of the values below:"
-msgstr "Procomún no acepta el valor seleccionado para este campo. Seleccione uno de los valores siguientes:"
+msgstr ""
+"Procomún no acepta el valor seleccionado para este campo. Seleccione uno "
+"de los valores siguientes:"
 
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:138
 msgid ""
 "If you have problems publishing or you want to complete your cataloguing "
 "later, close this dialogue, export as SCORM 2004 and upload the generated"
 " zip file to Procomún."
-msgstr "Si tiene problemas al hacer la publicación o si desea completar la catalogación más adelante, cierre este diálogo, exporte como SCORM 2004 y suba el fichero zip generado a Procomún."
+msgstr ""
+"Si tiene problemas al hacer la publicación o si desea completar la "
+"catalogación más adelante, cierre este diálogo, exporte como SCORM 2004 y"
+" suba el fichero zip generado a Procomún."
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 #: exe/webui/tools/assistant/langs/all.js:41
@@ -9681,7 +9698,7 @@ msgid "Show menu bar"
 msgstr "Mostrar la barra de menú"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:28
-msgid "Allow albebra input"
+msgid "Allow algebra input"
 msgstr ""
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:29
@@ -9732,7 +9749,9 @@ msgstr "Botón de reproducir"
 msgid ""
 "Insert a GeoGebra activity from www.geogebra.org. It requires an Internet"
 " connection."
-msgstr "Insertar una actividad de GeoGebra desde www.geogebra.org. Necesita conexión a internet."
+msgstr ""
+"Insertar una actividad de GeoGebra desde www.geogebra.org. Necesita "
+"conexión a internet."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:59
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:228
@@ -9793,19 +9812,25 @@ msgstr "Guardar la puntuación"
 msgid ""
 "The button will only be displayed when exporting as SCORM and while "
 "editing in eXeLearning."
-msgstr "Este botón sólo se mostrará en la exportación a SCORM y cuando se esté editando con eXeLearning."
+msgstr ""
+"Este botón sólo se mostrará en la exportación a SCORM y cuando se esté "
+"editando con eXeLearning."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:84
 msgid ""
 "Include only one GeoGebra activity with a \"Save score\" button in the "
 "page."
-msgstr "Incluir sólo una actividad GeoGebra con un botón \"Guardar puntuación\" en la página."
+msgstr ""
+"Incluir sólo una actividad GeoGebra con un botón \"Guardar puntuación\" "
+"en la página."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:85
 msgid ""
 "The activity with button has to be the last GeoGebra activity on the page"
 " (or it won't work)."
-msgstr "La actividad que incluye el botón debe ser la última actividad GeoGebra de la página, o no funcionará."
+msgstr ""
+"La actividad que incluye el botón debe ser la última actividad GeoGebra "
+"de la página, o no funcionará."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:86
 msgid "Do not include a \"SCORM Quiz\" iDevice in the same page."
@@ -15257,3 +15282,7 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
+
+#~ msgid "Allow albebra input"
+#~ msgstr ""
+
