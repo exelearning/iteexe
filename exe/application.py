@@ -23,24 +23,27 @@
 Main application class, pulls together everything and runs it.
 """
 
+import logging
 import os
-import sys
 import shutil
+import sys
 
 from tempfile import mkdtemp
 # Make it so we can import our own nevow and twisted etc.
 if os.name == 'posix' and not ('--standalone' in sys.argv or '--portable' in sys.argv):
     sys.path.insert(0, '/usr/share/exe')
-from getopt import getopt, GetoptError
-from exe.webui.webserver     import WebServer
-from exe.webui.browser       import launchBrowser
-from exe.engine.idevicestore import IdeviceStore
-from exe.engine.translate    import installSafeTranslate
-from exe.engine.package      import Package
-from exe.engine              import version
+
+from getopt                  import getopt, GetoptError
+from twisted.internet        import reactor
+from twisted.web.static      import File
+
 from exe                     import globals as G
-import logging
-from twisted.internet import reactor
+from exe.engine              import version
+from exe.engine.idevicestore import IdeviceStore
+from exe.engine.package      import Package
+from exe.engine.translate    import installSafeTranslate
+from exe.webui.browser       import launchBrowser
+from exe.webui.webserver     import WebServer
 
 log = logging.getLogger(__name__)
 
@@ -80,7 +83,7 @@ class Application:
         self.exeAppUri = None
         self.standalone = False  # Used for the ready to run exe
         self.portable = False  # FM: portable mode
-        self.persistNonPersistants = False  
+        self.persistNonPersistants = False
         self.tempWebDir = mkdtemp('.eXe')
         self.resourceDir = None
         self.afterUpgradeHandlers = []
@@ -114,12 +117,12 @@ class Application:
         """Execute all upgrade_to_version_X functions from stored version to actual version"""
         version_file = self.config.configDir / 'version'
         stored_version = 0
-        
+
         if version_file.exists():
             # Try to read version from file, if that fails assume 0
             try:
                 stored_version = int(version_file.bytes())
-            except: 
+            except:
                 stored_version = 0
 
         # Execute upgrade_to_version_x (if they exist) until we reach current version
@@ -127,13 +130,13 @@ class Application:
             method = getattr(Application, 'upgrade_to_version_%d' % v, None)
             if method:
                 method(self)
-                
+
         version_file.write_text(str(self.version))
 
     def upgrade_to_version_1(self):
         """Hide experimental idevices"""
         log.info('Upgrading to version 1')
-        
+
         # Go through all iDevices and hide them if the category is Experimental
         for idevice in self.ideviceStore.getIdevices():
             lower_title = idevice._title.lower()
@@ -146,7 +149,7 @@ class Application:
         Processes the command line arguments
         """
         try:
-            options, packages = getopt(sys.argv[1:], 
+            options, packages = getopt(sys.argv[1:],
                                        "hV", ["help", "version", "standalone","portable"])
         except GetoptError:
             self.usage()
@@ -173,7 +176,7 @@ class Application:
                 self.standalone = True
                 self.portable = True
 
-    
+
     def loadConfiguration(self):
         """
         Loads the config file and applies all the settings
@@ -203,7 +206,7 @@ class Application:
 
     def preLaunch(self):
         """
-        Sets ourself up for running 
+        Sets ourself up for running
         Needed for unit tests
         """
         log.debug("preLaunch")
@@ -223,6 +226,17 @@ class Application:
         self.webServer = WebServer(self, self.packagePath)
         # and determine the web server's port before launching the client, so it can use the same port#:
         self.webServer.find_port()
+
+
+        # Add missing mime types to Twisted for Windows
+        File.contentTypes.update({
+            '.odt': 'application/vnd.oasis.opendocument.text',
+            '.odp': 'application/vnd.oasis.opendocument.presentation',
+            '.ods': 'application/vnd.oasis.opendocument.spreadsheet',
+            '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            '.pptx': 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+            '.xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        })
 
     def serve(self):
         """
