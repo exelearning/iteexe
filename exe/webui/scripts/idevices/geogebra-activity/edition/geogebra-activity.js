@@ -25,7 +25,7 @@ var $exeDevice = {
 	// True/false options
 	trueFalseOptions : {
 		"showMenuBar": [_("Show menu bar"),false],
-		"showAlgebraInput": [_("Allow albebra input"),false],
+		"showAlgebraInput": [_("Allow algebra input"),false],
 		"showToolBar": [_("Show toolbar"),false],
 		"showToolBarHelp": [_("Show toolbar help"),false],
 		"showResetIcon": [_("Show reset icon"),false],
