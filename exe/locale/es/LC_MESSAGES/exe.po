@@ -9695,31 +9695,31 @@ msgstr "Actividad de GeoGebra"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:27
 msgid "Show menu bar"
-msgstr "Mostrar la barra de menú"
+msgstr "Barra de menú"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:28
 msgid "Allow algebra input"
-msgstr "Permitir introducir formato algebra"
+msgstr "Línea de entrada algebraica"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:29
 msgid "Show toolbar"
-msgstr "Mostrar la barra de utilidades"
+msgstr "Barra de utilidades"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:30
 msgid "Show toolbar help"
-msgstr "Mostrar la ayuda de la barra de utilidades"
+msgstr "Ayuda de la barra de utilidades"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:31
 msgid "Show reset icon"
-msgstr "Mostrar el icono de reseteo"
+msgstr "Icono de reseteo"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:32
 msgid "Enable right click"
-msgstr "Activar la acción del botón derecho"
+msgstr "Activar botón derecho"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:33
 msgid "Error dialogs active"
-msgstr "Activados los diálogos de error"
+msgstr "Diálogos de error"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:34
 msgid "Prevent focus"
@@ -9727,11 +9727,11 @@ msgstr "Impedir el foco"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:35
 msgid "Show zoom buttons"
-msgstr "Mostrar los botones de zoom"
+msgstr "Botones de zoom"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:36
 msgid "Show fullscreen button"
-msgstr "Mostrar el botón de pantalla completa"
+msgstr "Botón de pantalla completa"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:37
 msgid "Disable auto-scale"
@@ -9739,7 +9739,7 @@ msgstr "Desactivar el autoescalado"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:38
 msgid "Show suggestion buttons"
-msgstr "Mostrar los botones de sugerencias"
+msgstr "Botones de sugerencias"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:39
 msgid "Play button"
