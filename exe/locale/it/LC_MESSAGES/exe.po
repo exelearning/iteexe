@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 16:35+0200\n"
-"PO-Revision-Date: 2018-10-07 19:48+0200\n"
+"PO-Revision-Date: 2018-10-07 21:44+0200\n"
 "Last-Translator: Andrea Primiani <primiani@dag.it>\n"
 "Language: it\n"
 "Language-Team: Andrea Primiani <primiani@dag.it>\n"
@@ -5433,12 +5433,16 @@ msgid ""
 "The value selected for this field is not accepted by Procomún. Please select one of the values "
 "below:"
 msgstr ""
+"Il valore scelto per questo campo non è accettato da Procomún. Scegliere uno di questi valori:"
 
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:138
 msgid ""
 "If you have problems publishing or you want to complete your cataloguing later, close this "
 "dialogue, export as SCORM 2004 and upload the generated zip file to Procomún."
 msgstr ""
+"Se ci sono problemi di pubblicazione o se si vuole completare la catalogazione più tardi: si può "
+"chiudere questa finestra, esportare come SCORM2004 e caricare lo ZIP generato direttamente in "
+"Procomún."
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53 exe/webui/tools/assistant/langs/all.js:41
 msgid "Outline"
@@ -8943,63 +8947,63 @@ msgstr "Indicare il testo del bottone."
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:14
 #: exe/webui/scripts/idevices/geogebra-activity/export/geogebra-activity.js:29
 msgid "GeoGebra Activity"
-msgstr ""
+msgstr "Attività GeoGebra"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:27
 msgid "Show menu bar"
-msgstr ""
+msgstr "Mostra barra menu"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:28
 msgid "Allow algebra input"
-msgstr ""
+msgstr "Permetti inserimento algebra"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:29
 msgid "Show toolbar"
-msgstr ""
+msgstr "Mostra barra strumenti"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:30
 msgid "Show toolbar help"
-msgstr ""
+msgstr "Mostra aiuto barra strumenti"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:31
 msgid "Show reset icon"
-msgstr ""
+msgstr "Mostra icona reset"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:32
 msgid "Enable right click"
-msgstr ""
+msgstr "Abilita clic destro"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:33
 msgid "Error dialogs active"
-msgstr ""
+msgstr "Finestre di errore attive"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:34
 msgid "Prevent focus"
-msgstr ""
+msgstr "Previeni fuoco"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:35
 msgid "Show zoom buttons"
-msgstr ""
+msgstr "Mostra bottoni zoom"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:36
 msgid "Show fullscreen button"
-msgstr ""
+msgstr "Mostra bottone schermo intero"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:37
 msgid "Disable auto-scale"
-msgstr ""
+msgstr "Disabilita auto-scala"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:38
 msgid "Show suggestion buttons"
-msgstr ""
+msgstr "Mostra bottoni suggerimenti"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:39
 msgid "Play button"
-msgstr ""
+msgstr "Bottone esegui"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:52
 msgid "Insert a GeoGebra activity from www.geogebra.org. It requires an Internet connection."
-msgstr ""
+msgstr "Inserire un'attività GeoGebra da www.geogebra.org. Richiede connessione di rete."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:59
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:228
@@ -9045,7 +9049,7 @@ msgstr "Colore bordo"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:75
 msgid "Save score button"
-msgstr ""
+msgstr "Bottone salva punteggio"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:77
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:26
@@ -9054,23 +9058,23 @@ msgstr "Testo del bottone"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:78
 msgid "Save score"
-msgstr ""
+msgstr "Salva punteggio"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:83
 msgid "The button will only be displayed when exporting as SCORM and while editing in eXeLearning."
-msgstr ""
+msgstr "Il bottone verrà mostrato soltanto durante l'esportazione SCORM e la modifica in eXeLearning."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:84
 msgid "Include only one GeoGebra activity with a \"Save score\" button in the page."
-msgstr ""
+msgstr "Includere una sola attività GeoGebra con un bottone \"Salva punteggio\" sulla pagina."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:85
 msgid "The activity with button has to be the last GeoGebra activity on the page (or it won't work)."
-msgstr ""
+msgstr "L'attività col bottone dev'essere l'ultima attività GeoGebra sulla pagina (o non funziona)."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:86
 msgid "Do not include a \"SCORM Quiz\" iDevice in the same page."
-msgstr ""
+msgstr "Non inserire un iDevice \"Quiz SCORM\" nella stessa pagina."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:256
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:141
