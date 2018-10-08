@@ -61,7 +61,7 @@ Ext.define('eXe.view.forms.ValidatePanel', {
                             form.submit({
                                 success: function () {
                                     if (formpanel.fileIsSaved) {
-                                        eXe.app.getController('Toolbar').fileSave();
+                                        eXe.app.getController('Toolbar').fileSave('',formpanel.exportType);
                                     }
 
                                     // Do the validation again
@@ -74,7 +74,6 @@ Ext.define('eXe.view.forms.ValidatePanel', {
                                 }
                             });
                         },
-                        itemId: 'save_properties',
                         margin: 10,
                         style: 'float:right'
                     },

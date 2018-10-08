@@ -356,7 +356,7 @@ class MainPage(RenderableLivePage):
         else:
             client.sendScript(ifNotTemplate)
 
-    def handlePackageFileName(self, client, onDone, onDoneParam):
+    def handlePackageFileName(self, client, onDone, onDoneParam,export_type_name):
         """
         Calls the javascript func named by 'onDone' passing as the
         only parameter the filename of our package. If the package
@@ -364,7 +364,7 @@ class MainPage(RenderableLivePage):
         'onDoneParam' will be passed to onDone as a param after the
         filename
         """
-        client.call(onDone, unicode(self.package.filename), onDoneParam)
+        client.call(onDone, unicode(self.package.filename), onDoneParam,export_type_name)
 
     def b4save(self, client, inputFilename, ext, msg):
         """
@@ -395,7 +395,7 @@ class MainPage(RenderableLivePage):
 
         return inputFilename
 
-    def handleSavePackage(self, client, filename=None, onDone=None):
+    def handleSavePackage(self, client, filename=None, onDone=None,export_type_name=None):
         """
         Save the current package
         'filename' is the filename to save the package to
@@ -437,17 +437,19 @@ class MainPage(RenderableLivePage):
         if G.application.webServer is not None and self.package.name in G.application.webServer.invalidPackageName:
             self.package._name = self.package._name + '_1'
 
-        # Tell the user and continue
-        if onDone:
-            client.alert(_(u'Package saved to: %s') % filename, onDone)
-        elif self.package.name != oldName:
-            # Redirect the client if the package name has changed
-            self.webServer.root.putChild(self.package.name, self)
-            log.info('Package saved, redirecting client to /%s' % self.package.name)
-            client.alert(_(u'Package saved to: %s') % filename, 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'), \
-                         filter_func=otherSessionPackageClients)
-        else:
-            client.alert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
+
+        if export_type_name == None:
+            # Tell the user and continue
+            if onDone:
+                client.alert(_(u'Package saved to: %s') % filename, onDone)
+            elif self.package.name != oldName:
+                # Redirect the client if the package name has changed
+                self.webServer.root.putChild(self.package.name, self)
+                log.info('Package saved, redirecting client to /%s' % self.package.name)
+                client.alert(_(u'Package saved to: %s') % filename, 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'), \
+                            filter_func=otherSessionPackageClients)
+            else:
+                client.alert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
 
     def handleSaveTemplate(self, client, templatename=None, onDone=None, edit=False):
         '''Save template'''

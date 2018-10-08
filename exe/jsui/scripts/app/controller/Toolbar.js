@@ -1309,32 +1309,42 @@ Ext.define('eXe.controller.Toolbar', {
         return "";
     },
 
-    executeFileSave: function(onProceed) {
+    executeFileSave: function(onProceed,export_type_name ) {
 	    if (!onProceed || (onProceed && typeof(onProceed) != "string"))
 	        var onProceed = '';
-	    nevow_clientToServerEvent('getPackageFileName', this, '', 'eXe.app.getController("Toolbar").fileSave2', onProceed);
+	    nevow_clientToServerEvent('getPackageFileName', this, '', 'eXe.app.getController("Toolbar").fileSave2', onProceed,export_type_name );
     },
 
-	fileSave: function(onProceed) {
+	fileSave: function(onProceed, export_type_name) {
         var ed = this.getTinyMCEFullScreen();
         if(ed!="") {
             ed.execCommand('mceFullScreen');
             setTimeout(function(){
                 eXe.controller.Toolbar.prototype.executeFileSave(onProceed);
             },500);
-        } else this.executeFileSave(onProceed);
+        } else if(typeof(export_type_name) == 'string'){
+            this.executeFileSave(onProceed,export_type_name);
+        }else{
+            this.executeFileSave(onProceed,"");
+        }
+
 	},
 
-	fileSave2: function(filename, onDone) {
+	fileSave2: function(filename, onDone,export_type_name) {
 	    if (filename) {
 	        this.saveWorkInProgress();
 	        // If the package has been previously saved/loaded
 	        // Just save it over the old file
-            Ext.Msg.wait(new Ext.Template(_('Saving package to: {filename}')).apply({filename: filename}));
-	        if (onDone) {
-	            nevow_clientToServerEvent('savePackage', this, '', '', onDone);
+
+	        if (export_type_name === "") {
+                Ext.Msg.wait(new Ext.Template(_('Saving package to: {filename}')).apply({filename: filename}));
+                if (onDone){
+                    nevow_clientToServerEvent('savePackage', this, '', '', onDone);
+                }else{
+                    nevow_clientToServerEvent('savePackage', this, '');
+                }
 	        } else {
-	            nevow_clientToServerEvent('savePackage', this, '');
+                nevow_clientToServerEvent('savePackage', this, '','','',export_type_name);
 	        }
 	    } else {
 	        // If the package is new (never saved/loaded) show a
