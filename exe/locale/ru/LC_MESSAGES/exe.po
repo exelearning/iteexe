@@ -1,14 +1,15 @@
-# EXELearning Russian PO file.
+# EXELearning English PO file.
 # Copyright (C) 2004-2011 EXELearning.org
 # Copyright (C) 2001-2018 EXELearning.net
-# This file is distributed under the same license as the eXeLearning package.
+# This file is distributed under the same license as the EXE package.
+# eXe Project <exe@exelearning.org>, 2008.
 # AlexL <loginov.alex.valer@gmail.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 16:35+0200\n"
-"PO-Revision-Date: 2018-10-09 19:17+0100\n"
+"PO-Revision-Date: 2018-11-10 19:17+0100\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>, 2018\n"
 "Language-Team: Russian (https://www.transifex.com/rus-open-source/teams/44267/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -241,7 +242,7 @@ msgid ""
 msgstr ""
 "<p>Присвойте метку для вложения. Полезно указать тип файла. Например pdf, "
 "ppt, .odp и т. д.</p><p>Также рекомендуется указать размер вложения, чтобы "
-"после того, как оно будет экспортировано на веб сайт, люди имели "
+"после того, как оно будет экспортировано на веб-сайт, люди имели "
 "представление о том, как долго это вложение будет "
 "загружаться.</p><p>Например: <code>Прогноз продаж.doc (500kb)</code></p>"
 
@@ -289,7 +290,7 @@ msgid ""
 msgstr ""
 "Тематическое исследование является устройством, которое предоставляет учащимся \n"
 "моделирование, которое имеет образовательную базу. Это занимает ситуацию, в целом \n"
-"основаную на реальности, и просит учащихся продемонстрировать или описать какие действия \n"
+"основанную на реальности, и просит учащихся продемонстрировать или описать какие действия \n"
 "потребуются для выполнения задачи или разрешения ситуации. Тематическое исследование позволяет \n"
 "учащимся применять свои знания и опыт для выполнения назначенных задач. \n"
 "При разработке тематического исследования необходимо учитывать следующее:<ul> \n"
@@ -977,8 +978,8 @@ msgstr ""
 "<li> Обеспечить достаточно вариантов, чтобы бросить вызов учащимся мыслить об их ответе\n"
 "</li>\n"
 "<li> Постарайтесь убедиться, что правильные ответы не являются более подробными, чем \n"
-"дистракторы </li>\n"
-"<li> дистракторы должно быть неправильными, но правдоподобными </li>\n"
+"отвлекающие </li>\n"
+"<li> отвлекающие должны быть неправильными, но правдоподобными </li>\n"
 "</ul>\n"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:101
@@ -1170,7 +1171,7 @@ msgstr "недопустимый номер - пожалуйста, попроб
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
-msgstr "Внешний вебсайт"
+msgstr "Внешний веб-сайт"
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -1471,7 +1472,7 @@ msgstr ""
 "принимать другие видео форматы. Однако вы можете конвертировать другие форматы фильмов \n"
 "(например, MOV, WMF и т.д.) в .FLV формат с помощью другого кодировщика. Они \n"
 "не поставляются с eXe. Пользователям также необходимо скачать Flash 8 \n"
-"плейер из http://www.macromedia.com/ для воспроизведения видео."
+"плеер из http://www.macromedia.com/ для воспроизведения видео."
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
@@ -1503,7 +1504,7 @@ msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr ""
-"Ставьте подпись для флэш-ролика, который \n"
+"Ставьте подпись для flash-ролика, который \n"
 "Вы только что вставили."
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
@@ -2305,7 +2306,8 @@ msgstr ""
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
 msgstr ""
-"Вы можете использовать тулбар или введите latex вручную в текстовое поле. "
+"Вы можете использовать панель инструментов или введите latex вручную в "
+"текстовое поле."
 
 #: exe/engine/memorymatchidevice.py:44
 msgid "Memory Match Game"
@@ -2711,7 +2713,7 @@ msgstr "Это поле для \"простого текста\"."
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
-msgstr "Главная площать"
+msgstr "Главная площадь"
 
 #: exe/engine/placetheobjectsidevice.py:62
 msgid "This is the main image where the user will drag / drop items to"
@@ -3028,7 +3030,7 @@ msgstr "Корректно отсортированное наложение"
 
 #: exe/engine/sortidevice.py:54
 msgid "Shown when check is clicked and correct"
-msgstr "Показан когда проверка щёлкнута и корректена"
+msgstr "Показан когда проверка щёлкнута и корректна"
 
 #: exe/engine/sortidevice.py:55
 msgid "Wrongly Sorted Overlay"
@@ -3036,7 +3038,7 @@ msgstr "Некорректно отсортированное наложение
 
 #: exe/engine/sortidevice.py:55
 msgid "Shown when check is clicked and wrong"
-msgstr "Показан когда проверка щёлкнута и некорректена"
+msgstr "Показан когда проверка щёлкнута и некорректна"
 
 #: exe/engine/sortidevice.py:56
 msgid "Effect for showing correct overlay"
@@ -3180,7 +3182,7 @@ msgid ""
 "to the learner. This field may be left blank. if this field is left blank \n"
 "default feedback will be provided."
 msgstr ""
-"Введите любую обратнуюсвязь, которую вы хотите обеспечить \n"
+"Введите любую обратную связь, которую вы хотите обеспечить \n"
 "для обучаемого. Это поле может быть пустым. Если оставить это поле пустым, \n"
 "то обратная связь по умолчанию будет предоставлена."
 
@@ -3326,8 +3328,8 @@ msgid ""
 "xliff, text or epub3."
 msgstr ""
 "Экспортировать <input_file> elp пакет в опциональный <output_file> в один из"
-" данных форматов: xml, scorm12, scorm2004, ims, вебсайт, webzip, singlepage,"
-" xliff, текст или epub3."
+" данных форматов: xml, scorm12, scorm2004, ims, веб-сайт, webzip, "
+"singlepage, xliff, текст или epub3."
 
 #: exe/exe_do:113
 msgid ""
@@ -5985,7 +5987,7 @@ msgstr "Содержимое IMS пакета"
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:256
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:299
 msgid "Web Site"
-msgstr "Вебсайт"
+msgstr "Веб-сайт"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:263
 msgid "Self-contained Folder"
@@ -6115,7 +6117,7 @@ msgstr "Примечания к выпуску"
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:600
 #: exe/webui/tools/assistant/langs/all.js:79
 msgid "eXe Web Site"
-msgstr "Вебсайт eXe"
+msgstr "Веб-сайт eXe"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:607
 #: exe/webui/scripts/authoring.js:907
@@ -6153,7 +6155,7 @@ msgstr "Информация"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "You've been working for a long time without saving."
-msgstr "Вы работали длительное временя без сохранения."
+msgstr "Вы работали длительное время без сохранения."
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:755
 msgid "Do you want to save now?"
@@ -6982,7 +6984,7 @@ msgstr "создатель"
 #: exe/jsui/scripts/lomvocab.js:141 exe/jsui/scripts/lomvocab.js:167
 #: exe/jsui/scripts/lomvocab.js:961 exe/jsui/scripts/lomvocab.js:983
 msgid "validator"
-msgstr "валидатор"
+msgstr "проверяющий"
 
 #: exe/jsui/scripts/lomvocab.js:147 exe/jsui/scripts/lomvocab.js:613
 #: exe/jsui/scripts/lomvocab.js:967
@@ -7023,15 +7025,15 @@ msgstr "поставщик содержимого"
 
 #: exe/jsui/scripts/lomvocab.js:187 exe/jsui/scripts/lomvocab.js:1003
 msgid "technical validator"
-msgstr "технический валидатор"
+msgstr "технический проверяющий"
 
 #: exe/jsui/scripts/lomvocab.js:191 exe/jsui/scripts/lomvocab.js:1007
 msgid "educational validator"
-msgstr "образовательный валидатор"
+msgstr "образовательный проверяющий"
 
 #: exe/jsui/scripts/lomvocab.js:195 exe/jsui/scripts/lomvocab.js:1011
 msgid "script writer"
-msgstr "скриптописатель"
+msgstr "автор скрипта"
 
 #: exe/jsui/scripts/lomvocab.js:199 exe/jsui/scripts/lomvocab.js:1015
 msgid "instructional designer"
@@ -7060,7 +7062,7 @@ msgstr "сравнивать"
 
 #: exe/jsui/scripts/lomvocab.js:225 exe/jsui/scripts/lomvocab.js:1041
 msgid "share"
-msgstr "расшаривать"
+msgstr "поделиться"
 
 #: exe/jsui/scripts/lomvocab.js:229 exe/jsui/scripts/lomvocab.js:1045
 msgid "compete"
@@ -7503,7 +7505,7 @@ msgstr "цифровая энциклопедия"
 
 #: exe/jsui/scripts/lomvocab.js:758
 msgid "digital periodical publication"
-msgstr "цифровая переодическая публикация"
+msgstr "цифровая периодическая публикация"
 
 #: exe/jsui/scripts/lomvocab.js:762
 msgid "thematic or corporate webs/web portals"
@@ -7523,7 +7525,7 @@ msgstr "утилита создания/редактирования мульт�
 
 #: exe/jsui/scripts/lomvocab.js:778
 msgid "web design tool"
-msgstr "утилита веб дизайна"
+msgstr "утилита веб-дизайна"
 
 #: exe/jsui/scripts/lomvocab.js:782
 msgid "office tool"
@@ -7552,7 +7554,7 @@ msgstr "сервис создания/редактирования мульти�
 
 #: exe/jsui/scripts/lomvocab.js:806
 msgid "web design service"
-msgstr "сервис веб дизайна"
+msgstr "сервис веб-дизайна"
 
 #: exe/jsui/scripts/lomvocab.js:810
 msgid "office service"
@@ -9007,7 +9009,7 @@ msgstr "Супер размер"
 
 #: exe/webui/externalurlblock.py:81
 msgid "Frame Height:"
-msgstr "Высота фрэйма:"
+msgstr "Высота рамки:"
 
 #: exe/webui/fileattachblock.py:92
 msgid "<div>\n"
@@ -9303,7 +9305,7 @@ msgstr "Flash ролик (.flv)"
 
 #: exe/webui/scripts/authoring.js:123 exe/webui/scripts/authoring.js:373
 msgid "Flash Object (.swf)"
-msgstr "Объект флэш (.swf)"
+msgstr "Объект flash (.swf)"
 
 #: exe/webui/scripts/authoring.js:124
 msgid "Quicktime Files (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
@@ -9868,7 +9870,7 @@ msgstr "Тёмно-оливковый"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Burnt orange"
-msgstr "Бисмарк-фуриозо"
+msgstr "Выжженный оранжевый"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Dark green"
@@ -10236,7 +10238,7 @@ msgstr "Вставить горизонтальную линию"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Rich Text Area"
-msgstr "Область Rich Text"
+msgstr "Область обогащённого текста Rich Text"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:5
@@ -10750,15 +10752,15 @@ msgstr "Открыть в новом окне"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Open in Top Frame (Replaces All Frames)"
-msgstr "Открыть в верхнем кадре (заменить все кадры)"
+msgstr "Открыть в верхней рамке (заменить все рамки)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Open in Parent Window/Frame"
-msgstr "Открыть в родительском окне/кадре"
+msgstr "Открыть в родительском окне/рамке"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Open in This Window/Frame"
-msgstr "Открыть в этом окне/кадре"
+msgstr "Открыть в этом окне/рамке"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Popup Properties"
@@ -11547,7 +11549,7 @@ msgstr "сгенерировано изображение Math"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:13
 msgid "Math Image description<br>(optional ALT tag):"
-msgstr "Описание изображения Math<br>(опциональный таг ALT)::"
+msgstr "Описание изображения Math<br>(опциональный тег ALT)::"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:14
 msgid "eXe Math: Generate"
@@ -11890,7 +11892,7 @@ msgstr "Счётчик воспроизведений"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Default Frame"
-msgstr "Основной кадр"
+msgstr "Основная рамка"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Current Position"
@@ -11962,7 +11964,7 @@ msgstr "Кэш цели"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Play Every Frame"
-msgstr "Воспроизвести каждый кадр"
+msgstr "Воспроизвести каждую рамку"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Kiosk Mode"
@@ -12228,7 +12230,7 @@ msgstr "Использовать плеер JavaScript"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:14
 msgid "Media Title"
-msgstr "Заголовок мультимедиа"
+msgstr "Заголовок медиа"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:24
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:528
@@ -12604,7 +12606,7 @@ msgstr "группы"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Frame"
-msgstr "Кадр"
+msgstr "Рамка"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid ""
@@ -12617,15 +12619,15 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "You've exceeded the maximum number of cells of {$cells}."
-msgstr "Достигнут максимальнвй предел ячеек из {$cells}."
+msgstr "Достигнут максимальный предел ячеек из {$cells}."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "You've exceeded the maximum number of rows of {$rows}."
-msgstr "Достигнут максимальнвй предел строк из $ {$rows}."
+msgstr "Достигнут максимальный предел строк из $ {$rows}."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "You've exceeded the maximum number of columns of {$cols}."
-msgstr "Достигнут максимальнвй предел колонок из {$cols}."
+msgstr "Достигнут максимальный предел колонок из {$cols}."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Update All Rows in Table"
@@ -13519,8 +13521,8 @@ msgid ""
 "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press "
 "ALT-0 for help"
 msgstr ""
-"Богатая область текста. Нажмите ALT-F9 для меню. Нажмите ALT-F10 для панели "
-"инструментов. Нажмите ALT-0 для помощи"
+"Область обогащённого текста Rich Text. Нажмите ALT-F9 для меню. Нажмите "
+"ALT-F10 для панели инструментов. Нажмите ALT-0 для помощи"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:228
 msgid "View"
@@ -14449,7 +14451,7 @@ msgstr "Текущий"
 
 #: exe/webui/tools/color-picker/langs/all.js:13
 msgid "New Color - Press OK to Commit"
-msgstr "Новый цвет - Нажмите ОК для коммита"
+msgstr "Новый цвет - Нажмите ОК для помещения"
 
 #: exe/webui/tools/color-picker/langs/all.js:14
 msgid "Click to revert to original color"
@@ -14457,7 +14459,7 @@ msgstr "Нажмите чтобы вернуться к оригинальном
 
 #: exe/webui/tools/color-picker/langs/all.js:17
 msgid "Commit to this color selection"
-msgstr "Коммитить в этот выбор цвета"
+msgstr "Поместить в этот выбор цвета"
 
 #: exe/webui/tools/color-picker/langs/all.js:18
 msgid "Cancel and revert to original color"
@@ -14522,7 +14524,7 @@ msgstr "Введите значение альфа (0-100)"
 
 #: exe/webui/tools/color-picker/langs/all.js:49
 msgid "Enter an Hex color value (#000000-#ffffff)"
-msgstr "Введите шестнадцатиричное значение цвета (#000000-#ffffff)"
+msgstr "Введите шестнадцатеричное значение цвета (#000000-#ffffff)"
 
 #: exe/webui/tools/fMath/js/jquery-ui/jquery-ui.min.js:8
 msgid "'"
