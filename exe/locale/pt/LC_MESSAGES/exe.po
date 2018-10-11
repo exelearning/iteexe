@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.2.1\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2018-10-05 16:35+0200\n"
-"PO-Revision-Date: 2018-10-10 20:09+0200\n"
+"PO-Revision-Date: 2018-10-11 17:17+0200\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
 "Language: pt\n"
 "Language-Team: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
@@ -335,7 +335,7 @@ msgid ""
 "Situation is an iDevice that provides the student with a story that will guide her along the "
 "learning process."
 msgstr ""
-"Caso pr&aacute;tico é um iDevice que fornece aos estudantes uma história que os guiará através "
+"Caso prático é um iDevice que fornece aos estudantes uma história que os guiará através "
 "da sua aprendizagem."
 
 #: exe/engine/casopracticofpdidevice.py:35 exe/engine/citasparapensarfpdidevice.py:37
@@ -428,7 +428,7 @@ msgstr "Mostra-se por cima do jogo quando se dá uma resposta errada"
 #: exe/engine/clickinorderidevice.py:64
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:29
 msgid "Wrong Answer Feedback Overlay"
-msgstr "Imagen de retroalimentação para resposta errada"
+msgstr "Imagem de retroalimentação para resposta errada"
 
 #: exe/engine/clickinorderidevice.py:65
 msgid "Main Area To Show"
@@ -647,8 +647,8 @@ msgstr ""
 "gramática ou a formação de palavras:</dt><dd><p>Escreva um texto onde se utilizem as formas "
 "que pretende testar. O \"texto terá de ser coerente e coeso, e de uma extensão adequada. "
 "Lembre-se que o objetivo não é o conhecimento do vocabulário, portanto o significado "
-"fundamental da raíz das palavras terá de ser bem conhecido pelos estudantes.</p><p>Saliente no "
-"texto as palavras que pretende testar. Forneça alternativas com a mesma raíz, mas com "
+"fundamental da raiz das palavras terá de ser bem conhecido pelos estudantes.</p><p>Saliente no "
+"texto as palavras que pretende testar. Forneça alternativas com a mesma raiz, mas com "
 "diferentes afixos. É boa ideia pedir a um colega que experimente o teste/exercício para se "
 "certificar que não há surpresas!</p></dd></dl>"
 
@@ -974,7 +974,7 @@ msgid ""
 msgstr ""
 "Escreva o \"feedback\" que quiser que o aluno \n"
 "veja quando selecionar uma opção em particular. Se não preencher esta caixa de texto \n"
-"o eXe proporcionará automáticamente a resposta por omissão: \"Resposta correta\" \n"
+"o eXe proporcionará automaticamente a resposta por omissão: \"Resposta correta\" \n"
 "na seleção da resposta correta; ou \"Resposta errada\"\n"
 "para as outras opções."
 
@@ -1226,7 +1226,7 @@ msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
-"Selecione apenas .swf (Objectos Flash) para \n"
+"Selecione apenas .swf (Objetos Flash) para \n"
 "este iDevice."
 
 #: exe/engine/field.py:3546 exe/engine/field.py:3610
@@ -1718,8 +1718,8 @@ msgid ""
 msgstr ""
 "<p>A atividade de leitura utiliza-se principalmente \n"
 "para verificar a compreensão de um texto dado. Isto pode ser feito \n"
-"pedindo ao estudante para refletir sobre o texto e para respondar perguntas sobre \n"
-"a leitura que fez, ou para realizar outro tipo de tarefas possívelmente mais dinâmicas \n"
+"pedindo ao estudante para refletir sobre o texto e para responder perguntas sobre \n"
+"a leitura que fez, ou para realizar outro tipo de tarefas possivelmente mais dinâmicas \n"
 "baseadas na leitura.</p>"
 
 #: exe/engine/idevicestore.py:646
@@ -2012,7 +2012,7 @@ msgid ""
 msgstr ""
 "<p>\n"
 "O iDevice Imagem com texto pode ser usado de várias maneiras para apoiar tanto a dimensão \n"
-"emocional (afetiva) como a dimensión da aprendizagem por tarefas (cognitiva) do conteúdo de "
+"emocional (afetiva) como a dimensão da aprendizagem por tarefas (cognitiva) do conteúdo de "
 "eXe.\n"
 "</p><p>\n"
 "<b>Integrar imagens com descrições verbais </b>\n"
@@ -2105,9 +2105,9 @@ msgstr ""
 "vocabulário:</dt><dt>Se o objetivo for testar a gramática ou a formação de palavras:</"
 "dt><dd><p>Escreva um texto onde se utilizem as formas que pretende testar. O texto terá de ser "
 "coerente e coeso, e de uma extensão adequada. Lembre-se que o objetivo não é o conhecimento do "
-"vocabulário, portanto o significado fundamental da raíz das palavras terá de ser bem conhecido "
+"vocabulário, portanto o significado fundamental da raiz das palavras terá de ser bem conhecido "
 "pelos estudantes.</p><p>Saliente no texto as palavras que pretende testar. Forneça "
-"alternativas com a mesma raíz, mas com diferentes afixos. É boa ideia pedir a um colega que "
+"alternativas com a mesma raiz, mas com diferentes afixos. É boa ideia pedir a um colega que "
 "experimente o teste/exercício para se certificar que não há surpresas!</p></dd></dl>"
 
 #: exe/engine/listaidevice.py:130
@@ -2574,7 +2574,7 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:48
 msgid "Place The Objects"
-msgstr "Colocar os objectos"
+msgstr "Colocar os objetos"
 
 #: exe/engine/placetheobjectsidevice.py:49
 msgid "Mike Dawson / PAIWASTOON Networking Services Ltd."
@@ -2582,7 +2582,7 @@ msgstr "Mike Dawson / PAIWASTOON Networking Services Ltd."
 
 #: exe/engine/placetheobjectsidevice.py:50
 msgid "User has to place various objects in the correct place."
-msgstr "O utilizador tem que colocar diversos objectos no lugar correto."
+msgstr "O utilizador tem que colocar diversos objetos no lugar correto."
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
@@ -3074,7 +3074,7 @@ msgid ""
 msgstr ""
 "Inserir a resposta que quer que o aluno veja \n"
 "quando selecionar esta questão particular. Se não introduzir nada\n"
-"nesta caixa, o eXe automáticamente fornecerá a resposta por omissão desta maneira: \n"
+"nesta caixa, o eXe automaticamente fornecerá a resposta por omissão desta maneira: \n"
 "\"Resposta correta\" para indicar a escolha correta; ou \n"
 "\"Resposta errada\" para as outras alternativas."
 
@@ -3100,7 +3100,7 @@ msgstr ""
 "<p>O iDevice Wikipédia permite localizar \n"
 "conteúdo existente na Wikipédia e descarregar esse conteúdo para o recurso \n"
 "eXe. O iDevice Wikipédia tira \"fotografias\" do conteúdo do \n"
-"artigo. As mudanças no artigo da Wikipédia não alteram automáticamente a informação  \n"
+"artigo. As mudanças no artigo da Wikipédia não alteram automaticamente a informação  \n"
 "copiada para o eXe, será necessária uma nova cópia do artigo. Da mesma maneira, \n"
 "alterações feitas no eXe não farão alterações na Wikipédia. </p> <p>O conteúdo da Wikipedia \n"
 "está sob a licença GNU de documentação livre 1.2, e desde 2009 adicionalmente\n"
@@ -3445,7 +3445,7 @@ msgstr "A analizar as etiquetas do ficheiro HTML %d de %d: %s"
 #: exe/importers/scanresources.py:342
 #, python-format
 msgid "Exhaustively analyzed file %s %d of %d: %s"
-msgstr "Ficheiro %s %d de %d analizado completamente: %s"
+msgstr "Ficheiro %s %d de %d analisado completamente: %s"
 
 #: exe/importers/scanresources.py:395
 msgid "Calculating depth of links"
@@ -3667,7 +3667,7 @@ msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
-"Extracção falhou!\n"
+"A extração falhou!\n"
 "%s"
 
 #: exe/jsui/mainpage.py:1359
@@ -3728,7 +3728,7 @@ msgstr "Os seguintes campos foram eliminados para respeitar o padrão SCORM 1.2:
 #: exe/jsui/mainpage.py:1691 exe/webui/stylemanagerpage.py:243
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr "O ficheiro %s não existe ou não foi possível efectuar a sua leitura."
+msgstr "O ficheiro %s não existe ou não foi possível efetuar a sua leitura."
 
 #: exe/jsui/mainpage.py:1698
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
@@ -4179,7 +4179,7 @@ msgstr "Ficheiro de texto"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1036
 msgid "Save package resources report as"
-msgstr "Guardar relátorio de recursos do pacote como"
+msgstr "Guardar relatório de recursos do pacote como"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1048
 msgid "CSV File"
@@ -4739,7 +4739,7 @@ msgstr "Meta-Metadados"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:220
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:260
 msgid "Technical"
-msgstr "Técnologia"
+msgstr "Tecnologia"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:221
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:261
@@ -4910,7 +4910,7 @@ msgstr "Duração típica da aprendizagem"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:126
 msgid "Cost"
-msgstr "Coste"
+msgstr "Custo"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:127
 msgid "Copyright And Other Restrictions"
@@ -6592,7 +6592,7 @@ msgstr "expositivo"
 #: exe/jsui/scripts/lomvocab.js:13 exe/jsui/scripts/lomvocab.js:672
 #: exe/jsui/scripts/lomvocab.js:1217
 msgid "mixed"
-msgstr "mixto"
+msgstr "misto"
 
 #: exe/jsui/scripts/lomvocab.js:19
 msgid "exercise"
@@ -6653,7 +6653,7 @@ msgstr "autoavaliação"
 
 #: exe/jsui/scripts/lomvocab.js:75
 msgid "lecture"
-msgstr "clase"
+msgstr "classe"
 
 #: exe/jsui/scripts/lomvocab.js:99 exe/jsui/scripts/lomvocab.js:919
 msgid "discipline"
@@ -7615,8 +7615,7 @@ msgstr "NÃO é possível desfazer alterações"
 #: exe/webui/block.py:242 exe/webui/block.py:338
 msgid "This will delete this iDevice. Do you really want to do this?"
 msgstr ""
-"Vai eliminar este iDevice. \n"
-"Tem a certeza de querer fazer isso?"
+"Vai eliminar este iDevice. Tem a certeza de querer fazer isso?"
 
 #: exe/webui/block.py:252
 msgid "Move Up"
@@ -8173,7 +8172,7 @@ msgstr "Orientações didáticas"
 
 #: exe/webui/content_template/strings.py:274
 msgid "Need any help?"
-msgstr "Precsa de ajuda?"
+msgstr "Precisa de ajuda?"
 
 #: exe/webui/content_template/strings.py:281
 msgid "ICT resources/apps/tools"
@@ -8916,7 +8915,7 @@ msgstr "Não foi possível obter as preferências"
 
 #: exe/webui/preferencespage.py:274
 msgid "Failed to save preferences"
-msgstr "Não foi possível guardar as preferencias"
+msgstr "Não foi possível guardar as preferências"
 
 #: exe/webui/quitpage.py:45
 msgid "eXe Closed"
@@ -9346,9 +9345,8 @@ msgid ""
 "application functionality. You will need to disable popup blocking on this site in order to "
 "fully utilize this tool."
 msgstr ""
-"Detectamos que o seu bloqueador de popups bloqueou uma janela que é essencial para a "
-"aplicação. Você precisa desativar o bloqueador de janelas de popups para utilizar esta "
-"ferramenta."
+"Detetamos que o seu bloqueador de popups bloqueou uma janela que é essencial para a aplicação. "
+"Você precisa desativar o bloqueador de janelas de popups para utilizar esta ferramenta."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Do you want to use the WYSIWYG mode for this textarea?"
@@ -9433,7 +9431,7 @@ msgstr "Verificar ortografia"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Acronym"
-msgstr "Acrônimo"
+msgstr "Acrónimo"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Citation"
@@ -9469,7 +9467,7 @@ msgstr "Tela Inteira"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Edit Embedded Media"
-msgstr "Editar mídia embutida"
+msgstr "Editar média embutidos"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Toggle Spell Checker"
@@ -10815,7 +10813,7 @@ msgstr "Boca Fechada"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Money Mouth"
-msgstr "Avarez"
+msgstr "Avareza"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Laughing"
@@ -11429,7 +11427,7 @@ msgstr "Tamanho fonte"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:80
 msgid "Robots"
-msgstr "Robots"
+msgstr "Robôs"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:83
@@ -11528,7 +11526,7 @@ msgstr "URL Base"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Balance"
-msgstr "Stereo"
+msgstr "Balanço"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Windowless Video"
@@ -11572,7 +11570,7 @@ msgstr "Hora de início"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "No Correction"
-msgstr "Sem correcções"
+msgstr "Sem correções"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Target Cache"
@@ -11664,7 +11662,7 @@ msgstr "Sem Java"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Maintain Aspect"
-msgstr "Manter aspecto"
+msgstr "Manter aspeto"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Image Status"
@@ -11724,7 +11722,7 @@ msgstr "Pré-carregar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Audio Options"
-msgstr "Opções de Audio"
+msgstr "Opções de Áudio"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Don't Preload"
@@ -11732,7 +11730,7 @@ msgstr "Não Pré-carregar"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Preload video metadata"
-msgstr "Pré-carregar metadata de vídeo"
+msgstr "Pré-carregar metadados de vídeo"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Let user's browser decide"
@@ -11840,7 +11838,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:10
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:526
 msgid "Use JavaScript player"
-msgstr "Usar reproductor JavaScript"
+msgstr "Usar reprodutor JavaScript"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:14
 msgid "Media Title"
@@ -12017,13 +12015,13 @@ msgstr "Caixa"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Insert span at selection"
-msgstr "Inserir fragmento de texto na selecção"
+msgstr "Inserir fragmento de texto na seleção"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Clip"
-msgstr "Clip"
+msgstr "Clipe"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
@@ -14011,7 +14009,7 @@ msgstr "Introduza um valor de Saturação (0-100%)"
 
 #: exe/webui/tools/color-picker/langs/all.js:29
 msgid "Set to Value color mode"
-msgstr "Establecer o valor de Luminosidade da cor"
+msgstr "Estabelecer o valor de Luminosidade da cor"
 
 #: exe/webui/tools/color-picker/langs/all.js:30
 msgid "Enter a Value (0-100%)"
@@ -14481,7 +14479,7 @@ msgid ""
 "If you choose this option, the import process will take the texts from source language instead "
 "of target language."
 msgstr ""
-"Se marcar esta opção, o processo de importação utilizarã os textos da língua de partida em vez "
+"Se marcar esta opção, o processo de importação utilizará os textos da língua de partida em vez "
 "da língua de chegada."
 
 #: exe/webui/tools/color-picker/langs/all.js:8 exe/webui/tools/style-designer/langs/all.js:58
