@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.2.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2018-10-05 16:35+0200\n"
-"PO-Revision-Date: 2018-10-13 11:36+0200\n"
+"PO-Revision-Date: 2018-10-13 13:29+0100\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language: ca\n"
 "Language-Team: Catalan <info@softcatala.org>\n"
@@ -2289,10 +2289,10 @@ msgstr ""
 "sentències on els estudiants cal que seleccionin les paraules correctes. "
 "Normalment són utilitzades per als següents propòsits:</p><ol><li>Per "
 "comprovar els coneixements dels conceptes principals dels curs (això pots"
-" ser un pre avaluació, una activitat sumàtiva o formàtiva).</li><li>Per "
+" ser un pre avaluació, una activitat sumativa o formativa).</li><li>Per "
 "comprovar la comprensió lectora.</li><li>Per comprovar els coneixements "
 "en vocabulari.</li><li>Per comprovar la formació de paraules i la "
-"competència gramàtical. </li></ol>"
+"competència gramatical. </li></ol>"
 
 #: exe/engine/listaidevice.py:80
 msgid ""
@@ -13791,7 +13791,7 @@ msgstr "Anima"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:5
 msgid "Paste or type a valid ABC code:"
-msgstr "Enganxa o escriu notació músical ABC vàlida:"
+msgstr "Enganxa o escriu notació musical ABC vàlida:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:7
 msgid "Visit eXeABC for help, tunes, ABC software..."
@@ -13803,7 +13803,7 @@ msgstr "Música ABC"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:11
 msgid "No valid ABC code found."
-msgstr "No s'ha trobat notació músical ABC vàlida."
+msgstr "No s'ha trobat notació musical ABC vàlida."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:15
 msgid "ePub export warning: This might not work in some ePub readers."
@@ -15213,3 +15213,4 @@ msgstr ""
 "Els  idevices del vostre fitxer generic.data o paquet que esteu carregant"
 " han estat creats amb un versió més nova de eXe. Si-us-plau actualitzeu "
 "eXe i torneu-ho a provar."
+
