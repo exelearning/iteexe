@@ -702,7 +702,7 @@ translations = {
  "self assessment": "autoevaluaci\u00f3n", 
  "Desktop": "Escritorio", 
  "manager": "administrador", 
- "If you have problems publishing you can close this dialogue, export as SCORM 2004 and upload the generated zip file manually to Procom\u00fan.": "Si tiene problemas al hacer la publicaci\u00f3n puede cerrar este di\u00e1logo, exportar como SCORM 2000 y subir el fichero zip generado manualmente a Procom\u00fan.", 
+ "If you have problems publishing you can close this dialogue, export as SCORM 2004 and upload the generated zip file manually to Procom\u00fan.": "Si tiene problemas al hacer la publicaci\u00f3n puede cerrar este di\u00e1logo, exportar como SCORM 2004 y subir el fichero zip generado manualmente a Procom\u00fan.", 
  "Hint Height": "Altura de la ayuda", 
  "Style %s successfully saved!": "Guardado correctamente el estilo '%s'.", 
  "same font as the page": "la misma que la p\u00e1gina", 

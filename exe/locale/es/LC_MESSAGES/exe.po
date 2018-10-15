@@ -4031,7 +4031,7 @@ msgid ""
 "SCORM 2004 and upload the generated zip file manually to Procomún."
 msgstr ""
 "Si tiene problemas al hacer la publicación puede cerrar este diálogo, "
-"exportar como SCORM 2000 y subir el fichero zip generado manualmente a "
+"exportar como SCORM 2004 y subir el fichero zip generado manualmente a "
 "Procomún."
 
 #: exe/jsui/mainpage.py:1173
