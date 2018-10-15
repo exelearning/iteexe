@@ -10,15 +10,16 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.2.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2018-10-05 16:35+0200\n"
-"PO-Revision-Date: 2018-05-26 19:57+0200\n"
-"Last-Translator: Carles Ferrando Garcia <carles.ferrando@gamil.com>\n"
+"PO-Revision-Date: 2018-10-13 13:29+0100\n"
+"Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language: ca\n"
 "Language-Team: Catalan <info@softcatala.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
+"X-Generator: Lokalize 2.0\n"
 
 #: exe/application.py:204
 #, python-format
@@ -224,8 +225,8 @@ msgid ""
 "want to provide instructions on what you require the learner to do once "
 "the file is downloaded or how the material should be used."
 msgstr ""
-"Escriu el text que vols associar amb la baixada del fitxer. Podeu donar \n"
-" instruccions sobre que fer amb el fitxer  baixat o com utilitzar el "
+"Escriu el text que vols associar amb la baixada del fitxer. Podeu donar "
+"instruccions sobre que fer amb el fitxer  baixat o com utilitzar el "
 "material."
 
 #: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
@@ -413,7 +414,8 @@ msgstr "FPD - Cita"
 msgid ""
 "Quotation is an iDevice that provides the students with quotations to "
 "reflect upon."
-msgstr "Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
+msgstr ""
+"Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
 
 #: exe/engine/citasparapensarfpdidevice.py:40
 #: exe/engine/citasparapensarfpdidevice.py:139
@@ -1739,7 +1741,8 @@ msgstr "Mike Dawson, Toughra Technologies FZ LLC"
 
 #: exe/engine/hangmanidevice.py:53
 msgid "Hangman style word game with customizable images."
-msgstr "Joc de paraules semblant al joc del penjat amb imatges personalitzables "
+msgstr ""
+"Joc de paraules semblant al joc del penjat amb imatges personalitzables "
 
 #: exe/engine/hangmanidevice.py:61
 msgid "Instructions for Game."
@@ -1844,7 +1847,8 @@ msgstr "Missatge de nivell superat"
 
 #: exe/engine/hangmanidevice.py:115 exe/engine/hangmanidevice.py:163
 msgid "Player will see this message when they guess the word correctly"
-msgstr "El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
+msgstr ""
+"El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
 
 #: exe/engine/hangmanidevice.py:117 exe/engine/hangmanidevice.py:166
 msgid "Game Won Message"
@@ -2285,10 +2289,10 @@ msgstr ""
 "sentències on els estudiants cal que seleccionin les paraules correctes. "
 "Normalment són utilitzades per als següents propòsits:</p><ol><li>Per "
 "comprovar els coneixements dels conceptes principals dels curs (això pots"
-" ser un pre avaluació, una activitat sumàtiva o formàtiva).</li><li>Per "
+" ser un pre avaluació, una activitat sumativa o formativa).</li><li>Per "
 "comprovar la comprensió lectora.</li><li>Per comprovar els coneixements "
 "en vocabulari.</li><li>Per comprovar la formació de paraules i la "
-"competència gramàtical. </li></ol>"
+"competència gramatical. </li></ol>"
 
 #: exe/engine/listaidevice.py:80
 msgid ""
@@ -3909,15 +3913,15 @@ msgstr "Error en importar HTML:\n"
 
 #: exe/jsui/mainpage.py:1090
 msgid "Exporting package as SCORM 1.2..."
-msgstr ""
+msgstr "S'està exportant el paquet com SCORM 1.2 ..."
 
 #: exe/jsui/mainpage.py:1109
 msgid "Uploading package to Procomún..."
-msgstr ""
+msgstr "S'està pujant el paquet a Procomún..."
 
 #: exe/jsui/mainpage.py:1133
 msgid "Unknown error when trying to upload package to Procomún."
-msgstr ""
+msgstr "Error desconegut mentre es tractava de pujar el paquet a Procomún."
 
 #: exe/jsui/mainpage.py:1133 exe/jsui/mainpage.py:1157
 #: exe/jsui/mainpage.py:1176 exe/jsui/scripts/app/controller/Toolbar.js:953
@@ -3930,6 +3934,8 @@ msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
 "view the exported package\">%s</a>."
 msgstr ""
+"Paquet exportat a <a href=\"%s\" target=\"_blank\" title=\"Click to "
+"view the exported package\">%s</a>."
 
 #: exe/jsui/mainpage.py:1154
 #, python-format
@@ -3938,36 +3944,43 @@ msgid ""
 "target=\"_blank\" title=\"Procomún Home\">Procomún</a>\\'s web "
 "page.</small>"
 msgstr ""
+"<small>Podeu veure i gestionar la pujada de paquets usant la pàgina web de <a"
+" href=\"%s\" "
+"target=\"_blank\" title=\"Procomún Home\">Procomún</a></small>"
 
 #: exe/jsui/mainpage.py:1163
 #, python-format
 msgid "Error exporting package \"%s\" to Procomún."
-msgstr ""
+msgstr "S'ha produït un error exportant el paquet «%s» a Procomún."
 
 #: exe/jsui/mainpage.py:1165
 msgid "The most common reasons for this are:"
-msgstr ""
+msgstr "Les raons més comuns per això són:"
 
 #: exe/jsui/mainpage.py:1167
 msgid "1. Package metadata is not properly filled."
-msgstr ""
+msgstr "1. Les metadades del paquet no estan degudament emplenades."
 
 #: exe/jsui/mainpage.py:1169
 msgid ""
 "2. There is a problem with you connection (or with Procomún servers), so "
 "you should just try again later."
 msgstr ""
+"2. Hi ha un problema amb la connexió (o amb els servidors Procomún), per això"
+" cal tornar-ho a provar més tard."
 
 #: exe/jsui/mainpage.py:1171
 msgid ""
 "If you have problems publishing you can close this dialogue, export as "
 "SCORM 2004 and upload the generated zip file manually to Procomún."
 msgstr ""
+"Si teniu problemes publicant, podeu tancar aquest diàleg, exporteu-ho com a"
+"SCORM 2004 i pugeu el fitxer zip generat manualment a Procomún."
 
 #: exe/jsui/mainpage.py:1173
 #, python-format
 msgid "The reported error we got from Procomún was: <pre>%s</pre>"
-msgstr ""
+msgstr "L'error informat a Procomún ha estat: <pre>%s</pre>"
 
 #: exe/jsui/mainpage.py:1203 exe/jsui/mainpage.py:1551
 #, python-format
@@ -4067,7 +4080,8 @@ msgstr ""
 #: exe/jsui/mainpage.py:1586
 #, python-format
 msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
-msgstr "Els camps següents s'han tallat per complir amb l'estàndard SCORM 1.2: %s"
+msgstr ""
+"Els camps següents s'han tallat per complir amb l'estàndard SCORM 1.2: %s"
 
 #: exe/jsui/mainpage.py:1691 exe/webui/stylemanagerpage.py:243
 #, python-format
@@ -4536,7 +4550,7 @@ msgstr "Preferències d'exportació XLIFF"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:954
 msgid "Initializing Procomún export process..."
-msgstr ""
+msgstr "S'està inicialitzant el procés d'exportació a Procomún..."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:966
 msgid ""
@@ -5657,7 +5671,8 @@ msgstr "Fons de la capçalera"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:493
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr "Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
+msgstr ""
+"Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:511
 msgid "Load Image"
@@ -5745,8 +5760,10 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:648
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
-msgid "Checking this option, the saved package may be opened with eXe >= 0.20.4"
-msgstr "Si marqueu aquesta opció el paquet desat es podrà obrir amb eXe >= 0.20.4"
+msgid ""
+"Checking this option, the saved package may be opened with eXe >= 0.20.4"
+msgstr ""
+"Si marqueu aquesta opció el paquet desat es podrà obrir amb eXe >= 0.20.4"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:657
 msgid "Custom HEAD"
@@ -5792,7 +5809,8 @@ msgstr "Format per defecte als documents nous"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:173
 msgid "The current document format can be modified in the Properties tab"
-msgstr "El format actual del document es pot modificar a la pestanya «Propietats»"
+msgstr ""
+"El format actual del document es pot modificar a la pestanya «Propietats»"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:183
 msgid "Editor mode"
@@ -5953,20 +5971,24 @@ msgid ""
 "Some important information is missing in the \"Properties\" tab. You can "
 "complete it now."
 msgstr ""
+"S'ha perdut informació important a la pestanya «Propietats». Podeu"
+" completar-la ara."
 
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:56
 msgid "Save and export"
-msgstr ""
+msgstr "Desa i exporta"
 
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:83
 msgid "Export without changes"
-msgstr ""
+msgstr "Exporta sense canvis"
 
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:114
 msgid ""
 "The value selected for this field is not accepted by Procomún. Please "
 "select one of the values below:"
 msgstr ""
+"El valor seleccionat per aquest camp no està acceptat per Procomún."
+" Seleccioneu un dels valors de sota:"
 
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:138
 msgid ""
@@ -5974,6 +5996,9 @@ msgid ""
 "later, close this dialogue, export as SCORM 2004 and upload the generated"
 " zip file to Procomún."
 msgstr ""
+"Si teniu problemes publicant o voleu completar la vostra catalogació més"
+" tard, tanqueu aquest diàleg, exporteu-ho com a SCORM 2004 i pugeu el fitxer"
+" zip generat a Procomún."
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 #: exe/webui/tools/assistant/langs/all.js:41
@@ -7738,7 +7763,8 @@ msgid "process/procedure supporting service"
 msgstr "servei d'ajuda al procediment / procés "
 
 #: exe/jsui/scripts/lomvocab.js:826
-msgid "individual/cooperative/collaborative learning/working management service"
+msgid ""
+"individual/cooperative/collaborative learning/working management service"
 msgstr ""
 "serveis de gestió del treball / individual / cooperatiu / aprenentatge "
 "col·laboratiu "
@@ -8191,11 +8217,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 4.0"
 
 #: exe/webui/common.py:238
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
 
 #: exe/webui/common.py:244
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
 
 #: exe/webui/common.py:250
 msgid "GNU Free Documentation License"
@@ -8223,11 +8251,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 3.0"
 
 #: exe/webui/common.py:341
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
 
 #: exe/webui/common.py:347
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
 
 #: exe/webui/common.py:353
 msgid "Creative Commons Attribution License 2.5"
@@ -8247,11 +8277,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 2.5"
 
 #: exe/webui/common.py:377
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
 
 #: exe/webui/common.py:383
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
 
 #: exe/webui/common.py:415
 msgid "License:"
@@ -8468,7 +8500,8 @@ msgstr "Diari d'aprenentatge"
 
 #: exe/webui/content_template/strings.py:89
 msgid "First activity. Creation of the learning diary in the suggested format."
-msgstr "Primera activitat. Creació del diari d'aprenentatge en el format suggerit."
+msgstr ""
+"Primera activitat. Creació del diari d'aprenentatge en el format suggerit."
 
 #: exe/webui/content_template/strings.py:90
 msgid "Creation of the first post heading."
@@ -8573,7 +8606,8 @@ msgstr "Directrius per crear una entrada nova."
 
 #: exe/webui/content_template/strings.py:208
 msgid "Questions or guidelines for students to revise and reflect:"
-msgstr "Questions o directrius adreçades als estudiants per reflexionar i revisar:"
+msgstr ""
+"Questions o directrius adreçades als estudiants per reflexionar i revisar:"
 
 #: exe/webui/content_template/strings.py:209
 msgid "The task they have done"
@@ -8613,7 +8647,8 @@ msgstr "Introducció general"
 
 #: exe/webui/content_template/strings.py:238
 msgid "What the \"final mission\" will be and link to the assessment rubric."
-msgstr "El que serà la «missió final» i si es vincula a la rubrica d'avaluació."
+msgstr ""
+"El que serà la «missió final» i si es vincula a la rubrica d'avaluació."
 
 #: exe/webui/content_template/strings.py:239
 msgid "What learning objective this mission helps to achieve."
@@ -9292,7 +9327,8 @@ msgid "eXe problem"
 msgstr "problema d'eXe"
 
 #: exe/webui/iecmwarning.py:46
-msgid "The Compatibility View of your browser (Internet Explorer) is turned on."
+msgid ""
+"The Compatibility View of your browser (Internet Explorer) is turned on."
 msgstr ""
 "La visualització de compatibilitat del vostre navegador (Internet "
 "explorer) està habilitada."
@@ -9593,65 +9629,67 @@ msgstr "Cal que ompliu el text del botó."
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:14
 #: exe/webui/scripts/idevices/geogebra-activity/export/geogebra-activity.js:29
 msgid "GeoGebra Activity"
-msgstr ""
+msgstr "Activitat de GeoGebra"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:27
 msgid "Show menu bar"
-msgstr ""
+msgstr "Mostra la barra de menú"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:28
 msgid "Allow algebra input"
-msgstr ""
+msgstr "Permet l'entrada d'àlgebra"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:29
 msgid "Show toolbar"
-msgstr ""
+msgstr "Mostra la barra d'eines"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:30
 msgid "Show toolbar help"
-msgstr ""
+msgstr "Mostra la barra d'eines d'ajuda"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:31
 msgid "Show reset icon"
-msgstr ""
+msgstr "Mostra la icona de restablir"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:32
 msgid "Enable right click"
-msgstr ""
+msgstr "Habilita el clic dret"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:33
 msgid "Error dialogs active"
-msgstr ""
+msgstr "Els diàlegs d'error són actius"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:34
 msgid "Prevent focus"
-msgstr ""
+msgstr "Impedeix el focus"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:35
 msgid "Show zoom buttons"
-msgstr ""
+msgstr "Mostra els botons del zoom"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:36
 msgid "Show fullscreen button"
-msgstr ""
+msgstr "Mostra el botó pantalla completa"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:37
 msgid "Disable auto-scale"
-msgstr ""
+msgstr "Deshabilita autoescala"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:38
 msgid "Show suggestion buttons"
-msgstr ""
+msgstr "Mostra els botons de suggeriments"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:39
 msgid "Play button"
-msgstr ""
+msgstr "Botó Reprodueix"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:52
 msgid ""
 "Insert a GeoGebra activity from www.geogebra.org. It requires an Internet"
 " connection."
 msgstr ""
+"Insereix una activitat GeoGebra des de www.geogebra.org. Cal una connexió a"
+" Internet."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:59
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:228
@@ -9697,7 +9735,7 @@ msgstr "Color de la vora"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:75
 msgid "Save score button"
-msgstr ""
+msgstr "Botó «Desa puntuació»"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:77
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:26
@@ -9706,29 +9744,35 @@ msgstr "Text del botó"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:78
 msgid "Save score"
-msgstr ""
+msgstr "Desa puntuació"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:83
 msgid ""
 "The button will only be displayed when exporting as SCORM and while "
 "editing in eXeLearning."
 msgstr ""
+"El botó només es mostrarà quan s'exporta com a SCORM i mentre s'edita a"
+" eXeLearning."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:84
 msgid ""
 "Include only one GeoGebra activity with a \"Save score\" button in the "
 "page."
 msgstr ""
+"Inclou sols una activitat de GeoGebra amb el botó «Desa puntuació» a la"
+" pàgina."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:85
 msgid ""
 "The activity with button has to be the last GeoGebra activity on the page"
 " (or it won't work)."
 msgstr ""
+"L'activitat amb el botó ha de ser l'última activitat de GeoGebra a la pàgina"
+" (o no funcionarà)."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:86
 msgid "Do not include a \"SCORM Quiz\" iDevice in the same page."
-msgstr ""
+msgstr "No incloguis l'iDevice «Qüestionari amb SCORM» a la mateixa pàgina."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:256
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:141
@@ -10343,7 +10387,9 @@ msgstr "gen.,febr.,març,abr.,maig,juny,jul.,ag.,set.,oct.,nov.,des."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
-msgid "January,February,March,April,May,June,July,August,September,October,November,December"
+msgid ""
+"January,February,March,April,May,June,July,August,September,October,November,D"
+"ecember"
 msgstr ""
 "gener, febrer, març, abril, maig, juny, juliol, agost, setembre, octubre,"
 " novembre, desembre"
@@ -10411,7 +10457,8 @@ msgstr "Àrea de Text Enriquit"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:5
-msgid "Currently not supported by your browser, use keyboard shortcuts instead."
+msgid ""
+"Currently not supported by your browser, use keyboard shortcuts instead."
 msgstr ""
 "El vostre navegador actualment no ho admet, utilitzeu les dreceres de "
 "teclat."
@@ -10894,7 +10941,8 @@ msgstr "Tots els drets reservats"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:22
-msgid "You will not be able to edit the header or the caption from this dialog."
+msgid ""
+"You will not be able to edit the header or the caption from this dialog."
 msgstr "L'encapçalament i títol no seran editables des d'aquest diàleg."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
@@ -11446,7 +11494,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:10
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:108
 msgid "All blocks must start with a second level title (Heading 2)."
-msgstr "Tots els blocs han de començar amb títol de segon nivell (encapçalament 2)"
+msgstr ""
+"Tots els blocs han de començar amb títol de segon nivell (encapçalament 2)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:11
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:54
@@ -11490,7 +11539,8 @@ msgstr "Acordió"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:18
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:30
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:85
-msgid "Collapsible content panels for presenting information in a limited space."
+msgid ""
+"Collapsible content panels for presenting information in a limited space."
 msgstr ""
 "Panels de contingut col·lapsable per presentar informació en un espai "
 "limitat."
@@ -11584,7 +11634,8 @@ msgstr "Aquestos jocs requereixen javaScript."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:11
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:127
 msgid "This is the message that the users with no JavaScript will see:"
-msgstr "Aquest és el missatge que els usuaris que no tenen  JavaScript veuran: "
+msgstr ""
+"Aquest és el missatge que els usuaris que no tenen  JavaScript veuran: "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
 msgid "Message:"
@@ -11597,7 +11648,8 @@ msgstr "Podeu canviar-lo en qualsevol moment."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:14
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:261
-msgid "Provide a warning to users who have JavaScript disabled (Accessibility)."
+msgid ""
+"Provide a warning to users who have JavaScript disabled (Accessibility)."
 msgstr ""
 "Proporciona un avís als usuaris amb  JavaScript deshabilitat "
 "(accessibilitat)."
@@ -11660,7 +11712,8 @@ msgstr "Escriu la llista de lletres i/o números per triar."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:30
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:154
 msgid "You may include capital letters or they can be automatically included."
-msgstr "Podeu incloure majúscules o aquestes seran incloses de forma automàtica."
+msgstr ""
+"Podeu incloure majúscules o aquestes seran incloses de forma automàtica."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:31
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:155
@@ -13054,7 +13107,8 @@ msgstr "Botó llista de definicions"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:39
 msgid "Use the \"Definition List\" button to add terms and definitions:"
-msgstr "Usa el botó  \"Llista de definicions\" per afegir termes i definicions:"
+msgstr ""
+"Usa el botó  \"Llista de definicions\" per afegir termes i definicions:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:40
 msgid "Define the Link: Select the page where the definitions are."
@@ -13737,7 +13791,7 @@ msgstr "Anima"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:5
 msgid "Paste or type a valid ABC code:"
-msgstr "Enganxa o escriu notació músical ABC vàlida:"
+msgstr "Enganxa o escriu notació musical ABC vàlida:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:7
 msgid "Visit eXeABC for help, tunes, ABC software..."
@@ -13749,7 +13803,7 @@ msgstr "Música ABC"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:11
 msgid "No valid ABC code found."
-msgstr "No s'ha trobat notació músical ABC vàlida."
+msgstr "No s'ha trobat notació musical ABC vàlida."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:15
 msgid "ePub export warning: This might not work in some ePub readers."
@@ -13855,7 +13909,8 @@ msgstr "No es pot detectar de forma automàtica. Tria el tipus correcte."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:750
 msgid "Successfully updated, but please convert the video to another format:"
-msgstr "S'ha actualitzat amb èxit, però conconvertiu el vídeo a un altre format:"
+msgstr ""
+"S'ha actualitzat amb èxit, però conconvertiu el vídeo a un altre format:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:757
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:768
@@ -13881,7 +13936,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1124
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1191
 msgid "You are using and old code. Update it (required to edit)?"
-msgstr "Esteu utilitzant codi antic. Voleu actualitzar-lo (requerit per edició)?"
+msgstr ""
+"Esteu utilitzant codi antic. Voleu actualitzar-lo (requerit per edició)?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1179
 msgid ""
@@ -13943,7 +13999,8 @@ msgid "Error (missing function):"
 msgstr "Error (funció perduda):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:405
-msgid "The image could not be created. Insert the code without alternative image?"
+msgid ""
+"The image could not be created. Insert the code without alternative image?"
 msgstr ""
 "La imatge no s'ha pogut crear. Voleu inserir el codi sense una imatge "
 "alternativa?"
@@ -14023,7 +14080,8 @@ msgstr ""
 msgid ""
 "With no image and no MathJax some users might not be able to see the "
 "formula."
-msgstr "Sense imatge i sense MathJax alguns usuaris no podran veure la formula."
+msgstr ""
+"Sense imatge i sense MathJax alguns usuaris no podran veure la formula."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:643
 msgid ""
@@ -14043,7 +14101,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:645
 msgid "If JavaScript is disabled, both (code and image) will be visible."
-msgstr "Si JavaScript està deshabilitat, ambdós (codi i imatge) seran visibles."
+msgstr ""
+"Si JavaScript està deshabilitat, ambdós (codi i imatge) seran visibles."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:647
 msgid "Remember that..."
@@ -14319,7 +14378,8 @@ msgstr "Què és eXeLearning?"
 
 #: exe/webui/tools/assistant/langs/all.js:14
 msgid "eXeLearning Is an open source program to create educational contents."
-msgstr "eXeLearning és un programa de codi obert per a crear continguts educatius."
+msgstr ""
+"eXeLearning és un programa de codi obert per a crear continguts educatius."
 
 #: exe/webui/tools/assistant/langs/all.js:15
 msgid "With eXeLearning you can:"
@@ -14933,7 +14993,8 @@ msgstr "Aquest codi es mostrarà al final de content.css"
 
 #: exe/webui/tools/style-designer/langs/all.js:104
 msgid "content.css is included any time you export, and always after base.css."
-msgstr "content.css està inclòs sempre que exporteu, i sempre després de base.css"
+msgstr ""
+"content.css està inclòs sempre que exporteu, i sempre després de base.css"
 
 #: exe/webui/tools/style-designer/langs/all.js:105
 msgid "This code will be included at the end of nav.css"
@@ -14957,7 +15018,8 @@ msgstr "Contingut de nav.css"
 
 #: exe/webui/tools/style-designer/langs/all.js:109
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
-msgstr "Les ombres no funcionaran en navegadors sense suport CSS3  (IE6, IE7...)."
+msgstr ""
+"Les ombres no funcionaran en navegadors sense suport CSS3  (IE6, IE7...)."
 
 #: exe/webui/tools/style-designer/langs/all.js:114
 msgid "Save as"
@@ -14981,7 +15043,8 @@ msgstr "El vostre navegador no és compatible amb aquesta eina."
 
 #: exe/webui/tools/style-designer/langs/all.js:120
 msgid "The Hide/Show menu option is disabled in the Style Designer"
-msgstr "L'opció del menú Mostra/Amaga està deshabilitada al dissenyador d'estils."
+msgstr ""
+"L'opció del menú Mostra/Amaga està deshabilitada al dissenyador d'estils."
 
 #: exe/webui/tools/style-designer/langs/all.js:121
 msgid ""
@@ -15150,25 +15213,4 @@ msgstr ""
 "Els  idevices del vostre fitxer generic.data o paquet que esteu carregant"
 " han estat creats amb un versió més nova de eXe. Si-us-plau actualitzeu "
 "eXe i torneu-ho a provar."
-
-#~ msgid "Exporting package as SCORM"
-#~ msgstr "S'està exportant com paquet SCORM"
-
-#~ msgid "Starting authorized connection to Procomún API"
-#~ msgstr "S'està iniciant la connexió autoritzada a l'API de Procomún"
-
-#~ msgid ""
-#~ "Package exported to <a href=\"%s\" "
-#~ "target=\"_blank\" title=\"Click to visit "
-#~ "exported site\">%s</a>"
-#~ msgstr ""
-#~ "Paquet exportat a <a href=\"%s\" "
-#~ "target=\"_blank\" title=\"Prem per visitar el"
-#~ " lloc exportat\">%s</a>"
-
-#~ msgid "Error exporting package %s to Procomún: %s"
-#~ msgstr "Error en exportar el paquet %s a Procomún: %s"
-
-#~ msgid "Allow albebra input"
-#~ msgstr ""
 
