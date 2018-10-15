@@ -126,9 +126,7 @@ de la jerarquía de contenidos que crearemos con eXe */
 /* Añadir algún contenido después del contenido del iDevice, hace que el alto del iDevice
    se adapte al elemento más alto del contenido. Así se evita que las imágenes muy alargadas
    sobresalgan por debajo */
-.iDevice_content:before,.iDevice_content:after{content:"";display:table}
-.iDevice_content:after{clear:both}
-.iDevice_content{*zoom:1}/* IE6/7: Trigger hasLayout and contain floats */
+.iDevice_content{overflow:auto}
 
 /* SCORM y otros comparten apariencia: esta es la apariencia por defecto */
 /* El encabezado de los iDevices con imagen de fondo no debe ser mayor que
