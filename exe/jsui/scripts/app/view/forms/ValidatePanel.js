@@ -120,9 +120,9 @@ Ext.define('eXe.view.forms.ValidatePanel', {
                 if (clonedField.xtype == 'combobox') {
                     var allowed_values = prop[2].split(';');
 
-                    clonedField.store.each(function(record) {
-                        if (typeof(record) !== 'undefined' && Ext.Array.indexOf(allowed_values, record.get('field1')) == -1) {
-                            record.store.remove(record);
+                    clonedField.store.filter({
+                        filterFn: function (record) {
+                            return (typeof(record) === 'undefined' || Ext.Array.indexOf(allowed_values, record.get('field1')) != -1);
                         }
                     });
                 }
