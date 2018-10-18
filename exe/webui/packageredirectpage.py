@@ -81,7 +81,7 @@ class PackageRedirectPage(RenderableResource):
                 log.error("Session uid: %s, Mainpages: %s" % (session.uid, self.mainpages))
                 return error.NoResource("No such child resource %(resource)s. Try again clicking %(link)s" % {
                                         "resource": name.encode('utf-8'),
-                                        "link": "<a href='%s'>%s</a>" % ('/', 'eXe')})
+                                        "link": "<a href='%s' target='_top'>%s</a>" % ('/', 'eXe')})
 
     def bindNewPackage(self, package, session):
         """
