@@ -106,13 +106,16 @@ Ext.define('eXe.view.forms.ValidatePanel', {
             var field = panel.getForm().findField(prop[0]);
             var clonedField = field.cloneConfig();
 
-            // If the problem is the value of the field, explain to the user that they should select another
-            if (prop[1] == 'value') {
-                this.items.push({
-                    xtype: 'label',
-                    text:  _('The value selected for this field is not accepted by Procomún. Please select one of the values below:'),
-                    anchor: '100%'
-                });
+            // If there is a list of allowed values, don't show the wrong values
+            if (prop.length >= 3) {
+                // If the problem is the value, explain to the user that they should select another
+                if (prop[1] == 'value') {
+                    this.items.push({
+                        xtype: 'label',
+                        text:  _('The value selected for this field is not accepted by Procomún. Please select one of the values below:'),
+                        anchor: '100%'
+                    });
+                }
 
                 if (clonedField.xtype == 'combobox') {
                     var allowed_values = prop[2].split(';');

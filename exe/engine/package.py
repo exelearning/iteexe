@@ -1933,7 +1933,14 @@ class Package(Persistable):
             if (part == 'pp' and getattr(self, name) == '') \
             or (part == 'dc' and getattr(self.dublinCore, name) == '') \
             or (part == 'eo' and getattr(self.exportOptions, name) == ''):
-                invalid_fields.append({'name': field, 'reason': 'empty'})
+                invalid_field = {'name': field, 'reason': 'empty'}
+
+                # If the attribute has also a value requiremente, add the allowed
+                # values so they don't show up in the selector
+                if (field in from_list_checks):
+                    invalid_field['allowed_values'] = ';'.join(from_list_checks[field])
+
+                invalid_fields.append(invalid_field)
 
         for field, values in from_list_checks.iteritems():
             part, name = field.split('_', 1)
