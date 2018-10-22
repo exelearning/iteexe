@@ -14,13 +14,15 @@
         ],
         "values_from_list": {
             "pp_learningResourceType": [
-                "lecture",
-                "exercise",
-                "simulation",
-                "problem statement",
+                "master class",
+                "closed exercise or problem",
+                "real project",
+                "didactic game",
+                "webquest",
+                "open problem",
                 "simulation",
                 "questionnaire",
-                "diagram"
+                "conceptual map"
             ]
         }
     }
