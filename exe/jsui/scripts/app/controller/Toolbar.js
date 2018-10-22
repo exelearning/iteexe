@@ -988,6 +988,18 @@ Ext.define('eXe.controller.Toolbar', {
         });
     },
 
+    showOAuthError: function(packageName) {
+        Ext.Msg.show({
+            title: _("Error"),
+            msg: new Ext.Template(_('Error exporting package "{package}" to Procomún.')).apply({package: packageName})
+                + '<br />'
+                + _('If you have problems publishing or you want to complete your cataloguing later, close this dialogue, export as SCORM 2004 and upload the generated zip file to Procomún.'),
+            scope: this,
+            modal: true,
+            buttons: Ext.Msg.OK
+        });
+    },
+
 	exportPackage: function(exportType, exportDir) {
 	    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage' || exportType == 'ipod' ) {
 	        if (exportDir == '') {
