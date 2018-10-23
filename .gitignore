@@ -27,6 +27,9 @@ package1.elp
 testing.elp
 .idea
 
+# VS Code
+.vscode
+
 .metadata/.mylyn/repositories.xml.zip
 .metadata/.plugins/org.eclipse.core.resources/.root/.indexes/history.version
 .metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.version

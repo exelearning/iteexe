@@ -1741,8 +1741,11 @@ class FieldWithResources(Field):
                    # and finally, go ahead and replace the filename:
                    new_src_string = "href=\""+resource_url
 
-                   new_content = new_content.replace(file_url_str, 
-                                                     new_src_string)
+                   # Replace the content with the new URL
+                   # Note: Only the first occurence should be replaced to prevent errors
+                   # with files that have similar names (like test.doc and test.docx)
+                   new_content = new_content.replace(file_url_str, new_src_string, 1)
+
                    new_src_string = "window.open('"+resource_url
                    file_url_str = "window.open('" + file_url_str[6:]
 

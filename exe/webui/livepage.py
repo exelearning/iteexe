@@ -57,15 +57,15 @@ class eXeClientHandle(ClientHandle):
         else:
             ClientHandle.sendScript(self, script)
 
-    def alert(self, what, onDone=None, filter_func=False):
+    def alert(self, what, onDone=None, filter_func=False, title=''):
         """Show the user an alert 'what'
         """
         if not isinstance(what, _js):
             what = "'%s'" % (self.flt(what), )
         if onDone:
-            script = "Ext.Msg.alert('',%s, function() { %s });" % (what, onDone)
+            script = "Ext.Msg.alert('%s',%s, function() { %s });" % (title, what, onDone)
         else:
-            script = "Ext.Msg.alert('',%s);" % (what, )
+            script = "Ext.Msg.alert('%s',%s);" % (title, what)
         if filter_func and onDone:
             for client in nevow.livepage.clientHandleFactory.clientHandles.values():
                 if filter_func(client, self):

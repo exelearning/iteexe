@@ -1,0 +1,29 @@
+{
+    "all": {
+        "mandatory_fields": [
+            "pp_title",
+            "pp_lang",
+            "pp_description",
+            "pp_author",
+            "pp_license"
+        ]
+    },
+    "procomun":{
+        "mandatory_fields": [
+            "pp_learningResourceType"
+        ],
+        "values_from_list": {
+            "pp_learningResourceType": [
+                "master class",
+                "closed exercise or problem",
+                "real project",
+                "didactic game",
+                "webquest",
+                "open problem",
+                "simulation",
+                "questionnaire",
+                "conceptual map"
+            ]
+        }
+    }
+}

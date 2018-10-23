@@ -22,7 +22,8 @@ Ext.define('eXe.controller.Toolbar', {
     requires: [
         'eXe.view.forms.PreferencesPanel',
         'eXe.view.forms.StyleManagerPanel',
-        'eXe.view.forms.TemplateManagerPanel'
+        'eXe.view.forms.TemplateManagerPanel',
+        'eXe.view.forms.ValidatePanel'
     ],
 	refs: [{
         ref: 'recentMenu',
@@ -121,7 +122,7 @@ Ext.define('eXe.controller.Toolbar', {
             },
             // / Advanced user
             '#file_export_procomun': {
-                click: { fn: this.exportProcomun }
+                click: { fn: this.processExportEvent, exportType: "procomun" }
             },
             '#file_export_zip': {
                 click: { fn: this.processExportEvent, exportType: "zipFile" }
@@ -476,6 +477,35 @@ Ext.define('eXe.controller.Toolbar', {
         formpanel.load({url: 'preferences', method: 'GET'});
         preferences.show();
 	},
+
+    packagePropertiesCompletion: function(export_type, filename, properties) {
+        // Create the window to ask for the values
+        var validate = new Ext.Window({
+            width: 650,
+            modal: true,
+            id: 'validatewin',
+            title: _("Export"),
+            layout: 'fit',
+            items: [{
+                xtype: 'validate',
+                exportType: export_type,
+                fileIsSaved: (filename != ''),
+                shownProperties: properties.split(',')
+            }]
+        });
+
+        // Get the form panel
+        var formpanel = validate.down('form');
+
+        // Preload the values for the form (in case a property has actually been established
+        // but the value is not valid for the selected export type)
+        formpanel.load({
+            url: location.pathname + "/properties",
+            params: formpanel.getForm().getFieldValues(),
+            method: 'GET'
+        });
+        validate.show();
+    },
 
     // Launch the iDevice Editor Window
 	toolsIdeviceEditor: function() {
@@ -914,11 +944,20 @@ Ext.define('eXe.controller.Toolbar', {
 
     processExportEvent: function(menu, item, e, eOpts) {
         this.saveWorkInProgress();
-        this.exportPackage(e.exportType, "");
+        nevow_clientToServerEvent('validatePackageProperties', this, '', e.exportType)
     },
 
     exportProcomun: function() {
         this.saveWorkInProgress();
+        Ext.Msg.show({
+            title: _('Publishing document to Procomún'),
+            msg: _('Initializing Procomún export process...'),
+            width: 300,
+            progress: true,
+            progressText: '0%',
+            closable: false,
+            draggable: false
+        });
         nevow_clientToServerEvent('exportProcomun', this, '');
     },
 
@@ -946,6 +985,18 @@ Ext.define('eXe.controller.Toolbar', {
                     authwindow.show();
                 }
             }
+        });
+    },
+
+    showOAuthError: function(packageName) {
+        Ext.Msg.show({
+            title: _("Error"),
+            msg: _('Error exporting package "%s" to Procomún.').replace("%s",packageName)
+                + '<br />'
+                + _('If you have problems publishing or you want to complete your cataloguing later, close this dialogue, export as SCORM 2004 and upload the generated zip file to Procomún.'),
+            scope: this,
+            modal: true,
+            buttons: Ext.Msg.OK
         });
     },
 
@@ -1031,6 +1082,8 @@ Ext.define('eXe.controller.Toolbar', {
                     ]
                 );
                 fp.show();
+        } else if(exportType == 'procomun') {
+            this.exportProcomun();
 	    } else {
             var title;
 	        if (exportType == "scorm1.2" || exportType == 'scorm2004'|| exportType == 'agrega')
@@ -1268,32 +1321,42 @@ Ext.define('eXe.controller.Toolbar', {
         return "";
     },
 
-    executeFileSave: function(onProceed) {
+    executeFileSave: function(onProceed,export_type_name ) {
 	    if (!onProceed || (onProceed && typeof(onProceed) != "string"))
 	        var onProceed = '';
-	    nevow_clientToServerEvent('getPackageFileName', this, '', 'eXe.app.getController("Toolbar").fileSave2', onProceed);
+	    nevow_clientToServerEvent('getPackageFileName', this, '', 'eXe.app.getController("Toolbar").fileSave2', onProceed,export_type_name );
     },
 
-	fileSave: function(onProceed) {
+	fileSave: function(onProceed, export_type_name) {
         var ed = this.getTinyMCEFullScreen();
         if(ed!="") {
             ed.execCommand('mceFullScreen');
             setTimeout(function(){
                 eXe.controller.Toolbar.prototype.executeFileSave(onProceed);
             },500);
-        } else this.executeFileSave(onProceed);
+        } else if(typeof(export_type_name) == 'string'){
+            this.executeFileSave(onProceed,export_type_name);
+        }else{
+            this.executeFileSave(onProceed,"");
+        }
+
 	},
 
-	fileSave2: function(filename, onDone) {
+	fileSave2: function(filename, onDone,export_type_name) {
 	    if (filename) {
 	        this.saveWorkInProgress();
 	        // If the package has been previously saved/loaded
 	        // Just save it over the old file
-            Ext.Msg.wait(new Ext.Template(_('Saving package to: {filename}')).apply({filename: filename}));
-	        if (onDone) {
-	            nevow_clientToServerEvent('savePackage', this, '', '', onDone);
+
+	        if (export_type_name === "") {
+                Ext.Msg.wait(new Ext.Template(_('Saving package to: {filename}')).apply({filename: filename}));
+                if (onDone){
+                    nevow_clientToServerEvent('savePackage', this, '', '', onDone);
+                }else{
+                    nevow_clientToServerEvent('savePackage', this, '');
+                }
 	        } else {
-	            nevow_clientToServerEvent('savePackage', this, '');
+                nevow_clientToServerEvent('savePackage', this, '','','',export_type_name);
 	        }
 	    } else {
 	        // If the package is new (never saved/loaded) show a

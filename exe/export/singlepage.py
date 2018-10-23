@@ -183,7 +183,7 @@ class SinglePage(Page):
         
         # Render the author META tag
         if self.node.package.author != "":
-            html += u'<meta name="author" content="%s" />%s' % (self.node.package.author, lineBreak)
+            html += u'<meta name="author" content="%s" />%s' % (escape(self.node.package.author, True), lineBreak)
             
         # Render the license META tag(s)
         html += common.getLicenseMetadata(self.node.package.license)

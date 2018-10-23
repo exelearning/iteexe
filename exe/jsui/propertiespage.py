@@ -316,19 +316,19 @@ class PropertiesPage(Renderable, Resource):
                         if key in self.imgFieldNames:
                             if getattr(obj, name):
                                 data[key] = getattr(obj, name).basename()
-                        else:                            
-                            if name=='docType':              
+                        else:
+                            if name=='docType':
                                 data[key]=self.package.getExportDocType()
                             else:
                                 if name=='newlicense':
                                     _a=getattr(obj, name)
-                                    if getattr(obj, name)=='':                                                 
+                                    if getattr(obj, name)=='':
                                         data[key]=_(self.package.license)
                                     else:
                                         data[key]=getattr(obj, name)
                                 else:
                                     data[key] = getattr(obj, name)
-                            
+
 
         except Exception as e:
             log.exception(e)
@@ -372,19 +372,19 @@ class PropertiesPage(Renderable, Resource):
                         setattr(obj, name, value[0] == 'true')
                     else:
                         if key in self.imgFieldNames:
-                            path = Path(value[0])
+                            path = Path(toUnicode(value[0]))
                             if path.isfile():
-                                setattr(obj, name, toUnicode(value[0]))
+                                setattr(obj, name, path)
                                 data[key] = getattr(obj, name).basename()
                             else:
                                 if getattr(obj, name):
                                     if getattr(obj, name).basename() != path:
                                         setattr(obj, name, None)
                         else:
-                            #if name=='docType': common.setExportDocType(toUnicode(value[0]))              
-                                 
+                            #if name=='docType': common.setExportDocType(toUnicode(value[0]))
+
                             setattr(obj, name, toUnicode(value[0]))
-                            
+
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to save properties")})

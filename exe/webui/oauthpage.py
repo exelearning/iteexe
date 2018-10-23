@@ -17,9 +17,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
-from exe.webui.renderable import Renderable
 from nevow import rend, inevow
+from oauthlib.oauth2 import InvalidClientError
 
+from exe.webui.renderable import Renderable
 
 class ProcomunOauth(Renderable, rend.Page):
     CLIENT_ID = '1Zl5ATaKchp8hecNGGhpfvQnUZaRTxkS'
@@ -51,11 +52,21 @@ class ProcomunOauth(Renderable, rend.Page):
         if state:
             code = request.args.get('code', [None])[0]
             oauth2Session, client = state
-            client.session.oauthToken['procomun'] = oauth2Session.fetch_token(self.TOKEN_URL, client_secret=self.CLIENT_SECRET, code=code)
-            script = ('''
-                top.nevow_clientToServerEvent('exportProcomun', this, '');
-                top.Ext.getCmp('oauthprocomun').close()
-            ''')
+            script = ''
+            try:
+                client.session.oauthToken['procomun'] = oauth2Session.fetch_token(self.TOKEN_URL, client_secret=self.CLIENT_SECRET, code=code)
+                script = ('''
+                    top.Ext.getCmp('oauthprocomun').hide();
+                    top.eXe.app.getController("Toolbar").exportProcomun();
+                    top.Ext.getCmp('oauthprocomun').close();
+                ''')
+            except InvalidClientError:
+                script = '''
+                    top.Ext.getCmp('oauthprocomun').hide();
+                    top.eXe.app.getController("Toolbar").showOAuthError("%s");
+                    top.Ext.getCmp('oauthprocomun').close();
+                ''' % client.packageName
+
         return ctx.tag()[script]
 
 

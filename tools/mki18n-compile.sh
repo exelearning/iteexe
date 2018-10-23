@@ -74,6 +74,8 @@
 # 2018-04-26
 #    * Split this functionality in two separate files (Sdweb)
 #
+# 2018-10-05
+#    * Preparing version 2.2.1 (JRF)
 #===========================================================================
 
 
