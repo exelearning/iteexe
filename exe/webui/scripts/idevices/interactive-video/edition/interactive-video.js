@@ -10,10 +10,6 @@
 // To do:
 // Do not allow Flash?
  
-// Provisional:
-var myVideo = "https://mediateca.educa.madrid.org/video/l7l76swf6hggd2hu";
-	myVideo = "https://youtu.be/EW72hU1Rp7g";
- 
 var $exeDevice = {
 	
 	iDevicePath : "/scripts/idevices/interactive-video/edition/",
@@ -120,7 +116,9 @@ var $exeDevice = {
 			ask : true,
 			activityToSave : {
 				slides : []
-			}
+			},
+			videoURL : "",
+			videoType : ""
 		};		
 		
 		this.loadPreviousValues(field);
@@ -154,6 +152,9 @@ var $exeDevice = {
 					$("#interactiveVideoType-"+type).prop("checked","checked").trigger("change");
 					$("#interactiveVideo"+n).val(videoURL).prop("disabled",disabled);
 					$("#interactiveVideoEditorOpener").fadeIn();
+					// Get the video URL and type
+					top.interactiveVideoEditor.videoURL = videoURL;
+					top.interactiveVideoEditor.videoType = type;					
 				}
 			$('body').append(wrapper);
 			

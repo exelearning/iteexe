@@ -183,7 +183,7 @@ var iAdmin = {
 				iAdmin.msg.txt('Revisa el apartado "Inicio". En el segundo cero se encuentra la portada.');
 				return false;
 			}			
-			if (totalSecFrom>iAdmin.video.duration) {
+			if (iAdmin.video.duration>0 && totalSecFrom>iAdmin.video.duration) {
 				iAdmin.msg.txt('Revisa el apartado "Inicio". El vídeo no dura tanto.');
 				return false;
 			}
@@ -205,7 +205,7 @@ var iAdmin = {
 				var toMMval = parseInt(toMM.val())*60;
 				var toSSval = parseInt(toSS.val());
 				var totalSecTo = toHHval + toMMval + toSSval;
-				if (totalSecTo>iAdmin.video.duration) {
+				if (iAdmin.video.duration>0 && totalSecTo>iAdmin.video.duration) {
 					iAdmin.msg.txt('Revisa el apartado "Fin". El vídeo no dura tanto.');
 					return false;
 				}
@@ -234,7 +234,25 @@ var iAdmin = {
 		// document.title = $i18n.Style_Designer;
 		document.getElementById("site").innerHTML=this.template("site",$i18n);
 	},
-	init : function(id,duration){
+	appMsg : function(msg) {
+		top.eXe.app.alert(msg);
+	},
+	init : function(){
+		
+		// Missing type or URL
+		if (!top || !top.interactiveVideoEditor || !top.interactiveVideoEditor.videoType || !top.interactiveVideoEditor.videoURL) {
+			this.appMsg(_("Could not retrieve data (Core error)") + " - 001 - "+_("You can close this window"));
+			$("body").hide();
+			return;
+		}
+		
+		this.video.type = top.interactiveVideoEditor.videoType;
+		this.video.url = top.interactiveVideoEditor.videoURL;
+		
+		// Get the video ID: https://mediateca.educa.madrid.org/video/...
+		var id = this.video.url.replace("https://mediateca.educa.madrid.org/video/","");
+			id = id.split("/");
+			id = id[0];
 		
 		this.i18n();
 		
@@ -245,6 +263,7 @@ var iAdmin = {
 			'448'
 		);
 
+		var duration = 0;
 		iAdmin.video.duration = duration;
 		
 		this.timeOptions.init("#text-block");
@@ -1120,6 +1139,7 @@ var iAdmin = {
 				delete slides[i].results;
 			}
 			top.interactiveVideoEditor.activityToSave = InteractiveVideo;
+			iAdmin.appMsg(_("Saved!") + " " + _('Click on "Exit" to finish.'));
 		},	
 		exit : function(){
 			top.interactiveVideoEditor.win.close();
@@ -1297,9 +1317,12 @@ function enableVideoPlayer(video, image, h, w) {
 	// jwplayer().onPause(function(e){
 		// iAdmin.video.getPosition();
 	// });	
-	// jwplayer().onPlay(function(){
+	jwplayer().onPlay(function(){
 		// iAdmin.video.hasPlayed = true;
-	// });	
+		setTimeout(function(){
+			iAdmin.video.duration=parseInt(jwplayer().getDuration());
+		},1000);
+	});	
 }
 
 function loadScript(url, callback){
