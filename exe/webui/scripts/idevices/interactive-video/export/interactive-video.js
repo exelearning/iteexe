@@ -215,7 +215,7 @@ var interaction = {
 		}
 		
 	},
-	init : function(id){
+	init : function(){
 		
 		// Create the required HTML elements:
 		
@@ -251,6 +251,7 @@ var interaction = {
 		
 		if (typeof(InteractiveVideo)=="undefined" || typeof(InteractiveVideo.slides)=="undefined" || InteractiveVideo.slides.length==0) {
 			$("#player").html("<p style='text-align:center;margin:0;line-height:356px'>La actividad no tiene fotogramas.</p>");
+			$("#activity-results-toggler").hide();
 			return false;
 		}
 		
@@ -279,7 +280,7 @@ var interaction = {
 					}
 					this.hasResults = true;
 				} else {
-					alert("Error (respuestas desvinculadas de la actividad).\n\nPor favor, contacta con los administradores de EducaMadrid.");
+					alert("Error (respuestas desvinculadas de la actividad).");
 					return false;
 				}
 			}
@@ -291,20 +292,30 @@ var interaction = {
 			}
 		}
 		
-		// if (InteractiveVideo.title) {
-			$("BODY").addClass("cover-on");
-			var play = '<p id="start-activity">';
-			var playContent = '<a href="#" onclick="interaction.cover.hide(true);return false" id="start-link">Empezar</a>';
-			var resetContent = '<a href="#" onclick="interaction.cover.hide(true);return false" id="reset-link" style="display:none">Empezar de nuevo</a>'
-			if (this.hasResults && !this.isPreview) playContent = '<a href="#" onclick="interaction.cover.hide(true);return false" id="start-link">Ver con mis resultados</a>';
-			play = play+playContent+"</p>";
-			// var cover = "<h2>"+$("#activity-title").html()+"</h2>";
-			var cover = "<h2>To do A</h2>";
-			// cover += $("#activity-intro").html();
-			cover += '<p>To do B</p>';
-			$("#activity").prepend('<div id="activity-cover"><div id="activity-cover-logo"></div><div id="activity-cover-content">'+cover+'</div>'+play+'</div>');
-			interaction.externalLinks("activity-cover-content");
-		// }
+		
+		$("BODY").addClass("cover-on");
+		var play = '<p id="start-activity">';
+		var playContent = '<a href="#" onclick="interaction.cover.hide(true);return false" id="start-link">Empezar</a>';
+		var resetContent = '<a href="#" onclick="interaction.cover.hide(true);return false" id="reset-link" style="display:none">Empezar de nuevo</a>'
+		if (this.hasResults && !this.isPreview) playContent = '<a href="#" onclick="interaction.cover.hide(true);return false" id="start-link">Ver con mis resultados</a>';
+		play = play+playContent+"</p>";
+		// var cover = "<h2>"+$("#activity-title").html()+"</h2>";
+		var cover = "";
+		var videoTitle = "...";
+		if (InteractiveVideo.title) videoTitle = InteractiveVideo.title;
+		else {
+			var iDeviceTitle = $(".interactive-videoIdevice .iDeviceTitle");
+			if (iDeviceTitle.length>0) {
+				iDeviceTitle = iDeviceTitle.eq(0);
+				if (iDeviceTitle.html()!="&nbsp;" && iDeviceTitle.text().replace(/ /g,'')!="") {
+					videoTitle = iDeviceTitle.text();
+				}
+			}
+		}
+		if (!(InteractiveVideo.description && videoTitle=="...")) cover = "<h2>"+videoTitle+"</h2>";
+		if (InteractiveVideo.description) cover += InteractiveVideo.description;
+		$("#activity").prepend('<div id="activity-cover"><div id="activity-cover-logo"></div><div id="activity-cover-content">'+cover+'</div>'+play+'</div>');
+		interaction.externalLinks("activity-cover-content");
 		
 		if (this.type=='mediateca') {
 			

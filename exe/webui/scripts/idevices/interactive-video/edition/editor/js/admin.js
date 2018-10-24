@@ -1,3 +1,6 @@
+function toDo(s) {
+	alert(s)
+}
 var iAdmin = {
 	globals : {
 		mode : "add", // add or edit
@@ -1071,7 +1074,7 @@ var iAdmin = {
 		del : function(){
 			iAdmin.msg.ask("¿Eliminar definitivamente el contenido? El vídeo no será eliminado.",
 				function(){
-					alert("To do. Eliminar.");
+					toDo("To do. Eliminar.");
 					// Hide all the links but the Exit one
 					$("#actions li").each(function(){
 						if (this.className!="exit") $(this).hide();
@@ -1084,7 +1087,7 @@ var iAdmin = {
 			);
 		},
 		reloadOriginal : function(){
-			alert("To do. Recargar el original.");
+			toDo("To do. Recargar el original.");
 			window.location.reload();
 		},
 		saveAs : function(){
@@ -1098,7 +1101,7 @@ var iAdmin = {
 						},1500);
 						return false;
 					}
-					alert("To do. Guardar como.");
+					toDo("To do. Guardar como.");
 					// Set the title
 					$("#frontpage-title").val(promt.val());
 					// Display a success message
@@ -1110,14 +1113,12 @@ var iAdmin = {
 			window.open("../?mode=preview");
 		},
 		save : function(){
-			// alert("To do. Guardar.");
 			var slides = InteractiveVideo.slides;
 			// Remove all unnecessary values (results, etc.) added by the preview.
 			for (var i=0;i<slides.length;i++) {
 				delete slides[i].current;
 				delete slides[i].results;
 			}
-			alert(JSON.stringify(InteractiveVideo));
 			top.interactiveVideoEditor.activityToSave = InteractiveVideo;
 		},	
 		exit : function(){

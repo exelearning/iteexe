@@ -8,13 +8,15 @@
  */
  
 // To do:
-// Do not allow Flash
+// Do not allow Flash?
  
 // Provisional:
 var myVideo = "https://mediateca.educa.madrid.org/video/l7l76swf6hggd2hu";
 	myVideo = "https://youtu.be/EW72hU1Rp7g";
  
 var $exeDevice = {
+	
+	iDevicePath : "/scripts/idevices/interactive-video/edition/",
 	
 	init : function(){
 		
@@ -25,7 +27,18 @@ var $exeDevice = {
 	// Create the form to insert HTML in the TEXTAREA
 	createForm : function(){
 		
-		var html = '\
+		var html = '';
+		
+		var field = $("textarea.jsContentEditor").eq(0);
+		
+		// Only one Interactive Video iDevice per page
+		if ($(".iDevice_wrapper.interactive-videoIdevice").length>0) {
+			html = '<p>'+_('You can only add one Interactive Video iDevice per page.')+'</p>';
+			field.before(html);
+			return;
+		}
+		
+		html = '\
 			<div id="interactiveVideoIdeviceForm">\
 				<p>\
 					<strong>'+_('Type')+':</strong> \
@@ -54,7 +67,6 @@ var $exeDevice = {
 			</div>\
 		';
 		
-		var field = $("textarea.jsContentEditor").eq(0);
 		field.before(html);
 		
 		$("input[name=interactiveVideoType]").change(function(){
@@ -65,7 +77,9 @@ var $exeDevice = {
 			if (this.value.indexOf("/previews/")==0) {
 				var e = $("#interactiveVideoEditorOpener");
 				$exeDevice.interactiveVideoEditorOpenerHTML = e.html();
-				e.html('<p class="exe-block-info">'+_("Please save your iDevice now and edit it to add interaction.")+'</p>').fadeIn();
+				var saveNowMsg = '<p class="exe-block-info">'+_("Please save your iDevice now (click on %s now) and edit it to add interaction.")+'</p>';
+				saveNowMsg = saveNowMsg.replace('%s','<img style="vertical-align:top" src="'+$exeDevice.iDevicePath+'images/stock-apply.png" alt="'+_("Done")+'" />');
+				e.html(saveNowMsg).fadeIn();
 			}
 		});
 		
@@ -99,7 +113,15 @@ var $exeDevice = {
 			} else {
 				e.hide();
 			}
-		});	
+		});
+		
+		// Create the object to contain all data
+		top.interactiveVideoEditor = {
+			ask : true,
+			activityToSave : {
+				slides : []
+			}
+		};		
 		
 		this.loadPreviousValues(field);
 		
@@ -111,8 +133,36 @@ var $exeDevice = {
 		var originalHTML = field.val();
 		if (originalHTML != '') {
 			
-			// To do
+			var wrapper = $("<div id='interactiveVideoTmpWrapper'></div>");
+				wrapper.html(originalHTML);
+				// Get the file
+				var videoWrapper = $("#exe-interactive-video-file a",wrapper);
+				var type = "local";
+				if (videoWrapper.length==1) {
+					var videoURL = videoWrapper.attr("href");
+					var n = "File";
+					var disabled = "disabled";
+					if (videoURL.indexOf("https://mediateca.educa.madrid.org/")==0) {
+						n = "MediatecaURL";
+						disabled = false;
+						type = "mediateca";
+					} else if (videoURL.indexOf("www.youtube.com")>-1) {
+						n = "YoutubeURL";			
+						disabled = false;
+						type = "youtube";
+					}
+					$("#interactiveVideoType-"+type).prop("checked","checked").trigger("change");
+					$("#interactiveVideo"+n).val(videoURL).prop("disabled",disabled);
+					$("#interactiveVideoEditorOpener").fadeIn();
+				}
+			$('body').append(wrapper);
 			
+			// Get the data
+			if (typeof(InteractiveVideo)=='object' && typeof(InteractiveVideo.slides)=='object') {
+				top.interactiveVideoEditor.activityToSave = InteractiveVideo;
+			}
+			// Remove the wrapper
+			$('#interactiveVideoTmpWrapper').remove();
 		}	
 		
 	},
@@ -145,7 +195,7 @@ var $exeDevice = {
 				title: _("Editor"),
 				items: {
 					xtype: 'uxiframe',
-					src: '/scripts/idevices/interactive-video/edition/editor/',
+					src: $exeDevice.iDevicePath+"editor/",
 					height: '100%'
 				},
 				closable: true,
@@ -170,11 +220,9 @@ var $exeDevice = {
 					}
 				}				
 			});
-			top.interactiveVideoEditor = {
-				win : win,
-				ask : true,
-				activityToSave : ''
-			};
+			// Save the window in the object that contains all data so you can close it, etc.
+			top.interactiveVideoEditor.win = win;
+			// Open the window
 			win.show();
 			
 		}
@@ -318,13 +366,18 @@ var $exeDevice = {
 			};\
 			';
 		*/
-			
-		contents = JSON.stringify(top.interactiveVideoEditor.activityToSave);
+		
+		// {"title":"Mi ejemplo","description":"<p>Descripción del ejemplo.</p>","slides":[{"startTime":5,"type":"text","text":"<p>Texto del <strong>5</strong> al <strong>10</strong>.</p>","endTime":10},{"type":"singleChoice","question":"<p>¿De qué color era el caballo <strong>blanco</strong> de Santiago?</p>","answers":[["Rojo con puntos verdes",0],["Azul",0],["Blanco",1]],"startTime":15},{"type":"image","url":"http://mediateca.educa.madrid.org/imagen/ib1uala2wdd74nm3","description":"Imagen en el 20","startTime":20},{"type":"multipleChoice","question":"<p>El <strong>5</strong> es...</p>","answers":[["Un número",1],["Un número par",0],["Un número impar",1],["Un número entero",1]],"startTime":25},{"type":"dropdown","text":"<p>Uno, <span style=\"text-decoration: line-through;\">dos</span>, tres, <span style=\"text-decoration: line-through;\">cuatro</span>.</p>","startTime":30,"additionalWords":["cinco","seis"]},{"type":"cloze","text":"<p>En un lugar de la <span style=\"text-decoration: line-through;\">Mancha</span>, de cuyo nombre no quiero acordarme, no ha mucho tiempo que <span style=\"text-decoration: line-through;\">vivía</span> un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y <span style=\"text-decoration: line-through;\">galgo</span> corredor.</p>","startTime":40},{"type":"matchElements","text":"<p>Relaciona <strong>nombres</strong> y <strong>apellidos</strong>.</p>","startTime":45,"pairs":[["Cristina","García"],["Felipe","Retortillo"],["Ignacio","Gros"]]},{"type":"sortableList","text":"<p>Ordena la frase de <strong>El Quijote</strong>.</p>","startTime":50,"items":["En un lugar de la Mancha, ","de cuyo nombre no quiero acordarme, ","no ha mucho tiempo que vivía un hidalgo ","de los de lanza en astillero, ","adarga antigua, ","rocín flaco y galgo corredor."]}]}
+		
+		var contents = '{}';
+		if (typeof(top.interactiveVideoEditor)!='undefined') {		
+			contents = JSON.stringify(top.interactiveVideoEditor.activityToSave);
+		}
 		
 		var html = '\
 			<div class="exe-interactive-video">\
 				<p id="exe-interactive-video-file" class="js-hidden">\
-					<a href="'+myVideo+'">'+myVideo+'</a>\
+					<a href="'+myVideo+'">'+myVideo.split('.').pop()+'</a>\
 				</p>\
 				<script type="text/javascript">//<![CDATA[\
 					\nvar InteractiveVideo = '+contents+'\

@@ -25,8 +25,13 @@ iAdmin.userImages = [
 	["5vm52bj7la4z1759","navidad 2015"]
 ];
 var InteractiveVideo = {
-	
+	slides : []
 }
+if (typeof(top.interactiveVideoEditor)=='object' && typeof(top.interactiveVideoEditor.activityToSave)=='object') {
+	InteractiveVideo = top.interactiveVideoEditor.activityToSave;
+}
+
+/*
 InteractiveVideo = {
     "title": "Mi ejemplo",
     "description": "<p>Descripción del ejemplo.</p>",
@@ -84,6 +89,7 @@ InteractiveVideo = {
         "items": ["En un lugar de la Mancha, ", "de cuyo nombre no quiero acordarme, ", "no ha mucho tiempo que vivía un hidalgo ", "de los de lanza en astillero, ", "adarga antigua, ", "rocín flaco y galgo corredor."]
     }]
 }
+*/
 $(function(){
 	iAdmin.init("bsw3s5ic2r5avdg9",169);
 });
