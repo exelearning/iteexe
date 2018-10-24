@@ -1,3 +1,50 @@
+intef-exe (3:2.2.1~beta1) lucid; urgency=medium
+  * Ignacio Gros
+    - Upgrade TinyMCE to 4.8.2.
+    - Upgrade abcjs to 3.2.1 (#331).
+    - New Idevice: GeoGebra Activity.
+    - Credits: Licenses revision.
+    - The "Scrambled List" iDevice is now in the "Interactive Activities" block.
+    - JavaScript iDevices instructions: How to add different fields (editor, color picker, etc.).
+    - Definition tooltips have a different presentation so they're not seen as ordinary links.
+    - Validation panel presentation revision.
+    - Fixed bugs:
+      - Open the "Try again clicking eXe" in top window.
+      - TinyMCE Image Plugin FIGURE alignment (#351).
+      - TinyMCE 4: Can't edit JavaScript popup.
+      - TinyMCE 4: Tooltip plugin errors when there's more than one editor (#335).
+      - Base Style: Replace default radio buttons in the TrueFalseIdevice (as in other iDevices).
+      - MultichoiceIdevice: No feedback in mobile view (due to the default radio buttons replacement) (#332).
+      - MultichoiceIdevice: Small text inputs using the Base Style (#333).
+      - CARM Style: Clearfix problem.
+      - CARM Style: Overlapping elements (logo and pagination).
+      - Unescaped quotes in author meta tag (#353).
+
+  * Juan Rafael Fernández
+    - New full Spanish translation, by Juan Rafael Fernández.
+    - New full French translation, by Jesús Miguel Domínguez.
+    - New full Italian translation, by Andrea Primiani.
+    - New full Russian translation, by Alex Loginov.
+    - New full Portuguese translation, by Dionisio Martínez Soler.
+    - New full Catalan translation, by Carles Ferrando Garcia.
+    - New full Basque translation, by Joxemi Andonegi.
+    - New full Galician translation, by Pablo Nimo.
+    - New full Valencian translation.
+    - Cleaned Dutch, Italian, German, Bengali, Hebrew, Norwegian and Tradicional Chinese PO files.
+
+  * SDWeb
+    - Fix error that made eXe remove resources from certain Idevices (#342).
+    - Fix error when loading packaged made with older versions of eXe (#341).
+    - Fix error that prevented eXe from showing a header imagen when the path to it contained special characters.
+    - Add optional title to LivePage alerts.
+    - Improve Procomún publishing user experience.
+    - Add validation to package properties before exporting them.
+    - Add "Conceptual map" to the list of available "Learning Resource Type".
+    - Fix error when trying to preview ODT, ODP, ODS, DOCX, PPTX and XLSX files.
+    - Prevent error that made eXe remove resources with similar names.
+
+ -- eXeLearning <admin@exelearning.net>  Wed, 24 Oct 2018 11:05:35 +0200
+
 intef-exe (3:2.2) lucid; urgency=medium
   * Ignacio Gros
     - Fix problems with page counter positions (#325).
