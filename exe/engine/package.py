@@ -1958,7 +1958,7 @@ class Package(Persistable):
         Loads the constraints that should be applied to the properties.
         """
         try:
-            jsonfile = open(os.path.dirname(__file__) + '/exportvalidation.json')
+            jsonfile = open('exportvalidation.json')
 
             self._fieldValidationInfo = json.loads(jsonfile.read())
         except:
