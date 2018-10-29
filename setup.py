@@ -51,7 +51,7 @@ def dataFiles(dirs, excludes=[]):
                 else:
                     # We get all of the path
                     path = file
-                
+
                 # Get the full new path
                 dir = os.path.join(g_newBase, os.path.dirname(path))
 
@@ -94,6 +94,11 @@ dataFiles(
         "exe/webui/docs/credits.xhtml"
     ]
 )
+
+# Process metadata validation rules
+g_oldBase = "exe/webui"
+g_newBase = "/usr/share/exe"
+dataFiles(['exe/webui/exportvalidation.json'])
 
 # Process Mobile Profiles
 g_oldBase = "exe"

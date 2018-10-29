@@ -75,7 +75,7 @@ def dataFiles(dirs, excludes=[]):
                 else:
                     # We get all of the path
                     path = file
-                
+
                 # Get the full new path
                 dir = os.path.join(g_newBase, os.path.dirname(path))
 
@@ -114,6 +114,11 @@ dataFiles(
     # We exlude mimetext executables for other OS
     excludes = ['mimetex-darwin.cgi']
 )
+
+# Process metadata validation rules
+g_oldBase = "exe/webui"
+g_newBase = "."
+dataFiles(['exe/webui/exportvalidation.json'])
 
 # Process Mobile Profiles
 g_oldBase = "exe"
