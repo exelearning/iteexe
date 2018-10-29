@@ -1958,7 +1958,7 @@ class Package(Persistable):
         Loads the constraints that should be applied to the properties.
         """
         try:
-            jsonfile = open('exportvalidation.json')
+            jsonfile = open(G.application.config.webDir / 'exportvalidation.json')
 
             self._fieldValidationInfo = json.loads(jsonfile.read())
         except:
