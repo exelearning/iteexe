@@ -83,7 +83,7 @@ plist = dict(
 
 py2appParams = {
     'includes': 'PngImagePlugin,JpegImagePlugin,GifImagePlugin,IcoImagePlugin,BmpImagePlugin,BaseHTTPServer',
-    'packages': 'encodings,nevow,lxml',
+    'packages': 'encodings,nevow,lxml,PIL',
     'argv_emulation': True,
     'semi_standalone': False,
     'plist': plist,
