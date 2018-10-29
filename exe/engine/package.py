@@ -1902,7 +1902,7 @@ class Package(Persistable):
         :rtype: bool
         :return: Bandera indicando si las propiedades del paquete son válidas.
         """
-        if self._fieldValidationInfo is None or not self._fieldValidationInfo:
+        if self._fieldValidationInfo is None:
             self._loadFieldValidationInfo()
 
         mandatory_checks = []
