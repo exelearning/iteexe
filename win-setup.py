@@ -46,8 +46,6 @@ g_files = {
         #"exe/webui/mr_x.gif",
         # License file
         "installs/windows/exeLicense.txt",
-        # Export validation
-        "exe/engine/exportvalidation.json",
         # Root certificates
         os.path.join(os.path.dirname(httplib2.__file__), 'cacerts.txt')
     ]
