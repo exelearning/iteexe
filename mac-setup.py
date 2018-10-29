@@ -55,7 +55,7 @@ dataFiles('exe/webui', '../Resources/exe',
           excludes=['mimetex.exe'])
 
 # Process metadata validation rules
-dataFiles('exe/webui', '../Resources/exe', ['exe/webui/exportvalidation.json'])
+dataFiles('exe/webui', '../Resources/exe', ['exportvalidation.json'])
 
 # Add in the
 dataFiles('exe', '../Resources/exe', ['locale'])
