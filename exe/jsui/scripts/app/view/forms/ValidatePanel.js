@@ -82,7 +82,7 @@ Ext.define('eXe.view.forms.ValidatePanel', {
                         text: _('Export without changes'),
                         handler: function (button) {
                             var formpanel = button.up('form');
-                            eXe.app.getController('Toolbar').exportPackage(formpanel.exportType);
+                            eXe.app.getController('Toolbar').exportPackage(formpanel.exportType, '');
                             formpanel.up('window').close();
                         },
                         margin: 10
