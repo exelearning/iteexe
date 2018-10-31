@@ -4037,7 +4037,7 @@ msgstr ""
 #: exe/jsui/mainpage.py:1173
 #, python-format
 msgid "The reported error we got from Procomún was: <pre>%s</pre>"
-msgstr "El número de error que nos devuelve Procomún es: <pre>%s/pre>"
+msgstr "El error que nos devuelve Procomún es: <pre>%s</pre>"
 
 #: exe/jsui/mainpage.py:1203 exe/jsui/mainpage.py:1551
 #, python-format

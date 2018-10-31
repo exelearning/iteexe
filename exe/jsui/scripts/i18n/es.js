@@ -1803,7 +1803,7 @@ translations = {
  "If you prefer to show the image, the code will be there, but it won't be visible.": "Si prefiere mostrar la imagen, el c\u00f3digo estar\u00e1 presente pero no ser\u00e1 visible.", 
  "Walloon ": "Val\u00f3n ", 
  "master class": "lecci\u00f3n magistral", 
- "The reported error we got from Procom\u00fan was: <pre>%s<\/pre>": "El n\u00famero de error que nos devuelve Procom\u00fan es: <pre>%s\/pre>", 
+ "The reported error we got from Procom\u00fan was: <pre>%s<\/pre>": "El error que nos devuelve Procom\u00fan es: <pre>%s<\/pre>", 
  "navigation map": "mapa de navegaci\u00f3n", 
  "Type in the feedback that you want the \nstudent to see when selecting the particular option. If you don't complete this \nbox, eXe will automatically provide default feedback as follows: \"Correct \nanswer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\nfor the other options.": "Escriba la informaci\u00f3n de retroalimentaci\u00f3n que quiere \nque los estudiantes vean cuando seleccionen una opci\u00f3n particular. Si no quiere rellenar este \nrecuadro, eXeLearning proporcionar\u00e1 autom\u00e1ticamente informaci\u00f3n predeterminada de la siguiente manera: \n\"Respuesta correcta\" seg\u00fan la selecci\u00f3n indicada para la respuesta correcta; o \n\"Respuesta equivocada\" para las otras alternativas.", 
  "Acronym or abbreviation": "Acr\u00f3nimo o abreviatura", 
