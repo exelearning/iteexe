@@ -43,8 +43,101 @@ var iAdmin = {
 	video : {
 		hasPlayed : false,
 		getPosition : function(){
-			return parseInt(jwplayer().getPosition());
-		}
+			var type = iAdmin.video.type;
+			if (type=="mediateca") return parseInt(jwplayer().getPosition());
+			else if (type=="youtube") {
+				try {
+					return parseInt(iAdmin.video.player.getCurrentTime());
+				} catch(e) {
+					return 0;
+				}
+			}
+			else alert("To do 001: Local file");
+		},
+		youtubeIsReady : function(){
+			
+			iAdmin.video.player = new YT.Player('player', {
+				height: '356',
+				width: '448',
+				videoId: iAdmin.video.id,
+				events: {
+					'onReady': function(){
+						try {
+							iAdmin.video.duration = iAdmin.video.player.getDuration();	
+						} catch(e) {
+							
+						}
+					}
+				}
+			});
+			
+		},
+		enable : function(url,type) {
+			
+			iAdmin.video.duration = 0;
+			
+			if (type=='mediateca') {
+				
+				// Get the video ID: https://mediateca.educa.madrid.org/video/...
+				var id = url.replace("https://mediateca.educa.madrid.org/video/","");
+					id = id.split("/");
+					id = id[0];
+					
+				enableVideoPlayer(
+					id,
+					'http://mediateca.educa.madrid.org/imagen.php?id='+id+'&type=1&m=0',
+					'356',
+					'448'
+				);					
+				
+			} else if (type=='youtube') {
+				
+				function youtube_parser(url){
+					var match = url.match(regExp);
+					var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+					var match = url.match(regExp);
+					if (match && match[2].length == 11) {
+						return match[2];
+					} else {
+						return false;
+					}
+				}				
+				iAdmin.video.id = youtube_parser(url);			
+				
+				$("#player").html('<video width="448" height="356" controls="controls"><source src="'+url+'" /></video>');
+				
+				try {
+				
+					onYouTubeIframeAPIReady = iAdmin.video.youtubeIsReady;
+					// Load the IFrame Player API code asynchronously
+					var tag = document.createElement('script');
+						tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+						firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+					
+				} catch(e) {
+					
+					iAdmin.appError(_("Could not retrieve data (Core error)") + " - 003 - "+_("The Youtube API might have changed."));
+					return;				
+					
+				}
+				
+			} else if (type=='local') {
+				
+				alert("To do 002: Local file");
+				// $("#player").html('<video width="448" height="356" controls="controls"><source src="'+url+'" /></video>');
+				// $("#player video").mediaelementplayer();				
+				
+			}
+			
+		},		
+	},
+	mediaElement : {
+		load : function(){
+			
+			
+			
+		},
 	},
 	orderSlides : function(){
 		var sortable = [];
@@ -248,11 +341,9 @@ var iAdmin = {
 		
 		// Missing type or URL
 		if (!top || !top.interactiveVideoEditor || !top.interactiveVideoEditor.videoType || !top.interactiveVideoEditor.videoURL) {
-			this.appError(_("Could not retrieve data (Core error)") + " - 002 - "+_("You can close this window"));
+			this.appError(_("Could not retrieve data (Core error)") + " - 002");
 			return;
 		}
-		
-		// alert("To review 001:\n"+top.interactiveVideoEditor.videoType+"\n"+top.interactiveVideoEditor.videoURL)
 		
 		this.video.type = top.interactiveVideoEditor.videoType;
 		this.video.url = top.interactiveVideoEditor.videoURL;
@@ -275,23 +366,12 @@ var iAdmin = {
 			}
 		}
 		
-		// Get the video ID: https://mediateca.educa.madrid.org/video/...
-		var id = this.video.url.replace("https://mediateca.educa.madrid.org/video/","");
-			id = id.split("/");
-			id = id[0];
+		// Enable the player
+		this.video.enable(this.video.url,this.video.type);
 		
+		// Translate the app
 		this.i18n();
-		
-		enableVideoPlayer(
-			id,
-			'http://mediateca.educa.madrid.org/imagen.php?id='+id+'&type=1&m=0',
-			'356',
-			'448'
-		);
 
-		var duration = 0;
-		iAdmin.video.duration = duration;
-		
 		this.timeOptions.init("#text-block");
 		
 		this.getPreviousValues();		
