@@ -33,6 +33,9 @@ from tempfile import mkdtemp
 if os.name == 'posix' and not ('--standalone' in sys.argv or '--portable' in sys.argv):
     sys.path.insert(0, '/usr/share/exe')
 
+# This *must* always be the first import to prevent a warning on Windows
+from exe.webui.webserver     import WebServer
+
 from getopt                  import getopt, GetoptError
 from twisted.internet        import reactor
 from twisted.web.static      import File
@@ -43,7 +46,6 @@ from exe.engine.idevicestore import IdeviceStore
 from exe.engine.package      import Package
 from exe.engine.translate    import installSafeTranslate
 from exe.webui.browser       import launchBrowser
-from exe.webui.webserver     import WebServer
 
 log = logging.getLogger(__name__)
 

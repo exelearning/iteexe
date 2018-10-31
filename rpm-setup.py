@@ -33,7 +33,7 @@ def dataFiles(dirs, excludes = []):
     """
     # Get global variables
     global dataFiles, g_oldBase, g_newBase, g_files
-    
+
     # Go throught all files
     for file in dirs:
         # This will prevent it from copying hidden or excluded files
@@ -42,10 +42,10 @@ def dataFiles(dirs, excludes = []):
             if os.path.isfile(file) and file not in excludes:
                 # We get only the part after that from the file path
                 path = file[len(g_oldBase) + 1:]
-                
+
                 # Get the full new path
                 dir = g_newBase + "/" + os.path.dirname(path)
-                
+
                 # If the path is already in the array
                 if dir in g_files:
                     # Append the file
@@ -80,10 +80,15 @@ dataFiles(
         "exe/webui/tools"
     ],
     excludes = [
-        "exe/webui/templates/mimetex-darwin.cgi", 
+        "exe/webui/templates/mimetex-darwin.cgi",
         "exe/webui/templates/mimetex.exe"
     ]
 )
+
+# Process metadata validation rules
+g_oldBase = "exe/webui"
+g_newBase = "/usr/share/exe"
+dataFiles(['exe/webui/exportvalidation.json'])
 
 # Process locales folder
 # jrf - bug 2402, to comply with the FHS

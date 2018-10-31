@@ -868,6 +868,7 @@ class Package(Persistable):
             return value
         elif source == 'LOMv1.0':
             lomMap = {
+                "conceptual map": "conceptual map",
                 "guided reading": "narrative text",
                 "master class": "lecture",
                 "textual-image analysis": "exercise",
@@ -1958,7 +1959,7 @@ class Package(Persistable):
         Loads the constraints that should be applied to the properties.
         """
         try:
-            jsonfile = open(os.path.dirname(__file__) + '/exportvalidation.json')
+            jsonfile = open(G.application.config.webDir / 'exportvalidation.json')
 
             self._fieldValidationInfo = json.loads(jsonfile.read())
         except:

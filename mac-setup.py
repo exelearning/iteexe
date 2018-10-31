@@ -54,6 +54,9 @@ dataFiles('exe/webui', '../Resources/exe',
           ],
           excludes=['mimetex.exe'])
 
+# Process metadata validation rules
+files['../Resources/exe'].append('exe/webui/exportvalidation.json')
+
 # Add in the
 dataFiles('exe', '../Resources/exe', ['locale'])
 
@@ -80,7 +83,7 @@ plist = dict(
 
 py2appParams = {
     'includes': 'PngImagePlugin,JpegImagePlugin,GifImagePlugin,IcoImagePlugin,BmpImagePlugin,BaseHTTPServer',
-    'packages': 'encodings,nevow,lxml',
+    'packages': 'encodings,nevow,lxml,PIL',
     'argv_emulation': True,
     'semi_standalone': False,
     'plist': plist,
