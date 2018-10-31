@@ -237,17 +237,43 @@ var iAdmin = {
 	appMsg : function(msg) {
 		top.eXe.app.alert(msg);
 	},
+	appError : function(msg) {
+		this.appMsg(msg);
+		top.interactiveVideoEditor.win.closeMe = true;
+		top.interactiveVideoEditor.win.close();
+		top.interactiveVideoEditor.win.closeMe = false;
+		// $("body").hide();
+	},
 	init : function(){
 		
 		// Missing type or URL
 		if (!top || !top.interactiveVideoEditor || !top.interactiveVideoEditor.videoType || !top.interactiveVideoEditor.videoURL) {
-			this.appMsg(_("Could not retrieve data (Core error)") + " - 001 - "+_("You can close this window"));
-			$("body").hide();
+			this.appError(_("Could not retrieve data (Core error)") + " - 002 - "+_("You can close this window"));
 			return;
 		}
 		
+		// alert("To review 001:\n"+top.interactiveVideoEditor.videoType+"\n"+top.interactiveVideoEditor.videoURL)
+		
 		this.video.type = top.interactiveVideoEditor.videoType;
 		this.video.url = top.interactiveVideoEditor.videoURL;
+		
+		// Check if the type and the URL match
+		if (this.video.type=='local') {
+			if (this.video.url.indexOf("resources/")!=0) {
+				this.appError(_('Type')+": "+_('Local file')+" - "+_('Please type or paste a valid URL.'));
+				return;
+			}
+		} else if (this.video.type=='mediateca') {
+			if (this.video.url.indexOf("https://mediateca.educa.madrid.org/")!=0) {
+				this.appError(_('Type')+": "+_('Mediateca')+" - "+_('Please type or paste a valid URL.'));
+				return;
+			}
+		} else if (this.video.type=='youtube') {
+			if (this.video.url.indexOf("https://www.youtube.com/")!=0) {
+				this.appError(_('Type')+": "+_('Youtube')+" - "+_('Please type or paste a valid URL.'));
+				return;
+			}
+		}
 		
 		// Get the video ID: https://mediateca.educa.madrid.org/video/...
 		var id = this.video.url.replace("https://mediateca.educa.madrid.org/video/","");

@@ -20,6 +20,16 @@ var $exeDevice = {
 		 
 	},
 	
+	testIfVideoExists : function(url,type) {
+
+		if (!top.interactiveVideoEditor) {
+			eXe.app.alert(_("Could not retrieve data (Core error)") + " - 001");
+		} else {
+			top.interactiveVideoEditor.videoURL = url;
+			top.interactiveVideoEditor.videoType = type;
+		}
+
+	},
 	// Create the form to insert HTML in the TEXTAREA
 	createForm : function(){
 		
@@ -82,6 +92,7 @@ var $exeDevice = {
 		$("#interactiveVideoYoutubeURL").change(function(){
 			var e = $("#interactiveVideoEditorOpener");
 			if (this.value.indexOf("https://www.youtube.com/watch?v=")==0) {
+				$exeDevice.testIfVideoExists(this.value,"youtube");
 				e.fadeIn();
 			} else {
 				e.hide();
@@ -89,6 +100,7 @@ var $exeDevice = {
 		}).keyup(function(){
 			var e = $("#interactiveVideoEditorOpener");
 			if (this.value.indexOf("https://www.youtube.com/watch?v=")==0) {
+				$exeDevice.testIfVideoExists(this.value,"youtube");
 				e.fadeIn();
 			} else {
 				e.hide();
@@ -98,6 +110,7 @@ var $exeDevice = {
 		$("#interactiveVideoMediatecaURL").change(function(){
 			var e = $("#interactiveVideoEditorOpener");
 			if (this.value.indexOf("https://mediateca.educa.madrid.org/video/")==0) {
+				$exeDevice.testIfVideoExists(this.value,"mediateca");
 				e.fadeIn();
 			} else {
 				e.hide();
@@ -105,6 +118,7 @@ var $exeDevice = {
 		}).keyup(function(){
 			var e = $("#interactiveVideoEditorOpener");
 			if (this.value.indexOf("https://mediateca.educa.madrid.org/video/")==0) {
+				$exeDevice.testIfVideoExists(this.value,"mediateca");
 				e.fadeIn();
 			} else {
 				e.hide();
@@ -171,14 +185,22 @@ var $exeDevice = {
 	toggleType : function(v) {
 		
 		var btn = $("#interactiveVideoEditorOpener");
-		btn.hide();
+		// To review: btn.hide();
 		$(".interactiveVideoType").hide();
 		$("#interactiveVideo-"+v).fadeIn();
 		// Hide the "Please save your iDevice now and edit it to add interaction." message.
 		if (typeof($exeDevice.interactiveVideoEditorOpenerHTML)!='undefined') {
 			btn.html($exeDevice.interactiveVideoEditorOpenerHTML);
 		}
-		$("#interactiveVideoFile,#interactiveVideoYoutubeURL,#interactiveVideoMediatecaURL").val("");
+		// $("#interactiveVideoFile,#interactiveVideoYoutubeURL,#interactiveVideoMediatecaURL").val("");
+		// if (top.interactiveVideoEditor.videoType)
+		// Change the video type
+		top.interactiveVideoEditor.videoType = v;
+		if ($exeDevice.interactiveVideoEditorOpenerHTML) {
+			// Keep displaying the "Save now" text if needed
+			if (v=="local") $("#interactiveVideoFile").trigger("change");
+			else $("#interactiveVideoEditorOpener").html($exeDevice.interactiveVideoEditorOpenerHTML);
+		}
 		
 	},
 	
@@ -389,6 +411,9 @@ var $exeDevice = {
 		if (type=="local") {
 			html += '<div class="sr-av"><video width="320" height="240" controls="controls" class="mediaelement"><source src="'+myVideo+'" /></video></div>';
 		}
+		
+		alert("HTML to save:\n\n"+html);
+		
 		return html;
 		
 	}
