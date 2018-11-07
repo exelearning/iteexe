@@ -55,7 +55,7 @@ var $exeDevice = {
 				<p id="interactiveVideo-local" class="interactiveVideoType">\
 					<label for="interactiveVideoFile">'+_("File")+':</label> \
 					<input type="text" id="interactiveVideoFile" class="exe-file-picker" />\
-					<span class="info"><strong>'+_("Supported formats")+':</strong> OGV/OGG, webm, mp4</span>\
+					<span class="info"><strong>'+_("Supported formats")+':</strong> OGV/OGG, webm, mp4, flv</span>\
 				</p>\
 				<p id="interactiveVideo-youtube" class="interactiveVideoType">\
 					<label for="interactiveVideoYoutubeURL">'+_("URL")+':</label> \
@@ -85,6 +85,10 @@ var $exeDevice = {
 				$exeDevice.interactiveVideoEditorOpenerHTML = e.html();
 				var saveNowMsg = '<p class="exe-block-info">'+_("Please save your iDevice now (click on %s now) and edit it to add interaction.")+'</p>';
 				saveNowMsg = saveNowMsg.replace('%s','<img style="vertical-align:top" src="'+$exeDevice.iDevicePath+'images/stock-apply.png" alt="'+_("Done")+'" />');
+				var extension = this.value.split('.').pop().toLowerCase();
+				if (extension=="flv") {
+					eXe.app.alert(_("Format")+": flv - "+_("Recommended type")+": ogv/ogg, webm, mp4");
+				}				
 				e.html(saveNowMsg).fadeIn();
 			}
 		});
@@ -266,8 +270,8 @@ var $exeDevice = {
 				return false;
 			}
 			var extension = myVideo.split('.').pop().toLowerCase();
-			if (extension!="ogg" && extension!="ogv" && extension!="mp4" && extension!="webm") {
-				eXe.app.alert(_("Supported formats")+": OGV/OGG, webm, mp4");
+			if (extension!="ogg" && extension!="ogv" && extension!="mp4" && extension!="webm" && extension!="flv") {
+				eXe.app.alert(_("Supported formats")+": ogv/ogg, webm, mp4, flv");
 				return false;
 			}
 			
@@ -412,7 +416,7 @@ var $exeDevice = {
 			html += '<div class="sr-av"><video width="320" height="240" controls="controls" class="mediaelement"><source src="'+myVideo+'" /></video></div>';
 		}
 		
-		alert("HTML to save:\n\n"+html);
+		// To review alert("HTML to save:\n\n"+html);
 		
 		return html;
 		

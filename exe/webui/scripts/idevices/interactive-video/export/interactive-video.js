@@ -9,6 +9,7 @@
  * Loading icon generated with http://www.ajaxload.info/
  */
  
+// To do: Warning: Better with mp4, etc. (no clickable results with flv)
 var interaction = {
 	debug : true,
 	encrypt : false,
@@ -209,6 +210,7 @@ var interaction = {
 			else if (ref.indexOf("resources/")==0 || (ref.indexOf("http")!=0 && ref.indexOf("//")!=0)) {
 				this.file = ref;
 				this.type = 'local';
+				this.extension = ref.split('.').pop().toLowerCase();
 				return;
 			}
 			alert("Error (código imcompatible con el proveedor)");
@@ -383,7 +385,7 @@ var interaction = {
 				var c = slide.attr("class");
 				if (c=="image" || c=="text") { 
 					if(!InteractiveVideo.slides[interaction.visibleSlide].endTime) {
-						interaction.slide.hide('case 1');
+						// To review (error: It hides the slide): interaction.slide.hide('case 1');
 					}
 				} else {
 					// setTimeout(function(){
@@ -443,13 +445,22 @@ var interaction = {
 			
 			interaction.complete();
 			
-			interaction.mediaElementVideo[0].addEventListener('playing', function (e) {
+			if (interaction.extension=="flv") {
+				
 				interaction.youtubeCounter = setInterval(function(){
-					interaction.track(interaction.mediaElementVideo[0].currentTime);
+					interaction.track(interaction.hourToSeconds($("#player .mejs-currenttime").eq(0).text()));
 				},500);
-				interaction.checkSlides();
-			});			
+				
+			} else {
 			
+				interaction.mediaElementVideo[0].addEventListener('playing', function (e) {
+					interaction.youtubeCounter = setInterval(function(){
+						interaction.track(interaction.mediaElementVideo[0].currentTime);
+					},500);
+					interaction.checkSlides();
+				});			
+			
+			}
 		}
 		
 	},
@@ -478,6 +489,20 @@ var interaction = {
 			sorted.push(sortable[i][1]);
 		}
 		InteractiveVideo.slides = sorted;
+	},
+	// hh:mm:ss to seconds
+	hourToSeconds : function(str){
+		var i = str.split(':');
+		if (i.length==0) {
+			return 0;
+		} else if (i.length==1) {
+			i = '00:00:'+i[0];
+			i = i.split(':');
+		} else if (i.length==2) {
+			i = '00:'+i[0]+':'+i[1];
+			i = i.split(':');
+		}
+		return (+i[0]) * 60 * 60 + (+i[1]) * 60 + (+i[2]); 
 	},
 	secondsToHour : function(totalSec) {
 		var hours = parseInt( totalSec / 3600 ) % 24;
@@ -510,13 +535,23 @@ var interaction = {
 				}
 				var k = "odd";
 				if (i%2==0) k = "even";				
-				html += '\
-					<tr class="'+k+'">\
-						<td class="order"><span>'+(i+1)+'</span> </td>\
-						<td class="question"><a href="#" onclick="interaction.seek('+i+');return false">'+title+'</a> </td>\
-						<td><a href="#" onclick="interaction.seek('+i+');return false">'+interaction.secondsToHour(e.startTime)+'</a> </td>\
-						<td class="result"><span>'+result+'</span> </td>\
-					</tr>';
+				if (interaction.type=="local" && interaction.extension=="flv") {
+					html += '\
+						<tr class="'+k+'">\
+							<td class="order"><span>'+(i+1)+'</span> </td>\
+							<td class="question">'+title+' </td>\
+							<td>'+interaction.secondsToHour(e.startTime)+' </td>\
+							<td class="result"><span>'+result+'</span> </td>\
+						</tr>';
+				} else {
+					html += '\
+						<tr class="'+k+'">\
+							<td class="order"><span>'+(i+1)+'</span> </td>\
+							<td class="question"><a href="#" onclick="interaction.seek('+i+');return false">'+title+'</a> </td>\
+							<td><a href="#" onclick="interaction.seek('+i+');return false">'+interaction.secondsToHour(e.startTime)+'</a> </td>\
+							<td class="result"><span>'+result+'</span> </td>\
+						</tr>';					
+				}
 			}
 			if (html!="") {
 				html += '\
@@ -590,7 +625,7 @@ var interaction = {
 	},
 	seek : function(order){
 		if (interaction.visibleSlide==order && $("BODY").hasClass("active")) {
-			if (this.debug) alert("This is the current slide: "+order);
+			// To review if (this.debug) alert("This is the current slide: "+order);
 			return false;
 		}
 		interaction.isSeek = true;
