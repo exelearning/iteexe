@@ -1,6 +1,8 @@
 function toDo(s) {
 	alert(s)
 }
+// To do: Get duration when using a local video
+// To do: Check i18n
 var iAdmin = {
 	globals : {
 		mode : "add", // add or edit
@@ -40,6 +42,20 @@ var iAdmin = {
 		"matchElements" : $i18n.Pairs_Game_Instructions,
 		"sortableList" : $i18n.Scrambled_List_Instructions
 	},
+	// hh:mm:ss to seconds
+	hourToSeconds : function(str){
+		var i = str.split(':');
+		if (i.length==0) {
+			return 0;
+		} else if (i.length==1) {
+			i = '00:00:'+i[0];
+			i = i.split(':');
+		} else if (i.length==2) {
+			i = '00:'+i[0]+':'+i[1];
+			i = i.split(':');
+		}
+		return (+i[0]) * 60 * 60 + (+i[1]) * 60 + (+i[2]); 
+	},
 	video : {
 		hasPlayed : false,
 		getPosition : function(){
@@ -51,8 +67,19 @@ var iAdmin = {
 				} catch(e) {
 					return 0;
 				}
+			} else {
+				var video = $("#player video");
+				var src = video.html();
+					src = src.split('"');
+					if (src.length!=3) return 0;
+					src = src[1];
+				var extension = src.split('.').pop().toLowerCase();
+				if (extension=="flv") {
+					return iAdmin.hourToSeconds($("#player .mejs-currenttime").eq(0).text());
+				} else {
+					return parseInt(video[0].currentTime);
+				}				
 			}
-			else alert("To do 001: Local file");
 		},
 		youtubeIsReady : function(){
 			
@@ -124,9 +151,14 @@ var iAdmin = {
 				
 			} else if (type=='local') {
 				
-				alert("To do 002: Local file");
-				// $("#player").html('<video width="448" height="356" controls="controls"><source src="'+url+'" /></video>');
-				// $("#player video").mediaelementplayer();				
+                mejs.MediaElementDefaults.flashName = "/scripts/mediaelement/" + mejs.MediaElementDefaults.flashName;
+                mejs.MediaElementDefaults.silverlightName = "/scripts/mediaelement/" + mejs.MediaElementDefaults.silverlightName				
+				
+				$("#player").html('<video width="448" height="356" controls="controls"><source src="'+top.window.location.href+'/'+url+'" /></video>');
+				// The player won't work if there's no delay. Why?
+				setTimeout(function(){
+					$("#player video").mediaelementplayer();	
+				},500);
 				
 			}
 			
