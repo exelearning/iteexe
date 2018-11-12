@@ -868,7 +868,7 @@ class Package(Persistable):
             return value
         elif source == 'LOMv1.0':
             lomMap = {
-                "conceptual map": "conceptual map",
+                "conceptual map": "diagram",
                 "guided reading": "narrative text",
                 "master class": "lecture",
                 "textual-image analysis": "exercise",
