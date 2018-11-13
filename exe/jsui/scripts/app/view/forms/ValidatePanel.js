@@ -64,6 +64,18 @@ Ext.define('eXe.view.forms.ValidatePanel', {
                                         eXe.app.getController('Toolbar').fileSave('',formpanel.exportType);
                                     }
 
+                                    // Reload the tab to see saved changes
+                                    var mainPanel = eXe.app.getController('MainTab');
+                                    var activeTab = mainPanel.getMaintab().getActiveTab();
+                                    // Search for the deepest active tab
+                                    while (activeTab.getActiveTab) {
+                                        activeTab = activeTab.getActiveTab();
+                                    }
+
+                                    if (activeTab.xtype != 'uxiframe') {
+                                        mainPanel.loadForm(activeTab);
+                                    }
+
                                     // Do the validation again
                                     nevow_clientToServerEvent('validatePackageProperties', formpanel.up('window'), '', formpanel.exportType)
                                     formpanel.up('window').close();
