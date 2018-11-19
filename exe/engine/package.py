@@ -1125,7 +1125,7 @@ class Package(Persistable):
             return _(u"?????")
 
 
-    def save(self, filename=None, tempFile=False, isTemplate=False, configxml=None):
+    def save(self, filename=None, tempFile=False, isTemplate=False, configxml=None, preventUpdateRecent=False):
         """
         Save package to disk
         pass an optional filename
@@ -1171,7 +1171,7 @@ class Package(Persistable):
             filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'), configxml)
             self.isChanged = False
 
-            if isTemplate == False:
+            if not isTemplate and not preventUpdateRecent:
                 self.updateRecentDocuments(filename)
                 self.filename = filename
 

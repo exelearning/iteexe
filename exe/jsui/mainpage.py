@@ -1307,7 +1307,7 @@ class MainPage(RenderableLivePage):
         """
         package = self._loadPackage(client, filename, newLoad=True, preventUpdateRecent=True)
         tmpfile = Path(tempfile.mktemp())
-        package.save(tmpfile)
+        package.save(tmpfile, preventUpdateRecent=True)
         loadedPackage = self._loadPackage(client, tmpfile, newLoad=False, destinationPackage=self.package, preventUpdateRecent=True)
         newNode = loadedPackage.root.copyToPackage(self.package,
                                                    self.package.currentNode)
