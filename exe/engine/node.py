@@ -581,7 +581,7 @@ class Node(Persistable):
 
         # We also have to make sure that no references to the node
         # remain in package's anchor_nodes
-        if pruningZombies and self in self.package.anchor_nodes:
+        if pruningZombies and hasattr(self.package, 'anchor_nodes') and self in self.package.anchor_nodes:
             self.package.anchor_nodes.remove(self)
 
         if self.package: 
