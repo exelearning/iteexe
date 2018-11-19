@@ -1280,7 +1280,7 @@ class Package(Persistable):
         return newPackage
 
     @staticmethod
-    def load(filename, newLoad=True, destinationPackage=None, fromxml=None, isTemplate=False):
+    def load(filename, newLoad=True, destinationPackage=None, fromxml=None, isTemplate=False, preventUpdateRecent=False):
         """
         Load package from disk, returns a package.
         """
@@ -1535,7 +1535,7 @@ class Package(Persistable):
 
         if isTemplate:
             newPackage.set_templateFile(str(filename.basename().splitext()[0]))
-        else:
+        elif not preventUpdateRecent:
             newPackage.updateRecentDocuments(newPackage.filename)
 
         newPackage.set_isTemplate(isTemplate)

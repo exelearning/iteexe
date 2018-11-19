@@ -1305,11 +1305,10 @@ class MainPage(RenderableLivePage):
         """
         Load the package and insert in current node
         """
-        package = self._loadPackage(client, filename, newLoad=True)
+        package = self._loadPackage(client, filename, newLoad=True, preventUpdateRecent=True)
         tmpfile = Path(tempfile.mktemp())
         package.save(tmpfile)
-        loadedPackage = self._loadPackage(client, tmpfile, newLoad=False,
-                                          destinationPackage=self.package)
+        loadedPackage = self._loadPackage(client, tmpfile, newLoad=False, destinationPackage=self.package, preventUpdateRecent=True)
         newNode = loadedPackage.root.copyToPackage(self.package,
                                                    self.package.currentNode)
         # trigger a rename of all of the internal nodes and links,
@@ -1674,7 +1673,7 @@ class MainPage(RenderableLivePage):
             G.application.config.browser.open('file://' + filename)
 
     def _loadPackage(self, client, filename, newLoad=True,
-                     destinationPackage=None, isTemplate=False):
+                     destinationPackage=None, isTemplate=False, preventUpdateRecent=False):
         """Load the package named 'filename'"""
         try:
             encoding = sys.getfilesystemencoding()
@@ -1693,7 +1692,7 @@ class MainPage(RenderableLivePage):
                     client.alert(_(u'File %s does not exist or is not readable.') % filename2)
                     return None
             if isTemplate == False:
-                package = Package.load(filename2, newLoad, destinationPackage)
+                package = Package.load(filename2, newLoad, destinationPackage, preventUpdateRecent=preventUpdateRecent)
             else:
                 package = self.session.packageStore.createPackageFromTemplate(filename)
             if package is None:
