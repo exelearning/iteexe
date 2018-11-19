@@ -1305,6 +1305,11 @@ class MainPage(RenderableLivePage):
         """
         Load the package and insert in current node
         """
+        # For templates, we need to set isChanged to True to prevent the
+        # translation mechanism to execute
+        if not self.package.isChanged and self.package.isTemplate:
+            self.package.isChanged = True
+
         package = self._loadPackage(client, filename, newLoad=True, preventUpdateRecent=True)
         tmpfile = Path(tempfile.mktemp())
         package.save(tmpfile, preventUpdateRecent=True)
