@@ -127,7 +127,7 @@ class MainPage(RenderableLivePage):
         # case its language has changed
         if self.package.isTemplate and not self.package.isChanged:
             # We have to reload the template in case it has been already translated before
-            template = Package.load(self.config.templatesDir / self.package.get_templateFile() + '.elt')
+            template = Package.load(self.config.templatesDir / self.package.get_templateFile() + '.elt', isTemplate=True)
             template.set_lang(self.package.lang)
 
             # Copy level names and iDevices
