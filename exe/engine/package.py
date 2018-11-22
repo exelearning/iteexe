@@ -1417,6 +1417,8 @@ class Package(Persistable):
                 else:
                     newPackage.set_docType(toUnicode('XHTML'))
 
+                # Set license for package, lom and lomES
+                newPackage.set_license(newPackage.license)
             else:
                 # and when merging, automatically set package references to
                 # the destinationPackage, into which this is being merged:
