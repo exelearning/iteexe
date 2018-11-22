@@ -1125,7 +1125,7 @@ class Package(Persistable):
             return _(u"?????")
 
 
-    def save(self, filename=None, tempFile=False, isTemplate=False, configxml=None):
+    def save(self, filename=None, tempFile=False, isTemplate=False, configxml=None, preventUpdateRecent=False):
         """
         Save package to disk
         pass an optional filename
@@ -1171,7 +1171,7 @@ class Package(Persistable):
             filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'), configxml)
             self.isChanged = False
 
-            if isTemplate == False:
+            if not isTemplate and not preventUpdateRecent:
                 self.updateRecentDocuments(filename)
                 self.filename = filename
 
@@ -1280,7 +1280,7 @@ class Package(Persistable):
         return newPackage
 
     @staticmethod
-    def load(filename, newLoad=True, destinationPackage=None, fromxml=None, isTemplate=False):
+    def load(filename, newLoad=True, destinationPackage=None, fromxml=None, isTemplate=False, preventUpdateRecent=False):
         """
         Load package from disk, returns a package.
         """
@@ -1535,7 +1535,7 @@ class Package(Persistable):
 
         if isTemplate:
             newPackage.set_templateFile(str(filename.basename().splitext()[0]))
-        else:
+        elif not preventUpdateRecent:
             newPackage.updateRecentDocuments(newPackage.filename)
 
         newPackage.set_isTemplate(isTemplate)

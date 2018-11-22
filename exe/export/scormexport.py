@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 # ===========================================================================
-# eXe 
+# eXe
 # Copyright 2004-2005, University of Auckland
 # Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
@@ -48,7 +48,7 @@ from helper                        import exportMinFileJS
 from helper                        import exportMinFileCSS
 from exe.webui.common              import getFilesCSSToMinify
 from exe.webui.common              import getFilesJSToMinify
-  
+
 log = logging.getLogger(__name__)
 
 
@@ -61,7 +61,7 @@ class Manifest(object):
         """
         Initialize
         'outputDir' is the directory that we read the html from and also output
-        the mainfest.xml 
+        the mainfest.xml
         """
         self.config       = config
         self.outputDir    = outputDir
@@ -75,10 +75,10 @@ class Manifest(object):
         self.dependencies = {}
 
     def _validateMetaData(self, metadata):
-    
+
         modifiedMetaData = False
         fieldsModified = []
-    
+
         if metadata.get_general().get_description():
             for description in metadata.get_general().get_description():
                 strings = description.get_string()
@@ -88,8 +88,8 @@ class Manifest(object):
                     if len(value) > 1000:
                         string.set_valueOf_(value[:1000])
                         modifiedMetaData = True
-                        fieldsModified.append(_('general description')) 
-                        
+                        fieldsModified.append(_('general description'))
+
         if metadata.get_educational():
             for educational in metadata.get_educational():
                 if educational.get_description():
@@ -102,7 +102,7 @@ class Manifest(object):
                                 string.set_valueOf_(value[:1000])
                                 modifiedMetaData = True
                                 fieldsModified.append(_('educational description'))
-        
+
         return {'modifiedMetaData': modifiedMetaData, 'fieldsModified': fieldsModified}
 
     def createMetaData(self, template):
@@ -113,10 +113,10 @@ class Manifest(object):
         if they did not supply a date, use today
         """
         xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
-        namespace = 'xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM lomCustom.xsd"'          
-        
+        namespace = 'xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM lomCustom.xsd"'
+
         modifiedMetaData = False
-        
+
         # depending on (user desired) the metadata type:
         if self.metadataType == 'LOMES':
             output = StringIO.StringIO()
@@ -155,10 +155,10 @@ class Manifest(object):
             if not title.get_string():
                 title.add_string(lomsubs.LangStringSub(self.package.lang.encode('utf-8'), self.package.name))
                 metadata.get_general().set_title(title)
-                
-            if self.scormType == "scorm1.2":  
+
+            if self.scormType == "scorm1.2":
                 modifiedMetaData = self._validateMetaData(metadata)
-                
+
             metadata.export(output, 0, namespacedef_=namespace, pretty_print=False)
             xml += output.getvalue()
         if self.metadataType == 'DC':
@@ -181,7 +181,7 @@ class Manifest(object):
                 if re.match('.*[:;]', lrm[f]) == None:
                     lrm[f] = u'FN:' + lrm[f]
             xml = template % lrm
-            
+
         return {'xml': xml, 'modifiedMetaData' : modifiedMetaData}
 
     def save(self, filename):
@@ -190,42 +190,42 @@ class Manifest(object):
         Two works: createXML and createMetaData
         """
         modifiedMetaData = False
-        
+
         out = open(self.outputDir/filename, "w")
         if filename == "imsmanifest.xml":
             out.write(self.createXML().encode('utf8'))
         out.close()
-        # now depending on metadataType, <metadata> content is diferent:     
+        # now depending on metadataType, <metadata> content is diferent:
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004":
             if self.metadataType == 'DC':
                 # if old template is desired, select imslrm.xml file:\r
-                # anything else, yoy should select:    
+                # anything else, yoy should select:
                 templateFilename = self.config.webDir/'templates'/'imslrm.xml'
-                template = open(templateFilename, 'rb').read()            
+                template = open(templateFilename, 'rb').read()
             elif self.metadataType == 'LOMES':
                 template = None
             elif self.metadataType == 'LOM':
                 template = None
-            # Now the file with metadatas. 
-            # Notice that its name is independent of metadataType:  
+            # Now the file with metadatas.
+            # Notice that its name is independent of metadataType:
             metaData = self.createMetaData(template)
             xml = metaData['xml']
             modifiedMetaData = metaData['modifiedMetaData']
             out = open(self.outputDir/'imslrm.xml', 'wb')
             out.write(xml.encode('utf8'))
             out.close()
-         
+
         return modifiedMetaData
-    
+
     def createXML(self):
         """
         returning XLM string for manifest file
         """
         manifestId = unicode(self.idGenerator.generate())
         orgId      = unicode(self.idGenerator.generate())
-       
-        # Add the namespaces 
-        
+
+        # Add the namespaces
+
         if self.scormType == "scorm1.2":
             xmlStr  = u'<?xml version="1.0" encoding="UTF-8"?>\n'
             xmlStr += u'<!-- Generated by eXe - http://exelearning.net -->\n'
@@ -235,7 +235,7 @@ class Manifest(object):
             xmlStr += u'xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" '
             xmlStr += u'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
             xmlStr += u"xsi:schemaLocation=\"http://www.imsproject.org/xsd/"
-            xmlStr += u"imscp_rootv1p1p2 imscp_rootv1p1p2.xsd "        
+            xmlStr += u"imscp_rootv1p1p2 imscp_rootv1p1p2.xsd "
             xmlStr += u"http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 "
             xmlStr += u"imsmd_rootv1p2p1.xsd "
             xmlStr += u"http://www.adlnet.org/xsd/adlcp_rootv1p2 "
@@ -259,8 +259,8 @@ class Manifest(object):
             xmlStr += u'xmlns:lom="http://ltsc.ieee.org/xsd/LOM" \n'
             xmlStr += u'xmlns:lomes="http://ltsc.ieee.org/xsd/LOM" \n'
             xmlStr += u'xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" \n'
-            xmlStr += u"xsi:schemaLocation=\"http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd " 
-            xmlStr += u"http://ltsc.ieee.org/xsd/LOM lomCustom.xsd " 
+            xmlStr += u"xsi:schemaLocation=\"http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd "
+            xmlStr += u"http://ltsc.ieee.org/xsd/LOM lomCustom.xsd "
             xmlStr += u"http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd  "
             xmlStr += u"http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd  "
             xmlStr += u"http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd "
@@ -283,7 +283,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             template = open(templateFilename, 'rb').read()
             metaData = self.createMetaData(template)
             xmlStr += metaData['xml']
-        
+
         # ORGANIZATION
 
         if self.scormType == "commoncartridge":
@@ -304,7 +304,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
         if self.scormType == "commoncartridge":
             # FIXME flatten hierarchy
             for page in self.pages:
-                self.genItemResStr(page)    
+                self.genItemResStr(page)
                 self.itemStr += " </item>\n"
             self.itemStr += "    </item>\n"
         else:
@@ -325,7 +325,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
                     self.itemStr += "    <title>"
                     self.itemStr += escape(page.node.titleShort)
                     self.itemStr += "</title>\n"
-                    
+
                     # Increase actual depth because fake node added. Next iteration closes the fake node
                     depth = page.depth + 1
                 else:
@@ -340,23 +340,23 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
   </imsss:sequencing>'''
                 depth -= 1
 
-        xmlStr += self.itemStr   
-        
+        xmlStr += self.itemStr
+
         if self.scormType == "scorm2004":
             xmlStr += '''  <imsss:sequencing>
     <imsss:controlMode choice="true" choiceExit="true" flow="true" forwardOnly="false"/>
   </imsss:sequencing>'''
         xmlStr += "  </organization>\n"
         xmlStr += "</organizations>\n"
- 
+
         # RESOURCES
- 
+
         xmlStr += "<resources>\n"
         xmlStr += self.resStr
 
-        
+
         # If NOT commoncartridge, finally, special resource with
-        # all the common files, as binded with de active style ones:    
+        # all the common files, as binded with de active style ones:
         if self.scormType != "commoncartridge":
             if self.scormType == "scorm1.2":
                 xmlStr += """  <resource identifier="COMMON_FILES" type="webcontent" adlcp:scormtype="asset">\n"""
@@ -365,26 +365,28 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             my_style = G.application.config.styleStore.getStyle(page.node.package.style)
             for x in my_style.get_style_dir().files('*.*'):
                 xmlStr += """    <file href="%s"/>\n""" % x.basename()
-            # we do want base.css and (for short time), popup_bg.gif, also:    
+            # we do want base.css and (for short time), popup_bg.gif, also:
             xmlStr += """    <file href="base.css"/>\n"""
             xmlStr += """    <file href="popup_bg.gif"/>\n"""
             # now the javascript files:
             xmlStr += """    <file href="SCORM_API_wrapper.js"/>\n"""
             xmlStr += """    <file href="SCOFunctions.js"/>\n"""
+            xmlStr += """    <file href="common.js"/>\n"""
+            xmlStr += """    <file href="common_i18n.js"/>\n"""
             if my_style.hasValidConfig:
                 if my_style.get_jquery() == True:
                     xmlStr += """    <file href="exe_jquery.js"/>\n"""
             else:
                 xmlStr += """    <file href="exe_jquery.js"/>\n"""
-                
+
             xmlStr += "  </resource>\n"
-       
+
         # no more resources:
         xmlStr += "</resources>\n"
         xmlStr += "</manifest>\n"
         return xmlStr
-        
-             
+
+
     def genItemResStr(self, page):
         """
         Returning xml string for items and resources
@@ -394,10 +396,10 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
         ext = 'html'
         if G.application.config.cutFileName == "1":
                 ext = 'htm'
-                
+
         filename = page.name + '.' + ext
-            
-        
+
+
         self.itemStr += '<item identifier="'+itemId+'" '
         if self.scormType != "commoncartridge":
             self.itemStr += 'isvisible="true" '
@@ -413,9 +415,9 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
         ## Added for FR [#2501] Add masteryscore to manifest in evaluable nodes
         if self.scormType == "scorm1.2" and common.hasQuizTest(page.node):
             self.itemStr += "    <adlcp:masteryscore>%s</adlcp:masteryscore>\n" % common.getQuizTestPassRate(page.node)
-        
+
         ## RESOURCES
-        
+
         self.resStr += "  <resource identifier=\""+resId+"\" "
         self.resStr += "type=\"webcontent\" "
 
@@ -430,12 +432,13 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
     <file href="content.css"/>
     <file href="popup_bg.gif"/>
     <file href="exe_jquery.js"/>
-    <file href="common.js"/>""" % (filename, filename)
+    <file href="common_i18n.js"/>
+    <file href="common.js"/>\n""" % (filename, filename)
             # CC export require content.* any place inside the manifest:
             if page.node.package.exportSource and page.depth == 1:
                 self.resStr += '    <file href="content.xsd"/>\n'
                 self.resStr += '    <file href="content.data"/>\n'
-                self.resStr += '    <file href="contentv3.xml"/>\n'       
+                self.resStr += '    <file href="contentv3.xml"/>\n'
             if page.node.package.backgroundImg:
                 self.resStr += '\n    <file href="%s"/>' % \
                         page.node.package.backgroundImg.basename()
@@ -449,8 +452,8 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
                 self.resStr += "    <file href=\""+filename+"\"/> \n"
                 fileStr = ""
             if self.scormType == "scorm1.2":
-                self.resStr += "adlcp:scormtype=\"sco\" "    
-                self.resStr += "href=\""+filename+"\"> \n"              
+                self.resStr += "adlcp:scormtype=\"sco\" "
+                self.resStr += "href=\""+filename+"\"> \n"
                 self.resStr += "    <file href=\""+filename+"\"/> \n"
                 fileStr = ""
 
@@ -459,44 +462,44 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             self.resStr += '    <file href="exe_html5.js"/>\n'
 
         resources = page.node.getResources()
-        
+
         if common.nodeHasMediaelement(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'mediaelement').files()]
             if dT != "HTML5":
                 self.scriptsDir = self.config.webDir/"scripts"
                 jsFile = (self.scriptsDir/'exe_html5.js')
                 jsFile.copyfile(self.outputDir/'exe_html5.js')
-                
+
         if common.nodeHasTooltips(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_tooltips').files()]
-        
+
         if common.hasGalleryIdevice(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_lightbox').files()]
-            
+
         if common.hasFX(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_effects').files()]
-            
+
         if common.hasSH(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_highlighter').files()]
-            
+
         if common.hasGames(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'exe_games').files()]
-            
+
         if common.hasABCMusic(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'tinymce_4'/'js'/'tinymce'/'plugins'/'abcmusic'/'export').files()]
 
-        for resource in resources:            
+        for resource in resources:
             fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
             self.dependencies[resource] = True
 
         self.resStr += fileStr
-        
+
         self.resStr += common.getJavascriptIdevicesResources(page, xmlOutput = True)
 
         # adding the dependency with the common files collected:
         if self.scormType != "commoncartridge":
             self.resStr += """    <dependency identifierref="COMMON_FILES"/>"""
-            
+
         # and no more:
         self.resStr += '\n'
         self.resStr += "  </resource>\n"
@@ -508,7 +511,7 @@ class ScormExport(object):
     Exports an eXe package as a SCORM package
     """
     def __init__(self, config, styleDir, filename, scormType):
-        """ 
+        """
         Initialize
         'styleDir' is the directory from which we will copy our style sheets
         (and some gifs)
@@ -528,7 +531,7 @@ class ScormExport(object):
 
 
     def export(self, package):
-        """ 
+        """
         Export SCORM package
         """
         # First do the export to a temporary directory
@@ -539,13 +542,13 @@ class ScormExport(object):
         # copy the package's resource files
         for resourceFile in package.resourceDir.walkfiles():
             file = package.resourceDir.relpathto(resourceFile)
-            
+
             if ("/" in file):
                 Dir = Path(outputDir/file[:file.rindex("/")])
 
                 if not Dir.exists():
                     Dir.makedirs()
-        
+
                 resourceFile.copy(outputDir/Dir)
             else:
                 resourceFile.copy(outputDir)
@@ -589,17 +592,17 @@ class ScormExport(object):
         # Create the manifest file
         manifest = Manifest(self.config, outputDir, package, self.pages, self.scormType, self.metadataType)
         modifiedMetaData = manifest.save("imsmanifest.xml")
-        
+
         # Create lang file
         langFile = open(outputDir + '/common_i18n.js', "w")
         langFile.write(common.getJavaScriptStrings(False))
         langFile.close()
-        
+
         if self.hasForum:
             manifest.save("discussionforum.xml")
-        
+
         # Copy the style files to the output dir
-        
+
         styleFiles = [self.styleDir/'..'/'popup_bg.gif']
         # And with all the files of the style we avoid problems:
         styleFiles += self.styleDir.files("*.*")
@@ -608,19 +611,19 @@ class ScormExport(object):
                 if sf.basename() not in manifest.dependencies:
                     styleFiles.remove(sf)
         self.styleDir.copylist(styleFiles, outputDir)
-        
+
         listCSSFiles=getFilesCSSToMinify('scorm', self.styleDir)
         exportMinFileCSS(listCSSFiles, outputDir)
-        
+
         # Copy the scripts
-        
+
         dT = common.getExportDocType()
         if dT == "HTML5":
             #listFiles+=[self.scriptsDir/'exe_html5.js']
             #listOutFiles+=[outputDir/'exe_html5.js']
             jsFile = (self.scriptsDir/'exe_html5.js')
             jsFile.copyfile(outputDir/'exe_html5.js')
-            
+
         # jQuery
         my_style = G.application.config.styleStore.getStyle(page.node.package.style)
         if my_style.hasValidConfig:
@@ -634,16 +637,16 @@ class ScormExport(object):
             #listOutFiles+=[outputDir/'exe_jquery.js']
             jsFile = (self.scriptsDir/'exe_jquery.js')
             jsFile.copyfile(outputDir/'exe_jquery.js')
-            
+
         if self.scormType == "commoncartridge" or self.scormType == "scorm2004" or self.scormType == "scorm1.2":
             listFiles=getFilesJSToMinify('scorm', self.scriptsDir)
 
-        exportMinFileJS(listFiles, outputDir)            
-        
+        exportMinFileJS(listFiles, outputDir)
+
         if self.scormType == "scorm2004" or self.scormType == "scorm1.2":
             self.scriptsDir.copylist(('SCORM_API_wrapper.js',
                                       'SCOFunctions.js'), outputDir)
-            
+
         # about SCHEMAS:
         schemasDir = ""
         if self.scormType == "scorm1.2":
@@ -658,8 +661,8 @@ class ScormExport(object):
             schemasDir = self.schemasDir/"scorm2004"
             schemasDir.copylist(('adlcp_v1p3.xsd',
                                 'adlnav_v1p3.xsd',
-                                'adlseq_v1p3.xsd', 
-                                'datatypes.dtd', 
+                                'adlseq_v1p3.xsd',
+                                'datatypes.dtd',
                                 'imscp_v1p1.xsd',
                                 'imsssp_v1p0.xsd',
                                 'imsss_v1p0.xsd',
@@ -689,7 +692,7 @@ class ScormExport(object):
                     shutil.copy(schemasDir, outputDir)
                 else: raise
 
-        # copy players for media idevices.                
+        # copy players for media idevices.
         hasFlowplayer     = False
         hasMagnifier      = False
         hasXspfplayer     = False
@@ -743,9 +746,9 @@ class ScormExport(object):
                     hasABCMusic = common.ideviceHasABCMusic(idevice)
                 if hasattr(idevice, "_iDeviceDir"):
                     listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
-                    
+
             common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir);
-        
+
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(outputDir/'flowPlayer.swf')
@@ -798,7 +801,7 @@ class ScormExport(object):
             if package.license == "license GFDL":
                 # include a copy of the GNU Free Documentation Licence
                 (self.templatesDir/'fdl' + ext).copyfile(outputDir/'fdl' + ext)
-        
+
         if hasattr(package, 'scowsinglepage') and package.scowsinglepage:
             page = SinglePage("singlepage_index", 1, package.root)
             page.save(outputDir/"singlepage_index" + ext)
@@ -827,8 +830,8 @@ class ScormExport(object):
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
         # Clean up the temporary dir
         outputDir.rmtree()
-        
-        
+
+
         return modifiedMetaData
 
     def doZip(self, fileObj, outputDir):
