@@ -372,7 +372,7 @@ var iAdmin = {
 	init : function(){
 		
 		// Missing type or URL
-		if (!top || !top.interactiveVideoEditor || !top.interactiveVideoEditor.videoType || !top.interactiveVideoEditor.videoURL) {
+		if (!top || !top.interactiveVideoEditor || !top.interactiveVideoEditor.videoType || !top.interactiveVideoEditor.videoURL || !top.interactiveVideoEditor.imageList) {
 			this.appError(_("Could not retrieve data (Core error)") + " - 002");
 			return;
 		}
@@ -664,21 +664,30 @@ var iAdmin = {
 		else if (type == "image") {
 			
 			// Check if it's a valid URL
-			var url = $("#image-page-url").val();
-			if (url == "") {
-				iAdmin.msg.txt("Escribe la dirección de la imagen en la Mediateca.");
-				return false;
-			} else if (url.indexOf("http://mediateca.educa.madrid.org/imagen/")!=0 && url.indexOf("http://mediateca.educa.madrid.org/imagen.php?id=")!=0) {
-				iAdmin.msg.txt("La dirección de la Mediateca no es correcta.");
+			var txt = tinyMCE.get('image-block-content').save();
+			if (txt == "") {
+				iAdmin.msg.txt("Debes añadir una imagen");
 				return false;
 			}
-			// Transform the URL (in case the wrong option's used)
-			if (url.indexOf("http://mediateca.educa.madrid.org/imagen.php?id=")==0) {
-				url = url.replace("http://mediateca.educa.madrid.org/imagen.php?id=","http://mediateca.educa.madrid.org/imagen/").split("&")[0];
+			
+			var tmp = $("<div></div>");
+			tmp.html(txt);
+			var imgs = $("img",tmp);
+			if (imgs.length == 0) {
+				iAdmin.msg.txt("Debes añadir una imagen");
+				return false;
+			}
+			imgs = imgs.eq(0);
+			var url = imgs.attr("src");
+			
+			if (url == "") {
+				iAdmin.msg.txt("Debes añadir una imagen");
+				return false;
 			}
 			
 			// Check the alt text
-			var alt = $("#image-alt").val();
+			// var alt = $("#image-alt").val();
+			var alt = imgs.attr("alt");
 			if (alt == "") {
 				iAdmin.msg.txt("Escribe un texto alternativo (describe la imagen).");
 				return false;
@@ -1117,10 +1126,35 @@ var iAdmin = {
 			
 			// Edit image
 			else if (type=="image") {
-				$("#image-page-url").val(slide.url);
-				iAdmin.imageList.previewImage(slide.url);
-				iAdmin.tabs.show(document.getElementById("image-first-tab"),"image",true);
-				$("#image-alt").val(slide.description);
+				var imgs = top.interactiveVideoEditor.imageList;
+				var src = "";
+				if (order==slide.url) {
+					var img = $("#exe-interactive-video-img-"+order);
+						if (img.length==1) {
+							src = img.attr("src");
+						}
+					for (var i=0;i<imgs.length;i++) {	
+						var img = $(imgs[i]);
+						if (img.attr("id")=="exe-interactive-video-img-"+order) {
+							src = img.attr("src");
+						}
+					}
+				}
+				if (src=="" && slide.url!="" && typeof(slide.url)=='string') {
+					var check = slide.url.split("/resources/");
+						if (check.length==2) {
+							// We're editing an image which is already part of the package
+							src = "resources/" + check[1];
+						} else if (slide.url.indexOf("/previews/")==0) {
+							// We're editing an image which has not been saved yet (the slide has been created, but the iDevice's not been saved)
+							src = slide.url;
+						}
+				}
+				if (src!="") {
+					// Add the base path if the image is already in "resources"
+					if (src.indexOf("/previews/")!=0) src = top.window.location.href + "/" + src;
+					tinyMCE.get('image-block-content').setContent('<p><img src="'+src+'" alt="'+slide.description+'" /></p>');
+				}
 			}
 			
 			// Edit single choice or multiple choice
@@ -1297,10 +1331,6 @@ var iAdmin = {
 			$("."+block+"-tab-content").hide();
 			var href = $(lnk).attr("href");
 			$(href).fadeIn();
-			// Show the user's images
-			if (href=="#image-b") {
-				iAdmin.imageList.init();
-			}
 		},
 		restart : function(block,showTheFirstTab){
 			// Show the first tab
@@ -1317,49 +1347,14 @@ var iAdmin = {
 			// Clear the forms
 			var f = $("#"+block+"-block");
 			$("input[type=text]",f).val("");
-			// Hide the preview (see #image-page-url)
-			iAdmin.imageList.previewImage("");
+			
+			if (block=="image") {
+				tinyMCE.get('image-block-content').setContent("");
+			}
+			
 			$("input[type=radio]",f).prop("checked",false);
 			$(".answers input[type=checkbox]",f).prop("checked",false);
 			if (document.getElementById(block+'-question')) tinyMCE.get(block+'-question').setContent("");
-		}
-	},
-	imageList : {
-		init : function(){
-			var userImages = $("#userImages");
-			if (userImages.html()=="") {
-				var imgsHTML = "<p>Aún <strong>no has subido ninguna imagen</strong> pública a la Mediateca.</p>";
-				imgsHTML += "<p>Puedes usar las imágenes de otros usuarios, pero si las borran desaparecerán de tu contenido.</p>";
-				var imgs = iAdmin.userImages;
-				var l = imgs.length;
-				var k;
-				if (l>0) {
-					imgsHTML = "<p>Pincha en la imagen para seleccionarla.</p>";
-					imgsHTML += "<ul>";
-					for (var i=0;i<l;i++) {
-						imgsHTML += "<li><a href='http://mediateca.educa.madrid.org/imagen/"+imgs[i][0]+"' title="+imgs[i][0]+" class='exe-tooltip' onclick='iAdmin.imageList.showImage(this);return false'><span><img src='http://mediateca.educa.madrid.org/imagen.php?m=1&amp;type=2&amp;id="+imgs[i][0]+"' width='80' height='80' alt='' /></span></a></li>";
-					}
-					imgsHTML += "</ul>";
-				}
-				userImages.html(imgsHTML);
-				iAdmin.tooltips.init("/scripts/exe_tooltips/");
-			}
-		},
-		previewImage : function(src){
-			var html = "";
-			// 2 different valid URLs
-			if (src.indexOf("http://mediateca.educa.madrid.org/imagen/")==0 || src.indexOf("http://mediateca.educa.madrid.org/imagen.php?id=")==0) {
-				src = src.replace("http://mediateca.educa.madrid.org/imagen/","http://mediateca.educa.madrid.org/imagen.php?m=1&type=2&id=");
-				// Just the thumbnail, not the big image
-				src = src.replace("m=550","m=1");
-				html = '<img src="'+src+'" alt="" width="80" height="80" />';
-			}
-			$("#selected-image").html(html);
-		},
-		showImage : function(e) {
-			$("#image-page-url").val(e.href);
-			iAdmin.tabs.show(document.getElementById("image-first-tab"),"image",true);
-			iAdmin.imageList.previewImage(e.href);
 		}
 	},
 	editors : {
@@ -1372,14 +1367,14 @@ var iAdmin = {
 			var strikethrough = "";
 			// Dropdown and cloze will have the strikethrough button
 			if (id=="dropdown-question" || id=="cloze-question") strikethrough = ' strikethrough';
-			var buttons = 'undo redo | bold italic'+strikethrough+' | alignleft aligncenter | bullist numlist | link | code';
+			var buttons = 'undo redo | bold italic'+strikethrough+' | alignleft aligncenter | bullist numlist | link | image | code';
 			tinymce.init({
 				selector: '#'+id,
 				height: 80,
 				language: "all",
 				width: 440,
 				plugins: [
-				'lists link code paste'
+				'lists link code paste image'
 				],
 				paste_as_text: true,
 				browser_spellcheck: true,
@@ -1387,6 +1382,11 @@ var iAdmin = {
 				toolbar: buttons,
 				menubar:false,
 				statusbar: false,
+				convert_urls: false,
+				file_browser_callback: function(field_name, url, type, win){
+					// Global (see ../../interactive-video.js)
+					top.interactiveVideoEditor.exe_tinymce.chooseImage(field_name, url, type, win);
+				},				
 				content_css: "http://gros.es/tests/mediateca/interaccion/gestion/css/tinymce.css"
 			});	
 		}		

@@ -663,11 +663,11 @@ var interaction = {
 			
 			// Image
 			} else if (e.type=="image") {
+				
 				var img = new Image() ;
-				if (e.url.indexOf('://mediateca.educa.madrid.org/imagen/')>-1) img.src = e.url.replace("http://mediateca.educa.madrid.org/imagen/","https://mediateca.educa.madrid.org/imagen.php?id=")+"&type=2&m=550";
-				else img.src = e.url;
+				img.src = $("#exe-interactive-video-img-"+e.url).attr("src");
 				img.onload = function() {
-					slide.html(interaction.getImage(e,img.width,img.height));
+					slide.html(interaction.getImage(e,img.width,img.height,img.src));
 					for (var i=0; i<InteractiveVideo.slides.length; i++) {
 						if (e==InteractiveVideo.slides[i]) {
 							interaction.updateResult(i,"Vista");
@@ -1495,7 +1495,7 @@ var interaction = {
 			}
 		}
 	},	
-	getImage : function(e,w,h){
+	getImage : function(e,w,h,src){
 		var maxW = 448;
 		var maxH = 356;
 		var newW = w;
@@ -1524,9 +1524,7 @@ var interaction = {
 			newW = Math.round(maxH*newW/newH);
 			newH = maxH;
 		}	
-		var url = e.url;
-		if (e.url.indexOf('://mediateca.educa.madrid.org/imagen/')>-1) url = e.url.replace("http://mediateca.educa.madrid.org/imagen/","https://mediateca.educa.madrid.org/imagen.php?id=")+"&type=2&m=550";		
-		return '<img src="'+url+'" alt="'+e.description+'" class="'+css+'" width="'+newW+'" height="'+newH+'" style="display:block;margin-top:'+((356-newH)/2)+'px" /><a href="'+e.url+'" target="_blank">Abrir en ventana nueva</a>';
+		return '<img src="'+src+'" alt="'+e.description+'" class="'+css+'" width="'+newW+'" height="'+newH+'" style="display:block;margin-top:'+((356-newH)/2)+'px" /><a href="'+src+'" target="_blank">Abrir en ventana nueva</a>';
 	}	
 }
 

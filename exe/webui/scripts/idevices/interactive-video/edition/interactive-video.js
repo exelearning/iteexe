@@ -27,6 +27,7 @@ var $exeDevice = {
 		} else {
 			top.interactiveVideoEditor.videoURL = url;
 			top.interactiveVideoEditor.videoType = type;
+			top.interactiveVideoEditor.imageList = [];
 		}
 
 	},
@@ -180,7 +181,8 @@ var $exeDevice = {
 			if (typeof(InteractiveVideo)=='object' && typeof(InteractiveVideo.slides)=='object') {
 				top.interactiveVideoEditor.activityToSave = InteractiveVideo;
 			}
-			// Remove the wrapper
+			// Save the list of images and remove the wrapper
+			top.interactiveVideoEditor.imageList = $(".exe-interactive-video-img img",wrapper);
 			$('#interactiveVideoTmpWrapper').remove();
 		}	
 		
@@ -249,6 +251,8 @@ var $exeDevice = {
 			});
 			// Save the window in the object that contains all data so you can close it, etc.
 			top.interactiveVideoEditor.win = win;
+			// Save the chooseImage function to use it in the editor
+			top.interactiveVideoEditor.exe_tinymce = exe_tinymce;
 			// Open the window
 			win.show();
 			
@@ -296,109 +300,45 @@ var $exeDevice = {
 			}
 			
 		}
-
-		/* Example activities
-		var contents = '\
-			{\
-				"slides":[\
-					{\
-						"startTime":2,\
-						"type":"text",\
-						"text":"<p>Texto del <strong>2</strong> al <strong>10</strong>.</p>",\
-						"endTime":10,\
-						"results":{\
-							"viewed":true\
-						},\
-						"current":false\
-					},\
-					{\
-						"type":"singleChoice",\
-						"question":"<p>¿De qué color era el caballo <strong>blanco</strong> de Santiago?</p>",\
-						"answers":[\
-							[ "Rojo con puntos verdes", 0],\
-							[ "Azul", 0 ],\
-							[ "Blanco", 1 ]\
-						],\
-						"startTime":15,\
-						"results":null,\
-						"current":false\
-					},\
-					{\
-						"type":"image",\
-						"url":"http://ipsumimage.appspot.com/800x600",\
-						"description":"Imagen en el 20",\
-						"startTime":20,\
-						"results":null,\
-						"current":false\
-					},\
-					{\
-						"type":"multipleChoice",\
-						"question":"<p>El <strong>5</strong> es...</p>",\
-						"answers":[\
-							[ "Un número", 1 ],\
-							[ "Un número par", 0 ],\
-							[ "Un número impar", 1 ],\
-							[ "Un número entero", 1 ]\
-						],\
-						"startTime":25,\
-						"results":null,\
-						"current":false\
-					},\
-					{\
-						"type":"dropdown",\
-						"text":"<p>En <span style=\\"text-decoration: line-through;\\">primavera</span> y <span style=\\"text-decoration: line-through;\\">verano</span>, en la mitad <span style=\\"text-decoration: line-through;\\">sur</span> de España, el petirrojo cría en bosques ribereños y montaña.</p><p>En la misma época, pero en la mitad <span style=\\"text-decoration: line-through;\\">norte</span>, se reproduce en cualquier tipo de bosque, campiña, huerto, parque, jardines, exceptuando los parajes <span style=\\"text-decoration: line-through;\\">bajos</span>, deforestados, secos, del valle del Ebro o de la depresión del Duero.</p>",\
-						"startTime":30,\
-						"additionalWords":[\
-							"cinco",\
-							"seis"\
-						],\
-						"results":null,\
-						"current":true\
-					},\
-					{\
-						"type":"cloze",\
-						"text":"<p>En un lugar de la <span style=\\"text-decoration: line-through;\\">Mancha</span>, de cuyo nombre no quiero acordarme, no ha mucho tiempo que <span style=\\"text-decoration: line-through;\\">vivía</span> un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y <span style=\\"text-decoration: line-through;\\">galgo</span> corredor.</p>",\
-						"startTime":40,\
-						"results":null,\
-						"current":false\
-					},\
-					{\
-						"type":"matchElements",\
-						"text":"<p>Relaciona <strong>nombres</strong> y <strong>apellidos</strong>.</p>",\
-						"startTime":45,\
-						"pairs":[\
-							[ "LMS", "Moodle" ],\
-							[ "Blog", "WordPress" ],\
-							[ "Framework PHP", "Symfony" ]\
-						],\
-						"results":null,\
-						"current":false\
-					},\
-					{\
-						"type":"sortableList",\
-						"text":"<p>Ordena la frase de <strong>El Quijote</strong>.</p>",\
-						"startTime":50,\
-						"items":[\
-							"En un lugar de la Mancha, ",\
-							"de cuyo nombre no quiero acordarme, ",\
-							"no ha mucho tiempo que vivía un hidalgo ",\
-							"de los de lanza en astillero, ",\
-							"adarga antigua, ",\
-							"rocín flaco y galgo corredor."\
-						],\
-						"results":null,\
-						"current":false\
-					}\
-				]\
-			};\
-			';
-		*/
-		
-		// {"title":"Mi ejemplo","description":"<p>Descripción del ejemplo.</p>","slides":[{"startTime":5,"type":"text","text":"<p>Texto del <strong>5</strong> al <strong>10</strong>.</p>","endTime":10},{"type":"singleChoice","question":"<p>¿De qué color era el caballo <strong>blanco</strong> de Santiago?</p>","answers":[["Rojo con puntos verdes",0],["Azul",0],["Blanco",1]],"startTime":15},{"type":"image","url":"http://mediateca.educa.madrid.org/imagen/ib1uala2wdd74nm3","description":"Imagen en el 20","startTime":20},{"type":"multipleChoice","question":"<p>El <strong>5</strong> es...</p>","answers":[["Un número",1],["Un número par",0],["Un número impar",1],["Un número entero",1]],"startTime":25},{"type":"dropdown","text":"<p>Uno, <span style=\"text-decoration: line-through;\">dos</span>, tres, <span style=\"text-decoration: line-through;\">cuatro</span>.</p>","startTime":30,"additionalWords":["cinco","seis"]},{"type":"cloze","text":"<p>En un lugar de la <span style=\"text-decoration: line-through;\">Mancha</span>, de cuyo nombre no quiero acordarme, no ha mucho tiempo que <span style=\"text-decoration: line-through;\">vivía</span> un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y <span style=\"text-decoration: line-through;\">galgo</span> corredor.</p>","startTime":40},{"type":"matchElements","text":"<p>Relaciona <strong>nombres</strong> y <strong>apellidos</strong>.</p>","startTime":45,"pairs":[["Cristina","García"],["Felipe","Retortillo"],["Ignacio","Gros"]]},{"type":"sortableList","text":"<p>Ordena la frase de <strong>El Quijote</strong>.</p>","startTime":50,"items":["En un lugar de la Mancha, ","de cuyo nombre no quiero acordarme, ","no ha mucho tiempo que vivía un hidalgo ","de los de lanza en astillero, ","adarga antigua, ","rocín flaco y galgo corredor."]}]}
 		
 		var contents = '{}';
 		if (typeof(top.interactiveVideoEditor)!='undefined') {		
+		
+			var imgsHTML = "";
+			// Check for images:
+			var slides = top.interactiveVideoEditor.activityToSave.slides;
+			if (slides) {
+				for (var i=0;i<slides.length;i++) {
+					var slide = slides[i];
+					if (slide.type=="image") {
+						if (typeof(slide.url)=="string") {
+							var check = slide.url.split("/resources/");
+							// Updated image: The URL is something like http://localhost:51235/videos-interactivos-001/resources/my_file.jpg
+							// So you have to remove anything before "resources/"
+							if (check.length==2) {
+								slide.url = "resources/"+check[1];
+							} else {
+								// To review
+							}
+						} else {
+							// It's a number, so the image must be in the original HTML code
+							// slide.url = imgs.eq(i).attr("src");
+							var imgs = top.interactiveVideoEditor.imageList;
+							for (var i=0;i<imgs.length;i++) {	
+								var img = $(imgs[i]);
+								if (img.attr("id")=="exe-interactive-video-img-"+i) {
+									slide.url = img.attr("src");
+								}
+							}
+						}
+						imgsHTML += '<p class="exe-interactive-video-img"><img src="'+slide.url+'" id="exe-interactive-video-img-'+i+'" alt="" /></p>';
+						slide.url = i;						
+					}
+				}
+			}	
+		
 			contents = JSON.stringify(top.interactiveVideoEditor.activityToSave);
+			
 		}
 		
 		var html = '\
@@ -413,10 +353,11 @@ var $exeDevice = {
 		
 		// Return the HTML to save
 		if (type=="local") {
-			html += '<div class="sr-av"><video width="320" height="240" controls="controls" class="mediaelement"><source src="'+myVideo+'" /></video></div>';
+			html += '<p class="sr-av"><video width="320" height="240" controls="controls" class="mediaelement"><source src="'+myVideo+'" /></video></p>';
 		}
 		
-		// To review alert("HTML to save:\n\n"+html);
+		// Add the images at the end of the code	
+		html += imgsHTML;
 		
 		return html;
 		

@@ -188,32 +188,15 @@ $(function(){
 								<h3>%Image%</h3>
 								<div id="image-block-msg" class="success-msg"></div>
 								<form id="image-block-form" class="block-form">
-									<div class="block-form-content">	
-										<ul class="tabs" id="image-tabs">
-											<li><a href="#image-a" class="first current" id="image-first-tab">%General%</a></li>
-											<li><a href="#image-b" class="last">%My_images%</a></li>
-										</ul>
-										<div id="image-a" class="image-tab-content tab-content">
-											<h4 class="sr-av">%General%</h4>
-											<span id="selected-image"></span>
-											<p class="text-field">
-												<label for="image-page-url">%Image% <span>(%required%)</span>: </label>
-												<input type="text" name="image-page-url" id="image-page-url" placeholder="Página de la Mediateca" onchange="iAdmin.imageList.previewImage(this.value)" />
-												<span class="instructions">%Example%: <a href="http://mediateca.educa.madrid.org/imagen/ib1uala2wdd74nm3" target="_blank">http://mediateca.educa.madrid.org/imagen/ib1uala2wdd74nm3</a></span>
-											</p>
-											<p class="text-field">
-												<label for="image-alt">%Alternative_Text% <span>(%required%)</span>: </label>
-												<input type="text" name="image-alt" id="image-alt" />
-											</p>										
-										</div>
-										<div id="image-b" class="image-tab-content tab-content" style="display:none">
-											<h4 class="sr-av">%Your_images%</h4>
-											<div id="userImages"></div>
-										</div>																			
+									<div class="block-form-content">
+										<p>
+											<label for="image-block-content" class="sr-av">%Text_to_show%: </label>
+											<textarea name="image-block-content" id="image-block-content" cols="32" rows="4"></textarea>
+										</p>
 										<p class="buttons">
 											<input type="button" name="image-block-submit" id="image-block-submit" class="block-submit" value="%Create_Frame_Submit%" />
 										</p>
-									</div>									
+									</div>
 								</form>
 							</div>
 							<div class="block-type" id="singleChoice-block" style="display:none">

@@ -85,6 +85,8 @@ tr.even td{background:#f7f7f7}
 .is-mobile #activity-cover{height:auto;min-height:316px}
 .is-mobile #slide{height:auto;min-height:316px}
 
+.exe-interactive-video-img img{width:100px;height:auto}
+
 @media screen and (max-width:900px) {
 	.full-version{display:none}
 	#all{width:100%}
