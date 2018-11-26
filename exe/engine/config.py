@@ -704,7 +704,7 @@ class Config(object):
                         shutil.rmtree(current_dest_idevice)
                     shutil.copytree(current_idevice, current_dest_idevice)
                 else:
-                    shutil.copy(current_template, current_dest_template)
+                    shutil.copy(current_idevice, current_dest_idevice)
 
     def loadLocales(self):
         """
