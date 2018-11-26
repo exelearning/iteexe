@@ -944,7 +944,59 @@ Ext.define('eXe.controller.Toolbar', {
 
     processExportEvent: function(menu, item, e, eOpts) {
         this.saveWorkInProgress();
-        nevow_clientToServerEvent('validatePackageProperties', this, '', e.exportType)
+
+        // Check if we need to show a warning if the package has metadata
+        nevow_clientToServerEvent('showMetadataWarning', this, '', e.exportType);
+    },
+
+    /**
+     * Shows a message warning the user that the current package has metadata
+     * information in it before exporting it.
+     *
+     * @param {string} exportType
+     *      The export type selected by the user.
+     *
+     * @returns {void}
+     */
+    showMetadataWarning: function(exportType) {
+        // Show the warning alerting the user of the package's metadata
+        Ext.Msg.show({
+            title: _('Warning'),
+            msg: _('This package has custom metadata established.')
+                + ' '
+                + _('If you are not the original author, this could mean that you are exporting incorrect information included by the original author.')
+                + '<br /><br />'
+                + _('Are your sure you want to export the package with the current metadata?')
+                + '<br /><br />'
+                + '<label for="metadata-warning-hide"><input type="checkbox" id="metadata-warning-hide" /> '
+                + _("Don't show this warning again")
+                + '</label>',
+            scope: this,
+            modal: true,
+            buttons: Ext.Msg.YESNO,
+            fn: function(button) {
+                // Only continue the export process if the user has clicked on Yes
+                if (button == 'yes') {
+                    this.processExportEventValidationStep(exportType);
+                }
+
+                // Either way, check if the user wants to hide the warning
+                if (Ext.query('#metadata-warning-hide')[0].checked) {
+                    this.hideMetadataWarningForever();
+                }
+            }
+        });
+    },
+
+    /**
+     * Hides the metadata warning on export for the user.
+     */
+    hideMetadataWarningForever: function() {
+        nevow_clientToServerEvent('hideMetadataWarningForever');
+    },
+
+    processExportEventValidationStep: function(exportType) {
+        nevow_clientToServerEvent('validatePackageProperties', this, '', exportType);
     },
 
     exportProcomun: function() {

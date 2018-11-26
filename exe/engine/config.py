@@ -87,7 +87,8 @@ class Config(object):
             'defaultLicense',
             'forceEditableExport',
             'cutFileName',
-            'autosaveTime'
+            'autosaveTime',
+            'metadataWarning'
         ),
     }
 
@@ -247,7 +248,9 @@ class Config(object):
         self.cutFileName = "0"
         
         self.autosaveTime = "10"
-        
+
+        self.metadataWarning = "1"
+
         # Try to make the defaults a little intelligent
         # Under devel trees, webui is the default webdir
         self.webDir = Path(self.webDir)
@@ -531,6 +534,8 @@ class Config(object):
                 self.cutFileName = self.configParser.user.cutFileName
             if self.configParser.user.has_option('autosaveTime'):
                 self.autosaveTime = self.configParser.user.autosaveTime
+            if self.configParser.user.has_option('metadataWarning'):
+                self.metadataWarning = self.configParser.user.metadataWarning
 
     def onWrite(self, configParser):
         """
