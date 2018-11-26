@@ -1373,10 +1373,22 @@ Ext.define('eXe.controller.Toolbar', {
         return "";
     },
 
-    executeFileSave: function(onProceed,export_type_name ) {
-	    if (!onProceed || (onProceed && typeof(onProceed) != "string"))
-	        var onProceed = '';
-	    nevow_clientToServerEvent('getPackageFileName', this, '', 'eXe.app.getController("Toolbar").fileSave2', onProceed,export_type_name );
+    executeFileSave: function (onProceed,export_type_name) {
+        if (!onProceed || (onProceed && typeof(onProceed) != "string")) {
+            var onProceed = '';
+        }
+
+        eXeSaveReminder.clearScheduledSaveWarning();
+        eXeSaveReminder.scheduleDirtyCheck();
+
+        nevow_clientToServerEvent(
+            'getPackageFileName',
+            this,
+            '',
+            'eXe.app.getController("Toolbar").fileSave2',
+            onProceed,
+            export_type_name
+        );
     },
 
 	fileSave: function(onProceed, export_type_name) {
