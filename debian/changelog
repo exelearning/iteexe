@@ -1,3 +1,29 @@
+intef-exe (3:2.3~beta1) lucid; urgency=medium
+
+  * Ignacio Gros
+    - TinyMCE:
+      - Fixed wrong text alignment in image caption (#363).
+    - Fix ABC Music Notation Plugin preview display (#364).
+
+  * SDWeb
+    - Fixed Beta2 exporting to "undefined" folder (#363).
+    - Can't save properties from validation dialog (#357).
+    - Make "Learning Resource Type" combos 100% dependent from each other (#361).
+    - Update package properties forms when changing properties in the validation dialog (#355).
+    - Fixed package insertion when the package has zombie nodes (#352).
+    - Prevent eXe from adding templates and temp folders to the recent files list.
+    - Fixed error that prevented an user from inserting a package inside one without changes.
+    - Added "common.js" and "common_i18n.js" to the SCORM manifest (#366).
+    - Correctly set license for newly created packages to prevent an error when exporting to Procomún.
+    - Show warning when trying to export a package with metadata.
+    - Fixed error when updating JS Idevices during eXe's update process.
+    - Restart save reminder timeout after manually saving a package.
+
+  * Juan Rafael Fernández
+    - Improve the Spanish translation.
+
+ -- eXeLearning <admin@exelearning.net>  Mon, 26 Nov 2018 16:11:54 +0200
+
 intef-exe (3:2.2.1~beta2) lucid; urgency=medium
 
   * Ignacio Gros
