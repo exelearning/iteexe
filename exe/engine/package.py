@@ -1416,9 +1416,6 @@ class Package(Persistable):
                     common.setExportDocType(newPackage.docType)
                 else:
                     newPackage.set_docType(toUnicode('XHTML'))
-
-                # Set license for package, lom and lomES
-                newPackage.set_license(newPackage.license)
             else:
                 # and when merging, automatically set package references to
                 # the destinationPackage, into which this is being merged:
@@ -1546,6 +1543,10 @@ class Package(Persistable):
         if not nstyle.isdir():
             newPackage.style=G.application.config.defaultStyle
         newPackage.lang = newPackage._lang
+
+        # Reset license to ensuer is set for the main package properties and for
+        # both Lom and LomES
+        newPackage.set_license(newPackage.license)
 
         newPackage.isLoading = False
 
