@@ -1544,7 +1544,7 @@ class Package(Persistable):
             newPackage.style=G.application.config.defaultStyle
         newPackage.lang = newPackage._lang
 
-        # Reset license to ensuer is set for the main package properties and for
+        # Reset license to ensure is set for the main package properties and for
         # both Lom and LomES
         newPackage.set_license(newPackage.license)
 
