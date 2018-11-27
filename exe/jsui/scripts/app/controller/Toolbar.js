@@ -967,7 +967,7 @@ Ext.define('eXe.controller.Toolbar', {
                 + _('Do you want to export the package with the current metadata?')
                 + '<br /><br />'
                 + '<label for="metadata-warning-hide"><input type="checkbox" id="metadata-warning-hide" /> '
-                + _("Hide until the application is closed")
+                + _("Don't show this warning again")
                 + '</label>',
             scope: this,
             modal: true,
