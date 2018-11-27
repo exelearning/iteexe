@@ -1,3 +1,11 @@
+intef-exe (3:2.3~beta2) lucid; urgency=medium
+
+  * Ignacio Gros
+    - Use TinyMCE's advlist plugin instead of exelist to prevent errors with nested lists.
+    - text improvements in the metadata export warning.
+
+ -- eXeLearning <admin@exelearning.net>  Tue, 27 Nov 2018 17:51:26 +0200
+
 intef-exe (3:2.3~beta1) lucid; urgency=medium
 
   * Ignacio Gros
