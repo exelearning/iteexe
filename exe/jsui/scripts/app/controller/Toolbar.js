@@ -962,14 +962,12 @@ Ext.define('eXe.controller.Toolbar', {
         // Show the warning alerting the user of the package's metadata
         Ext.Msg.show({
             title: _('Warning'),
-            msg: _('This package has custom metadata established.')
-                + ' '
-                + _('If you are not the original author, this could mean that you are exporting incorrect information included by the original author.')
+            msg: _('This package has metadata. You might be exporting incorrect information included by the original author. Go to Properties to edit it.')
                 + '<br /><br />'
-                + _('Are your sure you want to export the package with the current metadata?')
+                + _('Do you want to export the package with the current metadata?')
                 + '<br /><br />'
                 + '<label for="metadata-warning-hide"><input type="checkbox" id="metadata-warning-hide" /> '
-                + _("Don't show this warning again")
+                + _("Hide until the application is closed")
                 + '</label>',
             scope: this,
             modal: true,
