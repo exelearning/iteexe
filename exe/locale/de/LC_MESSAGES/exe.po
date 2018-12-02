@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-02 16:57+0100\n"
-"PO-Revision-Date: 2018-10-15 18:22+0200\n"
+"PO-Revision-Date: 2018-12-02 17:11+0100\n"
 "Last-Translator: Heike Koch <info@hei-ke-koch.de>\n"
 "Language: de\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft; Uwe "
@@ -9360,7 +9360,7 @@ msgstr "Antwort abgeben"
 #: exe/webui/quiztestblock.py:375
 #, fuzzy, python-format
 msgid "Your score is %d%%"
-msgstr "Ihr Punktzahl ist "
+msgstr "Ihr Punktzahl ist %d%%"
 
 #: exe/webui/recomendacionfpdblock.py:68
 msgid "A Piece of Advice"
@@ -15052,4 +15052,3 @@ msgstr ""
 "Die idevice/generic.data Datei oder das von Ihnen geladene Paket wurde "
 "mit einer aktuelleren Version von eXe erstellt. Bitte aktualisieren Sie "
 "Ihre eXe Version und versuchen Sie es dann noch einmal. "
-

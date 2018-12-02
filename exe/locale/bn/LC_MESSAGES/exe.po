@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: eXeLearning.net Translation Team "
 "<translations@exelearning.net>\n"
 "POT-Creation-Date: 2018-12-02 16:57+0100\n"
-"PO-Revision-Date: 2018-10-15 18:32+0200\n"
+"PO-Revision-Date: 2018-12-02 17:14+0100\n"
 "Last-Translator: eXeLearning.net Translation Team "
 "<translations@exelearning.net>\n"
 "Language: bn\n"
@@ -8710,7 +8710,7 @@ msgstr "উত্তর জমা দিন"
 #: exe/webui/quiztestblock.py:375
 #, fuzzy, python-format
 msgid "Your score is %d%%"
-msgstr "আপনার স্কোর হল "
+msgstr "আপনার স্কোর হল  %d%%"
 
 #: exe/webui/recomendacionfpdblock.py:68
 msgid "A Piece of Advice"
@@ -14327,4 +14327,3 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
-
