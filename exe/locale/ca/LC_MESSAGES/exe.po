@@ -10,15 +10,16 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.3\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2018-12-02 16:57+0100\n"
-"PO-Revision-Date: 2018-10-13 13:29+0100\n"
+"PO-Revision-Date: 2018-12-04 20:52+0100\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language: ca\n"
 "Language-Team: Catalan <info@softcatala.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
+"X-Generator: Lokalize 2.0\n"
 
 #: exe/application.py:206
 #, python-format
@@ -413,7 +414,8 @@ msgstr "FPD - Cita"
 msgid ""
 "Quotation is an iDevice that provides the students with quotations to "
 "reflect upon."
-msgstr "Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
+msgstr ""
+"Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
 
 #: exe/engine/citasparapensarfpdidevice.py:40
 #: exe/engine/citasparapensarfpdidevice.py:139
@@ -1739,7 +1741,8 @@ msgstr "Mike Dawson, Toughra Technologies FZ LLC"
 
 #: exe/engine/hangmanidevice.py:53
 msgid "Hangman style word game with customizable images."
-msgstr "Joc de paraules semblant al joc del penjat amb imatges personalitzables "
+msgstr ""
+"Joc de paraules semblant al joc del penjat amb imatges personalitzables "
 
 #: exe/engine/hangmanidevice.py:61
 msgid "Instructions for Game."
@@ -1844,7 +1847,8 @@ msgstr "Missatge de nivell superat"
 
 #: exe/engine/hangmanidevice.py:115 exe/engine/hangmanidevice.py:163
 msgid "Player will see this message when they guess the word correctly"
-msgstr "El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
+msgstr ""
+"El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
 
 #: exe/engine/hangmanidevice.py:117 exe/engine/hangmanidevice.py:166
 msgid "Game Won Message"
@@ -4075,7 +4079,8 @@ msgstr ""
 #: exe/jsui/mainpage.py:1611
 #, python-format
 msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
-msgstr "Els camps següents s'han tallat per complir amb l'estàndard SCORM 1.2: %s"
+msgstr ""
+"Els camps següents s'han tallat per complir amb l'estàndard SCORM 1.2: %s"
 
 #: exe/jsui/mainpage.py:1716 exe/webui/stylemanagerpage.py:243
 #, python-format
@@ -4548,14 +4553,17 @@ msgid ""
 "This package has metadata. You might be exporting incorrect information "
 "included by the original author. Go to Properties to edit it."
 msgstr ""
+"Aquest paquet té metadades. És possible que estigueu exportant informació"
+" incorrecta"
+"inclosa per l'autor original. Aneu a Propietats per editar-lo."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:967
 msgid "Do you want to export the package with the current metadata?"
-msgstr ""
+msgstr "Voleu exportar el paquet amb les metadades actuals?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:970
 msgid "Don't show this warning again"
-msgstr ""
+msgstr "No torneu a mostrar aquest avís"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1004
 msgid "Initializing Procomún export process..."
@@ -5691,7 +5699,8 @@ msgstr "Fons de la capçalera"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:493
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr "Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
+msgstr ""
+"Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:511
 msgid "Load Image"
@@ -5779,8 +5788,10 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:648
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
-msgid "Checking this option, the saved package may be opened with eXe >= 0.20.4"
-msgstr "Si marqueu aquesta opció el paquet desat es podrà obrir amb eXe >= 0.20.4"
+msgid ""
+"Checking this option, the saved package may be opened with eXe >= 0.20.4"
+msgstr ""
+"Si marqueu aquesta opció el paquet desat es podrà obrir amb eXe >= 0.20.4"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:657
 msgid "Custom HEAD"
@@ -5826,7 +5837,8 @@ msgstr "Format per defecte als documents nous"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:173
 msgid "The current document format can be modified in the Properties tab"
-msgstr "El format actual del document es pot modificar a la pestanya «Propietats»"
+msgstr ""
+"El format actual del document es pot modificar a la pestanya «Propietats»"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:183
 msgid "Editor mode"
@@ -7770,7 +7782,8 @@ msgid "process/procedure supporting service"
 msgstr "servei d'ajuda al procediment / procés "
 
 #: exe/jsui/scripts/lomvocab.js:826
-msgid "individual/cooperative/collaborative learning/working management service"
+msgid ""
+"individual/cooperative/collaborative learning/working management service"
 msgstr ""
 "serveis de gestió del treball / individual / cooperatiu / aprenentatge "
 "col·laboratiu "
@@ -8223,11 +8236,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 4.0"
 
 #: exe/webui/common.py:238
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
 
 #: exe/webui/common.py:244
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
 
 #: exe/webui/common.py:250
 msgid "GNU Free Documentation License"
@@ -8255,11 +8270,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 3.0"
 
 #: exe/webui/common.py:341
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
 
 #: exe/webui/common.py:347
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
 
 #: exe/webui/common.py:353
 msgid "Creative Commons Attribution License 2.5"
@@ -8279,11 +8296,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 2.5"
 
 #: exe/webui/common.py:377
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
 
 #: exe/webui/common.py:383
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
 
 #: exe/webui/common.py:415
 msgid "License:"
@@ -8500,7 +8519,8 @@ msgstr "Diari d'aprenentatge"
 
 #: exe/webui/content_template/strings.py:89
 msgid "First activity. Creation of the learning diary in the suggested format."
-msgstr "Primera activitat. Creació del diari d'aprenentatge en el format suggerit."
+msgstr ""
+"Primera activitat. Creació del diari d'aprenentatge en el format suggerit."
 
 #: exe/webui/content_template/strings.py:90
 msgid "Creation of the first post heading."
@@ -8605,7 +8625,8 @@ msgstr "Directrius per crear una entrada nova."
 
 #: exe/webui/content_template/strings.py:208
 msgid "Questions or guidelines for students to revise and reflect:"
-msgstr "Questions o directrius adreçades als estudiants per reflexionar i revisar:"
+msgstr ""
+"Questions o directrius adreçades als estudiants per reflexionar i revisar:"
 
 #: exe/webui/content_template/strings.py:209
 msgid "The task they have done"
@@ -8645,7 +8666,8 @@ msgstr "Introducció general"
 
 #: exe/webui/content_template/strings.py:238
 msgid "What the \"final mission\" will be and link to the assessment rubric."
-msgstr "El que serà la «missió final» i si es vincula a la rubrica d'avaluació."
+msgstr ""
+"El que serà la «missió final» i si es vincula a la rubrica d'avaluació."
 
 #: exe/webui/content_template/strings.py:239
 msgid "What learning objective this mission helps to achieve."
@@ -9324,7 +9346,8 @@ msgid "eXe problem"
 msgstr "problema d'eXe"
 
 #: exe/webui/iecmwarning.py:46
-msgid "The Compatibility View of your browser (Internet Explorer) is turned on."
+msgid ""
+"The Compatibility View of your browser (Internet Explorer) is turned on."
 msgstr ""
 "La visualització de compatibilitat del vostre navegador (Internet "
 "explorer) està habilitada."
@@ -10383,7 +10406,9 @@ msgstr "gen.,febr.,març,abr.,maig,juny,jul.,ag.,set.,oct.,nov.,des."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
-msgid "January,February,March,April,May,June,July,August,September,October,November,December"
+msgid ""
+"January,February,March,April,May,June,July,August,September,October,November,D"
+"ecember"
 msgstr ""
 "gener, febrer, març, abril, maig, juny, juliol, agost, setembre, octubre,"
 " novembre, desembre"
@@ -10451,7 +10476,8 @@ msgstr "Àrea de Text Enriquit"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:5
-msgid "Currently not supported by your browser, use keyboard shortcuts instead."
+msgid ""
+"Currently not supported by your browser, use keyboard shortcuts instead."
 msgstr ""
 "El vostre navegador actualment no ho admet, utilitzeu les dreceres de "
 "teclat."
@@ -10934,7 +10960,8 @@ msgstr "Tots els drets reservats"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:14
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:22
-msgid "You will not be able to edit the header or the caption from this dialog."
+msgid ""
+"You will not be able to edit the header or the caption from this dialog."
 msgstr "L'encapçalament i títol no seran editables des d'aquest diàleg."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
@@ -11486,7 +11513,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:10
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:108
 msgid "All blocks must start with a second level title (Heading 2)."
-msgstr "Tots els blocs han de començar amb títol de segon nivell (encapçalament 2)"
+msgstr ""
+"Tots els blocs han de començar amb títol de segon nivell (encapçalament 2)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:11
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:54
@@ -11530,7 +11558,8 @@ msgstr "Acordió"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:18
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:30
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:85
-msgid "Collapsible content panels for presenting information in a limited space."
+msgid ""
+"Collapsible content panels for presenting information in a limited space."
 msgstr ""
 "Panels de contingut col·lapsable per presentar informació en un espai "
 "limitat."
@@ -11624,7 +11653,8 @@ msgstr "Aquestos jocs requereixen javaScript."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:11
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:127
 msgid "This is the message that the users with no JavaScript will see:"
-msgstr "Aquest és el missatge que els usuaris que no tenen  JavaScript veuran: "
+msgstr ""
+"Aquest és el missatge que els usuaris que no tenen  JavaScript veuran: "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:12
 msgid "Message:"
@@ -11637,7 +11667,8 @@ msgstr "Podeu canviar-lo en qualsevol moment."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:14
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:261
-msgid "Provide a warning to users who have JavaScript disabled (Accessibility)."
+msgid ""
+"Provide a warning to users who have JavaScript disabled (Accessibility)."
 msgstr ""
 "Proporciona un avís als usuaris amb  JavaScript deshabilitat "
 "(accessibilitat)."
@@ -11700,7 +11731,8 @@ msgstr "Escriu la llista de lletres i/o números per triar."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:30
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:154
 msgid "You may include capital letters or they can be automatically included."
-msgstr "Podeu incloure majúscules o aquestes seran incloses de forma automàtica."
+msgstr ""
+"Podeu incloure majúscules o aquestes seran incloses de forma automàtica."
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:31
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:155
@@ -13094,7 +13126,8 @@ msgstr "Botó llista de definicions"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:39
 msgid "Use the \"Definition List\" button to add terms and definitions:"
-msgstr "Usa el botó  \"Llista de definicions\" per afegir termes i definicions:"
+msgstr ""
+"Usa el botó  \"Llista de definicions\" per afegir termes i definicions:"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:40
 msgid "Define the Link: Select the page where the definitions are."
@@ -13890,7 +13923,8 @@ msgstr "No es pot detectar de forma automàtica. Tria el tipus correcte."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:750
 msgid "Successfully updated, but please convert the video to another format:"
-msgstr "S'ha actualitzat amb èxit, però conconvertiu el vídeo a un altre format:"
+msgstr ""
+"S'ha actualitzat amb èxit, però conconvertiu el vídeo a un altre format:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:757
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:768
@@ -13916,7 +13950,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1124
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1191
 msgid "You are using and old code. Update it (required to edit)?"
-msgstr "Esteu utilitzant codi antic. Voleu actualitzar-lo (requerit per edició)?"
+msgstr ""
+"Esteu utilitzant codi antic. Voleu actualitzar-lo (requerit per edició)?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1179
 msgid ""
@@ -13978,7 +14013,8 @@ msgid "Error (missing function):"
 msgstr "Error (funció perduda):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:405
-msgid "The image could not be created. Insert the code without alternative image?"
+msgid ""
+"The image could not be created. Insert the code without alternative image?"
 msgstr ""
 "La imatge no s'ha pogut crear. Voleu inserir el codi sense una imatge "
 "alternativa?"
@@ -14058,7 +14094,8 @@ msgstr ""
 msgid ""
 "With no image and no MathJax some users might not be able to see the "
 "formula."
-msgstr "Sense imatge i sense MathJax alguns usuaris no podran veure la formula."
+msgstr ""
+"Sense imatge i sense MathJax alguns usuaris no podran veure la formula."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:643
 msgid ""
@@ -14078,7 +14115,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:645
 msgid "If JavaScript is disabled, both (code and image) will be visible."
-msgstr "Si JavaScript està deshabilitat, ambdós (codi i imatge) seran visibles."
+msgstr ""
+"Si JavaScript està deshabilitat, ambdós (codi i imatge) seran visibles."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:647
 msgid "Remember that..."
@@ -14354,7 +14392,8 @@ msgstr "Què és eXeLearning?"
 
 #: exe/webui/tools/assistant/langs/all.js:14
 msgid "eXeLearning Is an open source program to create educational contents."
-msgstr "eXeLearning és un programa de codi obert per a crear continguts educatius."
+msgstr ""
+"eXeLearning és un programa de codi obert per a crear continguts educatius."
 
 #: exe/webui/tools/assistant/langs/all.js:15
 msgid "With eXeLearning you can:"
@@ -14968,7 +15007,8 @@ msgstr "Aquest codi es mostrarà al final de content.css"
 
 #: exe/webui/tools/style-designer/langs/all.js:104
 msgid "content.css is included any time you export, and always after base.css."
-msgstr "content.css està inclòs sempre que exporteu, i sempre després de base.css"
+msgstr ""
+"content.css està inclòs sempre que exporteu, i sempre després de base.css"
 
 #: exe/webui/tools/style-designer/langs/all.js:105
 msgid "This code will be included at the end of nav.css"
@@ -14992,7 +15032,8 @@ msgstr "Contingut de nav.css"
 
 #: exe/webui/tools/style-designer/langs/all.js:109
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
-msgstr "Les ombres no funcionaran en navegadors sense suport CSS3  (IE6, IE7...)."
+msgstr ""
+"Les ombres no funcionaran en navegadors sense suport CSS3  (IE6, IE7...)."
 
 #: exe/webui/tools/style-designer/langs/all.js:114
 msgid "Save as"
@@ -15016,7 +15057,8 @@ msgstr "El vostre navegador no és compatible amb aquesta eina."
 
 #: exe/webui/tools/style-designer/langs/all.js:120
 msgid "The Hide/Show menu option is disabled in the Style Designer"
-msgstr "L'opció del menú Mostra/Amaga està deshabilitada al dissenyador d'estils."
+msgstr ""
+"L'opció del menú Mostra/Amaga està deshabilitada al dissenyador d'estils."
 
 #: exe/webui/tools/style-designer/langs/all.js:121
 msgid ""
@@ -15185,4 +15227,3 @@ msgstr ""
 "Els  idevices del vostre fitxer generic.data o paquet que esteu carregant"
 " han estat creats amb un versió més nova de eXe. Si-us-plau actualitzeu "
 "eXe i torneu-ho a provar."
-
