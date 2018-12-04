@@ -62,6 +62,7 @@ $exe.tooltips = {
 			content: {
 				title : $exe.tooltips.getTooltipTitle(a.title),
 				text: function(event, api) {
+					if (typeof(exe_editor_mode)!='undefined') return _("Go to Tools - Preview to see the tooltip content");
 					var ref = api.elements.target.attr('href');
 					$.ajax({
 						url: ref
@@ -76,7 +77,6 @@ $exe.tooltips = {
 							api.set('content.text', cont);
 						}
 					);
-					if (typeof(exe_editor_mode)!='undefined') return _("Go to Tools - Preview to see the tooltip content");
 					return '&hellip;';
 				},
 				button : c.indexOf("with-button")==-1 ? false : true
