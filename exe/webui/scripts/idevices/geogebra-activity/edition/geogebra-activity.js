@@ -224,6 +224,7 @@ var $exeDevice = {
         
         // URL
         var url = $("#geogebraActivityURL").val();
+            url = url.replace("https://ggbm.at/",urlBase);
         if (url=="") {
             eXe.app.alert(_("Required") + ": " +_("URL"));
             return false;
