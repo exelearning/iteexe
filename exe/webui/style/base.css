@@ -44,7 +44,7 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .iDevice_header.iDevice_header_noIcon{background-image:none;padding:5px 0}
 
 /* iDevices */
-.TrueFalseIdevice label{white-space:nowrap;margin-right:1em}
+.TrueFalseIdevice label{white-space:nowrap;margin-right:1em;line-height:1.7em}
 
 .exe-dl{margin-bottom:2em;margin-left:1.5em}
 .exe-dl dt{font-weight:bold}
