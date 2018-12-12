@@ -1151,7 +1151,7 @@ class MainPage(RenderableLivePage):
                 # If there is an exception, log it and show a generic error message to the user
                 log.error('An error has ocurred while trying to publish a package to Procomún. The error message is: %s', str(e))
                 client.call('Ext.MessageBox.hide')
-                client.alert(_(u'Unknown error when trying to upload package to Procomún.'), title=_('Publishing document to Procomún'))
+                client.alert(_(u'Unknown error when trying to upload package to Procomún.'), title=_(u'Publishing document to Procomún'))
                 return
 
             # Parse the result received from Procomún
@@ -1176,7 +1176,7 @@ class MainPage(RenderableLivePage):
                         + _(u'<small>You can view and manage the uploaded package using <a href="%s" target="_blank" title="Procomún Home">Procomún</a>\\\'s web page.</small>').replace('>',' style="font-size:1em">') % ProcomunOauth.BASE_URL
                         + '\''
                     ),
-                    title=_('Publishing document to Procomún')
+                    title=_(u'Publishing document to Procomún')
                 )
             else:
                 client.alert(
@@ -1195,7 +1195,7 @@ class MainPage(RenderableLivePage):
                         + _(u'The reported error we got from Procomún was: <pre>%s</pre>') % parsedResult['message']
                         + '\''
                     ),
-                    title=_('Publishing document to Procomún')
+                    title=_(u'Publishing document to Procomún')
                 )
 
         d = threads.deferToThread(exportScorm)
