@@ -1,7 +1,7 @@
 Source: intef-exe
 Section: education
 Priority: optional
-Maintainer: eXeLearning <info@exelearning.net>
+Maintainer: eXeLearning <admin@exelearning.net>
 Homepage: http://exelearning.net/
 Vcs-Browser: https://github.com/exelearning/iteexe
 Standards-Version: 3.9.6
