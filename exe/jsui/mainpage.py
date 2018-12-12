@@ -1172,7 +1172,8 @@ class MainPage(RenderableLivePage):
                         '\''
                         + _(u'Package exported to <a href="%s" target="_blank" title="Click to view the exported package">%s</a>.') % (link_url, self.package.title)
                         + u'<br />'
-                        + _(u'<small>You can view and manage the uploaded package using <a href="%s" target="_blank" title="Procomún Home">Procomún</a>\\\'s web page.</small>') % ProcomunOauth.BASE_URL
+                        + u'<br />'
+                        + _(u'<small>You can view and manage the uploaded package using <a href="%s" target="_blank" title="Procomún Home">Procomún</a>\\\'s web page.</small>').replace('>',' style="font-size:1em">') % ProcomunOauth.BASE_URL
                         + '\''
                     ),
                     title=_('Publishing document to Procomún')
