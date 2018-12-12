@@ -944,6 +944,12 @@ Ext.define('eXe.controller.Toolbar', {
 
     processExportEvent: function(menu, item, e, eOpts) {
         this.saveWorkInProgress();
+        
+        // Tools - Resources Report should have no validation
+        if (e.exportType=="csvReport") {
+            this.exportPackage(e.exportType, "");
+            return;
+        }        
 
         // Check if we need to show a warning if the package has metadata
         nevow_clientToServerEvent('showMetadataWarning', this, '', e.exportType);
