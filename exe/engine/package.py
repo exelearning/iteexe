@@ -1665,6 +1665,12 @@ class Package(Persistable):
         Checks if a package has custom metadata (non-default one).
         """
         # Check package fields in case any of them has any data
+
+        levelNamesTranslated = []
+
+        for value in self.defaultLevelNames:
+            levelNamesTranslated.append(_(value))
+
         _metadata_fields_package = {
             'title': '',
             'author': '',
@@ -1685,7 +1691,7 @@ class Package(Persistable):
             'scowsinglepage': False,
             'scowwebsite': False,
             'license': G.application.config.defaultLicense,
-            '_levelNames': self.defaultLevelNames,
+            '_levelNames': levelNamesTranslated,
             'lang': G.application.config.locale.split('_')[0] if G.application.config.locale.split('_')[0] != 'zh' else G.application.config.locale,
             'exportSource': True,
             'exportMetadataType': 'LOMES',
