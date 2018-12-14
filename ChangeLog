@@ -1,3 +1,30 @@
+intef-exe (3:2.3) lucid; urgency=medium
+
+  * Ignacio Gros
+    - GeoGebra iDevice: Allow GeoGebra's short URLs (ggbm.at/...).
+    - Ajax tooltips in eXe where not displaying the "Go to Preview" message (#375).
+    - True-False iDevice: Input and label in different line (#376).
+    - Resources Report doesn't show metadata warning message (#374).
+    - Update the Debian/Control information (#378).
+    - Use correct git repository URL and the same email everywhere (#378).
+  * Juan Rafael Fernández
+    - Got rid of some errors in the compilation of PO files.
+    - New full Spanish translation.
+    - New full Basque translation, by Joxemi Andonegi.
+    - New full Italian translation, by Andrea Primiani.
+    - New full French translation, by Jesús Miguel Domínguez.
+    - New full Valencian translation, by Pilar Embid Giner.
+    - New full Catalan translation, by Carles Ferrando García.
+    - New full Russian translation, by Alexey Loginov.
+    - New Polish translation, by Waldemar Stoczkowski (with the help of Andrey Loginov).
+    - New full Portuguese translation, by Dionisio Martínez Soler.
+  * SDWeb
+    - Remove <small> tag from Procomún's publish success message (#372).
+    - Untranslated string: Publishing document to Procomún (#371).
+    - Clean packages no longer show metadata warning (#377).
+
+ -- eXeLearning <admin@exelearning.net>  Fri, 14 Nov 2018 09:26:18 +0200
+
 intef-exe (3:2.3~beta2) lucid; urgency=medium
 
   * Ignacio Gros
