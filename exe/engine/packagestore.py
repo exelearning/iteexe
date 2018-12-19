@@ -104,7 +104,11 @@ class PackageStore:
         
         package.name = name
         package.filename = ""
-        
+
+        # We have to make sure the DocType of the package is the one selected
+        # in preferences and not the one used to save de template
+        package.docType = G.application.config.docType
+
         if G.application.config.locale.split('_')[0] != 'zh':
             package.lang = G.application.config.locale.split('_')[0]
         else:
