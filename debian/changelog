@@ -18,12 +18,16 @@ intef-exe (3:2.3) lucid; urgency=medium
     - New full Russian translation, by Alexey Loginov.
     - New Polish translation, by Waldemar Stoczkowski (with the help of Andrey Loginov).
     - New full Portuguese translation, by Dionisio Martínez Soler.
+    - New full Galician translation, by Pablo Nimo.
+    - New partial Simplified Chinese translation.
   * SDWeb
     - Remove <small> tag from Procomún's publish success message (#372).
     - Untranslated string: Publishing document to Procomún (#371).
     - Clean packages no longer show metadata warning (#377).
+    - Ensure we use the correct DocType when generating a package from a template.
+    - Close OAuth window when the user presses cancel (#365).
 
- -- eXeLearning <admin@exelearning.net>  Fri, 14 Nov 2018 09:26:18 +0200
+ -- eXeLearning <admin@exelearning.net>  Wed, 19 Dec 2018 12:42:23 +0200
 
 intef-exe (3:2.3~beta2) lucid; urgency=medium
 
