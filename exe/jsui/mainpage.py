@@ -274,6 +274,8 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleSaveTemplate, 'saveTemplate')
         setUpHandler(self.handleLoadTemplate, 'loadTemplate')
 
+        setUpHandler(self.handleMetadataWarning, 'showMetadataWarning')
+        setUpHandler(self.hideMetadataWarningForever, 'hideMetadataWarningForever')
         setUpHandler(self.handlePackagePropertiesValidation, 'validatePackageProperties')
 
         self.idevicePane.client = client
@@ -501,6 +503,23 @@ class MainPage(RenderableLivePage):
         template = self._loadPackage(client, Path(filename), newLoad=True, isTemplate=True)
         self.webServer.root.bindNewPackage(template, self.session)
         client.sendScript((u'eXe.app.gotoUrl("/%s")' % template.name).encode('utf8'), filter_func=allSessionPackageClients)
+
+    def handleMetadataWarning(self, client, export_type):
+        """
+        Checks if the package metadata has been changed and shows
+        a warning to the user.
+        """
+        if self.config.metadataWarning == "1" and self.package.has_custom_metadata():
+            client.call(u'eXe.app.getController("Toolbar").showMetadataWarning', export_type, '')
+        else:
+            client.call(u'eXe.app.getController("Toolbar").processExportEventValidationStep', export_type, '')
+
+    def hideMetadataWarningForever(self, client):
+        """
+        Updates the user configuration to hide the metadata warning when exporting
+        for the current user.
+        """
+        self.config.metadataWarning = "0"
 
     def handlePackagePropertiesValidation(self, client, export_type):
         invalid_properties = self.package.valid_properties(export_type)
@@ -1132,7 +1151,7 @@ class MainPage(RenderableLivePage):
                 # If there is an exception, log it and show a generic error message to the user
                 log.error('An error has ocurred while trying to publish a package to Procomún. The error message is: %s', str(e))
                 client.call('Ext.MessageBox.hide')
-                client.alert(_(u'Unknown error when trying to upload package to Procomún.'), title=_('Publishing document to Procomún'))
+                client.alert(_(u'Unknown error when trying to upload package to Procomún.'), title=_(u'Publishing document to Procomún'))
                 return
 
             # Parse the result received from Procomún
@@ -1153,10 +1172,11 @@ class MainPage(RenderableLivePage):
                         '\''
                         + _(u'Package exported to <a href="%s" target="_blank" title="Click to view the exported package">%s</a>.') % (link_url, self.package.title)
                         + u'<br />'
-                        + _(u'<small>You can view and manage the uploaded package using <a href="%s" target="_blank" title="Procomún Home">Procomún</a>\\\'s web page.</small>') % ProcomunOauth.BASE_URL
+                        + u'<br />'
+                        + _(u'<small>You can view and manage the uploaded package using <a href="%s" target="_blank" title="Procomún Home">Procomún</a>\\\'s web page.</small>').replace('>',' style="font-size:1em">') % ProcomunOauth.BASE_URL
                         + '\''
                     ),
-                    title=_('Publishing document to Procomún')
+                    title=_(u'Publishing document to Procomún')
                 )
             else:
                 client.alert(
@@ -1175,7 +1195,7 @@ class MainPage(RenderableLivePage):
                         + _(u'The reported error we got from Procomún was: <pre>%s</pre>') % parsedResult['message']
                         + '\''
                     ),
-                    title=_('Publishing document to Procomún')
+                    title=_(u'Publishing document to Procomún')
                 )
 
         d = threads.deferToThread(exportScorm)

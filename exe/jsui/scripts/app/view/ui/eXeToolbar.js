@@ -707,72 +707,129 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 // Save reminder (#287)
 Ext.define('eXeSaveReminder', {
     singleton: true,
-	delay: eXe.app.config.autosaveTime, // Minutes
-    isOpen: false,    
-	init: function() {
-        Ext.util.Cookies.clear('eXeSaveReminderPreference');
-        if (eXeSaveReminder.delay == 0) {
-            Ext.util.Cookies.set('eXeSaveReminderPreference', 'doNotWarn');
+    // Time between messages (in messages)
+    delay: eXe.app.config.autosaveTime,
+    // Timeout ID to the following warning
+    currentTimeout: null,
+    // Flag to control wheter the message should be shown or not
+    active: true,
+    // Flag to control wheter the dialog is already open or not
+    isOpen: false,
+    /**
+     * Initialization function.
+     *
+     * @returns {void}
+     */
+    init: function() {
+        // If the delay is 0, don't do anything at all
+        if (this.delay == 0) {
+            this.active = false;
+        // If it is any other thing, start the checks
+        } else {
+            this.active = true;
+            this.scheduleDirtyCheck();
         }
-        var eXeSaveReminderCookie = Ext.util.Cookies.get('eXeSaveReminderPreference');
-		if (eXeSaveReminderCookie && eXeSaveReminderCookie=='doNotWarn') return;
-
-		if (!eXeSaveReminderCookie) Ext.util.Cookies.set('eXeSaveReminderPreference', 'warn');
-        eXeSaveReminder.checkDirty();
     },
-    checkDirty: function (dirty){
-        setTimeout(function(){
-            eXe.app.getController('Toolbar').checkDirty('eXeSaveReminder.checkDirty()', 'eXeSaveReminder.showWarnWindow()');
-        }, 5000);
-
+    /**
+     * Schedules the next check to see if the package
+     * has been changed.
+     *
+     * @returns {void}
+     */
+    scheduleDirtyCheck: function () {
+        // Check only if there isn't a warning already scheduled
+        if (this.currentTimeout === null) {
+            setTimeout(function() {
+                eXe.app.getController('Toolbar').checkDirty(
+                    'eXeSaveReminder.scheduleDirtyCheck()',
+                    'eXeSaveReminder.scheduleSaveWarning()'
+                );
+            }, 5000);
+        }
     },
-    showWarnWindow: function () {
-        setTimeout(function() {eXeSaveReminder.warn()}, (eXeSaveReminder.delay * 60 * 1000));
+    /**
+     * Clear scheduled warning if there is one.
+     *
+     * @returns {void}
+     */
+    clearScheduledSaveWarning: function () {
+        if (this.currentTimeout !== null) {
+            clearTimeout(this.currentTimeout);
+            this.currentTimeout = null;
+        }
     },
-	warn: function() {     
-		
-		if (eXeSaveReminder.isOpen == true) return;
-		
-		var hasWindow = false;
-		var allWindows = Ext.ComponentQuery.query('window');	    	
+    /**
+     * Schedule a new save warning (for the delay configured in the class).
+     *
+     * @returns {void}
+     */
+    scheduleSaveWarning: function () {
+        // First of all, clear the previous one
+        this.clearScheduledSaveWarning();
+        // And schedule a new one
+        this.currentTimeout = setTimeout(this.showSaveWarning.bind(this), (this.delay * 60 * 1000));
+    },
+    /**
+     * Show a save reminder to allow the user to save its work.
+     *
+     * @returns {void}
+     */
+    showSaveWarning: function() {
+        // If the reminder isn't active or there is one already open,
+        // don't do anything at all (in the case there is already one open
+        // the next one will be scheduled after this is closed)
+        if (!this.active || this.isOpen) {
+            return;
+        }
 
-	    Ext.each(allWindows, function(win) {
-	    	if (win.isVisible() && !win.collapsed) {
-	    		hasWindow = true;
-	    		return false;
-	    	}
-	    });
-	    
-	    if(!hasWindow){			
-                
-	    	var eXeSaveReminderCookie = Ext.util.Cookies.get('eXeSaveReminderPreference');
-	    	if (eXeSaveReminderCookie && eXeSaveReminderCookie=='doNotWarn') return;
+        // Check to see if there is any window currently open
+        var hasWindow = false;
+        Ext.each(Ext.ComponentQuery.query('window'), function(win) {
+            if (win.isVisible() && !win.collapsed) {
+                hasWindow = true;
 
-	    	eXeSaveReminder.isOpen = true;
+                // Returning false cause the foreach loop to stop
+                return false;
+            }
+        });
 
-	    	Ext.MessageBox.show({
-	    		title: _("Warning!"),
-	    		msg: _("You've been working for a long time without saving.") + '<br /><br />' + _("Do you want to save now?") + '<br /><br /><label for="hide_eXeSaveReminder"><input type="checkbox" id="hide_eXeSaveReminder" /> '+_("Hide until the application is closed")+'</label>',
-	    		buttons: Ext.MessageBox.OKCANCEL,
-	    		fn: function(btn) {
-	    			if( btn == 'ok') {
-	    				if (document.getElementById("hide_eXeSaveReminder").checked){
-	    					Ext.util.Cookies.set('eXeSaveReminderPreference', 'doNotWarn');
-	    				}
-	    				// Save
-	    				eXe.app.getController('Toolbar').fileSave();
-	    			}
-	    			eXeSaveReminder.isOpen = false;
-	    			eXeSaveReminder.checkDirty();
-	    		}
-	    	});
-	    }
-	    else{
-	    	
-	    	eXeSaveReminder.isOpen = false;
-			eXeSaveReminder.checkDirty();	    
-	    }
-	    	
-	}
+        // If there is no window open
+        if (!hasWindow) {
+            this.isOpen = true;
+
+            Ext.MessageBox.show({
+                title: _("Warning!"),
+                msg: _("You've been working for a long time without saving.")
+                    + '<br /><br />'
+                    + _("Do you want to save now?")
+                    + '<br /><br /><label for="hide_eXeSaveReminder"><input type="checkbox" id="hide_eXeSaveReminder" /> '
+                    + _("Hide until the application is closed")
+                    + '</label>',
+                buttons: Ext.MessageBox.OKCANCEL,
+                scope: this,
+                fn: function(btn) {
+                    this.isOpen = false;
+
+                    if(btn == 'ok') {
+                        if (Ext.query("#hide_eXeSaveReminder")[0].checked) {
+                            this.active = false;
+                        }
+
+                        // Save
+                        eXe.app.getController('Toolbar').fileSave();
+                    }
+
+                    this.clearScheduledSaveWarning();
+                    if (this.active) {
+                        this.scheduleDirtyCheck();
+                    }
+                }
+            });
+        } else {
+            this.clearScheduledSaveWarning();
+            this.scheduleDirtyCheck();
+        }
+    }
 });
+// When ready, initialize the save reminder
 Ext.onReady(eXeSaveReminder.init, eXeSaveReminder);

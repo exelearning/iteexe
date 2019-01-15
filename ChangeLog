@@ -1,3 +1,68 @@
+intef-exe (3:2.3) lucid; urgency=medium
+
+  * Ignacio Gros
+    - GeoGebra iDevice: Allow GeoGebra's short URLs (ggbm.at/...).
+    - Ajax tooltips in eXe where not displaying the "Go to Preview" message (#375).
+    - True-False iDevice: Input and label in different line (#376).
+    - Resources Report doesn't show metadata warning message (#374).
+    - Update the Debian/Control information (#378).
+    - Use correct git repository URL and the same email everywhere (#378).
+  * Juan Rafael Fernández
+    - Got rid of some errors in the compilation of PO files.
+    - New full Spanish translation.
+    - New full Basque translation, by Joxemi Andonegi.
+    - New full Italian translation, by Andrea Primiani.
+    - New full French translation, by Jesús Miguel Domínguez.
+    - New full Valencian translation, by Pilar Embid Giner.
+    - New full Catalan translation, by Carles Ferrando García.
+    - New full Russian translation, by Alexey Loginov.
+    - New Polish translation, by Waldemar Stoczkowski (with the help of Andrey Loginov).
+    - New full Portuguese translation, by Dionisio Martínez Soler.
+    - New full Galician translation, by Pablo Nimo.
+    - New partial Simplified Chinese translation.
+  * SDWeb
+    - Remove <small> tag from Procomún's publish success message (#372).
+    - Untranslated string: Publishing document to Procomún (#371).
+    - Clean packages no longer show metadata warning (#377).
+    - Ensure we use the correct DocType when generating a package from a template.
+    - Close OAuth window when the user presses cancel (#365).
+
+ -- eXeLearning <admin@exelearning.net>  Wed, 19 Dec 2018 12:42:23 +0200
+
+intef-exe (3:2.3~beta2) lucid; urgency=medium
+
+  * Ignacio Gros
+    - Use TinyMCE's advlist plugin instead of exelist to prevent errors with nested lists.
+    - text improvements in the metadata export warning.
+
+ -- eXeLearning <admin@exelearning.net>  Tue, 27 Nov 2018 17:51:26 +0200
+
+intef-exe (3:2.3~beta1) lucid; urgency=medium
+
+  * Ignacio Gros
+    - TinyMCE:
+      - Fixed wrong text alignment in image caption (#363).
+    - Fix ABC Music Notation Plugin preview display (#364).
+
+  * SDWeb
+    - Fixed Beta2 exporting to "undefined" folder (#363).
+    - Can't save properties from validation dialog (#357).
+    - Make "Learning Resource Type" combos 100% dependent from each other (#361).
+    - Update package properties forms when changing properties in the validation dialog (#355).
+    - Fixed package insertion when the package has zombie nodes (#352).
+    - Prevent eXe from adding templates and temp folders to the recent files list.
+    - Fixed error that prevented an user from inserting a package inside one without changes.
+    - Added "common.js" and "common_i18n.js" to the SCORM manifest (#366).
+    - Correctly set license for newly created packages to prevent an error when exporting to Procomún.
+    - Show warning when trying to export a package with metadata.
+    - Fixed error when updating JS Idevices during eXe's update process.
+    - Restart save reminder timeout after manually saving a package.
+
+  * Juan Rafael Fernández
+    - Improve the Spanish translation.
+
+ -- eXeLearning <admin@exelearning.net>  Mon, 26 Nov 2018 16:11:54 +0200
+
 intef-exe (3:2.2.1~beta2) lucid; urgency=medium
 
   * Ignacio Gros

@@ -66,6 +66,11 @@ class ProcomunOauth(Renderable, rend.Page):
                     top.eXe.app.getController("Toolbar").showOAuthError("%s");
                     top.Ext.getCmp('oauthprocomun').close();
                 ''' % client.packageName
+            # This exception is raised when the user clicks the Cancel button
+            except ValueError:
+                script = '''
+                    top.Ext.getCmp('oauthprocomun').close();
+                '''
 
         return ctx.tag()[script]
 

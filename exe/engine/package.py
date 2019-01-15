@@ -1416,7 +1416,6 @@ class Package(Persistable):
                     common.setExportDocType(newPackage.docType)
                 else:
                     newPackage.set_docType(toUnicode('XHTML'))
-
             else:
                 # and when merging, automatically set package references to
                 # the destinationPackage, into which this is being merged:
@@ -1545,6 +1544,10 @@ class Package(Persistable):
             newPackage.style=G.application.config.defaultStyle
         newPackage.lang = newPackage._lang
 
+        # Reset license to ensure is set for the main package properties and for
+        # both Lom and LomES
+        newPackage.set_license(newPackage.license)
+
         newPackage.isLoading = False
 
         return newPackage
@@ -1657,6 +1660,77 @@ class Package(Persistable):
         self._nextIdeviceId += 1
         return id_
 
+    def has_custom_metadata(self):
+        """
+        Checks if a package has custom metadata (non-default one).
+        """
+        # Check package fields in case any of them has any data
+
+        levelNamesTranslated = []
+
+        for value in self.defaultLevelNames:
+            levelNamesTranslated.append(_(value))
+
+        _metadata_fields_package = {
+            'title': '',
+            'author': '',
+            'description': '',
+            'backgroundImg': '',
+            'footer': '',
+            'objectives': '',
+            'preknowledge': '',
+            'learningResourceType': '',
+            'intendedEndUserRoleType': '',
+            'contextPlace': '',
+            'contextMode': '',
+            'extraHeadContent': '',
+            'backgroundImgTile': False,
+            'intendedEndUserRoleGroup': False,
+            'intendedEndUserRoleTutor': False,
+            'scolinks': False,
+            'scowsinglepage': False,
+            'scowwebsite': False,
+            'license': G.application.config.defaultLicense,
+            '_levelNames': levelNamesTranslated,
+            'lang': G.application.config.locale.split('_')[0] if G.application.config.locale.split('_')[0] != 'zh' else G.application.config.locale,
+            'exportSource': True,
+            'exportMetadataType': 'LOMES',
+            'compatibleWithVersion9': False,
+            'addPagination': False,
+            'docType': G.application.config.docType
+        }
+        for field, value in _metadata_fields_package.iteritems():
+            if getattr(self, field) != value:
+                return True
+
+        _metadata_field_dublin = {
+            'title': '',
+            'creator': '',
+            'subject': '',
+            'description': '',
+            'publisher': '',
+            'contributors': '',
+            'date': '',
+            'type': '',
+            'format': '',
+            'source': '',
+            'language': G.application.config.locale.split('_')[0] if G.application.config.locale.split('_')[0] != 'zh' else G.application.config.locale,
+            'relation': '',
+            'coverage': '',
+            'rights': ''
+        }
+        for field, value in _metadata_field_dublin.iteritems():
+            if getattr(self.dublinCore, field) != value:
+                return True
+
+        # Note: We can't really check Lom and LomES metadata due to the way
+        # they are stored
+        # It should be fine, as everything is synchronized between every type of
+        # metadata
+        # If someday we also check Lom and LomEs, we should be carefull as to not
+        # hurt the application's performance during that check
+
+        return False
 
     def upgradeToVersion2(self):
         """

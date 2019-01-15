@@ -77,12 +77,15 @@
 # 2018-10-05
 #    * Preparing version 2.2.1 (JRF)
 #
+# 2018-12-02
+#    * There never was a 2.2.1 version - preparing 2.3 (JRF)
+#
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.2.1"
+version="2.3"
 
 # 1.- eXe - Extract content templates' files to a .py dummy file
 echo -e " *** Extracting messages from content templates ***\n"

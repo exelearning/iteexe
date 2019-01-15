@@ -46,7 +46,7 @@ https://www.dropbox.com/sh/e14myu6uauy4cre/reQJsHBmOD
 15. Make a directory for the git checkout and do git checkout (using git bash)
 
  $ mkdir somedir
- $ git clone https://forja.cenatic.es/anonscm/git/iteexe/iteexe.git
+ $ git clone https://github.com/exelearning/iteexe.git
 
 16. Use python easy_install to install gitpython (in Python2.7/Scripts)
  $ easy_install gitpython
