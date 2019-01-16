@@ -8,8 +8,8 @@
  *
  * Loading icon generated with http://www.ajaxload.info/
  */
- 
-// To do: Warning: Better with mp4, etc. (no clickable results with flv)
+var mejsFullScreen; 
+
 var interaction = {
 	debug : true,
 	encrypt : false,
@@ -28,10 +28,30 @@ var interaction = {
 		matchElements : "Emparejado",
 		sortableList : "Lista desordenada"
 	},
-	i18n : function(str) {
-		
-		return str;
-		
+	i18n : {
+		"start" : "Start",
+		"results" : "Results",
+		"slide" : "Slide",
+		"score" : "Score",
+		"seen" : "Seen",
+		"total" : "Total",
+		"seeAll" : "see all the slides and answer all the questions",
+		"noSlides" : "This video has no interactive slides.",
+		"goOn" : "Continue",
+		"error" : "Error",
+		"dataError" : "Incompatible code",
+		"onlyOne" : "Ony one interactive video per page.",
+		"cover" : "Cover",
+		"fsWarning" : "Exit the fullscreen mode (Esc) to see the current slide",
+		"right" : "Right!",
+		"wrong" : "Wrong",
+		"sortableListInstructions" : "Drag and drop or use the arrows.",
+		"up" : "Move up",
+		"down" : "Move down",
+		"rightAnswer" : "Right answer:",
+		"notAnswered" : "Please finish the activity",
+		"check" : "Check",
+		"newWindow" : "New window"
 	},	
 	inIframe : function() {
 		try {
@@ -46,12 +66,13 @@ var interaction = {
 			if (play) interaction.controls.play();
 		},
 		show : function(action){
+			var i18n = interaction.i18n;
 			interaction.controls.stop();
 			$("BODY").addClass("cover-on");
-			var txt = "Continuar";
+			var txt = i18n.goOn;
 			var play = false;
 			if (action=="restart") {
-				txt = "Empezar";
+				txt = i18n.start;
 				play = true;
 			}
 			$("#start-link").text(txt).click(function(){
@@ -98,20 +119,6 @@ var interaction = {
 			}
 		} while (l < e.length);
 		return n
-	},	
-	externalLinks : function(id){
-		$("#"+id+" A").each(function(){
-			if (this.target!="_blank") {
-				this.innerHTML += "<img src='http://mediateca.educa.madrid.org/images/icons/external_link.gif' width='13' height='10' alt='Ventana nueva' class='external-icon' />";
-				this.onclick = function(){
-					window.open(this.href);
-					return false;
-				}
-				if (this.title=="") this.title = "Ventana nueva";
-				else this.title += " (ventana nueva)";
-				$(this).addClass("external-link");
-			}
-		});
 	},
 	controls : {
 		play : function(){
@@ -125,27 +132,49 @@ var interaction = {
 			else if (interaction.type=="local") {
 				if (interaction.mediaElementReady==false) {
 					interaction.mediaElementVideo = $("#player video");
-					interaction.mediaElementVideo.mediaelementplayer();
+					interaction.mediaElementVideo.mediaelementplayer({
+						success: function(mediaElement, DOMElement, player) {
+							mejsFullScreen= mediaElement.isFullScreen;
+							setInterval(function() {
+								if (mediaElement.isFullScreen != mejsFullScreen) {
+									if (mediaElement.isFullScreen) {
+										mejsFullScreen = mediaElement.isFullScreen;
+									} else {
+										mejsFullScreen = mediaElement.isFullScreen;
+									}
+								}
+							}, 500);
+						}
+					});
 					interaction.mediaElementReady = true;
 					setTimeout(function(){
-						interaction.mediaElementVideo[0].play();
+						if (interaction.extension=='flv') $(".mejs-overlay-button").trigger("click");
+						else interaction.mediaElementVideo[0].play();
 						interaction.ready();
 						interaction.hasPlayed = true;
+						interaction.mejs = mejs;
 					},500);
 				} else {
-					interaction.mediaElementVideo[0].play();
+					if (interaction.extension=='flv') $(".mejs-overlay-button").trigger("click");
+					else interaction.mediaElementVideo[0].play();
 				}
 			}
 		},
 		stop : function(){
 			if (interaction.type=="mediateca") jwplayer().stop();
 			else if (interaction.type=="youtube") interaction.player.pauseVideo();
-			else if (interaction.type=="local") interaction.mediaElementVideo[0].pause();
+			else if (interaction.type=="local") {
+				if (interaction.extension=='flv') $(".mejs-pause button").trigger("click");
+				else interaction.mediaElementVideo[0].pause();
+			}
 		},
 		pause : function(){
 			if (interaction.type=="mediateca") jwplayer().pause(true);
 			else if (interaction.type=="youtube") interaction.player.pauseVideo();
-			else if (interaction.type=="local") interaction.mediaElementVideo[0].pause();
+			else if (interaction.type=="local") {
+				if (interaction.extension=='flv') $(".mejs-pause button").trigger("click");
+				else interaction.mediaElementVideo[0].pause();
+			}
 		},
 		seek : function(sec){
 			if (interaction.type=="mediateca") {
@@ -199,7 +228,7 @@ var interaction = {
 				}				
 				var id = youtube_parser(ref);
 				if (!id) {
-					alert("Error (no se pudo recuperar el ID del vídeo de Youtube)");
+					alert(interaction.i18n.error+" - Youtube (ID)");
 					return false;
 				}
 				this.id = id;
@@ -213,7 +242,7 @@ var interaction = {
 				this.extension = ref.split('.').pop().toLowerCase();
 				return;
 			}
-			alert("Error (código imcompatible con el proveedor)");
+			alert(interaction.i18n.error+" - "+interaction.i18n.dataError);
 		}
 		
 	},
@@ -223,14 +252,26 @@ var interaction = {
 		
 		var es = $(".exe-interactive-video");
 		
+		var hasResults = true;
+		if (es.hasClass("exe-interactive-video-no-results")) hasResults = false;
+		
 		if (es.length==0) return;
 		
 		if (es.length>1) {
-			alert("Error (sólo puede haber un vídeo interactivo por página)");
+			alert(interaction.i18n.error+" - "+interaction.i18n.onlyOne);
 			return false;
 		}
 		
 		es = es.eq(0);
+		
+		// Default strings
+		if (typeof(InteractiveVideo)!="undefined" && typeof(InteractiveVideo.i18n)!="undefined") {
+			for (var _i in InteractiveVideo.i18n) {
+				interaction.i18n[_i] = InteractiveVideo.i18n[_i];
+			};
+		}
+		var i18n = interaction.i18n;
+		
 		
 		var html = '\
 			<div id="activity-wrapper">\
@@ -238,11 +279,16 @@ var interaction = {
 				<div id="player" style="width:448px;height:356px"></div>\
 				<div id="slide"></div>\
 			</div>\
-			<div class="js-required">\
-				<h2 id="activity-results-toggler"><a href="#activity-results" onclick="interaction.resultsViewer.toggle(this);return false" class="show">Resultados</a></h2>\
-				<div id="activity-results" style="display:none"></div>\
-			</div>\
 		';
+		
+		if (hasResults) {
+			html += '\
+				<div class="js-required">\
+					<h2 id="activity-results-toggler"><a href="#activity-results" onclick="interaction.resultsViewer.toggle(this);return false" class="show">'+i18n.results+'</a></h2>\
+					<div id="activity-results" style="display:none"></div>\
+				</div>\
+			';
+		}
 		
 		if (typeof($exeAuthoring)!='undefined') this.isInExe = true;
 		
@@ -252,7 +298,7 @@ var interaction = {
 		if (this.encrypt && !this.isPreview) eval(interaction.decode64(InteractiveVideo));
 		
 		if (typeof(InteractiveVideo)=="undefined" || typeof(InteractiveVideo.slides)=="undefined" || InteractiveVideo.slides.length==0) {
-			$("#player").html("<p style='text-align:center;margin:0;line-height:356px'>La actividad no tiene fotogramas.</p>");
+			$("#player").html("<p style='text-align:center;margin:0;line-height:356px'>"+i18n.noSlides+"</p>");
 			$("#activity-results-toggler").hide();
 			return false;
 		}
@@ -272,6 +318,7 @@ var interaction = {
 		
 		this.hasResults = false;
 
+		// To review
 		if (window.location.href.indexOf("?results=0")==-1 && !this.isPreview) {
 			
 			// In this case the results are not part of the activity
@@ -297,9 +344,11 @@ var interaction = {
 		
 		$("BODY").addClass("cover-on");
 		var play = '<p id="start-activity">';
-		var playContent = '<a href="#" onclick="interaction.cover.hide(true);return false" id="start-link">Empezar</a>';
-		var resetContent = '<a href="#" onclick="interaction.cover.hide(true);return false" id="reset-link" style="display:none">Empezar de nuevo</a>'
+		var playContent = '<a href="#" onclick="interaction.cover.hide(true);return false" id="start-link">'+i18n.start+'</a>';
+
+		// To review
 		if (this.hasResults && !this.isPreview) playContent = '<a href="#" onclick="interaction.cover.hide(true);return false" id="start-link">Ver con mis resultados</a>';
+
 		play = play+playContent+"</p>";
 		// var cover = "<h2>"+$("#activity-title").html()+"</h2>";
 		var cover = "";
@@ -317,7 +366,6 @@ var interaction = {
 		if (!(InteractiveVideo.description && videoTitle=="...")) cover = "<h2>"+videoTitle+"</h2>";
 		if (InteractiveVideo.description) cover += InteractiveVideo.description;
 		$("#activity").prepend('<div id="activity-cover"><div id="activity-cover-logo"></div><div id="activity-cover-content">'+cover+'</div>'+play+'</div>');
-		interaction.externalLinks("activity-cover-content");
 		
 		if (this.type=='mediateca') {
 			
@@ -370,6 +418,7 @@ var interaction = {
 			// controls: false,
 			height: h,
 			width: w,
+			// To review
 			sharing: {
 				heading: "Comparte este v\u00EDdeo",
 				code: encodeURI('<iframe src="http://mediateca.educa.madrid.org/video/'+id+'/fs" width="420" height="315" frameborder="0" scrolling="no" allowfullscreen></iframe>'),
@@ -513,13 +562,13 @@ var interaction = {
 	resultsViewer : {
 		create : function(){
 			var html = "";
+			var i18n = interaction.i18n;
 			// var cover = "";
 			// if (InteractiveVideo.cover) {
 			var cover = '\
 					<tr class="odd">\
 						<td>&nbsp;</td>\
-						<td><a href="#" onclick="interaction.cover.show();return false">Portada</a> </td>\
-						<td>&nbsp;</td>\
+						<td><a href="#" onclick="interaction.cover.show();return false">'+i18n.cover+'</a> </td>\
 						<td>&nbsp;</td>\
 					</tr>';
 			// }
@@ -531,7 +580,7 @@ var interaction = {
 				var result = "-";
 				if (!interaction.isPreview && interaction.hasResults && e.results) {
 					if (e.type=="singleChoice" || e.type=="multipleChoice" || e.type=="dropdown" || e.type=="cloze" || e.type=="matchElements" || e.type=="sortableList") result = interaction.formatResult(e.results.score)+"%";
-					else if (e.results.viewed==1) result = "Vista";
+					else if (e.results.viewed==1) result = i18n.seen;
 				}
 				var k = "odd";
 				if (i%2==0) k = "even";				
@@ -539,15 +588,13 @@ var interaction = {
 					html += '\
 						<tr class="'+k+'">\
 							<td class="order"><span>'+(i+1)+'</span> </td>\
-							<td class="question">'+title+' </td>\
-							<td>'+interaction.secondsToHour(e.startTime)+' </td>\
+							<td><span>'+interaction.secondsToHour(e.startTime)+'</span> </td>\
 							<td class="result"><span>'+result+'</span> </td>\
 						</tr>';
 				} else {
 					html += '\
 						<tr class="'+k+'">\
 							<td class="order"><span>'+(i+1)+'</span> </td>\
-							<td class="question"><a href="#" onclick="interaction.seek('+i+');return false">'+title+'</a> </td>\
 							<td><a href="#" onclick="interaction.seek('+i+');return false">'+interaction.secondsToHour(e.startTime)+'</a> </td>\
 							<td class="result"><span>'+result+'</span> </td>\
 						</tr>';					
@@ -556,22 +603,20 @@ var interaction = {
 			if (html!="") {
 				html += '\
 				<tr>\
-					<th colspan="3" id="resultsSummaryTH"><span class="title">Total <em>(debes ver <span class="full-version">todas </span>las diapositivas y contestar <span class="full-version">todas </span>las preguntas)</em></span> </th>\
+					<th colspan="2" id="resultsSummaryTH"><span class="title">'+i18n.total+' <em>('+i18n.seeAll+')</em></span> </th>\
 					<td id="resultsSummary"><span>-</span> </td>\
 				</tr>';
 				html = '\
 				<table>\
 				<colgroup>\
-					<col width="5%">\
+					<col width="10%">\
 					<col width="60%">\
-					<col width="20%">\
-					<col width="15%">\
+					<col width="30%">\
 				</colgroup>\
 				<tr>\
 					<th><span class="title">&nbsp;</span></th>\
-					<th><span class="title">Diapositiva</span> </th>\
-					<th><span class="title">Minuto</span> </th>\
-					<th><span class="title">Puntuación</span> </th>\
+					<th><span class="title">'+i18n.slide+'</span> </th>\
+					<th><span class="title">'+i18n.score+'</span> </th>\
 				</tr>'+cover+html+'</table>';
 				$("#activity-results").html(html);
 				interaction.table = $("#activity-results");
@@ -639,6 +684,7 @@ var interaction = {
 	isFullScreen : function(){
 		if (this.type=='mediateca' && jwplayer().getFullscreen()) return true;
 		else if (this.type=='youtube' && $("iframe").width()==$(window).width()) return true;
+		else if (this.type=='local' && (typeof(mejsFullScreen)!='undefined' && mejsFullScreen==true)) return true;
 		return false;
 	},	
 	slide : {
@@ -651,7 +697,6 @@ var interaction = {
 			// Text
 			if (e.type=="text") {
 				slide.html(e.text);
-				interaction.externalLinks("slide");
 				for (var i=0; i<InteractiveVideo.slides.length; i++) {
 					if (e==InteractiveVideo.slides[i]) {
 						interaction.updateResult(i,"Vista");
@@ -704,7 +749,7 @@ var interaction = {
 			}				
 			
 			$("BODY").addClass("active");
-			$("#slide").before('<a href="#slide" id="slide-link" class="sr-av">Inicio de la diapositiva</a>');
+			$("#slide").before('<a href="#slide" id="slide-link" class="sr-av">'+interaction.i18n.slide+'</a>');
 			$("#slide-link").focus();			
 		},
 		show : function(e,order) { // e = the object
@@ -712,7 +757,8 @@ var interaction = {
 			interaction.visibleSlide = order;
 			if (interaction.isFullScreen()) {
 				interaction.controls.pause();
-				alert("Hay información adicional. Cierra la pantalla completa para verla (tecla Esc).");
+				// Not displayed with MediaElement
+				if (interaction.type!="local") alert(interaction.i18n.fsWarning);
 			}
 			if (!e.endTime) interaction.controls.pause();
 
@@ -796,13 +842,15 @@ var interaction = {
 			activityForm.show();
 			
 			//Show the previous results
+			// To review
 			var currentQuestion = InteractiveVideo.slides[order];
 			if (currentQuestion.results) {
+				var i18n = interaction.i18n;
 				activityForm.addClass("disabled");
 				if (currentQuestion.results.score==100) {
-					interaction.msg("success","¡Correcto!",id+"dropdownActivityForm");
+					interaction.msg("success",i18n.right,id+"dropdownActivityForm");
 				} else {
-					interaction.msg("error","No es correcto",id+"dropdownActivityForm",interaction.dropdownActivity.getRightAnswer(rightAnswers));
+					interaction.msg("error",i18n.wrong,id+"dropdownActivityForm",interaction.dropdownActivity.getRightAnswer(rightAnswers));
 				}
 				var selectedValues = currentQuestion.results.selectedValues;
 				var selectFields = $("SELECT",activityForm);
@@ -876,14 +924,17 @@ var interaction = {
 			slide.addClass("disabled");
 			$("SELECT",slide).each(function(){
 				selectedValues.push(this.value);
-			}).attr("disabled","disabled");			
+			}).attr("disabled","disabled");	
+			
+			var i18n = interaction.i18n;
+			
 			if (errors) {
 				var result = (rightAnswered*100/rightAnswers.length).toFixed(2);
 				var extra = interaction.dropdownActivity.getRightAnswer(rightAnswers);
-				interaction.msg("error","No es correcto",id,extra);
+				interaction.msg("error",i18n.wrong,id,extra);
 				interaction.dropdownActivity.saveResults(question,result,slide,selectedValues);
 			} else {
-				interaction.msg("success","¡Correcto!",id);
+				interaction.msg("success",i18n.right,id);
 				interaction.dropdownActivity.saveResults(question,100,slide,selectedValues);
 			}
 			
@@ -891,11 +942,10 @@ var interaction = {
 	},
 	sortableList : {
 		create : function(slide,id,order,e) {
+			var i18n = interaction.i18n;
 			var currentQuestion = InteractiveVideo.slides[order];
 			var html = interaction.getForm.header(id,order,'sortableList');
-			var intro = "Ordena los elementos:";
-			if (e.text && e.text!="") intro = e.text;			
-			html += '<p class="question">'+intro+'</p>';
+			if (e.text && e.text!="") html += '<div>'+e.text+'</div>';
 			html += '<ul id="'+id+'sortableList" class="sortable">';
 				if (!currentQuestion.results) {
 					var toSort = [];
@@ -912,7 +962,7 @@ var interaction = {
 					}
 				}
 			html += '</ul>';
-			html += '<p class="instructions" id="'+id+'sortableListInstructions">Pincha y arrastra los elementos o usa las flechas.</p>';
+			html += '<p class="instructions" id="'+id+'sortableListInstructions">'+i18n.sortableListInstructions+'</p>';
 			html += '<p class="actions">';
 				html += interaction.getForm.sendButton(id,order,'sortableList');
 			html += '</p>';
@@ -926,9 +976,9 @@ var interaction = {
 			if (currentQuestion.results) {
 				$("#"+id+"sortableListForm").addClass("disabled");
 				if (currentQuestion.results.score==100) {
-					interaction.msg("success","¡Correcto!",id+"sortableListForm");
+					interaction.msg("success",i18n.right,id+"sortableListForm");
 				} else {
-					interaction.msg("error","No es correcto",id+"sortableListForm",interaction.sortableList.getRightAnswer(e.items));
+					interaction.msg("error",i18n.wrong,id+"sortableListForm",interaction.sortableList.getRightAnswer(e.items));
 				}
 			} else {
 				$("#"+id+"sortableList").sortable().bind('sortupdate', function(e, ui) {
@@ -941,7 +991,8 @@ var interaction = {
 			
 		},
 		getLinksHTML : function(i,id){
-			return '<span> <a href="#" class="up" onclick="interaction.sortableList.sortList(this,'+i+','+(i-1)+',\''+id+'\');return false" title="Subir a la posición '+i+'"><span class="sr-av">Subir</span></a> <a href="#" class="down" onclick="interaction.sortableList.sortList(this,'+i+','+(i+1)+',\''+id+'\');return false" title="Bajar a la posición '+(i+2)+'"><span class="sr-av">Bajar</span></a></span>';
+			var i18n = interaction.i18n;
+			return '<span> <a href="#" class="up" onclick="interaction.sortableList.sortList(this,'+i+','+(i-1)+',\''+id+'\');return false" title="'+i18n.up+': '+(i+1)+' → '+i+'"><span class="sr-av">'+i18n.up+'</span></a> <a href="#" class="down" onclick="interaction.sortableList.sortList(this,'+i+','+(i+1)+',\''+id+'\');return false" title="'+i18n.down+': '+(i+1)+' → '+(i+2)+'"><span class="sr-av">'+i18n.down+'</span></a></span>';
 		},
 		updateLinks : function(id) {
 			var ul = $("#"+id+"sortableList");
@@ -973,8 +1024,6 @@ var interaction = {
 			var newList = [];
 			var li, prev, current, next;
 			for (var i=0;i<lis.length;i++) {
-				// li = $(lis[i]).text().split("<span>")[0].split("<SPAN>")[0];
-				// alert(li)
 				li = lis[i].innerHTML.split("<span>")[0].split("<SPAN>")[0];
 				newList.push(li);
 				if (i==(a-1)) prev = li;
@@ -1006,9 +1055,10 @@ var interaction = {
 				rightAnswer += "<li>"+rightAnswers[i]+"</li>";
 			}
 			if (rightAnswer!="") rightAnswer = "<ul>"+rightAnswer+"</ul>";
-			return "<p><strong>Respuesta correcta: </strong>"+rightAnswer+"</p>";
+			return "<p><strong>"+interaction.i18n.rightAnswer+" </strong>"+rightAnswer+"</p>";
 		},
 		validate : function(question,id) {
+			var i18n = interaction.i18n;
 			var slide = $("#"+id);
 			var lis = InteractiveVideo.slides[question].items;	
 			var error = false;
@@ -1024,16 +1074,17 @@ var interaction = {
 			$("#"+id.replace("Form","")).sortable("destroy");
 			if (error) {
 				var extra = interaction.sortableList.getRightAnswer(lis);
-				interaction.msg("error","No es correcto",id,extra);
+				interaction.msg("error",i18n.wrong,id,extra);
 				interaction.sortableList.saveResults(question,0,slide,selectedValues);
 			} else {
-				interaction.msg("success","¡Correcto!",id);
+				interaction.msg("success",i18n.right,id);
 				interaction.sortableList.saveResults(question,100,slide,selectedValues);
 			}
 		}
 	},	
 	clozeActivity : {
 		create : function(slide,id,order,e) {
+			var i18n = interaction.i18n;
 			var html = interaction.getForm.header(id,order,'clozeActivity');
 			html += '<p class="question">'+e.text+'</p>';
 			html += '<p class="actions">';
@@ -1067,9 +1118,9 @@ var interaction = {
 				var myForm = $("#"+id+"clozeActivityForm");
 				myForm.addClass("disabled");
 				if (currentQuestion.results.score==100) {
-					interaction.msg("success","¡Correcto!",id+"clozeActivityForm");
+					interaction.msg("success",i18n.right,id+"clozeActivityForm");
 				} else {
-					interaction.msg("error","No es correcto",id+"clozeActivityForm",interaction.clozeActivity.getRightAnswer(rightAnswers));
+					interaction.msg("error",i18n.wrong,id+"clozeActivityForm",interaction.clozeActivity.getRightAnswer(rightAnswers));
 				}
 				var selectedValues = currentQuestion.results.selectedValues;
 				var selectFields = $("INPUT[type=text]",activityForm);
@@ -1097,10 +1148,11 @@ var interaction = {
 				rightAnswer += "<li>"+rightAnswers[i]+"</li>";
 			}
 			if (rightAnswer!="") rightAnswer = "<ul>"+rightAnswer+"</ul>";
-			return "<p><strong>Respuesta correcta: </strong>"+rightAnswer+"</p>";
+			return "<p><strong>"+interaction.i18n.rightAnswer+" </strong>"+rightAnswer+"</p>";
 		},
 		validate : function(question,id) {
 			
+			var i18n = interaction.i18n;
 			var e = document.getElementById(id);
 			var answers = e.getElementsByTagName("INPUT");
 			var answered = true;
@@ -1125,7 +1177,7 @@ var interaction = {
 			}
 			
 			if (!answered) {
-				interaction.msg("info","Aún no has completado la actividad",e.id);
+				interaction.msg("info",i18n.notAnswered,e.id);
 				return false;
 			}
 			
@@ -1138,10 +1190,10 @@ var interaction = {
 			if (errors) {
 				var result = (rightAnswered*100/rightAnswers.length).toFixed(2);
 				var extra = interaction.clozeActivity.getRightAnswer(rightAnswers);
-				interaction.msg("error","No es correcto",id,extra);
+				interaction.msg("error",i18n.wrong,id,extra);
 				interaction.clozeActivity.saveResults(question,result,slide,selectedValues);
 			} else {
-				interaction.msg("success","¡Correcto!",id);
+				interaction.msg("success",i18n.right,id);
 				interaction.clozeActivity.saveResults(question,100,slide,selectedValues);
 			}
 			
@@ -1149,13 +1201,11 @@ var interaction = {
 	},
 	matchElements : {
 		create : function(slide,id,order,e) {
+			var i18n = interaction.i18n;
 			var html = interaction.getForm.header(id,order,'matchElements');
-			var intro = "Empareja los elementos:";
-			if (e.text && e.text!="") intro = e.text;
-			html += '<p class="question">'+intro+'</p>';
+			if (e.text && e.text!="") html += '<div>'+e.text+'</div>';
 			html += '<div class="pairs">';
 			var pairs = e.pairs;
-			// var pairsA = [];
 			var pairsB = [];
 			for (var i=0;i<pairs.length;i++) {
 				pairsB.push(pairs[i][1]);
@@ -1198,9 +1248,9 @@ var interaction = {
 			if (currentQuestion.results) {
 				activityForm.addClass("disabled");
 				if (currentQuestion.results.score==100) {
-					interaction.msg("success","¡Correcto!",id+"matchElementsForm");
+					interaction.msg("success",i18n.right,id+"matchElementsForm");
 				} else {
-					interaction.msg("error","No es correcto",id+"matchElementsForm",interaction.matchElements.getRightAnswer(pairs));
+					interaction.msg("error",i18n.wrong,id+"matchElementsForm",interaction.matchElements.getRightAnswer(pairs));
 				}
 				var selectedValues = currentQuestion.results.selectedValues;
 				var questionFields = $("SELECT.random-a",activityForm);
@@ -1237,9 +1287,10 @@ var interaction = {
 				rightAnswer += "<li>"+rightAnswers[i][0]+" - "+rightAnswers[i][1]+"</li>";
 			}
 			if (rightAnswer!="") rightAnswer = "<ul>"+rightAnswer+"</ul>";
-			return "<p><strong>Respuesta correcta: </strong>"+rightAnswer+"</p>";
+			return "<p><strong>"+interaction.i18n.rightAnswer+" </strong>"+rightAnswer+"</p>";
 		},
 		validate : function(question,id) {
+			var i18n = interaction.i18n;
 			var slide = $("#"+id);
 			var pairs = InteractiveVideo.slides[question].pairs;
 			var answered = true;
@@ -1252,26 +1303,25 @@ var interaction = {
 				selectedValue = selects.eq(i).val();
 				selectedValues.push(selectedValue);
 				if (selectedValue == "") answered = false;				
-				var css = "";
-				if(selectedValue != pairs[i][1]) css = "field-with-error";
+				selects.eq(i).removeClass("field-with-error");
+				if(selectedValue != pairs[i][1]) selects.eq(i).addClass("field-with-error");
 				else rightAnswered ++;
-				selects.eq(i).attr("class",css);
 			}
 			// Not 100% answered
 			if (!answered) {
-				interaction.msg("info","Intenta emparejar todos los elementos",id);
+				interaction.msg("info",i18n.notAnswered,id);
 				return false;
 			}
 			slide.addClass("disabled");
 			$("select",slide).attr("disabled","disabled");
 			if (rightAnswered==pairs.length) {
 				// 100% right
-				interaction.msg("success","¡Correcto!",id);
+				interaction.msg("success",i18n.right,id);
 				interaction.matchElements.saveResults(question,100,slide,selectedValues);				
 			} else {
 				// < 100%;
 				var extra = interaction.matchElements.getRightAnswer(pairs);
-				interaction.msg("error","No es correcto",id,extra);
+				interaction.msg("error",i18n.wrong,id,extra);
 				// %
 				var result = (rightAnswered*100/pairs.length).toFixed(2);
 				interaction.matchElements.saveResults(question,result,slide,selectedValues);				
@@ -1289,12 +1339,14 @@ var interaction = {
 			return '</form>';
 		},
 		sendButton : function(id, order, name){
-			if (interaction.isInExe) return '<input type="button" name="'+id+name+'FormSubmit" id="'+id+name+'FormSubmit" value="Enviar" onclick="interaction[\''+name+'\'].validate('+order+',\''+id+name+'Form\');return false" />'
-			return '<input type="submit" name="'+id+name+'FormSubmit" id="'+id+name+'FormSubmit" value="Enviar" />'			
+			var i18n = interaction.i18n;
+			if (interaction.isInExe) return '<input type="button" name="'+id+name+'FormSubmit" id="'+id+name+'FormSubmit" value="'+i18n.check+'" onclick="interaction[\''+name+'\'].validate('+order+',\''+id+name+'Form\');return false" />'
+			return '<input type="submit" name="'+id+name+'FormSubmit" id="'+id+name+'FormSubmit" value="'+i18n.check+'" />'			
 		}
 	},
 	singleChoice : {
 		create : function(slide,id,order,e) {
+			var i18n = interaction.i18n;
 			var html = interaction.getForm.header(id,order,'singleChoice');
 			html += '<p class="question">'+e.question+'</p>';
 			html += '<div class="answers">';
@@ -1324,9 +1376,9 @@ var interaction = {
 					if (this.value==currentQuestion.results.selectedValue) this.checked = true;
 				}).attr("disabled","disabled");
 				if (currentQuestion.results.score==100) {
-					interaction.msg("success","¡Correcto!",id+"singleChoiceForm");
+					interaction.msg("success",i18n.right,id+"singleChoiceForm");
 				} else {
-					interaction.msg("error","No es correcto",id+"singleChoiceForm",interaction.singleChoice.getRightAnswer(currentQuestion.answers));
+					interaction.msg("error",i18n.wrong,id+"singleChoiceForm",interaction.singleChoice.getRightAnswer(currentQuestion.answers));
 				}
 			}
 			
@@ -1346,24 +1398,25 @@ var interaction = {
 			for (var i=0;i<questions.length;i++) {
 				if (questions[i][1]==1) rightAnswer = questions[i][0];
 			}
-			return "<p><strong>Respuesta correcta: </strong>"+rightAnswer+"</p>";			
+			return "<p><strong>"+interaction.i18n.rightAnswer+" </strong>"+rightAnswer+"</p>";			
 		},
 		validate : function(question,id) {
+			var i18n = interaction.i18n;
 			var slide = $("#"+id);
 			var selected = $("input[type='radio']:checked",slide);
 			if (selected.length==0) {
-				interaction.msg("info","Selecciona una respuesta",id);
+				interaction.msg("info",i18n.notAnswered,id);
 			} else {
 				var selectedValue = selected.val();
 				var questions = InteractiveVideo.slides[question].answers;
 				slide.addClass("disabled");
 				$("input[type='radio']",slide).attr("disabled","disabled");
 				if (questions[selectedValue][1]==1) {
-					interaction.msg("success","¡Correcto!",id);
+					interaction.msg("success",i18n.right,id);
 					interaction.singleChoice.saveResults(question,100,slide,selectedValue);
 				} else {
 					var extra = interaction.singleChoice.getRightAnswer(questions);
-					interaction.msg("error","No es correcto",id,extra);
+					interaction.msg("error",i18n.wrong,id,extra);
 					interaction.singleChoice.saveResults(question,0,slide,selectedValue);
 				}
 			}
@@ -1371,6 +1424,7 @@ var interaction = {
 	},
 	multipleChoice : {
 		create : function(slide,id,order,e) {
+			var i18n = interaction.i18n;
 			var html = interaction.getForm.header(id,order,'multipleChoice');
 			html += '<p class="question">'+e.question+'</p>';
 			html += '<div class="answers">';
@@ -1401,9 +1455,9 @@ var interaction = {
 					}
 				}).attr("disabled","disabled");
 				if (currentQuestion.results.score==100) {
-					interaction.msg("success","¡Correcto!",id+"multipleChoiceForm");
+					interaction.msg("success",i18n.right,id+"multipleChoiceForm");
 				} else {
-					interaction.msg("error","No es correcto",id+"multipleChoiceForm",interaction.multipleChoice.getRightAnswer(currentQuestion.answers));
+					interaction.msg("error",i18n.wrong,id+"multipleChoiceForm",interaction.multipleChoice.getRightAnswer(currentQuestion.answers));
 				}
 			}			
 		},
@@ -1429,13 +1483,14 @@ var interaction = {
 				
 			}
 			rightAnswer += "</ul>";
-			return "<p><strong>Respuesta correcta: </strong></p>"+rightAnswer;
+			return "<p><strong>"+interaction.i18n.rightAnswer+" </strong></p>"+rightAnswer;
 		},
 		validate : function(question,id) {
+			var i18n = interaction.i18n;
 			var slide = $("#"+id);
 			var selected = $("input[type='checkbox']:checked",slide);
 			if (selected.length==0) {
-				interaction.msg("info","Selecciona una respuesta",id);
+				interaction.msg("info",i18n.notAnswered,id);
 			} else {
 				slide.addClass("disabled");
 				$("input[type='checkbox']",slide).attr("disabled","disabled");
@@ -1462,12 +1517,12 @@ var interaction = {
 				if (rightAnswers>rightAnswered) error = true;
 				if (error) {
 					var extra = interaction.multipleChoice.getRightAnswer(questions);
-					interaction.msg("error","No es correcto",id,extra);
+					interaction.msg("error",i18n.wrong,id,extra);
 					// %
 					var result = (rightAnswered*100/rightAnswers).toFixed(2);
 					interaction.multipleChoice.saveResults(question,result,slide,selectedValues);
 				} else {
-					interaction.msg("success","¡Correcto!",id);
+					interaction.msg("success",i18n.right,id);
 					// To do: guardar más de una opción seleccionada
 					interaction.multipleChoice.saveResults(question,100,slide,selectedValues);
 				}
@@ -1524,7 +1579,7 @@ var interaction = {
 			newW = Math.round(maxH*newW/newH);
 			newH = maxH;
 		}	
-		return '<img src="'+src+'" alt="'+e.description+'" class="'+css+'" width="'+newW+'" height="'+newH+'" style="display:block;margin-top:'+((356-newH)/2)+'px" /><a href="'+src+'" target="_blank">Abrir en ventana nueva</a>';
+		return '<img src="'+src+'" alt="'+e.description+'" class="'+css+'" width="'+newW+'" height="'+newH+'" style="display:block;margin-top:'+((356-newH)/2)+'px" /><a href="'+src+'" target="_blank">'+interaction.i18n.newWindow+'</a>';
 	}	
 }
 

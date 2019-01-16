@@ -1,7 +1,6 @@
 function toDo(s) {
 	alert(s)
 }
-// To do: Get duration when using a local video
 // To do: Check i18n
 var iAdmin = {
 	globals : {
@@ -154,10 +153,27 @@ var iAdmin = {
                 mejs.MediaElementDefaults.flashName = "/scripts/mediaelement/" + mejs.MediaElementDefaults.flashName;
                 mejs.MediaElementDefaults.silverlightName = "/scripts/mediaelement/" + mejs.MediaElementDefaults.silverlightName				
 				
+				function hhmmssToSeconds(hms){
+					var a = hms.split(':');
+					if (a.length==1) {
+						a = [ 0, 0, a[0] ];
+					} else if (a.length==2) {
+						a = [ 0, a[0], a[1] ]
+					} else if (a.length!=3) {
+						return 0;
+					}
+					return (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
+				}
+				
 				$("#player").html('<video width="448" height="356" controls="controls"><source src="'+top.window.location.href+'/'+url+'" /></video>');
 				// The player won't work if there's no delay. Why?
 				setTimeout(function(){
 					$("#player video").mediaelementplayer();	
+					// Get duration
+					setTimeout(function(){
+						var mejsDuration = $(".mejs-duration");
+						if (mejsDuration.length==1) iAdmin.video.duration = hhmmssToSeconds(mejsDuration.html());
+					},2000);
 				},500);
 				
 			}

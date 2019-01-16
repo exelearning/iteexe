@@ -7,7 +7,7 @@
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  */
  
-// To do:
+// To review:
 // Do not allow Flash?
  
 var $exeDevice = {
@@ -20,6 +20,67 @@ var $exeDevice = {
 		 
 	},
 	
+	ci18n : {
+		"start" : _("Start"),
+		"results" : _("Results"),
+		"slide" : _("Slide (frame)"),
+		"score" : _("Score"),
+		"seen" : _("Seen"),
+		"total" : _("Total"),
+		"seeAll" : _("see all the slides and answer all the questions"),
+		"noSlides" : _("This video has no interactive slides."),
+		"goOn" : _("Continue"),
+		"error" : _("Error"),
+		"dataError" : _("Incompatible code"),
+		"onlyOne" : _("Ony one interactive video per page."),
+		"cover" : _("Cover"),
+		"fsWarning" : _("Exit the fullscreen mode (Esc) to see the current slide"),
+		"right" : _("Right!"),
+		"wrong" : _("Wrong"),
+		"sortableListInstructions" : _("Drag and drop or use the arrows."),
+		"up" : _("Move up"),
+		"down" : _("Move down"),
+		"rightAnswer" : _("Right answer:"),
+		"notAnswered" : _("Please finish the activity"),
+		"check" : _("Check"),
+		"newWindow" : _("New Window")
+	},
+	
+	enableTabs : function(id){
+		
+		var tabs = $("#"+id+" .exe-form-tab");
+		var list = '';
+		var tabId;
+		var e;
+		var txt;
+		tabs.each(function(i){
+			var klass = "exe-form-active-tab";
+			tabId = id+"Tab"+i;
+			e = $(this);
+			e.attr("id",tabId);
+			txt = e.attr("title");
+			if (txt=='') txt = (i+1);
+			if (i>0) {
+				e.hide();
+				klass = "";
+			}
+			list += '<li><a href="#'+tabId+'" class="'+klass+'">'+txt+'</a></li>';
+		});
+		if (list!="") {
+			list = '<ul id="'+id+'Tabs" class="exe-form-tabs">'+list+'</ul>';
+			tabs.eq(0).before(list);
+			var as = $("#"+id+"Tabs a");
+			as.click(function(){
+				as.attr("class","");
+				$(this).addClass("exe-form-active-tab");
+				tabs.hide();
+				$($(this).attr("href")).show();
+				return false;
+			});
+		}
+		
+	},
+	
 	testIfVideoExists : function(url,type) {
 
 		if (!top.interactiveVideoEditor) {
@@ -30,6 +91,15 @@ var $exeDevice = {
 			top.interactiveVideoEditor.imageList = [];
 		}
 
+	},
+	// Custom text fields
+	getLanguageFields : function(){
+		var html = "";
+		var fields = this.ci18n;
+		for (var i in fields) {
+			html += '<p class="ci18n"><label for="ci18n_'+i+'">'+fields[i]+'</label> <input type="text" name="ci18n_'+i+'" id="ci18n_'+i+'" value="'+fields[i]+'" /></p>'
+		}
+		return html;
 	},
 	// Create the form to insert HTML in the TEXTAREA
 	createForm : function(){
@@ -47,34 +117,47 @@ var $exeDevice = {
 		
 		html = '\
 			<div id="interactiveVideoIdeviceForm">\
-				<p>\
-					<strong>'+_('Type')+':</strong> \
-					<label for="interactiveVideoType-local"><input type="radio" name="interactiveVideoType" id="interactiveVideoType-local" value="local" checked="checked" /> '+_('Local file')+'</label> \
-					<label for="interactiveVideoType-youtube"><input type="radio" name="interactiveVideoType" id="interactiveVideoType-youtube" value="youtube" /> '+_('Youtube')+'</label> \
-					<label for="interactiveVideoType-mediateca"><input type="radio" name="interactiveVideoType" id="interactiveVideoType-mediateca" value="mediateca" /> '+_('Mediateca')+'</label> \
-				</p>\
-				<p id="interactiveVideo-local" class="interactiveVideoType">\
-					<label for="interactiveVideoFile">'+_("File")+':</label> \
-					<input type="text" id="interactiveVideoFile" class="exe-file-picker" />\
-					<span class="info"><strong>'+_("Supported formats")+':</strong> OGV/OGG, webm, mp4, flv</span>\
-				</p>\
-				<p id="interactiveVideo-youtube" class="interactiveVideoType">\
-					<label for="interactiveVideoYoutubeURL">'+_("URL")+':</label> \
-					<input type="text" id="interactiveVideoYoutubeURL" />\
-					<span class="info"><strong>'+_("Example")+':</strong> <a href="https://www.youtube.com/watch?v=v_rGjOBtvhI" target="_blank">https://www.youtube.com/watch?v=v_rGjOBtvhI</a></span>\
-				</p>\
-				<p id="interactiveVideo-mediateca" class="interactiveVideoType">\
-					<label for="interactiveVideoMediatecaURL">'+_("URL")+':</label> \
-					<input type="text" id="interactiveVideoMediatecaURL" />\
-					<span class="info"><strong>'+_("Example")+':</strong> <a href="https://mediateca.educa.madrid.org/video/3vmgyeluy8c35xzj" target="_blank">https://mediateca.educa.madrid.org/video/3vmgyeluy8c35xzj</a></span>\
-				</p>\
-			</div>\
-			<div id="interactiveVideoEditorOpener">\
-				<p class="exe-block-success">'+_("Open the editor and start adding interaction...")+' <input type="button" id="interactiveVideoOpenEditor" onclick="$exeDevice.editor.start()" value="'+_("Editor")+'" /></p>\
+				<div class="exe-form-tab" title="General settings">\
+					<p>\
+						<strong>'+_('Type')+':</strong> \
+						<label for="interactiveVideoType-local"><input type="radio" name="interactiveVideoType" id="interactiveVideoType-local" value="local" checked="checked" /> '+_('Local file')+'</label> \
+						<label for="interactiveVideoType-youtube"><input type="radio" name="interactiveVideoType" id="interactiveVideoType-youtube" value="youtube" /> '+_('Youtube')+'</label> \
+						<label for="interactiveVideoType-mediateca"><input type="radio" name="interactiveVideoType" id="interactiveVideoType-mediateca" value="mediateca" /> '+_('Mediateca')+'</label> \
+					</p>\
+					<p id="interactiveVideo-local" class="interactiveVideoType">\
+						<label for="interactiveVideoFile">'+_("File")+':</label> \
+						<input type="text" id="interactiveVideoFile" class="exe-file-picker" />\
+						<span class="info"><strong>'+_("Supported formats")+':</strong> OGV/OGG, webm, mp4, flv</span>\
+					</p>\
+					<p id="interactiveVideo-youtube" class="interactiveVideoType">\
+						<label for="interactiveVideoYoutubeURL">'+_("URL")+':</label> \
+						<input type="text" id="interactiveVideoYoutubeURL" />\
+						<span class="info"><strong>'+_("Example")+':</strong> <a href="https://www.youtube.com/watch?v=v_rGjOBtvhI" target="_blank">https://www.youtube.com/watch?v=v_rGjOBtvhI</a></span>\
+					</p>\
+					<p id="interactiveVideo-mediateca" class="interactiveVideoType">\
+						<label for="interactiveVideoMediatecaURL">'+_("URL")+':</label> \
+						<input type="text" id="interactiveVideoMediatecaURL" />\
+						<span class="info"><strong>'+_("Example")+':</strong> <a href="https://mediateca.educa.madrid.org/video/3vmgyeluy8c35xzj" target="_blank">https://mediateca.educa.madrid.org/video/3vmgyeluy8c35xzj</a></span>\
+					</p>\
+					<p>\
+						<label for="interactiveVideoShowResults"><input type="checkbox" name="interactiveVideoShowResults" id="interactiveVideoShowResults" checked="checked" /> '+_("Show results")+'</label>\
+					</p>\
+					<div id="interactiveVideoEditorOpener">\
+						<p class="exe-block-success">'+_("Open the editor and start adding interaction...")+' <input type="button" id="interactiveVideoOpenEditor" onclick="$exeDevice.editor.start()" value="'+_("Editor")+'" /></p>\
+					</div>\
+				</div>\
+				<div class="exe-form-tab" title="Language settings">\
+					<p>'+_("Custom texts (or use the default ones):")+'</p>\
+					'+this.getLanguageFields()+'\
+				</div>\
 			</div>\
 		';
 		
+		html += ''
+		
 		field.before(html);
+		
+		this.enableTabs("interactiveVideoIdeviceForm");
 		
 		$("input[name=interactiveVideoType]").change(function(){
 			$exeDevice.toggleType(this.value);
@@ -137,7 +220,8 @@ var $exeDevice = {
 				slides : []
 			},
 			videoURL : "",
-			videoType : ""
+			videoType : "",
+			i18n : {}
 		};		
 		
 		this.loadPreviousValues(field);
@@ -152,6 +236,10 @@ var $exeDevice = {
 			
 			var wrapper = $("<div id='interactiveVideoTmpWrapper'></div>");
 				wrapper.html(originalHTML);
+				// Check the CSS class (Show/Hide results)
+				if ($("div",wrapper).eq(0).hasClass("exe-interactive-video-no-results")) {
+					$("#interactiveVideoShowResults").prop("checked",false);
+				}
 				// Get the file
 				var videoWrapper = $("#exe-interactive-video-file a",wrapper);
 				var type = "local";
@@ -180,6 +268,12 @@ var $exeDevice = {
 			// Get the data
 			if (typeof(InteractiveVideo)=='object' && typeof(InteractiveVideo.slides)=='object') {
 				top.interactiveVideoEditor.activityToSave = InteractiveVideo;
+				if (typeof(InteractiveVideo.i18n)=='object') {
+					for (var i in InteractiveVideo.i18n) {
+						var v = InteractiveVideo.i18n[i];
+						if (v!="") $("#ci18n_"+i).val(v);
+					}
+				}
 			}
 			// Save the list of images and remove the wrapper
 			top.interactiveVideoEditor.imageList = $(".exe-interactive-video-img img",wrapper);
@@ -336,13 +430,27 @@ var $exeDevice = {
 					}
 				}
 			}	
+			
+			var fields = this.ci18n;
+			// Default value
+			var i18n = fields;
+			// Overwrite custom values
+			for (var i in fields) {
+				var fVal = $("#ci18n_"+i).val();
+				if (fVal!="") i18n[i] = fVal;
+			}
+
+			top.interactiveVideoEditor.activityToSave.i18n = i18n;
 		
 			contents = JSON.stringify(top.interactiveVideoEditor.activityToSave);
 			
 		}
 		
+		var extraCSS = "";
+		if ($("#interactiveVideoShowResults").is(":checked")==false) extraCSS = " exe-interactive-video-no-results";
+		
 		var html = '\
-			<div class="exe-interactive-video">\
+			<div class="exe-interactive-video'+extraCSS+'">\
 				<p id="exe-interactive-video-file" class="js-hidden">\
 					<a href="'+myVideo+'">'+myVideo.split('.').pop()+'</a>\
 				</p>\

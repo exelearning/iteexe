@@ -78,7 +78,7 @@ height:316px;margin:0 auto;overflow:auto;display:none}
 #activity-results td{border-bottom:1px solid #e7e7e7;color:#669;padding:6px 0}
 tr.even td{background:#f7f7f7}
 #activity-results .title,#activity-results .order span,#activity-results tr a{display:block}
-#activity-results tr a,#activity-results tr span{text-indent:8px}
+#activity-results tr a,#activity-results tr span{text-indent:8px;display:inline-block}
 #activity-results tr span span{text-indent:0}
 #activity-results tbody tr:hover td{color:#009}
 
@@ -86,6 +86,8 @@ tr.even td{background:#f7f7f7}
 .is-mobile #slide{height:auto;min-height:316px}
 
 .exe-interactive-video-img img{width:100px;height:auto}
+.interactive-videoIdevice .mejs-container{display:none}
+.interactive-videoIdevice .exe-interactive-video .mejs-container{display:block}
 
 @media screen and (max-width:900px) {
 	.full-version{display:none}
