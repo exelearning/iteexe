@@ -18,82 +18,12 @@
 
 </style>
 <script>
-iAdmin.userImages = [
-	["lh5xzutneehxkosu","graduaciones"],
-	["12quakihzju8jxk1","festival"],
-	["xiv68fxpbvaen67v","dialibro"],
-	["89b8k9e4noizbi9c","reymago"],
-	["cuf32qibjfptmbki","castañada"],
-	["h6s6diuljmulmnqi","HALLOWEEN15"],
-	["v4k8eq689adxz7wy","feliz 2016"],
-	["5vm52bj7la4z1759","navidad 2015"]
-];
 var InteractiveVideo = {
 	slides : []
 }
 if (typeof(top.interactiveVideoEditor)=='object' && typeof(top.interactiveVideoEditor.activityToSave)=='object') {
 	InteractiveVideo = top.interactiveVideoEditor.activityToSave;
 }
-
-/*
-InteractiveVideo = {
-    "title": "Mi ejemplo",
-    "description": "<p>Descripción del ejemplo.</p>",
-    "slides": [{
-        "startTime": 5,
-        "type": "text",
-        "text": "<p>Texto del <strong>5</strong> al <strong>10</strong>.</p>",
-        "endTime": 10
-    }, {
-        "type": "singleChoice",
-        "question": "<p>¿De qué color era el caballo <strong>blanco</strong> de Santiago?</p>",
-        "answers": [
-            ["Rojo con puntos verdes", 0],
-            ["Azul", 0],
-            ["Blanco", 1]
-        ],
-        "startTime": 15
-    }, {
-        "type": "image",
-        "url": "http://mediateca.educa.madrid.org/imagen/ib1uala2wdd74nm3",
-        "description": "Imagen en el 20",
-        "startTime": 20
-    }, {
-        "type": "multipleChoice",
-        "question": "<p>El <strong>5</strong> es...</p>",
-        "answers": [
-            ["Un número", 1],
-            ["Un número par", 0],
-            ["Un número impar", 1],
-            ["Un número entero", 1]
-        ],
-        "startTime": 25
-    }, {
-        "type": "dropdown",
-        "text": "<p>Uno, <span style=\"text-decoration: line-through;\">dos</span>, tres, <span style=\"text-decoration: line-through;\">cuatro</span>.</p>",
-        "startTime": 30,
-        "additionalWords": ["cinco", "seis"]
-    }, {
-        "type": "cloze",
-        "text": "<p>En un lugar de la <span style=\"text-decoration: line-through;\">Mancha</span>, de cuyo nombre no quiero acordarme, no ha mucho tiempo que <span style=\"text-decoration: line-through;\">vivía</span> un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y <span style=\"text-decoration: line-through;\">galgo</span> corredor.</p>",
-        "startTime": 40
-    }, {
-        "type": "matchElements",
-        "text": "<p>Relaciona <strong>nombres</strong> y <strong>apellidos</strong>.</p>",
-        "startTime": 45,
-        "pairs": [
-            ["Cristina", "García"],
-            ["Felipe", "Retortillo"],
-            ["Ignacio", "Gros"]
-        ]
-    }, {
-        "type": "sortableList",
-        "text": "<p>Ordena la frase de <strong>El Quijote</strong>.</p>",
-        "startTime": 50,
-        "items": ["En un lugar de la Mancha, ", "de cuyo nombre no quiero acordarme, ", "no ha mucho tiempo que vivía un hidalgo ", "de los de lanza en astillero, ", "adarga antigua, ", "rocín flaco y galgo corredor."]
-    }]
-}
-*/
 $(function(){
 	iAdmin.init();
 });

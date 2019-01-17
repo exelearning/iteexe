@@ -162,14 +162,6 @@ filter:alpha(opacity=60);opacity:.6}
 #edit-block ul a:hover,#edit-block ul a:focus{filter:alpha(opacity=100);opacity:1}
 #edit-block .delete a{background-position:0 -20px}
 
-/* User images list */
-#userImages ul{list-style:none;margin:0;padding:0;overflow:auto}
-#userImages li{display:inline;margin:0;padding:0}
-#userImages a{display:block;width:80px;height:80px;float:left;margin:0 10px 10px 0;position:relative}
-#userImages img{width:auto;position:absolute;left:0;top:0;clip:rect(0,80px, 80px,0)}
-#userImages img{*position:relative;*width:80px;*height:80px}/* IE6, IE7 */
-#selected-image img{width:auto;margin-top:2em}
-
 @media screen and (max-width: 1200px) {
 	#from-to-help-link{top:7px}	
 	#from-to-help-link a{padding:0;display:inline-block;width:24px;height:24px}

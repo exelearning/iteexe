@@ -418,14 +418,14 @@ var $exeDevice = {
 							// It's a number, so the image must be in the original HTML code
 							// slide.url = imgs.eq(i).attr("src");
 							var imgs = top.interactiveVideoEditor.imageList;
-							for (var i=0;i<imgs.length;i++) {	
-								var img = $(imgs[i]);
+							for (var z=0;z<imgs.length;z++) {	
+								var img = $(imgs[z]);
 								if (img.attr("id")=="exe-interactive-video-img-"+i) {
 									slide.url = img.attr("src");
 								}
 							}
 						}
-						imgsHTML += '<p class="exe-interactive-video-img"><img src="'+slide.url+'" id="exe-interactive-video-img-'+i+'" alt="" /></p>';
+						imgsHTML += '<p class="exe-interactive-video-img sr-av"><img src="'+slide.url+'" id="exe-interactive-video-img-'+i+'" alt="" /></p>';
 						slide.url = i;						
 					}
 				}

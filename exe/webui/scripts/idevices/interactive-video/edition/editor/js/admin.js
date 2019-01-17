@@ -1146,9 +1146,9 @@ var iAdmin = {
 				var src = "";
 				if (order==slide.url) {
 					var img = $("#exe-interactive-video-img-"+order);
-						if (img.length==1) {
-							src = img.attr("src");
-						}
+					if (img.length==1) {
+						src = img.attr("src");
+					}
 					for (var i=0;i<imgs.length;i++) {	
 						var img = $(imgs[i]);
 						if (img.attr("id")=="exe-interactive-video-img-"+order) {
@@ -1383,7 +1383,10 @@ var iAdmin = {
 			var strikethrough = "";
 			// Dropdown and cloze will have the strikethrough button
 			if (id=="dropdown-question" || id=="cloze-question") strikethrough = ' strikethrough';
-			var buttons = 'undo redo | bold italic'+strikethrough+' | alignleft aligncenter | bullist numlist | link | image | code';
+			var buttons = 'undo redo | bold italic'+strikethrough+' | alignleft aligncenter | bullist numlist | link | code';
+			if (id=="image-block-content") {
+				buttons = 'undo redo image';
+			}
 			tinymce.init({
 				selector: '#'+id,
 				height: 80,
