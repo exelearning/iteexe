@@ -143,7 +143,7 @@ var iAdmin = {
 					
 				} catch(e) {
 					
-					iAdmin.appError(_("Could not retrieve data (Core error)") + " - 003 - "+_("The Youtube API might have changed."));
+					iAdmin.appError($i18n.Code_Error + " - 003 - "+ $i18n.Youtube_API_Changed);
 					return;				
 					
 				}
@@ -204,11 +204,14 @@ var iAdmin = {
 		block = block.replace("#","").replace("-block","");
 		if (block=="text" || block=="image") autoStop = true;
 		var html = "<ol>";
-		html += '<li>Define en qué segundo aparece la diapositiva (<strong>Inicio</strong>).</li>';
+		html += '<li>'+$i18n.Start_Instructions+' (<strong>'+$i18n.Start+'</strong>).</li>';
 		if (autoStop) {
-			html += '<li>Si quieres que el vídeo se siga reproduciendo, di en qué segundo debe ocultarse la diapositiva (<strong>Fin</strong>).</li>';
+			html += "<li>"+$i18n.End_Instructions+" (<strong>"+$i18n.End+"</strong>).</li>";
 		}
-		html += '<li>Haz clic en <img src="images/timer.png" width="24" height="24" alt="Fotograma actual" /> para obtener el momento exacto en el que se encuentra el vídeo.</li>';
+		// 
+		var timeInstr = $i18n.Get_Time_Instructions;
+			timeInstr = timeInstr.replace("%",'<img src="images/timer.png" width="24" height="24" alt="'+$i18n.Current_Time+'" />');
+		html += '<li>'+timeInstr+'</li>';
 		html += "</ol>";
 		html += "<h4>"+iAdmin.slideTypes[block]+"<span>("+$i18n.Text.toLowerCase()+")</span>:</h4>";
 		html += "<p>"+iAdmin.slideTypesInstructions[block]+"</p>";
@@ -223,29 +226,29 @@ var iAdmin = {
 	timeOptions : {
 		init : function(block){
 			$("#time-and-help-block").remove();
-			var autoStop = '<p class="checkbox"><label for="auto-stop"><input type="checkbox" id="auto-stop" /> Detener la reproducción</label></p>';
+			var autoStop = '<p class="checkbox"><label for="auto-stop"><input type="checkbox" id="auto-stop" /> '+$i18n.Stop_Video+'</label></p>';
 			if (block!="#text-block" && block!="#image-block") {
-				autoStop = '<p class="checkbox disabled"><label for="auto-stop"><input type="checkbox" id="auto-stop" disabled="disabled" checked="checked" /> Detener la reproducción</label></p>';
+				autoStop = '<p class="checkbox disabled"><label for="auto-stop"><input type="checkbox" id="auto-stop" disabled="disabled" checked="checked" /> '+$i18n.Stop_Video+'</label></p>';
 			}
 			var fromToBlock = '\
 				<div id="time-and-help-block">\
-					<p id="from-to-help-link"><a href="#from-to-help" title="Mostrar/Ocultar la ayuda" onclick="iAdmin.toggleHelp();return false"><em>Ayuda</em></a></p>\
+					<p id="from-to-help-link"><a href="#from-to-help" title="'+$i18n.Toggle_Help+'" onclick="iAdmin.toggleHelp();return false"><em>'+$i18n.Help+'</em></a></p>\
 					<div id="from-to-help">\
 						'+iAdmin.getBlockInstructions(block)+'\
 					</div>\
 					<div id="from-to">\
 						<p id="from" class="time">\
-							<strong>Inicio:</strong>\
+							<strong>'+$i18n.Start+':</strong>\
 							<input type="hidden" id="from-in-seconds" value="0" />\
-							<label for="from-hh" class="sr-av">Horas:</label><input type="text" id="from-hh" maxlength="2" value="00" />:<label for="from-mm" class="sr-av">Minutos:</label><input type="text" id="from-mm" maxlength="2" value="00" />:<label for="from-ss" class="sr-av">Segundos:</label><input type="text" id="from-ss" maxlength="2" value="00" />\
-							<a href="#" id="from-now" title="Fotograma actual" class="from"><span>Ahora</span></a>\
+							<label for="from-hh" class="sr-av">'+$i18n.Hours+':</label><input type="text" id="from-hh" maxlength="2" value="00" />:<label for="from-mm" class="sr-av">'+$i18n.Minutes+':</label><input type="text" id="from-mm" maxlength="2" value="00" />:<label for="from-ss" class="sr-av">'+$i18n.Seconds+':</label><input type="text" id="from-ss" maxlength="2" value="00" />\
+							<a href="#" id="from-now" title="'+$i18n.Current_Time+'" class="from"><span>'+$i18n.Now+'</span></a>\
 						</p>\
 						'+autoStop+'\
 						<p id="to" class="time">\
-							<strong>Fin:</strong>\
+							<strong>'+$i18n.End+':</strong>\
 							<input type="hidden" id="to-in-seconds" value="0" />\
-							<label for="to-hh" class="sr-av">Horas:</label><input type="text" id="to-hh" maxlength="2" value="00" />:<label for="to-mm" class="sr-av">Minutos:</label><input type="text" id="to-mm" maxlength="2" value="00" />:<label for="to-ss" class="sr-av">Segundos:</label><input type="text" id="to-ss" maxlength="2" value="00" />\
-							<a href="#" id="to-now" title="Fotograma actual" class="to"><span>Ahora</span></a>\
+							<label for="to-hh" class="sr-av">'+$i18n.Hours+':</label><input type="text" id="to-hh" maxlength="2" value="00" />:<label for="to-mm" class="sr-av">'+$i18n.Minutes+':</label><input type="text" id="to-mm" maxlength="2" value="00" />:<label for="to-ss" class="sr-av">'+$i18n.Seconds+':</label><input type="text" id="to-ss" maxlength="2" value="00" />\
+							<a href="#" id="to-now" title="'+$i18n.Current_Time+'" class="to"><span>'+$i18n.Now+'</span></a>\
 						</p>\
 					</div>\
 				</div>';
@@ -313,7 +316,7 @@ var iAdmin = {
 			var fromMM = $("#from-mm");
 			var fromSS = $("#from-ss");
 			if (fromHH.val()=="" || fromMM.val()=="" || fromSS.val()=="") {
-				iAdmin.msg.txt("Debes especificar el inicio (hh:mm:ss).");
+				iAdmin.msg.txt($i18n.Check_Start+" (hh:mm:ss).");
 				return false;
 			}
 			var fromHHval = parseInt(fromHH.val())*3600;
@@ -321,11 +324,11 @@ var iAdmin = {
 			var fromSSval = parseInt(fromSS.val());
 			var totalSecFrom = fromHHval + fromMMval + fromSSval;
 			if (totalSecFrom==0) {
-				iAdmin.msg.txt('Revisa el apartado "Inicio". En el segundo cero se encuentra la portada.');
+				iAdmin.msg.txt($i18n.Second_Zero_Warning);
 				return false;
 			}			
 			if (iAdmin.video.duration>0 && totalSecFrom>iAdmin.video.duration) {
-				iAdmin.msg.txt('Revisa el apartado "Inicio". El vídeo no dura tanto.');
+				iAdmin.msg.txt($i18n.Time_Exceed_Warning);
 				return false;
 			}
 			
@@ -339,7 +342,7 @@ var iAdmin = {
 				var toMM = $("#to-mm");
 				var toSS = $("#to-ss");
 				if (toHH.val()=="" || toMM.val()=="" || toSS.val()=="") {
-					iAdmin.msg.txt("Debes especificar el fin (hh:mm:ss)");
+					iAdmin.msg.txt($i18n.Check_End+" (hh:mm:ss)");
 					return false;
 				}
 				var toHHval = parseInt(toHH.val())*3600;
@@ -347,11 +350,11 @@ var iAdmin = {
 				var toSSval = parseInt(toSS.val());
 				var totalSecTo = toHHval + toMMval + toSSval;
 				if (iAdmin.video.duration>0 && totalSecTo>iAdmin.video.duration) {
-					iAdmin.msg.txt('Revisa el apartado "Fin". El vídeo no dura tanto.');
+					iAdmin.msg.txt($i18n.Time_Exceed_Warning);
 					return false;
 				}
 				if (totalSecTo<=totalSecFrom) {
-					iAdmin.msg.txt('Revisa el apartado "Fin". Debe ser después de "Inicio".');
+					iAdmin.msg.txt($i18n.Time_Mismatch);
 					return false;
 				}
 				
@@ -389,7 +392,7 @@ var iAdmin = {
 		
 		// Missing type or URL
 		if (!top || !top.interactiveVideoEditor || !top.interactiveVideoEditor.videoType || !top.interactiveVideoEditor.videoURL || !top.interactiveVideoEditor.imageList) {
-			this.appError(_("Could not retrieve data (Core error)") + " - 002");
+			this.appError($i18n.Code_Error + " - 002");
 			return;
 		}
 		
@@ -399,17 +402,17 @@ var iAdmin = {
 		// Check if the type and the URL match
 		if (this.video.type=='local') {
 			if (this.video.url.indexOf("resources/")!=0) {
-				this.appError(_('Type')+": "+_('Local file')+" - "+_('Please type or paste a valid URL.'));
+				this.appError($i18n.Type+": "+$i18n.Local_File+" - "+$i18n.Invalid_URL);
 				return;
 			}
 		} else if (this.video.type=='mediateca') {
 			if (this.video.url.indexOf("https://mediateca.educa.madrid.org/")!=0) {
-				this.appError(_('Type')+": "+_('Mediateca')+" - "+_('Please type or paste a valid URL.'));
+				this.appError($i18n.Type+": Mediateca - "+$i18n.Invalid_URL);
 				return;
 			}
 		} else if (this.video.type=='youtube') {
 			if (this.video.url.indexOf("https://www.youtube.com/")!=0) {
-				this.appError(_('Type')+": "+_('Youtube')+" - "+_('Please type or paste a valid URL.'));
+				this.appError($i18n.Type+": Youtube - "+$i18n.Invalid_URL);
 				return;
 			}
 		}
@@ -431,7 +434,7 @@ var iAdmin = {
 		this.tabs.init("matchElements");
 		this.tabs.init("sortableList");
 		
-		// Main menu (Ayuda, Crear una portada, Crear un fotograma, Editar un fotograma)
+		// Main menu
 		this.tip = $("#controls-tip");
 		this.tipCurrentTitle = "";
 		this.controls = $("#controls a");
@@ -482,7 +485,7 @@ var iAdmin = {
 			return false;
 		});
 		
-		// Top menu (Borrar, Guardar como..., Previsualizar, Guardar, Salir)
+		// Top menu
 		this.topTip = $("#actions-desc");
 		$("#actions a").hover(
 			function(){
@@ -511,7 +514,7 @@ var iAdmin = {
 			iAdmin.topTip.html("");
 		});		
 		
-		// Add type menu (Texto, etc.)
+		// Add type menu
 		this.typeTip = $("#block-type-description");
 		this.typeControls = $("#block-types a");
 		this.typeCurrentTitle = "Texto";
@@ -619,13 +622,13 @@ var iAdmin = {
 		if (type=="cover") {
 			var projectTitle = $("#frontpage-title").val();
 			if (projectTitle=="") {
-				iAdmin.msg.txt("El título es obligatorio.");
+				iAdmin.msg.txt($i18n.No_Title);
 				return false;
 			}
 			InteractiveVideo["title"] = projectTitle;
 			InteractiveVideo["description"] = tinyMCE.get('frontpage-content').save();
 			$("#frontpage-form").hide().delay(1500).fadeIn();
-			$("#frontpage-form-msg").html("<p>Portada actualizada.</p>").show().delay(1000).fadeOut();
+			$("#frontpage-form-msg").html("<p>"+$i18n.Cover_Updated+"</p>").show().delay(1000).fadeOut();
 			return false;
 		}
 		
@@ -648,7 +651,7 @@ var iAdmin = {
 		if (type == "text") {
 			var txt = tinyMCE.get('text-block-content').save();
 			if (txt == "") {
-				iAdmin.msg.txt("Debes escribir algún texto.");
+				iAdmin.msg.txt($i18n.No_Text);
 				return false;
 			}
 
@@ -682,7 +685,7 @@ var iAdmin = {
 			// Check if it's a valid URL
 			var txt = tinyMCE.get('image-block-content').save();
 			if (txt == "") {
-				iAdmin.msg.txt("Debes añadir una imagen");
+				iAdmin.msg.txt($i18n.No_Image);
 				return false;
 			}
 			
@@ -690,14 +693,14 @@ var iAdmin = {
 			tmp.html(txt);
 			var imgs = $("img",tmp);
 			if (imgs.length == 0) {
-				iAdmin.msg.txt("Debes añadir una imagen");
+				iAdmin.msg.txt($i18n.No_Image_Error);
 				return false;
 			}
 			imgs = imgs.eq(0);
 			var url = imgs.attr("src");
 			
 			if (url == "") {
-				iAdmin.msg.txt("Debes añadir una imagen");
+				iAdmin.msg.txt($i18n.No_Image_Error);
 				return false;
 			}
 			
@@ -705,7 +708,7 @@ var iAdmin = {
 			// var alt = $("#image-alt").val();
 			var alt = imgs.attr("alt");
 			if (alt == "") {
-				iAdmin.msg.txt("Escribe un texto alternativo (describe la imagen).");
+				iAdmin.msg.txt($i18n.No_Alt);
 				return false;
 			}			
 			
@@ -741,7 +744,7 @@ var iAdmin = {
 			// Check the question
 			var question = tinyMCE.get(type+'-question').save();
 			if (question == "") {
-				iAdmin.msg.txt("Debes escribir una pregunta.");
+				iAdmin.msg.txt($i18n.No_Question);
 				return false;
 			}
 			
@@ -762,11 +765,11 @@ var iAdmin = {
 				}
 			}
 			if (answers.length<2) {
-				iAdmin.msg.txt("Escribe al menos dos respuestas.");
+				iAdmin.msg.txt($i18n.At_Least_2_Answers);
 				return false;
 			}
 			if (!oneIsRight) {
-				iAdmin.msg.txt("No has seleccionado la respuesta correcta.");
+				iAdmin.msg.txt($i18n.No_Right_Answer);
 				return false;
 			}
 			
@@ -796,12 +799,12 @@ var iAdmin = {
 			// Check the text
 			var txt = tinyMCE.get('dropdown-question').save();
 			if (txt == "") {
-				iAdmin.msg.txt("Debes escribir algún texto.");
+				iAdmin.msg.txt($i18n.No_Text);
 				return false;
 			}
 			// Check if it has words to guess
 			if (txt.indexOf(": line-through")==-1) {
-				iAdmin.msg.txt("No has tachado ninguna palabra.");
+				iAdmin.msg.txt($i18n.No_ST_Words);
 				return false;
 			}
 			
@@ -849,12 +852,12 @@ var iAdmin = {
 			// Check the text
 			var txt = tinyMCE.get('cloze-question').save();
 			if (txt == "") {
-				iAdmin.msg.txt("Debes escribir algún texto.");
+				iAdmin.msg.txt($i18n.No_Text);
 				return false;
 			}
 			// Check if it has words to guess
 			if (txt.indexOf(": line-through")==-1) {
-				iAdmin.msg.txt("No has tachado ninguna palabra.");
+				iAdmin.msg.txt($i18n.No_ST_Words);
 				return false;
 			}
 			
@@ -882,7 +885,7 @@ var iAdmin = {
 			// Check the text
 			var txt = tinyMCE.get('matchElements-question').save();
 			if (txt == "") {
-				iAdmin.msg.txt("Escribe la introducción (instrucciones, etc.).");
+				iAdmin.msg.txt($i18n.No_Introduction);
 				return false;
 			}	
 
@@ -896,7 +899,7 @@ var iAdmin = {
 				}
 			}
 			if (answers.length<2) {
-				iAdmin.msg.txt("Añade al menos dos parejas.");
+				iAdmin.msg.txt($i18n.At_Least_2_Pairs);
 				return false;
 			}
 			
@@ -927,7 +930,7 @@ var iAdmin = {
 			// Check the text
 			var txt = tinyMCE.get('sortableList-question').save();
 			if (txt == "") {
-				iAdmin.msg.txt("Escribe la pregunta (instrucciones, etc.).");
+				iAdmin.msg.txt($i18n.No_Introduction);
 				return false;
 			}	
 
@@ -940,7 +943,7 @@ var iAdmin = {
 				}
 			}
 			if (answers.length<2) {
-				iAdmin.msg.txt("Añade al menos dos elementos a la lista.");
+				iAdmin.msg.txt($i18n.At_Least_2_Elements);
 				return false;
 			}
 			
@@ -975,27 +978,25 @@ var iAdmin = {
 
 		// Warn the user (just once)
 		if (iAdmin.globals.warnWhenSave) {
-			var word = "creado";
-			if (iAdmin.globals.mode=="edit") word = "editado";
-			iAdmin.msg.txt('<p><strong>Importante:</strong></p><p>Has '+word+' un fotograma, pero los cambios no se guardarán hasta que pulses "Guardar".</p><p><img src="images/help/save_warning.png" width="48" height="48" alt="Guardar (icono)" /></p><p><a href="#" onclick="iAdmin.globals.warnWhenSave=false;iAdmin.msg.hide();return false">No mostrar más este mensaje</a></p>');
+			iAdmin.msg.txt('<p><strong>'+$i18n.Important+':</strong></p><p>'+$i18n.Click_On_Save_Warning+'</p><p><img src="images/help/save_warning.png" width="48" height="48" alt="'+$i18n.Save+'" /></p><p><a href="#" onclick="iAdmin.globals.warnWhenSave=false;iAdmin.msg.hide();return false">'+$i18n.Hide_Warning+'</a></p>');
 		}
 		
 	}, // /save
 	
 	updateFramesList : function(slides,action){
-		var html = "<p>Primero debes crear algún fotograma.</p>";
-		if (action == "delete") html = "<p>Has eliminado todos los fotogramas.</p>";
+		var html = "<p>"+$i18n.You_should_create_a_Frame_first+"</p>";
+		if (action == "delete") html = "<p>"+$i18n.All_Frames_Deleted+"</p>";
 		var l = slides.length;
 		if (l>0) {
 			html = '\
 				<table>\
 					<thead>\
 						<tr>\
-							<th>Tipo </th>\
-							<th>Nº </th>\
-							<th>Inicio </th>\
-							<th>Fin </th>\
-							<th>Acciones </th>\
+							<th>'+$i18n.Type+' </th>\
+							<th>'+$i18n.Num+' </th>\
+							<th>'+$i18n.Start+' </th>\
+							<th>'+$i18n.End+' </th>\
+							<th>'+$i18n.Actions+' </th>\
 						</tr>\
 					</thead>\
 					<tbody>';
@@ -1017,8 +1018,8 @@ var iAdmin = {
 								<td>'+end+' </td>\
 								<td>\
 									<ul>\
-										<li class="edit"><a href="#" title="Editar" onclick="iAdmin.slide.edit('+i+');return false"><span>Editar</span></a></li>\
-										<li class="delete"><a href="#" title="Eliminar" onclick="iAdmin.slide.del('+i+',\''+startHHMMSS+'\');return false"><span>Eliminar</span></a></li>\
+										<li class="edit"><a href="#" title="'+$i18n.Edit+'" onclick="iAdmin.slide.edit('+i+');return false"><span>'+$i18n.Edit+'</span></a></li>\
+										<li class="delete"><a href="#" title="'+$i18n.Delete+'" onclick="iAdmin.slide.del('+i+',\''+startHHMMSS+'\');return false"><span>'+$i18n.Delete+'</span></a></li>\
 									</ul>\
 								</td>\
 							</tr>\
@@ -1032,7 +1033,9 @@ var iAdmin = {
 	},
 	slide : {
 		del : function(order,startHHMMSS) {
-			iAdmin.msg.ask("¿Eliminar el fotograma <strong>"+startHHMMSS+"</strong>?", function(){
+			var msg = $i18n.Delete_Slide_X;
+				msg = msg.replace("%","<strong>"+startHHMMSS+"</strong>");
+			iAdmin.msg.ask(msg, function(){
 				iAdmin.msg.hide();
 				$("#slide-"+order).fadeOut("slow",function(){
 					InteractiveVideo.slides.splice(order, 1);
@@ -1043,10 +1046,10 @@ var iAdmin = {
 		},
 		success : function(type){
 			$("#"+type+"-block-form").addClass("hidden-block");
-			var links = " <a href='#' onclick='$(\"#controls a[href=#edit-block]\").click();return false'>Lista de fotogramas</a>";
-			links += " <a href='#' onclick='$(\"#controls a[href=#add-block]\").click();return false'>Nuevo fotograma</a>";
-			var msg = "<strong>¡Fotograma creado!</strong>";
-			if (iAdmin.globals.mode=="edit") msg = "<strong>¡Cambios guardados!</strong>";
+			var links = " <a href='#' onclick='$(\"#controls a[href=#edit-block]\").click();return false'>"+$i18n.Slides_List+"</a>";
+			links += " <a href='#' onclick='$(\"#controls a[href=#add-block]\").click();return false'>"+$i18n.New_Slide+"</a>";
+			var msg = "<strong>"+$i18n.Frame_Created+"</strong>";
+			if (iAdmin.globals.mode=="edit") msg = "<strong>"+$i18n.Changes_Saved+"</strong>";
 			$("#"+type+"-block-msg").hide().html("<p>"+msg+links+"</p>").fadeIn();
 		},
 		edit : function(order){
@@ -1241,7 +1244,7 @@ var iAdmin = {
 			if (txt.indexOf("<p>")==0) tag = "div";
 			txt = '<'+tag+' class="txt">'+txt+'</'+tag+'>';
 			iAdmin.content.hide();
-			var exitButton = '<p class="buttons"><input type="button" id="msg-accept" value="Aceptar" onclick="iAdmin.msg.hide()" /></p>';
+			var exitButton = '<p class="buttons"><input type="button" id="msg-accept" value="'+$i18n.Accept+'" onclick="iAdmin.msg.hide()" /></p>';
 			if (showButton==false) exitButton = "";
 			iAdmin.message.html(txt+exitButton).show();
 			iAdmin.messageLink.focus();
@@ -1249,13 +1252,13 @@ var iAdmin = {
 		ask : function(txt,fn) {
 			iAdmin.msg.fn = fn;
 			iAdmin.content.hide();
-			iAdmin.message.html('<p class="txt">'+txt+'</p><p class="buttons"><input type="button" id="msg-deny" value="Cancelar" onclick="iAdmin.msg.hide()" /> <input type="button" id="msg-accept" value="OK" onclick="iAdmin.msg.go()" /></p>').show();
+			iAdmin.message.html('<p class="txt">'+txt+'</p><p class="buttons"><input type="button" id="msg-deny" value="'+$i18n.Cancel+'" onclick="iAdmin.msg.hide()" /> <input type="button" id="msg-accept" value="OK" onclick="iAdmin.msg.go()" /></p>').show();
 			iAdmin.messageLink.focus();
 		},
 		promt : function(txt,fn){
 			iAdmin.msg.fn = fn;
 			iAdmin.content.hide();
-			iAdmin.message.html('<p class="txt"><label for="msg-promt">'+txt+'</label></p><p><input type="text" id="msg-promt" /></p><p class="buttons"><input type="button" id="msg-deny" value="Cancelar" onclick="iAdmin.msg.hide()" /> <input type="button" id="msg-accept" value="OK" onclick="iAdmin.msg.go()" /></p>').show();
+			iAdmin.message.html('<p class="txt"><label for="msg-promt">'+txt+'</label></p><p><input type="text" id="msg-promt" /></p><p class="buttons"><input type="button" id="msg-deny" value="'+$i18n.Cancel+'" onclick="iAdmin.msg.hide()" /> <input type="button" id="msg-accept" value="OK" onclick="iAdmin.msg.go()" /></p>').show();
 			// $("#msg-promt").focus();
 			iAdmin.messageLink.focus();
 		},
@@ -1278,47 +1281,6 @@ var iAdmin = {
 		$("#frontpage-block").fadeIn();	
 	},	
 	actions : {
-		del : function(){
-			iAdmin.msg.ask("¿Eliminar definitivamente el contenido? El vídeo no será eliminado.",
-				function(){
-					toDo("To do. Eliminar.");
-					// Hide all the links but the Exit one
-					$("#actions li").each(function(){
-						if (this.className!="exit") $(this).hide();
-					});
-					// Put the link description in the right place
-					$("#actions-desc").css("right","95px");
-					// Show a success message
-					iAdmin.msg.txt("<p>Contenido <strong>eliminado</strong>.</p><p>Puedes cerrar el Editor.</p>",false);
-				}
-			);
-		},
-		reloadOriginal : function(){
-			toDo("To do. Recargar el original.");
-			window.location.reload();
-		},
-		saveAs : function(){
-			iAdmin.msg.promt("Guardar como...",
-				function(){
-					var promt = $("#msg-promt");
-					if (promt.val().length<3) {
-						promt.val("Mínimo 3 caracteres");
-						setTimeout(function(){
-							$("#msg-promt").val("").focus();
-						},1500);
-						return false;
-					}
-					toDo("To do. Guardar como.");
-					// Set the title
-					$("#frontpage-title").val(promt.val());
-					// Display a success message
-					iAdmin.msg.txt('<p>Copia <strong>guardada</strong>.</p><p>Estás editando la nueva copia.</p><p class="buttons"><input type="button" id="msg-accept" value="Aceptar" onclick="iAdmin.showFrontPage()" /></p><p><a href="#" onclick="iAdmin.actions.reloadOriginal();return false;">Editar la original</a></p>',false);
-				}
-			);
-		},
-		preview : function(){
-			window.open("../?mode=preview");
-		},
 		save : function(){
 			var slides = InteractiveVideo.slides;
 			// Remove all unnecessary values (results, etc.) added by the preview.
@@ -1327,7 +1289,7 @@ var iAdmin = {
 				delete slides[i].results;
 			}
 			top.interactiveVideoEditor.activityToSave = InteractiveVideo;
-			iAdmin.appMsg(_("Saved!") + " " + _('Click on "Exit" to finish.'));
+			iAdmin.appMsg($i18n.Saved + " " + $i18n.Click_On_Exit);
 		},	
 		exit : function(){
 			top.interactiveVideoEditor.win.close();
@@ -1471,9 +1433,6 @@ function enableVideoPlayer(video, image, h, w) {
         height: h,
         width: w
     });
-	// jwplayer().onPause(function(e){
-		// iAdmin.video.getPosition();
-	// });	
 	jwplayer().onPlay(function(){
 		// iAdmin.video.hasPlayed = true;
 		setTimeout(function(){

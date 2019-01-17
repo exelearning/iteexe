@@ -59,7 +59,7 @@ p{margin:1em 0}
 #actions .exit a{background-position:0 -672px}
 #actions .delete a{background-position:0 -720px}
 #actions .save-as a{background-position:0 -768px}
-#actions-desc{line-height:88px;position:absolute;top:0;right:420px;color:#FFF;letter-spacing:.5px}
+#actions-desc{line-height:88px;position:absolute;top:0;right:185px;color:#FFF;letter-spacing:.5px}
 
 #messages p{margin:0}
 #messages .txt{padding:4em 2em 1.5em 2em;font-size:1.2em}
@@ -125,7 +125,7 @@ border-radius:4px;border-top-left-radius:0
 
 #from-to-help{display:none}
 #from-to-help-link{position:absolute;top:0;right:20px;margin:0;line-height:48px;float:none}
-#from-to-help-link a{padding-left:30px;background:url(../images/help/toggler.png) no-repeat 0 50%;color:#000}
+#from-to-help-link a{padding-left:30px;background:url(../images/help/toggler.png) no-repeat 0 50%;color:#000;display:inline-block}
 #from-to-help-link em{font-style:normal}
 .help-visible #from-to-help{display:block}
 .help-visible .block-form-content,.help-visible #from-to{display:none}
