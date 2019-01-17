@@ -1,3 +1,12 @@
+intef-exe (3:2.3.1) lucid; urgency=medium
+
+  * Juan Rafael Fernández
+    - New simplified Chinese translation, by Chenggui Duan.
+  * SDWeb
+    - Update field name to prevent error when exporting (#380).
+
+ -- eXeLearning <admin@exelearning.net>  Thu, 17 Jan 2019 17:30:18 +0200
+
 intef-exe (3:2.3) lucid; urgency=medium
 
   * Ignacio Gros
