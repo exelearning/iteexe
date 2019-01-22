@@ -19,7 +19,7 @@ Prefix: %{_prefix}
 ExclusiveArch: i686
 BuildRequires: python-devel
 BuildRequires: python >= %{pyver}
-Requires: python >= %{pyver}, python-setuptools, python-imaging, python-zope-interface, python-chardet, python-lxml, python-feedparser, mimetex, python-BeautifulSoup, python-suds, python-requests-oauthlib, python-dateutil, python-cssmin, python-webassets, python-rjsmin
+Requires: python >= %{pyver}, python-setuptools, python-pillow, python-zope-interface, python-chardet, python-lxml, python-feedparser, mimetex, python-BeautifulSoup, python-suds, python-requests-oauthlib, python-dateutil, python-cssmin, python-webassets, python-rjsmin
 Obsoletes: exe-twisted, exe
 
 %description

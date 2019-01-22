@@ -10,7 +10,7 @@ X-Python-Version: >=2.7
 
 Package: intef-exe
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}, python-setuptools, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging | python-pil, python-chardet, python-lxml, iceweasel | www-browser, python-feedparser, mimetex, python-beautifulsoup, python-suds, python-requests-oauthlib, python-dateutil, python-cssmin | cssmin, python-webassets
+Depends: ${python:Depends}, ${misc:Depends}, python-setuptools, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-pil, python-chardet, python-lxml, iceweasel | www-browser, python-feedparser, mimetex, python-beautifulsoup, python-suds, python-requests-oauthlib, python-dateutil, python-cssmin | cssmin, python-webassets
 Conflicts: python2.3-exe, python2.4-exe, python2.5-exe, python-exe, python-intef-exe
 Replaces: python2.3-exe, python2.4-exe, python2.5-exe, python-exe, python-intef-exe
 Description: eLearning XHTML & HTML5 editor

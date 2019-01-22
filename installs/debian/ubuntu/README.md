@@ -9,12 +9,12 @@ $ apt-get install build-essential debhelper xsltproc docbook-xml docbook-xsl pyt
 ## Python modules installation
 Next, you need to install the required python modules:
 ```console
-$ apt-get install python-feedparser python-beautifulsoup python-zope python-imaging python-suds python-requests-oauthlib python-dateutil python-lxml mimetex cssmin python-cssmin python-webassets
+$ apt-get install python-feedparser python-beautifulsoup python-zope python-pil python-suds python-requests-oauthlib python-dateutil python-lxml mimetex cssmin python-cssmin python-webassets
 ```
 #### Important note! (Ubuntu versions below 14.04)
 The python packages `python-requests-oauthlib` and `python-webassets` are not available on the official Ubuntu repositories for any Ubuntu version below 14.04. For this case, you must remove this package from the command like so:
 ```console
-$ apt-get install python-feedparser python-beautifulsoup python-zope python-imaging python-suds python-dateutil python-lxml mimetex cssmin python-cssmin
+$ apt-get install python-feedparser python-beautifulsoup python-zope python-pil python-suds python-dateutil python-lxml mimetex cssmin python-cssmin
 ```
 Then you must install a Python Package Manager like [pip](https://pip.pypa.io/) and install the package from there:
 ```console
@@ -39,11 +39,11 @@ Once you have all the requirements set up, you have to download the source code.
 #### Important note! (Ubuntu versions below 14.04)
 To be able to install the generated package you need to remove `python-requests-oauthlib` and `python-webassets` from its depedencies. This can be acomplished by editing the file "debian/control" and changing this line:
 ```
-Depends: ${python:Depends}, ${misc:Depends}, python-setuptools, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging, python-chardet, python-lxml, iceweasel | www-browser, python-feedparser, mimetex, python-beautifulsoup, python-suds, python-requests-oauthlib, python-dateutil
+Depends: ${python:Depends}, ${misc:Depends}, python-setuptools, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-pil, python-chardet, python-lxml, iceweasel | www-browser, python-feedparser, mimetex, python-beautifulsoup, python-suds, python-requests-oauthlib, python-dateutil
 ```
 For this one:
 ```
-Depends: ${python:Depends}, ${misc:Depends}, python-setuptools, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging, python-chardet, python-lxml, iceweasel | www-browser, python-feedparser, mimetex, python-beautifulsoup, python-suds, python-dateutil
+Depends: ${python:Depends}, ${misc:Depends}, python-setuptools, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-pil, python-chardet, python-lxml, iceweasel | www-browser, python-feedparser, mimetex, python-beautifulsoup, python-suds, python-dateutil
 ```
 
 ## .deb file creation

@@ -23,14 +23,11 @@
 Java Applet Idevice. Enables you to embed java applet in the browser
 """
 
-try:
-    from PIL import Image, ImageDraw
-except:
-    import Image
-    import ImageDraw
-from twisted.persisted.styles import requireUpgrade
 import logging
 import sys
+
+from PIL import Image, ImageDraw
+from twisted.persisted.styles import requireUpgrade
 
 from exe.engine.idevice   import Idevice
 from exe.engine.path      import Path, toUnicode

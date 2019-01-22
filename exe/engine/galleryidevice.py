@@ -22,25 +22,22 @@
 Gallery Idevice. Enables you to easily manage a bunch of images and thumbnails
 """
 
-try:
-    from PIL import Image, ImageDraw
-except:
-    import Image
-    import ImageDraw
-from twisted.persisted.styles import requireUpgrade
-from copy import copy, deepcopy
+import codecs
 import logging
+import os
 
-from exe.engine.idevice   import Idevice
+from copy import copy, deepcopy
+from PIL import Image, ImageDraw
+from twisted.persisted.styles import requireUpgrade
+
+from exe                  import globals as G
 from exe.engine.field     import TextField
+from exe.engine.idevice   import Idevice
 from exe.engine.path      import Path, TempDirPath, toUnicode
 from exe.engine.persist   import Persistable
 from exe.engine.resource  import Resource
 from exe.engine.translate import lateTranslate
 from exe.webui.common     import docType
-from exe                  import globals as G
-import os
-import codecs
 
 log = logging.getLogger(__name__)
 
