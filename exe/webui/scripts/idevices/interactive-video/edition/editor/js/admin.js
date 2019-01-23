@@ -1169,8 +1169,12 @@ var iAdmin = {
 						}
 				}
 				if (src!="") {
-					// Add the base path if the image is already in "resources"
-					if (src.indexOf("/previews/")!=0) src = top.window.location.href + "/" + src;
+					var isLocal = true;
+					var topLocation = top.window.location;
+					var urlToCheck = topLocation.protocol + "//" + topLocation.host + "/";
+					if (src.indexOf("http")==0 && src.indexOf(urlToCheck)!=0) isLocal = false;
+					// Add the base path if the image is already in "resources" (only local files)
+					if (isLocal && src.indexOf("/previews/")!=0) src = top.window.location.href + "/" + src;
 					tinyMCE.get('image-block-content').setContent('<p><img src="'+src+'" alt="'+slide.description+'" /></p>');
 				}
 			}
