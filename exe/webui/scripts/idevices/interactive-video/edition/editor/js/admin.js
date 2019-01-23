@@ -1,6 +1,11 @@
-function toDo(s) {
-	alert(s)
-}
+/**
+ * Interactive Video iDevice (edition)
+ *
+ * Released under Attribution-ShareAlike 4.0 International License.
+ * Author: Ignacio Gros (http://gros.es/) for http://exelearning.net/
+ *
+ * License: http://creativecommons.org/licenses/by-sa/4.0/
+ */
 var iAdmin = {
 	globals : {
 		mode : "add", // add or edit
@@ -466,10 +471,6 @@ var iAdmin = {
 			iAdmin.controls.removeClass("current");
 			e.addClass("current");
 			$(".admin-block").hide();
-			
-			// Hide all the success messages and show the hidden forms
-			// $(".hidden-block").removeClass();
-			// $(".success-msg").html("");
 			
 			iAdmin.tipCurrentTitle = iAdmin.tipTitle;
 			var href = e.attr("href");
@@ -1371,7 +1372,7 @@ var iAdmin = {
 					// Global (see ../../interactive-video.js)
 					top.interactiveVideoEditor.exe_tinymce.chooseImage(field_name, url, type, win);
 				},				
-				content_css: "http://gros.es/tests/mediateca/interaccion/gestion/css/tinymce.css"
+				content_css: "css/tinymce.css"
 			});	
 		}		
 	},
