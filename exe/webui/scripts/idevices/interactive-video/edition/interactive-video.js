@@ -9,14 +9,14 @@
  
 // To review:
 // Do not allow Flash?
- 
+
 var $exeDevice = {
 	
 	iDevicePath : "/scripts/idevices/interactive-video/edition/",
 	
 	init : function(){
 		
-		 this.createForm();
+		this.createForm();
 		 
 	},
 	
@@ -117,7 +117,7 @@ var $exeDevice = {
 		
 		html = '\
 			<div id="interactiveVideoIdeviceForm">\
-				<div class="exe-form-tab" title="General settings">\
+				<div class="exe-form-tab" title="'+_('General settings')+'">\
 					<p>\
 						<strong>'+_('Type')+':</strong> \
 						<label for="interactiveVideoType-local"><input type="radio" name="interactiveVideoType" id="interactiveVideoType-local" value="local" checked="checked" /> '+_('Local file')+'</label> \
@@ -146,7 +146,7 @@ var $exeDevice = {
 						<p class="exe-block-success">'+_("Open the editor and start adding interaction...")+' <input type="button" id="interactiveVideoOpenEditor" onclick="$exeDevice.editor.start()" value="'+_("Editor")+'" /></p>\
 					</div>\
 				</div>\
-				<div class="exe-form-tab" title="Language settings">\
+				<div class="exe-form-tab" title="'+_('Language settings')+'">\
 					<p>'+_("Custom texts (or use the default ones):")+'</p>\
 					'+this.getLanguageFields()+'\
 				</div>\
