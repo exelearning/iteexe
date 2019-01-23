@@ -311,7 +311,7 @@ var interaction = {
 		
 		if (this.type=='mediateca') {
 			
-			$exe.loadScript("http://mediateca.educa.madrid.org/includes/player/7.6.1/jwplayer.js","interaction.ready()");
+			$exe.loadScript("http://mediateca.educa.madrid.org/includes/player/exelearning/jwplayer.js","interaction.ready()");
 			return;
 			
 		}
@@ -337,9 +337,6 @@ var interaction = {
 		
 	},
 	enableJWPlayer : function(id, h, w){
-		// if (inIframe()) h = checkVideoPlayerHeight(h);
-		// var video = "mtdrp7s34zmc88je";
-		jwplayer.key = 'XnH21IkIBjAQp06byW5kPeU1Eq1vLpjEllpVdA==';
 		var img = 'http://mediateca.educa.madrid.org/imagen.php?id='+id+'&type=1&m=0';
 		jwplayer("player").setup({
 			sources: [{
@@ -567,7 +564,7 @@ var interaction = {
 					if (t.indexOf("%")!=-1) {
 						result += parseFloat(t);
 						counter ++;
-					} else if (t=="Vista") {
+					} else if (t==interaction.i18n.seen) {
 						result += 100;
 						counter ++;
 					}
@@ -628,6 +625,7 @@ var interaction = {
 
 			var html = "";
 			var id = interaction.baseId;
+			var i18n = interaction.i18n;
 			var i;
 			
 			// Text
@@ -635,7 +633,7 @@ var interaction = {
 				slide.html(e.text);
 				for (var i=0; i<InteractiveVideo.slides.length; i++) {
 					if (e==InteractiveVideo.slides[i]) {
-						interaction.updateResult(i,"Vista");
+						interaction.updateResult(i,i18n.seen);
 						e.results = {
 							viewed : true
 						};
@@ -651,7 +649,7 @@ var interaction = {
 					slide.html(interaction.getImage(e,img.width,img.height,img.src));
 					for (var i=0; i<InteractiveVideo.slides.length; i++) {
 						if (e==InteractiveVideo.slides[i]) {
-							interaction.updateResult(i,"Vista");
+							interaction.updateResult(i,i18n.seen);
 							e.results = {
 								viewed : true
 							};
