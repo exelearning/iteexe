@@ -5,7 +5,7 @@
             "pp_lang",
             "pp_description",
             "pp_author",
-            "pp_license"
+            "pp_newlicense"
         ]
     },
     "procomun":{

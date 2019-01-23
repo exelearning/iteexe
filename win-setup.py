@@ -160,13 +160,6 @@ opts = {
             "oauthlib",
             "webassets",
             "cssmin"
-        ],
-        "includes": [
-            "PngImagePlugin",
-            "JpegImagePlugin",
-            "GifImagePlugin",
-            "IcoImagePlugin",
-            "BmpImagePlugin"
         ]
     }
 }

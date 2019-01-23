@@ -1,14 +1,13 @@
-from exe                     import globals
-from exe.engine.package          import Package
-import sys, os
-from exe.engine.config import Config
-from exe.engine.path import Path
-from subprocess import call
 import ConfigParser
-try:
-    from PIL import Image
-except:
-    import Image
+import sys, os
+
+from PIL import Image
+from subprocess import call
+
+from exe                     import globals
+from exe.engine.config import Config
+from exe.engine.package          import Package
+from exe.engine.path import Path
 
 '''
 This class is designed to go over through a given exported object

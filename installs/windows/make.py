@@ -5,13 +5,8 @@ import os
 import shutil
 import subprocess
 import urllib
-# We try to import from PIL
-try:
-    from PIL import Image, ImageFont, ImageDraw
-except:
-    import Image
-    import ImageFont
-    import ImageDraw
+
+from PIL import Image, ImageFont, ImageDraw
 
 # Get program files location
 PROGRAM_FILES = os.environ['ProgramFiles']
