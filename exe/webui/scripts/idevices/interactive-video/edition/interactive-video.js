@@ -411,8 +411,6 @@ var $exeDevice = {
 							// So you have to remove anything before "resources/"
 							if (check.length==2) {
 								slide.url = "resources/"+check[1];
-							} else {
-								// To review
 							}
 						} else {
 							// It's a number, so the image must be in the original HTML code

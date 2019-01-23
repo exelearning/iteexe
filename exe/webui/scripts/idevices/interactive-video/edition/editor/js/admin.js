@@ -1,7 +1,6 @@
 function toDo(s) {
 	alert(s)
 }
-// To do: Check i18n
 var iAdmin = {
 	globals : {
 		mode : "add", // add or edit

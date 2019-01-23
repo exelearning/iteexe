@@ -6,14 +6,9 @@
  *
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  */
-/* To review */
- .msg{background:#F4FDEF;padding:10px 20px;border-radius:2px;border:1px solid #ACDFA7;color:#384F34;margin:25px 0 1.5em 0}
-#slide .msg p{margin:0}
-.alert-msg{background:#ffc;border:1px solid #fc0;color:#c30}
-.error-msg{background:#fdd;border:1px solid #f00;color:#c30}
-.info-msg{background:#DFF4FF;border:1px solid #A7CEDF;color:#34404F}
+#slide .exe-block-msg{padding:10px 1em;margin:25px 0 1.5em 0}
+#slide .exe-block-msg p{margin:0}
 #slide .disabled .field-with-error{color:#c30}
-/* / To review */
 
 .exe-interactive-video{margin:2em auto;width:898px}
 

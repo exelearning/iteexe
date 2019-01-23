@@ -12,8 +12,6 @@ var mejsFullScreen;
 
 var interaction = {
 	debug : true,
-	encrypt : false,
-	isPreview : false,
 	isSeek : false,
 	baseId : "interaction",
 	isInExe : false,
@@ -91,34 +89,6 @@ var interaction = {
 		}
 		if (hasChanged) return o;
 		else return this.randomizeArray(original);
-	},	
-	// Base64 Decode
-	// Base64 code from Tyler Akins -- http://rumkin.com	
-	decode64 : function(e) {
-		var t = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-		var n = "";
-		var r, i, s;
-		var o, u, a, f;
-		var l = 0;
-		// Remove all characters that are not A-Z, a-z, 0-9, +, /, or =
-		e = e.replace(/[^A-Za-z0-9\+\/\=]/g, "");
-		do {
-			o = t.indexOf(e.charAt(l++));
-			u = t.indexOf(e.charAt(l++));
-			a = t.indexOf(e.charAt(l++));
-			f = t.indexOf(e.charAt(l++));
-			r = o << 2 | u >> 4;
-			i = (u & 15) << 4 | a >> 2;
-			s = (a & 3) << 6 | f;
-			n = n + String.fromCharCode(r);
-			if (a != 64) {
-				n = n + String.fromCharCode(i)
-			}
-			if (f != 64) {
-				n = n + String.fromCharCode(s)
-			}
-		} while (l < e.length);
-		return n
 	},
 	controls : {
 		play : function(){
@@ -252,8 +222,8 @@ var interaction = {
 		
 		var es = $(".exe-interactive-video");
 		
-		var hasResults = true;
-		if (es.hasClass("exe-interactive-video-no-results")) hasResults = false;
+		var showResults = true;
+		if (es.hasClass("exe-interactive-video-no-results")) showResults = false;
 		
 		if (es.length==0) return;
 		
@@ -281,7 +251,7 @@ var interaction = {
 			</div>\
 		';
 		
-		if (hasResults) {
+		if (showResults) {
 			html += '\
 				<div class="js-required">\
 					<h2 id="activity-results-toggler"><a href="#activity-results" onclick="interaction.resultsViewer.toggle(this);return false" class="show">'+i18n.results+'</a></h2>\
@@ -295,8 +265,6 @@ var interaction = {
 		// es.html(es.html()+html);
 		es[0].innerHTML += html;
 		
-		if (this.encrypt && !this.isPreview) eval(interaction.decode64(InteractiveVideo));
-		
 		if (typeof(InteractiveVideo)=="undefined" || typeof(InteractiveVideo.slides)=="undefined" || InteractiveVideo.slides.length==0) {
 			$("#player").html("<p style='text-align:center;margin:0;line-height:356px'>"+i18n.noSlides+"</p>");
 			$("#activity-results-toggler").hide();
@@ -308,46 +276,20 @@ var interaction = {
 			$("BODY").addClass("is-mobile");
 		} catch(e) { }
 		
-		$(window).on('beforeunload', function(){
-			// To review: return '¿Abandonar la página?';
-		});
-		
 		if (this.inIframe()) $("body").removeClass("full-screen");
 		
 		this.getTypeAndId();
 		
-		this.hasResults = false;
-
 		// To review
-		if (window.location.href.indexOf("?results=0")==-1 && !this.isPreview) {
-			
-			// In this case the results are not part of the activity
-			if (typeof(InteractiveVideoResults)!="undefined") {
-				if (InteractiveVideoResults.length == InteractiveVideo.slides.length) {
-					for (var i=0;i<InteractiveVideo.slides.length;i++) {
-						InteractiveVideo.slides[i].results = InteractiveVideoResults[i];
-					}
-					this.hasResults = true;
-				} else {
-					alert("Error (respuestas desvinculadas de la actividad).");
-					return false;
-				}
-			}
-			
-		} else {
-			// Make sure that you delete all the results so you can save the new values
-			for (var i=0;i<InteractiveVideo.slides.length;i++) {
-				InteractiveVideo.slides[i].results = null;
-			}
+		// Make sure that you delete all the results so you can save the new values
+		for (var i=0;i<InteractiveVideo.slides.length;i++) {
+			InteractiveVideo.slides[i].results = null;
 		}
 		
 		
 		$("BODY").addClass("cover-on");
 		var play = '<p id="start-activity">';
 		var playContent = '<a href="#" onclick="interaction.cover.hide(true);return false" id="start-link">'+i18n.start+'</a>';
-
-		// To review
-		if (this.hasResults && !this.isPreview) playContent = '<a href="#" onclick="interaction.cover.hide(true);return false" id="start-link">Ver con mis resultados</a>';
 
 		play = play+playContent+"</p>";
 		// var cover = "<h2>"+$("#activity-title").html()+"</h2>";
@@ -417,13 +359,7 @@ var interaction = {
 			aboutlink: "http://mediateca.educa.madrid.org/ayuda.php",
 			// controls: false,
 			height: h,
-			width: w,
-			// To review
-			sharing: {
-				heading: "Comparte este v\u00EDdeo",
-				code: encodeURI('<iframe src="http://mediateca.educa.madrid.org/video/'+id+'/fs" width="420" height="315" frameborder="0" scrolling="no" allowfullscreen></iframe>'),
-				link: 'http://mediateca.educa.madrid.org/video/'+id
-			}
+			width: w
 		});
 	},
 	checkSlides : function(){
@@ -578,10 +514,6 @@ var interaction = {
 				var title = title = "Actividad - "+interaction.typeNames[e.type];
 				if (e.type=="image" || e.type=="text") title = "Información - "+interaction.typeNames[e.type];
 				var result = "-";
-				if (!interaction.isPreview && interaction.hasResults && e.results) {
-					if (e.type=="singleChoice" || e.type=="multipleChoice" || e.type=="dropdown" || e.type=="cloze" || e.type=="matchElements" || e.type=="sortableList") result = interaction.formatResult(e.results.score)+"%";
-					else if (e.results.viewed==1) result = i18n.seen;
-				}
 				var k = "odd";
 				if (i%2==0) k = "even";				
 				if (interaction.type=="local" && interaction.extension=="flv") {
@@ -664,13 +596,17 @@ var interaction = {
 		}		
 	},
 	msg : function(type,txt,formId,rightAnswer){
-		var msg = '<div class="msg '+type+'-msg"><p>'+txt+'</p></div>';
+		var k = "success";
+		if (type=="alert") k = "alert";
+		else if (type=="error") k = "danger";
+		else if (type=="info") k = "info";
+		k = "exe-block-" + k;
+		var msg = '<div class="exe-block-msg '+k+'"><p>'+txt+'</p></div>';
 		if (rightAnswer) msg += rightAnswer;
 		$("#"+formId+"Message").html(msg);
 	},
 	seek : function(order){
 		if (interaction.visibleSlide==order && $("BODY").hasClass("active")) {
-			// To review if (this.debug) alert("This is the current slide: "+order);
 			return false;
 		}
 		interaction.isSeek = true;
@@ -842,7 +778,6 @@ var interaction = {
 			activityForm.show();
 			
 			//Show the previous results
-			// To review
 			var currentQuestion = InteractiveVideo.slides[order];
 			if (currentQuestion.results) {
 				var i18n = interaction.i18n;
@@ -1523,14 +1458,13 @@ var interaction = {
 					interaction.multipleChoice.saveResults(question,result,slide,selectedValues);
 				} else {
 					interaction.msg("success",i18n.right,id);
-					// To do: guardar más de una opción seleccionada
+					// To do: save more than one selected option
 					interaction.multipleChoice.saveResults(question,100,slide,selectedValues);
 				}
 			}
 		}
 	},	
 	track : function(position){
-		// To review now
 		var position = Math.round(position).toString();
 		var slides = InteractiveVideo.slides;
 		var i = slides.length;
