@@ -24,7 +24,7 @@ height:316px;margin:0 auto;overflow:auto;display:none}
 #start-activity a.restart{background:#666}
 #start-activity a:hover{text-decoration:underline}
 
-#activity{overflow:auto;border:1px solid #000;width:448px;max-height:356px;background:#FFF;margin:20px auto 0 auto;overflow:hidden}
+#activity{border:1px solid #000;width:448px;max-height:356px;background:#FFF;margin:20px auto 0 auto;overflow:hidden}
 .active #activity{width:898px}
 @media screen and (min-width:100px) {
 	#activity{border:none;box-shadow:0 0 15px 0 #cccccc}
@@ -78,6 +78,7 @@ tr.even td{background:#f7f7f7}
 #activity-results tbody tr:hover td{color:#009}
 
 .is-mobile #activity-cover{height:auto;min-height:316px}
+.is-mobile #activity{overflow:auto;background:#FFF url(interactive-video-bg.gif) repeat-y 0 0}
 .is-mobile #slide{height:auto;min-height:316px}
 
 .exe-interactive-video-img img{width:100px;height:auto}

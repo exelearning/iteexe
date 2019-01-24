@@ -11,7 +11,6 @@
 var mejsFullScreen; 
 
 var interaction = {
-	debug : true,
 	isSeek : false,
 	baseId : "interaction",
 	isInExe : false,
@@ -608,7 +607,6 @@ var interaction = {
 		}
 		interaction.isSeek = true;
 		if (interaction.hasPlayed!=true) {
-			if (this.debug) alert("The video has not been played.");
 			interaction.controls.seek(InteractiveVideo.slides[order].startTime-1);
 		} else {
 			interaction.controls.seek(InteractiveVideo.slides[order].startTime);
