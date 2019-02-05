@@ -397,6 +397,9 @@ class Package(Persistable):
 
         #Flag to add page counters
         self._addPagination = False
+        
+        #Flag to add a search box in the web site export
+        self._addSearchBox = False
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
@@ -785,13 +788,31 @@ class Package(Persistable):
         :return: Flag indicating wheter we should add pagination counters or not.
         """
         return self._addPagination
+        
+    def set_addSearchBox(self, addSearchBox):
+        """
+        Set _addSearchBox flag.
+
+        :type addSearchBox: boolean
+        :param addSearchBox: New value for the _addSearchBox flag.
+        """
+        self._addSearchBox = addSearchBox
+
+    def get_addSearchBox(self):
+        """
+        Returns _addSearchBox flag value.
+
+        :rtype: boolean
+        :return: Flag indicating wheter we should add a search box or not (Web Site export only)
+        """
+        return self._addSearchBox
 
     def set_isTemplate(self, isTemplate):
         """
         Set _isTemplate flag.
 
-        :type addPagination: boolean
-        :param addPagination: New value for the _isTemplate flag.
+        :type isTemplate: boolean
+        :param isTemplate: New value for the _isTemplate flag.
         """
         self._isTemplate = isTemplate
 
@@ -1099,6 +1120,7 @@ class Package(Persistable):
     contextMode = property(lambda self: self._contextMode, set_contextMode)
     extraHeadContent = property(lambda self: self._extraHeadContent, set_extraHeadContent)
     addPagination = property(get_addPagination, set_addPagination)
+    addSearchBox = property(get_addSearchBox, set_addSearchBox)
     isTemplate = property(get_isTemplate, set_isTemplate)
     templateFile = property(get_templateFile, set_templateFile)
 
@@ -1697,6 +1719,7 @@ class Package(Persistable):
             'exportMetadataType': 'LOMES',
             'compatibleWithVersion9': False,
             'addPagination': False,
+            'addSearchBox': False,
             'docType': G.application.config.docType
         }
         for field, value in _metadata_fields_package.iteritems():
@@ -1927,7 +1950,7 @@ class Package(Persistable):
                      '_intendedEndUserRoleType', '_intendedEndUserRoleGroup',
                      '_intendedEndUserRoleTutor', '_contextPlace',
                      '_contextMode', '_extraHeadContent', 'scowsource', 'mxmlprofilelist',
-                     'mxmlforcemediaonly', 'mxmlheight', 'mxmlwidth']:
+                     'mxmlforcemediaonly', 'mxmlheight', 'mxmlwidth', '_addSearchBox']:
             if hasattr(self, attr):
                     delattr(self, attr)
         self.license = u''
@@ -2062,4 +2085,6 @@ class Package(Persistable):
     def upgradeToVersion16(self):
         if not hasattr(self, '_extraHeadContent'):
             self._extraHeadContent = u''
+        if not hasattr(self, '_addSearchBox'):
+            self._addSearchBox = False
 # ===========================================================================

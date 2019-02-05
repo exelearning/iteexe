@@ -70,6 +70,19 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             xtype: 'helpcontainer',
                             item: {
                                 xtype: 'checkboxfield',
+                                inputId: 'pp_addSearchBox',
+                                boxLabel: _('Add a search bar (editable Web Site export only)'),
+                                inputValue: true,
+                                uncheckedValue: false,
+                                dirtyCls: 'property-form-dirty',
+                                tooltip: _('Checking this option, a search box will be added to every page. The "%" option has to be checked too.').replace("%",_('Create editable export?'))
+                            },
+                            flex: 0,
+                            help: _('Checking this option, a search box will be added to every page. The "%" option has to be checked too.').replace("%",_('Create editable export?'))
+                        },{
+                            xtype: 'helpcontainer',
+                            item: {
+                                xtype: 'checkboxfield',
                                 inputId: 'pp_addPagination',
                                 boxLabel: _('Add page counters in the footer and header of the export?'),
                                 inputValue: true,
