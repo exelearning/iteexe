@@ -103,6 +103,9 @@ html[xmlns] #content{display:block}
 * html #siteNav ul ul a{width:205px}
 * html #siteNav ul ul ul a{width:180px}
 
+/* Search bar */
+#exe-client-search-form{margin-top:10px}
+
 /* Responsive design */
 @media all and (max-width: 995px) {
 	#content{width:100%}
@@ -123,4 +126,5 @@ html[xmlns] #content{display:block}
 	#bottomPagination .prev{position:absolute;left:15px;margin-left:0}
 	#bottomPagination .next{position:absolute;right:15px}
 	#bottomPagination .page-counter{position:absolute;width:50%;left:25%;text-align:center;margin:0;padding-top:5px;font-weight:normal}
+	#exe-client-search-form{text-align:center}
 }

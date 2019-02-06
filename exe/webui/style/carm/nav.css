@@ -114,6 +114,7 @@ Centre for Flexible and Distance Learning
 	.no-nav #main-wrapper,.no-nav #siteFooter{padding-left:10px}
 	#bottomPagination{margin-right:10px}
 }
+#exe-client-search-form{margin-top:-1em}
 @media all and (max-width: 780px) {
 	#siteNav{width:auto;float:none;padding:0;margin-bottom:10px;border:none}
 	#content #siteNav a{width:80%;line-height:1.5em}
@@ -130,4 +131,5 @@ Centre for Flexible and Distance Learning
 	#bottomPagination .page-counter{position:absolute;width:50%;left:25%;text-align:center;margin:3px 0;font-weight:normal}
 	#bottomPagination .prev{position:absolute;left:10px}
 	#nav-toggler a,#nav-toggler a:focus{display:block;background:#BD4949;padding:7px 0;width:100%;color:#fff;outline:none;text-decoration:none}
+	#exe-client-search-form{margin-top:1.5em;text-align:center}
 }

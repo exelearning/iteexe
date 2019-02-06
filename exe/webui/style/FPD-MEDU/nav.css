@@ -179,6 +179,10 @@
 
 .no-nav #main-wrapper {margin: 0px;}
 
+#exe-client-search-form{text-align:left}
+#exe-client-search-text{border-color:#c3dcf7}
+#exe-client-search-submit{border-color:#c3dcf7;background:#c3dcf7}
+
 @media screen and (min-width: 701px) and (max-width: 1015px) {
 	/* Fullsreen mode */
 	body{
@@ -253,6 +257,11 @@
 	}
 	#toggle-nav{
 		display:none;
+	}
+	#exe-client-search-form{
+		text-align:center;
+		position:relative;
+		top:1.5em;
 	}
 }
 

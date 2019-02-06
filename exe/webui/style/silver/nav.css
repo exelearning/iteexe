@@ -57,6 +57,11 @@ html[xmlns] #content{display:block}
 * html #siteNav ul ul a{width:198px}
 * html #siteNav ul ul ul a{width:183px}
 
+/* Search bar */
+#exe-client-search-form{margin-top:10px}
+#exe-client-search-text{border-color:#6e6e6e}
+#exe-client-search-submit{border-color:#6e6e6e;background:#6e6e6e;color:#fff}
+
 /* Responsive design */
 @media all and (max-width: 980px) {
 	body{padding:0}
@@ -80,4 +85,5 @@ html[xmlns] #content{display:block}
 	#bottomPagination .next{right:10px}
 	#bottomPagination .page-counter{position:absolute;width:50%;left:25%;text-align:center;margin:0;font-weight:normal;margin-top:-4px}
 	#nav-toggler a,#nav-toggler a:hover,#nav-toggler a:focus{box-shadow:none;background:#706F61;display:inline-block;padding:4px;width:80%;color:#fff;font-variant:small-caps;letter-spacing:1px;outline:none;text-decoration:none}
+	#exe-client-search-form{text-align:center}
 }

@@ -294,7 +294,19 @@ html[xmlns] #content{
 	clip:rect(0,0,0,0);
 	height:0;
 }
-	
+
+/* Search bar */
+#exe-client-search-form{
+	margin-top:-1em
+}
+#exe-client-search-text{
+	border-color:#eaf2a8
+}
+#exe-client-search-submit{
+	border-color:#eaf2a8;
+	background:#eaf2a8;
+	color:#4d4d4d
+}	
 
 @media screen and (min-width: 701px) and (max-width: 1015px) {
 	body{
@@ -644,17 +656,8 @@ html[xmlns] #content{
 	#nav-toggler a:focus{
 		text-decoration:none;
 	}
+	
+	#exe-client-search-form{
+		margin-top:2em
+	}
 }
-
-@media (max-width: 500px) {
-	#header, #emptyHeader{
-	padding-left: 10px;
-	/*height: 3.8em;
-	line-height: 3.8em;
-	font-size: 1.3em;
-	background-color: #000;
-	background-image: url(tknika_logo_res.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	}
-	}

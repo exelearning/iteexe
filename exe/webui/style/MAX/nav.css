@@ -53,6 +53,10 @@ html[xmlns] #content{display:block}
 * html #siteNav ul ul a{width:200px}
 * html #siteNav ul ul ul a{width:175px}
 
+#exe-client-search-form{margin-top:9px;text-align:left}
+#exe-client-search-text{border-color:#e3e3e3}
+#exe-client-search-submit{border-color:#e3e3e3;background:#e3e3e3}
+
 @media screen and (min-width: 701px) and (max-width: 1015px) {
 	body{background:#fff}
 	#main-wrapper,#siteFooter{padding-left:20px}
@@ -77,6 +81,7 @@ html[xmlns] #content{display:block}
 	#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
 	#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
 	#toggle-nav{display:none !important}	
+	#exe-client-search-form{text-align:right}
 }
 
 @media all and (max-width: 700px) {
@@ -102,4 +107,5 @@ html[xmlns] #content{display:block}
 	#nav-toggler a{width:100%;height:auto;background:none;background:#F9F9F9;color:#333;border-bottom:1px solid #F2F2F2;line-height:2.3em;font-weight:bold;letter-spacing:1px;font-variant:small-caps}
 	#nav-toggler a:hover{background:#f1f1f1;text-decoration:none;text-shadow:1px 1px 1px #fff}		
 	#nav-toggler a:focus{text-decoration:none}
+	#exe-client-search-form{margin-top:2em;text-align:center}
 }
