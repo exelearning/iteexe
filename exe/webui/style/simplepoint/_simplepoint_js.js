@@ -194,7 +194,7 @@ $(function(){
         if (!f) $("BODY").append("<div id='siteFooter'></div>");
     } else {
         if (!f) $("#content").append("<div id='siteFooter'></div>");
-        if (c=='exe-web-site js') {
+        if (c.indexOf('exe-web-site')!=-1) {
             myTheme.init();
         }     
     }
