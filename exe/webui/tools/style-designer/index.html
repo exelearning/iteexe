@@ -20,8 +20,8 @@
 		if (opener && opener.opener) _ = opener.opener._;
 	/*]]>*/</script>
 	<script type="text/javascript" src="../color-picker/langs/all.js"></script>
-	<script type="text/javascript" src="langs/all.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="langs/all.js?v=002"></script>
+	<script type="text/javascript" src="js/app.js?v=002"></script>
 	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 	<title>%Style_Designer%</title>
 </head>
@@ -273,8 +273,36 @@
 						</div>
 					</div>
 				</fieldset>
+				<fieldset id="searchBarOptions">
+					<legend>%Search_bar%</legend>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="searchBarBGColor">%Background_color_FULL%: </label>
+								<input type="text" maxlength="6" size="6" id="searchBarBGColor" class="color" />
+							</div>
+							<div class="field">
+								<label for="searchBarTextColor">%Text_color_FULL%: </label>
+								<input type="text" maxlength="6" size="6" id="searchBarTextColor" class="color" />
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="fields">
+							<div class="field">
+								<label for="searchBarButtonBGColor">%Button_background_color%: </label>
+								<input type="text" maxlength="6" size="6" id="searchBarButtonBGColor" class="color" />
+							</div>
+							<div class="field">
+								<label for="searchBarButtonTextColor">%Button_text_color%: </label>
+								<input type="text" maxlength="6" size="6" id="searchBarButtonTextColor" class="color" />
+							</div>
+						</div>
+					</div>					
+				</fieldset>
 				<p>%Background_instructions_1%</p>
 				<p>%Background_instructions_2%</p>
+				<p>%Background_instructions_3%</p>
 			</div><!-- /#page-panel -->
 			
             <div id="header" class="panel">
