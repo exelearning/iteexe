@@ -634,7 +634,7 @@ def getJavaScriptStrings(addTag = True):
     s += 'searchResults:"'+c_("Search results for %")+'",'
     s += 'hideResults:"'+c_("Hide results")+'",'
     s += 'more:"'+c_("More")+'",'
-    s += 'less:"'+c_("Less")+'"'
+    s += 'search:"'+c_("Search")+'"'
     s += '};'
     if addTag:
         s += '</script>'

@@ -172,3 +172,21 @@ img,video{max-width:100%;height:auto}
 	.styled-qc{margin:1.5em .5em}
 	.exe-layout-2-cols .exe-col,.exe-layout-3-cols .exe-col{float:none;width:100%;padding:0}   
 }
+/* Search bar */
+#exe-client-search-form{text-align:right;margin-bottom:2em}
+#exe-client-search-form p{margin:0}
+#exe-client-search-text{border:1px solid #ddd;padding:5px 10px;width:250px;max-width:60%}
+#exe-client-search-submit{border:1px solid #ddd;padding:5px 10px;background:#ddd;margin-left:-.4em;color:#333}
+.exe-client-search-results #nodeTitle,.exe-client-search-results .iDevice_wrapper,#exe-client-search-results,#exe-client-search-reset{display:none}
+.exe-client-search-results #exe-client-search-results{display:block}
+.exe-client-search-results #exe-client-search-reset{display:inline}
+#exe-client-search-results p{margin-top:1.5em}
+#exe-client-search-results ul{margin:1.5em 1.5em 3em 1.5em;padding:0;list-style:none}
+#main #exe-client-search-results li{list-style-image:none;margin-bottom:1.5em}
+#exe-client-search-results a{font-size:1.15em}
+.exe-client-search-result{background:yellow}
+.exe-client-search-read-more{font-size:.7em;margin-left:.2em}
+#exe-client-search-reset{margin-left:.5em}
+@media all and (max-width: 700px) {
+	#exe-client-search-form{text-align:center}
+}
