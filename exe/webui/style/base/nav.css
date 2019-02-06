@@ -51,6 +51,10 @@ body{padding:0;text-align:center}
 #nav-toggler a:hover{text-decoration:none}
 #skipNav{z-index:100px;padding-top:15px;text-align:center}
 
+/* Search bar */
+#exe-client-search-text{border-top-left-radius:5px;border-bottom-left-radius:5px}
+#exe-client-search-submit{border-top-right-radius:5px;border-bottom-right-radius:5px}
+
 @media screen and (max-width: 980px) {
 	.exe-web-site #content{width:100%;border:0;box-shadow:none}
 	#main{padding:20px 30px 0 280px}
