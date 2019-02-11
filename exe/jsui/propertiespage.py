@@ -280,7 +280,8 @@ class PropertiesPage(Renderable, Resource):
             if hasattr(obj, name):
                 return obj, name
             else:
-                if fieldId in ['pp_scowsinglepage', 'pp_scowwebsite', 'pp_exportSource']:
+                # If attributes don't exist, initialize them with value 'False'
+                if fieldId in ['pp_scowsinglepage', 'pp_scowwebsite', 'pp_exportSource', 'pp_addSearchBox']:
                     setattr(obj, name, False)
                     return obj, name
 
