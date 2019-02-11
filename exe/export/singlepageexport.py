@@ -202,7 +202,7 @@ class SinglePageExport(object):
             if not hasGames:
                 hasGames = common.ideviceHasGames(idevice)
             if not hasElpLink:
-                hasElpLink = common.ideviceHasElpLink(idevice,package)
+                hasElpLink = common.ideviceHasElpLink(idevice,self.page.node.package)
             if not hasWikipedia:
     			if 'WikipediaIdevice' == idevice.klass:
     				hasWikipedia = True
@@ -247,8 +247,8 @@ class SinglePageExport(object):
             langGameFile.close()
         if hasElpLink:
             # Export the elp file
-            currentPackagePath = Path(package.filename)
-            currentPackagePath.copyfile(outputDir/package.name+'.elp')
+            currentPackagePath = Path(self.page.node.package.filename)
+            currentPackagePath.copyfile(self.outputDir/self.page.node.package.name+'.elp')
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(self.outputDir/'exe_wikipedia.css')

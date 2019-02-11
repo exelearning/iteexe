@@ -129,6 +129,7 @@ def processInternalLinks(package, html):
     but remove the 'exe-node:Home:Topic:etc', since it is all 
     exported into the same file.
     """
+    html = common.enableLinksToElp(package, html) 
     return common.renderInternalLinkNodeAnchor(package, html)
 
 def exportMinFileJS(listFiles, outputDir):
