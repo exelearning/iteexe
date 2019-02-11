@@ -1330,6 +1330,7 @@ def renderInternalLinkNodeFilenames(package, html):
         # then go ahead and clear out any remaining invalid links:
         html = removeInternalLinks(html)
         
+    # Keep the links to the elp file (if the elp file exists).
     html = enableLinksToElp(package, html)
             
     return html

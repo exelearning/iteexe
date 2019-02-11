@@ -464,6 +464,7 @@ class IMSPage(Page):
            href="exe-node:Home:Topic:etc#Anchor"
         For this IMS Export, go ahead and remove the link entirely,
         leaving only its text, since such links are not to be in the LMS.
+        Keep the links to the elp file (if the elp file exists).
         """
         html = common.enableLinksToElp(self.node.package,html) 
         return common.removeInternalLinks(html)
