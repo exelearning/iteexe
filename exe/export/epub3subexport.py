@@ -417,9 +417,11 @@ class Epub3Page(Page):
         """
         take care of any internal links which are in the form of:
            href="exe-node:Home:Topic:etc#Anchor"
-        For this SCORM Export, go ahead and remove the link entirely,
+        For this export, go ahead and remove the link entirely,
         leaving only its text, since such links are not to be in the LMS.
+        The links to the elp file will not be removed.
         """
+        html = common.enableLinksToElp(self.node.package, html)
         return common.removeInternalLinks(html)
 
 
