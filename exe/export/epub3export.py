@@ -631,6 +631,7 @@ class Epub3Export(object):
         hasFX = False
         hasSH = False
         hasGames = False
+        hasElpLink = False
         hasWikipedia = False
         isBreak = False
         hasInstructions = False
@@ -641,7 +642,7 @@ class Epub3Export(object):
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasWikipedia and hasInstructions and hasTooltips and hasABCMusic):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasElpLink and hasWikipedia and hasInstructions and hasTooltips and hasABCMusic):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -661,6 +662,8 @@ class Epub3Export(object):
                     hasSH = common.ideviceHasSH(idevice)
                 if not hasGames:
                     hasGames = common.ideviceHasGames(idevice)
+                if not hasElpLink:
+                    hasElpLink = common.ideviceHasElpLink(idevice,package)
                 if not hasWikipedia:
                     if 'WikipediaIdevice' == idevice.klass:
                         hasWikipedia = True
@@ -701,6 +704,10 @@ class Epub3Export(object):
             langGameFile = open(contentPages + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
+        if hasElpLink:
+            # Export the elp file
+            currentPackagePath = Path(package.filename)
+            currentPackagePath.copyfile(contentPages/package.name+'.elp')
         if hasWikipedia:
             wikipediaCSS = (self.cssDir / 'exe_wikipedia.css')
             wikipediaCSS.copyfile(contentPages / 'exe_wikipedia.css')

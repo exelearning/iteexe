@@ -222,6 +222,7 @@ class ScormPage(Page):
         For this SCORM Export, go ahead and remove the link entirely,
         leaving only its text, since such links are not to be in the LMS.
         """
+        html = common.enableLinksToElp(self.node.package,html)       
         return common.removeInternalLinks(html)
         
 
