@@ -165,7 +165,7 @@ function init() {
 			selectByValue(formObj, 'anchorlist', href);
 			
 		// The New eXeLearning
-		else if (href.indexOf("exe-node:")==0)
+		else if (href.indexOf("exe-node:")==0 || href=='exe-package:elp')
 			selectByValue(formObj, 'anchorlist', href);
 		// /The New eXeLearning	
 
@@ -426,6 +426,9 @@ function setAttrib(elm, attrib, value) {
 
 function getAnchorListHTML(id, target) {
 	var ed = tinyMCEPopup.editor, nodes = ed.dom.select('a'), name, i, len, html = "";
+	// The New eXeLearning
+	html += '<option value="exe-package:elp">' + tinyMCEPopup.getLang('advlink_dlg.link_to_the_elp') + '</option>';
+	// / The New eXeLearning
 
 	for (i=0, len=nodes.length; i<len; i++) {
 		if ((name = ed.dom.getAttrib(nodes[i], "name")) != "")
