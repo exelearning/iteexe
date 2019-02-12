@@ -70,15 +70,28 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             xtype: 'helpcontainer',
                             item: {
                                 xtype: 'checkboxfield',
+                                inputId: 'pp_exportElp',
+                                boxLabel: _('Export a copy of the elp'),
+                                inputValue: true,
+                                uncheckedValue: false,
+                                dirtyCls: 'property-form-dirty',
+                                tooltip: _("The exported folder will include a copy of the elp file, even if your content doesn't have a link to it. If you want anyone to find your elp easily, consider adding a link to the elp in your content instead of using this option.")
+                            },
+                            flex: 0,
+                            help: _("The exported folder will include a copy of the elp file, even if your content doesn't have a link to it. If you want anyone to find your elp easily, consider adding a link to the elp in your content instead of using this option.")
+                        },{
+                            xtype: 'helpcontainer',
+                            item: {
+                                xtype: 'checkboxfield',
                                 inputId: 'pp_addSearchBox',
                                 boxLabel: _('Add a search bar (editable Web Site export only)'),
                                 inputValue: true,
                                 uncheckedValue: false,
                                 dirtyCls: 'property-form-dirty',
-                                tooltip: _('Checking this option, a search box will be added to every page. The "%" option has to be checked too.').replace("%",_('Create editable export?'))
+                                tooltip: _('Checking this option, a search box will be added to every page. The "%" option has to be checked too. It will only work if JavaScript is enabled.').replace("%",_('Create editable export?'))
                             },
                             flex: 0,
-                            help: _('Checking this option, a search box will be added to every page. The "%" option has to be checked too.').replace("%",_('Create editable export?'))
+                            help: _('Checking this option, a search box will be added to every page. The "%" option has to be checked too. It will only work if JavaScript is enabled.').replace("%",_('Create editable export?'))
                         },{
                             xtype: 'helpcontainer',
                             item: {

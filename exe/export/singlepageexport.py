@@ -245,7 +245,7 @@ class SinglePageExport(object):
             langGameFile = open(self.outputDir + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
-        if hasElpLink:
+        if hasElpLink or self.page.node.package.get_exportElp():
             # Export the elp file
             currentPackagePath = Path(self.page.node.package.filename)
             currentPackagePath.copyfile(self.outputDir/self.page.node.package.name+'.elp')
