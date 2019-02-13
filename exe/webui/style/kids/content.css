@@ -144,6 +144,10 @@ text-shadow:0 1px 1px rgba(255, 255, 255, 0.75)
 
 #siteFooter{padding:20px;text-align:center;border:1px solid #aee7d3}
 
+/* Download package iDevice */
+.download-packageIdevice .exe-download-package-link a{background:#468770}
+.download-packageIdevice .exe-download-package-link a:hover,.download-packageIdevice .exe-download-package-link a:focus{background:#e9c34f;color:#000}
+
 /* Lightbox */
 .pp_overlay{filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100)!important;opacity:1!important}
 

@@ -74,6 +74,9 @@ body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;tex
 .objectivesIdevice .iDevice_header{background-image:url(icon_objectives.gif)}
 .ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.gif)}
 
+/* Download package iDevice */
+.download-packageIdevice .exe-download-package-link a{background:#38565F}
+
 .iDevice_content{overflow:auto}
 .iDevice_inner{padding: 10px 20px;border-width:1px;border-style:solid;border-radius:10px}
 /* base.css */

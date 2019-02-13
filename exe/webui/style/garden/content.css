@@ -43,6 +43,8 @@ h3{font-size:1.25em;color:#666}
 #siteFooter{color:#444;font-size:.95em}
 input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 .ExternalUrlIdevice iframe{border:none}
+/* Download package iDevice */
+.download-packageIdevice .exe-download-package-link a{background:#879a6b}
 /* Lightbox */
 .exeImageGallery{width:100%}
 /* base.css */
