@@ -10,10 +10,103 @@ var $exeDevice = {
 	
     // We use eXe's _ function
 	i18n : {
-		name : _('Download content')
+		name : _('Download source file')
 	},
 	
-	warningMessage : '<p class="exe-block-info">'+_('Before adding a download link to your page, please go to the Properties tab and check if the information is right.')+'</p>',
+	warningMessage : '<p class="exe-block-warning">'+_('Before adding a download link to your page, please go to the Properties tab and check if the information is right.')+'</p>',
+	
+	// eXeLicenses
+	eXeLicenses : [
+		[
+			_("creative commons: attribution 4.0"),
+			"by/4.0"
+		],
+		[
+			_("creative commons: attribution - non derived work 4.0"),
+			"by-nd/4.0"
+		],
+		[
+			_("creative commons: attribution - non derived work - non commercial 4.0"),
+			"by-nc-nd/4.0"
+		],
+		[
+			_("creative commons: attribution - non commercial 4.0"),
+			"by-nc/4.0"
+		],
+		[
+			_("creative commons: attribution - non commercial - share alike 4.0"),
+			"by-nc-sa/4.0"
+		],
+		[
+			_("creative commons: attribution - share alike 4.0"),
+			"by-sa/4.0"
+		],
+		[
+			_("creative commons: attribution 3.0"),
+			"by/3.0"
+		],
+		[
+			_("creative commons: attribution - non derived work 3.0"),
+			"by-nd/3.0"
+		],
+		[
+			_("creative commons: attribution - non derived work - non commercial 3.0"),
+			"by-nc-nd/3.0"
+		],
+		[
+			_("creative commons: attribution - non commercial 3.0"),
+			"by-nc/3.0"
+		],
+		[
+			_("creative commons: attribution - non commercial - share alike 3.0"),
+			"by-nc-sa/3.0"
+		],
+		[
+			_("creative commons: attribution - share alike 3.0"),
+			"by-sa/3.0"
+		],
+		[
+			_("creative commons: attribution 2.5"),
+			"by/2.5"
+		],
+		[
+			_("creative commons: attribution - non derived work 2.5"),
+			"by-nd/2.5"
+		],
+		[
+			_("creative commons: attribution - non derived work - non commercial 2.5"),
+			"by-nc-nd/2.5"
+		],
+		[
+			_("creative commons: attribution - non commercial 2.5"),
+			"by-nc/2.5"
+		],
+		[
+			_("creative commons: attribution - non commercial - share alike 2.5"),
+			"by-nc-sa/2.5"
+		],
+		[
+			_("creative commons: attribution - share alike 2.5"),
+			"by-sa/2.5"
+		]
+	],	
+	
+	completeLicense : function(str) {
+		var licenses = this.eXeLicenses;
+		var license;
+		var type;
+		var css;
+		for (let i=0;i<licenses.length;i++) {
+			license = licenses[i];
+			if (license[0]===str) {
+				type = license[1].replace("/"," ").toUpperCase();
+				css = license[1].split("/");
+				css = "cc cc-"+css[0];
+				str = '<a href="https://creativecommons.org/licenses/'+license[1]+'/" rel="license" class="'+css+'"><span></span>Creative Commons '+type+'</a>';
+			}
+		}
+		return str;
+	},
 	
 	init : function(){
 		
@@ -47,7 +140,7 @@ var $exeDevice = {
 
 		var _data4 = top.document.getElementById('pp_newlicense');
 		if (_data4 && _data4.value && _data4.value!="") {
-			data4 = _data4.value;
+			data4 = this.completeLicense(_data4.value);
 		}
 
 		if (data1=='-' && data2=='-' && data3=='-' && data4=='-') {
@@ -77,7 +170,7 @@ var $exeDevice = {
 					</tr>\
 				</tbody>\
 			</table>\
-			<p style="text-align:center">'+_("This content was created with eXeLearning, your Free and Open Source Editor to create Educational Resources.").replace('eXeLearning','<a href="http://exelearning.net/">eXeLearning</a>')+'</p>';
+			<p style="text-align:center">'+_("This content was created with eXeLearning, your free and open source editor to create educational resources.").replace('eXeLearning','<a href="http://exelearning.net/">eXeLearning</a>')+'</p>';
 		
 		var html = '\
 			<div id="eXeDownloadPackageForm">\
@@ -90,7 +183,10 @@ var $exeDevice = {
 						<label for="dpiButtonFontSize" class="dpi-label-col">'+_("Font size")+': </label>\
 						<select id="dpiButtonFontSize">\
 							<option value="1" selected="selected">100%</option>\
-							<option value="1.25">125%</option>\
+							<option value="1.1">110%</option>\
+							<option value="1.2">120%</option>\
+							<option value="1.3">130%</option>\
+							<option value="1.4">140%</option>\
 							<option value="1.5">150%</option>\
 						</select>\
 					</p>\
@@ -140,8 +236,12 @@ var $exeDevice = {
 				
 				// Font size
 				var dpiButtonFontSize = downloadButton.css("font-size");
-				if (dpiButtonFontSize=='1.25em') $("#dpiButtonFontSize").val("1.25");
-				else if (dpiButtonFontSize=='1.5em') $("#dpiButtonFontSize").val("1.5");
+				if (dpiButtonFontSize!="") {
+					dpiButtonFontSize = dpiButtonFontSize.replace("em","");
+					if (dpiButtonFontSize=='1.1' || dpiButtonFontSize=='1.2' || dpiButtonFontSize=='1.3' || dpiButtonFontSize=='1.4' || dpiButtonFontSize=='1.5') {
+						$("#dpiButtonFontSize").val(dpiButtonFontSize);
+					}
+				}
 				
 				// Background color
 				var dpiButtonBGcolor = downloadButton.css("background-color");

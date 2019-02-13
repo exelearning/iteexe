@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <idevice>
-	<title>Download content</title>
+	<title>Download source file</title>
 	<css-class>download-package</css-class>
 	<category>Non-Textual Information</category>
 </idevice>
