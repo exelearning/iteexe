@@ -145,7 +145,7 @@ var $exe = {
 			return false;
 		});
 		// Search form
-		this.clientSearch.init(bod)
+		if (window.DOMParser) this.clientSearch.init(bod); // IE8- do not support the DOMParser object
 		
     },
 	
@@ -270,7 +270,21 @@ var $exe = {
 					var currentNode = $(this);					
 					// Get the node title and HTML
 					var sTitle = currentNode.find('unicode').eq(0).attr("value");
-					results += $exe.clientSearch.getNodeHTML(nodeNo,sTitle,query,currentNode.html().replace(/script/g,"script_"));
+					// Get the content
+					var str = "";
+					try {
+						// This won't work in some old browsers (not even in IE11)
+						str = currentNode.html();
+					} catch(e) {
+						var s = new XMLSerializer();
+						var d = this;
+						str = s.serializeToString(d);
+						var tmp = $("<div></div>");
+						tmp.html(str);
+						var html = $("instance",tmp).eq(0).html();
+						str = html;	
+					}					
+					results += $exe.clientSearch.getNodeHTML(nodeNo,sTitle,query,str.replace(/script/g,"script_"));
 					nodeNo ++;
 				}
 			});

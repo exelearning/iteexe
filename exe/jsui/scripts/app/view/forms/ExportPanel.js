@@ -88,7 +88,7 @@ Ext.define('eXe.view.forms.ExportPanel', {
                                 inputValue: true,
                                 uncheckedValue: false,
                                 dirtyCls: 'property-form-dirty',
-                                tooltip: _('Checking this option, a search box will be added to every page. The "%" option has to be checked too. It will only work if JavaScript is enabled.').replace("%",_('Create editable export?'))
+                                tooltip: _('Checking this option, a search box will be added to every page. The "%" option has to be checked too. It will only work if JavaScript is enabled, and only in modern browsers.').replace("%",_('Create editable export?'))
                             },
                             flex: 0,
                             help: _('Checking this option, a search box will be added to every page. The "%" option has to be checked too. It will only work if JavaScript is enabled.').replace("%",_('Create editable export?'))
