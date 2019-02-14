@@ -941,6 +941,23 @@ var $exeAuthoring = {
             $exeAuthoring.iDevice.colorPicker.init();
             
         },
+
+        // Save the iDevice
+        save : function() {
+            // Check if the object and the required methods are defined
+            if (typeof($exeDevice) != 'undefined' && typeof($exeDevice.init) != 'undefined' && typeof($exeDevice.save) != 'undefined') {
+                var myLink = $("#exe-submitButton a").eq(0);
+                var onclick = myLink.attr("onclick");
+                var html = $exeDevice.save();
+                if (html) {
+                    $("textarea.mceEditor, textarea.jsContentEditor").val(html);
+                    // Execute the IMG default behavior if everything is OK
+                    eval(onclick);
+                }
+            }
+
+        },
+
         colorPicker : {
             init : function(){
                 var colorFields = $(".exe-color-picker");

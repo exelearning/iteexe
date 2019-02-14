@@ -1511,10 +1511,17 @@ Ext.define('eXe.controller.Toolbar', {
         var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
         if (authoring && authoring.getContentForm) {
 		    var theForm = authoring.getContentForm();
-		    if (theForm)
-		        theForm.submit();
+            if (theForm) {
+                try {
+                    $exeAuthoring.iDevice.save();
+                } catch(e) {
+                    console.warn("Error saving iDevice");
+                }
+
+                theForm.submit();
+            }
         }
-	},
+    },
 
     askDirty: function(nextStep) {
     	this.checkDirty(nextStep, 'eXe.app.getController("Toolbar").askSave("'+nextStep+'")');
