@@ -1058,6 +1058,11 @@ var $exeAuthoring = {
                 $exeAuthoring.changeFlowPlayerPathInIE();
             }
             eXe.app.fireEvent('authoringLoaded');
+			// Links to the elp file won't work before exporting
+			$("a[href='exe-package:elp']").click(function(){
+				eXe.app.alert(_('Go to Tools - Preview to see this working'));
+				return false;
+			});
         }
     }
 }

@@ -39,6 +39,8 @@ input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1
 #lbOverlay{background-color:#f3f3f3}
 #lbOuterContainer{border-color:#ddd}
 .ExternalUrlIdevice iframe{border:none}
+/* Download package iDevice */
+.download-packageIdevice .exe-download-package-link a{background:#b50536}
 /* base.css */
 .block,.feedback{padding:0}
 .feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}

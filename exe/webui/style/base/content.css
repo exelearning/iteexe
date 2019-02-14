@@ -90,6 +90,9 @@ input,select{font-size:1em;font-family:inherit}
 #packageLicense.cc-0{background-position:0 -500px}
 #siteFooter{padding:20px}
 
+/* Download package iDevice */
+.download-packageIdevice .exe-download-package-link a{background:#333}
+
 /* Lightbox */
 .lightboxOverlay{filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=95);opacity:0.95}
 #lightbox .lb-caption{font-size:1em}

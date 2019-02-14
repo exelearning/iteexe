@@ -323,7 +323,7 @@ class WebsiteExport(object):
             langGameFile = open(outputDir + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
-        if hasElpLink:
+        if hasElpLink or package.get_exportElp():
             # Export the elp file
             currentPackagePath = Path(package.filename)
             currentPackagePath.copyfile(outputDir/package.name+'.elp')

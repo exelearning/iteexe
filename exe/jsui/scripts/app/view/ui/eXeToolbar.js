@@ -410,13 +410,13 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             xtype: 'accesskey_menuitem',
                                             itemId: 'file_insert',
                                             accesskey: 'i',
-                                            text: _('Insert Package')
+                                            text: _('Insert elp in the current page')
                                         },
                                         {
                                             xtype: 'accesskey_menuitem',
                                             itemId: 'file_extract',
                                             accesskey: 'e',
-                                            text: _('Extract Package')
+                                            text: _('Export the current page as elp')
                                         }
                                     ]
                                 }

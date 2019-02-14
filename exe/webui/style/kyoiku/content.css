@@ -295,6 +295,11 @@ select {
 	color:#4E4E4E;
 }
 
+/* Download package iDevice */
+.download-packageIdevice .exe-download-package-link a{
+	background:#627796
+}
+
 /* IDEVICE SITIO EXTERNO SITIO WEB */
 iframe {
 	border:1px solid #000;
