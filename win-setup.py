@@ -155,7 +155,7 @@ opts = {
             "chardet",
             "lxml",
             "feedparser",
-            "BeautifulSoup",
+            "bs4",
             "BaseHTTPServer",
             "oauthlib",
             "webassets",

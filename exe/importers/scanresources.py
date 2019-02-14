@@ -24,7 +24,7 @@ from chardet import universaldetector
 from chardet import latin1prober
 import re
 import sys
-from BeautifulSoup import BeautifulSoup, UnicodeDammit
+from bs4 import BeautifulSoup, UnicodeDammit
 from urllib import quote, unquote
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.engine.resource import Resource
@@ -275,38 +275,39 @@ class Resources:
                 self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_(u'Analyzing HTML file labels %d of %d: %s') % (i, total, str(url)))
             content = open(url.path).read()
             encoding = detect(content)['encoding']
-            ucontent = unicode(content,encoding)
-            soup = BeautifulSoup(ucontent,fromEncoding=encoding)
-            declaredHTMLEncoding = getattr(soup, 'declaredHTMLEncoding')
+            #ucontent = unicode(content,encoding)
+            soup = BeautifulSoup(content,from_encoding=encoding)
+            declaredHTMLEncoding = getattr(soup, 'declared_html_encoding')
             if declaredHTMLEncoding:
-                ucontent = UnicodeDammit(content,[declaredHTMLEncoding]).unicode
+                content = UnicodeDammit(content,[declaredHTMLEncoding]).unicode_markup
                 encoding = declaredHTMLEncoding
             else:
                 pass
-            url.setContent(ucontent,encoding)
+            url.setContent(content,encoding)
             url.setSoup(soup)
-            for tag in soup.findAll():
+            for tag in soup.find_all():
                 if self.cancel:
                     return
                 if not tag.attrs:
                     continue
                 matches = []
-                for key, value in tag.attrs:
+                for key, value in tag.attrs.iteritems():
                     if value == "":
                         continue
-                    unq_value = unquote(value)
-                    unq_low_value = unquote(value.lower())
-                    for l, rl in self.resources['urls'][url.parentpath].relpaths:
-                        low_rl = rl.lower()
-                        if rl in unq_value:
-                            L = Link(self.resources['urls'][l],rl,url,tag,key,rl)
-                            matches.append(L)
-                        elif low_rl in unq_value:
-                            L = Link(self.resources['urls'][l],rl,url,tag,key,low_rl)
-                            matches.append(L)
-                        elif l in unq_value:
-                            L = Link(self.resources['urls'][l],rl,url,tag,key,l)
-                            matches.append(L)
+                    for val in value:
+                        unq_value = unquote(val)
+                        unq_low_value = unquote(val.lower())
+                        for l, rl in self.resources['urls'][url.parentpath].relpaths:
+                            low_rl = rl.lower()
+                            if rl in unq_value:
+                                L = Link(self.resources['urls'][l],rl,url,tag,key,rl)
+                                matches.append(L)
+                            elif low_rl in unq_value:
+                                L = Link(self.resources['urls'][l],rl,url,tag,key,low_rl)
+                                matches.append(L)
+                            elif l in unq_value:
+                                L = Link(self.resources['urls'][l],rl,url,tag,key,l)
+                                matches.append(L)
                 matches_final = []
                 for l1 in matches:
                     matches_ = [ m for m in matches if m != l1 ]

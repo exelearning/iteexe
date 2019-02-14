@@ -25,7 +25,7 @@ A Wikipedia Idevice is one built from a Wikipedia article.
 
 import re
 import mimetypes
-from BeautifulSoup            import BeautifulSoup, Comment
+from bs4            import BeautifulSoup, Comment
 from exe.engine.idevice       import Idevice
 from exe.engine.field         import TextAreaField
 from exe.engine.translate     import lateTranslate
@@ -115,8 +115,8 @@ within Wikipedia.""")
         # cleanup was causing a "concatenating Null+Str" error,
         # and Wikipedia's HTML doesn't need cleaning up.
         # BeautifulSoup is faster this way too.
-        soup = BeautifulSoup(page, False)
-        content = soup.first('div', {'id': "content"})
+        soup = BeautifulSoup(page, 'lxml')
+        content = soup.find('div', attrs={'id': 'content'})
         # Fix bug #1359: El estilo ITE no respeta ancho de página al exportar
         # a páginas web si se usa iDevice wikipedia
         content['id'] = "wikipedia-content"
@@ -124,19 +124,19 @@ within Wikipedia.""")
         # remove the wiktionary, wikimedia commons, and categories boxes
         # and the protected icon and the needs citations box
         if content:
-            infoboxes = content.findAll('div', {'class' : 'infobox sisterproject'})
+            infoboxes = content.find_all('div', {'class' : 'infobox sisterproject'})
             [infobox.extract() for infobox in infoboxes]
-            catboxes = content.findAll('div', {'id' : 'catlinks'})
+            catboxes = content.find_all('div', {'id' : 'catlinks'})
             [catbox.extract() for catbox in catboxes]
-            amboxes = content.findAll('table', {'class' : re.compile(r'.*\bambox\b.*')})
+            amboxes = content.find_all('table', {'class' : re.compile(r'.*\bambox\b.*')})
             [ambox.extract() for ambox in amboxes]
-            protecteds = content.findAll('div', {'id' : 'protected-icon'})
+            protecteds = content.find_all('div', {'id' : 'protected-icon'})
             [protected.extract() for protected in protecteds]
             # Extract HTML comments
-            comments = content.findAll(text=lambda text:isinstance(text, Comment))
+            comments = content.find_all(text=lambda text:isinstance(text, Comment))
             [comment.extract() for comment in comments]
         else:
-            content = soup.first('body')
+            content = soup.body
 
         # If we still don't have content it means there is a problem with the article
         if not content:
@@ -159,7 +159,7 @@ within Wikipedia.""")
         tmpDir = TempDirPath()
         
         # Fetch all images from content
-        for imageTag in content.fetch('img'):
+        for imageTag in content.find_all('img'):
             # Get src and image filename
             imageSrc  = unicode(imageTag['src'])
             imageName = imageSrc.split('/')[-1]
@@ -213,7 +213,7 @@ within Wikipedia.""")
                     # so reset the imageName accordingly for the content:
                     imageName = new_resource._storageName
                 self.images[imageName] = True
-            imageTag['src'] = u"resources/" + imageName
+            imageTag.src = u"resources/" + imageName
         self.article.content = self.reformatArticle(netloc, unicode(content))
         # now that these are supporting images, any direct manipulation
         # of the content field must also store this updated information
@@ -278,12 +278,12 @@ within Wikipedia.""")
         # option title for Wikipedia, with mode emphasis:
         title = i.find(name='h2', attrs={'class' : 'iDeviceTitle' })
         if title is not None: 
-            self.title = title.renderContents().decode('utf-8')
+            self.title = title.encode_contents().decode('utf-8')
             self.emphasis=Idevice.SomeEmphasis
 
         wiki = i.find(name='div', attrs={'id' : re.compile('^ta') })
         self.article.content_wo_resourcePaths = \
-                wiki.renderContents().decode('utf-8')
+                wiki.encode_contents().decode('utf-8')
         # and add the LOCAL resource paths back in:
         self.article.content_w_resourcePaths = \
                 self.article.MassageResourceDirsIntoContent( \

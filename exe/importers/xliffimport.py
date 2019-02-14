@@ -20,7 +20,7 @@
 
 
 import logging
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 
 log = logging.getLogger(__name__)
 
@@ -51,7 +51,7 @@ class XliffImport(object):
         file_obj.close()
         
         # We go through all trans-units in the tree
-        for transunit in xml_tree.findAll('trans-unit'):
+        for transunit in xml_tree.find_all('trans-unit'):
             # Get the ID
             item_id = transunit.get('id', None)
             

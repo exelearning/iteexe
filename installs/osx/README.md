@@ -64,7 +64,7 @@ $ pip install suds
 $ pip install requests-oauthlib
 $ pip install python-dateutil
 $ pip install httplib2
-$ pip install BeautifulSoup
+$ pip install beautifulsoup4
 $ pip install feedparser
 $ pip install oauthlib
 $ pip install webassets

@@ -281,7 +281,7 @@ you created in Geogebra.</p>""")
         3 download and store them into the exe project (absolute urls are required).
         Return the code modified.
         """
-        from BeautifulSoup import BeautifulSoup, BeautifulStoneSoup
+        from bs4 import BeautifulSoup, BeautifulStoneSoup
         import re
         import urllib
         import urllib2
@@ -301,7 +301,7 @@ you created in Geogebra.</p>""")
             if string.find(stringapplet, x) != -1:
                 expression = r"%s'([\w\./]+)'" % x
                 patron = re.compile(expression)
-                for tag in soup.findAll('param'):
+                for tag in soup.find_all('param'):
                     result = patron.search(tag['value'])
                     if result:
                         if result.group(1) not in imageslist:
@@ -371,7 +371,7 @@ you created in Geogebra.</p>""")
             if string.find(stringapplet, x) != -1:
                 expression = r"%s'ma[ck]ro'" % x
                 patron = re.compile(expression)
-                for tag in soup.findAll('param'):
+                for tag in soup.find_all('param'):
                     result = patron.search(tag['value'])
                     if result:
                     # tipo = macro or makro finded, now we need expresion parameter inside value tag                               
@@ -432,7 +432,7 @@ you created in Geogebra.</p>""")
         html = ""
         if not filename.endswith(".jar"):
             if filename.endswith(".html") or filename.endswith(".htm"):
-                from BeautifulSoup import BeautifulSoup, BeautifulStoneSoup   
+                from bs4 import BeautifulSoup, BeautifulStoneSoup   
                 import urllib2
                 if filename.find(",") == -1:    
                     # firstly verify the URL is reachable, or come back:
@@ -450,7 +450,7 @@ you created in Geogebra.</p>""")
                 soup = BeautifulSoup(content)
                 i = 0
                 appletslist = []
-                for ap_old in soup.findAll("applet",{"code":"Descartes.class"}):
+                for ap_old in soup.find_all("applet",{"code":"Descartes.class"}):
                     for resource in reversed(self.userResources):
                         if resource._storageName != ap_old["archive"]:
                             resource.delete()
@@ -458,14 +458,14 @@ you created in Geogebra.</p>""")
                     DESC_PLUGIN = 0
                     ap_old["codebase"] = "./"
                     appletslist.append(ap_old)   
-                for ap_new in soup.findAll("applet",{"code":"descinst.Descartes.class"}):
+                for ap_new in soup.find_all("applet",{"code":"descinst.Descartes.class"}):
                     DESC_PLUGIN = 1
                     for resource in reversed(self.userResources):
                         if resource._storageName != 'descinst.jar':
                             resource.delete()
                     ap_new["codebase"] = "./"
                     appletslist.append(ap_new)
-                for ap_supernew in soup.findAll("applet",{"code":"descinst.DescartesWeb2_0.class"}):
+                for ap_supernew in soup.find_all("applet",{"code":"descinst.DescartesWeb2_0.class"}):
                     DESC_PLUGIN = 1
                     for resource in reversed(self.userResources):
                         if resource._storageName != 'descinst.jar':

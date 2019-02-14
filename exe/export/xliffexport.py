@@ -21,7 +21,7 @@
 import codecs
 from types import UnicodeType, StringType
 
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 
 CDATA_BEGIN = u"<![CDATA["
 CDATA_END = u"]]>"
@@ -65,10 +65,14 @@ class ContentEscaper(BeautifulSoup):
         # Repace special chars with their HTML codes
         # Note: The order is important, if this is updated, xliffimport.py should be aswell
         data_end = data.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;')
-        self.currentData.append(data_end)
+        #if hasattr(self, "currentData"):
+        try:
+            self.currentData.append(data_end)
+        except:
+            self.current_data.append(data_end)
 
 def escape_content(content):
-    html = ContentEscaper(content, convertEntities='xhtml')      
+    html = ContentEscaper(content)      
     return html.__unicode__()
 
 class XliffExport(object):
