@@ -143,10 +143,10 @@ Ext.define('eXe.controller.Outline', {
         var contextMenu = new Ext.menu.Menu({
 		  items: [
             {
-			    text: _('Insert Package'),
+			    text: _('Insert elp in this page'),
 			    handler: this.getController('Toolbar').insertPackage
 		    },{
-			    text: _('Extract Package'),
+			    text: _('Export this page as elp'),
 			    handler: this.getController('Toolbar').extractPackage
             }
           ]

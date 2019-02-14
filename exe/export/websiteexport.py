@@ -244,6 +244,7 @@ class WebsiteExport(object):
         hasFX             = False
         hasSH             = False
         hasGames          = False
+        hasElpLink        = False
         hasWikipedia      = False
         isBreak           = False
         hasInstructions   = False
@@ -256,7 +257,7 @@ class WebsiteExport(object):
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips and hasABCMusic):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasElpLink and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips and hasABCMusic):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -276,6 +277,8 @@ class WebsiteExport(object):
                     hasSH = common.ideviceHasSH(idevice)
                 if not hasGames:
                     hasGames = common.ideviceHasGames(idevice)
+                if not hasElpLink:
+                    hasElpLink = common.ideviceHasElpLink(idevice,package)
                 if not hasWikipedia:
                     if 'WikipediaIdevice' == idevice.klass:
                         hasWikipedia = True
@@ -320,6 +323,10 @@ class WebsiteExport(object):
             langGameFile = open(outputDir + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
+        if hasElpLink or package.get_exportElp():
+            # Export the elp file
+            currentPackagePath = Path(package.filename)
+            currentPackagePath.copyfile(outputDir/package.name+'.elp')
         if hasABCMusic:
             pluginScripts = (self.scriptsDir/'tinymce_4/js/tinymce/plugins/abcmusic/export')
             pluginScripts.copyfiles(outputDir)

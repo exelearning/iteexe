@@ -237,7 +237,8 @@ class Application:
             '.ods': 'application/vnd.oasis.opendocument.spreadsheet',
             '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
             '.pptx': 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-            '.xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+            '.xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            '.elp': 'application/zip'
         })
 
     def serve(self):

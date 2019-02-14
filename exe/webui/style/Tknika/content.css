@@ -328,6 +328,11 @@ table{
 	background:#FFF
 }
 
+/* Download package iDevice */
+.download-packageIdevice .exe-download-package-link a{
+	background:#4d4d4d
+}
+
 @media (max-width: 700px) {
 	#main .iDeviceTitle{
 	font-size: 1.4em;		

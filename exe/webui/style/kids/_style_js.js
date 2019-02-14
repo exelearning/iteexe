@@ -117,9 +117,8 @@ var myTheme = {
 }
 
 $(function(){
-    var c = document.body.className;
-    if (c=='exe-web-site js') {
+    if ($("body").hasClass("exe-web-site")) {
         myTheme.init();
     }
-    myTheme.setIcons(c);
+    myTheme.setIcons(document.body.className);
 });

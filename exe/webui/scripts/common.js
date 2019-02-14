@@ -28,9 +28,9 @@ if (typeof($exe_i18n)=='undefined') $exe_i18n={previous:"Previous",next:"Next",s
 var $exe = {
 	
     init: function() {
-        var e = document.body.className;
+        var bod = $('body');
         $exe.addRoles();
-        if (e != "exe-single-page js") {
+        if (!bod.hasClass("exe-single-page")) {
             var t = $exe.isIE();
             if (t) {
                 if (t > 7) $exe.iDeviceToggler.init()
@@ -40,14 +40,14 @@ var $exe = {
 		this.setMultimediaGalleries();
 		this.setModalWindowContentSize(); // To review
 		// No MediaElement in ePub3
-		if (e.indexOf("exe-epub3") != 0) {
+		if (!bod.hasClass("exe-epub3")) {
             var n = document.body.innerHTML;
             if (this.hasMultimediaGalleries || $(".mediaelement").length>0) {
                 $exe.loadMediaPlayer.getPlayer();
             }
         } else {
 			// No inline SCRIPT tags in ePub (due to Chrome app Content Security Policy)
-			document.body.className += ' js';
+			bod.addClass("js");
 		}
         $exe.hint.init();
         $exe.setIframesProperties();
@@ -144,8 +144,196 @@ var $exe = {
 			}
 			return false;
 		});
+		// Search form
+		if (window.DOMParser) this.clientSearch.init(bod); // IE8- do not support the DOMParser object
 		
     },
+	
+	clientSearch : {
+		
+		init : function(bod){
+			// Search form
+			if (bod.hasClass("exe-web-site") && bod.hasClass("exe-search-bar")) {
+				$.ajax({
+					type: "GET",
+					url: "contentv3.xml",
+					dataType: "xml",
+					success: function(xml){
+						$exe.clientSearch.main = $("#main");
+						$exe.contentv3 = xml;
+						var sF = '<div id="exe-client-search">\
+							<form id="exe-client-search-form" action="#" method="GET">\
+								<p><label for="exe-client-search-text" class="sr-av">'+$exe_i18n.fullSearch+': </label><input type="text" id="exe-client-search-text" /> \
+								<input type="submit" id="exe-client-search-submit" value="'+$exe_i18n.search+'" />\
+								<a href="#main" id="exe-client-search-reset" title="'+$exe_i18n.hideResults+'"><span>'+$exe_i18n.hideResults+'</span></a></p>\
+							</form>\
+						</div>\
+						<div id="exe-client-search-results"></div>';                        
+						$exe.clientSearch.main.prepend(sF);
+                        $("#exe-client-search-form").submit(function(){
+							$exe.clientSearch.search($("#exe-client-search-text").val());
+							return false;
+						});
+						$("#exe-client-search-text").prop("placeholder",$exe_i18n.fullSearch+"...");
+						$("#exe-client-search-reset").click(function(){
+							$("#exe-client-search-text").val("")
+							$exe.clientSearch.search("");
+							return false;
+						});						
+						$exe.clientSearch.results = $("#exe-client-search-results");
+						$exe.clientSearch.results.css("min-height",$exe.clientSearch.main.height()+"px");
+						$("#skipNav").append(' <a href="#exe-client-search-text" id="exe-client-search-lnk" class="sr-av">'+$exe_i18n.fullSearch+'</a>');
+						$("#exe-client-search-lnk").click(function(){
+							$("#exe-client-search-text").focus();
+							return false;
+						});
+					},
+					error: function() {
+						
+					}
+				});
+			}			
+		},
+		
+		strip : function(html) {
+			var regex = /(<([^>]+)>)/ig
+			html = html.replace(regex, "");
+			html = html.replace(/</g, "&lt;");
+			html = html.replace(/>/g, "&gt;");
+			return html;
+		},		
+		
+		getNodeHTML : function(nodeNo,sTitle,query,html) {
+		
+			query = query.toLowerCase();
+		
+			// Create a tmp wprapper
+			var div = $("<div />");
+			
+			// Fill it
+			div.html(html);
+			
+			// Remove the nested nodes (children nodes)
+			$("instance",div).each(function(){
+				if ($(this).attr("class")=="exe.engine.node.Node") {
+					$(this).remove();
+				}
+			});
+			
+			// Get the content of those iDevices
+			var res = "";
+			var currHTML;
+			var as = $("#siteNav a");
+			var currTit = sTitle.toLowerCase();
+			div.find('unicode').each(function(){
+				if ($(this).attr("content")=="true") {
+					currHTML = $(this).attr("value");
+					if (typeof currHTML=='string') currHTML = $exe.clientSearch.strip(currHTML);
+					if (currTit.indexOf(query)!=-1 || currHTML.toLowerCase().indexOf(query)!=-1) {
+						var a = as.eq(nodeNo);
+						if (a.length==1) {
+							if (currHTML=="") currHTML = "...";
+							else res += '<li><strong><a href="'+a.attr("href")+'" class="exe-client-search-result-link">'+sTitle+'</a> &rarr; </strong><span class="exe-client-search-result-detail">'+currHTML+"</span></li>";
+						}					
+					}
+				}
+			});
+
+			return res;		
+		},	
+
+		splitByWords : function (text, startFrom, lengthFrom) {
+			var len = text.length,
+				re = /[ ,.]/, // Search any of those characters
+				fr = (startFrom <= 0) ? 0 : text.substr(startFrom).search(re) + startFrom + 1,
+				to = (lengthFrom >= len) ? len : text.substr(lengthFrom).search(re) + lengthFrom;
+
+				// If we don't find any character
+				if (fr === -1) fr = 0;
+				if (to === (lengthFrom -1)) to = len;
+				
+				return text.substr(fr, to);
+		},		
+		
+		search : function(query){
+			if (query.length<3) {
+				$("body").removeClass("exe-client-search-results");
+				return;
+			}
+			var xml = $exe.contentv3;
+			var nodeNo = 0;
+			$("body").addClass("exe-client-search-results");
+			$exe.clientSearch.results.html("");
+			var results = "";
+			$(xml).find('instance').each(function(){
+				if ($(this).attr("class")=="exe.engine.node.Node") {
+					var currentNode = $(this);					
+					// Get the node title and HTML
+					var sTitle = currentNode.find('unicode').eq(0).attr("value");
+					// Get the content
+					var str = "";
+					try {
+						// This won't work in some old browsers (not even in IE11)
+						str = currentNode.html();
+					} catch(e) {
+						var s = new XMLSerializer();
+						var d = this;
+						str = s.serializeToString(d);
+						var tmp = $("<div></div>");
+						tmp.html(str);
+						var html = $("instance",tmp).eq(0).html();
+						str = html;	
+					}					
+					results += $exe.clientSearch.getNodeHTML(nodeNo,sTitle,query,str.replace(/script/g,"script_"));
+					nodeNo ++;
+				}
+			});
+			if (results!="") {
+				results = '<p>'+$exe_i18n.searchResults.replace("%","<strong>"+query+"</strong>")+':</p><ul>' + results + '</ul>';
+				$exe.clientSearch.results.html(results);
+				// Underline the search text in the title
+				$(".exe-client-search-result-link",$exe.clientSearch.results).html(function(_, html) {
+					html = html.replace(/script_/g,"script");
+					var re = new RegExp('('+query+')',"gi");
+					return  html.replace(re, '<span class="exe-client-search-result">$1</span>');
+				});
+				$(".exe-client-search-result-detail",$exe.clientSearch.results).each(function(i){
+					// Add a "Read more" link if needed
+					var max = 200;
+					var c = $(this).text();
+						c = $exe.clientSearch.strip(c); // This will prevent some JavaScript code to be executed
+					var n = "";
+					if (c.length>(max+100)) {
+						var start = $exe.clientSearch.splitByWords(c,0,max);
+						var end = c.replace(start," ");
+						n += start;
+						n += '<a href="#exe-client-search-text-'+i+'" title="'+$exe_i18n.more+'" class="exe-client-search-read-more">[&hellip;]</a>';
+						n += '<span class="js-hidden" id="exe-client-search-text-'+i+'">';
+						n += end;
+						n += '</span>';
+						this.innerHTML = n;
+					}
+					// Underline the search text in the HTML
+					$(this).html(function(_, html) {
+						html = html.replace(/script_/g,"script");
+						var re = new RegExp('('+query+')',"gi");
+						return  html.replace(re, '<span class="exe-client-search-result">$1</span>');
+					});
+				});
+				// Make the "Read more" link work
+				$(".exe-client-search-read-more").click(function(){
+					var e = $(this);
+					$(e.attr("href")).fadeIn();
+					e.remove();
+					return false;
+				});
+			} else {
+				// No results for that search
+				$exe.clientSearch.results.html('<p>'+$exe_i18n.noSearchResults.replace("%","<strong>"+query+"</strong>")+'</p>')
+			}
+		}
+		
+	},
 	
 	// Modal Window: Height problem in some browsers #328
 	setModalWindowContentSize : function(){

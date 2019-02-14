@@ -250,7 +250,7 @@ class PropertiesPage(Renderable, Resource):
     name = 'properties'
 
     booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile', 'pp_scowsinglepage', 'pp_scowwebsite', 'pp_exportSource',
-                         'pp_intendedEndUserRoleGroup', 'pp_intendedEndUserRoleTutor', 'pp_compatibleWithVersion9', 'pp_addPagination')
+                         'pp_intendedEndUserRoleGroup', 'pp_intendedEndUserRoleTutor', 'pp_compatibleWithVersion9', 'pp_addPagination', 'pp_addSearchBox', 'pp_exportElp')
 
     imgFieldNames = ('pp_backgroundImg')
 
@@ -280,7 +280,8 @@ class PropertiesPage(Renderable, Resource):
             if hasattr(obj, name):
                 return obj, name
             else:
-                if fieldId in ['pp_scowsinglepage', 'pp_scowwebsite', 'pp_exportSource']:
+                # If attributes don't exist, initialize them with value 'False'
+                if fieldId in ['pp_scowsinglepage', 'pp_scowwebsite', 'pp_exportSource', 'pp_addSearchBox', 'pp_exportElp']:
                     setattr(obj, name, False)
                     return obj, name
 

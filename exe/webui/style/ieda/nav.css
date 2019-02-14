@@ -251,3 +251,6 @@ position:absolute;
 	clip:rect(0,0,0,0);
 	height:0;
 }
+
+/* Search bar */
+#exe-client-search-form{margin-top:-1em}

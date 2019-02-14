@@ -600,6 +600,10 @@ El título se utiliza para el efecto superior derecho
 	top: -55px;
 }
 
+/* Download package iDevice */
+#main .exe-download-package-link a{
+	background:#8b8b8b
+}
 
 
 /*

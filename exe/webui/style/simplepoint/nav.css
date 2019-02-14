@@ -11,7 +11,7 @@ html,body{margin:0;padding:0;text-align:center;background:#FFF}
 #siteFooter{position:fixed;bottom:0;width:100%}
 .page-counter{position:fixed;color:#FFF;z-index:999;bottom:15px;right:60px;font-size:.9em;display:inline-block;margin:0 auto}
 .page-counter-label{display:none}
-/*.no-nav #siteFooter{padding-left:20px}*/
+
 @media all and (min-width: 700px) {
     #packageLicense{position:fixed;bottom:50px;right:0;width:100%;padding:0;text-indent:20px}
     #packageLicense.cc{width:80px;height:15px;padding:0;;right:10px;bottom:60px}
@@ -64,6 +64,11 @@ html[xmlns] #content{display:block}
 #info-toggler a{background-position:-50px 0}
 #nav-toggler span,.pagination a span,#nodeDecoration,#info-toggler span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 
+/* Search bar */
+#exe-client-search-form{margin-top:10px}
+#exe-client-search-text{border-color:#e3e3e3}
+#exe-client-search-submit{border-color:#e3e3e3;background:#e3e3e3}
+
 @media screen and (min-width: 701px) and (max-width: 1015px) {
 	#siteNav{width:230px}
 	#main-wrapper{padding-left:250px}
@@ -96,4 +101,6 @@ html[xmlns] #content{display:block}
 	#nav-toggler a{width:100%;height:auto;background:none;background:#F9F9F9;color:#333;border-bottom:1px solid #e3e3e3;line-height:2.3em;font-weight:bold;letter-spacing:1px}
 	#nav-toggler a:hover{background:#F0F0F0;text-decoration:none;text-shadow:1px 1px 1px #fff}		
 	#nav-toggler a:focus{text-decoration:none}
+	#exe-client-search-form{margin-top:2em}
+	.exe-search-bar #siteNav{margin-bottom:0}
 }

@@ -31,6 +31,11 @@ var $appVars = [
 	['contentBGURL',');',21],
 	['contentBGPosition',13,20],
 	['contentBGRepeat',9,18],
+	// fieldset #3
+	['searchBarBGColor',6,12],
+	['searchBarTextColor',6,7],
+	['searchBarButtonBGColor',6,12],
+	['searchBarButtonTextColor',6,7],
 	
 	// Header and footer tab
 	// fieldset #1
@@ -745,6 +750,12 @@ var $app = {
 		var contentBGURL = $app.removeLocalPath("contentBGURL",mode);
 		var contentBGPosition = $("#contentBGPosition").val();
 		var contentBGRepeat = $("#contentBGRepeat").val();
+		
+		// Search bar
+		var searchBarBGColor = $("#searchBarBGColor").val();
+		var searchBarTextColor = $("#searchBarTextColor").val();
+		var searchBarButtonBGColor = $("#searchBarButtonBGColor").val();
+		var searchBarButtonTextColor = $("#searchBarButtonTextColor").val();
 
 		// body (content.css)
 		var fontFamily = $("#fontFamily").val();
@@ -889,6 +900,22 @@ var $app = {
 					//navCSS += "box-shadow:none;";
 				}
 			navCSS+="}";
+		}
+		
+		if (searchBarBGColor!="" || searchBarTextColor!="" || searchBarButtonBGColor!="" || searchBarButtonTextColor!="") {
+			if (searchBarBGColor!="" || searchBarTextColor!="" || searchBarButtonBGColor!="") {
+				navCSS+="#exe-client-search-text{";
+					if (searchBarBGColor!="") navCSS+="/*searchBarBGColor*/background:#"+searchBarBGColor+";";
+					if (searchBarTextColor!="") navCSS+="/*searchBarTextColor*/color:#"+searchBarTextColor+";";
+					if (searchBarButtonBGColor!="") navCSS+="border-color:#"+searchBarButtonBGColor+";";
+				navCSS+="}";
+			}
+			if (searchBarButtonTextColor!="" || searchBarButtonBGColor!="") {
+				navCSS+="#exe-client-search-submit{";
+					if (searchBarButtonBGColor!="") navCSS+="/*searchBarButtonBGColor*/background:#"+searchBarButtonBGColor+";border-color:#"+searchBarButtonBGColor+";";
+					if (searchBarButtonTextColor!="") navCSS+="/*searchBarButtonTextColor*/color:#"+searchBarButtonTextColor+";";
+				navCSS+="}"
+			}
 		}
 		
 		var nav2BGColor = $("#nav2BGColor").val();

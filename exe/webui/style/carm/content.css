@@ -272,6 +272,11 @@ de la jerarquía de contenidos que crearemos con eXe */
     background:url(inf_izq_reflection.gif) no-repeat 0 bottom;
 }
 
+/* Download package iDevice */
+.download-packageIdevice .exe-download-package-link a{
+	background:#BE4D4C
+}
+
 /* Retroalimentaciones */
 .feedback {
 	border:1px dashed #4E4E4E;

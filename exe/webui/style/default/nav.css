@@ -49,6 +49,10 @@ html[xmlns] #content{display:block}
 .no-nav #main-wrapper,.no-nav #bottomPagination,.no-nav #siteFooter{padding-left:20px}
 .no-nav #content{background-image:none}
 
+#exe-client-search-form{margin-top:10px}
+#exe-client-search-text{border-color:#568d14}
+#exe-client-search-submit{border-color:#568d14;background:#568d14;color:#fff}
+
 /* IE6 */
 * html #content{width:99%;margin:0 auto}
 * html #main{width:auto}
@@ -78,4 +82,5 @@ html[xmlns] #content{display:block}
 	#bottomPagination .page-counter{position:absolute;width:50%;left:25%;text-align:center;margin:0;font-weight:normal}
 	#bottomPagination .prev{position:absolute;left:10px;margin-left:0}
 	#nav-toggler a,#nav-toggler a:focus{display:inline-block;padding:4px;width:80%;color:#fff;font-variant:small-caps;letter-spacing:1px;outline:none;text-decoration:none}
+	#exe-client-search-form{text-align:center}
 }

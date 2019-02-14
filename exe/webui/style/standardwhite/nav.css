@@ -71,4 +71,5 @@ html[xmlns] #content{display:block}
 	#bottomPagination .prev{position:absolute;left:0}
 	#bottomPagination .page-counter{position:absolute;width:50%;left:25%;text-align:center;margin:0;font-weight:normal}
 	#nav-toggler a,#nav-toggler a:focus{display:inline-block;padding:4px;width:80%;color:#4E4E4E;font-variant:small-caps;letter-spacing:1px;outline:none;text-decoration:none}
+	#exe-client-search-form{text-align:center}
 }

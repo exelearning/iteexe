@@ -41,6 +41,7 @@ h3{font-size:1.25em;color:#666}
 .ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.gif)}
 
 .iDeviceTitle{top:0;color:#039;height:auto!important;height:1.5em;min-height:1.5em;padding-right:30px;text-shadow:1px 1px 1px #fff}
+.iDevice_header_noIcon .iDeviceTitle{padding-left:20px}
 #main .iDeviceTitle{*display:inline;*line-height:3em}/* IE6, IE7 */
 .iDevice_content{overflow:auto}
 .iDevice_inner{padding:10px 20px}
@@ -48,6 +49,8 @@ h3{font-size:1.25em;color:#666}
 #siteFooter{color:#555;font-size:.95em}
 input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 .ExternalUrlIdevice iframe{border:none}
+/* Download package iDevice */
+.download-packageIdevice .exe-download-package-link a{background:#039}
 /* Lightbox */
 .exeImageGallery{width:100%}
 /* base.css */

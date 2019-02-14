@@ -31,6 +31,7 @@ from exe.engine.path           import Path
 from exe.webui.blockfactory    import g_blockFactory
 from exe.engine.error          import Error
 from cgi                       import escape
+from BeautifulSoup             import BeautifulSoup
 import re
 
 htmlDocType=''
@@ -628,7 +629,13 @@ def getJavaScriptStrings(addTag = True):
     s += 'epubJSerror:"'+c_("This might not work in this ePub reader.")+'",'
     s += 'epubDisabled:"'+c_("This activity does not work in ePub.")+'",'
     s += 'solution:"'+c_("Solution")+'",'
-    s += 'print:"'+c_("Print")+'"'	
+    s += 'print:"'+c_("Print")+'",'	
+    s += 'fullSearch:"'+c_("Search in all pages")+'",'
+    s += 'noSearchResults:"'+c_("No results for %")+'",'
+    s += 'searchResults:"'+c_("Search results for %")+'",'
+    s += 'hideResults:"'+c_("Hide results")+'",'
+    s += 'more:"'+c_("More")+'",'
+    s += 'search:"'+c_("Search")+'"'
     s += '};'
     if addTag:
         s += '</script>'
@@ -1242,6 +1249,26 @@ def getAnchorNameFromLinkName(link_name):
         anchor_name = link_name[anchor_pos + 1 : ]
     return anchor_name
        
+def enableLinksToElp(package, html):
+    '''
+    Links to exe-package:elp
+    Replace exe-package:elp with the elp name
+    Use # instead of the elp name if the package's not been saved (no name...)
+    '''
+    soup = BeautifulSoup(html)
+    hasElp = False
+    for link in soup.findAll('a'):
+        if (link.get('href')=='exe-package:elp') and hasattr(package, 'name'):
+            lnk = '#'
+            if hasattr(package, 'filename') and (package.filename!=""):
+                lnk = package.name+".elp"
+            log.debug("There is a link to the elp file: " + link.get('href'))  
+            link['href'] = link['href'].replace("exe-package:elp", lnk)
+            hasElp = True
+    if hasElp:
+        html = str(soup) 
+    return html
+       
 def renderInternalLinkNodeFilenames(package, html):
     """
     take care of any internal links which are in the form of:
@@ -1302,6 +1329,9 @@ def renderInternalLinkNodeFilenames(package, html):
     if not found_all_anchors:
         # then go ahead and clear out any remaining invalid links:
         html = removeInternalLinks(html)
+        
+    # Keep the links to the elp file (if the elp file exists).
+    html = enableLinksToElp(package, html)
             
     return html
     
@@ -1409,6 +1439,23 @@ def ideviceHasGames(idevice):
         return True
     return False
     
+def ideviceHasElpLink(idevice,package):
+    '''
+    Check if there is a link to the elp file (and the elp file exists)
+    The links to the elp file (exe-package:elp) will be replaced by:
+        1. # if the file does not exist (no name because it's not been saved)
+        2. The elp file name if the elp exists
+    '''
+    if hasattr(package, 'filename') and (package.filename!=""):
+        block = g_blockFactory.createBlock(None, idevice)
+        if not block:
+            log.critical("Unable to render iDevice.")
+            raise Error("Unable to render iDevice.")
+        content = block.renderView('default')
+        if re.search('<a .*href="exe-package:elp"', content):
+            return True
+    return False
+    
 def ideviceHasGallery(idevice):
     if idevice.klass == 'GalleryIdevice':
         return True
@@ -1437,6 +1484,12 @@ def hasSH(node):
 def hasGames(node):
     for idevice in node.idevices:
         if ideviceHasGames(idevice):
+            return True
+    return False
+    
+def hasElpLink(node):
+    for idevice in node.idevices:
+        if ideviceHasElpLink(idevice,node.package):
             return True
     return False
     

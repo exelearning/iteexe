@@ -271,6 +271,9 @@ class Manifest(object):
         for resource in resources:
             fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
             
+        if common.hasElpLink(page.node):
+            fileStr += "    <file href=\""+page.node.package.name+".elp\"/>\n"
+            
         # Get all JS iDevices resources
         fileStr += common.getJavascriptIdevicesResources(page, xmlOutput = True)            
 
@@ -461,7 +464,9 @@ class IMSPage(Page):
            href="exe-node:Home:Topic:etc#Anchor"
         For this IMS Export, go ahead and remove the link entirely,
         leaving only its text, since such links are not to be in the LMS.
+        Keep the links to the elp file (if the elp file exists).
         """
+        html = common.enableLinksToElp(self.node.package,html) 
         return common.removeInternalLinks(html)
         
         
@@ -572,6 +577,7 @@ class IMSExport(object):
         hasFX             = False
         hasSH             = False
         hasGames          = False
+        hasElpLink        = False
         hasWikipedia      = False
         isBreak           = False
         hasInstructions   = False
@@ -584,7 +590,7 @@ class IMSExport(object):
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips and hasABCMusic):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasElpLink and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips and hasABCMusic):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -604,6 +610,8 @@ class IMSExport(object):
                     hasSH = common.ideviceHasSH(idevice)
                 if not hasGames:
                     hasGames = common.ideviceHasGames(idevice)
+                if not hasElpLink:
+                    hasElpLink = common.ideviceHasElpLink(idevice,package)
                 if not hasWikipedia:
                     if 'WikipediaIdevice' == idevice.klass:
                         hasWikipedia = True
@@ -648,6 +656,10 @@ class IMSExport(object):
             langGameFile = open(outputDir + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
+        if hasElpLink or package.get_exportElp():
+            # Export the elp file
+            currentPackagePath = Path(package.filename)
+            currentPackagePath.copyfile(outputDir/package.name+'.elp')
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(outputDir/'exe_wikipedia.css')

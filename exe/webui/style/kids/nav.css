@@ -37,6 +37,11 @@ h1#nodeTitle{font-weight:700;color:#1B4D3B}
 
 #siteFooter{padding:0 20px 20px 20px;border:0}
 
+/* Search bar */
+#exe-client-search-text{border-color:#5ab493;border-top-left-radius:5px;border-bottom-left-radius:5px}
+#exe-client-search-submit{border-color:#5ab493;background:#5ab493;color:#FFF;text-shadow:1px 1px 1px #468770;text-transform:lowercase;border-top-right-radius:5px;border-bottom-right-radius:5px;padding-left:15px;padding-right:15px}
+.exe-client-search-result{background:#FFF}
+
 /* Hide/Show/Skip navigation */
 #nav-toggler{margin:0;position:absolute;top:152px;left:0;text-transform:lowercase}
 #nav-toggler a,#skipNav a{padding:10px 20px;border-radius:15px;box-shadow:0 0 8px 0 #999;outline:none;background:#D7F3E9;color:#808080;border:1px solid #88B5A5}
@@ -76,6 +81,7 @@ h1#nodeTitle{font-weight:700;color:#1B4D3B}
 	.pagination a{margin-right:20px}
 	#bottomPagination .next{right:20px}
 	#bottomPagination .prev{left:20px}    
+	#exe-client-search-form{text-align:center}
 }
 
 @media all and (max-width: 700px) {
@@ -88,4 +94,6 @@ h1#nodeTitle{font-weight:700;color:#1B4D3B}
 	#content .exe-col{float:none;width:100%;padding:0}
 	#nav-toggler{position:relative;top:0;left:0;margin:20px 19px;text-align:center}
 	#nav-toggler a{width:100%;display:block;padding:8px 0;border-radius:15px}
+	#exe-client-search-form{margin-top:1em}
+	.no-nav #exe-client-search-form{margin-top:0}
 }

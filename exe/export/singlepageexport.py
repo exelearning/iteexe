@@ -173,6 +173,7 @@ class SinglePageExport(object):
         hasFX             = False
         hasSH             = False
         hasGames          = False
+        hasElpLink        = False
         hasWikipedia      = False
         hasInstructions   = False
         hasMediaelement   = False
@@ -181,7 +182,7 @@ class SinglePageExport(object):
         listIdevicesFiles = []
 
     	for idevice in node.idevices:
-    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips and hasABCMusic):
+    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasElpLink and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips and hasABCMusic):
     	    	break
     	    if not hasFlowplayer:
     	    	if 'flowPlayer.swf' in idevice.systemResources:
@@ -200,6 +201,8 @@ class SinglePageExport(object):
                 hasSH = common.ideviceHasSH(idevice)
             if not hasGames:
                 hasGames = common.ideviceHasGames(idevice)
+            if not hasElpLink:
+                hasElpLink = common.ideviceHasElpLink(idevice,self.page.node.package)
             if not hasWikipedia:
     			if 'WikipediaIdevice' == idevice.klass:
     				hasWikipedia = True
@@ -242,6 +245,10 @@ class SinglePageExport(object):
             langGameFile = open(self.outputDir + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
+        if hasElpLink or self.page.node.package.get_exportElp():
+            # Export the elp file
+            currentPackagePath = Path(self.page.node.package.filename)
+            currentPackagePath.copyfile(self.outputDir/self.page.node.package.name+'.elp')
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(self.outputDir/'exe_wikipedia.css')

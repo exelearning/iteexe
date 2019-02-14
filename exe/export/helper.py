@@ -128,7 +128,10 @@ def processInternalLinks(package, html):
     For this SinglePage Export, go ahead and keep the #Anchor portion,
     but remove the 'exe-node:Home:Topic:etc', since it is all 
     exported into the same file.
+    
+    Keep the links to the elp file (if the elp file exists).
     """
+    html = common.enableLinksToElp(package, html) 
     return common.renderInternalLinkNodeAnchor(package, html)
 
 def exportMinFileJS(listFiles, outputDir):
