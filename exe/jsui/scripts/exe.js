@@ -233,7 +233,7 @@ Ext.application({
                 }                
             }
             if (typeof(eXeInfo)=='undefined') {
-                script = document.createElement("script")
+                var script = document.createElement("script")
                 script.type = "text/javascript";
                 script.src = "http://exelearning.net/exelearning-info.js";
                 if (script.readyState){  // IE
@@ -243,7 +243,7 @@ Ext.application({
                             openNewVersionWarning();
                         }
                     };
-                } else {  // Others
+                } else {
                     script.onload = function(){
                         openNewVersionWarning();
                     };
