@@ -33,7 +33,7 @@ from exe.engine.path               import Path, TempDirPath
 from exe.engine.version            import release
 from exe.export.pages              import Page, uniquifyNames
 from exe                             import globals as G
-from BeautifulSoup                 import BeautifulSoup
+from bs4                 import BeautifulSoup
 from htmlentitydefs                import name2codepoint
 
 log = logging.getLogger(__name__)
@@ -391,7 +391,7 @@ class Epub3Page(Page):
 
         html += u"</" + sectionTag + ">" + lb  # /#main
         html += self.renderLicense()
-        html += unicode(BeautifulSoup(self.renderFooter(), convertEntities=BeautifulSoup.XHTML_ENTITIES))
+        html += unicode(BeautifulSoup(self.renderFooter()))
         html += u"</div>" + lb  # /#outer
         if style.hasValidConfig:
             html += style.get_extra_body()

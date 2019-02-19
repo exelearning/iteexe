@@ -71,7 +71,7 @@ from exe                       import globals as G
 from exe.engine.resource       import Resource
 from twisted.persisted.styles  import doUpgrade
 from twisted.spread.jelly      import Jellyable, Unjellyable
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 from exe.engine.field          import Field, TextAreaField
 from exe.engine.persistxml     import encodeObjectToXML, decodeObjectFromXML
 from exe.engine.lom import lomsubs
@@ -117,7 +117,7 @@ def loadNodesIdevices(node, s):
     body = soup.find('body')
 
     if body:
-        idevices = body.findAll(name='div',
+        idevices = body.find_all(name='div',
                 attrs={'class' : re.compile('Idevice$') })
         if len(idevices) > 0:
             for i in idevices:
