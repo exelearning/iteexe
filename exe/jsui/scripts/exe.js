@@ -235,7 +235,7 @@ Ext.application({
             if (typeof(eXeInfo)=='undefined') {
                 script = document.createElement("script")
                 script.type = "text/javascript";
-                script.src = "http://localhost/tests/exelearning-info.js";
+                script.src = "http://exelearning.net/exelearning-info.js";
                 if (script.readyState){  // IE
                     script.onreadystatechange = function(){
                         if (script.readyState == "loaded" || script.readyState == "complete"){
