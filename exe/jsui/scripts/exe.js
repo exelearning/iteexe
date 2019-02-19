@@ -195,6 +195,64 @@ Ext.application({
     		eXe.app.afterShowLoadErrors();
     },
     
+    showNewVersionWarning: function(){
+        // Show a warning message if a new version is available
+        if (navigator.onLine && eXe.app.config.showNewVersionWarning && typeof(eXe.app.config.release)=='string') {
+            function openNewVersionWarning(){
+                if (typeof(eXeInfo)=='undefined' || typeof(eXeInfo.latestVersion)!='string') return;
+                
+                var latest = eXeInfo.latestVersion;
+                var current = eXe.app.config.release;
+                
+                if (latest==current) return;
+                
+                latest = latest.replace(/\./g,"");
+                current = current.replace(/\./g,"");
+
+                while (latest.length>current.length) current += '0';
+                while (current.length>latest.length) latest += '0';                
+                
+                current = parseFloat(current);
+                latest = parseFloat(latest);
+                
+                if (latest>current) {
+                    var msg = _('A new version of eXeLearning (%) is available. Would you like to download it now?');
+                    msg = msg.replace("%",eXeInfo.latestVersion);
+                    Ext.Msg.show({
+                        title: _('Warning!'),
+                        msg: msg,
+                        scope: this,
+                        modal: true,
+                        buttons: Ext.Msg.YESNO,
+                        fn: function(button) {
+                            if (button == "yes") {
+                                window.open("http://exelearning.net/");
+                            }
+                        }
+                    });
+                }                
+            }
+            if (typeof(eXeInfo)=='undefined') {
+                script = document.createElement("script")
+                script.type = "text/javascript";
+                script.src = "http://localhost/tests/exelearning-info.js";
+                if (script.readyState){  // IE
+                    script.onreadystatechange = function(){
+                        if (script.readyState == "loaded" || script.readyState == "complete"){
+                            script.onreadystatechange = null;
+                            openNewVersionWarning();
+                        }
+                    };
+                } else {  // Others
+                    script.onload = function(){
+                        openNewVersionWarning();
+                    };
+                }
+                document.getElementsByTagName("head")[0].appendChild(script);            
+            }
+        }
+    },
+    
     launch: function() {
         Ext.QuickTips.init();
 
@@ -249,8 +307,8 @@ Ext.application({
         }
 
         eXe.app.afterShowLoadErrors = function() {
-        	if (eXe.app.config.showPreferences)
-        		eXe.app.getController('Toolbar').toolsPreferences();
+        	if (eXe.app.config.showPreferences) eXe.app.getController('Toolbar').toolsPreferences(true); // true to open the new version warning
+            else eXe.app.showNewVersionWarning();
         };
 
         eXe.app.showLoadError();
