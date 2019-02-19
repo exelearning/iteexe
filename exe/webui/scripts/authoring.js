@@ -947,7 +947,7 @@ var $exeAuthoring = {
             // Check if the object and the required methods are defined
             if (typeof($exeDevice) != 'undefined' && typeof($exeDevice.init) != 'undefined' && typeof($exeDevice.save) == 'function') {
                 // Trigger the click event so the form is submitted
-                $("#exe-submitButton a").eq(0).trigger("click");
+                $("#exe-submitButton a").trigger("click");
             }
         },
 
