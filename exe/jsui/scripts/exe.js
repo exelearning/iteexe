@@ -199,9 +199,9 @@ Ext.application({
         // Show a warning message if a new version is available
         if (navigator.onLine && eXe.app.config.showNewVersionWarning && typeof(eXe.app.config.release)=='string') {
             function openNewVersionWarning(){
-                if (typeof(eXeInfo)=='undefined' || typeof(eXeInfo.latestVersion)!='string') return;
+                if (typeof(eXeInfo)=='undefined' || typeof(eXeInfo.version)!='string') return;
                 
-                var latest = eXeInfo.latestVersion;
+                var latest = eXeInfo.version;
                 var current = eXe.app.config.release;
                 
                 if (latest==current) return;
@@ -217,7 +217,7 @@ Ext.application({
                 
                 if (latest>current) {
                     var msg = _('A new version of eXeLearning (%) is available. Would you like to download it now?');
-                    msg = msg.replace("%",eXeInfo.latestVersion);
+                    msg = msg.replace("%",eXeInfo.version);
                     Ext.Msg.show({
                         title: _('Warning!'),
                         msg: msg,
