@@ -973,15 +973,9 @@ var $exeAuthoring = {
         // Save the iDevice
         save : function() {
             // Check if the object and the required methods are defined
-            if (typeof($exeDevice) != 'undefined' && typeof($exeDevice.init) != 'undefined' && typeof($exeDevice.save) != 'undefined') {
-                var myLink = $("#exe-submitButton a").eq(0);
-                var action = myLink.attr("onclick");
-                var html = $exeDevice.save();
-                if (html) {
-                    $("textarea.mceEditor, textarea.jsContentEditor").val(html);
-                    // Execute the IMG default behavior if everything is OK
-                    eval(action);
-                }
+            if (typeof($exeDevice) != 'undefined' && typeof($exeDevice.init) != 'undefined' && typeof($exeDevice.save) == 'function') {
+                // Trigger the click event so the form is submitted
+                $("#exe-submitButton a").trigger("click");
             }
         },		
         colorPicker : {
