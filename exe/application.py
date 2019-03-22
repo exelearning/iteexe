@@ -90,6 +90,7 @@ class Application:
         self.resourceDir = None
         self.afterUpgradeHandlers = []
         self.preferencesShowed = False
+        self.newVersionWarningShowed = False
         self.loadErrors = []
         assert G.application is None, "You tried to instantiate two Application objects"
         G.application = self

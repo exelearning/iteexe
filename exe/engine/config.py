@@ -79,6 +79,7 @@ class Config(object):
             'locale',
             'lastDir',
             'showPreferencesOnStart',
+            'showNewVersionWarningOnStart',
             'defaultStyle',
             'showIdevicesGrouped',
             'docType',
@@ -188,6 +189,7 @@ class Config(object):
         self.internalAnchors = "enable_all"
         self.lastDir = None
         self.showPreferencesOnStart = "1"
+        self.showNewVersionWarningOnStart = "1"
         self.showIdevicesGrouped = "1"
         # tinymce option
         self.editorMode = 'permissive'
@@ -522,6 +524,8 @@ class Config(object):
                 self.lastDir = self.configParser.user.lastDir
             if self.configParser.user.has_option('showPreferencesOnStart'):
                 self.showPreferencesOnStart = self.configParser.user.showPreferencesOnStart
+            if self.configParser.user.has_option('showNewVersionWarningOnStart'):
+                self.showNewVersionWarningOnStart = self.configParser.user.showNewVersionWarningOnStart
             if self.configParser.user.has_option('showIdevicesGrouped'):
                 self.showIdevicesGrouped = self.configParser.user.showIdevicesGrouped
             if self.configParser.user.has_option('locale'):

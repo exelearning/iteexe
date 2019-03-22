@@ -461,7 +461,14 @@ Ext.define('eXe.controller.Toolbar', {
         eXe.app.reload();
     },
 
-    toolsPreferences: function() {
+    toolsPreferences: function(newVersionWarning) {
+        var toolsPreferencesWasClosed = function(){}
+        // Show the "New eXeLearning version" warning after closing the preferences dialog
+        if (newVersionWarning==true) {
+            toolsPreferencesWasClosed = function(){
+                eXe.app.showNewVersionWarning();
+            }
+        }
         var preferences = new Ext.Window ({
 	          height: 420,
 	          width: 650,
@@ -471,7 +478,10 @@ Ext.define('eXe.controller.Toolbar', {
 	          layout: 'fit',
 	          items: [{
                 xtype: 'preferences'
-              }]
+              }],
+              listeners:{
+                close: toolsPreferencesWasClosed
+              }           
 	        }),
             formpanel = preferences.down('form');
         formpanel.load({url: 'preferences', method: 'GET'});
