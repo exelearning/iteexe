@@ -314,6 +314,13 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             itemId: 'file_export_epub3'
                                         },
                                         {
+                                            cls: 'exe-advanced',
+                                            xtype: 'accesskey_menuitem',
+                                            itemId: 'file_extract',
+                                            accesskey: 'e',
+                                            text: _('Export the current page as elp')
+                                        },                                        
+                                        {
                                             cls: 'exe-simplified',
                                             xtype: 'accesskey_menuitem',
                                             text: _('SCORM'),
@@ -333,34 +340,17 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
-                                text: _('Publish') + getSRhelp(),
-                                itemId: 'publish',
-                                accesskey: 'l',
-                                menu: {
-                                    xtype: 'menu',
-                                    items:
-                                    [
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            text: _('Procomún'),
-                                            accesskey: 'P',
-                                            itemId: 'file_export_procomun'
-                                        },
-                                    ]
-                                },
-                            },
-                            {
-                                cls: 'exe-advanced',
-                                xtype: 'menuseparator'
-                            },
-                            {
-                                cls: 'exe-advanced',
-                                xtype: 'accesskey_menuitem',
                                 text: _('Import') + getSRhelp(),
                                 accesskey: 'i',
                                 menu: {
                                     xtype: 'menu',
                                     items: [
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            itemId: 'file_insert',
+                                            accesskey: 'i',
+                                            text: _('Insert elp in the current page')
+                                        },                                    
                                         {
                                             xtype: 'accesskey_menuitem',
                                             itemId: 'file_import_html',
@@ -394,34 +384,31 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                                     }
                                                 ]
                                             }
-                                        }
+                                        }                                     
                                     ]
                                 }
                             },
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
-                                text: _('Merging') + getSRhelp(),
-                                accesskey: 'm',
+                                text: _('Publish') + getSRhelp(),
+                                itemId: 'publish',
+                                accesskey: 'l',
                                 menu: {
                                     xtype: 'menu',
-                                    items: [
+                                    items:
+                                    [
                                         {
                                             xtype: 'accesskey_menuitem',
-                                            itemId: 'file_insert',
-                                            accesskey: 'i',
-                                            text: _('Insert elp in the current page')
+                                            text: _('Procomún'),
+                                            accesskey: 'P',
+                                            itemId: 'file_export_procomun'
                                         },
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            itemId: 'file_extract',
-                                            accesskey: 'e',
-                                            text: _('Export the current page as elp')
-                                        }
                                     ]
-                                }
-                            },
+                                },
+                            },                            
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'menuseparator'
                             },
                             {
