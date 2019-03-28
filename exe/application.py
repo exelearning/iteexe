@@ -153,8 +153,7 @@ class Application:
             'objectives',
             'preknowledge',
             'activity',
-            'free text',
-            'pbl tasks'
+            'free text'
         ]
         for idevice in self.ideviceStore.getIdevices():
             lower_title = idevice._title.lower()
