@@ -71,6 +71,37 @@ var $exe = {
 		$('.feedbackbutton.feedback-toggler').click(function(){
 			$exe.toggleFeedback(this,false);
 		});
+		// Text iDevices
+		$(".textIdevice").each(function(i){
+			
+			// Feedback toggler
+			$(".feedbackbutton",this).each(function(){				
+				var buttonTxt = this.value.split("|");
+				// The button might have 2 texts (Show|Hide)
+				if (buttonTxt.length==2) {
+					// Remove spaces before and after the text
+					buttonTxt = [
+						$.trim(buttonTxt[0]),
+						$.trim(buttonTxt[1])
+					]
+					this.value = buttonTxt[0];
+					window['$exeTextIdeviceButtonText'+i] = buttonTxt;
+				}
+				$(this).click(function(){
+					var feedback = $(this).parent().next('.feedback');
+					var hasCustomText = typeof(window['$exeTextIdeviceButtonText'+i])!='undefined';
+					if (feedback.is(":visible")) {
+						if (hasCustomText) this.value = window['$exeTextIdeviceButtonText'+i][0];
+						feedback.slideUp();
+					} else {
+						if (hasCustomText) this.value = window['$exeTextIdeviceButtonText'+i][1];
+						feedback.slideDown();
+					}
+					return false;					
+				});
+			});
+			
+		});        
 		// Cloze iDevice
 		$('.cloze-feedback-toggler').click(function(){
 			var e = $(this);
