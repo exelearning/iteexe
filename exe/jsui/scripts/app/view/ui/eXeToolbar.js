@@ -613,6 +613,19 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                         ]
                     }
                 },
+                // Preview
+                {
+					xtype: 'fieldcontainer',
+					defaultType: 'button',
+					margin: '0 0 0 23',
+                    items: [
+                        {
+                            xtype: 'button',
+                            text: _('Preview'),
+                            itemId: 'tools_preview_button'
+                        }
+                    ]
+                } ,                
                 // Advanced user
                 {
                     xtype: 'fieldcontainer',
