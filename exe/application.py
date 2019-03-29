@@ -153,7 +153,6 @@ class Application:
             'objectives',
             'preknowledge',
             'activity',
-            'note',
             'free text'
         ]
         for idevice in self.ideviceStore.getIdevices():
