@@ -1,7 +1,11 @@
-#pblTaskInfo,#pblTaskFeedback{display:none}
-#pblTypes input{margin-left:2em;vertical-align:top}
-#pblTypes,#pblTaskInfo,#pblTaskFeedback{padding:0 20px 5px 20px;border:1px solid #C0C0C0;margin:1.5em 0}
-#pblTypes legend,#pblTaskInfo legend,#pblTaskFeedback legend{font-weight:bold;padding:0 10px}
+#pblTaskInfo,#pblTaskFeedback{padding:0 20px 5px 20px;border:1px solid #C0C0C0;margin:1.5em 0}
+#pblTaskInfo legend,#pblTaskFeedback legend{font-weight:bold;padding:0 10px}
 label[for=pblTaskDescription],label[for=pblTaskFeedbackContent]{font-weight:bold}
 #pblTaskInfo label{display:inline-block;width:12em;text-align:right;padding-right:.5em}
 label[for=pblTaskFeedbackButtonText]{padding-right:.5em}
+
+.closed-fieldset #pblFeedbackToggler{text-decoration:underline}
+.closed-fieldset #pblFeedbackToggler:hover{text-decoration:none}
+#pblTaskFeedback.closed-fieldset{border:none;padding:0}
+#pblTaskFeedback.closed-fieldset legend{padding:0}
+.closed-fieldset div{display:none}

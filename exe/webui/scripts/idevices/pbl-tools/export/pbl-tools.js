@@ -1,5 +1,5 @@
 /**
- * Project Based Learning Task iDevice
+ * Task iDevice
  *
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Ignacio Gros (http://gros.es/) for http://exelearning.net/
