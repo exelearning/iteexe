@@ -613,24 +613,13 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                         ]
                     }
                 },
-                // Preview
-                {
-					xtype: 'fieldcontainer',
-					defaultType: 'button',
-					margin: '0 0 0 23',
-                    items: [
-                        {
-                            xtype: 'button',
-                            text: _('Preview'),
-                            itemId: 'tools_preview_button'
-                        }
-                    ]
-                } ,                
+                // Advanced user and Preview button
+                '->',
                 // Advanced user
                 {
                     xtype: 'fieldcontainer',
 					defaultType: 'checkboxfield',
-					margin: '0 0 0 30',
+					margin: '0 30 0 0',
 					items: [
                         {
                             boxLabel: _('Advanced user'),
@@ -682,8 +671,20 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             }
                         }
                     ]
-                }
-                // / Advanced user
+                },
+                // Preview button                
+                {
+					xtype: 'fieldcontainer',
+					defaultType: 'button',
+					margin: '0 10 0 0',
+                    items: [
+                        {
+                            xtype: 'button',
+                            text: _('Preview'),
+                            itemId: 'tools_preview_button'
+                        }
+                    ]
+                }            
             ]
         });
 
