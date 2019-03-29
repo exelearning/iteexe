@@ -156,8 +156,14 @@ class IdevicePane(Renderable, Resource):
         else:
             prototypesToRender.sort(sortfunc)
             self.config.configParser.set('user', 'showIdevicesGrouped', '0')
+        # Text and Tasks should be in the first place
         for prototype, category, visible in prototypesToRender:
-            xml += self.__renderPrototype(prototype, category, visible)
+            if (category=='Text and Tasks'):
+                xml += self.__renderPrototype(prototype, category, visible)
+        # Other categories
+        for prototype, category, visible in prototypesToRender:
+            if (category!='Text and Tasks'):
+                xml += self.__renderPrototype(prototype, category, visible)            
         xml += u"</idevices>\n"
         xml += u"<!-- IDevice Pane End -->\n"
         return xml.encode('utf8')
