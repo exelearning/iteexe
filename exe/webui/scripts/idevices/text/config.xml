@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <idevice>
-	<title>Text (optional feedback)</title>
+	<title>Text</title>
 	<css-class>text</css-class>
 	<category>Text and Tasks</category>
 </idevice>
