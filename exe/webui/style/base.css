@@ -165,6 +165,18 @@ ol.auto-numbered{counter-reset:item}
 /* Quote With Authorship */
 .styled-qc{font-family:Georgia,serif;font-style:italic;margin:1.5em 2.5em;padding:0.25em 3.5em;position:relative}
 .styled-qc:before{display:block;content:"\201C";font-size:5em;position:absolute;left:0;top:-20px}
+
+/* Task iDevice */
+ .js .pbl-task-info{visibility:hidden}
+ .pbl-task-info dt{float:left;font-weight:bold;margin-right:.5em}
+/* Align right example */
+/* 150px will be replaced with JavaScript (see common.js) */
+.pbl-task-info{overflow:hidden;margin:1em 0 1.5em 20px;width:auto;float:right;text-align:right}
+.pbl-task-info dt{margin:0;float:left;clear:left;width:150px}
+.pbl-task-info dd{margin:0 0 0 150px;text-align:left;padding-left:.5em}
+.pbl-task-info dd:after{content:'';display:block;clear:both}
+.pbl-task-description{clear:both}
+
 /* Responsive design */
 iframe,object,embed{max-width:100%}
 img,video{max-width:100%;height:auto} 

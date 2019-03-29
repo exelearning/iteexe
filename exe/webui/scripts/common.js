@@ -71,8 +71,8 @@ var $exe = {
 		$('.feedbackbutton.feedback-toggler').click(function(){
 			$exe.toggleFeedback(this,false);
 		});
-		// Text iDevices
-		$(".textIdevice").each(function(i){
+		// Text and Tasks
+		$(".textIdevice,.pblIdevice").each(function(i){
 			
 			// Feedback toggler
 			$(".feedbackbutton",this).each(function(){				
@@ -98,6 +98,36 @@ var $exe = {
 						feedback.slideDown();
 					}
 					return false;					
+				});
+			});
+            
+			// Task iDevice: Fade in each DL
+			$(".pbl-task-info",this).delay(1500).css({
+				"opacity" : 0,
+				"visibility" : "visible"
+			}).fadeTo("slow",1).each(function(){
+				var dts = $("dt",this);
+				// Set the DT width so the text can be properly aligned
+				var tA = $(this).css("text-align");
+				if (tA=="right") {
+					var width = 0;
+					dts.css("width","auto").each(function(){
+						var w = $(this).width();
+						if (w>width) width = w;
+					});
+					if (width!=0) {
+						dts.css("width",width+"px");
+						$("dd",this).css("margin-left",width+"px");
+					}
+				} else if (tA=="left") {
+					var width = 0;
+					dts.css("width","auto").each(function(){
+						$(this).next("dd").css("margin-left",$(this).width()+"px");
+					});
+				}
+				// Add a title (just in case the Style displays an icon instead of the text)
+				dts.each(function(){
+					$("span",this).attr("title",$(this).text());
 				});
 			});
 			
