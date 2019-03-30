@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2018-12-02 16:57+0100\nPO-Revision-Date: 2007-09-12 06:29+1200\nLast-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\nLanguage: th\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.3\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-03-28 20:14+0100\nPO-Revision-Date: 2007-09-12 06:29+1200\nLast-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\nLanguage: th\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Hide": "\u0e0b\u0e48\u0e2d\u0e19", 
  "Title": "\u0e0a\u0e37\u0e48\u0e2d\u0e40\u0e23\u0e37\u0e48\u0e2d\u0e07", 
  "iDevice Editor": "\u0e15\u0e31\u0e27\u0e1b\u0e23\u0e31\u0e1a\u0e41\u0e15\u0e48\u0e07 iDevice", 
@@ -62,7 +62,6 @@ translations = {
  "Select an MP3": "\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e44\u0e1f\u0e25\u0e4c MP3", 
  "Next": "\u0e16\u0e31\u0e14\u0e44\u0e1b", 
  "No Thumbnail Available. Could not load original image.": "\u0e44\u0e21\u0e48\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e43\u0e0a\u0e49\u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a\u0e20\u0e32\u0e1e\u0e40\u0e25\u0e47\u0e01\u0e44\u0e14\u0e49 \u0e40\u0e19\u0e37\u0e48\u0e2d\u0e07\u0e08\u0e32\u0e01 \u0e44\u0e21\u0e48\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e42\u0e2b\u0e25\u0e14\u0e20\u0e32\u0e1e\u0e15\u0e49\u0e19\u0e09\u0e1a\u0e31\u0e1a\u0e44\u0e14\u0e49", 
- "Extract Package": "\u0e41\u0e15\u0e01 \u0e41\u0e1e\u0e04\u0e40\u0e01\u0e08 \u0e2d\u0e2d\u0e01", 
  "Save": "\u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01 (Save)", 
  "True-False Question": "\u0e04\u0e33\u0e16\u0e32\u0e21\u0e08\u0e23\u0e34\u0e07\/\u0e40\u0e17\u0e47\u0e08", 
  "Set the maximum level of zoom, \nas a percentage of the original image size": "\u0e15\u0e31\u0e49\u0e07\u0e04\u0e48\u0e32\u0e2a\u0e39\u0e07\u0e2a\u0e38\u0e14\u0e02\u0e2d\u0e07\u0e01\u0e32\u0e23\u0e02\u0e22\u0e32\u0e22,\n \u0e43\u0e19\u0e25\u0e31\u0e01\u0e29\u0e13\u0e30\u0e02\u0e2d\u0e07 \u0e23\u0e49\u0e2d\u0e22\u0e25\u0e30 \u0e08\u0e32\u0e01\u0e20\u0e32\u0e1e\u0e15\u0e49\u0e19\u0e09\u0e1a\u0e31\u0e1a", 
@@ -166,7 +165,6 @@ translations = {
  "blank for original size": "\u0e1b\u0e25\u0e48\u0e2d\u0e22\u0e27\u0e48\u0e32\u0e07 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e02\u0e19\u0e32\u0e14\u0e02\u0e2d\u0e07\u0e15\u0e49\u0e19\u0e09\u0e1a\u0e31\u0e1a", 
  "Hint": "\u0e04\u0e33\u0e43\u0e1a\u0e49", 
  "Filename %s is a file, cannot replace it": "\u0e44\u0e1f\u0e25\u0e4c\u0e17\u0e35\u0e48\u0e0a\u0e37\u0e48\u0e2d %s , \u0e44\u0e21\u0e48\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e40\u0e02\u0e35\u0e22\u0e19\u0e17\u0e31\u0e1a\u0e44\u0e14\u0e49", 
- "Insert Package": "\u0e41\u0e17\u0e23\u0e01 \u0e41\u0e1e\u0e04\u0e40\u0e01\u0e08", 
  "Instant Marking?": "\u0e17\u0e33\u0e2a\u0e31\u0e0d\u0e25\u0e31\u0e01\u0e29\u0e13\u0e4c\u0e17\u0e31\u0e19\u0e17\u0e35", 
  "Submit": "\u0e2a\u0e48\u0e07", 
  "Align:": "\u0e08\u0e31\u0e14\u0e27\u0e32\u0e07:", 

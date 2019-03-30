@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2018-12-02 16:57+0100\nPO-Revision-Date: 2008-12-12 16:43+1300\nLast-Translator: Jun IWATA <j_iwata@med.shimane-u.ac.jp>\nLanguage: ja\nLanguage-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.3\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-03-28 20:14+0100\nPO-Revision-Date: 2008-12-12 16:43+1300\nLast-Translator: Jun IWATA <j_iwata@med.shimane-u.ac.jp>\nLanguage: ja\nLanguage-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>\u6559\u5e2b\u306f\u3053\u306eiDevice\u3092\u5229\u7528\u3059\u308b\u969b\u306f\u6b21\u306e\u70b9\u3092\u8003\u616e\u3059\u308b\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002<\/p><ol><li>\u6559\u6750\u306b\u5bfe\u3057\u3066\u5229\u7528\u3059\u308b\u6d3b\u52d5\u306e\u7a2e\u985e\u3068\u6570\u306b\u3064\u3044\u3066\u306f\u3001\u3088\u304f\u8003\u3048\u3066\u8a08\u753b\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u3042\u307e\u308a\u306b\u591a\u304f\u306e\u7a2e\u985e\u3084\u3001\u6570\u3092\u7528\u3044\u305f\u5834\u5408\u3001\u5b66\u7fd2\u8005\u306f\u6df7\u4e71\u3059\u308b\u53ef\u80fd\u6027\u304c\u3042\u308a\u307e\u3059\u3002\u901a\u5e38\uff11\u3064\u306e\u6559\u6750\u306b\u5bfe\u3057\u3066\u3001\uff13\u3001\uff14\u7a2e\u985e\u3092\u5229\u7528\u3059\u308b\u3053\u3068\u304c\u9069\u5f53\u3067\u3059\u3002<\/li><li>\u8996\u899a\u7684\u30c7\u30b6\u30a4\u30f3\u306e\u70b9\u304b\u3089\u8a00\u3046\u3068\u3001\uff12\u3064\u306eiDevice\u3092\u5229\u7528\u3059\u308b\u969b\u306f\u3001\u9593\u306b\u30c6\u30ad\u30b9\u30c8\u3092\u5165\u308c\u308b\u3053\u3068\u3092\u304a\u3059\u3059\u3081\u3057\u307e\u3059\u3002\u3067\u304d\u308b\u3060\u3051\uff11\u3064\u306eiDevice\u306b\u8907\u6570\u306e\u8cea\u554f\u3084\u5b66\u7fd2\u6d3b\u52d5\u3092\u76db\u308a\u8fbc\u3080\u307b\u3046\u304c\u5b66\u7fd2\u8005\u306b\u3068\u3063\u3066\u898b\u3084\u3059\u3044\u3068\u601d\u308f\u308c\u307e\u3059\u3002 <\/li><li>\u5b66\u7fd2\u8005\u304c\u53d6\u308a\u7d44\u3080\u6d3b\u52d5\u304c\u3001\u305d\u308c\u306b\u304b\u304b\u308b\u6642\u9593\u3068\u52aa\u529b\u306b\u898b\u5408\u3046\u3082\u306e\u3067\u3042\u308b\u304b\u3069\u3046\u304b\u3088\u304f\u8003\u616e\u3057\u3066\u304f\u3060\u3055\u3044\u3002<\/li><\/ol>", 
  "Title": "\u30bf\u30a4\u30c8\u30eb", 
  "Text Line": "\u30c6\u30ad\u30b9\u30c8\u30e9\u30a4\u30f3", 
@@ -159,7 +159,6 @@ translations = {
  "Objectives": "\u76ee\u7684", 
  "Oriya ": "\u30aa\u30ea\u30e4\u30fc\u8a9e", 
  "Next": "\u6b21\u3078", 
- "Extract Package": "\u30d1\u30c3\u30b1\u30fc\u30b8\u3092\u958b\u304d\u307e\u3059\u304b\uff1f", 
  "Select Language": "\u8a00\u8a9e\u306e\u9078\u629e", 
  "Somali ": "\u30bd\u30de\u30ea\u8a9e", 
  "Save": "\u4fdd\u5b58", 
@@ -336,7 +335,6 @@ translations = {
  "No emphasis": "\u5f37\u8abf\u3057\u306a\u3044", 
  "Own site": "\u72ec\u81ea\u306e\u30b5\u30a4\u30c8", 
  "Filename %s is a file, cannot replace it": "Filename %s \u306f\u30d5\u30a1\u30a4\u30eb\u3067\u3059\u3002\u53d6\u308a\u66ff\u3048\u308b\u3053\u3068\u306f\u3067\u304d\u307e\u305b\u3093\u3002", 
- "Insert Package": "\u30d1\u30c3\u30b1\u30fc\u30b8\u306e\u8ffd\u52a0", 
  "Hausa (?) ": "\u30cf\u30a6\u30b5\u8a9e", 
  "Norwegian Nynorsk ": "\u30ce\u30eb\u30a6\u30a7\u30fc\u8a9e\uff08Nynorsk\uff09", 
  "Burmese ": "\u30d3\u30eb\u30de\u8a9e", 

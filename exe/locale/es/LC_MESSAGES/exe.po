@@ -1,17 +1,17 @@
 # eXeLearning Spanish PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2018 eXeLearning.net
+# Copyright (C) 2011-2019 eXeLearning.net
 # This file is distributed under the same license as the eXeLearning
 # package.
 # eXeLearning.net Project <admin@exelearning.net>
 # Asociacion Cultural Reggae <acreggae@acreggae.com>, 2009.
-# Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2018.
+# Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.3\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2019-03-28 20:14+0100\n"
-"PO-Revision-Date: 2018-12-02 17:04+0100\n"
+"PO-Revision-Date: 2019-03-30 12:27+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -4305,11 +4305,11 @@ msgstr "¡La importación de los metadatos LOM se ha realizado con éxito!"
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
 msgid "Insert elp in this page"
-msgstr ""
+msgstr "Insertar .elp en esta página"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
 msgid "Export this page as elp"
-msgstr ""
+msgstr "Exportar esta página como .elp"
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Delete \"{node}\" node and all its children?"
@@ -5137,7 +5137,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:74
 msgid "Export a copy of the elp"
-msgstr ""
+msgstr "Exportar una copia del .elp"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:78
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:81
@@ -5146,25 +5146,25 @@ msgid ""
 "content doesn't have a link to it. If you want anyone to find your elp "
 "easily, consider adding a link to the elp in your content instead of "
 "using this option."
-msgstr ""
+msgstr "La carpeta exportada incluirá una copia del fichero .elp, incluso si el contenido que usted ha generado no tiene un enlace a él. Si desea que todo el mundo pueda encontrar fácilmente su .elp considere incluir un enlace al .elp dentro del contenido en lugar de usar esta opción."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:87
 msgid "Add a search bar (editable Web Site export only)"
-msgstr ""
+msgstr "Añadir una barra de búsqueda (sólo en la exportación a sitio web editable)"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:91
 msgid ""
 "Checking this option, a search box will be added to every page. The \"%\""
 " option has to be checked too. It will only work if JavaScript is "
 "enabled, and only in modern browsers."
-msgstr ""
+msgstr "Marcando esta opción se añadirá un recuadro de búsqueda a cada página. La opción \"%\" tiene que estar marcada también. Sólo funcionará si javascript está habilitado, y solamente en los navegadores modernos."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:94
 msgid ""
 "Checking this option, a search box will be added to every page. The \"%\""
 " option has to be checked too. It will only work if JavaScript is "
 "enabled."
-msgstr ""
+msgstr "Si se marca esta opción se añadirá un recuadro de búsqueda a cada página. La opción \"%\" deberá estar marcada también. Sólo funcionará con javascript activado."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:100
 msgid "Add page counters in the footer and header of the export?"
@@ -6336,7 +6336,7 @@ msgstr "EPUB3"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:321
 msgid "Export the current page as elp"
-msgstr ""
+msgstr "Exportar la página actual como .elp."
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:326
 msgid "SCORM"
@@ -6352,7 +6352,7 @@ msgstr "Importar"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:352
 msgid "Insert elp in the current page"
-msgstr ""
+msgstr "Insertar un .elp en la página actual"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:358
 msgid "HTML Course"
@@ -6507,7 +6507,7 @@ msgstr "Error de carga"
 msgid ""
 "A new version of eXeLearning (%) is available. Would you like to download"
 " it now?"
-msgstr ""
+msgstr "Disponible nueva versión (%) de eXeLearning. ¿Desea descargarla ahora?"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:150
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:181
@@ -8505,23 +8505,23 @@ msgstr "Solución"
 
 #: exe/webui/common.py:633
 msgid "Search in all pages"
-msgstr ""
+msgstr "Buscar en todas las páginas"
 
 #: exe/webui/common.py:634
 msgid "No results for %"
-msgstr ""
+msgstr "No se han hallado resultados para %"
 
 #: exe/webui/common.py:635
 msgid "Search results for %"
-msgstr ""
+msgstr "Buscar resultados para %"
 
 #: exe/webui/common.py:636
 msgid "Hide results"
-msgstr ""
+msgstr "Ocultar los resultados"
 
 #: exe/webui/common.py:637
 msgid "More"
-msgstr ""
+msgstr "Más"
 
 #: exe/webui/common.py:638
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
@@ -9780,37 +9780,37 @@ msgstr "Ir a Utilidades - Visualización previa para ver el contenido del bocadi
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:13
 msgid "Download source file"
-msgstr ""
+msgstr "Descargar el fichero fuente"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:16
 msgid ""
 "Before adding a download link to your page, please go to the Properties "
 "tab and check if the information is right."
-msgstr ""
+msgstr "Antes de añadir un enlace de descarga a su página vaya a la pestaña de Propiedades y compruebe que la información es correcta."
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:153
 msgid "General information about this educational resource"
-msgstr ""
+msgstr "Información general sobre este recurso educativo"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:173
 msgid ""
 "This content was created with eXeLearning, your free and open source "
 "editor to create educational resources."
-msgstr ""
+msgstr "Este contenido fue creado con eXeLearning, el editor libre y de fuente abierta diseñado para crear recursos educativos."
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:177
 msgid ""
 "This block will create a link to download the elp file. Write some use "
 "instructions and customize your download link."
-msgstr ""
+msgstr "Este bloque creará un enlace para la descarga del fichero .elp. Escriba unas instrucciones de uso y configure el enlace de descarga."
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:180
 msgid "Download link"
-msgstr ""
+msgstr "Enlace de descarga"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:182
 msgid "Download elp file"
-msgstr ""
+msgstr "Descargar el fichero .elp"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:182
 #: exe/webui/scripts/idevices/example-idevice/edition/example-idevice.js:39
@@ -9838,7 +9838,7 @@ msgstr "Color del texto"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:271
 msgid "Please provide some instructions or information about the resource."
-msgstr ""
+msgstr "Escriba instrucciones o información acerca del recurso."
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:282
 #: exe/webui/scripts/idevices/example-idevice/edition/example-idevice.js:95
@@ -10142,7 +10142,7 @@ msgstr "Debe escribir el texto que se mostrará si no se contesta correctamente.
 #: exe/webui/scripts/idevices/text/edition/text.js:13
 #: exe/webui/scripts/idevices/text/edition/text.js:48
 msgid "Text (optional feedback)"
-msgstr ""
+msgstr "Texto (retroalimentación opcional)"
 
 #: exe/webui/scripts/stylemanager.js:78
 msgid "Do you want to delete the selected style?"
@@ -11381,12 +11381,12 @@ msgstr "Ventana emergente"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:3
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:421
 msgid "Anchors, nodes or elp"
-msgstr ""
+msgstr "Anclas, nodos o .elp"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:4
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:109
 msgid "Link to the elp file (it will be exported)"
-msgstr ""
+msgstr "Enlace al fichero .elp (será exportado)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:124
@@ -14096,7 +14096,7 @@ msgstr "Por favor revise el campo \"Licencia\""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:866
 msgid "Please don't forget to write the file size."
-msgstr ""
+msgstr "No olvide escribir el tamaño del fichero."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:315
 msgid "Please select the media file to edit it"
@@ -15125,11 +15125,11 @@ msgstr "Fondo de la zona de los contenidos"
 
 #: exe/webui/tools/style-designer/langs/all.js:64
 msgid "Search bar"
-msgstr ""
+msgstr "Barra de búsqueda"
 
 #: exe/webui/tools/style-designer/langs/all.js:65
 msgid "Button color"
-msgstr ""
+msgstr "Color del botón"
 
 #: exe/webui/tools/style-designer/langs/all.js:67
 msgid "The \"Page background\" will only be used when exporting as Web Site."
@@ -15147,7 +15147,7 @@ msgstr ""
 msgid ""
 "The \"Search bar\" will only be seen when exporting as Web Site and "
 "enabling that option (Properties → Export)."
-msgstr ""
+msgstr "La \"Barra de búsqueda\" sólo se verá en la exportación a Sitio web y está marcada la opción Propiedades → Exportar."
 
 #: exe/webui/tools/style-designer/langs/all.js:71
 msgid "Header and Footer"
@@ -15473,4 +15473,3 @@ msgstr ""
 
 #~ msgid "Anchors and nodes"
 #~ msgstr "Anclas y nodos"
-
