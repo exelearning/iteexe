@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.3\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2019-03-30 12:32+0100\n"
-"PO-Revision-Date: 2019-03-30 12:27+0100\n"
+"PO-Revision-Date: 2019-03-30 12:36+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -870,7 +870,7 @@ msgstr "Espacios en blanco (Modificado)"
 #: exe/engine/config.py:129 exe/engine/config.py:133
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:86
 msgid "Text and Tasks"
-msgstr ""
+msgstr "Texto y tareas"
 
 #: exe/engine/config.py:99 exe/engine/config.py:104 exe/engine/config.py:126
 #: exe/engine/config.py:127 exe/engine/config.py:128 exe/engine/config.py:130
@@ -882,7 +882,7 @@ msgstr "Actividades interactivas"
 #: exe/engine/config.py:123 exe/engine/config.py:131 exe/engine/config.py:132
 #: exe/engine/config.py:138
 msgid "Other Contents"
-msgstr ""
+msgstr "Otros contenidos"
 
 #: exe/engine/config.py:105 exe/engine/config.py:106 exe/engine/config.py:107
 #: exe/engine/config.py:108 exe/engine/config.py:109 exe/engine/config.py:110
@@ -15490,4 +15490,3 @@ msgstr ""
 
 #~ msgid "Write the title, select an icon and choose a type..."
 #~ msgstr "Escriba el título, seleccione un icono y elija un tipo..."
-
