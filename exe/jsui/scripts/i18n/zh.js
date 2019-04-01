@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2018-12-02 16:57+0100\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage: zh\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.3\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-03-30 12:32+0100\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage: zh\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": " ", 
  "Title": "\u6807\u9898", 
  "Text Line": "\u5355\u884c\u6587\u5b57", 
@@ -166,7 +166,6 @@ translations = {
  "Objectives": "\u76ee\u7684", 
  "Oriya ": "\u5965\u91cc\u4e9a\u8bed", 
  "Next": "\u4e0b\u4e00\u9875", 
- "Extract Package": "\u5f15\u51fa\u8bfe\u4ef6", 
  "Select Language": "\u9009\u62e9\u8bed\u8a00", 
  "Somali ": "\u7d22\u9a6c\u91cc\u8bed", 
  "Save": "\u4fdd\u5b58", 
@@ -358,7 +357,6 @@ translations = {
  "Incorrect": "\u4e0d\u6b63\u786e", 
  "Own site": "\u81ea\u5b9a\u4e49\u7f51\u9875", 
  "Filename %s is a file, cannot replace it": "\u6587\u4ef6\u540d%s\u662f\u4e2a\u6587\u6863, \u65e0\u6cd5\u8986\u76d6\u5b83", 
- "Insert Package": "\u63d2\u5165\u8bfe\u4ef6", 
  "Hausa (?) ": "\u8c6a\u8428\u8bed", 
  "Norwegian Nynorsk ": "\u65b0\u632a\u5a01\u8bed", 
  "Burmese ": "\u7f05\u7538\u8bed", 

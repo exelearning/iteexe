@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-28 20:14+0100\n"
+"POT-Creation-Date: 2019-03-30 12:32+0100\n"
 "PO-Revision-Date: 2006-07-28 15:37+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language: sv\n"
@@ -678,8 +678,8 @@ msgstr ""
 #: exe/webui/element.py:2485 exe/webui/element.py:2620
 #: exe/webui/element.py:2735 exe/webui/element.py:2936
 #: exe/webui/listablock.py:461 exe/webui/questionelement.py:114
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:52
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:57
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:37
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:43
 #: exe/webui/scripts/idevices/text/edition/text.js:22
 #: exe/webui/scripts/idevices/text/edition/text.js:28
 #: exe/webui/truefalseelement.py:260
@@ -738,8 +738,10 @@ msgid "Clozelang"
 msgstr "Stäng"
 
 #: exe/engine/config.py:97 exe/engine/config.py:98 exe/engine/config.py:102
-#: exe/engine/config.py:129
-msgid "Non-Interactive Activities"
+#: exe/engine/config.py:103 exe/engine/config.py:124 exe/engine/config.py:125
+#: exe/engine/config.py:129 exe/engine/config.py:133
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:86
+msgid "Text and Tasks"
 msgstr ""
 
 #: exe/engine/config.py:99 exe/engine/config.py:104 exe/engine/config.py:126
@@ -751,12 +753,7 @@ msgstr ""
 #: exe/engine/config.py:100 exe/engine/config.py:101 exe/engine/config.py:122
 #: exe/engine/config.py:123 exe/engine/config.py:131 exe/engine/config.py:132
 #: exe/engine/config.py:138
-msgid "Non-Textual Information"
-msgstr ""
-
-#: exe/engine/config.py:103 exe/engine/config.py:124 exe/engine/config.py:125
-#: exe/engine/config.py:133
-msgid "Textual Information"
+msgid "Other Contents"
 msgstr ""
 
 #: exe/engine/config.py:105 exe/engine/config.py:106 exe/engine/config.py:107
@@ -1217,7 +1214,6 @@ msgid "Hint"
 msgstr "Ledtråd"
 
 #: exe/engine/field.py:3893 exe/engine/field.py:3930 exe/webui/element.py:2389
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:25
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:9
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:238
@@ -3889,7 +3885,6 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:607
 #: exe/jsui/scripts/app/view/forms/HelpContainer.js:43 exe/webui/block.py:270
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:29
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/all.js:128
 #, fuzzy
@@ -4217,7 +4212,6 @@ msgstr "Namn"
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:111
 #: exe/jsui/scripts/app/view/forms/LomSections.js:102
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:28
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
@@ -4622,7 +4616,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:257
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:658
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:647
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:4
@@ -4781,8 +4775,8 @@ msgid "Other Platform Requirements"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:110
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:40
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:152
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:25
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:127
 msgid "Duration"
 msgstr ""
 
@@ -4888,7 +4882,7 @@ msgid "Required"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:32
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:52
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:37
 #: exe/webui/scripts/idevices/text/edition/text.js:22
 msgid "Optional"
 msgstr ""
@@ -5049,7 +5043,7 @@ msgid "Cataloguing"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:664
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:653
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:160
 msgid "General description"
 msgstr ""
@@ -5477,33 +5471,33 @@ msgstr ""
 msgid "Hide"
 msgstr "Göm"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:86
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:89
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:95
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:127
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:94
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:97
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:103
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:135
 msgid "Ungroup iDevices"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:102
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:107
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:125
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:110
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:115
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:133
 msgid "Edit iDevices"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:115
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:123
 msgid "Save iDevices"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:157
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:165
 #, fuzzy
 msgid "iDevices"
 msgstr "iDevicePane"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:168
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:176
 msgid "Category"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:180
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:188
 msgid "Visible"
 msgstr ""
 
@@ -5518,7 +5512,7 @@ msgid "Properties"
 msgstr "Egenskaper"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:55
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:672
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:661
 #, fuzzy
 msgid "Package"
 msgstr "label=\"IMS Content Package\" accesskey=\"i\""
@@ -5724,7 +5718,7 @@ msgid "Tools"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:452
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:624 exe/webui/editorpane.py:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:683 exe/webui/editorpane.py:268
 #: exe/webui/element.py:2106
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -5801,32 +5795,32 @@ msgstr ""
 msgid "About eXe"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:636
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:625
 msgid "Advanced user"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:637
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:651
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:626
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:640
 msgid ""
 "Checking this option will show more elements in the menus (File, "
 "Tools...) and the Properties tab."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:650 exe/webui/editorpage.py:250
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:639 exe/webui/editorpage.py:250
 #: exe/webui/editorpane.py:397
 #, fuzzy
 msgid "Info"
 msgstr "debugInfo"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:802
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:803
 msgid "You've been working for a long time without saving."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:804
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:805
 msgid "Do you want to save now?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:806
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:807
 msgid "Hide until the application is closed"
 msgstr ""
 
@@ -5848,7 +5842,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:150
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:181
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:801 exe/jsui/scripts/exe.js:249
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:802 exe/jsui/scripts/exe.js:249
 msgid "Warning!"
 msgstr ""
 
@@ -5858,7 +5852,7 @@ msgid ""
 "menu File->Quit if you really want to exit the application."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:91 exe/jsui/scripts/exe.js:334
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:99 exe/jsui/scripts/exe.js:334
 msgid "Group iDevices"
 msgstr ""
 
@@ -7836,7 +7830,7 @@ msgstr ""
 
 #: exe/webui/common.py:621 exe/webui/common.py:880 exe/webui/element.py:1547
 #: exe/webui/element.py:2477 exe/webui/listablock.py:274
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:55
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:41
 #: exe/webui/scripts/idevices/text/edition/text.js:26
 #, fuzzy
 msgid "Show Feedback"
@@ -8055,7 +8049,6 @@ msgstr ""
 
 #: exe/webui/content_template/strings.py:68
 #: exe/webui/content_template/strings.py:181
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:31
 msgid "Learning Diary"
 msgstr ""
 
@@ -9399,86 +9392,57 @@ msgid "Please write the button text."
 msgstr ""
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:13
-msgid "PBL Tasks"
-msgstr ""
-
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:15
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:49
-msgid "Provide information of the project or this part of the project."
-msgstr ""
-
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:16
-msgid "Describe the tasks that the learners should complete:"
-msgstr ""
-
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:17
-msgid ""
-"The Learning Diary is focused on the student's reflection and reasoning "
-"to construct their own learning. Please write some instructions."
-msgstr ""
-
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:26
-msgid "Write the title, select an icon and choose a type..."
-msgstr ""
-
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:30
 msgid "Task"
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:35
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:20
 msgid "Task information"
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:37
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:22
 msgid "Estimated duration"
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:39
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:45
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:24
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:30
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:125
 msgid "Text to display"
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:43
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:161
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:28
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:136
 msgid "Participants"
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:44
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:29
 msgid "Number or description"
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:46
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:31
 msgid "Grouping"
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:54
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:199
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:34
+msgid "Describe the tasks that the learners should complete:"
+msgstr ""
+
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:40
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:168
 #: exe/webui/scripts/idevices/text/edition/text.js:25
 #: exe/webui/scripts/idevices/text/edition/text.js:104
 msgid "Feedback button text"
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:147
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:122
 #, python-format
 msgid "Please write the text to display in '%s'."
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:176
-#: exe/webui/scripts/idevices/text/edition/text.js:88
-msgid "Please write some information."
-msgstr ""
-
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:177
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:150
 msgid "Please write the task description."
 msgstr ""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:178
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:112
-msgid "Please write some instructions."
-msgstr ""
-
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:198
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:167
 #: exe/webui/scripts/idevices/text/edition/text.js:103
 #, python-format
 msgid "Please fill in this field: '%s'."
@@ -9504,6 +9468,10 @@ msgstr ""
 msgid "Write the elements in the right order:"
 msgstr ""
 
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:112
+msgid "Please write some instructions."
+msgstr ""
+
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:129
 msgid "Add at least 3 elements."
 msgstr ""
@@ -9519,6 +9487,10 @@ msgstr ""
 #: exe/webui/scripts/idevices/text/edition/text.js:13
 #: exe/webui/scripts/idevices/text/edition/text.js:48
 msgid "Text (optional feedback)"
+msgstr ""
+
+#: exe/webui/scripts/idevices/text/edition/text.js:88
+msgid "Please write some information."
 msgstr ""
 
 #: exe/webui/scripts/stylemanager.js:78
@@ -14714,5 +14686,30 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Anchors and nodes"
+#~ msgstr ""
+
+#~ msgid "Non-Interactive Activities"
+#~ msgstr ""
+
+#~ msgid "Non-Textual Information"
+#~ msgstr ""
+
+#~ msgid "Textual Information"
+#~ msgstr ""
+
+#~ msgid "PBL Tasks"
+#~ msgstr ""
+
+#~ msgid "Provide information of the project or this part of the project."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The Learning Diary is focused on "
+#~ "the student's reflection and reasoning "
+#~ "to construct their own learning. Please"
+#~ " write some instructions."
+#~ msgstr ""
+
+#~ msgid "Write the title, select an icon and choose a type..."
 #~ msgstr ""
 
