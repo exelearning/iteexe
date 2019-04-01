@@ -451,6 +451,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 accesskey: 'v',
                                 text: _('Preview')
                             },
+                            /*
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'menuseparator'
@@ -462,7 +463,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 accesskey: 's',
                                 text: _('Style Manager')
                             },
-                            // Style designer
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
@@ -484,7 +484,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     ]
                                 }
                             },
-                            // / Style designer
+                            */
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
@@ -500,10 +500,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 text: _('Resources Report')
                             },
                             {
-                                cls: 'exe-advanced',
-                                xtype: 'menuseparator'
-                            },
-                            {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_refresh',
                                 accesskey: 'r',
@@ -513,6 +509,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                     }
                 },
                 {
+                    cls: 'exe-simplified',
                     xtype: 'accesskey_button',
                     text: _('Styles'),
                     accesskey: 's',
@@ -522,6 +519,52 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 	                    itemId: 'styles_menu'
                     }
                 },
+                {
+                    cls: 'exe-advanced',
+                    xtype: 'accesskey_button',
+                    text: _('Styles'),
+                    accesskey: 's',
+                    itemId: 'styles_button_advanced_wrapper',
+                    menu: {
+                        xtype: 'menu',
+	                    items: [
+                            {
+                            	xtype: 'accesskey_menuitem',
+                                itemId: 'tools_stylemanager',
+                                text: _('Style Manager')
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
+                                text: _('Style Designer') + getSRhelp(),
+                                menu: {
+                                    xtype: 'menu',
+                                    items: [
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            itemId: 'style_designer_new_style',
+                                            accesskey: 'i',
+                                            text: _('Create new Style')
+                                        },
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            itemId: 'style_designer_edit_style',
+                                            text: _('Edit current Style')
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
+                                text: _('Styles'),
+                                itemId: 'styles_button_advanced',
+                                menu: {
+                                    xtype: 'menu',
+                                    itemId: 'styles_menu_advanced'
+                                }
+                            }                            
+                        ]                        
+                    }
+                },                
                 {
                     cls: 'exe-simplified',
                     xtype: 'accesskey_button',

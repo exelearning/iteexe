@@ -32,6 +32,9 @@ Ext.define('eXe.controller.Toolbar', {
     	ref: 'stylesMenu',
     	selector: '#styles_menu'
     },{
+    	ref: 'stylesMenuAdvanced',
+    	selector: '#styles_menu_advanced'
+    },{
     	ref: 'templatesMenu',
     	selector: '#templates_menu'
     }
@@ -68,6 +71,9 @@ Ext.define('eXe.controller.Toolbar', {
         	'#styles_button': {
         		beforerender: this.stylesRender
         	},
+        	'#styles_button_advanced': {
+        		beforerender: this.stylesRenderAdvanced
+        	},            
         	'#templates_button': {
         		beforerender: this.templatesRender
         	},
@@ -77,6 +83,9 @@ Ext.define('eXe.controller.Toolbar', {
         	'#styles_menu > menuitem': {
         		click: this.stylesClick
         	},
+        	'#styles_menu_advanced > menuitem': {
+        		click: this.stylesClickAdvanced
+        	},            
         	'#templates_menu > menuitem': {
         		click: this.templatesClick
         	},
@@ -316,7 +325,9 @@ Ext.define('eXe.controller.Toolbar', {
 			     key: Ext.EventObject.S,
 			     alt: true,
 			     handler: function() {
-			          this.showMenu(Ext.ComponentQuery.query('#styles_button')[0]);
+			          var selector = '#styles_button';
+			          if (document.body.className.indexOf("exe-advanced")!=-1) selector += '_advanced_wrapper';
+			          this.showMenu(Ext.ComponentQuery.query(selector)[0]);
 			     },
 			     scope: this,
 			     defaultEventAction: "stopEvent"
@@ -1229,13 +1240,14 @@ Ext.define('eXe.controller.Toolbar', {
     	return true;
     },
 
-    stylesRender: function() {
-    	Ext.Ajax.request({
+    stylesRender: function(updateFromTheOtherMenu) {
+        Ext.Ajax.request({
     		url: location.pathname + '/styleMenu',
     		scope: this,
     		success: function(response) {
-				var styles = Ext.JSON.decode(response.responseText),
-					menu = this.getStylesMenu(), i, item;
+				var styles = Ext.JSON.decode(response.responseText), menu, i, item;
+                if (updateFromTheOtherMenu==true) menu = Ext.ComponentQuery.query("#styles_button")[0].menu;
+                else menu = this.getStylesMenu();
 					// JRJ: Primero los borro
 					menu.removeAll();
     			for (i = styles.length-1; i >= 0; i--) {
@@ -1246,6 +1258,25 @@ Ext.define('eXe.controller.Toolbar', {
     	})
     	return true;
     },
+    
+    stylesRenderAdvanced: function(updateFromTheOtherMenu) {
+        Ext.Ajax.request({
+    		url: location.pathname + '/styleMenu',
+    		scope: this,
+    		success: function(response) {
+				var styles = Ext.JSON.decode(response.responseText), menu, i, item;
+                if (updateFromTheOtherMenu==true) menu = Ext.ComponentQuery.query("#styles_button_advanced")[0].menu;
+                else menu = this.getStylesMenuAdvanced();
+					// JRJ: Primero los borro
+					menu.removeAll();
+    			for (i = styles.length-1; i >= 0; i--) {
+                    item = Ext.create('Ext.menu.CheckItem', { text: styles[i].label, itemId: styles[i].style, checked: styles[i].selected });
+    				menu.insert(0, item);
+    			}
+    		}
+    	})
+    	return true;
+    },    
 
     templatesRender: function() {
     	Ext.Ajax.request({
@@ -1292,14 +1323,32 @@ Ext.define('eXe.controller.Toolbar', {
 		}
 		item.setChecked(true);
 		item.parentMenu.hide();
-		// provisional
-		// item.parentMenu.parentMenu.hide();
 		item.parentMenu.hide();
-		//
+		
         var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
         if (authoring)
             authoring.submitLink("ChangeStyle", item.itemId, 1);
+        
+        // Update the advanced menu
+        eXe.controller.Toolbar.prototype.stylesRenderAdvanced(true);
     },
+    
+    executeStylesClickAdvanced: function(item) {
+		for (var i = item.parentMenu.items.length-1; i >= 0; i--) {
+			if (item.parentMenu.items.getAt(i) != item)
+				item.parentMenu.items.getAt(i).setChecked(false);
+		}
+		item.setChecked(true);
+		item.parentMenu.hide();
+		item.parentMenu.parentMenu.hide();
+		
+        var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
+        if (authoring)
+            authoring.submitLink("ChangeStyle", item.itemId, 1);
+        
+        // Update the Styles menu
+        eXe.controller.Toolbar.prototype.stylesRender(true);
+    },    
 
     stylesClick: function(item) {
         var ed = this.getTinyMCEFullScreen();
@@ -1310,6 +1359,16 @@ Ext.define('eXe.controller.Toolbar', {
             },500);
         } else this.executeStylesClick(item);
     },
+    
+    stylesClickAdvanced: function(item) {
+        var ed = this.getTinyMCEFullScreen();
+        if(ed!="") {
+            ed.execCommand('mceFullScreen');
+            setTimeout(function(){
+                eXe.controller.Toolbar.prototype.executeStylesClick(item);
+            },500);
+        } else this.executeStylesClickAdvanced(item);
+    },    
 
     executeTemplatesClick: function(path) {
     	nevow_clientToServerEvent('loadTemplate', this, '', path)
