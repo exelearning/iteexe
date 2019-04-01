@@ -10,7 +10,7 @@ var $exeDevice = {
 	
 	// We use eXe's _ function
 	i18n : {
-		name : _('Text (optional feedback)')
+		name : _('Text')
 	},
 	
 	init : function(){
@@ -45,7 +45,7 @@ var $exeDevice = {
         
 		// Focus on the title right after adding the iDevice
         var titleField = $("#activeIdevice input[type='text']").eq(0);
-        if (titleField.val()==_('Text (optional feedback)')) titleField.val("").focus();        
+        if (titleField.val()==_('Text')) titleField.val("").focus();        
 		
 	},
 	
