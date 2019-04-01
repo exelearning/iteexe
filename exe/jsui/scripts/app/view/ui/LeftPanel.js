@@ -20,6 +20,7 @@
 Ext.define('eXe.view.ui.LeftPanel', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.leftpanel',
+    itemId: 'exe_leftpanel',
     requires: [
         'eXe.view.ui.OutlineToolbar1',
         'eXe.view.ui.OutlineToolbar2',
