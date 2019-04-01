@@ -49,8 +49,8 @@ ol,ul{color:#3a4749}
 /* iDevice icons */
 .iDevice_header{background:url(icon_exe.png) no-repeat 0 50%;padding-left:75px;position:relative}
 .hidden-idevice .iDevice_header{background-color:#f5f7f8;padding-left:65px;box-shadow:rgba(0, 0, 0, 0.3) 3px 3px 4px}
-.iDevice_header.iDevice_header_noIcon{padding:5px 0}
-.hidden-idevice .iDevice_header.iDevice_header_noIcon{padding-bottom:20px}
+.iDevice_header.iDevice_header_noIcon{padding:0}
+.hidden-idevice .iDevice_header.iDevice_header_noIcon{padding-left:20px}
 
 .activityIdevice .iDevice_header{background-image:url(icon_gears.png)}
 .readingIdevice .iDevice_header{background-image:url(icon_knowledge.png)}
