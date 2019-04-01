@@ -1,110 +1,148 @@
-/* Imágenes utilizadas */
-/* my_logo.jpg - Imagen de la cabecera de los documentos exportados como Página sola */
-/* my_list.gif - Sustituye al punto de las listas no numeradas introducidas desde eXeLearning  */
-/* my_ims_header.jpg - Imagen de fondo para el título de cada página en los IMS y en los documentos exportados como Página sola */
-/* my_header.jpg - Imagen de la cabecera de los documentos exportados como Sitio web */
-/* Los iconos de los iDevices también se controlan mediante CSS (ver iDevice icons) */ 
-
-/* Colores */
-body{
-	color:#333333; /* Cuerpo de texto */
-	background:#ffffff; /* Color de fondo */
+/* vietnamese */
+@font-face {
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Encode Sans Light'), local('EncodeSans-Light'), url(EncodeSans-Light_vietnamese.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
 }
-a{
-	color:#0055A6; /* Enlaces */
+/* latin-ext */
+@font-face {
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Encode Sans Light'), local('EncodeSans-Light'), url(EncodeSans-Light_latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-#header{
-	color:#666666; /* Título del proyecto */
-}
-#nodeTitle{
-	color:#008F75; /* Título de cada página */
-    text-shadow:1px 1px 1px #ffffff; /* Sombra  */
-}
-#main #nodeDecoration{
-	border-color:#E7EBEE; /* Borde del título de cada página */
-	background-color:#DEE5EB; /* Color de fondo */
-}
-.iDeviceTitle{
-	color: #8A5F31; /* Títulos de los iDevices */
-}
-.iDevice_inner{
-	background-color:#FAF8F2; /* Fondo del cuerpo del iDevice */
-	color:#4d4d4d; /* Texto de los iDevices */
-	border-color:#EBE3CC; /* Borde del cuerpo de los iDevices */
-}
-#siteFooter{
-	color:#666666; /* Texto del pie de página */
-}
-#siteFooter a{
-	color:#8A5F31; /* Enlaces del pie de página */
-}
-input.feedbackbutton{
-	background-color: #DBE992; /* Color de fondo del botón de feedback */
-}
-/* Download package iDevice */
-.download-packageIdevice .exe-download-package-link a{
-	background:#8A5F31
+/* latin */
+@font-face {
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Encode Sans Light'), local('EncodeSans-Light'), url(EncodeSans-Light_latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Otras definiciones */
-body{font:.82em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
-#nodeTitle{font-size:1.5em;margin:0;text-align:left;font-weight:bold}
-#main #nodeDecoration{padding:17px 15px 5px 15px;margin-bottom:15px;background-repeat:no-repeat;background-position:right 0;border-width:1px;border-style:solid;background-image:url(my_ims_header.jpg);text-align:left}
-#header{height:54px;background-repeat:no-repeat;background-position:0 0;background-image:url(my_logo.jpg);padding-bottom:10px;padding-left:10px;font-size:1.1em;font-weight:bold}
-#header h1{margin:0;font-size:1em}
-#main ul li{width:auto;list-style-image:url(my_list.gif);margin-bottom:0.2em}
-#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
-#main h2{font-size:1.4em}
-#main h3{font-size:1.3em}
+html,body{min-height:100%}
+html{padding:0}
+body{font:1.05em/1.6 "Encode Sans",​Arial,Helvetica,sans-serif;padding:20px;margin:0;text-align:left;color:#333;background:#fff}
+input,select,textarea,.feedback{font-family:"Encode Sans",​Arial,Helvetica,sans-serif;font-size:1em}
+.pre-code,.highlighted-code{font-family:"Encode Sans",​Arial,Helvetica,sans-serif;font-size:.9em;border-radius:0}
+a{color:#007691}
+/* Header is also in single page */
+#header h1{margin:0;font-size:1em;color:#004F66}
+#header,#emptyHeader,#nodeDecoration{height:auto;font-size:1em;text-align:left;letter-spacing:.5px;padding:26px 35px 34px 20px;border:1px solid #ddd;margin-bottom:0;background:url(_intef_title_bg.png) no-repeat 50% bottom}
+.exe-single-page #header{font-size:1.55em}
+#nodeTitle{font-size:1.55em;margin:0;color:#004F66}
+#header h1,#nodeTitle{text-shadow:0 0 8px rgba(255,255,255,.6),0 0 5px rgba(255,255,255,.6),0 0 2px rgba(255,255,255,.9)}
+/* .nodeTitle when single page */
+.nodeTitle{padding:25px 0;border-bottom:1px dotted #97afb2;margin:25px 0 0 0;color:#3a4749;letter-spacing:.5px;font-size:1.5em}
+h2{font-size:1.4em;color:#007691;letter-spacing:.5px;font-weight:normal}
+h3{font-size:1.35em;color:#97afb2;letter-spacing:.5px;font-weight:normal}
+p{margin:1em 0}
+ol,ul{color:#3a4749}
+#main{height:auto!important;height:300px;min-height:300px}
 #main h4{font-size:1.2em}
 #main h5{font-size:1.1em}
-.iDevice{margin:10px 0 20px 0}
-.iDeviceTitle{font-size:1.2em;vertical-align:bottom;top:auto} 
-#main .iDeviceTitle{display:inline;font-size:1.2em}
+.iDevice{margin:25px 0}
 
 /* iDevice icons */
-.iDevice_icon{width:30px;height:auto;margin-right:5px} /* Legacy: old iDevices */
-.iDevice_header{background-image:url(icon_generic.gif);padding:5px 0 5px 37px;margin-bottom:5px}
-.activityIdevice .iDevice_header{background-image:url(icon_activity.gif)}
-.readingIdevice .iDevice_header{background-image:url(icon_reading.gif);padding-left:41px}
+.iDevice_header{background:url(icon_exe.png) no-repeat 0 50%;padding-left:75px;position:relative}
+.hidden-idevice .iDevice_header{background-color:#f5f7f8;padding-left:65px;box-shadow:rgba(0, 0, 0, 0.3) 3px 3px 4px}
+.iDevice_header.iDevice_header_noIcon{padding:5px 0}
+.hidden-idevice .iDevice_header.iDevice_header_noIcon{padding-bottom:20px}
+
+.activityIdevice .iDevice_header{background-image:url(icon_gears.png)}
+.readingIdevice .iDevice_header{background-image:url(icon_knowledge.png)}
+.CasestudyIdevice .iDevice_header{background-image:url(icon_teacher_screen.png)}
+.FileAttachIdeviceInc .iDevice_header{background-image:url(icon_atom.png)}
+.GalleryIdevice .iDevice_header{background-image:url(icon_camera.png)}
+.objectivesIdevice .iDevice_header{background-image:url(icon_award.png)}
+.ReflectionIdevice .iDevice_header{background-image:url(icon_think.png)}
+.preknowledgeIdevice .iDevice_header{background-image:url(icon_bulb.png)}
+
+/* Interactive activities */
 .ListaIdevice .iDevice_header,
 .QuizTestIdevice .iDevice_header,
 .MultichoiceIdevice .iDevice_header,
 .TrueFalseIdevice .iDevice_header,
 .MultiSelectIdevice .iDevice_header,
-.ClozeIdevice .iDevice_header{background-image:url(icon_question.gif)}
-.CasestudyIdevice .iDevice_header{background-image:url(icon_casestudy.gif)}
-.preknowledgeIdevice .iDevice_header{background-image:url(icon_preknowledge.gif);padding-left:39px}
-.GalleryIdevice .iDevice_header{background-image:url(icon_gallery.gif)}
-.objectivesIdevice .iDevice_header{background-image:url(icon_objectives.gif)}
-.ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.gif)}
+.ClozeIdevice .iDevice_header,
+.ScrambledListIdevice .iDevice_header{background-image:url(icon_list.png)}
 
-.iDevice_inner{padding: 10px 20px;border-width:1px 0 1px 0;border-style:dotted}
-.iDevice_content:before,.iDevice_content:after{content:"";display:table}
-.iDevice_content:after{clear:both}
-.iDevice_content{*zoom:1}/* IE6/7: Trigger hasLayout and contain floats */
+/* iDevice title */
+.iDeviceTitle{font-size:1.4em;display:inline;font-weight:normal;vertical-align:top;top:0;color:#007691;line-height:60px;padding-right:25px;letter-spacing:.5px}
+.hidden-idevice .iDeviceTitle{color:#526668}
 
+.iDevice_content{overflow:auto;text-align:justify}
+/* iDevice content */
+.iDevice_inner{padding:10px 20px;background:#f5f7f8;box-shadow:rgba(0, 0, 0, 0.3) 3px 3px 4px}
+
+#siteFooter{font-size:.95em;margin:25px 0}
+#siteFooter a{color:#DB0B00}
+#lbOverlay{background-color:#e2e2e2}
+#lbOuterContainer{border-color:#ddd}
+.ExternalUrlIdevice iframe{border:none}
+/* Lightbox */
+.exeImageGallery{width:100%}
 /* base.css */
 .block,.feedback{padding:0}
-.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 li{list-style-position:outside}
-.exe-dl .icon{line-height:18px}
-.js .exe-dl dd{margin-left:36px}
-
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+/* Form buttons */
+.iDevice_inner input[type=submit],.feedbackbutton{background:#007691;border:0;padding:4px 10px;color:#fff;margin-bottom:1em}
+.iDevice_inner input[type=submit]:hover,.feedbackbutton:hover{background:#3a4749}
 /* Hide/Show iDevice */
-.toggle-idevice{display:block;margin:0;text-align:right}
-.iDevice_header .toggle-idevice{float:right;padding-top:2px;margin:0}
-.toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(my_hide_show.png) no-repeat 0 -16px}
+.toggle-idevice{text-align:right;display:block;margin-right:13px}
+.iDevice_header .toggle-idevice{float:right;margin:20px 13px 0 0}
+.toggle-idevice a{display:inline-block;width:20px;height:20px;background:url(_intef_icons.png) no-repeat 0 -20px}
 .toggle-idevice .show-idevice{background-position:0 0}
-.toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+.toggle-idevice span,#printNode a span{
+	position:absolute; 
+	clip:rect(1px 1px 1px 1px);/* IE6, IE7 */
+	clip:rect(1px, 1px, 1px, 1px);	
+}
+/* eXe < 2.1 */
+.iDevice a,#siteFooter a,#packageLicense a,.toggle-idevice a{text-decoration:underline}
+.iDevice a:hover,#siteFooter a:hover,#packageLicense a:hover,.toggle-idevice a:hover{text-decoration:none}
+/* Licenses */
+#packageLicense{text-align:left;font-size:.8em;padding:0 20px;color:#FFF;line-height:1em;margin:0 0 25px 0;background:#526668;border:1px solid #526668;box-shadow:rgba(0, 0, 0, 0.4) 3px 3px 4px}
+#packageLicense p{margin:20px 0}
+#packageLicense a{color:#ecd078;text-decoration:underline}
+#packageLicense.propietary{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+#packageLicense.cc{padding:0 20px 0 110px;background:#526668 url(_intef_licenses.gif) no-repeat 20px 5px}
+#packageLicense.cc-by-sa{background-position:20px -95px}
+#packageLicense.cc-by-nd{background-position:20px -195px}
+#packageLicense.cc-by-nc-sa{background-position:20px -295px}
+#packageLicense.cc-by-nc-nd{background-position:20px -395px}
+#packageLicense.cc-0{background-position:20px -495px}
 
-/* Effects */
-.exe-fx .fx-C2,
-.exe-fx .fx-C2 a,
-.fx-pagination a{
-	background:#EEF2F5;
+/* eXe Figures */
+.exe-figure{margin:2.5em 0}
+.exe-figure,.exe-figure a{color:#888}
+.position-center{margin:2.5em auto}
+.position-right{margin:2.5em 0 2.5em auto}
+.float-left{margin:.5em 1.5em 1em 0}
+.float-right{float:right;margin:.5em 0 1em 2em}
+
+#printNode{margin:0;position:absolute;top:33px;right:33px}
+#printNode.with-toggler{margin-bottom:0}
+#printNode a{display:block;width:30px;height:30px;background:#fff url(_intef_print.png) no-repeat 50% 50%;box-shadow:rgba(0, 0, 0, 0.3) 3px 3px 4px;border-radius:15px}
+
+@media print{
+	#nodeDecoration,#header,#emptyHeader{color:#000;text-shadow:none;background:none;border:none;border-bottom:1px solid #E2E2E2;padding:20px 0}
+	#packageLicense,#packageLicense.cc{background:none;padding:0;border:none;box-shadow:none;text-align:center}
+	#packageLicense,#packageLicense a,#nodeTitle,.nodeTitle{color:#000}
+	.iDevice_header{padding:5px 0}
 }
 
-/* To review */
-.TrueFalseIdevice .question{margin-bottom:25px}
-.TrueFalseIdevice .question:last-child{margin-bottom:0}
+/* Accordion */
+.fx-accordion-title,.exe-accordion h2{background:#1E3F5D}
+
+/* Hint & Feedback */
+.iDevice_hint_content{border:1px solid #ecf0f1;background:#FFF}
+.iDevice_inner .feedback{background:#FFF;border:1px solid #ecf0f1;padding:0 1em;margin:1em 0}
+.iDevice_inner .feedback-right{background:#E9F9DF}
+.iDevice_inner .feedback-wrong{background:#FDFDDB}
+.iDevice_inner .iDevice_answer-feedback{background:none;border:none;padding:0;margin:0}
+.TrueFalseIdevice .feedback{margin-top:1.5em}
