@@ -661,7 +661,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                     cls: 'exe-advanced',
                     xtype: 'fieldcontainer',
 					defaultType: 'checkboxfield',
-					margin: '0 0 0 30',
+					margin: '0 0 0 25',
 					items: [
                         {
                             boxLabel: _('Left panel'),
@@ -676,21 +676,59 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 									var panel = Ext.ComponentQuery.query('#exe_leftpanel')[0];
 									if (newValue==true) {
 										panel.show();
+										Ext.select("BODY").removeCls('exe-maximized');
                                     } else {
 										panel.hide();
+										Ext.select("BODY").addCls('exe-maximized');                                        
                                     }
                                 }
                             }
                         }
                     ]
-                },                 
+                }, 
+                // Add iDevice menu
+                {
+                    cls: 'exe-advanced exe-maximized',
+                    displayField: 'label',
+                    valueField: 'id',
+                    xtype: 'combo',
+                    width: 200,
+                    margin: '0 0 0 25',
+                    value: 'Add...',
+                    listConfig: {
+                        tpl: [
+                            '<ul><tpl for=".">',
+                                '{[xindex === 1 || parent[xindex - 2].category !== values.category ? "<li><strong style=\'font-weight:bold\'>" + values.category + "</strong></li>" : ""]}',
+                                '<li role="option" class="x-boundlist-item">{label}</li>',
+                            '</tpl></ul>'
+                        ]
+                    },
+                    store: 'IdeviceXmlStore',
+                    listeners: {
+                        change: function(e, newValue) {
+                            var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
+                            var isEditing = false;
+                                var iframes = document.getElementsByTagName("iframe");
+                                if (iframes.length==1 && iframes[0].contentWindow.document.getElementById("activeIdevice")) isEditing = true;
+                            if (isEditing==true) {
+                                Ext.Msg.alert(
+                                    _('Info'),
+                                    _('Save the changes of your iDevice before adding a new one.')
+                                );
+                            } else if (authoring && authoring.submitLink) {
+                                authoring.submitLink("AddIdevice", newValue);
+                            }
+                            e.clearValue();
+                        }
+                    }                    
+                },                
                 // Advanced user and Preview button
                 '->',
                 // Advanced user
                 {
                     xtype: 'fieldcontainer',
 					defaultType: 'checkboxfield',
-					margin: '0 30 0 0',
+					margin: '0 25 0 0',
 					items: [
                         {
                             boxLabel: _('Advanced user'),

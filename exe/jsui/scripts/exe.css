@@ -104,6 +104,8 @@ fieldset.collapsed-with-data > legend > div, fieldset.collapsed-with-data > lege
 	margin-top:1px;
 }
 /* Advanced or simplified view */
+body .exe-maximized{visibility:hidden}
+body.exe-maximized .exe-maximized{visibility:visible}
 body.exe-simplified .exe-advanced,
 body.exe-advanced .exe-simplified,
 .exe-simplified #preferenceswin-body .x-tab-bar-body-horizontal,
