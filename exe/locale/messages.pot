@@ -1,10 +1,9 @@
-# Translations template for eXeLearning.
-# Copyright (C) 2019 ORGANIZATION
+# eXeLearning, the EXtremely Easy to use eLearning authoring tool
+# Copyright (C) 2004-2011 EXELearning.org
+# Copyright (C) 2011-2019 eXeLearning.net
 # This file is distributed under the same license as the eXeLearning
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.3\n"
