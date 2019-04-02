@@ -84,6 +84,7 @@ Ext.define('eXe.view.ui.OutlineToolbar1', {
                                             lnk.style.display = 'inline';
                                         }
                                     }
+                                    return false;
                                 }
                             }
                         }                    
