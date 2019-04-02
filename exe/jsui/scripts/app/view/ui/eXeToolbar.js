@@ -655,35 +655,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             }
                         ]
                     }
-                },
-                // Left panel toggler
-                {
-                    cls: 'exe-advanced',
-                    xtype: 'fieldcontainer',
-					defaultType: 'checkboxfield',
-					margin: '0 0 0 30',
-					items: [
-                        {
-                            boxLabel: _('Left panel'),
-                            tooltip: _('Hide or show the application left panel.'),
-                            name: 'exe_leftpanel_toggler',
-                            inputValue: '1',
-                            checked: true,
-                            id: 'exe_leftpanel_toggler',
-                            itemId: 'exe_leftpanel_toggler',
-                            listeners : {
-                                change: function(e, newValue) {
-									var panel = Ext.ComponentQuery.query('#exe_leftpanel')[0];
-									if (newValue==true) {
-										panel.show();
-                                    } else {
-										panel.hide();
-                                    }
-                                }
-                            }
-                        }
-                    ]
-                },                 
+                },               
                 // Advanced user and Preview button
                 '->',
                 // Advanced user
@@ -719,10 +691,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     } else {
 										Ext.util.Cookies.set('eXeUIversion', 'simplified');
                                         Ext.select("BODY").removeCls('exe-advanced');
-										Ext.select("BODY").addCls('exe-simplified');
-                                        // Show the left panel
-                                        var checkBox = Ext.ComponentQuery.query('#exe_leftpanel_toggler')[0];
-                                        checkBox.setValue(true);                                     
+										Ext.select("BODY").addCls('exe-simplified');                                        
 										// Change some strings:
 										if (descriptionLabel && descriptionLabel.length==1) descriptionLabel[0].innerHTML = _("General description") + ":";
 										// Show Properties - Package
