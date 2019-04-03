@@ -1,5 +1,5 @@
 # ===========================================================================
-# eXe 
+# eXe
 # Copyright 2004-2005, University of Auckland
 # Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
@@ -66,13 +66,13 @@ class WebsiteExport(object):
         self.report          = report
         self.styleSecureMode = config.styleSecureMode
 
-        
+
     def exportZip(self, package):
-        """ 
+        """
         Export web site
         Cleans up the previous packages pages and performs the export
         """
-        
+
         outputDir = TempDirPath()
 
         # Import the Website Page class , if the secure mode is off.  If the style has it's own page class
@@ -80,7 +80,7 @@ class WebsiteExport(object):
         if self.styleSecureMode=="0":
             if (self.stylesDir/"websitepage.py").exists():
                 global WebsitePage
-                module = imp.load_source("websitepage", 
+                module = imp.load_source("websitepage",
                                          self.stylesDir/"websitepage.py")
                 WebsitePage = module.WebsitePage
 
@@ -95,7 +95,7 @@ class WebsiteExport(object):
             thisPage.save(outputDir, prevPage, nextPage, self.pages)
             prevPage = thisPage
             thisPage = nextPage
-            
+
 
         thisPage.save(outputDir, prevPage, None, self.pages)
         self.copyFiles(package, outputDir)
@@ -127,7 +127,7 @@ class WebsiteExport(object):
                     self.report += u'"%s",%d,"%s","%s","%s","%s",,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource)
 
     def export(self, package):
-        """ 
+        """
         Export web site
         Cleans up the previous packages pages and performs the export
         """
@@ -140,7 +140,7 @@ class WebsiteExport(object):
         # use that, else use the default one.
         if (self.stylesDir/"websitepage.py").exists():
             global WebsitePage
-            module = imp.load_source("websitepage", 
+            module = imp.load_source("websitepage",
                                      self.stylesDir/"websitepage.py")
             WebsitePage = module.WebsitePage
 
@@ -167,18 +167,18 @@ class WebsiteExport(object):
 
             if self.prefix == "":
                 self.copyFiles(package, outputDir)
-                
+
             return outputDir
-            
+
         else:
-            self.filename.write_text(self.report, 'utf-8')            
+            self.filename.write_text(self.report, 'utf-8')
 
 
     def copyFiles(self, package, outputDir):
         """
         Copy all the files used by the website.
         """
-       
+
         if os.path.isdir(self.stylesDir):
             # Copy the style files to the output dir
             styleFiles = [self.stylesDir/'..'/'popup_bg.gif']
@@ -188,20 +188,20 @@ class WebsiteExport(object):
         # copy the package's resource files
         for resourceFile in package.resourceDir.walkfiles():
             file = package.resourceDir.relpathto(resourceFile)
-            
+
             if ("/" in file):
                 Dir = Path(outputDir/file[:file.rindex("/")])
 
                 if not Dir.exists():
                     Dir.makedirs()
-        
+
                 resourceFile.copy(outputDir/Dir)
             else:
                 resourceFile.copy(outputDir)
-                   
+
         listCSSFiles=getFilesCSSToMinify('website', self.stylesDir)
-        exportMinFileCSS(listCSSFiles, outputDir)          
-            
+        exportMinFileCSS(listCSSFiles, outputDir)
+
         # copy script files.
         my_style = G.application.config.styleStore.getStyle(package.style)
         # jQuery
@@ -214,11 +214,11 @@ class WebsiteExport(object):
         else:
             listFiles+=[self.scriptsDir/'exe_jquery.js']
             listOutFiles+=[outputDir/'exe_jquery.js']
-            
+
         # Minify common.js file
-        listFiles=getFilesJSToMinify('website', self.scriptsDir)        
+        listFiles=getFilesJSToMinify('website', self.scriptsDir)
         exportMinFileJS(listFiles, outputDir)
-        
+
         # Create lang file
         langFile = open(outputDir + '/common_i18n.js', "w")
         langFile.write(common.getJavaScriptStrings(False))
@@ -227,7 +227,7 @@ class WebsiteExport(object):
         dT=common.getExportDocType();
         if dT == "HTML5":
             jsFile = (self.scriptsDir/'exe_html5.js')
-            jsFile.copyfile(outputDir/'exe_html5.js')   
+            jsFile.copyfile(outputDir/'exe_html5.js')
 
         # Incluide eXe's icon if the Style doesn't have one
         themePath = Path(G.application.config.stylesDir/package.style)
@@ -235,8 +235,8 @@ class WebsiteExport(object):
         if not themeFavicon.exists():
             faviconFile = (self.imagesDir/'favicon.ico')
             faviconFile.copyfile(outputDir/'favicon.ico')
-        
-        # copy players for media idevices.                
+
+        # copy players for media idevices.
         hasFlowplayer     = False
         hasMagnifier      = False
         hasXspfplayer     = False
@@ -252,7 +252,7 @@ class WebsiteExport(object):
         hasTooltips       = False
         hasABCMusic       = False
         listIdevicesFiles = []
-        
+
         for page in self.pages:
             if isBreak:
                 break
@@ -295,7 +295,7 @@ class WebsiteExport(object):
                     listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
 
             common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir);
-        
+
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(outputDir/'flowPlayer.swf')
@@ -323,7 +323,7 @@ class WebsiteExport(object):
             langGameFile = open(outputDir + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
-        if hasElpLink or package.get_exportElp():
+        if hasElpLink or (hasattr(package, '_exportElp') and package.get_exportElp()):
             # Export the elp file
             currentPackagePath = Path(package.filename)
             currentPackagePath.copyfile(outputDir/package.name+'.elp')
@@ -362,7 +362,7 @@ class WebsiteExport(object):
         """
         Recursively generate pages and store in pages member variable
         for retrieving later
-        """           
+        """
         for child in node.children:
             # assure lower pagename, without whitespaces or alphanumeric characters:
             pageName = child.titleShort.lower().replace(" ", "_")
