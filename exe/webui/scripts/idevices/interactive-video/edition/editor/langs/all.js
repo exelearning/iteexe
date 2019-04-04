@@ -36,10 +36,10 @@ $i18n = {
 	// Types instructions
 	Text_Instructions : _("Write a text. You can add lists, links..."),
 	Image_Instructions : _("Add an image with description (alternative text)."),
-	Single_Choice_Instructions : _("Write a question and its answers. Don't forget to choose the right one."),
-	Multiple_Choice_Instructions : _("Write a question and its answers. You can select more than one right answer."),
+	Single_Choice_Instructions : _("Write a question and some answers. Don't forget to choose the right one."),
+	Multiple_Choice_Instructions : _("Write a question and some answers. You can select more than one right answer."),
 	Cloze_Quiz_Instructions : _("Write a text and strike through the words to complete. Check the spelling. It's case sensitive."),
-	Dropdown_Activity_Instructions : _("Write a text and strike through the words to complete. A dropdown menu (SELECT) will be displayed where those words are. You can add more options to those menus too."),
+	Dropdown_Activity_Instructions : _("Write a text and strike through the words to complete. A dropdown menu (SELECT) will be displayed where those words are. You can also add more options."),
 	Pairs_Game_Instructions : _("Write some instructions and add pairs in the right order."),
 	Scrambled_List_Instructions : _("Write the wording and add elements to the list (in the right order)."),	
 	// Text
@@ -52,7 +52,7 @@ $i18n = {
 	Text_to_complete : _("Text to complete"),
 	// Dropdown
 	Add_Options : _("Add options"),
-	You_can_add_more_options_to_the_dropdown_lists : _("You can add more options to the dropdown menus (optional)"),
+	You_can_add_more_options_to_the_dropdown_lists : _("You can add more options to the dropdown lists (optional)"),
 	// Pairs
 	Instructions : _("Instructions"),
 	Pairs : _("Pairs"),
