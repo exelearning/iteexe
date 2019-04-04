@@ -1,5 +1,5 @@
 # ===========================================================================
-# eXe 
+# eXe
 # Copyright 2004-2005, University of Auckland
 # Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
@@ -30,7 +30,7 @@ from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.engine.version       import release
 from exe.export.pages         import Page, uniquifyNames
-from exe.webui                import common 
+from exe.webui                import common
 from exe                      import globals as G
 log = logging.getLogger(__name__)
 
@@ -53,7 +53,7 @@ class WebsitePage(Page):
         outfile = open(outputDir / self.name + '.' + ext, "wb")
         outfile.write(self.render(prevPage, nextPage, pages))
         outfile.close()
-        
+
 
     def render(self, prevPage, nextPage, pages):
         """
@@ -62,7 +62,7 @@ class WebsitePage(Page):
         lenguaje = G.application.config.locale
         if self.node.package.dublinCore.language!="":
             lenguaje = self.node.package.dublinCore.language
-        
+
         dT = common.getExportDocType()
         themeHasXML = common.themeHasConfigXML(self.node.package.style)
         lb = "\n" #Line breaks
@@ -83,7 +83,7 @@ class WebsitePage(Page):
         html += u"<head>"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
         if common.hasWikipediaIdevice(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb    
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
         if common.hasFX(self.node):
@@ -93,11 +93,11 @@ class WebsitePage(Page):
         if common.hasGames(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />"+lb
         if common.hasABCMusic(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_abcmusic.css\" />"+lb            
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_abcmusic.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"nav.css\" />"+lb
         html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += u" charset=utf-8\" />"+lb        
+        html += u" charset=utf-8\" />"+lb
         html += u"<title>"
         if self.node.id=='0':
             if self.node.package.title!='':
@@ -125,7 +125,7 @@ class WebsitePage(Page):
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         style = G.application.config.styleStore.getStyle(self.node.package.style)
-        
+
         # jQuery
         if style.hasValidConfig:
             if style.get_jquery()==True:
@@ -134,7 +134,7 @@ class WebsitePage(Page):
                 html += u'<script type="text/javascript" src="'+style.get_jquery()+'"></script>'+lb
         else:
             html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
-        
+
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         if common.hasFX(self.node):
@@ -145,7 +145,7 @@ class WebsitePage(Page):
         if common.hasGames(self.node):
             html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
         if common.hasABCMusic(self.node):
-            html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>'+lb            
+            html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         html += common.printJavaScriptIdevicesScripts('export', self)
         if common.hasMagnifier(self.node):
@@ -156,7 +156,7 @@ class WebsitePage(Page):
         html += common.getExtraHeadContent(self.node.package)
         html += u"</head>"+lb
         extraCSS = ''
-        if self.node.package.get_addSearchBox() and self.node.package.exportSource:
+        if (hasattr(self.node.package, '_addSearchBox') and self.node.package.get_addSearchBox()) and self.node.package.exportSource:
             extraCSS = ' exe-search-bar'
         html += u'<body class="exe-web-site'+extraCSS+'" id="exe-node-'+self.node.id+'"><script type="text/javascript">document.body.className+=" js"</script>'+lb
         html += u"<div id=\"content\">"+lb
@@ -182,8 +182,8 @@ class WebsitePage(Page):
             html += '</div>'
             html += u"</"+headerTag+">"+lb
         else:
-            html += "<"+sectionTag+" id=\"emptyHeader\"></"+sectionTag+">"+lb			
-        
+            html += "<"+sectionTag+" id=\"emptyHeader\"></"+sectionTag+">"+lb
+
         # add left navigation html
         html += u"<"+navTag+" id=\"siteNav\">"+lb
         html += self.leftNavigationBar(pages)
@@ -204,7 +204,7 @@ class WebsitePage(Page):
         html += '</'+headerTag+'>'+lb
 
         self.node.exportType = 'website'
-        
+
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
                 e=" em_iDevice"
@@ -226,7 +226,7 @@ class WebsitePage(Page):
             html += "<div id='bottomPagination'>"+lb
             html += self.getNavigationLink(prevPage, nextPage, pages)
             html += "</div>"+lb
-        # writes the footer for each page 
+        # writes the footer for each page
         html += self.renderLicense()
         if not themeHasXML:
         #if not style.hasValidConfig:
@@ -237,12 +237,12 @@ class WebsitePage(Page):
         #if style.hasValidConfig:
             html += "<div id='bottomPagination'>"+lb
             html += self.getNavigationLink(prevPage, nextPage, pages)
-            html += "</div>"+lb        
+            html += "</div>"+lb
             html += self.renderFooter()
         html += u"</div>"+lb # /content
         if themeHasXML:
         #if style.hasValidConfig:
-            html += style.get_extra_body()        
+            html += style.get_extra_body()
         html += u'</body></html>'
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
@@ -266,7 +266,7 @@ class WebsitePage(Page):
             indent_text += "   "
             i+=1
         return indent_text
-        
+
     def leftNavigationBar(self, pages):
         """
         Generate the left navigation string for this page
@@ -277,9 +277,9 @@ class WebsitePage(Page):
 
         # Open the main ul
         html = "<ul>"
-        
+
         for page in pages:
-            # If this node is deeper than the previous one, we must open a new list 
+            # If this node is deeper than the previous one, we must open a new list
             while depth < page.depth:
                 html += lb+self.indent(depth)+"<ul"
 
@@ -288,11 +288,11 @@ class WebsitePage(Page):
                 html += ">"
                 depth += 1
 
-            # If this node is higher than the previous one, we must close the list (unless we are in the first level) 
+            # If this node is higher than the previous one, we must close the list (unless we are in the first level)
             while depth > page.depth and page.depth > 0:
                 html += lb+self.indent(depth-1)+"</ul>"+lb+self.indent(depth-1)+"</li>"
                 depth -= 1
-            # If checked ISO 9660 change the file extension 
+            # If checked ISO 9660 change the file extension
             ext = 'html'
             if G.application.config.cutFileName == '1':
                 ext = 'htm'
@@ -305,7 +305,7 @@ class WebsitePage(Page):
                 else:
                     html += " class=\"active no-ch"
 
-            # A node in the path of the active node (but not the main one) 
+            # A node in the path of the active node (but not the main one)
             elif page.node in nodePath and page.node.parent != None:
                 html += lb + self.indent(depth) + "<li class=\"current-page-parent\"><a href=\"" + quote(page.name) + '.' + ext + "\""
 
@@ -343,7 +343,7 @@ class WebsitePage(Page):
         html += lb+self.indent(depth-1)+"</ul>"+lb
 
         return html
-        
+
     def getNavigationLink(self, prevPage, nextPage, pages):
         """
         return the next link url of this page
@@ -357,14 +357,14 @@ class WebsitePage(Page):
         ext = 'html'
         if G.application.config.cutFileName == '1':
             ext = 'htm'
-            
+
         if prevPage:
             html += "<a href=\"" + quote(prevPage.name) + '.' + ext + "\" class=\"prev\"><span>"
             html += "<span>&laquo; </span>%s</span></a>" % c_('Previous')
-            
-        if self.node.package.get_addPagination(): 
+
+        if self.node.package.get_addPagination():
             if prevPage:
-                html += ' <span class="sep">| </span>'        
+                html += ' <span class="sep">| </span>'
             html += "<span class=\"page-counter\">" + c_('Page %s of %s') % ('<strong>'+str(pages.index(self) + 1)+'</strong>','<strong>'+str(len(pages))+'</strong>')+ "</span>"
 
         if nextPage:
@@ -372,7 +372,7 @@ class WebsitePage(Page):
                 html += ' <span class="sep">| </span>'
             html += "<a href=\"" + quote(nextPage.name) + '.' + ext + "\" class=\"next\"><span>"
             html += "%s<span> &raquo;</span></span></a>" % c_('Next')
-            
+
         html += lb + "</" + navTag + ">" + lb
         return html
 
@@ -386,4 +386,4 @@ class WebsitePage(Page):
         using the fully exported (and unique) file names for each node.
         """
         return common.renderInternalLinkNodeFilenames(package, html)
-        
+

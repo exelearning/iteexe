@@ -491,9 +491,9 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
         for resource in resources:
             fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
             self.dependencies[resource] = True
-            
+
         if common.hasElpLink(page.node):
-            fileStr += "    <file href=\""+page.node.package.name+".elp\"/>\n"         
+            fileStr += "    <file href=\""+page.node.package.name+".elp\"/>\n"
 
         self.resStr += fileStr
 
@@ -782,7 +782,7 @@ class ScormExport(object):
             langGameFile = open(outputDir + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
-        if hasElpLink or package.get_exportElp():
+        if hasElpLink or (hasattr(package, '_exportElp') and package.get_exportElp()):
             # Export the elp file
             currentPackagePath = Path(package.filename)
             currentPackagePath.copyfile(outputDir/package.name+'.elp')

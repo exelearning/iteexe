@@ -324,7 +324,7 @@ class Epub3Page(Page):
         if common.hasGames(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />" + lb
         if common.hasABCMusic(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_abcmusic.css\" />" + lb            
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_abcmusic.css\" />" + lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />" + lb
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->' + lb
@@ -371,7 +371,7 @@ class Epub3Page(Page):
         html += u"</" + headerTag + ">" + lb
 
         self.node.exportType = 'epub'
-        
+
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
                 e = " em_iDevice"
@@ -525,7 +525,7 @@ class Epub3SubExport(object):
         mimetypeFile = open(outputDir.abspath() + '/mimetype', "w")
         mimetypeFile.write('application/epub+zip')
         mimetypeFile.close()
-        
+
         # Create lang file
         langFile = open(contentPages + '/common_i18n.js', "w")
         langFile.write(common.getJavaScriptStrings(False))
@@ -537,7 +537,7 @@ class Epub3SubExport(object):
         filesStyleFiles += [f for f in self.styleDir.files("*.*") if f.basename() != "nav.css"]
 
         filesStyleFiles += [self.styleDir / '..' / 'popup_bg.gif']
-        
+
         # FIXME for now, only copy files referenced in Common Cartridge
         # this really should apply to all exports, but without a manifest
         # of the files needed by an included stylesheet it is too restrictive
@@ -628,7 +628,7 @@ class Epub3SubExport(object):
             langGameFile = open(contentPages + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
-        if hasElpLink or package.get_exportElp():
+        if hasElpLink or (hasattr(package, '_exportElp') and package.get_exportElp()):
             # Export the elp file
             currentPackagePath = Path(package.filename)
             currentPackagePath.copyfile(contentPages/package.name+'.elp')
