@@ -17,6 +17,7 @@ body{padding:0;
 .no-nav #main-wrapper{padding-left:25px;background:#fff}
 #main{width:100%}
 #header,#emptyHeader{border:none;padding:40px 210px 20px 20px;background:none;font-size:1.55em}
+#emptyHeader{height:42px}
 #headerContent{color:#004F66;text-shadow:1px 1px 1px #FFF}
 #nodeDecoration{padding:0;margin:0 0 25px 0;border:none;text-shadow:none;background:none;border-bottom:1px dotted #97afb2}
 #nodeTitle{padding:17px 0 15px 0;color:#798B8C;letter-spacing:.5px;font-size:1.7em;font-weight:normal}

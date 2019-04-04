@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>_ = top._;</script>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="/scripts/exe_jquery.js"></script>
+<script src="http://mediateca.educa.madrid.org/includes/player/exelearning/jwplayer.js"></script>
+<!-- MediaElement -->
+<script src="/scripts/mediaelement/exe_media.js"></script>
+<link rel="stylesheet" type="text/css" href="/scripts/mediaelement/exe_media.css" />
+<!-- / MediaElement -->
+<script src="/scripts/tinymce_4/js/tinymce/tinymce.min.js"></script>
+<script src="langs/all.js"></script>
+<script src="js/admin.js"></script>
+<link rel="stylesheet" type="text/css" href="css/admin.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+
+</style>
+<script>
+var InteractiveVideo = {
+	slides : []
+}
+if (typeof(top.interactiveVideoEditor)=='object' && typeof(top.interactiveVideoEditor.activityToSave)=='object') {
+	InteractiveVideo = top.interactiveVideoEditor.activityToSave;
+}
+$(function(){
+	iAdmin.init();
+});
+</script>
+</head>
+<body><script>document.body.className="js"</script>
+<div id="site" class="js-required">
+	<div id="header">
+		<div class="wrapper"><h1>%Interactive_Video_Editor%</h1></div>
+		<ul id="actions">
+			<li class="save"><a href="#" title="%Save%" onclick="iAdmin.actions.save();return false"><span>%Save%</span></a></li>
+			<li class="exit"><a href="#" title="%Quit%" onclick="iAdmin.actions.exit();return false"><span>%Quit%</span></a></li>
+		</ul>
+		<span id="actions-desc"></span>
+	</div>
+	<a href="#messages" id="messages-link" class="sr-av">%Messages%</a>
+	<div id="messages"></div>
+	<div id="content">
+		<div class="wrapper">
+			<div id="activity">
+				<div id="player" style="width:448px;height:356px"></div>
+			</div>
+			<div id="admin">
+				<div id="controls">
+					<ul>
+						<li class="help"><a href="#help-block" title="%Help%"><span>%Help%</span></a></li>
+						<li class="frontpage"><a href="#frontpage-block" title="%Create_Front_Page%" id="frontpage-link"><span>%Front_Page%</span></a></li>
+						<li class="add"><a href="#add-block" title="%Create_Frame%"><span>%Create%</span></a></li>
+						<li class="edit"><a href="#edit-block" title="%Edit_Frame%"><span>%Edit%</span></a></li>
+					</ul>
+					<span id="controls-tip"></span>
+				</div>
+				<div id="admin-content">
+					<div class="admin-block" id="help-block">
+						<ul>
+							<li class="step-1">%Create_a_front_page%</li>
+							<li class="step-2">%Add_new_frames%</li>
+							<li class="step-3">%You_can_edit_them_later%</li>
+							<li class="step-4">%Click_on_Save_when_you_finish%</li>
+						</ul>
+					</div>
+					<div class="admin-block" id="frontpage-block">
+						<div id="frontpage-form-msg" class="success-msg"></div>
+						<form id="frontpage-form" name="frontpage-form">
+							<p class="instructions">%Your_Interactive_Video_Cover%:</p>
+							<p class="text-field">
+								<label for="frontpage-title">%Title% <span>(%required%)</span>: </label>
+								<input type="text" name="frontpage-title" id="frontpage-title" />
+							</p>
+							<p>
+								<label for="frontpage-content">%Introduction%: </label>
+								<textarea name="frontpage-content" id="frontpage-content" cols="32" rows="4"></textarea>
+							</p>
+							<p class="buttons">
+								<input type="button" name="frontpage-submit" id="frontpage-submit" value="%Save_Front_Page%" />
+							</p>
+						</form>
+					</div>
+					<div class="admin-block" id="add-block">
+						<ul id="block-types">
+							<li class="text"><a href="#text-block" title="%Text%" class="current"><span>%Text%</span></a></li>
+							<li class="image"><a href="#image-block" title="%Image%"><span>%Image%</span></a></li>
+							<li class="singleChoice"><a href="#singleChoice-block" title="%Single_Choice%"><span>%Single_Choice%</span></a></li>
+							<li class="multipleChoice"><a href="#multipleChoice-block" title="%Multiple_Choice%"><span>%Multiple_Choice%</span></a></li>
+							<li class="cloze"><a href="#cloze-block" title="%Cloze_Quiz%"><span>%Cloze_Quiz%</span></a></li>
+							<li class="dropdown"><a href="#dropdown-block" title="%Dropdown_Activity%"><span>%Dropdown_Activity%</span></a></li>
+							<li class="matchElements"><a href="#matchElements-block" title="%Pairs_Game%"><span>%Pairs_Game%</span></a></li>
+							<li class="sortableList"><a href="#sortableList-block" title="%Scrambled_List%"><span>%Scrambled_List%</span></a></li>
+						</ul>
+						<div id="block-types-admin">
+							<div id="block-type-description">%Text%</div>
+							<div class="block-type" id="text-block">
+								<h3>%Text%</h3>
+								<div id="text-block-msg" class="success-msg"></div>
+								<form id="text-block-form" class="block-form">
+									<div class="block-form-content">
+										<p>
+											<label for="text-block-content" class="sr-av">%Text_to_show%: </label>
+											<textarea name="text-block-content" id="text-block-content" cols="32" rows="4"></textarea>
+										</p>
+										<p class="buttons">
+											<input type="button" name="text-block-submit" id="text-block-submit" class="block-submit" value="%Create_Frame_Submit%" />
+										</p>
+									</div>
+								</form>
+							</div>
+							<div class="block-type" id="image-block" style="display:none">
+								<h3>%Image%</h3>
+								<div id="image-block-msg" class="success-msg"></div>
+								<form id="image-block-form" class="block-form">
+									<div class="block-form-content">
+										<p>
+											<label for="image-block-content" class="sr-av">%Text_to_show%: </label>
+											<textarea name="image-block-content" id="image-block-content" cols="32" rows="4"></textarea>
+										</p>
+										<p class="buttons">
+											<input type="button" name="image-block-submit" id="image-block-submit" class="block-submit" value="%Create_Frame_Submit%" />
+										</p>
+									</div>
+								</form>
+							</div>
+							<div class="block-type" id="singleChoice-block" style="display:none">
+								<h3>%Single_Choice%</h3>
+								<div id="singleChoice-block-msg" class="success-msg"></div>
+								<form id="singleChoice-block-form" class="block-form">
+									<div class="block-form-content">
+										<ul class="tabs" id="singleChoice-tabs">
+											<li><a href="#singleChoice-a" class="first current">%Question%</a></li>
+											<li><a href="#singleChoice-b" class="last">%Answers%</a></li>
+										</ul>
+										<div id="singleChoice-a" class="singleChoice-tab-content tab-content">
+											<p>
+												<label for="singleChoice-question" class="sr-av">%Question%: </label>
+												<textarea name="singleChoice-question" id="singleChoice-question" cols="32" rows="4"></textarea>
+											</p>
+										</div>
+										<div id="singleChoice-b" class="singleChoice-tab-content tab-content" style="display:none">
+											<h4 class="sr-av">%Answers%</h4>
+											<div class="answers">
+												<p class="answer">
+													<label for="singleChoice-answer-1" class="text-field">1: <input id="singleChoice-answer-1" type="text" /></label>
+													<label for="singleChoice-answer-1-right" class="radio"><input type="radio" id="singleChoice-answer-1-right" name="singleChoice-answer-right" /> %Right_Answer%</label>
+												</p>
+												<p class="answer">
+													<label for="singleChoice-answer-2" class="text-field">2: <input id="singleChoice-answer-2" type="text" /></label>
+													<label for="singleChoice-answer-2-right" class="radio"><input type="radio" id="singleChoice-answer-2-right" name="singleChoice-answer-right" /> %Right_Answer%</label>
+												</p>
+												<p class="answer">
+													<label for="singleChoice-answer-3" class="text-field">3: <input id="singleChoice-answer-3" type="text" /></label>
+													<label for="singleChoice-answer-3-right" class="radio"><input type="radio" id="singleChoice-answer-3-right" name="singleChoice-answer-right" /> %Right_Answer%</label>
+												</p>
+												<p class="answer">
+													<label for="singleChoice-answer-4" class="text-field">4: <input id="singleChoice-answer-4" type="text" /></label>
+													<label for="singleChoice-answer-4-right" class="radio"><input type="radio" id="singleChoice-answer-4-right" name="singleChoice-answer-right" /> %Right_Answer%</label>
+												</p>
+												<p class="answer">
+													<label for="singleChoice-answer-5" class="text-field">5: <input id="singleChoice-answer-5" type="text" /></label>
+													<label for="singleChoice-answer-5-right" class="radio"><input type="radio" id="singleChoice-answer-5-right" name="singleChoice-answer-right" /> %Right_Answer%</label>
+												</p>
+												<p class="answer">
+													<label for="singleChoice-answer-6" class="text-field">6: <input id="singleChoice-answer-6" type="text" /></label>
+													<label for="singleChoice-answer-6-right" class="radio"><input type="radio" id="singleChoice-answer-6-right" name="singleChoice-answer-right" /> %Right_Answer%</label>
+												</p>
+											</div>
+										</div>
+										<p class="buttons">
+											<input type="button" name="singleChoice-block-submit" id="singleChoice-block-submit" class="block-submit" value="%Create_Frame_Submit%" />
+										</p>
+									</div>									
+								</form>
+							</div>
+							<div class="block-type" id="multipleChoice-block" style="display:none">
+								<h3>%Multiple_Choice%</h3>
+								<div id="multipleChoice-block-msg" class="success-msg"></div>
+								<form id="multipleChoice-block-form" class="block-form">
+									<div class="block-form-content">
+										<ul class="tabs" id="multipleChoice-tabs">
+											<li><a href="#multipleChoice-a" class="first current">%Question%</a></li>
+											<li><a href="#multipleChoice-b" class="last">%Answers%</a></li>
+										</ul>
+										<div id="multipleChoice-a" class="multipleChoice-tab-content tab-content">
+											<p>
+												<label for="multipleChoice-question" class="sr-av">%Question%: </label>
+												<textarea name="multipleChoice-question" id="multipleChoice-question" cols="32" rows="4"></textarea>
+											</p>
+										</div>
+										<div id="multipleChoice-b" class="multipleChoice-tab-content tab-content" style="display:none">
+											<h4 class="sr-av">%Answers%</h4>
+											<div class="answers">
+												<p class="answer">
+													<label for="multipleChoice-answer-1" class="text-field">1: <input id="multipleChoice-answer-1" type="text" /></label>
+													<label for="multipleChoice-answer-1-right" class="checkbox"><input type="checkbox" id="multipleChoice-answer-1-right" name="multipleChoice-answer-right" /> %Right_Answer%</label>
+												</p>
+												<p class="answer">
+													<label for="multipleChoice-answer-2" class="text-field">2: <input id="multipleChoice-answer-2" type="text" /></label>
+													<label for="multipleChoice-answer-2-right" class="checkbox"><input type="checkbox" id="multipleChoice-answer-2-right" name="multipleChoice-answer-right" /> %Right_Answer%</label>
+												</p>
+												<p class="answer">
+													<label for="multipleChoice-answer-3" class="text-field">3: <input id="multipleChoice-answer-3" type="text" /></label>
+													<label for="multipleChoice-answer-3-right" class="checkbox"><input type="checkbox" id="multipleChoice-answer-3-right" name="multipleChoice-answer-right" /> %Right_Answer%</label>
+												</p>
+												<p class="answer">
+													<label for="multipleChoice-answer-4" class="text-field">4: <input id="multipleChoice-answer-4" type="text" /></label>
+													<label for="multipleChoice-answer-4-right" class="checkbox"><input type="checkbox" id="multipleChoice-answer-4-right" name="multipleChoice-answer-right" /> %Right_Answer%</label>
+												</p>
+												<p class="answer">
+													<label for="multipleChoice-answer-5" class="text-field">5: <input id="multipleChoice-answer-5" type="text" /></label>
+													<label for="multipleChoice-answer-5-right" class="checkbox"><input type="checkbox" id="multipleChoice-answer-5-right" name="multipleChoice-answer-right" /> %Right_Answer%</label>
+												</p>
+												<p class="answer">
+													<label for="multipleChoice-answer-6" class="text-field">6: <input id="multipleChoice-answer-6" type="text" /></label>
+													<label for="multipleChoice-answer-6-right" class="checkbox"><input type="checkbox" id="multipleChoice-answer-6-right" name="multipleChoice-answer-right" /> %Right_Answer%</label>
+												</p>
+											</div>
+										</div>
+										<p class="buttons">
+											<input type="button" name="multipleChoice-block-submit" id="multipleChoice-block-submit" class="block-submit" value="%Create_Frame_Submit%" />
+										</p>
+									</div>
+								</form>
+							</div>
+							<div class="block-type" id="cloze-block" style="display:none">
+								<h3>%Cloze_Quiz%</h3>
+								<div id="cloze-block-msg" class="success-msg"></div>
+								<form id="cloze-block-form" class="block-form">
+									<div class="block-form-content">
+										<p>%Cloze_Quiz_Instructions%</p>
+										<p>
+											<label for="cloze-question" class="sr-av">%Text_to_complete%: </label>
+											<textarea name="cloze-question" id="cloze-question" cols="32" rows="4"></textarea>
+										</p>
+										<p class="buttons">
+											<input type="button" name="cloze-block-submit" id="cloze-block-submit" class="block-submit" value="%Create_Frame_Submit%" />
+										</p>
+									</div>									
+								</form>
+							</div>							
+							<div class="block-type" id="dropdown-block" style="display:none">
+								<h3>%Dropdown_Activity%</h3>
+								<div id="dropdown-block-msg" class="success-msg"></div>
+								<form id="dropdown-block-form" class="block-form">
+									<div class="block-form-content">
+										<ul class="tabs" id="dropdown-tabs">
+											<li><a href="#dropdown-a" class="first current">%Text%</a></li>
+											<li><a href="#dropdown-b" class="last">%Add_Options%</a></li>
+										</ul>
+										<div id="dropdown-a" class="dropdown-tab-content tab-content">
+											<p>Tacha las palabras a completar.</p>
+											<p>
+												<label for="dropdown-question" class="sr-av">Texto a completar: </label>
+												<textarea name="dropdown-question" id="dropdown-question" cols="32" rows="4"></textarea>
+											</p>
+										</div>
+										<div id="dropdown-b" class="dropdown-tab-content tab-content" style="display:none">
+											<h4 class="sr-av">%Add_Options%</h4>
+											<p>%You_can_add_more_options_to_the_dropdown_lists%:</p>
+											<div class="answers">
+												<p class="answer">
+													<label for="dropdown-answer-1" class="text-field">1: <input id="dropdown-answer-1" type="text" /></label>
+												</p>
+												<p class="answer">
+													<label for="dropdown-answer-2" class="text-field">2: <input id="dropdown-answer-2" type="text" /></label>
+												</p>
+												<p class="answer">
+													<label for="dropdown-answer-3" class="text-field">3: <input id="dropdown-answer-3" type="text" /></label>
+												</p>
+												<p class="answer">
+													<label for="dropdown-answer-4" class="text-field">4: <input id="dropdown-answer-4" type="text" /></label>
+												</p>
+												<p class="answer">
+													<label for="dropdown-answer-5" class="text-field">5: <input id="dropdown-answer-5" type="text" /></label>
+												</p>
+												<p class="answer">
+													<label for="dropdown-answer-6" class="text-field">6: <input id="dropdown-answer-6" type="text" /></label>
+												</p>
+											</div>
+										</div>
+										<p class="buttons">
+											<input type="button" name="dropdown-block-submit" id="dropdown-block-submit" class="block-submit" value="%Create_Frame_Submit%" />
+										</p>
+									</div>
+								</form>
+							</div>
+							<div class="block-type" id="matchElements-block" style="display:none">
+								<h3>%Pairs_Game%</h3>
+								<div id="matchElements-block-msg" class="success-msg"></div>
+								<form id="matchElements-block-form" class="block-form">
+									<div class="block-form-content">
+										<ul class="tabs" id="matchElements-tabs">
+											<li><a href="#matchElements-a" class="first current">%Instructions%</a></li>
+											<li><a href="#matchElements-b" class="last">%Pairs%</a></li>
+										</ul>
+										<div id="matchElements-a" class="matchElements-tab-content tab-content">
+											<p>
+												<label for="matchElements-question" class="sr-av">%Introduction_or_instructions%: </label>
+												<textarea name="matchElements-question" id="matchElements-question" cols="32" rows="4"></textarea>
+											</p>
+										</div>
+										<div id="matchElements-b" class="matchElements-tab-content tab-content" style="display:none">
+											<h4 class="sr-av">%Pairs%</h4>
+											<p>%Fill_in_at_least_two_pairs%</p>
+											<div class="answers">
+												<p class="answer">
+													<label for="matchElements-answer-1A">2. </label>
+													<input id="matchElements-answer-1A" type="text" /> - 
+													<label for="matchElements-answer-1B" class="sr-av">2 (B). </label> 
+													<input id="matchElements-answer-1B" type="text" />								
+												</p>
+												<p class="answer">
+													<label for="matchElements-answer-2A">3. </label>
+													<input id="matchElements-answer-2A" type="text" /> - 
+													<label for="matchElements-answer-2B" class="sr-av">3 (B). </label> 
+													<input id="matchElements-answer-2B" type="text" />								
+												</p>
+												<p class="answer">
+													<label for="matchElements-answer-3A">4. </label>
+													<input id="matchElements-answer-3A" type="text" /> - 
+													<label for="matchElements-answer-3B" class="sr-av">4 (B). </label> 
+													<input id="matchElements-answer-3B" type="text" />								
+												</p>
+												<p class="answer">
+													<label for="matchElements-answer-4A">5. </label>
+													<input id="matchElements-answer-4A" type="text" /> - 
+													<label for="matchElements-answer-4B" class="sr-av">5 (B). </label> 
+													<input id="matchElements-answer-4B" type="text" />								
+												</p>
+												<p class="answer">
+													<label for="matchElements-answer-5A">6. </label>
+													<input id="matchElements-answer-5A" type="text" /> - 
+													<label for="matchElements-answer-5B" class="sr-av">6 (B). </label> 
+													<input id="matchElements-answer-5B" type="text" />								
+												</p>
+												<p class="answer">
+													<label for="matchElements-answer-6A">7. </label>
+													<input id="matchElements-answer-6A" type="text" /> - 
+													<label for="matchElements-answer-6B" class="sr-av">7 (B). </label> 
+													<input id="matchElements-answer-6B" type="text" />								
+												</p>
+											</div>
+										</div>
+										<p class="buttons">
+											<input type="button" name="matchElements-block-submit" id="matchElements-block-submit" class="block-submit" value="%Create_Frame_Submit%" />
+										</p>
+									</div>
+								</form>
+							</div>
+							<div class="block-type" id="sortableList-block" style="display:none">
+								<h3>%Scrambled_List%</h3>
+								<div id="sortableList-block-msg" class="success-msg"></div>
+								<form id="sortableList-block-form" class="block-form">
+									<div class="block-form-content">
+										<ul class="tabs" id="sortableList-tabs">
+											<li><a href="#sortableList-a" class="first current">%Question%</a></li>
+											<li><a href="#sortableList-b" class="last">%List%</a></li>
+										</ul>
+										<div id="sortableList-a" class="sortableList-tab-content tab-content">
+											<p>
+												<label for="sortableList-question" class="sr-av">%Question%: </label>
+												<textarea name="sortableList-question" id="sortableList-question" cols="32" rows="4"></textarea>
+											</p>
+										</div>
+										<div id="sortableList-b" class="sortableList-tab-content tab-content" style="display:none">
+											<h4 class="sr-av">%List%</h4>
+											<p>%List_elements%:</p>
+											<div class="answers">
+												<p class="answer">
+													<label for="sortableList-answer-1" class="text-field">1: <input id="sortableList-answer-1" type="text" /></label>
+												</p>
+												<p class="answer">
+													<label for="sortableList-answer-2" class="text-field">2: <input id="sortableList-answer-2" type="text" /></label>
+												</p>
+												<p class="answer">
+													<label for="sortableList-answer-3" class="text-field">3: <input id="sortableList-answer-3" type="text" /></label>
+												</p>
+												<p class="answer">
+													<label for="sortableList-answer-4" class="text-field">4: <input id="sortableList-answer-4" type="text" /></label>
+												</p>
+												<p class="answer">
+													<label for="sortableList-answer-5" class="text-field">5: <input id="sortableList-answer-5" type="text" /></label>
+												</p>
+												<p class="answer">
+													<label for="sortableList-answer-6" class="text-field">6: <input id="sortableList-answer-6" type="text" /></label>
+												</p>
+											</div>
+										</div>
+										<p class="buttons">
+											<input type="button" name="sortableList-block-submit" id="sortableList-block-submit" class="block-submit" value="%Create_Frame_Submit%" />
+										</p>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="admin-block" id="edit-block">
+						<p>%You_should_create_a_Frame_first%</p>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<p class="js-hidden">No JavaScript&hellip;</p>
+</body>
+</html>

@@ -1,4 +1,5 @@
 var myTheme = {
+    printButton : false,
     init : function(){
 		var ie_v = $exe.isIE();
 		if (ie_v && ie_v<8) return false;
@@ -12,7 +13,7 @@ var myTheme = {
 				navToggler += '<a href="#" class="hide-nav" id="toggle-nav" title="'+tit+'">';
 					navToggler += '<span>'+$exe_i18n.menu+'</span>';
 				navToggler += '</a>';
-				if (typeof(window.print)=='function') {
+				if (myTheme.printButton==true && typeof(window.print)=='function') {
 					navToggler += '<a href="#" id="print-page">';
 						navToggler += '<span>'+$exe_i18n.print+'</span>';
 					navToggler += '</a>';
@@ -142,7 +143,7 @@ var myTheme = {
 				}
 			});
 			// Print button in authoring-page, SCORM and IMS
-			if ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-ims") || $("body").hasClass("exe-scorm")) {
+			if (myTheme.printButton==true && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-ims") || $("body").hasClass("exe-scorm"))) {
 				var extra = '';
 				if (iDevices.length>1 && !firstIsText) extra = ' class="with-toggler"';
 				$("#nodeDecoration").after('<p id="printNode"'+extra+'><a href="#" title="'+$exe_i18n.print+'"><span>'+$exe_i18n.print+'</span></a></p>');

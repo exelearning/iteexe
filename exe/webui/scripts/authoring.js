@@ -29,7 +29,7 @@ var Ext = parent.Ext;
 var eXe = parent.eXe;
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
 	enableAnchors, httpsInNewWindow, gotoAnchor, preventEscKey, preventHistoryBack,
-    loadKeymap, hideObjectTags];
+    loadKeymap, hideObjectTags, createLetPanelToggler];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load
@@ -938,10 +938,38 @@ var $exeAuthoring = {
             else if (tinymce.majorVersion==3) $exeTinyMCE.init("specific_textareas","exe-html-editor");
 
             // Enable color pickers (provisional solution)
-            $exeAuthoring.iDevice.colorPicker.init();
+            // To review: 100 ms delay because the color picker won't work when combined with $exeTinyMCE.init
+            setTimeout(function(){
+                $exeAuthoring.iDevice.colorPicker.init();
+            },100);
+			
+            // Enable file uploaders
+            $exeAuthoring.iDevice.filePicker.init();
             
         },
-
+        filePicker : {
+            init : function(){
+                $(".exe-file-picker,.exe-image-picker").each(
+                    function(){
+                        var id = this.id;
+                        var css = 'exe-pick-any-file';
+                        var e = $(this);
+                        if (e.hasClass("exe-image-picker")) css = 'exe-pick-image';
+                        e.after(' <input type="button" class="'+css+'" value="'+_("Select a file")+'" id="_browseFor'+id+'" onclick="$exeAuthoring.iDevice.filePicker.openFilePicker(this)" />');
+                    }
+                );
+            },
+            openFilePicker : function(e){
+                var id = e.id.replace("_browseFor","");
+                var type = 'media';
+                if ($(e).hasClass("exe-pick-image")) type = 'image';
+                try {
+                    exe_tinymce.chooseImage(id, "", type, window);
+                } catch(e) {
+                    eXe.app.alert(e);
+                }
+            }
+        },
         // Save the iDevice
         save : function() {
             // Check if the object and the required methods are defined
@@ -949,8 +977,7 @@ var $exeAuthoring = {
                 // Trigger the click event so the form is submitted
                 $("#exe-submitButton a").trigger("click");
             }
-        },
-
+        },		
         colorPicker : {
             init : function(){
                 var colorFields = $(".exe-color-picker");
@@ -1174,4 +1201,8 @@ function deleteIcon(idiDevice) {
     
     var deleteIcon = '#deleteIcon'+idiDevice;
     $(deleteIcon).hide();
+}
+
+function createLetPanelToggler(){
+    eXe.app.createLetPanelToggler(true);
 }
