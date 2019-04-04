@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <idevice>
-	<title>PBL Tasks</title>
+	<title>Task</title>
 	<css-class>pbl</css-class>
-	<category>Non-Interactive Activities</category>
+	<category>Text and Tasks</category>
 	<icon>activity</icon>
 </idevice>

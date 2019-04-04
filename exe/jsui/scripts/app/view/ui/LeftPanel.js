@@ -20,6 +20,7 @@
 Ext.define('eXe.view.ui.LeftPanel', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.leftpanel',
+    itemId: 'exe_leftpanel',
     requires: [
         'eXe.view.ui.OutlineToolbar1',
         'eXe.view.ui.OutlineToolbar2',
@@ -77,8 +78,16 @@ Ext.define('eXe.view.ui.LeftPanel', {
                        ftype: 'grouping',
                 	   startCollapsed: true,
                 	   groupHeaderTpl: '{name}' + '<span class="exe-sr-only"> ('+_("Show")+'/'+_("Hide")+')</span>'
-                	   
                     }],
+                    listeners: {
+                        afterrender: function(grid) {
+                            var groupingFeature = grid.getView().features[0]; 
+                            // Ungroup "Text and Tasks"
+                            setTimeout(function(){
+                                groupingFeature.expand(_("Text and Tasks"), 1);
+                            },100);
+                        }
+                    },
              	    tbar: [
              	        {
              	        	cls: 'exe-advanced',

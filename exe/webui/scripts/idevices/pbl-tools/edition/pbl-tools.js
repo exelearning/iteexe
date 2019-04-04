@@ -1,5 +1,5 @@
 /**
- * Project Based Learning Task iDevice (edition code)
+ * Task iDevice (edition code)
  *
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Ignacio Gros (http://gros.es/) for http://exelearning.net/
@@ -10,27 +10,12 @@ var $exeDevice = {
 	
 	// We use eXe's _ function
 	i18n : {
-		name : _('PBL Tasks'),
-		instructions : {
-			information : _('Provide information of the project or this part of the project.'),
-			task : _('Describe the tasks that the learners should complete:'),
-			diary : _("The Learning Diary is focused on the student's reflection and reasoning to construct their own learning. Please write some instructions.")
-		}
+		name : _('Task')
 	},
 	
 	init : function(){
 		// Add some instructions
 		var html = "\
-			<fieldset id='pblTypes'>\
-				<legend>"+_('Options')+"</legend>\
-				<p>"+_("Write the title, select an icon and choose a type...")+"</p>\
-				<p>\
-					<strong>"+_("Type")+":</strong> \
-					<label for='pblToolsType-information'><input type='radio' name='pblToolsType' id='pblToolsType-information' value='information' checked='checked' /> "+_("Information")+"</label> \
-					<label for='pblToolsType-task'><input type='radio' name='pblToolsType' id='pblToolsType-task' value='task' /> "+_("Task")+"</label> \
-					<label for='pblToolsType-diary'><input type='radio' name='pblToolsType' id='pblToolsType-diary' value='diary' /> "+_("Learning Diary")+"</label> \
-				</p>\
-			</fieldset>\
 			<fieldset id='pblTaskInfo'>\
 				<legend>"+_('Task information')+"</legend>\
 				<p>\
@@ -46,24 +31,30 @@ var $exeDevice = {
 					<input type='text' id='pblTaskParticipantsText' value='"+_("Grouping")+":' />\
 				</p>\
 			</fieldset>\
-			<p><label for='pblTaskDescription'>"+_('Provide information of the project or this part of the project.')+"</label></p>\
+			<p><label for='pblTaskDescription'>"+_('Describe the tasks that the learners should complete:')+"</label></p>\
 			<p><textarea id='pblTaskDescription' class='exe-html-editor'\></textarea></p>\
-			<fieldset id='pblTaskFeedback'>\
-				<legend>"+_('Feedback')+" ("+_('Optional').toLowerCase()+")</legend>\
-				<p>\
-					<label for='pblTaskFeedbackButtonText'>"+_("Feedback button text")+":</label>\
-					<input type='text' id='pblTaskFeedbackButtonText' value='"+_("Show Feedback")+"' />\
-				</p>\
-				<p><label for='pblTaskFeedbackContent'>"+_('Feedback')+":</label></p>\
-				<p><textarea id='pblTaskFeedbackContent' class='exe-html-editor'\></textarea></p>\
+			<fieldset id='pblTaskFeedback' class='closed-fieldset'>\
+				<legend><a href='#pblTaskFeedbackButtonText' id='pblFeedbackToggler'>"+_('Feedback')+" ("+_('Optional').toLowerCase()+")</a></legend>\
+				<div>\
+					<p>\
+						<label for='pblTaskFeedbackButtonText'>"+_("Feedback button text")+":</label>\
+						<input type='text' id='pblTaskFeedbackButtonText' value='"+_("Show Feedback")+"' />\
+					</p>\
+					<p class='sr-av'><label for='pblTaskFeedbackContent'>"+_('Feedback')+":</label></p>\
+					<p><textarea id='pblTaskFeedbackContent' class='exe-html-editor'\></textarea></p>\
+				<div>\
 			</fieldset>\
 			";
 		
-		$("TEXTAREA").before(html);
+		// Insert the form
+		this.textArea = $("#activeIdevice textarea");
+		this.textArea.before(html);
 		
-		$("input[name=pblToolsType]").change(function(){
-			$exeDevice.toggleType(this.value);
-		});
+		// Fieldset toggler
+		$("#pblFeedbackToggler").click(function(){
+			$("#pblTaskFeedback").toggleClass("closed-fieldset");
+			return false;
+		});		
 		
 		this.getPreviousValues();
 		
@@ -71,7 +62,7 @@ var $exeDevice = {
 	
 	getPreviousValues : function(){
 		
-		var content = $("TEXTAREA.jsContentEditor").val();
+		var content = this.textArea.val();
 		var wrapper = $('<div />');
 		wrapper.html(content);
 		
@@ -95,24 +86,10 @@ var $exeDevice = {
 			}			
 		}
 		
-		// Check the type
-		// .pbl-information
+		// Legacy
 		var desc = $(".pbl-information",wrapper);
-		if (desc.length!=1) {
-			// .pbl-task-description
-			desc = $(".pbl-task-description",wrapper);
-			if (desc.length==1) {
-				// Change type
-				$("#pblToolsType-task").attr("checked","checked").trigger("change");
-			} else {
-				// .pbl-diary-instructions
-				desc = $(".pbl-diary-instructions",wrapper);
-				if (desc.length==1) {
-					// Change type
-					$("#pblToolsType-diary").attr("checked","checked").trigger("change");
-				}
-			}
-		}
+		if (desc.length!=1) desc = $(".pbl-task-description",wrapper);
+		if (desc.length!=1) desc = $(".pbl-diary-instructions",wrapper);
 		
 		// Task description
 		if (desc.length==1) {
@@ -123,6 +100,7 @@ var $exeDevice = {
 		var feedbackButton = $(".feedbackbutton",wrapper);
 		if (feedbackButton.length==1) {
 			$("#pblTaskFeedbackButtonText").val(feedbackButton.val());
+			$("#pblTaskFeedback").removeClass("closed-fieldset");
 		}
 		
 		// Feedback 
@@ -137,35 +115,31 @@ var $exeDevice = {
 		
 		var html = "";
 		
-		var type = $('input[name=pblToolsType]:checked').val();
-		
-		// Task - Duration and participants
-		if (type=='task') {
-			var duration = $("#pblTaskDuration").val();
-			var participants = $("#pblTaskParticipants").val();
-			if (duration!="" || participants!="") {
-				var msg = _("Please write the text to display in '%s'.");
-				html += '<dl class="pbl-task-info">';
-					if (duration!="") {
-						var durationText = $("#pblTaskDurationText").val();
-						if (durationText=="") {
-							msg = msg.replace('%s',_('Duration'));
-							eXe.app.alert(msg);
-							return false;
-						}
-						html += '<dt class="pbl-task-duration"><span>'+durationText+'</span></dt><dd class="pbl-task-duration">'+duration+'</dd>';
+		// Duration and participants
+		var duration = $("#pblTaskDuration").val();
+		var participants = $("#pblTaskParticipants").val();
+		if (duration!="" || participants!="") {
+			var msg = _("Please write the text to display in '%s'.");
+			html += '<dl class="pbl-task-info">';
+				if (duration!="") {
+					var durationText = $("#pblTaskDurationText").val();
+					if (durationText=="") {
+						msg = msg.replace('%s',_('Duration'));
+						eXe.app.alert(msg);
+						return false;
 					}
-					if (participants!="") {
-						var participantsText = $("#pblTaskParticipantsText").val();
-						if (participantsText=="") {
-							msg = msg.replace('%s',_('Participants'));
-							eXe.app.alert(msg);
-							return false;
-						}
-						html += '<dt class="pbl-task-participants"><span>'+participantsText+'</span></dt><dd class="pbl-task-participants">'+participants+'</dd>';
-					}				
-				html += '</dl>'
-			}
+					html += '<dt class="pbl-task-duration"><span>'+durationText+'</span></dt><dd class="pbl-task-duration">'+duration+'</dd>';
+				}
+				if (participants!="") {
+					var participantsText = $("#pblTaskParticipantsText").val();
+					if (participantsText=="") {
+						msg = msg.replace('%s',_('Participants'));
+						eXe.app.alert(msg);
+						return false;
+					}
+					html += '<dt class="pbl-task-participants"><span>'+participantsText+'</span></dt><dd class="pbl-task-participants">'+participants+'</dd>';
+				}				
+			html += '</dl>'
 		}
 		
 		// Description
@@ -173,52 +147,37 @@ var $exeDevice = {
 		if (taskDesc=="") {
 			
 			// Error message
-			var error = _("Please write some information.");
-			if (type=='task') error = _("Please write the task description.");
-			else if (type=='diary') error = _("Please write some instructions.");			
-			
+			var error = _("Please write the task description.");
 			eXe.app.alert(error);
+			
 			return false;
 			
 		}
 		
-		var css = type;
-		if (type=='task') css = 'task-description';
-		else if (type=='diary') css = 'diary-instructions';
+		var css = 'task-description';
 		html += '<div class="pbl-'+css+'">';
 			html += taskDesc;
 		html += '</div>';
 		
 		// Task - Feedback
-		if (type=='task') {
-			var taskFeedback = tinymce.editors[1].getContent();
-			if (taskFeedback!="") {
-				var taskFeedbackButtonText = $("#pblTaskFeedbackButtonText").val();
-				if (taskFeedbackButtonText=="") {
-					var error = _("Please fill in this field: '%s'.");
-						error = error.replace('%s',_("Feedback button text"));
-					eXe.app.alert(error);
-					return false;				
-				}
-				html += '<div class="iDevice_buttons feedback-button js-required">';
-					html += '<input type="button" class="feedbackbutton" value="'+taskFeedbackButtonText+'" />';
-				html += '</div>';
-				html += '<div class="feedback js-feedback js-hidden">';
-					html += taskFeedback;
-				html += '</div>';
+		var taskFeedback = tinymce.editors[1].getContent();
+		if (taskFeedback!="") {
+			var taskFeedbackButtonText = $("#pblTaskFeedbackButtonText").val();
+			if (taskFeedbackButtonText=="") {
+				var error = _("Please fill in this field: '%s'.");
+					error = error.replace('%s',_("Feedback button text"));
+				eXe.app.alert(error);
+				return false;				
 			}
+			html += '<div class="iDevice_buttons feedback-button js-required">';
+				html += '<input type="button" class="feedbackbutton" value="'+taskFeedbackButtonText+'" />';
+			html += '</div>';
+			html += '<div class="feedback js-feedback js-hidden">';
+				html += taskFeedback;
+			html += '</div>';
 		}
 		
 		return html;
-		
-	},
-	
-	toggleType : function(type) {
-		
-		$("label[for=pblTaskDescription]").text(this.i18n.instructions[type]);
-		
-		if (type == 'task') $("#pblTaskInfo,#pblTaskFeedback").fadeIn();
-		else $("#pblTaskInfo,#pblTaskFeedback").hide();
 		
 	}
 

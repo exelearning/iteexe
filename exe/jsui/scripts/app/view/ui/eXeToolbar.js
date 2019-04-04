@@ -314,6 +314,13 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             itemId: 'file_export_epub3'
                                         },
                                         {
+                                            cls: 'exe-advanced',
+                                            xtype: 'accesskey_menuitem',
+                                            itemId: 'file_extract',
+                                            accesskey: 'e',
+                                            text: _('Export the current page as elp')
+                                        },                                        
+                                        {
                                             cls: 'exe-simplified',
                                             xtype: 'accesskey_menuitem',
                                             text: _('SCORM'),
@@ -333,34 +340,17 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
-                                text: _('Publish') + getSRhelp(),
-                                itemId: 'publish',
-                                accesskey: 'l',
-                                menu: {
-                                    xtype: 'menu',
-                                    items:
-                                    [
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            text: _('Procomún'),
-                                            accesskey: 'P',
-                                            itemId: 'file_export_procomun'
-                                        },
-                                    ]
-                                },
-                            },
-                            {
-                                cls: 'exe-advanced',
-                                xtype: 'menuseparator'
-                            },
-                            {
-                                cls: 'exe-advanced',
-                                xtype: 'accesskey_menuitem',
                                 text: _('Import') + getSRhelp(),
                                 accesskey: 'i',
                                 menu: {
                                     xtype: 'menu',
                                     items: [
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            itemId: 'file_insert',
+                                            accesskey: 'i',
+                                            text: _('Insert elp in the current page')
+                                        },                                    
                                         {
                                             xtype: 'accesskey_menuitem',
                                             itemId: 'file_import_html',
@@ -394,34 +384,31 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                                     }
                                                 ]
                                             }
-                                        }
+                                        }                                     
                                     ]
                                 }
                             },
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
-                                text: _('Merging') + getSRhelp(),
-                                accesskey: 'm',
+                                text: _('Publish') + getSRhelp(),
+                                itemId: 'publish',
+                                accesskey: 'l',
                                 menu: {
                                     xtype: 'menu',
-                                    items: [
+                                    items:
+                                    [
                                         {
                                             xtype: 'accesskey_menuitem',
-                                            itemId: 'file_insert',
-                                            accesskey: 'i',
-                                            text: _('Insert elp in the current page')
+                                            text: _('Procomún'),
+                                            accesskey: 'P',
+                                            itemId: 'file_export_procomun'
                                         },
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            itemId: 'file_extract',
-                                            accesskey: 'e',
-                                            text: _('Export the current page as elp')
-                                        }
                                     ]
-                                }
-                            },
+                                },
+                            },                            
                             {
+                                cls: 'exe-advanced',
                                 xtype: 'menuseparator'
                             },
                             {
@@ -464,6 +451,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 accesskey: 'v',
                                 text: _('Preview')
                             },
+                            /*
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'menuseparator'
@@ -475,7 +463,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 accesskey: 's',
                                 text: _('Style Manager')
                             },
-                            // Style designer
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
@@ -497,7 +484,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     ]
                                 }
                             },
-                            // / Style designer
+                            */
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
@@ -513,10 +500,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 text: _('Resources Report')
                             },
                             {
-                                cls: 'exe-advanced',
-                                xtype: 'menuseparator'
-                            },
-                            {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_refresh',
                                 accesskey: 'r',
@@ -526,6 +509,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                     }
                 },
                 {
+                    cls: 'exe-simplified',
                     xtype: 'accesskey_button',
                     text: _('Styles'),
                     accesskey: 's',
@@ -535,6 +519,52 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 	                    itemId: 'styles_menu'
                     }
                 },
+                {
+                    cls: 'exe-advanced',
+                    xtype: 'accesskey_button',
+                    text: _('Styles'),
+                    accesskey: 's',
+                    itemId: 'styles_button_advanced_wrapper',
+                    menu: {
+                        xtype: 'menu',
+	                    items: [
+                            {
+                            	xtype: 'accesskey_menuitem',
+                                itemId: 'tools_stylemanager',
+                                text: _('Style Manager')
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
+                                text: _('Style Designer') + getSRhelp(),
+                                menu: {
+                                    xtype: 'menu',
+                                    items: [
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            itemId: 'style_designer_new_style',
+                                            accesskey: 'i',
+                                            text: _('Create new Style')
+                                        },
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            itemId: 'style_designer_edit_style',
+                                            text: _('Edit current Style')
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
+                                text: _('Styles'),
+                                itemId: 'styles_button_advanced',
+                                menu: {
+                                    xtype: 'menu',
+                                    itemId: 'styles_menu_advanced'
+                                }
+                            }                            
+                        ]                        
+                    }
+                },                
                 {
                     cls: 'exe-simplified',
                     xtype: 'accesskey_button',
@@ -625,12 +655,14 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             }
                         ]
                     }
-                },
+                },               
+                // Advanced user and Preview button
+                '->',
                 // Advanced user
                 {
                     xtype: 'fieldcontainer',
 					defaultType: 'checkboxfield',
-					margin: '0 0 0 30',
+					margin: '0 30 0 0',
 					items: [
                         {
                             boxLabel: _('Advanced user'),
@@ -659,7 +691,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     } else {
 										Ext.util.Cookies.set('eXeUIversion', 'simplified');
                                         Ext.select("BODY").removeCls('exe-advanced');
-										Ext.select("BODY").addCls('exe-simplified');
+										Ext.select("BODY").addCls('exe-simplified');                                        
 										// Change some strings:
 										if (descriptionLabel && descriptionLabel.length==1) descriptionLabel[0].innerHTML = _("General description") + ":";
 										// Show Properties - Package
@@ -682,8 +714,20 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             }
                         }
                     ]
-                }
-                // / Advanced user
+                },
+                // Preview button                
+                {
+					xtype: 'fieldcontainer',
+					defaultType: 'button',
+					margin: '0 10 0 0',
+                    items: [
+                        {
+                            xtype: 'button',
+                            text: _('Preview'),
+                            itemId: 'tools_preview_button'
+                        }
+                    ]
+                }            
             ]
         });
 

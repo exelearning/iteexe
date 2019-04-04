@@ -72,9 +72,9 @@ class PublicationEpub3(object):
         self.pages = pages
         self.cover = cover
         self.specialResources = {'linked_resources': [], 'external': []}
-        
+
         self._parseSpecialResources()
-        
+
     def _parseSpecialResources(self):
         """
         Parse every page and search for special resources like:
@@ -82,16 +82,16 @@ class PublicationEpub3(object):
             - Iframes' sources
         """
         # We have to get the rendered view of all idevices across all pages
-        for page in self.pages: 
+        for page in self.pages:
             for idevice in page.node.idevices:
                 block = g_blockFactory.createBlock(None, idevice)
                 div = block.renderView(self.package.style)
-                
+
                 # Find iframes
                 src_list = re.findall(r'<iframe[^>]*\ssrc="(.*?)"', div);
                 if src_list:
                     self.specialResources['external'].append(page.name)
-                
+
                 # Find links
                 src_list = re.findall(r'<a[^>]*\shref="(.*?)"', div);
                 if src_list:
@@ -99,7 +99,7 @@ class PublicationEpub3(object):
                         # Only include it if is a internal link
                         if Path(self.outputDir/src).exists():
                             self.specialResources['linked_resources'].append(src)
-                        
+
 
     def save(self, filename):
         """
@@ -157,22 +157,22 @@ class PublicationEpub3(object):
 
             if epubFile.basename() == self.cover:
                 property_list.append(u'cover-image')
-                
+
             if name in self.specialResources['external']:
-                property_list.append(u'remote-resources')    
-            
+                property_list.append(u'remote-resources')
+
             properties = u''
             if len(property_list) > 0:
                 properties = u' properties="' + u' '.join(property_list) + u'"'
-            
+
             # According to the spec, every resource referenced in the spine and is not an EPUB Content Document
             # must have a fallback element. In this case we have a general "fallback.xhtml" file.
             # We add it to all resources as we still don't know which of them will be added to the spine (if any).
-            # http://www.idpf.org/epub/30/spec/epub30-publications.html#sec-fallback-processing-flow    
+            # http://www.idpf.org/epub/30/spec/epub30-publications.html#sec-fallback-processing-flow
             fallback = '';
             if mimetype not in ['application/xhtml+xml', 'image/svg+xml']:
                 fallback = u' fallback="fallback"'
-            
+
             xmlStr += u'<item id="%s" href="%s" media-type="%s"%s%s />\n' % (name,
                                                                        self.outputDir.relpathto(epubFile),
                                                                        mimetype,
@@ -211,12 +211,12 @@ class PublicationEpub3(object):
             if page.name == 'cover':
                 continue
             xml_str += self.genItemResStr(page)
-        
-        # We need to add an itemref tag for each linked element included in the package (images, external HTMLs...) 
+
+        # We need to add an itemref tag for each linked element included in the package (images, external HTMLs...)
         for linked_resource in self.specialResources['linked_resources']:
             name = self.generate_item_id(linked_resource)
             xml_str += u'<itemref idref="%s" />\n' % name
-            
+
         xml_str += u'</spine>\n'
         return xml_str
 
@@ -225,7 +225,7 @@ class PublicationEpub3(object):
         Generate itemref tags for the page and any linked files
         """
         return u'<itemref idref="%s" />\n' % page.name.replace('.', '-')
-    
+
     def generate_item_id(self, item_name):
         """
         Generate id and idref from package.orf
@@ -392,7 +392,7 @@ class Epub3Page(Page):
         if common.hasGames(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />" + lb
         if common.hasABCMusic(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_abcmusic.css\" />" + lb            
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_abcmusic.css\" />" + lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />" + lb
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->' + lb
@@ -419,9 +419,9 @@ class Epub3Page(Page):
         if common.hasABCMusic(self.node):
             html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>' + lb
         html += u'<script type="text/javascript" src="common.js"></script>' + lb
-        
-        html += common.printJavaScriptIdevicesScripts('export', self)        
-        
+
+        html += common.printJavaScriptIdevicesScripts('export', self)
+
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>' + lb
         # Some styles might have their own JavaScript files (see their config.xml file)
@@ -441,7 +441,7 @@ class Epub3Page(Page):
         html += u"</" + headerTag + ">" + lb
 
         self.node.exportType = 'epub'
-        
+
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
                 e = " em_iDevice"
@@ -464,8 +464,8 @@ class Epub3Page(Page):
         html += u"</" + sectionTag + ">" + lb  # /#main
 
         if self.node.package.get_addPagination():
-            html += "<p class='pagination page-counter'>" + c_('Page %s of %s') % ('<strong>'+str(pages.index(self))+'</strong>','<strong>'+str((len(pages) -1))+'</strong>')+ "</p>"+lb 
-            
+            html += "<p class='pagination page-counter'>" + c_('Page %s of %s') % ('<strong>'+str(pages.index(self))+'</strong>','<strong>'+str((len(pages) -1))+'</strong>')+ "</p>"+lb
+
         html += self.renderLicense()
         html += unicode(BeautifulSoup(self.renderFooter()))
         html += u"</div>" + lb  # /#outer
@@ -497,7 +497,7 @@ class Epub3Page(Page):
         leaving only its text, since such links are not to be in the LMS.
         The links to the elp file will not be removed.
         """
-        html = common.enableLinksToElp(self.node.package, html) 
+        html = common.enableLinksToElp(self.node.package, html)
         return common.removeInternalLinks(html)
 
 
@@ -589,7 +589,7 @@ class Epub3Export(object):
         mimetypeFile = open(outputDir.abspath() + '/mimetype', "w")
         mimetypeFile.write('application/epub+zip')
         mimetypeFile.close()
-        
+
         # Create common_i18n file
         langFile = open(contentPages + '/common_i18n.js', "w")
         langFile.write(common.getJavaScriptStrings(False))
@@ -599,7 +599,7 @@ class Epub3Export(object):
         # But not nav.css
         styleFiles = [self.styleDir /'..'/ 'popup_bg.gif']
         styleFiles += [f for f in self.styleDir.files("*.*") if f.basename() not in ['nav.css']]
-        
+
         # FIXME for now, only copy files referenced in Common Cartridge
         # this really should apply to all exports, but without a manifest
         # of the files needed by an included stylesheet it is too restrictive
@@ -609,22 +609,22 @@ class Epub3Export(object):
             styleFiles += [self.styleDir /'fallback.xhtml']
         else:
             styleFiles += [self.styleDir/'..'/'fallback.xhtml']
-            
+
         # copy the package's resource files
         for resourceFile in package.resourceDir.walkfiles():
             fn = package.resourceDir.relpathto(resourceFile)
-            
+
             if ("/" in fn):
                 Dir = Path(contentPages/fn[:fn.rindex("/")])
                 if not Dir.exists():
                     Dir.makedirs()
-            
+
                 resourceFile.copy(contentPages/Dir)
             else:
                 resourceFile.copy(contentPages)
-                
+
         self.styleDir.copylist(styleFiles, contentPages)
-        
+
         # copy players for media idevices.
         hasFlowplayer = False
         hasMagnifier = False
@@ -676,7 +676,7 @@ class Epub3Export(object):
                     hasTooltips = common.ideviceHasTooltips(idevice)
                 if not hasABCMusic:
                     hasABCMusic = common.ideviceHasABCMusic(idevice)
-                    
+
             common.exportJavaScriptIdevicesFiles(page.node.idevices, contentPages);
 
         if hasFlowplayer:
@@ -706,7 +706,7 @@ class Epub3Export(object):
             langGameFile = open(contentPages + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
-        if hasElpLink or package.get_exportElp():
+        if hasElpLink or (hasattr(package, '_exportElp') and package.get_exportElp()):
             # Export the elp file
             currentPackagePath = Path(package.filename)
             currentPackagePath.copyfile(contentPages/package.name+'.elp')
@@ -721,7 +721,7 @@ class Epub3Export(object):
             exe_tooltips.copyfiles(contentPages)
         if hasABCMusic:
             pluginScripts = (self.scriptsDir/'tinymce_4/js/tinymce/plugins/abcmusic/export')
-            pluginScripts.copyfiles(contentPages)         
+            pluginScripts.copyfiles(contentPages)
 
         my_style = G.application.config.styleStore.getStyle(package.style)
         if my_style.hasValidConfig:
@@ -731,12 +731,12 @@ class Epub3Export(object):
         else:
             jsFile = (self.scriptsDir / 'exe_jquery.js')
             jsFile.copyfile(contentPages / 'exe_jquery.js')
-        
-        
+
+
         # Copy and minify CSS files
         css_files = getFilesCSSToMinify('epub3', self.styleDir)
         exportMinFileCSS(css_files, contentPages)
-        
+
         # Copy and minify JS files
         js_files = getFilesJSToMinify('epub3', self.scriptsDir)
         exportMinFileJS(js_files, contentPages)

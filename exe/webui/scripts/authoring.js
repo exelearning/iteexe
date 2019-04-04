@@ -29,7 +29,7 @@ var Ext = parent.Ext;
 var eXe = parent.eXe;
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
 	enableAnchors, httpsInNewWindow, gotoAnchor, preventEscKey, preventHistoryBack,
-    loadKeymap, hideObjectTags];
+    loadKeymap, hideObjectTags, createLetPanelToggler];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load
@@ -1201,4 +1201,8 @@ function deleteIcon(idiDevice) {
     
     var deleteIcon = '#deleteIcon'+idiDevice;
     $(deleteIcon).hide();
+}
+
+function createLetPanelToggler(){
+    eXe.app.createLetPanelToggler(true);
 }

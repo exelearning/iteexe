@@ -71,6 +71,67 @@ var $exe = {
 		$('.feedbackbutton.feedback-toggler').click(function(){
 			$exe.toggleFeedback(this,false);
 		});
+		// Text and Tasks
+		$(".textIdevice,.pblIdevice").each(function(i){
+			
+			// Feedback toggler
+			$(".feedbackbutton",this).each(function(){				
+				var buttonTxt = this.value.split("|");
+				// The button might have 2 texts (Show|Hide)
+				if (buttonTxt.length==2) {
+					// Remove spaces before and after the text
+					buttonTxt = [
+						$.trim(buttonTxt[0]),
+						$.trim(buttonTxt[1])
+					]
+					this.value = buttonTxt[0];
+					window['$exeTextIdeviceButtonText'+i] = buttonTxt;
+				}
+				$(this).click(function(){
+					var feedback = $(this).parent().next('.feedback');
+					var hasCustomText = typeof(window['$exeTextIdeviceButtonText'+i])!='undefined';
+					if (feedback.is(":visible")) {
+						if (hasCustomText) this.value = window['$exeTextIdeviceButtonText'+i][0];
+						feedback.slideUp();
+					} else {
+						if (hasCustomText) this.value = window['$exeTextIdeviceButtonText'+i][1];
+						feedback.slideDown();
+					}
+					return false;					
+				});
+			});
+            
+			// Task iDevice: Fade in each DL
+			$(".pbl-task-info",this).delay(1500).css({
+				"opacity" : 0,
+				"visibility" : "visible"
+			}).fadeTo("slow",1).each(function(){
+				var dts = $("dt",this);
+				// Set the DT width so the text can be properly aligned
+				var tA = $(this).css("text-align");
+				if (tA=="right") {
+					var width = 0;
+					dts.css("width","auto").each(function(){
+						var w = $(this).width();
+						if (w>width) width = w;
+					});
+					if (width!=0) {
+						dts.css("width",width+"px");
+						$("dd",this).css("margin-left",width+"px");
+					}
+				} else if (tA=="left") {
+					var width = 0;
+					dts.css("width","auto").each(function(){
+						$(this).next("dd").css("margin-left",$(this).width()+"px");
+					});
+				}
+				// Add a title (just in case the Style displays an icon instead of the text)
+				dts.each(function(){
+					$("span",this).attr("title",$(this).text());
+				});
+			});
+			
+		});        
 		// Cloze iDevice
 		$('.cloze-feedback-toggler').click(function(){
 			var e = $(this);

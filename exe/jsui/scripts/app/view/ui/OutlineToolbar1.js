@@ -46,6 +46,29 @@ Ext.define('eXe.view.ui.OutlineToolbar1', {
                     itemId: 'outline_ren_node',
                     tooltip: 'Ctrl+R',
                     disabled: true
+                },
+                // Hide left panel
+                '->',
+                // Left panel toggler
+                {
+                    xtype: 'text',
+                    margin: '0 5 0 0',
+                    html : '<a href="#" id="hide_exe_leftpanel" title="'+_("Minify this panel")+'"><img width="16" height="16" src="/images/stock-go-back-off.png" alt="'+_("Minify this panel")+'" /></a>',
+                    listeners: {
+                        afterrender: function(c) {
+                            var l = document.getElementById("hide_exe_leftpanel");
+                            if (l) {
+                                l.onclick = function(){
+                                    var panel = Ext.ComponentQuery.query('#exe_leftpanel')[0];
+                                    panel.hide();
+                                    eXe.app.createLetPanelToggler();
+                                    return false;
+                                }
+                            }
+                        }                    
+                    },
+                    height: 16,
+                    width: 16
                 }
             ]
         });

@@ -140,10 +140,24 @@ class Application:
         """Hide experimental idevices"""
         log.info('Upgrading to version 1')
 
-        # Go through all iDevices and hide them if the category is Experimental
+        # Go through all iDevices and hide them if the category is Experimental or they are old
+        iDevicesToHide = [
+            'reflection',
+            'case study',
+            'image magnifier',
+            'wiki article',
+            'external web site',
+            'rss',
+            'java applet',
+            'reading activity',
+            'objectives',
+            'preknowledge',
+            'activity',
+            'free text'
+        ]
         for idevice in self.ideviceStore.getIdevices():
             lower_title = idevice._title.lower()
-            if self.config.idevicesCategories.get(lower_title, '') == ['Experimental']:
+            if self.config.idevicesCategories.get(lower_title, '') == ['Experimental'] or lower_title in iDevicesToHide:
                 self.config.hiddeniDevices.append(lower_title)
                 self.config.configParser.set('idevices', lower_title, '0')
 

@@ -174,7 +174,7 @@ var $exeDevice = {
 		
 		var html = '\
 			<div id="eXeDownloadPackageForm">\
-				<p><label for="dpiDescription">'+_("Add a link to download the elp file. Write some use instructions and customize your download link.")+'</label></p>\
+				<p><label for="dpiDescription">'+_("This block will create a link to download the elp file. Write some use instructions and customize your download link.")+'</label></p>\
 				<p><textarea id="dpiDescription" class="exe-html-editor">'+defaultContent+'</textarea></p>\
 				<fieldset>\
 					<legend>'+_("Download link")+'</legend>\
