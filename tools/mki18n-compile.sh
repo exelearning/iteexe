@@ -80,6 +80,9 @@
 # 2018-12-02
 #    * There never was a 2.2.1 version - preparing 2.3 (JRF)
 #
+# 2019-04-05
+#    * I wasn't told 2.3.1 was going to be issued, preparing 2.3.2 (JRF)
+#
 #===========================================================================
 
 
