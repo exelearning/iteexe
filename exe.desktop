@@ -1,21 +1,25 @@
 [Desktop Entry]
 Type=Application
 Name=eXe
-# Name[es]=eXe
-# Name[es_ES]=eXe
 Comment=The EXtremely Easy to use eLearning authoring tool
-Comment[es]=Herramienta para la creación fácil de recursos educativos
-Comment[ru]=Крайне простая в использовании утилита электронного обучения
 GenericName=Elearning XHTML/HTML5 editor
-GenericName[es]=Editor XHTML/HTML5 destinado a la educación
-GenericName[ru]=Редактор электронного обучения XHTML/HTML5
 Exec=exe %f
-# Icon=exe.png
 Icon=exe
 Terminal=false
 MimeType=application/x-exe-learning;
-# Categories=Education;Application;Utility;Editor;
 Categories=Education;Utility;TextEditor;
 StartupWMClass=eXe
-# X-Desktop-File-Install-Version=0.10
 Keywords=editor;html5;xhtml;lom-es;scorm;oer;
+
+
+# Translations
+Comment[es]=Herramienta para la creación fácil de recursos educativos
+GenericName[es]=Editor XHTML/HTML5 destinado a la educación
+Comment[ru]=Крайне простая в использовании утилита электронного обучения
+GenericName[ru]=Редактор электронного обучения XHTML/HTML5
+Comment[uk]=Надзвичайно простий у користуванні інструмент для створення матеріалів для комп'ютерної освіти
+GenericName[uk]=Редактор XHTML/HTML5 для комп'ютерної освіти
+Comment[pl]=Niezwykle łatwe w użyciu narzędzie do tworzenia e-learningu
+GenericName[pl]=Edytor E-learningu XHTML/HTML5
+Comment[da]=E-læringsforfatterværktøjet som er ekstremt let at bruge
+GenericName[da]=E-læring XHTML-/HTML5-redigering
