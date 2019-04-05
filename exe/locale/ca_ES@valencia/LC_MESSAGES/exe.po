@@ -8,9 +8,9 @@
 # Pilar Embid Giner <embid_mar@gva.es>, 2012-2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.3\n"
+"Project-Id-Version: eXeLearning 2.3.2\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2019-03-30 12:32+0100\n"
+"POT-Creation-Date: 2019-04-05 13:25+0200\n"
 "PO-Revision-Date: 2018-12-03 08:02+0100\n"
 "Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
 "Language: ca\n"
@@ -264,6 +264,7 @@ msgstr "L'adjunt %s no té node pare."
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:29
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:573
 #: exe/webui/tools/style-designer/langs/all.js:46
 msgid "Image"
@@ -445,6 +446,7 @@ msgstr "Feu clic en Ordena d'acord amb el consell que hi ha al mapa."
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
 #: exe/webui/content_template/strings.py:496 exe/webui/galleryblock.py:216
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:156
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:23
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:63
@@ -736,6 +738,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:166
 #: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:998
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:54
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:57
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:24
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
@@ -856,7 +859,7 @@ msgstr "Idioma dels buits"
 #: exe/engine/config.py:97 exe/engine/config.py:98 exe/engine/config.py:102
 #: exe/engine/config.py:103 exe/engine/config.py:124 exe/engine/config.py:125
 #: exe/engine/config.py:129 exe/engine/config.py:133
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:86
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:87
 msgid "Text and Tasks"
 msgstr ""
 
@@ -1102,8 +1105,10 @@ msgstr ""
 #: exe/engine/multiselectidevice.py:82
 #: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2460
 #: exe/webui/element.py:2464 exe/webui/element.py:2913
-#: exe/webui/element.py:2917 exe/webui/testquestionelement.py:151
-#: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
+#: exe/webui/element.py:2917
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:47
+#: exe/webui/testquestionelement.py:151 exe/webui/truefalseelement.py:200
+#: exe/webui/truefalseelement.py:206
 msgid "Question"
 msgstr "Qüestió"
 
@@ -1202,7 +1207,10 @@ msgstr "Penja"
 
 #: exe/engine/extendedfieldengine.py:317
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:102
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:128
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:367
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:224
+#: exe/webui/style/INTEF/_intef_js.js:121
 msgid "File"
 msgstr "Fitxer"
 
@@ -2117,7 +2125,10 @@ msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:28
+#: exe/webui/scripts/idevices/text/edition/text.js:13
 #: exe/webui/scripts/idevices/text/edition/text.js:19
+#: exe/webui/scripts/idevices/text/edition/text.js:48
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
@@ -2786,7 +2797,7 @@ msgstr ""
 "HA FALLAT L'ACCIÓ DE GUARDAR\n"
 "L'última vegada que s'ha guardat correctament és %s."
 
-#: exe/engine/package.py:1669 exe/jsui/scripts/app/controller/Toolbar.js:530
+#: exe/engine/package.py:1669 exe/jsui/scripts/app/controller/Toolbar.js:541
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:493
 msgid "iDevice Editor"
 msgstr "Editor d'iDevice"
@@ -3234,6 +3245,7 @@ msgstr "Text per al botó de comprovació"
 
 #: exe/engine/sortidevice.py:61 exe/webui/listablock.py:270
 #: exe/webui/listablock.py:272
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:45
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:46
 msgid "Check"
 msgstr "Comprova"
@@ -3554,7 +3566,7 @@ msgstr ""
 msgid "Don't copy source in target"
 msgstr "No copieu l'origen en la destinació"
 
-#: exe/exe_do:138 exe/jsui/scripts/app/controller/Toolbar.js:905
+#: exe/exe_do:138 exe/jsui/scripts/app/controller/Toolbar.js:916
 msgid "Wrap fields in CDATA"
 msgstr "Empaqueta camps en CDATA"
 
@@ -3756,6 +3768,8 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:60
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:135
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:140
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
 msgid "Example"
 msgstr "Exemple"
@@ -3929,7 +3943,7 @@ msgid "Unknown error when trying to upload package to Procomún."
 msgstr "Error desconegut quan s'intentava pujar un paquet a Procomún."
 
 #: exe/jsui/mainpage.py:1157 exe/jsui/mainpage.py:1182
-#: exe/jsui/mainpage.py:1201 exe/jsui/scripts/app/controller/Toolbar.js:1022
+#: exe/jsui/mainpage.py:1201 exe/jsui/scripts/app/controller/Toolbar.js:1033
 msgid "Publishing document to Procomún"
 msgstr "S'està publicant el document en Procomún"
 
@@ -3953,7 +3967,7 @@ msgstr ""
 "href=\"%s\" target=\"_blank\" title=\"Procomún Home\">Procomún</a>\\'s "
 "web page.</small>"
 
-#: exe/jsui/mainpage.py:1188 exe/jsui/scripts/app/controller/Toolbar.js:1063
+#: exe/jsui/mainpage.py:1188 exe/jsui/scripts/app/controller/Toolbar.js:1074
 #, python-format
 msgid "Error exporting package \"%s\" to Procomún."
 msgstr "Error quan s'estava exportant el paquet \"%s\" a Procomún."
@@ -4148,18 +4162,18 @@ msgstr "Fitxers d'imatge"
 #: exe/jsui/scripts/app/controller/StyleManager.js:220
 #: exe/jsui/scripts/app/controller/TemplateManager.js:221
 #: exe/jsui/scripts/app/controller/TemplateManager.js:290
-#: exe/jsui/scripts/app/controller/Toolbar.js:698
-#: exe/jsui/scripts/app/controller/Toolbar.js:719
-#: exe/jsui/scripts/app/controller/Toolbar.js:754
-#: exe/jsui/scripts/app/controller/Toolbar.js:773
-#: exe/jsui/scripts/app/controller/Toolbar.js:842
-#: exe/jsui/scripts/app/controller/Toolbar.js:953
-#: exe/jsui/scripts/app/controller/Toolbar.js:1110
-#: exe/jsui/scripts/app/controller/Toolbar.js:1130
-#: exe/jsui/scripts/app/controller/Toolbar.js:1150
-#: exe/jsui/scripts/app/controller/Toolbar.js:1184
-#: exe/jsui/scripts/app/controller/Toolbar.js:1354
-#: exe/jsui/scripts/app/controller/Toolbar.js:1505
+#: exe/jsui/scripts/app/controller/Toolbar.js:709
+#: exe/jsui/scripts/app/controller/Toolbar.js:730
+#: exe/jsui/scripts/app/controller/Toolbar.js:765
+#: exe/jsui/scripts/app/controller/Toolbar.js:784
+#: exe/jsui/scripts/app/controller/Toolbar.js:853
+#: exe/jsui/scripts/app/controller/Toolbar.js:964
+#: exe/jsui/scripts/app/controller/Toolbar.js:1121
+#: exe/jsui/scripts/app/controller/Toolbar.js:1141
+#: exe/jsui/scripts/app/controller/Toolbar.js:1161
+#: exe/jsui/scripts/app/controller/Toolbar.js:1195
+#: exe/jsui/scripts/app/controller/Toolbar.js:1413
+#: exe/jsui/scripts/app/controller/Toolbar.js:1564
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 #: exe/webui/scripts/authoring.js:96 exe/webui/scripts/authoring.js:121
 #: exe/webui/scripts/authoring.js:365 exe/webui/scripts/authoring.js:374
@@ -4170,11 +4184,11 @@ msgid "All Files"
 msgstr "Tots els fitxers"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:275
-#: exe/jsui/scripts/app/controller/Toolbar.js:1083
-#: exe/jsui/scripts/app/controller/Toolbar.js:1103
-#: exe/jsui/scripts/app/controller/Toolbar.js:1123
-#: exe/jsui/scripts/app/controller/Toolbar.js:1143
-#: exe/jsui/scripts/app/controller/Toolbar.js:1177
+#: exe/jsui/scripts/app/controller/Toolbar.js:1094
+#: exe/jsui/scripts/app/controller/Toolbar.js:1114
+#: exe/jsui/scripts/app/controller/Toolbar.js:1134
+#: exe/jsui/scripts/app/controller/Toolbar.js:1154
+#: exe/jsui/scripts/app/controller/Toolbar.js:1188
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Please wait..."
 msgstr "Espereu..."
@@ -4203,13 +4217,15 @@ msgstr "S'han guardat els paràmetres."
 #: exe/jsui/scripts/app/controller/TemplateManager.js:279
 #: exe/jsui/scripts/app/controller/TemplateManager.js:338
 #: exe/jsui/scripts/app/controller/TemplateManager.js:364
-#: exe/jsui/scripts/app/controller/Toolbar.js:604
-#: exe/jsui/scripts/app/controller/Toolbar.js:610
-#: exe/jsui/scripts/app/controller/Toolbar.js:1062
+#: exe/jsui/scripts/app/controller/Toolbar.js:615
+#: exe/jsui/scripts/app/controller/Toolbar.js:621
+#: exe/jsui/scripts/app/controller/Toolbar.js:1073
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:338
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:336
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:261
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:84
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:33
 #: exe/webui/stylemanagerpage.py:155 exe/webui/stylemanagerpage.py:269
 #: exe/webui/stylemanagerpage.py:321 exe/webui/stylemanagerpage.py:364
 #: exe/webui/stylemanagerpage.py:375 exe/webui/stylemanagerpage.py:386
@@ -4225,8 +4241,9 @@ msgstr "Error"
 #: exe/jsui/scripts/app/controller/MainTab.js:308
 #: exe/jsui/scripts/app/controller/MainTab.js:361
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:539
+#: exe/jsui/scripts/app/controller/Toolbar.js:550
 #: exe/webui/scripts/editor.js:54
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:332
 #: exe/webui/tools/style-designer/langs/all.js:119
 msgid "Confirm"
 msgstr "Confirmeu"
@@ -4317,53 +4334,55 @@ msgstr "Voleu eliminar la plantilla?"
 msgid "Do you want to delete this template?"
 msgstr "Voleu eliminar aquesta plantilla?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:208
+#: exe/jsui/scripts/app/controller/Toolbar.js:217
 #: exe/webui/tools/assistant/langs/all.js:80
 msgid "http://exelearning.net/html_manual/exe20_en/"
 msgstr "http://exelearning.net/html_manual/exe20_en/"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:224
+#: exe/jsui/scripts/app/controller/Toolbar.js:233
 #: exe/webui/tools/assistant/langs/all.js:82
 msgid "http://exelearning.net/?lang=en"
 msgstr "http://exelearning.net/?lang=en"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:230
+#: exe/jsui/scripts/app/controller/Toolbar.js:239
 #: exe/webui/tools/assistant/langs/all.js:81
 msgid "http://exelearning.net/forums/"
 msgstr "http://exelearning.net/forums/"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:233
+#: exe/jsui/scripts/app/controller/Toolbar.js:242
 msgid "http://exelearning.net/downloads/"
 msgstr "http://exelearning.net/downloads/"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:370
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:545
+#: exe/jsui/scripts/app/controller/Toolbar.js:381
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:588
 #: exe/webui/tools/assistant/js/assistant.js:15
 #: exe/webui/tools/assistant/langs/all.js:8
 msgid "Assistant"
 msgstr "Auxiliar"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:400
+#: exe/jsui/scripts/app/controller/Toolbar.js:411
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "About"
 msgstr "Quant a"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:417
+#: exe/jsui/scripts/app/controller/Toolbar.js:428
 msgid "Release notes"
 msgstr "Notes de la versió"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:435
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:577
+#: exe/jsui/scripts/app/controller/Toolbar.js:446
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:620
 #: exe/webui/tools/assistant/langs/all.js:78
 msgid "Legal Notes"
 msgstr "Informació legal"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:480
+#: exe/jsui/scripts/app/controller/Toolbar.js:491
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:446
 msgid "Preferences"
 msgstr "Preferències"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:500
+#: exe/jsui/scripts/app/controller/Toolbar.js:511
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:95
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:101
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:36
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:42
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:84
@@ -4371,7 +4390,8 @@ msgstr "Preferències"
 msgid "Export"
 msgstr "Exporta"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:540
+#: exe/jsui/scripts/app/controller/Toolbar.js:551
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:333
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
@@ -4379,16 +4399,16 @@ msgstr ""
 "Si heu fet canvis i no els heu guardat, es perdran. Esteu segur que voleu"
 " eixir?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:566
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:463
+#: exe/jsui/scripts/app/controller/Toolbar.js:577
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:534
 msgid "Style Manager"
 msgstr "Gestor d'estils"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:583
+#: exe/jsui/scripts/app/controller/Toolbar.js:594
 msgid "Template Manager"
 msgstr "Gestor de plantilles"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:601
+#: exe/jsui/scripts/app/controller/Toolbar.js:612
 msgid ""
 "Sorry, only styles created with the Editor can be edited. eXe's Styles "
 "are not editable"
@@ -4396,11 +4416,11 @@ msgstr ""
 "Només els estils creats amb l'editor es poden editar. Els estils de l'eXe"
 " no són editables."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:604
+#: exe/jsui/scripts/app/controller/Toolbar.js:615
 msgid "An unknown error occurred."
 msgstr "S'ha produït un error desconegut."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:607
+#: exe/jsui/scripts/app/controller/Toolbar.js:618
 msgid ""
 "That's one of eXe's default Styles, and it cannot be edited.\n"
 "\n"
@@ -4410,102 +4430,102 @@ msgstr ""
 "\n"
 "Trieu un estil diferent o creeu-ne un de nou."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:607
+#: exe/jsui/scripts/app/controller/Toolbar.js:618
 #: exe/jsui/scripts/app/view/forms/HelpContainer.js:43 exe/webui/block.py:270
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/all.js:128
 msgid "Information"
 msgstr "Informació"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:610
+#: exe/jsui/scripts/app/controller/Toolbar.js:621
 msgid "Your Style could not be saved because an unknown error occurred."
 msgstr "El vostre estil no és pot guardar perquè s'ha produït un error desconegut."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:686
+#: exe/jsui/scripts/app/controller/Toolbar.js:697
 msgid "Select package to insert"
 msgstr "Seleccioneu un paquet per a inserir-lo"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:691
+#: exe/jsui/scripts/app/controller/Toolbar.js:702
 msgid "Inserting package: {filename}"
 msgstr "S'està inserint el paquet: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:697
-#: exe/jsui/scripts/app/controller/Toolbar.js:718
-#: exe/jsui/scripts/app/controller/Toolbar.js:1353
-#: exe/jsui/scripts/app/controller/Toolbar.js:1504
+#: exe/jsui/scripts/app/controller/Toolbar.js:708
+#: exe/jsui/scripts/app/controller/Toolbar.js:729
+#: exe/jsui/scripts/app/controller/Toolbar.js:1412
+#: exe/jsui/scripts/app/controller/Toolbar.js:1563
 msgid "eXe Package Files"
 msgstr "Fitxers de paquets de l'eXe"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:707
+#: exe/jsui/scripts/app/controller/Toolbar.js:718
 msgid "Save extracted package as"
 msgstr "Anomena i guarda el paquet extret"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:712
+#: exe/jsui/scripts/app/controller/Toolbar.js:723
 msgid "Extracting package: {filename}"
 msgstr "S'està extraient el paquet: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:728
+#: exe/jsui/scripts/app/controller/Toolbar.js:739
 msgid "Select the parent folder for import."
 msgstr "Seleccioneu la carpeta pare per a la importació."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:743
+#: exe/jsui/scripts/app/controller/Toolbar.js:754
 msgid "Select the entry point for import."
 msgstr "Seleccioneu el punt d'entrada per a la importació."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:753
+#: exe/jsui/scripts/app/controller/Toolbar.js:764
 msgid "HTML Files"
 msgstr "Fitxers HTML"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:762
+#: exe/jsui/scripts/app/controller/Toolbar.js:773
 msgid "Select LOM Metadata file to import."
 msgstr "Seleccioneu el fitxer de metadades LOM que s'ha d'importar"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:772
+#: exe/jsui/scripts/app/controller/Toolbar.js:783
 msgid "XML Files"
 msgstr "Fitxers XML"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:787
+#: exe/jsui/scripts/app/controller/Toolbar.js:798
 msgid "Waiting progress..."
 msgstr "En curs..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:795
+#: exe/jsui/scripts/app/controller/Toolbar.js:806
 msgid "Cancel Import?"
 msgstr "Voleu cancel·lar la importació?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:796
+#: exe/jsui/scripts/app/controller/Toolbar.js:807
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr "Hi ha una importació en curs. Voleu cancel·lar-la?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:819
+#: exe/jsui/scripts/app/controller/Toolbar.js:830
 msgid "Select Xliff file to import"
 msgstr "Seleccioneu un fitxer XLIFF per a importar-lo"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:829
+#: exe/jsui/scripts/app/controller/Toolbar.js:840
 msgid "XLIFF Import Preferences"
 msgstr "Preferències d'importació d'XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:841
-#: exe/jsui/scripts/app/controller/Toolbar.js:952
+#: exe/jsui/scripts/app/controller/Toolbar.js:852
+#: exe/jsui/scripts/app/controller/Toolbar.js:963
 msgid "XLIFF Files"
 msgstr "Fitxers XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:851
+#: exe/jsui/scripts/app/controller/Toolbar.js:862
 msgid "Export to Xliff as"
 msgstr "Anomena i exporta a XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:871
+#: exe/jsui/scripts/app/controller/Toolbar.js:882
 msgid "Select source language"
 msgstr "Seleccioneu l'idioma d'origen"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:882
+#: exe/jsui/scripts/app/controller/Toolbar.js:893
 msgid "Select target language"
 msgstr "Seleccioneu l'idioma de destinació"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:893
+#: exe/jsui/scripts/app/controller/Toolbar.js:904
 msgid "Copy source also in target"
 msgstr "Copieu l'origen també en la destinació"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:896
+#: exe/jsui/scripts/app/controller/Toolbar.js:907
 msgid ""
 "If you don't choose this option, target field will be empty. Some "
 "Computer Aided Translation tools (e.g. OmegaT) just translate the content"
@@ -4517,7 +4537,7 @@ msgstr ""
 "camp destinació. Si utilitzeu eines d'aquest tipus us caldrà omplir el "
 "camp destinació amb una còpia del camp origen."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:907
+#: exe/jsui/scripts/app/controller/Toolbar.js:918
 msgid ""
 "This option will wrap all the exported fields in CDATA sections. This "
 "kind of sections are not recommended by XLIFF standard but it could be a "
@@ -4530,10 +4550,11 @@ msgstr ""
 "de camps (p.e.: Rainbow) abans d'utilitzar el programari d'ajuda a la "
 "traducció."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:916
+#: exe/jsui/scripts/app/controller/Toolbar.js:927
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:103
 #: exe/webui/editorpane.py:273
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:93
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:48
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:29
@@ -4543,16 +4564,16 @@ msgstr ""
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:922
+#: exe/jsui/scripts/app/controller/Toolbar.js:933
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:36
 msgid "Ok"
 msgstr "D'acord"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:945
+#: exe/jsui/scripts/app/controller/Toolbar.js:956
 msgid "XLIFF Export Preferences"
 msgstr "Preferències d'exportació d'XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:984
+#: exe/jsui/scripts/app/controller/Toolbar.js:995
 msgid ""
 "This package has metadata. You might be exporting incorrect information "
 "included by the original author. Go to Properties to edit it."
@@ -4561,19 +4582,19 @@ msgstr ""
 "informació incorrecta inclosa per l'autor original. Aneu a Propietats per"
 " a editar-lo."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:986
+#: exe/jsui/scripts/app/controller/Toolbar.js:997
 msgid "Do you want to export the package with the current metadata?"
 msgstr "Voleu exportar el paquet amb les metadades actuals?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:989
+#: exe/jsui/scripts/app/controller/Toolbar.js:1000
 msgid "Don't show this warning again"
 msgstr "No tornes a mostrar aquesta advertència"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1023
+#: exe/jsui/scripts/app/controller/Toolbar.js:1034
 msgid "Initializing Procomún export process..."
 msgstr "S'està inicialitzant el procés d'exportació de Procomún..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1035
+#: exe/jsui/scripts/app/controller/Toolbar.js:1046
 msgid ""
 "You must authorize eXe Learning to publish content into your Procomún "
 "account"
@@ -4581,15 +4602,15 @@ msgstr ""
 "Heu d'autoritzar l'eXe Learning a publicar contingut en el vostre compte "
 "de Procomún"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1036
+#: exe/jsui/scripts/app/controller/Toolbar.js:1047
 msgid "Are you sure you want to start authorization process?"
 msgstr "Esteu segur que voleu iniciar el procés d'autorització?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1047
+#: exe/jsui/scripts/app/controller/Toolbar.js:1058
 msgid "Procomún OAuth"
 msgstr "Procomún OAuth"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1065
+#: exe/jsui/scripts/app/controller/Toolbar.js:1076
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:152
 msgid ""
 "If you have problems publishing or you want to complete your cataloguing "
@@ -4600,80 +4621,80 @@ msgstr ""
 "després, tanqueu aquest diàleg, exporteu com a SCORM 2004 i pugeu el "
 "fitxer zip generat a Procomún."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1077
+#: exe/jsui/scripts/app/controller/Toolbar.js:1088
 msgid "Select the parent folder for export."
 msgstr "Seleccioneu la carpeta pare per a la exportació."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1097
+#: exe/jsui/scripts/app/controller/Toolbar.js:1108
 msgid "Export text package as"
 msgstr "Anomena i exporta el paquet de text"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1109
+#: exe/jsui/scripts/app/controller/Toolbar.js:1120
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:285
 msgid "Text File"
 msgstr "Fitxer de text"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1117
+#: exe/jsui/scripts/app/controller/Toolbar.js:1128
 msgid "Save package resources report as"
 msgstr "Anomena i guarda l'informe de recursos del paquet"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1129
+#: exe/jsui/scripts/app/controller/Toolbar.js:1140
 msgid "CSV File"
 msgstr "Fitxer CSV"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1137
+#: exe/jsui/scripts/app/controller/Toolbar.js:1148
 msgid "Export EPUB3 package as"
 msgstr "Anomena i exporta el paquet EPUB3"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1149
+#: exe/jsui/scripts/app/controller/Toolbar.js:1160
 msgid "EPUB3 File"
 msgstr "Fitxer EPUB3"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1159
+#: exe/jsui/scripts/app/controller/Toolbar.js:1170
 msgid "Export SCORM package as"
 msgstr "Anomena i exporta el paquet SCORM"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1161
+#: exe/jsui/scripts/app/controller/Toolbar.js:1172
 msgid "Export IMS package as"
 msgstr "Anomena i exporta el paquet IMS"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1163
+#: exe/jsui/scripts/app/controller/Toolbar.js:1174
 msgid "Export Website package as"
 msgstr "Anomena i exporta el paquet Website"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1165
+#: exe/jsui/scripts/app/controller/Toolbar.js:1176
 msgid "Export Common Cartridge as"
 msgstr "Anomena i exporta el cartutx comú"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1167
+#: exe/jsui/scripts/app/controller/Toolbar.js:1178
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "S'ha passat un valor invàlid a exportPackage"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1183
+#: exe/jsui/scripts/app/controller/Toolbar.js:1194
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/ZipFile"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1259
+#: exe/jsui/scripts/app/controller/Toolbar.js:1290
 msgid "No templates available"
 msgstr "No hi ha cap plantilla disponible"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1326
+#: exe/jsui/scripts/app/controller/Toolbar.js:1385
 msgid "Loading package..."
 msgstr "S'està carregant el paquet..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1342
+#: exe/jsui/scripts/app/controller/Toolbar.js:1401
 msgid "Open File"
 msgstr "Obri un fitxer"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1347
+#: exe/jsui/scripts/app/controller/Toolbar.js:1406
 msgid "Loading package: {filename}"
 msgstr "S'està carregant el paquet: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1366
+#: exe/jsui/scripts/app/controller/Toolbar.js:1425
 msgid "Save Package first?"
 msgstr "Voleu guardar primer el paquet?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1367
+#: exe/jsui/scripts/app/controller/Toolbar.js:1426
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
@@ -4681,23 +4702,23 @@ msgstr ""
 "El paquet actual s'ha modificat i encara no s'ha guardat. Voleu guardar-"
 "lo?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1433
+#: exe/jsui/scripts/app/controller/Toolbar.js:1492
 msgid "Saving package to: {filename}"
 msgstr "S'està guardant el paquet en: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1462
+#: exe/jsui/scripts/app/controller/Toolbar.js:1521
 msgid "Title for template:"
 msgstr "Títol de la plantilla:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1463
+#: exe/jsui/scripts/app/controller/Toolbar.js:1522
 msgid "Enter the new name for template:"
 msgstr "Introduïu el nom de la plantilla nova:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1484
+#: exe/jsui/scripts/app/controller/Toolbar.js:1543
 msgid "Save file"
 msgstr "Guarda el fitxer"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1490
+#: exe/jsui/scripts/app/controller/Toolbar.js:1549
 msgid "Saving package..."
 msgstr "S'està guardant el paquet..."
 
@@ -4757,6 +4778,8 @@ msgstr "Nom"
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:111
 #: exe/jsui/scripts/app/view/forms/LomSections.js:102
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:82
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:122
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
@@ -4783,6 +4806,7 @@ msgstr "Obri"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:666
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:329
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:174 exe/webui/editorpage.py:264
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:149
 #: exe/webui/tools/assistant/langs/all.js:52
@@ -4919,6 +4943,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:555
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:232
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:239
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:174
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:230
 msgid "Format"
@@ -5199,7 +5224,7 @@ msgstr "Tàxon"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:257
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:647
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:690
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:4
@@ -5452,6 +5477,7 @@ msgid "Access Type"
 msgstr "Tipus d'accés"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:22
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:104
 msgid "Now"
 msgstr "Ara"
 
@@ -5461,6 +5487,7 @@ msgstr "Hora"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:29
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:229
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:367
 msgid "Required"
 msgstr "Requerit"
 
@@ -5499,14 +5526,17 @@ msgid "Days"
 msgstr "Dies"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:383
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:101
 msgid "Hours"
 msgstr "Hores"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:384
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:102
 msgid "Minutes"
 msgstr "Minuts"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:385
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:103
 msgid "Seconds"
 msgstr "Segons"
 
@@ -5638,7 +5668,7 @@ msgid "Cataloguing"
 msgstr "Catalogació"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:653
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:696
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:160
 msgid "General description"
 msgstr "Descripció general"
@@ -5654,6 +5684,8 @@ msgid "Preknowledge."
 msgstr "Coneixements previs"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:249
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:387
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:391
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:164
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -5669,6 +5701,7 @@ msgid "Primary author of the resource."
 msgstr "Autor principal del recurs."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:263
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:396
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:168
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:18
@@ -6015,6 +6048,93 @@ msgstr ""
 msgid "Show this window on eXe start"
 msgstr "Mostra aquesta finestra en iniciar l'eXe"
 
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:81
+msgid "Export style: "
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
+msgid "Delete style: "
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:125
+msgid "Show properties of style: "
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:196
+msgid "Import style to the system "
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:200
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:424
+msgid "Import style"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:206
+msgid "Styles repository"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
+msgid "Search and download new styles from the styles repository"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:216
+msgid "List of styles in your system"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:230
+msgid "Properties of style: "
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:318
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:531
+msgid "Return to style manager"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:325
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:530
+#: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:250
+msgid "Return"
+msgstr "Torna"
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:419
+msgid "Read more"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:425
+msgid "Download style from repository and import into system."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:457
+msgid "Import style from custom URL"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:472
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:59
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:229
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:232
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:239
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:133
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:138
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:124
+msgid "URL"
+msgstr "URL"
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:473
+msgid "URL to download the style from."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:478
+msgid "Import Style from URL"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:479
+msgid "Download style from URL and import into system."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:507
+msgid "Check and install styles in the repository"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:22
 msgid "Export template: "
 msgstr "Exporta la plantilla: "
@@ -6051,10 +6171,6 @@ msgstr "Propietats de la plantilla: "
 msgid "Return to template manager"
 msgstr "Torna al gestor de plantilles"
 
-#: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:250
-msgid "Return"
-msgstr "Torna"
-
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:45
 msgid ""
 "Some important information is missing in the \"Properties\" tab. You can "
@@ -6079,45 +6195,45 @@ msgstr ""
 "Procomún no ha acceptat el valor seleccionat per a aquest camp. Per "
 "favor, seleccioneu un dels valors següents:"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:54
 #: exe/webui/tools/assistant/langs/all.js:41
 msgid "Outline"
 msgstr "Resum"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:79 exe/webui/common.py:619
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:80 exe/webui/common.py:619
 msgid "Show"
 msgstr "Mostra"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:79 exe/webui/common.py:620
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:80 exe/webui/common.py:620
 msgid "Hide"
 msgstr "Amaga"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:94
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:97
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:103
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:135
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:95
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:98
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:104
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:136
 msgid "Ungroup iDevices"
 msgstr "Desagrupa els iDevices"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:110
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:115
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:133
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:111
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:116
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:134
 msgid "Edit iDevices"
 msgstr "Edita els iDevices"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:123
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:124
 msgid "Save iDevices"
 msgstr "Guarda els iDevices"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:165
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "iDevices"
 msgstr "iDevices"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:176
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:177
 msgid "Category"
 msgstr "Categoria"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:188
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:189
 msgid "Visible"
 msgstr "Visible"
 
@@ -6131,7 +6247,7 @@ msgid "Properties"
 msgstr "Propietats"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:55
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:661
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:704
 msgid "Package"
 msgstr "Paquet"
 
@@ -6162,6 +6278,7 @@ msgstr "Afig una pàgina"
 #: exe/webui/editorpage.py:255 exe/webui/editorpage.py:258
 #: exe/webui/galleryblock.py:303 exe/webui/jsblock.py:106
 #: exe/webui/jsblock.py:111 exe/webui/scripts/editor.js:23
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:3
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
 msgstr "Suprimiu"
@@ -6169,6 +6286,10 @@ msgstr "Suprimiu"
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
 msgstr "Reanomena"
+
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:56
+msgid "Minify this panel"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:38
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
@@ -6319,6 +6440,7 @@ msgstr "Procomún"
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:416 exe/webui/common.py:632
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:148
+#: exe/webui/style/INTEF/_intef_js.js:121
 msgid "Print"
 msgstr "Imprimeix"
 
@@ -6332,7 +6454,7 @@ msgid "Tools"
 msgstr "Eines"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:452
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:683 exe/webui/editorpane.py:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:726 exe/webui/editorpane.py:268
 #: exe/webui/element.py:2106
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -6345,76 +6467,79 @@ msgstr "Eines"
 msgid "Preview"
 msgstr "Previsualització"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:469
-#: exe/webui/tools/style-designer/langs/all.js:9
-msgid "Style Designer"
-msgstr "Dissenyador d'estils"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:477
-msgid "Create new Style"
-msgstr "Crea un estil nou"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:482
-msgid "Edit current Style"
-msgstr "Edita l'estil actual"
-
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:500
 msgid "Resources Report"
 msgstr "Informe de recursos"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:510
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:506
 msgid "Refresh Display"
 msgstr "Refresca la pantalla"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:517
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:514
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:525
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:558
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Styles"
 msgstr "Estils"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:528
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:535
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:538
+#: exe/webui/tools/style-designer/langs/all.js:9
+msgid "Style Designer"
+msgstr "Dissenyador d'estils"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:546
+msgid "Create new Style"
+msgstr "Crea un estil nou"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:551
+msgid "Edit current Style"
+msgstr "Edita l'estil actual"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:571
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:578
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:625
 msgid "Help"
 msgstr "Ajuda"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:555
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:598
 #: exe/webui/tools/assistant/langs/all.js:71
 msgid "eXe Tutorial"
 msgstr "Programa d'aprenentatge de l'eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:569
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:612
 #: exe/webui/tools/assistant/langs/all.js:77
 msgid "Release Notes"
 msgstr "Notes de la versió"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:587
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:630
 #: exe/webui/tools/assistant/langs/all.js:79
 msgid "eXe Web Site"
 msgstr "Lloc web de l'eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:594
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:637
 #: exe/webui/scripts/authoring.js:907 exe/webui/tools/assistant/langs/all.js:74
 msgid "Report an Issue"
 msgstr "Informeu d'un problema"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:601
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:644
 #: exe/webui/tools/assistant/langs/all.js:72
 msgid "eXe Forums"
 msgstr "Fòrums de l'eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:611
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:654
 #: exe/webui/tools/assistant/langs/all.js:76
 msgid "About eXe"
 msgstr "Quant a l'eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:625
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:668
 msgid "Advanced user"
 msgstr "Usuari avançat"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:626
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:640
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:669
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:683
 msgid ""
 "Checking this option will show more elements in the menus (File, "
 "Tools...) and the Properties tab."
@@ -6422,24 +6547,24 @@ msgstr ""
 "Si es marca aquesta opció es mostraran més elements als menús (Fitxer, "
 "Eines...) i la pestanya Propietats."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:639 exe/webui/editorpage.py:250
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:682 exe/webui/editorpage.py:250
 #: exe/webui/editorpane.py:397
 msgid "Info"
 msgstr "Informació"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:803
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:846
 msgid "You've been working for a long time without saving."
 msgstr "Heu estat treballant durant molt de temps sense guardar."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:805
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:848
 msgid "Do you want to save now?"
 msgstr "Voleu guardar-ho ara?"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:807
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:850
 msgid "Hide until the application is closed"
 msgstr "Amaga fins que es tanque l'aplicació"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:983
+#: exe/jsui/scripts/app/controller/Toolbar.js:994
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:580
 #: exe/jsui/scripts/exe.js:213
 msgid "Warning"
@@ -6457,7 +6582,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:150
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:181
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:802 exe/jsui/scripts/exe.js:249
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:845 exe/jsui/scripts/exe.js:249
 msgid "Warning!"
 msgstr "Atenció!"
 
@@ -6469,9 +6594,13 @@ msgstr ""
 "Si abandoneu aquesta pàgina l'aplicació eXe continua executant-se. "
 "Utilitzeu el menú Fitxer->Ix, si voleu eixir de l'aplicació."
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:99 exe/jsui/scripts/exe.js:334
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:100 exe/jsui/scripts/exe.js:334
 msgid "Group iDevices"
 msgstr "Agrupa els iDevices"
+
+#: exe/jsui/scripts/exe.js:361 exe/jsui/scripts/exe.js:369
+msgid "Show panel"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
@@ -8101,6 +8230,7 @@ msgid "Please upload a .sb or .scratch file."
 msgstr "Pengeu un fitxer .sb o .scratch"
 
 #: exe/webui/appletblock.py:91
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:97
 msgid "Please type or paste a valid URL."
 msgstr "Escriviu o apegueu un URL vàlid."
 
@@ -8160,7 +8290,8 @@ msgstr "Nom del fitxer:"
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1085 exe/webui/scripts/authoring.js:106
 #: exe/webui/scripts/authoring.js:367 exe/webui/scripts/authoring.js:376
-#: exe/webui/scripts/editor.js:81 exe/webui/scripts/editor.js:108
+#: exe/webui/scripts/authoring.js:958 exe/webui/scripts/editor.js:81
+#: exe/webui/scripts/editor.js:108
 msgid "Select a file"
 msgstr "Seleccioneu un fitxer"
 
@@ -8178,6 +8309,7 @@ msgid "IDevice broken"
 msgstr "L'iDevice està trencat"
 
 #: exe/webui/block.py:227 exe/webui/editorpage.py:120
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:171
 msgid "Done"
 msgstr "Fet"
 
@@ -8223,6 +8355,7 @@ msgstr "S'ha produït un error: s'ha cridat Block.renderViewContent directament"
 
 #: exe/webui/block.py:336 exe/webui/editorpage.py:290
 #: exe/webui/editorpane.py:270
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:16
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:225
 msgid "Edit"
 msgstr "Edita"
@@ -8478,14 +8611,17 @@ msgid "Search"
 msgstr "Cerca"
 
 #: exe/webui/common.py:653
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:92
 msgid "Accept"
 msgstr "Accepta"
 
 #: exe/webui/common.py:657 exe/webui/element.py:2716 exe/webui/element.py:2734
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:39
 msgid "Wrong"
 msgstr "Incorrecte"
 
 #: exe/webui/common.py:658
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:49
 msgid "Right answer"
 msgstr "Resposta correcta"
 
@@ -8508,10 +8644,12 @@ msgid "Play"
 msgstr "Reprodueix"
 
 #: exe/webui/common.py:665
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:25
 msgid "Results"
 msgstr "Resultats"
 
 #: exe/webui/common.py:666
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:29
 msgid "Total"
 msgstr "Total"
 
@@ -8780,6 +8918,7 @@ msgid "Steps for your mission"
 msgstr "Etapes de la vostra missió"
 
 #: exe/webui/content_template/strings.py:247
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:25
 msgid "Introduction"
 msgstr "Introducció"
 
@@ -9132,6 +9271,7 @@ msgid "Add Field"
 msgstr "Afig un camp"
 
 #: exe/webui/editorpane.py:265
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:86
 msgid "Actions"
 msgstr "Accions"
 
@@ -9258,7 +9398,9 @@ msgstr "Mostra les respostes"
 
 #: exe/webui/element.py:1596 exe/webui/element.py:1847
 #: exe/webui/element.py:2469 exe/webui/element.py:2929
-#: exe/webui/listablock.py:312 exe/webui/testquestionelement.py:158
+#: exe/webui/listablock.py:312
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:48
+#: exe/webui/testquestionelement.py:158
 msgid "Answers"
 msgstr "Respostes"
 
@@ -9371,6 +9513,7 @@ msgstr "Llista de fitxers (es mostra només en mode de previsualització):"
 
 #: exe/webui/fileattachblock.py:158
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:250
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:46
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:129
 msgid "New Window"
 msgstr "Finestra nova"
@@ -9695,7 +9838,7 @@ msgstr ""
 msgid "This change will be undone."
 msgstr "Aquest canvi es desfarà."
 
-#: exe/webui/scripts/authoring.js:1056
+#: exe/webui/scripts/authoring.js:1083
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/exe_abcmusic.js:77
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:14
 msgid "Go to Tools - Preview to see this working"
@@ -9872,14 +10015,6 @@ msgstr ""
 "Insereix una activitat de GeoGebra des de www.geogebra.org. Requereix "
 "connexió a Internet."
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:59
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:229
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:232
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:239
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:124
-msgid "URL"
-msgstr "URL"
-
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:63
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -9961,6 +10096,462 @@ msgstr "No inclou un \"Qüestionari SCORM \"  iDevice  en la mateixa pàgina."
 msgid "Please write the button text."
 msgstr "Escriviu el text del botó."
 
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:2
+msgid "Interactive video editor"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:5
+msgid "Exit"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:7
+msgid "Show/Hide help"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:8
+msgid "Close help"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:10
+msgid "Create a cover"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:11
+msgid "Create"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:12
+msgid "Create a slide"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:14
+msgid "Create slide"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:15
+msgid "Update slide"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:17
+msgid "Edit slides"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:18
+msgid "Create a cover (front page)"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:19
+msgid "Add new slides (frames)"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:20
+msgid "You can edit them later"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:21
+msgid "Click on Save when you finish"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:22
+msgid "Your interactive video cover"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:24
+msgid "required"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:26
+msgid "Save cover"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:30
+msgid "Single choice"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:31
+msgid "Multiple choice"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:32
+msgid "Fill in the blank"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:33
+msgid "Dropdown activity"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:34
+msgid "Match pairs"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:35
+msgid "Scrambled list"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:37
+msgid "Write a text. You can add lists, links..."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:38
+msgid "Add an image with description (alternative text)."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:39
+msgid "Write a question and some answers. Don't forget to choose the right one."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:40
+msgid ""
+"Write a question and some answers. You can select more than one right "
+"answer."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:41
+msgid ""
+"Write a text and strike through the words to complete. Check the "
+"spelling. It's case sensitive."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:42
+msgid ""
+"Write a text and strike through the words to complete. A dropdown menu "
+"(SELECT) will be displayed where those words are. You can also add more "
+"options."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:43
+msgid "Write some instructions and add pairs in the right order."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:44
+msgid "Write the wording and add elements to the list (in the right order)."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:46
+msgid "Write the text to be shown"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:51
+msgid "Strike through the words to complete. It's case sensitive."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:52
+msgid "Text to complete"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:54
+msgid "Add options"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:55
+msgid "You can add more options to the dropdown lists (optional)"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:58
+msgid "Pairs"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:59
+msgid "Introduction or instructions"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:60
+msgid "Fill in at least two pairs."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:62
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
+msgid "List"
+msgstr "Llista"
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:63
+msgid "Elements (it the right order)"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:65
+msgid "Please create a slide (frame) first."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:66
+msgid "The title is required."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:67
+msgid "Cover updated."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:68
+msgid "Please write a text."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:69
+msgid "Please add an image."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:70
+msgid "Provide an alternative text (describe the image)."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:71
+msgid "Please write a question."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:72
+msgid "Add at least two answers."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:73
+msgid "Please choose the right answer."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:74
+msgid "No struck-through words..."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:75
+msgid "Write an introduction (instructions, etc.)."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:76
+msgid "Add at least two pairs."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:77
+msgid "Add at least two elements to the list."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:78
+msgid "Important"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:79
+msgid "Your changes won't be saved until you click on \"Save\"."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:80
+msgid "Do not show this message again"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:81
+msgid "All the slides have been deleted."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:83
+msgid "Num."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:85
+msgid "End"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:87
+msgid "Remove slide %?"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:88
+msgid "Slides list"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:89
+msgid "New slide"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:90
+msgid "The slide was created!"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:91
+msgid "Saved changes!"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:95
+msgid "The Youtube API might have changed."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:98
+msgid "Saved!"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:99
+msgid "Click on \"Exit\" to finish."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:100
+msgid "Stop the playing video"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:105
+msgid "Current frame second"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:106
+msgid "The slide can't start in that second (zero)."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:107
+msgid "The video is not that long. Check the start/end time."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:108
+msgid "Please check the start/end time."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:109
+msgid "Please check the \"Start\" time"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:110
+msgid "Please check the \"End\" time"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:111
+msgid "Set the time for the slide to be shown"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:112
+msgid ""
+"If you don't want the video to stop, set the time for the slide to be "
+"hidden"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:113
+msgid "Click on % to get the video current time."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:84
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:24
+msgid "Start"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:26
+msgid "Slide (frame)"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:27
+msgid "Score"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:28
+msgid "Seen"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:30
+msgid "see all the slides and answer all the questions"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:31
+msgid "This video has no interactive slides."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:32
+msgid "Continue"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:34
+msgid "Incompatible code"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:35
+msgid "Ony one interactive video per page."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:9
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:36
+msgid "Cover"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:37
+msgid "Exit the fullscreen mode (Esc) to see the current slide"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:38
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:47
+msgid "Right!"
+msgstr "Correcte!"
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:40
+msgid "Drag and drop or use the arrows."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:41
+msgid "Move up"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:42
+msgid "Move down"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:43
+msgid "Right answer:"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:44
+msgid "Please finish the activity"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:113
+msgid "You can only add one Interactive Video iDevice per page."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:120
+#: exe/webui/tools/style-designer/langs/all.js:12
+msgid "General settings"
+msgstr "Configuració general"
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:96
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:123
+msgid "Local file"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:124
+msgid "Youtube"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:125
+msgid "Mediateca"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:130
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:372
+msgid "Supported formats"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:143
+msgid "Show results"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:146
+msgid "Open the editor and start adding interaction..."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:149
+msgid "Language settings"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:150
+msgid "Custom texts (or use the default ones):"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:170
+#, python-format
+msgid ""
+"Please save your iDevice now (click on %s now) and edit it to add "
+"interaction."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:174
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:5
+msgid "Recommended type"
+msgstr "Tipus recomanat"
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:382
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:392
+msgid "Wrong URL. Expected format:"
+msgstr ""
+
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:13
 msgid "Task"
 msgstr "Tasca"
@@ -10026,10 +10617,6 @@ msgstr "Llista desordenada"
 msgid "The right answer will be shown after this text."
 msgstr "La resposta correcta es mostrarà després d'aquest text."
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:47
-msgid "Right!"
-msgstr "Correcte!"
-
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:48
 msgid "Sorry... The right answer is:"
 msgstr "Incorrecte... La resposta correcta és: "
@@ -10053,11 +10640,6 @@ msgstr "Escriviu el text que s'ha de mostrar quan la resposta és correcta."
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:157
 msgid "Please write the text to show when wrong."
 msgstr "Escriviu el text que s'ha de mostrar quan la resposta és incorrecta."
-
-#: exe/webui/scripts/idevices/text/edition/text.js:13
-#: exe/webui/scripts/idevices/text/edition/text.js:48
-msgid "Text (optional feedback)"
-msgstr ""
 
 #: exe/webui/scripts/idevices/text/edition/text.js:88
 msgid "Please write some information."
@@ -12536,13 +13118,6 @@ msgstr "Àudio incrustat"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-msgid "List"
-msgstr "Llista"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Background"
 msgstr "Fons"
 
@@ -12564,10 +13139,6 @@ msgstr "Fitxer seleccionat"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:4
 msgid "HTML5 does not work in all browsers"
 msgstr "L'HTML5 no funciona en tots els navegadors."
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:5
-msgid "Recommended type"
-msgstr "Tipus recomanat"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:6
 msgid "Continue without changing your settings?"
@@ -13733,6 +14304,8 @@ msgstr "Llatina majúscula"
 msgid "Automatic Numbering"
 msgstr "Numeració automàtica"
 
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:146
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:318
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
 #: exe/webui/scripts/tinymce_4_settings.js:379
@@ -14418,6 +14991,8 @@ msgstr "L'estil s'ha importat correctament."
 msgid "Error while installing style: %s"
 msgstr "S'ha produït un error mentre s'instal·lava l'estil: %s"
 
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:94
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:87
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1103
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1155
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1219
@@ -14913,10 +15488,6 @@ msgstr "Les finestres del Dissenyador d'estils es tancaran."
 #: exe/webui/tools/style-designer/js/app.js:1369
 msgid "Page will be reloaded. "
 msgstr "La pàgina es tornarà a carregar."
-
-#: exe/webui/tools/style-designer/langs/all.js:12
-msgid "General settings"
-msgstr "Configuració general"
 
 #: exe/webui/tools/style-designer/langs/all.js:13
 msgid "Page width"
@@ -15415,4 +15986,7 @@ msgstr ""
 
 #~ msgid "Write the title, select an icon and choose a type..."
 #~ msgstr "Escriviu el títol, seleccioneu una icona i trieu un tipus..."
+
+#~ msgid "Text (optional feedback)"
+#~ msgstr ""
 
