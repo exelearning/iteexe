@@ -9,9 +9,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.3\n"
+"Project-Id-Version: eXeLearning 2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-30 12:32+0100\n"
+"POT-Creation-Date: 2019-04-05 13:25+0200\n"
 "PO-Revision-Date: 2019-01-13 20:09+0100\n"
 "Last-Translator: Chenggui Duan <chengguiduan@gmail.com>\n"
 "Language: zh\n"
@@ -216,6 +216,7 @@ msgstr "Attachment %s has no parentNode"
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:29
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:573
 #: exe/webui/tools/style-designer/langs/all.js:46
 msgid "Image"
@@ -369,6 +370,7 @@ msgstr "按照地图上的提示依序点击。"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
 #: exe/webui/content_template/strings.py:496 exe/webui/galleryblock.py:216
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:156
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:23
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:63
@@ -631,6 +633,7 @@ msgstr " "
 #: exe/engine/verdaderofalsofpdidevice.py:166
 #: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:998
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:54
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:57
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:24
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
@@ -738,7 +741,7 @@ msgstr "填空题语言"
 #: exe/engine/config.py:97 exe/engine/config.py:98 exe/engine/config.py:102
 #: exe/engine/config.py:103 exe/engine/config.py:124 exe/engine/config.py:125
 #: exe/engine/config.py:129 exe/engine/config.py:133
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:86
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:87
 msgid "Text and Tasks"
 msgstr ""
 
@@ -936,8 +939,10 @@ msgstr "输入评语, 可让学生在点选次项时看见. 如果你不输入, 
 #: exe/engine/multiselectidevice.py:82
 #: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2460
 #: exe/webui/element.py:2464 exe/webui/element.py:2913
-#: exe/webui/element.py:2917 exe/webui/testquestionelement.py:151
-#: exe/webui/truefalseelement.py:200 exe/webui/truefalseelement.py:206
+#: exe/webui/element.py:2917
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:47
+#: exe/webui/testquestionelement.py:151 exe/webui/truefalseelement.py:200
+#: exe/webui/truefalseelement.py:206
 msgid "Question"
 msgstr "问题"
 
@@ -1034,7 +1039,10 @@ msgstr "上载"
 
 #: exe/engine/extendedfieldengine.py:317
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:102
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:128
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:367
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:224
+#: exe/webui/style/INTEF/_intef_js.js:121
 msgid "File"
 msgstr "文件"
 
@@ -1770,7 +1778,10 @@ msgstr "点击图片或\"添加图片\"按钮来选择所要放大的图片文�
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:28
+#: exe/webui/scripts/idevices/text/edition/text.js:13
 #: exe/webui/scripts/idevices/text/edition/text.js:19
+#: exe/webui/scripts/idevices/text/edition/text.js:48
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
@@ -2325,7 +2336,7 @@ msgstr ""
 "保存失败!\n"
 "最后一次成功的存档是%s."
 
-#: exe/engine/package.py:1669 exe/jsui/scripts/app/controller/Toolbar.js:530
+#: exe/engine/package.py:1669 exe/jsui/scripts/app/controller/Toolbar.js:541
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:493
 msgid "iDevice Editor"
 msgstr "iDevice 编辑器"
@@ -2705,6 +2716,7 @@ msgstr "“检查”按钮的文本"
 
 #: exe/engine/sortidevice.py:61 exe/webui/listablock.py:270
 #: exe/webui/listablock.py:272
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:45
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:46
 msgid "Check"
 msgstr "检查"
@@ -2967,7 +2979,7 @@ msgstr "使用'-i xliff'或 '--export xliff'选择XLIFF导出选项后，可以�
 msgid "Don't copy source in target"
 msgstr "不要在目标中复制源"
 
-#: exe/exe_do:138 exe/jsui/scripts/app/controller/Toolbar.js:905
+#: exe/exe_do:138 exe/jsui/scripts/app/controller/Toolbar.js:916
 msgid "Wrap fields in CDATA"
 msgstr ""
 
@@ -3153,6 +3165,8 @@ msgstr "这是用户自创教学组件插件的例子."
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:60
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:135
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:140
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
 msgid "Example"
 msgstr "例子"
@@ -3320,7 +3334,7 @@ msgid "Unknown error when trying to upload package to Procomún."
 msgstr "尝试将包上传到Procomún时出现未知错误。"
 
 #: exe/jsui/mainpage.py:1157 exe/jsui/mainpage.py:1182
-#: exe/jsui/mainpage.py:1201 exe/jsui/scripts/app/controller/Toolbar.js:1022
+#: exe/jsui/mainpage.py:1201 exe/jsui/scripts/app/controller/Toolbar.js:1033
 msgid "Publishing document to Procomún"
 msgstr "将文件发布到Procomún"
 
@@ -3341,7 +3355,7 @@ msgstr ""
 "<small>您可以使用<a href=\"%s\" target=\"_blank\" "
 "title=\"ProcomúnHome\">Procomún</a> \\的网页查看和管理上传的包。</small>"
 
-#: exe/jsui/mainpage.py:1188 exe/jsui/scripts/app/controller/Toolbar.js:1063
+#: exe/jsui/mainpage.py:1188 exe/jsui/scripts/app/controller/Toolbar.js:1074
 #, python-format
 msgid "Error exporting package \"%s\" to Procomún."
 msgstr "将包 \"%s\" 导出到Procomún时出错。"
@@ -3522,18 +3536,18 @@ msgstr "图像文件"
 #: exe/jsui/scripts/app/controller/StyleManager.js:220
 #: exe/jsui/scripts/app/controller/TemplateManager.js:221
 #: exe/jsui/scripts/app/controller/TemplateManager.js:290
-#: exe/jsui/scripts/app/controller/Toolbar.js:698
-#: exe/jsui/scripts/app/controller/Toolbar.js:719
-#: exe/jsui/scripts/app/controller/Toolbar.js:754
-#: exe/jsui/scripts/app/controller/Toolbar.js:773
-#: exe/jsui/scripts/app/controller/Toolbar.js:842
-#: exe/jsui/scripts/app/controller/Toolbar.js:953
-#: exe/jsui/scripts/app/controller/Toolbar.js:1110
-#: exe/jsui/scripts/app/controller/Toolbar.js:1130
-#: exe/jsui/scripts/app/controller/Toolbar.js:1150
-#: exe/jsui/scripts/app/controller/Toolbar.js:1184
-#: exe/jsui/scripts/app/controller/Toolbar.js:1354
-#: exe/jsui/scripts/app/controller/Toolbar.js:1505
+#: exe/jsui/scripts/app/controller/Toolbar.js:709
+#: exe/jsui/scripts/app/controller/Toolbar.js:730
+#: exe/jsui/scripts/app/controller/Toolbar.js:765
+#: exe/jsui/scripts/app/controller/Toolbar.js:784
+#: exe/jsui/scripts/app/controller/Toolbar.js:853
+#: exe/jsui/scripts/app/controller/Toolbar.js:964
+#: exe/jsui/scripts/app/controller/Toolbar.js:1121
+#: exe/jsui/scripts/app/controller/Toolbar.js:1141
+#: exe/jsui/scripts/app/controller/Toolbar.js:1161
+#: exe/jsui/scripts/app/controller/Toolbar.js:1195
+#: exe/jsui/scripts/app/controller/Toolbar.js:1413
+#: exe/jsui/scripts/app/controller/Toolbar.js:1564
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
 #: exe/webui/scripts/authoring.js:96 exe/webui/scripts/authoring.js:121
 #: exe/webui/scripts/authoring.js:365 exe/webui/scripts/authoring.js:374
@@ -3544,11 +3558,11 @@ msgid "All Files"
 msgstr "所有文件"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:275
-#: exe/jsui/scripts/app/controller/Toolbar.js:1083
-#: exe/jsui/scripts/app/controller/Toolbar.js:1103
-#: exe/jsui/scripts/app/controller/Toolbar.js:1123
-#: exe/jsui/scripts/app/controller/Toolbar.js:1143
-#: exe/jsui/scripts/app/controller/Toolbar.js:1177
+#: exe/jsui/scripts/app/controller/Toolbar.js:1094
+#: exe/jsui/scripts/app/controller/Toolbar.js:1114
+#: exe/jsui/scripts/app/controller/Toolbar.js:1134
+#: exe/jsui/scripts/app/controller/Toolbar.js:1154
+#: exe/jsui/scripts/app/controller/Toolbar.js:1188
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Please wait..."
 msgstr "请稍等…"
@@ -3577,13 +3591,15 @@ msgstr "设置已保存"
 #: exe/jsui/scripts/app/controller/TemplateManager.js:279
 #: exe/jsui/scripts/app/controller/TemplateManager.js:338
 #: exe/jsui/scripts/app/controller/TemplateManager.js:364
-#: exe/jsui/scripts/app/controller/Toolbar.js:604
-#: exe/jsui/scripts/app/controller/Toolbar.js:610
-#: exe/jsui/scripts/app/controller/Toolbar.js:1062
+#: exe/jsui/scripts/app/controller/Toolbar.js:615
+#: exe/jsui/scripts/app/controller/Toolbar.js:621
+#: exe/jsui/scripts/app/controller/Toolbar.js:1073
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:338
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:336
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:261
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:84
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:33
 #: exe/webui/stylemanagerpage.py:155 exe/webui/stylemanagerpage.py:269
 #: exe/webui/stylemanagerpage.py:321 exe/webui/stylemanagerpage.py:364
 #: exe/webui/stylemanagerpage.py:375 exe/webui/stylemanagerpage.py:386
@@ -3599,8 +3615,9 @@ msgstr "错误"
 #: exe/jsui/scripts/app/controller/MainTab.js:308
 #: exe/jsui/scripts/app/controller/MainTab.js:361
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:539
+#: exe/jsui/scripts/app/controller/Toolbar.js:550
 #: exe/webui/scripts/editor.js:54
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:332
 #: exe/webui/tools/style-designer/langs/all.js:119
 msgid "Confirm"
 msgstr "确认"
@@ -3691,53 +3708,55 @@ msgstr "删除模板"
 msgid "Do you want to delete this template?"
 msgstr "要删除此模板吗？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:208
+#: exe/jsui/scripts/app/controller/Toolbar.js:217
 #: exe/webui/tools/assistant/langs/all.js:80
 msgid "http://exelearning.net/html_manual/exe20_en/"
 msgstr "http://exelearning.net/html_manual/exe20_en/"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:224
+#: exe/jsui/scripts/app/controller/Toolbar.js:233
 #: exe/webui/tools/assistant/langs/all.js:82
 msgid "http://exelearning.net/?lang=en"
 msgstr "http://exelearning.net/?lang=en"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:230
+#: exe/jsui/scripts/app/controller/Toolbar.js:239
 #: exe/webui/tools/assistant/langs/all.js:81
 msgid "http://exelearning.net/forums/"
 msgstr "http://exelearning.net/forums/"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:233
+#: exe/jsui/scripts/app/controller/Toolbar.js:242
 msgid "http://exelearning.net/downloads/"
 msgstr "http://exelearning.net/downloads/"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:370
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:545
+#: exe/jsui/scripts/app/controller/Toolbar.js:381
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:588
 #: exe/webui/tools/assistant/js/assistant.js:15
 #: exe/webui/tools/assistant/langs/all.js:8
 msgid "Assistant"
 msgstr "助手"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:400
+#: exe/jsui/scripts/app/controller/Toolbar.js:411
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "About"
 msgstr "关于"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:417
+#: exe/jsui/scripts/app/controller/Toolbar.js:428
 msgid "Release notes"
 msgstr "版本說明"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:435
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:577
+#: exe/jsui/scripts/app/controller/Toolbar.js:446
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:620
 #: exe/webui/tools/assistant/langs/all.js:78
 msgid "Legal Notes"
 msgstr "法律说明"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:480
+#: exe/jsui/scripts/app/controller/Toolbar.js:491
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:446
 msgid "Preferences"
 msgstr "使用偏好"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:500
+#: exe/jsui/scripts/app/controller/Toolbar.js:511
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:95
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:101
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:36
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:42
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:84
@@ -3745,32 +3764,33 @@ msgstr "使用偏好"
 msgid "Export"
 msgstr "导出"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:540
+#: exe/jsui/scripts/app/controller/Toolbar.js:551
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:333
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
 msgstr "如果您进行了更改, 但尚未保存这些更改, 则这些更改将丢失。你真的想辞职吗？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:566
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:463
+#: exe/jsui/scripts/app/controller/Toolbar.js:577
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:534
 msgid "Style Manager"
 msgstr "样式管理"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:583
+#: exe/jsui/scripts/app/controller/Toolbar.js:594
 msgid "Template Manager"
 msgstr "模板管理"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:601
+#: exe/jsui/scripts/app/controller/Toolbar.js:612
 msgid ""
 "Sorry, only styles created with the Editor can be edited. eXe's Styles "
 "are not editable"
 msgstr "抱歉，只能编辑使用编辑器创建的样式。 eXe的样式不可编辑"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:604
+#: exe/jsui/scripts/app/controller/Toolbar.js:615
 msgid "An unknown error occurred."
 msgstr "出现未知错误。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:607
+#: exe/jsui/scripts/app/controller/Toolbar.js:618
 msgid ""
 "That's one of eXe's default Styles, and it cannot be edited.\n"
 "\n"
@@ -3780,102 +3800,102 @@ msgstr ""
 "\n"
 "请选择其他样式或创建新样式。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:607
+#: exe/jsui/scripts/app/controller/Toolbar.js:618
 #: exe/jsui/scripts/app/view/forms/HelpContainer.js:43 exe/webui/block.py:270
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/all.js:128
 msgid "Information"
 msgstr "信息"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:610
+#: exe/jsui/scripts/app/controller/Toolbar.js:621
 msgid "Your Style could not be saved because an unknown error occurred."
 msgstr "由于发生未知错误, 无法保存您的样式。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:686
+#: exe/jsui/scripts/app/controller/Toolbar.js:697
 msgid "Select package to insert"
 msgstr "选择要插入的包"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:691
+#: exe/jsui/scripts/app/controller/Toolbar.js:702
 msgid "Inserting package: {filename}"
 msgstr "插入包：{filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:697
-#: exe/jsui/scripts/app/controller/Toolbar.js:718
-#: exe/jsui/scripts/app/controller/Toolbar.js:1353
-#: exe/jsui/scripts/app/controller/Toolbar.js:1504
+#: exe/jsui/scripts/app/controller/Toolbar.js:708
+#: exe/jsui/scripts/app/controller/Toolbar.js:729
+#: exe/jsui/scripts/app/controller/Toolbar.js:1412
+#: exe/jsui/scripts/app/controller/Toolbar.js:1563
 msgid "eXe Package Files"
 msgstr "eXe 包文件"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:707
+#: exe/jsui/scripts/app/controller/Toolbar.js:718
 msgid "Save extracted package as"
 msgstr "将提取的包保存为"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:712
+#: exe/jsui/scripts/app/controller/Toolbar.js:723
 msgid "Extracting package: {filename}"
 msgstr "提取包：{filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:728
+#: exe/jsui/scripts/app/controller/Toolbar.js:739
 msgid "Select the parent folder for import."
 msgstr "选择要导入的父文件夹。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:743
+#: exe/jsui/scripts/app/controller/Toolbar.js:754
 msgid "Select the entry point for import."
 msgstr "选择导入的入口点。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:753
+#: exe/jsui/scripts/app/controller/Toolbar.js:764
 msgid "HTML Files"
 msgstr "HTML 文件"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:762
+#: exe/jsui/scripts/app/controller/Toolbar.js:773
 msgid "Select LOM Metadata file to import."
 msgstr "选择要导入的LOM元数据文件。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:772
+#: exe/jsui/scripts/app/controller/Toolbar.js:783
 msgid "XML Files"
 msgstr "XML 文件"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:787
+#: exe/jsui/scripts/app/controller/Toolbar.js:798
 msgid "Waiting progress..."
 msgstr "等待进程......"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:795
+#: exe/jsui/scripts/app/controller/Toolbar.js:806
 msgid "Cancel Import?"
 msgstr "取消导入？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:796
+#: exe/jsui/scripts/app/controller/Toolbar.js:807
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr "有一个正在进行的导入。要取消吗？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:819
+#: exe/jsui/scripts/app/controller/Toolbar.js:830
 msgid "Select Xliff file to import"
 msgstr "选择要导入的文件"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:829
+#: exe/jsui/scripts/app/controller/Toolbar.js:840
 msgid "XLIFF Import Preferences"
 msgstr "XLIFF导入首选项"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:841
-#: exe/jsui/scripts/app/controller/Toolbar.js:952
+#: exe/jsui/scripts/app/controller/Toolbar.js:852
+#: exe/jsui/scripts/app/controller/Toolbar.js:963
 msgid "XLIFF Files"
 msgstr "XLIFF文件"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:851
+#: exe/jsui/scripts/app/controller/Toolbar.js:862
 msgid "Export to Xliff as"
 msgstr "导出到 XLIFF 为"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:871
+#: exe/jsui/scripts/app/controller/Toolbar.js:882
 msgid "Select source language"
 msgstr "选择源语言"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:882
+#: exe/jsui/scripts/app/controller/Toolbar.js:893
 msgid "Select target language"
 msgstr "选择目标语言"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:893
+#: exe/jsui/scripts/app/controller/Toolbar.js:904
 msgid "Copy source also in target"
 msgstr "复制来源到目标"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:896
+#: exe/jsui/scripts/app/controller/Toolbar.js:907
 msgid ""
 "If you don't choose this option, target field will be empty. Some "
 "Computer Aided Translation tools (e.g. OmegaT) just translate the content"
@@ -3883,7 +3903,7 @@ msgid ""
 "to pre-fill the target field with a copy of the source field."
 msgstr "如果不选择此选项，则目标字段将为空。一些计算机辅助翻译工具（例如OmegaT）只是翻译目标字段的内容。如果您使用此类工具，则需要使用源字段的副本预填充目标字段。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:907
+#: exe/jsui/scripts/app/controller/Toolbar.js:918
 msgid ""
 "This option will wrap all the exported fields in CDATA sections. This "
 "kind of sections are not recommended by XLIFF standard but it could be a "
@@ -3893,10 +3913,11 @@ msgstr ""
 "此选项将包装CDATA部分中的所有导出字段。 "
 "XLIFF标准不推荐这种部分，但如果您想在使用计算机辅助翻译软件之前使用预处理工具（ig：Rainbow），这可能是一个不错的选择。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:916
+#: exe/jsui/scripts/app/controller/Toolbar.js:927
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:103
 #: exe/webui/editorpane.py:273
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:93
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:48
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:29
@@ -3906,48 +3927,48 @@ msgstr ""
 msgid "Cancel"
 msgstr "取消"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:922
+#: exe/jsui/scripts/app/controller/Toolbar.js:933
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:36
 msgid "Ok"
 msgstr "OK"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:945
+#: exe/jsui/scripts/app/controller/Toolbar.js:956
 msgid "XLIFF Export Preferences"
 msgstr "XLIFF导出首选项"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:984
+#: exe/jsui/scripts/app/controller/Toolbar.js:995
 msgid ""
 "This package has metadata. You might be exporting incorrect information "
 "included by the original author. Go to Properties to edit it."
 msgstr "这个包有元数据。您可能导出原始作者包含的错误信息。转到“属性”进行编辑。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:986
+#: exe/jsui/scripts/app/controller/Toolbar.js:997
 msgid "Do you want to export the package with the current metadata?"
 msgstr "是否要使用当前元数据导出包？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:989
+#: exe/jsui/scripts/app/controller/Toolbar.js:1000
 msgid "Don't show this warning again"
 msgstr "不再显示本警告"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1023
+#: exe/jsui/scripts/app/controller/Toolbar.js:1034
 msgid "Initializing Procomún export process..."
 msgstr "初始化 Procomún 导出流程......"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1035
+#: exe/jsui/scripts/app/controller/Toolbar.js:1046
 msgid ""
 "You must authorize eXe Learning to publish content into your Procomún "
 "account"
 msgstr "您必须授权 exeLearning将内容发布到您的 procomún 帐户中"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1036
+#: exe/jsui/scripts/app/controller/Toolbar.js:1047
 msgid "Are you sure you want to start authorization process?"
 msgstr "确实要启动授权过程吗？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1047
+#: exe/jsui/scripts/app/controller/Toolbar.js:1058
 msgid "Procomún OAuth"
 msgstr "OAuth 身份验证"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1065
+#: exe/jsui/scripts/app/controller/Toolbar.js:1076
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:152
 msgid ""
 "If you have problems publishing or you want to complete your cataloguing "
@@ -3955,102 +3976,102 @@ msgid ""
 " zip file to Procomún."
 msgstr "如果您在发布时遇到问题或希望稍后完成编目，请关闭此对话框，导出为SCORM 2004并将生成的zip文件上传到 Procomún。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1077
+#: exe/jsui/scripts/app/controller/Toolbar.js:1088
 msgid "Select the parent folder for export."
 msgstr "选择要导出的父文件夹。"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1097
+#: exe/jsui/scripts/app/controller/Toolbar.js:1108
 msgid "Export text package as"
 msgstr "将文本包导出为"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1109
+#: exe/jsui/scripts/app/controller/Toolbar.js:1120
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:285
 msgid "Text File"
 msgstr "文本文件"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1117
+#: exe/jsui/scripts/app/controller/Toolbar.js:1128
 msgid "Save package resources report as"
 msgstr "将包资源报告另存为"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1129
+#: exe/jsui/scripts/app/controller/Toolbar.js:1140
 msgid "CSV File"
 msgstr "CSV 文件"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1137
+#: exe/jsui/scripts/app/controller/Toolbar.js:1148
 msgid "Export EPUB3 package as"
 msgstr "导出EPUB3包为"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1149
+#: exe/jsui/scripts/app/controller/Toolbar.js:1160
 msgid "EPUB3 File"
 msgstr "EPUB3文件"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1159
+#: exe/jsui/scripts/app/controller/Toolbar.js:1170
 msgid "Export SCORM package as"
 msgstr "将SCORM包导出为"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1161
+#: exe/jsui/scripts/app/controller/Toolbar.js:1172
 msgid "Export IMS package as"
 msgstr "将IMS包导出为"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1163
+#: exe/jsui/scripts/app/controller/Toolbar.js:1174
 msgid "Export Website package as"
 msgstr "将网站文件包导出为"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1165
+#: exe/jsui/scripts/app/controller/Toolbar.js:1176
 msgid "Export Common Cartridge as"
 msgstr "将Common Cartridge导出为"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1167
+#: exe/jsui/scripts/app/controller/Toolbar.js:1178
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1183
+#: exe/jsui/scripts/app/controller/Toolbar.js:1194
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM / IMS / Zip 文件"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1259
+#: exe/jsui/scripts/app/controller/Toolbar.js:1290
 msgid "No templates available"
 msgstr "无模板"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1326
+#: exe/jsui/scripts/app/controller/Toolbar.js:1385
 msgid "Loading package..."
 msgstr "正在加载包..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1342
+#: exe/jsui/scripts/app/controller/Toolbar.js:1401
 msgid "Open File"
 msgstr "打开文件"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1347
+#: exe/jsui/scripts/app/controller/Toolbar.js:1406
 msgid "Loading package: {filename}"
 msgstr "正在加载包：{filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1366
+#: exe/jsui/scripts/app/controller/Toolbar.js:1425
 msgid "Save Package first?"
 msgstr "首先保存包吗？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1367
+#: exe/jsui/scripts/app/controller/Toolbar.js:1426
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr "当前包已被修改但尚未保存。你想保存吗？"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1433
+#: exe/jsui/scripts/app/controller/Toolbar.js:1492
 msgid "Saving package to: {filename}"
 msgstr "将包保存到：{filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1462
+#: exe/jsui/scripts/app/controller/Toolbar.js:1521
 msgid "Title for template:"
 msgstr "模板标题："
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1463
+#: exe/jsui/scripts/app/controller/Toolbar.js:1522
 msgid "Enter the new name for template:"
 msgstr "输入模板的新名称："
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1484
+#: exe/jsui/scripts/app/controller/Toolbar.js:1543
 msgid "Save file"
 msgstr "保存文件"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1490
+#: exe/jsui/scripts/app/controller/Toolbar.js:1549
 msgid "Saving package..."
 msgstr "保存包..."
 
@@ -4110,6 +4131,8 @@ msgstr "名称"
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:111
 #: exe/jsui/scripts/app/view/forms/LomSections.js:102
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:82
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:122
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
@@ -4136,6 +4159,7 @@ msgstr "打开"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:666
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:329
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:174 exe/webui/editorpage.py:264
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:149
 #: exe/webui/tools/assistant/langs/all.js:52
@@ -4261,6 +4285,7 @@ msgstr "类型包括描述内容的一般类别，功能或类型的术语。建
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:555
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:232
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:239
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:174
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:230
 msgid "Format"
@@ -4516,7 +4541,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:257
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:647
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:690
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:4
@@ -4769,6 +4794,7 @@ msgid "Access Type"
 msgstr "存取类型"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:22
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:104
 msgid "Now"
 msgstr "现在"
 
@@ -4778,6 +4804,7 @@ msgstr "时间"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:29
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:229
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:367
 msgid "Required"
 msgstr "必需的"
 
@@ -4812,14 +4839,17 @@ msgid "Days"
 msgstr "日"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:383
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:101
 msgid "Hours"
 msgstr "时"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:384
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:102
 msgid "Minutes"
 msgstr "分"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:385
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:103
 msgid "Seconds"
 msgstr "秒"
 
@@ -4943,7 +4973,7 @@ msgid "Cataloguing"
 msgstr "编目"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:653
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:696
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:160
 msgid "General description"
 msgstr "一般描述"
@@ -4959,6 +4989,8 @@ msgid "Preknowledge."
 msgstr "预备知识"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:249
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:387
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:391
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:164
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
@@ -4974,6 +5006,7 @@ msgid "Primary author of the resource."
 msgstr "资源的主要作者。"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:263
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:396
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:168
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:18
@@ -5300,6 +5333,93 @@ msgstr "可以在“属性”选项卡中修改当前文件的授权方式。"
 msgid "Show this window on eXe start"
 msgstr "eXe 启动时显示此窗口"
 
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:81
+msgid "Export style: "
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:110
+msgid "Delete style: "
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:125
+msgid "Show properties of style: "
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:196
+msgid "Import style to the system "
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:200
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:424
+msgid "Import style"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:206
+msgid "Styles repository"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
+msgid "Search and download new styles from the styles repository"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:216
+msgid "List of styles in your system"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:230
+msgid "Properties of style: "
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:318
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:531
+msgid "Return to style manager"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:325
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:530
+#: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:250
+msgid "Return"
+msgstr "返回"
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:419
+msgid "Read more"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:425
+msgid "Download style from repository and import into system."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:457
+msgid "Import style from custom URL"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:472
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:59
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:229
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:232
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:239
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:133
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:138
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:124
+msgid "URL"
+msgstr "网址"
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:473
+msgid "URL to download the style from."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:478
+msgid "Import Style from URL"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:479
+msgid "Download style from URL and import into system."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:507
+msgid "Check and install styles in the repository"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:22
 msgid "Export template: "
 msgstr "导出模板："
@@ -5336,10 +5456,6 @@ msgstr "模板属性："
 msgid "Return to template manager"
 msgstr "返回模板管理器"
 
-#: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:250
-msgid "Return"
-msgstr "返回"
-
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:45
 msgid ""
 "Some important information is missing in the \"Properties\" tab. You can "
@@ -5360,45 +5476,45 @@ msgid ""
 "select one of the values below:"
 msgstr "Procomún不接受为该字段选择的值。请选择以下值之一："
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:54
 #: exe/webui/tools/assistant/langs/all.js:41
 msgid "Outline"
 msgstr "目录"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:79 exe/webui/common.py:619
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:80 exe/webui/common.py:619
 msgid "Show"
 msgstr "显示"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:79 exe/webui/common.py:620
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:80 exe/webui/common.py:620
 msgid "Hide"
 msgstr "隐藏"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:94
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:97
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:103
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:135
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:95
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:98
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:104
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:136
 msgid "Ungroup iDevices"
 msgstr "取消组合 iDevices"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:110
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:115
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:133
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:111
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:116
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:134
 msgid "Edit iDevices"
 msgstr "编辑 iDevices"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:123
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:124
 msgid "Save iDevices"
 msgstr "保存 iDevices"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:165
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "iDevices"
 msgstr "iDevices"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:176
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:177
 msgid "Category"
 msgstr "类別"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:188
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:189
 msgid "Visible"
 msgstr "可见"
 
@@ -5412,7 +5528,7 @@ msgid "Properties"
 msgstr "属性"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:55
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:661
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:704
 msgid "Package"
 msgstr "课件"
 
@@ -5443,6 +5559,7 @@ msgstr "添加页面"
 #: exe/webui/editorpage.py:255 exe/webui/editorpage.py:258
 #: exe/webui/galleryblock.py:303 exe/webui/jsblock.py:106
 #: exe/webui/jsblock.py:111 exe/webui/scripts/editor.js:23
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:3
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
 msgstr "删除"
@@ -5450,6 +5567,10 @@ msgstr "删除"
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
 msgstr "重命名"
+
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:56
+msgid "Minify this panel"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:38
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
@@ -5600,6 +5721,7 @@ msgstr "Procomún"
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:416 exe/webui/common.py:632
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:148
+#: exe/webui/style/INTEF/_intef_js.js:121
 msgid "Print"
 msgstr "打印"
 
@@ -5613,7 +5735,7 @@ msgid "Tools"
 msgstr "工具"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:452
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:683 exe/webui/editorpane.py:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:726 exe/webui/editorpane.py:268
 #: exe/webui/element.py:2106
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -5626,99 +5748,102 @@ msgstr "工具"
 msgid "Preview"
 msgstr "预览"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:469
-#: exe/webui/tools/style-designer/langs/all.js:9
-msgid "Style Designer"
-msgstr "样式设计器"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:477
-msgid "Create new Style"
-msgstr "创建新样式"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:482
-msgid "Edit current Style"
-msgstr "编辑当前样式"
-
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:500
 msgid "Resources Report"
 msgstr "资源报告"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:510
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:506
 msgid "Refresh Display"
 msgstr "刷新显示"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:517
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:514
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:525
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:558
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Styles"
 msgstr "样式"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:528
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:535
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:538
+#: exe/webui/tools/style-designer/langs/all.js:9
+msgid "Style Designer"
+msgstr "样式设计器"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:546
+msgid "Create new Style"
+msgstr "创建新样式"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:551
+msgid "Edit current Style"
+msgstr "编辑当前样式"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:571
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:578
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:625
 msgid "Help"
 msgstr "帮助"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:555
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:598
 #: exe/webui/tools/assistant/langs/all.js:71
 msgid "eXe Tutorial"
 msgstr "eXe教程"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:569
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:612
 #: exe/webui/tools/assistant/langs/all.js:77
 msgid "Release Notes"
 msgstr "版本說明"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:587
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:630
 #: exe/webui/tools/assistant/langs/all.js:79
 msgid "eXe Web Site"
 msgstr "exe 网站"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:594
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:637
 #: exe/webui/scripts/authoring.js:907 exe/webui/tools/assistant/langs/all.js:74
 msgid "Report an Issue"
 msgstr "报告问题"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:601
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:644
 #: exe/webui/tools/assistant/langs/all.js:72
 msgid "eXe Forums"
 msgstr "exe 论坛"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:611
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:654
 #: exe/webui/tools/assistant/langs/all.js:76
 msgid "About eXe"
 msgstr "关于 exe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:625
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:668
 msgid "Advanced user"
 msgstr "高级用户"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:626
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:640
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:669
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:683
 msgid ""
 "Checking this option will show more elements in the menus (File, "
 "Tools...) and the Properties tab."
 msgstr "选中此选项将在菜单（文件，工具...）和“属性”选项卡中显示更多元素。"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:639 exe/webui/editorpage.py:250
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:682 exe/webui/editorpage.py:250
 #: exe/webui/editorpane.py:397
 msgid "Info"
 msgstr "资讯"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:803
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:846
 msgid "You've been working for a long time without saving."
 msgstr "你已经工作了很长时间没有保存。"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:805
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:848
 msgid "Do you want to save now?"
 msgstr "您想现在保存吗?"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:807
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:850
 msgid "Hide until the application is closed"
 msgstr "隐藏，直到应用程序关闭"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:983
+#: exe/jsui/scripts/app/controller/Toolbar.js:994
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:580
 #: exe/jsui/scripts/exe.js:213
 msgid "Warning"
@@ -5736,7 +5861,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:150
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:181
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:802 exe/jsui/scripts/exe.js:249
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:845 exe/jsui/scripts/exe.js:249
 msgid "Warning!"
 msgstr "警告！"
 
@@ -5746,9 +5871,13 @@ msgid ""
 "menu File->Quit if you really want to exit the application."
 msgstr "如果您离开此页面，eXe应用程序将继续运行。如果您确实要退出应用程序，请使用菜单File-&gt; Quit。"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:99 exe/jsui/scripts/exe.js:334
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:100 exe/jsui/scripts/exe.js:334
 msgid "Group iDevices"
 msgstr "将 iDevices 分组"
+
+#: exe/jsui/scripts/exe.js:361 exe/jsui/scripts/exe.js:369
+msgid "Show panel"
+msgstr ""
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
@@ -7372,6 +7501,7 @@ msgid "Please upload a .sb or .scratch file."
 msgstr "请上传.sb或.scratch文件。"
 
 #: exe/webui/appletblock.py:91
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:97
 msgid "Please type or paste a valid URL."
 msgstr "请输入或粘贴有效的网址。"
 
@@ -7426,7 +7556,8 @@ msgstr "文件名:"
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1085 exe/webui/scripts/authoring.js:106
 #: exe/webui/scripts/authoring.js:367 exe/webui/scripts/authoring.js:376
-#: exe/webui/scripts/editor.js:81 exe/webui/scripts/editor.js:108
+#: exe/webui/scripts/authoring.js:958 exe/webui/scripts/editor.js:81
+#: exe/webui/scripts/editor.js:108
 msgid "Select a file"
 msgstr "选择文档"
 
@@ -7444,6 +7575,7 @@ msgid "IDevice broken"
 msgstr "IDevice broken"
 
 #: exe/webui/block.py:227 exe/webui/editorpage.py:120
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:171
 msgid "Done"
 msgstr "完成"
 
@@ -7489,6 +7621,7 @@ msgstr "ERROR: Block.renderViewContent called directly"
 
 #: exe/webui/block.py:336 exe/webui/editorpage.py:290
 #: exe/webui/editorpane.py:270
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:16
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:225
 msgid "Edit"
 msgstr "编辑"
@@ -7724,14 +7857,17 @@ msgid "Search"
 msgstr "查找"
 
 #: exe/webui/common.py:653
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:92
 msgid "Accept"
 msgstr "接受"
 
 #: exe/webui/common.py:657 exe/webui/element.py:2716 exe/webui/element.py:2734
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:39
 msgid "Wrong"
 msgstr "错误"
 
 #: exe/webui/common.py:658
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:49
 msgid "Right answer"
 msgstr "正确答案"
 
@@ -7754,10 +7890,12 @@ msgid "Play"
 msgstr "播放"
 
 #: exe/webui/common.py:665
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:25
 msgid "Results"
 msgstr "结果"
 
 #: exe/webui/common.py:666
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:29
 msgid "Total"
 msgstr "总计"
 
@@ -8018,6 +8156,7 @@ msgid "Steps for your mission"
 msgstr "完成使命的步骤"
 
 #: exe/webui/content_template/strings.py:247
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:25
 msgid "Introduction"
 msgstr "介绍"
 
@@ -8352,6 +8491,7 @@ msgid "Add Field"
 msgstr "添加栏目"
 
 #: exe/webui/editorpane.py:265
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:86
 msgid "Actions"
 msgstr "动作"
 
@@ -8472,7 +8612,9 @@ msgstr "显示 答案"
 
 #: exe/webui/element.py:1596 exe/webui/element.py:1847
 #: exe/webui/element.py:2469 exe/webui/element.py:2929
-#: exe/webui/listablock.py:312 exe/webui/testquestionelement.py:158
+#: exe/webui/listablock.py:312
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:48
+#: exe/webui/testquestionelement.py:158
 msgid "Answers"
 msgstr "答案"
 
@@ -8585,6 +8727,7 @@ msgstr "文件列表 (此列表仅在预览模式下显示):"
 
 #: exe/webui/fileattachblock.py:158
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:250
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:46
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:129
 msgid "New Window"
 msgstr "新窗口"
@@ -8896,7 +9039,7 @@ msgstr "嵌入图像不应直接粘贴到编辑器中。请使用插入/编辑�
 msgid "This change will be undone."
 msgstr "此更改将被撤消。"
 
-#: exe/webui/scripts/authoring.js:1056
+#: exe/webui/scripts/authoring.js:1083
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/exe_abcmusic.js:77
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:14
 msgid "Go to Tools - Preview to see this working"
@@ -9067,14 +9210,6 @@ msgid ""
 " connection."
 msgstr "从www.geogebra.org插入GeoGebra活动。它需要Internet连接。"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:59
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:229
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:232
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:239
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:124
-msgid "URL"
-msgstr "网址"
-
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:63
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -9150,6 +9285,462 @@ msgstr "不要在同一页面中包含“SCORM Quiz”iDevice。"
 msgid "Please write the button text."
 msgstr "请写下按钮文字。"
 
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:2
+msgid "Interactive video editor"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:5
+msgid "Exit"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:7
+msgid "Show/Hide help"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:8
+msgid "Close help"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:10
+msgid "Create a cover"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:11
+msgid "Create"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:12
+msgid "Create a slide"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:14
+msgid "Create slide"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:15
+msgid "Update slide"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:17
+msgid "Edit slides"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:18
+msgid "Create a cover (front page)"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:19
+msgid "Add new slides (frames)"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:20
+msgid "You can edit them later"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:21
+msgid "Click on Save when you finish"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:22
+msgid "Your interactive video cover"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:24
+msgid "required"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:26
+msgid "Save cover"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:30
+msgid "Single choice"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:31
+msgid "Multiple choice"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:32
+msgid "Fill in the blank"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:33
+msgid "Dropdown activity"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:34
+msgid "Match pairs"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:35
+msgid "Scrambled list"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:37
+msgid "Write a text. You can add lists, links..."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:38
+msgid "Add an image with description (alternative text)."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:39
+msgid "Write a question and some answers. Don't forget to choose the right one."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:40
+msgid ""
+"Write a question and some answers. You can select more than one right "
+"answer."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:41
+msgid ""
+"Write a text and strike through the words to complete. Check the "
+"spelling. It's case sensitive."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:42
+msgid ""
+"Write a text and strike through the words to complete. A dropdown menu "
+"(SELECT) will be displayed where those words are. You can also add more "
+"options."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:43
+msgid "Write some instructions and add pairs in the right order."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:44
+msgid "Write the wording and add elements to the list (in the right order)."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:46
+msgid "Write the text to be shown"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:51
+msgid "Strike through the words to complete. It's case sensitive."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:52
+msgid "Text to complete"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:54
+msgid "Add options"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:55
+msgid "You can add more options to the dropdown lists (optional)"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:58
+msgid "Pairs"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:59
+msgid "Introduction or instructions"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:60
+msgid "Fill in at least two pairs."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:62
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
+msgid "List"
+msgstr "列表"
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:63
+msgid "Elements (it the right order)"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:65
+msgid "Please create a slide (frame) first."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:66
+msgid "The title is required."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:67
+msgid "Cover updated."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:68
+msgid "Please write a text."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:69
+msgid "Please add an image."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:70
+msgid "Provide an alternative text (describe the image)."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:71
+msgid "Please write a question."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:72
+msgid "Add at least two answers."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:73
+msgid "Please choose the right answer."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:74
+msgid "No struck-through words..."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:75
+msgid "Write an introduction (instructions, etc.)."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:76
+msgid "Add at least two pairs."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:77
+msgid "Add at least two elements to the list."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:78
+msgid "Important"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:79
+msgid "Your changes won't be saved until you click on \"Save\"."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:80
+msgid "Do not show this message again"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:81
+msgid "All the slides have been deleted."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:83
+msgid "Num."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:85
+msgid "End"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:87
+msgid "Remove slide %?"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:88
+msgid "Slides list"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:89
+msgid "New slide"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:90
+msgid "The slide was created!"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:91
+msgid "Saved changes!"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:95
+msgid "The Youtube API might have changed."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:98
+msgid "Saved!"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:99
+msgid "Click on \"Exit\" to finish."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:100
+msgid "Stop the playing video"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:105
+msgid "Current frame second"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:106
+msgid "The slide can't start in that second (zero)."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:107
+msgid "The video is not that long. Check the start/end time."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:108
+msgid "Please check the start/end time."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:109
+msgid "Please check the \"Start\" time"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:110
+msgid "Please check the \"End\" time"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:111
+msgid "Set the time for the slide to be shown"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:112
+msgid ""
+"If you don't want the video to stop, set the time for the slide to be "
+"hidden"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:113
+msgid "Click on % to get the video current time."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:84
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:24
+msgid "Start"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:26
+msgid "Slide (frame)"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:27
+msgid "Score"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:28
+msgid "Seen"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:30
+msgid "see all the slides and answer all the questions"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:31
+msgid "This video has no interactive slides."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:32
+msgid "Continue"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:34
+msgid "Incompatible code"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:35
+msgid "Ony one interactive video per page."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:9
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:36
+msgid "Cover"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:37
+msgid "Exit the fullscreen mode (Esc) to see the current slide"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:38
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:47
+msgid "Right!"
+msgstr "对！"
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:40
+msgid "Drag and drop or use the arrows."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:41
+msgid "Move up"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:42
+msgid "Move down"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:43
+msgid "Right answer:"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:44
+msgid "Please finish the activity"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:113
+msgid "You can only add one Interactive Video iDevice per page."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:120
+#: exe/webui/tools/style-designer/langs/all.js:12
+msgid "General settings"
+msgstr "一般设置"
+
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:96
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:123
+msgid "Local file"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:124
+msgid "Youtube"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:125
+msgid "Mediateca"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:130
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:372
+msgid "Supported formats"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:143
+msgid "Show results"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:146
+msgid "Open the editor and start adding interaction..."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:149
+msgid "Language settings"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:150
+msgid "Custom texts (or use the default ones):"
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:170
+#, python-format
+msgid ""
+"Please save your iDevice now (click on %s now) and edit it to add "
+"interaction."
+msgstr ""
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:174
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:5
+msgid "Recommended type"
+msgstr "推荐类型"
+
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:382
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:392
+msgid "Wrong URL. Expected format:"
+msgstr ""
+
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:13
 msgid "Task"
 msgstr "任务"
@@ -9215,10 +9806,6 @@ msgstr "乱序列表"
 msgid "The right answer will be shown after this text."
 msgstr "正确答案将在本文后显示。"
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:47
-msgid "Right!"
-msgstr "对！"
-
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:48
 msgid "Sorry... The right answer is:"
 msgstr "对不起... 正确的答案是:"
@@ -9242,11 +9829,6 @@ msgstr "请写下回答正确时的显示文字。"
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:157
 msgid "Please write the text to show when wrong."
 msgstr "请写下回答错误时的显示文字。"
-
-#: exe/webui/scripts/idevices/text/edition/text.js:13
-#: exe/webui/scripts/idevices/text/edition/text.js:48
-msgid "Text (optional feedback)"
-msgstr ""
 
 #: exe/webui/scripts/idevices/text/edition/text.js:88
 msgid "Please write some information."
@@ -11681,13 +12263,6 @@ msgstr "嵌入音频"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-msgid "List"
-msgstr "列表"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Background"
 msgstr "背景"
 
@@ -11709,10 +12284,6 @@ msgstr "选中文件"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:4
 msgid "HTML5 does not work in all browsers"
 msgstr "html5 不适用于所有浏览器"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:5
-msgid "Recommended type"
-msgstr "推荐类型"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:6
 msgid "Continue without changing your settings?"
@@ -12854,6 +13425,8 @@ msgstr "大写罗马字母"
 msgid "Automatic Numbering"
 msgstr "自动编号"
 
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:146
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:318
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:237
 #: exe/webui/scripts/tinymce_3.5.11_settings.js:262
 #: exe/webui/scripts/tinymce_4_settings.js:379
@@ -13502,6 +14075,8 @@ msgstr "成功导入样式"
 msgid "Error while installing style: %s"
 msgstr "安装样式时出错：%s"
 
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:94
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:87
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1103
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1155
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1219
@@ -13955,10 +14530,6 @@ msgstr "样式编辑器窗口将关闭。"
 #: exe/webui/tools/style-designer/js/app.js:1369
 msgid "Page will be reloaded. "
 msgstr "页面将重新加载。"
-
-#: exe/webui/tools/style-designer/langs/all.js:12
-msgid "General settings"
-msgstr "一般设置"
 
 #: exe/webui/tools/style-designer/langs/all.js:13
 msgid "Page width"
@@ -14433,4 +15004,7 @@ msgstr "你所试图打开的课件, 或 idevices/generic.data 文档可能是�
 
 #~ msgid "Write the title, select an icon and choose a type..."
 #~ msgstr "写下标题，选择一个图标并选择一种类型......"
+
+#~ msgid "Text (optional feedback)"
+#~ msgstr ""
 

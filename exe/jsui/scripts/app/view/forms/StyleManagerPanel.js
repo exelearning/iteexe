@@ -37,7 +37,7 @@ function htmlxml(text) {
     return text
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
+    .replace(/\>/g, "&gt;")
     .replace(/"/g, "&quot;");
 }
 function subcom(text) {
@@ -71,11 +71,11 @@ function xmlcreate(items,types) {
         }
     }
     valxml += '</theme>';
-    
+
     return valxml;
 }
 function createButtonPreExport(name, style) {
-    var buttonExport = 
+    var buttonExport =
     {
         xtype: 'button',
         tooltip: _('Export style: ')+name,
@@ -89,7 +89,7 @@ function createButtonPreExport(name, style) {
     return buttonExport;
 }
 function createButtonExport(name, stylen, xmlitems, lngitems) {
-    var buttonExport = 
+    var buttonExport =
     {
         xtype: 'button',
         tooltip: _('Export'),
@@ -139,8 +139,8 @@ function createPanelStyles(styles) {
     for (i = styles.length-1; i >= 0; i--) {
         //item = Ext.create('Ext.menu.CheckItem', { text: styles[i].label, itemId: styles[i].style, checked: styles[i].selected });
         var style=[];
-        style[0] = 
-        { 
+        style[0] =
+        {
             xtype: 'label',
             width: 320,
             margin: '5 5 5 20',
@@ -159,13 +159,13 @@ function createPanelStyles(styles) {
         var estilo = "";
         if (i%2 == 0) {
             estilo = 'padding-top:5px; background-color: #FFF;';
-        } 
+        }
         else {
             estilo = 'padding-top:5px; background-color: #FAFAFA; border-top-color: #B5B8C8; border-bottom-color: #B5B8C8; border-top-style:solid; border-bottom-style: solid; border-top-width:1px; border-bottom-width: 1px;';
         }
-        
+
         var item =
-        { 
+        {
             xtype: 'container',
             layout: 'hbox',
             margin: '0 0 5 0',
@@ -175,7 +175,7 @@ function createPanelStyles(styles) {
         itemsShow[i] = item;
     }
     var filename =
-    { 
+    {
         xtype: 'field',
         hidden: true,
         itemId: 'filename',
@@ -183,7 +183,7 @@ function createPanelStyles(styles) {
     };
     itemsShow.push(filename);
     var style =
-    { 
+    {
         xtype: 'field',
         hidden: true,
         itemId: 'style',
@@ -216,7 +216,7 @@ function createPanelStyles(styles) {
             title: _("List of styles in your system"),
             margin: 10,
             items: itemsShow
-        } 
+        }
     ];
     return panel;
 }
@@ -240,7 +240,7 @@ function createPanelProperties(properties, stylen,mode,withbutton) {
         xmlitems.push(properties[i].nxml);
         lngitems.push(properties[i].format);
         if (properties[i].value!='') {
-            if (properties[i].format==1) {        
+            if (properties[i].format==1) {
                 valueProperty = {
                     xtype: 'textarea',
                     fieldLabel: properties[i].name,
@@ -269,19 +269,19 @@ function createPanelProperties(properties, stylen,mode,withbutton) {
                     anchor: "100%"
                  };
             }
-            
+
             var row =
-            { 
+            {
                 xtype: 'container',
                 layout: 'hbox',
                 margin: '0 0 5 0',
                 labelWidth: 100,
-                items: valueProperty         
+                items: valueProperty
             };
             itemsShow.push(row);
         }
         var xdata =
-        { 
+        {
             xtype: 'field',
             hidden: true,
             itemId: 'xdata',
@@ -290,7 +290,7 @@ function createPanelProperties(properties, stylen,mode,withbutton) {
         };
         itemsShow.push(xdata);
         var filename =
-        { 
+        {
             xtype: 'field',
             hidden: true,
             itemId: 'filename',
@@ -298,7 +298,7 @@ function createPanelProperties(properties, stylen,mode,withbutton) {
         };
         itemsShow.push(filename);
         var style =
-        { 
+        {
             xtype: 'field',
             hidden: true,
             itemId: 'style',
@@ -342,30 +342,30 @@ function createPanelProperties(properties, stylen,mode,withbutton) {
     if (withbutton){
         panel.push(createButtonExport(name, stylen,xmlitems,lngitems));
     }
-    
+
     return panel;
 }
 
 /**
  * Create the panel that renders the info of a Style in the repository
- * 
+ *
  * @param style             Object with the style data as loaded from repository
  * @param activeStyle       String, name of the expanded style
- * 
- * @returns Object, valid to be used in the items list of the accordion container 
+ *
+ * @returns Object, valid to be used in the items list of the accordion container
  */
 function createPanelRepositoryStyle(style, activeStyle) {
     activeStyle = typeof activeStyle !== 'undefined' ? activeStyle : '';
-    
-    var i; 
+
+    var i;
     var tagsHtml, coloursHtml;
     var expandPanel = false;
-    
+
     if (activeStyle != '' && activeStyle.toLowerCase() == style.name.toLowerCase()) {
         expandPanel = true;
     }
-    
-    var stylePanel = { 
+
+    var stylePanel = {
         itemId: style.name,
         name: style.name,
         id: style.name,
@@ -381,7 +381,7 @@ function createPanelRepositoryStyle(style, activeStyle) {
             {html: style.description['und']}
         ]
     };
-    
+
     if (style.author.trim() && style.author.length > 0) {
         if (style.author_url.trim() && style.author_url.length > 0) {
             authorLink = '<div class="repository-style-author">' + _('Author') + ': <a href="' + style.author_url + '" target="_blank">' + style.author + '</a></div>';
@@ -392,33 +392,33 @@ function createPanelRepositoryStyle(style, activeStyle) {
             stylePanel.items.push({html: author});
         }
     }
-    
+
     licenseLink = '<div class="repository-style-license">' + _('License') + ': <a href="' + style.license_url + '" target="_blank">' + style.license + '</a></div>';
     stylePanel.items.push({html: licenseLink});
-    
+
     if (style.tags.length >= 1) {
         tagsHtml = '';
         for (i = 0; i <= style.tags.length-1; i++) {
             tagsHtml += '<li>' + style.tags[i].title['und'] + '</li>';
         }
         tagsHtml = '<ul>' + tagsHtml + '</ul>';
-        
+
         stylePanel.items.push({html: tagsHtml});
     }
-    
+
     if (style.colours.length >= 1) {
         coloursHtml = '';
         for (i = 0; i <= style.colours.length-1; i++) {
             coloursHtml += '<li>' + style.colours[i].title['und'] + '</li>';
         }
         coloursHtml = '<ul>' + coloursHtml + '</ul>';
-        
+
         stylePanel.items.push({html: coloursHtml});
     }
 
     readMoreLink = '<div class="repository-style-read-more"><a href="' + style.link_url + '" target="_blank">' + _('Read more') + '</a></div>';
     stylePanel.items.push({html: readMoreLink});
-    
+
     importButton = {
         xtype: 'button',
         text: _('Import style'),
@@ -432,27 +432,27 @@ function createPanelRepositoryStyle(style, activeStyle) {
         margin: 3,
     };
     stylePanel.items.push(importButton);
-    
+
     return stylePanel;
 }
 
 
 /**
  * Create the panel that renders the form to import style from URL
- * 
+ *
  * @param activeStyle       String, name of the expanded style
- * 
- * @returns Object, valid to be used in the items list of the accordion container 
+ *
+ * @returns Object, valid to be used in the items list of the accordion container
  */
 function createImportStyleUrlPanel(activeStyle) {
     activeStyle = typeof activeStyle !== 'undefined' ? activeStyle : '';
-    
+
     // Expand last panel, unless some style has been selected as active
     var expandPanel = true;
     if (activeStyle != '') {
         expandPanel = false;
     }
-    
+
     var panel = {
         title: _("Import style from custom URL"),
         itemId: 'style_import_url_container',
@@ -465,7 +465,7 @@ function createImportStyleUrlPanel(activeStyle) {
         },
         cls: 'import-style-url',
         items: [
-            { 
+            {
                 xtype: 'textfield',
                 itemId: 'style_import_url',
                 name: 'style_import_url',
@@ -485,33 +485,33 @@ function createImportStyleUrlPanel(activeStyle) {
             }
         ]
     };
-        
+
     return panel;
 }
 
 /**
  * Renders accordion panels that displays the styles repository list, one panel per style
- *  
+ *
  * @param repositoryStyles  Array, list of repository styles
  * @param activeStyle       String, name of the expanded style
- * 
+ *
  * @returns  Array of objects with the structure of the accordion panels to display the styles repository list
  */
 function createPanelRepositoryStyles(repositoryStyles, activeStyle) {
     // repositoryStyles could be empty or not present
     repositoryStyles = typeof repositoryStyles !== 'undefined' ? repositoryStyles : [];
     activeStyle = typeof activeStyle !== 'undefined' ? activeStyle : '';
-    
+
     var i;
 
     var titleStylesList =_("Check and install styles in the repository");
     var itemsStylesList = [];
-    
+
     // Build the list of items in the accordion, one panel per style
     for (i = repositoryStyles.length-1; i >= 0; i--) {
         itemsStylesList[i] = createPanelRepositoryStyle(repositoryStyles[i], activeStyle);
     }
-    
+
     // Add fieldset to import from custom URL as the last panel in the accordion
     var importStyle = createImportStyleUrlPanel();
     itemsStylesList.push(importStyle);
@@ -535,22 +535,22 @@ function createPanelRepositoryStyles(repositoryStyles, activeStyle) {
             margin: 10
         }
     ];
-    
+
     var styleName =
-    { 
+    {
         xtype: 'field',
         hidden: true,
         itemId: 'style_name',
         name: 'style_name'
     };
     panel.push(styleName);
-    
+
     return panel;
 }
 
 function createPanel() {
     var panel = [];
-    
+
     // The JSON response to this request must have an 'action' field,
     // that determines de panel to be displayed
     Ext.Ajax.request({
@@ -559,7 +559,7 @@ function createPanel() {
         async: false,
         success: function(response) {
             var json = Ext.JSON.decode(response.responseText);
-            
+
             if (json.action == 'List') {
                 panel = createPanelStyles(json.styles);
             }
@@ -590,7 +590,7 @@ function createPanel() {
     //    * 'action' hidden field in form:      client --> server
     //    * 'action' field in JSON response:    server --> client
     var action =
-    { 
+    {
         xtype: 'field',
         hidden: true,
         itemId: 'action',
@@ -605,19 +605,19 @@ function createPanel() {
 Ext.define('eXe.view.forms.StyleManagerPanel', {
     extend: 'Ext.form.Panel',
     alias: 'widget.stylemanager',
-    initComponent: function() {    
+    initComponent: function() {
         var me = this;
         var panel=createPanel();
         Ext.applyIf(me, {
             autoScroll: true,
             trackResetOnLoad: true,
             url: 'stylemanager',
-            items: panel        
+            items: panel
         });
         me.callParent(arguments);
         me.doLayout();
     },
-    
+
     reload: function(action) {
         var panel={};
         var me = Ext.getCmp("stylemanagerwin").down("form");
@@ -628,14 +628,14 @@ Ext.define('eXe.view.forms.StyleManagerPanel', {
         formpanel.add(panel);
         me.doLayout();
     },
-    
-    refreshStylesList: function(repStyles, activeStyle) {    
+
+    refreshStylesList: function(repStyles, activeStyle) {
         var me = Ext.getCmp("stylemanagerwin").down("form");
         var stylemanager = Ext.getCmp("stylemanagerwin");
         var formpanel = stylemanager.down('form');
         var panel = createPanelRepositoryStyles(repStyles, activeStyle);
         var action =
-        { 
+        {
             xtype: 'field',
             hidden: true,
             itemId: 'action',
@@ -643,9 +643,9 @@ Ext.define('eXe.view.forms.StyleManagerPanel', {
             value: '',
         };
         panel.push(action);
-        
+
         formpanel.removeAll(false);
         formpanel.add(panel);
-        me.doLayout(); 
+        me.doLayout();
     }
 });
