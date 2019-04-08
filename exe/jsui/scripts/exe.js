@@ -314,7 +314,7 @@ Ext.application({
         eXe.app.showLoadError();
     },
     
-    createLetPanelToggler : function(isLoadEvent){
+    createLeftPanelToggler : function(isLoadEvent){
         if (isLoadEvent) {
             var a = document.getElementById("hide_exe_leftpanel");
             if (a && a.offsetParent != null) return; // The left panel is visible (do not create the link)

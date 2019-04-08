@@ -61,7 +61,7 @@ Ext.define('eXe.view.ui.OutlineToolbar1', {
                                 l.onclick = function(){
                                     var panel = Ext.ComponentQuery.query('#exe_leftpanel')[0];
                                     panel.hide();
-                                    eXe.app.createLetPanelToggler();
+                                    eXe.app.createLeftPanelToggler();
                                     return false;
                                 }
                             }
