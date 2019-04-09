@@ -405,10 +405,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             self.itemStr += 'isvisible="true" '
         self.itemStr += 'identifierref="'+resId+'">\n'
         self.itemStr += "    <title>"
-        if self.scormType == "scorm2004" and page.node.children:
-            self.itemStr += escape('<-')
-        else:
-            self.itemStr += escape(page.node.titleShort)
+        self.itemStr += escape(page.node.titleShort)
         self.itemStr += "</title>\n"
 
         ## SCORM 12 specific metadata: Mastery Score is an ADL extension to the IMS Content Packaging Information Model
