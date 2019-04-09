@@ -32,7 +32,7 @@ var $exeDevice = {
 		"goOn" : _("Continue"),
 		"error" : _("Error"),
 		"dataError" : _("Incompatible code"),
-		"onlyOne" : _("Ony one interactive video per page."),
+		"onlyOne" : _("Only one interactive video per page."),
 		"cover" : _("Cover"),
 		"fsWarning" : _("Exit the fullscreen mode (Esc) to see the current slide"),
 		"right" : _("Right!"),

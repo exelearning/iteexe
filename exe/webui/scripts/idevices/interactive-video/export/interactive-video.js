@@ -37,7 +37,7 @@ var interaction = {
 		"goOn" : "Continue",
 		"error" : "Error",
 		"dataError" : "Incompatible code",
-		"onlyOne" : "Ony one interactive video per page.",
+		"onlyOne" : "Only one interactive video per page.",
 		"cover" : "Cover",
 		"fsWarning" : "Exit the fullscreen mode (Esc) to see the current slide",
 		"right" : "Right!",
