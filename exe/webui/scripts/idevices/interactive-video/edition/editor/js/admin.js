@@ -214,7 +214,7 @@ var iAdmin = {
 		}
 		// 
 		var timeInstr = $i18n.Get_Time_Instructions;
-			timeInstr = timeInstr.replace("%",'<img src="images/timer.png" width="24" height="24" alt="'+$i18n.Current_Time+'" />');
+			timeInstr = timeInstr.replace("%s",'<img src="images/timer.png" width="24" height="24" alt="'+$i18n.Current_Time+'" />');
 		html += '<li>'+timeInstr+'</li>';
 		html += "</ol>";
 		html += "<h4>"+iAdmin.slideTypes[block]+"<span>("+$i18n.Text.toLowerCase()+")</span>:</h4>";
@@ -1034,7 +1034,7 @@ var iAdmin = {
 	slide : {
 		del : function(order,startHHMMSS) {
 			var msg = $i18n.Delete_Slide_X;
-				msg = msg.replace("%","<strong>"+startHHMMSS+"</strong>");
+				msg = msg.replace("%s","<strong>"+startHHMMSS+"</strong>");
 			iAdmin.msg.ask(msg, function(){
 				iAdmin.msg.hide();
 				$("#slide-"+order).fadeOut("slow",function(){

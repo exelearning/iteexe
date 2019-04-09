@@ -84,7 +84,7 @@ $i18n = {
 	Start : _("Start"),
 	End : _("End"),
 	Actions : _("Actions"),
-	Delete_Slide_X : _("Remove slide %?"),
+	Delete_Slide_X : _("Remove slide %s?"),
 	Slides_List : _("Slides list"),
 	New_Slide : _("New slide"),
 	Frame_Created : _("The slide was created!"),
@@ -110,5 +110,5 @@ $i18n = {
 	Check_End : _("Please check the \"End\" time"),
 	Start_Instructions : _("Set the time for the slide to be shown"),
 	End_Instructions : _("If you don't want the video to stop, set the time for the slide to be hidden"),
-	Get_Time_Instructions : _("Click on % to get the video current time.")
+	Get_Time_Instructions : _("Click on %s to get the video current time.")
 }

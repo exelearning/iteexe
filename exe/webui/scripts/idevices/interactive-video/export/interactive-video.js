@@ -37,7 +37,7 @@ var interaction = {
 		"goOn" : "Continue",
 		"error" : "Error",
 		"dataError" : "Incompatible code",
-		"onlyOne" : "Ony one interactive video per page.",
+		"onlyOne" : "Only one interactive video per page.",
 		"cover" : "Cover",
 		"fsWarning" : "Exit the fullscreen mode (Esc) to see the current slide",
 		"right" : "Right!",
@@ -226,8 +226,12 @@ var interaction = {
 		
 		if (es.length==0) return;
 		
+		if (typeof($exeAuthoring)!='undefined') this.isInExe = true;		
+		
 		if (es.length>1) {
-			alert(interaction.i18n.error+" - "+interaction.i18n.onlyOne);
+			var msg = interaction.i18n.error+" - "+interaction.i18n.onlyOne;
+			if (this.isInExe) eXe.app.alert(msg);
+			else alert(msg);
 			return false;
 		}
 		
@@ -258,8 +262,6 @@ var interaction = {
 				</div>\
 			';
 		}
-		
-		if (typeof($exeAuthoring)!='undefined') this.isInExe = true;
 		
 		// es.html(es.html()+html);
 		es[0].innerHTML += html;
