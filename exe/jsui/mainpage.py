@@ -539,7 +539,13 @@ class MainPage(RenderableLivePage):
                 invalid_properties_str +=  ','
             invalid_properties_str = invalid_properties_str[:-1]
 
-            client.call(u'eXe.app.getController("Toolbar").packagePropertiesCompletion', export_type, str(self.package.filename), invalid_properties_str)
+            # Get file system encoding
+            encoding = sys.getfilesystemencoding()
+            if encoding is None:
+                encoding = 'utf-8'
+
+            # Turns package filename passed it to unicode when call javascript function
+            client.call(u'eXe.app.getController("Toolbar").packagePropertiesCompletion', export_type, unicode(str(self.package.filename), encoding), invalid_properties_str)
 
     # No longer used - Task 1080, jrf
     # def handleLoadTutorial(self, client):
@@ -1314,9 +1320,14 @@ class MainPage(RenderableLivePage):
         Parse the XLIFF file and import the contents based on
         translation-unit id-s
         """
+
+        encoding = sys.getfilesystemencoding()
+        if encoding is None:
+            encoding = 'utf-8'
+
         from_source = True if from_source == "true" else False
         try:
-            importer = XliffImport(self.package, unquote(filename))
+            importer = XliffImport(self.package, unquote(filename).encode(encoding))
             importer.parseAndImport(from_source)
             client.alert(_(u'Correct XLIFF import'), (u'eXe.app.gotoUrl("/%s")' % \
                            self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
@@ -1570,7 +1581,7 @@ class MainPage(RenderableLivePage):
         copy = True if copy == "true" else False
         cdata = True if cdata == "true" else False
         try:
-            filename = Path(unquote(filename))
+            filename = Path(filename, 'utf-8')
             log.debug(u"exportXliff, filename=%s" % filename)
             if not filename.lower().endswith('.xlf'):
                 filename += '.xlf'
