@@ -623,41 +623,32 @@ Ext.define('eXe.controller.Toolbar', {
 		editStyle : function(){
 			var stylePath = this.styleDesigner.getCurrentStyleFilePath();
 
-			// We check if the Style is in the list exelearning-default-styles.txt
+			// We check if the Style is part of eXeLearning
+			var coreStyles = 'base,carm,cedec,default,EducaMadrid,FPD-MEDU,garden,ieda,INTEF,INTEF-web-horizontal-nav,Kahurangi,kids,kyoiku,MAX,MAX_institucional,seamist,silver,slate,standardwhite,Tknika,Todo-FP';
+				coreStyles = coreStyles.split(",");	
+				
+			var styleName = stylePath.replace("/style/","").split("/")[0];				
+				
 			// In that case, you cannot edit it
-			var styleName = stylePath.replace("/style/","").split("/")[0];
-			if (styleName=="base") {
+			if (coreStyles.indexOf(styleName)!=-1) {
 				this.styleDesigner.createNewStyleInstead();
 				return false;
 			}
+			
+			// We check if the Style is compatible with the tool
 			Ext.Ajax.request({
-				url: "/tools/style-designer/exelearning-default-styles.txt",
+				url: stylePath,
 				scope: this,
 				success: function(response) {
 					var res = response.responseText;
-					if (res.indexOf(","+styleName)!=-1) {
-						this.styleDesigner.createNewStyleInstead();
+					if (res.indexOf("/* eXeLearning Style Designer Compatible Style */")!=0) {
+						this.styleDesigner.notCompatible();
 					} else {
-						// We check if the Style is compatible with the tool
-						Ext.Ajax.request({
-							url: stylePath,
-							scope: this,
-							success: function(response) {
-								var res = response.responseText;
-								if (res.indexOf("/* eXeLearning Style Designer Compatible Style */")!=0) {
-									this.styleDesigner.notCompatible();
-								} else {
-									// If it's compatible, we open the Style designer
-									var lang = "en"; // Default language
-									var l = document.documentElement.lang;
-									if (l && l!="") lang = l;
-									styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId()+"&lang="+lang);
-								}
-							},
-							error: function(){
-								this.styleDesigner.error();
-							}
-						});
+						// If it's compatible, we open the Style designer
+						var lang = "en"; // Default language
+						var l = document.documentElement.lang;
+						if (l && l!="") lang = l;
+						styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId()+"&lang="+lang);
 					}
 				},
 				error: function(){
