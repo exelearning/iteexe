@@ -164,18 +164,21 @@ var $app = {
 			var nav = $("#my-nav-css").val();
 			$app.createStyle(content, nav, $app.getCurrentStyle());
 		});
-		
-		this.stylePath = opener.$designer.styleBasePath;
-		var currentStyle = $app.getCurrentStyle();
-		if (this.nonEditableStyles.indexOf(currentStyle)!=-1) {
-			$("#save").remove();
-		}
 
 		$("#save").click(function(){
+
+			var currentStyle = $app.getCurrentStyle();			
+			if ($app.nonEditableStyles.indexOf(currentStyle)!=-1) {
+				// If user is editing a non editable style it must be because style has not been saved yet,
+				// We tell the user to click on "Save as"
+				Ext.Msg.alert($i18n.Information, $i18n.Use_Save_as.replace('%s','"'+$i18n.Save_as+'"'));
+				// We could also open the "Save as" dialog:
+				// $app.createStyle(content, nav);
+				return;
+			}
 			$app.getPreview("save");
 			var content = $("#my-content-css").val();
-			var nav = $("#my-nav-css").val();
-			var currentStyle = $app.getCurrentStyle();
+			var nav = $("#my-nav-css").val();			
 			
 			// Send POST request to update current style
 			var data = $app.collectAjaxData(content, nav, 'saveStyle');
@@ -204,12 +207,19 @@ var $app = {
 					Ext.Msg.alert($i18n.Error, response.statusText);
 				}
 			});
-
+			
 		});		
 
 		$("#finish").click(function(){
-			$app.getPreview("save");
+			
 			var currentStyle = $app.getCurrentStyle();
+			if ($app.nonEditableStyles.indexOf(currentStyle)!=-1) {
+				// If user is editing a non editable style it must be because style has not been saved yet,
+				// We tell the user to click on "Save as"
+				Ext.Msg.alert($i18n.Information, $i18n.Use_Save_as.replace('%s','"'+$i18n.Save_as+'"'));
+				return;
+			}			
+			$app.getPreview("save");
 			var content = $app.formatToSave($("#my-content-css").val());
 			var nav = $app.formatToSave($("#my-nav-css").val());
 			
@@ -271,6 +281,7 @@ var $app = {
 			});
 		});
 		
+		this.stylePath = opener.$designer.styleBasePath;
 		this.getCurrentCSS();
 		// Enable the Color Pickers after loading the current values
 		
@@ -371,9 +382,11 @@ var $app = {
 		// To review: $app.baseContentCSS = contentCSS[0].replace(/\s+$/, ''); // Remove the last space
 		$app.baseContentCSS = contentCSS[0];
 		
-		// Get Base's content.css content:
+		var currentStyle = $app.getCurrentStyle();
+		
+		// Get the Style's content.css content:
 		jQuery.ajax({
-			url: '/style/base/content.css',
+			url: '/style/'+currentStyle+'/content.css',
 			type: 'POST',
 			success: function(response) {
 				var contentCSS = response.split($app.mark);
@@ -398,9 +411,9 @@ var $app = {
 		// To review: $app.baseNavCSS = navCSS[0].replace(/\s+$/, ''); // Remove the last space
 		$app.baseNavCSS = navCSS[0];
 		
-		// Get Base's nav.css content:
+		// Get the Style's nav.css content:
 		jQuery.ajax({
-			url: '/style/base/nav.css',
+			url: '/style/'+currentStyle+'/nav.css',
 			type: 'POST',
 			success: function(response) {
 				var navCSS = response.split($app.mark);

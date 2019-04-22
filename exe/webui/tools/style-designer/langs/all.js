@@ -115,6 +115,7 @@ var $i18n = {
 	Reset : _("Reset"),
 	Finish : _("Finish"),
 	Save : _("Save"),
+	Use_Save_as : _("This is one of eXe's default Styles. Please click on %s. You will find the new Style in the Styles menu when you finish."),
 	Save_as : _("Save as"),
 	Confirm : _("Confirm"),
 	Finish_confirmation : _("Save the current design and close the Style Designer?"),
