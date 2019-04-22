@@ -109,6 +109,9 @@ var $app = {
 		borderColor : "DDDDDD",
 		shadowColor : "999999"
 	},
+	nonEditableStyles : [
+		"base"
+	],
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
 	defaultMark : "/* eXeLearning Style Designer (default CSS) */",
@@ -161,6 +164,12 @@ var $app = {
 			var nav = $("#my-nav-css").val();
 			$app.createStyle(content, nav, $app.getCurrentStyle());
 		});
+		
+		this.stylePath = opener.$designer.styleBasePath;
+		var currentStyle = $app.getCurrentStyle();
+		if (this.nonEditableStyles.indexOf(currentStyle)!=-1) {
+			$("#save").remove();
+		}
 
 		$("#save").click(function(){
 			$app.getPreview("save");
@@ -168,40 +177,34 @@ var $app = {
 			var nav = $("#my-nav-css").val();
 			var currentStyle = $app.getCurrentStyle();
 			
-			if (currentStyle == 'base') {
-				// If user is editing base style it must be because style has not been saved yet,
-				// open dialog to create a new one from base style
-				$app.createStyle(content, nav);
-			}
-			else {
-				// Send POST request to update current style
- 				var data = $app.collectAjaxData(content, nav, 'saveStyle');
- 				$app.preloader.show();
- 				jQuery.ajax({
- 					url: '/styleDesigner',
-					data: data,
-					cache: false,
-					contentType: false,
-					processData: false,
-					type: 'POST',
-					success: function(response, action) {
-						$app.preloader.hide();
-						// Form request can success, even if the create/save operation failed
-						result = JSON.parse(response);
-						if (result.success) {
-							Ext.Msg.alert($i18n.Information, result.message);
-							opener.window.location.reload();
-						}
-						else {
-							Ext.Msg.alert($i18n.Error, result.message);
-						}
-					},
-					error: function(response) {
-						$app.preloader.hide();
-						Ext.Msg.alert($i18n.Error, response.statusText);
+			// Send POST request to update current style
+			var data = $app.collectAjaxData(content, nav, 'saveStyle');
+			$app.preloader.show();
+			jQuery.ajax({
+				url: '/styleDesigner',
+				data: data,
+				cache: false,
+				contentType: false,
+				processData: false,
+				type: 'POST',
+				success: function(response, action) {
+					$app.preloader.hide();
+					// Form request can success, even if the create/save operation failed
+					result = JSON.parse(response);
+					if (result.success) {
+						Ext.Msg.alert($i18n.Information, result.message);
+						opener.window.location.reload();
 					}
- 				});
-			}
+					else {
+						Ext.Msg.alert($i18n.Error, result.message);
+					}
+				},
+				error: function(response) {
+					$app.preloader.hide();
+					Ext.Msg.alert($i18n.Error, response.statusText);
+				}
+			});
+
 		});		
 
 		$("#finish").click(function(){
@@ -268,7 +271,6 @@ var $app = {
 			});
 		});
 		
-		this.stylePath = opener.$designer.styleBasePath;
 		this.getCurrentCSS();
 		// Enable the Color Pickers after loading the current values
 		
