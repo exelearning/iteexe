@@ -98,11 +98,19 @@ class StyleMenu(Renderable, Resource):
         Adds an Style to the list
         """
         self.client.sendScript('eXe.app.getController("Toolbar").stylesRender()', filter_func=allSessionClients)
+        """
+        The Styles are now in two different menus
+        """
+        self.client.sendScript('eXe.app.getController("Toolbar").stylesRenderAdvanced()', filter_func=allSessionClients)        
     
     def delStyle(self, style):
         """
         Delete an Style to the list
         """
         self.client.sendScript('eXe.app.getController("Toolbar").stylesRender()', filter_func=allSessionClients)
+        """
+        The Styles are now in two different menus
+        """        
+        self.client.sendScript('eXe.app.getController("Toolbar").stylesRenderAdvanced()', filter_func=allSessionClients)
     
 # ===========================================================================
