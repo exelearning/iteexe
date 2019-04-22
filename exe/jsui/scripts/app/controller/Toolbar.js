@@ -624,13 +624,13 @@ Ext.define('eXe.controller.Toolbar', {
 			var stylePath = this.styleDesigner.getCurrentStyleFilePath();
 
 			// We check if the Style is part of eXeLearning
-			var coreStyles = 'base,carm,cedec,default,EducaMadrid,FPD-MEDU,garden,ieda,INTEF,INTEF-web-horizontal-nav,Kahurangi,kids,kyoiku,MAX,MAX_institucional,seamist,silver,slate,standardwhite,Tknika,Todo-FP';
-				coreStyles = coreStyles.split(",");	
+			var nonEditableStyles = 'base,carm,default,EducaMadrid,FPD-MEDU,garden,ieda,INTEF,INTEF-web-horizontal-nav,Kahurangi,kids,kyoiku,MAX,seamist,silver,simplepoint,slate,standardwhite,Tknika,Todo-FP';
+				nonEditableStyles = nonEditableStyles.split(",");	
 				
 			var styleName = stylePath.replace("/style/","").split("/")[0];				
 				
 			// In that case, you cannot edit it
-			if (coreStyles.indexOf(styleName)!=-1) {
+			if (nonEditableStyles.indexOf(styleName)!=-1) {
 				this.styleDesigner.createNewStyleInstead();
 				return false;
 			}
