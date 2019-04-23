@@ -104,7 +104,7 @@ function createButtonPreExport(name, style, enable) {
     {
         xtype: 'button',
         tooltip: _('Export style: ')+name,
-        icon: '/images/stock-export.png',
+        icon: '/images/stock-download.png',
         itemId: 'export_style'+style,
         button_class: 'pre_export_style',
         name: 'export_style'+style,
@@ -220,8 +220,18 @@ function createPanelStyles(styles) {
     panel = [
         {
             xtype: 'button',
+            tooltip: _('Style Designer'),
+            icon: '/images/stock-add.png',
+            itemId: 'create_new_style',
+            name: 'create_new_style',
+            text: _('Create new style'),
+            style:'float:right;',
+            margin: 10
+        },    
+        {
+            xtype: 'button',
             tooltip: _('Import style to the system '),
-            icon: '/images/stock-import.png',
+            icon: '/images/stock-jump-to.png',
             itemId: 'import_style',
             name: 'import_style',
             text: _('Import style'),
@@ -232,7 +242,7 @@ function createPanelStyles(styles) {
             xtype: 'button',
             text: _('Styles repository'),
             tooltip: _('Search and download new styles from the styles repository'),
-            icon: '/images/stock-import.png',
+            icon: '/images/stock-find.png',
             itemId: 'styles_repository',
             name: 'styles_repository',
             style:'float:right;',
