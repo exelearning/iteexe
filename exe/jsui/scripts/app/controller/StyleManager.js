@@ -50,6 +50,28 @@ Ext.define('eXe.controller.StyleManager', {
                     this.triggerActionOnStyle(element, 'doProperties');
                 },
             },
+            'button[button_class=edit_style]': {
+                click:  function (element, record, item, index, e, eOpts) {
+                    // eXe.app.getController('Toolbar').styleDesigner.editStyle(element.value);
+                    // We check if the Style is compatible with the tool
+                    Ext.Ajax.request({
+                        url: "/style/"+element.value+"/content.css",
+                        scope: this,
+                        success: function(response) {
+                            var res = response.responseText;
+                            if (res.indexOf("/* eXeLearning Style Designer Compatible Style */")!=0) {
+                                Ext.Msg.alert("", _("Sorry, only styles created with the Editor can be edited. eXe's Styles are not editable"));
+                            } else {
+                                // If it's compatible, we open the Style designer
+                                styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+element.value);
+                            }
+                        },
+                        error: function(){
+                            Ext.Msg.alert(_('Error'), _("An unknown error occurred."));
+                        }
+                    });                    
+                },
+            },
             'button[button_class=pre_export_style]': {
                 click:  function (element, record, item, index, e, eOpts) {
                     this.triggerActionOnStyle(element, 'doPreExport');

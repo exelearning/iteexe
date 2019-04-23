@@ -102,6 +102,10 @@ class StyleMenu(Renderable, Resource):
         The Styles are now in two different menus
         """
         self.client.sendScript('eXe.app.getController("Toolbar").stylesRenderAdvanced()', filter_func=allSessionClients)        
+        """
+        We reload the Styles manager panel too
+        """
+        self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").reload("doList")', filter_func=allSessionClients)
     
     def delStyle(self, style):
         """

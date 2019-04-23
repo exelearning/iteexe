@@ -620,6 +620,7 @@ Ext.define('eXe.controller.Toolbar', {
 		editStyle : function(){
 			var stylePath = this.styleDesigner.getCurrentStyleFilePath();
 
+			// To review (there should be no hardcoded Styles)
 			// We check if the Style is part of eXeLearning
 			var nonEditableStyles = 'carm,default,EducaMadrid,FPD-MEDU,garden,ieda,INTEF,INTEF-web-horizontal-nav,Kahurangi,kids,kyoiku,MAX,seamist,silver,simplepoint,slate,standardwhite,Tknika,Todo-FP';
 				nonEditableStyles = nonEditableStyles.split(",");	

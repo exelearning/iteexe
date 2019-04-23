@@ -74,7 +74,32 @@ function xmlcreate(items,types) {
 
     return valxml;
 }
-function createButtonPreExport(name, style) {
+function createButtonEdit(name, style) {
+    var disabled = false;
+    
+    // To review (there should be no hardcoded Styles)
+    // We check if the Style is part of eXeLearning
+    var nonEditableStyles = 'carm,default,EducaMadrid,FPD-MEDU,garden,ieda,INTEF,INTEF-web-horizontal-nav,Kahurangi,kids,kyoiku,MAX,seamist,silver,simplepoint,slate,standardwhite,Tknika,Todo-FP';
+        nonEditableStyles = nonEditableStyles.split(",");   
+    if (nonEditableStyles.indexOf(style)!=-1) disabled = true;
+    
+    var buttonEdit =
+    {
+        xtype: 'button',
+        tooltip: _('Export style: ')+name,
+        icon: '/images/stock-edit.png',
+        itemId: 'edit_style'+style,
+        button_class: 'edit_style',
+        name: 'edit_style'+style,
+        style:"margin-right:4px;",
+        value: style,
+        disabled: disabled
+    };
+    return buttonEdit;
+}
+function createButtonPreExport(name, style, enable) {
+    var disabled = false;
+    if (enable==false) disabled = true;    
     var buttonExport =
     {
         xtype: 'button',
@@ -85,6 +110,7 @@ function createButtonPreExport(name, style) {
         name: 'export_style'+style,
         style:"margin-right:4px;",
         value: style,
+        disabled: disabled
     };
     return buttonExport;
 }
@@ -103,7 +129,9 @@ function createButtonExport(name, stylen, xmlitems, lngitems) {
     };
     return buttonExport;
 }
-function createButtonDelete(name, style) {
+function createButtonDelete(name, style, enable) {
+    var disabled = false;
+    if (enable==false) disabled = true;
     var buttonDelete =
     {
         xtype: 'button',
@@ -114,11 +142,14 @@ function createButtonDelete(name, style) {
         button_class: 'delete_style',
         style:"margin-right:4px;",
         value: style,
+        disabled: disabled
     };
     return buttonDelete;
 }
 
-function createButtonProperties(name, style) {
+function createButtonProperties(name, style, enable) {
+    var disabled = false;
+    if (enable==false) disabled = true;    
     var buttonProperties =
     {
         xtype: 'button',
@@ -128,6 +159,7 @@ function createButtonProperties(name, style) {
         name: 'properties_style'+style,
         button_class: 'properties_style',
         value: style,
+        disabled: disabled
     };
     return buttonProperties;
 }
@@ -142,20 +174,15 @@ function createPanelStyles(styles) {
         style[0] =
         {
             xtype: 'label',
-            width: 320,
+            width: 300,
             margin: '5 5 5 20',
             style:"font-size:105%",
             text: styles[i].name
         };
-        if (styles[i].exportButton) {
-            style.push(createButtonPreExport(styles[i].name, styles[i].style));
-        }
-        if (styles[i].deleteButton) {
-            style.push(createButtonDelete(styles[i].name, styles[i].style));
-        }
-        if (styles[i].propertiesButton) {
-            style.push(createButtonProperties(styles[i].name, styles[i].style));
-        }
+        style.push(createButtonEdit(styles[i].name, styles[i].style));
+        style.push(createButtonPreExport(styles[i].name, styles[i].style,styles[i].exportButton));
+        style.push(createButtonDelete(styles[i].name, styles[i].style, styles[i].deleteButton));
+        style.push(createButtonProperties(styles[i].name, styles[i].style,styles[i].propertiesButton));
         var estilo = "";
         if (i%2 == 0) {
             estilo = 'padding-top:5px; background-color: #FFF;';
