@@ -121,7 +121,7 @@ class Config(object):
         'fpd - free text': [x_('FPD')],
         'image gallery': [x_('Other Contents')],
         'image magnifier': [x_('Other Contents')],
-        'note': [x_('Text and Tasks')],
+        'note': [x_('Other Contents')],
         'objectives': [x_('Text and Tasks')],
         'multi-choice': [x_('Interactive Activities')],
         'multi-select': [x_('Interactive Activities')],
