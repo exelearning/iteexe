@@ -603,10 +603,7 @@ Ext.define('eXe.controller.Toolbar', {
 	// Style designer
 	styleDesigner : {
 		open : function(btn, text){
-			var lang = "en"; // Default language
-			var l = document.documentElement.lang;
-			if (l && l!="") lang = l;
-			styleDesignerWindow = window.open("/tools/style-designer/previews/website/?lang="+lang);
+			styleDesignerWindow = window.open("/tools/style-designer/previews/website/");
 		},
 		notCompatible : function(){
 			Ext.Msg.alert("", _("Sorry, only styles created with the Editor can be edited. eXe's Styles are not editable"));
@@ -645,10 +642,7 @@ Ext.define('eXe.controller.Toolbar', {
 						this.styleDesigner.notCompatible();
 					} else {
 						// If it's compatible, we open the Style designer
-						var lang = "en"; // Default language
-						var l = document.documentElement.lang;
-						if (l && l!="") lang = l;
-						styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId()+"&lang="+lang);
+						styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId());
 					}
 				},
 				error: function(){

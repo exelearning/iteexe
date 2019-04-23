@@ -167,13 +167,16 @@ var $app = {
 
 		$("#save").click(function(){
 
-			var currentStyle = $app.getCurrentStyle();			
+			var currentStyle = $app.getCurrentStyle();	
+			if (opener && opener.location.href.indexOf("?style=")==-1) {
+				// The user's creating a new Style, so we open the "Save as" dialog:
+				$("#saveAs").trigger("click");
+				return;
+			}
 			if ($app.nonEditableStyles.indexOf(currentStyle)!=-1) {
 				// If user is editing a non editable style it must be because style has not been saved yet,
 				// We tell the user to click on "Save as"
 				Ext.Msg.alert($i18n.Information, $i18n.Use_Save_as.replace('%s','"'+$i18n.Save_as+'"'));
-				// We could also open the "Save as" dialog:
-				// $app.createStyle(content, nav);
 				return;
 			}
 			$app.getPreview("save");
