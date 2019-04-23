@@ -193,8 +193,10 @@ class StyleManagerPage(RenderableResource):
             export = True
             delete = False
             properties = False
-            if    style.get_dirname() != 'INTEF' \
-              and style.get_dirname() != "standardwhite":
+            if    style.get_dirname() != 'base' \
+              and style.get_dirname() != "INTEF" \
+              and style.get_dirname() != "kids" \
+              and style.get_dirname() != "simplepoint":
                 delete = True
             if style.hasValidConfig():
                 properties = True
