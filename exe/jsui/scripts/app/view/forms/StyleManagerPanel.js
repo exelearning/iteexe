@@ -104,7 +104,7 @@ function createButtonPreExport(name, style, enable) {
     {
         xtype: 'button',
         tooltip: _('Export style: ')+name,
-        icon: '/images/stock-download.png',
+        icon: '/images/stock-export.png',
         itemId: 'export_style'+style,
         button_class: 'pre_export_style',
         name: 'export_style'+style,
@@ -231,7 +231,7 @@ function createPanelStyles(styles) {
         {
             xtype: 'button',
             tooltip: _('Import style to the system '),
-            icon: '/images/stock-jump-to.png',
+            icon: '/images/stock-import.png',
             itemId: 'import_style',
             name: 'import_style',
             text: _('Import style'),
