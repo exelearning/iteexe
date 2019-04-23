@@ -329,7 +329,7 @@ Ext.application({
                 l.href = "#";
                 l.id = "show_exe_leftpanel";
                 l.title = _("Show panel");
-                l.style = "position:absolute;top:5px;left:0;outline:none";
+                l.style = "position:fixed;top:5px;left:0;outline:none";
                 l.onclick = function(){
                     var panel = top.Ext.ComponentQuery.query('#exe_leftpanel')[0];
                     panel.show();
