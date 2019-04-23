@@ -43,6 +43,11 @@ Ext.define('eXe.controller.StyleManager', {
                     this.triggerImportStyle(element);
                 }
             },
+            '#create_new_style' : {
+                click: function() {
+                    styleDesignerWindow = window.open("/tools/style-designer/previews/website/");
+                }
+            },
             // Actions performed on styles can be triggered by multiple buttons (one for each style), 
             // so they cannot be selected by id, but by the custom attribute 'button_class'
             'button[button_class=properties_style]': {
@@ -51,7 +56,7 @@ Ext.define('eXe.controller.StyleManager', {
                 },
             },
             'button[button_class=edit_style]': {
-                click:  function (element, record, item, index, e, eOpts) {
+                click:  function (element) {
                     // eXe.app.getController('Toolbar').styleDesigner.editStyle(element.value);
                     // We check if the Style is compatible with the tool
                     Ext.Ajax.request({

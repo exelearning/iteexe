@@ -179,11 +179,6 @@ Ext.define('eXe.controller.Toolbar', {
                 click: this.toolsTemplateManager
             },
             // Style designer
-            // To do:
-            /*
-                nav.css:
-                overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:200px should be applied to #headerContent
-            */
             '#style_designer_new_style': {
                 click: this.styleDesigner.open
             },
