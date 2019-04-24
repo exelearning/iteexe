@@ -70,6 +70,7 @@ class Style(Persistable):
         self._extra_body    = ''
         self._edition_extra_body    = ''
         self._validConfig   = False
+        self._isStyleDesignerCompatible = False
         self._valid         = False
         self._checkValid()
         self._loadStyle()
@@ -99,6 +100,16 @@ class Style(Persistable):
                                         setattr(self, rpattribute, attrValue)
                     
                     self._validConfig = True
+                    
+                    # Check it is compatible with the Style Designer
+                    cssFile = self._styleDir/'content.css'
+                    if cssFile.exists():
+                        cssFileContent = open(cssFile).read()
+                        requiredString = "/* eXeLearning Style Designer Compatible Style */";
+                        position = cssFileContent.find(requiredString)                        
+                        if (position==0):
+                            self._isStyleDesignerCompatible = True
+                    
         except:
             self._valid=False
     
@@ -118,6 +129,9 @@ class Style(Persistable):
     
     def hasValidConfig(self):
         return self._validConfig
+        
+    def isStyleDesignerCompatible(self):
+        return self._isStyleDesignerCompatible
     
     
     def get_style_dir(self):

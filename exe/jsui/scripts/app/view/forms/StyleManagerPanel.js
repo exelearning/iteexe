@@ -74,18 +74,11 @@ function xmlcreate(items,types) {
 
     return valxml;
 }
-function createButtonEdit(name, style, currentStyle) {
+function createButtonEdit(name, style, currentStyle, enable) {
     var disabled = false;
-    
-    // To review (there should be no hardcoded Styles)
-    // We check if the Style is part of eXeLearning
-    var nonEditableStyles = 'carm,default,EducaMadrid,FPD-MEDU,garden,ieda,INTEF,INTEF-web-horizontal-nav,Kahurangi,kids,kyoiku,MAX,seamist,silver,simplepoint,slate,standardwhite,Tknika,Todo-FP';
-        nonEditableStyles = nonEditableStyles.split(",");   
-    if (nonEditableStyles.indexOf(style)!=-1) disabled = true;
-    
+    if (enable==false) disabled = true;
     var txt = _('Edit style: ')+name;
     if (name==currentStyle) txt = _('Edit current Style');
-    
     var buttonEdit =
     {
         xtype: 'button',
@@ -195,7 +188,7 @@ function createPanelStyles(styles) {
             style:css,
             text: styles[i].name
         };
-        style.push(createButtonEdit(styles[i].name, styles[i].style, currentStyle));
+        style.push(createButtonEdit(styles[i].name, styles[i].style, currentStyle,styles[i].editButton));
         style.push(createButtonPreExport(styles[i].name, styles[i].style,styles[i].exportButton));
         style.push(createButtonDelete(styles[i].name, styles[i].style, styles[i].deleteButton));
         style.push(createButtonProperties(styles[i].name, styles[i].style,styles[i].propertiesButton));
