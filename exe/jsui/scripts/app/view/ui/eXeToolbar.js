@@ -355,7 +355,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             xtype: 'accesskey_menuitem',
                                             itemId: 'file_import_html',
                                             accesskey: 'h',
-                                            text: _('HTML Course')
+                                            text: _('HTML Files')
                                         },
                                         {
                                             xtype: 'accesskey_menuitem',
