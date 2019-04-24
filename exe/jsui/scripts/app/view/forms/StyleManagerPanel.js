@@ -165,18 +165,31 @@ function createButtonProperties(name, style, enable) {
 }
 
 function createPanelStyles(styles) {
+    // Get the current Style
+    var currentStyle = "";
+    if (parent && parent.exe_style) {
+        currentStyle = parent.exe_style;
+        currentStyle = currentStyle.split("style/");
+        if (currentStyle.length==2) {
+            currentStyle = currentStyle[1];
+            currentStyle = currentStyle.split("/");
+            currentStyle = currentStyle[0];
+        }
+    }
     var i;
     var itemsShow = [];
     var panel = [];
     for (i = styles.length-1; i >= 0; i--) {
         //item = Ext.create('Ext.menu.CheckItem', { text: styles[i].label, itemId: styles[i].style, checked: styles[i].selected });
+        var css = "";
+        if (currentStyle==styles[i].name) css += ";font-weight:bold;background:url(/images/arrow-right.gif) no-repeat 0 50%;padding-left:8px";
         var style=[];
         style[0] =
         {
             xtype: 'label',
-            width: 300,
+            width: 298,
             margin: '5 5 5 20',
-            style:"font-size:105%",
+            style:css,
             text: styles[i].name
         };
         style.push(createButtonEdit(styles[i].name, styles[i].style));
@@ -185,10 +198,10 @@ function createPanelStyles(styles) {
         style.push(createButtonProperties(styles[i].name, styles[i].style,styles[i].propertiesButton));
         var estilo = "";
         if (i%2 == 0) {
-            estilo = 'padding-top:5px; background-color: #FFF;';
+            estilo = 'background:#FFFFFF;padding-top:2px';
         }
         else {
-            estilo = 'padding-top:5px; background-color: #FAFAFA; border-top-color: #B5B8C8; border-bottom-color: #B5B8C8; border-top-style:solid; border-bottom-style: solid; border-top-width:1px; border-bottom-width: 1px;';
+            estilo = 'background-color:#FAFAFA;padding-top:7px;padding-bottom:5px;border-top:1px solid #B5B8C8;border-bottom:1px solid #B5B8C8;';
         }
 
         var item =

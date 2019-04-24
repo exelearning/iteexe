@@ -96,7 +96,7 @@ Ext.define('eXe.controller.StyleManager', {
                             currentStyle = currentStyle[2];
                             var selectedStyle = element.itemId.replace("delete_style","");
                             if (currentStyle==selectedStyle) {
-                                Ext.Msg.alert(_('Error'), _('Cannot access directory named '));
+                                Ext.Msg.alert(_('Information'), _('Cannot delete the current style.'));
                                 return;
                             }
                         }
