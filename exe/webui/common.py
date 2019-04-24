@@ -1003,7 +1003,7 @@ def elementInstruc(instruc, imageFile="help.gif", label=None):
         html  = u'<a href="javascript:void(o)" '
         html += u' title="%s" ' % _(u'Click for completion instructions')
         html += u'onclick="showMessageBox(\'%s\');" ' % id_
-        html += u'style="cursor:help;margin-left:.2em;">' 
+        html += u'style="cursor:help;margin-left:5px">' 
         html += u'<img class="help" alt="%s" ' % _(u'Click for completion instructions')
         html += u'src="/images/%s" style="vertical-align:middle;"/>' % imageFile
         html += u'</a>\n'
@@ -1020,10 +1020,11 @@ def formField(type_, package, caption, action, object_='', instruction='', \
     package is only needed for richTextArea, to present all available internal anchors.
     """
     html  = '<div class="block">'
-    html += '<strong'
-    if type_ == 'richTextArea':
-        html += ' id="'+action+object_+'-editor-label"' # ID to create the Show/Hide Editor Link
-    html += '>%s</strong>' % caption
+    if caption!="":
+        html += '<strong'
+        if type_ == 'richTextArea':
+            html += ' id="'+action+object_+'-editor-label"' # ID to create the Show/Hide Editor Link
+        html += '>%s</strong>' % caption
     if instruction:
         html += elementInstruc(instruction)
     html += '</div>'

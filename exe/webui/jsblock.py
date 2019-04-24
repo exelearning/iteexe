@@ -78,9 +78,13 @@ class JsBlock(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html = u'<div><div class="block">'
+        html += '<span class="js-idevice-title-label">'
+        html += '<label for="title'+self.id+'">'+_('Title')+':</label> '
+        html += common.elementInstruc(_('The title and the icon are not required. If you leave them empty the iDevice will have no emphasis.'))
+        html += '</span>'
         html += common.textInput("title" + self.id, self.idevice.title)
         html += common.hiddenField("iconiDevice" + self.id, self.idevice.icon)
-        html += u'<a class="js-show-icon-panel-button" href="javascript:showMessageBox(\'iconpanel\');">%s</a>' % _('Select an icon')
+        html += u'<a class="js-show-icon-panel-button" href="javascript:showMessageBox(\'iconpanel\');" title="%s">%s</a>' % (_('Select an icon'),_('Icon'))
 
         # Get icon source (if it exists)
         icon = self.idevice.icon

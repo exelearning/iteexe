@@ -168,8 +168,8 @@ class JsIdevice(Idevice):
 
     # Add the iDevice default fields
     def __addDefaultFields(self):
-        """ A JS iDevice always have only a Textarea """
-        self.addField(TextAreaField(x_(u"Content"), x_(u"""The title and the icon are not required. If you leave them empty the iDevice will have no emphasis.""")))
+        """ A JS iDevice only has a Textarea with no instructions """
+        self.addField(TextAreaField(""))
         
     def __getFolderResources(self):
         self._editionFolder = str(Path(self._iDeviceDir).basename() + '/edition/')
