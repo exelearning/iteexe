@@ -192,6 +192,7 @@ class StyleManagerPage(RenderableResource):
         for style in styles_sort:
             export = True
             delete = False
+            editButton = False
             properties = False
             if    style.get_dirname() != 'base' \
               and style.get_dirname() != "INTEF" \
@@ -200,8 +201,11 @@ class StyleManagerPage(RenderableResource):
                 delete = True
             if style.hasValidConfig():
                 properties = True
+                if style.isStyleDesignerCompatible():
+                    editButton = True
             styles.append({'style': style.get_dirname(),
                            'name': style.get_name(),
+                           'editButton': editButton,
                            'exportButton': export,
                            'deleteButton': delete,
                            'propertiesButton': properties})
