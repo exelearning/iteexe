@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3\nReport-Msgid-Bugs-To: eXeLearning.net Translation Team <translations@exelearning.net>\nPOT-Creation-Date: 2019-03-30 12:32+0100\nPO-Revision-Date: 2018-12-02 17:16+0100\nLast-Translator: eXeLearning.net Translation Team <translations@exelearning.net>\nLanguage: ar\nLanguage-Team: ar <translations@exelearning.net>\nPlural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: eXeLearning.net Translation Team <translations@exelearning.net>\nPOT-Creation-Date: 2019-04-24 16:55+0200\nPO-Revision-Date: 2018-12-02 17:16+0100\nLast-Translator: eXeLearning.net Translation Team <translations@exelearning.net>\nLanguage: ar\nLanguage-Team: ar <translations@exelearning.net>\nPlural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "represent": "\u062a\u0633\u0645\u064a\u0629 \u0627\u0644\u062a\u0639\u064a\u064a\u0646 \u0627\u0644\u0645\u0633\u0628\u0642 ", 
  "Web pages footer.": "\u062a\u0630\u064a\u064a\u0644 \u0635\u0641\u062d\u0627\u062a \u0627\u0644\u0648\u064a\u0628", 
  "DropDown Activity": "\u0646\u0634\u0627\u0637 \u0645\u0646\u0633\u062f\u0644", 
@@ -321,7 +321,6 @@ translations = {
  "educational validator": "\u0627\u0644\u0645\u0639\u064a\u0627\u0631 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u064a", 
  "Wrong Answer Feedback Overlay": "\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0627\u0644\u0625\u062c\u0627\u0628\u0629 \u0627\u0644\u062e\u0637\u0623", 
  "Background image for a header (an image 100px high is recommended).": "\u0635\u0648\u0631\u0629 \u062e\u0644\u0641\u064a\u0629 \u0644\u0631\u0623\u0633 \u0627\u0644\u0635\u0641\u062d\u0629 ( \u064a\u0648\u0635\u0649 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0635\u0648\u0631\u0629 \u0645\u0642\u0627\u0633 100 \u0628\u0643\u0633\u0644 \u0645\u0646 \u062d\u064a\u062b \u0627\u0644\u0627\u0631\u062a\u0641\u0627\u0639) ", 
- "Help": "\u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0629", 
  "You can close this window": "\u064a\u0645\u0643\u0646\u0643 \u0625\u063a\u0644\u0627\u0642 \u0647\u0630\u0647 \u0627\u0644\u0646\u0627\u0641\u0630\u0629", 
  "Number of Rows": "\u0639\u062f\u062f \u0627\u0644\u0635\u0641\u0648\u0641", 
  "Show Answers": "\u0639\u0631\u0636 \u0627\u0644\u0625\u062c\u0627\u0628\u0627\u062a", 
@@ -611,7 +610,7 @@ translations = {
  "Ungroup iDevices": "\u0625\u0644\u063a\u0627\u0621 \u062a\u062c\u0645\u064a\u0639 iDevices ", 
  "Default browser in your system": "\u0627\u0644\u0645\u062a\u0635\u0641\u062d \u0627\u0644\u0627\u0641\u062a\u0631\u0627\u0636\u064a \u0641\u064a \u0646\u0638\u0627\u0645\u0643", 
  "Right": "\u064a\u0645\u064a\u0646", 
- "HTML Course": "\u062f\u0648\u0631\u0629 HTML ", 
+ "Help": "\u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0629", 
  "Style Element": "\u0635\u0648\u0631\u0629 \u0644\u0644\u0639\u0646\u0635\u0631", 
  "Taxonomy": "\u0627\u0644\u062a\u0635\u0646\u064a\u0641", 
  "Enter the new name:": "\u0623\u062f\u062e\u0644 \u0627\u0644\u0627\u0633\u0645 \u0627\u0644\u062c\u062f\u064a\u062f:", 

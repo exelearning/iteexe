@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.3.2\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2019-04-24 16:55+0200\n"
-"PO-Revision-Date: 2019-03-30 12:36+0100\n"
+"PO-Revision-Date: 2019-04-24 17:57+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -4322,7 +4322,7 @@ msgstr "Introduzca el nuevo nombre:"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:68
 msgid "Cannot edit the Style. It is not compatible with the Style Designer."
-msgstr ""
+msgstr "No se puede modificar este estilo, es incompatible con el editor de estilos."
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:75
 msgid "An unknown error occurred."
@@ -4330,7 +4330,7 @@ msgstr "Se ha producido un error desconocido."
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:99
 msgid "Cannot delete the current style."
-msgstr ""
+msgstr "El presente estilo no se puede borrar."
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:99
 #: exe/jsui/scripts/app/view/forms/HelpContainer.js:43 exe/webui/block.py:270
@@ -6077,7 +6077,7 @@ msgstr "Mostrar esta ventana cuando se inicia eXe"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:80
 msgid "Edit style: "
-msgstr ""
+msgstr "Editar el estilo: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:81
 msgid "Edit current Style"
@@ -6085,15 +6085,15 @@ msgstr "Editar el estilo actual"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:102
 msgid "Export style: "
-msgstr ""
+msgstr "Exportar el estilo: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:134
 msgid "Delete style: "
-msgstr ""
+msgstr "Borrar el estilo: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:152
 msgid "Show properties of style: "
-msgstr ""
+msgstr "Mostrar las propiedades del estilo: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:232
 #: exe/webui/tools/style-designer/langs/all.js:9
@@ -6107,33 +6107,33 @@ msgstr "Crear un estilo nuevo"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:242
 msgid "Import style to the system "
-msgstr ""
+msgstr "Importar el estilo al sistema "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:246
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:470
 msgid "Import style"
-msgstr ""
+msgstr "Importar el estilo"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:252
 msgid "Styles repository"
-msgstr ""
+msgstr "Banco de estilos"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:253
 msgid "Search and download new styles from the styles repository"
-msgstr ""
+msgstr "Buscar y descargar nuevos estilos del banco de estilos"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:262
 msgid "List of styles in your system"
-msgstr ""
+msgstr "Listar los estilos de su sistema"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:276
 msgid "Properties of style: "
-msgstr ""
+msgstr "Propiedades del estilo: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:364
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:577
 msgid "Return to style manager"
-msgstr ""
+msgstr "Volver al gestor de estilos"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:371
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:576
@@ -6143,15 +6143,15 @@ msgstr "Volver"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:465
 msgid "Read more"
-msgstr ""
+msgstr "Leer más"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:471
 msgid "Download style from repository and import into system."
-msgstr ""
+msgstr "Descargar el estilo del banco de estilos e importarlo al sistema."
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:503
 msgid "Import style from custom URL"
-msgstr ""
+msgstr "Importar un estilo de una URL proporcionada"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:518
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:59
@@ -6166,19 +6166,19 @@ msgstr "URL (dirección web)"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:519
 msgid "URL to download the style from."
-msgstr ""
+msgstr "URL de la que descargar el estilo."
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:524
 msgid "Import Style from URL"
-msgstr ""
+msgstr "Importar un estilo desde una URL"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:525
 msgid "Download style from URL and import into system."
-msgstr ""
+msgstr "Descargar un estilo de una URL e importarlo al sistema."
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:553
 msgid "Check and install styles in the repository"
-msgstr ""
+msgstr "Comprobar e instalar estilos en el banco de estilos"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:22
 msgid "Export template: "
@@ -6334,7 +6334,7 @@ msgstr "Renombrar"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:56
 msgid "Minify this panel"
-msgstr ""
+msgstr "Minimizar este panel"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:38
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
@@ -6628,7 +6628,7 @@ msgstr "Agrupar los iDevices"
 
 #: exe/jsui/scripts/exe.js:361 exe/jsui/scripts/exe.js:369
 msgid "Show panel"
-msgstr ""
+msgstr "Mostrar el panel"
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
@@ -9672,7 +9672,7 @@ msgstr ""
 
 #: exe/webui/jsblock.py:87
 msgid "Icon"
-msgstr ""
+msgstr "Icono"
 
 #: exe/webui/listablock.py:180
 msgid "Other words"
@@ -10147,166 +10147,166 @@ msgstr "Debe escribir el texto del botón."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:2
 msgid "Interactive video editor"
-msgstr ""
+msgstr "Editor de vídeos interactivos"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:5
 msgid "Exit"
-msgstr ""
+msgstr "Salir"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:7
 msgid "Show/Hide help"
-msgstr ""
+msgstr "Mostrar/ocultar la ayuda"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:8
 msgid "Close help"
-msgstr ""
+msgstr "Cerrar la ayuda"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:10
 msgid "Create a cover"
-msgstr ""
+msgstr "Crear una portada"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:11
 msgid "Create"
-msgstr ""
+msgstr "Crear"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:12
 msgid "Create a slide"
-msgstr ""
+msgstr "Crear un fotograma"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:14
 msgid "Create slide"
-msgstr ""
+msgstr "Crear fotograma"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:15
 msgid "Update slide"
-msgstr ""
+msgstr "Actualizar fotograma"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:17
 msgid "Edit slides"
-msgstr ""
+msgstr "Editar fotogramas"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:18
 msgid "Create a cover (front page)"
-msgstr ""
+msgstr "Crear una portada"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:19
 msgid "Add new slides (frames)"
-msgstr ""
+msgstr "Añadir fotogramas"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:20
 msgid "You can edit them later"
-msgstr ""
+msgstr "Podrá editarlos más tarde"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:21
 msgid "Click on Save when you finish"
-msgstr ""
+msgstr "Pulse en Guardar cuando termine"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:22
 msgid "Your interactive video cover"
-msgstr ""
+msgstr "La portada de su vídeo interactivo"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:24
 msgid "required"
-msgstr ""
+msgstr "requerido"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:26
 msgid "Save cover"
-msgstr ""
+msgstr "Guardar portada"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:30
 msgid "Single choice"
-msgstr ""
+msgstr "Respuesta única"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:31
 msgid "Multiple choice"
-msgstr ""
+msgstr "Respuesta múltiple"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:32
 msgid "Fill in the blank"
-msgstr ""
+msgstr "Rellenar huecos"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:33
 msgid "Dropdown activity"
-msgstr ""
+msgstr "Actividad desplegable"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:34
 msgid "Match pairs"
-msgstr ""
+msgstr "Emparejar elementos"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:35
 msgid "Scrambled list"
-msgstr ""
+msgstr "Lista desordenada"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:37
 msgid "Write a text. You can add lists, links..."
-msgstr ""
+msgstr "Escriba un texto. Puede añadir listas, enlaces..."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:38
 msgid "Add an image with description (alternative text)."
-msgstr ""
+msgstr "Añada una imagen con su descripción (texto alternativo)."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:39
 msgid "Write a question and some answers. Don't forget to choose the right one."
-msgstr ""
+msgstr "Escriba una pregunta y varias respuestas. No olvide marcar la respuesta correcta."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:40
 msgid ""
 "Write a question and some answers. You can select more than one right "
 "answer."
-msgstr ""
+msgstr "Escriba una pregunta y varias respuestas. Puede seleccionar más de una respuesta correcta."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:41
 msgid ""
 "Write a text and strike through the words to complete. Check the "
 "spelling. It's case sensitive."
-msgstr ""
+msgstr "Escriba un texto y tache las palabras que habrá que completar. Compruebe la ortografía. La actividad distingue entre mayúsculas y minúsculas."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:42
 msgid ""
 "Write a text and strike through the words to complete. A dropdown menu "
 "(SELECT) will be displayed where those words are. You can also add more "
 "options."
-msgstr ""
+msgstr "Escriba un texto y tache las palabras que habrá que completar. Se mostrará un desplegable (SELECCIONAR) con opciones en lugar de esas palabras. También puede añadir otras opciones."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:43
 msgid "Write some instructions and add pairs in the right order."
-msgstr ""
+msgstr "Escriba las instrucciones y añada parejas en el orden correcto."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:44
 msgid "Write the wording and add elements to the list (in the right order)."
-msgstr ""
+msgstr "Escriba el enunciado y añada elementos a la lista (en el orden correcto)."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:46
 msgid "Write the text to be shown"
-msgstr ""
+msgstr "Escriba el texto que se mostrará"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:51
 msgid "Strike through the words to complete. It's case sensitive."
-msgstr ""
+msgstr "Tache las palabras que habrá que completar. La actividad distingue entre mayúsculas y minúsculas."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:52
 msgid "Text to complete"
-msgstr ""
+msgstr "Texto que debe completarse"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:54
 msgid "Add options"
-msgstr ""
+msgstr "Añadir opciones"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:55
 msgid "You can add more options to the dropdown lists (optional)"
-msgstr ""
+msgstr "Puede añadir más opciones a los desplegables (opcional)"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:58
 msgid "Pairs"
-msgstr ""
+msgstr "Parejas"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:59
 msgid "Introduction or instructions"
-msgstr ""
+msgstr "Introducción o instrucciones"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:60
 msgid "Fill in at least two pairs."
-msgstr ""
+msgstr "Escriba al menos dos pares."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:62
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
@@ -10318,205 +10318,205 @@ msgstr "Lista"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:63
 msgid "Elements (it the right order)"
-msgstr ""
+msgstr "Elementos (en el orden correcto)"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:65
 msgid "Please create a slide (frame) first."
-msgstr ""
+msgstr "Primero debe crear un fotograma."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:66
 msgid "The title is required."
-msgstr ""
+msgstr "Debe escribir el título."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:67
 msgid "Cover updated."
-msgstr ""
+msgstr "Portada actualizada."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:68
 msgid "Please write a text."
-msgstr ""
+msgstr "Debe escribir un texto."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:69
 msgid "Please add an image."
-msgstr ""
+msgstr "Debe seleccionar una imagen."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:70
 msgid "Provide an alternative text (describe the image)."
-msgstr ""
+msgstr "Proporcione un texto alternativo (una descripción) para la imagen."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:71
 msgid "Please write a question."
-msgstr ""
+msgstr "Debe escribir una pregunta."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:72
 msgid "Add at least two answers."
-msgstr ""
+msgstr "Añada al menos dos respuestas."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:73
 msgid "Please choose the right answer."
-msgstr ""
+msgstr "Seleccione la respuesta correcta."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:74
 msgid "No struck-through words..."
-msgstr ""
+msgstr "No ha tachado ninguna palabra..."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:75
 msgid "Write an introduction (instructions, etc.)."
-msgstr ""
+msgstr "Escriba una introducción (instrucciones, etc.)."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:76
 msgid "Add at least two pairs."
-msgstr ""
+msgstr "Añada al menos dos parejas."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:77
 msgid "Add at least two elements to the list."
-msgstr ""
+msgstr "Añada al menos dos elementos a la lista."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:78
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:79
 msgid "Your changes won't be saved until you click on \"Save\"."
-msgstr ""
+msgstr "Los cambios no se guardarán si no pulsa \"Guardar\"."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:80
 msgid "Do not show this message again"
-msgstr ""
+msgstr "No mostrar más este mensaje"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:81
 msgid "All the slides have been deleted."
-msgstr ""
+msgstr "Se han eliminado todas las diapositivas."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:83
 msgid "Num."
-msgstr ""
+msgstr "Nº"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:85
 msgid "End"
-msgstr ""
+msgstr "Fin"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:87
 #, python-format
 msgid "Remove slide %s?"
-msgstr ""
+msgstr "¿Eliminar el fotograma %s?"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:88
 msgid "Slides list"
-msgstr ""
+msgstr "Lista de fotogramas"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:89
 msgid "New slide"
-msgstr ""
+msgstr "Nuevo fotograma"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:90
 msgid "The slide was created!"
-msgstr ""
+msgstr "Se ha creado el fotograma"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:91
 msgid "Saved changes!"
-msgstr ""
+msgstr "¡Guardado!"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:95
 msgid "The Youtube API might have changed."
-msgstr ""
+msgstr "Tal vez YouTube haya cambiado su código."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:98
 msgid "Saved!"
-msgstr ""
+msgstr "¡Guardado!"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:99
 msgid "Click on \"Exit\" to finish."
-msgstr ""
+msgstr "Pulse en \"Salir\" para finalizar."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:100
 msgid "Stop the playing video"
-msgstr ""
+msgstr "Detener el vídeo"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:105
 msgid "Current frame second"
-msgstr ""
+msgstr "Segundo del fotograma actual"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:106
 msgid "The slide can't start in that second (zero)."
-msgstr ""
+msgstr "El fotograma no puede empezar en el segundo cero."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:107
 msgid "The video is not that long. Check the start/end time."
-msgstr ""
+msgstr "El vídeo no parece tan largo. Compruebe los valores de inicio y fin."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:108
 msgid "Please check the start/end time."
-msgstr ""
+msgstr "Compruebe los valores de inicio y fin."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:109
 msgid "Please check the \"Start\" time"
-msgstr ""
+msgstr "Compruebe el valor de \"Inicio\""
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:110
 msgid "Please check the \"End\" time"
-msgstr ""
+msgstr "Compruebe el valor de \"Fin\""
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:111
 msgid "Set the time for the slide to be shown"
-msgstr ""
+msgstr "Indique en qué segundo se debe mostrar el fotograma"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:112
 msgid ""
 "If you don't want the video to stop, set the time for the slide to be "
 "hidden"
-msgstr ""
+msgstr "Si no quiere que el vídeo se detenga, indique cuándo se debe ocultar el fotograma"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:113
 #, python-format
 msgid "Click on %s to get the video current time."
-msgstr ""
+msgstr "Pulse en %s para obtener el segundo actual."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:84
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:24
 msgid "Start"
-msgstr ""
+msgstr "Inicio"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:26
 msgid "Slide (frame)"
-msgstr ""
+msgstr "Diapositiva (fotograma)"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:27
 msgid "Score"
-msgstr ""
+msgstr "Puntuación"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:28
 msgid "Seen"
-msgstr ""
+msgstr "Visto"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:30
 msgid "see all the slides and answer all the questions"
-msgstr ""
+msgstr "debe ver todo el contenido y contestar a las preguntas"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:31
 msgid "This video has no interactive slides."
-msgstr ""
+msgstr "El vídeo no tiene contenidos interactivos."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:32
 msgid "Continue"
-msgstr ""
+msgstr "Continuar"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:34
 msgid "Incompatible code"
-msgstr ""
+msgstr "Código no compatible"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:35
 msgid "Only one interactive video per page."
-msgstr ""
+msgstr "Sólo un vídeo interactivo por página."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:9
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:36
 msgid "Cover"
-msgstr ""
+msgstr "Portada"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:37
 msgid "Exit the fullscreen mode (Esc) to see the current slide"
-msgstr ""
+msgstr "Salga del modo pantalla completa (tecla Esc) para ver la diapositiva"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:38
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:47
@@ -10525,73 +10525,73 @@ msgstr "¡Correcto!"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:40
 msgid "Drag and drop or use the arrows."
-msgstr ""
+msgstr "Pinche y arrastre o use las flechas."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:41
 msgid "Move up"
-msgstr ""
+msgstr "Subir"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:42
 msgid "Move down"
-msgstr ""
+msgstr "Bajar"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:43
 msgid "Right answer:"
-msgstr ""
+msgstr "Respuesta correcta:"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:44
 msgid "Please finish the activity"
-msgstr ""
+msgstr "Por favor termine la actividad"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:113
 msgid "You can only add one Interactive Video iDevice per page."
-msgstr ""
+msgstr "Sólo puede añadir un vídeo interactivo por página."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:120
 #: exe/webui/tools/style-designer/langs/all.js:12
 msgid "General settings"
-msgstr "Opciones generales"
+msgstr "Ajustes generales"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:96
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:123
 msgid "Local file"
-msgstr ""
+msgstr "Fichero local"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:124
 msgid "Youtube"
-msgstr ""
+msgstr "YouTube"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:125
 msgid "Mediateca"
-msgstr ""
+msgstr "Mediateca"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:130
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:372
 msgid "Supported formats"
-msgstr ""
+msgstr "Formatos aceptados"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:143
 msgid "Show results"
-msgstr ""
+msgstr "Mostrar la puntuación"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:146
 msgid "Open the editor and start adding interaction..."
-msgstr ""
+msgstr "Abra el editor y comience a añadir contenidos al vídeo..."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:149
 msgid "Language settings"
-msgstr ""
+msgstr "Ajustes de idioma"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:150
 msgid "Custom texts (or use the default ones):"
-msgstr ""
+msgstr "Textos personalizados (puede dejar los valores predeterminados):"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:170
 #, python-format
 msgid ""
 "Please save your iDevice now (click on %s now) and edit it to add "
 "interaction."
-msgstr ""
+msgstr "Debe guardar los cambios ahora (pulse en %s). Después podrá añadir interactividad."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:174
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:5
@@ -10601,7 +10601,7 @@ msgstr "Tipo recomendado"
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:382
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:392
 msgid "Wrong URL. Expected format:"
-msgstr ""
+msgstr "URL incorrecta. Formato esperado:"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:13
 msgid "Task"
@@ -15817,7 +15817,7 @@ msgstr ""
 msgid ""
 "This is one of eXe's default Styles. Please click on %s. You will find "
 "the new Style in the Styles menu when you finish."
-msgstr ""
+msgstr "Este es uno de los estilos predeterminados de eXe. Pulse en %s. Encontrará el nuevo estilo en el menú de estilos cuando termine."
 
 #: exe/webui/tools/style-designer/langs/all.js:119
 msgid "Save as"
@@ -16097,4 +16097,3 @@ msgstr ""
 
 #~ msgid "Ony one interactive video per page."
 #~ msgstr ""
-

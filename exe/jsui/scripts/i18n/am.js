@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3\nReport-Msgid-Bugs-To: eXeLearning.net Translation Team <translations@exelearning.net>\nPOT-Creation-Date: 2019-03-30 12:32+0100\nPO-Revision-Date: 2018-12-02 17:15+0100\nLast-Translator: eXeLearning.net Translation Team <translations@exelearning.net>\nLanguage: am\nLanguage-Team: am <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: eXeLearning.net Translation Team <translations@exelearning.net>\nPOT-Creation-Date: 2019-04-24 16:55+0200\nPO-Revision-Date: 2018-12-02 17:15+0100\nLast-Translator: eXeLearning.net Translation Team <translations@exelearning.net>\nLanguage: am\nLanguage-Team: am <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "represent": "\u12e8\u1235\u121d \u1245\u12f5\u1218 \u1245\u1295\u1265\u122d", 
  "Web pages footer.": "\u12e8\u12f5\u122d \u1308\u133e\u127d \u130d\u122d\u130c\u1362", 
  "DropDown Activity": "\u12e8\u1270\u1238\u1246\u120d\u124b\u12ed \u12a5\u1295\u1245\u1235\u1243\u1234", 
@@ -320,7 +320,6 @@ translations = {
  "educational validator": "\u12e8\u1275\u121d\u1205\u122d\u1275 \u12f0\u1228\u1303", 
  "Wrong Answer Feedback Overlay": "\u12e8\u1270\u1233\u1233\u1270 \u121d\u120b\u123d \u130d\u1265\u1228 \u1218\u120d\u1235", 
  "Background image for a header (an image 100px high is recommended).": "\u12e8\u122d\u12d5\u1235 \u12e8\u12f3\u122b \u121d\u1235\u120d (100 \u1352\u12ad\u1235\u120d \u1275\u120d\u1240\u1275 \u12eb\u1208\u12cd \u121d\u1235\u120d \u12ed\u1218\u12a8\u122b\u120d)\u1362", 
- "Help": "\u12a5\u1308\u12db", 
  "You can close this window": "\u12ed\u1205\u1295\u1295 \u1218\u1235\u12ae\u1275 \u1218\u12dd\u130b\u1275 \u12ed\u127d\u120b\u1209", 
  "Number of Rows": "\u12e8\u1228\u12f5\u134e\u127d \u1241\u1325\u122d", 
  "Show Answers": "\u1218\u120d\u1236\u127d\u1295 \u12a0\u1233\u12ed", 
@@ -610,7 +609,7 @@ translations = {
  "Ungroup iDevices": "\u12e8iDevices \u1261\u12f5\u1295\u1295 \u1260\u1275\u1295", 
  "Default browser in your system": "\u1260\u1235\u122d\u12d3\u1275\u12ce \u12cd\u1235\u1325 \u12eb\u1208 \u1290\u1263\u122a \u12a0\u1233\u123d", 
  "Right": "\u1240\u129d", 
- "HTML Course": "HTML \u12ae\u122d\u1235", 
+ "Help": "\u12a5\u1308\u12db", 
  "Style Element": "\u12e8\u1295\u1325\u1228 \u1290\u1308\u122d \u121d\u1235\u120d", 
  "Taxonomy": "\u1273\u12ad\u1236\u1296\u121a", 
  "Enter the new name:": "\u12a0\u12f2\u1231\u1295 \u1235\u121d \u12eb\u1235\u1308\u1261:", 

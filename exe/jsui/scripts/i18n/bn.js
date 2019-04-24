@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3\nReport-Msgid-Bugs-To: eXeLearning.net Translation Team <translations@exelearning.net>\nPOT-Creation-Date: 2019-03-30 12:32+0100\nPO-Revision-Date: 2018-12-02 17:14+0100\nLast-Translator: eXeLearning.net Translation Team <translations@exelearning.net>\nLanguage: bn\nLanguage-Team: bn <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: eXeLearning.net Translation Team <translations@exelearning.net>\nPOT-Creation-Date: 2019-04-24 16:55+0200\nPO-Revision-Date: 2018-12-02 17:14+0100\nLast-Translator: eXeLearning.net Translation Team <translations@exelearning.net>\nLanguage: bn\nLanguage-Team: bn <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "represent": "\u09a8\u09be\u09ae \u09aa\u09cd\u09b0\u09bf\u09b8\u09c7\u099f", 
  "Web pages footer.": "\u0993\u09df\u09c7\u09ac \u09aa\u09c7\u09a1 \u09ab\u09c1\u099f\u09be\u09b0\u0964", 
  "DropDown Activity": "\u09a1\u09cd\u09b0\u09aa\u09a1\u09be\u0989\u09a8 \u0995\u09be\u09b0\u09cd\u09af\u0995\u09b2\u09be\u09aa", 
@@ -321,7 +321,6 @@ translations = {
  "educational validator": "\u09b6\u09bf\u0995\u09cd\u09b7\u09be\u0997\u09a4 \u09ae\u09be\u09a8", 
  "Wrong Answer Feedback Overlay": "\u09ad\u09c1\u09b2 \u0989\u09a4\u09cd\u09a4\u09b0 \u09ab\u09bf\u09a1\u09ac\u09cd\u09af\u09be\u0995", 
  "Background image for a header (an image 100px high is recommended).": "\u09b9\u09c7\u09a1\u09be\u09b0\u09c7\u09b0 \u099c\u09a8\u09cd\u09af \u09aa\u099f\u09ad\u09c2\u09ae\u09bf\u0995\u09be\u09b0 \u099a\u09bf\u09a4\u09cd\u09b0 (\u098f\u0995\u099f\u09bf \u099a\u09bf\u09a4\u09cd\u09b0 100px \u0989\u0981\u099a\u09c1 \u09b8\u09c1\u09aa\u09be\u09b0\u09bf\u09b6\u0995\u09c3\u09a4)\u0964", 
- "Help": "\u09b8\u09be\u09b9\u09be\u09af\u09cd\u09af", 
  "You can close this window": "\u0986\u09aa\u09a8\u09bf \u098f\u0987 \u0989\u0987\u09a8\u09cd\u09a1\u09cb\u0995\u09c7 \u09ac\u09a8\u09cd\u09a7 \u0995\u09b0\u09a4\u09c7 \u09aa\u09be\u09b0\u09c7\u09a8", 
  "Number of Rows": "\u09b8\u09be\u09b0\u09bf\u09b0 \u09b8\u0982\u0996\u09cd\u09af\u09be", 
  "Show Answers": "\u0989\u09a4\u09cd\u09a4\u09b0 \u09a6\u09c7\u0996\u09be\u09a8", 
@@ -611,7 +610,7 @@ translations = {
  "Ungroup iDevices": "\u0986\u0987-\u09a1\u09bf\u09ad\u09be\u0987\u09b8\u0997\u09c1\u09b2\u09bf \u0986\u09a8\u0997\u09cd\u09b0\u09c1\u09aa \u0995\u09b0\u09c1\u09a8", 
  "Default browser in your system": "\u0986\u09aa\u09a8\u09be\u09b0 \u09b8\u09bf\u09b8\u09cd\u099f\u09c7\u09ae\u09c7 \u09a1\u09bf\u09ab\u09b2\u09cd\u099f \u09ac\u09cd\u09b0\u09be\u0989\u099c\u09be\u09b0", 
  "Right": "\u09a1\u09be\u09a8", 
- "HTML Course": "HTML \u0995\u09cb\u09b0\u09cd\u09b8", 
+ "Help": "\u09b8\u09be\u09b9\u09be\u09af\u09cd\u09af", 
  "Style Element": "\u0985\u0982\u09b6\u09c7\u09b0 \u099a\u09bf\u09a4\u09cd\u09b0", 
  "Taxonomy": "\u099f\u09cd\u09af\u09be\u0995\u09cd\u09b8\u09cb\u09a8\u09ae\u09bf", 
  "Enter the new name:": "\u09a8\u09a4\u09c1\u09a8 \u09a8\u09be\u09ae \u09aa\u09cd\u09b0\u09ac\u09c7\u09b6 \u0995\u09b0\u09be\u09a8:", 
