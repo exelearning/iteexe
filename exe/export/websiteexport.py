@@ -117,14 +117,18 @@ class WebsiteExport(object):
         ext = 'html'
         if G.application.config.cutFileName == "1":
             ext = 'htm'
-        if not page.node.idevices:self.report += u'"%s","%s",%d,"%s",,,,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext)
+        if not page.node.idevices:self.report += u'"%s","%s",%d,"%s",,,,,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext)
         for idevice in page.node.idevices:
-            if not idevice.userResources:self.report += u'"%s","%s",%d,"%s","%s","%s",,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title)
+            if not idevice.userResources:self.report += u'"%s","%s",%d,"%s","%s","%s",,,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title)
             for resource in idevice.userResources:
                 if type(resource) == Resource:
-                    self.report += u'"%s","%s",%d,"%s","%s","%s","%s","%s","%s","%s"\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource.storageName, resource.userName, resource.path, resource.checksum)
+                    try:
+                        resourceSize = os.path.getsize(resource.path)
+                    except:
+                        resourceSize = '?'                
+                    self.report += u'"%s","%s",%d,"%s","%s","%s","%s","%s","%s","%s","%s"\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource.storageName, resource.userName, resource.path, resource.checksum, resourceSize)
                 else:
-                    self.report += u'"%s",%d,"%s","%s","%s","%s",,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource)
+                    self.report += u'"%s",%d,"%s","%s","%s","%s",,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource)
 
     def export(self, package):
         """
@@ -151,7 +155,7 @@ class WebsiteExport(object):
         prevPage = None
         thisPage = self.pages[0]
         if self.report:
-            self.report = u'"%s","%s","%s","%s","%s","%s","%s","%s","%s","%s"\n' % ('File','Page Name', 'Level', 'Page File Name', 'Idevice Type', 'Idevice Title', 'Resource File Name', 'Resource User Name', 'Resource Path', 'Resource Checksum')
+            self.report = u'"%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s"\n' % ('File','Page Name', 'Level', 'Page File Name', 'Idevice Type', 'Idevice Title', 'Resource File Name', 'Resource User Name', 'Resource Path', 'Resource Checksum', 'Resource Size')
             self.appendPageReport(thisPage,package)
 
         for nextPage in self.pages[1:]:
