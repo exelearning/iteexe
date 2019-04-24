@@ -178,14 +178,6 @@ Ext.define('eXe.controller.Toolbar', {
             '#tools_templatemanager': {
                 click: this.toolsTemplateManager
             },
-            // Style designer
-            '#style_designer_new_style': {
-                click: this.styleDesigner.open
-            },
-            '#style_designer_edit_style': {
-                click: this.styleDesigner.editStyle
-            },
-            // / Style designer
             '#tools_preferences': {
                 click: this.toolsPreferences
             },
@@ -594,70 +586,6 @@ Ext.define('eXe.controller.Toolbar', {
         });
         templatemanager.show();
 	},
-
-	// Style designer
-	styleDesigner : {
-		open : function(btn, text){
-			styleDesignerWindow = window.open("/tools/style-designer/previews/website/");
-		},
-		notCompatible : function(){
-			Ext.Msg.alert("", _("Sorry, only styles created with the Editor can be edited. eXe's Styles are not editable"));
-		},
-		error : function(){
-			Ext.Msg.alert(_('Error'), _("An unknown error occurred."));
-		},
-		createNewStyleInstead : function(){
-			Ext.Msg.alert(_('Information'), _("That's one of eXe's default Styles, and it cannot be edited.\n\nPlease choose a different style or create a new one."));
-		},
-		errorSaving : function(){
-			Ext.Msg.alert(_('Error'), _("Your Style could not be saved because an unknown error occurred."));
-		},
-		editStyle : function(){
-			var stylePath = this.styleDesigner.getCurrentStyleFilePath();
-
-			// To review (there should be no hardcoded Styles)
-			// We check if the Style is part of eXeLearning
-			var nonEditableStyles = 'carm,default,EducaMadrid,FPD-MEDU,garden,ieda,INTEF,INTEF-web-horizontal-nav,Kahurangi,kids,kyoiku,MAX,seamist,silver,simplepoint,slate,standardwhite,Tknika,Todo-FP';
-				nonEditableStyles = nonEditableStyles.split(",");	
-				
-			var styleName = stylePath.replace("/style/","").split("/")[0];				
-				
-			// In that case, you cannot edit it
-			if (nonEditableStyles.indexOf(styleName)!=-1) {
-				this.styleDesigner.createNewStyleInstead();
-				return false;
-			}
-			
-			// We check if the Style is compatible with the tool
-			Ext.Ajax.request({
-				url: stylePath,
-				scope: this,
-				success: function(response) {
-					var res = response.responseText;
-					if (res.indexOf("/* eXeLearning Style Designer Compatible Style */")!=0) {
-						this.styleDesigner.notCompatible();
-					} else {
-						// If it's compatible, we open the Style designer
-						styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+this.styleDesigner.getCurrentStyleId());
-					}
-				},
-				error: function(){
-					this.styleDesigner.error();
-				}
-			});
-
-		},
-		getCurrentStyleId : function(){
-			var id = this.getCurrentStyleFilePath();
-			id = id.replace("/","");
-			id = id.split("/")[1];
-			return id;
-		},
-		getCurrentStyleFilePath : function(){ // It returns "/style/INTEF/content.css", being X your style
-			return document.getElementsByTagName("IFRAME")[0].contentWindow.exe_style;
-		}
-	},
-	// / Style designer
 
     fileQuit: function() {
 	    this.saveWorkInProgress();

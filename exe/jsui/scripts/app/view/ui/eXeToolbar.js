@@ -535,27 +535,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'accesskey_menuitem',
-                                text: _('Style Designer') + getSRhelp(),
-                                hidden: true,
-                                menu: {
-                                    xtype: 'menu',
-                                    items: [
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            itemId: 'style_designer_new_style',
-                                            accesskey: 'i',
-                                            text: _('Create new Style')
-                                        },
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            itemId: 'style_designer_edit_style',
-                                            text: _('Edit current Style')
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                xtype: 'accesskey_menuitem',
                                 text: _('Styles'),
                                 itemId: 'styles_button_advanced',
                                 menu: {
