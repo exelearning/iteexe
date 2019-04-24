@@ -65,7 +65,7 @@ Ext.define('eXe.controller.StyleManager', {
                         success: function(response) {
                             var res = response.responseText;
                             if (res.indexOf("/* eXeLearning Style Designer Compatible Style */")!=0) {
-                                Ext.Msg.alert("", _("Sorry, only styles created with the Editor can be edited. eXe's Styles are not editable"));
+                                Ext.Msg.alert("", _("Cannot edit the Style. It is not compatible with the Style Designer."));
                             } else {
                                 // If it's compatible, we open the Style designer
                                 styleDesignerWindow = window.open("/tools/style-designer/previews/website/?style="+element.value);
