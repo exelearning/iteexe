@@ -110,7 +110,8 @@ var $app = {
 		shadowColor : "999999"
 	},
 	nonEditableStyles : [
-		"base"
+		"base",
+		"docs"
 	],
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
