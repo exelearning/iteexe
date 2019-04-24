@@ -74,7 +74,7 @@ function xmlcreate(items,types) {
 
     return valxml;
 }
-function createButtonEdit(name, style) {
+function createButtonEdit(name, style, currentStyle) {
     var disabled = false;
     
     // To review (there should be no hardcoded Styles)
@@ -83,10 +83,13 @@ function createButtonEdit(name, style) {
         nonEditableStyles = nonEditableStyles.split(",");   
     if (nonEditableStyles.indexOf(style)!=-1) disabled = true;
     
+    var txt = _('Edit style: ')+name;
+    if (name==currentStyle) txt = _('Edit current Style');
+    
     var buttonEdit =
     {
         xtype: 'button',
-        tooltip: _('Export style: ')+name,
+        tooltip: txt,
         icon: '/images/stock-edit.png',
         itemId: 'edit_style'+style,
         button_class: 'edit_style',
@@ -192,7 +195,7 @@ function createPanelStyles(styles) {
             style:css,
             text: styles[i].name
         };
-        style.push(createButtonEdit(styles[i].name, styles[i].style));
+        style.push(createButtonEdit(styles[i].name, styles[i].style, currentStyle));
         style.push(createButtonPreExport(styles[i].name, styles[i].style,styles[i].exportButton));
         style.push(createButtonDelete(styles[i].name, styles[i].style, styles[i].deleteButton));
         style.push(createButtonProperties(styles[i].name, styles[i].style,styles[i].propertiesButton));
