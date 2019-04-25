@@ -40,7 +40,7 @@ Ext.define('eXe.view.ui.MainTabPanel', {
                     itemId: 'authoring',
                     src: eXe.app.config.authoringIFrameSrc,
                     id: 'authoringIFrame1',
-                    title: _('Authoring')
+                    title: _('Content')
                 },
                 {
                     xtype: 'tabpanel',

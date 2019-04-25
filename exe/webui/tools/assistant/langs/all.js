@@ -28,7 +28,7 @@ var $i18n = {
     Authorship : _('Author'),
     Content_License : _('License'),
     Click_Save : _('Click "Save".'),
-    Go_to_Authoring : _('Switch back to the "Authoring" tab.'),
+    Go_to_Authoring : _('Switch back to the "Content" tab.'),
     Remember_to_save : _('Remember to save your project whenever you change something.'),
     Now_you_can_add_pages : _('Now you can start adding pages to your project!'),
     How_to_add_pages : _('How to add pages'),
