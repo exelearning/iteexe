@@ -83,14 +83,13 @@ fieldset.collapsed-with-data > legend > div, fieldset.collapsed-with-data > lege
 #stylemanagerwin .repository-style .x-panel-body .repository-style-license, 
 #stylemanagerwin .repository-style .x-panel-body .repository-style-read-more {
   text-align: left;
-  margin-left: 1em;
+  margin: .5em 1em;
 }
 #stylemanagerwin .repository-style .x-panel-body .repository-style-author a,
 #stylemanagerwin .repository-style .x-panel-body .repository-style-license a,
 #stylemanagerwin .repository-style .x-panel-body .repository-style-read-more a {
 	text-decoration: none;
-	color: #5D7E1A;
-	font-weight: bold;
+	color: #BB0000;
 }
 #stylemanagerwin .repository-style .x-panel-body .repository-style-read-more a:before {
 	content: "+ ";

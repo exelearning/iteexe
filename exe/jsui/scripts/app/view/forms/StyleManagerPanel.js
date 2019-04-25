@@ -515,7 +515,7 @@ function createImportStyleUrlPanel(activeStyle) {
                 xtype: 'textfield',
                 itemId: 'style_import_url',
                 name: 'style_import_url',
-                fieldLabel: _('URL'),
+                emptyText: _('URL'),
                 tooltip: _('URL to download the style from.'),
                 margin: 3,
             },
