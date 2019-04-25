@@ -280,7 +280,7 @@ class StyleManagerPage(RenderableResource):
             self.style = ''
 
         try:
-            self.client.sendScript("Ext.Msg.wait(_('Updating styles list from repository...'));")
+            self.client.sendScript("Ext.Msg.wait('%s');"% _('Please wait...'))
             log.debug("Calling remote method 'exe_styles.listStyles' from %s"
                       % self.config.stylesRepository.encode('ascii'))
             self.proxy.callRemote('exe_styles.listStyles').addCallbacks(getStylesList, errorStylesList)
@@ -298,9 +298,9 @@ class StyleManagerPage(RenderableResource):
             self.__deleteStyle(styleDelete)
             # Import downloaded style
             self.doImportStyle(filename)
-            self.client.sendScript("Ext.MessageBox.alert('Correct', 'Style updated correctly')")
+            self.client.sendScript("Ext.MessageBox.alert('%s', '%s')" % (_('Correct'), _('Style updated correctly')))
         except:
-            self.client.sendScript("Ext.MessageBox.alert('Error', 'An unexpected error has occurred')")
+            self.client.sendScript("Ext.MessageBox.alert('%s', '%s')" % (_('Error'), _('An unexpected error has occurred')))
         finally:
             Path(filename).remove()
 
@@ -393,7 +393,7 @@ class StyleManagerPage(RenderableResource):
                 self.action = 'StylesRepository'
                 return
 
-            self.client.sendScript('Ext.MessageBox.progress("Style Download", "Connecting to style URL...")')
+            self.client.sendScript('Ext.MessageBox.progress("%s", "%s")' % (_('Downloading...'), _('Please wait...')))
 
             # Downloaded ZIP file must have the same name than the remote file,
             # otherwise file would be saved to a random temporary name, that
@@ -521,6 +521,6 @@ class StyleManagerPage(RenderableResource):
             percent = min((numblocks * blocksize * 100) / filesize, 100)
         except:
             percent = 100
-        client.sendScript('Ext.MessageBox.updateProgress(%f, "%d%%", "Downloading...")'
-                          % (float(percent) / 100, percent))
+        client.sendScript('Ext.MessageBox.updateProgress(%f, "%d%%", "%s")'
+                          % (float(percent) / 100, percent, _("Please wait...")))
         log.debug('%3d' % (percent))
