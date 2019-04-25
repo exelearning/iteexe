@@ -783,7 +783,8 @@ var $exe = {
     // Hide/Show iDevices (base.css hides this)
 	iDeviceToggler: {
         init: function() {
-            if ($(".iDevice").length < 2) return false;
+            var isEdition = typeof(exe_editor_mode)!="undefined" && $("#activeIdevice").length==1;
+            if ($(".iDevice").length < 2 && isEdition==false) return false;
             var t = $(".iDevice_header,.iDevice.emphasis0");
             t.each(function() {
                 var t = $exe_i18n.hide;
@@ -802,6 +803,7 @@ var $exe = {
 				$exe.iDeviceToggler.toggle(this,id[0],id[1]);
 				return false;
 			});
+			if (isEdition) $(".toggle-idevice a").trigger("click");
         },
         toggle: function(e, t, n) {
             var r = $exe_i18n.hide;
