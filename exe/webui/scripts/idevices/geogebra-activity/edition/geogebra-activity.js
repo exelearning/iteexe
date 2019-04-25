@@ -49,11 +49,12 @@ var $exeDevice = {
 	createForm : function(){
 		var html = '\
 			<div id="eXeAutoGeogebraForm">\
-				<p>'+_("Insert a GeoGebra activity from www.geogebra.org. It requires an Internet connection.")+'</p>\
-				<p>\
-					<label for="geogebraActivityInstructions">'+_("Instructions")+': </label><textarea id="geogebraActivityInstructions" class="exe-html-editor"\></textarea>\
-				</p>\
-				<fieldset>\
+				<p class="exe-idevice-description">'+_("Insert a GeoGebra activity from www.geogebra.org. It requires an Internet connection.")+'</p>\
+				<div class="exe-textarea-field">\
+					<label for="geogebraActivityInstructions">'+_("Instructions")+': </label>\
+					<textarea id="geogebraActivityInstructions" class="exe-html-editor"\></textarea>\
+				</div>\
+				<fieldset class="exe-fieldset">\
 					<legend>'+_("General Settings")+'</legend>\
 					<p>\
 						<label for="geogebraActivityURL">'+_("URL")+': </label><input type="text" name="geogebraActivityURL" id="geogebraActivityURL" /> \
@@ -64,34 +65,43 @@ var $exeDevice = {
 						<label for="geogebraActivityHeight">'+_("Height")+': </label><input type="text" max="1500" name="geogebraActivityHeight" id="geogebraActivityHeight" /> px\
 					</p>\
 				</fieldset>\
-				<fieldset id="eXeAutoGeogebraAdvancedOptions">\
-					<legend>'+_("Advanced Options")+'</legend>\
-					<p>\
-						<label for="geogebraActivityLang">'+_("Language")+': </label><input type="text" max="2" name="geogebraActivityLang" id="geogebraActivityLang" /> <span class="input-instructions">es, en, fr, de, ca, eu, gl...</span>\
-						<label for="geogebraActivityBorderColor">'+_("Border color")+': </label><input type="text" max="6" name="geogebraActivityBorderColor" id="geogebraActivityBorderColor" class="exe-color-picker" />\
-					</p>\
-					<div id="eXeAutoGeogebraCheckOptions">'+this.getTrueFalseOptions()+'</div>\
-					<p id="geogebraActivitySCORMblock">\
-						<label for="geogebraActivitySCORM"><input type="checkbox" name="geogebraActivitySCORM" id="geogebraActivitySCORM" /> '+_("Save score button")+'</label>\
-						<span id="geogebraActivitySCORMoptions">\
-							<label for="geogebraActivitySCORMbuttonText">'+_("Button text")+': </label>\
-							<input type="text" max="100" name="geogebraActivitySCORMbuttonText" id="geogebraActivitySCORMbuttonText" value="'+_("Save score")+'" /> \
-						</span>\
-					</p>\
-					<div id="geogebraActivitySCORMinstructions">\
-						<ul>\
-							<li>'+_("The button will only be displayed when exporting as SCORM and while editing in eXeLearning.")+'</li>\
-							<li>'+_('Include only one GeoGebra activity with a "Save score" button in the page.')+'</li>\
-							<li>'+_("The activity with button has to be the last GeoGebra activity on the page (or it won't work).")+'</li>\
-							<li>'+_('Do not include a "SCORM Quiz" iDevice in the same page.')+'</li>\
-						</ul>\
+				<fieldset id="eXeAutoGeogebraAdvancedOptions" class="exe-fieldset exe-feedback-fieldset">\
+					<legend><a href="#geogebraActivityLang" id="eXeAutoGeogebraAdvancedOptionsToggler">'+_("Advanced Options")+'</a></legend>\
+					<div>\
+						<p id="geogebraActivityLangWrapper">\
+							<label for="geogebraActivityLang">'+_("Language")+': </label><input type="text" max="2" name="geogebraActivityLang" id="geogebraActivityLang" /> <span class="input-instructions">es, en, fr, de, ca, eu, gl...</span>\
+							<label for="geogebraActivityBorderColor">'+_("Border color")+': </label><input type="text" max="6" name="geogebraActivityBorderColor" id="geogebraActivityBorderColor" class="exe-color-picker" />\
+						</p>\
+						<div id="eXeAutoGeogebraCheckOptions">'+this.getTrueFalseOptions()+'</div>\
+						<p id="geogebraActivitySCORMblock">\
+							<label for="geogebraActivitySCORM"><input type="checkbox" name="geogebraActivitySCORM" id="geogebraActivitySCORM" /> '+_("Save score button")+'</label>\
+							<span id="geogebraActivitySCORMoptions">\
+								<label for="geogebraActivitySCORMbuttonText">'+_("Button text")+': </label>\
+								<input type="text" max="100" name="geogebraActivitySCORMbuttonText" id="geogebraActivitySCORMbuttonText" value="'+_("Save score")+'" /> \
+							</span>\
+						</p>\
+						<div id="geogebraActivitySCORMinstructions">\
+							<ul>\
+								<li>'+_("The button will only be displayed when exporting as SCORM and while editing in eXeLearning.")+'</li>\
+								<li>'+_('Include only one GeoGebra activity with a "Save score" button in the page.')+'</li>\
+								<li>'+_("The activity with button has to be the last GeoGebra activity on the page (or it won't work).")+'</li>\
+								<li>'+_('Do not include a "SCORM Quiz" iDevice in the same page.')+'</li>\
+							</ul>\
+						</div>\
 					</div>\
 				</fieldset>\
 			</div>\
 		';
 		
-		var field = $("textarea.jsContentEditor").eq(0);
-		field.before(html);
+		// Insert the form
+        var field = $("#activeIdevice textarea");
+        field.before(html);
+		
+        // Fieldset toggler
+        $("#eXeAutoGeogebraAdvancedOptionsToggler").click(function(){
+            $("#eXeAutoGeogebraAdvancedOptions").toggleClass("closed-fieldset");
+            return false;
+        });
 		
 		$("#geogebraActivityURLexample").focus(function(){
 			this.select();

@@ -16,17 +16,21 @@ var $exeDevice = {
 	init : function(){
 		// Create the form
 		var html = "\
-			<p><label for='textIdeviceContent'>"+_('Text')+":</label></p>\
-			<p><textarea id='textIdeviceContent' class='exe-html-editor'\></textarea></p>\
-			<fieldset id='textIdeviceFeedback' class='closed-fieldset'>\
+			<div class='exe-textarea-field'>\
+				<label for='textIdeviceContent'>"+_('Text')+":</label>\
+				<textarea id='textIdeviceContent' class='exe-html-editor'\></textarea>\
+			</div>\
+			<fieldset id='textIdeviceFeedback' class='exe-fieldset exe-feedback-fieldset closed-fieldset'>\
 				<legend><a href='#textIdeviceFeedbackButtonText' id='textIdeviceFeedbackToggler'>"+_('Feedback')+" ("+_('Optional').toLowerCase()+")</a></legend>\
 				<div>\
-                    <p>\
+                    <p class='exe-inline-text-field'>\
                         <label for='textIdeviceFeedbackButtonText'>"+_("Feedback button text")+":</label>\
                         <input type='text' id='textIdeviceFeedbackButtonText' value='"+_("Show Feedback")+"' />\
                     </p>\
-                    <p class='sr-av'><label for='textIdeviceFeedbackContent'>"+_('Feedback')+":</label></p>\
-                    <p><textarea id='textIdeviceFeedbackContent' class='exe-html-editor'\></textarea></p>\
+                    <p>\
+						<label for='textIdeviceFeedbackContent' class='sr-av'>"+_('Feedback')+":</label>\
+						<textarea id='textIdeviceFeedbackContent' class='exe-html-editor'\></textarea>\
+					</p>\
                 </div>\
 			</fieldset>\
 			";

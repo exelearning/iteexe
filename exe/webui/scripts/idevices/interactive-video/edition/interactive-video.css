@@ -21,7 +21,7 @@ input[name=interactiveVideoType]{margin-left:2em;vertical-align:top}
 @media screen and (max-width:720px) {
 	#interactiveVideoIdeviceFormTab1 .ci18n{width:100%;float:none}	
 }
-#interactiveVideoIdeviceFormTab1 label{display:block;font-weight:bold;margin-bottom:.2em}
+#interactiveVideoIdeviceFormTab1 label{display:block;font-weight:bold;margin-bottom:5px}
 #interactiveVideoIdeviceFormTab1 input{width:300px}
 
 /* Tabs */

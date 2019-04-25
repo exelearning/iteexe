@@ -82,10 +82,9 @@ class JsBlock(Block):
         html += '<label for="title'+self.id+'">'+_('Title')+':</label> '
         html += common.elementInstruc(_('The title and the icon are not required. If you leave them empty the iDevice will have no emphasis.'))
         html += '</span>'
-        html += common.textInput("title" + self.id, self.idevice.title)
         html += common.hiddenField("iconiDevice" + self.id, self.idevice.icon)
-        html += u'<a class="js-show-icon-panel-button" href="javascript:showMessageBox(\'iconpanel\');" title="%s">%s</a>' % (_('Select an icon'),_('Icon'))
-
+        html += u'<a class="js-show-icon-panel-button" href="javascript:showMessageBox(\'iconpanel\');" title="%s"><img src="/images/stock-insert-image.png" alt="%s" width="16" height="16" /></a>' % (_('Select an icon'),_('Choose an Image'))        
+        
         # Get icon source (if it exists)
         icon = self.idevice.icon
         icon_exists = False
@@ -114,12 +113,15 @@ class JsBlock(Block):
         html += u'>'
         html += u'<img class="js-delete-icon" alt="%s" src="%s"/>' % (_('Delete'), '/images/stock-delete.png')
         html += u'</a>'
+        
+        html += common.textInput("title" + self.id, self.idevice.title)
 
         html += u'<div class="js-icon-panel-container">'
         html += u'<div id="iconpaneltitle">%s</div>' % _("Icons")
         html += u'<div id="iconpanelcontent">'
         html += self.__renderIcons(style)
         html += u'</div>'
+        
         html += u'</div>'
         html += u"</div>"
 

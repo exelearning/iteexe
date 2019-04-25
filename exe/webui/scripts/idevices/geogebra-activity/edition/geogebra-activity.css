@@ -1,6 +1,5 @@
 /* GeoGebra Activity iDevice (edition CSS) */
 #geogebraActivitySCORMoptions{visibility:hidden;margin-left:1.5em}
-label[for=geogebraActivityInstructions]{font-weight:bold}
 #geogebraActivityInstructions{width:500px}
 #geogebraActivityURL,#geogebraActivityURLexample{width:250px;margin-right:1.5em}
 #geogebraActivityWidth,#geogebraActivityHeight,#geogebraActivityLang,#geogebraActivityBorderColor{width:70px}
@@ -9,8 +8,6 @@ label[for=geogebraActivityHeight]{margin-left:1.5em}
 label[for=geogebraActivitySCORM]{font-weight:bold}
 #eXeAutoGeogebraCheckOptions{overflow:auto;margin:1em 0 .5em 0}
 #eXeAutoGeogebraForm p{margin-bottom:1.5em}
-#eXeAutoGeogebraForm fieldset{padding:10px 20px;border:1px solid #C0C0C0;margin:1.5em 0}
-#eXeAutoGeogebraForm legend{font-weight:bold;padding:0 10px}
 #eXeAutoGeogebraAdvancedOptions p{margin:.7em 0}
 #eXeAutoGeogebraCheckOptions p{width:300px;float:left;margin:0;line-height:2.5em}
 .input-instructions{color:#999;margin-right:1.5em}

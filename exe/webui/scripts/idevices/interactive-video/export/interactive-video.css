@@ -66,11 +66,11 @@ height:316px;margin:0 auto;overflow:auto;display:none}
 #activity-results-toggler{font-size:1.1em;font-weight:normal;margin:20px 0 0}
 
 #activity-results table{font-size:12px;background:#fff;margin:10px 0 25px 0;width:100%;border-collapse:collapse;text-align:left}
-#activity-results th,#activity-results #resultsSummary{font-size:14px;font-weight:400;color:#039;padding:10px 0;border-bottom:2px solid #6678b1}
+#activity-results th,#activity-results #resultsSummary{font-size:14px;font-weight:400;color:#333;padding:10px 0;border-bottom:2px solid #808080}
 #activity-results #resultsSummaryTH{font-weight:bold}
-#activity-results #resultsSummaryTH em{font-style:normal;font-weight:normal;color:#669;margin-left:.2em;font-size:12px}
+#activity-results #resultsSummaryTH em{font-style:normal;font-weight:normal;color:#000;margin-left:.2em;font-size:12px}
 .activity-completed #resultsSummaryTH em{display:none}
-#activity-results td{border-bottom:1px solid #e7e7e7;color:#669;padding:6px 0}
+#activity-results td{border-bottom:1px solid #e7e7e7;color:#000;padding:6px 0}
 tr.even td{background:#f7f7f7}
 #activity-results .title,#activity-results .order span,#activity-results tr a{display:block}
 #activity-results tr a,#activity-results tr span{text-indent:8px;display:inline-block}

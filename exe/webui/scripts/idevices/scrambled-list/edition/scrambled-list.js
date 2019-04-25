@@ -21,13 +21,22 @@ var $exeDevice = {
 		
 		var html = '\
 			<div id="sortableListForm">\
-				<p><label for="sortableListFormInstructions">'+_("Instructions")+': </label><input type="text" class="sortableListTextOption" name="sortableListFormInstructions" id="sortableListFormInstructions" /></p>\
+				<p class="exe-text-field">\
+					<label for="sortableListFormInstructions">'+_("Instructions")+': </label>\
+					<input type="text" class="sortableListTextOption" name="sortableListFormInstructions" id="sortableListFormInstructions" />\
+				</p>\
 				'+this.getListsFields()+'\
-				<p><label for="sortableListButtonText">'+_("Button text")+': </label><input type="text" class="sortableListTextOption" name="sortableListButtonText" id="sortableListButtonText" onfocus="this.select()" /></p>\
-				<p><label for="sortableListRightText">'+_("Correct Answer Feedback Overlay")+': </label><input type="text" class="sortableListTextOption" name="sortableListRightText" id="sortableListRightText" onfocus="this.select()" /></p>\
-				<p>\
-                <label for="sortableListWrongText">'+_("Wrong Answer Feedback Overlay")+': </label><input type="text" class="sortableListTextOption" name="sortableListWrongText" id="sortableListWrongText" onfocus="this.select()" />\
-                <span id="sortableListWrongTextTip">'+_("The right answer will be shown after this text.")+'</span>\
+				<p class="exe-text-field">\
+					<label for="sortableListButtonText">'+_("Button text")+': </label>\
+					<input type="text" class="sortableListTextOption" name="sortableListButtonText" id="sortableListButtonText" onfocus="this.select()" />\
+				</p>\
+				<p class="exe-text-field">\
+					<label for="sortableListRightText">'+_("Correct Answer Feedback Overlay")+': </label>\
+					<input type="text" class="sortableListTextOption" name="sortableListRightText" id="sortableListRightText" onfocus="this.select()" />\
+				</p>\
+				<p class="exe-text-field">\
+					<label for="sortableListWrongText">'+_("Wrong Answer Feedback Overlay")+': </label><input type="text" class="sortableListTextOption" name="sortableListWrongText" id="sortableListWrongText" onfocus="this.select()" />\
+					<span id="sortableListWrongTextTip">'+_("The right answer will be shown after this text.")+'</span>\
                 </p>\
 			</div>\
 		';

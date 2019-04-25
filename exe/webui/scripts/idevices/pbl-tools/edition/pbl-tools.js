@@ -16,7 +16,7 @@ var $exeDevice = {
 	init : function(){
 		// Add some instructions
 		var html = "\
-			<fieldset id='pblTaskInfo'>\
+			<fieldset id='pblTaskInfo' class='exe-fieldset'>\
 				<legend>"+_('Task information')+"</legend>\
 				<p>\
 					<label for='pblTaskDuration'>"+_("Estimated duration")+":</label>\
@@ -31,17 +31,21 @@ var $exeDevice = {
 					<input type='text' id='pblTaskParticipantsText' value='"+_("Grouping")+":' />\
 				</p>\
 			</fieldset>\
-			<p><label for='pblTaskDescription'>"+_('Describe the tasks that the learners should complete:')+"</label></p>\
-			<p><textarea id='pblTaskDescription' class='exe-html-editor'\></textarea></p>\
-			<fieldset id='pblTaskFeedback' class='closed-fieldset'>\
+			<div class='exe-textarea-field'>\
+				<label for='pblTaskDescription'>"+_('Describe the tasks that the learners should complete:')+"</label>\
+				<textarea id='pblTaskDescription' class='exe-html-editor'\></textarea>\
+			</div>\
+			<fieldset id='pblTaskFeedback' class='exe-fieldset exe-feedback-fieldset closed-fieldset'>\
 				<legend><a href='#pblTaskFeedbackButtonText' id='pblFeedbackToggler'>"+_('Feedback')+" ("+_('Optional').toLowerCase()+")</a></legend>\
 				<div>\
-					<p>\
+					<p class='exe-inline-text-field'>\
 						<label for='pblTaskFeedbackButtonText'>"+_("Feedback button text")+":</label>\
 						<input type='text' id='pblTaskFeedbackButtonText' value='"+_("Show Feedback")+"' />\
 					</p>\
-					<p class='sr-av'><label for='pblTaskFeedbackContent'>"+_('Feedback')+":</label></p>\
-					<p><textarea id='pblTaskFeedbackContent' class='exe-html-editor'\></textarea></p>\
+					<p>\
+						<label for='pblTaskFeedbackContent' class='sr-av'>"+_('Feedback')+":</label>\
+						<textarea id='pblTaskFeedbackContent' class='exe-html-editor'\></textarea>\
+					</p>\
 				<div>\
 			</fieldset>\
 			";
