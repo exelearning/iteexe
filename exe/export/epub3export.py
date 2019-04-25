@@ -706,7 +706,7 @@ class Epub3Export(object):
             langGameFile = open(contentPages + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
-        if hasElpLink or (hasattr(package, '_exportElp') and package.get_exportElp()):
+        if hasElpLink or package.get_exportElp():
             # Export the elp file
             currentPackagePath = Path(package.filename)
             currentPackagePath.copyfile(contentPages/package.name+'.elp')

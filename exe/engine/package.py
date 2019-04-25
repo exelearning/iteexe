@@ -812,7 +812,10 @@ class Package(Persistable):
         :rtype: boolean
         :return: Flag indicating wheter we should add a search box or not (Web Site export only)
         """
-        return self._addSearchBox
+        if hasattr(self, '_addSearchBox'):
+            return self._addSearchBox
+        else:
+            return False
 
     def set_exportElp(self, exportElp):
         """
@@ -830,7 +833,10 @@ class Package(Persistable):
         :rtype: boolean
         :return: Flag indicating wheter the elp has to be exported or not, even if there's no link to the elp in the HTML
         """
-        return self._exportElp
+        if hasattr(self, '_exportElp'):
+            return self._exportElp
+        else:
+            return False
 
     def set_isTemplate(self, isTemplate):
         """

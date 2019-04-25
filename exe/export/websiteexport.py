@@ -125,7 +125,7 @@ class WebsiteExport(object):
                     try:
                         resourceSize = os.path.getsize(resource.path)
                     except:
-                        resourceSize = '?'                
+                        resourceSize = '?'
                     self.report += u'"%s","%s",%d,"%s","%s","%s","%s","%s","%s","%s","%s"\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource.storageName, resource.userName, resource.path, resource.checksum, resourceSize)
                 else:
                     self.report += u'"%s",%d,"%s","%s","%s","%s",,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource)
@@ -327,7 +327,7 @@ class WebsiteExport(object):
             langGameFile = open(outputDir + '/common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
-        if hasElpLink or (hasattr(package, '_exportElp') and package.get_exportElp()):
+        if hasElpLink or package.get_exportElp():
             # Export the elp file
             currentPackagePath = Path(package.filename)
             currentPackagePath.copyfile(outputDir/package.name+'.elp')
