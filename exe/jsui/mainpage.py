@@ -281,8 +281,6 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.hideMetadataWarningForever, 'hideMetadataWarningForever')
         setUpHandler(self.handlePackagePropertiesValidation, 'validatePackageProperties')
 
-        setUpHandler(self.handleCancelOpenOldPackage, 'cancelOpenOldPackage')
-
         self.idevicePane.client = client
         self.styleMenu.client = client
         self.templateMenu.client = client
@@ -500,18 +498,10 @@ class MainPage(RenderableLivePage):
     def handleLoadPackage(self, client, filename, filter_func=None):
         """Load the package named 'filename'"""
         package = self._loadPackage(client, filename, newLoad=True)
-
-        # Check package release, if it does not have the release attribute or is lower than the eXe version,
-        # it shows a confirmation message to open or not the package
-        if package.get_release() is None or package.get_release() < release:
-            self.tempPackage = package
-            js_filter_func = json.dumps(filter_func)
-            client.call(u'eXe.app.getController("MainTab").onLoadOldPackage', js_filter_func)
-        else:
-            self.session.packageStore.addPackage(package)
-            self.webServer.root.bindNewPackage(package, self.session)
-            client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
-                          package.name).encode('utf8'), filter_func=filter_func)
+        self.session.packageStore.addPackage(package)
+        self.webServer.root.bindNewPackage(package, self.session)
+        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
+                        package.name).encode('utf8'), filter_func=filter_func)
 
     def handleLoadTemplate(self, client, filename):
         """Load the template named 'filename'"""
@@ -1758,16 +1748,5 @@ class MainPage(RenderableLivePage):
             log.error(u'Traceback:\n%s' % traceback.format_exc())
             raise
         return package
-
-
-    def handleCancelOpenOldPackage(self, client, filter_func):
-        """ If confirm open old package, load package """
-
-        filter_func = json.loads(filter_func)
-        self.session.packageStore.addPackage(self.tempPackage)
-        self.webServer.root.bindNewPackage(self.tempPackage, self.session)
-        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
-                    self.tempPackage.name).encode('utf8'), filter_func=filter_func)
-
 
 
