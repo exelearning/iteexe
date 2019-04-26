@@ -254,34 +254,42 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 .mce-floatpanel{max-height:100%;overflow:auto}
 .mce-fullscreen .idevice-edition-buttons{display:none}
 
-.exe-authoring-page #activeIdevice{padding:1.5em 0}
+/* iDevice edition */
+.exe-authoring-page #activeIdevice{padding-top:1.5em}
+#activeIdevice .exe-editButtons{margin-bottom:1.5em}
 #activeIdevice .exe-editButtons{line-height:16px}
 #activeIdevice .exe-editButtons select{font-size:11px;font-family:tahoma,arial,verdana,sans-serif;vertical-align:top;margin:1px 0 0 5px}
 
 /* JavaScript iDevices */
-textarea.jsContentEditor{display:none}
+#activeIdevice textarea.jsContentEditor{display:none}
 /* iDevice title and icon selection styles */
 .js-show-icon-panel-button{margin:0 5px;font-size:.9em}
-.js-idevide-icon-preview {vertical-align:middle;max-width:60px;height:auto}
+.js-idevide-icon-preview{vertical-align:middle;max-width:60px;height:auto}
 .js-delete-icon{margin:0 5px}
 .js-icon-panel-container{display:none;z-index:99}
 /* Forms */
-.exe-idevice-description{font-size:.95em}
-.exe-feedback-fieldset p:last-child{margin-top:30px}
-.exe-textarea-field{margin:20px 0}
-.js-idevice-title-label,
-.exe-text-field label,
-.exe-textarea-field label{font-weight:bold;display:block;margin-bottom:5px}
+#activeIdevice .exe-idevice-description{font-size:.95em}
+#activeIdevice .exe-feedback-fieldset p:last-child{margin-top:30px}
+#activeIdevice .exe-textarea-field{margin:20px 0}
+#activeIdevice .js-idevice-title-label,
+#activeIdevice .exe-text-field label,
+#activeIdevice .exe-textarea-field label{font-weight:bold;display:block;margin-bottom:5px}
+#activeIdevice .exe-text-field.with-instructions label{display:inline-block}
+#activeIdevice .exe-text-field.with-instructions input{display:block;margin-top:5px}
 #activeIdevice .exe-fieldset{padding:0 20px 5px 20px;border:1px solid #C0C0C0;margin:1.5em 0}
 #activeIdevice .exe-fieldset legend{font-weight:bold;padding:0 10px}
-.exe-inline-text-field label{padding-right:5px}
-.closed-fieldset legend a{text-decoration:underline}
-.closed-fieldset legend a:hover{text-decoration:none}
+#activeIdevice .exe-inline-text-field label{padding-right:5px}
+#activeIdevice .closed-fieldset legend a{text-decoration:underline}
+#activeIdevice .closed-fieldset legend a:hover{text-decoration:none}
 #activeIdevice .closed-fieldset{border:none;padding:0}
-#activeIdevice .closed-fieldset legend{padding:0}
+#activeIdevice .closed-fieldset legend{padding:0;margin-bottom:0}
 #activeIdevice .closed-fieldset div{display:none}
+#activeIdevice .exe-block-instructions{display:block;font-size:.9em;margin-top:.4em}
 
 /* Empty page instructions */
 #emptyPageInstructions{margin-top:2em;position:relative;padding-right:30px}
 #emptyPageInstructions a{position:absolute;right:13px;top:7px;font-size:18px;font-family:Verdana,sans-serif;color:#86A9BB;text-shadow:0 1px 0 #fff;font-weight:bold}
 #emptyPageInstructions a:hover,#emptyPageInstructions a:focus{color:#063853;text-decoration:none}
+
+/* Provisional code to review */
+.jsContentEditor + br{display:none}

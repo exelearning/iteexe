@@ -1007,10 +1007,10 @@ def elementInstruc(instruc, imageFile="help.gif", label=None):
         html += u'<img class="help" alt="%s" ' % _(u'Click for completion instructions')
         html += u'src="/images/%s" style="vertical-align:middle;"/>' % imageFile
         html += u'</a>\n'
-        html += u'<div style="display:none;">'
-        html += u'<div id="%stitle">%s</div>' % (id_, label)
-        html += u'<div id="%scontent">%s</div>' % (id_, instruc)
-        html += u'</div>\n'
+        html += u'<span style="display:none;">'
+        html += u'<span id="%stitle">%s</span> ' % (id_, label)
+        html += u'<span id="%scontent">%s</span>' % (id_, instruc)
+        html += u'</span>\n'
     return html
 
 def formField(type_, package, caption, action, object_='', instruction='', \

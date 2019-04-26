@@ -77,7 +77,7 @@ class JsBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html = u'<div><div class="block">'
+        html = u'<div>'
         html += '<span class="js-idevice-title-label">'
         html += '<label for="title'+self.id+'">'+_('Title')+':</label> '
         html += common.elementInstruc(_('The title and the icon are not required. If you leave them empty the iDevice will have no emphasis.'))
@@ -122,11 +122,10 @@ class JsBlock(Block):
         html += self.__renderIcons(style)
         html += u'</div>'
         
-        html += u'</div>'
         html += u"</div>"
 
         for element in self.elements:
-            html += element.renderEdit() + u'<br />'
+            html += element.renderEdit()
 
         html += self.renderEditButtons()
         html += u"</div>"

@@ -219,7 +219,7 @@ class Block(Renderable):
         Returns an XHTML string for the edit buttons
         """
         
-        html = '<span class="exe-editButtons">'
+        html = '<p class="exe-editButtons">'
         
         html += '<span id="exe-submitButton">'
         html += common.submitImage(u"done", self.id, 
@@ -281,7 +281,7 @@ class Block(Renderable):
                 
             html += u'</div>\n'    
         
-        html += '</span>' # /exe-editButtons
+        html += '</p>' # /exe-editButtons
         
         return html
 
