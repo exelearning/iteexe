@@ -343,6 +343,40 @@ Ext.application({
             }
         }
     },
+    
+    createEmptyPageInstructions : function(){
+        var a = document.getElementById("hide_exe_leftpanel");
+        if (a && a.offsetParent != null) { // The left panel is visible
+            if (!Ext.util.Cookies.get('eXeShowContentInstructions')) {
+                var iframe = document.getElementsByTagName('iframe');
+                if (iframe.length==1) {
+                    var iframe = iframe[0];
+                    var doc = iframe.contentWindow.document;                    
+                    if (doc && doc.getElementsByClassName) {
+                        var iDevices = doc.getElementsByClassName("iDevice");
+                        if (iDevices.length==0 && !doc.getElementById("activeIdevice")) {
+                            var div = doc.getElementById("main");
+                            if (div) {
+                                div.style.minHeight = "400px";
+                                var msg = _('Click on the elements of the left panel to add content.');
+                                    msg += ' ' + '<a href="#" id="emptyPageInstructionsLink"><span class="sr-av">' + _("Don't show this warning again") + ' </span>×</a>';
+                                div.innerHTML += '<p class="exe-block-info" id="emptyPageInstructions">'+msg+'</p>';
+                                var a = doc.getElementById("emptyPageInstructionsLink");
+                                if (a) {
+                                    a.onclick = function(){
+                                        var div = doc.getElementById("emptyPageInstructions");
+                                        if (div) div.style.display = "none";
+                                        Ext.util.Cookies.set('eXeShowContentInstructions', 'no');
+                                        return false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }        
+    },
 
     appFolder: "jsui/app"
 
