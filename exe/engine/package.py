@@ -77,6 +77,7 @@ from exe.engine.persistxml     import encodeObjectToXML, decodeObjectFromXML
 from exe.engine.lom import lomsubs
 from exe.engine.checker import Checker
 from exe.webui import common
+from exe.engine.version        import release, revision
 
 log = logging.getLogger(__name__)
 
@@ -397,12 +398,12 @@ class Package(Persistable):
 
         #Flag to add page counters
         self._addPagination = False
-        
+
         #Flag to add a search box in the web site export
         self._addSearchBox = False
-        
+
         #Flag to export the elp (even if there's no link to the elp in the HTML)
-        self._exportElp = False        
+        self._exportElp = False
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
@@ -412,6 +413,9 @@ class Package(Persistable):
         self.isLoading = False
         self._isTemplate = False
         self._templateFile = ""
+
+        # eXe version that save a package
+        self.release = release
 
     def setLomDefaults(self):
         self.lom = lomsubs.lomSub.factory()
@@ -791,7 +795,7 @@ class Package(Persistable):
         :return: Flag indicating wheter we should add pagination counters or not.
         """
         return self._addPagination
-        
+
     def set_addSearchBox(self, addSearchBox):
         """
         Set _addSearchBox flag.
@@ -808,8 +812,11 @@ class Package(Persistable):
         :rtype: boolean
         :return: Flag indicating wheter we should add a search box or not (Web Site export only)
         """
-        return self._addSearchBox
-        
+        if hasattr(self, '_addSearchBox'):
+            return self._addSearchBox
+        else:
+            return False
+
     def set_exportElp(self, exportElp):
         """
         Set _exportElp flag.
@@ -826,7 +833,10 @@ class Package(Persistable):
         :rtype: boolean
         :return: Flag indicating wheter the elp has to be exported or not, even if there's no link to the elp in the HTML
         """
-        return self._exportElp        
+        if hasattr(self, '_exportElp'):
+            return self._exportElp
+        else:
+            return False
 
     def set_isTemplate(self, isTemplate):
         """
@@ -863,6 +873,18 @@ class Package(Persistable):
         :return: Template's file name.
         """
         return self._templateFile
+
+    def get_release(self):
+        """
+        Returns resource value.
+
+        :rtype: string
+        :return: Package release
+        """
+        if hasattr(self, 'release'):
+            return self.release
+        else:
+            return None
 
     def license_map(self, source, value):
         '''From document "ANEXO XIII ANÁLISIS DE MAPEABILIDAD LOM/LOM-ES V1.0"'''
@@ -2112,4 +2134,7 @@ class Package(Persistable):
             self._addSearchBox = False
         if not hasattr(self, '_exportElp'):
             self._exportElp = False
+
+        if not hasattr(self, 'release'):
+            self.release = release
 # ===========================================================================

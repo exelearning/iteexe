@@ -156,7 +156,7 @@ class WebsitePage(Page):
         html += common.getExtraHeadContent(self.node.package)
         html += u"</head>"+lb
         extraCSS = ''
-        if (hasattr(self.node.package, '_addSearchBox') and self.node.package.get_addSearchBox()) and self.node.package.exportSource:
+        if self.node.package.get_addSearchBox() and self.node.package.exportSource:
             extraCSS = ' exe-search-bar'
         html += u'<body class="exe-web-site'+extraCSS+'" id="exe-node-'+self.node.id+'"><script type="text/javascript">document.body.className+=" js"</script>'+lb
         html += u"<div id=\"content\">"+lb

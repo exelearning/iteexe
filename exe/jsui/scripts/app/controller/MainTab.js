@@ -617,5 +617,23 @@ Ext.define('eXe.controller.MainTab', {
     // Add return for it to work save, export, exit... from the main menu
     doNothing: function() {
         return;
+    },
+
+    onLoadOldPackage: function(filter_func) {
+        // Show dialog to confirm if open an old package
+        Ext.Msg.show({
+            title: _('Warning!'),
+            msg:_('You are trying to open a package was created with an older version of eXe.')
+                + '<br /><br />'
+                + _('Are you sure you want open this package?'),
+            scope: this,
+            modal: true,
+            buttons: Ext.Msg.YESNO,
+            fn: function(button) {
+                if (button == "yes") {
+                    nevow_clientToServerEvent('cancelOpenOldPackage', this, '', filter_func);
+                }
+            }
+        });
     }
 });
