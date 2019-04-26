@@ -23,7 +23,7 @@ var $exeDevice = {
 			<fieldset id='textIdeviceFeedback' class='exe-fieldset exe-feedback-fieldset exe-fieldset-closed'>\
 				<legend><a href='#'>"+_('Feedback')+" ("+_('Optional').toLowerCase()+")</a></legend>\
 				<div>\
-                    <p class='exe-inline-text-field'>\
+                    <p class='exe-text-field-inline'>\
                         <label for='textIdeviceFeedbackButtonText'>"+_("Feedback button text")+":</label>\
                         <input type='text' id='textIdeviceFeedbackButtonText' value='"+_("Show Feedback")+"' />\
                     </p>\

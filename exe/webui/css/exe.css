@@ -256,7 +256,7 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 
 /* iDevice edition */
 .exe-authoring-page #activeIdevice{padding-top:1.5em}
-#activeIdevice .exe-editButtons{margin-bottom:1.5em}
+#activeIdevice .exe-editButtons{margin:1.5em 0}
 #activeIdevice .exe-editButtons{line-height:16px}
 #activeIdevice .exe-editButtons select{font-size:11px;font-family:tahoma,arial,verdana,sans-serif;vertical-align:top;margin:1px 0 0 5px}
 
@@ -271,20 +271,19 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 #activeIdevice .exe-idevice-description{font-size:.95em}
 #activeIdevice .exe-feedback-fieldset p:last-child{margin-top:30px}
 #activeIdevice .exe-textarea-field{margin:20px 0}
-#activeIdevice .js-idevice-title-label,
-#activeIdevice .exe-text-field label,
-#activeIdevice .exe-textarea-field label{font-weight:bold;display:block;margin-bottom:5px}
-#activeIdevice .exe-text-field.with-instructions label{display:inline-block}
-#activeIdevice .exe-text-field.with-instructions input{display:block;margin-top:5px}
+#activeIdevice .exe-text-field label{font-weight:bold}
+#activeIdevice .exe-text-field-inline label{padding-right:5px}
+#activeIdevice .exe-text-field input{display:block;margin-top:5px}
+#activeIdevice .exe-textarea-field label,
+#activeIdevice .js-idevice-title-label{font-weight:bold;display:block;margin-bottom:5px}
 #activeIdevice .exe-fieldset{padding:0 20px 5px 20px;border:1px solid #C0C0C0;margin:1.5em 0}
 #activeIdevice .exe-fieldset legend{font-weight:bold;padding:0 10px}
-#activeIdevice .exe-inline-text-field label{padding-right:5px}
 #activeIdevice .exe-fieldset-closed legend a{text-decoration:underline}
 #activeIdevice .exe-fieldset-closed legend a:hover{text-decoration:none}
 #activeIdevice .exe-fieldset-closed{border:none;padding:0}
 #activeIdevice .exe-fieldset-closed legend{padding:0;margin-bottom:0}
 #activeIdevice .exe-fieldset-closed div{display:none}
-#activeIdevice .exe-block-instructions{display:block;font-size:.9em;margin-top:.4em}
+#activeIdevice .exe-field-instructions{display:block;font-size:.9em;margin-top:.4em}
 
 /* Empty page instructions */
 #emptyPageInstructions{margin-top:2em;position:relative;padding-right:30px}

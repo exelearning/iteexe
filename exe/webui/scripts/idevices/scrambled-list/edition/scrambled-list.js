@@ -36,7 +36,7 @@ var $exeDevice = {
 				</p>\
 				<p class="exe-text-field">\
 					<label for="sortableListWrongText">'+_("Wrong Answer Feedback Overlay")+': </label><input type="text" class="sortableListTextOption" name="sortableListWrongText" id="sortableListWrongText" onfocus="this.select()" />\
-					<span id="sortableListWrongTextTip" class="exe-block-instructions">'+_("The right answer will be shown after this text.")+'</span>\
+					<span class="exe-field-instructions">'+_("The right answer will be shown after this text.")+'</span>\
                 </p>\
 			</div>\
 		';

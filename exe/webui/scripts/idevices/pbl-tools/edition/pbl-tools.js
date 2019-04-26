@@ -38,7 +38,7 @@ var $exeDevice = {
 			<fieldset id='pblTaskFeedback' class='exe-fieldset exe-feedback-fieldset exe-fieldset-closed'>\
 				<legend><a href='#'>"+_('Feedback')+" ("+_('Optional').toLowerCase()+")</a></legend>\
 				<div>\
-					<p class='exe-inline-text-field'>\
+					<p class='exe-text-field-inline'>\
 						<label for='pblTaskFeedbackButtonText'>"+_("Feedback button text")+":</label>\
 						<input type='text' id='pblTaskFeedbackButtonText' value='"+_("Show Feedback")+"' />\
 					</p>\

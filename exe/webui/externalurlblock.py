@@ -63,11 +63,11 @@ class ExternalUrlBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u'<p class="exe-text-field with-instructions">\n'
+        html  = u'<p class="exe-text-field">\n'
         html += u"<label for='url%s'>%s</label> " % (self.id, _('URL:'))
         html += common.elementInstruc(self.idevice.urlInstruc)
         html += common.textInput("url"+self.id, self.idevice.url) 
-        html += ' <span class="exe-block-instructions">' + _("Remember that HTTP pages cannot be included into HTTPS websites.") + '</span>'
+        html += ' <span class="exe-field-instructions">' + _("Remember that HTTP pages cannot be included into HTTPS websites.") + '</span>'
         heightArr = [[_('small'),      '200'],
                      [_('medium'),     '300'],
                      [_('large'),      '500'],
