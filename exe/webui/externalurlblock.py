@@ -63,18 +63,16 @@ class ExternalUrlBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u'<div class="block">\n'
-        html += u"<strong>%s</strong> " % _('URL:')
+        html  = u'<p class="exe-text-field with-instructions">\n'
+        html += u"<label for='url%s'>%s</label> " % (self.id, _('URL:'))
         html += common.elementInstruc(self.idevice.urlInstruc)
-        html += u"</div>\n"
-        html += u'<div class="block">\n'
         html += common.textInput("url"+self.id, self.idevice.url) 
+        html += ' <span class="exe-block-instructions">' + _("Remember that HTTP pages cannot be included into HTTPS websites.") + '</span>'
         heightArr = [[_('small'),      '200'],
                      [_('medium'),     '300'],
                      [_('large'),      '500'],
                      [_('super-size'), '800']]
-        html += u"</div>\n"
-        html += u'<div class="block">\n'
+        html += u"</p>\n"
         this_package = None
         if self.idevice is not None and self.idevice.parentNode is not None:
             this_package = self.idevice.parentNode.package
@@ -82,7 +80,6 @@ class ExternalUrlBlock(Block):
                                  "height"+self.id,
                                  options = heightArr,
                                  selection = self.idevice.height)
-        html += u"</div>\n"
         html += self.renderEditButtons()
         return html
 
