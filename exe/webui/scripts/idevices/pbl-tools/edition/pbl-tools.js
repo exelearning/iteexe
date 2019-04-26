@@ -35,8 +35,8 @@ var $exeDevice = {
 				<label for='pblTaskDescription'>"+_('Describe the tasks that the learners should complete:')+"</label>\
 				<textarea id='pblTaskDescription' class='exe-html-editor'\></textarea>\
 			</div>\
-			<fieldset id='pblTaskFeedback' class='exe-fieldset exe-feedback-fieldset closed-fieldset'>\
-				<legend><a href='#pblTaskFeedbackButtonText' id='pblFeedbackToggler'>"+_('Feedback')+" ("+_('Optional').toLowerCase()+")</a></legend>\
+			<fieldset id='pblTaskFeedback' class='exe-fieldset exe-feedback-fieldset exe-fieldset-closed'>\
+				<legend><a href='#'>"+_('Feedback')+" ("+_('Optional').toLowerCase()+")</a></legend>\
 				<div>\
 					<p class='exe-inline-text-field'>\
 						<label for='pblTaskFeedbackButtonText'>"+_("Feedback button text")+":</label>\
@@ -53,13 +53,6 @@ var $exeDevice = {
 		// Insert the form
 		this.textArea = $("#activeIdevice textarea");
 		this.textArea.before(html);
-		
-		// Fieldset toggler
-		$("#pblFeedbackToggler").click(function(){
-			$("#pblTaskFeedback").toggleClass("closed-fieldset");
-			return false;
-		});		
-		
 		this.getPreviousValues();
 		
 	},
@@ -104,7 +97,7 @@ var $exeDevice = {
 		var feedbackButton = $(".feedbackbutton",wrapper);
 		if (feedbackButton.length==1) {
 			$("#pblTaskFeedbackButtonText").val(feedbackButton.val());
-			$("#pblTaskFeedback").removeClass("closed-fieldset");
+			$("#pblTaskFeedback").removeClass("exe-fieldset-closed");
 		}
 		
 		// Feedback 

@@ -66,7 +66,7 @@ var $exeDevice = {
 					</p>\
 				</fieldset>\
 				<fieldset id="eXeAutoGeogebraAdvancedOptions" class="exe-fieldset exe-feedback-fieldset">\
-					<legend><a href="#geogebraActivityLang" id="eXeAutoGeogebraAdvancedOptionsToggler">'+_("Advanced Options")+'</a></legend>\
+					<legend><a href="#">'+_("Advanced Options")+'</a></legend>\
 					<div>\
 						<p id="geogebraActivityLangWrapper">\
 							<label for="geogebraActivityLang">'+_("Language")+': </label><input type="text" max="2" name="geogebraActivityLang" id="geogebraActivityLang" /> <span class="input-instructions">es, en, fr, de, ca, eu, gl...</span>\
@@ -97,13 +97,7 @@ var $exeDevice = {
         var field = $("#activeIdevice textarea");
         field.before(html);
 		
-        // Fieldset toggler
-        $("#eXeAutoGeogebraAdvancedOptionsToggler").click(function(){
-            $("#eXeAutoGeogebraAdvancedOptions").toggleClass("closed-fieldset");
-            return false;
-        });
-		
-		$("#geogebraActivityURLexample").focus(function(){
+        $("#geogebraActivityURLexample").focus(function(){
 			this.select();
 		});
         

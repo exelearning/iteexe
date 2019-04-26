@@ -936,6 +936,12 @@ var $exeAuthoring = {
             // Enable TinyMCE
             if (tinymce.majorVersion==4) $exeTinyMCE.init("multiple-visible",".exe-html-editor");
             else if (tinymce.majorVersion==3) $exeTinyMCE.init("specific_textareas","exe-html-editor");
+			
+			// Enable the FIELDSETs Toggler
+			$(".exe-fieldset legend a").click(function(){
+				$(this).parent().parent().toggleClass("exe-fieldset-closed");
+				return false;
+			});
 
             // Enable color pickers (provisional solution)
             // To review: 100 ms delay because the color picker won't work when combined with $exeTinyMCE.init

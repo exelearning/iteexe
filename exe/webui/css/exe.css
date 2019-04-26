@@ -279,11 +279,11 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 #activeIdevice .exe-fieldset{padding:0 20px 5px 20px;border:1px solid #C0C0C0;margin:1.5em 0}
 #activeIdevice .exe-fieldset legend{font-weight:bold;padding:0 10px}
 #activeIdevice .exe-inline-text-field label{padding-right:5px}
-#activeIdevice .closed-fieldset legend a{text-decoration:underline}
-#activeIdevice .closed-fieldset legend a:hover{text-decoration:none}
-#activeIdevice .closed-fieldset{border:none;padding:0}
-#activeIdevice .closed-fieldset legend{padding:0;margin-bottom:0}
-#activeIdevice .closed-fieldset div{display:none}
+#activeIdevice .exe-fieldset-closed legend a{text-decoration:underline}
+#activeIdevice .exe-fieldset-closed legend a:hover{text-decoration:none}
+#activeIdevice .exe-fieldset-closed{border:none;padding:0}
+#activeIdevice .exe-fieldset-closed legend{padding:0;margin-bottom:0}
+#activeIdevice .exe-fieldset-closed div{display:none}
 #activeIdevice .exe-block-instructions{display:block;font-size:.9em;margin-top:.4em}
 
 /* Empty page instructions */

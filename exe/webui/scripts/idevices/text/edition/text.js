@@ -20,8 +20,8 @@ var $exeDevice = {
 				<label for='textIdeviceContent'>"+_('Text')+":</label>\
 				<textarea id='textIdeviceContent' class='exe-html-editor'\></textarea>\
 			</div>\
-			<fieldset id='textIdeviceFeedback' class='exe-fieldset exe-feedback-fieldset closed-fieldset'>\
-				<legend><a href='#textIdeviceFeedbackButtonText' id='textIdeviceFeedbackToggler'>"+_('Feedback')+" ("+_('Optional').toLowerCase()+")</a></legend>\
+			<fieldset id='textIdeviceFeedback' class='exe-fieldset exe-feedback-fieldset exe-fieldset-closed'>\
+				<legend><a href='#'>"+_('Feedback')+" ("+_('Optional').toLowerCase()+")</a></legend>\
 				<div>\
                     <p class='exe-inline-text-field'>\
                         <label for='textIdeviceFeedbackButtonText'>"+_("Feedback button text")+":</label>\
@@ -38,14 +38,7 @@ var $exeDevice = {
 		// Insert the form
         this.textArea = $("#activeIdevice textarea");
         this.textArea.before(html);
-        
-        // Fieldset toggler
-        $("#textIdeviceFeedbackToggler").click(function(){
-            $("#textIdeviceFeedback").toggleClass("closed-fieldset");
-            return false;
-        });
-		
-		this.getPreviousValues();
+        this.getPreviousValues();
         
 		// Focus on the title right after adding the iDevice
         var titleField = $("#activeIdevice input[type='text']").eq(0);
@@ -69,7 +62,7 @@ var $exeDevice = {
 		var feedbackButton = $(".feedbackbutton",wrapper);
 		if (feedbackButton.length==1) {
 			$("#textIdeviceFeedbackButtonText").val(feedbackButton.val());
-            $("#textIdeviceFeedback").removeClass("closed-fieldset");
+            $("#textIdeviceFeedback").removeClass("exe-fieldset-closed");
 		}
 		
 		// Feedback 
