@@ -2,7 +2,7 @@
 <theme>
 	<name>CEDEC</name>
 	<version>2019</version>
-	<compatibility>2.4+</compatibility>
+	<compatibility>2.4</compatibility>
 	<author>CeDeC (Centro Nacional de Desarrollo Curricular en Sistemas no Propietarios)</author>
 	<license>Creative Commons by-sa</license>
 	<license-url>http://creativecommons.org/licenses/by-sa/3.0/</license-url>

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <theme>
     <name>INTEF</name>
-    <version>3.0</version>
-    <compatibility>2.3.1+</compatibility>
+    <version>2019</version>
+    <compatibility>2.4</compatibility>
     <author>Ignacio Gros</author>
     <author-url>http://www.gros.es/</author-url>
 	<license>Creative Commons by-sa</license>
