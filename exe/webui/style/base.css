@@ -191,7 +191,7 @@ img,video{max-width:100%;height:auto}
 #exe-client-search-submit{border:1px solid #ddd;padding:5px 10px;background:#ddd;margin-left:-.4em;color:#333}
 .exe-client-search-results #nodeTitle,.exe-client-search-results .iDevice_wrapper,#exe-client-search-results,#exe-client-search-reset{display:none}
 .exe-client-search-results #exe-client-search-results{display:block}
-.exe-client-search-results #exe-client-search-reset{display:inline}
+.exe-client-search-results #exe-client-search-reset{display:inline;line-height:2em}
 #exe-client-search-results p{margin-top:1.5em}
 #exe-client-search-results ul{margin:1.5em 1.5em 3em 1.5em;padding:0;list-style:none}
 #main #exe-client-search-results li{list-style-image:none;margin-bottom:1.5em}
