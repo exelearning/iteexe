@@ -122,20 +122,20 @@ text-shadow:0 1px 1px rgba(255, 255, 255, 0.75)
 .TrueFalseIdevice .feedback{margin-top:1.5em}   
 
 /* Icons */
-.iDeviceTitle{background-image:url(icon_exe.png)}
+.iDeviceTitle{background-image:url(icon_attached.png)}
 .ListaIdevice .iDeviceTitle,
 .QuizTestIdevice .iDeviceTitle,
 .MultichoiceIdevice .iDeviceTitle,
 .TrueFalseIdevice .iDeviceTitle,
 .MultiSelectIdevice .iDeviceTitle,
-.ClozeIdevice .iDeviceTitle{background-image:url(icon_question.png)}
+.ClozeIdevice .iDeviceTitle{background-image:url(icon_write.png)}
 .CasestudyIdevice .iDeviceTitle{background-image:url(icon_tool.png)}
 .preknowledgeIdevice .iDeviceTitle{background-image:url(icon_cabinet.png)}
 .GalleryIdevice .iDeviceTitle{background-image:url(icon_picture.png)}
 .objectivesIdevice .iDeviceTitle{background-image:url(icon_objective.png)}
 .ReflectionIdevice .iDeviceTitle{background-image:url(icon_reflection.png)}
 .readingIdevice .iDeviceTitle{background-image:url(icon_reading.png)}
-.activityIdevice .iDeviceTitle{background-image:url(icon_internet.png)}
+.activityIdevice .iDeviceTitle{background-image:url(icon_task.png)}
 .WikipediaIdevice .iDeviceTitle{background-image:url(icon_wikipedia.png)}
 
 .js .em_iDevice{position:relative;padding-top:10px}
