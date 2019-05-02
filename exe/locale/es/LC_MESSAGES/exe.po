@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.3.2\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2019-05-02 17:37+0200\n"
-"PO-Revision-Date: 2019-04-24 17:57+0200\n"
+"PO-Revision-Date: 2019-05-02 17:44+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -6075,7 +6075,7 @@ msgstr "Editar el estilo actual"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:102
 msgid "Export style: "
-msgstr "Exportar el estilo: "
+msgstr "Exportar estilo: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:134
 msgid "Delete style: "
@@ -6093,7 +6093,7 @@ msgstr "Diseñador de estilos"
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:236
 #: exe/webui/tools/style-designer/js/app.js:1362
 msgid "Create new style"
-msgstr "Crear un estilo nuevo"
+msgstr "Crear estilo nuevo"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:242
 msgid "Import style to the system "
@@ -6102,7 +6102,7 @@ msgstr "Importar el estilo al sistema "
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:246
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:470
 msgid "Import style"
-msgstr "Importar el estilo"
+msgstr "Importar estilo"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:252
 msgid "Styles repository"
@@ -6172,11 +6172,11 @@ msgstr "Comprobar e instalar estilos en el banco de estilos"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:22
 msgid "Export template: "
-msgstr "Exportar la plantilla: "
+msgstr "Exportar plantilla: "
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:51
 msgid "Delete template: "
-msgstr "Borrar la plantilla: "
+msgstr "Borrar plantilla: "
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:65
 msgid "Show properties of template: "
@@ -6184,7 +6184,7 @@ msgstr "Mostrar las propiedades de la plantilla: "
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:79
 msgid "Edit template: "
-msgstr "Editar la plantilla: "
+msgstr "Editar plantilla: "
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:153
 msgid "Import template to the system "
@@ -6623,7 +6623,7 @@ msgstr "Mostrar el panel"
 
 #: exe/jsui/scripts/exe.js:392
 msgid "Click on the elements of the left panel to add content."
-msgstr ""
+msgstr "Pulse en los elementos del panel izquierdo para añadir contenido."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:909 exe/jsui/scripts/exe.js:393
 msgid "Don't show this warning again"
@@ -9493,7 +9493,7 @@ msgstr "URL:"
 #: exe/webui/externalurlblock.py:70
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:597
 msgid "Remember that HTTP pages cannot be included into HTTPS websites."
-msgstr ""
+msgstr "Recuerde que en los sitios HTTPS no es posible incluir páginas HTTP."
 
 #: exe/webui/externalurlblock.py:71
 msgid "small"
@@ -15073,7 +15073,7 @@ msgstr "Error al descargar la lista de estilos del repositorio"
 
 #: exe/webui/stylemanagerpage.py:301
 msgid "Style updated correctly"
-msgstr ""
+msgstr "Estilo actualizado con éxito"
 
 #: exe/webui/stylemanagerpage.py:303 exe/webui/stylemanagerpage.py:491
 #: exe/webui/templatemanagerpage.py:263 exe/webui/templatemanagerpage.py:297
@@ -15238,7 +15238,7 @@ msgstr "Pulse en \"Guardar\"."
 
 #: exe/webui/tools/assistant/langs/all.js:31
 msgid "Switch back to the \"Content\" tab."
-msgstr ""
+msgstr "Volver a la pestaña \"Contenido\"."
 
 #: exe/webui/tools/assistant/langs/all.js:32
 msgid "Remember to save your project whenever you change something."
@@ -16029,111 +16029,3 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
-
-#~ msgid "Insert Package"
-#~ msgstr "Insertar paquete"
-
-#~ msgid "Extract Package"
-#~ msgstr "Extraer paquete"
-
-#~ msgid "Merging"
-#~ msgstr "Fusionar ELPs"
-
-#~ msgid "Anchors and nodes"
-#~ msgstr "Anclas y nodos"
-
-#~ msgid "Non-Interactive Activities"
-#~ msgstr "Actividades no-interactivas"
-
-#~ msgid "Non-Textual Information"
-#~ msgstr "Información no-textual"
-
-#~ msgid "Textual Information"
-#~ msgstr "Información textual"
-
-#~ msgid "PBL Tasks"
-#~ msgstr "Tarea ABP"
-
-#~ msgid "Provide information of the project or this part of the project."
-#~ msgstr "Proporcione información sobre el proyecto o esta parte del mismo."
-
-#~ msgid ""
-#~ "The Learning Diary is focused on "
-#~ "the student's reflection and reasoning "
-#~ "to construct their own learning. Please"
-#~ " write some instructions."
-#~ msgstr ""
-#~ "El Diario de aprendizaje se centra "
-#~ "en las reflexiones del alumno para "
-#~ "construir su propio aprendizaje. Por "
-#~ "favor escriba las instrucciones."
-
-#~ msgid "Write the title, select an icon and choose a type..."
-#~ msgstr "Escriba el título, seleccione un icono y elija un tipo..."
-
-#~ msgid "Text (optional feedback)"
-#~ msgstr "Texto (retroalimentación opcional)"
-
-#~ msgid ""
-#~ "Sorry, only styles created with the "
-#~ "Editor can be edited. eXe's Styles "
-#~ "are not editable"
-#~ msgstr ""
-#~ "Lo sentimos, sólo se pueden editar "
-#~ "los estilos creados con el Editor. "
-#~ "Los estilos propios de eXe no son"
-#~ " modificables con esta herramienta"
-
-#~ msgid ""
-#~ "That's one of eXe's default Styles, and it cannot be edited.\n"
-#~ "\n"
-#~ "Please choose a different style or create a new one."
-#~ msgstr ""
-#~ "Este es uno de los estilos "
-#~ "predeterminados de eXe y no puede "
-#~ "editarse.\n"
-#~ "\n"
-#~ "Por favor escoja otro estilo o cree uno nuevo."
-
-#~ msgid "Your Style could not be saved because an unknown error occurred."
-#~ msgstr ""
-#~ "No se ha podido guardar el estilo"
-#~ " nuevo, se ha producido un error "
-#~ "por causa desconocida."
-
-#~ msgid "HTML Course"
-#~ msgstr "Curso HTML"
-
-#~ msgid "Create new Style"
-#~ msgstr "Crear un estilo nuevo"
-
-#~ msgid "Remove slide %?"
-#~ msgstr ""
-
-#~ msgid "Click on % to get the video current time."
-#~ msgstr ""
-
-#~ msgid "Ony one interactive video per page."
-#~ msgstr ""
-
-#~ msgid "Create package compatible with old eXe versions?"
-#~ msgstr "¿Crear un paquete compatible con las versiones antiguas de eXe?"
-
-#~ msgid ""
-#~ "Checking this option, the saved package"
-#~ " may be opened with eXe >= "
-#~ "0.20.4"
-#~ msgstr ""
-#~ "Si marca esta opción, el paquete "
-#~ "guardado podrá ser abierto con eXe "
-#~ ">= 0.20.4"
-
-#~ msgid "Authoring"
-#~ msgstr "Autoría"
-
-#~ msgid "Icon"
-#~ msgstr "Icono"
-
-#~ msgid "Switch back to the \"Authoring\" tab."
-#~ msgstr "Vuelva a la pestaña \"Autoría\"."
-

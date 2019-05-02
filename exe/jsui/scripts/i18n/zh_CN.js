@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-04-24 16:55+0200\nPO-Revision-Date: 2019-01-13 20:09+0100\nLast-Translator: Chenggui Duan <chengguiduan@gmail.com>\nLanguage: zh\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-05-02 17:37+0200\nPO-Revision-Date: 2019-01-13 20:09+0100\nLast-Translator: Chenggui Duan <chengguiduan@gmail.com>\nLanguage: zh\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Toggle Full Screen Mode": "\u5207\u6362\u5168\u5c4f", 
  "DropDown Activity": "\u4e0b\u62c9\u83dc\u5355\u6d3b\u52a8", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "\u62df\u5199\u6848\u4f8b\u6545\u4e8b.\u4e00\u4e2a\u597d\u7684\u6848\u4f8b\u63cf\u8ff0\u6709\u4e89\u8bae\u6027\u7684,\u6216\u4e0d\u540c\u4eba\u7269\u548c\u73af\u5883\u7684\u60c5\u666f.\u5e76\u80fd\u91c7\u53d6\u67d0\u4e9b\u884c\u52a8\u6765\u89e3\u51b3\u95ee\u9898.", 
@@ -1068,7 +1068,6 @@ translations = {
  "Placement": "\u653e\u7f6e", 
  "Target": "\u76ee\u6807", 
  "You do not have the permissions to  save into folder": "\u60a8\u6ca1\u6709\u4fdd\u5b58\u5230\u6587\u4ef6\u5939\u7684\u6743\u9650", 
- "Switch back to the \"Authoring\" tab.": "\u5207\u6362\u56de\u201c\u521b\u4f5c\u201d\u9009\u9879\u5361\u3002", 
  "Breton ": "\u4e0d\u5217\u5854\u5c3c\u8bed", 
  "Delete style?": "\u5220\u9664\u6837\u5f0f", 
  "File %s does not exist or is not readable.": "\u6587\u6863%s\u4e0d\u5b58\u5728\u6216\u4e0d\u53ef\u8bfb.", 
@@ -2735,7 +2734,6 @@ translations = {
  "Context": "\u60c5\u5883", 
  "Settings Saved": "\u8bbe\u7f6e\u5df2\u4fdd\u5b58", 
  "Multi-choice": "\u9009\u62e9\u9898", 
- "Authoring": "\u5236\u4f5c", 
  "Picker": "\u9009\u62e9\u5668", 
  "Choose a page. Add a Free Text iDevice with a Definition List in it.": "\u9009\u62e9\u4e00\u4e2a\u9875\u9762\u3002\u6dfb\u52a0\u5e26\u6709\u5b9a\u4e49\u5217\u8868\u7684\u81ea\u7531\u6587\u672ciDevice\u3002", 
  "Meta-Metadata": "\u5143 - \u5143\u6570\u636e", 

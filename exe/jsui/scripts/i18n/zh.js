@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-04-24 16:55+0200\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage: zh\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-05-02 17:37+0200\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage: zh\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": " ", 
  "Title": "\u6807\u9898", 
  "Text Line": "\u5355\u884c\u6587\u5b57", 
@@ -462,7 +462,6 @@ translations = {
  "Turkish ": "\u571f\u8033\u5176\u8bed", 
  "Finnish ": "\u82ac\u5170\u8bed", 
  "Either your idevices\/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again.": "\u4f60\u6240\u8bd5\u56fe\u6253\u5f00\u7684\u8bfe\u4ef6, \u6216 idevices\/generic.data \u6587\u6863\u53ef\u80fd\u662f\u7528\u65b0\u7248\u672ceXe\u521b\u5efa\u7684. \u8bf7\u5347\u7ea7\u4f60\u7684eXe, \u7136\u540e\u518d\u8bd5.", 
- "Authoring": "\u5236\u4f5c", 
  "Describe the tasks related to the reading learners should undertake. \nThis helps demonstrate relevance for learners.": "\u63cf\u8ff0\u5b66\u751f\u5e94\u5b8c\u6210\u7684\u9605\u8bfb\u4efb\u52a1.", 
  "Enter the text you wish to \n                                 associate with the image.": "\u8f93\u5165\u6709\u5173\u56fe\u7247\u7684\u63cf\u8ff0.", 
  "Twi ": "\u7279\u5a01\u8bed", 

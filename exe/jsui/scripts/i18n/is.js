@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-04-24 16:55+0200\nPO-Revision-Date: 2006-07-28 15:29+1200\nLast-Translator: Jenny <jennylin_nz@yahoo.com>\nLanguage: is\nLanguage-Team: <sfj@fb.is>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-05-02 17:37+0200\nPO-Revision-Date: 2006-07-28 15:29+1200\nLast-Translator: Jenny <jennylin_nz@yahoo.com>\nLanguage: is\nLanguage-Team: <sfj@fb.is>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Type in the feedback that you want the \nstudent to see when selecting the particular question. If you don't complete\nthis box, eXe will automatically provide default feedback as follows: \n\"Correct answer\" as indicated by the selection for the correct answer; or \n\"Wrong answer\" for the other alternatives.": "H\u00e9r skr\u00e1ir \u00fe\u00fa \u00fe\u00e1 endurgj\u00f6f sem \u00fe\u00fa vilt birtist nemendum \n\u00feegar \u00feeir velja \u00e1kve\u00f0ina spurningu. Ef \u00fe\u00fa skilur \u00feennan reit au\u00f0ann \nmun exe birta eftirfarandi endurgj\u00f6f: \"R\u00e9tt \nsv\u00f6r\" \u00ed samr\u00e6mi vi\u00f0 val nemenda, e\u00f0a \"R\u00f6ng sv\u00f6r\"\nfyrir hinn valkostinn.", 
  "Hide": "Fela", 
  "Some emphasis": "S\u00fdna \u00e1herslur", 
@@ -137,7 +137,6 @@ translations = {
  "University of Auckland": "H\u00e1sk\u00f3linn \u00ed Auckland", 
  "Describe the prerequisite knowledge learners should have to effectively\ncomplete this learning.": "L\u00fdstu \u00feeirri \u00feekkingu sem mikilv\u00e6gt er a\u00f0 nemendur b\u00fai yfir \ntil \u00feess a\u00f0 takast \u00e1 vi\u00f0 \u00feetta vi\u00f0fangsefni.", 
  "Activity": "Vi\u00f0fang", 
- "Authoring": "H\u00f6nnun", 
  "Allow auto completion when \n                                       user filling the gaps.": "Heimila sj\u00e1lfvirka \u00fatfyllingu \u00feegar \n                                   notandi fyllir \u00ed ey\u00f0urnar.", 
  "True\/false questions present a statement where \nthe learner must decide if the statement is true. This type of question works \nwell for factual information and information that lends itself to either\/or \nresponses.": "R\u00e9tt\/rangt spurningar fela \u00ed s\u00e9r fullyr\u00f0ingu sem nemandinn ver\u00f0ur a\u00f0 \u00e1kve\u00f0a hvort s\u00e9 r\u00e9tt e\u00f0a r\u00f6ng. \u00deessi tegund spurninga hentar vel \u00feegar um er a\u00f0 r\u00e6\u00f0a sta\u00f0reyndir, e\u00f0 auppl\u00fdsingar sem gefa kost \u00e1 \"anna\u00f0 hvort e\u00f0a\" vi\u00f0br\u00f6g\u00f0um.", 
  "Select an image": "Veldu mynd", 
