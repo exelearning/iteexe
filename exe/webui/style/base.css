@@ -202,3 +202,6 @@ img,video{max-width:100%;height:auto}
 @media all and (max-width: 700px) {
 	#exe-client-search-form{text-align:center}
 }
+@media all and (max-width: 590px) {
+	.exe-client-search-results #exe-client-search-reset{display:block;margin:1em 0 0 0}
+}
