@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.3.2\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2019-04-24 16:55+0200\n"
+"POT-Creation-Date: 2019-05-02 17:37+0200\n"
 "PO-Revision-Date: 2018-12-12 11:17+0100\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
 "Language: pt\n"
@@ -486,7 +486,7 @@ msgid "Shown over game when correct answer given"
 msgstr "Mostra-se por cima do jogo quando se dá a resposta correta"
 
 #: exe/engine/clickinorderidevice.py:63
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:27
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:34
 msgid "Correct Answer Feedback Overlay"
 msgstr "Imagem de retroalimentação para resposta correta"
 
@@ -495,7 +495,7 @@ msgid "Shown over game when wrong answer is given"
 msgstr "Mostra-se por cima do jogo quando se dá uma resposta errada"
 
 #: exe/engine/clickinorderidevice.py:64
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:29
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:38
 msgid "Wrong Answer Feedback Overlay"
 msgstr "Imagem de retroalimentação para resposta errada"
 
@@ -747,7 +747,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:998
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:54
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:57
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:24
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:25
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:4
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:231
@@ -810,10 +810,10 @@ msgstr ""
 #: exe/webui/element.py:2485 exe/webui/element.py:2620
 #: exe/webui/element.py:2735 exe/webui/element.py:2936
 #: exe/webui/listablock.py:461 exe/webui/questionelement.py:114
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:37
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:43
-#: exe/webui/scripts/idevices/text/edition/text.js:22
-#: exe/webui/scripts/idevices/text/edition/text.js:28
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:39
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:46
+#: exe/webui/scripts/idevices/text/edition/text.js:24
+#: exe/webui/scripts/idevices/text/edition/text.js:31
 #: exe/webui/truefalseelement.py:260
 msgid "Feedback"
 msgstr "Feedback"
@@ -2003,7 +2003,7 @@ msgstr ""
 
 #: exe/engine/idevicestore.py:696 exe/engine/idevicestore.py:705
 #: exe/engine/idevicestore.py:803 exe/engine/idevicestore.py:812
-#: exe/engine/package.py:719 exe/engine/package.py:730
+#: exe/engine/package.py:723 exe/engine/package.py:734
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:218
 msgid "Objectives"
 msgstr "Objetivos"
@@ -2024,7 +2024,7 @@ msgstr "Introduza os objetivos de aprendizagem para este recurso."
 
 #: exe/engine/idevicestore.py:709 exe/engine/idevicestore.py:719
 #: exe/engine/idevicestore.py:816 exe/engine/idevicestore.py:826
-#: exe/engine/package.py:749 exe/engine/package.py:760
+#: exe/engine/package.py:753 exe/engine/package.py:764
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:233
 msgid "Preknowledge"
 msgstr "Pré-requisitos"
@@ -2137,10 +2137,6 @@ msgstr ""
 " auxiliar o estudo."
 
 #: exe/engine/imagemagnifieridevice.py:49
-msgid "Choose an Image"
-msgstr "Escolha uma imagem"
-
-#: exe/engine/imagemagnifieridevice.py:49
 msgid ""
 "Click \n"
 "on the picture below or the \"Add Image\" button to select an image file "
@@ -2152,12 +2148,16 @@ msgstr ""
 "um ficheiro de imagem \n"
 "para ser ampliado."
 
+#: exe/engine/imagemagnifieridevice.py:49 exe/webui/jsblock.py:86
+msgid "Choose an Image"
+msgstr "Escolha uma imagem"
+
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:28
 #: exe/webui/scripts/idevices/text/edition/text.js:13
-#: exe/webui/scripts/idevices/text/edition/text.js:19
-#: exe/webui/scripts/idevices/text/edition/text.js:48
+#: exe/webui/scripts/idevices/text/edition/text.js:20
+#: exe/webui/scripts/idevices/text/edition/text.js:45
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:19
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
@@ -2774,35 +2774,35 @@ msgstr "Texto das Orientações para a tutoria"
 msgid "Guidelines Teacher Text:"
 msgstr "Texto das Orientações para a tutoria:"
 
-#: exe/engine/package.py:329 exe/webui/content_template/strings.py:8
+#: exe/engine/package.py:330 exe/webui/content_template/strings.py:8
 #: exe/webui/content_template/strings.py:559
 msgid "Topic"
 msgstr "Tópico"
 
-#: exe/engine/package.py:329 exe/webui/content_template/strings.py:9
+#: exe/engine/package.py:330 exe/webui/content_template/strings.py:9
 #: exe/webui/content_template/strings.py:560
 msgid "Section"
 msgstr "Secção"
 
-#: exe/engine/package.py:329 exe/webui/content_template/strings.py:10
+#: exe/engine/package.py:330 exe/webui/content_template/strings.py:10
 #: exe/webui/content_template/strings.py:561
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:9
 msgid "Unit"
 msgstr "Unidade"
 
-#: exe/engine/package.py:353 exe/webui/content_template/strings.py:564
+#: exe/engine/package.py:354 exe/webui/content_template/strings.py:564
 msgid "Home"
 msgstr "Início"
 
-#: exe/engine/package.py:569
+#: exe/engine/package.py:573
 msgid "Metadata creation date"
 msgstr "Data de criação dos metadados"
 
-#: exe/engine/package.py:1169
+#: exe/engine/package.py:1191
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:1208 exe/engine/package.py:1215
+#: exe/engine/package.py:1230 exe/engine/package.py:1237
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2811,16 +2811,16 @@ msgstr ""
 "Guardar falhou!\n"
 "O último guardar válido foi a %s."
 
-#: exe/engine/package.py:1669 exe/jsui/scripts/app/controller/Toolbar.js:528
+#: exe/engine/package.py:1691 exe/jsui/scripts/app/controller/Toolbar.js:528
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:493
 msgid "iDevice Editor"
 msgstr "Editor de iDevices"
 
-#: exe/engine/package.py:1863
+#: exe/engine/package.py:1885
 msgid "My Catalog"
 msgstr "O meu catálogo"
 
-#: exe/engine/package.py:1870
+#: exe/engine/package.py:1892
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:257
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -3262,7 +3262,7 @@ msgstr "Texto do botão de verificação"
 #: exe/engine/sortidevice.py:61 exe/webui/listablock.py:270
 #: exe/webui/listablock.py:272
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:45
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:46
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:55
 msgid "Check"
 msgstr "Marcar"
 
@@ -3705,10 +3705,10 @@ msgstr ""
 "exe_do: erro: Não foi possível importar '%s'.\n"
 "O erro foi:"
 
-#: exe/export/cmdlineexporter.py:73 exe/jsui/mainpage.py:387
-#: exe/jsui/mainpage.py:396 exe/jsui/mainpage.py:1379 exe/jsui/mainpage.py:1566
-#: exe/jsui/mainpage.py:1612 exe/jsui/mainpage.py:1657
-#: exe/jsui/mainpage.py:1678
+#: exe/export/cmdlineexporter.py:73 exe/jsui/mainpage.py:390
+#: exe/jsui/mainpage.py:399 exe/jsui/mainpage.py:1382 exe/jsui/mainpage.py:1569
+#: exe/jsui/mainpage.py:1615 exe/jsui/mainpage.py:1660
+#: exe/jsui/mainpage.py:1681
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3785,7 +3785,7 @@ msgstr ""
 "criado por um utilizador."
 
 #: exe/idevices/exampleidevice.py:44
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:60
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:61
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:135
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:140
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
@@ -3842,20 +3842,20 @@ msgstr "Os meus iDevices"
 msgid "JS iDevices"
 msgstr "JS iDevices"
 
-#: exe/jsui/mainpage.py:415 exe/jsui/mainpage.py:1227 exe/jsui/mainpage.py:1371
+#: exe/jsui/mainpage.py:418 exe/jsui/mainpage.py:1230 exe/jsui/mainpage.py:1374
 #: exe/jsui/scripts/app/controller/TemplateManager.js:83
 msgid "Cannot access directory named "
 msgstr "Não é possível aceder à pasta indicada "
 
-#: exe/jsui/mainpage.py:415 exe/jsui/mainpage.py:1229 exe/jsui/mainpage.py:1371
+#: exe/jsui/mainpage.py:418 exe/jsui/mainpage.py:1232 exe/jsui/mainpage.py:1374
 msgid ". Please use ASCII names."
 msgstr ". Por favor use nomes ASCII."
 
-#: exe/jsui/mainpage.py:428 exe/jsui/mainpage.py:468
+#: exe/jsui/mainpage.py:431 exe/jsui/mainpage.py:471
 msgid "SAVE FAILED!"
 msgstr "Guardar falhou!"
 
-#: exe/jsui/mainpage.py:432
+#: exe/jsui/mainpage.py:435
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3864,8 +3864,8 @@ msgstr ""
 "A AÇÃO DE GUARDAR FALHOU!\n"
 "\"%s\" não é um nome válido para um pacote"
 
-#: exe/jsui/mainpage.py:438 exe/jsui/mainpage.py:487 exe/jsui/mainpage.py:843
-#: exe/jsui/mainpage.py:901 exe/jsui/mainpage.py:1471
+#: exe/jsui/mainpage.py:441 exe/jsui/mainpage.py:490 exe/jsui/mainpage.py:846
+#: exe/jsui/mainpage.py:904 exe/jsui/mainpage.py:1474
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3874,12 +3874,12 @@ msgstr ""
 "Guardar falhou!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:449 exe/jsui/mainpage.py:454 exe/jsui/mainpage.py:457
+#: exe/jsui/mainpage.py:452 exe/jsui/mainpage.py:457 exe/jsui/mainpage.py:460
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Pacote guardado em: %s"
 
-#: exe/jsui/mainpage.py:472
+#: exe/jsui/mainpage.py:475
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3888,24 +3888,24 @@ msgstr ""
 "A AÇÃO DE GUARDAR FALHOU!\n"
 "\"%s\" não é um nome válido para um modelo"
 
-#: exe/jsui/mainpage.py:493
+#: exe/jsui/mainpage.py:496
 #, python-format
 msgid "Template saved: %s"
 msgstr "Modelo guardado: %s"
 
-#: exe/jsui/mainpage.py:566
+#: exe/jsui/mainpage.py:569 exe/webui/stylemanagerpage.py:396
 msgid "Downloading..."
 msgstr "A descarregar..."
 
-#: exe/jsui/mainpage.py:574
+#: exe/jsui/mainpage.py:577
 msgid "Connecting to classification sources repository..."
 msgstr "A estabelecer a ligação ao repositório de fontes de classificação..."
 
-#: exe/jsui/mainpage.py:574 exe/jsui/mainpage.py:580
+#: exe/jsui/mainpage.py:577 exe/jsui/mainpage.py:583
 msgid "Sources Download"
 msgstr "Descarregar as fontes"
 
-#: exe/jsui/mainpage.py:580
+#: exe/jsui/mainpage.py:583
 msgid ""
 "There has been an error while trying to download classification sources. "
 "Please try again later."
@@ -3913,26 +3913,26 @@ msgstr ""
 "Houve um erro ao tentar descarregar as fontes de classificação. Por "
 "favor, tente de novo mais tarde."
 
-#: exe/jsui/mainpage.py:766 exe/jsui/mainpage.py:865 exe/jsui/mainpage.py:928
-#: exe/jsui/mainpage.py:1009
+#: exe/jsui/mainpage.py:769 exe/jsui/mainpage.py:868 exe/jsui/mainpage.py:931
+#: exe/jsui/mainpage.py:1012
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Pasta de pré-visualização %s é um ficheiro, não é possível substituí-lo"
 
-#: exe/jsui/mainpage.py:785
+#: exe/jsui/mainpage.py:788
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Ficheiro local %s não encontrado, não pode ser pré-visualizado"
 
-#: exe/jsui/mainpage.py:968 exe/jsui/mainpage.py:994 exe/jsui/mainpage.py:1037
+#: exe/jsui/mainpage.py:971 exe/jsui/mainpage.py:997 exe/jsui/mainpage.py:1040
 msgid "Could not create the image"
 msgstr "Não é possível criar a imagem"
 
-#: exe/jsui/mainpage.py:1075
+#: exe/jsui/mainpage.py:1078
 msgid "Importing HTML..."
 msgstr "A importar HTML..."
 
-#: exe/jsui/mainpage.py:1081
+#: exe/jsui/mainpage.py:1084
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3941,28 +3941,28 @@ msgstr ""
 "A importação de metadados LOM falhou!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1084
+#: exe/jsui/mainpage.py:1087
 msgid "Error importing HTML:\n"
 msgstr "Erro ao importar HTML:\n"
 
-#: exe/jsui/mainpage.py:1120
+#: exe/jsui/mainpage.py:1123
 msgid "Exporting package as SCORM 1.2..."
 msgstr "A exportar o pacote como SCORM 1.2..."
 
-#: exe/jsui/mainpage.py:1139
+#: exe/jsui/mainpage.py:1142
 msgid "Uploading package to Procomún..."
 msgstr "A fazer upload do pacote em \"Procomún\"..."
 
-#: exe/jsui/mainpage.py:1163
+#: exe/jsui/mainpage.py:1166
 msgid "Unknown error when trying to upload package to Procomún."
 msgstr "Erro desconhecido ao tentar fazer o upload do pacote em \"Procomún\"."
 
-#: exe/jsui/mainpage.py:1163 exe/jsui/mainpage.py:1188
-#: exe/jsui/mainpage.py:1207 exe/jsui/scripts/app/controller/Toolbar.js:942
+#: exe/jsui/mainpage.py:1166 exe/jsui/mainpage.py:1191
+#: exe/jsui/mainpage.py:1210 exe/jsui/scripts/app/controller/Toolbar.js:942
 msgid "Publishing document to Procomún"
 msgstr "A publicar o documento em \"Procomún\""
 
-#: exe/jsui/mainpage.py:1182
+#: exe/jsui/mainpage.py:1185
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
@@ -3971,7 +3971,7 @@ msgstr ""
 "Pacote exportado para <a href=\"%s\" target=\"_blank\" title=\"Clique "
 "para ver o pacote exportado\">%s</a>."
 
-#: exe/jsui/mainpage.py:1185
+#: exe/jsui/mainpage.py:1188
 #, python-format
 msgid ""
 "<small>You can view and manage the uploaded package using <a href=\"%s\" "
@@ -3982,20 +3982,20 @@ msgstr ""
 " <a href=\"%s\" target=\"_blank\" title=\"Web de "
 "Procomún\">Procomún</a></small>"
 
-#: exe/jsui/mainpage.py:1194 exe/jsui/scripts/app/controller/Toolbar.js:983
+#: exe/jsui/mainpage.py:1197 exe/jsui/scripts/app/controller/Toolbar.js:983
 #, python-format
 msgid "Error exporting package \"%s\" to Procomún."
 msgstr "Erro ao exportar o pacote \"%s\" para \"Procomún\"."
 
-#: exe/jsui/mainpage.py:1196
+#: exe/jsui/mainpage.py:1199
 msgid "The most common reasons for this are:"
 msgstr "As razões mais frequentes para este erro são:"
 
-#: exe/jsui/mainpage.py:1198
+#: exe/jsui/mainpage.py:1201
 msgid "1. Package metadata is not properly filled."
 msgstr "1. Os metadados do pacote não foram corretamente preenchidos."
 
-#: exe/jsui/mainpage.py:1200
+#: exe/jsui/mainpage.py:1203
 msgid ""
 "2. There is a problem with you connection (or with Procomún servers), so "
 "you should just try again later."
@@ -4003,7 +4003,7 @@ msgstr ""
 "2. Há um problema com a sua ligação à Internet (ou com os servidores de "
 "\"Procomún\"), portanto deve simplesmente tentar novamente mais tarde."
 
-#: exe/jsui/mainpage.py:1202
+#: exe/jsui/mainpage.py:1205
 msgid ""
 "If you have problems publishing you can close this dialogue, export as "
 "SCORM 2004 and upload the generated zip file manually to Procomún."
@@ -4012,12 +4012,12 @@ msgstr ""
 "pacote como SCORM 2004 e fazer manualmente o upload do ficheiro zip em "
 "\"Procomún\"."
 
-#: exe/jsui/mainpage.py:1204
+#: exe/jsui/mainpage.py:1207
 #, python-format
 msgid "The reported error we got from Procomún was: <pre>%s</pre>"
 msgstr "A mensagem de erro que obtivemos de \"Procomún\" foi: <pre>%s</pre>"
 
-#: exe/jsui/mainpage.py:1234 exe/jsui/mainpage.py:1591
+#: exe/jsui/mainpage.py:1237 exe/jsui/mainpage.py:1594
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -4026,24 +4026,24 @@ msgstr ""
 "A AÇÃO DE GUARDAR FALHOU!\n"
 "\"%s\" não é um nome válido para o ficheiro"
 
-#: exe/jsui/mainpage.py:1255 exe/jsui/mainpage.py:1260
-#: exe/jsui/mainpage.py:1263 exe/jsui/mainpage.py:1266
-#: exe/jsui/mainpage.py:1269 exe/jsui/mainpage.py:1272
-#: exe/jsui/mainpage.py:1277 exe/jsui/mainpage.py:1541
-#: exe/jsui/mainpage.py:1638
+#: exe/jsui/mainpage.py:1258 exe/jsui/mainpage.py:1263
+#: exe/jsui/mainpage.py:1266 exe/jsui/mainpage.py:1269
+#: exe/jsui/mainpage.py:1272 exe/jsui/mainpage.py:1275
+#: exe/jsui/mainpage.py:1280 exe/jsui/mainpage.py:1544
+#: exe/jsui/mainpage.py:1641
 msgid "EXPORT FAILED!"
 msgstr "A exportação falhou!"
 
-#: exe/jsui/mainpage.py:1332
+#: exe/jsui/mainpage.py:1335
 msgid "Correct XLIFF import"
 msgstr "Importação XLIFF correta"
 
-#: exe/jsui/mainpage.py:1335
+#: exe/jsui/mainpage.py:1338
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Erro ao importar XLIFF: %s"
 
-#: exe/jsui/mainpage.py:1380 exe/jsui/mainpage.py:1397
+#: exe/jsui/mainpage.py:1383 exe/jsui/mainpage.py:1400
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -4052,22 +4052,22 @@ msgstr ""
 "A extração falhou!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1399
+#: exe/jsui/mainpage.py:1402
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Pacote extraído para: %s"
 
-#: exe/jsui/mainpage.py:1411 exe/webui/stylemanagerpage.py:235
+#: exe/jsui/mainpage.py:1414 exe/webui/stylemanagerpage.py:235
 msgid "Directory exists"
 msgstr "A pasta já existe"
 
-#: exe/jsui/mainpage.py:1425 exe/jsui/mainpage.py:1526
-#: exe/jsui/mainpage.py:1549 exe/jsui/mainpage.py:1567
-#: exe/jsui/mainpage.py:1573 exe/jsui/mainpage.py:1597
-#: exe/jsui/mainpage.py:1613 exe/jsui/mainpage.py:1623
-#: exe/jsui/mainpage.py:1643 exe/jsui/mainpage.py:1658
-#: exe/jsui/mainpage.py:1664 exe/jsui/mainpage.py:1679
-#: exe/jsui/mainpage.py:1689
+#: exe/jsui/mainpage.py:1428 exe/jsui/mainpage.py:1529
+#: exe/jsui/mainpage.py:1552 exe/jsui/mainpage.py:1570
+#: exe/jsui/mainpage.py:1576 exe/jsui/mainpage.py:1600
+#: exe/jsui/mainpage.py:1616 exe/jsui/mainpage.py:1626
+#: exe/jsui/mainpage.py:1646 exe/jsui/mainpage.py:1661
+#: exe/jsui/mainpage.py:1667 exe/jsui/mainpage.py:1682
+#: exe/jsui/mainpage.py:1692
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -4076,30 +4076,30 @@ msgstr ""
 "A exportação falhou! \n"
 "%s"
 
-#: exe/jsui/mainpage.py:1453 exe/jsui/mainpage.py:1507
+#: exe/jsui/mainpage.py:1456 exe/jsui/mainpage.py:1510
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Nome do ficheiro %s não pode ser alterado"
 
-#: exe/jsui/mainpage.py:1459 exe/jsui/mainpage.py:1514
+#: exe/jsui/mainpage.py:1462 exe/jsui/mainpage.py:1517
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr "A pasta %s já existe. Escolha outra pasta ou apague a existente."
 
-#: exe/jsui/mainpage.py:1478 exe/jsui/mainpage.py:1530
-#: exe/jsui/mainpage.py:1553 exe/jsui/mainpage.py:1575
-#: exe/jsui/mainpage.py:1599 exe/jsui/mainpage.py:1629
-#: exe/jsui/mainpage.py:1645 exe/jsui/mainpage.py:1666
-#: exe/jsui/mainpage.py:1693
+#: exe/jsui/mainpage.py:1481 exe/jsui/mainpage.py:1533
+#: exe/jsui/mainpage.py:1556 exe/jsui/mainpage.py:1578
+#: exe/jsui/mainpage.py:1602 exe/jsui/mainpage.py:1632
+#: exe/jsui/mainpage.py:1648 exe/jsui/mainpage.py:1669
+#: exe/jsui/mainpage.py:1696
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportado para %s"
 
-#: exe/jsui/mainpage.py:1480 exe/jsui/mainpage.py:1532
-#: exe/jsui/mainpage.py:1555 exe/jsui/mainpage.py:1631
-#: exe/jsui/mainpage.py:1695
+#: exe/jsui/mainpage.py:1483 exe/jsui/mainpage.py:1535
+#: exe/jsui/mainpage.py:1558 exe/jsui/mainpage.py:1634
+#: exe/jsui/mainpage.py:1698
 #, python-format
 msgid ""
 "Exported to %s.\n"
@@ -4110,23 +4110,23 @@ msgstr ""
 "Havia alguns recursos que não puderam ser renomeados para serem "
 "compatíveis com ISO9660."
 
-#: exe/jsui/mainpage.py:1626
+#: exe/jsui/mainpage.py:1629
 #, python-format
 msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
 msgstr "Os seguintes campos foram eliminados para respeitar o padrão SCORM 1.2: %s"
 
-#: exe/jsui/mainpage.py:1731 exe/webui/stylemanagerpage.py:249
+#: exe/jsui/mainpage.py:1734 exe/webui/stylemanagerpage.py:249
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "O ficheiro %s não existe ou não foi possível efetuar a sua leitura."
 
-#: exe/jsui/mainpage.py:1738
+#: exe/jsui/mainpage.py:1741
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Não foi possível carregar o ficheiro, envie um e-mail para "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1741
+#: exe/jsui/mainpage.py:1744
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -4135,7 +4135,7 @@ msgstr ""
 "Desculpe, formato de ficheiro incorreto:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1743
+#: exe/jsui/mainpage.py:1746
 msgid "Sorry, wrong file format"
 msgstr "Desculpe, formato de ficheiro incorreto"
 
@@ -4203,6 +4203,8 @@ msgstr "Todos os ficheiros"
 #: exe/jsui/scripts/app/controller/Toolbar.js:1063
 #: exe/jsui/scripts/app/controller/Toolbar.js:1097
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/stylemanagerpage.py:283 exe/webui/stylemanagerpage.py:396
+#: exe/webui/stylemanagerpage.py:525
 msgid "Please wait..."
 msgstr "Aguarde..."
 
@@ -4238,13 +4240,14 @@ msgstr "Configuração guardada"
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:84
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:33
 #: exe/webui/stylemanagerpage.py:155 exe/webui/stylemanagerpage.py:275
-#: exe/webui/stylemanagerpage.py:327 exe/webui/stylemanagerpage.py:370
-#: exe/webui/stylemanagerpage.py:381 exe/webui/stylemanagerpage.py:392
-#: exe/webui/stylemanagerpage.py:429 exe/webui/stylemanagerpage.py:436
-#: exe/webui/stylemanagerpage.py:479 exe/webui/stylemanagerpage.py:491
-#: exe/webui/templatemanagerpage.py:130 exe/webui/templatemanagerpage.py:229
-#: exe/webui/templatemanagerpage.py:241 exe/webui/templatemanagerpage.py:256
-#: exe/webui/templatemanagerpage.py:263 exe/webui/templatemanagerpage.py:297
+#: exe/webui/stylemanagerpage.py:303 exe/webui/stylemanagerpage.py:327
+#: exe/webui/stylemanagerpage.py:370 exe/webui/stylemanagerpage.py:381
+#: exe/webui/stylemanagerpage.py:392 exe/webui/stylemanagerpage.py:429
+#: exe/webui/stylemanagerpage.py:436 exe/webui/stylemanagerpage.py:479
+#: exe/webui/stylemanagerpage.py:491 exe/webui/templatemanagerpage.py:130
+#: exe/webui/templatemanagerpage.py:229 exe/webui/templatemanagerpage.py:241
+#: exe/webui/templatemanagerpage.py:256 exe/webui/templatemanagerpage.py:263
+#: exe/webui/templatemanagerpage.py:297
 #: exe/webui/tools/style-designer/langs/all.js:130
 msgid "Error"
 msgstr "Erro"
@@ -4585,10 +4588,6 @@ msgstr ""
 msgid "Do you want to export the package with the current metadata?"
 msgstr "Deseja exportar o pacote com os metadados atuais?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:909
-msgid "Don't show this warning again"
-msgstr "Não mostrar este aviso novamente"
-
 #: exe/jsui/scripts/app/controller/Toolbar.js:943
 msgid "Initializing Procomún export process..."
 msgstr "A iniciar o processo de exportação para \"Procomún\"..."
@@ -4800,7 +4799,7 @@ msgstr "Abrir"
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:161
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:228
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:666
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:651
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:329
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:174 exe/webui/editorpage.py:264
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:4
@@ -4939,8 +4938,8 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
 #: exe/jsui/scripts/app/view/forms/LomSections.js:95
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:555
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:232
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:239
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:236
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:243
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:174
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:230
@@ -4981,7 +4980,7 @@ msgstr "A referência a um recurso de que se deriva o presente recurso."
 #: exe/jsui/scripts/app/view/forms/LomSections.js:123
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:181
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:70
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:72
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:169
@@ -5045,7 +5044,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:167
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:233
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:273
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:672
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:657
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
@@ -5056,7 +5055,7 @@ msgstr "Apagar tudo"
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:173
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:678
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:663
 #: exe/webui/tools/style-designer/langs/all.js:115
 msgid "Reset"
 msgstr "Reiniciar"
@@ -5382,7 +5381,7 @@ msgstr "Requisitos doutras plataformas"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:110
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:25
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:127
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:124
 msgid "Duration"
 msgstr "Duração"
 
@@ -5484,14 +5483,14 @@ msgid "Time"
 msgstr "Tempo"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:29
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:229
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:233
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:367
 msgid "Required"
 msgstr "Requerido"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:32
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:37
-#: exe/webui/scripts/idevices/text/edition/text.js:22
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:39
+#: exe/webui/scripts/idevices/text/edition/text.js:24
 msgid "Optional"
 msgstr "Opcional"
 
@@ -5701,9 +5700,9 @@ msgstr "Autor principal do recurso."
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1031
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1051
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:431
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:875
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1014
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1034
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:886
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1025
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1045
 #: exe/webui/tools/assistant/langs/all.js:29
 #: exe/webui/tools/style-designer/langs/all.js:37
 msgid "License"
@@ -5865,26 +5864,15 @@ msgid "Update Tree"
 msgstr "Atualizar árvore"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:631
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:68
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:69
 msgid "Advanced Options"
 msgstr "Opções avançadas"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:644
-msgid "Create package compatible with old eXe versions?"
-msgstr "Criar pacote compatível com versões antigas do eXe?"
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:648
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:652
-msgid "Checking this option, the saved package may be opened with eXe >= 0.20.4"
-msgstr ""
-"Se marcar esta opção, o pacote guardado poderá ser aberto com eXe >= "
-"0.20.4"
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:657
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:642
 msgid "Custom HEAD"
 msgstr "HEAD personalizado"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:658
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:643
 msgid ""
 "Any code you enter here (STYLE, META, SCRIPT...) will be added in the "
 "HEAD section to every page."
@@ -5897,7 +5885,7 @@ msgid "Select Browser"
 msgstr "Escolha o navegador"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:39
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:57
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:58
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "General Settings"
 msgstr "Configurações gerais"
@@ -6120,10 +6108,10 @@ msgid "Import style from custom URL"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:518
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:59
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:229
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:232
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:239
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:60
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:233
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:236
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:243
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:133
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:138
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:124
@@ -6249,8 +6237,9 @@ msgid "Visible"
 msgstr "Visível"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
-msgid "Authoring"
-msgstr "Edição"
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Content"
+msgstr "Conteúdo"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:47
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
@@ -6287,8 +6276,8 @@ msgstr "Adicionar página"
 #: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
 #: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
 #: exe/webui/editorpage.py:255 exe/webui/editorpage.py:258
-#: exe/webui/galleryblock.py:303 exe/webui/jsblock.py:110
-#: exe/webui/jsblock.py:115 exe/webui/scripts/editor.js:23
+#: exe/webui/galleryblock.py:303 exe/webui/jsblock.py:109
+#: exe/webui/jsblock.py:114 exe/webui/scripts/editor.js:23
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:3
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/blockquoteandcite/langs/en.js:10
 msgid "Delete"
@@ -6595,6 +6584,14 @@ msgstr "Agrupar iDevices"
 #: exe/jsui/scripts/exe.js:361 exe/jsui/scripts/exe.js:369
 msgid "Show panel"
 msgstr ""
+
+#: exe/jsui/scripts/exe.js:392
+msgid "Click on the elements of the left panel to add content."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:909 exe/jsui/scripts/exe.js:393
+msgid "Don't show this warning again"
+msgstr "Não mostrar este aviso novamente"
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
@@ -7708,7 +7705,7 @@ msgstr "baixo"
 #: exe/jsui/scripts/lomvocab.js:481 exe/jsui/scripts/lomvocab.js:549
 #: exe/jsui/scripts/lomvocab.js:645 exe/jsui/scripts/lomvocab.js:1395
 #: exe/jsui/scripts/lomvocab.js:1463 exe/jsui/scripts/lomvocab.js:1615
-#: exe/webui/externalurlblock.py:73
+#: exe/webui/externalurlblock.py:72
 msgid "medium"
 msgstr "média"
 
@@ -8282,7 +8279,7 @@ msgstr "Nome do ficheiro:"
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1085 exe/webui/scripts/authoring.js:106
 #: exe/webui/scripts/authoring.js:367 exe/webui/scripts/authoring.js:376
-#: exe/webui/scripts/authoring.js:958 exe/webui/scripts/editor.js:81
+#: exe/webui/scripts/authoring.js:964 exe/webui/scripts/editor.js:81
 #: exe/webui/scripts/editor.js:108
 msgid "Select a file"
 msgstr "Selecionar um ficheiro"
@@ -8519,8 +8516,8 @@ msgstr "Permitir JavaScript"
 
 #: exe/webui/common.py:621 exe/webui/common.py:880 exe/webui/element.py:1547
 #: exe/webui/element.py:2477 exe/webui/listablock.py:274
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:41
-#: exe/webui/scripts/idevices/text/edition/text.js:26
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:43
+#: exe/webui/scripts/idevices/text/edition/text.js:28
 msgid "Show Feedback"
 msgstr "Mostrar feedback"
 
@@ -8529,8 +8526,9 @@ msgid "Hide Feedback"
 msgstr "Ocultar resposta"
 
 #: exe/webui/common.py:623 exe/webui/common.py:656 exe/webui/element.py:2280
-#: exe/webui/stylemanagerpage.py:475 exe/webui/stylemanagerpage.py:488
-#: exe/webui/templatemanagerpage.py:238 exe/webui/templatemanagerpage.py:260
+#: exe/webui/stylemanagerpage.py:301 exe/webui/stylemanagerpage.py:475
+#: exe/webui/stylemanagerpage.py:488 exe/webui/templatemanagerpage.py:238
+#: exe/webui/templatemanagerpage.py:260
 msgid "Correct"
 msgstr "Correto"
 
@@ -9282,11 +9280,11 @@ msgstr "Sem destaque"
 msgid "Some emphasis"
 msgstr "Algum destaque"
 
-#: exe/webui/editorpane.py:363 exe/webui/jsblock.py:87
+#: exe/webui/editorpane.py:363 exe/webui/jsblock.py:86
 msgid "Select an icon"
 msgstr "Escolha um ícone"
 
-#: exe/webui/editorpane.py:381 exe/webui/jsblock.py:119
+#: exe/webui/editorpane.py:381 exe/webui/jsblock.py:120
 msgid "Icons"
 msgstr "Ícones"
 
@@ -9447,19 +9445,24 @@ msgstr "Adicionar outra opção"
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/webui/externalurlblock.py:72
+#: exe/webui/externalurlblock.py:70
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:597
+msgid "Remember that HTTP pages cannot be included into HTTPS websites."
+msgstr ""
+
+#: exe/webui/externalurlblock.py:71
 msgid "small"
 msgstr "pequena"
 
-#: exe/webui/externalurlblock.py:74
+#: exe/webui/externalurlblock.py:73
 msgid "large"
 msgstr "grande"
 
-#: exe/webui/externalurlblock.py:75
+#: exe/webui/externalurlblock.py:74
 msgid "super-size"
 msgstr "muito grande"
 
-#: exe/webui/externalurlblock.py:81
+#: exe/webui/externalurlblock.py:79
 msgid "Frame Height:"
 msgstr "Altura da área de exibição:"
 
@@ -9496,7 +9499,7 @@ msgid "File List (this list shows only in preview mode):"
 msgstr "Lista de ficheiros (esta lista é mostrada apenas no modo de vista prévia)"
 
 #: exe/webui/fileattachblock.py:158
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:250
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:254
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:46
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:129
 msgid "New Window"
@@ -9624,10 +9627,6 @@ msgid ""
 msgstr ""
 "O título e o ícone não são imprescindíveis. Se não os incluir, o iDevice "
 "não terá destaque."
-
-#: exe/webui/jsblock.py:87
-msgid "Icon"
-msgstr ""
 
 #: exe/webui/listablock.py:180
 msgid "Other words"
@@ -9834,7 +9833,7 @@ msgstr ""
 msgid "This change will be undone."
 msgstr "Esta alteração será desfeita."
 
-#: exe/webui/scripts/authoring.js:1083
+#: exe/webui/scripts/authoring.js:1089
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/exe_abcmusic.js:77
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:14
 msgid "Go to Tools - Preview to see this working"
@@ -10009,7 +10008,7 @@ msgstr ""
 "Inserir uma atividade GeoGebra a partir de www.geogebra.org . Precisa de "
 "estar ligado à Internet."
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:63
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:64
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -10023,7 +10022,7 @@ msgstr ""
 msgid "Width"
 msgstr "Largura"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:64
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:65
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -10037,27 +10036,27 @@ msgstr "Largura"
 msgid "Height"
 msgstr "Altura"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:71
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:73
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:170
 #: exe/webui/tools/style-designer/langs/all.js:21
 msgid "Border color"
 msgstr "Cor do bordo"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:75
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:77
 msgid "Save score button"
 msgstr "Botão para guardar a pontuação"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:77
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:26
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:79
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:30
 #: exe/webui/tools/style-designer/langs/all.js:66
 msgid "Button text"
 msgstr "Texto do botão"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:78
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:80
 msgid "Save score"
 msgstr "Guardar a pontuação"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:83
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:85
 msgid ""
 "The button will only be displayed when exporting as SCORM and while "
 "editing in eXeLearning."
@@ -10065,7 +10064,7 @@ msgstr ""
 "O botão será mostrado apenas quando exportar como SCORM e quando estiver "
 "a editar en eXeLearning."
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:84
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:86
 msgid ""
 "Include only one GeoGebra activity with a \"Save score\" button in the "
 "page."
@@ -10073,7 +10072,7 @@ msgstr ""
 "Incluir apenas uma atividade GeoGebra com um botão \"Guardar a "
 "pontuação\" na página."
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:85
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:87
 msgid ""
 "The activity with button has to be the last GeoGebra activity on the page"
 " (or it won't work)."
@@ -10081,12 +10080,12 @@ msgstr ""
 "A atividade com o botão tem de ser a última atividade GeoGebra da página "
 "(senão não funcionará)."
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:86
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:88
 msgid "Do not include a \"SCORM Quiz\" iDevice in the same page."
 msgstr "Não coloque um iDevice \"Teste SCORM\" na mesma página."
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:257
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:141
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:261
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:150
 msgid "Please write the button text."
 msgstr "Por favor, escreva o texto do botão."
 
@@ -10464,7 +10463,7 @@ msgid "Exit the fullscreen mode (Esc) to see the current slide"
 msgstr ""
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:38
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:47
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:56
 msgid "Right!"
 msgstr "Correto!"
 
@@ -10567,7 +10566,7 @@ msgid "Text to display"
 msgstr "Texto a exibir"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:28
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:136
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:133
 msgid "Participants"
 msgstr "Participantes"
 
@@ -10579,28 +10578,28 @@ msgstr "Número o descrição"
 msgid "Grouping"
 msgstr "Divisão em grupos"
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:34
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:35
 msgid "Describe the tasks that the learners should complete:"
 msgstr "Descreva as tarefas que os estudantes devem completar:"
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:40
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:168
-#: exe/webui/scripts/idevices/text/edition/text.js:25
-#: exe/webui/scripts/idevices/text/edition/text.js:104
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:42
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:165
+#: exe/webui/scripts/idevices/text/edition/text.js:27
+#: exe/webui/scripts/idevices/text/edition/text.js:101
 msgid "Feedback button text"
 msgstr "Texto do botão de \"feedback\""
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:122
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:119
 #, python-format
 msgid "Please write the text to display in '%s'."
 msgstr "Por favor, digite o texto que será mostrado em '%s'."
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:150
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:147
 msgid "Please write the task description."
 msgstr "Por favor, escreva a descrição da tarefa."
 
-#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:167
-#: exe/webui/scripts/idevices/text/edition/text.js:103
+#: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:164
+#: exe/webui/scripts/idevices/text/edition/text.js:100
 #, python-format
 msgid "Please fill in this field: '%s'."
 msgstr "Por favor, preencha o campo: '%s'."
@@ -10609,37 +10608,37 @@ msgstr "Por favor, preencha o campo: '%s'."
 msgid "Scrambled List"
 msgstr "Lista desordenada"
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:30
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:39
 msgid "The right answer will be shown after this text."
 msgstr "A resposta correta será mostrada depois deste texto."
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:48
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:57
 msgid "Sorry... The right answer is:"
 msgstr "Lamento... A resposta correta é:"
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:84
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:93
 msgid "Write the elements in the right order:"
 msgstr "Escreva os elementos na ordem correta:"
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:112
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:121
 msgid "Please write some instructions."
 msgstr "Por favor, escreva alguma instruções."
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:129
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:138
 msgid "Add at least 3 elements."
 msgstr "Acrescente pelo menos 3 elementos."
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:149
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:158
 msgid "Please write the text to show when right."
 msgstr ""
 "Por favor, escreva o texto que será mostrado quando a resposta for "
 "correta."
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:157
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:166
 msgid "Please write the text to show when wrong."
 msgstr "Por favor, escreva o texto que será mostrado quando a resposta for errada."
 
-#: exe/webui/scripts/idevices/text/edition/text.js:88
+#: exe/webui/scripts/idevices/text/edition/text.js:85
 msgid "Please write some information."
 msgstr "Por favor, escreva algumas informações."
 
@@ -11045,8 +11044,8 @@ msgstr "Classe"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:136
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:464
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1884
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1891
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1895
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1902
 msgid "Insert/Edit Embedded Media"
 msgstr "Inserir/Editar mídia embutida"
 
@@ -11663,8 +11662,8 @@ msgstr "Escolha uma licença..."
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1047
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:434
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:436
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:859
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1030
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:870
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1041
 msgid "Public Domain"
 msgstr "Domínio público"
 
@@ -11674,8 +11673,8 @@ msgstr "Domínio público"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:863
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1051
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:443
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:865
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1034
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:876
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1045
 msgid "All Rights Reserved"
 msgstr "Todos os direitos reservados"
 
@@ -12708,10 +12707,6 @@ msgstr "Adiar"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Media"
 msgstr "Media"
-
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-msgid "Content"
-msgstr "Conteúdo"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Rel"
@@ -14579,7 +14574,7 @@ msgid "Custom license"
 msgstr "Licença personalizada"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1056
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1039
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1050
 msgid "Please check the \"License\" field"
 msgstr "Por favor, verifique o campo \"Licença\""
 
@@ -14615,38 +14610,38 @@ msgstr "Colar o seu código incrustado em baixo:"
 msgid "Please select the Source"
 msgstr "Por favor, escolha a Fonte"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:734
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:745
 msgid "This format (%) is valid for audio and video."
 msgstr "Este formato (%) é válido para áudio e vídeo."
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:735
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:746
 msgid "Cannot detect automatically. Please choose the right type."
 msgstr "Não é possível detetar automaticamente. Por favor, escolha o tipo correto."
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:750
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:761
 msgid "Successfully updated, but please convert the video to another format:"
 msgstr ""
 "Atualizado com sucesso, mas por favor, faça a conversão do vídeo para "
 "outro formato:"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:757
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:768
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:779
 msgid "Selected format: "
 msgstr "Formato escolhido: "
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:758
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:769
 msgid "Please use any of these formats or provide a link to the file itself: "
 msgstr ""
 "Por favor, utilize um destes formatos ou forneça uma ligação para o "
 "próprio ficheiro: "
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:769
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:780
 msgid "Please use any of these formats or provide a link to the file itself:"
 msgstr ""
 "Por favor, utilize um destes formatos ou forneça uma ligação para o "
 "próprio ficheiro:"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1067
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1078
 msgid ""
 "This fragment uses old code. Would you like to update it? (necessary to "
 "be able to edit the parameters)"
@@ -14654,14 +14649,14 @@ msgstr ""
 "Este fragmento utiliza código obsoleto. Quer atualizá-lo? (é necessário "
 "poder editar os parâmetros)"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1124
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1191
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1135
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1202
 msgid "You are using and old code. Update it (required to edit)?"
 msgstr ""
 "Está a utilizar código antigo. Deseja atualizá-lo (é necessário para o "
 "poder editar)?"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1179
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1190
 msgid ""
 "You are using QuickTime.\n"
 "We recommend you to use any of these formats:\n"
@@ -14992,9 +14987,9 @@ msgstr "Erro ao instalar o estilo: %s"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:94
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:87
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1103
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1155
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1219
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1114
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1166
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1230
 #: exe/webui/stylemanagerpage.py:232
 msgid "Could not retrieve data (Core error)"
 msgstr "Não é possível obter os dados (Erro do núcleo)"
@@ -15002,6 +14997,15 @@ msgstr "Não é possível obter os dados (Erro do núcleo)"
 #: exe/webui/stylemanagerpage.py:276
 msgid "Error while getting styles list from the repository"
 msgstr "Erro ao obter a lista de estilos do repositório"
+
+#: exe/webui/stylemanagerpage.py:301
+msgid "Style updated correctly"
+msgstr ""
+
+#: exe/webui/stylemanagerpage.py:303 exe/webui/stylemanagerpage.py:491
+#: exe/webui/templatemanagerpage.py:263 exe/webui/templatemanagerpage.py:297
+msgid "An unexpected error has occurred"
+msgstr "Aconteceu um erro inesperado"
 
 #: exe/webui/stylemanagerpage.py:317
 msgid "Style successfully downloaded and installed"
@@ -15057,11 +15061,6 @@ msgstr "Não foi possível exportar o estilo: %s"
 #: exe/webui/stylemanagerpage.py:488
 msgid "Style deleted correctly"
 msgstr "O estilo foi apagado corretamente"
-
-#: exe/webui/stylemanagerpage.py:491 exe/webui/templatemanagerpage.py:263
-#: exe/webui/templatemanagerpage.py:297
-msgid "An unexpected error has occurred"
-msgstr "Aconteceu um erro inesperado"
 
 #: exe/webui/templatemanagerpage.py:127
 msgid "Successfully imported template"
@@ -15162,8 +15161,8 @@ msgid "Click \"Save\"."
 msgstr "Clique em \"Guardar\"."
 
 #: exe/webui/tools/assistant/langs/all.js:31
-msgid "Switch back to the \"Authoring\" tab."
-msgstr "Mude de volta para a aba \"Edição\"."
+msgid "Switch back to the \"Content\" tab."
+msgstr ""
 
 #: exe/webui/tools/assistant/langs/all.js:32
 msgid "Remember to save your project whenever you change something."
@@ -16034,4 +16033,25 @@ msgstr ""
 
 #~ msgid "Ony one interactive video per page."
 #~ msgstr ""
+
+#~ msgid "Create package compatible with old eXe versions?"
+#~ msgstr "Criar pacote compatível com versões antigas do eXe?"
+
+#~ msgid ""
+#~ "Checking this option, the saved package"
+#~ " may be opened with eXe >= "
+#~ "0.20.4"
+#~ msgstr ""
+#~ "Se marcar esta opção, o pacote "
+#~ "guardado poderá ser aberto com eXe "
+#~ ">= 0.20.4"
+
+#~ msgid "Authoring"
+#~ msgstr "Edição"
+
+#~ msgid "Icon"
+#~ msgstr ""
+
+#~ msgid "Switch back to the \"Authoring\" tab."
+#~ msgstr "Mude de volta para a aba \"Edição\"."
 
