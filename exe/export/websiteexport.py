@@ -119,6 +119,7 @@ class WebsiteExport(object):
             ext = 'htm'
         if not page.node.idevices:self.report += u'"%s","%s",%d,"%s",,,,,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext)
         for idevice in page.node.idevices:
+            ideviceFiles = []
             if not idevice.userResources:self.report += u'"%s","%s",%d,"%s","%s","%s",,,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title)
             for resource in idevice.userResources:
                 if type(resource) == Resource:
@@ -126,7 +127,9 @@ class WebsiteExport(object):
                         resourceSize = os.path.getsize(resource.path)
                     except:
                         resourceSize = '?'
-                    self.report += u'"%s","%s",%d,"%s","%s","%s","%s","%s","%s","%s","%s"\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource.storageName, resource.userName, resource.path, resource.checksum, resourceSize)
+                    if not resource.checksum in ideviceFiles:
+                        self.report += u'"%s","%s",%d,"%s","%s","%s","%s","%s","%s","%s","%s"\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource.storageName, resource.userName, resource.path, resource.checksum, resourceSize)
+                    ideviceFiles.append(resource.checksum)
                 else:
                     self.report += u'"%s",%d,"%s","%s","%s","%s",,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource)
 
