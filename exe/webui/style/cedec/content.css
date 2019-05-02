@@ -1,0 +1,258 @@
+/* vietnamese */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Quicksand Regular'), local('Quicksand-Regular'), url(quicksand-regular-vietnamese.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Quicksand Regular'), local('Quicksand-Regular'), url(quicksand-regular-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Quicksand Regular'), local('Quicksand-Regular'), url(quicksand-regular-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+html{padding:0}
+body{font:1.1em/1.6 "Quicksand","Open Sans",​Arial,Helvetica,​sans-serif;padding:15px;margin:0;text-align:left;color:#333;background:#FFF}
+p{margin:1em 0}
+a{color:#65adc5}
+.emphasis1 a{color:#39c}
+#header,#emptyHeader{text-align:left;height:auto!important;height:2em;min-height:2em;padding:30px 10px 20px 20px;font-size:1.6em;color:#FFF;
+letter-spacing:1px;font-weight:normal;
+background:#6B6866;
+text-shadow:1px 1px 1px #333;letter-spacing:.5px;border-radius:2px;
+text-transform:uppercase} /* Header is also in single page */
+#headerContent a{color:#FFF} /* See myTheme.rftTitle in _cedec_js.js */
+#header h1{margin:0;font-size:1em}
+#nodeDecoration{border-radius:2px;text-align:left;padding:1em 20px;margin-bottom:2em;
+background:#6B6866;
+text-shadow:1px 1px 1px #333;color:#FFF;letter-spacing:.5px}
+#nodeTitle{font-size:1.5em;margin:0;font-weight:normal;color:#FFF}
+/* .nodeTitle when single page */
+.nodeTitle{padding:.1em 0 .6em 0;border-bottom:1px solid #EF801B;margin:1em 0 0 0;color:#00AA89;font-weight:bold;letter-spacing:.5px;font-size:1.7em}
+
+#headerContent span{display:block;font-size:.6em}
+#headerContent .sep{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+
+h2{font-size:1.45em;color:#00aa89;letter-spacing:.5px}
+h3{font-size:1.3em;color:#ef801b;letter-spacing:.5px}
+ol,ul{color:#666;font-size:.95em}
+li{margin-top:.2em;margin-bottom:.2em}
+li ol,li ul{margin-top:.5em;margin-bottom:.5em}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice{margin:1em 0 2em 0}
+
+/* iDevice icons */
+.iDevice_header{background:#F5F5F5 url(icon_think.png) no-repeat 20px 15px;padding:20px 0 30px 105px;position:relative;border-top-left-radius:2px;border-top-right-radius:2px}
+.hidden-idevice .iDevice_header{border-radius:2px}
+.iDevice_header.iDevice_header_noIcon{padding:5px 20px}
+.hidden-idevice .iDevice_header.iDevice_header_noIcon{padding-bottom:20px}
+
+.activityIdevice .iDevice_header{background-image:url(icon_activity.png)}
+.readingIdevice .iDevice_header{background-image:url(icon_book.png)}
+.CasestudyIdevice .iDevice_header{background-image:url(icon_case.png)}
+.FileAttachIdeviceInc .iDevice_header{background-image:url(icon_file.png)}
+.GalleryIdevice .iDevice_header{background-image:url(icon_gallery.png)}
+.objectivesIdevice .iDevice_header{background-image:url(icon_objectives.png)}
+.ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.png)}
+.preknowledgeIdevice .iDevice_header{background-image:url(icon_start.png)}
+/* Interactive activities */
+.ListaIdevice .iDevice_header,
+.QuizTestIdevice .iDevice_header,
+.MultichoiceIdevice .iDevice_header,
+.TrueFalseIdevice .iDevice_header,
+.MultiSelectIdevice .iDevice_header,
+.ClozeIdevice .iDevice_header{background-image:url(icon_interactive.png)}
+
+#main .iDeviceTitle{font-size:1.4em;display:inline;font-weight:normal;vertical-align:top;top:.25em;color:#000;line-height:2em;padding-right:55px;letter-spacing:1px}
+.iDevice_content{overflow:auto;text-align:justify}
+/* iDevice content */
+.iDevice_inner{padding:10px 20px;border:1px solid #F5F5F5;background:#F5F5F5;border-radius:2px}
+
+/* With shadow */
+/* Interactive activities */
+.CasestudyIdevice,
+.ListaIdevice,
+.QuizTestIdevice,
+.MultichoiceIdevice,
+.TrueFalseIdevice,
+.MultiSelectIdevice,
+.ClozeIdevice,
+.em_iDevice_interactive{box-shadow:0 0 10px 0 rgba(102,102,102,.4);border-radius:2px}
+.CasestudyIdevice .idevice-edition-buttons,
+.ListaIdevice .idevice-edition-buttons,
+.QuizTestIdevice .idevice-edition-buttons,
+.MultichoiceIdevice .idevice-edition-buttons,
+.TrueFalseIdevice .idevice-edition-buttons,
+.MultiSelectIdevice .idevice-edition-buttons,
+.ClozeIdevice .idevice-edition-buttons,
+.em_iDevice_interactive .idevice-edition-buttons{background:#F5F5F5;padding-left:7px;margin:0}
+
+/* Different background color */
+.activityIdevice .iDevice_header,.activityIdevice .iDevice_inner,
+.em_iDevice_activity .iDevice_header,.em_iDevice_activity .iDevice_inner,
+.readingIdevice .iDevice_header,.readingIdevice .iDevice_inner,
+.em_iDevice_book .iDevice_header,.em_iDevice_book .iDevice_inner{background-color:#FCFBF8;border-color:#FCFBF8}
+.FileAttachIdeviceInc .iDevice_header,.FileAttachIdeviceInc .iDevice_inner,
+.em_iDevice_file .iDevice_header,.em_iDevice_file .iDevice_inner{background-color:#EFF7F0;border-color:#EFF7F0}
+.GalleryIdevice .iDevice_header,.GalleryIdevice .iDevice_inner,
+.em_iDevice_gallery .iDevice_header,.em_iDevice_gallery .iDevice_inner{background-color:#FFF5F7;border-color:#FFF5F7}
+.objectivesIdevice .iDevice_header,.objectivesIdevice .iDevice_inner,
+.em_iDevice_objectives .iDevice_header,.em_iDevice_objectives .iDevice_inner,
+.preknowledgeIdevice .iDevice_header,.preknowledgeIdevice .iDevice_inner,
+.em_iDevice_start .iDevice_header,.em_iDevice_start .iDevice_inner{background-color:#F9FFF9;border-color:#F9FFF9}
+.ReflectionIdevice .iDevice_header,.ReflectionIdevice .iDevice_inner,
+.em_iDevice_reflection .iDevice_header,.em_iDevice_reflection .iDevice_inner{background-color:#FFF9FA;border-color:#FFF9FA}
+
+#siteFooter{color:#666;font-size:.95em;padding:1em 0}
+#siteFooter a{color:#DB0B00}
+input,select,textarea,.feedback{font-family:"Quicksand","Open Sans",​Arial,Helvetica,​sans-serif;font-size:1em}
+#lbOverlay{background-color:#e2e2e2}
+#lbOuterContainer{border-color:#ddd}
+.ExternalUrlIdevice iframe{border:none}
+/* Lightbox */
+.exeImageGallery{width:100%}
+/* base.css */
+.block,.feedback{padding:0}
+li{list-style-position:outside}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+/* Form buttons */
+.iDevice_inner input[type=submit],input.feedbackbutton{background:#FFF;border:0;padding:7px 15px;color:#333;border-radius:4px;margin-bottom:1em;border:1px solid #CCC;cursor:pointer}
+.iDevice_inner input[type=submit]:hover,.feedbackbutton:hover{background:#EEE;border-color:#ADADAD;color:#000}
+/* Hide/Show iDevice */
+.toggle-idevice{text-align:right;display:block}
+.iDevice_header .toggle-idevice{margin:0;position:absolute;right:15px;top:15px}
+.toggle-idevice a{display:inline-block;width:23px;height:23px;background:url(_cedec_icons.png) no-repeat 0 -23px;opacity:.6;filter:alpha(opacity=60)}
+.toggle-idevice a:hover,.toggle-idevice a:focus{opacity:1;filter:alpha(opacity=100)}
+.toggle-em1 a{background-position:-23px -23px}
+.toggle-idevice .show-idevice{background-position:0 0}
+.toggle-em1 .show-idevice{background-position:-23px 0}
+.toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+/* eXe < 2.1 */
+.iDevice a,#siteFooter a,#packageLicense a,.toggle-idevice a{text-decoration:underline}
+.iDevice a:hover,#siteFooter a:hover,#packageLicense a:hover,.toggle-idevice a:hover{text-decoration:none}
+/* Licenses */
+#packageLicense{text-align:left;font-size:.85em;padding:0 20px;color:#555;line-height:1em;margin:2.5em 0 7px 0;background:#F5F5F5;border:1px solid #F0F0F0;border-radius:2px}
+#packageLicense p{margin:20px 0}
+#packageLicense a{color:#444;text-decoration:underline}
+#packageLicense.propietary{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+#packageLicense.cc{padding:0 20px 0 110px;background:#F5F5F5 url(_cedec_licenses.gif) no-repeat 20px 5px}
+#packageLicense.cc-by-sa{background-position:20px -95px}
+#packageLicense.cc-by-nd{background-position:20px -195px}
+#packageLicense.cc-by-nc-sa{background-position:20px -295px}
+#packageLicense.cc-by-nc-nd{background-position:20px -395px}
+#packageLicense.cc-0{background-position:20px -495px}
+
+/* eXe Figures */
+.exe-figure{margin:2.5em 0}
+.position-center{margin:2.5em auto}
+.position-right{margin:2.5em 0 2.5em auto}
+.float-left{margin:.5em 1.5em 1em 0}
+.float-right{float:right;margin:.5em 0 1em 2em}
+.figcaption{font-size:.95em;text-align:center}
+
+#printNode{margin:-14px 7px 0 0;text-align:right}
+#printNode.with-toggler{margin-bottom:-14px}
+#printNode a{font-size:.95em;background:url(_cedec_print.gif) no-repeat 0 50%;padding-left:26px}
+
+/* Accordion */
+.fx-accordion-title,.exe-accordion h2{background:#1E3F5D}
+
+/* DL */
+.exe-dl .icon,.exe-dl-toggler a{width:24px;height:24px;border-radius:12px}
+.js .exe-dl dd{margin-left:44px}
+
+/* Hint & Feedback */
+.iDevice_hint_content{border-radius:2px;border:1px solid #D9DADC;background:#FFF}
+.iDevice_inner .feedback{background:#FFF;border-radius:2px;border:1px solid #D9DADC;padding:0 1em;margin:1em 0}
+.iDevice_inner .iDevice_answer-feedback{background:none;border:none;padding:0;margin:0}
+.TrueFalseIdevice .feedback{margin-top:1.5em}
+
+/* Messages */
+.exe-block-warning{padding:0 1em 0 55px;background:#FCF8E3 url(_cedec_icon_warning.png) no-repeat 17px .9em;margin:1.5em 0}
+.exe-block-alert{padding:0 1em 0 55px;background:#ffc url(_cedec_icon_alert.png) no-repeat 17px .9em;margin:1.5em 0}
+.exe-block-danger{padding:0 1em 0 55px;background:#FEF0EF url(_cedec_icon_danger.png) no-repeat 17px .9em;margin:1.5em 0}
+.exe-block-info{padding:0 1em 0 55px;background:#E1F1F9 url(_cedec_icon_info.png) no-repeat 17px .9em;margin:1.5em 0}
+.exe-block-success{padding:0 1em 0 55px;background:#E5F3E0 url(_cedec_icon_success.png) no-repeat 17px .9em;margin:1.5em 0}
+p.exe-block-warning,p.exe-block-alert,p.exe-block-danger,p.exe-block-info,p.exe-block-success{padding:1em 1em 1em 55px}
+
+/* Quote With Authorship */
+.styled-qc{font-family:"Open Sans",​Arial,Helvetica,​sans-serif;font-size:1.1em}
+.styled-qc:before{font-family:Georgia,serif;color:#00AA89}
+.styled-qc cite{font-size:.91em;color:#555}
+
+/* PBL iDevice */
+body .pbl-task-info{line-height:2em;margin-top:-.4em;color:#666;text-align:left}
+dt.pbl-task-duration span{padding-left:32px;background:url(_cedec_pbl_duration.png) no-repeat 0 50%}
+dt.pbl-task-participants span{padding-left:32px;background:url(_cedec_pbl_participants.png) no-repeat 0 50%}
+
+#theme-iframe-text{display:none}
+#theme-iframe{display:none;width:100%;border:0}
+#theme-iframe-indicator{height:625px;padding-top:75px;background:url(_cedec_loading.gif) no-repeat 50% 25px;text-align:center}
+#theme-iframe-indicator.error{padding-top:15px;height:685px;background:#FFF;text-align:left}
+
+@media print{
+	a{font-weight:bolder;text-decoration:none!important}
+	a[href^=http]:after{
+		content:" <" attr(href) "> ";color:#666;font-weight:normal;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		-ms-word-break: break-all;
+		word-break: break-all;
+		word-break: break-word;
+		-ms-hyphens: auto;
+		-moz-hyphens: auto;
+		-webkit-hyphens: auto;
+		hyphens: auto	
+	}
+	#nodeDecoration,#header,#emptyHeader{color:#000;text-shadow:none;background:none;border-bottom:1px solid #E2E2E2;padding:20px 0}
+	#nodeTitle,.nodeTitle,#headerContent a{color:#000}
+	.iDevice .iDevice_header{padding-left:0;padding-bottom:25px;border-bottom:1px solid #00AA89}
+	#content{max-width:100%}
+	.iDevice_inner{padding:10px 0;border-width:0}
+	/* Interactive activities */
+	.CasestudyIdevice .iDevice_inner,
+	.ListaIdevice .iDevice_inner,
+	.QuizTestIdevice .iDevice_inner,
+	.MultichoiceIdevice .iDevice_inner,
+	.TrueFalseIdevice .iDevice_inner,
+	.MultiSelectIdevice .iDevice_inner,
+	.ClozeIdevice .iDevice_inner,
+	.em_iDevice_interactive .iDevice_inner{
+		padding:10px 20px
+	}
+	.CasestudyIdevice .iDevice_header,
+	.ListaIdevice .iDevice_header,
+	.QuizTestIdevice .iDevice_header,
+	.MultichoiceIdevice .iDevice_header,
+	.TrueFalseIdevice .iDevice_header,
+	.MultiSelectIdevice .iDevice_header,
+	.ClozeIdevice .iDevice_header,
+	.em_iDevice_interactive .iDevice_header{
+		padding-left:20px;
+		border-bottom:0;
+		padding-bottom:0
+	}	
+	.exe-block-warning,.exe-block-alert,.exe-block-danger,.exe-block-info,.exe-block-success{padding:0 1em;max-width:92%;margin-left:auto;margin-right:auto}
+	p.exe-block-warning,p.exe-block-alert,p.exe-block-danger,p.exe-block-info,p.exe-block-success{padding:1em}
+	#theme-iframe-text{display:block}
+	#theme-iframe-indicator,#theme-iframe{display:none!important}
+}
+
+.external-link-img{padding:0 .3em;vertical-align:middle}
+body .exe-download-package-link a{background:#00AA89;text-shadow:1px 1px 1px #333;border-radius:0}
+
+/* Tables (to review) */
+td p{margin:.6em 0}
+td ul,td ol{margin-top:.6em;margin-bottom:.6em}

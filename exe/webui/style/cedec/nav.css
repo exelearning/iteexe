@@ -1,0 +1,101 @@
+body{max-width:1280px;margin:0 auto;background:#FFF;padding:10px 0 0 0}
+#lbOverlay{background:#f3f3f3}
+#content{width:100%;margin:0 auto 10px auto;text-align:left;position:relative;padding-bottom:21px;background:#fff url(_cedec_left_column.gif) repeat-y 0 0}
+body.no-nav,.no-nav #content{background:#fff}
+#main-wrapper{padding:0 20px 0 300px}
+.no-nav #main-wrapper{padding-left:20px}
+#main{width:100%;height:auto!important;height:200px;min-height:200px}
+#header,#emptyHeader{border-top:none;border-radius:0;padding-right:210px}
+#nodeDecoration{padding:0;margin:0 0 10px 0;border:none;text-shadow:none;background:none;border-bottom:1px solid #EF801B;border-radius:0}
+#nodeTitle{padding:.8em 0 20px 0;color:#00AA89;font-weight:bold;letter-spacing:.5px;font-size:1.7em}
+#siteFooter{padding-left:300px}
+.no-nav #siteFooter{padding-left:20px}
+
+/* Navigation */
+#skipNav{text-align:center;padding-top:25px;font-size:.95em}
+#skipNav a{border-radius:2px;padding:2px 6px 3px 6px;background:#EF801B}
+#siteNav{width:280px;float:left;padding-right:20px;margin:0 0 70px 0;border-top:10px solid #FFF}
+#siteNav.fixed{position:fixed;top:0}
+#siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
+#siteNav a{font-size:.95em;display:block;padding:7px 10px 7px 20px;border-bottom:1px solid #f3f3f3;color:#555;background:#f3f3f3}
+#siteNav .main-node{padding-top:20px}
+#siteNav a:hover,#siteNav a:focus{color:#EF801B;background:#fff}
+#siteNav ul ul a{padding-left:30px;font-size:.9em;background:#f9f9f9}
+#siteNav ul ul a:hover,#siteNav ul ul a:focus{color:#00AA89}
+#siteNav .active{color:#000;text-decoration:underline}
+#siteNav .other-section{display:none}
+#siteNav ul ul ul a{padding-left:55px}
+#siteNav .package-link{background:#A6A4A3;text-transform:uppercase;color:#FFF;margin:0 1px}
+#siteNav .active.package-link{background:#83807E}
+#siteNav .package-link:hover,#siteNav .package-link:focus{background:#6B6866;color:#FFF}
+#siteNav .last-content-link{padding-bottom:15px}
+
+/* Search bar */
+#exe-client-search-form{text-align:left;margin:30px 0 0}
+#exe-client-search-submit{padding:5px 15px}
+
+/* IE6 */
+* html #siteNav a{display:inline-block;width:200px}
+* html #siteNav ul ul a{width:190px}
+* html #siteNav ul ul ul a{width:165px}
+* html #main{width:auto}
+/* Pagination */
+.pagination{padding-top:20px;text-align:right;font-size:.95em}
+.pagination .sep{display:none}
+.pagination a{color:#FFF}
+#bottomPagination a{color:#EF801B}
+#bottomPagination a:hover,#bottomPagination a:focus{color:#6B6866}
+#topPagination{position:absolute;top:-7px;width:100%;right:20px}
+#content .page-counter{margin:0}
+#topPagination .page-counter{color:#FFF}
+#topPagination .page-counter strong{margin:0 .05em}
+.pagination .prev{margin-right:20px}
+.pagination .next{margin-left:20px}
+#topPagination .pagination{border:none;text-align:right}
+#bottomPagination{padding:13px 20px 0 300px;min-height:5em}
+#bottomPagination .pagination{border-top:1px solid #EF801B}
+.no-nav #bottomPagination{padding-left:20px}
+.page-counter{padding:5px 0;display:inline-block}
+/* Autoclear */
+#content{overflow:auto}
+
+#header-options{margin:0;position:absolute;top:6.7em;right:22px;font-size:.95em}
+#header-options a{font-size:.95em;margin-left:40px;background:url(_cedec_print.gif) no-repeat 0 50%;padding-left:26px;color:#003818}
+#header-options #toggle-nav{background-image:url(_cedec_menu.gif)}
+
+@media all and (max-width: 768px) {
+	body{background:#fff}
+	#mecd-logos span{background-position:0 -60px}	
+	#mecd-logos #cedec-logo{background:none}
+	#content{width:100%;background:#fff;border:none;margin:0}
+	#header,#emptyHeader{padding-left:10px;padding-right:10px;background-position:50% 23px;text-align:center}
+	#topPagination{display:none}
+	#bottomPagination,.no-nav #bottomPagination{padding:10px 10px 0 10px}
+	#siteNav{float:none;width:100%;padding:0;margin:0;border-top:0}
+	#siteNav.fixed{position:static;top:auto}
+	#siteNav a{padding:10px}
+	#siteNav ul ul a{padding-left:20px}
+	#siteNav ul ul ul a{padding-left:45px}		
+	#main-wrapper,.no-nav #main-wrapper{padding:0 10px}
+	#nodeTitle{margin-top:.5em}
+	#siteFooter,.no-nav #siteFooter{padding:0 10px}
+	#content .exe-col{float:none;width:100%;padding:0}
+	iframe,object,embed{max-width:100%}
+	img,video{max-width:100%;height:auto}
+	.pagination{text-align:center;height:35px;position:relative}
+	.pagination .prev{position:absolute;left:0;margin:0}
+	.pagination .next{position:absolute;right:0}	
+	#header-options{position:relative;top:0!important;left:0;margin:0;text-align:center;background:#1EA988;border-radius:0}
+	#header-options a{margin-left:0;display:block;width:100%;height:auto;color:#FFF;border-bottom:10px solid #FFF;border-top:10px solid #FFF;line-height:2.6em;text-transform:uppercase;letter-spacing:1px;font-size:1.1em;padding:0}
+	#header-options:hover{background:#A6A4A3}
+	#header-options #print-page{display:none}
+	#header-options #toggle-nav{background:none}
+	#exe-client-search-form{text-align:center}
+}
+
+@media print{
+	#header,#emptyHeader{margin:0 20px;padding:30px 0 20px 0}
+	#siteNav,#header-options,.noprt,.toggle-idevice{display:none!important}
+	#main-wrapper,.no-nav #main-wrapper{padding:20px 0}
+	body #content{background:#FFF}
+}
