@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.3.2\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2019-05-02 17:37+0200\n"
+"POT-Creation-Date: 2019-05-03 14:01+0200\n"
 "PO-Revision-Date: 2019-05-02 17:44+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -4261,6 +4261,7 @@ msgstr "Guardada la configuración"
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:338
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:382
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:630
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:261
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:84
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:33
@@ -6169,6 +6170,16 @@ msgstr "Descargar un estilo de una URL e importarlo al sistema."
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:553
 msgid "Check and install styles in the repository"
 msgstr "Comprobar e instalar estilos en el banco de estilos"
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:630
+#: exe/webui/common.py:628
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:38
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:226
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:205
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:219
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:241
+msgid "Error recovering data"
+msgstr "Error al recuperar los datos"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:22
 msgid "Export template: "
@@ -8588,15 +8599,6 @@ msgstr "Descargar"
 #: exe/webui/common.py:627
 msgid "Your score is "
 msgstr "Su puntuación es "
-
-#: exe/webui/common.py:628
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:38
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:226
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:205
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:219
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:241
-msgid "Error recovering data"
-msgstr "Error al recuperar los datos"
 
 #: exe/webui/common.py:629
 msgid "This might not work in this ePub reader."
@@ -16029,3 +16031,4 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
+
