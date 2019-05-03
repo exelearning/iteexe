@@ -45,10 +45,10 @@ p{margin:1em 0}
 .iDevice_header{letter-spacing:.5px;padding:.5em 40px .5em 0;height:auto!important;height:1.7em;min-height:1.7em;position:relative}
 .iDevice_header[style]{background-image:none!important}
 .iDeviceTitle{font-size:1.3em;vertical-align:bottom;top:auto;display:inline-block;font-weight:300;
-padding:0 10px 0 35px;background-repeat:no-repeat;background-position:0 50%;margin:0}
+padding:5px 10px 5px 43px;background-repeat:no-repeat;background-position:0 50%;margin:0}
 .iDevice_header_noIcon .iDeviceTitle{background-image:none;padding-left:20px}
 .iDeviceTitle{*display:inline;*line-height:2em}/* IE6, IE7 */
-.iDevice_inner{padding:10px 20px;border-width:1px;border-style:solid;border-radius:5px}
+.iDevice_inner{padding:10px 20px;border-width:1px;border-style:solid}
 
 /* Clearfix */
 .iDevice_content{overflow:auto}
@@ -64,10 +64,10 @@ padding:0 10px 0 35px;background-repeat:no-repeat;background-position:0 50%;marg
 
 /* iDevice title with background-color */
 input.feedbackbutton{margin:0}
-.iDevice_header{border-width:1px;border-style:solid;padding-left:13px;border-top-left-radius:5px;border-top-right-radius:5px}
-.hidden-idevice .iDevice_header{border-radius:5px}
+.iDevice.emphasis1{box-shadow:rgba(0, 0, 0, 0.25) 3px 3px 4px}
+.iDevice_header{border-width:1px;border-style:solid;padding-left:13px}
 .iDevice_header .toggle-idevice{margin-right:15px}
-.iDevice_inner{border-top-right-radius:0;border-top-left-radius:0;border-top:0}
+.iDevice_inner{border-top:0}
 
 .ExternalUrlIdevice iframe{border:0}
 
@@ -145,7 +145,7 @@ background:#ededed;
 /* eXeLearning Style Designer */
 .iDevice_header{
 /*emTitleColor*/
-color:#2495ff;
+color:#0d528a;
 /*emTitleBGColor*/
 background-color:#f5f7f8;border-color:#f5f7f8;
 }

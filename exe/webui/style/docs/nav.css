@@ -8,7 +8,7 @@ body{padding:0;text-align:center}
 .no-nav #main{padding:20px 20px 0 20px}
 
 #header,#emptyHeader{border-top-width:0;border-right-width:0;border-left-width:0}
-#headerContent{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;min-height:1.1em;padding-bottom:.5em}
+#headerContent{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;min-height:1.1em;padding-bottom:.6em}
 #nodeDecoration{background:none;padding:0;border:none;margin:20px 0;height:auto;min-height:0}
 #nodeTitle{font-weight:300}
 .iDevice_wrapper{margin-top:-10px}
@@ -50,6 +50,8 @@ body{padding:0;text-align:center}
 #nav-toggler a{display:block}
 #nav-toggler a:hover{text-decoration:none}
 #skipNav{z-index:100px;padding-top:15px;text-align:center}
+/* No opacity */
+body .pagination a,body #nav-toggler a{filter:alpha(opacity=100);opacity:1;outline:none}
 
 /* Search bar */
 #exe-client-search-text{border-top-left-radius:5px;border-bottom-left-radius:5px}
@@ -135,6 +137,12 @@ background-position:-150px 0;
 }
 #nav-toggler .show-nav:hover{
 background-position:-150px 0;
+}
+.pagination a,#nav-toggler a{
+filter:alpha(opacity=70);opacity:.7;
+}
+.pagination a:hover,.pagination a:focus,#nav-toggler a:hover{
+filter:alpha(opacity=100);opacity:1;
 }
 .pagination .page-counter{
 position:absolute;line-height:32px;padding:0;right:156px;
