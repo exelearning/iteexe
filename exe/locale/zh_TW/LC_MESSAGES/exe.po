@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.3.2\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2019-05-02 17:37+0200\n"
+"POT-Creation-Date: 2019-05-03 14:01+0200\n"
 "PO-Revision-Date: 2018-10-17 17:13+0200\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language: zh_Hant_TW\n"
@@ -3670,6 +3670,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:338
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:382
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:630
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:261
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:84
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:33
@@ -5485,6 +5486,16 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:553
 msgid "Check and install styles in the repository"
 msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:630
+#: exe/webui/common.py:628
+#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:38
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:226
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:205
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:219
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:241
+msgid "Error recovering data"
+msgstr "回復資料時發生錯誤。"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:22
 msgid "Export template: "
@@ -7867,15 +7878,6 @@ msgstr "下載"
 #: exe/webui/common.py:627
 msgid "Your score is "
 msgstr "您的分數是"
-
-#: exe/webui/common.py:628
-#: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:38
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:226
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:205
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:219
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:241
-msgid "Error recovering data"
-msgstr "回復資料時發生錯誤。"
 
 #: exe/webui/common.py:629
 msgid "This might not work in this ePub reader."
