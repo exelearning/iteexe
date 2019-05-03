@@ -625,6 +625,10 @@ function createPanel() {
             else {
                 panel = createPanelStyles(json.styles);
             }
+        },
+        failure: function(){
+            Ext.Msg.alert(_("Error"), _("Error recovering data"));
+            Ext.getCmp("stylemanagerwin").close();
         }
     });
 
