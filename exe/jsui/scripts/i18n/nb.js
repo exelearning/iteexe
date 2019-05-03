@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-04-24 16:55+0200\nPO-Revision-Date: 2018-10-15 18:40+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-05-02 17:37+0200\nPO-Revision-Date: 2018-10-15 18:40+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Web pages footer.": "Nettsidens undertekst.", 
  "Title": "Tittel", 
  "Save file": "Lagre fil", 
@@ -671,7 +671,6 @@ translations = {
  "Turkish ": "Tyrkisk", 
  "Finnish ": "Finsk", 
  "Either your idevices\/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again.": "idevices\/generic.data filen eller pakken du pr\u00f8ver \u00e5 \u00e5pne er laget med en nyere versjon av eXe.  Vennligst oppgrader eXe og pr\u00f8v igjen.", 
- "Authoring": "Utvikling", 
  "Twi ": "Twi", 
  "Clear Image": "Fjern bilde", 
  "Indonesian (formerly in) ": "Indonesisk", 

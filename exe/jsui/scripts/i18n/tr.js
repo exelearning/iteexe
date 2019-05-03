@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-04-24 16:55+0200\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage: tr\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-05-02 17:37+0200\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage: tr\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Title": "Ba\u015fl\u0131k", 
  "Text Line": "Yaz\u0131 Sat\u0131r\u0131", 
  "Quit": "\u00c7\u0131k", 
@@ -316,7 +316,6 @@ translations = {
  "Turkish ": "T\u00fcrk\u00e7e", 
  "Finnish ": "Fince", 
  "Undo Edits": "D\u00fczenlemeleri Geri Al", 
- "Authoring": "Y\u00f6netim", 
  "Enter the text you wish to \n                                 associate with the image.": "Buraya resimle ili\u015fkilendirmek \n                                 istedi\u011fini yaz\u0131y\u0131 yaz\u0131n.", 
  "Unable to download from %s <br\/>Please check the spelling and connection and try again.": "%s adresinden indirilemiyor <br\/>L\u00fctfen do\u011fru yazd\u0131\u011f\u0131n\u0131zdan emin olun ve ba\u011flant\u0131y\u0131 kontrol edin.", 
  "file %s has no parentNode": "%s dosyas\u0131n\u0131n \u00fcst kategorisi yok", 
