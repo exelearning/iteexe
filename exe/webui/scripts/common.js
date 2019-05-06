@@ -388,6 +388,12 @@ var $exe = {
 					e.remove();
 					return false;
 				});
+				// Check if the menu is hidden before opening a page
+				$(".exe-client-search-result-link",$exe.clientSearch.results).click(function(){
+					var extra = "";
+					if (!$("#siteNav").is(":visible")) extra = "?nav=false";
+					window.location.href = this.href + extra;
+				});
 			} else {
 				// No results for that search
 				$exe.clientSearch.results.html('<p>'+$exe_i18n.noSearchResults.replace("%","<strong>"+query+"</strong>")+'</p>')
