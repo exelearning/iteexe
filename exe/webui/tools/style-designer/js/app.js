@@ -111,7 +111,7 @@ var $app = {
 	},
 	nonEditableStyles : [
 		"base",
-		"sdocs"
+		"docs"
 	],
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
