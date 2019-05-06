@@ -199,3 +199,7 @@ border-color:#e1e4e5;
 #bottomPagination{
 background-color:#343131;
 }
+/* eXeLearning Style Designer (custom CSS) */
+.pagination .print-page{
+display:none;
+}
