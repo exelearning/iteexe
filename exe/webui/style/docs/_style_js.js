@@ -78,7 +78,7 @@ var myTheme = {
 			cH = nH;
 			if (!isMobile) c.height(cH);
 		}
-		var h = (cH-nH+40)+"px";
+		var h = (cH-nH+24)+"px";
 		var m = 0;
 		if (isMobile) {
 			h = 0;

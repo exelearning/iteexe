@@ -84,6 +84,7 @@ li{list-style-position:outside}
 .exe-dl-toggler a{line-height:22px}
 .js .exe-dl dd{margin-left:44px}
 .exe-enlarge-icon b{font-size:1.2em}
+.pre-code{border-radius:0}
 
 /* Forms */
 input,select{font-size:1em;font-family:inherit}

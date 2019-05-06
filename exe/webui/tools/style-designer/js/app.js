@@ -111,7 +111,7 @@ var $app = {
 	},
 	nonEditableStyles : [
 		"base",
-		"docs"
+		"sdocs"
 	],
 	mark : "/* eXeLearning Style Designer */",
 	advancedMark : "/* eXeLearning Style Designer (custom CSS) */",
@@ -969,8 +969,8 @@ var $app = {
 .pagination .page-counter{position:absolute;line-height:32px;padding:0;right:156px;}\
 #bottomPagination .page-counter{right:104px;}\
 @media all and (max-width: 700px){\
-#nav-toggler{height:32px;position:relative;}\
-#nav-toggler a{padding:0;width:32px;position:absolute;left:50%;margin-left:-16px;}\
+#nav-toggler{height:32px;}\
+#nav-toggler a{padding:0;width:32px;position:absolute;left:50%}\
 #siteNav{border-top:1px solid #ddd;}\
 .pagination .page-counter{width:300px;left:50%;right:auto;margin-left:-150px}\
 }\
@@ -1088,11 +1088,6 @@ var $app = {
 						navCSS+='}';
 						if (navBGColor!="") navCSS+='#siteNav li{background-color:#'+navBGColor+';}'						
 					navCSS+="}";
-					if (navBorderColor!="") {
-						navCSS+="@media all and (max-width: 700px){";
-								navCSS+='.js #siteNav{border-top:1px solid #'+navBorderColor+';}';
-						navCSS+="}";
-					}
 				}
 			}
 			if (navHoverBGColor!="" || navAHoverColor!="") {
