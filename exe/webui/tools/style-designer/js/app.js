@@ -1096,7 +1096,7 @@ var $app = {
 				}
 			}
 			if (navHoverBGColor!="" || navAHoverColor!="") {
-				navCSS+="#siteNav a:hover,#siteNav a:focus{";
+				navCSS+="#siteNav a:hover,#siteNav a:focus,#siteNav a.active{";
 					if (navHoverBGColor!="") navCSS+="/*navHoverBGColor*/background-color:#"+navHoverBGColor+";";
 					if (navAHoverColor!="") navCSS+="/*navAHoverColor*/color:#"+navAHoverColor+";";
 				navCSS+="}";
