@@ -12,6 +12,11 @@
 
 var $exeDevice = {
 	
+	// We use eXe's _ function
+	i18n : {
+		name : _('Interactive Video')
+	},	
+	
 	iDevicePath : "/scripts/idevices/interactive-video/edition/",
 	
 	init : function(){
