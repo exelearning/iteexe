@@ -567,9 +567,10 @@ def ideviceFooter(e, style, mode):
         
         h = "</div>"+lb # Close iDevice_content_wrapper
         h += "</div>"+lb # Close iDevice_inner
-    if mode=="preview":
-        h += e.renderViewButtons()
+
     h += "</div>"+lb # Close iDevice
+    if mode=="preview":
+        h += e.renderViewButtons()    
     if mode=="preview" and themeHasXML:
         h += "</"+articleTag+">"+lb # Close iDevice_wrapper
     return h
@@ -723,7 +724,7 @@ def textInput(name, value=u"", size=40, disabled=u"", **kwargs):
     return html
 
 
-def textArea(name, value="", disabled="", cols="80", rows="8"):
+def textArea(name, value="", disabled="", cols="80", rows="8", cssClass=""):
     """Adds a text area to a form"""
     log.debug(u"textArea %s" % value)
     html  = u'<textarea name="%s" ' % name
@@ -731,9 +732,9 @@ def textArea(name, value="", disabled="", cols="80", rows="8"):
     if disabled:
         html += u'disabled="disabled" '
     html += u'style=\"width:100%"'
-    html += u'cols="%s" rows="%s">' %(cols, rows)
+    html += u'cols="%s" rows="%s" class="%s">' %(cols, rows, cssClass)
     html += value
-    html += u'</textarea><br/>'
+    html += u'</textarea>'
     return html
 
 
@@ -786,7 +787,7 @@ def richTextArea(name, value="", width="100%", height=100, cssClass='mceEditor',
     # FieldWithResources' ProcessPreviewed()
     ########
     html += value
-    html += u'</textarea><br/>'
+    html += u'</textarea>'
     html_js  += '</script>'
     new_html = html+html_js
     return new_html
@@ -1019,16 +1020,29 @@ def formField(type_, package, caption, action, object_='', instruction='', \
     A standard way for showing any form field nicely
     package is only needed for richTextArea, to present all available internal anchors.
     """
-    html  = '<div class="block">'
-    if caption!="":
-        html += '<strong'
+    tag = 'p'
+    css = 'exe-text-field'
+    id = action+object_
+    
+    if type_ == 'select':
+        css = 'exe-select-field'
+    elif type_ == 'richTextArea':
+        tag = 'div'
+        css = 'exe-textarea-field'
+    elif type_ == 'textArea':
+        tag = 'div'
+        css = 'exe-plain-textarea-field'
+    elif type_ == 'checkbox':
+        css = 'exe-checkbox-field'
+    
+    html  = '<'+tag+' class="'+css+'">'
+    if caption!="" and type!='checkbox':
+        html += '<label for="'+id+'"'
         if type_ == 'richTextArea':
-            html += ' id="'+action+object_+'-editor-label"' # ID to create the Show/Hide Editor Link
-        html += '>%s</strong>' % caption
+            html += ' id="'+id+'-editor-label"' # ID to create the Show/Hide Editor Link
+        html += '>%s</label>' % caption
     if instruction:
         html += elementInstruc(instruction)
-    html += '</div>'
-    html += '<div class="block">'
     if type_ == 'select':
         html += select(action, object_, *args, **kwargs)
     elif type_ == 'richTextArea':
@@ -1038,8 +1052,13 @@ def formField(type_, package, caption, action, object_='', instruction='', \
     elif type_ == 'textInput':
         html += textInput(action+object_, *args, **kwargs)
     elif type_ == 'checkbox':
+        if caption!="":
+            html += '<label for="'+args+'">'
         html += checkbox(*args, **kwargs)
-    html += '</div>'
+        if caption!="":
+            html += caption
+            html += ' </label>'
+    html += '</'+tag+'>'
     return html
 
 def select(action, object_='', options=[], selection=None):

@@ -179,7 +179,7 @@ var $exeTinyMCEToggler = {
 		var w = ";width:852px";
 		if (this.documentWidth<900) w = "";
 		$exeTinyMCEToggler.createEditorLink(e,n);
-		var v = $('<div id="'+id+'-viewer" style="height:96px;padding:2px 15px;border:1px solid #ccc;overflow:auto'+w+'" onclick="$exeTinyMCEToggler.removeViewer(\''+id+'\')">'+c+'</div>');
+		var v = $('<div id="'+id+'-viewer" class="exe-textarea-preview" style="height:96px;padding:2px 15px;border:1px solid #ccc;overflow:auto'+w+'" onclick="$exeTinyMCEToggler.removeViewer(\''+id+'\')">'+c+'</div>');
 		e.hide().before(v);
 	},
 	
@@ -234,7 +234,7 @@ var $exeTinyMCEToggler = {
 	createEditorLink : function(e,id) {
         var f = this.getHelpLink(e);
         if (f!="") {
-            var l = $('<a href="#" id="'+id+'-toggler" onclick="$exeTinyMCEToggler.startEditor(\''+id+'\',false);$(this).remove();return false" class="visible-editor">'+_("Editor")+'</a>');
+            var l = $('<a href="#" id="'+id+'-toggler" onclick="$exeTinyMCEToggler.startEditor(\''+id+'\',false);$(this).remove();return false" class="exe-editor-toggler visible-editor">'+_("Editor")+'</a>');
             f.css("margin-right","5px").after(l);
         } else {
             // We can't find the help link, so be just enable the editor
@@ -259,7 +259,7 @@ var $exeTinyMCEToggler = {
         var f = this.getHelpLink(e);
         
         if (f!="") {
-            var l = $('<a href="#" id="'+id+'-toggler" onclick="$exeTinyMCEToggler.toggle(\''+id+'\',this);return false" class="visible-editor">'+_("Editor")+'</a>');
+            var l = $('<a href="#" id="'+id+'-toggler" onclick="$exeTinyMCEToggler.toggle(\''+id+'\',this);return false" class="exe-editor-toggler visible-editor">'+_("Editor")+'</a>');
             this.addLinkAndToggle(id,f,l,hide);
         }
 
@@ -271,7 +271,7 @@ var $exeTinyMCEToggler = {
 		var t = $("IFRAME",p);
 		var i = "";
 		if (t.length==1) i = t.eq(0);
-		if (e.className=='visible-editor') {
+		if ($(e).hasClass('visible-editor')) {
 			//Hide toolbars
 			if (i!='') {
 				window[e.id+"-iframeHeight"] = i.css("height");
@@ -282,11 +282,11 @@ var $exeTinyMCEToggler = {
                 h = 100; // Force height: Comment this line to make it as high as the TinyMCE editor
 				i.css("height",h+"px");             
 			}
-			e.className = 'hidden-editor';
+			$(e).removeClass('visible-editor').addClass('hidden-editor');
 		} else {
 			//Show toolbars
 			if (i!='') i.css("height",window[e.id+"-iframeHeight"]);
-			e.className = 'visible-editor';
+			$(e).removeClass('hidden-editor').addClass('visible-editor');
 		}   
 		$(".mceStatusbar",p).toggle()
         $(".mceToolbar",p).toggle()

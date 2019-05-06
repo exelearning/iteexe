@@ -89,15 +89,8 @@ li ol,li ul{margin-top:.5em;margin-bottom:.5em}
 .TrueFalseIdevice,
 .MultiSelectIdevice,
 .ClozeIdevice,
-.em_iDevice_interactive{box-shadow:0 0 10px 0 rgba(102,102,102,.4);border-radius:2px}
-.CasestudyIdevice .idevice-edition-buttons,
-.ListaIdevice .idevice-edition-buttons,
-.QuizTestIdevice .idevice-edition-buttons,
-.MultichoiceIdevice .idevice-edition-buttons,
-.TrueFalseIdevice .idevice-edition-buttons,
-.MultiSelectIdevice .idevice-edition-buttons,
-.ClozeIdevice .idevice-edition-buttons,
-.em_iDevice_interactive .idevice-edition-buttons{background:#F5F5F5;padding-left:7px;margin:0}
+.em_iDevice_interactive,
+.pblIdevice .iDevice{box-shadow:0 0 10px 0 rgba(102,102,102,.4);border-radius:2px}
 
 /* Different background color */
 .activityIdevice .iDevice_header,.activityIdevice .iDevice_inner,

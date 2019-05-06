@@ -247,16 +247,16 @@ class TextAreaElement(ElementWithResources):
         and self.field_idevice.parentNode is not None:
             this_package = self.field_idevice.parentNode.package
 
-        # Check if is jsidevice
-        cssClass = 'mceEditor'
-        if isinstance(self.field_idevice, JsIdevice):
-            cssClass = 'jsContentEditor'
-            
         html = common.formField('richTextArea', this_package, 
                                 self.field.name,'',
                                 self.id, self.field.instruc,
                                 self.field.content,
-                                str(self.width), str(self.height), cssClass)
+                                str(self.width), str(self.height))
+                                
+        # Check if is jsidevice
+        if isinstance(self.field_idevice, JsIdevice):
+            html = common.textArea(self.id, self.field.content, False, 80, 8, 'jsContentEditor')
+            
         return html
 
     def renderPreview(self, visible=True, class_="block"):
