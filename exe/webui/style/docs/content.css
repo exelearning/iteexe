@@ -55,12 +55,17 @@ padding:5px 10px 5px 43px;background-repeat:no-repeat;background-position:0 50%;
 .FileAttachIdeviceInc .iDevice_content{margin-bottom:-.5em}
 
 /* Hide/Show iDevice */
-.toggle-idevice{display:block;margin:0;text-align:right;height:16px;position:relative;top:16px;right:15px}
-.iDevice_header .toggle-idevice{position:absolute;top:14px;right:14px}
+.toggle-idevice{display:block;margin:0;text-align:right;height:16px}
 .toggle-idevice a{display:block;width:16px;height:16px;background:url(_style_icons.png) no-repeat -50px -50px;outline:none;position:absolute;top:0;right:0;z-index:100;border-bottom-left-radius:1px}
 .toggle-idevice .show-idevice{background-position:0 -50px}
 .toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 .toggle-idevice a:hover,.toggle-idevice a:focus{filter:alpha(opacity=100);opacity:1}
+/* em */
+.iDevice_header .toggle-idevice{position:absolute;top:14px;right:14px}
+/* No em */
+.toggle-em0{position:relative;top:0;right:15px;margin-bottom:-36px}
+.toggle-em0 + .iDevice .iDevice_content p:first-child{padding-right:50px} /* To review */
+.hidden-idevice .toggle-em0{margin-bottom:0}
 
 /* iDevice title with background-color */
 input.feedbackbutton{margin:0}

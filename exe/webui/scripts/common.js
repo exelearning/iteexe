@@ -816,18 +816,21 @@ var $exe = {
             if (u.indexOf(" hidden-idevice") == -1) {
                 r = $exe_i18n.show;
                 u += " hidden-idevice";
-                o.slideUp("fast");
-                e.className = "show-idevice";
-                e.title = r;
-                e.innerHTML = "<span>" + r + "</span>"
+                o.slideUp("fast",function(){
+                    e.className = "show-idevice";
+                    e.title = r;
+                    e.innerHTML = "<span>" + r + "</span>"
+                    i.attr("class", u);
+                });
             } else {
                 u = u.replace(" hidden-idevice", "");
-                o.slideDown("fast");
-                e.className = "hide-idevice";
-                e.title = r;
-                e.innerHTML = "<span>" + r + "</span>"
+                o.slideDown("fast",function(){
+                    e.className = "hide-idevice";
+                    e.title = r;
+                    e.innerHTML = "<span>" + r + "</span>";
+                });
+                i.attr("class", u);
             }
-            i.attr("class", u)
         }
     },
 	
