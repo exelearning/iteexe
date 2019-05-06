@@ -195,6 +195,8 @@ class StyleManagerPage(RenderableResource):
             editButton = False
             properties = False
             if    style.get_dirname() != 'base' \
+              and style.get_dirname() != "cedec" \
+              and style.get_dirname() != "docs" \
               and style.get_dirname() != "INTEF" \
               and style.get_dirname() != "kids" \
               and style.get_dirname() != "simplepoint":
