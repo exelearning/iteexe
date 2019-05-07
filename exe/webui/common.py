@@ -31,7 +31,9 @@ from exe.engine.path           import Path
 from exe.webui.blockfactory    import g_blockFactory
 from exe.engine.error          import Error
 from cgi                       import escape
-from BeautifulSoup             import BeautifulSoup
+# jrf:sorry if this a terrible mistake, I need to fix this to be able to test the translations
+# from BeautifulSoup             import BeautifulSoup
+from bs4                       import BeautifulSoup
 import re
 
 htmlDocType=''
