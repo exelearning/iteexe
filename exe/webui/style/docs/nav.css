@@ -1,6 +1,6 @@
 /* eXeLearning Style Designer Compatible Style */
 body{padding:0;text-align:center}
-#content{width:100%;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0}
+#content{width:100%;max-width:100%;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0}
 #main-wrapper{padding-bottom:1.5em;width:100%;*width:auto}/* * is for IE6 and IE7 */
 #main{padding:20px 40px 30px 320px;height:auto!important;height:200px;min-height:200px;*padding-left:0}
 
