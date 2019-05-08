@@ -393,6 +393,7 @@ var $exe = {
 					var extra = "";
 					if (!$("#siteNav").is(":visible")) extra = "?nav=false";
 					window.location.href = this.href + extra;
+					return false;
 				});
 			} else {
 				// No results for that search
