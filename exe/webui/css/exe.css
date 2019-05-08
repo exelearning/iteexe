@@ -255,7 +255,7 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 .mce-fullscreen .idevice-edition-buttons,.mce-fullscreen .toggle-idevice{display:none}
 
 /* iDevice edition */
-.exe-authoring-page #activeIdevice{padding-top:1.5em}
+.exe-authoring-page #activeIdevice{padding-top:1.5em;border:0;box-shadow:none}
 .exe-authoring-page .iDevice{margin-bottom:0}
 .exe-authoring-page .idevice-edition-buttons{margin:10px 0 30px 0;height:16px}
 #activeIdevice .exe-editButtons{margin:10px 0 60px 0;height:16px}
