@@ -140,12 +140,6 @@ color: #000000;
 
 .maths a { color: #000000; }
  
-/* adds tiny bit of padding to edit.png when in preview mode */
-img.submit {
-    padding: 0 0 2px 2px;
-    margin-right:2px;
-}
-
 /* exe_lightbox.css */
 /* The New eXeLearning */
 .exeImageGallery{margin:1em 0 0 15px;padding:0;overflow:auto}
@@ -256,9 +250,13 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 
 /* iDevice edition */
 .exe-authoring-page #activeIdevice{padding-top:1.5em;border:0;box-shadow:none}
-.exe-authoring-page .iDevice{margin-bottom:0}
-.exe-authoring-page .idevice-edition-buttons{margin:10px 0 30px 0;height:16px}
+.exe-authoring-page .iDevice_wrapper{position:relative}
+.exe-authoring-page .idevice-edition-buttons{margin:0;height:16px;position:absolute;bottom:0;left:0;line-height:16px;opacity:0;transition:opacity .3s linear}
+.exe-authoring-page .iDevice_wrapper:hover .idevice-edition-buttons{opacity:1}
+.exe-authoring-page .em_iDevice .idevice-edition-buttons{left:10px;bottom:10px}
+.exe-authoring-page .idevice-edition-buttons img{background:#FFF;border-radius:2px;box-shadow:rgba(0, 0, 0, 0.35) 1px 1px 4px;padding:0;margin:0 4px 0 0}
 #activeIdevice .exe-editButtons{margin:10px 0 60px 0;height:16px}
+#activeIdevice .exe-editButtons img{margin:0 4px 0 0}
 #activeIdevice .exe-editButtons select{font-size:11px;font-family:tahoma,arial,verdana,sans-serif;vertical-align:top;margin:1px 0 0 5px}
 
 /* JavaScript iDevices */
