@@ -303,7 +303,7 @@ var $exeTinyMCEToggler = {
 						padding: "15px",
 						margin: "0 0 1.5em 0"
 					});
-					$exeTinyMCEToggler.createEditorLink(e,n);
+					// To review $exeTinyMCEToggler.createEditorLink(e,n);
 				} else {
 					$exeTinyMCEToggler.createViewer(e);
 				}
@@ -320,7 +320,7 @@ var $exeTinyMCEToggler = {
 		var c = e.val();
 		var w = ";width:852px";
 		if (this.documentWidth<900) w = "";
-		$exeTinyMCEToggler.createEditorLink(e,n);
+		// To review: $exeTinyMCEToggler.createEditorLink(e,n);
 		var v = $('<div class="exe-textarea-preview" id="'+id+'-viewer" style="height:96px;padding:2px 15px;border:1px solid #ccc;overflow:auto'+w+'" onclick="$exeTinyMCEToggler.removeViewer(\''+id+'\')">'+c+'</div>');
 		e.before(v).addClass("sr-av"); // If we use e.hide() TinyMCE won't be properly displayed
 	},
@@ -380,7 +380,7 @@ var $exeTinyMCEToggler = {
             f.css("margin-right","5px").after(l);
         } else {
             // We can't find the help link, so be just enable the editor
-            $exeTinyMCEToggler.startEditor(id,false);
+            // $exeTinyMCEToggler.startEditor(id,false);
         }        
 	},
 	
@@ -401,8 +401,9 @@ var $exeTinyMCEToggler = {
         var f = this.getHelpLink(e);
         
         if (f!="") {
-            var l = $('<a href="#" id="'+id+'-toggler" onclick="$exeTinyMCEToggler.toggle(\''+id+'\',this);return false" class="exe-editor-toggler visible-editor">'+_("Editor")+'</a>');
-            this.addLinkAndToggle(id,f,l,hide);
+            // To review:
+            // var l = $('<a href="#" id="'+id+'-toggler" onclick="$exeTinyMCEToggler.toggle(\''+id+'\',this);return false" class="exe-editor-toggler visible-editor">'+_("Editor")+'</a>');
+            // this.addLinkAndToggle(id,f,l,hide);
         }
 
 	},
