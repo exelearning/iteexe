@@ -60,7 +60,7 @@ $i18n = {
 	Fill_in_at_least_two_pairs : _("Fill in at least two pairs."),
 	// Scrambled List
 	List : _("List"),
-	List_elements : _("Elements (it the right order)"),
+	List_elements : _("Elements (in the right order)"),
 	// Edition
 	You_should_create_a_Frame_first : _("Please create a slide (frame) first."),
 	No_Title : _("The title is required."),
