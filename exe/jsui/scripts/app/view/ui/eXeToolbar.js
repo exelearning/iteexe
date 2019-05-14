@@ -831,6 +831,7 @@ Ext.define('eXeSaveReminder', {
                     + '</label>',
                 buttons: Ext.MessageBox.OKCANCEL,
                 scope: this,
+                modal: false,
                 fn: function(btn) {
                     this.isOpen = false;
 
