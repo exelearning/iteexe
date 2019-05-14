@@ -187,6 +187,16 @@ Ext.application({
         Ext.Msg.alert(_("Warning"), msg);
     },
     
+    notifications: {
+        savedPackage : function(filePath) {
+            Ext.Msg.close();
+            eXe.controller.eXeViewport.prototype.eXeNotificationStatus(_("Success"),filePath);
+            setTimeout(function(){
+                Ext.ComponentQuery.query("#eXeNotification")[0].hide();
+            },3000);
+        }
+    },
+    
     showLoadError: function() {
     	if (eXe.app.config.loadErrors.length > 0) {
     		Ext.Msg.alert(_('Load Error'), eXe.app.config.loadErrors.pop(), eXe.app.showLoadError);

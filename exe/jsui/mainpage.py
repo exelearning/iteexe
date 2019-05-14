@@ -457,7 +457,10 @@ class MainPage(RenderableLivePage):
                 client.alert(_(u'Package saved to: %s') % filename, 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'), \
                             filter_func=otherSessionPackageClients)
             else:
-                client.alert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
+                # client.alert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
+                # A nice notification instead of an alert
+                filename = _(u'Package saved to: %s') % filename.replace("\\","\\/")
+                client.sendScript(u'eXe.app.notifications.savedPackage("%s")' % filename)
 
     def handleSaveTemplate(self, client, templatename=None, onDone=None, edit=False):
         '''Save template'''
