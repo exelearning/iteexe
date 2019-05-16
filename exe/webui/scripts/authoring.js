@@ -582,17 +582,17 @@ function loadKeymap() {
 /* ********************************* */
 
 // Common settings
+// Default editor
+if (typeof(exe_editor_version)=='undefined') exe_editor_version=4;
 var eXeLearning_settings = {
-    wysiwyg_path : "/scripts/tinymce_3.5.11/jscripts/tiny_mce/tiny_mce.js",
-    wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
+	wysiwyg_version : false, // Set to true to allow other versions
+	wysiwyg_path : "/scripts/tinymce_4/js/tinymce/tinymce.min.js",
+	wysiwyg_settings_path : "/scripts/tinymce_4_settings.js"
 }
-
-if (typeof(exe_editor_version)=='undefined') exe_editor_version=3;
-
-if (exe_editor_version==4) {
+if (eXeLearning_settings.wysiwyg_version && exe_editor_version==3) {
 	eXeLearning_settings = {
-		wysiwyg_path : "/scripts/tinymce_4/js/tinymce/tinymce.min.js",
-		wysiwyg_settings_path : "/scripts/tinymce_4_settings.js"
+		wysiwyg_path : "/scripts/tinymce_3.5.11/jscripts/tiny_mce/tiny_mce.js",
+		wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
 	}
 }
 

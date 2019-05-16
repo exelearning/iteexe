@@ -194,6 +194,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 							},
 							// TinyMCE version
 							{
+								hidden: true, // Show this again when updraging to a full new version of TinyMCE
 								xtype: 'helpcontainer',
 								item: {
 									xtype: 'combobox',
