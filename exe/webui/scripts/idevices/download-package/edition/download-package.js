@@ -157,7 +157,7 @@ var $exeDevice = {
 						<td>'+data1+' </td>\
 					</tr>\
 					<tr>\
-						<th>'+_('General description')+' </th>\
+						<th>'+_('Description')+' </th>\
 						<td>'+data2+' </td>\
 					</tr>\
 					<tr>\
