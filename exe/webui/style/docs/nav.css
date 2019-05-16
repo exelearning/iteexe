@@ -38,7 +38,7 @@ body{padding:0;text-align:center}
 #topPagination .pagination{border:none}
 #bottomPagination{clear:both}
 #bottomPagination a{margin:0 20px 0 0}
-.page-counter{padding:5px 0;display:inline-block}
+.page-counter{padding:5px 0;display:inline-block;color:#FFF}
 
 /* Autoclear */
 #content{overflow:auto}

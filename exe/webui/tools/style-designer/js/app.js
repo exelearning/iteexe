@@ -1048,11 +1048,19 @@ var $app = {
 				contentCSS+="#headerContent{";
 					if (headerTitleTopMargin!="") contentCSS+="/*headerTitleTopMargin*/padding-top:"+headerTitleTopMargin+"px;";
 					if (headerTitleFontFamily!="") contentCSS+="/*headerTitleFontFamily*/font-family:"+headerTitleFontFamily+";";
-					if (headerTitleColor!="") contentCSS+="/*headerTitleColor*/color:#"+headerTitleColor+";";
+					if (headerTitleColor!="") {
+						contentCSS+="/*headerTitleColor*/color:#"+headerTitleColor+";";
+						navCSS+="#topPagination .page-counter{";
+							navCSS+="color:#"+headerTitleColor+";";
+						navCSS+="}";						
+					}
 					if (headerTitleTextShadowColor!="") contentCSS+="/*headerTitleTextShadowColor*/text-shadow:1px 1px 1px #"+headerTitleTextShadowColor+";";
 					if (headerTitleAlign!="") contentCSS+="/*headerTitleAlign*/text-align:"+headerTitleAlign+";";
 					if (headerTitleFontSize!="") contentCSS+="/*headerTitleFontSize*/font-size:"+headerTitleFontSize+"%;";
 				contentCSS+="}";
+				if (headerTitleColor!="") {
+					
+				}
 			}
 		} else {
 			contentCSS+="#headerContent{";
@@ -1119,7 +1127,12 @@ var $app = {
 						navCSS += "border-color:#"+footerBorderColor+";";
 					navCSS += "}";
 				}
-				if (footerColor!="") contentCSS += "/*footerColor*/color:#"+footerColor+";"
+				if (footerColor!="") {
+					contentCSS += "/*footerColor*/color:#"+footerColor+";"
+					navCSS+="#bottomPagination .page-counter{";
+						navCSS+="color:#"+footerColor+";";
+					navCSS+="}"				
+				}
 				if (footerTextAlign!="") contentCSS+="/*footerTextAlign*/text-align:"+footerTextAlign+";";
 				if (footerBGColor!='') contentCSS+="/*footerBGColor*/background-color:#"+footerBGColor+";";
 				if (footerFontSize!="") contentCSS += "/*footerFontSize*/font-size:"+footerFontSize+"%;"
