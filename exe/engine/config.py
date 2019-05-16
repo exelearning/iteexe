@@ -94,6 +94,7 @@ class Config(object):
     }
 
     idevicesCategories = {
+        # Use Experimental for complex non-tested iDevices and Hidden for those that should not be added any more
         'activity': [x_('Text and Tasks')],
         'reading activity': [x_('Text and Tasks')],
         'dropdown activity': [x_('Interactive Activities')],
@@ -131,12 +132,12 @@ class Config(object):
         'rss': [x_('Other Contents')],
         'external web site': [x_('Other Contents')],
         'free text': [x_('Text and Tasks')],
-        'click in order game': [x_('Experimental')],
-        'hangman game': [x_('Experimental')],
+        'click in order game': [x_('Hidden')],
+        'hangman game': [x_('Hidden')],
         'place the objects': [x_('Interactive Activities')],
-        'memory match game': [x_('Experimental')],
+        'memory match game': [x_('Hidden')],
         'file attachments': [x_('Other Contents')],
-        'sort items': [x_('Experimental')]
+        'sort items': [x_('Hidden')]
     }
 
     @classmethod
