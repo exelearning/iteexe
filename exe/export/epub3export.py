@@ -466,8 +466,12 @@ class Epub3Page(Page):
         if self.node.package.get_addPagination():
             html += "<p class='pagination page-counter'>" + c_('Page %s of %s') % ('<strong>'+str(pages.index(self))+'</strong>','<strong>'+str((len(pages) -1))+'</strong>')+ "</p>"+lb
 
-        html += self.renderLicense()
-        html += unicode(BeautifulSoup(self.renderFooter()))
+        printPageFooter = False
+        if pages.index(self)==1 or len(pages)-1==pages.index(self):
+            printPageFooter = True # First and last pages
+        if printPageFooter:
+            html += self.renderLicense()
+            html += unicode(BeautifulSoup(self.renderFooter()))
         html += u"</div>" + lb  # /#outer
         if style.hasValidConfig:
             html += style.get_extra_body()
