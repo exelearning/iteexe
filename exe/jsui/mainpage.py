@@ -459,7 +459,7 @@ class MainPage(RenderableLivePage):
             else:
                 # client.alert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
                 # A nice notification instead of an alert
-                filename = _(u'Package saved to: %s') % filename.replace("\\","\\/")
+                filename = _('Package saved to: %s') % filename.replace("\\","\\/")
                 client.sendScript(u'eXe.app.notifications.savedPackage("%s")' % filename)
 
     def handleSaveTemplate(self, client, templatename=None, onDone=None, edit=False):
