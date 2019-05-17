@@ -810,7 +810,14 @@ var $exe = {
 				$exe.iDeviceToggler.toggle(this,id[0],id[1]);
 				return false;
 			});
-			if (isEdition) $(".toggle-idevice a").trigger("click");
+			if (isEdition) {
+                $(".toggle-idevice a").trigger("click");
+                $(".iDevice_wrapper").css("opacity",.5).hover(function(){
+                    $(this).animate({opacity:1});
+                },function(){
+                    $(this).animate({opacity:.5});
+                });
+            }
         },
         toggle: function(e, t, n) {
             var r = $exe_i18n.hide;
