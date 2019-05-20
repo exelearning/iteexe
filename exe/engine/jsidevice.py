@@ -1,5 +1,5 @@
 # ===========================================================================
-# eXe 
+# eXe
 # Copyright 2004-2006, University of Auckland
 # Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
@@ -24,7 +24,7 @@ An JavaScript iDevice definition
 
 from exe.engine.idevice import Idevice
 # For backward compatibility Jelly expects to find a Field class
-from exe.engine.field                               import Field, TextField, TextAreaField, FeedbackField 
+from exe.engine.field                               import Field, TextField, TextAreaField, FeedbackField
 from exe.engine.field                               import ImageField, AttachmentField
 from exe.engine.path                                import Path
 from exe.engine.exceptions.invalidconfigjsidevice   import InvalidConfigJsIdevice
@@ -42,25 +42,25 @@ class JsIdevice(Idevice):
     A JavaScript Idevice definition
     """
     persistenceVersion = 1
-    
+
     def __init__(self, iDeviceDir=None):
         """
         Initialize JS IDevice
         """
         self._iDeviceDir = str(iDeviceDir)
-        
+
         self._valid         = False
         self._checkValid()
-        
+
         if self._valid:
-        
+
             # Get XML values from the config file
             xmlValues = self.__loadIdevice()
             # Add the values not present on the XML
             xmlValues = self.__fillIdeviceDefaultValues(xmlValues)
-            
+
             self._attributes = xmlValues
-            
+
             # xml node : [ label , 0=textfield 1=textarea , order into form]
             _attributespre ={
                    'title': ['Title',0,0],
@@ -68,35 +68,38 @@ class JsIdevice(Idevice):
                    'css-class': ['CSS class',0,2],
                    'icon': ['Icon',0,3]
                    }
-            
+
             self._attributes= sorted(_attributespre.items(), key=lambda t: t[1][2])
-            
+
             # Initialize the IDevice instance
             Idevice.__init__(self, xmlValues['title'], xmlValues['author'], xmlValues['purpose'], xmlValues['tip'], xmlValues['icon'])
-            
+
             # CSS class
             self.class_ = xmlValues['css-class']
-            
+
             if 'category' in xmlValues:
                 self.ideviceCategory = xmlValues['category']
-            
+
             if 'icon' in xmlValues:
                 self.icon = xmlValues['icon']
-            
+
             # Initialize resources list
             self._editionResources = []
             self._exportResources = []
-            
+
             # Initialize field arrays
             self.fields  = []
             self.nextFieldId = 0
-            
+
             # Set IDevice emphasis
             self.emphasis = Idevice.SomeEmphasis
-    
+
             # Add default JS Idevice fields
             self.__addDefaultFields()
             self.__getFolderResources()
+
+            # Initialize export folder
+            self._exportFolder = ''
 
     def __loadIdevice(self):
         """
@@ -114,16 +117,16 @@ class JsIdevice(Idevice):
                     except UnicodeDecodeError:
                         configCharset = chardet.detect(configData)
                         newConfigData = configData.decode(configCharset['encoding'], 'replace')
-                    
+
                     # Parse the XML file
                     xmlConfig = minidom.parseString(newConfigData)
-                    
+
                     # Get main element
                     xmlIdevice = xmlConfig.getElementsByTagName('idevice')
-                    
+
                     # Initialize results variable
                     result = dict()
-                    
+
                     # If there is a main element tag
                     if (len(xmlIdevice) > 0):
                         # Go over all the child nodes
@@ -133,7 +136,7 @@ class JsIdevice(Idevice):
                             if(isinstance(tag, minidom.Element)):
                                 # Add the tag name and value to the result dictionary
                                 result.update({tag.tagName: tag.firstChild.nodeValue})
-                        
+
                         if 'title' in result and 'css-class' in result:
                             return result
                         else:
@@ -144,12 +147,12 @@ class JsIdevice(Idevice):
             # If we can't load an iDevice, we simply continue with the rest (and log it)
             log.debug("iDevice " + Path(self._iDeviceDir).basename() + " doesn't appear to have a valid \"config.xml\" file")
             raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), ioerror.message)
-    
+
     def _checkValid(self):
         config = Path(self._iDeviceDir)/'config.xml'
-        edition = Path(self._iDeviceDir)/'edition' 
-        export = Path(self._iDeviceDir)/'export'
-        if config.exists() and edition.exists() and export.exists():
+        edition = Path(self._iDeviceDir)/'edition'
+
+        if config.exists() and edition.exists() :
             self._valid = True
         else:
             self._valid = False
@@ -170,16 +173,18 @@ class JsIdevice(Idevice):
     def __addDefaultFields(self):
         """ A JS iDevice only has a Textarea with no instructions """
         self.addField(TextAreaField(""))
-        
+
     def __getFolderResources(self):
         self._editionFolder = str(Path(self._iDeviceDir).basename() + '/edition/')
-        self._exportFolder = str(Path(self._iDeviceDir).basename() + '/export/')
-        
+
         for editionFile in os.listdir(self._iDeviceDir + '/edition'):
             self._editionResources.append(editionFile)
-        
-        for exportFile in os.listdir(self._iDeviceDir + '/export'):
-            self._exportResources.append(exportFile)
+
+        # Check if export directory exists
+        if (Path(self._iDeviceDir) / 'export').exists():
+            self._exportFolder = str(Path(self._iDeviceDir).basename() + '/export/')
+            for exportFile in os.listdir(self._iDeviceDir + '/export'):
+                self._exportResources.append(exportFile)
 
     def addField(self, field):
         """
@@ -190,7 +195,7 @@ class JsIdevice(Idevice):
                       (field.idevice.title, self.title))
         field.idevice = self
         self.fields.append(field)
-        
+
     def getUniqueFieldId(self):
         """
         Returns a unique id (within this idevice) for a field
@@ -201,7 +206,7 @@ class JsIdevice(Idevice):
         self.nextFieldId += 1
         log.debug(u"UniqueFieldId: %s" % (result))
         return result
-        
+
     def calcNextFieldId(self):
         """
         initializes nextFieldId if it is still 0
@@ -233,28 +238,28 @@ class JsIdevice(Idevice):
         TODO: This is an exact copy from Generic iDevice
         """
         from exe.engine.field            import FieldWithResources
-        if hasattr(self, 'fields'): 
+        if hasattr(self, 'fields'):
             # check through each of this idevice's fields,
             # to see if it is supposed to be there.
-            for this_field in self.fields: 
+            for this_field in self.fields:
                 if isinstance(this_field, FieldWithResources) \
-                and hasattr(this_field, 'images') : 
+                and hasattr(this_field, 'images') :
                     # field is capable of embedding resources
-                    for this_image in this_field.images: 
+                    for this_image in this_field.images:
                         if hasattr(this_image, '_imageResource') \
-                        and this_resource == this_image._imageResource: 
+                        and this_resource == this_image._imageResource:
                             return this_field
 
         # else, not found in the above loop:
         return None
 
-      
+
     def getRichTextFields(self):
         """
-        Like getResourcesField(), a general helper to allow nodes to search 
+        Like getResourcesField(), a general helper to allow nodes to search
         through all of their fields without having to know the specifics of each
         iDevice type.
-        TODO: This is an exact copy from Generic iDevice  
+        TODO: This is an exact copy from Generic iDevice
         """
         # All of Generic iDevice's rich-text fields are in... fields!
         # Some of the fields may NOT be rich-text, though,
@@ -262,8 +267,8 @@ class JsIdevice(Idevice):
         fields_list = []
 
         from exe.engine.field            import FieldWithResources
-        if hasattr(self, 'fields'): 
-            for this_field in self.fields: 
+        if hasattr(self, 'fields'):
+            for this_field in self.fields:
                 if isinstance(this_field, FieldWithResources):
                     fields_list.append(this_field)
 
@@ -271,35 +276,35 @@ class JsIdevice(Idevice):
 
     def burstHTML(self, i):
         """
-        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        takes a BeautifulSoup fragment (i) and bursts its contents to
         import this idevice from a CommonCartridge export
         TODO: This is an exact copy from Generic iDevice
         """
         # Generic Idevice, with content in fields[]:
-        title = i.find(name='h2', 
-                attrs={'class' : 'iDeviceTitle' }) 
-        self.title = title.renderContents().decode('utf-8') 
+        title = i.find(name='h2',
+                attrs={'class' : 'iDeviceTitle' })
+        self.title = title.renderContents().decode('utf-8')
 
         if self.class_ in ("objectives", "activity", "preknowledge", "generic"):
-            inner = i.find(name='div', 
-                attrs={'class' : 'iDevice_inner' }) 
-            inner_content = inner.find(name='div', 
-                    attrs={'id' : re.compile('^ta') }) 
+            inner = i.find(name='div',
+                attrs={'class' : 'iDevice_inner' })
+            inner_content = inner.find(name='div',
+                    attrs={'id' : re.compile('^ta') })
             self.fields[0].content_wo_resourcePaths = \
-                inner_content.renderContents().decode('utf-8') 
-            # and add the LOCAL resources back in: 
+                inner_content.renderContents().decode('utf-8')
+            # and add the LOCAL resources back in:
             self.fields[0].content_w_resourcePaths = \
                 self.fields[0].MassageResourceDirsIntoContent( \
                 self.fields[0].content_wo_resourcePaths)
             self.fields[0].content = self.fields[0].content_w_resourcePaths
 
         elif self.class_ == "reading":
-            readings = i.findAll(name='div', attrs={'id' : re.compile('^ta') }) 
-            # should be exactly two of these:                    
-            # 1st = field[0] == What to Read 
-            if len(readings) >= 1: 
+            readings = i.findAll(name='div', attrs={'id' : re.compile('^ta') })
+            # should be exactly two of these:
+            # 1st = field[0] == What to Read
+            if len(readings) >= 1:
                 self.fields[0].content_wo_resourcePaths = \
-                        readings[0].renderContents().decode('utf-8') 
+                        readings[0].renderContents().decode('utf-8')
                 # and add the LOCAL resource paths back in:
                 self.fields[0].content_w_resourcePaths = \
                     self.fields[0].MassageResourceDirsIntoContent( \
@@ -307,7 +312,7 @@ class JsIdevice(Idevice):
                 self.fields[0].content = \
                     self.fields[0].content_w_resourcePaths
             # 2nd = field[1] == Activity
-            if len(readings) >= 2: 
+            if len(readings) >= 2:
                 self.fields[1].content_wo_resourcePaths = \
                         readings[1].renderContents().decode('utf-8')
                 # and add the LOCAL resource paths back in:
@@ -335,24 +340,25 @@ class JsIdevice(Idevice):
         present on the config.xml
         """
         keys = ['title', 'author', 'purpose', 'tip', 'icon']
-        
+
         for key in keys:
             if key not in values:
                 values[key] = ''
-                
+
         return values
-    
+
     def getResourcesList(self, editMode = False, ordered = True, appendPath = True):
         """ Get a list of the iDevice resources """
         resources = list()
-        
-        # Export resources (always included)
-        for res in self._exportResources:
-            if appendPath:
-                resources.append(str(self._exportFolder + res))
-            else: 
-                resources.append(str(res))
-                
+
+        # Check if not empty export resources
+        if self._exportResources:
+            for res in self._exportResources:
+                if appendPath:
+                    resources.append(str(self._exportFolder + res))
+                else:
+                    resources.append(str(res))
+
         # Edition resources
         if(editMode):
             for res in self._editionResources:
@@ -360,22 +366,22 @@ class JsIdevice(Idevice):
                     resources.append(str(self._editionFolder + res))
                 else:
                     resources.append(str(res))
-        
+
         # Order the list
         if(ordered):
             resources.sort(key = lambda x: x.split('/')[-1])
-            
+
         return resources
-    
+
     def get_export_folder(self):
         return self._exportFolder
-    
+
     def get_dirname(self):
         return Path(self._iDeviceDir).basename()
 
     def get_jsidevice_dir(self):
         return Path(self._iDeviceDir)
-    
+
     def renderProperties(self):
         properties = []
         for attribute in self._attributes:
@@ -389,5 +395,5 @@ class JsIdevice(Idevice):
             name = attribute[1][0]
             properties.append({'name': _(name), 'value': value})
 
-        return properties 
+        return properties
 # ===========================================================================
