@@ -24,7 +24,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 html{font-size:105%}
-body{font:105%/1.5 "Encode Sans",​Arial,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
+body{font:105%/1.5 "Encode Sans",Arial,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
 
 h2{font-size:1.3em}
 h3{font-size:1.2em}
