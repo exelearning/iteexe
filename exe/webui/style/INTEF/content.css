@@ -25,7 +25,7 @@
 
 html,body{min-height:100%}
 html{padding:0}
-body{font:1.05em/1.6 "Encode Sans",​Arial,Helvetica,sans-serif;padding:20px;margin:0;text-align:left;color:#333;background:#fff}
+body{font:1.05em/1.6 "Encode Sans",Arial,Helvetica,sans-serif;padding:20px;margin:0;text-align:left;color:#333;background:#fff}
 input,select,textarea,.feedback{font-family:"Encode Sans",​Arial,Helvetica,sans-serif;font-size:1em}
 .pre-code,.highlighted-code{font-family:"Encode Sans",​Arial,Helvetica,sans-serif;font-size:.9em;border-radius:0}
 a{color:#007691}
