@@ -4,7 +4,8 @@
 # This file is distributed under the same license as the eXeLearning
 # package.
 # eXeLearning.net Project <admin@exelearning.net>
-# Asmoz fundazioa, 2009 http://www.asmoz.org/index.php?option=com_content&view=article&id=131&Itemid=101&lang=es
+# Asmoz fundazioa, 2009
+# http://www.asmoz.org/index.php?option=com_content&view=article&id=131&Itemid=101&lang=es
 # Malen <mjareno@asmoz.org>
 # 2012-2019 Joxemi Andonegi <jm.andonegi@gmail.com>
 # Mila esker Andoni Tolosari bere laguntzagatik
@@ -13,7 +14,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.3.2\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2019-05-03 14:01+0200\n"
-"PO-Revision-Date: 2019-05-08 19:54+0200\n"
+"PO-Revision-Date: 2019-05-21 19:36+0200\n"
 "Last-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\n"
 "Language: eu\n"
 "Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
@@ -22,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #: exe/application.py:221
 #, python-format
@@ -763,7 +764,7 @@ msgstr "Bete hutsuneak"
 #: exe/engine/config.py:125 exe/engine/config.py:129 exe/engine/config.py:133
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:87
 msgid "Text and Tasks"
-msgstr "Testua eta atazak"
+msgstr "Testua eta atazak "
 
 #: exe/engine/config.py:99 exe/engine/config.py:104 exe/engine/config.py:126 exe/engine/config.py:127
 #: exe/engine/config.py:128 exe/engine/config.py:130 exe/engine/config.py:136
@@ -774,7 +775,7 @@ msgstr "Jarduera interaktiboak"
 #: exe/engine/config.py:123 exe/engine/config.py:124 exe/engine/config.py:131
 #: exe/engine/config.py:132 exe/engine/config.py:138
 msgid "Other Contents"
-msgstr "Beste eduki batzuk"
+msgstr "Beste eduki batzuk "
 
 #: exe/engine/config.py:105 exe/engine/config.py:106 exe/engine/config.py:107
 #: exe/engine/config.py:108 exe/engine/config.py:109 exe/engine/config.py:110
@@ -1359,10 +1360,10 @@ msgid ""
 msgstr ""
 "iDevice honek Flash Video File (.FLV) formatua onartzen du, eta\n"
 "ez besterik. Dena den, beste bideo formatu batzuk\n"
-"(adib., mov, wmf) .FLV formatu bihur ditzakezu, hirugarrenen\n"
+"(adib., mov, wmf) .FLV formatura bihur ditzakezu, hirugarrenen\n"
 "kodifikatzaileen bidez. Horiek ez datoz eXe-rekin batera. Bestalde,\n"
 "bideoak ikusteko Flash 8 player deskargatu beharko dute erabiltzaileek,\n"
-"hemen: http://www.macromedia.com/."
+"hemen: http://www.macromedia.com/. "
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
@@ -2752,7 +2753,7 @@ msgstr "%s luzapena, %s%s fitxategiari dagokiona, ezin da bihurtu ISO 9660 forma
 
 #: exe/engine/resource.py:668
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
-msgstr "Applet iDevice baten baliabide baten izena aldatu da eta ez luke honaino iritxi behar!"
+msgstr "Applet iDevice  baliabide baten izena aldatu da eta ez luke honaino iritxi behar! "
 
 #: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:48
 msgid "RSS"
@@ -3783,11 +3784,11 @@ msgstr "LOM metadatuen inportazio zuzena!"
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
 msgid "Insert elp in this page"
-msgstr "Txertatu elp-a orri honetan"
+msgstr "Txertatu elp-a orri honetan "
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
 msgid "Export this page as elp"
-msgstr "Esportatu orri hau elp formatuan"
+msgstr "Esportatu orri hau elp formatuan "
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Delete \"{node}\" node and all its children?"
@@ -3803,7 +3804,7 @@ msgstr "Sartu izen berria:"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:68
 msgid "Cannot edit the Style. It is not compatible with the Style Designer."
-msgstr "Ezin da editatu estiloa. Ez da bateragarria estiloen diseinu-tresnarekin."
+msgstr "Ezin da editatu estiloa. Ez da bateragarria estiloen diseinu-tresnarekin. "
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:75
 msgid "An unknown error occurred."
@@ -3811,7 +3812,7 @@ msgstr "Errore ezezaguna gertatu da."
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:99
 msgid "Cannot delete the current style."
-msgstr "Ezin da ezabatu uneko estiloa."
+msgstr "Ezin da ezabatu uneko estiloa. "
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:99
 #: exe/jsui/scripts/app/view/forms/HelpContainer.js:43 exe/webui/block.py:270
@@ -3855,7 +3856,7 @@ msgstr "ELT txantiloia"
 
 #: exe/jsui/scripts/app/controller/TemplateManager.js:260
 msgid "Export to ZIP template as"
-msgstr "Esportatu ZIP txantiloia honela:"
+msgstr "Esportatu ZIP txantiloia honela: "
 
 #: exe/jsui/scripts/app/controller/TemplateManager.js:322
 msgid "Delete template?"
@@ -4132,7 +4133,7 @@ msgstr "Common Cartridge-a honela esportatu"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1087
 msgid "INVALID VALUE PASSED TO exportPackage"
-msgstr "exportPackage-ari BALIO OKERRA EMAN ZAIO"
+msgstr "BALIO OKERRA EMAN ZAIO exportPackage-ari "
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1103
 msgid "SCORM/IMS/ZipFile"
@@ -4539,7 +4540,7 @@ msgstr "Aukera hau klikatuz gero, esportatutako edukiak eXeLearning-ekin editatu
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:74
 msgid "Export a copy of the elp"
-msgstr "Esportatu elp-aren kopia"
+msgstr "Esportatu elp-aren kopia "
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:78
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:81
@@ -4550,19 +4551,19 @@ msgid ""
 msgstr ""
 "Esportatutako karpetak .elp honen kopia izango du, baita zure edukiak harekiko esteka ez duenean "
 "ere. Edonork edukia topa dezan nahi baduzu, agian nahiago duzu elp-a edukian estekatzea ezarpen "
-"hau gaitu ordez."
+"hau gaitu ordez. "
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:87
 msgid "Add a search bar (editable Web Site export only)"
-msgstr "Erantsi bilaketa barra (Webgune esportazio editagarrian soilik)"
+msgstr "Erantsi bilaketa barra (Webgune esportazio editagarrian soilik) "
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:91
 msgid ""
 "Checking this option, a search box will be added to every page. The \"%\" option has to be checked "
 "too. It will only work if JavaScript is enabled, and only in modern browsers."
 msgstr ""
-"Ezarpen hau gaituz gero, bilaketa koadro bat erantsiko da orri guztietan. \"%\" ezarpena gaitu "
-"behar da ere. Bakarrik lan egingo du JavaScript gaituta badago, eta bakarrik nabigatzaile "
+"Ezarpen hau gaituz gero, bilaketa koadro bat erantsiko da orri guztietan. Baita ere \"%\" ezarpena "
+"gaitu behar da. Bakarrik lan egingo du JavaScript gaituta badago, eta bakarrik nabigatzaile "
 "modernoetan."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:94
@@ -4570,8 +4571,8 @@ msgid ""
 "Checking this option, a search box will be added to every page. The \"%\" option has to be checked "
 "too. It will only work if JavaScript is enabled."
 msgstr ""
-"Ezarpen hau gaituz gero, bilaketa koadro bat erantsiko da orri guztietan. \"%\" ezarpena gaitu "
-"behar da ere. Bakarrik lan egingo du JavaScript gaituta badago."
+"Ezarpen hau gaituz gero, bilaketa koadro bat erantsiko da orri guztietan. Baita ere \"%\" ezarpena "
+"gaitu behar da. Bakarrik lan egingo du JavaScript gaituta badago."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:100
 msgid "Add page counters in the footer and header of the export?"
@@ -5441,7 +5442,7 @@ msgstr "Leiho hau erakutsi eXe hasterakoan"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:80
 msgid "Edit style: "
-msgstr "Editatu estiloa: "
+msgstr "Editatu estiloa:  "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:81
 msgid "Edit current Style"
@@ -5449,15 +5450,15 @@ msgstr "Oraingo estiloa editatu"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:102
 msgid "Export style: "
-msgstr "Esportatu estiloa: "
+msgstr "Esportatu estiloa:  "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:134
 msgid "Delete style: "
-msgstr "Ezabatu estiloa: "
+msgstr "Ezabatu estiloa:  "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:152
 msgid "Show properties of style: "
-msgstr "Erakutsi estiloaren ezaugarriak: "
+msgstr "Erakutsi estilo-ezaugarriak: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:232
 #: exe/webui/tools/style-designer/langs/all.js:9
@@ -5470,35 +5471,34 @@ msgid "Create new style"
 msgstr "Sortu estilo berria"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:242
-#, fuzzy
 msgid "Import style to the system "
-msgstr "Inportatu estiloa sistemara"
+msgstr "Inportatu estiloa sistemara "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:246
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:470
 msgid "Import style"
-msgstr "Inportatu estiloa"
+msgstr "Inportatu estiloa  "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:252
 msgid "Styles repository"
-msgstr "Estilo-biltegia"
+msgstr "Estilo-biltegia "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:253
 msgid "Search and download new styles from the styles repository"
-msgstr "Bilatu eta jaitsi estilo berriak estilo-biltegitik"
+msgstr "Bilatu eta jaitsi estilo berriak estilo-biltegitik "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:262
 msgid "List of styles in your system"
-msgstr "Zure sistemaren estilo zerrenda"
+msgstr "Zure sistemako estilo zerrenda "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:276
 msgid "Properties of style: "
-msgstr "Estiloaren ezaugarriak: "
+msgstr "Estiloaren ezaugarriak:  "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:364
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:577
 msgid "Return to style manager"
-msgstr "Itzuli estiloen kudeatzailera"
+msgstr "Itzuli estilo-kudeatzailera"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:371
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:576
@@ -5508,15 +5508,15 @@ msgstr "Itzuli"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:465
 msgid "Read more"
-msgstr "Gehiago irakurri"
+msgstr "Irakurri gehiago "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:471
 msgid "Download style from repository and import into system."
-msgstr "Jaitsi estiloa biltegitik eta inportatu sisteman."
+msgstr "Jaitsi estiloa biltegitik eta inportatu sistemara."
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:503
 msgid "Import style from custom URL"
-msgstr "Inportatu estiloa URL jakin batetik"
+msgstr "Inportatu estiloa URL jakin batetik "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:518
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:60
@@ -5531,19 +5531,19 @@ msgstr "URL-a"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:519
 msgid "URL to download the style from."
-msgstr "Estiloa jaisteko URL-a."
+msgstr "Estiloa jaisteko URL-a. "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:524
 msgid "Import Style from URL"
-msgstr "Inportatu estiloa URL-tik"
+msgstr "Inportatu estiloa URL-tik "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:525
 msgid "Download style from URL and import into system."
-msgstr "Jaitsi estiloa URL-tik eta inportatu sisteman."
+msgstr "Jaitsi estiloa URL-tik eta inportatu sisteman. "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:553
 msgid "Check and install styles in the repository"
-msgstr "Egiaztatu eta instalatu estiloa biltegian"
+msgstr "Egiaztatu eta instalatu estiloa biltegian "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:630 exe/webui/common.py:628
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exegames/langs/en.js:38
@@ -5606,7 +5606,7 @@ msgstr "Gorde aldaketarik gabe"
 msgid ""
 "The value selected for this field is not accepted by Procomún. Please select one of the values "
 "below:"
-msgstr "Balio hauek ez dira onargarriak Procomún-en"
+msgstr "Balio hauek ez dira onargarriak Procomún-en "
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:54 exe/webui/tools/assistant/langs/all.js:41
 msgid "Outline"
@@ -5623,20 +5623,20 @@ msgstr "Ezkutatu"
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:95 exe/jsui/scripts/app/view/ui/LeftPanel.js:98
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:104 exe/jsui/scripts/app/view/ui/LeftPanel.js:136
 msgid "Ungroup iDevices"
-msgstr "iDevice taldeak desegin"
+msgstr "Desegin iDevice taldeak "
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:111 exe/jsui/scripts/app/view/ui/LeftPanel.js:116
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:134
 msgid "Edit iDevices"
-msgstr "iDeviceak editatu"
+msgstr "Editatu iDeviceak"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:124
 msgid "Save iDevices"
-msgstr "iDeviceak gorde"
+msgstr "Gorde iDeviceak "
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "iDevices"
-msgstr "IDevice-ak"
+msgstr "iDevice-ak"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:177
 msgid "Category"
@@ -5693,7 +5693,7 @@ msgstr "Berrizendatu"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:56
 msgid "Minify this panel"
-msgstr "Minimizatu panel hau"
+msgstr "Txikiagotu panel hau"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:38
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
@@ -5803,7 +5803,7 @@ msgstr "EPUB3"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:321
 msgid "Export the current page as elp"
-msgstr "Esportatu uneko orria elp formatuan"
+msgstr "Esportatu uneko orria elp formatuan "
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:326
 msgid "SCORM"
@@ -5819,7 +5819,7 @@ msgstr "Inportatu"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:352
 msgid "Insert elp in the current page"
-msgstr "Txertatu elp-a uneko orrian"
+msgstr "Txertatu elp-a uneko orrian "
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:364
 msgid "XLIFF File"
@@ -5939,7 +5939,7 @@ msgstr "Ezkutatu aplikazioa itxi arte"
 #: exe/jsui/scripts/app/controller/Toolbar.js:903 exe/jsui/scripts/app/view/forms/PackagePanel.js:580
 #: exe/jsui/scripts/exe.js:213
 msgid "Warning"
-msgstr "Kontuz!"
+msgstr "Kontuz"
 
 #: exe/jsui/scripts/exe.js:218
 msgid "Load Error"
@@ -5947,7 +5947,7 @@ msgstr "Errorea kargatzerakoan"
 
 #: exe/jsui/scripts/exe.js:246
 msgid "A new version of eXeLearning (%) is available. Would you like to download it now?"
-msgstr "eXeLearning bertsio berria argitaratu da (%). Jaitsi nahi duzu?"
+msgstr "eXeLearning bertsio berria argitaratu da (%). Jaitsi nahi duzu? "
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:150
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:181 exe/jsui/scripts/app/view/ui/eXeToolbar.js:825
@@ -5965,19 +5965,19 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:100 exe/jsui/scripts/exe.js:334
 msgid "Group iDevices"
-msgstr "iDeviceak taldekatu"
+msgstr "Taldekatu iDeviceak"
 
 #: exe/jsui/scripts/exe.js:361 exe/jsui/scripts/exe.js:369
 msgid "Show panel"
-msgstr "Erakutsi panela"
+msgstr "Erakutsi panela "
 
 #: exe/jsui/scripts/exe.js:392
 msgid "Click on the elements of the left panel to add content."
-msgstr "Klik egin ezker aldeko panelaren elementuetan edukiak gehitzeko."
+msgstr "Klik egin ezker aldeko panelaren elementuetan edukiak gehitzeko. "
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:909 exe/jsui/scripts/exe.js:393
 msgid "Don't show this warning again"
-msgstr "Ez erakutsi berriro ohar hau."
+msgstr "Ez erakutsi berriro ohar hau "
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
@@ -7607,7 +7607,7 @@ msgid ""
 "in your regular browser, click with right mouse button on it and in config > codigo is its "
 "associated code. Copy and paste it directly into an Applet iDevice such as Other."
 msgstr ""
-"Adierazitako webgunean, eXe ezin da heldu inolako eszenara. Dena den, zure ohiko nabigatzailearen "
+"adierazitako webgunean, eXe ezin da heldu inolako eszenara. Dena den, zure ohiko nabigatzailearen "
 "bidez iritsi zaitezke nahi duzun eszenara, eta eskuineko botoian klik egiten baduzu, config > "
 "codigo aukeran topatutako duzu lotutako kodea. Kopiatu eta zuzenean itsatsi Java applet iDevice "
 "batean, eta 'Beste bat' Applet mota aukeratu."
@@ -7931,25 +7931,23 @@ msgstr "Soluzioa"
 
 #: exe/webui/common.py:633
 msgid "Search in all pages"
-msgstr "Bilatu orri guztietan"
+msgstr "Bilatu orri guztietan "
 
 #: exe/webui/common.py:634
-#, fuzzy
 msgid "No results for %"
-msgstr "Emaitzarik ez %-rentzat"
+msgstr "Emaitzarik ez %-rentzat "
 
 #: exe/webui/common.py:635
-#, fuzzy
 msgid "Search results for %"
-msgstr "Bilatu emaitzak %-rentzat"
+msgstr "Bilatu emaitzak %-rentzat "
 
 #: exe/webui/common.py:636
 msgid "Hide results"
-msgstr "Ezkutatu emaitzak"
+msgstr "Ezkutatu emaitzak "
 
 #: exe/webui/common.py:637
 msgid "More"
-msgstr "Gehiago"
+msgstr "Gehiago "
 
 #: exe/webui/common.py:638
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/codemagic/langs/en_dlg.js:8
@@ -8490,7 +8488,7 @@ msgstr "Esportatu iDevice-a"
 
 #: exe/webui/editorpage.py:295
 msgid "New iDevice"
-msgstr "iDevice berria"
+msgstr "IDevice berria"
 
 #: exe/webui/editorpane.py:67
 msgid ""
@@ -8516,8 +8514,8 @@ msgid ""
 "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it "
 "to distinguish it; ie. a border and an icon."
 msgstr ""
-"iDevice-ak formatua izan behar duen edo ez aukeratzeko erabili zerrenda hau; adibidez, ertza edo "
-"ikonoa."
+"iDevice-ak formaturen bat izan behar duen edo ez aukeratzeko erabili zerrenda hau; adibidez, ertza "
+"edo ikonoa."
 
 #: exe/webui/editorpane.py:79
 msgid ""
@@ -8769,7 +8767,7 @@ msgstr "URLa:"
 #: exe/webui/externalurlblock.py:70
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:597
 msgid "Remember that HTTP pages cannot be included into HTTPS websites."
-msgstr "Gogoratu HTTP orriak ezin direla txertatu HTTPS webgunetan."
+msgstr "Gogoratu HTTP orriak ezin direla txertatu HTTPS webgunetan. "
 
 #: exe/webui/externalurlblock.py:71
 msgid "small"
@@ -9162,7 +9160,7 @@ msgstr "Tresna-Aurrebistara joan argibidearen edukia ikusteko"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:13
 msgid "Download source file"
-msgstr "Jaitsi iturri-fitxategia"
+msgstr "Jaitsi iturri-fitxategia "
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:16
 msgid ""
@@ -9170,35 +9168,34 @@ msgid ""
 "information is right."
 msgstr ""
 "Paketea jaisteko esteka zure orrian jarri aurretik, joan Ezaugarriak fitxara eta egiaztatu "
-"informazioa zuzena dela."
+"informazioa zuzena dela. "
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:153
 msgid "General information about this educational resource"
-msgstr "Hezkuntzarako baliabide honi buruzko informazio orokorra"
+msgstr "Hezkuntzarako baliabide honi buruzko informazio orokorra "
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:173
 msgid ""
 "This content was created with eXeLearning, your free and open source editor to create educational "
 "resources."
 msgstr ""
-"Edukia eXeLearning-ekin sortu da, hezkuntzarako edukiak sortzeko hezkuntzarako edukiak sortzeko "
-"kode irekiko programa librea."
+"Edukia eXeLearning-ekin sortu da, hezkuntzarako edukiak sortzeko kode irekiko programa librea."
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:177
 msgid ""
 "This block will create a link to download the elp file. Write some use instructions and customize "
 "your download link."
 msgstr ""
-"Bloke honek .elp-a jaisteko esteka sortuko du. Eman argibideak eta moldatu zure gustura jaisteko "
-"esteka."
+"Bloke honek .elp-a jaisteko esteka sortuko du. Eman argibideak eta moldatu zure gustura jaitsi "
+"beharreko esteka."
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:180
 msgid "Download link"
-msgstr "Jaitsi esteka"
+msgstr "Jaitsi esteka "
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:182
 msgid "Download elp file"
-msgstr "Jaitsi elp fitxategia"
+msgstr "Jaitsi elp fitxategia "
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:182
 #: exe/webui/scripts/idevices/example-idevice/edition/example-idevice.js:39
@@ -9226,7 +9223,7 @@ msgstr "Testu kolorea"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:271
 msgid "Please provide some instructions or information about the resource."
-msgstr "Eman baliabideari buruzko azalpenak edo argibideak."
+msgstr "Eman baliabideari buruzko azalpenak edo argibideak. "
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:282
 #: exe/webui/scripts/idevices/example-idevice/edition/example-idevice.js:95
@@ -9382,99 +9379,99 @@ msgstr "Idatzi botoiaren testua."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:2
 msgid "Interactive video editor"
-msgstr "Bideo editore interaktiboa"
+msgstr "Bideo editore interaktiboa "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:5
 msgid "Exit"
-msgstr "Irten"
+msgstr "Irten "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:7
 msgid "Show/Hide help"
-msgstr "Erakutsi/Ezkutatu laguntza"
+msgstr "Erakutsi/Ezkutatu laguntza "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:8
 msgid "Close help"
-msgstr "Itxi laguntza"
+msgstr "Itxi laguntza "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:10
 msgid "Create a cover"
-msgstr "Sortu azala"
+msgstr "Sortu azala "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:11
 msgid "Create"
-msgstr "Sortu"
+msgstr "Sortu "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:12
 msgid "Create a slide"
-msgstr "Sortu diapositiba bat"
+msgstr "Sortu diapositiba bat "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:14
 msgid "Create slide"
-msgstr "Sortu diapositiba"
+msgstr "Sortu diapositiba "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:15
 msgid "Update slide"
-msgstr "Eguneratu diapositiba"
+msgstr "Eguneratu diapositiba "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:17
 msgid "Edit slides"
-msgstr "Editatu diapositibak"
+msgstr "Editatu diapositibak "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:18
 msgid "Create a cover (front page)"
-msgstr "Sortu azala (lehen orria)"
+msgstr "Sortu azala (lehen orria) "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:19
 msgid "Add new slides (frames)"
-msgstr "Gehitu diapositibak (fotogramak)"
+msgstr "Gehitu diapositibak (fotogramak) "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:20
 msgid "You can edit them later"
-msgstr "Aurrerako edita ditzakezu"
+msgstr "Aurrerago edita ditzakezu"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:21
 msgid "Click on Save when you finish"
-msgstr "Klik egin Gorde-n amaitzean"
+msgstr "Klikatu Gorde amaitzean"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:22
 msgid "Your interactive video cover"
-msgstr "Bideo interaktiboaren azala"
+msgstr "Bideo interaktiboaren azala "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:24
 msgid "required"
-msgstr "derrigorrezkoa"
+msgstr "derrigorrezkoa "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:26
 msgid "Save cover"
-msgstr "Gorde azala"
+msgstr "Gorde azala "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:30
 msgid "Single choice"
-msgstr "Aukera bakarra"
+msgstr "Aukera bakarra "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:31
 msgid "Multiple choice"
-msgstr "Aukera anitzak"
+msgstr "Aukera anitzak "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:32
 msgid "Fill in the blank"
-msgstr "Bete hutsunea"
+msgstr "Bete hutsunea "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:33
 msgid "Dropdown activity"
-msgstr "Jarduera zabalgarria"
+msgstr "Jarduera zabalgarria "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:34
 msgid "Match pairs"
-msgstr "Parekatu bikoteak"
+msgstr "Parekatu bikoteak "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:35
 msgid "Scrambled list"
-msgstr "Nahastutako zerrenda"
+msgstr "Nahastutako zerrenda "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:37
 msgid "Write a text. You can add lists, links..."
-msgstr "Idatzi testua. Zerrendak, estekak etab. erantsi ditzakezu."
+msgstr "Idatzi testua. Zerrendak, estekak etab. erantsi ditzakezu. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:38
 msgid "Add an image with description (alternative text)."
@@ -9482,17 +9479,17 @@ msgstr "Erantsi irudia eta deskripzioa (ordezko testua)."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:39
 msgid "Write a question and some answers. Don't forget to choose the right one."
-msgstr "Idatzi galdera bat eta erantzun batzuk. Ez ahaztu zuzena zein den adieraztea."
+msgstr "Idatzi galdera bat eta erantzun batzuk. Ez ahaztu zuzena zein den adieraztea. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:40
 msgid "Write a question and some answers. You can select more than one right answer."
-msgstr "Idatzi galdera bat eta erantzun batzuk. Erantzun zuzen bat baino gehiago aukeratu dezakezu."
+msgstr "Idatzi galdera bat eta erantzun batzuk. Erantzun zuzen bat baino gehiago aukera dezakezu. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:41
 msgid ""
 "Write a text and strike through the words to complete. Check the spelling. It's case sensitive."
 msgstr ""
-"Idatzi testu bat eta marratu bete behar diren hitzak. Egiaztatu ortografia. Maiuskulak eta "
+"Idatzi testu bat eta marratu osatu behar diren hitzak. Egiaztatu ortografia. Maiuskulak eta "
 "minuskulak bereizten dira."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:42
@@ -9500,8 +9497,8 @@ msgid ""
 "Write a text and strike through the words to complete. A dropdown menu (SELECT) will be displayed "
 "where those words are. You can also add more options."
 msgstr ""
-"Idatzi testu bat eta marratu bete behar diren hitzak. Menu zabalgarri bat agertuko da hitzen "
-"kokalekuan haien artean aukeratu ahal izateko. Aukera gehiago gehitu ditzakezu."
+"Idatzi testu bat eta marratu osatu behar diren hitzak. Menu zabalgarri bat agertuko da hitzen "
+"kokalekuan haien artean aukeratu ahal izateko. Aukera gehiago gehi ditzakezu."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:43
 msgid "Write some instructions and add pairs in the right order."
@@ -9517,11 +9514,11 @@ msgstr "Idatzi erakutsi behar den testua"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:51
 msgid "Strike through the words to complete. It's case sensitive."
-msgstr "Marratu hitzak betetzeko. Maiuskulak eta minuskulak bereizten dira."
+msgstr "Marratu hitzak osatzeko. Maiuskulak eta minuskulak bereizten dira."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:52
 msgid "Text to complete"
-msgstr "Bete beharreko testua"
+msgstr "Osatu beharreko testua"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:54
 msgid "Add options"
@@ -9529,19 +9526,19 @@ msgstr "Erantsi aukerak"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:55
 msgid "You can add more options to the dropdown lists (optional)"
-msgstr "Aukera gehiago erantsi ditzakezu zerrenda zabalgarrira (hautazkoa)"
+msgstr "Aukera gehiago erantsi ditzakezu zerrenda zabalgarrian (hautazkoa)"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:58
 msgid "Pairs"
-msgstr "Bikoteak"
+msgstr "Bikoteak "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:59
 msgid "Introduction or instructions"
-msgstr "Sarrera edo azalpenak"
+msgstr "Sarrera edo azalpenak "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:60
 msgid "Fill in at least two pairs."
-msgstr "Bete bi bikote gutxienez."
+msgstr "Bete bi bikote gutxienez. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:62
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
@@ -9553,179 +9550,178 @@ msgstr "Zerrenda"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:63
 msgid "Elements (it the right order)"
-msgstr "Elementuak (orden zuzenean)"
+msgstr "Elementuak (orden zuzenean) "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:65
 msgid "Please create a slide (frame) first."
-msgstr "Lehendabizi sortu diapositiba (fotograma) bat."
+msgstr "Lehendabizi sortu diapositiba (fotograma) bat. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:66
 msgid "The title is required."
-msgstr "Titulua derrigorrezkoa da."
+msgstr "Izenburua derrigorrezkoa da."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:67
 msgid "Cover updated."
-msgstr "Azala eguneratu da."
+msgstr "Azala eguneratu da. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:68
 msgid "Please write a text."
-msgstr "Idatzi testu bat."
+msgstr "Idatzi testuren bat. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:69
-#, fuzzy
 msgid "Please add an image."
-msgstr "Txertatu irudi bat"
+msgstr "Txertatu irudi bat "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:70
 msgid "Provide an alternative text (describe the image)."
-msgstr "Eman ordezko testua (deskribatu irudia)."
+msgstr "Eman ordezko testua (deskribatu irudia). "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:71
 msgid "Please write a question."
-msgstr "Idatzi galdera bat."
+msgstr "Idatzi galderaren bat. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:72
 msgid "Add at least two answers."
-msgstr "Gutxienez erantsi bi erantzun."
+msgstr "Erantsi, gutxienez, bi erantzun."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:73
 msgid "Please choose the right answer."
-msgstr "Erantzun zuzena aukeratu."
+msgstr "Aukeratu erantzun zuzena."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:74
 msgid "No struck-through words..."
-msgstr "Marratutako hitzik ez..."
+msgstr "Marratutako hitzik ez... "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:75
 msgid "Write an introduction (instructions, etc.)."
-msgstr "Sarrera idatzi (argibideak etab.)."
+msgstr "Sarrera idatzi (argibideak etab.).  "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:76
 msgid "Add at least two pairs."
-msgstr "Gutxienez erantsi bi bikote."
+msgstr "Erantsi, gutxienez, bi bikote."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:77
 msgid "Add at least two elements to the list."
-msgstr "Gutxienez erantsi bi osagai zerrendan."
+msgstr "Erantsi, gutxienez, bi osagai zerrendan."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:78
 msgid "Important"
-msgstr "Garrantzitsua"
+msgstr "Garrantzitsua "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:79
 msgid "Your changes won't be saved until you click on \"Save\"."
-msgstr "Aldaketak ez dira gordeko \"Gorde\" klikatu arte."
+msgstr "\"Gorde\" klikatu arte ez dira aldaketak gordeko ."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:80
 msgid "Do not show this message again"
-msgstr "Ez erakutsi mezu hau berriro"
+msgstr "Ez erakutsi mezu hau berriro "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:81
 msgid "All the slides have been deleted."
-msgstr "Diapositiba guztiak ezabatu dira."
+msgstr "Diapositiba guztiak ezabatu dira. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:83
 msgid "Num."
-msgstr "Zenb."
+msgstr "Zenb. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:85
 msgid "End"
-msgstr "Amaiera"
+msgstr "Amaiera "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:87
 #, python-format
 msgid "Remove slide %s?"
-msgstr "%s diapositiba ezabatu?"
+msgstr "%s diapositiba ezabatu? "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:88
 msgid "Slides list"
-msgstr "Diapositiba zerrenda"
+msgstr "Diapositiba-zerrenda "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:89
 msgid "New slide"
-msgstr "Diapositiba berria"
+msgstr "Diapositiba berria "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:90
 msgid "The slide was created!"
-msgstr "Diapositiba sortu da!"
+msgstr "Diapositiba sortu da! "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:91
 msgid "Saved changes!"
-msgstr "Gorde azalpenak!"
+msgstr "Gorde azalpenak! "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:95
 msgid "The Youtube API might have changed."
-msgstr "Agian Youtube API-a aldatu da."
+msgstr "Agian Youtube API-a aldatu da. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:98
 msgid "Saved!"
-msgstr "Gordeta!"
+msgstr "Gordeta! "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:99
 msgid "Click on \"Exit\" to finish."
-msgstr "Klik egin \"Irten\"-en amaitzeko."
+msgstr "Amaitzeko egin klik  \"Irten\"-en."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:100
 msgid "Stop the playing video"
-msgstr "Gelditu erakusten ari den bideoa"
+msgstr "Gelditu  bideoa "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:105
 msgid "Current frame second"
-msgstr "Uneko fotogramaren segundoa"
+msgstr "Uneko fotogramaren segundoa "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:106
 msgid "The slide can't start in that second (zero)."
-msgstr "Ezin da hasi diapositiba segundo horretan (zero)."
+msgstr "Ezin da hasi diapositiba segundo horretan (zero). "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:107
 msgid "The video is not that long. Check the start/end time."
-msgstr "Bideoa ez da hain luzea. Egiaztatu hasiera/amaiera uneak."
+msgstr "Bideoa ez da hain luzea. Egiaztatu hasiera/amaiera uneak. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:108
 msgid "Please check the start/end time."
-msgstr "Gaitu hasiera/amaiera uneak."
+msgstr "Gaitu hasiera/amaiera uneak. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:109
 msgid "Please check the \"Start\" time"
-msgstr "Gaitu \"Hasiera\" unea"
+msgstr "Gaitu \"Hasiera\" unea "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:110
 msgid "Please check the \"End\" time"
-msgstr "Gaitu \"Amaiera\" unea"
+msgstr "Gaitu \"Amaiera\" unea "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:111
 msgid "Set the time for the slide to be shown"
-msgstr "Ezarri diapositibaren unea ikusgai"
+msgstr "Ezarri ikusgai dagoen diapositibaren denbora"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:112
 msgid "If you don't want the video to stop, set the time for the slide to be hidden"
-msgstr "Ez baduzu nahi Bideoa gelditzea, diapositibarentzako denbora ezkutatu"
+msgstr "Ezkutatu diapositibaren denbora, ez baduzu nahi Bideoa gelditzea"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:113
 #, python-format
 msgid "Click on %s to get the video current time."
-msgstr "Klik egin %s-en bideoaren uneko denbora lortzeko."
+msgstr "Klik egin %s-en bideoaren une jakin horretako denbora lortzeko."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:84
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:24
 msgid "Start"
-msgstr "Hasi"
+msgstr "Hasi "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:26
 msgid "Slide (frame)"
-msgstr "Diapositiba (fotograma)"
+msgstr "Diapositiba (fotograma) "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:27
 msgid "Score"
-msgstr "Puntuak"
+msgstr "Puntuak "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:28
 msgid "Seen"
-msgstr "Ikusita"
+msgstr "Ikusita "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:30
 msgid "see all the slides and answer all the questions"
-msgstr "ikusi diapositiba guztiak eta erantzun galderak"
+msgstr "ikusi diapositiba guztiak eta erantzun galderak "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:31
 msgid "This video has no interactive slides."
@@ -9733,25 +9729,24 @@ msgstr "Bideo honek ez du diapositiba interaktiborik."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:32
 msgid "Continue"
-msgstr "Jarraitu"
+msgstr "Jarraitu "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:34
 msgid "Incompatible code"
-msgstr "Kode ez bateragarria"
+msgstr "Kode ez bateragarria "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:35
-#, fuzzy
 msgid "Only one interactive video per page."
-msgstr "Bakarrik bideo interaktibo bat orriko"
+msgstr "Bideo interaktibo bakarra orriko"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:9
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:36
 msgid "Cover"
-msgstr "Azala"
+msgstr "Azala "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:37
 msgid "Exit the fullscreen mode (Esc) to see the current slide"
-msgstr "Irten pantaila osoko modua (Esc) uneko diapositiba ikusteko"
+msgstr "Irten pantaila osoko modutik (Esc) uneko diapositiba ikusteko"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:38
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:56
@@ -9764,23 +9759,23 @@ msgstr "Arrastatu eta jaregin edo erabili geziak."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:41
 msgid "Move up"
-msgstr "Igo"
+msgstr "Igo "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:42
 msgid "Move down"
-msgstr "Jaitsi"
+msgstr "Jaitsi "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:43
 msgid "Right answer:"
-msgstr "Erantzun zuzena:"
+msgstr "Erantzun zuzena: "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:44
 msgid "Please finish the activity"
-msgstr "Amaitu jarduera"
+msgstr "Amaitu jarduera "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:113
 msgid "You can only add one Interactive Video iDevice per page."
-msgstr "Bideo interaktibo bakarra erantsi dezakezu orri bakoitzeko."
+msgstr "Bideo interaktibo bakarra erantsi dezakezu orri bakoitzeko. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:120
 #: exe/webui/tools/style-designer/langs/all.js:12
@@ -9790,7 +9785,7 @@ msgstr "Aukera orokorrak"
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:96
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:123
 msgid "Local file"
-msgstr "Fitxategi lokala"
+msgstr "Fitxategi lokala "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:124
 msgid "Youtube"
@@ -9798,34 +9793,33 @@ msgstr "Youtube"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:125
 msgid "Mediateca"
-msgstr "Mediateka"
+msgstr "Mediateka "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:130
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:372
 msgid "Supported formats"
-msgstr "Onartutako formatuak"
+msgstr "Onartutako formatuak "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:143
 msgid "Show results"
-msgstr "Erakutsi emaitzak"
+msgstr "Erakutsi emaitzak "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:146
-#, fuzzy
 msgid "Open the editor and start adding interaction..."
-msgstr "Ireki editorea eta hasi interakzioak txertatzen"
+msgstr "Ireki editorea eta hasi interakzioak txertatzen "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:149
 msgid "Language settings"
-msgstr "Hezkuntza-ezarpenak"
+msgstr "Hizkuntza-ezarpenak"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:150
 msgid "Custom texts (or use the default ones):"
-msgstr "Berezko testuak (edo erabili lehenetsiak):"
+msgstr "Berezko testuak (edo erabili lehenetsiak): "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:170
 #, python-format
 msgid "Please save your iDevice now (click on %s now) and edit it to add interaction."
-msgstr "Gorde orain zure iDevice-a (klik egin %s-n) eta editatu interakzioa txertatzeko."
+msgstr "Gorde orain zure iDevice-a (klik egin %s-n) eta editatu interakzioa txertatzeko. "
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:174
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:5
@@ -9835,7 +9829,7 @@ msgstr "Gomendatutako mota"
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:382
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:392
 msgid "Wrong URL. Expected format:"
-msgstr "URL okerra. Espero zen formatua:"
+msgstr "URL okerra. Espero zen formatua: "
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:13
 msgid "Task"
@@ -11146,13 +11140,12 @@ msgstr "Popupa"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:3
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:421
 msgid "Anchors, nodes or elp"
-msgstr "Aingurak, nodoak edo elp-a"
+msgstr "Aingurak, nodoak edo elp-a "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:4
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:109
-#, fuzzy
 msgid "Link to the elp file (it will be exported)"
-msgstr "elp fitxategiaren esteka (esportatuko da)"
+msgstr "elp fitxategiaren esteka (esportatuko da) "
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:5
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:124
@@ -12581,7 +12574,7 @@ msgstr "Kaxa"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Insert span at selection"
-msgstr "span sartu aukeratutakoan"
+msgstr "Span sartu aukeratutakoan"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
@@ -12695,7 +12688,7 @@ msgstr "Keinada"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Case"
-msgstr "Minus./Maius."
+msgstr "Minus./Maius"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
@@ -13226,7 +13219,7 @@ msgstr "Ebaki (Ctrl+X)"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "show/Hide Guidelines/Invisible Elements"
-msgstr "Elementu ikusezinak ikusarazi/ezkutatu"
+msgstr " Ikusarazi/ezkutatu elementu ikusezinak"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Insert Special Character"
@@ -13723,7 +13716,7 @@ msgstr "Itsatsi edo idatzi Baliozko ABC kodea:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:7
 msgid "Visit eXeABC for help, tunes, ABC software..."
-msgstr "eXeABC webgunera jo laguntza, doinuak, ABC softwarea etab. lortzeko."
+msgstr "eXeABC webgunera jo laguntza, doinuak, ABC softwarea etab... lortzeko."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:9
 msgid "ABC Music"
@@ -13799,7 +13792,7 @@ msgstr "Mesedez, \"Lizentzia\" eremua gaitu"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:866
 msgid "Please don't forget to write the file size."
-msgstr "Ez ahaztu fitxategiaren tamaina adieraztea."
+msgstr "Ez ahaztu fitxategiaren tamaina adieraztea. "
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:315
 msgid "Please select the media file to edit it"
@@ -14067,7 +14060,7 @@ msgstr "Azpimarra"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4_settings.js:192
 msgid "Strikethrough"
-msgstr "Marratua"
+msgstr "Marratu"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:29 exe/webui/scripts/tinymce_4_settings.js:193
@@ -14174,7 +14167,7 @@ msgstr "Errorea biltegiko estilo- zerrenda irakurtzekoan"
 
 #: exe/webui/stylemanagerpage.py:301
 msgid "Style updated correctly"
-msgstr "Estiloa ondo eguneratu da"
+msgstr "Estiloa ondo eguneratu da "
 
 #: exe/webui/stylemanagerpage.py:303 exe/webui/stylemanagerpage.py:491
 #: exe/webui/templatemanagerpage.py:263 exe/webui/templatemanagerpage.py:297
@@ -14326,7 +14319,7 @@ msgstr "Sakatu \"Gorde\"."
 
 #: exe/webui/tools/assistant/langs/all.js:31
 msgid "Switch back to the \"Content\" tab."
-msgstr "Itzuli \"Edukia\" fitxara."
+msgstr "Itzuli \"Edukia\" fitxara. "
 
 #: exe/webui/tools/assistant/langs/all.js:32
 msgid "Remember to save your project whenever you change something."
@@ -14389,7 +14382,7 @@ msgstr "Pantaila-azpiko ezkerraldean iDevices izeneko area dago."
 
 #: exe/webui/tools/assistant/langs/all.js:46
 msgid "IDevices are blocks that you can add to your pages."
-msgstr "iDevice-ak orrietara erantsi ditzakezun blokeak dira."
+msgstr "IDevice-ak orrietan erantsi ditzakezun blokeak dira."
 
 #: exe/webui/tools/assistant/langs/all.js:47
 msgid "They are organized by categories: interactive, non-interactive activities..."
@@ -14741,11 +14734,11 @@ msgstr "Eduki-gunearen atzealdea"
 
 #: exe/webui/tools/style-designer/langs/all.js:64
 msgid "Search bar"
-msgstr "Bilaketa barra"
+msgstr "Bilaketa-barra "
 
 #: exe/webui/tools/style-designer/langs/all.js:65
 msgid "Button color"
-msgstr "Botoien kolorea"
+msgstr "Botoien kolorea "
 
 #: exe/webui/tools/style-designer/langs/all.js:67
 msgid "The \"Page background\" will only be used when exporting as Web Site."
@@ -14760,7 +14753,7 @@ msgid ""
 "The \"Search bar\" will only be seen when exporting as Web Site and enabling that option "
 "(Properties → Export)."
 msgstr ""
-"\"Bilaketa barra\" bakarrik ikusiko da webgune esportazioan eta ezarpen hori gaitu behar da "
+"Webgune esportazioan bakarrik ikusiko da \"Bilaketa-barra\", eta ezarpen hori gaitu behar da "
 "(Ezaugarriak → Esportatu)"
 
 #: exe/webui/tools/style-designer/langs/all.js:71
@@ -14845,7 +14838,7 @@ msgstr "Koadroa erakutsi"
 
 #: exe/webui/tools/style-designer/langs/all.js:104
 msgid "Icon to hide/show the iDevice"
-msgstr "iDevice-a erakutsi/ezkutatzeko ikonoa"
+msgstr "IDevice-a erakutsi/ezkutatzeko ikonoa"
 
 #: exe/webui/tools/style-designer/langs/all.js:107
 msgid "This code will be included at the end of content.css"
@@ -14861,7 +14854,7 @@ msgstr "Kode hau nav.css-ren amaieran erantsiko da"
 
 #: exe/webui/tools/style-designer/langs/all.js:110
 msgid "nav.css is only included when you export as Web Site, and always after content.css."
-msgstr "Webgune esportazioan nav.css bakarrik erantsiko da eta beti content.css ondoren."
+msgstr "webgune-esportazioan nav.css bakarrik erantsiko da eta beti content.css ondoren."
 
 #: exe/webui/tools/style-designer/langs/all.js:111
 msgid "content.css content"
@@ -14881,8 +14874,8 @@ msgid ""
 "This is one of eXe's default Styles. Please click on %s. You will find the new Style in the Styles "
 "menu when you finish."
 msgstr ""
-"Hau eXeren oinarrizko estiloetako bat da. Klik egin %s-n. Amaitzean estilo berriak topatuko dituzu "
-"Estiloak menuan."
+"Hau eXeren oinarrizko estiloetako bat da. Klik egin %s-n. Amaitzean, estilo berriak topatuko "
+"dituzu Estiloak menuan."
 
 #: exe/webui/tools/style-designer/langs/all.js:119
 msgid "Save as"
