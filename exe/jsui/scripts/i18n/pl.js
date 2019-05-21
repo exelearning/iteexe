@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2019-05-03 14:01+0200\nPO-Revision-Date: 2018-12-17 22:42+0000\nLast-Translator: AlexL <loginov.alex.valer@gmail.com>, 2019\nLanguage: pl\nLanguage-Team: Polish (https:\/\/www.transifex.com\/Magic\/teams\/44238\/pl\/)\nPlural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.4\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2019-05-21 19:44+0200\nPO-Revision-Date: 2018-12-17 22:42+0000\nLast-Translator: AlexL <loginov.alex.valer@gmail.com>, 2019\nLanguage: pl\nLanguage-Team: Polish (https:\/\/www.transifex.com\/Magic\/teams\/44238\/pl\/)\nPlural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Toggle Full Screen Mode": "Prze\u0142\u0105cz tryb pe\u0142noekranowy", 
  "DropDown Activity": "Aktywno\u015b\u0107 Rozwijana lista", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Opisz pewn\u0105 sytuacj\u0119. Dobra b\u0119dzie taka, kt\u00f3ra \nopisuje dyskusje lub osoby zaanga\u017cowane w \ndan\u0105 sytuacj\u0119. Powinna r\u00f3wnie\u017c pozwala\u0107 na pewne dzia\u0142ania  \npo to, \u017ceby otrzyma\u0107 analiz\u0119 sytuacji.", 
@@ -204,7 +204,6 @@ translations = {
  "Highlighted Text:": "Wyr\u00f3\u017cnij tekst:", 
  "small": "ma\u0142a", 
  "Height of an item in the list (px)": "Wysoko\u015b\u0107 elementu na li\u015bcie (px)", 
- "Show Image": "Poka\u017c obraz", 
  "Default Frame": "Domy\u015blnie ramki", 
  "Need any help?": "Potrzebujesz pomocy?", 
  "Slovenian ": "S\u0142owe\u0144ski", 
@@ -2070,7 +2069,7 @@ translations = {
  "Select target language": "Wybierz docelowy j\u0119zyk", 
  "Click on the AddFiles button to select the .jclic.zip file and then click on the Upload button.<p>The activity will be visible when the HTML file will be generated from eXe.": "Kliknij przycisk Dodaj pliki, aby wybra\u0107 plik .jclic.zip, a nast\u0119pnie kliknij przycisk Prze\u015blij.<p>Aktywno\u015b\u0107 b\u0119dzie widoczna, gdy plik HTML zostanie wygenerowany z eXe.", 
  "Sindhi ": "Sindhi ", 
- "Elements (it the right order)": "Elementy (to prawid\u0142owa kolejno\u015b\u0107)", 
+ "Show Image": "Poka\u017c obraz", 
  "Predefined Template Content": "Wst\u0119pnie zdefiniowana zawarto\u015b\u0107 szablonu", 
  "classroom": "klasa", 
  "A Piece of Advice Text:": "Tekst porady:", 

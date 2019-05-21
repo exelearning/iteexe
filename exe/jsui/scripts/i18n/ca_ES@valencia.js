@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2019-05-03 14:01+0200\nPO-Revision-Date: 2019-05-06 19:06+0200\nLast-Translator: Pilar Embid Giner <embid_mar@gva.es>\nLanguage: ca\nLanguage-Team: LliureX\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.4\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2019-05-21 19:44+0200\nPO-Revision-Date: 2019-05-06 19:06+0200\nLast-Translator: Pilar Embid Giner <embid_mar@gva.es>\nLanguage: ca\nLanguage-Team: LliureX\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Toggle Full Screen Mode": "Activa\/desactiva el mode pantalla completa", 
  "DropDown Activity": "Activitat de men\u00fa desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Crea la hist\u00f2ria del cas. Un bon cas \u00e9s aquell \nque descriu una controv\u00e8rsia o mostra una escena descrivint els car\u00e0cters \ninvolucrats en la situaci\u00f3. Tamb\u00e9 ha de permetre les accions \nencaminades a resoldre el conflicte de la situaci\u00f3.", 
@@ -259,7 +259,6 @@ translations = {
  "see all the slides and answer all the questions": "Vegeu totes les diapositives i contesteu totes les preguntes", 
  "Check and install styles in the repository": "Comprova i instal\u00b7la els estils en el repositori ", 
  "Height of an item in the list (px)": "Al\u00e7\u00e0ria d'un element en la llista (px)", 
- "Show Image": "Mostra la imatge", 
  "Default Frame": "Marc per defecte", 
  "creative commons: attribution - non commercial 2.5": "llic\u00e8ncia creative commons 2.5 reconeixement - no comercial", 
  "Need any help?": "Cal ajuda?", 
@@ -2583,7 +2582,7 @@ translations = {
  "Stretch V-Align": "Estira l'alineaci\u00f3 vertical", 
  "Click on the AddFiles button to select the .jclic.zip file and then click on the Upload button.<p>The activity will be visible when the HTML file will be generated from eXe.": "Feu clic en el bot\u00f3 \u00abAfig fitxers\u00bb per a seleccionar el fitxer .jclic i a continuaci\u00f3 feu clic en el bot\u00f3 Penja.<p>L'activitat ser\u00e0 visible quan es genere el fitxer HTML des de l'eXe.", 
  "Sindhi ": "Sindhi ", 
- "Elements (it the right order)": "Elements (en l'ordre correcte)", 
+ "Show Image": "Mostra la imatge", 
  "Predefined Template Content": "Contingut de la plantilla predefinida", 
  "classroom": "aula", 
  "A Piece of Advice Text:": "Text de la recomanaci\u00f3:", 

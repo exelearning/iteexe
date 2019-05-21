@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2019-05-03 14:01+0200\nPO-Revision-Date: 2019-05-09 17:39+0200\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.gal>\nLanguage: pt\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.gal>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.4\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2019-05-21 19:44+0200\nPO-Revision-Date: 2019-05-09 17:39+0200\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.gal>\nLanguage: pt\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.gal>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Toggle Full Screen Mode": "Tela Inteira", 
  "DropDown Activity": "Atividade drop-down", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Criar a hist\u00f3ria do caso. Um bom caso \u00e9 aquele \nque descreve uma controv\u00e9rsia ou apresenta uma cena descrevendo as personagens \nenvolvidas e a situa\u00e7\u00e3o. Deve permitir decidir a\u00e7\u00f5es \nque levem \u00e0 resolu\u00e7\u00e3o da situa\u00e7\u00e3o.", 
@@ -259,7 +259,6 @@ translations = {
  "see all the slides and answer all the questions": "veja todos os slides e responda a todas as perguntas", 
  "Check and install styles in the repository": "Verificar e instalar estilos do reposit\u00f3rio", 
  "Height of an item in the list (px)": "Altura de um item da lista (p\u00edxeis)", 
- "Show Image": "Mostrar imagem", 
  "Default Frame": "Quadro predefinido", 
  "creative commons: attribution - non commercial 2.5": "Creative Commons: Atribui\u00e7\u00e3o - N\u00e3o Comercial 2.5", 
  "Need any help?": "Precisa de ajuda?", 
@@ -2583,7 +2582,7 @@ translations = {
  "Stretch V-Align": "For\u00e7ar V-Alinhamento", 
  "Click on the AddFiles button to select the .jclic.zip file and then click on the Upload button.<p>The activity will be visible when the HTML file will be generated from eXe.": "Clique no bot\u00e3o \"Adicionar ficheiros\" para selecionar o ficheiro .jclic.zip e depois clique no bot\u00e3o \"Upload\".<p>A atividade ficar\u00e1 vis\u00edvel depois de eXe gerar o ficheiro HTML.", 
  "Sindhi ": "Sindi ", 
- "Elements (it the right order)": "Elementos (na ordem correta)", 
+ "Show Image": "Mostrar imagem", 
  "Predefined Template Content": "Conte\u00fado predefinido para o modelo", 
  "classroom": "sala de aula", 
  "A Piece of Advice Text:": "Texto da Recomenda\u00e7\u00e3o:", 

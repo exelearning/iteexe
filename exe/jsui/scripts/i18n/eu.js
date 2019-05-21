@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2019-05-03 14:01+0200\nPO-Revision-Date: 2019-05-21 19:36+0200\nLast-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\nLanguage: eu\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.4\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2019-05-21 19:44+0200\nPO-Revision-Date: 2019-05-21 19:36+0200\nLast-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\nLanguage: eu\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Toggle Full Screen Mode": "Aldatu pantaila osoko modura", 
  "DropDown Activity": "Jarduera zabalgarria", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Sortu kasu-istorioa. Kasuak, ona izateko, \ngatazka bat deskribatu beharko luke, edo pertsonaien bidez egoera azaldu. \nGainera, gatazka konpondu ahal izateko \nhainbat ekintza gauzatzeko aukera eman beharko luke.", 
@@ -259,7 +259,6 @@ translations = {
  "see all the slides and answer all the questions": "ikusi diapositiba guztiak eta erantzun galderak ", 
  "Check and install styles in the repository": "Egiaztatu eta instalatu estiloa biltegian ", 
  "Height of an item in the list (px)": "Zerrendako elementu baten altuera (px)", 
- "Show Image": "Erakutsi irudia", 
  "Default Frame": "Lehenetsitako fotograma", 
  "creative commons: attribution - non commercial 2.5": "creative commons: aitortu-ez komertziala 2.5", 
  "Need any help?": "Laguntzarik behar?", 
@@ -2583,7 +2582,7 @@ translations = {
  "Stretch V-Align": "Stretch V-Align", 
  "Click on the AddFiles button to select the .jclic.zip file and then click on the Upload button.<p>The activity will be visible when the HTML file will be generated from eXe.": ".jclic.zip fitxategiak hautatzeko, klik egin 'Gehitu fitxategiak' botoian, eta ondoren, 'Kargatu' botoian. <p>eXe-rekin HTML fitxategia sortzean ikusi ahal izango duzu aktibitatea.", 
  "Sindhi ": "Sindhia ", 
- "Elements (it the right order)": "Elementuak (orden zuzenean) ", 
+ "Show Image": "Erakutsi irudia", 
  "Predefined Template Content": "Aurredefinitutako txantiloiaren edukia", 
  "classroom": "ikasgela", 
  "A Piece of Advice Text:": "Gomendioaren testua:", 

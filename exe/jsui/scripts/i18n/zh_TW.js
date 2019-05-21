@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.3.2\nReport-Msgid-Bugs-To: translations@exelearning.net\nPOT-Creation-Date: 2019-05-03 14:01+0200\nPO-Revision-Date: 2019-05-12 17:31+0200\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage: zh_TW\nLanguage-Team: Chinese Traditional <zh-l10n@linux.org.tw>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.4\nReport-Msgid-Bugs-To: translations@exelearning.net\nPOT-Creation-Date: 2019-05-21 19:44+0200\nPO-Revision-Date: 2019-05-12 17:31+0200\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage: zh_TW\nLanguage-Team: Chinese Traditional <zh-l10n@linux.org.tw>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Toggle Full Screen Mode": "\u5207\u63db\u5168\u87a2\u5e55\u6a21\u5f0f", 
  "DropDown Activity": "\u62d6\u653e\u6d3b\u52d5", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "\u5efa\u7acb\u6848\u4f8b\u6545\u4e8b\u3002\u4e00\u500b\u597d\u7684\u6848\u4f8b\u63cf\u8ff0\u4e00\u9805\u722d\u8b70\uff0c\u6216\u63cf\u8ff0\u5728\u67d0\u500b\u60c5\u5883\u4e0b\u7684\u67d0\u500b\u4eba\u7269\u3002\u5b83\u4e5f\u61c9\u8a72\u5141\u8a31\u5927\u5bb6\u63a1\u53d6\u67d0\u4e9b\u884c\u52d5\u4ee5\u4fbf\u89e3\u6c7a\u9019\u500b\u60c5\u5883\u3002", 
@@ -258,7 +258,6 @@ translations = {
  "see all the slides and answer all the questions": "\u770b\u5b8c\u6240\u6709\u7684\u6295\u5f71\u7247\u7136\u5f8c\u56de\u7b54\u6240\u6709\u554f\u984c", 
  "Check and install styles in the repository": "\u6aa2\u67e5\u4e26\u5b89\u88dd\u4e3b\u76ee\u9304\u4e2d\u7684\u6a23\u5f0f", 
  "Height of an item in the list (px)": "\u5217\u8868\u4e2d\u9805\u76ee\u7684\u9ad8\u5ea6\uff08\u50cf\u7d20\uff09", 
- "Show Image": "\u986f\u793a\u5f71\u50cf", 
  "Default Frame": "\u9810\u8a2d\u5f71\u683c", 
  "creative commons: attribution - non commercial 2.5": "CC \u6388\u6b0a -- \u975e\u5546\u696d\u6027\u689d\u6b3e 2.5 \u7248", 
  "Need any help?": "\u9700\u8981\u5354\u52a9\u55ce\uff1f", 
@@ -2563,7 +2562,7 @@ translations = {
  "Stretch V-Align": "\u5ef6\u4f38\u7e31\u5411\u5c0d\u9f4a", 
  "Click on the AddFiles button to select the .jclic.zip file and then click on the Upload button.<p>The activity will be visible when the HTML file will be generated from eXe.": "\u9ede\u64ca\u300c\u65b0\u589e\u6a94\u6848\u300d\u6309\u9375\uff0c\u9078\u64c7 .jclic.zip \u6a94\u4e26\u9ede\u64ca\u300c\u4e0a\u50b3\u300d\u3002<p>\u6b64\u6d3b\u52d5\u6703\u5728 eXe \u7522\u751f HTML \u6a94\u6642\u51fa\u73fe\u3002", 
  "Sindhi ": "\u8f9b\u5730\u8a9e ", 
- "Elements (it the right order)": "\u5143\u7d20\uff08\u6b63\u78ba\u9806\u5e8f\uff09", 
+ "Show Image": "\u986f\u793a\u5f71\u50cf", 
  "Predefined Template Content": "\u9810\u5b9a\u7fa9\u6a23\u672c\u5167\u5bb9", 
  "classroom": "\u6559\u5ba4", 
  "A Piece of Advice Text:": "\u300c\u4e00\u4e9b\u5efa\u8b70\u300d\u6587\u5b57\uff1a", 

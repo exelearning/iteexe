@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.4\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2019-05-21 19:44+0200\n"
-"PO-Revision-Date: 2019-05-02 17:44+0200\n"
+"PO-Revision-Date: 2019-05-21 19:47+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -10342,7 +10342,7 @@ msgstr "Lista"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:63
 msgid "Elements (in the right order)"
-msgstr ""
+msgstr "Elementos (en el orden correcto)"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:65
 msgid "Please create a slide (frame) first."
@@ -10500,7 +10500,7 @@ msgstr "Pulse en %s para obtener el segundo actual."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:17
 msgid "Interactive Video"
-msgstr ""
+msgstr "Vídeo interactivo"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:84
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:29
@@ -16034,7 +16034,3 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
-
-#~ msgid "Elements (it the right order)"
-#~ msgstr "Elementos (en el orden correcto)"
-
