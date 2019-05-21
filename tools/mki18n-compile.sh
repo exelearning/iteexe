@@ -27,61 +27,7 @@
 #
 # Changes
 # -------
-# 2013-10:
-#     * Usage of Babel1.3 (Pedro Peña)
-#         Uses python Babel 1.3 patched to include 'Language' header
-#        (https://dl.dropboxusercontent.com/s/k1i7ph2m2g4s7kx/Babel-1.3.tar.gz)
-#        as discussed here:
-#        https://forja.cenatic.es/tracker/index.php?func=detail&aid=1905&group_id=197&atid=883
-#
-#    * Changed --version from '1.04.1' to '2.0' (JRF)
-#
-# 2014-03-17:
-#    * Changed options of pybabel update (JRF)
-#         trying to fix the duplicate msgstr problem
-#         comment the -N option out
-#            Option -N, --no-fuzzy-matching: "do not use fuzzy matching" (default False)
-#         add --ignore-obsolete
-#    * Pybabel compile (JRF)
-#         documented that we've never used option -f ("also include fuzzy translations") ¿?
-#
-# 2015-02-26:
-#    * Version 2.0.2 (JRF)
-#
-# 2015-03-10:
-#    * Preparing version 2.1 (JRF)
-#
-# 2016-05-22
-#    * Preparing version 2.1.1 (JRF)
-#    * Babel v.2.3.4 (the 'Language' header bug has been fixed and our fork is no longer necessary)
-#
-# 2017-03-18
-#    * Preparing version 2.1.2 (JRF)
-#
-# 2017-06-24
-#    * Preparing version 2.1.3 (JRF)
-#    * Babel 2.4.0
-#
-# 2018-03-04
-#    * Preparing version 2.1.4 (JRF)
-#
-# 2018-04-04
-#    * Add template string extraction (Sdweb)
-#
-# 2018-04-11
-#    * Preparing version 2.2 (Sdweb)
-#
-# 2018-04-26
-#    * Split this functionality in two separate files (Sdweb)
-#
-# 2018-10-05
-#    * Preparing version 2.2.1 (JRF)
-#
-# 2018-12-02
-#    * There never was a 2.2.1 version - preparing 2.3 (JRF)
-#
-# 2019-04-05
-#    * I wasn't told 2.3.1 was going to be issued, preparing 2.3.2 (JRF)
+# See the header of mki18n-extract.sh
 #
 #===========================================================================
 
