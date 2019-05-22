@@ -213,7 +213,7 @@ Ext.application({
                 var latest = no;
                 var current = eXe.app.config.release;
                 
-                if (latest==current) return;
+                if (current=="" || latest==current) return; // No release number for testing packages
                 
                 latest = latest.replace(/\./g,"");
                 current = current.replace(/\./g,"");
