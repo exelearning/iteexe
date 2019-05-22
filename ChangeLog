@@ -1,3 +1,85 @@
+intef-exe (3:2.4) lucid; urgency=medium
+
+  * Ignacio Gros
+    - [Preferences] New preference to add a search box (Properties - Export).
+    - [Preferences] New preference to export the elp file (see the new iDevice and read the TinyMCE news too).
+    - [Exports] ePub: No license or page footer in any page but the first and the last ones.
+    - [Styles] New Styles: INTEF, CEDEC, Docs.
+    - [Styles] Base Style: The print button is hidden (you can show it deleting the Advanced CSS tab content).
+    - [Styles] Kids Style: New icons by Francisco Javier Pulido Cuadrado.
+    - [Styles] The SimplePoint Style is now called Presentation.
+    - [Styles] Styles revision: Version (it depends on the year) and compatibility with the new options.
+    - [Styles] Some Styles are removed, but they are still in the "Styles repository".
+    - [Styles] Some Styles are editable.
+    - [Styles] Create and edit Styles from the "Style manager" panel.
+    - [Styles] Handle "Styles repository" connection error (#399).
+    - [Styles] "Styles repository" presentation revision.
+    - [Styles] Style Designer: Icon navigation responsive design problems fixed.
+    - [Styles] Style Designer: The current page link has the same color as the other pages's hover color.
+    - [Styles] Style Designer: Compatibility with the page counter and the new search bar option.
+    - [Toolbar and menu] The Style Designer is no longer in the toolbar. It's in the "Style manager" panel now.
+    - [Toolbar and menu] New "Preview" button.
+    - [Toolbar and menu] The "Advanced user" option is now on the right.
+    - [Toolbar and menu] The Merge options are now part of Import and Export.
+    - [Toolbar and menu] Import menu: "HTML Files" instead of "HTML Course".
+    - [Toolbar and menu] Import/Export node literals revision to improve usability.
+    - [Left panel] New button to hide/show the left panel.
+    - [Left panel] New iDevices categories. There are less categories now.
+    - [Left panel] The first category is open by default and the Text iDevice is always in the first place.
+    - [Left panel] More iDevices are hidden by default. Use the "Edit iDevices" button to add them.
+    - [iDevices] New "Interactive video" iDevice.
+    - [iDevices] New "Download source file" iDevice. An easy way to add a "Download elp" link and some information about the project (title, author, license...).
+    - [iDevices] New "Text" iDevice. Icon, title and feedback are optional.
+    - [iDevices] The "ABP Tasks" iDevice is now called "Task".
+    - [iDevices] The experimental iDevices are now hidden. You can edit them but you can't add new ones (#401).
+    - [iDevices] JavaScript iDevices: Common classes for HTML elements and common JavaScript functionality.
+    - [iDevices] JavaScript iDevices: Presentation revision (title and icon selector).
+    - [iDevices] Python iDevices: Edition common code (CSS class names). In progress.
+    - [Edition] When editing an iDevice, the others are minified and less visible.
+    - [Edition] Better preview while editing (just like IMS or SCORM): The buttons to edit an iDevice are hidden until you hover it.
+    - [Edition] Nice notification instead of an alert when saving an elp.
+    - [Edition] The save reminder message is not modal, so no data will be lost if you keep typing (#402).
+    - [Edition] Dismissible message for the empty pages: Click on the elements of the left panel to add content.
+    - [Edition] The "Authoring" tab is now called "Content".
+    - [TinyMCE] The editor version preference is hidden. TinyMCE 4 is always the default editor.
+    - [TinyMCE] "Do not mix http and https when using iframes" warning (#397).
+    - [TinyMCE] No enable/disable editor link when there's more than one TinyMCE. To review.
+    - [TinyMCE] Add a link to the elp with the Link plugin. It will export the elp (see Preferences and iDevices news).
+    - [Other] Licenses revision and legal notes update.
+    - [Other] Resources report: Duplicated resources (#398).
+    - [Other] Resources Report. New column: Resource Size.
+    - [Other] "A new version of eXeLearning is available" message. You'll have to wait to see it.
+    - [Other] Minor bug fixes.
+
+  * Juan Rafael Fernández
+    - Headers, PO preparation, spell check and full revision.
+    - New full Spanish translation.
+    - New full Basque translation, by Joxemi Andonegi.
+    - New full French translation, by Jesús Miguel Domínguez.
+    - New full Valencian translation, by Pilar Embid Giner.
+    - New full Catalan translation, by Carles Ferrando García.
+    - New full Russian translation, by Alexey Loginov.
+    - New Polish translation, by Waldemar Stoczkowski (with the help of Andrey Loginov).
+    - New full Portuguese translation, by Dionisio Martínez Soler.
+    - New full Galician translation, by Pablo Nimo.
+    - New full Traditional Chinese translation, by Chenggui Duan.
+
+  * SDWeb
+    - [Python libraries] Upgrade BeautifulSoup to version 4.
+    - [Python libraries] Remove old dependency.
+    - [iDevices] Show javascript iDevices even if the "export" folder does not exist.
+    - [Preferences] Remove the compatibility with old versions checkbox (#382).
+    - [Preferences] Check the new properties (export elp and add search box) when opening an elp.
+    - [Import] Fixed error when importing a SCORM package.
+    - [Export] SCORM 2004 in Moodle: No blank elements in the navigation menu now (#394).
+    - [Export] Fix errors when exporting and elp generated with a previous version.
+    - [Export] Fix error when export after changing the package language (#388).
+    - [Export] Fix error when exporting package with non-unicode symbols in path (#380).
+    - [Other] Escape character that breaks the translations (#389).
+    - [Other] Fix saving process when a JavaScript iDevice has been edited. No data loss.
+
+ -- eXeLearning <admin@exelearning.net>  Tue, 21 May 2019 10:00:55 +0200
+
 intef-exe (3:2.3.1) lucid; urgency=medium
 
   * Juan Rafael Fernández
