@@ -595,6 +595,7 @@ if (eXeLearning_settings.wysiwyg_version && exe_editor_version==3) {
 		wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
 	}
 }
+if (eXeLearning_settings.wysiwyg_version == false) exe_editor_version = 4;
 
 // browse the specified URL in system browser
 function browseURL(e,elm) {
