@@ -1,6 +1,6 @@
 # eXe eLearning German PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2018 EXELearning.net
+# Copyright (C) 2011-2019 EXELearning.net
 # This file is distributed under the same license as the eXe package.
 # shannon <christoph@mussenbrock.de>, 2009.
 # Ralf Hilgenstock <rh@eledia.de>, 2013.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-21 19:44+0200\n"
-"PO-Revision-Date: 2018-12-02 17:11+0100\n"
+"PO-Revision-Date: 2019-05-24 12:51+0200\n"
 "Last-Translator: Heike Koch <info@hei-ke-koch.de>\n"
 "Language: de\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft; Uwe "
@@ -10550,7 +10550,7 @@ msgstr "%S:%M:%S"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #, python-format
 msgid "%Y-%m-%d"
-msgstr "%J-%M-%T"
+msgstr "%Y-%m-%d"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 msgid "Direction Right to Left"
@@ -15763,98 +15763,3 @@ msgstr ""
 "Die idevice/generic.data Datei oder das von Ihnen geladene Paket wurde "
 "mit einer aktuelleren Version von eXe erstellt. Bitte aktualisieren Sie "
 "Ihre eXe Version und versuchen Sie es dann noch einmal. "
-
-#~ msgid "Insert Package"
-#~ msgstr "In Paket einfügen"
-
-#~ msgid "Extract Package"
-#~ msgstr "Paket entpacken"
-
-#~ msgid "Merging"
-#~ msgstr "Zusammenführen"
-
-#~ msgid "Anchors and nodes"
-#~ msgstr ""
-
-#~ msgid "Non-Interactive Activities"
-#~ msgstr "Nicht interaktive Aktivitäten"
-
-#~ msgid "Non-Textual Information"
-#~ msgstr "Nicht-textuelle Information"
-
-#~ msgid "Textual Information"
-#~ msgstr "Textuelle Information"
-
-#~ msgid "PBL Tasks"
-#~ msgstr ""
-
-#~ msgid "Provide information of the project or this part of the project."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The Learning Diary is focused on "
-#~ "the student's reflection and reasoning "
-#~ "to construct their own learning. Please"
-#~ " write some instructions."
-#~ msgstr ""
-
-#~ msgid "Write the title, select an icon and choose a type..."
-#~ msgstr ""
-
-#~ msgid "Text (optional feedback)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Sorry, only styles created with the "
-#~ "Editor can be edited. eXe's Styles "
-#~ "are not editable"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "That's one of eXe's default Styles, and it cannot be edited.\n"
-#~ "\n"
-#~ "Please choose a different style or create a new one."
-#~ msgstr ""
-
-#~ msgid "Your Style could not be saved because an unknown error occurred."
-#~ msgstr ""
-
-#~ msgid "HTML Course"
-#~ msgstr "HTML Kurs"
-
-#~ msgid "Create new Style"
-#~ msgstr "Stil löschen?"
-
-#~ msgid "Remove slide %?"
-#~ msgstr ""
-
-#~ msgid "Click on % to get the video current time."
-#~ msgstr ""
-
-#~ msgid "Ony one interactive video per page."
-#~ msgstr ""
-
-#~ msgid "Create package compatible with old eXe versions?"
-#~ msgstr "Soll das Package mit älteren eXe-Versionen kompatibel sein?"
-
-#~ msgid ""
-#~ "Checking this option, the saved package"
-#~ " may be opened with eXe >= "
-#~ "0.20.4"
-#~ msgstr ""
-#~ "Wenn sie diese Option wählen, wird "
-#~ "kann das gespeicherte Paket mit eXe "
-#~ ">= 0.20.4 geöffnet werden"
-
-#~ msgid "Authoring"
-#~ msgstr "Autorenebene"
-
-#~ msgid "Icon"
-#~ msgstr ""
-
-#~ msgid "Switch back to the \"Authoring\" tab."
-#~ msgstr ""
-
-#~ msgid "Elements (it the right order)"
-#~ msgstr ""
-
