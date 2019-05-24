@@ -73,8 +73,8 @@ $exeABCmusic = {
 		});					
 	},
 	downloadMidi : function(i){
-		if (typeof($exeAuthoring)!="undefined") {
-			alert(_("Go to Tools - Preview to see this working"));
+		if (typeof($exeAuthoring)!="undefined" && typeof(eXe)!="undefined") {
+			eXe.app.alert(_("Go to Tools - Preview to see this working"));
 			return false;
 		}
 		window.ABCJS.midi.soundfontUrl = $exeABCmusic.getBaseURL();
