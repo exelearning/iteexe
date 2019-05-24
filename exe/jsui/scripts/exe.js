@@ -381,6 +381,33 @@ Ext.application({
             }
         }        
     },
+	
+	// Add a class to the empty non-emphasized iDevices so the user can see the buttons to edit them
+	checkIdevicesVisibility : function(){
+		var iframe = document.getElementsByTagName('iframe');
+		if (iframe.length==1) {
+			var iframe = iframe[0];
+			var doc = iframe.contentWindow.document;                    
+			if (doc && doc.getElementsByClassName) {
+				var iDevices = doc.getElementsByClassName("iDevice");
+				if (iDevices.length>0) {
+					for (var i=0;i<iDevices.length;i++) {
+						var e = iDevices[i];
+						if (e.className.indexOf(" emphasis0")!=-1) {
+							var iDeviceContent = e.getElementsByClassName("iDevice_content");
+							if (iDeviceContent.length>0) {
+								iDeviceContent = iDeviceContent[0];
+								var html = iDeviceContent.innerHTML;
+									html = html.replace(/ /g,"");
+									html = html.replace(/(?:\r\n|\r|\n)/g, "");
+								if (html=="") e.className += " emphasis0-empty";
+							}
+						}
+					}
+				}
+			}
+		}
+	},
 
     appFolder: "jsui/app"
 

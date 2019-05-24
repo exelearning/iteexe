@@ -251,7 +251,8 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 /* iDevice edition */
 .exe-authoring-page #activeIdevice{padding-top:1.5em;border:0;box-shadow:none}
 .exe-authoring-page .iDevice_wrapper{position:relative}
-.exe-authoring-page .idevice-edition-buttons{margin:0;height:16px;position:absolute;bottom:0;left:0;line-height:16px;opacity:.1;transition:opacity .3s linear}
+.exe-authoring-page .idevice-edition-buttons{margin:0;height:16px;position:absolute;bottom:0;left:0;line-height:16px;opacity:0;transition:opacity .3s linear}
+.exe-authoring-page .emphasis0-empty + .idevice-edition-buttons{opacity:.3} /* See exe.js */ 
 .exe-authoring-page .iDevice_wrapper:hover .idevice-edition-buttons{opacity:1}
 .exe-authoring-page .em_iDevice .idevice-edition-buttons{left:10px;bottom:10px}
 .exe-authoring-page .idevice-edition-buttons img{background:#FFF;border-radius:2px;box-shadow:rgba(0, 0, 0, 0.35) 1px 1px 4px;padding:0;margin:0 4px 0 0}

@@ -29,7 +29,7 @@ var Ext = parent.Ext;
 var eXe = parent.eXe;
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
 	enableAnchors, httpsInNewWindow, gotoAnchor, preventEscKey, preventHistoryBack,
-    loadKeymap, hideObjectTags, createLeftPanelToggler, createEmptyPageInstructions];
+    loadKeymap, hideObjectTags, createLeftPanelToggler, createEmptyPageInstructions, checkIdevicesVisibility];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load
@@ -1216,4 +1216,8 @@ function createLeftPanelToggler(){
 
 function createEmptyPageInstructions(){
 	eXe.app.createEmptyPageInstructions();	
+}
+
+function checkIdevicesVisibility(){
+	eXe.app.checkIdevicesVisibility();	
 }
