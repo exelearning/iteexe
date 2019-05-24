@@ -84,7 +84,7 @@ def exportJavaScriptIdevicesFiles(iDevices, outputDir):
     # TODO: Find a way to not copy already existing files
     for idevice in iDevices:
         # We only want to copy JS iDevices resources
-        if type(idevice) is JsIdevice and idevice.get_export_folder() != '':
+        if type(idevice) is JsIdevice and idevice.get_export_folder() is not None:
             iDeviceFiles = G.application.config.jsIdevicesDir/idevice.get_export_folder()
             iDeviceFiles.copyfiles(outputDir)
 
