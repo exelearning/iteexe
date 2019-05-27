@@ -98,7 +98,7 @@ class Config(object):
         'activity': [x_('Text and Tasks')],
         'reading activity': [x_('Text and Tasks')],
         'dropdown activity': [x_('Interactive Activities')],
-        'java applet': [x_('Other Contents')],
+        'java applet': [x_('Interactive Activities')],
         'wiki article': [x_('Other Contents')],
         'case study': [x_('Text and Tasks')],
         'preknowledge': [x_('Text and Tasks')],
