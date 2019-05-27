@@ -59,10 +59,11 @@ intef-exe (3:2.4) lucid; urgency=medium
     - New full Valencian translation, by Pilar Embid Giner.
     - New full Catalan translation, by Carles Ferrando García.
     - New full Russian translation, by Alexey Loginov.
+    - New full Italian translation, by Andrea Primiani.
     - New Polish translation, by Waldemar Stoczkowski (with the help of Andrey Loginov).
     - New full Portuguese translation, by Dionisio Martínez Soler.
     - New full Galician translation, by Pablo Nimo.
-    - New full Traditional Chinese translation, by Chenggui Duan.
+    - New Traditional Chinese translation, by Franklin Weng.
 
   * SDWeb
     - [Python libraries] Upgrade BeautifulSoup to version 4.
