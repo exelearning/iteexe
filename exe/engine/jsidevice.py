@@ -98,8 +98,6 @@ class JsIdevice(Idevice):
             self.__addDefaultFields()
             self.__getFolderResources()
 
-            # Initialize export folder
-            self._exportFolder = ''
 
     def __loadIdevice(self):
         """
@@ -185,6 +183,9 @@ class JsIdevice(Idevice):
             self._exportFolder = str(Path(self._iDeviceDir).basename() + '/export/')
             for exportFile in os.listdir(self._iDeviceDir + '/export'):
                 self._exportResources.append(exportFile)
+        else:
+            self._exportFolder = None
+
 
     def addField(self, field):
         """
