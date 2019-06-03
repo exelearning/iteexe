@@ -333,17 +333,22 @@ var $exeDevice = {
 							win.closeMe = false;
 							return true;
 						}
-						Ext.Msg.show({
-							title: _("Confirm"),
-							msg: _("If you have made changes and have not saved them, they will be lost. Do you really want to quit?"),
-							buttons:Ext.Msg.YESNO,
-							callback:function(btn) {
-								if('yes' === btn) {
-									win.closeMe = true;
-									win.close();
+						if (top.interactiveVideoEditor.hasChanged==true) {
+							Ext.Msg.show({
+								title: _("Confirm"),
+								msg: _("If you have made changes and have not saved them, they will be lost. Do you really want to quit?"),
+								buttons:Ext.Msg.YESNO,
+								callback:function(btn) {
+									if('yes' === btn) {
+										win.closeMe = true;
+										win.close();
+									}
 								}
-							}
-						});
+							});
+						} else {
+							win.closeMe = true;
+							win.close();
+						}
 						return false;
 					}
 				}				
@@ -352,6 +357,8 @@ var $exeDevice = {
 			top.interactiveVideoEditor.win = win;
 			// Save the chooseImage function to use it in the editor
 			top.interactiveVideoEditor.exe_tinymce = exe_tinymce;
+			// Save the status (with or without changes)
+			top.interactiveVideoEditor.hasChanged = false;
 			// Open the window
 			win.show();
 			

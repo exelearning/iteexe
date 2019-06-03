@@ -13,6 +13,7 @@ var iAdmin = {
 		warnWhenSave : true // Tell the user to click on Save before quitting
 	},
 	changeMode : function(mode) {
+		top.interactiveVideoEditor.hasChanged = true;
 		if (mode=="add") {
 			$("BODY").removeClass("edition-mode");
 			$(".block-submit").attr("value",$i18n.Create_Frame_Submit);
@@ -465,7 +466,8 @@ var iAdmin = {
 				iAdmin.tip.html(iAdmin.tipCurrentTitle);
 				this.title = iAdmin.tipTitle;
 			}
-		).click(function(){
+		).click(function(){			
+			top.interactiveVideoEditor.hasChanged = true;
 			var e = $(this);
 				
 			iAdmin.controls.removeClass("current");
@@ -546,6 +548,7 @@ var iAdmin = {
 				this.title = iAdmin.typeTipTitle;
 			}
 		).click(function(){
+			top.interactiveVideoEditor.hasChanged = true;
 			if ($("BODY").hasClass("edition-mode")) return false;
 			
 			iAdmin.resetForm();
@@ -1294,6 +1297,7 @@ var iAdmin = {
 			}
 			top.interactiveVideoEditor.activityToSave = InteractiveVideo;
 			iAdmin.appMsg($i18n.Saved + " " + $i18n.Click_On_Exit);
+			top.interactiveVideoEditor.hasChanged = false;
 		},	
 		exit : function(){
 			top.interactiveVideoEditor.win.close();
