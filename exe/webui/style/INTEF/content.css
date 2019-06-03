@@ -47,7 +47,7 @@ ol,ul{color:#3a4749}
 .iDevice{margin:25px 0}
 
 /* iDevice icons */
-.iDevice_header{background:url(icon_exe.png) no-repeat 0 50%;padding-left:75px;position:relative}
+.iDevice_header{background:url(icon_exe.png) no-repeat 0 bottom;padding-left:75px;position:relative}
 .hidden-idevice .iDevice_header{background-color:#f5f7f8;padding-left:65px;box-shadow:rgba(0, 0, 0, 0.3) 3px 3px 4px}
 .iDevice_header.iDevice_header_noIcon{padding:0}
 .hidden-idevice .iDevice_header.iDevice_header_noIcon{padding-left:20px}
@@ -94,7 +94,7 @@ li{list-style-position:outside}
 .iDevice_inner input[type=submit]:hover,.feedbackbutton:hover{background:#3a4749}
 /* Hide/Show iDevice */
 .toggle-idevice{text-align:right;display:block;margin-right:13px}
-.iDevice_header .toggle-idevice{float:right;margin:20px 13px 0 0}
+.iDevice_header .toggle-idevice{position:absolute;right:13px;bottom:13px;margin:0}
 .toggle-idevice a{display:inline-block;width:20px;height:20px;background:url(_intef_icons.png) no-repeat 0 -20px}
 .toggle-idevice .show-idevice{background-position:0 0}
 .toggle-idevice span,#printNode a span{

@@ -12,7 +12,7 @@ body{padding:0;
 	}
 }
 #lbOverlay{background:#f3f3f3}
-#content{width:100%;max-width:1230px;min-width:400px;margin:0 auto;text-align:left;position:relative;padding-bottom:21px}
+#content{width:100%;max-width:1230px;min-width:300px;margin:0 auto;text-align:left;position:relative;padding-bottom:21px}
 #main-wrapper{padding:0 25px 1px 305px;background:#fff url(_intef_left_column.gif) repeat-y 0 0;box-shadow:rgba(0, 0, 0, 0.4) 3px 3px 8px}
 .no-nav #main-wrapper{padding-left:25px;background:#fff}
 #main{width:100%}
