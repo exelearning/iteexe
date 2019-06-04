@@ -75,7 +75,7 @@ li{list-style-position:outside}
 .toggle-idevice .show-idevice{background-position:-50px -100px}
 .toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 
-.FreeTextIdevice{max-width:900px;margin:2em auto;font-size:1.3em;line-height:2em}
+.textIdevice,.FreeTextIdevice{max-width:900px;margin:2em auto;font-size:1.3em;line-height:2em}
 .exe-fx{font-size:.85em}
 .iDevice_content_wrapper{overflow:hidden}
 .FreeTextIdevice .figcaption{font-size:.85em}
