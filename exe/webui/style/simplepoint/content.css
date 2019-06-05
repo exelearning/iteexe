@@ -28,6 +28,7 @@ h3{font-size:1.25em;color:#777}
 
 /* iDevice icons */
 .iDevice_header{background:url(icon_generic.gif) no-repeat 0 5px;padding-left:40px;margin-bottom:10px}
+.textIdevice .iDevice_header{background-position:0 12px}
 .activityIdevice .iDevice_header{background-image:url(icon_activity.gif)}
 .readingIdevice .iDevice_header{background-image:url(icon_reading.gif)}
 .ListaIdevice .iDevice_header,
