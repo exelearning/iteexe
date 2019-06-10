@@ -95,8 +95,8 @@ var $exeTinyMCE = {
 		
 		this.mode = mode;
 		
-		var h = 50;
-		if (mode=="multiple" || mode=="multiple-visible") h = 50;
+		var h = 175;
+		if (mode=="multiple") h = 50;
 		var w = 882;
 		if (typeof($exeTinyMCEToggler.documentWidth)=='undefined' || (typeof($exeTinyMCEToggler.documentWidth)!='undefined' && $exeTinyMCEToggler.documentWidth<900)) w = '';
 		
