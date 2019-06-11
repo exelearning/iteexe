@@ -13,7 +13,8 @@ input[name=interactiveVideoType]{margin-left:2em;vertical-align:top}
 .interactiveVideoType{margin:1.5em 0}
 .interactiveVideoType input[type=text]{width:350px}
 .interactiveVideoType .info{display:block;margin-top:.7em;color:#666}
-.interactiveVideoType a{color:#666}
+.interactiveVideoType a{color:#888}
+.interactiveVideoType a:hover,.interactiveVideoType a:focus{color:#666}
 
 #interactiveVideoIdeviceFormTab1 p:first-child{margin-top:0}
 #interactiveVideoIdeviceFormTab1{overflow:auto}
