@@ -1,0 +1,225 @@
+/* Rosco Activity iDevice (edition CSS) */
+
+#roscoIdeviceForm {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+#roscoIdeviceForm label {
+  display: inline;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#roscoIdeviceForm input, #roscoIdeviceForm select {
+  font-size: 14px;
+}
+
+#roscoIdeviceForm fieldset {
+  padding: 10px 20px;
+  border: 1px solid #0099cc;
+  margin: 1.5em 0
+}
+
+#roscoIdeviceForm legend {
+  font-weight: bold;
+  padding: 0 10px;
+  font-size: 14px
+}
+
+#roscoIdeviceForm .roscoSeparacion {
+  margin: 15px auto;
+  color: #0099cc;
+}
+
+#roscoIdeviceForm input[type="checkbox"] {
+  display: none;
+}
+
+#roscoIdeviceForm input[type="checkbox"]+label span {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  background: url(rosco_check_radio_sheet.png) left top no-repeat;
+  cursor: pointer;
+}
+
+#roscoIdeviceForm input[type="checkbox"]:checked+label span {
+  background: url(rosco_check_radio_sheet.png) -19px top no-repeat;
+}
+
+#roscoIdeviceForm .roscoLetterEdition {
+  width: 30px;
+  height: 30px;
+  min-width: 20px;
+  background-color: #1c1b1b;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#roscoIdeviceForm #roscoNumberTurns, #roscoIdeviceForm #roscoTimeShowSolution {
+  width: 30px;
+}
+
+#roscoIdeviceForm #roscoClue {
+  width: 35%;
+  min-width: 100px;
+  margin-right: 5px;
+  height: 10px;
+}
+
+#roscoIdeviceForm #roscoCodeAccess {
+  width: 20%;
+  min-width: 100px;
+  margin-right: 5px;
+  height: 10px;
+}
+
+#roscoIdeviceForm .roscoFileWordEdition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+#roscoIdeviceForm .roscoWordMutimediaEdition {
+  width: 100%;
+  margin: 10px auto;
+}
+
+#roscoIdeviceForm .roscoWordMutimedia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+#roscoIdeviceForm .roscoCloseImage {
+  min-width: 20px;
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+#roscoIdeviceForm .roscoPlayImageEdition, #roscoIdeviceForm .roscoStartEdition, #roscoIdeviceForm .roscoSelectImageEdition, #roscoIdeviceForm .roscoLoadImage {
+  width: 30px;
+  height: 30px;
+  min-width: 20px;
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+#roscoIdeviceForm .roscoHomeImagenEdition {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0
+}
+
+#roscoIdeviceForm .roscoWordEdition {
+  width: 15%;
+  height: 30px;
+  margin: 0 3px;
+}
+
+#roscoIdeviceForm .roscoWordEdition {
+  width: 20%;
+  height: 30px;
+  margin: 0 3px;
+}
+
+#roscoIdeviceForm .roscoDefinitionEdition {
+  width: 80%;
+  height: 30px;
+  margin: 0 3px;
+}
+
+#roscoIdeviceForm #roscoMessageCodeAccess {
+  width: 30%;
+}
+
+#roscoIdeviceForm .roscoImageEdition {
+  width: 560px;
+  height: 315px;
+  display: block;
+  position: relative;
+  margin: 10px auto;
+  border: 1px solid white;
+}
+
+#roscoIdeviceForm .roscoNoImageEdition {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 560px;
+  height: 315px;
+  background: url(roscoHomeImage.png);
+  background-repeat: no-repeat;
+  background-size: 560px 315px;
+}
+
+#roscoIdeviceForm .roscoHomeImageEdition {
+  position: absolute;
+}
+
+#roscoIdeviceForm .roscoCursorEdition {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  background: url(roscoCursor.gif);
+  background-size: cover;
+}
+
+#roscoIdeviceForm .roscoWordMutimedia {
+  display: block;
+  width: 100%
+}
+
+#roscoIdeviceForm #roscoTimeShowSolution, #roscoIdeviceForm #roscoNumberTurns {
+  width: 25px;
+}
+
+#roscoIdeviceForm #roscoDuration {
+  width: 45px;
+}
+
+#roscoIdeviceForm .roscoImageBarEdition {
+  display: none
+}
+
+#roscoIdeviceForm .roscoBarEdition, #roscoIdeviceForm .roscoMetaData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 5px 0;
+  width: 100%;
+}
+
+#roscoIdeviceForm .roscoAuthorEdition {
+  width: 40%;
+  margin: 0 3px;
+}
+
+#roscoIdeviceForm .roscoAlt {
+  width: 60%;
+  margin: 0 3px;
+}
+
+#roscoIdeviceForm .roscoURLImageEdition {
+  width: 100%;
+  margin: 0 3px;
+}
+
+#roscoIdeviceForm .roscoYImageEdition, #roscoIdeviceForm .roscoXImageEdition {
+  display: none;
+}

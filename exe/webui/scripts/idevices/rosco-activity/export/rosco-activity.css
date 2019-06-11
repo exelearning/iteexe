@@ -1,0 +1,476 @@
+/* Rosco  export */
+
+.rosco-Idevice {
+    height: auto !important;
+    min-height: 190px;
+    padding-left: 150px;
+    display: none;
+    background-color: #ffffff;
+}
+
+.rosco-Idevice dl {
+    display: none;
+}
+
+.rosco-MainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin: 15px auto;
+}
+
+.rosco-Icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.rosco-GameMinimize {
+    margin: 0 auto;
+    font: normal 12pt arial, sans-serif;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rosco-MessageMinimize {
+    width: 100%;
+    text-align: left;
+    color: #f05565;
+    font-weight: bold;
+    font-size: 14pt;
+    margin: 10px auto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.rosco-MessageMinimize:hover {
+    color: #8697cb;
+}
+
+.rosco-GameContainer {
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: none;
+}
+
+.rosco-GameContainer * {
+    margin: 0;
+    padding: 0;
+}
+
+.rosco-Canvas {
+    display: block;
+    width: 290px;
+    height: 290px;
+    margin: 0 auto;
+    margin-left: 3px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px;
+    background: white;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rosco-GameScoreBoard {
+    display: flex;
+    width: 100%;
+    height: 24px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rosco-GameScoreBoard p {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.rosco-GameScores {
+    width: 185px;
+    height: 24px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rosco-ResultsGame {
+    display: flex;
+    width: 70px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.rosco-TimeTurn {
+    width: 180px;
+    height: 24px;
+    margin: 0 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rosco-DurationGame {
+    width: 90px;
+    height: 24px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rosco-DurationGame p {
+    width: 50px;
+    margin-right: 5px;
+}
+
+.rosco-TurnIcons, .rosco-clockIcons, .rosco-UpArrow, .rosco-TypeGame, .rosco-HitIcons, .rosco-HitIcons, .rosco-ErrorIcons {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.rosco-UpArrow {
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+}
+
+.rosco-UpArrow:hover, .rosco-TypeGame:hover, .rosco-Icon:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.rosco-TypeGame {
+    cursor: pointer;
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+
+.rosco-Letters {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.rosco-Letter {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border: none;
+    background-color: #0099cc;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 3px;
+}
+
+.rosco-Author {
+    width: 360px;
+    height: 12px;
+    margin: 5px auto;
+    margin-bottom: 10px;
+    padding-bottom: 3px;
+    font-size: 0.9em;
+    text-align: center;
+    color: #444;
+}
+
+.rosco-Image {
+    width: 360px;
+    height: 203px;
+    display: block;
+    position: relative;
+    margin: 0px auto 3px auto;
+    z-index: 1;
+}
+
+.rosco-NoImage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 360px;
+    height: 203px;
+    z-index: 10;
+}
+
+.rosco-Cursor {
+    width: 24px;
+    height: 24px;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.rosco-HomeImage {
+    position: absolute;
+}
+
+.rosco-Solution {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin: 0 3px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.rosco-TypeDefinition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 5px;
+    color: #1c1b1b;
+    user-select: none;
+    margin: 0 auto;
+}
+
+.rosco-TypeDefinition p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.rosco-Definition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    min-height: 70px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    color: #1c1b1b;
+    font-weight: 500;
+}
+
+.rosco-Definition p {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.rosco-AnswerButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 24px;
+    margin: 15px auto;
+}
+
+.rosco-AnswerButtons input[type=button], .rosco-CodeAccess input[type=button] {
+    width: 90px;
+    height: 30px;
+    background: transparent;
+    border: 2px solid #0099cc;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #1c1b1b;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rosco-AnswerButtons input[type=button]:hover, .rosco-CodeAccess input[type=button]:hover {
+    background-color: #0099cc;
+    color: white;
+    border: 1px solid #000;
+    font-weight: bold;
+}
+
+.rosco-LetterBlack {
+    background-color: #1c1b1b;
+    color: white;
+}
+
+.rosco-LetterBlue {
+    background-color: #0099cc;
+    color: white;
+}
+
+.rosco-LetterRed {
+    background-color: #ff0000;
+    color: white;
+}
+
+.rosco-LetraGreen {
+    background-color: #009245;
+    color: white;
+}
+
+.rosco-TypeGameRows {
+    background-image: url(roscoPlayCircle.png);
+}
+
+.rosco-AnswerEdit {
+    height: 24px;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 160px;
+}
+
+.rosco-CodeAccess {
+    display: flex;
+    height: 24px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.rosco-CodeAccess label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 800px) {
+    .rosco-TypeGame {
+        display: none;
+    }
+    .rosco-Canvas {
+        display: none;
+    }
+    .rosco-TimeTurn {
+        width: 135px;
+        height: 24px;
+        margin: 0 1px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .rosco-MainContainer {
+        width: 300px;
+    }
+    .rosco-ResultsGame {
+        width: 60px;
+        height: 20px;
+        margin-right: 5px;
+    }
+    .rosco-GameScores {
+        width: 150px;
+        margin-right: 5px;
+    }
+    .rosco-GameScoreBoard p {
+        font-size: 1.2em;
+        font-weight: normal;
+    }
+    .rosco-TurnIcons, .rosco-clockIcons, .rosco-UpArrow, .rosco-TypeGame, .rosco-HitIcons, .rosco-HitIcons, .rosco-ErrorIcons {
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+        margin-right: 15px;
+    }
+    .rosco-TimeTurn {
+        width: 120px;
+        height: 20px;
+        margin: 0 1px;
+    }
+    .rosco-TurnIcons, .rosco-clockIcons, .rosco-UpArrow, .rosco-TypeGame, .rosco-HitIcons, .rosco-HitIcons, .rosco-ErrorIcons {
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+        margin-right: 7px;
+    }
+    .rosco-Solution {
+        height: 35px;
+        font-size: 16px;
+    }
+    .rosco-Author {
+        width: 100%;
+        height: 9px;
+        font-size: 0.8em;
+        margin-bottom: 5px;
+    }
+    .rosco-Image {
+        width: 100%;
+        display: block;
+        margin: 0px;
+    }
+    .rosco-NoImage {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 164px;
+    }
+    .rosco-Canvas {
+        display: none;
+    }
+    .rosco-AnswerButtons input[type=button], .rosco-CodeAccess input[type=button] {
+        width: 70px;
+        height: 23px;
+        font-size: 10px;
+        border-radius: 1px;
+    }
+    .rosco-Definition {
+        font-size: 14px;
+        min-height: 50px;
+        background-color: #fff;
+        margin-bottom: 5px;
+    }
+    .rosco-Definition p {
+        font-size: 14px;
+    }
+    .rosco-TypeDefinition p {
+        font-size: 16px;
+        padding: 0 2px;
+    }
+    .rosco-Letter {
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        text-decoration: none;
+        font-size: 13px;
+    }
+    .rosco-AnswerEdit {
+        font-size: 12px;
+        width: 130px;
+        height: 16px;
+    }
+    .rosco-CodeAccess label {
+        font-size: 12px;
+    }
+}
