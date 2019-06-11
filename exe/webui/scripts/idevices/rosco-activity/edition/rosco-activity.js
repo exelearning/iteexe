@@ -105,7 +105,7 @@ var $exeDevice = {
 	updateMessages() {
 		var msgs = this.msgs;
 		msgs.msgEIntrutions = _("Intructions");
-		msgs.msgEGameOption = _("Game options");
+		msgs.msgEGameOption = _("Options");
 		msgs.msgEGameTime = _("Game time(seconds)");
 		msgs.msgEnumLaps = _("No. Laps/Rounds");
 		msgs.msgEPercentageCorrect = _("% correct answers");
@@ -113,7 +113,7 @@ var $exeDevice = {
 		msgs.msgEShowSolutionTime = _("Show solution time");
 		msgs.msgEShowClue = _("Show clue.");
 		msgs.msgEShowCode = _("Show access code.");
-		msgs.msgETypeWord = _("Type/Word/Definition");
+		msgs.msgETypeWord = _("Questions");
 		msgs.msgENotStart = _("%1 does not start with the letter %2");
 		msgs.msgENotContaint = _("%1 does not contain the letter %2");
 		msgs.msgEWriteClue = _("You must write a clue");
@@ -185,61 +185,152 @@ var $exeDevice = {
 		var msgs = this.msgs,
 			html = '\
 			<div id="roscoIdeviceForm">\
-				<p>\
-					<label for="roscoInstructions">' + msgs.msgEIntrutions + ': </label><textarea id="roscoInstructions" class="exe-html-editor"\>' + msgs.msgEObserveLetter + ' </textarea>\
-				</p>\
-				<fieldset>\
-					<legend>' + msgs.msgEGameOption + '</legend>\
-					<p">\
-					   <label for="roscoDuration">' + msgs.msgEGameTime + ': </label>\
-					    <input type="number" name="roscoDuration" id="roscoDuration"   value="240" min="5" max="9999" step="10" required/> \
-					</p>\
-					 <p>\
-					   <label for="roscoNumberTurns">' + msgs.msgEnumLaps + ': </label>\
-						<input type="number" value="1" min="1" max="2" id="roscoNumberTurns" required>\
-					</p>\
-					<p>\
-						<input type="checkbox" checked id="roscoShowSolution">\
-						<label for="roscoShowSolution"><span></span>' + msgs.msgEShowSolution + ' </label>\
-						<label for="roscoTimeShowSolution">' + msgs.msgEShowSolutionTime + ': </label>\
-						<input type="number" name="roscoTimeShowSolution" id="roscoTimeShowSolution" value="3" min="1" max="9" /> \
-						<label >' + msgs.msgESeconds + '</label>\
-					</p>\
-					<p>\
-						<input type="checkbox" id="roscoShowClue">\
-						<label for="roscoShowClue"><span></span>' + msgs.msgEShowClue + '</label>\
-						<label for="roscoClue"><span></span>' + msgs.msgEClue + ': </label>\
-						<input type="text" name="roscoClue" id="roscoClue"  maxlength="50" disabled>' + this.getSelectClue() + '\
-					</p>\
-					<p>\
-						<input type="checkbox" id="roscoShowCodeAccess">\
-						<label for="roscoShowCodeAccess"><span></span>' + msgs.msgEShowCode + ' </label>\
-						<label for="roscoCodeAccess" id="labelCodeAccess">' + msgs.msgCodeAccess + ': </label>\
-						<input type="text" name="roscoCodeAccess" id="roscoCodeAccess"  maxlength="40" disabled>\
-						<label for="roscoMessageCodeAccess" id="labelMessageAccess">' + msgs.msgEMessage + ': </label>\
-						<input type="text" name="roscoMessageCodeAccess" id="roscoMessageCodeAccess" maxlength="200"/ disabled> \
-					</p>\
-					<p>\
-            <input type="checkbox" id="roscoShowMinimize">\
-            <label for="roscoShowMinimize"><span></span>' + msgs.msgEShowMInimize + ' </label>\
-          </p>\
-					<p id="roscoExportImport">\
-			    	<label for="roscoImportGame">' + msgs.msgELoadGame + ': </label>\
-            <input type="file" name="roscoImportGame" id="roscoImportGame">\
-						<label for="roscoExportGame">' + msgs.msgESaveGame + ': </label>\
-						<input type="button" name="roscoExportGame" id="roscoExportGame" value="' + msgs.msgESave + '">\
-					</p>\
-				</fieldset>\
-				<fieldset >\
-				<legend>' + msgs.msgETypeWord + '</legend>\
-				<div id="roscoDataWord">' + this.getWords().join('') + '</div>\
-				</fieldset>\
+				<div class="exe-form-tab" title="'+_('General settings')+'">\
+					<fieldset class="exe-fieldset">\
+						<legend><a href="#">' + msgs.msgEIntrutions + '</a></legend>\
+						<div>\
+							<p>\
+								<label for="roscoInstructions" class="sr-av">' + msgs.msgEIntrutions + ': </label>\
+								<textarea id="roscoInstructions" class="exe-html-editor"\>' + msgs.msgEObserveLetter + ' </textarea>\
+							</p>\
+						</div>\
+					</fieldset>\
+					<fieldset class="exe-fieldset exe-fieldset-closed">\
+						<legend><a href="#">' + msgs.msgEGameOption + '</a></legend>\
+						<div>\
+							<p>\
+								<label for="roscoShowMinimize"><input type="checkbox" id="roscoShowMinimize"> ' + msgs.msgEShowMInimize + ' </label>\
+							</p>\
+							<p>\
+								<label for="roscoDuration">' + msgs.msgEGameTime + ': </label>\
+								<input type="number" name="roscoDuration" id="roscoDuration" value="240" min="5" max="9999" step="10" required /> \
+							</p>\
+							<p>\
+								<label for="roscoNumberTurns">' + msgs.msgEnumLaps + ': </label>\
+								<input type="number" value="1" min="1" max="2" id="roscoNumberTurns" required />\
+							</p>\
+							<p>\
+								<label for="roscoShowSolution"><input type="checkbox" checked id="roscoShowSolution"> ' + msgs.msgEShowSolution + ' </label> \
+								<label for="roscoTimeShowSolution">' + msgs.msgEShowSolutionTime + ': \
+									<input type="number" name="roscoTimeShowSolution" id="roscoTimeShowSolution" value="3" min="1" max="9" /> \
+								' + msgs.msgESeconds + '</label>\
+							</p>\
+							<!-- To review :<p>\
+								<label for="roscoShowClue"><input type="checkbox" id="roscoShowClue"> ' + msgs.msgEShowClue + '</label>\
+								<label for="roscoClue"><span></span>' + msgs.msgEClue + ': </label>\
+								<input type="text" name="roscoClue" id="roscoClue"  maxlength="50" disabled>' + this.getSelectClue() + '\
+							</p>\
+							<p>\
+								<label for="roscoShowCodeAccess"><input type="checkbox" id="roscoShowCodeAccess"> ' + msgs.msgEShowCode + ' </label>\
+								<label for="roscoCodeAccess" id="labelCodeAccess">' + msgs.msgCodeAccess + ': </label>\
+								<input type="text" name="roscoCodeAccess" id="roscoCodeAccess"  maxlength="40" disabled />\
+								<label for="roscoMessageCodeAccess" id="labelMessageAccess">' + msgs.msgEMessage + ': </label>\
+								<input type="text" name="roscoMessageCodeAccess" id="roscoMessageCodeAccess" maxlength="200"/ disabled> \
+							</p>-->\
+							<!--<p id="roscoExportImport">\
+								<label for="roscoImportGame">' + msgs.msgELoadGame + ': </label>\
+								<input type="file" name="roscoImportGame" id="roscoImportGame" />\
+								<label for="roscoExportGame">' + msgs.msgESaveGame + ': </label>\
+								<input type="button" name="roscoExportGame" id="roscoExportGame" value="' + msgs.msgESave + '" />\
+							</p>-->\
+						</div>\
+					</fieldset>\
+					<fieldset class="exe-fieldset exe-fieldset-closed">\
+						<legend><a href="#">' + msgs.msgETypeWord + '</a></legend>\
+						<div id="roscoDataWord"><p>...</p>' + this.getWords().join('') + '</div>\
+					</fieldset>\
+					'+this.getItineraryOptions()+'\
+				</div>\
+				<div class="exe-form-tab" title="'+_('Language settings')+'">\
+					<p>Language options.</p>\
+				</div>\
 			</div>\
 			';
 		var field = $("textarea.jsContentEditor").eq(0);
 		field.before(html);
+		this.enableTabs("roscoIdeviceForm");
 		this.loadPreviousValues(field);
 
+	},
+	// To review (this should be common)
+	enableTabs : function(id){
+		
+		var tabs = $("#"+id+" .exe-form-tab");
+		var list = '';
+		var tabId;
+		var e;
+		var txt;
+		tabs.each(function(i){
+			var klass = "exe-form-active-tab";
+			tabId = id+"Tab"+i;
+			e = $(this);
+			e.attr("id",tabId);
+			txt = e.attr("title");
+			if (txt=='') txt = (i+1);
+			if (i>0) {
+				e.hide();
+				klass = "";
+			}
+			list += '<li><a href="#'+tabId+'" class="'+klass+'">'+txt+'</a></li>';
+		});
+		if (list!="") {
+			list = '<ul id="'+id+'Tabs" class="exe-form-tabs">'+list+'</ul>';
+			tabs.eq(0).before(list);
+			var as = $("#"+id+"Tabs a");
+			as.click(function(){
+				as.attr("class","");
+				$(this).addClass("exe-form-active-tab");
+				tabs.hide();
+				$($(this).attr("href")).show();
+				return false;
+			});
+		}
+		
+	},	
+	// / To review
+	getItineraryOptions: function(){
+		var msgs = this.msgs;
+		var html = '\
+			<fieldset class="exe-fieldset exe-fieldset-closed">\
+				<legend><a href="#">Itinerario</a></legend>\
+				<div>\
+					<p class="exe-block-info">Puedes hacer que haya que introducir una clave para acceder al juego. También puedes mostrar una clave al finalizarlo. Usa estas claves para crear un itinerario: no se podrá acceder a una actividad hasta haber obtenido la clave de otra, la solución a un problema... <a href="#"><span class="sr-av">Ocultar este mensaje </span>×</a></p>\
+					<p>\
+						<label for="roscoShowCodeAccess"><input type="checkbox" id="roscoShowCodeAccess"> Se accede con clave</label>\
+					</p>\
+					<p style="margin-left:1.4em;margin-bottom:1.5em">\
+						<label for="roscoCodeAccess" id="labelCodeAccess"> Clave: </label>\
+						<input type="text" name="roscoCodeAccess" id="roscoCodeAccess"  maxlength="40" disabled />\
+						<label for="roscoMessageCodeAccess" id="labelMessageAccess">Pregunta: </label>\
+						<input type="text" name="roscoMessageCodeAccess" id="roscoMessageCodeAccess" maxlength="200"/ disabled> \
+					</p>\
+					<p>\
+						<label for="roscoShowClue"><input type="checkbox" id="roscoShowClue"> Se muestra un mensaje o clave al terminar</label>\
+					</p>\
+					<div style="margin-left:1.4em;margin-bottom:1.5em">\
+						<p>\
+							<label for="roscoClue">Mensaje: </label>\
+							<input type="text" name="roscoClue" id="roscoClue"  maxlength="50" disabled>\
+						</p>\
+						<p>\
+							<label for="roscoPercentajeClue" id="labelPercentajeClue">Porcentaje mínimo de aciertos para que se muestre el mensaje: </label>\
+							<select id="roscoPercentajeClue" disabled>\
+								<option value="10">10%</option>\
+								<option value="20">20%</option>\
+								<option value="30">30%</option>\
+								<option value="40" selected>40%</option>\
+								<option value="50">50%</option>\
+								<option value="60">60%</option>\
+								<option value="70">70%</option>\
+								<option value="80">80%</option>\
+								<option value="90">90%</option>\
+								<option value="100">100%</option>\
+							</select>\
+						</p>\
+					</div>\
+				</div>\
+			</fieldset>';
+		return html;
 	},
 	loadPreviousValues: function (field) {
 		var originalHTML = field.val();
@@ -503,35 +594,36 @@ var $exeDevice = {
 	getDataWord: function (letter) {
 		var path = $exeDevice.iDevicePath,
 			msgs = $exeDevice.msgs,
-			fileWord = '<div class="roscoWordMutimediaEdition">\
-													<div class="roscoFileWordEdition">\
-                        	<div class="roscoLetterEdition">' + letter + '</div>\
-														<img src="' + path + "roscoStart.png" + '" alt="' + msgs.msgEStartContain + '" class="roscoStartEdition"/>\
-                        		<input type="text" class="roscoWordEdition">\
-														<input type="text" class="roscoDefinitionEdition">\
-														<img src="' + path + "roscoSelectImageInactive.png" + '" alt="' + msgs.msgESelectImage + '" class="roscoSelectImageEdition"/>\
-                        	</div>\
-                        	<div class="roscoImageBarEdition">\
-                        		<div class="roscoImageEdition">\
-																	<div class="roscoCursorEdition"></div>\
-																	<img src="' + path + "roscoCursor.gif" + '" class="roscoCursorEdition" alt="Cursor" /> \
-																	<img src="" class="roscoHomeImageEdition" alt="' + msgs.msgENoImage + '" /> \
-																	<img src="' + path + "roscoHomeImage.png" + '" class="roscoNoImageEdition" alt="' + msgs.msgENoImage + '" /> \
-                        		</div>\
-                        		<div class="roscoBarEdition">\
-                                    <label>' + msgs.msgEImage + ': </label><input type="text" class="exe-file-picker roscoURLImageEdition" id="roscoURLImage-' + letter + '"/>\
-                                    <input type="text" class="roscoXImageEdition" value="0" readonly />\
-                                    <input type="text" class="roscoYImageEdition" value="0" readonly />\
-																		<img src="' + path + "roscoPlayImage.png" + '" alt="' + msgs.msgEShowImage + '" class="roscoPlayImageEdition"/>\
-														</div>\
-														<div class="roscoMetaData">\
-															<label>' + msgs.msgEAuthor + ': </label><input type="text" class="roscoAuthorEdition" />\
-															<label>' + msgs.msgEAlt + ': </label><input type="text" class="roscoAlt" />\
-															<img src="' + path + "roscoClose.png" + '" alt="' + msgs.msgEMinimize + '" class="roscoCloseImage"/>\
-														</div>\
-														<hr class="roscoSeparacion"/>\
-                     		</div>\
-										</div>'
+			fileWord = '\
+			<div class="roscoWordMutimediaEdition">\
+				<div class="roscoFileWordEdition">\
+					<h3 class="roscoLetterEdition">' + letter + '</h3>\
+					<img src="' + path + "roscoStart.png" + '" alt="' + msgs.msgEStartContain + '" class="roscoStartEdition"/>\
+					<label for="" class="sr-av">'+_("Right answer")+': </label><input type="text" class="roscoWordEdition" placeholder="'+_("Right answer")+'">\
+					<label for="" class="sr-av">'+_("Question")+': </label><input type="text" class="roscoDefinitionEdition" placeholder="'+_("Question")+'">\
+					<img src="' + path + "roscoSelectImageInactive.png" + '" alt="' + msgs.msgESelectImage + '" class="roscoSelectImageEdition"/>\
+					</div>\
+					<div class="roscoImageBarEdition">\
+					<div class="roscoImageEdition">\
+					<div class="roscoCursorEdition"></div>\
+					<img src="' + path + "roscoCursor.gif" + '" class="roscoCursorEdition" alt="Cursor" /> \
+					<img src="" class="roscoHomeImageEdition" alt="' + msgs.msgENoImage + '" /> \
+					<img src="' + path + "roscoHomeImage.png" + '" class="roscoNoImageEdition" alt="' + msgs.msgENoImage + '" /> \
+					</div>\
+					<div class="roscoBarEdition">\
+					<label>' + msgs.msgEImage + ': </label><input type="text" class="exe-file-picker roscoURLImageEdition" id="roscoURLImage-' + letter + '"/>\
+					<input type="text" class="roscoXImageEdition" value="0" readonly />\
+					<input type="text" class="roscoYImageEdition" value="0" readonly />\
+					<!-- To review :<img src="' + path + "roscoPlayImage.png" + '" alt="' + msgs.msgEShowImage + '" class="roscoPlayImageEdition"/>-->\
+					</div>\
+					<div class="roscoMetaData">\
+					<label>' + msgs.msgEAuthor + ': </label><input type="text" class="roscoAuthorEdition" />\
+					<label>' + msgs.msgEAlt + ': </label><input type="text" class="roscoAlt" />\
+					<!-- To review :<img src="' + path + "roscoClose.png" + '" alt="' + msgs.msgEMinimize + '" class="roscoCloseImage"/>-->\
+					</div>\
+					<hr class="roscoSeparacion"/>\
+				</div>\
+			</div>'
 
 		return fileWord;
 	},
@@ -709,7 +801,7 @@ var $exeDevice = {
 
 	getSelectClue: function () {
 		var html = '<label for="roscoPercentajeClue" id="labelPercentajeClue">' + $exeDevice.msgs.msgEPercentageCorrect + ': </label>\
-		<select id="roscoPercentajeClue"  disabled>\
+		<select id="roscoPercentajeClue" disabled>\
 			<option value="10">10%</option>\
 			<option value="20">20%</option>\
 			<option value="30">30%</option>\

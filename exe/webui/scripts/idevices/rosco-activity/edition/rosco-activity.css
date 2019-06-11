@@ -1,54 +1,20 @@
 /* Rosco Activity iDevice (edition CSS) */
 
-#roscoIdeviceForm {
-  background: #fff;
-  padding: 20px;
-  border: 1px solid #ccc;
-}
-
 #roscoIdeviceForm label {
   display: inline;
-  font-weight: bold;
-  font-size: 14px;
+}
+
+#roscoIdeviceForm label[for='roscoShowSolution'] {
+  margin-right:.5em;
 }
 
 #roscoIdeviceForm input, #roscoIdeviceForm select {
   font-size: 14px;
 }
 
-#roscoIdeviceForm fieldset {
-  padding: 10px 20px;
-  border: 1px solid #0099cc;
-  margin: 1.5em 0
-}
-
-#roscoIdeviceForm legend {
-  font-weight: bold;
-  padding: 0 10px;
-  font-size: 14px
-}
-
 #roscoIdeviceForm .roscoSeparacion {
   margin: 15px auto;
-  color: #0099cc;
-}
-
-#roscoIdeviceForm input[type="checkbox"] {
-  display: none;
-}
-
-#roscoIdeviceForm input[type="checkbox"]+label span {
-  display: inline-block;
-  width: 19px;
-  height: 19px;
-  margin: -1px 4px 0 0;
-  vertical-align: middle;
-  background: url(rosco_check_radio_sheet.png) left top no-repeat;
-  cursor: pointer;
-}
-
-#roscoIdeviceForm input[type="checkbox"]:checked+label span {
-  background: url(rosco_check_radio_sheet.png) -19px top no-repeat;
+  color: #c0c0c0;
 }
 
 #roscoIdeviceForm .roscoLetterEdition {
@@ -65,6 +31,7 @@
   font-weight: bold;
   border-radius: 4px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0;
 }
 
 #roscoIdeviceForm #roscoNumberTurns, #roscoIdeviceForm #roscoTimeShowSolution {
@@ -75,14 +42,12 @@
   width: 35%;
   min-width: 100px;
   margin-right: 5px;
-  height: 10px;
 }
 
 #roscoIdeviceForm #roscoCodeAccess {
   width: 20%;
   min-width: 100px;
   margin-right: 5px;
-  height: 10px;
 }
 
 #roscoIdeviceForm .roscoFileWordEdition {
@@ -223,3 +188,19 @@
 #roscoIdeviceForm .roscoYImageEdition, #roscoIdeviceForm .roscoXImageEdition {
   display: none;
 }
+
+/* To review */
+#roscoIdeviceForm{margin-top:2.5em}
+#roscoIdeviceForm .exe-block-info{position:relative;padding-right:30px}
+#roscoIdeviceForm .exe-block-info a{position:absolute;right:13px;top:7px;font-size:18px;font-family:Verdana,sans-serif;color:#86A9BB;text-shadow:0 1px 0 #fff;font-weight:bold}
+#roscoIdeviceForm .exe-block-info a:hover,#roscoIdeviceForm .exe-block-info a:focus{color:#063853;text-decoration:none}
+/* Tabs (this should be common) */
+.exe-form-tabs{margin:0 0 1.5em 0;padding:0;list-style:none}
+#main .exe-form-tabs li{margin:0;padding:0;list-style:none;list-style-image:none;display:inline}
+.exe-form-tabs li:first-child a{border-top-left-radius:4px;border-bottom-left-radius:4px}
+.exe-form-tabs li:last-child a{border-top-right-radius:4px;border-bottom-right-radius:4px}
+.exe-form-tabs a{display:inline-block;padding:.5em 1em;border:1px solid #CCC;background:#F9F9F9;color:#666}
+.exe-form-tabs li:not(:last-child) a{
+border-right:none;
+}
+.exe-form-tabs .exe-form-active-tab{color:#000;background:#FFF;font-weight:bold}
