@@ -49,23 +49,28 @@ var $exeDevice = {
 	createForm : function(){
 		var html = '\
 			<div id="eXeAutoGeogebraForm">\
-				<p class="exe-idevice-description">'+_("Insert a GeoGebra activity from www.geogebra.org. It requires an Internet connection.")+'</p>\
-				<div class="exe-textarea-field">\
-					<label for="geogebraActivityInstructions">'+_("Instructions")+': </label>\
-					<textarea id="geogebraActivityInstructions" class="exe-html-editor"\></textarea>\
-				</div>\
+				<p class="exe-idevice-description">'+_("Insert a GeoGebra activity from www.geogebra.org. It requires an Internet connection.").replace(' www.geogebra.org',' <a href="https://www.geogebra.org/" target="_blank" rel="noopener noreferrer">www.geogebra.org</a>')+'</p>\
 				<fieldset class="exe-fieldset">\
-					<legend>'+_("General Settings")+'</legend>\
-					<p>\
-						<label for="geogebraActivityURL">'+_("URL")+': </label><input type="text" name="geogebraActivityURL" id="geogebraActivityURL" /> \
-						<label for="geogebraActivityURLexample">'+_("Example")+': </label><input type="text" id="geogebraActivityURLexample" name="geogebraActivityURLexample" readonly="readonly" value="'+this.activityURLbase+'VgHhQXCC" />\
-					</p>\
-					<p>\
-						<label for="geogebraActivityWidth">'+_("Width")+': </label><input type="text" max="1500" name="geogebraActivityWidth" id="geogebraActivityWidth" /> px\
-						<label for="geogebraActivityHeight">'+_("Height")+': </label><input type="text" max="1500" name="geogebraActivityHeight" id="geogebraActivityHeight" /> px\
-					</p>\
+					<legend><a href="#">'+_("Instructions")+'</a></legend>\
+					<div class="exe-textarea-field">\
+						<label for="geogebraActivityInstructions" class="sr-av">'+_("Instructions")+': </label>\
+						<textarea id="geogebraActivityInstructions" class="exe-html-editor"\></textarea>\
+					</div>\
 				</fieldset>\
-				<fieldset id="eXeAutoGeogebraAdvancedOptions" class="exe-fieldset exe-feedback-fieldset">\
+				<fieldset class="exe-fieldset">\
+					<legend><a href="#">'+_("General Settings")+'</a></legend>\
+					<div>\
+						<p>\
+							<label for="geogebraActivityURL">'+_("URL")+': </label><input type="text" name="geogebraActivityURL" id="geogebraActivityURL" /> \
+							<label for="geogebraActivityURLexample">'+_("Example")+': </label><input type="text" id="geogebraActivityURLexample" name="geogebraActivityURLexample" readonly="readonly" value="'+this.activityURLbase+'VgHhQXCC" />\
+						</p>\
+						<p>\
+							<label for="geogebraActivityWidth">'+_("Width")+': </label><input type="text" max="1500" name="geogebraActivityWidth" id="geogebraActivityWidth" /> px\
+							<label for="geogebraActivityHeight">'+_("Height")+': </label><input type="text" max="1500" name="geogebraActivityHeight" id="geogebraActivityHeight" /> px\
+						</p>\
+					</div>\
+				</fieldset>\
+				<fieldset id="eXeAutoGeogebraAdvancedOptions" class="exe-fieldset exe-fieldset-closed exe-feedback-fieldset">\
 					<legend><a href="#">'+_("Advanced Options")+'</a></legend>\
 					<div>\
 						<p id="geogebraActivityLangWrapper">\

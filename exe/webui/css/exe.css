@@ -299,3 +299,4 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 
 /* Provisional code to review */
 .exe-editor-toggler{margin:0 5px}
+body.with-color-picker{overflow:hidden}

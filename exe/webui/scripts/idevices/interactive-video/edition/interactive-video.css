@@ -7,7 +7,7 @@
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  */
 
-#interactiveVideoIdeviceForm{margin-top:2.5em}
+#interactiveVideoIdeviceForm{margin-top:2em}
 #interactiveVideoEditorOpener,#interactiveVideo-youtube,#interactiveVideo-mediateca{display:none}
 input[name=interactiveVideoType]{margin-left:2em;vertical-align:top}
 .interactiveVideoType{margin:1.5em 0}
