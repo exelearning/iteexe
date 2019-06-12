@@ -297,6 +297,11 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 #emptyPageInstructions a{position:absolute;right:13px;top:7px;font-size:18px;font-family:Verdana,sans-serif;color:#86A9BB;text-shadow:0 1px 0 #fff;font-weight:bold}
 #emptyPageInstructions a:hover,#emptyPageInstructions a:focus{color:#063853;text-decoration:none}
 
+/* Advanced user */
+.exe-advanced{display:none}
+body.exe-advanced{display:block}
+body.exe-advanced .exe-advanced{display:block}
+
 /* Provisional code to review */
 .exe-editor-toggler{margin:0 5px}
 body.with-color-picker{overflow:hidden}

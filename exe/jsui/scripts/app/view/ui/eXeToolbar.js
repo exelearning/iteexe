@@ -655,6 +655,16 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 change: function(e, newValue) {
 
 									var descriptionLabel = Ext.DomQuery.select("label[for=pp_description]");
+									
+									var contentPanel = false; // The main content. It should always exist. 
+									var iframe = document.getElementsByTagName('iframe');
+									if (iframe.length==1) {
+										iframe = iframe[0];
+										var doc = iframe.contentWindow.document;
+										if (doc.body && typeof(doc.body.className)=="string" && doc.body.className!="") {
+											contentPanel = doc.body;
+										}
+									}
 
 									if (newValue==true) {
 										if (!Ext.util.Cookies.get('eXeUIversion')) {
@@ -666,12 +676,20 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 										Ext.util.Cookies.set('eXeUIversion', 'advanced');
 										Ext.select("BODY").removeCls('exe-simplified');
 										Ext.select("BODY").addCls('exe-advanced');
+										// Add the advanced CSS class to the content panel
+										if (contentPanel!=false && contentPanel.className.indexOf(' exe-advanced')==-1) contentPanel.className += ' exe-advanced';
 										// Change some strings:
 										if (descriptionLabel && descriptionLabel.length==1) descriptionLabel[0].innerHTML = _("General") + ":";
                                     } else {
 										Ext.util.Cookies.set('eXeUIversion', 'simplified');
                                         Ext.select("BODY").removeCls('exe-advanced');
-										Ext.select("BODY").addCls('exe-simplified');                                        
+										Ext.select("BODY").addCls('exe-simplified'); 
+										// Remove the advanced CSS class from the content panel										
+										if (contentPanel!=false) {
+                                            contentPanel.className = contentPanel.className.replace(" exe-advanced","");										
+                                            // If the current iDevice is a JavaScript one and has tabs, show the first one:
+                                            if (typeof(iframe.contentWindow["$exeAuthoring"])!='undefined')  iframe.contentWindow.$exeAuthoring.iDevice.tabs.restart();
+                                        }
 										// Change some strings:
 										if (descriptionLabel && descriptionLabel.length==1) descriptionLabel[0].innerHTML = _("General description") + ":";
 										// Show Properties - Package

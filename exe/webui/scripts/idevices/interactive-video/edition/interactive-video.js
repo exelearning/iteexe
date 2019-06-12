@@ -72,7 +72,7 @@ var $exeDevice = {
 			list += '<li><a href="#'+tabId+'" class="'+klass+'">'+txt+'</a></li>';
 		});
 		if (list!="") {
-			list = '<ul id="'+id+'Tabs" class="exe-form-tabs">'+list+'</ul>';
+			list = '<ul id="'+id+'Tabs" class="exe-form-tabs exe-advanced">'+list+'</ul>';
 			tabs.eq(0).before(list);
 			var as = $("#"+id+"Tabs a");
 			as.click(function(){

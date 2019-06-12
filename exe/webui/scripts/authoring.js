@@ -984,7 +984,13 @@ var $exeAuthoring = {
                 // Trigger the click event so the form is submitted
                 $("#exe-submitButton a").trigger("click");
             }
-        },		
+        },
+        // iDevice tabs
+        tabs : {
+            restart : function(){
+                $("#activeIdevice .exe-form-tabs a").eq(0).trigger("click");
+            }
+        },
         colorPicker : {
             init : function(){
                 var colorFields = $(".exe-color-picker");
