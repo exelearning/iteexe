@@ -1016,9 +1016,24 @@ var $exeAuthoring = {
                         localization : $Color_Picker_i18n.Color_Picker_Strings
                     },
                     function(color, context){
+                        // Save color
+                        $("body").removeClass("with-color-picker");
                         $("div.jPicker").hide();
-                    }
+                    },
+                    function(color, context){
+                        // Live callback
+                    },
+                    function(color, context){
+                        // Cancel button clicked
+                        $("body").removeClass("with-color-picker");
+                    }			
                 );
+                $(".jPicker .Icon").click(function(){
+                    // Add a CSS class to the BODY so the picker is always visible
+                    $("body").addClass("with-color-picker");
+                    // Color picker position
+                    $(".jPicker.Container").css("top",$(document).scrollTop()+"px");
+                });
             }
         }
     },
