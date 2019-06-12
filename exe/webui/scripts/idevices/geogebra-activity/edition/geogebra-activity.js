@@ -49,7 +49,7 @@ var $exeDevice = {
 	createForm : function(){
 		var html = '\
 			<div id="eXeAutoGeogebraForm">\
-				<p class="exe-idevice-description">'+_("Insert a GeoGebra activity from www.geogebra.org. It requires an Internet connection.").replace(' www.geogebra.org',' <a href="https://www.geogebra.org/" target="_blank">www.geogebra.org</a>')+'</p>\
+				<p class="exe-idevice-description">'+_("Insert a GeoGebra activity from www.geogebra.org. It requires an Internet connection.").replace(' www.geogebra.org',' <a href="https://www.geogebra.org/" target="_blank" rel="noopener noreferrer">www.geogebra.org</a>')+'</p>\
 				<fieldset class="exe-fieldset">\
 					<legend><a href="#">'+_("Instructions")+'</a></legend>\
 					<div class="exe-textarea-field">\
