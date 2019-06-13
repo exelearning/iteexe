@@ -97,7 +97,7 @@ var $exeDevice = {
 						<legend><a href="#">' + _("Options") + '</a></legend>\
 						<div>\
 							<p>\
-								<label for="roscoShowMinimize"><input type="checkbox" id="roscoShowMinimize"> ' +  _("Show minimize")+ '. </label>\
+								<label for="roscoShowMinimize"><input type="checkbox" id="roscoShowMinimize"> ' +  _("Show minimized.")+ ' </label>\
 							</p>\
 							<p>\
 								<label for="roscoDuration">' + _("Game time(seconds)") + ': </label>\
@@ -120,7 +120,7 @@ var $exeDevice = {
 						<div id="roscoDataWord"><p class="exe-block-info exe-block-dismissible">'+wordInstructions+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+' </span>×</a></p>'
 						+ this.getWords().join('') + '</div>\
 					</fieldset>\
-					' + this.getItineraryOptions() + '\
+					' + $exeAuthoring.iDevice.itinerary.getFieldset() + '\
 					' + this.getExportImportGame() + '\
 				</div>\
 				<div class="exe-form-tab" title="' + _('Language settings') + '">\
@@ -176,50 +176,6 @@ var $exeDevice = {
 			});
 		}
 
-	},
-	// / To review
-	getItineraryOptions: function () {
-		var html = '\
-			<fieldset class="exe-fieldset exe-fieldset-closed">\
-				<legend><a href="#">'+_("Itinerary")+'</a></legend>\
-				<div>\
-					<p class="exe-block-info exe-block-dismissible">'+("May be necessary to enter a password to access this game. May also show a key word by reaching a presestablished percentage of hits. Use these keys to create an itinerary of challenges: It would not be possible to access a new challenge until you get the key or the solution to a problem.")+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+' </span>×</a></p>\
-					<p>\
-						<label for="roscoShowCodeAccess"><input type="checkbox" id="roscoShowCodeAccess">' +_("Access code is required")+'</label>\
-					</p>\
-					<p style="margin-left:1.4em;margin-bottom:1.5em">\
-						<label for="roscoCodeAccess" id="labelCodeAccess">'+_("Access code")+':</label>\
-						<input type="text" name="roscoCodeAccess" id="roscoCodeAccess"  maxlength="40" disabled />\
-						<label for="roscoMessageCodeAccess" id="labelMessageAccess">Pregunta: </label>\
-						<input type="text" name="roscoMessageCodeAccess" id="roscoMessageCodeAccess" maxlength="200"/ disabled> \
-					</p>\
-					<p>\
-						<label for="roscoShowClue"><input type="checkbox" id="roscoShowClue">'+_("Show a message or password")+'</label>\
-					</p>\
-					<div style="margin-left:1.4em;margin-bottom:1.5em">\
-						<p>\
-							<label for="roscoClue">'+_("Message")+':</label>\
-							<input type="text" name="roscoClue" id="roscoClue"  maxlength="50" disabled>\
-						</p>\
-						<p>\
-							<label for="roscoPercentajeClue" id="labelPercentajeClue">'+_("Percentage of hits needed to display the message")+':</label>\
-							<select id="roscoPercentajeClue" disabled>\
-								<option value="10">10%</option>\
-								<option value="20">20%</option>\
-								<option value="30">30%</option>\
-								<option value="40" selected>40%</option>\
-								<option value="50">50%</option>\
-								<option value="60">60%</option>\
-								<option value="70">70%</option>\
-								<option value="80">80%</option>\
-								<option value="90">90%</option>\
-								<option value="100">100%</option>\
-							</select>\
-						</p>\
-					</div>\
-				</div>\
-			</fieldset>';
-		return html;
 	},
 
 	getExportImportGame: function () {
