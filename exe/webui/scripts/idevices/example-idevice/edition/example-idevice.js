@@ -44,6 +44,27 @@ var $exeDevice = {
 		// To add an image picker: '<input type="text" id="uploadImageExample" class="exe-image-picker" />'
 		// To add a TinyMCE editor: '<textarea id="tinyMCEexample" class="exe-html-editor"\></textarea>'
 		// To add a color picker: '<input type="text" id="colorPickerExample" class="exe-color-picker" />'
+		// To add dismissible instructions: <div class="exe-idevice-info">Instructions</div>
+		// To add a FIELDSET (the link in the LEGEND is optional)
+		/*
+			<fieldset class="exe-fieldset exe-fieldset-closed">
+				<legend><a href="#">Legend</a></legend>
+				<div>
+					...
+				</div>
+			</fieldset>		
+		*/
+		// Other options:
+		/*
+			<p class="exe-text-field">
+				<label for="">Label: </label>
+				<input type="text" id="" />
+			</p>
+			<p class='exe-text-field-inline'>
+				<label for=''>Label:</label>
+				<input type='text' id='' value='' />
+			</p>	
+		*/
 		
 		var field = $("textarea.jsContentEditor").eq(0);
 		field.before(html);
