@@ -117,8 +117,10 @@ var $exeDevice = {
 					</fieldset>\
 					<fieldset class="exe-fieldset">\
 						<legend><a href="#">' + _("Words")+ '</a></legend>\
-						<div id="roscoDataWord"><p class="exe-block-info exe-block-dismissible">'+wordInstructions+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+' </span>×</a></p>'
-						+ this.getWords().join('') + '</div>\
+						<div id="roscoDataWord">\
+                            <div class="exe-idevice-info">'+wordInstructions+'</div>'
+                            + this.getWords().join('') + '\
+                        </div>\
 					</fieldset>\
 					' + $exeAuthoring.iDevice.itinerary.getFieldset() + '\
 					' + this.getExportImportGame() + '\
@@ -185,7 +187,7 @@ var $exeDevice = {
 			<fieldset class="exe-fieldset exe-fieldset-closed exe-advanced">\
 				<legend><a href="#">'+_("Advanced")+'</a></legend>\
 				<div>\
-					<p class="exe-block-info exe-block-dismissible">'+msg+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+'</span>×</a></p>\
+					<div class="exe-idevice-info">'+msg+'</div>\
 					<div id="roscoExportImport">\
                         <p>\
                             <label for="roscoImportGame">' + _("Load game")+ ': </label>\

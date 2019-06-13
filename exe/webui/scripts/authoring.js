@@ -938,11 +938,17 @@ var $exeAuthoring = {
             if (tinymce.majorVersion==4) $exeTinyMCE.init("multiple-visible",".exe-html-editor");
             else if (tinymce.majorVersion==3) $exeTinyMCE.init("specific_textareas","exe-html-editor");
 			
-			// Enable the FIELDSETs Toggler
-			$(".exe-fieldset legend a").click(function(){
-				$(this).parent().parent().toggleClass("exe-fieldset-closed");
-				return false;
-			});
+            // Enable the FIELDSETs Toggler
+            $(".exe-fieldset legend a").click(function(){
+                $(this).parent().parent().toggleClass("exe-fieldset-closed");
+                return false;
+            });
+            
+            // Enable the iDevice instructions
+            $(".exe-idevice-info").each(function(){
+                var e = $(this);
+                e.html('<p class="exe-block-info exe-block-dismissible">'+e.html()+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+' </span>×</a></p>');
+            });
             
             // Dismissible messages
             $(".exe-block-dismissible .exe-block-close").click(function(){
