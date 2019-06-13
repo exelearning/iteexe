@@ -287,6 +287,7 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 #activeIdevice .exe-fieldset legend{font-weight:bold;padding:0 10px}
 #activeIdevice .exe-fieldset-closed legend a{text-decoration:underline}
 #activeIdevice .exe-fieldset-closed legend a:hover{text-decoration:none}
+#activeIdevice .exe-fieldset-closed legend a:before{content:"↕";display:block;float:left;margin-right:.6em;font-family:Verdana,sans-serif;color:#333;font-size:.85em;margin-top:1px}
 #activeIdevice .exe-fieldset-closed{border:none;padding:0}
 #activeIdevice .exe-fieldset-closed legend{padding:0;margin-bottom:0}
 #activeIdevice .exe-fieldset-closed div{display:none}
