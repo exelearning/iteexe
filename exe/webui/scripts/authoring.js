@@ -963,9 +963,6 @@ var $exeAuthoring = {
         // Gamification (itinerary)
         itinerary : {
             getFieldset : function(){
-                function _(str) {
-                    return str;
-                }
                 var html = '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
                         <legend><a href="#">'+_("Itinerary")+'</a></legend>\
