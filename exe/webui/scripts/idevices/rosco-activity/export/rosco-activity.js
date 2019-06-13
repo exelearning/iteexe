@@ -5,6 +5,7 @@
  * 
  * Author: Manuel Narváez Martínez
  * Author: Ricardo Málaga Floriano
+ * Author: Ignacio Gros
  * Iconos: Ana María Zamora Moreno y Francisco Javier Pulido
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  *
@@ -114,7 +115,7 @@ var $eXeRosco = {
 			path = $eXeRosco.idevicePath;
 		html += '<div class="rosco-MainContainer">\
 				<div class="rosco-GameMinimize" id="roscoGameMinimize-' + instance + '">\
-				    <img src="' + path + "rosco-icon.png" + '" class="rosco-Icon" id="roscoIcon-' + instance + '" alt="' + msgs.msgMinimize + '">\
+				   <a href="#" class="roscoLinkSelectImage"> <img src="' + path + "rosco-icon.png" + '" class="rosco-Icon" id="roscoIcon-' + instance + '" alt="' + msgs.msgMinimize + '">\
 					<div  class="rosco-MessageMinimize" id="roscoMessageMinimize-' + instance + '">' + msgs.msgPlayStart + '</div>\
 				</div>\
 				<div class="rosco-GameContainer" id="roscoGameContainer-' + instance + '">\

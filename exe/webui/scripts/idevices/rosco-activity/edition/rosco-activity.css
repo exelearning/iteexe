@@ -70,19 +70,33 @@
   margin-bottom: 5px;
 }
 
-#roscoIdeviceForm .roscoCloseImage {
-  min-width: 20px;
+#roscoIdeviceForm .roscoLinkStart, #roscoIdeviceForm .roscoLinkClose,
+#roscoIdeviceForm .roscoLinkSelectImage,  #roscoIdeviceForm .roscoStartEdition,
+#roscoIdeviceForm .roscoSelectImageEdition,#roscoIdeviceForm .roscoCloseImage  {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
   margin: 0 3px;
-  cursor: pointer;
+  
 }
 
-#roscoIdeviceForm .roscoPlayImageEdition, #roscoIdeviceForm .roscoStartEdition, #roscoIdeviceForm .roscoSelectImageEdition, #roscoIdeviceForm .roscoLoadImage {
-  width: 30px;
-  height: 30px;
-  min-width: 20px;
-  margin: 0 3px;
-  cursor: pointer;
+#roscoIdeviceForm img { 
+  border-style: none;
 }
+
+#roscoIdeviceForm .roscoWordMutimediaEdition a:focus,
+#roscoIdeviceForm .roscoWordMutimediaEdition a:link ,
+#roscoIdeviceForm .roscoWordMutimediaEdition  a:visited,
+#roscoIdeviceForm .roscoWordMutimediaEdition  a:active   {
+  outline: 0;
+  border: none;
+  --moz-outline-style: none;
+}
+#roscoIdeviceForm .roscoStartEdition, #roscoIdeviceForm .roscoSelectImageEdition,#roscoIdeviceForm .roscoCloseImage  {
+  margin: 0;
+  padding: 0;
+}
+
 
 #roscoIdeviceForm .roscoHomeImagenEdition {
   width: 100%;
@@ -140,9 +154,6 @@
 #roscoIdeviceForm .roscoCursorEdition {
   width: 24px;
   height: 24px;
-  position: absolute;
-  background: url(roscoCursor.gif);
-  background-size: cover;
 }
 
 #roscoIdeviceForm .roscoWordMutimedia {
@@ -194,6 +205,19 @@
 #roscoIdeviceForm .exe-block-info{position:relative;padding-right:30px}
 #roscoIdeviceForm .exe-block-info a{position:absolute;right:13px;top:7px;font-size:18px;font-family:Verdana,sans-serif;color:#86A9BB;text-shadow:0 1px 0 #fff;font-weight:bold}
 #roscoIdeviceForm .exe-block-info a:hover,#roscoIdeviceForm .exe-block-info a:focus{color:#063853;text-decoration:none}
+
+#roscoIdeviceFormTab1 *{
+  font-size: 0.9em;
+}
+#roscoIdeviceFormTab1 p:first-child{margin-top:0}
+#roscoIdeviceFormTab1{overflow:auto}
+#roscoIdeviceFormTab1 .ci18n{width:50%;float:left}
+@media screen and (max-width:720px) {
+	#roscoIdeviceFormTab1 .ci18n{width:100%;float:none}	
+}
+#roscoIdeviceFormTab1 label{display:block;font-weight:bold;margin-bottom:.2em;font-size: 0.9em}
+#roscoIdeviceFormTab1 input{width:300px;font-size: 0.9em}
+
 /* Tabs (this should be common) */
 .exe-form-tabs{margin:0 0 1.5em 0;padding:0;list-style:none}
 #main .exe-form-tabs li{margin:0;padding:0;list-style:none;list-style-image:none;display:inline}

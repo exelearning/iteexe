@@ -4,89 +4,49 @@
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Manuel Narvaez Martinez
  * Author: Ricardo Malaga Floriano
+ * Author: Ignacio Gros
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  */
 var $exeDevice = {
 	iDevicePath: "/scripts/idevices/rosco-activity/edition/",
 	msgs: {},
-	i18n: {
-		name: _('Rosco Activity'),
-		es: {
-			"Intructions": "Instrucciones",
-			"Game options": "Opciones juego",
-			"Game time(seconds)": "Tiempo de juego(segundos)",
-			"No. Laps/Rounds": "Número de vueltas",
-			"% correct answers": "% Aciertos",
-			"Show solutions.": "Mostrar soluciones.",
-			"Show clue.": "Mostrar pista.",
-			"Show access code.": "Mostrar clave.",
-			"Type/Word/Definition": "Tipo/Palabra/Definición",
-			"%1 does not start with the letter %2": "%1 no comienza con la letra %2",
-			"%1 does not contain the letter %2": "%1 no contiene la letra %2",
-			"You must write a clue": "Debes escribir una pista",
-			"You must provide the definition of the word or the valid URL of an image": "Debes indicar la definición de la palabra o una URL válida de una imagen",
-			"You must provide the code to play this game": "Debes indicar la clave",
-			"You must provide how to obtain the code to play this game": "Debes indicar como obtener la clave para jugar a este juego",
-			"Write the correct word and click on reply. If you doubt, click on move on": "Escribe la palabra correcta. Si tienes dudas, pulsa pasar",
-			"Ready?": "¿Preparado?",
-			"Click here to start": "Haz clic aquí para jugar",
-			"Move on": "Pasar",
-			"Reply": "Responder",
-			"Submit": "Enviar",
-			"Enter the access code": "Introduce la clave de acceso",
-			"The access code is not correct": "La clave no es correcta",
-			"Click here for a new game": "Pulsa aquí para nueva partida",
-			"The game is over!": "¡El juego ha finalizado!",
-			"New word": "Nueva palabra",
-			"Start with %1": "Comienza con %1",
-			"Contain letter %1": "Contiene la %1",
-			"You move on to next word": "Pasas palabra",
-			"Provide a word": "Indica una palabra",
-			"Cool! The clue is:": "¡Genial! La pista es: ",
-			"Right!|Excellent!|Great!|Very good!|Perfect!": "¡Correcto!|¡Estupendo!|¡Genial!|¡Muy bien!|¡Perfecto!",
-			"It was not that!|Not well!|Not correct!|Sorry!|Error!": "¡No era esa!|¡Has fallado!|¡Incorrecto!|¡Lo siento!|¡Error!",
-			"You have got %1 correct and %2 uncorrect": "Has tenido %1 aciertos y %2 errores",
-			"Provide how to get the access code": "Indica cómo obtener la clave acceso",
-			"Message": "Mensaje",
-			"You must indicate the valid URL of an image": "Debes escribir la URL válida de una imagen",
-			"Author": "Autor",
-			"Help: Tutorial video": "Ayuda: Vídeo tutorial",
-			"Show solution time": "Ver la solución durante",
-			"seconds": "segundos",
-			"Clue": "Pista",
-			"You must provide the time to view the solution": "Debes indicar el tiempo de visionado de la solución",
-			"Provide the access code": "Indica una clave de acceso",
-			"Provide a clue": "Indica una pista",
-			"Access code": "Clave acceso",
-			"Observe the letters, identify and fill in the missing the words.": "Observa las  letras, identifica y completa las palabras.",
-			"You can only play this game with internet connection. Check out your conecctivity.": "Sólo puedes jugar a este juego conectado a internet. Comprueba tu conexión",
-			"Click here to play": "Haz clic aquí para comenzar",
-			"Show minimize.": "Mostrar minimizado.",
-			"Load game": "Cargar juego",
-			"Save game": "Guardar juego",
-			"Save": "Guardar",
-			"Game": "Juego",
-			"Show Image": "Mostrar imagen",
-			"Select Image": "Seleccionar imagen",
-			"Start/Contain": "Comienza/Contiene",
-			"Hits": "Aciertos",
-			"Errors": "Errores",
-			"Minimize": "Minimizar",
-			"Maximize": "Maximizar",
-			"Time": "Tiempo",
-			"One round": "Una vuelta",
-			"Two rounds": "Dos vuestas",
-			"The selected file does not contain a Rosco game": "El archivo seleccionado no contiene un juego del tipo Rosco",
-			"Image": "Imagen",
-			"No image": "Sin imagen",
-			"Access code required": "Necesaria clave de acceso",
-			"Play Again": "Volver a jugar",
-			"Alt": "Alt",
-			"Load image": "Cargar imagen",
-			"You must provide at least one word": "Debes completar al menos una palabra del juego",
-			"Indicate a valid URL of an image or select one from your device": "Indica la URL de una imagen o selecciona una imagen de de equipo"
 
-		}
+	ci18n: {
+		"msgReady": _("Ready?"),
+		"msgStartGame": _("Click here to start"),
+		"msgHappen": _("Move on"),
+		"msgReply": _("Reply"),
+		"msgSubmit": _("Submit"),
+		"msgEnterCode": _("Enter the access code"),
+		"msgErrorCode": _("The access code is not correct"),
+		"msgGameOver": _("The game is over!"),
+		"msgNewWord": _("New word"),
+		"msgStartWith": _("Start with %1"),
+		"msgContaint": _("Contain letter %1"),
+		"msgPass": _("You move on to next word"),
+		"msgIndicateWord": _("Provide a word"),
+		"msgClue": _("Cool! The clue is:"),
+		"msgNewGame": _("Click here for a new game"),
+		"msgYouHas": ("You have got %1 correct and %2 uncorrect"),
+		"msgCodeAccess": _("Access code"),
+		"msgPlayAgain": _("Play Again"),
+		"msgRequiredAccessKey": _("Access code required"),
+		"msgInformationLooking": _("The information you were looking for"),
+		"msgPlayStart": _("Click here to play"),
+		"msgErrors": _("Errors"),
+		"msgMinimize": _("Minimize"),
+		"msgMaximize": _("Maximize"),
+		"msgHits": _("Hits"),
+		"msgTime": _("Time"),
+		"msgOneRound": _("One round"),
+		"msgTowRounds": _("Two rounds"),
+		"msgImage": _("Image"),
+		"msgNoImage": _("No image"),
+		"msgWrote": _("Write the correct word and click on reply. If you doubt, click on move on"),
+		"msgNotNetwork": _("You can only play this game with internet connection. Check out your conecctivity"),
+		"msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
+		"msgFailures": _("It was not that! | Not well! | Not correct! | Sorry! | Error!")
+
 	},
 	colors: {
 		black: "#1c1b1b",
@@ -98,151 +58,72 @@ var $exeDevice = {
 	},
 	letters: "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ",
 	init: function () {
-		this.updateMessages();
+		this.setMessagesInfo();
 		this.createForm();
 		this.addEvents();
 	},
-	updateMessages() {
+	setMessagesInfo() {
 		var msgs = this.msgs;
-		msgs.msgEIntrutions = _("Intructions");
-		msgs.msgEGameOption = _("Options");
-		msgs.msgEGameTime = _("Game time(seconds)");
-		msgs.msgEnumLaps = _("No. Laps/Rounds");
-		msgs.msgEPercentageCorrect = _("% correct answers");
-		msgs.msgEShowSolution = _("Show solutions.");
-		msgs.msgEShowSolutionTime = _("Show solution time");
-		msgs.msgEShowClue = _("Show clue.");
-		msgs.msgEShowCode = _("Show access code.");
-		msgs.msgETypeWord = _("Questions");
-		msgs.msgENotStart = _("%1 does not start with the letter %2");
-		msgs.msgENotContaint = _("%1 does not contain the letter %2");
-		msgs.msgEWriteClue = _("You must write a clue");
-		msgs.msgEProvideDefinition = _("You must provide the definition of the word or the valid URL of an image");
-		msgs.msgEProvideCode = _("You must provide the code to play this game");
-		msgs.msgEProvideGetCode = _("You must provide how to obtain the code to play this game");
-		msgs.msgEObserveLetter = _("Observe the letters, identify and fill in the missing the words.");
-		msgs.msgEShowMInimize = _("Show minimize.");
-		msgs.msgELoadGame = _("Load game");
-		msgs.msgESaveGame = _("Save game");
-		msgs.msgESave = _("Save");
-		msgs.msgEGame = _("Game");
-		msgs.msgEShowImage = _("Show Image");
-		msgs.msgESelectImage = _("Select Image");
-		msgs.msgEStartContain = _("Start/Contain");
-		msgs.msgEHits = _("Hits");
-		msgs.msgEErrors = _("Errors");
-		msgs.msgEMinimize = _("Minimize");
-		msgs.msgEMaximize = _("Maximize");
-		msgs.msgETime = _("Time");
-		msgs.msgESelectFile = _("The selected file does not contain a Rosco game");
-		msgs.msgEImage = _("Image");
-		msgs.msgENoImage = _("No image");
-		msgs.msgEMessage = _("Message");
-		msgs.msgEURLValid = _("You must indicate the valid URL of an image");
-		msgs.msgEAuthor = _("Author");
-		msgs.msgEHelp = _("Help: Tutorial video");
-		msgs.msgEOneWord = _("You must provide at least one word");
-		msgs.msgESeconds = _("seconds");
-		msgs.msgEClue = _("Clue");
-		msgs.msgEProvideTimeSolution = _("You must provide the time to view the solution");
-		msgs.msgEAlt = _("Alt");
-		msgs.msgELoadImage = _("Load image");
-		msgs.msgWrote = _("Write the correct word and click on reply. If you doubt, click on move on");
-		msgs.msgReady = _("Ready?");
-		msgs.msgStartGame = _("Click here to start");
-		msgs.msgHappen = _("Move on");
-		msgs.msgReply = _("Reply");
-		msgs.msgSubmit = _("Submit");
-		msgs.msgEnterCode = _("Enter the access code");
-		msgs.msgErrorCode = _("The access code is not correct");
-		msgs.msgGameOver = _("The game is over!");
-		msgs.msgNewWord = _("New word");
-		msgs.msgStartWith = _("Start with %1");
-		msgs.msgContaint = _("Contain letter %1");
-		msgs.msgPass = _("You move on to next word");
-		msgs.msgIndicateWord = _("Provide a word");
-		msgs.msgClue = _("Cool! The clue is:");
-		msgs.msgNewGame = _("Click here for a new game")
-		msgs.msgSuccesses = _("Right!|Excellent!|Great!|Very good!|Perfect!");
-		msgs.msgFailures = _("It was not that!|Not well!|Not correct!|Sorry!|Error!");
-		msgs.msgYouHas = _("You have got %1 correct and %2 uncorrect");
-		msgs.msgCodeAccess = _("Access code");
-		msgs.msgPlayAgain = _("Play Again");
-		msgs.msgRequiredAccessKey = _("Access code required");
-		msgs.msgInformationLooking = _("The information you were looking for");
-		msgs.msgPlayStart = _("Click here to play");
-		msgs.msgNotNetwork = _("You can only play this game with internet connection. Check out your conecctivity");
-		msgs.msgHits = _("Hits");
-		msgs.msgErrors = _("Errors");
-		msgs.msgMinimize = _("Minimize");
-		msgs.msgMaximize = _("Maximize");
-		msgs.msgTime = _("Time");
-		msgs.msgOneRound = _("One round");
-		msgs.msgTowRounds = _("Two rounds");
+		msgs.msgNotStart = _("%1 does not start with the letter %2");
+		msgs.msgNotContain = _("%1 does not contain the letter %2");
+		msgs.msgWriteClue = _("You must write a clue");
+		msgs.msgProvideDefinition = _("You must provide the definition of the word or the valid URL of an image");
+		msgs.msgProvideCode = _("You must provide the code to play this game");
+		msgs.msgProvideGetCode = _("You must provide how to obtain the code to play this game");
+		msgs.msgGame = _("Game");
+		msgs.msgSelectFile = _("The selected file does not contain a Rosco game");
+		msgs.msgURLValid = _("You must indicate the valid URL of an image");
+		msgs.msgOneWord = _("You must provide at least one word");
+		msgs.msgProvideTimeSolution = _("You must provide the time to view the solution");
 
 	},
 	createForm: function () {
-		var msgs = this.msgs,
+		var path = $exeDevice.iDevicePath,
 			html = '\
 			<div id="roscoIdeviceForm">\
-				<div class="exe-form-tab" title="'+_('General settings')+'">\
+				<div class="exe-form-tab" title="' + _('General settings') + '">\
 					<fieldset class="exe-fieldset">\
-						<legend><a href="#">' + msgs.msgEIntrutions + '</a></legend>\
+						<legend><a href="#">' + _("Intructions")+ '</a></legend>\
 						<div>\
 							<p>\
-								<label for="roscoInstructions" class="sr-av">' + msgs.msgEIntrutions + ': </label>\
-								<textarea id="roscoInstructions" class="exe-html-editor"\>' + msgs.msgEObserveLetter + ' </textarea>\
+								<label for="roscoInstructions" class="sr-av">' +  _("Intructions")+ ': </label>\
+								<textarea id="roscoInstructions" class="exe-html-editor"\>' + _("Observe the letters, identify and fill in the missing the words.")+ ' </textarea>\
 							</p>\
 						</div>\
 					</fieldset>\
-					<fieldset class="exe-fieldset exe-fieldset-closed">\
-						<legend><a href="#">' + msgs.msgEGameOption + '</a></legend>\
+					<fieldset class="exe-fieldset">\
+						<legend><a href="#">' + _("Options") + '</a></legend>\
 						<div>\
 							<p>\
-								<label for="roscoShowMinimize"><input type="checkbox" id="roscoShowMinimize"> ' + msgs.msgEShowMInimize + ' </label>\
+								<label for="roscoShowMinimize"><input type="checkbox" id="roscoShowMinimize"> ' +  _("Show minimize")+ '. </label>\
 							</p>\
 							<p>\
-								<label for="roscoDuration">' + msgs.msgEGameTime + ': </label>\
+								<label for="roscoDuration">' + _("Game time(seconds)") + ': </label>\
 								<input type="number" name="roscoDuration" id="roscoDuration" value="240" min="5" max="9999" step="10" required /> \
 							</p>\
 							<p>\
-								<label for="roscoNumberTurns">' + msgs.msgEnumLaps + ': </label>\
+								<label for="roscoNumberTurns">' + _("No. Rounds")+ ': </label>\
 								<input type="number" value="1" min="1" max="2" id="roscoNumberTurns" required />\
 							</p>\
 							<p>\
-								<label for="roscoShowSolution"><input type="checkbox" checked id="roscoShowSolution"> ' + msgs.msgEShowSolution + ' </label> \
-								<label for="roscoTimeShowSolution">' + msgs.msgEShowSolutionTime + ': \
+								<label for="roscoShowSolution"><input type="checkbox" checked id="roscoShowSolution"> ' + _("Show solutions")+ '. </label> \
+								<label for="roscoTimeShowSolution">' + _("Show solution time")+ ': \
 									<input type="number" name="roscoTimeShowSolution" id="roscoTimeShowSolution" value="3" min="1" max="9" /> \
-								' + msgs.msgESeconds + '</label>\
+								' + _("seconds") + '</label>\
 							</p>\
-							<!-- To review :<p>\
-								<label for="roscoShowClue"><input type="checkbox" id="roscoShowClue"> ' + msgs.msgEShowClue + '</label>\
-								<label for="roscoClue"><span></span>' + msgs.msgEClue + ': </label>\
-								<input type="text" name="roscoClue" id="roscoClue"  maxlength="50" disabled>' + this.getSelectClue() + '\
-							</p>\
-							<p>\
-								<label for="roscoShowCodeAccess"><input type="checkbox" id="roscoShowCodeAccess"> ' + msgs.msgEShowCode + ' </label>\
-								<label for="roscoCodeAccess" id="labelCodeAccess">' + msgs.msgCodeAccess + ': </label>\
-								<input type="text" name="roscoCodeAccess" id="roscoCodeAccess"  maxlength="40" disabled />\
-								<label for="roscoMessageCodeAccess" id="labelMessageAccess">' + msgs.msgEMessage + ': </label>\
-								<input type="text" name="roscoMessageCodeAccess" id="roscoMessageCodeAccess" maxlength="200"/ disabled> \
-							</p>-->\
-							<!--<p id="roscoExportImport">\
-								<label for="roscoImportGame">' + msgs.msgELoadGame + ': </label>\
-								<input type="file" name="roscoImportGame" id="roscoImportGame" />\
-								<label for="roscoExportGame">' + msgs.msgESaveGame + ': </label>\
-								<input type="button" name="roscoExportGame" id="roscoExportGame" value="' + msgs.msgESave + '" />\
-							</p>-->\
 						</div>\
 					</fieldset>\
-					<fieldset class="exe-fieldset exe-fieldset-closed">\
-						<legend><a href="#">' + msgs.msgETypeWord + '</a></legend>\
-						<div id="roscoDataWord"><p>...</p>' + this.getWords().join('') + '</div>\
+					<fieldset class="exe-fieldset">\
+						<legend><a href="#">' + _("Words")+ '</a></legend>\
+						<div id="roscoDataWord"><pclass="exe-block-info">'+("Provide a word and its definition. May toggle between: word starts or contains, by clicking on the icon")+' <img src="' + path + "roscoIcoStart.png" + '" alt="' + _("Start/Contain")+ '"/><a href="#"> <span class="sr-av">Ocultar este mensaje </span>×</a></p>'
+						+ this.getWords().join('') + '</div>\
 					</fieldset>\
-					'+this.getItineraryOptions()+'\
+					' + this.getItineraryOptions() + '\
+					' + this.getExportImportGame() + '\
 				</div>\
-				<div class="exe-form-tab" title="'+_('Language settings')+'">\
-					<p>Language options.</p>\
+				<div class="exe-form-tab" title="' + _('Language settings') + '">\
+				<p>' + _("Custom texts (or use the default ones):") + '</p>\
+				' + this.getLanguageFields() + '\
 				</div>\
 			</div>\
 			';
@@ -252,68 +133,74 @@ var $exeDevice = {
 		this.loadPreviousValues(field);
 
 	},
+	getLanguageFields: function () {
+		var html = "";
+		var fields = this.ci18n;
+		for (var i in fields) {
+			html += '<p class="ci18n"><label for="ci18n_' + i + '">' + fields[i] + '</label> <input type="text" name="ci18n_' + i + '" id="ci18n_' + i + '" value="' + fields[i] + '" /></p>'
+		}
+		return html;
+	},
 	// To review (this should be common)
-	enableTabs : function(id){
-		
-		var tabs = $("#"+id+" .exe-form-tab");
+	enableTabs: function (id) {
+		var tabs = $("#" + id + " .exe-form-tab");
 		var list = '';
 		var tabId;
 		var e;
 		var txt;
-		tabs.each(function(i){
+		tabs.each(function (i) {
 			var klass = "exe-form-active-tab";
-			tabId = id+"Tab"+i;
+			tabId = id + "Tab" + i;
 			e = $(this);
-			e.attr("id",tabId);
+			e.attr("id", tabId);
 			txt = e.attr("title");
-			if (txt=='') txt = (i+1);
-			if (i>0) {
+			if (txt == '') txt = (i + 1);
+			if (i > 0) {
 				e.hide();
 				klass = "";
 			}
-			list += '<li><a href="#'+tabId+'" class="'+klass+'">'+txt+'</a></li>';
+			list += '<li><a href="#' + tabId + '" class="' + klass + '">' + txt + '</a></li>';
 		});
-		if (list!="") {
-			list = '<ul id="'+id+'Tabs" class="exe-form-tabs">'+list+'</ul>';
+		if (list != "") {
+			list = '<ul id="' + id + 'Tabs" class="exe-form-tabs">' + list + '</ul>';
 			tabs.eq(0).before(list);
-			var as = $("#"+id+"Tabs a");
-			as.click(function(){
-				as.attr("class","");
+			var as = $("#" + id + "Tabs a");
+			as.click(function () {
+				as.attr("class", "");
 				$(this).addClass("exe-form-active-tab");
 				tabs.hide();
 				$($(this).attr("href")).show();
 				return false;
 			});
 		}
-		
-	},	
+
+	},
 	// / To review
-	getItineraryOptions: function(){
-		var msgs = this.msgs;
+	getItineraryOptions: function () {
 		var html = '\
 			<fieldset class="exe-fieldset exe-fieldset-closed">\
-				<legend><a href="#">Itinerario</a></legend>\
+				<legend><a href="#">'+_("Itinerary")+'</a></legend>\
 				<div>\
-					<p class="exe-block-info">Puedes hacer que haya que introducir una clave para acceder al juego. También puedes mostrar una clave al finalizarlo. Usa estas claves para crear un itinerario: no se podrá acceder a una actividad hasta haber obtenido la clave de otra, la solución a un problema... <a href="#"><span class="sr-av">Ocultar este mensaje </span>×</a></p>\
+					<p class="exe-block-info">'+("May be necessary to enter a password to access this game. May also show a key word by reaching a presestablished percentage of hits. Use these keys to create an itinerary of challenges: it would not be possible to access a new challenge/activity until you have get the key to/from another challenge or solution to a problem ..")+'<a href="#"><span class="sr-av">Ocultar este mensaje </span>×</a></p>\
 					<p>\
-						<label for="roscoShowCodeAccess"><input type="checkbox" id="roscoShowCodeAccess"> Se accede con clave</label>\
+						<label for="roscoShowCodeAccess"><input type="checkbox" id="roscoShowCodeAccess">' +_("Access code is required")+'</label>\
 					</p>\
 					<p style="margin-left:1.4em;margin-bottom:1.5em">\
-						<label for="roscoCodeAccess" id="labelCodeAccess"> Clave: </label>\
+						<label for="roscoCodeAccess" id="labelCodeAccess">'+_("Access code")+':</label>\
 						<input type="text" name="roscoCodeAccess" id="roscoCodeAccess"  maxlength="40" disabled />\
 						<label for="roscoMessageCodeAccess" id="labelMessageAccess">Pregunta: </label>\
 						<input type="text" name="roscoMessageCodeAccess" id="roscoMessageCodeAccess" maxlength="200"/ disabled> \
 					</p>\
 					<p>\
-						<label for="roscoShowClue"><input type="checkbox" id="roscoShowClue"> Se muestra un mensaje o clave al terminar</label>\
+						<label for="roscoShowClue"><input type="checkbox" id="roscoShowClue">'+_("Show a message or password")+'</label>\
 					</p>\
 					<div style="margin-left:1.4em;margin-bottom:1.5em">\
 						<p>\
-							<label for="roscoClue">Mensaje: </label>\
+							<label for="roscoClue">'+_("Message")+':</label>\
 							<input type="text" name="roscoClue" id="roscoClue"  maxlength="50" disabled>\
 						</p>\
 						<p>\
-							<label for="roscoPercentajeClue" id="labelPercentajeClue">Porcentaje mínimo de aciertos para que se muestre el mensaje: </label>\
+							<label for="roscoPercentajeClue" id="labelPercentajeClue">'+_("Percentage of hits needed to display the message")+':</label>\
 							<select id="roscoPercentajeClue" disabled>\
 								<option value="10">10%</option>\
 								<option value="20">20%</option>\
@@ -328,6 +215,23 @@ var $exeDevice = {
 							</select>\
 						</p>\
 					</div>\
+				</div>\
+			</fieldset>';
+		return html;
+	},
+
+	getExportImportGame: function () {
+		var html = '\
+			<fieldset class="exe-fieldset exe-fieldset-closed">\
+				<legend><a href="#">'+_("Avanced")+'</a></legend>\
+				<div>\
+					<p class="exe-block-info">'+_("You can export this game to a json file so you can later use it in another idevice or application")+'<a href="#"><span class="sr-av">Ocultar este mensaje</span>×</a></p>\
+					<p id="roscoExportImport">\
+						<label for="roscoImportGame">' + _("Load game")+ ': </label>\
+						<input type="file" name="roscoImportGame" id="roscoImportGame" />\
+						<label for="roscoExportGame">' + _("Save game")+ ': </label>\
+						<input type="button" name="roscoExportGame" id="roscoExportGame" value="' + _("Save")+ '" />\
+					</p>\
 				</div>\
 			</fieldset>';
 		return html;
@@ -476,7 +380,7 @@ var $exeDevice = {
 			image.hide();
 			$noImage.show();
 			if (type == 1) {
-				eXe.app.alert($exeDevice.msgs.msgEURLValid);
+				eXe.app.alert($exeDevice.msgs.msgURLValid);
 			}
 			return false;
 		};
@@ -487,7 +391,7 @@ var $exeDevice = {
 					image.hide();
 					$noImage.show();
 					if (type == 1) {
-						eXe.app.alert($exeDevice.msgs.msgEURLValid);
+						eXe.app.alert($exeDevice.msgs.msgURLValid);
 					}
 					return false;
 				} else {
@@ -507,7 +411,7 @@ var $exeDevice = {
 				image.hide();
 				$noImage.show();
 				if (type == 1) {
-					eXe.app.alert($exeDevice.msgs.msgEURLValid);
+					eXe.app.alert($exeDevice.msgs.msgURLValid);
 				}
 				return false;
 			});
@@ -527,7 +431,13 @@ var $exeDevice = {
 		if (!dataGame) {
 			return false;
 		}
-		dataGame.msgs = $exeDevice.msgs;
+		var fields = this.ci18n;
+		var i18n = fields;
+		for (var i in fields) {
+			var fVal = $("#ci18n_" + i).val();
+			if (fVal != "") i18n[i] = fVal;
+		}
+		dataGame.msgs = i18n;
 		var json = JSON.stringify(dataGame),
 			divContent = "";
 		if (dataGame.instructions != "") divContent = '<div class="rosco-instructions">' + dataGame.instructions + '</div>';
@@ -593,37 +503,35 @@ var $exeDevice = {
 
 	getDataWord: function (letter) {
 		var path = $exeDevice.iDevicePath,
-			msgs = $exeDevice.msgs,
 			fileWord = '\
-			<div class="roscoWordMutimediaEdition">\
-				<div class="roscoFileWordEdition">\
-					<h3 class="roscoLetterEdition">' + letter + '</h3>\
-					<img src="' + path + "roscoStart.png" + '" alt="' + msgs.msgEStartContain + '" class="roscoStartEdition"/>\
-					<label for="" class="sr-av">'+_("Right answer")+': </label><input type="text" class="roscoWordEdition" placeholder="'+_("Right answer")+'">\
-					<label for="" class="sr-av">'+_("Question")+': </label><input type="text" class="roscoDefinitionEdition" placeholder="'+_("Question")+'">\
-					<img src="' + path + "roscoSelectImageInactive.png" + '" alt="' + msgs.msgESelectImage + '" class="roscoSelectImageEdition"/>\
+				<div class="roscoWordMutimediaEdition">\
+					<div class="roscoFileWordEdition">\
+						<h3 class="roscoLetterEdition">' + letter + '</h3>\
+						<a href="#" class="roscoLinkStart" title="'+_("Start/Contain letter")+'"><img src="' + path + "roscoStart.png" + '" alt="' + _("Start/Contain")+ '" class="roscoStartEdition"/></a>\
+						<label for="" class="sr-av">' + _("Word") + ': </label><input type="text" class="roscoWordEdition" placeholder="' + _("Word") + '">\
+						<label for="" class="sr-av">' + _("Definition") + ': </label><input type="text" class="roscoDefinitionEdition" placeholder="' + _("Definition") + '">\
+						<a href="#" class="roscoLinkSelectImage" title="'+_("Show/Hide image")+'"><img src="' + path + "roscoSelectImageInactive.png" + '" alt="' + _("Select Image") + '" class="roscoSelectImageEdition"/></a>\
 					</div>\
 					<div class="roscoImageBarEdition">\
-					<div class="roscoImageEdition">\
-					<div class="roscoCursorEdition"></div>\
-					<img src="' + path + "roscoCursor.gif" + '" class="roscoCursorEdition" alt="Cursor" /> \
-					<img src="" class="roscoHomeImageEdition" alt="' + msgs.msgENoImage + '" /> \
-					<img src="' + path + "roscoHomeImage.png" + '" class="roscoNoImageEdition" alt="' + msgs.msgENoImage + '" /> \
+						<div class="roscoImageEdition">\
+							<div class="roscoCursorEdition"></div>\
+							<img src="' + path + "roscoCursor.gif" + '" class="roscoCursorEdition" alt="Cursor" /> \
+							<img src="" class="roscoHomeImageEdition" alt="' + _("No image")+ '" /> \
+							<img src="' + path + "roscoHomeImage.png" + '" class="roscoNoImageEdition" alt="' + _("No image") + '" /> \
+						</div>\
+						<div class="roscoBarEdition">\
+							<label>' + _("Image") + ': </label><input type="text" class="exe-file-picker roscoURLImageEdition" id="roscoURLImage-' + letter + '" placeholder="'+_("Indicate a valid URL of an image or select one from your device")+'"/>\
+							<input type="text" class="roscoXImageEdition" value="0" readonly />\
+							<input type="text" class="roscoYImageEdition" value="0" readonly />\
+						</div>\
+						<div class="roscoMetaData">\
+							<label>' + _("Author") + ': </label><input type="text" class="roscoAuthorEdition" />\
+							<label>Alt: </label><input type="text" class="roscoAlt" />\
+							<a href="#" class="roscoLinkClose" title="'+_("Hide image")+'"><img src="' + path + "roscoClose.png" + '" alt="' + _("Minimize")+ '" class="roscoCloseImage"/></a>\
+						</div>\
+						<hr class="roscoSeparacion"/>\
 					</div>\
-					<div class="roscoBarEdition">\
-					<label>' + msgs.msgEImage + ': </label><input type="text" class="exe-file-picker roscoURLImageEdition" id="roscoURLImage-' + letter + '"/>\
-					<input type="text" class="roscoXImageEdition" value="0" readonly />\
-					<input type="text" class="roscoYImageEdition" value="0" readonly />\
-					<!-- To review :<img src="' + path + "roscoPlayImage.png" + '" alt="' + msgs.msgEShowImage + '" class="roscoPlayImageEdition"/>-->\
-					</div>\
-					<div class="roscoMetaData">\
-					<label>' + msgs.msgEAuthor + ': </label><input type="text" class="roscoAuthorEdition" />\
-					<label>' + msgs.msgEAlt + ': </label><input type="text" class="roscoAlt" />\
-					<!-- To review :<img src="' + path + "roscoClose.png" + '" alt="' + msgs.msgEMinimize + '" class="roscoCloseImage"/>-->\
-					</div>\
-					<hr class="roscoSeparacion"/>\
-				</div>\
-			</div>'
+				</div>'
 
 		return fileWord;
 	},
@@ -655,19 +563,19 @@ var $exeDevice = {
 			durationGame = parseInt(clear($('#roscoDuration').val())),
 			numberTurns = parseInt(clear($('#roscoNumberTurns').val()));
 		if (showClue && clueGame.length == 0) {
-			eXe.app.alert(msgs.msgEWriteClue);
+			eXe.app.alert(msgs.msgWriteClue);
 			return false;
 		}
 		if (showCodeAccess && codeAccess.length == 0) {
-			eXe.app.alert(msgs.msgEProvideCode);
+			eXe.app.alert(msgs.msgProvideCode);
 			return false;
 		}
 		if (showCodeAccess && messageCodeAccess.length == 0) {
-			eXe.app.alert(msgs.msgEProvideGetCode);
+			eXe.app.alert(msgs.msgProvideGetCode);
 			return false;
 		}
 		if (showSolution && timeShowSolution.length == 0) {
-			eXe.app.alert(msgs.msgEProvideGetCode.msgEProvideTimeSolution);
+			eXe.app.alert(msgs.msgProvideGetCode.msgEProvideTimeSolution);
 			return false;
 		}
 
@@ -679,7 +587,7 @@ var $exeDevice = {
 			if (word.length > 0) zr = false;
 		});
 		if (zr) {
-			eXe.app.alert(msgs.msgEOneWord);
+			eXe.app.alert(msgs.msgOneWord);
 			return false;
 		}
 
@@ -726,17 +634,17 @@ var $exeDevice = {
 			var mType = types[i];
 			if (word.length > 0) {
 				if (mType == 0 && !(this.startContainsAll(letter, word, mType))) {
-					var message = msgs.msgENotStart.replace('%1', word);
+					var message =  _("%1 does not start with the letter %2").replace('%1', word);
 					message = message.replace('%2', letter);
 					eXe.app.alert(message);
 					return false;
 				} else if (mType == 1 && !(this.startContainsAll(letter, word, mType))) {
-					var message = $exeDevice.msgs.msgENotContaint.replace('%1', word);
+					var message = $exeDevice.msgs.msgNotContain.replace('%1', word);
 					message = message.replace('%2', letter);
 					eXe.app.alert(message);
 					return false;
 				} else if (($.trim(definition).length == 0) && (url.length < 10)) {
-					eXe.app.alert($exeDevice.msgs.msgEProvideDefinition + ' ' + word);
+					eXe.app.alert($exeDevice.msgs.msgProvideDefinition + ' ' + word);
 					return false;
 				}
 			}
@@ -792,7 +700,7 @@ var $exeDevice = {
 	importGame: function (content) {
 		var game = $exeDevice.isJsonString(content);
 		if (!game || !game.typeGame || game.typeGame != 'Rosco') {
-			eXe.app.alert($exeDevice.msgs.msgESelectFile);
+			eXe.app.alert($exeDevice.msgs.msgSelectFile);
 			return;
 		}
 		$exeDevice.loadDateFile(game)
@@ -800,7 +708,7 @@ var $exeDevice = {
 	},
 
 	getSelectClue: function () {
-		var html = '<label for="roscoPercentajeClue" id="labelPercentajeClue">' + $exeDevice.msgs.msgEPercentageCorrect + ': </label>\
+		var html = '<label for="roscoPercentajeClue" id="labelPercentajeClue">' + _("% correct answers"); + ': </label>\
 		<select id="roscoPercentajeClue" disabled>\
 			<option value="10">10%</option>\
 			<option value="20">20%</option>\
@@ -818,10 +726,12 @@ var $exeDevice = {
 
 	addEvents: function () {
 		var msgs = $exeDevice.msgs;
-		$('#roscoDataWord img.roscoStartEdition').on('click', function () {
-			var imageStart = $(this).attr('src').indexOf('roscoContains.png') != -1 ? "roscoStart.png" : "roscoContains.png";
-			$(this).attr('src', $exeDevice.iDevicePath + imageStart);
+		$('#roscoDataWord a.roscoLinkStart').on('click', function (e) {
+			e.preventDefault();
+			var imageStart = $(this).find('.roscoStartEdition').attr('src').indexOf('roscoContains.png') != -1 ? "roscoStart.png" : "roscoContains.png";
+			$(this).find('.roscoStartEdition').attr('src', $exeDevice.iDevicePath + imageStart);
 		});
+
 		$('#roscoDataWord input.roscoURLImageEdition').on('change', function () {
 			var validExt = ['jpg', 'png', 'gif', 'jpeg', 'svg'];
 			var selectedFile = $(this).val();
@@ -840,9 +750,11 @@ var $exeDevice = {
 			$exeDevice.showImage(img, url, x, y, alt, 1);
 		});
 
-		$('#roscoDataWord img.roscoSelectImageEdition').on('click', function () {
+		$('#roscoDataWord a.roscoLinkSelectImage').on('click', function (e) {
+			e.preventDefault();
+			console.log($(this).parents('.roscoFileWordEdition'));
 			$(this).parent().siblings('.roscoImageBarEdition').slideToggle();
-			var $pater = $(this).parent().siblings('.roscoImageBarEdition');
+			var $pater = $(this).parents('.roscoFileWordEdition').find('.roscoImageBarEdition');
 			var img = $pater.find('.roscoHomeImageEdition');
 			var url = $pater.find('.roscoURLImageEdition').val();
 			var alt = $pater.find('.roscoAlt').val();
@@ -853,7 +765,8 @@ var $exeDevice = {
 			$exeDevice.showImage(img, url, x, y, alt, 0);
 		});
 
-		$('#roscoDataWord img.roscoCloseImage').on('click', function () {
+		$('#roscoDataWord a.roscoLinkClose').on('click', function (e) {
+			e.preventDefault();
 			$(this).parents('.roscoImageBarEdition').slideUp();
 		});
 
@@ -863,13 +776,13 @@ var $exeDevice = {
 			var color = $(this).val().trim() == "" ? $exeDevice.colors.black : $exeDevice.colors.blue;
 			$(this).siblings().filter('.roscoLetterEdition').css("background-color", color);
 			if (word.length > 0) {
-				var mType = $(this).siblings().filter('.roscoStartEdition').attr('src').indexOf("roscoContains.png") != -1 ? 1 : 0;
+				var mType = $(this).parent().find('.roscoStartEdition').attr('src').indexOf("roscoContains.png") != -1 ? 1 : 0;
 				if (mType == 0 && !($exeDevice.startContainsAll(letter, word, mType))) {
-					var message = msgs.msgENotStart.replace('%1', word);
+					var message = msgs.msgNotStart.replace('%1', word);
 					message = message.replace('%2', letter);
 					eXe.app.alert(message);
 				} else if (mType == 1 && !($exeDevice.startContainsAll(letter, word, mType))) {
-					var message = msgs.msgENotContaint.replace('%1', word);
+					var message = msgs.msgNotContain.replace('%1', word);
 					message = message.replace('%2', letter);
 					eXe.app.alert(message);
 				}
@@ -891,17 +804,6 @@ var $exeDevice = {
 		$('#roscoShowSolution').on('change', function () {
 			var mark = $(this).is(':checked');
 			$('#roscoTimeShowSolution').prop('disabled', !mark);
-		});
-
-		$('.roscoPlayImageEdition').on('click', function (e) {
-			var img = $(this).parent().siblings('.roscoImageEdition').find('.roscoHomeImageEdition');
-			var url = $(this).siblings('.roscoURLImageEdition').val();
-			var alt = $(this).parent().siblings(".roscoMetaData").find('.roscoAlt').val();
-			var x = parseFloat($(this).siblings('.roscoXImageEdition').val());
-			var y = parseFloat($(this).siblings('.roscoYImageEdition').val());
-			x = x ? x : 0;
-			y = y ? y : 0;
-			$exeDevice.showImage(img, url, x, y, alt, 1);
 		});
 
 		$('.roscoHomeImageEdition').on('click', function (e) {
@@ -1034,7 +936,7 @@ var $exeDevice = {
 		const data = window.URL.createObjectURL(newBlob);
 		var link = document.createElement('a');
 		link.href = data;
-		link.download = $exeDevice.msgs.msgEGame + "Rosco.json";
+		link.download = $exeDevice.msgs.msgGame + "Rosco.json";
 		document.getElementById('roscoIdeviceForm').appendChild(link);
 		link.click();
 		setTimeout(function () {
@@ -1052,5 +954,5 @@ var $exeDevice = {
 		} catch (e) {}
 		return false;
 	}
-	
+
 }
