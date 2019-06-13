@@ -943,6 +943,12 @@ var $exeAuthoring = {
 				$(this).parent().parent().toggleClass("exe-fieldset-closed");
 				return false;
 			});
+            
+            // Dismissible messages
+            $(".exe-block-dismissible .exe-block-close").click(function(){
+                $(this).parent().fadeOut();
+                return false;
+            });
 
             // Enable color pickers (provisional solution)
             // To review: 100 ms delay because the color picker won't work when combined with $exeTinyMCE.init
