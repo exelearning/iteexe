@@ -78,15 +78,17 @@ var $exeDevice = {
 
 	},
 	createForm: function () {
-		var path = $exeDevice.iDevicePath,
-			html = '\
+        var path = $exeDevice.iDevicePath;
+        var wordInstructions = _('Provide a word and its definition. May toggle between: "Word starts" or "Word contains", by clicking on %s');
+            wordInstructions = wordInstructions.replace("%s",'<img src="' + path + "roscoIcoStart.png" + '" alt="' + _("Start/Contain")+ '" title="' + _("Start/Contain")+ '" />')
+		var html = '\
 			<div id="roscoIdeviceForm">\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
-					<fieldset class="exe-fieldset">\
-						<legend><a href="#">' + _("Intructions")+ '</a></legend>\
+					<fieldset class="exe-fieldset exe-fieldset-closed">\
+						<legend><a href="#">' + _("Instructions")+ '</a></legend>\
 						<div>\
 							<p>\
-								<label for="roscoInstructions" class="sr-av">' +  _("Intructions")+ ': </label>\
+								<label for="roscoInstructions" class="sr-av">' +  _("Instructions")+ ': </label>\
 								<textarea id="roscoInstructions" class="exe-html-editor"\>' + _("Observe the letters, identify and fill in the missing the words.")+ ' </textarea>\
 							</p>\
 						</div>\
@@ -115,7 +117,7 @@ var $exeDevice = {
 					</fieldset>\
 					<fieldset class="exe-fieldset">\
 						<legend><a href="#">' + _("Words")+ '</a></legend>\
-						<div id="roscoDataWord"><pclass="exe-block-info">'+("Provide a word and its definition. May toggle between: word starts or contains, by clicking on the icon")+' <img src="' + path + "roscoIcoStart.png" + '" alt="' + _("Start/Contain")+ '"/><a href="#"> <span class="sr-av">Ocultar este mensaje </span>×</a></p>'
+						<div id="roscoDataWord"><p class="exe-block-info exe-block-dismissible">'+wordInstructions+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+' </span>×</a></p>'
 						+ this.getWords().join('') + '</div>\
 					</fieldset>\
 					' + this.getItineraryOptions() + '\
@@ -162,7 +164,7 @@ var $exeDevice = {
 			list += '<li><a href="#' + tabId + '" class="' + klass + '">' + txt + '</a></li>';
 		});
 		if (list != "") {
-			list = '<ul id="' + id + 'Tabs" class="exe-form-tabs">' + list + '</ul>';
+			list = '<ul id="' + id + 'Tabs" class="exe-form-tabs exe-advanced">' + list + '</ul>';
 			tabs.eq(0).before(list);
 			var as = $("#" + id + "Tabs a");
 			as.click(function () {
@@ -181,7 +183,7 @@ var $exeDevice = {
 			<fieldset class="exe-fieldset exe-fieldset-closed">\
 				<legend><a href="#">'+_("Itinerary")+'</a></legend>\
 				<div>\
-					<p class="exe-block-info">'+("May be necessary to enter a password to access this game. May also show a key word by reaching a presestablished percentage of hits. Use these keys to create an itinerary of challenges: it would not be possible to access a new challenge/activity until you have get the key to/from another challenge or solution to a problem ..")+'<a href="#"><span class="sr-av">Ocultar este mensaje </span>×</a></p>\
+					<p class="exe-block-info exe-block-dismissible">'+("May be necessary to enter a password to access this game. May also show a key word by reaching a presestablished percentage of hits. Use these keys to create an itinerary of challenges: It would not be possible to access a new challenge until you get the key or the solution to a problem.")+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+' </span>×</a></p>\
 					<p>\
 						<label for="roscoShowCodeAccess"><input type="checkbox" id="roscoShowCodeAccess">' +_("Access code is required")+'</label>\
 					</p>\
@@ -221,17 +223,23 @@ var $exeDevice = {
 	},
 
 	getExportImportGame: function () {
+        var msg = _("You can export this game to a JSON file so you can later use it in an iDevice of the same type. You can also use it in %s and you can import games from %s and use then here.");
+            msg = msg.replace(/%s/g,'<a href="https://quext.educarex.es/" target="_blank" rel="noopener noreferrer">QuExt</a>');
 		var html = '\
-			<fieldset class="exe-fieldset exe-fieldset-closed">\
-				<legend><a href="#">'+_("Avanced")+'</a></legend>\
+			<fieldset class="exe-fieldset exe-fieldset-closed exe-advanced">\
+				<legend><a href="#">'+_("Advanced")+'</a></legend>\
 				<div>\
-					<p class="exe-block-info">'+_("You can export this game to a json file so you can later use it in another idevice or application")+'<a href="#"><span class="sr-av">Ocultar este mensaje</span>×</a></p>\
-					<p id="roscoExportImport">\
-						<label for="roscoImportGame">' + _("Load game")+ ': </label>\
-						<input type="file" name="roscoImportGame" id="roscoImportGame" />\
-						<label for="roscoExportGame">' + _("Save game")+ ': </label>\
-						<input type="button" name="roscoExportGame" id="roscoExportGame" value="' + _("Save")+ '" />\
-					</p>\
+					<p class="exe-block-info exe-block-dismissible">'+msg+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+'</span>×</a></p>\
+					<div id="roscoExportImport">\
+                        <p>\
+                            <label for="roscoImportGame">' + _("Load game")+ ': </label>\
+                            <input type="file" name="roscoImportGame" id="roscoImportGame" />\
+                        </p>\
+                        <p>\
+                            <label for="roscoExportGame">' + _("Save game")+ ': </label>\
+                            <input type="button" name="roscoExportGame" id="roscoExportGame" value="' + _("Save")+ '" />\
+                        </p>\
+                    </div>\
 				</div>\
 			</fieldset>';
 		return html;
@@ -507,7 +515,7 @@ var $exeDevice = {
 				<div class="roscoWordMutimediaEdition">\
 					<div class="roscoFileWordEdition">\
 						<h3 class="roscoLetterEdition">' + letter + '</h3>\
-						<a href="#" class="roscoLinkStart" title="'+_("Start/Contain letter")+'"><img src="' + path + "roscoStart.png" + '" alt="' + _("Start/Contain")+ '" class="roscoStartEdition"/></a>\
+						<a href="#" class="roscoLinkStart" title="'+_("Start/Contain letter")+'"><img src="' + path + "roscoStart.png" + '" alt="' + _("The word starts with...")+ '" class="roscoStartEdition"/></a>\
 						<label for="" class="sr-av">' + _("Word") + ': </label><input type="text" class="roscoWordEdition" placeholder="' + _("Word") + '">\
 						<label for="" class="sr-av">' + _("Definition") + ': </label><input type="text" class="roscoDefinitionEdition" placeholder="' + _("Definition") + '">\
 						<a href="#" class="roscoLinkSelectImage" title="'+_("Show/Hide image")+'"><img src="' + path + "roscoSelectImageInactive.png" + '" alt="' + _("Select Image") + '" class="roscoSelectImageEdition"/></a>\
@@ -525,8 +533,8 @@ var $exeDevice = {
 							<input type="text" class="roscoYImageEdition" value="0" readonly />\
 						</div>\
 						<div class="roscoMetaData">\
-							<label>' + _("Author") + ': </label><input type="text" class="roscoAuthorEdition" />\
-							<label>Alt: </label><input type="text" class="roscoAlt" />\
+							<label for="roscoAlt'+letter+'">Alt: </label><input type="text" id="roscoAlt'+letter+'" class="roscoAlt" />\
+                            <label for="roscoAuthorEdition'+letter+'">' + _("Authorship") + ': </label><input type="text" id="roscoAuthorEdition'+letter+'" class="roscoAuthorEdition" />\
 							<a href="#" class="roscoLinkClose" title="'+_("Hide image")+'"><img src="' + path + "roscoClose.png" + '" alt="' + _("Minimize")+ '" class="roscoCloseImage"/></a>\
 						</div>\
 						<hr class="roscoSeparacion"/>\
@@ -729,7 +737,10 @@ var $exeDevice = {
 		$('#roscoDataWord a.roscoLinkStart').on('click', function (e) {
 			e.preventDefault();
 			var imageStart = $(this).find('.roscoStartEdition').attr('src').indexOf('roscoContains.png') != -1 ? "roscoStart.png" : "roscoContains.png";
-			$(this).find('.roscoStartEdition').attr('src', $exeDevice.iDevicePath + imageStart);
+            // Add an alternative text to the icon
+            var alt = _("The word starts with...");
+            if (imageStart=="roscoContains.png") alt = _("The word contains...");
+			$(this).find('.roscoStartEdition').attr('src', $exeDevice.iDevicePath + imageStart).attr("alt",alt);
 		});
 
 		$('#roscoDataWord input.roscoURLImageEdition').on('change', function () {
