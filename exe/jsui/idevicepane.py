@@ -167,7 +167,9 @@ class IdevicePane(Renderable, Resource):
                 if (prototype._title!='Text'):
                     xml += self.__renderPrototype(prototype, category, visible)
         # Other categories
-        experimentalCategoryName = _('Experimental') # Keep this string here so the tranlation is not lost even when there are no iDevices in this category
+        # Keep these category names here so the tranlations are not lost even when there are no iDevices in those categories
+        experimentalCategoryName = _('Experimental') 
+        gamificationCategoryName = _('Gamification')
         for prototype, category, visible in prototypesToRender:
             if (category!='Text and Tasks' and category!='Hidden'):
                 xml += self.__renderPrototype(prototype, category, visible)
