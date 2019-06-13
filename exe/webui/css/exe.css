@@ -285,10 +285,10 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 #activeIdevice .exe-checkbox-field input{margin-right:5px}
 #activeIdevice .exe-fieldset{padding:0 20px 5px 20px;border:1px solid #C0C0C0;margin:1.5em 0}
 #activeIdevice .exe-fieldset legend{font-weight:bold;padding:0 10px}
-#activeIdevice .exe-fieldset-closed legend a{text-decoration:underline}
-#activeIdevice .exe-fieldset-closed legend a:hover{text-decoration:none}
-#activeIdevice .exe-fieldset-closed legend a:before{content:"↕";display:block;float:left;margin-right:.6em;font-family:Verdana,sans-serif;color:#333;font-size:.85em;margin-top:1px}
-#activeIdevice .exe-fieldset-closed{border:none;padding:0}
+#activeIdevice .exe-fieldset-closed legend a{text-decoration:underline;margin-right:10px;text-decoration:none}
+#activeIdevice .exe-fieldset-closed legend a:hover{text-decoration:underline}
+#activeIdevice .exe-fieldset-closed legend a:before{content:"↕";display:block;float:left;font-family:Verdana,sans-serif;color:#555;font-size:.85em;margin:1px .5em 0 10px}
+#activeIdevice .exe-fieldset-closed{border-width:1px 0 0 0}
 #activeIdevice .exe-fieldset-closed legend{padding:0;margin-bottom:0}
 #activeIdevice .exe-fieldset-closed div{display:none}
 #activeIdevice .exe-field-instructions{display:block;font-size:.9em;margin-top:.4em}
