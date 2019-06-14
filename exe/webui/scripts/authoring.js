@@ -975,25 +975,25 @@ var $exeAuthoring = {
                         <div>\
                             <p class="exe-block-info exe-block-dismissible">'+("May be necessary to enter a password to access this game. May also show a key word by reaching a presestablished percentage of hits. Use these keys to create an itinerary of challenges: It would not be possible to access a new challenge until you get the key or the solution to a problem.")+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+' </span>×</a></p>\
                             <p>\
-                                <label for="roscoShowCodeAccess"><input type="checkbox" id="roscoShowCodeAccess">' +_("Access code is required")+'</label>\
+                                <label for="eXeGameShowCodeAccess"><input type="checkbox" id="eXeGameShowCodeAccess">' +_("Access code is required")+'</label>\
                             </p>\
                             <p style="margin-left:1.4em;margin-bottom:1.5em">\
-                                <label for="roscoCodeAccess" id="labelCodeAccess">'+_("Access code")+':</label>\
-                                <input type="text" name="roscoCodeAccess" id="roscoCodeAccess"  maxlength="40" disabled />\
-                                <label for="roscoMessageCodeAccess" id="labelMessageAccess">Pregunta: </label>\
-                                <input type="text" name="roscoMessageCodeAccess" id="roscoMessageCodeAccess" maxlength="200"/ disabled> \
+                                <label for="eXeGameCodeAccess" id="labelCodeAccess">'+_("Access code")+':</label>\
+                                <input type="text" name="eXeGameCodeAccess" id="eXeGameCodeAccess"  maxlength="40" disabled />\
+                                <label for="eXeGameMessageCodeAccess" id="labelMessageAccess">'+_("Question")+':</label>\
+                                <input type="text" name="eXeGameMessageCodeAccess" id="eXeGameMessageCodeAccess" maxlength="200"/ disabled> \
                             </p>\
                             <p>\
-                                <label for="roscoShowClue"><input type="checkbox" id="roscoShowClue">'+_("Show a message or password")+'</label>\
+                                <label for="eXeGameShowClue"><input type="checkbox" id="eXeGameShowClue">'+_("Show a message or password")+'</label>\
                             </p>\
                             <div style="margin-left:1.4em;margin-bottom:1.5em">\
                                 <p>\
-                                    <label for="roscoClue">'+_("Message")+':</label>\
-                                    <input type="text" name="roscoClue" id="roscoClue"  maxlength="50" disabled>\
+                                    <label for="eXeGameClue">'+_("Message")+':</label>\
+                                    <input type="text" name="eXeGameClue" id="eXeGameClue"  maxlength="50" disabled>\
                                 </p>\
                                 <p>\
-                                    <label for="roscoPercentajeClue" id="labelPercentajeClue">'+_("Percentage of hits needed to display the message")+':</label>\
-                                    <select id="roscoPercentajeClue" disabled>\
+                                    <label for="eXeGamePercentajeClue" id="labelPercentajeClue">'+_("Percentage of hits needed to display the message")+':</label>\
+                                    <select id="eXeGamePercentajeClue" disabled>\
                                         <option value="10">10%</option>\
                                         <option value="20">20%</option>\
                                         <option value="30">30%</option>\
@@ -1008,12 +1008,61 @@ var $exeAuthoring = {
                                 </p>\
                             </div>\
                         </div>\
-                    </fieldset>';                
+                    </fieldset>';
                 return html;
             },
             getValues : function(){
-                // To do
-                return [];
+            	var showClue = $('#eXeGameShowClue').is(':checked'),
+             		clueGame = $.trim($('#eXeGameClue').val()),
+             		percentageClue = parseInt($('#eXeGamePercentajeClue').children("option:selected").val()),
+             		showCodeAccess = $('#eXeGameShowCodeAccess').is(':checked'),
+             		codeAccess = $.trim($('#eXeGameCodeAccess').val()),
+             		messageCodeAccess = $.trim($('#eXeGameMessageCodeAccess').val());
+
+            	if (showClue && clueGame.length == 0) {
+        			eXe.app.alert(_("You must write a clue"));
+        			return false;
+        		}
+        		if (showCodeAccess && codeAccess.length == 0) {
+        			eXe.app.alert( _("You must provide the code to play this game"));
+        			return false;
+        		}
+        		if (showCodeAccess && messageCodeAccess.length == 0) {
+        			eXe.app.alert(_("You must provide how to obtain the code to play this game"));
+        			return false;
+        		}
+             	var a={
+            		'showClue': showClue,
+            		'clueGame': clueGame,
+            		'percentageClue':percentageClue,
+            		'showCodeAccess':showCodeAccess,
+            		'codeAccess':codeAccess,
+            		'messageCodeAccess' :messageCodeAccess
+            	}
+               return a;
+            },
+            setValues : function(a){
+            	$('#eXeGameShowClue').prop('checked', a.showClue);
+        		$('#eXeGameClue').val(a.clueGame)
+        		$('#eXeGamePercentajeClue').val(a.percentageClue);
+        		$('#eXeGameShowCodeAccess').prop('checked', a.showCodeAccess);
+        		$('#eXeGameCodeAccess').val(a.codeAccess)
+        		$('#eXeGameMessageCodeAccess').val(a.messageCodeAccess);
+    			$('#eXeGamePercentajeClue').prop('disabled', !a.showClue);
+    			$('#eXeGameCodeAccess').prop('disabled', !a.showCodeAccess);
+    			$('#eXeGameMessageCodeAccess').prop('disabled', !a.showCodeAccess);
+            },
+            addEvents:function(){
+            	$('#eXeGameShowClue').on('change', function () {
+        			var mark = $(this).is(':checked');
+        			$('#eXeGameClue').prop('disabled', !mark);
+        			$('#eXeGamePercentajeClue').prop('disabled', !mark);
+        		});
+        		$('#eXeGameShowCodeAccess').on('change', function () {
+        			var mark = $(this).is(':checked');
+        			$('#eXeGameCodeAccess').prop('disabled', !mark);
+        			$('#eXeGameMessageCodeAccess').prop('disabled', !mark);
+        		});
             }
         },
         filePicker : {

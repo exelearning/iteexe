@@ -115,7 +115,7 @@ var $eXeRosco = {
 			path = $eXeRosco.idevicePath;
 		html += '<div class="rosco-MainContainer">\
 				<div class="rosco-GameMinimize" id="roscoGameMinimize-' + instance + '">\
-				   <a href="#" class="roscoLinkSelectImage"> <img src="' + path + "rosco-icon.png" + '" class="rosco-Icon" id="roscoIcon-' + instance + '" alt="' + msgs.msgMinimize + '">\
+				    <img src="' + path + "rosco-icon.png" + '" class="rosco-Icon" id="roscoIcon-' + instance + '" alt="' + msgs.msgMinimize + '">\
 					<div  class="rosco-MessageMinimize" id="roscoMessageMinimize-' + instance + '">' + msgs.msgPlayStart + '</div>\
 				</div>\
 				<div class="rosco-GameContainer" id="roscoGameContainer-' + instance + '">\
@@ -199,10 +199,10 @@ var $eXeRosco = {
 		$('#btnAnswer-' + instance).prop('disabled', true);
 		$('#btnPass-' + instance).prop('disabled', true);
 		$('#edAnswer-' + instance).prop('disabled', true);
-		if (mOptions.showCodeAccess) {
+		if (mOptions.itinerary.showCodeAccess) {
 			$('#roscoAnswerButtons-' + instance).hide();
 			$('#roscoCodeAccess-' + instance).show();
-			$('#pDefinition-' + instance).text(mOptions.messageCodeAccess);
+			$('#pDefinition-' + instance).text(mOptions.itinerary.messageCodeAccess);
 			$('#pStartWith-' + instance).text(msgs.msgEnterCode);
 			$('#edCodeAccess-' + instance).focus();
 		} else {
@@ -217,7 +217,7 @@ var $eXeRosco = {
 		}
 		$('#btnSubmitCodeAccess-' + instance).on('click', function () {
 			var keyIntroduced = $.trim($('#edCodeAccess-' + instance).val()).toUpperCase(),
-				correctKey = $.trim(mOptions.codeAccess).toUpperCase();
+				correctKey = $.trim(mOptions.itinerary.codeAccess).toUpperCase();
 			if (keyIntroduced == correctKey) {
 				$('#roscoAnswerButtons-' + instance).show();
 				$('#roscoCodeAccess-' + instance).hide();
@@ -641,10 +641,10 @@ var $eXeRosco = {
 		mOptions.answeredWords++;
 		$('#pHits-' + instance).text(mOptions.hits);
 		$('#pErrors-' + instance).text(mOptions.errors);
-		if (mOptions.showClue && percentageHits >= mOptions.percentageClue) {
+		if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
 			$eXeRosco.gameOver(instance);
 			clearInterval(mOptions.relojContador);
-			$eXeRosco.drawMessage(true, mOptions.clueGame, true, instance);
+			$eXeRosco.drawMessage(true, mOptions.itinerary.clueGame, true, instance);
 			return;
 		}
 		letter = '#letterR' + letter + '-' + instance;

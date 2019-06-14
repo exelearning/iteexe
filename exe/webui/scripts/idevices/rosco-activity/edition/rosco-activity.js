@@ -62,7 +62,7 @@ var $exeDevice = {
 		this.createForm();
 		this.addEvents();
 	},
-	setMessagesInfo() {
+	setMessagesInfo: function() {
 		var msgs = this.msgs;
 		msgs.msgNotStart = _("%1 does not start with the letter %2");
 		msgs.msgNotContain = _("%1 does not contain the letter %2");
@@ -216,14 +216,9 @@ var $exeDevice = {
 			$('#roscoDuration').val(dataGame.durationGame)
 			$('#roscoNumberTurns').val(dataGame.numberTurns);
 			$('#roscoShowSolution').prop("checked", dataGame.showSolution);
-			$('#roscoShowMinimize').prop("checked", dataGame.showMinimize);
-			$('#roscoShowClue').prop("checked", dataGame.showClue);
+			$('#roscoShowMinimize').prop("checked", dataGame.showMinimize);			
 			$('#roscoTimeShowSolution').val(dataGame.timeShowSolution);
-			$('#roscoShowCodeAccess').prop("checked", dataGame.showCodeAccess);
-			$('#roscoClue').val(dataGame.clueGame)
-			$('#roscoPercentajeClue').val(dataGame.percentageClue);
-			$('#roscoCodeAccess').val(dataGame.codeAccess)
-			$('#roscoMessageCodeAccess').val(dataGame.messageCodeAccess);
+			
 			$('.roscoWordEdition').each(function (index) {
 				$(this).val(dataGame.wordsGame[index].word);
 			});
@@ -253,7 +248,6 @@ var $exeDevice = {
 				var imageSelect = $.trim(dataGame.wordsGame[index].url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
 				$(this).attr('src', $exeDevice.iDevicePath + imageSelect);
 			});
-			var imagesLink = $('.rosco-LinkImages', wrapper);
 			$('.imagesLink').each(function (index) {
 				var imageSelect = $.trim(dataGame.wordsGame[index].url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
 				$(this).attr('src', $exeDevice.iDevicePath + imageSelect);
@@ -264,11 +258,9 @@ var $exeDevice = {
 				var color = longitud > 0 ? $exeDevice.colors.blue : $exeDevice.colors.black;
 				$(this).css('background-color', color);
 			});
-			$('#roscoClue').prop('disabled', !dataGame.showClue);
-			$('#roscoPercentajeClue').prop('disabled', !dataGame.showClue);
-			$('#roscoCodeAccess').prop('disabled', !dataGame.showCodeAccess);
-			$('#roscoMessageCodeAccess').prop('disabled', !dataGame.showCodeAccess);
-			$('#roscoTimeShowSolution').prop('disabled', !dataGame.showSolution);
+			
+			$exeAuthoring.iDevice.itinerary.setValues(dataGame.itinerary);
+			
 			var instructions = $(".rosco-instructions", wrapper);
 			if (instructions.length == 1) $("#roscoInstructions").val(instructions.html());
 		}
@@ -518,30 +510,16 @@ var $exeDevice = {
 			msgs = $exeDevice.msgs,
 			instructions = tinymce.editors[0].getContent(),
 			showMinimize = $('#roscoShowMinimize').is(':checked'),
-			showSolution = $('#roscoShowSolution').is(':checked'),
-			showClue = $('#roscoShowClue').is(':checked'),
-			clueGame = clear($.trim($('#roscoClue').val())),
-			percentageClue = parseInt($('#roscoPercentajeClue').children("option:selected").val()),
-			showCodeAccess = $('#roscoShowCodeAccess').is(':checked'),
-			codeAccess = clear($.trim($('#roscoCodeAccess').val())),
-			messageCodeAccess = clear($.trim($('#roscoMessageCodeAccess').val())),
+			showSolution = $('#roscoShowSolution').is(':checked'),		
 			timeShowSolution = parseInt(clear($.trim($('#roscoTimeShowSolution').val()))),
 			durationGame = parseInt(clear($('#roscoDuration').val())),
 			numberTurns = parseInt(clear($('#roscoNumberTurns').val()));
-		if (showClue && clueGame.length == 0) {
-			eXe.app.alert(msgs.msgWriteClue);
-			return false;
-		}
-		if (showCodeAccess && codeAccess.length == 0) {
-			eXe.app.alert(msgs.msgProvideCode);
-			return false;
-		}
-		if (showCodeAccess && messageCodeAccess.length == 0) {
-			eXe.app.alert(msgs.msgProvideGetCode);
-			return false;
-		}
+			itinerary=$exeAuthoring.iDevice.itinerary.getValues();
+			
+		if(!itinerary) return false;		
+			
 		if (showSolution && timeShowSolution.length == 0) {
-			eXe.app.alert(msgs.msgProvideGetCode.msgEProvideTimeSolution);
+			eXe.app.alert(msgs.msgEProvideTimeSolution);
 			return false;
 		}
 
@@ -652,12 +630,7 @@ var $exeDevice = {
 			'instructions': instructions,
 			'showSolution': showSolution,
 			'showMinimize': showMinimize,
-			'showClue': showClue,
-			'clueGame': clueGame,
-			'percentageClue': percentageClue,
-			'showCodeAccess': showCodeAccess,
-			'codeAccess': codeAccess,
-			'messageCodeAccess': messageCodeAccess,
+			'itinerary':itinerary,
 			'wordsGame': wordsGame
 		}
 		return data;
@@ -673,7 +646,7 @@ var $exeDevice = {
 
 	},
 
-	getSelectClue: function () {
+	/*getSelectClue: function () {
 		var html = '<label for="roscoPercentajeClue" id="labelPercentajeClue">' + _("% correct answers"); + ': </label>\
 		<select id="roscoPercentajeClue" disabled>\
 			<option value="10">10%</option>\
@@ -688,7 +661,7 @@ var $exeDevice = {
 			<option value="100">100%</option>\
 		  </select>';
 		return html;
-	},
+	},*/
 
 	addEvents: function () {
 		var msgs = $exeDevice.msgs;
@@ -721,7 +694,6 @@ var $exeDevice = {
 
 		$('#roscoDataWord a.roscoLinkSelectImage').on('click', function (e) {
 			e.preventDefault();
-			console.log($(this).parents('.roscoFileWordEdition'));
 			$(this).parent().siblings('.roscoImageBarEdition').slideToggle();
 			var $pater = $(this).parents('.roscoFileWordEdition').find('.roscoImageBarEdition');
 			var img = $pater.find('.roscoHomeImageEdition');
@@ -757,18 +729,7 @@ var $exeDevice = {
 				}
 			}
 		});
-
-		$('#roscoShowClue').on('change', function () {
-			var mark = $(this).is(':checked');
-			$('#roscoClue').prop('disabled', !mark);
-			$('#roscoPercentajeClue').prop('disabled', !mark);
-		});
-
-		$('#roscoShowCodeAccess').on('change', function () {
-			var mark = $(this).is(':checked');
-			$('#roscoCodeAccess').prop('disabled', !mark);
-			$('#roscoMessageCodeAccess').prop('disabled', !mark);
-		});
+		$exeAuthoring.iDevice.itinerary.addEvents();		
 
 		$('#roscoShowSolution').on('change', function () {
 			var mark = $(this).is(':checked');
@@ -837,17 +798,16 @@ var $exeDevice = {
 		}
 	},
 	loadDateFile: function (game) {
+		
+		$exeAuthoring.iDevice.itinerary.setValues(game.itineray);
+		
 		$('#roscoShowMinimize').prop('checked', game.showMinimize);
-		$('#roscoShowClue').prop('checked', game.showClue);
-		$('#roscoClue').val(game.clueGame)
-		$('#roscoPercentajeClue').val(game.percentageClue);
-		$('#roscoShowCodeAccess').prop('checked', game.showCodeAccess);
-		$('#roscoCodeAccess').val(game.codeAccess)
-		$('#roscoMessageCodeAccess').val(game.messageCodeAccess);
 		$('#roscoDuration').val(game.durationGame)
 		$('#roscoNumberTurns').val(game.numberTurns);
 		$('#roscoShowSolution').prop('checked', game.showSolution);
 		$('#roscoTimeShowSolution').val(game.timeShowSolution);
+		$('#roscoTimeShowSolution').prop('disabled', !game.showSolution);
+		
 		var wordsGame = game.wordsGame;
 		$('.roscoWordEdition').each(function (index) {
 			$(this).val(wordsGame[index].word);
@@ -881,11 +841,7 @@ var $exeDevice = {
 			$(this).css('background-color', color);
 
 		});
-		$('#roscoClue').prop('disabled', !game.showClue);
-		$('#roscoPercentajeClue').prop('disabled', !game.showClue);
-		$('#roscoCodeAccess').prop('disabled', !game.showCodeAccess);
-		$('#roscoMessageCodeAccess').prop('disabled', !game.showCodeAccess);
-		$('#roscoTimeShowSolution').prop('disabled', !game.showSolution);
+		
 		tinymce.editors[0].setContent(game.instructions);
 	},
 

@@ -71,6 +71,13 @@
     display: none;
 }
 
+.rosco-GameContainer a:link, 
+.rosco-GameContainer a:link,
+.rosco-GameContainer a:visited, 
+.rosco-GameContainer a:focus  {
+    text-decoration: none;
+}
+
 .rosco-GameContainer * {
     margin: 0;
     padding: 0;
