@@ -62,7 +62,7 @@ var $exeDevice = {
 		this.createForm();
 		this.addEvents();
 	},
-	setMessagesInfo: function() {
+	setMessagesInfo: function () {
 		var msgs = this.msgs;
 		msgs.msgNotStart = _("%1 does not start with the letter %2");
 		msgs.msgNotContain = _("%1 does not contain the letter %2");
@@ -78,18 +78,18 @@ var $exeDevice = {
 
 	},
 	createForm: function () {
-        var path = $exeDevice.iDevicePath;
-        var wordInstructions = _('Provide a word and its definition. May toggle between: "Word starts" or "Word contains", by clicking on %s');
-            wordInstructions = wordInstructions.replace("%s",'<img src="' + path + "roscoIcoStart.png" + '" alt="' + _("Start/Contain")+ '" title="' + _("Start/Contain")+ '" />')
+		var path = $exeDevice.iDevicePath;
+		var wordInstructions = _('Provide a word and its definition. May toggle between: "Word starts" or "Word contains", by clicking on %s');
+		wordInstructions = wordInstructions.replace("%s", '<img src="' + path + "roscoIcoStart.png" + '" alt="' + _("Start/Contain") + '" title="' + _("Start/Contain") + '" />')
 		var html = '\
 			<div id="roscoIdeviceForm">\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
 					<fieldset class="exe-fieldset exe-fieldset-closed">\
-						<legend><a href="#">' + _("Instructions")+ '</a></legend>\
+						<legend><a href="#">' + _("Instructions") + '</a></legend>\
 						<div>\
 							<p>\
-								<label for="roscoInstructions" class="sr-av">' +  _("Instructions")+ ': </label>\
-								<textarea id="roscoInstructions" class="exe-html-editor"\>' + _("Observe the letters, identify and fill in the missing the words.")+ ' </textarea>\
+								<label for="roscoInstructions" class="sr-av">' + _("Instructions") + ': </label>\
+								<textarea id="roscoInstructions" class="exe-html-editor"\>' + _("Observe the letters, identify and fill in the missing the words.") + ' </textarea>\
 							</p>\
 						</div>\
 					</fieldset>\
@@ -97,29 +97,29 @@ var $exeDevice = {
 						<legend><a href="#">' + _("Options") + '</a></legend>\
 						<div>\
 							<p>\
-								<label for="roscoShowMinimize"><input type="checkbox" id="roscoShowMinimize"> ' +  _("Show minimized.")+ ' </label>\
+								<label for="roscoShowMinimize"><input type="checkbox" id="roscoShowMinimize"> ' + _("Show minimized.") + ' </label>\
 							</p>\
 							<p>\
 								<label for="roscoDuration">' + _("Game time(seconds)") + ': </label>\
 								<input type="number" name="roscoDuration" id="roscoDuration" value="240" min="5" max="9999" step="10" required /> \
 							</p>\
 							<p>\
-								<label for="roscoNumberTurns">' + _("No. Rounds")+ ': </label>\
+								<label for="roscoNumberTurns">' + _("No. Rounds") + ': </label>\
 								<input type="number" value="1" min="1" max="2" id="roscoNumberTurns" required />\
 							</p>\
 							<p>\
-								<label for="roscoShowSolution"><input type="checkbox" checked id="roscoShowSolution"> ' + _("Show solutions")+ '. </label> \
-								<label for="roscoTimeShowSolution">' + _("Show solution time")+ ': \
+								<label for="roscoShowSolution"><input type="checkbox" checked id="roscoShowSolution"> ' + _("Show solutions") + '. </label> \
+								<label for="roscoTimeShowSolution">' + _("Show solution time") + ': \
 									<input type="number" name="roscoTimeShowSolution" id="roscoTimeShowSolution" value="3" min="1" max="9" /> \
 								' + _("seconds") + '</label>\
 							</p>\
 						</div>\
 					</fieldset>\
 					<fieldset class="exe-fieldset">\
-						<legend><a href="#">' + _("Words")+ '</a></legend>\
+						<legend><a href="#">' + _("Words") + '</a></legend>\
 						<div id="roscoDataWord">\
-                            <div class="exe-idevice-info">'+wordInstructions+'</div>'
-                            + this.getWords().join('') + '\
+                            <div class="exe-idevice-info">' + wordInstructions + '</div>' +
+			this.getWords().join('') + '\
                         </div>\
 					</fieldset>\
 					' + $exeAuthoring.iDevice.itinerary.getFieldset() + '\
@@ -181,21 +181,21 @@ var $exeDevice = {
 	},
 
 	getExportImportGame: function () {
-        var msg = _("You can export this game to a JSON file so you can later use it in an iDevice of the same type. You can also use it in %s and you can import games from %s and use then here.");
-            msg = msg.replace(/%s/g,'<a href="https://quext.educarex.es/" target="_blank" rel="noopener noreferrer">QuExt</a>');
+		var msg = _("You can export this game to a JSON file so you can later use it in an iDevice of the same type. You can also use it in %s and you can import games from %s and use then here.");
+		msg = msg.replace(/%s/g, '<a href="https://quext.educarex.es/" target="_blank" rel="noopener noreferrer">QuExt</a>');
 		var html = '\
 			<fieldset class="exe-fieldset exe-fieldset-closed exe-advanced">\
-				<legend><a href="#">'+_("Advanced")+'</a></legend>\
+				<legend><a href="#">' + _("Advanced") + '</a></legend>\
 				<div>\
-					<div class="exe-idevice-info">'+msg+'</div>\
+					<div class="exe-idevice-info">' + msg + '</div>\
 					<div id="roscoExportImport">\
                         <p>\
-                            <label for="roscoImportGame">' + _("Load game")+ ': </label>\
+                            <label for="roscoImportGame">' + _("Load game") + ': </label>\
                             <input type="file" name="roscoImportGame" id="roscoImportGame" />\
                         </p>\
                         <p>\
-                            <label for="roscoExportGame">' + _("Save game")+ ': </label>\
-                            <input type="button" name="roscoExportGame" id="roscoExportGame" value="' + _("Save")+ '" />\
+                            <label for="roscoExportGame">' + _("Save game") + ': </label>\
+                            <input type="button" name="roscoExportGame" id="roscoExportGame" value="' + _("Save") + '" />\
                         </p>\
                     </div>\
 				</div>\
@@ -216,9 +216,9 @@ var $exeDevice = {
 			$('#roscoDuration').val(dataGame.durationGame)
 			$('#roscoNumberTurns').val(dataGame.numberTurns);
 			$('#roscoShowSolution').prop("checked", dataGame.showSolution);
-			$('#roscoShowMinimize').prop("checked", dataGame.showMinimize);			
+			$('#roscoShowMinimize').prop("checked", dataGame.showMinimize);
 			$('#roscoTimeShowSolution').val(dataGame.timeShowSolution);
-			
+
 			$('.roscoWordEdition').each(function (index) {
 				$(this).val(dataGame.wordsGame[index].word);
 			});
@@ -258,9 +258,9 @@ var $exeDevice = {
 				var color = longitud > 0 ? $exeDevice.colors.blue : $exeDevice.colors.black;
 				$(this).css('background-color', color);
 			});
-			
+
 			$exeAuthoring.iDevice.itinerary.setValues(dataGame.itinerary);
-			
+
 			var instructions = $(".rosco-instructions", wrapper);
 			if (instructions.length == 1) $("#roscoInstructions").val(instructions.html());
 		}
@@ -465,27 +465,26 @@ var $exeDevice = {
 				<div class="roscoWordMutimediaEdition">\
 					<div class="roscoFileWordEdition">\
 						<h3 class="roscoLetterEdition">' + letter + '</h3>\
-						<a href="#" class="roscoLinkStart" title="'+_("Start/Contain letter")+'"><img src="' + path + "roscoStart.png" + '" alt="' + _("The word starts with...")+ '" class="roscoStartEdition"/></a>\
+						<a href="#" class="roscoLinkStart" title="' + _("Start/Contain letter") + '"><img src="' + path + "roscoStart.png" + '" alt="' + _("The word starts with...") + '" class="roscoStartEdition"/></a>\
 						<label for="" class="sr-av">' + _("Word") + ': </label><input type="text" class="roscoWordEdition" placeholder="' + _("Word") + '">\
 						<label for="" class="sr-av">' + _("Definition") + ': </label><input type="text" class="roscoDefinitionEdition" placeholder="' + _("Definition") + '">\
-						<a href="#" class="roscoLinkSelectImage" title="'+_("Show/Hide image")+'"><img src="' + path + "roscoSelectImageInactive.png" + '" alt="' + _("Select Image") + '" class="roscoSelectImageEdition"/></a>\
+						<a href="#" class="roscoLinkSelectImage" title="' + _("Show/Hide image") + '"><img src="' + path + "roscoSelectImageInactive.png" + '" alt="' + _("Select Image") + '" class="roscoSelectImageEdition"/></a>\
 					</div>\
 					<div class="roscoImageBarEdition">\
 						<div class="roscoImageEdition">\
-							<div class="roscoCursorEdition"></div>\
 							<img src="' + path + "roscoCursor.gif" + '" class="roscoCursorEdition" alt="Cursor" /> \
-							<img src="" class="roscoHomeImageEdition" alt="' + _("No image")+ '" /> \
+							<img src="" class="roscoHomeImageEdition" alt="' + _("No image") + '" /> \
 							<img src="' + path + "roscoHomeImage.png" + '" class="roscoNoImageEdition" alt="' + _("No image") + '" /> \
 						</div>\
 						<div class="roscoBarEdition">\
-							<label>' + _("Image") + ': </label><input type="text" class="exe-file-picker roscoURLImageEdition" id="roscoURLImage-' + letter + '" placeholder="'+_("Indicate a valid URL of an image or select one from your device")+'"/>\
+							<label>' + _("Image") + ': </label><input type="text" class="exe-file-picker roscoURLImageEdition" id="roscoURLImage-' + letter + '" placeholder="' + _("Indicate a valid URL of an image or select one from your device") + '"/>\
 							<input type="text" class="roscoXImageEdition" value="0" readonly />\
 							<input type="text" class="roscoYImageEdition" value="0" readonly />\
 						</div>\
 						<div class="roscoMetaData">\
-							<label for="roscoAlt'+letter+'">Alt: </label><input type="text" id="roscoAlt'+letter+'" class="roscoAlt" />\
-                            <label for="roscoAuthorEdition'+letter+'">' + _("Authorship") + ': </label><input type="text" id="roscoAuthorEdition'+letter+'" class="roscoAuthorEdition" />\
-							<a href="#" class="roscoLinkClose" title="'+_("Hide image")+'"><img src="' + path + "roscoClose.png" + '" alt="' + _("Minimize")+ '" class="roscoCloseImage"/></a>\
+							<label for="roscoAlt' + letter + '">Alt: </label><input type="text" id="roscoAlt' + letter + '" class="roscoAlt" />\
+                            <label for="roscoAuthorEdition' + letter + '">' + _("Authorship") + ': </label><input type="text" id="roscoAuthorEdition' + letter + '" class="roscoAuthorEdition" />\
+							<a href="#" class="roscoLinkClose" title="' + _("Hide image") + '"><img src="' + path + "roscoClose.png" + '" alt="' + _("Minimize") + '" class="roscoCloseImage"/></a>\
 						</div>\
 						<hr class="roscoSeparacion"/>\
 					</div>\
@@ -510,14 +509,14 @@ var $exeDevice = {
 			msgs = $exeDevice.msgs,
 			instructions = tinymce.editors[0].getContent(),
 			showMinimize = $('#roscoShowMinimize').is(':checked'),
-			showSolution = $('#roscoShowSolution').is(':checked'),		
+			showSolution = $('#roscoShowSolution').is(':checked'),
 			timeShowSolution = parseInt(clear($.trim($('#roscoTimeShowSolution').val()))),
 			durationGame = parseInt(clear($('#roscoDuration').val())),
 			numberTurns = parseInt(clear($('#roscoNumberTurns').val()));
-			itinerary=$exeAuthoring.iDevice.itinerary.getValues();
-			
-		if(!itinerary) return false;		
-			
+		itinerary = $exeAuthoring.iDevice.itinerary.getValues();
+
+		if (!itinerary) return false;
+
 		if (showSolution && timeShowSolution.length == 0) {
 			eXe.app.alert(msgs.msgEProvideTimeSolution);
 			return false;
@@ -578,7 +577,7 @@ var $exeDevice = {
 			var mType = types[i];
 			if (word.length > 0) {
 				if (mType == 0 && !(this.startContainsAll(letter, word, mType))) {
-					var message =  _("%1 does not start with the letter %2").replace('%1', word);
+					var message = _("%1 does not start with the letter %2").replace('%1', word);
 					message = message.replace('%2', letter);
 					eXe.app.alert(message);
 					return false;
@@ -630,7 +629,7 @@ var $exeDevice = {
 			'instructions': instructions,
 			'showSolution': showSolution,
 			'showMinimize': showMinimize,
-			'itinerary':itinerary,
+			'itinerary': itinerary,
 			'wordsGame': wordsGame
 		}
 		return data;
@@ -668,10 +667,10 @@ var $exeDevice = {
 		$('#roscoDataWord a.roscoLinkStart').on('click', function (e) {
 			e.preventDefault();
 			var imageStart = $(this).find('.roscoStartEdition').attr('src').indexOf('roscoContains.png') != -1 ? "roscoStart.png" : "roscoContains.png";
-            // Add an alternative text to the icon
-            var alt = _("The word starts with...");
-            if (imageStart=="roscoContains.png") alt = _("The word contains...");
-			$(this).find('.roscoStartEdition').attr('src', $exeDevice.iDevicePath + imageStart).attr("alt",alt);
+			// Add an alternative text to the icon
+			var alt = _("The word starts with...");
+			if (imageStart == "roscoContains.png") alt = _("The word contains...");
+			$(this).find('.roscoStartEdition').attr('src', $exeDevice.iDevicePath + imageStart).attr("alt", alt);
 		});
 
 		$('#roscoDataWord input.roscoURLImageEdition').on('change', function () {
@@ -694,15 +693,15 @@ var $exeDevice = {
 
 		$('#roscoDataWord a.roscoLinkSelectImage').on('click', function (e) {
 			e.preventDefault();
-			$(this).parent().siblings('.roscoImageBarEdition').slideToggle();
-			var $pater = $(this).parents('.roscoFileWordEdition').find('.roscoImageBarEdition');
-			var img = $pater.find('.roscoHomeImageEdition');
-			var url = $pater.find('.roscoURLImageEdition').val();
-			var alt = $pater.find('.roscoAlt').val();
-			var x = parseFloat($pater.find('.roscoXImageEdition').val());
+			var $pater = $(this).parent().siblings('.roscoImageBarEdition'),
+				img = $pater.find('.roscoHomeImageEdition'),
+				url = $pater.find('.roscoURLImageEdition').val(),
+				alt = $pater.find('.roscoAlt').val(),
+				y = parseFloat($pater.find('.roscoYImageEdition').val());
+			x = parseFloat($pater.find('.roscoXImageEdition').val());
 			x = x ? x : 0;
-			var y = parseFloat($pater.find('.roscoYImageEdition').val());
 			y = y ? y : 0;
+			$pater.slideToggle();
 			$exeDevice.showImage(img, url, x, y, alt, 0);
 		});
 
@@ -729,7 +728,7 @@ var $exeDevice = {
 				}
 			}
 		});
-		$exeAuthoring.iDevice.itinerary.addEvents();		
+		$exeAuthoring.iDevice.itinerary.addEvents();
 
 		$('#roscoShowSolution').on('change', function () {
 			var mark = $(this).is(':checked');
@@ -798,16 +797,16 @@ var $exeDevice = {
 		}
 	},
 	loadDateFile: function (game) {
-		
+
 		$exeAuthoring.iDevice.itinerary.setValues(game.itineray);
-		
+
 		$('#roscoShowMinimize').prop('checked', game.showMinimize);
 		$('#roscoDuration').val(game.durationGame)
 		$('#roscoNumberTurns').val(game.numberTurns);
 		$('#roscoShowSolution').prop('checked', game.showSolution);
 		$('#roscoTimeShowSolution').val(game.timeShowSolution);
 		$('#roscoTimeShowSolution').prop('disabled', !game.showSolution);
-		
+
 		var wordsGame = game.wordsGame;
 		$('.roscoWordEdition').each(function (index) {
 			$(this).val(wordsGame[index].word);
@@ -841,7 +840,7 @@ var $exeDevice = {
 			$(this).css('background-color', color);
 
 		});
-		
+
 		tinymce.editors[0].setContent(game.instructions);
 	},
 
