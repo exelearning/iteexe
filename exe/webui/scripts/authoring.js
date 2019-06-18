@@ -1043,11 +1043,12 @@ var $exeAuthoring = {
             },
             setValues : function(a){
             	$('#eXeGameShowClue').prop('checked', a.showClue);
-        		$('#eXeGameClue').val(a.clueGame)
+        		$('#eXeGameClue').val(a.clueGame);
         		$('#eXeGamePercentajeClue').val(a.percentageClue);
         		$('#eXeGameShowCodeAccess').prop('checked', a.showCodeAccess);
-        		$('#eXeGameCodeAccess').val(a.codeAccess)
+        		$('#eXeGameCodeAccess').val(a.codeAccess);
         		$('#eXeGameMessageCodeAccess').val(a.messageCodeAccess);
+        		$('#eXeGameClue').prop('disabled', !a.showClue);
     			$('#eXeGamePercentajeClue').prop('disabled', !a.showClue);
     			$('#eXeGameCodeAccess').prop('disabled', !a.showCodeAccess);
     			$('#eXeGameMessageCodeAccess').prop('disabled', !a.showCodeAccess);
