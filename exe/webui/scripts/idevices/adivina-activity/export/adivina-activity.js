@@ -29,6 +29,7 @@ var $eXeAdivina = {
     },
     options: [],
     hasSCORMbutton: false,
+    isScorm: false,
     isInExe: false,
     init: function () {
         this.activities = $('.adivina-IDevice');
@@ -38,37 +39,44 @@ var $eXeAdivina = {
             if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Adivina') + '</p>');
             return;
         }
+        if ($(".QuizTestIdevice .iDevice").length > 0) this.hasSCORMbutton = true;
         if (typeof ($exeAuthoring) != 'undefined') this.isInExe = true;
         this.idevicePath = this.isInExe ? "/scripts/idevices/adivina-activity/export/" : "";
-        $eXeAdivina.loadGame();
+        this.loadGame();
+        if ($("body").hasClass("exe-scorm")) this.loadSCORM_API_wrapper();
     },
+    loadSCORM_API_wrapper: function () {
+        if (typeof (pipwerks) == 'undefined') $exe.loadScript('SCORM_API_wrapper.js', '$eXeAdivina.loadSCOFunctions()');
+        else this.loadSCOFunctions();
+    },
+    loadSCOFunctions: function () {
+        if (typeof (exitPageStatus) == 'undefined') $exe.loadScript('SCOFunctions.js', '$eXeAdivina.enable()');
+    },
+
     loadGame: function () {
         $eXeAdivina.options = [];
-        $('.adivina-IDevice').each(function (i) {
+        $eXeAdivina.activities.each(function (i) {
             var dl = $(".adivina-DataGame", this),
                 imagesLink = $('.adivina-LinkImages', this),
-                mOption = $eXeAdivina.loadDataGame(dl, imagesLink);
+                mOption = $eXeAdivina.loadDataGame(dl, imagesLink),
+                msg = mOption.msgs.msgPlayStart;
+
             $eXeAdivina.options.push(mOption);
             var adivina = $eXeAdivina.createInterfaceAdivina(i);
             dl.before(adivina).remove();
-            var msg = mOption.msgs.msgPlayStart;
             $('#adivinaGameMinimize-' + i).hide();
             $('#adivinaGameContainer-' + i).hide();
-            if (!navigator.onLine) {
-                msg = mOption.msgs.msgNotNetwork;
-                $('#adivinaGameMinimize-' + i).css({
-                    'cursor': 'auto'
-                }).show();
-            } else if (mOption.showMinimize) {
+            if (mOption.showMinimize) {
                 $('#adivinaGameMinimize-' + i).css({
                     'cursor': 'pointer'
                 }).show();
-            } else {
+             } else {
                 $('#adivinaGameContainer-' + i).show();
             }
             $('#adivinaMessageMinimize-' + i).text(msg);
             $eXeAdivina.addEvents(i);
-        })
+        });
+
     },
     loadDataGame: function (data, imgsLink) {
         var json = data.text(),
@@ -176,10 +184,47 @@ var $eXeAdivina = {
                 </div>\
             </div>\
             <a href="#" class="adivina-LinkFullScreen" id="adivinaLinkFullScreen-' + instance + '"><img src="' + path + "adivinaFullScreen.png" + '" id="adivinaFullScreen-' + instance + '" class="adivina-Icons" alt="' + msgs.msgFullScreen + '" title="' + msgs.msgFullScreen + '"></a>\
-        </div>\
-    </div>\
+        </div>' + this.addButtonScore(instance) +
+            '</div>\
     ';
         return html;
+    },
+    addButtonScore: function (instance) {
+        var mOptions = $eXeAdivina.options[instance];
+        var butonScore = "";
+        if (mOptions.isScorm==2) {
+            var buttonText = mOptions.textButtonScorm;
+            if (buttonText != "") {
+                if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
+                    this.hasSCORMbutton = true;
+                    var fB = '<div class="adivina-get-score iDevice_buttons feedback-button js-required" id="adivinaButonScoreDiv-' + instance + '">';
+                    if (!this.isInExe) fB += '<form action="#" onsubmit="return false">';
+                    fB += '<p><input type="button" id="adivinaSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton" /></p>';
+                    if (!this.isInExe) fB += '</form>';
+                    fB += '</div>';
+                    butonScore = fB;
+                }
+            }
+        }
+        return butonScore;
+    },
+    sendScore: function (i,auto) {
+        var mOptions=$eXeAdivina.options[i],
+        message='';
+        if (mOptions.gameOver) {
+            var score=(mOptions.hits * 10)/mOptions.wordsGame.length
+            if(typeof(scorm)!='undefined' && typeof (scorm.SetScoreMax) !== 'undefined' && jQuery.isFunction(  scorm.SetScoreRaw ) ) {
+                scorm.SetScoreMax("10");
+                scorm.SetScoreRaw(score + "");
+                scorm.save();
+                message=$exe_i18n.yourScoreIs + ' '+score;
+            }else{
+                message=mOptions.msgs.msgScoreScorm;
+            }
+        }else{
+            message=(!$("body").hasClass("exe-scorm"))? mOptions.msgs.msgEndGameScore:mOptions.msgs.msgScoreScorm;
+        }
+        if(!auto) alert(message);
     },
     drawPhrase: function (phrase, definition, nivel, type, instance) {
         $('#adivina-Phrase-' + instance).find('.adivina-Word').remove();
@@ -326,7 +371,7 @@ var $eXeAdivina = {
             }
             return true;
         });
-        if (this.isInExe || $(window).width<800) {
+        if (this.isInExe || $(window).width < 800) {
             $('.adivina-LinkFullScreen').hide();
         }
         mOptions.livesLeft = mOptions.numberLives;
@@ -361,6 +406,10 @@ var $eXeAdivina = {
             e.preventDefault();
             $eXeAdivina.startGame(instance);
         });
+        $("#adivinaSendScore-" + instance).click(function () {
+            $eXeAdivina.sendScore(instance,false);
+            return false;
+        });
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
@@ -386,6 +435,7 @@ var $eXeAdivina = {
         mOptions.activeQuestion = -1;
         mOptions.validQuestions = mOptions.numberQuestions;
         mOptions.counter = 0;
+        mOptions.gameOver = false;
         mOptions.gameStarted = false;
         mOptions.livesLeft = mOptions.numberLives;
         mOptions.wordsGame = mOptions.optionsRamdon ? $eXeAdivina.shuffleAds(mOptions.wordsGame) : mOptions.wordsGame;
@@ -438,6 +488,7 @@ var $eXeAdivina = {
         var mOptions = $eXeAdivina.options[instance];
         mOptions.gameStarted = false;
         mOptions.gameActived = false;
+        mOptions.gameOver = true;
         clearInterval(mOptions.counterClock);
         $('#adivina-Phrase-' + instance).find('.adivina-Word').hide();
         $('#adivinaEdAnswer-' + instance).val('');
@@ -446,6 +497,11 @@ var $eXeAdivina = {
         $('#adivinaBtnReply-' + instance).prop('disabled', true);
         $('#adivinaBtnMoveOn-' + instance).prop('disabled', true);
         $('#adivinaEdAnswer-' + instance).prop('disabled', true);
+        if (mOptions.isScorm==1) {
+            if (type!=2){
+                $eXeAdivina.sendScore(instance,true);
+            }
+        }
     },
     showScoreGame: function (type, instance) {
         var mOptions = $eXeAdivina.options[instance],

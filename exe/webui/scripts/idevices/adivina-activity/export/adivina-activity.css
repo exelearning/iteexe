@@ -63,7 +63,7 @@
     margin: 15px auto;
     text-align: center;
     min-height: 40px;
-    font-size: 20px;
+    font-size: 16px;
     color: #071717;
     font-weight: 600;
 }
@@ -73,7 +73,7 @@
     color: red;
     cursor: pointer;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     z-index: 30000;
     text-decoration: none;
     text-align: center;
@@ -376,7 +376,8 @@
     min-width: 300px;
     height: 30px;
     line-height: 20px;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 600;
     text-align: center;
     padding: 0;
 }

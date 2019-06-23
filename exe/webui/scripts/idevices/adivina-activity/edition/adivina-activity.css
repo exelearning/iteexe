@@ -129,14 +129,20 @@
   margin: 5px 0;
   width: 99%;
   background-color: white;
-  border-radius: 7px;
+  border-radius: 4px;
+ 
+
 }
 
 #adivinaIdeviceForm .adivinaWordMutimediaEdition {
   width: 99%;
   margin: 10px auto;
   border: 1px solid #888888;
-  border-radius: 7px;
+  border-radius: 4px;
+  background: #f7f7f7;
+  -webkit-box-shadow: 0 10px 6px -6px #999999;
+  -moz-box-shadow: 0 10px 6px -6px #999;
+  box-shadow: 0 10px 6px -6px #999;
 }
 
 #adivinaIdeviceForm .adivinaWordMutimedia {
@@ -317,3 +323,12 @@
   margin-left: 3px;
   margin-right:  3px;
 }
+#adivinaSCORMoptions{visibility:hidden;margin-left:1.5em}
+label[for=adivinaActivitySCORM]{font-weight:bold}
+#adivinaSCORMinstructionsButton{display:none;color:#777;margin:10px 0 0 25px}
+#adivinaSCORMinstructionsButton ul{margin:1.5em 0 .7em 0;padding:0;list-style:none}
+#adivinaSCORMinstructionsButton ul li{margin:0 0 .5em 0;padding:0;list-style-image:none}
+
+#adivinaSCORMinstructionsAuto{display:none;color:#777;margin:10px 0 0 25px}
+#adivinaSCORMinstructionsAuto ul{margin:1.5em 0 .7em 0;padding:0;list-style:none}
+#adivinaSCORMinstructionsAuto ul li{margin:0 0 .5em 0;padding:0;list-style-image:none}

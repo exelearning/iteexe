@@ -49,7 +49,9 @@ var $exeDevice = {
         "msgFailures": _("It was not that! | Not well! | Not correct! | Sorry! | Error!"),
         "msgTryAgain": _("Must have %s% of correct answers to get the needed information. Try again!"),
         "msgWrote": _("Write the correct word and click on reply. If you doubt, click on move on"),
-        "msgNotNetwork": _("You can only play this game with internet connection. Check out your conecctivity")
+        "msgNotNetwork": _("You can only play this game with internet connection. Check out your conecctivity"),
+        "msgEndGameScore":_("You must complete the game to save your score"),
+        "msgScoreScorm":_("Only the score obtained in an SCORM export can be saved")
     },
     init: function () {
         this.setMessagesInfo();
@@ -127,7 +129,8 @@ var $exeDevice = {
             '</div>\
                   </fieldset>\
                     ' + $exeAuthoring.iDevice.itinerary.getFieldset() + '\
-					' + $exeDevice.getExportImportGame() + '\
+                    ' + $exeDevice.getExportImportGame() + '\
+                    ' + $exeDevice.getScorm() + '\
 			    </div>\
 			    <div class="exe-form-tab" title="' + _('Language settings') + '">\
 				    <p>' + _("Custom texts (or use the default ones):") + '</p>\
@@ -233,23 +236,10 @@ var $exeDevice = {
             $imagesLink.each(function (index) {
                 dataGame.wordsGame[index].url = $(this).attr('href');
             });
-            $('#adivinaTimeQuestion').val(dataGame.timeQuestion)
-            $('#adivinaOptionsRamdon').prop("checked", dataGame.optionsRamdon);
-            $('#adivinaShowMinimize').prop("checked", dataGame.showMinimize);
-            $('#adivinaShowSolution').prop("checked", dataGame.showSolution);
-            $('#adivinaTimeShowSolution').prop("disabled", !dataGame.showSolution);
-            $('#adivinaTimeShowSolution').val(dataGame.timeShowSolution);
-            $('adivinaTimeQuestion').val(dataGame.timeQuestion);
-            $('#adivinaUseLives').prop("checked", dataGame.useLives);
-            $('#adivinaNumberLives').val(dataGame.numberLives);
-            $('#adivinaNumberLives').prop("disabled", !dataGame.useLives);
-            $('#adivinaPercentageShow').val(dataGame.percentageShow);
-            $('.adivinaWordMutimediaEdition').remove();
-            $exeDevice.loadWords(dataGame);
-            $exeAuthoring.iDevice.itinerary.setValues(dataGame.itinerary);
+            $exeDevice.updateFieldGame(dataGame);
             var instructions = $(".adivina-instructions", wrapper);
             if (instructions.length == 1) $("#adivinaInstructions").val(instructions.html());
-            $('.adivina-Questions .adivinaImageBarEdition').slideUp();
+         
         }
     },
     getExportImportGame: function () {
@@ -271,6 +261,44 @@ var $exeDevice = {
                         </p>\
                     </div>\
 				</div>\
+			</fieldset>';
+        return html;
+    },
+    getScorm: function () {
+        var html = '\
+			<fieldset class="exe-fieldset exe-fieldset-closed exe-advanced">\
+				<legend><a href="#">' + _("Instructions SCORM") + '</a></legend>\
+                   <div>\
+                        <p id="adivinaSCORMNoSave">\
+                            <label for="adivinaSCORMNoSave"><input type="radio" name="adivinaSCORM" id="adivinaSCORMNoSave"  value="0"  checked /> ' + _("No save score") + '</label>\
+                        </p>\
+                        <p id="adivinaScormAutomatically">\
+                            <label for="adivinaSCORMAutoSave"><input type="radio" name="adivinaSCORM" id="adivinaSCORMAutoSave" value="1"  /> ' + _("Automatically save the result of the game at the end") + '</label>\
+                        </p>\
+                        <p id="adivinaActivitySCORMblock">\
+                        <label for="adivinaSCORMButtonSave"><input type="radio" name="adivinaSCORM" id="adivinaSCORMButtonSave" value="2" /> ' + _("Show save score button") + '</label>\
+                        <span id="adivinaSCORMoptions">\
+                            <label for="adivinaSCORMbuttonText">' + _("Button text") + ': </label>\
+                            <input type="text" max="100" name="adivinaSCORMbuttonText" id="adivinaSCORMbuttonText" value="' + _("Save score") + '" /> \
+                        </span>\
+                        </p>\
+                        <div id="adivinaSCORMinstructionsAuto">\
+							<ul>\
+								<li>' + _("The result of the game will be automatically changed at the end of the game when exporting as SCORM and while editing in eXeLearning.") + '</li>\
+								<li>' + _('Include only one adivina activity with a "save score" in the page.') + '</li>\
+								<li>' + _("this activity has to be the last adivina activity on the page (or it won't work).") + '</li>\
+								<li>' + _('Do not include a "SCORM Quiz" iDevice in the same page.') + '</li>\
+							</ul>\
+						</div>\
+                       <div id="adivinaSCORMinstructionsButton">\
+							<ul>\
+								<li>' + _("The button will only be displayed when exporting as SCORM and while editing in eXeLearning.") + '</li>\
+								<li>' + _('Include only one adivina activity with a "Save score" button in the page.') + '</li>\
+								<li>' + _("The activity with button has to be the last adivina activity on the page (or it won't work).") + '</li>\
+								<li>' + _('Do not include a "SCORM Quiz" iDevice in the same page.') + '</li>\
+							</ul>\
+                        </div>\
+				   </div>\
 			</fieldset>';
         return html;
     },
@@ -316,7 +344,9 @@ var $exeDevice = {
             numberLives = parseInt(clear($('#adivinaNumberLives').val())),
             timeQuestion = clear($.trim($('#adivinaTimeQuestion').val())),
             percentageShow = parseInt(clear($('#adivinaPercentageShow').val())),
-            itinerary = $exeAuthoring.iDevice.itinerary.getValues();
+            itinerary = $exeAuthoring.iDevice.itinerary.getValues(),
+            isScorm = 0,
+            textButtonScorm = "";
         if (!itinerary) return false;
         if (showSolution && timeShowSolution.length == 0) {
             eXe.app.alert($exeDevice.msgs.msgEProvideTimeSolution);
@@ -402,6 +432,15 @@ var $exeDevice = {
             }
             wordsGame.push(p);
         }
+        isScorm=parseInt($("input[type=radio][name='adivinaSCORM']:checked").val());
+        if(isScorm==2){
+            textButtonScorm = $("#adivinaSCORMbuttonText").val();
+            if (textButtonScorm == "") {
+                eXe.app.alert(_("Please write the button text."));
+                return false;
+            }
+        }
+
         var data = {
             'typeGame': 'Adivina',
             'instructions': instructions,
@@ -414,7 +453,9 @@ var $exeDevice = {
             'timeQuestion': timeQuestion,
             'percentageShow': percentageShow,
             'itinerary': itinerary,
-            'wordsGame': wordsGame
+            'wordsGame': wordsGame,
+            'isScorm': isScorm,
+            'textButtonScorm': textButtonScorm
         }
         return data;
     },
@@ -493,9 +534,8 @@ var $exeDevice = {
             var $pater = $(this).parent().siblings('.adivinaImageBarEdition'),
                 img = $pater.find('.adivinaHomeImageEdition'),
                 url = $pater.find('.adivinaURLImageEdition').val(),
-                x = $pater.find('.adivinaYImageEdition').val(),
-                y = $pater.find('.adivinaYImageEdition').val(),
-
+                x = parseFloat($pater.find('.adivinaXImageEdition').val()),
+                y = parseFloat($pater.find('.adivinaYImageEdition').val()),
                 alt = $pater.find('.adivinaAlt').val();
             $pater.slideToggle();
             main.showImage(img, url, x, y, alt, 0);
@@ -521,8 +561,6 @@ var $exeDevice = {
                 alt = $(this).parent().siblings(".adivinaMetaData").find('.adivinaAlt').val(),
                 x = parseFloat($(this).siblings('.adivinaXImageEdition').val()),
                 y = parseFloat($(this).siblings('.adivinaYImageEdition').val());
-            x = x ? x : 0;
-            y = y ? y : 0;
             $exeDevice.showImage(img, url, x, y, alt, 1);
         });
         $('.adivina-Questions').on('click', 'a.adivinaLinkAdd', function (e) {
@@ -543,7 +581,7 @@ var $exeDevice = {
             e.preventDefault();
             var $parentPanel = $(this).parents('.adivinaWordMutimediaEdition');
             if ($('.adivinaWordMutimediaEdition').length === 1) {
-                alert('Debe haber al menos una pregunta')
+                eXe.app.alert($exeDevice.msgs.msgEOneQuestion);
                 return;
             }
             $parentPanel.remove();
@@ -599,6 +637,35 @@ var $exeDevice = {
             this.value = this.value > 100 ? 100 : this.value;
             this.value = this.value < 0 ? 0 : this.value;
         });
+        $('input[type=radio][name="adivinaSCORM"]').on('change', function () {
+            $("#adivinaSCORMoptions,#adivinaSCORMinstructionsButton,#adivinaSCORMinstructionsAuto").hide();
+
+            switch ($(this).val()) {
+                case '0':
+                    break;
+                case '1':
+                    $("#adivinaSCORMinstructionsAuto").hide().css({
+                        opacity: 0,
+                        visibility: "visible"
+                    }).show().animate({
+                        opacity: 1
+                    }, 500);
+
+                    break;
+                case '2':
+                    $("#adivinaSCORMoptions,#adivinaSCORMinstructionsButton").hide().css({
+                        opacity: 0,
+                        visibility: "visible"
+                    }).show().animate({
+                        opacity: 1
+                    }, 500);
+
+                    break;
+
+            }
+        });
+
+
         $exeAuthoring.iDevice.itinerary.addEvents();
         if (window.File && window.FileReader && window.FileList && window.Blob) {
             $('#adivinaExportImport').show();
@@ -620,7 +687,7 @@ var $exeDevice = {
             $('#adivinaExportImport').hide();
         }
     },
-    loadDateFile: function (game) {
+    updateFieldGame: function (game) {
         $exeAuthoring.iDevice.itinerary.setValues(game.itinerary);
         $('#adivinaShowMinimize').prop('checked', game.showMinimize);
         $('#adivinaOptionsRamdon').prop('checked', game.optionsRamdon);
@@ -634,7 +701,20 @@ var $exeDevice = {
         $('#adivinaPercentageShow').val(game.percentageShow);
         $('.adivinaWordMutimediaEdition').remove();
         $exeDevice.loadWords(game);
-        tinymce.editors[0].setContent(game.instructions);
+        $("#adivinaSCORMoptions").css("visibility", "hidden");
+        $("#adivinaSCORMinstructionsButton").hide();
+        $("#adivinaSCORMinstructionsAuto").hide();
+        if (game.isScorm == 0){
+            $('#adivinaSCORMNoSave').prop('checked', true);
+        }else if (game.isScorm == 1) {
+            $('#adivinaSCORMAutoSave').prop('checked', true);
+            $('#adivinaSCORMinstructionsAuto').show();
+        } if (game.isScorm== 2) {
+            $('#adivinaSCORMButtonSave').prop('checked', true);
+            $('#adivinaSCORMbuttonText').val(game.textButtonScorm);
+            $('#adivinaSCORMoptions').css("visibility", "visible");
+            $('#adivinaSCORMinstructionsButton').show();
+        } 
         $('.adivina-Questions .adivinaImageBarEdition').slideUp();
 
     },
@@ -668,7 +748,8 @@ var $exeDevice = {
             eXe.app.alert($exeDevice.msgs.msgESelectFile);
             return;
         }
-        $exeDevice.loadDateFile(game);
+        $exeDevice.updateFieldGame(game);
+        tinymce.editors[0].setContent(game.instructions);
     },
     isJsonString: function (str) {
         try {
@@ -686,16 +767,16 @@ var $exeDevice = {
         $clonePanel.find('input.adivinaDefinitionEdition').val($parentPanel.find('input.adivinaDefinitionEdition').val());
         $clonePanel.find('input.adivinaURLImageEdition').val($parentPanel.find('input.adivinaURLImageEdition').val());
         $clonePanel.find('input.adivinaXImageEdition').val($parentPanel.find('input.adivinaXImageEdition').val());
-        $clonePanel.find('input.adivinaYImageEdition').val(parentPanel.find('input.adivinaYImageEdition').val());
+        $clonePanel.find('input.adivinaYImageEdition').val($parentPanel.find('input.adivinaYImageEdition').val());
         $clonePanel.find('input.adivinaAuthorEdition').val($parentPanel.find('input.adivinaAuthorEdition').val());
         $clonePanel.find('input.adivinaAlt').val($parentPanel.find('input.adivinaAlt').val());
 
         var $image = $clonePanel.find('img.adivinaHomeImageEdition'),
-            x = $clonePanel.find('input.adivinaXImageEdition').val(),
-            y = $clonePanel.find('input.adivinaYImageEdition').val(),
+            x = parseFloat($clonePanel.find('input.adivinaXImageEdition').val()),
+            y = parseFloat($clonePanel.find('input.adivinaYImageEdition').val()),
             url = $clonePanel.find('input.adivinaURLImageEdition').val(),
             alt = $clonePanel.find('input.adivinaAlt').val();
-
+        console.log(x, y, url, alt)
         if (url.length > 7) {
             $exeDevice.showImage($image, url, x, y, alt, 0);
         }
