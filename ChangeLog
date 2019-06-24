@@ -1,6 +1,6 @@
 intef-exe (3:2.4.1) lucid; urgency=medium
 
-* SDWeb
+  * SDWeb
     - [Export] Fix error when preview page (#418).
 
 
