@@ -1,3 +1,11 @@
+intef-exe (3:2.4.1) lucid; urgency=medium
+
+* SDWeb
+    - [Export] Fix error when preview page (#418).
+
+
+ -- eXeLearning <admin@exelearning.net>  Mon, 24 Jun 2019 10:01:15 +0200
+ 
 intef-exe (3:2.4) lucid; urgency=medium
 
   * Ignacio Gros
