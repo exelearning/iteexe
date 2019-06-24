@@ -52,7 +52,9 @@ var $eXeAdivina = {
     loadSCOFunctions: function () {
         if (typeof (exitPageStatus) == 'undefined') $exe.loadScript('SCOFunctions.js', '$eXeAdivina.enable()');
     },
-
+    enable:function(){
+        console.log('Cargado scofuntion')
+    },
     loadGame: function () {
         $eXeAdivina.options = [];
         $eXeAdivina.activities.each(function (i) {
@@ -81,6 +83,7 @@ var $eXeAdivina = {
     loadDataGame: function (data, imgsLink) {
         var json = data.text(),
             mOptions = $eXeAdivina.isJsonString(json);
+            mOptions.gameOver=false,
         imgsLink.each(function (index) {
             mOptions.wordsGame[index].url = $(this).attr('href');
         });
@@ -212,8 +215,8 @@ var $eXeAdivina = {
         var mOptions=$eXeAdivina.options[i],
         message='';
         if (mOptions.gameOver) {
-            var score=(mOptions.hits * 10)/mOptions.wordsGame.length
-            if(typeof(scorm)!='undefined' && typeof (scorm.SetScoreMax) !== 'undefined' && jQuery.isFunction(  scorm.SetScoreRaw ) ) {
+            var score=((mOptions.hits * 10)/mOptions.wordsGame.length).toFixed(2);
+            if(typeof(scorm)!='undefined' && typeof (scorm.SetScoreMax) !== 'undefined' && jQuery.isFunction(scorm.SetScoreRaw ) ) {
                 scorm.SetScoreMax("10");
                 scorm.SetScoreRaw(score + "");
                 scorm.save();
@@ -222,7 +225,8 @@ var $eXeAdivina = {
                 message=mOptions.msgs.msgScoreScorm;
             }
         }else{
-            message=(!$("body").hasClass("exe-scorm"))? mOptions.msgs.msgEndGameScore:mOptions.msgs.msgScoreScorm;
+            var hasClass=$("body").hasClass("exe-scorm");
+            message=(hasClass)? mOptions.msgs.msgEndGameScore:mOptions.msgs.msgScoreScorm;
         }
         if(!auto) alert(message);
     },
