@@ -50,7 +50,7 @@ var $exeDevice = {
         "msgTryAgain": _("Must have %s% of correct answers to get the needed information. Try again!"),
         "msgWrote": _("Write the correct word and click on reply. If you doubt, click on move on"),
         "msgNotNetwork": _("You can only play this game with internet connection. Check out your conecctivity"),
-        "msgEndGameScore":_("You must complete the game to save your score"),
+        "msgEndGameScore":_("Please start this activity before saving your score!"),
         "msgScoreScorm":_("Only the score obtained in an SCORM export can be saved")
     },
     init: function () {
@@ -273,7 +273,7 @@ var $exeDevice = {
                             <label for="adivinaSCORMNoSave"><input type="radio" name="adivinaSCORM" id="adivinaSCORMNoSave"  value="0"  checked /> ' + _("No save score") + '</label>\
                         </p>\
                         <p id="adivinaScormAutomatically">\
-                            <label for="adivinaSCORMAutoSave"><input type="radio" name="adivinaSCORM" id="adivinaSCORMAutoSave" value="1"  /> ' + _("Automatically save the result of the game at the end") + '</label>\
+                            <label for="adivinaSCORMAutoSave"><input type="radio" name="adivinaSCORM" id="adivinaSCORMAutoSave" value="1"  /> ' + _("Automatically save the result of the game") + '</label>\
                         </p>\
                         <p id="adivinaActivitySCORMblock">\
                         <label for="adivinaSCORMButtonSave"><input type="radio" name="adivinaSCORM" id="adivinaSCORMButtonSave" value="2" /> ' + _("Show save score button") + '</label>\
@@ -284,10 +284,10 @@ var $exeDevice = {
                         </p>\
                         <div id="adivinaSCORMinstructionsAuto">\
 							<ul>\
-								<li>' + _("The result of the game will be automatically changed at the end of the game when exporting as SCORM and while editing in eXeLearning.") + '</li>\
-								<li>' + _('Include only one adivina activity with a "save score" in the page.') + '</li>\
-								<li>' + _("this activity has to be the last adivina activity on the page (or it won't work).") + '</li>\
-								<li>' + _('Do not include a "SCORM Quiz" iDevice in the same page.') + '</li>\
+								<li>' + _("The score will be automatically saved in each question and at the end of the game.") + '</li>\
+								<li>' + _('Include only one Adivina activity with a "save score" in the page.') + '</li>\
+								<li>' + _("This activity has to be the last Adivina activity on the page (or it won't work).") + '</li>\
+								<li>' + _("Do not include other SCORM idevices on this page.") + '</li>\
 							</ul>\
 						</div>\
                        <div id="adivinaSCORMinstructionsButton">\
@@ -776,7 +776,6 @@ var $exeDevice = {
             y = parseFloat($clonePanel.find('input.adivinaYImageEdition').val()),
             url = $clonePanel.find('input.adivinaURLImageEdition').val(),
             alt = $clonePanel.find('input.adivinaAlt').val();
-        console.log(x, y, url, alt)
         if (url.length > 7) {
             $exeDevice.showImage($image, url, x, y, alt, 0);
         }

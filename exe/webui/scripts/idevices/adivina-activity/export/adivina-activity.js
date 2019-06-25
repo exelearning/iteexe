@@ -53,7 +53,7 @@ var $eXeAdivina = {
         if (typeof (exitPageStatus) == 'undefined') $exe.loadScript('SCOFunctions.js', '$eXeAdivina.enable()');
     },
     enable:function(){
-        console.log('Cargado scofuntion')
+        //console.log('Cargado scofuntion')
     },
     loadGame: function () {
         $eXeAdivina.options = [];
@@ -214,7 +214,7 @@ var $eXeAdivina = {
     sendScore: function (i,auto) {
         var mOptions=$eXeAdivina.options[i],
         message='';
-        if (mOptions.gameOver) {
+        if (mOptions.gameStarted || mOptions.gameOver) {
             var score=((mOptions.hits * 10)/mOptions.wordsGame.length).toFixed(2);
             if(typeof(scorm)!='undefined' && typeof (scorm.SetScoreMax) !== 'undefined' && jQuery.isFunction(scorm.SetScoreRaw ) ) {
                 scorm.SetScoreMax("10");
@@ -490,6 +490,7 @@ var $eXeAdivina = {
     },
     gameOver: function (type, instance) {
         var mOptions = $eXeAdivina.options[instance];
+        $eXeAdivina.showImage("", 0, 0, '', '', instance);
         mOptions.gameStarted = false;
         mOptions.gameActived = false;
         mOptions.gameOver = true;
@@ -600,10 +601,11 @@ var $eXeAdivina = {
 
     },
     showImage: function (url, x, y, author, alt, instance) {
+        console.log('autor',author);
         var $cursor = $('#adivinaCursor-' + instance),
             $noImage = $('#adivinaNoImage-' + instance),
             $Image = $('#adivinaImage-' + instance),
-            $Author = $('#adivinaAuthor-' + instance);
+            $Author = $('#adivinaPAuthor-' + instance);
         if ($.trim(url).length == 0) {
             $cursor.hide();
             $Image.hide();
@@ -692,6 +694,9 @@ var $eXeAdivina = {
             mOptions.activeCounter = true;
             $adivinaPNumber.text(mOptions.numberQuestions - mActiveQuestion);
         };
+        if (mOptions.isScorm==1) {
+            $eXeAdivina.sendScore(instance,true);
+        }
     },
     updateNumberQuestion: function (numq, instance) {
         var mOptions = $eXeAdivina.options[instance];
