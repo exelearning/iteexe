@@ -52,7 +52,7 @@ var $eXeAdivina = {
     loadSCOFunctions: function () {
         if (typeof (exitPageStatus) == 'undefined') $exe.loadScript('SCOFunctions.js', '$eXeAdivina.enable()');
     },
-    enable:function(){
+    enable: function () {
         //console.log('Cargado scofuntion')
     },
     loadGame: function () {
@@ -72,7 +72,7 @@ var $eXeAdivina = {
                 $('#adivinaGameMinimize-' + i).css({
                     'cursor': 'pointer'
                 }).show();
-             } else {
+            } else {
                 $('#adivinaGameContainer-' + i).show();
             }
             $('#adivinaMessageMinimize-' + i).text(msg);
@@ -83,7 +83,7 @@ var $eXeAdivina = {
     loadDataGame: function (data, imgsLink) {
         var json = data.text(),
             mOptions = $eXeAdivina.isJsonString(json);
-            mOptions.gameOver=false,
+        mOptions.gameOver = false;
         imgsLink.each(function (index) {
             mOptions.wordsGame[index].url = $(this).attr('href');
         });
@@ -107,9 +107,9 @@ var $eXeAdivina = {
             html = '';
         html += '<div class="adivina-MainContainer">\
         <div class="adivina-GameMinimize" id="adivinaGameMinimize-' + instance + '">\
-        <a href="#" class="adivina-LinkMinimize" id="adivinaLinkMinimize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + "adivinaIcon.png" + '" class="adivina-Icons adivina-IconMinimize"  alt="' + msgs.msgMaximize + '">\
-            <div class="adivina-MessageMinimize" id="adivinaMessageMinimize-' + instance + '"></div>\
-        </div></a>\
+            <a href="#" class="adivina-LinkMinimize" id="adivinaLinkMinimize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + "adivinaIcon.png" + '" class="adivina-Icons adivina-IconMinimize"  alt="' + msgs.msgMaximize + '">\
+            <div class="adivina-MessageMinimize" id="adivinaMessageMinimize-' + instance + '"></div></a>\
+        </div>\
         <div class="adivina-GameContainer" id="adivinaGameContainer-' + instance + '">\
             <div class="adivina-GameScoreBoard" id="adivinaGameScoreBoard-' + instance + '">\
                 <div class="adivina-GameScores" id="adivinaGameScores-' + instance + '">\
@@ -195,7 +195,7 @@ var $eXeAdivina = {
     addButtonScore: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
         var butonScore = "";
-        if (mOptions.isScorm==2) {
+        if (mOptions.isScorm == 2) {
             var buttonText = mOptions.textButtonScorm;
             if (buttonText != "") {
                 if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
@@ -211,24 +211,24 @@ var $eXeAdivina = {
         }
         return butonScore;
     },
-    sendScore: function (i,auto) {
-        var mOptions=$eXeAdivina.options[i],
-        message='';
+    sendScore: function (i, auto) {
+        var mOptions = $eXeAdivina.options[i],
+            message = '';
         if (mOptions.gameStarted || mOptions.gameOver) {
-            var score=((mOptions.hits * 10)/mOptions.wordsGame.length).toFixed(2);
-            if(typeof(scorm)!='undefined' && typeof (scorm.SetScoreMax) !== 'undefined' && jQuery.isFunction(scorm.SetScoreRaw ) ) {
+            var score = ((mOptions.hits * 10) / mOptions.wordsGame.length).toFixed(2);
+            if (typeof (scorm) != 'undefined' && typeof (scorm.SetScoreMax) !== 'undefined' && jQuery.isFunction(scorm.SetScoreRaw)) {
                 scorm.SetScoreMax("10");
                 scorm.SetScoreRaw(score + "");
                 scorm.save();
-                message=$exe_i18n.yourScoreIs + ' '+score;
-            }else{
-                message=mOptions.msgs.msgScoreScorm;
+                message = $exe_i18n.yourScoreIs + ' ' + score;
+            } else {
+                message = mOptions.msgs.msgScoreScorm;
             }
-        }else{
-            var hasClass=$("body").hasClass("exe-scorm");
-            message=(hasClass)? mOptions.msgs.msgEndGameScore:mOptions.msgs.msgScoreScorm;
+        } else {
+            var hasClass = $("body").hasClass("exe-scorm");
+            message = (hasClass) ? mOptions.msgs.msgEndGameScore : mOptions.msgs.msgScoreScorm;
         }
-        if(!auto) alert(message);
+        if (!auto) alert(message);
     },
     drawPhrase: function (phrase, definition, nivel, type, instance) {
         $('#adivina-Phrase-' + instance).find('.adivina-Word').remove();
@@ -411,7 +411,7 @@ var $eXeAdivina = {
             $eXeAdivina.startGame(instance);
         });
         $("#adivinaSendScore-" + instance).click(function () {
-            $eXeAdivina.sendScore(instance,false);
+            $eXeAdivina.sendScore(instance, false);
             return false;
         });
     },
@@ -502,9 +502,9 @@ var $eXeAdivina = {
         $('#adivinaBtnReply-' + instance).prop('disabled', true);
         $('#adivinaBtnMoveOn-' + instance).prop('disabled', true);
         $('#adivinaEdAnswer-' + instance).prop('disabled', true);
-        if (mOptions.isScorm==1) {
-            if (type!=2){
-                $eXeAdivina.sendScore(instance,true);
+        if (mOptions.isScorm == 1) {
+            if (type != 2) {
+                $eXeAdivina.sendScore(instance, true);
             }
         }
     },
@@ -601,7 +601,6 @@ var $eXeAdivina = {
 
     },
     showImage: function (url, x, y, author, alt, instance) {
-        console.log('autor',author);
         var $cursor = $('#adivinaCursor-' + instance),
             $noImage = $('#adivinaNoImage-' + instance),
             $Image = $('#adivinaImage-' + instance),
@@ -694,8 +693,8 @@ var $eXeAdivina = {
             mOptions.activeCounter = true;
             $adivinaPNumber.text(mOptions.numberQuestions - mActiveQuestion);
         };
-        if (mOptions.isScorm==1) {
-            $eXeAdivina.sendScore(instance,true);
+        if (mOptions.isScorm == 1) {
+            $eXeAdivina.sendScore(instance, true);
         }
     },
     updateNumberQuestion: function (numq, instance) {
@@ -738,7 +737,7 @@ var $eXeAdivina = {
             type = $eXeAdivina.updateScore(solution == answord, instance),
             percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100;
         mOptions.activeCounter = false;
-        if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
+        if (mOptions.itinerary.showClue && (percentageHits >= parseInt(mOptions.itinerary.percentageClue))) {
             $eXeAdivina.gameOver(2, instance);
             return;
         }

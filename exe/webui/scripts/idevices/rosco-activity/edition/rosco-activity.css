@@ -12,7 +12,7 @@
   font-size: 14px;
 }
 
-#roscoIdeviceForm .roscoSeparacion {
+#roscoIdeviceForm .roscoSeparation {
   margin: 15px auto;
   color: #c0c0c0;
 }
@@ -76,6 +76,17 @@
   width: 32px;
   height: 32px;
   min-width: 32px;
+  margin: 0 3px;
+  
+}
+
+#roscoIdeviceForm .roscoLinkClose,
+#roscoIdeviceForm .roscoLinkSelectImage,
+#roscoIdeviceForm .roscoSelectImageEdition,
+#roscoIdeviceForm .roscoCloseImage  {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
   margin: 0 3px;
   
 }
@@ -227,3 +238,13 @@
 border-right:none;
 }
 .exe-form-tabs .exe-form-active-tab{color:#000;background:#FFF;font-weight:bold}
+
+#roscoSCORMoptions{visibility:hidden;margin-left:1.5em}
+label[for=roscoActivitySCORM]{font-weight:bold}
+#roscoSCORMinstructionsButton{display:none;color:#777;margin:10px 0 0 25px}
+#roscoSCORMinstructionsButton ul{margin:1.5em 0 .7em 0;padding:0;list-style:none}
+#roscoSCORMinstructionsButton ul li{margin:0 0 .5em 0;padding:0;list-style-image:none}
+
+#roscoSCORMinstructionsAuto{display:none;color:#777;margin:10px 0 0 25px}
+#roscoSCORMinstructionsAuto ul{margin:1.5em 0 .7em 0;padding:0;list-style:none}
+#roscoSCORMinstructionsAuto ul li{margin:0 0 .5em 0;padding:0;list-style-image:none}

@@ -50,8 +50,8 @@ var $exeDevice = {
         "msgTryAgain": _("Must have %s% of correct answers to get the needed information. Try again!"),
         "msgWrote": _("Write the correct word and click on reply. If you doubt, click on move on"),
         "msgNotNetwork": _("You can only play this game with internet connection. Check out your conecctivity"),
-        "msgEndGameScore":_("Please start this activity before saving your score!"),
-        "msgScoreScorm":_("Only the score obtained in an SCORM export can be saved")
+        "msgEndGameScore": _("Please start this activity before saving your score!"),
+        "msgScoreScorm": _("Only the score obtained in an SCORM export can be saved")
     },
     init: function () {
         this.setMessagesInfo();
@@ -124,13 +124,13 @@ var $exeDevice = {
                     <fieldset class="exe-fieldset">\
 						    <legend><a href="#">' + _("Words/Phrases") + '</a></legend>\
                             <div class="adivina-Questions">\
-                                <div id="adivinaInitQuestions" class="adivina-InitQuestions"></div>' +
-            $exeDevice.getDataWord(0) +
-            '</div>\
+                                <div id="adivinaInitQuestions" class="adivina-InitQuestions"></div>\
+                                ' + this.getDataWord(0) + '\
+                </div>\
                   </fieldset>\
-                    ' + $exeAuthoring.iDevice.itinerary.getFieldset() + '\
-                    ' + $exeDevice.getExportImportGame() + '\
-                    ' + $exeDevice.getScorm() + '\
+                    ' + this.itinerary.getFieldset() + '\
+                    ' + this.getScorm() + '\
+                    ' + this.getExportImportGame() + '\
 			    </div>\
 			    <div class="exe-form-tab" title="' + _('Language settings') + '">\
 				    <p>' + _("Custom texts (or use the default ones):") + '</p>\
@@ -140,11 +140,11 @@ var $exeDevice = {
 			';
 
         var field = $("textarea.jsContentEditor").eq(0),
-            jsui = $exeDevice.iDevicePath + 'jquery-ui.min.js';
+            jsui = this.iDevicePath + 'jquery-ui.min.js';
         field.before(html);
         this.enableTabs("adivinaIdeviceForm");
         this.loadPreviousValues(field);
-        if (!window.jQuery.ui) $exeDevice.loadScriptUI()
+        if (!window.jQuery.ui) this.loadScriptUI()
         else $exe.loadScript(jsui, '$exeDevice.loadScriptUI()');
 
     },
@@ -209,15 +209,15 @@ var $exeDevice = {
                                    <a href="#" class="adivinaLinkClose" title="' + _("Hide image") + '"><img src="' + path + "adivinaClose.png" + '" alt="' + _("Minimize") + '" class="adivinaButtonImage"/></a>\
                                 </div>\
                             </div>\
-                        </div>'
+                        </div>';
         return fileWord;
     },
 
     getCuestionDefault: function () {
         var p = new Object();
         p.word = '';
-        p.definition = '',
-            p.type = 0;
+        p.definition = '';
+        p.type = 0;
         p.url = '';
         p.x = 0;
         p.y = 0;
@@ -239,7 +239,6 @@ var $exeDevice = {
             $exeDevice.updateFieldGame(dataGame);
             var instructions = $(".adivina-instructions", wrapper);
             if (instructions.length == 1) $("#adivinaInstructions").val(instructions.html());
-         
         }
     },
     getExportImportGame: function () {
@@ -252,8 +251,10 @@ var $exeDevice = {
 					<div class="exe-idevice-info">' + msg + '</div>\
 					<div id="adivinaExportImport">\
                         <p>\
+                            <form method="POST">\
                             <label for="adivinaImportGame">' + _("Load game") + ': </label>\
                             <input type="file" name="adivinaImportGame" id="adivinaImportGame" />\
+                            </form>\
                         </p>\
                         <p>\
                             <label for="adivinaExportGame">' + _("Save game") + ': </label>\
@@ -273,7 +274,7 @@ var $exeDevice = {
                             <label for="adivinaSCORMNoSave"><input type="radio" name="adivinaSCORM" id="adivinaSCORMNoSave"  value="0"  checked /> ' + _("No save score") + '</label>\
                         </p>\
                         <p id="adivinaScormAutomatically">\
-                            <label for="adivinaSCORMAutoSave"><input type="radio" name="adivinaSCORM" id="adivinaSCORMAutoSave" value="1"  /> ' + _("Automatically save the result of the game") + '</label>\
+                            <label for="adivinaSCORMAutoSave"><input type="radio" name="adivinaSCORM" id="adivinaSCORMAutoSave" value="1"  /> ' + _("Result of the game is automatically saved") + '</label>\
                         </p>\
                         <p id="adivinaActivitySCORMblock">\
                         <label for="adivinaSCORMButtonSave"><input type="radio" name="adivinaSCORM" id="adivinaSCORMButtonSave" value="2" /> ' + _("Show save score button") + '</label>\
@@ -284,10 +285,9 @@ var $exeDevice = {
                         </p>\
                         <div id="adivinaSCORMinstructionsAuto">\
 							<ul>\
-								<li>' + _("The score will be automatically saved in each question and at the end of the game.") + '</li>\
-								<li>' + _('Include only one Adivina activity with a "save score" in the page.') + '</li>\
-								<li>' + _("This activity has to be the last Adivina activity on the page (or it won't work).") + '</li>\
-								<li>' + _("Do not include other SCORM idevices on this page.") + '</li>\
+								<li>' + _("The score will be automatically saved with each questions and at the end of the game.") + '</li>\
+								<li>' + _('Include only one activity with a "save score" in the page.') + '</li>\
+								<li>' + _('Do not include a "SCORM Quiz" iDevice in the same page.') + '</li>\
 							</ul>\
 						</div>\
                        <div id="adivinaSCORMinstructionsButton">\
@@ -344,7 +344,8 @@ var $exeDevice = {
             numberLives = parseInt(clear($('#adivinaNumberLives').val())),
             timeQuestion = clear($.trim($('#adivinaTimeQuestion').val())),
             percentageShow = parseInt(clear($('#adivinaPercentageShow').val())),
-            itinerary = $exeAuthoring.iDevice.itinerary.getValues(),
+            //itinerary = $exeAuthoring.iDevice.itinerary.getValues(),
+            itinerary = $exeDevice.itinerary.getValues(),
             isScorm = 0,
             textButtonScorm = "";
         if (!itinerary) return false;
@@ -386,10 +387,10 @@ var $exeDevice = {
         }
         var types = [];
         for (var i = 0; i < words.length; i++) {
-            var word = clear($.trim(words[i]).toUpperCase());
-            var definition = clear($.trim(definitions[i]));
-            var url = $.trim(urls[i]);
-            var mType = 0;
+            var word = clear($.trim(words[i]).toUpperCase()),
+                definition = clear($.trim(definitions[i])),
+                url = $.trim(urls[i]),
+                mType = 0;
             if (word.length == 0) {
                 eXe.app.alert($exeDevice.msgs.msgEProvideWord);
                 return false;
@@ -432,8 +433,8 @@ var $exeDevice = {
             }
             wordsGame.push(p);
         }
-        isScorm=parseInt($("input[type=radio][name='adivinaSCORM']:checked").val());
-        if(isScorm==2){
+        isScorm = parseInt($("input[type=radio][name='adivinaSCORM']:checked").val());
+        if (isScorm == 2) {
             textButtonScorm = $("#adivinaSCORMbuttonText").val();
             if (textButtonScorm == "") {
                 eXe.app.alert(_("Please write the button text."));
@@ -626,20 +627,19 @@ var $exeDevice = {
             this.value = this.value > 9 ? 9 : this.value;
             this.value = this.value < 1 ? 1 : this.value;
         });
-        $('#').on('keyup', function () {
+        $('#adivinaPercentageShow').on('keyup', function () {
             var v = this.value;
             v = v.replace(/\D/g, '');
             v = v.substring(0, 3);
             this.value = v;
         });
         $('#adivinaPercentageShow').on('focusout', function () {
-            this.value = this.value.trim() == '' ? 3 : this.value;
+            this.value = this.value.trim() == '' ? 35 : this.value;
             this.value = this.value > 100 ? 100 : this.value;
             this.value = this.value < 0 ? 0 : this.value;
         });
         $('input[type=radio][name="adivinaSCORM"]').on('change', function () {
             $("#adivinaSCORMoptions,#adivinaSCORMinstructionsButton,#adivinaSCORMinstructionsAuto").hide();
-
             switch ($(this).val()) {
                 case '0':
                     break;
@@ -661,12 +661,10 @@ var $exeDevice = {
                     }, 500);
 
                     break;
-
             }
         });
-
-
-        $exeAuthoring.iDevice.itinerary.addEvents();
+        //$exeAuthoring.iDevice.itinerary.addEvents();
+        $exeDevice.itinerary.addEvents();
         if (window.File && window.FileReader && window.FileList && window.Blob) {
             $('#adivinaExportImport').show();
             $('#adivinaImportGame').on('change', function (e) {
@@ -688,7 +686,8 @@ var $exeDevice = {
         }
     },
     updateFieldGame: function (game) {
-        $exeAuthoring.iDevice.itinerary.setValues(game.itinerary);
+        //$exeAuthoring.iDevice.itinerary.setValues(game.itinerary);
+        $exeDevice.itinerary.setValues(game.itinerary);
         $('#adivinaShowMinimize').prop('checked', game.showMinimize);
         $('#adivinaOptionsRamdon').prop('checked', game.optionsRamdon);
         $('#adivinaUseLives').prop('checked', game.useLives);
@@ -704,29 +703,29 @@ var $exeDevice = {
         $("#adivinaSCORMoptions").css("visibility", "hidden");
         $("#adivinaSCORMinstructionsButton").hide();
         $("#adivinaSCORMinstructionsAuto").hide();
-        if (game.isScorm == 0){
+        if (game.isScorm == 0) {
             $('#adivinaSCORMNoSave').prop('checked', true);
-        }else if (game.isScorm == 1) {
+        } else if (game.isScorm == 1) {
             $('#adivinaSCORMAutoSave').prop('checked', true);
             $('#adivinaSCORMinstructionsAuto').show();
-        } if (game.isScorm== 2) {
+        }
+        if (game.isScorm == 2) {
             $('#adivinaSCORMButtonSave').prop('checked', true);
             $('#adivinaSCORMbuttonText').val(game.textButtonScorm);
             $('#adivinaSCORMoptions').css("visibility", "visible");
             $('#adivinaSCORMinstructionsButton').show();
-        } 
+        }
         $('.adivina-Questions .adivinaImageBarEdition').slideUp();
-
     },
     exportGame: function () {
         var dataGame = this.validateData();
         if (!dataGame) {
             return false;
         }
-        var blob = JSON.stringify(dataGame);
-        var newBlob = new Blob([blob], {
-            type: "text/plain"
-        })
+        var blob = JSON.stringify(dataGame),
+            newBlob = new Blob([blob], {
+                type: "text/plain"
+            });
         if (window.navigator && window.navigator.msSaveOrOpenBlob) {
             window.navigator.msSaveOrOpenBlob(newBlob);
             return;
@@ -857,6 +856,106 @@ var $exeDevice = {
         var wrapper = $("<div></div>");
         wrapper.html(str);
         return wrapper.text();
+    },
+    // Gamification (itinerary) //Add to tester. 2.4.1
+    itinerary: {
+        getFieldset: function () {
+            var html = '\
+                <fieldset class="exe-fieldset exe-fieldset-closed">\
+                    <legend><a href="#">' + _("Itinerary") + '</a></legend>\
+                    <div>\
+                        <p class="exe-block-info exe-block-dismissible">' + ("May be necessary to enter a password to access this game. May also show a key word by reaching a presestablished percentage of hits. Use these keys to create an itinerary of challenges: It would not be possible to access a new challenge until you get the key or the solution to a problem.") + ' <a href="#" class="exe-block-close" title="' + _("Hide") + '"><span class="sr-av">' + _("Hide") + ' </span>×</a></p>\
+                        <p>\
+                            <label for="eXeGameShowCodeAccess"><input type="checkbox" id="eXeGameShowCodeAccess">' + _("Access code is required") + '</label>\
+                        </p>\
+                        <p style="margin-left:1.4em;margin-bottom:1.5em">\
+                            <label for="eXeGameCodeAccess" id="labelCodeAccess">' + _("Access code") + ':</label>\
+                            <input type="text" name="eXeGameCodeAccess" id="eXeGameCodeAccess"  maxlength="40" disabled />\
+                            <label for="eXeGameMessageCodeAccess" id="labelMessageAccess">' + _("Question") + ':</label>\
+                            <input type="text" name="eXeGameMessageCodeAccess" id="eXeGameMessageCodeAccess" maxlength="200"/ disabled> \
+                        </p>\
+                        <p>\
+                            <label for="eXeGameShowClue"><input type="checkbox" id="eXeGameShowClue">' + _("Show a message or password") + '</label>\
+                        </p>\
+                        <div style="margin-left:1.4em;margin-bottom:1.5em">\
+                            <p>\
+                                <label for="eXeGameClue">' + _("Message") + ':</label>\
+                                <input type="text" name="eXeGameClue" id="eXeGameClue"  maxlength="50" disabled>\
+                            </p>\
+                            <p>\
+                                <label for="eXeGamePercentajeClue" id="labelPercentajeClue">' + _("Percentage of hits needed to display the message") + ':</label>\
+                                <select id="eXeGamePercentajeClue" disabled>\
+                                    <option value="10">10%</option>\
+                                    <option value="20">20%</option>\
+                                    <option value="30">30%</option>\
+                                    <option value="40" selected>40%</option>\
+                                    <option value="50">50%</option>\
+                                    <option value="60">60%</option>\
+                                    <option value="70">70%</option>\
+                                    <option value="80">80%</option>\
+                                    <option value="90">90%</option>\
+                                    <option value="100">100%</option>\
+                                </select>\
+                            </p>\
+                        </div>\
+                    </div>\
+                </fieldset>';
+            return html;
+        },
+        getValues: function () {
+            var showClue = $('#eXeGameShowClue').is(':checked'),
+                clueGame = $.trim($('#eXeGameClue').val()),
+                percentageClue = parseInt($('#eXeGamePercentajeClue').children("option:selected").val()),
+                showCodeAccess = $('#eXeGameShowCodeAccess').is(':checked'),
+                codeAccess = $.trim($('#eXeGameCodeAccess').val()),
+                messageCodeAccess = $.trim($('#eXeGameMessageCodeAccess').val());
+
+            if (showClue && clueGame.length == 0) {
+                eXe.app.alert(_("You must write a clue"));
+                return false;
+            }
+            if (showCodeAccess && codeAccess.length == 0) {
+                eXe.app.alert(_("You must provide the code to play this game"));
+                return false;
+            }
+            if (showCodeAccess && messageCodeAccess.length == 0) {
+                eXe.app.alert(_("You must provide how to obtain the code to play this game"));
+                return false;
+            }
+            var a = {
+                'showClue': showClue,
+                'clueGame': clueGame,
+                'percentageClue': percentageClue,
+                'showCodeAccess': showCodeAccess,
+                'codeAccess': codeAccess,
+                'messageCodeAccess': messageCodeAccess
+            }
+            return a;
+        },
+        setValues: function (a) {
+            $('#eXeGameShowClue').prop('checked', a.showClue);
+            $('#eXeGameClue').val(a.clueGame);
+            $('#eXeGamePercentajeClue').val(a.percentageClue);
+            $('#eXeGameShowCodeAccess').prop('checked', a.showCodeAccess);
+            $('#eXeGameCodeAccess').val(a.codeAccess);
+            $('#eXeGameMessageCodeAccess').val(a.messageCodeAccess);
+            $('#eXeGameClue').prop('disabled', !a.showClue);
+            $('#eXeGamePercentajeClue').prop('disabled', !a.showClue);
+            $('#eXeGameCodeAccess').prop('disabled', !a.showCodeAccess);
+            $('#eXeGameMessageCodeAccess').prop('disabled', !a.showCodeAccess);
+        },
+        addEvents: function () {
+            $('#eXeGameShowClue').on('change', function () {
+                var mark = $(this).is(':checked');
+                $('#eXeGameClue').prop('disabled', !mark);
+                $('#eXeGamePercentajeClue').prop('disabled', !mark);
+            });
+            $('#eXeGameShowCodeAccess').on('change', function () {
+                var mark = $(this).is(':checked');
+                $('#eXeGameCodeAccess').prop('disabled', !mark);
+                $('#eXeGameMessageCodeAccess').prop('disabled', !mark);
+            });
+        }
     },
     getDataWordClone: function (i) {
         var path = $exeDevice.iDevicePath,

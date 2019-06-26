@@ -1,5 +1,18 @@
 /* Rosco  export */
 
+.rosco-GameMinimize a:link, .rosco-GameMinimize a:link, .rosco-GameMinimize a:visited, .rosco-GameMinimize a:focus {
+    color: #f05565;
+    text-decoration: none;
+    outline: 0;
+    border: none;
+    
+}
+
+.rosco-MainContainer a:link, .rosco-MainContainer a:link, .rosco-MainContainer a:visited, .rosco-MainContainer a:focus {
+    text-decoration: none;
+    outline: 0;
+    border: none;
+} 
 .rosco-Idevice {
     height: auto !important;
     min-height: 190px;
@@ -8,16 +21,35 @@
     background-color: #ffffff;
 }
 
+.rosco-LinkMaximize, .rosco-LinkCircle {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
 .rosco-Idevice dl {
     display: none;
 }
-
+.rosco-Main{
+    width: 400px;
+    margin: 15px auto;
+}
 .rosco-MainContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    margin: 15px auto;
+    width: 100%;
+
+}
+.rosco-LinkMinimize {
+    font: normal 14pt arial, sans-serif;
+    width: 200px;
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 .rosco-Icon {
@@ -97,7 +129,6 @@
 }
 
 .rosco-GameScoreBoard {
-    display: flex;
     width: 100%;
     height: 24px;
     margin: 10px 0;
@@ -110,52 +141,57 @@
     font-size: 1.4em;
     font-weight: bold;
 }
-
-.rosco-GameScores {
-    width: 185px;
-    height: 24px;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.rosco-ResultsGame {
-    display: flex;
-    width: 70px;
-    height: 24px;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-}
-
 .rosco-TimeTurn {
-    width: 180px;
+    width: 165px;
     height: 24px;
     margin: 0 3px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.rosco-GameScores {
+    width: 160px;
+    height: 24px;
+    margin: 0;
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    margin-right:40px;
+}
+
+.rosco-ResultsGame {
+    display: flex;
+    width: 60px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+}
+.rosco-ResultsGame p{
+    width: 35px;
+    text-align: center;
+}
+
+
 
 .rosco-DurationGame {
     width: 90px;
     height: 24px;
-    margin-right: 10px;
+    margin-right: 5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .rosco-DurationGame p {
-    width: 50px;
+    width: 75px;
     margin-right: 5px;
+    text-align: center;
 }
 
 .rosco-TurnIcons, .rosco-clockIcons, .rosco-UpArrow, .rosco-TypeGame, .rosco-HitIcons, .rosco-HitIcons, .rosco-ErrorIcons {
     width: 24px;
     height: 24px;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .rosco-UpArrow {
@@ -270,6 +306,13 @@
 .rosco-TypeDefinition p {
     font-weight: bold;
     font-size: 20px;
+    color: #1c1b1b
+}
+
+.rosco-TypeDefinition p a {
+    font-weight: bold;
+    font-size: 20px;
+    color: #ff0000
 }
 
 .rosco-Definition {
@@ -385,7 +428,7 @@
 }
 
 @media screen and (max-width: 500px) {
-    .rosco-MainContainer {
+    .rosco-Main {
         width: 300px;
     }
     .rosco-ResultsGame {
@@ -461,7 +504,7 @@
     .rosco-Definition p {
         font-size: 14px;
     }
-    .rosco-TypeDefinition p {
+    .rosco-TypeDefinition p a {
         font-size: 16px;
         padding: 0 2px;
     }

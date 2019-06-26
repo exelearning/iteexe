@@ -10,7 +10,6 @@
 var $exeDevice = {
 	iDevicePath: "/scripts/idevices/rosco-activity/edition/",
 	msgs: {},
-
 	ci18n: {
 		"msgReady": _("Ready?"),
 		"msgStartGame": _("Click here to start"),
@@ -45,8 +44,9 @@ var $exeDevice = {
 		"msgWrote": _("Write the correct word and click on reply. If you doubt, click on move on"),
 		"msgNotNetwork": _("You can only play this game with internet connection. Check out your conecctivity"),
 		"msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
-		"msgFailures": _("It was not that! | Not well! | Not correct! | Sorry! | Error!")
-
+		"msgFailures": _("It was not that! | Not well! | Not correct! | Sorry! | Error!"),
+		"msgEndGameScore": _("Please start this activity before saving your score!"),
+		"msgScoreScorm": _("Only the score obtained in an SCORM export can be saved")
 	},
 	colors: {
 		black: "#1c1b1b",
@@ -78,8 +78,8 @@ var $exeDevice = {
 
 	},
 	createForm: function () {
-		var path = $exeDevice.iDevicePath;
-		var wordInstructions = _('Provide a word and its definition. May toggle between: "Word starts" or "Word contains", by clicking on %s');
+		var path = this.iDevicePath,
+			wordInstructions = _('Provide a word and its definition. May toggle between: "Word starts" or "Word contains", by clicking on %s');
 		wordInstructions = wordInstructions.replace("%s", '<img src="' + path + "roscoIcoStart.png" + '" alt="' + _("Start/Contain") + '" title="' + _("Start/Contain") + '" />')
 		var html = '\
 			<div id="roscoIdeviceForm">\
@@ -118,11 +118,12 @@ var $exeDevice = {
 					<fieldset class="exe-fieldset">\
 						<legend><a href="#">' + _("Words") + '</a></legend>\
 						<div id="roscoDataWord">\
-                            <div class="exe-idevice-info">' + wordInstructions + '</div>' +
-			this.getWords().join('') + '\
+                            <div class="exe-idevice-info">' + wordInstructions + '</div>\
+							' + this.getWords().join('') + '\
                         </div>\
 					</fieldset>\
-					' + $exeAuthoring.iDevice.itinerary.getFieldset() + '\
+					' + this.itinerary.getFieldset() + '\
+					' + this.getScorm() + '\
 					' + this.getExportImportGame() + '\
 				</div>\
 				<div class="exe-form-tab" title="' + _('Language settings') + '">\
@@ -135,17 +136,15 @@ var $exeDevice = {
 		field.before(html);
 		this.enableTabs("roscoIdeviceForm");
 		this.loadPreviousValues(field);
-
 	},
 	getLanguageFields: function () {
-		var html = "";
-		var fields = this.ci18n;
+		var html = "",
+			fields = this.ci18n;
 		for (var i in fields) {
 			html += '<p class="ci18n"><label for="ci18n_' + i + '">' + fields[i] + '</label> <input type="text" name="ci18n_' + i + '" id="ci18n_' + i + '" value="' + fields[i] + '" /></p>'
 		}
 		return html;
 	},
-	// To review (this should be common)
 	enableTabs: function (id) {
 		var tabs = $("#" + id + " .exe-form-tab");
 		var list = '';
@@ -177,9 +176,7 @@ var $exeDevice = {
 				return false;
 			});
 		}
-
 	},
-
 	getExportImportGame: function () {
 		var msg = _("You can export this game to a JSON file so you can later use it in an iDevice of the same type. You can also use it in %s and you can import games from %s and use then here.");
 		msg = msg.replace(/%s/g, '<a href="https://quext.educarex.es/" target="_blank" rel="noopener noreferrer">QuExt</a>');
@@ -189,9 +186,11 @@ var $exeDevice = {
 				<div>\
 					<div class="exe-idevice-info">' + msg + '</div>\
 					<div id="roscoExportImport">\
-                        <p>\
-                            <label for="roscoImportGame">' + _("Load game") + ': </label>\
-                            <input type="file" name="roscoImportGame" id="roscoImportGame" />\
+						<p>\
+						    <form method="POST">\
+								<label for="roscoImportGame">' + _("Load game") + ': </label>\
+								<input type="file" name="roscoImportGame" id="roscoImportGame" />\
+							</form>\
                         </p>\
                         <p>\
                             <label for="roscoExportGame">' + _("Save game") + ': </label>\
@@ -201,6 +200,106 @@ var $exeDevice = {
 				</div>\
 			</fieldset>';
 		return html;
+	},
+	getScorm: function () {
+		var html = '\
+			<fieldset class="exe-fieldset exe-fieldset-closed exe-advanced">\
+				<legend><a href="#">' + _("Instructions SCORM") + '</a></legend>\
+                   <div>\
+                        <p id="roscoSCORMNoSave">\
+                            <label for="roscoSCORMNoSave"><input type="radio" name="roscoSCORM" id="roscoSCORMNoSave"  value="0"  checked /> ' + _("No save score") + '</label>\
+                        </p>\
+                        <p id="roscoScormAutomatically">\
+                            <label for="roscoSCORMAutoSave"><input type="radio" name="roscoSCORM" id="roscoSCORMAutoSave" value="1"  /> ' + _("Result of the game is automatically saved") + '</label>\
+                        </p>\
+                        <p id="roscoActivitySCORMblock">\
+                        <label for="roscoSCORMButtonSave"><input type="radio" name="roscoSCORM" id="roscoSCORMButtonSave" value="2" /> ' + _("Show save score button") + '</label>\
+                        <span id="roscoSCORMoptions">\
+                            <label for="roscoSCORMbuttonText">' + _("Button text") + ': </label>\
+                            <input type="text" max="100" name="roscoSCORMbuttonText" id="roscoSCORMbuttonText" value="' + _("Save score") + '" /> \
+                        </span>\
+                        </p>\
+                        <div id="roscoSCORMinstructionsAuto">\
+							<ul>\
+								<li>' + _("The score will be automatically saved with each questions and at the end of the game.") + '</li>\
+								<li>' + _('Include only one activity with a "save score" in the page.') + '</li>\
+								<li>' + _('Do not include a "SCORM Quiz" iDevice in the same page.') + '</li>\
+							</ul>\
+						</div>\
+                       <div id="roscoSCORMinstructionsButton">\
+							<ul>\
+								<li>' + _("The button will only be displayed when exporting as SCORM and while editing in eXeLearning.") + '</li>\
+								<li>' + _('Include only one rosco activity with a "Save score" button in the page.') + '</li>\
+								<li>' + _("The activity with button has to be the last rosco activity on the page (or it won't work).") + '</li>\
+								<li>' + _('Do not include a "SCORM Quiz" iDevice in the same page.') + '</li>\
+							</ul>\
+                        </div>\
+				   </div>\
+			</fieldset>';
+		return html;
+	},
+	updateFieldGame: function (dataGame) {
+		$('#roscoDuration').val(dataGame.durationGame)
+		$('#roscoNumberTurns').val(dataGame.numberTurns);
+		$('#roscoShowSolution').prop("checked", dataGame.showSolution);
+		$('#roscoShowMinimize').prop("checked", dataGame.showMinimize);
+		$('#roscoTimeShowSolution').val(dataGame.timeShowSolution);
+
+		$('.roscoWordEdition').each(function (index) {
+			$(this).val(dataGame.wordsGame[index].word);
+		});
+		$('.roscoDefinitionEdition').each(function (index) {
+			$(this).val(dataGame.wordsGame[index].definition);
+		});
+		$('.roscoAuthorEdition').each(function (index) {
+			$(this).val(dataGame.wordsGame[index].author);
+		});
+		$('.roscoAlt').each(function (index) {
+			$(this).val(dataGame.wordsGame[index].alt);
+		});
+		$('.roscoURLImageEdition').each(function (index) {
+			$(this).val(dataGame.wordsGame[index].url);
+		});
+		$('.roscoXImageEdition').each(function (index) {
+			$(this).val(dataGame.wordsGame[index].x);
+		});
+		$('.roscoYImageEdition').each(function (index) {
+			$(this).val(dataGame.wordsGame[index].y);
+		});
+		$('.roscoStartEdition').each(function (index) {
+			var imageStart = (dataGame.wordsGame[index].type == 1) ? "roscoContains.png" : "roscoStart.png";
+			$(this).attr('src', $exeDevice.iDevicePath + imageStart);
+		});
+		$('.roscoSelectImageEdition').each(function (index) {
+			var imageSelect = $.trim(dataGame.wordsGame[index].url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
+			$(this).attr('src', $exeDevice.iDevicePath + imageSelect);
+		});
+		$('.imagesLink').each(function (index) {
+			var imageSelect = $.trim(dataGame.wordsGame[index].url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
+			$(this).attr('src', $exeDevice.iDevicePath + imageSelect);
+		});
+		$('div.roscoLetterEdition').each(function (index) {
+			var longitud = (dataGame.wordsGame[index].word).length;
+			var color = longitud > 0 ? $exeDevice.colors.blue : $exeDevice.colors.black;
+			$(this).css('background-color', color);
+		});
+		//$exeAuthoring.iDevice.itinerary.setValues(dataGame.itinerary);
+		$exeDevice.itinerary.setValues(dataGame.itinerary);
+		$("#roscoSCORMoptions").css("visibility", "hidden");
+		$("#roscoSCORMinstructionsButton").hide();
+		$("#roscoSCORMinstructionsAuto").hide();
+		if (dataGame.isScorm == 0) {
+			$('#roscoSCORMNoSave').prop('checked', true);
+		} else if (dataGame.isScorm == 1) {
+			$('#roscoSCORMAutoSave').prop('checked', true);
+			$('#roscoSCORMinstructionsAuto').show();
+		}
+		if (dataGame.isScorm == 2) {
+			$('#roscoSCORMButtonSave').prop('checked', true);
+			$('#roscoSCORMbuttonText').val(dataGame.textButtonScorm);
+			$('#roscoSCORMoptions').css("visibility", "visible");
+			$('#roscoSCORMinstructionsButton').show();
+		}
 	},
 	loadPreviousValues: function (field) {
 		var originalHTML = field.val();
@@ -213,62 +312,14 @@ var $exeDevice = {
 			$imagesLink.each(function (index) {
 				dataGame.wordsGame[index].url = $(this).attr('href');
 			});
-			$('#roscoDuration').val(dataGame.durationGame)
-			$('#roscoNumberTurns').val(dataGame.numberTurns);
-			$('#roscoShowSolution').prop("checked", dataGame.showSolution);
-			$('#roscoShowMinimize').prop("checked", dataGame.showMinimize);
-			$('#roscoTimeShowSolution').val(dataGame.timeShowSolution);
-
-			$('.roscoWordEdition').each(function (index) {
-				$(this).val(dataGame.wordsGame[index].word);
-			});
-			$('.roscoDefinitionEdition').each(function (index) {
-				$(this).val(dataGame.wordsGame[index].definition);
-			});
-			$('.roscoAuthorEdition').each(function (index) {
-				$(this).val(dataGame.wordsGame[index].author);
-			});
-			$('.roscoAlt').each(function (index) {
-				$(this).val(dataGame.wordsGame[index].alt);
-			});
-			$('.roscoURLImageEdition').each(function (index) {
-				$(this).val(dataGame.wordsGame[index].url);
-			});
-			$('.roscoXImageEdition').each(function (index) {
-				$(this).val(dataGame.wordsGame[index].x);
-			});
-			$('.roscoYImageEdition').each(function (index) {
-				$(this).val(dataGame.wordsGame[index].y);
-			});
-			$('.roscoStartEdition').each(function (index) {
-				var imageStart = (dataGame.wordsGame[index].type == 1) ? "roscoContains.png" : "roscoStart.png";
-				$(this).attr('src', $exeDevice.iDevicePath + imageStart);
-			});
-			$('.roscoSelectImageEdition').each(function (index) {
-				var imageSelect = $.trim(dataGame.wordsGame[index].url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
-				$(this).attr('src', $exeDevice.iDevicePath + imageSelect);
-			});
-			$('.imagesLink').each(function (index) {
-				var imageSelect = $.trim(dataGame.wordsGame[index].url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
-				$(this).attr('src', $exeDevice.iDevicePath + imageSelect);
-			});
-
-			$('div.roscoLetterEdition').each(function (index) {
-				var longitud = (dataGame.wordsGame[index].word).length;
-				var color = longitud > 0 ? $exeDevice.colors.blue : $exeDevice.colors.black;
-				$(this).css('background-color', color);
-			});
-
-			$exeAuthoring.iDevice.itinerary.setValues(dataGame.itinerary);
-
+			$exeDevice.updateFieldGame(dataGame);
 			var instructions = $(".rosco-instructions", wrapper);
 			if (instructions.length == 1) $("#roscoInstructions").val(instructions.html());
 		}
 	},
-
 	clickImage: function (img, epx, epy) {
-		var $cursor = $(img).siblings('.roscoCursorEdition')
-		$x = $(img).parent().siblings('.roscoBarEdition').find('.roscoXImageEdition'),
+		var $cursor = $(img).siblings('.roscoCursorEdition'),
+			$x = $(img).parent().siblings('.roscoBarEdition').find('.roscoXImageEdition'),
 			$y = $(img).parent().siblings('.roscoBarEdition').find('.roscoYImageEdition'),
 			posX = epx - $(img).offset().left,
 			posY = epy - $(img).offset().top,
@@ -325,14 +376,12 @@ var $exeDevice = {
 			y: yImagen
 		}
 	},
-
 	showImage: function (image, url, x, y, alt, type) {
-		var $cursor = image.siblings('.roscoCursorEdition');
-		var $noImage = image.siblings('.roscoNoImageEdition');
-		var $iconSelection = image.parents('.roscoWordMutimediaEdition').find('.roscoSelectImageEdition');
+		var $cursor = image.siblings('.roscoCursorEdition'),
+			$noImage = image.siblings('.roscoNoImageEdition'),
+			$iconSelection = image.parents('.roscoWordMutimediaEdition').find('.roscoSelectImageEdition');
 		$iconSelection.attr('src', $exeDevice.iDevicePath + 'roscoSelectImageInactive.png');
 		image.attr('alt', '');
-
 		if ($.trim(url).length == 0) {
 			$cursor.hide();
 			image.hide();
@@ -374,7 +423,6 @@ var $exeDevice = {
 				return false;
 			});
 	},
-
 	drawImage: function (image, mData) {
 		$(image).css({
 			'left': mData.x + 'px',
@@ -383,14 +431,13 @@ var $exeDevice = {
 			'height': mData.h + 'px'
 		});
 	},
-
 	save: function () {
 		var dataGame = this.validateData();
 		if (!dataGame) {
 			return false;
 		}
-		var fields = this.ci18n;
-		var i18n = fields;
+		var fields = this.ci18n,
+			i18n = fields;
 		for (var i in fields) {
 			var fVal = $("#ci18n_" + i).val();
 			if (fVal != "") i18n[i] = fVal;
@@ -400,14 +447,13 @@ var $exeDevice = {
 			divContent = "";
 		if (dataGame.instructions != "") divContent = '<div class="rosco-instructions">' + dataGame.instructions + '</div>';
 		var linksImages = $exeDevice.createlinksImage(dataGame.wordsGame);
-		var html = '<div class="rosco-IDevice">';
+		html = '<div class="rosco-IDevice">';
 		html += divContent;
 		html += '<div class="rosco-DataGame">' + json + '</div>';
 		html += linksImages;
 		html += '</div>';
 		return html;
 	},
-
 	createlinksImage: function (wordsGame) {
 		var html = '';
 		for (var i = 0; i < wordsGame.length; i++) {
@@ -416,13 +462,11 @@ var $exeDevice = {
 		}
 		return html;
 	},
-
 	removeTags: function (str) {
 		var wrapper = $("<div></div>");
 		wrapper.html(str);
 		return wrapper.text();
 	},
-
 	startContains: function (letter, word, type) {
 		var start = false,
 			vocalLetter = "AEIOU",
@@ -445,7 +489,6 @@ var $exeDevice = {
 		}
 		return start;
 	},
-
 	startContainsAll: function (letter, word, type) {
 		var words = word.split('|'),
 			start = true;
@@ -458,7 +501,6 @@ var $exeDevice = {
 		}
 		return start;
 	},
-
 	getDataWord: function (letter) {
 		var path = $exeDevice.iDevicePath,
 			fileWord = '\
@@ -466,8 +508,8 @@ var $exeDevice = {
 					<div class="roscoFileWordEdition">\
 						<h3 class="roscoLetterEdition">' + letter + '</h3>\
 						<a href="#" class="roscoLinkStart" title="' + _("Start/Contain letter") + '"><img src="' + path + "roscoStart.png" + '" alt="' + _("The word starts with...") + '" class="roscoStartEdition"/></a>\
-						<label for="" class="sr-av">' + _("Word") + ': </label><input type="text" class="roscoWordEdition" placeholder="' + _("Word") + '">\
-						<label for="" class="sr-av">' + _("Definition") + ': </label><input type="text" class="roscoDefinitionEdition" placeholder="' + _("Definition") + '">\
+						<label class="sr-av">' + _("Word") + ': </label><input type="text" class="roscoWordEdition" placeholder="' + _("Word") + '">\
+						<label class="sr-av">' + _("Definition") + ': </label><input type="text" class="roscoDefinitionEdition" placeholder="' + _("Definition") + '">\
 						<a href="#" class="roscoLinkSelectImage" title="' + _("Show/Hide image") + '"><img src="' + path + "roscoSelectImageInactive.png" + '" alt="' + _("Select Image") + '" class="roscoSelectImageEdition"/></a>\
 					</div>\
 					<div class="roscoImageBarEdition">\
@@ -486,24 +528,22 @@ var $exeDevice = {
                             <label for="roscoAuthorEdition' + letter + '">' + _("Authorship") + ': </label><input type="text" id="roscoAuthorEdition' + letter + '" class="roscoAuthorEdition" />\
 							<a href="#" class="roscoLinkClose" title="' + _("Hide image") + '"><img src="' + path + "roscoClose.png" + '" alt="' + _("Minimize") + '" class="roscoCloseImage"/></a>\
 						</div>\
-						<hr class="roscoSeparacion"/>\
+						<hr class="roscoSeparation"/>\
 					</div>\
-				</div>'
+				</div>';
 
 		return fileWord;
 	},
-
 	getWords: function () {
 		var rows = [];
 		for (var i = 0; i < this.letters.length; i++) {
-			letter = this.letters.charAt(i);
-			var wordData = this.getDataWord(letter);
+			var letter = this.letters.charAt(i),
+			 wordData  = this.getDataWord(letter);
 			rows.push(wordData);
-
 		}
 		return rows;
-	},
 
+	},
 	validateData: function () {
 		var clear = $exeDevice.removeTags,
 			msgs = $exeDevice.msgs,
@@ -512,18 +552,18 @@ var $exeDevice = {
 			showSolution = $('#roscoShowSolution').is(':checked'),
 			timeShowSolution = parseInt(clear($.trim($('#roscoTimeShowSolution').val()))),
 			durationGame = parseInt(clear($('#roscoDuration').val())),
-			numberTurns = parseInt(clear($('#roscoNumberTurns').val()));
-		itinerary = $exeAuthoring.iDevice.itinerary.getValues();
-
+			numberTurns = parseInt(clear($('#roscoNumberTurns').val())),
+			//itinerary = $exeAuthoring.iDevice.itinerary.getValues(),
+			itinerary = $exeDevice.itinerary.getValues(),
+			isScorm = 0,
+			textButtonScorm = "";
 		if (!itinerary) return false;
-
 		if (showSolution && timeShowSolution.length == 0) {
 			eXe.app.alert(msgs.msgEProvideTimeSolution);
 			return false;
 		}
-
-		var words = [];
-		var zr = true;
+		var words = [],
+			zr = true;
 		$('.roscoWordEdition').each(function () {
 			var word = clear($(this).val().toUpperCase().trim());
 			words.push(word);
@@ -533,7 +573,6 @@ var $exeDevice = {
 			eXe.app.alert(msgs.msgOneWord);
 			return false;
 		}
-
 		var definitions = [];
 		$('.roscoDefinitionEdition').each(function () {
 			var definition = clear($(this).val());
@@ -544,13 +583,11 @@ var $exeDevice = {
 			var author = clear($(this).val());
 			authors.push(author);
 		});
-
 		var alts = [];
 		$('.roscoAlt').each(function () {
 			var alt = clear($(this).val());
 			alts.push(alt);
 		});
-
 		var urls = [];
 		$('.roscoURLImageEdition').each(function () {
 			urls.push($(this).val());
@@ -565,16 +602,16 @@ var $exeDevice = {
 		});
 		var types = [];
 		$('.roscoStartEdition').each(function () {
-			var t = $(this).attr('src');
-			var type = t.indexOf('roscoContains') != -1 ? 1 : 0;
+			var t = $(this).attr('src'),
+				type = t.indexOf('roscoContains') != -1 ? 1 : 0;
 			types.push(type);
 		});
 		for (var i = 0; i < this.letters.length; i++) {
-			var letter = this.letters.charAt(i);
-			var word = $.trim(words[i]).toUpperCase();
-			var definition = $.trim(definitions[i]);
-			var url = $.trim(urls[i]);
-			var mType = types[i];
+			var letter = this.letters.charAt(i),
+				word = $.trim(words[i]).toUpperCase(),
+				definition = $.trim(definitions[i]),
+				url = $.trim(urls[i]),
+				mType = types[i];
 			if (word.length > 0) {
 				if (mType == 0 && !(this.startContainsAll(letter, word, mType))) {
 					var message = _("%1 does not start with the letter %2").replace('%1', word);
@@ -620,6 +657,14 @@ var $exeDevice = {
 			}
 			wordsGame.push(p);
 		}
+		isScorm = parseInt($("input[type=radio][name='roscoSCORM']:checked").val());
+		if (isScorm == 2) {
+			textButtonScorm = $("#roscoSCORMbuttonText").val();
+			if (textButtonScorm == "") {
+				eXe.app.alert(_("Please write the button text."));
+				return false;
+			}
+		}
 		var data = {
 			'typeGame': 'Rosco',
 			'instructions': instructions,
@@ -630,67 +675,47 @@ var $exeDevice = {
 			'showSolution': showSolution,
 			'showMinimize': showMinimize,
 			'itinerary': itinerary,
-			'wordsGame': wordsGame
+			'wordsGame': wordsGame,
+			'isScorm': isScorm,
+			'textButtonScorm': textButtonScorm
 		}
 		return data;
 	},
-
 	importGame: function (content) {
 		var game = $exeDevice.isJsonString(content);
 		if (!game || !game.typeGame || game.typeGame != 'Rosco') {
 			eXe.app.alert($exeDevice.msgs.msgSelectFile);
 			return;
 		}
-		$exeDevice.loadDateFile(game)
-
+		$exeDevice.updateFieldGame(game);
+		tinymce.editors[0].setContent(game.instructions);
 	},
-
-	/*getSelectClue: function () {
-		var html = '<label for="roscoPercentajeClue" id="labelPercentajeClue">' + _("% correct answers"); + ': </label>\
-		<select id="roscoPercentajeClue" disabled>\
-			<option value="10">10%</option>\
-			<option value="20">20%</option>\
-			<option value="30">30%</option>\
-			<option value="40" selected>40%</option>\
-			<option value="50">50%</option>\
-			<option value="60">60%</option>\
-			<option value="70">70%</option>\
-			<option value="80">80%</option>\
-			<option value="90">90%</option>\
-			<option value="100">100%</option>\
-		  </select>';
-		return html;
-	},*/
-
 	addEvents: function () {
 		var msgs = $exeDevice.msgs;
 		$('#roscoDataWord a.roscoLinkStart').on('click', function (e) {
 			e.preventDefault();
 			var imageStart = $(this).find('.roscoStartEdition').attr('src').indexOf('roscoContains.png') != -1 ? "roscoStart.png" : "roscoContains.png";
-			// Add an alternative text to the icon
 			var alt = _("The word starts with...");
 			if (imageStart == "roscoContains.png") alt = _("The word contains...");
 			$(this).find('.roscoStartEdition').attr('src', $exeDevice.iDevicePath + imageStart).attr("alt", alt);
 		});
-
 		$('#roscoDataWord input.roscoURLImageEdition').on('change', function () {
-			var validExt = ['jpg', 'png', 'gif', 'jpeg', 'svg'];
-			var selectedFile = $(this).val();
-			var ext = selectedFile.split('.').pop().toLowerCase();
+			var validExt = ['jpg', 'png', 'gif', 'jpeg', 'svg'],
+				selectedFile = $(this).val(),
+				ext = selectedFile.split('.').pop().toLowerCase();
 			if ((selectedFile.indexOf('resources') == 0 || selectedFile.indexOf('/previews/') == 0) && validExt.indexOf(ext) == -1) {
 				eXe.app.alert(_("Supported formats") + ": jpg, jpeg, gif, png, svg");
 				return false;
 			}
-			var img = $(this).parent().siblings('.roscoImageEdition').find('.roscoHomeImageEdition');
-			var url = selectedFile;
-			var alt = $(this).parent().siblings(".roscoMetaData").find('.roscoAlt').val();
-			var x = parseFloat($(this).siblings('.roscoXImageEdition').val());
-			var y = parseFloat($(this).siblings('.roscoYImageEdition').val());
+			var img = $(this).parent().siblings('.roscoImageEdition').find('.roscoHomeImageEdition'),
+				url = selectedFile,
+				alt = $(this).parent().siblings(".roscoMetaData").find('.roscoAlt').val(),
+				x = parseFloat($(this).siblings('.roscoXImageEdition').val()),
+				y = parseFloat($(this).siblings('.roscoYImageEdition').val());
 			x = x ? x : 0;
 			y = y ? y : 0;
 			$exeDevice.showImage(img, url, x, y, alt, 1);
 		});
-
 		$('#roscoDataWord a.roscoLinkSelectImage').on('click', function (e) {
 			e.preventDefault();
 			var $pater = $(this).parent().siblings('.roscoImageBarEdition'),
@@ -704,16 +729,14 @@ var $exeDevice = {
 			$pater.slideToggle();
 			$exeDevice.showImage(img, url, x, y, alt, 0);
 		});
-
 		$('#roscoDataWord a.roscoLinkClose').on('click', function (e) {
 			e.preventDefault();
 			$(this).parents('.roscoImageBarEdition').slideUp();
 		});
-
 		$('#roscoDataWord .roscoWordEdition').on('focusout', function () {
-			var word = $(this).val().trim().toUpperCase();
-			var letter = $(this).siblings().filter(".roscoLetterEdition").text();
-			var color = $(this).val().trim() == "" ? $exeDevice.colors.black : $exeDevice.colors.blue;
+			var word = $(this).val().trim().toUpperCase(),
+				letter = $(this).siblings().filter(".roscoLetterEdition").text(),
+				color = $(this).val().trim() == "" ? $exeDevice.colors.black : $exeDevice.colors.blue;
 			$(this).siblings().filter('.roscoLetterEdition').css("background-color", color);
 			if (word.length > 0) {
 				var mType = $(this).parent().find('.roscoStartEdition').attr('src').indexOf("roscoContains.png") != -1 ? 1 : 0;
@@ -728,54 +751,71 @@ var $exeDevice = {
 				}
 			}
 		});
-		$exeAuthoring.iDevice.itinerary.addEvents();
+		$('input[type=radio][name="roscoSCORM"]').on('change', function () {
+			$("#roscoSCORMoptions,#roscoSCORMinstructionsButton,#roscoSCORMinstructionsAuto").hide();
+			switch ($(this).val()) {
+				case '0':
+					break;
+				case '1':
+					$("#roscoSCORMinstructionsAuto").hide().css({
+						opacity: 0,
+						visibility: "visible"
+					}).show().animate({
+						opacity: 1
+					}, 500);
 
+					break;
+				case '2':
+					$("#roscoSCORMoptions,#roscoSCORMinstructionsButton").hide().css({
+						opacity: 0,
+						visibility: "visible"
+					}).show().animate({
+						opacity: 1
+					}, 500);
+
+					break;
+			}
+		});
+		//$exeAuthoring.iDevice.itinerary.addEvents();
+		$exeDevice.itinerary.addEvents();
 		$('#roscoShowSolution').on('change', function () {
 			var mark = $(this).is(':checked');
 			$('#roscoTimeShowSolution').prop('disabled', !mark);
 		});
-
 		$('.roscoHomeImageEdition').on('click', function (e) {
 			$exeDevice.clickImage(this, e.pageX, e.pageY);
 		});
-
 		$('#roscoDuration').on('keyup', function () {
 			var v = this.value;
 			v = v.replace(/\D/g, '');
 			v = v.substring(0, 4);
 			this.value = v;
 		});
-
 		$('#roscoNumberTurns').on('keyup', function () {
 			var v = this.value;
 			v = v.replace(/\D/g, '');
 			v = v.substring(0, 1);
 			this.value = v;
 		});
-
 		$('#roscoTimeShowSolution').on('keyup', function () {
 			var v = this.value;
 			v = v.replace(/\D/g, '');
 			v = v.substring(0, 1);
 			this.value = v;
 		});
-
 		$('#roscoNumberTurns').on('focusout', function () {
 			this.value = this.value.trim() == '' ? 1 : this.value;
 			this.value = this.value > 2 ? 2 : this.value;
 			this.value = this.value < 1 ? 1 : this.value;
 		});
-
 		$('#roscoDuration').on('focusout', function () {
 			this.value = this.value.trim() == '' ? 240 : this.value;
 		});
-
 		$('#roscoTimeShowSolution').on('focusout', function () {
 			this.value = this.value.trim() == '' ? 3 : this.value;
 			this.value = this.value > 9 ? 9 : this.value;
 			this.value = this.value < 1 ? 1 : this.value;
 		});
-
 		if (window.File && window.FileReader && window.FileList && window.Blob) {
 			$('#roscoExportImport').show();
 			$('#roscoImportGame').on('change', function (e) {
@@ -796,63 +836,15 @@ var $exeDevice = {
 			$('#roscoExportImport').hide();
 		}
 	},
-	loadDateFile: function (game) {
-
-		$exeAuthoring.iDevice.itinerary.setValues(game.itineray);
-
-		$('#roscoShowMinimize').prop('checked', game.showMinimize);
-		$('#roscoDuration').val(game.durationGame)
-		$('#roscoNumberTurns').val(game.numberTurns);
-		$('#roscoShowSolution').prop('checked', game.showSolution);
-		$('#roscoTimeShowSolution').val(game.timeShowSolution);
-		$('#roscoTimeShowSolution').prop('disabled', !game.showSolution);
-
-		var wordsGame = game.wordsGame;
-		$('.roscoWordEdition').each(function (index) {
-			$(this).val(wordsGame[index].word);
-		});
-		$('.roscoDefinitionEdition').each(function (index) {
-			$(this).val(wordsGame[index].definition);
-		});
-		$('.roscoAuthorEdition').each(function (index) {
-			$(this).val(wordsGame[index].author);
-		});
-		$('.roscoURLImageEdition').each(function (index) {
-			$(this).val(wordsGame[index].url);
-		});
-		$('.roscoXImageEdition').each(function (index) {
-			$(this).val(wordsGame[index].x);
-		});
-		$('.roscoYImageEdition').each(function (index) {
-			$(this).val(wordsGame[index].y);
-		});
-		$('.roscoStartEdition').each(function (index) {
-			var imageStart = wordsGame[index].type == 1 ? "roscoContains.png" : "roscoStart.png";
-			$(this).attr('src', $exeDevice.iDevicePath + imageStart);
-		});
-		$('.roscoSelectImageEdition').each(function (index) {
-			var imageSelect = $.trim(wordsGame[index].url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
-			$(this).attr('src', $exeDevice.iDevicePath + imageSelect);
-		});
-		$('div.roscoLetterEdition').each(function (index) {
-			var longitud = (wordsGame[index].word).length;
-			var color = longitud > 0 ? $exeDevice.colors.blue : $exeDevice.colors.black;
-			$(this).css('background-color', color);
-
-		});
-
-		tinymce.editors[0].setContent(game.instructions);
-	},
-
 	exportGame: function () {
 		var dataGame = this.validateData();
 		if (!dataGame) {
 			return false;
 		}
-		var blob = JSON.stringify(dataGame);
-		var newBlob = new Blob([blob], {
+		var blob = JSON.stringify(dataGame),
+		 	newBlob = new Blob([blob], {
 			type: "text/plain"
-		})
+		});
 		if (window.navigator && window.navigator.msSaveOrOpenBlob) {
 			window.navigator.msSaveOrOpenBlob(newBlob);
 			return;
@@ -877,6 +869,104 @@ var $exeDevice = {
 			}
 		} catch (e) {}
 		return false;
-	}
+	},
+	itinerary: {
+		getFieldset: function () {
+			var html = '\
+                <fieldset class="exe-fieldset exe-fieldset-closed">\
+                    <legend><a href="#">' + _("Itinerary") + '</a></legend>\
+                    <div>\
+                        <p class="exe-block-info exe-block-dismissible">' + ("May be necessary to enter a password to access this game. May also show a key word by reaching a presestablished percentage of hits. Use these keys to create an itinerary of challenges: It would not be possible to access a new challenge until you get the key or the solution to a problem.") + ' <a href="#" class="exe-block-close" title="' + _("Hide") + '"><span class="sr-av">' + _("Hide") + ' </span>×</a></p>\
+                        <p>\
+                            <label for="eXeGameShowCodeAccess"><input type="checkbox" id="eXeGameShowCodeAccess">' + _("Access code is required") + '</label>\
+                        </p>\
+                        <p style="margin-left:1.4em;margin-bottom:1.5em">\
+                            <label for="eXeGameCodeAccess" id="labelCodeAccess">' + _("Access code") + ':</label>\
+                            <input type="text" name="eXeGameCodeAccess" id="eXeGameCodeAccess"  maxlength="40" disabled />\
+                            <label for="eXeGameMessageCodeAccess" id="labelMessageAccess">' + _("Question") + ':</label>\
+                            <input type="text" name="eXeGameMessageCodeAccess" id="eXeGameMessageCodeAccess" maxlength="200"/ disabled> \
+                        </p>\
+                        <p>\
+                            <label for="eXeGameShowClue"><input type="checkbox" id="eXeGameShowClue">' + _("Show a message or password") + '</label>\
+                        </p>\
+                        <div style="margin-left:1.4em;margin-bottom:1.5em">\
+                            <p>\
+                                <label for="eXeGameClue">' + _("Message") + ':</label>\
+                                <input type="text" name="eXeGameClue" id="eXeGameClue"  maxlength="50" disabled>\
+                            </p>\
+                            <p>\
+                                <label for="eXeGamePercentajeClue" id="labelPercentajeClue">' + _("Percentage of hits needed to display the message") + ':</label>\
+                                <select id="eXeGamePercentajeClue" disabled>\
+                                    <option value="10">10%</option>\
+                                    <option value="20">20%</option>\
+                                    <option value="30">30%</option>\
+                                    <option value="40" selected>40%</option>\
+                                    <option value="50">50%</option>\
+                                    <option value="60">60%</option>\
+                                    <option value="70">70%</option>\
+                                    <option value="80">80%</option>\
+                                    <option value="90">90%</option>\
+                                    <option value="100">100%</option>\
+                                </select>\
+                            </p>\
+                        </div>\
+                    </div>\
+                </fieldset>';
+			return html;
+		},
+		getValues: function () {
+			var showClue = $('#eXeGameShowClue').is(':checked'),
+				clueGame = $.trim($('#eXeGameClue').val()),
+				percentageClue = parseInt($('#eXeGamePercentajeClue').children("option:selected").val()),
+				showCodeAccess = $('#eXeGameShowCodeAccess').is(':checked'),
+				codeAccess = $.trim($('#eXeGameCodeAccess').val()),
+				messageCodeAccess = $.trim($('#eXeGameMessageCodeAccess').val());
 
+			if (showClue && clueGame.length == 0) {
+				eXe.app.alert(_("You must write a clue"));
+				return false;
+			}
+			if (showCodeAccess && codeAccess.length == 0) {
+				eXe.app.alert(_("You must provide the code to play this game"));
+				return false;
+			}
+			if (showCodeAccess && messageCodeAccess.length == 0) {
+				eXe.app.alert(_("You must provide how to obtain the code to play this game"));
+				return false;
+			}
+			var a = {
+				'showClue': showClue,
+				'clueGame': clueGame,
+				'percentageClue': percentageClue,
+				'showCodeAccess': showCodeAccess,
+				'codeAccess': codeAccess,
+				'messageCodeAccess': messageCodeAccess
+			}
+			return a;
+		},
+		setValues: function (a) {
+			$('#eXeGameShowClue').prop('checked', a.showClue);
+			$('#eXeGameClue').val(a.clueGame);
+			$('#eXeGamePercentajeClue').val(a.percentageClue);
+			$('#eXeGameShowCodeAccess').prop('checked', a.showCodeAccess);
+			$('#eXeGameCodeAccess').val(a.codeAccess);
+			$('#eXeGameMessageCodeAccess').val(a.messageCodeAccess);
+			$('#eXeGameClue').prop('disabled', !a.showClue);
+			$('#eXeGamePercentajeClue').prop('disabled', !a.showClue);
+			$('#eXeGameCodeAccess').prop('disabled', !a.showCodeAccess);
+			$('#eXeGameMessageCodeAccess').prop('disabled', !a.showCodeAccess);
+		},
+		addEvents: function () {
+			$('#eXeGameShowClue').on('change', function () {
+				var mark = $(this).is(':checked');
+				$('#eXeGameClue').prop('disabled', !mark);
+				$('#eXeGamePercentajeClue').prop('disabled', !mark);
+			});
+			$('#eXeGameShowCodeAccess').on('change', function () {
+				var mark = $(this).is(':checked');
+				$('#eXeGameCodeAccess').prop('disabled', !mark);
+				$('#eXeGameMessageCodeAccess').prop('disabled', !mark);
+			});
+		}
+	}
 }
