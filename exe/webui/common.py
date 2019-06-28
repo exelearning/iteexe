@@ -481,14 +481,15 @@ def ideviceHeader(e, style, mode):
     w2 = ''
     eEm = ''
 
-    if ((e.idevice.emphasis > 0) and (G.application.ideviceStore.isJs(e.idevice) == False)) or (
-        ((e.idevice.title != "") or (e.idevice.icon != "")) and (G.application.ideviceStore.isJs(e.idevice) == True)) :
+    if G.application.ideviceStore != None:
+        if ((e.idevice.emphasis > 0) and (G.application.ideviceStore.isJs(e.idevice) == False)) or (
+            ((e.idevice.title != "") or (e.idevice.icon != "")) and (G.application.ideviceStore.isJs(e.idevice) == True)) :
 
-        w2 = '<div class="iDevice_inner">'+lb
-        w2 += '<div class="iDevice_content_wrapper">'+lb
-        eEm = ' em_iDevice'
-        if e.idevice.icon != "":
-            eEm += ' em_iDevice_'+e.idevice.icon
+            w2 = '<div class="iDevice_inner">'+lb
+            w2 += '<div class="iDevice_content_wrapper">'+lb
+            eEm = ' em_iDevice'
+            if e.idevice.icon != "":
+                eEm += ' em_iDevice_'+e.idevice.icon
 
     if mode=="preview" and themeHasXML:
         w += '<'+articleTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'" id="id'+e.id+'">'+lb
@@ -564,11 +565,12 @@ def ideviceFooter(e, style, mode):
     themeHasXML = themeHasConfigXML(style)
     h = ''
 
-    if ((e.idevice.emphasis > 0) and (G.application.ideviceStore.isJs(e.idevice) == False)) or (
+    if G.application.ideviceStore != None:
+        if ((e.idevice.emphasis > 0) and (G.application.ideviceStore.isJs(e.idevice) == False)) or (
         ((e.idevice.title != "") or (e.idevice.icon != "")) and (G.application.ideviceStore.isJs(e.idevice) == True)) :
 
-        h = "</div>"+lb # Close iDevice_content_wrapper
-        h += "</div>"+lb # Close iDevice_inner
+            h = "</div>"+lb # Close iDevice_content_wrapper
+            h += "</div>"+lb # Close iDevice_inner
 
     h += "</div>"+lb # Close iDevice
     if mode=="preview":
