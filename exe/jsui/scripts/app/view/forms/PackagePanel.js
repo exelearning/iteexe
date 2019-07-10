@@ -265,7 +265,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                 store: eXe.view.forms.PackagePanel.eXeLicenses,
                                 tooltip: _('Select a license.'),
                                 anchor: '100%',
-                                forceSelection: true,
+                                forceSelection: false,
                                 listeners: {
                                     'change': me.onChange
                                 }

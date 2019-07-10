@@ -506,7 +506,7 @@ class Path(unicode):
                         .replace(u'\u2028', u'\n'))
 
     def write_text(self, text, encoding=None,
-                   errors='strict', linesep=os.linesep, 
+                   errors='strict', linesep=os.linesep,
                    append=False):
         """ Write the given text to this file.
 
@@ -618,7 +618,7 @@ class Path(unicode):
             except Exception, e:
                 log.warn('Failed to rename file on saving: %s -> %s -- %s' % (repr(self), repr(backupName), str(e)))
                 backupName = None
-            try:        
+            try:
                 # Begin saving
                 saveFunc(self, *args)
             except Exception, e:
@@ -1042,8 +1042,9 @@ class Path(unicode):
         """
         Copies the content of files to 'destination' directory
         """
-        for fn in self.files():
-            fn.copy(destination)
+        if self.exists():
+            for fn in self.files():
+                fn.copy(destination)
 
     def setSalt(self, salt):
         self.salt = salt

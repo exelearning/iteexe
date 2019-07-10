@@ -1,9 +1,18 @@
+intef-exe (3:2.4.1) lucid; urgency=medium
+
+  * SDWeb
+    - [Export] Fix error when preview page (#418).
+
+
+ -- eXeLearning <admin@exelearning.net>  Mon, 24 Jun 2019 10:01:15 +0200
+
 intef-exe (3:2.4) lucid; urgency=medium
 
   * Ignacio Gros
     - [Preferences] New preference to add a search box (Properties - Export).
     - [Preferences] New preference to export the elp file (see the new iDevice and read the TinyMCE news too).
     - [Exports] ePub: No license or page footer in any page but the first and the last ones.
+    - [Styles] The video caption selector in hidden tabs was not visible.
     - [Styles] New Styles: INTEF, CEDEC, Docs.
     - [Styles] Base Style: The print button is hidden (you can show it deleting the Advanced CSS tab content).
     - [Styles] Kids Style: New icons by Francisco Javier Pulido Cuadrado.
@@ -27,6 +36,9 @@ intef-exe (3:2.4) lucid; urgency=medium
     - [Left panel] New iDevices categories. There are less categories now.
     - [Left panel] The first category is open by default and the Text iDevice is always in the first place.
     - [Left panel] More iDevices are hidden by default. Use the "Edit iDevices" button to add them.
+    - [iDevices] GeoGebra activity. Edition presentation revision + Link to www.geogebra.org
+    - [iDevices] Add a class to the empty non-emphasized iDevices so the user can see the buttons to edit them.
+    - [iDevices] Add highlighted syntax in the new iDevices.
     - [iDevices] New "Interactive video" iDevice.
     - [iDevices] New "Download source file" iDevice. An easy way to add a "Download elp" link and some information about the project (title, author, license...).
     - [iDevices] New "Text" iDevice. Icon, title and feedback are optional.
@@ -35,12 +47,15 @@ intef-exe (3:2.4) lucid; urgency=medium
     - [iDevices] JavaScript iDevices: Common classes for HTML elements and common JavaScript functionality.
     - [iDevices] JavaScript iDevices: Presentation revision (title and icon selector).
     - [iDevices] Python iDevices: Edition common code (CSS class names). In progress.
+    - [Edition] Images in a FIGURE tag can be linked. The link and the FIGURE will be removed when deleting the image.
     - [Edition] When editing an iDevice, the others are minified and less visible.
     - [Edition] Better preview while editing (just like IMS or SCORM): The buttons to edit an iDevice are hidden until you hover it.
     - [Edition] Nice notification instead of an alert when saving an elp.
     - [Edition] The save reminder message is not modal, so no data will be lost if you keep typing (#402).
     - [Edition] Dismissible message for the empty pages: Click on the elements of the left panel to add content.
     - [Edition] The "Authoring" tab is now called "Content".
+    - [TinyMCE] The image insertion and alignment works even if the user has TinyMCE as default editor.
+    - [TinyMCE] Now you can add modal windows when there's more than one editor too.
     - [TinyMCE] The editor version preference is hidden. TinyMCE 4 is always the default editor.
     - [TinyMCE] "Do not mix http and https when using iframes" warning (#397).
     - [TinyMCE] No enable/disable editor link when there's more than one TinyMCE. To review.
@@ -52,6 +67,7 @@ intef-exe (3:2.4) lucid; urgency=medium
     - [Other] Minor bug fixes.
 
   * Juan Rafael Fernández
+    - Fixes an error compiling the German translation.
     - Headers, PO preparation, spell check and full revision.
     - New full Spanish translation.
     - New full Basque translation, by Joxemi Andonegi.
@@ -68,6 +84,7 @@ intef-exe (3:2.4) lucid; urgency=medium
   * SDWeb
     - [Python libraries] Upgrade BeautifulSoup to version 4.
     - [Python libraries] Remove old dependency.
+    - [iDevices] Fixed error in JavaScript iDevices with custom CSS/JS
     - [iDevices] Show javascript iDevices even if the "export" folder does not exist.
     - [Preferences] Remove the compatibility with old versions checkbox (#382).
     - [Preferences] Check the new properties (export elp and add search box) when opening an elp.
@@ -76,6 +93,7 @@ intef-exe (3:2.4) lucid; urgency=medium
     - [Export] Fix errors when exporting and elp generated with a previous version.
     - [Export] Fix error when export after changing the package language (#388).
     - [Export] Fix error when exporting package with non-unicode symbols in path (#380).
+    - [Other] Can write your own license.
     - [Other] Escape character that breaks the translations (#389).
     - [Other] Fix saving process when a JavaScript iDevice has been edited. No data loss.
 
