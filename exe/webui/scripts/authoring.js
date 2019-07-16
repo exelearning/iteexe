@@ -1006,7 +1006,7 @@ var $exeAuthoring = {
                         <fieldset class="exe-fieldset exe-fieldset-closed">\
                             <legend><a href="#">'+_("Itinerary")+'</a></legend>\
                             <div>\
-                                <p class="exe-block-info exe-block-dismissible">'+("Use these keys to create an itinerary of challenges: It would not be possible to access a new challenge until you get the key or the solution to a problem. May be necessary to enter a password to access this game. May also show a key word by reaching a presestablished percentage of hits.")+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+' </span>×</a></p>\
+                                <div class="exe-idevice-info">'+_("Use these keys to create an itinerary of challenges: It would not be possible to access a new challenge until you get the key or the solution to a problem. May be necessary to enter a password to access this game. May also show a message or password when reaching a presestablished percentage of hits.")+'</div>\
                                 <p>\
                                     <label for="eXeGameShowCodeAccess"><input type="checkbox" id="eXeGameShowCodeAccess">' +_("Access code is required")+'</label>\
                                 </p>\

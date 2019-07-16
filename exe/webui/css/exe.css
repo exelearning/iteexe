@@ -294,7 +294,7 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 #activeIdevice .exe-field-instructions{display:block;font-size:.9em;margin-top:.4em}
 
 /* Dismissable messages (to be used with exe-block-info) */
-.exe-block-dismissible{position:relative;padding-right:30px}
+.exe-idevice-info .exe-block-dismissible{position:relative;padding-right:30px}
 .exe-block-dismissible .exe-block-close{position:absolute;right:13px;top:7px;font-size:18px;font-family:Verdana,sans-serif;color:#86A9BB;text-shadow:0 1px 0 #fff;font-weight:bold}
 .exe-block-dismissible .exe-block-close:hover,.exe-block-dismissible .exe-block-close:focus{color:#063853;text-decoration:none}
 
