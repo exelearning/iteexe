@@ -8,6 +8,7 @@
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  */
 var $exeDevice = {
+	title: _("A-Z Quiz Game"),
 	iDevicePath: "/scripts/idevices/rosco-activity/edition/",
 	msgs: {},
 	ci18n: {
