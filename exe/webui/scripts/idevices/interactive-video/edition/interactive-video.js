@@ -51,41 +51,6 @@ var $exeDevice = {
 		"newWindow" : _("New Window")
 	},
 	
-	enableTabs : function(id){
-		
-		var tabs = $("#"+id+" .exe-form-tab");
-		var list = '';
-		var tabId;
-		var e;
-		var txt;
-		tabs.each(function(i){
-			var klass = "exe-form-active-tab";
-			tabId = id+"Tab"+i;
-			e = $(this);
-			e.attr("id",tabId);
-			txt = e.attr("title");
-			if (txt=='') txt = (i+1);
-			if (i>0) {
-				e.hide();
-				klass = "";
-			}
-			list += '<li><a href="#'+tabId+'" class="'+klass+'">'+txt+'</a></li>';
-		});
-		if (list!="") {
-			list = '<ul id="'+id+'Tabs" class="exe-form-tabs exe-advanced">'+list+'</ul>';
-			tabs.eq(0).before(list);
-			var as = $("#"+id+"Tabs a");
-			as.click(function(){
-				as.attr("class","");
-				$(this).addClass("exe-form-active-tab");
-				tabs.hide();
-				$($(this).attr("href")).show();
-				return false;
-			});
-		}
-		
-	},
-	
 	testIfVideoExists : function(url,type) {
 
 		if (!top.interactiveVideoEditor) {
@@ -97,15 +62,7 @@ var $exeDevice = {
 		}
 
 	},
-	// Custom text fields
-	getLanguageFields : function(){
-		var html = "";
-		var fields = this.ci18n;
-		for (var i in fields) {
-			html += '<p class="ci18n"><label for="ci18n_'+i+'">'+fields[i]+'</label> <input type="text" name="ci18n_'+i+'" id="ci18n_'+i+'" value="'+fields[i]+'" /></p>'
-		}
-		return html;
-	},
+
 	// Create the form to insert HTML in the TEXTAREA
 	createForm : function(){
 		
@@ -151,10 +108,7 @@ var $exeDevice = {
 						<p class="exe-block-success">'+_("Open the editor and start adding interaction...")+' <input type="button" id="interactiveVideoOpenEditor" onclick="$exeDevice.editor.start()" value="'+_("Editor")+'" /></p>\
 					</div>\
 				</div>\
-				<div class="exe-form-tab" title="'+_('Language settings')+'">\
-					<p>'+_("Custom texts (or use the default ones):")+'</p>\
-					'+this.getLanguageFields()+'\
-				</div>\
+                ' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
 			</div>\
 		';
 		
@@ -162,7 +116,7 @@ var $exeDevice = {
 		
 		field.before(html);
 		
-		this.enableTabs("interactiveVideoIdeviceForm");
+		$exeAuthoring.iDevice.tabs.init("interactiveVideoIdeviceForm");
 		
 		$("input[name=interactiveVideoType]").change(function(){
 			$exeDevice.toggleType(this.value);

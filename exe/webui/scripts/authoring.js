@@ -966,106 +966,207 @@ var $exeAuthoring = {
             $exeAuthoring.iDevice.filePicker.init();
             
         },
-        // Gamification (itinerary)
-        itinerary : {
-            getFieldset : function(){
-                var html = '\
-                    <fieldset class="exe-fieldset exe-fieldset-closed">\
-                        <legend><a href="#">'+_("Itinerary")+'</a></legend>\
-                        <div>\
-                            <p class="exe-block-info exe-block-dismissible">'+("May be necessary to enter a password to access this game. May also show a key word by reaching a presestablished percentage of hits. Use these keys to create an itinerary of challenges: It would not be possible to access a new challenge until you get the key or the solution to a problem.")+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+' </span>×</a></p>\
-                            <p>\
-                                <label for="eXeGameShowCodeAccess"><input type="checkbox" id="eXeGameShowCodeAccess">' +_("Access code is required")+'</label>\
-                            </p>\
-                            <p style="margin-left:1.4em;margin-bottom:1.5em">\
-                                <label for="eXeGameCodeAccess" id="labelCodeAccess">'+_("Access code")+':</label>\
-                                <input type="text" name="eXeGameCodeAccess" id="eXeGameCodeAccess"  maxlength="40" disabled />\
-                                <label for="eXeGameMessageCodeAccess" id="labelMessageAccess">'+_("Question")+':</label>\
-                                <input type="text" name="eXeGameMessageCodeAccess" id="eXeGameMessageCodeAccess" maxlength="200"/ disabled> \
-                            </p>\
-                            <p>\
-                                <label for="eXeGameShowClue"><input type="checkbox" id="eXeGameShowClue">'+_("Show a message or password")+'</label>\
-                            </p>\
-                            <div style="margin-left:1.4em;margin-bottom:1.5em">\
+        // Gamification
+        gamification : {
+            common : {
+                getFieldsets : function(){
+                    var html = $exeAuthoring.iDevice.gamification.itinerary.getFieldset();
+                        html += $exeAuthoring.iDevice.gamification.scorm.getFieldset();
+                        html += $exeAuthoring.iDevice.gamification.share.getFieldset();
+                    return html;
+                },
+                getLanguageTab : function(fields){
+                    var html = "";
+                    for (var i in fields) {
+                        html += '<p class="ci18n"><label for="ci18n_' + i + '">' + fields[i] + '</label> <input type="text" name="ci18n_' + i + '" id="ci18n_' + i + '" value="' + fields[i] + '" /></p>'
+                    }
+                    return '\
+                    <div class="exe-form-tab" title="' + _('Language settings') + '">\
+                        <p>' + _("Custom texts (or use the default ones):") + '</p>\
+                        ' + html + '\
+                    </div>'                    
+                }
+            },
+            instructions : {
+                getFieldset : function(str){
+					return '<fieldset class="exe-fieldset exe-fieldset-closed">\
+						<legend><a href="#">' + _("Instructions") + '</a></legend>\
+						<div>\
+							<p>\
+								<label for="eXeGameInstructions" class="sr-av">' + _("Instructions") + ': </label>\
+								<textarea id="eXeGameInstructions" class="exe-html-editor"\>' + str + ' </textarea>\
+							</p>\
+						</div>\
+					</fieldset>';                   
+                }
+            },
+            itinerary : {
+                getFieldset : function(){
+                    var html = '\
+                        <fieldset class="exe-fieldset exe-fieldset-closed">\
+                            <legend><a href="#">'+_("Itinerary")+'</a></legend>\
+                            <div>\
+                                <p class="exe-block-info exe-block-dismissible">'+("Use these keys to create an itinerary of challenges: It would not be possible to access a new challenge until you get the key or the solution to a problem. May be necessary to enter a password to access this game. May also show a key word by reaching a presestablished percentage of hits.")+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+' </span>×</a></p>\
                                 <p>\
-                                    <label for="eXeGameClue">'+_("Message")+':</label>\
-                                    <input type="text" name="eXeGameClue" id="eXeGameClue"  maxlength="50" disabled>\
+                                    <label for="eXeGameShowCodeAccess"><input type="checkbox" id="eXeGameShowCodeAccess">' +_("Access code is required")+'</label>\
+                                </p>\
+                                <p style="margin-left:1.4em;margin-bottom:1.5em">\
+                                    <label for="eXeGameCodeAccess" id="labelCodeAccess">'+_("Access code")+':</label>\
+                                    <input type="text" name="eXeGameCodeAccess" id="eXeGameCodeAccess"  maxlength="40" disabled />\
+                                    <label for="eXeGameMessageCodeAccess" id="labelMessageAccess">'+_("Question")+':</label>\
+                                    <input type="text" name="eXeGameMessageCodeAccess" id="eXeGameMessageCodeAccess" maxlength="200"/ disabled> \
                                 </p>\
                                 <p>\
-                                    <label for="eXeGamePercentajeClue" id="labelPercentajeClue">'+_("Percentage of hits needed to display the message")+':</label>\
-                                    <select id="eXeGamePercentajeClue" disabled>\
-                                        <option value="10">10%</option>\
-                                        <option value="20">20%</option>\
-                                        <option value="30">30%</option>\
-                                        <option value="40" selected>40%</option>\
-                                        <option value="50">50%</option>\
-                                        <option value="60">60%</option>\
-                                        <option value="70">70%</option>\
-                                        <option value="80">80%</option>\
-                                        <option value="90">90%</option>\
-                                        <option value="100">100%</option>\
-                                    </select>\
+                                    <label for="eXeGameShowClue"><input type="checkbox" id="eXeGameShowClue">'+_("Show a message or password")+'</label>\
                                 </p>\
+                                <div style="margin-left:1.4em;margin-bottom:1.5em">\
+                                    <p>\
+                                        <label for="eXeGameClue">'+_("Message")+':</label>\
+                                        <input type="text" name="eXeGameClue" id="eXeGameClue"  maxlength="50" disabled>\
+                                    </p>\
+                                    <p>\
+                                        <label for="eXeGamePercentajeClue" id="labelPercentajeClue">'+_("Percentage of hits needed to display the message")+':</label>\
+                                        <select id="eXeGamePercentajeClue" disabled>\
+                                            <option value="10">10%</option>\
+                                            <option value="20">20%</option>\
+                                            <option value="30">30%</option>\
+                                            <option value="40" selected>40%</option>\
+                                            <option value="50">50%</option>\
+                                            <option value="60">60%</option>\
+                                            <option value="70">70%</option>\
+                                            <option value="80">80%</option>\
+                                            <option value="90">90%</option>\
+                                            <option value="100">100%</option>\
+                                        </select>\
+                                    </p>\
+                                </div>\
                             </div>\
-                        </div>\
-                    </fieldset>';
-                return html;
-            },
-            getValues : function(){
-            	var showClue = $('#eXeGameShowClue').is(':checked'),
-             		clueGame = $.trim($('#eXeGameClue').val()),
-             		percentageClue = parseInt($('#eXeGamePercentajeClue').children("option:selected").val()),
-             		showCodeAccess = $('#eXeGameShowCodeAccess').is(':checked'),
-             		codeAccess = $.trim($('#eXeGameCodeAccess').val()),
-             		messageCodeAccess = $.trim($('#eXeGameMessageCodeAccess').val());
+                        </fieldset>';
+                    return html;
+                },
+                getValues : function(){
+                    var showClue = $('#eXeGameShowClue').is(':checked'),
+                        clueGame = $.trim($('#eXeGameClue').val()),
+                        percentageClue = parseInt($('#eXeGamePercentajeClue').children("option:selected").val()),
+                        showCodeAccess = $('#eXeGameShowCodeAccess').is(':checked'),
+                        codeAccess = $.trim($('#eXeGameCodeAccess').val()),
+                        messageCodeAccess = $.trim($('#eXeGameMessageCodeAccess').val());
 
-            	if (showClue && clueGame.length == 0) {
-        			eXe.app.alert(_("You must write a clue"));
-        			return false;
-        		}
-        		if (showCodeAccess && codeAccess.length == 0) {
-        			eXe.app.alert( _("You must provide the code to play this game"));
-        			return false;
-        		}
-        		if (showCodeAccess && messageCodeAccess.length == 0) {
-        			eXe.app.alert(_("You must provide how to obtain the code to play this game"));
-        			return false;
-        		}
-             	var a={
-            		'showClue': showClue,
-            		'clueGame': clueGame,
-            		'percentageClue':percentageClue,
-            		'showCodeAccess':showCodeAccess,
-            		'codeAccess':codeAccess,
-            		'messageCodeAccess' :messageCodeAccess
-            	}
-               return a;
+                    if (showClue && clueGame.length == 0) {
+                        eXe.app.alert(_("You must write a clue"));
+                        return false;
+                    }
+                    if (showCodeAccess && codeAccess.length == 0) {
+                        eXe.app.alert( _("You must provide the code to play this game"));
+                        return false;
+                    }
+                    if (showCodeAccess && messageCodeAccess.length == 0) {
+                        eXe.app.alert(_("You must provide how to obtain the code to play this game"));
+                        return false;
+                    }
+                    var a={
+                        'showClue': showClue,
+                        'clueGame': clueGame,
+                        'percentageClue':percentageClue,
+                        'showCodeAccess':showCodeAccess,
+                        'codeAccess':codeAccess,
+                        'messageCodeAccess' :messageCodeAccess
+                    }
+                   return a;
+                },
+                setValues : function(a){
+                    $('#eXeGameShowClue').prop('checked', a.showClue);
+                    $('#eXeGameClue').val(a.clueGame);
+                    $('#eXeGamePercentajeClue').val(a.percentageClue);
+                    $('#eXeGameShowCodeAccess').prop('checked', a.showCodeAccess);
+                    $('#eXeGameCodeAccess').val(a.codeAccess);
+                    $('#eXeGameMessageCodeAccess').val(a.messageCodeAccess);
+                    $('#eXeGameClue').prop('disabled', !a.showClue);
+                    $('#eXeGamePercentajeClue').prop('disabled', !a.showClue);
+                    $('#eXeGameCodeAccess').prop('disabled', !a.showCodeAccess);
+                    $('#eXeGameMessageCodeAccess').prop('disabled', !a.showCodeAccess);
+                },
+                addEvents:function(){
+                    $('#eXeGameShowClue').on('change', function () {
+                        var mark = $(this).is(':checked');
+                        $('#eXeGameClue').prop('disabled', !mark);
+                        $('#eXeGamePercentajeClue').prop('disabled', !mark);
+                    });
+                    $('#eXeGameShowCodeAccess').on('change', function () {
+                        var mark = $(this).is(':checked');
+                        $('#eXeGameCodeAccess').prop('disabled', !mark);
+                        $('#eXeGameMessageCodeAccess').prop('disabled', !mark);
+                    });
+                }
             },
-            setValues : function(a){
-            	$('#eXeGameShowClue').prop('checked', a.showClue);
-        		$('#eXeGameClue').val(a.clueGame);
-        		$('#eXeGamePercentajeClue').val(a.percentageClue);
-        		$('#eXeGameShowCodeAccess').prop('checked', a.showCodeAccess);
-        		$('#eXeGameCodeAccess').val(a.codeAccess);
-        		$('#eXeGameMessageCodeAccess').val(a.messageCodeAccess);
-        		$('#eXeGameClue').prop('disabled', !a.showClue);
-    			$('#eXeGamePercentajeClue').prop('disabled', !a.showClue);
-    			$('#eXeGameCodeAccess').prop('disabled', !a.showCodeAccess);
-    			$('#eXeGameMessageCodeAccess').prop('disabled', !a.showCodeAccess);
+            scorm : {
+                getFieldset : function(){
+                    var html = '\
+                        <fieldset class="exe-fieldset exe-fieldset-closed exe-advanced">\
+                            <legend><a href="#">' + _("SCORM options") + '</a></legend>\
+                               <div>\
+                                    <p id="eXeGameSCORMNoSave">\
+                                        <label for="eXeGameSCORMNoSave"><input type="radio" name="eXeGameSCORM" id="eXeGameSCORMNoSave"  value="0"  checked /> ' + _("Do not save the score") + '</label>\
+                                    </p>\
+                                    <p id="eXeGameSCORMAutomatically">\
+                                        <label for="eXeGameSCORMAutoSave"><input type="radio" name="eXeGameSCORM" id="eXeGameSCORMAutoSave" value="1"  /> ' + _("Automatically save the score") + '</label>\
+                                    </p>\
+                                    <p id="eXeGameSCORMblock">\
+                                    <label for="eXeGameSCORMButtonSave"><input type="radio" name="eXeGameSCORM" id="eXeGameSCORMButtonSave" value="2" /> ' + _("Show a button to save the score") + '</label>\
+                                    <span id="eXeGameSCORMoptions">\
+                                        <label for="eXeGameSCORMbuttonText">' + _("Button text") + ': </label>\
+                                        <input type="text" max="100" name="eXeGameSCORMbuttonText" id="eXeGameSCORMbuttonText" value="' + _("Save score") + '" /> \
+                                    </span>\
+                                    </p>\
+                                    <div id="eXeGameSCORMinstructionsAuto">\
+                                        <ul>\
+                                            <li>' + _("This will only work when exporting as SCORM and while editing in eXeLearning.") + '</li>\
+                                            <li>' + _("The score will be automatically saved after answering each question and at the end of the game.") + '</li>\
+                                            <li>' + _("Include only one game with score in the page (or it won't work).") + '</li>\
+                                            <li>' + _('Do not include a "SCORM Quiz" iDevice in the same page.') + '</li>\
+                                        </ul>\
+                                    </div>\
+                                   <div id="eXeGameSCORMinstructionsButton">\
+                                        <ul>\
+                                            <li>' + _("The button will only be displayed when exporting as SCORM and while editing in eXeLearning.") + '</li>\
+                                            <li>' + _('Include only one rosco activity with a "Save score" button in the page.') + '</li>\
+                                            <li>' + _("Include only one game with score in the page (or it won't work).") + '</li>\
+                                            <li>' + _('Do not include a "SCORM Quiz" iDevice in the same page.') + '</li>\
+                                        </ul>\
+                                    </div>\
+                               </div>\
+                        </fieldset>';
+                    return html;
+                }
             },
-            addEvents:function(){
-            	$('#eXeGameShowClue').on('change', function () {
-        			var mark = $(this).is(':checked');
-        			$('#eXeGameClue').prop('disabled', !mark);
-        			$('#eXeGamePercentajeClue').prop('disabled', !mark);
-        		});
-        		$('#eXeGameShowCodeAccess').on('change', function () {
-        			var mark = $(this).is(':checked');
-        			$('#eXeGameCodeAccess').prop('disabled', !mark);
-        			$('#eXeGameMessageCodeAccess').prop('disabled', !mark);
-        		});
+            share : {
+                getFieldset : function(){
+                    var msg = _("You can export this game so you can later use it in an iDevice of the same type. You can also use it in %s and you can import games from %s and use then here.");
+                        msg = msg.replace(/%s/g, '<a href="https://quext.educarex.es/" target="_blank" rel="noopener noreferrer">QuExt</a>');
+                    var html = '\
+                        <fieldset class="exe-fieldset exe-fieldset-closed exe-advanced">\
+                            <legend><a href="#">' + _("Import / Export") + '</a></legend>\
+                            <div>\
+                                <div class="exe-idevice-info">' + msg + '</div>\
+                                <div id="eXeGameExportImport">\
+                                    <p>\
+                                        <form method="POST">\
+                                            <label for="eXeGameImportGame">' + _("Import") + ': </label>\
+                                            <input type="file" name="eXeGameImportGame" id="eXeGameImportGame" />\
+                                            <span class="exe-field-instructions">' + _("Supported formats") + ': JSON</span>\
+                                        </form>\
+                                    </p>\
+                                    <p>\
+                                        <input type="button" name="eXeGameExportGame" id="eXeGameExportGame" value="' + _("Export") + '" />\
+                                    </p>\
+                                </div>\
+                            </div>\
+                        </fieldset>';
+                    return html;                    
+                }
             }
         },
+        // / Gamification
         filePicker : {
             init : function(){
                 $(".exe-file-picker,.exe-image-picker").each(
@@ -1099,6 +1200,38 @@ var $exeAuthoring = {
         },
         // iDevice tabs
         tabs : {
+            init : function(id){
+                var tabs = $("#" + id + " .exe-form-tab");
+                var list = '';
+                var tabId;
+                var e;
+                var txt;
+                tabs.each(function (i) {
+                    var klass = "exe-form-active-tab";
+                    tabId = id + "Tab" + i;
+                    e = $(this);
+                    e.attr("id", tabId);
+                    txt = e.attr("title");
+                    if (txt == '') txt = (i + 1);
+                    if (i > 0) {
+                        e.hide();
+                        klass = "";
+                    }
+                    list += '<li><a href="#' + tabId + '" class="' + klass + '">' + txt + '</a></li>';
+                });
+                if (list != "") {
+                    list = '<ul id="' + id + 'Tabs" class="exe-form-tabs exe-advanced">' + list + '</ul>';
+                    tabs.eq(0).before(list);
+                    var as = $("#" + id + "Tabs a");
+                    as.click(function () {
+                        as.attr("class", "");
+                        $(this).addClass("exe-form-active-tab");
+                        tabs.hide();
+                        $($(this).attr("href")).show();
+                        return false;
+                    });
+                }                
+            },
             restart : function(){
                 $("#activeIdevice .exe-form-tabs a").eq(0).trigger("click");
             }

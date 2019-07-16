@@ -84,15 +84,7 @@ var $exeDevice = {
 		var html = '\
 			<div id="roscoIdeviceForm">\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
-					<fieldset class="exe-fieldset exe-fieldset-closed">\
-						<legend><a href="#">' + _("Instructions") + '</a></legend>\
-						<div>\
-							<p>\
-								<label for="roscoInstructions" class="sr-av">' + _("Instructions") + ': </label>\
-								<textarea id="roscoInstructions" class="exe-html-editor"\>' + _("Observe the letters, identify and fill in the missing the words.") + ' </textarea>\
-							</p>\
-						</div>\
-					</fieldset>\
+                    ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Observe the letters, identify and fill in the missing the words.")) + '\
 					<fieldset class="exe-fieldset">\
 						<legend><a href="#">' + _("Options") + '</a></legend>\
 						<div>\
@@ -122,121 +114,15 @@ var $exeDevice = {
 							' + this.getWords().join('') + '\
                         </div>\
 					</fieldset>\
-					' + this.itinerary.getFieldset() + '\
-					' + this.getScorm() + '\
-					' + this.getExportImportGame() + '\
+					' + $exeAuthoring.iDevice.gamification.common.getFieldsets() + '\
 				</div>\
-				<div class="exe-form-tab" title="' + _('Language settings') + '">\
-				<p>' + _("Custom texts (or use the default ones):") + '</p>\
-				' + this.getLanguageFields() + '\
-				</div>\
+                ' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
 			</div>\
 			';
 		var field = $("textarea.jsContentEditor").eq(0);
 		field.before(html);
-		this.enableTabs("roscoIdeviceForm");
+		$exeAuthoring.iDevice.tabs.init("roscoIdeviceForm");
 		this.loadPreviousValues(field);
-	},
-	getLanguageFields: function () {
-		var html = "",
-			fields = this.ci18n;
-		for (var i in fields) {
-			html += '<p class="ci18n"><label for="ci18n_' + i + '">' + fields[i] + '</label> <input type="text" name="ci18n_' + i + '" id="ci18n_' + i + '" value="' + fields[i] + '" /></p>'
-		}
-		return html;
-	},
-	enableTabs: function (id) {
-		var tabs = $("#" + id + " .exe-form-tab");
-		var list = '';
-		var tabId;
-		var e;
-		var txt;
-		tabs.each(function (i) {
-			var klass = "exe-form-active-tab";
-			tabId = id + "Tab" + i;
-			e = $(this);
-			e.attr("id", tabId);
-			txt = e.attr("title");
-			if (txt == '') txt = (i + 1);
-			if (i > 0) {
-				e.hide();
-				klass = "";
-			}
-			list += '<li><a href="#' + tabId + '" class="' + klass + '">' + txt + '</a></li>';
-		});
-		if (list != "") {
-			list = '<ul id="' + id + 'Tabs" class="exe-form-tabs exe-advanced">' + list + '</ul>';
-			tabs.eq(0).before(list);
-			var as = $("#" + id + "Tabs a");
-			as.click(function () {
-				as.attr("class", "");
-				$(this).addClass("exe-form-active-tab");
-				tabs.hide();
-				$($(this).attr("href")).show();
-				return false;
-			});
-		}
-	},
-	getExportImportGame: function () {
-		var msg = _("You can export this game to a JSON file so you can later use it in an iDevice of the same type. You can also use it in %s and you can import games from %s and use then here.");
-		msg = msg.replace(/%s/g, '<a href="https://quext.educarex.es/" target="_blank" rel="noopener noreferrer">QuExt</a>');
-		var html = '\
-			<fieldset class="exe-fieldset exe-fieldset-closed exe-advanced">\
-				<legend><a href="#">' + _("Advanced") + '</a></legend>\
-				<div>\
-					<div class="exe-idevice-info">' + msg + '</div>\
-					<div id="roscoExportImport">\
-						<p>\
-						    <form method="POST">\
-								<label for="roscoImportGame">' + _("Load game") + ': </label>\
-								<input type="file" name="roscoImportGame" id="roscoImportGame" />\
-							</form>\
-                        </p>\
-                        <p>\
-                            <label for="roscoExportGame">' + _("Save game") + ': </label>\
-                            <input type="button" name="roscoExportGame" id="roscoExportGame" value="' + _("Save") + '" />\
-                        </p>\
-                    </div>\
-				</div>\
-			</fieldset>';
-		return html;
-	},
-	getScorm: function () {
-		var html = '\
-			<fieldset class="exe-fieldset exe-fieldset-closed exe-advanced">\
-				<legend><a href="#">' + _("Instructions SCORM") + '</a></legend>\
-                   <div>\
-                        <p id="roscoSCORMNoSave">\
-                            <label for="roscoSCORMNoSave"><input type="radio" name="roscoSCORM" id="roscoSCORMNoSave"  value="0"  checked /> ' + _("No save score") + '</label>\
-                        </p>\
-                        <p id="roscoScormAutomatically">\
-                            <label for="roscoSCORMAutoSave"><input type="radio" name="roscoSCORM" id="roscoSCORMAutoSave" value="1"  /> ' + _("Result of the game is automatically saved") + '</label>\
-                        </p>\
-                        <p id="roscoActivitySCORMblock">\
-                        <label for="roscoSCORMButtonSave"><input type="radio" name="roscoSCORM" id="roscoSCORMButtonSave" value="2" /> ' + _("Show save score button") + '</label>\
-                        <span id="roscoSCORMoptions">\
-                            <label for="roscoSCORMbuttonText">' + _("Button text") + ': </label>\
-                            <input type="text" max="100" name="roscoSCORMbuttonText" id="roscoSCORMbuttonText" value="' + _("Save score") + '" /> \
-                        </span>\
-                        </p>\
-                        <div id="roscoSCORMinstructionsAuto">\
-							<ul>\
-								<li>' + _("The score will be automatically saved with each questions and at the end of the game.") + '</li>\
-								<li>' + _('Include only one activity with a "save score" in the page.') + '</li>\
-								<li>' + _('Do not include a "SCORM Quiz" iDevice in the same page.') + '</li>\
-							</ul>\
-						</div>\
-                       <div id="roscoSCORMinstructionsButton">\
-							<ul>\
-								<li>' + _("The button will only be displayed when exporting as SCORM and while editing in eXeLearning.") + '</li>\
-								<li>' + _('Include only one rosco activity with a "Save score" button in the page.') + '</li>\
-								<li>' + _("The activity with button has to be the last rosco activity on the page (or it won't work).") + '</li>\
-								<li>' + _('Do not include a "SCORM Quiz" iDevice in the same page.') + '</li>\
-							</ul>\
-                        </div>\
-				   </div>\
-			</fieldset>';
-		return html;
 	},
 	updateFieldGame: function (dataGame) {
 		$('#roscoDuration').val(dataGame.durationGame)
@@ -285,20 +171,20 @@ var $exeDevice = {
 		});
 		//$exeAuthoring.iDevice.itinerary.setValues(dataGame.itinerary);
 		$exeDevice.itinerary.setValues(dataGame.itinerary);
-		$("#roscoSCORMoptions").css("visibility", "hidden");
-		$("#roscoSCORMinstructionsButton").hide();
-		$("#roscoSCORMinstructionsAuto").hide();
+		$("#eXeGameSCORMoptions").css("visibility", "hidden");
+		$("#eXeGameSCORMinstructionsButton").hide();
+		$("#eXeGameSCORMinstructionsAuto").hide();
 		if (dataGame.isScorm == 0) {
-			$('#roscoSCORMNoSave').prop('checked', true);
+			$('#eXeGameSCORMNoSave').prop('checked', true);
 		} else if (dataGame.isScorm == 1) {
-			$('#roscoSCORMAutoSave').prop('checked', true);
-			$('#roscoSCORMinstructionsAuto').show();
+			$('#eXeGameSCORMAutoSave').prop('checked', true);
+			$('#eXeGameSCORMinstructionsAuto').show();
 		}
 		if (dataGame.isScorm == 2) {
-			$('#roscoSCORMButtonSave').prop('checked', true);
-			$('#roscoSCORMbuttonText').val(dataGame.textButtonScorm);
-			$('#roscoSCORMoptions').css("visibility", "visible");
-			$('#roscoSCORMinstructionsButton').show();
+			$('#eXeGameSCORMButtonSave').prop('checked', true);
+			$('#eXeGameSCORMbuttonText').val(dataGame.textButtonScorm);
+			$('#eXeGameSCORMoptions').css("visibility", "visible");
+			$('#eXeGameSCORMinstructionsButton').show();
 		}
 	},
 	loadPreviousValues: function (field) {
@@ -314,7 +200,7 @@ var $exeDevice = {
 			});
 			$exeDevice.updateFieldGame(dataGame);
 			var instructions = $(".rosco-instructions", wrapper);
-			if (instructions.length == 1) $("#roscoInstructions").val(instructions.html());
+			if (instructions.length == 1) $("#eXeGameInstructions").val(instructions.html());
 		}
 	},
 	clickImage: function (img, epx, epy) {
@@ -657,9 +543,9 @@ var $exeDevice = {
 			}
 			wordsGame.push(p);
 		}
-		isScorm = parseInt($("input[type=radio][name='roscoSCORM']:checked").val());
+		isScorm = parseInt($("input[type=radio][name='eXeGameSCORM']:checked").val());
 		if (isScorm == 2) {
-			textButtonScorm = $("#roscoSCORMbuttonText").val();
+			textButtonScorm = $("#eXeGameSCORMbuttonText").val();
 			if (textButtonScorm == "") {
 				eXe.app.alert(_("Please write the button text."));
 				return false;
@@ -751,13 +637,13 @@ var $exeDevice = {
 				}
 			}
 		});
-		$('input[type=radio][name="roscoSCORM"]').on('change', function () {
-			$("#roscoSCORMoptions,#roscoSCORMinstructionsButton,#roscoSCORMinstructionsAuto").hide();
+		$('input[type=radio][name="eXeGameSCORM"]').on('change', function () {
+			$("#eXeGameSCORMoptions,#eXeGameSCORMinstructionsButton,#eXeGameSCORMinstructionsAuto").hide();
 			switch ($(this).val()) {
 				case '0':
 					break;
 				case '1':
-					$("#roscoSCORMinstructionsAuto").hide().css({
+					$("#eXeGameSCORMinstructionsAuto").hide().css({
 						opacity: 0,
 						visibility: "visible"
 					}).show().animate({
@@ -766,7 +652,7 @@ var $exeDevice = {
 
 					break;
 				case '2':
-					$("#roscoSCORMoptions,#roscoSCORMinstructionsButton").hide().css({
+					$("#eXeGameSCORMoptions,#eXeGameSCORMinstructionsButton").hide().css({
 						opacity: 0,
 						visibility: "visible"
 					}).show().animate({
@@ -817,8 +703,8 @@ var $exeDevice = {
 			this.value = this.value < 1 ? 1 : this.value;
 		});
 		if (window.File && window.FileReader && window.FileList && window.Blob) {
-			$('#roscoExportImport').show();
-			$('#roscoImportGame').on('change', function (e) {
+			$('#eXeGameExportImport').show();
+			$('#eXeGameImportGame').on('change', function (e) {
 				var file = e.target.files[0];
 				if (!file) {
 					return;
@@ -829,11 +715,11 @@ var $exeDevice = {
 				};
 				reader.readAsText(file);
 			});
-			$('#roscoExportGame').on('click', function () {
+			$('#eXeGameExportGame').on('click', function () {
 				$exeDevice.exportGame();
 			})
 		} else {
-			$('#roscoExportImport').hide();
+			$('#eXeGameExportImport').hide();
 		}
 	},
 	exportGame: function () {
@@ -871,49 +757,6 @@ var $exeDevice = {
 		return false;
 	},
 	itinerary: {
-		getFieldset: function () {
-			var html = '\
-                <fieldset class="exe-fieldset exe-fieldset-closed">\
-                    <legend><a href="#">' + _("Itinerary") + '</a></legend>\
-                    <div>\
-                        <p class="exe-block-info exe-block-dismissible">' + ("May be necessary to enter a password to access this game. May also show a key word by reaching a presestablished percentage of hits. Use these keys to create an itinerary of challenges: It would not be possible to access a new challenge until you get the key or the solution to a problem.") + ' <a href="#" class="exe-block-close" title="' + _("Hide") + '"><span class="sr-av">' + _("Hide") + ' </span>×</a></p>\
-                        <p>\
-                            <label for="eXeGameShowCodeAccess"><input type="checkbox" id="eXeGameShowCodeAccess">' + _("Access code is required") + '</label>\
-                        </p>\
-                        <p style="margin-left:1.4em;margin-bottom:1.5em">\
-                            <label for="eXeGameCodeAccess" id="labelCodeAccess">' + _("Access code") + ':</label>\
-                            <input type="text" name="eXeGameCodeAccess" id="eXeGameCodeAccess"  maxlength="40" disabled />\
-                            <label for="eXeGameMessageCodeAccess" id="labelMessageAccess">' + _("Question") + ':</label>\
-                            <input type="text" name="eXeGameMessageCodeAccess" id="eXeGameMessageCodeAccess" maxlength="200"/ disabled> \
-                        </p>\
-                        <p>\
-                            <label for="eXeGameShowClue"><input type="checkbox" id="eXeGameShowClue">' + _("Show a message or password") + '</label>\
-                        </p>\
-                        <div style="margin-left:1.4em;margin-bottom:1.5em">\
-                            <p>\
-                                <label for="eXeGameClue">' + _("Message") + ':</label>\
-                                <input type="text" name="eXeGameClue" id="eXeGameClue"  maxlength="50" disabled>\
-                            </p>\
-                            <p>\
-                                <label for="eXeGamePercentajeClue" id="labelPercentajeClue">' + _("Percentage of hits needed to display the message") + ':</label>\
-                                <select id="eXeGamePercentajeClue" disabled>\
-                                    <option value="10">10%</option>\
-                                    <option value="20">20%</option>\
-                                    <option value="30">30%</option>\
-                                    <option value="40" selected>40%</option>\
-                                    <option value="50">50%</option>\
-                                    <option value="60">60%</option>\
-                                    <option value="70">70%</option>\
-                                    <option value="80">80%</option>\
-                                    <option value="90">90%</option>\
-                                    <option value="100">100%</option>\
-                                </select>\
-                            </p>\
-                        </div>\
-                    </div>\
-                </fieldset>';
-			return html;
-		},
 		getValues: function () {
 			var showClue = $('#eXeGameShowClue').is(':checked'),
 				clueGame = $.trim($('#eXeGameClue').val()),
