@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<idevice>
+	<title>Rubric</title>
+	<css-class>Rubric</css-class>
+	<category>Other Contents</category>
+	<!--
+	<version>1.0</version>
+	<author>Ignacio Gros for eXeLearning.net</author>
+	<author-url>http://www.gros.es/</author-url>
+	<license>Creative Commons by-sa</license>
+	<license-url>http://creativecommons.org/licenses/by-sa/4.0/</license-url>
+	<description>Cretate a rubric. Set the criteria for assessing different levels of performance.</description>
+	-->
+</idevice>
