@@ -31,6 +31,8 @@ var $eXeRosco = {
 	msgs: {},
 	hasSCORMbutton: false,
 	isInExe: false,
+	userName: '',
+	previousScore: '',
 	init: function () {
 		this.activities = $('.rosco-IDevice');
 		if (this.activities.length == 0) return;
@@ -42,8 +44,8 @@ var $eXeRosco = {
 		$eXeRosco.angleSize = 2 * Math.PI / 27;
 		if (typeof ($exeAuthoring) != 'undefined') this.isInExe = true;
 		this.idevicePath = this.isInExe ? "/scripts/idevices/rosco-activity/export/" : "";
-		$eXeRosco.loadGame();
 		if ($("body").hasClass("exe-scorm")) this.loadSCORM_API_wrapper();
+		else this.enable();
 	},
 	loadSCORM_API_wrapper: function () {
 		if (typeof (pipwerks) == 'undefined') $exe.loadScript('SCORM_API_wrapper.js', '$eXeRosco.loadSCOFunctions()');
@@ -51,9 +53,43 @@ var $eXeRosco = {
 	},
 	loadSCOFunctions: function () {
 		if (typeof (exitPageStatus) == 'undefined') $exe.loadScript('SCOFunctions.js', '$eXeRosco.enable()');
+		else this.enable();
+		$eXeRosco.mScorm = scorm;
+		var callSucceeded = $eXeRosco.mScorm.init();
+		if (callSucceeded) {
+			$eXeRosco.userName = $eXeRosco.getUserName();
+			$eXeRosco.previousScore = $eXeRosco.getPreviousScore();
+			$eXeRosco.mScorm.set("cmi.core.score.max", 10);
+			$eXeRosco.mScorm.set("cmi.core.score.min", 0);
+		}
+	},
+	updateScorm: function (prevScore, repeatActivity, instance) {
+		var mOptions = $eXeRosco.options[instance],
+			text = '';
+		$('#roscoSendScore-' + instance).show();
+		if (!repeatActivity && prevScore === '') {
+			text = mOptions.msgs.msgOnlySave;
+		} else if (!repeatActivity && prevScore !== '') {
+			$('#roscoSendScore-' + instance).hide();
+			text = mOptions.msgs.msgYouScore + ': ' + prevScore;
+		}
+		$('#roscoRepeatActivity-' + instance).text(text);
+		$('#roscoRepeatActivity-' + instance).fadeIn(1000);
+	},
+	getUserName: function () {
+		var user = $eXeRosco.mScorm.get("cmi.core.student_name");
+		return user
+	},
+	getPreviousScore: function () {
+		var score = $eXeRosco.mScorm.get("cmi.core.score.raw");
+		return score;
+	},
+	endScorm: function () {
+		$eXeRosco.mScorm.quit();
 	},
 	enable: function () {
-		//console.log('Cargado scofuntion')
+		$eXeRosco.loadGame();
+
 	},
 	loadGame: function () {
 		$eXeRosco.options = [];
@@ -64,22 +100,19 @@ var $eXeRosco = {
 			$eXeRosco.options.push(option);
 			var rosco = $eXeRosco.createInterfaceRosco(i);
 			dl.before(rosco).remove();
-			var msg = $eXeRosco.msgs.msgPlayStart;
+			var msg = $eXeRosco.options[i].msgs.msgPlayStart;
 			$('#roscoGameMinimize-' + i).hide();
 			$('#roscoGameContainer-' + i).hide();
-			if (!navigator.onLine) {
-				msg = $eXeRosco.msgs.msgNotNetwork;
-				$('#roscoGameMinimize-' + i).css({
-					'cursor': 'auto'
-				}).show();
-			} else if ($eXeRosco.options[i].showMinimize) {
+			$('#roscoGame-' + i).hide();
+			if ($eXeRosco.options[i].showMinimize) {
 				$('#roscoGameMinimize-' + i).css({
 					'cursor': 'pointer'
 				}).show();
 			} else {
 				$('#roscoGameContainer-' + i).show();
+				$('#roscoGame-' + i).show();
 			}
-			$('#roscoMessageMinimize-' + i).text(msg);
+			$('#roscoMessageMaximize-' + i).text(msg);
 			$eXeRosco.addEvents(i);
 		});
 	},
@@ -101,7 +134,6 @@ var $eXeRosco = {
 		imgsLink.each(function (index) {
 			mOptions.wordsGame[index].url = $(this).attr('href');
 		});
-		$eXeRosco.msgs = mOptions.msgs;
 
 		return mOptions;
 	},
@@ -109,62 +141,78 @@ var $eXeRosco = {
 	createInterfaceRosco: function (instance) {
 		var aLetters = this.getLettersRosco(instance),
 			sTime = this.getTimeToString(this.options[instance].durationGame),
-			msgs = $eXeRosco.msgs,
+			msgs = this.options[instance].msgs,
 			html = '',
 			path = $eXeRosco.idevicePath;
 		html += '<div class="rosco-Main">\
 				<div class="rosco-MainContainer">\
 				<div class="rosco-GameMinimize" id="roscoGameMinimize-' + instance + '">\
-				<a href="#" class="rosco-LinkMinimize" id="roscoLinkMinimize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + "rosco-icon.png" + '" class="rosco-Icon" id="roscoIcon-' + instance + '" alt="' + msgs.msgMinimize + '">\
-					<div  class="rosco-MessageMinimize" id="roscoMessageMinimize-' + instance + '">' + msgs.msgPlayStart + '</div></a>\
+				<a href="#" class="rosco-LinkMaximize" id="roscoLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'rosco-icon.png" class="rosco-Icon" id="roscoIcon-' + instance + '" alt="' + msgs.msgMinimize + '">\
+					<div  class="rosco-MessageMaximize" id="roscoMessageMaximize-' + instance + '">' + msgs.msgPlayStart + '</div></a>\
 				</div>\
 				<div class="rosco-GameContainer" id="roscoGameContainer-' + instance + '">\
-					<div class="rosco-GameScoreBoard" id="roscoGameScoreBoard-' + instance + '">\
-						<div class="rosco-GameScores"id="roscoGameScores-' + instance + '">\
-						<a href="#" class="rosco-LinkMaximize" id="roscoLinkMaximize-' + instance + '" title="' + msgs.msgMinimize + '"><img src="' + path + "rosco-uparrow.png" + '" class="rosco-UpArrow" id="roscoUpArrow-' + instance + '" alt="' + msgs.msgMaximize + '"></a>\
-							<div class="rosco-ResultsGame" id="roscoHitsGame-' + instance + '">\
-								<img src="' + path + "roscoHits.png" + '" class="rosco-HitIcons" id="roscoHits-' + instance + '" title="' + msgs.msgHits + '" alt="' + msgs.msgHits + '">\
-								<p  id="pHits-' + instance + '">0</p>\
+					<div class="rosco-GameScoreBoard">\
+						<div class="rosco-GameScores">\
+							<a href="#" class="rosco-LinkArrowMinimize" id="roscoLinkArrowMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
+								<strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
+								<div class="exeQuextIcons exeQuextIcons-Minimize"></div>\
+							</a>\
+							<div class="exeQuext-ResultGame">\
+								<strong><span class="sr-av">' + msgs.msgHits + ':</span></strong>\
+								<div class="exeQuextIcons exeQuextIcons-Hit"></div>\
+								<p  id="roscotPHits-' + instance + '">0</p>\
 							</div>\
-							<div class="rosco-ResultsGame" id="roscoErrorsGame-' + instance + '">\
-								<img src="' + path + "roscoErrors.png" + '" class="rosco-ErrorIcons" id="roscoErrors-' + instance + '" title="' + msgs.msgErrors + '" alt="' + msgs.msgErrors + '">\
-								<p id="pErrors-' + instance + '">0</p>\
+							<div class="exeQuext-ResultGame">\
+								<strong><span class="sr-av">' + msgs.msgErrors + ':</span></strong>\
+								<div class="exeQuextIcons  exeQuextIcons-Error"></div>\
+								<p id="roscotPErrors-' + instance + '">0</p>\
 							</div>\
 						</div>\
-							<div class="rosco-TimeTurn"id="roscoTimeTurn-' + instance + '">\
-							<div  class="rosco-DurationGame"  id="roscoDurationGame-' + instance + '">\
-								<img src="' + path + "roscoClock.png" + '" class="rosco-clockIcons" id="roscoClock-' + instance + '" title="' + msgs.msgTime + '"  alt="' + msgs.msgTime + '">\
-								<p  id="pTime-' + instance + '">' + sTime + '</p>\
+						<div class="rosco-TimeTurn">\
+							<div  class="rosco-DurationGame">\
+								<strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
+								<div class="exeQuextIcons  exeQuextIcons-Time"></div>\
+								<p  id="roscoPTime-' + instance + '">' + sTime + '</p>\
 							</div>\
-							<img src="' + path + "roscoOneTurns.png" + '" class="rosco-TurnIcons" id="roscoTurn-' + instance + '"  title="' + msgs.msgOneRound + '"  alt="' + msgs.msgOneRound + '">\
-							<a href="#" class="rosco-LinkCircle" id="roscoLinkCircle-' + instance + '" title="' + msgs.msg + '"><img src="' + path + "roscoPlayCircle.png" + '" class="rosco-TypeGame" id="roscoTypeGame-' + instance + '" alt="' + msgs.msg + '"></a>\
+							<strong><span class="sr-av"  id="roscoNumberRoundsSpan-' + instance + '">' + msgs.msgOneRound + ':</span></strong>\
+							<div class="exeQuextIcons  exeQuextIcons-OneRound" id="roscoNumberRounds-' + instance + '"></div>\
+						    <a href="#" class="rosco-LinkTypeGame" id="roscoLinkTypeGame-' + instance + '" title="' + msgs.msgHideRoulette + '">\
+								<strong><span class="sr-av">' + msgs.msgHideRoulette + ':</span></strong>\
+								<div class="exeQuextIcons exeQuextIcons-RoscoRows" id="roscoTypeGame-' + instance + '"></div>\
+							</a>\
 						</div>\
 					</div>\
 					<div class="rosco-Letters" id="roscoLetters-' + instance + '">' + aLetters + '</div>\
-					<div class="rosco-Author" id="roscoAuthor-' + instance + '"></div>\
+					<div class="rosco-ShowClue" id="roscoShowClue-' + instance + '">\
+						<div class="sr-av">' + msgs.msgClue + ':</div>\
+						<p class="rosco-PShowClue" id="roscoPShowClue-' + instance + '"></p>\
+			   		</div>\
 					<div class="rosco-Image" id="roscoImage-' + instance + '">\
-						<img src="' + path + "roscoCursor.gif" + '" class="rosco-Cursor" alt="Cursor" id="roscoCursor-' + instance + '"/> \
-						<img src="' + path + "roscoHome.png" + '" class="rosco-HomeImage" alt="Image" id="roscoHomeImage-' + instance + '"/> \
-						<img src="' + path + "roscoHome.png" + '" class="rosco-NoImage" alt="No Image" id="roscoNoImage-' + instance + '"/> \
+						<img src="' + path + 'roscoCursor.gif" class="rosco-Cursor" alt="Cursor" id="roscoCursor-' + instance + '"/> \
+						<img src="" class="rosco-HomeImage" alt="' + msgs.msgNoImage + '" id="roscoHomeImage-' + instance + '"/> \
+						<img src="' + path + 'roscoHome.png" class="rosco-NoImage" alt="' + msgs.msgNoImage + '" id="roscoNoImage-' + instance + '"/> \
 					</div>\
+					<div class="rosco-Author" id="roscoAuthor-' + instance + '"></div>\
 					<div class="rosco-Solution" id="roscoSolution-' + instance + '">\
-							<p id="pSolution-' + instance + '">' + msgs.msgReady + '</p>\
+							<p id="roscoPSolution-' + instance + '">' + msgs.msgReady + '</p>\
 					</div>\
 					<div  class="rosco-TypeDefinition"  id="roscoTypeDefinition-' + instance + '">\
-						<p  id="pStartWith-' + instance + '">' + msgs.msgStartGame + '</p>\
+						<p  id="roscoPStartWith-' + instance + '">' + msgs.msgStartGame + '</p>\
 					</div>\
 					<div  class="rosco-Definition" id="roscoDefinition-' + instance + '">\
-						<p id="pDefinition-' + instance + '">' + msgs.msgWrote + '.</p>\
+						<h3 class="sr-av">' + msgs.msgQuestion + ':</h3>\
+						<p id="roscoPDefinition-' + instance + '">' + msgs.msgWrote + '.</p>\
 					</div>\
 					<div  class="rosco-AnswerButtons"  id="roscoAnswerButtons-' + instance + '">\
-						<input type="button" value="' + msgs.msgHappen + '" id="btnPass-' + instance + '">\
-						<input type="text" class="rosco-AnswerEdit" id="edAnswer-' + instance + '">\
-						<input type="button" value="' + msgs.msgReply + '"  id="btnAnswer-' + instance + '">\
+						<input type="button" value="' + msgs.msgHappen + '" id="roscoBtnPass-' + instance + '">\
+						<input type="text" class="rosco-AnswerEdit" id="roscoEdAnswer-' + instance + '">\
+						<input type="button" value="' + msgs.msgReply + '"  id="roscoBtnAnswer-' + instance + '">\
 					</div>\
 					<div  class="rosco-CodeAccess"  id="roscoCodeAccess-' + instance + '">\
-						<label for="edCodeAccess-' + instance + '" id="labelMessageAccess">' + msgs.msgCodeAccess + '</label>\
-						<input type="text" class="rosco-AnswerEdit" id="edCodeAccess-' + instance + '">\
-						<input type="button" value="' + msgs.msgSubmit + '" id="btnSubmitCodeAccess-' + instance + '">\
+						<label for="roscoEdCodeAccess-' + instance + '" id="labelMessageAccess">' + msgs.msgCodeAccess + '</label>\
+						<h3 class="sr-av">' + msgs.msgAnswer + ':</h3>\
+						<input type="text" class="rosco-AnswerEdit" id="roscoEdCodeAccess-' + instance + '">\
+						<input type="button" value="' + msgs.msgSubmit + '" id="roscoBtnSubmitCodeAccess-' + instance + '">\
 					</div>\
 				</div>\
 				<div id="roscoGame-' + instance + '"class="rosco-Game">\
@@ -181,7 +229,7 @@ var $eXeRosco = {
 		if (big) {
 			html = '<a href="#">' + message + '</a>';
 		}
-		$('#pStartWith-' + instance).html(html);
+		$('#roscoPStartWith-' + instance).html(html);
 	},
 	addButtonScore: function (instance) {
 		var mOptions = $eXeRosco.options[instance];
@@ -193,7 +241,7 @@ var $eXeRosco = {
 					this.hasSCORMbutton = true;
 					var fB = '<div class="rosco-get-score iDevice_buttons feedback-button js-required" id="roscoButonScoreDiv-' + instance + '">';
 					if (!this.isInExe) fB += '<form action="#" onsubmit="return false">';
-					fB += '<p><input type="button" id="roscoSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton" /></p>';
+					fB += '<p><input type="button" id="roscoSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton" /> <span class="rosco-RepeatActivity" id="roscoRepeatActivity-' + instance + '"></span></p>';
 					if (!this.isInExe) fB += '</form>';
 					fB += '</div>';
 					butonScore = fB;
@@ -202,19 +250,34 @@ var $eXeRosco = {
 		}
 		return butonScore;
 	},
-	sendScore: function (i, auto) {
-		var mOptions = $eXeRosco.options[i],
-			message = '';
+	sendScore: function (instance, auto) {
+		var mOptions = $eXeRosco.options[instance],
+			message = '',
+			score = ((mOptions.hits * 10) / mOptions.validWords).toFixed(2);
 		if (mOptions.gameStarted || mOptions.gameOver) {
-			var score = ((mOptions.hits * 10) / mOptions.validWords).toFixed(2);
-			if (typeof (scorm) != 'undefined' && typeof (scorm.SetScoreMax) !== 'undefined' && jQuery.isFunction(scorm.SetScoreRaw)) {
-				scorm.SetScoreMax("10");
-				scorm.SetScoreRaw(score + "");
-				scorm.save();
-				message = $exe_i18n.yourScoreIs + ' ' + score;
+			if (typeof ($eXeRosco.mScorm) != 'undefined') {
+				if (!auto) {
+					if (!mOptions.repeatActivity && $eXeRosco.previousScore !== '') {
+						message = $eXeRosco.userName !== '' ? $eXeRosco.userName + ' ' + mOptions.msgs.msgOnlySaveScore : mOptions.msgs.msgOnlySaveScore;
+					} else {
+						$eXeRosco.previousScore = score;
+						$eXeRosco.mScorm.set("cmi.core.score.raw", score);
+						message = $eXeRosco.userName !== '' ? $eXeRosco.userName + ', ' + $exe_i18n.yourScoreIs + ' ' + score : $exe_i18n.yourScoreIs + ' ' + score;
+						if (!mOptions.repeatActivity) {
+							$('#roscoSendScore-' + instance).hide();
+						}
+						$('#roscoRepeatActivity-' + instance).text($exe_i18n.yourScoreIs + ' ' + +score)
+						$('#roscoRepeatActivity-' + instance).show();
+					}
+				} else {
+					$eXeRosco.previousScore = score;
+					$eXeRosco.mScorm.set("cmi.core.score.raw", score);
+					message = "";
+				}
 			} else {
 				message = mOptions.msgs.msgScoreScorm;
 			}
+
 		} else {
 			var hasClass = $("body").hasClass("exe-scorm");
 			message = (hasClass) ? mOptions.msgs.msgEndGameScore : mOptions.msgs.msgScoreScorm;
@@ -238,86 +301,85 @@ var $eXeRosco = {
 	},
 
 	addEvents: function (instance) {
-		var msgs = $eXeRosco.msgs,
-			mOptions = $eXeRosco.options[instance];
-		$('#edAnswer-' + instance).val("");
-		$('#btnAnswer-' + instance).prop('disabled', true);
-		$('#btnPass-' + instance).prop('disabled', true);
-		$('#edAnswer-' + instance).prop('disabled', true);
+		var mOptions = $eXeRosco.options[instance],
+			msgs = mOptions.msgs;
+		$('#roscoEdAnswer-' + instance).val("");
+		$('#roscoBtnAnswer-' + instance).prop('disabled', true);
+		$('#roscoBtnPass-' + instance).prop('disabled', true);
+		$('#roscoEdAnswer-' + instance).prop('disabled', true);
 		if (mOptions.itinerary.showCodeAccess) {
 			$('#roscoAnswerButtons-' + instance).hide();
 			$('#roscoCodeAccess-' + instance).show();
-			$('#pDefinition-' + instance).text(mOptions.itinerary.messageCodeAccess);
-			$eXeRosco.changeTextInit(false, '', instance) ;
-			$('#edCodeAccess-' + instance).focus();
+			$('#roscoPDefinition-' + instance).text(mOptions.itinerary.messageCodeAccess);
+			$eXeRosco.changeTextInit(false, '', instance);
+			$('#roscoEdCodeAccess-' + instance).focus();
 		} else {
 			$('#roscoAnswerButtons-' + instance).show();
 			$('#roscoCodeAccess-' + instance).hide();
-			$('#pDefinition-' + instance).text(msgs.msgWrote);
+			$('#roscoPDefinition-' + instance).text(msgs.msgWrote);
 			$eXeRosco.changeTextInit(true, msgs.msgStartGame, instance);
-			$('#pStartWith-' + instance).on('click', 'a', function (e) {
+			$('#roscoPStartWith-' + instance).on('click', 'a', function (e) {
 				e.preventDefault();
 				$eXeRosco.startGame(instance);
 			});
 		}
-		$('#btnSubmitCodeAccess-' + instance).on('click', function () {
-			var keyIntroduced = $.trim($('#edCodeAccess-' + instance).val()).toUpperCase(),
+		$('#roscoBtnSubmitCodeAccess-' + instance).on('click', function () {
+			var keyIntroduced = $.trim($('#roscoEdCodeAccess-' + instance).val()).toUpperCase(),
 				correctKey = $.trim(mOptions.itinerary.codeAccess).toUpperCase();
 			if (keyIntroduced == correctKey) {
 				$('#roscoAnswerButtons-' + instance).show();
 				$('#roscoCodeAccess-' + instance).hide();
-				$('#pStartWith-' + instance).on('click', 'a', function (e) {
+				$('#roscoPStartWith-' + instance).on('click', 'a', function (e) {
 					e.preventDefault();
 					$eXeRosco.startGame(instance);
 				});
 				$eXeRosco.startGame(instance);
 			} else {
 				$eXeRosco.changeTextInit(false, msgs.msgErrorCode, instance);
-				$('#edCodeAccess-' + instance).val('');
+				$('#roscoEdCodeAccess-' + instance).val('');
 			}
 		});
 
-		$("#roscoGameMinimize-" + instance).on('click touchstart', function (e) {
-			if (navigator.onLine) {
-				$("#roscoGameContainer-" + instance).show()
-				$("#roscoGameMinimize-" + instance).hide();
-			} else {
-				$('#roscoMessageMinimize-' + instance).text(msgs.msgNotNetwork);
-				$("#roscoGameMinimize-" + instance).css('cursor', 'auto')
-			}
+		$("#roscoLinkMaximize-" + instance).on('click touchstart', function (e) {
+			e.preventDefault();
+			$("#roscoGameContainer-" + instance).show();
+			$("#roscoGame-" + instance).show();
+			$("#roscoGameMinimize-" + instance).hide();
+			$('#roscoTypeGame-' + instance).removeClass('exeQuextIcons-RoscoRows');
+			$('#roscoTypeGame-' + instance).addClass('exeQuextIcons-RoscoCanvas');
 		});
 
-		$("#roscoUpArrow-" + instance).on('click touchstart', function (e) {
+		$("#roscoLinkArrowMinimize-" + instance).on('click touchstart', function (e) {
+			e.preventDefault();
 			$("#roscoGame-" + instance).hide();
 			$("#roscoGameContainer-" + instance).hide();
 			$("#roscoGameMinimize-" + instance).css('visibility', 'visible').show();
-			if (!navigator.onLine) {
-				$('#roscoMessageMinimize-' + instance).text(msgs.msgNotNetwork);
-				$("#roscoGameMinimize-" + instance).css('cursor', 'auto')
-			}
 		});
 
-		$('#edCodeAccess-' + instance).on("keydown", function (event) {
+		$('#roscoEdCodeAccess-' + instance).on("keydown", function (event) {
 			if (event.which == 13 || event.keyCode == 13) {
-				$('#btnSubmitCodeAccess-' + instance).trigger('click');
+				$('#roscoBtnSubmitCodeAccess-' + instance).trigger('click');
 				return false;
 			}
 			return true;
 		});
 		var mTime = mOptions.durationGame,
 			sTime = $eXeRosco.getTimeToString(mTime),
-			imgTurn = mOptions.numberTurns == 2 ? $eXeRosco.idevicePath + 'roscoTwoTurns.png' : $eXeRosco.idevicePath + 'roscoOneTurns.png',
-			altTurn = mOptions.numberTurns == 2 ? $eXeRosco.idevicePath + 'One turn' : 'Two turns'
-		$('#roscoTurn-' + instance).attr('src', imgTurn);
-		$('#roscoTurn-' + instance).attr('alt', altTurn);
-		$('#pTime-' + instance).text(sTime);
-		$('#btnPass-' + instance).on('click', function () {
+			altTurn = mOptions.numberTurns === 1 ? mOptions.msgOneRound : mOptions.msgTowRounds;
+		if (mOptions.numberTurns === 1) {
+			$('#roscoNumberRounds-' + instance).addClass("exeQuextIcons-OneRound").removeClass("exeQuextIcons-TwoRounds").attr('alt', 'One turn');
+		} else {
+			$('#roscoNumberRounds-' + instance).addClass("exeQuextIcons-TwoRounds").removeClass("exeQuextIcons-OneRound").attr('alt', 'Two turns');
+		}
+		$('#roscoNumberRoundsSpan-' + instance).text(altTurn);
+		$('#roscoPTime-' + instance).text(sTime);
+		$('#roscoBtnPass-' + instance).on('click', function () {
 			$eXeRosco.passWord(instance);
 		});
-		$('#btnAnswer-' + instance).on('click', function () {
+		$('#roscoBtnAnswer-' + instance).on('click', function () {
 			$eXeRosco.answerQuetion(instance);
 		});
-		$('#edAnswer-' + instance).on("keydown", function (event) {
+		$('#roscoEdAnswer-' + instance).on("keydown", function (event) {
 			if (event.which == 13 || event.keyCode == 13) {
 				$eXeRosco.answerQuetion(instance);
 				return false;
@@ -328,33 +390,55 @@ var $eXeRosco = {
 			rosco = document.getElementById(id);
 		mOptions.ctxt = rosco.getContext("2d");
 		$eXeRosco.drawRosco(instance);
-		$('#roscoLetters-' + instance).show();;
-		$('#roscoGame-' + instance).hide();
-		$('#roscoSolution-' + instance).show();
-		$('#roscoTypeGame-' + instance).attr('src', $eXeRosco.idevicePath + "roscoPlayCircle.png");
-		$('#roscoTypeGame-' + instance).on('click', function () {
-			var src = $(this).attr('src');
-			if (src.indexOf('roscoPlayCircle') != -1) {
-				$('#roscoTypeGame-' + instance).attr('src', $eXeRosco.idevicePath + "roscoPlayRows.png");
-				$('#roscoLetters-' + instance).hide();
-				$('#roscoSolution-' + instance).hide();
-				$('#roscoGame-' + instance).show();
-			} else {
-				$('#roscoTypeGame-' + instance).attr('src', $eXeRosco.idevicePath + "roscoPlayCircle.png");
+		$('#roscoLetters-' + instance).hide();;
+		$('#roscoSolution-' + instance).hide();
+		$('#roscoTypeGame-' + instance).removeClass('exeQuextIcons-RoscoRows');
+		$('#roscoTypeGame-' + instance).addClass('exeQuextIcons-RoscoCanvas');
+		$('#roscoLinkTypeGame-' + instance).on('click', function (e) {
+			e.preventDefault();
+			var alt =mOptions.msgs.msgHideRoulette;
+			if ($('#roscoTypeGame-' + instance).hasClass('exeQuextIcons-RoscoCanvas')) {
+				$('#roscoTypeGame-' + instance).addClass('exeQuextIcons-RoscoRows');
+				$('#roscoTypeGame-' + instance).removeClass('exeQuextIcons-RoscoCanvas');
 				$('#roscoLetters-' + instance).show();
 				$('#roscoSolution-' + instance).show();
 				$('#roscoGame-' + instance).hide();
+				alt =mOptions.msgs.msgShowRoulette;
+			} else {
+				$('#roscoTypeGame-' + instance).addClass('exeQuextIcons-RoscoCanvas');
+				$('#roscoTypeGame-' + instance).remove('exeQuextIcons-RoscoRows');
+				$('#roscoLetters-' + instance).hide();
+				$('#roscoSolution-' + instance).hide();
+				$('#roscoGame-' + instance).show();
+			}
+			$('#roscoLinkTypeGame-' + instance).attr('title',alt);
+			$('#roscoLinkTypeGame-' + instance).find('span').text(alt);
+
+		});
+		$eXeRosco.drawText(mOptions.msgs.msgReady, $eXeRosco.colors.blue, instance);
+		$('#roscoPSolution-' + instance).css('color', $eXeRosco.colors.blue);
+		$eXeRosco.drawRows(instance);
+		$("#roscoSendScore-" + instance).click(function (e) {
+			e.preventDefault();
+			$eXeRosco.sendScore(instance, false);
+		});
+		if (mOptions.isScorm === 2) {
+			$eXeRosco.updateScorm($eXeRosco.previousScore, mOptions.repeatActivity, instance);
+		}
+		$(window).on('unload', function () {
+			if (typeof $eXeRosco.mScorm != "undefined") {
+				$eXeRosco.endScorm();
 			}
 		});
-		$eXeRosco.drawText($eXeRosco.msgs.msgReady, $eXeRosco.colors.blue, instance);
-		$('#pSolution-' + instance).css('color', $eXeRosco.colors.blue);
-		
-		//$('#pStartWith-' + instance).css('color', $eXeRosco.colors.red);
-		$eXeRosco.drawRows(instance);
-		$("#roscoSendScore-" + instance).click(function () {
-			$eXeRosco.sendScore(instance, false);
-			return false;
-		});
+		$('#roscoTypeGame-' + instance).show();
+		if (window.innerWidth < 800) {
+			$('#roscoTypeGame-' + instance).addClass('exeQuextIcons-RoscoRows');
+			$('#roscoTypeGame-' + instance).removeClass('exeQuextIcons-RoscoCanvas');
+			$('#roscoLetters-' + instance).show();
+			$('#roscoSolution-' + instance).show();
+			$('#roscoGame-' + instance).hide();
+			$('#roscoTypeGame-' + instance).hide();
+		}
 	},
 
 	startGame: function (instance) {
@@ -362,6 +446,7 @@ var $eXeRosco = {
 		if (mOptions.gameStarted) {
 			return;
 		}
+		mOptions.obtainedClue = false;
 		mOptions.hits = 0;
 		mOptions.solucion = '';
 		mOptions.errors = 0;
@@ -397,27 +482,33 @@ var $eXeRosco = {
 				return;
 			}
 		}, 1000);
-		$('#pHits-' + instance).text(mOptions.hits);
-		$('#pErrors-' + instance).text(mOptions.errors);
-		$('#btnAnswer-' + instance).prop('disabled', false);
-		$('#btnPass-' + instance).prop('disabled', false);
-		$('#edAnswer-' + instance).prop('disabled', false).focus();
+		mOptions.obtainedClue = false;
+		$('#roscoPShowClue-' + instance).text('');
+		$('#roscotPHits-' + instance).text(mOptions.hits);
+		$('#roscotPErrors-' + instance).text(mOptions.errors);
+		$('#roscoBtnAnswer-' + instance).prop('disabled', false);
+		$('#roscoBtnPass-' + instance).prop('disabled', false);
+		$('#roscoEdAnswer-' + instance).prop('disabled', false).focus();
 		var mTime = mOptions.durationGame,
 			sTime = $eXeRosco.getTimeToString(mTime),
-			imgTurn = mOptions.numberTurns == 2 ? $eXeRosco.idevicePath + 'roscoTwoTurns.png' : $eXeRosco.idevicePath + 'roscoOneTurns.png',
-			altTurn = mOptions.numberTurns == 2 ? $eXeRosco.idevicePath + 'One turn' : 'Two turns'
-		$('#roscoTurn-' + instance).attr('src', imgTurn);
-		$('#roscoTurn-' + instance).attr('alt', altTurn);
-		$('#pTime-' + instance).text(sTime);
+			altTurn = mOptions.numberTurns === 1 ? mOptions.msgOneRound : mOptions.msgTowRounds;
+		if (mOptions.numberTurns === 1) {
+			$('#roscoNumberRounds-' + instance).addClass("exeQuextIcons-OneRound").removeClass("exeQuextIcons-TwoRounds").attr('alt', 'One turn');
+		} else {
+			$('#roscoNumberRounds-' + instance).addClass("exeQuextIcons-TwoRounds").removeClass("exeQuextIcons-OneRound").attr('alt', 'Two turns');
+		}
+		$('#roscoNumberRoundsSpan-' + instance).text(altTurn);
+		$('#roscoPTime-' + instance).text(sTime);
 		mOptions.gameActived = true;
 		$eXeRosco.newWord(instance);
 		mOptions.gameStarted = true;
+
 	},
 
 	uptateTime: function (tiempo, instance) {
 		var mTime = $eXeRosco.getTimeToString(tiempo),
 			mOptions = $eXeRosco.options[instance];
-		$('#pTime-' + instance).text(mTime);
+		$('#roscoPTime-' + instance).text(mTime);
 		if (mOptions.gameActived) {
 			$eXeRosco.drawLetterActive(mOptions.activeWord, instance);
 		}
@@ -429,37 +520,36 @@ var $eXeRosco = {
 		return (mMinutes < 10 ? "0" + mMinutes : mMinutes) + ":" + (mSeconds < 10 ? "0" + mSeconds : mSeconds);
 	},
 
-	getRetroFeedMessages: function (iHit) {
-		var sMessages = iHit ? $eXeRosco.msgs.msgSuccesses.split('|') : $eXeRosco.msgs.msgFailures.split('|');
+	getRetroFeedMessages: function (iHit, instance) {
+		var mOptions = $eXeRosco.options[instance],
+			msgs = mOptions.msgs;
+		var sMessages = iHit ? msgs.msgSuccesses.split('|') : msgs.msgFailures.split('|');
 		return sMessages[Math.floor(Math.random() * sMessages.length)];
 	},
 
 	gameOver: function (type, instance) {
-		var msgs = $eXeRosco.msgs,
-			mOptions = $eXeRosco.options[instance];
+		var mOptions = $eXeRosco.options[instance],
+			msgs = mOptions.msgs;
 		clearInterval(mOptions.counterClock);
 		$eXeRosco.uptateTime(mOptions.counter, instance);
 		$eXeRosco.changeTextInit(true, msgs.msgNewGame, instance);
-		//$('#pStartWith-' + instance).text(msgs.msgNewGame);
 		var msg = msgs.msgYouHas.replace('%1', mOptions.hits);
 		msg = msg.replace('%2', mOptions.errors)
-		$('#pDefinition-' + instance).text(msg);
-		$('#btnAnswer-' + instance).prop('disabled', true);
-		$('#btnPass-' + instance).prop('disabled', true);
-		$('#edAnswer-' + instance).prop('disabled', true);
+		$('#roscoPDefinition-' + instance).text(msg);
+		$('#roscoBtnAnswer-' + instance).prop('disabled', true);
+		$('#roscoBtnPass-' + instance).prop('disabled', true);
+		$('#roscoEdAnswer-' + instance).prop('disabled', true);
 		mOptions.activeWord = 0;
 		mOptions.answeredWords = 0;
 		mOptions.gameOver = true;
 		$eXeRosco.drawRosco(instance);
 		$eXeRosco.drawText(msgs.msgGameOver, $eXeRosco.colors.red, instance);
-		$('#edAnswer-' + instance).val('');
-		$('#pSolution-' + instance).text(msgs.msgGameOver).css("color", $eXeRosco.colors.blue);
+		$('#roscoEdAnswer-' + instance).val('');
+		$('#roscoPSolution-' + instance).text(msgs.msgGameOver).css("color", $eXeRosco.colors.blue);
 		$eXeRosco.showImage('', 0, 0, '', '', instance);
 		mOptions.gameStarted = false;
 		if (mOptions.isScorm == 1) {
-			if (type != 2) {
-				$eXeRosco.sendScore(instance, true);
-			}
+			$eXeRosco.sendScore(instance, true);
 		}
 	},
 
@@ -485,29 +575,28 @@ var $eXeRosco = {
 		ctxt.fillStyle = color;
 		ctxt.fillText(texto, xText, yText + 3);
 		ctxt.closePath();
-		$('#pSolution-' + instance).css("color", color).text(texto);
+		$('#roscoPSolution-' + instance).css("color", color).text(texto);
 	},
 
 	showWord: function (activeLetter, instance) {
-		var msgs = $eXeRosco.msgs,
-			mWord = $eXeRosco.options[instance].wordsGame[activeLetter],
+		var mOptions = $eXeRosco.options[instance],
+			msgs = mOptions.msgs,
+			mWord = mOptions.wordsGame[activeLetter],
 			definition = mWord.definition,
 			letter = $eXeRosco.letters.charAt(activeLetter),
-			start = mWord.type == 0 ? msgs.msgStartWith : msgs.msgContaint,
-			mOptions=$eXeRosco.options[instance];
+			start = mWord.type == 0 ? msgs.msgStartWith : msgs.msgContaint;
 		start = start.replace('%1', letter);
-		$('#pDefinition-' + instance).text(definition);
+		$('#roscoPDefinition-' + instance).text(definition);
 		$eXeRosco.changeTextInit(false, start, instance);
-		//$('#pStartWith-' + instance).text(start);
-		$('#edAnswer-' + instance).val("");
-		$('#pSolution-' + instance).val('');
+		$('#roscoEdAnswer-' + instance).val("");
+		$('#roscoPSolution-' + instance).val('');
 		$eXeRosco.drawRosco(instance);
 		$eXeRosco.drawText('', $eXeRosco.colors.blue, instance);
 		$eXeRosco.options[instance].gameActived = true;
-		$('#btnAnswer-' + instance).prop('disabled', false);
-		$('#btnPass-' + instance).prop('disabled', false);
+		$('#roscoBtnAnswer-' + instance).prop('disabled', false);
+		$('#roscoBtnPass-' + instance).prop('disabled', false);
 		$eXeRosco.showImage(mWord.url, mWord.x, mWord.y, mWord.author, mWord.alt, instance);
-		$('#edAnswer-' + instance).prop('disabled', false).focus();
+		$('#roscoEdAnswer-' + instance).prop('disabled', false).focus();
 		if (mOptions.isScorm == 1) {
 			$eXeRosco.sendScore(instance, true);
 		}
@@ -610,6 +699,7 @@ var $eXeRosco = {
 	newWord: function (instance) {
 		var mOptions = $eXeRosco.options[instance],
 			mActiveWord = $eXeRosco.updateNumberWord(mOptions.activeWord, instance);
+		if(mOptions.gameOver) return;
 		if (mActiveWord == -10) {
 			$eXeRosco.gameOver(instance, 0);
 		} else {
@@ -631,8 +721,8 @@ var $eXeRosco = {
 						return -10;
 					}
 					mOptions.activeGameSpin++;
-					$('#roscoTurn-' + instance).attr('src', $eXeRosco.idevicePath + 'roscoOneTurns.png');
-					$('#roscoTurn-' + instance).attr('alt', 'One turn');
+					$('#roscoNumberRounds-' + instance).addClass("exeQuextIcons-OneRound").removeClass("exeQuextIcons-TwoRounds").attr('alt', 'Two turns');
+					$('#roscoNumberRoundsSpan-' + instance).text(mOptions.msgOneRound);
 					numActiveWord = 0;
 				} else {
 					end = false
@@ -658,7 +748,7 @@ var $eXeRosco = {
 		$eXeRosco.newWord(instance);
 		if (mOptions.gameStarted) {
 			$eXeRosco.drawText('', $eXeRosco.colors.blue, instance);
-			$('#edAnswer-' + instance).focus();
+			$('#roscoEdAnswer-' + instance).focus();
 		}
 		var letter = '#letterR' + $eXeRosco.letters.charAt(mOptions.activeWord) + '-' + instance;
 		$(letter).css({
@@ -669,14 +759,14 @@ var $eXeRosco = {
 	},
 
 	answerQuetion: function (instance) {
-		var msgs = $eXeRosco.msgs,
-			mOptions = $eXeRosco.options[instance];
+		var mOptions = $eXeRosco.options[instance],
+			msgs = mOptions.msgs;
 		if (mOptions.gameActived == false) {
 			return;
 		}
 		mOptions.gameActived = false;
 		var letter = $eXeRosco.letters[mOptions.activeWord],
-			answord = $('#edAnswer-' + instance).val();
+			answord = $('#roscoEdAnswer-' + instance).val();
 		if ($.trim(answord) == "") {
 			mOptions.gameActived = true;
 			$eXeRosco.drawText(msgs.msgIndicateWord, $eXeRosco.colors.red, instance);
@@ -685,10 +775,10 @@ var $eXeRosco = {
 		var message = "",
 			Hit = true,
 			word = $.trim(mOptions.wordsGame[mOptions.activeWord].word.toUpperCase());
-		$('#btnAnswer-' + instance).prop('disabled', true);
-		$('#btnPass-' + instance).prop('disabled', true);
-		$('#edAnswer-' + instance).prop('disabled', true);
-		var answord = $.trim($('#edAnswer-' + instance).val().toUpperCase());
+		$('#roscoBtnAnswer-' + instance).prop('disabled', true);
+		$('#roscoBtnPass-' + instance).prop('disabled', true);
+		$('#roscoEdAnswer-' + instance).prop('disabled', true);
+		var answord = $.trim($('#roscoEdAnswer-' + instance).val().toUpperCase());
 		if ($eXeRosco.checkWord(word, answord)) {
 			mOptions.hits++
 			mOptions.wordsGame[mOptions.activeWord].state = 2;
@@ -704,13 +794,16 @@ var $eXeRosco = {
 		}
 		var percentageHits = (mOptions.hits / mOptions.validWords) * 100;
 		mOptions.answeredWords++;
-		$('#pHits-' + instance).text(mOptions.hits);
-		$('#pErrors-' + instance).text(mOptions.errors);
+		$('#roscotPHits-' + instance).text(mOptions.hits);
+		$('#roscotPErrors-' + instance).text(mOptions.errors);
+		var timeShowSolution = mOptions.showSolution ? mOptions.timeShowSolution * 1000 : 1000;
 		if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
-			$eXeRosco.gameOver(2, instance);
-			clearInterval(mOptions.relojContador);
-			$eXeRosco.drawMessage(true, mOptions.itinerary.clueGame, true, instance);
-			return;
+			if (!mOptions.obtainedClue) {
+				mOptions.obtainedClue = true;
+				timeShowSolution = 4000;
+				$('#roscoPShowClue-' + instance).show();
+				$('#roscoPShowClue-' + instance).text(mOptions.msgs.msgInformation + ': ' + mOptions.itinerary.clueGame);
+			}
 		}
 		letter = '#letterR' + letter + '-' + instance;
 		$(letter).css({
@@ -719,7 +812,6 @@ var $eXeRosco = {
 		});
 		$eXeRosco.drawRosco(instance);
 		message = mOptions.showSolution ? message : msgs.msgNewWord;
-		var timeShowSolution = mOptions.showSolution ? mOptions.timeShowSolution * 1000 : 1000;
 		setTimeout(function () {
 			$eXeRosco.newWord(instance)
 		}, timeShowSolution);
@@ -728,7 +820,7 @@ var $eXeRosco = {
 
 	drawMessage: function (Hit, word, pista, instance) {
 		var mOptions = $eXeRosco.options[instance],
-			mAnimo = $eXeRosco.getRetroFeedMessages(Hit),
+			mAnimo = $eXeRosco.getRetroFeedMessages(Hit, instance),
 			ctxt = mOptions.ctxt,
 			whidthCtxt = $eXeRosco.mcanvas.width,
 			heightCtxt = $eXeRosco.mcanvas.height,
@@ -750,24 +842,24 @@ var $eXeRosco = {
 		ctxt.textBaseline = 'top';
 		ctxt.fillStyle = lColor;
 		if (pista) {
-			mAnimo = $eXeRosco.msgs.msgClue;
+			mAnimo = mOptions.msgs.msgClue;
 			posTextoAnimoY = yMessage - 15;
 			porTextoPalabraY = posTextoAnimoY + 30;
 			posTextoAnimoX = xCenter - ctxt.measureText(mAnimo).width / 2;
 			$eXeRosco.wrapText(ctxt, mAnimo + ' ' + word, xMessage + 13, yMessage - 32, 257, 24);
-			$('#pSolution-' + instance).css("color", lColor).text(mAnimo + word);
+			$('#roscoPSolution-' + instance).css("color", lColor).text(mAnimo + word);
 			return;
 		}
 		ctxt.fillText(mAnimo, posTextoAnimoX, posTextoAnimoY);
-		$('#pSolution-' + instance).text(mAnimo);
+		$('#roscoPSolution-' + instance).text(mAnimo);
 		if (mOptions.showSolution) {
-			word = word.replace(/[|]/g, ' o ');
-			$('#pSolution-' + instance).text(mAnimo + ' ' + word);
+			//word = word.replace(/[|]/g, ' o ');
+			$('#roscoPSolution-' + instance).text(mAnimo + ' ' + word);
 			ctxt.fillText(mAnimo, posTextoAnimoX, posTextoAnimoY);
 			$eXeRosco.wrapText(ctxt, word, xMessage + 10, posTextoAnimoY + 10, 257, 24);
 		}
-		$('#pSolution-' + instance).css("color", lColor);
-		$('#edAnswer-' + instance).focus();
+		$('#roscoPSolution-' + instance).css("color", lColor);
+		$('#roscoEdAnswer-' + instance).focus();
 	},
 
 	drawLetterActive: function (iNumber, instance) {

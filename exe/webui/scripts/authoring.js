@@ -970,10 +970,7 @@ var $exeAuthoring = {
         gamification : {
             common : {
                 getFieldsets : function(){
-                    var html = $exeAuthoring.iDevice.gamification.itinerary.getFieldset();
-                        html += $exeAuthoring.iDevice.gamification.scorm.getFieldset();
-                        html += $exeAuthoring.iDevice.gamification.share.getFieldset();
-                    return html;
+                    return "";
                 },
                 getLanguageTab : function(fields){
                     var html = "";
@@ -984,7 +981,13 @@ var $exeAuthoring = {
                     <div class="exe-form-tab" title="' + _('Language settings') + '">\
                         <p>' + _("Custom texts (or use the default ones):") + '</p>\
                         ' + html + '\
-                    </div>'                    
+                    </div>'
+                },
+                getGamificationTab : function(){
+                    return '\
+                    ' + $exeAuthoring.iDevice.gamification.itinerary.getItineraryTab() + '\
+                    ' + $exeAuthoring.iDevice.gamification.scorm.getScormTab()+ '\
+                    ' + $exeAuthoring.iDevice.gamification.share.getShareTab();
                 }
             },
             instructions : {
@@ -997,27 +1000,25 @@ var $exeAuthoring = {
 								<textarea id="eXeGameInstructions" class="exe-html-editor"\>' + str + ' </textarea>\
 							</p>\
 						</div>\
-					</fieldset>';                   
+					</fieldset>';
                 }
             },
             itinerary : {
-                getFieldset : function(){
-                    var html = '\
-                        <fieldset class="exe-fieldset exe-fieldset-closed">\
-                            <legend><a href="#">'+_("Itinerary")+'</a></legend>\
-                            <div>\
+                getTab : function(){
+                    return '\
+                             <div class="exe-form-tab" title="' + _('Itinerary') + '">\
                                 <div class="exe-idevice-info">'+_("Use these keys to create an itinerary of challenges: It would not be possible to access a new challenge until you get the key or the solution to a problem. May be necessary to enter a password to access this game. May also show a message or password when reaching a presestablished percentage of hits.")+'</div>\
-                                <p>\
-                                    <label for="eXeGameShowCodeAccess"><input type="checkbox" id="eXeGameShowCodeAccess">' +_("Access code is required")+'</label>\
+                                <p align="left">\
+                                    <label for="eXeGameShowCodeAccess"><input type="checkbox" id="eXeGameShowCodeAccess" >' +_("Access code is required")+'</label>\
                                 </p>\
-                                <p style="margin-left:1.4em;margin-bottom:1.5em">\
+                                <p style="margin-left:1.4em;margin-bottom:1.5em" >\
                                     <label for="eXeGameCodeAccess" id="labelCodeAccess">'+_("Access code")+':</label>\
                                     <input type="text" name="eXeGameCodeAccess" id="eXeGameCodeAccess"  maxlength="40" disabled />\
                                     <label for="eXeGameMessageCodeAccess" id="labelMessageAccess">'+_("Question")+':</label>\
                                     <input type="text" name="eXeGameMessageCodeAccess" id="eXeGameMessageCodeAccess" maxlength="200"/ disabled> \
                                 </p>\
                                 <p>\
-                                    <label for="eXeGameShowClue"><input type="checkbox" id="eXeGameShowClue">'+_("Show a message or password")+'</label>\
+                                    <label for="eXeGameShowClue"><input type="checkbox" id="eXeGameShowClue" >'+_("Show a message or password")+'</label>\
                                 </p>\
                                 <div style="margin-left:1.4em;margin-bottom:1.5em">\
                                     <p>\
@@ -1040,9 +1041,7 @@ var $exeAuthoring = {
                                         </select>\
                                     </p>\
                                 </div>\
-                            </div>\
-                        </fieldset>';
-                    return html;
+                            </div>';
                 },
                 getValues : function(){
                     var showClue = $('#eXeGameShowClue').is(':checked'),
@@ -1100,11 +1099,13 @@ var $exeAuthoring = {
                 }
             },
             scorm : {
-                getFieldset : function(){
-                    var html = '\
-                        <fieldset class="exe-fieldset exe-fieldset-closed exe-advanced">\
-                            <legend><a href="#">' + _("SCORM options") + '</a></legend>\
-                               <div>\
+                init: function(){
+                    $exeAuthoring.iDevice.gamification.scorm.setValues(0,_("Save score"),false)
+                    $exeAuthoring.iDevice.gamification.scorm.addEvents();
+                },
+                getTab : function(){
+                    return '\
+                                <div class="exe-form-tab" title="' + _('SCORM') + '">\
                                     <p id="eXeGameSCORMNoSave">\
                                         <label for="eXeGameSCORMNoSave"><input type="radio" name="eXeGameSCORM" id="eXeGameSCORMNoSave"  value="0"  checked /> ' + _("Do not save the score") + '</label>\
                                     </p>\
@@ -1116,6 +1117,7 @@ var $exeAuthoring = {
                                     <span id="eXeGameSCORMoptions">\
                                         <label for="eXeGameSCORMbuttonText">' + _("Button text") + ': </label>\
                                         <input type="text" max="100" name="eXeGameSCORMbuttonText" id="eXeGameSCORMbuttonText" value="' + _("Save score") + '" /> \
+                                        <label for="eXeGameSCORMRepeatActivity"><input type="checkbox" id="eXeGameSCORMRepeatActivity" checked /> ' + _("Repeat activity") + '</label>\
                                     </span>\
                                     </p>\
                                     <div id="eXeGameSCORMinstructionsAuto">\
@@ -1126,33 +1128,85 @@ var $exeAuthoring = {
                                             <li>' + _('Do not include a "SCORM Quiz" iDevice in the same page.') + '</li>\
                                         </ul>\
                                     </div>\
-                                   <div id="eXeGameSCORMinstructionsButton">\
+                                    <div id="eXeGameSCORMinstructionsButton">\
                                         <ul>\
                                             <li>' + _("The button will only be displayed when exporting as SCORM and while editing in eXeLearning.") + '</li>\
-                                            <li>' + _('Include only one rosco activity with a "Save score" button in the page.') + '</li>\
+                                            <li>' + _('Include only one activity with a "Save score" button in the page.') + '</li>\
                                             <li>' + _("Include only one game with score in the page (or it won't work).") + '</li>\
                                             <li>' + _('Do not include a "SCORM Quiz" iDevice in the same page.') + '</li>\
                                         </ul>\
                                     </div>\
-                               </div>\
-                        </fieldset>';
-                    return html;
+                               </div>'
+                },
+                setValues: function(isScorm,textButtonScorm,repeatActivity,){
+                    $("#eXeGameSCORMoptions").css("visibility", "hidden");
+                    $("#eXeGameSCORMinstructionsButton").hide();
+                    $("#eXeGameSCORMinstructionsAuto").hide();
+                    if (isScorm == 0) {
+                        $('#eXeGameSCORMNoSave').prop('checked', true);
+                    } else if (isScorm == 1) {
+                        $('#eXeGameSCORMAutoSave').prop('checked', true);
+                        $('#eXeGameSCORMinstructionsAuto').show();
+                    }else if (isScorm == 2) {
+                        $('#eXeGameSCORMButtonSave').prop('checked', true);
+                        $('#eXeGameSCORMbuttonText').val(textButtonScorm);
+                        $('#eXeGameSCORMoptions').css("visibility", "visible");
+                        $('#eXeGameSCORMinstructionsButton').show();
+                        $('#eXeGameSCORMRepeatActivity').prop("checked", repeatActivity);
+                    }
+                },
+                getValues: function(){
+                    var isScorm = parseInt($("input[type=radio][name='eXeGameSCORM']:checked").val()),
+                    textButtonScorm=$("#eXeGameSCORMbuttonText").val(),
+                    repeatActivity=false;
+		            if (isScorm == 2) {
+                        repeatActivity=$('#eXeGameSCORMRepeatActivity').is(':checked');
+                    }
+                    var a={
+                        'isScorm': isScorm,
+                        'textButtonScorm': textButtonScorm,
+                        'repeatActivity':repeatActivity
+                        }
+                   return a;
+                },
+                addEvents: function(){
+                    $('input[type=radio][name="eXeGameSCORM"]').on('change', function () {
+                        $("#eXeGameSCORMoptions,#eXeGameSCORMinstructionsButton,#eXeGameSCORMinstructionsAuto").hide();
+                        switch ($(this).val()) {
+                            case '0':
+                                break;
+                            case '1':
+                                $("#eXeGameSCORMinstructionsAuto").hide().css({
+                                    opacity: 0,
+                                    visibility: "visible"
+                                }).show().animate({
+                                    opacity: 1
+                                }, 500);
+                                break;
+                            case '2':
+                                $("#eXeGameSCORMoptions,#eXeGameSCORMinstructionsButton").hide().css({
+                                    opacity: 0,
+                                    visibility: "visible"
+                                }).show().animate({
+                                    opacity: 1
+                                }, 500);
+                                break;
+                        }
+                    });
                 }
             },
             share : {
-                getFieldset : function(){
+                getTab : function(){
                     var msg = _("You can export this game so you can later use it in an iDevice of the same type. You can also use it in %s and you can import games from %s and use then here.");
                         msg = msg.replace(/%s/g, '<a href="https://quext.educarex.es/" target="_blank" rel="noopener noreferrer">QuExt</a>');
                     var html = '\
-                        <fieldset class="exe-fieldset exe-fieldset-closed exe-advanced">\
-                            <legend><a href="#">' + _("Import / Export") + '</a></legend>\
-                            <div>\
+                            <div class="exe-form-tab" title="' + _('Share') + '">\
                                 <div class="exe-idevice-info">' + msg + '</div>\
                                 <div id="eXeGameExportImport">\
                                     <p>\
                                         <form method="POST">\
                                             <label for="eXeGameImportGame">' + _("Import") + ': </label>\
-                                            <input type="file" name="eXeGameImportGame" id="eXeGameImportGame" />\
+                                            <input type="file" name="eXeGameImportGame" id="eXeGameImportGame" accept=".json" />\
                                             <span class="exe-field-instructions">' + _("Supported formats") + ': JSON</span>\
                                         </form>\
                                     </p>\
@@ -1160,13 +1214,11 @@ var $exeAuthoring = {
                                         <input type="button" name="eXeGameExportGame" id="eXeGameExportGame" value="' + _("Export") + '" />\
                                     </p>\
                                 </div>\
-                            </div>\
-                        </fieldset>';
-                    return html;                    
+                            </div>'
+                    return html;
                 }
             }
         },
-        // / Gamification
         filePicker : {
             init : function(){
                 $(".exe-file-picker,.exe-image-picker").each(

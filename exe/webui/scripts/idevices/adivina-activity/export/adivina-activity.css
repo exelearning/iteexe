@@ -6,7 +6,18 @@
     text-decoration: none;
 }
 
-.adivina-LinkMinimize {
+.adivina-BottonContainer{
+    width: 98%;
+    height: 25px;
+    padding: 0;
+    display: flex;
+    margin: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.adivina-LinkMaximize {
     font: normal 14pt arial, sans-serif;
     width: 200px;
     padding: 0;
@@ -17,6 +28,13 @@
     text-decoration: none;
 }
 
+.adivina-sr-av {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    height: 0
+}
 .adivina-Prhase {
     width: 95%;
     margin: 0 auto;
@@ -60,7 +78,7 @@
     align-items: center;
     justify-content: center;
     width: 90%;
-    margin: 15px auto;
+    margin: 7px auto;
     text-align: center;
     min-height: 40px;
     font-size: 16px;
@@ -83,7 +101,7 @@
     background-color: white;
     width: 100%;
     margin: 0px auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .adivina-Letter.blue {
@@ -136,23 +154,23 @@
 .adivina-GameScoreBoard p {
     font-size: 16px;
     font-weight: bold;
-    line-height: 24px;
+    line-height: 26px;
     width: 20px;
     text-align: center;
 }
 
 .adivina-GameScores {
     width: 180px;
-    height: 24px;
+    height: 26px;
     margin: 0 3px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.adivina-LivesGame {
-    width: 150px;
-    height: 24px;
+.adivina-LifesGame {
+    width: 158px;
+    height: 26px;
     margin: 0 3px;
     display: flex;
     justify-content: center;
@@ -164,8 +182,8 @@
 }
 
 .adivina-TimeNumber {
-    width: 130px;
-    height: 24px;
+    width: 170px;
+    height: 26px;
     margin: 0 5px;
     display: flex;
     justify-content: center;
@@ -173,23 +191,23 @@
 }
 
 .adivina-TimeQuestion {
+    width: 105px;
+    height: 26px;
     display: flex;
-    width: 80px;
-    height: 24px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin-right: 0px;
+    margin-right: 5px;
 }
 
 .adivina-TimeQuestion p {
     width: 50px;
-    margin: 0;
+    text-align: left;
 }
 
 .adivina-ResultsGame {
     display: flex;
     width: 50px;
-    height: 24px;
+    height: 26px;
     justify-content: space-between;
     align-items: center;
 }
@@ -239,15 +257,9 @@
 }
 
 .adivina-LinkFullScreen {
-    margin: 0;
-    padding: 0px;
-    width: 24px;
-    height: 24px;
-    bottom: 7px;
-    right: 7px;
-    border-width: 0;
-    position: absolute;
-    z-index: 10000;
+    width: 26px;
+    height: 26px;
+
 }
 
 .adivina-Cursor {
@@ -315,13 +327,25 @@
     font-weight: bold;
 }
 
+.adivina-ShowClue{
+    height: 20px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.adivina-ShowClue p{
+    font-size: 14px;
+    color:#8697cb;
+    font-weight: bold;
+    margin: 5px auto;
+    text-align: center;
+}
 .adivina-DataCodeAccessE label {
     font-size: 14px;
     font-weight: bold;
 }
 
 .adivina-GameContainer input[type=button] {
-    width: 100px;
+    min-width: 90px;
     height: 30px;
     background: transparent;
     border: 2px solid #8697cb;
@@ -334,6 +358,13 @@
     text-decoration: none;
     font-weight: bold;
 }
+
+.adivina-RepeatActivity{
+    color: #ff0000;
+    font-size:12px;
+    font-weight: bold;
+}
+
 
 .adivina-GameContainer input[type=button]:hover {
     background-color: #8697cb;
@@ -365,11 +396,6 @@
     margin-right: 30px;
 }
 
-.adivina-ClueGGame {
-    width: 45%;
-    height: 80%;
-    margin-right: 30px;
-}
 
 .adivina-EdReply {
     margin: 0 5px;
@@ -396,9 +422,9 @@
     width: 100px;
 }
 
-.adivina-LinkMaximize {
-    width: 24px;
-    height: 24px;
+.adivina-LinkArrowMinimize {
+    width: 26px;
+    height: 26px;
 }
 
 .adivina-GameContainer:-webkit-full-screen {
@@ -419,26 +445,6 @@
 .adivina-GameContainer:-o-full-screen {
     width: 100%;
     height: 100vh;
-}
-
-.adivina-GameContainer:-webkit-full-screen .adivina-LinkFullScreen {
-    right: 15px;
-    bottom: 15px;
-}
-
-.adivina-GameContainer:-moz-full-screen .adivina-LinkFullScreen {
-    right: 15px;
-    bottom: 15px;
-}
-
-.adivina-GameContainer:-ms-full-screen .adivina-LinkFullScreen {
-    right: 15px;
-    bottom: 15px;
-}
-
-.adivina-GameContainer:-o-full-screen .adivina-LinkFullScreen {
-    right: 15px;
-    bottom: 15px;
 }
 
 .adivina-GameContainer:-webkit-full-screen .adivina-Letter {
@@ -501,6 +507,106 @@
     font-size: 22px;
 }
 
+.exeQuext-ResultGame {
+    display: flex;
+    width: 64px;
+    height: 26px;
+    justify-content: center;
+    align-items: center;
+}
+
+.exeQuext-ResultGame p {
+    width: 30px;
+    text-align: center;
+
+}
+
+.exeQuextIcons {
+    width: 26px;
+    height: 26px;
+    margin-right: 5px;
+}
+
+.exeQuextIcons-Hit {
+    background: url(exeQuextIcons.png) no-repeat 0 0;
+}
+.exeQuextIcons-Error {
+    background: url(exeQuextIcons.png) no-repeat -26px 0;
+}
+.exeQuextIcons-Score {
+    background: url(exeQuextIcons.png) no-repeat -52px 0;
+ }
+
+.exeQuextIcons-Time{
+    background: url(exeQuextIcons.png) no-repeat 0 -26px;
+}
+.exeQuextIcons-OneRound {
+    background: url(exeQuextIcons.png) no-repeat -52px -26px;
+    margin-right: 3px;
+}
+.exeQuextIcons-TwoRounds {
+    background: url(exeQuextIcons.png) no-repeat -78px -26px;
+    margin-right: 3px;
+}
+
+.exeQuextIcons-Life {
+ background: url(exeQuextIcons.png) no-repeat -78px 0;
+}
+
+.exeQuextIcons-Number {
+ background: url(exeQuextIcons.png) no-repeat -26px -26px;
+}
+
+.exeQuextIcons-Minimize {
+    background: url(exeQuextIcons.png) no-repeat 0 -52px;
+    margin-right: 5px;
+
+}
+
+.exeQuextIcons-Maximize{
+    background: url(exeQuextIcons.png) no-repeat -216px 0;
+}
+
+.exeQuextIcons-FullScreen{
+    background: url(exeQuextIcons.png) no-repeat 0 -78px;
+}
+.exeQuextIcons-FullScreenExit{
+    background: url(exeQuextIcons.png) no-repeat -26px -78px;
+}
+
+.exeQuextIcons-RoscoRows{
+    background: url(exeQuextIcons.png) no-repeat -26px -52px;
+}
+.exeQuextIcons-RoscoCanvas{
+    background: url(exeQuextIcons.png) no-repeat -52px -42px;
+}
+.exeQuextIcons-RoscoCanvas,  .exeQuextIcons-RoscoRows, .exeQuextIcons-FullScreenExit, .exeQuextIcons-FullScreen, .exeQuextIcons-Minimize{
+    -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+}
+.exeQuextIcons-RoscoRows:hover, .exeQuextIcons-RoscoCanvas:hover,.exeQuextIcons-Minimize:hover, .exeQuextIcons-FullScreenExit:hover, .exeQuextIcons-FullScreen:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.adivina-LinkArrowMinimize {
+    width: 24px;
+    height: 24px;
+    margin-right: 7px;
+}
+.adivina-LinkTypeGame {
+    width: 26px;
+    height: 26px;
+    margin-left: 5px;
+}
+.exeQuextIcons-Time{
+    margin: 0;
+    margin-right: 6px;
+}
+
 @media (max-width: 560px) {
     .adivina-GameContainer {
         width: 95%;
@@ -525,7 +631,7 @@
         align-items: center;
     }
     .adivina-TimeNumber {
-        width: 110px;
+        width: 180px;
         height: 16px;
         margin: 0 1px;
         display: flex;
@@ -572,12 +678,12 @@
         height: 14px;
         margin: 0 1px;
     }
-    .adivina-LivesGame {
+    .adivina-LifesGame {
         display: none
     }
     .adivina-NumberLifesGame {
-        width: 24px;
-        height: 14px;
+        width: 26px;
+        height: 26px;
         margin: 0 1px;
         font-weight: bold;
         display: flex;

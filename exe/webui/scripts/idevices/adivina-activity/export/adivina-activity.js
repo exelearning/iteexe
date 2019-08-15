@@ -29,8 +29,9 @@ var $eXeAdivina = {
     },
     options: [],
     hasSCORMbutton: false,
-    isScorm: false,
     isInExe: false,
+    userName: '',
+    previousScore: '',
     init: function () {
         this.activities = $('.adivina-IDevice');
         if (this.activities.length == 0) return;
@@ -42,8 +43,8 @@ var $eXeAdivina = {
         if ($(".QuizTestIdevice .iDevice").length > 0) this.hasSCORMbutton = true;
         if (typeof ($exeAuthoring) != 'undefined') this.isInExe = true;
         this.idevicePath = this.isInExe ? "/scripts/idevices/adivina-activity/export/" : "";
-        this.loadGame();
         if ($("body").hasClass("exe-scorm")) this.loadSCORM_API_wrapper();
+        else this.enable();
     },
     loadSCORM_API_wrapper: function () {
         if (typeof (pipwerks) == 'undefined') $exe.loadScript('SCORM_API_wrapper.js', '$eXeAdivina.loadSCOFunctions()');
@@ -51,9 +52,42 @@ var $eXeAdivina = {
     },
     loadSCOFunctions: function () {
         if (typeof (exitPageStatus) == 'undefined') $exe.loadScript('SCOFunctions.js', '$eXeAdivina.enable()');
+        else this.enable();
+        $eXeAdivina.mScorm = scorm;
+        var callSucceeded = $eXeAdivina.mScorm.init();
+        if (callSucceeded) {
+            $eXeAdivina.userName = $eXeAdivina.getUserName();
+            $eXeAdivina.previousScore = $eXeAdivina.getPreviousScore();
+            $eXeAdivina.mScorm.set("cmi.core.score.max", 10);
+            $eXeAdivina.mScorm.set("cmi.core.score.min", 0);
+        }
+    },
+    updateScorm: function (prevScore, repeatActivity, instance) {
+        var mOptions = $eXeAdivina.options[instance],
+            text = '';
+        $('#adivinaSendScore-' + instance).show();
+        if (!repeatActivity && prevScore === '') {
+            text = mOptions.msgs.msgOnlySave;
+        } else if (!repeatActivity && prevScore !== '') {
+            $('#adivinaSendScore-' + instance).hide();
+            text = mOptions.msgs.msgYouScore + ': ' + prevScore;
+        }
+        $('#adivinaRepeatActivity-' + instance).text(text);
+        $('#adivinaRepeatActivity-' + instance).fadeIn(1000);
+    },
+    getUserName: function () {
+        var user = $eXeAdivina.mScorm.get("cmi.core.student_name");
+        return user
+    },
+    getPreviousScore: function () {
+        var score = $eXeAdivina.mScorm.get("cmi.core.score.raw");
+        return score;
+    },
+    endScorm: function () {
+        $eXeAdivina.mScorm.quit();
     },
     enable: function () {
-        //console.log('Cargado scofuntion')
+        $eXeAdivina.loadGame();
     },
     loadGame: function () {
         $eXeAdivina.options = [];
@@ -75,7 +109,7 @@ var $eXeAdivina = {
             } else {
                 $('#adivinaGameContainer-' + i).show();
             }
-            $('#adivinaMessageMinimize-' + i).text(msg);
+            $('#adivina-MessageMaximize-' + i).text(msg);
             $eXeAdivina.addEvents(i);
         });
 
@@ -107,61 +141,79 @@ var $eXeAdivina = {
             html = '';
         html += '<div class="adivina-MainContainer">\
         <div class="adivina-GameMinimize" id="adivinaGameMinimize-' + instance + '">\
-            <a href="#" class="adivina-LinkMinimize" id="adivinaLinkMinimize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + "adivinaIcon.png" + '" class="adivina-Icons adivina-IconMinimize"  alt="' + msgs.msgMaximize + '">\
-            <div class="adivina-MessageMinimize" id="adivinaMessageMinimize-' + instance + '"></div></a>\
+            <a href="#" class="adivina-LinkMaximize" id="adivinaLinkMinimize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + "adivinaIcon.png" + '" class="adivina-Icons adivina-IconMinimize"  alt="' + msgs.msgMaximize + '">\
+            <div class="adivina-MessageMaximize" id="adivina-MessageMaximize-' + instance + '"></div></a>\
         </div>\
         <div class="adivina-GameContainer" id="adivinaGameContainer-' + instance + '">\
-            <div class="adivina-GameScoreBoard" id="adivinaGameScoreBoard-' + instance + '">\
-                <div class="adivina-GameScores" id="adivinaGameScores-' + instance + '">\
-                    <a href="#" class="adivina-LinkMaximize" id="adivinaLinkMaximize-' + instance + '" title="' + msgs.msgMinimize + '"><img src="' + path + "adivinaUpMinimize.png" + '" class="adivina-Icons" alt="' + msgs.msgMinimize + '"></a>\
-                    <div class="adivina-ResultsGame" id="adivinaHitsGame-' + instance + '">\
-                        <img src="' + path + "adivinaHits.png" + '" class="adivina-Icons" title="' + msgs.msgHits + '" alt="' + msgs.msgHits + '">\
-                        <p id="adivinaPHits-' + instance + '">0</p>\
+            <div class="adivina-GameScoreBoard">\
+                <div class="adivina-GameScores">\
+                    <a href="#" class="adivina-LinkArrowMinimize" id="adivinaLinkArrowMinize-' + instance + '" title="' + msgs.msgMinimize + '">\
+                        <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
+                        <div class="exeQuextIcons exeQuextIcons-Minimize"></div>\
+                    </a>\
+                    <div class="exeQuext-ResultGame">\
+						<strong><span class="sr-av">' + msgs.msgHits + ':</span></strong>\
+						<div class="exeQuextIcons exeQuextIcons-Hit"></div>\
+					    <p  id="adivinaPHits-' + instance + '">0</p>\
                     </div>\
-                    <div class="adivina-ResultsGame" id="adivinaErrorsGame-' + instance + '">\
-                        <img src="' + path + "adivinaErrors.png" + '" class="adivina-Icons" title="' + msgs.msgErrors + '" alt="' + msgs.msgErrors + '">\
+                    <div class="exeQuext-ResultGame">\
+                        <strong><span class="sr-av">' + msgs.msgErrors + ':</span></strong>\
+                        <div class="exeQuextIcons  exeQuextIcons-Error"></div>\
                         <p id="adivinaPErrors-' + instance + '">0</p>\
                     </div>\
-                    <div class="adivina-ResultsGame" id="adivinaScoreGame-' + instance + '">\
-                        <img src="' + path + "adivinaScore.png" + '" class="adivina-Icons" title="' + msgs.msgScore + '" alt="' + msgs.msgScore + '">\
+                    <div class="exeQuext-ResultGame">\
+                        <strong><span class="sr-av">' + msgs.msgScore + ':</span></strong>\
+                        <div class="exeQuextIcons  exeQuextIcons-Score"></div>\
                         <p id="adivinaPScore-' + instance + '">0</p>\
                     </div>\
                 </div>\
-                <div class="adivina-LivesGame" id="adivina-LivesGame-' + instance + '">\
-                    <img src="' + path + "adivinaLive.png" + '" class="adivina-Icons adivina-LifesIcons-' + instance + '" title="' + msgs.msgLive + '" alt="' + msgs.msgLive + '">\
-                    <img src="' + path + "adivinaLive.png" + '" class="adivina-Icons adivina-LifesIcons-' + instance + '" title="' + msgs.msgLive + '" alt="' + msgs.msgLive + '">\
-                    <img src="' + path + "adivinaLive.png" + '" class="adivina-Icons adivina-LifesIcons-' + instance + '" title="' + msgs.msgLive + '" alt="' + msgs.msgLive + '">\
-                    <img src="' + path + "adivinaLive.png" + '" class="adivina-Icons adivina-LifesIcons-' + instance + '" title="' + msgs.msgLive + '" alt="' + msgs.msgLive + '">\
-                    <img src="' + path + "adivinaLive.png" + '" class="adivina-Icons adivina-LifesIcons-' + instance + '" title="' + msgs.msgLive + '" alt="' + msgs.msgLive + '">\
+                <div class="adivina-LifesGame" id="adivinaLifesGame-' + instance + '">\
+                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life"></div>\
+                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life"></div>\
+                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life"></div>\
+                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life"></div>\
+                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life"></div>\
                 </div>\
                 <div class="adivina-NumberLifesGame" id="adivinaNumberLivesGame-' + instance + '">\
-                    <img src="' + path + "adivinaLive.png" + '" class="adivina-Icons" id="adivinaNumberLives-' + instance + '"" title="' + msgs.msgLive + '" alt="' + msgs.msgLive + '">\
+                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life"></div>\
                     <p id="adivinaPLifes-' + instance + '">0</p>\
                 </div>\
-                <div class="adivina-TimeNumber" id="adivinaTimeNumber-' + instance + '">\
-                    <div class="adivina-TimeQuestion" id="adivinaTimeQuestion-' + instance + '">\
-                        <img src="' + path + "adivinaClock.png" + '" class="adivina-Icons" title="' + msgs.msgTime + '" alt="' + msgs.msgTime + '">\
-                        <p id="adivinaPTime-' + instance + '">00:00</p>\
+                <div class="adivina-TimeNumber">\
+					<div  class="adivina-TimeQuestion">\
+						<strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
+						<div class="exeQuextIcons  exeQuextIcons-Time"></div>\
+						<p  id="adivinaPTime-' + instance + '">00:00</p>\
                     </div>\
-                    <div class="adivina-ResultsGame" id="adivinaNumberGame-' + instance + '">\
-                        <img src="' + path + "adivinaNumber.png" + '" class="adivina-Icons" title="' + msgs.msgHits + '" alt="' + msgs.msgHits + '">\
-                        <p id="adivinaPNumber-' + instance + '">0</p>\
-                    </div>\
-                </div>\
+                    <div  class="exeQuext-ResultGame">\
+						<strong><span class="sr-av">' + msgs.msgNumQuestions + ':</span></strong>\
+						<div class="exeQuextIcons  exeQuextIcons-Number"></div>\
+						<p  id="adivinaPNumber-' + instance + '">0</p>\
+					</div>\
+                        <a href="#" class="adivina-LinkFullScreen" id="adivinaLinkFullScreen-' + instance + '" title="' + msgs.msgFullScreen + '">\
+						    <strong><span class="sr-av">' + msgs.msgFullScreen + ':</span></strong>\
+							<div class="exeQuextIcons exeQuextIcons-FullScreen" id="adivinaFullScreen-' + instance + '"></div>\
+						</a>\
+				</div>\
             </div>\
-            <div class="adivina-AutorLicence" id="adivinaAutorLicence-' + instance + '">\
-                <p id="adivinaPAuthor-' + instance + '"></p>\
-            </div>\
+            <div class="adivina-ShowClue" id="adivinaShowClue-' + instance + '">\
+                <div class="sr-av">' + msgs.msgClue + ':</div>\
+                <p class="adivina-PShowClue" id="adivinaPShowClue-' + instance + '"></p>\
+           </div>\
             <div class="adivina-Multimedia" id="adivinaMultimedia-' + instance + '">\
-                <img src="' + path + "adivinaCursor.gif" + '" class="adivina-Cursor" alt="Cursor" id="adivinaCursor-' + instance + '" /> \
+                <img src="' + path + 'adivinaCursor.gif" class="adivina-Cursor" alt="Cursor" id="adivinaCursor-' + instance + '" /> \
                 <img src="" class="adivina-Image" alt="' + msgs.msgNoImage + '" id="adivinaImage-' + instance + '" />\
-                <img src="' + path + "adivinaHome.png" + '" class="adivina-NoImage" alt="' + msgs.msgNoImage + '" id="adivinaNoImage-' + instance + '" /> \
+                <img src="' + path + 'adivinaHome.png" class="adivina-NoImage" alt="' + msgs.msgNoImage + '" id="adivinaNoImage-' + instance + '" /> \
                 <div class="adivina-GameOver" id="adivinaGamerOver-' + instance + '">\
                     <div class="adivina-TextClueGGame" id="adivinaTextClueGGame-' + instance + '"></div>\
                     <div class="adivina-DataImageGameOver">\
-                         <img src="' + path + "adivinaGameWon.png" + '" class="adivina-HistGGame" id="adivinaHistGGame-' + instance + '" alt="' + msgs.msgHits + '"/> \
-                         <img src="' + path + "adivinaGameLost.png" + '" class="adivina-LostGGame"  id="adivinaLostGGame-' + instance + '" alt="' + msgs.msgHits + '"/> \
-                         <img src="' + path + "adivinaClue.png" + '" class="adivina-ClueGGame"  id="adivinaClueGGame-' + instance + '" alt="' + msgs.msgHits + '"/> \
+                         <img src="' + path + "adivinaGameWon.png" + '" class="adivina-HistGGame" id="adivinaHistGGame-' + instance + '" alt="' + msgs.mgsAllQuestions + '"/> \
+                         <img src="' + path + "adivinaGameLost.png" + '" class="adivina-LostGGame"  id="adivinaLostGGame-' + instance + '" alt="' + msgs.msgLostLives + '"/> \
                         <div class="adivina-DataGame" id="adivinaDataGame-' + instance + '">\
                             <p id="adivinaOverScore-' + instance + '">Score: 0</p>\
                             <p id="adivinaOverHits-' + instance + '">Hists: 0</p>\
@@ -170,12 +222,18 @@ var $eXeAdivina = {
                     </div>\
                 </div>\
             </div>\
+            <div class="adivina-AutorLicence" id="adivinaAutorLicence-' + instance + '">\
+                <div class="sr-av">' + msgs.msgAuthor + ':</div>\
+                <p id="adivinaPAuthor-' + instance + '"></p>\
+            </div>\
             <div class="adivina-Question" id="adivinaQuestion-' + instance + '">\
+                <div class="sr-av">' + msgs.msgAnswer + ':</div>\
                 <div class="adivina-Prhase" id="adivina-Phrase-' + instance + '"></div>\
+                <div class="sr-av">' + msgs.msgQuestion + ':</div>\
                 <div class="adivina-Definition" id="adivinaDefinition-' + instance + '"></div>\
                 <div class="adivina-DivReply" id="adivinaDivResponder-' + instance + '">\
                     <input type="button" class="adivina-Button" value="' + msgs.msgMoveOne + '" id="adivinaBtnMoveOn-' + instance + '">\
-                    <input type="text" value="" class="adivina-EdReply" id="adivinaEdAnswer-' + instance + '">\
+                    <label class="sr-av">' + msgs.msgIndicateWord + ':</label><input type="text" value="" class="adivina-EdReply" id="adivinaEdAnswer-' + instance + '">\
                     <input type="button" class="adivina-Button" value="' + msgs.msgReply + '" id="adivinaBtnReply-' + instance + '">\
                 </div>\
             </div>\
@@ -186,44 +244,61 @@ var $eXeAdivina = {
                     <input type="button" class="adivina-CodeAccessButton" id="adivinaCodeAccessButton-' + instance + '" value="' + msgs.msgSubmit + '"/>\
                 </div>\
             </div>\
-            <a href="#" class="adivina-LinkFullScreen" id="adivinaLinkFullScreen-' + instance + '"><img src="' + path + "adivinaFullScreen.png" + '" id="adivinaFullScreen-' + instance + '" class="adivina-Icons" alt="' + msgs.msgFullScreen + '" title="' + msgs.msgFullScreen + '"></a>\
-        </div>' + this.addButtonScore(instance) +
-            '</div>\
+           ' + this.addButtonScore(instance) + '\
+        </div>\
+    </div>\
     ';
         return html;
     },
     addButtonScore: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
         var butonScore = "";
+        var fB = '<div class="adivina-BottonContainer">';
         if (mOptions.isScorm == 2) {
             var buttonText = mOptions.textButtonScorm;
             if (buttonText != "") {
                 if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
                     this.hasSCORMbutton = true;
-                    var fB = '<div class="adivina-get-score iDevice_buttons feedback-button js-required" id="adivinaButonScoreDiv-' + instance + '">';
+                    fB += '<div class="adivina-QuextScoreDiv" id="adivinaButonScoreDiv-' + instance + '">';
                     if (!this.isInExe) fB += '<form action="#" onsubmit="return false">';
-                    fB += '<p><input type="button" id="adivinaSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton" /></p>';
+                    fB += '<p><input type="button" id="adivinaSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton" /> <span class="adivina-RepeatActivity" id="adivinaRepeatActivity-' + instance + '"></span></p>';
                     if (!this.isInExe) fB += '</form>';
                     fB += '</div>';
                     butonScore = fB;
                 }
             }
         }
+        fB = +'</div>';
         return butonScore;
     },
-    sendScore: function (i, auto) {
-        var mOptions = $eXeAdivina.options[i],
-            message = '';
+    sendScore: function (instance, auto) {
+        var mOptions = $eXeAdivina.options[instance],
+            message = ''
+        score = ((mOptions.hits * 10) / mOptions.wordsGame.length).toFixed(2);
         if (mOptions.gameStarted || mOptions.gameOver) {
-            var score = ((mOptions.hits * 10) / mOptions.wordsGame.length).toFixed(2);
-            if (typeof (scorm) != 'undefined' && typeof (scorm.SetScoreMax) !== 'undefined' && jQuery.isFunction(scorm.SetScoreRaw)) {
-                scorm.SetScoreMax("10");
-                scorm.SetScoreRaw(score + "");
-                scorm.save();
-                message = $exe_i18n.yourScoreIs + ' ' + score;
+            if (typeof ($eXeAdivina.mScorm) != 'undefined') {
+                if (!auto) {
+                    if (!mOptions.repeatActivity && $eXeAdivina.previousScore !== '') {
+                        message = $eXeAdivina.userName !== '' ? $eXeAdivina.userName + ' ' + mOptions.msgs.msgOnlySaveScore : mOptions.msgs.msgOnlySaveScore;
+                    } else {
+                        $eXeAdivina.previousScore = score;
+                        $eXeAdivina.mScorm.set("cmi.core.score.raw", score);
+                        message = $eXeAdivina.userName !== '' ? $eXeAdivina.userName + ', ' + $exe_i18n.yourScoreIs + ' ' + score : $exe_i18n.yourScoreIs + ' ' + score;
+                        if (!mOptions.repeatActivity) {
+                            $('#adivinaSendScore-' + instance).hide();
+                        }
+                        $('#adivinaRepeatActivity-' + instance).text($exe_i18n.yourScoreIs + ' ' + +score)
+                        $('#adivinaRepeatActivity-' + instance).show();
+                    }
+                } else {
+                    $eXeAdivina.previousScore = score;
+                    $eXeAdivina.mScorm.set("cmi.core.score.raw", score);
+                    message = "";
+                }
             } else {
                 message = mOptions.msgs.msgScoreScorm;
             }
+
         } else {
             var hasClass = $("body").hasClass("exe-scorm");
             message = (hasClass) ? mOptions.msgs.msgEndGameScore : mOptions.msgs.msgScoreScorm;
@@ -306,21 +381,23 @@ var $eXeAdivina = {
         }
     },
     toggleFullscreen: function (element, instance) {
-        var mOptions = $eXeAdivina.options[instance]
-        var imgFull = $eXeAdivina.idevicePath + "adivinaFullScreen.png",
-            title = mOptions.msgs.msgFullScreen;
-        element = element || document.documentElement;
+        var mOptions = $eXeAdivina.options[instance],
+            alt = mOptions.msgs.msgFullScreen,
+            element = element || document.documentElement;
         if (!document.fullscreenElement && !document.mozFullScreenElement &&
             !document.webkitFullscreenElement && !document.msFullscreenElement) {
-            imgFull = $eXeAdivina.idevicePath + "adivinaExitFullScreen.png";
-            title = mOptions.msgs.msgExitFullScreen;
+            $('#adivinaFullScreen-' + instance).removeClass('exeQuextIcons-FullScreen');
+            $('#adivinaFullScreen-' + instance).addClass('exeQuextIcons-FullScreenExit');
+            alt = mOptions.msgs.msgExitFullScreen;
             $eXeAdivina.getFullscreen(element);
         } else {
+            $('#adivinaFullScreen-' + instance).addClass('exeQuextIcons-FullScreen');
+            $('#adivinaFullScreen-' + instance).removeClass('exeQuextIcons-FullScreenExit');
             $eXeAdivina.exitFullscreen(element);
         }
-        $('#adivinaFullScreen-' + instance).attr('src', imgFull);
-        $('#adivinaFullScreen-' + instance).attr('alt', title);
-        $('#adivinaFullScreen-' + instance).attr('title', title);
+        $('#adivinaLinkFullScreen-' + instance).find('span').text(alt + ':')
+        $('#adivinaLinkFullScreen-' + instance).attr('title', alt);
+
     },
     exitFullscreen: function () {
         if (document.exitFullscreen) {
@@ -340,7 +417,7 @@ var $eXeAdivina = {
             $("#adivinaGameContainer-" + instance).show()
             $("#adivinaGameMinimize-" + instance).hide();
         });
-        $("#adivinaLinkMaximize-" + instance).on('click touchstart', function (e) {
+        $("#adivinaLinkArrowMinize-" + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $("#adivinaGameContainer-" + instance).hide();
             $("#adivinaGameMinimize-" + instance).css('visibility', 'visible').show();
@@ -375,9 +452,6 @@ var $eXeAdivina = {
             }
             return true;
         });
-        if (this.isInExe || $(window).width < 800) {
-            $('.adivina-LinkFullScreen').hide();
-        }
         mOptions.livesLeft = mOptions.numberLives;
         $eXeAdivina.updateLives(instance);
         if (mOptions.itinerary.showCodeAccess) {
@@ -387,7 +461,7 @@ var $eXeAdivina = {
             $('#adivinaQuestion-' + instance).hide();
         }
         if (!mOptions.useLives) {
-            $('#adivina-LivesGame-' + instance).hide();
+            $('#adivinaLifesGame-' + instance).hide();
             $('#adivinaNumberLivesGame-' + instance).hide();
         }
         $('#adivinaCodeAccessButton-' + instance).on('click touchstart', function (e) {
@@ -406,13 +480,23 @@ var $eXeAdivina = {
 
             }
         });
+        $(window).on('unload', function () {
+            if (typeof ($eXeAdivina.mScorm) != "undefined") {
+                $eXeAdivina.endScorm();
+            }
+        });
         $('#adivinaDefinition-' + instance).on('click', 'a', function (e) {
             e.preventDefault();
             $eXeAdivina.startGame(instance);
+
         });
-        $("#adivinaSendScore-" + instance).click(function () {
+        if (mOptions.isScorm === 2) {
+            $eXeAdivina.updateScorm($eXeAdivina.previousScore, mOptions.repeatActivity, instance);
+        }
+        $('#adivinaInstructions-' + instance).text(mOptions.instructions);
+        $('#adivinaSendScore-' + instance).click(function (e) {
+            e.preventDefault();
             $eXeAdivina.sendScore(instance, false);
-            return false;
         });
     },
     enterCodeAccess: function (instance) {
@@ -445,6 +529,8 @@ var $eXeAdivina = {
         mOptions.wordsGame = mOptions.optionsRamdon ? $eXeAdivina.shuffleAds(mOptions.wordsGame) : mOptions.wordsGame;
         $eXeAdivina.updateLives(instance);
         $eXeAdivina.changeTextInit(false, '', instance);
+        mOptions.obtainedClue = false;
+        $('#adivinaPShowClue-' + instance).text('');
         $('#adivinaGamerOver-' + instance).hide();
         $('#adivinaPNumber-' + instance).text(mOptions.numberQuestions);
         $('#adivinaPHits-' + instance).text(mOptions.hits);
@@ -503,9 +589,7 @@ var $eXeAdivina = {
         $('#adivinaBtnMoveOn-' + instance).prop('disabled', true);
         $('#adivinaEdAnswer-' + instance).prop('disabled', true);
         if (mOptions.isScorm == 1) {
-            if (type != 2) {
-                $eXeAdivina.sendScore(instance, true);
-            }
+            $eXeAdivina.sendScore(instance, true);
         }
     },
     showScoreGame: function (type, instance) {
@@ -513,7 +597,6 @@ var $eXeAdivina = {
             msgs = mOptions.msgs,
             $adivinaHistGGame = $('#adivinaHistGGame-' + instance),
             $adivinaLostGGame = $('#adivinaLostGGame-' + instance),
-            $adivinaClueGGame = $('#adivinaClueGGame-' + instance),
             $adivinaOverPoint = $('#adivinaOverScore-' + instance),
             $adivinaOverHits = $('#adivinaOverHits-' + instance),
             $adivinaOverErrors = $('#adivinaOverErrors-' + instance),
@@ -522,7 +605,6 @@ var $eXeAdivina = {
             message = "";
         $adivinaHistGGame.hide();
         $adivinaLostGGame.hide();
-        $adivinaClueGGame.hide();
         $adivinaOverPoint.show();
         $adivinaOverHits.show();
         $adivinaOverErrors.show();
@@ -532,8 +614,12 @@ var $eXeAdivina = {
                 message = msgs.msgCool + ' ' + msgs.mgsAllQuestions;
                 $adivinaHistGGame.show();
                 if (mOptions.itinerary.showClue) {
-                    message = msgs.mgsAllQuestions;
-                    $adivinaTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
+                    var text = $('#adivinaPShowClue-' + instance).text();
+                    if (mOptions.obtainedClue) {
+                        $adivinaTextClueGGame.text(text);
+                    } else {
+                        $adivinaTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
+                    }
                     $adivinaTextClueGGame.show();
                 }
                 break;
@@ -541,18 +627,14 @@ var $eXeAdivina = {
                 message = msgs.msgLostLives;
                 $adivinaLostGGame.show();
                 if (mOptions.itinerary.showClue) {
-                    $adivinaTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
+                    var text = $('#adivinaPShowClue-' + instance).text();
+                    if (mOptions.obtainedClue) {
+                        $adivinaTextClueGGame.text(text);
+                    } else {
+                        $adivinaTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
+                    }
                     $adivinaTextClueGGame.show();
                 }
-                break;
-            case 2:
-                message = msgs.msgInformationLooking + ":";
-                $adivinaOverPoint.hide();
-                $adivinaOverHits.hide();
-                $adivinaOverErrors.hide();
-                $adivinaClueGGame.show();
-                $adivinaTextClueGGame.text(mOptions.itinerary.clueGame);
-                $adivinaTextClueGGame.show();
                 break;
             default:
                 break;
@@ -562,6 +644,7 @@ var $eXeAdivina = {
         $adivinaOverHits.text(msgs.msgHits + ': ' + mOptions.hits);
         $adivinaOverErrors.text(msgs.msgErrors + ': ' + mOptions.errors);
         $adivinaGamerOver.show();
+        $('#adivinaPShowClue-' + instance).text('');
     },
     changeTextInit: function (big, message, instance) {
         var html = message;
@@ -667,8 +750,8 @@ var $eXeAdivina = {
         }
     },
     updateLives(instance) {
-        $('#adivinaPLifes-' + instance).text($eXeAdivina.options[instance].livesLeft)
-        $('.adivina-LivesGame .adivina-LifesIcons-' + instance).each(function (index) {
+        $('#adivinaPLifes-' + instance).text($eXeAdivina.options[instance].livesLeft);
+        $('#adivinaLifesGame-' + instance).find('.exeQuextIcons-Life').each(function (index) {
             $(this).show();
             if (index >= $eXeAdivina.options[instance].livesLeft) {
                 $(this).hide();
@@ -737,11 +820,15 @@ var $eXeAdivina = {
             type = $eXeAdivina.updateScore(solution == answord, instance),
             percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100;
         mOptions.activeCounter = false;
-        if (mOptions.itinerary.showClue && (percentageHits >= parseInt(mOptions.itinerary.percentageClue))) {
-            $eXeAdivina.gameOver(2, instance);
-            return;
-        }
         var timeShowSolution = 1000;
+        if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
+            if (!mOptions.obtainedClue) {
+                mOptions.obtainedClue = true;
+                timeShowSolution = 5000;
+                $('#adivinaPShowClue-' + instance).show();
+                $('#adivinaPShowClue-' + instance).text(mOptions.msgs.msgInformation + ': ' + mOptions.itinerary.clueGame);
+            }
+        }
         if (mOptions.showSolution) {
             timeShowSolution = mOptions.timeShowSolution * 1000;
             $eXeAdivina.drawPhrase(question.word, question.definition, 100, type, instance)

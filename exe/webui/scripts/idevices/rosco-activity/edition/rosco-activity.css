@@ -33,6 +33,9 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 0;
 }
+#roscoIdeviceForm .roscoLetterEditionBlue {
+  background-color: #0099cc;
+}
 
 #roscoIdeviceForm #roscoNumberTurns, #roscoIdeviceForm #roscoTimeShowSolution {
   width: 30px;
@@ -77,7 +80,6 @@
   height: 32px;
   min-width: 32px;
   margin: 0 3px;
-  
 }
 
 #roscoIdeviceForm .roscoLinkClose,
@@ -88,7 +90,6 @@
   height: 24px;
   min-width: 24px;
   margin: 0 3px;
-  
 }
 
 #roscoIdeviceForm img { 
@@ -216,17 +217,17 @@
 #roscoIdeviceForm{margin-top:2em}
 #roscoIdeviceForm .exe-block-info img{vertical-align:middle;margin-left:.2em}
 
-#roscoIdeviceFormTab1 *{
+#roscoIdeviceFormTab3 *{
   font-size: 0.9em;
 }
-#roscoIdeviceFormTab1 p:first-child{margin-top:0}
-#roscoIdeviceFormTab1{overflow:auto}
-#roscoIdeviceFormTab1 .ci18n{width:50%;float:left}
+#roscoIdeviceFormTab3 p:first-child{margin-top:0}
+#roscoIdeviceFormTab3{overflow:auto}
+#roscoIdeviceFormTab3 .ci18n{width:50%;float:left}
 @media screen and (max-width:720px) {
-	#roscoIdeviceFormTab1 .ci18n{width:100%;float:none}	
+	#roscoIdeviceFormTab3 .ci18n{width:100%;float:none}	
 }
-#roscoIdeviceFormTab1 label{display:block;font-weight:bold;margin-bottom:.2em;font-size: 0.9em}
-#roscoIdeviceFormTab1 input{width:300px;font-size: 0.9em}
+#roscoIdeviceFormTab3 label{display:block;font-weight:bold;margin-bottom:.2em;font-size: 0.9em}
+#roscoIdeviceFormTab3 input{width:300px;font-size: 0.9em}
 
 /* Tabs (this should be common) */
 .exe-form-tabs{margin:0 0 1.5em 0;padding:0;list-style:none}
@@ -237,7 +238,7 @@
 .exe-form-tabs li:not(:last-child) a{
 border-right:none;
 }
-.exe-form-tabs .exe-form-active-tab{color:#000;background:#FFF;font-weight:bold}
+.exe-form-tabs .exe-form-active-tab{color:#000;background:#FFF;font-weight:500}
 
 #roscoSCORMoptions{visibility:hidden;margin-left:1.5em}
 label[for=roscoActivitySCORM]{font-weight:bold}

@@ -230,6 +230,12 @@
   height: 24px;
 }
 
+#adivinaIdeviceForm .adivinaDefinitionEdition {
+  width: 100%;
+  height: 24px;
+  margin-left: 3px;
+  margin-right:  3px;
+}
 /* To review */
 
 #adivinaIdeviceForm .exe-block-info img {
@@ -237,38 +243,38 @@
   margin-left: .2em
 }
 
-#adivinaIdeviceFormTab1 * {
+#adivinaIdeviceFormTab3 * {
   font-size: 0.9em;
 }
 
-#adivinaIdeviceFormTab1 p:first-child {
+#adivinaIdeviceFormTab3 p:first-child {
   margin-top: 0
 }
 
-#adivinaIdeviceFormTab1 {
+#adivinaIdeviceFormTab3 {
   overflow: auto
 }
 
-#adivinaIdeviceFormTab1 .ci18n {
+#adivinaIdeviceFormTab3 .ci18n {
   width: 50%;
   float: left
 }
 
 @media screen and (max-width:720px) {
-  #adivinaIdeviceForm #adivinaIdeviceFormTab1 .ci18n {
+  #adivinaIdeviceForm #adivinaIdeviceFormTab3 .ci18n {
     width: 100%;
     float: none
   }
 }
 
-#adivinaIdeviceForm #adivinaIdeviceFormTab1 label {
+#adivinaIdeviceForm #adivinaIdeviceFormTab3 label {
   display: block;
   font-weight: bold;
   margin-bottom: .2em;
   font-size: 0.9em
 }
 
-#adivinaIdeviceForm #adivinaIdeviceFormTab1 input {
+#adivinaIdeviceForm #adivinaIdeviceFormTab3 input {
   width: 300px;
   font-size: 0.9em
 }
@@ -314,14 +320,9 @@
 .exe-form-tabs .exe-form-active-tab {
   color: #000;
   background: #FFF;
-  font-weight: bold
+  font-weight: 500
 }
-#adivinaIdeviceForm .adivinaDefinitionEdition {
-  width: 100%;
-  height: 24px;
-  margin-left: 3px;
-  margin-right:  3px;
-}
+
 #adivinaSCORMoptions{visibility:hidden;margin-left:1.5em}
 label[for=adivinaActivitySCORM]{font-weight:bold}
 #adivinaSCORMinstructionsButton{display:none;color:#777;margin:10px 0 0 25px}

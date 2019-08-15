@@ -8,11 +8,31 @@
     
 }
 
+.rosco-ShowClue{
+    height: 20px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.rosco-ShowClue p{
+    font-size:12px;
+    color:#009245;
+    font-weight: bold;
+    margin: 5px auto;
+    text-align: center;
+
+}
+.rosco-RepeatActivity{
+    color: #ff0000;
+    font-size:12px;
+    font-weight: bold;
+}
+
+
 .rosco-MainContainer a:link, .rosco-MainContainer a:link, .rosco-MainContainer a:visited, .rosco-MainContainer a:focus {
     text-decoration: none;
     outline: 0;
     border: none;
-} 
+}
 .rosco-Idevice {
     height: auto !important;
     min-height: 190px;
@@ -21,10 +41,10 @@
     background-color: #ffffff;
 }
 
-.rosco-LinkMaximize, .rosco-LinkCircle {
-    width: 24px;
-    height: 24px;
-    margin-right: 5px;
+.rosco-LinkArrowMinimize {
+    width: 26px;
+    height: 26px;
+    margin-right: 7px;
 }
 
 .rosco-Idevice dl {
@@ -41,7 +61,7 @@
     width: 100%;
 
 }
-.rosco-LinkMinimize {
+.rosco-LinkMaximize {
     font: normal 14pt arial, sans-serif;
     width: 200px;
     padding: 0;
@@ -71,7 +91,7 @@
     align-items: center;
 }
 
-.rosco-MessageMinimize {
+.rosco-MessageMaximize {
     width: 100%;
     text-align: left;
     color: #f05565;
@@ -87,7 +107,7 @@
     cursor: pointer;
 }
 
-.rosco-MessageMinimize:hover {
+.rosco-MessageMaximize:hover {
     color: #8697cb;
 }
 
@@ -103,9 +123,9 @@
     display: none;
 }
 
-.rosco-GameContainer a:link, 
 .rosco-GameContainer a:link,
-.rosco-GameContainer a:visited, 
+.rosco-GameContainer a:link,
+.rosco-GameContainer a:visited,
 .rosco-GameContainer a:focus  {
     text-decoration: none;
 }
@@ -130,7 +150,7 @@
 
 .rosco-GameScoreBoard {
     width: 100%;
-    height: 24px;
+    height: 26px;
     margin: 10px 0;
     display: flex;
     justify-content: space-between;
@@ -141,56 +161,54 @@
     font-size: 1.4em;
     font-weight: bold;
 }
-.rosco-TimeTurn {
-    width: 165px;
-    height: 24px;
-    margin: 0 3px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 .rosco-GameScores {
-    width: 160px;
-    height: 24px;
-    margin: 0;
-    display: flex;
-    justify-content:  space-between;
-    align-items: center;
-    margin-right:40px;
-}
-
-.rosco-ResultsGame {
-    display: flex;
-    width: 60px;
-    height: 24px;
-    justify-content: center;
-    align-items: center;
-}
-.rosco-ResultsGame p{
-    width: 35px;
-    text-align: center;
-}
-
-
-
-.rosco-DurationGame {
-    width: 90px;
-    height: 24px;
-    margin-right: 5px;
+    width: 150px;
+    height:26px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
+.rosco-TimeTurn {
+    width: 170px;
+    height: 26px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.exeQuext-ResultGame {
+    display: flex;
+    width: 60px;
+    height: 26px;
+    justify-content: center;
+    align-items: center;
+}
+
+.exeQuext-ResultGame p {
+    width: 30px;
+    text-align: center;
+
+}
+
+.rosco-DurationGame {
+    width: 105px;
+    height: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 5px;
+}
+
 .rosco-DurationGame p {
     width: 75px;
-    margin-right: 5px;
-    text-align: center;
+    text-align: left;
 }
 
 .rosco-TurnIcons, .rosco-clockIcons, .rosco-UpArrow, .rosco-TypeGame, .rosco-HitIcons, .rosco-HitIcons, .rosco-ErrorIcons {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     margin-right: 5px;
 }
 
@@ -210,6 +228,7 @@
 
 .rosco-TypeGame {
     cursor: pointer;
+    margin-left: 5px;
     -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
 }
@@ -239,9 +258,9 @@
 }
 
 .rosco-Author {
-    width: 360px;
+    width: 100%;
     height: 12px;
-    margin: 5px auto;
+    margin: 0px auto;
     margin-bottom: 10px;
     padding-bottom: 3px;
     font-size: 0.9em;
@@ -284,11 +303,11 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 50px;
+    height: 28px;
     margin: 0 3px;
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .rosco-TypeDefinition {
@@ -413,17 +432,98 @@
     font-size: 14px;
 }
 
+.exeQuextIcons {
+    width: 26px;
+    height: 26px;
+    margin-right: 5px;
+}
+
+.exeQuextIcons-Hit {
+    background: url(exeQuextIcons.png) no-repeat 0 0;
+}
+.exeQuextIcons-Error {
+    background: url(exeQuextIcons.png) no-repeat -26px 0;
+}
+.exeQuextIcons-Score {
+    background: url(exeQuextIcons.png) no-repeat -52px 0;
+ }
+
+.exeQuextIcons-Time{
+    background: url(exeQuextIcons.png) no-repeat 0 -26px;
+}
+.exeQuextIcons-OneRound {
+    background: url(exeQuextIcons.png) no-repeat -52px -26px;
+    margin-right: 3px;
+}
+.exeQuextIcons-TwoRounds {
+    background: url(exeQuextIcons.png) no-repeat -78px -26px;
+    margin-right: 3px;
+}
+
+.exeQuextIcons-Life {
+ background: url(exeQuextIcons.png) no-repeat -78px 0;
+}
+
+.exeQuextIcons-Number {
+ background: url(exeQuextIcons.png) no-repeat -26px -26px;
+}
+
+.exeQuextIcons-Minimize {
+    background: url(exeQuextIcons.png) no-repeat 0 -52px;
+    margin-right: 5px;
+
+}
+
+.exeQuextIcons-Maximize{
+    background: url(exeQuextIcons.png) no-repeat -216px 0;
+}
+
+.exeQuextIcons-FullScreen{
+    background: url(exeQuextIcons.png) no-repeat 0 -78px;
+}
+.exeQuextIcons-FullScreenExit{
+    background: url(exeQuextIcons.png) no-repeat -26px -78px;
+}
+
+.exeQuextIcons-RoscoRows{
+    background: url(exeQuextIcons.png) no-repeat -26px -52px;
+}
+.exeQuextIcons-RoscoCanvas{
+    background: url(exeQuextIcons.png) no-repeat -52px -52px;
+}
+.exeQuextIcons-RoscoCanvas,  .exeQuextIcons-RoscoRows, .exeQuextIcons-FullScreenExit, .exeQuextIcons-FullScreen, .exeQuextIcons-Minimize{
+    -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+}
+.exeQuextIcons-RoscoRows:hover, .exeQuextIcons-RoscoCanvas:hover,.exeQuextIcons-Minimize:hover, .exeQuextIcons-FullScreenExit:hover, .exeQuextIcons-FullScreen:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.rosco-LinkArrowMinimize {
+    width: 26px;
+    height: 26px;
+    margin-right: 7px;
+}
+.rosco-LinkTypeGame {
+    width: 26px;
+    height: 26px;
+    margin-left: 5px;
+}
+.exeQuextIcons-Time{
+    margin: 0;
+    margin-right: 6px;
+}
+
 @media screen and (max-width: 800px) {
-    .rosco-TypeGame {
+    .rosco-canvas {
         display: none;
     }
-    .rosco-Canvas {
+    .rosco-LinkTypeGame {
         display: none;
-    }
-    .rosco-TimeTurn {
-        width: 135px;
-        height: 24px;
-        margin: 0 1px;
     }
 }
 
@@ -431,7 +531,7 @@
     .rosco-Main {
         width: 300px;
     }
-    .rosco-ResultsGame {
+    .exeQuext-ResultGame {
         width: 60px;
         height: 20px;
         margin-right: 5px;
@@ -452,7 +552,7 @@
         margin-right: 15px;
     }
     .rosco-TimeTurn {
-        width: 120px;
+        width: 180px;
         height: 20px;
         margin: 0 1px;
     }

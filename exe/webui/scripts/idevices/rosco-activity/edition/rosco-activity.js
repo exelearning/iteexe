@@ -47,7 +47,16 @@ var $exeDevice = {
 		"msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
 		"msgFailures": _("It was not that! | Not well! | Not correct! | Sorry! | Error!"),
 		"msgEndGameScore": _("Please start this activity before saving your score!"),
-		"msgScoreScorm": _("Only the score obtained in an SCORM export can be saved")
+		"msgScoreScorm": _("Only the score obtained in an SCORM export can be saved"),
+		"msgShowRoulette": _("Show roulette"),
+		"msgHideRoulette": _("Hide roulette"),
+		"msgQuestion": _("Question"),
+		"msgAnswer": _("Answer"),
+		"msgOnlySaveScore": _("You can only save the score once!"),
+		"msgOnlySave": _("You can only save once"),
+		"msgInformation": _("Information"),
+		"msgYouScore": _("Your score")
+
 	},
 	colors: {
 		black: "#1c1b1b",
@@ -55,7 +64,8 @@ var $exeDevice = {
 		verde: '#009245',
 		red: '#ff0000',
 		white: '#ffffff',
-		yellow: '#f3d55a'
+		yellow: '#f3d55a',
+		grey:'#818181'
 	},
 	letters: "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ",
 	init: function () {
@@ -67,12 +77,9 @@ var $exeDevice = {
 		var msgs = this.msgs;
 		msgs.msgNotStart = _("%1 does not start with the letter %2");
 		msgs.msgNotContain = _("%1 does not contain the letter %2");
-		msgs.msgWriteClue = _("You must write a clue");
 		msgs.msgProvideDefinition = _("You must provide the definition of the word or the valid URL of an image");
-		msgs.msgProvideCode = _("You must provide the code to play this game");
-		msgs.msgProvideGetCode = _("You must provide how to obtain the code to play this game");
 		msgs.msgGame = _("Game");
-		msgs.msgSelectFile = _("The selected file does not contain a Rosco game");
+		msgs.msgSelectFile = _("The selected file does not contain a valid game");
 		msgs.msgURLValid = _("You must indicate the valid URL of an image");
 		msgs.msgOneWord = _("You must provide at least one word");
 		msgs.msgProvideTimeSolution = _("You must provide the time to view the solution");
@@ -86,7 +93,7 @@ var $exeDevice = {
 			<div id="roscoIdeviceForm">\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                     ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Observe the letters, identify and fill in the missing the words.")) + '\
-					<fieldset class="exe-fieldset">\
+					<fieldset class="exe-fieldset exe-fieldset-closed">\
 						<legend><a href="#">' + _("Options") + '</a></legend>\
 						<div>\
 							<p>\
@@ -115,14 +122,17 @@ var $exeDevice = {
 							' + this.getWords().join('') + '\
                         </div>\
 					</fieldset>\
-					' + $exeAuthoring.iDevice.gamification.common.getFieldsets() + '\
 				</div>\
-                ' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
+				' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
+				' + $exeAuthoring.iDevice.gamification.scorm.getTab()+ '\
+				' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
+				' + $exeAuthoring.iDevice.gamification.share.getTab()+ '\
 			</div>\
 			';
 		var field = $("textarea.jsContentEditor").eq(0);
 		field.before(html);
 		$exeAuthoring.iDevice.tabs.init("roscoIdeviceForm");
+		$exeAuthoring.iDevice.gamification.scorm.init();
 		this.loadPreviousValues(field);
 	},
 	updateFieldGame: function (dataGame) {
@@ -165,29 +175,16 @@ var $exeDevice = {
 			var imageSelect = $.trim(dataGame.wordsGame[index].url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
 			$(this).attr('src', $exeDevice.iDevicePath + imageSelect);
 		});
-		$('div.roscoLetterEdition').each(function (index) {
+		$('h3.roscoLetterEdition').each(function (index) {
 			var longitud = (dataGame.wordsGame[index].word).length;
-			var color = longitud > 0 ? $exeDevice.colors.blue : $exeDevice.colors.black;
+			var color = longitud > 0 ? $exeDevice.colors.blue : $exeDevice.colors.grey;
 			$(this).css('background-color', color);
 		});
-		//$exeAuthoring.iDevice.itinerary.setValues(dataGame.itinerary);
-		$exeDevice.itinerary.setValues(dataGame.itinerary);
-		$("#eXeGameSCORMoptions").css("visibility", "hidden");
-		$("#eXeGameSCORMinstructionsButton").hide();
-		$("#eXeGameSCORMinstructionsAuto").hide();
-		if (dataGame.isScorm == 0) {
-			$('#eXeGameSCORMNoSave').prop('checked', true);
-		} else if (dataGame.isScorm == 1) {
-			$('#eXeGameSCORMAutoSave').prop('checked', true);
-			$('#eXeGameSCORMinstructionsAuto').show();
-		}
-		if (dataGame.isScorm == 2) {
-			$('#eXeGameSCORMButtonSave').prop('checked', true);
-			$('#eXeGameSCORMbuttonText').val(dataGame.textButtonScorm);
-			$('#eXeGameSCORMoptions').css("visibility", "visible");
-			$('#eXeGameSCORMinstructionsButton').show();
-		}
+		$exeAuthoring.iDevice.gamification.itinerary.setValues(dataGame.itinerary);
+		$exeAuthoring.iDevice.gamification.scorm.setValues(dataGame.isScorm,dataGame.textButtonScorm,dataGame.repeatActivity);
+
 	},
+
 	loadPreviousValues: function (field) {
 		var originalHTML = field.val();
 		if (originalHTML != '') {
@@ -401,14 +398,14 @@ var $exeDevice = {
 					</div>\
 					<div class="roscoImageBarEdition">\
 						<div class="roscoImageEdition">\
-							<img src="' + path + "roscoCursor.gif" + '" class="roscoCursorEdition" alt="Cursor" /> \
+							<img src="' + path + 'roscoCursor.gif" class="roscoCursorEdition" alt="Cursor" /> \
 							<img src="" class="roscoHomeImageEdition" alt="' + _("No image") + '" /> \
-							<img src="' + path + "roscoHomeImage.png" + '" class="roscoNoImageEdition" alt="' + _("No image") + '" /> \
+							<img src="' + path + 'roscoHomeImage.png" class="roscoNoImageEdition" alt="' + _("No image") + '" /> \
 						</div>\
 						<div class="roscoBarEdition">\
 							<label>' + _("Image") + ': </label><input type="text" class="exe-file-picker roscoURLImageEdition" id="roscoURLImage-' + letter + '" placeholder="' + _("Indicate a valid URL of an image or select one from your device") + '"/>\
-							<input type="text" class="roscoXImageEdition" value="0" readonly />\
-							<input type="text" class="roscoYImageEdition" value="0" readonly />\
+							<label class="sr-av">X: </label><input type="text" class="roscoXImageEdition" value="0" readonly />\
+							<label class="sr-av">Y: </label><input type="text" class="roscoYImageEdition" value="0" readonly />\
 						</div>\
 						<div class="roscoMetaData">\
 							<label for="roscoAlt' + letter + '">Alt: </label><input type="text" id="roscoAlt' + letter + '" class="roscoAlt" />\
@@ -440,10 +437,7 @@ var $exeDevice = {
 			timeShowSolution = parseInt(clear($.trim($('#roscoTimeShowSolution').val()))),
 			durationGame = parseInt(clear($('#roscoDuration').val())),
 			numberTurns = parseInt(clear($('#roscoNumberTurns').val())),
-			//itinerary = $exeAuthoring.iDevice.itinerary.getValues(),
-			itinerary = $exeDevice.itinerary.getValues(),
-			isScorm = 0,
-			textButtonScorm = "";
+			itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues();
 		if (!itinerary) return false;
 		if (showSolution && timeShowSolution.length == 0) {
 			eXe.app.alert(msgs.msgEProvideTimeSolution);
@@ -544,14 +538,7 @@ var $exeDevice = {
 			}
 			wordsGame.push(p);
 		}
-		isScorm = parseInt($("input[type=radio][name='eXeGameSCORM']:checked").val());
-		if (isScorm == 2) {
-			textButtonScorm = $("#eXeGameSCORMbuttonText").val();
-			if (textButtonScorm == "") {
-				eXe.app.alert(_("Please write the button text."));
-				return false;
-			}
-		}
+		var scorm=$exeAuthoring.iDevice.gamification.scorm.getValues();
 		var data = {
 			'typeGame': 'Rosco',
 			'instructions': instructions,
@@ -563,19 +550,24 @@ var $exeDevice = {
 			'showMinimize': showMinimize,
 			'itinerary': itinerary,
 			'wordsGame': wordsGame,
-			'isScorm': isScorm,
-			'textButtonScorm': textButtonScorm
+			'isScorm': scorm.isScorm,
+			'textButtonScorm': scorm.textButtonScorm,
+			'repeatActivity':scorm.repeatActivity
 		}
 		return data;
 	},
 	importGame: function (content) {
 		var game = $exeDevice.isJsonString(content);
-		if (!game || !game.typeGame || game.typeGame != 'Rosco') {
+		if (!game || typeof game.typeGame=="undefined" ) {
 			eXe.app.alert($exeDevice.msgs.msgSelectFile);
 			return;
-		}
+		}else if(game.typeGame!=='Rosco'){
+			eXe.app.alert($exeDevice.msgs.msgSelectFile);
+			return;
+        }
 		$exeDevice.updateFieldGame(game);
 		tinymce.editors[0].setContent(game.instructions);
+		$('.exe-form-tabs li:first-child a').click();
 	},
 	addEvents: function () {
 		var msgs = $exeDevice.msgs;
@@ -623,7 +615,7 @@ var $exeDevice = {
 		$('#roscoDataWord .roscoWordEdition').on('focusout', function () {
 			var word = $(this).val().trim().toUpperCase(),
 				letter = $(this).siblings().filter(".roscoLetterEdition").text(),
-				color = $(this).val().trim() == "" ? $exeDevice.colors.black : $exeDevice.colors.blue;
+				color = $(this).val().trim() == "" ? $exeDevice.colors.grey: $exeDevice.colors.blue;
 			$(this).siblings().filter('.roscoLetterEdition').css("background-color", color);
 			if (word.length > 0) {
 				var mType = $(this).parent().find('.roscoStartEdition').attr('src').indexOf("roscoContains.png") != -1 ? 1 : 0;
@@ -638,33 +630,6 @@ var $exeDevice = {
 				}
 			}
 		});
-		$('input[type=radio][name="eXeGameSCORM"]').on('change', function () {
-			$("#eXeGameSCORMoptions,#eXeGameSCORMinstructionsButton,#eXeGameSCORMinstructionsAuto").hide();
-			switch ($(this).val()) {
-				case '0':
-					break;
-				case '1':
-					$("#eXeGameSCORMinstructionsAuto").hide().css({
-						opacity: 0,
-						visibility: "visible"
-					}).show().animate({
-						opacity: 1
-					}, 500);
-
-					break;
-				case '2':
-					$("#eXeGameSCORMoptions,#eXeGameSCORMinstructionsButton").hide().css({
-						opacity: 0,
-						visibility: "visible"
-					}).show().animate({
-						opacity: 1
-					}, 500);
-
-					break;
-			}
-		});
-		//$exeAuthoring.iDevice.itinerary.addEvents();
-		$exeDevice.itinerary.addEvents();
 		$('#roscoShowSolution').on('change', function () {
 			var mark = $(this).is(':checked');
 			$('#roscoTimeShowSolution').prop('disabled', !mark);
@@ -722,6 +687,7 @@ var $exeDevice = {
 		} else {
 			$('#eXeGameExportImport').hide();
 		}
+		$exeAuthoring.iDevice.gamification.itinerary.addEvents();
 	},
 	exportGame: function () {
 		var dataGame = this.validateData();
@@ -756,61 +722,5 @@ var $exeDevice = {
 			}
 		} catch (e) {}
 		return false;
-	},
-	itinerary: {
-		getValues: function () {
-			var showClue = $('#eXeGameShowClue').is(':checked'),
-				clueGame = $.trim($('#eXeGameClue').val()),
-				percentageClue = parseInt($('#eXeGamePercentajeClue').children("option:selected").val()),
-				showCodeAccess = $('#eXeGameShowCodeAccess').is(':checked'),
-				codeAccess = $.trim($('#eXeGameCodeAccess').val()),
-				messageCodeAccess = $.trim($('#eXeGameMessageCodeAccess').val());
-
-			if (showClue && clueGame.length == 0) {
-				eXe.app.alert(_("You must write a clue"));
-				return false;
-			}
-			if (showCodeAccess && codeAccess.length == 0) {
-				eXe.app.alert(_("You must provide the code to play this game"));
-				return false;
-			}
-			if (showCodeAccess && messageCodeAccess.length == 0) {
-				eXe.app.alert(_("You must provide how to obtain the code to play this game"));
-				return false;
-			}
-			var a = {
-				'showClue': showClue,
-				'clueGame': clueGame,
-				'percentageClue': percentageClue,
-				'showCodeAccess': showCodeAccess,
-				'codeAccess': codeAccess,
-				'messageCodeAccess': messageCodeAccess
-			}
-			return a;
-		},
-		setValues: function (a) {
-			$('#eXeGameShowClue').prop('checked', a.showClue);
-			$('#eXeGameClue').val(a.clueGame);
-			$('#eXeGamePercentajeClue').val(a.percentageClue);
-			$('#eXeGameShowCodeAccess').prop('checked', a.showCodeAccess);
-			$('#eXeGameCodeAccess').val(a.codeAccess);
-			$('#eXeGameMessageCodeAccess').val(a.messageCodeAccess);
-			$('#eXeGameClue').prop('disabled', !a.showClue);
-			$('#eXeGamePercentajeClue').prop('disabled', !a.showClue);
-			$('#eXeGameCodeAccess').prop('disabled', !a.showCodeAccess);
-			$('#eXeGameMessageCodeAccess').prop('disabled', !a.showCodeAccess);
-		},
-		addEvents: function () {
-			$('#eXeGameShowClue').on('change', function () {
-				var mark = $(this).is(':checked');
-				$('#eXeGameClue').prop('disabled', !mark);
-				$('#eXeGamePercentajeClue').prop('disabled', !mark);
-			});
-			$('#eXeGameShowCodeAccess').on('change', function () {
-				var mark = $(this).is(':checked');
-				$('#eXeGameCodeAccess').prop('disabled', !mark);
-				$('#eXeGameMessageCodeAccess').prop('disabled', !mark);
-			});
-		}
 	}
 }
