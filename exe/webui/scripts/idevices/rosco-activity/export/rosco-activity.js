@@ -575,7 +575,6 @@ var $eXeRosco = {
 		$eXeRosco.showImage('', 0, 0, '', '', instance);
 		mOptions.gameStarted = false;
 		if (mOptions.isScorm == 1) {
-			console.log($eXeRosco.initialScore,'InitialScore');
 			if (mOptions.repeatActivity || $eXeRosco.initialScore === '') {
 				var score = ((mOptions.hits * 10) / mOptions.validWords).toFixed(2);
 				$eXeRosco.sendScore(instance, true);
@@ -630,7 +629,6 @@ var $eXeRosco = {
 		$eXeRosco.showImage(mWord.url, mWord.x, mWord.y, mWord.author, mWord.alt, instance);
 		$('#roscoEdAnswer-' + instance).prop('disabled', false).focus();
 		if (mOptions.isScorm == 1) {
-			console.log($eXeRosco.initialScore,'InitialScore')
 			if (mOptions.repeatActivity || $eXeRosco.initialScore === '') {
 				var score = ((mOptions.hits * 10) / mOptions.validWords).toFixed(2);
 				$eXeRosco.sendScore(instance, true);

@@ -59,7 +59,9 @@ var $exeDevice = {
 		"msgOnlySave": _("You can only save once"),
 		"msgInformation": _("Information"),
 		"msgYouScore": _("Your score"),
-		"msgAuthor": _("Author"),
+        "msgAuthor": _("Author"),
+		"msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once!"),
+		"msgSaveAuto": _("Your score will be automatically saved after each question."),
     },
     init: function () {
         this.setMessagesInfo();

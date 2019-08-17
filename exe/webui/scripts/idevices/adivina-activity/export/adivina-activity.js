@@ -32,6 +32,7 @@ var $eXeAdivina = {
     isInExe: false,
     userName: '',
     previousScore: '',
+    initialScore: '',
     init: function () {
         this.activities = $('.adivina-IDevice');
         if (this.activities.length == 0) return;
@@ -60,17 +61,29 @@ var $eXeAdivina = {
             $eXeAdivina.previousScore = $eXeAdivina.getPreviousScore();
             $eXeAdivina.mScorm.set("cmi.core.score.max", 10);
             $eXeAdivina.mScorm.set("cmi.core.score.min", 0);
+            $eXeAdivina.initialScore = $eXeAdivina.previousScore;
         }
     },
     updateScorm: function (prevScore, repeatActivity, instance) {
         var mOptions = $eXeAdivina.options[instance],
             text = '';
-        $('#adivinaSendScore-' + instance).show();
-        if (!repeatActivity && prevScore === '') {
-            text = mOptions.msgs.msgOnlySave;
-        } else if (!repeatActivity && prevScore !== '') {
-            $('#adivinaSendScore-' + instance).hide();
-            text = mOptions.msgs.msgYouScore + ': ' + prevScore;
+        if (mOptions.isScorm == 1) {
+            if (!repeatActivity && prevScore === "") {
+                text = mOptions.msgs.msgOnlySaveAuto;
+            } else if (!repeatActivity && prevScore !== "") {
+                prevScore = prevScore != "" ? prevScore : 0;
+                text = mOptions.msgs.msgYouScore + ': ' + prevScore;
+            } else {
+                text = mOptions.msgs.msgSaveAuto;
+            }
+        } else if (mOptions.isScorm == 2) {
+            $('#adivinaSendScore-' + instance).show();
+            if (!repeatActivity && prevScore === '') {
+                text = mOptions.msgs.msgOnlySave;
+            } else if (!repeatActivity && prevScore !== '') {
+                $('#adivinaSendScore-' + instance).hide();
+                text = mOptions.msgs.msgYouScore + ': ' + prevScore;
+            }
         }
         $('#adivinaRepeatActivity-' + instance).text(text);
         $('#adivinaRepeatActivity-' + instance).fadeIn(1000);
@@ -267,7 +280,15 @@ var $eXeAdivina = {
                     butonScore = fB;
                 }
             }
-        }
+        }else if (mOptions.isScorm == 1) {
+			if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
+				this.hasSCORMbutton = true;
+                fB += '<div class="adivina-QuextScoreDiv" id="adivinaButonScoreDiv-' + instance + '">';
+                fB += '<p><span class="adivina-RepeatActivity" id="adivinaRepeatActivity-' + instance + '"></span></p>';
+				fB += '</div>';
+				butonScore = fB;
+			}
+		}
         fB = +'</div>';
         return butonScore;
     },
@@ -287,12 +308,15 @@ var $eXeAdivina = {
                         if (!mOptions.repeatActivity) {
                             $('#adivinaSendScore-' + instance).hide();
                         }
-                        $('#adivinaRepeatActivity-' + instance).text($exe_i18n.yourScoreIs + ' ' + +score)
+                        $('#adivinaRepeatActivity-' + instance).text($exe_i18n.yourScoreIs + ' ' + score)
                         $('#adivinaRepeatActivity-' + instance).show();
                     }
                 } else {
                     $eXeAdivina.previousScore = score;
+                    score = score === "" ? 0 : score;
                     $eXeAdivina.mScorm.set("cmi.core.score.raw", score);
+                    $('#adivinaRepeatActivity-' + instance).text($exe_i18n.yourScoreIs + ' ' + score)
+                    $('#adivinaRepeatActivity-' + instance).show();
                     message = "";
                 }
             } else {
@@ -490,7 +514,7 @@ var $eXeAdivina = {
             $eXeAdivina.startGame(instance);
 
         });
-        if (mOptions.isScorm === 2) {
+        if (mOptions.isScorm >0) {
             $eXeAdivina.updateScorm($eXeAdivina.previousScore, mOptions.repeatActivity, instance);
         }
         $('#adivinaInstructions-' + instance).text(mOptions.instructions);
@@ -589,7 +613,12 @@ var $eXeAdivina = {
         $('#adivinaBtnMoveOn-' + instance).prop('disabled', true);
         $('#adivinaEdAnswer-' + instance).prop('disabled', true);
         if (mOptions.isScorm == 1) {
-            $eXeAdivina.sendScore(instance, true);
+            if (mOptions.repeatActivity || $eXeAdivina.initialScore === '') {
+                var score = ((mOptions.hits * 10) / mOptions.numberQuestions).toFixed(2);
+                $eXeAdivina.sendScore(instance, true);
+                $('#adivinaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+                $eXeAdivina.initialScore = score;
+            }
         }
     },
     showScoreGame: function (type, instance) {
@@ -777,7 +806,12 @@ var $eXeAdivina = {
             $adivinaPNumber.text(mOptions.numberQuestions - mActiveQuestion);
         };
         if (mOptions.isScorm == 1) {
-            $eXeAdivina.sendScore(instance, true);
+            if (mOptions.repeatActivity || $eXeAdivina.initialScore === '') {
+                var score = ((mOptions.hits * 10) / mOptions.numberQuestions).toFixed(2);
+                $eXeAdivina.sendScore(instance, true);
+                $('#adivinaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+
+            }
         }
     },
     updateNumberQuestion: function (numq, instance) {
