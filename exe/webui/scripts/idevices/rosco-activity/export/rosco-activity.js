@@ -33,6 +33,7 @@ var $eXeRosco = {
 	isInExe: false,
 	userName: '',
 	previousScore: '',
+	initialScore:'',
 	init: function () {
 		this.activities = $('.rosco-IDevice');
 		if (this.activities.length == 0) return;
@@ -61,18 +62,31 @@ var $eXeRosco = {
 			$eXeRosco.previousScore = $eXeRosco.getPreviousScore();
 			$eXeRosco.mScorm.set("cmi.core.score.max", 10);
 			$eXeRosco.mScorm.set("cmi.core.score.min", 0);
+			$eXeRosco.initialScore=$eXeRosco.previousScore;
 		}
 	},
 	updateScorm: function (prevScore, repeatActivity, instance) {
 		var mOptions = $eXeRosco.options[instance],
 			text = '';
-		$('#roscoSendScore-' + instance).show();
-		if (!repeatActivity && prevScore === '') {
-			text = mOptions.msgs.msgOnlySave;
-		} else if (!repeatActivity && prevScore !== '') {
-			$('#roscoSendScore-' + instance).hide();
-			text = mOptions.msgs.msgYouScore + ': ' + prevScore;
+		if (mOptions.isScorm == 1) {
+			if (!repeatActivity && prevScore === "") {
+				text = mOptions.msgs.msgOnlySaveAuto;
+			} else if (!repeatActivity && prevScore !== "") {
+				prevScore=prevScore!=""?prevScore:0;
+				text = mOptions.msgs.msgYouScore + ': ' + prevScore;
+			} else {
+				text = mOptions.msgs.msgSaveAuto;
+			}
+		} else if (mOptions.isScorm == 2) {
+			$('#roscoSendScore-' + instance).show();
+			if (!repeatActivity && prevScore === '') {
+				text = mOptions.msgs.msgOnlySave;
+			} else if (!repeatActivity && prevScore !== '') {
+				$('#roscoSendScore-' + instance).hide();
+				text = mOptions.msgs.msgYouScore + ': ' + prevScore;
+			}
 		}
+
 		$('#roscoRepeatActivity-' + instance).text(text);
 		$('#roscoRepeatActivity-' + instance).fadeIn(1000);
 	},
@@ -247,15 +261,23 @@ var $eXeRosco = {
 					butonScore = fB;
 				}
 			}
+		}else if (mOptions.isScorm == 1) {
+			if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
+				this.hasSCORMbutton = true;
+				var fB = '<div class="rosco-get-score iDevice_buttons feedback-button js-required" id="roscoButonScoreDiv-' + instance + '">';
+				fB += '<p><span class="rosco-RepeatActivity" id="roscoRepeatActivity-' + instance + '"></span></p>';
+				fB += '</div>';
+				butonScore = fB;
+			}
 		}
 		return butonScore;
 	},
-	sendScore: function (instance, auto) {
+	sendScore: function (instance,auto) {
 		var mOptions = $eXeRosco.options[instance],
 			message = '',
 			score = ((mOptions.hits * 10) / mOptions.validWords).toFixed(2);
 		if (mOptions.gameStarted || mOptions.gameOver) {
-			if (typeof ($eXeRosco.mScorm) != 'undefined') {
+			if (typeof $eXeRosco.mScorm != 'undefined') {
 				if (!auto) {
 					if (!mOptions.repeatActivity && $eXeRosco.previousScore !== '') {
 						message = $eXeRosco.userName !== '' ? $eXeRosco.userName + ' ' + mOptions.msgs.msgOnlySaveScore : mOptions.msgs.msgOnlySaveScore;
@@ -266,12 +288,15 @@ var $eXeRosco = {
 						if (!mOptions.repeatActivity) {
 							$('#roscoSendScore-' + instance).hide();
 						}
-						$('#roscoRepeatActivity-' + instance).text($exe_i18n.yourScoreIs + ' ' + +score)
+						$('#roscoRepeatActivity-' + instance).text($exe_i18n.yourScoreIs + ' ' + score)
 						$('#roscoRepeatActivity-' + instance).show();
 					}
 				} else {
 					$eXeRosco.previousScore = score;
+					score = score === "" ? 0 : score;
 					$eXeRosco.mScorm.set("cmi.core.score.raw", score);
+					$('#roscoRepeatActivity-' + instance).text($exe_i18n.yourScoreIs + ' ' + score)
+					$('#roscoRepeatActivity-' + instance).show();
 					message = "";
 				}
 			} else {
@@ -352,6 +377,7 @@ var $eXeRosco = {
 		$("#roscoLinkArrowMinimize-" + instance).on('click touchstart', function (e) {
 			e.preventDefault();
 			$("#roscoGame-" + instance).hide();
+			$('#roscoLetters-' + instance).hide();
 			$("#roscoGameContainer-" + instance).hide();
 			$("#roscoGameMinimize-" + instance).css('visibility', 'visible').show();
 		});
@@ -396,14 +422,14 @@ var $eXeRosco = {
 		$('#roscoTypeGame-' + instance).addClass('exeQuextIcons-RoscoCanvas');
 		$('#roscoLinkTypeGame-' + instance).on('click', function (e) {
 			e.preventDefault();
-			var alt =mOptions.msgs.msgHideRoulette;
+			var alt = mOptions.msgs.msgHideRoulette;
 			if ($('#roscoTypeGame-' + instance).hasClass('exeQuextIcons-RoscoCanvas')) {
 				$('#roscoTypeGame-' + instance).addClass('exeQuextIcons-RoscoRows');
 				$('#roscoTypeGame-' + instance).removeClass('exeQuextIcons-RoscoCanvas');
 				$('#roscoLetters-' + instance).show();
 				$('#roscoSolution-' + instance).show();
 				$('#roscoGame-' + instance).hide();
-				alt =mOptions.msgs.msgShowRoulette;
+				alt = mOptions.msgs.msgShowRoulette;
 			} else {
 				$('#roscoTypeGame-' + instance).addClass('exeQuextIcons-RoscoCanvas');
 				$('#roscoTypeGame-' + instance).remove('exeQuextIcons-RoscoRows');
@@ -411,7 +437,7 @@ var $eXeRosco = {
 				$('#roscoSolution-' + instance).hide();
 				$('#roscoGame-' + instance).show();
 			}
-			$('#roscoLinkTypeGame-' + instance).attr('title',alt);
+			$('#roscoLinkTypeGame-' + instance).attr('title', alt);
 			$('#roscoLinkTypeGame-' + instance).find('span').text(alt);
 
 		});
@@ -422,7 +448,7 @@ var $eXeRosco = {
 			e.preventDefault();
 			$eXeRosco.sendScore(instance, false);
 		});
-		if (mOptions.isScorm === 2) {
+		if (mOptions.isScorm >0) {
 			$eXeRosco.updateScorm($eXeRosco.previousScore, mOptions.repeatActivity, instance);
 		}
 		$(window).on('unload', function () {
@@ -549,7 +575,13 @@ var $eXeRosco = {
 		$eXeRosco.showImage('', 0, 0, '', '', instance);
 		mOptions.gameStarted = false;
 		if (mOptions.isScorm == 1) {
-			$eXeRosco.sendScore(instance, true);
+			console.log($eXeRosco.initialScore,'InitialScore');
+			if (mOptions.repeatActivity || $eXeRosco.initialScore === '') {
+				var score = ((mOptions.hits * 10) / mOptions.validWords).toFixed(2);
+				$eXeRosco.sendScore(instance, true);
+				$('#roscoRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+				$eXeRosco.initialScore = score;
+			}
 		}
 	},
 
@@ -598,7 +630,13 @@ var $eXeRosco = {
 		$eXeRosco.showImage(mWord.url, mWord.x, mWord.y, mWord.author, mWord.alt, instance);
 		$('#roscoEdAnswer-' + instance).prop('disabled', false).focus();
 		if (mOptions.isScorm == 1) {
-			$eXeRosco.sendScore(instance, true);
+			console.log($eXeRosco.initialScore,'InitialScore')
+			if (mOptions.repeatActivity || $eXeRosco.initialScore === '') {
+				var score = ((mOptions.hits * 10) / mOptions.validWords).toFixed(2);
+				$eXeRosco.sendScore(instance, true);
+				$('#roscoRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+				
+			}
 		}
 	},
 
@@ -699,7 +737,7 @@ var $eXeRosco = {
 	newWord: function (instance) {
 		var mOptions = $eXeRosco.options[instance],
 			mActiveWord = $eXeRosco.updateNumberWord(mOptions.activeWord, instance);
-		if(mOptions.gameOver) return;
+		if (mOptions.gameOver) return;
 		if (mActiveWord == -10) {
 			$eXeRosco.gameOver(instance, 0);
 		} else {

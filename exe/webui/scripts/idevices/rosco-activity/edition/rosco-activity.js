@@ -55,7 +55,10 @@ var $exeDevice = {
 		"msgOnlySaveScore": _("You can only save the score once!"),
 		"msgOnlySave": _("You can only save once"),
 		"msgInformation": _("Information"),
-		"msgYouScore": _("Your score")
+		"msgYouScore": _("Your score"),
+		"msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once!"),
+		"msgSaveAuto": _("Your score will be automatically saved after each question."),
+		"msgAuthor": _("Author")
 
 	},
 	colors: {
@@ -440,7 +443,7 @@ var $exeDevice = {
 			itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues();
 		if (!itinerary) return false;
 		if (showSolution && timeShowSolution.length == 0) {
-			eXe.app.alert(msgs.msgEProvideTimeSolution);
+			eXe.app.alert(msgs.msgProvideTimeSolution);
 			return false;
 		}
 		var words = [],

@@ -1111,6 +1111,9 @@ var $exeAuthoring = {
                                     </p>\
                                     <p id="eXeGameSCORMAutomatically">\
                                         <label for="eXeGameSCORMAutoSave"><input type="radio" name="eXeGameSCORM" id="eXeGameSCORMAutoSave" value="1"  /> ' + _("Automatically save the score") + '</label>\
+                                        <span id="eXeGameSCORMoptionsAuto">\
+                                            <label for="eXeGameSCORMRepeatActivityAuto"><input type="checkbox" id="eXeGameSCORMRepeatActivityAuto" checked /> ' + _("Repeat activity") + '</label>\
+                                        </span>\
                                     </p>\
                                     <p id="eXeGameSCORMblock">\
                                     <label for="eXeGameSCORMButtonSave"><input type="radio" name="eXeGameSCORM" id="eXeGameSCORMButtonSave" value="2" /> ' + _("Show a button to save the score") + '</label>\
@@ -1140,12 +1143,15 @@ var $exeAuthoring = {
                 },
                 setValues: function(isScorm,textButtonScorm,repeatActivity,){
                     $("#eXeGameSCORMoptions").css("visibility", "hidden");
+                    $("#eXeGameSCORMoptionsAuto").css("visibility", "hidden");
                     $("#eXeGameSCORMinstructionsButton").hide();
                     $("#eXeGameSCORMinstructionsAuto").hide();
                     if (isScorm == 0) {
                         $('#eXeGameSCORMNoSave').prop('checked', true);
                     } else if (isScorm == 1) {
                         $('#eXeGameSCORMAutoSave').prop('checked', true);
+                        $('#eXeGameSCORMoptionsAuto').css("visibility", "visible");
+                        $('#eXeGameSCORMRepeatActivityAuto').prop("checked", repeatActivity);
                         $('#eXeGameSCORMinstructionsAuto').show();
                     }else if (isScorm == 2) {
                         $('#eXeGameSCORMButtonSave').prop('checked', true);
@@ -1159,7 +1165,9 @@ var $exeAuthoring = {
                     var isScorm = parseInt($("input[type=radio][name='eXeGameSCORM']:checked").val()),
                     textButtonScorm=$("#eXeGameSCORMbuttonText").val(),
                     repeatActivity=false;
-		            if (isScorm == 2) {
+                    if (isScorm == 1) {
+                        repeatActivity=$('#eXeGameSCORMRepeatActivityAuto').is(':checked');
+                    }else if (isScorm == 2) {
                         repeatActivity=$('#eXeGameSCORMRepeatActivity').is(':checked');
                     }
                     var a={
@@ -1171,12 +1179,12 @@ var $exeAuthoring = {
                 },
                 addEvents: function(){
                     $('input[type=radio][name="eXeGameSCORM"]').on('change', function () {
-                        $("#eXeGameSCORMoptions,#eXeGameSCORMinstructionsButton,#eXeGameSCORMinstructionsAuto").hide();
+                        $("#eXeGameSCORMoptions,#eXeGameSCORMoptionsAuto, #eXeGameSCORMinstructionsButton,#eXeGameSCORMinstructionsAuto").hide();
                         switch ($(this).val()) {
                             case '0':
                                 break;
                             case '1':
-                                $("#eXeGameSCORMinstructionsAuto").hide().css({
+                                $("#eXeGameSCORMoptionsAuto,#eXeGameSCORMinstructionsAuto").hide().css({
                                     opacity: 0,
                                     visibility: "visible"
                                 }).show().animate({
@@ -1219,6 +1227,7 @@ var $exeAuthoring = {
                 }
             }
         },
+        // / Gamification
         filePicker : {
             init : function(){
                 $(".exe-file-picker,.exe-image-picker").each(
