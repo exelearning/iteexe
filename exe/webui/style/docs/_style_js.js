@@ -75,7 +75,11 @@ var myTheme = {
 		var isMobile = $("#siteNav").css("float")=="none";
 		if (cH<nH) {
 			cH = nH;
-			if (!isMobile) c.height(cH);
+			if (!isMobile) {
+				var s = c.attr("style");
+				if (s) c.css("min-height",cH+"px");
+				else c.attr("style","height:auto!important;height:"+cH+"px;min-height:"+cH+"px");
+			}
 		}
 		var h = (cH-nH+24)+"px";
 		var m = 0;
