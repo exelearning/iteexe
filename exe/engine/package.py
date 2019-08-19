@@ -384,7 +384,6 @@ class Package(Persistable):
         self._contextPlace = u''
         self._contextMode = u''
         self._extraHeadContent = u''
-        self.compatibleWithVersion9 = False
 
         #for export to Sugar (e.g. OLPC)
         self.sugaractivityname = ""
@@ -1196,6 +1195,11 @@ class Package(Persistable):
         Save package to disk
         pass an optional filename
         """
+
+        # Delete attribute thats check compatibility with old versions
+        if hasattr(self, 'compatibleWithVersion9'):
+            delattr(self, 'compatibleWithVersion9')
+
         self.tempFile = tempFile
         self.set_isTemplate(isTemplate)
         # Get the filename
@@ -1266,8 +1270,6 @@ class Package(Persistable):
         Actually performs the save to 'fileObj'.
         """
 
-        if self.compatibleWithVersion9:
-            self.downgradeToVersion9()
         zippedFile = zipfile.ZipFile(fileObj, "w", zipfile.ZIP_DEFLATED)
         try:
             for resourceFile in self.resourceDir.walkfiles():
@@ -1297,39 +1299,7 @@ class Package(Persistable):
             zippedFile.write(G.application.config.webDir/'templates'/'content.xsd', 'content.xsd', zipfile.ZIP_DEFLATED)
         finally:
             zippedFile.close()
-        if self.compatibleWithVersion9:
-            self.upgradeToVersion10()
-            CasestudyIdevice.persistenceVersion = 9
-            CasopracticofpdIdevice.persistenceVersion = 9
-            CitasparapensarfpdIdevice.persistenceVersion = 9
-            ClozefpdIdevice.persistenceVersion = 7
-            ClozeIdevice.persistenceVersion = 7
-            ClozelangfpdIdevice.persistenceVersion = 7
-            DebesconocerfpdIdevice.persistenceVersion = 9
-            DestacadofpdIdevice.persistenceVersion = 9
-            EjercicioresueltofpdIdevice.persistenceVersion = 10
-            EleccionmultiplefpdIdevice.persistenceVersion = 10
-            TextAreaField.persistenceVersion = 2
-            FreeTextfpdIdevice.persistenceVersion = 8
-            GalleryIdevice.persistenceVersion = 8
-            ImageMagnifierIdevice.persistenceVersion = 4
-            ListaIdevice.persistenceVersion = 5
-            MultichoiceIdevice.persistenceVersion = 9
-            GenericIdevice.persistenceVersion = 11
-            MultiSelectIdevice.persistenceVersion = 1
-            OrientacionesalumnadofpdIdevice.persistenceVersion = 9
-            OrientacionestutoriafpdIdevice.persistenceVersion = 9
-            ParasabermasfpdIdevice.persistenceVersion = 9
-            QuizTestIdevice.persistenceVersion = 10
-            RecomendacionfpdIdevice.persistenceVersion = 9
-            ReflectionfpdIdevice.persistenceVersion = 9
-            ReflectionfpdmodifIdevice.persistenceVersion = 9
-            ReflectionIdevice.persistenceVersion = 8
-            SeleccionmultiplefpdIdevice.persistenceVersion = 2
-            TrueFalseIdevice.persistenceVersion = 11
-            VerdaderofalsofpdIdevice.persistenceVersion = 12
-            WikipediaIdevice.persistenceVersion = 9
-            Package.persistenceVersion = 13
+
 
     def extractNode(self):
         """
@@ -1761,7 +1731,6 @@ class Package(Persistable):
             'lang': G.application.config.locale.split('_')[0] if G.application.config.locale.split('_')[0] != 'zh' else G.application.config.locale,
             'exportSource': True,
             'exportMetadataType': 'LOMES',
-            'compatibleWithVersion9': False,
             'addPagination': False,
             'addSearchBox': False,
             'exportElp': False,
@@ -1969,8 +1938,6 @@ class Package(Persistable):
             self.mxmlheight = ""
         if not hasattr(self, 'mxmlwidth'):
             self.mxmlwidth = ""
-        if not hasattr(self, 'compatibleWithVersion9'):
-            self.compatibleWithVersion9 = False
         self.set_title(self._title)
         self.set_author(self._author)
         self.set_description(self._description)
