@@ -21,10 +21,19 @@
     text-align: center;
 
 }
+.rosco-GetScore{
+    width: 100%;
+    height: 50px;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .rosco-RepeatActivity{
     color: #ff0000;
     font-size:12px;
     font-weight: bold;
+    text-align: center;
 }
 
 
@@ -51,7 +60,7 @@
     display: none;
 }
 .rosco-Main{
-    width: 400px;
+    width: 650px;
     margin: 15px auto;
 }
 .rosco-MainContainer {
@@ -63,7 +72,7 @@
 }
 .rosco-LinkMaximize {
     font: normal 14pt arial, sans-serif;
-    width: 200px;
+    width: 300px;
     padding: 0;
     display: flex;
     margin: 0 auto;
@@ -81,7 +90,7 @@
 
 .rosco-GameMinimize {
     margin: 0 auto;
-    font: normal 12pt arial, sans-serif;
+    font: normal 11pt arial, sans-serif;
     width: 100%;
     border-radius: 10px;
     margin: 0 auto;
@@ -96,7 +105,7 @@
     text-align: left;
     color: #f05565;
     font-weight: bold;
-    font-size: 14pt;
+    font-size: 13pt;
     margin: 10px auto;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -360,7 +369,7 @@
     margin: 15px auto;
 }
 
-.rosco-AnswerButtons input[type=button], .rosco-CodeAccess input[type=button] {
+.rosco-AnswerButtons input[type=button], .rosco-CodeAccess input[type=button], .rosco-GetScore input[type=button] {
     width: 90px;
     height: 30px;
     background: transparent;
@@ -374,9 +383,14 @@
     text-decoration: none;
     font-weight: bold;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index:40000;
 }
 
-.rosco-AnswerButtons input[type=button]:hover, .rosco-CodeAccess input[type=button]:hover {
+.rosco-GetScore input[type=button] {
+    width: auto;
+ 
+}
+.rosco-AnswerButtons input[type=button]:hover, .rosco-CodeAccess input[type=button]:hover, .rosco-GetScore input[type=button]:hover {
     background-color: #0099cc;
     color: white;
     border: 1px solid #000;

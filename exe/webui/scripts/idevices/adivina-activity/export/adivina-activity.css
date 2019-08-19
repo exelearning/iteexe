@@ -19,13 +19,28 @@
 
 .adivina-LinkMaximize {
     font: normal 14pt arial, sans-serif;
-    width: 200px;
+    width: 300px;
     padding: 0;
     display: flex;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+}
+.adivina-MessageMaximize {
+    width: 100%;
+    text-align: left;
+    color: #f05565;
+    font-weight: bold;
+    font-size: 13pt;
+    margin: 10px auto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
 }
 
 .adivina-sr-av {
@@ -347,16 +362,22 @@
 .adivina-GameContainer input[type=button] {
     min-width: 90px;
     height: 30px;
-    background: transparent;
+    background: white;
     border: 2px solid #8697cb;
     border-radius: 6px;
     font-size: 14px;
-    color: #1c1b1b;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
+    color: #1c1b1b;
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
+    z-index: 40000;
+}
+.adivina-GameContainer input[type=button]:hover {
+    background-color: #8697cb;
+    color: white;
+    border: 1px solid #000;
 }
 
 .adivina-RepeatActivity{
@@ -366,12 +387,7 @@
 }
 
 
-.adivina-GameContainer input[type=button]:hover {
-    background-color: #8697cb;
-    color: white;
-    border: 1px solid #000;
-    font-weight: bold;
-}
+
 
 .adivina-DataCodeAccessE {
     width: 100%;
@@ -417,12 +433,7 @@
     width: 100%;
 }
 
-.adivina-Button {
-    height: 30px;
-    width: 100px;
-}
-
-.adivina-LinkArrowMinimize {
+.adivina-LinkMinimize {
     width: 26px;
     height: 26px;
 }
@@ -592,7 +603,7 @@
     -ms-transform: scale(1.1);
     transform: scale(1.1);
 }
-.adivina-LinkArrowMinimize {
+.adivina-LinkMinimize {
     width: 24px;
     height: 24px;
     margin-right: 7px;

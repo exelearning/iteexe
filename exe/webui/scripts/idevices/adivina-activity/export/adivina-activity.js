@@ -122,7 +122,7 @@ var $eXeAdivina = {
             } else {
                 $('#adivinaGameContainer-' + i).show();
             }
-            $('#adivina-MessageMaximize-' + i).text(msg);
+            $('#adivinaMessageMaximize-' + i).text(msg);
             $eXeAdivina.addEvents(i);
         });
 
@@ -154,13 +154,13 @@ var $eXeAdivina = {
             html = '';
         html += '<div class="adivina-MainContainer">\
         <div class="adivina-GameMinimize" id="adivinaGameMinimize-' + instance + '">\
-            <a href="#" class="adivina-LinkMaximize" id="adivinaLinkMinimize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + "adivinaIcon.png" + '" class="adivina-Icons adivina-IconMinimize"  alt="' + msgs.msgMaximize + '">\
-            <div class="adivina-MessageMaximize" id="adivina-MessageMaximize-' + instance + '"></div></a>\
+            <a href="#" class="adivina-LinkMaximize" id="adivinaLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + "adivinaIcon.png" + '" class="adivina-Icons adivina-IconMinimize"  alt="' + msgs.msgMaximize + '">\
+            <div class="adivina-MessageMaximize" id="adivinaMessageMaximize-' + instance + '"></div></a>\
         </div>\
         <div class="adivina-GameContainer" id="adivinaGameContainer-' + instance + '">\
             <div class="adivina-GameScoreBoard">\
                 <div class="adivina-GameScores">\
-                    <a href="#" class="adivina-LinkArrowMinimize" id="adivinaLinkArrowMinize-' + instance + '" title="' + msgs.msgMinimize + '">\
+                    <a href="#" class="adivina-LinkMinimize" id="adivinaLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
                         <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
                         <div class="exeQuextIcons exeQuextIcons-Minimize"></div>\
                     </a>\
@@ -436,12 +436,12 @@ var $eXeAdivina = {
     },
     addEvents: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
-        $('#adivinaLinkMinimize-' + instance).on('click touchstart', function (e) {
+        $('#adivinaLinkMaximize-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $("#adivinaGameContainer-" + instance).show()
             $("#adivinaGameMinimize-" + instance).hide();
         });
-        $("#adivinaLinkArrowMinize-" + instance).on('click touchstart', function (e) {
+        $("#adivinaLinkMinimize-" + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $("#adivinaGameContainer-" + instance).hide();
             $("#adivinaGameMinimize-" + instance).css('visibility', 'visible').show();
@@ -858,7 +858,7 @@ var $eXeAdivina = {
         if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
             if (!mOptions.obtainedClue) {
                 mOptions.obtainedClue = true;
-                timeShowSolution = 5000;
+                timeShowSolution = 3000;
                 $('#adivinaPShowClue-' + instance).show();
                 $('#adivinaPShowClue-' + instance).text(mOptions.msgs.msgInformation + ': ' + mOptions.itinerary.clueGame);
             }

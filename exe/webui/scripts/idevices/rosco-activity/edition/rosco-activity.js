@@ -27,7 +27,7 @@ var $exeDevice = {
 		"msgIndicateWord": _("Provide a word"),
 		"msgClue": _("Cool! The clue is:"),
 		"msgNewGame": _("Click here for a new game"),
-		"msgYouHas": ("You have got %1 correct and %2 uncorrect"),
+		"msgYouHas": _("You have got %1 correct and %2 uncorrect"),
 		"msgCodeAccess": _("Access code"),
 		"msgPlayAgain": _("Play Again"),
 		"msgRequiredAccessKey": _("Access code required"),

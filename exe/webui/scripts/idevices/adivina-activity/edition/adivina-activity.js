@@ -7,7 +7,9 @@
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  */
 var $exeDevice = {
-    title: _("Discover"),
+    i18n : {
+		name : _('Discover')
+	},
     iDevicePath: "/scripts/idevices/adivina-activity/edition/",
     msgs: {},
     active: 0,
@@ -37,8 +39,8 @@ var $exeDevice = {
         "msgMaximize": _("Maximize"),
         "msgTime": _("Time"),
         "msgLive": _("Live"),
-        "msgFullScreen": _("Fullscreen"),
-        "msgExitFullScreen": _("Exit fullscreen"),
+        "msgFullScreen": _("Full Screen"),
+        "msgExitFullScreen": _("Exit Full Screen"),
         "msgNumQuestions": _("Number of questions"),
         "msgNoImage": _("No picture question"),
         "msgCool": _("Cool!"),
@@ -98,7 +100,7 @@ var $exeDevice = {
                                 <input type="number" name="adivinaNumberLives" id="adivinaNumberLives" value="3" min="1" max="5" /> </label>\
                             </p>\
                             <p>\
-                               <label for="adivinaOptionsRamdon"><input type="checkbox" id="adivinaOptionsRamdon"> ' + _("Random quextions") + ' </label>\
+                               <label for="adivinaOptionsRamdon"><input type="checkbox" id="adivinaOptionsRamdon"> ' + _("Random questions") + ' </label>\
                             </p>\
                             <p>\
 								<label for="adivinaShowSolution"><input type="checkbox" checked id="adivinaShowSolution"> ' + _("Show solutions") + '. </label> \

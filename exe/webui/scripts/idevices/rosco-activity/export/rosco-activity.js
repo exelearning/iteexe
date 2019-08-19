@@ -253,7 +253,7 @@ var $eXeRosco = {
 			if (buttonText != "") {
 				if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
 					this.hasSCORMbutton = true;
-					var fB = '<div class="rosco-get-score iDevice_buttons feedback-button js-required" id="roscoButonScoreDiv-' + instance + '">';
+					var fB = '<div class="rosco-GetScore  id="roscoButonScoreDiv-' + instance + '">';
 					if (!this.isInExe) fB += '<form action="#" onsubmit="return false">';
 					fB += '<p><input type="button" id="roscoSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton" /> <span class="rosco-RepeatActivity" id="roscoRepeatActivity-' + instance + '"></span></p>';
 					if (!this.isInExe) fB += '</form>';
@@ -264,7 +264,7 @@ var $eXeRosco = {
 		}else if (mOptions.isScorm == 1) {
 			if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
 				this.hasSCORMbutton = true;
-				var fB = '<div class="rosco-get-score iDevice_buttons feedback-button js-required" id="roscoButonScoreDiv-' + instance + '">';
+				var fB = '<div class="rosco-GetScore" id="roscoButonScoreDiv-' + instance + '">';
 				fB += '<p><span class="rosco-RepeatActivity" id="roscoRepeatActivity-' + instance + '"></span></p>';
 				fB += '</div>';
 				butonScore = fB;
