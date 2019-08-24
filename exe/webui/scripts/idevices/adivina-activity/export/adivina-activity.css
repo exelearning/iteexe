@@ -359,9 +359,10 @@
     font-weight: bold;
 }
 
-.adivina-GameContainer input[type=button] {
-    min-width: 90px;
+.adivina-GameContainer input[type=button], .adivina-GetScore input[type=button]  {
+    width: 100px;
     height: 30px;
+
     background: white;
     border: 2px solid #8697cb;
     border-radius: 6px;
@@ -374,19 +375,31 @@
     font-weight: bold;
     z-index: 40000;
 }
-.adivina-GameContainer input[type=button]:hover {
+.adivina-GetScore input[type=button]  {
+    min-width: 90px;
+    width: auto;
+   
+}
+.adivina-GameContainer input[type=button]:hover, .adivina-GetScore input[type=button]:hover {
     background-color: #8697cb;
     color: white;
     border: 1px solid #000;
 }
 
+.adivina-GetScore{
+    width: 95%;
+    height: 50px;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .adivina-RepeatActivity{
     color: #ff0000;
     font-size:12px;
     font-weight: bold;
+    text-align: center;
 }
-
-
 
 
 .adivina-DataCodeAccessE {
@@ -400,7 +413,7 @@
 .adivina-TextClueGGame {
     width: 100%;
     min-height: 18px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
     color: #3abca7;

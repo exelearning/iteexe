@@ -64,30 +64,39 @@ var $eXeAdivina = {
             $eXeAdivina.initialScore = $eXeAdivina.previousScore;
         }
     },
-    updateScorm: function (prevScore, repeatActivity, instance) {
-        var mOptions = $eXeAdivina.options[instance],
-            text = '';
-        if (mOptions.isScorm == 1) {
-            if (!repeatActivity && prevScore === "") {
-                text = mOptions.msgs.msgOnlySaveAuto;
-            } else if (!repeatActivity && prevScore !== "") {
-                prevScore = prevScore != "" ? prevScore : 0;
-                text = mOptions.msgs.msgYouScore + ': ' + prevScore;
-            } else {
-                text = mOptions.msgs.msgSaveAuto;
-            }
-        } else if (mOptions.isScorm == 2) {
-            $('#adivinaSendScore-' + instance).show();
-            if (!repeatActivity && prevScore === '') {
-                text = mOptions.msgs.msgOnlySave;
-            } else if (!repeatActivity && prevScore !== '') {
-                $('#adivinaSendScore-' + instance).hide();
-                text = mOptions.msgs.msgYouScore + ': ' + prevScore;
-            }
+	updateScorm: function (prevScore, repeatActivity, instance) {
+		var mOptions = $eXeAdivina.options[instance],
+			text = '';
+		$('#adivinaSendScore-' + instance).hide();
+		if (mOptions.isScorm === 1) {
+			if (repeatActivity && prevScore !== '') {
+				text = mOptions.msgs.msgSaveAuto + ' ' + mOptions.msgs.msgYouLastScore + ': ' + prevScore;
+			} else if (repeatActivity && prevScore === "") {
+				text = mOptions.msgs.msgSaveAuto + ' ' + mOptions.msgs.msgPlaySeveralTimes;
+			} else if (!repeatActivity && prevScore === "") {
+				text = mOptions.msgs.msgOnlySaveAuto;
+			} else if (!repeatActivity && prevScore !== "") {
+				text = mOptions.msgs.msgActityComply + ' ' + mOptions.msgs.msgYouLastScore + ': ' + prevScore;
+			}
+		} else if (mOptions.isScorm === 2) {
+			$('#adivinaSendScore-' + instance).show();
+			if (repeatActivity && prevScore !== '') {
+				text = mOptions.msgs.msgPlaySeveralTimes + ' ' + mOptions.msgs.msgYouLastScore + ': ' + prevScore;
+			} else if (repeatActivity && prevScore === '') {
+				text = mOptions.msgs.msgPlaySeveralTimes;
+			} else if (!repeatActivity && prevScore === '') {
+				text = mOptions.msgs.msgOnlySaveScore;
+			} else if (!repeatActivity && prevScore !== '') {
+				$('#adivinaSendScore-' + instance).hide();
+				text = mOptions.msgs.msgActityComply + ' ' + mOptions.msgs.msgYouScore + ': ' + prevScore;
+			}
         }
-        $('#adivinaRepeatActivity-' + instance).text(text);
-        $('#adivinaRepeatActivity-' + instance).fadeIn(1000);
-    },
+
+
+		$('#adivinaRepeatActivity-' + instance).text(text);
+		$('#adivinaRepeatActivity-' + instance).fadeIn(1000);
+	},
+
     getUserName: function () {
         var user = $eXeAdivina.mScorm.get("cmi.core.student_name");
         return user
@@ -225,8 +234,8 @@ var $eXeAdivina = {
                 <div class="adivina-GameOver" id="adivinaGamerOver-' + instance + '">\
                     <div class="adivina-TextClueGGame" id="adivinaTextClueGGame-' + instance + '"></div>\
                     <div class="adivina-DataImageGameOver">\
-                         <img src="' + path + "adivinaGameWon.png" + '" class="adivina-HistGGame" id="adivinaHistGGame-' + instance + '" alt="' + msgs.mgsAllQuestions + '"/> \
-                         <img src="' + path + "adivinaGameLost.png" + '" class="adivina-LostGGame"  id="adivinaLostGGame-' + instance + '" alt="' + msgs.msgLostLives + '"/> \
+                         <img src="' + path + 'adivinaGameWon.png" class="adivina-HistGGame" id="adivinaHistGGame-' + instance + '" alt="' + msgs.mgsAllQuestions + '"/> \
+                         <img src="' + path + 'adivinaGameLost.png" class="adivina-LostGGame"  id="adivinaLostGGame-' + instance + '" alt="' + msgs.msgLostLives + '"/> \
                         <div class="adivina-DataGame" id="adivinaDataGame-' + instance + '">\
                             <p id="adivinaOverScore-' + instance + '">Score: 0</p>\
                             <p id="adivinaOverHits-' + instance + '">Hists: 0</p>\
@@ -253,14 +262,13 @@ var $eXeAdivina = {
             <div class="adivina-CodeAccessDiv" id="adivinaCodeAccessDiv-' + instance + '">\
                 <div class="adivina-MessageCodeAccessE" id="adivinaMesajeAccesCodeE-' + instance + '"></div>\
                 <div class="adivina-DataCodeAccessE">\
-                    <label>' + msgs.msgCodeAccess + ':</label>\<input type="text" class="adivina-CodeAccessE" id="adivinaCodeAccessE-' + instance + '">\
+                    <label>' + msgs.msgCodeAccess + ':</label><input type="text" class="adivina-CodeAccessE" id="adivinaCodeAccessE-' + instance + '">\
                     <input type="button" class="adivina-CodeAccessButton" id="adivinaCodeAccessButton-' + instance + '" value="' + msgs.msgSubmit + '"/>\
                 </div>\
             </div>\
-           ' + this.addButtonScore(instance) + '\
         </div>\
     </div>\
-    ';
+    ' + this.addButtonScore(instance);
         return html;
     },
     addButtonScore: function (instance) {
@@ -272,7 +280,7 @@ var $eXeAdivina = {
             if (buttonText != "") {
                 if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
                     this.hasSCORMbutton = true;
-                    fB += '<div class="adivina-QuextScoreDiv" id="adivinaButonScoreDiv-' + instance + '">';
+                    fB += '<div class="adivina-GetScore">';
                     if (!this.isInExe) fB += '<form action="#" onsubmit="return false">';
                     fB += '<p><input type="button" id="adivinaSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton" /> <span class="adivina-RepeatActivity" id="adivinaRepeatActivity-' + instance + '"></span></p>';
                     if (!this.isInExe) fB += '</form>';
@@ -283,7 +291,7 @@ var $eXeAdivina = {
         }else if (mOptions.isScorm == 1) {
 			if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
 				this.hasSCORMbutton = true;
-                fB += '<div class="adivina-QuextScoreDiv" id="adivinaButonScoreDiv-' + instance + '">';
+                fB += '<div class="adivina-GetScore">';
                 fB += '<p><span class="adivina-RepeatActivity" id="adivinaRepeatActivity-' + instance + '"></span></p>';
 				fB += '</div>';
 				butonScore = fB;
@@ -778,12 +786,16 @@ var $eXeAdivina = {
             $(cursor).show();
         }
     },
-    updateLives(instance) {
-        $('#adivinaPLifes-' + instance).text($eXeAdivina.options[instance].livesLeft);
+    updateLives:function (instance) {
+    	var mOptions=$eXeAdivina.options[instance];
+        $('#adivinaPLifes-' + instance).text(mOptions.livesLeft);
         $('#adivinaLifesGame-' + instance).find('.exeQuextIcons-Life').each(function (index) {
-            $(this).show();
-            if (index >= $eXeAdivina.options[instance].livesLeft) {
-                $(this).hide();
+            $(this).hide();
+            if (mOptions.useLives) {
+                $(this).show();
+                if (index >= mOptions.livesLeft) {
+                    $(this).hide();
+                }
             }
         });
     },

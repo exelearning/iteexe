@@ -33,7 +33,7 @@ var $eXeRosco = {
 	isInExe: false,
 	userName: '',
 	previousScore: '',
-	initialScore:'',
+	initialScore: '',
 	init: function () {
 		this.activities = $('.rosco-IDevice');
 		if (this.activities.length == 0) return;
@@ -62,34 +62,40 @@ var $eXeRosco = {
 			$eXeRosco.previousScore = $eXeRosco.getPreviousScore();
 			$eXeRosco.mScorm.set("cmi.core.score.max", 10);
 			$eXeRosco.mScorm.set("cmi.core.score.min", 0);
-			$eXeRosco.initialScore=$eXeRosco.previousScore;
+			$eXeRosco.initialScore = $eXeRosco.previousScore;
 		}
 	},
 	updateScorm: function (prevScore, repeatActivity, instance) {
 		var mOptions = $eXeRosco.options[instance],
 			text = '';
-		if (mOptions.isScorm == 1) {
-			if (!repeatActivity && prevScore === "") {
+		$('#roscoSendScore-' + instance).hide();
+		if (mOptions.isScorm === 1) {
+			if (repeatActivity && prevScore !== '') {
+				text = mOptions.msgs.msgSaveAuto + ' ' + mOptions.msgs.msgYouLastScore + ': ' + prevScore;
+			} else if (repeatActivity && prevScore === "") {
+				text = mOptions.msgs.msgSaveAuto + ' ' + mOptions.msgs.msgPlaySeveralTimes;
+			} else if (!repeatActivity && prevScore === "") {
 				text = mOptions.msgs.msgOnlySaveAuto;
 			} else if (!repeatActivity && prevScore !== "") {
-				prevScore=prevScore!=""?prevScore:0;
-				text = mOptions.msgs.msgYouScore + ': ' + prevScore;
-			} else {
-				text = mOptions.msgs.msgSaveAuto;
+				text = mOptions.msgs.msgActityComply + ' ' + mOptions.msgs.msgYouLastScore + ': ' + prevScore;
 			}
-		} else if (mOptions.isScorm == 2) {
+		} else if (mOptions.isScorm === 2) {
 			$('#roscoSendScore-' + instance).show();
-			if (!repeatActivity && prevScore === '') {
-				text = mOptions.msgs.msgOnlySave;
+			if (repeatActivity && prevScore !== '') {
+				text = mOptions.msgs.msgPlaySeveralTimes + ' ' + mOptions.msgs.msgYouLastScore + ': ' + prevScore;
+			} else if (repeatActivity && prevScore === '') {
+				text = mOptions.msgs.msgSeveralScore;
+			} else if (!repeatActivity && prevScore === '') {
+				text = mOptions.msgs.msgOnlySaveScore;
 			} else if (!repeatActivity && prevScore !== '') {
 				$('#roscoSendScore-' + instance).hide();
-				text = mOptions.msgs.msgYouScore + ': ' + prevScore;
+				text = mOptions.msgs.msgActityComply + ' ' + mOptions.msgs.msgYouScore + ': ' + prevScore;
 			}
 		}
-
 		$('#roscoRepeatActivity-' + instance).text(text);
 		$('#roscoRepeatActivity-' + instance).fadeIn(1000);
 	},
+
 	getUserName: function () {
 		var user = $eXeRosco.mScorm.get("cmi.core.student_name");
 		return user
@@ -253,7 +259,7 @@ var $eXeRosco = {
 			if (buttonText != "") {
 				if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
 					this.hasSCORMbutton = true;
-					var fB = '<div class="rosco-GetScore  id="roscoButonScoreDiv-' + instance + '">';
+					var fB = '<div class="rosco-GetScore"  id="roscoButonScoreDiv-' + instance + '">';
 					if (!this.isInExe) fB += '<form action="#" onsubmit="return false">';
 					fB += '<p><input type="button" id="roscoSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton" /> <span class="rosco-RepeatActivity" id="roscoRepeatActivity-' + instance + '"></span></p>';
 					if (!this.isInExe) fB += '</form>';
@@ -261,7 +267,7 @@ var $eXeRosco = {
 					butonScore = fB;
 				}
 			}
-		}else if (mOptions.isScorm == 1) {
+		} else if (mOptions.isScorm == 1) {
 			if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
 				this.hasSCORMbutton = true;
 				var fB = '<div class="rosco-GetScore" id="roscoButonScoreDiv-' + instance + '">';
@@ -272,7 +278,7 @@ var $eXeRosco = {
 		}
 		return butonScore;
 	},
-	sendScore: function (instance,auto) {
+	sendScore: function (instance, auto) {
 		var mOptions = $eXeRosco.options[instance],
 			message = '',
 			score = ((mOptions.hits * 10) / mOptions.validWords).toFixed(2);
@@ -372,6 +378,8 @@ var $eXeRosco = {
 			$("#roscoGameMinimize-" + instance).hide();
 			$('#roscoTypeGame-' + instance).removeClass('exeQuextIcons-RoscoRows');
 			$('#roscoTypeGame-' + instance).addClass('exeQuextIcons-RoscoCanvas');
+			$('#roscoLinkTypeGame-' + instance).find('span').text(mOptions.msgs.msgHideRoulette);
+			$('#roscoLinkTypeGame-' + instance).attr('title', mOptions.msgs.msgHideRoulette);
 		});
 
 		$("#roscoLinkArrowMinimize-" + instance).on('click touchstart', function (e) {
@@ -448,7 +456,7 @@ var $eXeRosco = {
 			e.preventDefault();
 			$eXeRosco.sendScore(instance, false);
 		});
-		if (mOptions.isScorm >0) {
+		if (mOptions.isScorm > 0) {
 			$eXeRosco.updateScorm($eXeRosco.previousScore, mOptions.repeatActivity, instance);
 		}
 		$(window).on('unload', function () {
@@ -633,7 +641,7 @@ var $eXeRosco = {
 				var score = ((mOptions.hits * 10) / mOptions.validWords).toFixed(2);
 				$eXeRosco.sendScore(instance, true);
 				$('#roscoRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
-				
+
 			}
 		}
 	},
