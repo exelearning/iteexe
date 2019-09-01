@@ -3068,7 +3068,7 @@ translations = {
  "Lose a life": "Pierdes una vida",
  "Lost all your lives!": "Has perdido todas tus vidas",
  "Maximize": "Maximizar",
- "Message":"Mensage",
+ "Message":"Mensaje",
  "Minimize": "Minimizar",
  "Move on": "Pasar",
  "Must have %s% of correct answers to get the needed information. Try again!": "Debe tener al menos un %s% de respuestas correctas para obtener la informaci\u00f3n que buscas. \u00a1Int\u00e9ntalo de nuevo!",

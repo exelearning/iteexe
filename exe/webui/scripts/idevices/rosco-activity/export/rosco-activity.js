@@ -839,12 +839,14 @@ var $eXeRosco = {
 		var percentageHits = (mOptions.hits / mOptions.validWords) * 100;
 		mOptions.answeredWords++;
 		$('#roscotPHits-' + instance).text(mOptions.hits);
-		$('#roscotPErrors-' + instance).text(mOptions.errors);
+		$('#roscotPErrors-' + instance).text(mOptions.errors);		
 		var timeShowSolution = mOptions.showSolution ? mOptions.timeShowSolution * 1000 : 1000;
+		var clue=false;
 		if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
 			if (!mOptions.obtainedClue) {
 				mOptions.obtainedClue = true;
 				timeShowSolution = 4000;
+				clue=true;
 				$('#roscoPShowClue-' + instance).show();
 				$('#roscoPShowClue-' + instance).text(mOptions.msgs.msgInformation + ': ' + mOptions.itinerary.clueGame);
 			}
@@ -859,7 +861,7 @@ var $eXeRosco = {
 		setTimeout(function () {
 			$eXeRosco.newWord(instance)
 		}, timeShowSolution);
-		$eXeRosco.drawMessage(Hit, word.toUpperCase(), false, instance);
+		$eXeRosco.drawMessage(Hit, word.toUpperCase(), clue, instance);
 	},
 
 	drawMessage: function (Hit, word, pista, instance) {
@@ -886,12 +888,12 @@ var $eXeRosco = {
 		ctxt.textBaseline = 'top';
 		ctxt.fillStyle = lColor;
 		if (pista) {
-			mAnimo = mOptions.msgs.msgClue;
+			mAnimo = mOptions.msgs.msgInformation;
 			posTextoAnimoY = yMessage - 15;
 			porTextoPalabraY = posTextoAnimoY + 30;
 			posTextoAnimoX = xCenter - ctxt.measureText(mAnimo).width / 2;
-			$eXeRosco.wrapText(ctxt, mAnimo + ' ' + word, xMessage + 13, yMessage - 32, 257, 24);
-			$('#roscoPSolution-' + instance).css("color", lColor).text(mAnimo + word);
+			$eXeRosco.wrapText(ctxt, mAnimo + ': ' + mOptions.itinerary.clueGame, xMessage + 13, yMessage - 32, 257, 24);
+			$('#roscoPSolution-' + instance).css("color", lColor).text(mAnimo +': '+ mOptions.itinerary.clueGame);
 			return;
 		}
 		ctxt.fillText(mAnimo, posTextoAnimoX, posTextoAnimoY);

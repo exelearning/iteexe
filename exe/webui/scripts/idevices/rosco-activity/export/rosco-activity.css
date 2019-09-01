@@ -1,11 +1,29 @@
 /* Rosco  export */
 
+#roscoIdeviceForm label {
+    display: inline;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+  }
+
+  #rosocoIdeviceForm .roscoIdevice {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #000;
+  }
+ #roscoIdeviceForm legend {
+    font-weight: bold;
+    padding: 0 10px;
+    font-size: 14px
+  }
+
 .rosco-GameMinimize a:link, .rosco-GameMinimize a:link, .rosco-GameMinimize a:visited, .rosco-GameMinimize a:focus {
     color: #f05565;
     text-decoration: none;
     outline: 0;
     border: none;
-    
 }
 
 .rosco-ShowClue{
