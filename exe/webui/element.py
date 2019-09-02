@@ -255,7 +255,7 @@ class TextAreaElement(ElementWithResources):
                                 
         # Check if is jsidevice
         if isinstance(self.field_idevice, JsIdevice):
-            html = common.textArea(self.id, self.field.content, False, 80, 8, 'jsContentEditor')
+            html = common.textArea(self.id, self.field.content, False, 80, 8, 'jsContentEditor', this_package)
             
         return html
 
