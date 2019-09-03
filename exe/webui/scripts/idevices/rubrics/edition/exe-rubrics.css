@@ -1,2 +1,42 @@
 /* Rubrics iDevice (edition CSS) */
-* {color:red}
+#yyyTable,
+#yyyRubricEditor p,
+#yyyTableEditor table + p{font-family:Arial, Helvetica, sans-serif;font-size:14px}
+#yyyTable{margin:1em auto}
+#yyyTable input{box-sizing:border-box;padding:2px;width:100%;border:1px solid #FFF;background:none!important}
+#yyyTable td span{color:#666;margin-left:3px}
+#yyyTable .xxxWeight{color:#666;width:auto}
+#yyyTable th input{font-weight:bold}
+#yyyTable tr:nth-child(2n-1) td input,#yyyTable tbody tr:nth-child(2n-1) th input{border-color:#F4F4F4}	
+#yyyTable > thead > tr > th:first-child .yyyMoveTRToTheLeft,
+#yyyTable > thead > tr > th:last-child .yyyMoveTRToTheRight,
+#yyyTable > tbody > tr:first-child .yyyMoveTRUp,
+#yyyTable > tbody > tr:last-child .yyyMoveTRDown,
+#yyyTable.with-categories > thead > tr > th:first-child .yyyMoveTRToTheRight,
+#yyyTable.with-categories > thead > tr > th:nth-child(2) .yyyMoveTRToTheLeft,
+#yyyTable.with-categories > thead > tr > th:first-child .yyyDeleteColumn
+{visibility:hidden}
+
+#yyyTable caption input{width:400px;text-align:center;font-style:italic;font-size:1.1em}
+#yyyTable thead th input{border-color:#ddd}
+#yyyTable input:focus{border-color:#bbb!important;background:#FFF!important}
+#yyyTable .yyyActions{float:right}
+#yyyTable .yyyActions a{text-decoration:none;vertical-align:middle;margin-left:.1em}
+
+#yyyLoadCEDECRubrics,
+#yyyNewTableOptions,
+#yyyPreviousContent{display:none}
+
+#yyyCreateNewRubric{margin-right:1em}
+#yyyMaxScore{width:3em}
+#yyyMaxScoreInstructions{opacity:.8;font-style:italic}
+
+#yyyRubricEditor.loading{background:url(exe-rubrics-loading.gif) no-repeat 50% 50%}
+#yyyRubricEditor.loading *{visibility:hidden}
+#yyyRubricEditor p{text-align:center;margin-top:1.5em}
+#yyyTableEditor table + p{margin-bottom:2em}
+#yyyAppendRow,#yyyAppendCol,#yyyReset{float:right;margin-left:1em}
+
+#yyyRubricInformation p{margin-top:1.5em}
+#yyyRubricInformation p:first-child{margin-top:1em}
+#yyyRubricInformation input[type='text']{margin-right:1em}

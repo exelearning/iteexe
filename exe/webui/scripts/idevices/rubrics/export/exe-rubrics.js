@@ -6,15 +6,11 @@
  *
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  */
-var $exeExampleIdevice = {
+var $rubricIdevice = {
     
 	init : function(){
         
-		$(".exe-rubric").each(function(instance){
-			
-			alert(this.innerHTML);
-			
-        });
+		// To do
 		
 	}
     
@@ -22,6 +18,6 @@ var $exeExampleIdevice = {
 
 $(function(){
 	
-	$exeExampleIdevice.init();
+	$rubricIdevice.init();
 	
 });

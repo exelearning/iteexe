@@ -1,4 +1,4 @@
 /* Rubrics iDevice */
-.exe-rubric{
-	background: green;
-}
+.exe-rubric-authorship{margin-top:-1.5em;text-align:center;font-size:.9em;margin-bottom:2em}
+.RubricIdevice caption{font-size:1.05em}
+.RubricIdevice td span{opacity:.8;margin-left:3px;font-size:.9em}
