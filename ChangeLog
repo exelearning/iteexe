@@ -1,3 +1,14 @@
+intef-exe (3:2.4.2) lucid; urgency=medium
+
+  * Ignacio Gros
+    - [Styles] Docs Style clearfix problem (#430).
+    - [iDevices] Attachments iDevice: Hidden buttons (#427).
+
+  * SDWeb
+    - [Other]  Fixed error when saving licence (#426).
+
+ -- eXeLearning <admin@exelearning.net>  Tue, 20 Aug 2019 09:01:15 +0200
+
 intef-exe (3:2.4.1) lucid; urgency=medium
 
   * SDWeb

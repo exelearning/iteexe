@@ -123,10 +123,13 @@ class FileAttachBlockInc(Block):
         viewMode = "view"
         if previewMode == True:
             viewMode = "preview"
+            
+        if viewMode=="view" and showDesc==False:
+            return ""
         
+        html = common.ideviceHeader(self, style, viewMode)
         
         if showDesc == True:
-            html = common.ideviceHeader(self, style, viewMode)
             if previewMode == True:
                 html += self.introHTMLElement.renderPreview()
             else:
@@ -140,7 +143,7 @@ class FileAttachBlockInc(Block):
         
 
         if showDesc == False and previewMode == True:
-            html += "<strong> " + _("File List (this list shows only in preview mode):") + "</strong><br/>"
+            html += "<p><strong> " + _("File List (this list shows only in preview mode):") + "</strong></p>"
         
                     
         for fileElement in self.fileAttachmentElements:
@@ -149,8 +152,6 @@ class FileAttachBlockInc(Block):
                     html += fileElement.renderPreview()
                 else:
                     html += fileElement.renderView()
-                
-                html += "<br/>"
             else:
                 html += "<li><a href='%(prefix)s%(filename)s' target='_blank'>%(desc)s" % \
                     {"filename" : fileElement.getFileName(), "desc" : fileElement.getDescription(),\
@@ -161,11 +162,7 @@ class FileAttachBlockInc(Block):
             html += "</ul>"
         
         
-        if showDesc == True:
-            """End decoration"""
-            html += common.ideviceFooter(self, style, viewMode)
-        elif showDesc == False and previewMode == True:
-            html += self.renderViewButtons()
+        html += common.ideviceFooter(self, style, viewMode)
         
         return html
 
