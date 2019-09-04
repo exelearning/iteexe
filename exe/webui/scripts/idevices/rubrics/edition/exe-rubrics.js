@@ -135,6 +135,14 @@ var $exeDevice = {
 		
 		if (data) {
 			
+			var block, tmp;
+			
+			// Rubric instructions
+			block = $(".exe-rubric-instructions",div);
+			if (block.length==1) {
+				data.instructions = block.text();
+			}
+			
 			// Rubric information
 			var div = $("#yyyPreviousContent");
 			var author = "";
@@ -142,9 +150,8 @@ var $exeDevice = {
 			var license = "";
 			var visibleInfo = true;
 			
-			var block = $(".exe-rubric-authorship",div);
+			block = $(".exe-rubric-authorship",div);
 			if (block.length==1) {
-				var tmp;
 				// Visibility
 				if (block.hasClass("sr-av")) var visibleInfo = false;
 				// Author
@@ -205,7 +212,11 @@ var $exeDevice = {
 		$("#yyyRubricInformation legend a").click(function(){
 			$("#yyyRubricInformation").toggleClass("exe-fieldset-closed");
 			return false;
-		});		
+		});
+		$("#yyyRubricIntro legend a").click(function(){
+			$("#yyyRubricIntro").toggleClass("exe-fieldset-closed");
+			return false;
+		});	
 	},
 	
 	// Create the form to edit the rubric (each time a rubric is selected or when editing an existing one)
@@ -240,6 +251,7 @@ var $exeDevice = {
 			var data = $exeDevice.translateRubric($exeDevice.rubrics[0]);
 			$exeDevice.jsonToTable(data,"edition");
 			$exeDevice.enableFieldsetToggle();
+			$exeDevice.setEditionFocus();
 			return false;
 		});
 		$("#yyyNewTable").change(function(){
@@ -258,6 +270,7 @@ var $exeDevice = {
 			}
 			$exeDevice.jsonToTable(data,"edition");
 			$exeDevice.enableFieldsetToggle();
+			$exeDevice.setEditionFocus();
 		});
 		
 		// Link to load CEDEC's rubrics if onLine and if those rubrics are not loaded yet
@@ -340,6 +353,11 @@ var $exeDevice = {
 		$("#yyyCreateNewRubric").remove();
 		$("#yyyNewTableOptions").show();
 		
+	},
+	
+	// After adding a new table, change the focus to the first visible INPUT so the user knows what to do
+	setEditionFocus : function(){
+		$("#yyyCell-2").select();
 	},
 	
 	// Get the table of #id and return it as a JSON object
@@ -443,8 +461,8 @@ var $exeDevice = {
 	},
 	
 	// Tranform the JSON data into:
-	// If mode is "normal":  A table + the rubric footer (authorship, license...)
-	// If mode is "edition": A table + The max score input + The buttons to reset and add rows and columns + The "Rubric information" fieldset
+	// If mode is "normal":  Instructions (optional) + A table + the rubric footer (authorship, license...)
+	// If mode is "edition": Instructions (fieldset) + A table + The max score input + The buttons to reset and add rows and columns + The "Rubric information" fieldset
 	jsonToTable : function(data,mode){
 		
 		var hasCategories = true;
@@ -453,11 +471,16 @@ var $exeDevice = {
 		
 		// Create the iDevice content
 		if (mode=="normal") {
+			
+			var intro = "";
+			var instructions = $("#yyyRubricInstructions").val();
+			if (instructions!="") intro = '<p class="exe-rubric-instructions">'+instructions+'</p>';
+			
 			var info = "";
 			var author = $("#yyyRubricAuthor").val();
 			var authorURL = $("#yyyRubricAuthorURL").val();
 			var license = $("#yyyRubricLicense").val();
-			// To do now
+			
 			var visibility = " sr-av";
 			if ($("#yyyShowRubricInfo").prop("checked")) visibility = "";
 			if (author!="" || authorURL!="" || license!="") {
@@ -477,10 +500,26 @@ var $exeDevice = {
 				}
 				info += '</p>';
 			}
-			return table + info;
+			return intro + table + info;
 		}		
 		
-		var html = table;
+		var html = "";
+		
+			// Rubric use instructions
+			var instructions = "";
+			if (data.instructions) instructions = data.instructions;			
+			html += '\
+				<fieldset id="yyyRubricIntro" class="exe-fieldset exe-feedback-fieldset exe-fieldset-closed">\
+					<legend><a href="#">'+_("Instructions")+'</a></legend>\
+					<div>\
+						<p class="exe-text-field">\
+							<label for="yyyRubricInstructions">'+_("Rubric use instructions (optional)")+': </label>\
+							<input type="text" id="yyyRubricInstructions" value="'+instructions+'" />\
+						</p>\
+					</div>\
+				</fieldset>';
+		
+			html += table;
 			
 			// Max score + Buttons (reset, add row, add column)
 			html += '<p>\
@@ -609,6 +648,10 @@ var $exeDevice = {
 		
 		// To do now: Validate
 		
+		// Get the rubic instructions and add the to the data
+		var instructions = $("#yyyRubricInstructions").val();
+		if (instructions!="") data.instructions = instructions;
+		
 		// Get the rubric information and add it to data
 		data["visible-info"] = $("#yyyShowRubricInfo").prop("checked");
 		var author = $("#yyyRubricAuthor").val();
@@ -654,9 +697,9 @@ var $exeDevice = {
 		
 		// Add row buttons (move up, mode down, delete row)
 		var trActions = '<span class="yyyActions">\
-				<a href="#" class="yyyMoveTRUp">&#8593;</a> \
-				<a href="#" class="yyyMoveTRDown">&#8595;</a> \
-				<a href="#" class="yyyDeleteTR">&#120;</a> \
+				<a href="#" class="yyyMoveTRUp" title="'+_("Up")+'"><span class="sr-av">&#8593;</span></a> \
+				<a href="#" class="yyyMoveTRDown" title="'+_("Down")+'"><span class="sr-av">&#8595;</span></a> \
+				<a href="#" class="yyyDeleteTR" title="'+_("Delete")+'"><span class="sr-av">&#120;</span></a> \
 			</span>';
 		$("tbody tr",this.editor).each(function(){
 			$(this.firstChild).prepend(trActions);
@@ -683,9 +726,9 @@ var $exeDevice = {
 		
 		// Add column buttons (move left, move right, delete)
 		var thActions = '<span class="yyyActions">\
-				<a href="#" class="yyyMoveTRToTheLeft">&#8592;</a> \
-				<a href="#" class="yyyMoveTRToTheRight">&#8594;</a> \
-				<a href="#" class="yyyDeleteColumn">&#120;</a> \
+				<a href="#" class="yyyMoveTRToTheLeft" title="'+_("Left")+'"><span class="sr-av">&#8592;</span></a> \
+				<a href="#" class="yyyMoveTRToTheRight" title="'+_("Right")+'"><span class="sr-av">&#8594;</span></a> \
+				<a href="#" class="yyyDeleteColumn" title="'+_("Delete")+'"><span class="sr-av">&#120;</span></a> \
 			</span>';
 		$("thead th",this.editor).each(function(){
 			$(this).prepend(thActions);
@@ -709,6 +752,10 @@ var $exeDevice = {
 			});
 			// Delete column
 			$(".yyyDeleteColumn").click(function(){
+				if ($("#yyyTable thead th").length==2) {
+					$exeDevice.alert(_("There should be at least one level."));
+					return false;
+				}				
 				var confirm = $exeDevice.confirm(_("Delete the column?"));
 				if (confirm==false) return false;
 				var colnum = $(this).closest("th").prevAll("th").length;

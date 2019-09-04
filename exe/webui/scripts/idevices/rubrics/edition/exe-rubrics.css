@@ -14,14 +14,13 @@
 #yyyTable > tbody > tr:last-child .yyyMoveTRDown,
 #yyyTable.with-categories > thead > tr > th:first-child .yyyMoveTRToTheRight,
 #yyyTable.with-categories > thead > tr > th:nth-child(2) .yyyMoveTRToTheLeft,
-#yyyTable.with-categories > thead > tr > th:first-child .yyyDeleteColumn
-{visibility:hidden}
+#yyyTable.with-categories > thead > tr > th:first-child .yyyDeleteColumn,
+#yyyTable > tbody > tr:only-child .yyyDeleteTR
+{display:none}
 
 #yyyTable caption input{width:400px;text-align:center;font-style:italic;font-size:1.1em}
 #yyyTable thead th input{border-color:#ddd}
 #yyyTable input:focus{border-color:#bbb!important;background:#FFF!important}
-#yyyTable .yyyActions{float:right}
-#yyyTable .yyyActions a{text-decoration:none;vertical-align:middle;margin-left:.1em}
 
 #yyyLoadCEDECRubrics,
 #yyyNewTableOptions,
@@ -40,3 +39,16 @@
 #yyyRubricInformation p{margin-top:1.5em}
 #yyyRubricInformation p:first-child{margin-top:1em}
 #yyyRubricInformation input[type='text']{margin-right:1em}
+
+#activeIdevice #yyyRubricIntro{margin-bottom:1em}
+#activeIdevice #yyyRubricIntro p{margin-top:.7em}
+#activeIdevice #yyyRubricIntro label{font-weight:normal}
+#yyyRubricInstructions{width:90%}
+
+#yyyTable .yyyActions{float:right}
+#yyyTable .yyyActions a{display:inline-block;width:16px;height:16px;background:url(exe-rubrics-actions.gif) no-repeat 0 0;opacity:.3}
+#yyyTable .yyyActions a:hover,#yyyTable .yyyActions a:focus{opacity:1}
+#yyyTable .yyyActions .yyyMoveTRUp{background-position:0 -20px}
+#yyyTable .yyyActions .yyyMoveTRDown{background-position:0 -40px}
+#yyyTable .yyyActions .yyyMoveTRToTheRight{background-position:0 -80px}
+#yyyTable .yyyActions .yyyMoveTRToTheLeft{background-position:0 -60px}
