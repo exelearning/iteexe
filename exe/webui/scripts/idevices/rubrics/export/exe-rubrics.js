@@ -11,6 +11,17 @@
 // i18n: Actividad, Nombre, Fecha, Nota, Reset, Print, Observaciones
 
 var $rubricIdevice = {
+	
+	// Default strings
+	ci18n : {
+		"activity" : "Activity",
+		"name" : "Name",
+		"date" : "Date",
+		"score" : "Score",
+		"notes" : "Notes",
+		"reset" : "Reset",
+		"print" : "Print"
+	},
     
 	init : function(){
         
@@ -18,6 +29,16 @@ var $rubricIdevice = {
 			
 			var table = $("table",this);
 			if (table.length!=1) return;
+			
+			var ul = $("ul",this);
+			if (ul.length==1) {
+				// Update $rubricIdevice.ci18n to use the custom strings
+				$("li",ul).each(function(){
+					if ($rubricIdevice.ci18n[this.className]) {
+						$rubricIdevice.ci18n[this.className] = $(this).text();
+					}
+				});
+			}
 			
 			$("caption",table).append('<a href="#" class="exe-rubric-print" id="print-'+this.id+'"><span>'+$exe_i18n.print+'</span></a>');
 			
@@ -72,7 +93,11 @@ var $rubricIdevice = {
 		
 		// Print button
 		$("#print").click(function(){
-			window.print();
+			try {
+				window.print();
+			} catch(e) {
+				
+			}
 		});
 		
 	},
@@ -88,6 +113,10 @@ var $rubricIdevice = {
 	},
 	
 	printRubric : function(tit,html) {
+		
+		// Strings
+		var i18n = this.ci18n;
+				
 		var a = window.open(tit);
 			a.document.open("text/html");
 			a.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
@@ -104,27 +133,27 @@ var $rubricIdevice = {
 					a.document.write('<div class="exe-rubric-content">');
 						a.document.write('<div id="exe-rubric-header">');
 							a.document.write('<p>');
-								a.document.write('<label for="activity">Actividad:</label> <input type="text" id="activity" />');
-								a.document.write('<label for="date">Fecha:</label> <input type="text" id="date" />');
+								a.document.write('<label for="activity">'+i18n.activity+':</label> <input type="text" id="activity" />');
+								a.document.write('<label for="date">'+i18n.date+':</label> <input type="text" id="date" />');
 							a.document.write('</p>');
 							a.document.write('<p>');
-								a.document.write('<label for="name">Nombre:</label> <input type="text" id="name" />');
-								a.document.write('<label for="score">Nota:</label> <input type="text" id="score" />');
+								a.document.write('<label for="name">'+i18n.name+':</label> <input type="text" id="name" />');
+								a.document.write('<label for="score">'+i18n.score+':</label> <input type="text" id="score" />');
 							a.document.write('</p>');
 						a.document.write('</div>');
 						a.document.write('<table class="exe-table">'+html+'</table>');
 						a.document.write('<div id="exe-rubric-footer">');
 							a.document.write('<p>');
-								a.document.write('<label for="notes">Observaciones:</label> <textarea id="notes" cols="32" rows="6"></textarea>');
+								a.document.write('<label for="notes">'+i18n.notes+':</label> <textarea id="notes" cols="32" rows="6"></textarea>');
 							a.document.write('</p>');
 						a.document.write('</div>');						
 					a.document.write('</div>');
-					a.document.write('<div id="commands"><input type="button" value="Reset" id="clear" /> <input type="button" value="Print" id="print" /></div>');
+					a.document.write('<div id="commands"><input type="button" value="'+i18n.reset+'" id="clear" /> <input type="button" value="'+i18n.print+'" id="print" /></div>');
 				a.document.write('</div>');
 			a.document.write('</body>');
 			a.document.write('</html>');
 			a.document.close();
-		// try { a.print(); } catch(e) {}
+
 	}
     
 }

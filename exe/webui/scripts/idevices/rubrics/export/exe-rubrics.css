@@ -1,6 +1,7 @@
 /* Rubrics iDevice */
 .exe-rubric-instructions{margin:1.5em 0 -.5em 0}
 .exe-rubric-authorship{margin-top:-1.5em;text-align:center;font-size:.9em;margin-bottom:2em}
+.exe-rubric-strings{display:none!important}
 .RubricIdevice caption{font-size:1.05em;position:relative}
 .RubricIdevice .exe-rubric-print{position:absolute;top:0;right:0;display:block;width:16px;height:16px;background:url(exe-rubrics-printer.gif) no-repeat 0 0;opacity:.4}
 .RubricIdevice .exe-rubric-print:hover,.RubricIdevice .exe-rubric-print:focus{opacity:1}

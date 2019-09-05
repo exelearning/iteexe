@@ -17,6 +17,18 @@ var $exeDevice = {
 	// i18n
 	title : _("Rubric"),
 	
+	// Editable strings ("Language settings tab")
+	// See $rubricIdevice.ci18n too
+	ci18n : {
+		"activity" : _("Activity"),
+		"name" : _("Name"),
+		"date" : _("Date"),
+		"score" : _("Score"),
+		"notes" : _("Notes"),
+		"reset" : _("Reset"),
+		"print" : _("Print")
+	},	
+	
 	// Default rubrics (just one for the moment)
 	rubrics : [			
 		{
@@ -190,6 +202,18 @@ var $exeDevice = {
 			data['author-url'] = authorURL;
 			data.license = license;
 			data["visible-info"] = visibleInfo;
+			
+			// Custom texts
+			block = $(".exe-rubric-strings",div);
+			if (block.length==1) {
+				data.i18n = {}
+				$("li",block).each(function(){
+					var e = $(this);
+					var c = e.attr("class");
+					var t = e.text();
+					data.i18n[c] = t;
+				});
+			}				
 			
 			this.jsonToTable(data,"edition");
 			this.originalData = data; 
@@ -461,7 +485,7 @@ var $exeDevice = {
 	},
 	
 	// Tranform the JSON data into:
-	// If mode is "normal":  Instructions (optional) + A table + the rubric footer (authorship, license...)
+	// If mode is "normal":  Instructions (optional) + A table + the rubric footer (authorship, license...) + Custom strings
 	// If mode is "edition": Instructions (fieldset) + A table + The max score input + The buttons to reset and add rows and columns + The "Rubric information" fieldset + The i18n tab
 	jsonToTable : function(data,mode){
 		
@@ -500,7 +524,16 @@ var $exeDevice = {
 				}
 				info += '</p>';
 			}
-			return intro + table + info;
+			
+			// Custom texts
+			var i18n = this.ci18n;
+			var lang = '<ul class="exe-rubric-strings">';
+				for (var i in i18n) {
+					lang += '<li class="'+i+'">'+i18n[i]+'</li>';
+				}
+				lang += '</ul>';
+			
+			return intro + table + info + lang;
 		}		
 		
 		var html = "";
@@ -566,14 +599,19 @@ var $exeDevice = {
 			html += '</div>'; // / .exe-form-tab (General settings)
 			
 			// Language tab (i18n)
-			html += '<div class="exe-form-tab" title="' + _('Language settings') + '">\
-				<p>' + _("Custom texts (or use the default ones):") + '</p>\
-				<p>To do.</p>\
-			</div>';
+			html += $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n);
 		
 		var ed = $("#yyyTableEditor");
 		this.editor = ed;
 		ed.html(html);
+		
+		// Set the custom strings
+		if (data.i18n) {
+			var strings = data.i18n;
+			for (var z in strings) {
+				$("#ci18n_"+z).val(strings[z]);
+			}
+		}
 		
 		// Enable the tabs
 		$exeAuthoring.iDevice.tabs.init("yyyTableEditor");
@@ -672,7 +710,17 @@ var $exeDevice = {
 		var authorURL = $("#yyyRubricAuthorURL").val();
 		if (authorURL!="") data["author-url"] = authorURL;
 		var license = $("#yyyRubricLicense").val();			
-		if (license!="") data.license = license;	
+		if (license!="") data.license = license;
+
+		// Get the custom strings
+		data.i18n = this.ci18n;
+		var strings = data.i18n;
+		for (var i in strings) {
+			var field = $("#ci18n_"+i);
+			if (field.length==1 && field.val()!="") {
+				data.i18n[i] = field.val();
+			}
+		}
 		
 		// Return the HTML to save
 		return this.jsonToTable(data,"normal");

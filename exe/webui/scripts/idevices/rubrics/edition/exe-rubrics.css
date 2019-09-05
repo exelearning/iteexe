@@ -53,3 +53,12 @@
 #yyyTable .yyyActions .yyyMoveTRDown{background-position:0 -40px}
 #yyyTable .yyyActions .yyyMoveTRToTheRight{background-position:0 -80px}
 #yyyTable .yyyActions .yyyMoveTRToTheLeft{background-position:0 -60px}
+
+/* To review (Should this code be common?) */
+#yyyTableEditorTab1{overflow:auto;margin-bottom:1.5em}
+#yyyTableEditorTab1 .ci18n{width:50%;float:left}
+@media screen and (max-width:720px) {
+	#yyyTableEditorTab1 .ci18n{width:100%;float:none}	
+}
+#yyyTableEditorTab1 .ci18n label{display:block;font-weight:bold;margin-bottom:5px}
+#yyyTableEditorTab1 .ci18n input{width:300px}
