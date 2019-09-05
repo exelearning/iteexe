@@ -1,5 +1,40 @@
 /* Rubrics iDevice */
 .exe-rubric-instructions{margin:1.5em 0 -.5em 0}
 .exe-rubric-authorship{margin-top:-1.5em;text-align:center;font-size:.9em;margin-bottom:2em}
-.RubricIdevice caption{font-size:1.05em}
+.RubricIdevice caption{font-size:1.05em;position:relative}
+.RubricIdevice .exe-rubric-print{position:absolute;top:0;right:0;display:block;width:16px;height:16px;background:url(exe-rubrics-printer.gif) no-repeat 0 0;opacity:.4}
+.RubricIdevice .exe-rubric-print:hover,.RubricIdevice .exe-rubric-print:focus{opacity:1}
+.RubricIdevice .exe-rubric-print span{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0}
 .RubricIdevice td span{opacity:.8;margin-left:3px;font-size:.9em}
+/* Print version */
+body.exe-rubric{background:rgb(204,204,204);font-family:Arial,Helvetica,sans-serif;font-size:10pt;line-height:2em}
+body.exe-rubric .exe-rubric-print{display:none}
+body.exe-rubric .exe-rubric-wrapper{background:white;display:block;margin:0 auto;margin-bottom:0.5cm;box-shadow:0 0 0.5cm rgba(0,0,0,0.5);min-height:21cm;width:29.7cm;text-align:center;position:relative}
+body.exe-rubric a{color:#2F6BB0}
+@media print{
+	html.exe-rubric,body.exe-rubric,body.exe-rubric .exe-rubric-wrapper{margin:0;padding:0;box-shadow:none}
+	body.exe-rubric #commands{display:none}
+}
+@page{size:auto;margin:0}
+
+body.exe-rubric #exe-rubric-header p{line-height:2.5em}
+body.exe-rubric label{font-weight:bold}
+body.exe-rubric #exe-rubric-header label{display:inline-block;width:10em;text-align:right;padding-right:.1cm}
+body.exe-rubric input[type='text']{border:none;border-bottom:1px solid #000;font-family:Arial,Helvetica,sans-serif;font-size:10pt}
+body.exe-rubric #activity,
+body.exe-rubric #name{width:12.5cm}
+
+body.exe-rubric #exe-rubric-header{margin-top:.5cm}
+body.exe-rubric caption{font-weight:bold;font-size:1.1em;margin-bottom:.25cm}
+body.exe-rubric .exe-rubric-content{padding:1cm 1.5cm;text-align:left}
+body.exe-rubric table{width:100%;margin-top:1cm}
+body.exe-rubric table,body.exe-rubric th,body.exe-rubric td{border-collapse:collapse;border:1px solid #000}
+body.exe-rubric th,body.exe-rubric td{padding:.1cm .25cm}
+body.exe-rubric td span{margin-left:.2cm;font-size:9pt;font-style:italic}
+body.exe-rubric td{position:relative}
+body.exe-rubric td input{position:absolute;bottom:.1cm;right:.1cm}
+
+body.exe-rubric #exe-rubric-footer{margin-top:1cm}
+body.exe-rubric #notes{width:99%;height:5cm;border:1px solid #000;font-family:Arial,Helvetica,sans-serif;font-size:10pt;padding:.1cm;display:block;margin-top:.1cm;max-width:100%}
+body.exe-rubric #commands{position:absolute;top:.2cm;left:.3cm}
+body.exe-rubric #commands input{margin-right:.15cm}

@@ -462,7 +462,7 @@ var $exeDevice = {
 	
 	// Tranform the JSON data into:
 	// If mode is "normal":  Instructions (optional) + A table + the rubric footer (authorship, license...)
-	// If mode is "edition": Instructions (fieldset) + A table + The max score input + The buttons to reset and add rows and columns + The "Rubric information" fieldset
+	// If mode is "edition": Instructions (fieldset) + A table + The max score input + The buttons to reset and add rows and columns + The "Rubric information" fieldset + The i18n tab
 	jsonToTable : function(data,mode){
 		
 		var hasCategories = true;
@@ -504,6 +504,8 @@ var $exeDevice = {
 		}		
 		
 		var html = "";
+		
+			html += '<div class="exe-form-tab" title="' + _('General settings') + '">';
 		
 			// Rubric use instructions
 			var instructions = "";
@@ -560,10 +562,21 @@ var $exeDevice = {
 						</p>\
 					</div>\
 				</fieldset>';
+				
+			html += '</div>'; // / .exe-form-tab (General settings)
+			
+			// Language tab (i18n)
+			html += '<div class="exe-form-tab" title="' + _('Language settings') + '">\
+				<p>' + _("Custom texts (or use the default ones):") + '</p>\
+				<p>To do.</p>\
+			</div>';
 		
 		var ed = $("#yyyTableEditor");
 		this.editor = ed;
 		ed.html(html);
+		
+		// Enable the tabs
+		$exeAuthoring.iDevice.tabs.init("yyyTableEditor");
 		
 		// Buttons (events)
 		$("#yyyReset").click(function(){
