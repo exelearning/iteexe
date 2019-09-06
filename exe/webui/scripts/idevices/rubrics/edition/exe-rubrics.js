@@ -300,9 +300,14 @@ var $exeDevice = {
 			var lnk = $("#yyyLoadCEDECRubrics");
 			$("#yyyLoadCEDECRubrics").click(function(){
 				$("#yyyRubricEditor").addClass("loading");
-				$.ajaxSetup({ cache: false });
+				var timestamp = "";
+				try {
+					timestamp = Date.now();
+				} catch(e) {
+					
+				}
 				$.ajax({
-					url: "http://gros.es/tests/cedec/cedec.json",
+					url: "http://gros.es/tests/cedec/cedec.json?version="+timestamp,
 					dataType: 'json',
 					success: function(res){
 						$("#yyyRubricEditor").removeClass("loading");
@@ -691,7 +696,7 @@ var $exeDevice = {
 	
 	save : function(){
 		
-		// Validate
+		// Validate (and remove any HTML tags)
 		
 		var table = $("#yyyTableEditor table");
 		
@@ -703,6 +708,7 @@ var $exeDevice = {
 		
 		// Caption
 		var c0 = $("#yyyCell-0",table);
+			c0.val($exeDevice.removeTags(c0.val()));
 		if (c0.val()=="") {
 			this.alert(_("Please write the rubric title."));
 			this.setFieldError(c0);
@@ -713,6 +719,7 @@ var $exeDevice = {
 		var levels = $("thead th input[type='text']",table);
 		var levelErrors = false;
 		levels.each(function(){
+			this.value = $exeDevice.removeTags(this.value);
 			if (this.value=="") {
 				$exeDevice.setFieldError($(this));
 				if (levelErrors==false) $exeDevice.alert(_("Please write the level name in each column."));
@@ -725,6 +732,7 @@ var $exeDevice = {
 		var criteria = $("tbody th input[type='text']",table);
 		var criteriaErrors = false;
 		criteria.each(function(){
+			this.value = $exeDevice.removeTags(this.value);
 			if (this.value=="") {
 				$exeDevice.setFieldError($(this));
 				if (criteriaErrors==false) $exeDevice.alert(_("Please write the criteria name in each row."));
@@ -737,6 +745,7 @@ var $exeDevice = {
 		var descriptions = $("tbody td input[type='text']",table);
 		var descriptionErrors = false;
 		descriptions.each(function(){
+			this.value = $exeDevice.removeTags(this.value);
 			// The score field can be empty...
 			if (this.id.indexOf("-weight")==-1 && this.value=="") {
 				$exeDevice.setFieldError($(this));
@@ -901,7 +910,7 @@ var $exeDevice = {
         return wrapper.text();
     },
 	
-	// Transform the editable table into a normal one (no HTML tags allowed)
+	// Transform the editable table into a normal one
 	makeNormal : function(){
 		var cells = this.cells;
 		cells.each(function(i){
@@ -913,12 +922,12 @@ var $exeDevice = {
 			var inputs = $("input",tmp);
 			if (inputs.length==1) {
 				id = inputs.eq(0).attr("id");
-				html = $exeDevice.removeTags($("#"+id).val());
+				html = $("#"+id).val();
 			} else if (inputs.length==2) {
 				id = inputs.eq(0).attr("id");
-				html = $exeDevice.removeTags($("#"+id).val());
+				html = $("#"+id).val();
 				id = inputs.eq(1).attr("id");
-				html += ' <span>('+$exeDevice.removeTags($("#"+id).val())+')</span>';
+				html += ' <span>('+$("#"+id).val()+')</span>';
 			}
 			this.innerHTML = html;
 		});
