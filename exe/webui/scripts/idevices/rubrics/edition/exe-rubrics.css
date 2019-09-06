@@ -1,69 +1,69 @@
 /* Rubrics iDevice (edition CSS) */
 /* Action icons (Bitcons) by P.J. Onori, under the Creative Commons Attribution-Share Alike 3.0 Unported License */
-#yyyTable,
-#yyyRubricEditor p,
-#yyyTableEditor table + p{font-family:Arial, Helvetica, sans-serif;font-size:14px}
-#yyyTable{margin:1em auto}
-#yyyTable input{box-sizing:border-box;padding:2px;width:100%;border:1px solid #FFF;background:none!important}
-#yyyTable td span{color:#666;margin-left:3px}
-#yyyTable .xxxWeight{color:#666;width:auto}
-#yyyTable th input{font-weight:bold}
-#yyyTable tr:nth-child(2n-1) td input,#yyyTable tbody tr:nth-child(2n-1) th input{border-color:#F4F4F4}	
+#ri_Table,
+#ri_RubricEditor p,
+#ri_TableEditor table + p{font-family:Arial, Helvetica, sans-serif;font-size:14px}
+#ri_Table{margin:1em auto}
+#ri_Table input{box-sizing:border-box;padding:2px;width:100%;border:1px solid #FFF;background:none!important}
+#ri_Table td span{color:#666;margin-left:3px}
+#ri_Table .ri_Weight{color:#666;width:auto}
+#ri_Table th input{font-weight:bold}
+#ri_Table tr:nth-child(2n-1) td input,#ri_Table tbody tr:nth-child(2n-1) th input{border-color:#F4F4F4}	
 
-#yyyTable > thead > tr > th:first-child .yyyMoveTRToTheLeft,
-#yyyTable > thead > tr > th:last-child .yyyMoveTRToTheRight,
-#yyyTable > tbody > tr:first-child .yyyMoveTRUp,
-#yyyTable > tbody > tr:last-child .yyyMoveTRDown,
+#ri_Table > thead > tr > th:first-child .ri_MoveTRToTheLeft,
+#ri_Table > thead > tr > th:last-child .ri_MoveTRToTheRight,
+#ri_Table > tbody > tr:first-child .ri_MoveTRUp,
+#ri_Table > tbody > tr:last-child .ri_MoveTRDown,
 
-#yyyTable > thead > tr > th:first-child .yyyMoveTRToTheRight,
-#yyyTable > thead > tr > th:nth-child(2) .yyyMoveTRToTheLeft,
-#yyyTable > thead > tr > th:first-child .yyyDeleteColumn,
+#ri_Table > thead > tr > th:first-child .ri_MoveTRToTheRight,
+#ri_Table > thead > tr > th:nth-child(2) .ri_MoveTRToTheLeft,
+#ri_Table > thead > tr > th:first-child .ri_DeleteColumn,
 
-#yyyTable > tbody > tr:only-child .yyyDeleteTR
+#ri_Table > tbody > tr:only-child .ri_DeleteTR
 {display:none}
 
-#yyyTable caption input{width:400px;text-align:center;font-style:italic;font-size:1.1em}
-#yyyTable thead th input{border-color:#ddd}
-#yyyTable input:focus{border-color:#bbb!important;background:#FFF!important}
+#ri_Table caption input{width:400px;text-align:center;font-style:italic;font-size:1.1em}
+#ri_Table thead th input{border-color:#ddd}
+#ri_Table input:focus{border-color:#bbb!important;background:#FFF!important}
 
-#yyyLoadCEDECRubrics,
-#yyyNewTableOptions,
-#yyyPreviousContent{display:none}
+#ri_LoadCEDECRubrics,
+#ri_NewTableOptions,
+#ri_PreviousContent{display:none}
 
-#yyyCreateNewRubric{margin-right:1em}
-#yyyMaxScore{width:3em}
-#yyyMaxScoreInstructions{opacity:.8;font-style:italic}
+#ri_CreateNewRubric{margin-right:1em}
+#ri_MaxScore{width:3em}
+#ri_MaxScoreInstructions{opacity:.8;font-style:italic}
 
-#yyyRubricEditor.loading{background:url(exe-rubrics-loading.gif) no-repeat 50% 50%}
-#yyyRubricEditor.loading *{visibility:hidden}
-#yyyRubricEditor p{text-align:center;margin-top:1.5em}
-#yyyTableEditor table + p{margin-bottom:2em}
-#yyyAppendRow,#yyyAppendCol,#yyyReset{float:right;margin-left:1em}
+#ri_RubricEditor.loading{background:url(exe-rubrics-loading.gif) no-repeat 50% 50%}
+#ri_RubricEditor.loading *{visibility:hidden}
+#ri_RubricEditor p{text-align:center;margin-top:1.5em}
+#ri_TableEditor table + p{margin-bottom:2em}
+#ri_AppendRow,#ri_AppendCol,#ri_Reset{float:right;margin-left:1em}
 
-#yyyRubricInformation p{margin-top:1.5em}
-#yyyRubricInformation p:first-child{margin-top:1em}
-#yyyRubricInformation input[type='text']{margin-right:1em}
+#ri_RubricInformation p{margin-top:1.5em}
+#ri_RubricInformation p:first-child{margin-top:1em}
+#ri_RubricInformation input[type='text']{margin-right:1em}
 
-#activeIdevice #yyyRubricIntro{margin-bottom:1em}
-#activeIdevice #yyyRubricIntro p{margin-top:.7em}
-#activeIdevice #yyyRubricIntro label{font-weight:normal}
-#yyyRubricInstructions{width:90%}
+#activeIdevice #ri_RubricIntro{margin-bottom:1em}
+#activeIdevice #ri_RubricIntro p{margin-top:.7em}
+#activeIdevice #ri_RubricIntro label{font-weight:normal}
+#ri_RubricInstructions{width:90%}
 
-#yyyTable .yyyActions{float:right}
-#yyyTable .yyyActions a{display:inline-block;width:16px;height:16px;background:url(exe-rubrics-actions.gif) no-repeat 0 0;opacity:.3}
-#yyyTable .yyyActions a:hover,#yyyTable .yyyActions a:focus{opacity:1}
-#yyyTable .yyyActions .yyyMoveTRUp{background-position:0 -20px}
-#yyyTable .yyyActions .yyyMoveTRDown{background-position:0 -40px}
-#yyyTable .yyyActions .yyyMoveTRToTheRight{background-position:0 -80px}
-#yyyTable .yyyActions .yyyMoveTRToTheLeft{background-position:0 -60px}
+#ri_Table .ri_Actions{float:right}
+#ri_Table .ri_Actions a{display:inline-block;width:16px;height:16px;background:url(exe-rubrics-actions.gif) no-repeat 0 0;opacity:.3}
+#ri_Table .ri_Actions a:hover,#ri_Table .ri_Actions a:focus{opacity:1}
+#ri_Table .ri_Actions .ri_MoveTRUp{background-position:0 -20px}
+#ri_Table .ri_Actions .ri_MoveTRDown{background-position:0 -40px}
+#ri_Table .ri_Actions .ri_MoveTRToTheRight{background-position:0 -80px}
+#ri_Table .ri_Actions .ri_MoveTRToTheLeft{background-position:0 -60px}
 
-#yyyTableEditor #yyyTable input.exe-rubric-required{border:1px solid #900}
+#ri_TableEditor #ri_Table input.exe-rubric-required{border:1px solid #900}
 
 /* To review (Should this code be common?) */
-#yyyTableEditorTab1{overflow:auto;margin-bottom:1.5em}
-#yyyTableEditorTab1 .ci18n{width:50%;float:left}
+#ri_TableEditorTab1{overflow:auto;margin-bottom:1.5em}
+#ri_TableEditorTab1 .ci18n{width:50%;float:left}
 @media screen and (max-width:720px) {
-	#yyyTableEditorTab1 .ci18n{width:100%;float:none}	
+	#ri_TableEditorTab1 .ci18n{width:100%;float:none}	
 }
-#yyyTableEditorTab1 .ci18n label{display:block;font-weight:bold;margin-bottom:5px}
-#yyyTableEditorTab1 .ci18n input{width:300px}
+#ri_TableEditorTab1 .ci18n label{display:block;font-weight:bold;margin-bottom:5px}
+#ri_TableEditorTab1 .ci18n input{width:300px}
