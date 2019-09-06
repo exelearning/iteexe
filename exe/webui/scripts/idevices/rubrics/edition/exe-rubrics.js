@@ -9,7 +9,6 @@
 
 // To do:
 // Try to use eXe's confirm messages
-// Add validation (see what happens when trying to save it empty)
 
 var $exeDevice = {
 	
@@ -684,12 +683,73 @@ var $exeDevice = {
 		}
 	},
 	
+	setFieldError : function(field){
+		field.addClass("exe-rubric-required").focus(function(){
+			$(this).removeClass("exe-rubric-required");
+		});
+	},
+	
 	save : function(){
 		
-		this.makeNormal();
-		var data = this.tableToJSON("yyyTableEditor");
+		// Validate
 		
-		// To do now: Validate
+		var table = $("#yyyTableEditor table");
+		
+		// No rubric
+		if (table.length==0) {
+			this.alert(_("The rubric is empty..."));
+			return false;
+		}
+		
+		// Caption
+		var c0 = $("#yyyCell-0",table);
+		if (c0.val()=="") {
+			this.alert(_("Please write the rubric title."));
+			this.setFieldError(c0);
+			return false;
+		}
+		
+		// Levels
+		var levels = $("thead th input[type='text']",table);
+		var levelErrors = false;
+		levels.each(function(){
+			if (this.value=="") {
+				$exeDevice.setFieldError($(this));
+				if (levelErrors==false) $exeDevice.alert(_("Please write the level name in each column."));
+				levelErrors = true;
+			}
+		});
+		if (levelErrors) return false;
+		
+		// Criteria
+		var criteria = $("tbody th input[type='text']",table);
+		var criteriaErrors = false;
+		criteria.each(function(){
+			if (this.value=="") {
+				$exeDevice.setFieldError($(this));
+				if (criteriaErrors==false) $exeDevice.alert(_("Please write the criteria name in each row."));
+				criteriaErrors = true;
+			}
+		});
+		if (criteriaErrors) return false;
+		
+		// Descriptions
+		var descriptions = $("tbody td input[type='text']",table);
+		var descriptionErrors = false;
+		descriptions.each(function(){
+			// The score field can be empty...
+			if (this.id.indexOf("-weight")==-1 && this.value=="") {
+				$exeDevice.setFieldError($(this));
+				if (descriptionErrors==false) $exeDevice.alert(_("Please write all the criteria descriptors."));
+				descriptionErrors = true;
+			}
+		});
+		if (descriptionErrors) return false;		
+		
+		// Make the table normal
+		this.makeNormal();	
+		
+		var data = this.tableToJSON("yyyTableEditor");
 		
 		// Get the rubic instructions and add the to the data
 		var instructions = $("#yyyRubricInstructions").val();
@@ -830,11 +890,18 @@ var $exeDevice = {
 		
 	},
 	
-	// Transform the editable table into a normal one
+    // Remove any HTML tags
+	removeTags: function(str) {
+        var wrapper = $("<div></div>");
+        wrapper.html(str);
+        return wrapper.text();
+    },
+	
+	// Transform the editable table into a normal one (no HTML tags allowed)
 	makeNormal : function(){
 		var cells = this.cells;
 		cells.each(function(i){
-			var id;
+			var id, val;
 			var html = this.innerHTML;
 			var tmp = $("<div></div>");
 			tmp.html(html);
@@ -842,12 +909,12 @@ var $exeDevice = {
 			var inputs = $("input",tmp);
 			if (inputs.length==1) {
 				id = inputs.eq(0).attr("id");
-				html = $("#"+id).val();
+				html = $exeDevice.removeTags($("#"+id).val());
 			} else if (inputs.length==2) {
 				id = inputs.eq(0).attr("id");
-				html = $("#"+id).val();
+				html = $exeDevice.removeTags($("#"+id).val());
 				id = inputs.eq(1).attr("id");
-				html += ' <span>('+$("#"+id).val()+')</span>';
+				html += ' <span>('+$exeDevice.removeTags($("#"+id).val())+')</span>';
 			}
 			this.innerHTML = html;
 		});

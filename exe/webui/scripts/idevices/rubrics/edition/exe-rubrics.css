@@ -57,6 +57,8 @@
 #yyyTable .yyyActions .yyyMoveTRToTheRight{background-position:0 -80px}
 #yyyTable .yyyActions .yyyMoveTRToTheLeft{background-position:0 -60px}
 
+#yyyTableEditor #yyyTable input.exe-rubric-required{border:1px solid #900}
+
 /* To review (Should this code be common?) */
 #yyyTableEditorTab1{overflow:auto;margin-bottom:1.5em}
 #yyyTableEditorTab1 .ci18n{width:50%;float:left}
